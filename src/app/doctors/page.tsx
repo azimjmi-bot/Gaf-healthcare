@@ -28,6 +28,7 @@ export default async function DoctorsPage({
         <Suspense fallback={<FilterSkeleton />}>
           <CatalogFilter
             basePath="/doctors"
+            entity="doctors"
             resultCount={list.length}
             resultLabel={list.length === 1 ? "specialist" : "specialists"}
           />

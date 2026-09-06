@@ -8,6 +8,16 @@ import {
   type Treatment,
 } from "@/lib/data";
 
+export const INDIA_CITIES = [
+  "Delhi NCR",
+  "Mumbai",
+  "Bengaluru",
+  "Chennai",
+  "Hyderabad",
+] as const;
+
+export type CatalogEntity = "doctors" | "hospitals" | "treatments";
+
 export type CatalogQuery = {
   destination?: string;
   city?: string;
@@ -46,10 +56,37 @@ export const catalogProcedures = Array.from(
 ).sort();
 
 export function citiesForDestination(destination?: string) {
+  if (destination === "India") return [...INDIA_CITIES];
   const list = destination
     ? hospitals.filter((h) => h.country === destination).map((h) => h.city)
     : hospitals.map((h) => h.city);
   return Array.from(new Set(list)).sort();
+}
+
+export function cityResultCounts(entity: CatalogEntity, q: CatalogQuery) {
+  const withoutCity = { ...q, city: undefined };
+  const rows =
+    entity === "doctors"
+      ? filterDoctors(withoutCity)
+      : entity === "hospitals"
+        ? filterHospitals(withoutCity)
+        : filterTreatments(withoutCity);
+  const cities = citiesForDestination(q.destination);
+  const counts: Record<string, number> = {};
+  for (const city of cities) {
+    counts[city] = rows.filter((row) => {
+      if (entity === "hospitals") return (row as (typeof hospitals)[number]).city === city;
+      if (entity === "doctors") {
+        const h = getHospital((row as (typeof doctors)[number]).hospitalSlug);
+        return h?.city === city;
+      }
+      const campuses = (row as (typeof treatments)[number]).hospitalSlugs
+        .map((s) => getHospital(s))
+        .filter(Boolean);
+      return campuses.some((h) => h?.city === city);
+    }).length;
+  }
+  return { total: rows.length, counts };
 }
 
 function hospitalMatches(h: Hospital, q: CatalogQuery) {

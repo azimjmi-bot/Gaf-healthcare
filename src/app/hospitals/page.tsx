@@ -26,6 +26,7 @@ export default async function HospitalsPage({
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
             basePath="/hospitals"
+            entity="hospitals"
             resultCount={list.length}
             resultLabel={list.length === 1 ? "hospital" : "hospitals"}
           />
