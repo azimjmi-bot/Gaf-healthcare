@@ -8,7 +8,7 @@ export const metadata: Metadata = { title: "Request a dossier" };
 export default async function ConsultPage({
   searchParams,
 }: {
-  searchParams: Promise<{ treatment?: string; destination?: string }>;
+  searchParams: Promise<{ treatment?: string; hospital?: string; doctor?: string }>;
 }) {
   const q = await searchParams;
   return (
@@ -20,7 +20,11 @@ export default async function ConsultPage({
       />
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-12 md:px-8">
         <div className="md:col-span-7">
-          <ConsultForm defaultTreatment={q.treatment} defaultDestination={q.destination} />
+          <ConsultForm
+            defaultTreatment={q.treatment}
+            defaultHospital={q.hospital}
+            defaultDoctor={q.doctor}
+          />
         </div>
         <aside className="md:col-span-5">
           <div className="rounded-2xl bg-ink p-8 text-ivory md:sticky md:top-24">

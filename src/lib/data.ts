@@ -1,17 +1,3 @@
-export type Destination = {
-  slug: string;
-  city: string;
-  country: string;
-  region: string;
-  headline: string;
-  summary: string;
-  image: string;
-  specialties: string[];
-  recoveryNote: string;
-  stay: string;
-  language: string;
-};
-
 export type Treatment = {
   slug: string;
   name: string;
@@ -21,7 +7,7 @@ export type Treatment = {
   usRange: string;
   partnerRange: string;
   stay: string;
-  destinations: string[];
+  hospitalSlugs: string[];
   includes: string[];
   notes: string;
 };
@@ -30,10 +16,28 @@ export type Hospital = {
   slug: string;
   name: string;
   city: string;
-  destinationSlug: string;
+  country: string;
   accreditation: string;
   focus: string;
   image: string;
+  summary: string;
+  languages: string;
+  icu: string;
+};
+
+export type Doctor = {
+  slug: string;
+  name: string;
+  title: string;
+  hospitalSlug: string;
+  specialty: string;
+  treatmentSlugs: string[];
+  credentials: string;
+  languages: string;
+  years: string;
+  cases: string;
+  image: string;
+  bio: string;
 };
 
 export type Story = {
@@ -47,99 +51,6 @@ export type Story = {
   savings: string;
 };
 
-export const destinations: Destination[] = [
-  {
-    slug: "seoul",
-    city: "Seoul",
-    country: "South Korea",
-    region: "East Asia",
-    headline: "Precision aesthetics in the world’s most exacting clinics.",
-    summary:
-      "Gangnam’s private floors are built for international patients: same-day imaging, bilingual coordinators, and surgeons who treat facial harmony as architecture. Velora holds reserved consult slots at three JCI partners.",
-    image:
-      "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1800&q=80",
-    specialties: ["Facial aesthetics", "Dermatology", "Eyes & contour"],
-    recoveryNote: "Hotel-adjacent recovery suites in Cheongdam, 8–14 nights typical.",
-    stay: "8–14 nights",
-    language: "English, Korean, Mandarin",
-  },
-  {
-    slug: "istanbul",
-    city: "Istanbul",
-    country: "Türkiye",
-    region: "Europe & Anatolia",
-    headline: "Hair, smile, and metabolic surgery at European scale.",
-    summary:
-      "Istanbul combines high-volume specialist teams with five-star Bosphorus recovery. We work only with hospitals that publish complication rates and keep a dedicated international ward.",
-    image:
-      "https://images.unsplash.com/photo-1524231757912-21f4fe8a80a5?auto=format&fit=crop&w=1800&q=80",
-    specialties: ["Hair restoration", "Dental", "Bariatric"],
-    recoveryNote: "Bosphorus or Nişantaşı residences with nurse visits on day 1–3.",
-    stay: "5–10 nights",
-    language: "English, Turkish, Arabic, German",
-  },
-  {
-    slug: "bangkok",
-    city: "Bangkok",
-    country: "Thailand",
-    region: "Southeast Asia",
-    headline: "Hospitality-grade campuses for complex elective care.",
-    summary:
-      "Bangkok’s flagship hospitals feel like hotels that happen to run full ICU. Ideal for multi-procedure plans, gender-affirming pathways, and patients who want a longer, gentler recovery.",
-    image:
-      "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1800&q=80",
-    specialties: ["Cosmetic surgery", "Dental reconstruction", "Wellness"],
-    recoveryNote: "Sukhumvit recovery apartments with in-room nursing on request.",
-    stay: "10–21 nights",
-    language: "English, Thai, Japanese, Arabic",
-  },
-  {
-    slug: "dubai",
-    city: "Dubai",
-    country: "United Arab Emirates",
-    region: "Gulf",
-    headline: "Discreet luxury care a short-haul flight from Europe and Africa.",
-    summary:
-      "For patients who want Western protocols, private floors, and zero logistics friction. Dubai is our preferred hub for executive physicals, cardiology, and aesthetic work with hotel-connected hospitals.",
-    image:
-      "https://images.unsplash.com/photo-1512453979798-5ea266f8880c?auto=format&fit=crop&w=1800&q=80",
-    specialties: ["Cardiology", "Executive diagnostics", "Aesthetics"],
-    recoveryNote: "Jumeirah or Downtown residences; same-campus hotels available.",
-    stay: "4–10 nights",
-    language: "English, Arabic, Hindi, French",
-  },
-  {
-    slug: "singapore",
-    city: "Singapore",
-    country: "Singapore",
-    region: "Southeast Asia",
-    headline: "Oncology, cardiac, and second-opinion medicine without compromise.",
-    summary:
-      "When the brief is not savings but certainty. Singapore’s private campuses are our recommendation for complex diagnosis, oncology pathways, and patients flying from Australia or the US West Coast.",
-    image:
-      "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1800&q=80",
-    specialties: ["Oncology", "Cardiac surgery", "Second opinions"],
-    recoveryNote: "Orchard and Novena recovery hotels with hospital shuttle.",
-    stay: "7–16 nights",
-    language: "English, Mandarin, Malay",
-  },
-  {
-    slug: "mexico-city",
-    city: "Mexico City",
-    country: "Mexico",
-    region: "Americas",
-    headline: "US-trained specialists a three-hour flight from Texas.",
-    summary:
-      "Polanco and Santa Fe private hospitals offer dental full-arch, joints, and bariatric programs with US board-trained surgeons. Ideal when you want time-zone overlap with family at home.",
-    image:
-      "https://images.unsplash.com/photo-1585464231875-d9ef1f5ad396?auto=format&fit=crop&w=1800&q=80",
-    specialties: ["Dental full-arch", "Orthopedics", "Bariatric"],
-    recoveryNote: "Polanco suites; family rooms available for US companions.",
-    stay: "6–12 nights",
-    language: "English, Spanish",
-  },
-];
-
 export const treatments: Treatment[] = [
   {
     slug: "facial-aesthetics",
@@ -152,7 +63,7 @@ export const treatments: Treatment[] = [
     usRange: "$18,000–$45,000",
     partnerRange: "$6,800–$16,500",
     stay: "10–14 nights",
-    destinations: ["seoul", "bangkok", "istanbul", "dubai"],
+    hospitalSlugs: ["cheongdam-atelier", "sukhumvit-campus", "bosphorus-international", "marina-private"],
     includes: [
       "3D imaging and surgeon matching",
       "Pre-op labs and anesthesia review",
@@ -173,7 +84,7 @@ export const treatments: Treatment[] = [
     usRange: "$12,000–$20,000",
     partnerRange: "$2,400–$5,800",
     stay: "4–6 nights",
-    destinations: ["istanbul", "dubai"],
+    hospitalSlugs: ["bosphorus-international", "marina-private"],
     includes: [
       "Trichoscopy and graft map",
       "Hotel with clinic transfer",
@@ -194,7 +105,7 @@ export const treatments: Treatment[] = [
     usRange: "$28,000–$60,000",
     partnerRange: "$8,500–$19,000",
     stay: "7–12 nights (or two visits)",
-    destinations: ["istanbul", "bangkok", "mexico-city"],
+    hospitalSlugs: ["bosphorus-international", "sukhumvit-campus", "polanco-surgical"],
     includes: [
       "CBCT and digital smile design",
       "Provisional and final prosthesis",
@@ -215,7 +126,7 @@ export const treatments: Treatment[] = [
     usRange: "$35,000–$80,000",
     partnerRange: "$11,000–$28,000",
     stay: "12–18 nights",
-    destinations: ["singapore", "mexico-city", "dubai", "bangkok"],
+    hospitalSlugs: ["orchard-precision", "polanco-surgical", "marina-private", "sukhumvit-campus"],
     includes: [
       "Implant brand of record",
       "Physiotherapy from day one",
@@ -223,7 +134,7 @@ export const treatments: Treatment[] = [
       "Fit-to-fly clearance",
     ],
     notes:
-      "BMI, bone quality, and prior hardware are reviewed before a destination is even proposed.",
+      "BMI, bone quality, and prior hardware are reviewed before a hospital is even proposed.",
   },
   {
     slug: "cardiac",
@@ -236,7 +147,7 @@ export const treatments: Treatment[] = [
     usRange: "$80,000–$180,000",
     partnerRange: "$18,000–$42,000",
     stay: "10–16 nights",
-    destinations: ["singapore", "dubai", "bangkok"],
+    hospitalSlugs: ["orchard-precision", "marina-private", "sukhumvit-campus"],
     includes: [
       "Records assembled into a single dossier",
       "Second-opinion panel before travel",
@@ -257,7 +168,7 @@ export const treatments: Treatment[] = [
     usRange: "$18,000–$30,000 / cycle",
     partnerRange: "$4,800–$9,500 / cycle",
     stay: "Flexible; often 2 visits",
-    destinations: ["singapore", "dubai", "bangkok", "istanbul"],
+    hospitalSlugs: ["orchard-precision", "marina-private", "sukhumvit-campus", "bosphorus-international"],
     includes: [
       "Protocol designed with your home OB",
       "Medication logistics",
@@ -278,7 +189,7 @@ export const treatments: Treatment[] = [
     usRange: "Varies widely",
     partnerRange: "Quoted after records review",
     stay: "By protocol",
-    destinations: ["singapore", "dubai", "seoul"],
+    hospitalSlugs: ["orchard-precision", "marina-private", "cheongdam-atelier"],
     includes: [
       "Tumor board review",
       "Pathology re-read",
@@ -299,7 +210,7 @@ export const treatments: Treatment[] = [
     usRange: "$18,000–$35,000",
     partnerRange: "$5,500–$11,000",
     stay: "7–10 nights",
-    destinations: ["istanbul", "mexico-city", "bangkok"],
+    hospitalSlugs: ["bosphorus-international", "polanco-surgical", "sukhumvit-campus"],
     includes: [
       "Dietitian-led prep",
       "Leak test and imaging",
@@ -316,61 +227,238 @@ export const hospitals: Hospital[] = [
     slug: "cheongdam-atelier",
     name: "Cheongdam Atelier Hospital",
     city: "Seoul",
-    destinationSlug: "seoul",
+    country: "South Korea",
     accreditation: "JCI",
     focus: "Facial architecture & dermatology",
     image:
       "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1400&q=80",
+    summary:
+      "A private Gangnam campus built for international facial work: same-day 3D imaging, reserved theatre blocks, and recovery suites a walk from Cheongdam.",
+    languages: "English, Korean, Mandarin",
+    icu: "Level II · overnight observation floors",
   },
   {
     slug: "bosphorus-international",
     name: "Bosphorus International",
     city: "Istanbul",
-    destinationSlug: "istanbul",
+    country: "Türkiye",
     accreditation: "JCI · ISO 9001",
     focus: "Hair, dental, bariatric",
     image:
       "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1400&q=80",
+    summary:
+      "High-volume specialist teams with a dedicated international ward and published complication dashboards. Recovery on the European shore.",
+    languages: "English, Turkish, Arabic, German",
+    icu: "Full ICU · 24/7 on-call",
   },
   {
     slug: "sukhumvit-campus",
     name: "Sukhumvit Medical Campus",
     city: "Bangkok",
-    destinationSlug: "bangkok",
+    country: "Thailand",
     accreditation: "JCI",
     focus: "Multi-specialty elective & wellness",
     image:
       "https://images.unsplash.com/photo-1538108142413-76d1c2d5d0c2?auto=format&fit=crop&w=1400&q=80",
+    summary:
+      "A hotel-grade campus with full ICU, in-house labs, and apartments for longer recoveries. Ideal for multi-procedure plans.",
+    languages: "English, Thai, Japanese, Arabic",
+    icu: "Tertiary ICU · on-campus hotel",
   },
   {
     slug: "marina-private",
     name: "Marina Private Hospital",
     city: "Dubai",
-    destinationSlug: "dubai",
+    country: "United Arab Emirates",
     accreditation: "JCI · DHA",
     focus: "Cardiac, diagnostics, aesthetics",
     image:
       "https://images.unsplash.com/photo-1587351021759-3e566b6af7cc?auto=format&fit=crop&w=1400&q=80",
+    summary:
+      "Western protocols, private floors, and hotel-connected wards. Preferred for executive physicals, cardiology, and discreet aesthetic work.",
+    languages: "English, Arabic, Hindi, French",
+    icu: "24/7 cath lab · cardiac ICU",
   },
   {
     slug: "orchard-precision",
     name: "Orchard Precision Centre",
     city: "Singapore",
-    destinationSlug: "singapore",
+    country: "Singapore",
     accreditation: "JCI · MOH",
     focus: "Oncology & cardiac",
     image:
       "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1400&q=80",
+    summary:
+      "When the brief is certainty: tumor boards, re-reads, and cardiac surgery at a campus that already treats international patients at volume.",
+    languages: "English, Mandarin, Malay",
+    icu: "Tertiary ICU · oncology isolation",
   },
   {
     slug: "polanco-surgical",
     name: "Polanco Surgical Institute",
     city: "Mexico City",
-    destinationSlug: "mexico-city",
+    country: "Mexico",
     accreditation: "JCI · CSG",
     focus: "Dental, joints, metabolic",
     image:
       "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1400&q=80",
+    summary:
+      "US-trained specialists three hours from Texas. Family rooms, time-zone overlap, and in-house dental labs for full-arch work.",
+    languages: "English, Spanish",
+    icu: "Surgical ICU · companion rooms",
+  },
+];
+
+export const doctors: Doctor[] = [
+  {
+    slug: "min-seo-park",
+    name: "Dr. Min-seo Park",
+    title: "Facial architecture",
+    hospitalSlug: "cheongdam-atelier",
+    specialty: "Plastic surgery",
+    treatmentSlugs: ["facial-aesthetics"],
+    credentials: "Board-certified, Korean Society of Plastic Surgery · Harvard observership",
+    languages: "English, Korean",
+    years: "18 years",
+    cases: "2,400+ facial procedures",
+    image:
+      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80",
+    bio: "Dr. Park treats the face as a single plane — rhinoplasty, lids, and deep-plane work planned together. She declines add-on lists that do not serve the architecture.",
+  },
+  {
+    slug: "hana-lee",
+    name: "Dr. Hana Lee",
+    title: "Dermatologic surgery",
+    hospitalSlug: "cheongdam-atelier",
+    specialty: "Dermatology",
+    treatmentSlugs: ["facial-aesthetics"],
+    credentials: "Seoul National University · ASDS international fellow",
+    languages: "English, Korean, Mandarin",
+    years: "14 years",
+    cases: "Energy and injectables protocols published annually",
+    image:
+      "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=1200&q=80",
+    bio: "Dr. Lee runs the non-surgical floor at Cheongdam: lasers, scar revision, and skin quality work sequenced around any theatre date so recovery is not guesswork.",
+  },
+  {
+    slug: "emre-yildiz",
+    name: "Dr. Emre Yıldız",
+    title: "Hair restoration",
+    hospitalSlug: "bosphorus-international",
+    specialty: "Hair surgery",
+    treatmentSlugs: ["hair-restoration"],
+    credentials: "ISHRS member · Istanbul University",
+    languages: "English, Turkish, German",
+    years: "16 years",
+    cases: "FUE capped at 3,500 grafts/day",
+    image:
+      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=80",
+    bio: "Dr. Yıldız will not overharvest. Density maps are reviewed by Velora before you fly; donor area photography is part of every discharge pack.",
+  },
+  {
+    slug: "leyla-kaplan",
+    name: "Dr. Leyla Kaplan",
+    title: "Prosthodontics",
+    hospitalSlug: "bosphorus-international",
+    specialty: "Dental reconstruction",
+    treatmentSlugs: ["dental-reconstruction"],
+    credentials: "Board prosthodontist · in-house digital lab director",
+    languages: "English, Turkish, Arabic",
+    years: "12 years",
+    cases: "Full-arch and smile design",
+    image:
+      "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=1200&q=80",
+    bio: "Dr. Kaplan’s lab sits on the same floor as theatre. Provisionals and finals are not couriered across a city — which is why two-visit cases are the exception, not the rule.",
+  },
+  {
+    slug: "niran-chaiwat",
+    name: "Dr. Niran Chaiwat",
+    title: "Aesthetic & reconstructive",
+    hospitalSlug: "sukhumvit-campus",
+    specialty: "Plastic surgery",
+    treatmentSlugs: ["facial-aesthetics", "bariatric"],
+    credentials: "Thai Board · ASAPS international",
+    languages: "English, Thai",
+    years: "20 years",
+    cases: "Body and facial combined plans",
+    image:
+      "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=1200&q=80",
+    bio: "Dr. Chaiwat prefers longer, gentler recoveries on campus. Combined procedures are staged against BMI, anemia, and a written nutrition plan — not a tourist calendar.",
+  },
+  {
+    slug: "amira-hassan",
+    name: "Dr. Amira Hassan",
+    title: "Interventional cardiology",
+    hospitalSlug: "marina-private",
+    specialty: "Cardiology",
+    treatmentSlugs: ["cardiac"],
+    credentials: "Cleveland Clinic trained · DHA consultant",
+    languages: "English, Arabic, French",
+    years: "19 years",
+    cases: "PCI, valves, complex CAD",
+    image:
+      "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=1200&q=80",
+    bio: "Dr. Hassan will not accept a case on price. Records are reviewed physician-to-physician; medevac protocol is on file before you book a flight.",
+  },
+  {
+    slug: "wei-tan",
+    name: "Dr. Wei Tan",
+    title: "Surgical oncology",
+    hospitalSlug: "orchard-precision",
+    specialty: "Oncology",
+    treatmentSlugs: ["oncology"],
+    credentials: "NCCS · FRCS · tumor board chair",
+    languages: "English, Mandarin",
+    years: "22 years",
+    cases: "GI, breast, precision pathways",
+    image:
+      "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=1200&q=80",
+    bio: "Dr. Tan’s pathway starts with a re-read, not a quote. If Singapore is not the right campus, the dossier says so in writing.",
+  },
+  {
+    slug: "ananya-rao",
+    name: "Dr. Ananya Rao",
+    title: "Reproductive medicine",
+    hospitalSlug: "orchard-precision",
+    specialty: "Fertility",
+    treatmentSlugs: ["fertility"],
+    credentials: "MRCOG · ESHRE certified lab",
+    languages: "English, Tamil, Mandarin",
+    years: "15 years",
+    cases: "IVF, egg freeze, donor briefings",
+    image:
+      "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1200&q=80",
+    bio: "Dr. Rao’s lab publishes real rates, not marketing percentages. A third cycle is sometimes advised against — and that letter is part of the product.",
+  },
+  {
+    slug: "sofia-reyes",
+    name: "Dr. Sofía Reyes",
+    title: "Adult reconstruction",
+    hospitalSlug: "polanco-surgical",
+    specialty: "Orthopedics",
+    treatmentSlugs: ["orthopedics"],
+    credentials: "AAOS international · robotic hip/knee",
+    languages: "English, Spanish",
+    years: "17 years",
+    cases: "Primary and revision joints",
+    image:
+      "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1200&q=80",
+    bio: "Dr. Reyes uses implant brands of record and starts physiotherapy on day one. Fit-to-fly is not a suggestion — it is a signed clearance.",
+  },
+  {
+    slug: "miguel-orta",
+    name: "Dr. Miguel Orta",
+    title: "Metabolic surgery",
+    hospitalSlug: "polanco-surgical",
+    specialty: "Bariatric",
+    treatmentSlugs: ["bariatric"],
+    credentials: "IFSO · US fellowship",
+    languages: "English, Spanish",
+    years: "13 years",
+    cases: "Sleeve and bypass with 12-month follow-up",
+    image:
+      "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=1200&q=80",
+    bio: "Dr. Orta declines three-day tourist packages. Sleep apnea, reflux, and diabetes status decide the procedure — not the brochure.",
   },
 ];
 
@@ -465,18 +553,26 @@ export const faqs = [
   },
 ];
 
-export function getDestination(slug: string) {
-  return destinations.find((d) => d.slug === slug);
-}
-
 export function getTreatment(slug: string) {
   return treatments.find((t) => t.slug === slug);
 }
 
-export function hospitalsForDestination(slug: string) {
-  return hospitals.filter((h) => h.destinationSlug === slug);
+export function getHospital(slug: string) {
+  return hospitals.find((h) => h.slug === slug);
 }
 
-export function treatmentsForDestination(slug: string) {
-  return treatments.filter((t) => t.destinations.includes(slug));
+export function getDoctor(slug: string) {
+  return doctors.find((d) => d.slug === slug);
+}
+
+export function doctorsForHospital(slug: string) {
+  return doctors.filter((d) => d.hospitalSlug === slug);
+}
+
+export function treatmentsForHospital(slug: string) {
+  return treatments.filter((t) => t.hospitalSlugs.includes(slug));
+}
+
+export function doctorsForTreatment(slug: string) {
+  return doctors.filter((d) => d.treatmentSlugs.includes(slug));
 }

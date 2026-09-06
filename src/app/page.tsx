@@ -3,7 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
-import { destinations, steps, stories, treatments } from "@/lib/data";
+import { doctors, hospitals, steps, stories, treatments } from "@/lib/data";
 import { site } from "@/lib/site";
 
 export default function HomePage() {
@@ -38,17 +38,17 @@ export default function HomePage() {
               variant="outline"
               className="h-12 rounded-full border-white/30 bg-transparent px-8 text-ivory hover:bg-white/10 hover:text-ivory"
             >
-              <Link href="/destinations">Explore destinations</Link>
+              <Link href="/doctors">Meet the doctors</Link>
             </Button>
           </div>
           <dl className="mt-16 grid max-w-3xl grid-cols-3 gap-6 border-t border-white/15 pt-8 text-sm">
             <div>
-              <dt className="text-ivory/55">Partner campuses</dt>
-              <dd className="mt-1 font-heading text-3xl">18</dd>
+              <dt className="text-ivory/55">Named doctors</dt>
+              <dd className="mt-1 font-heading text-3xl">{doctors.length}</dd>
             </div>
             <div>
-              <dt className="text-ivory/55">Cities</dt>
-              <dd className="mt-1 font-heading text-3xl">6</dd>
+              <dt className="text-ivory/55">Hospitals</dt>
+              <dd className="mt-1 font-heading text-3xl">{hospitals.length}</dd>
             </div>
             <div>
               <dt className="text-ivory/55">Coordinator hours</dt>
@@ -59,25 +59,27 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-        <div className="grid gap-12 md:grid-cols-12">
-          <div className="md:col-span-5">
-            <p className="eyebrow">Why Velora</p>
-            <h2 className="mt-4 font-heading text-4xl md:text-5xl">
-              Not a marketplace. A house.
-            </h2>
-          </div>
-          <div className="md:col-span-7 space-y-6 text-[1.05rem] leading-relaxed text-muted-foreground">
-            <p>
-              Most medical tourism sites auction you to whoever pays for leads.
-              We keep a short list: JCI hospitals, surgeons we have sat with,
-              recovery addresses we would send our own family to.
-            </p>
-            <p>
-              You receive a written dossier — two or three options, all-in cost,
-              stay length, complication pathway — then you meet the surgeon on
-              camera. Nothing is booked until that conversation is done.
-            </p>
-          </div>
+        <p className="eyebrow">Index</p>
+        <h2 className="mt-3 font-heading text-4xl md:text-5xl">How to read the house</h2>
+        <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <IndexCard
+            href="/doctors"
+            kicker="01"
+            title="Doctors"
+            body="Named specialists you meet on camera before any deposit."
+          />
+          <IndexCard
+            href="/hospitals"
+            kicker="02"
+            title="Hospitals"
+            body="JCI campuses with international desks that actually answer."
+          />
+          <IndexCard
+            href="/costs"
+            kicker="03"
+            title="Treatment Cost"
+            body="US cash-pay beside partner ranges. Quotes come after the dossier."
+          />
         </div>
       </section>
 
@@ -85,38 +87,32 @@ export default function HomePage() {
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="flex items-end justify-between gap-6">
             <div>
-              <p className="eyebrow">Atlas</p>
-              <h2 className="mt-3 font-heading text-4xl md:text-5xl">Destinations</h2>
+              <p className="eyebrow">Faculty</p>
+              <h2 className="mt-3 font-heading text-4xl md:text-5xl">Doctors</h2>
             </div>
-            <Link
-              href="/destinations"
-              className="hidden items-center gap-2 text-sm md:inline-flex"
-            >
+            <Link href="/doctors" className="hidden items-center gap-2 text-sm md:inline-flex">
               View all <ArrowRight className="size-4" />
             </Link>
           </div>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {destinations.map((d) => (
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {doctors.slice(0, 8).map((d) => (
               <Link
                 key={d.slug}
-                href={`/destinations/${d.slug}`}
-                className="group relative min-h-72 overflow-hidden rounded-2xl"
+                href={`/doctors/${d.slug}`}
+                className="group overflow-hidden rounded-2xl bg-card"
               >
-                <Image
-                  src={d.image}
-                  alt={`${d.city}, ${d.country}`}
-                  fill
-                  className="object-cover transition duration-700 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-ink/80 via-ink/20 to-transparent" />
-                <div className="absolute inset-x-0 bottom-0 p-6 text-ivory">
-                  <p className="text-xs tracking-[0.2em] uppercase text-gold">
-                    {d.country}
-                  </p>
-                  <h3 className="mt-1 font-heading text-3xl">{d.city}</h3>
-                  <p className="mt-2 line-clamp-2 text-sm text-ivory/75">
-                    {d.specialties.join(" · ")}
-                  </p>
+                <div className="relative h-64">
+                  <Image
+                    src={d.image}
+                    alt={d.name}
+                    fill
+                    className="object-cover object-top transition duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-5">
+                  <p className="text-xs tracking-[0.18em] uppercase text-gold">{d.specialty}</p>
+                  <h3 className="mt-1 font-heading text-2xl">{d.name}</h3>
+                  <p className="text-sm text-muted-foreground">{d.title}</p>
                 </div>
               </Link>
             ))}
@@ -125,37 +121,29 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-        <p className="eyebrow">Pathways</p>
-        <h2 className="mt-3 font-heading text-4xl md:text-5xl">Treatments we arrange</h2>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
+        <div className="flex items-end justify-between gap-6">
+          <div>
+            <p className="eyebrow">Ledger</p>
+            <h2 className="mt-3 font-heading text-4xl md:text-5xl">Treatment cost</h2>
+          </div>
+          <Link href="/costs" className="hidden items-center gap-2 text-sm md:inline-flex">
+            Full table <ArrowRight className="size-4" />
+          </Link>
+        </div>
+        <div className="mt-10 divide-y divide-border rounded-2xl border border-border bg-card">
           {treatments.slice(0, 6).map((t) => (
             <Link
               key={t.slug}
-              href={`/treatments/${t.slug}`}
-              className="group flex flex-col justify-between rounded-2xl border border-border bg-card p-7 transition hover:border-primary/30"
+              href={`/costs/${t.slug}`}
+              className="grid gap-2 px-6 py-5 md:grid-cols-12 md:items-center"
             >
-              <div>
-                <p className="text-xs tracking-[0.18em] uppercase text-muted-foreground">
-                  {t.category}
-                </p>
-                <h3 className="mt-2 font-heading text-3xl">{t.name}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {t.summary}
-                </p>
-              </div>
-              <div className="mt-6 flex items-center justify-between text-sm">
-                <span>
-                  Typical partner range{" "}
-                  <span className="text-foreground">{t.partnerRange}</span>
-                </span>
-                <ArrowRight className="size-4 transition group-hover:translate-x-1" />
-              </div>
+              <p className="font-heading text-2xl md:col-span-4">{t.name}</p>
+              <p className="text-sm text-muted-foreground md:col-span-4">US {t.usRange}</p>
+              <p className="text-sm md:col-span-3">Partner {t.partnerRange}</p>
+              <ArrowRight className="hidden size-4 justify-self-end md:col-span-1 md:block" />
             </Link>
           ))}
         </div>
-        <Button asChild variant="outline" className="mt-8 h-11 rounded-full px-6">
-          <Link href="/treatments">All treatments</Link>
-        </Button>
       </section>
 
       <section className="border-y border-border bg-ivory py-20 md:py-28">
@@ -187,7 +175,7 @@ export default function HomePage() {
               <footer className="mt-8 text-sm text-muted-foreground">
                 <p className="text-foreground">{s.name}</p>
                 <p>
-                  {s.from} · {s.treatment} · {s.destination}
+                  {s.from} · {s.treatment}
                 </p>
               </footer>
             </blockquote>
@@ -197,5 +185,31 @@ export default function HomePage() {
 
       <CtaBand />
     </>
+  );
+}
+
+function IndexCard({
+  href,
+  kicker,
+  title,
+  body,
+}: {
+  href: string;
+  kicker: string;
+  title: string;
+  body: string;
+}) {
+  return (
+    <Link
+      href={href}
+      className="group rounded-2xl border border-border bg-card p-8 transition hover:border-primary/30"
+    >
+      <p className="font-heading text-2xl text-gold">{kicker}</p>
+      <h3 className="mt-4 font-heading text-3xl">{title}</h3>
+      <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
+      <p className="mt-6 inline-flex items-center gap-2 text-sm">
+        Open <ArrowRight className="size-4 transition group-hover:translate-x-1" />
+      </p>
+    </Link>
   );
 }

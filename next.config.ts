@@ -7,6 +7,14 @@ const nextConfig: NextConfig = {
     "172.30.0.2",
     "*.trycloudflare.com",
   ],
+  async redirects() {
+    return [
+      { source: "/destinations", destination: "/hospitals", permanent: true },
+      { source: "/destinations/:slug", destination: "/hospitals", permanent: true },
+      { source: "/treatments", destination: "/costs", permanent: true },
+      { source: "/treatments/:slug", destination: "/costs/:slug", permanent: true },
+    ];
+  },
   images: {
     remotePatterns: [
       {

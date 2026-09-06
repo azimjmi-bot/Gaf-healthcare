@@ -12,26 +12,28 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { destinations, treatments } from "@/lib/data";
+import { hospitals, treatments } from "@/lib/data";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export function ConsultForm({
   defaultTreatment,
-  defaultDestination,
+  defaultHospital,
+  defaultDoctor,
 }: {
   defaultTreatment?: string;
-  defaultDestination?: string;
+  defaultHospital?: string;
+  defaultDoctor?: string;
 }) {
   const [status, setStatus] = useState<Status>("idle");
   const [reference, setReference] = useState("");
   const [error, setError] = useState("");
   const [treatment, setTreatment] = useState(defaultTreatment ?? "");
-  const [destination, setDestination] = useState(defaultDestination ?? "");
+  const [hospital, setHospital] = useState(defaultHospital ?? "");
   const [timeline, setTimeline] = useState("");
 
   const treatmentOptions = useMemo(() => treatments, []);
-  const destinationOptions = useMemo(() => destinations, []);
+  const hospitalOptions = useMemo(() => hospitals, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -45,7 +47,8 @@ export function ConsultForm({
       phone: String(data.get("phone") || ""),
       country: String(data.get("country") || ""),
       treatment,
-      destination,
+      hospital,
+      doctor: defaultDoctor ?? "",
       timeline,
       notes: String(data.get("notes") || ""),
       consent: data.get("consent") === "on",
@@ -71,7 +74,7 @@ export function ConsultForm({
       setStatus("success");
       form.reset();
       setTreatment("");
-      setDestination("");
+      setHospital("");
       setTimeline("");
     } catch (err) {
       setStatus("error");
@@ -138,16 +141,16 @@ export function ConsultForm({
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Destination preference</Label>
-          <Select value={destination || undefined} onValueChange={setDestination}>
+          <Label>Hospital preference</Label>
+          <Select value={hospital || undefined} onValueChange={setHospital}>
             <SelectTrigger className="h-11 w-full">
               <SelectValue placeholder="Open to guidance" />
             </SelectTrigger>
             <SelectContent>
               <SelectItem value="open">Open — advise me</SelectItem>
-              {destinationOptions.map((d) => (
-                <SelectItem key={d.slug} value={d.slug}>
-                  {d.city}
+              {hospitalOptions.map((h) => (
+                <SelectItem key={h.slug} value={h.slug}>
+                  {h.name}
                 </SelectItem>
               ))}
             </SelectContent>

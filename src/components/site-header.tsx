@@ -14,9 +14,9 @@ import {
 import { useState } from "react";
 
 const links = [
-  { href: "/destinations", label: "Destinations" },
-  { href: "/treatments", label: "Treatments" },
+  { href: "/doctors", label: "Doctors" },
   { href: "/hospitals", label: "Hospitals" },
+  { href: "/costs", label: "Treatment Cost" },
   { href: "/journey", label: "The journey" },
   { href: "/stories", label: "Stories" },
   { href: "/about", label: "Atelier" },

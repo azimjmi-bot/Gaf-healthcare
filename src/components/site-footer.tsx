@@ -5,9 +5,9 @@ const columns = [
   {
     title: "Plan",
     links: [
-      { href: "/destinations", label: "Destinations" },
-      { href: "/treatments", label: "Treatments" },
-      { href: "/hospitals", label: "Partner hospitals" },
+      { href: "/doctors", label: "Doctors" },
+      { href: "/hospitals", label: "Hospitals" },
+      { href: "/costs", label: "Treatment Cost" },
       { href: "/journey", label: "How it works" },
     ],
   },
@@ -29,7 +29,7 @@ export function SiteFooter() {
           <p className="font-heading text-3xl tracking-[0.2em] uppercase">Velora</p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-ivory/70">
             {site.tagline} A private medical travel atelier for patients who want
-            accredited hospitals, named surgeons, and a coordinator who stays on
+            accredited hospitals, named doctors, and a coordinator who stays on
             the line after you land.
           </p>
           <p className="mt-6 text-sm text-ivory/60">

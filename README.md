@@ -1,6 +1,6 @@
 # Velora
 
-Private medical travel atelier. A premium site for matching patients with JCI-accredited hospitals in Seoul, Istanbul, Bangkok, Dubai, Singapore, and Mexico City.
+Private medical travel atelier. Named doctors, JCI hospitals, and a treatment-cost ledger — not a destination marketplace.
 
 ## Local development
 
