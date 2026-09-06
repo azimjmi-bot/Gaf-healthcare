@@ -1,8 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { EbrtGuide } from "@/components/ebrt-guide";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
+import { ebrtMeta } from "@/data/ebrt-guide";
+import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import {
   doctorsForTreatment,
   getHospital,
@@ -22,7 +25,11 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const t = getTreatment(slug);
-  return { title: t ? `${t.name} cost` : "Treatment Cost" };
+  if (!t) return { title: "Treatment Cost" };
+  if (t.slug === "external-beam-radiotherapy-ebrt") {
+    return { title: ebrtMeta.title, description: ebrtMeta.description };
+  }
+  return { title: `${t.name} cost`, description: t.summary };
 }
 
 export default async function CostDetailPage({
@@ -33,8 +40,13 @@ export default async function CostDetailPage({
   const { slug } = await params;
   const t = getTreatment(slug);
   if (!t) notFound();
+  const isEbrt = t.slug === "external-beam-radiotherapy-ebrt";
   const campuses = t.hospitalSlugs.map((s) => getHospital(s)).filter(Boolean);
   const faculty = doctorsForTreatment(t.slug);
+  const featuredFaculty = [...faculty]
+    .sort((a, b) => Number(b.featured) - Number(a.featured))
+    .slice(0, 8);
+  const related = treatments.filter((x) => x.slug !== t.slug).slice(0, 6);
 
   return (
     <>
@@ -43,24 +55,34 @@ export default async function CostDetailPage({
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-12 md:px-8">
           <p className="eyebrow text-gold">Treatment cost · {t.category}</p>
-          <h1 className="mt-3 font-heading text-5xl md:text-7xl">{t.name}</h1>
+          <h1 className="mt-3 max-w-5xl font-heading text-4xl md:text-6xl">
+            {isEbrt
+              ? "External Beam Radiation Therapy (EBRT): Cost, Treatment, Procedure, Sessions & Recovery"
+              : t.name}
+          </h1>
         </div>
       </section>
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-12 md:px-8">
         <div className="md:col-span-7">
-          <p className="text-lg leading-relaxed text-muted-foreground">{t.summary}</p>
-          <p className="mt-6 text-muted-foreground">{t.notes}</p>
-          <h2 className="mt-12 font-heading text-3xl">Typically included</h2>
-          <ul className="mt-4 space-y-2 text-muted-foreground">
-            {t.includes.map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="mt-2 size-1.5 shrink-0 rounded-full bg-gold" />
-                {item}
-              </li>
-            ))}
-          </ul>
+          {isEbrt ? (
+            <EbrtGuide />
+          ) : (
+            <>
+              <p className="text-lg leading-relaxed text-muted-foreground">{t.summary}</p>
+              <p className="mt-6 text-muted-foreground">{t.notes}</p>
+              <h2 className="mt-12 font-heading text-3xl">Typically included</h2>
+              <ul className="mt-4 space-y-2 text-muted-foreground">
+                {t.includes.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="mt-2 size-1.5 shrink-0 rounded-full bg-gold" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
         </div>
-        <aside className="md:col-span-5 space-y-6">
+        <aside className="md:col-span-5 space-y-6 md:sticky md:top-28 md:self-start">
           <div className="rounded-2xl border border-border bg-card p-8">
             <dl className="space-y-5">
               <div>
@@ -71,7 +93,7 @@ export default async function CostDetailPage({
               </div>
               <div>
                 <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">
-                  Partner range
+                  India planning range
                 </dt>
                 <dd className="mt-1 font-heading text-2xl">{t.partnerRange}</dd>
               </div>
@@ -83,29 +105,74 @@ export default async function CostDetailPage({
             <Button asChild className="mt-8 h-11 w-full rounded-full">
               <Link href={`/consult?treatment=${t.slug}`}>Request this pathway</Link>
             </Button>
+            <p className="mt-4 text-xs text-muted-foreground">
+              Not a quote. Technique and fractions are set after records review.
+            </p>
+          </div>
+          <div className="rounded-2xl border border-border bg-card p-6 text-sm">
+            <p className="text-xs tracking-[0.18em] uppercase text-gold">Related</p>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <Link href={doctorsPath({ destination: "India", procedure: t.name })}>
+                  Doctors for {isEbrt ? "EBRT" : t.name}
+                </Link>
+              </li>
+              <li>
+                <Link href={hospitalsPath({ destination: "India", procedure: t.name })}>
+                  Hospitals offering this technique
+                </Link>
+              </li>
+              <li>
+                <Link href="/costs">All treatment costs</Link>
+              </li>
+              {isEbrt ? (
+                <li>
+                  <Link href="/blogs/records-before-you-book-ebrt">Records to send before travel</Link>
+                </li>
+              ) : null}
+            </ul>
           </div>
         </aside>
       </section>
       <section className="bg-secondary/40 py-16">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <h2 className="font-heading text-3xl">Doctors</h2>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <h2 className="font-heading text-3xl">Radiation oncologists</h2>
+            <Link
+              href={doctorsPath({ destination: "India", procedure: t.name })}
+              className="text-sm underline-offset-4 hover:underline"
+            >
+              All {faculty.length} doctors
+            </Link>
+          </div>
           <ul className="mt-6 grid gap-4 md:grid-cols-2">
-            {faculty.map((d) => (
-              <li key={d.slug}>
-                <Link
-                  href={`/doctors/${d.slug}`}
-                  className="block rounded-xl border border-border bg-card p-6 hover:border-primary/30"
-                >
+            {featuredFaculty.map((d) => (
+              <li key={d.slug} className="rounded-xl border border-border bg-card p-6 hover:border-primary/30">
+                <Link href={`/doctors/${d.slug}`} className="block">
                   <p className="font-heading text-2xl">{d.name}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{d.title}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{d.hospitalName}</p>
                 </Link>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  <Link href={`/hospitals/${d.hospitalSlug}`} className="underline-offset-4 hover:underline">
+                    {d.hospitalName}
+                  </Link>
+                  {" · "}
+                  {d.city}
+                </p>
               </li>
             ))}
           </ul>
-          <h2 className="mt-14 font-heading text-3xl">Hospitals</h2>
+          <div className="mt-14 flex flex-wrap items-end justify-between gap-4">
+            <h2 className="font-heading text-3xl">Hospitals</h2>
+            <Link
+              href={hospitalsPath({ destination: "India", procedure: t.name })}
+              className="text-sm underline-offset-4 hover:underline"
+            >
+              All campuses
+            </Link>
+          </div>
           <ul className="mt-6 grid gap-4 md:grid-cols-2">
-            {campuses.map((h) =>
+            {campuses.slice(0, 12).map((h) =>
               h ? (
                 <li key={h.slug}>
                   <Link
@@ -114,12 +181,28 @@ export default async function CostDetailPage({
                   >
                     <p className="font-heading text-2xl">{h.name}</p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      {h.city}, {h.country}
+                      {h.city}, {h.country} · {h.accreditation}
                     </p>
                   </Link>
                 </li>
               ) : null,
             )}
+          </ul>
+          <h2 className="mt-14 font-heading text-3xl">Related procedures</h2>
+          <ul className="mt-6 grid gap-4 md:grid-cols-2">
+            {related.map((r) => (
+              <li key={r.slug}>
+                <Link
+                  href={costPath(r.name)}
+                  className="block rounded-xl border border-border bg-card p-6 hover:border-primary/30"
+                >
+                  <p className="font-heading text-2xl">{r.name}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">
+                    Partner {r.partnerRange} · Stay {r.stay}
+                  </p>
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       </section>

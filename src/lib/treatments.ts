@@ -1,5 +1,5 @@
 import { hospitals } from "@/lib/hospitals";
-import { RADIATION_PROCEDURES, toSlug } from "@/lib/taxonomy";
+import { PROCEDURE_CLUSTERS, RADIATION_PROCEDURES, toSlug } from "@/lib/taxonomy";
 
 export type Treatment = {
   slug: string;
@@ -19,13 +19,23 @@ export type Treatment = {
   notes: string;
 };
 
-const RADIATION_HOSPITALS = hospitals.map((h) => h.slug);
+function hospitalSlugsForProcedure(name: string) {
+  const family =
+    name === "External Beam Radiotherapy (EBRT)"
+      ? [...PROCEDURE_CLUSTERS.linac, ...PROCEDURE_CLUSTERS.stereo, "Proton Beam Therapy"]
+      : [name];
+  const slugs = new Set(family.map(toSlug));
+  const matched = hospitals
+    .filter((h) => h.procedureSlugs.some((p) => slugs.has(p)))
+    .map((h) => h.slug);
+  return matched.length ? matched : hospitals.map((h) => h.slug);
+}
 
 const RADIATION_COST: Record<string, { us: string; partner: string; stay: string }> = {
   "External Beam Radiotherapy (EBRT)": {
     us: "$12,000–$25,000",
-    partner: "$4,200–$9,800",
-    stay: "4–6 weeks of fractions",
+    partner: "$1,000–$6,000+",
+    stay: "15–35 sessions typical · 4–7 weeks",
   },
   "3D Conformal Radiotherapy (3D-CRT)": {
     us: "$14,000–$28,000",
@@ -99,32 +109,53 @@ const RADIATION_COST: Record<string, { us: string; partner: string; stay: string
   },
 };
 
+const EBRT_COPY = {
+  summary:
+    "External Beam Radiation Therapy uses a linear accelerator outside the body to treat a tumour or area at risk. In India, published 2026 planning ranges for conventional and advanced courses are typically $1,000–$6,000+, depending on technique, fractions, hospital and cancer type.",
+  notes:
+    "Cost figures are indicative planning ranges, not quotations. The named radiation oncologist confirms technique, fractions and an itemized hospital price after records review.",
+  includes: [
+    "Radiation oncologist consultation",
+    "CT simulation and immobilisation where required",
+    "Treatment planning, dosimetry and physics QA",
+    "Radiation delivery and on-treatment reviews",
+    "Named consultant on camera before travel",
+    "Discharge summary to your home oncologist",
+  ],
+};
+
 export const treatments: Treatment[] = RADIATION_PROCEDURES.map((name) => {
   const cost = RADIATION_COST[name];
   const slug = toSlug(name);
+  const isEbrt = name === "External Beam Radiotherapy (EBRT)";
   return {
     slug,
     name,
     category: "Radiation Oncology",
     specialtySlug: "radiation-oncology",
     procedureSlug: slug,
-    summary: `Radiation Oncology — ${name} delivered at JCI-accredited partner campuses with physics QA, peer-reviewed plans, and a named radiation oncologist before you travel.`,
+    summary: isEbrt
+      ? EBRT_COPY.summary
+      : `Radiation Oncology — ${name} delivered at JCI-accredited partner campuses with physics QA, peer-reviewed plans, and a named radiation oncologist before you travel.`,
     image:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80",
     usRange: cost.us,
     partnerRange: cost.partner,
     stay: cost.stay,
-    hospitalSlugs: RADIATION_HOSPITALS,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
     conditions: ["Solid tumors", "Cancer second opinion"],
     procedures: [name],
-    includes: [
-      "Simulation CT and contouring review",
-      "Physics QA and peer plan check",
-      "Named radiation oncologist on camera before travel",
-      "Discharge summary to your home oncologist",
-    ],
-    notes:
-      "Fractions, energy, and whether protons or brachytherapy are appropriate are decided after records review — not from a brochure price.",
+    includes: isEbrt
+      ? EBRT_COPY.includes
+      : [
+          "Simulation CT and contouring review",
+          "Physics QA and peer plan check",
+          "Named radiation oncologist on camera before travel",
+          "Discharge summary to your home oncologist",
+        ],
+    notes: isEbrt
+      ? EBRT_COPY.notes
+      : "Fractions, energy, and whether protons or brachytherapy are appropriate are decided after records review — not from a brochure price.",
   };
 });
 

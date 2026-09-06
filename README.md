@@ -26,4 +26,4 @@ Next.js (App Router), TypeScript, Tailwind CSS, shadcn/ui.
 
 The consult form posts to `/api/consult` and returns a reference number. There is no database in this slice — submissions are validated and acknowledged so the intake experience can be used end to end.
 
-Cost ranges on treatment pages are illustrative, not quotes. Velora is presented as a coordinator, not a hospital.
+Cost ranges on treatment pages are illustrative, not quotes. The External Beam Radiation Therapy (EBRT) page is a full guide (sessions, city costs, FAQs) with links into doctors, hospitals, related techniques, and planning blogs.

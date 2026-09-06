@@ -20,7 +20,7 @@ export default async function CostsPage({
       <PageIntro
         eyebrow="Ledger"
         title="What it typically costs — beside what it costs at home."
-        lede="Radiation Oncology procedure costs at partner campuses. Filter by destination, city, specialty, or radiotherapy technique."
+        lede="Radiation Oncology procedure costs at partner campuses. Start with External Beam Radiation Therapy (EBRT), then filter by destination, city, specialty, or technique."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

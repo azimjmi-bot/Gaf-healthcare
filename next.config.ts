@@ -21,6 +21,11 @@ const nextConfig: NextConfig = {
       { source: "/costs/fertility", destination: "/costs", permanent: true },
       { source: "/costs/oncology", destination: "/costs", permanent: true },
       { source: "/costs/bariatric", destination: "/costs", permanent: true },
+      {
+        source: "/costs/ebrt",
+        destination: "/costs/external-beam-radiotherapy-ebrt",
+        permanent: true,
+      },
       { source: "/journey", destination: "/blogs", permanent: true },
       { source: "/stories", destination: "/blogs", permanent: true },
       { source: "/about", destination: "/", permanent: true },

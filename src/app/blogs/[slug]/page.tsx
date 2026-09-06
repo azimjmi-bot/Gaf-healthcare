@@ -51,6 +51,16 @@ export default async function BlogPostPage({
             <p key={para.slice(0, 40)}>{para}</p>
           ))}
         </div>
+        {post.slug === "records-before-you-book-ebrt" ? (
+          <p className="mt-8">
+            <Link
+              href="/costs/external-beam-radiotherapy-ebrt"
+              className="underline-offset-4 hover:underline"
+            >
+              EBRT cost, treatment, sessions and recovery
+            </Link>
+          </p>
+        ) : null}
         <Link
           href="/blogs"
           className="mt-12 inline-block text-sm underline-offset-4 hover:underline"

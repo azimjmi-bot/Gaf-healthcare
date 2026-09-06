@@ -87,7 +87,7 @@ export const posts: BlogPost[] = [
     body: [
       "For EBRT, IMRT, or IGRT we want operative notes, histopathology, recent imaging in a readable format, prior radiation details if any, and your current systemic therapy list.",
       "TBI is a special case: it exists inside a transplant protocol. We will not book total body irradiation as an isolated tourist service.",
-      "Once records are in, the named radiation oncologist meets you on camera. Fractions, energy, and whether you should stay home are decided there — then travel is built around the first simulation slot.",
+      "Once records are in, the named radiation oncologist meets you on camera. Fractions, energy, and whether you should stay home are decided there — then travel is built around the first simulation slot. City-level planning ranges and technique notes sit on the External Beam Radiation Therapy cost page.",
     ],
   },
 ];
