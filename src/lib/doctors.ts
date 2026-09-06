@@ -16,7 +16,6 @@ export type Doctor = {
   featured: boolean;
   hospitalSlug: string;
   hospitalName: string;
-  hospitalImage: string;
   specialty: string;
   specialtySlug: string;
   procedures: string[];
@@ -37,10 +36,6 @@ export type Doctor = {
   languages: string;
   years: string;
   experience: string;
-  cases: string;
-  image: string;
-  bio: string;
-  excerpt: string;
 };
 
 const PROCEDURE_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
@@ -104,7 +99,6 @@ export const doctors: Doctor[] = catalog.doctors.map((seed) => {
   const mapped = mapCatalogProcedures([
     ...seed.proceduresExpertise,
     ...seed.specializations,
-    seed.summary,
     seed.designation,
   ]);
   const procedures = mapped.map((name) => {
@@ -114,8 +108,6 @@ export const doctors: Doctor[] = catalog.doctors.map((seed) => {
   });
 
   const title = cleanTitle(seed.designation || "Radiation Oncologist");
-  const image = seed.image;
-  if (!image) throw new Error(`Doctor ${seed.slug} has no portrait`);
 
   return {
     slug: seed.slug,
@@ -125,7 +117,6 @@ export const doctors: Doctor[] = catalog.doctors.map((seed) => {
     featured: seed.featured,
     hospitalSlug: seed.hospitalSlug,
     hospitalName: hospital?.name || seed.hospitalCaption || seed.hospitalName,
-    hospitalImage: seed.hospitalImage || hospital?.image || "",
     specialty: specialty.name,
     specialtySlug: specialty.slug,
     procedures: procedures.map((p) => p.name),
@@ -146,10 +137,6 @@ export const doctors: Doctor[] = catalog.doctors.map((seed) => {
     languages: languagesFor(city.name),
     years: seed.experience,
     experience: seed.experience,
-    cases: "",
-    image,
-    bio: seed.summary,
-    excerpt: seed.excerpt || seed.summary.slice(0, 280),
   };
 });
 

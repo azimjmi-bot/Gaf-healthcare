@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Star } from "lucide-react";
@@ -50,74 +49,43 @@ export default async function DoctorDetailPage({
     <>
       <section className="relative overflow-hidden bg-ink text-ivory">
         <div className="pointer-events-none absolute -left-24 top-10 size-72 rounded-full bg-gold/10 blur-3xl" />
-        <div className="pointer-events-none absolute -right-16 bottom-0 size-80 rounded-full bg-white/5 blur-3xl" />
-        <div className="relative mx-auto grid max-w-7xl gap-10 px-5 py-14 md:grid-cols-12 md:px-8 md:py-16">
-          <div className="md:col-span-4">
-            <div className="relative overflow-hidden rounded-2xl">
-              <div className="relative aspect-[4/5]">
-                <Image src={d.image} alt={d.name} fill className="object-cover object-top" priority />
-              </div>
-              <p className="absolute inset-x-0 bottom-0 bg-ink/75 px-4 py-3 text-sm">{d.name}</p>
-            </div>
-          </div>
-          <div className="md:col-span-5">
-            <div className="flex flex-wrap gap-2">
-              {d.featured ? (
-                <span className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1 text-xs font-medium text-ink">
-                  <Star className="size-3 fill-amber-500 text-amber-500" /> Featured
-                </span>
-              ) : null}
-              <span className="rounded-full border border-white/20 px-3 py-1 text-xs">{d.specialty}</span>
-              {d.experience ? (
-                <span className="rounded-full border border-white/20 px-3 py-1 text-xs">{d.experience}</span>
-              ) : null}
-            </div>
-            <h1 className="mt-5 font-heading text-4xl md:text-6xl">{d.name}</h1>
-            {d.qualifications ? (
-              <p className="mt-3 text-sm tracking-wide text-ivory/70">{d.qualifications}</p>
+        <div className="relative mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
+          <div className="flex flex-wrap gap-2">
+            {d.featured ? (
+              <span className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1 text-xs font-medium text-ink">
+                <Star className="size-3 fill-amber-500 text-amber-500" /> Featured
+              </span>
             ) : null}
-            <p className="mt-2 text-lg text-ivory/85">{d.title}</p>
-            {hospital ? (
-              <Link
-                href={`/hospitals/${hospital.slug}`}
-                className="mt-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm hover:bg-white/15"
-              >
-                {hospital.name}, {d.city}
-                <ArrowRight className="size-4" />
-              </Link>
-            ) : null}
-            <Button asChild className="mt-8 h-12 rounded-full bg-gold px-8 text-ink hover:bg-gold/90">
-              <Link href={`/consult?doctor=${d.slug}`}>Book consultation</Link>
-            </Button>
-          </div>
-          <div className="md:col-span-3">
-            {d.hospitalImage ? (
-              <Link href={`/hospitals/${d.hospitalSlug}`} className="block overflow-hidden rounded-2xl">
-                <div className="relative aspect-[4/5]">
-                  <Image
-                    src={d.hospitalImage}
-                    alt={d.hospitalName}
-                    fill
-                    className="object-cover"
-                    sizes="280px"
-                  />
-                </div>
-                <div className="bg-black/40 px-4 py-3">
-                  <p className="text-sm">{d.hospitalName}</p>
-                  <p className="mt-1 text-xs text-ivory/70">
-                    {d.city}, {d.country}
-                  </p>
-                </div>
-              </Link>
+            <span className="rounded-full border border-white/20 px-3 py-1 text-xs">{d.specialty}</span>
+            {d.experience ? (
+              <span className="rounded-full border border-white/20 px-3 py-1 text-xs">{d.experience}</span>
             ) : null}
           </div>
+          <h1 className="mt-5 font-heading text-4xl md:text-6xl">{d.name}</h1>
+          {d.qualifications ? (
+            <p className="mt-3 text-sm tracking-wide text-ivory/70">{d.qualifications}</p>
+          ) : null}
+          <p className="mt-2 text-lg text-ivory/85">{d.title}</p>
+          {hospital ? (
+            <Link
+              href={`/hospitals/${hospital.slug}`}
+              className="mt-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm hover:bg-white/15"
+            >
+              {hospital.name}, {d.city}
+              <ArrowRight className="size-4" />
+            </Link>
+          ) : (
+            <p className="mt-5 text-sm text-ivory/70">
+              {d.city}, {d.country}
+            </p>
+          )}
+          <Button asChild className="mt-8 h-12 rounded-full bg-gold px-8 text-ink hover:bg-gold/90">
+            <Link href={`/consult?doctor=${d.slug}`}>Book consultation</Link>
+          </Button>
         </div>
       </section>
 
       <article className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">
-        <h3 className="text-sm tracking-[0.2em] text-gold uppercase">About {d.name}</h3>
-        <h2 className="mt-3 font-heading text-3xl">Professional Summary</h2>
-        <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{d.bio}</p>
         <ProfileList title="Specializations" items={d.specializations} />
         <ProfileList title="Procedures & Expertise" items={d.proceduresExpertise} />
         <ProfileList title="Education & Qualifications" items={d.education} />

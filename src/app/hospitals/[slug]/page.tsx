@@ -88,18 +88,13 @@ export default async function HospitalDetailPage({
               <li key={d.slug}>
                 <Link
                   href={`/doctors/${d.slug}`}
-                  className="flex gap-4 rounded-xl border border-border bg-card p-4 hover:border-primary/30"
+                  className="block rounded-xl border border-border bg-card p-4 hover:border-primary/30"
                 >
-                  <div className="relative size-20 shrink-0 overflow-hidden rounded-lg">
-                    <Image src={d.image} alt={d.name} fill className="object-cover object-top" />
-                  </div>
-                  <div>
-                    <p className="font-heading text-xl">{d.name}</p>
-                    <p className="text-sm text-muted-foreground">{d.title}</p>
-                    <p className="text-sm text-muted-foreground">
-                      {d.city}, {d.country}
-                    </p>
-                  </div>
+                  <p className="font-heading text-xl">{d.name}</p>
+                  <p className="text-sm text-muted-foreground">{d.title}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {d.city}, {d.country}
+                  </p>
                 </Link>
               </li>
             ))}

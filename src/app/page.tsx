@@ -111,24 +111,15 @@ export default function HomePage() {
               <Link
                 key={d.slug}
                 href={`/doctors/${d.slug}`}
-                className="group overflow-hidden rounded-2xl bg-card"
+                className="group rounded-2xl border border-border bg-card p-5"
               >
-                <div className="relative h-64">
-                  <Image
-                    src={d.image}
-                    alt={d.name}
-                    fill
-                    className="object-cover object-top transition duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <div className="p-5">
-                  <p className="text-xs tracking-[0.18em] uppercase text-gold">{d.specialty}</p>
-                  <h3 className="mt-1 font-heading text-2xl">{d.name}</h3>
-                  <p className="text-sm text-muted-foreground">{d.title}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">
-                    {d.city}, {d.country}
-                  </p>
-                </div>
+                <p className="text-xs tracking-[0.18em] uppercase text-gold">{d.specialty}</p>
+                <h3 className="mt-1 font-heading text-2xl">{d.name}</h3>
+                <p className="text-sm text-muted-foreground">{d.qualifications}</p>
+                <p className="mt-2 text-sm text-muted-foreground">{d.title}</p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {d.city}, {d.country}
+                </p>
               </Link>
             ))}
           </div>

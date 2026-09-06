@@ -22,7 +22,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="Expert specialists"
         title="Top radiation oncologists in India"
-        lede="The same directory shape you would scan on a destination page: portrait, qualifications, designation, hospital, years, and a professional summary — then the full profile."
+        lede="Qualifications, designation, hospital, city, and years of practice. Portraits and long-form copy will come from CMS."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
