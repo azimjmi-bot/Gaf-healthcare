@@ -1,0 +1,138 @@
+"use client";
+
+import { useRouter, useSearchParams } from "next/navigation";
+import {
+  catalogConditions,
+  catalogDestinations,
+  catalogProcedures,
+  catalogSpecialties,
+  citiesForDestination,
+} from "@/lib/catalog";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+
+const ALL = "all";
+
+type Props = {
+  basePath: string;
+  resultCount: number;
+  resultLabel: string;
+};
+
+export function CatalogFilter({ basePath, resultCount, resultLabel }: Props) {
+  const router = useRouter();
+  const params = useSearchParams();
+  const destination = params.get("destination") ?? ALL;
+  const city = params.get("city") ?? ALL;
+  const specialty = params.get("specialty") ?? ALL;
+  const condition = params.get("condition") ?? ALL;
+  const procedure = params.get("procedure") ?? ALL;
+  const cities = citiesForDestination(destination === ALL ? undefined : destination);
+
+  function setFilter(key: string, value: string) {
+    const next = new URLSearchParams(params.toString());
+    if (!value || value === ALL) next.delete(key);
+    else next.set(key, value);
+    if (key === "destination") next.delete("city");
+    const qs = next.toString();
+    router.push(qs ? `${basePath}?${qs}` : basePath, { scroll: false });
+  }
+
+  return (
+    <div className="relative z-20 -mt-8 md:-mt-10">
+      <div className="rounded-2xl border border-border/80 bg-white p-3 shadow-[0_12px_40px_-18px_rgba(20,24,40,0.28)] md:p-4">
+        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
+          <FilterSelect
+            value={destination}
+            onChange={(v) => setFilter("destination", v)}
+            placeholder="All Destinations"
+            options={catalogDestinations}
+            allLabel="All Destinations"
+          />
+          <FilterSelect
+            value={city}
+            onChange={(v) => setFilter("city", v)}
+            placeholder="All Cities"
+            options={cities}
+            allLabel="All Cities"
+          />
+          <FilterSelect
+            value={specialty}
+            onChange={(v) => setFilter("specialty", v)}
+            placeholder="All Specialities"
+            options={catalogSpecialties}
+            allLabel="All Specialities"
+          />
+          <FilterSelect
+            value={condition}
+            onChange={(v) => setFilter("condition", v)}
+            placeholder="All Conditions"
+            options={catalogConditions}
+            allLabel="All Conditions"
+          />
+          <FilterSelect
+            value={procedure}
+            onChange={(v) => setFilter("procedure", v)}
+            placeholder="All Procedures"
+            options={catalogProcedures}
+            allLabel="All Procedures"
+          />
+        </div>
+      </div>
+      <p className="mt-3 px-1 text-sm text-muted-foreground">
+        {resultCount} {resultLabel} matching your filters
+      </p>
+    </div>
+  );
+}
+
+function FilterSelect({
+  value,
+  onChange,
+  placeholder,
+  options,
+  allLabel,
+}: {
+  value: string;
+  onChange: (value: string) => void;
+  placeholder: string;
+  options: string[];
+  allLabel: string;
+}) {
+  return (
+    <Select value={value} onValueChange={onChange}>
+      <SelectTrigger
+        size="default"
+        className="h-11 w-full rounded-lg border-border bg-white px-3 text-sm text-foreground shadow-none"
+      >
+        <SelectValue placeholder={placeholder} />
+      </SelectTrigger>
+      <SelectContent
+        position="popper"
+        align="start"
+        className="rounded-xl p-1 shadow-lg"
+      >
+        <SelectItem
+          value={ALL}
+          className="rounded-md py-2 pl-2.5 pr-8 focus:bg-sky-500 focus:text-white"
+        >
+          {allLabel}
+        </SelectItem>
+        {options.map((opt) => (
+          <SelectItem
+            key={opt}
+            value={opt}
+            className="rounded-md py-2 pl-2.5 pr-8 focus:bg-sky-500 focus:text-white"
+          >
+            {opt}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
+  );
+}

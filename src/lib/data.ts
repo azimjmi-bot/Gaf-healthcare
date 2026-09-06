@@ -8,6 +8,8 @@ export type Treatment = {
   partnerRange: string;
   stay: string;
   hospitalSlugs: string[];
+  conditions: string[];
+  procedures: string[];
   includes: string[];
   notes: string;
 };
@@ -64,6 +66,8 @@ export const treatments: Treatment[] = [
     partnerRange: "$6,800–$16,500",
     stay: "10–14 nights",
     hospitalSlugs: ["cheongdam-atelier", "sukhumvit-campus", "bosphorus-international", "marina-private"],
+    conditions: ["Facial aging", "Nasal deformity", "Eyelid ptosis"],
+    procedures: ["Deep-plane facelift", "Rhinoplasty", "Blepharoplasty"],
     includes: [
       "3D imaging and surgeon matching",
       "Pre-op labs and anesthesia review",
@@ -85,6 +89,8 @@ export const treatments: Treatment[] = [
     partnerRange: "$2,400–$5,800",
     stay: "4–6 nights",
     hospitalSlugs: ["bosphorus-international", "marina-private"],
+    conditions: ["Androgenetic alopecia", "Hair loss"],
+    procedures: ["FUE", "DHI", "PRP"],
     includes: [
       "Trichoscopy and graft map",
       "Hotel with clinic transfer",
@@ -106,6 +112,8 @@ export const treatments: Treatment[] = [
     partnerRange: "$8,500–$19,000",
     stay: "7–12 nights (or two visits)",
     hospitalSlugs: ["bosphorus-international", "sukhumvit-campus", "polanco-surgical"],
+    conditions: ["Edentulism", "Failed dentition"],
+    procedures: ["Full-arch implants", "Veneers", "Smile design"],
     includes: [
       "CBCT and digital smile design",
       "Provisional and final prosthesis",
@@ -127,6 +135,8 @@ export const treatments: Treatment[] = [
     partnerRange: "$11,000–$28,000",
     stay: "12–18 nights",
     hospitalSlugs: ["orchard-precision", "polanco-surgical", "marina-private", "sukhumvit-campus"],
+    conditions: ["Osteoarthritis", "Joint pain", "Spine degeneration"],
+    procedures: ["Hip replacement", "Knee replacement", "Spine decompression"],
     includes: [
       "Implant brand of record",
       "Physiotherapy from day one",
@@ -148,6 +158,8 @@ export const treatments: Treatment[] = [
     partnerRange: "$18,000–$42,000",
     stay: "10–16 nights",
     hospitalSlugs: ["orchard-precision", "marina-private", "sukhumvit-campus"],
+    conditions: ["Coronary artery disease", "Valvular disease"],
+    procedures: ["Angioplasty", "Bypass", "Valve repair"],
     includes: [
       "Records assembled into a single dossier",
       "Second-opinion panel before travel",
@@ -169,6 +181,8 @@ export const treatments: Treatment[] = [
     partnerRange: "$4,800–$9,500 / cycle",
     stay: "Flexible; often 2 visits",
     hospitalSlugs: ["orchard-precision", "marina-private", "sukhumvit-campus", "bosphorus-international"],
+    conditions: ["Infertility", "Diminished ovarian reserve"],
+    procedures: ["IVF", "Egg freezing"],
     includes: [
       "Protocol designed with your home OB",
       "Medication logistics",
@@ -190,6 +204,8 @@ export const treatments: Treatment[] = [
     partnerRange: "Quoted after records review",
     stay: "By protocol",
     hospitalSlugs: ["orchard-precision", "marina-private", "cheongdam-atelier"],
+    conditions: ["Solid tumors", "Cancer second opinion"],
+    procedures: ["Tumor board review", "Oncologic surgery"],
     includes: [
       "Tumor board review",
       "Pathology re-read",
@@ -211,6 +227,8 @@ export const treatments: Treatment[] = [
     partnerRange: "$5,500–$11,000",
     stay: "7–10 nights",
     hospitalSlugs: ["bosphorus-international", "polanco-surgical", "sukhumvit-campus"],
+    conditions: ["Obesity", "Metabolic syndrome"],
+    procedures: ["Gastric sleeve", "Gastric bypass"],
     includes: [
       "Dietitian-led prep",
       "Leak test and imaging",

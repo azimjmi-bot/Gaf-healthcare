@@ -1,8 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import { Suspense } from "react";
+import { CatalogFilter } from "@/components/catalog-filter";
 import { CtaBand, PageIntro } from "@/components/page-shell";
-import { doctors, getHospital } from "@/lib/data";
-import type { ReactNode } from "react";
+import { filterDoctors, parseCatalogQuery } from "@/lib/catalog";
+import { getHospital } from "@/lib/data";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Doctors" };
@@ -10,38 +12,34 @@ export const metadata: Metadata = { title: "Doctors" };
 export default async function DoctorsPage({
   searchParams,
 }: {
-  searchParams: Promise<{ specialty?: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const { specialty } = await searchParams;
-  const specialties = Array.from(new Set(doctors.map((d) => d.specialty)));
-  const list = specialty ? doctors.filter((d) => d.specialty === specialty) : doctors;
+  const raw = await searchParams;
+  const query = parseCatalogQuery(raw);
+  const list = filterDoctors(query);
 
   return (
     <>
       <PageIntro
-        eyebrow="Faculty"
+        eyebrow="Find a specialist"
         title="Named surgeons. Video first. Never a mill."
-        lede="Every doctor on this list has sat with Velora. You will meet them on camera before a deposit. If the fit is wrong, we restart."
-      />
+        lede="Consult with internationally trained specialists across plastic surgery, cardiology, oncology, orthopaedics, and more — verified profiles, then a camera meeting before any deposit."
+      >
+        <Suspense fallback={<FilterSkeleton />}>
+          <CatalogFilter
+            basePath="/doctors"
+            resultCount={list.length}
+            resultLabel={list.length === 1 ? "specialist" : "specialists"}
+          />
+        </Suspense>
+      </PageIntro>
       <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
-        <div className="flex flex-wrap gap-2">
-          <FilterChip href="/doctors" active={!specialty}>
-            All
-          </FilterChip>
-          {specialties.map((s) => (
-            <FilterChip
-              key={s}
-              href={`/doctors?specialty=${encodeURIComponent(s)}`}
-              active={specialty === s}
-            >
-              {s}
-            </FilterChip>
-          ))}
-        </div>
         {list.length === 0 ? (
-          <p className="mt-16 text-muted-foreground">No doctors in this specialty yet.</p>
+          <p className="text-muted-foreground">
+            No doctors match these filters. Clear a field or request a dossier and we will advise.
+          </p>
         ) : (
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {list.map((d) => {
               const hospital = getHospital(d.hospitalSlug);
               return (
@@ -77,23 +75,6 @@ export default async function DoctorsPage({
   );
 }
 
-function FilterChip({
-  href,
-  active,
-  children,
-}: {
-  href: string;
-  active: boolean;
-  children: ReactNode;
-}) {
-  return (
-    <Link
-      href={href}
-      className={`rounded-full px-4 py-2 text-sm ${
-        active ? "bg-ink text-ivory" : "border border-border bg-card hover:border-primary/30"
-      }`}
-    >
-      {children}
-    </Link>
-  );
+function FilterSkeleton() {
+  return <div className="h-24 rounded-2xl bg-white shadow-sm" />;
 }
