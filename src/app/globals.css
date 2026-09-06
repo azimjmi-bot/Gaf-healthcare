@@ -195,6 +195,17 @@
   font-weight: 500;
 }
 
+.doc-card__bio {
+  margin-top: 0.85rem;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: var(--muted-foreground);
+}
+
 .doc-card__readmore {
   margin-top: 0.85rem;
   display: inline-block;

@@ -22,7 +22,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="Expert specialists"
         title="Top radiation oncologists in India"
-        lede="Qualifications, designation, hospital, city, and years of practice. Portraits and long-form copy will come from CMS."
+        lede="Each consultant has a written bio, qualifications, designation, hospital, city, and years of practice. Portraits will come from CMS."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

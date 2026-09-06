@@ -86,6 +86,9 @@ export default async function DoctorDetailPage({
       </section>
 
       <article className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">
+        <h3 className="text-sm tracking-[0.2em] text-gold uppercase">About {d.name}</h3>
+        <h2 className="mt-3 font-heading text-3xl">Professional summary</h2>
+        <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{d.bio}</p>
         <ProfileList title="Specializations" items={d.specializations} />
         <ProfileList title="Procedures & Expertise" items={d.proceduresExpertise} />
         <ProfileList title="Education & Qualifications" items={d.education} />

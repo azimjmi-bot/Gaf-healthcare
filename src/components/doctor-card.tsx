@@ -26,6 +26,7 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
         {doctor.experience ? (
           <p className="doc-card__exp">{doctor.experience.replace(/Experience$/i, "experience")}</p>
         ) : null}
+        {doctor.bio ? <p className="doc-card__bio">{doctor.bio}</p> : null}
         <Link href={`/doctors/${doctor.slug}`} className="doc-card__readmore">
           View profile
         </Link>

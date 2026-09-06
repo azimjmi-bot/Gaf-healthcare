@@ -36,6 +36,7 @@ export type Doctor = {
   languages: string;
   years: string;
   experience: string;
+  bio: string;
 };
 
 const PROCEDURE_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
@@ -137,6 +138,7 @@ export const doctors: Doctor[] = catalog.doctors.map((seed) => {
     languages: languagesFor(city.name),
     years: seed.experience,
     experience: seed.experience,
+    bio: seed.bio,
   };
 });
 
