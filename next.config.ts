@@ -26,6 +26,11 @@ const nextConfig: NextConfig = {
         destination: "/costs/external-beam-radiotherapy-ebrt",
         permanent: true,
       },
+      {
+        source: "/costs/3d-crt",
+        destination: "/costs/3d-conformal-radiotherapy-3d-crt",
+        permanent: true,
+      },
       { source: "/journey", destination: "/blogs", permanent: true },
       { source: "/stories", destination: "/blogs", permanent: true },
       { source: "/about", destination: "/", permanent: true },

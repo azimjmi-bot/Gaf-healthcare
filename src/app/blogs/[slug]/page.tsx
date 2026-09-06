@@ -61,6 +61,22 @@ export default async function BlogPostPage({
             </Link>
           </p>
         ) : null}
+        {post.slug === "imrt-vs-3d-crt" ? (
+          <p className="mt-8 flex flex-col gap-2">
+            <Link
+              href="/costs/3d-conformal-radiotherapy-3d-crt"
+              className="underline-offset-4 hover:underline"
+            >
+              3D-CRT cost, procedure, sessions and recovery
+            </Link>
+            <Link
+              href="/costs/intensity-modulated-radiotherapy-imrt"
+              className="underline-offset-4 hover:underline"
+            >
+              IMRT cost sheet
+            </Link>
+          </p>
+        ) : null}
         <Link
           href="/blogs"
           className="mt-12 inline-block text-sm underline-offset-4 hover:underline"

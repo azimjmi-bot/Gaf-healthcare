@@ -39,8 +39,8 @@ const RADIATION_COST: Record<string, { us: string; partner: string; stay: string
   },
   "3D Conformal Radiotherapy (3D-CRT)": {
     us: "$14,000–$28,000",
-    partner: "$4,800–$11,000",
-    stay: "4–6 weeks of fractions",
+    partner: "$700–$2,500+",
+    stay: "15–35 sessions typical · usually outpatient",
   },
   "Intensity-Modulated Radiotherapy (IMRT)": {
     us: "$18,000–$40,000",
@@ -124,18 +124,33 @@ const EBRT_COPY = {
   ],
 };
 
+const CRT_COPY = {
+  summary:
+    "3D Conformal Radiation Therapy shapes external-beam radiation around a tumour using CT-based three-dimensional planning. For private treatment in India, a broad planning range is about $700–$2,500+, depending on hospital, city, fractions and cancer type.",
+  notes:
+    "Indicative partner range, not a quote. 3D-CRT is not automatically the right technique because it is cheaper than IMRT — the named radiation oncologist decides after records review.",
+  includes: [
+    "Radiation oncologist consultation",
+    "CT simulation and immobilisation where required",
+    "3D treatment planning, dosimetry and physics QA",
+    "Radiation delivery and on-treatment reviews",
+    "Named consultant on camera before travel",
+    "Discharge summary to your home oncologist",
+  ],
+};
+
 export const treatments: Treatment[] = RADIATION_PROCEDURES.map((name) => {
   const cost = RADIATION_COST[name];
   const slug = toSlug(name);
-  const isEbrt = name === "External Beam Radiotherapy (EBRT)";
+  const copy = name === "External Beam Radiotherapy (EBRT)" ? EBRT_COPY : name === "3D Conformal Radiotherapy (3D-CRT)" ? CRT_COPY : null;
   return {
     slug,
     name,
     category: "Radiation Oncology",
     specialtySlug: "radiation-oncology",
     procedureSlug: slug,
-    summary: isEbrt
-      ? EBRT_COPY.summary
+    summary: copy
+      ? copy.summary
       : `Radiation Oncology — ${name} delivered at JCI-accredited partner campuses with physics QA, peer-reviewed plans, and a named radiation oncologist before you travel.`,
     image:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80",
@@ -145,16 +160,16 @@ export const treatments: Treatment[] = RADIATION_PROCEDURES.map((name) => {
     hospitalSlugs: hospitalSlugsForProcedure(name),
     conditions: ["Solid tumors", "Cancer second opinion"],
     procedures: [name],
-    includes: isEbrt
-      ? EBRT_COPY.includes
+    includes: copy
+      ? copy.includes
       : [
           "Simulation CT and contouring review",
           "Physics QA and peer plan check",
           "Named radiation oncologist on camera before travel",
           "Discharge summary to your home oncologist",
         ],
-    notes: isEbrt
-      ? EBRT_COPY.notes
+    notes: copy
+      ? copy.notes
       : "Fractions, energy, and whether protons or brachytherapy are appropriate are decided after records review — not from a brochure price.",
   };
 });

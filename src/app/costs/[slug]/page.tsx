@@ -1,11 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { EbrtGuide } from "@/components/ebrt-guide";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
-import { ebrtMeta } from "@/data/ebrt-guide";
 import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
+import { getCostGuide } from "@/lib/cost-guides";
 import {
   doctorsForTreatment,
   getHospital,
@@ -26,9 +25,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const t = getTreatment(slug);
   if (!t) return { title: "Treatment Cost" };
-  if (t.slug === "external-beam-radiotherapy-ebrt") {
-    return { title: ebrtMeta.title, description: ebrtMeta.description };
-  }
+  const guide = getCostGuide(t.slug);
+  if (guide) return { title: guide.title, description: guide.description };
   return { title: `${t.name} cost`, description: t.summary };
 }
 
@@ -40,7 +38,7 @@ export default async function CostDetailPage({
   const { slug } = await params;
   const t = getTreatment(slug);
   if (!t) notFound();
-  const isEbrt = t.slug === "external-beam-radiotherapy-ebrt";
+  const guide = getCostGuide(t.slug);
   const campuses = t.hospitalSlugs.map((s) => getHospital(s)).filter(Boolean);
   const faculty = doctorsForTreatment(t.slug);
   const featuredFaculty = [...faculty]
@@ -56,16 +54,14 @@ export default async function CostDetailPage({
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-12 md:px-8">
           <p className="eyebrow text-gold">Treatment cost · {t.category}</p>
           <h1 className="mt-3 max-w-5xl font-heading text-4xl md:text-6xl">
-            {isEbrt
-              ? "External Beam Radiation Therapy (EBRT): Cost, Treatment, Procedure, Sessions & Recovery"
-              : t.name}
+            {guide ? guide.title : t.name}
           </h1>
         </div>
       </section>
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-12 md:px-8">
         <div className="md:col-span-7">
-          {isEbrt ? (
-            <EbrtGuide />
+          {guide ? (
+            <guide.Guide />
           ) : (
             <>
               <p className="text-lg leading-relaxed text-muted-foreground">{t.summary}</p>
@@ -114,7 +110,7 @@ export default async function CostDetailPage({
             <ul className="mt-3 space-y-2">
               <li>
                 <Link href={doctorsPath({ destination: "India", procedure: t.name })}>
-                  Doctors for {isEbrt ? "EBRT" : t.name}
+                  Doctors for {t.name}
                 </Link>
               </li>
               <li>
@@ -125,9 +121,9 @@ export default async function CostDetailPage({
               <li>
                 <Link href="/costs">All treatment costs</Link>
               </li>
-              {isEbrt ? (
+              {guide?.relatedBlog ? (
                 <li>
-                  <Link href="/blogs/records-before-you-book-ebrt">Records to send before travel</Link>
+                  <Link href={guide.relatedBlog.href}>{guide.relatedBlog.label}</Link>
                 </li>
               ) : null}
             </ul>
