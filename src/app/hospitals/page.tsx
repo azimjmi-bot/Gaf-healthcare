@@ -21,7 +21,7 @@ export default async function HospitalsPage({
       <PageIntro
         eyebrow="Campus"
         title="A short list, inspected."
-        lede="Filter by destination, city, specialty, or procedure. Every campus here holds current JCI or equivalent accreditation and an international desk that answers."
+        lede="Filter by destination, city, Radiation Oncology, or radiotherapy procedure. Every campus here holds current JCI or equivalent accreditation and an international desk that answers."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

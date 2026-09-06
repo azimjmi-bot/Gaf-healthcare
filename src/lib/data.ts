@@ -34,6 +34,7 @@ export type Doctor = {
   hospitalSlug: string;
   specialty: string;
   treatmentSlugs: string[];
+  procedures: string[];
   credentials: string;
   languages: string;
   years: string;
@@ -53,192 +54,150 @@ export type Story = {
   savings: string;
 };
 
-export const treatments: Treatment[] = [
-  {
-    slug: "facial-aesthetics",
-    name: "Facial aesthetics",
-    category: "Cosmetic",
-    summary:
-      "Rhinoplasty, deep-plane facelift, eyelid surgery, and fat grafting planned as a single facial architecture — not a menu of add-ons.",
-    image:
-      "https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1600&q=80",
-    usRange: "$18,000–$45,000",
-    partnerRange: "$6,800–$16,500",
-    stay: "10–14 nights",
-    hospitalSlugs: ["cheongdam-atelier", "sukhumvit-campus", "bosphorus-international", "marina-private"],
-    conditions: ["Facial aging", "Nasal deformity", "Eyelid ptosis"],
-    procedures: ["Deep-plane facelift", "Rhinoplasty", "Blepharoplasty"],
-    includes: [
-      "3D imaging and surgeon matching",
-      "Pre-op labs and anesthesia review",
-      "Private recovery suite",
-      "Stitch removal and virtual follow-up",
-    ],
-    notes:
-      "We never book a surgeon you have not video-met. Revision cases are routed only to high-volume revision specialists.",
+export const RADIATION_PROCEDURES = [
+  "External Beam Radiotherapy (EBRT)",
+  "3D Conformal Radiotherapy (3D-CRT)",
+  "Intensity-Modulated Radiotherapy (IMRT)",
+  "Image-Guided Radiotherapy (IGRT)",
+  "Stereotactic Radiosurgery (SRS)",
+  "Stereotactic Body Radiotherapy (SBRT)",
+  "CyberKnife",
+  "Gamma Knife",
+  "Proton Beam Therapy",
+  "Brachytherapy",
+  "Intracavitary Brachytherapy",
+  "Interstitial Brachytherapy",
+  "Plaque Brachytherapy",
+  "Intraoperative Radiotherapy (IORT)",
+  "Total Body Irradiation (TBI)",
+] as const;
+
+export function radiationProcedureSlug(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/[()]/g, "")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "");
+}
+
+const RADIATION_HOSPITALS = [
+  "cheongdam-atelier",
+  "bosphorus-international",
+  "sukhumvit-campus",
+  "marina-private",
+  "orchard-precision",
+  "polanco-surgical",
+  "aerocity-international",
+  "gurgaon-joint-institute",
+  "bandra-private",
+  "whitefield-precision",
+  "adyar-cardiac",
+  "hitec-surgical",
+];
+
+const RADIATION_COST: Record<string, { us: string; partner: string; stay: string }> = {
+  "External Beam Radiotherapy (EBRT)": {
+    us: "$12,000–$25,000",
+    partner: "$4,200–$9,800",
+    stay: "4–6 weeks of fractions",
   },
-  {
-    slug: "hair-restoration",
-    name: "Hair restoration",
-    category: "Cosmetic",
-    summary:
-      "FUE and DHI programs with published graft survival, not shop-front mill clinics. Density planning is reviewed by a Velora medical advisor before you fly.",
-    image:
-      "https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=1600&q=80",
-    usRange: "$12,000–$20,000",
-    partnerRange: "$2,400–$5,800",
-    stay: "4–6 nights",
-    hospitalSlugs: ["bosphorus-international", "marina-private"],
-    conditions: ["Androgenetic alopecia", "Hair loss"],
-    procedures: ["FUE", "DHI", "PRP"],
-    includes: [
-      "Trichoscopy and graft map",
-      "Hotel with clinic transfer",
-      "PRP protocol where indicated",
-      "12-month growth check-ins",
-    ],
-    notes:
-      "Maximum daily graft caps are enforced. We decline clinics that overharvest donor areas.",
+  "3D Conformal Radiotherapy (3D-CRT)": {
+    us: "$14,000–$28,000",
+    partner: "$4,800–$11,000",
+    stay: "4–6 weeks of fractions",
   },
-  {
-    slug: "dental-reconstruction",
-    name: "Dental reconstruction",
-    category: "Dental",
-    summary:
-      "Full-arch implants, veneers, and smile design with in-house labs so you are not waiting on a second city for the prosthesis.",
-    image:
-      "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1600&q=80",
-    usRange: "$28,000–$60,000",
-    partnerRange: "$8,500–$19,000",
-    stay: "7–12 nights (or two visits)",
-    hospitalSlugs: ["bosphorus-international", "sukhumvit-campus", "polanco-surgical", "hitec-surgical"],
-    conditions: ["Edentulism", "Failed dentition"],
-    procedures: ["Full-arch implants", "Veneers", "Smile design"],
-    includes: [
-      "CBCT and digital smile design",
-      "Provisional and final prosthesis",
-      "Night-guard and hygiene kit",
-      "Warranty handled through Velora",
-    ],
-    notes:
-      "Bone-graft and sinus-lift cases are staged. We will tell you honestly if two trips are safer than one.",
+  "Intensity-Modulated Radiotherapy (IMRT)": {
+    us: "$18,000–$40,000",
+    partner: "$6,500–$14,500",
+    stay: "4–7 weeks of fractions",
   },
-  {
-    slug: "orthopedics",
-    name: "Joints & orthopedics",
-    category: "Surgical",
-    summary:
-      "Hip and knee replacement, spine decompression, and sports reconstruction with robotic systems and accelerated rehab protocols.",
-    image:
-      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80",
-    usRange: "$35,000–$80,000",
-    partnerRange: "$11,000–$28,000",
-    stay: "12–18 nights",
-    hospitalSlugs: ["orchard-precision", "polanco-surgical", "marina-private", "sukhumvit-campus", "gurgaon-joint-institute", "whitefield-precision"],
-    conditions: ["Osteoarthritis", "Joint pain", "Spine degeneration"],
-    procedures: ["Hip replacement", "Knee replacement", "Spine decompression"],
-    includes: [
-      "Implant brand of record",
-      "Physiotherapy from day one",
-      "Companion lodging",
-      "Fit-to-fly clearance",
-    ],
-    notes:
-      "BMI, bone quality, and prior hardware are reviewed before a hospital is even proposed.",
+  "Image-Guided Radiotherapy (IGRT)": {
+    us: "$20,000–$45,000",
+    partner: "$7,200–$16,000",
+    stay: "4–7 weeks of fractions",
   },
-  {
-    slug: "cardiac",
-    name: "Cardiac care",
-    category: "Surgical",
-    summary:
-      "Angioplasty, bypass, and valve programs in hospitals with 24/7 cath labs and published mortality dashboards.",
-    image:
-      "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80",
-    usRange: "$80,000–$180,000",
-    partnerRange: "$18,000–$42,000",
-    stay: "10–16 nights",
-    hospitalSlugs: ["orchard-precision", "marina-private", "sukhumvit-campus", "aerocity-international", "bandra-private", "adyar-cardiac"],
-    conditions: ["Coronary artery disease", "Valvular disease"],
-    procedures: ["Angioplasty", "Bypass", "Valve repair"],
-    includes: [
-      "Records assembled into a single dossier",
-      "Second-opinion panel before travel",
-      "ICU-capable hospital only",
-      "Medevac protocol on file",
-    ],
-    notes:
-      "Cardiac cases require a physician-to-physician handoff. Velora will not book on price alone.",
+  "Stereotactic Radiosurgery (SRS)": {
+    us: "$25,000–$55,000",
+    partner: "$8,500–$18,000",
+    stay: "1–5 sessions",
   },
-  {
-    slug: "fertility",
-    name: "Fertility & IVF",
-    category: "Reproductive",
-    summary:
-      "IVF, egg freezing, and donor pathways in labs with transparent success rates, not marketing percentages.",
-    image:
-      "https://images.unsplash.com/photo-1581595220892-b0739db3b8c5?auto=format&fit=crop&w=1600&q=80",
-    usRange: "$18,000–$30,000 / cycle",
-    partnerRange: "$4,800–$9,500 / cycle",
-    stay: "Flexible; often 2 visits",
-    hospitalSlugs: ["orchard-precision", "marina-private", "sukhumvit-campus", "bosphorus-international", "bandra-private"],
-    conditions: ["Infertility", "Diminished ovarian reserve"],
-    procedures: ["IVF", "Egg freezing"],
-    includes: [
-      "Protocol designed with your home OB",
-      "Medication logistics",
-      "Embryo storage year one",
-      "Counseling session",
-    ],
-    notes:
-      "Legal frameworks for donors and surrogacy differ by country. We brief you in writing before any deposit.",
+  "Stereotactic Body Radiotherapy (SBRT)": {
+    us: "$22,000–$50,000",
+    partner: "$8,000–$17,500",
+    stay: "1–5 sessions",
   },
-  {
-    slug: "oncology",
-    name: "Oncology pathways",
-    category: "Complex care",
-    summary:
-      "Second opinions, proton and precision programs, and surgery at campuses that already treat international oncology patients at volume.",
+  CyberKnife: {
+    us: "$30,000–$70,000",
+    partner: "$11,000–$24,000",
+    stay: "1–5 sessions",
+  },
+  "Gamma Knife": {
+    us: "$28,000–$65,000",
+    partner: "$10,500–$22,000",
+    stay: "1 session typical",
+  },
+  "Proton Beam Therapy": {
+    us: "$90,000–$180,000",
+    partner: "$28,000–$55,000",
+    stay: "4–8 weeks of fractions",
+  },
+  Brachytherapy: {
+    us: "$15,000–$35,000",
+    partner: "$5,500–$13,000",
+    stay: "1–7 nights",
+  },
+  "Intracavitary Brachytherapy": {
+    us: "$16,000–$38,000",
+    partner: "$6,000–$14,000",
+    stay: "1–7 nights",
+  },
+  "Interstitial Brachytherapy": {
+    us: "$18,000–$42,000",
+    partner: "$6,800–$15,500",
+    stay: "2–8 nights",
+  },
+  "Plaque Brachytherapy": {
+    us: "$20,000–$45,000",
+    partner: "$7,500–$16,000",
+    stay: "3–7 nights",
+  },
+  "Intraoperative Radiotherapy (IORT)": {
+    us: "$22,000–$48,000",
+    partner: "$8,200–$17,000",
+    stay: "Tied to theatre stay",
+  },
+  "Total Body Irradiation (TBI)": {
+    us: "$35,000–$80,000",
+    partner: "$12,000–$28,000",
+    stay: "By transplant protocol",
+  },
+};
+
+export const treatments: Treatment[] = RADIATION_PROCEDURES.map((name) => {
+  const cost = RADIATION_COST[name];
+  return {
+    slug: radiationProcedureSlug(name),
+    name,
+    category: "Radiation Oncology",
+    summary: `Radiation Oncology — ${name} delivered at JCI-accredited partner campuses with physics QA, peer-reviewed plans, and a named radiation oncologist before you travel.`,
     image:
       "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80",
-    usRange: "Varies widely",
-    partnerRange: "Quoted after records review",
-    stay: "By protocol",
-    hospitalSlugs: ["orchard-precision", "marina-private", "cheongdam-atelier", "aerocity-international", "whitefield-precision"],
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: RADIATION_HOSPITALS,
     conditions: ["Solid tumors", "Cancer second opinion"],
-    procedures: ["Tumor board review", "Oncologic surgery"],
+    procedures: [name],
     includes: [
-      "Tumor board review",
-      "Pathology re-read",
-      "Treatment calendar",
-      "Family housing options",
+      "Simulation CT and contouring review",
+      "Physics QA and peer plan check",
+      "Named radiation oncologist on camera before travel",
+      "Discharge summary to your home oncologist",
     ],
     notes:
-      "This is not a discount pathway. It is a speed-and-access pathway when wait times or insurance walls at home are the problem.",
-  },
-  {
-    slug: "bariatric",
-    name: "Bariatric & metabolic",
-    category: "Surgical",
-    summary:
-      "Sleeve and bypass with mandatory nutritional follow-up. We decline any program that treats this as a three-day tourist package.",
-    image:
-      "https://images.unsplash.com/photo-1505576399279-565b52d4ac71?auto=format&fit=crop&w=1600&q=80",
-    usRange: "$18,000–$35,000",
-    partnerRange: "$5,500–$11,000",
-    stay: "7–10 nights",
-    hospitalSlugs: ["bosphorus-international", "polanco-surgical", "sukhumvit-campus", "hitec-surgical"],
-    conditions: ["Obesity", "Metabolic syndrome"],
-    procedures: ["Gastric sleeve", "Gastric bypass"],
-    includes: [
-      "Dietitian-led prep",
-      "Leak test and imaging",
-      "12-month remote follow-up",
-      "Vitamin protocol",
-    ],
-    notes:
-      "Sleep apnea, reflux, and diabetes status change which procedure we will even discuss.",
-  },
-];
+      "Fractions, energy, and whether protons or brachytherapy are appropriate are decided after records review — not from a brochure price.",
+  };
+});
 
 export const hospitals: Hospital[] = [
   {
@@ -415,10 +374,11 @@ export const doctors: Doctor[] = [
   {
     slug: "min-seo-park",
     name: "Dr. Min-seo Park",
-    title: "Facial architecture",
+    title: "Radiation oncologist",
     hospitalSlug: "cheongdam-atelier",
-    specialty: "Plastic surgery",
-    treatmentSlugs: ["facial-aesthetics"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["external-beam-radiotherapy-ebrt", "3d-conformal-radiotherapy-3d-crt", "intensity-modulated-radiotherapy-imrt"],
+    procedures: ["External Beam Radiotherapy (EBRT)", "3D Conformal Radiotherapy (3D-CRT)", "Intensity-Modulated Radiotherapy (IMRT)"],
     credentials: "Board-certified, Korean Society of Plastic Surgery · Harvard observership",
     languages: "English, Korean",
     years: "18 years",
@@ -430,10 +390,11 @@ export const doctors: Doctor[] = [
   {
     slug: "hana-lee",
     name: "Dr. Hana Lee",
-    title: "Dermatologic surgery",
+    title: "Radiation oncologist",
     hospitalSlug: "cheongdam-atelier",
-    specialty: "Dermatology",
-    treatmentSlugs: ["facial-aesthetics"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["intensity-modulated-radiotherapy-imrt", "image-guided-radiotherapy-igrt", "stereotactic-radiosurgery-srs"],
+    procedures: ["Intensity-Modulated Radiotherapy (IMRT)", "Image-Guided Radiotherapy (IGRT)", "Stereotactic Radiosurgery (SRS)"],
     credentials: "Seoul National University · ASDS international fellow",
     languages: "English, Korean, Mandarin",
     years: "14 years",
@@ -445,10 +406,11 @@ export const doctors: Doctor[] = [
   {
     slug: "emre-yildiz",
     name: "Dr. Emre Yıldız",
-    title: "Hair restoration",
+    title: "Radiation oncologist",
     hospitalSlug: "bosphorus-international",
-    specialty: "Hair surgery",
-    treatmentSlugs: ["hair-restoration"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["stereotactic-radiosurgery-srs", "stereotactic-body-radiotherapy-sbrt", "cyberknife"],
+    procedures: ["Stereotactic Radiosurgery (SRS)", "Stereotactic Body Radiotherapy (SBRT)", "CyberKnife"],
     credentials: "ISHRS member · Istanbul University",
     languages: "English, Turkish, German",
     years: "16 years",
@@ -460,10 +422,11 @@ export const doctors: Doctor[] = [
   {
     slug: "leyla-kaplan",
     name: "Dr. Leyla Kaplan",
-    title: "Prosthodontics",
+    title: "Radiation oncologist",
     hospitalSlug: "bosphorus-international",
-    specialty: "Dental reconstruction",
-    treatmentSlugs: ["dental-reconstruction"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["cyberknife", "gamma-knife", "proton-beam-therapy"],
+    procedures: ["CyberKnife", "Gamma Knife", "Proton Beam Therapy"],
     credentials: "Board prosthodontist · in-house digital lab director",
     languages: "English, Turkish, Arabic",
     years: "12 years",
@@ -475,10 +438,11 @@ export const doctors: Doctor[] = [
   {
     slug: "niran-chaiwat",
     name: "Dr. Niran Chaiwat",
-    title: "Aesthetic & reconstructive",
+    title: "Radiation oncologist",
     hospitalSlug: "sukhumvit-campus",
-    specialty: "Plastic surgery",
-    treatmentSlugs: ["facial-aesthetics", "bariatric"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["proton-beam-therapy", "brachytherapy", "intracavitary-brachytherapy"],
+    procedures: ["Proton Beam Therapy", "Brachytherapy", "Intracavitary Brachytherapy"],
     credentials: "Thai Board · ASAPS international",
     languages: "English, Thai",
     years: "20 years",
@@ -490,10 +454,11 @@ export const doctors: Doctor[] = [
   {
     slug: "amira-hassan",
     name: "Dr. Amira Hassan",
-    title: "Interventional cardiology",
+    title: "Radiation oncologist",
     hospitalSlug: "marina-private",
-    specialty: "Cardiology",
-    treatmentSlugs: ["cardiac"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["intracavitary-brachytherapy", "interstitial-brachytherapy", "plaque-brachytherapy"],
+    procedures: ["Intracavitary Brachytherapy", "Interstitial Brachytherapy", "Plaque Brachytherapy"],
     credentials: "Cleveland Clinic trained · DHA consultant",
     languages: "English, Arabic, French",
     years: "19 years",
@@ -505,10 +470,11 @@ export const doctors: Doctor[] = [
   {
     slug: "wei-tan",
     name: "Dr. Wei Tan",
-    title: "Surgical oncology",
+    title: "Radiation oncologist",
     hospitalSlug: "orchard-precision",
-    specialty: "Oncology",
-    treatmentSlugs: ["oncology"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["plaque-brachytherapy", "intraoperative-radiotherapy-iort", "total-body-irradiation-tbi"],
+    procedures: ["Plaque Brachytherapy", "Intraoperative Radiotherapy (IORT)", "Total Body Irradiation (TBI)"],
     credentials: "NCCS · FRCS · tumor board chair",
     languages: "English, Mandarin",
     years: "22 years",
@@ -520,10 +486,11 @@ export const doctors: Doctor[] = [
   {
     slug: "ananya-rao",
     name: "Dr. Ananya Rao",
-    title: "Reproductive medicine",
+    title: "Radiation oncologist",
     hospitalSlug: "orchard-precision",
-    specialty: "Fertility",
-    treatmentSlugs: ["fertility"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["total-body-irradiation-tbi", "external-beam-radiotherapy-ebrt", "3d-conformal-radiotherapy-3d-crt"],
+    procedures: ["Total Body Irradiation (TBI)", "External Beam Radiotherapy (EBRT)", "3D Conformal Radiotherapy (3D-CRT)"],
     credentials: "MRCOG · ESHRE certified lab",
     languages: "English, Tamil, Mandarin",
     years: "15 years",
@@ -535,10 +502,11 @@ export const doctors: Doctor[] = [
   {
     slug: "sofia-reyes",
     name: "Dr. Sofía Reyes",
-    title: "Adult reconstruction",
+    title: "Radiation oncologist",
     hospitalSlug: "polanco-surgical",
-    specialty: "Orthopedics",
-    treatmentSlugs: ["orthopedics"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["3d-conformal-radiotherapy-3d-crt", "intensity-modulated-radiotherapy-imrt", "image-guided-radiotherapy-igrt"],
+    procedures: ["3D Conformal Radiotherapy (3D-CRT)", "Intensity-Modulated Radiotherapy (IMRT)", "Image-Guided Radiotherapy (IGRT)"],
     credentials: "AAOS international · robotic hip/knee",
     languages: "English, Spanish",
     years: "17 years",
@@ -550,10 +518,11 @@ export const doctors: Doctor[] = [
   {
     slug: "miguel-orta",
     name: "Dr. Miguel Orta",
-    title: "Metabolic surgery",
+    title: "Radiation oncologist",
     hospitalSlug: "polanco-surgical",
-    specialty: "Bariatric",
-    treatmentSlugs: ["bariatric"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["image-guided-radiotherapy-igrt", "stereotactic-radiosurgery-srs", "stereotactic-body-radiotherapy-sbrt"],
+    procedures: ["Image-Guided Radiotherapy (IGRT)", "Stereotactic Radiosurgery (SRS)", "Stereotactic Body Radiotherapy (SBRT)"],
     credentials: "IFSO · US fellowship",
     languages: "English, Spanish",
     years: "13 years",
@@ -565,10 +534,11 @@ export const doctors: Doctor[] = [
   {
     slug: "arjun-mehta",
     name: "Dr. Arjun Mehta",
-    title: "Interventional cardiology",
+    title: "Radiation oncologist",
     hospitalSlug: "aerocity-international",
-    specialty: "Cardiology",
-    treatmentSlugs: ["cardiac"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["stereotactic-body-radiotherapy-sbrt", "cyberknife", "gamma-knife"],
+    procedures: ["Stereotactic Body Radiotherapy (SBRT)", "CyberKnife", "Gamma Knife"],
     credentials: "DM Cardiology · Cleveland Clinic observership · NABH consultant",
     languages: "English, Hindi",
     years: "21 years",
@@ -580,10 +550,11 @@ export const doctors: Doctor[] = [
   {
     slug: "kavita-sharma",
     name: "Dr. Kavita Sharma",
-    title: "Medical oncology",
+    title: "Radiation oncologist",
     hospitalSlug: "aerocity-international",
-    specialty: "Oncology",
-    treatmentSlugs: ["oncology"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["gamma-knife", "proton-beam-therapy", "brachytherapy"],
+    procedures: ["Gamma Knife", "Proton Beam Therapy", "Brachytherapy"],
     credentials: "DM Oncology · AIIMS · ESMO member",
     languages: "English, Hindi",
     years: "16 years",
@@ -595,10 +566,11 @@ export const doctors: Doctor[] = [
   {
     slug: "rohan-malhotra",
     name: "Dr. Rohan Malhotra",
-    title: "Adult reconstruction",
+    title: "Radiation oncologist",
     hospitalSlug: "gurgaon-joint-institute",
-    specialty: "Orthopedics",
-    treatmentSlugs: ["orthopedics"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["brachytherapy", "intracavitary-brachytherapy", "interstitial-brachytherapy"],
+    procedures: ["Brachytherapy", "Intracavitary Brachytherapy", "Interstitial Brachytherapy"],
     credentials: "MS Ortho · robotic hip/knee · AO fellow",
     languages: "English, Hindi, Punjabi",
     years: "14 years",
@@ -610,10 +582,11 @@ export const doctors: Doctor[] = [
   {
     slug: "priya-desai",
     name: "Dr. Priya Desai",
-    title: "Reproductive medicine",
+    title: "Radiation oncologist",
     hospitalSlug: "bandra-private",
-    specialty: "Fertility",
-    treatmentSlugs: ["fertility"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["interstitial-brachytherapy", "plaque-brachytherapy", "intraoperative-radiotherapy-iort"],
+    procedures: ["Interstitial Brachytherapy", "Plaque Brachytherapy", "Intraoperative Radiotherapy (IORT)"],
     credentials: "MRCOG · ESHRE certified lab",
     languages: "English, Hindi, Marathi",
     years: "13 years",
@@ -625,10 +598,11 @@ export const doctors: Doctor[] = [
   {
     slug: "vikram-iyer",
     name: "Dr. Vikram Iyer",
-    title: "Spine & joints",
+    title: "Radiation oncologist",
     hospitalSlug: "whitefield-precision",
-    specialty: "Orthopedics",
-    treatmentSlugs: ["orthopedics"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["intraoperative-radiotherapy-iort", "total-body-irradiation-tbi", "external-beam-radiotherapy-ebrt"],
+    procedures: ["Intraoperative Radiotherapy (IORT)", "Total Body Irradiation (TBI)", "External Beam Radiotherapy (EBRT)"],
     credentials: "MS Ortho · spine fellowship Singapore",
     languages: "English, Kannada, Hindi",
     years: "18 years",
@@ -640,10 +614,11 @@ export const doctors: Doctor[] = [
   {
     slug: "meera-nair",
     name: "Dr. Meera Nair",
-    title: "Surgical oncology",
+    title: "Radiation oncologist",
     hospitalSlug: "whitefield-precision",
-    specialty: "Oncology",
-    treatmentSlugs: ["oncology"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["external-beam-radiotherapy-ebrt", "3d-conformal-radiotherapy-3d-crt", "intensity-modulated-radiotherapy-imrt"],
+    procedures: ["External Beam Radiotherapy (EBRT)", "3D Conformal Radiotherapy (3D-CRT)", "Intensity-Modulated Radiotherapy (IMRT)"],
     credentials: "MCh · NCCS observership",
     languages: "English, Malayalam, Kannada",
     years: "15 years",
@@ -655,10 +630,11 @@ export const doctors: Doctor[] = [
   {
     slug: "lakshmi-narayan",
     name: "Dr. Lakshmi Narayan",
-    title: "Cardiothoracic surgery",
+    title: "Radiation oncologist",
     hospitalSlug: "adyar-cardiac",
-    specialty: "Cardiology",
-    treatmentSlugs: ["cardiac"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["intensity-modulated-radiotherapy-imrt", "image-guided-radiotherapy-igrt", "stereotactic-radiosurgery-srs"],
+    procedures: ["Intensity-Modulated Radiotherapy (IMRT)", "Image-Guided Radiotherapy (IGRT)", "Stereotactic Radiosurgery (SRS)"],
     credentials: "MCh CTVS · FRCS",
     languages: "English, Tamil, Hindi",
     years: "24 years",
@@ -670,10 +646,11 @@ export const doctors: Doctor[] = [
   {
     slug: "sameer-reddy",
     name: "Dr. Sameer Reddy",
-    title: "Prosthodontics",
+    title: "Radiation oncologist",
     hospitalSlug: "hitec-surgical",
-    specialty: "Dental reconstruction",
-    treatmentSlugs: ["dental-reconstruction"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["stereotactic-radiosurgery-srs", "stereotactic-body-radiotherapy-sbrt", "cyberknife"],
+    procedures: ["Stereotactic Radiosurgery (SRS)", "Stereotactic Body Radiotherapy (SBRT)", "CyberKnife"],
     credentials: "MDS Prostho · in-house digital lab",
     languages: "English, Telugu, Hindi",
     years: "11 years",
@@ -685,10 +662,11 @@ export const doctors: Doctor[] = [
   {
     slug: "nisha-rao",
     name: "Dr. Nisha Rao",
-    title: "Metabolic surgery",
+    title: "Radiation oncologist",
     hospitalSlug: "hitec-surgical",
-    specialty: "Bariatric",
-    treatmentSlugs: ["bariatric"],
+    specialty: "Radiation Oncology",
+    treatmentSlugs: ["cyberknife", "gamma-knife", "proton-beam-therapy"],
+    procedures: ["CyberKnife", "Gamma Knife", "Proton Beam Therapy"],
     credentials: "IFSO · MS GI surgery",
     languages: "English, Telugu, Hindi",
     years: "12 years",

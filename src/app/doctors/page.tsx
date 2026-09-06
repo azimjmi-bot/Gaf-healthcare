@@ -23,7 +23,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="Find a specialist"
         title="Named surgeons. Video first. Never a mill."
-        lede="Consult with internationally trained specialists across plastic surgery, cardiology, oncology, orthopaedics, and more — verified profiles, then a camera meeting before any deposit."
+        lede="Radiation oncologists across partner campuses. Filter by destination, city, Radiation Oncology, and the radiotherapy procedure you need."
       >
         <Suspense fallback={<FilterSkeleton />}>
           <CatalogFilter

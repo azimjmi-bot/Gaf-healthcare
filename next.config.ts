@@ -13,6 +13,14 @@ const nextConfig: NextConfig = {
       { source: "/destinations/:slug", destination: "/hospitals", permanent: true },
       { source: "/treatments", destination: "/costs", permanent: true },
       { source: "/treatments/:slug", destination: "/costs/:slug", permanent: true },
+      { source: "/costs/facial-aesthetics", destination: "/costs", permanent: true },
+      { source: "/costs/hair-restoration", destination: "/costs", permanent: true },
+      { source: "/costs/dental-reconstruction", destination: "/costs", permanent: true },
+      { source: "/costs/orthopedics", destination: "/costs", permanent: true },
+      { source: "/costs/cardiac", destination: "/costs", permanent: true },
+      { source: "/costs/fertility", destination: "/costs", permanent: true },
+      { source: "/costs/oncology", destination: "/costs", permanent: true },
+      { source: "/costs/bariatric", destination: "/costs", permanent: true },
     ];
   },
   images: {

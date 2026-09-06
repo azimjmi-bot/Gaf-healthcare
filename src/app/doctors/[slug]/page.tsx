@@ -85,7 +85,7 @@ export default async function DoctorDetailPage({
         </div>
       </section>
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
-        <h2 className="font-heading text-3xl">Pathways & cost</h2>
+        <h2 className="font-heading text-3xl">Procedures & cost</h2>
         <ul className="mt-6 grid gap-4 md:grid-cols-2">
           {pathways.map((t) =>
             t ? (

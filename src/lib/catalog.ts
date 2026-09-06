@@ -2,6 +2,7 @@ import {
   doctors,
   getHospital,
   hospitals,
+  RADIATION_PROCEDURES,
   treatments,
   type Doctor,
   type Hospital,
@@ -47,13 +48,9 @@ export const catalogDestinations = Array.from(
 
 export const catalogCities = Array.from(new Set(hospitals.map((h) => h.city))).sort();
 
-export const catalogSpecialties = Array.from(
-  new Set(doctors.map((d) => d.specialty)),
-).sort();
+export const catalogSpecialties = ["Radiation Oncology"];
 
-export const catalogProcedures = Array.from(
-  new Set(treatments.flatMap((t) => t.procedures)),
-).sort();
+export const catalogProcedures = [...RADIATION_PROCEDURES];
 
 export function citiesForDestination(destination?: string) {
   if (destination === "India") return [...INDIA_CITIES];
@@ -104,11 +101,9 @@ export function filterHospitals(q: CatalogQuery): Hospital[] {
   return hospitals.filter((h) => {
     if (!hospitalMatches(h, q)) return false;
     const faculty = doctors.filter((d) => d.hospitalSlug === h.slug);
-    const pathways = treatments.filter((t) => t.hospitalSlugs.includes(h.slug));
     if (q.specialty && !faculty.some((d) => d.specialty === q.specialty)) return false;
-    if (q.procedure) {
-      if (!pathways.some((t) => treatmentMatchesClinical(t, q))) return false;
-    }
+    const procedure = q.procedure;
+    if (procedure && !faculty.some((d) => d.procedures.includes(procedure))) return false;
     return true;
   });
 }
@@ -136,10 +131,7 @@ export function filterDoctors(q: CatalogQuery): Doctor[] {
     const hospital = getHospital(d.hospitalSlug);
     if (!hospital || !hospitalMatches(hospital, q)) return false;
     if (q.specialty && d.specialty !== q.specialty) return false;
-    const pathways = treatments.filter((t) => d.treatmentSlugs.includes(t.slug));
-    if (q.procedure) {
-      if (!pathways.some((t) => treatmentMatchesClinical(t, q))) return false;
-    }
+    if (q.procedure && !d.procedures.includes(q.procedure)) return false;
     return true;
   });
 }

@@ -20,7 +20,7 @@ export default async function CostsPage({
       <PageIntro
         eyebrow="Ledger"
         title="What it typically costs — beside what it costs at home."
-        lede="Filter by destination, city, specialty, or procedure. Figures are illustrative partner ranges, not a quote. Your dossier will be specific to the doctor and campus."
+        lede="Radiation Oncology procedure costs at partner campuses. Filter by destination, city, specialty, or radiotherapy technique."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
