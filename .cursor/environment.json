@@ -1,0 +1,18 @@
+{
+  "name": "Velora",
+  "install": "npm install",
+  "start": "true",
+  "terminals": [
+    {
+      "name": "velora-web",
+      "command": "npm run dev",
+      "description": "Velora Next.js app on 0.0.0.0:43127"
+    }
+  ],
+  "ports": [
+    {
+      "name": "Velora",
+      "port": 43127
+    }
+  ]
+}
