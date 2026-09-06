@@ -2,7 +2,6 @@
 
 import { useRouter, useSearchParams } from "next/navigation";
 import {
-  catalogConditions,
   catalogDestinations,
   catalogProcedures,
   catalogSpecialties,
@@ -30,7 +29,6 @@ export function CatalogFilter({ basePath, resultCount, resultLabel }: Props) {
   const destination = params.get("destination") ?? ALL;
   const city = params.get("city") ?? ALL;
   const specialty = params.get("specialty") ?? ALL;
-  const condition = params.get("condition") ?? ALL;
   const procedure = params.get("procedure") ?? ALL;
   const cities = citiesForDestination(destination === ALL ? undefined : destination);
 
@@ -39,6 +37,7 @@ export function CatalogFilter({ basePath, resultCount, resultLabel }: Props) {
     if (!value || value === ALL) next.delete(key);
     else next.set(key, value);
     if (key === "destination") next.delete("city");
+    next.delete("condition");
     const qs = next.toString();
     router.push(qs ? `${basePath}?${qs}` : basePath, { scroll: false });
   }
@@ -46,7 +45,7 @@ export function CatalogFilter({ basePath, resultCount, resultLabel }: Props) {
   return (
     <div className="relative z-20 -mt-8 md:-mt-10">
       <div className="rounded-2xl border border-border/80 bg-white p-3 shadow-[0_12px_40px_-18px_rgba(20,24,40,0.28)] md:p-4">
-        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
           <FilterSelect
             value={destination}
             onChange={(v) => setFilter("destination", v)}
@@ -67,13 +66,6 @@ export function CatalogFilter({ basePath, resultCount, resultLabel }: Props) {
             placeholder="All Specialities"
             options={catalogSpecialties}
             allLabel="All Specialities"
-          />
-          <FilterSelect
-            value={condition}
-            onChange={(v) => setFilter("condition", v)}
-            placeholder="All Conditions"
-            options={catalogConditions}
-            allLabel="All Conditions"
           />
           <FilterSelect
             value={procedure}

@@ -12,7 +12,6 @@ export type CatalogQuery = {
   destination?: string;
   city?: string;
   specialty?: string;
-  condition?: string;
   procedure?: string;
 };
 
@@ -28,7 +27,6 @@ export function parseCatalogQuery(
     destination: one("destination"),
     city: one("city"),
     specialty: one("specialty"),
-    condition: one("condition"),
     procedure: one("procedure"),
   };
 }
@@ -41,10 +39,6 @@ export const catalogCities = Array.from(new Set(hospitals.map((h) => h.city))).s
 
 export const catalogSpecialties = Array.from(
   new Set(doctors.map((d) => d.specialty)),
-).sort();
-
-export const catalogConditions = Array.from(
-  new Set(treatments.flatMap((t) => t.conditions)),
 ).sort();
 
 export const catalogProcedures = Array.from(
@@ -65,7 +59,6 @@ function hospitalMatches(h: Hospital, q: CatalogQuery) {
 }
 
 function treatmentMatchesClinical(t: Treatment, q: CatalogQuery) {
-  if (q.condition && !t.conditions.includes(q.condition)) return false;
   if (q.procedure && !t.procedures.includes(q.procedure)) return false;
   return true;
 }
@@ -76,7 +69,7 @@ export function filterHospitals(q: CatalogQuery): Hospital[] {
     const faculty = doctors.filter((d) => d.hospitalSlug === h.slug);
     const pathways = treatments.filter((t) => t.hospitalSlugs.includes(h.slug));
     if (q.specialty && !faculty.some((d) => d.specialty === q.specialty)) return false;
-    if (q.condition || q.procedure) {
+    if (q.procedure) {
       if (!pathways.some((t) => treatmentMatchesClinical(t, q))) return false;
     }
     return true;
@@ -107,7 +100,7 @@ export function filterDoctors(q: CatalogQuery): Doctor[] {
     if (!hospital || !hospitalMatches(hospital, q)) return false;
     if (q.specialty && d.specialty !== q.specialty) return false;
     const pathways = treatments.filter((t) => d.treatmentSlugs.includes(t.slug));
-    if (q.condition || q.procedure) {
+    if (q.procedure) {
       if (!pathways.some((t) => treatmentMatchesClinical(t, q))) return false;
     }
     return true;
