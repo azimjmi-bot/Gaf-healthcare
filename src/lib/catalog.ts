@@ -2,8 +2,6 @@ import { doctors, type Doctor } from "@/lib/doctors";
 import { hospitals, type Hospital } from "@/lib/hospitals";
 import { treatments, type Treatment } from "@/lib/treatments";
 import {
-  CITIES,
-  COUNTRIES,
   INDIA_CITIES,
   PROCEDURES,
   SPECIALTIES,
@@ -37,9 +35,9 @@ export function parseCatalogQuery(
   };
 }
 
-export const catalogDestinations = COUNTRIES.map((c) => c.name);
+export const catalogDestinations = Array.from(new Set(doctors.map((d) => d.country))).sort();
 
-export const catalogCities = CITIES.map((c) => c.name);
+export const catalogCities = Array.from(new Set(doctors.map((d) => d.city))).sort();
 
 export const catalogSpecialties = SPECIALTIES.map((s) => s.name);
 

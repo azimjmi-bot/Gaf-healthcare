@@ -4,6 +4,8 @@ Private medical travel atelier with four surfaces: **Doctors**, **Hospitals**, *
 
 Doctors are stored with denormalized **specialty**, **procedure**, **city**, and **country** slugs (`src/lib/taxonomy.ts`, `src/lib/doctors.ts`) so programmatic SEO routes can be mounted later without rewriting the catalog.
 
+The India radiation-oncology roster (70 consultants) and profile fields were sourced from [Ginger Healthcare’s public listing](https://ginger.healthcare/destinations/india/radiation-oncology/#doctors). Portraits and hospital photographs are loaded from that site’s media host.
+
 ## Local development
 
 ```bash

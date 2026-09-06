@@ -107,7 +107,7 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {doctors.slice(0, 8).map((d) => (
+            {doctors.filter((d) => d.featured).slice(0, 8).map((d) => (
               <Link
                 key={d.slug}
                 href={`/doctors/${d.slug}`}
@@ -124,7 +124,8 @@ export default function HomePage() {
                 <div className="p-5">
                   <p className="text-xs tracking-[0.18em] uppercase text-gold">{d.specialty}</p>
                   <h3 className="mt-1 font-heading text-2xl">{d.name}</h3>
-                  <p className="text-sm text-muted-foreground">
+                  <p className="text-sm text-muted-foreground">{d.title}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">
                     {d.city}, {d.country}
                   </p>
                 </div>
