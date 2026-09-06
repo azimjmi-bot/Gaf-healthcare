@@ -6,11 +6,22 @@ export default function NotFound() {
       <p className="eyebrow">404</p>
       <h1 className="mt-4 font-heading text-5xl">This page is not on the itinerary.</h1>
       <p className="mt-4 text-muted-foreground">
-        Return home, or open a dossier and we will chart the rest.
+        Velora has four rooms: doctors, hospitals, treatment cost, and blogs.
       </p>
-      <Link href="/" className="mt-8 inline-block text-sm underline-offset-4 hover:underline">
-        Back to Velora
-      </Link>
+      <nav className="mt-8 flex flex-wrap justify-center gap-4 text-sm">
+        <Link href="/doctors" className="underline-offset-4 hover:underline">
+          Doctors
+        </Link>
+        <Link href="/hospitals" className="underline-offset-4 hover:underline">
+          Hospitals
+        </Link>
+        <Link href="/costs" className="underline-offset-4 hover:underline">
+          Treatment Cost
+        </Link>
+        <Link href="/blogs" className="underline-offset-4 hover:underline">
+          Blogs
+        </Link>
+      </nav>
     </section>
   );
 }

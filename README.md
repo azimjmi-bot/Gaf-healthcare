@@ -1,6 +1,6 @@
 # Velora
 
-Private medical travel atelier. Named doctors, JCI hospitals, and a treatment-cost ledger — not a destination marketplace.
+Private medical travel atelier with four surfaces: **Doctors**, **Hospitals**, **Treatment Cost**, and **Blogs**. Radiation oncology procedures only.
 
 ## Local development
 

@@ -17,9 +17,7 @@ const links = [
   { href: "/doctors", label: "Doctors" },
   { href: "/hospitals", label: "Hospitals" },
   { href: "/costs", label: "Treatment Cost" },
-  { href: "/journey", label: "The journey" },
-  { href: "/stories", label: "Stories" },
-  { href: "/about", label: "Atelier" },
+  { href: "/blogs", label: "Blogs" },
 ];
 
 export function SiteHeader() {

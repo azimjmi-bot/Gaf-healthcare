@@ -3,20 +3,12 @@ import { site } from "@/lib/site";
 
 const columns = [
   {
-    title: "Plan",
+    title: "Explore",
     links: [
       { href: "/doctors", label: "Doctors" },
       { href: "/hospitals", label: "Hospitals" },
       { href: "/costs", label: "Treatment Cost" },
-      { href: "/journey", label: "How it works" },
-    ],
-  },
-  {
-    title: "House",
-    links: [
-      { href: "/about", label: "The atelier" },
-      { href: "/stories", label: "Patient stories" },
-      { href: "/consult", label: "Request a dossier" },
+      { href: "/blogs", label: "Blogs" },
     ],
   },
 ];

@@ -3,7 +3,8 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
-import { doctors, hospitals, steps, stories, treatments } from "@/lib/data";
+import { posts } from "@/lib/blogs";
+import { doctors, hospitals, treatments } from "@/lib/data";
 
 export default function HomePage() {
   return (
@@ -18,47 +19,46 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/92 via-ink/70 to-ink/35" />
         <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-16 pt-32 md:px-8 md:pb-24">
-          <p className="eyebrow text-gold">JCI hospitals · named surgeons · ICU-capable campuses</p>
+          <p className="eyebrow text-gold">Radiation oncology · India cities · named consultants</p>
           <h1 className="mt-5 max-w-4xl font-heading text-5xl leading-[0.95] md:text-7xl lg:text-[5.25rem]">
-            Private floors. Published outcomes.
+            Doctors. Hospitals. Costs. Blogs.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/80 md:text-lg">
-            Velora places you with accredited hospital partners — theatres with
-            24/7 critical care, international desks that answer, and doctors
-            whose volume we have verified. Travel is arranged around the
-            admission, not the other way around.
+            Velora is four pages: radiation oncologists you can meet on camera,
+            partner campuses, published USD ranges, and planning essays. No
+            destination mill, no conditions marketplace.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Button
               asChild
               className="h-12 rounded-full bg-gold px-8 text-ink hover:bg-gold/90"
             >
-              <Link href="/consult">Request a clinical dossier</Link>
+              <Link href="/doctors">Browse doctors</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               className="h-12 rounded-full border-white/30 bg-transparent px-8 text-ivory hover:bg-white/10 hover:text-ivory"
             >
-              <Link href="/hospitals">View partner hospitals</Link>
+              <Link href="/hospitals">View hospitals</Link>
             </Button>
           </div>
           <dl className="mt-16 grid max-w-4xl grid-cols-2 gap-6 border-t border-white/15 pt-8 text-sm sm:grid-cols-4">
             <div>
-              <dt className="text-ivory/55">JCI partners</dt>
-              <dd className="mt-1 font-heading text-3xl">{hospitals.length}</dd>
-            </div>
-            <div>
-              <dt className="text-ivory/55">Consultants</dt>
+              <dt className="text-ivory/55">Doctors</dt>
               <dd className="mt-1 font-heading text-3xl">{doctors.length}</dd>
             </div>
             <div>
-              <dt className="text-ivory/55">On-call ICU</dt>
-              <dd className="mt-1 font-heading text-3xl">24/7</dd>
+              <dt className="text-ivory/55">Hospitals</dt>
+              <dd className="mt-1 font-heading text-3xl">{hospitals.length}</dd>
             </div>
             <div>
-              <dt className="text-ivory/55">Pathways</dt>
+              <dt className="text-ivory/55">Cost sheets</dt>
               <dd className="mt-1 font-heading text-3xl">{treatments.length}</dd>
+            </div>
+            <div>
+              <dt className="text-ivory/55">Blogs</dt>
+              <dd className="mt-1 font-heading text-3xl">{posts.length}</dd>
             </div>
           </dl>
         </div>
@@ -66,25 +66,31 @@ export default function HomePage() {
 
       <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
         <p className="eyebrow">Index</p>
-        <h2 className="mt-3 font-heading text-4xl md:text-5xl">How to read the house</h2>
-        <div className="mt-10 grid gap-5 md:grid-cols-3">
+        <h2 className="mt-3 font-heading text-4xl md:text-5xl">The only four rooms</h2>
+        <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           <IndexCard
             href="/doctors"
             kicker="01"
             title="Doctors"
-            body="Named specialists you meet on camera before any deposit."
+            body="Radiation oncologists you meet on camera before any deposit."
           />
           <IndexCard
             href="/hospitals"
             kicker="02"
             title="Hospitals"
-            body="JCI campuses with international desks that actually answer."
+            body="Campuses in Delhi NCR, Mumbai, Bengaluru, Chennai, Hyderabad, and selected overseas houses."
           />
           <IndexCard
             href="/costs"
             kicker="03"
             title="Treatment Cost"
-            body="US cash-pay beside partner ranges. Quotes come after the dossier."
+            body="US cash-pay beside partner ranges for EBRT through TBI."
+          />
+          <IndexCard
+            href="/blogs"
+            kicker="04"
+            title="Blogs"
+            body="IMRT versus 3D-CRT, proton flights, short-stay SRS, and records before you book."
           />
         </div>
       </section>
@@ -154,38 +160,38 @@ export default function HomePage() {
 
       <section className="border-y border-border bg-ivory py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <p className="eyebrow">Choreography</p>
-          <h2 className="mt-3 font-heading text-4xl md:text-5xl">Five movements</h2>
-          <ol className="mt-12 grid gap-8 md:grid-cols-5">
-            {steps.map((s) => (
-              <li key={s.n}>
-                <p className="font-heading text-2xl text-gold">{s.n}</p>
-                <h3 className="mt-3 font-heading text-2xl">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{s.body}</p>
-              </li>
+          <div className="flex items-end justify-between gap-6">
+            <div>
+              <p className="eyebrow">Desk</p>
+              <h2 className="mt-3 font-heading text-4xl md:text-5xl">Blogs</h2>
+            </div>
+            <Link href="/blogs" className="hidden items-center gap-2 text-sm md:inline-flex">
+              All notes <ArrowRight className="size-4" />
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-6 md:grid-cols-2">
+            {posts.slice(0, 4).map((post) => (
+              <Link
+                key={post.slug}
+                href={`/blogs/${post.slug}`}
+                className="group overflow-hidden rounded-2xl border border-border bg-card"
+              >
+                <div className="relative h-52">
+                  <Image
+                    src={post.image}
+                    alt=""
+                    fill
+                    className="object-cover transition duration-700 group-hover:scale-105"
+                  />
+                </div>
+                <div className="p-6">
+                  <p className="text-xs tracking-[0.18em] uppercase text-gold">{post.category}</p>
+                  <h3 className="mt-2 font-heading text-2xl leading-snug">{post.title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{post.excerpt}</p>
+                </div>
+              </Link>
             ))}
-          </ol>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-        <p className="eyebrow">Letters</p>
-        <h2 className="mt-3 font-heading text-4xl md:text-5xl">From the road home</h2>
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {stories.map((s) => (
-            <blockquote
-              key={s.slug}
-              className="flex flex-col justify-between rounded-2xl border border-border bg-card p-8"
-            >
-              <p className="font-heading text-2xl leading-snug">&ldquo;{s.quote}&rdquo;</p>
-              <footer className="mt-8 text-sm text-muted-foreground">
-                <p className="text-foreground">{s.name}</p>
-                <p>
-                  {s.from} · {s.treatment}
-                </p>
-              </footer>
-            </blockquote>
-          ))}
+          </div>
         </div>
       </section>
 
@@ -206,16 +212,13 @@ function IndexCard({
   body: string;
 }) {
   return (
-    <Link
-      href={href}
-      className="group rounded-2xl border border-border bg-card p-8 transition hover:border-primary/30"
-    >
-      <p className="font-heading text-2xl text-gold">{kicker}</p>
-      <h3 className="mt-4 font-heading text-3xl">{title}</h3>
+    <Link href={href} className="group rounded-2xl border border-border bg-card p-6">
+      <p className="font-heading text-gold">{kicker}</p>
+      <h3 className="mt-4 flex items-center gap-2 font-heading text-2xl">
+        {title}
+        <ArrowRight className="size-4 opacity-0 transition group-hover:opacity-100" />
+      </h3>
       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{body}</p>
-      <p className="mt-6 inline-flex items-center gap-2 text-sm">
-        Open <ArrowRight className="size-4 transition group-hover:translate-x-1" />
-      </p>
     </Link>
   );
 }
