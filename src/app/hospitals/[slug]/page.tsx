@@ -95,7 +95,10 @@ export default async function HospitalDetailPage({
                   </div>
                   <div>
                     <p className="font-heading text-xl">{d.name}</p>
-                    <p className="text-sm text-muted-foreground">{d.title}</p>
+                    <p className="text-sm text-muted-foreground">{d.specialty}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {d.city}, {d.country}
+                    </p>
                   </div>
                 </Link>
               </li>

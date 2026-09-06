@@ -1,21 +1,16 @@
+import { doctors, type Doctor } from "@/lib/doctors";
+import { hospitals, type Hospital } from "@/lib/hospitals";
+import { treatments, type Treatment } from "@/lib/treatments";
 import {
-  doctors,
-  getHospital,
-  hospitals,
-  RADIATION_PROCEDURES,
-  treatments,
-  type Doctor,
-  type Hospital,
-  type Treatment,
-} from "@/lib/data";
+  CITIES,
+  COUNTRIES,
+  INDIA_CITIES,
+  PROCEDURES,
+  SPECIALTIES,
+  citiesInCountry,
+} from "@/lib/taxonomy";
 
-export const INDIA_CITIES = [
-  "Delhi NCR",
-  "Mumbai",
-  "Bengaluru",
-  "Chennai",
-  "Hyderabad",
-] as const;
+export { INDIA_CITIES };
 
 export type CatalogEntity = "doctors" | "hospitals" | "treatments";
 
@@ -42,22 +37,17 @@ export function parseCatalogQuery(
   };
 }
 
-export const catalogDestinations = Array.from(
-  new Set(hospitals.map((h) => h.country)),
-).sort();
+export const catalogDestinations = COUNTRIES.map((c) => c.name);
 
-export const catalogCities = Array.from(new Set(hospitals.map((h) => h.city))).sort();
+export const catalogCities = CITIES.map((c) => c.name);
 
-export const catalogSpecialties = ["Radiation Oncology"];
+export const catalogSpecialties = SPECIALTIES.map((s) => s.name);
 
-export const catalogProcedures = [...RADIATION_PROCEDURES];
+export const catalogProcedures = PROCEDURES.map((p) => p.name);
 
 export function citiesForDestination(destination?: string) {
-  if (destination === "India") return [...INDIA_CITIES];
-  const list = destination
-    ? hospitals.filter((h) => h.country === destination).map((h) => h.city)
-    : hospitals.map((h) => h.city);
-  return Array.from(new Set(list)).sort();
+  if (!destination) return catalogCities;
+  return citiesInCountry(destination).map((c) => c.name);
 }
 
 export function cityResultCounts(entity: CatalogEntity, q: CatalogQuery) {
@@ -72,13 +62,10 @@ export function cityResultCounts(entity: CatalogEntity, q: CatalogQuery) {
   const counts: Record<string, number> = {};
   for (const city of cities) {
     counts[city] = rows.filter((row) => {
-      if (entity === "hospitals") return (row as (typeof hospitals)[number]).city === city;
-      if (entity === "doctors") {
-        const h = getHospital((row as (typeof doctors)[number]).hospitalSlug);
-        return h?.city === city;
-      }
-      const campuses = (row as (typeof treatments)[number]).hospitalSlugs
-        .map((s) => getHospital(s))
+      if (entity === "hospitals") return (row as Hospital).city === city;
+      if (entity === "doctors") return (row as Doctor).city === city;
+      const campuses = (row as Treatment).hospitalSlugs
+        .map((s) => hospitals.find((h) => h.slug === s))
         .filter(Boolean);
       return campuses.some((h) => h?.city === city);
     }).length;
@@ -89,11 +76,6 @@ export function cityResultCounts(entity: CatalogEntity, q: CatalogQuery) {
 function hospitalMatches(h: Hospital, q: CatalogQuery) {
   if (q.destination && h.country !== q.destination) return false;
   if (q.city && h.city !== q.city) return false;
-  return true;
-}
-
-function treatmentMatchesClinical(t: Treatment, q: CatalogQuery) {
-  if (q.procedure && !t.procedures.includes(q.procedure)) return false;
   return true;
 }
 
@@ -110,9 +92,11 @@ export function filterHospitals(q: CatalogQuery): Hospital[] {
 
 export function filterTreatments(q: CatalogQuery): Treatment[] {
   return treatments.filter((t) => {
-    if (!treatmentMatchesClinical(t, q)) return false;
+    if (q.procedure && !t.procedures.includes(q.procedure) && t.procedureSlug !== q.procedure) {
+      return false;
+    }
     const campuses = t.hospitalSlugs
-      .map((s) => getHospital(s))
+      .map((s) => hospitals.find((h) => h.slug === s))
       .filter((h): h is Hospital => Boolean(h));
     if (q.destination && !campuses.some((h) => h.country === q.destination)) return false;
     if (q.city && !campuses.some((h) => h.city === q.city)) return false;
@@ -128,10 +112,12 @@ export function filterTreatments(q: CatalogQuery): Treatment[] {
 
 export function filterDoctors(q: CatalogQuery): Doctor[] {
   return doctors.filter((d) => {
-    const hospital = getHospital(d.hospitalSlug);
-    if (!hospital || !hospitalMatches(hospital, q)) return false;
+    if (q.destination && d.country !== q.destination) return false;
+    if (q.city && d.city !== q.city) return false;
     if (q.specialty && d.specialty !== q.specialty) return false;
-    if (q.procedure && !d.procedures.includes(q.procedure)) return false;
+    if (q.procedure && !d.procedures.includes(q.procedure) && !d.procedureSlugs.includes(q.procedure)) {
+      return false;
+    }
     return true;
   });
 }

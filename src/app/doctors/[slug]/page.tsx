@@ -47,6 +47,9 @@ export default async function DoctorDetailPage({
             <p className="eyebrow">{d.specialty}</p>
             <h1 className="mt-3 font-heading text-5xl md:text-6xl">{d.name}</h1>
             <p className="mt-3 text-lg text-muted-foreground">{d.title}</p>
+            <p className="mt-2 text-sm text-muted-foreground">
+              {d.city}, {d.country}
+            </p>
             <p className="mt-6 text-lg leading-relaxed text-muted-foreground">{d.bio}</p>
             <dl className="mt-8 grid gap-5 sm:grid-cols-2">
               <div>
@@ -54,9 +57,13 @@ export default async function DoctorDetailPage({
                 <dd className="mt-1">
                   {hospital ? (
                     <Link href={`/hospitals/${hospital.slug}`} className="hover:underline">
-                      {hospital.name}, {hospital.city}
+                      {hospital.name}, {d.city}, {d.country}
                     </Link>
-                  ) : null}
+                  ) : (
+                    <span>
+                      {d.city}, {d.country}
+                    </span>
+                  )}
                 </dd>
               </div>
               <div>

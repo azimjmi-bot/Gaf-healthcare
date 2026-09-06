@@ -4,7 +4,7 @@ import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { filterDoctors, parseCatalogQuery } from "@/lib/catalog";
-import { getHospital } from "@/lib/data";
+import { groupDoctorsForDirectory } from "@/lib/doctors";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Doctors" };
@@ -17,13 +17,14 @@ export default async function DoctorsPage({
   const raw = await searchParams;
   const query = parseCatalogQuery(raw);
   const list = filterDoctors(query);
+  const directory = groupDoctorsForDirectory(list);
 
   return (
     <>
       <PageIntro
         eyebrow="Find a specialist"
-        title="Named surgeons. Video first. Never a mill."
-        lede="Radiation oncologists across partner campuses. Filter by destination, city, Radiation Oncology, and the radiotherapy procedure you need."
+        title="Named radiation oncologists, indexed for the city you can actually fly to."
+        lede="Every consultant is filed under specialty, procedure, city, and country — the same keys a later landing page will use. Filter here; the URL facets stay stable."
       >
         <Suspense fallback={<FilterSkeleton />}>
           <CatalogFilter
@@ -40,34 +41,57 @@ export default async function DoctorsPage({
             No doctors match these filters. Clear a field or request a dossier and we will advise.
           </p>
         ) : (
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {list.map((d) => {
-              const hospital = getHospital(d.hospitalSlug);
-              return (
-                <Link
-                  key={d.slug}
-                  href={`/doctors/${d.slug}`}
-                  className="group overflow-hidden rounded-2xl border border-border bg-card"
-                >
-                  <div className="relative h-72">
-                    <Image
-                      src={d.image}
-                      alt={d.name}
-                      fill
-                      className="object-cover object-top transition duration-700 group-hover:scale-105"
-                    />
-                  </div>
-                  <div className="p-6">
-                    <p className="text-xs tracking-[0.18em] uppercase text-gold">{d.specialty}</p>
-                    <h2 className="mt-2 font-heading text-2xl">{d.name}</h2>
-                    <p className="text-sm text-muted-foreground">{d.title}</p>
-                    <p className="mt-3 text-sm text-muted-foreground">
-                      {hospital?.name} · {hospital?.city}
-                    </p>
-                  </div>
-                </Link>
-              );
-            })}
+          <div className="space-y-16">
+            {directory.map((specialty) => (
+              <div key={specialty.specialtySlug}>
+                <p className="text-xs tracking-[0.18em] uppercase text-gold">Specialty</p>
+                <h2 className="mt-2 font-heading text-4xl">{specialty.specialty}</h2>
+                <div className="mt-10 space-y-12">
+                  {specialty.countries.map((country) => (
+                    <div key={country.countrySlug}>
+                      <h3 className="font-heading text-2xl">{country.country}</h3>
+                      <div className="mt-6 space-y-10">
+                        {country.cities.map((city) => (
+                          <div key={city.citySlug}>
+                            <p className="text-sm font-medium text-foreground">{city.city}</p>
+                            <div className="mt-4 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+                              {city.doctors.map((d) => (
+                                <Link
+                                  key={d.slug}
+                                  href={`/doctors/${d.slug}`}
+                                  className="group overflow-hidden rounded-2xl border border-border bg-card"
+                                >
+                                  <div className="relative h-64">
+                                    <Image
+                                      src={d.image}
+                                      alt={d.name}
+                                      fill
+                                      className="object-cover object-top transition duration-700 group-hover:scale-105"
+                                    />
+                                  </div>
+                                  <div className="p-6">
+                                    <p className="text-xs tracking-[0.18em] uppercase text-gold">
+                                      {d.specialty}
+                                    </p>
+                                    <h4 className="mt-2 font-heading text-2xl">{d.name}</h4>
+                                    <p className="text-sm text-muted-foreground">
+                                      {d.city}, {d.country}
+                                    </p>
+                                    <p className="mt-3 text-sm text-muted-foreground">
+                                      {d.procedures.slice(0, 2).join(" · ")}
+                                    </p>
+                                  </div>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         )}
       </section>

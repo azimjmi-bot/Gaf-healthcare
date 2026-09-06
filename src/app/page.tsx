@@ -124,7 +124,9 @@ export default function HomePage() {
                 <div className="p-5">
                   <p className="text-xs tracking-[0.18em] uppercase text-gold">{d.specialty}</p>
                   <h3 className="mt-1 font-heading text-2xl">{d.name}</h3>
-                  <p className="text-sm text-muted-foreground">{d.title}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {d.city}, {d.country}
+                  </p>
                 </div>
               </Link>
             ))}
