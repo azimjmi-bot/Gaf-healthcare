@@ -4,55 +4,61 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
 import { doctors, hospitals, steps, stories, treatments } from "@/lib/data";
-import { site } from "@/lib/site";
 
 export default function HomePage() {
   return (
     <>
       <section className="relative min-h-[100svh] overflow-hidden bg-ink text-ivory">
         <Image
-          src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=2400&q=80"
-          alt="Quiet luxury hotel corridor at dusk"
+          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=2400&q=80"
+          alt="Quiet corridor in a modern accredited hospital"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/55 to-ink/25" />
+        <div className="absolute inset-0 bg-gradient-to-r from-ink/92 via-ink/70 to-ink/35" />
         <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-16 pt-32 md:px-8 md:pb-24">
-          <p className="eyebrow text-gold">Private medical travel</p>
-          <h1 className="mt-5 max-w-3xl font-heading text-5xl leading-[0.95] md:text-7xl lg:text-8xl">
-            Care at the world&apos;s best tables.
+          <p className="eyebrow text-gold">JCI hospitals · named surgeons · ICU-capable campuses</p>
+          <h1 className="mt-5 max-w-4xl font-heading text-5xl leading-[0.95] md:text-7xl lg:text-[5.25rem]">
+            Private floors. Published outcomes.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/80 md:text-lg">
-            {site.description}
+            Velora places you with accredited hospital partners — theatres with
+            24/7 critical care, international desks that answer, and doctors
+            whose volume we have verified. Travel is arranged around the
+            admission, not the other way around.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Button
               asChild
               className="h-12 rounded-full bg-gold px-8 text-ink hover:bg-gold/90"
             >
-              <Link href="/consult">Request a dossier</Link>
+              <Link href="/consult">Request a clinical dossier</Link>
             </Button>
             <Button
               asChild
               variant="outline"
               className="h-12 rounded-full border-white/30 bg-transparent px-8 text-ivory hover:bg-white/10 hover:text-ivory"
             >
-              <Link href="/doctors">Meet the doctors</Link>
+              <Link href="/hospitals">View partner hospitals</Link>
             </Button>
           </div>
-          <dl className="mt-16 grid max-w-3xl grid-cols-3 gap-6 border-t border-white/15 pt-8 text-sm">
+          <dl className="mt-16 grid max-w-4xl grid-cols-2 gap-6 border-t border-white/15 pt-8 text-sm sm:grid-cols-4">
             <div>
-              <dt className="text-ivory/55">Named doctors</dt>
-              <dd className="mt-1 font-heading text-3xl">{doctors.length}</dd>
-            </div>
-            <div>
-              <dt className="text-ivory/55">Hospitals</dt>
+              <dt className="text-ivory/55">JCI partners</dt>
               <dd className="mt-1 font-heading text-3xl">{hospitals.length}</dd>
             </div>
             <div>
-              <dt className="text-ivory/55">Coordinator hours</dt>
+              <dt className="text-ivory/55">Consultants</dt>
+              <dd className="mt-1 font-heading text-3xl">{doctors.length}</dd>
+            </div>
+            <div>
+              <dt className="text-ivory/55">On-call ICU</dt>
               <dd className="mt-1 font-heading text-3xl">24/7</dd>
+            </div>
+            <div>
+              <dt className="text-ivory/55">Pathways</dt>
+              <dd className="mt-1 font-heading text-3xl">{treatments.length}</dd>
             </div>
           </dl>
         </div>
