@@ -8,7 +8,12 @@ export {
   toSlug,
 } from "@/lib/taxonomy";
 
-export { hospitals, getHospital } from "@/lib/hospitals";
+export {
+  hospitals,
+  getHospital,
+  hospitalsMatchingPseo,
+  groupHospitalsForDirectory,
+} from "@/lib/hospitals";
 export { treatments, getTreatment, treatmentsForHospital } from "@/lib/treatments";
 export {
   doctors,
@@ -17,6 +22,7 @@ export {
   doctorsForTreatment,
   doctorsMatchingPseo,
   groupDoctorsForDirectory,
+  groupDoctorsUnderHospitals,
 } from "@/lib/doctors";
 
 export type Story = {

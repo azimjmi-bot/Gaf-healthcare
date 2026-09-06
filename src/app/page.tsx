@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
 import { posts } from "@/lib/blogs";
+import { HospitalCard } from "@/components/hospital-card";
 import { doctors, hospitals, treatments } from "@/lib/data";
 
 export default function HomePage() {
@@ -78,7 +79,7 @@ export default function HomePage() {
             href="/hospitals"
             kicker="02"
             title="Hospitals"
-            body="Campuses in Delhi NCR, Mumbai, Bengaluru, Chennai, Hyderabad, and selected overseas houses."
+            body="JCI campuses in Delhi NCR, Mumbai, Bengaluru, Chennai, and Hyderabad, with named radiation faculty."
           />
           <IndexCard
             href="/costs"
@@ -123,6 +124,23 @@ export default function HomePage() {
               </Link>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+        <div className="flex items-end justify-between gap-6">
+          <div>
+            <p className="eyebrow">Campuses</p>
+            <h2 className="mt-3 font-heading text-4xl md:text-5xl">Hospitals</h2>
+          </div>
+          <Link href="/hospitals" className="hidden items-center gap-2 text-sm md:inline-flex">
+            View all <ArrowRight className="size-4" />
+          </Link>
+        </div>
+        <div className="mt-10 grid gap-6 md:grid-cols-2">
+          {hospitals.slice(0, 4).map((h) => (
+            <HospitalCard key={h.slug} hospital={h} />
+          ))}
         </div>
       </section>
 

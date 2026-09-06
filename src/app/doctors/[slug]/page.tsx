@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
-import { doctors, getDoctor, getHospital, getTreatment } from "@/lib/data";
+import { doctors, doctorsForHospital, getDoctor, getHospital, getTreatment } from "@/lib/data";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -44,6 +44,7 @@ export default async function DoctorDetailPage({
   if (!d) notFound();
   const hospital = getHospital(d.hospitalSlug);
   const pathways = d.treatmentSlugs.map((s) => getTreatment(s)).filter(Boolean);
+  const colleagues = doctorsForHospital(d.hospitalSlug).filter((x) => x.slug !== d.slug);
 
   return (
     <>
@@ -89,6 +90,24 @@ export default async function DoctorDetailPage({
         <h3 className="text-sm tracking-[0.2em] text-gold uppercase">About {d.name}</h3>
         <h2 className="mt-3 font-heading text-3xl">Professional summary</h2>
         <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{d.bio}</p>
+        {hospital ? (
+          <div className="mt-10 rounded-2xl border border-border bg-card p-6">
+            <p className="text-xs tracking-[0.18em] uppercase text-gold">Practises at</p>
+            <Link href={`/hospitals/${hospital.slug}`} className="mt-2 block font-heading text-3xl hover:text-gold">
+              {hospital.name}
+            </Link>
+            <p className="mt-1 text-sm text-muted-foreground">
+              {hospital.city}, {hospital.country} · {hospital.accreditation}
+            </p>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{hospital.bio}</p>
+            <Link
+              href={`/hospitals/${hospital.slug}`}
+              className="mt-4 inline-block text-sm underline-offset-4 hover:underline"
+            >
+              Hospital profile and full faculty
+            </Link>
+          </div>
+        ) : null}
         <ProfileList title="Specializations" items={d.specializations} />
         <ProfileList title="Procedures & Expertise" items={d.proceduresExpertise} />
         <ProfileList title="Education & Qualifications" items={d.education} />
@@ -118,6 +137,30 @@ export default async function DoctorDetailPage({
                   </li>
                 ) : null,
               )}
+            </ul>
+          </div>
+        </section>
+      ) : null}
+
+      {colleagues.length > 0 ? (
+        <section className="border-t border-border py-16">
+          <div className="mx-auto max-w-7xl px-5 md:px-8">
+            <h2 className="font-heading text-3xl">
+              Other radiation oncologists at {hospital?.name ?? "this campus"}
+            </h2>
+            <ul className="mt-6 grid gap-4 md:grid-cols-2">
+              {colleagues.map((c) => (
+                <li key={c.slug}>
+                  <Link
+                    href={`/doctors/${c.slug}`}
+                    className="block rounded-xl border border-border bg-card p-6 hover:border-primary/30"
+                  >
+                    <p className="font-heading text-2xl">{c.name}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{c.title}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{c.qualifications}</p>
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
         </section>

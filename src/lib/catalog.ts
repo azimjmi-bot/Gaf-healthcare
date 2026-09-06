@@ -35,9 +35,13 @@ export function parseCatalogQuery(
   };
 }
 
-export const catalogDestinations = Array.from(new Set(doctors.map((d) => d.country))).sort();
+export const catalogDestinations = Array.from(
+  new Set([...doctors.map((d) => d.country), ...hospitals.map((h) => h.country)]),
+).sort();
 
-export const catalogCities = Array.from(new Set(doctors.map((d) => d.city))).sort();
+export const catalogCities = Array.from(
+  new Set([...doctors.map((d) => d.city), ...hospitals.map((h) => h.city)]),
+).sort();
 
 export const catalogSpecialties = SPECIALTIES.map((s) => s.name);
 
@@ -80,10 +84,10 @@ function hospitalMatches(h: Hospital, q: CatalogQuery) {
 export function filterHospitals(q: CatalogQuery): Hospital[] {
   return hospitals.filter((h) => {
     if (!hospitalMatches(h, q)) return false;
-    const faculty = doctors.filter((d) => d.hospitalSlug === h.slug);
-    if (q.specialty && !faculty.some((d) => d.specialty === q.specialty)) return false;
-    const procedure = q.procedure;
-    if (procedure && !faculty.some((d) => d.procedures.includes(procedure))) return false;
+    if (q.specialty && h.specialty !== q.specialty) return false;
+    if (q.procedure && !h.procedures.includes(q.procedure) && !h.procedureSlugs.includes(q.procedure)) {
+      return false;
+    }
     return true;
   });
 }

@@ -2,9 +2,14 @@
 
 Private medical travel atelier with four surfaces: **Doctors**, **Hospitals**, **Treatment Cost**, and **Blogs**. Radiation oncology procedures only.
 
-Doctors are stored with denormalized **specialty**, **procedure**, **city**, and **country** slugs (`src/lib/taxonomy.ts`, `src/lib/doctors.ts`) so programmatic SEO routes can be mounted later without rewriting the catalog.
+Doctors and hospitals are stored with denormalized **specialty**, **procedure**, **city**, and **country** slugs (`src/lib/taxonomy.ts`, `src/lib/doctors.ts`, `src/lib/hospitals.ts`) so programmatic SEO routes can be mounted later without rewriting the catalog:
 
-The India radiation-oncology roster (70 consultants) and structured profile fields were sourced from [Ginger Healthcare’s public listing](https://ginger.healthcare/destinations/india/radiation-oncology/#doctors). Doctor portraits and narrative biographies are omitted here — those will be supplied later from CMS.
+- `/doctors/{country}/{city}/{specialty}/{procedure}`
+- `/hospitals/{country}/{city}/{specialty}/{procedure}`
+
+Those paths are not live yet. Directory pages already group by the same keys.
+
+The India radiation-oncology roster (70 consultants, 23 campuses) and structured fields were sourced from [Ginger Healthcare’s public listing](https://ginger.healthcare/destinations/india/radiation-oncology/). Bios on this site are original Velora copy. Portraits wait on CMS.
 
 ## Local development
 

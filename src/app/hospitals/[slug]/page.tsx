@@ -1,14 +1,11 @@
-import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
+import { DoctorCard } from "@/components/doctor-card";
 import { CtaBand } from "@/components/page-shell";
-import {
-  doctorsForHospital,
-  getHospital,
-  hospitals,
-  treatmentsForHospital,
-} from "@/lib/data";
+import { getTreatment } from "@/lib/data";
+import { doctorsForHospital } from "@/lib/doctors";
+import { getHospital, hospitals, hospitalsInCity } from "@/lib/hospitals";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -34,29 +31,53 @@ export default async function HospitalDetailPage({
   const h = getHospital(slug);
   if (!h) notFound();
   const faculty = doctorsForHospital(h.slug);
-  const pathways = treatmentsForHospital(h.slug);
+  const pathways = h.procedureSlugs.map((s) => getTreatment(s)).filter(Boolean);
+  const nearby = hospitalsInCity(h.citySlug).filter((x) => x.slug !== h.slug);
 
   return (
     <>
-      <section className="relative h-[55vh] min-h-[24rem] bg-ink text-ivory">
-        <Image src={h.image} alt={h.name} fill className="object-cover" priority />
-        <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
-        <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-12 md:px-8">
+      <section className="border-b border-border bg-ink text-ivory">
+        <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
           <p className="eyebrow text-gold">{h.accreditation}</p>
           <h1 className="mt-3 font-heading text-5xl md:text-6xl">{h.name}</h1>
           <p className="mt-3 text-ivory/80">
             {h.city}, {h.country}
+            {h.established ? ` · Established ${h.established}` : ""}
           </p>
+          <p className="mt-2 text-sm text-ivory/60">{h.specialty}</p>
         </div>
       </section>
+
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-12 md:px-8">
         <div className="md:col-span-7">
-          <p className="text-lg leading-relaxed text-muted-foreground">{h.summary}</p>
-          <dl className="mt-10 grid gap-6 sm:grid-cols-3">
+          <h2 className="font-heading text-3xl">About this campus</h2>
+          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{h.bio}</p>
+          <dl className="mt-10 grid gap-6 sm:grid-cols-2">
             <div>
-              <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">Focus</dt>
-              <dd className="mt-1">{h.focus}</dd>
+              <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">Specialty</dt>
+              <dd className="mt-1">
+                <Link href={`/hospitals?specialty=${encodeURIComponent(h.specialty)}`} className="hover:underline">
+                  {h.specialty}
+                </Link>
+              </dd>
             </div>
+            <div>
+              <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">City</dt>
+              <dd className="mt-1">
+                <Link
+                  href={`/hospitals?destination=${encodeURIComponent(h.country)}&city=${encodeURIComponent(h.city)}`}
+                  className="hover:underline"
+                >
+                  {h.city}, {h.country}
+                </Link>
+              </dd>
+            </div>
+            {h.beds ? (
+              <div>
+                <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">Beds</dt>
+                <dd className="mt-1">{h.beds}</dd>
+              </div>
+            ) : null}
             <div>
               <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">Languages</dt>
               <dd className="mt-1">{h.languages}</dd>
@@ -64,6 +85,10 @@ export default async function HospitalDetailPage({
             <div>
               <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">Critical care</dt>
               <dd className="mt-1">{h.icu}</dd>
+            </div>
+            <div>
+              <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">Accreditation</dt>
+              <dd className="mt-1">{h.accreditation}</dd>
             </div>
           </dl>
         </div>
@@ -77,46 +102,107 @@ export default async function HospitalDetailPage({
             <Button asChild className="mt-6 h-11 rounded-full px-6">
               <Link href={`/consult?hospital=${h.slug}`}>Request this hospital</Link>
             </Button>
+            {faculty[0] ? (
+              <p className="mt-4 text-sm text-muted-foreground">
+                Or go straight to{" "}
+                <Link href={`/doctors/${faculty[0].slug}`} className="underline-offset-4 hover:underline">
+                  {faculty[0].name}
+                </Link>
+                .
+              </p>
+            ) : null}
           </div>
         </aside>
       </section>
-      <section className="bg-secondary/40 py-16">
+
+      <section className="border-t border-border bg-secondary/30 py-16">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
-          <h2 className="font-heading text-3xl">Doctors here</h2>
-          <ul className="mt-6 grid gap-4 md:grid-cols-2">
-            {faculty.map((d) => (
-              <li key={d.slug}>
-                <Link
-                  href={`/doctors/${d.slug}`}
-                  className="block rounded-xl border border-border bg-card p-4 hover:border-primary/30"
-                >
-                  <p className="font-heading text-xl">{d.name}</p>
-                  <p className="text-sm text-muted-foreground">{d.title}</p>
-                  <p className="text-sm text-muted-foreground">
-                    {d.city}, {d.country}
-                  </p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-          <h2 className="mt-14 font-heading text-3xl">Treatment cost on this campus</h2>
-          <ul className="mt-6 grid gap-4 md:grid-cols-2">
-            {pathways.map((t) => (
-              <li key={t.slug}>
-                <Link
-                  href={`/costs/${t.slug}`}
-                  className="block rounded-xl border border-border bg-card p-6 hover:border-primary/30"
-                >
-                  <p className="font-heading text-2xl">{t.name}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Partner range {t.partnerRange}
-                  </p>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="flex flex-wrap items-end justify-between gap-4">
+            <div>
+              <p className="eyebrow">Faculty</p>
+              <h2 className="mt-2 font-heading text-3xl">Radiation oncologists at {h.name}</h2>
+            </div>
+            <Link
+              href={`/doctors?destination=${encodeURIComponent(h.country)}&city=${encodeURIComponent(h.city)}`}
+              className="text-sm underline-offset-4 hover:underline"
+            >
+              All doctors in {h.city}
+            </Link>
+          </div>
+          {faculty.length === 0 ? (
+            <p className="mt-8 text-muted-foreground">
+              Named consultants for this campus are being matched. Request a dossier and we will advise.
+            </p>
+          ) : (
+            <div className="mt-8 grid gap-6">
+              {faculty.map((d) => (
+                <DoctorCard key={d.slug} doctor={d} />
+              ))}
+            </div>
+          )}
         </div>
       </section>
+
+      <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
+        <h2 className="font-heading text-3xl">Procedures on this campus</h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          Cost sheets and the doctors here who list each technique.
+        </p>
+        <ul className="mt-6 grid gap-4 md:grid-cols-2">
+          {pathways.map((t) =>
+            t ? (
+              <li key={t.slug}>
+                <div className="rounded-xl border border-border bg-card p-6">
+                  <Link href={`/costs/${t.slug}`} className="font-heading text-2xl hover:text-gold">
+                    {t.name}
+                  </Link>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    Partner range {t.partnerRange} · US cash {t.usRange}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-3 text-sm">
+                    <Link href={`/costs/${t.slug}`} className="underline-offset-4 hover:underline">
+                      Treatment cost
+                    </Link>
+                    <Link
+                      href={`/doctors?procedure=${encodeURIComponent(t.name)}&destination=${encodeURIComponent(h.country)}&city=${encodeURIComponent(h.city)}`}
+                      className="underline-offset-4 hover:underline"
+                    >
+                      Doctors for this procedure
+                    </Link>
+                    <Link
+                      href={`/hospitals?procedure=${encodeURIComponent(t.name)}`}
+                      className="underline-offset-4 hover:underline"
+                    >
+                      Other hospitals
+                    </Link>
+                  </div>
+                </div>
+              </li>
+            ) : null,
+          )}
+        </ul>
+      </section>
+
+      {nearby.length > 0 ? (
+        <section className="border-t border-border bg-ivory py-16">
+          <div className="mx-auto max-w-7xl px-5 md:px-8">
+            <h2 className="font-heading text-3xl">Other radiation campuses in {h.city}</h2>
+            <ul className="mt-6 grid gap-4 md:grid-cols-2">
+              {nearby.map((n) => (
+                <li key={n.slug}>
+                  <Link
+                    href={`/hospitals/${n.slug}`}
+                    className="block rounded-xl border border-border bg-card p-6 hover:border-primary/30"
+                  >
+                    <p className="font-heading text-2xl">{n.name}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{n.accreditation}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
       <CtaBand />
     </>
   );

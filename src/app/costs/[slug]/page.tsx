@@ -98,6 +98,7 @@ export default async function CostDetailPage({
                 >
                   <p className="font-heading text-2xl">{d.name}</p>
                   <p className="mt-1 text-sm text-muted-foreground">{d.title}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{d.hospitalName}</p>
                 </Link>
               </li>
             ))}

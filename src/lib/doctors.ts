@@ -1,12 +1,7 @@
 import catalog from "@/data/ginger-catalog.json";
 import { getHospital } from "@/lib/hospitals";
-import {
-  getCity,
-  getCountry,
-  getProcedure,
-  getSpecialty,
-  RADIATION_PROCEDURES,
-} from "@/lib/taxonomy";
+import { mapCatalogProcedures } from "@/lib/procedure-map";
+import { getCity, getCountry, getProcedure, getSpecialty } from "@/lib/taxonomy";
 
 export type Doctor = {
   slug: string;
@@ -38,35 +33,6 @@ export type Doctor = {
   experience: string;
   bio: string;
 };
-
-const PROCEDURE_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
-  { test: /cyber\s*knife/i, name: "CyberKnife" },
-  { test: /gamma\s*knife/i, name: "Gamma Knife" },
-  { test: /proton/i, name: "Proton Beam Therapy" },
-  { test: /\btbi\b|total body/i, name: "Total Body Irradiation (TBI)" },
-  { test: /\biort\b|intraoperative/i, name: "Intraoperative Radiotherapy (IORT)" },
-  { test: /plaque/i, name: "Plaque Brachytherapy" },
-  { test: /interstitial/i, name: "Interstitial Brachytherapy" },
-  { test: /intracavitary/i, name: "Intracavitary Brachytherapy" },
-  { test: /brachytherapy/i, name: "Brachytherapy" },
-  { test: /\bsbrt\b|stereotactic body/i, name: "Stereotactic Body Radiotherapy (SBRT)" },
-  { test: /\bsrs\b|stereotactic radio/i, name: "Stereotactic Radiosurgery (SRS)" },
-  { test: /\bimrt\b|intensity-modulated/i, name: "Intensity-Modulated Radiotherapy (IMRT)" },
-  { test: /\bigrt\b|image-guided/i, name: "Image-Guided Radiotherapy (IGRT)" },
-  { test: /3d|conformal/i, name: "3D Conformal Radiotherapy (3D-CRT)" },
-  { test: /\bebrt\b|external beam/i, name: "External Beam Radiotherapy (EBRT)" },
-];
-
-function mapCatalogProcedures(texts: string[]) {
-  const found = new Set<(typeof RADIATION_PROCEDURES)[number]>();
-  for (const text of texts) {
-    for (const rule of PROCEDURE_RULES) {
-      if (rule.test.test(text)) found.add(rule.name);
-    }
-  }
-  if (found.size === 0) found.add("External Beam Radiotherapy (EBRT)");
-  return [...found];
-}
 
 function cleanTitle(raw: string) {
   let title = raw.trim();
@@ -194,6 +160,77 @@ export type DoctorDirectorySpecialty = {
   specialtySlug: string;
   countries: DoctorDirectoryCountry[];
 };
+
+export type DoctorCampusGroup = {
+  hospitalSlug: string;
+  hospitalName: string;
+  doctors: Doctor[];
+};
+
+export function groupDoctorsUnderHospitals(list: Doctor[]): {
+  specialty: string;
+  specialtySlug: string;
+  countries: {
+    country: string;
+    countrySlug: string;
+    cities: {
+      city: string;
+      citySlug: string;
+      campuses: DoctorCampusGroup[];
+    }[];
+  }[];
+}[] {
+  const tree = new Map<
+    string,
+    Map<string, Map<string, Map<string, Doctor[]>>>
+  >();
+
+  for (const doctor of list) {
+    if (!tree.has(doctor.specialtySlug)) tree.set(doctor.specialtySlug, new Map());
+    const countries = tree.get(doctor.specialtySlug)!;
+    if (!countries.has(doctor.countrySlug)) countries.set(doctor.countrySlug, new Map());
+    const cities = countries.get(doctor.countrySlug)!;
+    if (!cities.has(doctor.citySlug)) cities.set(doctor.citySlug, new Map());
+    const campuses = cities.get(doctor.citySlug)!;
+    if (!campuses.has(doctor.hospitalSlug)) campuses.set(doctor.hospitalSlug, []);
+    campuses.get(doctor.hospitalSlug)!.push(doctor);
+  }
+
+  return [...tree.entries()]
+    .map(([specialtySlug, countries]) => {
+      const sample = list.find((d) => d.specialtySlug === specialtySlug)!;
+      return {
+        specialty: sample.specialty,
+        specialtySlug,
+        countries: [...countries.entries()]
+          .map(([countrySlug, cities]) => {
+            const countrySample = list.find((d) => d.countrySlug === countrySlug)!;
+            return {
+              country: countrySample.country,
+              countrySlug,
+              cities: [...cities.entries()]
+                .map(([citySlug, campuses]) => ({
+                  city: [...campuses.values()][0][0].city,
+                  citySlug,
+                  campuses: [...campuses.entries()]
+                    .map(([hospitalSlug, docs]) => ({
+                      hospitalSlug,
+                      hospitalName: docs[0].hospitalName,
+                      doctors: docs.sort((a, b) => {
+                        if (a.featured !== b.featured) return a.featured ? -1 : 1;
+                        return a.name.localeCompare(b.name);
+                      }),
+                    }))
+                    .sort((a, b) => a.hospitalName.localeCompare(b.hospitalName)),
+                }))
+                .sort((a, b) => a.city.localeCompare(b.city)),
+            };
+          })
+          .sort((a, b) => a.country.localeCompare(b.country)),
+      };
+    })
+    .sort((a, b) => a.specialty.localeCompare(b.specialty));
+}
 
 export function groupDoctorsForDirectory(list: Doctor[]): DoctorDirectorySpecialty[] {
   const specialties = new Map<string, Map<string, Map<string, Doctor[]>>>();
