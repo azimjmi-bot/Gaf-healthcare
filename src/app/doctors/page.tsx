@@ -9,6 +9,18 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = { title: "Doctors" };
 
+function countDoctors(specialty: ReturnType<typeof groupDoctorsUnderHospitals>[number]) {
+  return specialty.countries.reduce(
+    (n, country) =>
+      n +
+      country.cities.reduce(
+        (m, city) => m + city.campuses.reduce((k, campus) => k + campus.doctors.length, 0),
+        0,
+      ),
+    0,
+  );
+}
+
 export default async function DoctorsPage({
   searchParams,
 }: {
@@ -41,8 +53,21 @@ export default async function DoctorsPage({
           </p>
         ) : (
           <div className="space-y-16">
+            {directory.length > 1 ? (
+              <nav aria-label="Specialties" className="flex flex-wrap gap-2">
+                {directory.map((specialty) => (
+                  <a
+                    key={specialty.specialtySlug}
+                    href={`#${specialty.specialtySlug}`}
+                    className="rounded-full border border-border px-3 py-1.5 text-sm hover:border-primary/40"
+                  >
+                    {specialty.specialty} ({countDoctors(specialty)})
+                  </a>
+                ))}
+              </nav>
+            ) : null}
             {directory.map((specialty) => (
-              <div key={specialty.specialtySlug}>
+              <div key={specialty.specialtySlug} id={specialty.specialtySlug} className="scroll-mt-24">
                 <p className="text-xs tracking-[0.18em] uppercase text-gold">Specialty</p>
                 <h2 className="mt-2 font-heading text-4xl">{specialty.specialty}</h2>
                 {specialty.countries.map((country) => (
