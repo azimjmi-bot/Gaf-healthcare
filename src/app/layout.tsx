@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Geist, Geist_Mono } from "next/font/google";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { SITE_URL } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -22,11 +23,38 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: {
-    default: `${site.name} — ${site.tagline}`,
+    default: "Oncologists in India — radiation, surgical and medical | Velora",
     template: `%s — ${site.name}`,
   },
   description: site.description,
+  keywords: [
+    "medical oncologist India",
+    "radiation oncologist India",
+    "surgical oncologist India",
+    "cancer treatment cost India",
+    "chemotherapy cost India",
+    "Delhi NCR oncologist",
+    "Mumbai oncologist",
+    "Bengaluru oncologist",
+    "Chennai oncologist",
+    "Hyderabad oncologist",
+  ],
+  openGraph: {
+    type: "website",
+    locale: "en_IN",
+    siteName: site.name,
+    title: "Oncologists in India — radiation, surgical and medical | Velora",
+    description: site.description,
+    url: SITE_URL,
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Oncologists in India | Velora",
+    description: site.description,
+  },
+  alternates: { canonical: SITE_URL },
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

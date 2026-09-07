@@ -2,11 +2,19 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { CtaBand, PageIntro } from "@/components/page-shell";
+import { JsonLd } from "@/components/json-ld";
 import { filterTreatments, parseCatalogQuery } from "@/lib/catalog";
+import { catalogMetadata, COST_FAQS, faqJsonLd } from "@/lib/seo";
 import { SPECIALTIES } from "@/lib/taxonomy";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Treatment Cost" };
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}): Promise<Metadata> {
+  return catalogMetadata("treatments", parseCatalogQuery(await searchParams));
+}
 
 export default async function CostsPage({
   searchParams,
@@ -19,13 +27,20 @@ export default async function CostsPage({
     ...specialty,
     items: list.filter((t) => t.specialtySlug === specialty.slug),
   })).filter((g) => g.items.length > 0);
+  const place = query.city ? `${query.city}, India` : "India";
+  const heading = query.procedure
+    ? `${query.procedure} cost in ${place}`
+    : query.specialty
+      ? `${query.specialty} cost in ${place}`
+      : "Cancer treatment cost in India";
 
   return (
     <>
+      <JsonLd data={faqJsonLd(COST_FAQS)} />
       <PageIntro
-        eyebrow="Ledger"
-        title="What it typically costs — beside what it costs at home."
-        lede="Radiation, Surgical, and Medical Oncology at partner campuses. Filter by destination, city, specialty, or procedure — the same keys a later landing page will use."
+        eyebrow="India planning ranges"
+        title={heading}
+        lede="US cash-pay beside partner ranges for Radiation Oncology, Surgical Oncology and Medical Oncology in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Filter by destination, city, specialty or procedure — the same keys a later landing page will use. Figures are planning ranges, not quotations."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
@@ -110,9 +125,18 @@ export default async function CostsPage({
         )}
 
         <p className="mt-8 max-w-2xl text-sm text-muted-foreground">
-          Oncology and some cardiac pathways are quoted only after records review.
-          Atelier fee (typically 8–12%) is included in the written all-in quote if you proceed.
+          Oncology pathways are quoted only after records review. Atelier fee (typically 8–12%) is
+          included in the written all-in quote if you proceed.
         </p>
+        <h2 className="mt-14 font-heading text-3xl">Cost questions</h2>
+        <dl className="mt-6 grid gap-8 md:grid-cols-2">
+          {COST_FAQS.map((row) => (
+            <div key={row.q}>
+              <dt className="font-medium">{row.q}</dt>
+              <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{row.a}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
       <CtaBand />
     </>

@@ -3,11 +3,19 @@ import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { DoctorCard } from "@/components/doctor-card";
 import { CtaBand, PageIntro } from "@/components/page-shell";
+import { JsonLd } from "@/components/json-ld";
 import { filterDoctors, parseCatalogQuery } from "@/lib/catalog";
 import { groupDoctorsUnderHospitals } from "@/lib/doctors";
+import { catalogMetadata, DOCTOR_FAQS, faqJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Doctors" };
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}): Promise<Metadata> {
+  return catalogMetadata("doctors", parseCatalogQuery(await searchParams));
+}
 
 function countDoctors(specialty: ReturnType<typeof groupDoctorsUnderHospitals>[number]) {
   return specialty.countries.reduce(
@@ -29,13 +37,20 @@ export default async function DoctorsPage({
   const query = parseCatalogQuery(await searchParams);
   const list = filterDoctors(query);
   const directory = groupDoctorsUnderHospitals(list);
+  const place = query.city ? `${query.city}, India` : "India";
+  const heading = query.procedure
+    ? `${query.procedure} specialists in ${place}`
+    : query.specialty
+      ? `${query.specialty} doctors in ${place}`
+      : "Oncologists in India";
 
   return (
     <>
+      <JsonLd data={faqJsonLd(DOCTOR_FAQS)} />
       <PageIntro
-        eyebrow="Expert specialists"
-        title="Oncology consultants in India"
-        lede="Radiation, surgical, and medical oncologists sit under the hospital they practise at, then city, country, specialty, and procedure — the same keys later pSEO pages will use. Bios are original Velora copy."
+        eyebrow="India · five cities · three specialties"
+        title={heading}
+        lede="Named radiation, surgical and medical oncologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each profile is filed under country, city, specialty and procedure so later pages such as /doctors/india/delhi-ncr/medical-oncology/chemotherapy can be generated without remapping the catalog. Bios are original Velora copy — not a destination mill."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
@@ -107,6 +122,17 @@ export default async function DoctorsPage({
             ))}
           </div>
         )}
+      </section>
+      <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
+        <h2 className="font-heading text-3xl">India oncology directory — questions</h2>
+        <dl className="mt-8 grid gap-8 md:grid-cols-3">
+          {DOCTOR_FAQS.map((row) => (
+            <div key={row.q}>
+              <dt className="font-medium">{row.q}</dt>
+              <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{row.a}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
       <CtaBand />
     </>

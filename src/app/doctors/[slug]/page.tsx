@@ -2,8 +2,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { JsonLd } from "@/components/json-ld";
 import { CtaBand } from "@/components/page-shell";
 import { doctors, doctorsForHospital, getDoctor, getHospital, getTreatment } from "@/lib/data";
+import { breadcrumbJsonLd, doctorMetadata, physicianJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -17,7 +19,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const d = getDoctor(slug);
-  return { title: d ? d.name : "Doctor" };
+  if (!d) return { title: "Doctor" };
+  return doctorMetadata(d);
 }
 
 function ProfileList({ title, items }: { title: string; items: string[] }) {
@@ -50,6 +53,15 @@ export default async function DoctorDetailPage({
 
   return (
     <>
+      <JsonLd data={physicianJsonLd(d)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Doctors", path: "/doctors" },
+          { name: d.specialty, path: `/doctors?specialty=${encodeURIComponent(d.specialty)}` },
+          { name: d.city, path: `/doctors?destination=India&city=${encodeURIComponent(d.city)}` },
+          { name: d.name, path: `/doctors/${d.slug}` },
+        ])}
+      />
       <section className="relative overflow-hidden bg-ink text-ivory">
         <div className="pointer-events-none absolute -left-24 top-10 size-72 rounded-full bg-gold/10 blur-3xl" />
         <div className="relative mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">

@@ -3,11 +3,19 @@ import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { HospitalCard } from "@/components/hospital-card";
 import { CtaBand, PageIntro } from "@/components/page-shell";
+import { JsonLd } from "@/components/json-ld";
 import { filterHospitals, parseCatalogQuery } from "@/lib/catalog";
 import { groupHospitalsForDirectory } from "@/lib/hospitals";
+import { catalogMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const metadata: Metadata = { title: "Hospitals" };
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}): Promise<Metadata> {
+  return catalogMetadata("hospitals", parseCatalogQuery(await searchParams));
+}
 
 function countHospitals(specialty: ReturnType<typeof groupHospitalsForDirectory>[number]) {
   return specialty.countries.reduce(
@@ -24,13 +32,28 @@ export default async function HospitalsPage({
   const query = parseCatalogQuery(await searchParams);
   const list = filterHospitals(query);
   const directory = groupHospitalsForDirectory(list, query.specialty);
+  const place = query.city ? `${query.city}, India` : "India";
+  const heading = query.procedure
+    ? `Hospitals for ${query.procedure} in ${place}`
+    : query.specialty
+      ? `${query.specialty} hospitals in ${place}`
+      : "Oncology hospitals in India";
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "CollectionPage",
+          name: "Oncology hospitals in India",
+          description:
+            "Partner oncology campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad.",
+        }}
+      />
       <PageIntro
-        eyebrow="Top hospitals"
-        title="Oncology campuses in India"
-        lede="Each house is filed under specialty, procedure, city, and country — Radiation, Surgical, and Medical Oncology."
+        eyebrow="India campuses"
+        title={heading}
+        lede="JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house is filed under country, city, specialty and procedure — Radiation, Surgical and Medical Oncology — with named consultants where Velora has matched them."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

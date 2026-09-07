@@ -2,14 +2,31 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { JsonLd } from "@/components/json-ld";
 import { CtaBand } from "@/components/page-shell";
 import { posts } from "@/lib/blogs";
 import { HospitalCard } from "@/components/hospital-card";
 import { doctors, hospitals, treatments } from "@/lib/data";
+import { SITE_URL } from "@/lib/seo";
 
 export default function HomePage() {
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "MedicalBusiness",
+          name: "Velora",
+          url: SITE_URL,
+          description:
+            "Named radiation, surgical and medical oncologists in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — with partner hospital costs in USD.",
+          areaServed: ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"].map((city) => ({
+            "@type": "City",
+            name: city,
+            containedInPlace: { "@type": "Country", name: "India" },
+          })),
+        }}
+      />
       <section className="relative min-h-[100svh] overflow-hidden bg-ink text-ivory">
         <Image
           src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=2400&q=80"
@@ -22,11 +39,11 @@ export default function HomePage() {
         <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-16 pt-32 md:px-8 md:pb-24">
           <p className="eyebrow text-gold">Radiation, surgical and medical oncology · India cities · named consultants</p>
           <h1 className="mt-5 max-w-4xl font-heading text-5xl leading-[0.95] md:text-7xl lg:text-[5.25rem]">
-            Doctors. Hospitals. Costs. Blogs.
+            Oncologists in India. Hospitals. Costs.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/80 md:text-lg">
-            Velora is four pages: radiation, surgical and medical oncology you can meet
-            on camera, partner campuses, published USD ranges, and planning essays.
+            Named medical, radiation and surgical oncologists in Delhi NCR, Mumbai, Bengaluru,
+            Chennai and Hyderabad. Meet them on camera. Read USD planning ranges before you fly.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Button
@@ -108,8 +125,9 @@ export default function HomePage() {
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ...doctors.filter((d) => d.featured && d.specialtySlug === "radiation-oncology").slice(0, 4),
-              ...doctors.filter((d) => d.featured && d.specialtySlug === "surgical-oncology").slice(0, 4),
+              ...doctors.filter((d) => d.featured && d.specialtySlug === "radiation-oncology").slice(0, 3),
+              ...doctors.filter((d) => d.featured && d.specialtySlug === "surgical-oncology").slice(0, 3),
+              ...doctors.filter((d) => d.featured && d.specialtySlug === "medical-oncology").slice(0, 3),
             ].map((d) => (
               <Link
                 key={d.slug}

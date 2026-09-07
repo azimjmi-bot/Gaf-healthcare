@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
+import { JsonLd } from "@/components/json-ld";
 import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { getCostGuide } from "@/lib/cost-guides";
 import {
@@ -11,6 +12,7 @@ import {
   getTreatment,
   treatments,
 } from "@/lib/data";
+import { breadcrumbJsonLd, treatmentMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -26,8 +28,11 @@ export async function generateMetadata({
   const t = getTreatment(slug);
   if (!t) return { title: "Treatment Cost" };
   const guide = getCostGuide(t.slug);
-  if (guide) return { title: guide.title, description: guide.description };
-  return { title: `${t.name} cost`, description: t.summary };
+  const base = treatmentMetadata(t);
+  if (guide) {
+    return { ...base, title: guide.title, description: guide.description };
+  }
+  return base;
 }
 
 export default async function CostDetailPage({
@@ -56,6 +61,23 @@ export default async function CostDetailPage({
 
   return (
     <>
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "MedicalProcedure",
+          name: t.name,
+          procedureType: t.category,
+          url: `https://velora.health/costs/${t.slug}`,
+          description: t.summary,
+        }}
+      />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Treatment Cost", path: "/costs" },
+          { name: t.category, path: `/costs?specialty=${encodeURIComponent(t.category)}` },
+          { name: t.name, path: `/costs/${t.slug}` },
+        ])}
+      />
       <section className="relative h-[50vh] min-h-[22rem] bg-ink text-ivory">
         <Image src={t.image} alt={t.name} fill className="object-cover" priority />
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />

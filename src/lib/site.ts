@@ -1,8 +1,8 @@
 export const site = {
   name: "Velora",
-  tagline: "World-class care, quietly arranged.",
+  tagline: "Named oncologists in India, quietly arranged.",
   description:
-    "Velora lists radiation, surgical and medical oncologists, partner hospitals, treatment costs, and planning blogs. We match you with named doctors at accredited campuses — not a destination marketplace.",
+    "Velora lists named radiation, surgical and medical oncologists in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — with JCI partner hospitals and USD planning ranges for chemotherapy, immunotherapy, IMRT, mastectomy and related procedures. Meet the consultant on camera before you travel.",
   email: "care@velora.health",
   phone: "+1 (212) 555-0148",
   hours: "Coordinators available 24/7",

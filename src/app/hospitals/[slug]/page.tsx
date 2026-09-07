@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button";
 import { DoctorCard } from "@/components/doctor-card";
 import { CtaBand } from "@/components/page-shell";
 import { getTreatment, type Treatment } from "@/lib/data";
+import { JsonLd } from "@/components/json-ld";
 import { doctorsForHospital } from "@/lib/doctors";
 import { getHospital, hospitals, hospitalsInCity } from "@/lib/hospitals";
+import { breadcrumbJsonLd, hospitalJsonLd, hospitalMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
 export function generateStaticParams() {
@@ -19,7 +21,8 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const h = getHospital(slug);
-  return { title: h ? h.name : "Hospital" };
+  if (!h) return { title: "Hospital" };
+  return hospitalMetadata(h);
 }
 
 export default async function HospitalDetailPage({
@@ -44,6 +47,14 @@ export default async function HospitalDetailPage({
 
   return (
     <>
+      <JsonLd data={hospitalJsonLd(h)} />
+      <JsonLd
+        data={breadcrumbJsonLd([
+          { name: "Hospitals", path: "/hospitals" },
+          { name: h.city, path: `/hospitals?destination=India&city=${encodeURIComponent(h.city)}` },
+          { name: h.name, path: `/hospitals/${h.slug}` },
+        ])}
+      />
       <section className="border-b border-border bg-ink text-ivory">
         <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-20">
           <p className="eyebrow text-gold">{h.accreditation}</p>
@@ -181,15 +192,7 @@ export default async function HospitalDetailPage({
                     ))}
                   </div>
                 </div>
-              ) : (
-                <p className="mt-8 text-sm text-muted-foreground">
-                  Named medical oncologists for this campus are being matched. Filter costs by{" "}
-                  <Link href="/costs?specialty=Medical%20Oncology" className="underline-offset-4 hover:underline">
-                    Medical Oncology
-                  </Link>{" "}
-                  or request a dossier.
-                </p>
-              )}
+              ) : null}
             </>
           )}
         </div>
