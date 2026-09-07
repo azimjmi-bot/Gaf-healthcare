@@ -19,7 +19,7 @@ export default function HomePage() {
           name: "Velora",
           url: SITE_URL,
           description:
-            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons and ENT surgeons in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — plus pediatric hematology and pediatric cardiac surgery, with partner hospital costs in USD.",
+            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons and gastroenterology pathways in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — plus pediatric hematology and pediatric cardiac surgery, with partner hospital costs in USD.",
           areaServed: ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"].map((city) => ({
             "@type": "City",
             name: city,
@@ -37,13 +37,13 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/92 via-ink/70 to-ink/35" />
         <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-16 pt-32 md:px-8 md:pb-24">
-          <p className="eyebrow text-gold">Oncology, cosmetic and ENT care · India</p>
+          <p className="eyebrow text-gold">Oncology, ENT and GI care · India</p>
           <h1 className="mt-5 max-w-4xl font-heading text-5xl leading-[0.95] md:text-7xl lg:text-[5.25rem]">
-            Oncologists and ENT surgeons in India. Hospitals. Costs.
+            Oncologists, ENT and GI in India. Hospitals. Costs.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/80 md:text-lg">
             Named medical, radiation and surgical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons and ENT surgeons in Delhi NCR, Mumbai,
-            Bengaluru, Chennai and Hyderabad. Meet them on camera. Read USD planning ranges before you fly.
+            Bengaluru, Chennai and Hyderabad — plus ERCP, colonoscopy and POEM cost sheets. Meet them on camera. Read USD planning ranges before you fly.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Button
@@ -95,13 +95,13 @@ export default function HomePage() {
             href="/hospitals"
             kicker="02"
             title="Hospitals"
-            body="JCI campuses in Delhi NCR, Mumbai, Bengaluru, Chennai, and Hyderabad — oncology, cosmetic and ENT surgery."
+            body="JCI campuses in Delhi NCR, Mumbai, Bengaluru, Chennai, and Hyderabad — oncology, ENT and gastroenterology."
           />
           <IndexCard
             href="/costs"
             kicker="03"
             title="Treatment Cost"
-            body="US cash-pay beside partner ranges for radiation, surgery, transplant, bariatric, cosmetic and ENT."
+            body="US cash-pay beside partner ranges for radiation, surgery, transplant, bariatric, cosmetic, ENT and GI."
           />
           <IndexCard
             href="/blogs"

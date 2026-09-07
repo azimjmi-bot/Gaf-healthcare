@@ -1,3 +1,4 @@
+import { GASTROENTEROLOGY_COST, GASTROENTEROLOGY_SUMMARIES } from "@/lib/gastroenterology-costs";
 import { ENT_COST, ENT_SUMMARIES } from "@/lib/ent-costs";
 import { COSMETIC_COST, COSMETIC_SUMMARIES } from "@/lib/cosmetic-costs";
 import { BARIATRIC_COST, BARIATRIC_SUMMARIES } from "@/lib/bariatric-costs";
@@ -10,6 +11,7 @@ import { MEDICAL_COST, MEDICAL_SUMMARIES } from "@/lib/medical-costs";
 import { hospitals } from "@/lib/hospitals";
 import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
 import {
+  GASTROENTEROLOGY_PROCEDURES,
   ENT_PROCEDURES,
   COSMETIC_PROCEDURES,
   BARIATRIC_PROCEDURES,
@@ -600,6 +602,44 @@ const entTreatments: Treatment[] = ENT_ONLY.map((name) => {
   };
 });
 
+const GASTRO_IMAGE =
+  "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80";
+
+const GASTRO_INCLUDES = [
+  "Gastroenterology consultation and records review",
+  "Named consultant on camera before travel",
+  "Endoscopy suite, sedation or anaesthesia, and overnight stay as quoted",
+  "Histology, stent or drain follow-up as indicated",
+  "Discharge summary to your home physician",
+];
+
+const gastroenterologyTreatments: Treatment[] = GASTROENTEROLOGY_PROCEDURES.map((name) => {
+  const cost = GASTROENTEROLOGY_COST[name];
+  if (!cost) throw new Error(`Missing gastroenterology cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Gastroenterology",
+    specialtySlug: "gastroenterology",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      GASTROENTEROLOGY_SUMMARIES[name] ??
+      `Gastroenterology — ${name} at JCI partner campuses with a named consultant before you travel.`,
+    image: GASTRO_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Luminal disease", "Biliopancreatic obstruction", "Hepatology"],
+    procedures: [name],
+    includes: GASTRO_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named gastroenterologist confirms imaging, endoscopy plan and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -612,6 +652,7 @@ export const treatments: Treatment[] = [
   ...bariatricTreatments,
   ...cosmeticTreatments,
   ...entTreatments,
+  ...gastroenterologyTreatments,
 ];
 
 export function getTreatment(slug: string) {

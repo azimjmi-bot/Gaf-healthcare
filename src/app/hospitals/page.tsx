@@ -37,7 +37,7 @@ export default async function HospitalsPage({
     ? `Hospitals for ${query.procedure} in ${place}`
     : query.specialty
       ? `${query.specialty} hospitals in ${place}`
-      : "Oncology, cosmetic and ENT hospitals in India";
+      : "Oncology, ENT and GI hospitals in India";
 
   return (
     <>
@@ -45,15 +45,15 @@ export default async function HospitalsPage({
         data={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          name: "Oncology, cosmetic and ENT hospitals in India",
+          name: "Oncology, ENT and GI hospitals in India",
           description:
-            "Partner campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad for oncology, cosmetic and ENT surgery.",
+            "Partner campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad for oncology, ENT and gastroenterology.",
         }}
       />
       <PageIntro
         eyebrow="India campuses"
         title={heading}
-        lede="JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house is filed under country, city, specialty and procedure — Radiation, Surgical and Medical Oncology, Hematology, Pediatric Hematology, Cardiac Surgery, Pediatric Cardiac Surgery, Cardiology, Bariatric Surgery, Cosmetic Surgery and ENT — with named consultants where Velora has matched them."
+        lede="JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house is filed under country, city, specialty and procedure — Radiation, Surgical and Medical Oncology, Hematology, Pediatric Hematology, Cardiac Surgery, Pediatric Cardiac Surgery, Cardiology, Bariatric Surgery, Cosmetic Surgery, ENT and Gastroenterology — with named consultants where Velora has matched them."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

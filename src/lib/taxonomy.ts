@@ -71,6 +71,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Bariatric Surgery"),
   taxon("Cosmetic Surgery"),
   taxon("ENT"),
+  taxon("Gastroenterology"),
 ];
 
 export function compareSpecialties(aSlug: string, bSlug: string) {
@@ -281,6 +282,33 @@ export const ENT_PROCEDURES = [
   "Transoral Robotic Surgery (TORS)",
 ] as const;
 
+export const GASTROENTEROLOGY_PROCEDURES = [
+  "Upper GI Endoscopy (Gastroscopy)",
+  "Colonoscopy",
+  "ERCP",
+  "Endoscopic Ultrasound (EUS)",
+  "Capsule Endoscopy",
+  "Enteroscopy",
+  "Biliary Stenting",
+  "Bile Duct Stone Removal",
+  "Cholangioscopy",
+  "Peroral Endoscopic Myotomy (POEM)",
+  "G-POEM",
+  "Z-POEM",
+  "Endoscopic Mucosal Resection (EMR)",
+  "Endoscopic Submucosal Dissection (ESD)",
+  "STER (Submucosal Tunneling Endoscopic Resection)",
+  "Endoscopic Hemostasis",
+  "Variceal Band Ligation",
+  "Foreign Body Removal",
+  "Liver Biopsy",
+  "Transjugular Liver Biopsy",
+  "PTBD (Percutaneous Transhepatic Biliary Drainage)",
+  "Esophageal Manometry",
+  "Anorectal Manometry",
+  "Bariatric / Metabolic Endoscopy",
+] as const;
+
 export const ATHENAA_SURGICAL_PROCEDURES = [
   "Breast-Conserving Surgery (Lumpectomy)",
   "Mastectomy",
@@ -345,6 +373,7 @@ export const PROCEDURES: ProcedureTaxon[] = [
       !COSMETIC_PROCEDURES.includes(name as (typeof COSMETIC_PROCEDURES)[number]) &&
       !SURGICAL_ONCOLOGY_PROCEDURES.includes(name as (typeof SURGICAL_ONCOLOGY_PROCEDURES)[number]),
   ).map((name) => procedureTaxon(name, ["ent"])),
+  ...GASTROENTEROLOGY_PROCEDURES.map((name) => procedureTaxon(name, ["gastroenterology"])),
 ];
 
 export const PROCEDURE_CLUSTERS = {

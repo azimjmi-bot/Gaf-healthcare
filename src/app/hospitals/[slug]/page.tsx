@@ -45,6 +45,7 @@ export default async function HospitalDetailPage({
   const bariatricFaculty = faculty.filter((d) => d.specialtySlug === "bariatric-surgery");
   const cosmeticFaculty = faculty.filter((d) => d.specialtySlug === "cosmetic-surgery");
   const entFaculty = faculty.filter((d) => d.specialtySlug === "ent");
+  const gastroFaculty = faculty.filter((d) => d.specialtySlug === "gastroenterology");
   const pathways = h.procedureSlugs
     .map((s) => getTreatment(s))
     .filter((t): t is Treatment => Boolean(t));
@@ -59,6 +60,7 @@ export default async function HospitalDetailPage({
   const bariatricPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "bariatric-surgery"));
   const cosmeticPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "cosmetic-surgery"));
   const entPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "ent"));
+  const gastroPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "gastroenterology"));
   const nearby = hospitalsInCity(h.citySlug).filter((x) => x.slug !== h.slug);
 
   return (
@@ -289,6 +291,16 @@ export default async function HospitalDetailPage({
                   </div>
                 </div>
               ) : null}
+              {gastroFaculty.length > 0 ? (
+                <div className="mt-10">
+                  <h3 className="font-heading text-2xl">Gastroenterologists</h3>
+                  <div className="mt-6 grid gap-6">
+                    {gastroFaculty.map((d) => (
+                      <DoctorCard key={d.slug} doctor={d} />
+                    ))}
+                  </div>
+                </div>
+              ) : null}
             </>
           )}
         </div>
@@ -297,7 +309,7 @@ export default async function HospitalDetailPage({
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
         <h2 className="font-heading text-3xl">Procedures on this campus</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Radiation, surgical, medical-oncology, haematology, cardiac, cardiology, bariatric, cosmetic and ENT pathways this house can quote — tagged for later pSEO.
+          Radiation, surgical, medical-oncology, haematology, cardiac, cardiology, bariatric, cosmetic, ENT and gastroenterology pathways this house can quote — tagged for later pSEO.
         </p>
         {radiationPathways.length > 0 ? (
           <>
@@ -363,6 +375,12 @@ export default async function HospitalDetailPage({
           <>
             <h3 className="mt-10 font-heading text-2xl">ENT</h3>
             <ProcedureGrid hospital={h} rows={entPathways} />
+          </>
+        ) : null}
+        {gastroPathways.length > 0 ? (
+          <>
+            <h3 className="mt-10 font-heading text-2xl">Gastroenterology</h3>
+            <ProcedureGrid hospital={h} rows={gastroPathways} />
           </>
         ) : null}
       </section>

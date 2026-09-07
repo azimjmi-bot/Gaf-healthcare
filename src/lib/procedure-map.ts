@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -304,6 +304,39 @@ export function mapEntProcedures(texts: string[], fallback = true) {
   return ["FESS (Functional Endoscopic Sinus Surgery)", "Septoplasty", "Tonsillectomy"];
 }
 
+const GASTROENTEROLOGY_RULES: { test: RegExp; name: (typeof GASTROENTEROLOGY_PROCEDURES)[number] }[] = [
+  { test: /transjugular/i, name: "Transjugular Liver Biopsy" },
+  { test: /\bptbd\b|percutaneous transhepatic/i, name: "PTBD (Percutaneous Transhepatic Biliary Drainage)" },
+  { test: /g[\s-]*poem|gastroparesis.{0,20}myotomy|pyloromyotomy/i, name: "G-POEM" },
+  { test: /z[\s-]*poem|zenker/i, name: "Z-POEM" },
+  { test: /\bpoem\b|peroral endoscopic myotomy|achalasia.{0,12}myotomy/i, name: "Peroral Endoscopic Myotomy (POEM)" },
+  { test: /\bster\b|submucosal tunneling endoscopic/i, name: "STER (Submucosal Tunneling Endoscopic Resection)" },
+  { test: /\besd\b|submucosal dissection/i, name: "Endoscopic Submucosal Dissection (ESD)" },
+  { test: /\bemr\b|mucosal resection/i, name: "Endoscopic Mucosal Resection (EMR)" },
+  { test: /cholangioscop|spyglass/i, name: "Cholangioscopy" },
+  { test: /biliary stent|metal stent|plastic stent/i, name: "Biliary Stenting" },
+  { test: /bile duct stone|choledocholith|cbd stone/i, name: "Bile Duct Stone Removal" },
+  { test: /\bercp\b|endoscopic retrograde/i, name: "ERCP" },
+  { test: /\beus\b|endoscopic ultrasound/i, name: "Endoscopic Ultrasound (EUS)" },
+  { test: /capsule/i, name: "Capsule Endoscopy" },
+  { test: /enteroscop/i, name: "Enteroscopy" },
+  { test: /variceal|banding|evl\b/i, name: "Variceal Band Ligation" },
+  { test: /hemostasis|haemostasis|gi bleed|ulcer bleed/i, name: "Endoscopic Hemostasis" },
+  { test: /foreign body|ingested/i, name: "Foreign Body Removal" },
+  { test: /liver biopsy/i, name: "Liver Biopsy" },
+  { test: /esophageal manometr|oesophageal manometr/i, name: "Esophageal Manometry" },
+  { test: /anorectal manometr/i, name: "Anorectal Manometry" },
+  { test: /bariatric.{0,20}endoscop|metabolic endoscop|endoscopic sleeve|gastric balloon/i, name: "Bariatric / Metabolic Endoscopy" },
+  { test: /colonoscop/i, name: "Colonoscopy" },
+  { test: /gastroscop|upper gi|ogd\b|egd\b|oesophagogastro/i, name: "Upper GI Endoscopy (Gastroscopy)" },
+];
+
+export function mapGastroenterologyProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, GASTROENTEROLOGY_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Upper GI Endoscopy (Gastroscopy)", "Colonoscopy", "ERCP"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -315,5 +348,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Bariatric Surgery") return mapBariatricProcedures(texts);
   if (specialty === "Cosmetic Surgery") return mapCosmeticProcedures(texts);
   if (specialty === "ENT") return mapEntProcedures(texts);
+  if (specialty === "Gastroenterology") return mapGastroenterologyProcedures(texts);
   return mapCatalogProcedures(texts);
 }

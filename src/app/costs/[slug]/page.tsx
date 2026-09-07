@@ -64,6 +64,7 @@ export default async function CostDetailPage({
     t.specialtySlugs.includes("bariatric-surgery") ? "bariatric surgeons" : "",
     t.specialtySlugs.includes("cosmetic-surgery") ? "cosmetic surgeons" : "",
     t.specialtySlugs.includes("ent") ? "ENT surgeons" : "",
+    t.specialtySlugs.includes("gastroenterology") ? "gastroenterologists" : "",
   ]
     .filter(Boolean)
     .join(" and ");
@@ -141,7 +142,9 @@ export default async function CostDetailPage({
               <Link href={`/consult?treatment=${t.slug}`}>Request this pathway</Link>
             </Button>
             <p className="mt-4 text-xs text-muted-foreground">
-              Not a quote. {t.specialtySlug === "ent"
+              Not a quote. {t.specialtySlug === "gastroenterology"
+                ? "Indication, stent or histology are set after records review."
+                : t.specialtySlug === "ent"
                 ? "Imaging, implant or reconstruction are set after records review."
                 : t.specialtySlug === "cosmetic-surgery"
                 ? "Photographs, implant or graft plan are set after records review."

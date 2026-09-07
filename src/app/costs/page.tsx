@@ -35,7 +35,7 @@ export default async function CostsPage({
     ? `${query.procedure} cost in ${place}`
     : query.specialty
       ? `${query.specialty} cost in ${place}`
-      : "Oncology, cosmetic and ENT treatment cost in India";
+      : "Oncology, ENT and GI treatment cost in India";
 
   return (
     <>
@@ -43,7 +43,7 @@ export default async function CostsPage({
       <PageIntro
         eyebrow="India planning ranges"
         title={heading}
-        lede="US cash-pay beside partner ranges for Radiation Oncology, Surgical Oncology, Medical Oncology, Hematology, Pediatric Hematology, Cardiac Surgery, Pediatric Cardiac Surgery, Cardiology, Bariatric Surgery, Cosmetic Surgery and ENT in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Filter by destination, city, specialty or procedure — the same keys a later landing page will use. Figures are planning ranges, not quotations."
+        lede="US cash-pay beside partner ranges for Radiation Oncology, Surgical Oncology, Medical Oncology, Hematology, Pediatric Hematology, Cardiac Surgery, Pediatric Cardiac Surgery, Cardiology, Bariatric Surgery, Cosmetic Surgery, ENT and Gastroenterology in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Filter by destination, city, specialty or procedure — the same keys a later landing page will use. Figures are planning ranges, not quotations."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
@@ -128,7 +128,7 @@ export default async function CostsPage({
         )}
 
         <p className="mt-8 max-w-2xl text-sm text-muted-foreground">
-          Oncology pathways are quoted only after records review. Atelier fee (typically 8–12%) is
+          Oncology, ENT and GI pathways are quoted only after records review. Atelier fee (typically 8–12%) is
           included in the written all-in quote if you proceed.
         </p>
         <h2 className="mt-14 font-heading text-3xl">Cost questions</h2>

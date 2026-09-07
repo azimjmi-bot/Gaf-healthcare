@@ -56,17 +56,19 @@ export default async function DoctorsPage({
         ? `Cosmetic surgeons in ${place}`
       : query.specialty === "ENT"
         ? `ENT surgeons in ${place}`
+      : query.specialty === "Gastroenterology"
+        ? `Gastroenterologists in ${place}`
       : query.specialty
         ? `${query.specialty} doctors in ${place}`
-        : "Oncologists, cosmetic and ENT surgeons in India";
+        : "Oncologists, ENT surgeons and gastroenterologists in India";
 
   return (
     <>
       <JsonLd data={faqJsonLd(DOCTOR_FAQS)} />
       <PageIntro
-        eyebrow="India · five cities · eleven specialties"
+        eyebrow="India · five cities · twelve specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons and ENT surgeons in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/ent/{procedure}. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons and ENT surgeons in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad, plus Gastroenterology cost sheets (ERCP, colonoscopy, EUS, POEM) tagged for later named faculty. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/gastroenterology/{procedure}. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
