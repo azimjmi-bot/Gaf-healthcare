@@ -130,6 +130,7 @@ export default function HomePage() {
               ...doctors.filter((d) => d.featured && d.specialtySlug === "medical-oncology").slice(0, 2),
               ...doctors.filter((d) => d.featured && d.specialtySlug === "hematology").slice(0, 2),
               ...doctors.filter((d) => d.featured && d.specialtySlug === "pediatric-hematology").slice(0, 2),
+              ...doctors.filter((d) => d.featured && d.specialtySlug === "cardiac-surgery").slice(0, 2),
             ].map((d) => (
               <Link
                 key={d.slug}
