@@ -140,7 +140,7 @@ export default async function DoctorsPage({
         )}
       </section>
       <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
-        <h2 className="font-heading text-3xl">India oncology directory — questions</h2>
+        <h2 className="font-heading text-3xl">India specialists directory — questions</h2>
         <dl className="mt-8 grid gap-8 md:grid-cols-3">
           {DOCTOR_FAQS.map((row) => (
             <div key={row.q}>
