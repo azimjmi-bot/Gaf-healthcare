@@ -275,7 +275,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Gastroenterology lists ERCP, colonoscopy, EUS, POEM and related endoscopy on cost sheets — named gastroenterologists will sit under Gastroenterology once a listing is matched. Rhinoplasty shares a slug with Cosmetic Surgery; TORS shares a slug with Surgical Oncology so later pSEO can use either specialty path. Medical, radiation and surgical oncologists are listed separately.",
+    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology — ERCP, colonoscopy, EUS, POEM and related endoscopy. Bariatric / Metabolic Endoscopy is a GI slug; ESG remains on Bariatric Surgery so later pSEO can use either path. Rhinoplasty shares a slug with Cosmetic Surgery; TORS shares a slug with Surgical Oncology. Medical, radiation and surgical oncologists are listed separately.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
