@@ -265,7 +265,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named paediatric haematologists sit under Pediatric Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named paediatric cardiac surgeons sit under Pediatric Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Cosmetic Surgery covers rhinoplasty, liposuction, breast work, facelift, hair transplant and body contour so later pSEO can mount /doctors/india/{city}/cosmetic-surgery/{procedure}. Medical, radiation and surgical oncologists are listed separately.",
+    a: "Yes. Named haematologists sit under Hematology. Named paediatric haematologists sit under Pediatric Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named paediatric cardiac surgeons sit under Pediatric Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery — rhinoplasty, liposuction, breast work, facelift, hair transplant and body contour — so later pSEO can mount /doctors/india/{city}/cosmetic-surgery/{procedure}. Medical, radiation and surgical oncologists are listed separately.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
