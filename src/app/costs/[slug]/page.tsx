@@ -62,6 +62,7 @@ export default async function CostDetailPage({
     t.specialtySlugs.includes("pediatric-cardiac-surgery") ? "pediatric cardiac surgeons" : "",
     t.specialtySlugs.includes("cardiology") ? "cardiologists" : "",
     t.specialtySlugs.includes("bariatric-surgery") ? "bariatric surgeons" : "",
+    t.specialtySlugs.includes("cosmetic-surgery") ? "cosmetic surgeons" : "",
   ]
     .filter(Boolean)
     .join(" and ");
@@ -139,7 +140,9 @@ export default async function CostDetailPage({
               <Link href={`/consult?treatment=${t.slug}`}>Request this pathway</Link>
             </Button>
             <p className="mt-4 text-xs text-muted-foreground">
-              Not a quote. {t.specialtySlug === "bariatric-surgery"
+              Not a quote. {t.specialtySlug === "cosmetic-surgery"
+                ? "Photographs, implant or graft plan are set after records review."
+                : t.specialtySlug === "bariatric-surgery"
                 ? "BMI, procedure and leak protocol are set after records review."
                 : t.specialtySlug === "cardiology"
                 ? "Access, device and whether PCI follows are set after records review."

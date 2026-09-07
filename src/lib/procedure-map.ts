@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -253,6 +253,30 @@ export function mapBariatricProcedures(texts: string[], fallback = true) {
   return ["Sleeve Gastrectomy", "Gastric Bypass (Roux-en-Y)", "Mini Gastric Bypass (OAGB/MGB)"];
 }
 
+const COSMETIC_RULES: { test: RegExp; name: (typeof COSMETIC_PROCEDURES)[number] }[] = [
+  { test: /brazilian|bbl|butt lift/i, name: "Brazilian Butt Lift" },
+  { test: /gynecomastia|male breast/i, name: "Gynecomastia Surgery" },
+  { test: /breast[\s-]*aug|augmentation|implants/i, name: "Breast Augmentation" },
+  { test: /breast[\s-]*red|reduction mammo/i, name: "Breast Reduction" },
+  { test: /breast[\s-]*lift|mastopexy/i, name: "Breast Lift" },
+  { test: /hair transplant|fue|fut|follicular/i, name: "Hair Transplant" },
+  { test: /tummy tuck|abdominoplasty/i, name: "Tummy Tuck" },
+  { test: /blepharoplasty|eyelid/i, name: "Blepharoplasty" },
+  { test: /otoplasty|ear pinning|prominent ear/i, name: "Otoplasty" },
+  { test: /neck lift|platysma/i, name: "Neck Lift" },
+  { test: /arm lift|brachioplasty/i, name: "Arm Lift" },
+  { test: /facelift|rhytidectomy/i, name: "Facelift" },
+  { test: /rhinoplasty|nose job|septorhino/i, name: "Rhinoplasty" },
+  { test: /fat transfer|fat graft|lipofilling/i, name: "Fat Transfer" },
+  { test: /liposuction|\blipo\b/i, name: "Liposuction" },
+];
+
+export function mapCosmeticProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, COSMETIC_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Rhinoplasty", "Liposuction", "Breast Augmentation"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -262,5 +286,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Pediatric Cardiac Surgery") return mapPediatricCardiacSurgeryProcedures(texts);
   if (specialty === "Cardiology") return mapCardiologyProcedures(texts);
   if (specialty === "Bariatric Surgery") return mapBariatricProcedures(texts);
+  if (specialty === "Cosmetic Surgery") return mapCosmeticProcedures(texts);
   return mapCatalogProcedures(texts);
 }

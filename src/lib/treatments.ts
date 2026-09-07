@@ -1,3 +1,4 @@
+import { COSMETIC_COST, COSMETIC_SUMMARIES } from "@/lib/cosmetic-costs";
 import { BARIATRIC_COST, BARIATRIC_SUMMARIES } from "@/lib/bariatric-costs";
 import { CARDIOLOGY_COST, CARDIOLOGY_SUMMARIES } from "@/lib/cardiology-costs";
 import { CARDIAC_SURGERY_COST, CARDIAC_SURGERY_SUMMARIES } from "@/lib/cardiac-surgery-costs";
@@ -8,6 +9,7 @@ import { MEDICAL_COST, MEDICAL_SUMMARIES } from "@/lib/medical-costs";
 import { hospitals } from "@/lib/hospitals";
 import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
 import {
+  COSMETIC_PROCEDURES,
   BARIATRIC_PROCEDURES,
   CARDIOLOGY_PROCEDURES,
   CARDIAC_SURGERY_PROCEDURES,
@@ -515,6 +517,44 @@ const bariatricTreatments: Treatment[] = BARIATRIC_PROCEDURES.map((name) => {
   };
 });
 
+const COSMETIC_IMAGE =
+  "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1600&q=80";
+
+const COSMETIC_INCLUDES = [
+  "Plastic surgery consultation and records review",
+  "Named surgeon on camera before travel",
+  "Theatre, implants or grafts, and overnight stay as quoted",
+  "Compression and wound protocol as indicated",
+  "Discharge summary to your home physician",
+];
+
+const cosmeticTreatments: Treatment[] = COSMETIC_PROCEDURES.map((name) => {
+  const cost = COSMETIC_COST[name];
+  if (!cost) throw new Error(`Missing cosmetic cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Cosmetic Surgery",
+    specialtySlug: "cosmetic-surgery",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      COSMETIC_SUMMARIES[name] ??
+      `Cosmetic Surgery — ${name} at JCI partner campuses with a named surgeon before you travel.`,
+    image: COSMETIC_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Contour", "Facial ageing", "Breast and body aesthetics"],
+    procedures: [name],
+    includes: COSMETIC_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named plastic surgeon confirms photographs, implant or graft plan and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -525,6 +565,7 @@ export const treatments: Treatment[] = [
   ...pediatricCardiacSurgeryTreatments,
   ...cardiologyTreatments,
   ...bariatricTreatments,
+  ...cosmeticTreatments,
 ];
 
 export function getTreatment(slug: string) {
