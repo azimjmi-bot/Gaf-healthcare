@@ -25,7 +25,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Oncologists in India — radiation, surgical, medical, hematology and pediatric hematology | Velora",
+    default: "Oncologists and cardiac surgeons in India | Velora",
     template: `%s — ${site.name}`,
   },
   description: site.description,
@@ -37,7 +37,9 @@ export const metadata: Metadata = {
     "hematologist India",
     "bone marrow transplant cost India",
     "pediatric hematologist India",
-    "pediatric bone marrow transplant India",
+    "cardiac surgeon India",
+    "CABG cost India",
+    "TAVR TAVI India",
     "Delhi NCR oncologist",
     "Mumbai oncologist",
     "Bengaluru oncologist",
@@ -48,7 +50,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: site.name,
-    title: "Oncologists in India — radiation, surgical, medical, hematology and pediatric hematology | Velora",
+    title: "Oncologists and cardiac surgeons in India | Velora",
     description: site.description,
     url: SITE_URL,
   },

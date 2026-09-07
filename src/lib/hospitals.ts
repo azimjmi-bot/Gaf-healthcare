@@ -2,6 +2,7 @@ import catalog from "@/data/ginger-catalog.json";
 import { mapCatalogProcedures } from "@/lib/procedure-map";
 import {
   ATHENAA_SURGICAL_PROCEDURES,
+  CARDIAC_SURGERY_PROCEDURES,
   HEMATOLOGY_PROCEDURES,
   MEDICAL_ONCOLOGY_PROCEDURES,
   PEDIATRIC_HEMATOLOGY_PROCEDURES,
@@ -50,8 +51,9 @@ const surgical = getSpecialty("Surgical Oncology");
 const medical = getSpecialty("Medical Oncology");
 const hematology = getSpecialty("Hematology");
 const pediatricHematology = getSpecialty("Pediatric Hematology");
-if (!radiation || !surgical || !medical || !hematology || !pediatricHematology) {
-  throw new Error("Missing oncology specialties");
+const cardiacSurgery = getSpecialty("Cardiac Surgery");
+if (!radiation || !surgical || !medical || !hematology || !pediatricHematology || !cardiacSurgery) {
+  throw new Error("Missing specialties");
 }
 
 function resolveProcedures(names: string[]) {
@@ -93,6 +95,7 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
     ...MEDICAL_ONCOLOGY_PROCEDURES,
     ...HEMATOLOGY_PROCEDURES,
     ...PEDIATRIC_HEMATOLOGY_PROCEDURES,
+    ...CARDIAC_SURGERY_PROCEDURES,
   ]);
   const seen = new Set<string>();
   const unique = procedures.filter((p) => {
@@ -109,11 +112,25 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
     country: country.name,
     countrySlug: country.slug,
     accreditation: seed.accreditation,
-    focus: `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name}`,
+    focus: `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name} · ${cardiacSurgery.name}`,
     specialty: radiation.name,
     specialtySlug: radiation.slug,
-    specialties: [radiation.name, surgical.name, medical.name, hematology.name, pediatricHematology.name],
-    specialtySlugs: [radiation.slug, surgical.slug, medical.slug, hematology.slug, pediatricHematology.slug],
+    specialties: [
+      radiation.name,
+      surgical.name,
+      medical.name,
+      hematology.name,
+      pediatricHematology.name,
+      cardiacSurgery.name,
+    ],
+    specialtySlugs: [
+      radiation.slug,
+      surgical.slug,
+      medical.slug,
+      hematology.slug,
+      pediatricHematology.slug,
+      cardiacSurgery.slug,
+    ],
     procedures: unique.map((p) => p.name),
     procedureSlugs: unique.map((p) => p.slug),
     established: seed.established,

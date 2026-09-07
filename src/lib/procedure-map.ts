@@ -1,4 +1,4 @@
-import { HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { CARDIAC_SURGERY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -164,10 +164,35 @@ export function mapPediatricHematologyProcedures(texts: string[], fallback = tru
   return ["Pediatric Bone Marrow Transplantation", "Allogeneic Stem Cell Transplant", "Bone Marrow Biopsy"];
 }
 
+const CARDIAC_SURGERY_RULES: { test: RegExp; name: (typeof CARDIAC_SURGERY_PROCEDURES)[number] }[] = [
+  { test: /tavr|tavi|transcatheter/i, name: "TAVR/TAVI (Transcatheter Aortic Valve Replacement)" },
+  { test: /\blvad\b|ventricular assist/i, name: "LVAD Implantation" },
+  { test: /heart transplant|cardiac transplant/i, name: "Heart Transplant Surgery" },
+  { test: /congenital/i, name: "Congenital Heart Surgery" },
+  { test: /robotic/i, name: "Robotic Cardiac Surgery" },
+  { test: /minimally invasive|mini[\s-]*mitral|mini[\s-]*avr/i, name: "Minimally Invasive Cardiac Surgery" },
+  { test: /redo.{0,12}cabg|re-?do cabg|second.{0,8}bypass/i, name: "Redo CABG" },
+  { test: /double valve/i, name: "Double Valve Replacement" },
+  { test: /aortic root|bentall|david procedure/i, name: "Aortic Root Replacement" },
+  { test: /aortic aneurysm|thoracic aneurysm/i, name: "Aortic Aneurysm Surgery" },
+  { test: /mitral valve repair|mitral repair/i, name: "Mitral Valve Repair" },
+  { test: /aortic valve replacement|\bavr\b(?!.*transcatheter)/i, name: "Aortic Valve Replacement" },
+  { test: /valve repair/i, name: "Heart Valve Repair" },
+  { test: /valve replacement/i, name: "Heart Valve Replacement" },
+  { test: /\bcabg\b|coronary artery bypass|bypass graft/i, name: "CABG (Coronary Artery Bypass Grafting)" },
+];
+
+export function mapCardiacSurgeryProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, CARDIAC_SURGERY_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["CABG (Coronary Artery Bypass Grafting)", "Heart Valve Replacement", "Heart Valve Repair"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
   if (specialty === "Hematology") return mapHematologyProcedures(texts);
   if (specialty === "Pediatric Hematology") return mapPediatricHematologyProcedures(texts);
+  if (specialty === "Cardiac Surgery") return mapCardiacSurgeryProcedures(texts);
   return mapCatalogProcedures(texts);
 }

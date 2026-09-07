@@ -20,7 +20,9 @@ function clip(text: string, max = 158) {
 
 export function doctorMetadata(d: Doctor): Metadata {
   const role =
-    d.specialtySlug === "pediatric-hematology"
+    d.specialtySlug === "cardiac-surgery"
+      ? "cardiac surgeon"
+      : d.specialtySlug === "pediatric-hematology"
       ? "pediatric hematologist"
       : d.specialtySlug === "hematology"
       ? "hematologist"
@@ -51,7 +53,7 @@ export function doctorMetadata(d: Doctor): Metadata {
 }
 
 export function hospitalMetadata(h: Hospital): Metadata {
-  const title = `${h.name} — oncology and hematology hospital in ${h.city}, India`;
+  const title = `${h.name} — oncology, hematology and cardiac surgery hospital in ${h.city}, India`;
   const description = clip(
     `${h.name} in ${h.city}, India lists ${h.specialties.join(", ")}. ${h.accreditation}. ${h.bio}`,
   );
@@ -108,31 +110,34 @@ export function catalogMetadata(
 
   if (entity === "doctors") {
     if (proc) title = `${proc} specialists in ${place}`;
+    else if (spec === "Cardiac Surgery") title = `Cardiac surgeons in ${place}`;
     else if (spec === "Pediatric Hematology") title = `Pediatric hematologists in ${place}`;
     else if (spec === "Hematology") title = `Hematologists in ${place}`;
     else if (spec) title = `${spec} doctors in ${place}`;
-    else title = `Oncologists, hematologists and pediatric hematologists in ${place}`;
+    else title = `Oncologists, hematologists and cardiac surgeons in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
-      spec === "Pediatric Hematology"
+      spec === "Cardiac Surgery"
+        ? `/doctors/india/${citySlug}/cardiac-surgery/cabg-coronary-artery-bypass-grafting`
+        : spec === "Pediatric Hematology"
         ? `/doctors/india/${citySlug}/pediatric-hematology/pediatric-bone-marrow-transplantation`
         : spec === "Hematology"
           ? `/doctors/india/${citySlug}/hematology/bone-marrow-transplantation`
           : `/doctors/india/${citySlug}/radiation-oncology/external-beam-radiotherapy-ebrt`;
     description = clip(
-      `Named ${spec ? spec.toLowerCase() : "radiation, surgical, medical, hematology and pediatric hematology"} specialists in ${place} at JCI partner campuses. Filter by city, specialty and procedure for later pSEO routes such as ${example}.`,
+      `Named ${spec ? spec.toLowerCase() : "radiation, surgical, medical, hematology, pediatric hematology and cardiac surgery"} specialists in ${place} at JCI partner campuses. Filter by city, specialty and procedure for later pSEO routes such as ${example}.`,
     );
   } else if (entity === "hospitals") {
-    title = spec ? `${spec} hospitals in ${place}` : `Oncology hospitals in ${place}`;
+    title = spec ? `${spec} hospitals in ${place}` : `Oncology and cardiac hospitals in ${place}`;
     if (proc) title = `Hospitals for ${proc} in ${place}`;
     description = clip(
-      `Partner oncology campuses in ${place} for ${spec ?? "radiation, surgical and medical oncology plus hematology and pediatric hematology"}. ${proc ? `${proc} is listed where the house can quote it. ` : ""}Country, city, specialty and procedure tags are ready for pSEO.`,
+      `Partner campuses in ${place} for ${spec ?? "radiation, surgical and medical oncology, hematology, pediatric hematology and cardiac surgery"}. ${proc ? `${proc} is listed where the house can quote it. ` : ""}Country, city, specialty and procedure tags are ready for pSEO.`,
     );
   } else {
-    title = spec ? `${spec} cost in ${place}` : `Cancer treatment cost in ${place}`;
+    title = spec ? `${spec} cost in ${place}` : `Oncology and cardiac treatment cost in ${place}`;
     if (proc) title = `${proc} cost in ${place}`;
     description = clip(
-      `US cash-pay beside India partner ranges for ${spec ?? "radiation, surgery, systemic therapy, hematology and pediatric hematology"} in ${place}. Planning figures, not quotes — a named consultant confirms the protocol after records review.`,
+      `US cash-pay beside India partner ranges for ${spec ?? "radiation, surgery, systemic therapy, hematology, pediatric hematology and cardiac surgery"} in ${place}. Planning figures, not quotes — a named consultant confirms the protocol after records review.`,
     );
   }
 
@@ -230,12 +235,12 @@ export function faqJsonLd(rows: { q: string; a: string }[]) {
 
 export const DOCTOR_FAQS = [
   {
-    q: "Which Indian cities does Velora list oncologists and haematologists in?",
+    q: "Which Indian cities does Velora list specialists in?",
     a: "Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Every profile is tagged with country (India), city, specialty and procedure so later pages can be generated without remapping the catalog.",
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named paediatric haematologists sit under Pediatric Hematology in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Children’s transplant, sibling-donor grafts and paediatric BMT share some slugs such as CAR-T with the adult list so later pSEO routes can use either specialty. Medical, radiation and surgical oncologists are listed separately under the same hospitals.",
+    a: "Yes. Named haematologists sit under Hematology. Named paediatric haematologists sit under Pediatric Hematology. Cardiac Surgery covers CABG, valve repair and replacement, TAVR/TAVI, LVAD and congenital lists on the same campuses. Medical, radiation and surgical oncologists are listed separately. Some marrow procedures such as CAR-T sit on more than one specialty so later pSEO routes can use either slug.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
@@ -246,7 +251,11 @@ export const DOCTOR_FAQS = [
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, haematologist or paediatric haematologist confirms regimen, fractions, donor or the operation after reviewing pathology and imaging.",
+    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, haematologist, paediatric haematologist or cardiac surgeon confirms regimen, fractions, donor or the operation after reviewing records.",
+  },
+  {
+    q: "What does CABG typically cost in India versus the US?",
+    a: "Velora’s CABG sheet lists a partner planning range of about $5,500–$14,000 against typical US cash of $70,000–$200,000, depending on conduits, ICU stay and campus. Valve work, TAVR and LVAD sit on separate sheets.",
   },
   {
     q: "What does chemotherapy typically cost in India versus the US?",

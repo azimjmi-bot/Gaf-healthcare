@@ -37,7 +37,7 @@ export default async function HospitalsPage({
     ? `Hospitals for ${query.procedure} in ${place}`
     : query.specialty
       ? `${query.specialty} hospitals in ${place}`
-      : "Oncology hospitals in India";
+      : "Oncology and cardiac hospitals in India";
 
   return (
     <>
@@ -45,15 +45,15 @@ export default async function HospitalsPage({
         data={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          name: "Oncology hospitals in India",
+          name: "Oncology and cardiac hospitals in India",
           description:
-            "Partner oncology campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad.",
+            "Partner campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad for oncology, hematology and cardiac surgery.",
         }}
       />
       <PageIntro
         eyebrow="India campuses"
         title={heading}
-        lede="JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house is filed under country, city, specialty and procedure — Radiation, Surgical and Medical Oncology, Hematology and Pediatric Hematology — with named consultants where Velora has matched them."
+        lede="JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house is filed under country, city, specialty and procedure — Radiation, Surgical and Medical Oncology, Hematology, Pediatric Hematology and Cardiac Surgery — with named consultants where Velora has matched them."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

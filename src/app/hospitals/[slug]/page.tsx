@@ -39,6 +39,7 @@ export default async function HospitalDetailPage({
   const medicalFaculty = faculty.filter((d) => d.specialtySlug === "medical-oncology");
   const hematologyFaculty = faculty.filter((d) => d.specialtySlug === "hematology");
   const pediatricHematologyFaculty = faculty.filter((d) => d.specialtySlug === "pediatric-hematology");
+  const cardiacFaculty = faculty.filter((d) => d.specialtySlug === "cardiac-surgery");
   const pathways = h.procedureSlugs
     .map((s) => getTreatment(s))
     .filter((t): t is Treatment => Boolean(t));
@@ -47,6 +48,7 @@ export default async function HospitalDetailPage({
   const medicalPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "medical-oncology"));
   const hematologyPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "hematology"));
   const pediatricHematologyPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "pediatric-hematology"));
+  const cardiacPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "cardiac-surgery"));
   const nearby = hospitalsInCity(h.citySlug).filter((x) => x.slug !== h.slug);
 
   return (
@@ -217,6 +219,16 @@ export default async function HospitalDetailPage({
                   </div>
                 </div>
               ) : null}
+              {cardiacFaculty.length > 0 ? (
+                <div className="mt-10">
+                  <h3 className="font-heading text-2xl">Cardiac surgeons</h3>
+                  <div className="mt-6 grid gap-6">
+                    {cardiacFaculty.map((d) => (
+                      <DoctorCard key={d.slug} doctor={d} />
+                    ))}
+                  </div>
+                </div>
+              ) : null}
             </>
           )}
         </div>
@@ -225,7 +237,7 @@ export default async function HospitalDetailPage({
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
         <h2 className="font-heading text-3xl">Procedures on this campus</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Radiation, surgical, medical-oncology, haematology and paediatric-haematology pathways this house can quote — tagged for later pSEO.
+          Radiation, surgical, medical-oncology, haematology, paediatric-haematology and cardiac-surgery pathways this house can quote — tagged for later pSEO.
         </p>
         {radiationPathways.length > 0 ? (
           <>
@@ -255,6 +267,12 @@ export default async function HospitalDetailPage({
           <>
             <h3 className="mt-10 font-heading text-2xl">Pediatric Hematology</h3>
             <ProcedureGrid hospital={h} rows={pediatricHematologyPathways} />
+          </>
+        ) : null}
+        {cardiacPathways.length > 0 ? (
+          <>
+            <h3 className="mt-10 font-heading text-2xl">Cardiac Surgery</h3>
+            <ProcedureGrid hospital={h} rows={cardiacPathways} />
           </>
         ) : null}
       </section>

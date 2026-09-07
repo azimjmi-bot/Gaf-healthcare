@@ -44,17 +44,19 @@ export default async function DoctorsPage({
       ? `Pediatric hematologists in ${place}`
     : query.specialty === "Hematology"
       ? `Hematologists in ${place}`
+      : query.specialty === "Cardiac Surgery"
+        ? `Cardiac surgeons in ${place}`
       : query.specialty
         ? `${query.specialty} doctors in ${place}`
-        : "Oncologists, hematologists and pediatric hematologists in India";
+        : "Oncologists, hematologists and cardiac surgeons in India";
 
   return (
     <>
       <JsonLd data={faqJsonLd(DOCTOR_FAQS)} />
       <PageIntro
-        eyebrow="India · five cities · five specialties"
+        eyebrow="India · five cities · six specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists, haematologists and paediatric haematologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/pediatric-hematology/{procedure}. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists, haematologists, paediatric haematologists and cardiac-surgery pathways in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/cardiac-surgery/{procedure}. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

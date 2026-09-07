@@ -65,6 +65,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Medical Oncology"),
   taxon("Hematology"),
   taxon("Pediatric Hematology"),
+  taxon("Cardiac Surgery"),
 ];
 
 export function compareSpecialties(aSlug: string, bSlug: string) {
@@ -171,6 +172,24 @@ export const PEDIATRIC_HEMATOLOGY_PROCEDURES = [
   "Bone Marrow Aspiration",
 ] as const;
 
+export const CARDIAC_SURGERY_PROCEDURES = [
+  "CABG (Coronary Artery Bypass Grafting)",
+  "Heart Valve Replacement",
+  "Heart Valve Repair",
+  "Heart Transplant Surgery",
+  "Aortic Root Replacement",
+  "Mitral Valve Repair",
+  "Aortic Valve Replacement",
+  "TAVR/TAVI (Transcatheter Aortic Valve Replacement)",
+  "Aortic Aneurysm Surgery",
+  "Minimally Invasive Cardiac Surgery",
+  "Robotic Cardiac Surgery",
+  "LVAD Implantation",
+  "Redo CABG",
+  "Double Valve Replacement",
+  "Congenital Heart Surgery",
+] as const;
+
 export const ATHENAA_SURGICAL_PROCEDURES = [
   "Breast-Conserving Surgery (Lumpectomy)",
   "Mastectomy",
@@ -213,6 +232,7 @@ export const PROCEDURES: ProcedureTaxon[] = [
   ...PEDIATRIC_HEMATOLOGY_PROCEDURES.filter(
     (name) => !HEMATOLOGY_NAMES.has(name) && !MEDICAL_ONCOLOGY_PROCEDURES.includes(name as (typeof MEDICAL_ONCOLOGY_PROCEDURES)[number]),
   ).map((name) => procedureTaxon(name, ["pediatric-hematology"])),
+  ...CARDIAC_SURGERY_PROCEDURES.map((name) => procedureTaxon(name, ["cardiac-surgery"])),
 ];
 
 export const PROCEDURE_CLUSTERS = {

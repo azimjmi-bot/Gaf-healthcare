@@ -1,9 +1,11 @@
+import { CARDIAC_SURGERY_COST, CARDIAC_SURGERY_SUMMARIES } from "@/lib/cardiac-surgery-costs";
 import { HEMATOLOGY_COST, HEMATOLOGY_SUMMARIES } from "@/lib/hematology-costs";
 import { PEDIATRIC_HEMATOLOGY_COST, PEDIATRIC_HEMATOLOGY_SUMMARIES } from "@/lib/pediatric-hematology-costs";
 import { MEDICAL_COST, MEDICAL_SUMMARIES } from "@/lib/medical-costs";
 import { hospitals } from "@/lib/hospitals";
 import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
 import {
+  CARDIAC_SURGERY_PROCEDURES,
   HEMATOLOGY_PROCEDURES,
   MEDICAL_ONCOLOGY_PROCEDURES,
   PEDIATRIC_HEMATOLOGY_PROCEDURES,
@@ -356,12 +358,51 @@ const pediatricHematologyTreatments: Treatment[] = PEDIATRIC_ONLY.map((name) => 
   };
 });
 
+const CARDIAC_INCLUDES = [
+  "Cardiac surgery consultation and records review",
+  "Named surgeon on camera before travel",
+  "Theatre, anaesthesia, cardiopulmonary bypass and cardiac ICU as quoted",
+  "Device or prosthesis as indicated",
+  "Discharge summary to your home cardiologist",
+];
+
+const CARDIAC_IMAGE =
+  "https://images.unsplash.com/photo-1559757175-5700e644bcc8?auto=format&fit=crop&w=1600&q=80";
+
+const cardiacSurgeryTreatments: Treatment[] = CARDIAC_SURGERY_PROCEDURES.map((name) => {
+  const cost = CARDIAC_SURGERY_COST[name];
+  if (!cost) throw new Error(`Missing cardiac surgery cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Cardiac Surgery",
+    specialtySlug: "cardiac-surgery",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      CARDIAC_SURGERY_SUMMARIES[name] ??
+      `Cardiac Surgery — ${name} at JCI partner campuses with a named surgeon before you travel.`,
+    image: CARDIAC_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Coronary artery disease", "Valvular heart disease", "Heart failure"],
+    procedures: [name],
+    includes: CARDIAC_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named cardiac surgeon confirms conduit, prosthesis, approach and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
   ...medicalTreatments,
   ...hematologyTreatments,
   ...pediatricHematologyTreatments,
+  ...cardiacSurgeryTreatments,
 ];
 
 export function getTreatment(slug: string) {
