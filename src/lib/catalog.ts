@@ -6,6 +6,8 @@ import {
   PROCEDURES,
   SPECIALTIES,
   citiesInCountry,
+  getSpecialty,
+  proceduresForSpecialty,
 } from "@/lib/taxonomy";
 
 export { INDIA_CITIES };
@@ -47,6 +49,12 @@ export const catalogSpecialties = SPECIALTIES.map((s) => s.name);
 
 export const catalogProcedures = PROCEDURES.map((p) => p.name);
 
+export function catalogProceduresFor(specialty?: string) {
+  if (!specialty) return catalogProcedures;
+  const rows = proceduresForSpecialty(specialty);
+  return rows.length ? rows.map((p) => p.name) : catalogProcedures;
+}
+
 export function citiesForDestination(destination?: string) {
   if (!destination) return catalogCities;
   return citiesInCountry(destination).map((c) => c.name);
@@ -84,7 +92,9 @@ function hospitalMatches(h: Hospital, q: CatalogQuery) {
 export function filterHospitals(q: CatalogQuery): Hospital[] {
   return hospitals.filter((h) => {
     if (!hospitalMatches(h, q)) return false;
-    if (q.specialty && h.specialty !== q.specialty) return false;
+    if (q.specialty && !h.specialties.includes(q.specialty) && h.specialty !== q.specialty) {
+      return false;
+    }
     if (q.procedure && !h.procedures.includes(q.procedure) && !h.procedureSlugs.includes(q.procedure)) {
       return false;
     }
@@ -103,10 +113,8 @@ export function filterTreatments(q: CatalogQuery): Treatment[] {
     if (q.destination && !campuses.some((h) => h.country === q.destination)) return false;
     if (q.city && !campuses.some((h) => h.city === q.city)) return false;
     if (q.specialty) {
-      const faculty = doctors.filter(
-        (d) => d.treatmentSlugs.includes(t.slug) && d.specialty === q.specialty,
-      );
-      if (faculty.length === 0) return false;
+      const spec = getSpecialty(q.specialty);
+      if (spec ? t.specialtySlug !== spec.slug : t.category !== q.specialty) return false;
     }
     return true;
   });

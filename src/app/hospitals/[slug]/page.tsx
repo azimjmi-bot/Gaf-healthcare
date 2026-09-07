@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { DoctorCard } from "@/components/doctor-card";
 import { CtaBand } from "@/components/page-shell";
-import { getTreatment } from "@/lib/data";
+import { getTreatment, type Treatment } from "@/lib/data";
 import { doctorsForHospital } from "@/lib/doctors";
 import { getHospital, hospitals, hospitalsInCity } from "@/lib/hospitals";
 import type { Metadata } from "next";
@@ -31,7 +31,11 @@ export default async function HospitalDetailPage({
   const h = getHospital(slug);
   if (!h) notFound();
   const faculty = doctorsForHospital(h.slug);
-  const pathways = h.procedureSlugs.map((s) => getTreatment(s)).filter(Boolean);
+  const pathways = h.procedureSlugs
+    .map((s) => getTreatment(s))
+    .filter((t): t is Treatment => Boolean(t));
+  const radiationPathways = pathways.filter((t) => t?.specialtySlug === "radiation-oncology");
+  const surgicalPathways = pathways.filter((t) => t?.specialtySlug === "surgical-oncology");
   const nearby = hospitalsInCity(h.citySlug).filter((x) => x.slug !== h.slug);
 
   return (
@@ -44,7 +48,7 @@ export default async function HospitalDetailPage({
             {h.city}, {h.country}
             {h.established ? ` · Established ${h.established}` : ""}
           </p>
-          <p className="mt-2 text-sm text-ivory/60">{h.specialty}</p>
+          <p className="mt-2 text-sm text-ivory/60">{h.specialties.join(" · ")}</p>
         </div>
       </section>
 
@@ -54,11 +58,17 @@ export default async function HospitalDetailPage({
           <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{h.bio}</p>
           <dl className="mt-10 grid gap-6 sm:grid-cols-2">
             <div>
-              <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">Specialty</dt>
-              <dd className="mt-1">
-                <Link href={`/hospitals?specialty=${encodeURIComponent(h.specialty)}`} className="hover:underline">
-                  {h.specialty}
-                </Link>
+              <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">Specialties</dt>
+              <dd className="mt-1 flex flex-col gap-1">
+                {h.specialties.map((name) => (
+                  <Link
+                    key={name}
+                    href={`/hospitals?specialty=${encodeURIComponent(name)}`}
+                    className="hover:underline"
+                  >
+                    {name}
+                  </Link>
+                ))}
               </dd>
             </div>
             <div>
@@ -140,53 +150,39 @@ export default async function HospitalDetailPage({
               ))}
             </div>
           )}
+          <p className="mt-8 text-sm text-muted-foreground">
+            Named surgical oncologists are being matched. Filter hospitals by{" "}
+            <Link href="/hospitals?specialty=Surgical%20Oncology" className="underline-offset-4 hover:underline">
+              Surgical Oncology
+            </Link>{" "}
+            or request a dossier for a surgeon on this campus.
+          </p>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
         <h2 className="font-heading text-3xl">Procedures on this campus</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Cost sheets and the doctors here who list each technique.
+          Radiation techniques from named faculty, plus surgical-oncology pathways this house can quote.
         </p>
-        <ul className="mt-6 grid gap-4 md:grid-cols-2">
-          {pathways.map((t) =>
-            t ? (
-              <li key={t.slug}>
-                <div className="rounded-xl border border-border bg-card p-6">
-                  <Link href={`/costs/${t.slug}`} className="font-heading text-2xl hover:text-gold">
-                    {t.name}
-                  </Link>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Partner range {t.partnerRange} · US cash {t.usRange}
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-3 text-sm">
-                    <Link href={`/costs/${t.slug}`} className="underline-offset-4 hover:underline">
-                      Treatment cost
-                    </Link>
-                    <Link
-                      href={`/doctors?procedure=${encodeURIComponent(t.name)}&destination=${encodeURIComponent(h.country)}&city=${encodeURIComponent(h.city)}`}
-                      className="underline-offset-4 hover:underline"
-                    >
-                      Doctors for this procedure
-                    </Link>
-                    <Link
-                      href={`/hospitals?procedure=${encodeURIComponent(t.name)}`}
-                      className="underline-offset-4 hover:underline"
-                    >
-                      Other hospitals
-                    </Link>
-                  </div>
-                </div>
-              </li>
-            ) : null,
-          )}
-        </ul>
+        {radiationPathways.length > 0 ? (
+          <>
+            <h3 className="mt-10 font-heading text-2xl">Radiation Oncology</h3>
+            <ProcedureGrid hospital={h} rows={radiationPathways} />
+          </>
+        ) : null}
+        {surgicalPathways.length > 0 ? (
+          <>
+            <h3 className="mt-10 font-heading text-2xl">Surgical Oncology</h3>
+            <ProcedureGrid hospital={h} rows={surgicalPathways} />
+          </>
+        ) : null}
       </section>
 
       {nearby.length > 0 ? (
         <section className="border-t border-border bg-ivory py-16">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
-            <h2 className="font-heading text-3xl">Other radiation campuses in {h.city}</h2>
+            <h2 className="font-heading text-3xl">Other campuses in {h.city}</h2>
             <ul className="mt-6 grid gap-4 md:grid-cols-2">
               {nearby.map((n) => (
                 <li key={n.slug}>
@@ -205,5 +201,47 @@ export default async function HospitalDetailPage({
       ) : null}
       <CtaBand />
     </>
+  );
+}
+
+function ProcedureGrid({
+  hospital,
+  rows,
+}: {
+  hospital: { country: string; city: string };
+  rows: Treatment[];
+}) {
+  return (
+    <ul className="mt-6 grid gap-4 md:grid-cols-2">
+      {rows.map((t) => (
+        <li key={t.slug}>
+          <div className="rounded-xl border border-border bg-card p-6">
+            <Link href={`/costs/${t.slug}`} className="font-heading text-2xl hover:text-gold">
+              {t.name}
+            </Link>
+            <p className="mt-2 text-sm text-muted-foreground">
+              Partner range {t.partnerRange} · US cash {t.usRange}
+            </p>
+            <div className="mt-4 flex flex-wrap gap-3 text-sm">
+              <Link href={`/costs/${t.slug}`} className="underline-offset-4 hover:underline">
+                Treatment cost
+              </Link>
+              <Link
+                href={`/doctors?procedure=${encodeURIComponent(t.name)}&destination=${encodeURIComponent(hospital.country)}&city=${encodeURIComponent(hospital.city)}`}
+                className="underline-offset-4 hover:underline"
+              >
+                Doctors for this procedure
+              </Link>
+              <Link
+                href={`/hospitals?procedure=${encodeURIComponent(t.name)}`}
+                className="underline-offset-4 hover:underline"
+              >
+                Other hospitals
+              </Link>
+            </div>
+          </div>
+        </li>
+      ))}
+    </ul>
   );
 }

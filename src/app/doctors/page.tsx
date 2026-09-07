@@ -23,7 +23,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="Expert specialists"
         title="Top radiation oncologists in India"
-        lede="Consultants sit under the hospital they practise at, then city, country, and specialty — the same keys a later landing page will use."
+        lede="Radiation oncologists sit under the hospital they practise at, then city, country, and specialty. Named surgical oncologists are being matched — filter Surgical Oncology or request a dossier."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

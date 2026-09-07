@@ -1,6 +1,14 @@
 import catalog from "@/data/ginger-catalog.json";
 import { mapCatalogProcedures } from "@/lib/procedure-map";
-import { getCity, getCountry, getProcedure, getSpecialty } from "@/lib/taxonomy";
+import {
+  ATHENAA_SURGICAL_PROCEDURES,
+  SPECIALTIES,
+  SURGICAL_ONCOLOGY_PROCEDURES,
+  getCity,
+  getCountry,
+  getProcedure,
+  getSpecialty,
+} from "@/lib/taxonomy";
 
 export type Hospital = {
   slug: string;
@@ -13,6 +21,8 @@ export type Hospital = {
   focus: string;
   specialty: string;
   specialtySlug: string;
+  specialties: string[];
+  specialtySlugs: string[];
   procedures: string[];
   procedureSlugs: string[];
   established: string;
@@ -31,8 +41,24 @@ function languagesFor(city: string) {
   return "English, Hindi";
 }
 
-const specialty = getSpecialty("Radiation Oncology");
-if (!specialty) throw new Error("Missing Radiation Oncology specialty");
+const radiation = getSpecialty("Radiation Oncology");
+const surgical = getSpecialty("Surgical Oncology");
+if (!radiation || !surgical) throw new Error("Missing oncology specialties");
+
+function resolveProcedures(names: string[]) {
+  return names.map((name) => {
+    const procedure = getProcedure(name);
+    if (!procedure) throw new Error(`Unmapped procedure ${name}`);
+    return procedure;
+  });
+}
+
+function surgicalNamesForCampus(slug: string) {
+  if (slug === "apollo-athenaa-women-s-cancer-centre") {
+    return [...ATHENAA_SURGICAL_PROCEDURES];
+  }
+  return [...SURGICAL_ONCOLOGY_PROCEDURES];
+}
 
 export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
   const cityName = seed.city || "Delhi NCR";
@@ -43,15 +69,17 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
   }
 
   const faculty = catalog.doctors.filter((d) => d.hospitalSlug === seed.slug);
-  const mapped = mapCatalogProcedures([
+  const radiationNames = mapCatalogProcedures([
     ...faculty.flatMap((d) => d.proceduresExpertise),
     ...faculty.flatMap((d) => d.specializations),
     seed.bio,
   ]);
-  const procedures = mapped.map((name) => {
-    const procedure = getProcedure(name);
-    if (!procedure) throw new Error(`Unmapped procedure ${name} on ${seed.slug}`);
-    return procedure;
+  const procedures = resolveProcedures([...radiationNames, ...surgicalNamesForCampus(seed.slug)]);
+  const seen = new Set<string>();
+  const unique = procedures.filter((p) => {
+    if (seen.has(p.slug)) return false;
+    seen.add(p.slug);
+    return true;
   });
 
   return {
@@ -62,11 +90,13 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
     country: country.name,
     countrySlug: country.slug,
     accreditation: seed.accreditation,
-    focus: specialty.name,
-    specialty: specialty.name,
-    specialtySlug: specialty.slug,
-    procedures: procedures.map((p) => p.name),
-    procedureSlugs: procedures.map((p) => p.slug),
+    focus: `${radiation.name} · ${surgical.name}`,
+    specialty: radiation.name,
+    specialtySlug: radiation.slug,
+    specialties: [radiation.name, surgical.name],
+    specialtySlugs: [radiation.slug, surgical.slug],
+    procedures: unique.map((p) => p.name),
+    procedureSlugs: unique.map((p) => p.slug),
     established: seed.established,
     beds: seed.beds,
     languages: languagesFor(city.name),
@@ -93,7 +123,7 @@ export type HospitalPseoFacet = {
 
 export function hospitalsMatchingPseo(facet: HospitalPseoFacet) {
   return hospitals.filter((h) => {
-    if (facet.specialtySlug && h.specialtySlug !== facet.specialtySlug) return false;
+    if (facet.specialtySlug && !h.specialtySlugs.includes(facet.specialtySlug)) return false;
     if (facet.procedureSlug && !h.procedureSlugs.includes(facet.procedureSlug)) return false;
     if (facet.citySlug && h.citySlug !== facet.citySlug) return false;
     if (facet.countrySlug && h.countrySlug !== facet.countrySlug) return false;
@@ -119,22 +149,33 @@ export type HospitalDirectorySpecialty = {
   countries: HospitalDirectoryCountry[];
 };
 
-export function groupHospitalsForDirectory(list: Hospital[]): HospitalDirectorySpecialty[] {
+export function groupHospitalsForDirectory(
+  list: Hospital[],
+  specialtyName?: string,
+): HospitalDirectorySpecialty[] {
+  const onlySlug = specialtyName ? getSpecialty(specialtyName)?.slug : undefined;
   const tree = new Map<string, Map<string, Map<string, Hospital[]>>>();
   for (const hospital of list) {
-    if (!tree.has(hospital.specialtySlug)) tree.set(hospital.specialtySlug, new Map());
-    const countries = tree.get(hospital.specialtySlug)!;
-    if (!countries.has(hospital.countrySlug)) countries.set(hospital.countrySlug, new Map());
-    const cities = countries.get(hospital.countrySlug)!;
-    if (!cities.has(hospital.citySlug)) cities.set(hospital.citySlug, []);
-    cities.get(hospital.citySlug)!.push(hospital);
+    const specSlugs = onlySlug
+      ? hospital.specialtySlugs.filter((s) => s === onlySlug)
+      : hospital.specialtySlugs;
+    for (const specSlug of specSlugs) {
+      if (!tree.has(specSlug)) tree.set(specSlug, new Map());
+      const countries = tree.get(specSlug)!;
+      if (!countries.has(hospital.countrySlug)) countries.set(hospital.countrySlug, new Map());
+      const cities = countries.get(hospital.countrySlug)!;
+      if (!cities.has(hospital.citySlug)) cities.set(hospital.citySlug, []);
+      const bucket = cities.get(hospital.citySlug)!;
+      if (!bucket.some((h) => h.slug === hospital.slug)) bucket.push(hospital);
+    }
   }
 
   return [...tree.entries()]
     .map(([specialtySlug, countries]) => {
-      const sample = list.find((h) => h.specialtySlug === specialtySlug)!;
+      const spec = SPECIALTIES.find((s) => s.slug === specialtySlug);
+      if (!spec) throw new Error(`Unknown specialty ${specialtySlug}`);
       return {
-        specialty: sample.specialty,
+        specialty: spec.name,
         specialtySlug,
         countries: [...countries.entries()]
           .map(([countrySlug, cities]) => {

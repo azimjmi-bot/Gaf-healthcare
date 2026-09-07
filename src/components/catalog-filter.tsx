@@ -3,7 +3,7 @@
 import { useRouter, useSearchParams } from "next/navigation";
 import {
   catalogDestinations,
-  catalogProcedures,
+  catalogProceduresFor,
   catalogSpecialties,
   citiesForDestination,
   cityResultCounts,
@@ -35,6 +35,7 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, entity }: Pr
   const specialty = params.get("specialty") ?? ALL;
   const procedure = params.get("procedure") ?? ALL;
   const cities = citiesForDestination(destination === ALL ? undefined : destination);
+  const procedureOptions = catalogProceduresFor(specialty === ALL ? undefined : specialty);
   const indiaSelected = destination === "India";
   const chipStats = indiaSelected
     ? cityResultCounts(entity, parseCatalogQuery({ destination, specialty, procedure }))
@@ -45,6 +46,12 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, entity }: Pr
     if (!value || value === ALL) next.delete(key);
     else next.set(key, value);
     if (key === "destination") next.delete("city");
+    if (key === "specialty") {
+      const nextSpecialty = !value || value === ALL ? undefined : value;
+      const allowed = catalogProceduresFor(nextSpecialty);
+      const currentProcedure = next.get("procedure");
+      if (currentProcedure && !allowed.includes(currentProcedure)) next.delete("procedure");
+    }
     next.delete("condition");
     const qs = next.toString();
     router.push(qs ? `${basePath}?${qs}` : basePath, { scroll: false });
@@ -79,7 +86,7 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, entity }: Pr
             value={procedure}
             onChange={(v) => setFilter("procedure", v)}
             placeholder="All Procedures"
-            options={catalogProcedures}
+            options={procedureOptions}
             allLabel="All Procedures"
           />
         </div>

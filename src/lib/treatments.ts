@@ -1,5 +1,11 @@
 import { hospitals } from "@/lib/hospitals";
-import { PROCEDURE_CLUSTERS, RADIATION_PROCEDURES, toSlug } from "@/lib/taxonomy";
+import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
+import {
+  PROCEDURE_CLUSTERS,
+  RADIATION_PROCEDURES,
+  SURGICAL_ONCOLOGY_PROCEDURES,
+  toSlug,
+} from "@/lib/taxonomy";
 
 export type Treatment = {
   slug: string;
@@ -139,8 +145,20 @@ const CRT_COPY = {
   ],
 };
 
-export const treatments: Treatment[] = RADIATION_PROCEDURES.map((name) => {
+const SURGICAL_INCLUDES = [
+  "Surgical oncology consultation and records review",
+  "Named surgeon on camera before travel",
+  "Theatre, anaesthesia and inpatient stay as quoted",
+  "Histopathology of the specimen",
+  "Discharge summary to your home oncologist",
+];
+
+const SURGICAL_IMAGE =
+  "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1600&q=80";
+
+const radiationTreatments: Treatment[] = RADIATION_PROCEDURES.map((name) => {
   const cost = RADIATION_COST[name];
+  if (!cost) throw new Error(`Missing radiation cost for ${name}`);
   const slug = toSlug(name);
   const copy = name === "External Beam Radiotherapy (EBRT)" ? EBRT_COPY : name === "3D Conformal Radiotherapy (3D-CRT)" ? CRT_COPY : null;
   return {
@@ -173,6 +191,32 @@ export const treatments: Treatment[] = RADIATION_PROCEDURES.map((name) => {
       : "Fractions, energy, and whether protons or brachytherapy are appropriate are decided after records review — not from a brochure price.",
   };
 });
+
+const surgicalTreatments: Treatment[] = SURGICAL_ONCOLOGY_PROCEDURES.map((name) => {
+  const cost = SURGICAL_COST[name];
+  if (!cost) throw new Error(`Missing surgical cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Surgical Oncology",
+    specialtySlug: "surgical-oncology",
+    procedureSlug: slug,
+    summary: SURGICAL_SUMMARIES[name] ?? `Surgical Oncology — ${name} at JCI partner campuses with a named surgeon before you travel.`,
+    image: SURGICAL_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Solid tumors", "Cancer second opinion"],
+    procedures: [name],
+    includes: SURGICAL_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named surgical oncologist confirms approach, reconstruction and an itemized hospital price after records review.",
+  };
+});
+
+export const treatments: Treatment[] = [...radiationTreatments, ...surgicalTreatments];
 
 export function getTreatment(slug: string) {
   return treatments.find((t) => t.slug === slug);

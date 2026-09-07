@@ -7,7 +7,9 @@ export function HospitalCard({ hospital }: { hospital: Hospital }) {
   const faculty = doctorsForHospital(hospital.slug);
   return (
     <article className="rounded-2xl border border-border bg-card p-6">
-      <p className="text-xs tracking-[0.18em] uppercase text-gold">{hospital.specialty}</p>
+      <p className="text-xs tracking-[0.18em] uppercase text-gold">
+        {hospital.specialties.join(" · ")}
+      </p>
       <Link href={`/hospitals/${hospital.slug}`} className="mt-2 block font-heading text-2xl hover:text-gold">
         {hospital.name}
       </Link>

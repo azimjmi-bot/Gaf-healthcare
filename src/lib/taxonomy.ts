@@ -58,7 +58,10 @@ export const CITIES: CityTaxon[] = [
 
 export const INDIA_CITIES = CITIES.filter((c) => c.countrySlug === "india").map((c) => c.name);
 
-export const SPECIALTIES: Taxon[] = [taxon("Radiation Oncology")];
+export const SPECIALTIES: Taxon[] = [
+  taxon("Radiation Oncology"),
+  taxon("Surgical Oncology"),
+];
 
 export const RADIATION_PROCEDURES = [
   "External Beam Radiotherapy (EBRT)",
@@ -78,11 +81,62 @@ export const RADIATION_PROCEDURES = [
   "Total Body Irradiation (TBI)",
 ] as const;
 
-export const PROCEDURES: ProcedureTaxon[] = RADIATION_PROCEDURES.map((name) => ({
-  name,
-  slug: toSlug(name),
-  specialtySlug: "radiation-oncology",
-}));
+export const SURGICAL_ONCOLOGY_PROCEDURES = [
+  "Breast-Conserving Surgery (Lumpectomy)",
+  "Mastectomy",
+  "Nipple-Sparing Mastectomy",
+  "Oncoplastic Breast Surgery",
+  "Breast Reconstruction",
+  "Sentinel Lymph Node Biopsy",
+  "Esophagectomy",
+  "Gastrectomy",
+  "Colectomy",
+  "Rectal Cancer Surgery",
+  "Liver Resection (Hepatectomy)",
+  "Whipple Procedure",
+  "Pancreatic Surgery",
+  "Cytoreductive Surgery",
+  "Cytoreductive Surgery with HIPEC",
+  "PIPAC",
+  "Radical Hysterectomy",
+  "Ovarian Cancer Cytoreductive Surgery",
+  "Thyroidectomy for Thyroid Cancer",
+  "Neck Dissection",
+  "Oral Cancer Surgery",
+  "Transoral Robotic Surgery (TORS)",
+  "Microvascular Free Flap Reconstruction",
+  "Lung Cancer Surgery",
+  "Lobectomy",
+  "VATS Lung Surgery",
+  "Robotic Thoracic Surgery",
+  "Radical Prostatectomy",
+  "Partial Nephrectomy",
+  "Radical Cystectomy",
+] as const;
+
+export const ATHENAA_SURGICAL_PROCEDURES = [
+  "Breast-Conserving Surgery (Lumpectomy)",
+  "Mastectomy",
+  "Nipple-Sparing Mastectomy",
+  "Oncoplastic Breast Surgery",
+  "Breast Reconstruction",
+  "Sentinel Lymph Node Biopsy",
+  "Radical Hysterectomy",
+  "Ovarian Cancer Cytoreductive Surgery",
+] as const;
+
+export const PROCEDURES: ProcedureTaxon[] = [
+  ...RADIATION_PROCEDURES.map((name) => ({
+    name,
+    slug: toSlug(name),
+    specialtySlug: "radiation-oncology",
+  })),
+  ...SURGICAL_ONCOLOGY_PROCEDURES.map((name) => ({
+    name,
+    slug: toSlug(name),
+    specialtySlug: "surgical-oncology",
+  })),
+];
 
 export const PROCEDURE_CLUSTERS = {
   linac: [
@@ -177,5 +231,11 @@ assertUnique(PROCEDURES, "procedure");
 for (const city of CITIES) {
   if (!countriesBySlug.has(city.countrySlug)) {
     throw new Error(`City ${city.slug} points at unknown country ${city.countrySlug}`);
+  }
+}
+
+for (const procedure of PROCEDURES) {
+  if (!specialtiesBySlug.has(procedure.specialtySlug)) {
+    throw new Error(`Procedure ${procedure.slug} points at unknown specialty ${procedure.specialtySlug}`);
   }
 }

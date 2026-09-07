@@ -44,7 +44,10 @@ export default async function CostDetailPage({
   const featuredFaculty = [...faculty]
     .sort((a, b) => Number(b.featured) - Number(a.featured))
     .slice(0, 8);
-  const related = treatments.filter((x) => x.slug !== t.slug).slice(0, 6);
+  const related = treatments
+    .filter((x) => x.slug !== t.slug && x.specialtySlug === t.specialtySlug)
+    .slice(0, 6);
+  const isSurgical = t.specialtySlug === "surgical-oncology";
 
   return (
     <>
@@ -133,7 +136,9 @@ export default async function CostDetailPage({
       <section className="bg-secondary/40 py-16">
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="flex flex-wrap items-end justify-between gap-4">
-            <h2 className="font-heading text-3xl">Radiation oncologists</h2>
+            <h2 className="font-heading text-3xl">
+              {isSurgical ? "Surgical oncologists" : "Radiation oncologists"}
+            </h2>
             <Link
               href={doctorsPath({ destination: "India", procedure: t.name })}
               className="text-sm underline-offset-4 hover:underline"
@@ -141,6 +146,12 @@ export default async function CostDetailPage({
               All {faculty.length} doctors
             </Link>
           </div>
+          {featuredFaculty.length === 0 ? (
+            <p className="mt-6 text-muted-foreground">
+              Named {isSurgical ? "surgical oncologists" : "radiation oncologists"} for this
+              procedure are being matched. Request a dossier and we will advise.
+            </p>
+          ) : (
           <ul className="mt-6 grid gap-4 md:grid-cols-2">
             {featuredFaculty.map((d) => (
               <li key={d.slug} className="rounded-xl border border-border bg-card p-6 hover:border-primary/30">
@@ -158,6 +169,7 @@ export default async function CostDetailPage({
               </li>
             ))}
           </ul>
+          )}
           <div className="mt-14 flex flex-wrap items-end justify-between gap-4">
             <h2 className="font-heading text-3xl">Hospitals</h2>
             <Link

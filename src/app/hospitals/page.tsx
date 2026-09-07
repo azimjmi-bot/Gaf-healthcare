@@ -16,14 +16,14 @@ export default async function HospitalsPage({
 }) {
   const query = parseCatalogQuery(await searchParams);
   const list = filterHospitals(query);
-  const directory = groupHospitalsForDirectory(list);
+  const directory = groupHospitalsForDirectory(list, query.specialty);
 
   return (
     <>
       <PageIntro
         eyebrow="Top hospitals"
-        title="Radiation oncology campuses in India"
-        lede="Each house is filed under specialty, procedure, city, and country — the same keys a later landing page will use. Bios are ours. Portraits of the campus wait on CMS."
+        title="Oncology campuses in India"
+        lede="Each house is filed under specialty, procedure, city, and country — Radiation Oncology and Surgical Oncology. Bios are ours. Named surgeons for the new list are being matched."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
