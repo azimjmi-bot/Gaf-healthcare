@@ -42,7 +42,7 @@ export default function HomePage() {
             Oncologists in India. Hospitals. Costs.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/80 md:text-lg">
-            Named medical, radiation and surgical oncologists, haematologists, paediatric haematologists, cardiac surgeons and paediatric cardiac-surgery pathways in Delhi NCR, Mumbai,
+            Named medical, radiation and surgical oncologists, haematologists, paediatric haematologists, cardiac surgeons and paediatric cardiac surgeons in Delhi NCR, Mumbai,
             Bengaluru, Chennai and Hyderabad. Meet them on camera. Read USD planning ranges before you fly.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -131,6 +131,7 @@ export default function HomePage() {
               ...doctors.filter((d) => d.featured && d.specialtySlug === "hematology").slice(0, 2),
               ...doctors.filter((d) => d.featured && d.specialtySlug === "pediatric-hematology").slice(0, 2),
               ...doctors.filter((d) => d.featured && d.specialtySlug === "cardiac-surgery").slice(0, 2),
+              ...doctors.filter((d) => d.featured && d.specialtySlug === "pediatric-cardiac-surgery").slice(0, 2),
             ].map((d) => (
               <Link
                 key={d.slug}

@@ -245,7 +245,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named paediatric haematologists sit under Pediatric Hematology. Named cardiac surgeons sit under Cardiac Surgery. Pediatric Cardiac Surgery covers ASD and VSD closure, TOF repair, Glenn, Fontan, arterial switch, Norwood and paediatric heart transplant on the same campuses. Medical, radiation and surgical oncologists are listed separately. Some marrow procedures such as CAR-T sit on more than one specialty so later pSEO routes can use either slug.",
+    a: "Yes. Named haematologists sit under Hematology. Named paediatric haematologists sit under Pediatric Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named paediatric cardiac surgeons sit under Pediatric Cardiac Surgery in Delhi NCR, Mumbai, Chennai and Hyderabad, covering ASD and VSD closure, TOF repair, Glenn, Fontan, arterial switch, Norwood and paediatric heart transplant. Medical, radiation and surgical oncologists are listed separately. Some marrow procedures such as CAR-T sit on more than one specialty so later pSEO routes can use either slug.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",

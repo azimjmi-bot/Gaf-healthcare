@@ -9,7 +9,7 @@ Doctors and hospitals are stored with denormalized **specialty**, **procedure**,
 
 Those paths are not live yet. Directory pages already group by the same keys.
 
-The India roster (437 consultants, 32 campuses) and structured fields were sourced from Ginger Healthcare’s public listings for [radiation oncology](https://ginger.healthcare/destinations/india/radiation-oncology/), [surgical oncology](https://ginger.healthcare/destinations/india/surgical-oncology/), [medical oncology](https://ginger.healthcare/destinations/india/medical-oncology/), [hematology](https://ginger.healthcare/destinations/india/hematology/), [pediatric hematology](https://ginger.healthcare/destinations/india/pediatric-hematology/), and [cardiac surgery](https://ginger.healthcare/destinations/india/cardiac-surgery/). Bios on this site are original Velora copy. Portraits wait on CMS.
+The India roster (463 consultants, 33 campuses) and structured fields were sourced from Ginger Healthcare’s public listings for [radiation oncology](https://ginger.healthcare/destinations/india/radiation-oncology/), [surgical oncology](https://ginger.healthcare/destinations/india/surgical-oncology/), [medical oncology](https://ginger.healthcare/destinations/india/medical-oncology/), [hematology](https://ginger.healthcare/destinations/india/hematology/), [pediatric hematology](https://ginger.healthcare/destinations/india/pediatric-hematology/), [cardiac surgery](https://ginger.healthcare/destinations/india/cardiac-surgery/), and [pediatric cardiac surgery](https://ginger.healthcare/destinations/india/pediatric-cardiac-surgery/). Bios on this site are original Velora copy. Portraits wait on CMS.
 
 ## Local development
 
