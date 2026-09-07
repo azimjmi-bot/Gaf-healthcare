@@ -19,7 +19,7 @@ export default function HomePage() {
           name: "Velora",
           url: SITE_URL,
           description:
-            "Named radiation, surgical and medical oncologists in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — plus haematology, pediatric hematology and cardiac surgery pathways, with partner hospital costs in USD.",
+            "Named radiation, surgical and medical oncologists in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — plus haematology, pediatric hematology, cardiac surgery and pediatric cardiac surgery pathways, with partner hospital costs in USD.",
           areaServed: ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"].map((city) => ({
             "@type": "City",
             name: city,
@@ -42,7 +42,7 @@ export default function HomePage() {
             Oncologists in India. Hospitals. Costs.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/80 md:text-lg">
-            Named medical, radiation and surgical oncologists, haematologists, paediatric haematologists and cardiac surgeons in Delhi NCR, Mumbai,
+            Named medical, radiation and surgical oncologists, haematologists, paediatric haematologists, cardiac surgeons and paediatric cardiac-surgery pathways in Delhi NCR, Mumbai,
             Bengaluru, Chennai and Hyderabad. Meet them on camera. Read USD planning ranges before you fly.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">

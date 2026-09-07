@@ -20,7 +20,9 @@ function clip(text: string, max = 158) {
 
 export function doctorMetadata(d: Doctor): Metadata {
   const role =
-    d.specialtySlug === "cardiac-surgery"
+    d.specialtySlug === "pediatric-cardiac-surgery"
+      ? "pediatric cardiac surgeon"
+      : d.specialtySlug === "cardiac-surgery"
       ? "cardiac surgeon"
       : d.specialtySlug === "pediatric-hematology"
       ? "pediatric hematologist"
@@ -110,6 +112,7 @@ export function catalogMetadata(
 
   if (entity === "doctors") {
     if (proc) title = `${proc} specialists in ${place}`;
+    else if (spec === "Pediatric Cardiac Surgery") title = `Pediatric cardiac surgeons in ${place}`;
     else if (spec === "Cardiac Surgery") title = `Cardiac surgeons in ${place}`;
     else if (spec === "Pediatric Hematology") title = `Pediatric hematologists in ${place}`;
     else if (spec === "Hematology") title = `Hematologists in ${place}`;
@@ -117,7 +120,9 @@ export function catalogMetadata(
     else title = `Oncologists, hematologists and cardiac surgeons in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
-      spec === "Cardiac Surgery"
+      spec === "Pediatric Cardiac Surgery"
+        ? `/doctors/india/${citySlug}/pediatric-cardiac-surgery/asd-closure-atrial-septal-defect`
+        : spec === "Cardiac Surgery"
         ? `/doctors/india/${citySlug}/cardiac-surgery/cabg-coronary-artery-bypass-grafting`
         : spec === "Pediatric Hematology"
         ? `/doctors/india/${citySlug}/pediatric-hematology/pediatric-bone-marrow-transplantation`
@@ -125,19 +130,19 @@ export function catalogMetadata(
           ? `/doctors/india/${citySlug}/hematology/bone-marrow-transplantation`
           : `/doctors/india/${citySlug}/radiation-oncology/external-beam-radiotherapy-ebrt`;
     description = clip(
-      `Named ${spec ? spec.toLowerCase() : "radiation, surgical, medical, hematology, pediatric hematology and cardiac surgery"} specialists in ${place} at JCI partner campuses. Filter by city, specialty and procedure for later pSEO routes such as ${example}.`,
+      `Named ${spec ? spec.toLowerCase() : "radiation, surgical, medical, hematology, pediatric hematology, cardiac surgery and pediatric cardiac surgery"} specialists in ${place} at JCI partner campuses. Filter by city, specialty and procedure for later pSEO routes such as ${example}.`,
     );
   } else if (entity === "hospitals") {
     title = spec ? `${spec} hospitals in ${place}` : `Oncology and cardiac hospitals in ${place}`;
     if (proc) title = `Hospitals for ${proc} in ${place}`;
     description = clip(
-      `Partner campuses in ${place} for ${spec ?? "radiation, surgical and medical oncology, hematology, pediatric hematology and cardiac surgery"}. ${proc ? `${proc} is listed where the house can quote it. ` : ""}Country, city, specialty and procedure tags are ready for pSEO.`,
+      `Partner campuses in ${place} for ${spec ?? "radiation, surgical and medical oncology, hematology, pediatric hematology, cardiac surgery and pediatric cardiac surgery"}. ${proc ? `${proc} is listed where the house can quote it. ` : ""}Country, city, specialty and procedure tags are ready for pSEO.`,
     );
   } else {
     title = spec ? `${spec} cost in ${place}` : `Oncology and cardiac treatment cost in ${place}`;
     if (proc) title = `${proc} cost in ${place}`;
     description = clip(
-      `US cash-pay beside India partner ranges for ${spec ?? "radiation, surgery, systemic therapy, hematology, pediatric hematology and cardiac surgery"} in ${place}. Planning figures, not quotes — a named consultant confirms the protocol after records review.`,
+      `US cash-pay beside India partner ranges for ${spec ?? "radiation, surgery, systemic therapy, hematology, pediatric hematology, cardiac surgery and pediatric cardiac surgery"} in ${place}. Planning figures, not quotes — a named consultant confirms the protocol after records review.`,
     );
   }
 
@@ -240,7 +245,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named paediatric haematologists sit under Pediatric Hematology. Named cardiac surgeons sit under Cardiac Surgery in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad, covering CABG, valve repair and replacement, TAVR/TAVI, LVAD and congenital lists. Medical, radiation and surgical oncologists are listed separately. Some marrow procedures such as CAR-T sit on more than one specialty so later pSEO routes can use either slug.",
+    a: "Yes. Named haematologists sit under Hematology. Named paediatric haematologists sit under Pediatric Hematology. Named cardiac surgeons sit under Cardiac Surgery. Pediatric Cardiac Surgery covers ASD and VSD closure, TOF repair, Glenn, Fontan, arterial switch, Norwood and paediatric heart transplant on the same campuses. Medical, radiation and surgical oncologists are listed separately. Some marrow procedures such as CAR-T sit on more than one specialty so later pSEO routes can use either slug.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
@@ -251,7 +256,7 @@ export const DOCTOR_FAQS = [
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, haematologist, paediatric haematologist or cardiac surgeon confirms regimen, fractions, donor or the operation after reviewing records.",
+    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, haematologist, paediatric haematologist, cardiac surgeon or paediatric cardiac surgeon confirms regimen, fractions, donor or the operation after reviewing records.",
   },
   {
     q: "What does CABG typically cost in India versus the US?",

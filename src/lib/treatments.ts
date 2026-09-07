@@ -1,4 +1,5 @@
 import { CARDIAC_SURGERY_COST, CARDIAC_SURGERY_SUMMARIES } from "@/lib/cardiac-surgery-costs";
+import { PEDIATRIC_CARDIAC_SURGERY_COST, PEDIATRIC_CARDIAC_SURGERY_SUMMARIES } from "@/lib/pediatric-cardiac-surgery-costs";
 import { HEMATOLOGY_COST, HEMATOLOGY_SUMMARIES } from "@/lib/hematology-costs";
 import { PEDIATRIC_HEMATOLOGY_COST, PEDIATRIC_HEMATOLOGY_SUMMARIES } from "@/lib/pediatric-hematology-costs";
 import { MEDICAL_COST, MEDICAL_SUMMARIES } from "@/lib/medical-costs";
@@ -6,6 +7,7 @@ import { hospitals } from "@/lib/hospitals";
 import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
 import {
   CARDIAC_SURGERY_PROCEDURES,
+  PEDIATRIC_CARDIAC_SURGERY_PROCEDURES,
   HEMATOLOGY_PROCEDURES,
   MEDICAL_ONCOLOGY_PROCEDURES,
   PEDIATRIC_HEMATOLOGY_PROCEDURES,
@@ -396,6 +398,41 @@ const cardiacSurgeryTreatments: Treatment[] = CARDIAC_SURGERY_PROCEDURES.map((na
   };
 });
 
+const PEDIATRIC_CARDIAC_INCLUDES = [
+  "Paediatric cardiac surgery consultation and records review",
+  "Named surgeon on camera before travel — parent present",
+  "Theatre, anaesthesia, cardiopulmonary bypass and paediatric cardiac ICU as quoted",
+  "Device or prosthesis as indicated",
+  "Discharge summary to your home paediatric cardiologist",
+];
+
+const pediatricCardiacSurgeryTreatments: Treatment[] = PEDIATRIC_CARDIAC_SURGERY_PROCEDURES.map((name) => {
+  const cost = PEDIATRIC_CARDIAC_SURGERY_COST[name];
+  if (!cost) throw new Error(`Missing pediatric cardiac surgery cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Pediatric Cardiac Surgery",
+    specialtySlug: "pediatric-cardiac-surgery",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      PEDIATRIC_CARDIAC_SURGERY_SUMMARIES[name] ??
+      `Pediatric Cardiac Surgery — ${name} at JCI partner campuses with a named surgeon before you travel.`,
+    image: CARDIAC_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Congenital heart disease", "Pediatric heart failure"],
+    procedures: [name],
+    includes: PEDIATRIC_CARDIAC_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named paediatric cardiac surgeon confirms anatomy, stage and an itemized hospital price after records review. Adult cardiac theatres are not assumed to be equivalent.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -403,6 +440,7 @@ export const treatments: Treatment[] = [
   ...hematologyTreatments,
   ...pediatricHematologyTreatments,
   ...cardiacSurgeryTreatments,
+  ...pediatricCardiacSurgeryTreatments,
 ];
 
 export function getTreatment(slug: string) {

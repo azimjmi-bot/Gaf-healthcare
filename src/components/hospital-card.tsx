@@ -10,6 +10,7 @@ function facultyLabel(faculty: { specialtySlug: string }[]) {
   const hematology = faculty.filter((d) => d.specialtySlug === "hematology").length;
   const pediatricHematology = faculty.filter((d) => d.specialtySlug === "pediatric-hematology").length;
   const cardiac = faculty.filter((d) => d.specialtySlug === "cardiac-surgery").length;
+  const pediatricCardiac = faculty.filter((d) => d.specialtySlug === "pediatric-cardiac-surgery").length;
   const parts: string[] = [];
   if (radiation) {
     parts.push(radiation === 1 ? "1 radiation oncologist" : `${radiation} radiation oncologists`);
@@ -30,6 +31,11 @@ function facultyLabel(faculty: { specialtySlug: string }[]) {
   }
   if (cardiac) {
     parts.push(cardiac === 1 ? "1 cardiac surgeon" : `${cardiac} cardiac surgeons`);
+  }
+  if (pediatricCardiac) {
+    parts.push(
+      pediatricCardiac === 1 ? "1 pediatric cardiac surgeon" : `${pediatricCardiac} pediatric cardiac surgeons`,
+    );
   }
   return parts.join(" · ") || "Faculty being matched";
 }

@@ -1,4 +1,4 @@
-import { CARDIAC_SURGERY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { CARDIAC_SURGERY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -188,11 +188,33 @@ export function mapCardiacSurgeryProcedures(texts: string[], fallback = true) {
   return ["CABG (Coronary Artery Bypass Grafting)", "Heart Valve Replacement", "Heart Valve Repair"];
 }
 
+const PEDIATRIC_CARDIAC_RULES: { test: RegExp; name: (typeof PEDIATRIC_CARDIAC_SURGERY_PROCEDURES)[number] }[] = [
+  { test: /pediatric heart transplant|paediatric heart transplant|heart transplant/i, name: "Pediatric Heart Transplantation" },
+  { test: /tapvc|anomalous pulmonary/i, name: "TAPVC Repair (Total Anomalous Pulmonary Venous Connection)" },
+  { test: /avsd|atrioventricular septal|av canal/i, name: "AVSD Repair (Atrioventricular Septal Defect)" },
+  { test: /coarct/i, name: "Coarctation Repair" },
+  { test: /norwood/i, name: "Norwood Procedure" },
+  { test: /\bpda\b|patent ductus/i, name: "PDA Closure (Patent Ductus Arteriosus)" },
+  { test: /arterial switch|jatene/i, name: "Arterial Switch Operation" },
+  { test: /fontan/i, name: "Fontan Procedure" },
+  { test: /glenn|cavopulmonary/i, name: "Glenn Procedure" },
+  { test: /\btof\b|tetralogy/i, name: "TOF Repair (Tetralogy of Fallot)" },
+  { test: /\bvsd\b|ventricular septal/i, name: "VSD Closure (Ventricular Septal Defect)" },
+  { test: /\basd\b|atrial septal/i, name: "ASD Closure (Atrial Septal Defect)" },
+];
+
+export function mapPediatricCardiacSurgeryProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, PEDIATRIC_CARDIAC_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["ASD Closure (Atrial Septal Defect)", "VSD Closure (Ventricular Septal Defect)", "TOF Repair (Tetralogy of Fallot)"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
   if (specialty === "Hematology") return mapHematologyProcedures(texts);
   if (specialty === "Pediatric Hematology") return mapPediatricHematologyProcedures(texts);
   if (specialty === "Cardiac Surgery") return mapCardiacSurgeryProcedures(texts);
+  if (specialty === "Pediatric Cardiac Surgery") return mapPediatricCardiacSurgeryProcedures(texts);
   return mapCatalogProcedures(texts);
 }
