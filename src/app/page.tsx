@@ -42,8 +42,8 @@ export default function HomePage() {
             Oncologists in India. Hospitals. Costs.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/80 md:text-lg">
-            Named medical, radiation and surgical oncologists in Delhi NCR, Mumbai, Bengaluru,
-            Chennai and Hyderabad — plus BMT and CAR-T cost sheets. Meet them on camera.
+            Named medical, radiation and surgical oncologists and haematologists in Delhi NCR, Mumbai,
+            Bengaluru, Chennai and Hyderabad. Meet them on camera. Read USD planning ranges before you fly.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Button
@@ -89,7 +89,7 @@ export default function HomePage() {
             href="/doctors"
             kicker="01"
             title="Doctors"
-            body="Radiation, surgical and medical oncologists you meet on camera before any deposit. Haematology pathways sit on the same campuses."
+            body="Radiation, surgical and medical oncologists and haematologists you meet on camera before any deposit."
           />
           <IndexCard
             href="/hospitals"
@@ -125,9 +125,10 @@ export default function HomePage() {
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              ...doctors.filter((d) => d.featured && d.specialtySlug === "radiation-oncology").slice(0, 3),
-              ...doctors.filter((d) => d.featured && d.specialtySlug === "surgical-oncology").slice(0, 3),
-              ...doctors.filter((d) => d.featured && d.specialtySlug === "medical-oncology").slice(0, 3),
+              ...doctors.filter((d) => d.featured && d.specialtySlug === "radiation-oncology").slice(0, 2),
+              ...doctors.filter((d) => d.featured && d.specialtySlug === "surgical-oncology").slice(0, 2),
+              ...doctors.filter((d) => d.featured && d.specialtySlug === "medical-oncology").slice(0, 2),
+              ...doctors.filter((d) => d.featured && d.specialtySlug === "hematology").slice(0, 2),
             ].map((d) => (
               <Link
                 key={d.slug}

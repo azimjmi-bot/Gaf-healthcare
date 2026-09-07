@@ -19,9 +19,17 @@ function clip(text: string, max = 158) {
 }
 
 export function doctorMetadata(d: Doctor): Metadata {
-  const title = `${d.name}, ${d.specialty} in ${d.city}, India`;
+  const role =
+    d.specialtySlug === "hematology"
+      ? "hematologist"
+      : d.specialtySlug === "medical-oncology"
+        ? "medical oncologist"
+        : d.specialtySlug === "surgical-oncology"
+          ? "surgical oncologist"
+          : "radiation oncologist";
+  const title = `${d.name}, ${role} in ${d.city}, India`;
   const description = clip(
-    `${d.name} is a ${d.specialty.toLowerCase()} at ${d.hospitalName} in ${d.city}, India. ${d.procedures.slice(0, 3).join(", ")}. Meet on camera before travel. ${d.bio}`,
+    `${d.name} is a ${role} at ${d.hospitalName} in ${d.city}, India. ${d.procedures.slice(0, 3).join(", ")}. Meet on camera before travel. ${d.bio}`,
   );
   const url = absoluteUrl(`/doctors/${d.slug}`);
   return {
@@ -41,7 +49,7 @@ export function doctorMetadata(d: Doctor): Metadata {
 }
 
 export function hospitalMetadata(h: Hospital): Metadata {
-  const title = `${h.name} — oncology hospital in ${h.city}, India`;
+  const title = `${h.name} — oncology and hematology hospital in ${h.city}, India`;
   const description = clip(
     `${h.name} in ${h.city}, India lists ${h.specialties.join(", ")}. ${h.accreditation}. ${h.bio}`,
   );
@@ -97,10 +105,10 @@ export function catalogMetadata(
   let path = entity === "doctors" ? "/doctors" : entity === "hospitals" ? "/hospitals" : "/costs";
 
   if (entity === "doctors") {
-    title = spec
-      ? `${spec} doctors in ${place}`
-      : `Oncologists in ${place}`;
     if (proc) title = `${proc} specialists in ${place}`;
+    else if (spec === "Hematology") title = `Hematologists in ${place}`;
+    else if (spec) title = `${spec} doctors in ${place}`;
+    else title = `Oncologists and hematologists in ${place}`;
     description = clip(
       `Named ${spec ? spec.toLowerCase() : "radiation, surgical, medical and hematology"} specialists in ${place} at JCI partner campuses. Filter by city, specialty and procedure for later pSEO routes such as /doctors/india/${city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr"}/hematology/bone-marrow-transplantation.`,
     );
@@ -212,12 +220,12 @@ export function faqJsonLd(rows: { q: string; a: string }[]) {
 
 export const DOCTOR_FAQS = [
   {
-    q: "Which Indian cities does Velora list oncologists in?",
+    q: "Which Indian cities does Velora list oncologists and haematologists in?",
     a: "Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Every profile is tagged with country (India), city, specialty and procedure so later pages can be generated without remapping the catalog.",
   },
   {
-    q: "Do you list medical oncologists as well as radiation and surgical oncologists?",
-    a: "Yes. Medical Oncology covers systemic therapy. Hematology covers transplant, CAR-T and marrow diagnostics — some procedures such as BMT sit on both lists so later pSEO routes can use either specialty slug. Radiation and surgical faculties are listed separately under the same hospitals.",
+    q: "Do you list haematologists as well as oncologists?",
+    a: "Yes. Named haematologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad sit under Hematology — transplant, CAR-T and marrow diagnostics. Medical, radiation and surgical oncologists are listed separately under the same hospitals. Some procedures such as BMT sit on both Medical Oncology and Hematology so later pSEO routes can use either specialty slug.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
@@ -228,7 +236,7 @@ export const DOCTOR_FAQS = [
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist confirms regimen, fractions or the operation after reviewing pathology and imaging.",
+    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist or haematologist confirms regimen, fractions, donor or the operation after reviewing pathology and imaging.",
   },
   {
     q: "What does chemotherapy typically cost in India versus the US?",

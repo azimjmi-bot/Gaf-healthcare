@@ -40,9 +40,11 @@ export default async function DoctorsPage({
   const place = query.city ? `${query.city}, India` : "India";
   const heading = query.procedure
     ? `${query.procedure} specialists in ${place}`
-    : query.specialty
-      ? `${query.specialty} doctors in ${place}`
-      : "Oncologists in India";
+    : query.specialty === "Hematology"
+      ? `Hematologists in ${place}`
+      : query.specialty
+        ? `${query.specialty} doctors in ${place}`
+        : "Oncologists and hematologists in India";
 
   return (
     <>
@@ -50,7 +52,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="India · five cities · four specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad, plus haematology pathways (transplant, CAR-T, marrow diagnostics) tagged for later pSEO. Each profile is filed under country, city, specialty and procedure. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists and haematologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each profile is filed under country, city, specialty and procedure so later pages such as /doctors/india/delhi-ncr/hematology/bone-marrow-transplantation can be generated without remapping the catalog. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
