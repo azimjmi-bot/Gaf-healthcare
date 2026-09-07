@@ -111,21 +111,28 @@ export function catalogMetadata(
     else if (spec === "Pediatric Hematology") title = `Pediatric hematologists in ${place}`;
     else if (spec === "Hematology") title = `Hematologists in ${place}`;
     else if (spec) title = `${spec} doctors in ${place}`;
-    else title = `Oncologists and hematologists in ${place}`;
+    else title = `Oncologists, hematologists and pediatric hematologists in ${place}`;
+    const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
+    const example =
+      spec === "Pediatric Hematology"
+        ? `/doctors/india/${citySlug}/pediatric-hematology/pediatric-bone-marrow-transplantation`
+        : spec === "Hematology"
+          ? `/doctors/india/${citySlug}/hematology/bone-marrow-transplantation`
+          : `/doctors/india/${citySlug}/radiation-oncology/external-beam-radiotherapy-ebrt`;
     description = clip(
-      `Named ${spec ? spec.toLowerCase() : "radiation, surgical, medical and hematology"} specialists in ${place} at JCI partner campuses. Filter by city, specialty and procedure for later pSEO routes such as /doctors/india/${city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr"}/hematology/bone-marrow-transplantation.`,
+      `Named ${spec ? spec.toLowerCase() : "radiation, surgical, medical, hematology and pediatric hematology"} specialists in ${place} at JCI partner campuses. Filter by city, specialty and procedure for later pSEO routes such as ${example}.`,
     );
   } else if (entity === "hospitals") {
     title = spec ? `${spec} hospitals in ${place}` : `Oncology hospitals in ${place}`;
     if (proc) title = `Hospitals for ${proc} in ${place}`;
     description = clip(
-      `Partner oncology campuses in ${place} for ${spec ?? "radiation, surgical and medical oncology plus hematology"}. ${proc ? `${proc} is listed where the house can quote it. ` : ""}Country, city, specialty and procedure tags are ready for pSEO.`,
+      `Partner oncology campuses in ${place} for ${spec ?? "radiation, surgical and medical oncology plus hematology and pediatric hematology"}. ${proc ? `${proc} is listed where the house can quote it. ` : ""}Country, city, specialty and procedure tags are ready for pSEO.`,
     );
   } else {
     title = spec ? `${spec} cost in ${place}` : `Cancer treatment cost in ${place}`;
     if (proc) title = `${proc} cost in ${place}`;
     description = clip(
-      `US cash-pay beside India partner ranges for ${spec ?? "radiation, surgery, systemic therapy and hematology"} in ${place}. Planning figures, not quotes — a named consultant confirms the protocol after records review.`,
+      `US cash-pay beside India partner ranges for ${spec ?? "radiation, surgery, systemic therapy, hematology and pediatric hematology"} in ${place}. Planning figures, not quotes — a named consultant confirms the protocol after records review.`,
     );
   }
 
@@ -228,7 +235,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Pediatric Hematology covers children’s transplant, sibling-donor grafts and paediatric BMT — some procedures such as CAR-T sit on both adult and paediatric lists so later pSEO routes can use either specialty slug. Medical, radiation and surgical oncologists are listed separately under the same hospitals.",
+    a: "Yes. Named haematologists sit under Hematology. Named paediatric haematologists sit under Pediatric Hematology in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Children’s transplant, sibling-donor grafts and paediatric BMT share some slugs such as CAR-T with the adult list so later pSEO routes can use either specialty. Medical, radiation and surgical oncologists are listed separately under the same hospitals.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
@@ -239,7 +246,7 @@ export const DOCTOR_FAQS = [
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist or haematologist confirms regimen, fractions, donor or the operation after reviewing pathology and imaging.",
+    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, haematologist or paediatric haematologist confirms regimen, fractions, donor or the operation after reviewing pathology and imaging.",
   },
   {
     q: "What does chemotherapy typically cost in India versus the US?",

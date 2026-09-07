@@ -25,7 +25,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Oncologists in India — radiation, surgical, medical and hematology | Velora",
+    default: "Oncologists in India — radiation, surgical, medical, hematology and pediatric hematology | Velora",
     template: `%s — ${site.name}`,
   },
   description: site.description,
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: site.name,
-    title: "Oncologists in India — radiation, surgical, medical and hematology | Velora",
+    title: "Oncologists in India — radiation, surgical, medical, hematology and pediatric hematology | Velora",
     description: site.description,
     url: SITE_URL,
   },

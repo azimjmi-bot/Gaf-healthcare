@@ -46,7 +46,7 @@ export default async function DoctorsPage({
       ? `Hematologists in ${place}`
       : query.specialty
         ? `${query.specialty} doctors in ${place}`
-        : "Oncologists and hematologists in India";
+        : "Oncologists, hematologists and pediatric hematologists in India";
 
   return (
     <>
@@ -54,7 +54,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="India · five cities · five specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists and haematologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Pediatric Hematology pathways (paediatric BMT, sibling-donor transplant, HSCT) are tagged for later pSEO. Each profile is filed under country, city, specialty and procedure. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists, haematologists and paediatric haematologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/pediatric-hematology/{procedure}. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

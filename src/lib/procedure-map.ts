@@ -140,7 +140,6 @@ export function mapMedicalProcedures(texts: string[], fallback = true) {
 }
 
 const PEDIATRIC_HEMATOLOGY_RULES: { test: RegExp; name: (typeof PEDIATRIC_HEMATOLOGY_PROCEDURES)[number] }[] = [
-  { test: /pediatric|paediatric|child/i, name: "Pediatric Bone Marrow Transplantation" },
   { test: /sibling/i, name: "Matched Sibling Donor Transplant" },
   { test: /hematopoietic|haematopoietic|\bhsct\b/i, name: "Hematopoietic Stem Cell Transplantation" },
   { test: /haplo/i, name: "Haploidentical Stem Cell Transplant" },
@@ -150,6 +149,7 @@ const PEDIATRIC_HEMATOLOGY_RULES: { test: RegExp; name: (typeof PEDIATRIC_HEMATO
   { test: /marrow biopsy|trephine/i, name: "Bone Marrow Biopsy" },
   { test: /marrow aspiration|aspirate/i, name: "Bone Marrow Aspiration" },
   { test: /car[\s-]*t/i, name: "CAR-T Cell Therapy" },
+  { test: /bone marrow|bmt|transplant|pediatric|paediatric/i, name: "Pediatric Bone Marrow Transplantation" },
 ];
 
 export function mapHematologyProcedures(texts: string[], fallback = true) {

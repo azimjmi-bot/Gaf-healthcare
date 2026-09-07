@@ -9,7 +9,7 @@ Doctors and hospitals are stored with denormalized **specialty**, **procedure**,
 
 Those paths are not live yet. Directory pages already group by the same keys.
 
-The India roster (324 consultants, 31 campuses) and structured fields were sourced from Ginger Healthcare’s public listings for [radiation oncology](https://ginger.healthcare/destinations/india/radiation-oncology/), [surgical oncology](https://ginger.healthcare/destinations/india/surgical-oncology/), [medical oncology](https://ginger.healthcare/destinations/india/medical-oncology/), and [hematology](https://ginger.healthcare/destinations/india/hematology/). Bios on this site are original Velora copy. Portraits wait on CMS.
+The India roster (345 consultants, 31 campuses) and structured fields were sourced from Ginger Healthcare’s public listings for [radiation oncology](https://ginger.healthcare/destinations/india/radiation-oncology/), [surgical oncology](https://ginger.healthcare/destinations/india/surgical-oncology/), [medical oncology](https://ginger.healthcare/destinations/india/medical-oncology/), [hematology](https://ginger.healthcare/destinations/india/hematology/), and [pediatric hematology](https://ginger.healthcare/destinations/india/pediatric-hematology/). Bios on this site are original Velora copy. Portraits wait on CMS.
 
 ## Local development
 
