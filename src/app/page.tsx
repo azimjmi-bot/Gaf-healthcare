@@ -19,7 +19,7 @@ export default function HomePage() {
           name: "Velora",
           url: SITE_URL,
           description:
-            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons and gastroenterologists in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — plus pediatric hematology and pediatric cardiac surgery, with partner hospital costs in USD.",
+            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists and surgical-gastroenterology pathways in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — plus pediatric hematology and pediatric cardiac surgery, with partner hospital costs in USD.",
           areaServed: ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"].map((city) => ({
             "@type": "City",
             name: city,
@@ -101,7 +101,7 @@ export default function HomePage() {
             href="/costs"
             kicker="03"
             title="Treatment Cost"
-            body="US cash-pay beside partner ranges for radiation, surgery, transplant, bariatric, cosmetic, ENT and GI."
+            body="US cash-pay beside partner ranges for radiation, surgery, transplant, bariatric, cosmetic, ENT, GI and HPB."
           />
           <IndexCard
             href="/blogs"

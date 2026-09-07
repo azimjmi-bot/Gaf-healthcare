@@ -51,6 +51,8 @@ export const metadata: Metadata = {
     "gastroenterologist India",
     "ERCP cost India",
     "colonoscopy cost India",
+    "surgical gastroenterologist India",
+    "liver transplant cost India",
     "pediatric cardiac surgeon India",
     "TOF repair cost India",
     "ASD closure India",

@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -337,6 +337,40 @@ export function mapGastroenterologyProcedures(texts: string[], fallback = true) 
   return ["Upper GI Endoscopy (Gastroscopy)", "Colonoscopy", "ERCP"];
 }
 
+const SURGICAL_GASTRO_RULES: { test: RegExp; name: (typeof SURGICAL_GASTROENTEROLOGY_PROCEDURES)[number] }[] = [
+  { test: /pediatric liver transplant|paediatric liver transplant/i, name: "Pediatric Liver Transplantation" },
+  { test: /living donor liver|ldlt\b/i, name: "Living Donor Liver Transplantation" },
+  { test: /deceased donor liver|ddlt\b|cadaver.{0,12}liver/i, name: "Deceased Donor Liver Transplantation" },
+  { test: /retransplant/i, name: "Liver Retransplantation" },
+  { test: /liver transplant/i, name: "Liver Transplantation" },
+  { test: /whipple|pancreaticoduoden/i, name: "Whipple Procedure (Pancreaticoduodenectomy)" },
+  { test: /distal pancrea/i, name: "Distal Pancreatectomy" },
+  { test: /pancreatect/i, name: "Pancreatectomy" },
+  { test: /biliary reconstruct|hepaticojejun/i, name: "Biliary Reconstruction" },
+  { test: /gallbladder cancer/i, name: "Gallbladder Cancer Surgery" },
+  { test: /bile duct cancer|cholangiocarcinoma.{0,12}surg/i, name: "Bile Duct Cancer Surgery" },
+  { test: /nissen|fundoplication|anti[\s-]*reflux/i, name: "Anti-Reflux Surgery (Nissen Fundoplication)" },
+  { test: /hiatal hernia|hiatus hernia/i, name: "Hiatal Hernia Surgery" },
+  { test: /heller/i, name: "Heller Myotomy for Achalasia" },
+  { test: /\btme\b|total mesorectal/i, name: "Total Mesorectal Excision (TME)" },
+  { test: /\blar\b|low anterior/i, name: "Low Anterior Resection (LAR)" },
+  { test: /\bapr\b|abdominoperineal/i, name: "Abdominoperineal Resection (APR)" },
+  { test: /ostomy|stoma|ileostomy|colostomy/i, name: "Ostomy / Stoma Surgery" },
+  { test: /colorectal cancer/i, name: "Colorectal Cancer Surgery" },
+  { test: /colorectal resect|colectomy|colon resect/i, name: "Colorectal Resection" },
+  { test: /hepatec|liver resect/i, name: "Liver Resection (Hepatectomy)" },
+  { test: /esophagect|oesophagect/i, name: "Esophagectomy" },
+  { test: /gastrect/i, name: "Gastrectomy" },
+  { test: /gastric bypass|roux/i, name: "Gastric Bypass Surgery" },
+  { test: /sleeve/i, name: "Sleeve Gastrectomy" },
+];
+
+export function mapSurgicalGastroenterologyProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, SURGICAL_GASTRO_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Liver Transplantation", "Liver Resection (Hepatectomy)", "Whipple Procedure (Pancreaticoduodenectomy)"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -349,5 +383,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Cosmetic Surgery") return mapCosmeticProcedures(texts);
   if (specialty === "ENT") return mapEntProcedures(texts);
   if (specialty === "Gastroenterology") return mapGastroenterologyProcedures(texts);
+  if (specialty === "Surgical Gastroenterology") return mapSurgicalGastroenterologyProcedures(texts);
   return mapCatalogProcedures(texts);
 }

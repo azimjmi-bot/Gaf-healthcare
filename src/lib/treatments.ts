@@ -1,3 +1,4 @@
+import { SURGICAL_GASTROENTEROLOGY_COST, SURGICAL_GASTROENTEROLOGY_SUMMARIES } from "@/lib/surgical-gastroenterology-costs";
 import { GASTROENTEROLOGY_COST, GASTROENTEROLOGY_SUMMARIES } from "@/lib/gastroenterology-costs";
 import { ENT_COST, ENT_SUMMARIES } from "@/lib/ent-costs";
 import { COSMETIC_COST, COSMETIC_SUMMARIES } from "@/lib/cosmetic-costs";
@@ -11,6 +12,7 @@ import { MEDICAL_COST, MEDICAL_SUMMARIES } from "@/lib/medical-costs";
 import { hospitals } from "@/lib/hospitals";
 import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
 import {
+  SURGICAL_GASTROENTEROLOGY_PROCEDURES,
   GASTROENTEROLOGY_PROCEDURES,
   ENT_PROCEDURES,
   COSMETIC_PROCEDURES,
@@ -640,6 +642,49 @@ const gastroenterologyTreatments: Treatment[] = GASTROENTEROLOGY_PROCEDURES.map(
   };
 });
 
+const SURGICAL_GASTRO_IMAGE =
+  "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1600&q=80";
+
+const SURGICAL_GASTRO_INCLUDES = [
+  "HPB / GI surgery consultation and records review",
+  "Named surgeon on camera before travel",
+  "Theatre, ICU and overnight stay as quoted",
+  "Histology, drain or immunosuppression follow-up as indicated",
+  "Discharge summary to your home physician",
+];
+
+const SURGICAL_GASTRO_ONLY = SURGICAL_GASTROENTEROLOGY_PROCEDURES.filter((name) => {
+  const row = getProcedure(name);
+  return row?.specialtySlug === "surgical-gastroenterology" && row.specialtySlugs.length === 1;
+});
+
+const surgicalGastroenterologyTreatments: Treatment[] = SURGICAL_GASTRO_ONLY.map((name) => {
+  const cost = SURGICAL_GASTROENTEROLOGY_COST[name];
+  if (!cost) throw new Error(`Missing surgical gastroenterology cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Surgical Gastroenterology",
+    specialtySlug: "surgical-gastroenterology",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      SURGICAL_GASTROENTEROLOGY_SUMMARIES[name] ??
+      `Surgical Gastroenterology — ${name} at JCI partner campuses with a named surgeon before you travel.`,
+    image: SURGICAL_GASTRO_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["HPB disease", "Foregut and colorectal surgery", "Liver failure"],
+    procedures: [name],
+    includes: SURGICAL_GASTRO_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named surgical gastroenterologist confirms imaging, graft or reconstruction and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -653,6 +698,7 @@ export const treatments: Treatment[] = [
   ...cosmeticTreatments,
   ...entTreatments,
   ...gastroenterologyTreatments,
+  ...surgicalGastroenterologyTreatments,
 ];
 
 export function getTreatment(slug: string) {

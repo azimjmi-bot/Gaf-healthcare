@@ -58,6 +58,8 @@ export default async function DoctorsPage({
         ? `ENT surgeons in ${place}`
       : query.specialty === "Gastroenterology"
         ? `Gastroenterologists in ${place}`
+      : query.specialty === "Surgical Gastroenterology"
+        ? `Surgical gastroenterologists in ${place}`
       : query.specialty
         ? `${query.specialty} doctors in ${place}`
         : "Oncologists, ENT surgeons and gastroenterologists in India";
@@ -66,9 +68,9 @@ export default async function DoctorsPage({
     <>
       <JsonLd data={faqJsonLd(DOCTOR_FAQS)} />
       <PageIntro
-        eyebrow="India · five cities · twelve specialties"
+        eyebrow="India · five cities · thirteen specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons and gastroenterologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/gastroenterology/{procedure}. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons and gastroenterologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad, plus Surgical Gastroenterology cost sheets (liver transplant, Whipple, colorectal resection) tagged for later named faculty. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/surgical-gastroenterology/{procedure}. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
