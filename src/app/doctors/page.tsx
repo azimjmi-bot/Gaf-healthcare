@@ -62,7 +62,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="India · five cities · nine specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists, haematologists, paediatric haematologists, cardiac surgeons, paediatric cardiac surgeons, cardiologists and bariatric surgery pathways in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/bariatric-surgery/{procedure}. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists, haematologists, paediatric haematologists, cardiac surgeons, paediatric cardiac surgeons, cardiologists and bariatric surgeons in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/bariatric-surgery/{procedure}. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
