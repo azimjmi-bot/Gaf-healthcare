@@ -57,6 +57,7 @@ export default async function CostDetailPage({
     t.specialtySlugs.includes("surgical-oncology") ? "surgical oncologists" : "",
     t.specialtySlugs.includes("medical-oncology") ? "medical oncologists" : "",
     t.specialtySlugs.includes("hematology") ? "hematologists" : "",
+    t.specialtySlugs.includes("pediatric-hematology") ? "pediatric hematologists" : "",
   ]
     .filter(Boolean)
     .join(" and ");
@@ -134,7 +135,9 @@ export default async function CostDetailPage({
               <Link href={`/consult?treatment=${t.slug}`}>Request this pathway</Link>
             </Button>
             <p className="mt-4 text-xs text-muted-foreground">
-              Not a quote. {t.specialtySlug === "hematology"
+              Not a quote. {t.specialtySlug === "pediatric-hematology"
+                ? "Paediatric donor, conditioning and graft source are set after records review."
+                : t.specialtySlug === "hematology"
                 ? "Donor, conditioning and graft source are set after records review."
                 : t.specialtySlug === "medical-oncology"
                 ? "Regimen and cycles are set after records review."

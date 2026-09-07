@@ -43,7 +43,7 @@ export default async function CostsPage({
       <PageIntro
         eyebrow="India planning ranges"
         title={heading}
-        lede="US cash-pay beside partner ranges for Radiation Oncology, Surgical Oncology, Medical Oncology and Hematology in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Filter by destination, city, specialty or procedure — the same keys a later landing page will use. Figures are planning ranges, not quotations."
+        lede="US cash-pay beside partner ranges for Radiation Oncology, Surgical Oncology, Medical Oncology, Hematology and Pediatric Hematology in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Filter by destination, city, specialty or procedure — the same keys a later landing page will use. Figures are planning ranges, not quotations."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

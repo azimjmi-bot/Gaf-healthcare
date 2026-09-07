@@ -1,4 +1,4 @@
-import { HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -139,15 +139,35 @@ export function mapMedicalProcedures(texts: string[], fallback = true) {
   return ["Chemotherapy", "Targeted Therapy", "Immunotherapy"];
 }
 
+const PEDIATRIC_HEMATOLOGY_RULES: { test: RegExp; name: (typeof PEDIATRIC_HEMATOLOGY_PROCEDURES)[number] }[] = [
+  { test: /pediatric|paediatric|child/i, name: "Pediatric Bone Marrow Transplantation" },
+  { test: /sibling/i, name: "Matched Sibling Donor Transplant" },
+  { test: /hematopoietic|haematopoietic|\bhsct\b/i, name: "Hematopoietic Stem Cell Transplantation" },
+  { test: /haplo/i, name: "Haploidentical Stem Cell Transplant" },
+  { test: /matched unrelated|\bmud\b|unrelated donor/i, name: "Matched Unrelated Donor Transplant" },
+  { test: /autologous/i, name: "Autologous Stem Cell Transplant" },
+  { test: /allogeneic|allogenic/i, name: "Allogeneic Stem Cell Transplant" },
+  { test: /marrow biopsy|trephine/i, name: "Bone Marrow Biopsy" },
+  { test: /marrow aspiration|aspirate/i, name: "Bone Marrow Aspiration" },
+  { test: /car[\s-]*t/i, name: "CAR-T Cell Therapy" },
+];
+
 export function mapHematologyProcedures(texts: string[], fallback = true) {
   const found = applyRules(texts, HEMATOLOGY_RULES);
   if (found.length > 0 || !fallback) return found;
   return ["Bone Marrow Transplantation", "Stem Cell Transplantation", "Bone Marrow Biopsy"];
 }
 
+export function mapPediatricHematologyProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, PEDIATRIC_HEMATOLOGY_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Pediatric Bone Marrow Transplantation", "Allogeneic Stem Cell Transplant", "Bone Marrow Biopsy"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
   if (specialty === "Hematology") return mapHematologyProcedures(texts);
+  if (specialty === "Pediatric Hematology") return mapPediatricHematologyProcedures(texts);
   return mapCatalogProcedures(texts);
 }

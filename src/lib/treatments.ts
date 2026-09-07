@@ -1,10 +1,12 @@
 import { HEMATOLOGY_COST, HEMATOLOGY_SUMMARIES } from "@/lib/hematology-costs";
+import { PEDIATRIC_HEMATOLOGY_COST, PEDIATRIC_HEMATOLOGY_SUMMARIES } from "@/lib/pediatric-hematology-costs";
 import { MEDICAL_COST, MEDICAL_SUMMARIES } from "@/lib/medical-costs";
 import { hospitals } from "@/lib/hospitals";
 import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
 import {
   HEMATOLOGY_PROCEDURES,
   MEDICAL_ONCOLOGY_PROCEDURES,
+  PEDIATRIC_HEMATOLOGY_PROCEDURES,
   PROCEDURE_CLUSTERS,
   RADIATION_PROCEDURES,
   SURGICAL_ONCOLOGY_PROCEDURES,
@@ -314,11 +316,52 @@ const hematologyTreatments: Treatment[] = HEMATOLOGY_ONLY.map((name) => {
   };
 });
 
+const PEDIATRIC_HEMATOLOGY_INCLUDES = [
+  "Paediatric haematology consultation and records review",
+  "Named consultant on camera before travel — parent present",
+  "Donor search or collection plan as quoted",
+  "Paediatric transplant unit or day-care as indicated",
+  "Discharge summary to your home paediatric haematologist",
+];
+
+const PEDIATRIC_ONLY = PEDIATRIC_HEMATOLOGY_PROCEDURES.filter((name) => {
+  const row = getProcedure(name);
+  return row?.specialtySlug === "pediatric-hematology" && row.specialtySlugs.length === 1;
+});
+
+const pediatricHematologyTreatments: Treatment[] = PEDIATRIC_ONLY.map((name) => {
+  const cost = PEDIATRIC_HEMATOLOGY_COST[name];
+  if (!cost) throw new Error(`Missing pediatric hematology cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Pediatric Hematology",
+    specialtySlug: "pediatric-hematology",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      PEDIATRIC_HEMATOLOGY_SUMMARIES[name] ??
+      `Pediatric Hematology — ${name} at JCI partner campuses with a named consultant before you travel.`,
+    image: HEMATOLOGY_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Pediatric hematologic malignancy", "Bone marrow failure", "Cancer second opinion"],
+    procedures: [name],
+    includes: PEDIATRIC_HEMATOLOGY_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named paediatric haematologist confirms donor, conditioning and an itemized hospital price after records review. Adult transplant units are not assumed to be equivalent.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
   ...medicalTreatments,
   ...hematologyTreatments,
+  ...pediatricHematologyTreatments,
 ];
 
 export function getTreatment(slug: string) {

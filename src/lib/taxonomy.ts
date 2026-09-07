@@ -64,6 +64,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Surgical Oncology"),
   taxon("Medical Oncology"),
   taxon("Hematology"),
+  taxon("Pediatric Hematology"),
 ];
 
 export function compareSpecialties(aSlug: string, bSlug: string) {
@@ -157,6 +158,19 @@ export const HEMATOLOGY_PROCEDURES = [
   "Intrathecal Chemotherapy",
 ] as const;
 
+export const PEDIATRIC_HEMATOLOGY_PROCEDURES = [
+  "Pediatric Bone Marrow Transplantation",
+  "Haploidentical Stem Cell Transplant",
+  "Allogeneic Stem Cell Transplant",
+  "Autologous Stem Cell Transplant",
+  "Matched Unrelated Donor Transplant",
+  "Matched Sibling Donor Transplant",
+  "CAR-T Cell Therapy",
+  "Hematopoietic Stem Cell Transplantation",
+  "Bone Marrow Biopsy",
+  "Bone Marrow Aspiration",
+] as const;
+
 export const ATHENAA_SURGICAL_PROCEDURES = [
   "Breast-Conserving Surgery (Lumpectomy)",
   "Mastectomy",
@@ -178,6 +192,11 @@ function procedureTaxon(name: string, specialtySlugs: string[]): ProcedureTaxon 
 }
 
 const HEMATOLOGY_NAMES = new Set<string>(HEMATOLOGY_PROCEDURES);
+const PEDIATRIC_HEMATOLOGY_NAMES = new Set<string>(PEDIATRIC_HEMATOLOGY_PROCEDURES);
+
+function withPediatric(name: string, specs: string[]) {
+  return PEDIATRIC_HEMATOLOGY_NAMES.has(name) ? [...specs, "pediatric-hematology"] : specs;
+}
 
 export const PROCEDURES: ProcedureTaxon[] = [
   ...RADIATION_PROCEDURES.map((name) => procedureTaxon(name, ["radiation-oncology"])),
@@ -185,12 +204,15 @@ export const PROCEDURES: ProcedureTaxon[] = [
   ...MEDICAL_ONCOLOGY_PROCEDURES.map((name) =>
     procedureTaxon(
       name,
-      HEMATOLOGY_NAMES.has(name) ? ["medical-oncology", "hematology"] : ["medical-oncology"],
+      withPediatric(name, HEMATOLOGY_NAMES.has(name) ? ["medical-oncology", "hematology"] : ["medical-oncology"]),
     ),
   ),
-  ...HEMATOLOGY_PROCEDURES.filter((name) => !MEDICAL_ONCOLOGY_PROCEDURES.includes(name as (typeof MEDICAL_ONCOLOGY_PROCEDURES)[number])).map(
-    (name) => procedureTaxon(name, ["hematology"]),
-  ),
+  ...HEMATOLOGY_PROCEDURES.filter(
+    (name) => !MEDICAL_ONCOLOGY_PROCEDURES.includes(name as (typeof MEDICAL_ONCOLOGY_PROCEDURES)[number]),
+  ).map((name) => procedureTaxon(name, withPediatric(name, ["hematology"]))),
+  ...PEDIATRIC_HEMATOLOGY_PROCEDURES.filter(
+    (name) => !HEMATOLOGY_NAMES.has(name) && !MEDICAL_ONCOLOGY_PROCEDURES.includes(name as (typeof MEDICAL_ONCOLOGY_PROCEDURES)[number]),
+  ).map((name) => procedureTaxon(name, ["pediatric-hematology"])),
 ];
 
 export const PROCEDURE_CLUSTERS = {

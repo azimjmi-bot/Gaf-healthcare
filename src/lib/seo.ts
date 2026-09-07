@@ -20,7 +20,9 @@ function clip(text: string, max = 158) {
 
 export function doctorMetadata(d: Doctor): Metadata {
   const role =
-    d.specialtySlug === "hematology"
+    d.specialtySlug === "pediatric-hematology"
+      ? "pediatric hematologist"
+      : d.specialtySlug === "hematology"
       ? "hematologist"
       : d.specialtySlug === "medical-oncology"
         ? "medical oncologist"
@@ -106,6 +108,7 @@ export function catalogMetadata(
 
   if (entity === "doctors") {
     if (proc) title = `${proc} specialists in ${place}`;
+    else if (spec === "Pediatric Hematology") title = `Pediatric hematologists in ${place}`;
     else if (spec === "Hematology") title = `Hematologists in ${place}`;
     else if (spec) title = `${spec} doctors in ${place}`;
     else title = `Oncologists and hematologists in ${place}`;
@@ -225,7 +228,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad sit under Hematology — transplant, CAR-T and marrow diagnostics. Medical, radiation and surgical oncologists are listed separately under the same hospitals. Some procedures such as BMT sit on both Medical Oncology and Hematology so later pSEO routes can use either specialty slug.",
+    a: "Yes. Named haematologists sit under Hematology. Pediatric Hematology covers children’s transplant, sibling-donor grafts and paediatric BMT — some procedures such as CAR-T sit on both adult and paediatric lists so later pSEO routes can use either specialty slug. Medical, radiation and surgical oncologists are listed separately under the same hospitals.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
