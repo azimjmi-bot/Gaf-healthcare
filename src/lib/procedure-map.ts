@@ -1,4 +1,4 @@
-import { CARDIAC_SURGERY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -209,6 +209,30 @@ export function mapPediatricCardiacSurgeryProcedures(texts: string[], fallback =
   return ["ASD Closure (Atrial Septal Defect)", "VSD Closure (Ventricular Septal Defect)", "TOF Repair (Tetralogy of Fallot)"];
 }
 
+const CARDIOLOGY_RULES: { test: RegExp; name: (typeof CARDIOLOGY_PROCEDURES)[number] }[] = [
+  { test: /tavr|tavi|transcatheter aortic/i, name: "TAVR/TAVI (Transcatheter Aortic Valve Replacement)" },
+  { test: /leadless/i, name: "Leadless Pacemaker Implantation" },
+  { test: /mitraclip|mitra[\s-]*clip/i, name: "MitraClip" },
+  { test: /crt[\s/-]*d|\bcrt\b|resynchron/i, name: "CRT/CRT-D Implantation" },
+  { test: /\bicd\b|defibrillator/i, name: "ICD Implantation (Implantable Cardioverter-Defibrillator)" },
+  { test: /cto|chronic total/i, name: "CTO Angioplasty (Chronic Total Occlusion)" },
+  { test: /balloon mitral|bmv|ptmc/i, name: "Balloon Mitral Valvotomy" },
+  { test: /asd device|device closure/i, name: "ASD Device Closure" },
+  { test: /carotid/i, name: "Carotid Artery Stenting" },
+  { test: /peripheral/i, name: "Peripheral Angioplasty" },
+  { test: /atrial fibrillation|af ablation|pvi /i, name: "Atrial Fibrillation Ablation" },
+  { test: /radiofrequency|\brfa\b|rf ablation/i, name: "Radiofrequency Ablation" },
+  { test: /pacemaker/i, name: "Pacemaker Implantation" },
+  { test: /angiography|angiogram/i, name: "Coronary Angiography" },
+  { test: /angioplasty|stenting|pci|ptca/i, name: "Coronary Angioplasty & Stenting" },
+];
+
+export function mapCardiologyProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, CARDIOLOGY_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Coronary Angiography", "Coronary Angioplasty & Stenting", "Pacemaker Implantation"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -216,5 +240,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Pediatric Hematology") return mapPediatricHematologyProcedures(texts);
   if (specialty === "Cardiac Surgery") return mapCardiacSurgeryProcedures(texts);
   if (specialty === "Pediatric Cardiac Surgery") return mapPediatricCardiacSurgeryProcedures(texts);
+  if (specialty === "Cardiology") return mapCardiologyProcedures(texts);
   return mapCatalogProcedures(texts);
 }

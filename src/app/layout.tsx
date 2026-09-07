@@ -25,7 +25,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Oncologists and cardiac surgeons in India | Velora",
+    default: "Oncologists, cardiac surgeons and cardiologists in India | Velora",
     template: `%s — ${site.name}`,
   },
   description: site.description,
@@ -40,6 +40,8 @@ export const metadata: Metadata = {
     "cardiac surgeon India",
     "CABG cost India",
     "TAVR TAVI India",
+    "cardiologist India",
+    "coronary angioplasty India",
     "pediatric cardiac surgeon India",
     "TOF repair cost India",
     "ASD closure India",
@@ -53,7 +55,7 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: site.name,
-    title: "Oncologists and cardiac surgeons in India | Velora",
+    title: "Oncologists, cardiac surgeons and cardiologists in India | Velora",
     description: site.description,
     url: SITE_URL,
   },

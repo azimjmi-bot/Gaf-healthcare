@@ -47,13 +47,13 @@ export default async function HospitalsPage({
           "@type": "CollectionPage",
           name: "Oncology and cardiac hospitals in India",
           description:
-            "Partner campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad for oncology, hematology and cardiac surgery.",
+            "Partner campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad for oncology, hematology, cardiac surgery and cardiology.",
         }}
       />
       <PageIntro
         eyebrow="India campuses"
         title={heading}
-        lede="JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house is filed under country, city, specialty and procedure — Radiation, Surgical and Medical Oncology, Hematology, Pediatric Hematology, Cardiac Surgery and Pediatric Cardiac Surgery — with named consultants where Velora has matched them."
+        lede="JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house is filed under country, city, specialty and procedure — Radiation, Surgical and Medical Oncology, Hematology, Pediatric Hematology, Cardiac Surgery, Pediatric Cardiac Surgery and Cardiology — with named consultants where Velora has matched them."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

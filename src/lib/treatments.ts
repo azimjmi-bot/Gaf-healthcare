@@ -1,3 +1,4 @@
+import { CARDIOLOGY_COST, CARDIOLOGY_SUMMARIES } from "@/lib/cardiology-costs";
 import { CARDIAC_SURGERY_COST, CARDIAC_SURGERY_SUMMARIES } from "@/lib/cardiac-surgery-costs";
 import { PEDIATRIC_CARDIAC_SURGERY_COST, PEDIATRIC_CARDIAC_SURGERY_SUMMARIES } from "@/lib/pediatric-cardiac-surgery-costs";
 import { HEMATOLOGY_COST, HEMATOLOGY_SUMMARIES } from "@/lib/hematology-costs";
@@ -6,6 +7,7 @@ import { MEDICAL_COST, MEDICAL_SUMMARIES } from "@/lib/medical-costs";
 import { hospitals } from "@/lib/hospitals";
 import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
 import {
+  CARDIOLOGY_PROCEDURES,
   CARDIAC_SURGERY_PROCEDURES,
   PEDIATRIC_CARDIAC_SURGERY_PROCEDURES,
   HEMATOLOGY_PROCEDURES,
@@ -433,6 +435,46 @@ const pediatricCardiacSurgeryTreatments: Treatment[] = PEDIATRIC_CARDIAC_SURGERY
   };
 });
 
+const CARDIOLOGY_INCLUDES = [
+  "Cardiology consultation and records review",
+  "Named consultant on camera before travel",
+  "Cath lab or EP lab, device and overnight stay as quoted",
+  "On-treatment reviews as indicated",
+  "Discharge summary to your home cardiologist",
+];
+
+const CARDIOLOGY_ONLY = CARDIOLOGY_PROCEDURES.filter((name) => {
+  const row = getProcedure(name);
+  return row?.specialtySlug === "cardiology" && row.specialtySlugs.length === 1;
+});
+
+const cardiologyTreatments: Treatment[] = CARDIOLOGY_ONLY.map((name) => {
+  const cost = CARDIOLOGY_COST[name];
+  if (!cost) throw new Error(`Missing cardiology cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Cardiology",
+    specialtySlug: "cardiology",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      CARDIOLOGY_SUMMARIES[name] ??
+      `Cardiology — ${name} at JCI partner campuses with a named consultant before you travel.`,
+    image: CARDIAC_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Coronary artery disease", "Arrhythmia", "Structural heart disease"],
+    procedures: [name],
+    includes: CARDIOLOGY_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named cardiologist confirms access, device and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -441,6 +483,7 @@ export const treatments: Treatment[] = [
   ...pediatricHematologyTreatments,
   ...cardiacSurgeryTreatments,
   ...pediatricCardiacSurgeryTreatments,
+  ...cardiologyTreatments,
 ];
 
 export function getTreatment(slug: string) {

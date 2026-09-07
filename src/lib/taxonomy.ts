@@ -67,6 +67,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Pediatric Hematology"),
   taxon("Cardiac Surgery"),
   taxon("Pediatric Cardiac Surgery"),
+  taxon("Cardiology"),
 ];
 
 export function compareSpecialties(aSlug: string, bSlug: string) {
@@ -206,6 +207,24 @@ export const PEDIATRIC_CARDIAC_SURGERY_PROCEDURES = [
   "Pediatric Heart Transplantation",
 ] as const;
 
+export const CARDIOLOGY_PROCEDURES = [
+  "Coronary Angioplasty & Stenting",
+  "Coronary Angiography",
+  "TAVR/TAVI (Transcatheter Aortic Valve Replacement)",
+  "Atrial Fibrillation Ablation",
+  "Pacemaker Implantation",
+  "MitraClip",
+  "ICD Implantation (Implantable Cardioverter-Defibrillator)",
+  "CTO Angioplasty (Chronic Total Occlusion)",
+  "Radiofrequency Ablation",
+  "Balloon Mitral Valvotomy",
+  "CRT/CRT-D Implantation",
+  "ASD Device Closure",
+  "Peripheral Angioplasty",
+  "Carotid Artery Stenting",
+  "Leadless Pacemaker Implantation",
+] as const;
+
 export const ATHENAA_SURGICAL_PROCEDURES = [
   "Breast-Conserving Surgery (Lumpectomy)",
   "Mastectomy",
@@ -228,9 +247,14 @@ function procedureTaxon(name: string, specialtySlugs: string[]): ProcedureTaxon 
 
 const HEMATOLOGY_NAMES = new Set<string>(HEMATOLOGY_PROCEDURES);
 const PEDIATRIC_HEMATOLOGY_NAMES = new Set<string>(PEDIATRIC_HEMATOLOGY_PROCEDURES);
+const CARDIOLOGY_NAMES = new Set<string>(CARDIOLOGY_PROCEDURES);
 
 function withPediatric(name: string, specs: string[]) {
   return PEDIATRIC_HEMATOLOGY_NAMES.has(name) ? [...specs, "pediatric-hematology"] : specs;
+}
+
+function withCardiology(name: string, specs: string[]) {
+  return CARDIOLOGY_NAMES.has(name) ? [...specs, "cardiology"] : specs;
 }
 
 export const PROCEDURES: ProcedureTaxon[] = [
@@ -248,8 +272,11 @@ export const PROCEDURES: ProcedureTaxon[] = [
   ...PEDIATRIC_HEMATOLOGY_PROCEDURES.filter(
     (name) => !HEMATOLOGY_NAMES.has(name) && !MEDICAL_ONCOLOGY_PROCEDURES.includes(name as (typeof MEDICAL_ONCOLOGY_PROCEDURES)[number]),
   ).map((name) => procedureTaxon(name, ["pediatric-hematology"])),
-  ...CARDIAC_SURGERY_PROCEDURES.map((name) => procedureTaxon(name, ["cardiac-surgery"])),
+  ...CARDIAC_SURGERY_PROCEDURES.map((name) => procedureTaxon(name, withCardiology(name, ["cardiac-surgery"]))),
   ...PEDIATRIC_CARDIAC_SURGERY_PROCEDURES.map((name) => procedureTaxon(name, ["pediatric-cardiac-surgery"])),
+  ...CARDIOLOGY_PROCEDURES.filter(
+    (name) => !CARDIAC_SURGERY_PROCEDURES.includes(name as (typeof CARDIAC_SURGERY_PROCEDURES)[number]),
+  ).map((name) => procedureTaxon(name, ["cardiology"])),
 ];
 
 export const PROCEDURE_CLUSTERS = {
