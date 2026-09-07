@@ -61,7 +61,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oncologists in India | Velora",
+    title: "Oncologists and cardiologists in India | Velora",
     description: site.description,
   },
   alternates: { canonical: SITE_URL },

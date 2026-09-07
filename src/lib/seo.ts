@@ -57,7 +57,7 @@ export function doctorMetadata(d: Doctor): Metadata {
 }
 
 export function hospitalMetadata(h: Hospital): Metadata {
-  const title = `${h.name} — oncology, hematology and cardiac surgery hospital in ${h.city}, India`;
+  const title = `${h.name} — oncology, hematology, cardiac surgery and cardiology hospital in ${h.city}, India`;
   const description = clip(
     `${h.name} in ${h.city}, India lists ${h.specialties.join(", ")}. ${h.accreditation}. ${h.bio}`,
   );
@@ -189,6 +189,11 @@ export function physicianJsonLd(d: Doctor) {
       addressLocality: d.city,
       addressCountry: "IN",
     },
+    areaServed: {
+      "@type": "City",
+      name: d.city,
+      containedInPlace: { "@type": "Country", name: "India" },
+    },
     worksFor: {
       "@type": "Hospital",
       name: d.hospitalName,
@@ -250,7 +255,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named paediatric haematologists sit under Pediatric Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named paediatric cardiac surgeons sit under Pediatric Cardiac Surgery. Cardiology covers angioplasty, angiography, TAVR/TAVI (shared with Cardiac Surgery), AF ablation, pacemakers and structural work so later pSEO can use either specialty slug for TAVR. Medical, radiation and surgical oncologists are listed separately.",
+    a: "Yes. Named haematologists sit under Hematology. Named paediatric haematologists sit under Pediatric Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named paediatric cardiac surgeons sit under Pediatric Cardiac Surgery. Named cardiologists sit under Cardiology — angioplasty, angiography, TAVR/TAVI (shared with Cardiac Surgery), AF ablation, pacemakers and structural work — so later pSEO can use either specialty slug for TAVR. Medical, radiation and surgical oncologists are listed separately.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
