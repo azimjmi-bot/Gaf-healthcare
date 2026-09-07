@@ -44,7 +44,9 @@ export default async function DoctorDetailPage({
   if (!d) notFound();
   const hospital = getHospital(d.hospitalSlug);
   const pathways = d.treatmentSlugs.map((s) => getTreatment(s)).filter(Boolean);
-  const colleagues = doctorsForHospital(d.hospitalSlug).filter((x) => x.slug !== d.slug);
+  const colleagues = doctorsForHospital(d.hospitalSlug)
+    .filter((x) => x.slug !== d.slug && x.specialtySlug === d.specialtySlug)
+    .slice(0, 6);
 
   return (
     <>
@@ -146,7 +148,8 @@ export default async function DoctorDetailPage({
         <section className="border-t border-border py-16">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <h2 className="font-heading text-3xl">
-              Other radiation oncologists at {hospital?.name ?? "this campus"}
+              Other {d.specialtySlug === "surgical-oncology" ? "surgical" : "radiation"} oncologists at{" "}
+              {hospital?.name ?? "this campus"}
             </h2>
             <ul className="mt-6 grid gap-4 md:grid-cols-2">
               {colleagues.map((c) => (

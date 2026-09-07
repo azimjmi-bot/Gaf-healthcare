@@ -31,6 +31,8 @@ export default async function HospitalDetailPage({
   const h = getHospital(slug);
   if (!h) notFound();
   const faculty = doctorsForHospital(h.slug);
+  const radiationFaculty = faculty.filter((d) => d.specialtySlug === "radiation-oncology");
+  const surgicalFaculty = faculty.filter((d) => d.specialtySlug === "surgical-oncology");
   const pathways = h.procedureSlugs
     .map((s) => getTreatment(s))
     .filter((t): t is Treatment => Boolean(t));
@@ -130,7 +132,10 @@ export default async function HospitalDetailPage({
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="eyebrow">Faculty</p>
-              <h2 className="mt-2 font-heading text-3xl">Radiation oncologists at {h.name}</h2>
+              <h2 className="mt-2 font-heading text-3xl">Named consultants at {h.name}</h2>
+              <p className="mt-2 max-w-2xl text-sm text-muted-foreground">
+                Profiles sit under country, city, specialty, and procedure — the same keys later pSEO routes will use.
+              </p>
             </div>
             <Link
               href={`/doctors?destination=${encodeURIComponent(h.country)}&city=${encodeURIComponent(h.city)}`}
@@ -144,19 +149,29 @@ export default async function HospitalDetailPage({
               Named consultants for this campus are being matched. Request a dossier and we will advise.
             </p>
           ) : (
-            <div className="mt-8 grid gap-6">
-              {faculty.map((d) => (
-                <DoctorCard key={d.slug} doctor={d} />
-              ))}
-            </div>
+            <>
+              {radiationFaculty.length > 0 ? (
+                <div className="mt-10">
+                  <h3 className="font-heading text-2xl">Radiation oncologists</h3>
+                  <div className="mt-6 grid gap-6">
+                    {radiationFaculty.map((d) => (
+                      <DoctorCard key={d.slug} doctor={d} />
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+              {surgicalFaculty.length > 0 ? (
+                <div className="mt-10">
+                  <h3 className="font-heading text-2xl">Surgical oncologists</h3>
+                  <div className="mt-6 grid gap-6">
+                    {surgicalFaculty.map((d) => (
+                      <DoctorCard key={d.slug} doctor={d} />
+                    ))}
+                  </div>
+                </div>
+              ) : null}
+            </>
           )}
-          <p className="mt-8 text-sm text-muted-foreground">
-            Named surgical oncologists are being matched. Filter hospitals by{" "}
-            <Link href="/hospitals?specialty=Surgical%20Oncology" className="underline-offset-4 hover:underline">
-              Surgical Oncology
-            </Link>{" "}
-            or request a dossier for a surgeon on this campus.
-          </p>
         </div>
       </section>
 

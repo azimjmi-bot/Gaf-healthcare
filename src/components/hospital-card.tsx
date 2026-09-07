@@ -3,6 +3,19 @@ import { MapPin } from "lucide-react";
 import type { Hospital } from "@/lib/hospitals";
 import { doctorsForHospital } from "@/lib/doctors";
 
+function facultyLabel(faculty: { specialtySlug: string }[]) {
+  const radiation = faculty.filter((d) => d.specialtySlug === "radiation-oncology").length;
+  const surgical = faculty.filter((d) => d.specialtySlug === "surgical-oncology").length;
+  const parts: string[] = [];
+  if (radiation) {
+    parts.push(radiation === 1 ? "1 radiation oncologist" : `${radiation} radiation oncologists`);
+  }
+  if (surgical) {
+    parts.push(surgical === 1 ? "1 surgical oncologist" : `${surgical} surgical oncologists`);
+  }
+  return parts.join(" · ") || "Faculty being matched";
+}
+
 export function HospitalCard({ hospital }: { hospital: Hospital }) {
   const faculty = doctorsForHospital(hospital.slug);
   return (
@@ -34,7 +47,7 @@ export function HospitalCard({ hospital }: { hospital: Hospital }) {
       ) : null}
       <p className="mt-4 text-sm">
         <Link href={`/hospitals/${hospital.slug}`} className="underline-offset-4 hover:underline">
-          {faculty.length === 1 ? "1 radiation oncologist" : `${faculty.length} radiation oncologists`}
+          {facultyLabel(faculty)}
         </Link>
         {" · "}
         <Link href={`/hospitals/${hospital.slug}`} className="underline-offset-4 hover:underline">

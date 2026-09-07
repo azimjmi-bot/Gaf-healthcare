@@ -72,7 +72,7 @@ export default function HomePage() {
             href="/doctors"
             kicker="01"
             title="Doctors"
-            body="Radiation oncologists you meet on camera before any deposit."
+            body="Radiation and surgical oncologists you meet on camera before any deposit."
           />
           <IndexCard
             href="/hospitals"
@@ -107,7 +107,10 @@ export default function HomePage() {
             </Link>
           </div>
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-            {doctors.filter((d) => d.featured).slice(0, 8).map((d) => (
+            {[
+              ...doctors.filter((d) => d.featured && d.specialtySlug === "radiation-oncology").slice(0, 4),
+              ...doctors.filter((d) => d.featured && d.specialtySlug === "surgical-oncology").slice(0, 4),
+            ].map((d) => (
               <Link
                 key={d.slug}
                 href={`/doctors/${d.slug}`}

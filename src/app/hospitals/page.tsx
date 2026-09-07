@@ -23,7 +23,7 @@ export default async function HospitalsPage({
       <PageIntro
         eyebrow="Top hospitals"
         title="Oncology campuses in India"
-        lede="Each house is filed under specialty, procedure, city, and country — Radiation Oncology and Surgical Oncology. Bios are ours. Named surgeons for the new list are being matched."
+        lede="Each house is filed under specialty, procedure, city, and country — Radiation Oncology and Surgical Oncology, with named consultants from both lists."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

@@ -1,6 +1,6 @@
 import catalog from "@/data/ginger-catalog.json";
 import { getHospital } from "@/lib/hospitals";
-import { mapCatalogProcedures } from "@/lib/procedure-map";
+import { mapDoctorProcedures } from "@/lib/procedure-map";
 import { getCity, getCountry, getProcedure, getSpecialty } from "@/lib/taxonomy";
 
 export type Doctor = {
@@ -34,13 +34,14 @@ export type Doctor = {
   bio: string;
 };
 
-function cleanTitle(raw: string) {
+function cleanTitle(raw: string, specialty: string) {
   let title = raw.trim();
-  const hits = title.match(/radiation oncology/gi) ?? [];
+  const needle = specialty.toLowerCase();
+  const hits = title.match(new RegExp(needle.replace(/[()]/g, "\\$&"), "gi")) ?? [];
   if (hits.length >= 2) {
-    title = title.replace(/,\s*Radiation Oncology$/i, "").trim();
+    title = title.replace(new RegExp(`,\\s*${specialty.replace(/[()]/g, "\\$&")}$`, "i"), "").trim();
   }
-  return title || "Radiation Oncologist";
+  return title || (specialty === "Surgical Oncology" ? "Surgical Oncologist" : "Radiation Oncologist");
 }
 
 function languagesFor(city: string) {
@@ -51,8 +52,8 @@ function languagesFor(city: string) {
   return "English, Hindi";
 }
 
-const specialty = getSpecialty("Radiation Oncology");
-if (!specialty) throw new Error("Missing Radiation Oncology specialty");
+const radiationSpecialty = getSpecialty("Radiation Oncology");
+if (!radiationSpecialty) throw new Error("Missing Radiation Oncology specialty");
 
 export const doctors: Doctor[] = catalog.doctors.map((seed) => {
   const hospital = getHospital(seed.hospitalSlug);
@@ -63,7 +64,10 @@ export const doctors: Doctor[] = catalog.doctors.map((seed) => {
     throw new Error(`Doctor ${seed.slug} has unknown city ${cityName}`);
   }
 
-  const mapped = mapCatalogProcedures([
+  const specialty =
+    getSpecialty(seed.specialty) ?? radiationSpecialty;
+
+  const mapped = mapDoctorProcedures(specialty.name, [
     ...seed.proceduresExpertise,
     ...seed.specializations,
     seed.designation,
@@ -74,7 +78,7 @@ export const doctors: Doctor[] = catalog.doctors.map((seed) => {
     return procedure;
   });
 
-  const title = cleanTitle(seed.designation || "Radiation Oncologist");
+  const title = cleanTitle(seed.designation || specialty.name, specialty.name);
 
   return {
     slug: seed.slug,

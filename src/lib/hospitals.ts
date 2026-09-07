@@ -69,11 +69,15 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
   }
 
   const faculty = catalog.doctors.filter((d) => d.hospitalSlug === seed.slug);
-  const radiationNames = mapCatalogProcedures([
-    ...faculty.flatMap((d) => d.proceduresExpertise),
-    ...faculty.flatMap((d) => d.specializations),
-    seed.bio,
-  ]);
+  const radiationFaculty = faculty.filter((d) => d.specialty !== "Surgical Oncology");
+  const radiationNames = mapCatalogProcedures(
+    [
+      ...radiationFaculty.flatMap((d) => d.proceduresExpertise),
+      ...radiationFaculty.flatMap((d) => d.specializations),
+      seed.bio,
+    ],
+    radiationFaculty.length > 0,
+  );
   const procedures = resolveProcedures([...radiationNames, ...surgicalNamesForCampus(seed.slug)]);
   const seen = new Set<string>();
   const unique = procedures.filter((p) => {
