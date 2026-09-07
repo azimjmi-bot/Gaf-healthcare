@@ -14,7 +14,7 @@ export {
   hospitalsMatchingPseo,
   groupHospitalsForDirectory,
 } from "@/lib/hospitals";
-export { treatments, getTreatment, treatmentsForHospital } from "@/lib/treatments";
+export { treatments, getTreatment, treatmentsForHospital, treatmentMatchesSpecialty } from "@/lib/treatments";
 export {
   doctors,
   getDoctor,

@@ -2,6 +2,7 @@ import catalog from "@/data/ginger-catalog.json";
 import { mapCatalogProcedures } from "@/lib/procedure-map";
 import {
   ATHENAA_SURGICAL_PROCEDURES,
+  HEMATOLOGY_PROCEDURES,
   MEDICAL_ONCOLOGY_PROCEDURES,
   SPECIALTIES,
   SURGICAL_ONCOLOGY_PROCEDURES,
@@ -46,7 +47,8 @@ function languagesFor(city: string) {
 const radiation = getSpecialty("Radiation Oncology");
 const surgical = getSpecialty("Surgical Oncology");
 const medical = getSpecialty("Medical Oncology");
-if (!radiation || !surgical || !medical) throw new Error("Missing oncology specialties");
+const hematology = getSpecialty("Hematology");
+if (!radiation || !surgical || !medical || !hematology) throw new Error("Missing oncology specialties");
 
 function resolveProcedures(names: string[]) {
   return names.map((name) => {
@@ -85,6 +87,7 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
     ...radiationNames,
     ...surgicalNamesForCampus(seed.slug),
     ...MEDICAL_ONCOLOGY_PROCEDURES,
+    ...HEMATOLOGY_PROCEDURES,
   ]);
   const seen = new Set<string>();
   const unique = procedures.filter((p) => {
@@ -101,11 +104,11 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
     country: country.name,
     countrySlug: country.slug,
     accreditation: seed.accreditation,
-    focus: `${radiation.name} · ${surgical.name} · ${medical.name}`,
+    focus: `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name}`,
     specialty: radiation.name,
     specialtySlug: radiation.slug,
-    specialties: [radiation.name, surgical.name, medical.name],
-    specialtySlugs: [radiation.slug, surgical.slug, medical.slug],
+    specialties: [radiation.name, surgical.name, medical.name, hematology.name],
+    specialtySlugs: [radiation.slug, surgical.slug, medical.slug, hematology.slug],
     procedures: unique.map((p) => p.name),
     procedureSlugs: unique.map((p) => p.slug),
     established: seed.established,

@@ -114,7 +114,7 @@ export function filterTreatments(q: CatalogQuery): Treatment[] {
     if (q.city && !campuses.some((h) => h.city === q.city)) return false;
     if (q.specialty) {
       const spec = getSpecialty(q.specialty);
-      if (spec ? t.specialtySlug !== spec.slug : t.category !== q.specialty) return false;
+      if (spec ? !t.specialtySlugs.includes(spec.slug) && t.specialtySlug !== spec.slug : t.category !== q.specialty) return false;
     }
     return true;
   });

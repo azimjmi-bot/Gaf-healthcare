@@ -27,7 +27,7 @@ export function listDoctorLandings(): DoctorLanding[] {
   for (const country of COUNTRIES) {
     for (const city of CITIES.filter((c) => c.countrySlug === country.slug)) {
       for (const specialty of SPECIALTIES) {
-        for (const procedure of PROCEDURES.filter((p) => p.specialtySlug === specialty.slug)) {
+        for (const procedure of PROCEDURES.filter((p) => p.specialtySlugs.includes(specialty.slug))) {
           const facet: DoctorPseoFacet = {
             countrySlug: country.slug,
             citySlug: city.slug,
@@ -61,7 +61,7 @@ export function listHospitalLandings(): HospitalLanding[] {
   for (const country of COUNTRIES) {
     for (const city of CITIES.filter((c) => c.countrySlug === country.slug)) {
       for (const specialty of SPECIALTIES) {
-        for (const procedure of PROCEDURES.filter((p) => p.specialtySlug === specialty.slug)) {
+        for (const procedure of PROCEDURES.filter((p) => p.specialtySlugs.includes(specialty.slug))) {
           const facet: HospitalPseoFacet = {
             countrySlug: country.slug,
             citySlug: city.slug,

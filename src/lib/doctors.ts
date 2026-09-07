@@ -47,7 +47,9 @@ function cleanTitle(raw: string, specialty: string) {
       ? "Surgical Oncologist"
       : specialty === "Medical Oncology"
         ? "Medical Oncologist"
-        : "Radiation Oncologist")
+        : specialty === "Hematology"
+          ? "Hematologist"
+          : "Radiation Oncologist")
   );
 }
 

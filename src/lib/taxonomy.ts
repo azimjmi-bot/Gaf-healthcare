@@ -15,6 +15,7 @@ export type CityTaxon = Taxon & {
 
 export type ProcedureTaxon = Taxon & {
   specialtySlug: string;
+  specialtySlugs: string[];
 };
 
 export function toSlug(value: string) {
@@ -62,6 +63,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Radiation Oncology"),
   taxon("Surgical Oncology"),
   taxon("Medical Oncology"),
+  taxon("Hematology"),
 ];
 
 export function compareSpecialties(aSlug: string, bSlug: string) {
@@ -142,6 +144,19 @@ export const MEDICAL_ONCOLOGY_PROCEDURES = [
   "Dendritic Cell Therapy",
 ] as const;
 
+export const HEMATOLOGY_PROCEDURES = [
+  "Bone Marrow Transplantation",
+  "Stem Cell Transplantation",
+  "Autologous Stem Cell Transplant",
+  "Allogeneic Stem Cell Transplant",
+  "Haploidentical Stem Cell Transplant",
+  "CAR-T Cell Therapy",
+  "Bone Marrow Biopsy",
+  "Bone Marrow Aspiration",
+  "Matched Unrelated Donor Transplant",
+  "Intrathecal Chemotherapy",
+] as const;
+
 export const ATHENAA_SURGICAL_PROCEDURES = [
   "Breast-Conserving Surgery (Lumpectomy)",
   "Mastectomy",
@@ -153,22 +168,29 @@ export const ATHENAA_SURGICAL_PROCEDURES = [
   "Ovarian Cancer Cytoreductive Surgery",
 ] as const;
 
+function procedureTaxon(name: string, specialtySlugs: string[]): ProcedureTaxon {
+  return {
+    name,
+    slug: toSlug(name),
+    specialtySlug: specialtySlugs[0],
+    specialtySlugs,
+  };
+}
+
+const HEMATOLOGY_NAMES = new Set<string>(HEMATOLOGY_PROCEDURES);
+
 export const PROCEDURES: ProcedureTaxon[] = [
-  ...RADIATION_PROCEDURES.map((name) => ({
-    name,
-    slug: toSlug(name),
-    specialtySlug: "radiation-oncology",
-  })),
-  ...SURGICAL_ONCOLOGY_PROCEDURES.map((name) => ({
-    name,
-    slug: toSlug(name),
-    specialtySlug: "surgical-oncology",
-  })),
-  ...MEDICAL_ONCOLOGY_PROCEDURES.map((name) => ({
-    name,
-    slug: toSlug(name),
-    specialtySlug: "medical-oncology",
-  })),
+  ...RADIATION_PROCEDURES.map((name) => procedureTaxon(name, ["radiation-oncology"])),
+  ...SURGICAL_ONCOLOGY_PROCEDURES.map((name) => procedureTaxon(name, ["surgical-oncology"])),
+  ...MEDICAL_ONCOLOGY_PROCEDURES.map((name) =>
+    procedureTaxon(
+      name,
+      HEMATOLOGY_NAMES.has(name) ? ["medical-oncology", "hematology"] : ["medical-oncology"],
+    ),
+  ),
+  ...HEMATOLOGY_PROCEDURES.filter((name) => !MEDICAL_ONCOLOGY_PROCEDURES.includes(name as (typeof MEDICAL_ONCOLOGY_PROCEDURES)[number])).map(
+    (name) => procedureTaxon(name, ["hematology"]),
+  ),
 ];
 
 export const PROCEDURE_CLUSTERS = {
@@ -239,7 +261,7 @@ export function citiesInCountry(countryNameOrSlug: string) {
 export function proceduresForSpecialty(specialtyNameOrSlug: string) {
   const specialty = getSpecialty(specialtyNameOrSlug);
   if (!specialty) return [];
-  return PROCEDURES.filter((p) => p.specialtySlug === specialty.slug);
+  return PROCEDURES.filter((p) => p.specialtySlugs.includes(specialty.slug));
 }
 
 export function radiationProcedureSlug(name: string) {
@@ -268,7 +290,9 @@ for (const city of CITIES) {
 }
 
 for (const procedure of PROCEDURES) {
-  if (!specialtiesBySlug.has(procedure.specialtySlug)) {
-    throw new Error(`Procedure ${procedure.slug} points at unknown specialty ${procedure.specialtySlug}`);
+  for (const spec of procedure.specialtySlugs) {
+    if (!specialtiesBySlug.has(spec)) {
+      throw new Error(`Procedure ${procedure.slug} points at unknown specialty ${spec}`);
+    }
   }
 }

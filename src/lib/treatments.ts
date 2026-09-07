@@ -1,11 +1,14 @@
+import { HEMATOLOGY_COST, HEMATOLOGY_SUMMARIES } from "@/lib/hematology-costs";
 import { MEDICAL_COST, MEDICAL_SUMMARIES } from "@/lib/medical-costs";
 import { hospitals } from "@/lib/hospitals";
 import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
 import {
+  HEMATOLOGY_PROCEDURES,
   MEDICAL_ONCOLOGY_PROCEDURES,
   PROCEDURE_CLUSTERS,
   RADIATION_PROCEDURES,
   SURGICAL_ONCOLOGY_PROCEDURES,
+  getProcedure,
   toSlug,
 } from "@/lib/taxonomy";
 
@@ -14,6 +17,7 @@ export type Treatment = {
   name: string;
   category: string;
   specialtySlug: string;
+  specialtySlugs: string[];
   procedureSlug: string;
   summary: string;
   image: string;
@@ -26,6 +30,16 @@ export type Treatment = {
   includes: string[];
   notes: string;
 };
+
+export function treatmentMatchesSpecialty(t: Treatment, specialtySlug: string) {
+  return t.specialtySlugs.includes(specialtySlug);
+}
+
+function slugsForProcedureName(name: string) {
+  const row = getProcedure(name);
+  if (!row) throw new Error(`Unmapped procedure ${name}`);
+  return row.specialtySlugs;
+}
 
 function hospitalSlugsForProcedure(name: string) {
   const family =
@@ -168,6 +182,7 @@ const radiationTreatments: Treatment[] = RADIATION_PROCEDURES.map((name) => {
     name,
     category: "Radiation Oncology",
     specialtySlug: "radiation-oncology",
+    specialtySlugs: slugsForProcedureName(name),
     procedureSlug: slug,
     summary: copy
       ? copy.summary
@@ -203,6 +218,7 @@ const surgicalTreatments: Treatment[] = SURGICAL_ONCOLOGY_PROCEDURES.map((name) 
     name,
     category: "Surgical Oncology",
     specialtySlug: "surgical-oncology",
+    specialtySlugs: slugsForProcedureName(name),
     procedureSlug: slug,
     summary: SURGICAL_SUMMARIES[name] ?? `Surgical Oncology — ${name} at JCI partner campuses with a named surgeon before you travel.`,
     image: SURGICAL_IMAGE,
@@ -238,6 +254,7 @@ const medicalTreatments: Treatment[] = MEDICAL_ONCOLOGY_PROCEDURES.map((name) =>
     name,
     category: "Medical Oncology",
     specialtySlug: "medical-oncology",
+    specialtySlugs: slugsForProcedureName(name),
     procedureSlug: slug,
     summary:
       MEDICAL_SUMMARIES[name] ??
@@ -255,10 +272,53 @@ const medicalTreatments: Treatment[] = MEDICAL_ONCOLOGY_PROCEDURES.map((name) =>
   };
 });
 
+const HEMATOLOGY_INCLUDES = [
+  "Haematology consultation and records review",
+  "Named consultant on camera before travel",
+  "Donor search or collection plan as quoted",
+  "Inpatient transplant or day-care procedure as indicated",
+  "Discharge summary to your home haematologist",
+];
+
+const HEMATOLOGY_IMAGE =
+  "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1600&q=80";
+
+const HEMATOLOGY_ONLY = HEMATOLOGY_PROCEDURES.filter(
+  (name) => !MEDICAL_ONCOLOGY_PROCEDURES.includes(name as (typeof MEDICAL_ONCOLOGY_PROCEDURES)[number]),
+);
+
+const hematologyTreatments: Treatment[] = HEMATOLOGY_ONLY.map((name) => {
+  const cost = HEMATOLOGY_COST[name];
+  if (!cost) throw new Error(`Missing hematology cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Hematology",
+    specialtySlug: "hematology",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      HEMATOLOGY_SUMMARIES[name] ??
+      `Hematology — ${name} at JCI partner campuses with a named consultant before you travel.`,
+    image: HEMATOLOGY_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Hematologic malignancy", "Bone marrow failure", "Cancer second opinion"],
+    procedures: [name],
+    includes: HEMATOLOGY_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named haematologist confirms donor, conditioning and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
   ...medicalTreatments,
+  ...hematologyTreatments,
 ];
 
 export function getTreatment(slug: string) {

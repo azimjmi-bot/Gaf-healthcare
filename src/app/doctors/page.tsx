@@ -48,9 +48,9 @@ export default async function DoctorsPage({
     <>
       <JsonLd data={faqJsonLd(DOCTOR_FAQS)} />
       <PageIntro
-        eyebrow="India · five cities · three specialties"
+        eyebrow="India · five cities · four specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each profile is filed under country, city, specialty and procedure so later pages such as /doctors/india/delhi-ncr/medical-oncology/chemotherapy can be generated without remapping the catalog. Bios are original Velora copy — not a destination mill."
+        lede="Named radiation, surgical and medical oncologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad, plus haematology pathways (transplant, CAR-T, marrow diagnostics) tagged for later pSEO. Each profile is filed under country, city, specialty and procedure. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

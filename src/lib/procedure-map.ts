@@ -1,4 +1,4 @@
-import { MEDICAL_ONCOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -72,6 +72,19 @@ const MEDICAL_RULES: { test: RegExp; name: (typeof MEDICAL_ONCOLOGY_PROCEDURES)[
   { test: /chemo/i, name: "Chemotherapy" },
 ];
 
+const HEMATOLOGY_RULES: { test: RegExp; name: (typeof HEMATOLOGY_PROCEDURES)[number] }[] = [
+  { test: /haplo/i, name: "Haploidentical Stem Cell Transplant" },
+  { test: /matched unrelated|\bmud\b|unrelated donor/i, name: "Matched Unrelated Donor Transplant" },
+  { test: /autologous/i, name: "Autologous Stem Cell Transplant" },
+  { test: /allogeneic|allogenic/i, name: "Allogeneic Stem Cell Transplant" },
+  { test: /marrow biopsy|trephine/i, name: "Bone Marrow Biopsy" },
+  { test: /marrow aspiration|aspirate/i, name: "Bone Marrow Aspiration" },
+  { test: /car[\s-]*t/i, name: "CAR-T Cell Therapy" },
+  { test: /intrathecal/i, name: "Intrathecal Chemotherapy" },
+  { test: /bone marrow/i, name: "Bone Marrow Transplantation" },
+  { test: /stem cell|transplant/i, name: "Stem Cell Transplantation" },
+];
+
 function applyRules<T extends string>(
   texts: string[],
   rules: { test: RegExp; name: T }[],
@@ -126,8 +139,15 @@ export function mapMedicalProcedures(texts: string[], fallback = true) {
   return ["Chemotherapy", "Targeted Therapy", "Immunotherapy"];
 }
 
+export function mapHematologyProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, HEMATOLOGY_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Bone Marrow Transplantation", "Stem Cell Transplantation", "Bone Marrow Biopsy"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
+  if (specialty === "Hematology") return mapHematologyProcedures(texts);
   return mapCatalogProcedures(texts);
 }

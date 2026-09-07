@@ -50,14 +50,16 @@ export default async function CostDetailPage({
     .sort((a, b) => Number(b.featured) - Number(a.featured))
     .slice(0, 8);
   const related = treatments
-    .filter((x) => x.slug !== t.slug && x.specialtySlug === t.specialtySlug)
+    .filter((x) => x.slug !== t.slug && x.specialtySlugs.some((s) => t.specialtySlugs.includes(s)))
     .slice(0, 6);
-  const consultantNoun =
-    t.specialtySlug === "surgical-oncology"
-      ? "surgical oncologists"
-      : t.specialtySlug === "medical-oncology"
-        ? "medical oncologists"
-        : "radiation oncologists";
+  const consultantNoun = [
+    t.specialtySlugs.includes("radiation-oncology") ? "radiation oncologists" : "",
+    t.specialtySlugs.includes("surgical-oncology") ? "surgical oncologists" : "",
+    t.specialtySlugs.includes("medical-oncology") ? "medical oncologists" : "",
+    t.specialtySlugs.includes("hematology") ? "hematologists" : "",
+  ]
+    .filter(Boolean)
+    .join(" and ");
 
   return (
     <>
@@ -132,7 +134,9 @@ export default async function CostDetailPage({
               <Link href={`/consult?treatment=${t.slug}`}>Request this pathway</Link>
             </Button>
             <p className="mt-4 text-xs text-muted-foreground">
-              Not a quote. {t.specialtySlug === "medical-oncology"
+              Not a quote. {t.specialtySlug === "hematology"
+                ? "Donor, conditioning and graft source are set after records review."
+                : t.specialtySlug === "medical-oncology"
                 ? "Regimen and cycles are set after records review."
                 : t.specialtySlug === "surgical-oncology"
                   ? "Approach and reconstruction are set after records review."

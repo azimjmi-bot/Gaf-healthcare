@@ -102,19 +102,19 @@ export function catalogMetadata(
       : `Oncologists in ${place}`;
     if (proc) title = `${proc} specialists in ${place}`;
     description = clip(
-      `Named ${spec ? spec.toLowerCase() : "radiation, surgical and medical"} oncologists in ${place} at JCI partner campuses. Filter by city, specialty and procedure for later pSEO routes such as /doctors/india/${city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr"}/medical-oncology/chemotherapy.`,
+      `Named ${spec ? spec.toLowerCase() : "radiation, surgical, medical and hematology"} specialists in ${place} at JCI partner campuses. Filter by city, specialty and procedure for later pSEO routes such as /doctors/india/${city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr"}/hematology/bone-marrow-transplantation.`,
     );
   } else if (entity === "hospitals") {
     title = spec ? `${spec} hospitals in ${place}` : `Oncology hospitals in ${place}`;
     if (proc) title = `Hospitals for ${proc} in ${place}`;
     description = clip(
-      `Partner oncology campuses in ${place} for ${spec ?? "radiation, surgical and medical oncology"}. ${proc ? `${proc} is listed where the house can quote it. ` : ""}Country, city, specialty and procedure tags are ready for pSEO.`,
+      `Partner oncology campuses in ${place} for ${spec ?? "radiation, surgical and medical oncology plus hematology"}. ${proc ? `${proc} is listed where the house can quote it. ` : ""}Country, city, specialty and procedure tags are ready for pSEO.`,
     );
   } else {
     title = spec ? `${spec} cost in ${place}` : `Cancer treatment cost in ${place}`;
     if (proc) title = `${proc} cost in ${place}`;
     description = clip(
-      `US cash-pay beside India partner ranges for ${spec ?? "radiation, surgery and systemic therapy"} in ${place}. Planning figures, not quotes — a named consultant confirms the protocol after records review.`,
+      `US cash-pay beside India partner ranges for ${spec ?? "radiation, surgery, systemic therapy and hematology"} in ${place}. Planning figures, not quotes — a named consultant confirms the protocol after records review.`,
     );
   }
 
@@ -217,7 +217,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list medical oncologists as well as radiation and surgical oncologists?",
-    a: "Yes. Medical Oncology covers systemic therapy — chemotherapy, immunotherapy, targeted and hormone therapy, transplant and CAR-T where the campus actually runs it. Radiation and surgical faculties are listed separately under the same hospitals.",
+    a: "Yes. Medical Oncology covers systemic therapy. Hematology covers transplant, CAR-T and marrow diagnostics — some procedures such as BMT sit on both lists so later pSEO routes can use either specialty slug. Radiation and surgical faculties are listed separately under the same hospitals.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
