@@ -20,7 +20,9 @@ function clip(text: string, max = 158) {
 
 export function doctorMetadata(d: Doctor): Metadata {
   const role =
-    d.specialtySlug === "cardiology"
+    d.specialtySlug === "bariatric-surgery"
+      ? "bariatric surgeon"
+      : d.specialtySlug === "cardiology"
       ? "cardiologist"
       : d.specialtySlug === "pediatric-cardiac-surgery"
       ? "pediatric cardiac surgeon"
@@ -57,7 +59,7 @@ export function doctorMetadata(d: Doctor): Metadata {
 }
 
 export function hospitalMetadata(h: Hospital): Metadata {
-  const title = `${h.name} — oncology, hematology, cardiac surgery and cardiology hospital in ${h.city}, India`;
+  const title = `${h.name} — oncology, hematology, cardiac and bariatric hospital in ${h.city}, India`;
   const description = clip(
     `${h.name} in ${h.city}, India lists ${h.specialties.join(", ")}. ${h.accreditation}. ${h.bio}`,
   );
@@ -114,16 +116,19 @@ export function catalogMetadata(
 
   if (entity === "doctors") {
     if (proc) title = `${proc} specialists in ${place}`;
+    else if (spec === "Bariatric Surgery") title = `Bariatric surgeons in ${place}`;
     else if (spec === "Cardiology") title = `Cardiologists in ${place}`;
     else if (spec === "Pediatric Cardiac Surgery") title = `Pediatric cardiac surgeons in ${place}`;
     else if (spec === "Cardiac Surgery") title = `Cardiac surgeons in ${place}`;
     else if (spec === "Pediatric Hematology") title = `Pediatric hematologists in ${place}`;
     else if (spec === "Hematology") title = `Hematologists in ${place}`;
     else if (spec) title = `${spec} doctors in ${place}`;
-    else title = `Oncologists, hematologists, cardiac surgeons and cardiologists in ${place}`;
+    else title = `Oncologists, cardiologists and bariatric surgeons in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
-      spec === "Cardiology"
+      spec === "Bariatric Surgery"
+        ? `/doctors/india/${citySlug}/bariatric-surgery/sleeve-gastrectomy`
+        : spec === "Cardiology"
         ? `/doctors/india/${citySlug}/cardiology/coronary-angioplasty-stenting`
         : spec === "Pediatric Cardiac Surgery"
         ? `/doctors/india/${citySlug}/pediatric-cardiac-surgery/asd-closure-atrial-septal-defect`
@@ -135,19 +140,19 @@ export function catalogMetadata(
           ? `/doctors/india/${citySlug}/hematology/bone-marrow-transplantation`
           : `/doctors/india/${citySlug}/radiation-oncology/external-beam-radiotherapy-ebrt`;
     description = clip(
-      `Named ${spec ? spec.toLowerCase() : "oncology, hematology, cardiac surgery and cardiology"} specialists in ${place} at JCI partner campuses. Filter by city, specialty and procedure for later pSEO routes such as ${example}.`,
+      `Named ${spec ? spec.toLowerCase() : "oncology, hematology, cardiac, cardiology and bariatric"} specialists in ${place} at JCI partner campuses. Filter by city, specialty and procedure for later pSEO routes such as ${example}.`,
     );
   } else if (entity === "hospitals") {
-    title = spec ? `${spec} hospitals in ${place}` : `Oncology and cardiac hospitals in ${place}`;
+    title = spec ? `${spec} hospitals in ${place}` : `Oncology, cardiac and bariatric hospitals in ${place}`;
     if (proc) title = `Hospitals for ${proc} in ${place}`;
     description = clip(
-      `Partner campuses in ${place} for ${spec ?? "oncology, hematology, cardiac surgery and cardiology"}. ${proc ? `${proc} is listed where the house can quote it. ` : ""}Country, city, specialty and procedure tags are ready for pSEO.`,
+      `Partner campuses in ${place} for ${spec ?? "oncology, hematology, cardiac care and bariatric surgery"}. ${proc ? `${proc} is listed where the house can quote it. ` : ""}Country, city, specialty and procedure tags are ready for pSEO.`,
     );
   } else {
-    title = spec ? `${spec} cost in ${place}` : `Oncology and cardiac treatment cost in ${place}`;
+    title = spec ? `${spec} cost in ${place}` : `Oncology, cardiac and bariatric treatment cost in ${place}`;
     if (proc) title = `${proc} cost in ${place}`;
     description = clip(
-      `US cash-pay beside India partner ranges for ${spec ?? "oncology, hematology, cardiac surgery and cardiology"} in ${place}. Planning figures, not quotes — a named consultant confirms the protocol after records review.`,
+      `US cash-pay beside India partner ranges for ${spec ?? "oncology, hematology, cardiac care and bariatric surgery"} in ${place}. Planning figures, not quotes — a named consultant confirms the protocol after records review.`,
     );
   }
 
@@ -255,7 +260,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named paediatric haematologists sit under Pediatric Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named paediatric cardiac surgeons sit under Pediatric Cardiac Surgery. Named cardiologists sit under Cardiology — angioplasty, angiography, TAVR/TAVI (shared with Cardiac Surgery), AF ablation, pacemakers and structural work — so later pSEO can use either specialty slug for TAVR. Medical, radiation and surgical oncologists are listed separately.",
+    a: "Yes. Named haematologists sit under Hematology. Named paediatric haematologists sit under Pediatric Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named paediatric cardiac surgeons sit under Pediatric Cardiac Surgery. Named cardiologists sit under Cardiology. Bariatric Surgery covers sleeve, Roux-en-Y, OAGB, balloon, ESG and revisional work so later pSEO can mount /doctors/india/{city}/bariatric-surgery/{procedure}. Medical, radiation and surgical oncologists are listed separately.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
@@ -266,7 +271,11 @@ export const DOCTOR_FAQS = [
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, haematologist, paediatric haematologist, cardiac surgeon, paediatric cardiac surgeon or cardiologist confirms regimen, fractions, donor or the operation after reviewing records.",
+    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, haematologist, paediatric haematologist, cardiac surgeon, paediatric cardiac surgeon, cardiologist or bariatric surgeon confirms regimen, fractions, donor or the operation after reviewing records.",
+  },
+  {
+    q: "What does sleeve gastrectomy typically cost in India versus the US?",
+    a: "Velora’s Sleeve Gastrectomy sheet lists a partner planning range of about $4,500–$8,500 against typical US cash of $15,000–$28,000, depending on BMI, leak protocol and campus. Bypass, ESG and revisional work sit on separate sheets.",
   },
   {
     q: "What does CABG typically cost in India versus the US?",

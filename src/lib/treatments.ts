@@ -1,3 +1,4 @@
+import { BARIATRIC_COST, BARIATRIC_SUMMARIES } from "@/lib/bariatric-costs";
 import { CARDIOLOGY_COST, CARDIOLOGY_SUMMARIES } from "@/lib/cardiology-costs";
 import { CARDIAC_SURGERY_COST, CARDIAC_SURGERY_SUMMARIES } from "@/lib/cardiac-surgery-costs";
 import { PEDIATRIC_CARDIAC_SURGERY_COST, PEDIATRIC_CARDIAC_SURGERY_SUMMARIES } from "@/lib/pediatric-cardiac-surgery-costs";
@@ -7,6 +8,7 @@ import { MEDICAL_COST, MEDICAL_SUMMARIES } from "@/lib/medical-costs";
 import { hospitals } from "@/lib/hospitals";
 import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
 import {
+  BARIATRIC_PROCEDURES,
   CARDIOLOGY_PROCEDURES,
   CARDIAC_SURGERY_PROCEDURES,
   PEDIATRIC_CARDIAC_SURGERY_PROCEDURES,
@@ -475,6 +477,44 @@ const cardiologyTreatments: Treatment[] = CARDIOLOGY_ONLY.map((name) => {
   };
 });
 
+const BARIATRIC_IMAGE =
+  "https://images.unsplash.com/photo-1551190822-a9333d879b1f?auto=format&fit=crop&w=1600&q=80";
+
+const BARIATRIC_INCLUDES = [
+  "Bariatric consultation and records review",
+  "Named surgeon on camera before travel",
+  "Theatre, staplers or endoscopic kit, and overnight stay as quoted",
+  "Dietetic plan and leak protocol as indicated",
+  "Discharge summary to your home physician",
+];
+
+const bariatricTreatments: Treatment[] = BARIATRIC_PROCEDURES.map((name) => {
+  const cost = BARIATRIC_COST[name];
+  if (!cost) throw new Error(`Missing bariatric cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Bariatric Surgery",
+    specialtySlug: "bariatric-surgery",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      BARIATRIC_SUMMARIES[name] ??
+      `Bariatric Surgery — ${name} at JCI partner campuses with a named surgeon before you travel.`,
+    image: BARIATRIC_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Obesity", "Metabolic syndrome", "Type 2 diabetes"],
+    procedures: [name],
+    includes: BARIATRIC_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named bariatric surgeon confirms BMI, procedure and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -484,6 +524,7 @@ export const treatments: Treatment[] = [
   ...cardiacSurgeryTreatments,
   ...pediatricCardiacSurgeryTreatments,
   ...cardiologyTreatments,
+  ...bariatricTreatments,
 ];
 
 export function getTreatment(slug: string) {

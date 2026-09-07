@@ -68,6 +68,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Cardiac Surgery"),
   taxon("Pediatric Cardiac Surgery"),
   taxon("Cardiology"),
+  taxon("Bariatric Surgery"),
 ];
 
 export function compareSpecialties(aSlug: string, bSlug: string) {
@@ -225,6 +226,20 @@ export const CARDIOLOGY_PROCEDURES = [
   "Leadless Pacemaker Implantation",
 ] as const;
 
+export const BARIATRIC_PROCEDURES = [
+  "Sleeve Gastrectomy",
+  "Gastric Bypass (Roux-en-Y)",
+  "Mini Gastric Bypass (OAGB/MGB)",
+  "Gastric Balloon",
+  "Endoscopic Sleeve Gastroplasty (ESG)",
+  "Metabolic Surgery for Type 2 Diabetes",
+  "Gastric Sleeve Revision Surgery",
+  "SADI-S Surgery",
+  "Duodenal Switch (BPD/DS)",
+  "Gastric Banding (Lap-Band)",
+  "Gastric Band Removal",
+] as const;
+
 export const ATHENAA_SURGICAL_PROCEDURES = [
   "Breast-Conserving Surgery (Lumpectomy)",
   "Mastectomy",
@@ -277,6 +292,7 @@ export const PROCEDURES: ProcedureTaxon[] = [
   ...CARDIOLOGY_PROCEDURES.filter(
     (name) => !CARDIAC_SURGERY_PROCEDURES.includes(name as (typeof CARDIAC_SURGERY_PROCEDURES)[number]),
   ).map((name) => procedureTaxon(name, ["cardiology"])),
+  ...BARIATRIC_PROCEDURES.map((name) => procedureTaxon(name, ["bariatric-surgery"])),
 ];
 
 export const PROCEDURE_CLUSTERS = {

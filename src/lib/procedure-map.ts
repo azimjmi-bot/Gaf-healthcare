@@ -1,4 +1,4 @@
-import { CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -233,6 +233,26 @@ export function mapCardiologyProcedures(texts: string[], fallback = true) {
   return ["Coronary Angiography", "Coronary Angioplasty & Stenting", "Pacemaker Implantation"];
 }
 
+const BARIATRIC_RULES: { test: RegExp; name: (typeof BARIATRIC_PROCEDURES)[number] }[] = [
+  { test: /band.{0,12}remov|remov.{0,12}band|explant/i, name: "Gastric Band Removal" },
+  { test: /sleeve.{0,12}revision|revisional sleeve|re-sleeve/i, name: "Gastric Sleeve Revision Surgery" },
+  { test: /sadi|sips/i, name: "SADI-S Surgery" },
+  { test: /duodenal switch|bpd[\s/-]*ds|biliopancreatic/i, name: "Duodenal Switch (BPD/DS)" },
+  { test: /endoscopic sleeve|\besg\b|gastroplasty/i, name: "Endoscopic Sleeve Gastroplasty (ESG)" },
+  { test: /balloon/i, name: "Gastric Balloon" },
+  { test: /metabolic|diabetes.{0,12}surg/i, name: "Metabolic Surgery for Type 2 Diabetes" },
+  { test: /mini gastric|oagb|\bmgb\b|one[\s-]*anastomosis/i, name: "Mini Gastric Bypass (OAGB/MGB)" },
+  { test: /roux|gastric bypass|\brygb\b/i, name: "Gastric Bypass (Roux-en-Y)" },
+  { test: /lap[\s-]*band|gastric band|adjustable band/i, name: "Gastric Banding (Lap-Band)" },
+  { test: /sleeve/i, name: "Sleeve Gastrectomy" },
+];
+
+export function mapBariatricProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, BARIATRIC_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Sleeve Gastrectomy", "Gastric Bypass (Roux-en-Y)", "Mini Gastric Bypass (OAGB/MGB)"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -241,5 +261,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Cardiac Surgery") return mapCardiacSurgeryProcedures(texts);
   if (specialty === "Pediatric Cardiac Surgery") return mapPediatricCardiacSurgeryProcedures(texts);
   if (specialty === "Cardiology") return mapCardiologyProcedures(texts);
+  if (specialty === "Bariatric Surgery") return mapBariatricProcedures(texts);
   return mapCatalogProcedures(texts);
 }
