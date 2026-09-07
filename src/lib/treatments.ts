@@ -1,6 +1,8 @@
+import { MEDICAL_COST, MEDICAL_SUMMARIES } from "@/lib/medical-costs";
 import { hospitals } from "@/lib/hospitals";
 import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
 import {
+  MEDICAL_ONCOLOGY_PROCEDURES,
   PROCEDURE_CLUSTERS,
   RADIATION_PROCEDURES,
   SURGICAL_ONCOLOGY_PROCEDURES,
@@ -216,7 +218,48 @@ const surgicalTreatments: Treatment[] = SURGICAL_ONCOLOGY_PROCEDURES.map((name) 
   };
 });
 
-export const treatments: Treatment[] = [...radiationTreatments, ...surgicalTreatments];
+const MEDICAL_INCLUDES = [
+  "Medical oncology consultation and records review",
+  "Named consultant on camera before travel",
+  "Protocol, cycles and supportive medicines as quoted",
+  "On-treatment reviews and toxicity management",
+  "Discharge summary to your home oncologist",
+];
+
+const MEDICAL_IMAGE =
+  "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80";
+
+const medicalTreatments: Treatment[] = MEDICAL_ONCOLOGY_PROCEDURES.map((name) => {
+  const cost = MEDICAL_COST[name];
+  if (!cost) throw new Error(`Missing medical cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Medical Oncology",
+    specialtySlug: "medical-oncology",
+    procedureSlug: slug,
+    summary:
+      MEDICAL_SUMMARIES[name] ??
+      `Medical Oncology — ${name} at JCI partner campuses with a named consultant before you travel.`,
+    image: MEDICAL_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Solid tumors", "Hematologic malignancy", "Cancer second opinion"],
+    procedures: [name],
+    includes: MEDICAL_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named medical oncologist confirms regimen, cycles and an itemized hospital price after records review.",
+  };
+});
+
+export const treatments: Treatment[] = [
+  ...radiationTreatments,
+  ...surgicalTreatments,
+  ...medicalTreatments,
+];
 
 export function getTreatment(slug: string) {
   return treatments.find((t) => t.slug === slug);

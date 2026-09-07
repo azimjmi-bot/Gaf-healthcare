@@ -20,12 +20,12 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/92 via-ink/70 to-ink/35" />
         <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-16 pt-32 md:px-8 md:pb-24">
-          <p className="eyebrow text-gold">Radiation and surgical oncology · India cities · named consultants</p>
+          <p className="eyebrow text-gold">Radiation, surgical and medical oncology · India cities · named consultants</p>
           <h1 className="mt-5 max-w-4xl font-heading text-5xl leading-[0.95] md:text-7xl lg:text-[5.25rem]">
             Doctors. Hospitals. Costs. Blogs.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/80 md:text-lg">
-            Velora is four pages: radiation and surgical oncology you can meet
+            Velora is four pages: radiation, surgical and medical oncology you can meet
             on camera, partner campuses, published USD ranges, and planning essays.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -72,19 +72,19 @@ export default function HomePage() {
             href="/doctors"
             kicker="01"
             title="Doctors"
-            body="Radiation and surgical oncologists you meet on camera before any deposit."
+            body="Radiation, surgical and medical oncologists you meet on camera before any deposit."
           />
           <IndexCard
             href="/hospitals"
             kicker="02"
             title="Hospitals"
-            body="JCI campuses in Delhi NCR, Mumbai, Bengaluru, Chennai, and Hyderabad — radiation and surgical oncology."
+            body="JCI campuses in Delhi NCR, Mumbai, Bengaluru, Chennai, and Hyderabad — radiation, surgical and medical oncology."
           />
           <IndexCard
             href="/costs"
             kicker="03"
             title="Treatment Cost"
-            body="US cash-pay beside partner ranges for radiation techniques and surgical oncology."
+            body="US cash-pay beside partner ranges for radiation, surgery and systemic therapy."
           />
           <IndexCard
             href="/blogs"

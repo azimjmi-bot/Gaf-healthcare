@@ -6,12 +6,16 @@ import { doctorsForHospital } from "@/lib/doctors";
 function facultyLabel(faculty: { specialtySlug: string }[]) {
   const radiation = faculty.filter((d) => d.specialtySlug === "radiation-oncology").length;
   const surgical = faculty.filter((d) => d.specialtySlug === "surgical-oncology").length;
+  const medical = faculty.filter((d) => d.specialtySlug === "medical-oncology").length;
   const parts: string[] = [];
   if (radiation) {
     parts.push(radiation === 1 ? "1 radiation oncologist" : `${radiation} radiation oncologists`);
   }
   if (surgical) {
     parts.push(surgical === 1 ? "1 surgical oncologist" : `${surgical} surgical oncologists`);
+  }
+  if (medical) {
+    parts.push(medical === 1 ? "1 medical oncologist" : `${medical} medical oncologists`);
   }
   return parts.join(" · ") || "Faculty being matched";
 }

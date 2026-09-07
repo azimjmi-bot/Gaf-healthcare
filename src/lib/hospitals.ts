@@ -2,8 +2,10 @@ import catalog from "@/data/ginger-catalog.json";
 import { mapCatalogProcedures } from "@/lib/procedure-map";
 import {
   ATHENAA_SURGICAL_PROCEDURES,
+  MEDICAL_ONCOLOGY_PROCEDURES,
   SPECIALTIES,
   SURGICAL_ONCOLOGY_PROCEDURES,
+  compareSpecialties,
   getCity,
   getCountry,
   getProcedure,
@@ -43,7 +45,8 @@ function languagesFor(city: string) {
 
 const radiation = getSpecialty("Radiation Oncology");
 const surgical = getSpecialty("Surgical Oncology");
-if (!radiation || !surgical) throw new Error("Missing oncology specialties");
+const medical = getSpecialty("Medical Oncology");
+if (!radiation || !surgical || !medical) throw new Error("Missing oncology specialties");
 
 function resolveProcedures(names: string[]) {
   return names.map((name) => {
@@ -69,7 +72,7 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
   }
 
   const faculty = catalog.doctors.filter((d) => d.hospitalSlug === seed.slug);
-  const radiationFaculty = faculty.filter((d) => d.specialty !== "Surgical Oncology");
+  const radiationFaculty = faculty.filter((d) => d.specialty === "Radiation Oncology");
   const radiationNames = mapCatalogProcedures(
     [
       ...radiationFaculty.flatMap((d) => d.proceduresExpertise),
@@ -78,7 +81,11 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
     ],
     radiationFaculty.length > 0,
   );
-  const procedures = resolveProcedures([...radiationNames, ...surgicalNamesForCampus(seed.slug)]);
+  const procedures = resolveProcedures([
+    ...radiationNames,
+    ...surgicalNamesForCampus(seed.slug),
+    ...MEDICAL_ONCOLOGY_PROCEDURES,
+  ]);
   const seen = new Set<string>();
   const unique = procedures.filter((p) => {
     if (seen.has(p.slug)) return false;
@@ -94,11 +101,11 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
     country: country.name,
     countrySlug: country.slug,
     accreditation: seed.accreditation,
-    focus: `${radiation.name} · ${surgical.name}`,
+    focus: `${radiation.name} · ${surgical.name} · ${medical.name}`,
     specialty: radiation.name,
     specialtySlug: radiation.slug,
-    specialties: [radiation.name, surgical.name],
-    specialtySlugs: [radiation.slug, surgical.slug],
+    specialties: [radiation.name, surgical.name, medical.name],
+    specialtySlugs: [radiation.slug, surgical.slug, medical.slug],
     procedures: unique.map((p) => p.name),
     procedureSlugs: unique.map((p) => p.slug),
     established: seed.established,
@@ -199,5 +206,5 @@ export function groupHospitalsForDirectory(
           .sort((a, b) => a.country.localeCompare(b.country)),
       };
     })
-    .sort((a, b) => a.specialty.localeCompare(b.specialty));
+    .sort((a, b) => compareSpecialties(a.specialtySlug, b.specialtySlug));
 }

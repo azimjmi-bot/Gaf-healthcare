@@ -148,7 +148,7 @@ export default async function DoctorDetailPage({
         <section className="border-t border-border py-16">
           <div className="mx-auto max-w-7xl px-5 md:px-8">
             <h2 className="font-heading text-3xl">
-              Other {d.specialtySlug === "surgical-oncology" ? "surgical" : "radiation"} oncologists at{" "}
+              Other {d.specialty.toLowerCase().replace(" oncology", " oncologists")} at{" "}
               {hospital?.name ?? "this campus"}
             </h2>
             <ul className="mt-6 grid gap-4 md:grid-cols-2">

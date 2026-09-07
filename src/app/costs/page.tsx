@@ -25,7 +25,7 @@ export default async function CostsPage({
       <PageIntro
         eyebrow="Ledger"
         title="What it typically costs — beside what it costs at home."
-        lede="Radiation Oncology and Surgical Oncology at partner campuses. Filter by destination, city, specialty, or procedure — the same keys a later landing page will use."
+        lede="Radiation, Surgical, and Medical Oncology at partner campuses. Filter by destination, city, specialty, or procedure — the same keys a later landing page will use."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

@@ -1,7 +1,7 @@
 import catalog from "@/data/ginger-catalog.json";
 import { getHospital } from "@/lib/hospitals";
 import { mapDoctorProcedures } from "@/lib/procedure-map";
-import { getCity, getCountry, getProcedure, getSpecialty } from "@/lib/taxonomy";
+import { compareSpecialties, getCity, getCountry, getProcedure, getSpecialty } from "@/lib/taxonomy";
 
 export type Doctor = {
   slug: string;
@@ -41,7 +41,14 @@ function cleanTitle(raw: string, specialty: string) {
   if (hits.length >= 2) {
     title = title.replace(new RegExp(`,\\s*${specialty.replace(/[()]/g, "\\$&")}$`, "i"), "").trim();
   }
-  return title || (specialty === "Surgical Oncology" ? "Surgical Oncologist" : "Radiation Oncologist");
+  return (
+    title ||
+    (specialty === "Surgical Oncology"
+      ? "Surgical Oncologist"
+      : specialty === "Medical Oncology"
+        ? "Medical Oncologist"
+        : "Radiation Oncologist")
+  );
 }
 
 function languagesFor(city: string) {
@@ -233,7 +240,7 @@ export function groupDoctorsUnderHospitals(list: Doctor[]): {
           .sort((a, b) => a.country.localeCompare(b.country)),
       };
     })
-    .sort((a, b) => a.specialty.localeCompare(b.specialty));
+    .sort((a, b) => compareSpecialties(a.specialtySlug, b.specialtySlug));
 }
 
 export function groupDoctorsForDirectory(list: Doctor[]): DoctorDirectorySpecialty[] {
@@ -275,5 +282,5 @@ export function groupDoctorsForDirectory(list: Doctor[]): DoctorDirectorySpecial
           .sort((a, b) => a.country.localeCompare(b.country)),
       };
     })
-    .sort((a, b) => a.specialty.localeCompare(b.specialty));
+    .sort((a, b) => compareSpecialties(a.specialtySlug, b.specialtySlug));
 }

@@ -1,4 +1,4 @@
-import { RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { MEDICAL_ONCOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -51,6 +51,27 @@ const SURGICAL_RULES: { test: RegExp; name: (typeof SURGICAL_ONCOLOGY_PROCEDURES
   { test: /cystect|bladder cancer/i, name: "Radical Cystectomy" },
 ];
 
+const MEDICAL_RULES: { test: RegExp; name: (typeof MEDICAL_ONCOLOGY_PROCEDURES)[number] }[] = [
+  { test: /car[\s-]*t/i, name: "CAR-T Cell Therapy" },
+  { test: /dendritic/i, name: "Dendritic Cell Therapy" },
+  { test: /bone marrow|allogeneic|allogenic|\ballo\b/i, name: "Bone Marrow Transplantation" },
+  { test: /stem cell|autologous|\bauto\b|transplant/i, name: "Stem Cell Transplantation" },
+  { test: /intrathecal/i, name: "Intrathecal Chemotherapy" },
+  { test: /intraperitoneal|\bip chemo\b/i, name: "Intraperitoneal Chemotherapy" },
+  { test: /antibody[\s-]*drug|adc\b/i, name: "Antibody-Drug Conjugate Therapy" },
+  { test: /checkpoint|pd[\s-]*1|pd[\s-]*l1|ctla/i, name: "Immune Checkpoint Inhibitor Therapy" },
+  { test: /neoadjuvant/i, name: "Neoadjuvant Chemotherapy" },
+  { test: /adjuvant/i, name: "Adjuvant Chemotherapy" },
+  { test: /palliative/i, name: "Palliative Chemotherapy" },
+  { test: /maintenance/i, name: "Maintenance Therapy" },
+  { test: /precision|ngs|genomic|next[\s-]*gen/i, name: "Precision Oncology" },
+  { test: /molecular targeted/i, name: "Molecular Targeted Therapy" },
+  { test: /hormon|endocrine|aromatase|tamoxifen/i, name: "Hormone Therapy" },
+  { test: /immunotherap|immuno[\s-]*onc/i, name: "Immunotherapy" },
+  { test: /targeted/i, name: "Targeted Therapy" },
+  { test: /chemo/i, name: "Chemotherapy" },
+];
+
 function applyRules<T extends string>(
   texts: string[],
   rules: { test: RegExp; name: T }[],
@@ -99,7 +120,14 @@ export function mapSurgicalProcedures(texts: string[], fallback = true) {
   return ["Mastectomy", "Gastrectomy", "Lung Cancer Surgery"];
 }
 
+export function mapMedicalProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, MEDICAL_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Chemotherapy", "Targeted Therapy", "Immunotherapy"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
+  if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
   return mapCatalogProcedures(texts);
 }

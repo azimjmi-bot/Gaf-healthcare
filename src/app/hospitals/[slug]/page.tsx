@@ -33,11 +33,13 @@ export default async function HospitalDetailPage({
   const faculty = doctorsForHospital(h.slug);
   const radiationFaculty = faculty.filter((d) => d.specialtySlug === "radiation-oncology");
   const surgicalFaculty = faculty.filter((d) => d.specialtySlug === "surgical-oncology");
+  const medicalFaculty = faculty.filter((d) => d.specialtySlug === "medical-oncology");
   const pathways = h.procedureSlugs
     .map((s) => getTreatment(s))
     .filter((t): t is Treatment => Boolean(t));
   const radiationPathways = pathways.filter((t) => t?.specialtySlug === "radiation-oncology");
   const surgicalPathways = pathways.filter((t) => t?.specialtySlug === "surgical-oncology");
+  const medicalPathways = pathways.filter((t) => t?.specialtySlug === "medical-oncology");
   const nearby = hospitalsInCity(h.citySlug).filter((x) => x.slug !== h.slug);
 
   return (
@@ -170,6 +172,24 @@ export default async function HospitalDetailPage({
                   </div>
                 </div>
               ) : null}
+              {medicalFaculty.length > 0 ? (
+                <div className="mt-10">
+                  <h3 className="font-heading text-2xl">Medical oncologists</h3>
+                  <div className="mt-6 grid gap-6">
+                    {medicalFaculty.map((d) => (
+                      <DoctorCard key={d.slug} doctor={d} />
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <p className="mt-8 text-sm text-muted-foreground">
+                  Named medical oncologists for this campus are being matched. Filter costs by{" "}
+                  <Link href="/costs?specialty=Medical%20Oncology" className="underline-offset-4 hover:underline">
+                    Medical Oncology
+                  </Link>{" "}
+                  or request a dossier.
+                </p>
+              )}
             </>
           )}
         </div>
@@ -178,7 +198,7 @@ export default async function HospitalDetailPage({
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
         <h2 className="font-heading text-3xl">Procedures on this campus</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Radiation techniques from named faculty, plus surgical-oncology pathways this house can quote.
+          Radiation, surgical, and medical-oncology pathways this house can quote — tagged for later pSEO.
         </p>
         {radiationPathways.length > 0 ? (
           <>
@@ -190,6 +210,12 @@ export default async function HospitalDetailPage({
           <>
             <h3 className="mt-10 font-heading text-2xl">Surgical Oncology</h3>
             <ProcedureGrid hospital={h} rows={surgicalPathways} />
+          </>
+        ) : null}
+        {medicalPathways.length > 0 ? (
+          <>
+            <h3 className="mt-10 font-heading text-2xl">Medical Oncology</h3>
+            <ProcedureGrid hospital={h} rows={medicalPathways} />
           </>
         ) : null}
       </section>

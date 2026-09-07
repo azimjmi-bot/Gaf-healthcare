@@ -61,7 +61,14 @@ export const INDIA_CITIES = CITIES.filter((c) => c.countrySlug === "india").map(
 export const SPECIALTIES: Taxon[] = [
   taxon("Radiation Oncology"),
   taxon("Surgical Oncology"),
+  taxon("Medical Oncology"),
 ];
+
+export function compareSpecialties(aSlug: string, bSlug: string) {
+  const ia = SPECIALTIES.findIndex((s) => s.slug === aSlug);
+  const ib = SPECIALTIES.findIndex((s) => s.slug === bSlug);
+  return (ia === -1 ? 99 : ia) - (ib === -1 ? 99 : ib);
+}
 
 export const RADIATION_PROCEDURES = [
   "External Beam Radiotherapy (EBRT)",
@@ -114,6 +121,27 @@ export const SURGICAL_ONCOLOGY_PROCEDURES = [
   "Radical Cystectomy",
 ] as const;
 
+export const MEDICAL_ONCOLOGY_PROCEDURES = [
+  "Chemotherapy",
+  "Immunotherapy",
+  "Targeted Therapy",
+  "Hormone Therapy",
+  "Precision Oncology",
+  "Molecular Targeted Therapy",
+  "Immune Checkpoint Inhibitor Therapy",
+  "Neoadjuvant Chemotherapy",
+  "Adjuvant Chemotherapy",
+  "Palliative Chemotherapy",
+  "Antibody-Drug Conjugate Therapy",
+  "Maintenance Therapy",
+  "Intraperitoneal Chemotherapy",
+  "Intrathecal Chemotherapy",
+  "CAR-T Cell Therapy",
+  "Bone Marrow Transplantation",
+  "Stem Cell Transplantation",
+  "Dendritic Cell Therapy",
+] as const;
+
 export const ATHENAA_SURGICAL_PROCEDURES = [
   "Breast-Conserving Surgery (Lumpectomy)",
   "Mastectomy",
@@ -135,6 +163,11 @@ export const PROCEDURES: ProcedureTaxon[] = [
     name,
     slug: toSlug(name),
     specialtySlug: "surgical-oncology",
+  })),
+  ...MEDICAL_ONCOLOGY_PROCEDURES.map((name) => ({
+    name,
+    slug: toSlug(name),
+    specialtySlug: "medical-oncology",
   })),
 ];
 

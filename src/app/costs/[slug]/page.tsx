@@ -47,7 +47,12 @@ export default async function CostDetailPage({
   const related = treatments
     .filter((x) => x.slug !== t.slug && x.specialtySlug === t.specialtySlug)
     .slice(0, 6);
-  const isSurgical = t.specialtySlug === "surgical-oncology";
+  const consultantNoun =
+    t.specialtySlug === "surgical-oncology"
+      ? "surgical oncologists"
+      : t.specialtySlug === "medical-oncology"
+        ? "medical oncologists"
+        : "radiation oncologists";
 
   return (
     <>
@@ -105,7 +110,11 @@ export default async function CostDetailPage({
               <Link href={`/consult?treatment=${t.slug}`}>Request this pathway</Link>
             </Button>
             <p className="mt-4 text-xs text-muted-foreground">
-              Not a quote. Technique and fractions are set after records review.
+              Not a quote. {t.specialtySlug === "medical-oncology"
+                ? "Regimen and cycles are set after records review."
+                : t.specialtySlug === "surgical-oncology"
+                  ? "Approach and reconstruction are set after records review."
+                  : "Technique and fractions are set after records review."}
             </p>
           </div>
           <div className="rounded-2xl border border-border bg-card p-6 text-sm">
@@ -137,7 +146,7 @@ export default async function CostDetailPage({
         <div className="mx-auto max-w-7xl px-5 md:px-8">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 className="font-heading text-3xl">
-              {isSurgical ? "Surgical oncologists" : "Radiation oncologists"}
+              {consultantNoun.charAt(0).toUpperCase() + consultantNoun.slice(1)}
             </h2>
             <Link
               href={doctorsPath({ destination: "India", procedure: t.name })}
@@ -148,7 +157,7 @@ export default async function CostDetailPage({
           </div>
           {featuredFaculty.length === 0 ? (
             <p className="mt-6 text-muted-foreground">
-              Named {isSurgical ? "surgical oncologists" : "radiation oncologists"} for this
+              Named {consultantNoun} for this
               procedure are being matched. Request a dossier and we will advise.
             </p>
           ) : (

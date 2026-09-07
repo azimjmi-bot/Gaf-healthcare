@@ -35,7 +35,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="Expert specialists"
         title="Oncology consultants in India"
-        lede="Radiation and surgical oncologists sit under the hospital they practise at, then city, country, specialty, and procedure — the same keys later pSEO pages will use. Bios are original Velora copy."
+        lede="Radiation, surgical, and medical oncologists sit under the hospital they practise at, then city, country, specialty, and procedure — the same keys later pSEO pages will use. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
