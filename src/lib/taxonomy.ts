@@ -70,6 +70,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Cardiology"),
   taxon("Bariatric Surgery"),
   taxon("Cosmetic Surgery"),
+  taxon("ENT"),
 ];
 
 export function compareSpecialties(aSlug: string, bSlug: string) {
@@ -259,6 +260,27 @@ export const COSMETIC_PROCEDURES = [
   "Arm Lift",
 ] as const;
 
+export const ENT_PROCEDURES = [
+  "Cochlear Implantation",
+  "FESS (Functional Endoscopic Sinus Surgery)",
+  "Septoplasty",
+  "Rhinoplasty",
+  "Tympanoplasty",
+  "Tonsillectomy",
+  "Mastoidectomy",
+  "Adenoidectomy",
+  "Sleep Apnea Surgery",
+  "Stapedectomy / Stapedotomy",
+  "Balloon Sinuplasty",
+  "BAHA Implantation (Bone Anchored Hearing Aid)",
+  "Skull Base Surgery",
+  "Head & Neck Cancer Surgery",
+  "Thyroid Surgery",
+  "Vocal Cord Surgery",
+  "Microlaryngeal Surgery",
+  "Transoral Robotic Surgery (TORS)",
+] as const;
+
 export const ATHENAA_SURGICAL_PROCEDURES = [
   "Breast-Conserving Surgery (Lumpectomy)",
   "Mastectomy",
@@ -282,6 +304,7 @@ function procedureTaxon(name: string, specialtySlugs: string[]): ProcedureTaxon 
 const HEMATOLOGY_NAMES = new Set<string>(HEMATOLOGY_PROCEDURES);
 const PEDIATRIC_HEMATOLOGY_NAMES = new Set<string>(PEDIATRIC_HEMATOLOGY_PROCEDURES);
 const CARDIOLOGY_NAMES = new Set<string>(CARDIOLOGY_PROCEDURES);
+const ENT_NAMES = new Set<string>(ENT_PROCEDURES);
 
 function withPediatric(name: string, specs: string[]) {
   return PEDIATRIC_HEMATOLOGY_NAMES.has(name) ? [...specs, "pediatric-hematology"] : specs;
@@ -291,9 +314,13 @@ function withCardiology(name: string, specs: string[]) {
   return CARDIOLOGY_NAMES.has(name) ? [...specs, "cardiology"] : specs;
 }
 
+function withEnt(name: string, specs: string[]) {
+  return ENT_NAMES.has(name) ? [...specs, "ent"] : specs;
+}
+
 export const PROCEDURES: ProcedureTaxon[] = [
   ...RADIATION_PROCEDURES.map((name) => procedureTaxon(name, ["radiation-oncology"])),
-  ...SURGICAL_ONCOLOGY_PROCEDURES.map((name) => procedureTaxon(name, ["surgical-oncology"])),
+  ...SURGICAL_ONCOLOGY_PROCEDURES.map((name) => procedureTaxon(name, withEnt(name, ["surgical-oncology"]))),
   ...MEDICAL_ONCOLOGY_PROCEDURES.map((name) =>
     procedureTaxon(
       name,
@@ -312,7 +339,12 @@ export const PROCEDURES: ProcedureTaxon[] = [
     (name) => !CARDIAC_SURGERY_PROCEDURES.includes(name as (typeof CARDIAC_SURGERY_PROCEDURES)[number]),
   ).map((name) => procedureTaxon(name, ["cardiology"])),
   ...BARIATRIC_PROCEDURES.map((name) => procedureTaxon(name, ["bariatric-surgery"])),
-  ...COSMETIC_PROCEDURES.map((name) => procedureTaxon(name, ["cosmetic-surgery"])),
+  ...COSMETIC_PROCEDURES.map((name) => procedureTaxon(name, withEnt(name, ["cosmetic-surgery"]))),
+  ...ENT_PROCEDURES.filter(
+    (name) =>
+      !COSMETIC_PROCEDURES.includes(name as (typeof COSMETIC_PROCEDURES)[number]) &&
+      !SURGICAL_ONCOLOGY_PROCEDURES.includes(name as (typeof SURGICAL_ONCOLOGY_PROCEDURES)[number]),
+  ).map((name) => procedureTaxon(name, ["ent"])),
 ];
 
 export const PROCEDURE_CLUSTERS = {

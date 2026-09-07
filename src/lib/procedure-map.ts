@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -277,6 +277,33 @@ export function mapCosmeticProcedures(texts: string[], fallback = true) {
   return ["Rhinoplasty", "Liposuction", "Breast Augmentation"];
 }
 
+const ENT_RULES: { test: RegExp; name: (typeof ENT_PROCEDURES)[number] }[] = [
+  { test: /tors|transoral robotic/i, name: "Transoral Robotic Surgery (TORS)" },
+  { test: /cochlear/i, name: "Cochlear Implantation" },
+  { test: /baha|bone[\s-]*anchored/i, name: "BAHA Implantation (Bone Anchored Hearing Aid)" },
+  { test: /balloon sinus/i, name: "Balloon Sinuplasty" },
+  { test: /\bfess\b|endoscopic sinus/i, name: "FESS (Functional Endoscopic Sinus Surgery)" },
+  { test: /staped/i, name: "Stapedectomy / Stapedotomy" },
+  { test: /skull[\s-]*base/i, name: "Skull Base Surgery" },
+  { test: /head[\s&]*neck cancer|head and neck cancer/i, name: "Head & Neck Cancer Surgery" },
+  { test: /microlaryngeal|microlaryng/i, name: "Microlaryngeal Surgery" },
+  { test: /vocal cord|voice/i, name: "Vocal Cord Surgery" },
+  { test: /sleep apnea|osa|uppp/i, name: "Sleep Apnea Surgery" },
+  { test: /mastoid/i, name: "Mastoidectomy" },
+  { test: /tympanoplasty|myringoplasty/i, name: "Tympanoplasty" },
+  { test: /adenoid/i, name: "Adenoidectomy" },
+  { test: /tonsil/i, name: "Tonsillectomy" },
+  { test: /septoplasty|deviated septum/i, name: "Septoplasty" },
+  { test: /rhinoplasty/i, name: "Rhinoplasty" },
+  { test: /thyroid/i, name: "Thyroid Surgery" },
+];
+
+export function mapEntProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, ENT_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["FESS (Functional Endoscopic Sinus Surgery)", "Septoplasty", "Tonsillectomy"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -287,5 +314,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Cardiology") return mapCardiologyProcedures(texts);
   if (specialty === "Bariatric Surgery") return mapBariatricProcedures(texts);
   if (specialty === "Cosmetic Surgery") return mapCosmeticProcedures(texts);
+  if (specialty === "ENT") return mapEntProcedures(texts);
   return mapCatalogProcedures(texts);
 }

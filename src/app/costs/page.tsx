@@ -35,7 +35,7 @@ export default async function CostsPage({
     ? `${query.procedure} cost in ${place}`
     : query.specialty
       ? `${query.specialty} cost in ${place}`
-      : "Oncology, bariatric and cosmetic treatment cost in India";
+      : "Oncology, cosmetic and ENT treatment cost in India";
 
   return (
     <>
@@ -43,7 +43,7 @@ export default async function CostsPage({
       <PageIntro
         eyebrow="India planning ranges"
         title={heading}
-        lede="US cash-pay beside partner ranges for Radiation Oncology, Surgical Oncology, Medical Oncology, Hematology, Pediatric Hematology, Cardiac Surgery, Pediatric Cardiac Surgery, Cardiology, Bariatric Surgery and Cosmetic Surgery in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Filter by destination, city, specialty or procedure — the same keys a later landing page will use. Figures are planning ranges, not quotations."
+        lede="US cash-pay beside partner ranges for Radiation Oncology, Surgical Oncology, Medical Oncology, Hematology, Pediatric Hematology, Cardiac Surgery, Pediatric Cardiac Surgery, Cardiology, Bariatric Surgery, Cosmetic Surgery and ENT in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Filter by destination, city, specialty or procedure — the same keys a later landing page will use. Figures are planning ranges, not quotations."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

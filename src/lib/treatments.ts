@@ -1,3 +1,4 @@
+import { ENT_COST, ENT_SUMMARIES } from "@/lib/ent-costs";
 import { COSMETIC_COST, COSMETIC_SUMMARIES } from "@/lib/cosmetic-costs";
 import { BARIATRIC_COST, BARIATRIC_SUMMARIES } from "@/lib/bariatric-costs";
 import { CARDIOLOGY_COST, CARDIOLOGY_SUMMARIES } from "@/lib/cardiology-costs";
@@ -9,6 +10,7 @@ import { MEDICAL_COST, MEDICAL_SUMMARIES } from "@/lib/medical-costs";
 import { hospitals } from "@/lib/hospitals";
 import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
 import {
+  ENT_PROCEDURES,
   COSMETIC_PROCEDURES,
   BARIATRIC_PROCEDURES,
   CARDIOLOGY_PROCEDURES,
@@ -555,6 +557,49 @@ const cosmeticTreatments: Treatment[] = COSMETIC_PROCEDURES.map((name) => {
   };
 });
 
+const ENT_IMAGE =
+  "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80";
+
+const ENT_INCLUDES = [
+  "ENT consultation and records review",
+  "Named surgeon on camera before travel",
+  "Theatre, implant or endoscope, and overnight stay as quoted",
+  "Audiology or speech follow-up as indicated",
+  "Discharge summary to your home ENT",
+];
+
+const ENT_ONLY = ENT_PROCEDURES.filter((name) => {
+  const row = getProcedure(name);
+  return row?.specialtySlug === "ent" && row.specialtySlugs.length === 1;
+});
+
+const entTreatments: Treatment[] = ENT_ONLY.map((name) => {
+  const cost = ENT_COST[name];
+  if (!cost) throw new Error(`Missing ENT cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "ENT",
+    specialtySlug: "ent",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      ENT_SUMMARIES[name] ??
+      `ENT — ${name} at JCI partner campuses with a named surgeon before you travel.`,
+    image: ENT_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Hearing loss", "Sinus disease", "Head and neck pathology"],
+    procedures: [name],
+    includes: ENT_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named ENT surgeon confirms imaging, implant or reconstruction and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -566,6 +611,7 @@ export const treatments: Treatment[] = [
   ...cardiologyTreatments,
   ...bariatricTreatments,
   ...cosmeticTreatments,
+  ...entTreatments,
 ];
 
 export function getTreatment(slug: string) {

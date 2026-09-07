@@ -25,7 +25,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Oncologists, bariatric and cosmetic surgeons in India | Velora",
+    default: "Oncologists, cosmetic and ENT surgeons in India | Velora",
     template: `%s — ${site.name}`,
   },
   description: site.description,
@@ -46,6 +46,8 @@ export const metadata: Metadata = {
     "sleeve gastrectomy cost India",
     "cosmetic surgeon India",
     "rhinoplasty cost India",
+    "ENT surgeon India",
+    "cochlear implant cost India",
     "pediatric cardiac surgeon India",
     "TOF repair cost India",
     "ASD closure India",
@@ -59,13 +61,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: site.name,
-    title: "Oncologists, bariatric and cosmetic surgeons in India | Velora",
+    title: "Oncologists, cosmetic and ENT surgeons in India | Velora",
     description: site.description,
     url: SITE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oncologists and cosmetic surgeons in India | Velora",
+    title: "Oncologists and ENT surgeons in India | Velora",
     description: site.description,
   },
   alternates: { canonical: SITE_URL },

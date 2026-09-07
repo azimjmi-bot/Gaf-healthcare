@@ -20,7 +20,9 @@ function clip(text: string, max = 158) {
 
 export function doctorMetadata(d: Doctor): Metadata {
   const role =
-    d.specialtySlug === "cosmetic-surgery"
+    d.specialtySlug === "ent"
+      ? "ENT surgeon"
+      : d.specialtySlug === "cosmetic-surgery"
       ? "cosmetic surgeon"
       : d.specialtySlug === "bariatric-surgery"
       ? "bariatric surgeon"
@@ -61,7 +63,7 @@ export function doctorMetadata(d: Doctor): Metadata {
 }
 
 export function hospitalMetadata(h: Hospital): Metadata {
-  const title = `${h.name} — oncology, cardiac, bariatric and cosmetic hospital in ${h.city}, India`;
+  const title = `${h.name} — oncology, cosmetic and ENT hospital in ${h.city}, India`;
   const description = clip(
     `${h.name} in ${h.city}, India lists ${h.specialties.join(", ")}. ${h.accreditation}. ${h.bio}`,
   );
@@ -118,6 +120,7 @@ export function catalogMetadata(
 
   if (entity === "doctors") {
     if (proc) title = `${proc} specialists in ${place}`;
+    else if (spec === "ENT") title = `ENT surgeons in ${place}`;
     else if (spec === "Cosmetic Surgery") title = `Cosmetic surgeons in ${place}`;
     else if (spec === "Bariatric Surgery") title = `Bariatric surgeons in ${place}`;
     else if (spec === "Cardiology") title = `Cardiologists in ${place}`;
@@ -126,10 +129,12 @@ export function catalogMetadata(
     else if (spec === "Pediatric Hematology") title = `Pediatric hematologists in ${place}`;
     else if (spec === "Hematology") title = `Hematologists in ${place}`;
     else if (spec) title = `${spec} doctors in ${place}`;
-    else title = `Oncologists, bariatric and cosmetic surgeons in ${place}`;
+    else title = `Oncologists, cosmetic and ENT surgeons in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
-      spec === "Cosmetic Surgery"
+      spec === "ENT"
+        ? `/doctors/india/${citySlug}/ent/cochlear-implantation`
+        : spec === "Cosmetic Surgery"
         ? `/doctors/india/${citySlug}/cosmetic-surgery/rhinoplasty`
         : spec === "Bariatric Surgery"
         ? `/doctors/india/${citySlug}/bariatric-surgery/sleeve-gastrectomy`
@@ -145,19 +150,19 @@ export function catalogMetadata(
           ? `/doctors/india/${citySlug}/hematology/bone-marrow-transplantation`
           : `/doctors/india/${citySlug}/radiation-oncology/external-beam-radiotherapy-ebrt`;
     description = clip(
-      `Named ${spec ? spec.toLowerCase() : "oncology, cardiac, bariatric and cosmetic"} specialists in ${place} at JCI partner campuses. Filter by city, specialty and procedure for later pSEO routes such as ${example}.`,
+      `Named ${spec ? spec.toLowerCase() : "oncology, cosmetic and ENT"} specialists in ${place} at JCI partner campuses. Filter by city, specialty and procedure for later pSEO routes such as ${example}.`,
     );
   } else if (entity === "hospitals") {
-    title = spec ? `${spec} hospitals in ${place}` : `Oncology, bariatric and cosmetic hospitals in ${place}`;
+    title = spec ? `${spec} hospitals in ${place}` : `Oncology, cosmetic and ENT hospitals in ${place}`;
     if (proc) title = `Hospitals for ${proc} in ${place}`;
     description = clip(
-      `Partner campuses in ${place} for ${spec ?? "oncology, cardiac, bariatric and cosmetic surgery"}. ${proc ? `${proc} is listed where the house can quote it. ` : ""}Country, city, specialty and procedure tags are ready for pSEO.`,
+      `Partner campuses in ${place} for ${spec ?? "oncology, cosmetic and ENT surgery"}. ${proc ? `${proc} is listed where the house can quote it. ` : ""}Country, city, specialty and procedure tags are ready for pSEO.`,
     );
   } else {
-    title = spec ? `${spec} cost in ${place}` : `Oncology, bariatric and cosmetic treatment cost in ${place}`;
+    title = spec ? `${spec} cost in ${place}` : `Oncology, cosmetic and ENT treatment cost in ${place}`;
     if (proc) title = `${proc} cost in ${place}`;
     description = clip(
-      `US cash-pay beside India partner ranges for ${spec ?? "oncology, cardiac, bariatric and cosmetic surgery"} in ${place}. Planning figures, not quotes — a named consultant confirms the protocol after records review.`,
+      `US cash-pay beside India partner ranges for ${spec ?? "oncology, cosmetic and ENT surgery"} in ${place}. Planning figures, not quotes — a named consultant confirms the protocol after records review.`,
     );
   }
 
@@ -265,7 +270,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named paediatric haematologists sit under Pediatric Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named paediatric cardiac surgeons sit under Pediatric Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery — rhinoplasty, liposuction, breast work, facelift, hair transplant and body contour — so later pSEO can mount /doctors/india/{city}/cosmetic-surgery/{procedure}. Medical, radiation and surgical oncologists are listed separately.",
+    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT — cochlear implants, FESS, septoplasty, tympanoplasty and head-and-neck work. Rhinoplasty shares a slug with Cosmetic Surgery; TORS shares a slug with Surgical Oncology so later pSEO can use either specialty path. Medical, radiation and surgical oncologists are listed separately.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
@@ -276,7 +281,11 @@ export const DOCTOR_FAQS = [
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, haematologist, cardiac surgeon, cardiologist, bariatric surgeon or cosmetic surgeon confirms regimen, fractions, donor or the operation after reviewing records.",
+    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon or ENT surgeon confirms regimen, fractions, donor or the operation after reviewing records.",
+  },
+  {
+    q: "What does cochlear implantation typically cost in India versus the US?",
+    a: "Velora’s Cochlear Implantation sheet lists a partner planning range of about $15,000–$32,000 against typical US cash of $50,000–$100,000, depending on device, mapping and campus. FESS, septoplasty and BAHA sit on separate sheets. Rhinoplasty remains on the cosmetic sheet with a shared slug.",
   },
   {
     q: "What does rhinoplasty typically cost in India versus the US?",
