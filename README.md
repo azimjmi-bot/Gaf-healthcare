@@ -20,6 +20,10 @@ npm run dev
 
 Open [http://localhost:43127](http://localhost:43127).
 
+## Hostinger Node
+
+Use Node **20**. Build with `npm run build` (`next build --webpack`). Start with `npm start`. Config is `next.config.mjs` so the builder does not need SWC to load TypeScript config. If the log still shows `GLIBC_2.29 not found`, the Hostinger image cannot run this Next.js version — use Vercel instead.
+
 ## Stack
 
 Next.js (App Router), TypeScript, Tailwind CSS, shadcn/ui.
