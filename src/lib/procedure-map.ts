@@ -451,8 +451,18 @@ const PULMONOLOGY_RULES: { test: RegExp; name: (typeof PULMONOLOGY_PROCEDURES)[n
 
 export function mapPulmonologyProcedures(texts: string[], fallback = true) {
   const found = applyRules(texts, PULMONOLOGY_RULES);
+  const blob = texts.join(" ");
+  if (/interventional pulmonol/i.test(blob)) {
+    for (const name of [
+      "Bronchoscopy",
+      "EBUS (Endobronchial Ultrasound)",
+      "TBNA (Transbronchial Needle Aspiration)",
+    ] as const) {
+      if (!found.includes(name)) found.push(name);
+    }
+  }
   if (found.length > 0 || !fallback) return found;
-  return ["Bronchoscopy", "EBUS (Endobronchial Ultrasound)", "Lung Transplantation"];
+  return ["Bronchoscopy", "EBUS (Endobronchial Ultrasound)", "Medical Thoracoscopy"];
 }
 
 export function mapDoctorProcedures(specialty: string, texts: string[]) {

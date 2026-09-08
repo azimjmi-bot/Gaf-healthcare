@@ -19,7 +19,7 @@ export default function HomePage() {
           name: "Velora",
           url: SITE_URL,
           description:
-            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons and pulmonology pathways in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — plus pediatric hematology and pediatric cardiac surgery, with partner hospital costs in USD.",
+            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons and pulmonologists in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — plus pediatric hematology and pediatric cardiac surgery, with partner hospital costs in USD.",
           areaServed: ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"].map((city) => ({
             "@type": "City",
             name: city,
@@ -89,7 +89,7 @@ export default function HomePage() {
             href="/doctors"
             kicker="01"
             title="Doctors"
-            body="Radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons and pulmonology pathways you meet on camera before any deposit."
+            body="Radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons and pulmonologists you meet on camera before any deposit."
           />
           <IndexCard
             href="/hospitals"
@@ -140,6 +140,7 @@ export default function HomePage() {
               ...doctors.filter((d) => d.featured && d.specialtySlug === "surgical-gastroenterology").slice(0, 2),
               ...doctors.filter((d) => d.featured && d.specialtySlug === "urology").slice(0, 2),
               ...doctors.filter((d) => d.featured && d.specialtySlug === "spine-surgery").slice(0, 2),
+              ...doctors.filter((d) => d.featured && d.specialtySlug === "pulmonology").slice(0, 2),
             ].map((d) => (
               <Link
                 key={d.slug}

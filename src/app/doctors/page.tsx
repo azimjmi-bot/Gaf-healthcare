@@ -68,7 +68,7 @@ export default async function DoctorsPage({
         ? `Pulmonologists in ${place}`
       : query.specialty
         ? `${query.specialty} doctors in ${place}`
-        : "Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists and spine surgeons in India";
+        : "Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons and pulmonologists in India";
 
   return (
     <>
@@ -76,7 +76,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="India · five cities · sixteen specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists and spine surgeons in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including spine faculty such as Dr. Hitesh Garg, Dr. Vineesh Mathur and Dr. Puneet Girdhar — plus Pulmonology cost sheets (bronchoscopy, EBUS, thoracoscopy, lung transplant) tagged for later named faculty. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/pulmonology/{procedure}. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons and pulmonologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including pulmonology faculty such as Dr. Anand Jaiswal, Dr. Manoj Kumar Goel, Dr. Vivek Singh and Dr. Randeep Guleria. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/pulmonology/{procedure}. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
