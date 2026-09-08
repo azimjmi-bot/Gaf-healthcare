@@ -138,7 +138,7 @@ export function catalogMetadata(
     else if (spec === "Pediatric Hematology") title = `Pediatric hematologists in ${place}`;
     else if (spec === "Hematology") title = `Hematologists in ${place}`;
     else if (spec) title = `${spec} doctors in ${place}`;
-    else title = `Oncologists, ENT surgeons, gastroenterologists and surgical gastroenterologists in ${place}`;
+    else title = `Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists and urologists in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
       spec === "Urology"
@@ -285,7 +285,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Urology lists PCNL, TURP, kidney transplant, reconstructive and paediatric work — named urologists will sit there once a listing is matched. Radical prostatectomy, partial nephrectomy and radical cystectomy share slugs with Surgical Oncology so later pSEO can use either path.",
+    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology — PCNL, TURP, kidney transplant, reconstructive and paediatric lists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Radical prostatectomy, partial nephrectomy and radical cystectomy share slugs with Surgical Oncology so later pSEO can use either path.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",

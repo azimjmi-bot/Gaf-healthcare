@@ -64,7 +64,7 @@ export default async function DoctorsPage({
         ? `Urologists in ${place}`
       : query.specialty
         ? `${query.specialty} doctors in ${place}`
-        : "Oncologists, ENT surgeons, gastroenterologists and surgical gastroenterologists in India";
+        : "Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists and urologists in India";
 
   return (
     <>
@@ -72,7 +72,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="India · five cities · fourteen specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists and surgical gastroenterologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including HPB faculty such as Dr. Arvinder Singh Soin, Dr. Subhash Gupta and Dr. Vivek Vij — plus Urology cost sheets (PCNL, TURP, kidney transplant, reconstructive and paediatric lists) tagged for later named faculty. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/urology/{procedure}. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists and urologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including urology faculty such as Dr. Sanjay Gogoi, Dr. Gagan Gautam and Dr. Anant Kumar. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/urology/{procedure}. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
