@@ -67,6 +67,7 @@ export default async function CostDetailPage({
     t.specialtySlugs.includes("gastroenterology") ? "gastroenterologists" : "",
     t.specialtySlugs.includes("surgical-gastroenterology") ? "surgical gastroenterologists" : "",
     t.specialtySlugs.includes("urology") ? "urologists" : "",
+    t.specialtySlugs.includes("spine-surgery") ? "spine surgeons" : "",
   ]
     .filter(Boolean)
     .join(" and ");
@@ -144,7 +145,9 @@ export default async function CostDetailPage({
               <Link href={`/consult?treatment=${t.slug}`}>Request this pathway</Link>
             </Button>
             <p className="mt-4 text-xs text-muted-foreground">
-              Not a quote. {t.specialtySlug === "urology"
+              Not a quote. {t.specialtySlug === "spine-surgery"
+                ? "Levels, approach and implants are set after records review."
+                : t.specialtySlug === "urology"
                 ? "Stone, graft, laser or reconstruction are set after records review."
                 : t.specialtySlug === "surgical-gastroenterology"
                 ? "Graft, reconstruction or resection plane are set after records review."

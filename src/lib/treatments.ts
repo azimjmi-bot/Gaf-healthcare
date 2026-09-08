@@ -1,5 +1,6 @@
 import { SURGICAL_GASTROENTEROLOGY_COST, SURGICAL_GASTROENTEROLOGY_SUMMARIES } from "@/lib/surgical-gastroenterology-costs";
 import { UROLOGY_COST, UROLOGY_SUMMARIES } from "@/lib/urology-costs";
+import { SPINE_SURGERY_COST, SPINE_SURGERY_SUMMARIES } from "@/lib/spine-surgery-costs";
 import { GASTROENTEROLOGY_COST, GASTROENTEROLOGY_SUMMARIES } from "@/lib/gastroenterology-costs";
 import { ENT_COST, ENT_SUMMARIES } from "@/lib/ent-costs";
 import { COSMETIC_COST, COSMETIC_SUMMARIES } from "@/lib/cosmetic-costs";
@@ -15,6 +16,7 @@ import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
 import {
   SURGICAL_GASTROENTEROLOGY_PROCEDURES,
   UROLOGY_PROCEDURES,
+  SPINE_SURGERY_PROCEDURES,
   GASTROENTEROLOGY_PROCEDURES,
   ENT_PROCEDURES,
   COSMETIC_PROCEDURES,
@@ -730,6 +732,44 @@ const urologyTreatments: Treatment[] = UROLOGY_ONLY.map((name) => {
   };
 });
 
+const SPINE_IMAGE =
+  "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1600&q=80";
+
+const SPINE_INCLUDES = [
+  "Spine consultation and records review",
+  "Named surgeon on camera before travel",
+  "Theatre, implants and overnight stay as quoted",
+  "Neuromonitoring and post-op imaging as indicated",
+  "Discharge summary to your home physician",
+];
+
+const spineSurgeryTreatments: Treatment[] = SPINE_SURGERY_PROCEDURES.map((name) => {
+  const cost = SPINE_SURGERY_COST[name];
+  if (!cost) throw new Error(`Missing spine surgery cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Spine Surgery",
+    specialtySlug: "spine-surgery",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      SPINE_SURGERY_SUMMARIES[name] ??
+      `Spine Surgery — ${name} at JCI partner campuses with a named spine surgeon before you travel.`,
+    image: SPINE_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Disc herniation", "Stenosis and instability", "Deformity", "Spinal tumour"],
+    procedures: [name],
+    includes: SPINE_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named spine surgeon confirms MRI, levels and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -745,6 +785,7 @@ export const treatments: Treatment[] = [
   ...gastroenterologyTreatments,
   ...surgicalGastroenterologyTreatments,
   ...urologyTreatments,
+  ...spineSurgeryTreatments,
 ];
 
 export function getTreatment(slug: string) {

@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -406,6 +406,31 @@ export function mapUrologyProcedures(texts: string[], fallback = true) {
   return ["PCNL (Percutaneous Nephrolithotomy)", "TURP (Transurethral Resection of the Prostate)", "Kidney Transplantation"];
 }
 
+const SPINE_RULES: { test: RegExp; name: (typeof SPINE_SURGERY_PROCEDURES)[number] }[] = [
+  { test: /\bplif\b|posterior lumbar interbody/i, name: "PLIF (Posterior Lumbar Interbody Fusion)" },
+  { test: /\btlif\b|transforaminal lumbar/i, name: "TLIF (Transforaminal Lumbar Interbody Fusion)" },
+  { test: /\balif\b|anterior lumbar interbody/i, name: "ALIF (Anterior Lumbar Interbody Fusion)" },
+  { test: /\bacdf\b|anterior cervical discectomy/i, name: "ACDF (Anterior Cervical Discectomy and Fusion)" },
+  { test: /microdiscect|micro[\s-]*discect/i, name: "Microdiscectomy" },
+  { test: /discect|diskect/i, name: "Discectomy" },
+  { test: /laminect/i, name: "Laminectomy" },
+  { test: /kyphoplast/i, name: "Kyphoplasty" },
+  { test: /vertebroplast/i, name: "Vertebroplasty" },
+  { test: /disc replacement|arthroplasty|artificial disc|adr\b/i, name: "Disc Replacement" },
+  { test: /scoliosis/i, name: "Scoliosis Correction" },
+  { test: /deformity/i, name: "Spinal Deformity Correction" },
+  { test: /revision spine|revision fusion|failed back/i, name: "Revision Spine Surgery" },
+  { test: /spinal tumor|spine tumor|intradural|intramedullary|metastatic spine/i, name: "Spinal Tumor Surgery" },
+  { test: /decompress/i, name: "Spinal Decompression" },
+  { test: /spinal fusion|lumbar fusion|cervical fusion|instrumented fusion/i, name: "Spinal Fusion" },
+];
+
+export function mapSpineSurgeryProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, SPINE_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Spinal Fusion", "Microdiscectomy", "ACDF (Anterior Cervical Discectomy and Fusion)"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -420,5 +445,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Gastroenterology") return mapGastroenterologyProcedures(texts);
   if (specialty === "Surgical Gastroenterology") return mapSurgicalGastroenterologyProcedures(texts);
   if (specialty === "Urology") return mapUrologyProcedures(texts);
+  if (specialty === "Spine Surgery") return mapSpineSurgeryProcedures(texts);
   return mapCatalogProcedures(texts);
 }

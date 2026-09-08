@@ -20,7 +20,9 @@ function clip(text: string, max = 158) {
 
 export function doctorMetadata(d: Doctor): Metadata {
   const role =
-    d.specialtySlug === "urology"
+    d.specialtySlug === "spine-surgery"
+      ? "spine surgeon"
+      : d.specialtySlug === "urology"
       ? "urologist"
       : d.specialtySlug === "surgical-gastroenterology"
       ? "surgical gastroenterologist"
@@ -126,6 +128,7 @@ export function catalogMetadata(
 
   if (entity === "doctors") {
     if (proc) title = `${proc} specialists in ${place}`;
+    else if (spec === "Spine Surgery") title = `Spine surgeons in ${place}`;
     else if (spec === "Urology") title = `Urologists in ${place}`;
     else if (spec === "Surgical Gastroenterology") title = `Surgical gastroenterologists in ${place}`;
     else if (spec === "Gastroenterology") title = `Gastroenterologists in ${place}`;
@@ -141,7 +144,9 @@ export function catalogMetadata(
     else title = `Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists and urologists in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
-      spec === "Urology"
+      spec === "Spine Surgery"
+        ? `/doctors/india/${citySlug}/spine-surgery/spinal-fusion`
+        : spec === "Urology"
         ? `/doctors/india/${citySlug}/urology/kidney-transplantation`
         : spec === "Surgical Gastroenterology"
         ? `/doctors/india/${citySlug}/surgical-gastroenterology/liver-transplantation`
@@ -285,7 +290,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology — PCNL, TURP, kidney transplant, reconstructive and paediatric lists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Radical prostatectomy, partial nephrectomy and radical cystectomy share slugs with Surgical Oncology so later pSEO can use either path.",
+    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Spine Surgery lists fusion, ACDF, microdiscectomy, deformity and tumour work — named spine surgeons will sit there once a listing is matched. Later pSEO can mount /doctors/india/{city}/spine-surgery/{procedure} without remapping the catalog.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
@@ -296,7 +301,7 @@ export const DOCTOR_FAQS = [
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist or urologist confirms regimen, fractions, donor, endoscopy, graft, laser or the operation after reviewing records.",
+    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist, urologist or spine surgeon confirms regimen, fractions, donor, endoscopy, graft, laser, levels or the operation after reviewing records.",
   },
   {
     q: "What does liver transplantation typically cost in India versus the US?",
@@ -305,6 +310,10 @@ export const COST_FAQS = [
   {
     q: "What does kidney transplantation typically cost in India versus the US?",
     a: "Velora’s Kidney Transplantation sheet lists a partner planning range of about $13,000–$25,000 against typical US cash of $150,000–$400,000, depending on living versus deceased donor, ABO work and campus. Living-donor, deceased-donor and ABO-incompatible sit on separate Urology sheets. Radical prostatectomy, partial nephrectomy and radical cystectomy remain on the shared surgical-oncology slugs.",
+  },
+  {
+    q: "What does spinal fusion typically cost in India versus the US?",
+    a: "Velora’s Spinal Fusion sheet lists a partner planning range of about $8,000–$18,000 against typical US cash of $80,000–$150,000, depending on levels, approach and campus. PLIF, TLIF, ALIF and ACDF sit on separate Spine Surgery sheets. Disc replacement is a different slug when motion-preservation is still honest.",
   },
   {
     q: "What does ERCP typically cost in India versus the US?",

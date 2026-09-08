@@ -74,6 +74,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Gastroenterology"),
   taxon("Surgical Gastroenterology"),
   taxon("Urology"),
+  taxon("Spine Surgery"),
 ];
 
 export function compareSpecialties(aSlug: string, bSlug: string) {
@@ -368,6 +369,25 @@ export const UROLOGY_PROCEDURES = [
   "Varicocele Surgery",
 ] as const;
 
+export const SPINE_SURGERY_PROCEDURES = [
+  "Spinal Fusion",
+  "PLIF (Posterior Lumbar Interbody Fusion)",
+  "TLIF (Transforaminal Lumbar Interbody Fusion)",
+  "ALIF (Anterior Lumbar Interbody Fusion)",
+  "ACDF (Anterior Cervical Discectomy and Fusion)",
+  "Discectomy",
+  "Microdiscectomy",
+  "Laminectomy",
+  "Spinal Decompression",
+  "Disc Replacement",
+  "Scoliosis Correction",
+  "Spinal Deformity Correction",
+  "Vertebroplasty",
+  "Kyphoplasty",
+  "Spinal Tumor Surgery",
+  "Revision Spine Surgery",
+] as const;
+
 export const ATHENAA_SURGICAL_PROCEDURES = [
   "Breast-Conserving Surgery (Lumpectomy)",
   "Mastectomy",
@@ -453,6 +473,7 @@ export const PROCEDURES: ProcedureTaxon[] = [
   ...UROLOGY_PROCEDURES.filter((name) => !SURGICAL_ONCOLOGY_NAMES.has(name)).map((name) =>
     procedureTaxon(name, ["urology"]),
   ),
+  ...SPINE_SURGERY_PROCEDURES.map((name) => procedureTaxon(name, ["spine-surgery"])),
 ];
 
 export const PROCEDURE_CLUSTERS = {
