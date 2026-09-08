@@ -62,7 +62,7 @@ export default async function DoctorsPage({
         ? `Surgical gastroenterologists in ${place}`
       : query.specialty
         ? `${query.specialty} doctors in ${place}`
-        : "Oncologists, ENT surgeons and gastroenterologists in India";
+        : "Oncologists, ENT surgeons, gastroenterologists and surgical gastroenterologists in India";
 
   return (
     <>
@@ -70,7 +70,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="India · five cities · thirteen specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons and gastroenterologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad, plus Surgical Gastroenterology cost sheets (liver transplant, Whipple, colorectal resection) tagged for later named faculty. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/surgical-gastroenterology/{procedure}. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists and surgical gastroenterologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including HPB faculty such as Dr. Arvinder Singh Soin, Dr. Subhash Gupta and Dr. Vivek Vij. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/surgical-gastroenterology/{procedure}. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

@@ -135,7 +135,7 @@ export function catalogMetadata(
     else if (spec === "Pediatric Hematology") title = `Pediatric hematologists in ${place}`;
     else if (spec === "Hematology") title = `Hematologists in ${place}`;
     else if (spec) title = `${spec} doctors in ${place}`;
-    else title = `Oncologists, ENT surgeons and gastroenterologists in ${place}`;
+    else title = `Oncologists, ENT surgeons, gastroenterologists and surgical gastroenterologists in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
       spec === "Surgical Gastroenterology"
@@ -280,7 +280,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Surgical Gastroenterology lists liver transplant, Whipple, colorectal resection and related HPB work — named surgical gastroenterologists will sit there once a listing is matched. Liver resection, gastrectomy, esophagectomy and sleeve gastrectomy share slugs with Surgical Oncology or Bariatric Surgery so later pSEO can use either path.",
+    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology — liver transplant, Whipple, colorectal resection and related HPB lists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Liver resection, gastrectomy, esophagectomy and sleeve gastrectomy share slugs with Surgical Oncology or Bariatric Surgery so later pSEO can use either path.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",

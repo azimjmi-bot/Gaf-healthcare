@@ -47,7 +47,7 @@ export default async function HospitalsPage({
           "@type": "CollectionPage",
           name: "Oncology, ENT and GI hospitals in India",
           description:
-            "Partner campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad for oncology, ENT and gastroenterology.",
+            "Partner campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad for oncology, ENT, gastroenterology and surgical gastroenterology.",
         }}
       />
       <PageIntro
