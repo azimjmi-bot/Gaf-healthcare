@@ -141,7 +141,7 @@ export function catalogMetadata(
     else if (spec === "Pediatric Hematology") title = `Pediatric hematologists in ${place}`;
     else if (spec === "Hematology") title = `Hematologists in ${place}`;
     else if (spec) title = `${spec} doctors in ${place}`;
-    else title = `Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists and urologists in ${place}`;
+    else title = `Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists and spine surgeons in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
       spec === "Spine Surgery"
@@ -290,7 +290,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Spine Surgery lists fusion, ACDF, microdiscectomy, deformity and tumour work — named spine surgeons will sit there once a listing is matched. Later pSEO can mount /doctors/india/{city}/spine-surgery/{procedure} without remapping the catalog.",
+    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Named spine surgeons sit under Spine Surgery — fusion, ACDF, microdiscectomy, deformity and tumour lists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Later pSEO can mount /doctors/india/{city}/spine-surgery/{procedure} without remapping the catalog.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",

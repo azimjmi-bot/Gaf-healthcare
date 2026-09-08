@@ -66,7 +66,7 @@ export default async function DoctorsPage({
         ? `Spine surgeons in ${place}`
       : query.specialty
         ? `${query.specialty} doctors in ${place}`
-        : "Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists and urologists in India";
+        : "Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists and spine surgeons in India";
 
   return (
     <>
@@ -74,7 +74,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="India · five cities · fifteen specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists and urologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including urology faculty such as Dr. Sanjay Gogoi, Dr. Gagan Gautam and Dr. Anant Kumar — plus Spine Surgery cost sheets (fusion, ACDF, microdiscectomy, deformity correction) tagged for later named faculty. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/spine-surgery/{procedure}. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists and spine surgeons in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including spine faculty such as Dr. Hitesh Garg, Dr. Vineesh Mathur and Dr. Puneet Girdhar. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/spine-surgery/{procedure}. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
