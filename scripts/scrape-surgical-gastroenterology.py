@@ -245,7 +245,9 @@ def main() -> None:
                 print(f"profiles {i}/{len(rows)}", flush=True)
 
     doctors = []
-    for d in sorted(enriched, key=lambda x: x["name"]):
+    # Keep listing order (featured cards first) for directory and homepage slices.
+    listing_order = {row["slug"]: i for i, row in enumerate(rows)}
+    for d in sorted(enriched, key=lambda x: listing_order.get(x["slug"], 10_000)):
         mapped = map_procedures(
             d.get("proceduresExpertise", []) + d.get("specializations", []) + [d.get("designation", "")]
         )
