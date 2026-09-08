@@ -1,6 +1,7 @@
 import { SURGICAL_GASTROENTEROLOGY_COST, SURGICAL_GASTROENTEROLOGY_SUMMARIES } from "@/lib/surgical-gastroenterology-costs";
 import { UROLOGY_COST, UROLOGY_SUMMARIES } from "@/lib/urology-costs";
 import { SPINE_SURGERY_COST, SPINE_SURGERY_SUMMARIES } from "@/lib/spine-surgery-costs";
+import { PULMONOLOGY_COST, PULMONOLOGY_SUMMARIES } from "@/lib/pulmonology-costs";
 import { GASTROENTEROLOGY_COST, GASTROENTEROLOGY_SUMMARIES } from "@/lib/gastroenterology-costs";
 import { ENT_COST, ENT_SUMMARIES } from "@/lib/ent-costs";
 import { COSMETIC_COST, COSMETIC_SUMMARIES } from "@/lib/cosmetic-costs";
@@ -17,6 +18,7 @@ import {
   SURGICAL_GASTROENTEROLOGY_PROCEDURES,
   UROLOGY_PROCEDURES,
   SPINE_SURGERY_PROCEDURES,
+  PULMONOLOGY_PROCEDURES,
   GASTROENTEROLOGY_PROCEDURES,
   ENT_PROCEDURES,
   COSMETIC_PROCEDURES,
@@ -770,6 +772,44 @@ const spineSurgeryTreatments: Treatment[] = SPINE_SURGERY_PROCEDURES.map((name) 
   };
 });
 
+const PULMONOLOGY_IMAGE =
+  "https://images.unsplash.com/photo-1584982751601-97dcc096659c?auto=format&fit=crop&w=1600&q=80";
+
+const PULMONOLOGY_INCLUDES = [
+  "Pulmonology consultation and records review",
+  "Named consultant on camera before travel",
+  "Scope, anaesthesia and overnight stay as quoted",
+  "Histology, drain or ICU step-down as indicated",
+  "Discharge summary to your home physician",
+];
+
+const pulmonologyTreatments: Treatment[] = PULMONOLOGY_PROCEDURES.map((name) => {
+  const cost = PULMONOLOGY_COST[name];
+  if (!cost) throw new Error(`Missing pulmonology cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Pulmonology",
+    specialtySlug: "pulmonology",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      PULMONOLOGY_SUMMARIES[name] ??
+      `Pulmonology — ${name} at JCI partner campuses with a named pulmonologist before you travel.`,
+    image: PULMONOLOGY_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Airway disease", "Pleural disease", "ILD and staging", "End-stage lung failure"],
+    procedures: [name],
+    includes: PULMONOLOGY_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named pulmonologist confirms imaging, scope plan and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -786,6 +826,7 @@ export const treatments: Treatment[] = [
   ...surgicalGastroenterologyTreatments,
   ...urologyTreatments,
   ...spineSurgeryTreatments,
+  ...pulmonologyTreatments,
 ];
 
 export function getTreatment(slug: string) {

@@ -20,7 +20,9 @@ function clip(text: string, max = 158) {
 
 export function doctorMetadata(d: Doctor): Metadata {
   const role =
-    d.specialtySlug === "spine-surgery"
+    d.specialtySlug === "pulmonology"
+      ? "pulmonologist"
+      : d.specialtySlug === "spine-surgery"
       ? "spine surgeon"
       : d.specialtySlug === "urology"
       ? "urologist"
@@ -128,6 +130,7 @@ export function catalogMetadata(
 
   if (entity === "doctors") {
     if (proc) title = `${proc} specialists in ${place}`;
+    else if (spec === "Pulmonology") title = `Pulmonologists in ${place}`;
     else if (spec === "Spine Surgery") title = `Spine surgeons in ${place}`;
     else if (spec === "Urology") title = `Urologists in ${place}`;
     else if (spec === "Surgical Gastroenterology") title = `Surgical gastroenterologists in ${place}`;
@@ -144,7 +147,9 @@ export function catalogMetadata(
     else title = `Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists and spine surgeons in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
-      spec === "Spine Surgery"
+      spec === "Pulmonology"
+        ? `/doctors/india/${citySlug}/pulmonology/bronchoscopy`
+        : spec === "Spine Surgery"
         ? `/doctors/india/${citySlug}/spine-surgery/spinal-fusion`
         : spec === "Urology"
         ? `/doctors/india/${citySlug}/urology/kidney-transplantation`
@@ -290,7 +295,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Named spine surgeons sit under Spine Surgery — fusion, ACDF, microdiscectomy, deformity and tumour lists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Later pSEO can mount /doctors/india/{city}/spine-surgery/{procedure} without remapping the catalog.",
+    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Named spine surgeons sit under Spine Surgery. Pulmonology lists bronchoscopy, EBUS, thoracoscopy and lung transplant — named pulmonologists will sit there once a listing is matched. Later pSEO can mount /doctors/india/{city}/pulmonology/{procedure} without remapping the catalog.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
@@ -301,7 +306,7 @@ export const DOCTOR_FAQS = [
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist, urologist or spine surgeon confirms regimen, fractions, donor, endoscopy, graft, laser, levels or the operation after reviewing records.",
+    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist, urologist, spine surgeon or pulmonologist confirms regimen, fractions, donor, endoscopy, graft, laser, levels, airway or the operation after reviewing records.",
   },
   {
     q: "What does liver transplantation typically cost in India versus the US?",
@@ -314,6 +319,10 @@ export const COST_FAQS = [
   {
     q: "What does spinal fusion typically cost in India versus the US?",
     a: "Velora’s Spinal Fusion sheet lists a partner planning range of about $8,000–$18,000 against typical US cash of $80,000–$150,000, depending on levels, approach and campus. PLIF, TLIF, ALIF and ACDF sit on separate Spine Surgery sheets. Disc replacement is a different slug when motion-preservation is still honest.",
+  },
+  {
+    q: "What does EBUS typically cost in India versus the US?",
+    a: "Velora’s EBUS sheet lists a partner planning range of about $800–$2,500 against typical US cash of $4,000–$12,000, depending on nodal stations and campus. Bronchoscopy, TBNA, cryo-biopsy and lung transplantation sit on separate Pulmonology sheets. Gastroenterology’s ingested foreign-body sheet is a different slug from bronchoscopic removal.",
   },
   {
     q: "What does ERCP typically cost in India versus the US?",

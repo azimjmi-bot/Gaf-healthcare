@@ -64,6 +64,8 @@ export default async function DoctorsPage({
         ? `Urologists in ${place}`
       : query.specialty === "Spine Surgery"
         ? `Spine surgeons in ${place}`
+      : query.specialty === "Pulmonology"
+        ? `Pulmonologists in ${place}`
       : query.specialty
         ? `${query.specialty} doctors in ${place}`
         : "Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists and spine surgeons in India";
@@ -72,9 +74,9 @@ export default async function DoctorsPage({
     <>
       <JsonLd data={faqJsonLd(DOCTOR_FAQS)} />
       <PageIntro
-        eyebrow="India · five cities · fifteen specialties"
+        eyebrow="India · five cities · sixteen specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists and spine surgeons in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including spine faculty such as Dr. Hitesh Garg, Dr. Vineesh Mathur and Dr. Puneet Girdhar. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/spine-surgery/{procedure}. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists and spine surgeons in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including spine faculty such as Dr. Hitesh Garg, Dr. Vineesh Mathur and Dr. Puneet Girdhar — plus Pulmonology cost sheets (bronchoscopy, EBUS, thoracoscopy, lung transplant) tagged for later named faculty. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/pulmonology/{procedure}. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

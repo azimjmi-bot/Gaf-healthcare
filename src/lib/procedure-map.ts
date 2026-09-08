@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -431,6 +431,30 @@ export function mapSpineSurgeryProcedures(texts: string[], fallback = true) {
   return ["Spinal Fusion", "Microdiscectomy", "ACDF (Anterior Cervical Discectomy and Fusion)"];
 }
 
+const PULMONOLOGY_RULES: { test: RegExp; name: (typeof PULMONOLOGY_PROCEDURES)[number] }[] = [
+  { test: /\bebus\b|endobronchial ultrasound/i, name: "EBUS (Endobronchial Ultrasound)" },
+  { test: /rigid bronchoscop/i, name: "Rigid Bronchoscopy" },
+  { test: /airway stent|tracheal stent|bronchial stent/i, name: "Airway Stenting" },
+  { test: /thoracoscop/i, name: "Medical Thoracoscopy" },
+  { test: /pleuroscop/i, name: "Medical Pleuroscopy" },
+  { test: /cryo[\s-]*lung|cryobiops|cryo[\s-]*biops/i, name: "Cryo-Lung Biopsy" },
+  { test: /transbronchial lung|tblb\b/i, name: "Transbronchial Lung Biopsy" },
+  { test: /endobronchial biops/i, name: "Endobronchial Biopsy" },
+  { test: /\btbna\b|transbronchial needle/i, name: "TBNA (Transbronchial Needle Aspiration)" },
+  { test: /debulk|tumou?r debulk/i, name: "Bronchoscopic Tumor Debulking" },
+  { test: /foreign body.{0,24}bronch|inhaled foreign|airway foreign/i, name: "Foreign Body Removal by Bronchoscopy" },
+  { test: /pleural biops/i, name: "Pleural Biopsy" },
+  { test: /chest tube|intercostal drain|\bicd\b/i, name: "Chest Tube / Intercostal Drainage" },
+  { test: /lung transplant/i, name: "Lung Transplantation" },
+  { test: /bronchoscop/i, name: "Bronchoscopy" },
+];
+
+export function mapPulmonologyProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, PULMONOLOGY_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Bronchoscopy", "EBUS (Endobronchial Ultrasound)", "Lung Transplantation"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -446,5 +470,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Gastroenterology") return mapSurgicalGastroenterologyProcedures(texts);
   if (specialty === "Urology") return mapUrologyProcedures(texts);
   if (specialty === "Spine Surgery") return mapSpineSurgeryProcedures(texts);
+  if (specialty === "Pulmonology") return mapPulmonologyProcedures(texts);
   return mapCatalogProcedures(texts);
 }

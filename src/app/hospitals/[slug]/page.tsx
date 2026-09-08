@@ -49,6 +49,7 @@ export default async function HospitalDetailPage({
   const surgicalGastroFaculty = faculty.filter((d) => d.specialtySlug === "surgical-gastroenterology");
   const urologyFaculty = faculty.filter((d) => d.specialtySlug === "urology");
   const spineFaculty = faculty.filter((d) => d.specialtySlug === "spine-surgery");
+  const pulmonologyFaculty = faculty.filter((d) => d.specialtySlug === "pulmonology");
   const pathways = h.procedureSlugs
     .map((s) => getTreatment(s))
     .filter((t): t is Treatment => Boolean(t));
@@ -67,6 +68,7 @@ export default async function HospitalDetailPage({
   const surgicalGastroPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "surgical-gastroenterology"));
   const urologyPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "urology"));
   const spinePathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "spine-surgery"));
+  const pulmonologyPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "pulmonology"));
   const nearby = hospitalsInCity(h.citySlug).filter((x) => x.slug !== h.slug);
 
   return (
@@ -337,6 +339,16 @@ export default async function HospitalDetailPage({
                   </div>
                 </div>
               ) : null}
+              {pulmonologyFaculty.length > 0 ? (
+                <div className="mt-10">
+                  <h3 className="font-heading text-2xl">Pulmonologists</h3>
+                  <div className="mt-6 grid gap-6">
+                    {pulmonologyFaculty.map((d) => (
+                      <DoctorCard key={d.slug} doctor={d} />
+                    ))}
+                  </div>
+                </div>
+              ) : null}
             </>
           )}
         </div>
@@ -345,7 +357,7 @@ export default async function HospitalDetailPage({
       <section className="mx-auto max-w-7xl px-5 py-16 md:px-8">
         <h2 className="font-heading text-3xl">Procedures on this campus</h2>
         <p className="mt-2 text-sm text-muted-foreground">
-          Radiation, surgical, medical-oncology, haematology, cardiac, cardiology, bariatric, cosmetic, ENT, gastroenterology, surgical-gastroenterology, urology and spine pathways this house can quote — tagged for later pSEO.
+          Radiation, surgical, medical-oncology, haematology, cardiac, cardiology, bariatric, cosmetic, ENT, gastroenterology, surgical-gastroenterology, urology, spine and pulmonology pathways this house can quote — tagged for later pSEO.
         </p>
         {radiationPathways.length > 0 ? (
           <>
@@ -435,6 +447,12 @@ export default async function HospitalDetailPage({
           <>
             <h3 className="mt-10 font-heading text-2xl">Spine Surgery</h3>
             <ProcedureGrid hospital={h} rows={spinePathways} />
+          </>
+        ) : null}
+        {pulmonologyPathways.length > 0 ? (
+          <>
+            <h3 className="mt-10 font-heading text-2xl">Pulmonology</h3>
+            <ProcedureGrid hospital={h} rows={pulmonologyPathways} />
           </>
         ) : null}
       </section>

@@ -75,6 +75,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Surgical Gastroenterology"),
   taxon("Urology"),
   taxon("Spine Surgery"),
+  taxon("Pulmonology"),
 ];
 
 export function compareSpecialties(aSlug: string, bSlug: string) {
@@ -388,6 +389,24 @@ export const SPINE_SURGERY_PROCEDURES = [
   "Revision Spine Surgery",
 ] as const;
 
+export const PULMONOLOGY_PROCEDURES = [
+  "Bronchoscopy",
+  "EBUS (Endobronchial Ultrasound)",
+  "Rigid Bronchoscopy",
+  "Airway Stenting",
+  "Medical Thoracoscopy",
+  "Medical Pleuroscopy",
+  "Transbronchial Lung Biopsy",
+  "Cryo-Lung Biopsy",
+  "Endobronchial Biopsy",
+  "TBNA (Transbronchial Needle Aspiration)",
+  "Bronchoscopic Tumor Debulking",
+  "Foreign Body Removal by Bronchoscopy",
+  "Pleural Biopsy",
+  "Chest Tube / Intercostal Drainage",
+  "Lung Transplantation",
+] as const;
+
 export const ATHENAA_SURGICAL_PROCEDURES = [
   "Breast-Conserving Surgery (Lumpectomy)",
   "Mastectomy",
@@ -474,6 +493,7 @@ export const PROCEDURES: ProcedureTaxon[] = [
     procedureTaxon(name, ["urology"]),
   ),
   ...SPINE_SURGERY_PROCEDURES.map((name) => procedureTaxon(name, ["spine-surgery"])),
+  ...PULMONOLOGY_PROCEDURES.map((name) => procedureTaxon(name, ["pulmonology"])),
 ];
 
 export const PROCEDURE_CLUSTERS = {
