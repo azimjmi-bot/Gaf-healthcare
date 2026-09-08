@@ -8,6 +8,7 @@ import {
   ENT_PROCEDURES,
   GASTROENTEROLOGY_PROCEDURES,
   SURGICAL_GASTROENTEROLOGY_PROCEDURES,
+  UROLOGY_PROCEDURES,
   CARDIAC_SURGERY_PROCEDURES,
   PEDIATRIC_CARDIAC_SURGERY_PROCEDURES,
   HEMATOLOGY_PROCEDURES,
@@ -66,6 +67,7 @@ const cosmetic = getSpecialty("Cosmetic Surgery");
 const ent = getSpecialty("ENT");
 const gastroenterology = getSpecialty("Gastroenterology");
 const surgicalGastroenterology = getSpecialty("Surgical Gastroenterology");
+const urology = getSpecialty("Urology");
 if (
   !radiation ||
   !surgical ||
@@ -79,7 +81,8 @@ if (
   !cosmetic ||
   !ent ||
   !gastroenterology ||
-  !surgicalGastroenterology
+  !surgicalGastroenterology ||
+  !urology
 ) {
   throw new Error("Missing specialties");
 }
@@ -131,6 +134,7 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
     ...ENT_PROCEDURES,
     ...GASTROENTEROLOGY_PROCEDURES,
     ...SURGICAL_GASTROENTEROLOGY_PROCEDURES,
+    ...UROLOGY_PROCEDURES,
   ]);
   const seen = new Set<string>();
   const unique = procedures.filter((p) => {
@@ -147,7 +151,7 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
     country: country.name,
     countrySlug: country.slug,
     accreditation: seed.accreditation,
-    focus: `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name} · ${cardiacSurgery.name} · ${pediatricCardiacSurgery.name} · ${cardiology.name} · ${bariatric.name} · ${cosmetic.name} · ${ent.name} · ${gastroenterology.name} · ${surgicalGastroenterology.name}`,
+    focus: `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name} · ${cardiacSurgery.name} · ${pediatricCardiacSurgery.name} · ${cardiology.name} · ${bariatric.name} · ${cosmetic.name} · ${ent.name} · ${gastroenterology.name} · ${surgicalGastroenterology.name} · ${urology.name}`,
     specialty: radiation.name,
     specialtySlug: radiation.slug,
     specialties: [
@@ -164,6 +168,7 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
       ent.name,
       gastroenterology.name,
       surgicalGastroenterology.name,
+      urology.name,
     ],
     specialtySlugs: [
       radiation.slug,
@@ -179,6 +184,7 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
       ent.slug,
       gastroenterology.slug,
       surgicalGastroenterology.slug,
+      urology.slug,
     ],
     procedures: unique.map((p) => p.name),
     procedureSlugs: unique.map((p) => p.slug),

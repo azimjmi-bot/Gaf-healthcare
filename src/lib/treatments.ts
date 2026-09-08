@@ -1,4 +1,5 @@
 import { SURGICAL_GASTROENTEROLOGY_COST, SURGICAL_GASTROENTEROLOGY_SUMMARIES } from "@/lib/surgical-gastroenterology-costs";
+import { UROLOGY_COST, UROLOGY_SUMMARIES } from "@/lib/urology-costs";
 import { GASTROENTEROLOGY_COST, GASTROENTEROLOGY_SUMMARIES } from "@/lib/gastroenterology-costs";
 import { ENT_COST, ENT_SUMMARIES } from "@/lib/ent-costs";
 import { COSMETIC_COST, COSMETIC_SUMMARIES } from "@/lib/cosmetic-costs";
@@ -13,6 +14,7 @@ import { hospitals } from "@/lib/hospitals";
 import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
 import {
   SURGICAL_GASTROENTEROLOGY_PROCEDURES,
+  UROLOGY_PROCEDURES,
   GASTROENTEROLOGY_PROCEDURES,
   ENT_PROCEDURES,
   COSMETIC_PROCEDURES,
@@ -685,6 +687,49 @@ const surgicalGastroenterologyTreatments: Treatment[] = SURGICAL_GASTRO_ONLY.map
   };
 });
 
+const UROLOGY_IMAGE =
+  "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80";
+
+const UROLOGY_INCLUDES = [
+  "Urology consultation and records review",
+  "Named surgeon on camera before travel",
+  "Theatre, laser or transplant stay as quoted",
+  "Stent, histology, graft or device follow-up as indicated",
+  "Discharge summary to your home physician",
+];
+
+const UROLOGY_ONLY = UROLOGY_PROCEDURES.filter((name) => {
+  const row = getProcedure(name);
+  return row?.specialtySlug === "urology" && row.specialtySlugs.length === 1;
+});
+
+const urologyTreatments: Treatment[] = UROLOGY_ONLY.map((name) => {
+  const cost = UROLOGY_COST[name];
+  if (!cost) throw new Error(`Missing urology cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Urology",
+    specialtySlug: "urology",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      UROLOGY_SUMMARIES[name] ??
+      `Urology — ${name} at JCI partner campuses with a named urologist before you travel.`,
+    image: UROLOGY_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Stone disease", "Prostate and bladder", "Kidney failure", "Reconstructive and paediatric urology"],
+    procedures: [name],
+    includes: UROLOGY_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named urologist confirms imaging, graft or laser plan and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -699,6 +744,7 @@ export const treatments: Treatment[] = [
   ...entTreatments,
   ...gastroenterologyTreatments,
   ...surgicalGastroenterologyTreatments,
+  ...urologyTreatments,
 ];
 
 export function getTreatment(slug: string) {

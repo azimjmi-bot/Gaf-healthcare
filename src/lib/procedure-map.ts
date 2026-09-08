@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, RADIATION_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -371,6 +371,41 @@ export function mapSurgicalGastroenterologyProcedures(texts: string[], fallback 
   return ["Liver Transplantation", "Liver Resection (Hepatectomy)", "Whipple Procedure (Pancreaticoduodenectomy)"];
 }
 
+const UROLOGY_RULES: { test: RegExp; name: (typeof UROLOGY_PROCEDURES)[number] }[] = [
+  { test: /abo[\s-]*incompat/i, name: "ABO-Incompatible Kidney Transplantation" },
+  { test: /living donor kidney|live donor kidney/i, name: "Living Donor Kidney Transplantation" },
+  { test: /deceased donor kidney|cadaver.{0,12}kidney/i, name: "Deceased Donor Kidney Transplantation" },
+  { test: /kidney transplant|renal transplant/i, name: "Kidney Transplantation" },
+  { test: /\bpcnl\b|percutaneous nephrolith/i, name: "PCNL (Percutaneous Nephrolithotomy)" },
+  { test: /\brirs\b|retrograde intrarenal/i, name: "RIRS (Retrograde Intrarenal Surgery)" },
+  { test: /\beswl\b|shock[\s-]*wave lithotrips/i, name: "ESWL (Extracorporeal Shock Wave Lithotripsy)" },
+  { test: /ureteroscop/i, name: "Ureteroscopy" },
+  { test: /pyeloplast/i, name: "Pyeloplasty" },
+  { test: /radical nephr/i, name: "Radical Nephrectomy" },
+  { test: /partial nephr/i, name: "Partial Nephrectomy" },
+  { test: /\bholep\b|holmium.{0,20}enucleat/i, name: "HoLEP (Holmium Laser Enucleation)" },
+  { test: /green[\s-]*light|photoselective vapori/i, name: "GreenLight Laser Surgery" },
+  { test: /\bturp\b|transurethral resection of the prostate/i, name: "TURP (Transurethral Resection of the Prostate)" },
+  { test: /prostatect/i, name: "Radical Prostatectomy" },
+  { test: /\bturbt\b|transurethral resection of bladder/i, name: "TURBT (Transurethral Resection of Bladder Tumor)" },
+  { test: /cystect/i, name: "Radical Cystectomy" },
+  { test: /bladder reconstr|neobladder|augmentation cystoplast/i, name: "Bladder Reconstruction" },
+  { test: /urinary diversion|ileal conduit/i, name: "Urinary Diversion" },
+  { test: /urethroplast/i, name: "Urethroplasty" },
+  { test: /\bviu\b|internal urethrotom/i, name: "VIU (Visual Internal Urethrotomy)" },
+  { test: /urinary tract reconstr|ureteric reimplant|ureteral reconstr/i, name: "Urinary Tract Reconstruction" },
+  { test: /hypospadias/i, name: "Hypospadias Repair" },
+  { test: /pediatric urolog|paediatric urolog/i, name: "Pediatric Urological Surgery" },
+  { test: /penile implant|penile prosthes/i, name: "Penile Implant" },
+  { test: /varicocele/i, name: "Varicocele Surgery" },
+];
+
+export function mapUrologyProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, UROLOGY_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["PCNL (Percutaneous Nephrolithotomy)", "TURP (Transurethral Resection of the Prostate)", "Kidney Transplantation"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -384,5 +419,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "ENT") return mapEntProcedures(texts);
   if (specialty === "Gastroenterology") return mapGastroenterologyProcedures(texts);
   if (specialty === "Surgical Gastroenterology") return mapSurgicalGastroenterologyProcedures(texts);
+  if (specialty === "Urology") return mapUrologyProcedures(texts);
   return mapCatalogProcedures(texts);
 }

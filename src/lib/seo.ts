@@ -20,7 +20,9 @@ function clip(text: string, max = 158) {
 
 export function doctorMetadata(d: Doctor): Metadata {
   const role =
-    d.specialtySlug === "surgical-gastroenterology"
+    d.specialtySlug === "urology"
+      ? "urologist"
+      : d.specialtySlug === "surgical-gastroenterology"
       ? "surgical gastroenterologist"
       : d.specialtySlug === "gastroenterology"
       ? "gastroenterologist"
@@ -124,6 +126,7 @@ export function catalogMetadata(
 
   if (entity === "doctors") {
     if (proc) title = `${proc} specialists in ${place}`;
+    else if (spec === "Urology") title = `Urologists in ${place}`;
     else if (spec === "Surgical Gastroenterology") title = `Surgical gastroenterologists in ${place}`;
     else if (spec === "Gastroenterology") title = `Gastroenterologists in ${place}`;
     else if (spec === "ENT") title = `ENT surgeons in ${place}`;
@@ -138,7 +141,9 @@ export function catalogMetadata(
     else title = `Oncologists, ENT surgeons, gastroenterologists and surgical gastroenterologists in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
-      spec === "Surgical Gastroenterology"
+      spec === "Urology"
+        ? `/doctors/india/${citySlug}/urology/kidney-transplantation`
+        : spec === "Surgical Gastroenterology"
         ? `/doctors/india/${citySlug}/surgical-gastroenterology/liver-transplantation`
         : spec === "Gastroenterology"
         ? `/doctors/india/${citySlug}/gastroenterology/upper-gi-endoscopy-gastroscopy`
@@ -280,7 +285,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology — liver transplant, Whipple, colorectal resection and related HPB lists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Liver resection, gastrectomy, esophagectomy and sleeve gastrectomy share slugs with Surgical Oncology or Bariatric Surgery so later pSEO can use either path.",
+    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Urology lists PCNL, TURP, kidney transplant, reconstructive and paediatric work — named urologists will sit there once a listing is matched. Radical prostatectomy, partial nephrectomy and radical cystectomy share slugs with Surgical Oncology so later pSEO can use either path.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
@@ -291,11 +296,15 @@ export const DOCTOR_FAQS = [
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist or surgical gastroenterologist confirms regimen, fractions, donor, endoscopy, graft or the operation after reviewing records.",
+    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist or urologist confirms regimen, fractions, donor, endoscopy, graft, laser or the operation after reviewing records.",
   },
   {
     q: "What does liver transplantation typically cost in India versus the US?",
     a: "Velora’s Liver Transplantation sheet lists a partner planning range of about $28,000–$55,000 against typical US cash of $150,000–$400,000, depending on living versus deceased donor, ICU stay and campus. Living-donor, paediatric and retransplant sit on separate Surgical Gastroenterology sheets. Hepatectomy remains on the shared surgical-oncology slug.",
+  },
+  {
+    q: "What does kidney transplantation typically cost in India versus the US?",
+    a: "Velora’s Kidney Transplantation sheet lists a partner planning range of about $13,000–$25,000 against typical US cash of $150,000–$400,000, depending on living versus deceased donor, ABO work and campus. Living-donor, deceased-donor and ABO-incompatible sit on separate Urology sheets. Radical prostatectomy, partial nephrectomy and radical cystectomy remain on the shared surgical-oncology slugs.",
   },
   {
     q: "What does ERCP typically cost in India versus the US?",
