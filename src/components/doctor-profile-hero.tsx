@@ -132,7 +132,16 @@ export function DoctorProfileHero({
           <div className="dhero__visual-wrap">
             <div className="dhero__orb dhero__orb--a" />
             <div className="dhero__orb dhero__orb--b" />
-            <DoctorClinicianVisual name={doctor.name} slug={doctor.slug} className="dhero__art" />
+            {doctor.image ? (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img
+                src={doctor.image}
+                alt={doctor.imageAlt || doctor.name}
+                className="dhero__art"
+              />
+            ) : (
+              <DoctorClinicianVisual name={doctor.name} slug={doctor.slug} className="dhero__art" />
+            )}
           </div>
         </div>
 

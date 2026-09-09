@@ -2,11 +2,24 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { FileText, FolderTree, ImageIcon, LayoutDashboard, LogOut, Settings } from "lucide-react";
+import {
+  Building2,
+  FileText,
+  FolderTree,
+  ImageIcon,
+  LayoutDashboard,
+  LogOut,
+  Settings,
+  Stethoscope,
+  Wallet,
+} from "lucide-react";
 
 const NAV = [
   { href: "/cms", label: "Dashboard", icon: LayoutDashboard },
   { href: "/cms/articles", label: "Articles", icon: FileText },
+  { href: "/cms/doctors", label: "Doctors", icon: Stethoscope },
+  { href: "/cms/hospitals", label: "Hospitals", icon: Building2 },
+  { href: "/cms/costs", label: "Cost sheets", icon: Wallet },
   { href: "/cms/media", label: "Media", icon: ImageIcon },
   { href: "/cms/taxonomies", label: "Categories & tags", icon: FolderTree },
   { href: "/cms/settings", label: "Settings", icon: Settings },
@@ -30,7 +43,7 @@ export function CmsShell({ children }: { children: React.ReactNode }) {
     <div className="cms-shell">
       <aside className="cms-nav">
         <p className="cms-nav__brand">Velora desk</p>
-        <p className="cms-nav__sub">Article CMS</p>
+        <p className="cms-nav__sub">Content desk</p>
         <nav>
           {NAV.map((item) => {
             const Icon = item.icon;

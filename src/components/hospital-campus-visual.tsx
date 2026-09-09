@@ -41,6 +41,15 @@ export function HospitalCampusVisual({
   hospital: Hospital;
   className?: string;
 }) {
+  if (hospital.image) {
+    return (
+      <div className={className}>
+        {/* CMS campus photos may be local uploads. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={hospital.image} alt={hospital.imageAlt || hospital.name} />
+      </div>
+    );
+  }
   const tone = CITY_TONE[hospital.citySlug] ?? CITY_TONE["delhi-ncr"];
   const eye = isEyeCampus(hospital);
   return (

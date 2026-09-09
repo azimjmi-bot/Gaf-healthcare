@@ -42,7 +42,7 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
     <article className="dcard">
       <div className="dcard__top">
         <div className="dcard__avatar">
-          <img src="/doctors/avatar-placeholder.webp?v=2" alt="" />
+          <img src={doctor.image || "/doctors/avatar-placeholder.webp?v=2"} alt={doctor.image ? doctor.imageAlt || doctor.name : ""} />
         </div>
 
         <div className="dcard__id">

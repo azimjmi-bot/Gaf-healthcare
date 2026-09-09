@@ -1,3 +1,5 @@
+import { applyCatalogLayer, liveArray, loadCatalogCms } from "@/lib/cms/catalog-store";
+import type { ArticleBlock } from "@/lib/cms/types";
 import { SURGICAL_GASTROENTEROLOGY_COST, SURGICAL_GASTROENTEROLOGY_SUMMARIES } from "@/lib/surgical-gastroenterology-costs";
 import { UROLOGY_COST, UROLOGY_SUMMARIES } from "@/lib/urology-costs";
 import { SPINE_SURGERY_COST, SPINE_SURGERY_SUMMARIES } from "@/lib/spine-surgery-costs";
@@ -67,6 +69,8 @@ export type Treatment = {
   procedures: string[];
   includes: string[];
   notes: string;
+  blocks?: ArticleBlock[];
+  replaceGuide?: boolean;
 };
 
 export function treatmentMatchesSpecialty(t: Treatment, specialtySlug: string) {
@@ -1112,7 +1116,7 @@ const nephrologyTreatments: Treatment[] = NEPHROLOGY_PROCEDURES.filter((name) =>
   },
 );
 
-export const treatments: Treatment[] = [
+export const catalogTreatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
   ...medicalTreatments,
@@ -1137,6 +1141,16 @@ export const treatments: Treatment[] = [
   ...neurologyTreatments,
   ...nephrologyTreatments,
 ];
+
+export const treatments: Treatment[] = liveArray(catalogTreatments, (rows) => {
+  const cms = loadCatalogCms();
+  return applyCatalogLayer(
+    rows,
+    cms.treatmentsDeleted,
+    cms.treatmentOverrides,
+    cms.treatmentsAdded as Treatment[],
+  );
+});
 
 export function getTreatment(slug: string) {
   return treatments.find((t) => t.slug === slug);

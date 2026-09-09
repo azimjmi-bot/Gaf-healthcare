@@ -1,4 +1,5 @@
 import catalog from "@/data/ginger-catalog.json";
+import { applyCatalogLayer, liveArray, loadCatalogCms } from "@/lib/cms/catalog-store";
 import { mapCatalogProcedures } from "@/lib/procedure-map";
 import {
   ATHENAA_SURGICAL_PROCEDURES,
@@ -53,6 +54,8 @@ export type Hospital = {
   icu: string;
   bio: string;
   summary: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 function languagesFor(city: string) {
@@ -133,7 +136,7 @@ function isEyeCampus(slug: string) {
   return slug === "dr-agarwals-eye-hospital" || slug === "the-sight-avenue-eye-hospital";
 }
 
-export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
+export const catalogHospitals: Hospital[] = catalog.hospitals.map((seed) => {
   const cityName = seed.city || "Delhi NCR";
   const city = getCity(cityName);
   const country = getCountry("India");
@@ -263,7 +266,14 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
     icu: eyeCampus ? "Ophthalmic theatre" : "Oncology ICU",
     bio: seed.bio,
     summary: seed.bio,
+    image: "",
+    imageAlt: "",
   };
+});
+
+export const hospitals: Hospital[] = liveArray(catalogHospitals, (rows) => {
+  const cms = loadCatalogCms();
+  return applyCatalogLayer(rows, cms.hospitalsDeleted, cms.hospitalOverrides, cms.hospitalsAdded as Hospital[]);
 });
 
 export function getHospital(slug: string) {

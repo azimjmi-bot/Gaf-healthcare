@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AccreditationSeals } from "@/components/accreditation-seals";
+import { ArticleBlocks, CoverImage } from "@/components/article-body";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
@@ -15,6 +16,9 @@ import {
 } from "@/lib/data";
 import { breadcrumbJsonLd, treatmentMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
+
+export const dynamic = "force-dynamic";
+export const dynamicParams = true;
 
 export function generateStaticParams() {
   return treatments.map((t) => ({ slug: t.slug }));
@@ -101,7 +105,11 @@ export default async function CostDetailPage({
         ])}
       />
       <section className="relative h-[50vh] min-h-[22rem] bg-ink text-ivory">
-        <Image src={t.image} alt={t.name} fill className="object-cover" priority />
+        {t.image.startsWith("/") ? (
+          <CoverImage src={t.image} alt={t.name} className="absolute inset-0 size-full object-cover" />
+        ) : (
+          <Image src={t.image} alt={t.name} fill className="object-cover" priority />
+        )}
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-12 md:px-8">
           <p className="eyebrow text-gold">Treatment cost · {t.category}</p>
@@ -112,8 +120,17 @@ export default async function CostDetailPage({
       </section>
       <section className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-12 md:px-8">
         <div className="md:col-span-7">
-          {guide ? (
-            <guide.Guide />
+          {t.replaceGuide && t.blocks && t.blocks.length > 0 ? (
+            <ArticleBlocks blocks={t.blocks} />
+          ) : guide ? (
+            <>
+              <guide.Guide />
+              {t.blocks && t.blocks.length > 0 ? (
+                <div className="mt-12">
+                  <ArticleBlocks blocks={t.blocks} />
+                </div>
+              ) : null}
+            </>
           ) : (
             <>
               <p className="text-lg leading-relaxed text-muted-foreground">{t.summary}</p>
@@ -127,6 +144,11 @@ export default async function CostDetailPage({
                   </li>
                 ))}
               </ul>
+              {t.blocks && t.blocks.length > 0 ? (
+                <div className="mt-12">
+                  <ArticleBlocks blocks={t.blocks} />
+                </div>
+              ) : null}
             </>
           )}
         </div>

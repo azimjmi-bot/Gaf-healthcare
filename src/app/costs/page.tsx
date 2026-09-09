@@ -8,6 +8,8 @@ import { catalogMetadata, COST_FAQS, faqJsonLd } from "@/lib/seo";
 import { SPECIALTIES } from "@/lib/taxonomy";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({
   searchParams,
 }: {

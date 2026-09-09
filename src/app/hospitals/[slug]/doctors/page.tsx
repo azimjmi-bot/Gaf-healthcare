@@ -5,6 +5,9 @@ import { hospitalStaticParams, loadHospitalCampus, requireHospitalCampus } from 
 import { SITE_URL } from "@/lib/seo";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+export const dynamicParams = true;
+
 export function generateStaticParams() {
   return hospitalStaticParams();
 }

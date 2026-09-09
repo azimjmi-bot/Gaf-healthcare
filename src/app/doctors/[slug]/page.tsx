@@ -8,6 +8,9 @@ import { doctors, doctorsForHospital, getDoctor, getHospital, getTreatment } fro
 import { breadcrumbJsonLd, doctorMetadata, physicianJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+export const dynamicParams = true;
+
 export function generateStaticParams() {
   return doctors.map((d) => ({ slug: d.slug }));
 }

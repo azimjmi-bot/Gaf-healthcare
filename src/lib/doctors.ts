@@ -1,4 +1,5 @@
 import catalog from "@/data/ginger-catalog.json";
+import { applyCatalogLayer, liveArray, loadCatalogCms } from "@/lib/cms/catalog-store";
 import { getHospital } from "@/lib/hospitals";
 import { mapDoctorProcedures } from "@/lib/procedure-map";
 import { compareSpecialties, getCity, getCountry, getProcedure, getSpecialty } from "@/lib/taxonomy";
@@ -32,6 +33,8 @@ export type Doctor = {
   years: string;
   experience: string;
   bio: string;
+  image?: string;
+  imageAlt?: string;
 };
 
 function cleanTitle(raw: string, specialty: string) {
@@ -102,7 +105,7 @@ function languagesFor(city: string) {
 const radiationSpecialty = getSpecialty("Radiation Oncology");
 if (!radiationSpecialty) throw new Error("Missing Radiation Oncology specialty");
 
-export const doctors: Doctor[] = catalog.doctors.map((seed) => {
+export const catalogDoctors: Doctor[] = catalog.doctors.map((seed) => {
   const hospital = getHospital(seed.hospitalSlug);
   const cityName = seed.city || hospital?.city || "Delhi NCR";
   const city = getCity(cityName);
@@ -156,14 +159,21 @@ export const doctors: Doctor[] = catalog.doctors.map((seed) => {
     years: seed.experience,
     experience: seed.experience,
     bio: seed.bio,
+    image: "",
+    imageAlt: "",
   };
 });
 
 const slugs = new Set<string>();
-for (const doctor of doctors) {
+for (const doctor of catalogDoctors) {
   if (slugs.has(doctor.slug)) throw new Error(`Duplicate doctor slug ${doctor.slug}`);
   slugs.add(doctor.slug);
 }
+
+export const doctors: Doctor[] = liveArray(catalogDoctors, (rows) => {
+  const cms = loadCatalogCms();
+  return applyCatalogLayer(rows, cms.doctorsDeleted, cms.doctorOverrides, cms.doctorsAdded as Doctor[]);
+});
 
 export function getDoctor(slug: string) {
   return doctors.find((d) => d.slug === slug);

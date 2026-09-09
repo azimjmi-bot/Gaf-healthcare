@@ -1597,6 +1597,39 @@
   box-shadow: 0 22px 48px -28px rgba(20, 42, 51, 0.55);
 }
 
+img.dhero__art {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.dhero__art img,
+.hcard__art img,
+.hp-hero__art img,
+.hp-quote__art img,
+.hp-map__art img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cms-form select {
+  width: 100%;
+  min-height: 2.5rem;
+  border: 1px solid #dce8e8;
+  border-radius: 0.5rem;
+  padding: 0.4rem 0.6rem;
+  background: #fff;
+}
+
+.cms-page__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
 @media (min-width: 960px) {
   .dhero__art {
     min-height: 24rem;

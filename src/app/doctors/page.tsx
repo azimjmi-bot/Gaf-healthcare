@@ -9,6 +9,8 @@ import { paginateDoctors } from "@/lib/doctors";
 import { catalogMetadata, DOCTOR_FAQS, faqJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({
   searchParams,
 }: {

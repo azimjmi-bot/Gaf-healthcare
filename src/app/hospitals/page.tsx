@@ -9,6 +9,8 @@ import { paginateHospitals } from "@/lib/hospitals";
 import { catalogMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+
 export async function generateMetadata({
   searchParams,
 }: {
