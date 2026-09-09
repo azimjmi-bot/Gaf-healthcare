@@ -34,7 +34,6 @@ import {
 } from "lucide-react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { DoctorCard } from "@/components/doctor-card";
 import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
 import { HospitalGalleryButton } from "@/components/hospital-gallery";
 import { HospitalSectionNav } from "@/components/hospital-section-nav";
@@ -47,7 +46,6 @@ import {
   accreditationBadges,
   bedsLabel,
   cityTravel,
-  displayBio,
   doctorInitials,
   featuredDoctors,
   featureBar,
@@ -111,7 +109,6 @@ export function HospitalProfileView({
 }) {
   const groups = groupFaculty(faculty, pathways);
   const facultyGroups = groups.filter((g) => g.doctors.length > 0);
-  const procedureGroups = groups.filter((g) => g.treatments.length > 0);
   const specialtyCards = facultyGroups.length ? facultyGroups : groups;
   const popular = popularTreatments(groups);
   const topDoctors = featuredDoctors(faculty);
@@ -298,7 +295,7 @@ export function HospitalProfileView({
                 </span>
                 <h3>{g.name}</h3>
                 <p>{specialtyBlurb(g.slug)}</p>
-                <Link href={`#doctors-${g.slug}`}>
+                <Link href={`/hospitals/${hospital.slug}/doctors#doctors-${g.slug}`}>
                   {g.doctors.length
                     ? `View ${g.doctors.length} ${peopleNoun(g.slug, g.doctors.length)}`
                     : "Ask for a match"}
@@ -335,8 +332,11 @@ export function HospitalProfileView({
                 ))}
               </ul>
             )}
+            <Button asChild variant="outline" className="hp-see-all">
+              <Link href={`/hospitals/${hospital.slug}/procedures`}>See All Procedures</Link>
+            </Button>
           </div>
-          <div>
+          <div id="doctors" className="scroll-mt-28">
             <p className="eyebrow">Faculty</p>
             <h2>Top doctors</h2>
             {topDoctors.length === 0 ? (
@@ -368,63 +368,10 @@ export function HospitalProfileView({
                 ))}
               </ul>
             )}
+            <Button asChild variant="outline" className="hp-see-all">
+              <Link href={`/hospitals/${hospital.slug}/doctors`}>See All Doctors</Link>
+            </Button>
           </div>
-        </div>
-
-        <div className="hp-wrap mt-14">
-          <h3 className="hp-subhead">All procedures this house can quote</h3>
-          {procedureGroups.map((g) => (
-            <div key={g.slug} className="hp-proc-block">
-              <h4>{g.name}</h4>
-              <ul>
-                {g.treatments.map((t) => (
-                  <li key={t.slug}>
-                    <Link href={`/costs/${t.slug}`}>{t.name}</Link>
-                    <span>
-                      Partner range {t.partnerRange} · US cash {t.usRange}
-                    </span>
-                    <Link
-                      href={`/doctors?procedure=${encodeURIComponent(t.name)}&destination=${encodeURIComponent(hospital.country)}&city=${encodeURIComponent(hospital.city)}`}
-                    >
-                      Doctors
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section id="doctors" className="hp-section hp-section--tint scroll-mt-28">
-        <div className="hp-wrap">
-          <div className="hp-section__head">
-            <div>
-              <p className="eyebrow">Doctors</p>
-              <h2>Named consultants at {hospital.name}</h2>
-              <p className="hp-prose">
-                {faculty.length
-                  ? `${faculty.length} listed ${faculty.length === 1 ? "doctor" : "doctors"} you can open before you travel. Meet them on camera first.`
-                  : "Named consultants for this campus are being matched. Request a dossier and we will advise."}
-              </p>
-            </div>
-            <Link
-              href={`/doctors?destination=${encodeURIComponent(hospital.country)}&city=${encodeURIComponent(hospital.city)}`}
-              className="hp-textlink"
-            >
-              All doctors in {hospital.city}
-            </Link>
-          </div>
-          {facultyGroups.map((g) => (
-            <div key={g.slug} id={`doctors-${g.slug}`} className="hp-faculty scroll-mt-32">
-              <h3>{g.heading}</h3>
-              <div className="mt-6 grid gap-6">
-                {g.doctors.map((d) => (
-                  <DoctorCard key={d.slug} doctor={{ ...d, bio: displayBio(d.bio) }} />
-                ))}
-              </div>
-            </div>
-          ))}
         </div>
       </section>
 
