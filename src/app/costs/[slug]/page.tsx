@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { CostArticleSection, costArticleFor } from "@/components/cost-article-section";
-import { CostStickyCta } from "@/components/cost-article-view";
 import { getCostArticle } from "@/data/cost-articles";
 import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { articleFaculty, bestDoctorsHeading, interpolateCostArticle } from "@/lib/cost-article";
@@ -96,43 +95,7 @@ export default async function CostDetailPage({
           />
         ) : null}
 
-        <section className="border-b border-border bg-secondary/40">
-          <div className="mx-auto max-w-7xl px-5 pt-10 pb-10 md:px-8 md:pt-16 md:pb-14">
-            <nav aria-label="Breadcrumb" className="text-xs text-muted-foreground">
-              <ol className="flex flex-wrap items-center gap-2">
-                <li>
-                  <Link href="/costs" className="underline-offset-4 hover:underline">
-                    Treatment cost
-                  </Link>
-                </li>
-                <li aria-hidden>/</li>
-                <li>
-                  <Link
-                    href={`/costs?specialty=${encodeURIComponent(t.category)}`}
-                    className="underline-offset-4 hover:underline"
-                  >
-                    {t.category}
-                  </Link>
-                </li>
-                <li aria-hidden>/</li>
-                <li aria-current="page" className="text-foreground">
-                  {t.name}
-                </li>
-              </ol>
-            </nav>
-            <p className="eyebrow mt-6">India planning ranges · {t.category}</p>
-            <h1 className="mt-4 max-w-4xl font-heading text-[2.1rem] leading-[1.12] md:text-6xl">
-              {article.heading}
-            </h1>
-            <p className="prose-gaf mt-5 max-w-3xl">{t.summary}</p>
-          </div>
-        </section>
-
-        <CostArticleSection treatment={t} />
-
-        <CtaBand />
-        <div className="h-16 md:hidden" />
-        <CostStickyCta href={`/consult?treatment=${t.slug}`} label="Get a personalised cost estimate" />
+        <CostArticleSection treatment={t} heading={article.heading} lede={t.summary} />
       </>
     );
   }

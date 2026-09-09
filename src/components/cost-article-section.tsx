@@ -1,12 +1,15 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 import { ArticleBlocks } from "@/components/article-body";
 import { CostArticleView } from "@/components/cost-article-view";
-import { Button } from "@/components/ui/button";
+import { CostHero } from "@/components/cost-page/cost-hero";
+import { CostStickyBar } from "@/components/cost-page/cost-sticky-bar";
 import { getCostArticle } from "@/data/cost-articles";
 import { doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import {
   articleCampuses,
   articleFaculty,
+  carePlace,
   costCityRows,
   costDestinationRows,
   interpolateCostArticle,
@@ -31,13 +34,16 @@ export function costArticleData(treatment: Treatment, city?: string) {
   const article = costArticleFor(treatment);
   if (!article) return undefined;
   const campuses = articleCampuses(treatment, city);
+  const nationalCampuses = articleCampuses(treatment);
   const { all, featured } = articleFaculty(treatment.slug, city);
+  const nationalFaculty = city ? articleFaculty(treatment.slug).all : all;
   return {
     article,
     campuses,
     faculty: featured,
+    facultyAll: all,
     facultyTotal: all.length,
-    cityRows: costCityRows(article, treatment, all, campuses),
+    cityRows: costCityRows(article, treatment, nationalFaculty, nationalCampuses),
     ...costDestinationRows(article, treatment),
     related: article.relatedProcedures
       .map((name) => getTreatment(toSlug(name)))
@@ -54,99 +60,144 @@ export function costArticleData(treatment: Treatment, city?: string) {
 export function CostArticleSection({
   treatment,
   city,
+  heading,
+  lede,
+  filters,
 }: {
   treatment: Treatment;
   city?: string;
+  heading?: string;
+  lede?: string;
+  filters?: ReactNode;
 }) {
   const data = costArticleData(treatment, city);
   if (!data) return null;
-  const { article, cityRows, rows, anyModelled, faculty, facultyTotal, campuses, related } = data;
+  const { article, cityRows, rows, anyModelled, faculty, facultyAll, facultyTotal, campuses, related } =
+    data;
+  const place = carePlace(city);
+  const consultHref = `/consult?treatment=${treatment.slug}`;
+  const title = heading ?? article.heading;
 
   return (
-    <section className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-12 lg:gap-14">
-      <div className="lg:col-span-8">
-        <CostArticleView
-          article={article}
-          treatment={treatment}
-          city={city}
-          cityRows={cityRows}
-          destinations={rows}
-          anyModelled={anyModelled}
-          faculty={faculty}
-          facultyTotal={facultyTotal}
-          campuses={campuses}
-          related={related}
-        />
-        {treatment.blocks && treatment.blocks.length > 0 ? (
-          <div className="mt-14 max-w-3xl">
-            <ArticleBlocks blocks={treatment.blocks} />
-          </div>
-        ) : null}
-      </div>
-      <aside className="space-y-6 lg:col-span-4 lg:sticky lg:top-24 lg:self-start">
-        <div className="rounded-2xl border border-border bg-card p-6 md:p-7">
-          <p className="text-xs tracking-[0.18em] uppercase text-gold">Planning figures</p>
-          <dl className="mt-5 space-y-5">
-            <div>
-              <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">
-                India planning range
-              </dt>
-              <dd className="mt-1 font-heading text-2xl">{treatment.partnerRange}</dd>
+    <>
+      <CostHero
+        article={article}
+        treatment={treatment}
+        place={place}
+        heading={title}
+        lede={lede ?? treatment.summary}
+        consultHref={consultHref}
+        hospitalsHref="#hospitals"
+      >
+        {filters}
+      </CostHero>
+      <CostStickyBar
+        label={`${article.briefName || article.procedure} cost in ${place}`}
+        range={treatment.partnerRange}
+        href={consultHref}
+      />
+
+      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-12 lg:gap-14">
+        <div className="lg:col-span-8">
+          <CostArticleView
+            article={article}
+            treatment={treatment}
+            city={city}
+            cityRows={cityRows}
+            destinations={rows}
+            anyModelled={anyModelled}
+            faculty={faculty}
+            facultyAll={facultyAll}
+            facultyTotal={facultyTotal}
+            campuses={campuses}
+            related={related}
+          />
+          {treatment.blocks && treatment.blocks.length > 0 ? (
+            <div className="mt-14 max-w-3xl">
+              <ArticleBlocks blocks={treatment.blocks} />
             </div>
-            <div>
-              <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">
-                Typical US self-pay
-              </dt>
-              <dd className="mt-1 font-heading text-2xl">{treatment.usRange}</dd>
-            </div>
-            <div>
-              <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">
-                Hospital stay
-              </dt>
-              <dd className="mt-1">{treatment.stay}</dd>
-            </div>
-          </dl>
-          <Button asChild className="mt-7 h-11 w-full rounded-full">
-            <Link href={`/consult?treatment=${treatment.slug}`}>Request a treatment plan</Link>
-          </Button>
-          <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-            Indicative planning range, not a quotation. {treatment.notes}
-          </p>
+          ) : null}
         </div>
-        <div className="rounded-2xl border border-border bg-card p-6 text-sm">
-          <p className="text-xs tracking-[0.18em] uppercase text-gold">Find care</p>
-          <ul className="mt-3 space-y-2">
-            <li>
-              <Link
-                href={doctorsPath({ destination: "India", procedure: treatment.name })}
-                className="underline-offset-4 hover:underline"
-              >
-                {treatment.name} specialists in India
+        <aside className="hidden space-y-6 lg:col-span-4 lg:sticky lg:top-36 lg:block lg:self-start">
+          <div className="rounded-2xl border border-border bg-card p-6 text-sm">
+            <p className="text-xs tracking-[0.18em] uppercase text-gold">Why request a cost through GAF</p>
+            <p className="mt-3 leading-relaxed text-muted-foreground">
+              One request is reviewed by a doctor and returned as comparable hospital options with an
+              itemised planning estimate — not a brochure package from a single campus.
+            </p>
+            <ul className="mt-4 space-y-2 text-muted-foreground">
+              <li>Records reviewed before you travel</li>
+              <li>Hospital options, not a single quote</li>
+              <li>No obligation to book</li>
+            </ul>
+            <p className="mt-5">
+              <Link href={consultHref} className="cost-btn cost-btn--primary w-full">
+                Get My Exact Treatment Cost
               </Link>
-            </li>
-            <li>
-              <Link
-                href={hospitalsPath({ destination: "India", procedure: treatment.name })}
-                className="underline-offset-4 hover:underline"
-              >
-                Hospitals offering this procedure
-              </Link>
-            </li>
-            {cityRows.map((row) => (
-              <li key={row.citySlug}>
-                <Link href={row.costPath} className="underline-offset-4 hover:underline">
-                  {treatment.name} cost in {row.city}
+            </p>
+          </div>
+          <div className="rounded-2xl border border-border bg-card p-6 text-sm">
+            <p className="text-xs tracking-[0.18em] uppercase text-gold">On this page</p>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <a href="#cost-in-india" className="underline-offset-4 hover:underline">
+                  Cost in India
+                </a>
+              </li>
+              <li>
+                <a href="#whats-included" className="underline-offset-4 hover:underline">
+                  What is included
+                </a>
+              </li>
+              <li>
+                <a href="#cost-by-country" className="underline-offset-4 hover:underline">
+                  India vs other countries
+                </a>
+              </li>
+              <li>
+                <a href="#hospitals" className="underline-offset-4 hover:underline">
+                  Hospitals
+                </a>
+              </li>
+              <li>
+                <a href="#doctors" className="underline-offset-4 hover:underline">
+                  Doctors
+                </a>
+              </li>
+              <li>
+                <a href="#total-pathway" className="underline-offset-4 hover:underline">
+                  Trip budget
+                </a>
+              </li>
+            </ul>
+            <p className="mt-5 text-xs tracking-[0.18em] uppercase text-gold">Directories</p>
+            <ul className="mt-3 space-y-2">
+              <li>
+                <Link
+                  href={doctorsPath({ destination: "India", city, procedure: treatment.name })}
+                  className="underline-offset-4 hover:underline"
+                >
+                  All listed doctors
                 </Link>
               </li>
-            ))}
-            <li>
-              <Link href="/costs" className="underline-offset-4 hover:underline">
-                All treatment costs
-              </Link>
-            </li>
-          </ul>
-        </div>
-      </aside>
-    </section>
+              <li>
+                <Link
+                  href={hospitalsPath({ destination: "India", city, procedure: treatment.name })}
+                  className="underline-offset-4 hover:underline"
+                >
+                  All listed hospitals
+                </Link>
+              </li>
+              <li>
+                <Link href="/costs" className="underline-offset-4 hover:underline">
+                  All treatment costs
+                </Link>
+              </li>
+            </ul>
+          </div>
+        </aside>
+      </section>
+      <div className="h-20 md:hidden" />
+    </>
   );
 }

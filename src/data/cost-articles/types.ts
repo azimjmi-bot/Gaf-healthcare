@@ -40,6 +40,10 @@ export type CostArticle = {
   procedure: string;
   /** Lowercase form for mid-sentence use, e.g. "breast-conserving surgery". */
   shortName: string;
+  /** Short label for headings, e.g. "Lumpectomy". Falls back to procedure. */
+  briefName?: string;
+  /** Theatre time as already stated in the article, e.g. "approximately 1–2 hours". */
+  duration?: string;
   slug: string;
   lastUpdated: string;
   seoTitle: string;

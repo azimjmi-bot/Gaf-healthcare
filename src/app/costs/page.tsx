@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { CostArticleSection, costArticleFor } from "@/components/cost-article-section";
-import { CostStickyCta } from "@/components/cost-article-view";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { filterTreatments, parseCatalogQuery } from "@/lib/catalog";
@@ -68,22 +67,23 @@ export default async function CostsPage({
     return (
       <>
         <JsonLd data={faqJsonLd(sheetArticle.faqs)} />
-        <PageIntro eyebrow={`India planning ranges · ${sheet.category}`} title={heading} lede={sheet.summary}>
-          <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
-            <CatalogFilter
-              basePath="/costs"
-              entity="treatments"
-              resultCount={list.length}
-              resultLabel={list.length === 1 ? "pathway" : "pathways"}
-            />
-          </Suspense>
-        </PageIntro>
-        <CostArticleSection treatment={sheet} city={query.city} />
-        <CtaBand />
-        <div className="h-16 md:hidden" />
-        <CostStickyCta
-          href={`/consult?treatment=${sheet.slug}`}
-          label="Get a personalised cost estimate"
+        <CostArticleSection
+          treatment={sheet}
+          city={query.city}
+          heading={heading}
+          lede={sheet.summary}
+          filters={
+            <div className="pb-8">
+              <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
+                <CatalogFilter
+                  basePath="/costs"
+                  entity="treatments"
+                  resultCount={list.length}
+                  resultLabel={list.length === 1 ? "pathway" : "pathways"}
+                />
+              </Suspense>
+            </div>
+          }
         />
       </>
     );

@@ -3,6 +3,8 @@ import type { CostArticle } from "./types";
 export const breastConservingSurgery: CostArticle = {
   procedure: "Breast-Conserving Surgery (Lumpectomy)",
   shortName: "breast-conserving surgery",
+  briefName: "Lumpectomy",
+  duration: "approximately 1–2 hours",
   slug: "breast-conserving-surgery-lumpectomy",
   lastUpdated: "2026-09-09",
   seoTitle: "Breast-Conserving Surgery (Lumpectomy) Cost in India: Price by City, Hospitals & Doctors",

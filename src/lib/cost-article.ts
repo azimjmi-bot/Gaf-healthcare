@@ -4,8 +4,23 @@ import { doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { doctorsForTreatment, getHospital } from "@/lib/data";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
-import { CITIES } from "@/lib/taxonomy";
+import { CITIES, COUNTRIES } from "@/lib/taxonomy";
 import type { Treatment } from "@/lib/treatments";
+
+const DESTINATION_ALIASES: Record<string, string> = {
+  turkey: "Türkiye",
+  uae: "United Arab Emirates",
+};
+
+/** Link only destinations that already exist as catalog filters. */
+export function destinationFilterHref(country: string, procedure: string) {
+  const aliased = DESTINATION_ALIASES[country.toLowerCase()] ?? country;
+  const match = COUNTRIES.find(
+    (row) => row.name === aliased || row.name.toLowerCase() === country.toLowerCase(),
+  );
+  if (!match) return undefined;
+  return hospitalsPath({ destination: match.name, procedure });
+}
 
 const USD = /\$?([\d,]+)/g;
 
@@ -166,7 +181,7 @@ export function costDestinationRows(
         stay: row.stay || treatment.stay,
         context: row.context,
         isIndia: true,
-        href: hospitalsPath({ destination: "India", procedure: treatment.name }),
+        href: destinationFilterHref("India", treatment.name),
       };
     }
 
@@ -180,6 +195,7 @@ export function costDestinationRows(
         stay: row.stay,
         context: row.context,
         isIndia: false,
+        href: destinationFilterHref(row.country, treatment.name),
       };
     }
 
@@ -194,6 +210,7 @@ export function costDestinationRows(
         stay: row.stay,
         context: row.context,
         isIndia: false,
+        href: destinationFilterHref(row.country, treatment.name),
       };
     }
 
@@ -205,6 +222,7 @@ export function costDestinationRows(
       stay: row.stay,
       context: row.context,
       isIndia: false,
+      href: destinationFilterHref(row.country, treatment.name),
     };
   });
 
@@ -221,6 +239,18 @@ export function bestDoctorsHeading(procedure: string, city?: string) {
 
 export function bestHospitalsHeading(procedure: string, city?: string) {
   return `Best hospitals for ${procedure} in ${carePlace(city)}`;
+}
+
+export function doctorsPerformingHeading(brief: string, city?: string) {
+  return `Doctors Performing ${brief} in ${carePlace(city)}`;
+}
+
+export function compareHospitalsHeading(brief: string, city?: string) {
+  return `Compare Hospitals for ${brief} in ${carePlace(city)}`;
+}
+
+export function formatUsd(value: number) {
+  return money(value);
 }
 
 /** Doctors listed for this procedure, city-diverse first so the section is not one campus deep. */
