@@ -19,7 +19,7 @@ export default function HomePage() {
           name: "Velora",
           url: SITE_URL,
           description:
-            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists and gynecologists in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including Dr. Usha M Kumar, Dr. Suneeta Mittal, Dr. Alka Kriplani, Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal — with partner hospital costs in USD.",
+            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists, gynecologists and neurosurgeons in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including Dr. Usha M Kumar, Dr. Suneeta Mittal, Dr. Alka Kriplani, Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal — with partner hospital costs in USD, plus Neurosurgery brain-tumour and aneurysm planning sheets.",
           areaServed: ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"].map((city) => ({
             "@type": "City",
             name: city,
@@ -42,7 +42,7 @@ export default function HomePage() {
             Oncologists, ENT and GI in India. Hospitals. Costs.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/80 md:text-lg">
-            Named medical, radiation and surgical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, orthopaedic surgeons, ophthalmologists and gynecologists in Delhi NCR, Mumbai,
+            Named medical, radiation and surgical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, orthopaedic surgeons, ophthalmologists, gynecologists and neurosurgery pathways in Delhi NCR, Mumbai,
             Bengaluru, Chennai and Hyderabad. Meet them on camera. Read USD planning ranges before you fly.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -89,19 +89,19 @@ export default function HomePage() {
             href="/doctors"
             kicker="01"
             title="Doctors"
-            body="Radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists and gynecologists you meet on camera before any deposit."
+            body="Radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists, gynecologists and neurosurgeons you meet on camera before any deposit — Neurosurgery faculty is tagged for later matching."
           />
           <IndexCard
             href="/hospitals"
             kicker="02"
             title="Hospitals"
-            body="JCI campuses in Delhi NCR, Mumbai, Bengaluru, Chennai, and Hyderabad — oncology, ENT, gastroenterology, HPB, urology, spine, pulmonology, pediatric orthopaedic, orthopedics, ophthalmology and gynecology."
+            body="JCI campuses in Delhi NCR, Mumbai, Bengaluru, Chennai, and Hyderabad — oncology, ENT, gastroenterology, HPB, urology, spine, pulmonology, pediatric orthopaedic, orthopedics, ophthalmology, gynecology and neurosurgery."
           />
           <IndexCard
             href="/costs"
             kicker="03"
             title="Treatment Cost"
-            body="US cash-pay beside partner ranges for radiation, surgery, transplant, bariatric, cosmetic, ENT, GI, HPB, urology, spine, pulmonology, pediatric orthopaedic, orthopedics, ophthalmology and gynecology."
+            body="US cash-pay beside partner ranges for radiation, surgery, transplant, bariatric, cosmetic, ENT, GI, HPB, urology, spine, pulmonology, pediatric orthopaedic, orthopedics, ophthalmology, gynecology and neurosurgery."
           />
           <IndexCard
             href="/blogs"

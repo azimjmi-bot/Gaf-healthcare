@@ -77,6 +77,8 @@ export const metadata: Metadata = {
     "ophthalmologist India",
     "gynecologist India",
     "laparoscopic hysterectomy cost India",
+    "neurosurgeon India",
+    "brain tumor surgery cost India",
     "cataract surgery cost India",
     "LASIK cost India",
     "pediatric cardiac surgeon India",

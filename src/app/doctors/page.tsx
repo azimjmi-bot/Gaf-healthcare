@@ -74,17 +74,19 @@ export default async function DoctorsPage({
         ? `Ophthalmologists in ${place}`
       : query.specialty === "Gynecology"
         ? `Gynecologists in ${place}`
+      : query.specialty === "Neurosurgery"
+        ? `Neurosurgeons in ${place}`
       : query.specialty
         ? `${query.specialty} doctors in ${place}`
-        : "Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists and gynecologists in India";
+        : "Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists, gynecologists and neurosurgeons in India";
 
   return (
     <>
       <JsonLd data={faqJsonLd(DOCTOR_FAQS)} />
       <PageIntro
-        eyebrow="India · five cities · twenty specialties"
+        eyebrow="India · five cities · twenty-one specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists and gynecologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including Dr. Usha M Kumar, Dr. Suneeta Mittal and Dr. Alka Kriplani for hysterectomy, myomectomy and endometriosis, Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal for cataract and cornea, Dr. Ashok Rajgopal, Dr. I P S Oberoi and Dr. Yash Gulati for adult joints, and Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman for children’s limbs. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/gynecology/{procedure}. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists, gynecologists and neurosurgeons in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including Dr. Usha M Kumar, Dr. Suneeta Mittal and Dr. Alka Kriplani for hysterectomy, myomectomy and endometriosis, Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal for cataract and cornea, Dr. Ashok Rajgopal, Dr. I P S Oberoi and Dr. Yash Gulati for adult joints, and Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman for children’s limbs — plus Neurosurgery cost sheets (brain tumour, skull base, aneurysm, DBS, paediatric and radiosurgery) tagged for later named faculty. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/neurosurgery/{procedure}. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
@@ -98,7 +100,9 @@ export default async function DoctorsPage({
       <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
         {list.length === 0 ? (
           <p className="text-muted-foreground">
-            {query.specialty === "Gynecology"
+            {query.specialty === "Neurosurgery"
+              ? "Named neurosurgeons are being matched. Brain tumour, aneurysm, DBS, paediatric and radiosurgery cost sheets stay live — request a dossier and we will advise."
+              : query.specialty === "Gynecology"
               ? "Named gynecologists are being matched. Laparoscopic, robotic, vaginal and abdominal hysterectomy, myomectomy, endometriosis and pelvic-floor cost sheets stay live — request a dossier and we will advise."
               : "No doctors match these filters. Clear a field or request a dossier and we will advise."}
           </p>

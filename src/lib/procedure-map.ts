@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, GYNECOLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, OPHTHALMOLOGY_PROCEDURES, ORTHOPEDICS_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, GYNECOLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, NEUROSURGERY_PROCEDURES, OPHTHALMOLOGY_PROCEDURES, ORTHOPEDICS_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -600,6 +600,40 @@ export function mapGynecologyProcedures(texts: string[], fallback = true) {
   return ["Laparoscopic Hysterectomy", "Laparoscopic Myomectomy", "Endometriosis Surgery"];
 }
 
+const NEUROSURGERY_RULES: { test: RegExp; name: (typeof NEUROSURGERY_PROCEDURES)[number] }[] = [
+  { test: /glioma/i, name: "Glioma Surgery" },
+  { test: /meningioma/i, name: "Meningioma Surgery" },
+  { test: /pituitary/i, name: "Pituitary Tumor Surgery" },
+  { test: /spinal tumor|spine tumor|intradural|intramedullary/i, name: "Spinal Tumor Surgery" },
+  { test: /brain tumor|brain tumour|craniotom/i, name: "Brain Tumor Surgery" },
+  { test: /endoscopic skull|endonasal|transsphenoidal/i, name: "Endoscopic Skull Base Surgery" },
+  { test: /endoscopic brain|neuroendoscop/i, name: "Endoscopic Brain Surgery" },
+  { test: /skull base/i, name: "Skull Base Surgery" },
+  { test: /stereotactic.{0,12}biopsy|brain biopsy/i, name: "Stereotactic Brain Biopsy" },
+  { test: /aneurysm clip/i, name: "Aneurysm Clipping" },
+  { test: /aneurysm coil|coiling/i, name: "Aneurysm Coiling" },
+  { test: /avm embol/i, name: "AVM Embolization" },
+  { test: /\bavm\b|arteriovenous malformation/i, name: "AVM Surgery" },
+  { test: /thrombectomy|mechanical thromb/i, name: "Stroke Thrombectomy" },
+  { test: /cerebral bypass|sta[\s-]*mca|moyamoya/i, name: "Cerebral Bypass" },
+  { test: /\bdbs\b|deep brain stim/i, name: "Deep Brain Stimulation" },
+  { test: /epilepsy/i, name: "Epilepsy Surgery" },
+  { test: /gamma\s*knife/i, name: "Gamma Knife" },
+  { test: /cyber\s*knife/i, name: "CyberKnife" },
+  { test: /\bsrs\b|stereotactic radio/i, name: "Stereotactic Radiosurgery (SRS)" },
+  { test: /stereotactic/i, name: "Stereotactic Brain Surgery" },
+  { test: /\betv\b|third ventriculostom/i, name: "Endoscopic Third Ventriculostomy (ETV)" },
+  { test: /hydrocephalus|vp shunt|ventriculoperitoneal/i, name: "Hydrocephalus Surgery" },
+  { test: /chiari/i, name: "Chiari Surgery" },
+  { test: /craniosynostos/i, name: "Craniosynostosis Surgery" },
+];
+
+export function mapNeurosurgeryProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, NEUROSURGERY_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Brain Tumor Surgery", "Aneurysm Clipping", "Deep Brain Stimulation"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -620,5 +654,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Orthopedics") return mapOrthopedicsProcedures(texts);
   if (specialty === "Ophthalmology") return mapOphthalmologyProcedures(texts);
   if (specialty === "Gynecology") return mapGynecologyProcedures(texts);
+  if (specialty === "Neurosurgery") return mapNeurosurgeryProcedures(texts);
   return mapCatalogProcedures(texts);
 }

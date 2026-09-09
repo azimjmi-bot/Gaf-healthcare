@@ -6,6 +6,7 @@ import { PEDIATRIC_ORTHOPAEDIC_COST, PEDIATRIC_ORTHOPAEDIC_SUMMARIES } from "@/l
 import { ORTHOPEDICS_CLUSTER_BY_PROCEDURE, ORTHOPEDICS_COST, ORTHOPEDICS_SUMMARIES } from "@/lib/orthopedics-costs";
 import { OPHTHALMOLOGY_CLUSTER_BY_PROCEDURE, OPHTHALMOLOGY_COST, OPHTHALMOLOGY_SUMMARIES } from "@/lib/ophthalmology-costs";
 import { GYNECOLOGY_CLUSTER_BY_PROCEDURE, GYNECOLOGY_CONDITIONS, GYNECOLOGY_COST, GYNECOLOGY_SUMMARIES } from "@/lib/gynecology-costs";
+import { NEUROSURGERY_CLUSTER_BY_PROCEDURE, NEUROSURGERY_CONDITIONS, NEUROSURGERY_COST, NEUROSURGERY_SHARED, NEUROSURGERY_SUMMARIES } from "@/lib/neurosurgery-costs";
 import { GASTROENTEROLOGY_COST, GASTROENTEROLOGY_SUMMARIES } from "@/lib/gastroenterology-costs";
 import { ENT_COST, ENT_SUMMARIES } from "@/lib/ent-costs";
 import { COSMETIC_COST, COSMETIC_SUMMARIES } from "@/lib/cosmetic-costs";
@@ -27,6 +28,7 @@ import {
   ORTHOPEDICS_PROCEDURES,
   OPHTHALMOLOGY_PROCEDURES,
   GYNECOLOGY_PROCEDURES,
+  NEUROSURGERY_PROCEDURES,
   GASTROENTEROLOGY_PROCEDURES,
   ENT_PROCEDURES,
   COSMETIC_PROCEDURES,
@@ -588,7 +590,7 @@ const ENT_INCLUDES = [
 
 const ENT_ONLY = ENT_PROCEDURES.filter((name) => {
   const row = getProcedure(name);
-  return row?.specialtySlug === "ent" && row.specialtySlugs.length === 1;
+  return row?.specialtySlug === "ent";
 });
 
 const entTreatments: Treatment[] = ENT_ONLY.map((name) => {
@@ -977,6 +979,49 @@ const gynecologyTreatments: Treatment[] = GYNECOLOGY_PROCEDURES.filter(
   };
 });
 
+const NEUROSURGERY_IMAGE =
+  "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1600&q=80";
+
+const NEUROSURGERY_INCLUDES = [
+  "Neurosurgery consultation and records review",
+  "Named consultant on camera before travel",
+  "MRI, angiography or EEG as indicated",
+  "Approach, laterality and implant or device as quoted",
+  "Discharge summary to your home physician",
+];
+
+const neurosurgeryShared = new Set<string>(NEUROSURGERY_SHARED);
+
+const neurosurgeryTreatments: Treatment[] = NEUROSURGERY_PROCEDURES.filter(
+  (name) => !neurosurgeryShared.has(name),
+).map((name) => {
+  const cost = NEUROSURGERY_COST[name];
+  if (!cost) throw new Error(`Missing neurosurgery cost for ${name}`);
+  const slug = toSlug(name);
+  const cluster = NEUROSURGERY_CLUSTER_BY_PROCEDURE[name] ?? "Neurosurgery";
+  return {
+    slug,
+    name,
+    category: cluster,
+    specialtySlug: "neurosurgery",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      NEUROSURGERY_SUMMARIES[name] ??
+      `Neurosurgery — ${name} at JCI partner campuses with a named neurosurgeon before you travel.`,
+    image: NEUROSURGERY_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: NEUROSURGERY_CONDITIONS,
+    procedures: [name],
+    includes: NEUROSURGERY_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named neurosurgeon confirms imaging, approach and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -998,6 +1043,7 @@ export const treatments: Treatment[] = [
   ...orthopedicsTreatments,
   ...ophthalmologyTreatments,
   ...gynecologyTreatments,
+  ...neurosurgeryTreatments,
 ];
 
 export function getTreatment(slug: string) {
