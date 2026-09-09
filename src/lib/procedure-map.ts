@@ -673,13 +673,13 @@ const NEPHROLOGY_RULES: { test: RegExp; name: (typeof NEPHROLOGY_PROCEDURES)[num
   { test: /\bcrrt\b|continuous renal replacement/i, name: "Continuous Renal Replacement Therapy (CRRT)" },
   { test: /\bsled\b|sustained low[\s-]*efficiency/i, name: "Sustained Low-Efficiency Dialysis (SLED)" },
   { test: /peritoneal dialysis|\bcapd\b|\bapd\b/i, name: "Peritoneal Dialysis" },
-  { test: /hemodialysis|haemodialysis|\bhd\b/i, name: "Hemodialysis" },
+  { test: /hemodialysis|haemodialysis|maintenance dialysis|\bdialysis\b|ckd|esrd|end[\s-]*stage kidney|chronic kidney/i, name: "Hemodialysis" },
   { test: /capd catheter|pd catheter|peritoneal catheter/i, name: "CAPD Catheter Insertion" },
   { test: /permcath|perm[\s-]*cath|tunnelled.{0,12}catheter|cuffed catheter/i, name: "Central Venous Catheter (Permcath) Insertion" },
   { test: /dialysis catheter|vascath|non[\s-]*tunnel/i, name: "Dialysis Catheter Placement" },
   { test: /av fistula|arteriovenous fistula|cimino/i, name: "AV Fistula Creation" },
   { test: /dialysis access|fistuloplasty|access thromb/i, name: "Dialysis Access Management" },
-  { test: /renal biopsy|kidney biopsy|native.{0,8}biopsy/i, name: "Percutaneous Renal Biopsy" },
+  { test: /renal biopsy|kidney biopsy|native.{0,8}biopsy|glomerulo|nephrotic/i, name: "Percutaneous Renal Biopsy" },
   { test: /plasmapheresis|plasma exchange|\bplex\b/i, name: "Plasmapheresis" },
 ];
 
