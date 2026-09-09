@@ -19,7 +19,7 @@ export default function HomePage() {
           name: "Velora",
           url: SITE_URL,
           description:
-            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and paediatric orthopaedic surgeons in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — plus pediatric hematology, pediatric cardiac surgery and orthopedics pathways, with partner hospital costs in USD.",
+            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons and orthopaedic surgeons in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including Dr. Ashok Rajgopal, Dr. I P S Oberoi and Dr. Yash Gulati — with partner hospital costs in USD.",
           areaServed: ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"].map((city) => ({
             "@type": "City",
             name: city,
@@ -42,7 +42,7 @@ export default function HomePage() {
             Oncologists, ENT and GI in India. Hospitals. Costs.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/80 md:text-lg">
-            Named medical, radiation and surgical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists and spine surgeons in Delhi NCR, Mumbai,
+            Named medical, radiation and surgical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and orthopaedic surgeons in Delhi NCR, Mumbai,
             Bengaluru, Chennai and Hyderabad. Meet them on camera. Read USD planning ranges before you fly.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -89,7 +89,7 @@ export default function HomePage() {
             href="/doctors"
             kicker="01"
             title="Doctors"
-            body="Radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and paediatric orthopaedic surgeons you meet on camera before any deposit."
+            body="Radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons and orthopaedic surgeons you meet on camera before any deposit."
           />
           <IndexCard
             href="/hospitals"
@@ -142,6 +142,7 @@ export default function HomePage() {
               ...doctors.filter((d) => d.featured && d.specialtySlug === "spine-surgery").slice(0, 2),
               ...doctors.filter((d) => d.featured && d.specialtySlug === "pulmonology").slice(0, 2),
               ...doctors.filter((d) => d.featured && d.specialtySlug === "pediatric-orthopaedic").slice(0, 2),
+              ...doctors.filter((d) => d.featured && d.specialtySlug === "orthopedics").slice(0, 2),
             ].map((d) => (
               <Link
                 key={d.slug}

@@ -53,7 +53,7 @@ export default async function HospitalsPage({
       <PageIntro
         eyebrow="India campuses"
         title={heading}
-        lede="JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house is filed under country, city, specialty and procedure — Radiation, Surgical and Medical Oncology, Hematology, Pediatric Hematology, Cardiac Surgery, Pediatric Cardiac Surgery, Cardiology, Bariatric Surgery, Cosmetic Surgery, ENT, Gastroenterology, Surgical Gastroenterology, Urology, Spine Surgery, Pulmonology, Pediatric Orthopaedic and Orthopedics — with named consultants where Velora has matched them."
+        lede="JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house is filed under country, city, specialty and procedure — Radiation, Surgical and Medical Oncology, Hematology, Pediatric Hematology, Cardiac Surgery, Pediatric Cardiac Surgery, Cardiology, Bariatric Surgery, Cosmetic Surgery, ENT, Gastroenterology, Surgical Gastroenterology, Urology, Spine Surgery, Pulmonology, Pediatric Orthopaedic and Orthopedics — with named consultants on those lists, including adult orthopaedic surgeons for knee, hip, ACL and trauma."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
