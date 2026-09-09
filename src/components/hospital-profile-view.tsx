@@ -9,6 +9,7 @@ import {
   Building2,
   CalendarCheck,
   Car,
+  ChevronRight,
   Droplets,
   Ear,
   Eye,
@@ -48,6 +49,7 @@ import {
   cityTravel,
   doctorInitials,
   featuredDoctors,
+  featuredSpecialties,
   featureBar,
   fromUsd,
   groupFaculty,
@@ -109,9 +111,11 @@ export function HospitalProfileView({
 }) {
   const groups = groupFaculty(faculty, pathways);
   const facultyGroups = groups.filter((g) => g.doctors.length > 0);
-  const specialtyCards = facultyGroups.length ? facultyGroups : groups;
-  const popular = popularTreatments(groups);
-  const topDoctors = featuredDoctors(faculty);
+  const specialtyCards = featuredSpecialties(facultyGroups.length ? facultyGroups : groups, 6);
+  const popular = popularTreatments(groups, 5);
+  const topDoctors = featuredDoctors(faculty, 4);
+  const moreProcedures = Math.max(0, pathways.length - popular.length);
+  const moreDoctors = Math.max(0, faculty.length - topDoctors.length);
   const travel = cityTravel(hospital);
   const badges = accreditationBadges(hospital.accreditation);
   const beds = bedsLabel(hospital.beds);
@@ -285,7 +289,7 @@ export function HospitalProfileView({
           <p className="hp-prose">
             {eye
               ? "This house is an eye hospital. Other specialties stay on general campuses — we will not dump a kidney or spine list onto an ophthalmic floor."
-              : "These are the departments this campus can actually quote. Open a specialty to meet the named consultants who already work here."}
+              : "A few of the departments this campus actually staffs. The rest live on the full doctor and procedure lists."}
           </p>
           <ul className="hp-spec-row">
             {specialtyCards.map((g) => (
@@ -297,21 +301,37 @@ export function HospitalProfileView({
                 <p>{specialtyBlurb(g.slug)}</p>
                 <Link href={`/hospitals/${hospital.slug}/doctors#doctors-${g.slug}`}>
                   {g.doctors.length
-                    ? `View ${g.doctors.length} ${peopleNoun(g.slug, g.doctors.length)}`
+                    ? `View ${peopleNoun(g.slug, g.doctors.length)}`
                     : "Ask for a match"}
                 </Link>
               </li>
             ))}
           </ul>
+          {facultyGroups.length > specialtyCards.length ? (
+            <p className="mt-6">
+              <Link href={`/hospitals/${hospital.slug}/doctors`} className="hp-viewall">
+                View all departments
+                <ChevronRight className="size-4" />
+              </Link>
+            </p>
+          ) : null}
         </div>
       </section>
 
       <section id="procedures" className="hp-section scroll-mt-28">
         <div className="hp-wrap hp-split">
           <div>
-            <p className="eyebrow">Planning ranges</p>
-            <h2>Popular procedures</h2>
-            <p className="hp-note">USD figures are planning ranges, not quotes.</p>
+            <div className="hp-box-head">
+              <div>
+                <p className="eyebrow">Planning ranges</p>
+                <h2>Popular procedures</h2>
+              </div>
+              <Link href={`/hospitals/${hospital.slug}/procedures`} className="hp-viewall">
+                View All Procedures
+                <ChevronRight className="size-4" />
+              </Link>
+            </div>
+            <p className="hp-note">Five named lists on this campus. The rest open under View All Procedures. USD figures are planning ranges, not quotes.</p>
             {popular.length === 0 ? (
               <p className="mt-6 text-muted-foreground">
                 Procedure sheets for this campus are being filed. A coordinator can still advise from records.
@@ -328,17 +348,31 @@ export function HospitalProfileView({
                       <p>{row.specialty}</p>
                     </div>
                     <strong>{fromUsd(row.treatment.partnerRange)}</strong>
+                    <Link href={`/costs/${row.treatment.slug}`} className="hp-row-arrow" aria-label={`${row.treatment.name} cost`}>
+                      <ChevronRight className="size-4" />
+                    </Link>
                   </li>
                 ))}
               </ul>
             )}
-            <Button asChild variant="outline" className="hp-see-all">
-              <Link href={`/hospitals/${hospital.slug}/procedures`}>See All Procedures</Link>
-            </Button>
+            {moreProcedures > 0 ? (
+              <p className="hp-more">
+                {moreProcedures} further {moreProcedures === 1 ? "procedure" : "procedures"} sit under{" "}
+                <Link href={`/hospitals/${hospital.slug}/procedures`}>View All Procedures</Link>.
+              </p>
+            ) : null}
           </div>
           <div id="doctors" className="scroll-mt-28">
-            <p className="eyebrow">Faculty</p>
-            <h2>Top doctors</h2>
+            <div className="hp-box-head">
+              <div>
+                <p className="eyebrow">Faculty</p>
+                <h2>Top doctors</h2>
+              </div>
+              <Link href={`/hospitals/${hospital.slug}/doctors`} className="hp-viewall">
+                View All Doctors
+                <ChevronRight className="size-4" />
+              </Link>
+            </div>
             {topDoctors.length === 0 ? (
               <p className="mt-6 text-muted-foreground">
                 Named consultants for this campus are being matched. Request a plan and we will advise.
@@ -352,25 +386,26 @@ export function HospitalProfileView({
                     </span>
                     <div>
                       <Link href={`/doctors/${d.slug}`}>{d.name}</Link>
-                      <p>
-                        {d.title}
-                        {d.featured ? " · Featured" : ""}
-                      </p>
+                      <p>{d.title}</p>
                       <p className="hp-doc-list__meta">
                         {d.specialty}
-                        {yearsLabel(d) ? ` · ${yearsLabel(d)}` : ""}
+                        {yearsLabel(d) ? ` · ${yearsLabel(d)} experience` : ""}
                       </p>
                     </div>
-                    <Link href={`/doctors/${d.slug}`} className="hp-chip">
+                    <Link href={`/doctors/${d.slug}`} className="hp-viewall hp-viewall--tight">
                       View profile
+                      <ChevronRight className="size-4" />
                     </Link>
                   </li>
                 ))}
               </ul>
             )}
-            <Button asChild variant="outline" className="hp-see-all">
-              <Link href={`/hospitals/${hospital.slug}/doctors`}>See All Doctors</Link>
-            </Button>
+            {moreDoctors > 0 ? (
+              <p className="hp-more">
+                {moreDoctors} further {moreDoctors === 1 ? "doctor" : "doctors"} sit under{" "}
+                <Link href={`/hospitals/${hospital.slug}/doctors`}>View All Doctors</Link>.
+              </p>
+            ) : null}
           </div>
         </div>
       </section>

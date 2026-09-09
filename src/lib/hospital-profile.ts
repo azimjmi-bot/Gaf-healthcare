@@ -238,19 +238,32 @@ export function featuredDoctors(faculty: Doctor[], limit = 4) {
     .slice(0, limit);
 }
 
-export function popularTreatments(groups: FacultyGroup[], limit = 5) {
+export function featuredSpecialties(groups: FacultyGroup[], limit = 6) {
   const withDoctors = groups.filter((g) => g.doctors.length > 0);
-  const pool = (withDoctors.length ? withDoctors : groups).flatMap((g) =>
-    g.treatments.slice(0, 2).map((t) => ({ treatment: t, specialty: g.name, specialtySlug: g.slug })),
+  const pool = withDoctors.length ? withDoctors : groups;
+  return [...pool]
+    .sort((a, b) => b.doctors.length - a.doctors.length || compareSpecialties(a.slug, b.slug))
+    .slice(0, limit);
+}
+
+/** A handful of named pathways — one from each busy department — not the whole house list. */
+export function popularTreatments(groups: FacultyGroup[], limit = 5) {
+  const withDoctors = groups.filter((g) => g.doctors.length > 0 && g.treatments.length > 0);
+  const ranked = [...(withDoctors.length ? withDoctors : groups.filter((g) => g.treatments.length > 0))].sort(
+    (a, b) => b.doctors.length - a.doctors.length || compareSpecialties(a.slug, b.slug),
   );
   const seen = new Set<string>();
   const unique: { treatment: Treatment; specialty: string; specialtySlug: string }[] = [];
-  for (const row of pool) {
-    if (seen.has(row.treatment.slug)) continue;
-    seen.add(row.treatment.slug);
-    unique.push(row);
-    if (unique.length >= limit) break;
-  }
+
+  const pushFrom = (g: FacultyGroup, index: number) => {
+    const t = g.treatments[index];
+    if (!t || seen.has(t.slug) || unique.length >= limit) return;
+    seen.add(t.slug);
+    unique.push({ treatment: t, specialty: g.name, specialtySlug: g.slug });
+  };
+
+  for (const g of ranked) pushFrom(g, 0);
+  for (const g of ranked) pushFrom(g, 1);
   return unique;
 }
 
