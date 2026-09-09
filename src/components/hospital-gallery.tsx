@@ -14,15 +14,23 @@ import {
 import type { Hospital } from "@/lib/hospitals";
 import { infrastructure } from "@/lib/hospital-profile";
 
-export function HospitalGalleryButton({ hospital }: { hospital: Hospital }) {
+export function HospitalGalleryButton({
+  hospital,
+  label = "View campus snapshots",
+  className,
+}: {
+  hospital: Hospital;
+  label?: string;
+  className?: string;
+}) {
   const [open, setOpen] = useState(false);
   const tiles = infrastructure(hospital);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
-        <button type="button" className="hp-gallery-btn">
-          View campus snapshots
+        <button type="button" className={className ?? "hp-gallery-btn"}>
+          {label}
         </button>
       </DialogTrigger>
       <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-3xl">

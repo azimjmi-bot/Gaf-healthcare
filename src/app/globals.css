@@ -1034,3 +1034,175 @@
 .hosp-pager__btn.is-disabled {
   opacity: 0.4;
 }
+
+.hp-seals--labeled {
+  gap: 0.85rem 1.1rem;
+}
+
+.hp-seals--labeled .hp-seals__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.hp-seals__caption {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #3d5a61;
+}
+
+.hcard {
+  display: grid;
+  gap: 1.15rem;
+  border: 1px solid #dce3e8;
+  border-radius: 1.15rem;
+  background: #fff;
+  padding: 1rem;
+}
+
+@media (min-width: 960px) {
+  .hcard {
+    grid-template-columns: 15.5rem minmax(0, 1.35fr) 16.5rem;
+    align-items: stretch;
+    padding: 1.1rem;
+    gap: 1.25rem;
+  }
+}
+
+.hcard__visual {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.9rem;
+  min-height: 12.5rem;
+}
+
+.hcard__art {
+  height: 100%;
+  min-height: 12.5rem;
+}
+
+.hcard__photos {
+  position: absolute;
+  left: 0.7rem;
+  bottom: 0.7rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 32, 0.78);
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.4rem 0.75rem;
+}
+
+.hcard__title {
+  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  font-size: 1.7rem;
+  line-height: 1.15;
+}
+
+.hcard__title a:hover {
+  color: #0e7c86;
+}
+
+.hcard .hp-seals {
+  margin-top: 0.55rem;
+}
+
+.hcard__bio {
+  margin-top: 0.75rem;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #4a5c62;
+}
+
+.hcard__more {
+  display: inline-block;
+  margin-top: 0.55rem;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #0e7c86;
+}
+
+.hcard__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+}
+
+.hcard__chips a,
+.hcard__morechip {
+  display: inline-flex;
+  border-radius: 999px;
+  border: 1px solid #dce8e8;
+  padding: 0.22rem 0.65rem;
+  font-size: 0.72rem;
+  color: #4a5c62;
+}
+
+.hcard__aside {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid #e8eef0;
+  padding-top: 0.85rem;
+}
+
+@media (min-width: 960px) {
+  .hcard__aside {
+    border-top: 0;
+    border-left: 1px solid #e8eef0;
+    padding-top: 0;
+    padding-left: 1.1rem;
+  }
+}
+
+.hcard__facts {
+  display: grid;
+  gap: 0.55rem;
+  font-size: 0.85rem;
+  color: #3d5a61;
+}
+
+.hcard__facts li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.hcard__cta {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: auto;
+}
+
+.hcard__btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.55rem;
+  border-radius: 0.65rem;
+  font-size: 0.84rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 0.75rem;
+}
+
+.hcard__btn--book {
+  background: #c23b32;
+  color: #fff;
+}
+
+.hcard__btn--wa {
+  background: #1fa855;
+  color: #fff;
+}
+
+.hcard__btn--plan {
+  border: 1px solid #0e7c86;
+  background: #fff;
+  color: #0b4f57;
+}

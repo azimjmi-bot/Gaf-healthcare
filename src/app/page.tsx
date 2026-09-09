@@ -177,8 +177,8 @@ export default function HomePage() {
             View all <ArrowRight className="size-4" />
           </Link>
         </div>
-        <div className="mt-10 grid gap-6 md:grid-cols-2">
-          {hospitals.slice(0, 4).map((h) => (
+        <div className="mt-10 grid gap-6">
+          {hospitals.slice(0, 3).map((h) => (
             <HospitalCard key={h.slug} hospital={h} />
           ))}
         </div>
