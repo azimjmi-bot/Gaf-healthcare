@@ -1,11 +1,11 @@
-import Link from "next/link";
 import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { HospitalCard } from "@/components/hospital-card";
+import { HospitalPager } from "@/components/hospital-pager";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { filterHospitals, parseCatalogQuery } from "@/lib/catalog";
-import { groupHospitalsByCity } from "@/lib/hospitals";
+import { paginateHospitals } from "@/lib/hospitals";
 import { catalogMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -14,7 +14,14 @@ export async function generateMetadata({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }): Promise<Metadata> {
-  return catalogMetadata("hospitals", parseCatalogQuery(await searchParams));
+  const raw = await searchParams;
+  return catalogMetadata("hospitals", parseCatalogQuery(raw));
+}
+
+function readPage(raw: Record<string, string | string[] | undefined>) {
+  const value = Array.isArray(raw.page) ? raw.page[0] : raw.page;
+  const n = Number.parseInt(value ?? "1", 10);
+  return Number.isFinite(n) && n > 0 ? n : 1;
 }
 
 export default async function HospitalsPage({
@@ -22,10 +29,10 @@ export default async function HospitalsPage({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const query = parseCatalogQuery(await searchParams);
+  const raw = await searchParams;
+  const query = parseCatalogQuery(raw);
   const list = filterHospitals(query);
-  const directory = groupHospitalsByCity(list);
-  const uniqueCount = new Set(list.map((h) => h.slug)).size;
+  const paging = paginateHospitals(list, readPage(raw));
   const place = query.city ? `${query.city}, India` : "India";
   const heading = query.procedure
     ? `Hospitals for ${query.procedure} in ${place}`
@@ -47,45 +54,34 @@ export default async function HospitalsPage({
       <PageIntro
         eyebrow="India campuses"
         title={heading}
-        lede="JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house appears once. Specialties sit on the card — filter by city, specialty or procedure when you already know the list you need."
+        lede="JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house appears once. Ten campuses per page — specialties sit on the card."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
             basePath="/hospitals"
             entity="hospitals"
-            resultCount={uniqueCount}
-            resultLabel={uniqueCount === 1 ? "hospital" : "hospitals"}
+            resultCount={paging.total}
+            resultLabel={paging.total === 1 ? "hospital" : "hospitals"}
           />
         </Suspense>
       </PageIntro>
       <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
-        {list.length === 0 ? (
+        {paging.total === 0 ? (
           <p className="text-muted-foreground">No hospitals match these filters.</p>
         ) : (
-          <div className="space-y-16">
-            {directory.map((country) => (
-              <div key={country.countrySlug}>
-                <h2 className="font-heading text-4xl">{country.country}</h2>
-                <div className="mt-10 space-y-12">
-                  {country.cities.map((city) => (
-                    <div key={city.citySlug} id={city.citySlug} className="scroll-mt-24">
-                      <p className="text-sm font-medium">
-                        {city.city}{" "}
-                        <span className="text-muted-foreground">
-                          ({city.hospitals.length} {city.hospitals.length === 1 ? "campus" : "campuses"})
-                        </span>
-                      </p>
-                      <div className="mt-4 grid gap-6 md:grid-cols-2">
-                        {city.hospitals.map((h) => (
-                          <HospitalCard key={h.slug} hospital={h} />
-                        ))}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
+          <>
+            <p className="text-sm text-muted-foreground">
+              Showing {paging.from}–{paging.to} of {paging.total}
+            </p>
+            <ul className="hosp-list mt-6">
+              {paging.items.map((h) => (
+                <li key={h.slug}>
+                  <HospitalCard hospital={h} />
+                </li>
+              ))}
+            </ul>
+            <HospitalPager page={paging.page} totalPages={paging.totalPages} searchParams={raw} />
+          </>
         )}
       </section>
       <CtaBand />

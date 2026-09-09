@@ -398,3 +398,27 @@ export function groupHospitalsByCity(list: Hospital[]): HospitalCountryBucket[] 
     })
     .sort((a, b) => a.country.localeCompare(b.country));
 }
+
+export const HOSPITAL_PAGE_SIZE = 10;
+
+export function uniqueHospitalsSorted(list: Hospital[]) {
+  return [...new Map(list.map((h) => [h.slug, h])).values()].sort(
+    (a, b) => a.city.localeCompare(b.city) || a.name.localeCompare(b.name),
+  );
+}
+
+export function paginateHospitals(list: Hospital[], page: number, size = HOSPITAL_PAGE_SIZE) {
+  const items = uniqueHospitalsSorted(list);
+  const total = items.length;
+  const totalPages = Math.max(1, Math.ceil(total / size) || 1);
+  const current = Math.min(Math.max(1, page), totalPages);
+  const start = (current - 1) * size;
+  return {
+    items: items.slice(start, start + size),
+    page: current,
+    totalPages,
+    total,
+    from: total === 0 ? 0 : start + 1,
+    to: Math.min(start + size, total),
+  };
+}

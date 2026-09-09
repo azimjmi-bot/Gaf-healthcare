@@ -53,6 +53,7 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, entity }: Pr
       if (currentProcedure && !allowed.includes(currentProcedure)) next.delete("procedure");
     }
     next.delete("condition");
+    next.delete("page");
     const qs = next.toString();
     router.push(qs ? `${basePath}?${qs}` : basePath, { scroll: false });
   }

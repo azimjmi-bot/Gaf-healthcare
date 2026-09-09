@@ -980,3 +980,57 @@
   align-items: center;
   gap: 0.4rem;
 }
+
+.hosp-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+
+.hosp-pager {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.hosp-pager__pages {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  justify-content: center;
+  flex: 1;
+}
+
+.hosp-pager__btn,
+.hosp-pager__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.5rem;
+  padding: 0 1rem;
+  border-radius: 999px;
+  border: 1px solid #dce8e8;
+  background: #fff;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #0b4f57;
+}
+
+.hosp-pager__num {
+  min-width: 2.5rem;
+  padding: 0;
+}
+
+.hosp-pager__num.is-current,
+.hosp-pager__btn--next {
+  border-color: #0e7c86;
+  background: #0e7c86;
+  color: #fff;
+}
+
+.hosp-pager__btn.is-disabled {
+  opacity: 0.4;
+}
