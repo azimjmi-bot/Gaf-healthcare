@@ -20,7 +20,9 @@ function clip(text: string, max = 158) {
 
 export function doctorMetadata(d: Doctor): Metadata {
   const role =
-    d.specialtySlug === "ophthalmology"
+    d.specialtySlug === "gynecology"
+      ? "gynecologist"
+      : d.specialtySlug === "ophthalmology"
       ? "ophthalmologist"
       : d.specialtySlug === "orthopedics"
       ? "orthopaedic surgeon"
@@ -139,6 +141,7 @@ export function catalogMetadata(
 
   if (entity === "doctors") {
     if (proc) title = `${proc} specialists in ${place}`;
+    else if (spec === "Gynecology") title = `Gynecologists in ${place}`;
     else if (spec === "Ophthalmology") title = `Ophthalmologists in ${place}`;
     else if (spec === "Orthopedics") title = `Orthopaedic surgeons in ${place}`;
     else if (spec === "Pediatric Orthopaedic") title = `Pediatric orthopaedic surgeons in ${place}`;
@@ -159,7 +162,9 @@ export function catalogMetadata(
     else title = `Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and paediatric orthopaedic surgeons in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
-      spec === "Ophthalmology"
+      spec === "Gynecology"
+        ? `/doctors/india/${citySlug}/gynecology/laparoscopic-hysterectomy`
+        : spec === "Ophthalmology"
         ? `/doctors/india/${citySlug}/ophthalmology/cataract-surgery`
         : spec === "Orthopedics"
         ? `/doctors/india/${citySlug}/orthopedics/total-knee-replacement`
@@ -313,7 +318,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Named spine surgeons sit under Spine Surgery. Named pulmonologists sit under Pulmonology — including Dr. Anand Jaiswal, Dr. Manoj Kumar Goel, Dr. Vivek Singh and Dr. Randeep Guleria in Delhi NCR. Named paediatric orthopaedic surgeons sit under Pediatric Orthopaedic — including Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman. Named adult orthopaedic surgeons sit under Orthopedics — including Dr. Ashok Rajgopal, Dr. I P S Oberoi and Dr. Yash Gulati in Delhi NCR. Named ophthalmologists sit under Ophthalmology — including Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal in Delhi NCR — with cataract, LASIK, cornea, glaucoma, retina and oculoplastics tagged for later /doctors/india/{city}/ophthalmology/{procedure} pages without remapping the catalog.",
+    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Named spine surgeons sit under Spine Surgery. Named pulmonologists sit under Pulmonology — including Dr. Anand Jaiswal, Dr. Manoj Kumar Goel, Dr. Vivek Singh and Dr. Randeep Guleria in Delhi NCR. Named paediatric orthopaedic surgeons sit under Pediatric Orthopaedic — including Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman. Named adult orthopaedic surgeons sit under Orthopedics — including Dr. Ashok Rajgopal, Dr. I P S Oberoi and Dr. Yash Gulati in Delhi NCR. Named ophthalmologists sit under Ophthalmology — including Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal in Delhi NCR. Gynecology lists laparoscopic, robotic, vaginal and abdominal hysterectomy, myomectomy, endometriosis, cyst and prolapse surgery — named gynecologists will sit there once a listing is matched. Later pages can mount /doctors/india/{city}/gynecology/{procedure} without remapping the catalog.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
@@ -324,7 +329,7 @@ export const DOCTOR_FAQS = [
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist, urologist, spine surgeon, pulmonologist, paediatric orthopaedic surgeon, orthopaedic surgeon or ophthalmologist confirms regimen, fractions, donor, endoscopy, graft, laser, levels, airway, growth remaining, implant, laterality or the operation after reviewing records.",
+    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist, urologist, spine surgeon, pulmonologist, paediatric orthopaedic surgeon, orthopaedic surgeon, ophthalmologist or gynecologist confirms regimen, fractions, donor, endoscopy, graft, laser, levels, airway, growth remaining, implant, laterality, approach or the operation after reviewing records.",
   },
   {
     q: "What does liver transplantation typically cost in India versus the US?",
@@ -349,6 +354,10 @@ export const COST_FAQS = [
   {
     q: "What does cataract surgery typically cost in India versus the US?",
     a: "Velora’s Cataract Surgery sheet lists a partner planning range of about $800–$2,500 per eye against typical US cash of $3,500–$8,000, depending on IOL, laterality and campus. Phaco, femto-laser and paediatric cataract sit on separate Ophthalmology sheets. LASIK, SMILE and ICL are refractive slugs, not cataract products.",
+  },
+  {
+    q: "What does laparoscopic hysterectomy typically cost in India versus the US?",
+    a: "Velora’s Laparoscopic Hysterectomy sheet lists a partner planning range of about $3,000–$7,000 against typical US cash of $15,000–$35,000, depending on uterus size, laterality of adnexa and campus. Robotic, vaginal and abdominal hysterectomy sit on separate Gynecology sheets. Radical hysterectomy remains the shared surgical-oncology slug.",
   },
   {
     q: "What does total knee replacement typically cost in India versus the US?",

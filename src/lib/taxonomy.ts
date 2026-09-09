@@ -79,6 +79,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Pediatric Orthopaedic"),
   taxon("Orthopedics"),
   taxon("Ophthalmology"),
+  taxon("Gynecology"),
 ];
 
 export function compareSpecialties(aSlug: string, bSlug: string) {
@@ -481,6 +482,25 @@ export const OPHTHALMOLOGY_PROCEDURES = [
   "Corneal Cross-Linking (C3R)",
 ] as const;
 
+export const GYNECOLOGY_PROCEDURES = [
+  "Laparoscopic Hysterectomy",
+  "Robotic Hysterectomy",
+  "Vaginal Hysterectomy",
+  "Abdominal Hysterectomy",
+  "Laparoscopic Myomectomy",
+  "Robotic Myomectomy",
+  "Hysteroscopic Myomectomy",
+  "Endometriosis Surgery",
+  "Hysteroscopic Polypectomy",
+  "Ovarian Cyst Surgery",
+  "Oophorectomy",
+  "Salpingo-Oophorectomy",
+  "Pelvic Organ Prolapse Surgery",
+  "Pelvic Floor Repair",
+  "Radical Hysterectomy",
+  "Gynecologic Cancer Surgery",
+] as const;
+
 export const ATHENAA_SURGICAL_PROCEDURES = [
   "Breast-Conserving Surgery (Lumpectomy)",
   "Mastectomy",
@@ -503,6 +523,7 @@ function procedureTaxon(name: string, specialtySlugs: string[]): ProcedureTaxon 
 
 const HEMATOLOGY_NAMES = new Set<string>(HEMATOLOGY_PROCEDURES);
 const OPHTHALMOLOGY_NAMES = new Set<string>(OPHTHALMOLOGY_PROCEDURES);
+const GYNECOLOGY_NAMES = new Set<string>(GYNECOLOGY_PROCEDURES);
 const COSMETIC_NAMES = new Set<string>(COSMETIC_PROCEDURES);
 const PEDIATRIC_HEMATOLOGY_NAMES = new Set<string>(PEDIATRIC_HEMATOLOGY_PROCEDURES);
 const CARDIOLOGY_NAMES = new Set<string>(CARDIOLOGY_PROCEDURES);
@@ -536,10 +557,14 @@ function withOphthalmology(name: string, specs: string[]) {
   return OPHTHALMOLOGY_NAMES.has(name) ? [...specs, "ophthalmology"] : specs;
 }
 
+function withGynecology(name: string, specs: string[]) {
+  return GYNECOLOGY_NAMES.has(name) ? [...specs, "gynecology"] : specs;
+}
+
 export const PROCEDURES: ProcedureTaxon[] = [
   ...RADIATION_PROCEDURES.map((name) => procedureTaxon(name, ["radiation-oncology"])),
   ...SURGICAL_ONCOLOGY_PROCEDURES.map((name) =>
-    procedureTaxon(name, withUrology(name, withSurgicalGastro(name, withEnt(name, ["surgical-oncology"])))),
+    procedureTaxon(name, withGynecology(name, withUrology(name, withSurgicalGastro(name, withEnt(name, ["surgical-oncology"]))))),
   ),
   ...MEDICAL_ONCOLOGY_PROCEDURES.map((name) =>
     procedureTaxon(
@@ -580,6 +605,9 @@ export const PROCEDURES: ProcedureTaxon[] = [
   ...ORTHOPEDICS_PROCEDURES.map((name) => procedureTaxon(name, ["orthopedics"])),
   ...OPHTHALMOLOGY_PROCEDURES.filter((name) => !COSMETIC_NAMES.has(name)).map((name) =>
     procedureTaxon(name, ["ophthalmology"]),
+  ),
+  ...GYNECOLOGY_PROCEDURES.filter((name) => !SURGICAL_ONCOLOGY_NAMES.has(name)).map((name) =>
+    procedureTaxon(name, ["gynecology"]),
   ),
 ];
 

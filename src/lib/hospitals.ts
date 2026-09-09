@@ -14,6 +14,7 @@ import {
   PEDIATRIC_ORTHOPAEDIC_PROCEDURES,
   ORTHOPEDICS_PROCEDURES,
   OPHTHALMOLOGY_PROCEDURES,
+  GYNECOLOGY_PROCEDURES,
   CARDIAC_SURGERY_PROCEDURES,
   PEDIATRIC_CARDIAC_SURGERY_PROCEDURES,
   HEMATOLOGY_PROCEDURES,
@@ -78,6 +79,7 @@ const pulmonology = getSpecialty("Pulmonology");
 const pediatricOrthopaedic = getSpecialty("Pediatric Orthopaedic");
 const orthopedics = getSpecialty("Orthopedics");
 const ophthalmology = getSpecialty("Ophthalmology");
+const gynecology = getSpecialty("Gynecology");
 if (
   !radiation ||
   !surgical ||
@@ -97,7 +99,8 @@ if (
   !pulmonology ||
   !pediatricOrthopaedic ||
   !orthopedics ||
-  !ophthalmology
+  !ophthalmology ||
+  !gynecology
 ) {
   throw new Error("Missing specialties");
 }
@@ -163,6 +166,7 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
           ...PEDIATRIC_ORTHOPAEDIC_PROCEDURES,
           ...ORTHOPEDICS_PROCEDURES,
           ...OPHTHALMOLOGY_PROCEDURES,
+          ...GYNECOLOGY_PROCEDURES,
         ],
   );
   const seen = new Set<string>();
@@ -182,7 +186,7 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
     accreditation: seed.accreditation,
     focus: eyeCampus
       ? ophthalmology.name
-      : `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name} · ${cardiacSurgery.name} · ${pediatricCardiacSurgery.name} · ${cardiology.name} · ${bariatric.name} · ${cosmetic.name} · ${ent.name} · ${gastroenterology.name} · ${surgicalGastroenterology.name} · ${urology.name} · ${spineSurgery.name} · ${pulmonology.name} · ${pediatricOrthopaedic.name} · ${orthopedics.name} · ${ophthalmology.name}`,
+      : `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name} · ${cardiacSurgery.name} · ${pediatricCardiacSurgery.name} · ${cardiology.name} · ${bariatric.name} · ${cosmetic.name} · ${ent.name} · ${gastroenterology.name} · ${surgicalGastroenterology.name} · ${urology.name} · ${spineSurgery.name} · ${pulmonology.name} · ${pediatricOrthopaedic.name} · ${orthopedics.name} · ${ophthalmology.name} · ${gynecology.name}`,
     specialty: eyeCampus ? ophthalmology.name : radiation.name,
     specialtySlug: eyeCampus ? ophthalmology.slug : radiation.slug,
     specialties: eyeCampus
@@ -207,6 +211,7 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
           pediatricOrthopaedic.name,
           orthopedics.name,
           ophthalmology.name,
+          gynecology.name,
         ],
     specialtySlugs: eyeCampus
       ? [ophthalmology.slug]
@@ -230,6 +235,7 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
           pediatricOrthopaedic.slug,
           orthopedics.slug,
           ophthalmology.slug,
+          gynecology.slug,
         ],
     procedures: unique.map((p) => p.name),
     procedureSlugs: unique.map((p) => p.slug),

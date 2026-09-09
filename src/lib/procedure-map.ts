@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, OPHTHALMOLOGY_PROCEDURES, ORTHOPEDICS_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, GYNECOLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, OPHTHALMOLOGY_PROCEDURES, ORTHOPEDICS_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -573,6 +573,31 @@ export function mapOphthalmologyProcedures(texts: string[], fallback = true) {
   return ["Cataract Surgery", "LASIK Eye Surgery", "Glaucoma Surgery"];
 }
 
+const GYNECOLOGY_RULES: { test: RegExp; name: (typeof GYNECOLOGY_PROCEDURES)[number] }[] = [
+  { test: /robotic hysterect/i, name: "Robotic Hysterectomy" },
+  { test: /laparoscopic hysterect|tlh\b|lap hysterect/i, name: "Laparoscopic Hysterectomy" },
+  { test: /vaginal hysterect|\btvh\b/i, name: "Vaginal Hysterectomy" },
+  { test: /abdominal hysterect|tah\b|open hysterect/i, name: "Abdominal Hysterectomy" },
+  { test: /radical hysterect/i, name: "Radical Hysterectomy" },
+  { test: /robotic myomect/i, name: "Robotic Myomectomy" },
+  { test: /laparoscopic myomect|lap myomect/i, name: "Laparoscopic Myomectomy" },
+  { test: /hysteroscopic myomect|hysteroscopic.{0,12}fibroid/i, name: "Hysteroscopic Myomectomy" },
+  { test: /endometriosis/i, name: "Endometriosis Surgery" },
+  { test: /polypectomy|endometrial polyp/i, name: "Hysteroscopic Polypectomy" },
+  { test: /ovarian cyst|cystectom/i, name: "Ovarian Cyst Surgery" },
+  { test: /salpingo[\s-]*oophorect/i, name: "Salpingo-Oophorectomy" },
+  { test: /oophorect/i, name: "Oophorectomy" },
+  { test: /pelvic organ prolapse|vault prolapse|uterine prolapse/i, name: "Pelvic Organ Prolapse Surgery" },
+  { test: /pelvic floor/i, name: "Pelvic Floor Repair" },
+  { test: /gynae?cologic cancer|cervical cancer surgery|endometrial cancer surgery|ovarian cancer/i, name: "Gynecologic Cancer Surgery" },
+];
+
+export function mapGynecologyProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, GYNECOLOGY_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Laparoscopic Hysterectomy", "Laparoscopic Myomectomy", "Endometriosis Surgery"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -592,5 +617,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Pediatric Orthopaedic") return mapPediatricOrthopaedicProcedures(texts);
   if (specialty === "Orthopedics") return mapOrthopedicsProcedures(texts);
   if (specialty === "Ophthalmology") return mapOphthalmologyProcedures(texts);
+  if (specialty === "Gynecology") return mapGynecologyProcedures(texts);
   return mapCatalogProcedures(texts);
 }

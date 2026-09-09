@@ -75,6 +75,8 @@ export const metadata: Metadata = {
     "ACL reconstruction cost India",
     "hip replacement cost India",
     "ophthalmologist India",
+    "gynecologist India",
+    "laparoscopic hysterectomy cost India",
     "cataract surgery cost India",
     "LASIK cost India",
     "pediatric cardiac surgeon India",

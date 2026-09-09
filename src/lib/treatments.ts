@@ -5,6 +5,7 @@ import { PULMONOLOGY_COST, PULMONOLOGY_SUMMARIES } from "@/lib/pulmonology-costs
 import { PEDIATRIC_ORTHOPAEDIC_COST, PEDIATRIC_ORTHOPAEDIC_SUMMARIES } from "@/lib/pediatric-orthopaedic-costs";
 import { ORTHOPEDICS_CLUSTER_BY_PROCEDURE, ORTHOPEDICS_COST, ORTHOPEDICS_SUMMARIES } from "@/lib/orthopedics-costs";
 import { OPHTHALMOLOGY_CLUSTER_BY_PROCEDURE, OPHTHALMOLOGY_COST, OPHTHALMOLOGY_SUMMARIES } from "@/lib/ophthalmology-costs";
+import { GYNECOLOGY_CLUSTER_BY_PROCEDURE, GYNECOLOGY_CONDITIONS, GYNECOLOGY_COST, GYNECOLOGY_SUMMARIES } from "@/lib/gynecology-costs";
 import { GASTROENTEROLOGY_COST, GASTROENTEROLOGY_SUMMARIES } from "@/lib/gastroenterology-costs";
 import { ENT_COST, ENT_SUMMARIES } from "@/lib/ent-costs";
 import { COSMETIC_COST, COSMETIC_SUMMARIES } from "@/lib/cosmetic-costs";
@@ -25,6 +26,7 @@ import {
   PEDIATRIC_ORTHOPAEDIC_PROCEDURES,
   ORTHOPEDICS_PROCEDURES,
   OPHTHALMOLOGY_PROCEDURES,
+  GYNECOLOGY_PROCEDURES,
   GASTROENTEROLOGY_PROCEDURES,
   ENT_PROCEDURES,
   COSMETIC_PROCEDURES,
@@ -934,6 +936,47 @@ const ophthalmologyTreatments: Treatment[] = OPHTHALMOLOGY_PROCEDURES.filter(
   };
 });
 
+const GYNECOLOGY_IMAGE =
+  "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80";
+
+const GYNECOLOGY_INCLUDES = [
+  "Gynecology consultation and records review",
+  "Named consultant on camera before travel",
+  "Imaging, hysteroscopy or tumour markers as indicated",
+  "Approach, uterus-sparing versus hysterectomy as quoted",
+  "Discharge summary to your home physician",
+];
+
+const gynecologyTreatments: Treatment[] = GYNECOLOGY_PROCEDURES.filter(
+  (name) => name !== "Radical Hysterectomy",
+).map((name) => {
+  const cost = GYNECOLOGY_COST[name];
+  if (!cost) throw new Error(`Missing gynecology cost for ${name}`);
+  const slug = toSlug(name);
+  const cluster = GYNECOLOGY_CLUSTER_BY_PROCEDURE[name] ?? "Gynecology";
+  return {
+    slug,
+    name,
+    category: cluster,
+    specialtySlug: "gynecology",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      GYNECOLOGY_SUMMARIES[name] ??
+      `Gynecology — ${name} at JCI partner campuses with a named gynecologist before you travel.`,
+    image: GYNECOLOGY_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: GYNECOLOGY_CONDITIONS,
+    procedures: [name],
+    includes: GYNECOLOGY_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named gynecologist confirms imaging, approach and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -954,6 +997,7 @@ export const treatments: Treatment[] = [
   ...pediatricOrthopaedicTreatments,
   ...orthopedicsTreatments,
   ...ophthalmologyTreatments,
+  ...gynecologyTreatments,
 ];
 
 export function getTreatment(slug: string) {
