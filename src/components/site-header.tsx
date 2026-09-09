@@ -35,8 +35,8 @@ export function SiteHeader() {
       }
     >
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-5 md:h-20 md:px-8">
-        <Link href="/" className="font-heading text-2xl tracking-[0.18em] uppercase">
-          Velora
+        <Link href="/" className="font-heading text-lg tracking-[0.12em] uppercase md:text-2xl">
+          GAF Healthcare
         </Link>
         <nav className="hidden items-center gap-8 lg:flex">
           {links.map((l) => {
@@ -78,8 +78,8 @@ export function SiteHeader() {
             </SheetTrigger>
             <SheetContent side="right" className="w-[min(100%,20rem)]">
               <SheetHeader>
-                <SheetTitle className="font-heading text-2xl tracking-[0.18em] uppercase">
-                  Velora
+                <SheetTitle className="font-heading text-xl tracking-[0.12em] uppercase">
+                  GAF Healthcare
                 </SheetTitle>
               </SheetHeader>
               <nav className="mt-8 flex flex-col gap-5 px-4">

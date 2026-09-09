@@ -1,17 +1,17 @@
 {
-  "name": "Velora",
+  "name": "GAF Healthcare",
   "install": "npm install",
   "start": "true",
   "terminals": [
     {
-      "name": "velora-web",
+      "name": "gaf-web",
       "command": "npm run dev",
-      "description": "Velora Next.js app on 0.0.0.0:43127"
+      "description": "GAF Healthcare Next.js app on 0.0.0.0:43127"
     }
   ],
   "ports": [
     {
-      "name": "Velora",
+      "name": "GAF Healthcare",
       "port": 43127
     }
   ]

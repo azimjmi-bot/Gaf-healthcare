@@ -14,7 +14,7 @@ from pathlib import Path
 LISTING = Path("/tmp/ginger-mo.html")
 OUT_DOCTORS = Path("/tmp/medical-doctors.json")
 OUT_HOSPITALS = Path("/tmp/medical-hospitals.json")
-UA = {"User-Agent": "Mozilla/5.0 (compatible; VeloraCatalog/1.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; GAF HealthcareCatalog/1.0)"}
 
 MEDICAL_RULES: list[tuple[re.Pattern, str]] = [
     (re.compile(r"car[\s-]*t", re.I), "CAR-T Cell Therapy"),
@@ -217,7 +217,7 @@ def parse_hospital(html: str, slug: str, href: str, city: str, name_hint: str) -
         acc.append("NABL")
     name = name_hint or h1
     bio = (
-        f"{name} is a Medical Oncology campus in {city}, India on Velora’s list. "
+        f"{name} is a Medical Oncology campus in {city}, India on GAF Healthcare's list. "
         f"{'It opened in ' + year + '. ' if year else ''}"
         f"{(beds + ' beds. ') if beds else ''}"
         f"{' · '.join(acc) + ' accreditation is current. ' if acc else ''}"

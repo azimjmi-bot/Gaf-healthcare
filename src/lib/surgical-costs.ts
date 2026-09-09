@@ -165,7 +165,7 @@ export const SURGICAL_SUMMARIES: Record<string, string> = {
   "Sentinel Lymph Node Biopsy":
     "Sentinel node biopsy maps the first draining nodes instead of a full axillary clearance when staging allows. Frozen section capability on the day is part of the campus check.",
   Esophagectomy:
-    "Oesophageal resection is a high-acuity operation. Velora only matches centres that already run this list weekly, with ICU that has seen anastomotic leaks.",
+    "Oesophageal resection is a high-acuity operation. GAF Healthcare only matches centres that already run this list weekly, with ICU that has seen anastomotic leaks.",
   Gastrectomy:
     "Partial or total gastrectomy for gastric cancer. Extent of lymph-node dissection is set after staging, not after you have already booked the ward.",
   Colectomy:

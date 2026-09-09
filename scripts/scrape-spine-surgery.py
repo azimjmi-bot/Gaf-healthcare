@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch structured fields from Ginger's India spine-surgery listing.
 
-Bios are original Velora copy (fusion, ACDF, microdiscectomy, deformity).
+Bios are original GAF Healthcare copy (fusion, ACDF, microdiscectomy, deformity).
 Do not paste Ginger marketing.
 Source: https://ginger.healthcare/destinations/india/spine-surgery/
 """
@@ -19,7 +19,7 @@ from pathlib import Path
 LISTING = Path("/tmp/ginger-spine.html")
 OUT_DOCTORS = Path("/tmp/spine-doctors.json")
 CATALOG = Path("/workspace/src/data/ginger-catalog.json")
-UA = {"User-Agent": "Mozilla/5.0 (compatible; VeloraCatalog/1.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; GAF HealthcareCatalog/1.0)"}
 
 SOURCE = "https://ginger.healthcare/destinations/india/spine-surgery/"
 

@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Fetch structured fields from Ginger's India neurology listing.
 
-Bios are original Velora copy (stroke, epilepsy, movement, neuromuscular).
+Bios are original GAF Healthcare copy (stroke, epilepsy, movement, neuromuscular).
 Do not paste Ginger marketing.
 Source: https://ginger.healthcare/destinations/india/neurology/
-Specialty on Velora is Neurology (slug neurology).
+Specialty on GAF Healthcare is Neurology (slug neurology).
 """
 
 from __future__ import annotations
@@ -20,7 +20,7 @@ from pathlib import Path
 LISTING = Path("/tmp/ginger-neurology.html")
 OUT_DOCTORS = Path("/tmp/neurology-doctors.json")
 CATALOG = Path("/workspace/src/data/ginger-catalog.json")
-UA = {"User-Agent": "Mozilla/5.0 (compatible; VeloraCatalog/1.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; GAF HealthcareCatalog/1.0)"}
 
 SOURCE = "https://ginger.healthcare/destinations/india/neurology/"
 SPECIALTY = "Neurology"
@@ -149,7 +149,7 @@ def write_bio(d: dict) -> str:
     )
     edu_bit = f" Training includes {edu}." if edu else ""
     featured_bit = (
-        f" Velora lists {obj} among featured India neurologists for stroke, epilepsy and movement lists."
+        f" GAF Healthcare lists {obj} among featured India neurologists for stroke, epilepsy and movement lists."
         if d.get("featured")
         else ""
     )

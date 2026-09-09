@@ -5,7 +5,7 @@ import type { Treatment } from "@/lib/treatments";
 import type { CatalogQuery } from "@/lib/catalog";
 import { site } from "@/lib/site";
 
-export const SITE_URL = "https://velora.health";
+export const SITE_URL = "https://gaf.healthcare";
 
 export function absoluteUrl(path = "/") {
   if (!path.startsWith("/")) path = `/${path}`;
@@ -418,7 +418,7 @@ export function faqJsonLd(rows: { q: string; a: string }[]) {
 
 export const DOCTOR_FAQS = [
   {
-    q: "Which Indian cities does Velora list specialists in?",
+    q: "Which Indian cities does GAF Healthcare list specialists in?",
     a: "Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Every profile is tagged with country (India), city, specialty and procedure so later pages can be generated without remapping the catalog.",
   },
   {
@@ -438,70 +438,70 @@ export const COST_FAQS = [
   },
   {
     q: "What does liver transplantation typically cost in India versus the US?",
-    a: "Velora’s Liver Transplantation sheet lists a partner planning range of about $28,000–$55,000 against typical US cash of $150,000–$400,000, depending on living versus deceased donor, ICU stay and campus. Living-donor, paediatric and retransplant sit on separate Surgical Gastroenterology sheets. Hepatectomy remains on the shared surgical-oncology slug.",
+    a: "GAF Healthcare's Liver Transplantation sheet lists a partner planning range of about $28,000–$55,000 against typical US cash of $150,000–$400,000, depending on living versus deceased donor, ICU stay and campus. Living-donor, paediatric and retransplant sit on separate Surgical Gastroenterology sheets. Hepatectomy remains on the shared surgical-oncology slug.",
   },
   {
     q: "What does kidney transplantation typically cost in India versus the US?",
-    a: "Velora’s Kidney Transplantation sheet lists a partner planning range of about $13,000–$25,000 against typical US cash of $150,000–$400,000, depending on living versus deceased donor, ABO work and campus. Living-donor, deceased-donor and ABO-incompatible remain the shared Urology slugs and now also sit under Nephrology. Paired kidney exchange and transplant evaluation sit on Nephrology sheets. Radical prostatectomy, partial nephrectomy and radical cystectomy remain on the shared surgical-oncology slugs.",
+    a: "GAF Healthcare's Kidney Transplantation sheet lists a partner planning range of about $13,000–$25,000 against typical US cash of $150,000–$400,000, depending on living versus deceased donor, ABO work and campus. Living-donor, deceased-donor and ABO-incompatible remain the shared Urology slugs and now also sit under Nephrology. Paired kidney exchange and transplant evaluation sit on Nephrology sheets. Radical prostatectomy, partial nephrectomy and radical cystectomy remain on the shared surgical-oncology slugs.",
   },
   {
     q: "What does spinal fusion typically cost in India versus the US?",
-    a: "Velora’s Spinal Fusion sheet lists a partner planning range of about $8,000–$18,000 against typical US cash of $80,000–$150,000, depending on levels, approach and campus. PLIF, TLIF, ALIF and ACDF sit on separate Spine Surgery sheets. Disc replacement is a different slug when motion-preservation is still honest.",
+    a: "GAF Healthcare's Spinal Fusion sheet lists a partner planning range of about $8,000–$18,000 against typical US cash of $80,000–$150,000, depending on levels, approach and campus. PLIF, TLIF, ALIF and ACDF sit on separate Spine Surgery sheets. Disc replacement is a different slug when motion-preservation is still honest.",
   },
   {
     q: "What does EBUS typically cost in India versus the US?",
-    a: "Velora’s EBUS sheet lists a partner planning range of about $800–$2,500 against typical US cash of $4,000–$12,000, depending on nodal stations and campus. Bronchoscopy, TBNA, cryo-biopsy and lung transplantation sit on separate Pulmonology sheets. Gastroenterology’s ingested foreign-body sheet is a different slug from bronchoscopic removal.",
+    a: "GAF Healthcare's EBUS sheet lists a partner planning range of about $800–$2,500 against typical US cash of $4,000–$12,000, depending on nodal stations and campus. Bronchoscopy, TBNA, cryo-biopsy and lung transplantation sit on separate Pulmonology sheets. Gastroenterology’s ingested foreign-body sheet is a different slug from bronchoscopic removal.",
   },
   {
     q: "What does clubfoot correction typically cost in India versus the US?",
-    a: "Velora’s Clubfoot Correction Surgery sheet lists a partner planning range of about $1,200–$3,800 against typical US cash of $6,000–$18,000, depending on laterality, prior Ponseti work and campus. DDH, SCFE, limb lengthening and paediatric scoliosis sit on separate Pediatric Orthopaedic sheets. Adult scoliosis correction remains on Spine Surgery.",
+    a: "GAF Healthcare's Clubfoot Correction Surgery sheet lists a partner planning range of about $1,200–$3,800 against typical US cash of $6,000–$18,000, depending on laterality, prior Ponseti work and campus. DDH, SCFE, limb lengthening and paediatric scoliosis sit on separate Pediatric Orthopaedic sheets. Adult scoliosis correction remains on Spine Surgery.",
   },
   {
     q: "What does cataract surgery typically cost in India versus the US?",
-    a: "Velora’s Cataract Surgery sheet lists a partner planning range of about $800–$2,500 per eye against typical US cash of $3,500–$8,000, depending on IOL, laterality and campus. Phaco, femto-laser and paediatric cataract sit on separate Ophthalmology sheets. LASIK, SMILE and ICL are refractive slugs, not cataract products.",
+    a: "GAF Healthcare's Cataract Surgery sheet lists a partner planning range of about $800–$2,500 per eye against typical US cash of $3,500–$8,000, depending on IOL, laterality and campus. Phaco, femto-laser and paediatric cataract sit on separate Ophthalmology sheets. LASIK, SMILE and ICL are refractive slugs, not cataract products.",
   },
   {
     q: "What does laparoscopic hysterectomy typically cost in India versus the US?",
-    a: "Velora’s Laparoscopic Hysterectomy sheet lists a partner planning range of about $3,000–$7,000 against typical US cash of $15,000–$35,000, depending on uterus size, laterality of adnexa and campus. Robotic, vaginal and abdominal hysterectomy sit on separate Gynecology sheets. Radical hysterectomy remains the shared surgical-oncology slug.",
+    a: "GAF Healthcare's Laparoscopic Hysterectomy sheet lists a partner planning range of about $3,000–$7,000 against typical US cash of $15,000–$35,000, depending on uterus size, laterality of adnexa and campus. Robotic, vaginal and abdominal hysterectomy sit on separate Gynecology sheets. Radical hysterectomy remains the shared surgical-oncology slug.",
   },
   {
     q: "What does brain tumor surgery typically cost in India versus the US?",
-    a: "Velora’s Brain Tumor Surgery sheet lists a partner planning range of about $6,000–$15,000 against typical US cash of $50,000–$150,000, depending on histology, mapping and campus. Glioma, meningioma and pituitary sit on separate Neurosurgery sheets. Gamma Knife, CyberKnife and SRS remain the shared radiation-oncology radiosurgery slugs. Spinal tumour surgery remains the shared Spine Surgery slug. Skull base surgery remains the shared ENT slug.",
+    a: "GAF Healthcare's Brain Tumor Surgery sheet lists a partner planning range of about $6,000–$15,000 against typical US cash of $50,000–$150,000, depending on histology, mapping and campus. Glioma, meningioma and pituitary sit on separate Neurosurgery sheets. Gamma Knife, CyberKnife and SRS remain the shared radiation-oncology radiosurgery slugs. Spinal tumour surgery remains the shared Spine Surgery slug. Skull base surgery remains the shared ENT slug.",
   },
   {
     q: "What does EEG typically cost in India versus the US?",
-    a: "Velora’s EEG sheet lists a partner planning range of about $80–$250 against typical US cash of $400–$1,500, depending on duration and campus. Video EEG sits on a neighbouring Neurology sheet. Deep brain stimulation and stroke thrombectomy remain the shared Neurosurgery slugs. VNS, IVIG, MRgFUS and sleep study sit on Neurology sheets.",
+    a: "GAF Healthcare's EEG sheet lists a partner planning range of about $80–$250 against typical US cash of $400–$1,500, depending on duration and campus. Video EEG sits on a neighbouring Neurology sheet. Deep brain stimulation and stroke thrombectomy remain the shared Neurosurgery slugs. VNS, IVIG, MRgFUS and sleep study sit on Neurology sheets.",
   },
   {
     q: "What does hemodialysis typically cost in India versus the US?",
-    a: "Velora’s Hemodialysis sheet lists a partner planning range of about $8,000–$18,000 per year against typical US cash of $70,000–$150,000 per year, depending on sessions and campus. Peritoneal dialysis, CRRT and SLED sit on neighbouring Nephrology sheets. Kidney transplantation remains the shared Urology slug. Plasmapheresis remains the shared Neurology slug.",
+    a: "GAF Healthcare's Hemodialysis sheet lists a partner planning range of about $8,000–$18,000 per year against typical US cash of $70,000–$150,000 per year, depending on sessions and campus. Peritoneal dialysis, CRRT and SLED sit on neighbouring Nephrology sheets. Kidney transplantation remains the shared Urology slug. Plasmapheresis remains the shared Neurology slug.",
   },
   {
     q: "What does total knee replacement typically cost in India versus the US?",
-    a: "Velora’s Total Knee Replacement sheet lists a partner planning range of about $5,500–$12,000 against typical US cash of $35,000–$70,000, depending on implant, laterality and campus. Robotic, partial and revision knee sit on separate Orthopedics sheets. ACL reconstruction is a sports slug, not an arthroplasty product.",
+    a: "GAF Healthcare's Total Knee Replacement sheet lists a partner planning range of about $5,500–$12,000 against typical US cash of $35,000–$70,000, depending on implant, laterality and campus. Robotic, partial and revision knee sit on separate Orthopedics sheets. ACL reconstruction is a sports slug, not an arthroplasty product.",
   },
   {
     q: "What does ERCP typically cost in India versus the US?",
-    a: "Velora’s ERCP sheet lists a partner planning range of about $1,500–$4,200 against typical US cash of $8,000–$22,000, depending on sphincterotomy, stent and campus. Colonoscopy, EUS, POEM and PTBD sit on separate Gastroenterology sheets. Endoscopic sleeve gastroplasty remains on the bariatric sheet.",
+    a: "GAF Healthcare's ERCP sheet lists a partner planning range of about $1,500–$4,200 against typical US cash of $8,000–$22,000, depending on sphincterotomy, stent and campus. Colonoscopy, EUS, POEM and PTBD sit on separate Gastroenterology sheets. Endoscopic sleeve gastroplasty remains on the bariatric sheet.",
   },
   {
     q: "What does cochlear implantation typically cost in India versus the US?",
-    a: "Velora’s Cochlear Implantation sheet lists a partner planning range of about $15,000–$32,000 against typical US cash of $50,000–$100,000, depending on device, mapping and campus. FESS, septoplasty and BAHA sit on separate sheets. Rhinoplasty remains on the cosmetic sheet with a shared slug.",
+    a: "GAF Healthcare's Cochlear Implantation sheet lists a partner planning range of about $15,000–$32,000 against typical US cash of $50,000–$100,000, depending on device, mapping and campus. FESS, septoplasty and BAHA sit on separate sheets. Rhinoplasty remains on the cosmetic sheet with a shared slug.",
   },
   {
     q: "What does rhinoplasty typically cost in India versus the US?",
-    a: "Velora’s Rhinoplasty sheet lists a partner planning range of about $2,500–$5,500 against typical US cash of $8,000–$18,000, depending on open versus closed work and campus. Facelift, blepharoplasty and hair transplant sit on separate sheets. Blepharoplasty keeps a shared slug with Ophthalmology.",
+    a: "GAF Healthcare's Rhinoplasty sheet lists a partner planning range of about $2,500–$5,500 against typical US cash of $8,000–$18,000, depending on open versus closed work and campus. Facelift, blepharoplasty and hair transplant sit on separate sheets. Blepharoplasty keeps a shared slug with Ophthalmology.",
   },
   {
     q: "What does sleeve gastrectomy typically cost in India versus the US?",
-    a: "Velora’s Sleeve Gastrectomy sheet lists a partner planning range of about $4,500–$8,500 against typical US cash of $15,000–$28,000, depending on BMI, leak protocol and campus. Bypass, ESG and revisional work sit on separate sheets.",
+    a: "GAF Healthcare's Sleeve Gastrectomy sheet lists a partner planning range of about $4,500–$8,500 against typical US cash of $15,000–$28,000, depending on BMI, leak protocol and campus. Bypass, ESG and revisional work sit on separate sheets.",
   },
   {
     q: "What does CABG typically cost in India versus the US?",
-    a: "Velora’s CABG sheet lists a partner planning range of about $5,500–$14,000 against typical US cash of $70,000–$200,000, depending on conduits, ICU stay and campus. Valve work, TAVR and LVAD sit on separate sheets.",
+    a: "GAF Healthcare's CABG sheet lists a partner planning range of about $5,500–$14,000 against typical US cash of $70,000–$200,000, depending on conduits, ICU stay and campus. Valve work, TAVR and LVAD sit on separate sheets.",
   },
   {
     q: "What does chemotherapy typically cost in India versus the US?",
-    a: "Velora’s Chemotherapy sheet lists a partner planning range of about $1,500–$8,000+ against typical US cash of $10,000–$50,000, depending on protocol, cycles and campus. Immunotherapy, ADCs and CAR-T sit on separate sheets.",
+    a: "GAF Healthcare's Chemotherapy sheet lists a partner planning range of about $1,500–$8,000+ against typical US cash of $10,000–$50,000, depending on protocol, cycles and campus. Immunotherapy, ADCs and CAR-T sit on separate sheets.",
   },
 ];

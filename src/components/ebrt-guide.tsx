@@ -361,7 +361,7 @@ export function EbrtGuide() {
 
       <H3>EBRT cost in India — major medical cities</H3>
       <P>
-        Indicative full-course radiation/EBRT planning ranges in USD. Velora currently
+        Indicative full-course radiation/EBRT planning ranges in USD. GAF Healthcare currently
         lists named consultants in five of these cities.
       </P>
       <div className="mt-6 overflow-x-auto rounded-2xl border border-border">
@@ -370,7 +370,7 @@ export function EbrtGuide() {
             <tr>
               <th className="px-4 py-3 font-medium">City</th>
               <th className="px-4 py-3 font-medium">Planning range (USD)</th>
-              <th className="px-4 py-3 font-medium">On Velora</th>
+              <th className="px-4 py-3 font-medium">On GAF Healthcare</th>
             </tr>
           </thead>
           <tbody>
@@ -417,7 +417,7 @@ export function EbrtGuide() {
       <H3>EBRT cost in popular medical-tourism destinations</H3>
       <P>
         Indicative market figures, not standardised hospital tariffs. India is the
-        destination Velora currently staffs with named radiation oncologists.
+        destination GAF Healthcare currently staffs with named radiation oncologists.
       </P>
       <div className="mt-6 overflow-x-auto rounded-2xl border border-border">
         <table className="w-full min-w-[28rem] text-left text-sm">

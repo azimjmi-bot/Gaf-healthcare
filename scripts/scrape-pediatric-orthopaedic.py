@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Fetch structured fields from Ginger's India pediatric-orthopedics listing.
 
-Bios are original Velora copy (clubfoot, DDH, SCFE, limb lengthening, paediatric scoliosis).
+Bios are original GAF Healthcare copy (clubfoot, DDH, SCFE, limb lengthening, paediatric scoliosis).
 Do not paste Ginger marketing.
 Source: https://ginger.healthcare/destinations/india/pediatric-orthopedics/
-Specialty on Velora is Pediatric Orthopaedic (slug pediatric-orthopaedic).
+Specialty on GAF Healthcare is Pediatric Orthopaedic (slug pediatric-orthopaedic).
 """
 
 from __future__ import annotations
@@ -20,7 +20,7 @@ from pathlib import Path
 LISTING = Path("/tmp/ginger-pediatric-orthopedics.html")
 OUT_DOCTORS = Path("/tmp/pediatric-orthopaedic-doctors.json")
 CATALOG = Path("/workspace/src/data/ginger-catalog.json")
-UA = {"User-Agent": "Mozilla/5.0 (compatible; VeloraCatalog/1.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; GAF HealthcareCatalog/1.0)"}
 
 SOURCE = "https://ginger.healthcare/destinations/india/pediatric-orthopedics/"
 SPECIALTY = "Pediatric Orthopaedic"

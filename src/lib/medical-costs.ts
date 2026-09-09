@@ -121,7 +121,7 @@ export const MEDICAL_SUMMARIES: Record<string, string> = {
   "Intrathecal Chemotherapy":
     "Drug into CSF for leptomeningeal or prophylactic CNS treatment. Ommaya versus lumbar access is decided with neuro-oncology, not at the airport.",
   "CAR-T Cell Therapy":
-    "Engineered T cells after apheresis, lymphodepletion and a CRS-ready ICU. Velora only matches programmes that already run CAR-T, not a first international experiment.",
+    "Engineered T cells after apheresis, lymphodepletion and a CRS-ready ICU. GAF Healthcare only matches programmes that already run CAR-T, not a first international experiment.",
   "Bone Marrow Transplantation":
     "Allogeneic or selected autologous transplant with a donor, conditioning and GVHD plan. The unit’s infection protocol is the product.",
   "Stem Cell Transplantation":

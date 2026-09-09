@@ -15,7 +15,7 @@ ROOT = Path("/workspace")
 LISTING = Path("/tmp/ginger-so.html")
 OUT_DOCTORS = Path("/tmp/surgical-doctors.json")
 OUT_HOSPITALS = Path("/tmp/surgical-hospitals.json")
-UA = {"User-Agent": "Mozilla/5.0 (compatible; VeloraCatalog/1.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; GAF HealthcareCatalog/1.0)"}
 
 SURGICAL_RULES: list[tuple[re.Pattern, str]] = [
     (re.compile(r"nipple[\s-]*sparing", re.I), "Nipple-Sparing Mastectomy"),
@@ -225,7 +225,7 @@ def parse_hospital(html: str, slug: str, href: str, city: str, name_hint: str) -
         acc.append("NABL")
     name = h1 or name_hint
     bio = (
-        f"{name} is a {city} campus on Velora’s surgical-oncology list. "
+        f"{name} is a {city} campus on GAF Healthcare's surgical-oncology list. "
         f"{'It opened in ' + year + '. ' if year else ''}"
         f"{(beds + ' beds. ') if beds else ''}"
         f"{' · '.join(acc) + ' accreditation is current. ' if acc else ''}"

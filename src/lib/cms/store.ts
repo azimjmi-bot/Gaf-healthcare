@@ -8,7 +8,7 @@ const FILE = join(process.cwd(), "content/cms.json");
 function fallbackStore(): CmsStore {
   return {
     settings: {
-      defaultAuthor: "Velora clinical desk",
+      defaultAuthor: "GAF Healthcare clinical desk",
       postsPerPage: 12,
       blogEyebrow: "Desk",
       blogTitle: "Planning notes, not a magazine.",

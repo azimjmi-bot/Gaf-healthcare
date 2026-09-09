@@ -19,7 +19,7 @@ export default function HomePage() {
         data={{
           "@context": "https://schema.org",
           "@type": "MedicalBusiness",
-          name: "Velora",
+          name: "GAF Healthcare",
           url: SITE_URL,
           description:
             "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists, gynecologists, neurosurgeons, neurologists and nephrologists in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including Dr. Sanjeev Gulati, Dr. Ajit Singh Narula, Dr. Alka Bhasin, Dr. Sumit Singh, Dr. M V Padma Srivastava, Dr. Vinay Goyal, Dr. Sandeep Vaishya, Dr. Aditya Gupta, Dr. Varindera Paul Singh, Dr. Usha M Kumar, Dr. Suneeta Mittal, Dr. Alka Kriplani, Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal — with partner hospital costs in USD.",

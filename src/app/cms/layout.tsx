@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Velora CMS",
+  title: "GAF Healthcare CMS",
   robots: { index: false, follow: false },
 };
 

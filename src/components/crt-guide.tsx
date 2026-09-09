@@ -234,7 +234,7 @@ export function CrtGuide() {
         broad planning range is approximately <strong className="text-foreground">$700–$2,500+</strong>.
         The final quotation can sit outside this range depending on hospital, city,
         fractions, planning complexity, imaging, immobilisation, consultation, cancer
-        type and additional treatment. Velora shows this as an indicative partner range,
+        type and additional treatment. GAF Healthcare shows this as an indicative partner range,
         not a guaranteed price.
       </P>
 
@@ -250,7 +250,7 @@ export function CrtGuide() {
             <tr>
               <th className="px-4 py-3 font-medium">City</th>
               <th className="px-4 py-3 font-medium">Indicative range</th>
-              <th className="px-4 py-3 font-medium">On Velora</th>
+              <th className="px-4 py-3 font-medium">On GAF Healthcare</th>
             </tr>
           </thead>
           <tbody>
@@ -295,7 +295,7 @@ export function CrtGuide() {
         Thailand currently publishes a specific $3,000–$3,800 estimate for a full
         course of 3D conformal radiotherapy. Other international figures below are
         broader radiation-therapy market estimates, not 3D-CRT-specific tariffs, and
-        should not be read as exact 3D-CRT prices. India is the destination Velora
+        should not be read as exact 3D-CRT prices. India is the destination GAF Healthcare
         currently staffs with named consultants.
       </P>
       <div className="mt-6 overflow-x-auto rounded-2xl border border-border">

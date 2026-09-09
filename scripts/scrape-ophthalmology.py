@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Fetch structured fields from Ginger's India ophthalmology listing.
 
-Bios are original Velora copy (cataract, LASIK, cornea, glaucoma, retina).
+Bios are original GAF Healthcare copy (cataract, LASIK, cornea, glaucoma, retina).
 Do not paste Ginger marketing.
 Source: https://ginger.healthcare/destinations/india/ophthalmology/
-Specialty on Velora is Ophthalmology (slug ophthalmology).
+Specialty on GAF Healthcare is Ophthalmology (slug ophthalmology).
 """
 
 from __future__ import annotations
@@ -20,7 +20,7 @@ from pathlib import Path
 LISTING = Path("/tmp/ginger-ophthalmology.html")
 OUT_DOCTORS = Path("/tmp/ophthalmology-doctors.json")
 CATALOG = Path("/workspace/src/data/ginger-catalog.json")
-UA = {"User-Agent": "Mozilla/5.0 (compatible; VeloraCatalog/1.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; GAF HealthcareCatalog/1.0)"}
 
 SOURCE = "https://ginger.healthcare/destinations/india/ophthalmology/"
 SPECIALTY = "Ophthalmology"
@@ -64,7 +64,7 @@ EYE_HOSPITALS = [
         "established": "1957",
         "beds": "",
         "accreditation": "NABH",
-        "bio": "Dr Agarwals Eye Hospital in Delhi NCR is an NABH eye hospital in a network founded in 1957. Cataract, cornea, refractive and retina lists sit here when a travelling patient already belongs on an ophthalmology floor rather than a general JCI ward. Velora will not invent a LASIK indication to shorten a hotel stay. Video first; a date if the biometry is theirs.",
+        "bio": "Dr Agarwals Eye Hospital in Delhi NCR is an NABH eye hospital in a network founded in 1957. Cataract, cornea, refractive and retina lists sit here when a travelling patient already belongs on an ophthalmology floor rather than a general JCI ward. GAF Healthcare will not invent a LASIK indication to shorten a hotel stay. Video first; a date if the biometry is theirs.",
         "specialty": "Ophthalmology",
         "image": "",
         "summary": "",
@@ -208,7 +208,7 @@ def write_bio(d: dict) -> str:
     )
     edu_bit = f" Training includes {edu}." if edu else ""
     featured_bit = (
-        f" Velora lists {obj} among featured India ophthalmologists for cataract, cornea and refractive lists."
+        f" GAF Healthcare lists {obj} among featured India ophthalmologists for cataract, cornea and refractive lists."
         if d.get("featured")
         else ""
     )

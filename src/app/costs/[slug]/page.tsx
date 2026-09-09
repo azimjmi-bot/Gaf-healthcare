@@ -123,7 +123,7 @@ export default async function CostDetailPage({
             <h1 className="mt-4 max-w-4xl font-heading text-[2.1rem] leading-[1.12] md:text-6xl">
               {article.heading}
             </h1>
-            <p className="prose-velora mt-5 max-w-3xl">{t.summary}</p>
+            <p className="prose-gaf mt-5 max-w-3xl">{t.summary}</p>
           </div>
         </section>
 
@@ -181,7 +181,7 @@ export default async function CostDetailPage({
           "@type": "MedicalProcedure",
           name: t.name,
           procedureType: t.category,
-          url: `https://velora.health/costs/${t.slug}`,
+          url: `https://gaf.healthcare/costs/${t.slug}`,
           description: t.summary,
         }}
       />

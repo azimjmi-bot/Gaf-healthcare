@@ -88,7 +88,7 @@ export function ConsultForm({
       <div className="rounded-2xl border border-border bg-card p-8 md:p-10">
         <p className="eyebrow">Received</p>
         <h2 className="mt-3 font-heading text-4xl">Your dossier is in motion.</h2>
-        <p className="prose-velora mt-4">
+        <p className="prose-gaf mt-4">
           A coordinator will write within one business day — usually sooner.
           Keep this reference for your records.
         </p>
@@ -191,7 +191,7 @@ export function ConsultForm({
           className="mt-1 size-4 accent-[var(--ink)]"
         />
         <span>
-          I understand Velora is not a hospital, that this is not medical advice,
+          I understand GAF Healthcare is not a hospital, that this is not medical advice,
           and that my details will be used only to prepare a confidential dossier.
         </span>
       </label>

@@ -83,7 +83,7 @@ export const faqs = [
   },
   {
     q: "How much do you charge?",
-    a: "The consult and dossier are complimentary. If you proceed, Velora’s atelier fee is included in the all-in quote — typically 8–12% of the clinical package — covering coordination, second-opinion routing, and 12-month aftercare. No surprise add-ons after you accept.",
+    a: "The consult and dossier are complimentary. If you proceed, GAF Healthcare's atelier fee is included in the all-in quote — typically 8–12% of the clinical package — covering coordination, second-opinion routing, and 12-month aftercare. No surprise add-ons after you accept.",
   },
   {
     q: "What if something goes wrong abroad?",
@@ -99,6 +99,6 @@ export const faqs = [
   },
   {
     q: "Is this medical advice?",
-    a: "No. Velora arranges access to licensed clinicians. Treatment decisions are made between you and the operating physician. Cost ranges on this site are estimates, not offers.",
+    a: "No. GAF Healthcare arranges access to licensed clinicians. Treatment decisions are made between you and the operating physician. Cost ranges on this site are estimates, not offers.",
   },
 ];

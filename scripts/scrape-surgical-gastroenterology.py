@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch structured fields from Ginger's India surgical-gastroenterology listing.
 
-Bios are original Velora copy (HPB theatre, transplant listing, biliary
+Bios are original GAF Healthcare copy (HPB theatre, transplant listing, biliary
 reconstruction). Do not paste Ginger marketing.
 Source: https://ginger.healthcare/destinations/india/surgical-gastroenterology/
 """
@@ -19,7 +19,7 @@ from pathlib import Path
 LISTING = Path("/tmp/ginger-surg-gastro.html")
 OUT_DOCTORS = Path("/tmp/surg-gastro-doctors.json")
 CATALOG = Path("/workspace/src/data/ginger-catalog.json")
-UA = {"User-Agent": "Mozilla/5.0 (compatible; VeloraCatalog/1.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; GAF HealthcareCatalog/1.0)"}
 
 SOURCE = "https://ginger.healthcare/destinations/india/surgical-gastroenterology/"
 

@@ -3,7 +3,7 @@ export const EBRT_NAME = "External Beam Radiotherapy (EBRT)";
 export const ebrtMeta = {
   title: "External Beam Radiation Therapy (EBRT): Cost, Treatment, Procedure, Sessions & Recovery",
   description:
-    "EBRT uses a linear accelerator outside the body to treat cancer. Compare India city costs, sessions, IMRT/IGRT/SBRT options, and named radiation oncologists at Velora partner campuses.",
+    "EBRT uses a linear accelerator outside the body to treat cancer. Compare India city costs, sessions, IMRT/IGRT/SBRT options, and named radiation oncologists at GAF Healthcare partner campuses.",
 };
 
 export const indiaCityCosts: {
@@ -74,7 +74,7 @@ export const ebrtFaqs: { q: string; a: string }[] = [
   },
   {
     q: "Which Indian cities are popular for radiation oncology?",
-    a: "Major centres are concentrated in Delhi NCR, Mumbai, Chennai, Bengaluru and Hyderabad. Published markets also include Kolkata, Pune, Ahmedabad, Kochi and Jaipur; Velora currently lists named faculty in the first five.",
+    a: "Major centres are concentrated in Delhi NCR, Mumbai, Chennai, Bengaluru and Hyderabad. Published markets also include Kolkata, Pune, Ahmedabad, Kochi and Jaipur; GAF Healthcare currently lists named faculty in the first five.",
   },
   {
     q: "Does EBRT require hospital admission?",

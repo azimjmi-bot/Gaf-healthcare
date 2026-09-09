@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 """Fetch structured fields from Ginger's India gynecology listing.
 
-Bios are original Velora copy (hysterectomy approaches, myomectomy, endometriosis).
+Bios are original GAF Healthcare copy (hysterectomy approaches, myomectomy, endometriosis).
 Do not paste Ginger marketing.
 Source: https://ginger.healthcare/destinations/india/gynecology/
-Specialty on Velora is Gynecology (slug gynecology).
+Specialty on GAF Healthcare is Gynecology (slug gynecology).
 """
 
 from __future__ import annotations
@@ -20,7 +20,7 @@ from pathlib import Path
 LISTING = Path("/tmp/ginger-gynecology.html")
 OUT_DOCTORS = Path("/tmp/gynecology-doctors.json")
 CATALOG = Path("/workspace/src/data/ginger-catalog.json")
-UA = {"User-Agent": "Mozilla/5.0 (compatible; VeloraCatalog/1.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; GAF HealthcareCatalog/1.0)"}
 
 SOURCE = "https://ginger.healthcare/destinations/india/gynecology/"
 SPECIALTY = "Gynecology"
@@ -129,7 +129,7 @@ def write_bio(d: dict) -> str:
     )
     edu_bit = f" Training includes {edu}." if edu else ""
     featured_bit = (
-        f" Velora lists {obj} among featured India gynecologists for hysterectomy, myomectomy and endometriosis lists."
+        f" GAF Healthcare lists {obj} among featured India gynecologists for hysterectomy, myomectomy and endometriosis lists."
         if d.get("featured")
         else ""
     )

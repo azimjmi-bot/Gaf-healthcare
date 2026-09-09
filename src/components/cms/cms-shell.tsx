@@ -42,7 +42,7 @@ export function CmsShell({ children }: { children: React.ReactNode }) {
   return (
     <div className="cms-shell">
       <aside className="cms-nav">
-        <p className="cms-nav__brand">Velora desk</p>
+        <p className="cms-nav__brand">GAF Healthcare desk</p>
         <p className="cms-nav__sub">Content desk</p>
         <nav>
           {NAV.map((item) => {

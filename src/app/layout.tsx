@@ -25,7 +25,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Oncologists, ENT and GI in India | Velora",
+    default: "Oncologists, ENT and GI in India | GAF Healthcare",
     template: `%s — ${site.name}`,
   },
   description: site.description,
@@ -100,13 +100,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_IN",
     siteName: site.name,
-    title: "Oncologists, ENT and GI in India | Velora",
+    title: "Oncologists, ENT and GI in India | GAF Healthcare",
     description: site.description,
     url: SITE_URL,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Oncologists, ENT and GI in India | Velora",
+    title: "Oncologists, ENT and GI in India | GAF Healthcare",
     description: site.description,
   },
   alternates: { canonical: SITE_URL },

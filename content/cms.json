@@ -1,6 +1,6 @@
 {
   "settings": {
-    "defaultAuthor": "Velora clinical desk",
+    "defaultAuthor": "GAF Healthcare clinical desk",
     "postsPerPage": 12,
     "blogEyebrow": "Desk",
     "blogTitle": "Planning notes, not a magazine.",
@@ -26,7 +26,7 @@
     {
       "id": "media_l8oi7ao6ys99",
       "url": "/uploads/articles/1788972381836-velora-test.png",
-      "name": "velora-test.png",
+      "name": "gaf-test.png",
       "alt": "",
       "addedAt": "2026-09-09T16:46:21.837Z"
     }
@@ -40,7 +40,7 @@
       "date": "12 August 2026",
       "publishedAt": "2026-08-12T09:00:00.000Z",
       "updatedAt": "2026-08-12T09:00:00.000Z",
-      "author": "Velora clinical desk",
+      "author": "GAF Healthcare clinical desk",
       "category": "Radiation Oncology",
       "tags": [
         "IMRT",
@@ -80,7 +80,7 @@
         {
           "id": "b3",
           "type": "paragraph",
-          "text": "Velora will not book IMRT as an upsell. If 3D-CRT covers the target with acceptable organ-at-risk doses, that is the plan we put in writing — with the physics QA attached."
+          "text": "GAF Healthcare will not book IMRT as an upsell. If 3D-CRT covers the target with acceptable organ-at-risk doses, that is the plan we put in writing — with the physics QA attached."
         }
       ]
     },
@@ -92,7 +92,7 @@
       "date": "28 July 2026",
       "publishedAt": "2026-07-28T09:00:00.000Z",
       "updatedAt": "2026-07-28T09:00:00.000Z",
-      "author": "Velora clinical desk",
+      "author": "GAF Healthcare clinical desk",
       "category": "Proton therapy",
       "tags": [
         "protons",
@@ -117,7 +117,7 @@
         {
           "id": "b2",
           "type": "paragraph",
-          "text": "Capacity is scarce. Wait lists at home are often the real indication for travel. A Velora dossier for protons includes slot timing, immobilisation, and a written plan for interruption if you become unwell mid-course."
+          "text": "Capacity is scarce. Wait lists at home are often the real indication for travel. A GAF Healthcare dossier for protons includes slot timing, immobilisation, and a written plan for interruption if you become unwell mid-course."
         },
         {
           "id": "b3",
@@ -134,7 +134,7 @@
       "date": "9 July 2026",
       "publishedAt": "2026-07-09T09:00:00.000Z",
       "updatedAt": "2026-07-09T09:00:00.000Z",
-      "author": "Velora clinical desk",
+      "author": "GAF Healthcare clinical desk",
       "category": "Stereotactic",
       "tags": [
         "SRS",
@@ -177,7 +177,7 @@
       "date": "21 June 2026",
       "publishedAt": "2026-06-21T09:00:00.000Z",
       "updatedAt": "2026-06-21T09:00:00.000Z",
-      "author": "Velora clinical desk",
+      "author": "GAF Healthcare clinical desk",
       "category": "Brachytherapy",
       "tags": [
         "travel"
@@ -218,7 +218,7 @@
       "date": "2 June 2026",
       "publishedAt": "2026-06-02T09:00:00.000Z",
       "updatedAt": "2026-06-02T09:00:00.000Z",
-      "author": "Velora clinical desk",
+      "author": "GAF Healthcare clinical desk",
       "category": "Planning",
       "tags": [
         "EBRT",

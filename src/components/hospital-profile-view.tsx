@@ -458,7 +458,7 @@ export function HospitalProfileView({
             <div className="hp-support">
               <Ambulance className="size-5" />
               <p>
-                Travelling for treatment? A Velora coordinator holds the visa letter, the pickup and the first night
+                Travelling for treatment? A GAF Healthcare coordinator holds the visa letter, the pickup and the first night
                 so the family is not improvising at arrivals.
               </p>
               <Link href={`/consult?hospital=${hospital.slug}`}>Ask for that help</Link>

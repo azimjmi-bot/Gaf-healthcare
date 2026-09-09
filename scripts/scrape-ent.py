@@ -15,7 +15,7 @@ LISTING = Path("/tmp/ginger-ent.html")
 OUT_DOCTORS = Path("/tmp/ent-doctors.json")
 OUT_HOSPITALS = Path("/tmp/ent-hospitals.json")
 CATALOG = Path("/workspace/src/data/ginger-catalog.json")
-UA = {"User-Agent": "Mozilla/5.0 (compatible; VeloraCatalog/1.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; GAF HealthcareCatalog/1.0)"}
 
 ENT_RULES: list[tuple[re.Pattern, str]] = [
     (re.compile(r"tors|transoral robotic", re.I), "Transoral Robotic Surgery (TORS)"),
@@ -243,7 +243,7 @@ def parse_hospital(html: str, slug: str, href: str, city: str, name_hint: str) -
         acc.append("NABL")
     name = name_hint or h1
     bio = (
-        f"{name} is an ENT campus in {city}, India on Velora’s list. "
+        f"{name} is an ENT campus in {city}, India on GAF Healthcare's list. "
         f"{'It opened in ' + year + '. ' if year else ''}"
         f"{(beds + ' beds. ') if beds else ''}"
         f"{' · '.join(acc) + ' accreditation is current. ' if acc else ''}"

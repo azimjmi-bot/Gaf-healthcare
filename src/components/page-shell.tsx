@@ -20,7 +20,7 @@ export function PageIntro({
         <h1 className="mt-4 max-w-4xl font-heading text-4xl leading-[1.1] md:text-6xl">
           {title}
         </h1>
-        <p className="prose-velora mt-6">{lede}</p>
+        <p className="prose-gaf mt-6">{lede}</p>
       </div>
       {children ? (
         <div className="mx-auto max-w-7xl px-5 pb-10 md:px-8">{children}</div>

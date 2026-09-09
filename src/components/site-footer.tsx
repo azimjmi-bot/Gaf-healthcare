@@ -23,7 +23,7 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-ink text-ivory">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-12 md:px-8">
         <div className="md:col-span-5">
-          <p className="font-heading text-3xl tracking-[0.2em] uppercase">Velora</p>
+          <p className="font-heading text-2xl tracking-[0.12em] uppercase md:text-3xl">GAF Healthcare</p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-ivory/70">
             {site.tagline} A private medical travel atelier for patients who want
             accredited hospitals, named doctors, and a coordinator who stays on
@@ -54,7 +54,7 @@ export function SiteFooter() {
         <div className="md:col-span-3">
           <p className="eyebrow text-gold">Note</p>
           <p className="mt-4 text-sm leading-relaxed text-ivory/60">
-            Velora is not a hospital and does not provide medical advice. Cost
+            GAF Healthcare is not a hospital and does not provide medical advice. Cost
             ranges are illustrative. Clinical decisions belong to you and the
             licensed physician you choose.
           </p>
@@ -62,7 +62,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-white/10">
         <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-xs text-ivory/45 md:flex-row md:justify-between md:px-8">
-          <p>© {new Date().getFullYear()} Velora Atelier. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} GAF Healthcare. All rights reserved.</p>
           <p>New York · London · Singapore</p>
         </div>
       </div>

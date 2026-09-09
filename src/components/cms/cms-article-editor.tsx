@@ -496,7 +496,7 @@ export function CmsArticleEditor({
               Canonical URL
               <Input
                 value={article.canonical}
-                placeholder="https://velora.health/blogs/…"
+                placeholder="https://gaf.healthcare/blogs/…"
                 onChange={(e) => patch({ canonical: e.target.value })}
               />
             </label>

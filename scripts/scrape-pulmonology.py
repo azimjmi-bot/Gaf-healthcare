@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Fetch structured fields from Ginger's India pulmonology listing.
 
-Bios are original Velora copy (bronchoscopy, EBUS, thoracoscopy, lung transplant).
+Bios are original GAF Healthcare copy (bronchoscopy, EBUS, thoracoscopy, lung transplant).
 Do not paste Ginger marketing.
 Source: https://ginger.healthcare/destinations/india/pulmonology/
 """
@@ -19,7 +19,7 @@ from pathlib import Path
 LISTING = Path("/tmp/ginger-pulmonology.html")
 OUT_DOCTORS = Path("/tmp/pulmonology-doctors.json")
 CATALOG = Path("/workspace/src/data/ginger-catalog.json")
-UA = {"User-Agent": "Mozilla/5.0 (compatible; VeloraCatalog/1.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; GAF HealthcareCatalog/1.0)"}
 
 SOURCE = "https://ginger.healthcare/destinations/india/pulmonology/"
 

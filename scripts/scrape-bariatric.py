@@ -15,7 +15,7 @@ LISTING = Path("/tmp/ginger-bariatric.html")
 OUT_DOCTORS = Path("/tmp/bariatric-doctors.json")
 OUT_HOSPITALS = Path("/tmp/bariatric-hospitals.json")
 CATALOG = Path("/workspace/src/data/ginger-catalog.json")
-UA = {"User-Agent": "Mozilla/5.0 (compatible; VeloraCatalog/1.0)"}
+UA = {"User-Agent": "Mozilla/5.0 (compatible; GAF HealthcareCatalog/1.0)"}
 
 BARIATRIC_RULES: list[tuple[re.Pattern, str]] = [
     (re.compile(r"band.{0,12}remov|remov.{0,12}band|explant", re.I), "Gastric Band Removal"),
@@ -205,7 +205,7 @@ def parse_hospital(html: str, slug: str, href: str, city: str, name_hint: str) -
         acc.append("NABL")
     name = name_hint or h1
     bio = (
-        f"{name} is a Bariatric Surgery campus in {city}, India on Velora’s list. "
+        f"{name} is a Bariatric Surgery campus in {city}, India on GAF Healthcare's list. "
         f"{'It opened in ' + year + '. ' if year else ''}"
         f"{(beds + ' beds. ') if beds else ''}"
         f"{' · '.join(acc) + ' accreditation is current. ' if acc else ''}"

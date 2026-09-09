@@ -168,7 +168,7 @@ export function CostArticleView({
   return (
     <article className="max-w-3xl pb-4 [&_a]:underline-offset-4 [&_a:hover]:underline">
       <p className="text-xs text-muted-foreground">
-        Last updated: {formatDate(article.lastUpdated)} · Written and reviewed by the Velora medical
+        Last updated: {formatDate(article.lastUpdated)} · Written and reviewed by the GAF Healthcare medical
         travel desk
       </p>
 
@@ -231,7 +231,7 @@ export function CostArticleView({
 
       <H2 id="cost-by-city">Cost comparison by major Indian city</H2>
       <P>
-        Velora lists named consultants for this pathway in{" "}
+        GAF Healthcare lists named consultants for this pathway in{" "}
         {cityRows.map((row, i) => (
           <span key={row.citySlug}>
             <Link href={row.costPath}>{row.city}</Link>
@@ -260,7 +260,7 @@ export function CostArticleView({
               <th scope="col" className="px-4 py-3 font-medium">Indicative cost</th>
               <th scope="col" className="px-4 py-3 font-medium">Typical stay</th>
               <th scope="col" className="px-4 py-3 font-medium">Key cost consideration</th>
-              <th scope="col" className="px-4 py-3 font-medium">Listed on Velora</th>
+              <th scope="col" className="px-4 py-3 font-medium">Listed on GAF Healthcare</th>
             </tr>
           </thead>
           <tbody>

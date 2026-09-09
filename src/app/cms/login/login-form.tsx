@@ -30,10 +30,10 @@ export default function CmsLoginForm() {
   return (
     <div className="cms-login">
       <form onSubmit={onSubmit} className="cms-login__card">
-        <p className="cms-kicker">Velora desk</p>
+        <p className="cms-kicker">GAF Healthcare desk</p>
         <h1>Sign in to the article CMS</h1>
         <p>
-          Local default password is <code>velora-local</code>. Set <code>CMS_PASSWORD</code> in
+          Local default password is <code>gaf-local</code>. Set <code>CMS_PASSWORD</code> in
           production.
         </p>
         <label>

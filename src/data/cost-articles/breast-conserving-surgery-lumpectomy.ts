@@ -323,7 +323,7 @@ export const breastConservingSurgery: CostArticle = {
     {
       citySlug: "delhi-ncr",
       ecosystem:
-        "The National Capital Region carries the largest number of listed campuses on Velora, and with it the widest choice of breast units — from dedicated cancer institutes to multi-speciality flagships with a breast surgery team inside a broader oncology floor. It is also the easiest place to assemble a full multidisciplinary sequence in one geography, which matters when surgery, radiation and medical oncology all need to happen within a few weeks.",
+        "The National Capital Region carries the largest number of listed campuses on GAF Healthcare, and with it the widest choice of breast units — from dedicated cancer institutes to multi-speciality flagships with a breast surgery team inside a broader oncology floor. It is also the easiest place to assemble a full multidisciplinary sequence in one geography, which matters when surgery, radiation and medical oncology all need to happen within a few weeks.",
       logistics:
         "Indira Gandhi International has the broadest direct connectivity of the five cities, particularly from Africa, Central Asia and the Middle East. The catch is that the NCR is not one city: a campus in Gurgaon, one in south Delhi and one in Noida can mean very different daily commutes from the same hotel. Aerocity, Vasant Kunj and Gurgaon are the usual companion stays. Winter air quality is a genuine consideration if you or your attendant has respiratory disease and you are here for a multi-week radiation course.",
       costNote:
@@ -372,7 +372,7 @@ export const breastConservingSurgery: CostArticle = {
       country: "India",
       stay: "[STAY]",
       context:
-        "Lowest of the group for the operation, and the only destination in this table where Velora lists named breast and surgical oncologists you can meet on camera first.",
+        "Lowest of the group for the operation, and the only destination in this table where GAF Healthcare lists named breast and surgical oncologists you can meet on camera first.",
     },
     {
       country: "Turkey",
@@ -492,10 +492,10 @@ export const breastConservingSurgery: CostArticle = {
 
   doctorHeading: "Breast-conserving surgery specialists in India",
   doctorIntro:
-    "These are surgical oncologists listed on Velora whose practice covers breast-conserving surgery. Profiles show training, campus and procedures; there are no rankings here, and no fee is paid for placement.",
+    "These are surgical oncologists listed on GAF Healthcare whose practice covers breast-conserving surgery. Profiles show training, campus and procedures; there are no rankings here, and no fee is paid for placement.",
   hospitalHeading: "Hospitals listed for breast-conserving surgery in India",
   hospitalIntro:
-    "Campuses on Velora where this operation is quoted, with accreditation as published by the hospital. Choose on breast unit depth, the surgeon you met on camera and the radiation plan that follows — not on the brand name.",
+    "Campuses on GAF Healthcare where this operation is quoted, with accreditation as published by the hospital. Choose on breast unit depth, the surgeon you met on camera and the radiation plan that follows — not on the brand name.",
 
   figures: [
     {

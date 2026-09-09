@@ -3,7 +3,7 @@ export const CRT_NAME = "3D Conformal Radiotherapy (3D-CRT)";
 export const crtMeta = {
   title: "3D Conformal Radiation Therapy (3D-CRT): Cost, Procedure, Sessions, Benefits & Recovery",
   description:
-    "3D-CRT shapes external-beam radiation around a tumour using CT-based planning. Compare India city costs, sessions versus IMRT, and named radiation oncologists at Velora partner campuses.",
+    "3D-CRT shapes external-beam radiation around a tumour using CT-based planning. Compare India city costs, sessions versus IMRT, and named radiation oncologists at GAF Healthcare partner campuses.",
 };
 
 export const crtIndiaCityCosts: { city: string; range: string; listed: boolean }[] = [
@@ -43,7 +43,7 @@ export const crtFaqs: { q: string; a: string }[] = [
   },
   {
     q: "What is the cost of 3D-CRT in India?",
-    a: "Published Indian prices vary widely. Current sources report approximately ₹60,000–₹1,50,000 at some centres and up to approximately ₹2,25,000 at other hospitals. For private international-patient planning, Velora uses about $700–$2,500+.",
+    a: "Published Indian prices vary widely. Current sources report approximately ₹60,000–₹1,50,000 at some centres and up to approximately ₹2,25,000 at other hospitals. For private international-patient planning, GAF Healthcare uses about $700–$2,500+.",
   },
   {
     q: "Is 3D-CRT better than IMRT?",
