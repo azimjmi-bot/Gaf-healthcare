@@ -70,7 +70,7 @@ export default async function DoctorsPage({
         ? `Pediatric orthopaedic surgeons in ${place}`
       : query.specialty
         ? `${query.specialty} doctors in ${place}`
-        : "Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons and pulmonologists in India";
+        : "Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and paediatric orthopaedic surgeons in India";
 
   return (
     <>
@@ -78,7 +78,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="India · five cities · seventeen specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons and pulmonologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including pulmonology faculty such as Dr. Anand Jaiswal, Dr. Manoj Kumar Goel, Dr. Vivek Singh and Dr. Randeep Guleria — plus Pediatric Orthopaedic cost sheets (clubfoot, DDH, SCFE, limb lengthening, paediatric scoliosis) tagged for later named faculty. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/pediatric-orthopaedic/{procedure}. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and paediatric orthopaedic surgeons in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including pediatric orthopaedic faculty such as Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/pediatric-orthopaedic/{procedure}. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

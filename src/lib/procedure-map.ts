@@ -470,23 +470,24 @@ const PEDIATRIC_ORTHOPAEDIC_RULES: {
   name: (typeof PEDIATRIC_ORTHOPAEDIC_PROCEDURES)[number];
 }[] = [
   { test: /\bscfe\b|slipped capital femoral/i, name: "SCFE Hip Surgery (Slipped Capital Femoral Epiphysis)" },
-  { test: /\bddh\b|developmental dysplasia/i, name: "Developmental Dysplasia of Hip Surgery" },
-  { test: /clubfoot|talipes|ponseti/i, name: "Clubfoot Correction Surgery" },
+  { test: /\bddh\b|developmental dysplasia|hip dysplasia/i, name: "Developmental Dysplasia of Hip Surgery" },
+  { test: /clubfoot|talipes|\bctev\b|ponseti/i, name: "Clubfoot Correction Surgery" },
   { test: /pediatric scoliosis|paediatric scoliosis|child.{0,12}scoliosis/i, name: "Pediatric Scoliosis Surgery" },
+  { test: /\bscoliosis\b|growing rod/i, name: "Pediatric Scoliosis Surgery" },
   {
     test: /pediatric spinal deformity|paediatric spinal deformity|congenital scoliosis|neuromuscular scoliosis/i,
     name: "Pediatric Spinal Deformity Correction",
   },
   { test: /cerebral palsy|semls\b|single-event multilevel/i, name: "Cerebral Palsy Orthopedic Surgery" },
   { test: /hip preservation|periacetabular|impingement/i, name: "Hip Preservation Surgery" },
-  { test: /pediatric hip reconstr|paediatric hip reconstr|pelvic osteotomy/i, name: "Pediatric Hip Reconstruction" },
+  { test: /pediatric hip reconstr|paediatric hip reconstr|pelvic osteotomy|perthes/i, name: "Pediatric Hip Reconstruction" },
   { test: /limb lengthen|ilizarov.{0,12}length/i, name: "Limb Lengthening Surgery" },
   { test: /limb reconstr/i, name: "Limb Reconstruction Surgery" },
   { test: /pediatric foot|paediatric foot|pediatric ankle|paediatric ankle/i, name: "Pediatric Foot & Ankle Surgery" },
   { test: /tendon repair|tendon transfer/i, name: "Tendon Repair Surgery" },
   { test: /fracture fixation|k[\s-]*wire|elastic nailing|\btens\b/i, name: "Pediatric Fracture Fixation" },
   { test: /pediatric fracture|paediatric fracture|child.{0,12}fracture/i, name: "Pediatric Fracture Surgery" },
-  { test: /pediatric deformity|paediatric deformity|limb deformity/i, name: "Pediatric Deformity Correction" },
+  { test: /pediatric deformity|paediatric deformity|limb deformity|\bdeformity\b/i, name: "Pediatric Deformity Correction" },
 ];
 
 export function mapPediatricOrthopaedicProcedures(texts: string[], fallback = true) {
