@@ -4,6 +4,7 @@ import { SPINE_SURGERY_COST, SPINE_SURGERY_SUMMARIES } from "@/lib/spine-surgery
 import { PULMONOLOGY_COST, PULMONOLOGY_SUMMARIES } from "@/lib/pulmonology-costs";
 import { PEDIATRIC_ORTHOPAEDIC_COST, PEDIATRIC_ORTHOPAEDIC_SUMMARIES } from "@/lib/pediatric-orthopaedic-costs";
 import { ORTHOPEDICS_CLUSTER_BY_PROCEDURE, ORTHOPEDICS_COST, ORTHOPEDICS_SUMMARIES } from "@/lib/orthopedics-costs";
+import { OPHTHALMOLOGY_CLUSTER_BY_PROCEDURE, OPHTHALMOLOGY_COST, OPHTHALMOLOGY_SUMMARIES } from "@/lib/ophthalmology-costs";
 import { GASTROENTEROLOGY_COST, GASTROENTEROLOGY_SUMMARIES } from "@/lib/gastroenterology-costs";
 import { ENT_COST, ENT_SUMMARIES } from "@/lib/ent-costs";
 import { COSMETIC_COST, COSMETIC_SUMMARIES } from "@/lib/cosmetic-costs";
@@ -23,6 +24,7 @@ import {
   PULMONOLOGY_PROCEDURES,
   PEDIATRIC_ORTHOPAEDIC_PROCEDURES,
   ORTHOPEDICS_PROCEDURES,
+  OPHTHALMOLOGY_PROCEDURES,
   GASTROENTEROLOGY_PROCEDURES,
   ENT_PROCEDURES,
   COSMETIC_PROCEDURES,
@@ -891,6 +893,47 @@ const orthopedicsTreatments: Treatment[] = ORTHOPEDICS_PROCEDURES.map((name) => 
   };
 });
 
+const OPHTHALMOLOGY_IMAGE =
+  "https://images.unsplash.com/photo-1579684453423-f84349ef60b0?auto=format&fit=crop&w=1600&q=80";
+
+const OPHTHALMOLOGY_INCLUDES = [
+  "Ophthalmology consultation and records review",
+  "Named consultant on camera before travel",
+  "Biometry, tomography or OCT as indicated",
+  "Lens, graft, laser or implant as quoted",
+  "Discharge summary to your home physician",
+];
+
+const ophthalmologyTreatments: Treatment[] = OPHTHALMOLOGY_PROCEDURES.filter(
+  (name) => name !== "Blepharoplasty",
+).map((name) => {
+  const cost = OPHTHALMOLOGY_COST[name];
+  if (!cost) throw new Error(`Missing ophthalmology cost for ${name}`);
+  const slug = toSlug(name);
+  const cluster = OPHTHALMOLOGY_CLUSTER_BY_PROCEDURE[name] ?? "Ophthalmology";
+  return {
+    slug,
+    name,
+    category: cluster,
+    specialtySlug: "ophthalmology",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      OPHTHALMOLOGY_SUMMARIES[name] ??
+      `Ophthalmology — ${name} at JCI partner campuses with a named ophthalmologist before you travel.`,
+    image: OPHTHALMOLOGY_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Cataract and refractive error", "Cornea and keratoconus", "Glaucoma", "Retina and oculoplastics"],
+    procedures: [name],
+    includes: OPHTHALMOLOGY_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named ophthalmologist confirms imaging, laterality and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -910,6 +953,7 @@ export const treatments: Treatment[] = [
   ...pulmonologyTreatments,
   ...pediatricOrthopaedicTreatments,
   ...orthopedicsTreatments,
+  ...ophthalmologyTreatments,
 ];
 
 export function getTreatment(slug: string) {

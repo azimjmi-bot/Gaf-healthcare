@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, ORTHOPEDICS_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, OPHTHALMOLOGY_PROCEDURES, ORTHOPEDICS_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -539,6 +539,40 @@ export function mapOrthopedicsProcedures(texts: string[], fallback = true) {
   ];
 }
 
+const OPHTHALMOLOGY_RULES: { test: RegExp; name: (typeof OPHTHALMOLOGY_PROCEDURES)[number] }[] = [
+  { test: /femto.{0,20}cataract|flacs|femtosecond.{0,20}cataract/i, name: "Femto Laser Cataract Surgery" },
+  { test: /phacoemulsif|phaco cataract|\bphaco\b/i, name: "Phacoemulsification Cataract Surgery" },
+  { test: /pediatric cataract|paediatric cataract|congenital cataract/i, name: "Pediatric Cataract Surgery" },
+  { test: /cataract/i, name: "Cataract Surgery" },
+  { test: /relex smile|smile eye|\bsmile\b.{0,16}(laser|lenticule|refract)/i, name: "SMILE Eye Surgery" },
+  { test: /\bicl\b|collamer|implantable contact lens/i, name: "ICL (Implantable Collamer Lens)" },
+  { test: /lasik|laser vision correction|\bprk\b/i, name: "LASIK Eye Surgery" },
+  { test: /\bdmek\b|descemet membrane endothelial/i, name: "DMEK" },
+  { test: /\bdsek\b|\bdsaek\b|descemet stripping/i, name: "DSEK" },
+  { test: /\bdalk\b|deep anterior lamellar/i, name: "DALK" },
+  { test: /corneal transplant|penetrating keratoplasty|\bkeratoplasty\b/i, name: "Corneal Transplantation" },
+  { test: /cross[\s-]*link|\bc3r\b|collagen cross/i, name: "Corneal Cross-Linking (C3R)" },
+  { test: /laser glaucoma|\bslt\b|selective laser trabeculoplasty/i, name: "Laser Glaucoma Surgery" },
+  { test: /trabeculectomy/i, name: "Trabeculectomy" },
+  { test: /drainage device|ahmed valve|baerveldt|glaucoma valve/i, name: "Glaucoma Drainage Device / Valve Implantation" },
+  { test: /glaucoma/i, name: "Glaucoma Surgery" },
+  { test: /macular hole/i, name: "Macular Hole Surgery" },
+  { test: /retinal detach/i, name: "Retinal Detachment Surgery" },
+  { test: /anti[\s-]*vegf|intravitreal|avastin|lucentis|eylea/i, name: "Intravitreal Anti-VEGF Injection" },
+  { test: /vitrectomy/i, name: "Vitrectomy" },
+  { test: /squint|strabismus/i, name: "Squint / Strabismus Surgery" },
+  { test: /eyelid reconstr/i, name: "Eyelid Reconstruction Surgery" },
+  { test: /blepharoplasty/i, name: "Blepharoplasty" },
+  { test: /\bdcr\b|dacryocyst|tear duct/i, name: "Dacryocystorhinostomy (DCR) / Tear Duct Surgery" },
+  { test: /oculoplast|orbit/i, name: "Oculoplastic Surgery" },
+];
+
+export function mapOphthalmologyProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, OPHTHALMOLOGY_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Cataract Surgery", "LASIK Eye Surgery", "Glaucoma Surgery"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -557,5 +591,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Pulmonology") return mapPulmonologyProcedures(texts);
   if (specialty === "Pediatric Orthopaedic") return mapPediatricOrthopaedicProcedures(texts);
   if (specialty === "Orthopedics") return mapOrthopedicsProcedures(texts);
+  if (specialty === "Ophthalmology") return mapOphthalmologyProcedures(texts);
   return mapCatalogProcedures(texts);
 }
