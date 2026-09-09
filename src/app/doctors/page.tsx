@@ -88,7 +88,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="India · five cities · twenty-two specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists, gynecologists, neurosurgeons and neurologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including Dr. Sandeep Vaishya, Dr. Aditya Gupta and Dr. Varindera Paul Singh for brain tumour, aneurysm and radiosurgery, Dr. Usha M Kumar, Dr. Suneeta Mittal and Dr. Alka Kriplani for hysterectomy, myomectomy and endometriosis, Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal for cataract and cornea, Dr. Ashok Rajgopal, Dr. I P S Oberoi and Dr. Yash Gulati for adult joints, and Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman for children’s limbs. Neurology sheets cover EEG, EMG, stroke lysis, DBS (shared with Neurosurgery), VNS and sleep study. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/neurology/{procedure}. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists, gynecologists, neurosurgeons and neurologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including Dr. Sumit Singh, Dr. M V Padma Srivastava and Dr. Vinay Goyal for stroke, epilepsy and movement lists, Dr. Sandeep Vaishya, Dr. Aditya Gupta and Dr. Varindera Paul Singh for brain tumour, aneurysm and radiosurgery, Dr. Usha M Kumar, Dr. Suneeta Mittal and Dr. Alka Kriplani for hysterectomy, myomectomy and endometriosis, Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal for cataract and cornea, Dr. Ashok Rajgopal, Dr. I P S Oberoi and Dr. Yash Gulati for adult joints, and Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman for children’s limbs. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/neurology/{procedure}. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
@@ -102,9 +102,7 @@ export default async function DoctorsPage({
       <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
         {list.length === 0 ? (
           <p className="text-muted-foreground">
-            {query.specialty === "Neurology"
-              ? "Named neurologists are being matched. EEG, video EEG, EMG, nerve conduction, stroke lysis, TCD, MRgFUS, IVIG, VNS and sleep-study cost sheets stay live — request a dossier and we will advise."
-              : query.specialty === "Neurosurgery"
+            {query.specialty === "Neurosurgery"
               ? "Named neurosurgeons are being matched. Brain tumour, aneurysm, DBS, paediatric and radiosurgery cost sheets stay live — request a dossier and we will advise."
               : query.specialty === "Gynecology"
               ? "Named gynecologists are being matched. Laparoscopic, robotic, vaginal and abdominal hysterectomy, myomectomy, endometriosis and pelvic-floor cost sheets stay live — request a dossier and we will advise."
