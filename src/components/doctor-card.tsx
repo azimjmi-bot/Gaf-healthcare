@@ -6,7 +6,6 @@ import {
   BadgeCheck,
   Building2,
   CalendarDays,
-  Check,
   ChevronDown,
   ChevronUp,
   GraduationCap,
@@ -19,7 +18,6 @@ import {
   experienceBadge,
   keyProcedureLabels,
   listingBio,
-  whyChooseLines,
 } from "@/lib/doctor-profile";
 import type { Doctor } from "@/lib/doctors";
 import { whatsappHref } from "@/lib/site";
@@ -35,7 +33,6 @@ function wa(doctor: Doctor, intent: string) {
 export function DoctorCard({ doctor }: { doctor: Doctor }) {
   const [open, setOpen] = useState(false);
   const bio = listingBio(doctor);
-  const why = whyChooseLines(doctor);
   const procedures = keyProcedureLabels(doctor);
   const shown = open ? procedures : procedures.slice(0, PROC_PREVIEW);
   const extra = procedures.length - PROC_PREVIEW;
@@ -119,19 +116,6 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
           <Link href={`/doctors/${doctor.slug}`} className="dcard__more">
             View profile →
           </Link>
-          {why.length > 0 ? (
-            <div className="dcard__why">
-              <p>Why choose {doctor.name}?</p>
-              <ul>
-                {why.map((line) => (
-                  <li key={line}>
-                    <Check className="size-3.5" />
-                    {line}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ) : null}
         </div>
 
         {procedures.length > 0 ? (

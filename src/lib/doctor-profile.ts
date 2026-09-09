@@ -73,26 +73,6 @@ export function designationLabel(doctor: Doctor) {
   return part || doctor.title;
 }
 
-export function whyChooseLines(doctor: Doctor) {
-  const lines: string[] = [];
-  const seen = new Set<string>();
-  const push = (raw: string | undefined) => {
-    const label = raw?.replace(/\s+/g, " ").trim() ?? "";
-    const key = label.toLowerCase();
-    if (!label || seen.has(key) || lines.length >= 4) return;
-    seen.add(key);
-    lines.push(label);
-  };
-
-  if (doctor.featured) push("Featured on the Velora list");
-  for (const spec of doctor.specializations) {
-    if (spec.toLowerCase() === doctor.specialty.toLowerCase()) continue;
-    push(spec);
-  }
-  if (doctor.languages) push(`Consults in ${doctor.languages}`);
-  return lines;
-}
-
 export function keyProcedureLabels(doctor: Doctor) {
   const seen = new Set<string>();
   const labels: string[] = [];
