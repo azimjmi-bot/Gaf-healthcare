@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Star } from "lucide-react";
 import { AccreditationSeals } from "@/components/accreditation-seals";
-import { Button } from "@/components/ui/button";
+import { DoctorProfileHero } from "@/components/doctor-profile-hero";
 import { JsonLd } from "@/components/json-ld";
 import { CtaBand } from "@/components/page-shell";
 import { doctors, doctorsForHospital, getDoctor, getHospital, getTreatment } from "@/lib/data";
@@ -63,43 +62,7 @@ export default async function DoctorDetailPage({
           { name: d.name, path: `/doctors/${d.slug}` },
         ])}
       />
-      <section className="relative overflow-hidden bg-ink text-ivory">
-        <div className="pointer-events-none absolute -left-24 top-10 size-72 rounded-full bg-gold/10 blur-3xl" />
-        <div className="relative mx-auto max-w-7xl px-5 py-14 md:px-8 md:py-20">
-          <div className="flex flex-wrap gap-2">
-            {d.featured ? (
-              <span className="inline-flex items-center gap-1 rounded-full bg-white px-3 py-1 text-xs font-medium text-ink">
-                <Star className="size-3 fill-amber-500 text-amber-500" /> Featured
-              </span>
-            ) : null}
-            <span className="rounded-full border border-white/20 px-3 py-1 text-xs">{d.specialty}</span>
-            {d.experience ? (
-              <span className="rounded-full border border-white/20 px-3 py-1 text-xs">{d.experience}</span>
-            ) : null}
-          </div>
-          <h1 className="mt-5 font-heading text-4xl md:text-6xl">{d.name}</h1>
-          {d.qualifications ? (
-            <p className="mt-3 text-sm tracking-wide text-ivory/70">{d.qualifications}</p>
-          ) : null}
-          <p className="mt-2 text-lg text-ivory/85">{d.title}</p>
-          {hospital ? (
-            <Link
-              href={`/hospitals/${hospital.slug}`}
-              className="mt-5 inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm hover:bg-white/15"
-            >
-              {hospital.name}, {d.city}
-              <ArrowRight className="size-4" />
-            </Link>
-          ) : (
-            <p className="mt-5 text-sm text-ivory/70">
-              {d.city}, {d.country}
-            </p>
-          )}
-          <Button asChild className="mt-8 h-12 rounded-full bg-gold px-8 text-ink hover:bg-gold/90">
-            <Link href={`/consult?doctor=${d.slug}`}>Book consultation</Link>
-          </Button>
-        </div>
-      </section>
+      <DoctorProfileHero doctor={d} hospital={hospital} />
 
       <article className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">
         <h3 className="text-sm tracking-[0.2em] text-gold uppercase">About {d.name}</h3>

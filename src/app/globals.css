@@ -1207,3 +1207,280 @@
   background: #fff;
   color: #0b4f57;
 }
+
+.dhero {
+  background: #f4f6f8;
+  color: #16323a;
+}
+
+.dhero__inner {
+  margin-inline: auto;
+  max-width: 72rem;
+  padding: 0 1.25rem 1.75rem;
+}
+
+@media (min-width: 768px) {
+  .dhero__inner {
+    padding-inline: 2rem;
+  }
+}
+
+.dhero__crumbs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  padding-top: 1.25rem;
+  font-size: 0.8rem;
+  color: #6b7c82;
+}
+
+.dhero__crumbs a:hover {
+  color: #16323a;
+  text-decoration: underline;
+}
+
+.dhero__grid {
+  display: grid;
+  gap: 2rem;
+  padding-block: 1.15rem 1.5rem;
+}
+
+@media (min-width: 960px) {
+  .dhero__grid {
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+  }
+}
+
+.dhero__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.dhero__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  border-radius: 999px;
+  border: 1px solid #d5dde3;
+  background: #fff;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #3d5158;
+}
+
+.dhero__pill--gold {
+  border-color: #e6d3a3;
+  background: #f6edd6;
+  color: #8a6a1f;
+}
+
+.dhero__name {
+  margin-top: 1.15rem;
+  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  font-size: clamp(2.2rem, 4.4vw, 3.6rem);
+  line-height: 1.05;
+  color: #142a33;
+}
+
+.dhero__degrees {
+  margin-top: 0.45rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  color: #8a969c;
+}
+
+.dhero__title {
+  margin-top: 0.55rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #b08948;
+}
+
+.dhero__place {
+  margin-top: 0.35rem;
+  font-size: 0.98rem;
+  color: #5a6d73;
+}
+
+.dhero__place a:hover {
+  text-decoration: underline;
+}
+
+.dhero__highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem 1.25rem;
+  margin-top: 1.35rem;
+}
+
+@media (max-width: 639px) {
+  .dhero__highlights {
+    grid-template-columns: 1fr;
+  }
+}
+
+.dhero__highlights li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 0.82rem;
+  line-height: 1.35;
+  color: #3d5158;
+}
+
+.dhero__hi-icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 1.85rem;
+  height: 1.85rem;
+  border-radius: 999px;
+  background: #fff;
+  color: #b08948;
+  box-shadow: 0 1px 0 #e6edf1;
+}
+
+.dhero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.dhero__book,
+.dhero__contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.9rem;
+  border-radius: 0.7rem;
+  padding: 0 1.15rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.dhero__book {
+  background: #c9a227;
+  color: #142a33;
+}
+
+.dhero__book:hover {
+  background: #b8921c;
+}
+
+.dhero__contact {
+  border: 1px solid #2a3a40;
+  background: #fff;
+  color: #142a33;
+}
+
+.dhero__contact:hover {
+  background: #f3f6f8;
+}
+
+.dhero__sla {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.85rem;
+  font-size: 0.82rem;
+  color: #5a6d73;
+}
+
+.dhero__dot {
+  width: 0.55rem;
+  height: 0.55rem;
+  border-radius: 999px;
+  background: #2f9e5c;
+}
+
+.dhero__visual-wrap {
+  position: relative;
+  isolation: isolate;
+}
+
+.dhero__orb {
+  position: absolute;
+  border-radius: 999px;
+  z-index: 0;
+}
+
+.dhero__orb--a {
+  width: 16rem;
+  height: 16rem;
+  right: -1.5rem;
+  top: -1.5rem;
+  background: #d7eaf4;
+}
+
+.dhero__orb--b {
+  width: 11rem;
+  height: 11rem;
+  right: 6rem;
+  bottom: 1rem;
+  background: #ffffff;
+  opacity: 0.7;
+}
+
+.dhero__art {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 1.35rem;
+  min-height: 20rem;
+  box-shadow: 0 22px 48px -28px rgba(20, 42, 51, 0.55);
+}
+
+@media (min-width: 960px) {
+  .dhero__art {
+    min-height: 24rem;
+  }
+}
+
+.dhero__stats {
+  display: grid;
+  gap: 0;
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 10px 30px -22px rgba(20, 42, 51, 0.45);
+}
+
+@media (min-width: 760px) {
+  .dhero__stats {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
+}
+
+.dhero__stats li {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  padding: 1.05rem 1.15rem;
+  font-size: 0.86rem;
+  line-height: 1.4;
+  color: #16323a;
+}
+
+@media (min-width: 760px) {
+  .dhero__stats li + li {
+    border-left: 1px solid #e6edf1;
+  }
+}
+
+.dhero__stats svg {
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+  color: #b08948;
+}
+
+.dhero__stat-k {
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a969c;
+  margin-bottom: 0.15rem;
+}
