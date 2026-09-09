@@ -109,19 +109,55 @@ export function isEyeCampus(hospital: Hospital) {
   return hospital.specialtySlugs.length === 1 && hospital.specialtySlug === "ophthalmology";
 }
 
-export function accreditationBadges(accreditation: string) {
-  const parts = accreditation
+export type AccreditationMark = {
+  id: string;
+  label: string;
+  src?: string;
+};
+
+const ACCREDITATION_SEALS: { id: string; match: RegExp; label: string; src: string }[] = [
+  {
+    id: "jci",
+    match: /\bJCI\b/i,
+    label: "Joint Commission International Gold Seal of Approval",
+    src: "/accreditations/jci.png",
+  },
+  {
+    id: "nabh",
+    match: /\bNABH\b/i,
+    label: "NABH Accredited — Patient Safety & Quality of Care",
+    src: "/accreditations/nabh.png",
+  },
+  {
+    id: "nabl",
+    match: /\bNABL\b/i,
+    label: "NABL — National Accreditation Board for Testing and Calibration Laboratories",
+    src: "/accreditations/nabl.png",
+  },
+];
+
+export function parseAccreditationMarks(accreditation: string): AccreditationMark[] {
+  const marks: AccreditationMark[] = [];
+  for (const seal of ACCREDITATION_SEALS) {
+    if (seal.match.test(accreditation)) {
+      marks.push({ id: seal.id, label: seal.label, src: seal.src });
+    }
+  }
+  const extras = accreditation
     .split(/[·,|/]+/)
     .map((p) => p.trim())
-    .filter(Boolean);
-  return parts.map((p) => {
-    const up = p.toUpperCase();
-    if (up === "JCI") return "JCI Accredited";
-    if (up === "NABH") return "NABH Accredited";
-    if (up.includes("JCI")) return p;
-    if (up.includes("NABH")) return p;
-    return p;
-  });
+    .filter(Boolean)
+    .filter((p) => !/^(JCI|NABH|NABL)$/i.test(p));
+  for (const extra of extras) {
+    marks.push({ id: extra.toLowerCase(), label: extra });
+  }
+  return marks;
+}
+
+export function accreditationBadges(accreditation: string) {
+  return parseAccreditationMarks(accreditation).map((m) =>
+    m.id === "jci" ? "JCI Accredited" : m.id === "nabh" ? "NABH Accredited" : m.id === "nabl" ? "NABL Accredited" : m.label,
+  );
 }
 
 export function bedsLabel(beds: string) {

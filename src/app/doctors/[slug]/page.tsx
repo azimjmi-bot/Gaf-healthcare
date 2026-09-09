@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowRight, Star } from "lucide-react";
+import { AccreditationSeals } from "@/components/accreditation-seals";
 import { Button } from "@/components/ui/button";
 import { JsonLd } from "@/components/json-ld";
 import { CtaBand } from "@/components/page-shell";
@@ -111,8 +112,11 @@ export default async function DoctorDetailPage({
               {hospital.name}
             </Link>
             <p className="mt-1 text-sm text-muted-foreground">
-              {hospital.city}, {hospital.country} · {hospital.accreditation}
+              {hospital.city}, {hospital.country}
             </p>
+            <div className="mt-3">
+              <AccreditationSeals accreditation={hospital.accreditation} size="sm" />
+            </div>
             <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{hospital.bio}</p>
             <Link
               href={`/hospitals/${hospital.slug}`}

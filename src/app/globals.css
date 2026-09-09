@@ -287,6 +287,43 @@
   color: #4a5c62;
 }
 
+.hp-seals {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem 0.85rem;
+  margin-top: 1.1rem;
+  list-style: none;
+}
+
+.hp-seals--sm {
+  margin-top: 0.35rem;
+  gap: 0.45rem 0.6rem;
+}
+
+.hp-seal {
+  display: block;
+  height: 3.35rem;
+  width: auto;
+  object-fit: contain;
+}
+
+.hp-seals--sm .hp-seal {
+  height: 2.35rem;
+}
+
+.hp-seal-fallback {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0.55rem;
+  border: 1px solid #cfe3e4;
+  background: var(--hp-soft, #e7f4f4);
+  color: var(--hp-deep, #0b4f57);
+  padding: 0.35rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
 .hp-badges {
   display: flex;
   flex-wrap: wrap;

@@ -33,6 +33,7 @@ import {
   Wind,
   type LucideIcon,
 } from "lucide-react";
+import { AccreditationSeals } from "@/components/accreditation-seals";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
@@ -44,7 +45,6 @@ import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
 import {
   aboutParagraphs,
-  accreditationBadges,
   bedsLabel,
   cityTravel,
   doctorInitials,
@@ -117,7 +117,6 @@ export function HospitalProfileView({
   const moreProcedures = Math.max(0, pathways.length - popular.length);
   const moreDoctors = Math.max(0, faculty.length - topDoctors.length);
   const travel = cityTravel(hospital);
-  const badges = accreditationBadges(hospital.accreditation);
   const beds = bedsLabel(hospital.beds);
   const about = aboutParagraphs(hospital);
   const why = whyChoose(hospital, faculty.length);
@@ -169,13 +168,8 @@ export function HospitalProfileView({
                 {hospital.city}, {hospital.country}
               </p>
               <p className="hp-hero__lede">{heroLede(hospital)}</p>
+              <AccreditationSeals accreditation={hospital.accreditation} />
               <ul className="hp-badges">
-                {badges.map((b) => (
-                  <li key={b}>
-                    <ShieldCheck className="size-3.5" />
-                    {b}
-                  </li>
-                ))}
                 {beds ? (
                   <li>
                     <BedDouble className="size-3.5" />
@@ -249,7 +243,9 @@ export function HospitalProfileView({
               ) : null}
               <div>
                 <dt>Accreditation</dt>
-                <dd>{hospital.accreditation}</dd>
+                <dd>
+                  <AccreditationSeals accreditation={hospital.accreditation} size="sm" />
+                </dd>
               </div>
               <div>
                 <dt>Languages</dt>
@@ -526,7 +522,7 @@ export function HospitalProfileView({
                 <li key={n.slug}>
                   <Link href={`/hospitals/${n.slug}`}>
                     <p>{n.name}</p>
-                    <span>{n.accreditation}</span>
+                    <AccreditationSeals accreditation={n.accreditation} size="sm" />
                   </Link>
                 </li>
               ))}

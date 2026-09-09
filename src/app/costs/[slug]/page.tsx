@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { AccreditationSeals } from "@/components/accreditation-seals";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
@@ -281,8 +282,11 @@ export default async function CostDetailPage({
                   >
                     <p className="font-heading text-2xl">{h.name}</p>
                     <p className="mt-1 text-sm text-muted-foreground">
-                      {h.city}, {h.country} · {h.accreditation}
+                      {h.city}, {h.country}
                     </p>
+                    <div className="mt-3">
+                      <AccreditationSeals accreditation={h.accreditation} size="sm" />
+                    </div>
                   </Link>
                 </li>
               ) : null,

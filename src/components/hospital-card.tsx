@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
+import { AccreditationSeals } from "@/components/accreditation-seals";
 import type { Hospital } from "@/lib/hospitals";
 import { doctorsForHospital } from "@/lib/doctors";
 
@@ -124,7 +125,9 @@ export function HospitalCard({ hospital }: { hospital: Hospital }) {
         <MapPin className="size-3.5 text-[#F26522]" />
         {hospital.city}, {hospital.country}
       </p>
-      <p className="mt-2 text-sm text-muted-foreground">{hospital.accreditation}</p>
+      <div className="mt-3">
+        <AccreditationSeals accreditation={hospital.accreditation} size="sm" />
+      </div>
       <p className="mt-4 line-clamp-4 text-sm leading-relaxed text-muted-foreground">{hospital.bio}</p>
       {hospital.procedures.length > 0 ? (
         <div className="mt-4 flex flex-wrap gap-2">
