@@ -5,7 +5,7 @@ import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { filterTreatments, parseCatalogQuery } from "@/lib/catalog";
 import { hospitals, treatments } from "@/lib/data";
-import { catalogMetadata, COST_FAQS, faqJsonLd } from "@/lib/seo";
+import { absoluteUrl, catalogMetadata, COST_FAQS, faqJsonLd } from "@/lib/seo";
 import { SPECIALTIES } from "@/lib/taxonomy";
 import type { Metadata } from "next";
 
@@ -16,7 +16,25 @@ export async function generateMetadata({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }): Promise<Metadata> {
-  return catalogMetadata("treatments", parseCatalogQuery(await searchParams));
+  const query = parseCatalogQuery(await searchParams);
+  const base = catalogMetadata("treatments", query);
+
+  // A procedure facet duplicates the cost sheet, so point it at the canonical sheet.
+  const sheet = query.procedure ? treatments.find((t) => t.name === query.procedure) : undefined;
+  if (sheet) {
+    return {
+      ...base,
+      alternates: { canonical: absoluteUrl(`/costs/${sheet.slug}`) },
+    };
+  }
+
+  // Keep deeper facet combinations crawlable but out of the index.
+  const facets = [query.city, query.specialty, query.procedure].filter(Boolean).length;
+  if (facets > 1) {
+    return { ...base, robots: { index: false, follow: true } };
+  }
+
+  return base;
 }
 
 export default async function CostsPage({

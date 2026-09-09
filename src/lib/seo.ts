@@ -143,7 +143,7 @@ export function catalogMetadata(
   const proc = q.procedure;
   let title: string;
   let description: string;
-  let path = entity === "doctors" ? "/doctors" : entity === "hospitals" ? "/hospitals" : "/costs";
+  const path = entity === "doctors" ? "/doctors" : entity === "hospitals" ? "/hospitals" : "/costs";
 
   if (entity === "doctors") {
     if (proc) title = `${proc} specialists in ${place}`;
@@ -311,6 +311,96 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
       name: item.name,
       item: absoluteUrl(item.path),
     })),
+  };
+}
+
+export function medicalWebPageJsonLd(opts: {
+  name: string;
+  description: string;
+  path: string;
+  lastReviewed: string;
+  procedureName: string;
+  specialty: string;
+  about: string;
+}) {
+  const url = absoluteUrl(opts.path);
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalWebPage",
+    name: opts.name,
+    description: clip(opts.description),
+    url,
+    inLanguage: "en",
+    lastReviewed: opts.lastReviewed,
+    dateModified: opts.lastReviewed,
+    isPartOf: { "@type": "WebSite", name: site.name, url: absoluteUrl("/") },
+    publisher: { "@type": "Organization", name: site.name, url: absoluteUrl("/") },
+    audience: { "@type": "MedicalAudience", audienceType: "Patient" },
+    specialty: opts.specialty,
+    about: {
+      "@type": "MedicalProcedure",
+      name: opts.procedureName,
+      procedureType: opts.specialty,
+      description: clip(opts.about, 300),
+    },
+  };
+}
+
+export function doctorItemListJsonLd(rows: Doctor[], opts: { name: string; path: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: opts.name,
+    url: absoluteUrl(opts.path),
+    numberOfItems: rows.length,
+    itemListOrder: "https://schema.org/ItemListUnordered",
+    itemListElement: rows.map((doctor, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Physician",
+        name: doctor.name,
+        url: absoluteUrl(`/doctors/${doctor.slug}`),
+        medicalSpecialty: doctor.specialty,
+        worksFor: { "@type": "Hospital", name: doctor.hospitalName },
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: doctor.city,
+          addressCountry: "IN",
+        },
+      },
+    })),
+  };
+}
+
+export function costArticleMetadata(
+  t: Treatment,
+  article: { seoTitle: string; seoDescription: string; lastUpdated: string },
+): Metadata {
+  const url = absoluteUrl(`/costs/${t.slug}`);
+  const description = clip(article.seoDescription);
+  return {
+    title: article.seoTitle,
+    description,
+    alternates: { canonical: url },
+    keywords: [
+      `${t.name} cost in India`,
+      `${t.name} price in India`,
+      `${t.name} cost in Mumbai`,
+      `${t.name} cost in Delhi NCR`,
+      `${t.name} hospital stay`,
+      `${t.category} cost in India`,
+    ],
+    openGraph: {
+      title: article.seoTitle,
+      description,
+      url,
+      type: "article",
+      locale: "en_IN",
+      siteName: site.name,
+      modifiedTime: article.lastUpdated,
+    },
+    twitter: { card: "summary_large_image", title: article.seoTitle, description },
   };
 }
 

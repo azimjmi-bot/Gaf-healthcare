@@ -22,7 +22,15 @@
     "EBRT",
     "travel"
   ],
-  "media": [],
+  "media": [
+    {
+      "id": "media_l8oi7ao6ys99",
+      "url": "/uploads/articles/1788972381836-velora-test.png",
+      "name": "velora-test.png",
+      "alt": "",
+      "addedAt": "2026-09-09T16:46:21.837Z"
+    }
+  ],
   "articles": [
     {
       "id": "art_imrt_vs_3d_crt",
@@ -34,7 +42,11 @@
       "updatedAt": "2026-08-12T09:00:00.000Z",
       "author": "Velora clinical desk",
       "category": "Radiation Oncology",
-      "tags": ["IMRT", "3D-CRT", "travel"],
+      "tags": [
+        "IMRT",
+        "3D-CRT",
+        "travel"
+      ],
       "image": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80",
       "imageAlt": "Planning console in a radiotherapy department",
       "status": "published",
@@ -45,13 +57,31 @@
       "ogImage": "",
       "allowIndex": true,
       "relatedLinks": [
-        { "label": "3D-CRT cost, procedure, sessions and recovery", "href": "/costs/3d-conformal-radiotherapy-3d-crt" },
-        { "label": "IMRT cost sheet", "href": "/costs/intensity-modulated-radiotherapy-imrt" }
+        {
+          "label": "3D-CRT cost, procedure, sessions and recovery",
+          "href": "/costs/3d-conformal-radiotherapy-3d-crt"
+        },
+        {
+          "label": "IMRT cost sheet",
+          "href": "/costs/intensity-modulated-radiotherapy-imrt"
+        }
       ],
       "blocks": [
-        { "id": "b1", "type": "paragraph", "text": "Intensity-modulated radiotherapy (IMRT) and 3D conformal radiotherapy (3D-CRT) are both external-beam techniques. 3D-CRT shapes each field to the tumour’s silhouette. IMRT splits those fields into many beamlets so dose can spare a parotid, a rectum, or a cochlea that sits in the same plane." },
-        { "id": "b2", "type": "paragraph", "text": "For a patient travelling for radiation, the useful question is not which acronym sounds newer. It is whether the plan has been peer-reviewed, whether daily image guidance is included, and how many fractions the named radiation oncologist actually intends." },
-        { "id": "b3", "type": "paragraph", "text": "Velora will not book IMRT as an upsell. If 3D-CRT covers the target with acceptable organ-at-risk doses, that is the plan we put in writing — with the physics QA attached." }
+        {
+          "id": "b1",
+          "type": "paragraph",
+          "text": "Intensity-modulated radiotherapy (IMRT) and 3D conformal radiotherapy (3D-CRT) are both external-beam techniques. 3D-CRT shapes each field to the tumour’s silhouette. IMRT splits those fields into many beamlets so dose can spare a parotid, a rectum, or a cochlea that sits in the same plane."
+        },
+        {
+          "id": "b2",
+          "type": "paragraph",
+          "text": "For a patient travelling for radiation, the useful question is not which acronym sounds newer. It is whether the plan has been peer-reviewed, whether daily image guidance is included, and how many fractions the named radiation oncologist actually intends."
+        },
+        {
+          "id": "b3",
+          "type": "paragraph",
+          "text": "Velora will not book IMRT as an upsell. If 3D-CRT covers the target with acceptable organ-at-risk doses, that is the plan we put in writing — with the physics QA attached."
+        }
       ]
     },
     {
@@ -64,7 +94,10 @@
       "updatedAt": "2026-07-28T09:00:00.000Z",
       "author": "Velora clinical desk",
       "category": "Proton therapy",
-      "tags": ["protons", "travel"],
+      "tags": [
+        "protons",
+        "travel"
+      ],
       "image": "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80",
       "imageAlt": "Hospital corridor used as a travel planning visual",
       "status": "published",
@@ -76,9 +109,21 @@
       "allowIndex": true,
       "relatedLinks": [],
       "blocks": [
-        { "id": "b1", "type": "paragraph", "text": "Proton beam therapy deposits most of its dose at a Bragg peak and then stops. For some paediatric tumours, re-irradiation, and selected skull-base or spinal cases, that spare of exit dose is the clinical argument — not the marketing one." },
-        { "id": "b2", "type": "paragraph", "text": "Capacity is scarce. Wait lists at home are often the real indication for travel. A Velora dossier for protons includes slot timing, immobilisation, and a written plan for interruption if you become unwell mid-course." },
-        { "id": "b3", "type": "paragraph", "text": "If photons with IMRT or SBRT can meet the same constraints, we will say so. Crossing an ocean for a Bragg peak you do not need is not care." }
+        {
+          "id": "b1",
+          "type": "paragraph",
+          "text": "Proton beam therapy deposits most of its dose at a Bragg peak and then stops. For some paediatric tumours, re-irradiation, and selected skull-base or spinal cases, that spare of exit dose is the clinical argument — not the marketing one."
+        },
+        {
+          "id": "b2",
+          "type": "paragraph",
+          "text": "Capacity is scarce. Wait lists at home are often the real indication for travel. A Velora dossier for protons includes slot timing, immobilisation, and a written plan for interruption if you become unwell mid-course."
+        },
+        {
+          "id": "b3",
+          "type": "paragraph",
+          "text": "If photons with IMRT or SBRT can meet the same constraints, we will say so. Crossing an ocean for a Bragg peak you do not need is not care."
+        }
       ]
     },
     {
@@ -91,7 +136,11 @@
       "updatedAt": "2026-07-09T09:00:00.000Z",
       "author": "Velora clinical desk",
       "category": "Stereotactic",
-      "tags": ["SRS", "SBRT", "travel"],
+      "tags": [
+        "SRS",
+        "SBRT",
+        "travel"
+      ],
       "image": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=1600&q=80",
       "imageAlt": "Hospital exterior at dusk",
       "status": "published",
@@ -103,9 +152,21 @@
       "allowIndex": true,
       "relatedLinks": [],
       "blocks": [
-        { "id": "b1", "type": "paragraph", "text": "SRS (often Gamma Knife or linac-based) treats intracranial targets in a single session. SBRT treats body sites — lung, spine, liver — in a handful of fractions with millimetre-level image guidance." },
-        { "id": "b2", "type": "paragraph", "text": "The travel implication is obvious: fewer hotel nights. The clinical implication is tighter: motion management, fiducials, and a radiation oncologist who will refuse a target that belongs in conventional fractionation." },
-        { "id": "b3", "type": "paragraph", "text": "CyberKnife is one delivery platform, not a diagnosis. We match the machine to the motion problem, then the city to the machine — never the reverse." }
+        {
+          "id": "b1",
+          "type": "paragraph",
+          "text": "SRS (often Gamma Knife or linac-based) treats intracranial targets in a single session. SBRT treats body sites — lung, spine, liver — in a handful of fractions with millimetre-level image guidance."
+        },
+        {
+          "id": "b2",
+          "type": "paragraph",
+          "text": "The travel implication is obvious: fewer hotel nights. The clinical implication is tighter: motion management, fiducials, and a radiation oncologist who will refuse a target that belongs in conventional fractionation."
+        },
+        {
+          "id": "b3",
+          "type": "paragraph",
+          "text": "CyberKnife is one delivery platform, not a diagnosis. We match the machine to the motion problem, then the city to the machine — never the reverse."
+        }
       ]
     },
     {
@@ -118,7 +179,9 @@
       "updatedAt": "2026-06-21T09:00:00.000Z",
       "author": "Velora clinical desk",
       "category": "Brachytherapy",
-      "tags": ["travel"],
+      "tags": [
+        "travel"
+      ],
       "image": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1600&q=80",
       "imageAlt": "Hospital bed and clinical lighting",
       "status": "published",
@@ -130,9 +193,21 @@
       "allowIndex": true,
       "relatedLinks": [],
       "blocks": [
-        { "id": "b1", "type": "paragraph", "text": "Brachytherapy places the source inside or against the tumour. Cervical intracavitary insertions, prostate interstitial implants, and ocular plaques are different operations with different stays." },
-        { "id": "b2", "type": "paragraph", "text": "A travelling patient needs a campus that already runs these lists weekly — not a centre that will assemble a kit for one international case. We verify applicator inventory and HDR/LDR capability before a date is offered." },
-        { "id": "b3", "type": "paragraph", "text": "IORT, when indicated, is tied to the same theatre admission as surgery. We will not sell it as a standalone day trip." }
+        {
+          "id": "b1",
+          "type": "paragraph",
+          "text": "Brachytherapy places the source inside or against the tumour. Cervical intracavitary insertions, prostate interstitial implants, and ocular plaques are different operations with different stays."
+        },
+        {
+          "id": "b2",
+          "type": "paragraph",
+          "text": "A travelling patient needs a campus that already runs these lists weekly — not a centre that will assemble a kit for one international case. We verify applicator inventory and HDR/LDR capability before a date is offered."
+        },
+        {
+          "id": "b3",
+          "type": "paragraph",
+          "text": "IORT, when indicated, is tied to the same theatre admission as surgery. We will not sell it as a standalone day trip."
+        }
       ]
     },
     {
@@ -145,7 +220,10 @@
       "updatedAt": "2026-06-02T09:00:00.000Z",
       "author": "Velora clinical desk",
       "category": "Planning",
-      "tags": ["EBRT", "travel"],
+      "tags": [
+        "EBRT",
+        "travel"
+      ],
       "image": "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1600&q=80",
       "imageAlt": "Clinical records and a laptop on a desk",
       "status": "published",
@@ -156,12 +234,27 @@
       "ogImage": "",
       "allowIndex": true,
       "relatedLinks": [
-        { "label": "EBRT cost, treatment, sessions and recovery", "href": "/costs/external-beam-radiotherapy-ebrt" }
+        {
+          "label": "EBRT cost, treatment, sessions and recovery",
+          "href": "/costs/external-beam-radiotherapy-ebrt"
+        }
       ],
       "blocks": [
-        { "id": "b1", "type": "paragraph", "text": "For EBRT, IMRT, or IGRT we want operative notes, histopathology, recent imaging in a readable format, prior radiation details if any, and your current systemic therapy list." },
-        { "id": "b2", "type": "paragraph", "text": "TBI is a special case: it exists inside a transplant protocol. We will not book total body irradiation as an isolated tourist service." },
-        { "id": "b3", "type": "paragraph", "text": "Once records are in, the named radiation oncologist meets you on camera. Fractions, energy, and whether you should stay home are decided there — then travel is built around the first simulation slot. City-level planning ranges and technique notes sit on the External Beam Radiation Therapy cost page." }
+        {
+          "id": "b1",
+          "type": "paragraph",
+          "text": "For EBRT, IMRT, or IGRT we want operative notes, histopathology, recent imaging in a readable format, prior radiation details if any, and your current systemic therapy list."
+        },
+        {
+          "id": "b2",
+          "type": "paragraph",
+          "text": "TBI is a special case: it exists inside a transplant protocol. We will not book total body irradiation as an isolated tourist service."
+        },
+        {
+          "id": "b3",
+          "type": "paragraph",
+          "text": "Once records are in, the named radiation oncologist meets you on camera. Fractions, energy, and whether you should stay home are decided there — then travel is built around the first simulation slot. City-level planning ranges and technique notes sit on the External Beam Radiation Therapy cost page."
+        }
       ]
     }
   ]
