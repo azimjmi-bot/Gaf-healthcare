@@ -357,3 +357,44 @@ export function groupHospitalsForDirectory(
     })
     .sort((a, b) => compareSpecialties(a.specialtySlug, b.specialtySlug));
 }
+
+export type HospitalCityBucket = {
+  city: string;
+  citySlug: string;
+  hospitals: Hospital[];
+};
+
+export type HospitalCountryBucket = {
+  country: string;
+  countrySlug: string;
+  cities: HospitalCityBucket[];
+};
+
+/** Unique campuses by country and city. Does not fan out by specialty. */
+export function groupHospitalsByCity(list: Hospital[]): HospitalCountryBucket[] {
+  const unique = [...new Map(list.map((h) => [h.slug, h])).values()];
+  const tree = new Map<string, Map<string, Hospital[]>>();
+  for (const hospital of unique) {
+    if (!tree.has(hospital.countrySlug)) tree.set(hospital.countrySlug, new Map());
+    const cities = tree.get(hospital.countrySlug)!;
+    if (!cities.has(hospital.citySlug)) cities.set(hospital.citySlug, []);
+    cities.get(hospital.citySlug)!.push(hospital);
+  }
+
+  return [...tree.entries()]
+    .map(([countrySlug, cities]) => {
+      const sample = unique.find((h) => h.countrySlug === countrySlug)!;
+      return {
+        country: sample.country,
+        countrySlug,
+        cities: [...cities.entries()]
+          .map(([citySlug, hospitals]) => ({
+            city: hospitals[0].city,
+            citySlug,
+            hospitals: [...hospitals].sort((a, b) => a.name.localeCompare(b.name)),
+          }))
+          .sort((a, b) => a.city.localeCompare(b.city)),
+      };
+    })
+    .sort((a, b) => a.country.localeCompare(b.country));
+}

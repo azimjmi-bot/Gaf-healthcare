@@ -3,122 +3,27 @@ import { MapPin } from "lucide-react";
 import { AccreditationSeals } from "@/components/accreditation-seals";
 import type { Hospital } from "@/lib/hospitals";
 import { doctorsForHospital } from "@/lib/doctors";
+import { compareSpecialties } from "@/lib/taxonomy";
 
-function facultyLabel(faculty: { specialtySlug: string }[]) {
-  const radiation = faculty.filter((d) => d.specialtySlug === "radiation-oncology").length;
-  const surgical = faculty.filter((d) => d.specialtySlug === "surgical-oncology").length;
-  const medical = faculty.filter((d) => d.specialtySlug === "medical-oncology").length;
-  const hematology = faculty.filter((d) => d.specialtySlug === "hematology").length;
-  const pediatricHematology = faculty.filter((d) => d.specialtySlug === "pediatric-hematology").length;
-  const cardiac = faculty.filter((d) => d.specialtySlug === "cardiac-surgery").length;
-  const pediatricCardiac = faculty.filter((d) => d.specialtySlug === "pediatric-cardiac-surgery").length;
-  const cardiology = faculty.filter((d) => d.specialtySlug === "cardiology").length;
-  const bariatric = faculty.filter((d) => d.specialtySlug === "bariatric-surgery").length;
-  const cosmetic = faculty.filter((d) => d.specialtySlug === "cosmetic-surgery").length;
-  const ent = faculty.filter((d) => d.specialtySlug === "ent").length;
-  const gastro = faculty.filter((d) => d.specialtySlug === "gastroenterology").length;
-  const surgicalGastro = faculty.filter((d) => d.specialtySlug === "surgical-gastroenterology").length;
-  const urology = faculty.filter((d) => d.specialtySlug === "urology").length;
-  const spine = faculty.filter((d) => d.specialtySlug === "spine-surgery").length;
-  const pulmonology = faculty.filter((d) => d.specialtySlug === "pulmonology").length;
-  const pediatricOrthopaedic = faculty.filter((d) => d.specialtySlug === "pediatric-orthopaedic").length;
-  const orthopedics = faculty.filter((d) => d.specialtySlug === "orthopedics").length;
-  const ophthalmology = faculty.filter((d) => d.specialtySlug === "ophthalmology").length;
-  const gynecology = faculty.filter((d) => d.specialtySlug === "gynecology").length;
-  const neurosurgery = faculty.filter((d) => d.specialtySlug === "neurosurgery").length;
-  const neurology = faculty.filter((d) => d.specialtySlug === "neurology").length;
-  const nephrology = faculty.filter((d) => d.specialtySlug === "nephrology").length;
-  const parts: string[] = [];
-  if (radiation) {
-    parts.push(radiation === 1 ? "1 radiation oncologist" : `${radiation} radiation oncologists`);
-  }
-  if (surgical) {
-    parts.push(surgical === 1 ? "1 surgical oncologist" : `${surgical} surgical oncologists`);
-  }
-  if (medical) {
-    parts.push(medical === 1 ? "1 medical oncologist" : `${medical} medical oncologists`);
-  }
-  if (hematology) {
-    parts.push(hematology === 1 ? "1 hematologist" : `${hematology} hematologists`);
-  }
-  if (pediatricHematology) {
-    parts.push(
-      pediatricHematology === 1 ? "1 pediatric hematologist" : `${pediatricHematology} pediatric hematologists`,
-    );
-  }
-  if (cardiac) {
-    parts.push(cardiac === 1 ? "1 cardiac surgeon" : `${cardiac} cardiac surgeons`);
-  }
-  if (pediatricCardiac) {
-    parts.push(
-      pediatricCardiac === 1 ? "1 pediatric cardiac surgeon" : `${pediatricCardiac} pediatric cardiac surgeons`,
-    );
-  }
-  if (cardiology) {
-    parts.push(cardiology === 1 ? "1 cardiologist" : `${cardiology} cardiologists`);
-  }
-  if (bariatric) {
-    parts.push(bariatric === 1 ? "1 bariatric surgeon" : `${bariatric} bariatric surgeons`);
-  }
-  if (cosmetic) {
-    parts.push(cosmetic === 1 ? "1 cosmetic surgeon" : `${cosmetic} cosmetic surgeons`);
-  }
-  if (ent) {
-    parts.push(ent === 1 ? "1 ENT surgeon" : `${ent} ENT surgeons`);
-  }
-  if (gastro) {
-    parts.push(gastro === 1 ? "1 gastroenterologist" : `${gastro} gastroenterologists`);
-  }
-  if (surgicalGastro) {
-    parts.push(
-      surgicalGastro === 1 ? "1 surgical gastroenterologist" : `${surgicalGastro} surgical gastroenterologists`,
-    );
-  }
-  if (urology) {
-    parts.push(urology === 1 ? "1 urologist" : `${urology} urologists`);
-  }
-  if (spine) {
-    parts.push(spine === 1 ? "1 spine surgeon" : `${spine} spine surgeons`);
-  }
-  if (pulmonology) {
-    parts.push(pulmonology === 1 ? "1 pulmonologist" : `${pulmonology} pulmonologists`);
-  }
-  if (pediatricOrthopaedic) {
-    parts.push(
-      pediatricOrthopaedic === 1
-        ? "1 pediatric orthopaedic surgeon"
-        : `${pediatricOrthopaedic} pediatric orthopaedic surgeons`,
-    );
-  }
-  if (orthopedics) {
-    parts.push(orthopedics === 1 ? "1 orthopaedic surgeon" : `${orthopedics} orthopaedic surgeons`);
-  }
-  if (ophthalmology) {
-    parts.push(ophthalmology === 1 ? "1 ophthalmologist" : `${ophthalmology} ophthalmologists`);
-  }
-  if (gynecology) {
-    parts.push(gynecology === 1 ? "1 gynecologist" : `${gynecology} gynecologists`);
-  }
-  if (neurosurgery) {
-    parts.push(neurosurgery === 1 ? "1 neurosurgeon" : `${neurosurgery} neurosurgeons`);
-  }
-  if (neurology) {
-    parts.push(neurology === 1 ? "1 neurologist" : `${neurology} neurologists`);
-  }
-  if (nephrology) {
-    parts.push(nephrology === 1 ? "1 nephrologist" : `${nephrology} nephrologists`);
-  }
-  return parts.join(" · ") || "Faculty being matched";
+const CHIP_LIMIT = 8;
+
+function specialtiesOnCard(hospital: Hospital, faculty: { specialty: string; specialtySlug: string }[]) {
+  const fromFaculty = [...new Map(faculty.map((d) => [d.specialtySlug, d.specialty])).entries()]
+    .map(([slug, name]) => ({ slug, name }))
+    .sort((a, b) => compareSpecialties(a.slug, b.slug));
+  if (fromFaculty.length) return fromFaculty;
+  return hospital.specialtySlugs.map((slug, i) => ({ slug, name: hospital.specialties[i] ?? slug }));
 }
 
 export function HospitalCard({ hospital }: { hospital: Hospital }) {
   const faculty = doctorsForHospital(hospital.slug);
+  const specialties = specialtiesOnCard(hospital, faculty);
+  const shown = specialties.slice(0, CHIP_LIMIT);
+  const extra = specialties.length - shown.length;
+
   return (
     <article className="rounded-2xl border border-border bg-card p-6">
-      <p className="text-xs tracking-[0.18em] uppercase text-gold">
-        {hospital.specialties.join(" · ")}
-      </p>
-      <Link href={`/hospitals/${hospital.slug}`} className="mt-2 block font-heading text-2xl hover:text-gold">
+      <Link href={`/hospitals/${hospital.slug}`} className="block font-heading text-2xl hover:text-gold">
         {hospital.name}
       </Link>
       <p className="mt-2 inline-flex items-center gap-1.5 text-sm text-muted-foreground">
@@ -128,24 +33,30 @@ export function HospitalCard({ hospital }: { hospital: Hospital }) {
       <div className="mt-3">
         <AccreditationSeals accreditation={hospital.accreditation} size="sm" />
       </div>
-      <p className="mt-4 line-clamp-4 text-sm leading-relaxed text-muted-foreground">{hospital.bio}</p>
-      {hospital.procedures.length > 0 ? (
-        <div className="mt-4 flex flex-wrap gap-2">
-          {hospital.procedures.slice(0, 6).map((procedure) => (
-            <Link
-              key={procedure}
-              href={`/hospitals?procedure=${encodeURIComponent(procedure)}&destination=${encodeURIComponent(hospital.country)}&city=${encodeURIComponent(hospital.city)}`}
-              className="rounded-full border border-border px-2.5 py-1 text-xs text-muted-foreground hover:border-primary/40 hover:text-foreground"
-            >
-              {procedure}
-            </Link>
+      {shown.length > 0 ? (
+        <ul className="mt-4 flex flex-wrap gap-2">
+          {shown.map((spec) => (
+            <li key={spec.slug}>
+              <Link
+                href={`/hospitals?specialty=${encodeURIComponent(spec.name)}&destination=${encodeURIComponent(hospital.country)}&city=${encodeURIComponent(hospital.city)}`}
+                className="rounded-full border border-border px-2.5 py-1 text-xs text-muted-foreground hover:border-primary/40 hover:text-foreground"
+              >
+                {spec.name}
+              </Link>
+            </li>
           ))}
-        </div>
+          {extra > 0 ? (
+            <li className="rounded-full border border-dashed border-border px-2.5 py-1 text-xs text-muted-foreground">
+              +{extra} more
+            </li>
+          ) : null}
+        </ul>
       ) : null}
+      <p className="mt-4 line-clamp-4 text-sm leading-relaxed text-muted-foreground">{hospital.bio}</p>
       <p className="mt-4 text-sm">
-        <Link href={`/hospitals/${hospital.slug}`} className="underline-offset-4 hover:underline">
-          {facultyLabel(faculty)}
-        </Link>
+        {faculty.length
+          ? `${faculty.length} named ${faculty.length === 1 ? "consultant" : "consultants"}`
+          : "Named consultants being matched"}
         {" · "}
         <Link href={`/hospitals/${hospital.slug}`} className="underline-offset-4 hover:underline">
           View campus

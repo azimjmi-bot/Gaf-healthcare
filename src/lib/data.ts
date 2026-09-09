@@ -13,6 +13,7 @@ export {
   getHospital,
   hospitalsMatchingPseo,
   groupHospitalsForDirectory,
+  groupHospitalsByCity,
 } from "@/lib/hospitals";
 export { treatments, getTreatment, treatmentsForHospital, treatmentMatchesSpecialty } from "@/lib/treatments";
 export {
