@@ -2,9 +2,14 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { HospitalProfileView } from "@/components/hospital-profile-view";
 import { JsonLd } from "@/components/json-ld";
-import { doctorsForHospital } from "@/lib/doctors";
-import { getHospital, hospitals, hospitalsInCity } from "@/lib/hospitals";
-import { getTreatment, type Treatment } from "@/lib/data";
+import {
+  doctorsForHospital,
+  getHospital,
+  getTreatment,
+  hospitals,
+  hospitalsInCity,
+  type Treatment,
+} from "@/lib/data";
 import { breadcrumbJsonLd, hospitalJsonLd, hospitalMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 

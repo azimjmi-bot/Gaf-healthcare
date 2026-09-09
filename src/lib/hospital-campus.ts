@@ -1,7 +1,13 @@
 import { notFound } from "next/navigation";
-import { doctorsForHospital, type Doctor } from "@/lib/doctors";
-import { getHospital, hospitals, type Hospital } from "@/lib/hospitals";
-import { getTreatment, type Treatment } from "@/lib/data";
+import type { Doctor } from "@/lib/doctors";
+import type { Hospital } from "@/lib/hospitals";
+import {
+  doctorsForHospital,
+  getHospital,
+  getTreatment,
+  hospitals,
+  type Treatment,
+} from "@/lib/data";
 import { groupFaculty, type FacultyGroup } from "@/lib/hospital-profile";
 
 export function hospitalStaticParams() {

@@ -1,5 +1,6 @@
 import { mkdirSync, readFileSync, renameSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
+import "server-only";
 import { emptyCatalogCms, type CatalogCms } from "@/lib/cms/catalog-types";
 
 const FILE = join(process.cwd(), "content/catalog-cms.json");

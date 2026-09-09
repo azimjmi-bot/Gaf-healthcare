@@ -1,7 +1,5 @@
 import type { MetadataRoute } from "next";
-import { doctors } from "@/lib/doctors";
-import { hospitals } from "@/lib/hospitals";
-import { treatments } from "@/lib/treatments";
+import { doctors, hospitals, treatments } from "@/lib/data";
 import { listPublishedPosts } from "@/lib/blogs";
 import { SITE_URL } from "@/lib/seo";
 

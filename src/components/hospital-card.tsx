@@ -4,7 +4,7 @@ import { AccreditationSeals } from "@/components/accreditation-seals";
 import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
 import { HospitalGalleryButton } from "@/components/hospital-gallery";
 import type { Hospital } from "@/lib/hospitals";
-import { doctorsForHospital } from "@/lib/doctors";
+import { doctorsForHospital } from "@/lib/data";
 import { isEyeCampus } from "@/lib/hospital-profile";
 import { whatsappHref } from "@/lib/site";
 import { compareSpecialties } from "@/lib/taxonomy";

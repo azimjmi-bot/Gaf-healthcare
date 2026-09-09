@@ -4,6 +4,7 @@ import { CatalogFilter } from "@/components/catalog-filter";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { filterTreatments, parseCatalogQuery } from "@/lib/catalog";
+import { hospitals, treatments } from "@/lib/data";
 import { catalogMetadata, COST_FAQS, faqJsonLd } from "@/lib/seo";
 import { SPECIALTIES } from "@/lib/taxonomy";
 import type { Metadata } from "next";
@@ -24,7 +25,7 @@ export default async function CostsPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const query = parseCatalogQuery(await searchParams);
-  const list = filterTreatments(query);
+  const list = filterTreatments(query, treatments, hospitals);
   const groupSpecs = query.specialty
     ? SPECIALTIES.filter((s) => s.name === query.specialty)
     : SPECIALTIES;

@@ -1,5 +1,4 @@
 import catalog from "@/data/ginger-catalog.json";
-import { applyCatalogLayer, liveArray, loadCatalogCms } from "@/lib/cms/catalog-store";
 import { mapCatalogProcedures } from "@/lib/procedure-map";
 import {
   ATHENAA_SURGICAL_PROCEDURES,
@@ -271,10 +270,7 @@ export const catalogHospitals: Hospital[] = catalog.hospitals.map((seed) => {
   };
 });
 
-export const hospitals: Hospital[] = liveArray(catalogHospitals, (rows) => {
-  const cms = loadCatalogCms();
-  return applyCatalogLayer(rows, cms.hospitalsDeleted, cms.hospitalOverrides, cms.hospitalsAdded as Hospital[]);
-});
+export const hospitals: Hospital[] = catalogHospitals;
 
 export function getHospital(slug: string) {
   return hospitals.find((h) => h.slug === slug);

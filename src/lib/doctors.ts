@@ -1,5 +1,4 @@
 import catalog from "@/data/ginger-catalog.json";
-import { applyCatalogLayer, liveArray, loadCatalogCms } from "@/lib/cms/catalog-store";
 import { getHospital } from "@/lib/hospitals";
 import { mapDoctorProcedures } from "@/lib/procedure-map";
 import { compareSpecialties, getCity, getCountry, getProcedure, getSpecialty } from "@/lib/taxonomy";
@@ -170,10 +169,7 @@ for (const doctor of catalogDoctors) {
   slugs.add(doctor.slug);
 }
 
-export const doctors: Doctor[] = liveArray(catalogDoctors, (rows) => {
-  const cms = loadCatalogCms();
-  return applyCatalogLayer(rows, cms.doctorsDeleted, cms.doctorOverrides, cms.doctorsAdded as Doctor[]);
-});
+export const doctors: Doctor[] = catalogDoctors;
 
 export function getDoctor(slug: string) {
   return doctors.find((d) => d.slug === slug);

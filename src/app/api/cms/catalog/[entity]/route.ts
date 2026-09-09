@@ -3,8 +3,9 @@ import { requireCmsSession } from "@/lib/cms/auth";
 import { loadCatalogCms, saveCatalogCms } from "@/lib/cms/catalog-store";
 import { slugify } from "@/lib/cms/types";
 import { catalogDoctors, type Doctor } from "@/lib/doctors";
-import { catalogHospitals, getHospital, type Hospital } from "@/lib/hospitals";
+import { catalogHospitals, type Hospital } from "@/lib/hospitals";
 import { catalogTreatments, type Treatment } from "@/lib/treatments";
+import { getHospital } from "@/lib/server-catalog";
 import { getCity, getCountry, getProcedure, getSpecialty, PROCEDURES } from "@/lib/taxonomy";
 
 type Entity = "doctors" | "hospitals" | "treatments";

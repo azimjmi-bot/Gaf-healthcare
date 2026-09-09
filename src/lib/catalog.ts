@@ -89,8 +89,8 @@ function hospitalMatches(h: Hospital, q: CatalogQuery) {
   return true;
 }
 
-export function filterHospitals(q: CatalogQuery): Hospital[] {
-  return hospitals.filter((h) => {
+export function filterHospitals(q: CatalogQuery, rows: Hospital[] = hospitals): Hospital[] {
+  return rows.filter((h) => {
     if (!hospitalMatches(h, q)) return false;
     if (q.specialty && !h.specialties.includes(q.specialty) && h.specialty !== q.specialty) {
       return false;
@@ -102,16 +102,20 @@ export function filterHospitals(q: CatalogQuery): Hospital[] {
   });
 }
 
-export function filterTreatments(q: CatalogQuery): Treatment[] {
-  return treatments.filter((t) => {
+export function filterTreatments(
+  q: CatalogQuery,
+  rows: Treatment[] = treatments,
+  campuses: Hospital[] = hospitals,
+): Treatment[] {
+  return rows.filter((t) => {
     if (q.procedure && !t.procedures.includes(q.procedure) && t.procedureSlug !== q.procedure) {
       return false;
     }
-    const campuses = t.hospitalSlugs
-      .map((s) => hospitals.find((h) => h.slug === s))
+    const matched = t.hospitalSlugs
+      .map((s) => campuses.find((h) => h.slug === s))
       .filter((h): h is Hospital => Boolean(h));
-    if (q.destination && !campuses.some((h) => h.country === q.destination)) return false;
-    if (q.city && !campuses.some((h) => h.city === q.city)) return false;
+    if (q.destination && !matched.some((h) => h.country === q.destination)) return false;
+    if (q.city && !matched.some((h) => h.city === q.city)) return false;
     if (q.specialty) {
       const spec = getSpecialty(q.specialty);
       if (spec ? !t.specialtySlugs.includes(spec.slug) && t.specialtySlug !== spec.slug : t.category !== q.specialty) return false;
@@ -120,8 +124,8 @@ export function filterTreatments(q: CatalogQuery): Treatment[] {
   });
 }
 
-export function filterDoctors(q: CatalogQuery): Doctor[] {
-  return doctors.filter((d) => {
+export function filterDoctors(q: CatalogQuery, rows: Doctor[] = doctors): Doctor[] {
+  return rows.filter((d) => {
     if (q.destination && d.country !== q.destination) return false;
     if (q.city && d.city !== q.city) return false;
     if (q.specialty && d.specialty !== q.specialty) return false;

@@ -1,3 +1,5 @@
+import "server-only";
+
 export type { Treatment } from "@/lib/treatments";
 export type { Hospital } from "@/lib/hospitals";
 export type { Doctor } from "@/lib/doctors";
@@ -9,18 +11,25 @@ export {
 } from "@/lib/taxonomy";
 
 export {
+  doctors,
   hospitals,
+  treatments,
+  getDoctor,
   getHospital,
+  getTreatment,
+  doctorsForHospital,
+  doctorsForTreatment,
+  treatmentsForHospital,
+  hospitalsInCity,
+} from "@/lib/server-catalog";
+
+export {
   hospitalsMatchingPseo,
   groupHospitalsForDirectory,
   groupHospitalsByCity,
 } from "@/lib/hospitals";
-export { treatments, getTreatment, treatmentsForHospital, treatmentMatchesSpecialty } from "@/lib/treatments";
+export { treatmentMatchesSpecialty } from "@/lib/treatments";
 export {
-  doctors,
-  getDoctor,
-  doctorsForHospital,
-  doctorsForTreatment,
   doctorsMatchingPseo,
   groupDoctorsForDirectory,
   groupDoctorsUnderHospitals,

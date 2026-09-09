@@ -12,7 +12,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { hospitals, treatments } from "@/lib/data";
+import { hospitals } from "@/lib/hospitals";
+import { treatments } from "@/lib/treatments";
 
 type Status = "idle" | "submitting" | "success" | "error";
 

@@ -6,6 +6,7 @@ import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { filterHospitals, parseCatalogQuery } from "@/lib/catalog";
 import { paginateHospitals } from "@/lib/hospitals";
+import { hospitals } from "@/lib/data";
 import { catalogMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -33,7 +34,7 @@ export default async function HospitalsPage({
 }) {
   const raw = await searchParams;
   const query = parseCatalogQuery(raw);
-  const list = filterHospitals(query);
+  const list = filterHospitals(query, hospitals);
   const paging = paginateHospitals(list, readPage(raw));
   const place = query.city ? `${query.city}, India` : "India";
   const heading = query.procedure
