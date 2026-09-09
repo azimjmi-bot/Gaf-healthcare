@@ -6,16 +6,11 @@ import { ArticleBlocks, CoverImage } from "@/components/article-body";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
-import { CostArticleView, CostStickyCta } from "@/components/cost-article-view";
+import { CostArticleSection, costArticleFor } from "@/components/cost-article-section";
+import { CostStickyCta } from "@/components/cost-article-view";
 import { getCostArticle } from "@/data/cost-articles";
 import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
-import {
-  articleCampuses,
-  articleFaculty,
-  costCityRows,
-  costDestinationRows,
-  interpolateCostArticle,
-} from "@/lib/cost-article";
+import { articleFaculty, interpolateCostArticle } from "@/lib/cost-article";
 import { getCostGuide } from "@/lib/cost-guides";
 import {
   doctorsForTreatment,
@@ -31,7 +26,6 @@ import {
   medicalWebPageJsonLd,
   treatmentMetadata,
 } from "@/lib/seo";
-import { toSlug } from "@/lib/taxonomy";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -68,24 +62,9 @@ export default async function CostDetailPage({
   const t = getTreatment(slug);
   if (!t) notFound();
 
-  const raw = getCostArticle(t.slug);
-  const article = raw ? interpolateCostArticle(raw, t) : undefined;
-  const cmsOverridesArticle = Boolean(t.replaceGuide && t.blocks && t.blocks.length > 0);
-  if (article && !cmsOverridesArticle) {
-    const articleCampusList = articleCampuses(t);
-    const { all: articleAll, featured: articleFeatured } = articleFaculty(t.slug);
-    const cityRows = costCityRows(article, t, articleAll, articleCampusList);
-    const { rows: destinationRows, anyModelled } = costDestinationRows(article, t);
-    const relatedRows = article.relatedProcedures
-      .map((name) => getTreatment(toSlug(name)))
-      .filter((row): row is NonNullable<typeof row> => Boolean(row) && row!.slug !== t.slug)
-      .map((row) => ({
-        name: row.name,
-        slug: row.slug,
-        partnerRange: row.partnerRange,
-        stay: row.stay,
-      }));
-
+  const article = costArticleFor(t);
+  if (article) {
+    const facultyForSchema = articleFaculty(t.slug).featured;
     return (
       <>
         <JsonLd
@@ -107,9 +86,9 @@ export default async function CostDetailPage({
           ])}
         />
         <JsonLd data={faqJsonLd(article.faqs)} />
-        {articleFeatured.length > 0 ? (
+        {facultyForSchema.length > 0 ? (
           <JsonLd
-            data={doctorItemListJsonLd(articleFeatured, {
+            data={doctorItemListJsonLd(facultyForSchema, {
               name: article.doctorHeading,
               path: `/costs/${t.slug}`,
             })}
@@ -148,90 +127,7 @@ export default async function CostDetailPage({
           </div>
         </section>
 
-        <section className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-12 lg:gap-14">
-          <div className="lg:col-span-8">
-            <CostArticleView
-              article={article}
-              treatment={t}
-              cityRows={cityRows}
-              destinations={destinationRows}
-              anyModelled={anyModelled}
-              faculty={articleFeatured}
-              facultyTotal={articleAll.length}
-              campuses={articleCampusList}
-              related={relatedRows}
-            />
-            {t.blocks && t.blocks.length > 0 ? (
-              <div className="mt-14 max-w-3xl">
-                <ArticleBlocks blocks={t.blocks} />
-              </div>
-            ) : null}
-          </div>
-          <aside className="space-y-6 lg:col-span-4 lg:sticky lg:top-24 lg:self-start">
-            <div className="rounded-2xl border border-border bg-card p-6 md:p-7">
-              <p className="text-xs tracking-[0.18em] uppercase text-gold">Planning figures</p>
-              <dl className="mt-5 space-y-5">
-                <div>
-                  <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">
-                    India planning range
-                  </dt>
-                  <dd className="mt-1 font-heading text-2xl">{t.partnerRange}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">
-                    Typical US self-pay
-                  </dt>
-                  <dd className="mt-1 font-heading text-2xl">{t.usRange}</dd>
-                </div>
-                <div>
-                  <dt className="text-xs tracking-[0.18em] uppercase text-muted-foreground">
-                    Hospital stay
-                  </dt>
-                  <dd className="mt-1">{t.stay}</dd>
-                </div>
-              </dl>
-              <Button asChild className="mt-7 h-11 w-full rounded-full">
-                <Link href={`/consult?treatment=${t.slug}`}>Request a treatment plan</Link>
-              </Button>
-              <p className="mt-4 text-xs leading-relaxed text-muted-foreground">
-                Indicative planning range, not a quotation. {t.notes}
-              </p>
-            </div>
-            <div className="rounded-2xl border border-border bg-card p-6 text-sm">
-              <p className="text-xs tracking-[0.18em] uppercase text-gold">Find care</p>
-              <ul className="mt-3 space-y-2">
-                <li>
-                  <Link
-                    href={doctorsPath({ destination: "India", procedure: t.name })}
-                    className="underline-offset-4 hover:underline"
-                  >
-                    {t.name} specialists in India
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href={hospitalsPath({ destination: "India", procedure: t.name })}
-                    className="underline-offset-4 hover:underline"
-                  >
-                    Hospitals offering this procedure
-                  </Link>
-                </li>
-                {cityRows.map((row) => (
-                  <li key={row.citySlug}>
-                    <Link href={row.costPath} className="underline-offset-4 hover:underline">
-                      {t.name} cost in {row.city}
-                    </Link>
-                  </li>
-                ))}
-                <li>
-                  <Link href="/costs" className="underline-offset-4 hover:underline">
-                    All treatment costs
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </aside>
-        </section>
+        <CostArticleSection treatment={t} />
 
         <CtaBand />
         <div className="h-16 md:hidden" />

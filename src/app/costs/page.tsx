@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
+import { CostArticleSection, costArticleFor } from "@/components/cost-article-section";
+import { CostStickyCta } from "@/components/cost-article-view";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { filterTreatments, parseCatalogQuery } from "@/lib/catalog";
@@ -57,6 +59,35 @@ export default async function CostsPage({
     : query.specialty
       ? `${query.specialty} cost in ${place}`
       : "Oncology, ENT and GI treatment cost in India";
+
+  // Filtering down to one procedure is a cost-sheet request, so serve the full
+  // article here rather than a one-row table. Canonical still points at /costs/[slug].
+  const sheet = query.procedure ? treatments.find((t) => t.name === query.procedure) : undefined;
+  const sheetArticle = sheet ? costArticleFor(sheet) : undefined;
+  if (sheet && sheetArticle) {
+    return (
+      <>
+        <JsonLd data={faqJsonLd(sheetArticle.faqs)} />
+        <PageIntro eyebrow={`India planning ranges · ${sheet.category}`} title={heading} lede={sheet.summary}>
+          <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
+            <CatalogFilter
+              basePath="/costs"
+              entity="treatments"
+              resultCount={list.length}
+              resultLabel={list.length === 1 ? "pathway" : "pathways"}
+            />
+          </Suspense>
+        </PageIntro>
+        <CostArticleSection treatment={sheet} />
+        <CtaBand />
+        <div className="h-16 md:hidden" />
+        <CostStickyCta
+          href={`/consult?treatment=${sheet.slug}`}
+          label="Get a personalised cost estimate"
+        />
+      </>
+    );
+  }
 
   return (
     <>
