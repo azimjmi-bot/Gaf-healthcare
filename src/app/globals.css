@@ -2051,6 +2051,32 @@ img.dhero__art {
   border-radius: 0.5rem;
 }
 
+.cms-upload {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.cms-upload__label {
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.cms-drop {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem;
+  border: 1px dashed #c5d5d8;
+  border-radius: 0.75rem;
+  background: #f7fbfb;
+}
+
+.cms-drop.is-drag {
+  border-color: #0f3d44;
+  background: #eef6f6;
+}
+
 .cms-modal {
   position: fixed;
   inset: 0;

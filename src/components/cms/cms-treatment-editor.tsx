@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { CoverImage } from "@/components/article-body";
+import { CmsImageUpload } from "@/components/cms/cms-image-upload";
 import type { Treatment } from "@/lib/treatments";
 import { emptyParagraph, type ArticleBlock } from "@/lib/cms/types";
 
@@ -60,15 +60,6 @@ export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted
     setMessage(res.ok ? "Saved. The public cost page uses these fields." : data.error || "Save failed.");
   }
 
-  async function upload(file: File) {
-    const form = new FormData();
-    form.set("file", file);
-    const res = await fetch("/api/cms/media", { method: "POST", body: form });
-    const item = await res.json();
-    if (res.ok) setRow((r) => ({ ...r, image: item.url }));
-    else setMessage(item.error || "Upload failed.");
-  }
-
   return (
     <div className="cms-form">
       <p className="cms-muted">
@@ -122,18 +113,12 @@ export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted
         />
         Replace the coded EBRT/3D-CRT guide with this body when published
       </label>
-      <label>
-        Hero image URL
-        <Input value={row.image} onChange={(e) => setRow({ ...row, image: e.target.value })} />
-      </label>
-      {row.image ? <CoverImage src={row.image} alt={row.name} className="cms-cover" /> : null}
-      <input
-        type="file"
-        accept="image/webp,image/png,image/jpeg,image/gif"
-        onChange={(e) => {
-          const file = e.target.files?.[0];
-          if (file) void upload(file);
-        }}
+      <CmsImageUpload
+        label="Hero photo"
+        src={row.image || ""}
+        alt={row.name}
+        onChange={(image) => setRow((r) => ({ ...r, image }))}
+        onError={setMessage}
       />
       {message ? <p className="cms-flash">{message}</p> : null}
       <Button type="button" disabled={busy} onClick={() => void save()}>
