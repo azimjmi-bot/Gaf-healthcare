@@ -20,7 +20,9 @@ function clip(text: string, max = 158) {
 
 export function doctorMetadata(d: Doctor): Metadata {
   const role =
-    d.specialtySlug === "pulmonology"
+    d.specialtySlug === "pediatric-orthopaedic"
+      ? "pediatric orthopaedic surgeon"
+      : d.specialtySlug === "pulmonology"
       ? "pulmonologist"
       : d.specialtySlug === "spine-surgery"
       ? "spine surgeon"
@@ -130,6 +132,7 @@ export function catalogMetadata(
 
   if (entity === "doctors") {
     if (proc) title = `${proc} specialists in ${place}`;
+    else if (spec === "Pediatric Orthopaedic") title = `Pediatric orthopaedic surgeons in ${place}`;
     else if (spec === "Pulmonology") title = `Pulmonologists in ${place}`;
     else if (spec === "Spine Surgery") title = `Spine surgeons in ${place}`;
     else if (spec === "Urology") title = `Urologists in ${place}`;
@@ -147,7 +150,9 @@ export function catalogMetadata(
     else title = `Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons and pulmonologists in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
-      spec === "Pulmonology"
+      spec === "Pediatric Orthopaedic"
+        ? `/doctors/india/${citySlug}/pediatric-orthopaedic/clubfoot-correction-surgery`
+        : spec === "Pulmonology"
         ? `/doctors/india/${citySlug}/pulmonology/bronchoscopy`
         : spec === "Spine Surgery"
         ? `/doctors/india/${citySlug}/spine-surgery/spinal-fusion`
@@ -295,7 +300,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Named spine surgeons sit under Spine Surgery. Named pulmonologists sit under Pulmonology — including Dr. Anand Jaiswal, Dr. Manoj Kumar Goel, Dr. Vivek Singh and Dr. Randeep Guleria in Delhi NCR, with bronchoscopy, EBUS, thoracoscopy and lung-transplant lists tagged for later pSEO. Later pages can mount /doctors/india/{city}/pulmonology/{procedure} without remapping the catalog.",
+    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Named spine surgeons sit under Spine Surgery. Named pulmonologists sit under Pulmonology — including Dr. Anand Jaiswal, Dr. Manoj Kumar Goel, Dr. Vivek Singh and Dr. Randeep Guleria in Delhi NCR. Pediatric Orthopaedic lists clubfoot, DDH, SCFE, limb lengthening and paediatric scoliosis — named paediatric orthopaedic surgeons will sit there once a listing is matched. Later pages can mount /doctors/india/{city}/pediatric-orthopaedic/{procedure} without remapping the catalog.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
@@ -306,7 +311,7 @@ export const DOCTOR_FAQS = [
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist, urologist, spine surgeon or pulmonologist confirms regimen, fractions, donor, endoscopy, graft, laser, levels, airway or the operation after reviewing records.",
+    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist, urologist, spine surgeon, pulmonologist or paediatric orthopaedic surgeon confirms regimen, fractions, donor, endoscopy, graft, laser, levels, airway, growth remaining or the operation after reviewing records.",
   },
   {
     q: "What does liver transplantation typically cost in India versus the US?",
@@ -323,6 +328,10 @@ export const COST_FAQS = [
   {
     q: "What does EBUS typically cost in India versus the US?",
     a: "Velora’s EBUS sheet lists a partner planning range of about $800–$2,500 against typical US cash of $4,000–$12,000, depending on nodal stations and campus. Bronchoscopy, TBNA, cryo-biopsy and lung transplantation sit on separate Pulmonology sheets. Gastroenterology’s ingested foreign-body sheet is a different slug from bronchoscopic removal.",
+  },
+  {
+    q: "What does clubfoot correction typically cost in India versus the US?",
+    a: "Velora’s Clubfoot Correction Surgery sheet lists a partner planning range of about $1,200–$3,800 against typical US cash of $6,000–$18,000, depending on laterality, prior Ponseti work and campus. DDH, SCFE, limb lengthening and paediatric scoliosis sit on separate Pediatric Orthopaedic sheets. Adult scoliosis correction remains on Spine Surgery.",
   },
   {
     q: "What does ERCP typically cost in India versus the US?",

@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -465,6 +465,40 @@ export function mapPulmonologyProcedures(texts: string[], fallback = true) {
   return ["Bronchoscopy", "EBUS (Endobronchial Ultrasound)", "Medical Thoracoscopy"];
 }
 
+const PEDIATRIC_ORTHOPAEDIC_RULES: {
+  test: RegExp;
+  name: (typeof PEDIATRIC_ORTHOPAEDIC_PROCEDURES)[number];
+}[] = [
+  { test: /\bscfe\b|slipped capital femoral/i, name: "SCFE Hip Surgery (Slipped Capital Femoral Epiphysis)" },
+  { test: /\bddh\b|developmental dysplasia/i, name: "Developmental Dysplasia of Hip Surgery" },
+  { test: /clubfoot|talipes|ponseti/i, name: "Clubfoot Correction Surgery" },
+  { test: /pediatric scoliosis|paediatric scoliosis|child.{0,12}scoliosis/i, name: "Pediatric Scoliosis Surgery" },
+  {
+    test: /pediatric spinal deformity|paediatric spinal deformity|congenital scoliosis|neuromuscular scoliosis/i,
+    name: "Pediatric Spinal Deformity Correction",
+  },
+  { test: /cerebral palsy|semls\b|single-event multilevel/i, name: "Cerebral Palsy Orthopedic Surgery" },
+  { test: /hip preservation|periacetabular|impingement/i, name: "Hip Preservation Surgery" },
+  { test: /pediatric hip reconstr|paediatric hip reconstr|pelvic osteotomy/i, name: "Pediatric Hip Reconstruction" },
+  { test: /limb lengthen|ilizarov.{0,12}length/i, name: "Limb Lengthening Surgery" },
+  { test: /limb reconstr/i, name: "Limb Reconstruction Surgery" },
+  { test: /pediatric foot|paediatric foot|pediatric ankle|paediatric ankle/i, name: "Pediatric Foot & Ankle Surgery" },
+  { test: /tendon repair|tendon transfer/i, name: "Tendon Repair Surgery" },
+  { test: /fracture fixation|k[\s-]*wire|elastic nailing|\btens\b/i, name: "Pediatric Fracture Fixation" },
+  { test: /pediatric fracture|paediatric fracture|child.{0,12}fracture/i, name: "Pediatric Fracture Surgery" },
+  { test: /pediatric deformity|paediatric deformity|limb deformity/i, name: "Pediatric Deformity Correction" },
+];
+
+export function mapPediatricOrthopaedicProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, PEDIATRIC_ORTHOPAEDIC_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return [
+    "Clubfoot Correction Surgery",
+    "Pediatric Fracture Surgery",
+    "Developmental Dysplasia of Hip Surgery",
+  ];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -481,5 +515,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Urology") return mapUrologyProcedures(texts);
   if (specialty === "Spine Surgery") return mapSpineSurgeryProcedures(texts);
   if (specialty === "Pulmonology") return mapPulmonologyProcedures(texts);
+  if (specialty === "Pediatric Orthopaedic") return mapPediatricOrthopaedicProcedures(texts);
   return mapCatalogProcedures(texts);
 }

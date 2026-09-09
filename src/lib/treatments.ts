@@ -2,6 +2,7 @@ import { SURGICAL_GASTROENTEROLOGY_COST, SURGICAL_GASTROENTEROLOGY_SUMMARIES } f
 import { UROLOGY_COST, UROLOGY_SUMMARIES } from "@/lib/urology-costs";
 import { SPINE_SURGERY_COST, SPINE_SURGERY_SUMMARIES } from "@/lib/spine-surgery-costs";
 import { PULMONOLOGY_COST, PULMONOLOGY_SUMMARIES } from "@/lib/pulmonology-costs";
+import { PEDIATRIC_ORTHOPAEDIC_COST, PEDIATRIC_ORTHOPAEDIC_SUMMARIES } from "@/lib/pediatric-orthopaedic-costs";
 import { GASTROENTEROLOGY_COST, GASTROENTEROLOGY_SUMMARIES } from "@/lib/gastroenterology-costs";
 import { ENT_COST, ENT_SUMMARIES } from "@/lib/ent-costs";
 import { COSMETIC_COST, COSMETIC_SUMMARIES } from "@/lib/cosmetic-costs";
@@ -19,6 +20,7 @@ import {
   UROLOGY_PROCEDURES,
   SPINE_SURGERY_PROCEDURES,
   PULMONOLOGY_PROCEDURES,
+  PEDIATRIC_ORTHOPAEDIC_PROCEDURES,
   GASTROENTEROLOGY_PROCEDURES,
   ENT_PROCEDURES,
   COSMETIC_PROCEDURES,
@@ -810,6 +812,44 @@ const pulmonologyTreatments: Treatment[] = PULMONOLOGY_PROCEDURES.map((name) => 
   };
 });
 
+const PEDIATRIC_ORTHOPAEDIC_IMAGE =
+  "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80";
+
+const PEDIATRIC_ORTHOPAEDIC_INCLUDES = [
+  "Pediatric orthopaedic consultation and records review",
+  "Named consultant on camera before travel",
+  "Imaging, anaesthesia and paediatric ward stay as quoted",
+  "Implants, frame or plaster as indicated",
+  "Discharge summary to your home physician",
+];
+
+const pediatricOrthopaedicTreatments: Treatment[] = PEDIATRIC_ORTHOPAEDIC_PROCEDURES.map((name) => {
+  const cost = PEDIATRIC_ORTHOPAEDIC_COST[name];
+  if (!cost) throw new Error(`Missing pediatric orthopaedic cost for ${name}`);
+  const slug = toSlug(name);
+  return {
+    slug,
+    name,
+    category: "Pediatric Orthopaedic",
+    specialtySlug: "pediatric-orthopaedic",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      PEDIATRIC_ORTHOPAEDIC_SUMMARIES[name] ??
+      `Pediatric Orthopaedic — ${name} at JCI partner campuses with a named paediatric orthopaedic surgeon before you travel.`,
+    image: PEDIATRIC_ORTHOPAEDIC_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Congenital deformity", "Paediatric trauma", "Hip dysplasia and SCFE", "Neuromuscular and spine"],
+    procedures: [name],
+    includes: PEDIATRIC_ORTHOPAEDIC_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named paediatric orthopaedic surgeon confirms imaging, growth remaining and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -827,6 +867,7 @@ export const treatments: Treatment[] = [
   ...urologyTreatments,
   ...spineSurgeryTreatments,
   ...pulmonologyTreatments,
+  ...pediatricOrthopaedicTreatments,
 ];
 
 export function getTreatment(slug: string) {
