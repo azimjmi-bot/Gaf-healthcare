@@ -70,6 +70,7 @@ export default async function CostDetailPage({
     t.specialtySlugs.includes("spine-surgery") ? "spine surgeons" : "",
     t.specialtySlugs.includes("pulmonology") ? "pulmonologists" : "",
     t.specialtySlugs.includes("pediatric-orthopaedic") ? "pediatric orthopaedic surgeons" : "",
+    t.specialtySlugs.includes("orthopedics") ? "orthopaedic surgeons" : "",
   ]
     .filter(Boolean)
     .join(" and ");
@@ -147,7 +148,9 @@ export default async function CostDetailPage({
               <Link href={`/consult?treatment=${t.slug}`}>Request this pathway</Link>
             </Button>
             <p className="mt-4 text-xs text-muted-foreground">
-              Not a quote. {t.specialtySlug === "pediatric-orthopaedic"
+              Not a quote. {t.specialtySlug === "orthopedics"
+                ? "Implant, graft or fixation are set after records review."
+                : t.specialtySlug === "pediatric-orthopaedic"
                 ? "Growth remaining, osteotomy and implants are set after records review."
                 : t.specialtySlug === "pulmonology"
                 ? "Scope, biopsy, drain or transplant listing are set after records review."

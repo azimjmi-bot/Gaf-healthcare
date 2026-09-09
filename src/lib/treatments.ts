@@ -3,6 +3,7 @@ import { UROLOGY_COST, UROLOGY_SUMMARIES } from "@/lib/urology-costs";
 import { SPINE_SURGERY_COST, SPINE_SURGERY_SUMMARIES } from "@/lib/spine-surgery-costs";
 import { PULMONOLOGY_COST, PULMONOLOGY_SUMMARIES } from "@/lib/pulmonology-costs";
 import { PEDIATRIC_ORTHOPAEDIC_COST, PEDIATRIC_ORTHOPAEDIC_SUMMARIES } from "@/lib/pediatric-orthopaedic-costs";
+import { ORTHOPEDICS_CLUSTER_BY_PROCEDURE, ORTHOPEDICS_COST, ORTHOPEDICS_SUMMARIES } from "@/lib/orthopedics-costs";
 import { GASTROENTEROLOGY_COST, GASTROENTEROLOGY_SUMMARIES } from "@/lib/gastroenterology-costs";
 import { ENT_COST, ENT_SUMMARIES } from "@/lib/ent-costs";
 import { COSMETIC_COST, COSMETIC_SUMMARIES } from "@/lib/cosmetic-costs";
@@ -21,6 +22,7 @@ import {
   SPINE_SURGERY_PROCEDURES,
   PULMONOLOGY_PROCEDURES,
   PEDIATRIC_ORTHOPAEDIC_PROCEDURES,
+  ORTHOPEDICS_PROCEDURES,
   GASTROENTEROLOGY_PROCEDURES,
   ENT_PROCEDURES,
   COSMETIC_PROCEDURES,
@@ -850,6 +852,45 @@ const pediatricOrthopaedicTreatments: Treatment[] = PEDIATRIC_ORTHOPAEDIC_PROCED
   };
 });
 
+const ORTHOPEDICS_IMAGE =
+  "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80";
+
+const ORTHOPEDICS_INCLUDES = [
+  "Orthopedics consultation and records review",
+  "Named consultant on camera before travel",
+  "Implant, graft or hardware as quoted",
+  "Anaesthesia, ward stay and physiotherapy as indicated",
+  "Discharge summary to your home physician",
+];
+
+const orthopedicsTreatments: Treatment[] = ORTHOPEDICS_PROCEDURES.map((name) => {
+  const cost = ORTHOPEDICS_COST[name];
+  if (!cost) throw new Error(`Missing orthopedics cost for ${name}`);
+  const slug = toSlug(name);
+  const cluster = ORTHOPEDICS_CLUSTER_BY_PROCEDURE[name] ?? "Orthopedics";
+  return {
+    slug,
+    name,
+    category: cluster,
+    specialtySlug: "orthopedics",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      ORTHOPEDICS_SUMMARIES[name] ??
+      `Orthopedics — ${name} at JCI partner campuses with a named orthopaedic surgeon before you travel.`,
+    image: ORTHOPEDICS_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: ["Arthritis and joint wear", "Sports injury", "Trauma and non-union", "Hand, foot and ankle"],
+    procedures: [name],
+    includes: ORTHOPEDICS_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named orthopaedic surgeon confirms imaging, implant and an itemized hospital price after records review.",
+  };
+});
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -868,6 +909,7 @@ export const treatments: Treatment[] = [
   ...spineSurgeryTreatments,
   ...pulmonologyTreatments,
   ...pediatricOrthopaedicTreatments,
+  ...orthopedicsTreatments,
 ];
 
 export function getTreatment(slug: string) {

@@ -68,6 +68,8 @@ export default async function DoctorsPage({
         ? `Pulmonologists in ${place}`
       : query.specialty === "Pediatric Orthopaedic"
         ? `Pediatric orthopaedic surgeons in ${place}`
+      : query.specialty === "Orthopedics"
+        ? `Orthopaedic surgeons in ${place}`
       : query.specialty
         ? `${query.specialty} doctors in ${place}`
         : "Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and paediatric orthopaedic surgeons in India";
@@ -76,9 +78,9 @@ export default async function DoctorsPage({
     <>
       <JsonLd data={faqJsonLd(DOCTOR_FAQS)} />
       <PageIntro
-        eyebrow="India · five cities · seventeen specialties"
+        eyebrow="India · five cities · eighteen specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and paediatric orthopaedic surgeons in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including pediatric orthopaedic faculty such as Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/pediatric-orthopaedic/{procedure}. Bios are original Velora copy."
+        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and paediatric orthopaedic surgeons in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including pediatric orthopaedic faculty such as Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman — plus Orthopedics cost sheets (knee and hip replacement, ACL, trauma, hand, foot and ankle) tagged for later named faculty. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/orthopedics/{procedure}. Bios are original Velora copy."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter

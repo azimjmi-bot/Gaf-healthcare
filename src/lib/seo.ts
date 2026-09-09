@@ -20,7 +20,9 @@ function clip(text: string, max = 158) {
 
 export function doctorMetadata(d: Doctor): Metadata {
   const role =
-    d.specialtySlug === "pediatric-orthopaedic"
+    d.specialtySlug === "orthopedics"
+      ? "orthopaedic surgeon"
+      : d.specialtySlug === "pediatric-orthopaedic"
       ? "pediatric orthopaedic surgeon"
       : d.specialtySlug === "pulmonology"
       ? "pulmonologist"
@@ -132,6 +134,7 @@ export function catalogMetadata(
 
   if (entity === "doctors") {
     if (proc) title = `${proc} specialists in ${place}`;
+    else if (spec === "Orthopedics") title = `Orthopaedic surgeons in ${place}`;
     else if (spec === "Pediatric Orthopaedic") title = `Pediatric orthopaedic surgeons in ${place}`;
     else if (spec === "Pulmonology") title = `Pulmonologists in ${place}`;
     else if (spec === "Spine Surgery") title = `Spine surgeons in ${place}`;
@@ -150,7 +153,9 @@ export function catalogMetadata(
     else title = `Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and paediatric orthopaedic surgeons in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
-      spec === "Pediatric Orthopaedic"
+      spec === "Orthopedics"
+        ? `/doctors/india/${citySlug}/orthopedics/total-knee-replacement`
+        : spec === "Pediatric Orthopaedic"
         ? `/doctors/india/${citySlug}/pediatric-orthopaedic/clubfoot-correction-surgery`
         : spec === "Pulmonology"
         ? `/doctors/india/${citySlug}/pulmonology/bronchoscopy`
@@ -300,7 +305,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Named spine surgeons sit under Spine Surgery. Named pulmonologists sit under Pulmonology — including Dr. Anand Jaiswal, Dr. Manoj Kumar Goel, Dr. Vivek Singh and Dr. Randeep Guleria in Delhi NCR. Named paediatric orthopaedic surgeons sit under Pediatric Orthopaedic — including Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman, with clubfoot, DDH, SCFE, limb lengthening and paediatric-scoliosis lists tagged for later pSEO. Later pages can mount /doctors/india/{city}/pediatric-orthopaedic/{procedure} without remapping the catalog.",
+    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Named spine surgeons sit under Spine Surgery. Named pulmonologists sit under Pulmonology — including Dr. Anand Jaiswal, Dr. Manoj Kumar Goel, Dr. Vivek Singh and Dr. Randeep Guleria in Delhi NCR. Named paediatric orthopaedic surgeons sit under Pediatric Orthopaedic — including Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman. Orthopedics lists joint replacement, sports arthroscopy, trauma, hand and foot-and-ankle — named orthopaedic surgeons will sit there once a listing is matched. Later pages can mount /doctors/india/{city}/orthopedics/{procedure} without remapping the catalog.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
@@ -311,7 +316,7 @@ export const DOCTOR_FAQS = [
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist, urologist, spine surgeon, pulmonologist or paediatric orthopaedic surgeon confirms regimen, fractions, donor, endoscopy, graft, laser, levels, airway, growth remaining or the operation after reviewing records.",
+    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist, urologist, spine surgeon, pulmonologist, paediatric orthopaedic surgeon or orthopaedic surgeon confirms regimen, fractions, donor, endoscopy, graft, laser, levels, airway, growth remaining, implant or the operation after reviewing records.",
   },
   {
     q: "What does liver transplantation typically cost in India versus the US?",
@@ -332,6 +337,10 @@ export const COST_FAQS = [
   {
     q: "What does clubfoot correction typically cost in India versus the US?",
     a: "Velora’s Clubfoot Correction Surgery sheet lists a partner planning range of about $1,200–$3,800 against typical US cash of $6,000–$18,000, depending on laterality, prior Ponseti work and campus. DDH, SCFE, limb lengthening and paediatric scoliosis sit on separate Pediatric Orthopaedic sheets. Adult scoliosis correction remains on Spine Surgery.",
+  },
+  {
+    q: "What does total knee replacement typically cost in India versus the US?",
+    a: "Velora’s Total Knee Replacement sheet lists a partner planning range of about $5,500–$12,000 against typical US cash of $35,000–$70,000, depending on implant, laterality and campus. Robotic, partial and revision knee sit on separate Orthopedics sheets. ACL reconstruction is a sports slug, not an arthroplasty product.",
   },
   {
     q: "What does ERCP typically cost in India versus the US?",

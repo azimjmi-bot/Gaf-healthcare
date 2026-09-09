@@ -19,7 +19,7 @@ export default function HomePage() {
           name: "Velora",
           url: SITE_URL,
           description:
-            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and paediatric orthopaedic surgeons in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — plus pediatric hematology and pediatric cardiac surgery, with partner hospital costs in USD.",
+            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and paediatric orthopaedic surgeons in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — plus pediatric hematology, pediatric cardiac surgery and orthopedics pathways, with partner hospital costs in USD.",
           areaServed: ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"].map((city) => ({
             "@type": "City",
             name: city,
@@ -95,13 +95,13 @@ export default function HomePage() {
             href="/hospitals"
             kicker="02"
             title="Hospitals"
-            body="JCI campuses in Delhi NCR, Mumbai, Bengaluru, Chennai, and Hyderabad — oncology, ENT, gastroenterology, HPB, urology, spine, pulmonology and pediatric orthopaedic."
+            body="JCI campuses in Delhi NCR, Mumbai, Bengaluru, Chennai, and Hyderabad — oncology, ENT, gastroenterology, HPB, urology, spine, pulmonology, pediatric orthopaedic and orthopedics."
           />
           <IndexCard
             href="/costs"
             kicker="03"
             title="Treatment Cost"
-            body="US cash-pay beside partner ranges for radiation, surgery, transplant, bariatric, cosmetic, ENT, GI, HPB, urology, spine, pulmonology and pediatric orthopaedic."
+            body="US cash-pay beside partner ranges for radiation, surgery, transplant, bariatric, cosmetic, ENT, GI, HPB, urology, spine, pulmonology, pediatric orthopaedic and orthopedics."
           />
           <IndexCard
             href="/blogs"

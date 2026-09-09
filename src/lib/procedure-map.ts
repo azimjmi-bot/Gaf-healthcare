@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, ORTHOPEDICS_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -500,6 +500,41 @@ export function mapPediatricOrthopaedicProcedures(texts: string[], fallback = tr
   ];
 }
 
+const ORTHOPEDICS_RULES: { test: RegExp; name: (typeof ORTHOPEDICS_PROCEDURES)[number] }[] = [
+  { test: /robotic knee|mako.{0,12}knee|rosa knee/i, name: "Robotic Knee Replacement" },
+  { test: /revision knee|knee revision/i, name: "Revision Knee Replacement" },
+  { test: /partial knee|unicompartmental|\buka\b/i, name: "Partial Knee Replacement" },
+  { test: /total knee|\btkr\b|\btka\b|knee replacement/i, name: "Total Knee Replacement" },
+  { test: /revision hip|hip revision/i, name: "Revision Hip Replacement" },
+  { test: /hip resurfac/i, name: "Hip Resurfacing" },
+  { test: /total hip|\bthr\b|\btha\b|hip replacement/i, name: "Total Hip Replacement" },
+  { test: /shoulder replacement|reverse shoulder|shoulder arthroplast/i, name: "Shoulder Replacement" },
+  { test: /\bpcl\b|posterior cruciate/i, name: "PCL Reconstruction (Posterior Cruciate Ligament)" },
+  { test: /\bacl\b|anterior cruciate/i, name: "ACL Reconstruction (Anterior Cruciate Ligament)" },
+  { test: /meniscus/i, name: "Meniscus Repair" },
+  { test: /rotator cuff/i, name: "Rotator Cuff Repair" },
+  { test: /arthroscop/i, name: "Arthroscopic Surgery" },
+  { test: /non[\s-]*union/i, name: "Non-Union Repair" },
+  { test: /\borif\b|open reduction/i, name: "ORIF (Open Reduction and Internal Fixation)" },
+  { test: /fracture fixation|internal fixation/i, name: "Fracture Fixation" },
+  { test: /carpal tunnel/i, name: "Carpal Tunnel Release" },
+  { test: /hand reconstr/i, name: "Hand Reconstruction" },
+  { test: /tendon repair/i, name: "Tendon Repair" },
+  { test: /ankle replacement|ankle arthroplast/i, name: "Ankle Replacement" },
+  { test: /bunion|hallux valgus/i, name: "Bunion Surgery" },
+  { test: /achilles/i, name: "Achilles Repair" },
+];
+
+export function mapOrthopedicsProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, ORTHOPEDICS_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return [
+    "Total Knee Replacement",
+    "ACL Reconstruction (Anterior Cruciate Ligament)",
+    "Fracture Fixation",
+  ];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -517,5 +552,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Spine Surgery") return mapSpineSurgeryProcedures(texts);
   if (specialty === "Pulmonology") return mapPulmonologyProcedures(texts);
   if (specialty === "Pediatric Orthopaedic") return mapPediatricOrthopaedicProcedures(texts);
+  if (specialty === "Orthopedics") return mapOrthopedicsProcedures(texts);
   return mapCatalogProcedures(texts);
 }

@@ -77,6 +77,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Spine Surgery"),
   taxon("Pulmonology"),
   taxon("Pediatric Orthopaedic"),
+  taxon("Orthopedics"),
 ];
 
 export function compareSpecialties(aSlug: string, bSlug: string) {
@@ -426,6 +427,31 @@ export const PEDIATRIC_ORTHOPAEDIC_PROCEDURES = [
   "SCFE Hip Surgery (Slipped Capital Femoral Epiphysis)",
 ] as const;
 
+export const ORTHOPEDICS_PROCEDURES = [
+  "Total Knee Replacement",
+  "Robotic Knee Replacement",
+  "Partial Knee Replacement",
+  "Revision Knee Replacement",
+  "Total Hip Replacement",
+  "Revision Hip Replacement",
+  "Hip Resurfacing",
+  "Shoulder Replacement",
+  "ACL Reconstruction (Anterior Cruciate Ligament)",
+  "PCL Reconstruction (Posterior Cruciate Ligament)",
+  "Meniscus Repair",
+  "Rotator Cuff Repair",
+  "Arthroscopic Surgery",
+  "Fracture Fixation",
+  "ORIF (Open Reduction and Internal Fixation)",
+  "Non-Union Repair",
+  "Carpal Tunnel Release",
+  "Tendon Repair",
+  "Hand Reconstruction",
+  "Ankle Replacement",
+  "Bunion Surgery",
+  "Achilles Repair",
+] as const;
+
 export const ATHENAA_SURGICAL_PROCEDURES = [
   "Breast-Conserving Surgery (Lumpectomy)",
   "Mastectomy",
@@ -514,6 +540,7 @@ export const PROCEDURES: ProcedureTaxon[] = [
   ...SPINE_SURGERY_PROCEDURES.map((name) => procedureTaxon(name, ["spine-surgery"])),
   ...PULMONOLOGY_PROCEDURES.map((name) => procedureTaxon(name, ["pulmonology"])),
   ...PEDIATRIC_ORTHOPAEDIC_PROCEDURES.map((name) => procedureTaxon(name, ["pediatric-orthopaedic"])),
+  ...ORTHOPEDICS_PROCEDURES.map((name) => procedureTaxon(name, ["orthopedics"])),
 ];
 
 export const PROCEDURE_CLUSTERS = {
