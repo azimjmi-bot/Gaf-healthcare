@@ -29,6 +29,8 @@ export type LabelledDetail = { label: string; detail: string };
 
 export type CostArticle = {
   procedure: string;
+  /** Lowercase form for mid-sentence use, e.g. "breast-conserving surgery". */
+  shortName: string;
   slug: string;
   lastUpdated: string;
   seoTitle: string;

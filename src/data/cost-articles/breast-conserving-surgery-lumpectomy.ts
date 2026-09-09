@@ -2,6 +2,7 @@ import type { CostArticle } from "./types";
 
 export const breastConservingSurgery: CostArticle = {
   procedure: "Breast-Conserving Surgery (Lumpectomy)",
+  shortName: "breast-conserving surgery",
   slug: "breast-conserving-surgery-lumpectomy",
   lastUpdated: "2026-09-09",
   seoTitle: "Breast-Conserving Surgery (Lumpectomy) Cost in India: Price by City, Hospitals & Doctors",

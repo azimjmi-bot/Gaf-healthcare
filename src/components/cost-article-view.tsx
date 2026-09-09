@@ -497,7 +497,7 @@ export function CostArticleView({
           </ul>
           <p className="mt-5 text-sm">
             <Link href={allDoctors}>
-              See all {facultyTotal} listed {article.procedure.toLowerCase()} specialists in India
+              See all {facultyTotal} listed {article.shortName} specialists in India
             </Link>
           </p>
         </>
@@ -540,12 +540,12 @@ export function CostArticleView({
             ))}
           </ul>
           <p className="mt-5 text-sm">
-            <Link href={allHospitals}>See all listed campuses for {article.procedure.toLowerCase()}</Link>
+            <Link href={allHospitals}>See all listed campuses for {article.shortName}</Link>
           </p>
         </>
       )}
 
-      <H2 id="cities">Choosing a city for {article.procedure.toLowerCase()}</H2>
+      <H2 id="cities">Choosing a city for {article.shortName}</H2>
       <P>
         Patients usually pick the surgeon first and the city second, which is the right order. Still,
         the city you land in decides how far you travel each day for radiotherapy, what you pay for six
