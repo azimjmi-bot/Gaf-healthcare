@@ -82,6 +82,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Gynecology"),
   taxon("Neurosurgery"),
   taxon("Neurology"),
+  taxon("Nephrology"),
 ];
 
 export function compareSpecialties(aSlug: string, bSlug: string) {
@@ -553,6 +554,27 @@ export const NEUROLOGY_PROCEDURES = [
   "Migraine Nerve Block",
 ] as const;
 
+export const NEPHROLOGY_PROCEDURES = [
+  "Kidney Transplantation",
+  "Living Donor Kidney Transplantation",
+  "Deceased Donor Kidney Transplantation",
+  "ABO-Incompatible Kidney Transplantation",
+  "Paired Kidney Exchange (Swap Transplant)",
+  "Kidney Transplant Evaluation and Follow-up",
+  "Hemodialysis",
+  "Peritoneal Dialysis",
+  "Continuous Renal Replacement Therapy (CRRT)",
+  "Sustained Low-Efficiency Dialysis (SLED)",
+  "Dialysis Catheter Placement",
+  "AV Fistula Creation",
+  "Dialysis Access Management",
+  "Percutaneous Renal Biopsy",
+  "Kidney Transplant Graft Biopsy",
+  "CAPD Catheter Insertion",
+  "Central Venous Catheter (Permcath) Insertion",
+  "Plasmapheresis",
+] as const;
+
 export const ATHENAA_SURGICAL_PROCEDURES = [
   "Breast-Conserving Surgery (Lumpectomy)",
   "Mastectomy",
@@ -578,6 +600,7 @@ const OPHTHALMOLOGY_NAMES = new Set<string>(OPHTHALMOLOGY_PROCEDURES);
 const GYNECOLOGY_NAMES = new Set<string>(GYNECOLOGY_PROCEDURES);
 const NEUROSURGERY_NAMES = new Set<string>(NEUROSURGERY_PROCEDURES);
 const NEUROLOGY_NAMES = new Set<string>(NEUROLOGY_PROCEDURES);
+const NEPHROLOGY_NAMES = new Set<string>(NEPHROLOGY_PROCEDURES);
 const RADIATION_NAMES = new Set<string>(RADIATION_PROCEDURES);
 const SPINE_NAMES = new Set<string>(SPINE_SURGERY_PROCEDURES);
 const COSMETIC_NAMES = new Set<string>(COSMETIC_PROCEDURES);
@@ -625,6 +648,10 @@ function withNeurology(name: string, specs: string[]) {
   return NEUROLOGY_NAMES.has(name) ? [...specs, "neurology"] : specs;
 }
 
+function withNephrology(name: string, specs: string[]) {
+  return NEPHROLOGY_NAMES.has(name) ? [...specs, "nephrology"] : specs;
+}
+
 export const PROCEDURES: ProcedureTaxon[] = [
   ...RADIATION_PROCEDURES.map((name) => procedureTaxon(name, withNeurosurgery(name, ["radiation-oncology"]))),
   ...SURGICAL_ONCOLOGY_PROCEDURES.map((name) =>
@@ -661,7 +688,7 @@ export const PROCEDURES: ProcedureTaxon[] = [
     (name) => !SURGICAL_ONCOLOGY_NAMES.has(name) && !BARIATRIC_NAMES.has(name),
   ).map((name) => procedureTaxon(name, ["surgical-gastroenterology"])),
   ...UROLOGY_PROCEDURES.filter((name) => !SURGICAL_ONCOLOGY_NAMES.has(name)).map((name) =>
-    procedureTaxon(name, ["urology"]),
+    procedureTaxon(name, withNephrology(name, ["urology"])),
   ),
   ...SPINE_SURGERY_PROCEDURES.map((name) => procedureTaxon(name, withNeurosurgery(name, ["spine-surgery"]))),
   ...PULMONOLOGY_PROCEDURES.map((name) => procedureTaxon(name, ["pulmonology"])),
@@ -677,7 +704,10 @@ export const PROCEDURES: ProcedureTaxon[] = [
     (name) => !RADIATION_NAMES.has(name) && !SPINE_NAMES.has(name) && !ENT_NAMES.has(name),
   ).map((name) => procedureTaxon(name, withNeurology(name, ["neurosurgery"]))),
   ...NEUROLOGY_PROCEDURES.filter((name) => !NEUROSURGERY_NAMES.has(name)).map((name) =>
-    procedureTaxon(name, ["neurology"]),
+    procedureTaxon(name, withNephrology(name, ["neurology"])),
+  ),
+  ...NEPHROLOGY_PROCEDURES.filter((name) => !UROLOGY_NAMES.has(name) && !NEUROLOGY_NAMES.has(name)).map((name) =>
+    procedureTaxon(name, ["nephrology"]),
   ),
 ];
 

@@ -56,6 +56,7 @@ export default async function HospitalDetailPage({
   const gynecologyFaculty = faculty.filter((d) => d.specialtySlug === "gynecology");
   const neurosurgeryFaculty = faculty.filter((d) => d.specialtySlug === "neurosurgery");
   const neurologyFaculty = faculty.filter((d) => d.specialtySlug === "neurology");
+  const nephrologyFaculty = faculty.filter((d) => d.specialtySlug === "nephrology");
   const pathways = h.procedureSlugs
     .map((s) => getTreatment(s))
     .filter((t): t is Treatment => Boolean(t));
@@ -81,6 +82,7 @@ export default async function HospitalDetailPage({
   const gynecologyPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "gynecology"));
   const neurosurgeryPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "neurosurgery"));
   const neurologyPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "neurology"));
+  const nephrologyPathways = pathways.filter((t) => treatmentMatchesSpecialty(t, "nephrology"));
   const nearby = hospitalsInCity(h.citySlug).filter((x) => x.slug !== h.slug);
 
   return (
@@ -421,6 +423,16 @@ export default async function HospitalDetailPage({
                   </div>
                 </div>
               ) : null}
+              {nephrologyFaculty.length > 0 ? (
+                <div className="mt-10">
+                  <h3 className="font-heading text-2xl">Nephrologists</h3>
+                  <div className="mt-6 grid gap-6">
+                    {nephrologyFaculty.map((d) => (
+                      <DoctorCard key={d.slug} doctor={d} />
+                    ))}
+                  </div>
+                </div>
+              ) : null}
             </>
           )}
         </div>
@@ -561,6 +573,12 @@ export default async function HospitalDetailPage({
           <>
             <h3 className="mt-10 font-heading text-2xl">Neurology</h3>
             <ProcedureGrid hospital={h} rows={neurologyPathways} />
+          </>
+        ) : null}
+        {nephrologyPathways.length > 0 ? (
+          <>
+            <h3 className="mt-10 font-heading text-2xl">Nephrology</h3>
+            <ProcedureGrid hospital={h} rows={nephrologyPathways} />
           </>
         ) : null}
       </section>

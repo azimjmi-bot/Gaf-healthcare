@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, GYNECOLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, NEUROLOGY_PROCEDURES, NEUROSURGERY_PROCEDURES, OPHTHALMOLOGY_PROCEDURES, ORTHOPEDICS_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, GYNECOLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, NEPHROLOGY_PROCEDURES, NEUROLOGY_PROCEDURES, NEUROSURGERY_PROCEDURES, OPHTHALMOLOGY_PROCEDURES, ORTHOPEDICS_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -662,6 +662,33 @@ export function mapNeurologyProcedures(texts: string[], fallback = true) {
   return ["EEG", "Electromyography (EMG)", "IV Thrombolysis"];
 }
 
+const NEPHROLOGY_RULES: { test: RegExp; name: (typeof NEPHROLOGY_PROCEDURES)[number] }[] = [
+  { test: /paired kidney|swap transplant|kidney exchange|kidney paired/i, name: "Paired Kidney Exchange (Swap Transplant)" },
+  { test: /abo[\s-]*incompat/i, name: "ABO-Incompatible Kidney Transplantation" },
+  { test: /living donor kidney|live donor kidney/i, name: "Living Donor Kidney Transplantation" },
+  { test: /deceased donor kidney|cadaver.{0,12}kidney/i, name: "Deceased Donor Kidney Transplantation" },
+  { test: /graft biopsy|allograft biopsy|transplant biopsy/i, name: "Kidney Transplant Graft Biopsy" },
+  { test: /transplant evaluation|transplant follow|post[\s-]*transplant/i, name: "Kidney Transplant Evaluation and Follow-up" },
+  { test: /kidney transplant|renal transplant/i, name: "Kidney Transplantation" },
+  { test: /\bcrrt\b|continuous renal replacement/i, name: "Continuous Renal Replacement Therapy (CRRT)" },
+  { test: /\bsled\b|sustained low[\s-]*efficiency/i, name: "Sustained Low-Efficiency Dialysis (SLED)" },
+  { test: /peritoneal dialysis|\bcapd\b|\bapd\b/i, name: "Peritoneal Dialysis" },
+  { test: /hemodialysis|haemodialysis|\bhd\b/i, name: "Hemodialysis" },
+  { test: /capd catheter|pd catheter|peritoneal catheter/i, name: "CAPD Catheter Insertion" },
+  { test: /permcath|perm[\s-]*cath|tunnelled.{0,12}catheter|cuffed catheter/i, name: "Central Venous Catheter (Permcath) Insertion" },
+  { test: /dialysis catheter|vascath|non[\s-]*tunnel/i, name: "Dialysis Catheter Placement" },
+  { test: /av fistula|arteriovenous fistula|cimino/i, name: "AV Fistula Creation" },
+  { test: /dialysis access|fistuloplasty|access thromb/i, name: "Dialysis Access Management" },
+  { test: /renal biopsy|kidney biopsy|native.{0,8}biopsy/i, name: "Percutaneous Renal Biopsy" },
+  { test: /plasmapheresis|plasma exchange|\bplex\b/i, name: "Plasmapheresis" },
+];
+
+export function mapNephrologyProcedures(texts: string[], fallback = true) {
+  const found = applyRules(texts, NEPHROLOGY_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Hemodialysis", "Kidney Transplantation", "Percutaneous Renal Biopsy"];
+}
+
 export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
   if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
@@ -684,5 +711,6 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Gynecology") return mapGynecologyProcedures(texts);
   if (specialty === "Neurosurgery") return mapNeurosurgeryProcedures(texts);
   if (specialty === "Neurology") return mapNeurologyProcedures(texts);
+  if (specialty === "Nephrology") return mapNephrologyProcedures(texts);
   return mapCatalogProcedures(texts);
 }

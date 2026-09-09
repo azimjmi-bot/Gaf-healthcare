@@ -20,7 +20,9 @@ function clip(text: string, max = 158) {
 
 export function doctorMetadata(d: Doctor): Metadata {
   const role =
-    d.specialtySlug === "neurology"
+    d.specialtySlug === "nephrology"
+      ? "nephrologist"
+      : d.specialtySlug === "neurology"
       ? "neurologist"
       : d.specialtySlug === "neurosurgery"
       ? "neurosurgeon"
@@ -147,6 +149,7 @@ export function catalogMetadata(
     if (proc) title = `${proc} specialists in ${place}`;
     else if (spec === "Neurosurgery") title = `Neurosurgeons in ${place}`;
     else if (spec === "Neurology") title = `Neurologists in ${place}`;
+    else if (spec === "Nephrology") title = `Nephrologists in ${place}`;
     else if (spec === "Gynecology") title = `Gynecologists in ${place}`;
     else if (spec === "Ophthalmology") title = `Ophthalmologists in ${place}`;
     else if (spec === "Orthopedics") title = `Orthopaedic surgeons in ${place}`;
@@ -168,7 +171,9 @@ export function catalogMetadata(
     else title = `Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and paediatric orthopaedic surgeons in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
-      spec === "Neurology"
+      spec === "Nephrology"
+        ? `/doctors/india/${citySlug}/nephrology/hemodialysis`
+        : spec === "Neurology"
         ? `/doctors/india/${citySlug}/neurology/eeg`
         : spec === "Neurosurgery"
         ? `/doctors/india/${citySlug}/neurosurgery/brain-tumor-surgery`
@@ -328,7 +333,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Named spine surgeons sit under Spine Surgery. Named pulmonologists sit under Pulmonology — including Dr. Anand Jaiswal, Dr. Manoj Kumar Goel, Dr. Vivek Singh and Dr. Randeep Guleria in Delhi NCR. Named paediatric orthopaedic surgeons sit under Pediatric Orthopaedic — including Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman. Named adult orthopaedic surgeons sit under Orthopedics — including Dr. Ashok Rajgopal, Dr. I P S Oberoi and Dr. Yash Gulati in Delhi NCR. Named ophthalmologists sit under Ophthalmology — including Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal in Delhi NCR. Named gynecologists sit under Gynecology — including Dr. Usha M Kumar, Dr. Suneeta Mittal and Dr. Alka Kriplani in Delhi NCR. Named neurosurgeons sit under Neurosurgery — including Dr. Sandeep Vaishya, Dr. Aditya Gupta and Dr. Varindera Paul Singh in Delhi NCR. Named neurologists sit under Neurology — including Dr. Sumit Singh, Dr. M V Padma Srivastava and Dr. Vinay Goyal in Delhi NCR. Later pages can mount /doctors/india/{city}/neurology/{procedure} without remapping the catalog.",
+    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Named spine surgeons sit under Spine Surgery. Named pulmonologists sit under Pulmonology — including Dr. Anand Jaiswal, Dr. Manoj Kumar Goel, Dr. Vivek Singh and Dr. Randeep Guleria in Delhi NCR. Named paediatric orthopaedic surgeons sit under Pediatric Orthopaedic — including Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman. Named adult orthopaedic surgeons sit under Orthopedics — including Dr. Ashok Rajgopal, Dr. I P S Oberoi and Dr. Yash Gulati in Delhi NCR. Named ophthalmologists sit under Ophthalmology — including Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal in Delhi NCR. Named gynecologists sit under Gynecology — including Dr. Usha M Kumar, Dr. Suneeta Mittal and Dr. Alka Kriplani in Delhi NCR. Named neurosurgeons sit under Neurosurgery — including Dr. Sandeep Vaishya, Dr. Aditya Gupta and Dr. Varindera Paul Singh in Delhi NCR. Named neurologists sit under Neurology — including Dr. Sumit Singh, Dr. M V Padma Srivastava and Dr. Vinay Goyal in Delhi NCR. Nephrology sheets are live; named nephrologists are being matched. Later pages can mount /doctors/india/{city}/nephrology/{procedure} without remapping the catalog.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
@@ -339,7 +344,7 @@ export const DOCTOR_FAQS = [
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist, urologist, spine surgeon, pulmonologist, paediatric orthopaedic surgeon, orthopaedic surgeon, ophthalmologist, gynecologist, neurosurgeon or neurologist confirms regimen, fractions, donor, endoscopy, graft, laser, levels, airway, growth remaining, implant, laterality, approach, electrodiagnosis or the operation after reviewing records.",
+    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist, urologist, spine surgeon, pulmonologist, paediatric orthopaedic surgeon, orthopaedic surgeon, ophthalmologist, gynecologist, neurosurgeon, neurologist or nephrologist confirms regimen, fractions, donor, endoscopy, graft, laser, levels, airway, growth remaining, implant, laterality, approach, electrodiagnosis, dialysis access or the operation after reviewing records.",
   },
   {
     q: "What does liver transplantation typically cost in India versus the US?",
@@ -347,7 +352,7 @@ export const COST_FAQS = [
   },
   {
     q: "What does kidney transplantation typically cost in India versus the US?",
-    a: "Velora’s Kidney Transplantation sheet lists a partner planning range of about $13,000–$25,000 against typical US cash of $150,000–$400,000, depending on living versus deceased donor, ABO work and campus. Living-donor, deceased-donor and ABO-incompatible sit on separate Urology sheets. Radical prostatectomy, partial nephrectomy and radical cystectomy remain on the shared surgical-oncology slugs.",
+    a: "Velora’s Kidney Transplantation sheet lists a partner planning range of about $13,000–$25,000 against typical US cash of $150,000–$400,000, depending on living versus deceased donor, ABO work and campus. Living-donor, deceased-donor and ABO-incompatible remain the shared Urology slugs and now also sit under Nephrology. Paired kidney exchange and transplant evaluation sit on Nephrology sheets. Radical prostatectomy, partial nephrectomy and radical cystectomy remain on the shared surgical-oncology slugs.",
   },
   {
     q: "What does spinal fusion typically cost in India versus the US?",
@@ -376,6 +381,10 @@ export const COST_FAQS = [
   {
     q: "What does EEG typically cost in India versus the US?",
     a: "Velora’s EEG sheet lists a partner planning range of about $80–$250 against typical US cash of $400–$1,500, depending on duration and campus. Video EEG sits on a neighbouring Neurology sheet. Deep brain stimulation and stroke thrombectomy remain the shared Neurosurgery slugs. VNS, IVIG, MRgFUS and sleep study sit on Neurology sheets.",
+  },
+  {
+    q: "What does hemodialysis typically cost in India versus the US?",
+    a: "Velora’s Hemodialysis sheet lists a partner planning range of about $8,000–$18,000 per year against typical US cash of $70,000–$150,000 per year, depending on sessions and campus. Peritoneal dialysis, CRRT and SLED sit on neighbouring Nephrology sheets. Kidney transplantation remains the shared Urology slug. Plasmapheresis remains the shared Neurology slug.",
   },
   {
     q: "What does total knee replacement typically cost in India versus the US?",

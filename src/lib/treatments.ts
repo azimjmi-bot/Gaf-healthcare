@@ -8,6 +8,7 @@ import { OPHTHALMOLOGY_CLUSTER_BY_PROCEDURE, OPHTHALMOLOGY_COST, OPHTHALMOLOGY_S
 import { GYNECOLOGY_CLUSTER_BY_PROCEDURE, GYNECOLOGY_CONDITIONS, GYNECOLOGY_COST, GYNECOLOGY_SUMMARIES } from "@/lib/gynecology-costs";
 import { NEUROSURGERY_CLUSTER_BY_PROCEDURE, NEUROSURGERY_CONDITIONS, NEUROSURGERY_COST, NEUROSURGERY_SHARED, NEUROSURGERY_SUMMARIES } from "@/lib/neurosurgery-costs";
 import { NEUROLOGY_CLUSTER_BY_PROCEDURE, NEUROLOGY_CONDITIONS, NEUROLOGY_COST, NEUROLOGY_SHARED, NEUROLOGY_SUMMARIES } from "@/lib/neurology-costs";
+import { NEPHROLOGY_CLUSTER_BY_PROCEDURE, NEPHROLOGY_CONDITIONS, NEPHROLOGY_COST, NEPHROLOGY_SHARED, NEPHROLOGY_SUMMARIES } from "@/lib/nephrology-costs";
 import { GASTROENTEROLOGY_COST, GASTROENTEROLOGY_SUMMARIES } from "@/lib/gastroenterology-costs";
 import { ENT_COST, ENT_SUMMARIES } from "@/lib/ent-costs";
 import { COSMETIC_COST, COSMETIC_SUMMARIES } from "@/lib/cosmetic-costs";
@@ -31,6 +32,7 @@ import {
   GYNECOLOGY_PROCEDURES,
   NEUROSURGERY_PROCEDURES,
   NEUROLOGY_PROCEDURES,
+  NEPHROLOGY_PROCEDURES,
   GASTROENTEROLOGY_PROCEDURES,
   ENT_PROCEDURES,
   COSMETIC_PROCEDURES,
@@ -716,7 +718,7 @@ const UROLOGY_INCLUDES = [
 
 const UROLOGY_ONLY = UROLOGY_PROCEDURES.filter((name) => {
   const row = getProcedure(name);
-  return row?.specialtySlug === "urology" && row.specialtySlugs.length === 1;
+  return row?.specialtySlug === "urology";
 });
 
 const urologyTreatments: Treatment[] = UROLOGY_ONLY.map((name) => {
@@ -1067,6 +1069,49 @@ const neurologyTreatments: Treatment[] = NEUROLOGY_PROCEDURES.filter((name) => !
   },
 );
 
+const NEPHROLOGY_IMAGE =
+  "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=1600&q=80";
+
+const NEPHROLOGY_INCLUDES = [
+  "Nephrology consultation and records review",
+  "Named consultant on camera before travel",
+  "Labs, biopsy, access or HLA work as indicated",
+  "Dialysis, access or transplant plan as quoted",
+  "Discharge summary to your home physician",
+];
+
+const nephrologyShared = new Set<string>(NEPHROLOGY_SHARED);
+
+const nephrologyTreatments: Treatment[] = NEPHROLOGY_PROCEDURES.filter((name) => !nephrologyShared.has(name)).map(
+  (name) => {
+    const cost = NEPHROLOGY_COST[name];
+    if (!cost) throw new Error(`Missing nephrology cost for ${name}`);
+    const slug = toSlug(name);
+    const cluster = NEPHROLOGY_CLUSTER_BY_PROCEDURE[name] ?? "Nephrology";
+    return {
+      slug,
+      name,
+      category: cluster,
+      specialtySlug: "nephrology",
+      specialtySlugs: slugsForProcedureName(name),
+      procedureSlug: slug,
+      summary:
+        NEPHROLOGY_SUMMARIES[name] ??
+        `Nephrology — ${name} at JCI partner campuses with a named nephrologist before you travel.`,
+      image: NEPHROLOGY_IMAGE,
+      usRange: cost.us,
+      partnerRange: cost.partner,
+      stay: cost.stay,
+      hospitalSlugs: hospitalSlugsForProcedure(name),
+      conditions: NEPHROLOGY_CONDITIONS,
+      procedures: [name],
+      includes: NEPHROLOGY_INCLUDES,
+      notes:
+        "Indicative planning ranges, not quotations. The named nephrologist confirms GFR, access, HLA or biopsy and an itemized hospital price after records review.",
+    };
+  },
+);
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -1090,6 +1135,7 @@ export const treatments: Treatment[] = [
   ...gynecologyTreatments,
   ...neurosurgeryTreatments,
   ...neurologyTreatments,
+  ...nephrologyTreatments,
 ];
 
 export function getTreatment(slug: string) {
