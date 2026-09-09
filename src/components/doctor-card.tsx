@@ -12,7 +12,6 @@ import {
   IdCard,
   Settings2,
 } from "lucide-react";
-import { doctorInitials } from "@/lib/hospital-profile";
 import {
   designationLabel,
   experienceBadge,
@@ -38,13 +37,12 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
   const extra = procedures.length - PROC_PREVIEW;
   const experience = experienceBadge(doctor);
   const designation = designationLabel(doctor);
-  const initials = doctorInitials(doctor.name);
 
   return (
     <article className="dcard">
       <div className="dcard__top">
-        <div className="dcard__avatar" aria-hidden="true">
-          <span>{initials}</span>
+        <div className="dcard__avatar">
+          <img src="/doctors/avatar-placeholder.webp" alt="" />
         </div>
 
         <div className="dcard__id">

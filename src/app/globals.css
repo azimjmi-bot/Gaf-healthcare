@@ -144,22 +144,26 @@
 
 @media (min-width: 880px) {
   .dcard__top {
-    grid-template-columns: 5.5rem minmax(0, 1.4fr) minmax(13rem, 0.75fr);
+    grid-template-columns: 7.25rem minmax(0, 1.4fr) minmax(13rem, 0.75fr);
     align-items: start;
   }
 }
 
 .dcard__avatar {
-  display: grid;
-  place-items: center;
-  width: 5.25rem;
-  height: 5.25rem;
-  border-radius: 0.85rem;
-  background: linear-gradient(145deg, #dceaf3, #f4efe4);
-  color: #0b4f57;
-  font-weight: 700;
-  font-size: 1.35rem;
-  letter-spacing: 0.04em;
+  overflow: hidden;
+  width: 6.75rem;
+  height: 6.75rem;
+  border-radius: 0.9rem;
+  border: 1px solid #d7e8f0;
+  background: #e8f3f8;
+  box-shadow: 0 8px 18px -12px rgba(11, 79, 87, 0.45);
+}
+
+.dcard__avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .dcard__name-row {
