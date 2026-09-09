@@ -79,7 +79,10 @@ export function doctorMetadata(d: Doctor): Metadata {
 }
 
 export function hospitalMetadata(h: Hospital): Metadata {
-  const title = `${h.name} — oncology, ENT and GI hospital in ${h.city}, India`;
+  const title =
+    h.specialtySlug === "ophthalmology" && h.specialtySlugs.length === 1
+      ? `${h.name} — eye hospital in ${h.city}, India`
+      : `${h.name} — oncology, ENT and GI hospital in ${h.city}, India`;
   const description = clip(
     `${h.name} in ${h.city}, India lists ${h.specialties.join(", ")}. ${h.accreditation}. ${h.bio}`,
   );
