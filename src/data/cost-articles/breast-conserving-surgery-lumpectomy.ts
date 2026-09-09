@@ -497,6 +497,21 @@ export const breastConservingSurgery: CostArticle = {
   hospitalIntro:
     "Campuses on Velora where this operation is quoted, with accreditation as published by the hospital. Choose on breast unit depth, the surgeon you met on camera and the radiation plan that follows — not on the brand name.",
 
+  figures: [
+    {
+      after: "overview",
+      src: "/costs/lumpectomy-hospital-atrium.webp",
+      alt: "A patient and companion walking through a modern Indian hospital atrium with a coordinator, on the way to a breast surgery consultation.",
+      caption: "Arrival at a listed campus is usually a walk from the atrium to a named consultant, not a corridor of anonymous desks.",
+    },
+    {
+      after: "how",
+      src: "/costs/lumpectomy-consultation.webp",
+      alt: "A surgical oncologist reviewing imaging on a tablet with an international patient and family member during a private consultation.",
+      caption: "The operation is explained on camera or in clinic with the actual imaging open — not from a brochure photograph.",
+    },
+  ],
+
   relatedProcedures: [
     "Mastectomy",
     "Sentinel Lymph Node Biopsy",

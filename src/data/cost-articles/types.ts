@@ -28,6 +28,14 @@ export type DestinationRow = {
 
 export type LabelledDetail = { label: string; detail: string };
 
+export type CostFigure = {
+  src: string;
+  alt: string;
+  caption?: string;
+  /** Insert after this named block in CostArticleView. */
+  after: "overview" | "how" | "journey";
+};
+
 export type CostArticle = {
   procedure: string;
   /** Lowercase form for mid-sentence use, e.g. "breast-conserving surgery". */
@@ -64,4 +72,5 @@ export type CostArticle = {
   hospitalIntro: string;
   relatedProcedures: string[];
   relatedBlogs?: { href: string; label: string }[];
+  figures?: CostFigure[];
 };

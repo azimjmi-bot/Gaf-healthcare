@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { AccreditationSeals } from "@/components/accreditation-seals";
 import {
@@ -7,7 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import type { CostArticle } from "@/data/cost-articles/types";
+import type { CostArticle, CostFigure } from "@/data/cost-articles/types";
 import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import type { CostCityRow, CostDestinationRow } from "@/lib/cost-article";
 import { experienceBadge, listingBio } from "@/lib/doctor-profile";
@@ -48,6 +49,30 @@ function Bullets({ items }: { items: string[] }) {
       ))}
     </ul>
   );
+}
+
+function Figure({ figure }: { figure: CostFigure }) {
+  return (
+    <figure className="mt-8">
+      <Image
+        src={figure.src}
+        alt={figure.alt}
+        width={1280}
+        height={720}
+        className="h-auto w-full rounded-2xl object-cover"
+        sizes="(min-width: 1024px) 48rem, 100vw"
+      />
+      {figure.caption ? (
+        <figcaption className="mt-2 text-sm leading-relaxed text-muted-foreground">
+          {figure.caption}
+        </figcaption>
+      ) : null}
+    </figure>
+  );
+}
+
+function figuresAfter(article: CostArticle, after: CostFigure["after"]) {
+  return (article.figures ?? []).filter((figure) => figure.after === after);
 }
 
 function DetailList({ items }: { items: { label: string; detail: string }[] }) {
@@ -408,6 +433,9 @@ export function CostArticleView({
       {article.overview.what.map((para) => (
         <P key={para.slice(0, 40)}>{para}</P>
       ))}
+      {figuresAfter(article, "overview").map((figure) => (
+        <Figure key={figure.src} figure={figure} />
+      ))}
       <H3>Who may be a candidate</H3>
       {article.overview.who.map((para) => (
         <P key={para.slice(0, 40)}>{para}</P>
@@ -415,6 +443,9 @@ export function CostArticleView({
       <H3>How the operation is performed</H3>
       {article.overview.how.map((para) => (
         <P key={para.slice(0, 40)}>{para}</P>
+      ))}
+      {figuresAfter(article, "how").map((figure) => (
+        <Figure key={figure.src} figure={figure} />
       ))}
       <H3>Main variations</H3>
       <DetailList items={article.overview.variations} />
@@ -456,6 +487,9 @@ export function CostArticleView({
           </li>
         ))}
       </ol>
+      {figuresAfter(article, "journey").map((figure) => (
+        <Figure key={figure.src} figure={figure} />
+      ))}
       <H3>Documents to prepare</H3>
       <Bullets items={article.documents} />
       <InlineCta
