@@ -2,7 +2,7 @@ import type { MetadataRoute } from "next";
 import { doctors } from "@/lib/doctors";
 import { hospitals } from "@/lib/hospitals";
 import { treatments } from "@/lib/treatments";
-import { posts } from "@/lib/blogs";
+import { listPublishedPosts } from "@/lib/blogs";
 import { SITE_URL } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
@@ -33,7 +33,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     })),
-    ...posts.map((p) => ({
+    ...listPublishedPosts()
+      .filter((p) => p.allowIndex)
+      .map((p) => ({
       url: `${SITE_URL}/blogs/${p.slug}`,
       lastModified: now,
       changeFrequency: "monthly" as const,

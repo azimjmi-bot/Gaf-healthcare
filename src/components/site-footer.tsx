@@ -1,4 +1,7 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { site } from "@/lib/site";
 
 const columns = [
@@ -14,6 +17,8 @@ const columns = [
 ];
 
 export function SiteFooter() {
+  const pathname = usePathname();
+  if (pathname.startsWith("/cms")) return null;
   return (
     <footer className="border-t border-border bg-ink text-ivory">
       <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-12 md:px-8">

@@ -2,14 +2,17 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CoverImage } from "@/components/article-body";
 import { JsonLd } from "@/components/json-ld";
 import { CtaBand } from "@/components/page-shell";
-import { posts } from "@/lib/blogs";
+import { listPublishedPosts } from "@/lib/blogs";
 import { HospitalCard } from "@/components/hospital-card";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { SITE_URL } from "@/lib/seo";
 
 export default function HomePage() {
+  const published = listPublishedPosts();
+  const posts = [...published.filter((p) => p.featured), ...published.filter((p) => !p.featured)].slice(0, 4);
   return (
     <>
       <JsonLd
@@ -75,7 +78,7 @@ export default function HomePage() {
             </div>
             <div>
               <dt className="text-ivory/55">Blogs</dt>
-              <dd className="mt-1 font-heading text-3xl">{posts.length}</dd>
+              <dd className="mt-1 font-heading text-3xl">{published.length}</dd>
             </div>
           </dl>
         </div>
@@ -228,13 +231,14 @@ export default function HomePage() {
                 href={`/blogs/${post.slug}`}
                 className="group overflow-hidden rounded-2xl border border-border bg-card"
               >
-                <div className="relative h-52">
-                  <Image
-                    src={post.image}
-                    alt=""
-                    fill
-                    className="object-cover transition duration-700 group-hover:scale-105"
-                  />
+                <div className="relative h-52 overflow-hidden bg-[#dce8ee]">
+                  {post.image ? (
+                    <CoverImage
+                      src={post.image}
+                      alt={post.imageAlt || ""}
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    />
+                  ) : null}
                 </div>
                 <div className="p-6">
                   <p className="text-xs tracking-[0.18em] uppercase text-gold">{post.category}</p>

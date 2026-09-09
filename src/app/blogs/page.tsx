@@ -1,22 +1,34 @@
-import Image from "next/image";
+import { CoverImage } from "@/components/article-body";
 import Link from "next/link";
 import { CtaBand, PageIntro } from "@/components/page-shell";
-import { posts } from "@/lib/blogs";
+import { blogSettings, listPublishedPosts } from "@/lib/blogs";
 import type { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
 export const metadata: Metadata = { title: "Blogs" };
 
-export default function BlogsPage() {
+export default async function BlogsPage({
+  searchParams,
+}: {
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
+}) {
+  const raw = await searchParams;
+  const settings = blogSettings();
+  const category = Array.isArray(raw.category) ? raw.category[0] : raw.category;
+  const pageRaw = Array.isArray(raw.page) ? raw.page[0] : raw.page;
+  const page = Math.max(1, Number.parseInt(pageRaw || "1", 10) || 1);
+  const all = listPublishedPosts().filter((p) => !category || p.category === category);
+  const size = settings.postsPerPage || 12;
+  const totalPages = Math.max(1, Math.ceil(all.length / size) || 1);
+  const current = Math.min(page, totalPages);
+  const posts = all.slice((current - 1) * size, current * size);
+
   return (
     <>
-      <PageIntro
-        eyebrow="Desk"
-        title="Planning notes, not a magazine."
-        lede="Short essays on radiation techniques, when travel is justified, and the records we ask for before anyone books a ticket. This is the only editorial surface on the site."
-      />
+      <PageIntro eyebrow={settings.blogEyebrow} title={settings.blogTitle} lede={settings.blogLede} />
       <section className="mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16">
-        {posts.length === 0 ? (
-          <p className="text-muted-foreground">No posts yet.</p>
+        {all.length === 0 ? (
+          <p className="text-muted-foreground">No published notes yet.</p>
         ) : (
           <div className="grid gap-8 md:grid-cols-2">
             {posts.map((post) => (
@@ -25,13 +37,14 @@ export default function BlogsPage() {
                 href={`/blogs/${post.slug}`}
                 className="group overflow-hidden rounded-2xl border border-border bg-card"
               >
-                <div className="relative h-56">
-                  <Image
-                    src={post.image}
-                    alt=""
-                    fill
-                    className="object-cover transition duration-700 group-hover:scale-105"
-                  />
+                <div className="relative h-56 overflow-hidden bg-[#dce8ee]">
+                  {post.image ? (
+                    <CoverImage
+                      src={post.image}
+                      alt={post.imageAlt || ""}
+                      className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    />
+                  ) : null}
                 </div>
                 <div className="p-6">
                   <p className="text-xs tracking-[0.18em] uppercase text-gold">
@@ -44,6 +57,23 @@ export default function BlogsPage() {
             ))}
           </div>
         )}
+        {totalPages > 1 ? (
+          <p className="mt-10 flex gap-3 text-sm">
+            {current > 1 ? (
+              <Link href={`/blogs?page=${current - 1}${category ? `&category=${encodeURIComponent(category)}` : ""}`}>
+                Previous
+              </Link>
+            ) : null}
+            <span>
+              Page {current} of {totalPages}
+            </span>
+            {current < totalPages ? (
+              <Link href={`/blogs?page=${current + 1}${category ? `&category=${encodeURIComponent(category)}` : ""}`}>
+                Next
+              </Link>
+            ) : null}
+          </p>
+        ) : null}
       </section>
       <CtaBand />
     </>

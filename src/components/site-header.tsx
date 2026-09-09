@@ -23,6 +23,7 @@ const links = [
 export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  if (pathname.startsWith("/cms")) return null;
   const overlay = pathname === "/";
 
   return (
