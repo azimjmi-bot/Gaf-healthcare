@@ -1,5 +1,6 @@
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
+import { displayBio } from "@/lib/hospital-profile";
 
 function clip(text: string, max = 46) {
   const t = text.replace(/\s+/g, " ").trim();
@@ -59,4 +60,48 @@ export function educationStat(doctor: Doctor) {
   const q = doctor.qualifications.replace(/\s+/g, " ").trim();
   if (!q) return "Qualifications listed on the profile";
   return q;
+}
+
+export function listingBio(doctor: Doctor, max = 220) {
+  const t = displayBio(doctor.bio);
+  if (t.length <= max) return t;
+  return `${t.slice(0, max - 1).trimEnd()}…`;
+}
+
+export function designationLabel(doctor: Doctor) {
+  const part = doctor.title.split(",")[0]?.trim();
+  return part || doctor.title;
+}
+
+export function whyChooseLines(doctor: Doctor) {
+  const lines: string[] = [];
+  const seen = new Set<string>();
+  const push = (raw: string | undefined) => {
+    const label = raw?.replace(/\s+/g, " ").trim() ?? "";
+    const key = label.toLowerCase();
+    if (!label || seen.has(key) || lines.length >= 4) return;
+    seen.add(key);
+    lines.push(label);
+  };
+
+  if (doctor.featured) push("Featured on the Velora list");
+  for (const spec of doctor.specializations) {
+    if (spec.toLowerCase() === doctor.specialty.toLowerCase()) continue;
+    push(spec);
+  }
+  if (doctor.languages) push(`Consults in ${doctor.languages}`);
+  return lines;
+}
+
+export function keyProcedureLabels(doctor: Doctor) {
+  const seen = new Set<string>();
+  const labels: string[] = [];
+  for (const item of [...doctor.proceduresExpertise, ...doctor.procedures]) {
+    const label = item.replace(/\s+/g, " ").trim();
+    const key = label.toLowerCase();
+    if (!label || seen.has(key)) continue;
+    seen.add(key);
+    labels.push(clip(label, 42));
+  }
+  return labels;
 }

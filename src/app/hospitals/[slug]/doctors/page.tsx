@@ -2,7 +2,6 @@ import Link from "next/link";
 import { DoctorCard } from "@/components/doctor-card";
 import { CtaBand } from "@/components/page-shell";
 import { hospitalStaticParams, loadHospitalCampus, requireHospitalCampus } from "@/lib/hospital-campus";
-import { displayBio } from "@/lib/hospital-profile";
 import { SITE_URL } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -60,7 +59,7 @@ export default async function HospitalDoctorsPage({
               <h3>{g.heading}</h3>
               <div className="mt-6 grid gap-6">
                 {g.doctors.map((d) => (
-                  <DoctorCard key={d.slug} doctor={{ ...d, bio: displayBio(d.bio) }} />
+                  <DoctorCard key={d.slug} doctor={d} />
                 ))}
               </div>
             </div>

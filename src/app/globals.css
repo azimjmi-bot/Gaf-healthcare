@@ -129,89 +129,276 @@
   gap: 1.25rem;
 }
 
-.doc-card {
+.dcard {
   overflow: hidden;
-  border-radius: 1.25rem;
-  border: 1px solid var(--border);
-  background: var(--card);
-  padding: 1.25rem 1.4rem 1.35rem;
+  border-radius: 1rem;
+  border: 1px solid #d7e3ea;
+  background: #fff;
 }
 
-.card-fbadge {
+.dcard__top {
+  display: grid;
+  gap: 1rem;
+  padding: 1.15rem 1.2rem;
+}
+
+@media (min-width: 880px) {
+  .dcard__top {
+    grid-template-columns: 5.5rem minmax(0, 1.4fr) minmax(13rem, 0.75fr);
+    align-items: start;
+  }
+}
+
+.dcard__avatar {
+  display: grid;
+  place-items: center;
+  width: 5.25rem;
+  height: 5.25rem;
+  border-radius: 0.85rem;
+  background: linear-gradient(145deg, #dceaf3, #f4efe4);
+  color: #0b4f57;
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: 0.04em;
+}
+
+.dcard__name-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 0.7rem;
+}
+
+.dcard__name {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-  border-radius: 999px;
-  border: 1px solid #e2e4e9;
-  background: #fff;
+  gap: 0.35rem;
+  font-family: var(--font-sans), ui-sans-serif, system-ui;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.25;
   color: #0b2545;
-  padding: 4px 11px;
-  font-size: 12px;
-  font-weight: 500;
 }
 
-.card-fbadge--inline {
-  margin-bottom: 0.75rem;
+.dcard__name a:hover {
+  color: #0e7c86;
 }
 
-.doc-card__name {
-  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
-  font-size: 1.85rem;
-  line-height: 1.15;
-  color: var(--foreground);
+.dcard__check {
+  width: 1.05rem;
+  height: 1.05rem;
+  color: #1fa855;
+  fill: #1fa855;
 }
 
-.doc-card__name:hover {
-  color: var(--gold);
+.dcard__chip {
+  border-radius: 999px;
+  background: #e7f3fb;
+  color: #0e6a8a;
+  padding: 0.18rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
 }
 
-.doc-card__quals {
-  margin-top: 0.35rem;
+.dcard__role {
+  margin-top: 0.3rem;
   font-size: 0.9rem;
-  color: var(--muted-foreground);
+  color: #5a6d73;
 }
 
-.doc-card__title {
-  margin-top: 0.35rem;
-  font-size: 0.95rem;
+.dcard__facts {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.1rem;
+  margin-top: 0.7rem;
+  font-size: 0.8rem;
+  color: #16323a;
 }
 
-.doc-card__hosp {
-  margin-top: 0.75rem;
+.dcard__facts li {
   display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.dcard__facts svg {
+  color: #0e7c86;
+}
+
+.dcard__aside {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+@media (min-width: 880px) {
+  .dcard__aside {
+    border-left: 1px solid #e6edf1;
+    padding-left: 1.1rem;
+  }
+}
+
+.dcard__hosp {
+  display: flex;
   align-items: flex-start;
+  gap: 0.45rem;
+  font-size: 0.86rem;
+  color: #0e6a8a;
+}
+
+.dcard__hosp strong {
+  display: block;
+  color: #0b4f57;
+}
+
+.dcard__hosp span span {
+  display: block;
+  color: #5a6d73;
+  font-weight: 400;
+}
+
+.dcard__hosp:hover strong {
+  text-decoration: underline;
+}
+
+.dcard__cta {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.dcard__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 0.4rem;
-  font-size: 0.92rem;
-  color: var(--foreground);
+  min-height: 2.45rem;
+  border-radius: 0.55rem;
+  font-size: 0.84rem;
+  font-weight: 700;
+  padding: 0 0.8rem;
 }
 
-.doc-card__hosp:hover {
-  text-decoration: underline;
+.dcard__btn--book {
+  background: #c23b32;
+  color: #fff;
 }
 
-.doc-card__exp {
-  margin-top: 0.45rem;
+.dcard__btn--wa {
+  background: #1fa855;
+  color: #fff;
+}
+
+.dcard__bottom {
+  display: grid;
+  gap: 1rem;
+  border-top: 1px solid #e6edf1;
+  padding: 1rem 1.2rem 1.15rem;
+}
+
+@media (min-width: 880px) {
+  .dcard__bottom {
+    grid-template-columns: minmax(0, 1.35fr) minmax(12rem, 0.85fr);
+  }
+}
+
+.dcard__bio {
   font-size: 0.9rem;
-  font-weight: 500;
+  line-height: 1.6;
+  color: #5a6d73;
 }
 
-.doc-card__bio {
-  margin-top: 0.85rem;
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 4;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: var(--muted-foreground);
-}
-
-.doc-card__readmore {
-  margin-top: 0.85rem;
+.dcard__more {
   display: inline-block;
-  font-size: 0.9rem;
+  margin-top: 0.55rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0e7c86;
+}
+
+.dcard__more:hover {
   text-decoration: underline;
-  text-underline-offset: 4px;
+}
+
+.dcard__why {
+  margin-top: 0.85rem;
+}
+
+.dcard__why > p {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0b4f57;
+}
+
+.dcard__why ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 0.85rem;
+  margin-top: 0.45rem;
+}
+
+.dcard__why li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.78rem;
+  color: #16323a;
+}
+
+.dcard__why svg {
+  color: #1fa855;
+}
+
+.dcard__procs {
+  border-top: 1px solid #e6edf1;
+  padding-top: 0.85rem;
+}
+
+@media (min-width: 880px) {
+  .dcard__procs {
+    border-top: 0;
+    border-left: 1px solid #e6edf1;
+    padding: 0 0 0 1.1rem;
+  }
+}
+
+.dcard__procs > p {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0b4f57;
+}
+
+.dcard__procs ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.65rem;
+}
+
+.dcard__procs li {
+  border-radius: 999px;
+  background: #e7f3fb;
+  color: #0e6a8a;
+  padding: 0.28rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+}
+
+.dcard__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  margin-top: 0.65rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0e7c86;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
 }
 
 .hospital-profile {
