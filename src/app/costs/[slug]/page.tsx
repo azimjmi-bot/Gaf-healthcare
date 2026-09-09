@@ -14,6 +14,7 @@ import {
   articleFaculty,
   costCityRows,
   costDestinationRows,
+  interpolateCostArticle,
 } from "@/lib/cost-article";
 import { getCostGuide } from "@/lib/cost-guides";
 import {
@@ -49,7 +50,7 @@ export async function generateMetadata({
   const t = getTreatment(slug);
   if (!t) return { title: "Treatment Cost" };
   const article = getCostArticle(t.slug);
-  if (article) return costArticleMetadata(t, article);
+  if (article) return costArticleMetadata(t, interpolateCostArticle(article, t));
   const guide = getCostGuide(t.slug);
   const base = treatmentMetadata(t);
   if (guide) {
@@ -67,7 +68,8 @@ export default async function CostDetailPage({
   const t = getTreatment(slug);
   if (!t) notFound();
 
-  const article = getCostArticle(t.slug);
+  const raw = getCostArticle(t.slug);
+  const article = raw ? interpolateCostArticle(raw, t) : undefined;
   const cmsOverridesArticle = Boolean(t.replaceGuide && t.blocks && t.blocks.length > 0);
   if (article && !cmsOverridesArticle) {
     const articleCampusList = articleCampuses(t);

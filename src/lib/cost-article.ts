@@ -28,6 +28,44 @@ function ratioLabel(low: number, high: number) {
   return `≈${fmt(low)}–${fmt(high)}× India`;
 }
 
+/**
+ * Editorial copy is written with tokens so cost figures live only in the catalog.
+ * Update a price in the cost sheet and the prose, tables and FAQs follow.
+ */
+export function costTokens(treatment: Treatment): Record<string, string> {
+  return {
+    "[PROCEDURE_NAME]": treatment.name,
+    "[SPECIALTY]": treatment.category,
+    "[COUNTRY]": "India",
+    "[INDIA_COST]": treatment.partnerRange,
+    "[US_COST]": treatment.usRange,
+    "[STAY]": treatment.stay,
+  };
+}
+
+function fillTokens(value: string, tokens: Record<string, string>) {
+  let out = value;
+  for (const [token, replacement] of Object.entries(tokens)) {
+    if (out.includes(token)) out = out.split(token).join(replacement);
+  }
+  return out;
+}
+
+function fillDeep<T>(value: T, tokens: Record<string, string>): T {
+  if (typeof value === "string") return fillTokens(value, tokens) as T;
+  if (Array.isArray(value)) return value.map((item) => fillDeep(item, tokens)) as T;
+  if (value && typeof value === "object") {
+    const out: Record<string, unknown> = {};
+    for (const [key, item] of Object.entries(value)) out[key] = fillDeep(item, tokens);
+    return out as T;
+  }
+  return value;
+}
+
+export function interpolateCostArticle(article: CostArticle, treatment: Treatment): CostArticle {
+  return fillDeep(article, costTokens(treatment));
+}
+
 export type CostCityRow = {
   city: string;
   citySlug: string;

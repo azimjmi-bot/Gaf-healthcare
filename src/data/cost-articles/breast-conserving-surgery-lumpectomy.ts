@@ -6,18 +6,18 @@ export const breastConservingSurgery: CostArticle = {
   lastUpdated: "2026-09-09",
   seoTitle: "Breast-Conserving Surgery (Lumpectomy) Cost in India: Price by City, Hospitals & Doctors",
   seoDescription:
-    "Lumpectomy cost in India is typically $3,500–$8,000 for the operation and inpatient stay, against $15,000–$30,000 self-pay in the US. City comparison, what the quote includes, radiotherapy costs, hospital stay, named surgeons and the international patient pathway.",
+    "Lumpectomy cost in India is typically [INDIA_COST] for the operation and inpatient stay, against [US_COST] self-pay in the US. City comparison, what the quote includes, radiotherapy costs, hospital stay, named surgeons and the international patient pathway.",
   heading: "Breast-Conserving Surgery (Lumpectomy) Cost in India",
 
   answer: [
-    "Breast-conserving surgery — a lumpectomy or wide local excision — is typically quoted at $3,500–$8,000 in India for the operation, theatre, anaesthesia, the specimen histopathology and a one to three night inpatient stay. The same operation self-funded in the United States generally runs $15,000–$30,000, which is why breast cancer is one of the more common reasons patients travel here for surgery.",
+    "Breast-conserving surgery — a lumpectomy or wide local excision — is typically quoted at [INDIA_COST] in India for the operation, theatre, anaesthesia, the specimen histopathology and a one to three night inpatient stay. The same operation self-funded in the United States generally runs [US_COST], which is why breast cancer is one of the more common reasons patients travel here for surgery.",
     "That figure is the surgery, not the treatment. Breast conservation is a package deal with radiotherapy: keeping the breast means irradiating it afterwards, and radiation is a separate line item usually quoted somewhere between roughly $1,000 and $6,000 depending on technique and the number of fractions. If chemotherapy, anti-HER2 drugs or endocrine therapy are indicated, those are separate again. A patient budgeting only for the operation is budgeting for about half the pathway.",
     "Hospital stay is short. Most patients are discharged the day after surgery, occasionally the same evening, and two to three nights is usual only when a drain, an axillary dissection or a comorbidity makes it sensible. What lengthens the trip is not the bed — it is waiting for final histopathology, which typically takes five to seven working days and decides whether margins need re-excision and what comes next.",
     "Plan on roughly two to three weeks in India for a surgery-only trip. If you intend to have radiotherapy here as well, plan four to eight weeks in total, depending on whether your radiation oncologist uses a hypofractionated schedule or a conventional one.",
   ],
 
   indiaCost: [
-    "The $3,500–$8,000 band is a planning range, and the spread inside it is not arbitrary. The lower end reflects a straightforward wide local excision with a sentinel node biopsy at a mid-tier NABH campus, a shared or single standard room, and uncomplicated pathology. The upper end reflects a flagship JCI campus, a senior breast surgeon, oncoplastic reshaping at the same sitting, frozen-section margin assessment, a full immunohistochemistry panel, and a private room with a companion bed.",
+    "The [INDIA_COST] band is a planning range, and the spread inside it is not arbitrary. The lower end reflects a straightforward wide local excision with a sentinel node biopsy at a mid-tier NABH campus, a shared or single standard room, and uncomplicated pathology. The upper end reflects a flagship JCI campus, a senior breast surgeon, oncoplastic reshaping at the same sitting, frozen-section margin assessment, a full immunohistochemistry panel, and a private room with a companion bed.",
     "Two things move the number more than anything else, and neither is the city. The first is what happens to the armpit. A sentinel lymph node biopsy — the usual approach when the nodes look clinically clear — adds the radioisotope or dye, the gamma probe time and the frozen section. A full axillary dissection is a longer operation, usually means a drain, and pushes the stay toward three nights. The second is the campus tier. The same surgeon operating in the same city can be quoted differently at a flagship and a satellite unit under the same brand, and the room category alone can shift a bill by several hundred dollars across a short stay.",
     "There is a third factor patients rarely anticipate: pathology. A lumpectomy specimen does not just get looked at. It gets margins assessed, and then oestrogen receptor, progesterone receptor, HER2 and often Ki-67 testing, because those results decide the systemic treatment. Where a genomic recurrence-risk assay is appropriate — the kind used to decide whether a hormone-receptor-positive, node-negative cancer genuinely needs chemotherapy — the sample is usually couriered to an overseas laboratory and billed separately. That single test can cost more than the operating theatre.",
     "Treat any figure you are given before a records review as an order of magnitude, not a price. An itemised hospital estimate for breast-conserving surgery can only be written once a surgeon has seen your imaging, your biopsy report and your receptor status, because those are what determine the length of the operation, the need for localisation, and whether the axilla is being sampled or cleared.",
@@ -222,7 +222,7 @@ export const breastConservingSurgery: CostArticle = {
       {
         label: "The operation",
         detail:
-          "Breast-conserving surgery with axillary staging, theatre, anaesthesia, one to three nights and specimen pathology. This is the $3,500–$8,000 line.",
+          "Breast-conserving surgery with axillary staging, theatre, anaesthesia, one to three nights and specimen pathology. This is the [INDIA_COST] line.",
       },
       {
         label: "Radiotherapy to the conserved breast",
@@ -369,7 +369,7 @@ export const breastConservingSurgery: CostArticle = {
   destinations: [
     {
       country: "India",
-      stay: "1–3 nights",
+      stay: "[STAY]",
       context:
         "Lowest of the group for the operation, and the only destination in this table where Velora lists named breast and surgical oncologists you can meet on camera first.",
     },
@@ -437,11 +437,11 @@ export const breastConservingSurgery: CostArticle = {
   faqs: [
     {
       q: "How much does a lumpectomy cost in India?",
-      a: "Breast-conserving surgery is typically quoted at $3,500–$8,000 in India, covering the operation, theatre, anaesthesia, one to three nights as an inpatient and histopathology of the specimen. Radiotherapy, chemotherapy and genomic testing are separate. The final figure is set by an itemised hospital estimate after a surgeon reviews your imaging and biopsy report.",
+      a: "Breast-conserving surgery is typically quoted at [INDIA_COST] in India, covering the operation, theatre, anaesthesia, one to three nights as an inpatient and histopathology of the specimen. Radiotherapy, chemotherapy and genomic testing are separate. The final figure is set by an itemised hospital estimate after a surgeon reviews your imaging and biopsy report.",
     },
     {
       q: "Is a lumpectomy cheaper in India than in the United States?",
-      a: "For a self-funding patient, substantially. The same operation generally runs $15,000–$30,000 in the US against $3,500–$8,000 in India. If you have US insurance that covers the surgery, your out-of-pocket cost at home may be lower than travelling, so compare against your actual liability rather than the list price.",
+      a: "For a self-funding patient, substantially. The same operation generally runs [US_COST] in the US against [INDIA_COST] in India. If you have US insurance that covers the surgery, your out-of-pocket cost at home may be lower than travelling, so compare against your actual liability rather than the list price.",
     },
     {
       q: "Does the cost include radiotherapy?",
