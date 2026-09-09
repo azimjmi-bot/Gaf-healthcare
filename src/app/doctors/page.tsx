@@ -1,11 +1,11 @@
-import Link from "next/link";
 import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
+import { CatalogPager } from "@/components/catalog-pager";
 import { DoctorCard } from "@/components/doctor-card";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { filterDoctors, parseCatalogQuery } from "@/lib/catalog";
-import { groupDoctorsUnderHospitals } from "@/lib/doctors";
+import { paginateDoctors } from "@/lib/doctors";
 import { catalogMetadata, DOCTOR_FAQS, faqJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -17,16 +17,10 @@ export async function generateMetadata({
   return catalogMetadata("doctors", parseCatalogQuery(await searchParams));
 }
 
-function countDoctors(specialty: ReturnType<typeof groupDoctorsUnderHospitals>[number]) {
-  return specialty.countries.reduce(
-    (n, country) =>
-      n +
-      country.cities.reduce(
-        (m, city) => m + city.campuses.reduce((k, campus) => k + campus.doctors.length, 0),
-        0,
-      ),
-    0,
-  );
+function readPage(raw: Record<string, string | string[] | undefined>) {
+  const value = Array.isArray(raw.page) ? raw.page[0] : raw.page;
+  const n = Number.parseInt(value ?? "1", 10);
+  return Number.isFinite(n) && n > 0 ? n : 1;
 }
 
 export default async function DoctorsPage({
@@ -34,9 +28,10 @@ export default async function DoctorsPage({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
-  const query = parseCatalogQuery(await searchParams);
+  const raw = await searchParams;
+  const query = parseCatalogQuery(raw);
   const list = filterDoctors(query);
-  const directory = groupDoctorsUnderHospitals(list);
+  const paging = paginateDoctors(list, readPage(raw));
   const place = query.city ? `${query.city}, India` : "India";
   const heading = query.procedure
     ? `${query.procedure} specialists in ${place}`
@@ -90,19 +85,19 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="India · five cities · twenty-three specialties"
         title={heading}
-        lede="Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists, gynecologists, neurosurgeons, neurologists and nephrologists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including Dr. Sanjeev Gulati, Dr. Ajit Singh Narula and Dr. Alka Bhasin for dialysis, transplant and glomerular lists, Dr. Sumit Singh, Dr. M V Padma Srivastava and Dr. Vinay Goyal for stroke, epilepsy and movement lists, Dr. Sandeep Vaishya, Dr. Aditya Gupta and Dr. Varindera Paul Singh for brain tumour, aneurysm and radiosurgery, Dr. Usha M Kumar, Dr. Suneeta Mittal and Dr. Alka Kriplani for hysterectomy, myomectomy and endometriosis, Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal for cataract and cornea, Dr. Ashok Rajgopal, Dr. I P S Oberoi and Dr. Yash Gulati for adult joints, and Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman for children’s limbs. Each profile is filed under country, city, specialty and procedure so later pSEO can mount /doctors/india/{city}/nephrology/{procedure}. Bios are original Velora copy."
+        lede="Named specialists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each doctor appears once. Ten profiles per page — filter by city, specialty or procedure when you already know the list you need."
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
             basePath="/doctors"
             entity="doctors"
-            resultCount={list.length}
-            resultLabel={list.length === 1 ? "specialist" : "specialists"}
+            resultCount={paging.total}
+            resultLabel={paging.total === 1 ? "specialist" : "specialists"}
           />
         </Suspense>
       </PageIntro>
       <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
-        {list.length === 0 ? (
+        {paging.total === 0 ? (
           <p className="text-muted-foreground">
             {query.specialty === "Neurosurgery"
               ? "Named neurosurgeons are being matched. Brain tumour, aneurysm, DBS, paediatric and radiosurgery cost sheets stay live — request a dossier and we will advise."
@@ -111,60 +106,25 @@ export default async function DoctorsPage({
               : "No doctors match these filters. Clear a field or request a dossier and we will advise."}
           </p>
         ) : (
-          <div className="space-y-16">
-            {directory.length > 1 ? (
-              <nav aria-label="Specialties" className="flex flex-wrap gap-2">
-                {directory.map((specialty) => (
-                  <a
-                    key={specialty.specialtySlug}
-                    href={`#${specialty.specialtySlug}`}
-                    className="rounded-full border border-border px-3 py-1.5 text-sm hover:border-primary/40"
-                  >
-                    {specialty.specialty} ({countDoctors(specialty)})
-                  </a>
-                ))}
-              </nav>
-            ) : null}
-            {directory.map((specialty) => (
-              <div key={specialty.specialtySlug} id={specialty.specialtySlug} className="scroll-mt-24">
-                <p className="text-xs tracking-[0.18em] uppercase text-gold">Specialty</p>
-                <h2 className="mt-2 font-heading text-4xl">{specialty.specialty}</h2>
-                {specialty.countries.map((country) => (
-                  <div key={country.countrySlug} className="mt-10">
-                    <h3 className="font-heading text-2xl">{country.country}</h3>
-                    {country.cities.map((city) => (
-                      <div key={city.citySlug} className="mt-8 space-y-10">
-                        <p className="text-sm font-medium">{city.city}</p>
-                        {city.campuses.map((campus) => (
-                          <div key={campus.hospitalSlug}>
-                            <div className="mb-4 flex flex-wrap items-end justify-between gap-3">
-                              <Link
-                                href={`/hospitals/${campus.hospitalSlug}`}
-                                className="font-heading text-2xl hover:text-gold"
-                              >
-                                {campus.hospitalName}
-                              </Link>
-                              <Link
-                                href={`/hospitals/${campus.hospitalSlug}`}
-                                className="text-sm underline-offset-4 hover:underline"
-                              >
-                                Hospital profile
-                              </Link>
-                            </div>
-                            <div className="doc-grid">
-                              {campus.doctors.map((d) => (
-                                <DoctorCard key={d.slug} doctor={d} />
-                              ))}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    ))}
-                  </div>
-                ))}
-              </div>
-            ))}
-          </div>
+          <>
+            <p className="text-sm text-muted-foreground">
+              Showing {paging.from}–{paging.to} of {paging.total}
+            </p>
+            <ul className="hosp-list mt-6">
+              {paging.items.map((d) => (
+                <li key={d.slug}>
+                  <DoctorCard doctor={d} />
+                </li>
+              ))}
+            </ul>
+            <CatalogPager
+              page={paging.page}
+              totalPages={paging.totalPages}
+              searchParams={raw}
+              basePath="/doctors"
+              label="Doctor list pages"
+            />
+          </>
         )}
       </section>
       <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8">

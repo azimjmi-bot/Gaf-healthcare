@@ -1031,8 +1031,9 @@
   color: #fff;
 }
 
-.hosp-pager__btn.is-disabled {
-  opacity: 0.4;
+.hosp-pager__ellipsis {
+  padding: 0 0.15rem;
+  color: #6b7c82;
 }
 
 .hp-seals--labeled {

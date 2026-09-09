@@ -1,7 +1,7 @@
 import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { HospitalCard } from "@/components/hospital-card";
-import { HospitalPager } from "@/components/hospital-pager";
+import { CatalogPager } from "@/components/catalog-pager";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { filterHospitals, parseCatalogQuery } from "@/lib/catalog";
@@ -80,7 +80,13 @@ export default async function HospitalsPage({
                 </li>
               ))}
             </ul>
-            <HospitalPager page={paging.page} totalPages={paging.totalPages} searchParams={raw} />
+            <CatalogPager
+              page={paging.page}
+              totalPages={paging.totalPages}
+              searchParams={raw}
+              basePath="/hospitals"
+              label="Hospital list pages"
+            />
           </>
         )}
       </section>

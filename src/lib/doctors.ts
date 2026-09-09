@@ -184,6 +184,30 @@ export type DoctorPseoFacet = {
   countrySlug?: string;
 };
 
+export const DOCTOR_PAGE_SIZE = 10;
+
+export function uniqueDoctorsSorted(list: Doctor[]) {
+  return [...new Map(list.map((d) => [d.slug, d])).values()].sort(
+    (a, b) => a.city.localeCompare(b.city) || a.name.localeCompare(b.name),
+  );
+}
+
+export function paginateDoctors(list: Doctor[], page: number, size = DOCTOR_PAGE_SIZE) {
+  const items = uniqueDoctorsSorted(list);
+  const total = items.length;
+  const totalPages = Math.max(1, Math.ceil(total / size) || 1);
+  const current = Math.min(Math.max(1, page), totalPages);
+  const start = (current - 1) * size;
+  return {
+    items: items.slice(start, start + size),
+    page: current,
+    totalPages,
+    total,
+    from: total === 0 ? 0 : start + 1,
+    to: Math.min(start + size, total),
+  };
+}
+
 export function doctorsMatchingPseo(facet: DoctorPseoFacet) {
   return doctors.filter((d) => {
     if (facet.specialtySlug && d.specialtySlug !== facet.specialtySlug) return false;
