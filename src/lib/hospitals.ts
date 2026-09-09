@@ -117,6 +117,10 @@ function surgicalNamesForCampus(slug: string) {
   return [...SURGICAL_ONCOLOGY_PROCEDURES];
 }
 
+function isEyeCampus(slug: string) {
+  return slug === "dr-agarwals-eye-hospital" || slug === "the-sight-avenue-eye-hospital";
+}
+
 export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
   const cityName = seed.city || "Delhi NCR";
   const city = getCity(cityName);
@@ -135,27 +139,32 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
     ],
     radiationFaculty.length > 0,
   );
-  const procedures = resolveProcedures([
-    ...radiationNames,
-    ...surgicalNamesForCampus(seed.slug),
-    ...MEDICAL_ONCOLOGY_PROCEDURES,
-    ...HEMATOLOGY_PROCEDURES,
-    ...PEDIATRIC_HEMATOLOGY_PROCEDURES,
-    ...CARDIAC_SURGERY_PROCEDURES,
-    ...PEDIATRIC_CARDIAC_SURGERY_PROCEDURES,
-    ...CARDIOLOGY_PROCEDURES,
-    ...BARIATRIC_PROCEDURES,
-    ...COSMETIC_PROCEDURES,
-    ...ENT_PROCEDURES,
-    ...GASTROENTEROLOGY_PROCEDURES,
-    ...SURGICAL_GASTROENTEROLOGY_PROCEDURES,
-    ...UROLOGY_PROCEDURES,
-    ...SPINE_SURGERY_PROCEDURES,
-    ...PULMONOLOGY_PROCEDURES,
-    ...PEDIATRIC_ORTHOPAEDIC_PROCEDURES,
-    ...ORTHOPEDICS_PROCEDURES,
-    ...OPHTHALMOLOGY_PROCEDURES,
-  ]);
+  const eyeCampus = isEyeCampus(seed.slug);
+  const procedures = resolveProcedures(
+    eyeCampus
+      ? [...OPHTHALMOLOGY_PROCEDURES]
+      : [
+          ...radiationNames,
+          ...surgicalNamesForCampus(seed.slug),
+          ...MEDICAL_ONCOLOGY_PROCEDURES,
+          ...HEMATOLOGY_PROCEDURES,
+          ...PEDIATRIC_HEMATOLOGY_PROCEDURES,
+          ...CARDIAC_SURGERY_PROCEDURES,
+          ...PEDIATRIC_CARDIAC_SURGERY_PROCEDURES,
+          ...CARDIOLOGY_PROCEDURES,
+          ...BARIATRIC_PROCEDURES,
+          ...COSMETIC_PROCEDURES,
+          ...ENT_PROCEDURES,
+          ...GASTROENTEROLOGY_PROCEDURES,
+          ...SURGICAL_GASTROENTEROLOGY_PROCEDURES,
+          ...UROLOGY_PROCEDURES,
+          ...SPINE_SURGERY_PROCEDURES,
+          ...PULMONOLOGY_PROCEDURES,
+          ...PEDIATRIC_ORTHOPAEDIC_PROCEDURES,
+          ...ORTHOPEDICS_PROCEDURES,
+          ...OPHTHALMOLOGY_PROCEDURES,
+        ],
+  );
   const seen = new Set<string>();
   const unique = procedures.filter((p) => {
     if (seen.has(p.slug)) return false;
@@ -171,57 +180,63 @@ export const hospitals: Hospital[] = catalog.hospitals.map((seed) => {
     country: country.name,
     countrySlug: country.slug,
     accreditation: seed.accreditation,
-    focus: `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name} · ${cardiacSurgery.name} · ${pediatricCardiacSurgery.name} · ${cardiology.name} · ${bariatric.name} · ${cosmetic.name} · ${ent.name} · ${gastroenterology.name} · ${surgicalGastroenterology.name} · ${urology.name} · ${spineSurgery.name} · ${pulmonology.name} · ${pediatricOrthopaedic.name} · ${orthopedics.name} · ${ophthalmology.name}`,
-    specialty: radiation.name,
-    specialtySlug: radiation.slug,
-    specialties: [
-      radiation.name,
-      surgical.name,
-      medical.name,
-      hematology.name,
-      pediatricHematology.name,
-      cardiacSurgery.name,
-      pediatricCardiacSurgery.name,
-      cardiology.name,
-      bariatric.name,
-      cosmetic.name,
-      ent.name,
-      gastroenterology.name,
-      surgicalGastroenterology.name,
-      urology.name,
-      spineSurgery.name,
-      pulmonology.name,
-      pediatricOrthopaedic.name,
-      orthopedics.name,
-      ophthalmology.name,
-    ],
-    specialtySlugs: [
-      radiation.slug,
-      surgical.slug,
-      medical.slug,
-      hematology.slug,
-      pediatricHematology.slug,
-      cardiacSurgery.slug,
-      pediatricCardiacSurgery.slug,
-      cardiology.slug,
-      bariatric.slug,
-      cosmetic.slug,
-      ent.slug,
-      gastroenterology.slug,
-      surgicalGastroenterology.slug,
-      urology.slug,
-      spineSurgery.slug,
-      pulmonology.slug,
-      pediatricOrthopaedic.slug,
-      orthopedics.slug,
-      ophthalmology.slug,
-    ],
+    focus: eyeCampus
+      ? ophthalmology.name
+      : `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name} · ${cardiacSurgery.name} · ${pediatricCardiacSurgery.name} · ${cardiology.name} · ${bariatric.name} · ${cosmetic.name} · ${ent.name} · ${gastroenterology.name} · ${surgicalGastroenterology.name} · ${urology.name} · ${spineSurgery.name} · ${pulmonology.name} · ${pediatricOrthopaedic.name} · ${orthopedics.name} · ${ophthalmology.name}`,
+    specialty: eyeCampus ? ophthalmology.name : radiation.name,
+    specialtySlug: eyeCampus ? ophthalmology.slug : radiation.slug,
+    specialties: eyeCampus
+      ? [ophthalmology.name]
+      : [
+          radiation.name,
+          surgical.name,
+          medical.name,
+          hematology.name,
+          pediatricHematology.name,
+          cardiacSurgery.name,
+          pediatricCardiacSurgery.name,
+          cardiology.name,
+          bariatric.name,
+          cosmetic.name,
+          ent.name,
+          gastroenterology.name,
+          surgicalGastroenterology.name,
+          urology.name,
+          spineSurgery.name,
+          pulmonology.name,
+          pediatricOrthopaedic.name,
+          orthopedics.name,
+          ophthalmology.name,
+        ],
+    specialtySlugs: eyeCampus
+      ? [ophthalmology.slug]
+      : [
+          radiation.slug,
+          surgical.slug,
+          medical.slug,
+          hematology.slug,
+          pediatricHematology.slug,
+          cardiacSurgery.slug,
+          pediatricCardiacSurgery.slug,
+          cardiology.slug,
+          bariatric.slug,
+          cosmetic.slug,
+          ent.slug,
+          gastroenterology.slug,
+          surgicalGastroenterology.slug,
+          urology.slug,
+          spineSurgery.slug,
+          pulmonology.slug,
+          pediatricOrthopaedic.slug,
+          orthopedics.slug,
+          ophthalmology.slug,
+        ],
     procedures: unique.map((p) => p.name),
     procedureSlugs: unique.map((p) => p.slug),
     established: seed.established,
     beds: seed.beds,
     languages: languagesFor(city.name),
-    icu: "Oncology ICU",
+    icu: eyeCampus ? "Ophthalmic theatre" : "Oncology ICU",
     bio: seed.bio,
     summary: seed.bio,
   };
