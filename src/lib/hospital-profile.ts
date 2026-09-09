@@ -352,6 +352,13 @@ export function hospitalFaqs(hospital: Hospital, faculty: Doctor[], groups: Facu
   ];
 }
 
+export function displayBio(bio: string) {
+  return bio
+    .replace(/[^.?!]*\bpSEO\b[^.?!]*[.?!]/gi, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
 function joinHuman(items: string[]) {
   if (items.length === 0) return "";
   if (items.length === 1) return items[0];

@@ -47,6 +47,7 @@ import {
   accreditationBadges,
   bedsLabel,
   cityTravel,
+  displayBio,
   doctorInitials,
   featuredDoctors,
   featureBar,
@@ -419,7 +420,7 @@ export function HospitalProfileView({
               <h3>{g.heading}</h3>
               <div className="mt-6 grid gap-6">
                 {g.doctors.map((d) => (
-                  <DoctorCard key={d.slug} doctor={d} />
+                  <DoctorCard key={d.slug} doctor={{ ...d, bio: displayBio(d.bio) }} />
                 ))}
               </div>
             </div>
