@@ -19,7 +19,7 @@ export default function HomePage() {
           name: "Velora",
           url: SITE_URL,
           description:
-            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists and gynecologists in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal — with partner hospital costs in USD, plus Gynecology hysterectomy and endometriosis planning sheets.",
+            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists and gynecologists in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — including Dr. Usha M Kumar, Dr. Suneeta Mittal, Dr. Alka Kriplani, Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal — with partner hospital costs in USD.",
           areaServed: ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"].map((city) => ({
             "@type": "City",
             name: city,
@@ -42,7 +42,7 @@ export default function HomePage() {
             Oncologists, ENT and GI in India. Hospitals. Costs.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/80 md:text-lg">
-            Named medical, radiation and surgical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, orthopaedic surgeons, ophthalmologists and gynecology pathways in Delhi NCR, Mumbai,
+            Named medical, radiation and surgical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, orthopaedic surgeons, ophthalmologists and gynecologists in Delhi NCR, Mumbai,
             Bengaluru, Chennai and Hyderabad. Meet them on camera. Read USD planning ranges before you fly.
           </p>
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
@@ -89,7 +89,7 @@ export default function HomePage() {
             href="/doctors"
             kicker="01"
             title="Doctors"
-            body="Radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists and gynecologists you meet on camera before any deposit — Gynecology faculty is tagged for later matching."
+            body="Radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists and gynecologists you meet on camera before any deposit."
           />
           <IndexCard
             href="/hospitals"
@@ -144,6 +144,7 @@ export default function HomePage() {
               ...doctors.filter((d) => d.featured && d.specialtySlug === "pediatric-orthopaedic").slice(0, 2),
               ...doctors.filter((d) => d.featured && d.specialtySlug === "orthopedics").slice(0, 2),
               ...doctors.filter((d) => d.featured && d.specialtySlug === "ophthalmology").slice(0, 2),
+              ...doctors.filter((d) => d.featured && d.specialtySlug === "gynecology").slice(0, 2),
             ].map((d) => (
               <Link
                 key={d.slug}

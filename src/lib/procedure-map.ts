@@ -590,6 +590,8 @@ const GYNECOLOGY_RULES: { test: RegExp; name: (typeof GYNECOLOGY_PROCEDURES)[num
   { test: /pelvic organ prolapse|vault prolapse|uterine prolapse/i, name: "Pelvic Organ Prolapse Surgery" },
   { test: /pelvic floor/i, name: "Pelvic Floor Repair" },
   { test: /gynae?cologic cancer|cervical cancer surgery|endometrial cancer surgery|ovarian cancer/i, name: "Gynecologic Cancer Surgery" },
+  { test: /hysterect/i, name: "Laparoscopic Hysterectomy" },
+  { test: /myomect|fibroid/i, name: "Laparoscopic Myomectomy" },
 ];
 
 export function mapGynecologyProcedures(texts: string[], fallback = true) {
