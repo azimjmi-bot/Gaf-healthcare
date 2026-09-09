@@ -27,11 +27,11 @@ export function costArticleFor(treatment: Treatment) {
   return interpolateCostArticle(raw, treatment);
 }
 
-export function costArticleData(treatment: Treatment) {
+export function costArticleData(treatment: Treatment, city?: string) {
   const article = costArticleFor(treatment);
   if (!article) return undefined;
-  const campuses = articleCampuses(treatment);
-  const { all, featured } = articleFaculty(treatment.slug);
+  const campuses = articleCampuses(treatment, city);
+  const { all, featured } = articleFaculty(treatment.slug, city);
   return {
     article,
     campuses,
@@ -51,8 +51,14 @@ export function costArticleData(treatment: Treatment) {
   };
 }
 
-export function CostArticleSection({ treatment }: { treatment: Treatment }) {
-  const data = costArticleData(treatment);
+export function CostArticleSection({
+  treatment,
+  city,
+}: {
+  treatment: Treatment;
+  city?: string;
+}) {
+  const data = costArticleData(treatment, city);
   if (!data) return null;
   const { article, cityRows, rows, anyModelled, faculty, facultyTotal, campuses, related } = data;
 
@@ -62,6 +68,7 @@ export function CostArticleSection({ treatment }: { treatment: Treatment }) {
         <CostArticleView
           article={article}
           treatment={treatment}
+          city={city}
           cityRows={cityRows}
           destinations={rows}
           anyModelled={anyModelled}

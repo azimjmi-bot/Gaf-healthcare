@@ -78,7 +78,7 @@ export default async function CostsPage({
             />
           </Suspense>
         </PageIntro>
-        <CostArticleSection treatment={sheet} />
+        <CostArticleSection treatment={sheet} city={query.city} />
         <CtaBand />
         <div className="h-16 md:hidden" />
         <CostStickyCta

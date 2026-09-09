@@ -10,7 +10,7 @@ import { CostArticleSection, costArticleFor } from "@/components/cost-article-se
 import { CostStickyCta } from "@/components/cost-article-view";
 import { getCostArticle } from "@/data/cost-articles";
 import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
-import { articleFaculty, interpolateCostArticle } from "@/lib/cost-article";
+import { articleFaculty, bestDoctorsHeading, interpolateCostArticle } from "@/lib/cost-article";
 import { getCostGuide } from "@/lib/cost-guides";
 import {
   doctorsForTreatment,
@@ -65,6 +65,7 @@ export default async function CostDetailPage({
   const article = costArticleFor(t);
   if (article) {
     const facultyForSchema = articleFaculty(t.slug).featured;
+    const doctorsHeading = bestDoctorsHeading(t.name);
     return (
       <>
         <JsonLd
@@ -89,7 +90,7 @@ export default async function CostDetailPage({
         {facultyForSchema.length > 0 ? (
           <JsonLd
             data={doctorItemListJsonLd(facultyForSchema, {
-              name: article.doctorHeading,
+              name: doctorsHeading,
               path: `/costs/${t.slug}`,
             })}
           />

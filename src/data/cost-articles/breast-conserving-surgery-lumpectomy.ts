@@ -490,10 +490,10 @@ export const breastConservingSurgery: CostArticle = {
     },
   ],
 
-  doctorHeading: "Breast-conserving surgery specialists in India",
+  doctorHeading: "Best doctors for Breast-Conserving Surgery (Lumpectomy) in India",
   doctorIntro:
     "These are surgical oncologists listed on GAF Healthcare whose practice covers breast-conserving surgery. Profiles show training, campus and procedures; there are no rankings here, and no fee is paid for placement.",
-  hospitalHeading: "Hospitals listed for breast-conserving surgery in India",
+  hospitalHeading: "Best hospitals for Breast-Conserving Surgery (Lumpectomy) in India",
   hospitalIntro:
     "Campuses on GAF Healthcare where this operation is quoted, with accreditation as published by the hospital. Choose on breast unit depth, the surgeon you met on camera and the radiation plan that follows — not on the brand name.",
 

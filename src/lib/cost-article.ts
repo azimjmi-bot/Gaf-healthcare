@@ -211,9 +211,23 @@ export function costDestinationRows(
   return { rows, anyModelled };
 }
 
+export function carePlace(city?: string) {
+  return city ? `${city}, India` : "India";
+}
+
+export function bestDoctorsHeading(procedure: string, city?: string) {
+  return `Best doctors for ${procedure} in ${carePlace(city)}`;
+}
+
+export function bestHospitalsHeading(procedure: string, city?: string) {
+  return `Best hospitals for ${procedure} in ${carePlace(city)}`;
+}
+
 /** Doctors listed for this procedure, city-diverse first so the section is not one campus deep. */
-export function articleFaculty(treatmentSlug: string, limit = 8) {
-  const faculty = doctorsForTreatment(treatmentSlug);
+export function articleFaculty(treatmentSlug: string, city?: string, limit = 8) {
+  const faculty = doctorsForTreatment(treatmentSlug).filter((doctor) =>
+    city ? doctor.city === city : true,
+  );
   const byCity = new Map<string, Doctor[]>();
   for (const doctor of faculty) {
     if (!byCity.has(doctor.citySlug)) byCity.set(doctor.citySlug, []);
@@ -244,8 +258,11 @@ export function articleFaculty(treatmentSlug: string, limit = 8) {
   return { all: faculty, featured: picked };
 }
 
-export function articleCampuses(treatment: Treatment) {
+export function articleCampuses(treatment: Treatment, city?: string) {
   return treatment.hospitalSlugs
     .map((slug) => getHospital(slug))
-    .filter((h): h is Hospital => Boolean(h));
+    .filter((h): h is Hospital => {
+      if (!h) return false;
+      return city ? h.city === city : true;
+    });
 }

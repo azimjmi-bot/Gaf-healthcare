@@ -1,6 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import { AccreditationSeals } from "@/components/accreditation-seals";
 import {
   Accordion,
   AccordionContent,
@@ -8,10 +7,16 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { DoctorCard } from "@/components/doctor-card";
+import { HospitalCard } from "@/components/hospital-card";
 import type { CostArticle, CostFigure } from "@/data/cost-articles/types";
 import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
-import type { CostCityRow, CostDestinationRow } from "@/lib/cost-article";
-import { experienceBadge, listingBio } from "@/lib/doctor-profile";
+import {
+  bestDoctorsHeading,
+  bestHospitalsHeading,
+  type CostCityRow,
+  type CostDestinationRow,
+} from "@/lib/cost-article";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
@@ -142,6 +147,7 @@ const NAV = [
 export function CostArticleView({
   article,
   treatment,
+  city,
   cityRows,
   destinations,
   anyModelled,
@@ -152,6 +158,7 @@ export function CostArticleView({
 }: {
   article: CostArticle;
   treatment: Treatment;
+  city?: string;
   cityRows: CostCityRow[];
   destinations: CostDestinationRow[];
   anyModelled: boolean;
@@ -160,13 +167,15 @@ export function CostArticleView({
   campuses: Hospital[];
   related: { name: string; slug: string; partnerRange: string; stay: string }[];
 }) {
-  const allDoctors = doctorsPath({ destination: "India", procedure: treatment.name });
-  const allHospitals = hospitalsPath({ destination: "India", procedure: treatment.name });
+  const allDoctors = doctorsPath({ destination: "India", city, procedure: treatment.name });
+  const allHospitals = hospitalsPath({ destination: "India", city, procedure: treatment.name });
+  const doctorsHeading = bestDoctorsHeading(article.procedure, city);
+  const hospitalsHeading = bestHospitalsHeading(article.procedure, city);
   const consultHref = `/consult?treatment=${treatment.slug}`;
   const navItems = NAV.filter(([id]) => (id === "total-pathway" ? Boolean(article.fullPathway) : true));
 
   return (
-    <article className="max-w-3xl pb-4 [&_a]:underline-offset-4 [&_a:hover]:underline">
+    <article className="w-full pb-4 [&_a]:underline-offset-4 [&_a:hover]:underline">
       <p className="text-xs text-muted-foreground">
         Last updated: {formatDate(article.lastUpdated)} · Written and reviewed by the GAF Healthcare medical
         travel desk
@@ -498,7 +507,7 @@ export function CostArticleView({
         note="Records reviewed by a listed consultant, not a call centre. No obligation to travel."
       />
 
-      <H2 id="doctors">{article.doctorHeading}</H2>
+      <H2 id="doctors">{doctorsHeading}</H2>
       <P>{article.doctorIntro}</P>
       {faculty.length === 0 ? (
         <p className="mt-6 text-muted-foreground">
@@ -507,44 +516,21 @@ export function CostArticleView({
         </p>
       ) : (
         <>
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="doc-grid mt-6">
             {faculty.map((doctor) => (
-              <li
-                key={doctor.slug}
-                className="rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/30"
-              >
-                <Link href={`/doctors/${doctor.slug}`} className="block no-underline">
-                  <p className="font-heading text-xl leading-tight">{doctor.name}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{doctor.title}</p>
-                </Link>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  <Link href={`/hospitals/${doctor.hospitalSlug}`}>{doctor.hospitalName}</Link> ·{" "}
-                  <Link href={doctorsPath({ destination: "India", city: doctor.city, procedure: treatment.name })}>
-                    {doctor.city}
-                  </Link>
-                </p>
-                {doctor.experience ? (
-                  <p className="mt-2 text-xs tracking-[0.12em] uppercase text-muted-foreground">
-                    {experienceBadge(doctor)}
-                  </p>
-                ) : null}
-                {doctor.bio ? (
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                    {listingBio(doctor, 170)}
-                  </p>
-                ) : null}
-              </li>
+              <DoctorCard key={doctor.slug} doctor={doctor} />
             ))}
-          </ul>
+          </div>
           <p className="mt-5 text-sm">
             <Link href={allDoctors}>
-              See all {facultyTotal} listed {article.shortName} specialists in India
+              See all {facultyTotal} listed {article.shortName} specialists
+              {city ? ` in ${city}` : " in India"}
             </Link>
           </p>
         </>
       )}
 
-      <H2 id="hospitals">{article.hospitalHeading}</H2>
+      <H2 id="hospitals">{hospitalsHeading}</H2>
       <P>{article.hospitalIntro}</P>
       {campuses.length === 0 ? (
         <p className="mt-6 text-muted-foreground">
@@ -553,35 +539,16 @@ export function CostArticleView({
         </p>
       ) : (
         <>
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2">
+          <div className="hosp-list mt-6">
             {campuses.slice(0, 8).map((hospital) => (
-              <li
-                key={hospital.slug}
-                className="rounded-2xl border border-border bg-card p-5 transition-colors hover:border-primary/30"
-              >
-                <Link href={`/hospitals/${hospital.slug}`} className="block no-underline">
-                  <p className="font-heading text-xl leading-tight">{hospital.name}</p>
-                </Link>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  <Link
-                    href={hospitalsPath({ destination: "India", city: hospital.city, procedure: treatment.name })}
-                  >
-                    {hospital.city}
-                  </Link>
-                  , {hospital.country}
-                </p>
-                <div className="mt-3">
-                  <AccreditationSeals accreditation={hospital.accreditation} size="sm" />
-                </div>
-                <p className="mt-3 text-sm">
-                  <Link href={`/hospitals/${hospital.slug}/doctors`}>Consultants</Link> ·{" "}
-                  <Link href={`/hospitals/${hospital.slug}/procedures`}>Procedures quoted</Link>
-                </p>
-              </li>
+              <HospitalCard key={hospital.slug} hospital={hospital} />
             ))}
-          </ul>
+          </div>
           <p className="mt-5 text-sm">
-            <Link href={allHospitals}>See all listed campuses for {article.shortName}</Link>
+            <Link href={allHospitals}>
+              See all listed campuses for {article.shortName}
+              {city ? ` in ${city}` : ""}
+            </Link>
           </p>
         </>
       )}
