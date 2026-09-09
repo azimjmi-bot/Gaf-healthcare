@@ -81,6 +81,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Ophthalmology"),
   taxon("Gynecology"),
   taxon("Neurosurgery"),
+  taxon("Neurology"),
 ];
 
 export function compareSpecialties(aSlug: string, bSlug: string) {
@@ -530,6 +531,28 @@ export const NEUROSURGERY_PROCEDURES = [
   "Craniosynostosis Surgery",
 ] as const;
 
+export const NEUROLOGY_PROCEDURES = [
+  "EEG",
+  "Video EEG",
+  "Electromyography (EMG)",
+  "Nerve Conduction Study",
+  "Evoked Potentials",
+  "Lumbar Puncture",
+  "IV Thrombolysis",
+  "Stroke Thrombectomy",
+  "Transcranial Doppler (TCD)",
+  "Carotid Doppler",
+  "Deep Brain Stimulation",
+  "MRI-Guided Focused Ultrasound (MRgFUS)",
+  "Botulinum Toxin Therapy",
+  "Plasmapheresis",
+  "IVIG (Intravenous Immunoglobulin)",
+  "Nerve and Muscle Biopsy",
+  "Vagus Nerve Stimulation (VNS)",
+  "Sleep Study (Polysomnography)",
+  "Migraine Nerve Block",
+] as const;
+
 export const ATHENAA_SURGICAL_PROCEDURES = [
   "Breast-Conserving Surgery (Lumpectomy)",
   "Mastectomy",
@@ -554,6 +577,7 @@ const HEMATOLOGY_NAMES = new Set<string>(HEMATOLOGY_PROCEDURES);
 const OPHTHALMOLOGY_NAMES = new Set<string>(OPHTHALMOLOGY_PROCEDURES);
 const GYNECOLOGY_NAMES = new Set<string>(GYNECOLOGY_PROCEDURES);
 const NEUROSURGERY_NAMES = new Set<string>(NEUROSURGERY_PROCEDURES);
+const NEUROLOGY_NAMES = new Set<string>(NEUROLOGY_PROCEDURES);
 const RADIATION_NAMES = new Set<string>(RADIATION_PROCEDURES);
 const SPINE_NAMES = new Set<string>(SPINE_SURGERY_PROCEDURES);
 const COSMETIC_NAMES = new Set<string>(COSMETIC_PROCEDURES);
@@ -595,6 +619,10 @@ function withGynecology(name: string, specs: string[]) {
 
 function withNeurosurgery(name: string, specs: string[]) {
   return NEUROSURGERY_NAMES.has(name) ? [...specs, "neurosurgery"] : specs;
+}
+
+function withNeurology(name: string, specs: string[]) {
+  return NEUROLOGY_NAMES.has(name) ? [...specs, "neurology"] : specs;
 }
 
 export const PROCEDURES: ProcedureTaxon[] = [
@@ -647,7 +675,10 @@ export const PROCEDURES: ProcedureTaxon[] = [
   ),
   ...NEUROSURGERY_PROCEDURES.filter(
     (name) => !RADIATION_NAMES.has(name) && !SPINE_NAMES.has(name) && !ENT_NAMES.has(name),
-  ).map((name) => procedureTaxon(name, ["neurosurgery"])),
+  ).map((name) => procedureTaxon(name, withNeurology(name, ["neurosurgery"]))),
+  ...NEUROLOGY_PROCEDURES.filter((name) => !NEUROSURGERY_NAMES.has(name)).map((name) =>
+    procedureTaxon(name, ["neurology"]),
+  ),
 ];
 
 export const PROCEDURE_CLUSTERS = {

@@ -7,6 +7,7 @@ import { ORTHOPEDICS_CLUSTER_BY_PROCEDURE, ORTHOPEDICS_COST, ORTHOPEDICS_SUMMARI
 import { OPHTHALMOLOGY_CLUSTER_BY_PROCEDURE, OPHTHALMOLOGY_COST, OPHTHALMOLOGY_SUMMARIES } from "@/lib/ophthalmology-costs";
 import { GYNECOLOGY_CLUSTER_BY_PROCEDURE, GYNECOLOGY_CONDITIONS, GYNECOLOGY_COST, GYNECOLOGY_SUMMARIES } from "@/lib/gynecology-costs";
 import { NEUROSURGERY_CLUSTER_BY_PROCEDURE, NEUROSURGERY_CONDITIONS, NEUROSURGERY_COST, NEUROSURGERY_SHARED, NEUROSURGERY_SUMMARIES } from "@/lib/neurosurgery-costs";
+import { NEUROLOGY_CLUSTER_BY_PROCEDURE, NEUROLOGY_CONDITIONS, NEUROLOGY_COST, NEUROLOGY_SHARED, NEUROLOGY_SUMMARIES } from "@/lib/neurology-costs";
 import { GASTROENTEROLOGY_COST, GASTROENTEROLOGY_SUMMARIES } from "@/lib/gastroenterology-costs";
 import { ENT_COST, ENT_SUMMARIES } from "@/lib/ent-costs";
 import { COSMETIC_COST, COSMETIC_SUMMARIES } from "@/lib/cosmetic-costs";
@@ -29,6 +30,7 @@ import {
   OPHTHALMOLOGY_PROCEDURES,
   GYNECOLOGY_PROCEDURES,
   NEUROSURGERY_PROCEDURES,
+  NEUROLOGY_PROCEDURES,
   GASTROENTEROLOGY_PROCEDURES,
   ENT_PROCEDURES,
   COSMETIC_PROCEDURES,
@@ -1022,6 +1024,49 @@ const neurosurgeryTreatments: Treatment[] = NEUROSURGERY_PROCEDURES.filter(
   };
 });
 
+const NEUROLOGY_IMAGE =
+  "https://images.unsplash.com/photo-1559757175-5700dde675bc?auto=format&fit=crop&w=1600&q=80";
+
+const NEUROLOGY_INCLUDES = [
+  "Neurology consultation and records review",
+  "Named consultant on camera before travel",
+  "EEG, EMG, imaging or CSF as indicated",
+  "Infusion, implant or monitoring plan as quoted",
+  "Discharge summary to your home physician",
+];
+
+const neurologyShared = new Set<string>(NEUROLOGY_SHARED);
+
+const neurologyTreatments: Treatment[] = NEUROLOGY_PROCEDURES.filter((name) => !neurologyShared.has(name)).map(
+  (name) => {
+    const cost = NEUROLOGY_COST[name];
+    if (!cost) throw new Error(`Missing neurology cost for ${name}`);
+    const slug = toSlug(name);
+    const cluster = NEUROLOGY_CLUSTER_BY_PROCEDURE[name] ?? "Neurology";
+    return {
+      slug,
+      name,
+      category: cluster,
+      specialtySlug: "neurology",
+      specialtySlugs: slugsForProcedureName(name),
+      procedureSlug: slug,
+      summary:
+        NEUROLOGY_SUMMARIES[name] ??
+        `Neurology — ${name} at JCI partner campuses with a named neurologist before you travel.`,
+      image: NEUROLOGY_IMAGE,
+      usRange: cost.us,
+      partnerRange: cost.partner,
+      stay: cost.stay,
+      hospitalSlugs: hospitalSlugsForProcedure(name),
+      conditions: NEUROLOGY_CONDITIONS,
+      procedures: [name],
+      includes: NEUROLOGY_INCLUDES,
+      notes:
+        "Indicative planning ranges, not quotations. The named neurologist confirms imaging, electrodiagnosis and an itemized hospital price after records review.",
+    };
+  },
+);
+
 export const treatments: Treatment[] = [
   ...radiationTreatments,
   ...surgicalTreatments,
@@ -1044,6 +1089,7 @@ export const treatments: Treatment[] = [
   ...ophthalmologyTreatments,
   ...gynecologyTreatments,
   ...neurosurgeryTreatments,
+  ...neurologyTreatments,
 ];
 
 export function getTreatment(slug: string) {

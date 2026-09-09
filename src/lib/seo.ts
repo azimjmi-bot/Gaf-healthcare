@@ -144,6 +144,7 @@ export function catalogMetadata(
   if (entity === "doctors") {
     if (proc) title = `${proc} specialists in ${place}`;
     else if (spec === "Neurosurgery") title = `Neurosurgeons in ${place}`;
+    else if (spec === "Neurology") title = `Neurologists in ${place}`;
     else if (spec === "Gynecology") title = `Gynecologists in ${place}`;
     else if (spec === "Ophthalmology") title = `Ophthalmologists in ${place}`;
     else if (spec === "Orthopedics") title = `Orthopaedic surgeons in ${place}`;
@@ -165,7 +166,9 @@ export function catalogMetadata(
     else title = `Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and paediatric orthopaedic surgeons in ${place}`;
     const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
     const example =
-      spec === "Neurosurgery"
+      spec === "Neurology"
+        ? `/doctors/india/${citySlug}/neurology/eeg`
+        : spec === "Neurosurgery"
         ? `/doctors/india/${citySlug}/neurosurgery/brain-tumor-surgery`
         : spec === "Gynecology"
         ? `/doctors/india/${citySlug}/gynecology/laparoscopic-hysterectomy`
@@ -323,7 +326,7 @@ export const DOCTOR_FAQS = [
   },
   {
     q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Named spine surgeons sit under Spine Surgery. Named pulmonologists sit under Pulmonology — including Dr. Anand Jaiswal, Dr. Manoj Kumar Goel, Dr. Vivek Singh and Dr. Randeep Guleria in Delhi NCR. Named paediatric orthopaedic surgeons sit under Pediatric Orthopaedic — including Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman. Named adult orthopaedic surgeons sit under Orthopedics — including Dr. Ashok Rajgopal, Dr. I P S Oberoi and Dr. Yash Gulati in Delhi NCR. Named ophthalmologists sit under Ophthalmology — including Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal in Delhi NCR. Named gynecologists sit under Gynecology — including Dr. Usha M Kumar, Dr. Suneeta Mittal and Dr. Alka Kriplani in Delhi NCR. Named neurosurgeons sit under Neurosurgery — including Dr. Sandeep Vaishya, Dr. Aditya Gupta and Dr. Varindera Paul Singh in Delhi NCR. Later pages can mount /doctors/india/{city}/neurosurgery/{procedure} without remapping the catalog.",
+    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Named spine surgeons sit under Spine Surgery. Named pulmonologists sit under Pulmonology — including Dr. Anand Jaiswal, Dr. Manoj Kumar Goel, Dr. Vivek Singh and Dr. Randeep Guleria in Delhi NCR. Named paediatric orthopaedic surgeons sit under Pediatric Orthopaedic — including Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman. Named adult orthopaedic surgeons sit under Orthopedics — including Dr. Ashok Rajgopal, Dr. I P S Oberoi and Dr. Yash Gulati in Delhi NCR. Named ophthalmologists sit under Ophthalmology — including Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal in Delhi NCR. Named gynecologists sit under Gynecology — including Dr. Usha M Kumar, Dr. Suneeta Mittal and Dr. Alka Kriplani in Delhi NCR. Named neurosurgeons sit under Neurosurgery — including Dr. Sandeep Vaishya, Dr. Aditya Gupta and Dr. Varindera Paul Singh in Delhi NCR. Neurology sheets are live; named neurologists are being matched. Later pages can mount /doctors/india/{city}/neurology/{procedure} without remapping the catalog.",
   },
   {
     q: "Can I meet the doctor before travelling to India?",
@@ -334,7 +337,7 @@ export const DOCTOR_FAQS = [
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist, urologist, spine surgeon, pulmonologist, paediatric orthopaedic surgeon, orthopaedic surgeon, ophthalmologist, gynecologist or neurosurgeon confirms regimen, fractions, donor, endoscopy, graft, laser, levels, airway, growth remaining, implant, laterality, approach or the operation after reviewing records.",
+    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist, urologist, spine surgeon, pulmonologist, paediatric orthopaedic surgeon, orthopaedic surgeon, ophthalmologist, gynecologist, neurosurgeon or neurologist confirms regimen, fractions, donor, endoscopy, graft, laser, levels, airway, growth remaining, implant, laterality, approach, electrodiagnosis or the operation after reviewing records.",
   },
   {
     q: "What does liver transplantation typically cost in India versus the US?",
@@ -367,6 +370,10 @@ export const COST_FAQS = [
   {
     q: "What does brain tumor surgery typically cost in India versus the US?",
     a: "Velora’s Brain Tumor Surgery sheet lists a partner planning range of about $6,000–$15,000 against typical US cash of $50,000–$150,000, depending on histology, mapping and campus. Glioma, meningioma and pituitary sit on separate Neurosurgery sheets. Gamma Knife, CyberKnife and SRS remain the shared radiation-oncology radiosurgery slugs. Spinal tumour surgery remains the shared Spine Surgery slug. Skull base surgery remains the shared ENT slug.",
+  },
+  {
+    q: "What does EEG typically cost in India versus the US?",
+    a: "Velora’s EEG sheet lists a partner planning range of about $80–$250 against typical US cash of $400–$1,500, depending on duration and campus. Video EEG sits on a neighbouring Neurology sheet. Deep brain stimulation and stroke thrombectomy remain the shared Neurosurgery slugs. VNS, IVIG, MRgFUS and sleep study sit on Neurology sheets.",
   },
   {
     q: "What does total knee replacement typically cost in India versus the US?",

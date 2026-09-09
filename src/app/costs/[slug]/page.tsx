@@ -74,6 +74,7 @@ export default async function CostDetailPage({
     t.specialtySlugs.includes("ophthalmology") ? "ophthalmologists" : "",
     t.specialtySlugs.includes("gynecology") ? "gynecologists" : "",
     t.specialtySlugs.includes("neurosurgery") ? "neurosurgeons" : "",
+    t.specialtySlugs.includes("neurology") ? "neurologists" : "",
   ]
     .filter(Boolean)
     .join(" and ");
@@ -151,7 +152,9 @@ export default async function CostDetailPage({
               <Link href={`/consult?treatment=${t.slug}`}>Request this pathway</Link>
             </Button>
             <p className="mt-4 text-xs text-muted-foreground">
-              Not a quote. {t.specialtySlug === "neurosurgery"
+              Not a quote. {t.specialtySlug === "neurology"
+                ? "Electrodiagnosis, infusion, implant or monitoring are set after records review."
+                : t.specialtySlug === "neurosurgery"
                 ? "Approach, mapping, laterality or device are set after records review."
                 : t.specialtySlug === "gynecology"
                 ? "Approach, uterus-sparing versus hysterectomy, laterality and stage are set after records review."
