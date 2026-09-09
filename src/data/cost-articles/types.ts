@@ -14,13 +14,14 @@ export type CityEditorial = {
 };
 
 /**
- * `range` is a researched figure. When it is absent the renderer models a band
- * from the India planning range using `multiplier` and labels it as modelled.
+ * `range` is a researched figure and always wins. When it is absent the renderer
+ * models a band by scaling the India midpoint by `costLevel`, and labels the row
+ * as modelled. Supply `range` to replace a modelled row with a sourced one.
  */
 export type DestinationRow = {
   country: string;
   range?: string;
-  multiplier?: [number, number];
+  costLevel?: [number, number];
   stay: string;
   context: string;
 };

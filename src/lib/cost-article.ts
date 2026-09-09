@@ -22,10 +22,26 @@ function money(value: number) {
   return `$${rounded.toLocaleString("en-US")}`;
 }
 
-function ratioLabel(low: number, high: number) {
-  const fmt = (n: number) => (Number.isInteger(n) ? `${n}` : n.toFixed(1));
-  if (Math.abs(low - high) < 0.15) return `≈${fmt(low)}× India`;
-  return `≈${fmt(low)}–${fmt(high)}× India`;
+function midpoint(band: [number, number]) {
+  return (band[0] + band[1]) / 2;
+}
+
+/** One comparable number per market, so the column reads consistently across rows. */
+function ratioLabel(band: [number, number] | null, indiaBand: [number, number] | null) {
+  if (!band || !indiaBand) return "Higher than India";
+  const india = midpoint(indiaBand);
+  if (india <= 0) return "Higher than India";
+  const ratio = midpoint(band) / india;
+  return `≈${ratio.toFixed(1).replace(/\.0$/, "")}× India`;
+}
+
+/**
+ * Cost levels compress at the top of the market rather than scaling both ends, so
+ * a modelled band is the India midpoint scaled by the market's cost level.
+ */
+function modelledBand(indiaBand: [number, number], level: [number, number]): [number, number] {
+  const mid = midpoint(indiaBand);
+  return [mid * level[0], mid * level[1]];
 }
 
 /**
@@ -156,28 +172,25 @@ export function costDestinationRows(
 
     if (row.range || isUs) {
       const range = row.range ?? treatment.usRange;
-      const band = parseUsdBand(range);
       return {
         country: row.country,
         range,
         modelled: false,
-        relative:
-          band && indiaBand && indiaBand[0] > 0 && indiaBand[1] > 0
-            ? ratioLabel(band[0] / indiaBand[0], band[1] / indiaBand[1])
-            : "Higher than India",
+        relative: ratioLabel(parseUsdBand(range), indiaBand),
         stay: row.stay,
         context: row.context,
         isIndia: false,
       };
     }
 
-    if (row.multiplier && indiaBand) {
+    if (row.costLevel && indiaBand) {
       anyModelled = true;
+      const band = modelledBand(indiaBand, row.costLevel);
       return {
         country: row.country,
-        range: `${money(indiaBand[0] * row.multiplier[0])}–${money(indiaBand[1] * row.multiplier[1])}`,
+        range: `${money(band[0])}–${money(band[1])}`,
         modelled: true,
-        relative: ratioLabel(row.multiplier[0], row.multiplier[1]),
+        relative: ratioLabel(band, indiaBand),
         stay: row.stay,
         context: row.context,
         isIndia: false,
@@ -188,7 +201,7 @@ export function costDestinationRows(
       country: row.country,
       range: "Confirmation required",
       modelled: true,
-      relative: row.multiplier ? ratioLabel(row.multiplier[0], row.multiplier[1]) : "Higher than India",
+      relative: "Higher than India",
       stay: row.stay,
       context: row.context,
       isIndia: false,

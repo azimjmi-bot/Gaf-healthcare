@@ -63,6 +63,25 @@ function DetailList({ items }: { items: { label: string; detail: string }[] }) {
   );
 }
 
+/** Counts come from the live catalog, so a city with no named consultant yet says so. */
+function CityListedLinks({ row }: { row: CostCityRow }) {
+  return (
+    <>
+      {row.doctorCount > 0 ? (
+        <Link href={row.doctorsPath}>
+          {row.doctorCount} {row.doctorCount === 1 ? "doctor" : "doctors"}
+        </Link>
+      ) : (
+        <Link href="/consult">Consultant match on request</Link>
+      )}
+      {" · "}
+      <Link href={row.hospitalsPath}>
+        {row.hospitalCount} {row.hospitalCount === 1 ? "campus" : "campuses"}
+      </Link>
+    </>
+  );
+}
+
 function InlineCta({ label, href, note }: { label: string; href: string; note: string }) {
   return (
     <div className="mt-8 rounded-2xl border border-border bg-secondary/40 p-5 sm:flex sm:items-center sm:justify-between sm:gap-6">
@@ -232,13 +251,7 @@ export function CostArticleView({
                 <td className="px-4 py-4 text-muted-foreground">{row.stay}</td>
                 <td className="px-4 py-4 text-muted-foreground">{row.costNote}</td>
                 <td className="px-4 py-4 text-muted-foreground">
-                  <Link href={row.doctorsPath}>
-                    {row.doctorCount} {row.doctorCount === 1 ? "doctor" : "doctors"}
-                  </Link>
-                  {" · "}
-                  <Link href={row.hospitalsPath}>
-                    {row.hospitalCount} {row.hospitalCount === 1 ? "campus" : "campuses"}
-                  </Link>
+                  <CityListedLinks row={row} />
                 </td>
               </tr>
             ))}
@@ -264,13 +277,7 @@ export function CostArticleView({
             </dl>
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{row.costNote}</p>
             <p className="mt-3 text-sm">
-              <Link href={row.doctorsPath}>
-                {row.doctorCount} {row.doctorCount === 1 ? "doctor" : "doctors"}
-              </Link>
-              {" · "}
-              <Link href={row.hospitalsPath}>
-                {row.hospitalCount} {row.hospitalCount === 1 ? "campus" : "campuses"}
-              </Link>
+              <CityListedLinks row={row} />
             </p>
           </div>
         ))}

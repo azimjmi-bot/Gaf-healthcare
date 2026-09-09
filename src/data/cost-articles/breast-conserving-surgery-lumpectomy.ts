@@ -376,38 +376,38 @@ export const breastConservingSurgery: CostArticle = {
     },
     {
       country: "Turkey",
-      multiplier: [1.3, 2.2],
+      costLevel: [1, 1.8],
       stay: "1–3 nights",
       context: "Established medical travel market with strong package pricing; verify what pathology and radiation are excluded.",
     },
     {
       country: "Thailand",
-      multiplier: [1.6, 2.6],
+      costLevel: [1.2, 2.2],
       stay: "1–3 nights",
       context: "Strong private hospital infrastructure and international desks; oncology drug costs can be higher than India.",
     },
     {
       country: "United Arab Emirates",
-      multiplier: [2.5, 4],
+      costLevel: [2, 3.4],
       stay: "1–3 nights",
       context: "Short flights from much of Africa and South Asia; private oncology pricing is closer to Western levels.",
     },
     {
       country: "Singapore",
-      multiplier: [3, 5],
+      costLevel: [2.6, 4.4],
       stay: "1–3 nights",
       context:
         "High-quality private care at premium pricing. Subsidised local bills and private international bills sit on different schedules, so published figures mislead.",
     },
     {
       country: "Germany",
-      multiplier: [3, 5],
+      costLevel: [2.2, 4.2],
       stay: "2–5 nights",
       context: "Certified breast units and strong multidisciplinary process; longer inpatient norms and self-pay deposits are typical.",
     },
     {
       country: "United Kingdom",
-      multiplier: [3, 5.5],
+      costLevel: [1.8, 3.4],
       stay: "1–3 nights",
       context:
         "NHS treatment is not available to most overseas visitors; private self-pay pricing is what applies, and radiotherapy is quoted per fraction.",
