@@ -26,13 +26,13 @@ export function CostStickyBar({
 
   return (
     <>
-      <div className={`cost-sticky ${on ? "is-on" : ""}`} aria-hidden={!on}>
+      <div className={`cost-sticky ${on ? "is-on" : ""}`} hidden={!on}>
         <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-4 px-2">
           <p className="min-w-0">
             <span className="block truncate text-sm font-medium">{label}</span>
             <span className="font-heading text-xl">{range}</span>
           </p>
-          <Link href={href} className="cost-btn cost-btn--primary shrink-0">
+          <Link href={href} className="cost-btn cost-btn--primary shrink-0" tabIndex={on ? 0 : -1}>
             Get Exact Cost
           </Link>
         </div>
