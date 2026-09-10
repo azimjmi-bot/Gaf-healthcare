@@ -572,4 +572,15 @@ export const mastectomy: CostArticle = {
     "Breast Reconstruction",
     "Intensity-Modulated Radiotherapy (IMRT)",
   ],
+
+  figures: [
+    {
+      after: "overview",
+      src: "/costs/mastectomy-procedure-overview.webp",
+      alt: "Mastectomy overview infographic showing four surgical approaches — total mastectomy, skin-sparing mastectomy, nipple-sparing mastectomy, and mastectomy with reconstruction — plus axilla management with lymph nodes, sentinel node biopsy and axillary dissection. Notes that mastectomy and breast conservation can have similar outcomes in early breast cancer, and that the right operation depends on tumour factors, breast anatomy, genetic risk and the individual treatment plan.",
+      caption:
+        "Surgical approach and axilla plan are decided together. Reconstruction, when discussed, is a separate operation even if it happens at the same sitting.",
+      fit: "contain",
+    },
+  ],
 };

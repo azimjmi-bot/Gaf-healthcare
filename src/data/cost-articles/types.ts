@@ -53,6 +53,8 @@ export type CostFigure = {
   caption?: string;
   /** Insert after this named block in CostArticleView. */
   after: "overview" | "how" | "journey";
+  /** Infographics should contain; photographs can cover. */
+  fit?: "cover" | "contain";
 };
 
 export type CostArticle = {

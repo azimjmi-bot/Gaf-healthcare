@@ -73,7 +73,7 @@ function Figure({ figure }: { figure: CostFigure }) {
         alt={figure.alt}
         width={1280}
         height={720}
-        className="h-auto w-full rounded-2xl object-cover"
+        className={`h-auto w-full rounded-2xl ${figure.fit === "contain" ? "object-contain bg-white" : "object-cover"}`}
         sizes="(min-width: 1024px) 48rem, 100vw"
       />
       {figure.caption ? (
