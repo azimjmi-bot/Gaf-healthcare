@@ -496,75 +496,43 @@ export const HOSPITAL_FAQS = [
 
 export const COST_FAQS = [
   {
-    q: "Are the India cost ranges quotes?",
-    a: "No. They are planning ranges beside typical US cash-pay figures. The named oncologist, cardiologist, bariatric surgeon, cosmetic surgeon, ENT surgeon, gastroenterologist, surgical gastroenterologist, urologist, spine surgeon, pulmonologist, paediatric orthopaedic surgeon, orthopaedic surgeon, ophthalmologist, gynecologist, neurosurgeon, neurologist or nephrologist confirms regimen, fractions, donor, endoscopy, graft, laser, levels, airway, growth remaining, implant, laterality, approach, electrodiagnosis, dialysis access or the operation after reviewing records.",
+    q: "How is the cost of a medical procedure determined?",
+    a: "The cost of a medical procedure can depend on several factors, including the type and complexity of treatment, diagnostic requirements, surgeon or specialist fees, hospital selected, room category, operating-room time, ICU requirements, medicines, implants or medical devices, and length of hospital stay. The final cost can only be confirmed after reviewing the patient's clinical requirements and treatment plan.",
   },
   {
-    q: "What does liver transplantation typically cost in India versus the US?",
-    a: "GAF Healthcare's Liver Transplantation sheet lists a partner planning range of about $28,000–$55,000 against typical US cash of $150,000–$400,000, depending on living versus deceased donor, ICU stay and campus. Living-donor, paediatric and retransplant sit on separate Surgical Gastroenterology sheets. Hepatectomy remains on the shared surgical-oncology slug.",
+    q: "Why does the same treatment cost different amounts at different hospitals?",
+    a: "Treatment costs can vary between hospitals because of differences in facilities, doctor fees, room categories, equipment, implants or medical devices, diagnostic services, length of stay, and the complexity of the patient's treatment. A lower quoted price may also cover fewer services, so it is important to compare what is included rather than comparing the headline price alone.",
   },
   {
-    q: "What does kidney transplantation typically cost in India versus the US?",
-    a: "GAF Healthcare's Kidney Transplantation sheet lists a partner planning range of about $13,000–$25,000 against typical US cash of $150,000–$400,000, depending on living versus deceased donor, ABO work and campus. Living-donor, deceased-donor and ABO-incompatible remain the shared Urology slugs and now also sit under Nephrology. Paired kidney exchange and transplant evaluation sit on Nephrology sheets. Radical prostatectomy, partial nephrectomy and radical cystectomy remain on the shared surgical-oncology slugs.",
+    q: "What is usually included in a treatment cost estimate?",
+    a: "Depending on the hospital and procedure, an estimate may include doctor or surgeon fees, hospital charges, operating-room costs, anaesthesia, accommodation, routine medicines, nursing care, and certain investigations. Inclusions vary by treatment and hospital, so patients should review the estimate carefully to understand what is included and what may be charged separately.",
   },
   {
-    q: "What does spinal fusion typically cost in India versus the US?",
-    a: "GAF Healthcare's Spinal Fusion sheet lists a partner planning range of about $8,000–$18,000 against typical US cash of $80,000–$150,000, depending on levels, approach and campus. PLIF, TLIF, ALIF and ACDF sit on separate Spine Surgery sheets. Disc replacement is a different slug when motion-preservation is still honest.",
+    q: "What costs may be excluded from a treatment estimate?",
+    a: "Some estimates may exclude additional diagnostic tests, specialist consultations, blood products, advanced medicines, implants, complications, extended hospital or ICU stays, rehabilitation, additional procedures, or treatments that become necessary after the initial assessment. Travel, accommodation outside the hospital, visa expenses, and personal expenses are also generally separate unless specifically stated.",
   },
   {
-    q: "What does EBUS typically cost in India versus the US?",
-    a: "GAF Healthcare's EBUS sheet lists a partner planning range of about $800–$2,500 against typical US cash of $4,000–$12,000, depending on nodal stations and campus. Bronchoscopy, TBNA, cryo-biopsy and lung transplantation sit on separate Pulmonology sheets. Gastroenterology’s ingested foreign-body sheet is a different slug from bronchoscopic removal.",
+    q: "Why can the final hospital bill be different from the initial estimate?",
+    a: "An initial estimate is generally based on the information available before treatment. The final bill can change if the patient's clinical condition requires additional tests, medicines, procedures, a longer hospital stay, ICU care, specialised equipment, or other services. Ask the hospital which parts of the estimate are fixed and which may change based on clinical requirements.",
   },
   {
-    q: "What does clubfoot correction typically cost in India versus the US?",
-    a: "GAF Healthcare's Clubfoot Correction Surgery sheet lists a partner planning range of about $1,200–$3,800 against typical US cash of $6,000–$18,000, depending on laterality, prior Ponseti work and campus. DDH, SCFE, limb lengthening and paediatric scoliosis sit on separate Pediatric Orthopaedic sheets. Adult scoliosis correction remains on Spine Surgery.",
+    q: "Does the treatment cost include travel and accommodation?",
+    a: "Usually, the medical treatment estimate covers hospital and medical services specified by the provider and does not automatically include international flights, visa costs, hotel accommodation outside the hospital, meals for accompanying family members, local transportation, or other personal expenses. Always check the specific inclusions before making travel arrangements.",
   },
   {
-    q: "What does cataract surgery typically cost in India versus the US?",
-    a: "GAF Healthcare's Cataract Surgery sheet lists a partner planning range of about $800–$2,500 per eye against typical US cash of $3,500–$8,000, depending on IOL, laterality and campus. Phaco, femto-laser and paediatric cataract sit on separate Ophthalmology sheets. LASIK, SMILE and ICL are refractive slugs, not cataract products.",
+    q: "How can I get a more accurate estimate for my treatment?",
+    a: "The most accurate estimate generally requires a review of your medical records and current diagnosis. You can provide relevant reports, scans, previous treatment records, prescriptions, and other available clinical information so that the appropriate doctor or hospital can assess your case and provide an indicative treatment plan and estimate.",
   },
   {
-    q: "What does laparoscopic hysterectomy typically cost in India versus the US?",
-    a: "GAF Healthcare's Laparoscopic Hysterectomy sheet lists a partner planning range of about $3,000–$7,000 against typical US cash of $15,000–$35,000, depending on uterus size, laterality of adnexa and campus. Robotic, vaginal and abdominal hysterectomy sit on separate Gynecology sheets. Radical hysterectomy remains the shared surgical-oncology slug.",
+    q: "Can I compare treatment costs between different countries?",
+    a: "Yes. GAF Healthcare allows patients to explore indicative treatment costs across different medical-tourism destinations. International cost comparisons should be treated as planning estimates because prices can vary according to the hospital, doctor, treatment complexity, local healthcare costs, and services included in each estimate.",
   },
   {
-    q: "What does brain tumor surgery typically cost in India versus the US?",
-    a: "GAF Healthcare's Brain Tumor Surgery sheet lists a partner planning range of about $6,000–$15,000 against typical US cash of $50,000–$150,000, depending on histology, mapping and campus. Glioma, meningioma and pituitary sit on separate Neurosurgery sheets. Gamma Knife, CyberKnife and SRS remain the shared radiation-oncology radiosurgery slugs. Spinal tumour surgery remains the shared Spine Surgery slug. Skull base surgery remains the shared ENT slug.",
+    q: "Should I choose a treatment based only on the lowest price?",
+    a: "No. Price is only one factor to consider when choosing treatment abroad. Patients should also consider the doctor's relevant expertise, hospital facilities, accreditation where applicable, treatment approach, expected length of stay, what is included in the estimate, follow-up arrangements, and the hospital's experience with international patients.",
   },
   {
-    q: "What does EEG typically cost in India versus the US?",
-    a: "GAF Healthcare's EEG sheet lists a partner planning range of about $80–$250 against typical US cash of $400–$1,500, depending on duration and campus. Video EEG sits on a neighbouring Neurology sheet. Deep brain stimulation and stroke thrombectomy remain the shared Neurosurgery slugs. VNS, IVIG, MRgFUS and sleep study sit on Neurology sheets.",
-  },
-  {
-    q: "What does hemodialysis typically cost in India versus the US?",
-    a: "GAF Healthcare's Hemodialysis sheet lists a partner planning range of about $8,000–$18,000 per year against typical US cash of $70,000–$150,000 per year, depending on sessions and campus. Peritoneal dialysis, CRRT and SLED sit on neighbouring Nephrology sheets. Kidney transplantation remains the shared Urology slug. Plasmapheresis remains the shared Neurology slug.",
-  },
-  {
-    q: "What does total knee replacement typically cost in India versus the US?",
-    a: "GAF Healthcare's Total Knee Replacement sheet lists a partner planning range of about $5,500–$12,000 against typical US cash of $35,000–$70,000, depending on implant, laterality and campus. Robotic, partial and revision knee sit on separate Orthopedics sheets. ACL reconstruction is a sports slug, not an arthroplasty product.",
-  },
-  {
-    q: "What does ERCP typically cost in India versus the US?",
-    a: "GAF Healthcare's ERCP sheet lists a partner planning range of about $1,500–$4,200 against typical US cash of $8,000–$22,000, depending on sphincterotomy, stent and campus. Colonoscopy, EUS, POEM and PTBD sit on separate Gastroenterology sheets. Endoscopic sleeve gastroplasty remains on the bariatric sheet.",
-  },
-  {
-    q: "What does cochlear implantation typically cost in India versus the US?",
-    a: "GAF Healthcare's Cochlear Implantation sheet lists a partner planning range of about $15,000–$32,000 against typical US cash of $50,000–$100,000, depending on device, mapping and campus. FESS, septoplasty and BAHA sit on separate sheets. Rhinoplasty remains on the cosmetic sheet with a shared slug.",
-  },
-  {
-    q: "What does rhinoplasty typically cost in India versus the US?",
-    a: "GAF Healthcare's Rhinoplasty sheet lists a partner planning range of about $2,500–$5,500 against typical US cash of $8,000–$18,000, depending on open versus closed work and campus. Facelift, blepharoplasty and hair transplant sit on separate sheets. Blepharoplasty keeps a shared slug with Ophthalmology.",
-  },
-  {
-    q: "What does sleeve gastrectomy typically cost in India versus the US?",
-    a: "GAF Healthcare's Sleeve Gastrectomy sheet lists a partner planning range of about $4,500–$8,500 against typical US cash of $15,000–$28,000, depending on BMI, leak protocol and campus. Bypass, ESG and revisional work sit on separate sheets.",
-  },
-  {
-    q: "What does CABG typically cost in India versus the US?",
-    a: "GAF Healthcare's CABG sheet lists a partner planning range of about $5,500–$14,000 against typical US cash of $70,000–$200,000, depending on conduits, ICU stay and campus. Valve work, TAVR and LVAD sit on separate sheets.",
-  },
-  {
-    q: "What does chemotherapy typically cost in India versus the US?",
-    a: "GAF Healthcare's Chemotherapy sheet lists a partner planning range of about $1,500–$8,000+ against typical US cash of $10,000–$50,000, depending on protocol, cycles and campus. Immunotherapy, ADCs and CAR-T sit on separate sheets.",
+    q: "Can GAF Healthcare help me compare treatment options and costs?",
+    a: "Yes. You can explore treatment costs by procedure and destination and review available doctors and hospitals. If you need a more personalized estimate, you can share your medical records so that suitable treatment options and providers can be explored based on your individual requirements.",
   },
 ];

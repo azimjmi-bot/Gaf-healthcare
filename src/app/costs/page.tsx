@@ -53,11 +53,17 @@ export default async function CostsPage({
     items: list.filter((t) => t.specialtySlugs.includes(specialty.slug)),
   })).filter((g) => g.items.length > 0);
   const place = query.city ? `${query.city}, India` : "India";
-  const heading = query.procedure
-    ? `${query.procedure} cost in ${place}`
-    : query.specialty
-      ? `${query.specialty} cost in ${place}`
-      : "Oncology, ENT and GI treatment cost in India";
+  const directoryHome = !query.city && !query.specialty && !query.procedure;
+  const heading = directoryHome
+    ? "Compare Treatment Costs Before You Travel"
+    : query.procedure
+      ? `${query.procedure} cost in ${place}`
+      : query.specialty
+        ? `${query.specialty} cost in ${place}`
+        : "Oncology, ENT and GI treatment cost in India";
+  const lede = directoryHome
+    ? "Explore indicative treatment costs by procedure, country, and location, and understand what may be included before choosing where to receive care."
+    : "US cash-pay beside partner ranges for Radiation Oncology, Surgical Oncology, Medical Oncology, Hematology, Pediatric Hematology, Cardiac Surgery, Pediatric Cardiac Surgery, Cardiology, Bariatric Surgery, Cosmetic Surgery, ENT, Gastroenterology, Surgical Gastroenterology, Urology, Spine Surgery, Pulmonology, Pediatric Orthopaedic, Orthopedics, Ophthalmology, Gynecology, Neurosurgery, Neurology and Nephrology in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Filter by destination, city, specialty or procedure — the same keys a later landing page will use. Figures are planning ranges, not quotations.";
 
   // Filtering down to one procedure is a cost-sheet request, so serve the full
   // article here rather than a one-row table. Canonical still points at /costs/[slug].
@@ -95,7 +101,7 @@ export default async function CostsPage({
       <PageIntro
         eyebrow="India planning ranges"
         title={heading}
-        lede="US cash-pay beside partner ranges for Radiation Oncology, Surgical Oncology, Medical Oncology, Hematology, Pediatric Hematology, Cardiac Surgery, Pediatric Cardiac Surgery, Cardiology, Bariatric Surgery, Cosmetic Surgery, ENT, Gastroenterology, Surgical Gastroenterology, Urology, Spine Surgery, Pulmonology, Pediatric Orthopaedic, Orthopedics, Ophthalmology, Gynecology, Neurosurgery, Neurology and Nephrology in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Filter by destination, city, specialty or procedure — the same keys a later landing page will use. Figures are planning ranges, not quotations."
+        lede={lede}
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
@@ -183,15 +189,28 @@ export default async function CostsPage({
           Oncology, ENT and GI pathways are quoted only after records review. Atelier fee (typically 8–12%) is
           included in the written all-in quote if you proceed.
         </p>
-        <h2 className="mt-14 font-heading text-3xl">Cost questions</h2>
-        <dl className="mt-6 grid gap-8 md:grid-cols-2">
+        <h2 className="mt-14 font-heading text-3xl">Frequently Asked Questions About Treatment Costs</h2>
+        <p className="prose-gaf mt-3">
+          Understand how treatment costs are calculated, what may be included, why prices vary, and how to
+          get a more personalized estimate.
+        </p>
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
           {COST_FAQS.map((row) => (
-            <div key={row.q}>
-              <dt className="font-medium">{row.q}</dt>
-              <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{row.a}</dd>
-            </div>
+            <details key={row.q} className="group rounded-2xl border border-border bg-card px-5 py-4">
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden">
+                <h3 className="font-medium leading-snug">{row.q}</h3>
+                <span
+                  aria-hidden
+                  className="grid size-7 shrink-0 place-items-center rounded-full border border-border text-base leading-none"
+                >
+                  <span className="group-open:hidden">+</span>
+                  <span className="hidden group-open:inline">−</span>
+                </span>
+              </summary>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{row.a}</p>
+            </details>
           ))}
-        </dl>
+        </div>
       </section>
       <CtaBand />
     </>
