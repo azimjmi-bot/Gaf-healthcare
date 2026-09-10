@@ -40,7 +40,7 @@ export default function HomePage() {
         />
         <div className="absolute inset-0 bg-gradient-to-r from-ink/92 via-ink/70 to-ink/35" />
         <div className="relative mx-auto flex min-h-[100svh] max-w-7xl flex-col justify-end px-5 pb-16 pt-32 md:px-8 md:pb-24">
-          <p className="eyebrow text-gold">Oncology, ENT and GI care · India</p>
+          <p className="eyebrow text-gold">GAF Healthcare · Oncology, ENT and GI care · India</p>
           <h1 className="mt-5 max-w-4xl font-heading text-5xl leading-[0.95] md:text-7xl lg:text-[5.25rem]">
             Oncologists, ENT and GI in India. Hospitals. Costs.
           </h1>
