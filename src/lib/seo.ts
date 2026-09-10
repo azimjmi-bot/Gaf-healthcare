@@ -418,16 +418,36 @@ export function faqJsonLd(rows: { q: string; a: string }[]) {
 
 export const DOCTOR_FAQS = [
   {
-    q: "Which Indian cities does GAF Healthcare list specialists in?",
-    a: "Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Every profile is tagged with country (India), city, specialty and procedure so later pages can be generated without remapping the catalog.",
+    q: "How do I choose the right doctor for my condition?",
+    a: "We help you explore doctors based on their medical specialty, relevant experience, hospital affiliation, procedures performed, location, and other available professional information. Your final choice should also take into account your medical condition and your treating doctor's advice.",
   },
   {
-    q: "Do you list haematologists as well as oncologists?",
-    a: "Yes. Named haematologists sit under Hematology. Named cardiac surgeons sit under Cardiac Surgery. Named cardiologists sit under Cardiology. Named bariatric surgeons sit under Bariatric Surgery. Named cosmetic surgeons sit under Cosmetic Surgery. Named ENT surgeons sit under ENT. Named gastroenterologists sit under Gastroenterology. Named surgical gastroenterologists sit under Surgical Gastroenterology. Named urologists sit under Urology. Named spine surgeons sit under Spine Surgery. Named pulmonologists sit under Pulmonology — including Dr. Anand Jaiswal, Dr. Manoj Kumar Goel, Dr. Vivek Singh and Dr. Randeep Guleria in Delhi NCR. Named paediatric orthopaedic surgeons sit under Pediatric Orthopaedic — including Dr. Ramani Narasimhan, Dr. Sanjay Sarup and Dr. Manoj Padman. Named adult orthopaedic surgeons sit under Orthopedics — including Dr. Ashok Rajgopal, Dr. I P S Oberoi and Dr. Yash Gulati in Delhi NCR. Named ophthalmologists sit under Ophthalmology — including Dr. Sudipto Pakrasi, Dr. Jeewan Singh Titiyal and Dr. Sameer Kaushal in Delhi NCR. Named gynecologists sit under Gynecology — including Dr. Usha M Kumar, Dr. Suneeta Mittal and Dr. Alka Kriplani in Delhi NCR. Named neurosurgeons sit under Neurosurgery — including Dr. Sandeep Vaishya, Dr. Aditya Gupta and Dr. Varindera Paul Singh in Delhi NCR. Named neurologists sit under Neurology — including Dr. Sumit Singh, Dr. M V Padma Srivastava and Dr. Vinay Goyal in Delhi NCR. Named nephrologists sit under Nephrology — including Dr. Sanjeev Gulati, Dr. Ajit Singh Narula and Dr. Alka Bhasin in Delhi NCR. Later pages can mount /doctors/india/{city}/nephrology/{procedure} without remapping the catalog.",
+    q: "Can I compare multiple doctors before choosing one?",
+    a: "Yes. You can review multiple doctor profiles and compare available information such as specialty, experience, hospital affiliation, location, procedures, and other relevant profile details before deciding whom to contact.",
   },
   {
-    q: "Can I meet the doctor before travelling to India?",
-    a: "Yes. Travelling patients meet the named consultant on camera first. A date in that city is offered only after records review — not from a brochure price.",
+    q: "How are doctors listed on GAF Healthcare?",
+    a: "Doctors are listed based on relevant medical specialties, procedures, hospital affiliations, professional credentials, and information available through our database. GAF Healthcare does not claim that every listed doctor is the best doctor for every patient.",
+  },
+  {
+    q: "Can I choose a doctor based on a specific procedure or treatment?",
+    a: "Yes. You can explore doctors associated with specific procedures and treatments to find specialists whose expertise is relevant to your medical needs.",
+  },
+  {
+    q: "Do the doctors listed on GAF Healthcare treat international patients?",
+    a: "Many doctors associated with hospitals serving international patients treat patients from overseas. International-patient services and availability can vary by doctor and hospital.",
+  },
+  {
+    q: "Can I get a second medical opinion from a doctor listed on GAF Healthcare?",
+    a: "Yes. You can request a consultation or second opinion, subject to the doctor's availability. Sharing your medical reports and previous treatment records can help the doctor review your case.",
+  },
+  {
+    q: "Can I speak with a doctor before travelling for treatment?",
+    a: "In many cases, yes. International patients can request a remote consultation or medical review before travelling, depending on the doctor's availability and the hospital's process.",
+  },
+  {
+    q: "Can GAF Healthcare help me choose a hospital along with a doctor?",
+    a: "Yes. GAF Healthcare can help you explore suitable doctors and hospitals based on your treatment needs, preferred location, and available options.",
   },
 ];
 

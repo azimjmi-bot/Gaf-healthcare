@@ -36,7 +36,10 @@ export default async function DoctorsPage({
   const list = filterDoctors(query, doctors);
   const paging = paginateDoctors(list, readPage(raw));
   const place = query.city ? `${query.city}, India` : "India";
-  const heading = query.procedure
+  const directoryHome = !query.city && !query.specialty && !query.procedure;
+  const heading = directoryHome
+    ? "Find the Right Doctor for Your Treatment"
+    : query.procedure
     ? `${query.procedure} specialists in ${place}`
     : query.specialty === "Pediatric Hematology"
       ? `Pediatric hematologists in ${place}`
@@ -81,6 +84,9 @@ export default async function DoctorsPage({
       : query.specialty
         ? `${query.specialty} doctors in ${place}`
         : "Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists, gynecologists, neurosurgeons, neurologists and nephrologists in India";
+  const lede = directoryHome
+    ? "Explore specialists by medical specialty, procedure, hospital, and location, and find doctors who match your treatment needs."
+    : "Named specialists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each doctor appears once. Ten profiles per page — filter by city, specialty or procedure when you already know the list you need.";
 
   return (
     <>
@@ -88,7 +94,7 @@ export default async function DoctorsPage({
       <PageIntro
         eyebrow="India · five cities · twenty-three specialties"
         title={heading}
-        lede="Named specialists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each doctor appears once. Ten profiles per page — filter by city, specialty or procedure when you already know the list you need."
+        lede={lede}
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
@@ -131,15 +137,28 @@ export default async function DoctorsPage({
         )}
       </section>
       <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
-        <h2 className="font-heading text-3xl">India specialists directory — questions</h2>
-        <dl className="mt-8 grid gap-8 md:grid-cols-3">
+        <h2 className="font-heading text-3xl">Frequently Asked Questions About Finding a Doctor</h2>
+        <p className="prose-gaf mt-3">
+          Learn how GAF Healthcare helps international patients compare doctors and explore treatment
+          options.
+        </p>
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
           {DOCTOR_FAQS.map((row) => (
-            <div key={row.q}>
-              <dt className="font-medium">{row.q}</dt>
-              <dd className="mt-2 text-sm leading-relaxed text-muted-foreground">{row.a}</dd>
-            </div>
+            <details key={row.q} className="group rounded-2xl border border-border bg-card px-5 py-4">
+              <summary className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden">
+                <h3 className="font-medium leading-snug">{row.q}</h3>
+                <span
+                  aria-hidden
+                  className="grid size-7 shrink-0 place-items-center rounded-full border border-border text-base leading-none"
+                >
+                  <span className="group-open:hidden">+</span>
+                  <span className="hidden group-open:inline">−</span>
+                </span>
+              </summary>
+              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{row.a}</p>
+            </details>
           ))}
-        </dl>
+        </div>
       </section>
       <CtaBand />
     </>
