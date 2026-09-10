@@ -36,6 +36,19 @@ export function doctorsPath(opts: {
   return catalogHref("/doctors", opts);
 }
 
+/** Directory path for one specialty's cost table. Never a lowercase pSEO landing. */
+export function costsSpecialtyPath(opts: {
+  destination?: string;
+  city?: string;
+  specialty: string;
+}) {
+  return costsFilterPath({
+    destination: opts.destination,
+    city: opts.city,
+    specialty: opts.specialty,
+  });
+}
+
 export function hospitalsPath(opts: {
   procedure?: string;
   city?: string;

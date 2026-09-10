@@ -1,10 +1,11 @@
 import Link from "next/link";
 import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
+import { SpecialtyPager } from "@/components/specialty-pager";
 import { CostArticleSection, costArticleData, costArticleFor } from "@/components/cost-article-section";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
-import { filterTreatments, type CatalogQuery } from "@/lib/catalog";
+import { filterTreatments, listCostSpecialtyGroups, type CatalogQuery } from "@/lib/catalog";
 import { costsFilterPath } from "@/lib/catalog-links";
 import { cityEditorial, doctorsToConsiderHeading, hospitalsToConsiderHeading, interpolateCostArticle } from "@/lib/cost-article";
 import { hospitals, treatments } from "@/lib/data";
@@ -19,7 +20,6 @@ import {
   hospitalItemListJsonLd,
   medicalWebPageJsonLd,
 } from "@/lib/seo";
-import { SPECIALTIES } from "@/lib/taxonomy";
 import type { Metadata } from "next";
 
 export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metadata> {
@@ -69,13 +69,13 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
 
 export async function CostsDirectory({ query }: { query: CatalogQuery }) {
   const list = filterTreatments(query, treatments, hospitals);
-  const groupSpecs = query.specialty
-    ? SPECIALTIES.filter((s) => s.name === query.specialty)
-    : SPECIALTIES;
-  const groups = groupSpecs.map((specialty) => ({
-    ...specialty,
-    items: list.filter((t) => t.specialtySlugs.includes(specialty.slug)),
-  })).filter((g) => g.items.length > 0);
+  const specialtyPages = listCostSpecialtyGroups(query, treatments, hospitals);
+  const selectedIndex = query.specialty
+    ? specialtyPages.findIndex((group) => group.name === query.specialty)
+    : 0;
+  const currentIndex = selectedIndex >= 0 ? selectedIndex : 0;
+  const group = specialtyPages[currentIndex];
+  const visibleItems = query.specialty && selectedIndex < 0 ? [] : (group?.items ?? []);
   const place = query.city ? `${query.city}, India` : "India";
   const directoryHome = !query.city && !query.specialty && !query.procedure;
   const heading = directoryHome
@@ -183,81 +183,94 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
             basePath="/costs"
             entity="treatments"
             query={query}
-            resultCount={list.length}
-            resultLabel={list.length === 1 ? "pathway" : "pathways"}
+            resultCount={visibleItems.length}
+            resultLabel={visibleItems.length === 1 ? "pathway" : "pathways"}
           />
         </Suspense>
       </PageIntro>
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:px-8 md:py-12">
-        {list.length === 0 ? (
+        {specialtyPages.length === 0 ? (
           <p className="text-muted-foreground">No treatment costs match these filters.</p>
         ) : (
-          <div className="space-y-14">
-            {groups.map((group) => (
-              <div key={group.slug}>
+          <div>
+            {group ? (
+              <div>
                 <p className="text-xs tracking-[0.18em] uppercase text-gold">Specialty</p>
                 <h2 className="mt-2 font-heading text-4xl">{group.name}</h2>
-                <div className="mt-6 hidden overflow-hidden rounded-2xl border border-border md:block">
-                  <table className="w-full text-left text-sm">
-                    <thead className="bg-secondary/60 text-xs tracking-[0.16em] uppercase text-muted-foreground">
-                      <tr>
-                        <th className="px-6 py-4 font-medium">Pathway</th>
-                        <th className="px-6 py-4 font-medium">Typical US cash</th>
-                        <th className="px-6 py-4 font-medium">Partner range</th>
-                        <th className="px-6 py-4 font-medium">Stay</th>
-                        <th className="px-6 py-4 font-medium" />
-                      </tr>
-                    </thead>
-                    <tbody>
-                      {group.items.map((t) => (
-                        <tr key={t.slug} className="border-t border-border bg-card">
-                          <td className="px-6 py-5">
-                            <p className="font-heading text-xl text-foreground">{t.name}</p>
-                            <p className="text-muted-foreground">{t.category}</p>
-                          </td>
-                          <td className="px-6 py-5">{t.usRange}</td>
-                          <td className="px-6 py-5 font-medium">{t.partnerRange}</td>
-                          <td className="px-6 py-5 text-muted-foreground">{t.stay}</td>
-                          <td className="px-6 py-5 text-right">
-                            <Link
-                              href={`/costs/${t.slug}`}
-                              className="text-sm underline-offset-4 hover:underline"
-                            >
-                              Detail
-                            </Link>
-                          </td>
-                        </tr>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  {currentIndex + 1} of {specialtyPages.length} specialties
+                </p>
+                <SpecialtyPager query={query} specialties={specialtyPages} currentIndex={currentIndex} />
+                {visibleItems.length === 0 ? (
+                  <p className="mt-6 text-muted-foreground">No treatment costs match these filters.</p>
+                ) : (
+                  <>
+                    <div className="mt-6 hidden overflow-hidden rounded-2xl border border-border md:block">
+                      <table className="w-full text-left text-sm">
+                        <thead className="bg-secondary/60 text-xs tracking-[0.16em] uppercase text-muted-foreground">
+                          <tr>
+                            <th className="px-6 py-4 font-medium">Pathway</th>
+                            <th className="px-6 py-4 font-medium">Typical US cash</th>
+                            <th className="px-6 py-4 font-medium">Partner range</th>
+                            <th className="px-6 py-4 font-medium">Stay</th>
+                            <th className="px-6 py-4 font-medium" />
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {visibleItems.map((t) => (
+                            <tr key={t.slug} className="border-t border-border bg-card">
+                              <td className="px-6 py-5">
+                                <p className="font-heading text-xl text-foreground">{t.name}</p>
+                                <p className="text-muted-foreground">{t.category}</p>
+                              </td>
+                              <td className="px-6 py-5">{t.usRange}</td>
+                              <td className="px-6 py-5 font-medium">{t.partnerRange}</td>
+                              <td className="px-6 py-5 text-muted-foreground">{t.stay}</td>
+                              <td className="px-6 py-5 text-right">
+                                <Link
+                                  href={`/costs/${t.slug}`}
+                                  className="text-sm underline-offset-4 hover:underline"
+                                >
+                                  Detail
+                                </Link>
+                              </td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                    <div className="mt-4 grid gap-4 md:hidden">
+                      {visibleItems.map((t) => (
+                        <Link
+                          key={t.slug}
+                          href={`/costs/${t.slug}`}
+                          className="rounded-2xl border border-border bg-card p-5"
+                        >
+                          <p className="text-xs tracking-[0.18em] uppercase text-muted-foreground">
+                            {t.category}
+                          </p>
+                          <h3 className="mt-1 font-heading text-2xl">{t.name}</h3>
+                          <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
+                            <div>
+                              <dt className="text-muted-foreground">US cash</dt>
+                              <dd>{t.usRange}</dd>
+                            </div>
+                            <div>
+                              <dt className="text-muted-foreground">Partner</dt>
+                              <dd>{t.partnerRange}</dd>
+                            </div>
+                          </dl>
+                          <p className="mt-3 text-sm text-muted-foreground">Stay {t.stay}</p>
+                        </Link>
                       ))}
-                    </tbody>
-                  </table>
-                </div>
-                <div className="mt-4 grid gap-4 md:hidden">
-                  {group.items.map((t) => (
-                    <Link
-                      key={t.slug}
-                      href={`/costs/${t.slug}`}
-                      className="rounded-2xl border border-border bg-card p-5"
-                    >
-                      <p className="text-xs tracking-[0.18em] uppercase text-muted-foreground">
-                        {t.category}
-                      </p>
-                      <h3 className="mt-1 font-heading text-2xl">{t.name}</h3>
-                      <dl className="mt-4 grid grid-cols-2 gap-3 text-sm">
-                        <div>
-                          <dt className="text-muted-foreground">US cash</dt>
-                          <dd>{t.usRange}</dd>
-                        </div>
-                        <div>
-                          <dt className="text-muted-foreground">Partner</dt>
-                          <dd>{t.partnerRange}</dd>
-                        </div>
-                      </dl>
-                      <p className="mt-3 text-sm text-muted-foreground">Stay {t.stay}</p>
-                    </Link>
-                  ))}
-                </div>
+                    </div>
+                  </>
+                )}
+                <SpecialtyPager query={query} specialties={specialtyPages} currentIndex={currentIndex} />
               </div>
-            ))}
+            ) : (
+              <p className="text-muted-foreground">No treatment costs match these filters.</p>
+            )}
           </div>
         )}
 

@@ -102,6 +102,23 @@ export function filterHospitals(q: CatalogQuery, rows: Hospital[] = hospitals): 
   });
 }
 
+/** Specialties that still have cost rows after destination/city filters. */
+export function listCostSpecialtyGroups(
+  q: CatalogQuery,
+  rows: Treatment[] = treatments,
+  campuses: Hospital[] = hospitals,
+) {
+  const pool = filterTreatments(
+    { destination: q.destination, city: q.city },
+    rows,
+    campuses,
+  );
+  return SPECIALTIES.map((specialty) => ({
+    ...specialty,
+    items: pool.filter((t) => t.specialtySlugs.includes(specialty.slug)),
+  })).filter((group) => group.items.length > 0);
+}
+
 export function filterTreatments(
   q: CatalogQuery,
   rows: Treatment[] = treatments,
