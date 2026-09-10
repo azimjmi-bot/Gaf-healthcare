@@ -18,9 +18,26 @@ import { listPublishedPosts } from "@/lib/blogs";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { SITE_URL } from "@/lib/seo";
 import type { Treatment } from "@/lib/treatments";
+import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Trusted Care Beyond Borders | GAF Healthcare",
+  },
+  description:
+    "Explore listed doctors, hospitals and indicative treatment costs across GAF Healthcare destinations. Plan your medical journey with a named consultant before you fly.",
+  alternates: { canonical: SITE_URL },
+  openGraph: {
+    title: "Trusted Care Beyond Borders | GAF Healthcare",
+    description:
+      "Explore listed doctors, hospitals and indicative treatment costs across GAF Healthcare destinations.",
+    url: SITE_URL,
+    type: "website",
+  },
+};
 
 function startingPrice(range: string) {
   const n = range.match(/\$?([\d,]+)/);
