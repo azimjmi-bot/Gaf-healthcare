@@ -50,6 +50,8 @@ English stays at the root (`https://gaf.healthcare/...`). Localized sites use a 
 
 Existing English routes are unchanged. A Russian doctor page is `/ru/doctors/[slug]`. Slugs stay English.
 
+`src/proxy.ts` (Next.js 16) reads the language prefix, sets `x-gaf-locale`, and rewrites to the existing English route. English stays at the root. There is no `/en/` prefix.
+
 Translations are stored in `content/translations.json` (the existing file CMS). Google Cloud Translation API Advanced v3 is used only when a translation is missing, outdated, or an administrator regenerates it. Repeat page views read the stored translation.
 
 ### Replit / production secrets
