@@ -73,8 +73,10 @@ async function performTranslation(input: {
 }) {
   const existing = getTranslation(input.sourceType, input.sourceId, input.language);
   if (!translationConfigured()) {
-    translationLog("TRANSLATION FAIL", input.sourceType, input.sourceId, input.language, "not-configured");
-    return existing?.fields && Object.keys(existing.fields).length ? existing.fields : input.fields;
+    if (existing?.status === "completed" && existing.fields && Object.keys(existing.fields).length) {
+      return existing.fields;
+    }
+    return input.fields;
   }
 
   const { claimed, record } = await claimTranslationSlot({

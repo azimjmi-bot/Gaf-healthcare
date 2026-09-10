@@ -310,8 +310,9 @@ export default async function HomePage() {
             <p className="eyebrow">{t["home.reviewsEyebrow"]}</p>
             <h2>{t["home.reviewsTitle"]}</h2>
             <p>
-              {GOOGLE_PROFILE.rating} from {GOOGLE_PROFILE.reviewCount} reviews on the GAF Healthcare Pvt Ltd
-              Google listing.
+              {t["home.reviewsSummary"]
+                ?.replace("{rating}", GOOGLE_PROFILE.rating)
+                .replace("{count}", String(GOOGLE_PROFILE.reviewCount))}
             </p>
           </div>
           <a href={GOOGLE_MAPS_URL} className="home-more" target="_blank" rel="noreferrer">

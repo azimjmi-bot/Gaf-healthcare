@@ -26,6 +26,15 @@ test("does not create /en/", () => {
   assert.equal(localePath("/doctors", "en").startsWith("/en"), false);
 });
 
+test("UI catalogs translate chrome without Google", async () => {
+  const { uiCatalogFor } = await import("./ui-catalogs");
+  assert.equal(uiCatalogFor("en")["home.heroTitle"], "Trusted Care Beyond Borders");
+  assert.match(uiCatalogFor("ar")["home.heroTitle"], /رعاية/);
+  assert.match(uiCatalogFor("ru")["nav.doctors"], /Врачи/);
+  assert.match(uiCatalogFor("fr")["nav.hospitals"], /Hôpitaux/);
+  assert.match(uiCatalogFor("sw")["nav.costs"], /Gharama/);
+});
+
 test("localized sitemap paths keep the language prefix", () => {
   assert.equal(localePath("/doctors/example", "ar"), "/ar/doctors/example");
   assert.equal(localePath("/ru/doctors/example", "en"), "/doctors/example");

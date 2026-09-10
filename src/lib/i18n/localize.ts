@@ -19,7 +19,10 @@ import {
 } from "@/lib/i18n/extract";
 import { localizeInternalHref } from "@/lib/i18n/path";
 import { UI_MESSAGE_FIELDS } from "@/lib/i18n/messages";
+import { homeExtraCatalogFor, uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 import { completedLocalesFor, getLocalizedFields } from "@/lib/i18n/service";
+import { translationConfigured } from "@/lib/i18n/google";
+import { getTranslation } from "@/lib/i18n/store";
 import type { AppLocale } from "@/lib/i18n/languages";
 import type { SourceType, TranslationFields } from "@/lib/i18n/types";
 import { COST_FAQS, DOCTOR_FAQS, HOSPITAL_FAQS } from "@/lib/seo";
@@ -84,14 +87,20 @@ export function englishFieldsFor(sourceType: SourceType, sourceId: string): Tran
 }
 
 export async function localizeMessages(locale: AppLocale, generateIfMissing = locale !== "en") {
-  const fields = await getLocalizedFields({
-    sourceType: "ui",
-    sourceId: "chrome",
-    language: locale,
-    fields: extractUiFields(),
-    generateIfMissing,
-  });
-  return { ...UI_MESSAGE_FIELDS, ...fields };
+  const fallback = uiCatalogFor(locale);
+  if (locale === "en") return fallback;
+  if (generateIfMissing && translationConfigured()) {
+    await getLocalizedFields({
+      sourceType: "ui",
+      sourceId: "chrome",
+      language: locale,
+      fields: extractUiFields(),
+      generateIfMissing: true,
+    });
+  }
+  const record = getTranslation("ui", "chrome", locale);
+  const stored = record?.status === "completed" ? record.fields : {};
+  return { ...fallback, ...stored };
 }
 
 export async function localizeDoctor(doctor: Doctor, locale: AppLocale, generateIfMissing = locale !== "en") {
@@ -173,13 +182,19 @@ export async function localizeFaqs(
 }
 
 export async function localizeHomeExtras(locale: AppLocale, generateIfMissing = locale !== "en") {
-  const fields = await getLocalizedFields({
-    sourceType: "page",
-    sourceId: "home",
-    language: locale,
-    fields: extractHomeFields(),
-    generateIfMissing,
-  });
+  const seeded = homeExtraCatalogFor(locale);
+  if (generateIfMissing && locale !== "en" && translationConfigured()) {
+    await getLocalizedFields({
+      sourceType: "page",
+      sourceId: "home",
+      language: locale,
+      fields: extractHomeFields(),
+      generateIfMissing: true,
+    });
+  }
+  const record = locale === "en" ? null : getTranslation("page", "home", locale);
+  const stored = record?.status === "completed" ? record.fields : {};
+  const fields = { ...extractHomeFields(), ...seeded, ...stored };
   const destinations = HOME_DESTINATIONS.map((place, index) => ({
     ...place,
     name: fields[`dest.${index}.name`] || place.name,

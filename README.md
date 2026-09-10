@@ -52,7 +52,7 @@ Existing English routes are unchanged. A Russian doctor page is `/ru/doctors/[sl
 
 `src/proxy.ts` (Next.js 16) reads the language prefix, sets `x-gaf-locale`, and rewrites to the existing English route. English stays at the root. There is no `/en/` prefix.
 
-Translations are stored in `content/translations.json` (the existing file CMS). Google Cloud Translation API Advanced v3 is used only when a translation is missing, outdated, or an administrator regenerates it. Repeat page views read the stored translation.
+Navigation, homepage chrome, footer and forms have built-in Russian, French, Arabic and Swahili catalogs so the language switcher shows translated words immediately. Editorial doctors, hospitals, cost sheets and blogs are still translated by Google Cloud Translation Advanced v3 and stored in `content/translations.json`. Google is used only when a translation is missing, outdated, or an administrator regenerates it. Repeat page views read the stored translation.
 
 ### Replit / production secrets
 

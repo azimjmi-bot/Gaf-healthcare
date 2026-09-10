@@ -7,7 +7,7 @@ import {
   catalogProceduresFor,
   catalogSpecialties,
 } from "@/lib/catalog-options";
-import { useLocale } from "@/components/locale-provider";
+import { useLocale, useT } from "@/components/locale-provider";
 import { localePath } from "@/lib/i18n/path";
 
 const ALL = "all";
@@ -15,6 +15,7 @@ const ALL = "all";
 export function HomeSearch() {
   const router = useRouter();
   const locale = useLocale();
+  const t = useT();
   const [destination, setDestination] = useState(ALL);
   const [specialty, setSpecialty] = useState(ALL);
   const [procedure, setProcedure] = useState(ALL);
@@ -38,9 +39,9 @@ export function HomeSearch() {
   return (
     <form className="home-search" onSubmit={onSubmit}>
       <label>
-        <span className="sr-only">Destination</span>
+        <span className="sr-only">{t("home.searchDestination")}</span>
         <select value={destination} onChange={(e) => setDestination(e.target.value)}>
-          <option value={ALL}>Destination</option>
+          <option value={ALL}>{t("home.searchDestination")}</option>
           {catalogDestinations.map((name) => (
             <option key={name} value={name}>
               {name}
@@ -49,9 +50,9 @@ export function HomeSearch() {
         </select>
       </label>
       <label>
-        <span className="sr-only">Specialty</span>
+        <span className="sr-only">{t("home.searchSpecialty")}</span>
         <select value={specialty} onChange={(e) => onSpecialty(e.target.value)}>
-          <option value={ALL}>Specialty</option>
+          <option value={ALL}>{t("home.searchSpecialty")}</option>
           {catalogSpecialties.map((name) => (
             <option key={name} value={name}>
               {name}
@@ -60,9 +61,9 @@ export function HomeSearch() {
         </select>
       </label>
       <label>
-        <span className="sr-only">Procedure</span>
+        <span className="sr-only">{t("home.searchProcedure")}</span>
         <select value={procedure} onChange={(e) => setProcedure(e.target.value)}>
-          <option value={ALL}>Procedure</option>
+          <option value={ALL}>{t("home.searchProcedure")}</option>
           {procedures.map((name) => (
             <option key={name} value={name}>
               {name}
@@ -71,8 +72,8 @@ export function HomeSearch() {
         </select>
       </label>
       <button type="submit" className="home-search__go">
-        <span className="md:hidden">Find specialists</span>
-        <span className="hidden md:inline">Advanced Care A Click Away</span>
+        <span className="md:hidden">{t("home.searchGoShort")}</span>
+        <span className="hidden md:inline">{t("home.searchGo")}</span>
       </button>
     </form>
   );
