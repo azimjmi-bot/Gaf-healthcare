@@ -13,6 +13,7 @@ import { whippleProcedure } from "./whipple-procedure";
 import { pancreaticSurgery } from "./pancreatic-surgery";
 import { cytoreductiveSurgery } from "./cytoreductive-surgery";
 import { cytoreductiveSurgeryWithHipec } from "./cytoreductive-surgery-with-hipec";
+import { pipac } from "./pipac";
 import type { CostArticle } from "./types";
 
 export type { CostArticle } from "./types";
@@ -38,6 +39,7 @@ export const costArticles: Record<string, CostArticle> = {
   [pancreaticSurgery.slug]: pancreaticSurgery,
   [cytoreductiveSurgery.slug]: cytoreductiveSurgery,
   [cytoreductiveSurgeryWithHipec.slug]: cytoreductiveSurgeryWithHipec,
+  [pipac.slug]: pipac,
 };
 
 export function getCostArticle(slug: string): CostArticle | undefined {

@@ -720,6 +720,7 @@ export const rectalCancerSurgery: CostArticle = {
     { href: "/costs/colectomy", label: "colectomy cost in India" },
     { href: "/costs/cytoreductive-surgery", label: "cytoreductive surgery cost in India" },
     { href: "/costs/cytoreductive-surgery-with-hipec", label: "CRS + HIPEC cost in India" },
+    { href: "/costs/pipac", label: "PIPAC cost in India" },
     { href: "/costs/liver-resection-hepatectomy", label: "liver resection cost in India" },
     { href: "/costs/gastrectomy", label: "gastrectomy cost in India" },
     { href: "/costs/esophagectomy", label: "esophagectomy cost in India" },

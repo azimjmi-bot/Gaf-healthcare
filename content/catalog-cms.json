@@ -177,6 +177,21 @@
       "notes": "Indicative planning ranges, not quotations. The partner band is CRS as quoted — not automatically CRS + HIPEC. The named surgical oncologist confirms peritoneal burden, organ resections, whether HIPEC is planned, named high-dependency nights and an itemized hospital price after records review. HIPEC drugs, extra theatre time, extra stay, CT, PET-CT, systemic chemotherapy, radiation, extra leak days and transfusion are quoted separately unless named. Dedicated Cytoreductive Surgery with HIPEC and PIPAC sheets exist when those sittings are already named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
       "replaceGuide": false
     },
+    "pipac": {
+      "summary": "Pressurised intraperitoneal aerosol chemotherapy is a laparoscopy-based option for selected peritoneal disease, often as a sequence of short stays rather than one mega-operation.",
+      "usRange": "$25,000–$55,000",
+      "partnerRange": "$7,000–$16,000",
+      "stay": "2–5 nights",
+      "includes": [
+        "Surgical oncology consultation and records review",
+        "Named surgeon on camera before travel",
+        "Theatre, anaesthesia, PIPAC as quoted and inpatient stay as quoted",
+        "Histopathology of the specimen",
+        "Discharge summary to your home oncologist"
+      ],
+      "notes": "Indicative planning ranges, not quotations. The partner band is one PIPAC sitting as quoted — not a three-cycle package, and not HIPEC or CRS. The named surgical oncologist confirms peritoneal distribution, aerosol drug and protocol, how many sittings the letter covers and an itemized hospital price after records review. Further PIPAC cycles, CT, PET-CT, systemic chemotherapy, radiation, extra nights and transfusion are quoted separately unless named. Dedicated Cytoreductive Surgery and Cytoreductive Surgery with HIPEC sheets exist when those sittings are already named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
+      "replaceGuide": false
+    },
     "whipple-procedure": {
       "summary": "Pancreaticoduodenectomy removes the pancreatic head and nearby structures, then reconstructs the digestive tract. Vascular work, open versus minimally invasive access and ICU follow staging — not a brochure upgrade.",
       "usRange": "$60,000–$150,000",
