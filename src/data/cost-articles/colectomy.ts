@@ -592,6 +592,7 @@ export const colectomy: CostArticle = {
 
   relatedProcedures: [
     "Rectal Cancer Surgery",
+    "Cytoreductive Surgery",
     "Gastrectomy",
     "Esophagectomy",
     "Chemotherapy",
@@ -606,6 +607,7 @@ export const colectomy: CostArticle = {
     { href: "/costs?specialty=Gastroenterology", label: "gastroenterology costs in India" },
     { href: "/costs?specialty=Surgical+Gastroenterology", label: "surgical gastroenterology costs in India" },
     { href: "/costs/rectal-cancer-surgery", label: "rectal cancer surgery cost in India" },
+    { href: "/costs/cytoreductive-surgery", label: "cytoreductive surgery cost in India" },
     { href: "/costs/liver-resection-hepatectomy", label: "liver resection cost in India" },
     { href: "/costs/gastrectomy", label: "gastrectomy cost in India" },
     { href: "/costs/esophagectomy", label: "esophagectomy cost in India" },

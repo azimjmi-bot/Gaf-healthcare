@@ -179,7 +179,7 @@ export const SURGICAL_SUMMARIES: Record<string, string> = {
   "Pancreatic Surgery":
     "Pancreatic surgery is a family of operations — Whipple, distal pancreatectomy, total pancreatectomy — chosen after location and resectability are read, not from a brochure menu.",
   "Cytoreductive Surgery":
-    "Cytoreduction aims at complete macroscopic clearance of peritoneal disease. Completeness-of-cytoreduction scores matter more than the length of the incision.",
+    "Cytoreduction aims at complete macroscopic clearance of peritoneal disease. Completeness-of-cytoreduction scores matter more than the length of the incision. HIPEC, when used, is a neighbouring sitting — not assumed into this sheet.",
   "Cytoreductive Surgery with HIPEC":
     "CRS plus heated intraperitoneal chemotherapy. Not every peritoneal case is a HIPEC case. The surgical oncologist says so before you pack for three weeks.",
   PIPAC:

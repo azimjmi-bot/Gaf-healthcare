@@ -23,6 +23,7 @@ const LONGFORM_COST_SLUGS = new Set([
   "sentinel-lymph-node-biopsy",
   "whipple-procedure",
   "pancreatic-surgery",
+  "cytoreductive-surgery",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {

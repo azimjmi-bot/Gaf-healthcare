@@ -110,6 +110,9 @@ export function mapSurgicalProcedures(texts: string[], fallback = true) {
   if (/whipple|pancreaticoduoden/i.test(blob) && !found.includes("Pancreatic Surgery")) {
     found.push("Pancreatic Surgery");
   }
+  if (/hipec|cytoreduct|crs\s*\+/i.test(blob) && !found.includes("Cytoreductive Surgery")) {
+    found.push("Cytoreductive Surgery");
+  }
   if (found.length > 0 || !fallback) return found;
   const hint = texts.join(" ").toLowerCase();
   if (hint.includes("breast")) {
@@ -731,6 +734,7 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
     if (/whipple|pancreaticoduoden|distal pancrea|pancreatect|pancreatic cancer surg/i.test(blob)) {
       extras.push("Pancreatic Surgery");
     }
+    if (/hipec|cytoreduct|crs\s*\+/i.test(blob)) extras.push("Cytoreductive Surgery");
     return extras.length ? [...found, ...extras.filter((name) => !found.includes(name))] : found;
   }
   if (specialty === "Urology") return mapUrologyProcedures(texts);

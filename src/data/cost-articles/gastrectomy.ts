@@ -569,6 +569,7 @@ export const gastrectomy: CostArticle = {
 
   relatedProcedures: [
     "Esophagectomy",
+    "Cytoreductive Surgery",
     "Whipple Procedure",
     "Chemotherapy",
     "Neoadjuvant Chemotherapy",
@@ -582,6 +583,7 @@ export const gastrectomy: CostArticle = {
     { href: "/costs?specialty=Gastroenterology", label: "gastroenterology costs in India" },
     { href: "/costs?specialty=Surgical+Gastroenterology", label: "surgical gastroenterology costs in India" },
     { href: "/costs/esophagectomy", label: "esophagectomy cost in India" },
+    { href: "/costs/cytoreductive-surgery", label: "cytoreductive surgery cost in India" },
     { href: "/doctors?destination=India&procedure=Gastrectomy", label: "gastrectomy surgeons in India" },
     { href: "/hospitals?destination=India&procedure=Gastrectomy", label: "gastrectomy hospitals in India" },
   ],
