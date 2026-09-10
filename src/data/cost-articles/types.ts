@@ -65,6 +65,8 @@ export type CostArticle = {
   briefName?: string;
   /** Theatre time as already stated in the article, e.g. "approximately 1–2 hours". */
   duration?: string;
+  /** Short recovery glance for the Quick Answer metrics. Do not promise a date. */
+  recoveryGlance?: string;
   slug: string;
   lastUpdated: string;
   seoTitle: string;

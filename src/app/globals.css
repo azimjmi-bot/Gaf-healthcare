@@ -2310,7 +2310,7 @@ img.dhero__art {
 }
 
 @media (min-width: 640px) {
-  .cost-metrics { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .cost-metrics { grid-template-columns: repeat(auto-fit, minmax(10.5rem, 1fr)); }
 }
 
 .cost-metric {

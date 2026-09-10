@@ -284,7 +284,7 @@ export function CostArticleView({
           <div className="cost-scroll mt-2">
             <table>
               <caption className="sr-only">
-                Relative complexity and catalog planning range by mastectomy approach
+                Relative complexity and catalog planning range by {brief.toLowerCase()} approach
               </caption>
               <thead>
                 <tr>

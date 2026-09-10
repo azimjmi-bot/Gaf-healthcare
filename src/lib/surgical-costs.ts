@@ -165,7 +165,7 @@ export const SURGICAL_SUMMARIES: Record<string, string> = {
   "Sentinel Lymph Node Biopsy":
     "Sentinel node biopsy maps and removes the first draining nodes for staging when the basin looks clinically clear. It is not a smaller dissection, and it is not used for every patient.",
   Esophagectomy:
-    "Oesophageal resection is a high-acuity operation. GAF Healthcare only matches centres that already run this list weekly, with ICU that has seen anastomotic leaks.",
+    "Esophagectomy removes part or most of the oesophagus — usually for selected oesophageal or junction cancers — then reconstructs a food passage. GAF Healthcare matches centres that already run this list, with ICU that has seen anastomotic leaks.",
   Gastrectomy:
     "Partial or total gastrectomy for gastric cancer. Extent of lymph-node dissection is set after staging, not after you have already booked the ward.",
   Colectomy:

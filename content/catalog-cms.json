@@ -41,6 +41,22 @@
       "notes": "Indicative planning ranges, not quotations. The named reconstructive surgeon confirms implant versus autologous technique, immediate versus delayed timing, implant type if used, and an itemized hospital price after records review. Mastectomy, radiotherapy and second-stage exchange are quoted separately unless named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
       "replaceGuide": false
     },
+    "esophagectomy": {
+      "summary": "Esophagectomy removes part or most of the oesophagus — usually for selected oesophageal or junction cancers — then reconstructs a food passage. GAF Healthcare matches centres that already run this list, with ICU that has seen anastomotic leaks.",
+      "usRange": "$50,000–$120,000",
+      "partnerRange": "$12,000–$28,000",
+      "stay": "10–18 nights",
+      "includes": [
+        "Surgical oncology consultation and records review",
+        "Named surgeon on camera before travel",
+        "Theatre, anaesthesia and inpatient stay as quoted",
+        "ICU nights named in the estimate",
+        "Histopathology of the specimen",
+        "Discharge summary to your home oncologist"
+      ],
+      "notes": "Indicative planning ranges, not quotations. The named surgical oncologist confirms approach (Ivor Lewis, McKeown, transhiatal, MIE or robotic-assisted where offered), reconstruction, named ICU nights and an itemized hospital price after records review. PET-CT, neoadjuvant chemotherapy, radiotherapy, extra leak days and feeding support after discharge are quoted separately unless named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
+      "replaceGuide": false
+    },
     "sentinel-lymph-node-biopsy": {
       "summary": "Sentinel node biopsy maps and removes the first draining nodes for staging when the basin looks clinically clear. It is not a smaller dissection, and it is not used for every patient.",
       "usRange": "$8,000–$18,000",

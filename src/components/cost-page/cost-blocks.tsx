@@ -75,6 +75,13 @@ export function QuickAnswer({
           <dt>Procedure time</dt>
           <dd>{article.duration ?? "Set after review"}</dd>
         </div>
+        {article.recoveryGlance ? (
+          <div className="cost-metric">
+            <ClipboardList className="size-4" />
+            <dt>Recovery</dt>
+            <dd>{article.recoveryGlance}</dd>
+          </div>
+        ) : null}
       </dl>
       <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
         <strong className="text-foreground">Major cost factors:</strong> {factors || "hospital, surgeon, complexity and stay"}.
@@ -192,7 +199,9 @@ export function InternationalComparison({
                 </th>
                 <td>
                   {row.range}
-                  {row.modelled ? <span className="mt-0.5 block text-xs">Modelled estimate*</span> : null}
+                      {row.modelled ? (
+                        <span className="mt-0.5 block text-xs">Indicative planning estimate*</span>
+                      ) : null}
                 </td>
                 <td>{row.relative}</td>
                 <td>{row.positioning}</td>

@@ -12,6 +12,7 @@ import { emptyParagraph, type ArticleBlock } from "@/lib/cms/types";
 const LONGFORM_COST_SLUGS = new Set([
   "breast-conserving-surgery-lumpectomy",
   "breast-reconstruction",
+  "esophagectomy",
   "mastectomy",
   "nipple-sparing-mastectomy",
   "oncoplastic-breast-surgery",
