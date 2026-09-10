@@ -371,11 +371,18 @@ export function PatientJourney({ steps }: { steps: { label: string; detail: stri
   );
 }
 
-export function CostPageJump({ showApproach = false }: { showApproach?: boolean }) {
+export function CostPageJump({
+  showApproach = false,
+  showAccess = false,
+}: {
+  showApproach?: boolean;
+  showAccess?: boolean;
+}) {
   const items: [string, string][] = [
     ["#cost-in-india", "Cost"],
     ["#whats-included", "Inclusions"],
     ...(showApproach ? [["#approach", "Approaches"] as [string, string]] : []),
+    ...(showAccess ? [["#access", "Access"] as [string, string]] : []),
     ["#cost-by-country", "Destinations"],
     ["#hospitals", "Hospitals"],
     ["#doctors", "Doctors"],

@@ -18,6 +18,7 @@ const LONGFORM_COST_SLUGS = new Set([
   "mastectomy",
   "nipple-sparing-mastectomy",
   "oncoplastic-breast-surgery",
+  "rectal-cancer-surgery",
   "sentinel-lymph-node-biopsy",
 ]);
 

@@ -125,8 +125,8 @@ export function CostArticleView({
   const cityPage = cityEditorial(article, city)?.page;
   const allDoctors = doctorsPath({ destination: "India", city, procedure: treatment.name });
   const allHospitals = hospitalsPath({ destination: "India", city, procedure: treatment.name });
-  const doctorsHeading = doctorsToConsiderHeading(brief, city);
-  const hospitalsHeading = hospitalsToConsiderHeading(brief, city);
+  const doctorsHeading = doctorsToConsiderHeading(brief, city, article.cityDoctorHeading);
+  const hospitalsHeading = hospitalsToConsiderHeading(brief, city, article.cityHospitalHeading);
   const consultHref = `/consult?treatment=${treatment.slug}`;
   const faqs = cityPage
     ? [...cityPage.faqs, ...article.faqs.filter((item) => !cityPage.faqs.some((faq) => faq.q === item.q))]
@@ -135,7 +135,7 @@ export function CostArticleView({
 
   return (
     <article className="w-full pb-4 [&_a]:underline-offset-4 [&_a:hover]:underline">
-      <CostPageJump showApproach={Boolean(approach)} />
+      <CostPageJump showApproach={Boolean(approach)} showAccess={Boolean(article.accessComparison)} />
       <p className="mt-5 text-xs text-muted-foreground">
         Last updated: {formatDate(article.lastUpdated)} · Content curated by{" "}
         <a href="#attribution">Dr. Shabnam Choudhary</a> · Medically reviewed by{" "}
@@ -153,6 +153,14 @@ export function CostArticleView({
       <div className="mt-8">
         <WhyGaf />
       </div>
+
+      {article.introduction && article.introduction.length > 0 && !cityPage ? (
+        <section className="mt-10">
+          {article.introduction.map((para) => (
+            <P key={para.slice(0, 48)}>{para}</P>
+          ))}
+        </section>
+      ) : null}
 
       {cityPage ? (
         <section className="mt-10 rounded-2xl border border-border bg-secondary/30 p-5 md:p-7">
@@ -321,6 +329,59 @@ export function CostArticleView({
           </p>
         </>
       ) : null}
+
+      {article.accessComparison ? (
+        <>
+          <H2 id="access">{article.accessComparison.heading ?? "Open vs laparoscopic vs robotic surgery"}</H2>
+          {article.accessComparison.intro.map((para) => (
+            <P key={para.slice(0, 40)}>{para}</P>
+          ))}
+          <p className="cost-scroll-hint">Swipe to compare surgical access →</p>
+          <div className="cost-scroll mt-2">
+            <table>
+              <caption className="sr-only">
+                Open, laparoscopic and robotic access compared for {brief.toLowerCase()}
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Approach</th>
+                  <th scope="col">Surgical access</th>
+                  <th scope="col">General approach</th>
+                  <th scope="col">Hospital-resource differences</th>
+                  <th scope="col">Recovery considerations</th>
+                  <th scope="col">Cost considerations</th>
+                </tr>
+              </thead>
+              <tbody>
+                {article.accessComparison.rows.map((row) => (
+                  <tr key={row.name}>
+                    <th scope="row">{row.name}</th>
+                    <td>{row.access}</td>
+                    <td>{row.method}</td>
+                    <td className="text-muted-foreground">{row.resources}</td>
+                    <td className="text-muted-foreground">{row.recovery}</td>
+                    <td className="text-muted-foreground">{row.cost}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+            Suitability depends on the patient, the tumour, anatomy, surgeon expertise and clinical
+            circumstances. None of these approaches is universally better, and this table is not a price
+            list.
+          </p>
+        </>
+      ) : null}
+
+      {article.topicSections?.map((section) => (
+        <section key={section.id}>
+          <H2 id={section.id}>{section.heading}</H2>
+          {section.paragraphs.map((para) => (
+            <P key={para.slice(0, 40)}>{para}</P>
+          ))}
+        </section>
+      ))}
 
       <H2 id="cost-by-country">{article.procedure} cost: India vs other medical tourism destinations</H2>
       {article.destinationIntro ? (

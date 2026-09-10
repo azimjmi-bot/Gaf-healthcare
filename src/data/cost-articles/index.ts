@@ -6,6 +6,7 @@ import { gastrectomy } from "./gastrectomy";
 import { mastectomy } from "./mastectomy";
 import { nippleSparingMastectomy } from "./nipple-sparing-mastectomy";
 import { oncoplasticBreastSurgery } from "./oncoplastic-breast-surgery";
+import { rectalCancerSurgery } from "./rectal-cancer-surgery";
 import { sentinelLymphNodeBiopsy } from "./sentinel-lymph-node-biopsy";
 import type { CostArticle } from "./types";
 
@@ -25,6 +26,7 @@ export const costArticles: Record<string, CostArticle> = {
   [mastectomy.slug]: mastectomy,
   [nippleSparingMastectomy.slug]: nippleSparingMastectomy,
   [oncoplasticBreastSurgery.slug]: oncoplasticBreastSurgery,
+  [rectalCancerSurgery.slug]: rectalCancerSurgery,
   [sentinelLymphNodeBiopsy.slug]: sentinelLymphNodeBiopsy,
 };
 

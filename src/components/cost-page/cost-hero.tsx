@@ -10,6 +10,7 @@ export function CostHero({
   place = "India",
   heading,
   lede,
+  subtitle,
   consultHref,
   hospitalsHref,
   doctorsHref,
@@ -19,7 +20,9 @@ export function CostHero({
   treatment: Treatment;
   place?: string;
   heading: string;
-  lede: string;
+  lede?: string;
+  /** Short procedure-specific line immediately under the H1. */
+  subtitle?: string;
   consultHref: string;
   hospitalsHref: string;
   doctorsHref?: string;
@@ -45,7 +48,9 @@ export function CostHero({
                 </>
               ) : null}
             </nav>
+            <p className="cost-hero__eyebrow">India planning ranges</p>
             <h1 className="cost-hero__title">{heading}</h1>
+            {subtitle ? <p className="cost-hero__subtitle">{subtitle}</p> : null}
           </div>
           <aside className="cost-price">
             <p className="cost-price__kicker">{place}</p>
@@ -57,7 +62,7 @@ export function CostHero({
             </p>
           </aside>
           <div className="cost-hero__meta">
-            <p className="cost-hero__lede">{lede}</p>
+            {lede && !subtitle ? <p className="cost-hero__lede">{lede}</p> : null}
             <p className="cost-hero__facts">
               <span>
                 <BedDouble className="size-4" />

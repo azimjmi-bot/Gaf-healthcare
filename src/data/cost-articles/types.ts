@@ -13,6 +13,8 @@ export type CityPageCopy = {
   seoTitle: string;
   seoDescription: string;
   heading: string;
+  /** Short hero line under the H1. Keep to ~2–6 lines. */
+  subtitle?: string;
   intro: string[];
   answer: string[];
   costExplanation: string[];
@@ -90,6 +92,10 @@ export type CostArticle = {
   destinationNote?: string;
   /** Procedure-specific hero lede. Replaces generic specialty catalog copy. */
   heroLede?: string;
+  /** Short line under the H1 (about 2–6 lines). When set, the long lede is not shown in the hero. */
+  heroSubtitle?: string;
+  /** 180–250 word introduction, rendered after Quick Answer. */
+  introduction?: string[];
   overviewHeading?: string;
   /** Overrides “Who may be a candidate…?” — e.g. “When is gastrectomy performed?” */
   whoHeading?: string;
@@ -104,6 +110,24 @@ export type CostArticle = {
       procedure?: string;
     }[];
   };
+  /** Open vs laparoscopic vs robotic (or similar) — qualitative only, no invented prices. */
+  accessComparison?: {
+    heading?: string;
+    intro: string[];
+    rows: {
+      name: string;
+      access: string;
+      method: string;
+      resources: string;
+      recovery: string;
+      cost: string;
+    }[];
+  };
+  /** Extra question-headed clinical blocks (LAR, APR, TME, stoma, neoadjuvant…). */
+  topicSections?: { id: string; heading: string; paragraphs: string[] }[];
+  /** City-page heading template, e.g. "Rectal cancer surgeons in [CITY]". */
+  cityDoctorHeading?: string;
+  cityHospitalHeading?: string;
   overview: {
     what: string[];
     who: string[];

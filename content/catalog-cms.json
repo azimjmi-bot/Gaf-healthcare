@@ -116,6 +116,21 @@
       ],
       "notes": "Indicative planning ranges, not quotations. The named surgical oncologist confirms oncoplastic technique, axillary plan, contralateral surgery if discussed, and an itemized hospital price after records review. Radiotherapy after conservation is quoted separately. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
       "replaceGuide": false
+    },
+    "rectal-cancer-surgery": {
+      "summary": "Rectal cancer surgery removes the tumour with a margin of rectum and, where indicated, the mesorectum (TME). Reconstruction, a temporary or permanent stoma, and whether chemotherapy or radiation comes first follow staging — not a brochure sequence.",
+      "usRange": "$35,000–$85,000",
+      "partnerRange": "$8,000–$20,000",
+      "stay": "6–12 nights",
+      "includes": [
+        "Surgical oncology consultation and records review",
+        "Named surgeon on camera before travel",
+        "Theatre, anaesthesia and inpatient stay as quoted",
+        "Histopathology of the specimen",
+        "Discharge summary to your home oncologist"
+      ],
+      "notes": "Indicative planning ranges, not quotations. The named surgical oncologist confirms operation type (LAR, APR, local excision), TME plane, reconstruction or stoma, open versus laparoscopic or robotic access where offered, named high-dependency nights and an itemized hospital price after records review. Colonoscopy, MRI pelvis, PET-CT, neoadjuvant chemoradiation, extra leak days and stoma supplies after discharge are quoted separately unless named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
+      "replaceGuide": false
     }
   },
   "treatmentsAdded": [],

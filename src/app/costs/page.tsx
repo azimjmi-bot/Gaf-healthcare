@@ -146,7 +146,7 @@ export default async function CostsPage({
         {data && data.faculty.length > 0 ? (
           <JsonLd
             data={doctorItemListJsonLd(data.faculty, {
-              name: doctorsToConsiderHeading(brief, query.city),
+              name: doctorsToConsiderHeading(brief, query.city, sheetArticle.cityDoctorHeading),
               path: pagePath,
             })}
           />
@@ -154,7 +154,7 @@ export default async function CostsPage({
         {data && data.campuses.length > 0 ? (
           <JsonLd
             data={hospitalItemListJsonLd(data.campuses.slice(0, 8), {
-              name: hospitalsToConsiderHeading(brief, query.city),
+              name: hospitalsToConsiderHeading(brief, query.city, sheetArticle.cityHospitalHeading),
               path: pagePath,
             })}
           />
@@ -163,7 +163,7 @@ export default async function CostsPage({
           treatment={sheet}
           city={query.city}
           heading={cityPage?.heading ?? sheetArticle.heading}
-          lede={cityPage?.intro[0] ?? sheetArticle.heroLede ?? sheet.summary}
+          lede={cityPage?.subtitle ?? cityPage?.intro[0] ?? sheetArticle.heroSubtitle ?? sheetArticle.heroLede ?? sheet.summary}
           filters={
             <div className="pb-8">
               <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>

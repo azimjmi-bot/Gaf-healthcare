@@ -27,7 +27,7 @@ const SURGICAL_RULES: { test: RegExp; name: (typeof SURGICAL_ONCOLOGY_PROCEDURES
   { test: /sentinel/i, name: "Sentinel Lymph Node Biopsy" },
   { test: /esophagect|oesophagect|esophageal cancer|oesophageal cancer/i, name: "Esophagectomy" },
   { test: /gastric cancer|stomach cancer/i, name: "Gastrectomy" },
-  { test: /rectal/i, name: "Rectal Cancer Surgery" },
+  { test: /rectal cancer surg|low anterior|\blar\b|abdominoperineal|\bapr\b|total mesorectal|\btme\b|colorectal cancer surg/i, name: "Rectal Cancer Surgery" },
   { test: /colectomy|hemicolectomy|colon cancer|colorectal cancer/i, name: "Colectomy" },
   { test: /hepatec|liver resect/i, name: "Liver Resection (Hepatectomy)" },
   { test: /whipple|pancreaticoduoden/i, name: "Whipple Procedure" },
@@ -713,11 +713,17 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Surgical Gastroenterology") {
     const found = mapSurgicalGastroenterologyProcedures(texts);
     const blob = texts.join(" ");
+    const extras: string[] = [];
     const colorectal =
       /colectomy|hemicolectomy|colorectal cancer surg|colorectal surgeon/i.test(blob) ||
       (/colorectal resect/i.test(blob) && /colorectal cancer/i.test(blob));
-    if (colorectal) return [...found, "Colectomy"];
-    return found;
+    const rectal =
+      /rectal cancer surg|low anterior|\blar\b|abdominoperineal|\bapr\b|total mesorectal|\btme\b|colorectal cancer surg|colorectal surgeon/i.test(
+        blob,
+      ) || (/colorectal resect/i.test(blob) && /colorectal cancer/i.test(blob));
+    if (colorectal) extras.push("Colectomy");
+    if (rectal) extras.push("Rectal Cancer Surgery");
+    return extras.length ? [...found, ...extras] : found;
   }
   if (specialty === "Urology") return mapUrologyProcedures(texts);
   if (specialty === "Spine Surgery") return mapSpineSurgeryProcedures(texts);

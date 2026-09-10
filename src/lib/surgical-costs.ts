@@ -171,7 +171,7 @@ export const SURGICAL_SUMMARIES: Record<string, string> = {
   Colectomy:
     "Colectomy removes part or all of the colon — usually for selected colon or colorectal cancers, and sometimes for other bowel disease where resection is necessary — then reconnects remaining bowel or, in selected cases, forms a stoma. Extent follows disease location, not a brochure upgrade.",
   "Rectal Cancer Surgery":
-    "Rectal resection may include TME, diversion, and a later reversal. Neoadjuvant radiation, when indicated, is sequenced with the named teams before travel.",
+    "Rectal cancer surgery removes the tumour with a margin of rectum and, where indicated, the mesorectum (TME). Reconstruction, a temporary or permanent stoma, and whether chemotherapy or radiation comes first follow staging — not a brochure sequence.",
   "Liver Resection (Hepatectomy)":
     "Hepatectomy for primary or metastatic disease. Future-liver-remnant volume and anaesthesia ICU are checked before a date is offered.",
   "Whipple Procedure":

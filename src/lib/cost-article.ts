@@ -284,11 +284,17 @@ export function cityEditorial(article: CostArticle, city?: string) {
   return article.cities.find((row) => cityName(row.citySlug) === city);
 }
 
-export function doctorsToConsiderHeading(brief: string, city?: string) {
+export function doctorsToConsiderHeading(brief: string, city?: string, template?: string) {
+  if (city && template) {
+    return template.replaceAll("[CITY]", city).replaceAll("[PROCEDURE]", brief);
+  }
   return `Doctors to consider for ${brief} in ${carePlace(city)}`;
 }
 
-export function hospitalsToConsiderHeading(brief: string, city?: string) {
+export function hospitalsToConsiderHeading(brief: string, city?: string, template?: string) {
+  if (city && template) {
+    return template.replaceAll("[CITY]", city).replaceAll("[PROCEDURE]", brief);
+  }
   return `Hospitals to consider for ${brief} in ${carePlace(city)}`;
 }
 

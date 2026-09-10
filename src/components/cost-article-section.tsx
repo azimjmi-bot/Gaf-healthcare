@@ -79,6 +79,8 @@ export function CostArticleSection({
   const consultHref = `/consult?treatment=${treatment.slug}`;
   const cityPage = cityEditorial(article, city)?.page;
   const title = cityPage?.heading ?? heading ?? article.heading;
+  const subtitle = cityPage?.subtitle ?? article.heroSubtitle;
+  const longLede = lede ?? article.heroLede ?? treatment.summary;
 
   return (
     <>
@@ -87,7 +89,8 @@ export function CostArticleSection({
         treatment={treatment}
         place={place}
         heading={title}
-        lede={lede ?? article.heroLede ?? treatment.summary}
+        subtitle={subtitle}
+        lede={subtitle ? undefined : longLede}
         consultHref={consultHref}
         hospitalsHref="#hospitals"
         doctorsHref="#doctors"
@@ -156,6 +159,13 @@ export function CostArticleSection({
                 <li>
                   <a href="#approach" className="underline-offset-4 hover:underline">
                     Cost by surgical approach
+                  </a>
+                </li>
+              ) : null}
+              {article.accessComparison ? (
+                <li>
+                  <a href="#access" className="underline-offset-4 hover:underline">
+                    Open vs laparoscopic vs robotic
                   </a>
                 </li>
               ) : null}
