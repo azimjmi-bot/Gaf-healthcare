@@ -28,6 +28,7 @@ import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import {
   doctorsToConsiderHeading,
   hospitalsToConsiderHeading,
+  resolveApproachComparison,
   type CostCityRow,
   type CostDestinationRow,
   cityEditorial,
@@ -129,10 +130,11 @@ export function CostArticleView({
   const faqs = cityPage
     ? [...cityPage.faqs, ...article.faqs.filter((item) => !cityPage.faqs.some((faq) => faq.q === item.q))]
     : article.faqs;
+  const approach = resolveApproachComparison(article, treatment);
 
   return (
     <article className="w-full pb-4 [&_a]:underline-offset-4 [&_a:hover]:underline">
-      <CostPageJump />
+      <CostPageJump showApproach={Boolean(approach)} />
       <p className="mt-5 text-xs text-muted-foreground">
         Last updated: {formatDate(article.lastUpdated)} · Content curated by{" "}
         <a href="#attribution">Dr. Shabnam Choudhary</a> · Medically reviewed by{" "}
@@ -188,7 +190,7 @@ export function CostArticleView({
         </section>
       ) : null}
 
-      <H2 id="overview">Procedure overview</H2>
+      <H2 id="overview">{article.overviewHeading ?? "Procedure overview"}</H2>
       {article.overview.what.map((para) => (
         <P key={para.slice(0, 40)}>{para}</P>
       ))}
@@ -265,6 +267,54 @@ export function CostArticleView({
         honest estimate is written after a records review rather than before it.
       </P>
       <PriceFactors article={article} />
+
+      {approach ? (
+        <>
+          <H2 id="approach">{approach.heading}</H2>
+          {approach.intro.map((para) => (
+            <P key={para.slice(0, 40)}>{para}</P>
+          ))}
+          <p className="cost-scroll-hint">Swipe to compare surgical approaches →</p>
+          <div className="cost-scroll mt-2">
+            <table>
+              <caption className="sr-only">
+                Relative complexity and catalog planning range by mastectomy approach
+              </caption>
+              <thead>
+                <tr>
+                  <th scope="col">Approach</th>
+                  <th scope="col">Relative complexity</th>
+                  <th scope="col">GAF planning range</th>
+                  <th scope="col">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                {approach.rows.map((row) => (
+                  <tr key={row.name} className={row.isCurrent ? "is-india" : undefined}>
+                    <th scope="row">
+                      {row.href ? <Link href={row.href}>{row.name}</Link> : row.name}
+                    </th>
+                    <td>{row.relative}</td>
+                    <td>
+                      {row.range ?? "No separate GAF sheet"}
+                      {row.range ? (
+                        <span className="mt-0.5 block text-xs">Catalog planning range</span>
+                      ) : (
+                        <span className="mt-0.5 block text-xs">Relative complexity only</span>
+                      )}
+                    </td>
+                    <td className="text-muted-foreground">{row.detail}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
+            Planning ranges appear only where GAF Healthcare already publishes a cost sheet for that
+            operation. Other rows describe relative surgical complexity and should not be read as prices.
+          </p>
+        </>
+      ) : null}
 
       <H2 id="cost-by-country">{article.procedure} cost: India vs other medical tourism destinations</H2>
       {article.destinationIntro ? (

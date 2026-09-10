@@ -87,7 +87,7 @@ export function CostArticleSection({
         treatment={treatment}
         place={place}
         heading={title}
-        lede={lede ?? treatment.summary}
+        lede={lede ?? article.heroLede ?? treatment.summary}
         consultHref={consultHref}
         hospitalsHref="#hospitals"
         doctorsHref="#doctors"
@@ -135,7 +135,7 @@ export function CostArticleSection({
             </ul>
             <p className="mt-5">
               <Link href={consultHref} className="cost-btn cost-btn--primary w-full">
-                Get My Exact Treatment Cost
+                Get a Personalized Cost Estimate
               </Link>
             </p>
           </div>
@@ -152,6 +152,13 @@ export function CostArticleSection({
                   What is included
                 </a>
               </li>
+              {article.approachComparison ? (
+                <li>
+                  <a href="#approach" className="underline-offset-4 hover:underline">
+                    Cost by surgical approach
+                  </a>
+                </li>
+              ) : null}
               <li>
                 <a href="#cost-by-country" className="underline-offset-4 hover:underline">
                   India vs other countries

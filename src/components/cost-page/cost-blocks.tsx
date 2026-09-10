@@ -80,6 +80,16 @@ export function QuickAnswer({
         <strong className="text-foreground">Major cost factors:</strong> {factors || "hospital, surgeon, complexity and stay"}.
         International patients should also budget for accommodation, airport transfers, a medical visa, medicines and follow-up.
       </p>
+      {article.exclusions.length > 0 ? (
+        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+          <strong className="text-foreground">Often quoted separately:</strong>{" "}
+          {article.exclusions
+            .slice(0, 5)
+            .map((item) => item.label.toLowerCase())
+            .join("; ")}
+          .
+        </p>
+      ) : null}
       {consultHref ? (
         <p className="mt-5">
           <Link href={consultHref} className="cost-btn cost-btn--primary">
@@ -93,21 +103,31 @@ export function QuickAnswer({
 
 export function CostBreakdown({ article }: { article: CostArticle }) {
   return (
-    <div className="cost-include mt-6">
-      {article.inclusions.map((item) => (
-        <div key={item.label} className="cost-include__card cost-include__card--in">
-          <p className="cost-include__tag">Included</p>
-          <p className="font-medium">{item.label}</p>
-          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
+    <div className="mt-6 space-y-8">
+      <div>
+        <h3 className="font-heading text-xl md:text-2xl">Usually included</h3>
+        <div className="cost-include mt-4">
+          {article.inclusions.map((item) => (
+            <div key={item.label} className="cost-include__card cost-include__card--in">
+              <p className="cost-include__tag">Usually included</p>
+              <p className="font-medium">{item.label}</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
+            </div>
+          ))}
         </div>
-      ))}
-      {article.exclusions.map((item) => (
-        <div key={item.label} className="cost-include__card cost-include__card--extra">
-          <p className="cost-include__tag">May be separate</p>
-          <p className="font-medium">{item.label}</p>
-          <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
+      </div>
+      <div>
+        <h3 className="font-heading text-xl md:text-2xl">May be charged separately</h3>
+        <div className="cost-include mt-4">
+          {article.exclusions.map((item) => (
+            <div key={item.label} className="cost-include__card cost-include__card--extra">
+              <p className="cost-include__tag">May be separate</p>
+              <p className="font-medium">{item.label}</p>
+              <p className="mt-1 text-sm leading-relaxed text-muted-foreground">{item.detail}</p>
+            </div>
+          ))}
         </div>
-      ))}
+      </div>
     </div>
   );
 }
@@ -342,16 +362,17 @@ export function PatientJourney({ steps }: { steps: { label: string; detail: stri
   );
 }
 
-export function CostPageJump() {
-  const items = [
+export function CostPageJump({ showApproach = false }: { showApproach?: boolean }) {
+  const items: [string, string][] = [
     ["#cost-in-india", "Cost"],
     ["#whats-included", "Inclusions"],
+    ...(showApproach ? [["#approach", "Approaches"] as [string, string]] : []),
     ["#cost-by-country", "Destinations"],
     ["#hospitals", "Hospitals"],
     ["#doctors", "Doctors"],
     ["#cost-by-city", "Cities"],
     ["#total-pathway", "Trip budget"],
-  ] as const;
+  ];
   return (
     <nav aria-label="On this page" className="cost-jump">
       {items.map(([href, label]) => (

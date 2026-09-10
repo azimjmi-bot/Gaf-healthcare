@@ -125,7 +125,7 @@ export default async function CostsPage({
             lastReviewed: sheetArticle.lastUpdated,
             procedureName: sheet.name,
             specialty: sheet.category,
-            about: sheet.summary,
+            about: sheetArticle.heroLede || sheet.summary,
           })}
         />
         <JsonLd
@@ -157,7 +157,7 @@ export default async function CostsPage({
           treatment={sheet}
           city={query.city}
           heading={cityPage?.heading ?? sheetArticle.heading}
-          lede={sheet.summary}
+          lede={cityPage?.intro[0] ?? sheetArticle.heroLede ?? sheet.summary}
           filters={
             <div className="pb-8">
               <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>

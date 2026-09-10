@@ -1,10 +1,10 @@
 import "server-only";
 import type { CityEditorial, CostArticle, DestinationRow } from "@/data/cost-articles/types";
 import { doctorsPath, hospitalsPath, costsFilterPath } from "@/lib/catalog-links";
-import { doctorsForTreatment, getHospital } from "@/lib/data";
+import { doctorsForTreatment, getHospital, getTreatment } from "@/lib/data";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
-import { CITIES, COUNTRIES } from "@/lib/taxonomy";
+import { CITIES, COUNTRIES, toSlug } from "@/lib/taxonomy";
 import type { Treatment } from "@/lib/treatments";
 
 const DESTINATION_ALIASES: Record<string, string> = {
@@ -95,6 +95,47 @@ function fillDeep<T>(value: T, tokens: Record<string, string>): T {
 
 export function interpolateCostArticle(article: CostArticle, treatment: Treatment): CostArticle {
   return fillDeep(article, costTokens(treatment));
+}
+
+export type ApproachComparisonResolved = {
+  heading: string;
+  intro: string[];
+  rows: {
+    name: string;
+    relative: string;
+    detail: string;
+    range?: string;
+    href?: string;
+    isCurrent: boolean;
+  }[];
+};
+
+/**
+ * Attach catalog planning ranges and cost-sheet links to editorial approach rows.
+ * Rows without a matching treatment keep relative complexity only — never a made-up price.
+ */
+export function resolveApproachComparison(
+  article: CostArticle,
+  treatment: Treatment,
+): ApproachComparisonResolved | undefined {
+  const block = article.approachComparison;
+  if (!block) return undefined;
+
+  return {
+    heading: block.heading || "Cost by surgical approach",
+    intro: block.intro,
+    rows: block.rows.map((row) => {
+      const sheet = row.procedure ? getTreatment(toSlug(row.procedure)) : undefined;
+      return {
+        name: row.name,
+        relative: row.relative,
+        detail: row.detail,
+        range: sheet?.partnerRange,
+        href: sheet ? `/costs/${sheet.slug}` : undefined,
+        isCurrent: Boolean(sheet && sheet.slug === treatment.slug),
+      };
+    }),
+  };
 }
 
 export type CostCityRow = {

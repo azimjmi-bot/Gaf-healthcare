@@ -86,6 +86,20 @@ export type CostArticle = {
   destinationIntro?: string[];
   cityIntro?: string[];
   destinationNote?: string;
+  /** Procedure-specific hero lede. Replaces generic specialty catalog copy. */
+  heroLede?: string;
+  overviewHeading?: string;
+  approachComparison?: {
+    heading?: string;
+    intro: string[];
+    rows: {
+      name: string;
+      relative: string;
+      detail: string;
+      /** Catalog procedure name when a cost sheet exists. */
+      procedure?: string;
+    }[];
+  };
   overview: {
     what: string[];
     who: string[];

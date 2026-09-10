@@ -77,7 +77,7 @@ export default async function CostDetailPage({
             lastReviewed: article.lastUpdated,
             procedureName: t.name,
             specialty: t.category,
-            about: t.summary,
+            about: article.heroLede || t.summary,
           })}
         />
         <JsonLd
@@ -105,7 +105,7 @@ export default async function CostDetailPage({
           />
         ) : null}
 
-        <CostArticleSection treatment={t} heading={article.heading} lede={t.summary} />
+        <CostArticleSection treatment={t} heading={article.heading} lede={article.heroLede ?? t.summary} />
       </>
     );
   }

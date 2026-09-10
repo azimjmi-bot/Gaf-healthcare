@@ -327,7 +327,7 @@ export function medicalWebPageJsonLd(opts: {
   const url = absoluteUrl(opts.path);
   return {
     "@context": "https://schema.org",
-    "@type": "MedicalWebPage",
+    "@type": ["MedicalWebPage", "WebPage"],
     name: opts.name,
     description: clip(opts.description),
     url,
