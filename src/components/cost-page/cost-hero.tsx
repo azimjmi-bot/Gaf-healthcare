@@ -25,7 +25,7 @@ export function CostHero({
 }) {
   return (
     <section className="cost-hero">
-      <div className="mx-auto max-w-7xl px-5 md:px-8">
+      <div className="mx-auto max-w-7xl px-4 sm:px-5 md:px-8">
         <div className="cost-hero__grid">
           <div className="cost-hero__copy">
             <nav aria-label="Breadcrumb" className="cost-crumbs">
