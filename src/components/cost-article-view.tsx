@@ -416,16 +416,23 @@ export function CostArticleView({
       <Bullets items={article.questionsToAsk} />
 
       <H2 id="faq">Frequently asked questions</H2>
-      <Accordion type="single" collapsible className="mt-6">
-        {article.faqs.map((item, i) => (
-          <AccordionItem key={item.q} value={`faq-${i}`}>
-            <AccordionTrigger className="text-left text-base">{item.q}</AccordionTrigger>
-            <AccordionContent className="text-[1.05rem] leading-relaxed text-muted-foreground">
-              {item.a}
-            </AccordionContent>
-          </AccordionItem>
+      <div className="mt-6 grid gap-4">
+        {article.faqs.map((item) => (
+          <details key={item.q} className="group rounded-2xl border border-border bg-card px-5 py-4">
+            <summary className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden">
+              <h3 className="text-base font-medium leading-snug">{item.q}</h3>
+              <span
+                aria-hidden
+                className="grid size-7 shrink-0 place-items-center rounded-full border border-border text-base leading-none"
+              >
+                <span className="group-open:hidden">+</span>
+                <span className="hidden group-open:inline">−</span>
+              </span>
+            </summary>
+            <p className="mt-3 text-[1.05rem] leading-relaxed text-muted-foreground">{item.a}</p>
+          </details>
         ))}
-      </Accordion>
+      </div>
       <CostAttribution />
       {related.length > 0 ? (
         <>
