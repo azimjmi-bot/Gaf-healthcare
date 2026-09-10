@@ -24,6 +24,7 @@ const LONGFORM_COST_SLUGS = new Set([
   "whipple-procedure",
   "pancreatic-surgery",
   "cytoreductive-surgery",
+  "cytoreductive-surgery-with-hipec",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {

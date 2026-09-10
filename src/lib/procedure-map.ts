@@ -734,6 +734,7 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
     if (/whipple|pancreaticoduoden|distal pancrea|pancreatect|pancreatic cancer surg/i.test(blob)) {
       extras.push("Pancreatic Surgery");
     }
+    if (/hipec|crs\s*\+/i.test(blob)) extras.push("Cytoreductive Surgery with HIPEC");
     if (/hipec|cytoreduct|crs\s*\+/i.test(blob)) extras.push("Cytoreductive Surgery");
     return extras.length ? [...found, ...extras.filter((name) => !found.includes(name))] : found;
   }

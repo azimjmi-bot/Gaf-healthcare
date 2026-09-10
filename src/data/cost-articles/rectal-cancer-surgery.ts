@@ -703,6 +703,7 @@ export const rectalCancerSurgery: CostArticle = {
   relatedProcedures: [
     "Colectomy",
     "Cytoreductive Surgery",
+    "Cytoreductive Surgery with HIPEC",
     "Low Anterior Resection (LAR)",
     "Abdominoperineal Resection (APR)",
     "Total Mesorectal Excision (TME)",
@@ -718,6 +719,7 @@ export const rectalCancerSurgery: CostArticle = {
     { href: "/costs?specialty=Surgical+Gastroenterology", label: "surgical gastroenterology costs in India" },
     { href: "/costs/colectomy", label: "colectomy cost in India" },
     { href: "/costs/cytoreductive-surgery", label: "cytoreductive surgery cost in India" },
+    { href: "/costs/cytoreductive-surgery-with-hipec", label: "CRS + HIPEC cost in India" },
     { href: "/costs/liver-resection-hepatectomy", label: "liver resection cost in India" },
     { href: "/costs/gastrectomy", label: "gastrectomy cost in India" },
     { href: "/costs/esophagectomy", label: "esophagectomy cost in India" },

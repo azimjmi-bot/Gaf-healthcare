@@ -147,6 +147,21 @@
       "notes": "Indicative planning ranges, not quotations. The named surgical oncologist confirms which sitting (Whipple, distal or total pancreatectomy), vascular plan, open versus laparoscopic or robotic access where offered, named high-dependency nights and an itemized hospital price after records review. CT, MRI/MRCP, EUS, biopsy, chemotherapy, radiation, extra fistula days and transfusion are quoted separately unless named. Dedicated Whipple and distal-pancreatectomy sheets exist when the sitting is already named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
       "replaceGuide": false
     },
+    "cytoreductive-surgery-with-hipec": {
+      "summary": "CRS plus heated intraperitoneal chemotherapy. Not every peritoneal case is a HIPEC case. The surgical oncologist says so before you pack for three weeks.",
+      "usRange": "$70,000–$180,000",
+      "partnerRange": "$18,000–$40,000",
+      "stay": "10–21 nights",
+      "includes": [
+        "Surgical oncology consultation and records review",
+        "Named surgeon on camera before travel",
+        "Theatre, anaesthesia, HIPEC as quoted and inpatient stay as quoted",
+        "Histopathology of the specimen",
+        "Discharge summary to your home oncologist"
+      ],
+      "notes": "Indicative planning ranges, not quotations. The partner band is CRS + HIPEC as quoted — not CRS alone. The named surgical oncologist confirms peritoneal burden, organ resections, HIPEC drug and protocol, named high-dependency nights and an itemized hospital price after records review. CT, PET-CT, systemic chemotherapy outside the HIPEC circuit, radiation, extra leak days and transfusion are quoted separately unless named. Dedicated Cytoreductive Surgery and PIPAC sheets exist when those sittings are already named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
+      "replaceGuide": false
+    },
     "cytoreductive-surgery": {
       "summary": "Cytoreduction aims at complete macroscopic clearance of peritoneal disease. Completeness-of-cytoreduction scores matter more than the length of the incision. HIPEC, when used, is a neighbouring sitting — not assumed into this sheet.",
       "usRange": "$40,000–$100,000",
