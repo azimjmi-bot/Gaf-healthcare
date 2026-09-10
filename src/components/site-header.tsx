@@ -14,6 +14,7 @@ import {
 import { useState } from "react";
 
 const links = [
+  { href: "/#destinations", label: "Destinations" },
   { href: "/doctors", label: "Doctors" },
   { href: "/hospitals", label: "Hospitals" },
   { href: "/costs", label: "Treatment Cost" },
@@ -63,7 +64,7 @@ export function SiteHeader() {
                 : "bg-primary text-primary-foreground"
             }`}
           >
-            <Link href="/consult">Request a dossier</Link>
+            <Link href="/consult">Request a consult</Link>
           </Button>
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>

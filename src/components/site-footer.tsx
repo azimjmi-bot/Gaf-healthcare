@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { GOOGLE_MAPS_URL, YOUTUBE_CHANNEL } from "@/data/home";
 import { site } from "@/lib/site";
 
 const columns = [
@@ -35,6 +36,14 @@ export function SiteFooter() {
             {site.phone}
             <br />
             {site.hours}
+          </p>
+          <p className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+            <a href={YOUTUBE_CHANNEL} className="text-ivory/75 hover:text-ivory" target="_blank" rel="noreferrer">
+              YouTube
+            </a>
+            <a href={GOOGLE_MAPS_URL} className="text-ivory/75 hover:text-ivory" target="_blank" rel="noreferrer">
+              Google reviews
+            </a>
           </p>
         </div>
         {columns.map((col) => (

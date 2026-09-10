@@ -45,6 +45,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "enter.ginger.healthcare",
       },
+      {
+        protocol: "https",
+        hostname: "i.ytimg.com",
+      },
     ],
   },
 };
