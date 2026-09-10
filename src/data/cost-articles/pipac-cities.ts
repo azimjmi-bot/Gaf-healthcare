@@ -150,7 +150,7 @@ export const pipacCities: CityEditorial[] = [
         },
         {
           q: "Is a Mumbai HIPEC quote usable for PIPAC planning?",
-          a: "No. The techniques, theatre time, stay and drug delivery differ. A HIPEC letter is neighbouring context, not a PIPAC price. Ask for a sitting letter that names laparoscopic aerosol chemotherapy, the drug, and how further cycles are billed.",
+          a: "No. The techniques, theatre time, stay and drug delivery differ. A HIPEC letter is neighbouring context, not a PIPAC price. Ask for a sitting letter that names laparoscopic aerosol chemotherapy, the drug, and how further cycles are billed separately.",
         },
         {
           q: "Where should a companion stay in Mumbai?",
@@ -217,7 +217,7 @@ export const pipacCities: CityEditorial[] = [
         },
         {
           q: "Are there named PIPAC surgeons in Bengaluru on this site?",
-          a: "Not currently as a procedure-tagged listing. Coordinators match a listed surgeon after records review, then ask whether PIPAC is actually offered that week. Chennai currently holds the named PIPAC-certified card on this catalog.",
+          a: "Not currently as a procedure-tagged listing. Coordinators match a listed surgeon after records review, then ask whether PIPAC is actually offered that week. Chennai currently holds the named PIPAC-certified card on this catalog. An empty Bengaluru grid is precision, not a missing widget.",
         },
         {
           q: "Are PIPAC and HIPEC the same in Bengaluru hospitals?",
@@ -229,7 +229,7 @@ export const pipacCities: CityEditorial[] = [
         },
         {
           q: "Where should a companion stay?",
-          a: "Near the operating campus once it is named — typically the Bannerghatta or south-east belt — not near Kempegowda or Devanahalli. A two-to-five-night stay still punishes an airport-end hotel.",
+          a: "Near the operating campus once it is named — typically the Bannerghatta or south-east belt — not near Kempegowda or Devanahalli. A two-to-five-night stay still punishes an airport-end hotel after a midnight landing.",
         },
       ],
     },
@@ -299,11 +299,11 @@ export const pipacCities: CityEditorial[] = [
         },
         {
           q: "Is proton therapy included in a Chennai PIPAC quote?",
-          a: "No. Proton or photon radiation, if discussed, is a neighbouring estimate. Apollo Proton is a radiation campus, not this aerosol sitting. Do not treat a PIPAC letter as a radiation package.",
+          a: "No. Proton or photon radiation, if discussed, is a neighbouring estimate. Apollo Proton is a radiation campus, not this aerosol sitting. Do not treat a PIPAC letter as a radiation package or a HIPEC quotation.",
         },
         {
           q: "When should we avoid Chennai for a short PIPAC stay?",
-          a: "Peak heat is harder on a same-week discharge walk. Surgery itself is performed year-round. Air-conditioned lodging next to Rela is part of the plan from April onward, even when the stay is only a few nights.",
+          a: "Peak heat is harder on a same-week discharge walk. Surgery itself is performed year-round. Air-conditioned lodging next to Rela is part of the plan from April onward, even when the stay is only a few nights after laparoscopy.",
         },
       ],
     },
@@ -374,11 +374,11 @@ export const pipacCities: CityEditorial[] = [
         },
         {
           q: "Are Yashoda hospitals interchangeable for PIPAC?",
-          a: "No. Campus address still matters. The named HIPEC tag on this site is Secunderabad, not Somajiguda or Hi-Tech City. Ask which campus address is on any peritoneal letter, including a PIPAC sitting if one is later written.",
+          a: "No. Campus address still matters. The named HIPEC tag on this site is Secunderabad, not Somajiguda or Hi-Tech City. Ask which campus address is on any peritoneal letter, including a PIPAC sitting if one is later written. Do not blend Yashoda towers.",
         },
         {
           q: "Where should a companion stay?",
-          a: "Near the operating campus — typically Secunderabad, Jubilee Hills or Gachibowli, depending on the letter — not at a Shamshabad airport hotel. A two-to-five-night stay still punishes an outer-ring commute.",
+          a: "Near the operating campus — typically Secunderabad, Jubilee Hills or Gachibowli, depending on the letter — not at a Shamshabad airport hotel. A two-to-five-night stay still punishes an outer-ring commute after laparoscopy.",
         },
       ],
     },
