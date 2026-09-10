@@ -33,13 +33,13 @@ export function CostStickyBar({
             <span className="font-heading text-xl">{range}</span>
           </p>
           <Link href={href} className="cost-btn cost-btn--primary shrink-0" tabIndex={on ? 0 : -1}>
-            Get Exact Cost
+            Get a Personalized Cost Estimate
           </Link>
         </div>
       </div>
       <div className="cost-dock">
         <Link href={href} className="cost-btn cost-btn--primary w-full">
-          Get Exact Cost →
+          Get a Personalized Cost Estimate
         </Link>
       </div>
     </>
