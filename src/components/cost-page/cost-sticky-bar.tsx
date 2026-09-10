@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
+import { LocaleLink as Link } from "@/components/locale-link";
 
 export function CostStickyBar({
   label,

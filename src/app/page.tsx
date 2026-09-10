@@ -1,5 +1,5 @@
 import Image from "next/image";
-import Link from "next/link";
+import { LocaleLink as Link } from "@/components/locale-link";
 import { ArrowRight, Building2, Compass, HeartHandshake, ShieldCheck } from "lucide-react";
 import { CoverImage } from "@/components/article-body";
 import { HomeSearch } from "@/components/home/home-search";
@@ -9,14 +9,15 @@ import {
   GOOGLE_MAPS_URL,
   GOOGLE_PROFILE,
   HOME_COST_SLUGS,
-  HOME_DESTINATIONS,
-  HOME_REVIEWS,
-  HOME_VIDEOS,
   YOUTUBE_CHANNEL,
 } from "@/data/home";
 import { listPublishedPosts } from "@/lib/blogs";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { hospitalsPath } from "@/lib/catalog-links";
+import { availableLocales, localizeBlog, localizeHomeExtras, localizeMessages } from "@/lib/i18n/localize";
+import { extractUiFields } from "@/lib/i18n/extract";
+import { withLocaleMetadata } from "@/lib/i18n/metadata";
+import { getRequestLocale } from "@/lib/i18n/request";
 import { SITE_URL } from "@/lib/seo";
 import type { Treatment } from "@/lib/treatments";
 import type { Metadata } from "next";
@@ -24,30 +25,41 @@ import type { Metadata } from "next";
 export const dynamic = "force-dynamic";
 export const revalidate = 0;
 
-export const metadata: Metadata = {
-  title: {
-    absolute: "Trusted Care Beyond Borders | GAF Healthcare",
-  },
-  description:
-    "Explore listed doctors, hospitals and indicative treatment costs across GAF Healthcare destinations. Plan your medical journey with a named consultant before you fly.",
-  alternates: { canonical: SITE_URL },
-  openGraph: {
-    title: "Trusted Care Beyond Borders | GAF Healthcare",
-    description:
-      "Explore listed doctors, hospitals and indicative treatment costs across GAF Healthcare destinations.",
-    url: SITE_URL,
-    type: "website",
-  },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const messages = await localizeMessages(locale);
+  return withLocaleMetadata(
+    {
+      title: { absolute: messages["seo.homeTitle"] },
+      description: messages["seo.homeDescription"],
+      openGraph: {
+        title: messages["seo.homeTitle"],
+        description: messages["seo.homeDescription"],
+        url: SITE_URL,
+        type: "website",
+      },
+    },
+    "/",
+    locale,
+    availableLocales("ui", "chrome", extractUiFields()),
+  );
+}
 
 function startingPrice(range: string) {
   const n = range.match(/\$?([\d,]+)/);
   return n ? `from $${n[1]}` : range;
 }
 
-export default function HomePage() {
+export default async function HomePage() {
+  const locale = await getRequestLocale();
+  const t = await localizeMessages(locale);
+  const extras = await localizeHomeExtras(locale);
   const published = listPublishedPosts();
-  const posts = [...published.filter((p) => p.featured), ...published.filter((p) => !p.featured)].slice(0, 3);
+  const posts = await Promise.all(
+    [...published.filter((p) => p.featured), ...published.filter((p) => !p.featured)]
+      .slice(0, 3)
+      .map((post) => localizeBlog(post, locale, false)),
+  );
   const faculty = [
     ...doctors.filter((d) => d.featured && d.specialtySlug === "radiation-oncology").slice(0, 1),
     ...doctors.filter((d) => d.featured && d.specialtySlug === "surgical-oncology").slice(0, 1),
@@ -67,7 +79,7 @@ export default function HomePage() {
           "@context": "https://schema.org",
           "@type": "MedicalBusiness",
           name: "GAF Healthcare",
-          url: SITE_URL,
+          url: locale === "en" ? SITE_URL : `${SITE_URL}/${locale}`,
           sameAs: [YOUTUBE_CHANNEL, GOOGLE_MAPS_URL],
           description:
             "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists, gynecologists, neurosurgeons, neurologists and nephrologists in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — with partner hospital costs in USD.",
@@ -95,12 +107,9 @@ export default function HomePage() {
         />
         <div className="home-hero__shade" />
         <div className="home-hero__inner">
-          <p className="eyebrow text-gold">Global care · without borders</p>
-          <h1>Trusted Care Beyond Borders</h1>
-          <p className="home-hero__lede">
-            Compare listed doctors, hospitals and treatment costs across our destinations. Plan your
-            medical journey with a named consultant before you fly.
-          </p>
+          <p className="eyebrow text-gold">{t["home.heroEyebrow"]}</p>
+          <h1>{t["home.heroTitle"]}</h1>
+          <p className="home-hero__lede">{t["home.heroLede"]}</p>
           <HomeSearch />
         </div>
       </section>
@@ -109,19 +118,19 @@ export default function HomePage() {
         <ul>
           <li>
             <HeartHandshake />
-            Personalized guidance
+            {t["home.trust1"]}
           </li>
           <li>
             <Building2 />
-            Access to listed hospitals
+            {t["home.trust2"]}
           </li>
           <li>
             <ShieldCheck />
-            Transparent planning ranges
+            {t["home.trust3"]}
           </li>
           <li>
             <Compass />
-            Support at every step
+            {t["home.trust4"]}
           </li>
         </ul>
       </section>
@@ -129,15 +138,15 @@ export default function HomePage() {
       <section id="destinations" className="home-section scroll-mt-24">
         <div className="home-head">
           <div>
-            <p className="eyebrow">Destinations</p>
-            <h2>Top Destinations</h2>
+            <p className="eyebrow">{t["home.destinationsEyebrow"]}</p>
+            <h2>{t["home.destinationsTitle"]}</h2>
           </div>
           <Link href="/hospitals" className="home-more">
-            View all <ArrowRight className="size-4" />
+            {t["home.viewAll"]} <ArrowRight className="size-4" />
           </Link>
         </div>
         <div className="home-destgrid">
-          {HOME_DESTINATIONS.map((place) => (
+          {extras.destinations.map((place) => (
             <Link
               key={place.name}
               href={hospitalsPath({ destination: place.filter })}
@@ -156,11 +165,11 @@ export default function HomePage() {
       <section className="home-section home-section--tint">
         <div className="home-head">
           <div>
-            <p className="eyebrow">Doctors</p>
-            <h2>Meet Our Doctors</h2>
+            <p className="eyebrow">{t["home.doctorsEyebrow"]}</p>
+            <h2>{t["home.doctorsTitle"]}</h2>
           </div>
           <Link href="/doctors" className="home-more">
-            View all doctors <ArrowRight className="size-4" />
+            {t["home.viewDoctors"]} <ArrowRight className="size-4" />
           </Link>
         </div>
         <div className="home-docgrid">
@@ -187,11 +196,11 @@ export default function HomePage() {
       <section className="home-section">
         <div className="home-head">
           <div>
-            <p className="eyebrow">Hospitals</p>
-            <h2>Hospitals We Work With</h2>
+            <p className="eyebrow">{t["home.hospitalsEyebrow"]}</p>
+            <h2>{t["home.hospitalsTitle"]}</h2>
           </div>
           <Link href="/hospitals" className="home-more">
-            View all hospitals <ArrowRight className="size-4" />
+            {t["home.viewHospitals"]} <ArrowRight className="size-4" />
           </Link>
         </div>
         <div className="home-hospgrid">
@@ -212,12 +221,12 @@ export default function HomePage() {
       <section className="home-section home-section--tint">
         <div className="home-head">
           <div>
-            <p className="eyebrow">Treatment costs</p>
-            <h2>Plan your care with confidence</h2>
-            <p>Indicative India planning ranges from the cost sheets — not hospital quotations.</p>
+            <p className="eyebrow">{t["home.costsEyebrow"]}</p>
+            <h2>{t["home.costsTitle"]}</h2>
+            <p>{t["home.costsLede"]}</p>
           </div>
           <Link href="/costs" className="home-more">
-            View all cost sheets <ArrowRight className="size-4" />
+            {t["home.viewCosts"]} <ArrowRight className="size-4" />
           </Link>
         </div>
         <div className="home-costgrid">
@@ -226,7 +235,7 @@ export default function HomePage() {
               <p>{row.category}</p>
               <strong>{row.name}</strong>
               <em>{startingPrice(row.partnerRange)}</em>
-              <span>{row.partnerRange} typical package</span>
+              <span>{row.partnerRange} {t["home.typicalPackage"]}</span>
             </Link>
           ))}
         </div>
@@ -235,15 +244,15 @@ export default function HomePage() {
       <section className="home-section">
         <div className="home-head">
           <div>
-            <p className="eyebrow">Patient stories</p>
-            <h2>People. Real Journeys.</h2>
+            <p className="eyebrow">{t["home.storiesEyebrow"]}</p>
+            <h2>{t["home.storiesTitle"]}</h2>
           </div>
           <a href={YOUTUBE_CHANNEL} className="home-more" target="_blank" rel="noreferrer">
-            More on YouTube <ArrowRight className="size-4" />
+            {t["home.moreYoutube"]} <ArrowRight className="size-4" />
           </a>
         </div>
         <div className="home-videogrid">
-          {HOME_VIDEOS.map((video) => (
+          {extras.videos.map((video) => (
             <a
               key={video.id}
               href={`https://www.youtube.com/watch?v=${video.id}`}
@@ -272,11 +281,11 @@ export default function HomePage() {
       <section className="home-section home-section--tint">
         <div className="home-head">
           <div>
-            <p className="eyebrow">Desk</p>
-            <h2>Latest Insights &amp; Guides</h2>
+            <p className="eyebrow">{t["home.deskEyebrow"]}</p>
+            <h2>{t["home.deskTitle"]}</h2>
           </div>
           <Link href="/blogs" className="home-more">
-            View all blogs <ArrowRight className="size-4" />
+            {t["home.viewBlogs"]} <ArrowRight className="size-4" />
           </Link>
         </div>
         <div className="home-bloggrid">
@@ -298,19 +307,19 @@ export default function HomePage() {
       <section className="home-section">
         <div className="home-head">
           <div>
-            <p className="eyebrow">Google reviews</p>
-            <h2>What Our Patients Say</h2>
+            <p className="eyebrow">{t["home.reviewsEyebrow"]}</p>
+            <h2>{t["home.reviewsTitle"]}</h2>
             <p>
               {GOOGLE_PROFILE.rating} from {GOOGLE_PROFILE.reviewCount} reviews on the GAF Healthcare Pvt Ltd
               Google listing.
             </p>
           </div>
           <a href={GOOGLE_MAPS_URL} className="home-more" target="_blank" rel="noreferrer">
-            Read on Google <ArrowRight className="size-4" />
+            {t["home.readGoogle"]} <ArrowRight className="size-4" />
           </a>
         </div>
         <div className="home-reviewgrid">
-          {HOME_REVIEWS.map((review) => (
+          {extras.reviews.map((review) => (
             <blockquote key={review.name} className="home-review">
               <p>★★★★★</p>
               <p>{review.text}</p>
@@ -322,11 +331,11 @@ export default function HomePage() {
 
       <section className="home-finale">
         <div>
-          <h2>Your Health Journey Starts Here</h2>
-          <p>Share your records. Receive suitable doctor and hospital options with an indicative estimate.</p>
+          <h2>{t["home.finaleTitle"]}</h2>
+          <p>{t["home.finaleLede"]}</p>
         </div>
         <Link href="/consult" className="home-finale__btn">
-          Request a Dossier
+          {t["home.finaleButton"]}
         </Link>
       </section>
     </>

@@ -91,6 +91,7 @@ export async function PUT(request: Request, ctx: { params: Promise<{ entity: str
         cms.doctorsAdded[addedIndex] = { ...existing, ...next, slug: existing.slug };
       }
       saveCatalogCms(cms);
+      await bumpTranslations("doctor", slug);
       return NextResponse.json({ ok: true, slug, ...next });
     }
     if (entity === "hospitals") {
@@ -110,6 +111,7 @@ export async function PUT(request: Request, ctx: { params: Promise<{ entity: str
         cms.hospitalsAdded[addedIndex] = { ...existing, ...next, slug: existing.slug };
       }
       saveCatalogCms(cms);
+      await bumpTranslations("hospital", slug);
       return NextResponse.json({ ok: true, slug, ...next });
     }
     const includes = Array.isArray(patch.includes)
@@ -144,6 +146,7 @@ export async function PUT(request: Request, ctx: { params: Promise<{ entity: str
       cms.treatmentsAdded[addedIndex] = { ...(cms.treatmentsAdded[addedIndex] as object), ...next };
     }
     saveCatalogCms(cms);
+    await bumpTranslations("cost", slug);
     return NextResponse.json({ ok: true, slug, ...next });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not save.";
@@ -182,4 +185,11 @@ export async function DELETE(_req: Request, ctx: { params: Promise<{ entity: str
     const message = err instanceof Error ? err.message : "Could not delete.";
     return NextResponse.json({ error: message }, { status: 500 });
   }
+}
+
+async function bumpTranslations(sourceType: "doctor" | "hospital" | "cost", slug: string) {
+  const { englishFieldsFor } = await import("@/lib/i18n/localize");
+  const { onEnglishSourceSaved } = await import("@/lib/i18n/service");
+  const fields = englishFieldsFor(sourceType, slug);
+  if (fields) await onEnglishSourceSaved(sourceType, slug, fields);
 }

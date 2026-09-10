@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LocaleLink as Link } from "@/components/locale-link";
 import { notFound } from "next/navigation";
 import { AccreditationSeals } from "@/components/accreditation-seals";
 import { DoctorProfileHero } from "@/components/doctor-profile-hero";
@@ -7,13 +7,14 @@ import { CtaBand } from "@/components/page-shell";
 import { doctorsForHospital, getDoctor, getHospital, getTreatment } from "@/lib/data";
 import { displayBio } from "@/lib/hospital-profile";
 import { doctorsPath } from "@/lib/catalog-links";
-import { breadcrumbJsonLd, doctorMetadata, physicianJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, physicianJsonLd } from "@/lib/seo";
+import { doctorPageMetadata } from "@/lib/i18n/page-meta";
+import { localizeDoctor, localizeHospital } from "@/lib/i18n/localize";
+import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
 export async function doctorProfileMetadata(slug: string): Promise<Metadata> {
-  const d = getDoctor(slug);
-  if (!d) return { title: "Doctor" };
-  return doctorMetadata(d);
+  return doctorPageMetadata(slug);
 }
 
 function ProfileList({ title, items }: { title: string; items: string[] }) {
@@ -31,9 +32,12 @@ function ProfileList({ title, items }: { title: string; items: string[] }) {
 }
 
 export async function DoctorProfile({ slug }: { slug: string }) {
-  const d = getDoctor(slug);
-  if (!d) notFound();
-  const hospital = getHospital(d.hospitalSlug);
+  const source = getDoctor(slug);
+  if (!source) notFound();
+  const locale = await getRequestLocale();
+  const d = await localizeDoctor(source, locale);
+  const hospitalRaw = getHospital(d.hospitalSlug);
+  const hospital = hospitalRaw ? await localizeHospital(hospitalRaw, locale, false) : undefined;
   const pathways = d.treatmentSlugs.map((s) => getTreatment(s)).filter(Boolean);
   const colleagues = doctorsForHospital(d.hospitalSlug)
     .filter((x) => x.slug !== d.slug && x.specialtySlug === d.specialtySlug)
@@ -41,14 +45,17 @@ export async function DoctorProfile({ slug }: { slug: string }) {
 
   return (
     <>
-      <JsonLd data={physicianJsonLd(d)} />
+      <JsonLd data={physicianJsonLd(d, locale)} />
       <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Doctors", path: "/doctors" },
-          { name: d.specialty, path: doctorsPath({ destination: "India", specialty: d.specialty }) },
-          { name: d.city, path: doctorsPath({ destination: "India", city: d.city }) },
-          { name: d.name, path: `/doctors/${d.slug}` },
-        ])}
+        data={breadcrumbJsonLd(
+          [
+            { name: "Doctors", path: "/doctors" },
+            { name: d.specialty, path: doctorsPath({ destination: "India", specialty: d.specialty }) },
+            { name: d.city, path: doctorsPath({ destination: "India", city: d.city }) },
+            { name: d.name, path: `/doctors/${d.slug}` },
+          ],
+          locale,
+        )}
       />
       <DoctorProfileHero doctor={d} hospital={hospital} />
 

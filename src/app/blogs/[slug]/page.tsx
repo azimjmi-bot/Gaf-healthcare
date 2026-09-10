@@ -1,12 +1,14 @@
 import { cookies } from "next/headers";
 import { ArticleBlocks, ArticleRelated, CoverImage } from "@/components/article-body";
-import Link from "next/link";
+import { LocaleLink as Link } from "@/components/locale-link";
 import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/page-shell";
 import { CMS_COOKIE, cmsToken } from "@/lib/cms/auth";
 import { getArticleBySlug } from "@/lib/cms/store";
 import { getPost, listPublishedPosts } from "@/lib/blogs";
-import { SITE_URL } from "@/lib/seo";
+import { blogPageMetadata } from "@/lib/i18n/page-meta";
+import { localizeBlog } from "@/lib/i18n/localize";
+import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -21,21 +23,7 @@ export async function generateMetadata({
   const preview = jar.get(CMS_COOKIE)?.value === cmsToken();
   const post = getPost(slug) ?? (preview ? getArticleBySlug(slug) : undefined);
   if (!post) return { title: "Blogs" };
-  const title = post.seoTitle || post.title;
-  const description = post.seoDescription || post.excerpt;
-  return {
-    title,
-    description,
-    robots: post.allowIndex ? undefined : { index: false, follow: true },
-    alternates: {
-      canonical: post.canonical || `${SITE_URL}/blogs/${post.slug}`,
-    },
-    openGraph: {
-      title,
-      description,
-      images: post.ogImage || post.image ? [{ url: post.ogImage || post.image }] : undefined,
-    },
-  };
+  return blogPageMetadata(post);
 }
 
 export default async function BlogPostPage({
@@ -46,12 +34,17 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const jar = await cookies();
   const preview = jar.get(CMS_COOKIE)?.value === cmsToken();
-  const post = getPost(slug) ?? (preview ? getArticleBySlug(slug) : undefined);
-  if (!post) notFound();
+  const source = getPost(slug) ?? (preview ? getArticleBySlug(slug) : undefined);
+  if (!source) notFound();
+  const locale = await getRequestLocale();
+  const post = await localizeBlog(source, locale, source.status === "published");
 
-  const others = listPublishedPosts()
-    .filter((p) => p.slug !== post.slug)
-    .slice(0, 3);
+  const others = await Promise.all(
+    listPublishedPosts()
+      .filter((p) => p.slug !== post.slug)
+      .slice(0, 3)
+      .map((p) => localizeBlog(p, locale, false)),
+  );
 
   return (
     <>

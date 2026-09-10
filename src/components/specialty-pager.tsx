@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LocaleLink as Link } from "@/components/locale-link";
 import type { CatalogQuery } from "@/lib/catalog-options";
 import { costsSpecialtyPath } from "@/lib/catalog-links";
 

@@ -1,7 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Geist, Geist_Mono } from "next/font/google";
+import { Cormorant_Garamond, Geist, Geist_Mono, Noto_Sans, Noto_Sans_Arabic } from "next/font/google";
+import { LocaleProvider } from "@/components/locale-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { localeDir } from "@/lib/i18n/languages";
+import { localizeMessages } from "@/lib/i18n/localize";
+import { getRequestLocale } from "@/lib/i18n/request";
 import { SITE_URL } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -14,6 +18,18 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const notoSans = Noto_Sans({
+  variable: "--font-noto",
+  subsets: ["latin", "latin-ext", "cyrillic"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const notoArabic = Noto_Sans_Arabic({
+  variable: "--font-arabic",
+  subsets: ["arabic"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const cormorant = Cormorant_Garamond({
@@ -118,16 +134,22 @@ export const metadata: Metadata = {
   alternates: { canonical: SITE_URL },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const locale = await getRequestLocale();
+  const messages = await localizeMessages(locale);
+  const dir = localeDir(locale);
   return (
     <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} h-full`}
+      lang={locale}
+      dir={dir}
+      className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${notoSans.variable} ${notoArabic.variable} h-full`}
     >
       <body className="flex min-h-full flex-col">
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
+        <LocaleProvider locale={locale} messages={messages}>
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+        </LocaleProvider>
       </body>
     </html>
   );

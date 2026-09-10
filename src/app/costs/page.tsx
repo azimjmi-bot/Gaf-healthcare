@@ -1,6 +1,7 @@
 import { parseCatalogQuery } from "@/lib/catalog-options";
 import { redirectPrettyCatalog } from "@/lib/catalog-route";
 import { CostsDirectory, costsDirectoryMetadata } from "@/app/costs/directory";
+import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -19,6 +20,6 @@ export default async function CostsPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const query = parseCatalogQuery(await searchParams);
-  redirectPrettyCatalog("/costs", query);
+  redirectPrettyCatalog("/costs", query, 1, await getRequestLocale());
   return <CostsDirectory query={query} />;
 }

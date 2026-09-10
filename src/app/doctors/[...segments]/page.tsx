@@ -4,6 +4,7 @@ import { DoctorProfile, doctorProfileMetadata } from "@/app/doctors/doctor-profi
 import { canonicalizePrettyPath, readCatalogPage } from "@/lib/catalog-route";
 import { doctors } from "@/lib/data";
 import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
+import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -36,7 +37,7 @@ export default async function DoctorsCatchAllPage({
   const page = readCatalogPage(await searchParams);
   const filter = parsePrettyCatalogSegments(segments);
   if (filter) {
-    canonicalizePrettyPath("/doctors", segments, filter, page);
+    canonicalizePrettyPath("/doctors", segments, filter, page, await getRequestLocale());
     return <DoctorsDirectory query={filter} page={page} />;
   }
   if (segments.length === 1) return <DoctorProfile slug={segments[0]} />;

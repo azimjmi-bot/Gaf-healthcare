@@ -12,6 +12,7 @@ import {
   Settings,
   Stethoscope,
   Wallet,
+  Languages,
 } from "lucide-react";
 
 const NAV = [
@@ -22,6 +23,7 @@ const NAV = [
   { href: "/cms/costs", label: "Cost sheets", icon: Wallet },
   { href: "/cms/media", label: "Media", icon: ImageIcon },
   { href: "/cms/taxonomies", label: "Categories & tags", icon: FolderTree },
+  { href: "/cms/translations", label: "Translations", icon: Languages },
   { href: "/cms/settings", label: "Settings", icon: Settings },
 ];
 

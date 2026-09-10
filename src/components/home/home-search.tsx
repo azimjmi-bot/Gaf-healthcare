@@ -7,11 +7,14 @@ import {
   catalogProceduresFor,
   catalogSpecialties,
 } from "@/lib/catalog-options";
+import { useLocale } from "@/components/locale-provider";
+import { localePath } from "@/lib/i18n/path";
 
 const ALL = "all";
 
 export function HomeSearch() {
   const router = useRouter();
+  const locale = useLocale();
   const [destination, setDestination] = useState(ALL);
   const [specialty, setSpecialty] = useState(ALL);
   const [procedure, setProcedure] = useState(ALL);
@@ -29,7 +32,7 @@ export function HomeSearch() {
     if (specialty !== ALL) q.set("specialty", specialty);
     if (procedure !== ALL) q.set("procedure", procedure);
     const qs = q.toString();
-    router.push(qs ? `/doctors?${qs}` : "/doctors");
+    router.push(localePath(qs ? `/doctors?${qs}` : "/doctors", locale));
   }
 
   return (

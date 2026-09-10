@@ -4,6 +4,7 @@ import { CostsDirectory, costsDirectoryMetadata } from "@/app/costs/directory";
 import { canonicalizePrettyPath, readCatalogPage } from "@/lib/catalog-route";
 import { treatments } from "@/lib/data";
 import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
+import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -36,7 +37,7 @@ export default async function CostsCatchAllPage({
   const page = readCatalogPage(await searchParams);
   const filter = parsePrettyCatalogSegments(segments);
   if (filter) {
-    canonicalizePrettyPath("/costs", segments, filter, page);
+    canonicalizePrettyPath("/costs", segments, filter, page, await getRequestLocale());
     return <CostsDirectory query={filter} />;
   }
   if (segments.length === 1) return <CostSheet slug={segments[0]} />;

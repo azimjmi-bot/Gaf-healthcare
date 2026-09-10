@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import Link from "next/link";
+import { LocaleLink as Link } from "@/components/locale-link";
 import { Check, Clock, Stethoscope, BedDouble } from "lucide-react";
 import type { CostArticle } from "@/data/cost-articles/types";
 import { costsFilterPath } from "@/lib/catalog-links";

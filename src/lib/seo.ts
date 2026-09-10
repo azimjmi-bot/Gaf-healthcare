@@ -6,12 +6,14 @@ import type { CatalogQuery } from "@/lib/catalog-options";
 import { displayBio } from "@/lib/hospital-profile";
 import { prettyCatalogPath } from "@/lib/pretty-catalog-path";
 import { site } from "@/lib/site";
+import type { AppLocale } from "@/lib/i18n/languages";
+import { localePath } from "@/lib/i18n/path";
 
 export const SITE_URL = "https://gaf.healthcare";
 
-export function absoluteUrl(path = "/") {
+export function absoluteUrl(path = "/", locale: AppLocale = "en") {
   if (!path.startsWith("/")) path = `/${path}`;
-  return new URL(path, SITE_URL).toString();
+  return new URL(localePath(path, locale), SITE_URL).toString();
 }
 
 function clip(text: string, max = 158) {
@@ -248,12 +250,13 @@ export function catalogMetadata(
   };
 }
 
-export function physicianJsonLd(d: Doctor) {
+export function physicianJsonLd(d: Doctor, locale: AppLocale = "en") {
   return {
     "@context": "https://schema.org",
     "@type": "Physician",
     name: d.name,
-    url: absoluteUrl(`/doctors/${d.slug}`),
+    inLanguage: locale,
+    url: absoluteUrl(`/doctors/${d.slug}`, locale),
     jobTitle: d.title,
     description: clip(d.bio, 240),
     medicalSpecialty: d.specialty,
@@ -271,7 +274,7 @@ export function physicianJsonLd(d: Doctor) {
     worksFor: {
       "@type": "Hospital",
       name: d.hospitalName,
-      url: absoluteUrl(`/hospitals/${d.hospitalSlug}`),
+      url: absoluteUrl(`/hospitals/${d.hospitalSlug}`, locale),
       address: {
         "@type": "PostalAddress",
         addressLocality: d.city,
@@ -281,12 +284,13 @@ export function physicianJsonLd(d: Doctor) {
   };
 }
 
-export function hospitalJsonLd(h: Hospital) {
+export function hospitalJsonLd(h: Hospital, locale: AppLocale = "en") {
   return {
     "@context": "https://schema.org",
     "@type": "Hospital",
     name: h.name,
-    url: absoluteUrl(`/hospitals/${h.slug}`),
+    inLanguage: locale,
+    url: absoluteUrl(`/hospitals/${h.slug}`, locale),
     description: clip(displayBio(h.bio), 240),
     medicalSpecialty: h.specialties,
     address: {
@@ -297,7 +301,7 @@ export function hospitalJsonLd(h: Hospital) {
   };
 }
 
-export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
+export function breadcrumbJsonLd(items: { name: string; path: string }[], locale: AppLocale = "en") {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
@@ -305,7 +309,7 @@ export function breadcrumbJsonLd(items: { name: string; path: string }[]) {
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      item: absoluteUrl(item.path),
+      item: absoluteUrl(item.path, locale),
     })),
   };
 }
@@ -319,19 +323,21 @@ export function medicalWebPageJsonLd(opts: {
   specialty: string;
   about: string;
   image?: string;
+  locale?: AppLocale;
 }) {
-  const url = absoluteUrl(opts.path);
+  const locale = opts.locale ?? "en";
+  const url = absoluteUrl(opts.path, locale);
   return {
     "@context": "https://schema.org",
     "@type": ["MedicalWebPage", "WebPage"],
     name: opts.name,
     description: clip(opts.description),
     url,
-    inLanguage: "en",
+    inLanguage: locale,
     lastReviewed: opts.lastReviewed,
     dateModified: opts.lastReviewed,
-    isPartOf: { "@type": "WebSite", name: site.name, url: absoluteUrl("/") },
-    publisher: { "@type": "Organization", name: site.name, url: absoluteUrl("/") },
+    isPartOf: { "@type": "WebSite", name: site.name, url: absoluteUrl("/", locale) },
+    publisher: { "@type": "Organization", name: site.name, url: absoluteUrl("/", locale) },
     audience: { "@type": "MedicalAudience", audienceType: "Patient" },
     specialty: opts.specialty,
     ...(opts.image ? { image: absoluteUrl(opts.image) } : {}),
@@ -344,12 +350,13 @@ export function medicalWebPageJsonLd(opts: {
   };
 }
 
-export function hospitalItemListJsonLd(rows: Hospital[], opts: { name: string; path: string }) {
+export function hospitalItemListJsonLd(rows: Hospital[], opts: { name: string; path: string; locale?: AppLocale }) {
+  const locale = opts.locale ?? "en";
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: opts.name,
-    url: absoluteUrl(opts.path),
+    url: absoluteUrl(opts.path, locale),
     numberOfItems: rows.length,
     itemListOrder: "https://schema.org/ItemListUnordered",
     itemListElement: rows.map((hospital, i) => ({
@@ -358,7 +365,7 @@ export function hospitalItemListJsonLd(rows: Hospital[], opts: { name: string; p
       item: {
         "@type": "Hospital",
         name: hospital.name,
-        url: absoluteUrl(`/hospitals/${hospital.slug}`),
+        url: absoluteUrl(`/hospitals/${hospital.slug}`, locale),
         medicalSpecialty: hospital.specialties,
         address: {
           "@type": "PostalAddress",
@@ -370,12 +377,13 @@ export function hospitalItemListJsonLd(rows: Hospital[], opts: { name: string; p
   };
 }
 
-export function doctorItemListJsonLd(rows: Doctor[], opts: { name: string; path: string }) {
+export function doctorItemListJsonLd(rows: Doctor[], opts: { name: string; path: string; locale?: AppLocale }) {
+  const locale = opts.locale ?? "en";
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
     name: opts.name,
-    url: absoluteUrl(opts.path),
+    url: absoluteUrl(opts.path, locale),
     numberOfItems: rows.length,
     itemListOrder: "https://schema.org/ItemListUnordered",
     itemListElement: rows.map((doctor, i) => ({
@@ -384,7 +392,7 @@ export function doctorItemListJsonLd(rows: Doctor[], opts: { name: string; path:
       item: {
         "@type": "Physician",
         name: doctor.name,
-        url: absoluteUrl(`/doctors/${doctor.slug}`),
+        url: absoluteUrl(`/doctors/${doctor.slug}`, locale),
         medicalSpecialty: doctor.specialty,
         worksFor: { "@type": "Hospital", name: doctor.hospitalName },
         address: {

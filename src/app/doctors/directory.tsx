@@ -7,11 +7,14 @@ import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, filterDoctors, type CatalogQuery } from "@/lib/catalog";
 import { paginateDoctors } from "@/lib/doctors";
 import { doctors } from "@/lib/data";
-import { catalogMetadata, DOCTOR_FAQS, faqJsonLd } from "@/lib/seo";
+import { catalogMetadata, faqJsonLd } from "@/lib/seo";
+import { catalogPageMetadata } from "@/lib/i18n/page-meta";
+import { localizeCopy, localizeFaqs } from "@/lib/i18n/localize";
+import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
 export async function doctorsDirectoryMetadata(query: CatalogQuery): Promise<Metadata> {
-  return catalogMetadata("doctors", query);
+  return catalogPageMetadata("doctors", query);
 }
 
 export async function DoctorsDirectory({
@@ -21,6 +24,8 @@ export async function DoctorsDirectory({
   query: CatalogQuery;
   page?: number;
 }) {
+  const locale = await getRequestLocale();
+  const faqs = await localizeFaqs("doctors", locale);
   const list = filterDoctors(query, doctors);
   const paging = paginateDoctors(list, page);
   const chipStats = query.destination === "India" ? cityResultCounts("doctors", query) : null;
@@ -76,14 +81,19 @@ export async function DoctorsDirectory({
   const lede = directoryHome
     ? "Explore specialists by medical specialty, procedure, hospital, and location, and find doctors who match your treatment needs."
     : "Named specialists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each doctor appears once. Ten profiles per page — filter by city, specialty or procedure when you already know the list you need.";
+  const copy = await localizeCopy(
+    `doctors:${query.city || ""}:${query.specialty || ""}:${query.procedure || ""}`,
+    { heading, lede },
+    locale,
+  );
 
   return (
     <>
-      <JsonLd data={faqJsonLd(DOCTOR_FAQS)} />
+      <JsonLd data={faqJsonLd(faqs)} />
       <PageIntro
         eyebrow="India · five cities · twenty-three specialties"
-        title={heading}
-        lede={lede}
+        title={copy.heading || heading}
+        lede={copy.lede || lede}
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
@@ -134,7 +144,7 @@ export async function DoctorsDirectory({
           options.
         </p>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {DOCTOR_FAQS.map((row) => (
+          {faqs.map((row) => (
             <details key={row.q} className="group rounded-2xl border border-border bg-card px-5 py-4">
               <summary className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden">
                 <h3 className="font-medium leading-snug">{row.q}</h3>

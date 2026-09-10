@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LocaleLink as Link } from "@/components/locale-link";
 import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { SpecialtyPager } from "@/components/specialty-pager";
@@ -6,20 +6,25 @@ import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, listCostSpecialtyGroups, type CatalogQuery } from "@/lib/catalog";
 import { hospitals, treatments } from "@/lib/data";
-import { catalogMetadata, COST_FAQS, faqJsonLd } from "@/lib/seo";
+import { faqJsonLd } from "@/lib/seo";
+import { catalogPageMetadata } from "@/lib/i18n/page-meta";
+import { localizeFaqs } from "@/lib/i18n/localize";
+import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
 export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metadata> {
   if (query.procedure) {
     const { costsProcedureMetadata } = await import("./costs-procedure-view");
-    return costsProcedureMetadata(query);
+    const meta = await costsProcedureMetadata(query);
+    const wrapped = await catalogPageMetadata("treatments", query);
+    return { ...meta, alternates: wrapped.alternates, openGraph: { ...meta.openGraph, ...wrapped.openGraph } };
   }
-  const base = catalogMetadata("treatments", query);
+  const wrapped = await catalogPageMetadata("treatments", query);
   const facets = [query.city, query.specialty].filter(Boolean).length;
   if (facets > 1) {
-    return { ...base, robots: { index: false, follow: true } };
+    return { ...wrapped, robots: { index: false, follow: true } };
   }
-  return base;
+  return wrapped;
 }
 
 export async function CostsDirectory({ query }: { query: CatalogQuery }) {
@@ -28,6 +33,8 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
     return <CostsProcedureView query={query} />;
   }
 
+  const locale = await getRequestLocale();
+  const faqs = await localizeFaqs("costs", locale);
   const specialtyPages = listCostSpecialtyGroups(query, treatments, hospitals);
   const selectedIndex = query.specialty
     ? specialtyPages.findIndex((group) => group.name === query.specialty)
@@ -52,7 +59,7 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
 
   return (
     <>
-      <JsonLd data={faqJsonLd(COST_FAQS)} />
+      <JsonLd data={faqJsonLd(faqs)} />
       <PageIntro
         eyebrow="India planning ranges"
         title={heading}
@@ -165,7 +172,7 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
           get a more personalized estimate.
         </p>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {COST_FAQS.map((row) => (
+          {faqs.map((row) => (
             <details key={row.q} className="group rounded-2xl border border-border bg-card px-5 py-4">
               <summary className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden">
                 <h3 className="font-medium leading-snug">{row.q}</h3>

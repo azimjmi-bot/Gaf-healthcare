@@ -1,12 +1,12 @@
 import Image from "next/image";
-import Link from "next/link";
+import { LocaleLink as Link } from "@/components/locale-link";
 import { notFound } from "next/navigation";
 import { AccreditationSeals } from "@/components/accreditation-seals";
 import { ArticleBlocks, CoverImage } from "@/components/article-body";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
-import { CostArticleSection, costArticleFor } from "@/components/cost-article-section";
+import { CostArticleSection, costArticleFor, hasCostArticle } from "@/components/cost-article-section";
 import { getCostArticle } from "@/data/cost-articles";
 import { costPath, costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { articleCampuses, articleFaculty, hospitalsToConsiderHeading, interpolateCostArticle } from "@/lib/cost-article";
@@ -19,40 +19,30 @@ import {
 } from "@/lib/data";
 import {
   breadcrumbJsonLd,
-  costArticleMetadata,
   doctorItemListJsonLd,
   faqJsonLd,
   hospitalItemListJsonLd,
   medicalWebPageJsonLd,
-  treatmentMetadata,
 } from "@/lib/seo";
+import { costPageMetadata } from "@/lib/i18n/page-meta";
+import { localizeCost } from "@/lib/i18n/localize";
+import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
 export async function costSheetMetadata(slug: string): Promise<Metadata> {
-  const t = getTreatment(slug);
-  if (!t) return { title: "Treatment Cost" };
-  const article = getCostArticle(t.slug);
-  if (article) {
-    const interpolated = interpolateCostArticle(article, t);
-    const figure = article.figures?.[0];
-    return costArticleMetadata(t, interpolated, {
-      image: figure?.src,
-      imageAlt: figure?.alt,
-    });
-  }
-  const guide = getCostGuide(t.slug);
-  const base = treatmentMetadata(t);
-  if (guide) {
-    return { ...base, title: guide.title, description: guide.description };
-  }
-  return base;
+  return costPageMetadata(slug);
 }
 
 export async function CostSheet({ slug }: { slug: string }) {
-  const t = getTreatment(slug);
-  if (!t) notFound();
-
-  const article = costArticleFor(t);
+  const source = getTreatment(slug);
+  if (!source) notFound();
+  const locale = await getRequestLocale();
+  const localized = await localizeCost(source, locale);
+  const t = localized.treatment;
+  const article =
+    localized.article && hasCostArticle(source)
+      ? interpolateCostArticle(localized.article, source)
+      : costArticleFor(t);
   if (article) {
     const facultyForSchema = articleFaculty(t.slug).featured;
     const campusesForSchema = articleCampuses(t).slice(0, 8);
@@ -69,14 +59,18 @@ export async function CostSheet({ slug }: { slug: string }) {
             specialty: t.category,
             about: article.heroLede || t.summary,
             image: article.figures?.[0]?.src,
+            locale,
           })}
         />
         <JsonLd
-          data={breadcrumbJsonLd([
-            { name: "Treatment Cost", path: "/costs" },
-            { name: t.category, path: costsFilterPath({ destination: "India", specialty: t.category }) },
-            { name: t.name, path: `/costs/${t.slug}` },
-          ])}
+          data={breadcrumbJsonLd(
+            [
+              { name: "Treatment Cost", path: "/costs" },
+              { name: t.category, path: costsFilterPath({ destination: "India", specialty: t.category }) },
+              { name: t.name, path: `/costs/${t.slug}` },
+            ],
+            locale,
+          )}
         />
         <JsonLd data={faqJsonLd(article.faqs)} />
         {facultyForSchema.length > 0 ? (
@@ -84,6 +78,7 @@ export async function CostSheet({ slug }: { slug: string }) {
             data={doctorItemListJsonLd(facultyForSchema, {
               name: `Doctors to consider for ${brief} in India`,
               path: `/costs/${t.slug}`,
+              locale,
             })}
           />
         ) : null}
@@ -92,6 +87,7 @@ export async function CostSheet({ slug }: { slug: string }) {
             data={hospitalItemListJsonLd(campusesForSchema, {
               name: hospitalsToConsiderHeading(brief),
               path: `/costs/${t.slug}`,
+              locale,
             })}
           />
         ) : null}
@@ -146,16 +142,20 @@ export async function CostSheet({ slug }: { slug: string }) {
           "@type": "MedicalProcedure",
           name: t.name,
           procedureType: t.category,
-          url: `https://gaf.healthcare/costs/${t.slug}`,
+          url: `https://gaf.healthcare${locale === "en" ? "" : `/${locale}`}/costs/${t.slug}`,
           description: t.summary,
+          inLanguage: locale,
         }}
       />
       <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Treatment Cost", path: "/costs" },
-          { name: t.category, path: costsFilterPath({ destination: "India", specialty: t.category }) },
-          { name: t.name, path: `/costs/${t.slug}` },
-        ])}
+        data={breadcrumbJsonLd(
+          [
+            { name: "Treatment Cost", path: "/costs" },
+            { name: t.category, path: costsFilterPath({ destination: "India", specialty: t.category }) },
+            { name: t.name, path: `/costs/${t.slug}` },
+          ],
+          locale,
+        )}
       />
       <section className="relative h-[50vh] min-h-[22rem] bg-ink text-ivory">
         {t.image.startsWith("/") ? (

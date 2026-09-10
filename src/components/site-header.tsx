@@ -1,6 +1,8 @@
 "use client";
 
-import Link from "next/link";
+import { LocaleLink as Link } from "@/components/locale-link";
+import { LanguageSwitcher } from "@/components/language-switcher";
+import { useLocale, useT } from "@/components/locale-provider";
 import { usePathname } from "next/navigation";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,20 +14,22 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { useState } from "react";
-
-const links = [
-  { href: "/#destinations", label: "Destinations" },
-  { href: "/doctors", label: "Doctors" },
-  { href: "/hospitals", label: "Hospitals" },
-  { href: "/costs", label: "Treatment Cost" },
-  { href: "/blogs", label: "Blogs" },
-];
+import { stripLocalePrefix } from "@/lib/i18n/path";
 
 export function SiteHeader() {
-  const pathname = usePathname();
+  const pathname = stripLocalePrefix(usePathname() || "/").pathname;
+  const t = useT();
+  const locale = useLocale();
   const [open, setOpen] = useState(false);
   if (pathname.startsWith("/cms")) return null;
   const overlay = pathname === "/";
+  const links = [
+    { href: "/#destinations", label: t("nav.destinations") },
+    { href: "/doctors", label: t("nav.doctors") },
+    { href: "/hospitals", label: t("nav.hospitals") },
+    { href: "/costs", label: t("nav.costs") },
+    { href: "/blogs", label: t("nav.blogs") },
+  ];
 
   return (
     <header
@@ -56,13 +60,14 @@ export function SiteHeader() {
           })}
         </nav>
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
+          <LanguageSwitcher className={overlay ? "text-white" : ""} />
           <Button
             asChild
             className="h-10 rounded-full bg-primary px-3 text-sm text-primary-foreground hover:bg-primary/90 sm:px-5"
           >
             <Link href="/consult">
-              <span className="md:hidden">Consult</span>
-              <span className="hidden md:inline">Request a consult</span>
+              <span className="md:hidden">{t("nav.consultShort")}</span>
+              <span className="hidden md:inline">{t("nav.consult")}</span>
             </Link>
           </Button>
           <Sheet open={open} onOpenChange={setOpen}>
@@ -71,12 +76,12 @@ export function SiteHeader() {
                 variant="ghost"
                 size="icon"
                 className={`size-11 lg:hidden ${overlay ? "text-white hover:bg-white/10 hover:text-white" : ""}`}
-                aria-label="Open menu"
+                aria-label={t("nav.menu")}
               >
                 <Menu />
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-[min(100%,20rem)]">
+            <SheetContent side={locale === "ar" ? "left" : "right"} className="w-[min(100%,20rem)]">
               <SheetHeader>
                 <SheetTitle className="font-heading text-xl tracking-[0.12em] uppercase">
                   GAF Healthcare
@@ -95,7 +100,7 @@ export function SiteHeader() {
                 ))}
                 <Button asChild className="mt-4 h-12 rounded-full">
                   <Link href="/consult" onClick={() => setOpen(false)}>
-                    Request a dossier
+                    {t("nav.dossier")}
                   </Link>
                 </Button>
               </nav>

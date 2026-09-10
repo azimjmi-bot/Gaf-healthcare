@@ -7,11 +7,14 @@ import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, filterHospitals, type CatalogQuery } from "@/lib/catalog";
 import { paginateHospitals } from "@/lib/hospitals";
 import { hospitals } from "@/lib/data";
-import { catalogMetadata, HOSPITAL_FAQS, faqJsonLd } from "@/lib/seo";
+import { faqJsonLd } from "@/lib/seo";
+import { catalogPageMetadata } from "@/lib/i18n/page-meta";
+import { localizeFaqs } from "@/lib/i18n/localize";
+import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
 export async function hospitalsDirectoryMetadata(query: CatalogQuery): Promise<Metadata> {
-  return catalogMetadata("hospitals", query);
+  return catalogPageMetadata("hospitals", query);
 }
 
 export async function HospitalsDirectory({
@@ -21,6 +24,8 @@ export async function HospitalsDirectory({
   query: CatalogQuery;
   page?: number;
 }) {
+  const locale = await getRequestLocale();
+  const faqs = await localizeFaqs("hospitals", locale);
   const list = filterHospitals(query, hospitals);
   const paging = paginateHospitals(list, page);
   const chipStats = query.destination === "India" ? cityResultCounts("hospitals", query) : null;
@@ -48,7 +53,7 @@ export async function HospitalsDirectory({
             "Partner campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. One card per house, with specialties on the campus.",
         }}
       />
-      <JsonLd data={faqJsonLd(HOSPITAL_FAQS)} />
+      <JsonLd data={faqJsonLd(faqs)} />
       <PageIntro
         eyebrow="India campuses"
         title={heading}
@@ -97,7 +102,7 @@ export async function HospitalsDirectory({
           for treatment.
         </p>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
-          {HOSPITAL_FAQS.map((row) => (
+          {faqs.map((row) => (
             <details key={row.q} className="group rounded-2xl border border-border bg-card px-5 py-4">
               <summary className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden">
                 <h3 className="font-medium leading-snug">{row.q}</h3>

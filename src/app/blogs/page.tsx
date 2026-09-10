@@ -1,11 +1,32 @@
 import { CoverImage } from "@/components/article-body";
-import Link from "next/link";
+import { LocaleLink as Link } from "@/components/locale-link";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { blogSettings, listPublishedPosts } from "@/lib/blogs";
+import { localizeBlog } from "@/lib/i18n/localize";
+import { withLocaleMetadata } from "@/lib/i18n/metadata";
+import { getLocalizedFields } from "@/lib/i18n/service";
+import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
-export const metadata: Metadata = { title: "Blogs" };
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const settings = blogSettings();
+  const fields = await getLocalizedFields({
+    sourceType: "page",
+    sourceId: "blogs-index",
+    language: locale,
+    fields: {
+      blogEyebrow: settings.blogEyebrow,
+      blogTitle: settings.blogTitle,
+      blogLede: settings.blogLede,
+      seoTitle: "Blogs",
+    },
+    generateIfMissing: locale !== "en",
+  });
+  return withLocaleMetadata({ title: fields.seoTitle || "Blogs" }, "/blogs", locale, ["en", locale]);
+}
 
 export default async function BlogsPage({
   searchParams,
@@ -14,6 +35,18 @@ export default async function BlogsPage({
 }) {
   const raw = await searchParams;
   const settings = blogSettings();
+  const locale = await getRequestLocale();
+  const localizedSettings = await getLocalizedFields({
+    sourceType: "page",
+    sourceId: "blogs-index",
+    language: locale,
+    fields: {
+      blogEyebrow: settings.blogEyebrow,
+      blogTitle: settings.blogTitle,
+      blogLede: settings.blogLede,
+    },
+    generateIfMissing: locale !== "en",
+  });
   const category = Array.isArray(raw.category) ? raw.category[0] : raw.category;
   const pageRaw = Array.isArray(raw.page) ? raw.page[0] : raw.page;
   const page = Math.max(1, Number.parseInt(pageRaw || "1", 10) || 1);
@@ -21,11 +54,17 @@ export default async function BlogsPage({
   const size = settings.postsPerPage || 12;
   const totalPages = Math.max(1, Math.ceil(all.length / size) || 1);
   const current = Math.min(page, totalPages);
-  const posts = all.slice((current - 1) * size, current * size);
+  const posts = await Promise.all(
+    all.slice((current - 1) * size, current * size).map((post) => localizeBlog(post, locale, false)),
+  );
 
   return (
     <>
-      <PageIntro eyebrow={settings.blogEyebrow} title={settings.blogTitle} lede={settings.blogLede} />
+      <PageIntro
+        eyebrow={localizedSettings.blogEyebrow || settings.blogEyebrow}
+        title={localizedSettings.blogTitle || settings.blogTitle}
+        lede={localizedSettings.blogLede || settings.blogLede}
+      />
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:px-8 md:py-16">
         {all.length === 0 ? (
           <p className="text-muted-foreground">No published notes yet.</p>

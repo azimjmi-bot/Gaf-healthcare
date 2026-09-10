@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { CoverImage } from "@/components/article-body";
+import { CmsTranslationPanel } from "@/components/cms/cms-translation-panel";
 import type { Article, ArticleBlock, CmsStore, MediaItem } from "@/lib/cms/types";
 import { newId } from "@/lib/cms/types";
 
@@ -569,6 +570,7 @@ export function CmsArticleEditor({
           </div>
         </div>
       ) : null}
+      {article.slug ? <CmsTranslationPanel sourceType="blog" sourceId={article.slug} /> : null}
     </div>
   );
 }

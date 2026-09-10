@@ -1,4 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
+import { LOCALE_HEADER, isTargetLocale } from "@/lib/i18n/languages";
 
 const CMS_COOKIE = "gaf_cms";
 
@@ -18,8 +19,44 @@ async function cmsToken(password: string) {
   return [...new Uint8Array(sig)].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
+function localeRewrite(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+  const parts = pathname.split("/").filter(Boolean);
+  const head = parts[0];
+  if (!head || !isTargetLocale(head)) {
+    const headers = new Headers(request.headers);
+    headers.set(LOCALE_HEADER, "en");
+    return NextResponse.next({ request: { headers } });
+  }
+
+  const rest = `/${parts.slice(1).join("/")}` || "/";
+  const restPath = rest === "/" ? "/" : rest.replace(/\/$/, "") || "/";
+
+  if (restPath.startsWith("/cms") || restPath.startsWith("/api")) {
+    const url = request.nextUrl.clone();
+    url.pathname = restPath;
+    return NextResponse.redirect(url);
+  }
+
+  const url = request.nextUrl.clone();
+  url.pathname = restPath;
+  const headers = new Headers(request.headers);
+  headers.set(LOCALE_HEADER, head);
+  return NextResponse.rewrite(url, { request: { headers } });
+}
+
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  const parts = pathname.split("/").filter(Boolean);
+  if (parts[0] && isTargetLocale(parts[0])) {
+    return localeRewrite(request);
+  }
+
+  const isCms = pathname.startsWith("/cms") || pathname.startsWith("/api/cms");
+  if (!isCms) {
+    return localeRewrite(request);
+  }
+
   if (pathname === "/cms/login" || pathname === "/api/cms/login") {
     return NextResponse.next();
   }
@@ -37,5 +74,16 @@ export async function proxy(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/cms/:path*", "/api/cms/:path*"],
+  matcher: [
+    "/cms/:path*",
+    "/api/cms/:path*",
+    "/ru",
+    "/ru/:path*",
+    "/fr",
+    "/fr/:path*",
+    "/ar",
+    "/ar/:path*",
+    "/sw",
+    "/sw/:path*",
+  ],
 };

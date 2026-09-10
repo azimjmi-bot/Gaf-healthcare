@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LocaleLink as Link } from "@/components/locale-link";
 import { notFound } from "next/navigation";
 import { HospitalProfileView } from "@/components/hospital-profile-view";
 import { JsonLd } from "@/components/json-ld";
@@ -10,18 +10,21 @@ import {
   type Treatment,
 } from "@/lib/data";
 import { hospitalsPath } from "@/lib/catalog-links";
-import { breadcrumbJsonLd, hospitalJsonLd, hospitalMetadata } from "@/lib/seo";
+import { breadcrumbJsonLd, hospitalJsonLd } from "@/lib/seo";
+import { hospitalPageMetadata } from "@/lib/i18n/page-meta";
+import { localizeHospital } from "@/lib/i18n/localize";
+import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
 export async function hospitalProfileMetadata(slug: string): Promise<Metadata> {
-  const h = getHospital(slug);
-  if (!h) return { title: "Hospital" };
-  return hospitalMetadata(h);
+  return hospitalPageMetadata(slug);
 }
 
 export async function HospitalProfile({ slug }: { slug: string }) {
-  const h = getHospital(slug);
-  if (!h) notFound();
+  const source = getHospital(slug);
+  if (!source) notFound();
+  const locale = await getRequestLocale();
+  const h = await localizeHospital(source, locale);
   const faculty = doctorsForHospital(h.slug);
   const pathways = h.procedureSlugs
     .map((s) => getTreatment(s))
@@ -30,13 +33,16 @@ export async function HospitalProfile({ slug }: { slug: string }) {
 
   return (
     <>
-      <JsonLd data={hospitalJsonLd(h)} />
+      <JsonLd data={hospitalJsonLd(h, locale)} />
       <JsonLd
-        data={breadcrumbJsonLd([
-          { name: "Hospitals", path: "/hospitals" },
-          { name: h.city, path: hospitalsPath({ destination: "India", city: h.city }) },
-          { name: h.name, path: `/hospitals/${h.slug}` },
-        ])}
+        data={breadcrumbJsonLd(
+          [
+            { name: "Hospitals", path: "/hospitals" },
+            { name: h.city, path: hospitalsPath({ destination: "India", city: h.city }) },
+            { name: h.name, path: `/hospitals/${h.slug}` },
+          ],
+          locale,
+        )}
       />
       <HospitalProfileView hospital={h} faculty={faculty} pathways={pathways} nearby={nearby} />
     </>

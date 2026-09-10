@@ -1,3 +1,4 @@
+import { TARGET_LOCALES } from "@/lib/i18n/languages";
 import type { CatalogQuery } from "@/lib/catalog-options";
 import {
   CITIES,
@@ -107,10 +108,11 @@ export function prettyCatalogPath(base: CatalogBasePath, query: CatalogQuery) {
 
 export function parsePrettyCatalogPathname(pathname: string): CatalogQuery | null {
   const parts = pathname.split("/").filter(Boolean);
-  const root = parts[0];
+  const offset = parts[0] && (TARGET_LOCALES as readonly string[]).includes(parts[0]) ? 1 : 0;
+  const root = parts[offset];
   if (root !== "costs" && root !== "doctors" && root !== "hospitals") return null;
-  if (parts.length === 1) return {};
-  return parsePrettyCatalogSegments(parts.slice(1));
+  if (parts.length === offset + 1) return {};
+  return parsePrettyCatalogSegments(parts.slice(offset + 1));
 }
 
 export function catalogQueryFromSearchParams(params: URLSearchParams | { get(name: string): string | null }): CatalogQuery {

@@ -4,6 +4,8 @@ import { listPublishedPosts } from "@/lib/blogs";
 import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { absoluteUrl, SITE_URL } from "@/lib/seo";
+import { localePath } from "@/lib/i18n/path";
+import { listCompletedTranslations } from "@/lib/i18n/store";
 import { CITIES, INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
 
 /**
@@ -110,9 +112,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   const seen = new Set<string>();
-  return urls.filter((row) => {
+  const english = urls.filter((row) => {
     if (seen.has(row.url)) return false;
     seen.add(row.url);
     return true;
   });
+
+  const extra: MetadataRoute.Sitemap = [];
+  for (const record of listCompletedTranslations()) {
+    if (record.status !== "completed") continue;
+    const path = publicPathForTranslation(record);
+    if (!path) continue;
+    extra.push(
+      entry(localePath(path, record.languageCode), {
+        lastModified: record.translatedAt || record.updatedAt,
+        changeFrequency: "weekly",
+        priority: 0.5,
+      }),
+    );
+  }
+
+  return [...english, ...extra].filter((row) => {
+    if (seen.has(row.url)) return false;
+    seen.add(row.url);
+    return true;
+  });
+}
+
+function publicPathForTranslation(record: { sourceType: string; sourceId: string }) {
+  if (record.sourceType === "ui" && record.sourceId === "chrome") return "/";
+  if (record.sourceType === "page" && record.sourceId === "home") return "/";
+  if (record.sourceType === "page" && record.sourceId === "blogs-index") return "/blogs";
+  if (record.sourceType === "blog") return `/blogs/${record.sourceId}`;
+  if (record.sourceType === "doctor") return `/doctors/${record.sourceId}`;
+  if (record.sourceType === "hospital") return `/hospitals/${record.sourceId}`;
+  if (record.sourceType === "cost") return `/costs/${record.sourceId}`;
+  return null;
 }

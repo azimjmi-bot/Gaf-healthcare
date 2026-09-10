@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import Link from "next/link";
+import { LocaleLink as Link } from "@/components/locale-link";
 import { ArticleBlocks } from "@/components/article-body";
 import { CostArticleView } from "@/components/cost-article-view";
 import { CostHero } from "@/components/cost-page/cost-hero";

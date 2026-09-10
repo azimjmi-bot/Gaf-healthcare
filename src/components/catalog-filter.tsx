@@ -16,6 +16,8 @@ import {
   prettyCatalogPath,
   type CatalogBasePath,
 } from "@/lib/pretty-catalog-path";
+import { useLocale, useT } from "@/components/locale-provider";
+import { localePath, stripLocalePrefix } from "@/lib/i18n/path";
 import {
   Select,
   SelectContent,
@@ -54,8 +56,10 @@ function currentQuery(pathname: string, params: URLSearchParams, fallback?: Cata
 
 export function CatalogFilter({ basePath, resultCount, resultLabel, query, chipStats }: Props) {
   const router = useRouter();
-  const pathname = usePathname();
+  const pathname = stripLocalePrefix(usePathname() || "/").pathname;
   const params = useSearchParams();
+  const locale = useLocale();
+  const t = useT();
   const active = currentQuery(pathname, params, query);
   const destination = active.destination ?? ALL;
   const city = active.city ?? ALL;
@@ -78,7 +82,7 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, query, chipS
       const allowed = catalogProceduresFor(next.specialty);
       if (next.procedure && !allowed.includes(next.procedure)) delete next.procedure;
     }
-    router.push(prettyCatalogPath(basePath, next), { scroll: false });
+    router.push(localePath(prettyCatalogPath(basePath, next), locale), { scroll: false });
   }
 
   return (
@@ -88,30 +92,30 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, query, chipS
           <FilterSelect
             value={destination}
             onChange={(v) => setFilter("destination", v)}
-            placeholder="All Destinations"
+            placeholder={t("filter.destinations")}
             options={catalogDestinations}
-            allLabel="All Destinations"
+            allLabel={t("filter.destinations")}
           />
           <FilterSelect
             value={city}
             onChange={(v) => setFilter("city", v)}
-            placeholder="All Cities"
+            placeholder={t("filter.cities")}
             options={cities}
-            allLabel="All Cities"
+            allLabel={t("filter.cities")}
           />
           <FilterSelect
             value={specialty}
             onChange={(v) => setFilter("specialty", v)}
-            placeholder="All Specialities"
+            placeholder={t("filter.specialities")}
             options={catalogSpecialties}
-            allLabel="All Specialities"
+            allLabel={t("filter.specialities")}
           />
           <FilterSelect
             value={procedure}
             onChange={(v) => setFilter("procedure", v)}
-            placeholder="All Procedures"
+            placeholder={t("filter.procedures")}
             options={procedureOptions}
-            allLabel="All Procedures"
+            allLabel={t("filter.procedures")}
           />
         </div>
         {chipStats ? (
@@ -133,7 +137,7 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, query, chipS
         ) : null}
       </div>
       <p className="mt-3 px-1 text-sm text-muted-foreground">
-        {resultCount} {resultLabel} matching your filters
+        {resultCount} {resultLabel} {t("filter.matching")}
       </p>
     </div>
   );

@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LocaleLink as Link } from "@/components/locale-link";
 import { AccreditationSeals } from "@/components/accreditation-seals";
 import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
 import { experienceBadge, keyProcedureLabels } from "@/lib/doctor-profile";

@@ -39,4 +39,32 @@ A WordPress-style desk lives at [`/cms`](http://localhost:43127/cms). Sign-in pa
 
 Draft articles stay off the public `/blogs` list. Media uploads land in `public/uploads/articles`.
 
+## Languages
+
+English stays at the root (`https://gaf.healthcare/...`). Localized sites use a language prefix, not a subdomain and not `?lang=`:
+
+- `https://gaf.healthcare/ru/` Russian
+- `https://gaf.healthcare/fr/` French
+- `https://gaf.healthcare/ar/` Arabic (RTL)
+- `https://gaf.healthcare/sw/` Swahili
+
+Existing English routes are unchanged. A Russian doctor page is `/ru/doctors/[slug]`. Slugs stay English.
+
+Translations are stored in `content/translations.json` (the existing file CMS). Google Cloud Translation API Advanced v3 is used only when a translation is missing, outdated, or an administrator regenerates it. Repeat page views read the stored translation.
+
+### Replit / production secrets
+
+Set these as runtime secrets. Never commit the service-account JSON.
+
+- `GOOGLE_SERVICE_ACCOUNT_JSON` — full service-account JSON as a single string
+- `GOOGLE_CLOUD_PROJECT_ID` — `gaf-healthcare-translation`
+- `CMS_PASSWORD` — CMS desk password
+- Optional: `GOOGLE_TRANSLATE_LOCATION` (default `global`), `GOOGLE_TRANSLATE_GLOSSARY_ID`, `TRANSLATION_DIAGNOSTICS=1`
+
+Then open `/cms/translations` to see eligible counts and start a bulk job **intentionally**. Do not bulk-translate the full doctor roster unless you mean to spend Google quota.
+
+```bash
+npm test
+```
+
 Cost ranges on treatment pages are illustrative, not quotes. Radiation has a full EBRT (and 3D-CRT) guide. Surgical Oncology, Medical Oncology, Hematology, Pediatric Hematology, Cardiac Surgery, Pediatric Cardiac Surgery, Cardiology, Bariatric Surgery, Cosmetic Surgery, ENT, Gastroenterology, Surgical Gastroenterology, Urology, Spine Surgery, Pulmonology, Pediatric Orthopaedic, Orthopedics and Ophthalmology each have planning sheets. Shared transplant, CAR-T, TAVR/TAVI, Rhinoplasty, TORS, hepatectomy, gastrectomy, esophagectomy, sleeve gastrectomy, radical prostatectomy, partial nephrectomy and radical cystectomy slugs can sit under more than one specialty so pSEO can use either path. Bariatric / Metabolic Endoscopy is a Gastroenterology sheet; Endoscopic Sleeve Gastroplasty (ESG) remains on Bariatric Surgery. Gastric Bypass Surgery is a Surgical Gastroenterology slug; Roux-en-Y remains on Bariatric Surgery. Radical nephrectomy, PCNL, TURP, kidney transplant and reconstructive urology sit on Urology sheets. Fusion, ACDF, microdiscectomy, deformity correction, vertebroplasty and revision lists sit on Spine Surgery sheets. Bronchoscopy, EBUS, thoracoscopy, TBNA, cryo-biopsy and lung transplant sit on Pulmonology sheets; bronchoscopic foreign-body removal is a different slug from Gastroenterology’s ingested foreign-body sheet. Named pulmonologists are listed under country, city, specialty and procedure. Clubfoot, DDH, SCFE, limb lengthening and paediatric scoliosis sit on Pediatric Orthopaedic sheets; adult scoliosis remains on Spine Surgery. Named paediatric orthopaedic surgeons are listed under country, city, specialty and procedure. Knee and hip replacement, ACL, trauma, hand and foot-and-ankle sit on Orthopedics sheets; Tendon Repair is a different slug from paediatric Tendon Repair Surgery, and Fracture Fixation is a different slug from Pediatric Fracture Fixation. Named adult orthopaedic surgeons are listed under country, city, specialty and procedure. Cataract, LASIK, SMILE, ICL, cornea (including DMEK, DSEK, DALK and C3R), glaucoma, retina and oculoplastics sit on Ophthalmology sheets. Blepharoplasty keeps a shared slug with Cosmetic Surgery. Named ophthalmologists are listed under country, city, specialty and procedure. Dr Agarwals Eye Hospital and The Sight Avenue Eye Hospital in Delhi NCR are NABH eye campuses tagged for ophthalmology only. Laparoscopic, robotic, vaginal and abdominal hysterectomy, laparoscopic, robotic and hysteroscopic myomectomy, endometriosis surgery, hysteroscopic polypectomy, ovarian cyst surgery, oophorectomy, salpingo-oophorectomy, pelvic organ prolapse surgery, pelvic floor repair and gynecologic cancer surgery sit on Gynecology sheets. Radical hysterectomy keeps a shared slug with Surgical Oncology. Fibroids, endometriosis, adenomyosis, ovarian cysts, PCOS, uterine prolapse, cervical, ovarian and endometrial cancer sit as conditions on those sheets, not extra procedure slugs. Named gynecologists are listed under country, city, specialty and procedure. Brain tumour, glioma, meningioma, pituitary, skull base, endoscopic, aneurysm, AVM, stroke thrombectomy, cerebral bypass, DBS, epilepsy, hydrocephalus, ETV, Chiari and craniosynostosis sit on Neurosurgery sheets. Gamma Knife, CyberKnife and Stereotactic Radiosurgery (SRS) keep shared slugs with Radiation Oncology. Spinal tumour surgery keeps a shared slug with Spine Surgery. Skull base surgery keeps a shared slug with ENT. Named neurosurgeons are listed under country, city, specialty and procedure. EEG, video EEG, EMG, nerve conduction, evoked potentials, lumbar puncture, IV thrombolysis, TCD, carotid Doppler, MRgFUS, botulinum toxin therapy, plasmapheresis, IVIG, nerve and muscle biopsy, VNS, sleep study and migraine nerve block sit on Neurology sheets. Deep brain stimulation and stroke thrombectomy (mechanical thrombectomy) keep shared slugs with Neurosurgery. Named neurologists are listed under country, city, specialty and procedure. Hemodialysis, peritoneal dialysis, CRRT, SLED, dialysis catheters, AV fistula, access management, CAPD catheter, permcath, native and graft biopsy, paired kidney exchange and transplant evaluation sit on Nephrology sheets. Kidney transplantation, living-donor, deceased-donor and ABO-incompatible keep shared slugs with Urology. Plasmapheresis keeps a shared slug with Neurology. Named nephrologists are listed under country, city, specialty and procedure.

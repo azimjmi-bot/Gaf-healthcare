@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { LocaleLink as Link } from "@/components/locale-link";
 import { CtaBand } from "@/components/page-shell";
 import { doctorsPath } from "@/lib/catalog-links";
 import { loadHospitalCampus, requireHospitalCampus } from "@/lib/hospital-campus";

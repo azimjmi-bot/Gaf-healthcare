@@ -6,6 +6,7 @@ import { HospitalProfile, hospitalProfileMetadata } from "@/app/hospitals/hospit
 import { canonicalizePrettyPath, readCatalogPage } from "@/lib/catalog-route";
 import { hospitals } from "@/lib/data";
 import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
+import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -44,7 +45,7 @@ export default async function HospitalsCatchAllPage({
   const page = readCatalogPage(await searchParams);
   const filter = parsePrettyCatalogSegments(segments);
   if (filter) {
-    canonicalizePrettyPath("/hospitals", segments, filter, page);
+    canonicalizePrettyPath("/hospitals", segments, filter, page, await getRequestLocale());
     return <HospitalsDirectory query={filter} page={page} />;
   }
   if (segments.length === 2 && segments[1] === "doctors") {
