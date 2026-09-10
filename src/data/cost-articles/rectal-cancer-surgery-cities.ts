@@ -15,7 +15,7 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
     costNote:
       "Ask which NCR campus the letter is written against, whether LAR or APR is named, how many high-dependency nights are inside, and whether MRI pelvis and pelvic radiation are on the same invoice. Campus tier inside NCR moves the letter more than the city label.",
     page: {
-      seoTitle: "Rectal Cancer Surgery Cost in Delhi NCR, India | GAF Healthcare",
+      seoTitle: "Rectal Cancer Surgery Cost in Delhi NCR, India: Prices & Hospitals",
       seoDescription:
         "Rectal cancer surgery cost in Delhi NCR follows the India planning range of [INDIA_COST] for resection, reconstruction or stoma and a stay of [STAY]. Compare LAR, APR, TME, listed colorectal surgeons and how to request a personalized estimate.",
       heading: "Rectal Cancer Surgery Cost in Delhi NCR, India",
@@ -32,6 +32,9 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
         "International-patient desks in NCR are used to African, Gulf and Central Asian files. Invitation letters that mention extra radiation weeks are routine — use that, then still meet the operating surgeon on camera with the MRI pelvis open.",
         "Stoma-appliance pharmacies are easier to find in south Delhi and Gurugram than families expect. That only helps if a stoma is actually formed. Ask whether teaching and the first month of bags are inside the letter before you treat NCR as a supply advantage.",
         "Treat Gurugram, south Delhi, Noida, Shalimar Bagh and Faridabad as different quotations even when the brand name matches. A south Delhi Apollo letter and a Faridabad or Noida letter are not interchangeable for a multi-week attendant stay that includes daily radiation.",
+        "NCR is also where a second colorectal opinion is a car ride. A family that lands with an LAR letter from one campus and an APR recommendation from another is not being overcharged — the tumour height on MRI is being read twice. Use that. Do not treat the cheaper of the two letters as the winner until reconstruction, TME, stoma and radiation are named on both.",
+        "Max Smart and BLK-Max sit in different south-Delhi gravity from Medanta and Fortis Memorial in Gurugram. Artemis is a Gurugram letter with its own hotel belt. Sarvodaya Faridabad is farther still. Coordinators who know NCR start with the surgeon who would resect, then the campus that holds that surgeon's radiation partner, then the hotel. The reverse order is how families lose a week to the wrong suburb.",
+        "If neoadjuvant chemoradiation is already finished abroad, bring the radiation plan and the latest MRI on a disc that actually opens. NCR radiology repeating a pelvis MRI because a USB would not mount is one of the more avoidable extras on Delhi quotes.",
       ],
       answer: [
         "Rectal cancer surgery in Delhi NCR is planned against the India catalog range of [INDIA_COST] for resection, reconstruction or stoma as quoted, anaesthesia and a stay of [STAY]. We do not publish a separate NCR tariff, because campus tier, LAR versus APR, radiation packaging and stay course move the letter more than the city label.",
@@ -114,7 +117,7 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
     costNote:
       "Surgical estimates sit on the national band. The Mumbai-specific extra is usually the hotel for radiation weeks and the harbour commute — among the highest companion costs of the five cities.",
     page: {
-      seoTitle: "Rectal Cancer Surgery Cost in Mumbai, India | GAF Healthcare",
+      seoTitle: "Rectal Cancer Surgery Cost in Mumbai, India: Prices & Hospitals",
       seoDescription:
         "Rectal cancer surgery cost in Mumbai follows the India planning range of [INDIA_COST]. Compare listed Wockhardt, Apollo Navi Mumbai and Medicover campuses, LAR and APR context, and how to request a personalized estimate.",
       heading: "Rectal Cancer Surgery Cost in Mumbai, India",
@@ -131,6 +134,9 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
         "Monsoon scheduling is a cost issue for leak-related readmission and for getting a companion to the ward at 2 a.m. If you can choose a date, avoid peak July unless the family is prepared to sit tight next to the hospital.",
         "Wockhardt sits in the island-city gravity. Apollo Navi Mumbai and Medicover sit across the water. International desks at those houses are used to visa letters. They are not interchangeable ICUs or interchangeable radiation bunkers.",
         "After discharge, local trains are a poor plan for a companion carrying stoma supplies. Pair a serviced flat to the ward entrance. If the letter is Navi Mumbai, do not keep the family in Bandra because the restaurants look familiar.",
+        "Mumbai's international desks are used to Gulf and African files, but rectal cancer is not a two-night package. A family that writes a ten-day visa for a pelvic resection plus possible radiation is rewriting paperwork in week three. Ask the coordinator to put radiation weeks on the invitation letter if those weeks will happen in India.",
+        "Wockhardt Mumbai Central is an island-city gravity. Apollo and Medicover in Navi Mumbai are across the harbour. A leak review at 2 a.m. from the wrong side of the water is a logistics failure, not a clinical one. Rent where the letter is written.",
+        "If MRI pelvis was done at home, bring DICOM. Harbour-city restaging because a PDF screenshot was all that travelled is a radiology bill and a delayed theatre date. That delay is hotel nights, not a cheaper surgery.",
       ],
       answer: [
         "Rectal cancer surgery in Mumbai is planned against [INDIA_COST] and [STAY] in hospital — the India catalog band, not a Mumbai-only tariff. Named colorectal-cancer surgery listings currently sit at Wockhardt Mumbai Central, Apollo Navi Mumbai and Medicover Navi Mumbai.",
@@ -208,7 +214,7 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
     costNote:
       "Surgical estimates sit on the national band of [INDIA_COST]. Bengaluru-specific extras are usually restaging MRI if you arrive without films, and transfer-plus-hotel time between KIAL and Bannerghatta.",
     page: {
-      seoTitle: "Rectal Cancer Surgery Cost in Bengaluru, India | GAF Healthcare",
+      seoTitle: "Rectal Cancer Surgery Cost in Bengaluru, India: Prices & Hospitals",
       seoDescription:
         "Rectal cancer surgery cost in Bengaluru follows the India planning range of [INDIA_COST]. Compare the listed Apollo Bannerghatta colorectal surgery option, hospital-stay context and how to request a personalized estimate.",
       heading: "Rectal Cancer Surgery Cost in Bengaluru, India",
@@ -216,7 +222,7 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
         "See how Bengaluru quotations for rectal cancer surgery are built around elective colorectal lists, pelvic MRI and radiation partnerships — then compare GAF-listed surgeons before you request a written estimate.",
       intro: [
         "Bengaluru’s rectal cancer referrals on GAF currently run through a thinner surgical-oncology colorectal tag set than Delhi NCR. The India planning range is still [INDIA_COST]. That number does not become a Bengaluru package because the city has strong private hospital infrastructure.",
-        "The one named GAF listing whose tags clearly include colorectal cancer surgery in this city is Dr. Narasimhaiah Srinivasaiah, Senior Consultant Colorectal Surgery at Apollo Hospitals, Bannerghatta Road, with a 2001 starting year on the profile. Additional Bengaluru colorectal surgeons may exist outside this dump; they are not invented here.",
+        "The one named GAF listing whose tags clearly include colorectal cancer surgery in this city is Dr. Narasimhaiah Srinivasaiah, Senior Consultant Colorectal Surgery at Apollo Hospitals, Bannerghatta Road, with a 2001 starting year on the profile. A second GI listing, Dr. Sreedhara V, also at Apollo Bannerghatta, maps because the catalog tags low anterior resection and colorectal resection alongside HPB and bariatric lists. That is a tagging fact. Confirm who would actually resect rectum. Additional Bengaluru colorectal surgeons may exist outside this dump; they are not invented here.",
         "That single named card is useful as a starting point for TME and sphincter-preservation questions, not as a league table. Ask Apollo Bannerghatta — and any other campus you shortlist independently — how pelvic MRI, radiation oncology and stoma therapy sit on the same site.",
         "Bengaluru quotes for elective rectal resections often assume a stable work-up. International patients who arrive without MRI pelvis or without a radiation plan may see restaging added before a date is given. Those imaging and oncology lines sit outside [INDIA_COST] unless packaged.",
         "Robotic and laparoscopic colorectal lists are common talking points in Bengaluru marketing. Suitability still depends on tumour height, response to chemoradiation and surgeon judgement. A robotic line item without a description of TME or diversion is an incomplete quote.",
@@ -225,6 +231,9 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
         "Kempegowda International to Bannerghatta is a planning fact for the first 48 hours. Same-day MRI after a long-haul flight is tiring and sometimes postponed, which can shift the theatre date and add hotel nights that never appear in the surgery range.",
         "If a stoma is likely, confirm who teaches appliance changes on weekends — Bengaluru private wards vary in stoma-nurse coverage. Weekend gaps are a practical question, not a ranking.",
         "Share MRI, colonoscopy and biopsy with GAF so coordinators can tell you whether Apollo Bannerghatta — or another campus you name — can review films before you book flights. Final cost is the hospital quotation, not this page’s planning range.",
+        "Bengaluru private hospitals are used to software-industry international insurance and to self-pay visitors from neighbouring countries. Rectal cancer still needs a named pelvic MRI, a radiation partner and a leak-aware ward — not an elective robotic brochure. Ask whether the Bannerghatta radiation bunker is on the same plot as theatre.",
+        "Whitefield, Electronic City and Bannerghatta are not one hotel belt. A 6-to-12-night admission plus possible radiation weeks punishes a family that rents next to the airport because the first night was easy. After theatre, the companion's commute is the cost that actually moves.",
+        "If a covering ileostomy is likely, ask which pharmacy next to Bannerghatta stocks appliances on a Sunday. Bengaluru has the supplies; they are not useful if the family is in an airport hotel with a closed shop.",
       ],
       answer: [
         "Rectal cancer surgery in Bengaluru is planned against [INDIA_COST] and [STAY] — the India catalog band, not a BBMP tariff. The currently mapped colorectal surgery listing sits at Apollo Hospitals, Bannerghatta Road.",
@@ -302,7 +311,7 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
     costNote:
       "Surgical estimates sit on the national band. Chennai-specific extras are usually a radiation shuttle if the bunker is off-campus, and humidity-related stoma-supply needs after APR.",
     page: {
-      seoTitle: "Rectal Cancer Surgery Cost in Chennai, India | GAF Healthcare",
+      seoTitle: "Rectal Cancer Surgery Cost in Chennai, India: Prices & Hospitals",
       seoDescription:
         "Rectal cancer surgery cost in Chennai follows the India planning range of [INDIA_COST]. Compare listed MGM and Gleneagles surgical oncologists, LAR and APR context, and how to request a personalized estimate.",
       heading: "Rectal Cancer Surgery Cost in Chennai, India",
@@ -319,6 +328,9 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
         "MGM and Gleneagles are different hotel belts and different transfer times from MAA. Ask which address is on the letter before you rent. A 6-to-12-night admission plus radiation weeks does not forgive a cross-city commute.",
         "Share MRI, colonoscopy and biopsy with GAF for a Chennai review. If films cannot be opened, restaging in the city will add days and radiology fees before a date is given.",
         "The hospital quotation — not this planning range — should drive flights and attendant lodging. Buy tickets only after LAR versus APR, TME, stoma and radiation extras are written down.",
+        "Chennai's international flow includes Sri Lanka, Bangladesh and the Gulf as well as longer-haul self-pay. Coordinators are used to invitation letters. They are not interchangeable with a radiation-oncology diary. If chemoradiation is still due, ask whether the bunker is a walk from the ward or a daily car.",
+        "MGM and Gleneagles sit in different parts of the metropolitan area. Treating 'Chennai hospitals' as one pin on a map is how families add two hours of heat to every radiation fraction. Rent next to the address on the letter.",
+        "After APR, humidity is a stoma-care problem. Ask for extra adhesive and bags in the discharge list, and for a written brand so you can buy the same appliance at home. That supply line is never inside [INDIA_COST].",
       ],
       answer: [
         "Rectal cancer surgery in Chennai is planned against [INDIA_COST] and [STAY] — the India catalog band, not a municipal tariff. Mapped listings currently sit at MGM Healthcare and Gleneagles Health City.",
@@ -390,13 +402,13 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
   {
     citySlug: "hyderabad",
     ecosystem:
-      "Hyderabad’s GAF-mapped rectal and colorectal cluster is denser than Bengaluru’s and differently organised from Delhi NCR’s. Surgical-oncology names whose tags include colorectal cancer surgery include Dr. Chinnababu Sunkavalli, Dr. Rajesh Goud E, Dr. Sachin Marda and Dr. Sreehari Gowda, all listed at Yashoda Hospitals. Surgical-gastroenterology extra tags add Dr. Asif Mehraj at Apollo Hospitals, Jubilee Hills — whose profile lists laparoscopic hemicolectomy, low anterior resection, TME and APR — and Dr. Kishore V Alapati, whose designation is Consultant Colorectal Surgeon.",
+      "Hyderabad’s GAF-mapped rectal and colorectal cluster is denser than Bengaluru’s and differently organised from Delhi NCR’s. Surgical-oncology names whose tags include colorectal cancer surgery include Dr. Chinnababu Sunkavalli, Dr. Rajesh Goud E, Dr. Sachin Marda and Dr. Sreehari Gowda, all listed at Yashoda Hospitals, Hi-Tech City. Surgical-gastroenterology extra tags add Dr. Asif Mehraj at Apollo Hospitals, Jubilee Hills — whose profile lists laparoscopic hemicolectomy, low anterior resection, TME and APR — and Dr. Kishore V Alapati, whose designation is Consultant Colorectal Surgeon.",
     logistics:
       "Rajiv Gandhi International Airport sits south of the city. Jubilee Hills and several Yashoda units are a substantial transfer. Families sometimes split the first night near the airport if MRI is booked the next morning. Airport lodging is outside [INDIA_COST].",
-    costNote:
-      "Ask which Hyderabad campus will hold MRI, radiation and theatre. Yashoda versus Apollo Jubilee Hills is a campus choice, not a quality ranking, and split-campus pathways add taxi days that never appear in the surgery range.",
+      costNote:
+      "Ask which Hyderabad campus will hold MRI, radiation and theatre. Yashoda Hi-Tech City versus Apollo Jubilee Hills is a campus choice, not a quality ranking, and split-campus pathways add taxi days that never appear in the surgery range.",
     page: {
-      seoTitle: "Rectal Cancer Surgery Cost in Hyderabad, India | GAF Healthcare",
+      seoTitle: "Rectal Cancer Surgery Cost in Hyderabad, India: Prices & Hospitals",
       seoDescription:
         "Rectal cancer surgery cost in Hyderabad follows the India planning range of [INDIA_COST]. Compare Yashoda and Apollo colorectal listings, LAR and APR context, and how to request a personalized estimate.",
       heading: "Rectal Cancer Surgery Cost in Hyderabad, India",
@@ -404,7 +416,7 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
         "Use Hyderabad planning ranges to see how Yashoda and Apollo campuses quote rectal cancer surgery when LAR, APR, TME and radiation sit in the same metropolitan network — not as a single city-wide package.",
       intro: [
         "Hyderabad is the city families shortlist when they want more than one mapped colorectal name in the same metro without defaulting to Delhi NCR. The India planning range is still [INDIA_COST]. Yashoda and Apollo Jubilee Hills are different letters, not a blended Hyderabad tariff.",
-        "Surgical-oncology names whose tags include colorectal cancer surgery include Dr. Chinnababu Sunkavalli, Dr. Rajesh Goud E, Dr. Sachin Marda and Dr. Sreehari Gowda, all listed at Yashoda Hospitals. That is a directory cluster, not a ranking of the city’s surgeons.",
+        "Surgical-oncology names whose tags include colorectal cancer surgery include Dr. Chinnababu Sunkavalli, Dr. Rajesh Goud E, Dr. Sachin Marda and Dr. Sreehari Gowda, all listed at Yashoda Hospitals, Hi-Tech City. That is a directory cluster, not a ranking of the city’s surgeons.",
         "Surgical-gastroenterology extra tags add Dr. Asif Mehraj at Apollo Hospitals, Jubilee Hills — whose profile lists laparoscopic hemicolectomy, low anterior resection, TME and APR — and Dr. Kishore V Alapati, whose designation is Consultant Colorectal Surgeon. Those GI cards are relevant to rectal cancer even though they are not surgical-oncology rows.",
         "Quotes differ when radiation, MRI and theatre sit on one site versus when a patient is sent across the city for IMRT. Ask which Hyderabad campus will deliver pelvic radiation if neoadjuvant treatment is still due.",
         "Hyderabad quotations should name LAR or APR, say whether TME is the described plane, and say whether a stoma is expected. A generic 'rectal surgery' line without those details is not comparable to a Delhi quote that specifies them.",
@@ -413,6 +425,9 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
         "Rajiv Gandhi International to Jubilee Hills or a Yashoda unit is a south-to-city transfer. Families sometimes split the first night near the airport if MRI is booked the next morning. Airport lodging is outside the surgery range.",
         "Compare Hyderabad quotes by Yashoda unit versus Apollo Jubilee Hills, by whether MRI pelvis is included, and by whether radiation is on the same invoice. Do not average those quotes into a city price.",
         "Share MRI, colonoscopy, biopsy and radiation records with GAF for a Hyderabad review before you treat any website range as your bill. Buy tickets only after the treating hospital issues a written quotation that lists approach, stay, ICU, stoma and oncology extras.",
+        "Hyderabad's private campuses are used to domestic referrals from Andhra Pradesh and Telangana as well as international self-pay. That density is why four Yashoda surgical-oncology names and two Apollo GI colorectal cards can appear on one city page. Density is not a ranking. Meet the person who would operate.",
+        "Jubilee Hills, a Yashoda unit and the airport hotel belt are different daily lives after a pelvic resection. If radiation is still running, a 90-minute transfer each fraction is a planning failure. Ask which plot holds the bunker before you rent.",
+        "Dr. Asif Mehraj's Apollo listing names LAR, TME and APR in so many words. Use that as a question list on camera: which of those operations is actually planned for this MRI, and is a stoma expected. A named list on a profile is not a booking.",
       ],
       answer: [
         "Rectal cancer surgery in Hyderabad is planned against [INDIA_COST] and [STAY] — the India catalog band, not a GHMC tariff. Mapped listings currently sit at Yashoda Hospitals and on GI colorectal cards linked to Apollo Jubilee Hills.",
@@ -454,7 +469,7 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
         "If a temporary ileostomy is likely, plan an extra local week after the [STAY] admission for appliance teaching before the flight home.",
       ],
       hospitalDiscussion: [
-        "Mapped Hyderabad campuses currently include Yashoda Hospitals and Apollo Hospitals, Jubilee Hills. Accreditation is shown on each profile as published.",
+        "Mapped Hyderabad campuses currently include Yashoda Hospitals, Hi-Tech City and Apollo Hospitals, Jubilee Hills. Accreditation is shown on each profile as published.",
         "Ask how restaging MRI after neoadjuvant treatment is scheduled relative to the theatre list so international patients are not waiting between departments.",
         "Doctor cards below are Hyderabad-filtered from the catalog. They are not a ranking of Hyderabad rectal-cancer surgeons.",
       ],
@@ -465,7 +480,7 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
         },
         {
           q: "Which Hyderabad doctors appear on GAF for rectal cancer surgery?",
-          a: "Mapped listings include Dr. Chinnababu Sunkavalli, Dr. Rajesh Goud E, Dr. Sachin Marda and Dr. Sreehari Gowda at Yashoda Hospitals, plus Dr. Asif Mehraj and Dr. Kishore V Alapati on GI colorectal cards. Confirm TME and radiation partners with the hospital.",
+          a: "Mapped listings include Dr. Chinnababu Sunkavalli, Dr. Rajesh Goud E, Dr. Sachin Marda and Dr. Sreehari Gowda at Yashoda Hospitals, Hi-Tech City, plus Dr. Asif Mehraj and Dr. Kishore V Alapati on GI colorectal cards. Confirm TME and radiation partners with the hospital.",
         },
         {
           q: "Is Yashoda cheaper than Apollo for this surgery?",
