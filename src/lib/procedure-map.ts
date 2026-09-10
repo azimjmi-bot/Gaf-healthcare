@@ -723,6 +723,7 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
       ) || (/colorectal resect/i.test(blob) && /colorectal cancer/i.test(blob));
     if (colorectal) extras.push("Colectomy");
     if (rectal) extras.push("Rectal Cancer Surgery");
+    if (/whipple|pancreaticoduoden/i.test(blob)) extras.push("Whipple Procedure");
     return extras.length ? [...found, ...extras] : found;
   }
   if (specialty === "Urology") return mapUrologyProcedures(texts);

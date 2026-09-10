@@ -561,6 +561,7 @@ export const esophagectomy: CostArticle = {
 
   relatedProcedures: [
     "Gastrectomy",
+    "Whipple Procedure",
     "Chemotherapy",
     "Neoadjuvant Chemotherapy",
     "Intensity-Modulated Radiotherapy (IMRT)",

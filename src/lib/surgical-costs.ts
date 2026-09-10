@@ -175,7 +175,7 @@ export const SURGICAL_SUMMARIES: Record<string, string> = {
   "Liver Resection (Hepatectomy)":
     "Hepatectomy removes part of the liver — for selected primary tumours, colorectal metastases or other lesions — while leaving enough functioning remnant. Extent, approach and ICU follow the scan and liver function, not a brochure upgrade.",
   "Whipple Procedure":
-    "Pancreaticoduodenectomy is a long operation with a long recovery. We match volume centres, not a first-time international Whipple.",
+    "Pancreaticoduodenectomy removes the pancreatic head and nearby structures, then reconstructs the digestive tract. Vascular work, open versus minimally invasive access and ICU follow staging — not a brochure upgrade.",
   "Pancreatic Surgery":
     "Pancreatic resections beyond or including Whipple — distal pancreatectomy, enucleation when appropriate. Vascular reconstruction, if likely, is named in the plan.",
   "Cytoreductive Surgery":
