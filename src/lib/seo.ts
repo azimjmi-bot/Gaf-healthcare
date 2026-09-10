@@ -451,6 +451,49 @@ export const DOCTOR_FAQS = [
   },
 ];
 
+export const HOSPITAL_FAQS = [
+  {
+    q: "How do I choose the right hospital for my treatment?",
+    a: "Consider factors such as the hospital's relevant specialties, doctors, procedures offered, location, available facilities, accreditation, international-patient services, and your specific treatment requirements. GAF Healthcare helps you explore these factors so you can make a more informed decision.",
+  },
+  {
+    q: "How are hospitals listed on GAF Healthcare?",
+    a: "Hospitals are listed based on information such as their location, medical specialties, treatments and procedures, doctors, facilities, and other available professional information. Listings are intended to help patients explore their options and are not presented as a universal ranking of hospitals.",
+  },
+  {
+    q: "Can I compare hospitals before choosing one?",
+    a: "Yes. You can explore hospitals by location, specialty, treatment, doctors, facilities, and other available information. Comparing these factors can help you identify hospitals that may be suitable for your treatment needs.",
+  },
+  {
+    q: "How can I check whether a hospital is accredited?",
+    a: "Hospital accreditation can provide information about the standards and quality systems followed by a facility. Where accreditation information is available, GAF Healthcare displays relevant details on the hospital profile. Patients should also verify current accreditation status directly with the hospital when making a final decision.",
+  },
+  {
+    q: "Do the hospitals listed on GAF Healthcare treat international patients?",
+    a: "Many hospitals listed on GAF Healthcare have services or departments that support international patients. These may include international patient coordinators, airport assistance, language support, visa assistance, accommodation guidance, and medical travel coordination. Services vary by hospital.",
+  },
+  {
+    q: "Can I find doctors and specialists associated with a hospital?",
+    a: "Yes. Hospital profiles can help you explore doctors and specialists associated with the facility. You can review individual doctor profiles to understand their specialty, relevant experience, procedures, and other available professional information.",
+  },
+  {
+    q: "Can I get a treatment cost estimate from a hospital before travelling?",
+    a: "Treatment costs depend on your diagnosis, treatment plan, doctor, hospital, room category, investigations, and other clinical requirements. International patients can share their medical records to request an indicative treatment estimate before making travel arrangements, subject to hospital and doctor review.",
+  },
+  {
+    q: "Can GAF Healthcare help me choose a hospital based on my treatment?",
+    a: "Yes. You can share your treatment requirements and medical records with GAF Healthcare. Where appropriate, our team can help you explore relevant hospitals and doctors based on your medical needs, preferred destination, and available options.",
+  },
+  {
+    q: "What facilities and services should I consider when choosing a hospital?",
+    a: "Depending on your treatment, you may want to consider the relevant specialty and doctors, diagnostic facilities, operating theatres, intensive care capabilities, rehabilitation services, accommodation options, international-patient support, and access to other specialists required during your treatment.",
+  },
+  {
+    q: "Can I contact or visit a hospital before deciding?",
+    a: "Depending on the hospital, you may be able to communicate with the hospital's international-patient team, request a medical review, schedule a consultation, or arrange a hospital visit. Availability and processes vary by facility.",
+  },
+];
+
 export const COST_FAQS = [
   {
     q: "Are the India cost ranges quotes?",
