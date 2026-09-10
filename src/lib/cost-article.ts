@@ -348,10 +348,16 @@ export function articleFaculty(treatmentSlug: string, city?: string, limit = 8) 
 }
 
 export function articleCampuses(treatment: Treatment, city?: string) {
+  const facultyCampuses = new Set(
+    doctorsForTreatment(treatment.slug)
+      .filter((doctor) => (city ? doctor.city === city : true))
+      .map((doctor) => doctor.hospitalSlug),
+  );
   return treatment.hospitalSlugs
     .map((slug) => getHospital(slug))
     .filter((h): h is Hospital => {
       if (!h) return false;
       return city ? h.city === city : true;
-    });
+    })
+    .sort((a, b) => Number(facultyCampuses.has(b.slug)) - Number(facultyCampuses.has(a.slug)));
 }

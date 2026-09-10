@@ -23,6 +23,10 @@ export const esophagectomyCities: CityEditorial[] = [
         "Winter air quality is a planning issue after a thoracic sitting if you or your attendant has respiratory disease and you remain for three weeks. It does not change the surgeon's fee. It changes whether step-down in a Gurugram hotel is livable.",
         "Second opinions inside NCR are logistically easy when the live question is MIE versus open, or whether a junction tumour is an esophagectomy or a gastrectomy. They are expensive if you treat Gurugram and south Delhi as one hotel catchment. Pick a belt, take the second opinion as a day trip, then lock the ICU address before you rent.",
         "For a traveller, the metro's size is a tool and a trap. You can put Artemis, Medanta and Apollo on one shortlist. You can also lose a companion to the wrong hotel belt once twice-daily ICU visits start. Coordinators who know NCR start with the surgeon, then the ICU, then the hotel.",
+        "Staging and neoadjuvant treatment are why NCR is more than a theatre address. PET-CT, radiation bunkers and leak-capable ICU can usually be discussed in one visa window — if the invitation letter names the campus that will actually hold each stage. A Gurugram resection letter and a south Delhi radiation diary are two commutes, not one package.",
+        "Treat Gurugram, south Delhi and Noida as three quotations even when the brand name matches. A flagship Medanta or Fortis Memorial letter, an Indraprastha Apollo or Max south Delhi letter, and a satellite-unit letter can all say esophagectomy and still differ on named ICU nights, whether MIE is free that week, and how far a companion walks at 2 a.m.",
+        "On the camera consult, ask who enters the chest and who mobilises the conduit. Thoracic lists at Medanta and mixed GI lists at Fortis Memorial or BLK-Max are not interchangeable teams. If two consultants would operate, both names belong on the estimate. If only one name is printed, ask who covers the other cavity.",
+        "Write the medical-visa duration for [STAY] plus hotel step-down and a possible leak week. International desks in NCR are used to that wording. Under-shooting the visa is how families end up extending paperwork while a jejunostomy is still in place. IGI has the long-haul map; the invitation still has to match the ICU address, not the airport hotel.",
       ],
       answer: [
         "Esophagectomy in Delhi NCR is planned against the India catalog range of [INDIA_COST] for resection, reconstruction, anaesthesia and a stay of [STAY]. We do not publish a separate NCR tariff, because campus tier, approach and ICU course move the letter more than the city label.",
@@ -32,6 +36,7 @@ export const esophagectomyCities: CityEditorial[] = [
         "Flagship letters from Gurugram or south Delhi sit toward the upper half of the national band when a senior upper-GI or thoracic surgeon, MIE or a three-field sitting, a private room and named ICU nights are in the plan. A satellite unit under the same brand can come in lower for an uncomplicated open resection.",
         "Companion living costs in Aerocity or Gurugram for three weeks are typically among the higher of the five cities. The hotel line can rival the difference between two surgical estimates.",
         "International-patient desks in NCR are used to African, Gulf and Central Asian files. Invitation letters that mention a possible leak week are routine — use that, then still meet the operating surgeon on camera with the endoscopy open.",
+        "Noida, Gurugram and south Delhi are not a blended average. Ask which belt the letter is written against, then rent in that belt. A cheaper satellite quote that forces a 90-minute ICU commute is not cheaper once the attendant is living the stay.",
       ],
       factors: [
         {
@@ -60,6 +65,7 @@ export const esophagectomyCities: CityEditorial[] = [
         "Arrival is almost always IGI, then a 40 to 90 minute transfer. Do not schedule theatre for the morning after a 2 a.m. landing.",
         "Write the medical visa for [STAY] plus hotel recovery and a possible leak week. Attendants typically travel on a companion visa.",
         "English is the working language of the international counters. Hindi is the ward language.",
+        "Second opinions inside NCR are a day trip if you already live next to one ICU. They become a hotel-change if you treat Gurugram and south Delhi as one catchment. Lock the operating floor before you lock the apartment.",
       ],
       hospitalDiscussion: [
         "Listed NCR campuses for this surgical-oncology pathway include Medanta, Indraprastha Apollo, BLK-Max, the Max campuses, Fortis Memorial, Fortis Escorts, Artemis and others on the cost sheet. Accreditation is shown on each profile as published.",
@@ -87,6 +93,14 @@ export const esophagectomyCities: CityEditorial[] = [
           q: "How long should we stay in Delhi NCR after esophagectomy?",
           a: "Hospital stay is typically [STAY]. Plan further hotel days until the named surgeon is content you can fly. Winter air quality is a comfort issue, not a fee issue.",
         },
+        {
+          q: "Can staging, neoadjuvant treatment and surgery stay in one NCR visa?",
+          a: "Often that is why families pick this metro. Quote PET-CT, drugs or radiation and the resection as separate lines, and name the campus for each stage so the companion is not commuting across the NCR between a bunker and an ICU.",
+        },
+        {
+          q: "Should two NCR surgeons be named on one esophagectomy letter?",
+          a: "Ask. Ivor Lewis and McKeown use chest and abdomen. If a thoracic colleague and a GI colleague would operate together, both names and both fees should be visible. A single brand on the invitation is not a surgical team.",
+        },
       ],
     },
   },
@@ -112,6 +126,10 @@ export const esophagectomyCities: CityEditorial[] = [
         "Companion living costs over three weeks are typically the highest of the five listed cities. That does not change the surgical fee. It changes whether completing adjuvant treatment here is cheaper than flying home between stages.",
         "Monsoon scheduling is a cost issue for leak-related readmission and for getting a companion to ICU at 2 a.m. If you can choose a date, avoid peak July unless the family is prepared to sit tight next to the hospital.",
         "Mumbai rewards the family that rents next to the operating campus and ignores the airport hotel. It punishes the family that treats 'Mumbai hospitals' as interchangeable pins across the harbour.",
+        "Families still shortlist Mumbai when the flight map from East Africa or the Gulf is better, or when a comprehensive private oncology week is already under way here. That is a logistics choice. It is not evidence that a tagged esophagectomy name exists on this site. Ask the coordinator who would actually resect, and whether that person operates on the island or in Navi Mumbai, before you rent.",
+        "Wockhardt and Gleneagles sit in the island-city gravity. Apollo Hospitals Navi Mumbai and Medicover sit across the harbour. International desks at those houses are used to visa letters. They are not interchangeable ICUs. A leak at 2 a.m. does not respect a trans-harbour taxi quote you saved at booking.",
+        "After discharge, local trains are a poor plan for a companion carrying feeds. Pair a serviced flat to the ward entrance. If the letter is Navi Mumbai, do not keep the family in Bandra because the restaurants look familiar. The three-week hotel line is the Mumbai tax; paying it twice by commuting is how the trip overruns without the surgical fee moving.",
+        "If adjuvant radiation or chemotherapy will continue in Mumbai, say so on day one so the visa and the apartment are written for the longer stay. Completing drugs in another city after a Mumbai resection is two invitation letters and a second set of flights. That can still be the right plan. It should not be a surprise in week three.",
       ],
       answer: [
         "Esophagectomy in Mumbai is planned against [INDIA_COST] and [STAY] in hospital — the India catalog band, not a Mumbai-only tariff. Named consultants for this exact procedure are matched after records review.",
@@ -121,6 +139,7 @@ export const esophagectomyCities: CityEditorial[] = [
         "Once a surgeon is matched, letters still split on approach, ICU nights, campus tier and reconstruction. What inflates the trip is living cost: serviced apartments near the ICU, and traffic that turns a five-kilometre map line into an hour.",
         "Navi Mumbai quotes should be read as Navi Mumbai logistics. A cheaper letter from a harbour-side campus is not cheaper if every ICU visit requires a trans-harbour commute.",
         "Monsoon slack is a real line for a leak week. Build it into the ticket.",
+        "CSMIA looks central on a map and is not central to an ICU stay. Families who keep a room in Andheri 'for the airport' spend the admission in traffic. Rent for the ward door. Count three weeks of food and a companion's lost work as Mumbai-specific lines, not as the surgical fee.",
       ],
       factors: [
         {
@@ -149,6 +168,7 @@ export const esophagectomyCities: CityEditorial[] = [
         "Most families land at CSMIA and transfer 45 to 90 minutes. Do not book same-week theatre after a long-haul flight into peak traffic.",
         "Write the visa for [STAY] plus hotel recovery. Mention a possible leak week so duration is not undershot.",
         "English works at the international counter. Marathi and Hindi are the ward languages.",
+        "Monsoon weeks punish midnight readmissions. If the diary is flexible, avoid peak July unless the attendant can live inside walking distance of the ICU. Harbour taxis at 2 a.m. are not a backup plan.",
       ],
       hospitalDiscussion: [
         "Listed Mumbai-region campuses on the surgical-oncology pathway include Wockhardt, Gleneagles Hospital Mumbai, Apollo Hospitals Navi Mumbai and Medicover Navi Mumbai. Named esophagectomy consultants are matched after records review. Check each profile for accreditation as published.",
@@ -176,6 +196,14 @@ export const esophagectomyCities: CityEditorial[] = [
           q: "Can neoadjuvant treatment and surgery both happen in Mumbai?",
           a: "Often discussed on comprehensive campuses. Quote each stage separately and write the visa for both.",
         },
+        {
+          q: "Why would a family still choose Mumbai without a tagged esophagectomy surgeon?",
+          a: "Flight connections and existing private-oncology relationships. Matching still happens after endoscopy and staging are read. Do not treat a comprehensive campus as a named upper-GI resection consultant.",
+        },
+        {
+          q: "Is a Navi Mumbai quote comparable with an island-city quote?",
+          a: "Only after you add three weeks of attendant logistics. A cheaper harbour-side letter can cost more once every ICU visit crosses the water. The operating address belongs on the estimate.",
+        },
       ],
     },
   },
@@ -201,6 +229,10 @@ export const esophagectomyCities: CityEditorial[] = [
         "The airport is the tax you pay. Families who treat Bengaluru like a compact city and book theatre after a midnight landing discover the NH44 crawl the hard way. Build rest days before a four-to-eight-hour resection.",
         "Two listed campuses means less shopping between brands and more attention to whether upper-GI resection cover is actually on the plot that week. Do not hunt for a third unlisted brand and call it a shortlist.",
         "Bengaluru rewards the family that rents near Bannerghatta or the south-east belt and ignores the airport hotel. Sleeping in Devanahalli for 'convenience' recreates a long commute every time ICU wants the attendant at 6 a.m.",
+        "Climate is the practical differentiator for esophagectomy recovery. A 10-to-18-night ICU-to-ward course plus hotel step-down is easier here in most months than a Delhi winter or a Chennai summer. That does not make the anastomosis safer. It makes the companion's three weeks survivable, which is how most international trips actually fail or hold.",
+        "Two listed campuses means the comparison is a protocol, not a shopping trip. Ask Apollo Bannerghatta and Gleneagles the same questions: who would resect, which approach they would use for this tumour height, how many ICU nights are named, whether the ICU has managed leaks, and whether radiation — if needed — can stay on the plot. A third unlisted brand is not a shortlist.",
+        "Serviced apartments exist because the technology industry already rents them. Over three weeks that usually undercuts a business hotel near either campus. Whitefield and the airport belt are the wrong map if theatre is in the south. The apartment only helps if a companion can walk or take a short car to ICU.",
+        "English on these wards is ordinary, which matters when a night nurse is explaining a drain. It is not a substitute for a named surgeon. Bengaluru is a good city in which to recover after the right person has operated. It is a poor city in which to assume that a comprehensive plot automatically has upper-GI resection cover that week.",
       ],
       answer: [
         "Esophagectomy in Bengaluru is planned against [INDIA_COST] and a typical stay of [STAY] — the national catalog band. There is no separate Bengaluru surgical tariff on this page.",
@@ -210,6 +242,7 @@ export const esophagectomyCities: CityEditorial[] = [
         "Letters still split on approach, ICU nights, room and whether MIE is named. Two campuses means you compare those questions properly rather than collecting a third brochure.",
         "Extended-stay apartments in the south and south-east are commonly cheaper per week than Mumbai or Gurugram hotels. Over three weeks that apartment line is where Bengaluru often wins the total budget even when the surgical estimates match.",
         "Transfer cost from the airport is real but one-off. Daily hospital travel after discharge is short if you sleep near the operating campus.",
+        "Same-campus radiation only saves the trip if the bunker and the theatre are free in the sequence you need. Quote both. A comprehensive plot with a dark bunker that month is just a longer taxi to another city.",
       ],
       factors: [
         {
@@ -238,6 +271,7 @@ export const esophagectomyCities: CityEditorial[] = [
         "Land, sleep, then consult. Coordinators who know this city write the first appointment for the following day — not for same-week theatre.",
         "Mention a possible leak week and adjuvant radiation on the visa letter so duration is not undershot.",
         "English is unusually comfortable on these wards, which matters if the attendant is speaking to ICU nursing at 2 a.m.",
+        "Kempegowda to Bannerghatta is a planned transfer of 45 to 75 minutes, longer in rain. Do not treat Bengaluru as a compact city because the weather is mild. The airport road is the tax; the climate is the rebate.",
       ],
       hospitalDiscussion: [
         "Listed Bengaluru campuses for this pathway are Apollo Hospitals Bannerghatta Road and Gleneagles Hospitals Bengaluru. Read each profile for accreditation as published.",
@@ -265,6 +299,14 @@ export const esophagectomyCities: CityEditorial[] = [
           q: "Can radiation stay on the same Bengaluru campus?",
           a: "Often that is why families pick this city. Quote radiation separately from the surgical letter.",
         },
+        {
+          q: "Is the Bengaluru advantage the surgical fee?",
+          a: "Usually not. The national planning band still applies. The advantage, when there is one, is climate and apartment cost over a two-to-three-week recovery — if you sleep next to the operating campus.",
+        },
+        {
+          q: "Should we stay near Whitefield or the airport?",
+          a: "No, if the resection is at the listed southern campuses. Kempegowda is north; Bannerghatta and the south-east belt are not a hop. Rent for ICU visits, not for the landing.",
+        },
       ],
     },
   },
@@ -290,6 +332,10 @@ export const esophagectomyCities: CityEditorial[] = [
         "Three named surgical-oncology listings is a finite list. Meet the person who would operate. Do not treat MGM, Rela and Gleneagles as interchangeable Ivor Lewis factories. Ask which approach they actually offer for your tumour height.",
         "Use the desk for the visa, then still insist on meeting the operating surgeon on camera with the endoscopy open, and ask how many ICU nights the letter names and what happens if a leak extends them.",
         "If a companion is coming from Sri Lanka or Bangladesh, Chennai often wins on flight frequency as well as desk fluency. That is a trip-cost fact, not a clinical ranking of Tamil Nadu surgeons.",
+        "The Indian Ocean rim is why this corridor exists. Colombo, Malé, Dhaka and East African connections land closer to the listed campuses than IGI does to Gurugram. Short transfers after a long-haul flight matter before a four-to-eight-hour resection. They matter more when a companion is doing twice-daily ICU visits for two weeks.",
+        "Heat from April to July is a medical-plan line, not a tourism footnote. A thoracotomy or MIE recovery in an un-air-conditioned hotel is a poor pairing. Budget the lodging as part of leak prevention and sleep, not as a luxury. Resection itself is performed year-round; the companion's stamina is what seasonal heat taxes.",
+        "Three named listings is a finite list. Meet Dr. Manikandan Venkatasubramaniyan or Dr. S. Srivishnu at MGM, or Dr. P. Saravanan at Rela, on camera with the endoscopy open. Ask which approach they would use for this tumour height, how many ICU nights the letter names, and what happens if a leak extends them. Gleneagles HealthCity is on the surgical-oncology campus list; it is not automatically a fourth named esophagectomy consultant.",
+        "Visa-extension paperwork is ordinary desk work here, which is the hidden Chennai line when neoadjuvant radiation or a leak week outlasts a short visa. Ask whether the international desk handles that in-house before you treat a two-week invitation as enough. A jejunostomy still in place is a poor time to discover the FRRO queue.",
       ],
       answer: [
         "Esophagectomy in Chennai is planned against [INDIA_COST] and [STAY] in hospital — the India catalog band. There is no separate Chennai surgical tariff on this page.",
@@ -299,6 +345,7 @@ export const esophagectomyCities: CityEditorial[] = [
         "Surgical letters follow campus tier, the named consultant, approach and named ICU nights. Living costs are typically gentler than Mumbai. The hidden Chennai line is visa extension if neoadjuvant radiation or a leak week is added.",
         "Short transfers cut taxi bills and fatigue. That matters more after esophagectomy than before it, because ICU visits and swallow studies are repetitive errands.",
         "MGM, Rela and Gleneagles should be compared as named operating sites, not as 'Chennai hospitals' in the abstract.",
+        "Families arriving from Colombo or Malé often already have a fare advantage. That is a trip-cost fact. It does not make a Chennai letter cheaper than a Hyderabad letter for the same approach. Compare itemised ICU nights, then add the actual ticket you would buy.",
       ],
       factors: [
         {
@@ -326,6 +373,7 @@ export const esophagectomyCities: CityEditorial[] = [
         "Chennai International to the listed campuses is the least punishing transfer of the five cities in ordinary traffic.",
         "Interpreters for Sri Lankan, Bangladeshi and some African languages are easier to source on this corridor. Still ask.",
         "Summer recovery plans should include a hotel with reliable power backup next to the ICU campus.",
+        "FRRO and visa-extension desks are ordinary work for these international counters. Use them on day one if neoadjuvant radiation plus resection plus a leak week might outlast a short visa. A jejunostomy is a poor time to join a queue.",
       ],
       hospitalDiscussion: [
         "Listed Chennai campuses on the surgical-oncology pathway include Gleneagles HealthCity, MGM Healthcare and Rela Hospital. Named esophageal-cancer surgery consultants currently sit at MGM and Rela. Accreditation is on each profile as published.",
@@ -353,6 +401,14 @@ export const esophagectomyCities: CityEditorial[] = [
           q: "Can neoadjuvant chemoradiation happen in Chennai before resection?",
           a: "Often discussed on these campuses. Quote it separately and write the visa for both stages.",
         },
+        {
+          q: "Does a short airport transfer change the surgical fee?",
+          a: "No. The India planning band still applies. What it changes is companion fatigue over two weeks of ICU visits, swallow studies and a possible visa extension run — which is how Chennai often wins the total trip even when two surgical letters match.",
+        },
+        {
+          q: "Is Gleneagles HealthCity a named esophagectomy listing?",
+          a: "It is on the surgical-oncology campus list for this pathway. Named esophageal-cancer surgery consultants currently sit at MGM and Rela. Confirm who would operate before you treat the brand as the surgeon.",
+        },
       ],
     },
   },
@@ -378,6 +434,10 @@ export const esophagectomyCities: CityEditorial[] = [
         "A junction tumour may be an esophagectomy or a gastrectomy. Because campuses sit close, a family can take that second opinion without relocating. Use it before you lock a date. Neighbouring gastrectomy is a different cost sheet.",
         "Hyderabad is a reasonable city in which to pause after discharge without paying Mumbai rents. That pause is when jejunostomy feeds are watched and a swallow study is repeated. Families who fly home the morning after ward discharge often end up photographing a fever on a phone in another country.",
         "English works at the international desks. Telugu is the ward language. The camera consult will be in English. Say if you need an interpreter on the ward at 2 a.m., not after admission.",
+        "The catalog here is Yashoda-weighted on purpose. Five named surgical oncologists at that house is a real list, not a metro-wide league table. Apollo Hospital Jubilee Hills sits on the surgical-oncology campus list. Confirm the operating site and the person in theatre; two Yashoda addresses are not automatically the same ICU, the same MIE diary, or the same letter.",
+        "Compact geography is the clinical tool. A family can take a second opinion on Ivor Lewis versus McKeown, or on whether a gastro-oesophageal junction tumour is an esophagectomy or a gastrectomy, without changing hotels. Use that before you lock a date. Neighbouring gastrectomy is a different cost sheet on this site.",
+        "Apartment economics around Banjara Hills, Jubilee Hills and Gachibowli are why Hyderabad often undercuts Mumbai and Gurugram on the three-week total. The saving only exists if you sleep in that belt. An outer-ring hotel near Rajiv Gandhi International recreates Bengaluru's airport mistake once twice-daily ICU visits start.",
+        "Telugu is the ward language. English is the desk and camera language. If the attendant will be speaking to ICU nursing at 2 a.m., ask for a night interpreter before admission rather than after a drain conversation goes wrong. Write adjuvant radiation into the first invitation if you might stay for it — extending a short visa with a jejunostomy in place is avoidable paperwork.",
       ],
       answer: [
         "Esophagectomy in Hyderabad is planned against [INDIA_COST] and [STAY] in hospital — the India catalog band. There is no separate Hyderabad surgical tariff on this page.",
@@ -387,6 +447,7 @@ export const esophagectomyCities: CityEditorial[] = [
         "Surgical estimates still split on surgeon, approach, ICU nights, reconstruction and campus tier. Apollo Jubilee Hills and the Yashoda addresses should be compared as named operating sites.",
         "Apartment rates around the hospital belt are the line that often makes Hyderabad the quieter total budget — if you sleep in that belt.",
         "Because campuses sit relatively close, a family can take a listed second opinion on Ivor Lewis versus McKeown, or esophagectomy versus gastrectomy, without a day of travel. Use that before you lock a date.",
+        "Yashoda-weighted listings are a feature and a limit. You can meet several tagged surgical oncologists without changing cities. You cannot treat that as a pan-Hyderabad league table, and you cannot assume Apollo Jubilee Hills has the same named person on the same week.",
       ],
       factors: [
         {
@@ -414,6 +475,7 @@ export const esophagectomyCities: CityEditorial[] = [
         "RGIA to the hospital belt is a planned transfer, not a hop. Same-week theatre after a long-haul landing is unwise before a four-to-eight-hour resection.",
         "If you might stay for adjuvant radiation, say so in the first invitation request.",
         "English works at the international desks. Telugu is the ward language.",
+        "Outer-ring hotels advertise airport convenience and fail ICU logistics. Stay in Banjara Hills, Jubilee Hills or Gachibowli. The 45-to-70-minute airport road is paid once; twice-daily ICU visits are paid for two weeks.",
       ],
       hospitalDiscussion: [
         "Listed Hyderabad campuses on the surgical-oncology pathway include Apollo Hospital Jubilee Hills, Yashoda Hospitals Hi-Tech City and Yashoda Hospitals Somajiguda. Named esophageal-cancer surgery consultants currently sit at Yashoda. Read accreditation on each profile as published.",
@@ -440,6 +502,14 @@ export const esophagectomyCities: CityEditorial[] = [
         {
           q: "Should we wait in Hyderabad after discharge?",
           a: "Often practical, because apartments are relatively affordable and campuses sit close. Fly when the named surgeon is content, not when the ticket is cheapest.",
+        },
+        {
+          q: "Are all Yashoda addresses the same esophagectomy quote?",
+          a: "No. Hi-Tech City, Somajiguda and other sites can differ on who operates, which ICU would take a leak, and whether MIE is offered that week. The operating address belongs on the letter.",
+        },
+        {
+          q: "When is Hyderabad a poor fit for esophagectomy?",
+          a: "When you need the widest parallel upper-GI shortlist in one metro — Delhi NCR still has the denser named listing — or when you treat an airport hotel as close enough for twice-daily ICU visits.",
         },
       ],
     },
