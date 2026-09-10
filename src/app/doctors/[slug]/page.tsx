@@ -67,7 +67,7 @@ export default async function DoctorDetailPage({
       />
       <DoctorProfileHero doctor={d} hospital={hospital} />
 
-      <article className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">
+      <article className="mx-auto max-w-3xl px-4 py-10 sm:px-5 md:px-8 md:py-20">
         <h3 className="text-sm tracking-[0.2em] text-gold uppercase">About {d.name}</h3>
         <h2 className="mt-3 font-heading text-3xl">Professional summary</h2>
         <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{d.bio}</p>
@@ -103,7 +103,7 @@ export default async function DoctorDetailPage({
 
       {pathways.length > 0 ? (
         <section className="border-t border-border bg-secondary/30">
-          <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
+          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-16">
             <h2 className="font-heading text-3xl">Treatment cost for related procedures</h2>
             <ul className="mt-6 grid gap-4 md:grid-cols-2">
               {pathways.map((t) =>

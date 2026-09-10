@@ -163,14 +163,14 @@ export default async function CostDetailPage({
           <Image src={t.image} alt={t.name} fill className="object-cover" priority />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
-        <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-12 md:px-8">
+        <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-10 sm:px-5 md:px-8 md:pb-12">
           <p className="eyebrow text-gold">Treatment cost · {t.category}</p>
-          <h1 className="mt-3 max-w-5xl font-heading text-4xl md:text-6xl">
+          <h1 className="mt-3 max-w-5xl font-heading text-[2rem] leading-tight md:text-6xl">
             {guide ? guide.title : t.name}
           </h1>
         </div>
       </section>
-      <section className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-12 md:px-8">
+      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:px-5 md:grid-cols-12 md:gap-12 md:px-8 md:py-16">
         <div className="md:col-span-7">
           {t.replaceGuide && t.blocks && t.blocks.length > 0 ? (
             <ArticleBlocks blocks={t.blocks} />
@@ -300,8 +300,8 @@ export default async function CostDetailPage({
           </div>
         </aside>
       </section>
-      <section className="bg-secondary/40 py-16">
-        <div className="mx-auto max-w-7xl px-5 md:px-8">
+      <section className="bg-secondary/40 py-10 md:py-16">
+        <div className="mx-auto max-w-7xl px-4 sm:px-5 md:px-8">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <h2 className="font-heading text-3xl">
               {consultantNoun.charAt(0).toUpperCase() + consultantNoun.slice(1)}

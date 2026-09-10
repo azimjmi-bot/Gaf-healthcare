@@ -68,7 +68,8 @@ export function HomeSearch() {
         </select>
       </label>
       <button type="submit" className="home-search__go">
-        Advanced Care A Click Away
+        <span className="md:hidden">Find specialists</span>
+        <span className="hidden md:inline">Advanced Care A Click Away</span>
       </button>
     </form>
   );

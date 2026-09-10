@@ -22,7 +22,7 @@ export function SiteFooter() {
   if (pathname.startsWith("/cms")) return null;
   return (
     <footer className="border-t border-border bg-ink text-ivory">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-12 md:px-8">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-5 md:grid-cols-12 md:gap-12 md:px-8 md:py-16">
         <div className="md:col-span-5">
           <p className="font-heading text-2xl tracking-[0.12em] uppercase md:text-3xl">GAF Healthcare</p>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-ivory/70">

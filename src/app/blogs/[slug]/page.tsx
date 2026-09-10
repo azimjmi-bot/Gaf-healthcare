@@ -69,7 +69,7 @@ export default async function BlogPostPage({
           </h1>
         </div>
       </section>
-      <article className="mx-auto max-w-3xl px-5 py-16 md:px-8 md:py-20">
+      <article className="mx-auto max-w-3xl px-4 py-10 sm:px-5 md:px-8 md:py-20">
         <p className="text-sm text-muted-foreground">{post.author}</p>
         {post.tags.length > 0 ? (
           <p className="mt-2 text-xs tracking-[0.16em] text-muted-foreground uppercase">
@@ -89,7 +89,7 @@ export default async function BlogPostPage({
       </article>
       {others.length > 0 ? (
         <section className="border-t border-border bg-secondary/40">
-          <div className="mx-auto max-w-7xl px-5 py-16 md:px-8">
+          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-16">
             <p className="eyebrow">Also on the desk</p>
             <ul className="mt-8 grid gap-6 md:grid-cols-3">
               {others.map((p) => (

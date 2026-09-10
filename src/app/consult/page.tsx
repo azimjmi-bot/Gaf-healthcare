@@ -18,7 +18,7 @@ export default async function ConsultPage({
         title="Twelve minutes. Then we do the heavy reading."
         lede="Share what you can. Imaging and records can follow. A coordinator replies within one business day with next steps — or with an honest no."
       />
-      <section className="mx-auto grid max-w-7xl gap-12 px-5 py-16 md:grid-cols-12 md:px-8">
+      <section className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:px-5 md:grid-cols-12 md:gap-12 md:px-8 md:py-16">
         <div className="md:col-span-7">
           <ConsultForm
             defaultTreatment={q.treatment}
@@ -27,7 +27,7 @@ export default async function ConsultPage({
           />
         </div>
         <aside className="md:col-span-5">
-          <div className="rounded-2xl bg-ink p-8 text-ivory md:sticky md:top-24">
+          <div className="rounded-2xl bg-ink p-6 text-ivory sm:p-8 md:sticky md:top-24">
             <p className="eyebrow text-gold">What happens next</p>
             <ol className="mt-6 space-y-5 text-sm leading-relaxed text-ivory/75">
               <li>01 — We confirm we can help, or we say we cannot.</li>

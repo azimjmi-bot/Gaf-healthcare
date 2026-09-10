@@ -26,7 +26,7 @@ export default async function BlogsPage({
   return (
     <>
       <PageIntro eyebrow={settings.blogEyebrow} title={settings.blogTitle} lede={settings.blogLede} />
-      <section className="mx-auto max-w-7xl px-5 py-12 md:px-8 md:py-16">
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:px-8 md:py-16">
         {all.length === 0 ? (
           <p className="text-muted-foreground">No published notes yet.</p>
         ) : (

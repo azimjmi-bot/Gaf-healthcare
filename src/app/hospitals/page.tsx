@@ -75,7 +75,7 @@ export default async function HospitalsPage({
           />
         </Suspense>
       </PageIntro>
-      <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:px-8 md:py-12">
         {paging.total === 0 ? (
           <p className="text-muted-foreground">No hospitals match these filters.</p>
         ) : (
@@ -100,7 +100,7 @@ export default async function HospitalsPage({
           </>
         )}
       </section>
-      <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-5 md:px-8 md:pb-16">
         <h2 className="font-heading text-3xl">Frequently Asked Questions About Choosing a Hospital</h2>
         <p className="prose-gaf mt-3">
           Learn how GAF Healthcare helps international patients explore, compare, and choose hospitals

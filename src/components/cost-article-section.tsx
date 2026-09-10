@@ -97,7 +97,7 @@ export function CostArticleSection({
         href={consultHref}
       />
 
-      <section className="mx-auto grid max-w-7xl gap-10 px-5 py-12 md:px-8 md:py-16 lg:grid-cols-12 lg:gap-14">
+      <section className="mx-auto grid max-w-7xl gap-10 px-4 py-8 sm:px-5 md:px-8 md:py-16 lg:grid-cols-12 lg:gap-14">
         <div className="lg:col-span-8">
           <CostArticleView
             article={article}

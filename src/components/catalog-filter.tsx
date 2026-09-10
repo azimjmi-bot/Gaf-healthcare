@@ -92,7 +92,7 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, entity }: Pr
           />
         </div>
         {chipStats ? (
-          <div className="mt-3 flex flex-wrap gap-2">
+          <div className="catalog-chips mt-3">
             <CityChip
               active={city === ALL}
               onClick={() => setFilter("city", ALL)}
@@ -129,7 +129,7 @@ function CityChip({
     <button
       type="button"
       onClick={onClick}
-      className={`rounded-full px-4 py-2 text-sm transition ${
+      className={`min-h-11 shrink-0 rounded-full px-4 py-2 text-sm transition ${
         active
           ? "bg-ink text-ivory"
           : "border border-border bg-white text-muted-foreground hover:border-primary/40 hover:text-foreground"

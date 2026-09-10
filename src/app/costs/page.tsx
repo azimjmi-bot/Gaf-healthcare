@@ -112,7 +112,7 @@ export default async function CostsPage({
           />
         </Suspense>
       </PageIntro>
-      <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:px-8 md:py-12">
         {list.length === 0 ? (
           <p className="text-muted-foreground">No treatment costs match these filters.</p>
         ) : (

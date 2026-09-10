@@ -105,7 +105,7 @@ export default async function DoctorsPage({
           />
         </Suspense>
       </PageIntro>
-      <section className="mx-auto max-w-7xl px-5 py-12 md:px-8">
+      <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:px-8 md:py-12">
         {paging.total === 0 ? (
           <p className="text-muted-foreground">
             {query.specialty === "Neurosurgery"
@@ -136,7 +136,7 @@ export default async function DoctorsPage({
           </>
         )}
       </section>
-      <section className="mx-auto max-w-7xl px-5 pb-16 md:px-8">
+      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-5 md:px-8 md:pb-16">
         <h2 className="font-heading text-3xl">Frequently Asked Questions About Finding a Doctor</h2>
         <p className="prose-gaf mt-3">
           Learn how GAF Healthcare helps international patients compare doctors and explore treatment

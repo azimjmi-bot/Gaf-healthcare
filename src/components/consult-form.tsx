@@ -101,7 +101,7 @@ export function ConsultForm({
   }
 
   return (
-    <form onSubmit={onSubmit} className="space-y-6 rounded-2xl border border-border bg-card p-6 md:p-10">
+    <form onSubmit={onSubmit} className="space-y-6 rounded-2xl border border-border bg-card p-4 sm:p-6 md:p-10">
       <div className="grid gap-5 md:grid-cols-2">
         <Field label="Full name" htmlFor="name">
           <Input id="name" name="name" required autoComplete="name" className="h-11" />
@@ -183,12 +183,12 @@ export function ConsultForm({
         />
       </Field>
 
-      <label className="flex items-start gap-3 text-sm text-muted-foreground">
+      <label className="flex items-start gap-3 text-sm leading-relaxed text-muted-foreground">
         <input
           type="checkbox"
           name="consent"
           required
-          className="mt-1 size-4 accent-[var(--ink)]"
+          className="mt-0.5 size-5 shrink-0 accent-[var(--ink)]"
         />
         <span>
           I understand GAF Healthcare is not a hospital, that this is not medical advice,
