@@ -3096,3 +3096,105 @@ img.dhero__art {
   color: var(--ink);
   font-weight: 600;
 }
+
+.cost-attr {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 3rem;
+}
+
+.cost-attr__card {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.5rem 1.35rem;
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background: var(--card);
+  box-shadow: 0 1px 2px oklch(0.2 0.02 250 / 0.04);
+}
+
+@media (min-width: 768px) {
+  .cost-attr__card {
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 2rem;
+    padding: 1.75rem 1.75rem 1.75rem 2rem;
+  }
+}
+
+.cost-attr__bio {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  height: 100%;
+}
+
+.cost-attr__bio p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+}
+
+.cost-attr__more {
+  align-self: flex-end;
+  margin-top: auto;
+  padding-top: 1rem;
+  border: 0;
+  background: none;
+  color: #128276;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.cost-attr__more:hover {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.cost-attr__identity {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cost-attr__role {
+  margin: 0;
+  color: #128276;
+  font-size: 0.92rem;
+  line-height: 1.4;
+}
+
+.cost-attr__name {
+  margin: 0.35rem 0 0;
+  font-family: var(--font-heading), ui-serif, Georgia, serif;
+  font-size: 1.65rem;
+  line-height: 1.2;
+}
+
+.cost-attr__cred,
+.cost-attr__aff {
+  margin: 0.2rem 0 0;
+  font-size: 0.92rem;
+  line-height: 1.45;
+  color: var(--muted-foreground);
+}
+
+.cost-attr__photo {
+  width: 6.5rem;
+  height: 6.5rem;
+  flex-shrink: 0;
+  border-radius: 999px;
+  object-fit: cover;
+  background: oklch(0.94 0.01 250);
+}
+
+@media (min-width: 768px) {
+  .cost-attr__photo {
+    width: 7.25rem;
+    height: 7.25rem;
+  }
+}

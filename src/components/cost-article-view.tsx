@@ -6,6 +6,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { CostAttribution } from "@/components/cost-page/cost-attribution";
 import { CostDoctorCard, CostHospitalCard } from "@/components/cost-page/cost-care-cards";
 import {
   CityCostGrid,
@@ -128,8 +129,9 @@ export function CostArticleView({
     <article className="w-full pb-4 [&_a]:underline-offset-4 [&_a:hover]:underline">
       <CostPageJump />
       <p className="mt-5 text-xs text-muted-foreground">
-        Last updated: {formatDate(article.lastUpdated)} · Written and reviewed by the GAF Healthcare medical
-        travel desk
+        Last updated: {formatDate(article.lastUpdated)} · Content curated by{" "}
+        <a href="#attribution">Dr. Shabnam Choudhary</a> · Medically reviewed by{" "}
+        <a href="#attribution">Dr. Saffiyyah Chaudhary</a>
       </p>
 
       <div className="mt-5">
@@ -424,6 +426,7 @@ export function CostArticleView({
           </AccordionItem>
         ))}
       </Accordion>
+      <CostAttribution />
       {related.length > 0 ? (
         <>
           <H2 id="related">Related treatment costs</H2>
