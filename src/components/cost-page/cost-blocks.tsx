@@ -22,7 +22,10 @@ import { formatUsd, parseUsdBand, type CostCityRow, type CostDestinationRow } fr
 import type { Treatment } from "@/lib/treatments";
 
 export const COST_DISCLAIMER =
-  "Costs shown are indicative planning ranges and are not a final hospital quotation. The final estimate may vary depending on the patient's clinical condition, treatment plan, hospital, doctor, room category, investigations and other requirements.";
+  "Cost ranges on this page are for preliminary planning and comparison only. The final treatment cost depends on the patient's diagnosis, treatment plan, hospital, doctor, procedure complexity and other clinical factors. A personalized quotation should be obtained before making treatment or travel decisions.";
+
+export const INTERNATIONAL_TABLE_NOTE =
+  "International treatment costs vary significantly by hospital, surgeon, procedure complexity, insurance status, length of stay and what is included in the package. These figures are intended for preliminary comparison only, not as a final quotation.";
 
 export const VARIANCE_NOTE =
   "Costs vary considerably by hospital, surgeon, clinical complexity, insurance, room category, and what is included in the package.";
@@ -30,33 +33,41 @@ export const VARIANCE_NOTE =
 export function QuickAnswer({
   article,
   treatment,
+  cityAnswer,
+  consultHref,
 }: {
   article: CostArticle;
   treatment: Treatment;
+  cityAnswer?: string[];
+  consultHref?: string;
 }) {
   const band = parseUsdBand(treatment.partnerRange);
-  const brief = article.briefName || article.shortName;
+  const paras = cityAnswer?.length ? cityAnswer : article.answer;
+  const factors = article.costDrivers
+    .slice(0, 4)
+    .map((item) => item.label.toLowerCase())
+    .join(", ");
   return (
     <section className="rounded-2xl border border-border bg-card p-5 shadow-[0_16px_40px_-32px_rgba(20,24,28,0.45)] md:p-7">
-      <h2 className="font-heading text-2xl md:text-3xl">How much does {brief} cost in India?</h2>
-      <p className="mt-3 text-[1.05rem] leading-relaxed text-muted-foreground">{article.answer[0]}</p>
-      {article.answer[1] ? (
-        <p className="mt-3 text-[1.05rem] leading-relaxed text-muted-foreground">{article.answer[1]}</p>
+      <h2 className="font-heading text-2xl md:text-3xl">Quick Answer</h2>
+      <p className="mt-3 text-[1.05rem] leading-relaxed text-muted-foreground">{paras[0]}</p>
+      {paras[1] ? (
+        <p className="mt-3 text-[1.05rem] leading-relaxed text-muted-foreground">{paras[1]}</p>
       ) : null}
       <dl className="cost-metrics mt-6">
         <div className="cost-metric">
           <CircleDollarSign className="size-4" />
-          <dt>Starting cost</dt>
-          <dd>{band ? formatUsd(band[0]) : treatment.partnerRange}</dd>
-        </div>
-        <div className="cost-metric">
-          <Wallet className="size-4" />
-          <dt>Typical cost</dt>
+          <dt>India cost range</dt>
           <dd>{treatment.partnerRange}</dd>
         </div>
         <div className="cost-metric">
+          <Wallet className="size-4" />
+          <dt>Typical starting point</dt>
+          <dd>{band ? formatUsd(band[0]) : treatment.partnerRange}</dd>
+        </div>
+        <div className="cost-metric">
           <BedDouble className="size-4" />
-          <dt>Hospital stay</dt>
+          <dt>Typical hospital stay</dt>
           <dd>{treatment.stay}</dd>
         </div>
         <div className="cost-metric">
@@ -65,6 +76,17 @@ export function QuickAnswer({
           <dd>{article.duration ?? "Set after review"}</dd>
         </div>
       </dl>
+      <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
+        <strong className="text-foreground">Major cost factors:</strong> {factors || "hospital, surgeon, complexity and stay"}.
+        International patients should also budget for accommodation, airport transfers, a medical visa, medicines and follow-up.
+      </p>
+      {consultHref ? (
+        <p className="mt-5">
+          <Link href={consultHref} className="cost-btn cost-btn--primary">
+            Get a Personalized Cost Estimate
+          </Link>
+        </p>
+      ) : null}
     </section>
   );
 }
@@ -99,9 +121,8 @@ export function PriceFactors({ article }: { article: CostArticle }) {
             Why can two hospitals quote different prices?
           </AccordionTrigger>
           <AccordionContent className="text-[1.05rem] leading-relaxed text-muted-foreground">
-            Campus tier, the named surgeon, axillary work, oncoplastic reshaping, room category and
-            what pathology is sent out all move a bill more than the city name does. The list below is
-            the clinical and commercial detail behind that spread — not a menu to shop from.
+            {article.whyQuotesDiffer ||
+              "Campus tier, the named surgeon, procedure complexity, room category, diagnostics and what is excluded from the package all move a bill more than the city name does. The list below is the clinical and commercial detail behind that spread — not a menu to shop from."}
           </AccordionContent>
         </AccordionItem>
       </Accordion>
@@ -136,11 +157,11 @@ export function InternationalComparison({
           </caption>
           <thead>
             <tr>
-              <th scope="col">Destination</th>
-              <th scope="col">Estimated cost</th>
-              <th scope="col">Typical stay</th>
-              <th scope="col">Relative cost</th>
-              <th scope="col">Why patients choose it</th>
+              <th scope="col">Country</th>
+              <th scope="col">Approximate cost</th>
+              <th scope="col">Relative cost vs India</th>
+              <th scope="col">Typical positioning</th>
+              <th scope="col">Notes</th>
             </tr>
           </thead>
           <tbody>
@@ -153,8 +174,8 @@ export function InternationalComparison({
                   {row.range}
                   {row.modelled ? <span className="mt-0.5 block text-xs">Modelled estimate*</span> : null}
                 </td>
-                <td>{row.stay}</td>
                 <td>{row.relative}</td>
+                <td>{row.positioning}</td>
                 <td className="text-muted-foreground">{row.context}</td>
               </tr>
             ))}
@@ -163,9 +184,9 @@ export function InternationalComparison({
       </div>
       <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
         {anyModelled
-          ? "*International figures other than India and the United States are modelled planning estimates, not hospital quotations. Confirm with a hospital in the country concerned. "
+          ? "*Figures other than India and the United States are modelled planning estimates scaled from the India catalog band, not hospital quotations. "
           : ""}
-        {VARIANCE_NOTE}
+        {article.destinationNote || INTERNATIONAL_TABLE_NOTE}
       </p>
     </>
   );
@@ -194,32 +215,72 @@ export function DestinationDecision() {
   );
 }
 
-export function CityCostGrid({ rows }: { rows: CostCityRow[] }) {
+export function CityCostGrid({ rows, activeCity }: { rows: CostCityRow[]; activeCity?: string }) {
   return (
-    <div className="cost-citygrid mt-6">
-      {rows.map((row) => (
-        <article key={row.citySlug} className="cost-city">
-          <h3>
-            <Link href={row.costPath}>{row.city}</Link>
-          </h3>
-          <p className="cost-city__range">{row.range}</p>
-          {row.rangeIsInherited ? (
-            <p className="mt-1 text-xs text-muted-foreground">India planning band — not a city quote</p>
-          ) : null}
-          <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{row.costNote}</p>
-          <p className="mt-3 text-sm text-muted-foreground">
-            {row.hospitalCount} {row.hospitalCount === 1 ? "hospital" : "hospitals"}
-            {" · "}
-            {row.doctorCount > 0
-              ? `${row.doctorCount} ${row.doctorCount === 1 ? "doctor" : "doctors"}`
-              : "consultant match on request"}
-          </p>
-          <p className="mt-auto pt-4 text-sm font-medium">
-            <Link href={row.costPath}>View city →</Link>
-          </p>
-        </article>
-      ))}
-    </div>
+    <>
+      <p className="cost-scroll-hint">Swipe to compare Indian cities →</p>
+      <div className="cost-scroll mt-2 hidden md:block">
+        <table>
+          <caption className="sr-only">Approximate treatment cost and stay by Indian city</caption>
+          <thead>
+            <tr>
+              <th scope="col">City</th>
+              <th scope="col">Approximate cost</th>
+              <th scope="col">Typical hospital stay</th>
+              <th scope="col">Explore city</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((row) => (
+              <tr key={row.citySlug} className={activeCity === row.city ? "is-india" : undefined}>
+                <th scope="row">
+                  <Link href={row.costPath}>{row.city}</Link>
+                </th>
+                <td>
+                  {row.range}
+                  {row.rangeIsInherited ? (
+                    <span className="mt-0.5 block text-xs">India planning band</span>
+                  ) : null}
+                </td>
+                <td>{row.stay}</td>
+                <td>
+                  <Link href={row.costPath}>{row.city} cost page</Link>
+                  {" · "}
+                  <Link href={row.doctorsPath}>doctors in {row.city}</Link>
+                  {" · "}
+                  <Link href={row.hospitalsPath}>hospitals in {row.city}</Link>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <div className="cost-citygrid mt-6 md:hidden">
+        {rows.map((row) => (
+          <article key={row.citySlug} className="cost-city">
+            <h3>
+              <Link href={row.costPath}>{row.city}</Link>
+            </h3>
+            <p className="cost-city__range">{row.range}</p>
+            {row.rangeIsInherited ? (
+              <p className="mt-1 text-xs text-muted-foreground">India planning band — not a city quote</p>
+            ) : null}
+            <p className="mt-2 text-sm text-muted-foreground">Typical stay {row.stay}</p>
+            <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{row.costNote}</p>
+            <p className="mt-3 text-sm text-muted-foreground">
+              {row.hospitalCount} {row.hospitalCount === 1 ? "hospital" : "hospitals"}
+              {" · "}
+              {row.doctorCount > 0
+                ? `${row.doctorCount} ${row.doctorCount === 1 ? "doctor" : "doctors"}`
+                : "consultant match on request"}
+            </p>
+            <p className="mt-auto pt-4 text-sm font-medium">
+              <Link href={row.costPath}>Explore {row.city} →</Link>
+            </p>
+          </article>
+        ))}
+      </div>
+    </>
   );
 }
 

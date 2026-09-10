@@ -12,6 +12,7 @@ export function CostHero({
   lede,
   consultHref,
   hospitalsHref,
+  doctorsHref,
   children,
 }: {
   article: CostArticle;
@@ -21,6 +22,7 @@ export function CostHero({
   lede: string;
   consultHref: string;
   hospitalsHref: string;
+  doctorsHref?: string;
   children?: ReactNode;
 }) {
   return (
@@ -35,7 +37,13 @@ export function CostHero({
                 {treatment.category}
               </Link>
               <span aria-hidden>›</span>
-              <span>{article.briefName || article.procedure}</span>
+              <Link href={`/costs/${treatment.slug}`}>{article.briefName || article.procedure}</Link>
+              {place !== "India" ? (
+                <>
+                  <span aria-hidden>›</span>
+                  <span>{place.replace(", India", "")}</span>
+                </>
+              ) : null}
             </nav>
             <h1 className="cost-hero__title">{heading}</h1>
           </div>
@@ -68,11 +76,16 @@ export function CostHero({
             </p>
             <div className="cost-hero__actions">
               <Link href={consultHref} className="cost-btn cost-btn--primary">
-                Get My Exact Treatment Cost
+                Get a Personalized Cost Estimate
               </Link>
               <Link href={hospitalsHref} className="cost-btn cost-btn--ghost">
                 Compare Hospitals
               </Link>
+              {doctorsHref ? (
+                <Link href={doctorsHref} className="cost-btn cost-btn--ghost">
+                  Find Doctors
+                </Link>
+              ) : null}
             </div>
             <p className="cost-trust">
               <span>

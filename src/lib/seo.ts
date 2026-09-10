@@ -347,6 +347,32 @@ export function medicalWebPageJsonLd(opts: {
   };
 }
 
+export function hospitalItemListJsonLd(rows: Hospital[], opts: { name: string; path: string }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: opts.name,
+    url: absoluteUrl(opts.path),
+    numberOfItems: rows.length,
+    itemListOrder: "https://schema.org/ItemListUnordered",
+    itemListElement: rows.map((hospital, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      item: {
+        "@type": "Hospital",
+        name: hospital.name,
+        url: absoluteUrl(`/hospitals/${hospital.slug}`),
+        medicalSpecialty: hospital.specialties,
+        address: {
+          "@type": "PostalAddress",
+          addressLocality: hospital.city,
+          addressCountry: "IN",
+        },
+      },
+    })),
+  };
+}
+
 export function doctorItemListJsonLd(rows: Doctor[], opts: { name: string; path: string }) {
   return {
     "@context": "https://schema.org",
@@ -377,8 +403,9 @@ export function doctorItemListJsonLd(rows: Doctor[], opts: { name: string; path:
 export function costArticleMetadata(
   t: Treatment,
   article: { seoTitle: string; seoDescription: string; lastUpdated: string },
+  opts?: { path?: string },
 ): Metadata {
-  const url = absoluteUrl(`/costs/${t.slug}`);
+  const url = absoluteUrl(opts?.path ?? `/costs/${t.slug}`);
   const description = clip(article.seoDescription);
   return {
     title: article.seoTitle,

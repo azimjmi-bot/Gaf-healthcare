@@ -1,4 +1,5 @@
 import { breastConservingSurgery } from "./breast-conserving-surgery-lumpectomy";
+import { mastectomy } from "./mastectomy";
 import type { CostArticle } from "./types";
 
 export type { CostArticle } from "./types";
@@ -10,6 +11,7 @@ export type { CostArticle } from "./types";
  */
 export const costArticles: Record<string, CostArticle> = {
   [breastConservingSurgery.slug]: breastConservingSurgery,
+  [mastectomy.slug]: mastectomy,
 };
 
 export function getCostArticle(slug: string): CostArticle | undefined {

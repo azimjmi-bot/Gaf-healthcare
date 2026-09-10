@@ -10,6 +10,7 @@ import {
   articleCampuses,
   articleFaculty,
   carePlace,
+  cityEditorial,
   costCityRows,
   costDestinationRows,
   interpolateCostArticle,
@@ -76,7 +77,8 @@ export function CostArticleSection({
     data;
   const place = carePlace(city);
   const consultHref = `/consult?treatment=${treatment.slug}`;
-  const title = heading ?? article.heading;
+  const cityPage = cityEditorial(article, city)?.page;
+  const title = cityPage?.heading ?? heading ?? article.heading;
 
   return (
     <>
@@ -88,6 +90,7 @@ export function CostArticleSection({
         lede={lede ?? treatment.summary}
         consultHref={consultHref}
         hospitalsHref="#hospitals"
+        doctorsHref="#doctors"
       >
         {filters}
       </CostHero>
@@ -177,7 +180,7 @@ export function CostArticleSection({
                   href={doctorsPath({ destination: "India", city, procedure: treatment.name })}
                   className="underline-offset-4 hover:underline"
                 >
-                  All listed doctors
+                  {treatment.name} doctors{city ? ` in ${city}` : " in India"}
                 </Link>
               </li>
               <li>
@@ -185,12 +188,12 @@ export function CostArticleSection({
                   href={hospitalsPath({ destination: "India", city, procedure: treatment.name })}
                   className="underline-offset-4 hover:underline"
                 >
-                  All listed hospitals
+                  {treatment.name} hospitals{city ? ` in ${city}` : " in India"}
                 </Link>
               </li>
               <li>
                 <Link href="/costs" className="underline-offset-4 hover:underline">
-                  All treatment costs
+                  All treatment costs in India
                 </Link>
               </li>
             </ul>

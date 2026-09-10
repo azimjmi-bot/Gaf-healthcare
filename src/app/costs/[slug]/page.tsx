@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/json-ld";
 import { CostArticleSection, costArticleFor } from "@/components/cost-article-section";
 import { getCostArticle } from "@/data/cost-articles";
 import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
-import { articleFaculty, bestDoctorsHeading, interpolateCostArticle } from "@/lib/cost-article";
+import { articleCampuses, articleFaculty, hospitalsToConsiderHeading, interpolateCostArticle } from "@/lib/cost-article";
 import { getCostGuide } from "@/lib/cost-guides";
 import {
   doctorsForTreatment,
@@ -22,6 +22,7 @@ import {
   costArticleMetadata,
   doctorItemListJsonLd,
   faqJsonLd,
+  hospitalItemListJsonLd,
   medicalWebPageJsonLd,
   treatmentMetadata,
 } from "@/lib/seo";
@@ -64,7 +65,8 @@ export default async function CostDetailPage({
   const article = costArticleFor(t);
   if (article) {
     const facultyForSchema = articleFaculty(t.slug).featured;
-    const doctorsHeading = bestDoctorsHeading(t.name);
+    const campusesForSchema = articleCampuses(t).slice(0, 8);
+    const brief = article.briefName || article.procedure;
     return (
       <>
         <JsonLd
@@ -89,7 +91,15 @@ export default async function CostDetailPage({
         {facultyForSchema.length > 0 ? (
           <JsonLd
             data={doctorItemListJsonLd(facultyForSchema, {
-              name: doctorsHeading,
+              name: `Doctors to consider for ${brief} in India`,
+              path: `/costs/${t.slug}`,
+            })}
+          />
+        ) : null}
+        {campusesForSchema.length > 0 ? (
+          <JsonLd
+            data={hospitalItemListJsonLd(campusesForSchema, {
+              name: hospitalsToConsiderHeading(brief),
               path: `/costs/${t.slug}`,
             })}
           />

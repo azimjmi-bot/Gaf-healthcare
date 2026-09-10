@@ -26,10 +26,11 @@ import {
 import type { CostArticle, CostFigure } from "@/data/cost-articles/types";
 import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import {
-  compareHospitalsHeading,
-  doctorsPerformingHeading,
+  doctorsToConsiderHeading,
+  hospitalsToConsiderHeading,
   type CostCityRow,
   type CostDestinationRow,
+  cityEditorial,
 } from "@/lib/cost-article";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
@@ -119,11 +120,15 @@ export function CostArticleView({
   related: { name: string; slug: string; partnerRange: string; stay: string }[];
 }) {
   const brief = article.briefName || article.procedure;
+  const cityPage = cityEditorial(article, city)?.page;
   const allDoctors = doctorsPath({ destination: "India", city, procedure: treatment.name });
   const allHospitals = hospitalsPath({ destination: "India", city, procedure: treatment.name });
-  const doctorsHeading = doctorsPerformingHeading(brief, city);
-  const hospitalsHeading = compareHospitalsHeading(brief, city);
+  const doctorsHeading = doctorsToConsiderHeading(brief, city);
+  const hospitalsHeading = hospitalsToConsiderHeading(brief, city);
   const consultHref = `/consult?treatment=${treatment.slug}`;
+  const faqs = cityPage
+    ? [...cityPage.faqs, ...article.faqs.filter((item) => !cityPage.faqs.some((faq) => faq.q === item.q))]
+    : article.faqs;
 
   return (
     <article className="w-full pb-4 [&_a]:underline-offset-4 [&_a:hover]:underline">
@@ -135,11 +140,53 @@ export function CostArticleView({
       </p>
 
       <div className="mt-5">
-        <QuickAnswer article={article} treatment={treatment} />
+        <QuickAnswer
+          article={article}
+          treatment={treatment}
+          cityAnswer={cityPage?.answer}
+          consultHref={consultHref}
+        />
       </div>
       <div className="mt-8">
         <WhyGaf />
       </div>
+
+      {cityPage ? (
+        <section className="mt-10 rounded-2xl border border-border bg-secondary/30 p-5 md:p-7">
+          <H2 id="city-guide">{brief} in {city}</H2>
+          {cityPage.intro.map((para) => (
+            <P key={para.slice(0, 48)}>{para}</P>
+          ))}
+          <H3>What {brief.toLowerCase()} typically costs in {city}</H3>
+          {cityPage.costExplanation.map((para) => (
+            <P key={para.slice(0, 48)}>{para}</P>
+          ))}
+          <H3>What moves the quote in {city}</H3>
+          <dl className="mt-6 space-y-5">
+            {cityPage.factors.map((item) => (
+              <div key={item.label} className="border-l-2 border-border pl-4">
+                <dt className="font-medium">{item.label}</dt>
+                <dd className="mt-1 text-[1.05rem] leading-relaxed text-muted-foreground">{item.detail}</dd>
+              </div>
+            ))}
+          </dl>
+          <H3>Medical travel through {city}</H3>
+          {cityPage.medicalTourism.map((para) => (
+            <P key={para.slice(0, 48)}>{para}</P>
+          ))}
+          <H3>Hospitals and units listed in {city}</H3>
+          {cityPage.hospitalDiscussion.map((para) => (
+            <P key={para.slice(0, 48)}>{para}</P>
+          ))}
+          <p className="mt-5 text-sm">
+            <Link href={allDoctors}>{brief} doctors in {city}</Link>
+            {" · "}
+            <Link href={allHospitals}>{brief} hospitals in {city}</Link>
+            {" · "}
+            <Link href={costPath(treatment.name)}>{brief} cost in India</Link>
+          </p>
+        </section>
+      ) : null}
 
       <H2 id="overview">Procedure overview</H2>
       {article.overview.what.map((para) => (
@@ -161,6 +208,23 @@ export function CostArticleView({
       {article.answer.slice(2).map((para) => (
         <P key={para.slice(0, 40)}>{para}</P>
       ))}
+      {article.costComponents && article.costComponents.length > 0 ? (
+        <>
+          <H3>{article.procedure} cost breakdown in India</H3>
+          <P>
+            Component prices are rarely published as a public tariff. The lines below describe what
+            typically sits inside a surgical estimate, not a dollar amount for each row.
+          </P>
+          <dl className="mt-6 space-y-5">
+            {article.costComponents.map((item) => (
+              <div key={item.label} className="border-l-2 border-border pl-4">
+                <dt className="font-medium">{item.label}</dt>
+                <dd className="mt-1 text-[1.05rem] leading-relaxed text-muted-foreground">{item.detail}</dd>
+              </div>
+            ))}
+          </dl>
+        </>
+      ) : null}
       <div className="mt-6 rounded-2xl border border-border bg-card p-5">
         <p className="text-sm font-medium">Planning range or quotation?</p>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -170,8 +234,13 @@ export function CostArticleView({
           clinically.
         </p>
       </div>
+      <p className="mt-6">
+        <Link href={consultHref} className="cost-btn cost-btn--primary">
+          Get a Personalized Cost Estimate
+        </Link>
+      </p>
 
-      <H2 id="whats-included">What is included in the cost?</H2>
+      <H2 id="whats-included">What is usually included in a {brief} package?</H2>
       <P>
         No two hospitals draw the line in the same place, so read an estimate for what it excludes as
         carefully as for what it covers. The pattern below is what listed campuses typically bundle into
@@ -197,23 +266,27 @@ export function CostArticleView({
       </P>
       <PriceFactors article={article} />
 
-      <H2 id="cost-by-country">{article.procedure} cost in major medical tourism destinations</H2>
-      <P>
-        The comparison below is for the same operation in each market, not for different treatments
-        bundled under one heading. India and the United States figures come from our own catalog. The
-        remaining markets are shown as relative cost context modelled against the India band — they are
-        planning estimates for orientation, not hospital tariffs, and any of them should be confirmed
-        with a written quotation from a hospital in that country.
-      </P>
+      <H2 id="cost-by-country">{article.procedure} cost: India vs other medical tourism destinations</H2>
+      {article.destinationIntro ? (
+        article.destinationIntro.map((para) => <P key={para.slice(0, 40)}>{para}</P>)
+      ) : (
+        <P>
+          The comparison below is for the same operation in each market, not for different treatments
+          bundled under one heading. India and the United States figures come from our own catalog. The
+          remaining markets are shown as relative cost context modelled against the India band — they are
+          planning estimates for orientation, not hospital tariffs, and any of them should be confirmed
+          with a written quotation from a hospital in that country.
+        </P>
+      )}
       <InternationalComparison article={article} destinations={destinations} anyModelled={anyModelled} />
       <P>
         The point of this table is not that one country is better. Cost level and treatment-market
         structure are different things. Germany and Singapore carry higher prices with mature
         multidisciplinary process; Turkey and Thailand compete hard on packaged pricing; the United
-        States is the outlier for self-funding patients because facility, pathology and radiation
-        oncology are billed by separate entities. The Indian advantage for this pathway is that the whole
-        sequence — surgery, pathology, radiation, systemic therapy — can be arranged in one city, at one
-        price level, with the consultant named before you buy a ticket.
+        States is the outlier for self-funding patients because facility, pathology and later oncology
+        care are often billed by separate entities. India&apos;s practical advantage for this pathway is
+        that surgery, pathology and the next-step oncology plan can usually be arranged in one city,
+        with the consultant named before you buy a ticket.
       </P>
       <H3>Which destination is right for you?</H3>
       <P>
@@ -221,6 +294,15 @@ export function CostArticleView({
         does not rank countries.
       </P>
       <DestinationDecision />
+
+      {article.whyIndia && article.whyIndia.length > 0 ? (
+        <>
+          <H2 id="why-india">Why do international patients consider India for {article.shortName}?</H2>
+          {article.whyIndia.map((para) => (
+            <P key={para.slice(0, 40)}>{para}</P>
+          ))}
+        </>
+      ) : null}
 
       <H2 id="hospitals">{hospitalsHeading}</H2>
       <P>{article.hospitalIntro}</P>
@@ -242,7 +324,11 @@ export function CostArticleView({
             ))}
           </div>
           <p className="mt-5 text-sm">
-            <Link href={allHospitals}>Compare hospitals for {article.shortName}{city ? ` in ${city}` : ""}</Link>
+            <Link href={allHospitals}>
+              {brief} hospitals{city ? ` in ${city}` : " in India"}
+            </Link>
+            {" · "}
+            <Link href={consultHref}>Talk to a treatment coordinator</Link>
           </p>
         </>
       )}
@@ -267,33 +353,39 @@ export function CostArticleView({
           </div>
           <p className="mt-5 text-sm">
             <Link href={allDoctors}>
-              See all {facultyTotal} listed {article.shortName} specialists
-              {city ? ` in ${city}` : " in India"}
+              {brief} doctors{city ? ` in ${city}` : " in India"} ({facultyTotal} listed)
             </Link>
+            {" · "}
+            <Link href={consultHref}>Get a personalized cost estimate</Link>
           </p>
         </>
       )}
 
       <H2 id="cost-by-city">{brief} cost by city in India</H2>
-      <P>
-        GAF Healthcare lists named consultants for this pathway in{" "}
-        {cityRows.map((row, i) => (
-          <span key={row.citySlug}>
-            <Link href={row.costPath}>{row.city}</Link>
-            {i === cityRows.length - 2 ? " and " : i < cityRows.length - 2 ? ", " : ""}
-          </span>
-        ))}
-        . City choice changes your logistics, your accommodation bill and the depth of the unit you are
-        walking into. It changes the surgical fee far less than patients expect.
-      </P>
-      <P>
-        We do not publish separate per-city price bands for this procedure, because we do not have
-        verified city-level tariffs to publish. Inventing them would make this table look more precise
-        and be less true. Each card below carries the India planning range, the number of listed
-        consultants and campuses we can actually show you there, and the cost question worth asking in
-        that city.
-      </P>
-      <CityCostGrid rows={cityRows} />
+      {article.cityIntro ? (
+        article.cityIntro.map((para) => <P key={para.slice(0, 40)}>{para}</P>)
+      ) : (
+        <>
+          <P>
+            GAF Healthcare lists named consultants for this pathway in{" "}
+            {cityRows.map((row, i) => (
+              <span key={row.citySlug}>
+                <Link href={row.costPath}>{row.city}</Link>
+                {i === cityRows.length - 2 ? " and " : i < cityRows.length - 2 ? ", " : ""}
+              </span>
+            ))}
+            . City choice changes your logistics, your accommodation bill and the depth of the unit you
+            are walking into. It changes the surgical fee far less than patients expect.
+          </P>
+          <P>
+            We do not publish separate per-city price bands for this procedure unless a researched city
+            figure exists. Inventing them would make the table look more precise and be less true. Each
+            city link below uses the India planning range together with the listed consultants and
+            campuses we can actually show you there.
+          </P>
+        </>
+      )}
+      <CityCostGrid rows={cityRows} activeCity={city} />
       <p className="mt-3 text-xs text-muted-foreground">{VARIANCE_NOTE}</p>
 
       <H2 id="cities">Choosing a city for {article.shortName}</H2>
@@ -326,7 +418,7 @@ export function CostArticleView({
         ))}
       </Accordion>
 
-      <H2 id="total-pathway">How much should an international patient budget?</H2>
+      <H2 id="total-pathway">What should international patients budget beyond the surgery?</H2>
       {article.fullPathway ? (
         <>
           {article.fullPathway.intro.map((para) => (
@@ -356,7 +448,7 @@ export function CostArticleView({
         </Link>
       </p>
 
-      <H2 id="journey">Treatment journey for international patients</H2>
+      <H2 id="journey">What does medical travel for {article.shortName} in India involve?</H2>
       <P>
         The sequence below is how a records-first pathway normally runs. The order matters: everything
         before arrival exists so that you are not making decisions in an unfamiliar hospital corridor
@@ -408,16 +500,25 @@ export function CostArticleView({
         <P key={para.slice(0, 40)}>{para}</P>
       ))}
 
-      <H2 id="questions">Questions to ask before you accept an estimate</H2>
+      <H2 id="questions">How to compare {brief} quotes from Indian hospitals</H2>
       <P>
-        Print these and work through them on the video call. A house that answers all twelve without
-        hedging is telling you something useful about how it will behave when something goes wrong.
+        Print these and work through them on the video call. A house that answers without hedging is
+        telling you something useful about how it will behave when something goes wrong.
       </P>
       <Bullets items={article.questionsToAsk} />
 
+      {article.whyCostDiffers && article.whyCostDiffers.length > 0 ? (
+        <>
+          <H2 id="cost-may-differ">Why your final {brief} cost may be different</H2>
+          {article.whyCostDiffers.map((para) => (
+            <P key={para.slice(0, 40)}>{para}</P>
+          ))}
+        </>
+      ) : null}
+
       <H2 id="faq">Frequently asked questions</H2>
       <div className="mt-6 grid gap-4">
-        {article.faqs.map((item) => (
+        {faqs.map((item) => (
           <details key={item.q} className="group rounded-2xl border border-border bg-card px-5 py-4">
             <summary className="flex cursor-pointer list-none items-start justify-between gap-4 [&::-webkit-details-marker]:hidden">
               <h3 className="text-base font-medium leading-snug">{item.q}</h3>
@@ -465,6 +566,23 @@ export function CostArticleView({
             </span>
           ))}
         </p>
+      ) : null}
+
+      {article.planningClose && article.planningClose.length > 0 ? (
+        <>
+          <H2 id="planning">Planning your {article.shortName} treatment in India</H2>
+          {article.planningClose.map((para) => (
+            <P key={para.slice(0, 40)}>{para}</P>
+          ))}
+          <p className="mt-6 flex flex-wrap gap-3">
+            <Link href={consultHref} className="cost-btn cost-btn--primary">
+              Get a Personalized Cost Estimate
+            </Link>
+            <Link href="/consult" className="cost-btn cost-btn--ghost">
+              Talk to a Treatment Coordinator
+            </Link>
+          </p>
+        </>
       ) : null}
 
       <div className="mt-12 rounded-2xl border border-border bg-secondary/40 p-5">

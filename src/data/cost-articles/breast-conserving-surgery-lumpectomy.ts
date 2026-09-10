@@ -26,6 +26,8 @@ export const breastConservingSurgery: CostArticle = {
     "Treat any figure you are given before a records review as an order of magnitude, not a price. An itemised hospital estimate for breast-conserving surgery can only be written once a surgeon has seen your imaging, your biopsy report and your receptor status, because those are what determine the length of the operation, the need for localisation, and whether the axilla is being sampled or cleared.",
   ],
 
+  whyQuotesDiffer:
+    "Campus tier, the named surgeon, axillary work, oncoplastic reshaping, room category and what pathology is sent out all move a bill more than the city name does. The list below is the clinical and commercial detail behind that spread — not a menu to shop from.",
   costDrivers: [
     {
       label: "Axillary staging versus clearance",

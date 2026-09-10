@@ -1,6 +1,6 @@
 import "server-only";
 import type { CityEditorial, CostArticle, DestinationRow } from "@/data/cost-articles/types";
-import { doctorsPath, hospitalsPath } from "@/lib/catalog-links";
+import { doctorsPath, hospitalsPath, costsFilterPath } from "@/lib/catalog-links";
 import { doctorsForTreatment, getHospital } from "@/lib/data";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
@@ -119,6 +119,7 @@ export type CostDestinationRow = {
   modelled: boolean;
   relative: string;
   stay: string;
+  positioning: string;
   context: string;
   isIndia: boolean;
   href?: string;
@@ -137,12 +138,6 @@ export function costCityRows(
   return article.cities.map((city: CityEditorial) => {
     const name = cityName(city.citySlug);
     const params = { destination: "India", city: name, procedure: treatment.name };
-    const q = new URLSearchParams({
-      destination: "India",
-      city: name,
-      specialty: treatment.category,
-      procedure: treatment.name,
-    });
     return {
       city: name,
       citySlug: city.citySlug,
@@ -152,7 +147,12 @@ export function costCityRows(
       costNote: city.costNote,
       ecosystem: city.ecosystem,
       logistics: city.logistics,
-      costPath: `/costs?${q.toString()}`,
+      costPath: costsFilterPath({
+        destination: "India",
+        city: name,
+        specialty: treatment.category,
+        procedure: treatment.name,
+      }),
       doctorsPath: doctorsPath(params),
       hospitalsPath: hospitalsPath(params),
       doctorCount: faculty.filter((d) => d.citySlug === city.citySlug).length,
@@ -171,6 +171,7 @@ export function costDestinationRows(
   const rows = article.destinations.map((row: DestinationRow): CostDestinationRow => {
     const isIndia = row.country === "India";
     const isUs = row.country === "United States";
+    const positioning = row.positioning || (isIndia ? "Catalog planning range" : "Private self-pay market");
 
     if (isIndia) {
       return {
@@ -179,6 +180,7 @@ export function costDestinationRows(
         modelled: false,
         relative: "Baseline",
         stay: row.stay || treatment.stay,
+        positioning,
         context: row.context,
         isIndia: true,
         href: destinationFilterHref("India", treatment.name),
@@ -193,6 +195,7 @@ export function costDestinationRows(
         modelled: false,
         relative: ratioLabel(parseUsdBand(range), indiaBand),
         stay: row.stay,
+        positioning,
         context: row.context,
         isIndia: false,
         href: destinationFilterHref(row.country, treatment.name),
@@ -208,6 +211,7 @@ export function costDestinationRows(
         modelled: true,
         relative: ratioLabel(band, indiaBand),
         stay: row.stay,
+        positioning,
         context: row.context,
         isIndia: false,
         href: destinationFilterHref(row.country, treatment.name),
@@ -220,6 +224,7 @@ export function costDestinationRows(
       modelled: true,
       relative: "Higher than India",
       stay: row.stay,
+      positioning,
       context: row.context,
       isIndia: false,
       href: destinationFilterHref(row.country, treatment.name),
@@ -231,6 +236,19 @@ export function costDestinationRows(
 
 export function carePlace(city?: string) {
   return city ? `${city}, India` : "India";
+}
+
+export function cityEditorial(article: CostArticle, city?: string) {
+  if (!city) return undefined;
+  return article.cities.find((row) => cityName(row.citySlug) === city);
+}
+
+export function doctorsToConsiderHeading(brief: string, city?: string) {
+  return `Doctors to consider for ${brief} in ${carePlace(city)}`;
+}
+
+export function hospitalsToConsiderHeading(brief: string, city?: string) {
+  return `Hospitals to consider for ${brief} in ${carePlace(city)}`;
 }
 
 export function bestDoctorsHeading(procedure: string, city?: string) {
