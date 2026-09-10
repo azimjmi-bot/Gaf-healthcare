@@ -65,6 +65,7 @@ import {
   whyChoose,
   yearsLabel,
 } from "@/lib/hospital-profile";
+import { hospitalsPath } from "@/lib/catalog-links";
 import { site } from "@/lib/site";
 
 const SPECIALTY_ICON: Record<string, LucideIcon> = {
@@ -148,13 +149,11 @@ export function HospitalProfileView({
             <span>/</span>
             <Link href="/hospitals">Hospitals</Link>
             <span>/</span>
-            <Link href={`/hospitals?destination=${encodeURIComponent(hospital.country)}`}>
+            <Link href={hospitalsPath({ destination: hospital.country })}>
               {hospital.country}
             </Link>
             <span>/</span>
-            <Link
-              href={`/hospitals?destination=${encodeURIComponent(hospital.country)}&city=${encodeURIComponent(hospital.city)}`}
-            >
+            <Link href={hospitalsPath({ destination: hospital.country, city: hospital.city })}>
               {hospital.city}
             </Link>
             <span>/</span>
@@ -490,7 +489,7 @@ export function HospitalProfileView({
                 </a>
               </Button>
               <Button asChild variant="outline" className="rounded-full">
-                <Link href={`/hospitals?destination=${encodeURIComponent(hospital.country)}&city=${encodeURIComponent(hospital.city)}`}>
+                <Link href={hospitalsPath({ destination: hospital.country, city: hospital.city })}>
                   Other campuses in {hospital.city}
                 </Link>
               </Button>

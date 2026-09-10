@@ -713,10 +713,10 @@ export const rectalCancerSurgery: CostArticle = {
   ],
 
   relatedBlogs: [
-    { href: "/costs?specialty=Surgical+Oncology", label: "surgical oncology costs in India" },
-    { href: "/costs?specialty=Medical+Oncology", label: "medical oncology costs in India" },
-    { href: "/costs?specialty=Radiation+Oncology", label: "radiation oncology costs in India" },
-    { href: "/costs?specialty=Surgical+Gastroenterology", label: "surgical gastroenterology costs in India" },
+    { href: "/costs/India/Surgical-Oncology", label: "surgical oncology costs in India" },
+    { href: "/costs/India/Medical-Oncology", label: "medical oncology costs in India" },
+    { href: "/costs/India/Radiation-Oncology", label: "radiation oncology costs in India" },
+    { href: "/costs/India/Surgical-Gastroenterology", label: "surgical gastroenterology costs in India" },
     { href: "/costs/colectomy", label: "colectomy cost in India" },
     { href: "/costs/cytoreductive-surgery", label: "cytoreductive surgery cost in India" },
     { href: "/costs/cytoreductive-surgery-with-hipec", label: "CRS + HIPEC cost in India" },
@@ -724,8 +724,8 @@ export const rectalCancerSurgery: CostArticle = {
     { href: "/costs/liver-resection-hepatectomy", label: "liver resection cost in India" },
     { href: "/costs/gastrectomy", label: "gastrectomy cost in India" },
     { href: "/costs/esophagectomy", label: "esophagectomy cost in India" },
-    { href: "/doctors?destination=India&procedure=Rectal+Cancer+Surgery", label: "rectal cancer surgeons in India" },
-    { href: "/hospitals?destination=India&procedure=Rectal+Cancer+Surgery", label: "rectal cancer hospitals in India" },
+    { href: "/doctors/India/Rectal-Cancer-Surgery", label: "rectal cancer surgeons in India" },
+    { href: "/hospitals/India/Rectal-Cancer-Surgery", label: "rectal cancer hospitals in India" },
   ],
 
   figures: [

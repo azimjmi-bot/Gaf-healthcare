@@ -6,6 +6,7 @@ import { JsonLd } from "@/components/json-ld";
 import { CtaBand } from "@/components/page-shell";
 import { doctors, doctorsForHospital, getDoctor, getHospital, getTreatment } from "@/lib/data";
 import { displayBio } from "@/lib/hospital-profile";
+import { doctorsPath } from "@/lib/catalog-links";
 import { breadcrumbJsonLd, doctorMetadata, physicianJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -61,8 +62,8 @@ export default async function DoctorDetailPage({
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Doctors", path: "/doctors" },
-          { name: d.specialty, path: `/doctors?specialty=${encodeURIComponent(d.specialty)}` },
-          { name: d.city, path: `/doctors?destination=India&city=${encodeURIComponent(d.city)}` },
+          { name: d.specialty, path: doctorsPath({ destination: "India", specialty: d.specialty }) },
+          { name: d.city, path: doctorsPath({ destination: "India", city: d.city }) },
           { name: d.name, path: `/doctors/${d.slug}` },
         ])}
       />

@@ -603,11 +603,11 @@ export const colectomy: CostArticle = {
   ],
 
   relatedBlogs: [
-    { href: "/costs?specialty=Surgical+Oncology", label: "surgical oncology costs in India" },
-    { href: "/costs?specialty=Medical+Oncology", label: "medical oncology costs in India" },
-    { href: "/costs?specialty=Radiation+Oncology", label: "radiation oncology costs in India" },
-    { href: "/costs?specialty=Gastroenterology", label: "gastroenterology costs in India" },
-    { href: "/costs?specialty=Surgical+Gastroenterology", label: "surgical gastroenterology costs in India" },
+    { href: "/costs/India/Surgical-Oncology", label: "surgical oncology costs in India" },
+    { href: "/costs/India/Medical-Oncology", label: "medical oncology costs in India" },
+    { href: "/costs/India/Radiation-Oncology", label: "radiation oncology costs in India" },
+    { href: "/costs/India/Gastroenterology", label: "gastroenterology costs in India" },
+    { href: "/costs/India/Surgical-Gastroenterology", label: "surgical gastroenterology costs in India" },
     { href: "/costs/rectal-cancer-surgery", label: "rectal cancer surgery cost in India" },
     { href: "/costs/cytoreductive-surgery", label: "cytoreductive surgery cost in India" },
     { href: "/costs/cytoreductive-surgery-with-hipec", label: "CRS + HIPEC cost in India" },
@@ -615,8 +615,8 @@ export const colectomy: CostArticle = {
     { href: "/costs/liver-resection-hepatectomy", label: "liver resection cost in India" },
     { href: "/costs/gastrectomy", label: "gastrectomy cost in India" },
     { href: "/costs/esophagectomy", label: "esophagectomy cost in India" },
-    { href: "/doctors?destination=India&procedure=Colectomy", label: "colectomy surgeons in India" },
-    { href: "/hospitals?destination=India&procedure=Colectomy", label: "colectomy hospitals in India" },
+    { href: "/doctors/India/Colectomy", label: "colectomy surgeons in India" },
+    { href: "/hospitals/India/Colectomy", label: "colectomy hospitals in India" },
   ],
 
   figures: [

@@ -24,7 +24,7 @@ import {
   WhyGaf,
 } from "@/components/cost-page/cost-blocks";
 import type { CostArticle, CostFigure } from "@/data/cost-articles/types";
-import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
+import { costPath, costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import {
   doctorsToConsiderHeading,
   hospitalsToConsiderHeading,
@@ -757,7 +757,7 @@ export function CostArticleView({
       <p className="mt-6 text-sm">
         <Link href={costPath(treatment.name)}>{treatment.name} cost sheet</Link> ·{" "}
         <Link href="/costs">All treatment costs in India</Link> ·{" "}
-        <Link href={`/costs?specialty=${encodeURIComponent(treatment.category)}`}>
+        <Link href={costsFilterPath({ destination: "India", specialty: treatment.category })}>
           {treatment.category} costs
         </Link>
       </p>

@@ -83,7 +83,7 @@ export function EbrtGuide() {
       <P>
         For international patients, India is one of the more cost-competitive destinations
         for{" "}
-        <Link href="/hospitals?specialty=Radiation%20Oncology">radiation oncology</Link>.
+        <Link href={hospitalsPath({ destination: "India", specialty: "Radiation Oncology" })}>radiation oncology</Link>.
         Published 2026 estimates show conventional and advanced radiation courses in India
         generally costing considerably less than comparable treatment in many Western
         markets, although the actual price depends on the technique, number of fractions,{" "}
@@ -130,7 +130,7 @@ export function EbrtGuide() {
       </P>
       <P>
         The{" "}
-        <Link href="/doctors?specialty=Radiation%20Oncology">radiation oncologist</Link>{" "}
+        <Link href={doctorsPath({ destination: "India", specialty: "Radiation Oncology" })}>radiation oncologist</Link>{" "}
         determines the total dose, number of fractions, size and location of the treatment
         field, radiation technique, dose distribution, and organs that need to be
         protected. The prescription depends on cancer type, stage, tumour location and

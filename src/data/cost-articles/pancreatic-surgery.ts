@@ -429,10 +429,10 @@ export const pancreaticSurgery: CostArticle = {
     { href: "/costs/whipple-procedure", label: "Whipple Procedure cost in India" },
     { href: "/costs/distal-pancreatectomy", label: "distal pancreatectomy cost in India" },
     { href: "/costs/liver-resection-hepatectomy", label: "liver resection cost in India" },
-    { href: "/costs?specialty=Surgical+Oncology", label: "surgical oncology costs in India" },
-    { href: "/costs?specialty=Surgical+Gastroenterology", label: "surgical gastroenterology costs in India" },
-    { href: "/doctors?destination=India&procedure=Pancreatic+Surgery", label: "pancreatic surgery specialists in India" },
-    { href: "/hospitals?destination=India&procedure=Pancreatic+Surgery", label: "pancreatic surgery hospitals in India" },
+    { href: "/costs/India/Surgical-Oncology", label: "surgical oncology costs in India" },
+    { href: "/costs/India/Surgical-Gastroenterology", label: "surgical gastroenterology costs in India" },
+    { href: "/doctors/India/Pancreatic-Surgery", label: "pancreatic surgery specialists in India" },
+    { href: "/hospitals/India/Pancreatic-Surgery", label: "pancreatic surgery hospitals in India" },
   ],
 
   figures: [

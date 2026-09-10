@@ -8,7 +8,7 @@ import { CtaBand } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { CostArticleSection, costArticleFor } from "@/components/cost-article-section";
 import { getCostArticle } from "@/data/cost-articles";
-import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
+import { costPath, costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { articleCampuses, articleFaculty, hospitalsToConsiderHeading, interpolateCostArticle } from "@/lib/cost-article";
 import { getCostGuide } from "@/lib/cost-guides";
 import {
@@ -91,7 +91,7 @@ export default async function CostDetailPage({
         <JsonLd
           data={breadcrumbJsonLd([
             { name: "Treatment Cost", path: "/costs" },
-            { name: t.category, path: `/costs?specialty=${encodeURIComponent(t.category)}` },
+            { name: t.category, path: costsFilterPath({ destination: "India", specialty: t.category }) },
             { name: t.name, path: `/costs/${t.slug}` },
           ])}
         />
@@ -170,7 +170,7 @@ export default async function CostDetailPage({
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Treatment Cost", path: "/costs" },
-          { name: t.category, path: `/costs?specialty=${encodeURIComponent(t.category)}` },
+          { name: t.category, path: costsFilterPath({ destination: "India", specialty: t.category }) },
           { name: t.name, path: `/costs/${t.slug}` },
         ])}
       />

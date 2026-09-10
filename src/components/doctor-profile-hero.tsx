@@ -25,6 +25,7 @@ import {
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import { yearsLabel } from "@/lib/hospital-profile";
+import { doctorsPath } from "@/lib/catalog-links";
 import { whatsappHref } from "@/lib/site";
 
 const HIGHLIGHT_ICONS = [Medal, Users, Settings2, Heart];
@@ -53,7 +54,7 @@ export function DoctorProfileHero({
           <span>/</span>
           <Link href="/doctors">Doctors</Link>
           <span>/</span>
-          <Link href={`/doctors?specialty=${encodeURIComponent(doctor.specialty)}`}>
+          <Link href={doctorsPath({ destination: "India", specialty: doctor.specialty })}>
             {doctor.specialty}
           </Link>
           <span>/</span>

@@ -1,47 +1,46 @@
 import { toSlug } from "@/lib/taxonomy";
+import { prettyCatalogPath, type CatalogBasePath } from "@/lib/pretty-catalog-path";
 
 export function costPath(procedureName: string) {
   return `/costs/${toSlug(procedureName)}`;
 }
 
-/** Stable query order for cost filters. Do not invent path segments. */
+function catalogHref(
+  base: CatalogBasePath,
+  opts: {
+    destination?: string;
+    city?: string;
+    specialty?: string;
+    procedure?: string;
+  },
+) {
+  return prettyCatalogPath(base, opts);
+}
+
+/** Pretty filter path: /costs/India/Surgical-Oncology/Mastectomy */
 export function costsFilterPath(opts: {
   destination?: string;
   city?: string;
   specialty?: string;
   procedure?: string;
 }) {
-  const q = new URLSearchParams();
-  if (opts.destination) q.set("destination", opts.destination);
-  if (opts.city) q.set("city", opts.city);
-  if (opts.specialty) q.set("specialty", opts.specialty);
-  if (opts.procedure) q.set("procedure", opts.procedure);
-  const qs = q.toString();
-  return qs ? `/costs?${qs}` : "/costs";
+  return catalogHref("/costs", opts);
 }
 
 export function doctorsPath(opts: {
   procedure?: string;
   city?: string;
   destination?: string;
+  specialty?: string;
 }) {
-  const q = new URLSearchParams();
-  if (opts.destination) q.set("destination", opts.destination);
-  if (opts.city) q.set("city", opts.city);
-  if (opts.procedure) q.set("procedure", opts.procedure);
-  const qs = q.toString();
-  return qs ? `/doctors?${qs}` : "/doctors";
+  return catalogHref("/doctors", opts);
 }
 
 export function hospitalsPath(opts: {
   procedure?: string;
   city?: string;
   destination?: string;
+  specialty?: string;
 }) {
-  const q = new URLSearchParams();
-  if (opts.destination) q.set("destination", opts.destination);
-  if (opts.city) q.set("city", opts.city);
-  if (opts.procedure) q.set("procedure", opts.procedure);
-  const qs = q.toString();
-  return qs ? `/hospitals?${qs}` : "/hospitals";
+  return catalogHref("/hospitals", opts);
 }

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { costArticles } from "@/data/cost-articles";
 import { listPublishedPosts } from "@/lib/blogs";
-import { costsFilterPath } from "@/lib/catalog-links";
+import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { absoluteUrl, SITE_URL } from "@/lib/seo";
 import { CITIES, INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
@@ -44,18 +44,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     entry("/consult", { lastModified: now, changeFrequency: "monthly", priority: 0.5 }),
   ];
 
+  urls.push(entry(costsFilterPath({ destination: "India" }), { priority: 0.7 }));
+  urls.push(entry(doctorsPath({ destination: "India" }), { priority: 0.7 }));
+  urls.push(entry(hospitalsPath({ destination: "India" }), { priority: 0.7 }));
+
   for (const city of INDIA_CITIES) {
-    const cityQs = new URLSearchParams({ destination: "India", city }).toString();
-    urls.push(entry(`/doctors?${cityQs}`, { priority: 0.6 }));
-    urls.push(entry(`/hospitals?${cityQs}`, { priority: 0.6 }));
-    urls.push(entry(`/costs?${cityQs}`, { priority: 0.6 }));
+    urls.push(entry(doctorsPath({ destination: "India", city }), { priority: 0.6 }));
+    urls.push(entry(hospitalsPath({ destination: "India", city }), { priority: 0.6 }));
+    urls.push(entry(costsFilterPath({ destination: "India", city }), { priority: 0.6 }));
   }
 
   for (const specialty of SPECIALTIES) {
-    const specQs = new URLSearchParams({ destination: "India", specialty: specialty.name }).toString();
-    urls.push(entry(`/doctors?${specQs}`, { priority: 0.55 }));
-    urls.push(entry(`/hospitals?${specQs}`, { priority: 0.55 }));
-    urls.push(entry(`/costs?${specQs}`, { priority: 0.55 }));
+    urls.push(entry(doctorsPath({ destination: "India", specialty: specialty.name }), { priority: 0.55 }));
+    urls.push(entry(hospitalsPath({ destination: "India", specialty: specialty.name }), { priority: 0.55 }));
+    urls.push(entry(costsFilterPath({ destination: "India", specialty: specialty.name }), { priority: 0.55 }));
   }
 
   for (const doctor of doctors) {

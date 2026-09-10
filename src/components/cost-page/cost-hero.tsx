@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { Check, Clock, Stethoscope, BedDouble } from "lucide-react";
 import type { CostArticle } from "@/data/cost-articles/types";
+import { costsFilterPath } from "@/lib/catalog-links";
 import type { Treatment } from "@/lib/treatments";
 
 export function CostHero({
@@ -34,9 +35,9 @@ export function CostHero({
         <div className="cost-hero__grid">
           <div className="cost-hero__copy">
             <nav aria-label="Breadcrumb" className="cost-crumbs">
-              <Link href="/costs">India</Link>
+              <Link href={costsFilterPath({ destination: "India" })}>India</Link>
               <span aria-hidden>›</span>
-              <Link href={`/costs?specialty=${encodeURIComponent(treatment.category)}`}>
+              <Link href={costsFilterPath({ destination: "India", specialty: treatment.category })}>
                 {treatment.category}
               </Link>
               <span aria-hidden>›</span>

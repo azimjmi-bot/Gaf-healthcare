@@ -83,7 +83,7 @@ export function CrtGuide() {
         organs. Planning software then lets the radiation team design beams that conform
         more closely to the three-dimensional shape of the target. Instead of giving
         radiation from one simple direction, the{" "}
-        <Link href="/doctors?specialty=Radiation%20Oncology">radiation oncologist</Link>{" "}
+        <Link href={doctorsPath({ destination: "India", specialty: "Radiation Oncology" })}>radiation oncologist</Link>{" "}
         can use multiple beams from different angles.
       </P>
       <P>

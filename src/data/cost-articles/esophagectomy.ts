@@ -568,13 +568,13 @@ export const esophagectomy: CostArticle = {
   ],
 
   relatedBlogs: [
-    { href: "/costs?specialty=Surgical+Oncology", label: "surgical oncology costs in India" },
-    { href: "/costs?specialty=Medical+Oncology", label: "medical oncology costs in India" },
-    { href: "/costs?specialty=Radiation+Oncology", label: "radiation oncology costs in India" },
-    { href: "/costs?specialty=Gastroenterology", label: "gastroenterology costs in India" },
-    { href: "/costs?specialty=Surgical+Gastroenterology", label: "surgical gastroenterology costs in India" },
-    { href: "/doctors?destination=India&procedure=Esophagectomy", label: "esophagectomy surgeons in India" },
-    { href: "/hospitals?destination=India&procedure=Esophagectomy", label: "esophagectomy hospitals in India" },
+    { href: "/costs/India/Surgical-Oncology", label: "surgical oncology costs in India" },
+    { href: "/costs/India/Medical-Oncology", label: "medical oncology costs in India" },
+    { href: "/costs/India/Radiation-Oncology", label: "radiation oncology costs in India" },
+    { href: "/costs/India/Gastroenterology", label: "gastroenterology costs in India" },
+    { href: "/costs/India/Surgical-Gastroenterology", label: "surgical gastroenterology costs in India" },
+    { href: "/doctors/India/Esophagectomy", label: "esophagectomy surgeons in India" },
+    { href: "/hospitals/India/Esophagectomy", label: "esophagectomy hospitals in India" },
   ],
 
   figures: [

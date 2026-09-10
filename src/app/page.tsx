@@ -16,6 +16,7 @@ import {
 } from "@/data/home";
 import { listPublishedPosts } from "@/lib/blogs";
 import { doctors, hospitals, treatments } from "@/lib/data";
+import { hospitalsPath } from "@/lib/catalog-links";
 import { SITE_URL } from "@/lib/seo";
 import type { Treatment } from "@/lib/treatments";
 import type { Metadata } from "next";
@@ -139,7 +140,7 @@ export default function HomePage() {
           {HOME_DESTINATIONS.map((place) => (
             <Link
               key={place.name}
-              href={`/hospitals?destination=${encodeURIComponent(place.filter)}`}
+              href={hospitalsPath({ destination: place.filter })}
               className="home-dest"
             >
               <Image src={place.image} alt={place.imageAlt} fill className="object-cover" sizes="(min-width: 900px) 16vw, 50vw" />

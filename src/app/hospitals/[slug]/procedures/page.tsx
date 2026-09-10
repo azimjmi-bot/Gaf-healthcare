@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { CtaBand } from "@/components/page-shell";
+import { doctorsPath } from "@/lib/catalog-links";
 import { hospitalStaticParams, loadHospitalCampus, requireHospitalCampus } from "@/lib/hospital-campus";
 import { SITE_URL } from "@/lib/seo";
 import type { Metadata } from "next";
@@ -71,7 +72,11 @@ export default async function HospitalProceduresPage({
                         Partner range {t.partnerRange} · US cash {t.usRange}
                       </span>
                       <Link
-                        href={`/doctors?procedure=${encodeURIComponent(t.name)}&destination=${encodeURIComponent(hospital.country)}&city=${encodeURIComponent(hospital.city)}`}
+                        href={doctorsPath({
+                          destination: hospital.country,
+                          city: hospital.city,
+                          procedure: t.name,
+                        })}
                       >
                         Doctors
                       </Link>

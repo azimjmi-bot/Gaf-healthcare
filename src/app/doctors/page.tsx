@@ -100,6 +100,7 @@ export default async function DoctorsPage({
           <CatalogFilter
             basePath="/doctors"
             entity="doctors"
+            query={query}
             resultCount={paging.total}
             resultLabel={paging.total === 1 ? "specialist" : "specialists"}
           />
@@ -129,7 +130,7 @@ export default async function DoctorsPage({
             <CatalogPager
               page={paging.page}
               totalPages={paging.totalPages}
-              searchParams={raw}
+              query={query}
               basePath="/doctors"
               label="Doctor list pages"
             />

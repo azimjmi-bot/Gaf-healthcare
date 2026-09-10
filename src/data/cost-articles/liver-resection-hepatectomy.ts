@@ -667,15 +667,15 @@ export const liverResection: CostArticle = {
   ],
 
   relatedBlogs: [
-    { href: "/costs?specialty=Surgical+Oncology", label: "surgical oncology costs in India" },
-    { href: "/costs?specialty=Surgical+Gastroenterology", label: "surgical gastroenterology costs in India" },
-    { href: "/costs?specialty=Medical+Oncology", label: "medical oncology costs in India" },
+    { href: "/costs/India/Surgical-Oncology", label: "surgical oncology costs in India" },
+    { href: "/costs/India/Surgical-Gastroenterology", label: "surgical gastroenterology costs in India" },
+    { href: "/costs/India/Medical-Oncology", label: "medical oncology costs in India" },
     { href: "/costs/colectomy", label: "colectomy cost in India" },
     { href: "/costs/rectal-cancer-surgery", label: "rectal cancer surgery cost in India" },
     { href: "/costs/gastrectomy", label: "gastrectomy cost in India" },
     { href: "/costs/esophagectomy", label: "esophagectomy cost in India" },
-    { href: "/doctors?destination=India&procedure=Liver+Resection+(Hepatectomy)", label: "liver resection surgeons in India" },
-    { href: "/hospitals?destination=India&procedure=Liver+Resection+(Hepatectomy)", label: "liver resection hospitals in India" },
+    { href: "/doctors/India/Liver-Resection-(Hepatectomy)", label: "liver resection surgeons in India" },
+    { href: "/hospitals/India/Liver-Resection-(Hepatectomy)", label: "liver resection hospitals in India" },
   ],
 
   figures: [

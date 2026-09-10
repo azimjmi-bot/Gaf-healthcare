@@ -10,6 +10,7 @@ import {
   hospitalsInCity,
   type Treatment,
 } from "@/lib/data";
+import { hospitalsPath } from "@/lib/catalog-links";
 import { breadcrumbJsonLd, hospitalJsonLd, hospitalMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -51,7 +52,7 @@ export default async function HospitalDetailPage({
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Hospitals", path: "/hospitals" },
-          { name: h.city, path: `/hospitals?destination=India&city=${encodeURIComponent(h.city)}` },
+          { name: h.city, path: hospitalsPath({ destination: "India", city: h.city }) },
           { name: h.name, path: `/hospitals/${h.slug}` },
         ])}
       />

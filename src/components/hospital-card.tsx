@@ -7,6 +7,7 @@ import type { Hospital } from "@/lib/hospitals";
 import { doctorsForHospital } from "@/lib/data";
 import { displayBio, isEyeCampus } from "@/lib/hospital-profile";
 import { whatsappHref } from "@/lib/site";
+import { hospitalsPath } from "@/lib/catalog-links";
 import { compareSpecialties } from "@/lib/taxonomy";
 
 const CHIP_LIMIT = 6;
@@ -54,7 +55,11 @@ export function HospitalCard({ hospital }: { hospital: Hospital }) {
             {shown.map((spec) => (
               <li key={spec.slug}>
                 <Link
-                  href={`/hospitals?specialty=${encodeURIComponent(spec.name)}&destination=${encodeURIComponent(hospital.country)}&city=${encodeURIComponent(hospital.city)}`}
+                  href={hospitalsPath({
+                    destination: hospital.country,
+                    city: hospital.city,
+                    specialty: spec.name,
+                  })}
                 >
                   {spec.name}
                 </Link>

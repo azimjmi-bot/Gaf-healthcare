@@ -579,17 +579,17 @@ export const gastrectomy: CostArticle = {
   ],
 
   relatedBlogs: [
-    { href: "/costs?specialty=Surgical+Oncology", label: "surgical oncology costs in India" },
-    { href: "/costs?specialty=Medical+Oncology", label: "medical oncology costs in India" },
-    { href: "/costs?specialty=Radiation+Oncology", label: "radiation oncology costs in India" },
-    { href: "/costs?specialty=Gastroenterology", label: "gastroenterology costs in India" },
-    { href: "/costs?specialty=Surgical+Gastroenterology", label: "surgical gastroenterology costs in India" },
+    { href: "/costs/India/Surgical-Oncology", label: "surgical oncology costs in India" },
+    { href: "/costs/India/Medical-Oncology", label: "medical oncology costs in India" },
+    { href: "/costs/India/Radiation-Oncology", label: "radiation oncology costs in India" },
+    { href: "/costs/India/Gastroenterology", label: "gastroenterology costs in India" },
+    { href: "/costs/India/Surgical-Gastroenterology", label: "surgical gastroenterology costs in India" },
     { href: "/costs/esophagectomy", label: "esophagectomy cost in India" },
     { href: "/costs/cytoreductive-surgery", label: "cytoreductive surgery cost in India" },
     { href: "/costs/cytoreductive-surgery-with-hipec", label: "CRS + HIPEC cost in India" },
     { href: "/costs/pipac", label: "PIPAC cost in India" },
-    { href: "/doctors?destination=India&procedure=Gastrectomy", label: "gastrectomy surgeons in India" },
-    { href: "/hospitals?destination=India&procedure=Gastrectomy", label: "gastrectomy hospitals in India" },
+    { href: "/doctors/India/Gastrectomy", label: "gastrectomy surgeons in India" },
+    { href: "/hospitals/India/Gastrectomy", label: "gastrectomy hospitals in India" },
   ],
 
   figures: [

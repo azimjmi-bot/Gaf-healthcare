@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import {
   catalogDestinations,
   catalogProceduresFor,
@@ -9,7 +9,13 @@ import {
   cityResultCounts,
   parseCatalogQuery,
   type CatalogEntity,
+  type CatalogQuery,
 } from "@/lib/catalog";
+import {
+  parsePrettyCatalogPathname,
+  prettyCatalogPath,
+  type CatalogBasePath,
+} from "@/lib/pretty-catalog-path";
 import {
   Select,
   SelectContent,
@@ -21,19 +27,39 @@ import {
 const ALL = "all";
 
 type Props = {
-  basePath: string;
+  basePath: CatalogBasePath;
   resultCount: number;
   resultLabel: string;
   entity: CatalogEntity;
+  query?: CatalogQuery;
 };
 
-export function CatalogFilter({ basePath, resultCount, resultLabel, entity }: Props) {
+function currentQuery(pathname: string, params: URLSearchParams, fallback?: CatalogQuery): CatalogQuery {
+  const fromPath = parsePrettyCatalogPathname(pathname);
+  if (fromPath && (fromPath.destination || fromPath.city || fromPath.specialty || fromPath.procedure)) {
+    return fromPath;
+  }
+  const fromSearch = parseCatalogQuery({
+    destination: params.get("destination") ?? undefined,
+    city: params.get("city") ?? undefined,
+    specialty: params.get("specialty") ?? undefined,
+    procedure: params.get("procedure") ?? undefined,
+  });
+  if (fromSearch.destination || fromSearch.city || fromSearch.specialty || fromSearch.procedure) {
+    return fromSearch;
+  }
+  return fallback ?? {};
+}
+
+export function CatalogFilter({ basePath, resultCount, resultLabel, entity, query }: Props) {
   const router = useRouter();
+  const pathname = usePathname();
   const params = useSearchParams();
-  const destination = params.get("destination") ?? ALL;
-  const city = params.get("city") ?? ALL;
-  const specialty = params.get("specialty") ?? ALL;
-  const procedure = params.get("procedure") ?? ALL;
+  const active = currentQuery(pathname, params, query);
+  const destination = active.destination ?? ALL;
+  const city = active.city ?? ALL;
+  const specialty = active.specialty ?? ALL;
+  const procedure = active.procedure ?? ALL;
   const cities = citiesForDestination(destination === ALL ? undefined : destination);
   const procedureOptions = catalogProceduresFor(specialty === ALL ? undefined : specialty);
   const indiaSelected = destination === "India";
@@ -41,21 +67,21 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, entity }: Pr
     ? cityResultCounts(entity, parseCatalogQuery({ destination, specialty, procedure }))
     : null;
 
-  function setFilter(key: string, value: string) {
-    const next = new URLSearchParams(params.toString());
-    if (!value || value === ALL) next.delete(key);
-    else next.set(key, value);
-    if (key === "destination") next.delete("city");
+  function setFilter(key: keyof CatalogQuery, value: string) {
+    const next: CatalogQuery = {
+      destination: destination === ALL ? undefined : destination,
+      city: city === ALL ? undefined : city,
+      specialty: specialty === ALL ? undefined : specialty,
+      procedure: procedure === ALL ? undefined : procedure,
+    };
+    if (!value || value === ALL) delete next[key];
+    else next[key] = value;
+    if (key === "destination") delete next.city;
     if (key === "specialty") {
-      const nextSpecialty = !value || value === ALL ? undefined : value;
-      const allowed = catalogProceduresFor(nextSpecialty);
-      const currentProcedure = next.get("procedure");
-      if (currentProcedure && !allowed.includes(currentProcedure)) next.delete("procedure");
+      const allowed = catalogProceduresFor(next.specialty);
+      if (next.procedure && !allowed.includes(next.procedure)) delete next.procedure;
     }
-    next.delete("condition");
-    next.delete("page");
-    const qs = next.toString();
-    router.push(qs ? `${basePath}?${qs}` : basePath, { scroll: false });
+    router.push(prettyCatalogPath(basePath, next), { scroll: false });
   }
 
   return (

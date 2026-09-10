@@ -4,6 +4,7 @@ import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
 import type { CatalogQuery } from "@/lib/catalog";
 import { displayBio } from "@/lib/hospital-profile";
+import { prettyCatalogPath } from "@/lib/pretty-catalog-path";
 import { site } from "@/lib/site";
 
 export const SITE_URL = "https://gaf.healthcare";
@@ -230,13 +231,7 @@ export function catalogMetadata(
     );
   }
 
-  const params = new URLSearchParams();
-  if (q.destination) params.set("destination", q.destination);
-  if (q.city) params.set("city", q.city);
-  if (q.specialty) params.set("specialty", q.specialty);
-  if (q.procedure) params.set("procedure", q.procedure);
-  const qs = params.toString();
-  const url = absoluteUrl(qs ? `${path}?${qs}` : path);
+  const url = absoluteUrl(prettyCatalogPath(path as "/costs" | "/doctors" | "/hospitals", q));
   return {
     title,
     description,

@@ -299,9 +299,9 @@ export const cytoreductiveSurgeryWithHipec: CostArticle = {
     { href: "/costs/rectal-cancer-surgery", label: "rectal cancer surgery cost in India" },
     { href: "/costs/gastrectomy", label: "gastrectomy cost in India" },
     { href: "/costs/pancreatic-surgery", label: "pancreatic surgery cost in India" },
-    { href: "/costs?specialty=Surgical+Oncology", label: "surgical oncology costs in India" },
-    { href: "/doctors?destination=India&procedure=Cytoreductive+Surgery+with+HIPEC", label: "CRS and HIPEC specialists in India" },
-    { href: "/hospitals?destination=India&procedure=Cytoreductive+Surgery+with+HIPEC", label: "CRS and HIPEC hospitals in India" },
+    { href: "/costs/India/Surgical-Oncology", label: "surgical oncology costs in India" },
+    { href: "/doctors/India/Cytoreductive-Surgery-with-HIPEC", label: "CRS and HIPEC specialists in India" },
+    { href: "/hospitals/India/Cytoreductive-Surgery-with-HIPEC", label: "CRS and HIPEC hospitals in India" },
   ],
 
   figures: [

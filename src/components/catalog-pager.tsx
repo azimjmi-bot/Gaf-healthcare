@@ -1,4 +1,6 @@
 import Link from "next/link";
+import type { CatalogQuery } from "@/lib/catalog";
+import { prettyCatalogPath, type CatalogBasePath } from "@/lib/pretty-catalog-path";
 
 function visiblePages(current: number, total: number) {
   if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
@@ -9,28 +11,30 @@ function visiblePages(current: number, total: number) {
 export function CatalogPager({
   page,
   totalPages,
+  query,
   searchParams,
   basePath,
   label,
 }: {
   page: number;
   totalPages: number;
-  searchParams: Record<string, string | string[] | undefined>;
-  basePath: "/doctors" | "/hospitals";
+  query?: CatalogQuery;
+  searchParams?: Record<string, string | string[] | undefined>;
+  basePath: CatalogBasePath;
   label: string;
 }) {
   if (totalPages <= 1) return null;
 
+  const facets: CatalogQuery = query ?? {
+    destination: one(searchParams, "destination"),
+    city: one(searchParams, "city"),
+    specialty: one(searchParams, "specialty"),
+    procedure: one(searchParams, "procedure"),
+  };
+
   function hrefFor(nextPage: number) {
-    const params = new URLSearchParams();
-    for (const [key, value] of Object.entries(searchParams)) {
-      if (key === "page") continue;
-      const raw = Array.isArray(value) ? value[0] : value;
-      if (raw) params.set(key, raw);
-    }
-    if (nextPage > 1) params.set("page", String(nextPage));
-    const qs = params.toString();
-    return qs ? `${basePath}?${qs}` : basePath;
+    const path = prettyCatalogPath(basePath, facets);
+    return nextPage > 1 ? `${path}?page=${nextPage}` : path;
   }
 
   const nums = visiblePages(page, totalPages);
@@ -73,4 +77,11 @@ export function CatalogPager({
       )}
     </nav>
   );
+}
+
+function one(params: Record<string, string | string[] | undefined> | undefined, key: string) {
+  if (!params) return undefined;
+  const value = params[key];
+  const raw = Array.isArray(value) ? value[0] : value;
+  return raw || undefined;
 }

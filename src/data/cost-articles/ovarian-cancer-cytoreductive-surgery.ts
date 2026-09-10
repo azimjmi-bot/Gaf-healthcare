@@ -384,9 +384,9 @@ export const ovarianCancerCytoreductiveSurgery: CostArticle = {
     { href: "/costs/cytoreductive-surgery-with-hipec", label: "cytoreductive surgery with HIPEC cost in India" },
     { href: "/costs/cytoreductive-surgery", label: "cytoreductive surgery cost in India" },
     { href: "/costs/pipac", label: "PIPAC cost in India" },
-    { href: "/costs?specialty=Surgical+Oncology", label: "surgical oncology costs in India" },
-    { href: "/doctors?destination=India&procedure=Ovarian+Cancer+Cytoreductive+Surgery", label: "ovarian cytoreduction specialists in India" },
-    { href: "/hospitals?destination=India&procedure=Ovarian+Cancer+Cytoreductive+Surgery", label: "ovarian cytoreduction hospitals in India" },
+    { href: "/costs/India/Surgical-Oncology", label: "surgical oncology costs in India" },
+    { href: "/doctors/India/Ovarian-Cancer-Cytoreductive-Surgery", label: "ovarian cytoreduction specialists in India" },
+    { href: "/hospitals/India/Ovarian-Cancer-Cytoreductive-Surgery", label: "ovarian cytoreduction hospitals in India" },
   ],
 
   figures: [

@@ -618,16 +618,16 @@ export const whippleProcedure: CostArticle = {
   ],
 
   relatedBlogs: [
-    { href: "/costs?specialty=Surgical+Oncology", label: "surgical oncology costs in India" },
-    { href: "/costs?specialty=Surgical+Gastroenterology", label: "surgical gastroenterology costs in India" },
-    { href: "/costs?specialty=Medical+Oncology", label: "medical oncology costs in India" },
+    { href: "/costs/India/Surgical-Oncology", label: "surgical oncology costs in India" },
+    { href: "/costs/India/Surgical-Gastroenterology", label: "surgical gastroenterology costs in India" },
+    { href: "/costs/India/Medical-Oncology", label: "medical oncology costs in India" },
     { href: "/costs/whipple-procedure", label: "Whipple Procedure cost in India" },
     { href: "/costs/pancreatic-surgery", label: "pancreatic surgery cost in India" },
     { href: "/costs/gastrectomy", label: "gastrectomy cost in India" },
     { href: "/costs/esophagectomy", label: "esophagectomy cost in India" },
     { href: "/costs/colectomy", label: "colectomy cost in India" },
-    { href: "/doctors?destination=India&procedure=Whipple+Procedure", label: "Whipple Procedure surgeons in India" },
-    { href: "/hospitals?destination=India&procedure=Whipple+Procedure", label: "pancreatic surgery hospitals in India" },
+    { href: "/doctors/India/Whipple-Procedure", label: "Whipple Procedure surgeons in India" },
+    { href: "/hospitals/India/Whipple-Procedure", label: "pancreatic surgery hospitals in India" },
   ],
 
   figures: [

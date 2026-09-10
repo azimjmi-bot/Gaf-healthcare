@@ -137,7 +137,7 @@ export default async function CostsPage({
         <JsonLd
           data={breadcrumbJsonLd([
             { name: "Treatment Cost", path: "/costs" },
-            { name: sheet.category, path: `/costs?specialty=${encodeURIComponent(sheet.category)}` },
+            { name: sheet.category, path: costsFilterPath({ destination: query.destination || "India", specialty: sheet.category }) },
             { name: sheet.name, path: `/costs/${sheet.slug}` },
             ...(query.city ? [{ name: query.city, path: pagePath }] : []),
           ])}
@@ -170,6 +170,7 @@ export default async function CostsPage({
                 <CatalogFilter
                   basePath="/costs"
                   entity="treatments"
+                  query={query}
                   resultCount={list.length}
                   resultLabel={list.length === 1 ? "pathway" : "pathways"}
                 />
@@ -193,6 +194,7 @@ export default async function CostsPage({
           <CatalogFilter
             basePath="/costs"
             entity="treatments"
+            query={query}
             resultCount={list.length}
             resultLabel={list.length === 1 ? "pathway" : "pathways"}
           />
