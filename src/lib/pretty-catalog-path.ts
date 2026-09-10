@@ -43,13 +43,19 @@ export function isCountrySegment(segment: string) {
   return Boolean(matchCountryName(segment));
 }
 
+function isReservedPseoPath(segments: string[]) {
+  return segments.length > 0 && segments.every((segment) => segment === toSlug(segment));
+}
+
 /**
  * Parse /India/Delhi-NCR/Surgical-Oncology/Mastectomy-style segments.
  * Order is always destination, then optional city, specialty, procedure.
- * Returns null when the first segment is not a country (procedure/doctor/hospital slugs).
+ * Returns null when the first segment is not a country (procedure/doctor/hospital slugs)
+ * or when the path is a reserved lowercase pSEO slug tuple.
  */
 export function parsePrettyCatalogSegments(segments: string[]): CatalogQuery | null {
   if (segments.length === 0) return {};
+  if (isReservedPseoPath(segments)) return null;
   const destination = matchCountryName(segments[0]);
   if (!destination) return null;
 
