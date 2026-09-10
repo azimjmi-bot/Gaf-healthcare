@@ -698,7 +698,16 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Pediatric Cardiac Surgery") return mapPediatricCardiacSurgeryProcedures(texts);
   if (specialty === "Cardiology") return mapCardiologyProcedures(texts);
   if (specialty === "Bariatric Surgery") return mapBariatricProcedures(texts);
-  if (specialty === "Cosmetic Surgery") return mapCosmeticProcedures(texts);
+  if (specialty === "Cosmetic Surgery") {
+    const found = mapCosmeticProcedures(texts);
+    const blob = texts.join(" ");
+    // Reconstructive breast surgery is listed on plastic-surgery records and is the
+    // same catalog procedure as surgical-oncology Breast Reconstruction.
+    if (/breast[\s-]*reconstr|reconstruction of the breast/i.test(blob)) {
+      return found.includes("Breast Reconstruction") ? found : [...found, "Breast Reconstruction"];
+    }
+    return found;
+  }
   if (specialty === "ENT") return mapEntProcedures(texts);
   if (specialty === "Gastroenterology") return mapGastroenterologyProcedures(texts);
   if (specialty === "Surgical Gastroenterology") return mapSurgicalGastroenterologyProcedures(texts);
