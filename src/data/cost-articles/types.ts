@@ -91,6 +91,8 @@ export type CostArticle = {
   /** Procedure-specific hero lede. Replaces generic specialty catalog copy. */
   heroLede?: string;
   overviewHeading?: string;
+  /** Overrides “Who may be a candidate…?” — e.g. “When is gastrectomy performed?” */
+  whoHeading?: string;
   approachComparison?: {
     heading?: string;
     intro: string[];

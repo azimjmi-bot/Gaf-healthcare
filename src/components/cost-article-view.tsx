@@ -199,7 +199,7 @@ export function CostArticleView({
         <Figure key={figure.src} figure={figure} />
       ))}
 
-      <H2 id="who-candidate">Who may be a candidate for {article.shortName}?</H2>
+      <H2 id="who-candidate">{article.whoHeading ?? `Who may be a candidate for ${article.shortName}?`}</H2>
       {article.overview.who.map((para) => (
         <P key={para.slice(0, 40)}>{para}</P>
       ))}
