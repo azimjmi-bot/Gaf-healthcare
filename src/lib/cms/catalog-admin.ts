@@ -2,7 +2,7 @@ import { loadCatalogCms } from "@/lib/cms/catalog-store";
 import { catalogDoctors, type Doctor } from "@/lib/doctors";
 import { catalogHospitals, type Hospital } from "@/lib/hospitals";
 import { catalogTreatments, type Treatment } from "@/lib/treatments";
-import type { CatalogRow } from "@/lib/cms/catalog-types";
+import { pickDoctorPatch, pickHospitalPatch, type CatalogRow } from "@/lib/cms/catalog-types";
 
 export function doctorAdminRows(): CatalogRow[] {
   const cms = loadCatalogCms();
@@ -40,7 +40,7 @@ export function hospitalAdminRows(): CatalogRow[] {
   return [
     ...catalogHospitals.map((h) => ({
       slug: h.slug,
-      name: cms.hospitalOverrides[h.slug]?.name || h.name,
+      name: h.name,
       city: h.city,
       image: cms.hospitalOverrides[h.slug]?.image || h.image || "",
       deleted: deleted.has(h.slug),
@@ -50,7 +50,7 @@ export function hospitalAdminRows(): CatalogRow[] {
       const h = raw as Hospital;
       return {
         slug: h.slug,
-        name: cms.hospitalOverrides[h.slug]?.name || h.name,
+        name: h.name,
         city: h.city,
         image: cms.hospitalOverrides[h.slug]?.image || h.image || "",
         deleted: deleted.has(h.slug),
@@ -94,7 +94,7 @@ export function getAdminDoctor(slug: string) {
   if (!base) return null;
   return {
     ...base,
-    ...cms.doctorOverrides[slug],
+    ...pickDoctorPatch(cms.doctorOverrides[slug]),
     deleted: cms.doctorsDeleted.includes(slug),
     added: !catalogDoctors.some((d) => d.slug === slug),
   };
@@ -108,7 +108,7 @@ export function getAdminHospital(slug: string) {
   if (!base) return null;
   return {
     ...base,
-    ...cms.hospitalOverrides[slug],
+    ...pickHospitalPatch(cms.hospitalOverrides[slug]),
     deleted: cms.hospitalsDeleted.includes(slug),
     added: !catalogHospitals.some((h) => h.slug === slug),
   };

@@ -287,6 +287,7 @@ export type HospitalPseoFacet = {
   countrySlug?: string;
 };
 
+/** Matching uses only city, country, specialty, and procedure slugs — never bio or name. */
 export function hospitalsMatchingPseo(facet: HospitalPseoFacet) {
   return hospitals.filter((h) => {
     if (facet.specialtySlug && !h.specialtySlugs.includes(facet.specialtySlug)) return false;

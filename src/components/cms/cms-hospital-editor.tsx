@@ -25,26 +25,33 @@ export function CmsHospitalEditor({
         bio: row.bio,
         image: row.image,
         imageAlt: row.imageAlt,
-        name: row.name,
       }),
     });
     const data = await res.json();
     setBusy(false);
-    setMessage(res.ok ? "Saved. Public campus pages use this bio and image." : data.error || "Save failed.");
+    setMessage(
+      res.ok
+        ? "Saved. The public hospital page uses this bio and photo. URLs, city, country, specialties and procedures are unchanged."
+        : data.error || "Save failed.",
+    );
   }
 
   return (
     <div className="cms-form">
       <p className="cms-muted">
-        {row.name} · {row.city}, {row.country}
+        Bio and campus photo only. This save cannot change the hospital URL, listing filters, or pSEO
+        matching (city, country, specialty, and procedure slugs stay on the seed record).
+      </p>
+      <p className="cms-muted">
+        {row.name} · {row.city}, {row.country} · <code>/hospitals/{row.slug}</code>
       </p>
       <label>
         Name
-        <Input value={row.name} onChange={(e) => setRow({ ...row, name: e.target.value })} />
+        <Input value={row.name} readOnly disabled />
       </label>
       <label>
         Bio
-        <Textarea value={row.bio} rows={10} onChange={(e) => setRow({ ...row, bio: e.target.value })} />
+        <Textarea value={row.bio} rows={12} onChange={(e) => setRow({ ...row, bio: e.target.value })} />
       </label>
       <CmsImageUpload
         label="Campus photo"

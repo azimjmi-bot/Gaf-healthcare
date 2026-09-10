@@ -5,6 +5,7 @@ import { DoctorProfileHero } from "@/components/doctor-profile-hero";
 import { JsonLd } from "@/components/json-ld";
 import { CtaBand } from "@/components/page-shell";
 import { doctors, doctorsForHospital, getDoctor, getHospital, getTreatment } from "@/lib/data";
+import { displayBio } from "@/lib/hospital-profile";
 import { breadcrumbJsonLd, doctorMetadata, physicianJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -83,7 +84,7 @@ export default async function DoctorDetailPage({
             <div className="mt-3">
               <AccreditationSeals accreditation={hospital.accreditation} size="sm" />
             </div>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{hospital.bio}</p>
+            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{displayBio(hospital.bio)}</p>
             <Link
               href={`/hospitals/${hospital.slug}`}
               className="mt-4 inline-block text-sm underline-offset-4 hover:underline"

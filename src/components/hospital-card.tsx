@@ -5,7 +5,7 @@ import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
 import { HospitalGalleryButton } from "@/components/hospital-gallery";
 import type { Hospital } from "@/lib/hospitals";
 import { doctorsForHospital } from "@/lib/data";
-import { isEyeCampus } from "@/lib/hospital-profile";
+import { displayBio, isEyeCampus } from "@/lib/hospital-profile";
 import { whatsappHref } from "@/lib/site";
 import { compareSpecialties } from "@/lib/taxonomy";
 
@@ -31,7 +31,7 @@ export function HospitalCard({ hospital }: { hospital: Hospital }) {
   const shown = specialties.slice(0, CHIP_LIMIT);
   const extra = specialties.length - shown.length;
   const eye = isEyeCampus(hospital);
-  const blurb = hospital.bio.replace(/\s+/g, " ").trim();
+  const blurb = displayBio(hospital.bio);
 
   return (
     <article className="hcard">

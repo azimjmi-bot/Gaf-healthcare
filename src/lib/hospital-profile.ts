@@ -177,7 +177,7 @@ export function heroLede(hospital: Hospital) {
 }
 
 export function aboutParagraphs(hospital: Hospital) {
-  const raw = hospital.bio.replace(/\s+/g, " ").trim();
+  const raw = displayBio(hospital.bio);
   const chunks = raw.split(/(?<=[.!?])\s+/).filter(Boolean);
   if (chunks.length <= 2) return [raw];
   const mid = Math.ceil(chunks.length / 2);

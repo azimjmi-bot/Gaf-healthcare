@@ -15,8 +15,63 @@ export type HospitalPatch = {
   summary?: string;
   image?: string;
   imageAlt?: string;
-  name?: string;
 };
+
+/** Fields that define public URLs and pSEO matching. Never overlay these. */
+export const PSEO_LOCKED_KEYS = [
+  "slug",
+  "citySlug",
+  "countrySlug",
+  "specialtySlug",
+  "specialtySlugs",
+  "procedureSlug",
+  "procedureSlugs",
+  "treatmentSlugs",
+  "hospitalSlug",
+  "city",
+  "country",
+  "specialties",
+  "procedures",
+] as const;
+
+export const DOCTOR_OVERLAY_KEYS = [
+  "bio",
+  "image",
+  "imageAlt",
+  "name",
+  "title",
+  "qualifications",
+  "experience",
+] as const satisfies readonly (keyof DoctorPatch)[];
+
+export const HOSPITAL_OVERLAY_KEYS = [
+  "bio",
+  "summary",
+  "image",
+  "imageAlt",
+] as const satisfies readonly (keyof HospitalPatch)[];
+
+export function pickOverlay(patch: object | undefined, allowedKeys: readonly string[]): Record<string, unknown> {
+  if (!patch) return {};
+  const src = patch as Record<string, unknown>;
+  const locked = new Set<string>(PSEO_LOCKED_KEYS);
+  const out: Record<string, unknown> = {};
+  for (const key of allowedKeys) {
+    if (locked.has(key)) continue;
+    if (!Object.prototype.hasOwnProperty.call(src, key)) continue;
+    if (src[key] === undefined) continue;
+    out[key] = src[key];
+  }
+  return out;
+}
+
+export function pickHospitalPatch(patch: object | undefined): HospitalPatch {
+  return pickOverlay(patch, HOSPITAL_OVERLAY_KEYS) as HospitalPatch;
+}
+
+export function pickDoctorPatch(patch: object | undefined): DoctorPatch {
+  return pickOverlay(patch, DOCTOR_OVERLAY_KEYS) as DoctorPatch;
+}
 
 export type TreatmentPatch = {
   name?: string;

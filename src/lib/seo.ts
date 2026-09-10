@@ -3,6 +3,7 @@ import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
 import type { CatalogQuery } from "@/lib/catalog";
+import { displayBio } from "@/lib/hospital-profile";
 import { site } from "@/lib/site";
 
 export const SITE_URL = "https://gaf.healthcare";
@@ -92,7 +93,7 @@ export function hospitalMetadata(h: Hospital): Metadata {
       ? `${h.name} — eye hospital in ${h.city}, India`
       : `${h.name} — oncology, ENT and GI hospital in ${h.city}, India`;
   const description = clip(
-    `${h.name} in ${h.city}, India lists ${h.specialties.join(", ")}. ${h.accreditation}. ${h.bio}`,
+    `${h.name} in ${h.city}, India lists ${h.specialties.join(", ")}. ${h.accreditation}. ${displayBio(h.bio)}`,
   );
   const url = absoluteUrl(`/hospitals/${h.slug}`);
   return {
@@ -291,7 +292,7 @@ export function hospitalJsonLd(h: Hospital) {
     "@type": "Hospital",
     name: h.name,
     url: absoluteUrl(`/hospitals/${h.slug}`),
-    description: clip(h.bio, 240),
+    description: clip(displayBio(h.bio), 240),
     medicalSpecialty: h.specialties,
     address: {
       "@type": "PostalAddress",
