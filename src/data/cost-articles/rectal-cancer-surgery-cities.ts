@@ -285,7 +285,7 @@ export const rectalCancerSurgeryCities: CityEditorial[] = [
         },
         {
           q: "Which Bengaluru doctors appear on GAF for rectal cancer surgery?",
-          a: "The directory currently maps Dr. Narasimhaiah Srinivasaiah at Apollo Hospitals, Bannerghatta Road, as a colorectal surgery listing. Confirm pelvic MRI and radiation partners on that campus, and do not treat one name as a ranking.",
+          a: "The directory currently maps Dr. Narasimhaiah Srinivasaiah at Apollo Hospitals, Bannerghatta Road, as a colorectal surgery listing, and Dr. Sreedhara V at the same campus because the catalog tags LAR and colorectal resection. Confirm who would actually resect rectum. One or two names are not a ranking.",
         },
         {
           q: "Is laparoscopic or robotic rectal surgery available in Bengaluru?",
