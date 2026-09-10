@@ -41,6 +41,21 @@
       "notes": "Indicative planning ranges, not quotations. The named reconstructive surgeon confirms implant versus autologous technique, immediate versus delayed timing, implant type if used, and an itemized hospital price after records review. Mastectomy, radiotherapy and second-stage exchange are quoted separately unless named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
       "replaceGuide": false
     },
+    "sentinel-lymph-node-biopsy": {
+      "summary": "Sentinel node biopsy maps and removes the first draining nodes for staging when the basin looks clinically clear. It is not a smaller dissection, and it is not used for every patient.",
+      "usRange": "$8,000–$18,000",
+      "partnerRange": "$2,000–$5,500",
+      "stay": "1–2 nights",
+      "includes": [
+        "Surgical oncology consultation and records review",
+        "Named surgeon on camera before travel",
+        "Theatre, anaesthesia and inpatient stay as quoted",
+        "Histopathology of the sentinel nodes as quoted",
+        "Discharge summary to your home team"
+      ],
+      "notes": "Indicative planning ranges, not quotations. The named surgical oncologist confirms mapping method, whether the biopsy stands alone or shares a sitting with another cancer operation, frozen-section pathology, and an itemized hospital price after records review. Lumpectomy, mastectomy, full dissection and radiotherapy are quoted separately unless named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
+      "replaceGuide": false
+    },
     "oncoplastic-breast-surgery": {
       "summary": "Oncoplastic surgery removes the tumour with a margin and reshapes the remaining breast in the same sitting when conservation is oncologically sound. It is cancer surgery first, not a cosmetic add-on.",
       "usRange": "$18,000–$38,000",

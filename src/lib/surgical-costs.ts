@@ -163,7 +163,7 @@ export const SURGICAL_SUMMARIES: Record<string, string> = {
   "Breast Reconstruction":
     "Reconstruction restores breast shape after mastectomy or a large conservation defect. Implant-based and autologous (flap) techniques, and immediate versus delayed timing, follow anatomy and the radiation plan — not a brochure upgrade.",
   "Sentinel Lymph Node Biopsy":
-    "Sentinel node biopsy maps the first draining nodes instead of a full axillary clearance when staging allows. Frozen section capability on the day is part of the campus check.",
+    "Sentinel node biopsy maps and removes the first draining nodes for staging when the basin looks clinically clear. It is not a smaller dissection, and it is not used for every patient.",
   Esophagectomy:
     "Oesophageal resection is a high-acuity operation. GAF Healthcare only matches centres that already run this list weekly, with ICU that has seen anastomotic leaks.",
   Gastrectomy:
