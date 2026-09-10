@@ -41,6 +41,21 @@
       "notes": "Indicative planning ranges, not quotations. The named reconstructive surgeon confirms implant versus autologous technique, immediate versus delayed timing, implant type if used, and an itemized hospital price after records review. Mastectomy, radiotherapy and second-stage exchange are quoted separately unless named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
       "replaceGuide": false
     },
+    "gastrectomy": {
+      "summary": "Gastrectomy removes part or all of the stomach — usually for selected gastric cancers — then reconstructs a food passage. Extent of lymph-node dissection is set after staging, not after you have already booked the ward.",
+      "usRange": "$40,000–$90,000",
+      "partnerRange": "$9,000–$22,000",
+      "stay": "7–14 nights",
+      "includes": [
+        "Surgical oncology consultation and records review",
+        "Named surgeon on camera before travel",
+        "Theatre, anaesthesia and inpatient stay as quoted",
+        "Histopathology of the specimen",
+        "Discharge summary to your home oncologist"
+      ],
+      "notes": "Indicative planning ranges, not quotations. The named surgical oncologist confirms extent (partial, subtotal, total, proximal or distal), reconstruction, open versus laparoscopic or robotic access where offered, named high-dependency nights and an itemized hospital price after records review. PET-CT, neoadjuvant chemotherapy, radiotherapy, extra leak days and feeding support after discharge are quoted separately unless named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
+      "replaceGuide": false
+    },
     "esophagectomy": {
       "summary": "Esophagectomy removes part or most of the oesophagus — usually for selected oesophageal or junction cancers — then reconstructs a food passage. GAF Healthcare matches centres that already run this list, with ICU that has seen anastomotic leaks.",
       "usRange": "$50,000–$120,000",

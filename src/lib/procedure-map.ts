@@ -26,7 +26,7 @@ const SURGICAL_RULES: { test: RegExp; name: (typeof SURGICAL_ONCOLOGY_PROCEDURES
   { test: /mastectomy|breast cancer surgery/i, name: "Mastectomy" },
   { test: /sentinel/i, name: "Sentinel Lymph Node Biopsy" },
   { test: /esophagect|oesophagect|esophageal cancer|oesophageal cancer/i, name: "Esophagectomy" },
-  { test: /gastrect|gastric cancer/i, name: "Gastrectomy" },
+  { test: /gastric cancer|stomach cancer/i, name: "Gastrectomy" },
   { test: /rectal/i, name: "Rectal Cancer Surgery" },
   { test: /colect|colon cancer|colorectal/i, name: "Colectomy" },
   { test: /hepatec|liver resect/i, name: "Liver Resection (Hepatectomy)" },
@@ -130,7 +130,7 @@ export function mapSurgicalProcedures(texts: string[], fallback = true) {
   if (/(hepato|liver)/i.test(hint)) return ["Liver Resection (Hepatectomy)"];
   if (/pancrea/i.test(hint)) return ["Whipple Procedure", "Pancreatic Surgery"];
   if (/prostate/i.test(hint)) return ["Radical Prostatectomy"];
-  return ["Mastectomy", "Gastrectomy", "Lung Cancer Surgery"];
+  return ["Mastectomy", "Lung Cancer Surgery"];
 }
 
 export function mapMedicalProcedures(texts: string[], fallback = true) {
@@ -360,7 +360,7 @@ const SURGICAL_GASTRO_RULES: { test: RegExp; name: (typeof SURGICAL_GASTROENTERO
   { test: /colorectal resect|colectomy|colon resect/i, name: "Colorectal Resection" },
   { test: /hepatec|liver resect/i, name: "Liver Resection (Hepatectomy)" },
   { test: /esophagect|oesophagect|esophageal cancer surg|oesophageal cancer/i, name: "Esophagectomy" },
-  { test: /gastrect/i, name: "Gastrectomy" },
+  { test: /gastric cancer|stomach cancer/i, name: "Gastrectomy" },
   { test: /gastric bypass|roux/i, name: "Gastric Bypass Surgery" },
   { test: /sleeve/i, name: "Sleeve Gastrectomy" },
 ];

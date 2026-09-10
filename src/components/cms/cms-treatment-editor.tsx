@@ -13,6 +13,7 @@ const LONGFORM_COST_SLUGS = new Set([
   "breast-conserving-surgery-lumpectomy",
   "breast-reconstruction",
   "esophagectomy",
+  "gastrectomy",
   "mastectomy",
   "nipple-sparing-mastectomy",
   "oncoplastic-breast-surgery",

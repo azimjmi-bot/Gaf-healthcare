@@ -167,7 +167,7 @@ export const SURGICAL_SUMMARIES: Record<string, string> = {
   Esophagectomy:
     "Esophagectomy removes part or most of the oesophagus — usually for selected oesophageal or junction cancers — then reconstructs a food passage. GAF Healthcare matches centres that already run this list, with ICU that has seen anastomotic leaks.",
   Gastrectomy:
-    "Partial or total gastrectomy for gastric cancer. Extent of lymph-node dissection is set after staging, not after you have already booked the ward.",
+    "Gastrectomy removes part or all of the stomach — usually for selected gastric cancers — then reconstructs a food passage. Extent of lymph-node dissection is set after staging, not after you have already booked the ward.",
   Colectomy:
     "Colon resection for cancer, open or laparoscopic depending on the tumour and the surgeon. Pathology turnaround and a stoma plan, if needed, sit in the dossier.",
   "Rectal Cancer Surgery":
