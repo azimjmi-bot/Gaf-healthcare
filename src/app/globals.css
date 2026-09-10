@@ -52,41 +52,41 @@
 }
 
 :root {
-  --ivory: oklch(0.975 0.008 85);
-  --ink: oklch(0.205 0.028 250);
-  --gold: oklch(0.72 0.09 78);
-  --background: oklch(0.975 0.008 85);
-  --foreground: oklch(0.205 0.028 250);
-  --card: oklch(0.99 0.004 85);
-  --card-foreground: oklch(0.205 0.028 250);
-  --popover: oklch(0.99 0.004 85);
-  --popover-foreground: oklch(0.205 0.028 250);
-  --primary: oklch(0.205 0.028 250);
-  --primary-foreground: oklch(0.975 0.008 85);
-  --secondary: oklch(0.94 0.012 85);
-  --secondary-foreground: oklch(0.205 0.028 250);
-  --muted: oklch(0.945 0.01 85);
-  --muted-foreground: oklch(0.48 0.02 250);
-  --accent: oklch(0.93 0.02 80);
-  --accent-foreground: oklch(0.205 0.028 250);
+  --ivory: oklch(0.977 0.006 240);
+  --ink: oklch(0.270 0.077 251);
+  --gold: oklch(0.674 0.105 204);
+  --background: oklch(0.985 0.005 230);
+  --foreground: oklch(0.301 0.076 256);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.301 0.076 256);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.301 0.076 256);
+  --primary: oklch(0.696 0.173 48);
+  --primary-foreground: oklch(0.99 0.005 90);
+  --secondary: oklch(0.959 0.013 214);
+  --secondary-foreground: oklch(0.301 0.076 256);
+  --muted: oklch(0.959 0.013 214);
+  --muted-foreground: oklch(0.541 0.035 232);
+  --accent: oklch(0.94 0.02 210);
+  --accent-foreground: oklch(0.270 0.077 251);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0.012 80);
-  --input: oklch(0.9 0.012 80);
-  --ring: oklch(0.72 0.09 78);
-  --chart-1: oklch(0.72 0.09 78);
-  --chart-2: oklch(0.48 0.02 250);
-  --chart-3: oklch(0.35 0.03 250);
-  --chart-4: oklch(0.28 0.03 250);
-  --chart-5: oklch(0.205 0.028 250);
+  --border: oklch(0.91 0.015 230);
+  --input: oklch(0.91 0.015 230);
+  --ring: oklch(0.674 0.105 204);
+  --chart-1: oklch(0.674 0.105 204);
+  --chart-2: oklch(0.696 0.173 48);
+  --chart-3: oklch(0.301 0.076 256);
+  --chart-4: oklch(0.541 0.035 232);
+  --chart-5: oklch(0.270 0.077 251);
   --radius: 0.5rem;
-  --sidebar: oklch(0.975 0.008 85);
-  --sidebar-foreground: oklch(0.205 0.028 250);
-  --sidebar-primary: oklch(0.205 0.028 250);
-  --sidebar-primary-foreground: oklch(0.975 0.008 85);
-  --sidebar-accent: oklch(0.94 0.012 85);
-  --sidebar-accent-foreground: oklch(0.205 0.028 250);
-  --sidebar-border: oklch(0.9 0.012 80);
-  --sidebar-ring: oklch(0.72 0.09 78);
+  --sidebar: oklch(0.977 0.006 240);
+  --sidebar-foreground: oklch(0.301 0.076 256);
+  --sidebar-primary: oklch(0.696 0.173 48);
+  --sidebar-primary-foreground: oklch(0.99 0.005 90);
+  --sidebar-accent: oklch(0.959 0.013 214);
+  --sidebar-accent-foreground: oklch(0.301 0.076 256);
+  --sidebar-border: oklch(0.91 0.015 230);
+  --sidebar-ring: oklch(0.674 0.105 204);
 }
 
 @layer base {
@@ -198,7 +198,7 @@
 }
 
 .dcard__name a:hover {
-  color: #0e7c86;
+  color: var(--hp);
 }
 
 .dcard__check {
@@ -239,7 +239,7 @@
 }
 
 .dcard__facts svg {
-  color: #0e7c86;
+  color: var(--hp);
 }
 
 .dcard__aside {
@@ -265,7 +265,7 @@
 
 .dcard__hosp strong {
   display: block;
-  color: #0b4f57;
+  color: var(--hp-deep);
 }
 
 .dcard__hosp span span {
@@ -329,7 +329,7 @@
   margin-top: 0.55rem;
   font-size: 0.82rem;
   font-weight: 600;
-  color: #0e7c86;
+  color: var(--hp);
 }
 
 .dcard__more:hover {
@@ -355,7 +355,7 @@
   gap: 0.35rem;
   font-size: 0.88rem;
   font-weight: 700;
-  color: #0b4f57;
+  color: var(--hp-deep);
 }
 
 .dcard__procs ul {
@@ -381,7 +381,7 @@
   margin-top: 0.65rem;
   font-size: 0.8rem;
   font-weight: 700;
-  color: #0e7c86;
+  color: var(--hp);
   background: none;
   border: 0;
   padding: 0;
@@ -389,9 +389,9 @@
 }
 
 .hospital-profile {
-  --hp: #0e7c86;
-  --hp-deep: #0b4f57;
-  --hp-soft: #e7f4f4;
+  --hp: oklch(0.674 0.105 204);
+  --hp-deep: oklch(0.270 0.077 251);
+  --hp-soft: oklch(0.959 0.013 214);
   background: #f6f7f8;
   color: #16323a;
 }
@@ -490,9 +490,9 @@
   display: inline-flex;
   align-items: center;
   border-radius: 0.55rem;
-  border: 1px solid #cfe3e4;
-  background: var(--hp-soft, #e7f4f4);
-  color: var(--hp-deep, #0b4f57);
+  border: 1px solid var(--border);
+  background: var(--hp-soft);
+  color: var(--hp-deep);
   padding: 0.35rem 0.65rem;
   font-size: 0.72rem;
   font-weight: 600;
@@ -861,7 +861,7 @@
   flex: none;
   font-size: 0.88rem;
   font-weight: 600;
-  color: #0e7c86;
+  color: var(--hp);
   white-space: nowrap;
 }
 
@@ -877,13 +877,13 @@
 
 .hp-more a {
   font-weight: 600;
-  color: #0e7c86;
+  color: var(--hp);
 }
 
 .hp-row-arrow {
   display: grid;
   place-items: center;
-  color: #0e7c86;
+  color: var(--hp);
 }
 
 .hp-proc-list li,
@@ -961,8 +961,8 @@
   height: 2.6rem;
   width: 100%;
   border-radius: 999px !important;
-  border-color: #0e7c86 !important;
-  color: #0b4f57 !important;
+  border-color: var(--hp) !important;
+  color: var(--hp-deep) !important;
   font-weight: 600;
 }
 
@@ -1190,7 +1190,7 @@
   background: #fff;
   font-size: 0.9rem;
   font-weight: 600;
-  color: #0b4f57;
+  color: var(--hp-deep);
 }
 
 .hosp-pager__num {
@@ -1200,8 +1200,8 @@
 
 .hosp-pager__num.is-current,
 .hosp-pager__btn--next {
-  border-color: #0e7c86;
-  background: #0e7c86;
+  border-color: var(--hp);
+  background: var(--hp);
   color: #fff;
 }
 
@@ -1275,7 +1275,7 @@
 }
 
 .hcard__title a:hover {
-  color: #0e7c86;
+  color: var(--hp);
 }
 
 .hcard .hp-seals {
@@ -1298,7 +1298,7 @@
   margin-top: 0.55rem;
   font-size: 0.88rem;
   font-weight: 600;
-  color: #0e7c86;
+  color: var(--hp);
 }
 
 .hcard__chips {
@@ -1377,14 +1377,14 @@
 }
 
 .hcard__btn--plan {
-  border: 1px solid #0e7c86;
+  border: 1px solid var(--hp);
   background: #fff;
-  color: #0b4f57;
+  color: var(--hp-deep);
 }
 
 .dhero {
-  background: #f4f6f8;
-  color: #16323a;
+  background: var(--secondary);
+  color: var(--foreground);
 }
 
 .dhero__inner {
@@ -1446,9 +1446,9 @@
 }
 
 .dhero__pill--gold {
-  border-color: #e6d3a3;
-  background: #f6edd6;
-  color: #8a6a1f;
+  border-color: color-mix(in oklab, var(--gold) 35%, white);
+  background: color-mix(in oklab, var(--gold) 14%, white);
+  color: var(--ink);
 }
 
 .dhero__name {
@@ -1470,7 +1470,7 @@
   margin-top: 0.55rem;
   font-size: 1.05rem;
   font-weight: 600;
-  color: #b08948;
+  color: var(--gold);
 }
 
 .dhero__place {
@@ -1513,7 +1513,7 @@
   height: 1.85rem;
   border-radius: 999px;
   background: #fff;
-  color: #b08948;
+  color: var(--gold);
   box-shadow: 0 1px 0 #e6edf1;
 }
 
@@ -1538,12 +1538,12 @@
 }
 
 .dhero__book {
-  background: #c9a227;
-  color: #142a33;
+  background: var(--primary);
+  color: var(--primary-foreground);
 }
 
 .dhero__book:hover {
-  background: #b8921c;
+  background: oklch(0.62 0.17 45);
 }
 
 .dhero__contact {
@@ -1681,7 +1681,7 @@ img.dhero__art {
 .dhero__stats svg {
   flex-shrink: 0;
   margin-top: 0.1rem;
-  color: #b08948;
+  color: var(--gold);
 }
 
 .dhero__stat-k {
@@ -1845,7 +1845,7 @@ img.dhero__art {
   align-items: center;
   min-height: 2.4rem;
   border-radius: 0.55rem;
-  background: #0e7c86;
+  background: var(--hp);
   color: #fff;
   padding: 0 1rem;
   font-weight: 600;
@@ -1935,7 +1935,7 @@ img.dhero__art {
 
 .cms-flash {
   margin: 0.75rem 1.25rem 0;
-  color: #0e7c86;
+  color: var(--hp);
 }
 
 .cms-error {
@@ -2163,7 +2163,7 @@ img.dhero__art {
 .cost-hero {
   border-bottom: 1px solid var(--border);
   background:
-    linear-gradient(180deg, oklch(0.97 0.012 85) 0%, oklch(0.99 0.004 85) 100%);
+    linear-gradient(180deg, oklch(0.97 0.012 220) 0%, oklch(0.99 0.004 230) 100%);
 }
 
 @media (max-width: 767px) {
@@ -2248,11 +2248,11 @@ img.dhero__art {
 }
 
 .cost-btn--primary {
-  background: var(--ink);
-  color: var(--ivory);
+  background: var(--primary);
+  color: var(--primary-foreground);
 }
 
-.cost-btn--primary:hover { background: oklch(0.16 0.03 250); }
+.cost-btn--primary:hover { background: oklch(0.62 0.17 45); }
 
 .cost-btn--ghost {
   border: 1px solid var(--border);
@@ -2275,7 +2275,7 @@ img.dhero__art {
 .cost-trust svg { color: #1a7a4c; }
 
 .cost-price {
-  border: 1px solid #e4d7b8;
+  border: 1px solid color-mix(in oklab, var(--gold) 28%, var(--border));
   border-radius: 1.25rem;
   background: #fff;
   padding: 1.35rem 1.4rem 1.45rem;
@@ -2548,7 +2548,7 @@ img.dhero__art {
 
 .cost-budget strong { font-family: var(--font-cormorant), ui-serif, Georgia, serif; font-size: 1.15rem; }
 .cost-budget .is-lead {
-  border-bottom-color: #e4d7b8;
+  border-bottom-color: color-mix(in oklab, var(--gold) 28%, var(--border));
   padding-bottom: 0.95rem;
 }
 .cost-budget .is-lead span { font-weight: 600; color: var(--foreground); }
@@ -2833,8 +2833,8 @@ img.dhero__art {
 
 .home-search__go {
   border-radius: 999px;
-  background: var(--ink);
-  color: var(--ivory);
+  background: var(--primary);
+  color: var(--primary-foreground);
   font-weight: 600;
   padding-inline: 1.25rem;
   white-space: nowrap;
@@ -2879,7 +2879,7 @@ img.dhero__art {
 
 .home-section--tint {
   max-width: none;
-  background: #f6f3ec;
+  background: var(--secondary);
   padding-inline: 0;
 }
 
@@ -3096,7 +3096,7 @@ img.dhero__art {
   max-width: 16ch;
 }
 
-.home-finale p { margin-top: 0.7rem; max-width: 32rem; color: rgba(247, 243, 234, 0.75); }
+.home-finale p { margin-top: 0.7rem; max-width: 32rem; color: color-mix(in oklab, var(--ivory) 75%, transparent); }
 
 .home-finale__btn {
   display: inline-flex;
@@ -3104,8 +3104,8 @@ img.dhero__art {
   min-height: 3rem;
   padding: 0 1.4rem;
   border-radius: 999px;
-  background: var(--gold);
-  color: var(--ink);
+  background: var(--primary);
+  color: var(--primary-foreground);
   font-weight: 600;
 }
 
@@ -3154,7 +3154,7 @@ img.dhero__art {
   padding-top: 1rem;
   border: 0;
   background: none;
-  color: #128276;
+  color: var(--gold);
   font-size: 0.95rem;
   font-weight: 500;
   cursor: pointer;
@@ -3175,7 +3175,7 @@ img.dhero__art {
 
 .cost-attr__role {
   margin: 0;
-  color: #128276;
+  color: var(--gold);
   font-size: 0.92rem;
   line-height: 1.4;
 }

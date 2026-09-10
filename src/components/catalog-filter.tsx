@@ -164,7 +164,7 @@ function FilterSelect({
       <SelectContent position="popper" align="start" className="rounded-xl p-1 shadow-lg">
         <SelectItem
           value={ALL}
-          className="rounded-md py-2 pl-2.5 pr-8 focus:bg-sky-500 focus:text-white"
+          className="rounded-md py-2 pl-2.5 pr-8 focus:bg-primary focus:text-primary-foreground"
         >
           {allLabel}
         </SelectItem>
@@ -172,7 +172,7 @@ function FilterSelect({
           <SelectItem
             key={opt}
             value={opt}
-            className="rounded-md py-2 pl-2.5 pr-8 focus:bg-sky-500 focus:text-white"
+            className="rounded-md py-2 pl-2.5 pr-8 focus:bg-primary focus:text-primary-foreground"
           >
             {opt}
           </SelectItem>

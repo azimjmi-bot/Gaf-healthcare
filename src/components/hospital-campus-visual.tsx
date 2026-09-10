@@ -6,7 +6,7 @@ const CITY_TONE: Record<string, { sky: string; building: string; glass: string; 
     sky: "#d7e4ee",
     building: "#1f3d4d",
     glass: "#7eb6c9",
-    accent: "#c9a227",
+    accent: "#2BA9B4",
   },
   mumbai: {
     sky: "#f3ddd0",
@@ -24,7 +24,7 @@ const CITY_TONE: Record<string, { sky: string; building: string; glass: string; 
     sky: "#d9e8f4",
     building: "#16384a",
     glass: "#5aa7c4",
-    accent: "#d4a017",
+    accent: "#F07529",
   },
   hyderabad: {
     sky: "#efe0d4",

@@ -358,7 +358,7 @@ export function ConversionPanel({
       <h2>{heading}</h2>
       <p className="mt-3 max-w-2xl text-[1.02rem] leading-relaxed text-ivory/75">{body}</p>
       <div className="mt-6 flex flex-wrap gap-3">
-        <Link href={consultHref} className="cost-btn bg-gold text-ink hover:bg-gold/90">
+        <Link href={consultHref} className="cost-btn cost-btn--primary">
           {primary}
         </Link>
         {secondary && secondaryHref ? (

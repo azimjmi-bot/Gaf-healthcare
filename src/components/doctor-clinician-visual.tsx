@@ -37,7 +37,7 @@ export function DoctorClinicianVisual({
           fill={`url(#${gid}-coat)`}
         />
         <path d="M168 228 C168 268 188 292 210 292 C232 292 252 268 252 228" fill="#edf2f6" />
-        <rect x="204" y="292" width="12" height="88" rx="3" fill="#c9a227" />
+        <rect x="204" y="292" width="12" height="88" rx="3" fill="#2BA9B4" />
         <path
           d="M150 250 C120 310 128 360 148 390"
           fill="none"

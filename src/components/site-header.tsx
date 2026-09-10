@@ -58,11 +58,7 @@ export function SiteHeader() {
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           <Button
             asChild
-            className={`h-10 rounded-full px-3 text-sm sm:px-5 ${
-              overlay
-                ? "bg-white text-ink hover:bg-white/90"
-                : "bg-primary text-primary-foreground"
-            }`}
+            className="h-10 rounded-full bg-primary px-3 text-sm text-primary-foreground hover:bg-primary/90 sm:px-5"
           >
             <Link href="/consult">
               <span className="md:hidden">Consult</span>

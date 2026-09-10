@@ -41,7 +41,7 @@ export function CtaBand() {
         </div>
         <Button
           asChild
-          className="h-12 w-full rounded-full bg-gold px-8 text-ink hover:bg-gold/90 md:w-auto"
+          className="h-12 w-full rounded-full bg-primary px-8 text-primary-foreground hover:bg-primary/90 md:w-auto"
         >
           <Link href="/consult">Talk to a coordinator</Link>
         </Button>
