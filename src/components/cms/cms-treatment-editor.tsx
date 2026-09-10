@@ -8,6 +8,14 @@ import { CmsImageUpload } from "@/components/cms/cms-image-upload";
 import type { Treatment } from "@/lib/treatments";
 import { emptyParagraph, type ArticleBlock } from "@/lib/cms/types";
 
+/** Slugs with a coded long-form cost article. Keep in sync with `src/data/cost-articles`. */
+const LONGFORM_COST_SLUGS = new Set([
+  "breast-conserving-surgery-lumpectomy",
+  "mastectomy",
+  "nipple-sparing-mastectomy",
+  "oncoplastic-breast-surgery",
+]);
+
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {
   const [row, setRow] = useState({
     ...initial,
@@ -65,6 +73,13 @@ export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted
       <p className="cms-muted">
         /costs/{row.slug} · {row.category}
       </p>
+      {LONGFORM_COST_SLUGS.has(row.slug) ? (
+        <p className="cms-flash">
+          A long-form cost guide is coded for this procedure. India range, US range, stay, summary and
+          inclusions on this sheet feed that page. Edit costing here; leave &quot;Replace coded guide&quot;
+          unchecked unless you intend to swap the guide for the body field below.
+        </p>
+      ) : null}
       <label>
         Name
         <Input value={row.name} onChange={(e) => setRow({ ...row, name: e.target.value })} />
@@ -111,7 +126,7 @@ export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted
           checked={Boolean(row.replaceGuide)}
           onChange={(e) => setRow({ ...row, replaceGuide: e.target.checked })}
         />
-        Replace the coded EBRT/3D-CRT guide with this body when published
+        Replace the coded long-form cost guide with this body when published
       </label>
       <CmsImageUpload
         label="Hero photo"

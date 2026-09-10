@@ -197,9 +197,14 @@ export function CostArticleView({
       {figuresAfter(article, "overview").map((figure) => (
         <Figure key={figure.src} figure={figure} />
       ))}
+
+      <H2 id="who-candidate">Who may be a candidate for {article.shortName}?</H2>
+      {article.overview.who.map((para) => (
+        <P key={para.slice(0, 40)}>{para}</P>
+      ))}
       <p className="mt-4 text-sm">
         <a href="#clinical-detail" className="underline-offset-4 hover:underline">
-          Clinical detail, candidacy and recovery →
+          How the operation is performed, recovery and variations →
         </a>
       </p>
 
@@ -521,10 +526,6 @@ export function CostArticleView({
       />
 
       <H2 id="clinical-detail">Clinical detail</H2>
-      <H3>Who may be a candidate</H3>
-      {article.overview.who.map((para) => (
-        <P key={para.slice(0, 40)}>{para}</P>
-      ))}
       <H3>How the operation is performed</H3>
       {article.overview.how.map((para) => (
         <P key={para.slice(0, 40)}>{para}</P>

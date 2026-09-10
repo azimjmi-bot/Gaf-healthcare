@@ -159,7 +159,7 @@ export const SURGICAL_SUMMARIES: Record<string, string> = {
   "Nipple-Sparing Mastectomy":
     "Nipple-sparing mastectomy keeps the skin envelope when oncology and anatomy allow. It is refused when the tumour sits too close to the nipple-areola complex.",
   "Oncoplastic Breast Surgery":
-    "Oncoplastic surgery reshapes the breast at the same sitting as tumour removal so the oncological margin and the cosmetic plan are written together.",
+    "Oncoplastic surgery removes the tumour with a margin and reshapes the remaining breast in the same sitting when conservation is oncologically sound. It is cancer surgery first, not a cosmetic add-on.",
   "Breast Reconstruction":
     "Reconstruction may be implant-based or autologous. Timing — immediate or delayed — follows the cancer operation and radiation plan, not a hotel calendar.",
   "Sentinel Lymph Node Biopsy":
