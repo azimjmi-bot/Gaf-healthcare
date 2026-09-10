@@ -169,7 +169,7 @@ export const SURGICAL_SUMMARIES: Record<string, string> = {
   Gastrectomy:
     "Gastrectomy removes part or all of the stomach — usually for selected gastric cancers — then reconstructs a food passage. Extent of lymph-node dissection is set after staging, not after you have already booked the ward.",
   Colectomy:
-    "Colon resection for cancer, open or laparoscopic depending on the tumour and the surgeon. Pathology turnaround and a stoma plan, if needed, sit in the dossier.",
+    "Colectomy removes part or all of the colon — usually for selected colon or colorectal cancers, and sometimes for other bowel disease where resection is necessary — then reconnects remaining bowel or, in selected cases, forms a stoma. Extent follows disease location, not a brochure upgrade.",
   "Rectal Cancer Surgery":
     "Rectal resection may include TME, diversion, and a later reversal. Neoadjuvant radiation, when indicated, is sequenced with the named teams before travel.",
   "Liver Resection (Hepatectomy)":
