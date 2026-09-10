@@ -1,23 +1,11 @@
 import Link from "next/link";
 import { DoctorCard } from "@/components/doctor-card";
 import { CtaBand } from "@/components/page-shell";
-import { hospitalStaticParams, loadHospitalCampus, requireHospitalCampus } from "@/lib/hospital-campus";
+import { loadHospitalCampus, requireHospitalCampus } from "@/lib/hospital-campus";
 import { SITE_URL } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
-export const dynamicParams = true;
-
-export function generateStaticParams() {
-  return hospitalStaticParams();
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
+export async function hospitalDoctorsMetadata(slug: string): Promise<Metadata> {
   const data = loadHospitalCampus(slug);
   if (!data) return { title: "Hospital doctors" };
   const title = `Doctors at ${data.hospital.name}`;
@@ -25,12 +13,7 @@ export async function generateMetadata({
   return { title, description, alternates: { canonical: `${SITE_URL}/hospitals/${slug}/doctors` } };
 }
 
-export default async function HospitalDoctorsPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
+export async function HospitalDoctors({ slug }: { slug: string }) {
   const { hospital, faculty, groups } = requireHospitalCampus(slug);
   const facultyGroups = groups.filter((g) => g.doctors.length > 0);
 

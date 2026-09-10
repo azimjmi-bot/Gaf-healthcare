@@ -6,7 +6,6 @@ import {
   doctorsForHospital,
   getHospital,
   getTreatment,
-  hospitals,
   hospitalsInCity,
   type Treatment,
 } from "@/lib/data";
@@ -14,30 +13,13 @@ import { hospitalsPath } from "@/lib/catalog-links";
 import { breadcrumbJsonLd, hospitalJsonLd, hospitalMetadata } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
-export const dynamicParams = true;
-
-export function generateStaticParams() {
-  return hospitals.map((h) => ({ slug: h.slug }));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
+export async function hospitalProfileMetadata(slug: string): Promise<Metadata> {
   const h = getHospital(slug);
   if (!h) return { title: "Hospital" };
   return hospitalMetadata(h);
 }
 
-export default async function HospitalDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
+export async function HospitalProfile({ slug }: { slug: string }) {
   const h = getHospital(slug);
   if (!h) notFound();
   const faculty = doctorsForHospital(h.slug);

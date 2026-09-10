@@ -28,19 +28,7 @@ import {
 } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
-export const dynamicParams = true;
-
-export function generateStaticParams() {
-  return treatments.map((t) => ({ slug: t.slug }));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
+export async function costSheetMetadata(slug: string): Promise<Metadata> {
   const t = getTreatment(slug);
   if (!t) return { title: "Treatment Cost" };
   const article = getCostArticle(t.slug);
@@ -60,12 +48,7 @@ export async function generateMetadata({
   return base;
 }
 
-export default async function CostDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
+export async function CostSheet({ slug }: { slug: string }) {
   const t = getTreatment(slug);
   if (!t) notFound();
 

@@ -4,25 +4,13 @@ import { AccreditationSeals } from "@/components/accreditation-seals";
 import { DoctorProfileHero } from "@/components/doctor-profile-hero";
 import { JsonLd } from "@/components/json-ld";
 import { CtaBand } from "@/components/page-shell";
-import { doctors, doctorsForHospital, getDoctor, getHospital, getTreatment } from "@/lib/data";
+import { doctorsForHospital, getDoctor, getHospital, getTreatment } from "@/lib/data";
 import { displayBio } from "@/lib/hospital-profile";
 import { doctorsPath } from "@/lib/catalog-links";
 import { breadcrumbJsonLd, doctorMetadata, physicianJsonLd } from "@/lib/seo";
 import type { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
-export const dynamicParams = true;
-
-export function generateStaticParams() {
-  return doctors.map((d) => ({ slug: d.slug }));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
+export async function doctorProfileMetadata(slug: string): Promise<Metadata> {
   const d = getDoctor(slug);
   if (!d) return { title: "Doctor" };
   return doctorMetadata(d);
@@ -42,12 +30,7 @@ function ProfileList({ title, items }: { title: string; items: string[] }) {
   );
 }
 
-export default async function DoctorDetailPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
+export async function DoctorProfile({ slug }: { slug: string }) {
   const d = getDoctor(slug);
   if (!d) notFound();
   const hospital = getHospital(d.hospitalSlug);
