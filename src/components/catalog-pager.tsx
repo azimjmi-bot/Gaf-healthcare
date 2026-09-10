@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { CatalogQuery } from "@/lib/catalog";
+import type { CatalogQuery } from "@/lib/catalog-options";
 import { prettyCatalogPath, type CatalogBasePath } from "@/lib/pretty-catalog-path";
 
 function visiblePages(current: number, total: number) {

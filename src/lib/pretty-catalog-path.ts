@@ -1,4 +1,4 @@
-import type { CatalogQuery } from "@/lib/catalog";
+import type { CatalogQuery } from "@/lib/catalog-options";
 import {
   CITIES,
   COUNTRIES,

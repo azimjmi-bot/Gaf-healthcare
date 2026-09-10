@@ -6,7 +6,7 @@ import {
   catalogDestinations,
   catalogProceduresFor,
   catalogSpecialties,
-} from "@/lib/catalog";
+} from "@/lib/catalog-options";
 
 const ALL = "all";
 

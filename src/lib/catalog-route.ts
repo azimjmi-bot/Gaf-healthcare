@@ -1,5 +1,5 @@
 import { permanentRedirect } from "next/navigation";
-import type { CatalogQuery } from "@/lib/catalog";
+import type { CatalogQuery } from "@/lib/catalog-options";
 import {
   prettyCatalogPath,
   type CatalogBasePath,

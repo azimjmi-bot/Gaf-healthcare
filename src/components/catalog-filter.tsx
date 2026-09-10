@@ -6,11 +6,11 @@ import {
   catalogProceduresFor,
   catalogSpecialties,
   citiesForDestination,
-  cityResultCounts,
   parseCatalogQuery,
   type CatalogEntity,
   type CatalogQuery,
-} from "@/lib/catalog";
+  type CityChipStats,
+} from "@/lib/catalog-options";
 import {
   parsePrettyCatalogPathname,
   prettyCatalogPath,
@@ -32,6 +32,7 @@ type Props = {
   resultLabel: string;
   entity: CatalogEntity;
   query?: CatalogQuery;
+  chipStats?: CityChipStats | null;
 };
 
 function currentQuery(pathname: string, params: URLSearchParams, fallback?: CatalogQuery): CatalogQuery {
@@ -51,7 +52,7 @@ function currentQuery(pathname: string, params: URLSearchParams, fallback?: Cata
   return fallback ?? {};
 }
 
-export function CatalogFilter({ basePath, resultCount, resultLabel, entity, query }: Props) {
+export function CatalogFilter({ basePath, resultCount, resultLabel, query, chipStats }: Props) {
   const router = useRouter();
   const pathname = usePathname();
   const params = useSearchParams();
@@ -62,10 +63,6 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, entity, quer
   const procedure = active.procedure ?? ALL;
   const cities = citiesForDestination(destination === ALL ? undefined : destination);
   const procedureOptions = catalogProceduresFor(specialty === ALL ? undefined : specialty);
-  const indiaSelected = destination === "India";
-  const chipStats = indiaSelected
-    ? cityResultCounts(entity, parseCatalogQuery({ destination, specialty, procedure }))
-    : null;
 
   function setFilter(key: keyof CatalogQuery, value: string) {
     const next: CatalogQuery = {

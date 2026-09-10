@@ -30,15 +30,23 @@ function mapDoctorOverrides(map: Record<string, DoctorPatch> | undefined) {
   return next;
 }
 
+let cmsCache: { at: number; data: CatalogCms } | undefined;
+let catalogGeneration = 0;
+
 export function loadCatalogCms(): CatalogCms {
+  const now = Date.now();
+  if (cmsCache && now - cmsCache.at < 1000) return cmsCache.data;
   try {
     const data = JSON.parse(readFileSync(FILE, "utf8")) as CatalogCms;
     const cms = { ...emptyCatalogCms(), ...data };
     cms.hospitalOverrides = mapHospitalOverrides(cms.hospitalOverrides);
     cms.doctorOverrides = mapDoctorOverrides(cms.doctorOverrides);
+    cmsCache = { at: now, data: cms };
     return cms;
   } catch {
-    return emptyCatalogCms();
+    const empty = emptyCatalogCms();
+    cmsCache = { at: now, data: empty };
+    return empty;
   }
 }
 
@@ -47,6 +55,8 @@ export function saveCatalogCms(store: CatalogCms) {
   const tmp = `${FILE}.tmp`;
   writeFileSync(tmp, `${JSON.stringify(store, null, 2)}\n`);
   renameSync(tmp, FILE);
+  cmsCache = { at: Date.now(), data: store };
+  catalogGeneration += 1;
   return store;
 }
 
@@ -92,18 +102,25 @@ export function applyCatalogLayer<T extends { slug: string }>(
 }
 
 export function liveArray<T extends { slug: string }>(base: T[], apply: (rows: T[]) => T[]): T[] {
+  let memo: { generation: number; rows: T[] } | undefined;
+  const rows = () => {
+    if (memo && memo.generation === catalogGeneration) return memo.rows;
+    const next = apply(base);
+    memo = { generation: catalogGeneration, rows: next };
+    return next;
+  };
   return new Proxy([] as T[], {
     get(_target, prop) {
-      const rows = apply(base);
-      const value = Reflect.get(rows, prop, rows);
-      if (typeof value === "function") return (value as (...args: unknown[]) => unknown).bind(rows);
+      const list = rows();
+      const value = Reflect.get(list, prop, list);
+      if (typeof value === "function") return (value as (...args: unknown[]) => unknown).bind(list);
       return value;
     },
     ownKeys() {
-      return Reflect.ownKeys(apply(base));
+      return Reflect.ownKeys(rows());
     },
     getOwnPropertyDescriptor(_target, prop) {
-      return Object.getOwnPropertyDescriptor(apply(base), prop);
+      return Object.getOwnPropertyDescriptor(rows(), prop);
     },
   });
 }

@@ -1,4 +1,4 @@
-import { parseCatalogQuery } from "@/lib/catalog";
+import { parseCatalogQuery } from "@/lib/catalog-options";
 import { redirectPrettyCatalog } from "@/lib/catalog-route";
 import { CostsDirectory, costsDirectoryMetadata } from "@/app/costs/directory";
 import type { Metadata } from "next";

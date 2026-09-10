@@ -4,7 +4,7 @@ import { HospitalCard } from "@/components/hospital-card";
 import { CatalogPager } from "@/components/catalog-pager";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
-import { filterHospitals, type CatalogQuery } from "@/lib/catalog";
+import { cityResultCounts, filterHospitals, type CatalogQuery } from "@/lib/catalog";
 import { paginateHospitals } from "@/lib/hospitals";
 import { hospitals } from "@/lib/data";
 import { catalogMetadata, HOSPITAL_FAQS, faqJsonLd } from "@/lib/seo";
@@ -23,6 +23,7 @@ export async function HospitalsDirectory({
 }) {
   const list = filterHospitals(query, hospitals);
   const paging = paginateHospitals(list, page);
+  const chipStats = query.destination === "India" ? cityResultCounts("hospitals", query) : null;
   const place = query.city ? `${query.city}, India` : "India";
   const directoryHome = !query.city && !query.specialty && !query.procedure;
   const heading = directoryHome
@@ -58,6 +59,7 @@ export async function HospitalsDirectory({
             basePath="/hospitals"
             entity="hospitals"
             query={query}
+            chipStats={chipStats}
             resultCount={paging.total}
             resultLabel={paging.total === 1 ? "hospital" : "hospitals"}
           />

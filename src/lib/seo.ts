@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
-import type { CatalogQuery } from "@/lib/catalog";
+import type { CatalogQuery } from "@/lib/catalog-options";
 import { displayBio } from "@/lib/hospital-profile";
 import { prettyCatalogPath } from "@/lib/pretty-catalog-path";
 import { site } from "@/lib/site";

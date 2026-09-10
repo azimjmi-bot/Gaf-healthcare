@@ -1,5 +1,5 @@
 import { DoctorsDirectory, doctorsDirectoryMetadata } from "@/app/doctors/directory";
-import { parseCatalogQuery } from "@/lib/catalog";
+import { parseCatalogQuery } from "@/lib/catalog-options";
 import { readCatalogPage, redirectPrettyCatalog } from "@/lib/catalog-route";
 import type { Metadata } from "next";
 
