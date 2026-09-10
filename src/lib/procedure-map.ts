@@ -106,6 +106,10 @@ export function mapCatalogProcedures(texts: string[], fallback = true) {
 
 export function mapSurgicalProcedures(texts: string[], fallback = true) {
   const found = applyRules(texts, SURGICAL_RULES);
+  const blob = texts.join(" ");
+  if (/whipple|pancreaticoduoden/i.test(blob) && !found.includes("Pancreatic Surgery")) {
+    found.push("Pancreatic Surgery");
+  }
   if (found.length > 0 || !fallback) return found;
   const hint = texts.join(" ").toLowerCase();
   if (hint.includes("breast")) {
@@ -724,7 +728,10 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
     if (colorectal) extras.push("Colectomy");
     if (rectal) extras.push("Rectal Cancer Surgery");
     if (/whipple|pancreaticoduoden/i.test(blob)) extras.push("Whipple Procedure");
-    return extras.length ? [...found, ...extras] : found;
+    if (/whipple|pancreaticoduoden|distal pancrea|pancreatect|pancreatic cancer surg/i.test(blob)) {
+      extras.push("Pancreatic Surgery");
+    }
+    return extras.length ? [...found, ...extras.filter((name) => !found.includes(name))] : found;
   }
   if (specialty === "Urology") return mapUrologyProcedures(texts);
   if (specialty === "Spine Surgery") return mapSpineSurgeryProcedures(texts);

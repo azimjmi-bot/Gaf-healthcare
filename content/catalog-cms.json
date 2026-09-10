@@ -132,6 +132,21 @@
       "notes": "Indicative planning ranges, not quotations. The named surgical oncologist confirms operation type (LAR, APR, local excision), TME plane, reconstruction or stoma, open versus laparoscopic or robotic access where offered, named high-dependency nights and an itemized hospital price after records review. Colonoscopy, MRI pelvis, PET-CT, neoadjuvant chemoradiation, extra leak days and stoma supplies after discharge are quoted separately unless named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
       "replaceGuide": false
     },
+    "pancreatic-surgery": {
+      "summary": "Pancreatic surgery is a family of operations — Whipple, distal pancreatectomy, total pancreatectomy — chosen after location and resectability are read, not from a brochure menu.",
+      "usRange": "$50,000–$130,000",
+      "partnerRange": "$12,000–$30,000",
+      "stay": "8–16 nights",
+      "includes": [
+        "Surgical oncology consultation and records review",
+        "Named surgeon on camera before travel",
+        "Theatre, anaesthesia and inpatient stay as quoted",
+        "Histopathology of the specimen",
+        "Discharge summary to your home oncologist"
+      ],
+      "notes": "Indicative planning ranges, not quotations. The named surgical oncologist confirms which sitting (Whipple, distal or total pancreatectomy), vascular plan, open versus laparoscopic or robotic access where offered, named high-dependency nights and an itemized hospital price after records review. CT, MRI/MRCP, EUS, biopsy, chemotherapy, radiation, extra fistula days and transfusion are quoted separately unless named. Dedicated Whipple and distal-pancreatectomy sheets exist when the sitting is already named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
+      "replaceGuide": false
+    },
     "whipple-procedure": {
       "summary": "Pancreaticoduodenectomy removes the pancreatic head and nearby structures, then reconstructs the digestive tract. Vascular work, open versus minimally invasive access and ICU follow staging — not a brochure upgrade.",
       "usRange": "$60,000–$150,000",

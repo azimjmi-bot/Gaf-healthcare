@@ -177,7 +177,7 @@ export const SURGICAL_SUMMARIES: Record<string, string> = {
   "Whipple Procedure":
     "Pancreaticoduodenectomy removes the pancreatic head and nearby structures, then reconstructs the digestive tract. Vascular work, open versus minimally invasive access and ICU follow staging — not a brochure upgrade.",
   "Pancreatic Surgery":
-    "Pancreatic resections beyond or including Whipple — distal pancreatectomy, enucleation when appropriate. Vascular reconstruction, if likely, is named in the plan.",
+    "Pancreatic surgery is a family of operations — Whipple, distal pancreatectomy, total pancreatectomy — chosen after location and resectability are read, not from a brochure menu.",
   "Cytoreductive Surgery":
     "Cytoreduction aims at complete macroscopic clearance of peritoneal disease. Completeness-of-cytoreduction scores matter more than the length of the incision.",
   "Cytoreductive Surgery with HIPEC":
