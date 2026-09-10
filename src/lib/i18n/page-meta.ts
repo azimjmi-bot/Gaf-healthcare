@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { prettyCatalogPath, type CatalogBasePath } from "@/lib/pretty-catalog-path";
 import type { CatalogQuery } from "@/lib/catalog-options";
 import { extractBlogFields, extractDoctorFields, extractHospitalFields, extractTreatmentFields, extractUiFields } from "@/lib/i18n/extract";
-import { SOURCE_LOCALE, type AppLocale } from "@/lib/i18n/languages";
+import { LOCALES, SOURCE_LOCALE, type AppLocale } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { availableLocales } from "@/lib/i18n/localize";
@@ -45,8 +45,11 @@ export async function localizedMeta(
       description: String(translated.seoDescription || translated.excerpt || meta.twitter?.description || meta.description || ""),
     },
   };
-  const available = availableLocales(sourceType, sourceId, fields);
-  const locales = available.includes(active) ? available : active === "en" ? available : [...available, active];
+  const available =
+    sourceType === "copy" || sourceType === "ui" || sourceType === "page"
+      ? LOCALES
+      : availableLocales(sourceType, sourceId, fields);
+  const locales = available.includes(active) ? available : [...available, active];
   return withLocaleMetadata(next, englishPath, active, locales);
 }
 

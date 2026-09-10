@@ -3,6 +3,7 @@ import { LocaleLink as Link } from "@/components/locale-link";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { blogSettings, listPublishedPosts } from "@/lib/blogs";
 import { localizeBlog } from "@/lib/i18n/localize";
+import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { getLocalizedFields } from "@/lib/i18n/service";
 import { getRequestLocale } from "@/lib/i18n/request";
@@ -25,7 +26,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     generateIfMissing: locale !== "en",
   });
-  return withLocaleMetadata({ title: fields.seoTitle || "Blogs" }, "/blogs", locale, ["en", locale]);
+  return withLocaleMetadata({ title: fields.seoTitle || "Blogs" }, "/blogs", locale, LOCALES);
 }
 
 export default async function BlogsPage({

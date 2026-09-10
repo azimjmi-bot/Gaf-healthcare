@@ -6,6 +6,9 @@ const nextConfig = {
     "172.30.0.2",
     "*.trycloudflare.com",
   ],
+  // Locale prefixes are rewritten in src/proxy.ts so x-gaf-locale is set
+  // on the same request. Do not also rewrite here — that can strip /ar
+  // before the proxy sees it and leave the page in English.
   async redirects() {
     return [
       { source: "/destinations", destination: "/hospitals", permanent: true },

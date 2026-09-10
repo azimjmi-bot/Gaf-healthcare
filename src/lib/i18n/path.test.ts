@@ -26,6 +26,12 @@ test("does not create /en/", () => {
   assert.equal(localePath("/doctors", "en").startsWith("/en"), false);
 });
 
+test("localized sitemap paths keep the language prefix", () => {
+  assert.equal(localePath("/doctors/example", "ar"), "/ar/doctors/example");
+  assert.equal(localePath("/ru/doctors/example", "en"), "/doctors/example");
+  assert.equal(localePath("/", "sw"), "/sw");
+});
+
 test("content hash changes when English changes", () => {
   const a = hashContent({ bio: "One" });
   const b = hashContent({ bio: "Two" });

@@ -19,42 +19,39 @@ async function cmsToken(password: string) {
   return [...new Uint8Array(sig)].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
-function localeRewrite(request: NextRequest) {
-  const { pathname } = request.nextUrl;
-  const parts = pathname.split("/").filter(Boolean);
-  const head = parts[0];
-  if (!head || !isTargetLocale(head)) {
-    const headers = new Headers(request.headers);
-    headers.set(LOCALE_HEADER, "en");
-    return NextResponse.next({ request: { headers } });
-  }
-
-  const rest = `/${parts.slice(1).join("/")}` || "/";
-  const restPath = rest === "/" ? "/" : rest.replace(/\/$/, "") || "/";
-
-  if (restPath.startsWith("/cms") || restPath.startsWith("/api")) {
-    const url = request.nextUrl.clone();
-    url.pathname = restPath;
-    return NextResponse.redirect(url);
-  }
-
-  const url = request.nextUrl.clone();
-  url.pathname = restPath;
+function withLocale(request: NextRequest, locale: string, pathname?: string) {
   const headers = new Headers(request.headers);
-  headers.set(LOCALE_HEADER, head);
-  return NextResponse.rewrite(url, { request: { headers } });
+  headers.set(LOCALE_HEADER, locale);
+  if (!pathname || pathname === request.nextUrl.pathname) {
+    const response = NextResponse.next({ request: { headers } });
+    response.headers.set("x-gaf-locale", locale);
+    return response;
+  }
+  const url = request.nextUrl.clone();
+  url.pathname = pathname;
+  const response = NextResponse.rewrite(url, { request: { headers } });
+  response.headers.set("x-gaf-locale", locale);
+  return response;
 }
 
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const parts = pathname.split("/").filter(Boolean);
-  if (parts[0] && isTargetLocale(parts[0])) {
-    return localeRewrite(request);
+  const head = parts[0];
+
+  if (head && isTargetLocale(head)) {
+    const rest = parts.length > 1 ? `/${parts.slice(1).join("/")}` : "/";
+    if (rest.startsWith("/cms") || rest.startsWith("/api")) {
+      const url = request.nextUrl.clone();
+      url.pathname = rest;
+      return NextResponse.redirect(url);
+    }
+    return withLocale(request, head, rest);
   }
 
   const isCms = pathname.startsWith("/cms") || pathname.startsWith("/api/cms");
   if (!isCms) {
-    return localeRewrite(request);
+    return withLocale(request, "en");
   }
 
   if (pathname === "/cms/login" || pathname === "/api/cms/login") {
@@ -75,15 +72,6 @@ export async function proxy(request: NextRequest) {
 
 export const config = {
   matcher: [
-    "/cms/:path*",
-    "/api/cms/:path*",
-    "/ru",
-    "/ru/:path*",
-    "/fr",
-    "/fr/:path*",
-    "/ar",
-    "/ar/:path*",
-    "/sw",
-    "/sw/:path*",
+    "/((?!_next/static|_next/image|favicon.ico|uploads/|.*\\..*).*)",
   ],
 };

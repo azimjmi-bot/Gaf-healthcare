@@ -1,6 +1,7 @@
 import { ConsultForm } from "@/components/consult-form";
 import { PageIntro } from "@/components/page-shell";
 import { localizeMessages } from "@/lib/i18n/localize";
+import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { site } from "@/lib/site";
@@ -9,7 +10,7 @@ import type { Metadata } from "next";
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
   const messages = await localizeMessages(locale);
-  return withLocaleMetadata({ title: messages["seo.consultTitle"] }, "/consult", locale, ["en", locale]);
+  return withLocaleMetadata({ title: messages["seo.consultTitle"] }, "/consult", locale, LOCALES);
 }
 
 export default async function ConsultPage({

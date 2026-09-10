@@ -14,8 +14,8 @@ import {
 import { listPublishedPosts } from "@/lib/blogs";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { hospitalsPath } from "@/lib/catalog-links";
-import { availableLocales, localizeBlog, localizeHomeExtras, localizeMessages } from "@/lib/i18n/localize";
-import { extractUiFields } from "@/lib/i18n/extract";
+import { localizeBlog, localizeHomeExtras, localizeMessages } from "@/lib/i18n/localize";
+import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { SITE_URL } from "@/lib/seo";
@@ -30,7 +30,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const messages = await localizeMessages(locale);
   return withLocaleMetadata(
     {
-      title: { absolute: messages["seo.homeTitle"] },
+      title: messages["seo.homeTitle"],
       description: messages["seo.homeDescription"],
       openGraph: {
         title: messages["seo.homeTitle"],
@@ -41,7 +41,7 @@ export async function generateMetadata(): Promise<Metadata> {
     },
     "/",
     locale,
-    availableLocales("ui", "chrome", extractUiFields()),
+    LOCALES,
   );
 }
 

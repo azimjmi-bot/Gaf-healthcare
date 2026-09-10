@@ -4,7 +4,7 @@ import { listPublishedPosts } from "@/lib/blogs";
 import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { absoluteUrl, SITE_URL } from "@/lib/seo";
-import { localePath } from "@/lib/i18n/path";
+import { TARGET_LOCALES, type AppLocale } from "@/lib/i18n/languages";
 import { listCompletedTranslations } from "@/lib/i18n/store";
 import { CITIES, INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
 
@@ -18,9 +18,10 @@ const SEARCH_CONSOLE_ORIGIN = SITE_URL;
 function entry(
   path: string,
   opts: { lastModified?: Date | string; changeFrequency?: MetadataRoute.Sitemap[number]["changeFrequency"]; priority?: number } = {},
+  locale: AppLocale = "en",
 ): MetadataRoute.Sitemap[number] {
   return {
-    url: absoluteUrl(path),
+    url: absoluteUrl(path, locale),
     lastModified: opts.lastModified ? new Date(opts.lastModified) : new Date(),
     changeFrequency: opts.changeFrequency ?? "weekly",
     priority: opts.priority ?? 0.6,
@@ -112,31 +113,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }
 
   const seen = new Set<string>();
-  const english = urls.filter((row) => {
-    if (seen.has(row.url)) return false;
+  const out: MetadataRoute.Sitemap = [];
+  function push(row: MetadataRoute.Sitemap[number]) {
+    if (seen.has(row.url)) return;
     seen.add(row.url);
-    return true;
-  });
+    out.push(row);
+  }
+  for (const row of urls) push(row);
 
-  const extra: MetadataRoute.Sitemap = [];
+  for (const locale of TARGET_LOCALES) {
+    push(entry("/", { lastModified: now, changeFrequency: "weekly", priority: 0.8 }, locale));
+    push(entry("/doctors", { lastModified: now, changeFrequency: "weekly", priority: 0.6 }, locale));
+    push(entry("/hospitals", { lastModified: now, changeFrequency: "weekly", priority: 0.6 }, locale));
+    push(entry("/costs", { lastModified: now, changeFrequency: "weekly", priority: 0.6 }, locale));
+    push(entry("/blogs", { lastModified: now, changeFrequency: "weekly", priority: 0.55 }, locale));
+  }
+
   for (const record of listCompletedTranslations()) {
     if (record.status !== "completed") continue;
     const path = publicPathForTranslation(record);
-    if (!path) continue;
-    extra.push(
-      entry(localePath(path, record.languageCode), {
-        lastModified: record.translatedAt || record.updatedAt,
-        changeFrequency: "weekly",
-        priority: 0.5,
-      }),
+    if (!path || path === "/" || path === "/blogs") continue;
+    push(
+      entry(
+        path,
+        {
+          lastModified: record.translatedAt || record.updatedAt,
+          changeFrequency: "weekly",
+          priority: 0.5,
+        },
+        record.languageCode,
+      ),
     );
   }
 
-  return [...english, ...extra].filter((row) => {
-    if (seen.has(row.url)) return false;
-    seen.add(row.url);
-    return true;
-  });
+  return out;
 }
 
 function publicPathForTranslation(record: { sourceType: string; sourceId: string }) {
