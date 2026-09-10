@@ -8,13 +8,48 @@ import {
   type CatalogBasePath,
 } from "@/lib/pretty-catalog-path";
 
-const BASES = new Set<CatalogBasePath>(["/costs", "/doctors", "/hospitals"]);
+const CMS_COOKIE = "gaf_cms";
+const CATALOG_BASES = new Set<CatalogBasePath>(["/costs", "/doctors", "/hospitals"]);
 
-export function middleware(request: NextRequest) {
+function cmsPassword() {
+  return process.env.CMS_PASSWORD || "gaf-local";
+}
+
+async function cmsToken(password: string) {
+  const key = await crypto.subtle.importKey(
+    "raw",
+    new TextEncoder().encode("gaf-cms-desk"),
+    { name: "HMAC", hash: "SHA-256" },
+    false,
+    ["sign"],
+  );
+  const sig = await crypto.subtle.sign("HMAC", key, new TextEncoder().encode(password));
+  return [...new Uint8Array(sig)].map((b) => b.toString(16).padStart(2, "0")).join("");
+}
+
+async function protectCms(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+  if (pathname === "/cms/login" || pathname === "/api/cms/login") {
+    return NextResponse.next();
+  }
+  const expected = await cmsToken(cmsPassword());
+  const token = request.cookies.get(CMS_COOKIE)?.value;
+  if (token === expected) {
+    return NextResponse.next();
+  }
+  if (pathname.startsWith("/api/cms")) {
+    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  }
+  const login = new URL("/cms/login", request.url);
+  login.searchParams.set("next", pathname);
+  return NextResponse.redirect(login);
+}
+
+function rewriteCatalog(request: NextRequest) {
   const { pathname, searchParams } = request.nextUrl;
   const parts = pathname.split("/").filter(Boolean);
   const root = `/${parts[0] ?? ""}` as CatalogBasePath;
-  if (!BASES.has(root)) return NextResponse.next();
+  if (!CATALOG_BASES.has(root)) return NextResponse.next();
 
   if (parts.length === 1) {
     const query = catalogQueryFromSearchParams(searchParams);
@@ -54,8 +89,18 @@ export function middleware(request: NextRequest) {
   return NextResponse.rewrite(rewrite);
 }
 
+export async function proxy(request: NextRequest) {
+  const { pathname } = request.nextUrl;
+  if (pathname.startsWith("/cms") || pathname.startsWith("/api/cms")) {
+    return protectCms(request);
+  }
+  return rewriteCatalog(request);
+}
+
 export const config = {
   matcher: [
+    "/cms/:path*",
+    "/api/cms/:path*",
     "/costs",
     "/costs/:path*",
     "/doctors",
