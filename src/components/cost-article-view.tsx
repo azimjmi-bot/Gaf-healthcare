@@ -76,6 +76,7 @@ function Figure({ figure }: { figure: CostFigure }) {
         height={720}
         className={`h-auto w-full rounded-2xl ${figure.fit === "contain" ? "object-contain bg-white" : "object-cover"}`}
         sizes="(min-width: 1024px) 48rem, 100vw"
+        loading="lazy"
       />
       {figure.caption ? (
         <figcaption className="mt-2 text-sm leading-relaxed text-muted-foreground">

@@ -1,4 +1,5 @@
 import { breastConservingSurgery } from "./breast-conserving-surgery-lumpectomy";
+import { breastReconstruction } from "./breast-reconstruction";
 import { mastectomy } from "./mastectomy";
 import { nippleSparingMastectomy } from "./nipple-sparing-mastectomy";
 import { oncoplasticBreastSurgery } from "./oncoplastic-breast-surgery";
@@ -13,6 +14,7 @@ export type { CostArticle } from "./types";
  */
 export const costArticles: Record<string, CostArticle> = {
   [breastConservingSurgery.slug]: breastConservingSurgery,
+  [breastReconstruction.slug]: breastReconstruction,
   [mastectomy.slug]: mastectomy,
   [nippleSparingMastectomy.slug]: nippleSparingMastectomy,
   [oncoplasticBreastSurgery.slug]: oncoplasticBreastSurgery,

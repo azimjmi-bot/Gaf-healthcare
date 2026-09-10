@@ -44,7 +44,14 @@ export async function generateMetadata({
   const t = getTreatment(slug);
   if (!t) return { title: "Treatment Cost" };
   const article = getCostArticle(t.slug);
-  if (article) return costArticleMetadata(t, interpolateCostArticle(article, t));
+  if (article) {
+    const interpolated = interpolateCostArticle(article, t);
+    const figure = article.figures?.[0];
+    return costArticleMetadata(t, interpolated, {
+      image: figure?.src,
+      imageAlt: figure?.alt,
+    });
+  }
   const guide = getCostGuide(t.slug);
   const base = treatmentMetadata(t);
   if (guide) {
@@ -78,6 +85,7 @@ export default async function CostDetailPage({
             procedureName: t.name,
             specialty: t.category,
             about: article.heroLede || t.summary,
+            image: article.figures?.[0]?.src,
           })}
         />
         <JsonLd

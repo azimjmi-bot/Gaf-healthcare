@@ -11,6 +11,7 @@ import { emptyParagraph, type ArticleBlock } from "@/lib/cms/types";
 /** Slugs with a coded long-form cost article. Keep in sync with `src/data/cost-articles`. */
 const LONGFORM_COST_SLUGS = new Set([
   "breast-conserving-surgery-lumpectomy",
+  "breast-reconstruction",
   "mastectomy",
   "nipple-sparing-mastectomy",
   "oncoplastic-breast-surgery",

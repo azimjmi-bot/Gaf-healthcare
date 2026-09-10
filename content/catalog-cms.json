@@ -27,6 +27,20 @@
       "notes": "Indicative planning ranges, not quotations. The named surgical oncologist confirms approach, reconstruction and an itemized hospital price after records review. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
       "replaceGuide": false
     },
+    "breast-reconstruction": {
+      "summary": "Reconstruction restores breast shape after mastectomy or a large conservation defect. Implant-based and autologous (flap) techniques, and immediate versus delayed timing, follow anatomy and the radiation plan — not a brochure upgrade.",
+      "usRange": "$25,000–$70,000",
+      "partnerRange": "$6,000–$18,000",
+      "stay": "4–8 nights",
+      "includes": [
+        "Surgical oncology or reconstructive consultation and records review",
+        "Named surgeon on camera before travel",
+        "Theatre, anaesthesia and inpatient stay as quoted",
+        "Discharge summary to your home team"
+      ],
+      "notes": "Indicative planning ranges, not quotations. The named reconstructive surgeon confirms implant versus autologous technique, immediate versus delayed timing, implant type if used, and an itemized hospital price after records review. Mastectomy, radiotherapy and second-stage exchange are quoted separately unless named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
+      "replaceGuide": false
+    },
     "oncoplastic-breast-surgery": {
       "summary": "Oncoplastic surgery removes the tumour with a margin and reshapes the remaining breast in the same sitting when conservation is oncologically sound. It is cancer surgery first, not a cosmetic add-on.",
       "usRange": "$18,000–$38,000",

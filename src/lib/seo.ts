@@ -323,6 +323,7 @@ export function medicalWebPageJsonLd(opts: {
   procedureName: string;
   specialty: string;
   about: string;
+  image?: string;
 }) {
   const url = absoluteUrl(opts.path);
   return {
@@ -338,6 +339,7 @@ export function medicalWebPageJsonLd(opts: {
     publisher: { "@type": "Organization", name: site.name, url: absoluteUrl("/") },
     audience: { "@type": "MedicalAudience", audienceType: "Patient" },
     specialty: opts.specialty,
+    ...(opts.image ? { image: absoluteUrl(opts.image) } : {}),
     about: {
       "@type": "MedicalProcedure",
       name: opts.procedureName,
@@ -403,10 +405,13 @@ export function doctorItemListJsonLd(rows: Doctor[], opts: { name: string; path:
 export function costArticleMetadata(
   t: Treatment,
   article: { seoTitle: string; seoDescription: string; lastUpdated: string },
-  opts?: { path?: string },
+  opts?: { path?: string; image?: string; imageAlt?: string },
 ): Metadata {
   const url = absoluteUrl(opts?.path ?? `/costs/${t.slug}`);
   const description = clip(article.seoDescription);
+  const ogImage = opts?.image
+    ? [{ url: absoluteUrl(opts.image), alt: opts.imageAlt || article.seoTitle }]
+    : undefined;
   return {
     title: article.seoTitle,
     description,
@@ -427,8 +432,14 @@ export function costArticleMetadata(
       locale: "en_IN",
       siteName: site.name,
       modifiedTime: article.lastUpdated,
+      ...(ogImage ? { images: ogImage } : {}),
     },
-    twitter: { card: "summary_large_image", title: article.seoTitle, description },
+    twitter: {
+      card: "summary_large_image",
+      title: article.seoTitle,
+      description,
+      ...(ogImage ? { images: ogImage.map((row) => row.url) } : {}),
+    },
   };
 }
 

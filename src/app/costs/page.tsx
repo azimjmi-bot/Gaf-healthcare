@@ -51,12 +51,17 @@ export async function generateMetadata({
             seoDescription: cityPage.seoDescription,
             lastUpdated: article.lastUpdated,
           },
-          { path },
+          { path, image: article.figures?.[0]?.src, imageAlt: article.figures?.[0]?.alt },
         );
       }
     }
     return {
-      ...(article ? costArticleMetadata(sheet, interpolateCostArticle(article, sheet)) : base),
+      ...(article
+        ? costArticleMetadata(sheet, interpolateCostArticle(article, sheet), {
+            image: article.figures?.[0]?.src,
+            imageAlt: article.figures?.[0]?.alt,
+          })
+        : base),
       alternates: { canonical: absoluteUrl(`/costs/${sheet.slug}`) },
     };
   }
@@ -126,6 +131,7 @@ export default async function CostsPage({
             procedureName: sheet.name,
             specialty: sheet.category,
             about: sheetArticle.heroLede || sheet.summary,
+            image: sheetArticle.figures?.[0]?.src,
           })}
         />
         <JsonLd

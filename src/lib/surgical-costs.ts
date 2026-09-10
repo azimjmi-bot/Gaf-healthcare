@@ -161,7 +161,7 @@ export const SURGICAL_SUMMARIES: Record<string, string> = {
   "Oncoplastic Breast Surgery":
     "Oncoplastic surgery removes the tumour with a margin and reshapes the remaining breast in the same sitting when conservation is oncologically sound. It is cancer surgery first, not a cosmetic add-on.",
   "Breast Reconstruction":
-    "Reconstruction may be implant-based or autologous. Timing — immediate or delayed — follows the cancer operation and radiation plan, not a hotel calendar.",
+    "Reconstruction restores breast shape after mastectomy or a large conservation defect. Implant-based and autologous (flap) techniques, and immediate versus delayed timing, follow anatomy and the radiation plan — not a brochure upgrade.",
   "Sentinel Lymph Node Biopsy":
     "Sentinel node biopsy maps the first draining nodes instead of a full axillary clearance when staging allows. Frozen section capability on the day is part of the campus check.",
   Esophagectomy:
