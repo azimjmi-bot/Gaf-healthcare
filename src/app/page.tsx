@@ -19,6 +19,9 @@ import { doctors, hospitals, treatments } from "@/lib/data";
 import { SITE_URL } from "@/lib/seo";
 import type { Treatment } from "@/lib/treatments";
 
+export const dynamic = "force-dynamic";
+export const revalidate = 0;
+
 function startingPrice(range: string) {
   const n = range.match(/\$?([\d,]+)/);
   return n ? `from $${n[1]}` : range;
