@@ -716,6 +716,7 @@ export const rectalCancerSurgery: CostArticle = {
     { href: "/costs?specialty=Radiation+Oncology", label: "radiation oncology costs in India" },
     { href: "/costs?specialty=Surgical+Gastroenterology", label: "surgical gastroenterology costs in India" },
     { href: "/costs/colectomy", label: "colectomy cost in India" },
+    { href: "/costs/liver-resection-hepatectomy", label: "liver resection cost in India" },
     { href: "/costs/gastrectomy", label: "gastrectomy cost in India" },
     { href: "/costs/esophagectomy", label: "esophagectomy cost in India" },
     { href: "/doctors?destination=India&procedure=Rectal+Cancer+Surgery", label: "rectal cancer surgeons in India" },

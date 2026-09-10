@@ -131,6 +131,21 @@
       ],
       "notes": "Indicative planning ranges, not quotations. The named surgical oncologist confirms operation type (LAR, APR, local excision), TME plane, reconstruction or stoma, open versus laparoscopic or robotic access where offered, named high-dependency nights and an itemized hospital price after records review. Colonoscopy, MRI pelvis, PET-CT, neoadjuvant chemoradiation, extra leak days and stoma supplies after discharge are quoted separately unless named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
       "replaceGuide": false
+    },
+    "liver-resection-hepatectomy": {
+      "summary": "Hepatectomy removes part of the liver — for selected primary tumours, colorectal metastases or other lesions — while leaving enough functioning remnant. Extent, approach and ICU follow the scan and liver function, not a brochure upgrade.",
+      "usRange": "$45,000–$110,000",
+      "partnerRange": "$10,000–$26,000",
+      "stay": "7–14 nights",
+      "includes": [
+        "Surgical oncology consultation and records review",
+        "Named surgeon on camera before travel",
+        "Theatre, anaesthesia and inpatient stay as quoted",
+        "Histopathology of the specimen",
+        "Discharge summary to your home oncologist"
+      ],
+      "notes": "Indicative planning ranges, not quotations. The named surgical oncologist confirms extent (wedge, segmentectomy, hemihepatectomy or extended), remnant plan, open versus laparoscopic or robotic access where offered, named high-dependency nights and an itemized hospital price after records review. CT, MRI, PET-CT, biopsy, systemic therapy, ablation, extra bile-leak days and transfusion are quoted separately unless named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
+      "replaceGuide": false
     }
   },
   "treatmentsAdded": [],

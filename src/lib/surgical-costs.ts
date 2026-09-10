@@ -173,7 +173,7 @@ export const SURGICAL_SUMMARIES: Record<string, string> = {
   "Rectal Cancer Surgery":
     "Rectal cancer surgery removes the tumour with a margin of rectum and, where indicated, the mesorectum (TME). Reconstruction, a temporary or permanent stoma, and whether chemotherapy or radiation comes first follow staging — not a brochure sequence.",
   "Liver Resection (Hepatectomy)":
-    "Hepatectomy for primary or metastatic disease. Future-liver-remnant volume and anaesthesia ICU are checked before a date is offered.",
+    "Hepatectomy removes part of the liver — for selected primary tumours, colorectal metastases or other lesions — while leaving enough functioning remnant. Extent, approach and ICU follow the scan and liver function, not a brochure upgrade.",
   "Whipple Procedure":
     "Pancreaticoduodenectomy is a long operation with a long recovery. We match volume centres, not a first-time international Whipple.",
   "Pancreatic Surgery":

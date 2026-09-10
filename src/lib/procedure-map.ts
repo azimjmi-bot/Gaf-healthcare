@@ -29,7 +29,7 @@ const SURGICAL_RULES: { test: RegExp; name: (typeof SURGICAL_ONCOLOGY_PROCEDURES
   { test: /gastric cancer|stomach cancer/i, name: "Gastrectomy" },
   { test: /rectal cancer surg|low anterior|\blar\b|abdominoperineal|\bapr\b|total mesorectal|\btme\b|colorectal cancer surg/i, name: "Rectal Cancer Surgery" },
   { test: /colectomy|hemicolectomy|colon cancer|colorectal cancer/i, name: "Colectomy" },
-  { test: /hepatec|liver resect/i, name: "Liver Resection (Hepatectomy)" },
+  { test: /hepatec|liver resect|liver cancer surg/i, name: "Liver Resection (Hepatectomy)" },
   { test: /whipple|pancreaticoduoden/i, name: "Whipple Procedure" },
   { test: /pancrea/i, name: "Pancreatic Surgery" },
   { test: /pipac/i, name: "PIPAC" },
