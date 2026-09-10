@@ -294,6 +294,7 @@ export const pipac: CostArticle = {
     { href: "/costs/cytoreductive-surgery", label: "cytoreductive surgery cost in India" },
     { href: "/costs/colectomy", label: "colorectal cancer surgery cost in India" },
     { href: "/costs/gastrectomy", label: "gastrectomy cost in India" },
+    { href: "/costs/ovarian-cancer-cytoreductive-surgery", label: "ovarian cancer cytoreductive surgery cost in India" },
     { href: "/costs?specialty=Surgical+Oncology", label: "surgical oncology costs in India" },
     { href: "/doctors?destination=India&procedure=PIPAC", label: "PIPAC specialists in India" },
     { href: "/hospitals?destination=India&procedure=PIPAC", label: "PIPAC hospitals in India" },

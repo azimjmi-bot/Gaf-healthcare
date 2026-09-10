@@ -26,6 +26,7 @@ const LONGFORM_COST_SLUGS = new Set([
   "cytoreductive-surgery",
   "cytoreductive-surgery-with-hipec",
   "pipac",
+  "ovarian-cancer-cytoreductive-surgery",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {

@@ -177,6 +177,21 @@
       "notes": "Indicative planning ranges, not quotations. The partner band is CRS as quoted — not automatically CRS + HIPEC. The named surgical oncologist confirms peritoneal burden, organ resections, whether HIPEC is planned, named high-dependency nights and an itemized hospital price after records review. HIPEC drugs, extra theatre time, extra stay, CT, PET-CT, systemic chemotherapy, radiation, extra leak days and transfusion are quoted separately unless named. Dedicated Cytoreductive Surgery with HIPEC and PIPAC sheets exist when those sittings are already named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
       "replaceGuide": false
     },
+    "ovarian-cancer-cytoreductive-surgery": {
+      "summary": "Ovarian cytoreduction may be primary or interval after chemotherapy. The gynaecologic oncologist, not a general list, owns this floor.",
+      "usRange": "$35,000–$80,000",
+      "partnerRange": "$8,000–$20,000",
+      "stay": "6–12 nights",
+      "includes": [
+        "Surgical oncology consultation and records review",
+        "Named surgeon on camera before travel",
+        "Theatre, anaesthesia and inpatient stay as quoted",
+        "Histopathology of the specimen",
+        "Discharge summary to your home oncologist"
+      ],
+      "notes": "Indicative planning ranges, not quotations. The partner band is ovarian cancer cytoreductive surgery as quoted — not a simple ovarian cyst operation, not automatically CRS + HIPEC, and not a three-cycle chemotherapy package. The named gynaecologic or surgical oncologist confirms primary versus interval sequence, disease distribution, extra organ procedures, named high-dependency nights and an itemized hospital price after records review. HIPEC drugs, systemic chemotherapy, radiation, CT, PET-CT, extra leak days and transfusion are quoted separately unless named. Dedicated Cytoreductive Surgery, Cytoreductive Surgery with HIPEC and PIPAC sheets exist when those sittings are already named. Long-form cost guide interpolates these fields — edit costing here, leave replaceGuide off.",
+      "replaceGuide": false
+    },
     "pipac": {
       "summary": "Pressurised intraperitoneal aerosol chemotherapy is a laparoscopy-based option for selected peritoneal disease, often as a sequence of short stays rather than one mega-operation.",
       "usRange": "$25,000–$55,000",

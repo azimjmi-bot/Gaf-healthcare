@@ -294,6 +294,7 @@ export const cytoreductiveSurgeryWithHipec: CostArticle = {
   relatedBlogs: [
     { href: "/costs/cytoreductive-surgery", label: "cytoreductive surgery cost in India" },
     { href: "/costs/pipac", label: "PIPAC cost in India" },
+    { href: "/costs/ovarian-cancer-cytoreductive-surgery", label: "ovarian cancer cytoreductive surgery cost in India" },
     { href: "/costs/colectomy", label: "colectomy cost in India" },
     { href: "/costs/rectal-cancer-surgery", label: "rectal cancer surgery cost in India" },
     { href: "/costs/gastrectomy", label: "gastrectomy cost in India" },

@@ -124,7 +124,12 @@ export type CostArticle = {
     }[];
   };
   /** Extra question-headed clinical blocks (LAR, APR, TME, stoma, neoadjuvant…). */
-  topicSections?: { id: string; heading: string; paragraphs: string[] }[];
+  topicSections?: {
+    id: string;
+    heading: string;
+    paragraphs: string[];
+    table?: { caption?: string; headers: string[]; rows: string[][]; note?: string };
+  }[];
   /** City-page heading template, e.g. "Rectal cancer surgeons in [CITY]". */
   cityDoctorHeading?: string;
   cityHospitalHeading?: string;

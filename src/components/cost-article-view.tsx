@@ -380,6 +380,47 @@ export function CostArticleView({
           {section.paragraphs.map((para) => (
             <P key={para.slice(0, 40)}>{para}</P>
           ))}
+          {section.table ? (
+            <>
+              <p className="cost-scroll-hint">Swipe to compare →</p>
+              <div className="cost-scroll mt-2">
+                <table>
+                  {section.table.caption ? (
+                    <caption className="sr-only">{section.table.caption}</caption>
+                  ) : null}
+                  <thead>
+                    <tr>
+                      {section.table.headers.map((header) => (
+                        <th key={header} scope="col">
+                          {header}
+                        </th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {section.table.rows.map((row) => (
+                      <tr key={row.join("|")}>
+                        {row.map((cell, index) =>
+                          index === 0 ? (
+                            <th key={`${row[0]}-${cell}`} scope="row">
+                              {cell}
+                            </th>
+                          ) : (
+                            <td key={`${row[0]}-${cell}`} className="text-muted-foreground">
+                              {cell}
+                            </td>
+                          ),
+                        )}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              {section.table.note ? (
+                <p className="mt-3 text-xs leading-relaxed text-muted-foreground">{section.table.note}</p>
+              ) : null}
+            </>
+          ) : null}
         </section>
       ))}
 

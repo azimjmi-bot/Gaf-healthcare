@@ -14,6 +14,7 @@ import { pancreaticSurgery } from "./pancreatic-surgery";
 import { cytoreductiveSurgery } from "./cytoreductive-surgery";
 import { cytoreductiveSurgeryWithHipec } from "./cytoreductive-surgery-with-hipec";
 import { pipac } from "./pipac";
+import { ovarianCancerCytoreductiveSurgery } from "./ovarian-cancer-cytoreductive-surgery";
 import type { CostArticle } from "./types";
 
 export type { CostArticle } from "./types";
@@ -40,6 +41,7 @@ export const costArticles: Record<string, CostArticle> = {
   [cytoreductiveSurgery.slug]: cytoreductiveSurgery,
   [cytoreductiveSurgeryWithHipec.slug]: cytoreductiveSurgeryWithHipec,
   [pipac.slug]: pipac,
+  [ovarianCancerCytoreductiveSurgery.slug]: ovarianCancerCytoreductiveSurgery,
 };
 
 export function getCostArticle(slug: string): CostArticle | undefined {
