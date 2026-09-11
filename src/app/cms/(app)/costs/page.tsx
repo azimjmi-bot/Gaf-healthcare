@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { CmsCatalogTable } from "@/components/cms/cms-catalog-table";
 import { treatmentAdminRows } from "@/lib/cms/catalog-admin";
+import { editionFromCookies } from "@/lib/cms/edition-server";
 
 export const dynamic = "force-dynamic";
 
-export default function CmsCostsPage() {
+export default async function CmsCostsPage() {
+  const edition = await editionFromCookies();
   return (
     <div className="cms-page">
       <header className="cms-page__head">
@@ -17,7 +19,7 @@ export default function CmsCostsPage() {
           New cost sheet
         </Link>
       </header>
-      <CmsCatalogTable entity="treatments" rows={treatmentAdminRows()} />
+      <CmsCatalogTable entity="treatments" rows={treatmentAdminRows(edition)} />
     </div>
   );
 }

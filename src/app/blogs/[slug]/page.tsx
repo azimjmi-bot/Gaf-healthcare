@@ -21,7 +21,8 @@ export async function generateMetadata({
   const { slug } = await params;
   const jar = await cookies();
   const preview = jar.get(CMS_COOKIE)?.value === cmsToken();
-  const post = getPost(slug) ?? (preview ? getArticleBySlug(slug) : undefined);
+  const locale = await getRequestLocale();
+  const post = getPost(slug, locale) ?? (preview ? getArticleBySlug(slug) : undefined);
   if (!post) return { title: "Blogs" };
   return blogPageMetadata(post);
 }
@@ -34,13 +35,13 @@ export default async function BlogPostPage({
   const { slug } = await params;
   const jar = await cookies();
   const preview = jar.get(CMS_COOKIE)?.value === cmsToken();
-  const source = getPost(slug) ?? (preview ? getArticleBySlug(slug) : undefined);
-  if (!source) notFound();
   const locale = await getRequestLocale();
+  const source = getPost(slug, locale) ?? (preview ? getArticleBySlug(slug) : undefined);
+  if (!source) notFound();
   const post = await localizeBlog(source, locale);
 
   const others = await Promise.all(
-    listPublishedPosts()
+    listPublishedPosts(locale)
       .filter((p) => p.slug !== post.slug)
       .slice(0, 3)
       .map((p) => localizeBlog(p, locale)),

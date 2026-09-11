@@ -2,6 +2,7 @@ import { mkdirSync, unlinkSync, writeFileSync } from "fs";
 import { join } from "path";
 import { NextResponse } from "next/server";
 import { requireCmsSession } from "@/lib/cms/auth";
+import { editionFromRequest } from "@/lib/cms/edition";
 import { loadCms, saveCms } from "@/lib/cms/store";
 import { newId } from "@/lib/cms/types";
 
@@ -12,13 +13,13 @@ function safeName(name: string) {
   return base || "upload";
 }
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
     await requireCmsSession();
   } catch {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  return NextResponse.json(loadCms().media);
+  return NextResponse.json(loadCms(editionFromRequest(request)).media);
 }
 
 export async function POST(request: Request) {
@@ -49,9 +50,10 @@ export async function POST(request: Request) {
       alt: form?.get("alt")?.toString() || "",
       addedAt: new Date().toISOString(),
     };
-    const store = loadCms();
+    const edition = editionFromRequest(request);
+    const store = loadCms(edition);
     store.media.unshift(item);
-    saveCms(store);
+    saveCms(store, edition);
     return NextResponse.json(item);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Upload failed.";
@@ -67,11 +69,12 @@ export async function DELETE(request: Request) {
   }
   const { id } = (await request.json().catch(() => ({}))) as { id?: string };
   try {
-    const store = loadCms();
+    const edition = editionFromRequest(request);
+    const store = loadCms(edition);
     const item = store.media.find((m) => m.id === id);
     if (!item) return NextResponse.json({ error: "Not found" }, { status: 404 });
     store.media = store.media.filter((m) => m.id !== id);
-    saveCms(store);
+    saveCms(store, edition);
     if (item.url.startsWith("/uploads/articles/")) {
       try {
         unlinkSync(join(process.cwd(), "public", item.url));

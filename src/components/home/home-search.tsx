@@ -9,6 +9,7 @@ import {
 } from "@/lib/catalog-options";
 import { useLocale, useT } from "@/components/locale-provider";
 import { localePath } from "@/lib/i18n/path";
+import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 
 const ALL = "all";
 
@@ -44,7 +45,7 @@ export function HomeSearch() {
           <option value={ALL}>{t("home.searchDestination")}</option>
           {catalogDestinations.map((name) => (
             <option key={name} value={name}>
-              {name}
+              {taxonomyLabel(name, locale)}
             </option>
           ))}
         </select>
@@ -55,7 +56,7 @@ export function HomeSearch() {
           <option value={ALL}>{t("home.searchSpecialty")}</option>
           {catalogSpecialties.map((name) => (
             <option key={name} value={name}>
-              {name}
+              {taxonomyLabel(name, locale)}
             </option>
           ))}
         </select>
@@ -66,7 +67,7 @@ export function HomeSearch() {
           <option value={ALL}>{t("home.searchProcedure")}</option>
           {procedures.map((name) => (
             <option key={name} value={name}>
-              {name}
+              {taxonomyLabel(name, locale)}
             </option>
           ))}
         </select>

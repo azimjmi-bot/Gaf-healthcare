@@ -22,8 +22,8 @@ export default async function BlogsPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const raw = await searchParams;
-  const settings = blogSettings();
   const locale = await getRequestLocale();
+  const settings = blogSettings(locale);
   const messages = await localizeMessages(locale);
   const localizedSettings = {
     blogEyebrow: settings.blogEyebrow,
@@ -33,7 +33,7 @@ export default async function BlogsPage({
   const category = Array.isArray(raw.category) ? raw.category[0] : raw.category;
   const pageRaw = Array.isArray(raw.page) ? raw.page[0] : raw.page;
   const page = Math.max(1, Number.parseInt(pageRaw || "1", 10) || 1);
-  const all = listPublishedPosts().filter((p) => !category || p.category === category);
+  const all = listPublishedPosts(locale).filter((p) => !category || p.category === category);
   const size = settings.postsPerPage || 12;
   const totalPages = Math.max(1, Math.ceil(all.length / size) || 1);
   const current = Math.min(page, totalPages);

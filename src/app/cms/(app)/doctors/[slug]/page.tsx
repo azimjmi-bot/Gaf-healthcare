@@ -2,12 +2,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CmsDoctorEditor } from "@/components/cms/cms-doctor-editor";
 import { getAdminDoctor } from "@/lib/cms/catalog-admin";
+import { editionFromCookies } from "@/lib/cms/edition-server";
 
 export const dynamic = "force-dynamic";
 
 export default async function CmsEditDoctorPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const doctor = getAdminDoctor(slug);
+  const doctor = getAdminDoctor(slug, await editionFromCookies());
   if (!doctor) notFound();
   return (
     <div className="cms-page">

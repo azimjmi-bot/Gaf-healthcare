@@ -1,18 +1,19 @@
 import { NextResponse } from "next/server";
 import { requireCmsSession } from "@/lib/cms/auth";
+import { editionFromRequest } from "@/lib/cms/edition";
 import { loadCms, saveCms, uniqueSlug } from "@/lib/cms/store";
 import type { Article } from "@/lib/cms/types";
 
 type Ctx = { params: Promise<{ id: string }> };
 
-export async function GET(_: Request, ctx: Ctx) {
+export async function GET(request: Request, ctx: Ctx) {
   try {
     await requireCmsSession();
   } catch {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   const { id } = await ctx.params;
-  const article = loadCms().articles.find((a) => a.id === id);
+  const article = loadCms(editionFromRequest(request)).articles.find((a) => a.id === id);
   if (!article) return NextResponse.json({ error: "Not found" }, { status: 404 });
   return NextResponse.json(article);
 }
@@ -24,10 +25,11 @@ export async function PUT(request: Request, ctx: Ctx) {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   const { id } = await ctx.params;
+  const edition = editionFromRequest(request);
   const patch = (await request.json().catch(() => null)) as Partial<Article> | null;
   if (!patch) return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   try {
-    const store = loadCms();
+    const store = loadCms(edition);
     const index = store.articles.findIndex((a) => a.id === id);
     if (index < 0) return NextResponse.json({ error: "Not found" }, { status: 404 });
     const current = store.articles[index];
@@ -48,7 +50,7 @@ export async function PUT(request: Request, ctx: Ctx) {
     for (const tag of next.tags) {
       if (tag && !store.tags.includes(tag)) store.tags.push(tag);
     }
-    saveCms(store);
+    saveCms(store, edition);
     return NextResponse.json(next);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not save.";
@@ -56,15 +58,16 @@ export async function PUT(request: Request, ctx: Ctx) {
   }
 }
 
-export async function DELETE(_: Request, ctx: Ctx) {
+export async function DELETE(request: Request, ctx: Ctx) {
   try {
     await requireCmsSession();
   } catch {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   const { id } = await ctx.params;
+  const edition = editionFromRequest(request);
   try {
-    const store = loadCms();
+    const store = loadCms(edition);
     const article = store.articles.find((a) => a.id === id);
     if (!article) return NextResponse.json({ error: "Not found" }, { status: 404 });
     if (article.status === "trash") {
@@ -73,7 +76,7 @@ export async function DELETE(_: Request, ctx: Ctx) {
       article.status = "trash";
       article.updatedAt = new Date().toISOString();
     }
-    saveCms(store);
+    saveCms(store, edition);
     return NextResponse.json({ ok: true });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not delete.";

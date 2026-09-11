@@ -1,15 +1,16 @@
 import { NextResponse } from "next/server";
 import { requireCmsSession } from "@/lib/cms/auth";
+import { editionFromRequest } from "@/lib/cms/edition";
 import { blankArticle, loadCms, saveCms, uniqueSlug } from "@/lib/cms/store";
 import type { Article } from "@/lib/cms/types";
 
-export async function GET() {
+export async function GET(request: Request) {
   try {
     await requireCmsSession();
   } catch {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
-  return NextResponse.json(loadCms().articles);
+  return NextResponse.json(loadCms(editionFromRequest(request)).articles);
 }
 
 export async function POST(request: Request) {
@@ -18,9 +19,10 @@ export async function POST(request: Request) {
   } catch {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+  const edition = editionFromRequest(request);
   const patch = (await request.json().catch(() => ({}))) as Partial<Article>;
   try {
-    const store = loadCms();
+    const store = loadCms(edition);
     const article = blankArticle(store);
     if (patch.title) article.title = patch.title;
     if (patch.slug || patch.title) {
@@ -31,7 +33,7 @@ export async function POST(request: Request) {
     if (article.category && !store.categories.includes(article.category)) {
       store.categories.push(article.category);
     }
-    saveCms(store);
+    saveCms(store, edition);
     return NextResponse.json(article);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not save.";

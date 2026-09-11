@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { CmsNewDoctor } from "@/components/cms/cms-new-doctor";
 import { liveHospitalChoices } from "@/lib/cms/catalog-admin";
+import { editionFromCookies } from "@/lib/cms/edition-server";
 import { SPECIALTIES } from "@/lib/taxonomy";
 
 export const dynamic = "force-dynamic";
 
-export default function CmsNewDoctorPage() {
-  const hospitals = liveHospitalChoices().map((h) => ({ slug: h.slug, name: h.name, city: h.city }));
+export default async function CmsNewDoctorPage() {
+  const hospitals = liveHospitalChoices(await editionFromCookies()).map((h) => ({ slug: h.slug, name: h.name, city: h.city }));
   return (
     <div className="cms-page">
       <header className="cms-page__head">

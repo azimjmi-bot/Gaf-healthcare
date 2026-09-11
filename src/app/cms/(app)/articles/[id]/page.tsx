@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
 import { CmsArticleEditor } from "@/components/cms/cms-article-editor";
+import { editionFromCookies } from "@/lib/cms/edition-server";
 import { loadCms } from "@/lib/cms/store";
 
 export const dynamic = "force-dynamic";
@@ -10,7 +11,7 @@ export default async function CmsEditArticlePage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const store = loadCms();
+  const store = loadCms(await editionFromCookies());
   const article = store.articles.find((a) => a.id === id);
   if (!article) notFound();
   return <CmsArticleEditor initial={article} store={store} />;

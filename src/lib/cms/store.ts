@@ -1,9 +1,14 @@
 import { mkdirSync, readFileSync, renameSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
+import type { CmsEdition } from "@/lib/cms/edition";
 import type { Article, CmsStore } from "@/lib/cms/types";
 import { newId, slugify } from "@/lib/cms/types";
 
-const FILE = join(process.cwd(), "content/cms.json");
+function cmsFile(edition: CmsEdition = "en") {
+  return edition === "ar"
+    ? join(process.cwd(), "content/ar/cms.json")
+    : join(process.cwd(), "content/cms.json");
+}
 
 function fallbackStore(): CmsStore {
   return {
@@ -22,9 +27,9 @@ function fallbackStore(): CmsStore {
   };
 }
 
-export function loadCms(): CmsStore {
+export function loadCms(edition: CmsEdition = "en"): CmsStore {
   try {
-    const raw = readFileSync(FILE, "utf8");
+    const raw = readFileSync(cmsFile(edition), "utf8");
     const data = JSON.parse(raw) as CmsStore;
     if (!Array.isArray(data.articles)) return fallbackStore();
     return {
@@ -41,26 +46,27 @@ export function loadCms(): CmsStore {
   }
 }
 
-export function saveCms(store: CmsStore) {
-  mkdirSync(dirname(FILE), { recursive: true });
-  const tmp = `${FILE}.tmp`;
+export function saveCms(store: CmsStore, edition: CmsEdition = "en") {
+  const file = cmsFile(edition);
+  mkdirSync(dirname(file), { recursive: true });
+  const tmp = `${file}.tmp`;
   writeFileSync(tmp, `${JSON.stringify(store, null, 2)}\n`);
-  renameSync(tmp, FILE);
+  renameSync(tmp, file);
   return store;
 }
 
-export function publishedArticles() {
-  return loadCms()
+export function publishedArticles(edition: CmsEdition = "en") {
+  return loadCms(edition)
     .articles.filter((a) => a.status === "published")
     .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 }
 
-export function getArticleBySlug(slug: string) {
-  return loadCms().articles.find((a) => a.slug === slug && a.status !== "trash");
+export function getArticleBySlug(slug: string, edition: CmsEdition = "en") {
+  return loadCms(edition).articles.find((a) => a.slug === slug && a.status !== "trash");
 }
 
-export function getPublishedBySlug(slug: string) {
-  return publishedArticles().find((a) => a.slug === slug);
+export function getPublishedBySlug(slug: string, edition: CmsEdition = "en") {
+  return publishedArticles(edition).find((a) => a.slug === slug);
 }
 
 export function uniqueSlug(store: CmsStore, base: string, ignoreId?: string) {

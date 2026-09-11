@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { requireCmsSession } from "@/lib/cms/auth";
+import { editionFromRequest } from "@/lib/cms/edition";
 import { loadCatalogCms, saveCatalogCms } from "@/lib/cms/catalog-store";
 import { slugify } from "@/lib/cms/types";
 import { catalogDoctors, type Doctor } from "@/lib/doctors";
@@ -19,7 +20,7 @@ function jsonError(message: string, status = 400) {
   return NextResponse.json({ error: message }, { status });
 }
 
-export async function GET(_req: Request, ctx: { params: Promise<{ entity: string }> }) {
+export async function GET(request: Request, ctx: { params: Promise<{ entity: string }> }) {
   try {
     await requireCmsSession();
   } catch {
@@ -27,7 +28,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ entity: string
   }
   const entity = asEntity((await ctx.params).entity);
   if (!entity) return jsonError("Unknown catalog.");
-  const cms = loadCatalogCms();
+  const cms = loadCatalogCms(editionFromRequest(request));
   if (entity === "doctors") {
     const deleted = new Set(cms.doctorsDeleted);
     const rows = [
@@ -118,7 +119,8 @@ export async function POST(request: Request, ctx: { params: Promise<{ entity: st
   const body = (await request.json().catch(() => null)) as Record<string, string> | null;
   if (!body) return jsonError("Invalid body.");
   try {
-    const cms = loadCatalogCms();
+    const edition = editionFromRequest(request);
+    const cms = loadCatalogCms(edition);
     if (entity === "doctors") {
       const hospital = getHospital(body.hospitalSlug || "");
       const specialty = getSpecialty(body.specialty || "");
@@ -170,7 +172,7 @@ export async function POST(request: Request, ctx: { params: Promise<{ entity: st
         imageAlt: body.imageAlt || body.name || "",
       };
       cms.doctorsAdded.unshift(doctor);
-      saveCatalogCms(cms);
+      saveCatalogCms(cms, edition);
       return NextResponse.json(doctor);
     }
     if (entity === "hospitals") {
@@ -214,7 +216,7 @@ export async function POST(request: Request, ctx: { params: Promise<{ entity: st
         imageAlt: body.imageAlt || body.name || "",
       };
       cms.hospitalsAdded.unshift(hospital);
-      saveCatalogCms(cms);
+      saveCatalogCms(cms, edition);
       return NextResponse.json(hospital);
     }
     const procedure = getProcedure(body.procedure || body.name || "");
@@ -244,7 +246,7 @@ export async function POST(request: Request, ctx: { params: Promise<{ entity: st
       replaceGuide: false,
     };
     cms.treatmentsAdded.unshift(treatment);
-    saveCatalogCms(cms);
+    saveCatalogCms(cms, edition);
     return NextResponse.json(treatment);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not add.";

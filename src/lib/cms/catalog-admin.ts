@@ -1,11 +1,12 @@
+import type { CmsEdition } from "@/lib/cms/edition";
 import { loadCatalogCms } from "@/lib/cms/catalog-store";
 import { catalogDoctors, type Doctor } from "@/lib/doctors";
 import { catalogHospitals, type Hospital } from "@/lib/hospitals";
 import { catalogTreatments, type Treatment } from "@/lib/treatments";
 import { pickDoctorPatch, pickHospitalPatch, type CatalogRow } from "@/lib/cms/catalog-types";
 
-export function doctorAdminRows(): CatalogRow[] {
-  const cms = loadCatalogCms();
+export function doctorAdminRows(edition: CmsEdition = "en"): CatalogRow[] {
+  const cms = loadCatalogCms(edition);
   const deleted = new Set(cms.doctorsDeleted);
   return [
     ...catalogDoctors.map((d) => ({
@@ -34,8 +35,8 @@ export function doctorAdminRows(): CatalogRow[] {
   ];
 }
 
-export function hospitalAdminRows(): CatalogRow[] {
-  const cms = loadCatalogCms();
+export function hospitalAdminRows(edition: CmsEdition = "en"): CatalogRow[] {
+  const cms = loadCatalogCms(edition);
   const deleted = new Set(cms.hospitalsDeleted);
   return [
     ...catalogHospitals.map((h) => ({
@@ -60,8 +61,8 @@ export function hospitalAdminRows(): CatalogRow[] {
   ];
 }
 
-export function treatmentAdminRows(): CatalogRow[] {
-  const cms = loadCatalogCms();
+export function treatmentAdminRows(edition: CmsEdition = "en"): CatalogRow[] {
+  const cms = loadCatalogCms(edition);
   const deleted = new Set(cms.treatmentsDeleted);
   return [
     ...catalogTreatments.map((t) => ({
@@ -86,8 +87,8 @@ export function treatmentAdminRows(): CatalogRow[] {
   ];
 }
 
-export function getAdminDoctor(slug: string) {
-  const cms = loadCatalogCms();
+export function getAdminDoctor(slug: string, edition: CmsEdition = "en") {
+  const cms = loadCatalogCms(edition);
   const base =
     catalogDoctors.find((d) => d.slug === slug) ||
     (cms.doctorsAdded.find((d) => (d as Doctor).slug === slug) as Doctor | undefined);
@@ -100,8 +101,8 @@ export function getAdminDoctor(slug: string) {
   };
 }
 
-export function getAdminHospital(slug: string) {
-  const cms = loadCatalogCms();
+export function getAdminHospital(slug: string, edition: CmsEdition = "en") {
+  const cms = loadCatalogCms(edition);
   const base =
     catalogHospitals.find((h) => h.slug === slug) ||
     (cms.hospitalsAdded.find((h) => (h as Hospital).slug === slug) as Hospital | undefined);
@@ -114,8 +115,8 @@ export function getAdminHospital(slug: string) {
   };
 }
 
-export function getAdminTreatment(slug: string) {
-  const cms = loadCatalogCms();
+export function getAdminTreatment(slug: string, edition: CmsEdition = "en") {
+  const cms = loadCatalogCms(edition);
   const base =
     catalogTreatments.find((t) => t.slug === slug) ||
     (cms.treatmentsAdded.find((t) => (t as Treatment).slug === slug) as Treatment | undefined);
@@ -128,8 +129,8 @@ export function getAdminTreatment(slug: string) {
   };
 }
 
-export function liveHospitalChoices() {
-  const cms = loadCatalogCms();
+export function liveHospitalChoices(edition: CmsEdition = "en") {
+  const cms = loadCatalogCms(edition);
   const gone = new Set(cms.hospitalsDeleted);
   const rows = [
     ...catalogHospitals,
@@ -140,8 +141,8 @@ export function liveHospitalChoices() {
   );
 }
 
-export function takenTreatmentSlugs() {
-  const cms = loadCatalogCms();
+export function takenTreatmentSlugs(edition: CmsEdition = "en") {
+  const cms = loadCatalogCms(edition);
   return new Set([
     ...catalogTreatments.map((t) => t.slug),
     ...cms.treatmentsAdded.map((t) => String((t as Treatment).slug)),

@@ -54,7 +54,7 @@ export default async function HomePage() {
   const locale = await getRequestLocale();
   const t = await localizeMessages(locale);
   const extras = await localizeHomeExtras(locale);
-  const published = listPublishedPosts();
+  const published = listPublishedPosts(locale);
   const posts = await Promise.all(
     [...published.filter((p) => p.featured), ...published.filter((p) => !p.featured)]
       .slice(0, 3)

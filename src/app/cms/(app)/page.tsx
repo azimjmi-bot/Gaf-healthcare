@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { loadCatalogCms } from "@/lib/cms/catalog-store";
+import { editionFromCookies } from "@/lib/cms/edition-server";
 import { loadCms } from "@/lib/cms/store";
 
 export const dynamic = "force-dynamic";
 
-export default function CmsDashboardPage() {
-  const store = loadCms();
-  const catalog = loadCatalogCms();
+export default async function CmsDashboardPage() {
+  const edition = await editionFromCookies();
+  const store = loadCms(edition);
+  const catalog = loadCatalogCms(edition);
   const live = store.articles.filter((a) => a.status === "published").length;
   const drafts = store.articles.filter((a) => a.status === "draft").length;
   const trash = store.articles.filter((a) => a.status === "trash").length;
@@ -60,8 +62,9 @@ export default function CmsDashboardPage() {
         </li>
       </ul>
       <p className="cms-muted">
-        Catalog edits sit in <code>content/catalog-cms.json</code>. They do not rewrite the Ginger
-        catalog or pSEO matching helpers.
+        {edition === "ar"
+          ? "Arabic catalog edits sit in content/ar/catalog-cms.json. English files stay untouched."
+          : "Catalog edits sit in content/catalog-cms.json. They do not rewrite the Ginger catalog or pSEO matching helpers."}
       </p>
       <h2>Recently edited articles</h2>
       <table className="cms-table">

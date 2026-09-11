@@ -1,10 +1,11 @@
 import { CmsTaxonomyForm } from "@/components/cms/cms-taxonomy-form";
+import { editionFromCookies } from "@/lib/cms/edition-server";
 import { loadCms } from "@/lib/cms/store";
 
 export const dynamic = "force-dynamic";
 
-export default function CmsTaxonomiesPage() {
-  const store = loadCms();
+export default async function CmsTaxonomiesPage() {
+  const store = loadCms(await editionFromCookies());
   return (
     <div className="cms-page">
       <header className="cms-page__head">

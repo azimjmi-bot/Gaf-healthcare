@@ -1,9 +1,10 @@
 import { NextResponse } from "next/server";
 import { requireCmsSession } from "@/lib/cms/auth";
+import { editionFromRequest } from "@/lib/cms/edition";
 import { loadCms, saveCms, uniqueSlug } from "@/lib/cms/store";
 import { newId } from "@/lib/cms/types";
 
-export async function POST(_: Request, ctx: { params: Promise<{ id: string }> }) {
+export async function POST(request: Request, ctx: { params: Promise<{ id: string }> }) {
   try {
     await requireCmsSession();
   } catch {
@@ -11,7 +12,8 @@ export async function POST(_: Request, ctx: { params: Promise<{ id: string }> })
   }
   const { id } = await ctx.params;
   try {
-    const store = loadCms();
+    const edition = editionFromRequest(request);
+    const store = loadCms(edition);
     const source = store.articles.find((a) => a.id === id);
     if (!source) return NextResponse.json({ error: "Not found" }, { status: 404 });
     const copy = {
@@ -24,7 +26,7 @@ export async function POST(_: Request, ctx: { params: Promise<{ id: string }> })
       updatedAt: new Date().toISOString(),
     };
     store.articles.unshift(copy);
-    saveCms(store);
+    saveCms(store, edition);
     return NextResponse.json(copy);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not duplicate.";

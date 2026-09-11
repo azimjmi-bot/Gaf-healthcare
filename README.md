@@ -54,6 +54,13 @@ Existing English routes are unchanged. A Russian doctor page is `/ru/doctors/[sl
 
 Navigation, homepage chrome, footer and forms use built-in Russian, French, Arabic and Swahili catalogs. Doctor, hospital, cost-sheet and blog bodies stay English until those language editions are written separately. Google Cloud Translation is not used.
 
+The Arabic edition starts with the same filters as English on Doctors, Hospitals, and Treatment Cost. Dropdown **values** and pretty URLs stay English (`/ar/doctors/India/Delhi-NCR/Surgical-Oncology`). Visible labels are Arabic. English sitemap is `/sitemap.xml`. Arabic sitemap is `/sitemap-ar.xml`. Each language has its own CMS files:
+
+- English: `content/cms.json`, `content/catalog-cms.json`
+- Arabic: `content/ar/cms.json`, `content/ar/catalog-cms.json`
+
+Switch editions at the top of `/cms`. The public `/ar/blogs` list reads the Arabic CMS only.
+
 ### Replit / production secrets
 
 - `CMS_PASSWORD` — CMS desk password

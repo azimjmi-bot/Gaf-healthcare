@@ -1,12 +1,13 @@
 import Link from "next/link";
 import { CmsNewTreatment } from "@/components/cms/cms-new-treatment";
 import { takenTreatmentSlugs } from "@/lib/cms/catalog-admin";
+import { editionFromCookies } from "@/lib/cms/edition-server";
 import { PROCEDURES } from "@/lib/taxonomy";
 
 export const dynamic = "force-dynamic";
 
-export default function CmsNewCostPage() {
-  const taken = takenTreatmentSlugs();
+export default async function CmsNewCostPage() {
+  const taken = takenTreatmentSlugs(await editionFromCookies());
   const procedures = PROCEDURES.filter((p) => !taken.has(p.slug)).map((p) => ({ slug: p.slug, name: p.name }));
   return (
     <div className="cms-page">

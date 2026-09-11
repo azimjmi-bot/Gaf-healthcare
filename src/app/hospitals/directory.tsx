@@ -9,7 +9,8 @@ import { paginateHospitals } from "@/lib/hospitals";
 import { hospitals } from "@/lib/data";
 import { faqJsonLd } from "@/lib/seo";
 import { catalogPageMetadata } from "@/lib/i18n/page-meta";
-import { localizeFaqs } from "@/lib/i18n/localize";
+import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
+import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
@@ -25,22 +26,12 @@ export async function HospitalsDirectory({
   page?: number;
 }) {
   const locale = await getRequestLocale();
+  const messages = await localizeMessages(locale);
   const faqs = await localizeFaqs("hospitals", locale);
   const list = filterHospitals(query, hospitals);
   const paging = paginateHospitals(list, page);
   const chipStats = query.destination === "India" ? cityResultCounts("hospitals", query) : null;
-  const place = query.city ? `${query.city}, India` : "India";
-  const directoryHome = !query.city && !query.specialty && !query.procedure;
-  const heading = directoryHome
-    ? "Find the Right Hospital for Your Treatment"
-    : query.procedure
-      ? `Hospitals for ${query.procedure} in ${place}`
-      : query.specialty
-        ? `${query.specialty} hospitals in ${place}`
-        : "Hospitals in India";
-  const lede = directoryHome
-    ? "Explore hospitals by country, city, specialty, and treatment, and compare facilities to find options that match your medical needs."
-    : "JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house appears once. Ten campuses per page — specialties sit on the card.";
+  const copy = directoryIntro("hospitals", query, locale);
 
   return (
     <>
@@ -48,16 +39,16 @@ export async function HospitalsDirectory({
         data={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          name: heading,
+          name: copy.heading,
           description:
             "Partner campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. One card per house, with specialties on the campus.",
         }}
       />
       <JsonLd data={faqJsonLd(faqs)} />
       <PageIntro
-        eyebrow="India campuses"
-        title={heading}
-        lede={lede}
+        eyebrow={copy.eyebrow}
+        title={copy.heading}
+        lede={copy.lede}
       >
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
@@ -66,17 +57,20 @@ export async function HospitalsDirectory({
             query={query}
             chipStats={chipStats}
             resultCount={paging.total}
-            resultLabel={paging.total === 1 ? "hospital" : "hospitals"}
+            resultLabel={resultLabel("hospitals", paging.total, locale)}
           />
         </Suspense>
       </PageIntro>
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:px-8 md:py-12">
         {paging.total === 0 ? (
-          <p className="text-muted-foreground">No hospitals match these filters.</p>
+          <p className="text-muted-foreground">{directoryEmpty("hospitals", query, locale)}</p>
         ) : (
           <>
             <p className="text-sm text-muted-foreground">
-              Showing {paging.from}–{paging.to} of {paging.total}
+              {messages["dir.showing"]
+                .replace("{from}", String(paging.from))
+                .replace("{to}", String(paging.to))
+                .replace("{total}", String(paging.total))}
             </p>
             <ul className="hosp-list mt-6">
               {paging.items.map((h) => (
@@ -90,17 +84,14 @@ export async function HospitalsDirectory({
               totalPages={paging.totalPages}
               query={query}
               basePath="/hospitals"
-              label="Hospital list pages"
+              label={messages["dir.hospitals.pagerLabel"]}
             />
           </>
         )}
       </section>
       <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-5 md:px-8 md:pb-16">
-        <h2 className="font-heading text-3xl">Frequently Asked Questions About Choosing a Hospital</h2>
-        <p className="prose-gaf mt-3">
-          Learn how GAF Healthcare helps international patients explore, compare, and choose hospitals
-          for treatment.
-        </p>
+        <h2 className="font-heading text-3xl">{messages["dir.hospitals.faqTitle"]}</h2>
+        <p className="prose-gaf mt-3">{messages["dir.hospitals.faqLede"]}</p>
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {faqs.map((row) => (
             <details key={row.q} className="group rounded-2xl border border-border bg-card px-5 py-4">

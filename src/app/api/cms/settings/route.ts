@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { requireCmsSession } from "@/lib/cms/auth";
+import { editionFromRequest } from "@/lib/cms/edition";
 import { loadCms, saveCms } from "@/lib/cms/store";
 import type { CmsSettings } from "@/lib/cms/types";
 
@@ -12,9 +13,10 @@ export async function PUT(request: Request) {
   const patch = (await request.json().catch(() => null)) as Partial<CmsSettings> | null;
   if (!patch) return NextResponse.json({ error: "Invalid body" }, { status: 400 });
   try {
-    const store = loadCms();
+    const edition = editionFromRequest(request);
+    const store = loadCms(edition);
     store.settings = { ...store.settings, ...patch };
-    saveCms(store);
+    saveCms(store, edition);
     return NextResponse.json(store.settings);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not save settings.";

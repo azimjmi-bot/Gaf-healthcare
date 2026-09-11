@@ -1798,6 +1798,22 @@ img.dhero__art {
   color: #9db4b8;
 }
 
+.cms-edition {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.25rem;
+  margin-top: 1rem;
+}
+
+.cms-edition button {
+  justify-content: center;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.cms-edition button.is-active {
+  background: rgba(255, 255, 255, 0.14);
+}
+
 .cms-nav nav {
   margin-top: 1.5rem;
   display: grid;

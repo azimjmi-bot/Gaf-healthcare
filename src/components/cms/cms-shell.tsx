@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
+import { CMS_EDITION_COOKIE, CMS_EDITION_LABELS, CMS_EDITIONS, parseCmsEdition, type CmsEdition } from "@/lib/cms/edition";
 import {
   Building2,
   FileText,
@@ -25,9 +27,30 @@ const NAV = [
   { href: "/cms/settings", label: "Settings", icon: Settings },
 ];
 
+function readEditionCookie(): CmsEdition {
+  if (typeof document === "undefined") return "en";
+  const match = document.cookie.match(new RegExp(`(?:^|;\\s*)${CMS_EDITION_COOKIE}=([^;]+)`));
+  return parseCmsEdition(match?.[1] ? decodeURIComponent(match[1]) : undefined);
+}
+
 export function CmsShell({ children }: { children: React.ReactNode }) {
   const path = usePathname();
   const router = useRouter();
+  const [edition, setEdition] = useState<CmsEdition>("en");
+
+  useEffect(() => {
+    setEdition(readEditionCookie());
+  }, []);
+
+  async function switchEdition(next: CmsEdition) {
+    setEdition(next);
+    await fetch("/api/cms/edition", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ edition: next }),
+    });
+    router.refresh();
+  }
 
   if (path === "/cms/login") {
     return <>{children}</>;
@@ -43,7 +66,19 @@ export function CmsShell({ children }: { children: React.ReactNode }) {
     <div className="cms-shell">
       <aside className="cms-nav">
         <p className="cms-nav__brand">GAF Healthcare desk</p>
-        <p className="cms-nav__sub">Content desk</p>
+        <p className="cms-nav__sub">{edition === "ar" ? "Arabic edition" : "English edition"}</p>
+        <div className="cms-edition" role="group" aria-label="CMS language edition">
+          {CMS_EDITIONS.map((code) => (
+            <button
+              key={code}
+              type="button"
+              className={edition === code ? "is-active" : undefined}
+              onClick={() => switchEdition(code)}
+            >
+              {CMS_EDITION_LABELS[code]}
+            </button>
+          ))}
+        </div>
         <nav>
           {NAV.map((item) => {
             const Icon = item.icon;

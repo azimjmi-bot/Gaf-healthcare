@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { requireCmsSession } from "@/lib/cms/auth";
+import { editionFromRequest } from "@/lib/cms/edition";
 import { loadCatalogCms, saveCatalogCms } from "@/lib/cms/catalog-store";
 import { pickDoctorPatch, pickHospitalPatch, type DoctorPatch, type HospitalPatch, type TreatmentPatch } from "@/lib/cms/catalog-types";
 import { catalogDoctors, type Doctor } from "@/lib/doctors";
@@ -13,7 +14,7 @@ function asEntity(value: string): Entity | null {
   return null;
 }
 
-export async function GET(_req: Request, ctx: { params: Promise<{ entity: string; slug: string }> }) {
+export async function GET(request: Request, ctx: { params: Promise<{ entity: string; slug: string }> }) {
   try {
     await requireCmsSession();
   } catch {
@@ -22,7 +23,7 @@ export async function GET(_req: Request, ctx: { params: Promise<{ entity: string
   const { entity: raw, slug } = await ctx.params;
   const entity = asEntity(raw);
   if (!entity) return NextResponse.json({ error: "Unknown catalog." }, { status: 400 });
-  const cms = loadCatalogCms();
+  const cms = loadCatalogCms(editionFromRequest(request));
   if (entity === "doctors") {
     const base =
       catalogDoctors.find((d) => d.slug === slug) ||
@@ -70,7 +71,8 @@ export async function PUT(request: Request, ctx: { params: Promise<{ entity: str
   const patch = (await request.json().catch(() => null)) as Record<string, unknown> | null;
   if (!entity || !patch) return NextResponse.json({ error: "Invalid request." }, { status: 400 });
   try {
-    const cms = loadCatalogCms();
+    const edition = editionFromRequest(request);
+    const cms = loadCatalogCms(edition);
     if (entity === "doctors") {
       const prevDoctor = pickDoctorPatch(cms.doctorOverrides[slug]);
       const next: DoctorPatch = pickDoctorPatch({
@@ -90,7 +92,7 @@ export async function PUT(request: Request, ctx: { params: Promise<{ entity: str
         const existing = cms.doctorsAdded[addedIndex] as Doctor;
         cms.doctorsAdded[addedIndex] = { ...existing, ...next, slug: existing.slug };
       }
-      saveCatalogCms(cms);
+      saveCatalogCms(cms, edition);
       return NextResponse.json({ ok: true, slug, ...next });
     }
     if (entity === "hospitals") {
@@ -109,7 +111,7 @@ export async function PUT(request: Request, ctx: { params: Promise<{ entity: str
         const existing = cms.hospitalsAdded[addedIndex] as Hospital;
         cms.hospitalsAdded[addedIndex] = { ...existing, ...next, slug: existing.slug };
       }
-      saveCatalogCms(cms);
+      saveCatalogCms(cms, edition);
       return NextResponse.json({ ok: true, slug, ...next });
     }
     const includes = Array.isArray(patch.includes)
@@ -143,7 +145,7 @@ export async function PUT(request: Request, ctx: { params: Promise<{ entity: str
     if (addedIndex >= 0) {
       cms.treatmentsAdded[addedIndex] = { ...(cms.treatmentsAdded[addedIndex] as object), ...next };
     }
-    saveCatalogCms(cms);
+    saveCatalogCms(cms, edition);
     return NextResponse.json({ ok: true, slug, ...next });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not save.";
@@ -151,7 +153,7 @@ export async function PUT(request: Request, ctx: { params: Promise<{ entity: str
   }
 }
 
-export async function DELETE(_req: Request, ctx: { params: Promise<{ entity: string; slug: string }> }) {
+export async function DELETE(request: Request, ctx: { params: Promise<{ entity: string; slug: string }> }) {
   try {
     await requireCmsSession();
   } catch {
@@ -161,7 +163,8 @@ export async function DELETE(_req: Request, ctx: { params: Promise<{ entity: str
   const entity = asEntity(raw);
   if (!entity) return NextResponse.json({ error: "Unknown catalog." }, { status: 400 });
   try {
-    const cms = loadCatalogCms();
+    const edition = editionFromRequest(request);
+    const cms = loadCatalogCms(edition);
     const key =
       entity === "doctors" ? "doctorsDeleted" : entity === "hospitals" ? "hospitalsDeleted" : "treatmentsDeleted";
     const addedKey =
@@ -176,7 +179,7 @@ export async function DELETE(_req: Request, ctx: { params: Promise<{ entity: str
     } else if (!cms[key].includes(slug)) {
       cms[key].push(slug);
     }
-    saveCatalogCms(cms);
+    saveCatalogCms(cms, edition);
     return NextResponse.json({ ok: true });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not delete.";

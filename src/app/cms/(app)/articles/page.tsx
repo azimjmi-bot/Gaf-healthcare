@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { CmsArticleTable } from "@/components/cms/cms-article-table";
+import { editionFromCookies } from "@/lib/cms/edition-server";
 import { loadCms } from "@/lib/cms/store";
 
 export const dynamic = "force-dynamic";
 
-export default function CmsArticlesPage() {
-  const store = loadCms();
+export default async function CmsArticlesPage() {
+  const store = loadCms(await editionFromCookies());
   return (
     <div className="cms-page">
       <header className="cms-page__head">

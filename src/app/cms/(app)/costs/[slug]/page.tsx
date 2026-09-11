@@ -2,12 +2,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CmsTreatmentEditor } from "@/components/cms/cms-treatment-editor";
 import { getAdminTreatment } from "@/lib/cms/catalog-admin";
+import { editionFromCookies } from "@/lib/cms/edition-server";
 
 export const dynamic = "force-dynamic";
 
 export default async function CmsEditCostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const treatment = getAdminTreatment(slug);
+  const treatment = getAdminTreatment(slug, await editionFromCookies());
   if (!treatment) notFound();
   return (
     <div className="cms-page">

@@ -2,12 +2,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CmsHospitalEditor } from "@/components/cms/cms-hospital-editor";
 import { getAdminHospital } from "@/lib/cms/catalog-admin";
+import { editionFromCookies } from "@/lib/cms/edition-server";
 
 export const dynamic = "force-dynamic";
 
 export default async function CmsEditHospitalPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const hospital = getAdminHospital(slug);
+  const hospital = getAdminHospital(slug, await editionFromCookies());
   if (!hospital) notFound();
   return (
     <div className="cms-page">

@@ -18,6 +18,8 @@ import {
 } from "@/lib/pretty-catalog-path";
 import { useLocale, useT } from "@/components/locale-provider";
 import { localePath, stripLocalePrefix } from "@/lib/i18n/path";
+import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
+import { localeDir } from "@/lib/i18n/languages";
 import {
   Select,
   SelectContent,
@@ -95,6 +97,7 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, query, chipS
             placeholder={t("filter.destinations")}
             options={catalogDestinations}
             allLabel={t("filter.destinations")}
+            locale={locale}
           />
           <FilterSelect
             value={city}
@@ -102,6 +105,7 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, query, chipS
             placeholder={t("filter.cities")}
             options={cities}
             allLabel={t("filter.cities")}
+            locale={locale}
           />
           <FilterSelect
             value={specialty}
@@ -109,6 +113,7 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, query, chipS
             placeholder={t("filter.specialities")}
             options={catalogSpecialties}
             allLabel={t("filter.specialities")}
+            locale={locale}
           />
           <FilterSelect
             value={procedure}
@@ -116,6 +121,7 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, query, chipS
             placeholder={t("filter.procedures")}
             options={procedureOptions}
             allLabel={t("filter.procedures")}
+            locale={locale}
           />
         </div>
         {chipStats ? (
@@ -123,14 +129,14 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, query, chipS
             <CityChip
               active={city === ALL}
               onClick={() => setFilter("city", ALL)}
-              label={`All Cities (${chipStats.total})`}
+              label={`${t("filter.allCities")} (${chipStats.total})`}
             />
             {citiesForDestination("India").map((name) => (
               <CityChip
                 key={name}
                 active={city === name}
                 onClick={() => setFilter("city", name)}
-                label={`${name} (${chipStats.counts[name] ?? 0})`}
+                label={`${taxonomyLabel(name, locale)} (${chipStats.counts[name] ?? 0})`}
               />
             ))}
           </div>
@@ -173,22 +179,26 @@ function FilterSelect({
   placeholder,
   options,
   allLabel,
+  locale,
 }: {
   value: string;
   onChange: (value: string) => void;
   placeholder: string;
   options: string[];
   allLabel: string;
+  locale: ReturnType<typeof useLocale>;
 }) {
+  const dir = localeDir(locale);
   return (
-    <Select value={value} onValueChange={onChange}>
+    <Select value={value} onValueChange={onChange} dir={dir}>
       <SelectTrigger
         size="default"
+        dir={dir}
         className="h-11 w-full rounded-lg border-border bg-white px-3 text-sm text-foreground shadow-none"
       >
         <SelectValue placeholder={placeholder} />
       </SelectTrigger>
-      <SelectContent position="popper" align="start" className="rounded-xl p-1 shadow-lg">
+      <SelectContent position="popper" align="start" dir={dir} className="rounded-xl p-1 shadow-lg">
         <SelectItem
           value={ALL}
           className="rounded-md py-2 pl-2.5 pr-8 focus:bg-primary focus:text-primary-foreground"
@@ -201,7 +211,7 @@ function FilterSelect({
             value={opt}
             className="rounded-md py-2 pl-2.5 pr-8 focus:bg-primary focus:text-primary-foreground"
           >
-            {opt}
+            {taxonomyLabel(opt, locale)}
           </SelectItem>
         ))}
       </SelectContent>

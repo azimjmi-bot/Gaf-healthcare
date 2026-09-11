@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { requireCmsSession } from "@/lib/cms/auth";
+import { editionFromRequest } from "@/lib/cms/edition";
 import { loadCms, saveCms } from "@/lib/cms/store";
 
 export async function PUT(request: Request) {
@@ -13,10 +14,11 @@ export async function PUT(request: Request) {
     tags?: string[];
   } | null;
   try {
-    const store = loadCms();
+    const edition = editionFromRequest(request);
+    const store = loadCms(edition);
     if (body?.categories) store.categories = body.categories.filter(Boolean);
     if (body?.tags) store.tags = body.tags.filter(Boolean);
-    saveCms(store);
+    saveCms(store, edition);
     return NextResponse.json({ categories: store.categories, tags: store.tags });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not save taxonomies.";

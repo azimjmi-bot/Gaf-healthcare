@@ -1,4 +1,7 @@
+"use client";
+
 import { LocaleLink as Link } from "@/components/locale-link";
+import { useT } from "@/components/locale-provider";
 import type { CatalogQuery } from "@/lib/catalog-options";
 import { prettyCatalogPath, type CatalogBasePath } from "@/lib/pretty-catalog-path";
 
@@ -23,6 +26,7 @@ export function CatalogPager({
   basePath: CatalogBasePath;
   label: string;
 }) {
+  const t = useT();
   if (totalPages <= 1) return null;
 
   const facets: CatalogQuery = query ?? {
@@ -43,10 +47,10 @@ export function CatalogPager({
     <nav className="hosp-pager" aria-label={label}>
       {page > 1 ? (
         <Link href={hrefFor(page - 1)} className="hosp-pager__btn">
-          Previous
+          {t("pager.previous")}
         </Link>
       ) : (
-        <span className="hosp-pager__btn is-disabled">Previous</span>
+        <span className="hosp-pager__btn is-disabled">{t("pager.previous")}</span>
       )}
       <ol className="hosp-pager__pages">
         {nums.map((n, i) => {
@@ -70,10 +74,10 @@ export function CatalogPager({
       </ol>
       {page < totalPages ? (
         <Link href={hrefFor(page + 1)} className="hosp-pager__btn hosp-pager__btn--next">
-          Next
+          {t("pager.next")}
         </Link>
       ) : (
-        <span className="hosp-pager__btn is-disabled">Next</span>
+        <span className="hosp-pager__btn is-disabled">{t("pager.next")}</span>
       )}
     </nav>
   );

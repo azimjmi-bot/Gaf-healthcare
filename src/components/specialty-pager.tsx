@@ -1,6 +1,10 @@
+"use client";
+
 import { LocaleLink as Link } from "@/components/locale-link";
+import { useLocale, useT } from "@/components/locale-provider";
 import type { CatalogQuery } from "@/lib/catalog-options";
 import { costsSpecialtyPath } from "@/lib/catalog-links";
+import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 
 function visiblePages(current: number, total: number) {
   if (total <= 7) return Array.from({ length: total }, (_, i) => i + 1);
@@ -17,6 +21,8 @@ export function SpecialtyPager({
   specialties: { name: string }[];
   currentIndex: number;
 }) {
+  const t = useT();
+  const locale = useLocale();
   const total = specialties.length;
   if (total <= 1) return null;
 
@@ -35,13 +41,13 @@ export function SpecialtyPager({
   const nums = visiblePages(page, total);
 
   return (
-    <nav className="hosp-pager" aria-label="Specialty cost pages">
+    <nav className="hosp-pager" aria-label={t("dir.costs.pagerLabel")}>
       {prev ? (
-        <Link href={hrefFor(prev.name)} className="hosp-pager__btn" title={prev.name}>
-          Previous
+        <Link href={hrefFor(prev.name)} className="hosp-pager__btn" title={taxonomyLabel(prev.name, locale)}>
+          {t("pager.previous")}
         </Link>
       ) : (
-        <span className="hosp-pager__btn is-disabled">Previous</span>
+        <span className="hosp-pager__btn is-disabled">{t("pager.previous")}</span>
       )}
       <ol className="hosp-pager__pages">
         {nums.map((n, i) => {
@@ -52,11 +58,11 @@ export function SpecialtyPager({
             <li key={n} className="flex items-center gap-1">
               {gap ? <span className="hosp-pager__ellipsis">…</span> : null}
               {n === page ? (
-                <span className="hosp-pager__num is-current" aria-current="page" title={spec?.name}>
+                <span className="hosp-pager__num is-current" aria-current="page" title={taxonomyLabel(spec?.name, locale)}>
                   {n}
                 </span>
               ) : (
-                <Link href={hrefFor(spec.name)} className="hosp-pager__num" title={spec.name}>
+                <Link href={hrefFor(spec.name)} className="hosp-pager__num" title={taxonomyLabel(spec.name, locale)}>
                   {n}
                 </Link>
               )}
@@ -65,11 +71,11 @@ export function SpecialtyPager({
         })}
       </ol>
       {next ? (
-        <Link href={hrefFor(next.name)} className="hosp-pager__btn hosp-pager__btn--next" title={next.name}>
-          Next
+        <Link href={hrefFor(next.name)} className="hosp-pager__btn hosp-pager__btn--next" title={taxonomyLabel(next.name, locale)}>
+          {t("pager.next")}
         </Link>
       ) : (
-        <span className="hosp-pager__btn is-disabled">Next</span>
+        <span className="hosp-pager__btn is-disabled">{t("pager.next")}</span>
       )}
     </nav>
   );

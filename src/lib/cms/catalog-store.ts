@@ -1,6 +1,7 @@
 import { mkdirSync, readFileSync, renameSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import "server-only";
+import type { CmsEdition } from "@/lib/cms/edition";
 import {
   emptyCatalogCms,
   pickDoctorPatch,
@@ -12,7 +13,11 @@ import {
   type HospitalPatch,
 } from "@/lib/cms/catalog-types";
 
-const FILE = join(process.cwd(), "content/catalog-cms.json");
+function catalogFile(edition: CmsEdition = "en") {
+  return edition === "ar"
+    ? join(process.cwd(), "content/ar/catalog-cms.json")
+    : join(process.cwd(), "content/catalog-cms.json");
+}
 
 function mapHospitalOverrides(map: Record<string, HospitalPatch> | undefined) {
   const next: Record<string, HospitalPatch> = {};
@@ -30,32 +35,34 @@ function mapDoctorOverrides(map: Record<string, DoctorPatch> | undefined) {
   return next;
 }
 
-let cmsCache: { at: number; data: CatalogCms } | undefined;
+const cmsCache = new Map<CmsEdition, { at: number; data: CatalogCms }>();
 let catalogGeneration = 0;
 
-export function loadCatalogCms(): CatalogCms {
+export function loadCatalogCms(edition: CmsEdition = "en"): CatalogCms {
   const now = Date.now();
-  if (cmsCache && now - cmsCache.at < 1000) return cmsCache.data;
+  const cached = cmsCache.get(edition);
+  if (cached && now - cached.at < 1000) return cached.data;
   try {
-    const data = JSON.parse(readFileSync(FILE, "utf8")) as CatalogCms;
+    const data = JSON.parse(readFileSync(catalogFile(edition), "utf8")) as CatalogCms;
     const cms = { ...emptyCatalogCms(), ...data };
     cms.hospitalOverrides = mapHospitalOverrides(cms.hospitalOverrides);
     cms.doctorOverrides = mapDoctorOverrides(cms.doctorOverrides);
-    cmsCache = { at: now, data: cms };
+    cmsCache.set(edition, { at: now, data: cms });
     return cms;
   } catch {
     const empty = emptyCatalogCms();
-    cmsCache = { at: now, data: empty };
+    cmsCache.set(edition, { at: now, data: empty });
     return empty;
   }
 }
 
-export function saveCatalogCms(store: CatalogCms) {
-  mkdirSync(dirname(FILE), { recursive: true });
-  const tmp = `${FILE}.tmp`;
+export function saveCatalogCms(store: CatalogCms, edition: CmsEdition = "en") {
+  const file = catalogFile(edition);
+  mkdirSync(dirname(file), { recursive: true });
+  const tmp = `${file}.tmp`;
   writeFileSync(tmp, `${JSON.stringify(store, null, 2)}\n`);
-  renameSync(tmp, FILE);
-  cmsCache = { at: Date.now(), data: store };
+  renameSync(tmp, file);
+  cmsCache.set(edition, { at: Date.now(), data: store });
   catalogGeneration += 1;
   return store;
 }

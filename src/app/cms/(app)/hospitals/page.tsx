@@ -1,10 +1,12 @@
 import Link from "next/link";
 import { CmsCatalogTable } from "@/components/cms/cms-catalog-table";
 import { hospitalAdminRows } from "@/lib/cms/catalog-admin";
+import { editionFromCookies } from "@/lib/cms/edition-server";
 
 export const dynamic = "force-dynamic";
 
-export default function CmsHospitalsPage() {
+export default async function CmsHospitalsPage() {
+  const edition = await editionFromCookies();
   return (
     <div className="cms-page">
       <header className="cms-page__head">
@@ -17,7 +19,7 @@ export default function CmsHospitalsPage() {
           New hospital
         </Link>
       </header>
-      <CmsCatalogTable entity="hospitals" rows={hospitalAdminRows()} />
+      <CmsCatalogTable entity="hospitals" rows={hospitalAdminRows(edition)} />
     </div>
   );
 }

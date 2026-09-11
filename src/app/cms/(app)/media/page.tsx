@@ -1,10 +1,11 @@
 import { CmsMediaLibrary } from "@/components/cms/cms-media-library";
+import { editionFromCookies } from "@/lib/cms/edition-server";
 import { loadCms } from "@/lib/cms/store";
 
 export const dynamic = "force-dynamic";
 
-export default function CmsMediaPage() {
-  const store = loadCms();
+export default async function CmsMediaPage() {
+  const store = loadCms(await editionFromCookies());
   return (
     <div className="cms-page">
       <header className="cms-page__head">
