@@ -49,7 +49,7 @@ export function formatPlace(query: CatalogQuery, locale: AppLocale) {
 }
 
 export function directoryHome(query: CatalogQuery) {
-  return !query.city && !query.specialty && !query.procedure;
+  return !query.destination && !query.city && !query.specialty && !query.procedure;
 }
 
 export function directoryIntro(kind: DirectoryKind, query: CatalogQuery, locale: AppLocale) {
