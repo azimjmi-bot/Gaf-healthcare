@@ -20,12 +20,10 @@ export const asdClosure: CostArticle = {
   introduction: [
     "An atrial septal defect is an opening in the wall between the right and left atria, the heart's upper chambers. Some small openings narrow or close without treatment. Others create enough extra flow to enlarge the right side of the heart, affect exercise, contribute to rhythm problems later, or require closure for another clinical reason. That decision belongs to a paediatric cardiologist or congenital-heart team after imaging—not to a cost page.",
     "The phrase ASD closure can describe two different hospital pathways. Many secundum ASDs with adequate tissue rims can be sealed through a catheter with a closure device. Primum, sinus venosus, unusually positioned or complex defects often need open surgical repair, especially when another structure must be corrected. A fair quotation must say which pathway it prices.",
-    "GAF Healthcare's current India planning band is [INDIA_COST], compared with typical US self-pay of [US_COST], with [STAY] held in the catalog for an international family. That band is intentionally broad because device cost, operating-room and bypass use, paediatric intensive care, repeat imaging and associated repair are not interchangeable. It is not a final hospital quotation.",
   ],
   answer: [
     "ASD closure in India is typically planned at [INDIA_COST]. Catheter device closure often takes about one to three hours and may need observation rather than surgical intensive care; open repair often takes about three to five hours and may use cardiopulmonary bypass and a paediatric cardiac ICU. The current catalog stay is [STAY], although the written plan may be shorter for an uncomplicated catheter pathway.",
     "Planning range does not mean final quotation. The estimate changes with ASD type and size, tissue rims, the child's age and weight, pulmonary pressures, associated anomalous veins or valve findings, device choice, investigations, hospital and extra nights. Echocardiography—and sometimes transoesophageal echo, CT or cardiac catheterization—must be reviewed before a team can choose an approach.",
-    "Early recovery is usually different after catheter closure and open surgery. A child may mobilise quickly after a device procedure but still needs puncture-site, rhythm and echo review. Sternotomy recovery takes longer and activity restrictions are individualized. International families should not choose a return flight until the treating team has examined the child.",
   ],
   indiaCost: [
     "The [INDIA_COST] ASD closure cost in India is a typical planning range for the closure episode as quoted. At the lower end, a straightforward catheter pathway may include the interventional cardiologist, catheter laboratory, anaesthesia or sedation, a standard closure device, routine imaging and a short admission. At the upper end, the letter may describe open repair, bypass, a paediatric cardiac ICU, a longer room stay, or associated surgical work. Those are not upgrades of one product; they are different clinical paths.",
@@ -204,44 +202,8 @@ export const asdClosure: CostArticle = {
       },
     ],
   },
-  topicSections: [
-    {
-      id: "asd-types",
-      heading: "Which types of ASD can require different treatment?",
-      paragraphs: [
-        "Secundum ASD is the common central atrial opening and is the type most often assessed for catheter device closure. Device suitability still depends on size, shape, surrounding tissue rims, nearby valves and pulmonary veins. A report saying 'secundum' does not by itself guarantee catheter closure.",
-        "Primum ASD sits lower in the septum and is associated with atrioventricular valve anatomy; sinus venosus ASD sits near the vena cava and may accompany anomalous pulmonary venous drainage. These patterns commonly require surgical evaluation because closing only the opening would not address the whole anatomy.",
-      ],
-      table: {
-        caption: "General ASD types and the questions they raise",
-        headers: ["ASD pattern", "General treatment question", "Cost consideration"],
-        rows: [
-          ["Secundum", "Are size and tissue rims suitable for a device?", "Device, imaging and catheter-lab terms"],
-          ["Primum", "Does valve anatomy require surgical repair?", "Operating room, bypass, ICU and possible valve work"],
-          ["Sinus venosus", "Are pulmonary veins connected abnormally?", "Surgical repair may include rerouting veins"],
-          ["Multiple openings", "Can one device close the relevant fenestrations?", "Additional imaging or more than one device may be considered"],
-        ],
-        note:
-          "This table describes general questions, not a recommendation. The treating congenital-heart team determines the child's ASD anatomy and approach.",
-      },
-    },
-    {
-      id: "evaluation",
-      heading: "How do doctors evaluate a child before ASD closure?",
-      paragraphs: [
-        "The review begins with symptoms, growth, examination, oxygen saturation, ECG and echocardiography. The echo should describe the defect's location, dimensions, shunt effect, right-heart size, valve findings, pulmonary pressure estimate and pulmonary venous connections. Sending the actual images is more useful than sending only a one-line report.",
-        "Transoesophageal echocardiography, CT, cardiac MRI or catheterization may be used when standard echo does not answer anatomy or pressure questions. These tests are not routine for every child. They become potential additional expenses only when the clinical team needs them.",
-      ],
-    },
-    {
-      id: "needed",
-      heading: "When may ASD closure be recommended?",
-      paragraphs: [
-        "Closure may be considered when an ASD produces a significant left-to-right shunt, enlarges the right side of the heart, causes symptoms, contributes to complications, or is judged likely to create future harm. The indication and timing depend on defect type, pulmonary vascular status, age, growth and associated findings.",
-        "Not every ASD needs closure. Some small defects in infants narrow or close, and some remain clinically insignificant. No medicine makes an ASD close. A cost page should never turn a diagnosis label into an automatic operation.",
-      ],
-    },
-  ],
+  overviewHeading: "What Is ASD Closure?",
+  whoHeading: "When Is ASD Closure Recommended?",
   overview: {
     what: [
       "ASD closure seals an atrial septal defect—an opening between the heart's two upper chambers. The goal is to stop an inappropriate flow of blood across the atrial septum when a congenital-heart team judges that closure is indicated.",
@@ -287,39 +249,6 @@ export const asdClosure: CostArticle = {
       "At home or in a hotel, activity advice depends on the approach. A catheter entry site needs observation and vigorous activity may be limited briefly. A sternotomy generally requires several weeks of protected recovery; families should follow the surgical team's lifting, school, bathing and wound instructions.",
       "Seek local medical assessment for breathing difficulty, unusual colour change, fainting, persistent fever, worsening wound or puncture-site redness, repeated vomiting, reduced feeding, unusual lethargy or anything the discharge team identifies. International patients need a written contact plan and a local clinician after returning home.",
       "Congenital-heart follow-up remains important after closure. The team may arrange ECG and echocardiography, antiplatelet medicine after a device, and advice about dental care or endocarditis precautions where relevant. A successful discharge is not a promise that no follow-up is needed.",
-    ],
-  },
-  fullPathway: {
-    intro: [
-      "The hospital episode is only one part of the family's budget. Start with the written ASD closure estimate, then add investigations that are not bundled, patient and parent flights, visa costs, accommodation before and after admission, local transport, meals, medicine and contingency for extra nights.",
-      "Do not buy the shortest return ticket. The child's approach, repeat echo and discharge examination decide when the family can leave the city. Open repair and catheter closure usually need different hotel and activity plans.",
-    ],
-    stages: [
-      {
-        label: "Records review and remote consultation",
-        detail:
-          "Echo images, report, ECG, symptoms, growth and prior records. The first useful answer is device assessment versus surgical review—not a guaranteed price.",
-      },
-      {
-        label: "Pre-procedure investigations",
-        detail:
-          "Repeat echo, blood work and anaesthesia review; transoesophageal echo, CT or catheter measurements only when indicated. Confirm which tests are in the estimate.",
-      },
-      {
-        label: "ASD closure episode",
-        detail:
-          "The [INDIA_COST] planning band as quoted, including the stated catheter or surgical pathway, device or patch terms, professional fees and included nights.",
-      },
-      {
-        label: "Recovery near the hospital",
-        detail:
-          "Hotel or apartment for the child and parent until the treating team clears travel. Open repair may require a longer protected period than device closure.",
-      },
-      {
-        label: "Return-home follow-up",
-        detail:
-          "Discharge summary, medication plan, wound or puncture-site advice, echo schedule and a named local paediatric cardiology contact.",
-      },
     ],
   },
   journey: [
@@ -460,15 +389,6 @@ export const asdClosure: CostArticle = {
     "Lower pricing does not prove that India is right for every child. A stable child with funded care and an established congenital team at home may be better served locally. A newborn with urgent physiology may be unsafe to fly. The remote review must answer medical suitability before travel planning begins.",
     "GAF does not call any doctor or hospital universally best. The relevant comparison is whether the named clinician treats the child's ASD pattern, whether the proposed approach is clinically appropriate, whether paediatric anaesthesia and escalation support are available, and whether the quotation is readable.",
   ],
-  whyCostDiffers: [
-    "The [INDIA_COST] figure is a national planning band. The final estimate is a hospital document tied to a named child, named approach, named clinician, exact campus, device or patch assumption, room category and included nights.",
-    "If the final amount is higher, the reason should be traceable: different approach, additional imaging, larger or second device, associated repair, intensive care, complication or extended stay. Ask the hospital to update the itemised letter rather than accepting an unexplained total.",
-  ],
-  planningClose: [
-    "ASD closure in India is currently planned at [INDIA_COST], with typical US self-pay of [US_COST]. The first useful decision is not city or price; it is whether the child's ASD is suitable for catheter device closure, requires surgical repair, needs more pressure assessment or does not yet need closure.",
-    "The live GAF database currently surfaces procedure-tagged doctors in Delhi NCR, Mumbai, Chennai and Hyderabad. Bengaluru has no ASD-tagged clinician in the catalog and is therefore shown as a records-first match rather than a fabricated shortlist.",
-    "Share the echocardiogram images, speak with the proposed clinician and travel only on a written plan that names the approach and package boundaries. Cost ranges are for comparison. Treatment decisions belong to the qualified congenital-heart team caring for the child.",
-  ],
   questionsToAsk: [
     "Does the team recommend observation, catheter device closure or open surgical repair, and why?",
     "What ASD type, size and tissue rims are shown on the echocardiogram?",
@@ -489,10 +409,6 @@ export const asdClosure: CostArticle = {
     {
       q: "How much does ASD closure cost in India?",
       a: "ASD closure in India is typically planned at [INDIA_COST]. This is an indicative GAF range, not a hospital quotation. Final cost depends on catheter device versus surgery, defect anatomy, implant, investigations, hospital, paediatric ICU and included stay.",
-    },
-    {
-      q: "What is an atrial septal defect?",
-      a: "An atrial septal defect is an opening between the heart's two upper chambers. It can allow extra blood to flow to the right side and lungs. Some small defects do not require closure; a congenital-heart team decides from anatomy and clinical effect.",
     },
     {
       q: "Does every child with an ASD need closure?",
@@ -525,14 +441,6 @@ export const asdClosure: CostArticle = {
     {
       q: "Are closure-device and ICU charges included in the price?",
       a: "Only if the written quotation says so. Ask for the assumed device and size, imaging, anaesthesia, monitored nights, ICU nights, room category and extra-day rates. A planning range cannot define an individual package.",
-    },
-    {
-      q: "Which Indian cities have ASD closure doctors listed on GAF?",
-      a: "Current procedure-tagged doctors appear in Delhi NCR, Mumbai, Chennai and Hyderabad. Bengaluru has no ASD-tagged clinician in the catalog and requires records-first matching. Listings can change and do not guarantee availability.",
-    },
-    {
-      q: "How should a family choose an ASD closure doctor?",
-      a: "Choose a clinician whose role matches the proposed pathway—interventional paediatric cardiology for device assessment or congenital cardiac surgery for open repair—and who reviews the images with the family. GAF cards are not rankings.",
     },
     {
       q: "Can international families arrange a remote consultation?",

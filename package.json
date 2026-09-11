@@ -9,7 +9,7 @@
     "dev": "next dev --hostname 0.0.0.0 --port 43127",
     "build": "next build --webpack",
     "start": "next start --hostname 0.0.0.0",
-    "test": "tsx --test src/lib/i18n/*.test.ts src/lib/markdown.test.ts"
+    "test": "tsx --test src/lib/i18n/*.test.ts src/lib/markdown.test.ts src/data/cost-articles/*.test.ts"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

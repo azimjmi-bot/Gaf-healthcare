@@ -127,6 +127,7 @@ export function CostArticleView({
   const allHospitals = hospitalsPath({ destination: "India", city, procedure: treatment.name });
   const doctorsHeading = doctorsToConsiderHeading(brief, city, article.cityDoctorHeading);
   const hospitalsHeading = hospitalsToConsiderHeading(brief, city, article.cityHospitalHeading);
+  const isPediatricCardiac = treatment.specialtySlug === "pediatric-cardiac-surgery";
   const consultHref = `/consult?treatment=${treatment.slug}`;
   const faqs = cityPage
     ? [...cityPage.faqs, ...article.faqs.filter((item) => !cityPage.faqs.some((faq) => faq.q === item.q))]
@@ -437,21 +438,21 @@ export function CostArticleView({
         </P>
       )}
       <InternationalComparison article={article} destinations={destinations} anyModelled={anyModelled} />
-      <P>
-        The point of this table is not that one country is better. Cost level and treatment-market
-        structure are different things. Germany and Singapore carry higher prices with mature
-        multidisciplinary process; Turkey and Thailand compete hard on packaged pricing; the United
-        States is the outlier for self-funding patients because facility, pathology and later oncology
-        care are often billed by separate entities. India&apos;s practical advantage for this pathway is
-        that surgery, pathology and the next-step oncology plan can usually be arranged in one city,
-        with the consultant named before you buy a ticket.
-      </P>
-      <H3>Which destination is right for you?</H3>
-      <P>
-        Use this only as a reading guide for the table above. It is not a medical recommendation, and it
-        does not rank countries.
-      </P>
-      <DestinationDecision />
+      {!isPediatricCardiac ? (
+        <>
+          <P>
+            The point of this table is not that one country is better. Cost level and treatment-market
+            structure are different things. Compare the named hospital, multidisciplinary support,
+            included care and follow-up pathway as carefully as the headline figure.
+          </P>
+          <H3>Which destination is right for you?</H3>
+          <P>
+            Use this only as a reading guide for the table above. It is not a medical recommendation, and it
+            does not rank countries.
+          </P>
+          <DestinationDecision />
+        </>
+      ) : null}
 
       {article.whyIndia && article.whyIndia.length > 0 ? (
         <>
@@ -547,12 +548,13 @@ export function CostArticleView({
       <p className="mt-3 text-xs text-muted-foreground">{VARIANCE_NOTE}</p>
 
       <H2 id="cities">Choosing a city for {article.shortName}</H2>
-      <P>
-        Patients usually pick the surgeon first and the city second, which is the right order. Still,
-        the city you land in decides how far you travel each day for radiotherapy, what you pay for six
-        weeks of accommodation, and how easily a companion can stay with you. Here is what genuinely
-        differs between the five cities we list.
-      </P>
+      {!isPediatricCardiac ? (
+        <P>
+          Patients usually pick the treating team first and the city second. The city still affects daily
+          travel, accommodation, companion arrangements and access to follow-up. Here is what genuinely
+          differs between the five cities we list.
+        </P>
+      ) : null}
       <Accordion type="single" collapsible className="mt-6">
         {cityRows.map((row) => (
           <AccordionItem key={row.citySlug} value={row.citySlug} id={`city-${row.citySlug}`}>

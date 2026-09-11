@@ -11,6 +11,17 @@ import { emptyParagraph, type ArticleBlock } from "@/lib/cms/types";
 /** Slugs with a coded long-form cost article. Keep in sync with `src/data/cost-articles`. */
 const LONGFORM_COST_SLUGS = new Set([
   "asd-closure-atrial-septal-defect",
+  "vsd-closure-ventricular-septal-defect",
+  "tof-repair-tetralogy-of-fallot",
+  "glenn-procedure",
+  "fontan-procedure",
+  "arterial-switch-operation",
+  "pda-closure-patent-ductus-arteriosus",
+  "norwood-procedure",
+  "coarctation-repair",
+  "avsd-repair-atrioventricular-septal-defect",
+  "tapvc-repair-total-anomalous-pulmonary-venous-connection",
+  "pediatric-heart-transplantation",
   "breast-conserving-surgery-lumpectomy",
   "breast-reconstruction",
   "colectomy",
