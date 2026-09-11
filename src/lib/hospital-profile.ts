@@ -311,18 +311,35 @@ export function fromUsd(partnerRange: string) {
 }
 
 export function doctorInitials(name: string) {
-  const parts = name.replace(/^dr\.?\s+/i, "").split(/\s+/).filter(Boolean);
+  const parts = name.replace(/^(dr\.?|د\.?)\s+/i, "").split(/\s+/).filter(Boolean);
   const first = parts[0]?.[0] ?? "V";
   const last = parts.length > 1 ? parts[parts.length - 1][0] : parts[0]?.[1] ?? "L";
   return (first + last).toUpperCase();
 }
 
+const EASTERN_DIGITS = "٠١٢٣٤٥٦٧٨٩";
+
+function westernDigits(value: string) {
+  return value.replace(/[٠-٩]/g, (ch) => String(EASTERN_DIGITS.indexOf(ch)));
+}
+
 export function yearsLabel(doctor: Doctor) {
-  const fromExp = doctor.experience.match(/(\d+)\+?\s*years/i);
+  const fromExp = westernDigits(doctor.experience).match(/(\d+)\+?\s*(years|سنة)/i);
   if (fromExp) return `${fromExp[1]}+ years`;
-  const fromYears = doctor.years.match(/(\d+)/);
+  const fromYears = westernDigits(doctor.years || "").match(/(\d+)/);
   if (fromYears) return `${fromYears[1]}+ years`;
   return doctor.experience || "";
+}
+
+export function yearsLabelLocalized(doctor: Doctor, locale: "en" | "ar" | string) {
+  const fromExp = westernDigits(doctor.experience).match(/(\d+)/);
+  const n = fromExp?.[1] || westernDigits(doctor.years || "").match(/(\d+)/)?.[1];
+  if (!n) return doctor.experience || "";
+  if (locale === "ar") {
+    const eastern = n.replace(/\d/g, (d) => EASTERN_DIGITS[Number(d)]);
+    return `${eastern}+ سنة`;
+  }
+  return `${n}+ years`;
 }
 
 export function infrastructure(hospital: Hospital) {

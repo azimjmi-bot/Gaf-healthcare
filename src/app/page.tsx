@@ -12,7 +12,9 @@ import {
   YOUTUBE_CHANNEL,
 } from "@/data/home";
 import { listPublishedPosts } from "@/lib/blogs";
-import { doctors, hospitals, treatments } from "@/lib/data";
+import { hospitals, treatments } from "@/lib/data";
+import { doctorsForLocale } from "@/lib/locale-catalog";
+import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { hospitalsPath } from "@/lib/catalog-links";
 import { localizeBlog, localizeHomeExtras, localizeMessages } from "@/lib/i18n/localize";
 import { LOCALES } from "@/lib/i18n/languages";
@@ -60,6 +62,7 @@ export default async function HomePage() {
       .slice(0, 3)
       .map((post) => localizeBlog(post, locale)),
   );
+  const doctors = doctorsForLocale(locale);
   const faculty = [
     ...doctors.filter((d) => d.featured && d.specialtySlug === "radiation-oncology").slice(0, 1),
     ...doctors.filter((d) => d.featured && d.specialtySlug === "surgical-oncology").slice(0, 1),
@@ -184,9 +187,9 @@ export default async function HomePage() {
                 />
               </span>
               <strong>{doctor.name}</strong>
-              <em>{doctor.specialty}</em>
+              <em>{taxonomyLabel(doctor.specialty, locale)}</em>
               <span>
-                {doctor.city}, {doctor.country}
+                {taxonomyLabel(doctor.city, locale)}, {taxonomyLabel(doctor.country, locale)}
               </span>
             </Link>
           ))}
@@ -211,7 +214,7 @@ export default async function HomePage() {
               </span>
               <strong>{hospital.name}</strong>
               <span>
-                {hospital.city}, {hospital.country}
+                {taxonomyLabel(hospital.city, locale)}, {taxonomyLabel(hospital.country, locale)}
               </span>
             </Link>
           ))}
@@ -232,8 +235,8 @@ export default async function HomePage() {
         <div className="home-costgrid">
           {sheets.map((row) => (
             <Link key={row.slug} href={`/costs/${row.slug}`} className="home-cost">
-              <p>{row.category}</p>
-              <strong>{row.name}</strong>
+              <p>{taxonomyLabel(row.category, locale)}</p>
+              <strong>{taxonomyLabel(row.name, locale)}</strong>
               <em>{startingPrice(row.partnerRange)}</em>
               <span>{row.partnerRange} {t["home.typicalPackage"]}</span>
             </Link>

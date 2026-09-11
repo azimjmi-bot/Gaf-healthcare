@@ -7,6 +7,8 @@ import { COST_FAQS, DOCTOR_FAQS, HOSPITAL_FAQS } from "@/lib/seo";
 import type { Article } from "@/lib/cms/types";
 import type { CostArticle } from "@/data/cost-articles/types";
 import { getCostArticle } from "@/data/cost-articles";
+import { COST_FAQS_AR, DOCTOR_FAQS_AR, HOSPITAL_FAQS_AR } from "@/lib/i18n/faqs-ar";
+import { getDoctorForLocale } from "@/lib/locale-catalog";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
@@ -15,8 +17,9 @@ export async function localizeMessages(locale: AppLocale) {
   return uiCatalogFor(locale);
 }
 
-export async function localizeDoctor(doctor: Doctor, _locale: AppLocale) {
-  return doctor;
+export async function localizeDoctor(doctor: Doctor, locale: AppLocale) {
+  if (locale !== "ar") return doctor;
+  return getDoctorForLocale(doctor.slug, locale) ?? doctor;
 }
 
 export async function localizeHospital(hospital: Hospital, _locale: AppLocale) {
@@ -47,7 +50,10 @@ export async function localizeBlog(post: Article, locale: AppLocale) {
   };
 }
 
-export async function localizeFaqs(kind: "doctors" | "hospitals" | "costs", _locale: AppLocale) {
+export async function localizeFaqs(kind: "doctors" | "hospitals" | "costs", locale: AppLocale) {
+  if (locale === "ar") {
+    return kind === "doctors" ? DOCTOR_FAQS_AR : kind === "hospitals" ? HOSPITAL_FAQS_AR : COST_FAQS_AR;
+  }
   return kind === "doctors" ? DOCTOR_FAQS : kind === "hospitals" ? HOSPITAL_FAQS : COST_FAQS;
 }
 

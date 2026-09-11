@@ -2,6 +2,7 @@ import { LocaleLink as Link } from "@/components/locale-link";
 import { DoctorCard } from "@/components/doctor-card";
 import { CtaBand } from "@/components/page-shell";
 import { loadHospitalCampus, requireHospitalCampus } from "@/lib/hospital-campus";
+import { getRequestLocale } from "@/lib/i18n/request";
 import { SITE_URL } from "@/lib/seo";
 import type { Metadata } from "next";
 
@@ -14,7 +15,8 @@ export async function hospitalDoctorsMetadata(slug: string): Promise<Metadata> {
 }
 
 export async function HospitalDoctors({ slug }: { slug: string }) {
-  const { hospital, faculty, groups } = requireHospitalCampus(slug);
+  const locale = await getRequestLocale();
+  const { hospital, faculty, groups } = requireHospitalCampus(slug, locale);
   const facultyGroups = groups.filter((g) => g.doctors.length > 0);
 
   return (

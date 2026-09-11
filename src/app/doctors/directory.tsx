@@ -6,7 +6,7 @@ import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, filterDoctors, type CatalogQuery } from "@/lib/catalog";
 import { paginateDoctors } from "@/lib/doctors";
-import { doctors } from "@/lib/data";
+import { doctorsForLocale } from "@/lib/locale-catalog";
 import { faqJsonLd } from "@/lib/seo";
 import { catalogPageMetadata } from "@/lib/i18n/page-meta";
 import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
@@ -28,7 +28,7 @@ export async function DoctorsDirectory({
   const locale = await getRequestLocale();
   const messages = await localizeMessages(locale);
   const faqs = await localizeFaqs("doctors", locale);
-  const list = filterDoctors(query, doctors);
+  const list = filterDoctors(query, doctorsForLocale(locale));
   const paging = paginateDoctors(list, page);
   const chipStats = query.destination === "India" ? cityResultCounts("doctors", query) : null;
   const copy = directoryIntro("doctors", query, locale);

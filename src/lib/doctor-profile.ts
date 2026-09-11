@@ -26,7 +26,7 @@ export function experienceBadge(doctor: Doctor) {
   return doctor.experience.replace(/\s+/g, " ").trim();
 }
 
-export function heroHighlights(doctor: Doctor) {
+export function heroHighlights(doctor: Doctor, consultsIn?: string) {
   const seen = new Set<string>();
   const items: string[] = [];
 
@@ -51,7 +51,7 @@ export function heroHighlights(doctor: Doctor) {
     push(proc);
   }
 
-  if (doctor.languages) push(`Consults in ${doctor.languages}`);
+  if (doctor.languages) push(consultsIn || `Consults in ${doctor.languages}`);
 
   return items.slice(0, 4);
 }

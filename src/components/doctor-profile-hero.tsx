@@ -24,8 +24,12 @@ import {
 } from "@/lib/doctor-profile";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
-import { yearsLabel } from "@/lib/hospital-profile";
+import { yearsLabelLocalized } from "@/lib/hospital-profile";
 import { doctorsPath } from "@/lib/catalog-links";
+import type { AppLocale } from "@/lib/i18n/languages";
+import { interpolate } from "@/lib/i18n/messages";
+import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
+import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 import { whatsappHref } from "@/lib/site";
 
 const HIGHLIGHT_ICONS = [Medal, Users, Settings2, Heart];
@@ -33,29 +37,37 @@ const HIGHLIGHT_ICONS = [Medal, Users, Settings2, Heart];
 export function DoctorProfileHero({
   doctor,
   hospital,
+  locale = "en",
 }: {
   doctor: Doctor;
   hospital: Hospital | undefined;
+  locale?: AppLocale;
 }) {
-  const highlights = heroHighlights(doctor);
-  const years = yearsLabel(doctor);
+  const t = uiCatalogFor(locale);
+  const highlights = heroHighlights(
+    doctor,
+    interpolate(t["profile.consultsIn"], { languages: doctor.languages }),
+  );
+  const years = yearsLabelLocalized(doctor, locale);
   const experience = experienceBadge(doctor);
   const campus = campusLine(doctor, hospital);
   const chipCampus = campusChip(doctor, hospital);
   const wa = whatsappHref(
-    `Hello — I would like to arrange a consult with ${doctor.name} at ${campus}.`,
+    locale === "ar"
+      ? `مرحبا — أرغب في ترتيب استشارة مع ${doctor.name} في ${campus}.`
+      : `Hello — I would like to arrange a consult with ${doctor.name} at ${campus}.`,
   );
 
   return (
     <section className="dhero">
       <div className="dhero__inner">
         <nav className="dhero__crumbs" aria-label="Breadcrumb">
-          <Link href="/">Home</Link>
+          <Link href="/">{t["profile.home"]}</Link>
           <span>/</span>
-          <Link href="/doctors">Doctors</Link>
+          <Link href="/doctors">{t["profile.doctors"]}</Link>
           <span>/</span>
           <Link href={doctorsPath({ destination: "India", specialty: doctor.specialty })}>
-            {doctor.specialty}
+            {taxonomyLabel(doctor.specialty, locale)}
           </Link>
           <span>/</span>
           <span aria-current="page">{doctor.name}</span>
@@ -67,7 +79,7 @@ export function DoctorProfileHero({
               {doctor.featured ? (
                 <li className="dhero__pill dhero__pill--gold">
                   <Crown className="size-3.5" />
-                  Featured Expert
+                  {t["profile.featuredExpert"]}
                 </li>
               ) : null}
               {experience ? (
@@ -93,7 +105,7 @@ export function DoctorProfileHero({
               </p>
             ) : (
               <p className="dhero__place">
-                {doctor.city}, {doctor.country}
+                {taxonomyLabel(doctor.city, locale)}, {taxonomyLabel(doctor.country, locale)}
               </p>
             )}
 
@@ -116,17 +128,17 @@ export function DoctorProfileHero({
             <div className="dhero__actions">
               <Link className="dhero__book" href={`/consult?doctor=${doctor.slug}`}>
                 <CalendarDays className="size-4" />
-                Book a consultation
+                {t["profile.book"]}
                 <span aria-hidden="true">→</span>
               </Link>
               <a className="dhero__contact" href={wa} target="_blank" rel="noreferrer">
                 <MessageCircle className="size-4" />
-                Contact now
+                {t["profile.contact"]}
               </a>
             </div>
             <p className="dhero__sla">
               <span className="dhero__dot" />
-              Usually responds within 24 hours
+              {t["profile.sla"]}
             </p>
           </div>
 
@@ -150,30 +162,34 @@ export function DoctorProfileHero({
           <li>
             <Stethoscope className="size-5" />
             <div>
-              <p className="dhero__stat-k">Experience</p>
-              <p>{years ? `${years} of experience` : "Experience listed on the profile"}</p>
+              <p className="dhero__stat-k">{t["profile.statExperience"]}</p>
+              <p>
+                {years
+                  ? interpolate(t["profile.statExperienceValue"], { years })
+                  : t["profile.statExperienceFallback"]}
+              </p>
             </div>
           </li>
           <li>
             <Building2 className="size-5" />
             <div>
-              <p className="dhero__stat-k">Hospital</p>
+              <p className="dhero__stat-k">{t["profile.statHospital"]}</p>
               <p>
-                {chipCampus}, {doctor.country}
+                {chipCampus}, {taxonomyLabel(doctor.country, locale)}
               </p>
             </div>
           </li>
           <li>
             <GraduationCap className="size-5" />
             <div>
-              <p className="dhero__stat-k">Education</p>
+              <p className="dhero__stat-k">{t["profile.statEducation"]}</p>
               <p>{educationStat(doctor)}</p>
             </div>
           </li>
           <li>
             <Languages className="size-5" />
             <div>
-              <p className="dhero__stat-k">Languages</p>
+              <p className="dhero__stat-k">{t["profile.statLanguages"]}</p>
               <p>{doctor.languages}</p>
             </div>
           </li>

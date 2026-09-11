@@ -64,9 +64,11 @@ import {
   pullQuote,
   specialtyBlurb,
   whyChoose,
-  yearsLabel,
+  yearsLabelLocalized,
 } from "@/lib/hospital-profile";
 import { hospitalsPath } from "@/lib/catalog-links";
+import type { AppLocale } from "@/lib/i18n/languages";
+import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { site } from "@/lib/site";
 
 const SPECIALTY_ICON: Record<string, LucideIcon> = {
@@ -105,11 +107,13 @@ export function HospitalProfileView({
   faculty,
   pathways,
   nearby,
+  locale = "en",
 }: {
   hospital: Hospital;
   faculty: Doctor[];
   pathways: Treatment[];
   nearby: Hospital[];
+  locale?: AppLocale;
 }) {
   const groups = groupFaculty(faculty, pathways);
   const facultyGroups = groups.filter((g) => g.doctors.length > 0);
@@ -379,8 +383,8 @@ export function HospitalProfileView({
                       <Link href={`/doctors/${d.slug}`}>{d.name}</Link>
                       <p>{d.title}</p>
                       <p className="hp-doc-list__meta">
-                        {d.specialty}
-                        {yearsLabel(d) ? ` · ${yearsLabel(d)} experience` : ""}
+                        {taxonomyLabel(d.specialty, locale)}
+                        {yearsLabelLocalized(d, locale) ? ` · ${yearsLabelLocalized(d, locale)}` : ""}
                       </p>
                     </div>
                     <Link href={`/doctors/${d.slug}`} className="hp-viewall hp-viewall--tight">

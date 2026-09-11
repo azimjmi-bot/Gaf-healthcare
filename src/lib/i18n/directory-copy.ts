@@ -7,6 +7,9 @@ import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 export type DirectoryKind = "doctors" | "hospitals" | "costs";
 
 const DOCTOR_ROLES: Record<string, string> = {
+  "Radiation Oncology": "أخصائيو علاج الأورام بالإشعاع",
+  "Surgical Oncology": "جرّاحو الأورام",
+  "Medical Oncology": "أطباء علاج الأورام الطبي",
   "Pediatric Hematology": "أطباء أمراض دم الأطفال",
   Hematology: "أطباء أمراض الدم",
   "Cardiac Surgery": "جرّاحو القلب",
@@ -74,7 +77,11 @@ export function directoryIntro(kind: DirectoryKind, query: CatalogQuery, locale:
     return {
       eyebrow: t(locale, "dir.doctors.eyebrow"),
       heading,
-      lede: home ? t(locale, "dir.doctors.homeLede") : t(locale, "dir.doctors.filteredLede"),
+      lede: home
+        ? t(locale, "dir.doctors.homeLede")
+        : query.specialty === "Radiation Oncology"
+          ? t(locale, "dir.doctors.roLede", { place })
+          : t(locale, "dir.doctors.filteredLede"),
     };
   }
 

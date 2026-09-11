@@ -1,5 +1,2864 @@
 {
-  "doctorOverrides": {},
+  "doctorOverrides": {
+    "dr-anil-kumar-anand": {
+      "name": "د. أنيل كومار أناند",
+      "title": "المدير الرئيسي ورئيس قسم — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD",
+      "experience": "٣٣+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. أنيل كومار أناند، المدير الرئيسي ورئيس قسم — علاج الأورام بالإشعاع في Fortis Memorial Research Institute، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي أثناء الجراحة"
+      ],
+      "education": [
+        "MBBS — Dayanand Medical College, Ludhiana",
+        "MD (العلاج الإشعاعي والأورام) — Post Graduate Institute of Medical Education and Research (PGI), Chandigarh",
+        "تدريب متخصص في Radiation Therapy — New York Hospital Medical Centre of Queens, USA",
+        "تدريب متخصص في العلاج الإشعاعي لـ Head and Neck Cancers — The Middlesex Hospital Medical School, London, UK"
+      ],
+      "affiliations": [
+        "Fortis Memorial Research Institute (FMRI), Gurgaon",
+        "Max Hospital, Saket (سابقًا)",
+        "Rajiv Gandhi Cancer Institute (سابقًا)",
+        "Batra Hospital, New Delhi (سابقًا)",
+        "Medical Research Center, New Delhi (سابقًا)",
+        "PGI, Chandigarh (سابقًا)"
+      ],
+      "memberships": [
+        "الجمعية الهندية للأورام",
+        "الجمعية الأمريكية لعلاج الأورام بالإشعاع (ASTRO)",
+        "رابطة أطباء الأورام بالإشعاع في الهند (AROI)",
+        "Advisor — ICRO, WHO, and other UN organisations",
+        "Editorial Board Member — Journal of Cancer Research and Therapeutics"
+      ],
+      "awards": [],
+      "research": [],
+      "bio": "لا نكتب عن د. أنيل كومار أناند بلغة «الأشهر عالميًا». نكتب الوقائع: المدير الرئيسي ورئيس قسم — علاج الأورام بالإشعاع في Fortis Memorial Research Institute, Delhi NCR، دلهي إن سي آر، ٣٣+ سنة، وملف يُراجع قبل السفر. إن لزم العلاج الإشعاعي التجسيمي للجسم (SBRT) رُسمت الخطة؛ إن لزم الجراحة الإشعاعية التجسيمية (SRS) كذلك. العربون بعد الاتفاق على الخطة، لا قبل أن ترى الاستشاري على الشاشة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة دلهي إن سي آر وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة. لأنه يحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-anitha-gopinath": {
+      "name": "د. أنيثا غوبيناث",
+      "title": "استشارية أولى",
+      "qualifications": "MBBS, MD, DNB",
+      "experience": "١٨+ سنة خبرة",
+      "languages": "الإنجليزية، الكانادية، الهندية",
+      "imageAlt": "د. أنيثا غوبيناث، استشارية أولى في Apollo Hospitals، بنغالور — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف"
+      ],
+      "education": [
+        "MBBS - MD – علاج الأورام بالإشعاع, Madras Medical College; ثم عمل في Apollo Specialty, Chennai",
+        "DNB – علاج الأورام بالإشعاع - تدريب ما بعد الدكتوراه في علاج الأورام بالإشعاع (2004), Madras Medical College"
+      ],
+      "affiliations": [
+        "Apollo Hospitals, Bannerghatta Road, Bangalore"
+      ],
+      "memberships": [
+        "AROI (رابطة أطباء الأورام بالإشعاع في الهند (AROI)) · IMA (الجمعية الطبية الهندية (IMA)) · ASTRO (الجمعية الأمريكية لعلاج الأورام بالإشعاع (ASTRO))"
+      ],
+      "awards": [
+        "أبرز أخصائي علاج الأورام بالإشعاع في جنوب الهند 2022 — India Today - أفضل أخصائي علاج الأورام بالإشعاع في جنوب الهند 2022 — Outlook Health"
+      ],
+      "research": [
+        "\"1-Minute Bench to Lab and Lap to Lung\" — A rare case report; published in the Journal of Neuro-Oncology",
+        "\"OVAR: Challenges in Treating Carcinoma Tongue\" — Co-authored study; published in the Journal of Cancer Science and Therapy (2016)"
+      ],
+      "bio": "نفتح ملف د. أنيثا غوبيناث من باب بنغالور لا من قائمة تسويقية. استشارية أولى في Apollo Hospitals, Bannerghatta Road, Bengaluru، و١٨+ سنة تُقاس بعدد الخطط التي رُسمت على الهدف لا بعدد الشرائح. الإجراءات المرتبطة: العلاج الإشعاعي معدل الشدة (IMRT) والعلاج الإشعاعي الموجّه بالصور. لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة بنغالور وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-anusheel-munshi": {
+      "name": "د. أنوشيل منشي",
+      "title": "المدير الرئيسي ورئيس قسم — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD (Radiation Oncology), DNB (Radiation Oncology)",
+      "experience": "٢٨+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. أنوشيل منشي، المدير الرئيسي ورئيس قسم — علاج الأورام بالإشعاع في BLK-Max Super Speciality Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "مشاركة في برنامج جراحة الأورام التعاوني",
+        "علاج الأورام الطبي ضمن فريق متعدد التخصصات"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي أثناء الجراحة"
+      ],
+      "education": [
+        "MBBS MD (علاج الأورام بالإشعاع)",
+        "DNB (علاج الأورام بالإشعاع)",
+        "Novartis AROI زمالة خارجية – The Royal Marsden Hospital, United Kingdom",
+        "UICC ICRETT زمالة – Long Beach Memorial Hospital, California"
+      ],
+      "affiliations": [
+        "BLK-Max Super Speciality Hospital, New Delhi",
+        "International Oncology Cancer Institute, Fortis Hospital, Noida",
+        "Manipal Hospital, Dwarka, Delhi",
+        "Fortis Memorial Research Institute, Gurgaon, Haryana",
+        "Tata Memorial Hospital, Mumbai"
+      ],
+      "memberships": [],
+      "awards": [
+        "حائز على الميدالية الذهبية (specific details regarding the awarding institution were not available from the provided sources)"
+      ],
+      "research": [],
+      "bio": "لا نكتب عن د. أنوشيل منشي بلغة «الأشهر عالميًا». نكتب الوقائع: المدير الرئيسي ورئيس قسم — علاج الأورام بالإشعاع في BLK-Max Super Speciality Hospital, Delhi NCR، دلهي إن سي آر، ٢٨+ سنة، وملف يُراجع قبل السفر. إن لزم العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT) رُسمت الخطة؛ إن لزم العلاج الإشعاعي معدل الشدة (IMRT) كذلك. العربون بعد الاتفاق على الخطة، لا قبل أن ترى الاستشاري على الشاشة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة دلهي إن سي آر وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة. لأنه يحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-ashwin-m-shah": {
+      "name": "د. أشوين م. شاه",
+      "title": "استشاري أول",
+      "qualifications": "MBBS, MD (Radiotherapy), DNB (Radiotherapy), Fellowship in Brachytherapy, FIRO",
+      "experience": "٣١+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. أشوين م. شاه، استشاري أول في Apollo Hospital، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي الخارجي",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي أثناء الجراحة"
+      ],
+      "education": [
+        "MBBS",
+        "MD (العلاج الإشعاعي)",
+        "DNB (العلاج الإشعاعي)",
+        "زمالة in Brachytherapy — MSKCC (Memorial Sloan Kettering Cancer Center, USA) / Apollo Hospitals (collaborative training program involving advanced brachytherapy, including training at Tata Memorial Hospital and Gujarat Cancer Research Institute)"
+      ],
+      "affiliations": [
+        "Apollo Health City, Jubilee Hills, Hyderabad, Telangana",
+        "Previously associated with KIMS Hospital, Hyderabad",
+        "Yashoda Hospitals",
+        "Indo-American Cancer Hospital & Research Institute",
+        "NIMS (Nizam's Institute of Medical Sciences)",
+        "Basavatarakam Indo-American Cancer Hospital",
+        "Government General Hospital, Tirupati"
+      ],
+      "memberships": [],
+      "awards": [
+        "Member of the Indian Association of Radiation Oncologists (IARO) — All Chapters",
+        "National Fellowship in Indian Association of Radiation Oncologists (FIRO) — IARO",
+        "Trained for One Year at S.V. Medical College, Tirupati — RIMS Hospital",
+        "Member of the American Society of Radiotherapy and Oncology (ASTRO)",
+        "Recipient of multiple academic awards and recognitions in the field of radiation oncology"
+      ],
+      "research": [
+        "Dr. Shah has authored and co-authored numerous publications in peer-reviewed journals, covering topics including:",
+        "Role of chemoradiotherapy in esophageal and cervical cancers",
+        "Hypofractionated radiation therapy outcomes",
+        "Brachytherapy applications in cervical and endometrial cancers",
+        "Studies on brain metastases, breast cancer, and prostate cancer management",
+        "Research on radiation techniques including IMRT, 3D conformal radiotherapy, and IGRT",
+        "Comparative studies on concurrent chemoradiation versus radiation alone in various solid tumors"
+      ],
+      "bio": "من مطار راجيف غاندي الدولي إلى Apollo Hospital, Jubilee Hills, Hyderabad, Hyderabad رحلة تُخطَّط بعد المكالمة لا قبلها. د. أشوين م. شاه استشاري علاج الأورام بالإشعاع بخبرة ٣١+ سنة. GAF Healthcare تطلب التصوير أولًا ثم تحدد إن كان العلاج الإشعاعي الخارجي أو العلاج الإشعاعي معدل الشدة (IMRT) هو الخطوة التالية. نكتب الأسئلة التي نريدك أن تطرحها على الكاميرا، ثم نحدد إن كان الوصول إلى حيدر آباد هو الخطوة الصادقة. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-b-ramakrishna-prasad": {
+      "name": "د. ب. راماكريشنا براساد",
+      "title": "استشاري علاج الأورام بالإشعاع",
+      "qualifications": "MD (Radiation Oncology)",
+      "experience": "٢٠+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. ب. راماكريشنا براساد، استشاري علاج الأورام بالإشعاع في Yashoda Hospitals، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "المعالجة الكثبية",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "المعالجة الكثبية باللوحة"
+      ],
+      "education": [
+        "MD (علاج الأورام بالإشعاع)"
+      ],
+      "affiliations": [
+        "Yashoda Hospitals, Secunderabad"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "نفتح ملف د. ب. راماكريشنا براساد من باب حيدر آباد لا من قائمة تسويقية. استشاري علاج الأورام بالإشعاع في Yashoda Hospitals, Secunderabad, Hyderabad، و٢٠+ سنة تُقاس بعدد الخطط التي رُسمت على الهدف لا بعدد الشرائح. الإجراءات المرتبطة: العلاج الإشعاعي للأورام والمعالجة الكثبية. لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة حيدر آباد وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-christopher-john": {
+      "name": "د. كريستوفر جون",
+      "title": "استشاري زائر",
+      "qualifications": "MBBS, MD",
+      "experience": "١٤+ سنة خبرة",
+      "languages": "الإنجليزية، التاميلية، الهندية",
+      "imageAlt": "د. كريستوفر جون، استشاري زائر في Rela Hospital، تشيناي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "دور داعم في علاج الأورام الطبي ضمن الفريق المتعدد التخصصات"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "المعالجة الكثبية",
+        "الجراحة الإشعاعية بسايبر نايف"
+      ],
+      "education": [
+        "M.B.B.S. (2006–2012) – Chettinad Hospital and Research Institute, Kelambakkam University, The Tamil Nadu Dr. MGR Medical University",
+        "M.D. العلاج الإشعاعي (2013–2016) – Vydehi Institute of Medical Sciences and Research Centre University, Rajiv Gandhi Institute of Health Science, Karnataka"
+      ],
+      "affiliations": [
+        "Rela Hospital (Rela MS), Chennai – Cancer Centre, Radiation Oncology Department"
+      ],
+      "memberships": [
+        "Association of Radiation Oncologist of India (AROI)",
+        "الجمعية الأوروبية للعلاج الإشعاعي والأورام (ESTRO) (ESTRO)"
+      ],
+      "awards": [],
+      "research": [
+        "Prognostic significance of metabolic tumour volume and maximum standard uptake value of fluor-18-fluorodeoxyglucose positron emission tomography with computed tomography in nasopharyngeal carcinoma. John C, et al. Contemp Oncol (Pozn). 2021;25(3):153–159. (PubMed Indexed)",
+        "Concurrent Taxol-Based Doublet Chemotherapy as an Alternative for Intracavitary Brachytherapy Boost in Locally Advanced Carcinoma Cervix – Retrospective Analysis From a Tertiary Care Center. John C, et al. Cureus. 2021 Jul 11;13(7). (PubMed Indexed)",
+        "Therapeutic Benefit of Placentrex in the Management of Acute Chemo Radiation Induced Mucositis in Oral Cancer Patients. Asian Pac J Cancer Prev. 2018;19(11):3099–3103. (PubMed Indexed)"
+      ],
+      "bio": "يصل ملف د. كريستوفر جون إلى مكتب GAF Healthcare كـاستشاري علاج الأورام بالإشعاع في Rela Hospital, Chennai بـتشيناي. بعد ١٤+ سنة في تخطيط الجرعات، نبدأ بالسجلات لا بالكتيّب: إن صمدت الصور كان المسار التالي العلاج الإشعاعي للأورام أو الجراحة الإشعاعية التجسيمية (SRS). منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار تشيناي الدولي. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-d-shiva-prasad": {
+      "name": "د. دي. شيفا براساد",
+      "title": "استشاري علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD",
+      "experience": "١٠+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. دي. شيفا براساد، استشاري علاج الأورام بالإشعاع في Yashoda Hospitals، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية",
+        "المعالجة الكثبية باللوحة"
+      ],
+      "education": [
+        "MBBS",
+        "MD in علاج الأورام بالإشعاع",
+        "Passed the European Society for Medical Oncology (ESMO) Examination — September 2019",
+        "Attended ESTRO Course on Target Volume Determination from Imaging to Margins — Prague, Czech Republic, May 2018"
+      ],
+      "affiliations": [
+        "Yashoda Hospitals, Secunderabad, India"
+      ],
+      "memberships": [
+        "Life Member, رابطة أطباء الأورام بالإشعاع في الهند (AROI)",
+        "Member, European Society for Radiotherapy & Oncology (ESTRO)",
+        "Member, European Society for علاج الأورام الطبي (ESMO)",
+        "Member, الجمعية الأمريكية لعلاج الأورام بالإشعاع (ASTRO) (ASTRO)"
+      ],
+      "awards": [
+        "Awarded Travel Grant to attend ESMO Preceptorship on Gastrointestinal Tumours — Singapore, November 2017",
+        "Presented a case on \"Stereotactic Body Radiotherapy in Locally Recurrent Hepatocellular Carcinoma\" at ESMO Preceptorship on Gastrointestinal Tumours, Singapore",
+        "Passed the European Society for Medical Oncology (ESMO) Examination — September 2019"
+      ],
+      "research": [],
+      "bio": "في حيدر آباد يُحفظ ملف د. دي. شيفا براساد تحت بلد الهند، مدينة حيدر آباد، تخصص علاج الأورام بالإشعاع، ثم الإجراء. ١٠+ سنة خبرة في Yashoda Hospitals, Secunderabad, Hyderabad. نطابق الحالة بـالعلاج الإشعاعي للأورام والعلاج الإشعاعي معدل الشدة الموجّه بالصور بعد قراءة الأشعة، لا بعد مكالمة المبيعات. نكتب الأسئلة التي نريدك أن تطرحها على الكاميرا، ثم نحدد إن كان الوصول إلى حيدر آباد هو الخطوة الصادقة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة حيدر آباد وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-debnarayan-dutta": {
+      "name": "د. دبنارايان دوتا",
+      "title": "استشاري أول ومدير سريري لعلاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD, PhD",
+      "experience": "١٩+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. دبنارايان دوتا، استشاري أول ومدير سريري لعلاج الأورام بالإشعاع في Yashoda Hospitals، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "العلاج الإشعاعي للأورام",
+        "المعالجة الكثبية"
+      ],
+      "education": [
+        "PhD — VIT, Vellore (2023)",
+        "زمالة in Head & Neck IMRT (2008–2010)",
+        "زمالة in Neuro-Oncology (2006–2008)",
+        "MD (علاج الأورام بالإشعاع) — Calcutta University, Kolkata (2003–2006)",
+        "MBBS"
+      ],
+      "affiliations": [
+        "Yashoda Hospitals, Hitec City, Hyderabad (Current)",
+        "Amrita Hospital, Kochi",
+        "Apollo Cancer Hospital, Chennai",
+        "Tata Memorial Hospital, Mumbai"
+      ],
+      "memberships": [
+        "AROI (رابطة أطباء الأورام بالإشعاع في الهند (AROI))",
+        "ISNO (Indian Society of Neurooncology)",
+        "MCI (Medical Council of India)"
+      ],
+      "awards": [
+        "ASCO Merit Award at Chicago (2008)",
+        "Participant at the 'Hoshino Young Investigator Award' at Yokohama (2009)",
+        "Neucletron Fellowship Award in AROICON 2010 at Patna, India",
+        "Presidential Award for Best Clinical Researcher for the year 2024 by the Indian Society of Neurooncology (ISNO)",
+        "Pioneer in introducing the CyberKnife Radiosurgery facility in India (2010)",
+        "Over 150 indexed publications, three book chapters, and author of four books",
+        "Invited speaker at more than 250 national and international meetings"
+      ],
+      "research": [],
+      "bio": "المسار إلى د. دبنارايان دوتا يمر بمكتب التنسيق لا بالاستمارة العامة. رئيس مسار علاج الأورام بالإشعاع في Yashoda Hospitals, Hi-Tech City, Hyderabad بـحيدر آباد منذ ما يزيد على ١٩ سنة. نسأل أولًا: هل الإجراء الصادق الجراحة الإشعاعية بسايبر نايف أم العلاج الإشعاعي التجسيمي للجسم؟ الجواب بعد الملف. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار راجيف غاندي الدولي. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة. لأنه يحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-dipali-bhorikar-borade": {
+      "name": "د. ديبالي بهوريكار بوراد",
+      "title": "Consultant — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD (Radiation Oncology), DNB (Radiation Oncology), ECRT, ARRT, IGRT, VMAT, SRS, SBRT",
+      "experience": "٩+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية، الماراثية",
+      "imageAlt": "د. ديبالي بهوريكار بوراد، Consultant — علاج الأورام بالإشعاع في Apollo Hospitals، مومباي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الكيميائي للأورام الصلبة",
+        "العلاج الكيميائي المساعد"
+      ],
+      "education": [
+        "MBBS — recognized medical qualification",
+        "MD (علاج الأورام بالإشعاع) — specialization in علاج الأورام بالإشعاع",
+        "DNB (علاج الأورام بالإشعاع) — Diplomate of National Board",
+        "ECRT, ARRT, IGRT, VMAT, SRS & SBRT — advanced certifications/training in specialized radiation therapy techniques",
+        "زمالة/Training at Tata Memorial Hospital, Mumbai; Homi Bhabha Cancer Hospital, Varanasi; Mahatma Gandhi Cancer Hospital, Vizag; Maharashtra Cancer Centre, Pune; Apollo Hospital, Navi Mumbai"
+      ],
+      "affiliations": [
+        "Apollo Hospital, Navi Mumbai (current)",
+        "Tata Memorial Hospital, Mumbai (previous)",
+        "Homi Bhabha Cancer Hospital, Varanasi (previous)",
+        "Mahatma Gandhi Cancer Hospital, Vizag (previous)"
+      ],
+      "memberships": [
+        "Member, Indian Medical Council (IMA/MCI)",
+        "رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)",
+        "Member of relevant national oncology societies"
+      ],
+      "awards": [
+        "Received oral presentation awards at the ESTRO (European Society for Radiotherapy and Oncology) Meeting, PO Box, Barcelona, at a Best Paper session",
+        "Presented papers at AROI national and AROI conferences/symposia",
+        "Multiple poster presentations at international conferences on cancer (including ESMO, ASTRO related forums)",
+        "Published research in peer-reviewed journals including topics on stereotactic body radiotherapy, chemotherapy combinations, and treatment outcomes in various cancer types"
+      ],
+      "research": [],
+      "bio": "لا نكتب عن د. ديبالي بهوريكار بوراد بلغة «الأشهر عالميًا». نكتب الوقائع: Consultant — علاج الأورام بالإشعاع في Apollo Hospitals, Navi Mumbai, Mumbai، مومباي، ٩+ سنة، وملف يُراجع قبل السفر. إن لزم العلاج الإشعاعي معدل الشدة (IMRT) رُسمت الخطة؛ إن لزم العلاج الإشعاعي الموجّه بالصور كذلك. العربون بعد الاتفاق على الخطة، لا قبل أن ترى الاستشارية على الشاشة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة مومباي وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-dodul-mondal": {
+      "name": "د. دودول موندال",
+      "title": "المدير الرئيسي لـ — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD, DNB",
+      "experience": "١٨+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. دودول موندال، المدير الرئيسي لـ — علاج الأورام بالإشعاع في Max Super Speciality Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "جراحة الأورام بالتنسيق (رأس وعنق، ثدي، جهاز هضمي، صدر)"
+      ],
+      "proceduresExpertise": [
+        "العلاج بشعاع البروتون",
+        "العلاج الإشعاعي للأورام",
+        "المعالجة الكثبية",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "إشعاع الجسم الكامل"
+      ],
+      "education": [
+        "MBBS (Honours, Gold Medal)",
+        "MD (علاج الأورام بالإشعاع)",
+        "DNB (علاج الأورام بالإشعاع)",
+        "UICC زمالة, USA",
+        "زمالة in Precision علاج الأورام بالإشعاع and Proton Beam Therapy, USA"
+      ],
+      "affiliations": [
+        "Max Healthcare (Current)",
+        "Indraprastha Apollo Hospitals, New Delhi",
+        "National Cancer Institute (NCI), AIIMS Delhi",
+        "Dharamshila Narayana Hospital"
+      ],
+      "memberships": [
+        "Member of Indian College of علاج الأورام بالإشعاع",
+        "Member of National Academy of Medical Sciences, India",
+        "Member of ESTRO (الجمعية الأوروبية للعلاج الإشعاعي والأورام (ESTRO))",
+        "Member of ASTRO (الجمعية الأمريكية لعلاج الأورام بالإشعاع (ASTRO))",
+        "Member of American المعالجة الكثبية Society",
+        "Member of رابطة أطباء الأورام بالإشعاع في الهند (AROI)",
+        "Member of الجمعية الهندية للأورام"
+      ],
+      "awards": [
+        "Awarded prestigious UICC-ICRETT Fellowship in 2016 by Union for International Cancer Control",
+        "Awarded CSIR travel grant for presenting paper at World Cancer Congress, Paris, 2016",
+        "Received Travel Grant from St Gallen Cancer Committee for 14th St Gallen Breast Cancer Conference, Vienna, 2015",
+        "Received Travel Grant from ICMR for presenting research at 14th St Gallen Breast Cancer Conference, Vienna, 2015"
+      ],
+      "research": [],
+      "bio": "المسار إلى د. دودول موندال يمر بمكتب التنسيق لا بالاستمارة العامة. رئيس مسار علاج الأورام بالإشعاع في Max Super Speciality Hospital, Saket, Delhi NCR بـدلهي إن سي آر منذ ما يزيد على ١٨ سنة. نسأل أولًا: هل الإجراء الصادق العلاج بشعاع البروتون أم العلاج الإشعاعي للأورام؟ الجواب بعد الملف. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار إنديرا غاندي. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة. لأنه يحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-g-k-jadhav": {
+      "name": "د. جي. كيه. جادهاف",
+      "title": "استشاري أول ومستشار سريري",
+      "qualifications": "DNB, Fellowship",
+      "experience": "٣٥+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. جي. كيه. جادهاف، استشاري أول ومستشار سريري في Indraprastha Apollo Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الإشعاعي الموجّه بالصور"
+      ],
+      "education": [
+        "DNB – علاج الأورام بالإشعاع",
+        "زمالة – Commonwealth Universities (UK)",
+        "Fellow of UICC (USA)",
+        "Principal Investigator for various global clinical trials in Neuro-Oncology",
+        "Training in newer techniques and technology abroad"
+      ],
+      "affiliations": [
+        "Indraprastha Apollo – Senior Consultant, Radiation Oncology",
+        "Kasturba Medical College, Manipal – Ex Senior Faculty"
+      ],
+      "memberships": [
+        "Member of various professional bodies including AROI, AMPI, and ICRO",
+        "Publications in peer-reviewed national and international journals",
+        "Advisory Expert for New Greenfield Project in Oncology in Kenya",
+        "DNB Coordinator and Examiner"
+      ],
+      "awards": [],
+      "research": [],
+      "bio": "نفتح ملف د. جي. كيه. جادهاف من باب دلهي إن سي آر لا من قائمة تسويقية. استشاري أول ومستشار سريري في Indraprastha Apollo Hospital, Delhi NCR، و٣٥+ سنة تُقاس بعدد الخطط التي رُسمت على الهدف لا بعدد الشرائح. الإجراءات المرتبطة: الجراحة الإشعاعية التجسيمية (SRS) والعلاج الإشعاعي التجسيمي للجسم. لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة دلهي إن سي آر وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-k-r-prasanna-kumar": {
+      "name": "د. ك. ر. براسانا كومار",
+      "title": "استشاري أول واستشاري زائر لعلاج الأورام بالإشعاع",
+      "qualifications": "MBBS, DND",
+      "experience": "١٨+ سنة خبرة",
+      "languages": "الإنجليزية، التاميلية، الهندية",
+      "imageAlt": "د. ك. ر. براسانا كومار، استشاري أول واستشاري زائر لعلاج الأورام بالإشعاع في Rela Hospital، تشيناي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "المعالجة الكثبية",
+        "الجراحة الإشعاعية بغاما نايف"
+      ],
+      "education": [
+        "Degrees & Training- DND العلاج الإشعاعي — Apollo Speciality Hospital, Chennai (2009–2012)",
+        "MBBS — Madurai Medical College, Tamil Nadu Dr. MGR University (2002–2008)"
+      ],
+      "affiliations": [
+        "Rela Hospital — Cancer Centre, Radiation Oncology",
+        "Apollo Speciality Hospital, Chennai",
+        "HCG Cancer Centre, Chennai",
+        "SIMS Hospital, Chennai",
+        "Kauvery Hospital, Chennai",
+        "Kamakshi Hospital, Chennai"
+      ],
+      "memberships": [
+        "Medical Council of India, New Delhi",
+        "Tamil Nadu Medical Council, Chennai",
+        "Lifetime Member, رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)"
+      ],
+      "awards": [],
+      "research": [
+        "Thesis- Thesis: Analysis of Acute Toxicities, Pathological Complete Response, Sphincter Preservation Rate of Pre-Operative Chemoradiation in Locally Advanced Rectal Cancers",
+        "Conference Presentations- Presented a paper at TN-PY AROI 2012 — Role of CyberKnife Radiosurgery in Choroidal Melanoma"
+      ],
+      "bio": "نفتح ملف د. ك. ر. براسانا كومار من باب تشيناي لا من قائمة تسويقية. استشاري أول واستشاري زائر لعلاج الأورام بالإشعاع في Rela Hospital, Chennai، و١٨+ سنة تُقاس بعدد الخطط التي رُسمت على الهدف لا بعدد الشرائح. الإجراءات المرتبطة: العلاج الإشعاعي للأورام والعلاج الإشعاعي معدل الشدة الموجّه بالصور. لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة تشيناي وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-kalyani-premchandra": {
+      "name": "د. كالياني بريمشاندرا",
+      "title": "Consultant — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD, DNB",
+      "experience": "١٣+ سنة خبرة",
+      "languages": "الإنجليزية، الكانادية، الهندية",
+      "imageAlt": "د. كالياني بريمشاندرا، Consultant — علاج الأورام بالإشعاع في Apollo Hospitals، بنغالور — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الكيميائي للأورام الصلبة",
+        "العلاج المناعي للأورام الصلبة",
+        "العلاج الكيميائي التلطيفي",
+        "العلاج الهرموني لسرطان الثدي"
+      ],
+      "education": [
+        "MBBS — Medical degree",
+        "MD in علاج الأورام بالإشعاع",
+        "DNB (Medical Oncology) — Diplomate of National Board in Medical Oncology"
+      ],
+      "affiliations": [
+        "Apollo Hospitals, Bannerghatta Road, Bangalore, India"
+      ],
+      "memberships": [],
+      "awards": [
+        "Awarded for Best Paper on \"Comparison of External Beam Brachytherapy versus Brachytherapy in patients diagnosed with early-stage breast cancer treated with Accelerated Partial Breast Brachytherapy (APBI)\" during the Abstract Poster event at FAMS in 2019",
+        "Recognized as an accomplished researcher in Radiation Oncology for her prominent contributions to the field"
+      ],
+      "research": [
+        "Dissertation Work (MD Thesis):\"Assessment of the role of Intraluminal Brachytherapy with Concurrent Chemoradiotherapy in Carcinoma of Esophagus\"",
+        "DNB Thesis:\"Treatment-related Adverse Events of Immunotherapy in Patients with Advanced Cancers\"",
+        "Conference Presentation (Poster):\"Role of Various Fractionation Schedules of Radiation Therapy in Treatment of Bone Metastases\" — AROICON 2019, Thiruvananthapuram"
+      ],
+      "bio": "د. كالياني بريمشاندرا يُدرَج في دليل الأطباء العربي تحت الهند / بنغالور / علاج الأورام بالإشعاع حتى يمكن لاحقًا بناء صفحات الإجراء دون تغيير المفاتيح الإنجليزية. Apollo Hospitals, Bannerghatta Road, Bengaluru. ١٣+ سنة. الجراحة الإشعاعية بسايبر نايف، العلاج الإشعاعي الخارجي. لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة بنغالور وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-kushal-narang": {
+      "name": "د. كوشال نارانغ",
+      "title": "مدير مساعد - and Cancer Care — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD",
+      "experience": "٢٠+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. كوشال نارانغ، مدير مساعد - and Cancer Care — علاج الأورام بالإشعاع في Medanta - The Medicity، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور (IGRT)",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية"
+      ],
+      "education": [
+        "M.D. in علاج الأورام بالإشعاع — Tata Memorial Hospital, Mumbai",
+        "Professional Diploma in Clinical Research — Catalyst Clinical Services, New Delhi",
+        "M.B.B.S."
+      ],
+      "affiliations": [
+        "Medanta — The Medicity, Gurugram"
+      ],
+      "memberships": [],
+      "awards": [
+        "Principal Investigator and Co-investigator for multiple ongoing institutional and multi-institutional research projects",
+        "International Paper Presentation at Yokohama, Japan, regarding the use of CyberKnife SRS/SBRT for brain tumors and prostate cancers (2015)",
+        "3rd Prize in \"Best Paper\" Session at the 5th National Conference of Young Radiation Oncologists of India (YROC), 2017",
+        "Quality Champion of the Department of Radiation Oncology since 2022"
+      ],
+      "research": [],
+      "bio": "في دلهي إن سي آر يُحفظ ملف د. كوشال نارانغ تحت بلد الهند، مدينة دلهي إن سي آر، تخصص علاج الأورام بالإشعاع، ثم الإجراء. ٢٠+ سنة خبرة في Medanta - The Medicity, Delhi NCR. نطابق الحالة بـالجراحة الإشعاعية بسايبر نايف والعلاج الإشعاعي التجسيمي للجسم (SBRT) بعد قراءة الأشعة، لا بعد مكالمة المبيعات. نكتب الأسئلة التي نريدك أن تطرحها على الكاميرا، ثم نحدد إن كان الوصول إلى دلهي إن سي آر هو الخطوة الصادقة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة دلهي إن سي آر وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة. لأنه يحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-m-vinay-ural": {
+      "name": "د. م. فيناي أورال",
+      "title": "استشاري أول",
+      "qualifications": "MBBS, MD (Radiation Oncology), DMRT, DNB (Radiation Oncology)",
+      "experience": "٢٢+ سنة خبرة",
+      "languages": "الإنجليزية، الكانادية، الهندية",
+      "imageAlt": "د. م. فيناي أورال، استشاري أول في Apollo Hospitals، بنغالور — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية"
+      ],
+      "education": [
+        "MBBS",
+        "MD (علاج الأورام بالإشعاع)",
+        "DMRT (Diploma in Medical العلاج الإشعاعي)",
+        "DNB (Diplomate of National Board — علاج الأورام بالإشعاع)",
+        "Clinical training at KTH Clinical School, Leuven, Belgium (Image-Guided RT / IGRT / IMRT)"
+      ],
+      "affiliations": [],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "المسار إلى د. م. فيناي أورال يمر بمكتب التنسيق لا بالاستمارة العامة. استشاري علاج الأورام بالإشعاع في Apollo Hospitals, Bannerghatta Road, Bengaluru بـبنغالور منذ ما يزيد على ٢٢ سنة. نسأل أولًا: هل الإجراء الصادق الجراحة الإشعاعية التجسيمية (SRS) أم العلاج الإشعاعي التجسيمي للجسم؟ الجواب بعد الملف. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار كيمبيغودا. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-m-janarthinakani": {
+      "name": "د. م. جانارثيناكاني",
+      "title": "استشاري أول",
+      "qualifications": "MBBS, MD",
+      "experience": "٢٥+ سنة خبرة",
+      "languages": "الإنجليزية، التاميلية، الهندية",
+      "imageAlt": "د. م. جانارثيناكاني، استشاري أول في Rela Hospital، تشيناي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "علاج الأورام الطبي"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "المعالجة الكثبية",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الكيميائي للأورام",
+        "العلاج المناعي للسرطان",
+        "إدارة الإشعاع بعد جراحة سرطان عنق الرحم",
+        "إدارة الإشعاع لأورام البلعوم السفلي"
+      ],
+      "education": [
+        "MBBS — Madurai Medical College, Tamil Nadu (1995–2001)",
+        "MD, علاج الأورام بالإشعاع — Cancer Institute Adyar (WIA), Chennai (2001–2004)",
+        "ESMO Examination — Passed on October 8, 2016, Chennai, India",
+        "Certified Palliative Training Course — Lakshmi Palliative Care Centre (2016)",
+        "Hands-on Training in Newer Techniques in Molecular Oncology — Sponsored by DST, New Delhi (February 2004)"
+      ],
+      "affiliations": [
+        "Rela Hospital",
+        "Cancer Institute (WIA), Adyar, Chennai",
+        "Government Medical College, Tuticorin",
+        "RGGGH – BIRO, Chennai",
+        "Kumaran Hospital, Chennai (Madras Cancer Care Foundation)",
+        "Billroth Hospital, Chennai",
+        "Apollo Hospital, Teynampet, Chennai"
+      ],
+      "memberships": [
+        "AROI (رابطة أطباء الأورام بالإشعاع في الهند (AROI)) Membership",
+        "ICON Membership"
+      ],
+      "awards": [],
+      "research": [
+        "Co-investigator in metastatic colorectal chemotherapy plus immunotherapy phase III study (2008–2010)",
+        "Co-investigator in Gastric Oesophageal Junction phase III study (2009–2012)",
+        "Dissertation: Role of hyperthermia in managing locally advanced Carcinoma of Uterine Cervix",
+        "Oral Presentation at TN State AROI 2005: \"Management of Hypopharyngeal Carcinoma Surgery followed by Postoperative Irradiation vs Irradiation only\""
+      ],
+      "bio": "من مطار تشيناي الدولي إلى Rela Hospital, Chennai رحلة تُخطَّط بعد المكالمة لا قبلها. د. م. جانارثيناكاني استشاري علاج الأورام بالإشعاع بخبرة ٢٥+ سنة. GAF Healthcare تطلب التصوير أولًا ثم تحدد إن كان العلاج الإشعاعي للأورام أو المعالجة الكثبية هو الخطوة التالية. نكتب الأسئلة التي نريدك أن تطرحها على الكاميرا، ثم نحدد إن كان الوصول إلى تشيناي هو الخطوة الصادقة. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-m-suneetha": {
+      "name": "د. م. سونيثا",
+      "title": "استشارية أولى ومديرة سريرية لعلاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD, DNB, FRCR",
+      "experience": "٢٥+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. م. سونيثا، استشارية أولى ومديرة سريرية لعلاج الأورام بالإشعاع في Yashoda Hospitals، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "المعالجة الكثبية",
+        "العلاج الإشعاعي أثناء الجراحة",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)"
+      ],
+      "education": [
+        "FRCR — Clinical Oncology, Royal College of Radiologists, London, UK (2017)",
+        "DNB — National Board of Examinations, New Delhi (2004)",
+        "MD — علاج الأورام بالإشعاع, MNJIORCC, Hyderabad (2001)",
+        "MBBS — Osmania Medical College, Hyderabad (1992)"
+      ],
+      "affiliations": [
+        "Yashoda Hospitals, Hitec City, Hyderabad (Current)",
+        "International Oncology Institute, Yashoda Hospitals, Hitec City, Hyderabad",
+        "Continental Hospital, Hyderabad",
+        "Basavatarakam Indo American Cancer Hospital & Research Institute, Hyderabad"
+      ],
+      "memberships": [
+        "رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)"
+      ],
+      "awards": [
+        "Awarded the Indira Priyadarshini Young Doctor Award",
+        "Published various papers in peer-reviewed journals",
+        "Presented papers at national and international medical conferences and workshops"
+      ],
+      "research": [],
+      "bio": "GAF Healthcare تضع د. م. سونيثا أمامك كاسم لا كقسم. استشارية أولى ومديرة سريرية لعلاج الأورام بالإشعاع، Yashoda Hospitals, Hi-Tech City, Hyderabad، حيدر آباد. بعد ٢٥+ سنة ما زالت تمسك الخطة حتى تصمد أمام مراجعة الزملاء. العلاج الإشعاعي للأورام والعلاج الإشعاعي الموجّه بالصور من الأدوات اليومية. المنسّق يبقى على الخط بعد الهبوط؛ الملف لا يُغلق عند باب المطار. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة. لأنها تحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-mathangi-j": {
+      "name": "د. ماثانغي جيه",
+      "title": "استشارية أولى ومسؤولة القسم",
+      "qualifications": "MBBS, DMRT, DNB",
+      "experience": "١٩+ سنة خبرة",
+      "languages": "الإنجليزية، الكانادية، الهندية",
+      "imageAlt": "د. ماثانغي جيه، استشارية أولى ومسؤولة القسم في Gleneagles Hospitals، بنغالور — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "المعالجة الكثبية",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "إشعاع الجسم الكامل",
+        "العلاج الإشعاعي أثناء الجراحة"
+      ],
+      "education": [
+        "MBBS",
+        "DMRT",
+        "DNB"
+      ],
+      "affiliations": [
+        "Gleneagles BGS Hospital, Bengaluru, Kengeri"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "نفتح ملف د. ماثانغي جيه من باب بنغالور لا من قائمة تسويقية. استشارية أولى ومسؤولة القسم في Gleneagles Hospitals, Bengaluru, Bengaluru، و١٩+ سنة تُقاس بعدد الخطط التي رُسمت على الهدف لا بعدد الشرائح. الإجراءات المرتبطة: العلاج الإشعاعي للأورام والمعالجة الكثبية. لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة بنغالور وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة. لأنها تحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-natarajan-v": {
+      "name": "د. ناتاراجان في",
+      "title": "Consultant — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, DNB (Radiation Oncology)",
+      "experience": "١١+ سنة خبرة",
+      "languages": "الإنجليزية، الكانادية، الهندية",
+      "imageAlt": "د. ناتاراجان في، Consultant — علاج الأورام بالإشعاع في Apollo Hospitals، بنغالور — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الخارجي",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف"
+      ],
+      "education": [
+        "MBBS — Medical degree",
+        "DNB (علاج الأورام بالإشعاع) — Diplomate of National Board in علاج الأورام بالإشعاع",
+        "Image-Guided Radiation Therapy / Real-time Position Management (RPM) — Training received in February 2014 at WIRRAL, United Kingdom"
+      ],
+      "affiliations": [
+        "Apollo Hospitals, Bannerghatta Road, Bangalore, Karnataka, India"
+      ],
+      "memberships": [
+        "Life Member of رابطة أطباء الأورام بالإشعاع في الهند (AROI)",
+        "Life Member of Association of Radiation Oncologists, TN Chapter"
+      ],
+      "awards": [
+        "Presentation: \"Year-End Review in Bone Tumors\" at Cancer Congress, Bangalore, 2017",
+        "Participated in various cancer screening and awareness programmes"
+      ],
+      "research": [],
+      "bio": "د. ناتاراجان في يُدرَج في دليل الأطباء العربي تحت الهند / بنغالور / علاج الأورام بالإشعاع حتى يمكن لاحقًا بناء صفحات الإجراء دون تغيير المفاتيح الإنجليزية. Apollo Hospitals, Bannerghatta Road, Bengaluru. ١١+ سنة. العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)، العلاج الإشعاعي الموجّه بالصور. لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة بنغالور وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-p-vijay-anand-reddy": {
+      "name": "د. ب. فيجاي أناند ريدي",
+      "title": "مدير قسم — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD (Radiation Oncology), DNB (Radiotherapy), Fellowship in Radiation Oncology",
+      "experience": "٣٠+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. ب. فيجاي أناند ريدي، مدير قسم — علاج الأورام بالإشعاع في Apollo Hospital، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور (IGRT)",
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "العلاج الإشعاعي أثناء الجراحة"
+      ],
+      "education": [
+        "MBBS",
+        "MD (علاج الأورام بالإشعاع)",
+        "DNB (العلاج الإشعاعي)"
+      ],
+      "affiliations": [
+        "Apollo Cancer Centre, Jubilee Hills"
+      ],
+      "memberships": [
+        "Full Member of American Society of Clinical Oncology (ASCO)",
+        "Full Member of الجمعية الأمريكية لعلاج الأورام بالإشعاع (ASTRO) (ASTRO)",
+        "Permanent Member of European Society of علاج الأورام الطبي (ESMO)",
+        "Permanent Member of “Union for International Cancer Control”, UICC, Geneva",
+        "President of رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)"
+      ],
+      "awards": [
+        "Dr. Vijay Anand Reddy has been awarded as “The Legend in the Field of Oncology” at the Times Healthcare Achievers Awards function at HICC, Hyderabad on 28th Feb’ 2017.",
+        "\"Best Scientific Paper Award 2015” for Prospective study of Neurocognitive function, performance status, quality of life and local control in patients with 1-3 newly diagnosed brain metastases treated with stereotactic radio surgery alone – Awarded by AROICON – 2015, Lucknow, INDIA",
+        "\"Best Scientific Paper Award 2014” for A Prospective Observational Feasibility Study of Hypofractionated Radiotherapy for Clinically localized Carcinoma Prostate – Awarded by AROICON – 2014, Imphal, INDIA"
+      ],
+      "research": [
+        "Dr. Vijay Anand Reddy has an extensive portfolio of research and publications in leading oncology journals, contributing to the evidence base in stereotactic radiosurgery, IMRT, brachytherapy, and outcomes in head and neck cancers, gynecological cancers, brain tumors, and other malignancies. His research work has been presented at ASTRO, ESTRO, and multiple national conferences."
+      ],
+      "bio": "في حيدر آباد يُحفظ ملف د. ب. فيجاي أناند ريدي تحت بلد الهند، مدينة حيدر آباد، تخصص علاج الأورام بالإشعاع، ثم الإجراء. ٣٠+ سنة خبرة في Apollo Hospital, Jubilee Hills, Hyderabad, Hyderabad. نطابق الحالة بـالعلاج الإشعاعي معدل الشدة (IMRT) والعلاج الإشعاعي الموجّه بالصور (IGRT) بعد قراءة الأشعة، لا بعد مكالمة المبيعات. نكتب الأسئلة التي نريدك أن تطرحها على الكاميرا، ثم نحدد إن كان الوصول إلى حيدر آباد هو الخطوة الصادقة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة حيدر آباد وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة. لأنه يحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-prashant-upadhyay": {
+      "name": "د. براشانت أوبادهياي",
+      "title": "Consultant — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, DMRT, DNB",
+      "experience": "١٧+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. براشانت أوبادهياي، Consultant — علاج الأورام بالإشعاع في Apollo Hospital، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور (IGRT)",
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي الخارجي",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "العلاج الإشعاعي أثناء الجراحة"
+      ],
+      "education": [
+        "MBBS",
+        "DMRT (Diploma in Medical العلاج الإشعاعي)",
+        "DNB (Diplomate of National Board) — علاج الأورام بالإشعاع",
+        "FUICC"
+      ],
+      "affiliations": [
+        "Apollo Health City, Jubilee Hills"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "من مطار راجيف غاندي الدولي إلى Apollo Hospital, Jubilee Hills, Hyderabad, Hyderabad رحلة تُخطَّط بعد المكالمة لا قبلها. د. براشانت أوبادهياي استشاري علاج الأورام بالإشعاع بخبرة ١٧+ سنة. GAF Healthcare تطلب التصوير أولًا ثم تحدد إن كان العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT) أو العلاج الإشعاعي معدل الشدة (IMRT) هو الخطوة التالية. نكتب الأسئلة التي نريدك أن تطرحها على الكاميرا، ثم نحدد إن كان الوصول إلى حيدر آباد هو الخطوة الصادقة. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-rajeev-g": {
+      "name": "د. راجيف جي",
+      "title": "Consultant — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MS, MHA",
+      "experience": "١٥+ سنة خبرة",
+      "languages": "الإنجليزية، الكانادية، الهندية",
+      "imageAlt": "د. راجيف جي، Consultant — علاج الأورام بالإشعاع في Apollo Hospitals، بنغالور — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي الخارجي",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف"
+      ],
+      "education": [
+        "MBBS — Medical Degree",
+        "MS— Master of Surgery",
+        "MHA — Master of Hospital Administration"
+      ],
+      "affiliations": [
+        "Apollo Hospitals, Bannerghatta Road, Bangalore — Current Practice"
+      ],
+      "memberships": [
+        "AROI (رابطة أطباء الأورام بالإشعاع في الهند (AROI))"
+      ],
+      "awards": [
+        "Gold Record in Radiation Oncology — RGUHS (Rajiv Gandhi University of Health Sciences), 2008"
+      ],
+      "research": [],
+      "bio": "GAF Healthcare تضع د. راجيف جي أمامك كاسم لا كقسم. Consultant — علاج الأورام بالإشعاع، Apollo Hospitals, Bannerghatta Road, Bengaluru، بنغالور. بعد ١٥+ سنة ما زال يمسك الخطة حتى تصمد أمام مراجعة الزملاء. العلاج الإشعاعي الخارجي والعلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT) من الأدوات اليومية. المنسّق يبقى على الخط بعد الهبوط؛ الملف لا يُغلق عند باب المطار. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-rakesh-jalali": {
+      "name": "د. راكيش جلالي",
+      "title": "استشاري أول",
+      "qualifications": "MBBS, MD",
+      "experience": "٣٠+ سنة خبرة",
+      "languages": "الإنجليزية، التاميلية، الهندية",
+      "imageAlt": "د. راكيش جلالي، استشاري أول في Apollo Proton Cancer Centre، تشيناي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج بشعاع البروتون",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي الخارجي",
+        "علاج الورم الأرومي الشبكي",
+        "العلاج الكيميائي للأورام الصلبة"
+      ],
+      "education": [
+        "MD",
+        "MBBS"
+      ],
+      "affiliations": [
+        "Apollo Proton Cancer Centre"
+      ],
+      "memberships": [],
+      "awards": [
+        "Awarded as the Best Oncologist Award by Medscape in 2014",
+        "Received the Top Radiation Oncologist Award for 3 consecutive years from 2014 onwards"
+      ],
+      "research": [],
+      "bio": "في تشيناي يُحفظ ملف د. راكيش جلالي تحت بلد الهند، مدينة تشيناي، تخصص علاج الأورام بالإشعاع، ثم الإجراء. ٣٠+ سنة خبرة في Apollo Proton Cancer Centre, Chennai. نطابق الحالة بـالعلاج بشعاع البروتون والعلاج الإشعاعي معدل الشدة (IMRT) بعد قراءة الأشعة، لا بعد مكالمة المبيعات. نكتب الأسئلة التي نريدك أن تطرحها على الكاميرا، ثم نحدد إن كان الوصول إلى تشيناي هو الخطوة الصادقة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة تشيناي وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-ranjeet-bajpai": {
+      "name": "د. رانغيت باجباي",
+      "title": "أخصائي علاج الأورام بالإشعاع",
+      "qualifications": "MD, DNB, Fellowship",
+      "experience": "٢٠+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية، الماراثية",
+      "imageAlt": "د. رانغيت باجباي، أخصائي علاج الأورام بالإشعاع في Apollo Hospitals، مومباي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "المعالجة الكثبية",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "الجراحة الإشعاعية بسايبر نايف"
+      ],
+      "education": [
+        "Medical Degrees- MD (علاج الأورام بالإشعاع)",
+        "DNB (Diplomate of National Board)",
+        "زمالة Training- زمالة — Sjaelland University Hospital, Copenhagen, Denmark (March 2022 – October 2022)",
+        "Licensure & Certification- Medical License/Certification — Medical Council of India (MCI); Maharashtra Medical Council (MMC)"
+      ],
+      "affiliations": [
+        "Apollo Hospitals, Mumbai",
+        "Sir HN Reliance Foundation Hospital, Mumbai",
+        "PD Hinduja Hospital and Medical Research Centre, Mumbai",
+        "Sjaelland University Hospital, Copenhagen, Denmark (Fellowship)",
+        "Sanjay Gandhi Postgraduate Institute of Medical Sciences, Lucknow"
+      ],
+      "memberships": [
+        "رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI) — since 2004",
+        "European Society for Radiotherapy & Oncology (ESTRO) — since 2008",
+        "الجمعية الأمريكية لعلاج الأورام بالإشعاع (ASTRO) (ASTRO) — since 2008"
+      ],
+      "awards": [
+        "Best Paper Award (2008): UPAROI, Lucknow, India — Paper titled \"The Quality of Recording of Patient Demography, Compliance to Radiotherapy, Morbidity Reporting and Status of Follow-up of Head and Neck Cancer Patients\"",
+        "Travel Fellowship (2005): AROI, Ahmedabad, India — Paper titled \"Role of Percutaneous Endoscopic Gastrostomy for enteral nutrition in patients with head and neck cancers on intensive chemo-radiation protocols – A feasibility study\"",
+        "Best Paper Award (2005): AROI, Ahmedabad, India — Paper entitled \"Role of VFG in assessing functional abnormalities in patients of head and neck cancer treated with chemo-radiotherapy\""
+      ],
+      "research": [],
+      "bio": "GAF Healthcare تضع د. رانغيت باجباي أمامك كاسم لا كقسم. أخصائي علاج الأورام بالإشعاع، Apollo Hospitals, Navi Mumbai, Mumbai، مومباي. بعد ٢٠+ سنة ما زال يمسك الخطة حتى تصمد أمام مراجعة الزملاء. العلاج الإشعاعي للأورام والمعالجة الكثبية من الأدوات اليومية. المنسّق يبقى على الخط بعد الهبوط؛ الملف لا يُغلق عند باب المطار. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-s-usha": {
+      "name": "د. س. أوشا",
+      "title": "أخصائية علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, DMRT",
+      "experience": "١٤+ سنة خبرة",
+      "languages": "الإنجليزية، التاميلية، الهندية",
+      "imageAlt": "د. س. أوشا، أخصائية علاج الأورام بالإشعاع في Rela Hospital، تشيناي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "علاج الأورام الطبي"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "المعالجة الكثبية",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "العلاج الهرموني لسرطان الثدي",
+        "العلاج الهرموني لأورام النساء",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "إشعاع الجسم الكامل"
+      ],
+      "education": [
+        "MBBS — Madras Medical College, Chennai, Tamil Nadu, India",
+        "DMRT (Diploma in Medical العلاج الإشعاعي) — Madras Medical College, Chennai, Tamil Nadu, India",
+        "Palliative Medicine — Completed course in Palliative Medicine from IAPC (Indian Association of Palliative Care)"
+      ],
+      "affiliations": [
+        "Rela Hospital (Rela Institute & Medical Centre), Chennai, Tamil Nadu, India — Cancer Centre, Radiation Oncology Department"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "د. س. أوشا — استشارية علاج الأورام بالإشعاع في Rela Hospital, Chennai، تشيناي. GAF Healthcare لا تحجز مقعد إشعاع قبل أن تقرأ التصوير وتقارير الجراحة. العلاج الإشعاعي للأورام يبقى على الطاولة عندما يكون الهامش ضيقًا؛ المعالجة الكثبية عندما يناسب الحجم. العربون بعد الاتفاق على الخطة، لا قبل أن ترى الاستشارية على الشاشة. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-sandeep-de": {
+      "name": "د. سانديب دي",
+      "title": "استشاري",
+      "qualifications": "MBBS, MD (Radiation Oncology), DNB (Radiotherapy), FRCR",
+      "experience": "٢٥+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية، الماراثية",
+      "imageAlt": "د. سانديب دي، استشاري في Apollo Hospitals، مومباي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف"
+      ],
+      "education": [
+        "MBBS",
+        "MD (علاج الأورام بالإشعاع)",
+        "DNB (العلاج الإشعاعي), National Board of Examinations",
+        "زمالة in علاج الأورام بالإشعاع (FRCR) — details as per source",
+        "Clinical زمالة, Fr. Muller Medical College Hospital (FMMC), Cochin, (2014–2017)",
+        "Senior Residency, Tata Memorial Centre & Hospital, Parel, Mumbai (2007–2010)",
+        "MD (العلاج الإشعاعي), King George's Medical College, Lucknow"
+      ],
+      "affiliations": [
+        "Apollo Hospitals, Navi Mumbai (CBD Belapur)"
+      ],
+      "memberships": [
+        "رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)",
+        "الجمعية الأوروبية للعلاج الإشعاعي والأورام (ESTRO) (ESTRO)",
+        "Indian Society of Radiation Oncologists & Oncologic Physicists (ISROOP)",
+        "Canadian Association for علاج الأورام بالإشعاع (CARO)"
+      ],
+      "awards": [],
+      "research": [],
+      "bio": "نفتح ملف د. سانديب دي من باب مومباي لا من قائمة تسويقية. استشاري في Apollo Hospitals, Navi Mumbai, Mumbai، و٢٥+ سنة تُقاس بعدد الخطط التي رُسمت على الهدف لا بعدد الشرائح. الإجراءات المرتبطة: العلاج الإشعاعي معدل الشدة (IMRT) والعلاج الإشعاعي الموجّه بالصور. لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة مومباي وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-sapna-nangia": {
+      "name": "د. سابنا نانغيا",
+      "title": "استشارية أولى",
+      "qualifications": "MBBS, MD (Radiotherapy / Radiation Oncology)",
+      "experience": "٣٣+ سنة خبرة",
+      "languages": "الإنجليزية، التاميلية، الهندية",
+      "imageAlt": "د. سابنا نانغيا، استشارية أولى في Apollo Proton Cancer Centre، تشيناي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي الخارجي",
+        "العلاج بشعاع البروتون",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف"
+      ],
+      "education": [
+        "MBBS — Medical degree",
+        "MD (العلاج الإشعاعي / علاج الأورام بالإشعاع)"
+      ],
+      "affiliations": [
+        "Apollo Proton Cancer Centre"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "لا نكتب عن د. سابنا نانغيا بلغة «الأشهر عالميًا». نكتب الوقائع: استشارية أولى في Apollo Proton Cancer Centre, Chennai، تشيناي، ٣٣+ سنة، وملف يُراجع قبل السفر. إن لزم العلاج الإشعاعي معدل الشدة (IMRT) رُسمت الخطة؛ إن لزم العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT) كذلك. العربون بعد الاتفاق على الخطة، لا قبل أن ترى الاستشارية على الشاشة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة تشيناي وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-satyesh-nadella": {
+      "name": "د. ساتيش ناديلا",
+      "title": "استشاري علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD (Radiotherapy)",
+      "experience": "١٠+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. ساتيش ناديلا، استشاري علاج الأورام بالإشعاع في Apollo Hospital، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية"
+      ],
+      "education": [
+        "MBBS",
+        "MD (العلاج الإشعاعي)"
+      ],
+      "affiliations": [
+        "Apollo Health City, Jubilee Hills"
+      ],
+      "memberships": [],
+      "awards": [
+        "Best case presentation award ­- “Adenocarcinoma masquerading as neurofibroma in a patient with von Recklinghausen’s disease”: ACCP October  2004 meeting",
+        "Best poster in the category award -“Role of Transbronchial Lung Biopsy in HIV Positive patients suspected to have Pneumocystis Carinii Pneumonia.”: ACCP October 2004 meeting."
+      ],
+      "research": [],
+      "bio": "GAF Healthcare تضع د. ساتيش ناديلا أمامك كاسم لا كقسم. استشاري علاج الأورام بالإشعاع، Apollo Hospital, Jubilee Hills, Hyderabad, Hyderabad، حيدر آباد. بعد ١٠+ سنة ما زال يمسك الخطة حتى تصمد أمام مراجعة الزملاء. العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT) والعلاج الإشعاعي الخارجي من الأدوات اليومية. المنسّق يبقى على الخط بعد الهبوط؛ الملف لا يُغلق عند باب المطار. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-shilpareddy-keesara": {
+      "name": "د. شيلباريدي كيسارا",
+      "title": "مسجّلة أولى / استشارية",
+      "qualifications": "DNB, MBBS",
+      "experience": "١٠+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. شيلباريدي كيسارا، مسجّلة أولى / استشارية في Apollo Hospital، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "علاج الورم الأرومي الشبكي",
+        "دعم إشعاعي لجراحة أورام الدماغ"
+      ],
+      "education": [
+        "DNB (علاج الأورام بالإشعاع)",
+        "MBBS"
+      ],
+      "affiliations": [
+        "Apollo Health City, Jubilee Hills, Hyderabad, Telangana, India (Pin: 500033)"
+      ],
+      "memberships": [],
+      "awards": [
+        "Presented Paper at AROI 2014, Imphal – A Feasibility Study of Hypofractionated Radiotherapy in Localised Carcinoma Prostate: Preliminary Results (First Prize)",
+        "Presented Paper at YROC 2014, Vizag – A Feasibility Study of Hypofractionated Radiotherapy in Localised Carcinoma Prostate (First Prize in Genitourinary Session)"
+      ],
+      "research": [],
+      "bio": "في حيدر آباد يُحفظ ملف د. شيلباريدي كيسارا تحت بلد الهند، مدينة حيدر آباد، تخصص علاج الأورام بالإشعاع، ثم الإجراء. ١٠+ سنة خبرة في Apollo Hospital, Jubilee Hills, Hyderabad, Hyderabad. نطابق الحالة بـالعلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT) والعلاج الإشعاعي معدل الشدة (IMRT) بعد قراءة الأشعة، لا بعد مكالمة المبيعات. نكتب الأسئلة التي نريدك أن تطرحيها على الكاميرا، ثم نحدد إن كان الوصول إلى حيدر آباد هو الخطوة الصادقة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة حيدر آباد وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-sravanthi-reddy-t": {
+      "name": "د. سرافانتي ريدي تي",
+      "title": "استشارية علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, DNB",
+      "experience": "١١+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. سرافانتي ريدي تي، استشارية علاج الأورام بالإشعاع في Yashoda Hospitals، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "علاج الأورام الطبي"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "المعالجة الكثبية",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الكيميائي للأورام",
+        "العلاج الهرموني لأورام النساء"
+      ],
+      "education": [
+        "DNB (Diplomate of National Board) — Department of العلاج الإشعاعي, Yashoda Hospitals, Somajiguda",
+        "MBBS — Osmania Medical College, Hyderabad"
+      ],
+      "affiliations": [
+        "Yashoda Hospitals, Secunderabad",
+        "Yashoda Hospitals, Somajiguda"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "لا نكتب عن د. سرافانتي ريدي تي بلغة «الأشهر عالميًا». نكتب الوقائع: استشارية علاج الأورام بالإشعاع في Yashoda Hospitals, Secunderabad, Hyderabad، حيدر آباد، ١١+ سنة، وملف يُراجع قبل السفر. إن لزم العلاج الإشعاعي للأورام رُسمت الخطة؛ إن لزم المعالجة الكثبية كذلك. العربون بعد الاتفاق على الخطة، لا قبل أن ترى الاستشارية على الشاشة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة حيدر آباد وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-sri-sai-tejaswini-muddana": {
+      "name": "د. سري ساي تجاسويني مودانا",
+      "title": "أخصائية علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, DM",
+      "experience": "٤+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. سري ساي تجاسويني مودانا، أخصائية علاج الأورام بالإشعاع في Apollo Hospital، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "مسارها السريري يركّز على تخطيط الجرعة بحيث ينحصر الإشعاع في الهدف ويتراجع العبء على الأنسجة المجاورة:",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف"
+      ],
+      "education": [
+        "M.B.B.S. — Katihar Medical College",
+        "DNB"
+      ],
+      "affiliations": [
+        "Apollo Health City, Jubilee Hills"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "ملف د. سري ساي تجاسويني مودانا يُفتح كخطة علاج لا كعرض فندقي. Apollo Hospital, Jubilee Hills, Hyderabad, Hyderabad في حيدر آباد. ٤+ سنة في علاج الأورام بالإشعاع. تراجع الهامش على مسارها السريري يركّز على تخطيط الجرعة بحيث ينحصر الإشعاع في الهدف ويتراجع العبء على الأنسجة المجاورة: والعلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT) قبل أن يُقترح أسبوع في الهند. المنسّق يبقى على الخط بعد الهبوط؛ الملف لا يُغلق عند باب المطار. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة حيدر آباد وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-sridhar-p-s": {
+      "name": "د. سريدار بي. إس",
+      "title": "Consultant — علاج الأورام بالإشعاع",
+      "qualifications": "DMRT, DNB, FRCR",
+      "experience": "٢٨+ سنة خبرة",
+      "languages": "الإنجليزية، الكانادية، الهندية",
+      "imageAlt": "د. سريدار بي. إس، Consultant — علاج الأورام بالإشعاع في Apollo Hospitals، بنغالور — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "الجراحة الإشعاعية بغاما نايف"
+      ],
+      "education": [
+        "DMRT (Diploma in Radiation Therapy)",
+        "DNB (Diplomate of National Board)",
+        "– العلاج الإشعاعي",
+        "FRCR (Fellow of the Royal College of Radiologists)",
+        "Proficiency in English, Kannada, and Hindi"
+      ],
+      "affiliations": [
+        "Apollo Hospitals, Bannerghatta Road, Bangalore"
+      ],
+      "memberships": [
+        "President – Association of علاج الأورام بالإشعاع of India",
+        "Member of the American Society of Therapeutic Radiation and Oncology (ASTRO)",
+        "Member of the American Society of Clinical Oncology (ASCO) and رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)",
+        "Member of Indian Academy of Medical Sciences/National Malhotra Society of علاج الأورام الطبي (ISMO)",
+        "Member of Association of India",
+        "Member of European Society of علاج الأورام الطبي (ESMO)",
+        "Joint Secretary for رابطة أطباء الأورام بالإشعاع في الهند (AROI)/Joint Secretary of Neuro Oncology Society, Bangalore",
+        "Secretary of Indian Association of Hyperthermic Oncology"
+      ],
+      "awards": [
+        "Awarded International and Travelling Fellowship in Radiation Oncologists of India (2003–2007)",
+        "Awarded Best Association of Radiation Oncologists of India Fellowship (2007–2008)",
+        "Awarded Commonwealth Fellowship (2005–2006) – Cancer research from India to the United Kingdom",
+        "Awarded Teaching Scholarship by Bihar Pradesh Association of Radiation Oncologists of India (2009)"
+      ],
+      "research": [],
+      "bio": "المسار إلى د. سريدار بي. إس يمر بمكتب التنسيق لا بالاستمارة العامة. استشاري علاج الأورام بالإشعاع في Apollo Hospitals, Bannerghatta Road, Bengaluru بـبنغالور منذ ما يزيد على ٢٨ سنة. نسأل أولًا: هل الإجراء الصادق العلاج الإشعاعي معدل الشدة (IMRT) أم العلاج الإشعاعي الموجّه بالصور؟ الجواب بعد الملف. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار كيمبيغودا. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-srinivas-chilukuri": {
+      "name": "د. سرينيفاس تشيلوكوري",
+      "title": "استشاري أول لعلاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD (Radiation Oncology)",
+      "experience": "٢٢+ سنة خبرة",
+      "languages": "الإنجليزية، التاميلية، الهندية",
+      "imageAlt": "د. سرينيفاس تشيلوكوري، استشاري أول لعلاج الأورام بالإشعاع في Apollo Proton Cancer Centre، تشيناي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج بشعاع البروتون",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية"
+      ],
+      "education": [
+        "MBBS",
+        "MD (علاج الأورام بالإشعاع)",
+        "PDCR"
+      ],
+      "affiliations": [
+        "Apollo Proton Cancer Centre"
+      ],
+      "memberships": [
+        "American Society of Oncology (ASCO)",
+        "الجمعية الأمريكية لعلاج الأورام بالإشعاع (ASTRO) (ASTRO)",
+        "European Society of Radiation and Oncology (ESTRO)",
+        "European Society of علاج الأورام الطبي (ESMO)"
+      ],
+      "awards": [
+        "Topped Mumbai University MD Radiation Oncology examination.",
+        "Indian College of Radiation Oncology (ICRO) - “Young Achiever Award” for standing first at Annual Teaching Course in September 2006.",
+        "Winner of National level Annual Oncology Quiz held at AROICON 2006."
+      ],
+      "research": [],
+      "bio": "ملف د. سرينيفاس تشيلوكوري يُفتح كخطة علاج لا كعرض فندقي. Apollo Proton Cancer Centre, Chennai في تشيناي. ٢٢+ سنة في علاج الأورام بالإشعاع. يراجع الهامش على العلاج بشعاع البروتون والجراحة الإشعاعية التجسيمية (SRS) قبل أن يُقترح أسبوع في الهند. المنسّق يبقى على الخط بعد الهبوط؛ الملف لا يُغلق عند باب المطار. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة تشيناي وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-subodh-chandra-pande": {
+      "name": "د. سوبوده تشاندرا باندي",
+      "title": "Chief of & Co-Chief of CyberKnife Centre — علاج الأورام بالإشعاع",
+      "qualifications": "MD, DMRE",
+      "experience": "٤٠+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. سوبوده تشاندرا باندي، Chief of & Co-Chief of CyberKnife Centre — علاج الأورام بالإشعاع في Artemis Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "أورام الأطفال — مسار إشعاعي",
+        "أورام الجهاز العصبي — مسار إشعاعي"
+      ],
+      "proceduresExpertise": [
+        "الجراحة الإشعاعية بسايبر نايف",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي الخارجي"
+      ],
+      "education": [
+        "MD (العلاج الإشعاعي) — AIIMS, New Delhi (1997)",
+        "DMRE — (Details as listed in profile)",
+        "Languages Spoken: English, Hindi, Marathi"
+      ],
+      "affiliations": [
+        "Artemis Hospital, Gurugram (Current — Chief, Radiation Oncology & Co-Chief, CyberKnife Centre)",
+        "Tata Memorial Hospital, Mumbai",
+        "Indraprastha Apollo Hospitals, New Delhi",
+        "Bhagwan Mahaveer Cancer Hospital and Research Centre, Jaipur"
+      ],
+      "memberships": [
+        "رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI) — Secretary General, 1997–2000",
+        "الجمعية الهندية للأورام (ISO)",
+        "Association of Medical Physicists of India",
+        "Paediatric Haematology & Oncology Chapter of the Indian Academy of Paediatrics (IAP)",
+        "International Society of Paediatric Oncology (SIOP)",
+        "Endocrine Society based in New Jersey, USA (ES)"
+      ],
+      "awards": [],
+      "research": [],
+      "bio": "المسار إلى د. سوبوده تشاندرا باندي يمر بمكتب التنسيق لا بالاستمارة العامة. رئيس مسار علاج الأورام بالإشعاع في Artemis Hospital, Delhi NCR بـدلهي إن سي آر منذ ما يزيد على ٤٠ سنة. نسأل أولًا: هل الإجراء الصادق الجراحة الإشعاعية بسايبر نايف أم الجراحة الإشعاعية التجسيمية (SRS)؟ الجواب بعد الملف. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار إنديرا غاندي. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة. لأنه يحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-susovan-banerjee": {
+      "name": "د. سوسوفان بانيرجي",
+      "title": "مدير — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD, Fellowship in Image-Guided Gynaecological Brachytherapy",
+      "experience": "١٨+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. سوسوفان بانيرجي، مدير — علاج الأورام بالإشعاع في Medanta - The Medicity، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "المعالجة الكثبية الخلالية",
+        "المعالجة الكثبية داخل التجويف",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي"
+      ],
+      "education": [
+        "M.B.B.S.",
+        "M.D.",
+        "زمالة in Image-Guided Gynaecological Brachytherapy"
+      ],
+      "affiliations": [
+        "Medanta, Gurugram",
+        "Medanta Mediclinic Defence Colony"
+      ],
+      "memberships": [],
+      "awards": [
+        "Member, Global Association of Physicians of Indian Origin (GAPIO)",
+        "Member, European Radiotherapy Society Indian Association of Radiation Oncologists",
+        "Section Editor and Reviewer of International Radiotherapy Journals",
+        "Published more than 53 full-text articles, invited editorials, and multiple chapters in oncology textbooks"
+      ],
+      "research": [],
+      "bio": "المسار إلى د. سوسوفان بانيرجي يمر بمكتب التنسيق لا بالاستمارة العامة. رئيس مسار علاج الأورام بالإشعاع في Medanta - The Medicity, Delhi NCR بـدلهي إن سي آر منذ ما يزيد على ١٨ سنة. نسأل أولًا: هل الإجراء الصادق العلاج الإشعاعي معدل الشدة (IMRT) أم الجراحة الإشعاعية التجسيمية (SRS)؟ الجواب بعد الملف. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار إنديرا غاندي. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة. لأنه يحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-tejinder-kataria": {
+      "name": "د. تجيندر كاتاريا",
+      "title": "رئيس القسم — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD (Radiotherapy), DNB (Radiotherapy)",
+      "experience": "٣٧+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. تجيندر كاتاريا، رئيس القسم — علاج الأورام بالإشعاع في Medanta - The Medicity، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "العلاج الإشعاعي الخارجي",
+        "الجراحة الإشعاعية بسايبر نايف"
+      ],
+      "education": [
+        "DNB (العلاج الإشعاعي)",
+        "M.D. (العلاج الإشعاعي)",
+        "M.B.B.S.",
+        "Advanced training at PGI Chandigarh, University of Cambridge, University of Leeds, and Harvard University"
+      ],
+      "affiliations": [
+        "Medanta – The Medicity, Gurugram"
+      ],
+      "memberships": [],
+      "awards": [
+        "DGHS Scholarship for MD Radiotherapy (1985)",
+        "Himachal State Scholarship for MBBS (1978)",
+        "National Education Scholarship (1977)",
+        "Marquis Who's Who in the World (2010)"
+      ],
+      "research": [],
+      "bio": "يصل ملف د. تجيندر كاتاريا إلى مكتب GAF Healthcare كـرئيس مسار علاج الأورام بالإشعاع في Medanta - The Medicity, Delhi NCR بـدلهي إن سي آر. بعد ٣٧+ سنة في تخطيط الجرعات، نبدأ بالسجلات لا بالكتيّب: إن صمدت الصور كان المسار التالي العلاج الإشعاعي معدل الشدة (IMRT) أو العلاج الإشعاعي الموجّه بالصور. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار إنديرا غاندي. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة. لأنه يحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-v-balasundaram": {
+      "name": "د. ف. بالاسوندارام",
+      "title": "رئيس القسم والمسؤول السريري — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD (RT)",
+      "experience": "٣٠+ سنة خبرة",
+      "languages": "الإنجليزية، التاميلية، الهندية",
+      "imageAlt": "د. ف. بالاسوندارام، رئيس القسم والمسؤول السريري — علاج الأورام بالإشعاع في Rela Hospital، تشيناي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "بروتوكولات داعمة أو متزامنة مع علاج الأورام الطبي"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "المعالجة الكثبية",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "بروتوكولات الكيميائي المتزامن مع الإشعاع",
+        "العلاج المناعي للسرطان",
+        "العلاج الموجّه للسرطان"
+      ],
+      "education": [
+        "MBBS — Thanjavur Medical College, Thanjavur (1987–1992)",
+        "MD (Radiation Therapy / علاج الأورام بالإشعاع) — Madras Medical College & Government General Hospitals, Chennai (1996–1999)"
+      ],
+      "affiliations": [
+        "Dr. Rela Institute & Medical Centre (RIMC), Chrompet, Chennai — Head of Department & Clinical Lead, Radiation Oncology",
+        "V.S. Hospital, Chetpet, Chennai — Department Head & Full-Time Consultant, Radiation Oncology (October 2005 – April 2025)",
+        "Hospital University Kebangsaan Malaysia (HUKM), Kuala Lumpur, Malaysia — Specialist in Clinical Oncology",
+        "Jawaharlal Institute of Postgraduate Medical Education & Research (JIPMER), Puducherry — Senior Resident, Radiotherapy"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [
+        "Authored a cancer public awareness book in Tamil with Kumudham Magazine (2016), titled \"Putru Nol Arivom Velvom\"",
+        "\"External beam radiotherapy and Intraluminal Brachytherapy in advanced inoperable esophageal cancer — JIPMER experience.\" American Journal of Clinical Oncology (Cancer Clinical Trials), 24(2): 128–130, 2001",
+        "\"Recurrent Multiple Myeloma Presenting as a Breast Plasmacytoma\" (2010) — A. Kalyani, M. Rohaizak, S.K. Cheong, U. Nor Aini, V. Balasundaram, A. Norija",
+        "Poster presentation at ESMO 2013: \"Role of Biomab Chemotherapy along with Concurrent Radiation therapy in locally advanced Head & Neck Cancers\" — Prof. S. Subramanian, Dr. V. Balasundaram, Dr. Nithya"
+      ],
+      "bio": "نفتح ملف د. ف. بالاسوندارام من باب تشيناي لا من قائمة تسويقية. رئيس القسم والمسؤول السريري — علاج الأورام بالإشعاع في Rela Hospital, Chennai، و٣٠+ سنة تُقاس بعدد الخطط التي رُسمت على الهدف لا بعدد الشرائح. الإجراءات المرتبطة: العلاج الإشعاعي للأورام والمعالجة الكثبية. لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة تشيناي وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة. لأنه يحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-vijay-bhasker-l": {
+      "name": "د. فيجاي بهاسكر إل",
+      "title": "Consultant — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD, DNB",
+      "experience": "٢٠+ سنة خبرة",
+      "languages": "الإنجليزية، الكانادية، الهندية",
+      "imageAlt": "د. فيجاي بهاسكر إل، Consultant — علاج الأورام بالإشعاع في Apollo Hospitals، بنغالور — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الكيميائي للأورام الصلبة",
+        "العلاج الكيميائي المساعد",
+        "العلاج الكيميائي قبل الجراحة"
+      ],
+      "education": [
+        "MBBS — Recognized medical degree",
+        "MD in علاج الأورام بالإشعاع — Specialization in radiation-based cancer treatment",
+        "DNB (علاج الأورام بالإشعاع)— Diplomate of National Board",
+        "Proficient in English, Hindi, and Kannada"
+      ],
+      "affiliations": [
+        "Apollo Hospitals, Bannerghatta Road, Bangalore, India"
+      ],
+      "memberships": [],
+      "awards": [
+        "Received the Best Case Reports 2011 (2012) award for assessment of health-related quality of life in head and neck cancer patients receiving radiation therapy, presented at Kidwai Memorial Institute of Oncology, Bangalore",
+        "Published research in \"Advances in Molecular Imaging & Radiation Oncology/Genomics – Culture & the Brain FAIRBIO – 2019\"",
+        "Presented research on effects of different doses of radiation on patient-reported quality of life outcomes in head and neck cancer patients receiving radiotherapy — VIDYAVAHINI / TATA, J.N. Tata Auditorium, IISc",
+        "Presented research on radiation-related adverse effects at multiple national and international oncology forums",
+        "Received an award at IISc (Indian Institute of Science) World Cancer Congress for contribution to radiation oncology research",
+        "Participated in the Lancôme Cancer Workshop held at the National Centre for Biological Sciences, GKVK Campus, Bangalore"
+      ],
+      "research": [],
+      "bio": "يصل ملف د. فيجاي بهاسكر إل إلى مكتب GAF Healthcare كـاستشاري علاج الأورام بالإشعاع في Apollo Hospitals, Bannerghatta Road, Bengaluru بـبنغالور. بعد ٢٠+ سنة في تخطيط الجرعات، نبدأ بالسجلات لا بالكتيّب: إن صمدت الصور كان المسار التالي العلاج الإشعاعي معدل الشدة (IMRT) أو العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT). منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار كيمبيغودا. يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة."
+    },
+    "dr-aditi-aggarwal-1": {
+      "name": "د. أديتي أغاروال",
+      "title": "أخصائية علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, PDCR, MD",
+      "experience": "١٨+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. أديتي أغاروال، أخصائية علاج الأورام بالإشعاع في Apollo Athenaa Women's Cancer Centre، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "علاج أورام الجهاز الهضمي بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية"
+      ],
+      "education": [
+        "MBBS",
+        "PDCR (Post-Doctoral Certificate in Radiology)",
+        "MD – علاج الأورام بالإشعاع"
+      ],
+      "affiliations": [
+        "Apollo Hospitals, Delhi",
+        "Apollo Athenea Women's Cancer Centre, Delhi"
+      ],
+      "memberships": [
+        "Life Member (LM 1239), رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)",
+        "Life Member, Maharashtra State Chapter (AROI)",
+        "Life Member, Indian المعالجة الكثبية Society (IBS)",
+        "Life Member, Gastrointestinal Oncology Society (GIOS)",
+        "Life Member, Society of Genitourinary Oncologists (SOGO)"
+      ],
+      "awards": [
+        "Gold Medal in Pharmacology",
+        "University Gold Medal in Gynecology and Obstetrics",
+        "Recipient of the Young Investigator Award – British Journal of Radiology (2012)"
+      ],
+      "research": [
+        "Roopam Srivastava, P.K. Sharma, Aditi Aggarwal, Gagan Saini. \"Adaptive Radiotherapy: A hybrid (on-line image guidance + off-line adaptive) approach for head and neck cancer.\" Poster in ESTRO, 2016.",
+        "Sameer Rastogi, Aditi Aggarwal. \"Organization of Chemotherapy and Systemic Therapy Services in India: Devil lies in details.\" Journal of Global Oncology, 2017; 3(2): 182–183.",
+        "Sameer Rastogi, Aditi Aggarwal. \"Discordance of histo-pathological diagnosis of patients with soft tissue sarcoma referred to tertiary care center.\" Journal of Clinical Oncology*, 2017; 35:15_suppl, 11064–11064."
+      ],
+      "bio": "ملف د. أديتي أغاروال يُفتح كخطة علاج لا كعرض فندقي. Apollo Athenaa Women's Cancer Centre, Delhi NCR في دلهي إن سي آر. ١٨+ سنة في علاج الأورام بالإشعاع. تراجع الهامش على العلاج الإشعاعي للأورام والعلاج الإشعاعي معدل الشدة الموجّه بالصور قبل أن يُقترح أسبوع في الهند. المنسّق يبقى على الخط بعد الهبوط؛ الملف لا يُغلق عند باب المطار. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة دلهي إن سي آر وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر."
+    },
+    "dr-amal-roy-chaudhoory": {
+      "name": "د. أمل روي تشودوري",
+      "title": "مدير أول — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD",
+      "experience": "٢٥+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. أمل روي تشودوري، مدير أول — علاج الأورام بالإشعاع في Fortis Memorial Research Institute، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور (IGRT)",
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "العلاج الإشعاعي أثناء الجراحة"
+      ],
+      "education": [
+        "MBBS — Kasturba Medical College, Manipal",
+        "MD (العلاج الإشعاعي) — Kasturba Medical College, Manipal"
+      ],
+      "affiliations": [
+        "Fortis Hospital, Gurgaon — Senior Director, Radiation Oncology (Current)",
+        "Rajiv Gandhi Cancer Institute — (Previous)",
+        "Max Hospital, Saket and Shalimarbagh — (Previous)"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "GAF Healthcare تضع د. أمل روي تشودوري أمامك كاسم لا كقسم. مدير أول — علاج الأورام بالإشعاع، Fortis Memorial Research Institute, Delhi NCR، دلهي إن سي آر. بعد ٢٥+ سنة ما زال يمسك الخطة حتى تصمد أمام مراجعة الزملاء. العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT) والعلاج الإشعاعي معدل الشدة (IMRT) من الأدوات اليومية. المنسّق يبقى على الخط بعد الهبوط؛ الملف لا يُغلق عند باب المطار. لأنه يحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-anbarasi-kumaresan": {
+      "name": "د. أنباراسي كوماريسان",
+      "title": "استشارية أولى لعلاج الأورام بالإشعاع",
+      "qualifications": "MBBS, DMRT, MDRT",
+      "experience": "١٧+ سنة خبرة",
+      "languages": "الإنجليزية، التاميلية، الهندية",
+      "imageAlt": "د. أنباراسي كوماريسان، استشارية أولى لعلاج الأورام بالإشعاع في MGM Healthcare، تشيناي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "دور داعم في علاج الأورام الطبي ضمن الفريق المتعدد التخصصات"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "المعالجة الكثبية",
+        "جراحة سرطان الثدي — التنسيق الإشعاعي",
+        "جراحة أورام الرأس والعنق — التنسيق الإشعاعي",
+        "الجراحة الإشعاعية بسايبر نايف"
+      ],
+      "education": [
+        "MBBS — Thoothukudi Government Medical College, Thoothukudi (2003–2009)",
+        "DMRT (Diploma in Medical العلاج الإشعاعي) — Cancer Institute (WIA), Adyar, Chennai (2011–2013)",
+        "MDRT (Doctor of Medicine in العلاج الإشعاعي) — Cancer Institute (WIA), Adyar, Chennai (2013–2015)",
+        "Certificate Course in Essentials of Palliative Care — Indian Association of Palliative Care (IAPC) (2018)",
+        "Hands-on Training in Palliative Care — IAPC, Lakshmi Pain and Palliative Care (2019)"
+      ],
+      "affiliations": [
+        "MGM Healthcare",
+        "MGM Cancer Institute, Chennai"
+      ],
+      "memberships": [
+        "Life Member, رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)",
+        "الجمعية الهندية للأورام (ISO)",
+        "Indian المعالجة الكثبية Society (IBS)",
+        "الجمعية الأوروبية للعلاج الإشعاعي والأورام (ESTRO) (ESTRO)"
+      ],
+      "awards": [],
+      "research": [],
+      "bio": "GAF Healthcare تضع د. أنباراسي كوماريسان أمامك كاسم لا كقسم. استشارية أولى لعلاج الأورام بالإشعاع، MGM Healthcare, Chennai, Chennai، تشيناي. بعد ١٧+ سنة ما زالت تمسك الخطة حتى تصمد أمام مراجعة الزملاء. العلاج الإشعاعي للأورام والعلاج الإشعاعي معدل الشدة الموجّه بالصور من الأدوات اليومية. المنسّق يبقى على الخط بعد الهبوط؛ الملف لا يُغلق عند باب المطار."
+    },
+    "dr-anita-malik": {
+      "name": "د. أنيتا مالك",
+      "title": "Director — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD",
+      "experience": "١٥+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. أنيتا مالك، Director — علاج الأورام بالإشعاع في Fortis Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور (IGRT)",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي",
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي أثناء الجراحة"
+      ],
+      "education": [
+        "MBBS — Netaji Subhash Chandra Bose Medical College, Jabalpur, MP",
+        "MD (العلاج الإشعاعي) — Government Medical College, Indore",
+        "IMRT/IGRT Clinical Training Course— National University Hospital (NUH), Singapore"
+      ],
+      "affiliations": [
+        "Fortis Hospital, Noida— Director, Radiation Oncology"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [
+        "Oral Cancer Signs Every Tobacco User Must Know",
+        "Radiotherapy: An Essential Component of Cancer Treatment",
+        "Radiation Therapy for Cancer: How Does It Work"
+      ],
+      "bio": "المسار إلى د. أنيتا مالك يمر بمكتب التنسيق لا بالاستمارة العامة. رئيسة مسار علاج الأورام بالإشعاع في Fortis Hospital, Noida, Delhi NCR بـدلهي إن سي آر منذ ما يزيد على ١٥ سنة. نسأل أولًا: هل الإجراء الصادق العلاج الإشعاعي معدل الشدة (IMRT) أم العلاج الإشعاعي الموجّه بالصور (IGRT)؟ الجواب بعد الملف. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار إنديرا غاندي. لأنها تحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-azmi-saundarya-k": {
+      "name": "د. عزمي سونداريا كيه",
+      "title": "المسؤولة السريرية واستشارية",
+      "qualifications": "MBBS, DMRT, DNB, GFPM, ECFMG",
+      "experience": "٨+ سنة خبرة",
+      "languages": "الإنجليزية، التاميلية، الهندية",
+      "imageAlt": "د. عزمي سونداريا كيه، المسؤولة السريرية واستشارية في Gleneagles HealthCity Chennai، تشيناي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "المعالجة الكثبية",
+        "إشعاع الجسم الكامل"
+      ],
+      "education": [
+        "MBBS",
+        "DMRT (Diploma in Medical العلاج الإشعاعي) — Amrita Institute of Medical Sciences",
+        "DNB (علاج الأورام بالإشعاع) — Apollo Specialty Hospital, Chennai",
+        "GFPM (Global زمالة in Palliative Medicine) — Pallium India, 2024 batch",
+        "Educational Commission for Foreign Medical Graduates (ECFMG) Certification — 2014",
+        "International Workshop on Precision العلاج الإشعاعي (IWPR 2015), Trivandrum",
+        "ESTRO SCHOOL – AROI Course on Advanced Technologies, New Delhi (December 2015)",
+        "CHRISTIE-TMC FRCR Course, Tata Medical Centre, Kolkata (January 2017)",
+        "Observership in advanced brachytherapy and image-guided IMRT — Long Beach Memorial Medical Center, California, USA"
+      ],
+      "affiliations": [
+        "Gleneagles Hospital, Chennai (Perumbakkam)",
+        "Rela Hospitals, Chennai",
+        "MIOT International, Chennai",
+        "Jus Onco – Affordable Cancer Care, Kodambakkam, Chennai"
+      ],
+      "memberships": [
+        "Member, Tamilnadu Medical Council (since November 2009)",
+        "Member, Indian Medical Council (since November 2009)",
+        "Member, رابطة أطباء الأورام بالإشعاع في الهند (AROI)"
+      ],
+      "awards": [],
+      "research": [],
+      "bio": "لا نكتب عن د. عزمي سونداريا كيه بلغة «الأشهر عالميًا». نكتب الوقائع: المسؤولة السريرية واستشارية في Gleneagles HealthCity Chennai, Chennai، تشيناي، ٨+ سنة، وملف يُراجع قبل السفر. إن لزم العلاج الإشعاعي للأورام رُسمت الخطة؛ إن لزم العلاج الإشعاعي معدل الشدة الموجّه بالصور كذلك. العربون بعد الاتفاق على الخطة، لا قبل أن ترى الاستشارية على الشاشة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة تشيناي وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. لأنها تحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-bharath-chandra-gurram": {
+      "name": "د. بهارات تشاندرا غورام",
+      "title": "استشاري علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD, MRCP, FESMO, CCEPC, BLS",
+      "experience": "١٣+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. بهارات تشاندرا غورام، استشاري علاج الأورام بالإشعاع في Yashoda Hospitals، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "علاج الأورام الطبي"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية",
+        "إشعاع الجسم الكامل"
+      ],
+      "education": [
+        "MD (علاج الأورام بالإشعاع) — Amrita Institute of Medical Sciences, Kochi (2012–2015)",
+        "Internship — Chalmeda Anand Rao Institute of Medical Sciences (2010–2011)",
+        "MBBS — Dr. NTR University of Health Sciences (2005–2010)",
+        "MRCP (Medical Oncology) — Member of the Royal College of Physicians, SCE Medical Oncology, UK (Oct 2019)",
+        "FESMO — European Certified Medical Oncologist, European Society of Medical Oncology (Dec 2014)",
+        "CCEPC — Certification Course in Essentials of Palliative Care (June 2013)",
+        "Teaching Course — Indian College of علاج الأورام بالإشعاع, ICRO (Nov 2012)",
+        "Basic Life Support (BLS) — American Heart Association",
+        "EMPACT — Emergency Medical, Procedural and Clinical Training, Apollo Hospital"
+      ],
+      "affiliations": [
+        "Yashoda Hospitals, Somajiguda, Hyderabad",
+        "Yashoda Hospitals, Hitec City, Hyderabad"
+      ],
+      "memberships": [
+        "رابطة أطباء الأورام بالإشعاع في الهند (AROI)",
+        "American المعالجة الكثبية Society",
+        "الجمعية الأمريكية لعلاج الأورام بالإشعاع (ASTRO)",
+        "European Society of علاج الأورام الطبي"
+      ],
+      "awards": [
+        "Gold Medal (First Prize) — Quiz at International Symposium on Advances in Clinical Radiobiology (SACR 2013)",
+        "Silver Medal (Second Prize) — Poster Presentation at International Symposium on Non-Hodgkins Lymphoma, Regional Cancer Center, Adyar, Chennai",
+        "Neil Joseph Fellowship Award — Association of Radiation Oncologists of India (AROI), National Conference, Imphal, India (Nov 2014)",
+        "Travel Grant for Paper Presentation — Selected Among Top 5 Papers, AROI National Conference, Imphal, India (Nov 2014)"
+      ],
+      "research": [],
+      "bio": "GAF Healthcare تضع د. بهارات تشاندرا غورام أمامك كاسم لا كقسم. استشاري علاج الأورام بالإشعاع، Yashoda Hospitals, Somajiguda, Hyderabad، حيدر آباد. بعد ١٣+ سنة ما زال يمسك الخطة حتى تصمد أمام مراجعة الزملاء. العلاج الإشعاعي للأورام والعلاج الإشعاعي التجسيمي للجسم من الأدوات اليومية. المنسّق يبقى على الخط بعد الهبوط؛ الملف لا يُغلق عند باب المطار."
+    },
+    "dr-charu-garg": {
+      "name": "د. تشارو غارغ",
+      "title": "نائبة الرئيس - — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD",
+      "experience": "٢٥+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. تشارو غارغ، نائبة الرئيس - — علاج الأورام بالإشعاع في Max Super Speciality Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية",
+        "جراحة سرطان الثدي — التنسيق الإشعاعي",
+        "جراحة سرطان عنق الرحم — التنسيق الإشعاعي",
+        "جراحة سرطان المبيض — التنسيق الإشعاعي",
+        "جراحة سرطان بطانة الرحم — التنسيق الإشعاعي",
+        "جراحة سرطان الرئة — التنسيق الإشعاعي"
+      ],
+      "education": [
+        "MBBS – BJ Medical College, Ahmedabad",
+        "MD (علاج الأورام بالإشعاع) – Gujarat Cancer & Research Institute (GCRI), Ahmedabad",
+        "Advanced Training – Mannheim, Germany (training in advanced radiation techniques)"
+      ],
+      "affiliations": [
+        "Max Healthcare",
+        "Rajiv Gandhi Cancer and Research Institute",
+        "Medanta – The Medicity"
+      ],
+      "memberships": [
+        "Member, American Society for Therapeutic Oncology (ASTRO)",
+        "Member, Oncology Forum",
+        "Member, الجمعية الهندية للأورام (ISO)",
+        "Member, رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)"
+      ],
+      "awards": [],
+      "research": [],
+      "bio": "د. تشارو غارغ — رئيسة مسار علاج الأورام بالإشعاع في Max Super Speciality Hospital, Saket, Delhi NCR، دلهي إن سي آر. GAF Healthcare لا تحجز مقعد إشعاع قبل أن تقرأ التصوير وتقارير الجراحة. العلاج الإشعاعي للأورام يبقى على الطاولة عندما يكون الهامش ضيقًا؛ العلاج الإشعاعي معدل الشدة الموجّه بالصور عندما يناسب الحجم. العربون بعد الاتفاق على الخطة، لا قبل أن ترى الاستشارية على الشاشة. لأنها تحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-deepak-gupta": {
+      "name": "د. ديباك غوبتا",
+      "title": "مدير مساعد — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD (Radiation Oncology), PDCR (Clinical Research)",
+      "experience": "١٧+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. ديباك غوبتا، مدير مساعد — علاج الأورام بالإشعاع في Medanta - The Medicity، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "تقنيات الإشعاع المتقدمة — العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي"
+      ],
+      "education": [
+        "M.B.B.S. — Bachelor of Medicine and Bachelor of Surgery",
+        "M.D. (علاج الأورام بالإشعاع) — Postgraduate specialization in علاج الأورام بالإشعاع",
+        "P.D.C.R. (Clinical Research) — Post-Doctoral Certificate in Clinical Research"
+      ],
+      "affiliations": [
+        "Medanta — The Medicity, Gurugram",
+        "Tata Memorial Hospital, Mumbai"
+      ],
+      "memberships": [],
+      "awards": [
+        "ESMO Travel Grant (2016) — Awarded by the European Society for Medical Oncology, recognizing his contribution and potential in the field of oncology",
+        "ESTRO Accuray Award (2014) — Awarded by the European Society for Radiotherapy and Oncology in collaboration with Accuray, acknowledging excellence in radiation therapy research and practice"
+      ],
+      "research": [],
+      "bio": "لا نكتب عن د. ديباك غوبتا بلغة «الأشهر عالميًا». نكتب الوقائع: مدير مساعد — علاج الأورام بالإشعاع في Medanta - The Medicity, Delhi NCR، دلهي إن سي آر، ١٧+ سنة، وملف يُراجع قبل السفر. إن لزم تقنيات الإشعاع المتقدمة — العلاج الإشعاعي التجسيمي للجسم رُسمت الخطة؛ إن لزم الجراحة الإشعاعية التجسيمية (SRS) كذلك. العربون بعد الاتفاق على الخطة، لا قبل أن ترى الاستشاري على الشاشة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة دلهي إن سي آر وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. لأنه يحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-devashish-tripathi": {
+      "name": "د. ديفاشيش تريباثي",
+      "title": "استشاري أول",
+      "qualifications": "MBBS, PLAB, MRCP (UK), FRCR, CCT",
+      "experience": "٢٢+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. ديفاشيش تريباثي، استشاري أول في Indraprastha Apollo Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي أثناء الجراحة",
+        "العلاج الكيميائي للأورام",
+        "العلاج الموجّه للسرطان",
+        "العلاج المناعي للسرطان"
+      ],
+      "education": [
+        "MBBS",
+        "PLAB — Professional and Linguistic Assessments Board (UK)",
+        "MRCP (UK)",
+        "FRCR (Oncology)",
+        "CCT in Clinical Oncology (United Kingdom)"
+      ],
+      "affiliations": [
+        "Apollo Hospitals Indraprastha, Delhi"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "د. ديفاشيش تريباثي — استشاري علاج الأورام بالإشعاع في Indraprastha Apollo Hospital, Delhi NCR، دلهي إن سي آر. GAF Healthcare لا تحجز مقعد إشعاع قبل أن يقرأ التصوير وتقارير الجراحة. العلاج الإشعاعي للأورام يبقى على الطاولة عندما يكون الهامش ضيقًا؛ العلاج الإشعاعي التجسيمي للجسم عندما يناسب الحجم. العربون بعد الاتفاق على الخطة، لا قبل أن ترى الاستشاري على الشاشة."
+    },
+    "dr-divya-gupta": {
+      "name": "د. ديفيا غوبتا",
+      "title": "استشارية أولى",
+      "qualifications": "MBBS, MD (Radiation Oncology), Fellowship in Brain Tumours",
+      "experience": "١٧+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. ديفيا غوبتا، استشارية أولى في Sarvodaya Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "إشعاع الجسم الكامل",
+        "المعالجة الكثبية",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "الجراحة الإشعاعية بغاما نايف"
+      ],
+      "education": [
+        "زمالة in Brain Tumours — Tata Memorial Hospital, Mumbai (under world-renowned Dr. Rakesh Jalali)",
+        "MD (علاج الأورام بالإشعاع) — Indira Gandhi Medical College, Shimla",
+        "MBBS — Indira Gandhi Medical College, Shimla"
+      ],
+      "affiliations": [
+        "Sarvodaya Hospital, Sector 8, Faridabad"
+      ],
+      "memberships": [
+        "Life Member, رابطة أطباء الأورام بالإشعاع في الهند (AROI)"
+      ],
+      "awards": [],
+      "research": [],
+      "bio": "يصل ملف د. ديفيا غوبتا إلى مكتب GAF Healthcare كـاستشارية علاج الأورام بالإشعاع في Sarvodaya Hospital, Faridabad, Delhi NCR بـدلهي إن سي آر. بعد ١٧+ سنة في تخطيط الجرعات، نبدأ بالسجلات لا بالكتيّب: إن صمدت الصور كان المسار التالي العلاج الإشعاعي للأورام أو العلاج الإشعاعي معدل الشدة الموجّه بالصور. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار إنديرا غاندي."
+    },
+    "dr-garima-singh": {
+      "name": "د. غاريما سينغ",
+      "title": "استشارية رئيسية —",
+      "qualifications": "MBBS, MD",
+      "experience": "١٤+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. غاريما سينغ، استشارية رئيسية — في BLK-Max Super Speciality Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي أثناء الجراحة"
+      ],
+      "education": [
+        "MBBS",
+        "MD",
+        "زمالة — Recent Advances in علاج الأورام بالإشعاع, Dharmshila Cancer Hospital & Research Centre, New Delhi",
+        "Observership — Community Cancer Center, Indianapolis, USA (Affiliated with M.D. Anderson)"
+      ],
+      "affiliations": [
+        "BLK-Max Super Speciality Hospital, New Delhi (Current — Principal Consultant)",
+        "Max Super Speciality Hospital, Saket, New Delhi (سابقًا — Consultant)",
+        "Medanta – The Medicity, Gurgaon (سابقًا — Associate Consultant)",
+        "Maulana Azad Medical College, New Delhi (سابقًا — Senior Research Associate)",
+        "Safdarjung Hospital, New Delhi (سابقًا — Assistant Professor)",
+        "Dharmshila Cancer Hospital & Research Centre, New Delhi (Fellowship)",
+        "Community Cancer Center, Indianapolis, USA (Observership)",
+        "Maulana Azad Medical College & L.N.J.P Hospital, New Delhi (سابقًا — Senior Resident)"
+      ],
+      "memberships": [
+        "رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)",
+        "Indian المعالجة الكثبية Society",
+        "Indian Society of Clinical Oncology"
+      ],
+      "awards": [],
+      "research": [],
+      "bio": "د. غاريما سينغ يُدرَج في دليل الأطباء العربي تحت الهند / دلهي إن سي آر / علاج الأورام بالإشعاع حتى يمكن لاحقًا بناء صفحات الإجراء دون تغيير المفاتيح الإنجليزية. BLK-Max Super Speciality Hospital, Delhi NCR. ١٤+ سنة. العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)، العلاج الإشعاعي الخارجي. لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة دلهي إن سي آر وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر."
+    },
+    "dr-gowhar-ahmad-shigan": {
+      "name": "د. غوهر أحمد شيغان",
+      "title": "استشاري أول",
+      "qualifications": "MBBS, DNB (Radiation Oncology)",
+      "experience": "١٣+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. غوهر أحمد شيغان، استشاري أول في Paras Hospitals، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي"
+      ],
+      "education": [
+        "MBBS - DNB (علاج الأورام بالإشعاع)"
+      ],
+      "affiliations": [
+        "Paras Health, Gurugram"
+      ],
+      "memberships": [],
+      "awards": [
+        "Best Resident Award in DNB Radiation Oncology Course"
+      ],
+      "research": [],
+      "bio": "من مطار إنديرا غاندي إلى Paras Hospitals, Gurugram, Delhi NCR رحلة تُخطَّط بعد المكالمة لا قبلها. د. غوهر أحمد شيغان استشاري علاج الأورام بالإشعاع بخبرة ١٣+ سنة. GAF Healthcare تطلب التصوير أولًا ثم تحدد إن كان الجراحة الإشعاعية التجسيمية (SRS) أو العلاج الإشعاعي التجسيمي للجسم هو الخطوة التالية. نكتب الأسئلة التي نريدك أن تطرحها على الكاميرا، ثم نحدد إن كان الوصول إلى دلهي إن سي آر هو الخطوة الصادقة."
+    },
+    "dr-indu-bansal-aggarwal": {
+      "name": "د. إندو بانسال أغاروال",
+      "title": "مديرة المجموعة ورئيسة القسم — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD",
+      "experience": "٢٧+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. إندو بانسال أغاروال، مديرة المجموعة ورئيسة القسم — علاج الأورام بالإشعاع في Paras Hospitals، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي الخارجي",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "العلاج الإشعاعي أثناء الجراحة",
+        "الجراحة الإشعاعية بسايبر نايف"
+      ],
+      "education": [
+        "MBBS — Pt. BDS PGIMS, Rohtak",
+        "MD in علاج الأورام بالإشعاع — Pt. BDS PGIMS, Rohtak",
+        "Diploma in Hospital Management — NIHFW (National Institute of Health and Family Welfare), New Delhi",
+        "AROI زمالة — MD Anderson Cancer Centre, Houston, USA",
+        "Neil Joseph زمالة — AROI (Association of Radiation Oncologists of India)",
+        "Proficient in Advanced Radiation Procedures."
+      ],
+      "affiliations": [
+        "Paras Health, Gurugram — Group Director and HOD, Radiation Oncology"
+      ],
+      "memberships": [],
+      "awards": [
+        "Pink Ambassador — Global Entrepreneurs Clique",
+        "Golden Citizen of India",
+        "National Mahila Gold Rattan Award"
+      ],
+      "research": [],
+      "bio": "GAF Healthcare تضع د. إندو بانسال أغاروال أمامك كاسم لا كقسم. مديرة المجموعة ورئيسة القسم — علاج الأورام بالإشعاع، Paras Hospitals, Gurugram, Delhi NCR، دلهي إن سي آر. بعد ٢٧+ سنة ما زالت تمسك الخطة حتى تصمد أمام مراجعة الزملاء. العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT) والعلاج الإشعاعي معدل الشدة (IMRT) من الأدوات اليومية. المنسّق يبقى على الخط بعد الهبوط؛ الملف لا يُغلق عند باب المطار. لأنها تحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-k-kiran-kumar": {
+      "name": "د. ك. كيران كومار",
+      "title": "استشاري علاج الأورام بالإشعاع",
+      "qualifications": "MD, DNB",
+      "experience": "١٩+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. ك. كيران كومار، استشاري علاج الأورام بالإشعاع في Yashoda Hospitals، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "العلاج الإشعاعي للأورام",
+        "المعالجة الكثبية",
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "المعالجة الكثبية",
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور"
+      ],
+      "education": [
+        "MD — Radiation Therapy",
+        "DNB — Radiation Therapy"
+      ],
+      "affiliations": [
+        "Yashoda Hospitals, Somajiguda, Hyderabad"
+      ],
+      "memberships": [
+        "ARIO (رابطة أطباء الأورام بالإشعاع في الهند (AROI))",
+        "IMA (الجمعية الطبية الهندية (IMA))",
+        "ESMO (European Society for علاج الأورام الطبي)"
+      ],
+      "awards": [],
+      "research": [],
+      "bio": "في حيدر آباد يُحفظ ملف د. ك. كيران كومار تحت بلد الهند، مدينة حيدر آباد، تخصص علاج الأورام بالإشعاع، ثم الإجراء. ١٩+ سنة خبرة في Yashoda Hospitals, Somajiguda, Hyderabad. نطابق الحالة بـالعلاج الإشعاعي للأورام والمعالجة الكثبية بعد قراءة الأشعة، لا بعد مكالمة المبيعات. نكتب الأسئلة التي نريدك أن تطرحها على الكاميرا، ثم نحدد إن كان الوصول إلى حيدر آباد هو الخطوة الصادقة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة حيدر آباد وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر."
+    },
+    "dr-kamal-verma": {
+      "name": "د. كمال فيرما",
+      "title": "استشاري رئيسي",
+      "qualifications": "MBBS, DMRT, DNB",
+      "experience": "١٥+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. كمال فيرما، استشاري رئيسي في Artemis Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "دور داعم في علاج الأورام الطبي ضمن الفريق المتعدد التخصصات"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)"
+      ],
+      "education": [
+        "MBBS — Pt. BDS PGIMS, Rohtak, Haryana",
+        "DMRT (Diploma in Medical العلاج الإشعاعي)",
+        "DNB (Diplomate of National Board) — علاج الأورام بالإشعاع"
+      ],
+      "affiliations": [
+        "Artemis Hospitals, Gurugram"
+      ],
+      "memberships": [
+        "رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)"
+      ],
+      "awards": [],
+      "research": [],
+      "bio": "نفتح ملف د. كمال فيرما من باب دلهي إن سي آر لا من قائمة تسويقية. استشاري رئيسي في Artemis Hospital, Delhi NCR، و١٥+ سنة تُقاس بعدد الخطط التي رُسمت على الهدف لا بعدد الشرائح. الإجراءات المرتبطة: العلاج الإشعاعي الموجّه بالصور والعلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT). لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة دلهي إن سي آر وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر."
+    },
+    "dr-khushboo-rastogi": {
+      "name": "د. خوشبو راستوغي",
+      "title": "استشارية —",
+      "qualifications": "MBBS, MD (Radiation Oncology), CCEPC",
+      "experience": "٥+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. خوشبو راستوغي، استشارية — في BLK-Max Super Speciality Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي أثناء الجراحة"
+      ],
+      "education": [
+        "MBBS",
+        "MD (علاج الأورام بالإشعاع)",
+        "CCEPC (Certification Course in Essentials of Palliative Care) – IAPC, Gujarat"
+      ],
+      "affiliations": [
+        "BLK-Max Super Speciality Hospital, New Delhi",
+        "Sterling Hospitals, Gujarat",
+        "Manipal Hospitals, Delhi",
+        "Tata Memorial Hospital, Mumbai",
+        "Max Super Speciality Hospital, Saket, Delhi"
+      ],
+      "memberships": [
+        "رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)",
+        "International Organisation for Radiotherapy for Benign Conditions (IORBC)",
+        "Indian المعالجة الكثبية Society (IBS)",
+        "Gastrointestinal Oncology Society (GIOS)"
+      ],
+      "awards": [],
+      "research": [],
+      "bio": "د. خوشبو راستوغي — استشارية علاج الأورام بالإشعاع في BLK-Max Super Speciality Hospital, Delhi NCR، دلهي إن سي آر. GAF Healthcare لا تحجز مقعد إشعاع قبل أن تقرأ التصوير وتقارير الجراحة. العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT) يبقى على الطاولة عندما يكون الهامش ضيقًا؛ العلاج الإشعاعي معدل الشدة (IMRT) عندما يناسب الحجم. العربون بعد الاتفاق على الخطة، لا قبل أن ترى الاستشارية على الشاشة."
+    },
+    "dr-m-r-vishwateja": {
+      "name": "د. م. ر. فيشواتيجا",
+      "title": "استشاري علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, DNB, ICRO, CCEPC",
+      "experience": "٧+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. م. ر. فيشواتيجا، استشاري علاج الأورام بالإشعاع في Yashoda Hospitals، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية",
+        "إشعاع الجسم الكامل"
+      ],
+      "education": [
+        "MBBS, Osmania Medical College, Hyderabad (2007)",
+        "DNB علاج الأورام بالإشعاع, Yashoda Cancer Institute, Hyderabad",
+        "Senior Residency, MNJ Cancer Institute, Hyderabad",
+        "Indian College of علاج الأورام بالإشعاع (ICRO) — 2018",
+        "Certification Course in Essentials of Palliative Care (CCEPC) — 2019"
+      ],
+      "affiliations": [
+        "Yashoda Hospitals, Somajiguda, Hyderabad",
+        "MGM Government Hospital, Warangal",
+        "St. Ann's Cancer Hospital, Kazipet, Warangal",
+        "MNJ Cancer Institute, Hyderabad",
+        "Yashoda Cancer Institute, Somajiguda, Hyderabad"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "يصل ملف د. م. ر. فيشواتيجا إلى مكتب GAF Healthcare كـاستشاري علاج الأورام بالإشعاع في Yashoda Hospitals, Somajiguda, Hyderabad بـحيدر آباد. بعد ٧+ سنة في تخطيط الجرعات، نبدأ بالسجلات لا بالكتيّب: إن صمدت الصور كان المسار التالي العلاج الإشعاعي للأورام أو العلاج الإشعاعي معدل الشدة الموجّه بالصور. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار راجيف غاندي الدولي."
+    },
+    "dr-mayur-mayank": {
+      "name": "د. مايور مايانك",
+      "title": "استشاري أول",
+      "qualifications": "MBBS, DMRT, MD (Radiation Oncology), DNB (Radiotherapy), UICC Fellowship",
+      "experience": "١٣+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. مايور مايانك، استشاري أول في Medanta - The Medicity، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية"
+      ],
+      "education": [
+        "MBBS — Medical degree",
+        "DMRT — Diploma in Medical العلاج الإشعاعي",
+        "MD (علاج الأورام بالإشعاع)",
+        "DNB (العلاج الإشعاعي)",
+        "UICC زمالة — Union for International Cancer Control زمالة (international زمالة with training at Peter MacCallum Cancer Centre, Australia)",
+        "Oncology training at Christian Medical College (CMC), Vellore"
+      ],
+      "affiliations": [
+        "Medanta — The Medicity, Gurugram",
+        "Metro Cancer Hospital, Faridabad"
+      ],
+      "memberships": [],
+      "awards": [
+        "AROI Award for Best Oral Presentation at AROITNPYCON-2012, JIPMER, Puducherry (2012)",
+        "Tamil Nadu Dr. MGR Medical University Gold Medal for securing the highest mark in DMRT (2013)",
+        "Distinctions in Physiology, Forensic Medicine, and Ophthalmology during MBBS training",
+        "Established and started the Department of Radiation Oncology at Metro Cancer Hospital, Faridabad"
+      ],
+      "research": [],
+      "bio": "في دلهي إن سي آر يُحفظ ملف د. مايور مايانك تحت بلد الهند، مدينة دلهي إن سي آر، تخصص علاج الأورام بالإشعاع، ثم الإجراء. ١٣+ سنة خبرة في Medanta - The Medicity, Delhi NCR. نطابق الحالة بـالعلاج الإشعاعي معدل الشدة (IMRT) والعلاج الإشعاعي الموجّه بالصور بعد قراءة الأشعة، لا بعد مكالمة المبيعات. نكتب الأسئلة التي نريدك أن تطرحها على الكاميرا، ثم نحدد إن كان الوصول إلى دلهي إن سي آر هو الخطوة الصادقة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة دلهي إن سي آر وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر."
+    },
+    "dr-naman-utreja": {
+      "name": "د. نامان أوتريجا",
+      "title": "رئيس القسم واستشاري أول",
+      "qualifications": "MBBS, MD",
+      "experience": "١٣+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. نامان أوتريجا، رئيس القسم واستشاري أول في Sarvodaya Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "علاج الأورام الطبي"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور"
+      ],
+      "education": [
+        "زمالة in \"Treating Oncology Patients During COVID-19\" from Scientia, Los Angeles",
+        "MD (علاج الأورام بالإشعاع) — Swami Rama Himalayan Institute, Dehradun",
+        "MBBS — MGM Medical College, Aurangabad, Maharashtra"
+      ],
+      "affiliations": [
+        "Sarvodaya Hospital, Sector 8, Faridabad (Current)",
+        "GS Cancer Research Institute and Medical College",
+        "Fortis Hospital, Noida",
+        "Max Hospital, Shalimar Bagh",
+        "Max Hospital, Saket",
+        "Asian Institute and Hospital, Faridabad",
+        "Medanta – The Medicity Hospital, Gurgaon"
+      ],
+      "memberships": [
+        "Life Time Member, رابطة أطباء الأورام بالإشعاع في الهند (AROI)",
+        "Life Time Member, North Zone رابطة أطباء الأورام بالإشعاع في الهند (AROI)",
+        "Member, ICAN Care Tobacco Control Initiative"
+      ],
+      "awards": [
+        "Won second prize in the best paper category — NEURO-ONCOLOGY, 2015",
+        "Participated as faculty in Breast Cancer Contouring Masterclass workshop at Max Hospital PPG, 2018",
+        "Co-investigator in Multi-Institutional Phase-III trial — KINDLE Study on Lung Cancer, 2020",
+        "Co-investigator in Multi-Institutional Phase-III trial — Prostate Cancer Study, 2022",
+        "Faculty at 5th Genitourinary Cancers Best of 2023, in 2024"
+      ],
+      "research": [
+        "Published paper in AROICON – NEURO-ONCOLOGY, 2014",
+        "Presented poster at NZAROICON, Hisar, 2017",
+        "Oral Presentation in SBRT and SRS Masterclass at Medanta Hospital, Gurgaon, 2019"
+      ],
+      "bio": "من مطار إنديرا غاندي إلى Sarvodaya Hospital, Faridabad, Delhi NCR رحلة تُخطَّط بعد المكالمة لا قبلها. د. نامان أوتريجا رئيس مسار علاج الأورام بالإشعاع بخبرة ١٣+ سنة. GAF Healthcare تطلب التصوير أولًا ثم تحدد إن كان العلاج الإشعاعي للأورام أو العلاج الإشعاعي التجسيمي للجسم هو الخطوة التالية. نكتب الأسئلة التي نريدك أن تطرحها على الكاميرا، ثم نحدد إن كان الوصول إلى دلهي إن سي آر هو الخطوة الصادقة. لأنه يحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-neha-kakkar": {
+      "name": "د. نيها كاكار",
+      "title": "Consultant — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD",
+      "experience": "١٢+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. نيها كاكار، Consultant — علاج الأورام بالإشعاع في Fortis Memorial Research Institute، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية"
+      ],
+      "education": [
+        "MBBS — Medical degree",
+        "MD Radiation — Postgraduate specialization in علاج الأورام بالإشعاع"
+      ],
+      "affiliations": [
+        "Fortis Memorial Research Institute, Gurgaon (Current)",
+        "Safdarjung Hospital, New Delhi (Previous)",
+        "Max Super Speciality Hospital, Saket, New Delhi (Previous)"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "المسار إلى د. نيها كاكار يمر بمكتب التنسيق لا بالاستمارة العامة. استشارية علاج الأورام بالإشعاع في Fortis Memorial Research Institute, Delhi NCR بـدلهي إن سي آر منذ ما يزيد على ١٢ سنة. نسأل أولًا: هل الإجراء الصادق الجراحة الإشعاعية التجسيمية (SRS) أم العلاج الإشعاعي التجسيمي للجسم؟ الجواب بعد الملف. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار إنديرا غاندي."
+    },
+    "dr-neha-sehgal": {
+      "name": "د. نيها سيغال",
+      "title": "Consultant — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD",
+      "experience": "١٠+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. نيها سيغال، Consultant — علاج الأورام بالإشعاع في Fortis Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "الجراحة الإشعاعية بغاما نايف",
+        "العلاج الإشعاعي أثناء الجراحة",
+        "العلاج بشعاع البروتون"
+      ],
+      "education": [
+        "MBBS — Medical degree",
+        "MD — Postgraduate specialization",
+        "International Observer Experience — Froedtert Hospital & Medical College of Wisconsin, USA"
+      ],
+      "affiliations": [
+        "Fortis Hospital, Noida — Current practicing facility"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "GAF Healthcare تضع د. نيها سيغال أمامك كاسم لا كقسم. Consultant — علاج الأورام بالإشعاع، Fortis Hospital, Noida, Delhi NCR، دلهي إن سي آر. بعد ١٠+ سنة ما زالت تمسك الخطة حتى تصمد أمام مراجعة الزملاء. العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT) والعلاج الإشعاعي الخارجي من الأدوات اليومية. المنسّق يبقى على الخط بعد الهبوط؛ الملف لا يُغلق عند باب المطار."
+    },
+    "dr-pradeep-kumar-karumanchi": {
+      "name": "د. براديب كومار كارومانشي",
+      "title": "استشاري علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, DNB, ECFMG",
+      "experience": "١٦+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. براديب كومار كارومانشي، استشاري علاج الأورام بالإشعاع في Yashoda Hospitals، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "المعالجة الكثبية",
+        "إشعاع الجسم الكامل"
+      ],
+      "education": [
+        "MBBS — Osmania Medical College, Hyderabad",
+        "DNB (علاج الأورام بالإشعاع) — Healthcare Global Cancer Hospital (HCG)",
+        "Precision Oncology — Université de Genève, Switzerland",
+        "Thoracic Oncology — University of Michigan, USA",
+        "CyberKnife CNS & Physician Training — Accuray, USA",
+        "ECFMG (USA)"
+      ],
+      "affiliations": [
+        "Yashoda Hospitals, Somajiguda, Hyderabad"
+      ],
+      "memberships": [
+        "American Society of Clinical Oncology (ASCO)",
+        "Executive Committee Member, International Association of Oncology (IAO)",
+        "Organizing Committee Member, Asia Pacific Cancer Congress (APCC)",
+        "Bangalore Oncology Group (BOG)",
+        "رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)",
+        "Member, International Core Group, Student Movement — International Physicians for Prevention of Nuclear War (IPPNW) [Recipient — Nobel Peace Prize, 1985]"
+      ],
+      "awards": [
+        "Top-Notch Oncologist in India — Global Excellence Awards, 2025",
+        "Top 10 Rising Stars in India 2025 — Heights of Success Magazine",
+        "Ugadi Puraskaram 2025 — Journalist Club of Telangana",
+        "India's Best Doctor Award — Excellence in Oncology, 2024",
+        "APJ Abdul Kalam Health Awards, 2024",
+        "Vaidya Ratna — Airaa Icon Awards in collaboration with Telangana Tourism Ministry, 2022",
+        "AIRAA ICON Awards, 2022"
+      ],
+      "research": [],
+      "bio": "ملف د. براديب كومار كارومانشي يُفتح كخطة علاج لا كعرض فندقي. Yashoda Hospitals, Somajiguda, Hyderabad في حيدر آباد. ١٦+ سنة في علاج الأورام بالإشعاع. يراجع الهامش على العلاج الإشعاعي للأورام والجراحة الإشعاعية بسايبر نايف قبل أن يُقترح أسبوع في الهند. المنسّق يبقى على الخط بعد الهبوط؛ الملف لا يُغلق عند باب المطار. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة حيدر آباد وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر."
+    },
+    "dr-prahlad-yathiraj": {
+      "name": "د. براهلاد ياتيراي",
+      "title": "استشاري أول",
+      "qualifications": "",
+      "experience": "١٥+ سنة خبرة",
+      "languages": "الإنجليزية، التاميلية، الهندية",
+      "imageAlt": "د. براهلاد ياتيراي، استشاري أول في MGM Healthcare، تشيناي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "المعالجة الكثبية",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "إشعاع الجسم الكامل",
+        "العلاج الإشعاعي أثناء الجراحة",
+        "المعالجة الكثبية باللوحة"
+      ],
+      "education": [
+        "Advanced Training in Liver and Spine SBRT – Princess Margaret Hospital, Toronto, Canada",
+        "UICC زمالة in Head and Neck Cancer – University of Michigan, USA",
+        "Clinical training and experience at Tata Memorial Hospital, Mumbai",
+        "Clinical training and experience at Kasturba Medical College"
+      ],
+      "affiliations": [
+        "MGM Healthcare",
+        "Tata Memorial Hospital, Mumbai",
+        "Kasturba Medical College",
+        "Princess Margaret Hospital, Toronto (Advanced Training)",
+        "University of Michigan (UICC Fellowship)"
+      ],
+      "memberships": [],
+      "awards": [
+        "Multiple presentations at prestigious international conferences: ASTRO (American Society for Radiation Oncology), ESTRO (European Society for Radiotherapy & Oncology), and ASCO (American Society of Clinical Oncology)",
+        "Over 17 peer-reviewed publications in leading oncology journals",
+        "UICC Fellowship recipient – University of Michigan",
+        "Treasurer, AROI-TN & Py Chapter (Association of Radiation Oncologists of India – Tamil Nadu & Puducherry)",
+        "Represented alumni cricket teams internationally"
+      ],
+      "research": [],
+      "bio": "د. براهلاد ياتيراي يُدرَج في دليل الأطباء العربي تحت الهند / تشيناي / علاج الأورام بالإشعاع حتى يمكن لاحقًا بناء صفحات الإجراء دون تغيير المفاتيح الإنجليزية. MGM Healthcare, Chennai, Chennai. ١٥+ سنة. العلاج الإشعاعي للأورام، العلاج الإشعاعي التجسيمي للجسم (SBRT). لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة تشيناي وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر."
+    },
+    "dr-s-jayalakshmi": {
+      "name": "د. س. جايالاكشمي",
+      "title": "Head, & CyberKnife Centre (Unit II) — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD, DNB",
+      "experience": "٣٤+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. س. جايالاكشمي، Head, & CyberKnife Centre (Unit II) — علاج الأورام بالإشعاع في Artemis Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "أورام الرأس والعنق",
+        "أورام النساء"
+      ],
+      "proceduresExpertise": [
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية"
+      ],
+      "education": [
+        "MBBS — Stanley Medical College, Chennai, India",
+        "MD (علاج الأورام بالإشعاع) — Christian Medical College (CMC), Vellore, India",
+        "DNB (علاج الأورام بالإشعاع) — Diplomate of National Board",
+        "زمالة in 3DCRT & IMRT — University of Bristol, UK",
+        "زمالة in IGRT, SRS & SRT — Yashoda Hospitals, Hyderabad, India",
+        "زمالة in CyberKnife SRS, SRT & SBRT — Accuray International, San Jose, California, USA"
+      ],
+      "affiliations": [
+        "Artemis Hospitals, Gurugram, India — Head, Radiation Oncology & CyberKnife Centre (Unit II)"
+      ],
+      "memberships": [
+        "Life Member — رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)"
+      ],
+      "awards": [],
+      "research": [],
+      "bio": "المسار إلى د. س. جايالاكشمي يمر بمكتب التنسيق لا بالاستمارة العامة. رئيسة مسار علاج الأورام بالإشعاع في Artemis Hospital, Delhi NCR بـدلهي إن سي آر منذ ما يزيد على ٣٤ سنة. نسأل أولًا: هل الإجراء الصادق الجراحة الإشعاعية التجسيمية (SRS) أم العلاج الإشعاعي التجسيمي للجسم (SBRT)؟ الجواب بعد الملف. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار إنديرا غاندي. لأنها تحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-s-alex-antony-prasad": {
+      "name": "د. س. أليكس أنتوني براساد",
+      "title": "استشاري أول",
+      "qualifications": "MBBS, DMRT, MD, DNB",
+      "experience": "٣٠+ سنة خبرة",
+      "languages": "الإنجليزية، التاميلية، الهندية",
+      "imageAlt": "د. س. أليكس أنتوني براساد، استشاري أول في MGM Healthcare، تشيناي — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع",
+        "علاج الأورام الطبي"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "المعالجة الكثبية",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "إشعاع الجسم الكامل",
+        "المعالجة الكثبية باللوحة"
+      ],
+      "education": [
+        "MBBS – Madurai Kamaraj University",
+        "DMRT (Medical Radiation Therapy) – Tata Memorial Hospital, University of Bombay",
+        "MD (العلاج الإشعاعي & Clinical Oncology) – Tata Memorial Hospital, University of Bombay",
+        "DNB (العلاج الإشعاعي) – National Board of Examinations, New Delhi",
+        "International Outreach Fellow, St. Jude Children's Research Hospital, USA",
+        "Training experience at Christie Hospital, UK"
+      ],
+      "affiliations": [
+        "MGM Healthcare",
+        "MGM Cancer Institute",
+        "Kauvery Hospital, Kovilambakkam – Visiting Consultant",
+        "Dr. Rai Memorial Hospital – Visiting Consultant"
+      ],
+      "memberships": [],
+      "awards": [
+        "Recipient of the Best Doctor Award from The Tamil Nadu Dr. M.G.R. Medical University for exemplary contributions to healthcare",
+        "International Outreach Fellow, St. Jude Children's Research Hospital, USA",
+        "President, Association of Radiation Oncologists of India (AROI) – Tamil Nadu & Puducherry Chapter",
+        "National Joint Secretary, Indian Brachytherapy Society",
+        "Member, ASTRO International Committee",
+        "Member, UICC International Review Panel",
+        "Editorial Board Member, South Asian Journal of Cancer",
+        "Faculty, speaker, and panelist at leading national and international oncology conferences, including ASCO, ESMO, ESTRO, and AROI meetings"
+      ],
+      "research": [],
+      "bio": "المسار إلى د. س. أليكس أنتوني براساد يمر بمكتب التنسيق لا بالاستمارة العامة. استشاري علاج الأورام بالإشعاع في MGM Healthcare, Chennai, Chennai بـتشيناي منذ ما يزيد على ٣٠ سنة. نسأل أولًا: هل الإجراء الصادق العلاج الإشعاعي للأورام أم العلاج الإشعاعي معدل الشدة الموجّه بالصور؟ الجواب بعد الملف. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار تشيناي الدولي."
+    },
+    "dr-sandeep-goel": {
+      "name": "د. سانديب غويل",
+      "title": "استشاري أول",
+      "qualifications": "MBBS, MD",
+      "experience": "١٥+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. سانديب غويل، استشاري أول في Artemis Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "العلاج الإشعاعي الخارجي"
+      ],
+      "education": [
+        "MBBS — Kasturba Medical College, Mangalore",
+        "MD (علاج الأورام بالإشعاع) — Kasturba Medical College, Manipal",
+        "Cyberknife Stereotactic العلاج الإشعاعي Training — Sunnyvale, USA"
+      ],
+      "affiliations": [
+        "Artemis Hospitals, Gurugram"
+      ],
+      "memberships": [
+        "رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)",
+        "AROI Karnataka Chapter",
+        "Indian المعالجة الكثبية Society (IBS)"
+      ],
+      "awards": [
+        "Underwent specialized training for Cyberknife Stereotactic Radiotherapy at Sunnyvale, USA"
+      ],
+      "research": [],
+      "bio": "في دلهي إن سي آر يُحفظ ملف د. سانديب غويل تحت بلد الهند، مدينة دلهي إن سي آر، تخصص علاج الأورام بالإشعاع، ثم الإجراء. ١٥+ سنة خبرة في Artemis Hospital, Delhi NCR. نطابق الحالة بـالعلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT) والعلاج الإشعاعي معدل الشدة (IMRT) بعد قراءة الأشعة، لا بعد مكالمة المبيعات. نكتب الأسئلة التي نريدك أن تطرحها على الكاميرا، ثم نحدد إن كان الوصول إلى دلهي إن سي آر هو الخطوة الصادقة. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة دلهي إن سي آر وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر."
+    },
+    "dr-sapna-manocha-verma": {
+      "name": "د. سابنا مانوتشا فيرما",
+      "title": "استشارية أولى",
+      "qualifications": "MBBS, MD in Radiotherapy",
+      "experience": "٢٢+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. سابنا مانوتشا فيرما، استشارية أولى في Indraprastha Apollo Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "إجراءات العلاج الإشعاعي للأورام",
+        "المعالجة الكثبية",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "مسارات علاج الأورام الطبي — الكيميائي",
+        "العلاج المناعي للسرطان",
+        "العلاج الموجّه للسرطان",
+        "علاجات هرمونية لأورام النساء",
+        "العلاج الهرموني لسرطان الثدي"
+      ],
+      "education": [
+        "MBBS",
+        "MD in العلاج الإشعاعي"
+      ],
+      "affiliations": [
+        "Indraprastha Apollo Hospitals, Delhi"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "د. سابنا مانوتشا فيرما يُدرَج في دليل الأطباء العربي تحت الهند / دلهي إن سي آر / علاج الأورام بالإشعاع حتى يمكن لاحقًا بناء صفحات الإجراء دون تغيير المفاتيح الإنجليزية. Indraprastha Apollo Hospital, Delhi NCR. ٢٢+ سنة. إجراءات العلاج الإشعاعي للأورام، المعالجة الكثبية. لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة دلهي إن سي آر وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر."
+    },
+    "dr-shyam-singh-bisht": {
+      "name": "د. شيام سينغ بيشت",
+      "title": "Director of — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD (Radiation Oncology), Post Graduate Diploma in Clinical Research, Fellowship in Functional & Stereotactic Radiosurgery, Fellowship in High Precision Radiation/SRS/SBRT, CyberKnife Radiosurgery Training",
+      "experience": "١٨+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. شيام سينغ بيشت، Director of — علاج الأورام بالإشعاع في Medanta - The Medicity، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية الخلالية",
+        "المعالجة الكثبية داخل التجويف"
+      ],
+      "education": [
+        "M.B.B.S.",
+        "M.D. (علاج الأورام بالإشعاع)",
+        "Post Graduate Diploma in Clinical Research",
+        "CyberKnife Radiosurgery Training (Cranial/Extracranial Radiosurgery)",
+        "زمالة in Functional & Stereotactic Radiosurgery (France)",
+        "زمالة in High Precision Radiation/SRS/SBRT",
+        "Postgraduate from KGMU, Lucknow"
+      ],
+      "affiliations": [
+        "Medanta – The Medicity, Gurugram"
+      ],
+      "memberships": [],
+      "awards": [
+        "G.C. Pant Young Doctor Award – National Conference (2010)",
+        "European Society of Radiation Oncology (ESTRO) – Varian Award, Spain (2015)",
+        "ESMO Travel Grant, Singapore (2016)",
+        "AROI Overseas Fellowship (2022)",
+        "Thrice حائز على الميدالية الذهبية at National Conferences",
+        "Contributor to four oncology textbooks",
+        "Author of more than 50 full-text international publications"
+      ],
+      "research": [],
+      "bio": "يصل ملف د. شيام سينغ بيشت إلى مكتب GAF Healthcare كـرئيس مسار علاج الأورام بالإشعاع في Medanta - The Medicity, Delhi NCR بـدلهي إن سي آر. بعد ١٨+ سنة في تخطيط الجرعات، نبدأ بالسجلات لا بالكتيّب: إن صمدت الصور كان المسار التالي الجراحة الإشعاعية التجسيمية (SRS) أو العلاج الإشعاعي التجسيمي للجسم. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار إنديرا غاندي. لأنه يحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-swarupa-mitra": {
+      "name": "د. سواروبا ميترا",
+      "title": "المديرة الأولى ورئيسة القسم — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, MD",
+      "experience": "٢٥+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. سواروبا ميترا، المديرة الأولى ورئيسة القسم — علاج الأورام بالإشعاع في Fortis Memorial Research Institute، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي الخارجي",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "الجراحة الإشعاعية بسايبر نايف",
+        "العلاج الإشعاعي أثناء الجراحة"
+      ],
+      "education": [
+        "MBBS",
+        "MD, علاج الأورام بالإشعاع"
+      ],
+      "affiliations": [
+        "Fortis Memorial Research Institute, Gurgaon"
+      ],
+      "memberships": [],
+      "awards": [
+        "Invited Faculty at the American Society of Clinical Oncology (ASCO)",
+        "Invited Faculty at the Indian College of Radiation Oncologists (ICRO)",
+        "Mentor for The Union for International Cancer Control (UICC)",
+        "Co-guide for PhD Thesis at the University of Ghent, Belgium",
+        "Nominated Member, Project Advisory Committee for Health Communication, Department of Science and Technology, Government of India",
+        "Certificate of Recognition from the Health Minister of Jharkhand for contribution to cervical cancer awareness among women in Jharkhand"
+      ],
+      "research": [],
+      "bio": "د. سواروبا ميترا يُدرَج في دليل الأطباء العربي تحت الهند / دلهي إن سي آر / علاج الأورام بالإشعاع حتى يمكن لاحقًا بناء صفحات الإجراء دون تغيير المفاتيح الإنجليزية. Fortis Memorial Research Institute, Delhi NCR. ٢٥+ سنة. العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)، العلاج الإشعاعي معدل الشدة (IMRT). لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا. تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة دلهي إن سي آر وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر. لأنها تحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-vineet-nakra": {
+      "name": "د. فينيت ناكرا",
+      "title": "استشاري علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, DNB, MNAMS",
+      "experience": "٩+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. فينيت ناكرا، استشاري علاج الأورام بالإشعاع في Fortis Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "تقنيات الإشعاع المتقدمة — العلاج الإشعاعي المطابق ثلاثي الأبعاد",
+        "العلاج الإشعاعي الخارجي",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "إجراءات تجسيمية — العلاج الإشعاعي التجسيمي للجسم",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "المعالجة الكثبية- Intracavitary المعالجة الكثبية",
+        "المعالجة الكثبية الخلالية",
+        "جراحة إشعاعية متخصصة — سايبر نايف",
+        "الجراحة الإشعاعية بغاما نايف"
+      ],
+      "education": [
+        "MBBS — Bachelor of Medicine and Bachelor of Surgery",
+        "DNB— Diplomate of National Board",
+        "MNAMS— Member of the National Academy of Medical Sciences, علاج الأورام بالإشعاع"
+      ],
+      "affiliations": [
+        "Fortis Hospital, Okhla, New Delhi"
+      ],
+      "memberships": [],
+      "awards": [],
+      "research": [],
+      "bio": "يصل ملف د. فينيت ناكرا إلى مكتب GAF Healthcare كـاستشاري علاج الأورام بالإشعاع في Fortis Hospital, Noida, Delhi NCR بـدلهي إن سي آر. بعد ٩+ سنة في تخطيط الجرعات، نبدأ بالسجلات لا بالكتيّب: إن صمدت الصور كان المسار التالي تقنيات الإشعاع المتقدمة — العلاج الإشعاعي المطابق ثلاثي الأبعاد أو العلاج الإشعاعي الخارجي. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار إنديرا غاندي."
+    },
+    "dr-vineeta-goel": {
+      "name": "د. فينيتا غويل",
+      "title": "المديرة الأولى ورئيسة قسم — علاج الأورام بالإشعاع",
+      "qualifications": "MBBS, DMRT, DNB, MNAMS",
+      "experience": "٢٦+ سنة خبرة",
+      "languages": "الإنجليزية، الهندية",
+      "imageAlt": "د. فينيتا غويل، المديرة الأولى ورئيسة قسم — علاج الأورام بالإشعاع في Fortis Hospital، دلهي إن سي آر — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي معدل الشدة (IMRT)",
+        "العلاج الإشعاعي الموجّه بالصور",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+        "المعالجة الكثبية داخل التجويف",
+        "المعالجة الكثبية الخلالية",
+        "العلاج الإشعاعي أثناء الجراحة",
+        "العلاج الإشعاعي الخارجي",
+        "الجراحة الإشعاعية التجسيمية (SRS)"
+      ],
+      "education": [
+        "M.B.B.S. — MGIMS Sewagram, Wardha, 1997",
+        "D.M.R.T. (علاج الأورام بالإشعاع) — Tata Memorial Hospital, Mumbai, 2000",
+        "D.N.B. (علاج الأورام بالإشعاع) — Tata Memorial Hospital, Mumbai, 2001",
+        "MNAMS — 2019"
+      ],
+      "affiliations": [
+        "Fortis Hospital, Shalimar Bagh, New Delhi",
+        "Max Super Speciality Hospital",
+        "Tata Memorial Hospital, Mumbai"
+      ],
+      "memberships": [],
+      "awards": [
+        "Advanced training in SBRT from Memorial Sloan Kettering Cancer Center, USA",
+        "Advanced training in IORT from Heidelberg, Germany",
+        "SBRT Training at Champalimaud Cancer Centre, Portugal",
+        "Advanced Training in IMRT & IGRT from Oncology Institute, Southern Switzerland"
+      ],
+      "research": [],
+      "bio": "المسار إلى د. فينيتا غويل يمر بمكتب التنسيق لا بالاستمارة العامة. رئيسة مسار علاج الأورام بالإشعاع في Fortis Hospital, Shalimar Bagh, Delhi NCR بـدلهي إن سي آر منذ ما يزيد على ٢٦ سنة. نسأل أولًا: هل الإجراء الصادق العلاج الإشعاعي معدل الشدة (IMRT) أم العلاج الإشعاعي الموجّه بالصور؟ الجواب بعد الملف. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار إنديرا غاندي. لأنها تحمل مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر."
+    },
+    "dr-y-nalini": {
+      "name": "د. ي. ناليني",
+      "title": "استشارية أولى",
+      "qualifications": "MBBS, MD (Radiotherapy), DNB (Radiotherapy)",
+      "experience": "٣٢+ سنة خبرة",
+      "languages": "الإنجليزية، التيلوغو، الهندية",
+      "imageAlt": "د. ي. ناليني، استشارية أولى في Yashoda Hospitals، حيدر آباد — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند",
+      "specializations": [
+        "علاج الأورام بالإشعاع"
+      ],
+      "proceduresExpertise": [
+        "العلاج الإشعاعي للأورام",
+        "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+        "الجراحة الإشعاعية التجسيمية (SRS)",
+        "العلاج الإشعاعي التجسيمي للجسم",
+        "المعالجة الكثبية"
+      ],
+      "education": [
+        "Professional زمالة – Advanced Training in Image Guided Radio Therapy (IGRT) and Intensity Modulated Radio Therapy (IMRT) at MD Anderson Cancer Hospital, Houston, USA (2007)",
+        "Professional زمالة – UICC (International Union Against Cancer) ICRETT زمالة on 'Quality Assurance in HDR Brachytherapy' at The Royal Marsden Hospital, London (2000)",
+        "DNB (العلاج الإشعاعي) – National Board of Examinations (1994)",
+        "MD (العلاج الإشعاعي) – Osmania Medical College, Hyderabad (1994)",
+        "MBBS – Gandhi Medical College (Osmania University), Hyderabad (1983)"
+      ],
+      "affiliations": [
+        "Yashoda Hospitals, Somajiguda, Hyderabad"
+      ],
+      "memberships": [
+        "رابطة أطباء الأورام بالإشعاع في الهند (AROI) (AROI)",
+        "American Society for Therapeutic Radiology and Oncology (ASTRO)",
+        "الجمعية الطبية الهندية (IMA) (IMA)",
+        "Union for International Cancer Congress (UICC)"
+      ],
+      "awards": [],
+      "research": [
+        "Co-investigator in a multicentric study on efficacy and toxicity of 'Wobe Mugose E' in reducing radiation toxicity",
+        "Co-investigator in the ATLAS Study: International ATLAS (Adjuvant Tamoxifen Longer Against Shorter) Breast Cancer Treatment Trial",
+        "Investigator in a Phase II Asia/Australian study of Cetuximab in combination with Irinotecan in metastatic colorectal adenocarcinoma expressing EGFR",
+        "Trial Investigator in the ToGA Study (NCT01041404) – Herceptin (Trastuzumab) with chemotherapy in HER2-positive advanced gastric cancer"
+      ],
+      "bio": "يصل ملف د. ي. ناليني إلى مكتب GAF Healthcare كـاستشارية علاج الأورام بالإشعاع في Yashoda Hospitals, Somajiguda, Hyderabad بـحيدر آباد. بعد ٣٢+ سنة في تخطيط الجرعات، نبدأ بالسجلات لا بالكتيّب: إن صمدت الصور كان المسار التالي العلاج الإشعاعي للأورام أو العلاج الإشعاعي معدل الشدة الموجّه بالصور. منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر مطار راجيف غاندي الدولي."
+    }
+  },
   "doctorsAdded": [],
   "doctorsDeleted": [],
   "hospitalOverrides": {},

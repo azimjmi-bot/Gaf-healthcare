@@ -5,16 +5,18 @@ import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { getCostArticle } from "@/data/cost-articles";
-import { getDoctor, getHospital, getTreatment } from "@/lib/data";
+import { getHospital, getTreatment } from "@/lib/data";
 import { getPost } from "@/lib/blogs";
 import { catalogMetadata, doctorMetadata, hospitalMetadata, treatmentMetadata, costArticleMetadata } from "@/lib/seo";
 import { interpolateCostArticle } from "@/lib/cost-article";
+import { directoryIntro } from "@/lib/i18n/directory-copy";
+import { getDoctorForLocale } from "@/lib/locale-catalog";
 
 export async function doctorPageMetadata(slug: string): Promise<Metadata> {
-  const doctor = getDoctor(slug);
-  if (!doctor) return { title: "Doctor" };
   const locale = await getRequestLocale();
-  return withLocaleMetadata(doctorMetadata(doctor), `/doctors/${slug}`, locale, LOCALES);
+  const doctor = getDoctorForLocale(slug, locale);
+  if (!doctor) return { title: "Doctor" };
+  return withLocaleMetadata(doctorMetadata(doctor, locale), `/doctors/${slug}`, locale, LOCALES);
 }
 
 export async function hospitalPageMetadata(slug: string): Promise<Metadata> {
@@ -66,5 +68,23 @@ export async function catalogPageMetadata(
   const locale = await getRequestLocale();
   const base: CatalogBasePath = entity === "doctors" ? "/doctors" : entity === "hospitals" ? "/hospitals" : "/costs";
   const englishPath = prettyCatalogPath(base, query);
+  if (locale === "ar") {
+    const kind = entity === "treatments" ? "costs" : entity;
+    const intro = directoryIntro(kind, query, locale);
+    return withLocaleMetadata(
+      {
+        title: intro.heading,
+        description: intro.lede,
+        openGraph: {
+          title: intro.heading,
+          description: intro.lede,
+          type: "website",
+        },
+      },
+      englishPath,
+      locale,
+      LOCALES,
+    );
+  }
   return withLocaleMetadata(catalogMetadata(entity, query), englishPath, locale, LOCALES);
 }

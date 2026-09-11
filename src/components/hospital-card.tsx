@@ -8,6 +8,8 @@ import { doctorsForHospital } from "@/lib/data";
 import { displayBio, isEyeCampus } from "@/lib/hospital-profile";
 import { whatsappHref } from "@/lib/site";
 import { hospitalsPath } from "@/lib/catalog-links";
+import { getRequestLocale } from "@/lib/i18n/request";
+import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { compareSpecialties } from "@/lib/taxonomy";
 
 const CHIP_LIMIT = 6;
@@ -26,7 +28,8 @@ function wa(hospital: Hospital, intent: string) {
   );
 }
 
-export function HospitalCard({ hospital }: { hospital: Hospital }) {
+export async function HospitalCard({ hospital }: { hospital: Hospital }) {
+  const locale = await getRequestLocale();
   const faculty = doctorsForHospital(hospital.slug);
   const specialties = specialtiesOnCard(hospital, faculty);
   const shown = specialties.slice(0, CHIP_LIMIT);
@@ -61,7 +64,7 @@ export function HospitalCard({ hospital }: { hospital: Hospital }) {
                     specialty: spec.name,
                   })}
                 >
-                  {spec.name}
+                  {taxonomyLabel(spec.name, locale)}
                 </Link>
               </li>
             ))}
@@ -97,7 +100,7 @@ export function HospitalCard({ hospital }: { hospital: Hospital }) {
             <span>
               Location:{" "}
               <strong>
-                {hospital.city}, {hospital.country}
+                {taxonomyLabel(hospital.city, locale)}, {taxonomyLabel(hospital.country, locale)}
               </strong>
             </span>
           </li>

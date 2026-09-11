@@ -9,6 +9,7 @@ import { prettyCatalogPath } from "@/lib/pretty-catalog-path";
 import { site } from "@/lib/site";
 import type { AppLocale } from "@/lib/i18n/languages";
 import { localePath } from "@/lib/i18n/path";
+import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 
 export const SITE_URL = "https://gaf.healthcare";
 
@@ -23,7 +24,40 @@ function clip(text: string, max = 158) {
   return `${compact.slice(0, max - 1).trimEnd()}…`;
 }
 
-export function doctorMetadata(d: Doctor): Metadata {
+export function doctorMetadata(d: Doctor, locale: AppLocale = "en"): Metadata {
+  if (locale === "ar") {
+    const specialty = taxonomyLabel(d.specialty, "ar");
+    const city = taxonomyLabel(d.city, "ar");
+    const country = taxonomyLabel(d.country, "ar");
+    const procs = d.procedures.slice(0, 3).map((name) => taxonomyLabel(name, "ar")).join("، ");
+    const title = `${d.name} — ${specialty} في ${city}، ${country}`;
+    const description = clip(
+      `${d.name} ${specialty} في ${d.hospitalName}، ${city}، ${country}. ${procs}. مراجعة السجلات ثم مكالمة فيديو عبر GAF Healthcare قبل تحديد السفر. ${stripMarkdown(d.bio)}`,
+    );
+    const url = absoluteUrl(`/doctors/${d.slug}`, "ar");
+    return {
+      title,
+      description,
+      keywords: [
+        d.name,
+        `${specialty} ${city}`,
+        `${specialty} الهند`,
+        "علاج الأورام بالإشعاع في الهند",
+        "سياحة علاجية الهند",
+        ...d.procedures.slice(0, 6).map((name) => taxonomyLabel(name, "ar")),
+      ],
+      alternates: { canonical: url },
+      openGraph: {
+        title,
+        description,
+        url,
+        type: "profile",
+        locale: "ar",
+        siteName: site.name,
+      },
+      twitter: { card: "summary", title, description },
+    };
+  }
   const role =
     d.specialtySlug === "nephrology"
       ? "nephrologist"
@@ -256,21 +290,25 @@ export function physicianJsonLd(d: Doctor, locale: AppLocale = "en") {
     "@context": "https://schema.org",
     "@type": "Physician",
     name: d.name,
-    inLanguage: locale,
+    inLanguage: locale === "ar" ? "ar" : "en",
     url: absoluteUrl(`/doctors/${d.slug}`, locale),
     jobTitle: d.title,
     description: clip(stripMarkdown(d.bio), 240),
-    medicalSpecialty: d.specialty,
-    knowsAbout: d.procedures,
+    medicalSpecialty: taxonomyLabel(d.specialty, locale),
+    knowsAbout: d.procedures.map((name) => taxonomyLabel(name, locale)),
+    availableLanguage: d.languages
+      .split(/[،,]/)
+      .map((part) => part.trim())
+      .filter(Boolean),
     address: {
       "@type": "PostalAddress",
-      addressLocality: d.city,
+      addressLocality: taxonomyLabel(d.city, locale),
       addressCountry: "IN",
     },
     areaServed: {
       "@type": "City",
-      name: d.city,
-      containedInPlace: { "@type": "Country", name: "India" },
+      name: taxonomyLabel(d.city, locale),
+      containedInPlace: { "@type": "Country", name: taxonomyLabel(d.country, locale) },
     },
     worksFor: {
       "@type": "Hospital",
@@ -278,7 +316,7 @@ export function physicianJsonLd(d: Doctor, locale: AppLocale = "en") {
       url: absoluteUrl(`/hospitals/${d.hospitalSlug}`, locale),
       address: {
         "@type": "PostalAddress",
-        addressLocality: d.city,
+        addressLocality: taxonomyLabel(d.city, locale),
         addressCountry: "IN",
       },
     },

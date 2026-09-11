@@ -12,6 +12,7 @@ import {
   IdCard,
   Settings2,
 } from "lucide-react";
+import { useLocale, useT } from "@/components/locale-provider";
 import {
   designationLabel,
   experienceBadge,
@@ -19,6 +20,8 @@ import {
   listingBio,
 } from "@/lib/doctor-profile";
 import type { Doctor } from "@/lib/doctors";
+import { medicalPhrase } from "@/lib/i18n/medical-phrases";
+import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { whatsappHref } from "@/lib/site";
 
 const PROC_PREVIEW = 6;
@@ -31,8 +34,10 @@ function wa(doctor: Doctor, intent: string) {
 
 export function DoctorCard({ doctor }: { doctor: Doctor }) {
   const [open, setOpen] = useState(false);
+  const locale = useLocale();
+  const t = useT();
   const bio = listingBio(doctor);
-  const procedures = keyProcedureLabels(doctor);
+  const procedures = keyProcedureLabels(doctor).map((item) => medicalPhrase(item, locale));
   const shown = open ? procedures : procedures.slice(0, PROC_PREVIEW);
   const extra = procedures.length - PROC_PREVIEW;
   const experience = experienceBadge(doctor);
@@ -50,10 +55,10 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
             <h2 className="dcard__name">
               <Link href={`/doctors/${doctor.slug}`}>{doctor.name}</Link>
               {doctor.featured ? (
-                <BadgeCheck className="dcard__check" aria-label="Featured specialist" />
+                <BadgeCheck className="dcard__check" aria-label={t("card.featured")} />
               ) : null}
             </h2>
-            <span className="dcard__chip">{doctor.specialty}</span>
+            <span className="dcard__chip">{taxonomyLabel(doctor.specialty, locale)}</span>
           </div>
           <p className="dcard__role">{doctor.title}</p>
           <ul className="dcard__facts">
@@ -65,7 +70,7 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
             ) : null}
             <li>
               <IdCard className="size-4" />
-              Designation: {designation}
+              {t("card.designation", { title: designation })}
             </li>
             {doctor.qualifications ? (
               <li>
@@ -82,27 +87,27 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
             <span>
               <strong>{doctor.hospitalName}</strong>
               <span>
-                {doctor.city}, {doctor.country}
+                {taxonomyLabel(doctor.city, locale)}, {taxonomyLabel(doctor.country, locale)}
               </span>
             </span>
           </Link>
           <div className="dcard__cta">
             <a
               className="dcard__btn dcard__btn--book"
-              href={wa(doctor, "I would like to book an appointment.")}
+              href={wa(doctor, locale === "ar" ? "أرغب في حجز موعد." : "I would like to book an appointment.")}
               target="_blank"
               rel="noreferrer"
             >
               <CalendarDays className="size-4" />
-              Book Appointment
+              {t("card.book")}
             </a>
             <a
               className="dcard__btn dcard__btn--wa"
-              href={wa(doctor, "Please connect me on WhatsApp.")}
+              href={wa(doctor, locale === "ar" ? "يرجى التواصل عبر واتساب." : "Please connect me on WhatsApp.")}
               target="_blank"
               rel="noreferrer"
             >
-              WhatsApp Us
+              {t("card.whatsapp")}
             </a>
           </div>
         </div>
@@ -112,7 +117,7 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
         <div className="dcard__about">
           {bio ? <p className="dcard__bio">{bio}</p> : null}
           <Link href={`/doctors/${doctor.slug}`} className="dcard__more">
-            View profile →
+            {t("card.viewProfile")}
           </Link>
         </div>
 
@@ -120,7 +125,7 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
           <div className="dcard__procs">
             <p>
               <Settings2 className="size-4" />
-              Key Procedures
+              {t("card.keyProcedures")}
             </p>
             <ul>
               {shown.map((item) => (
@@ -131,11 +136,11 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
               <button type="button" className="dcard__toggle" onClick={() => setOpen((v) => !v)}>
                 {open ? (
                   <>
-                    Show less <ChevronUp className="size-4" />
+                    {t("card.showLess")} <ChevronUp className="size-4" />
                   </>
                 ) : (
                   <>
-                    Show more <ChevronDown className="size-4" />
+                    {t("card.showMore")} <ChevronDown className="size-4" />
                   </>
                 )}
               </button>

@@ -46,7 +46,28 @@ export const TAXONOMY_AR: Record<string, string> = {
   Neurology: "طب الأعصاب",
   Nephrology: "أمراض الكلى",
 
+  "3D Conformal Radiotherapy": "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
   "3D Conformal Radiotherapy (3D-CRT)": "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+  "Advanced Radiation Therapy Techniques- 3D Conformal Radiotherapy":
+    "تقنيات الإشعاع المتقدمة — العلاج الإشعاعي المطابق ثلاثي الأبعاد",
+  "Advanced Radiation Therapy Techniques- Stereotactic Body Radiation Therapy (SBRT)":
+    "تقنيات الإشعاع المتقدمة — العلاج الإشعاعي التجسيمي للجسم",
+  "CyberKnife Radiosurger": "الجراحة الإشعاعية بسايبر نايف",
+  "CyberKnife Radiosurgery": "الجراحة الإشعاعية بسايبر نايف",
+  "External Beam Radiotherapy": "العلاج الإشعاعي الخارجي",
+  "Image-Guided Radiation Therapy": "العلاج الإشعاعي الموجّه بالصور",
+  "Image-Guided Radiation Therapy (IGRT)": "العلاج الإشعاعي الموجّه بالصور (IGRT)",
+  "Image-Guided Radiation Therapy (IMRT)": "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
+  "Intensity-Modulated Radiation Therapy": "العلاج الإشعاعي معدل الشدة (IMRT)",
+  "Intensity-Modulated Radiation Therapy (IMRT)": "العلاج الإشعاعي معدل الشدة (IMRT)",
+  "Intraoperative Radiation Therapy (IORT)": "العلاج الإشعاعي أثناء الجراحة",
+  "Radiation Therapy for Cancer": "العلاج الإشعاعي للأورام",
+  "Radiation Therapy Procedures- Radiation Therapy for Cancer": "إجراءات العلاج الإشعاعي للأورام",
+  "Specialized Radiosurgery- CyberKnife Radiosurgery": "جراحة إشعاعية متخصصة — سايبر نايف",
+  "Stereotactic Body Radiation Therapy": "العلاج الإشعاعي التجسيمي للجسم",
+  "Stereotactic Body Radiation Therapy (SBRT)": "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+  "Stereotactic Procedures- Stereotactic Body Radiation Therapy (SBRT)":
+    "إجراءات تجسيمية — العلاج الإشعاعي التجسيمي للجسم",
   "ABO-Incompatible Kidney Transplantation": "زراعة الكلى غير المتوافقة فصائليًا",
   "ACDF (Anterior Cervical Discectomy and Fusion)": "استئصال القرص العنقي الأمامي ودمجه (ACDF)",
   "ACL Reconstruction (Anterior Cruciate Ligament)": "إعادة بناء الرباط الصليبي الأمامي",

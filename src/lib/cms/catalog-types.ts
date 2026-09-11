@@ -8,6 +8,14 @@ export type DoctorPatch = {
   title?: string;
   qualifications?: string;
   experience?: string;
+  languages?: string;
+  specializations?: string[];
+  proceduresExpertise?: string[];
+  education?: string[];
+  affiliations?: string[];
+  memberships?: string[];
+  awards?: string[];
+  research?: string[];
 };
 
 export type HospitalPatch = {
@@ -22,12 +30,14 @@ export const PSEO_LOCKED_KEYS = [
   "slug",
   "citySlug",
   "countrySlug",
+  "specialty",
   "specialtySlug",
   "specialtySlugs",
   "procedureSlug",
   "procedureSlugs",
   "treatmentSlugs",
   "hospitalSlug",
+  "hospitalName",
   "city",
   "country",
   "specialties",
@@ -42,6 +52,14 @@ export const DOCTOR_OVERLAY_KEYS = [
   "title",
   "qualifications",
   "experience",
+  "languages",
+  "specializations",
+  "proceduresExpertise",
+  "education",
+  "affiliations",
+  "memberships",
+  "awards",
+  "research",
 ] as const satisfies readonly (keyof DoctorPatch)[];
 
 export const HOSPITAL_OVERLAY_KEYS = [

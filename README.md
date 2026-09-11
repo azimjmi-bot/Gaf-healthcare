@@ -52,7 +52,7 @@ Existing English routes are unchanged. A Russian doctor page is `/ru/doctors/[sl
 
 `src/proxy.ts` (Next.js 16) reads the language prefix, sets `x-gaf-locale`, and rewrites to the existing English route. English stays at the root. There is no `/en/` prefix.
 
-Navigation, homepage chrome, footer and forms use built-in Russian, French, Arabic and Swahili catalogs. Doctor, hospital, cost-sheet and blog bodies stay English until those language editions are written separately. Google Cloud Translation is not used.
+Navigation, homepage chrome, footer and forms use built-in Russian, French, Arabic and Swahili catalogs. Arabic radiation-oncology doctor profiles (names, titles, bios, procedure lists) live in `content/ar/catalog-cms.json` and appear on `/ar/doctors`. English identity keys — slug, city, country, specialty, procedure slugs — stay English so pSEO can be mounted later. Other specialties still show English bodies on `/ar` until those overlays are written. Google Cloud Translation is not used.
 
 The Arabic edition starts with the same filters as English on Doctors, Hospitals, and Treatment Cost. Dropdown **values** and pretty URLs stay English (`/ar/doctors/India/Delhi-NCR/Surgical-Oncology`). Visible labels are Arabic. English sitemap is `/sitemap.xml`. Arabic sitemap is `/sitemap-ar.xml`. Each language has its own CMS files:
 
