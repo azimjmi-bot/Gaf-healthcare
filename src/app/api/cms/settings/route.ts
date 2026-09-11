@@ -15,10 +15,6 @@ export async function PUT(request: Request) {
     const store = loadCms();
     store.settings = { ...store.settings, ...patch };
     saveCms(store);
-    const { englishFieldsFor } = await import("@/lib/i18n/localize");
-    const { onEnglishSourceSaved } = await import("@/lib/i18n/service");
-    const fields = englishFieldsFor("page", "blogs-index");
-    if (fields) await onEnglishSourceSaved("page", "blogs-index", fields);
     return NextResponse.json(store.settings);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not save settings.";

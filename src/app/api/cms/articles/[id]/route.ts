@@ -49,10 +49,6 @@ export async function PUT(request: Request, ctx: Ctx) {
       if (tag && !store.tags.includes(tag)) store.tags.push(tag);
     }
     saveCms(store);
-    const fields = (await import("@/lib/i18n/localize")).englishFieldsFor("blog", next.slug);
-    if (fields) {
-      await (await import("@/lib/i18n/service")).onEnglishSourceSaved("blog", next.slug, fields);
-    }
     return NextResponse.json(next);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not save.";

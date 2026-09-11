@@ -2,10 +2,9 @@ import { CoverImage } from "@/components/article-body";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { blogSettings, listPublishedPosts } from "@/lib/blogs";
-import { localizeBlog } from "@/lib/i18n/localize";
+import { localizeBlog, localizeMessages } from "@/lib/i18n/localize";
 import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
-import { getLocalizedFields } from "@/lib/i18n/service";
 import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
@@ -13,20 +12,8 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  const settings = blogSettings();
-  const fields = await getLocalizedFields({
-    sourceType: "page",
-    sourceId: "blogs-index",
-    language: locale,
-    fields: {
-      blogEyebrow: settings.blogEyebrow,
-      blogTitle: settings.blogTitle,
-      blogLede: settings.blogLede,
-      seoTitle: "Blogs",
-    },
-    generateIfMissing: locale !== "en",
-  });
-  return withLocaleMetadata({ title: fields.seoTitle || "Blogs" }, "/blogs", locale, LOCALES);
+  const messages = await localizeMessages(locale);
+  return withLocaleMetadata({ title: messages["seo.blogsTitle"] || "Blogs" }, "/blogs", locale, LOCALES);
 }
 
 export default async function BlogsPage({
@@ -37,17 +24,12 @@ export default async function BlogsPage({
   const raw = await searchParams;
   const settings = blogSettings();
   const locale = await getRequestLocale();
-  const localizedSettings = await getLocalizedFields({
-    sourceType: "page",
-    sourceId: "blogs-index",
-    language: locale,
-    fields: {
-      blogEyebrow: settings.blogEyebrow,
-      blogTitle: settings.blogTitle,
-      blogLede: settings.blogLede,
-    },
-    generateIfMissing: locale !== "en",
-  });
+  const messages = await localizeMessages(locale);
+  const localizedSettings = {
+    blogEyebrow: settings.blogEyebrow,
+    blogTitle: messages["seo.blogsTitle"] || settings.blogTitle,
+    blogLede: settings.blogLede,
+  };
   const category = Array.isArray(raw.category) ? raw.category[0] : raw.category;
   const pageRaw = Array.isArray(raw.page) ? raw.page[0] : raw.page;
   const page = Math.max(1, Number.parseInt(pageRaw || "1", 10) || 1);
@@ -56,7 +38,7 @@ export default async function BlogsPage({
   const totalPages = Math.max(1, Math.ceil(all.length / size) || 1);
   const current = Math.min(page, totalPages);
   const posts = await Promise.all(
-    all.slice((current - 1) * size, current * size).map((post) => localizeBlog(post, locale, false)),
+    all.slice((current - 1) * size, current * size).map((post) => localizeBlog(post, locale)),
   );
 
   return (

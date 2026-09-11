@@ -1,6 +1,7 @@
 import { UI_MESSAGE_FIELDS } from "@/lib/i18n/messages";
 import type { AppLocale, TargetLocale } from "@/lib/i18n/languages";
-import type { TranslationFields } from "@/lib/i18n/types";
+
+type TranslationFields = Record<string, string>;
 
 const RU: Record<string, string> = {
   "nav.destinations": "Направления",

@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { CmsImageUpload } from "@/components/cms/cms-image-upload";
-import { CmsTranslationPanel } from "@/components/cms/cms-translation-panel";
 import type { Treatment } from "@/lib/treatments";
 import { emptyParagraph, type ArticleBlock } from "@/lib/cms/types";
 
@@ -153,7 +152,6 @@ export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted
       <Button type="button" disabled={busy} onClick={() => void save()}>
         Save cost sheet
       </Button>
-      <CmsTranslationPanel sourceType="cost" sourceId={row.slug} />
     </div>
   );
 }

@@ -37,13 +37,13 @@ export default async function BlogPostPage({
   const source = getPost(slug) ?? (preview ? getArticleBySlug(slug) : undefined);
   if (!source) notFound();
   const locale = await getRequestLocale();
-  const post = await localizeBlog(source, locale, source.status === "published");
+  const post = await localizeBlog(source, locale);
 
   const others = await Promise.all(
     listPublishedPosts()
       .filter((p) => p.slug !== post.slug)
       .slice(0, 3)
-      .map((p) => localizeBlog(p, locale, false)),
+      .map((p) => localizeBlog(p, locale)),
   );
 
   return (

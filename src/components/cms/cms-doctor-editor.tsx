@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { CmsImageUpload } from "@/components/cms/cms-image-upload";
-import { CmsTranslationPanel } from "@/components/cms/cms-translation-panel";
 import type { Doctor } from "@/lib/doctors";
 
 export function CmsDoctorEditor({ initial }: { initial: Doctor & { deleted?: boolean; added?: boolean } }) {
@@ -73,7 +72,6 @@ export function CmsDoctorEditor({ initial }: { initial: Doctor & { deleted?: boo
       <Button type="button" disabled={busy} onClick={() => void save()}>
         Save doctor
       </Button>
-      <CmsTranslationPanel sourceType="doctor" sourceId={row.slug} />
     </div>
   );
 }

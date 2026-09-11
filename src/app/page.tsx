@@ -58,7 +58,7 @@ export default async function HomePage() {
   const posts = await Promise.all(
     [...published.filter((p) => p.featured), ...published.filter((p) => !p.featured)]
       .slice(0, 3)
-      .map((post) => localizeBlog(post, locale, false)),
+      .map((post) => localizeBlog(post, locale)),
   );
   const faculty = [
     ...doctors.filter((d) => d.featured && d.specialtySlug === "radiation-oncology").slice(0, 1),

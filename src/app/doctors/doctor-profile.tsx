@@ -37,7 +37,7 @@ export async function DoctorProfile({ slug }: { slug: string }) {
   const locale = await getRequestLocale();
   const d = await localizeDoctor(source, locale);
   const hospitalRaw = getHospital(d.hospitalSlug);
-  const hospital = hospitalRaw ? await localizeHospital(hospitalRaw, locale, false) : undefined;
+  const hospital = hospitalRaw ? await localizeHospital(hospitalRaw, locale) : undefined;
   const pathways = d.treatmentSlugs.map((s) => getTreatment(s)).filter(Boolean);
   const colleagues = doctorsForHospital(d.hospitalSlug)
     .filter((x) => x.slug !== d.slug && x.specialtySlug === d.specialtySlug)

@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { CmsImageUpload } from "@/components/cms/cms-image-upload";
-import { CmsTranslationPanel } from "@/components/cms/cms-translation-panel";
 import type { Hospital } from "@/lib/hospitals";
 
 export function CmsHospitalEditor({
@@ -69,7 +68,6 @@ export function CmsHospitalEditor({
       <Button type="button" disabled={busy} onClick={() => void save()}>
         Save hospital
       </Button>
-      <CmsTranslationPanel sourceType="hospital" sourceId={row.slug} />
     </div>
   );
 }

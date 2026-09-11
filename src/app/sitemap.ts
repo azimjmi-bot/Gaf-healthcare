@@ -5,7 +5,6 @@ import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { absoluteUrl, SITE_URL } from "@/lib/seo";
 import { TARGET_LOCALES, type AppLocale } from "@/lib/i18n/languages";
-import { listCompletedTranslations } from "@/lib/i18n/store";
 import { CITIES, INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
 
 /**
@@ -129,33 +128,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     push(entry("/blogs", { lastModified: now, changeFrequency: "weekly", priority: 0.55 }, locale));
   }
 
-  for (const record of listCompletedTranslations()) {
-    if (record.status !== "completed") continue;
-    const path = publicPathForTranslation(record);
-    if (!path || path === "/" || path === "/blogs") continue;
-    push(
-      entry(
-        path,
-        {
-          lastModified: record.translatedAt || record.updatedAt,
-          changeFrequency: "weekly",
-          priority: 0.5,
-        },
-        record.languageCode,
-      ),
-    );
-  }
-
   return out;
-}
-
-function publicPathForTranslation(record: { sourceType: string; sourceId: string }) {
-  if (record.sourceType === "ui" && record.sourceId === "chrome") return "/";
-  if (record.sourceType === "page" && record.sourceId === "home") return "/";
-  if (record.sourceType === "page" && record.sourceId === "blogs-index") return "/blogs";
-  if (record.sourceType === "blog") return `/blogs/${record.sourceId}`;
-  if (record.sourceType === "doctor") return `/doctors/${record.sourceId}`;
-  if (record.sourceType === "hospital") return `/hospitals/${record.sourceId}`;
-  if (record.sourceType === "cost") return `/costs/${record.sourceId}`;
-  return null;
 }

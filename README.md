@@ -52,18 +52,11 @@ Existing English routes are unchanged. A Russian doctor page is `/ru/doctors/[sl
 
 `src/proxy.ts` (Next.js 16) reads the language prefix, sets `x-gaf-locale`, and rewrites to the existing English route. English stays at the root. There is no `/en/` prefix.
 
-Navigation, homepage chrome, footer and forms have built-in Russian, French, Arabic and Swahili catalogs so the language switcher shows translated words immediately. Editorial doctors, hospitals, cost sheets and blogs are still translated by Google Cloud Translation Advanced v3 and stored in `content/translations.json`. Google is used only when a translation is missing, outdated, or an administrator regenerates it. Repeat page views read the stored translation.
+Navigation, homepage chrome, footer and forms use built-in Russian, French, Arabic and Swahili catalogs. Doctor, hospital, cost-sheet and blog bodies stay English until those language editions are written separately. Google Cloud Translation is not used.
 
 ### Replit / production secrets
 
-Set these as runtime secrets. Never commit the service-account JSON.
-
-- `GOOGLE_SERVICE_ACCOUNT_JSON` — full service-account JSON as a single string
-- `GOOGLE_CLOUD_PROJECT_ID` — `gaf-healthcare-translation`
 - `CMS_PASSWORD` — CMS desk password
-- Optional: `GOOGLE_TRANSLATE_LOCATION` (default `global`), `GOOGLE_TRANSLATE_GLOSSARY_ID`, `TRANSLATION_DIAGNOSTICS=1`
-
-Then open `/cms/translations` to see eligible counts and start a bulk job **intentionally**. Do not bulk-translate the full doctor roster unless you mean to spend Google quota.
 
 ```bash
 npm test
