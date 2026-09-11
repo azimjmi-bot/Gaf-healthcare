@@ -39,12 +39,13 @@ import { Button } from "@/components/ui/button";
 import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
 import { HospitalGalleryButton } from "@/components/hospital-gallery";
 import { HospitalSectionNav } from "@/components/hospital-section-nav";
+import { MarkdownBody } from "@/components/markdown-body";
 import { CtaBand } from "@/components/page-shell";
+import { publicMarkdown } from "@/lib/markdown";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
 import {
-  aboutParagraphs,
   bedsLabel,
   cityTravel,
   doctorInitials,
@@ -119,7 +120,6 @@ export function HospitalProfileView({
   const moreDoctors = Math.max(0, faculty.length - topDoctors.length);
   const travel = cityTravel(hospital);
   const beds = bedsLabel(hospital.beds);
-  const about = aboutParagraphs(hospital);
   const why = whyChoose(hospital, faculty.length);
   const features = featureBar(hospital);
   const infra = infrastructure(hospital);
@@ -219,11 +219,7 @@ export function HospitalProfileView({
           <div>
             <p className="eyebrow">Overview</p>
             <h2>About the hospital</h2>
-            {about.map((p) => (
-              <p key={p.slice(0, 24)} className="hp-prose">
-                {p}
-              </p>
-            ))}
+            <MarkdownBody source={publicMarkdown(hospital.bio)} className="hp-prose md-body--profile" />
             <Button asChild variant="outline" className="mt-6 rounded-full">
               <a href="#procedures">See procedures on this campus</a>
             </Button>

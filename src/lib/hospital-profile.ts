@@ -1,3 +1,4 @@
+import { stripMarkdown } from "@/lib/markdown";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
@@ -402,10 +403,7 @@ export function hospitalFaqs(hospital: Hospital, faculty: Doctor[], groups: Facu
 }
 
 export function displayBio(bio: string) {
-  return bio
-    .replace(/[^.?!]*\bpSEO\b[^.?!]*[.?!]/gi, " ")
-    .replace(/\s+/g, " ")
-    .trim();
+  return stripMarkdown(bio.replace(/[^.?!]*\bpSEO\b[^.?!]*[.?!]/gi, " "));
 }
 
 function joinHuman(items: string[]) {

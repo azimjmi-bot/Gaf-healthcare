@@ -5,7 +5,9 @@ import { DoctorProfileHero } from "@/components/doctor-profile-hero";
 import { JsonLd } from "@/components/json-ld";
 import { CtaBand } from "@/components/page-shell";
 import { doctorsForHospital, getDoctor, getHospital, getTreatment } from "@/lib/data";
+import { MarkdownBody } from "@/components/markdown-body";
 import { displayBio } from "@/lib/hospital-profile";
+import { publicMarkdown } from "@/lib/markdown";
 import { doctorsPath } from "@/lib/catalog-links";
 import { breadcrumbJsonLd, physicianJsonLd } from "@/lib/seo";
 import { doctorPageMetadata } from "@/lib/i18n/page-meta";
@@ -62,7 +64,7 @@ export async function DoctorProfile({ slug }: { slug: string }) {
       <article className="mx-auto max-w-3xl px-4 py-10 sm:px-5 md:px-8 md:py-20">
         <h3 className="text-sm tracking-[0.2em] text-gold uppercase">About {d.name}</h3>
         <h2 className="mt-3 font-heading text-3xl">Professional summary</h2>
-        <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{d.bio}</p>
+        <MarkdownBody source={publicMarkdown(d.bio)} className="md-body--profile mt-5" />
         {hospital ? (
           <div className="mt-10 rounded-2xl border border-border bg-card p-6">
             <p className="text-xs tracking-[0.18em] uppercase text-gold">Practises at</p>

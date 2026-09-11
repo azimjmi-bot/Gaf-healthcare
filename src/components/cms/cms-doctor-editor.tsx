@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { CmsImageUpload } from "@/components/cms/cms-image-upload";
+import { CmsMarkdownField } from "@/components/cms/cms-markdown-field";
 import type { Doctor } from "@/lib/doctors";
 
 export function CmsDoctorEditor({ initial }: { initial: Doctor & { deleted?: boolean; added?: boolean } }) {
@@ -53,10 +53,12 @@ export function CmsDoctorEditor({ initial }: { initial: Doctor & { deleted?: boo
         Experience
         <Input value={row.experience} onChange={(e) => setRow({ ...row, experience: e.target.value })} />
       </label>
-      <label>
-        Bio
-        <Textarea value={row.bio} rows={10} onChange={(e) => setRow({ ...row, bio: e.target.value })} />
-      </label>
+      <CmsMarkdownField
+        label="Bio"
+        value={row.bio}
+        rows={14}
+        onChange={(bio) => setRow({ ...row, bio })}
+      />
       <CmsImageUpload
         label="Photo"
         src={row.image || ""}

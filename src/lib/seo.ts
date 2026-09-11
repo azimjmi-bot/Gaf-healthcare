@@ -4,6 +4,7 @@ import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
 import type { CatalogQuery } from "@/lib/catalog-options";
 import { displayBio } from "@/lib/hospital-profile";
+import { stripMarkdown } from "@/lib/markdown";
 import { prettyCatalogPath } from "@/lib/pretty-catalog-path";
 import { site } from "@/lib/site";
 import type { AppLocale } from "@/lib/i18n/languages";
@@ -71,7 +72,7 @@ export function doctorMetadata(d: Doctor): Metadata {
           : "radiation oncologist";
   const title = `${d.name}, ${role} in ${d.city}, India`;
   const description = clip(
-    `${d.name} is a ${role} at ${d.hospitalName} in ${d.city}, India. ${d.procedures.slice(0, 3).join(", ")}. Meet on camera before travel. ${d.bio}`,
+    `${d.name} is a ${role} at ${d.hospitalName} in ${d.city}, India. ${d.procedures.slice(0, 3).join(", ")}. Meet on camera before travel. ${stripMarkdown(d.bio)}`,
   );
   const url = absoluteUrl(`/doctors/${d.slug}`);
   return {
@@ -258,7 +259,7 @@ export function physicianJsonLd(d: Doctor, locale: AppLocale = "en") {
     inLanguage: locale,
     url: absoluteUrl(`/doctors/${d.slug}`, locale),
     jobTitle: d.title,
-    description: clip(d.bio, 240),
+    description: clip(stripMarkdown(d.bio), 240),
     medicalSpecialty: d.specialty,
     knowsAbout: d.procedures,
     address: {

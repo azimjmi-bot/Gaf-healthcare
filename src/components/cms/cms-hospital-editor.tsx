@@ -3,8 +3,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
 import { CmsImageUpload } from "@/components/cms/cms-image-upload";
+import { CmsMarkdownField } from "@/components/cms/cms-markdown-field";
 import type { Hospital } from "@/lib/hospitals";
 
 export function CmsHospitalEditor({
@@ -49,10 +49,12 @@ export function CmsHospitalEditor({
         Name
         <Input value={row.name} readOnly disabled />
       </label>
-      <label>
-        Bio
-        <Textarea value={row.bio} rows={12} onChange={(e) => setRow({ ...row, bio: e.target.value })} />
-      </label>
+      <CmsMarkdownField
+        label="Bio"
+        value={row.bio}
+        rows={14}
+        onChange={(bio) => setRow({ ...row, bio })}
+      />
       <CmsImageUpload
         label="Campus photo"
         src={row.image || ""}

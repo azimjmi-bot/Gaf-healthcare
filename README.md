@@ -35,7 +35,7 @@ The consult form posts to `/api/consult` and returns a reference number. There i
 A WordPress-style desk lives at [`/cms`](http://localhost:43127/cms). Sign-in password defaults to `gaf-local`. Set `CMS_PASSWORD` on the server.
 
 - **Articles** — create, edit, duplicate, trash and restore posts; body blocks, featured image, SEO, tags, related links. Public `/blogs` reads published articles from `content/cms.json`.
-- **Doctors, hospitals, cost sheets** — bio, photo and sheet fields are stored in `content/catalog-cms.json`. Add a consultant to an existing hospital and specialty, add a campus using an India city already in taxonomy, or add a cost sheet for a procedure slug that already exists. Remove hides the record on the live site (a tombstone). Restore brings it back. The Ginger JSON catalog, `*-costs.ts` files, and pSEO matching helpers are not rewritten.
+- **Doctors, hospitals, cost sheets** — bio, photo and sheet fields are stored in `content/catalog-cms.json`. Doctor and hospital bios accept Markdown (`**bold**`, lists, links, headings) with a Write/Preview desk. The public profile renders that Markdown; directory cards and meta descriptions stay plain text. Add a consultant to an existing hospital and specialty, add a campus using an India city already in taxonomy, or add a cost sheet for a procedure slug that already exists. Remove hides the record on the live site (a tombstone). Restore brings it back. The Ginger JSON catalog, `*-costs.ts` files, and pSEO matching helpers are not rewritten.
 
 Draft articles stay off the public `/blogs` list. Media uploads land in `public/uploads/articles`.
 
