@@ -2,7 +2,7 @@ import type { ReactNode } from "react";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { Check, Clock, Stethoscope, BedDouble } from "lucide-react";
 import type { CostArticle } from "@/data/cost-articles/types";
-import { costsFilterPath } from "@/lib/catalog-links";
+import { catalogSpecialtyName, costsFilterPath } from "@/lib/catalog-links";
 import type { Treatment } from "@/lib/treatments";
 
 export function CostHero({
@@ -37,8 +37,8 @@ export function CostHero({
             <nav aria-label="Breadcrumb" className="cost-crumbs">
               <Link href={costsFilterPath({ destination: "India" })}>India</Link>
               <span aria-hidden>›</span>
-              <Link href={costsFilterPath({ destination: "India", specialty: treatment.category })}>
-                {treatment.category}
+              <Link href={costsFilterPath({ destination: "India", specialty: catalogSpecialtyName(treatment) })}>
+                {catalogSpecialtyName(treatment)}
               </Link>
               <span aria-hidden>›</span>
               <Link href={`/costs/${treatment.slug}`}>{article.briefName || article.procedure}</Link>

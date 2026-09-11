@@ -1,5 +1,12 @@
-import { toSlug } from "@/lib/taxonomy";
+import { SPECIALTIES, toSlug } from "@/lib/taxonomy";
 import { prettyCatalogPath, type CatalogBasePath } from "@/lib/pretty-catalog-path";
+import type { Treatment } from "@/lib/treatments";
+
+/** Cluster labels such as "Joint Replacement" are not catalog specialties. */
+export function catalogSpecialtyName(treatment: Pick<Treatment, "category" | "specialtySlug">) {
+  if (SPECIALTIES.some((row) => row.name === treatment.category)) return treatment.category;
+  return SPECIALTIES.find((row) => row.slug === treatment.specialtySlug)?.name ?? treatment.category;
+}
 
 export function costPath(procedureName: string) {
   return `/costs/${toSlug(procedureName)}`;

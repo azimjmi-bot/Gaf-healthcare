@@ -24,7 +24,7 @@ import {
   WhyGaf,
 } from "@/components/cost-page/cost-blocks";
 import type { CostArticle, CostFigure } from "@/data/cost-articles/types";
-import { costPath, costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
+import { catalogSpecialtyName, costPath, costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import {
   doctorsToConsiderHeading,
   hospitalsToConsiderHeading,
@@ -127,7 +127,9 @@ export function CostArticleView({
   const allHospitals = hospitalsPath({ destination: "India", city, procedure: treatment.name });
   const doctorsHeading = doctorsToConsiderHeading(brief, city, article.cityDoctorHeading);
   const hospitalsHeading = hospitalsToConsiderHeading(brief, city, article.cityHospitalHeading);
-  const isPediatricCardiac = treatment.specialtySlug === "pediatric-cardiac-surgery";
+  const skipOncologyFraming =
+    treatment.specialtySlug === "pediatric-cardiac-surgery" ||
+    treatment.specialtySlug === "orthopedics";
   const consultHref = `/consult?treatment=${treatment.slug}`;
   const faqs = cityPage
     ? [...cityPage.faqs, ...article.faqs.filter((item) => !cityPage.faqs.some((faq) => faq.q === item.q))]
@@ -438,7 +440,7 @@ export function CostArticleView({
         </P>
       )}
       <InternationalComparison article={article} destinations={destinations} anyModelled={anyModelled} />
-      {!isPediatricCardiac ? (
+      {!skipOncologyFraming ? (
         <>
           <P>
             The point of this table is not that one country is better. Cost level and treatment-market
@@ -548,7 +550,7 @@ export function CostArticleView({
       <p className="mt-3 text-xs text-muted-foreground">{VARIANCE_NOTE}</p>
 
       <H2 id="cities">Choosing a city for {article.shortName}</H2>
-      {!isPediatricCardiac ? (
+      {!skipOncologyFraming ? (
         <P>
           Patients usually pick the treating team first and the city second. The city still affects daily
           travel, accommodation, companion arrangements and access to follow-up. Here is what genuinely
@@ -759,8 +761,8 @@ export function CostArticleView({
       <p className="mt-6 text-sm">
         <Link href={costPath(treatment.name)}>{treatment.name} cost sheet</Link> ·{" "}
         <Link href="/costs">All treatment costs in India</Link> ·{" "}
-        <Link href={costsFilterPath({ destination: "India", specialty: treatment.category })}>
-          {treatment.category} costs
+        <Link href={costsFilterPath({ destination: "India", specialty: catalogSpecialtyName(treatment) })}>
+          {catalogSpecialtyName(treatment)} costs
         </Link>
       </p>
     </article>

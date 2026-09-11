@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { costArticles } from "@/data/cost-articles";
 import { listPublishedPosts } from "@/lib/blogs";
 import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
+import { catalogSpecialtyName } from "@/lib/catalog-links";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { absoluteUrl, SITE_URL } from "@/lib/seo";
 import type { AppLocale } from "@/lib/i18n/languages";
@@ -85,7 +86,7 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
       const path = costsFilterPath({
         destination: "India",
         city: cityName(city.citySlug),
-        specialty: treatment.category,
+        specialty: catalogSpecialtyName(treatment),
         procedure: treatment.name,
       });
       urls.push(

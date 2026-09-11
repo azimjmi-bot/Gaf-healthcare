@@ -17,6 +17,7 @@ import { pipac } from "./pipac";
 import { ovarianCancerCytoreductiveSurgery } from "./ovarian-cancer-cytoreductive-surgery";
 import { asdClosure } from "./asd-closure-atrial-septal-defect";
 import { pediatricCardiacSurgeryArticlesBySlug } from "./pediatric-cardiac-surgery";
+import { orthopedicsArticlesBySlug } from "./orthopedics";
 import type { CostArticle } from "./types";
 
 export type { CostArticle } from "./types";
@@ -29,6 +30,7 @@ export type { CostArticle } from "./types";
 export const costArticles: Record<string, CostArticle> = {
   [asdClosure.slug]: asdClosure,
   ...pediatricCardiacSurgeryArticlesBySlug,
+  ...orthopedicsArticlesBySlug,
   [breastConservingSurgery.slug]: breastConservingSurgery,
   [breastReconstruction.slug]: breastReconstruction,
   [colectomy.slug]: colectomy,

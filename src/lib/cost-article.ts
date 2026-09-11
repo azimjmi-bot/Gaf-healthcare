@@ -1,11 +1,13 @@
 import "server-only";
 import type { CityEditorial, CostArticle, DestinationRow } from "@/data/cost-articles/types";
-import { doctorsPath, hospitalsPath, costsFilterPath } from "@/lib/catalog-links";
+import { catalogSpecialtyName, doctorsPath, hospitalsPath, costsFilterPath } from "@/lib/catalog-links";
 import { doctorsForTreatment, getHospital, getTreatment } from "@/lib/data";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import { CITIES, COUNTRIES, toSlug } from "@/lib/taxonomy";
 import type { Treatment } from "@/lib/treatments";
+
+export { catalogSpecialtyName };
 
 const DESTINATION_ALIASES: Record<string, string> = {
   turkey: "Türkiye",
@@ -178,7 +180,8 @@ export function costCityRows(
 ): CostCityRow[] {
   return article.cities.map((city: CityEditorial) => {
     const name = cityName(city.citySlug);
-    const params = { destination: "India", city: name, procedure: treatment.name };
+    const specialty = catalogSpecialtyName(treatment);
+    const params = { destination: "India", city: name, procedure: treatment.name, specialty };
     return {
       city: name,
       citySlug: city.citySlug,
@@ -191,7 +194,7 @@ export function costCityRows(
       costPath: costsFilterPath({
         destination: "India",
         city: name,
-        specialty: treatment.category,
+        specialty,
         procedure: treatment.name,
       }),
       doctorsPath: doctorsPath(params),
@@ -360,7 +363,8 @@ export function articleCampuses(treatment: Treatment, city?: string) {
       .map((doctor) => doctor.hospitalSlug),
   );
   const requireProcedureTaggedFaculty =
-    treatment.specialtySlug === "pediatric-cardiac-surgery";
+    treatment.specialtySlug === "pediatric-cardiac-surgery" ||
+    treatment.specialtySlug === "orthopedics";
   return treatment.hospitalSlugs
     .map((slug) => getHospital(slug))
     .filter((h): h is Hospital => {

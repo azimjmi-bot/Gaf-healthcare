@@ -4,7 +4,7 @@ import { CostArticleSection, costArticleData, costArticleFor } from "@/component
 import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, filterTreatments, type CatalogQuery } from "@/lib/catalog";
 import { costsFilterPath } from "@/lib/catalog-links";
-import { cityEditorial, doctorsToConsiderHeading, hospitalsToConsiderHeading, interpolateCostArticle } from "@/lib/cost-article";
+import { catalogSpecialtyName, cityEditorial, doctorsToConsiderHeading, hospitalsToConsiderHeading, interpolateCostArticle } from "@/lib/cost-article";
 import { hospitals, treatments } from "@/lib/data";
 import {
   absoluteUrl,
@@ -29,7 +29,7 @@ export async function costsProcedureMetadata(query: CatalogQuery): Promise<Metad
       const path = costsFilterPath({
         destination: query.destination || "India",
         city: query.city,
-        specialty: query.specialty || sheet.category,
+        specialty: query.specialty || catalogSpecialtyName(sheet),
         procedure: sheet.name,
       });
       return costArticleMetadata(
@@ -69,7 +69,7 @@ export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
     ? costsFilterPath({
         destination: query.destination || "India",
         city: query.city,
-        specialty: query.specialty || sheet.category,
+        specialty: query.specialty || catalogSpecialtyName(sheet),
         procedure: sheet.name,
       })
     : `/costs/${sheet.slug}`;
