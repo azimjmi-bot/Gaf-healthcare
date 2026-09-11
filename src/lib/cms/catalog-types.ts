@@ -23,6 +23,9 @@ export type HospitalPatch = {
   summary?: string;
   image?: string;
   imageAlt?: string;
+  languages?: string;
+  focus?: string;
+  icu?: string;
 };
 
 /** Fields that define public URLs and pSEO matching. Never overlay these. */
@@ -67,6 +70,9 @@ export const HOSPITAL_OVERLAY_KEYS = [
   "summary",
   "image",
   "imageAlt",
+  "languages",
+  "focus",
+  "icu",
 ] as const satisfies readonly (keyof HospitalPatch)[];
 
 export function pickOverlay(patch: object | undefined, allowedKeys: readonly string[]): Record<string, unknown> {

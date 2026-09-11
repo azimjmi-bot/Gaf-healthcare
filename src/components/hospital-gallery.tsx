@@ -12,33 +12,36 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import type { Hospital } from "@/lib/hospitals";
-import { infrastructure } from "@/lib/hospital-profile";
+import { infrastructureLocalized } from "@/lib/i18n/hospital-copy";
+import type { AppLocale } from "@/lib/i18n/languages";
+import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 
 export function HospitalGalleryButton({
   hospital,
-  label = "View campus snapshots",
+  label,
   className,
+  locale = "en",
 }: {
   hospital: Hospital;
   label?: string;
   className?: string;
+  locale?: AppLocale;
 }) {
   const [open, setOpen] = useState(false);
-  const tiles = infrastructure(hospital);
+  const t = uiCatalogFor(locale);
+  const tiles = infrastructureLocalized(hospital, locale);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         <button type="button" className={className ?? "hp-gallery-btn"}>
-          {label}
+          {label ?? t["hp.photos"]}
         </button>
       </DialogTrigger>
       <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-3xl">
         <DialogHeader>
           <DialogTitle className="font-heading text-3xl">{hospital.name}</DialogTitle>
-          <DialogDescription>
-            Illustrated snapshots of how this campus is organised — not live photographs of the building.
-          </DialogDescription>
+          <DialogDescription>{t["hp.galleryDesc"]}</DialogDescription>
         </DialogHeader>
         <HospitalCampusVisual hospital={hospital} className="mt-2 h-48 overflow-hidden rounded-xl" />
         <ul className="mt-4 grid gap-3 sm:grid-cols-2">
@@ -50,7 +53,7 @@ export function HospitalGalleryButton({
           ))}
         </ul>
         <Button type="button" variant="outline" className="mt-2" onClick={() => setOpen(false)}>
-          Close
+          {t["hp.close"]}
         </Button>
       </DialogContent>
     </Dialog>

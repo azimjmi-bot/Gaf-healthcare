@@ -6,12 +6,12 @@ import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, filterHospitals, type CatalogQuery } from "@/lib/catalog";
 import { paginateHospitals } from "@/lib/hospitals";
-import { hospitals } from "@/lib/data";
 import { faqJsonLd } from "@/lib/seo";
 import { catalogPageMetadata } from "@/lib/i18n/page-meta";
 import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { getRequestLocale } from "@/lib/i18n/request";
+import { hospitalsForLocale } from "@/lib/locale-catalog";
 import type { Metadata } from "next";
 
 export async function hospitalsDirectoryMetadata(query: CatalogQuery): Promise<Metadata> {
@@ -28,7 +28,7 @@ export async function HospitalsDirectory({
   const locale = await getRequestLocale();
   const messages = await localizeMessages(locale);
   const faqs = await localizeFaqs("hospitals", locale);
-  const list = filterHospitals(query, hospitals);
+  const list = filterHospitals(query, hospitalsForLocale(locale));
   const paging = paginateHospitals(list, page);
   const chipStats = query.destination === "India" ? cityResultCounts("hospitals", query) : null;
   const copy = directoryIntro("hospitals", query, locale);
@@ -40,8 +40,8 @@ export async function HospitalsDirectory({
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           name: copy.heading,
-          description:
-            "Partner campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. One card per house, with specialties on the campus.",
+          description: copy.lede,
+          inLanguage: locale,
         }}
       />
       <JsonLd data={faqJsonLd(faqs)} />

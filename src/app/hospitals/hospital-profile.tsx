@@ -1,14 +1,8 @@
-import { LocaleLink as Link } from "@/components/locale-link";
 import { notFound } from "next/navigation";
 import { HospitalProfileView } from "@/components/hospital-profile-view";
 import { JsonLd } from "@/components/json-ld";
-import {
-  getHospital,
-  getTreatment,
-  hospitalsInCity,
-  type Treatment,
-} from "@/lib/data";
-import { doctorsForHospitalLocale } from "@/lib/locale-catalog";
+import { getHospital, getTreatment, type Treatment } from "@/lib/data";
+import { doctorsForHospitalLocale, hospitalsInCityLocale } from "@/lib/locale-catalog";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { hospitalsPath } from "@/lib/catalog-links";
 import { breadcrumbJsonLd, hospitalJsonLd } from "@/lib/seo";
@@ -30,7 +24,7 @@ export async function HospitalProfile({ slug }: { slug: string }) {
   const pathways = h.procedureSlugs
     .map((s) => getTreatment(s))
     .filter((t): t is Treatment => Boolean(t));
-  const nearby = hospitalsInCity(h.citySlug).filter((x) => x.slug !== h.slug);
+  const nearby = hospitalsInCityLocale(h.citySlug, locale).filter((x) => x.slug !== h.slug);
 
   return (
     <>

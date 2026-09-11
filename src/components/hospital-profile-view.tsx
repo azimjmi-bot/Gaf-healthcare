@@ -46,29 +46,33 @@ import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
 import {
-  bedsLabel,
-  cityTravel,
   doctorInitials,
   featuredDoctors,
   featuredSpecialties,
-  featureBar,
-  fromUsd,
   groupFaculty,
-  heroLede,
-  hospitalFaqs,
-  infrastructure,
-  internationalServices,
   isEyeCampus,
-  peopleNoun,
   popularTreatments,
-  pullQuote,
-  specialtyBlurb,
-  whyChoose,
   yearsLabelLocalized,
 } from "@/lib/hospital-profile";
 import { hospitalsPath } from "@/lib/catalog-links";
 import type { AppLocale } from "@/lib/i18n/languages";
+import {
+  bedsLabelLocalized,
+  cityTravelLocalized,
+  featureBarLocalized,
+  fromUsdLocalized,
+  heroLedeLocalized,
+  hospitalFaqsLocalized,
+  infrastructureLocalized,
+  internationalServicesLocalized,
+  peopleNounLocalized,
+  pullQuoteLocalized,
+  specialtyBlurbLocalized,
+  whyChooseLocalized,
+} from "@/lib/i18n/hospital-copy";
+import { interpolate } from "@/lib/i18n/messages";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
+import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 import { site } from "@/lib/site";
 
 const SPECIALTY_ICON: Record<string, LucideIcon> = {
@@ -97,6 +101,17 @@ const SPECIALTY_ICON: Record<string, LucideIcon> = {
   nephrology: Droplets,
 };
 
+const INTL_ICON: Record<string, LucideIcon> = {
+  visa: FileCheck,
+  travel: Plane,
+  airport: Car,
+  interpreters: Languages,
+  companion: BedDouble,
+  records: FolderOpen,
+  cost: Wallet,
+  after: Home,
+};
+
 function IconFor({ slug, className }: { slug: string; className?: string }) {
   const Icon = SPECIALTY_ICON[slug] ?? Building2;
   return <Icon className={className} />;
@@ -122,43 +137,46 @@ export function HospitalProfileView({
   const topDoctors = featuredDoctors(faculty, 4);
   const moreProcedures = Math.max(0, pathways.length - popular.length);
   const moreDoctors = Math.max(0, faculty.length - topDoctors.length);
-  const travel = cityTravel(hospital);
-  const beds = bedsLabel(hospital.beds);
-  const why = whyChoose(hospital, faculty.length);
-  const features = featureBar(hospital);
-  const infra = infrastructure(hospital);
-  const intl = internationalServices();
-  const faqs = hospitalFaqs(hospital, faculty, groups);
+  const travel = cityTravelLocalized(hospital, locale);
+  const beds = bedsLabelLocalized(hospital.beds, locale);
+  const why = whyChooseLocalized(hospital, faculty.length, locale);
+  const features = featureBarLocalized(hospital, locale);
+  const infra = infrastructureLocalized(hospital, locale);
+  const intl = internationalServicesLocalized(locale);
+  const faqs = hospitalFaqsLocalized(hospital, faculty, groups, locale);
   const eye = isEyeCampus(hospital);
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(travel.mapsQuery)}`;
   const tel = site.phone.replace(/[^\d+]/g, "");
+  const t = uiCatalogFor(locale);
+  const cityLabel = taxonomyLabel(hospital.city, locale);
+  const countryLabel = taxonomyLabel(hospital.country, locale);
 
   const nav = [
-    { id: "overview", label: "Overview" },
-    { id: "specialties", label: "Specialties" },
-    { id: "procedures", label: "Procedures" },
-    { id: "doctors", label: "Doctors" },
-    { id: "infrastructure", label: "Infrastructure" },
-    { id: "international", label: "International patients" },
-    { id: "faqs", label: "FAQs" },
-    { id: "location", label: "Location" },
+    { id: "overview", label: t["hp.nav.overview"] },
+    { id: "specialties", label: t["hp.nav.specialties"] },
+    { id: "procedures", label: t["hp.nav.procedures"] },
+    { id: "doctors", label: t["hp.nav.doctors"] },
+    { id: "infrastructure", label: t["hp.nav.infrastructure"] },
+    { id: "international", label: t["hp.nav.international"] },
+    { id: "faqs", label: t["hp.nav.faqs"] },
+    { id: "location", label: t["hp.nav.location"] },
   ];
 
   return (
     <div className="hospital-profile">
       <section className="hp-hero">
         <div className="hp-wrap">
-          <nav className="hp-crumbs" aria-label="Breadcrumb">
-            <Link href="/">Home</Link>
+          <nav className="hp-crumbs" aria-label={t["hp.crumbAria"]}>
+            <Link href="/">{t["hp.home"]}</Link>
             <span>/</span>
-            <Link href="/hospitals">Hospitals</Link>
+            <Link href="/hospitals">{t["hp.hospitals"]}</Link>
             <span>/</span>
             <Link href={hospitalsPath({ destination: hospital.country })}>
-              {hospital.country}
+              {countryLabel}
             </Link>
             <span>/</span>
             <Link href={hospitalsPath({ destination: hospital.country, city: hospital.city })}>
-              {hospital.city}
+              {cityLabel}
             </Link>
             <span>/</span>
             <span aria-current="page">{hospital.name}</span>
@@ -168,9 +186,9 @@ export function HospitalProfileView({
             <div>
               <h1 className="hp-hero__title">{hospital.name}</h1>
               <p className="hp-hero__place">
-                {hospital.city}, {hospital.country}
+                {cityLabel}, {countryLabel}
               </p>
-              <p className="hp-hero__lede">{heroLede(hospital)}</p>
+              <p className="hp-hero__lede">{heroLedeLocalized(hospital, locale)}</p>
               <AccreditationSeals accreditation={hospital.accreditation} />
               <ul className="hp-badges">
                 {beds ? (
@@ -182,26 +200,24 @@ export function HospitalProfileView({
                 {hospital.established ? (
                   <li>
                     <CalendarCheck className="size-3.5" />
-                    Est. {hospital.established}
+                    {interpolate(t["hp.est"], { year: hospital.established })}
                   </li>
                 ) : null}
               </ul>
               <div className="hp-hero__cta">
                 <Button asChild className="hp-btn-primary">
-                  <Link href={`/consult?hospital=${hospital.slug}`}>Get a treatment plan</Link>
+                  <Link href={`/consult?hospital=${hospital.slug}`}>{t["hp.plan"]}</Link>
                 </Button>
                 <Button asChild variant="outline" className="hp-btn-secondary">
                   <a href={`tel:${tel}`}>
-                    <span className="inline-flex items-center gap-2">
-                      Talk to a coordinator
-                    </span>
+                    <span className="inline-flex items-center gap-2">{t["hp.talk"]}</span>
                   </a>
                 </Button>
               </div>
             </div>
             <div className="hp-hero__visual">
               <HospitalCampusVisual hospital={hospital} className="hp-hero__art" />
-              <HospitalGalleryButton hospital={hospital} />
+              <HospitalGalleryButton hospital={hospital} locale={locale} label={t["hp.photos"]} />
             </div>
           </div>
         </div>
@@ -221,33 +237,33 @@ export function HospitalProfileView({
       <section id="overview" className="hp-section scroll-mt-28">
         <div className="hp-wrap hp-about">
           <div>
-            <p className="eyebrow">Overview</p>
-            <h2>About the hospital</h2>
+            <p className="eyebrow">{t["hp.overview"]}</p>
+            <h2>{t["hp.about"]}</h2>
             <MarkdownBody source={publicMarkdown(hospital.bio)} className="hp-prose md-body--profile" />
             <Button asChild variant="outline" className="mt-6 rounded-full">
-              <a href="#procedures">See procedures on this campus</a>
+              <a href="#procedures">{t["hp.seeProcedures"]}</a>
             </Button>
             <dl className="hp-statrow">
               {beds ? (
                 <div>
-                  <dt>Beds</dt>
+                  <dt>{t["hp.beds"]}</dt>
                   <dd>{hospital.beds}</dd>
                 </div>
               ) : null}
               {hospital.established ? (
                 <div>
-                  <dt>Opened</dt>
+                  <dt>{t["hp.opened"]}</dt>
                   <dd>{hospital.established}</dd>
                 </div>
               ) : null}
               <div>
-                <dt>Accreditation</dt>
+                <dt>{t["hp.accreditation"]}</dt>
                 <dd>
                   <AccreditationSeals accreditation={hospital.accreditation} size="sm" />
                 </dd>
               </div>
               <div>
-                <dt>Languages</dt>
+                <dt>{t["hp.languages"]}</dt>
                 <dd>{hospital.languages}</dd>
               </div>
             </dl>
@@ -255,13 +271,13 @@ export function HospitalProfileView({
           <figure className="hp-quote">
             <HospitalCampusVisual hospital={hospital} className="hp-quote__art" />
             <blockquote>
-              <p>{pullQuote(hospital)}</p>
+              <p>{pullQuoteLocalized(hospital, locale)}</p>
               <footer>{hospital.name}</footer>
             </blockquote>
           </figure>
         </div>
         <div className="hp-wrap">
-          <h3 className="hp-subhead">Why families choose this campus</h3>
+          <h3 className="hp-subhead">{t["hp.why"]}</h3>
           <ul className="hp-why">
             {why.map((card, i) => {
               const Icon = [UserRound, ShieldCheck, HeartPulse, Languages, Plane, Video][i] ?? Award;
@@ -279,25 +295,23 @@ export function HospitalProfileView({
 
       <section id="specialties" className="hp-section hp-section--tint scroll-mt-28">
         <div className="hp-wrap">
-          <p className="eyebrow">Departments</p>
-          <h2>{eye ? "Eye care on this campus" : "Specialties on this campus"}</h2>
-          <p className="hp-prose">
-            {eye
-              ? "This house is an eye hospital. Other specialties stay on general campuses — we will not dump a kidney or spine list onto an ophthalmic floor."
-              : "A few of the departments this campus actually staffs. The rest live on the full doctor and procedure lists."}
-          </p>
+          <p className="eyebrow">{t["hp.departments"]}</p>
+          <h2>{eye ? t["hp.eyeCare"] : t["hp.specialtiesOn"]}</h2>
+          <p className="hp-prose">{eye ? t["hp.eyeLede"] : t["hp.specLede"]}</p>
           <ul className="hp-spec-row">
             {specialtyCards.map((g) => (
               <li key={g.slug} className="hp-spec-card">
                 <span className="hp-spec-card__icon">
                   <IconFor slug={g.slug} className="size-6" />
                 </span>
-                <h3>{g.name}</h3>
-                <p>{specialtyBlurb(g.slug)}</p>
+                <h3>{taxonomyLabel(g.name, locale)}</h3>
+                <p>{specialtyBlurbLocalized(g.slug, locale)}</p>
                 <Link href={`/hospitals/${hospital.slug}/doctors#doctors-${g.slug}`}>
                   {g.doctors.length
-                    ? `View ${peopleNoun(g.slug, g.doctors.length)}`
-                    : "Ask for a match"}
+                    ? interpolate(t["hp.viewPeople"], {
+                        people: peopleNounLocalized(g.slug, g.doctors.length, locale),
+                      })
+                    : t["hp.askMatch"]}
                 </Link>
               </li>
             ))}
@@ -305,7 +319,7 @@ export function HospitalProfileView({
           {facultyGroups.length > specialtyCards.length ? (
             <p className="mt-6">
               <Link href={`/hospitals/${hospital.slug}/doctors`} className="hp-viewall">
-                View all departments
+                {t["hp.viewDepartments"]}
                 <ChevronRight className="size-4" />
               </Link>
             </p>
@@ -318,19 +332,17 @@ export function HospitalProfileView({
           <div>
             <div className="hp-box-head">
               <div>
-                <p className="eyebrow">Planning ranges</p>
-                <h2>Popular procedures</h2>
+                <p className="eyebrow">{t["hp.planningRanges"]}</p>
+                <h2>{t["hp.popular"]}</h2>
               </div>
               <Link href={`/hospitals/${hospital.slug}/procedures`} className="hp-viewall">
-                View All Procedures
+                {t["hp.viewAllProcedures"]}
                 <ChevronRight className="size-4" />
               </Link>
             </div>
-            <p className="hp-note">Five named lists on this campus. The rest open under View All Procedures. USD figures are planning ranges, not quotes.</p>
+            <p className="hp-note">{t["hp.procNote"]}</p>
             {popular.length === 0 ? (
-              <p className="mt-6 text-muted-foreground">
-                Procedure sheets for this campus are being filed. A coordinator can still advise from records.
-              </p>
+              <p className="mt-6 text-muted-foreground">{t["hp.procEmpty"]}</p>
             ) : (
               <ul className="hp-proc-list">
                 {popular.map((row) => (
@@ -339,11 +351,19 @@ export function HospitalProfileView({
                       <IconFor slug={row.specialtySlug} className="size-5" />
                     </span>
                     <div>
-                      <Link href={`/costs/${row.treatment.slug}`}>{row.treatment.name}</Link>
-                      <p>{row.specialty}</p>
+                      <Link href={`/costs/${row.treatment.slug}`}>
+                        {taxonomyLabel(row.treatment.name, locale)}
+                      </Link>
+                      <p>{taxonomyLabel(row.specialty, locale)}</p>
                     </div>
-                    <strong>{fromUsd(row.treatment.partnerRange)}</strong>
-                    <Link href={`/costs/${row.treatment.slug}`} className="hp-row-arrow" aria-label={`${row.treatment.name} cost`}>
+                    <strong>{fromUsdLocalized(row.treatment.partnerRange, locale)}</strong>
+                    <Link
+                      href={`/costs/${row.treatment.slug}`}
+                      className="hp-row-arrow"
+                      aria-label={interpolate(t["hp.costAria"], {
+                        name: taxonomyLabel(row.treatment.name, locale),
+                      })}
+                    >
                       <ChevronRight className="size-4" />
                     </Link>
                   </li>
@@ -352,26 +372,27 @@ export function HospitalProfileView({
             )}
             {moreProcedures > 0 ? (
               <p className="hp-more">
-                {moreProcedures} further {moreProcedures === 1 ? "procedure" : "procedures"} sit under{" "}
-                <Link href={`/hospitals/${hospital.slug}/procedures`}>View All Procedures</Link>.
+                {interpolate(t["hp.moreProcs"], {
+                  count: moreProcedures,
+                  noun: moreProcedures === 1 ? t["hp.procedureOne"] : t["hp.procedureMany"],
+                })}{" "}
+                <Link href={`/hospitals/${hospital.slug}/procedures`}>{t["hp.viewAllProcedures"]}</Link>.
               </p>
             ) : null}
           </div>
           <div id="doctors" className="scroll-mt-28">
             <div className="hp-box-head">
               <div>
-                <p className="eyebrow">Faculty</p>
-                <h2>Top doctors</h2>
+                <p className="eyebrow">{t["hp.faculty"]}</p>
+                <h2>{t["hp.topDoctors"]}</h2>
               </div>
               <Link href={`/hospitals/${hospital.slug}/doctors`} className="hp-viewall">
-                View All Doctors
+                {t["hp.viewAllDoctors"]}
                 <ChevronRight className="size-4" />
               </Link>
             </div>
             {topDoctors.length === 0 ? (
-              <p className="mt-6 text-muted-foreground">
-                Named consultants for this campus are being matched. Request a plan and we will advise.
-              </p>
+              <p className="mt-6 text-muted-foreground">{t["hp.doctorsEmpty"]}</p>
             ) : (
               <ul className="hp-doc-list">
                 {topDoctors.map((d) => (
@@ -388,7 +409,7 @@ export function HospitalProfileView({
                       </p>
                     </div>
                     <Link href={`/doctors/${d.slug}`} className="hp-viewall hp-viewall--tight">
-                      View profile
+                      {t["hp.viewProfile"]}
                       <ChevronRight className="size-4" />
                     </Link>
                   </li>
@@ -397,8 +418,11 @@ export function HospitalProfileView({
             )}
             {moreDoctors > 0 ? (
               <p className="hp-more">
-                {moreDoctors} further {moreDoctors === 1 ? "doctor" : "doctors"} sit under{" "}
-                <Link href={`/hospitals/${hospital.slug}/doctors`}>View All Doctors</Link>.
+                {interpolate(t["hp.moreDoctors"], {
+                  count: moreDoctors,
+                  noun: moreDoctors === 1 ? t["hp.doctorOne"] : t["hp.doctorMany"],
+                })}{" "}
+                <Link href={`/hospitals/${hospital.slug}/doctors`}>{t["hp.viewAllDoctors"]}</Link>.
               </p>
             ) : null}
           </div>
@@ -408,8 +432,8 @@ export function HospitalProfileView({
       <section id="infrastructure" className="hp-section scroll-mt-28">
         <div className="hp-wrap hp-split">
           <div>
-            <p className="eyebrow">Campus</p>
-            <h2>Infrastructure and technology</h2>
+            <p className="eyebrow">{t["hp.campus"]}</p>
+            <h2>{t["hp.infra"]}</h2>
             <ul className="hp-infra">
               {infra.map((tile) => (
                 <li key={tile.title}>
@@ -423,28 +447,13 @@ export function HospitalProfileView({
             </ul>
           </div>
           <div id="international" className="scroll-mt-28">
-            <p className="eyebrow">Travel</p>
-            <h2>International patient services</h2>
+            <p className="eyebrow">{t["hp.travel"]}</p>
+            <h2>{t["hp.intl"]}</h2>
             <ul className="hp-intl">
               {intl.map((s) => {
-                const Icon =
-                  s.title === "Visa assistance"
-                    ? FileCheck
-                    : s.title === "Travel planning"
-                      ? Plane
-                      : s.title === "Airport pickup"
-                        ? Car
-                        : s.title === "Interpreters"
-                          ? Languages
-                          : s.title === "Companion stay"
-                            ? BedDouble
-                            : s.title === "Records transfer"
-                              ? FolderOpen
-                              : s.title === "Cost clarity"
-                                ? Wallet
-                                : Home;
+                const Icon = INTL_ICON[s.id] ?? Home;
                 return (
-                  <li key={s.title}>
+                  <li key={s.id}>
                     <Icon className="size-5" />
                     <div>
                       <p>{s.title}</p>
@@ -456,11 +465,8 @@ export function HospitalProfileView({
             </ul>
             <div className="hp-support">
               <Ambulance className="size-5" />
-              <p>
-                Travelling for treatment? A GAF Healthcare coordinator holds the visa letter, the pickup and the first night
-                so the family is not improvising at arrivals.
-              </p>
-              <Link href={`/consult?hospital=${hospital.slug}`}>Ask for that help</Link>
+              <p>{t["hp.support"]}</p>
+              <Link href={`/consult?hospital=${hospital.slug}`}>{t["hp.askHelp"]}</Link>
             </div>
           </div>
         </div>
@@ -469,35 +475,35 @@ export function HospitalProfileView({
       <section className="hp-section hp-section--tint">
         <div className="hp-wrap hp-split">
           <div id="location" className="scroll-mt-28">
-            <p className="eyebrow">Find us</p>
-            <h2>Location</h2>
+            <p className="eyebrow">{t["hp.findUs"]}</p>
+            <h2>{t["hp.location"]}</h2>
             <div className="hp-map">
               <HospitalCampusVisual hospital={hospital} className="hp-map__art" />
               <MapPin className="hp-map__pin" />
             </div>
             <p className="mt-4 font-medium">
-              {hospital.name}, {hospital.city}, {hospital.country}
+              {hospital.name}, {cityLabel}, {countryLabel}
             </p>
             <p className="mt-2 text-sm text-muted-foreground">
-              Nearest airport: {travel.airport}. {travel.airportHint}
+              {interpolate(t["hp.airport"], { airport: travel.airport, hint: travel.airportHint })}
             </p>
             <p className="mt-2 text-sm text-muted-foreground">{travel.centreHint}</p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Button asChild className="hp-btn-primary">
                 <a href={mapsHref} target="_blank" rel="noreferrer">
-                  Get directions
+                  {t["hp.directions"]}
                 </a>
               </Button>
               <Button asChild variant="outline" className="rounded-full">
                 <Link href={hospitalsPath({ destination: hospital.country, city: hospital.city })}>
-                  Other campuses in {hospital.city}
+                  {interpolate(t["hp.otherCampuses"], { city: cityLabel })}
                 </Link>
               </Button>
             </div>
           </div>
           <div id="faqs" className="scroll-mt-28">
-            <p className="eyebrow">Questions</p>
-            <h2>FAQs</h2>
+            <p className="eyebrow">{t["hp.questions"]}</p>
+            <h2>{t["hp.faqs"]}</h2>
             <Accordion type="single" collapsible className="mt-6">
               {faqs.map((item) => (
                 <AccordionItem key={item.q} value={item.q}>
@@ -515,7 +521,7 @@ export function HospitalProfileView({
       {nearby.length > 0 ? (
         <section className="hp-section">
           <div className="hp-wrap">
-            <h2>Other campuses in {hospital.city}</h2>
+            <h2>{interpolate(t["hp.otherCampuses"], { city: cityLabel })}</h2>
             <ul className="hp-nearby">
               {nearby.map((n) => (
                 <li key={n.slug}>
@@ -532,30 +538,27 @@ export function HospitalProfileView({
 
       <section className="hp-journey">
         <div className="hp-wrap">
-          <h2>Ready to begin your treatment journey?</h2>
-          <p>
-            Share records, meet the consultant on camera, then decide. No mill clinic, no obligation to book the first
-            name we show you.
-          </p>
+          <h2>{t["hp.journey"]}</h2>
+          <p>{t["hp.journeyLede"]}</p>
           <Button asChild className="hp-btn-gold">
-            <Link href={`/consult?hospital=${hospital.slug}`}>Get your treatment plan</Link>
+            <Link href={`/consult?hospital=${hospital.slug}`}>{t["hp.getPlan"]}</Link>
           </Button>
           <ul className="hp-trust">
             <li>
               <CalendarCheck className="size-4" />
-              Reply within a business day
+              {t["hp.trust1"]}
             </li>
             <li>
               <UserRound className="size-4" />
-              Named specialist, not a roster
+              {t["hp.trust2"]}
             </li>
             <li>
               <ShieldCheck className="size-4" />
-              No obligation
+              {t["hp.trust3"]}
             </li>
             <li>
               <Lock className="size-4" />
-              Records stay confidential
+              {t["hp.trust4"]}
             </li>
           </ul>
         </div>

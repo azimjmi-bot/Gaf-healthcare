@@ -1,8 +1,8 @@
 import { notFound } from "next/navigation";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
-import { getHospital, getTreatment, hospitals, type Treatment } from "@/lib/data";
-import { doctorsForHospitalLocale } from "@/lib/locale-catalog";
+import { hospitals, getTreatment, type Treatment } from "@/lib/data";
+import { doctorsForHospitalLocale, getHospitalForLocale } from "@/lib/locale-catalog";
 import { groupFaculty, type FacultyGroup } from "@/lib/hospital-profile";
 import type { AppLocale } from "@/lib/i18n/languages";
 
@@ -19,7 +19,7 @@ export function loadHospitalCampus(
   pathways: Treatment[];
   groups: FacultyGroup[];
 } | null {
-  const hospital = getHospital(slug);
+  const hospital = getHospitalForLocale(slug, locale);
   if (!hospital) return null;
   const faculty = doctorsForHospitalLocale(hospital.slug, locale);
   const pathways = hospital.procedureSlugs

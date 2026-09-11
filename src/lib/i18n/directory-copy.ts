@@ -102,7 +102,14 @@ export function directoryIntro(kind: DirectoryKind, query: CatalogQuery, locale:
     return {
       eyebrow: t(locale, "dir.hospitals.eyebrow"),
       heading,
-      lede: home ? t(locale, "dir.hospitals.homeLede") : t(locale, "dir.hospitals.filteredLede"),
+      lede: home
+        ? t(locale, "dir.hospitals.homeLede")
+        : !query.city && !query.specialty && !query.procedure && query.destination === "India"
+          ? t(locale, "dir.hospitals.indiaLede", {
+              count: locale === "ar" ? "٣٧" : "37",
+              place,
+            })
+          : t(locale, "dir.hospitals.filteredLede", { place }),
     };
   }
 

@@ -8,7 +8,7 @@ import type { Article } from "@/lib/cms/types";
 import type { CostArticle } from "@/data/cost-articles/types";
 import { getCostArticle } from "@/data/cost-articles";
 import { COST_FAQS_AR, DOCTOR_FAQS_AR, HOSPITAL_FAQS_AR } from "@/lib/i18n/faqs-ar";
-import { getDoctorForLocale } from "@/lib/locale-catalog";
+import { getDoctorForLocale, getHospitalForLocale } from "@/lib/locale-catalog";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
@@ -22,8 +22,9 @@ export async function localizeDoctor(doctor: Doctor, locale: AppLocale) {
   return getDoctorForLocale(doctor.slug, locale) ?? doctor;
 }
 
-export async function localizeHospital(hospital: Hospital, _locale: AppLocale) {
-  return hospital;
+export async function localizeHospital(hospital: Hospital, locale: AppLocale) {
+  if (locale !== "ar") return hospital;
+  return getHospitalForLocale(hospital.slug, locale) ?? hospital;
 }
 
 export async function localizeCost(

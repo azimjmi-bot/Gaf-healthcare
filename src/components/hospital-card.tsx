@@ -4,12 +4,14 @@ import { AccreditationSeals } from "@/components/accreditation-seals";
 import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
 import { HospitalGalleryButton } from "@/components/hospital-gallery";
 import type { Hospital } from "@/lib/hospitals";
-import { doctorsForHospital } from "@/lib/data";
 import { displayBio, isEyeCampus } from "@/lib/hospital-profile";
 import { whatsappHref } from "@/lib/site";
 import { hospitalsPath } from "@/lib/catalog-links";
 import { getRequestLocale } from "@/lib/i18n/request";
+import { interpolate } from "@/lib/i18n/messages";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
+import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
+import { doctorsForHospitalLocale } from "@/lib/locale-catalog";
 import { compareSpecialties } from "@/lib/taxonomy";
 
 const CHIP_LIMIT = 6;
@@ -22,26 +24,32 @@ function specialtiesOnCard(hospital: Hospital, faculty: { specialty: string; spe
   return hospital.specialtySlugs.map((slug, i) => ({ slug, name: hospital.specialties[i] ?? slug }));
 }
 
-function wa(hospital: Hospital, intent: string) {
-  return whatsappHref(
-    `Hello — I am writing about ${hospital.name} in ${hospital.city}. ${intent}`,
-  );
+function wa(hospital: Hospital, city: string, intent: string, hello: string) {
+  return whatsappHref(interpolate(hello, { name: hospital.name, city, intent }));
 }
 
 export async function HospitalCard({ hospital }: { hospital: Hospital }) {
   const locale = await getRequestLocale();
-  const faculty = doctorsForHospital(hospital.slug);
+  const t = uiCatalogFor(locale);
+  const faculty = doctorsForHospitalLocale(hospital.slug, locale);
   const specialties = specialtiesOnCard(hospital, faculty);
   const shown = specialties.slice(0, CHIP_LIMIT);
   const extra = specialties.length - shown.length;
   const eye = isEyeCampus(hospital);
   const blurb = displayBio(hospital.bio);
+  const cityLabel = taxonomyLabel(hospital.city, locale);
+  const countryLabel = taxonomyLabel(hospital.country, locale);
 
   return (
     <article className="hcard">
       <div className="hcard__visual">
         <HospitalCampusVisual hospital={hospital} className="hcard__art" />
-        <HospitalGalleryButton hospital={hospital} label="View Photos" className="hcard__photos" />
+        <HospitalGalleryButton
+          hospital={hospital}
+          locale={locale}
+          label={t["hp.photos"]}
+          className="hcard__photos"
+        />
       </div>
 
       <div className="hcard__main">
@@ -51,7 +59,7 @@ export async function HospitalCard({ hospital }: { hospital: Hospital }) {
         <AccreditationSeals accreditation={hospital.accreditation} size="sm" labeled />
         <p className="hcard__bio">{blurb}</p>
         <Link href={`/hospitals/${hospital.slug}`} className="hcard__more">
-          Read More →
+          {t["hp.readMore"]}
         </Link>
         {shown.length > 0 ? (
           <ul className="hcard__chips">
@@ -68,7 +76,9 @@ export async function HospitalCard({ hospital }: { hospital: Hospital }) {
                 </Link>
               </li>
             ))}
-            {extra > 0 ? <li className="hcard__morechip">+{extra} more</li> : null}
+            {extra > 0 ? (
+              <li className="hcard__morechip">{interpolate(t["hp.moreChip"], { count: extra })}</li>
+            ) : null}
           </ul>
         ) : null}
       </div>
@@ -79,7 +89,7 @@ export async function HospitalCard({ hospital }: { hospital: Hospital }) {
             <li>
               <CalendarDays className="size-4" />
               <span>
-                Established in: <strong>{hospital.established}</strong>
+                {t["hp.established"]} <strong>{hospital.established}</strong>
               </span>
             </li>
           ) : null}
@@ -87,20 +97,20 @@ export async function HospitalCard({ hospital }: { hospital: Hospital }) {
             <li>
               <BedDouble className="size-4" />
               <span>
-                Number of beds: <strong>{hospital.beds}</strong>
+                {t["hp.bedCount"]} <strong>{hospital.beds}</strong>
               </span>
             </li>
           ) : null}
           <li>
             <Stethoscope className="size-4" />
-            <span>{eye ? "Eye hospital" : "Multi speciality"}</span>
+            <span>{eye ? t["hp.eyeHospital"] : t["hp.multi"]}</span>
           </li>
           <li>
             <MapPin className="size-4" />
             <span>
-              Location:{" "}
+              {t["hp.locationLabel"]}{" "}
               <strong>
-                {taxonomyLabel(hospital.city, locale)}, {taxonomyLabel(hospital.country, locale)}
+                {cityLabel}, {countryLabel}
               </strong>
             </span>
           </li>
@@ -108,27 +118,27 @@ export async function HospitalCard({ hospital }: { hospital: Hospital }) {
         <div className="hcard__cta">
           <a
             className="hcard__btn hcard__btn--book"
-            href={wa(hospital, "I would like to book an appointment.")}
+            href={wa(hospital, cityLabel, t["hp.waBookIntent"], t["hp.waHello"])}
             target="_blank"
             rel="noreferrer"
           >
-            Book Appointment
+            {t["hp.book"]}
           </a>
           <a
             className="hcard__btn hcard__btn--wa"
-            href={wa(hospital, "Please connect me on WhatsApp.")}
+            href={wa(hospital, cityLabel, t["hp.waChatIntent"], t["hp.waHello"])}
             target="_blank"
             rel="noreferrer"
           >
-            WhatsApp Us
+            {t["hp.whatsapp"]}
           </a>
           <a
             className="hcard__btn hcard__btn--plan"
-            href={wa(hospital, "I would like a treatment plan for this campus.")}
+            href={wa(hospital, cityLabel, t["hp.waPlanIntent"], t["hp.waHello"])}
             target="_blank"
             rel="noreferrer"
           >
-            Request Treatment Plan
+            {t["hp.requestPlan"]}
           </a>
         </div>
       </div>

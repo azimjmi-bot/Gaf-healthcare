@@ -125,7 +125,44 @@ export function doctorMetadata(d: Doctor, locale: AppLocale = "en"): Metadata {
   };
 }
 
-export function hospitalMetadata(h: Hospital): Metadata {
+export function hospitalMetadata(h: Hospital, locale: AppLocale = "en"): Metadata {
+  if (locale === "ar") {
+    const city = taxonomyLabel(h.city, "ar");
+    const country = taxonomyLabel(h.country, "ar");
+    const specs = h.specialties.slice(0, 5).map((name) => taxonomyLabel(name, "ar")).join("، ");
+    const eye = h.specialtySlug === "ophthalmology" && h.specialtySlugs.length === 1;
+    const title = eye
+      ? `${h.name} — مستشفى عيون في ${city}، ${country}`
+      : `${h.name} — مستشفى معتمد في ${city}، ${country}`;
+    const description = clip(
+      `${h.name} في ${city}، ${country}. ${specs}. ${h.accreditation}. مصنّف على GAF Healthcare حسب البلد والمدينة والتخصص والإجراء. مراجعة السجلات ثم فيديو قبل السفر. ${displayBio(h.bio)}`,
+    );
+    const url = absoluteUrl(`/hospitals/${h.slug}`, "ar");
+    return {
+      title,
+      description,
+      keywords: [
+        h.name,
+        `مستشفيات ${city}`,
+        "مستشفيات الهند",
+        "سياحة علاجية الهند",
+        "مستشفيات JCI الهند",
+        "مستشفيات NABH",
+        ...h.specialties.slice(0, 8).map((name) => taxonomyLabel(name, "ar")),
+        ...h.procedures.slice(0, 6).map((name) => taxonomyLabel(name, "ar")),
+      ],
+      alternates: { canonical: url },
+      openGraph: {
+        title,
+        description,
+        url,
+        type: "website",
+        locale: "ar",
+        siteName: site.name,
+      },
+      twitter: { card: "summary_large_image", title, description },
+    };
+  }
   const title =
     h.specialtySlug === "ophthalmology" && h.specialtySlugs.length === 1
       ? `${h.name} — eye hospital in ${h.city}, India`
@@ -331,10 +368,10 @@ export function hospitalJsonLd(h: Hospital, locale: AppLocale = "en") {
     inLanguage: locale,
     url: absoluteUrl(`/hospitals/${h.slug}`, locale),
     description: clip(displayBio(h.bio), 240),
-    medicalSpecialty: h.specialties,
+    medicalSpecialty: h.specialties.map((name) => taxonomyLabel(name, locale)),
     address: {
       "@type": "PostalAddress",
-      addressLocality: h.city,
+      addressLocality: taxonomyLabel(h.city, locale),
       addressCountry: "IN",
     },
   };
