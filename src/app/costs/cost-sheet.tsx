@@ -1,14 +1,16 @@
 import Image from "next/image";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { AccreditationSeals } from "@/components/accreditation-seals";
 import { ArticleBlocks, CoverImage } from "@/components/article-body";
+import { CatalogFilter } from "@/components/catalog-filter";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { CostArticleSection, costArticleFor, hasCostArticle } from "@/components/cost-article-section";
-import { getCostArticle } from "@/data/cost-articles";
-import { costPath, costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
+import { cityResultCounts } from "@/lib/catalog";
+import { catalogSpecialtyName, costPath, costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { articleCampuses, articleFaculty, hospitalsToConsiderHeading, interpolateCostArticle } from "@/lib/cost-article";
 import { getCostGuide } from "@/lib/cost-guides";
 import {
@@ -47,6 +49,12 @@ export async function CostSheet({ slug }: { slug: string }) {
     const facultyForSchema = articleFaculty(t.slug).featured;
     const campusesForSchema = articleCampuses(t).slice(0, 8);
     const brief = article.briefName || article.procedure;
+    const specialtyName = catalogSpecialtyName(t);
+    const filterQuery = {
+      destination: "India",
+      specialty: specialtyName,
+      procedure: t.name,
+    };
     return (
       <>
         <JsonLd
@@ -56,7 +64,7 @@ export async function CostSheet({ slug }: { slug: string }) {
             path: `/costs/${t.slug}`,
             lastReviewed: article.lastUpdated,
             procedureName: t.name,
-            specialty: t.category,
+            specialty: specialtyName,
             about: article.heroLede || t.summary,
             image: article.figures?.[0]?.src,
             locale,
@@ -66,7 +74,7 @@ export async function CostSheet({ slug }: { slug: string }) {
           data={breadcrumbJsonLd(
             [
               { name: "Treatment Cost", path: "/costs" },
-              { name: t.category, path: costsFilterPath({ destination: "India", specialty: t.category }) },
+              { name: specialtyName, path: costsFilterPath({ destination: "India", specialty: specialtyName }) },
               { name: t.name, path: `/costs/${t.slug}` },
             ],
             locale,
@@ -92,7 +100,25 @@ export async function CostSheet({ slug }: { slug: string }) {
           />
         ) : null}
 
-        <CostArticleSection treatment={t} heading={article.heading} lede={article.heroLede ?? t.summary} />
+        <CostArticleSection
+          treatment={t}
+          heading={article.heading}
+          lede={article.heroSubtitle ?? article.heroLede ?? t.summary}
+          filters={
+            <div className="pb-8">
+              <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
+                <CatalogFilter
+                  basePath="/costs"
+                  entity="treatments"
+                  query={filterQuery}
+                  chipStats={cityResultCounts("treatments", filterQuery)}
+                  resultCount={1}
+                  resultLabel="pathway"
+                />
+              </Suspense>
+            </div>
+          }
+        />
       </>
     );
   }

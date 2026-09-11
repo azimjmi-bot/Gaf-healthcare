@@ -87,7 +87,7 @@ export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
           path: pagePath,
           lastReviewed: sheetArticle.lastUpdated,
           procedureName: sheet.name,
-          specialty: sheet.category,
+          specialty: catalogSpecialtyName(sheet),
           about: sheetArticle.heroLede || sheet.summary,
           image: sheetArticle.figures?.[0]?.src,
         })}
@@ -95,7 +95,7 @@ export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
       <JsonLd
         data={breadcrumbJsonLd([
           { name: "Treatment Cost", path: "/costs" },
-          { name: sheet.category, path: costsFilterPath({ destination: query.destination || "India", specialty: sheet.category }) },
+          { name: catalogSpecialtyName(sheet), path: costsFilterPath({ destination: query.destination || "India", specialty: catalogSpecialtyName(sheet) }) },
           { name: sheet.name, path: `/costs/${sheet.slug}` },
           ...(query.city ? [{ name: query.city, path: pagePath }] : []),
         ])}
