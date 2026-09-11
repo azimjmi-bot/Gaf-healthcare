@@ -186,9 +186,8 @@ export function InternationalComparison({
             <tr>
               <th scope="col">Country</th>
               <th scope="col">Approximate cost</th>
-              <th scope="col">Relative cost vs India</th>
-              <th scope="col">Typical positioning</th>
-              <th scope="col">Notes</th>
+              <th scope="col">Relative cost position</th>
+              <th scope="col">Important cost considerations</th>
             </tr>
           </thead>
           <tbody>
@@ -204,8 +203,10 @@ export function InternationalComparison({
                       ) : null}
                 </td>
                 <td>{row.relative}</td>
-                <td>{row.positioning}</td>
-                <td className="text-muted-foreground">{row.context}</td>
+                <td className="text-muted-foreground">
+                  <span className="font-medium text-foreground">{row.positioning}.</span>{" "}
+                  {row.context}
+                </td>
               </tr>
             ))}
           </tbody>
@@ -254,9 +255,10 @@ export function CityCostGrid({ rows, activeCity }: { rows: CostCityRow[]; active
           <thead>
             <tr>
               <th scope="col">City</th>
-              <th scope="col">Approximate cost</th>
-              <th scope="col">Typical hospital stay</th>
-              <th scope="col">Explore city</th>
+              <th scope="col">Approximate cost range</th>
+              <th scope="col">Why patients consider the city</th>
+              <th scope="col">Doctors</th>
+              <th scope="col">Hospitals</th>
             </tr>
           </thead>
           <tbody>
@@ -271,13 +273,22 @@ export function CityCostGrid({ rows, activeCity }: { rows: CostCityRow[]; active
                     <span className="mt-0.5 block text-xs">India planning band</span>
                   ) : null}
                 </td>
-                <td>{row.stay}</td>
+                <td className="text-muted-foreground">
+                  {row.costNote} Typical hospital stay: {row.stay}.
+                </td>
                 <td>
-                  <Link href={row.costPath}>{row.city} cost page</Link>
-                  {" · "}
-                  <Link href={row.doctorsPath}>doctors in {row.city}</Link>
-                  {" · "}
-                  <Link href={row.hospitalsPath}>hospitals in {row.city}</Link>
+                  <Link href={row.doctorsPath}>
+                    {row.doctorCount > 0
+                      ? `${row.doctorCount} listed ${row.doctorCount === 1 ? "doctor" : "doctors"}`
+                      : "Match on request"}
+                  </Link>
+                </td>
+                <td>
+                  <Link href={row.hospitalsPath}>
+                    {row.hospitalCount > 0
+                      ? `${row.hospitalCount} listed ${row.hospitalCount === 1 ? "hospital" : "hospitals"}`
+                      : "No procedure-confirmed campus"}
+                  </Link>
                 </td>
               </tr>
             ))}

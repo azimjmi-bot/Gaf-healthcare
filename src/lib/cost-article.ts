@@ -359,11 +359,15 @@ export function articleCampuses(treatment: Treatment, city?: string) {
       .filter((doctor) => (city ? doctor.city === city : true))
       .map((doctor) => doctor.hospitalSlug),
   );
+  const requireProcedureTaggedFaculty =
+    treatment.specialtySlug === "pediatric-cardiac-surgery";
   return treatment.hospitalSlugs
     .map((slug) => getHospital(slug))
     .filter((h): h is Hospital => {
       if (!h) return false;
-      return city ? h.city === city : true;
+      if (city && h.city !== city) return false;
+      if (requireProcedureTaggedFaculty && !facultyCampuses.has(h.slug)) return false;
+      return true;
     })
     .sort((a, b) => Number(facultyCampuses.has(b.slug)) - Number(facultyCampuses.has(a.slug)));
 }

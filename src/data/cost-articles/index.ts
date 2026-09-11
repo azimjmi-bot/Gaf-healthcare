@@ -15,6 +15,7 @@ import { cytoreductiveSurgery } from "./cytoreductive-surgery";
 import { cytoreductiveSurgeryWithHipec } from "./cytoreductive-surgery-with-hipec";
 import { pipac } from "./pipac";
 import { ovarianCancerCytoreductiveSurgery } from "./ovarian-cancer-cytoreductive-surgery";
+import { asdClosure } from "./asd-closure-atrial-septal-defect";
 import type { CostArticle } from "./types";
 
 export type { CostArticle } from "./types";
@@ -25,6 +26,7 @@ export type { CostArticle } from "./types";
  * a time without touching the route.
  */
 export const costArticles: Record<string, CostArticle> = {
+  [asdClosure.slug]: asdClosure,
   [breastConservingSurgery.slug]: breastConservingSurgery,
   [breastReconstruction.slug]: breastReconstruction,
   [colectomy.slug]: colectomy,
