@@ -600,7 +600,7 @@ export function CostArticleView({
           package as a trip total.
         </P>
       )}
-      <MedicalTourismBudget treatment={treatment} article={article} />
+      <MedicalTourismBudget treatment={treatment} />
       <p className="mt-3 text-xs text-muted-foreground">Planning estimate — not a hospital quotation.</p>
       <p className="mt-5">
         <Link href={consultHref} className="cost-btn cost-btn--primary">

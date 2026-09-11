@@ -326,17 +326,15 @@ export function CityCostGrid({ rows, activeCity }: { rows: CostCityRow[]; active
 
 export function MedicalTourismBudget({
   treatment,
-  article,
 }: {
   treatment: Treatment;
-  article: CostArticle;
 }) {
   const rows = [
-    { label: "Treatment (surgical package)", range: treatment.partnerRange },
+    { label: "Treatment episode", range: treatment.partnerRange },
     { label: "Pre-operative tests", range: "Often inside the estimate — confirm" },
     { label: "Hospital stay", range: `${treatment.stay} typically bundled` },
     {
-      label: article.fullPathway ? "Radiotherapy / additional treatment" : "Additional treatment",
+      label: "Additional procedures or extended care",
       range: "Quoted separately if advised",
     },
     { label: "Accommodation for companion", range: "Varies by city and length of stay" },
@@ -424,8 +422,8 @@ export function WhyGaf() {
         <li>
           <Stethoscope className="size-4" />
           <span>
-            <strong>Doctor review first.</strong> The number follows a reading of your imaging and
-            pathology, not a brochure range.
+            <strong>Doctor review first.</strong> The number follows a reading of your imaging, test
+            results and clinical records, not a brochure range.
           </span>
         </li>
         <li>
