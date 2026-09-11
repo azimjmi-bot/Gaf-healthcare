@@ -60,6 +60,7 @@ export const UI_MESSAGE_FIELDS: Record<string, string> = {
     "JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house appears once. Ten campuses per page — specialties sit on the card.",
   "dir.hospitals.procedureHeading": "Hospitals for {procedure} in {place}",
   "dir.hospitals.specialtyHeading": "{specialty} hospitals in {place}",
+  "dir.hospitals.cityHeading": "Hospitals in {place}",
   "dir.hospitals.indiaHeading": "Hospitals in India",
   "dir.hospitals.empty": "No hospitals match these filters.",
   "dir.hospitals.faqTitle": "Frequently Asked Questions About Choosing a Hospital",

@@ -98,7 +98,9 @@ export function directoryIntro(kind: DirectoryKind, query: CatalogQuery, locale:
               specialty: taxonomyLabel(query.specialty, locale),
               place,
             })
-          : t(locale, "dir.hospitals.indiaHeading");
+          : query.city
+            ? t(locale, "dir.hospitals.cityHeading", { place })
+            : t(locale, "dir.hospitals.indiaHeading");
     return {
       eyebrow: t(locale, "dir.hospitals.eyebrow"),
       heading,
@@ -201,7 +203,9 @@ function englishIntro(kind: DirectoryKind, query: CatalogQuery) {
         ? `Hospitals for ${query.procedure} in ${place}`
         : query.specialty
           ? `${query.specialty} hospitals in ${place}`
-          : "Hospitals in India";
+          : query.city
+            ? `Hospitals in ${place}`
+            : "Hospitals in India";
     return {
       eyebrow: "India campuses",
       heading,

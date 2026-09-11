@@ -246,6 +246,7 @@ const AR: Record<string, string> = {
     "حرم معتمدة في {place} على دليل GAF Healthcare، مربوطة بالتخصص والإجراء والأطباء المسمّين. يظهر كل مستشفى مرة واحدة. عشرة حرم في الصفحة — صفِّ حسب المدينة أو التخصص أو الإجراء دون تغيير مفاتيح العنوان الإنجليزية.",
   "dir.hospitals.procedureHeading": "مستشفيات {procedure} في {place}",
   "dir.hospitals.specialtyHeading": "مستشفيات {specialty} في {place}",
+  "dir.hospitals.cityHeading": "مستشفيات في {place}",
   "dir.hospitals.indiaHeading": "مستشفيات في الهند",
   "dir.hospitals.empty": "لا توجد مستشفيات تطابق عوامل التصفية هذه.",
   "dir.hospitals.faqTitle": "أسئلة شائعة عن اختيار مستشفى",
