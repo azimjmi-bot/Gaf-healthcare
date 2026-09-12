@@ -3,6 +3,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
 import { COSMETIC_PROCEDURES, toSlug } from "../../lib/taxonomy";
+import { mapCosmeticProcedures, mapDoctorProcedures } from "../../lib/procedure-map";
 import {
   cosmeticSurgeryArticles,
   cosmeticSurgeryArticlesBySlug,
@@ -114,6 +115,14 @@ test("clinical copy is procedure-specific and medically restrained", () => {
       /\bbest (?:doctor|surgeon|hospital|facility)|success rate|100% success|perfect results?\b/i,
     );
   }
+});
+
+test("cosmetic mappings require procedure evidence and separate butt from breast augmentation", () => {
+  assert.deepEqual(mapDoctorProcedures("Cosmetic Surgery", ["Plastic surgeon"]), []);
+  assert.deepEqual(mapCosmeticProcedures(["Butt augmentation"], false), []);
+  assert.deepEqual(mapCosmeticProcedures(["Breast augmentation with silicone implants"], false), [
+    "Breast Augmentation",
+  ]);
 });
 
 test("each procedure declares three unique, descriptive WebP figures", () => {

@@ -263,7 +263,10 @@ export function mapBariatricProcedures(texts: string[], fallback = true) {
 const COSMETIC_RULES: { test: RegExp; name: (typeof COSMETIC_PROCEDURES)[number] }[] = [
   { test: /brazilian|bbl|butt lift/i, name: "Brazilian Butt Lift" },
   { test: /gynecomastia|male breast/i, name: "Gynecomastia Surgery" },
-  { test: /breast[\s-]*aug|augmentation|implants/i, name: "Breast Augmentation" },
+  {
+    test: /breast[\s-]*aug|augmentation mammo|breast implants?|mammary implants?/i,
+    name: "Breast Augmentation",
+  },
   { test: /breast[\s-]*red|reduction mammo/i, name: "Breast Reduction" },
   { test: /breast[\s-]*lift|mastopexy/i, name: "Breast Lift" },
   { test: /hair transplant|fue|fut|follicular/i, name: "Hair Transplant" },
@@ -706,7 +709,9 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Cardiology") return mapCardiologyProcedures(texts);
   if (specialty === "Bariatric Surgery") return mapBariatricProcedures(texts);
   if (specialty === "Cosmetic Surgery") {
-    const found = mapCosmeticProcedures(texts);
+    // Cosmetic procedure cards must be evidence-linked. Do not assign the
+    // generic fallback trio to a sparse profile with no procedure match.
+    const found = mapCosmeticProcedures(texts, false);
     const blob = texts.join(" ");
     // Reconstructive breast surgery is listed on plastic-surgery records and is the
     // same catalog procedure as surgical-oncology Breast Reconstruction.
