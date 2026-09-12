@@ -65,6 +65,8 @@ Switch editions at the top of `/cms`. The public `/ar/blogs` list reads the Arab
 
 All 18 active Medical Oncology treatments have long-form India planning guides at `/costs/{slug}` and city overlays for Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Drug, dose, cycle, biomarker and monitoring assumptions remain treatment-specific. Doctor and hospital cards require exact live CMS procedure relationships; an empty catalog section is never filled with a generic oncology profile.
 
+All 10 active Hematology procedures use the same long-form cost architecture and five city overlays. Six Hematology-only procedures have transplant- or marrow-diagnostic-specific guides; Bone Marrow Transplantation, Stem Cell Transplantation, CAR-T Cell Therapy and Intrathecal Chemotherapy reuse their clinically appropriate shared guides rather than creating duplicate slugs. Hematology cards require an exact procedure-linked clinician and campus relationship.
+
 ### Replit / production secrets
 
 - `CMS_PASSWORD` — CMS desk password

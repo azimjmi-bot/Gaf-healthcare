@@ -368,7 +368,8 @@ export function articleCampuses(treatment: Treatment, city?: string) {
     treatment.specialtySlug === "spine-surgery" ||
     treatment.specialtySlug === "pediatric-orthopaedic" ||
     treatment.specialtySlug === "radiation-oncology" ||
-    treatment.specialtySlug === "medical-oncology";
+    treatment.specialtySlug === "medical-oncology" ||
+    treatment.specialtySlug === "hematology";
   return treatment.hospitalSlugs
     .map((slug) => getHospital(slug))
     .filter((h): h is Hospital => {

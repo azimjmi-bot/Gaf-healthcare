@@ -6,6 +6,8 @@ import { cityResultCounts, filterTreatments, type CatalogQuery } from "@/lib/cat
 import { costsFilterPath } from "@/lib/catalog-links";
 import { catalogSpecialtyName, cityEditorial, doctorsToConsiderHeading, hospitalsToConsiderHeading, interpolateCostArticle } from "@/lib/cost-article";
 import { hospitals, treatments } from "@/lib/data";
+import { getSpecialty } from "@/lib/taxonomy";
+import type { Treatment } from "@/lib/treatments";
 import {
   absoluteUrl,
   catalogMetadata,
@@ -18,10 +20,18 @@ import {
 } from "@/lib/seo";
 import type { Metadata } from "next";
 
+function treatmentForQuery(sheet: Treatment, query: CatalogQuery): Treatment {
+  if (!query.specialty) return sheet;
+  const specialty = getSpecialty(query.specialty);
+  if (!specialty || !sheet.specialtySlugs.includes(specialty.slug)) return sheet;
+  return { ...sheet, category: specialty.name, specialtySlug: specialty.slug };
+}
+
 export async function costsProcedureMetadata(query: CatalogQuery): Promise<Metadata> {
   const base = catalogMetadata("treatments", query);
-  const sheet = query.procedure ? treatments.find((t) => t.name === query.procedure) : undefined;
-  if (!sheet) return base;
+  const source = query.procedure ? treatments.find((t) => t.name === query.procedure) : undefined;
+  if (!source) return base;
+  const sheet = treatmentForQuery(source, query);
   const article = costArticleFor(sheet);
   if (article && query.city) {
     const cityPage = cityEditorial(article, query.city)?.page;
@@ -56,8 +66,9 @@ export async function costsProcedureMetadata(query: CatalogQuery): Promise<Metad
 
 export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
   const list = filterTreatments(query, treatments, hospitals);
-  const sheet = query.procedure ? treatments.find((t) => t.name === query.procedure) : undefined;
-  if (!sheet) return null;
+  const source = query.procedure ? treatments.find((t) => t.name === query.procedure) : undefined;
+  if (!source) return null;
+  const sheet = treatmentForQuery(source, query);
   const sheetArticle = costArticleFor(sheet);
   if (!sheetArticle) return null;
 

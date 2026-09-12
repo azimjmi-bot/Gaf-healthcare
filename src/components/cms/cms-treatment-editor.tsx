@@ -124,6 +124,12 @@ const LONGFORM_COST_SLUGS = new Set([
   "car-t-cell-therapy",
   "bone-marrow-transplantation",
   "stem-cell-transplantation",
+  "autologous-stem-cell-transplant",
+  "allogeneic-stem-cell-transplant",
+  "haploidentical-stem-cell-transplant",
+  "bone-marrow-biopsy",
+  "bone-marrow-aspiration",
+  "matched-unrelated-donor-transplant",
   "dendritic-cell-therapy",
 ]);
 
