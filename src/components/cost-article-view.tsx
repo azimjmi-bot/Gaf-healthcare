@@ -134,7 +134,8 @@ export function CostArticleView({
   const skipOncologyFraming =
     treatment.specialtySlug === "pediatric-cardiac-surgery" ||
     treatment.specialtySlug === "orthopedics" ||
-    treatment.specialtySlug === "spine-surgery";
+    treatment.specialtySlug === "spine-surgery" ||
+    treatment.specialtySlug === "pediatric-orthopaedic";
   const consultHref = `/consult?treatment=${treatment.slug}`;
   const faqs = cityPage
     ? [...cityPage.faqs, ...article.faqs.filter((item) => !cityPage.faqs.some((faq) => faq.q === item.q))]
@@ -631,24 +632,30 @@ export function CostArticleView({
       <ConversionPanel
         consultHref={consultHref}
         heading={
-          skipOncologyFraming && treatment.specialtySlug === "spine-surgery"
+          treatment.specialtySlug === "spine-surgery"
             ? "Need a case-specific spine estimate?"
-            : "Not sure which hospital or surgeon is right for you?"
+            : treatment.specialtySlug === "pediatric-orthopaedic"
+              ? "Need a case-specific paediatric orthopaedic estimate?"
+              : "Not sure which hospital or surgeon is right for you?"
         }
         body={
-          skipOncologyFraming && treatment.specialtySlug === "spine-surgery"
+          treatment.specialtySlug === "spine-surgery"
             ? "Share MRI and medical records for a treatment review. A named spine team can then discuss levels, implants and a written hospital estimate — this is not a quotation or a treatment decision."
-            : "Share your medical reports and receive suitable doctor and hospital options along with an indicative treatment estimate."
+            : treatment.specialtySlug === "pediatric-orthopaedic"
+              ? "Share your child's medical records for a treatment review. A named paediatric orthopaedic team can then discuss age, growth remaining, implants or casts and a written hospital estimate — this is not a quotation or a treatment decision."
+              : "Share your medical reports and receive suitable doctor and hospital options along with an indicative treatment estimate."
         }
         primary={
-          skipOncologyFraming && treatment.specialtySlug === "spine-surgery"
+          treatment.specialtySlug === "spine-surgery" || treatment.specialtySlug === "pediatric-orthopaedic"
             ? "Request a personalized treatment estimate"
             : "Start My Treatment Request"
         }
         secondary={
-          skipOncologyFraming && treatment.specialtySlug === "spine-surgery"
+          treatment.specialtySlug === "spine-surgery"
             ? "Speak with GAF Healthcare about spine treatment in India"
-            : "Upload Medical Reports"
+            : treatment.specialtySlug === "pediatric-orthopaedic"
+              ? "Speak with GAF Healthcare about pediatric orthopaedic treatment in India"
+              : "Upload Medical Reports"
         }
         secondaryHref="/consult"
       />
