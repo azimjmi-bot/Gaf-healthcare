@@ -140,6 +140,7 @@ export function CostArticleView({
   const isEnt = treatment.specialtySlug === "ent";
   const isGastroenterology = treatment.specialtySlug === "gastroenterology";
   const isSurgicalGastroenterology = treatment.specialtySlugs.includes("surgical-gastroenterology");
+  const isNeurosurgery = treatment.specialtySlug === "neurosurgery";
   const isTavr = treatment.slug === "tavr-tavi-transcatheter-aortic-valve-replacement";
   const isNonsurgicalTreatment =
     isMedicalOncology || isHematology || isTavr || isBariatricSurgery;
@@ -153,6 +154,7 @@ export function CostArticleView({
     isEnt ||
     isGastroenterology ||
     isSurgicalGastroenterology ||
+    isNeurosurgery ||
     isBariatricSurgery ||
     isCosmeticSurgery;
   const consultHref = `/consult?treatment=${treatment.slug}`;
@@ -600,6 +602,8 @@ export function CostArticleView({
                 ? "Gastroenterology services"
               : isSurgicalGastroenterology
                 ? "Surgical Gastroenterology services"
+              : isNeurosurgery
+                ? "Neurosurgery services"
               : undefined
         }
       />
@@ -637,7 +641,7 @@ export function CostArticleView({
       </Accordion>
 
       <H2 id="total-pathway">
-        What should international patients budget beyond the {isHematology ? "hematology procedure or treatment" : isMedicalOncology ? "treatment medicine" : isCardiology ? "cardiac procedure" : isEnt ? "ENT procedure" : isGastroenterology ? "gastroenterology procedure" : "surgery"}?
+        What should international patients budget beyond the {isHematology ? "hematology procedure or treatment" : isMedicalOncology ? "treatment medicine" : isCardiology ? "cardiac procedure" : isEnt ? "ENT procedure" : isGastroenterology ? "gastroenterology procedure" : isNeurosurgery ? "neurosurgery procedure" : "surgery"}?
       </H2>
       {article.fullPathway ? (
         <>
@@ -655,7 +659,7 @@ export function CostArticleView({
         </>
       ) : (
         <P>
-          The {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery || isCardiology ? "cardiac procedure" : isBariatricSurgery ? "bariatric procedure" : isCosmeticSurgery ? "cosmetic procedure" : isEnt ? "ENT" : isGastroenterology ? "gastroenterology" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
+          The {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery || isCardiology ? "cardiac procedure" : isBariatricSurgery ? "bariatric procedure" : isCosmeticSurgery ? "cosmetic procedure" : isEnt ? "ENT" : isGastroenterology ? "gastroenterology" : isNeurosurgery ? "neurosurgery" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
           hospital charges from living and travel costs so you can plan without treating a brochure
           package as a trip total.
         </P>
@@ -702,6 +706,8 @@ export function CostArticleView({
                   ? "Need a case-specific gastroenterology estimate?"
                 : isSurgicalGastroenterology
                   ? "Need a case-specific GI surgery estimate?"
+                : isNeurosurgery
+                  ? "Need a case-specific neurosurgery estimate?"
                 : isCardiacSurgery
                   ? "Need a case-specific cardiac surgery estimate?"
                 : isHematology
@@ -729,6 +735,8 @@ export function CostArticleView({
                   ? "Share endoscopy reports, imaging, pathology or liver tests for review. A named gastroenterology team can then discuss indication, diagnostic versus therapeutic scope, devices and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isSurgicalGastroenterology
                   ? "Share endoscopy, CT, MRI, pathology or prior operative notes for review. A named surgical gastroenterology team can then discuss indication, reconstruction, ICU assumptions and a written hospital estimate — this is not a quotation or a treatment decision."
+                : isNeurosurgery
+                  ? "Share MRI or CT, angiography or EEG when those studies exist, histopathology and prior operative notes for review. A named neurosurgery team can then discuss indication, corridor or device plan, ICU assumptions and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isCardiacSurgery
                   ? "Share your cardiac records for review. A named cardiac team can then discuss anatomy, operative or catheter approach, implants, ICU assumptions and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isHematology
@@ -747,6 +755,7 @@ export function CostArticleView({
           isEnt ||
           isGastroenterology ||
           isSurgicalGastroenterology ||
+          isNeurosurgery ||
           isCardiacSurgery ||
           isNonsurgicalTreatment
             ? "Request a personalized treatment estimate"
@@ -771,6 +780,8 @@ export function CostArticleView({
                   ? "Speak with GAF Healthcare about gastroenterology treatment in India"
                 : isSurgicalGastroenterology
                   ? "Speak with GAF Healthcare about GI surgery in India"
+                : isNeurosurgery
+                  ? "Speak with GAF Healthcare about neurosurgery in India"
                 : isCardiacSurgery
                   ? "Speak with GAF Healthcare about cardiac surgery in India"
                 : isHematology
@@ -784,7 +795,7 @@ export function CostArticleView({
 
       <H2 id="clinical-detail">Clinical detail</H2>
       <H3>
-        {isBariatricSurgery || isCosmeticSurgery || isCardiology || isEnt || isGastroenterology
+        {isBariatricSurgery || isCosmeticSurgery || isCardiology || isEnt || isGastroenterology || isSurgicalGastroenterology || isNeurosurgery
           ? "How the procedure is performed"
           : treatment.specialtySlug === "radiation-oncology" || isNonsurgicalTreatment
             ? "How the treatment is delivered"
