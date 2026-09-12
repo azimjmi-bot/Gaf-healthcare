@@ -71,6 +71,8 @@ All 15 active adult Cardiac Surgery procedures have long-form India planning gui
 
 All 11 active Bariatric Surgery procedures have long-form India planning guides and five city overlays. The content distinguishes restrictive, bypass, endoscopic, device-removal and altered-anatomy procedures; every guide covers staged dietary recovery and procedure-appropriate long-term nutritional monitoring. Doctor and hospital cards require exact procedure-linked clinicians, and no city-specific tariff is inferred from the national planning range.
 
+All 15 active Cosmetic Surgery procedures have long-form India planning guides and five city overlays. Content separates facial, eyelid, ear, hair, breast, chest, abdominal, arm, liposuction and fat-grafting pathways; each procedure has distinct anatomy, procedure and recovery WebP diagrams. Doctor and facility cards require exact procedure-linked clinicians, while Brazilian Butt Lift and Arm Lift intentionally retain honest empty entity states until the CMS has verified mappings.
+
 ### Replit / production secrets
 
 - `CMS_PASSWORD` — CMS desk password

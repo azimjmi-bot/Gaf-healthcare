@@ -157,6 +157,21 @@ const LONGFORM_COST_SLUGS = new Set([
   "duodenal-switch-bpd-ds",
   "gastric-banding-lap-band",
   "gastric-band-removal",
+  "rhinoplasty",
+  "liposuction",
+  "breast-augmentation",
+  "tummy-tuck",
+  "breast-reduction",
+  "facelift",
+  "hair-transplant",
+  "breast-lift",
+  "blepharoplasty",
+  "gynecomastia-surgery",
+  "brazilian-butt-lift",
+  "fat-transfer",
+  "otoplasty",
+  "neck-lift",
+  "arm-lift",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {
