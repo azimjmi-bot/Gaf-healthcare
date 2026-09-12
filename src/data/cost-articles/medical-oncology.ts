@@ -506,6 +506,7 @@ function createMedicalOncologyArticle(profile: MedicalOncologyProfile): CostArti
       "Has the pathology been reviewed, and is the stage current?",
       "Is biomarker, molecular or germline testing clinically relevant, and is it included?",
       "Who is the named medical oncologist, and at which exact campus is treatment delivered?",
+      "Are pathology-review charges included, and are original slides or blocks needed?",
       "Which medicines, brands or biosimilars are quoted?",
       "How is the dose calculated, and how many cycles or months are included?",
       "Are pharmacy preparation, infusion day-care and nursing included?",
@@ -515,8 +516,10 @@ function createMedicalOncologyArticle(profile: MedicalOncologyProfile): CostArti
       "What is charged if the dose is held, reduced or changed?",
       "What happens if additional cycles are recommended?",
       "Are emergency admission and complication care excluded?",
+      "Are any planned hospital-admission or observation charges included?",
       "Can later cycles or monitoring continue safely at home?",
       "Which follow-up consultation and written handover are included?",
+      "What costs are explicitly excluded from the treatment package?",
       ...profile.quoteItems,
     ],
     faqs: [
