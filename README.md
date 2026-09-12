@@ -61,6 +61,10 @@ The Arabic edition starts with the same filters as English on Doctors, Hospitals
 
 Switch editions at the top of `/cms`. The public `/ar/blogs` list reads the Arabic CMS only.
 
+### Long-form cost ecosystems
+
+All 18 active Medical Oncology treatments have long-form India planning guides at `/costs/{slug}` and city overlays for Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Drug, dose, cycle, biomarker and monitoring assumptions remain treatment-specific. Doctor and hospital cards require exact live CMS procedure relationships; an empty catalog section is never filled with a generic oncology profile.
+
 ### Replit / production secrets
 
 - `CMS_PASSWORD` — CMS desk password

@@ -30,6 +30,7 @@ type MedicalOncologyProfile = {
   related: string[];
   figureSrc: string;
   figureAlt: string;
+  specialistLabel?: string;
   untaggedCities?: CostCitySlug[];
 };
 
@@ -574,8 +575,8 @@ function createMedicalOncologyArticle(profile: MedicalOncologyProfile): CostArti
         a: profile.followUp,
       },
     ],
-    doctorHeading: `Medical oncologists to consider for ${profile.shortName} in India`,
-    cityDoctorHeading: `${profile.briefName} medical oncologists in [CITY]`,
+    doctorHeading: `${profile.specialistLabel ?? "Medical oncologists"} to consider for ${profile.shortName} in India`,
+    cityDoctorHeading: `${profile.briefName} ${profile.specialistLabel?.toLowerCase() ?? "medical oncologists"} in [CITY]`,
     doctorIntro:
       `Profiles are pulled dynamically only when ${profile.procedure} appears in the clinician's current CMS relationships. Verify role, treatment relevance, availability and campus. Placement is not a ranking and this article adds no experience, drug-stock or outcome claim.`,
     hospitalHeading: `Hospitals for ${profile.shortName} in India`,
@@ -1271,6 +1272,7 @@ const profiles: MedicalOncologyProfile[] = [
     related: ["Chemotherapy", "Bone Marrow Transplantation", "Stem Cell Transplantation"],
     figureSrc: "/costs/intrathecal-chemotherapy-illustration.webp",
     figureAlt: "Medical illustration showing CNS indication review, lumbar or ventricular access, cerebrospinal-fluid drug delivery and neurological monitoring",
+    specialistLabel: "Haematology and neuro-oncology specialists",
     untaggedCities: ["delhi-ncr", "mumbai", "bengaluru", "chennai", "hyderabad"],
   },
   {
@@ -1318,6 +1320,7 @@ const profiles: MedicalOncologyProfile[] = [
     related: ["Stem Cell Transplantation", "Bone Marrow Transplantation", "Chemotherapy", "Targeted Therapy"],
     figureSrc: "/costs/car-t-cell-therapy-illustration.webp",
     figureAlt: "Medical illustration showing apheresis, CAR-T cell engineering, lymphodepleting treatment and monitored cell infusion",
+    specialistLabel: "CAR-T and cellular-therapy specialists",
     untaggedCities: ["mumbai", "bengaluru"],
   },
   {
@@ -1365,6 +1368,7 @@ const profiles: MedicalOncologyProfile[] = [
     related: ["Stem Cell Transplantation", "CAR-T Cell Therapy", "Intrathecal Chemotherapy"],
     figureSrc: "/costs/bone-marrow-transplantation-illustration.webp",
     figureAlt: "Medical illustration showing donor or graft planning, conditioning, stem-cell infusion and monitored engraftment",
+    specialistLabel: "Haematology transplant specialists",
   },
   {
     procedure: "Stem Cell Transplantation",
@@ -1411,6 +1415,7 @@ const profiles: MedicalOncologyProfile[] = [
     related: ["Bone Marrow Transplantation", "CAR-T Cell Therapy", "Intrathecal Chemotherapy"],
     figureSrc: "/costs/stem-cell-transplantation-illustration.webp",
     figureAlt: "Medical illustration showing stem-cell collection or matching, conditioning, graft infusion and early recovery monitoring",
+    specialistLabel: "Stem-cell transplant specialists",
   },
   {
     procedure: "Dendritic Cell Therapy",
