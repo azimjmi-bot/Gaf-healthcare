@@ -72,7 +72,9 @@ export function CostHero({
               {article.duration ? (
                 <span>
                   <Clock className="size-4" />
-                  Procedure duration: {article.duration}
+                  {treatment.specialtySlug === "medical-oncology"
+                    ? "Treatment timeline"
+                    : "Procedure duration"}: {article.duration}
                 </span>
               ) : null}
               <span>

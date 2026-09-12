@@ -72,7 +72,7 @@ export function QuickAnswer({
         </div>
         <div className="cost-metric">
           <Clock className="size-4" />
-          <dt>Procedure time</dt>
+          <dt>{treatment.specialtySlug === "medical-oncology" ? "Treatment timeline" : "Procedure time"}</dt>
           <dd>{article.duration ?? "Set after review"}</dd>
         </div>
         {article.recoveryGlance ? (

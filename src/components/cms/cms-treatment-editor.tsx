@@ -108,6 +108,23 @@ const LONGFORM_COST_SLUGS = new Set([
   "intraoperative-radiotherapy-iort",
   "total-body-irradiation-tbi",
   "chemotherapy",
+  "immunotherapy",
+  "targeted-therapy",
+  "hormone-therapy",
+  "precision-oncology",
+  "molecular-targeted-therapy",
+  "immune-checkpoint-inhibitor-therapy",
+  "neoadjuvant-chemotherapy",
+  "adjuvant-chemotherapy",
+  "palliative-chemotherapy",
+  "antibody-drug-conjugate-therapy",
+  "maintenance-therapy",
+  "intraperitoneal-chemotherapy",
+  "intrathecal-chemotherapy",
+  "car-t-cell-therapy",
+  "bone-marrow-transplantation",
+  "stem-cell-transplantation",
+  "dendritic-cell-therapy",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {

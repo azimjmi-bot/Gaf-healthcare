@@ -158,7 +158,9 @@ export function CostArticleSection({
               {article.approachComparison ? (
                 <li>
                   <a href="#approach" className="underline-offset-4 hover:underline">
-                    Cost by surgical approach
+                    {treatment.specialtySlug === "medical-oncology"
+                      ? "Cost by treatment approach"
+                      : "Cost by surgical approach"}
                   </a>
                 </li>
               ) : null}
