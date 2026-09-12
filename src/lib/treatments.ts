@@ -21,6 +21,7 @@ import { HEMATOLOGY_COST, HEMATOLOGY_SUMMARIES } from "@/lib/hematology-costs";
 import { PEDIATRIC_HEMATOLOGY_COST, PEDIATRIC_HEMATOLOGY_SUMMARIES } from "@/lib/pediatric-hematology-costs";
 import { MEDICAL_COST, MEDICAL_SUMMARIES } from "@/lib/medical-costs";
 import { hospitals } from "@/lib/hospitals";
+import { pediatricHematologyImage } from "@/lib/treatment-images";
 import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
 import {
   SURGICAL_GASTROENTEROLOGY_PROCEDURES,
@@ -321,9 +322,6 @@ const HEMATOLOGY_INCLUDES = [
   "Discharge summary to your home haematologist",
 ];
 
-const HEMATOLOGY_IMAGE =
-  "https://images.unsplash.com/photo-1579154204601-01588f351e67?auto=format&fit=crop&w=1600&q=80";
-
 const HEMATOLOGY_ONLY = HEMATOLOGY_PROCEDURES.filter(
   (name) => !MEDICAL_ONCOLOGY_PROCEDURES.includes(name as (typeof MEDICAL_ONCOLOGY_PROCEDURES)[number]),
 );
@@ -342,7 +340,7 @@ const hematologyTreatments: Treatment[] = HEMATOLOGY_ONLY.map((name) => {
     summary:
       HEMATOLOGY_SUMMARIES[name] ??
       `Hematology — ${name} at JCI partner campuses with a named consultant before you travel.`,
-    image: HEMATOLOGY_IMAGE,
+    image: `/images/cost/hematology/${slug}-illustration.webp`,
     usRange: cost.us,
     partnerRange: cost.partner,
     stay: cost.stay,
@@ -382,7 +380,7 @@ const pediatricHematologyTreatments: Treatment[] = PEDIATRIC_ONLY.map((name) => 
     summary:
       PEDIATRIC_HEMATOLOGY_SUMMARIES[name] ??
       `Pediatric Hematology — ${name} at JCI partner campuses with a named consultant before you travel.`,
-    image: HEMATOLOGY_IMAGE,
+    image: pediatricHematologyImage(name),
     usRange: cost.us,
     partnerRange: cost.partner,
     stay: cost.stay,

@@ -17,6 +17,7 @@ import {
 } from "@/lib/cost-article";
 import { getTreatment } from "@/lib/data";
 import { toSlug } from "@/lib/taxonomy";
+import { withContextualTreatmentImages } from "@/lib/treatment-images";
 import type { Treatment } from "@/lib/treatments";
 
 /** A CMS body flagged to replace the guide takes precedence over the coded article. */
@@ -28,7 +29,7 @@ export function hasCostArticle(treatment: Treatment) {
 export function costArticleFor(treatment: Treatment) {
   const raw = getCostArticle(treatment.slug);
   if (!raw || !hasCostArticle(treatment)) return undefined;
-  return interpolateCostArticle(raw, treatment);
+  return withContextualTreatmentImages(interpolateCostArticle(raw, treatment), treatment);
 }
 
 export function costArticleData(treatment: Treatment, city?: string) {
