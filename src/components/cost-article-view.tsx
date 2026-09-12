@@ -562,7 +562,11 @@ export function CostArticleView({
           </P>
         </>
       )}
-      <CityCostGrid rows={cityRows} activeCity={city} />
+      <CityCostGrid
+        rows={cityRows}
+        activeCity={city}
+        serviceHeading={isHematology ? "Hematology services" : undefined}
+      />
       <p className="mt-3 text-xs text-muted-foreground">{VARIANCE_NOTE}</p>
 
       <H2 id="cities">Choosing a city for {article.shortName}</H2>

@@ -245,7 +245,15 @@ export function DestinationDecision() {
   );
 }
 
-export function CityCostGrid({ rows, activeCity }: { rows: CostCityRow[]; activeCity?: string }) {
+export function CityCostGrid({
+  rows,
+  activeCity,
+  serviceHeading = "Doctors",
+}: {
+  rows: CostCityRow[];
+  activeCity?: string;
+  serviceHeading?: string;
+}) {
   return (
     <>
       <p className="cost-scroll-hint">Swipe to compare Indian cities →</p>
@@ -257,7 +265,7 @@ export function CityCostGrid({ rows, activeCity }: { rows: CostCityRow[]; active
               <th scope="col">City</th>
               <th scope="col">Approximate cost range</th>
               <th scope="col">Why patients consider the city</th>
-              <th scope="col">Doctors</th>
+              <th scope="col">{serviceHeading}</th>
               <th scope="col">Hospitals</th>
             </tr>
           </thead>
