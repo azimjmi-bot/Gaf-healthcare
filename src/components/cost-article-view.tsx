@@ -139,6 +139,7 @@ export function CostArticleView({
   const isCardiology = treatment.specialtySlug === "cardiology";
   const isEnt = treatment.specialtySlug === "ent";
   const isGastroenterology = treatment.specialtySlug === "gastroenterology";
+  const isSurgicalGastroenterology = treatment.specialtySlugs.includes("surgical-gastroenterology");
   const isTavr = treatment.slug === "tavr-tavi-transcatheter-aortic-valve-replacement";
   const isNonsurgicalTreatment =
     isMedicalOncology || isHematology || isTavr || isBariatricSurgery;
@@ -151,6 +152,7 @@ export function CostArticleView({
     isCardiology ||
     isEnt ||
     isGastroenterology ||
+    isSurgicalGastroenterology ||
     isBariatricSurgery ||
     isCosmeticSurgery;
   const consultHref = `/consult?treatment=${treatment.slug}`;
@@ -596,6 +598,8 @@ export function CostArticleView({
                 ? "ENT services"
               : isGastroenterology
                 ? "Gastroenterology services"
+              : isSurgicalGastroenterology
+                ? "Surgical Gastroenterology services"
               : undefined
         }
       />
@@ -696,6 +700,8 @@ export function CostArticleView({
                   ? "Need a case-specific ENT estimate?"
                 : isGastroenterology
                   ? "Need a case-specific gastroenterology estimate?"
+                : isSurgicalGastroenterology
+                  ? "Need a case-specific GI surgery estimate?"
                 : isCardiacSurgery
                   ? "Need a case-specific cardiac surgery estimate?"
                 : isHematology
@@ -721,6 +727,8 @@ export function CostArticleView({
                   ? "Share ENT notes, imaging, audiology or endoscopy records for review. A named ENT team can then discuss indication, approach or implant plan, monitoring and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isGastroenterology
                   ? "Share endoscopy reports, imaging, pathology or liver tests for review. A named gastroenterology team can then discuss indication, diagnostic versus therapeutic scope, devices and a written hospital estimate — this is not a quotation or a treatment decision."
+                : isSurgicalGastroenterology
+                  ? "Share endoscopy, CT, MRI, pathology or prior operative notes for review. A named surgical gastroenterology team can then discuss indication, reconstruction, ICU assumptions and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isCardiacSurgery
                   ? "Share your cardiac records for review. A named cardiac team can then discuss anatomy, operative or catheter approach, implants, ICU assumptions and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isHematology
@@ -738,6 +746,7 @@ export function CostArticleView({
           isCardiology ||
           isEnt ||
           isGastroenterology ||
+          isSurgicalGastroenterology ||
           isCardiacSurgery ||
           isNonsurgicalTreatment
             ? "Request a personalized treatment estimate"
@@ -760,6 +769,8 @@ export function CostArticleView({
                   ? "Speak with GAF Healthcare about ENT treatment in India"
                 : isGastroenterology
                   ? "Speak with GAF Healthcare about gastroenterology treatment in India"
+                : isSurgicalGastroenterology
+                  ? "Speak with GAF Healthcare about GI surgery in India"
                 : isCardiacSurgery
                   ? "Speak with GAF Healthcare about cardiac surgery in India"
                 : isHematology
