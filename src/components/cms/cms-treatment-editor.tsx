@@ -186,6 +186,22 @@ const LONGFORM_COST_SLUGS = new Set([
   "peripheral-angioplasty",
   "carotid-artery-stenting",
   "leadless-pacemaker-implantation",
+  "cochlear-implantation",
+  "fess-functional-endoscopic-sinus-surgery",
+  "septoplasty",
+  "tympanoplasty",
+  "tonsillectomy",
+  "mastoidectomy",
+  "adenoidectomy",
+  "sleep-apnea-surgery",
+  "stapedectomy-stapedotomy",
+  "balloon-sinuplasty",
+  "baha-implantation-bone-anchored-hearing-aid",
+  "skull-base-surgery",
+  "head-neck-cancer-surgery",
+  "thyroid-surgery",
+  "vocal-cord-surgery",
+  "microlaryngeal-surgery",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {

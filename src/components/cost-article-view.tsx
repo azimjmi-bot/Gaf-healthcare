@@ -137,6 +137,7 @@ export function CostArticleView({
   const isBariatricSurgery = treatment.specialtySlug === "bariatric-surgery";
   const isCosmeticSurgery = treatment.specialtySlugs.includes("cosmetic-surgery");
   const isCardiology = treatment.specialtySlug === "cardiology";
+  const isEnt = treatment.specialtySlug === "ent";
   const isTavr = treatment.slug === "tavr-tavi-transcatheter-aortic-valve-replacement";
   const isNonsurgicalTreatment =
     isMedicalOncology || isHematology || isTavr || isBariatricSurgery;
@@ -147,6 +148,7 @@ export function CostArticleView({
     treatment.specialtySlug === "pediatric-orthopaedic" ||
     isCardiacSurgery ||
     isCardiology ||
+    isEnt ||
     isBariatricSurgery ||
     isCosmeticSurgery;
   const consultHref = `/consult?treatment=${treatment.slug}`;
@@ -237,7 +239,7 @@ export function CostArticleView({
         <a href="#clinical-detail" className="underline-offset-4 hover:underline">
           {isNonsurgicalTreatment
             ? "How treatment is given, monitored and adapted →"
-            : isCardiology
+            : isCardiology || isEnt
               ? "How the procedure is performed, recovery and variations →"
             : "How the operation is performed, recovery and variations →"}
         </a>
@@ -255,7 +257,7 @@ export function CostArticleView({
           <H3>{article.procedure} cost breakdown in India</H3>
           <P>
             Component prices are rarely published as a public tariff. The lines below describe what
-            typically sits inside a {isNonsurgicalTreatment ? "treatment" : isCardiology ? "cardiac procedure" : "surgical"} estimate,
+            typically sits inside a {isNonsurgicalTreatment ? "treatment" : isCardiology ? "cardiac procedure" : isEnt ? "ENT procedure" : "surgical"} estimate,
             not a dollar amount for each row.
           </P>
           <dl className="mt-6 space-y-5">
@@ -287,7 +289,7 @@ export function CostArticleView({
       <P>
         No two hospitals draw the line in the same place, so read an estimate for what it excludes as
         carefully as for what it covers. The pattern below is what listed campuses typically bundle into
-        a {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery || isCardiology ? "cardiac procedure" : isBariatricSurgery ? "bariatric procedure" : isCosmeticSurgery ? "cosmetic procedure" : "surgical"} estimate for this {isNonsurgicalTreatment ? "treatment" : "procedure"}.
+        a {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery || isCardiology ? "cardiac procedure" : isBariatricSurgery ? "bariatric procedure" : isCosmeticSurgery ? "cosmetic procedure" : isEnt ? "ENT" : "surgical"} estimate for this {isNonsurgicalTreatment ? "treatment" : "procedure"}.
         Anything not written into your estimate should be
         assumed to be extra until the hospital confirms otherwise.
       </P>
@@ -304,7 +306,7 @@ export function CostArticleView({
 
       <H2 id="cost-increases">What can increase the cost?</H2>
       <P>
-        These are the drivers that actually move a bill for this {isNonsurgicalTreatment || isCardiology ? "procedure" : "operation"}, in rough order of how often
+        These are the drivers that actually move a bill for this {isNonsurgicalTreatment || isCardiology || isEnt ? "procedure" : "operation"}, in rough order of how often
         they do it. Most of them are clinical decisions rather than commercial ones, which is why an
         honest estimate is written after a records review rather than before it.
       </P>
@@ -317,7 +319,7 @@ export function CostArticleView({
             <P key={para.slice(0, 40)}>{para}</P>
           ))}
           <p className="cost-scroll-hint">
-            Swipe to compare {isNonsurgicalTreatment ? "treatment approaches" : isCardiology ? "procedural approaches" : "surgical approaches"} →
+            Swipe to compare {isNonsurgicalTreatment ? "treatment approaches" : isCardiology || isEnt ? "procedural approaches" : "surgical approaches"} →
           </p>
           <div className="cost-scroll mt-2">
             <table>
@@ -355,7 +357,7 @@ export function CostArticleView({
           </div>
           <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
             Planning ranges appear only where GAF Healthcare already publishes a cost sheet for that
-            {isNonsurgicalTreatment || isCardiology ? " procedure" : " operation"}. Other rows describe relative clinical
+            {isNonsurgicalTreatment || isCardiology || isEnt ? " procedure" : " operation"}. Other rows describe relative clinical
             complexity and should not be read as prices.
           </p>
         </>
@@ -460,7 +462,7 @@ export function CostArticleView({
         article.destinationIntro.map((para) => <P key={para.slice(0, 40)}>{para}</P>)
       ) : (
         <P>
-          The comparison below is for the same {isNonsurgicalTreatment ? "treatment assumption" : isCardiology ? "procedure assumption" : "operation"} in each market, not for different treatments
+          The comparison below is for the same {isNonsurgicalTreatment ? "treatment assumption" : isCardiology || isEnt ? "procedure assumption" : "operation"} in each market, not for different treatments
           bundled under one heading. India and the United States figures come from our own catalog. The
           remaining markets are shown as relative cost context modelled against the India band — they are
           planning estimates for orientation, not hospital tariffs, and any of them should be confirmed
@@ -564,7 +566,7 @@ export function CostArticleView({
               </span>
             ))}
             . City choice changes your logistics, your accommodation bill and the depth of the unit you
-            are walking into. It changes the {isHematology ? "protocol, laboratory and monitoring bill" : isMedicalOncology ? "medicine and monitoring bill" : isCardiology ? "procedure and device bill" : "surgical fee"} far less than patients expect.
+            are walking into. It changes the {isHematology ? "protocol, laboratory and monitoring bill" : isMedicalOncology ? "medicine and monitoring bill" : isCardiology ? "procedure and device bill" : isEnt ? "procedure and implant bill" : "surgical fee"} far less than patients expect.
           </P>
           <P>
             We do not publish separate per-city price bands for this procedure unless a researched city
@@ -588,6 +590,8 @@ export function CostArticleView({
                 ? "Cosmetic Surgery services"
               : isCardiology
                 ? "Cardiology services"
+              : isEnt
+                ? "ENT services"
               : undefined
         }
       />
@@ -625,7 +629,7 @@ export function CostArticleView({
       </Accordion>
 
       <H2 id="total-pathway">
-        What should international patients budget beyond the {isHematology ? "hematology procedure or treatment" : isMedicalOncology ? "treatment medicine" : isCardiology ? "cardiac procedure" : "surgery"}?
+        What should international patients budget beyond the {isHematology ? "hematology procedure or treatment" : isMedicalOncology ? "treatment medicine" : isCardiology ? "cardiac procedure" : isEnt ? "ENT procedure" : "surgery"}?
       </H2>
       {article.fullPathway ? (
         <>
@@ -643,7 +647,7 @@ export function CostArticleView({
         </>
       ) : (
         <P>
-          The {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery || isCardiology ? "cardiac procedure" : isBariatricSurgery ? "bariatric procedure" : isCosmeticSurgery ? "cosmetic procedure" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
+          The {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery || isCardiology ? "cardiac procedure" : isBariatricSurgery ? "bariatric procedure" : isCosmeticSurgery ? "cosmetic procedure" : isEnt ? "ENT" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
           hospital charges from living and travel costs so you can plan without treating a brochure
           package as a trip total.
         </P>
@@ -684,6 +688,8 @@ export function CostArticleView({
                   ? "Need a case-specific cosmetic surgery estimate?"
                 : isCardiology
                   ? "Need a case-specific cardiology estimate?"
+                : isEnt
+                  ? "Need a case-specific ENT estimate?"
                 : isCardiacSurgery
                   ? "Need a case-specific cardiac surgery estimate?"
                 : isHematology
@@ -705,6 +711,8 @@ export function CostArticleView({
                   ? "Share your medical history, previous procedure records and clinician-requested photographs securely for review. A named cosmetic or plastic surgery team can then discuss suitability, realistic limits, technique, recovery and an itemized estimate — this is not a quotation or a treatment decision."
                 : isCardiology
                   ? "Share ECG, imaging, angiography or device records for review. A named cardiology team can then discuss indication, access or implant plan, monitoring and a written hospital estimate — this is not a quotation or a treatment decision."
+                : isEnt
+                  ? "Share ENT notes, imaging, audiology or endoscopy records for review. A named ENT team can then discuss indication, approach or implant plan, monitoring and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isCardiacSurgery
                   ? "Share your cardiac records for review. A named cardiac team can then discuss anatomy, operative or catheter approach, implants, ICU assumptions and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isHematology
@@ -720,6 +728,7 @@ export function CostArticleView({
           isBariatricSurgery ||
           isCosmeticSurgery ||
           isCardiology ||
+          isEnt ||
           isCardiacSurgery ||
           isNonsurgicalTreatment
             ? "Request a personalized treatment estimate"
@@ -738,6 +747,8 @@ export function CostArticleView({
                   ? "Speak with GAF Healthcare about cosmetic surgery in India"
                 : isCardiology
                   ? "Speak with GAF Healthcare about cardiology in India"
+                : isEnt
+                  ? "Speak with GAF Healthcare about ENT treatment in India"
                 : isCardiacSurgery
                   ? "Speak with GAF Healthcare about cardiac surgery in India"
                 : isHematology
@@ -751,7 +762,7 @@ export function CostArticleView({
 
       <H2 id="clinical-detail">Clinical detail</H2>
       <H3>
-        {isBariatricSurgery || isCosmeticSurgery || isCardiology
+        {isBariatricSurgery || isCosmeticSurgery || isCardiology || isEnt
           ? "How the procedure is performed"
           : treatment.specialtySlug === "radiation-oncology" || isNonsurgicalTreatment
             ? "How the treatment is delivered"
