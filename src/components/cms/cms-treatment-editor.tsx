@@ -92,6 +92,21 @@ const LONGFORM_COST_SLUGS = new Set([
   "cytoreductive-surgery-with-hipec",
   "pipac",
   "ovarian-cancer-cytoreductive-surgery",
+  "external-beam-radiotherapy-ebrt",
+  "3d-conformal-radiotherapy-3d-crt",
+  "intensity-modulated-radiotherapy-imrt",
+  "image-guided-radiotherapy-igrt",
+  "stereotactic-radiosurgery-srs",
+  "stereotactic-body-radiotherapy-sbrt",
+  "cyberknife",
+  "gamma-knife",
+  "proton-beam-therapy",
+  "brachytherapy",
+  "intracavitary-brachytherapy",
+  "interstitial-brachytherapy",
+  "plaque-brachytherapy",
+  "intraoperative-radiotherapy-iort",
+  "total-body-irradiation-tbi",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {

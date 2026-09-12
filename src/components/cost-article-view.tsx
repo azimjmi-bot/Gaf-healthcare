@@ -634,19 +634,25 @@ export function CostArticleView({
         heading={
           treatment.specialtySlug === "spine-surgery"
             ? "Need a case-specific spine estimate?"
-            : treatment.specialtySlug === "pediatric-orthopaedic"
+            :           treatment.specialtySlug === "pediatric-orthopaedic"
               ? "Need a case-specific paediatric orthopaedic estimate?"
-              : "Not sure which hospital or surgeon is right for you?"
+              : treatment.specialtySlug === "radiation-oncology"
+                ? "Need a case-specific radiation estimate?"
+                : "Not sure which hospital or surgeon is right for you?"
         }
         body={
           treatment.specialtySlug === "spine-surgery"
             ? "Share MRI and medical records for a treatment review. A named spine team can then discuss levels, implants and a written hospital estimate — this is not a quotation or a treatment decision."
             : treatment.specialtySlug === "pediatric-orthopaedic"
               ? "Share your child's medical records for a treatment review. A named paediatric orthopaedic team can then discuss age, growth remaining, implants or casts and a written hospital estimate — this is not a quotation or a treatment decision."
-              : "Share your medical reports and receive suitable doctor and hospital options along with an indicative treatment estimate."
+              : treatment.specialtySlug === "radiation-oncology"
+                ? "Share your oncology records for a treatment review. A named radiation oncologist can then discuss technique, fractions, planning scans and a written hospital estimate — this is not a quotation or a treatment decision."
+                : "Share your medical reports and receive suitable doctor and hospital options along with an indicative treatment estimate."
         }
         primary={
-          treatment.specialtySlug === "spine-surgery" || treatment.specialtySlug === "pediatric-orthopaedic"
+          treatment.specialtySlug === "spine-surgery" ||
+          treatment.specialtySlug === "pediatric-orthopaedic" ||
+          treatment.specialtySlug === "radiation-oncology"
             ? "Request a personalized treatment estimate"
             : "Start My Treatment Request"
         }
@@ -655,13 +661,19 @@ export function CostArticleView({
             ? "Speak with GAF Healthcare about spine treatment in India"
             : treatment.specialtySlug === "pediatric-orthopaedic"
               ? "Speak with GAF Healthcare about pediatric orthopaedic treatment in India"
-              : "Upload Medical Reports"
+              : treatment.specialtySlug === "radiation-oncology"
+                ? "Speak with GAF Healthcare about radiation oncology treatment in India"
+                : "Upload Medical Reports"
         }
         secondaryHref="/consult"
       />
 
       <H2 id="clinical-detail">Clinical detail</H2>
-      <H3>How the operation is performed</H3>
+      <H3>
+        {treatment.specialtySlug === "radiation-oncology"
+          ? "How the treatment is delivered"
+          : "How the operation is performed"}
+      </H3>
       {article.overview.how.map((para) => (
         <P key={para.slice(0, 40)}>{para}</P>
       ))}
