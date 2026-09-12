@@ -14,7 +14,13 @@ export type CatalogBasePath = "/costs" | "/doctors" | "/hospitals";
 
 /** Display name → address-bar segment: "Surgical Oncology" → "Surgical-Oncology". */
 export function toPrettySegment(name: string) {
-  return name.trim().replace(/\/+/g, "-").replace(/\s+/g, "-");
+  return name
+    .trim()
+    .replace(/&/g, "-")
+    .replace(/\/+/g, "-")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 function matchBySlug<T extends { name: string; slug: string }>(segment: string, rows: readonly T[]) {

@@ -172,6 +172,20 @@ const LONGFORM_COST_SLUGS = new Set([
   "otoplasty",
   "neck-lift",
   "arm-lift",
+  "coronary-angioplasty-stenting",
+  "coronary-angiography",
+  "atrial-fibrillation-ablation",
+  "pacemaker-implantation",
+  "mitraclip",
+  "icd-implantation-implantable-cardioverter-defibrillator",
+  "cto-angioplasty-chronic-total-occlusion",
+  "radiofrequency-ablation",
+  "balloon-mitral-valvotomy",
+  "crt-crt-d-implantation",
+  "asd-device-closure",
+  "peripheral-angioplasty",
+  "carotid-artery-stenting",
+  "leadless-pacemaker-implantation",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {

@@ -73,6 +73,8 @@ All 11 active Bariatric Surgery procedures have long-form India planning guides 
 
 All 15 active Cosmetic Surgery procedures have long-form India planning guides and five city overlays. Content separates facial, eyelid, ear, hair, breast, chest, abdominal, arm, liposuction and fat-grafting pathways; each procedure has distinct anatomy, procedure and recovery WebP diagrams. Doctor and facility cards require exact procedure-linked clinicians, while Brazilian Butt Lift and Arm Lift intentionally retain honest empty entity states until the CMS has verified mappings.
 
+All 14 Cardiology-only procedures have long-form India planning guides and five city overlays. Content separates coronary angiography and PCI (including CTO), AF and radiofrequency ablation, pacemaker/ICD/CRT and leadless pacing, MitraClip, balloon mitral valvotomy, ASD device closure, peripheral angioplasty and carotid stenting. TAVR/TAVI keeps the shared Cardiac Surgery Heart Team guide rather than a duplicate Cardiology slug. Each exclusive procedure has distinct anatomy, procedure and recovery WebP diagrams. Doctor and hospital cards require exact live CMS procedure relationships; Carotid Artery Stenting and Leadless Pacemaker Implantation retain honest empty entity states until verified mappings exist. No city-specific tariff is inferred from the national planning range.
+
 ### Replit / production secrets
 
 - `CMS_PASSWORD` — CMS desk password
