@@ -125,8 +125,12 @@ export function CostArticleView({
   const cityPage = cityEditorial(article, city)?.page;
   const allDoctors = doctorsPath({ destination: "India", city, procedure: treatment.name });
   const allHospitals = hospitalsPath({ destination: "India", city, procedure: treatment.name });
-  const doctorsHeading = doctorsToConsiderHeading(brief, city, article.cityDoctorHeading);
-  const hospitalsHeading = hospitalsToConsiderHeading(brief, city, article.cityHospitalHeading);
+  const doctorsHeading = city
+    ? doctorsToConsiderHeading(brief, city, article.cityDoctorHeading)
+    : article.doctorHeading || doctorsToConsiderHeading(brief);
+  const hospitalsHeading = city
+    ? hospitalsToConsiderHeading(brief, city, article.cityHospitalHeading)
+    : article.hospitalHeading || hospitalsToConsiderHeading(brief);
   const skipOncologyFraming =
     treatment.specialtySlug === "pediatric-cardiac-surgery" ||
     treatment.specialtySlug === "orthopedics" ||
@@ -626,10 +630,26 @@ export function CostArticleView({
 
       <ConversionPanel
         consultHref={consultHref}
-        heading="Not sure which hospital or surgeon is right for you?"
-        body="Share your medical reports and receive suitable doctor and hospital options along with an indicative treatment estimate."
-        primary="Start My Treatment Request"
-        secondary="Upload Medical Reports"
+        heading={
+          skipOncologyFraming && treatment.specialtySlug === "spine-surgery"
+            ? "Need a case-specific spine estimate?"
+            : "Not sure which hospital or surgeon is right for you?"
+        }
+        body={
+          skipOncologyFraming && treatment.specialtySlug === "spine-surgery"
+            ? "Share MRI and medical records for a treatment review. A named spine team can then discuss levels, implants and a written hospital estimate — this is not a quotation or a treatment decision."
+            : "Share your medical reports and receive suitable doctor and hospital options along with an indicative treatment estimate."
+        }
+        primary={
+          skipOncologyFraming && treatment.specialtySlug === "spine-surgery"
+            ? "Request a personalized treatment estimate"
+            : "Start My Treatment Request"
+        }
+        secondary={
+          skipOncologyFraming && treatment.specialtySlug === "spine-surgery"
+            ? "Speak with GAF Healthcare about spine treatment in India"
+            : "Upload Medical Reports"
+        }
         secondaryHref="/consult"
       />
 

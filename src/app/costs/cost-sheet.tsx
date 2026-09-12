@@ -84,7 +84,7 @@ export async function CostSheet({ slug }: { slug: string }) {
         {facultyForSchema.length > 0 ? (
           <JsonLd
             data={doctorItemListJsonLd(facultyForSchema, {
-              name: `Doctors to consider for ${brief} in India`,
+              name: article.doctorHeading || `Doctors to consider for ${brief} in India`,
               path: `/costs/${t.slug}`,
               locale,
             })}
