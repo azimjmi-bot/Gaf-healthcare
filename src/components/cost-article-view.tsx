@@ -134,13 +134,17 @@ export function CostArticleView({
   const isMedicalOncology = treatment.specialtySlug === "medical-oncology";
   const isHematology = treatment.specialtySlug === "hematology";
   const isCardiacSurgery = treatment.specialtySlug === "cardiac-surgery";
+  const isBariatricSurgery = treatment.specialtySlug === "bariatric-surgery";
   const isTavr = treatment.slug === "tavr-tavi-transcatheter-aortic-valve-replacement";
-  const isNonsurgicalTreatment = isMedicalOncology || isHematology || isTavr;
+  const isNonsurgicalTreatment =
+    isMedicalOncology || isHematology || isTavr || isBariatricSurgery;
   const skipOncologyFraming =
     treatment.specialtySlug === "pediatric-cardiac-surgery" ||
     treatment.specialtySlug === "orthopedics" ||
     treatment.specialtySlug === "spine-surgery" ||
-    treatment.specialtySlug === "pediatric-orthopaedic";
+    treatment.specialtySlug === "pediatric-orthopaedic" ||
+    isCardiacSurgery ||
+    isBariatricSurgery;
   const consultHref = `/consult?treatment=${treatment.slug}`;
   const faqs = cityPage
     ? [...cityPage.faqs, ...article.faqs.filter((item) => !cityPage.faqs.some((faq) => faq.q === item.q))]
@@ -277,7 +281,7 @@ export function CostArticleView({
       <P>
         No two hospitals draw the line in the same place, so read an estimate for what it excludes as
         carefully as for what it covers. The pattern below is what listed campuses typically bundle into
-        a {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery ? "cardiac procedure" : "surgical"} estimate for this {isNonsurgicalTreatment ? "treatment" : "procedure"}.
+        a {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery ? "cardiac procedure" : isBariatricSurgery ? "bariatric procedure" : "surgical"} estimate for this {isNonsurgicalTreatment ? "treatment" : "procedure"}.
         Anything not written into your estimate should be
         assumed to be extra until the hospital confirms otherwise.
       </P>
@@ -572,6 +576,8 @@ export function CostArticleView({
             ? "Hematology services"
             : isCardiacSurgery
               ? "Cardiac Surgery services"
+              : isBariatricSurgery
+                ? "Bariatric Surgery services"
               : undefined
         }
       />
@@ -627,7 +633,7 @@ export function CostArticleView({
         </>
       ) : (
         <P>
-          The {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery ? "cardiac procedure" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
+          The {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery ? "cardiac procedure" : isBariatricSurgery ? "bariatric procedure" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
           hospital charges from living and travel costs so you can plan without treating a brochure
           package as a trip total.
         </P>
@@ -662,6 +668,8 @@ export function CostArticleView({
               ? "Need a case-specific paediatric orthopaedic estimate?"
               : treatment.specialtySlug === "radiation-oncology"
                 ? "Need a case-specific radiation estimate?"
+                : isBariatricSurgery
+                  ? "Need a case-specific bariatric treatment estimate?"
                 : isCardiacSurgery
                   ? "Need a case-specific cardiac surgery estimate?"
                 : isHematology
@@ -677,6 +685,8 @@ export function CostArticleView({
               ? "Share your child's medical records for a treatment review. A named paediatric orthopaedic team can then discuss age, growth remaining, implants or casts and a written hospital estimate — this is not a quotation or a treatment decision."
               : treatment.specialtySlug === "radiation-oncology"
                 ? "Share your oncology records for a treatment review. A named radiation oncologist can then discuss technique, fractions, planning scans and a written hospital estimate — this is not a quotation or a treatment decision."
+                : isBariatricSurgery
+                  ? "Share your weight history, medical records and prior abdominal treatment for review. A named bariatric team can then discuss candidacy, procedure anatomy, nutrition follow-up and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isCardiacSurgery
                   ? "Share your cardiac records for review. A named cardiac team can then discuss anatomy, operative or catheter approach, implants, ICU assumptions and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isHematology
@@ -689,6 +699,7 @@ export function CostArticleView({
           treatment.specialtySlug === "spine-surgery" ||
           treatment.specialtySlug === "pediatric-orthopaedic" ||
           treatment.specialtySlug === "radiation-oncology" ||
+          isBariatricSurgery ||
           isCardiacSurgery ||
           isNonsurgicalTreatment
             ? "Request a personalized treatment estimate"
@@ -701,6 +712,8 @@ export function CostArticleView({
               ? "Speak with GAF Healthcare about pediatric orthopaedic treatment in India"
               : treatment.specialtySlug === "radiation-oncology"
                 ? "Speak with GAF Healthcare about radiation oncology treatment in India"
+                : isBariatricSurgery
+                  ? "Speak with GAF Healthcare about bariatric surgery in India"
                 : isCardiacSurgery
                   ? "Speak with GAF Healthcare about cardiac surgery in India"
                 : isHematology
@@ -714,9 +727,11 @@ export function CostArticleView({
 
       <H2 id="clinical-detail">Clinical detail</H2>
       <H3>
-        {treatment.specialtySlug === "radiation-oncology" || isNonsurgicalTreatment
-          ? "How the treatment is delivered"
-          : "How the operation is performed"}
+        {isBariatricSurgery
+          ? "How the procedure is performed"
+          : treatment.specialtySlug === "radiation-oncology" || isNonsurgicalTreatment
+            ? "How the treatment is delivered"
+            : "How the operation is performed"}
       </H3>
       {article.overview.how.map((para) => (
         <P key={para.slice(0, 40)}>{para}</P>

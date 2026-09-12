@@ -69,6 +69,8 @@ All 10 active Hematology procedures use the same long-form cost architecture and
 
 All 15 active adult Cardiac Surgery procedures have long-form India planning guides and distinct overlays for Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Content separates CABG, valve repair/replacement, aortic surgery, transplant, LVAD, minimally invasive, robotic, redo and congenital pathways; TAVR/TAVI is explicitly treated as a catheter-based Heart Team procedure. Surgeon and hospital cards require exact live procedure relationships, so unmapped valve pages remain honest empty states.
 
+All 11 active Bariatric Surgery procedures have long-form India planning guides and five city overlays. The content distinguishes restrictive, bypass, endoscopic, device-removal and altered-anatomy procedures; every guide covers staged dietary recovery and procedure-appropriate long-term nutritional monitoring. Doctor and hospital cards require exact procedure-linked clinicians, and no city-specific tariff is inferred from the national planning range.
+
 ### Replit / production secrets
 
 - `CMS_PASSWORD` — CMS desk password

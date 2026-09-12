@@ -146,6 +146,17 @@ const LONGFORM_COST_SLUGS = new Set([
   "redo-cabg",
   "double-valve-replacement",
   "congenital-heart-surgery",
+  "sleeve-gastrectomy",
+  "gastric-bypass-roux-en-y",
+  "mini-gastric-bypass-oagb-mgb",
+  "gastric-balloon",
+  "endoscopic-sleeve-gastroplasty-esg",
+  "metabolic-surgery-for-type-2-diabetes",
+  "gastric-sleeve-revision-surgery",
+  "sadi-s-surgery",
+  "duodenal-switch-bpd-ds",
+  "gastric-banding-lap-band",
+  "gastric-band-removal",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {
