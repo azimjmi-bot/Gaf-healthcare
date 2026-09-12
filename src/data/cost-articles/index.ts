@@ -18,6 +18,7 @@ import { ovarianCancerCytoreductiveSurgery } from "./ovarian-cancer-cytoreductiv
 import { asdClosure } from "./asd-closure-atrial-septal-defect";
 import { pediatricCardiacSurgeryArticlesBySlug } from "./pediatric-cardiac-surgery";
 import { orthopedicsArticlesBySlug } from "./orthopedics";
+import { spineSurgeryArticlesBySlug } from "./spine-surgery";
 import type { CostArticle } from "./types";
 
 export type { CostArticle } from "./types";
@@ -31,6 +32,7 @@ export const costArticles: Record<string, CostArticle> = {
   [asdClosure.slug]: asdClosure,
   ...pediatricCardiacSurgeryArticlesBySlug,
   ...orthopedicsArticlesBySlug,
+  ...spineSurgeryArticlesBySlug,
   [breastConservingSurgery.slug]: breastConservingSurgery,
   [breastReconstruction.slug]: breastReconstruction,
   [colectomy.slug]: colectomy,

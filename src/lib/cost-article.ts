@@ -364,7 +364,8 @@ export function articleCampuses(treatment: Treatment, city?: string) {
   );
   const requireProcedureTaggedFaculty =
     treatment.specialtySlug === "pediatric-cardiac-surgery" ||
-    treatment.specialtySlug === "orthopedics";
+    treatment.specialtySlug === "orthopedics" ||
+    treatment.specialtySlug === "spine-surgery";
   return treatment.hospitalSlugs
     .map((slug) => getHospital(slug))
     .filter((h): h is Hospital => {

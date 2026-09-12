@@ -129,7 +129,8 @@ export function CostArticleView({
   const hospitalsHeading = hospitalsToConsiderHeading(brief, city, article.cityHospitalHeading);
   const skipOncologyFraming =
     treatment.specialtySlug === "pediatric-cardiac-surgery" ||
-    treatment.specialtySlug === "orthopedics";
+    treatment.specialtySlug === "orthopedics" ||
+    treatment.specialtySlug === "spine-surgery";
   const consultHref = `/consult?treatment=${treatment.slug}`;
   const faqs = cityPage
     ? [...cityPage.faqs, ...article.faqs.filter((item) => !cityPage.faqs.some((faq) => faq.q === item.q))]
