@@ -133,7 +133,9 @@ export function CostArticleView({
     : article.hospitalHeading || hospitalsToConsiderHeading(brief);
   const isMedicalOncology = treatment.specialtySlug === "medical-oncology";
   const isHematology = treatment.specialtySlug === "hematology";
-  const isNonsurgicalTreatment = isMedicalOncology || isHematology;
+  const isCardiacSurgery = treatment.specialtySlug === "cardiac-surgery";
+  const isTavr = treatment.slug === "tavr-tavi-transcatheter-aortic-valve-replacement";
+  const isNonsurgicalTreatment = isMedicalOncology || isHematology || isTavr;
   const skipOncologyFraming =
     treatment.specialtySlug === "pediatric-cardiac-surgery" ||
     treatment.specialtySlug === "orthopedics" ||
@@ -275,7 +277,7 @@ export function CostArticleView({
       <P>
         No two hospitals draw the line in the same place, so read an estimate for what it excludes as
         carefully as for what it covers. The pattern below is what listed campuses typically bundle into
-        a {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : "surgical"} estimate for this {isNonsurgicalTreatment ? "treatment" : "procedure"}.
+        a {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery ? "cardiac procedure" : "surgical"} estimate for this {isNonsurgicalTreatment ? "treatment" : "procedure"}.
         Anything not written into your estimate should be
         assumed to be extra until the hospital confirms otherwise.
       </P>
@@ -565,7 +567,13 @@ export function CostArticleView({
       <CityCostGrid
         rows={cityRows}
         activeCity={city}
-        serviceHeading={isHematology ? "Hematology services" : undefined}
+        serviceHeading={
+          isHematology
+            ? "Hematology services"
+            : isCardiacSurgery
+              ? "Cardiac Surgery services"
+              : undefined
+        }
       />
       <p className="mt-3 text-xs text-muted-foreground">{VARIANCE_NOTE}</p>
 
@@ -619,7 +627,7 @@ export function CostArticleView({
         </>
       ) : (
         <P>
-          The {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
+          The {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery ? "cardiac procedure" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
           hospital charges from living and travel costs so you can plan without treating a brochure
           package as a trip total.
         </P>
@@ -654,6 +662,8 @@ export function CostArticleView({
               ? "Need a case-specific paediatric orthopaedic estimate?"
               : treatment.specialtySlug === "radiation-oncology"
                 ? "Need a case-specific radiation estimate?"
+                : isCardiacSurgery
+                  ? "Need a case-specific cardiac surgery estimate?"
                 : isHematology
                   ? "Need a case-specific hematology estimate?"
                 : isMedicalOncology
@@ -667,6 +677,8 @@ export function CostArticleView({
               ? "Share your child's medical records for a treatment review. A named paediatric orthopaedic team can then discuss age, growth remaining, implants or casts and a written hospital estimate — this is not a quotation or a treatment decision."
               : treatment.specialtySlug === "radiation-oncology"
                 ? "Share your oncology records for a treatment review. A named radiation oncologist can then discuss technique, fractions, planning scans and a written hospital estimate — this is not a quotation or a treatment decision."
+                : isCardiacSurgery
+                  ? "Share your cardiac records for review. A named cardiac team can then discuss anatomy, operative or catheter approach, implants, ICU assumptions and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isHematology
                   ? "Share your hematology records for review. A named hematologist can then discuss diagnosis, protocol, donor or laboratory requirements, monitoring and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isMedicalOncology
@@ -677,6 +689,7 @@ export function CostArticleView({
           treatment.specialtySlug === "spine-surgery" ||
           treatment.specialtySlug === "pediatric-orthopaedic" ||
           treatment.specialtySlug === "radiation-oncology" ||
+          isCardiacSurgery ||
           isNonsurgicalTreatment
             ? "Request a personalized treatment estimate"
             : "Start My Treatment Request"
@@ -688,6 +701,8 @@ export function CostArticleView({
               ? "Speak with GAF Healthcare about pediatric orthopaedic treatment in India"
               : treatment.specialtySlug === "radiation-oncology"
                 ? "Speak with GAF Healthcare about radiation oncology treatment in India"
+                : isCardiacSurgery
+                  ? "Speak with GAF Healthcare about cardiac surgery in India"
                 : isHematology
                   ? "Speak with GAF Healthcare about hematology treatment in India"
                 : isMedicalOncology

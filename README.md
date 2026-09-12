@@ -67,6 +67,8 @@ All 18 active Medical Oncology treatments have long-form India planning guides a
 
 All 10 active Hematology procedures use the same long-form cost architecture and five city overlays. Six Hematology-only procedures have transplant- or marrow-diagnostic-specific guides; Bone Marrow Transplantation, Stem Cell Transplantation, CAR-T Cell Therapy and Intrathecal Chemotherapy reuse their clinically appropriate shared guides rather than creating duplicate slugs. Hematology cards require an exact procedure-linked clinician and campus relationship.
 
+All 15 active adult Cardiac Surgery procedures have long-form India planning guides and distinct overlays for Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Content separates CABG, valve repair/replacement, aortic surgery, transplant, LVAD, minimally invasive, robotic, redo and congenital pathways; TAVR/TAVI is explicitly treated as a catheter-based Heart Team procedure. Surgeon and hospital cards require exact live procedure relationships, so unmapped valve pages remain honest empty states.
+
 ### Replit / production secrets
 
 - `CMS_PASSWORD` — CMS desk password

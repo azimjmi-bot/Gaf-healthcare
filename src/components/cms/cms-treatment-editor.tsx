@@ -131,6 +131,21 @@ const LONGFORM_COST_SLUGS = new Set([
   "bone-marrow-aspiration",
   "matched-unrelated-donor-transplant",
   "dendritic-cell-therapy",
+  "cabg-coronary-artery-bypass-grafting",
+  "heart-valve-replacement",
+  "heart-valve-repair",
+  "heart-transplant-surgery",
+  "aortic-root-replacement",
+  "mitral-valve-repair",
+  "aortic-valve-replacement",
+  "tavr-tavi-transcatheter-aortic-valve-replacement",
+  "aortic-aneurysm-surgery",
+  "minimally-invasive-cardiac-surgery",
+  "robotic-cardiac-surgery",
+  "lvad-implantation",
+  "redo-cabg",
+  "double-valve-replacement",
+  "congenital-heart-surgery",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {
