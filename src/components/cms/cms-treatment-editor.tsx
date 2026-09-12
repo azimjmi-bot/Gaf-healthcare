@@ -107,6 +107,7 @@ const LONGFORM_COST_SLUGS = new Set([
   "plaque-brachytherapy",
   "intraoperative-radiotherapy-iort",
   "total-body-irradiation-tbi",
+  "chemotherapy",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {

@@ -25,10 +25,10 @@ export const COST_DISCLAIMER =
   "Cost ranges on this page are for preliminary planning and comparison only. The final treatment cost depends on the patient's diagnosis, treatment plan, hospital, doctor, procedure complexity and other clinical factors. A personalized quotation should be obtained before making treatment or travel decisions.";
 
 export const INTERNATIONAL_TABLE_NOTE =
-  "International treatment costs vary significantly by hospital, surgeon, procedure complexity, insurance status, length of stay and what is included in the package. These figures are intended for preliminary comparison only, not as a final quotation.";
+  "International treatment costs vary significantly by hospital, specialist, clinical complexity, insurance status, length of stay and what is included in the package. These figures are intended for preliminary comparison only, not as a final quotation.";
 
 export const VARIANCE_NOTE =
-  "Costs vary considerably by hospital, surgeon, clinical complexity, insurance, room category, and what is included in the package.";
+  "Costs vary considerably by hospital, specialist, clinical complexity, insurance, room or day-care category, and what is included in the package.";
 
 export function QuickAnswer({
   article,
@@ -84,7 +84,7 @@ export function QuickAnswer({
         ) : null}
       </dl>
       <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-        <strong className="text-foreground">Major cost factors:</strong> {factors || "hospital, surgeon, complexity and stay"}.
+        <strong className="text-foreground">Major cost factors:</strong> {factors || "hospital, specialist, complexity and stay"}.
         International patients should also budget for accommodation, airport transfers, a medical visa, medicines and follow-up.
       </p>
       {article.exclusions.length > 0 ? (
@@ -149,7 +149,7 @@ export function PriceFactors({ article }: { article: CostArticle }) {
           </AccordionTrigger>
           <AccordionContent className="text-[1.05rem] leading-relaxed text-muted-foreground">
             {article.whyQuotesDiffer ||
-              "Campus tier, the named surgeon, procedure complexity, room category, diagnostics and what is excluded from the package all move a bill more than the city name does. The list below is the clinical and commercial detail behind that spread — not a menu to shop from."}
+              "Campus tier, the named specialist, clinical complexity, room or day-care category, diagnostics and what is excluded from the package all move a bill more than the city name does. The list below is the clinical and commercial detail behind that spread — not a menu to shop from."}
           </AccordionContent>
         </AccordionItem>
       </Accordion>

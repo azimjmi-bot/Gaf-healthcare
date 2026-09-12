@@ -131,6 +131,7 @@ export function CostArticleView({
   const hospitalsHeading = city
     ? hospitalsToConsiderHeading(brief, city, article.cityHospitalHeading)
     : article.hospitalHeading || hospitalsToConsiderHeading(brief);
+  const isMedicalOncology = treatment.specialtySlug === "medical-oncology";
   const skipOncologyFraming =
     treatment.specialtySlug === "pediatric-cardiac-surgery" ||
     treatment.specialtySlug === "orthopedics" ||
@@ -222,7 +223,9 @@ export function CostArticleView({
       ))}
       <p className="mt-4 text-sm">
         <a href="#clinical-detail" className="underline-offset-4 hover:underline">
-          How the operation is performed, recovery and variations →
+          {isMedicalOncology
+            ? "How treatment is given, monitored and adapted →"
+            : "How the operation is performed, recovery and variations →"}
         </a>
       </p>
 
@@ -238,7 +241,8 @@ export function CostArticleView({
           <H3>{article.procedure} cost breakdown in India</H3>
           <P>
             Component prices are rarely published as a public tariff. The lines below describe what
-            typically sits inside a surgical estimate, not a dollar amount for each row.
+            typically sits inside a {isMedicalOncology ? "systemic-treatment" : "surgical"} estimate,
+            not a dollar amount for each row.
           </P>
           <dl className="mt-6 space-y-5">
             {article.costComponents.map((item) => (
@@ -269,7 +273,8 @@ export function CostArticleView({
       <P>
         No two hospitals draw the line in the same place, so read an estimate for what it excludes as
         carefully as for what it covers. The pattern below is what listed campuses typically bundle into
-        a surgical estimate for this procedure. Anything not written into your estimate should be
+        a {isMedicalOncology ? "medical oncology" : "surgical"} estimate for this {isMedicalOncology ? "treatment" : "procedure"}.
+        Anything not written into your estimate should be
         assumed to be extra until the hospital confirms otherwise.
       </P>
       <CostBreakdown article={article} />
@@ -285,7 +290,7 @@ export function CostArticleView({
 
       <H2 id="cost-increases">What can increase the cost?</H2>
       <P>
-        These are the drivers that actually move a bill for this operation, in rough order of how often
+        These are the drivers that actually move a bill for this {isMedicalOncology ? "treatment" : "operation"}, in rough order of how often
         they do it. Most of them are clinical decisions rather than commercial ones, which is why an
         honest estimate is written after a records review rather than before it.
       </P>
@@ -297,7 +302,9 @@ export function CostArticleView({
           {approach.intro.map((para) => (
             <P key={para.slice(0, 40)}>{para}</P>
           ))}
-          <p className="cost-scroll-hint">Swipe to compare surgical approaches →</p>
+          <p className="cost-scroll-hint">
+            Swipe to compare {isMedicalOncology ? "treatment approaches" : "surgical approaches"} →
+          </p>
           <div className="cost-scroll mt-2">
             <table>
               <caption className="sr-only">
@@ -334,7 +341,8 @@ export function CostArticleView({
           </div>
           <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
             Planning ranges appear only where GAF Healthcare already publishes a cost sheet for that
-            operation. Other rows describe relative surgical complexity and should not be read as prices.
+            {isMedicalOncology ? " treatment" : " operation"}. Other rows describe relative clinical
+            complexity and should not be read as prices.
           </p>
         </>
       ) : null}
@@ -438,7 +446,7 @@ export function CostArticleView({
         article.destinationIntro.map((para) => <P key={para.slice(0, 40)}>{para}</P>)
       ) : (
         <P>
-          The comparison below is for the same operation in each market, not for different treatments
+          The comparison below is for the same {isMedicalOncology ? "treatment assumption" : "operation"} in each market, not for different treatments
           bundled under one heading. India and the United States figures come from our own catalog. The
           remaining markets are shown as relative cost context modelled against the India band — they are
           planning estimates for orientation, not hospital tariffs, and any of them should be confirmed
@@ -542,7 +550,7 @@ export function CostArticleView({
               </span>
             ))}
             . City choice changes your logistics, your accommodation bill and the depth of the unit you
-            are walking into. It changes the surgical fee far less than patients expect.
+            are walking into. It changes the {isMedicalOncology ? "medicine and monitoring bill" : "surgical fee"} far less than patients expect.
           </P>
           <P>
             We do not publish separate per-city price bands for this procedure unless a researched city
@@ -586,7 +594,9 @@ export function CostArticleView({
         ))}
       </Accordion>
 
-      <H2 id="total-pathway">What should international patients budget beyond the surgery?</H2>
+      <H2 id="total-pathway">
+        What should international patients budget beyond the {isMedicalOncology ? "treatment medicine" : "surgery"}?
+      </H2>
       {article.fullPathway ? (
         <>
           {article.fullPathway.intro.map((para) => (
@@ -603,7 +613,7 @@ export function CostArticleView({
         </>
       ) : (
         <P>
-          The surgical estimate is only one line in a medical-travel budget. The rows below separate
+          The {isMedicalOncology ? "medical oncology" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
           hospital charges from living and travel costs so you can plan without treating a brochure
           package as a trip total.
         </P>
@@ -638,6 +648,8 @@ export function CostArticleView({
               ? "Need a case-specific paediatric orthopaedic estimate?"
               : treatment.specialtySlug === "radiation-oncology"
                 ? "Need a case-specific radiation estimate?"
+                : isMedicalOncology
+                  ? "Need a regimen-specific cancer treatment estimate?"
                 : "Not sure which hospital or surgeon is right for you?"
         }
         body={
@@ -647,12 +659,15 @@ export function CostArticleView({
               ? "Share your child's medical records for a treatment review. A named paediatric orthopaedic team can then discuss age, growth remaining, implants or casts and a written hospital estimate — this is not a quotation or a treatment decision."
               : treatment.specialtySlug === "radiation-oncology"
                 ? "Share your oncology records for a treatment review. A named radiation oncologist can then discuss technique, fractions, planning scans and a written hospital estimate — this is not a quotation or a treatment decision."
+                : isMedicalOncology
+                  ? "Share pathology, imaging, prior treatment and biomarker reports for review. A named medical oncologist can then discuss the regimen, cycles, medicines, monitoring and a written hospital estimate — this is not a quotation or a treatment decision."
                 : "Share your medical reports and receive suitable doctor and hospital options along with an indicative treatment estimate."
         }
         primary={
           treatment.specialtySlug === "spine-surgery" ||
           treatment.specialtySlug === "pediatric-orthopaedic" ||
-          treatment.specialtySlug === "radiation-oncology"
+          treatment.specialtySlug === "radiation-oncology" ||
+          isMedicalOncology
             ? "Request a personalized treatment estimate"
             : "Start My Treatment Request"
         }
@@ -663,6 +678,8 @@ export function CostArticleView({
               ? "Speak with GAF Healthcare about pediatric orthopaedic treatment in India"
               : treatment.specialtySlug === "radiation-oncology"
                 ? "Speak with GAF Healthcare about radiation oncology treatment in India"
+                : isMedicalOncology
+                  ? "Speak with GAF Healthcare about medical oncology treatment in India"
                 : "Upload Medical Reports"
         }
         secondaryHref="/consult"
@@ -670,7 +687,7 @@ export function CostArticleView({
 
       <H2 id="clinical-detail">Clinical detail</H2>
       <H3>
-        {treatment.specialtySlug === "radiation-oncology"
+        {treatment.specialtySlug === "radiation-oncology" || isMedicalOncology
           ? "How the treatment is delivered"
           : "How the operation is performed"}
       </H3>

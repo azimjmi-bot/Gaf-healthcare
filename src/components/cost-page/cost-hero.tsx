@@ -58,7 +58,7 @@ export function CostHero({
             <p className="cost-price__num">{treatment.partnerRange}</p>
             <p className="cost-price__sub">Typical international-patient hospital package</p>
             <p className="cost-price__note">
-              Indicative estimate. Final cost depends on hospital, surgeon, treatment plan and clinical
+              Indicative estimate. Final cost depends on hospital, specialist, treatment plan and clinical
               requirements.
             </p>
           </aside>
