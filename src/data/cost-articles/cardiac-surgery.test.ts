@@ -3,6 +3,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
 import { CARDIAC_SURGERY_PROCEDURES, toSlug } from "../../lib/taxonomy";
+import { costsFilterPath } from "../../lib/catalog-links";
 import {
   cardiacSurgeryArticles,
   cardiacSurgeryArticlesBySlug,
@@ -169,6 +170,19 @@ test("TAVR is a catheter-based Heart Team pathway, and valve anticoagulation is 
     assert.match(text, /VKA|vitamin-K-antagonist/i);
     assert.match(text, /lifelong/i);
   }
+});
+
+test("TAVR/TAVI pretty routes keep the procedure in one URL segment", () => {
+  const path = costsFilterPath({
+    destination: "India",
+    city: "Mumbai",
+    specialty: "Cardiac Surgery",
+    procedure: "TAVR/TAVI (Transcatheter Aortic Valve Replacement)",
+  });
+  assert.equal(
+    path,
+    "/costs/India/Mumbai/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+  );
 });
 
 test("every article declares the required three WebP figures and each file exists", () => {
