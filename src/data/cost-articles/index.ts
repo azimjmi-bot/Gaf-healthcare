@@ -33,6 +33,7 @@ import { gynecologyArticlesBySlug } from "./gynecology";
 import { nephrologyArticlesBySlug } from "./nephrology";
 import { neurologyArticlesBySlug } from "./neurology";
 import { neurosurgeryArticlesBySlug } from "./neurosurgery";
+import { ophthalmologyArticlesBySlug } from "./ophthalmology";
 import { surgicalGastroenterologyArticlesBySlug } from "./surgical-gastroenterology";
 import type { CostArticle } from "./types";
 
@@ -63,6 +64,7 @@ export const costArticles: Record<string, CostArticle> = {
   ...neurosurgeryArticlesBySlug,
   ...nephrologyArticlesBySlug,
   ...neurologyArticlesBySlug,
+  ...ophthalmologyArticlesBySlug,
   [breastConservingSurgery.slug]: breastConservingSurgery,
   [breastReconstruction.slug]: breastReconstruction,
   [colectomy.slug]: colectomy,

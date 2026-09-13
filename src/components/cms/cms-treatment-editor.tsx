@@ -312,6 +312,7 @@ const LONGFORM_COST_SLUGS = new Set([
   "pelvic-organ-prolapse-surgery",
   "pelvic-floor-repair",
   "gynecologic-cancer-surgery",
+  "cataract-surgery",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {

@@ -144,6 +144,7 @@ export function CostArticleView({
   const isNephrology = treatment.specialtySlug === "nephrology";
   const isNeurology = treatment.specialtySlug === "neurology";
   const isGynecology = treatment.specialtySlug === "gynecology";
+  const isOphthalmology = treatment.specialtySlug === "ophthalmology";
   const isTavr = treatment.slug === "tavr-tavi-transcatheter-aortic-valve-replacement";
   const isNonsurgicalTreatment =
     isMedicalOncology || isHematology || isTavr || isBariatricSurgery;
@@ -161,6 +162,7 @@ export function CostArticleView({
     isNephrology ||
     isNeurology ||
     isGynecology ||
+    isOphthalmology ||
     isBariatricSurgery ||
     isCosmeticSurgery;
   const consultHref = `/consult?treatment=${treatment.slug}`;
@@ -616,6 +618,8 @@ export function CostArticleView({
                 ? "Neurology services"
               : isGynecology
                 ? "Gynecology services"
+              : isOphthalmology
+                ? "Ophthalmology services"
               : undefined
         }
       />
@@ -653,7 +657,7 @@ export function CostArticleView({
       </Accordion>
 
       <H2 id="total-pathway">
-        What should international patients budget beyond the {isHematology ? "hematology procedure or treatment" : isMedicalOncology ? "treatment medicine" : isCardiology ? "cardiac procedure" : isEnt ? "ENT procedure" : isGastroenterology ? "gastroenterology procedure" : isNeurosurgery ? "neurosurgery procedure" : isNephrology ? "nephrology treatment" : isNeurology ? "neurology treatment" : isGynecology ? "gynecology procedure" : "surgery"}?
+        What should international patients budget beyond the {isHematology ? "hematology procedure or treatment" : isMedicalOncology ? "treatment medicine" : isCardiology ? "cardiac procedure" : isEnt ? "ENT procedure" : isGastroenterology ? "gastroenterology procedure" : isNeurosurgery ? "neurosurgery procedure" : isNephrology ? "nephrology treatment" : isNeurology ? "neurology treatment" : isGynecology ? "gynecology procedure" : isOphthalmology ? "ophthalmology procedure" : "surgery"}?
       </H2>
       {article.fullPathway ? (
         <>
@@ -671,7 +675,7 @@ export function CostArticleView({
         </>
       ) : (
         <P>
-          The {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery || isCardiology ? "cardiac procedure" : isBariatricSurgery ? "bariatric procedure" : isCosmeticSurgery ? "cosmetic procedure" : isEnt ? "ENT" : isGastroenterology ? "gastroenterology" : isNeurosurgery ? "neurosurgery" : isNephrology ? "nephrology" : isNeurology ? "neurology" : isGynecology ? "gynecology" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
+          The {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery || isCardiology ? "cardiac procedure" : isBariatricSurgery ? "bariatric procedure" : isCosmeticSurgery ? "cosmetic procedure" : isEnt ? "ENT" : isGastroenterology ? "gastroenterology" : isNeurosurgery ? "neurosurgery" : isNephrology ? "nephrology" : isNeurology ? "neurology" : isGynecology ? "gynecology" : isOphthalmology ? "ophthalmology" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
           hospital charges from living and travel costs so you can plan without treating a brochure
           package as a trip total.
         </P>
@@ -726,6 +730,8 @@ export function CostArticleView({
                   ? "Need a case-specific neurology estimate?"
                 : isGynecology
                   ? "Need a case-specific gynecology estimate?"
+                : isOphthalmology
+                  ? "Need a case-specific ophthalmology estimate?"
                 : isCardiacSurgery
                   ? "Need a case-specific cardiac surgery estimate?"
                 : isHematology
@@ -761,6 +767,8 @@ export function CostArticleView({
                   ? "Share neurological notes, MRI or CT, EEG or EMG/NCS, CSF results and prior treatment response when available. A named neurology team can then discuss diagnosis, testing, treatment course and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isGynecology
                   ? "Share gynecology notes, pelvic ultrasound or MRI, cervical or endometrial testing, pathology and prior operative reports when available. A named gynecology team can then discuss indication, organ-preservation choices, surgical approach, pathology and a written hospital estimate — this is not a quotation or a treatment decision."
+                : isOphthalmology
+                  ? "Share ophthalmology notes, refraction, slit-lamp findings, eye pressure, OCT, visual fields, corneal maps or retinal imaging when available. A named eye-care team can then discuss diagnosis, laterality, lens or implant choices, treatment sequence and a written estimate — this is not a quotation or a treatment decision."
                 : isCardiacSurgery
                   ? "Share your cardiac records for review. A named cardiac team can then discuss anatomy, operative or catheter approach, implants, ICU assumptions and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isHematology
@@ -783,6 +791,7 @@ export function CostArticleView({
           isNephrology ||
           isNeurology ||
           isGynecology ||
+          isOphthalmology ||
           isCardiacSurgery ||
           isNonsurgicalTreatment
             ? "Request a personalized treatment estimate"
@@ -815,6 +824,8 @@ export function CostArticleView({
                   ? "Speak with GAF Healthcare about neurology in India"
                 : isGynecology
                   ? "Speak with GAF Healthcare about gynecology in India"
+                : isOphthalmology
+                  ? "Speak with GAF Healthcare about ophthalmology in India"
                 : isCardiacSurgery
                   ? "Speak with GAF Healthcare about cardiac surgery in India"
                 : isHematology
@@ -828,7 +839,7 @@ export function CostArticleView({
 
       <H2 id="clinical-detail">Clinical detail</H2>
       <H3>
-        {isBariatricSurgery || isCosmeticSurgery || isCardiology || isEnt || isGastroenterology || isSurgicalGastroenterology || isNeurosurgery || isNephrology || isNeurology || isGynecology
+        {isBariatricSurgery || isCosmeticSurgery || isCardiology || isEnt || isGastroenterology || isSurgicalGastroenterology || isNeurosurgery || isNephrology || isNeurology || isGynecology || isOphthalmology
           ? "How the procedure is performed"
           : treatment.specialtySlug === "radiation-oncology" || isNonsurgicalTreatment
             ? "How the treatment is delivered"
