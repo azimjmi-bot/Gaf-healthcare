@@ -297,6 +297,7 @@ const LONGFORM_COST_SLUGS = new Set([
   "vagus-nerve-stimulation-vns",
   "sleep-study-polysomnography",
   "migraine-nerve-block",
+  "laparoscopic-hysterectomy",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {

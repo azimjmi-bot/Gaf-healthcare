@@ -143,6 +143,7 @@ export function CostArticleView({
   const isNeurosurgery = treatment.specialtySlug === "neurosurgery";
   const isNephrology = treatment.specialtySlug === "nephrology";
   const isNeurology = treatment.specialtySlug === "neurology";
+  const isGynecology = treatment.specialtySlug === "gynecology";
   const isTavr = treatment.slug === "tavr-tavi-transcatheter-aortic-valve-replacement";
   const isNonsurgicalTreatment =
     isMedicalOncology || isHematology || isTavr || isBariatricSurgery;
@@ -159,6 +160,7 @@ export function CostArticleView({
     isNeurosurgery ||
     isNephrology ||
     isNeurology ||
+    isGynecology ||
     isBariatricSurgery ||
     isCosmeticSurgery;
   const consultHref = `/consult?treatment=${treatment.slug}`;
@@ -612,6 +614,8 @@ export function CostArticleView({
                 ? "Nephrology services"
               : isNeurology
                 ? "Neurology services"
+              : isGynecology
+                ? "Gynecology services"
               : undefined
         }
       />
@@ -649,7 +653,7 @@ export function CostArticleView({
       </Accordion>
 
       <H2 id="total-pathway">
-        What should international patients budget beyond the {isHematology ? "hematology procedure or treatment" : isMedicalOncology ? "treatment medicine" : isCardiology ? "cardiac procedure" : isEnt ? "ENT procedure" : isGastroenterology ? "gastroenterology procedure" : isNeurosurgery ? "neurosurgery procedure" : isNephrology ? "nephrology treatment" : isNeurology ? "neurology treatment" : "surgery"}?
+        What should international patients budget beyond the {isHematology ? "hematology procedure or treatment" : isMedicalOncology ? "treatment medicine" : isCardiology ? "cardiac procedure" : isEnt ? "ENT procedure" : isGastroenterology ? "gastroenterology procedure" : isNeurosurgery ? "neurosurgery procedure" : isNephrology ? "nephrology treatment" : isNeurology ? "neurology treatment" : isGynecology ? "gynecology procedure" : "surgery"}?
       </H2>
       {article.fullPathway ? (
         <>
@@ -667,7 +671,7 @@ export function CostArticleView({
         </>
       ) : (
         <P>
-          The {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery || isCardiology ? "cardiac procedure" : isBariatricSurgery ? "bariatric procedure" : isCosmeticSurgery ? "cosmetic procedure" : isEnt ? "ENT" : isGastroenterology ? "gastroenterology" : isNeurosurgery ? "neurosurgery" : isNephrology ? "nephrology" : isNeurology ? "neurology" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
+          The {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery || isCardiology ? "cardiac procedure" : isBariatricSurgery ? "bariatric procedure" : isCosmeticSurgery ? "cosmetic procedure" : isEnt ? "ENT" : isGastroenterology ? "gastroenterology" : isNeurosurgery ? "neurosurgery" : isNephrology ? "nephrology" : isNeurology ? "neurology" : isGynecology ? "gynecology" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
           hospital charges from living and travel costs so you can plan without treating a brochure
           package as a trip total.
         </P>
@@ -720,6 +724,8 @@ export function CostArticleView({
                   ? "Need a case-specific nephrology estimate?"
                 : isNeurology
                   ? "Need a case-specific neurology estimate?"
+                : isGynecology
+                  ? "Need a case-specific gynecology estimate?"
                 : isCardiacSurgery
                   ? "Need a case-specific cardiac surgery estimate?"
                 : isHematology
@@ -753,6 +759,8 @@ export function CostArticleView({
                   ? "Share creatinine, eGFR, dialysis prescriptions, access or transplant records and recent laboratories for review. A named nephrology team can then discuss modality, access, monitoring and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isNeurology
                   ? "Share neurological notes, MRI or CT, EEG or EMG/NCS, CSF results and prior treatment response when available. A named neurology team can then discuss diagnosis, testing, treatment course and a written hospital estimate — this is not a quotation or a treatment decision."
+                : isGynecology
+                  ? "Share gynecology notes, pelvic ultrasound or MRI, cervical or endometrial testing, pathology and prior operative reports when available. A named gynecology team can then discuss indication, organ-preservation choices, surgical approach, pathology and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isCardiacSurgery
                   ? "Share your cardiac records for review. A named cardiac team can then discuss anatomy, operative or catheter approach, implants, ICU assumptions and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isHematology
@@ -774,6 +782,7 @@ export function CostArticleView({
           isNeurosurgery ||
           isNephrology ||
           isNeurology ||
+          isGynecology ||
           isCardiacSurgery ||
           isNonsurgicalTreatment
             ? "Request a personalized treatment estimate"
@@ -804,6 +813,8 @@ export function CostArticleView({
                   ? "Speak with GAF Healthcare about nephrology in India"
                 : isNeurology
                   ? "Speak with GAF Healthcare about neurology in India"
+                : isGynecology
+                  ? "Speak with GAF Healthcare about gynecology in India"
                 : isCardiacSurgery
                   ? "Speak with GAF Healthcare about cardiac surgery in India"
                 : isHematology
@@ -817,7 +828,7 @@ export function CostArticleView({
 
       <H2 id="clinical-detail">Clinical detail</H2>
       <H3>
-        {isBariatricSurgery || isCosmeticSurgery || isCardiology || isEnt || isGastroenterology || isSurgicalGastroenterology || isNeurosurgery || isNephrology || isNeurology
+        {isBariatricSurgery || isCosmeticSurgery || isCardiology || isEnt || isGastroenterology || isSurgicalGastroenterology || isNeurosurgery || isNephrology || isNeurology || isGynecology
           ? "How the procedure is performed"
           : treatment.specialtySlug === "radiation-oncology" || isNonsurgicalTreatment
             ? "How the treatment is delivered"
