@@ -63,8 +63,8 @@ export const HOME_DESTINATIONS = [
     filter: "United Arab Emirates",
     blurb: "Dubai",
     image:
-      "https://images.unsplash.com/photo-1512453979798-5ea77f140d33?auto=format&fit=crop&w=1200&q=80",
-    imageAlt: "Dubai skyline, United Arab Emirates",
+      "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1200&q=80",
+    imageAlt: "Burj Al Arab and the Dubai coastline, United Arab Emirates",
   },
   {
     name: "Singapore",
