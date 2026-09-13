@@ -71,6 +71,28 @@ test("pilot uses complete CostArticle fields and a useful answer-first guide", (
   assert.equal(article.faqs.length, 12);
 });
 
+test("national article is a 2,000–3,000 word long-form guide", () => {
+  const { cities: _cities, destinations: _destinations, ...national } =
+    gynecologyArticles[0];
+  const countWords = (value: unknown): number => {
+    if (typeof value === "string") {
+      return value.match(/[A-Za-z0-9]+(?:['’–-][A-Za-z0-9]+)*/g)?.length ?? 0;
+    }
+    if (Array.isArray(value)) {
+      return value.reduce((total, item) => total + countWords(item), 0);
+    }
+    if (value && typeof value === "object") {
+      return Object.values(value).reduce(
+        (total, item) => total + countWords(item),
+        0,
+      );
+    }
+    return 0;
+  };
+  const words = countWords(national);
+  assert.ok(words >= 2_000 && words <= 3_000, `national article has ${words} words`);
+});
+
 test("clinical copy explains scope, alternatives, pathology, safety and recovery", () => {
   const text = JSON.stringify(gynecologyArticles[0]);
   for (const expected of [

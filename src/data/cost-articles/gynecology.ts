@@ -170,56 +170,46 @@ const DESTINATIONS: DestinationRow[] = [
 const COMMON_INCLUSIONS: LabelledDetail[] = [
   {
     label: "Preoperative clinical assessment",
-    detail:
-      "Named gynecologist review, examination and anaesthesia assessment only when explicitly itemized.",
+    detail: "Named gynecologist and anaesthesia assessments when itemized.",
   },
   {
     label: "Planned operation",
-    detail:
-      "Surgeon, theatre, standard laparoscopic instruments and the specifically consented organ-removal scope.",
+    detail: "Surgeon, theatre, standard instruments and consented organ scope.",
   },
   {
     label: "Anaesthesia and routine medicines",
-    detail:
-      "General anaesthesia, standard perioperative medicines and routine monitoring within the written limits.",
+    detail: "General anaesthesia, routine medicines and stated monitoring.",
   },
   {
     label: "Hospital recovery",
-    detail:
-      "Recovery room and the stated ward nights and room category, rather than an open-ended admission.",
+    detail: "Recovery room, stated ward nights and room category.",
   },
   {
     label: "Routine histopathology and early review",
-    detail:
-      "Standard examination of listed specimens and the stated wound or pathology visit; special tests must be named.",
+    detail: "Standard listed-specimen histology and stated early review.",
   },
 ];
 
 const COMMON_EXCLUSIONS: LabelledDetail[] = [
   {
     label: "Changed surgical scope",
-    detail:
-      "Unexpected oophorectomy, extensive adhesiolysis, endometriosis excision, prolapse repair, cancer staging or another operation not written into the estimate.",
+    detail: "Unlisted organ removal, adhesiolysis, excision, repair or staging.",
   },
   {
     label: "Conversion and complications",
-    detail:
-      "Open conversion, blood products, additional imaging, ICU, re-operation, extended admission or readmission unless expressly covered.",
+    detail: "Conversion, transfusion, ICU, re-operation or extended admission unless covered.",
   },
   {
     label: "Additional pathology",
-    detail:
-      "Frozen section, immunohistochemistry, molecular tests or outside slide review unless itemized.",
+    detail: "Frozen section, special tests or outside review unless itemized.",
   },
   {
     label: "Extended care",
-    detail:
-      "Long-term medicines, pelvic-floor therapy, later oncology treatment and follow-up beyond the stated period.",
+    detail: "Long-term medicines, therapy, oncology care or later follow-up.",
   },
   {
     label: "Travel and living",
-    detail:
-      "Flights, visas, local transport, lodging, meals, companion costs and extra recovery nights outside hospital.",
+    detail: "Flights, visas, transport, lodging, meals and companion costs.",
   },
 ];
 
@@ -319,8 +309,8 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
     introduction: [
       `${profile.definition} ${profile.candidacy}`,
       `${profile.anatomy} ${profile.distinction}`,
-      `${profile.evaluation} The decision is personal and indication-specific; an educational cost page cannot determine whether hysterectomy is preferable to medicines, a less extensive procedure or continued observation.`,
-      `The catalog supplies [INDIA_COST] for India, [US_COST] as a United States self-pay reference and [STAY] for broad planning. These tokens are not city tariffs, medical acceptance, outcome forecasts or final bills. The written estimate should match the organs, route and pathology actually planned.`,
+      `${profile.evaluation} This page cannot choose between surgery, less extensive treatment or observation.`,
+      `[INDIA_COST], [US_COST] and [STAY] are planning tokens, not tariffs, acceptance or final bills. Match the quote to the planned organs, route and pathology.`,
     ],
     answer: [
       `${profile.procedure} in India is typically planned at [INDIA_COST]. A useful estimate identifies whether the uterus and cervix are removed, whether tubes or ovaries are removed or conserved, the laparoscopic and uterine-removal method, surgeon and anaesthesia fees, routine pathology, stated ward nights and early review. The stored stay is [STAY], but discharge and flying depend on individual recovery.`,
@@ -358,8 +348,8 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
     approachComparison: {
       heading: "Laparoscopic, vaginal, robotic and open hysterectomy",
       intro: [
-        `${profile.technique} ${profile.conversion}`,
-        "Access route is a clinical choice, not a quality ladder. Uterine size and mobility, prior surgery, prolapse, suspected cancer, coexisting disease, surgeon experience and available equipment all matter.",
+        "Access route is a clinical decision, not a quality ladder.",
+        "Uterine size, prior surgery, prolapse, cancer concern, health and surgeon expertise guide selection. Open conversion remains a safety option.",
       ],
       rows: profile.approaches.map((item) => ({
         name: item.label,
@@ -370,27 +360,31 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
     overviewHeading: "What Is a Laparoscopic Hysterectomy?",
     whoHeading: "When Might Laparoscopic Hysterectomy Be Considered?",
     overview: {
-      what: [profile.definition, profile.anatomy, profile.distinction],
+      what: [
+        profile.definition,
+        "Total removes uterus and cervix; tubes and ovaries require separate decisions.",
+        "Hysterectomy ends the ability to carry a pregnancy but does not automatically cause menopause.",
+      ],
       who: [
         profile.candidacy,
-        "Suitability depends on assessment by a qualified gynecologist and, where relevant, anaesthesia, radiology, urology, colorectal surgery, gynecologic oncology or another multidisciplinary service. Cautious language matters: a diagnosis does not automatically make someone a candidate, and this page cannot recommend personal treatment.",
+        "A qualified gynecologist must assess suitability; complex disease may require multidisciplinary review. This page cannot recommend treatment.",
       ],
       how: [
         profile.technique,
         profile.conversion,
-        `${profile.pathology} Expected theatre time is ${profile.duration}; complexity can change it.`,
+        `Specimens go to pathology. Theatre time is ${profile.duration}.`,
       ],
       variations: profile.approaches,
       preparation: [
         profile.evaluation,
-        "The receiving team should reconcile anticoagulants, antiplatelets, diabetes medicines, hormone therapy, allergies, previous anaesthesia problems and pregnancy possibility where relevant. Cervical screening and endometrial assessment should be current when clinically indicated.",
-        "Follow only the treating team's instructions about fasting, bowel preparation and medicine holds. Report fever, respiratory infection, new bleeding or another material change before travel. Consent should cover organ scope, blood transfusion, urinary or bowel injury management and conversion if relevant.",
+        "Reconcile blood thinners, diabetes medicines, hormones, allergies and previous anaesthesia problems.",
+        "Follow the team's fasting and medicine instructions; consent should name organ scope and conversion.",
       ],
       recovery: [
         `${profile.admission} ${profile.recovery}`,
-        "Early plans commonly address pain and nausea control, eating and passing urine, short supported walks, venous-thromboembolism prevention, incision care, vaginal bleeding or discharge and constipation prevention. Individual written instructions take priority.",
+        "Early care covers pain, nausea, urination, walking, VTE prevention, wounds, bleeding and bowel function.",
         profile.risks,
-        `${profile.followUp} Seek urgent help for ${profile.urgent}; use the treating team's thresholds and emergency contact.`,
+        `Follow written instructions. Seek urgent help for ${profile.urgent}.`,
       ],
     },
     topicSections: [
@@ -398,139 +392,116 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
         id: "organs-and-terminology",
         heading: "Uterus, cervix, tubes and ovaries: what is actually removed?",
         paragraphs: [
-          profile.anatomy,
-          profile.distinction,
-          "Ask the consent form and quotation to list each structure, including left and right sides. Removing ovaries before natural menopause may cause surgical menopause; conserving ovaries may preserve hormone production but does not prevent every future ovarian or pelvic condition. Individual cancer risk, age, symptoms and preferences require clinician discussion.",
+          "Total hysterectomy removes uterus and cervix, not automatically tubes or ovaries. Record each side separately. Ovary removal may cause surgical menopause; conservation preserves hormone production but cannot prevent every later ovarian condition.",
         ],
       },
       {
         id: "technique-and-conversion",
         heading: "How the laparoscopic operation is performed — and why plans can change",
         paragraphs: [
-          profile.technique,
-          profile.conversion,
-          "The team should explain the intended uterine-removal method. Tissue extraction must follow the indication, anatomy, local policy and concern for unsuspected malignancy; no generic guide can choose a method or confirm that fragmentation is appropriate.",
+          "Ports admit a camera and instruments; the surgeon protects ureters, controls uterine vessels and pedicles, removes consented organs and closes the cuff when applicable. Bleeding, adhesions, organ concern or extraction difficulty may require open conversion.",
         ],
       },
       {
         id: "pathology",
         heading: "Why pathology remains part of the pathway",
         paragraphs: [
-          profile.pathology,
-          "A final report may describe the endometrium, myometrium, cervix and any tubes or ovaries submitted. Turnaround and additional stains vary. Ask who communicates the result and what happens if an unexpected premalignant or malignant finding requires gynecologic-oncology review.",
-          "Pathology review is different from an outcome guarantee. Symptoms can persist for reasons outside the removed organs, and further care may still be needed.",
+          "Label every specimen for histopathology. Ask who explains the endometrium, myometrium, cervix, tube or ovary findings, which extra tests cost more and how unexpected disease reaches gynecologic oncology.",
         ],
       },
       {
         id: "specific-risks",
         heading: "Risks and safety considerations",
         paragraphs: [
-          profile.risks,
-          "This is not an exhaustive consent list and gives no probability. Personal risk depends on indication, uterine size, adhesions, endometriosis, previous operations, body habitus, anaemia, smoking, medicines and other health conditions.",
-          "A lower estimate does not reduce the need for qualified surgery, anaesthesia, sterile theatre practice, pathology, blood access and a defined plan for urinary-tract, bowel or vascular complications.",
+          "Consent should address bleeding, infection, VTE, anaesthesia, bladder, ureter, bowel or vessel injury, urinary retention, cuff problems, port hernia and conversion. Risk varies with anatomy, previous surgery, anaemia, medicines and health.",
         ],
       },
       {
         id: "recovery-and-travel",
         heading: "Recovery, follow-up and international travel",
         paragraphs: [
-          `${profile.admission} ${profile.recovery}`,
-          "International patients should separate theatre time, hospital nights, recommended nearby recovery and full functional recovery. Discharge is not fitness to fly. Long sitting may increase discomfort and venous-thromboembolism concerns, while lifting luggage can conflict with restrictions.",
-          `${profile.followUp} Keep flights flexible until wounds, bladder and bowel function, mobility, bleeding, pathology timing and travel fitness have been reviewed.`,
+          "Recovery checks pain, walking, VTE prevention, wounds, bleeding, bladder and bowel function. Discharge is not fitness to fly; keep travel flexible through pathology review and individual clearance.",
         ],
       },
     ],
     fullPathway: {
       intro: [
-        `A complete ${profile.shortName} trip budget extends beyond [INDIA_COST]. Include remote records review, tests outside the estimate, companion travel, visas, nearby lodging, medicines, pathology discussion, extra nights and a complication contingency.`,
-        "Travel should follow written clinical acceptance and an itemized estimate. A directory profile, appointment confirmation or visa invitation is not medical clearance.",
+        `Budget beyond [INDIA_COST] for review, tests, travel, lodging, medicines, extra nights and complications.`,
+        "Travel requires clinical acceptance and an itemized estimate; an appointment is not medical clearance.",
       ],
       stages: [
         { label: "Records review", detail: profile.evaluation },
         {
           label: "Gynecology consultation",
-          detail: `${profile.candidacy} Clarify treatment goals and fertility implications.`,
+          detail: "Confirm indication, alternatives, goals and fertility implications.",
         },
         {
           label: "Organ-scope decision",
-          detail:
-            "Write whether the cervix, each tube and each ovary are removed or conserved; total hysterectomy does not itself mean ovary removal.",
+          detail: "Record cervix, each tube and each ovary as removed or conserved.",
         },
         {
           label: "Approach and alternatives",
-          detail: `Discuss ${approachNames}, non-surgical management and what could alter the plan.`,
+          detail: `Compare ${approachNames} and non-surgical care.`,
         },
         {
           label: "Itemized estimate",
-          detail:
-            "Match surgeon, campus, organ scope, instruments, anaesthesia, pathology, nights, conversion, exclusions and emergency terms.",
+          detail: "Match scope, staff, theatre, pathology, nights, conversion and exclusions.",
         },
         {
           label: "Arrival reassessment",
-          detail:
-            "Repeat examination, laboratory tests, imaging or sampling only when clinically indicated before final consent.",
+          detail: "Update examination and indicated tests before consent.",
         },
-        { label: "Operation and monitoring", detail: `${profile.technique} ${profile.admission}` },
+        { label: "Operation and monitoring", detail: profile.technique },
         {
           label: "Mobility and wound care",
-          detail:
-            "Use individualized pain relief, VTE prevention, bladder and bowel review, supported walking and incision instructions.",
+          detail: "Review pain, VTE prevention, walking, bladder, bowel and wounds.",
         },
         {
           label: "Pathology and nearby review",
-          detail: `${profile.pathology} Confirm warning signs and emergency contacts.`,
+          detail: "Review specimens, warning signs and emergency contacts.",
         },
         {
           label: "Handover home",
-          detail: `${profile.followUp} Carry the operation note, discharge summary and final pathology.`,
+          detail: "Carry the operation note, discharge summary and pathology.",
         },
       ],
     },
     journey: [
-      { label: "Submit complete records", detail: `${profile.records.join("; ")}.` },
+      { label: "Submit records", detail: "Send imaging, sampling, operation notes and current tests." },
       {
-        label: "Obtain named specialist review",
-        detail: `A ${profile.specialist} assesses indication, alternatives, operative risk and travel suitability.`,
+        label: "Specialist review",
+        detail: `A named ${profile.specialist} assesses the case.`,
       },
       {
-        label: "Clarify goals and fertility",
-        detail:
-          "Confirm whether future pregnancy matters; hysterectomy permanently removes the ability to carry a pregnancy.",
+        label: "Clarify fertility",
+        detail: "Hysterectomy permanently ends the ability to carry a pregnancy.",
       },
-      { label: "Confirm individualized candidacy", detail: profile.candidacy },
+      { label: "Confirm candidacy", detail: "Review alternatives, anatomy and operative risk." },
       {
         label: "Write the organ scope",
-        detail:
-          "List uterus, cervix, left and right tubes, and left and right ovaries as removed or conserved.",
+        detail: "List uterus, cervix, both tubes and both ovaries.",
       },
       {
-        label: "Compare approaches and estimates",
-        detail:
-          "Hold indication, organ scope, surgeon, pathology, nights and conversion terms constant.",
+        label: "Compare estimates",
+        detail: "Hold scope, route, pathology, nights and conversion constant.",
       },
       {
-        label: "Plan flexible travel",
-        detail:
-          "Arrange documents, refundable flights, a capable companion and lift-accessible lodging near the exact campus.",
+        label: "Plan travel",
+        detail: "Use flexible flights, a companion and nearby accessible lodging.",
       },
-      { label: "Repeat assessment after arrival", detail: profile.evaluation },
+      { label: "Arrival review", detail: "Update examination, tests and consent." },
       {
-        label: "Complete informed consent",
-        detail: `Review alternatives, ${profile.risks.toLowerCase()} and the possibility that the operation changes.`,
+        label: "Complete consent",
+        detail: "Review risks, alternatives and possible plan changes.",
       },
-      { label: "Undergo the planned operation", detail: profile.technique },
+      { label: "Undergo surgery", detail: "Complete the consented laparoscopic operation." },
       {
-        label: "Complete monitored recovery",
-        detail:
-          "Confirm mobility, VTE prevention, bladder and bowel function, wound care, medicines and warning signs.",
+        label: "Monitored recovery",
+        detail: "Check mobility, VTE plan, function, wounds and medicines.",
       },
       {
-        label: "Review pathology and travel fitness",
-        detail: `${profile.pathology} Obtain explicit advice before flying.`,
-      },
-      {
-        label: "Transfer care home",
-        detail: `${profile.followUp} Share reports and the escalation plan with the local clinician.`,
+        label: "Review and handover",
+        detail: "Confirm pathology, flight clearance and local follow-up.",
       },
     ],
     documents: [
@@ -558,68 +529,76 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
       "No provider is ranked and no outcome is promised. Suspected cancer needing specialist staging, unstable illness, severe anaemia, inadequate records or safer established care near home may make an elective trip inappropriate.",
     ],
     questionsToAsk: [
-      "Why is laparoscopic hysterectomy being considered, and which non-surgical or uterus-sparing alternatives were discussed?",
-      "What diagnosis and treatment goal are written in my plan?",
-      `Who is the named ${profile.specialist}, and at which exact campus will surgery occur?`,
-      `Does the quotation use the exact CMS name ${profile.procedure}?`,
-      "Is a total hysterectomy or supracervical hysterectomy planned?",
-      "Will the cervix be removed, and how does that affect future screening advice?",
-      "Will both fallopian tubes be removed?",
-      "Will each ovary be conserved or removed, and why?",
-      "What might change the ovarian-conservation decision during surgery?",
-      "How were uterine size, fibroids, endometriosis, prolapse, adhesions and prior surgery assessed?",
-      "Which blood tests, imaging, cervical screening or endometrial sampling are required?",
-      "Which surgeon, assistant, anaesthesia and theatre fees are included?",
-      "Which laparoscopic instruments and uterine-removal method are assumed?",
-      "How will tissue extraction be handled if malignancy has not been completely excluded?",
-      "What findings could require an open conversion or another procedure?",
-      "How are open conversion, transfusion, organ repair, ICU or extra nights billed?",
-      "Which urinary-tract, bowel, vascular and anaesthesia support is available at the exact campus?",
-      "How many ward nights and which room category are included?",
-      "Are routine medicines, VTE prevention and take-home medicines included?",
-      "What pathology is included, and are special stains or outside review extra?",
-      "When and by whom will final pathology be discussed?",
-      "Which wound, bladder, bowel, bleeding or fever signs require urgent review?",
-      "When may I shower, walk farther, climb stairs, drive, work, exercise or lift luggage?",
-      "What individualized guidance applies to vaginal intercourse or internal products during healing?",
-      "When will fitness to fly be assessed, and should my ticket remain flexible?",
-      "Which early follow-up visits are included?",
-      "How are complications handled after I leave India?",
-      "What operation note, pathology report, prescriptions and emergency contacts will I receive?",
-      "Which costs are explicitly excluded?",
-      "Who will coordinate follow-up with my gynecologist after I return home?",
+      "Why is hysterectomy considered, and what alternatives remain?",
+      "What diagnosis and treatment goal are documented?",
+      `Who is the named ${profile.specialist}, and at which campus?`,
+      "Is total or supracervical hysterectomy planned?",
+      "Which cervix, tube and ovary decisions are consented?",
+      "What could change ovarian conservation during surgery?",
+      "How were uterine size, adhesions and prior surgery assessed?",
+      "Which tests, imaging and tissue sampling are required?",
+      "Which surgeon, anaesthesia and theatre fees are included?",
+      "Which instruments and specimen-removal method are assumed?",
+      "How was unsuspected malignancy considered before extraction?",
+      "What could require open conversion or additional surgery?",
+      "How are transfusion, organ repair, ICU and extra nights billed?",
+      "What urinary-tract, bowel and bleeding support exists on campus?",
+      "How many nights and which room category are included?",
+      "Which medicines and VTE-prevention measures are included?",
+      "Which pathology tests and result review are included?",
+      "Which warning signs require urgent reassessment?",
+      "When may I resume activity and fly?",
+      "What follow-up, documents, exclusions and home handover are included?",
       ...profile.quoteQuestions,
     ],
     faqs: [
       {
         q: "How much does laparoscopic hysterectomy cost in India?",
-        a: `${profile.procedure} is typically planned at [INDIA_COST]. This national range is not a quotation; organ scope, complexity, pathology, stay and written complication terms determine the final amount.`,
+        a: "[INDIA_COST] is a national planning range, not a quotation. Scope, complexity, pathology and stay determine the final bill.",
       },
-      { q: "What is a laparoscopic hysterectomy?", a: profile.definition },
-      { q: "Does total hysterectomy mean both ovaries are removed?", a: profile.distinction },
+      {
+        q: "What is a laparoscopic hysterectomy?",
+        a: "It removes the uterus with camera-guided instruments through small abdominal ports.",
+      },
+      {
+        q: "Does total hysterectomy mean both ovaries are removed?",
+        a: "No. Total means uterus plus cervix; ovary removal or conservation is decided separately.",
+      },
       {
         q: "What happens to the cervix and fallopian tubes?",
-        a: `${profile.anatomy} The consent form should identify each structure rather than relying on “complete” or “total.”`,
+        a: "Total hysterectomy removes the cervix. Each tube must be separately listed as removed or retained.",
       },
-      { q: "Who may be considered for this operation?", a: profile.candidacy },
-      { q: "What assessment is needed first?", a: profile.evaluation },
-      { q: "How is the operation performed?", a: `${profile.technique} ${profile.conversion}` },
+      {
+        q: "Who may be considered for this operation?",
+        a: "Selected patients with an established indication after alternatives, fertility wishes, anatomy and risk are reviewed.",
+      },
+      {
+        q: "What assessment is needed first?",
+        a: "Clinical review, examination, imaging, blood count and anaesthesia assessment; some patients need tissue sampling.",
+      },
+      {
+        q: "How is the operation performed?",
+        a: "Ports admit a camera and instruments; vessels and pedicles are controlled before consented organs are removed. Open conversion remains possible.",
+      },
       {
         q: "How long does laparoscopic hysterectomy take?",
-        a: `${profile.duration}. Actual timing depends on anatomy, adhesions, associated procedures and intraoperative findings.`,
+        a: "Often about 1–3 hours, with longer surgery for difficult anatomy or additional procedures.",
       },
       {
         q: "How long is the hospital stay?",
-        a: `${profile.admission} Discharge follows clinical criteria, not a package calendar.`,
+        a: "Often day care or 1–2 nights. Clinical recovery, not the package calendar, determines discharge.",
       },
-      { q: "What are the important risks?", a: profile.risks },
+      {
+        q: "What are the important risks?",
+        a: "Bleeding, infection, VTE, anaesthesia problems, organ injury, cuff problems, hernia and open conversion require individualized consent.",
+      },
       {
         q: "When can an international patient fly home?",
-        a: `There is no fixed flight date. ${profile.recovery} The treating team must document stability and travel fitness.`,
+        a: "There is no fixed date. The team must assess wounds, bleeding, mobility, organ function and VTE risk.",
       },
       {
         q: "What follow-up is needed after returning home?",
-        a: `${profile.followUp} The plan should name who reviews wounds, symptoms and final pathology.`,
+        a: "A local gynecologist should review recovery and receive the operation note, discharge summary and pathology.",
       },
     ],
     doctorHeading: `${profile.procedure} surgeons in India`,
@@ -666,50 +645,50 @@ const profiles: GynecologyProfile[] = [
     shortName: "laparoscopic hysterectomy",
     specialist: "gynecologist trained in minimally invasive gynecologic surgery",
     definition:
-      "Laparoscopic hysterectomy removes the uterus through several small abdominal ports using a camera and long instruments; the specimen is removed by an individually planned route.",
+      "Laparoscopic hysterectomy removes the uterus through small abdominal ports using a camera and long instruments.",
     candidacy:
-      "It may be considered for selected people with symptomatic fibroids, adenomyosis, persistent abnormal uterine bleeding, endometriosis, prolapse or another established indication after less invasive options, fertility wishes, anatomy and operative risk are reviewed. It is not automatically appropriate for every diagnosis.",
+      "It may be considered for selected patients with fibroids, adenomyosis, persistent abnormal bleeding, endometriosis or prolapse after alternatives, fertility wishes, anatomy and operative risk are reviewed. A diagnosis alone does not establish candidacy.",
     anatomy:
-      "The uterus is the muscular organ that can carry a pregnancy; its lower neck is the cervix. A total hysterectomy removes uterus and cervix, while a supracervical hysterectomy leaves the cervix. Fallopian tubes connect near the uterus, and ovaries lie separately and produce hormones. Removing the uterus does not automatically remove tubes or ovaries.",
+      "The uterus can carry a pregnancy; its lower neck is the cervix. Fallopian tubes connect near it, while the separate ovaries produce hormones. Removing the uterus does not automatically remove tubes or ovaries.",
     distinction:
-      "“Total” describes removal of the uterus plus cervix; it does not mean removal of every reproductive organ. Salpingectomy means tube removal, oophorectomy means ovary removal, and bilateral salpingo-oophorectomy removes both tubes and ovaries. Ovarian conservation is a separate, individualized consent decision.",
+      "A total hysterectomy removes uterus and cervix; it does not mean ovary removal. Supracervical hysterectomy retains the cervix. Salpingectomy removes a tube and oophorectomy an ovary, so ovarian conservation requires separate consent.",
     evaluation:
-      "Assessment commonly reviews symptoms, fertility goals, pelvic examination, ultrasound or other indicated imaging, blood count and anaesthesia risk. Cervical screening, endometrial sampling, hysteroscopy or malignancy-focused review may be needed according to age, bleeding pattern and findings.",
+      "Assessment reviews symptoms, fertility goals, pelvic examination, indicated imaging, blood count and anaesthesia risk. Cervical screening, endometrial sampling or malignancy-focused review may also be needed.",
     technique:
-      "Under general anaesthesia, the abdomen is inflated with carbon dioxide and a camera and instruments enter through small ports. The surgeon identifies the ureters and surrounding organs, controls the uterine vessels and supporting pedicles, separates the uterus with or without the cervix according to consent, closes the vaginal cuff when applicable and retrieves the specimen by the planned method.",
+      "Under general anaesthesia, carbon dioxide creates working space and instruments enter through small ports. The surgeon identifies the ureters, controls uterine vessels and pedicles, separates the consented organs, closes the vaginal cuff when applicable and removes the specimen by the planned method.",
     conversion:
-      "Conversion to an abdominal incision is uncommon in routine practice but remains a safety option rather than a failure. Dense adhesions, uncontrolled bleeding, unexpected anatomy, bowel or urinary-tract concern, a very large specimen or concern about tissue extraction can require a changed route or additional specialist help.",
+      "Open conversion is a safety option, not a failure. Adhesions, bleeding, unexpected anatomy, bowel or urinary-tract concern, specimen size or unsafe extraction can require a changed route.",
     approaches: [
       {
         label: "Conventional laparoscopic hysterectomy",
         detail:
-          "Camera-guided surgery through small abdominal ports; the balance of laparoscopic and vaginal steps should be stated.",
+          "Camera-guided surgery through small ports, sometimes with vaginal steps.",
       },
       {
         label: "Vaginal hysterectomy",
         detail:
-          "Removal through the vagina without abdominal ports may suit selected mobile uteri or prolapse and can avoid abdominal incisions.",
+          "Removal without abdominal ports may suit selected mobile uteri or prolapse.",
       },
       {
         label: "Robotic hysterectomy",
         detail:
-          "A surgeon controls wristed instruments from a console. It uses different equipment and cost assumptions but is not automatically safer or more appropriate.",
+          "Console-controlled instruments add different equipment, not automatic clinical superiority.",
       },
       {
         label: "Open abdominal hysterectomy",
         detail:
-          "A larger abdominal incision may be planned for selected anatomy or disease, or used if safe laparoscopic completion is not possible.",
+          "A larger incision may be planned or used when laparoscopy cannot continue safely.",
       },
     ],
     duration: "often about 1–3 hours, but longer when anatomy or additional procedures are complex",
     admission:
-      "Many uncomplicated pathways use day care or 1–2 hospital nights, but nausea, pain, urinary difficulty, bleeding, medical conditions or conversion can extend admission.",
+      "Many uncomplicated pathways use day care or 1–2 nights; symptoms, medical needs or conversion can extend admission.",
     recovery:
-      "Walking usually begins early, with gradual activity over several weeks. Wound healing, bladder and bowel function, bleeding, pain control and VTE risk guide progress; return to work, lifting, driving, intercourse and flying require individualized clearance rather than a universal date.",
+      "Walking usually begins early, then activity increases gradually. Wounds, bladder and bowel function, bleeding, pain and VTE risk determine when work, lifting, driving, intercourse and flying resume.",
     pathology:
-      "The uterus and every additional removed structure should be labelled for histopathology. The final report confirms benign findings or identifies unexpected disease; it may take longer than hospital discharge and should have a named reviewer and handover plan.",
+      "Every removed structure should be labelled for histopathology. A named clinician must communicate the final report and arrange referral if unexpected disease is found.",
     risks:
-      "Specific risks include bleeding or transfusion, infection, venous thromboembolism, anaesthesia complications, injury to bladder, ureters, bowel, blood vessels or nerves, urinary retention, vaginal-cuff bleeding or separation, hernia at a port, adhesions, conversion to open surgery and need for further treatment after pathology.",
+      "Risks include bleeding or transfusion, infection, venous thromboembolism, anaesthesia problems, injury to bladder, ureters, bowel, vessels or nerves, urinary retention, vaginal-cuff bleeding or separation, port hernia, open conversion and further treatment after pathology.",
     urgent:
       "heavy bleeding, fainting, chest pain, breathlessness, one-sided leg swelling, fever, worsening abdominal pain, persistent vomiting, inability to pass urine, wound drainage or opening",
     drivers: [
@@ -762,7 +741,7 @@ const profiles: GynecologyProfile[] = [
       "Blood count, blood group and other requested preoperative tests",
     ],
     followUp:
-      "Follow-up should review incisions, vaginal-cuff healing when relevant, bleeding, bladder and bowel symptoms and final pathology. A local gynecologist should receive the operation note, discharge summary and pathology after the patient returns home.",
+      "Follow-up reviews incisions, vaginal-cuff healing, bleeding, bladder and bowel symptoms, and pathology. Send the operation note, discharge summary and report to the local gynecologist.",
     quoteQuestions: [
       "Is cystoscopy planned or available if urinary-tract assessment is needed?",
       "Is a vaginal-cuff review included before departure?",
