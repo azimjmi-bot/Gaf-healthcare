@@ -64,6 +64,18 @@ test("all guides provide long-form respiratory content and extractable answers",
     assert.ok(article.faqs.length >= 10 && article.faqs.length <= 15);
     assert.ok(article.questionsToAsk.length >= 20);
     assert.equal(article.cities.length, 5);
+    for (const city of article.cities) {
+      assert.equal(city.page?.faqs.length, 3);
+      const mergedFaqCount =
+        (city.page?.faqs.length ?? 0) +
+        article.faqs.filter(
+          (item) => !city.page?.faqs.some((cityFaq) => cityFaq.q === item.q),
+        ).length;
+      assert.ok(
+        mergedFaqCount >= 10 && mergedFaqCount <= 15,
+        `${article.slug}/${city.citySlug}: ${mergedFaqCount} visible FAQs`,
+      );
+    }
     assert.equal(article.destinations.length, 8);
     assert.equal(article.fullPathway?.stages.length, 12);
     assert.equal(article.journey.length, 12);

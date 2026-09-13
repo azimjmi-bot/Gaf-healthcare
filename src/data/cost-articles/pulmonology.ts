@@ -334,14 +334,6 @@ function makeCities(profile: PulmonologyProfile): CityEditorial[] {
             q: `Where should I stay in ${place.city} after ${profile.shortName}?`,
             a: `${place.lodging} ${place.campus}`,
           },
-          {
-            q: `How long should I stay in ${place.city} after ${profile.shortName}?`,
-            a: `[STAY] is the stored hospital-stay guide. ${profile.recovery} The team must document travel fitness.`,
-          },
-          {
-            q: `What should a ${place.city} estimate for ${profile.shortName} name?`,
-            a: `It should name clinician, campus, technique, sedation, devices, pathology, oxygen, ward nights, follow-up, exclusions and complication terms.`,
-          },
         ],
       },
     };
