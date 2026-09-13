@@ -156,7 +156,14 @@ export default async function HomePage() {
               href={hospitalsPath({ destination: place.filter })}
               className="home-dest"
             >
-              <Image src={place.image} alt={place.imageAlt} fill className="object-cover" sizes="(min-width: 900px) 16vw, 50vw" />
+              <Image
+                src={place.image}
+                alt={place.imageAlt}
+                fill
+                quality={60}
+                className="object-cover"
+                sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 100vw"
+              />
               <span>
                 <strong>{place.name}</strong>
                 <em>{place.blurb}</em>
@@ -265,7 +272,7 @@ export default async function HomePage() {
                   alt=""
                   fill
                   className="object-cover"
-                  sizes="(min-width: 900px) 24vw, 100vw"
+                  sizes="(min-width: 1024px) 24vw, (min-width: 640px) 50vw, 100vw"
                 />
                 <span className="home-video__play" aria-hidden>
                   ▶

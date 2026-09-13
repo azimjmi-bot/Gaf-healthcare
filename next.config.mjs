@@ -65,6 +65,9 @@ const nextConfig = {
     ];
   },
   images: {
+    // 60 is used for small photo tiles (destination cards) where the
+    // default 75 spends bytes that are invisible at ~200px.
+    qualities: [60, 75],
     remotePatterns: [
       {
         protocol: "https",
