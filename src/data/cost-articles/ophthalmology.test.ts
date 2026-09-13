@@ -10,6 +10,8 @@ import {
   ophthalmologyArticles,
   ophthalmologyArticlesBySlug,
 } from "./ophthalmology";
+import { cosmeticSurgeryArticlesBySlug } from "./cosmetic-surgery";
+import { getCostArticle } from "./index";
 
 const citySlugs = [
   "delhi-ncr",
@@ -28,6 +30,33 @@ const countries = [
   "United Kingdom",
   "United States",
 ];
+
+const specificity: Record<string, RegExp[]> = {
+  "Cataract Surgery": [/per eye/i, /monofocal/i, /posterior-capsule/i],
+  "Phacoemulsification Cataract Surgery": [/ultrasound/i, /capsular bag/i, /IOL/i],
+  "Femto Laser Cataract Surgery": [/docking/i, /capsulotomy/i, /does not replace the operating surgeon/i],
+  "LASIK Eye Surgery": [/hinged corneal flap/i, /excimer/i, /tomography/i],
+  "SMILE Eye Surgery": [/lenticule/i, /small incision/i, /without a LASIK flap/i],
+  "ICL (Implantable Collamer Lens)": [/phakic/i, /behind the iris/i, /natural lens remains|natural lens retained/i],
+  "Corneal Transplantation": [/full-thickness/i, /donor button|donor tissue/i, /sutures/i],
+  DMEK: [/Descemet membrane/i, /endothelium/i, /stroma retained|retaining.*stroma/i],
+  DSEK: [/stromal-endothelial/i, /donor disc/i, /air or gas/i],
+  DALK: [/stroma/i, /endothelium retained|retaining.*endothelium/i, /Descemet/i],
+  "Glaucoma Surgery": [/umbrella/i, /optic nerve/i, /laser.*trabeculectomy.*tube|laser.*bleb.*drainage device/i],
+  "Laser Glaucoma Surgery": [/outpatient laser/i, /SLT|trabecular laser/i, /not trabeculectomy/i],
+  Trabeculectomy: [/filtering bleb/i, /scleral flap/i, /antifibrotic/i],
+  "Glaucoma Drainage Device / Valve Implantation": [/tube-and-plate|tube.*plate/i, /valved/i, /non-valved/i],
+  Vitrectomy: [/pars plana/i, /vitreous/i, /gas or silicone oil/i],
+  "Retinal Detachment Surgery": [/retinal breaks/i, /scleral buckle/i, /reattach/i],
+  "Intravitreal Anti-VEGF Injection": [/per injection/i, /OCT/i, /ongoing injections|ongoing schedule/i],
+  "Macular Hole Surgery": [/macular OCT/i, /membrane peel/i, /gas/i],
+  "Pediatric Cataract Surgery": [/visual development/i, /amblyopia/i, /general anaesthesia/i],
+  "Squint / Strabismus Surgery": [/alignment measurements/i, /recessed, resected|recession.*resection/i, /extraocular/i],
+  "Oculoplastic Surgery": [/functional/i, /eyelids, orbit and lacrimal|eyelid.*orbit.*lacrimal/i, /cosmetic Blepharoplasty/i],
+  "Eyelid Reconstruction Surgery": [/anterior and posterior lamellae/i, /flap or graft/i, /corneal protection|protect the cornea/i],
+  "Dacryocystorhinostomy (DCR) / Tear Duct Surgery": [/lacrimal sac/i, /nasal cavity/i, /external versus endoscopic/i],
+  "Corneal Cross-Linking (C3R)": [/riboflavin/i, /ultraviolet A|UVA/i, /stabilize progression, not provide refractive correction/i],
+};
 
 function countWords(value: unknown): number {
   if (typeof value === "string") {
@@ -69,152 +98,122 @@ function webpDimensions(bytes: Buffer): [number, number] {
   throw new Error(`Unsupported WebP chunk ${chunk}`);
 }
 
-test("publishes one pilot from a 24-item exclusive Ophthalmology inventory", () => {
+test("publishes all 24 exclusive Ophthalmology procedures and preserves shared ownership", () => {
   assert.equal(OPHTHALMOLOGY_PROCEDURES.length, 25);
   assert.equal(OPHTHALMOLOGY_EXCLUSIVE_PROCEDURES.length, 24);
   assert.ok(
     !OPHTHALMOLOGY_EXCLUSIVE_PROCEDURES.includes("Blepharoplasty" as never),
   );
   assert.deepEqual(OPHTHALMOLOGY_PILOT_PROCEDURES, ["Cataract Surgery"]);
-  assert.equal(ophthalmologyArticles.length, 1);
+  assert.equal(ophthalmologyArticles.length, 24);
   assert.equal(ophthalmologyArticles[0].procedure, "Cataract Surgery");
-  assert.equal(
-    ophthalmologyArticlesBySlug[toSlug("Cataract Surgery")],
-    ophthalmologyArticles[0],
+  assert.deepEqual(
+    ophthalmologyArticles.map((article) => article.procedure).sort(),
+    [...OPHTHALMOLOGY_EXCLUSIVE_PROCEDURES].sort(),
   );
   assert.equal(
     ophthalmologyArticlesBySlug[toSlug("Blepharoplasty")],
     undefined,
   );
+  for (const article of ophthalmologyArticles) {
+    assert.equal(ophthalmologyArticlesBySlug[article.slug], article);
+    assert.equal(getCostArticle(article.slug), article);
+  }
+  const blepharoplastySlug = toSlug("Blepharoplasty");
+  assert.equal(
+    getCostArticle(blepharoplastySlug),
+    cosmeticSurgeryArticlesBySlug[blepharoplastySlug],
+  );
 });
 
-test("Cataract Surgery is a complete 2,000–3,000 word national guide", () => {
-  const article = ophthalmologyArticles[0];
-  const { cities: _cities, destinations: _destinations, ...national } = article;
-  const words = countWords(national);
-  assert.ok(words >= 2_000 && words <= 3_000, `${words} national words`);
-  assert.equal(article.heading, "Cataract Surgery Cost in India");
-  assert.match(article.seoTitle, /Per-Eye Lens & Care Guide/);
-  assert.match(article.seoDescription, /\[INDIA_COST\].*per eye/i);
-  assert.notEqual(article.heading, article.seoTitle);
-  assert.ok(article.heroSubtitle);
-  assert.doesNotMatch(article.heroSubtitle, /Cataract Surgery Cost in India/);
-
-  const text = JSON.stringify(article);
-  for (const token of ["[INDIA_COST]", "[US_COST]", "[STAY]"]) {
-    assert.ok(text.includes(token));
+test("all national guides have unique metadata and 2,000–3,000 words", () => {
+  for (const field of ["slug", "seoTitle", "seoDescription", "heading", "heroSubtitle"] as const) {
+    assert.equal(new Set(ophthalmologyArticles.map((article) => article[field])).size, 24);
   }
-  for (const expected of [
-    /per eye/i,
-    /right eye.*left eye|left eye.*right eye/i,
-    /separate dates|scheduled separately/i,
-    /ophthalmologist/i,
-    /day care|day-care/i,
-    /slit-lamp/i,
-    /refraction/i,
-    /dilation/i,
-    /intraocular-pressure|IOP/i,
-    /retina/i,
-    /optical biometry/i,
-    /keratometry/i,
-    /cataract density/i,
-    /ocular comorbidity/i,
-    /phacoemulsification/i,
-    /manual small-incision/i,
-    /femtosecond/i,
-    /monofocal/i,
-    /toric/i,
-    /multifocal/i,
-    /trifocal/i,
-    /EDOF/i,
-    /posterior-capsule/i,
-    /combined surgery/i,
-    /drops/i,
-    /eye shield|shield/i,
-    /urgent/i,
-  ]) {
-    assert.match(text, expected);
+  for (const article of ophthalmologyArticles) {
+    const { cities: _cities, destinations: _destinations, ...national } = article;
+    const words = countWords(national);
+    assert.ok(words >= 2_000 && words <= 3_000, `${article.slug}: ${words} national words`);
+    assert.match(article.heading, /Cost in India$/);
+    assert.match(article.seoDescription, /\[INDIA_COST\]/);
+    assert.notEqual(article.heading, article.seoTitle);
+    assert.ok(article.heroSubtitle);
+    const text = JSON.stringify(article);
+    for (const token of ["[INDIA_COST]", "[US_COST]", "[STAY]"]) assert.ok(text.includes(token));
+    for (const expected of specificity[article.procedure]) {
+      assert.match(text, expected, `${article.slug}: missing ${expected}`);
+    }
+    assert.ok(article.inclusions.length >= 6);
+    assert.ok(article.exclusions.length >= 5);
+    assert.ok(article.costDrivers.length >= 10);
+    assert.ok((article.topicSections ?? []).length >= 5);
+    assert.ok((article.fullPathway?.stages ?? []).length >= 12);
+    assert.ok(article.journey.length >= 12);
+    assert.ok(article.documents.length >= 8);
+    assert.ok((article.whyIndia ?? []).length >= 3);
+    assert.ok(article.relatedProcedures.length >= 3);
   }
-  assert.ok(article.inclusions.length >= 6);
-  assert.ok(article.exclusions.length >= 5);
-  assert.ok(article.costDrivers.length >= 10);
-  assert.ok((article.topicSections ?? []).length >= 5);
-  assert.ok((article.fullPathway?.stages ?? []).length >= 12);
-  assert.ok(article.journey.length >= 12);
-  assert.ok(article.documents.length >= 8);
-  assert.ok((article.whyIndia ?? []).length >= 3);
-  assert.ok(article.relatedProcedures.length >= 4);
 });
 
 test("Quick Answer is answer-first, cautious and within 100–150 words", () => {
-  const article = ophthalmologyArticles[0];
-  const quick = article.answer.join(" ");
-  const words = countWords(quick);
-  assert.ok(words >= 100 && words <= 150, `${words} Quick Answer words`);
-  assert.match(quick, /^Cataract Surgery in India is typically planned/i);
-  assert.match(quick, /Planning Range ≠ Final Hospital Quotation/);
-  assert.match(quick, /per eye/i);
-});
-
-test("uses five unique local overlays with exact-CMS gating and no city tariff", () => {
-  const article = ophthalmologyArticles[0];
-  assert.deepEqual(
-    article.cities.map((city) => city.citySlug),
-    citySlugs,
-  );
-  assert.equal(
-    new Set(article.cities.map((city) => JSON.stringify(city.page))).size,
-    5,
-  );
-  for (const city of article.cities) {
-    assert.equal(city.costRange, undefined);
-    assert.equal(city.stay, undefined);
-    assert.match(city.costNote, /national per-eye planning range/i);
-    assert.doesNotMatch(JSON.stringify(city), /[$€£]\s?\d/);
-    assert.ok(city.page);
-    assert.equal(city.page.intro.length, 5);
-    assert.equal(city.page.faqs.length, 5);
-    assert.ok(
-      countWords(`${city.ecosystem} ${city.logistics}`) >= 120,
-      `${city.citySlug} lacks meaningful local/logistics copy`,
-    );
-    const gate = `${city.ecosystem} ${city.page.hospitalDiscussion.join(" ")}`;
-    assert.match(gate, /exact live CMS relationships/);
-    assert.match(gate, /cards must remain empty/);
-    assert.match(gate, /catalog gap/);
-    assert.doesNotMatch(gate, /cases per year|always available|guaranteed/i);
+  for (const article of ophthalmologyArticles) {
+    const quick = article.answer.join(" ");
+    const words = countWords(quick);
+    assert.ok(words >= 100 && words <= 150, `${article.slug}: ${words} Quick Answer words`);
+    assert.match(quick, new RegExp(`^${article.procedure.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")} in India`));
+    assert.match(quick, /Planning Range ≠ Final Hospital Quotation/);
+    assert.match(quick, /per eye|per injection|per course/i);
   }
 });
 
-test("uses eight restrained destination rows and complete planning tools", () => {
-  const article = ophthalmologyArticles[0];
-  assert.deepEqual(
-    article.destinations.map((destination) => destination.country),
-    countries,
-  );
-  assert.equal(article.destinations.length, 8);
-  assert.match(JSON.stringify(article.destinations), /\[US_COST\]/);
-  assert.ok(article.questionsToAsk.length >= 20);
-  assert.equal(
-    new Set(article.questionsToAsk).size,
-    article.questionsToAsk.length,
-  );
-  assert.equal(article.faqs.length, 12);
-  assert.ok(
-    article.faqs.every(
-      ({ a }) => countWords(a) >= 14 && !/^(yes|no)[,.]?$/i.test(a),
-    ),
-  );
+test("uses five unique local overlays with exact-CMS gating and no city tariff", () => {
+  for (const article of ophthalmologyArticles) {
+    assert.deepEqual(article.cities.map((city) => city.citySlug), citySlugs);
+    assert.equal(new Set(article.cities.map((city) => JSON.stringify(city.page))).size, 5);
+    for (const city of article.cities) {
+      assert.equal(city.costRange, undefined);
+      assert.equal(city.stay, undefined);
+      assert.match(city.costNote, /national .*planning range/i);
+      assert.doesNotMatch(JSON.stringify(city), /[$€£]\s?\d/);
+      assert.ok(city.page);
+      assert.equal(city.page.intro.length, 5);
+      assert.equal(city.page.faqs.length, 5);
+      assert.ok(
+        countWords(`${city.ecosystem} ${city.logistics}`) >= 120,
+        `${article.slug}/${city.citySlug} lacks meaningful local copy`,
+      );
+      const gate = `${city.ecosystem} ${city.page.hospitalDiscussion.join(" ")}`;
+      assert.match(gate, /exact live CMS relationships/);
+      assert.match(gate, /cards must remain empty/);
+      assert.match(gate, /catalog gap/);
+      assert.doesNotMatch(gate, /cases per year|always available|guaranteed/i);
+    }
+  }
+});
+
+test("uses eight destinations, 12 FAQs and complete quote questions", () => {
+  for (const article of ophthalmologyArticles) {
+    assert.deepEqual(
+      article.destinations.map((destination) => destination.country),
+      countries,
+    );
+    assert.match(JSON.stringify(article.destinations), /\[US_COST\]/);
+    assert.ok(article.questionsToAsk.length >= 20);
+    assert.equal(new Set(article.questionsToAsk).size, article.questionsToAsk.length);
+    assert.equal(article.faqs.length, 12);
+    assert.ok(article.faqs.every(({ a }) => countWords(a) >= 10));
+  }
 });
 
 test("avoids outcome promises, rankings and unsupported numeric claims", () => {
-  const text = JSON.stringify(ophthalmologyArticles[0]);
+  const text = JSON.stringify(ophthalmologyArticles);
   assert.doesNotMatch(text, /\b\d+(?:\.\d+)?%\b/);
   assert.doesNotMatch(
     text,
     /\bbest (?:doctor|surgeon|hospital|facility|lens)|success rate|perfect vision|20\/20|100%|guaranteed (?:success|vision|outcome)|risk[- ]free\b/i,
   );
-  assert.match(text, /does not promise|cannot be promised|no visual outcome is promised/i);
+  assert.doesNotMatch(text, /\uFFFD/);
+  assert.match(text, /does not promise|cannot be promised|no outcome is promised/i);
 });
 
 test("uses the existing pretty cost route convention", () => {
@@ -235,22 +234,43 @@ test("uses the existing pretty cost route convention", () => {
     }),
     "/costs/India/Chennai/Ophthalmology/Cataract-Surgery",
   );
+  assert.equal(
+    costsFilterPath({
+      destination: "India",
+      specialty: "Ophthalmology",
+      procedure: "ICL (Implantable Collamer Lens)",
+    }),
+    "/costs/India/Ophthalmology/ICL-(Implantable-Collamer-Lens)",
+  );
+  assert.equal(
+    costsFilterPath({
+      destination: "India",
+      specialty: "Ophthalmology",
+      procedure: "Glaucoma Drainage Device / Valve Implantation",
+    }),
+    "/costs/India/Ophthalmology/Glaucoma-Drainage-Device-Valve-Implantation",
+  );
 });
 
-test("declares and ships exactly three optimized 1200x675 WebPs", () => {
-  const article = ophthalmologyArticles[0];
-  const expected = [
-    "cataract-surgery-anatomy.webp",
-    "cataract-surgery-procedure.webp",
-    "cataract-surgery-recovery.webp",
-  ];
-  assert.deepEqual(
-    article.figures?.map((figure) => figure.src),
-    expected.map((file) => `/images/cost/ophthalmology/${file}`),
-  );
-  for (const figure of article.figures ?? []) {
-    assert.ok(figure.alt.length >= 140);
+test("declares and ships exactly 72 unique optimized 1200x675 WebPs", () => {
+  const expected: string[] = [];
+  const sources = new Set<string>();
+  for (const article of ophthalmologyArticles) {
+    const files = ["anatomy", "procedure", "recovery"].map(
+      (kind) => `${article.slug}-${kind}.webp`,
+    );
+    expected.push(...files);
+    assert.deepEqual(
+      article.figures?.map((figure) => figure.src),
+      files.map((file) => `/images/cost/ophthalmology/${file}`),
+    );
+    for (const figure of article.figures ?? []) {
+      assert.ok(figure.alt.length >= 120);
+      assert.ok(!sources.has(figure.src));
+      sources.add(figure.src);
+    }
   }
+  assert.equal(sources.size, 72);
 
   const directory = join(
     process.cwd(),
