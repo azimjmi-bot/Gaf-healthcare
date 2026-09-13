@@ -114,14 +114,14 @@ const DESTINATIONS: DestinationRow[] = [
     stay: "[STAY]",
     positioning: "GAF catalog planning range",
     context:
-      "The stored India figure is a national planning range. It does not establish candidacy, route, ovarian conservation, pathology scope, hospital stay or a final quotation.",
+      "The stored India figure is a national planning range. It does not establish candidacy, procedure scope, approach, pathology, hospital stay or a final quotation.",
   },
   {
     country: "Turkey",
     stay: "Procedure- and recovery-dependent",
     positioning: "Quotation required",
     context:
-      "Compare the exact hysterectomy route, surgeon and anaesthesia fees, pathology, ward nights and complication terms rather than a headline package.",
+      "Compare the exact procedure scope, approach, clinician and anaesthesia fees, pathology, ward nights and complication terms rather than a headline package.",
   },
   {
     country: "Thailand",
@@ -142,7 +142,7 @@ const DESTINATIONS: DestinationRow[] = [
     stay: "Procedure- and recovery-dependent",
     positioning: "Varies significantly",
     context:
-      "Request a self-pay estimate tied to the indication, exact organs planned for removal, surgical route and expected admission.",
+      "Request a self-pay estimate tied to the indication, exact treatment scope, approach and expected admission.",
   },
   {
     country: "Germany",
@@ -174,7 +174,7 @@ const COMMON_INCLUSIONS: LabelledDetail[] = [
   },
   {
     label: "Planned operation",
-    detail: "Surgeon, theatre, standard instruments and consented organ scope.",
+    detail: "Clinician, theatre, procedure-specific instruments and consented scope.",
   },
   {
     label: "Anaesthesia and routine medicines",
@@ -295,17 +295,17 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
   return {
     procedure: profile.procedure,
     shortName: profile.shortName,
-    briefName: "Laparoscopic Hysterectomy",
+    briefName: profile.procedure,
     slug,
     lastUpdated: "2026-09-13",
     duration: profile.duration,
     recoveryGlance: profile.recovery,
     seoTitle: `${profile.procedure} Cost in India: Scope, Recovery & Planning`,
     seoDescription:
-      `${profile.procedure} cost in India is typically [INDIA_COST]. Understand organ scope, ovarian conservation, surgical alternatives, pathology, recovery and travel.`,
+      `${profile.procedure} cost in India is typically [INDIA_COST]. Compare clinical scope, approaches, pathology, recovery and international travel.`,
     heading: `${profile.procedure} Cost in India`,
     heroSubtitle:
-      "A practical guide to the [INDIA_COST] planning range, uterus and cervix removal, ovarian-conservation decisions, laparoscopic technique, pathology and safe international recovery.",
+      `${profile.definition} Compare the [INDIA_COST] planning range, individualized scope, pathology and recovery.`,
     introduction: [
       `${profile.definition} ${profile.candidacy}`,
       `${profile.anatomy} ${profile.distinction}`,
@@ -313,43 +313,41 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
       `[INDIA_COST], [US_COST] and [STAY] are planning tokens, not tariffs, acceptance or final bills. Match the quote to the planned organs, route and pathology.`,
     ],
     answer: [
-      `${profile.procedure} in India is typically planned at [INDIA_COST]. A useful estimate identifies whether the uterus and cervix are removed, whether tubes or ovaries are removed or conserved, the laparoscopic and uterine-removal method, surgeon and anaesthesia fees, routine pathology, stated ward nights and early review. The stored stay is [STAY], but discharge and flying depend on individual recovery.`,
-      `The largest variables are ${profile.drivers
+      `${profile.procedure} in India is typically planned at [INDIA_COST]. A useful estimate identifies the indication, exact surgical scope and approach, named surgeon, anaesthesia and facility fees, routine pathology, stated ward nights and early review. ${profile.distinction} The stored stay is [STAY], but discharge and flying depend on individual recovery.`,
+      `Major variables are ${profile.drivers
         .slice(0, 4)
         .map((item) => item.label.toLowerCase())
-        .join(", ")}. Unexpected adhesions, additional disease, open conversion, transfusion or longer admission can produce a different bill.`,
+        .join(", ")}. Changed findings, added procedures, complications or longer admission produce a different bill.`,
       "Planning Range ≠ Final Hospital Quotation. Records review and a qualified gynecology and anaesthesia assessment are needed before candidacy, organ scope, risks and an itemized offer are meaningful.",
     ],
     indiaCost: [
       `The [INDIA_COST] value is GAF's stored national planning range for ${profile.shortName}, not a guaranteed package. Replace it with an itemized quotation tied to a named ${profile.specialist}, campus, indication, organ scope, route, expected nights and pathology plan.`,
-      `Cost can change with ${profile.drivers.map((item) => item.label.toLowerCase()).join(", ")}. A straightforward benign-disease operation is not comparable with extensive adhesiolysis, deep endometriosis work, prolapse repair or suspected malignancy.`,
+      `Cost can change with ${profile.drivers.map((item) => item.label.toLowerCase()).join(", ")}. A limited procedure is not comparable with broader treatment, difficult anatomy or added specialist work.`,
       "Do not derive Delhi NCR, Mumbai, Bengaluru, Chennai or Hyderabad tariffs from the national range. Keep [US_COST], flights, visas, local transport, companion lodging, meals, take-home medicines, extra recovery nights and a complication contingency visible.",
     ],
     costComponents: [
       ...COMMON_INCLUSIONS,
       {
         label: "Procedure-specific scope",
-        detail:
-          "The estimate should state uterus, cervix, each tube and each ovary separately, plus any adhesiolysis, endometriosis treatment or supporting procedure.",
+        detail: `${profile.distinction} Every additional procedure should be named.`,
       },
     ],
     costDrivers: profile.drivers,
     whyQuotesDiffer:
-      "Two laparoscopic hysterectomy estimates may assume different organ scope, complexity, surgeon and assistant fees, instruments, uterine-removal method, pathology, room category and conversion terms. Compare each line rather than only the total.",
+      `Two ${profile.shortName} estimates may assume different scope, complexity, staff, equipment, pathology, room category and complication terms. Compare each line.`,
     inclusions: [
       ...COMMON_INCLUSIONS,
       {
-        label: "Named organ and access plan",
-        detail:
-          "Only the explicitly stated total or supracervical hysterectomy, tube or ovary plan and laparoscopic access are included.",
+        label: "Named procedure plan",
+        detail: `Only the explicitly stated ${profile.shortName} scope and approach are included.`,
       },
     ],
     exclusions: COMMON_EXCLUSIONS,
     approachComparison: {
-      heading: "Laparoscopic, vaginal, robotic and open hysterectomy",
+      heading: `Approaches and alternatives to ${profile.procedure}`,
       intro: [
         "Access route is a clinical decision, not a quality ladder.",
-        "Uterine size, prior surgery, prolapse, cancer concern, health and surgeon expertise guide selection. Open conversion remains a safety option.",
+        "Anatomy, prior treatment, disease extent, health, fertility goals and specialist expertise guide selection.",
       ],
       rows: profile.approaches.map((item) => ({
         name: item.label,
@@ -357,13 +355,13 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
         detail: item.detail,
       })),
     },
-    overviewHeading: "What Is a Laparoscopic Hysterectomy?",
-    whoHeading: "When Might Laparoscopic Hysterectomy Be Considered?",
+    overviewHeading: `What Is ${profile.procedure}?`,
+    whoHeading: `When Might ${profile.procedure} Be Considered?`,
     overview: {
       what: [
         profile.definition,
-        "Total removes uterus and cervix; tubes and ovaries require separate decisions.",
-        "Hysterectomy ends the ability to carry a pregnancy but does not automatically cause menopause.",
+        profile.anatomy,
+        profile.distinction,
       ],
       who: [
         profile.candidacy,
@@ -390,38 +388,28 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
     topicSections: [
       {
         id: "organs-and-terminology",
-        heading: "Uterus, cervix, tubes and ovaries: what is actually removed?",
-        paragraphs: [
-          "Total hysterectomy removes uterus and cervix, not automatically tubes or ovaries. Record each side separately. Ovary removal may cause surgical menopause; conservation preserves hormone production but cannot prevent every later ovarian condition.",
-        ],
+        heading: `Anatomy and scope for ${profile.procedure}`,
+        paragraphs: [`${profile.anatomy} ${profile.distinction}`],
       },
       {
         id: "technique-and-conversion",
-        heading: "How the laparoscopic operation is performed — and why plans can change",
-        paragraphs: [
-          "Ports admit a camera and instruments; the surgeon protects ureters, controls uterine vessels and pedicles, removes consented organs and closes the cuff when applicable. Bleeding, adhesions, organ concern or extraction difficulty may require open conversion.",
-        ],
+        heading: `How ${profile.procedure} is performed`,
+        paragraphs: [`${profile.technique} ${profile.conversion}`],
       },
       {
         id: "pathology",
         heading: "Why pathology remains part of the pathway",
-        paragraphs: [
-          "Label every specimen for histopathology. Ask who explains the endometrium, myometrium, cervix, tube or ovary findings, which extra tests cost more and how unexpected disease reaches gynecologic oncology.",
-        ],
+        paragraphs: [profile.pathology],
       },
       {
         id: "specific-risks",
         heading: "Risks and safety considerations",
-        paragraphs: [
-          "Consent should address bleeding, infection, VTE, anaesthesia, bladder, ureter, bowel or vessel injury, urinary retention, cuff problems, port hernia and conversion. Risk varies with anatomy, previous surgery, anaemia, medicines and health.",
-        ],
+        paragraphs: [profile.risks],
       },
       {
         id: "recovery-and-travel",
         heading: "Recovery, follow-up and international travel",
-        paragraphs: [
-          "Recovery checks pain, walking, VTE prevention, wounds, bleeding, bladder and bowel function. Discharge is not fitness to fly; keep travel flexible through pathology review and individual clearance.",
-        ],
+        paragraphs: [`${profile.recovery} ${profile.followUp} Discharge is not fitness to fly.`],
       },
     ],
     fullPathway: {
@@ -436,8 +424,8 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
           detail: "Confirm indication, alternatives, goals and fertility implications.",
         },
         {
-          label: "Organ-scope decision",
-          detail: "Record cervix, each tube and each ovary as removed or conserved.",
+          label: "Scope decision",
+          detail: profile.distinction,
         },
         {
           label: "Approach and alternatives",
@@ -473,13 +461,13 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
         detail: `A named ${profile.specialist} assesses the case.`,
       },
       {
-        label: "Clarify fertility",
-        detail: "Hysterectomy permanently ends the ability to carry a pregnancy.",
+        label: "Clarify goals",
+        detail: "Discuss symptoms, fertility, organ preservation and realistic aims.",
       },
       { label: "Confirm candidacy", detail: "Review alternatives, anatomy and operative risk." },
       {
         label: "Write the organ scope",
-        detail: "List uterus, cervix, both tubes and both ovaries.",
+        detail: profile.distinction,
       },
       {
         label: "Compare estimates",
@@ -494,7 +482,7 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
         label: "Complete consent",
         detail: "Review risks, alternatives and possible plan changes.",
       },
-      { label: "Undergo surgery", detail: "Complete the consented laparoscopic operation." },
+      { label: "Undergo treatment", detail: `Complete the consented ${profile.shortName}.` },
       {
         label: "Monitored recovery",
         detail: "Check mobility, VTE plan, function, wounds and medicines.",
@@ -515,7 +503,7 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
     destinations: DESTINATIONS,
     destinationIntro: [
       "India and United States values use stored GAF catalog ranges. Other countries require direct quotations because comparable procedure-specific packages are not reliably available in the catalog.",
-      "A meaningful comparison holds indication, exact organs removed or conserved, surgical route, surgeon, licensed facility, anaesthesia, pathology, ward nights, conversion and complication terms constant.",
+      "A meaningful comparison holds indication, exact scope, approach, clinician, licensed facility, anaesthesia, pathology, ward nights and complication terms constant.",
     ],
     destinationNote:
       "International comparisons are indicative and may not represent identical packages. Anatomy, additional procedures, conversion, complications, currency and length of stay can change the final amount.",
@@ -529,20 +517,20 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
       "No provider is ranked and no outcome is promised. Suspected cancer needing specialist staging, unstable illness, severe anaemia, inadequate records or safer established care near home may make an elective trip inappropriate.",
     ],
     questionsToAsk: [
-      "Why is hysterectomy considered, and what alternatives remain?",
+      `Why is ${profile.shortName} considered, and what alternatives remain?`,
       "What diagnosis and treatment goal are documented?",
       `Who is the named ${profile.specialist}, and at which campus?`,
-      "Is total or supracervical hysterectomy planned?",
-      "Which cervix, tube and ovary decisions are consented?",
-      "What could change ovarian conservation during surgery?",
-      "How were uterine size, adhesions and prior surgery assessed?",
+      "What exact anatomy, lesions or compartments will be treated?",
+      "Which organs or structures will be preserved or removed?",
+      "What findings could change the consented scope?",
+      "How were disease extent, adhesions and prior treatment assessed?",
       "Which tests, imaging and tissue sampling are required?",
       "Which surgeon, anaesthesia and theatre fees are included?",
-      "Which instruments and specimen-removal method are assumed?",
-      "How was unsuspected malignancy considered before extraction?",
-      "What could require open conversion or additional surgery?",
+      "Which equipment, implants and consumables are assumed?",
+      "How will specimens be removed, labelled and examined?",
+      "What could require staged, converted or additional surgery?",
       "How are transfusion, organ repair, ICU and extra nights billed?",
-      "What urinary-tract, bowel and bleeding support exists on campus?",
+      "What specialist and emergency support exists on campus?",
       "How many nights and which room category are included?",
       "Which medicines and VTE-prevention measures are included?",
       "Which pathology tests and result review are included?",
@@ -553,52 +541,52 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
     ],
     faqs: [
       {
-        q: "How much does laparoscopic hysterectomy cost in India?",
+        q: `How much does ${profile.shortName} cost in India?`,
         a: "[INDIA_COST] is a national planning range, not a quotation. Scope, complexity, pathology and stay determine the final bill.",
       },
       {
-        q: "What is a laparoscopic hysterectomy?",
-        a: "It removes the uterus with camera-guided instruments through small abdominal ports.",
+        q: `What is ${profile.shortName}?`,
+        a: profile.definition,
       },
       {
-        q: "Does total hysterectomy mean both ovaries are removed?",
-        a: "No. Total means uterus plus cervix; ovary removal or conservation is decided separately.",
+        q: "What is the key clinical distinction?",
+        a: profile.distinction,
       },
       {
-        q: "What happens to the cervix and fallopian tubes?",
-        a: "Total hysterectomy removes the cervix. Each tube must be separately listed as removed or retained.",
+        q: "Which anatomy matters?",
+        a: profile.anatomy,
       },
       {
         q: "Who may be considered for this operation?",
-        a: "Selected patients with an established indication after alternatives, fertility wishes, anatomy and risk are reviewed.",
+        a: profile.candidacy,
       },
       {
         q: "What assessment is needed first?",
-        a: "Clinical review, examination, imaging, blood count and anaesthesia assessment; some patients need tissue sampling.",
+        a: profile.evaluation,
       },
       {
         q: "How is the operation performed?",
-        a: "Ports admit a camera and instruments; vessels and pedicles are controlled before consented organs are removed. Open conversion remains possible.",
+        a: profile.technique,
       },
       {
-        q: "How long does laparoscopic hysterectomy take?",
-        a: "Often about 1–3 hours, with longer surgery for difficult anatomy or additional procedures.",
+        q: `How long does ${profile.shortName} take?`,
+        a: `${profile.duration}. Findings can change timing.`,
       },
       {
         q: "How long is the hospital stay?",
-        a: "Often day care or 1–2 nights. Clinical recovery, not the package calendar, determines discharge.",
+        a: `${profile.admission} Clinical criteria determine discharge.`,
       },
       {
         q: "What are the important risks?",
-        a: "Bleeding, infection, VTE, anaesthesia problems, organ injury, cuff problems, hernia and open conversion require individualized consent.",
+        a: profile.risks,
       },
       {
         q: "When can an international patient fly home?",
-        a: "There is no fixed date. The team must assess wounds, bleeding, mobility, organ function and VTE risk.",
+        a: `There is no fixed date. ${profile.recovery} The team must confirm fitness.`,
       },
       {
         q: "What follow-up is needed after returning home?",
-        a: "A local gynecologist should review recovery and receive the operation note, discharge summary and pathology.",
+        a: profile.followUp,
       },
     ],
     doctorHeading: `${profile.procedure} surgeons in India`,
@@ -608,23 +596,21 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
     hospitalHeading: `Hospitals for ${profile.procedure} in India`,
     cityHospitalHeading: `${profile.procedure} hospitals in [CITY]`,
     hospitalIntro:
-      `Cards follow exact live CMS entity relationships for ${profile.procedure}. A general Gynecology, laparoscopy or accreditation label does not establish current case acceptance, conversion support or outcomes.`,
+      `Cards follow exact live CMS entity relationships for ${profile.procedure}. A general Gynecology or accreditation label does not establish current case acceptance, procedure support or outcomes.`,
     relatedProcedures: profile.related,
     figures: [
       {
         after: "overview",
         src: `/images/cost/gynecology/${slug}-anatomy.webp`,
         alt: profile.imageAlts[0],
-        caption:
-          "Educational pelvic anatomy diagram distinguishing uterus and cervix removal from tube and ovary decisions; not patient-specific.",
+        caption: `Educational anatomy and scope diagram for ${profile.shortName}; not patient-specific.`,
         fit: "contain",
       },
       {
         after: "how",
         src: `/images/cost/gynecology/${slug}-procedure.webp`,
         alt: profile.imageAlts[1],
-        caption:
-          "Conceptual laparoscopic pathway; port sites, organ scope and technique depend on assessment and consent.",
+        caption: `Conceptual ${profile.shortName} pathway; scope and technique depend on assessment and consent.`,
         fit: "contain",
       },
       {
@@ -639,6 +625,71 @@ function createGynecologyArticle(profile: GynecologyProfile): CostArticle {
   };
 }
 
+type GynecologyProfileInput = Pick<
+  GynecologyProfile,
+  | "procedure"
+  | "shortName"
+  | "specialist"
+  | "definition"
+  | "candidacy"
+  | "anatomy"
+  | "distinction"
+  | "evaluation"
+  | "technique"
+  | "approaches"
+  | "risks"
+  | "drivers"
+  | "related"
+  | "imageAlts"
+> &
+  Partial<GynecologyProfile>;
+
+function completeProfile(input: GynecologyProfileInput): GynecologyProfile {
+  const defaults: GynecologyProfile = {
+    ...input,
+    conversion:
+      "Unexpected anatomy, bleeding or adjacent-organ concern can change or extend the planned procedure; consent and quotation should explain that possibility.",
+    duration: "commonly 1–3 hours, with timing dependent on scope and findings",
+    admission:
+      "Care may be outpatient, day surgery or include hospital nights according to approach and recovery.",
+    recovery:
+      "Recovery follows pain, bleeding, mobility, bladder and bowel function, wound or vaginal care and VTE assessment rather than a fixed calendar.",
+    pathology:
+      "Removed tissue should be labelled for histopathology, with a named clinician responsible for communicating the final report and arranging any further review.",
+    urgent:
+      "heavy bleeding, fainting, fever, worsening pain, persistent vomiting, chest pain, breathlessness, leg swelling, urinary difficulty or wound problems",
+    records: [
+      "Gynecology consultation and symptom timeline",
+      "Pelvic imaging with reports and image files",
+      "Relevant cervical, endometrial or lesion pathology",
+      "Prior pelvic operation notes",
+      "Current laboratory and medical assessment",
+    ],
+    followUp:
+      "A local gynecologist should receive the procedure note, discharge summary and pathology and review symptoms, healing and further care.",
+    quoteQuestions: [
+      "What could alter the planned scope?",
+      "When will pathology be available?",
+      "Who manages a complication after return?",
+    ],
+    campusFocus:
+      "Confirm the named clinician, exact procedure, anaesthesia, pathology and relevant emergency support at that campus.",
+    // Explicit values below override these safe defaults.
+    ...input,
+  };
+  return defaults;
+}
+
+function procedureDrivers(...specific: LabelledDetail[]): LabelledDetail[] {
+  return [
+    ...specific,
+    { label: "Anaesthesia and medical risk", detail: "Comorbidity can change testing, monitoring and stay." },
+    { label: "Facility and admission", detail: "Day care, ward and higher-acuity care are different scopes." },
+    { label: "Pathology scope", detail: "Routine histology and additional studies must be compared separately." },
+    { label: "Unexpected findings", detail: "Added procedures or complications change the episode." },
+  ];
+}
+
 const profiles: GynecologyProfile[] = [
   {
     procedure: "Laparoscopic Hysterectomy",
@@ -649,15 +700,15 @@ const profiles: GynecologyProfile[] = [
     candidacy:
       "It may be considered for selected patients with fibroids, adenomyosis, persistent abnormal bleeding, endometriosis or prolapse after alternatives, fertility wishes, anatomy and operative risk are reviewed. A diagnosis alone does not establish candidacy.",
     anatomy:
-      "The uterus can carry a pregnancy; its lower neck is the cervix. Fallopian tubes connect near it, while the separate ovaries produce hormones. Removing the uterus does not automatically remove tubes or ovaries.",
+      "The uterus can carry pregnancy; its lower neck is the cervix. Separate fallopian tubes and hormone-producing ovaries are not automatically removed.",
     distinction:
-      "A total hysterectomy removes uterus and cervix; it does not mean ovary removal. Supracervical hysterectomy retains the cervix. Salpingectomy removes a tube and oophorectomy an ovary, so ovarian conservation requires separate consent.",
+      "Total means uterus plus cervix, not ovary removal. Supracervical surgery retains the cervix; tube removal and ovarian conservation need separate consent.",
     evaluation:
       "Assessment reviews symptoms, fertility goals, pelvic examination, indicated imaging, blood count and anaesthesia risk. Cervical screening, endometrial sampling or malignancy-focused review may also be needed.",
     technique:
-      "Under general anaesthesia, carbon dioxide creates working space and instruments enter through small ports. The surgeon identifies the ureters, controls uterine vessels and pedicles, separates the consented organs, closes the vaginal cuff when applicable and removes the specimen by the planned method.",
+      "Carbon dioxide creates space for camera ports. The surgeon protects ureters, controls uterine vessels and pedicles, removes consented organs and closes the vaginal cuff.",
     conversion:
-      "Open conversion is a safety option, not a failure. Adhesions, bleeding, unexpected anatomy, bowel or urinary-tract concern, specimen size or unsafe extraction can require a changed route.",
+      "Adhesions, bleeding, bowel or urinary-tract concern, anatomy or extraction may require open conversion as a safety step.",
     approaches: [
       {
         label: "Conventional laparoscopic hysterectomy",
@@ -690,7 +741,7 @@ const profiles: GynecologyProfile[] = [
     risks:
       "Risks include bleeding or transfusion, infection, venous thromboembolism, anaesthesia problems, injury to bladder, ureters, bowel, vessels or nerves, urinary retention, vaginal-cuff bleeding or separation, port hernia, open conversion and further treatment after pathology.",
     urgent:
-      "heavy bleeding, fainting, chest pain, breathlessness, one-sided leg swelling, fever, worsening abdominal pain, persistent vomiting, inability to pass urine, wound drainage or opening",
+      "heavy bleeding, fainting, breathlessness, leg swelling, fever, worsening pain, vomiting, urinary difficulty or wound opening",
     drivers: [
       {
         label: "Indication, uterine size and anatomy",
@@ -735,13 +786,13 @@ const profiles: GynecologyProfile[] = [
     ],
     records: [
       "Gynecology consultation and symptom history",
-      "Pelvic ultrasound, MRI or other relevant imaging with reports and image files",
-      "Cervical screening and endometrial biopsy or hysteroscopy reports when obtained",
+      "Pelvic imaging with reports and files",
+      "Relevant cervical or endometrial reports",
       "Prior abdominal or pelvic operation notes and pathology",
       "Blood count, blood group and other requested preoperative tests",
     ],
     followUp:
-      "Follow-up reviews incisions, vaginal-cuff healing, bleeding, bladder and bowel symptoms, and pathology. Send the operation note, discharge summary and report to the local gynecologist.",
+      "Review incisions, vaginal cuff, symptoms and pathology; send all reports to the local gynecologist.",
     quoteQuestions: [
       "Is cystoscopy planned or available if urinary-tract assessment is needed?",
       "Is a vaginal-cuff review included before departure?",
@@ -756,9 +807,446 @@ const profiles: GynecologyProfile[] = [
       "Laparoscopic hysterectomy recovery pathway showing monitored recovery, early mobility and VTE prevention, incision care, pathology review and follow-up",
     ],
   },
+  completeProfile({
+    procedure: "Robotic Hysterectomy",
+    shortName: "robotic hysterectomy",
+    specialist: "gynecologist trained in robotic minimally invasive surgery",
+    definition: "Robotic hysterectomy is laparoscopic uterus removal performed with surgeon-controlled wristed instruments at a console.",
+    candidacy: "It may suit selected benign or malignant indications after alternatives, anatomy, fertility, previous surgery and anaesthetic risk are reviewed.",
+    anatomy: "The planned operation must separately name uterus, cervix, each tube and each ovary; port position depends on pelvic anatomy.",
+    distinction: "The robot is an instrument platform, not an autonomous surgeon or guaranteed superior result. Total hysterectomy still means uterus plus cervix, not automatic tube or ovary removal.",
+    evaluation: "Review imaging, uterine size, prior operations, tissue diagnosis when indicated and whether robotic access offers a practical surgical route.",
+    technique: "After ports and docking, the surgeon controls a camera and wristed instruments from a console, dissects pedicles and vessels, removes consented organs and sends tissue to pathology.",
+    conversion: "Docking, extra equipment and trained-team time affect cost; adhesions, bleeding or anatomy may require conventional laparoscopy or laparotomy.",
+    approaches: [
+      { label: "Robotic total hysterectomy", detail: "Removes uterus and cervix using console-controlled instruments." },
+      { label: "Conventional laparoscopy", detail: "Uses handheld instruments without robotic docking." },
+      { label: "Vaginal or open route", detail: "May better fit selected prolapse, uterine size or complexity." },
+    ],
+    risks: "Risks include bleeding, infection, VTE, anaesthesia problems, port injury, bladder, ureter, bowel or vessel injury, cuff problems and conversion.",
+    drivers: procedureDrivers(
+      { label: "Console and robotic equipment", detail: "Platform, instruments and docking are material resource lines." },
+      { label: "Organ scope", detail: "Cervix, tubes, ovaries and staging steps must be explicit." },
+      { label: "Docking and theatre time", detail: "Complex anatomy can extend console and operating time." },
+      { label: "Conversion plan", detail: "Laparoscopic or open conversion changes resources and recovery." },
+    ),
+    related: ["Laparoscopic Hysterectomy", "Vaginal Hysterectomy", "Abdominal Hysterectomy"],
+    imageAlts: [
+      "Patient-education pelvic schematic showing uterus, cervix, tubes and ovaries aligned with robotic camera and wristed instrument access points",
+      "Numbered robotic hysterectomy pathway showing assessment, port planning, docking, console dissection, organ removal and labelled pathology",
+      "Robotic hysterectomy recovery schematic showing port monitoring, mobility and VTE prevention, vaginal-cuff care, pathology and follow-up",
+    ],
+  }),
+  completeProfile({
+    procedure: "Vaginal Hysterectomy",
+    shortName: "vaginal hysterectomy",
+    specialist: "gynecologist experienced in vaginal and prolapse surgery",
+    definition: "Vaginal hysterectomy removes the uterus through the vagina without routine abdominal ports or a laparotomy incision.",
+    candidacy: "It may be considered for selected mobile uteri, prolapse or benign disease after uterine size, descent, previous surgery and alternatives are assessed.",
+    anatomy: "Vaginal access follows uterine descent through the vaginal canal; apical support, bladder, ureters and rectum remain important neighbouring structures.",
+    distinction: "The vaginal route describes access, not organ scope. Total still means uterus and cervix; tube or ovary removal and prolapse suspension require separate consent.",
+    evaluation: "Pelvic examination should document uterine mobility, prolapse compartments, apical support, urinary or bowel symptoms, imaging and tissue sampling when indicated.",
+    technique: "Through a vaginal incision, supporting pedicles and uterine vessels are controlled, the uterus is removed, the cuff is closed and planned apical support or repair is completed.",
+    approaches: [
+      { label: "Vaginal hysterectomy alone", detail: "Removes the uterus through the vagina." },
+      { label: "With prolapse repair", detail: "Adds separately consented compartment or apical work." },
+      { label: "Laparoscopic or open route", detail: "May be selected when vaginal access is unsuitable." },
+    ],
+    risks: "Risks include bleeding, infection, VTE, bladder, ureter or bowel injury, urinary retention, cuff problems, prolapse recurrence and need for another route.",
+    drivers: procedureDrivers(
+      { label: "Uterine descent and size", detail: "Mobility and access determine technical work." },
+      { label: "Prolapse compartments", detail: "Apical, anterior or posterior repairs add distinct scope." },
+      { label: "Tube or ovary access", detail: "Adnexal work can be difficult vaginally and must be planned." },
+      { label: "Route change", detail: "Laparoscopic assistance or laparotomy changes the bill." },
+    ),
+    related: ["Pelvic Organ Prolapse Surgery", "Pelvic Floor Repair", "Laparoscopic Hysterectomy"],
+    imageAlts: [
+      "Patient-education sagittal pelvic schematic showing uterine descent, vaginal removal route, bladder, rectum and the apical support relationship",
+      "Numbered vaginal hysterectomy pathway showing prolapse assessment, vaginal access, pedicle control, uterine removal, cuff closure and pathology",
+      "Vaginal hysterectomy recovery pathway showing bladder checks, vaginal bleeding review, mobility and VTE prevention, cuff follow-up and pathology",
+    ],
+  }),
+  completeProfile({
+    procedure: "Abdominal Hysterectomy",
+    shortName: "abdominal hysterectomy",
+    specialist: "gynecologist experienced in open pelvic surgery",
+    definition: "Abdominal hysterectomy removes the uterus through a laparotomy incision in the abdominal wall.",
+    candidacy: "It may be selected for very large or fixed anatomy, extensive disease, planned staging or when minimally invasive access is unsuitable after individual review.",
+    anatomy: "The laparotomy provides open access to uterus, cervix, tubes, ovaries, ureters, bladder, bowel and pelvic vessels.",
+    distinction: "Abdominal describes the incision, not automatic ovary removal. Total and supracervical scope and every tube or ovary decision remain separate.",
+    evaluation: "Review indication, imaging, anaemia, previous laparotomy, adhesions, tissue diagnosis, VTE risk, wound risk and possible need for additional specialists.",
+    technique: "Through a transverse or vertical incision, the surgeon exposes the pelvis, controls pedicles and uterine vessels, removes the consented structures and closes the abdominal layers.",
+    duration: "often about 1–3 hours, longer with extensive disease or added procedures",
+    admission: "Open surgery commonly requires several hospital nights, determined by pain, mobility, diet, bladder, bowel and wound recovery.",
+    recovery: "Laparotomy recovery is generally longer than minimally invasive recovery; lifting, driving, work and flying await wound, mobility and VTE assessment.",
+    approaches: [
+      { label: "Transverse laparotomy", detail: "A lower horizontal incision for suitable exposure." },
+      { label: "Vertical midline laparotomy", detail: "May provide broader access for large or complex disease." },
+      { label: "Minimally invasive route", detail: "Considered when anatomy and indication permit." },
+    ],
+    risks: "Risks include bleeding, transfusion, infection, VTE, wound separation or hernia, ileus, adhesions and injury to bladder, ureter, bowel, vessels or nerves.",
+    drivers: procedureDrivers(
+      { label: "Incision and exposure", detail: "Transverse and vertical access serve different operative needs." },
+      { label: "Disease and adhesions", detail: "Large, fixed or complex pathology extends dissection." },
+      { label: "Organ scope", detail: "Cervix, tubes, ovaries and staging remain separate decisions." },
+      { label: "Open recovery", detail: "Ward nights, pain care and wound support affect cost." },
+    ),
+    related: ["Laparoscopic Hysterectomy", "Robotic Hysterectomy", "Vaginal Hysterectomy"],
+    imageAlts: [
+      "Patient-education abdominal and pelvic schematic showing transverse and vertical laparotomy access to uterus, cervix, adnexa and neighbouring organs",
+      "Numbered abdominal hysterectomy pathway showing assessment, laparotomy, pelvic exposure, vessel control, consented organ removal and pathology",
+      "Abdominal hysterectomy recovery pathway showing ward monitoring, bowel and bladder recovery, VTE prevention, incision care and pathology review",
+    ],
+  }),
+  completeProfile({
+    procedure: "Laparoscopic Myomectomy",
+    shortName: "laparoscopic myomectomy",
+    specialist: "minimally invasive gynecologist experienced in uterine-sparing fibroid surgery",
+    definition: "Laparoscopic myomectomy removes selected fibroids through abdominal ports while retaining and repairing the uterus.",
+    candidacy: "It may be considered for selected symptomatic fibroids when uterine preservation matters and fibroid size, number, position and alternatives support laparoscopy.",
+    anatomy: "Fibroids may be subserosal, intramural or near the endometrial cavity; FIGO type or cavity relationship helps define dissection and repair.",
+    distinction: "Myomectomy preserves the uterus but does not guarantee fertility, pregnancy or freedom from new fibroids. It differs from hysterectomy and hysteroscopic cavity resection.",
+    evaluation: "Map fibroid number, size, FIGO type and cavity relationship with imaging; review bleeding, anaemia, fertility goals, prior treatment and malignancy concern.",
+    technique: "Ports provide access for uterine incision, fibroid enucleation, bleeding control and layered uterine repair; specimen extraction follows the assessed tissue risk.",
+    conversion: "Bleeding, cavity entry, many or deep fibroids, weak repair or extraction concern may require a larger incision, staged plan or hysterectomy only within prior emergency consent.",
+    pathology: "Every removed fibroid should be labelled for histopathology; unexpected findings require specialist review.",
+    approaches: [
+      { label: "Laparoscopic myomectomy", detail: "Port-based enucleation and layered uterine repair." },
+      { label: "Robotic myomectomy", detail: "Uses console-controlled instruments and added equipment." },
+      { label: "Hysteroscopic or open myomectomy", detail: "Selected for cavity lesions or extensive fibroid burden." },
+    ],
+    risks: "Risks include bleeding, transfusion, infection, adhesions, cavity entry, organ injury, conversion, incomplete removal and uterine-scar implications for future pregnancy.",
+    drivers: procedureDrivers(
+      { label: "Fibroid number and FIGO type", detail: "Multiple deep fibroids require more dissection." },
+      { label: "Cavity relationship", detail: "Entry can change repair and future counselling." },
+      { label: "Uterine repair", detail: "Layer count and bleeding control affect theatre time." },
+      { label: "Specimen extraction", detail: "Method follows size and malignancy assessment." },
+    ),
+    quoteQuestions: ["What FIGO types are mapped?", "Is cavity entry expected?", "What pregnancy counselling follows the uterine repair?"],
+    related: ["Robotic Myomectomy", "Hysteroscopic Myomectomy", "Laparoscopic Hysterectomy"],
+    imageAlts: [
+      "Patient-education uterine schematic showing subserosal, intramural and cavity-related fibroids with FIGO relationship and preserved uterine wall",
+      "Numbered laparoscopic myomectomy pathway showing fibroid mapping, ports, uterine incision, enucleation, layered repair and pathology",
+      "Laparoscopic myomectomy recovery pathway showing bleeding review, port care, uterine healing, pathology and individualized pregnancy counselling",
+    ],
+  }),
+  completeProfile({
+    procedure: "Robotic Myomectomy",
+    shortName: "robotic myomectomy",
+    specialist: "gynecologist trained in robotic uterine-sparing fibroid surgery",
+    definition: "Robotic myomectomy uses surgeon-controlled console instruments to remove selected fibroids and repair the retained uterus.",
+    candidacy: "It may suit selected patients after fibroid burden, FIGO type, cavity relationship, fertility goals, alternatives and operative risk are reviewed.",
+    anatomy: "Subserosal, intramural and cavity-adjacent fibroids distort different uterine layers and require a planned repair.",
+    distinction: "Robotics is a tool with console, docking and instrument costs, not guaranteed superiority. Uterine preservation does not promise fertility or pregnancy.",
+    evaluation: "Imaging should map every material fibroid, FIGO or cavity relationship and uterine wall; review anaemia, prior surgery and tissue-extraction safety.",
+    technique: "After docking, the surgeon uses wristed instruments to incise the uterus, enucleate planned fibroids, control bleeding and perform layered uterine closure.",
+    conversion: "Unexpected bleeding, extensive burden or unsafe extraction may require conventional laparoscopy, mini-laparotomy, staged work or other prior-consented action.",
+    approaches: [
+      { label: "Robotic myomectomy", detail: "Console-assisted fibroid removal and uterine suturing." },
+      { label: "Conventional laparoscopy", detail: "Handheld port instruments without robotic equipment." },
+      { label: "Hysteroscopic or open route", detail: "Chosen for cavity lesions or extensive burden." },
+    ],
+    risks: "Risks include bleeding, transfusion, infection, adhesions, cavity entry, organ injury, conversion, residual fibroids and uterine-scar considerations in pregnancy.",
+    drivers: procedureDrivers(
+      { label: "Robot and instruments", detail: "Console, docking and wristed consumables add cost." },
+      { label: "Fibroid burden and FIGO type", detail: "Number, depth and position change work." },
+      { label: "Layered uterine repair", detail: "Defect depth affects suturing time." },
+      { label: "Extraction method", detail: "Size and malignancy review shape removal." },
+    ),
+    quoteQuestions: ["Which robotic instruments are included?", "What FIGO map supports the plan?", "What pregnancy advice follows repair?"],
+    related: ["Laparoscopic Myomectomy", "Hysteroscopic Myomectomy", "Robotic Hysterectomy"],
+    imageAlts: [
+      "Patient-education uterine schematic showing multiple FIGO-related fibroids and robotic wristed instruments positioned for uterine-sparing repair",
+      "Numbered robotic myomectomy pathway showing mapping, docking, console enucleation, bleeding control, layered uterine closure and pathology",
+      "Robotic myomectomy recovery pathway showing port care, anaemia review, uterine healing, pathology and fertility or pregnancy counselling",
+    ],
+  }),
+  completeProfile({
+    procedure: "Hysteroscopic Myomectomy",
+    shortName: "hysteroscopic myomectomy",
+    specialist: "gynecologist experienced in operative hysteroscopy",
+    definition: "Hysteroscopic myomectomy removes selected submucosal fibroid tissue through the cervix from inside the uterine cavity, without abdominal incisions.",
+    candidacy: "It may be considered for selected cavity-distorting fibroids after symptoms, FIGO type, intramural extension, fertility goals and alternatives are reviewed.",
+    anatomy: "FIGO type 0, 1 or 2 relationships describe how much fibroid lies in the cavity versus myometrium and help anticipate complete or staged resection.",
+    distinction: "This treats cavity-facing fibroids, not all uterine fibroids. A deep lesion may require staged resection; uterine preservation does not promise fertility.",
+    evaluation: "Ultrasound, saline imaging or hysteroscopy maps size, number, FIGO type, myometrial margin and other cavity pathology; review anaemia and pregnancy possibility.",
+    technique: "A hysteroscope passes through the cervix, distension fluid opens the cavity and a resectoscope or tissue-removal system removes visible fibroid under direct vision.",
+    conversion: "Fluid-deficit limits, bleeding, perforation concern or deep residual fibroid should stop or stage resection rather than force completion.",
+    admission: "Usually day surgery, with observation guided by bleeding, pain, fluid balance and anaesthesia recovery.",
+    recovery: "Monitor cramping, vaginal bleeding, infection symptoms and fluid-related concerns; there are no abdominal port wounds.",
+    approaches: [
+      { label: "Resectoscopic myomectomy", detail: "Loop resection under direct cavity vision." },
+      { label: "Hysteroscopic tissue removal", detail: "Mechanical removal for selected intracavitary lesions." },
+      { label: "Staged resection", detail: "A planned second sitting for deep or large lesions." },
+    ],
+    risks: "Risks include bleeding, infection, uterine perforation, fluid overload or electrolyte disturbance, intrauterine adhesions, incomplete resection and repeat treatment.",
+    drivers: procedureDrivers(
+      { label: "FIGO type and size", detail: "Intramural extension changes difficulty and staging." },
+      { label: "Fluid management", detail: "Distension medium and deficit monitoring are essential." },
+      { label: "Resection system", detail: "Loop and mechanical devices have different consumables." },
+      { label: "Staged treatment", detail: "A second procedure is a separate episode." },
+    ),
+    quoteQuestions: ["What FIGO type is treated?", "What fluid-deficit limit is used?", "Could resection be staged?"],
+    related: ["Laparoscopic Myomectomy", "Robotic Myomectomy", "Hysteroscopic Polypectomy"],
+    imageAlts: [
+      "Patient-education uterine cavity schematic showing FIGO zero one and two submucosal fibroid relationships and the transcervical hysteroscope route",
+      "Numbered hysteroscopic myomectomy pathway showing cavity mapping, cervical access, fluid monitoring, direct resection, completion check and pathology",
+      "Hysteroscopic myomectomy recovery pathway showing fluid-balance observation, bleeding and perforation warnings, pathology and staged-review planning",
+    ],
+  }),
+  completeProfile({
+    procedure: "Endometriosis Surgery",
+    shortName: "endometriosis surgery",
+    specialist: "gynecologist experienced in endometriosis and complex pelvic surgery",
+    definition: "Endometriosis surgery identifies and treats selected endometriosis lesions, adhesions or endometriomas through an individualized usually laparoscopic plan.",
+    candidacy: "It may be considered for selected persistent pain, organ effects, endometrioma or fertility-related indications after medical options and goals are reviewed.",
+    anatomy: "Disease may be superficial peritoneal, deep near bowel, bladder, ureter or nerves, or ovarian as an endometrioma; adhesions can distort pelvic anatomy.",
+    distinction: "Lesion ablation, excision, adhesiolysis and ovarian endometrioma surgery are different scopes. Surgery cannot guarantee pain relief, fertility or no recurrence.",
+    evaluation: "Map symptoms, prior treatment, pelvic imaging, ovarian reserve considerations and documented bowel, bladder or ureter involvement; involve relevant specialists when indicated.",
+    technique: "Laparoscopy surveys the pelvis, restores anatomy where safe and excises or ablates consented lesions; endometrioma surgery balances cyst treatment with ovarian tissue preservation.",
+    conversion: "Unexpected deep disease may require limiting surgery, staged multidisciplinary treatment or additional bowel, bladder or ureter work only within documented consent.",
+    approaches: [
+      { label: "Superficial lesion treatment", detail: "Excision or ablation of selected peritoneal disease." },
+      { label: "Deep endometriosis excision", detail: "Complex dissection near affected pelvic organs." },
+      { label: "Endometrioma surgery", detail: "Ovarian cyst treatment balanced against ovarian reserve." },
+    ],
+    risks: "Risks include bleeding, infection, adhesions, reduced ovarian reserve, bladder, ureter, bowel, vessel or nerve injury, fistula, conversion, persistent symptoms and recurrence.",
+    drivers: procedureDrivers(
+      { label: "Disease depth and sites", detail: "Superficial and deep organ disease are not comparable." },
+      { label: "Adhesions", detail: "Distorted anatomy adds dissection and risk." },
+      { label: "Multidisciplinary team", detail: "Bowel, bladder or ureter involvement may add specialists." },
+      { label: "Ovarian reserve", detail: "Endometrioma decisions require individualized counselling." },
+    ),
+    quoteQuestions: ["Which lesions are mapped?", "Which additional specialists are documented?", "How is ovarian reserve considered?"],
+    related: ["Ovarian Cyst Surgery", "Laparoscopic Myomectomy", "Laparoscopic Hysterectomy"],
+    imageAlts: [
+      "Patient-education pelvic schematic distinguishing superficial endometriosis, deep lesions near bowel bladder and ureter, adhesions and ovarian endometrioma",
+      "Numbered endometriosis surgery pathway showing mapping, multidisciplinary planning, laparoscopy, lesion treatment, organ checks and pathology",
+      "Endometriosis recovery pathway showing pain and organ-function monitoring, port care, pathology, ovarian-reserve discussion and symptom follow-up",
+    ],
+  }),
+  completeProfile({
+    procedure: "Hysteroscopic Polypectomy",
+    shortName: "hysteroscopic polypectomy",
+    specialist: "gynecologist experienced in operative hysteroscopy",
+    definition: "Hysteroscopic polypectomy removes an endometrial polyp under direct vision from inside the uterine cavity through the cervix.",
+    candidacy: "It may be considered for selected abnormal bleeding, cavity findings or sampling needs after imaging, pregnancy possibility and alternatives are reviewed.",
+    anatomy: "An endometrial polyp projects from the cavity lining on a focal stalk or base; it differs from a fibroid arising in uterine muscle.",
+    distinction: "Direct cavity resection targets the visible polyp and retrieves tissue for pathology; blind sampling may miss focal anatomy and is not the same procedure.",
+    evaluation: "Review ultrasound or saline imaging, bleeding pattern, menopausal status, endometrial risk, medicines and whether other cavity lesions need assessment.",
+    technique: "A hysteroscope passes through the cervix, fluid distends the cavity and scissors, loop or a tissue-removal device separates the polyp at its base for retrieval.",
+    conversion: "Perforation concern, bleeding, poor visualization or fluid limits may stop the procedure and require later reassessment.",
+    admission: "Usually outpatient or day surgery with brief bleeding, pain and fluid-balance observation.",
+    recovery: "Cramping and light bleeding may occur; escalating pain, heavy bleeding or fever needs review.",
+    approaches: [
+      { label: "Mechanical polypectomy", detail: "Scissors or graspers remove selected small polyps." },
+      { label: "Resectoscopic removal", detail: "A loop treats the base under direct vision." },
+      { label: "Tissue-removal system", detail: "A dedicated device cuts and retrieves tissue." },
+    ],
+    risks: "Risks include bleeding, infection, uterine perforation, cervical injury, fluid overload, incomplete removal, adhesions and an unexpected pathology result.",
+    drivers: procedureDrivers(
+      { label: "Polyp number and base", detail: "Multiple or broad-based lesions take more work." },
+      { label: "Device choice", detail: "Mechanical, loop and tissue systems use different resources." },
+      { label: "Fluid monitoring", detail: "Distension balance is a safety requirement." },
+      { label: "Pathology", detail: "Every retrieved focal lesion requires examination." },
+    ),
+    quoteQuestions: ["Is removal under direct vision?", "Which device is included?", "Who reviews unexpected pathology?"],
+    related: ["Hysteroscopic Myomectomy", "Laparoscopic Myomectomy", "Gynecologic Cancer Surgery"],
+    imageAlts: [
+      "Patient-education uterine cavity schematic showing a focal endometrial polyp and stalk compared with the surrounding lining and transcervical hysteroscope",
+      "Numbered hysteroscopic polypectomy pathway showing imaging, cervical entry, fluid distension, direct base resection, tissue retrieval and pathology",
+      "Hysteroscopic polypectomy recovery pathway showing fluid observation, cramping and bleeding checks, perforation warnings and pathology review",
+    ],
+  }),
+  completeProfile({
+    procedure: "Ovarian Cyst Surgery",
+    shortName: "ovarian cyst surgery",
+    specialist: "gynecologist experienced in ovarian and minimally invasive surgery",
+    definition: "Ovarian cyst surgery treats a selected ovarian cyst by cystectomy, drainage only in limited contexts, or ovary removal when preservation is unsafe or inappropriate.",
+    candidacy: "It may be considered for selected persistent, symptomatic, enlarging, complex or suspicious cysts after imaging, markers when indicated, age and alternatives are reviewed.",
+    anatomy: "A cyst can replace or compress ovarian tissue near the tube, ureter, bowel and pelvic vessels; torsion twists the adnexa and is an emergency.",
+    distinction: "Cystectomy aims to remove the cyst while preserving ovarian tissue; oophorectomy removes the ovary. Emergency torsion care should not be delayed for elective travel.",
+    evaluation: "Review ultrasound morphology, size, laterality, symptoms, pregnancy status, tumour markers when appropriate, ovarian reserve goals and malignancy or torsion concern.",
+    technique: "Laparoscopic or open access permits inspection, controlled cyst separation or consented ovary removal, bleeding control, specimen containment and pathology.",
+    conversion: "Unexpected malignancy concern, bleeding, adhesions or absent viable ovarian tissue may change cystectomy to oophorectomy or require oncology input within consent.",
+    approaches: [
+      { label: "Ovarian cystectomy", detail: "Removes cyst while attempting ovarian preservation." },
+      { label: "Oophorectomy", detail: "Removes an ovary when separately justified and consented." },
+      { label: "Emergency torsion surgery", detail: "Urgent local assessment prioritizes ovarian and patient safety." },
+    ],
+    risks: "Risks include bleeding, infection, ovarian tissue loss, reduced reserve, cyst rupture, adhesions, organ injury, recurrence, conversion and unexpected pathology.",
+    drivers: procedureDrivers(
+      { label: "Morphology and malignancy concern", detail: "Simple and suspicious masses require different pathways." },
+      { label: "Size and laterality", detail: "Large or bilateral cysts change preservation planning." },
+      { label: "Cystectomy versus oophorectomy", detail: "Organ preservation and removal are distinct scopes." },
+      { label: "Urgency or torsion", detail: "Emergency treatment is not an elective package." },
+    ),
+    quoteQuestions: ["Is cystectomy intended?", "What could require oophorectomy?", "Is torsion an emergency concern?"],
+    related: ["Oophorectomy", "Salpingo-Oophorectomy", "Endometriosis Surgery"],
+    imageAlts: [
+      "Patient-education adnexal schematic showing an ovarian cyst compressing preserved ovarian tissue, the fallopian tube and a separate torsion twist warning",
+      "Numbered ovarian cyst surgery pathway showing ultrasound review, malignancy assessment, access, cystectomy or consented oophorectomy and pathology",
+      "Ovarian cyst surgery recovery pathway showing bleeding and torsion warnings, wound care, ovarian preservation review, pathology and follow-up",
+    ],
+  }),
+  completeProfile({
+    procedure: "Oophorectomy",
+    shortName: "oophorectomy",
+    specialist: "gynecologist experienced in adnexal surgery",
+    definition: "Oophorectomy removes one ovary or both ovaries through laparoscopic, vaginal or open access according to indication.",
+    candidacy: "It may be considered for selected ovarian disease or risk management only after laterality, alternatives, pathology concern, hormones and fertility are reviewed.",
+    anatomy: "Each ovary has its own blood supply and lies beside a fallopian tube, ureter and pelvic vessels; laterality must be explicit.",
+    distinction: "Unilateral oophorectomy removes one ovary; bilateral removes both and causes surgical menopause before natural menopause. Tube removal is not included unless specified.",
+    evaluation: "Confirm side, imaging, symptoms, tumour markers or genetics when indicated, pregnancy and fertility goals, menopausal status and hormone-therapy considerations.",
+    technique: "The surgeon identifies the ureter, controls the ovarian blood supply, separates the consented ovary, contains the specimen and sends it to pathology.",
+    approaches: [
+      { label: "Unilateral oophorectomy", detail: "Removes the named ovary and retains the other." },
+      { label: "Bilateral oophorectomy", detail: "Removes both ovaries with surgical-menopause consequences." },
+      { label: "Ovarian cystectomy", detail: "Preserves ovarian tissue when appropriate and feasible." },
+    ],
+    risks: "Risks include bleeding, infection, VTE, ureter, bowel or vessel injury, adhesions, conversion and hormonal, bone, cardiovascular, sexual or fertility effects after ovary loss.",
+    drivers: procedureDrivers(
+      { label: "Unilateral versus bilateral", detail: "Laterality changes scope and hormonal consequences." },
+      { label: "Benign versus suspicious disease", detail: "Containment and oncology planning may differ." },
+      { label: "Adhesions and anatomy", detail: "Endometriosis or prior surgery adds dissection." },
+      { label: "Menopause planning", detail: "Counselling and follow-up are part of bilateral decisions." },
+    ),
+    quoteQuestions: ["Which ovary or ovaries?", "Are tubes separately included?", "What surgical-menopause plan is documented?"],
+    related: ["Ovarian Cyst Surgery", "Salpingo-Oophorectomy", "Gynecologic Cancer Surgery"],
+    imageAlts: [
+      "Patient-education pelvic schematic identifying left and right ovaries separately, adjacent tubes and ureters, and unilateral versus bilateral removal",
+      "Numbered oophorectomy pathway showing laterality confirmation, hormonal counselling, access, blood-supply control, ovary removal and pathology",
+      "Oophorectomy recovery pathway showing wound and bleeding review, pathology, unilateral ovarian function or surgical-menopause care and follow-up",
+    ],
+  }),
+  completeProfile({
+    procedure: "Salpingo-Oophorectomy",
+    shortName: "salpingo-oophorectomy",
+    specialist: "gynecologist experienced in adnexal and risk-reducing surgery",
+    definition: "Salpingo-oophorectomy removes a fallopian tube and ovary together on one side or both sides when explicitly indicated.",
+    candidacy: "It may be considered for selected adnexal disease or risk reduction; preventive surgery requires genetics or specialist review, informed alternatives and timing discussion.",
+    anatomy: "The tube and ovary form the adnexa beside the uterus, ureter, bowel and pelvic vessels; each side must be named.",
+    distinction: "This operation explicitly includes both tube and ovary. Bilateral salpingo-oophorectomy causes surgical menopause; salpingectomy alone preserves ovaries.",
+    evaluation: "Confirm indication, laterality, imaging, pathology risk, genetics when relevant, fertility, menopause effects and whether hysterectomy or staging is separately planned.",
+    technique: "The surgeon identifies the ureter, controls ovarian and tubal attachments, removes the consented tube-ovary unit with containment and submits it to pathology.",
+    approaches: [
+      { label: "Unilateral salpingo-oophorectomy", detail: "Removes one tube and its ovary." },
+      { label: "Bilateral salpingo-oophorectomy", detail: "Removes both adnexa and causes surgical menopause." },
+      { label: "Salpingectomy alone", detail: "Removes tube while preserving the ovary." },
+    ],
+    risks: "Risks include bleeding, infection, VTE, ureter, bowel or vessel injury, adhesions, conversion and fertility or surgical-menopause consequences.",
+    drivers: procedureDrivers(
+      { label: "Laterality", detail: "One side and both sides are different scopes." },
+      { label: "Disease versus risk reduction", detail: "Genetics and specialist review shape preventive care." },
+      { label: "Additional hysterectomy or staging", detail: "Combined operations must be itemized." },
+      { label: "Menopause care", detail: "Bilateral removal requires individualized counselling." },
+    ),
+    quoteQuestions: ["Is one side or both?", "What genetics review supports risk reduction?", "Is hysterectomy or staging separate?"],
+    related: ["Oophorectomy", "Ovarian Cyst Surgery", "Gynecologic Cancer Surgery"],
+    imageAlts: [
+      "Patient-education adnexal schematic showing each fallopian tube attached to its ovary and unilateral versus bilateral salpingo-oophorectomy scope",
+      "Numbered salpingo-oophorectomy pathway showing laterality and genetics review, ureter identification, vascular control, adnexal removal and pathology",
+      "Salpingo-oophorectomy recovery pathway showing surgical monitoring, pathology, fertility or surgical-menopause counselling and specialist follow-up",
+    ],
+  }),
+  completeProfile({
+    procedure: "Pelvic Organ Prolapse Surgery",
+    shortName: "pelvic organ prolapse surgery",
+    specialist: "urogynecologist or gynecologist experienced in prolapse surgery",
+    definition: "Pelvic organ prolapse surgery restores selected vaginal support when bladder, uterus or vault, rectum or small bowel descends.",
+    candidacy: "It may be considered for bothersome prolapse after compartment assessment, goals, pessary or observation alternatives, urinary and bowel function and operative risk are reviewed.",
+    anatomy: "Anterior, apical and posterior compartments support bladder, uterus or vault, and rectum; a complete plan names every affected compartment.",
+    distinction: "Anterior repair, posterior repair and apical suspension solve different defects. Hysterectomy is not automatic, and mesh use requires product-specific consent without outcome claims.",
+    evaluation: "Document standing or straining examination, compartments, apical support, urinary retention or leakage, defecatory symptoms, sexual goals and previous mesh or repairs.",
+    technique: "Vaginal, laparoscopic, robotic or open surgery repairs named compartments and restores apical support using native tissue or a specifically consented graft or mesh.",
+    approaches: [
+      { label: "Native-tissue vaginal repair", detail: "Uses sutures and existing support tissue." },
+      { label: "Apical suspension", detail: "Supports uterus or vaginal vault by a named technique." },
+      { label: "Abdominal sacrocolpopexy", detail: "Uses abdominal access and mesh requiring specific consent." },
+    ],
+    risks: "Risks include bleeding, infection, VTE, bladder, ureter, bowel or nerve injury, urinary retention, pain, dyspareunia, recurrence and mesh exposure or erosion when used.",
+    drivers: procedureDrivers(
+      { label: "Compartments treated", detail: "Anterior, apical and posterior work differ." },
+      { label: "Native tissue versus mesh", detail: "Materials and consent must be explicit." },
+      { label: "Hysterectomy or uterine preservation", detail: "Organ scope changes the operation." },
+      { label: "Urinary or bowel procedures", detail: "Combined functional treatment adds scope." },
+    ),
+    quoteQuestions: ["Which compartments are repaired?", "Was a pessary discussed?", "What mesh product and risks apply, if any?"],
+    related: ["Pelvic Floor Repair", "Vaginal Hysterectomy", "Laparoscopic Hysterectomy"],
+    imageAlts: [
+      "Patient-education sagittal pelvic schematic showing anterior bladder, apical uterus or vault and posterior rectal prolapse compartments",
+      "Numbered prolapse surgery pathway showing compartment examination, pessary alternative, route and support selection, repair, bladder check and follow-up",
+      "Pelvic organ prolapse recovery pathway showing voiding assessment, bowel care, lifting limits, mesh or native-tissue review and recurrence follow-up",
+    ],
+  }),
+  completeProfile({
+    procedure: "Pelvic Floor Repair",
+    shortName: "pelvic floor repair",
+    specialist: "urogynecologist or pelvic-floor gynecologic surgeon",
+    definition: "Pelvic floor repair restores selected anterior, posterior or perineal vaginal support associated with cystocele, rectocele or perineal weakness.",
+    candidacy: "It may be considered for bothersome bulge, urinary, defecatory or support symptoms after examination, conservative therapy, pessary alternatives and goals are reviewed.",
+    anatomy: "Anterior support lies between vagina and bladder, posterior support between vagina and rectum, and the perineal body supports the vaginal opening.",
+    distinction: "Cystocele repair, rectocele repair and perineorrhaphy target different anatomy. Symptom source must be assessed; repair does not guarantee urinary, bowel or sexual outcomes.",
+    evaluation: "Map compartments, apical support, urinary leakage or retention, bowel emptying, pain, sexual function, prior repairs and pelvic-floor therapy.",
+    technique: "Through a vaginal or selected abdominal route, the surgeon plicates or reattaches support tissue and reconstructs the consented anterior, posterior or perineal defect.",
+    approaches: [
+      { label: "Anterior repair", detail: "Supports the bladder-facing vaginal wall for selected cystocele." },
+      { label: "Posterior repair", detail: "Supports the rectum-facing wall for selected rectocele." },
+      { label: "Perineorrhaphy", detail: "Reconstructs selected perineal support." },
+    ],
+    risks: "Risks include bleeding, infection, urinary retention, bladder or rectal injury, constipation, pain, dyspareunia, narrowing, recurrence and persistent urinary or defecatory symptoms.",
+    drivers: procedureDrivers(
+      { label: "Defects repaired", detail: "Anterior, posterior and perineal work are separate." },
+      { label: "Apical support", detail: "Untreated apical descent can change planning." },
+      { label: "Functional testing", detail: "Urinary and defecatory symptoms may need evaluation." },
+      { label: "Previous repair", detail: "Scar and recurrence increase complexity." },
+    ),
+    quoteQuestions: ["Which defect causes my symptoms?", "What conservative options remain?", "Is apical support included?"],
+    related: ["Pelvic Organ Prolapse Surgery", "Vaginal Hysterectomy", "Laparoscopic Hysterectomy"],
+    imageAlts: [
+      "Patient-education sagittal pelvic floor schematic showing cystocele at the bladder wall, rectocele at the rectal wall and perineal support",
+      "Numbered pelvic floor repair pathway showing symptom mapping, compartment examination, conservative alternatives, selected repair and bladder bowel checks",
+      "Pelvic floor repair recovery pathway showing voiding and defecatory monitoring, perineal care, activity limits, symptom review and follow-up",
+    ],
+  }),
+  completeProfile({
+    procedure: "Gynecologic Cancer Surgery",
+    shortName: "gynecologic cancer surgery",
+    specialist: "gynecologic oncologist",
+    definition: "Gynecologic cancer surgery is an individualized operation for suspected or confirmed uterine, cervical, ovarian, vulvar or other gynecologic malignancy.",
+    candidacy: "It may be considered after tissue diagnosis or appropriate mass assessment, type and stage evaluation, fitness review and multidisciplinary discussion.",
+    anatomy: "Tumour type and spread can involve uterus, cervix, tubes, ovaries, peritoneum, omentum, lymph nodes, bowel, bladder or other sites.",
+    distinction: "The label does not define one operation. Staging, node assessment, frozen section where relevant and cytoreduction or debulking depend on cancer type, findings and specialist planning.",
+    evaluation: "Review pathology, slides when needed, imaging, markers, stage, performance status, nutrition, fertility goals and whether neoadjuvant or non-surgical treatment is preferable.",
+    technique: "Open, laparoscopic or robotic surgery obtains the planned specimens and may include organ removal, washings, omentum, sentinel or other nodes, staging biopsies or cytoreduction.",
+    conversion: "Frozen section or operative findings may alter staging or extent only within consent; unresectable disease or safety concerns can appropriately limit surgery.",
+    duration: "varies from a focused staging procedure to many hours for complex cytoreduction",
+    admission: "Admission varies widely with cancer type, access route, organ work, complications and recovery.",
+    recovery: "Recovery and travel depend on surgical extent, organ function, wounds, nutrition, VTE risk, final pathology and timing of additional therapy.",
+    pathology: "Final pathology establishes histology, grade, margins, nodes and pathologic stage as relevant; frozen section is provisional and must be separately available and indicated.",
+    approaches: [
+      { label: "Minimally invasive staging", detail: "Selected laparoscopy or robotics for an appropriate cancer plan." },
+      { label: "Open staging or cytoreduction", detail: "Laparotomy for exposure and complex organ work." },
+      { label: "Non-surgical or neoadjuvant pathway", detail: "May precede or replace surgery after multidisciplinary review." },
+    ],
+    risks: "Risks include bleeding, transfusion, infection, VTE, lymphocele or lymphedema, organ injury, stoma, ICU care, incomplete cytoreduction and delay or need for additional therapy.",
+    drivers: procedureDrivers(
+      { label: "Cancer type and stage", detail: "Different malignancies require different operations." },
+      { label: "Nodes and staging", detail: "Sentinel mapping and wider node assessment differ." },
+      { label: "Cytoreduction and organ work", detail: "Bowel, bladder or upper-abdominal work adds teams and resources." },
+      { label: "Frozen and final pathology", detail: "Intraoperative and definitive assessment are separate." },
+    ),
+    quoteQuestions: ["What type and stage guide surgery?", "Which nodes or staging steps are planned?", "What additional therapy may follow?"],
+    related: ["Oophorectomy", "Salpingo-Oophorectomy", "Abdominal Hysterectomy"],
+    imageAlts: [
+      "Patient-education gynecologic oncology schematic showing uterus cervix ovaries peritoneum omentum and pelvic lymph nodes as distinct staging sites",
+      "Numbered gynecologic cancer surgery pathway showing pathology and staging review, multidisciplinary plan, surgical access, nodes or debulking and final pathology",
+      "Gynecologic cancer surgery recovery pathway showing organ and VTE monitoring, wound and nutrition care, final stage review and additional therapy planning",
+    ],
+  }),
 ];
 
-export const GYNECOLOGY_PILOT_PROCEDURES = profiles.map((profile) => profile.procedure);
+export const GYNECOLOGY_PILOT_PROCEDURES = ["Laparoscopic Hysterectomy"] as const;
 
 export const gynecologyArticles = profiles.map(createGynecologyArticle);
 

@@ -298,6 +298,20 @@ const LONGFORM_COST_SLUGS = new Set([
   "sleep-study-polysomnography",
   "migraine-nerve-block",
   "laparoscopic-hysterectomy",
+  "robotic-hysterectomy",
+  "vaginal-hysterectomy",
+  "abdominal-hysterectomy",
+  "laparoscopic-myomectomy",
+  "robotic-myomectomy",
+  "hysteroscopic-myomectomy",
+  "endometriosis-surgery",
+  "hysteroscopic-polypectomy",
+  "ovarian-cyst-surgery",
+  "oophorectomy",
+  "salpingo-oophorectomy",
+  "pelvic-organ-prolapse-surgery",
+  "pelvic-floor-repair",
+  "gynecologic-cancer-surgery",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {

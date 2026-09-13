@@ -297,7 +297,148 @@ def recovery():
     )
 
 
+DATA = {
+    "robotic-hysterectomy": ("Robotic hysterectomy", "robot", ["Uterus + cervix", "Tubes separate", "Ovaries separate", "Robotic ports"], ["Review scope", "Plan ports", "Dock robot", "Console surgery", "Remove tissue", "Pathology"], ["Port checks", "Walk + VTE", "Cuff care", "Pathology", "Follow-up"]),
+    "vaginal-hysterectomy": ("Vaginal hysterectomy", "vaginal", ["Uterine descent", "Vaginal route", "Bladder", "Rectum"], ["Assess prolapse", "Confirm route", "Control pedicles", "Remove uterus", "Close + support", "Pathology"], ["Bladder check", "Bleeding watch", "Mobility", "Cuff review", "Pathology"]),
+    "abdominal-hysterectomy": ("Abdominal hysterectomy", "open", ["Laparotomy", "Uterus", "Bladder + bowel", "Pelvic vessels"], ["Assess anatomy", "Plan incision", "Open exposure", "Control vessels", "Remove scope", "Pathology"], ["Ward monitor", "Walk + VTE", "Bowel + bladder", "Wound care", "Pathology"]),
+    "laparoscopic-myomectomy": ("Laparoscopic myomectomy", "fibroids", ["Subserosal", "Intramural", "Cavity relation", "Uterus retained"], ["Map FIGO type", "Place ports", "Open uterine wall", "Remove fibroid", "Layered repair", "Pathology"], ["Bleeding check", "Port care", "Uterine healing", "Pathology", "Pregnancy advice"]),
+    "robotic-myomectomy": ("Robotic myomectomy", "robot-fibroids", ["Mapped fibroids", "Uterine layers", "Robotic arms", "Uterus retained"], ["Map FIGO type", "Dock robot", "Console incision", "Enucleate", "Layered repair", "Pathology"], ["Port checks", "Anaemia review", "Uterine healing", "Pathology", "Pregnancy advice"]),
+    "hysteroscopic-myomectomy": ("Hysteroscopic myomectomy", "cavity-fibroid", ["Cavity fibroid", "Myometrium", "Hysteroscope", "Fluid inflow"], ["Map FIGO type", "Cervical entry", "Track fluid", "Resect directly", "Check cavity", "Pathology"], ["Fluid balance", "Bleeding watch", "Perforation signs", "Pathology", "Stage if needed"]),
+    "endometriosis-surgery": ("Endometriosis surgery", "endometriosis", ["Superficial lesion", "Deep disease", "Endometrioma", "Adhesions"], ["Map disease", "Plan teams", "Laparoscopy", "Treat lesions", "Check organs", "Pathology"], ["Pain review", "Organ function", "Port care", "Pathology", "Reserve + follow-up"]),
+    "hysteroscopic-polypectomy": ("Hysteroscopic polypectomy", "polyp", ["Endometrial polyp", "Polyp base", "Uterine cavity", "Hysteroscope"], ["Review imaging", "Enter cervix", "Track fluid", "Resect base", "Retrieve tissue", "Pathology"], ["Fluid balance", "Cramp care", "Bleeding watch", "Pathology", "Follow-up"]),
+    "ovarian-cyst-surgery": ("Ovarian cyst surgery", "cyst", ["Ovarian cyst", "Preserved ovary", "Fallopian tube", "Torsion warning"], ["Assess imaging", "Check urgency", "Plan preservation", "Separate cyst", "Control bleeding", "Pathology"], ["Bleeding check", "Wound care", "Ovary review", "Pathology", "Follow-up"]),
+    "oophorectomy": ("Oophorectomy", "ovary", ["Left ovary", "Right ovary", "Ureter", "One vs both"], ["Confirm side", "Hormone review", "Identify ureter", "Control supply", "Remove ovary", "Pathology"], ["Wound care", "Bleeding watch", "Pathology", "Hormone plan", "Follow-up"]),
+    "salpingo-oophorectomy": ("Salpingo-oophorectomy", "adnexa", ["Tube + ovary", "Left side", "Right side", "Ureter"], ["Confirm sides", "Genetics review", "Identify ureter", "Control supply", "Remove adnexa", "Pathology"], ["Wound care", "Bleeding watch", "Pathology", "Menopause plan", "Follow-up"]),
+    "pelvic-organ-prolapse-surgery": ("Pelvic organ prolapse surgery", "prolapse", ["Anterior wall", "Apical support", "Posterior wall", "Pessary option"], ["Map compartments", "Discuss pessary", "Select support", "Repair defect", "Check bladder", "Follow-up"], ["Voiding check", "Bowel care", "Lifting limits", "Mesh review", "Recurrence review"]),
+    "pelvic-floor-repair": ("Pelvic floor repair", "floor", ["Cystocele", "Rectocele", "Perineal body", "Apical check"], ["Map symptoms", "Examine defects", "Discuss therapy", "Select repair", "Check function", "Follow-up"], ["Voiding check", "Bowel function", "Perineal care", "Activity limits", "Symptom review"]),
+    "gynecologic-cancer-surgery": ("Gynecologic cancer surgery", "cancer", ["Primary tumour", "Pelvic nodes", "Omentum", "Peritoneum"], ["Confirm type", "Stage imaging", "Team review", "Surgery + nodes", "Stage/debulk", "Final pathology"], ["Organ monitor", "VTE prevention", "Nutrition + wound", "Final stage", "Next therapy"]),
+}
+
+
+def disease_diagram(draw, kind, cx, cy):
+    """Procedure-specific anatomy or disease overlay; conceptual and not to scale."""
+    if kind in {"prolapse", "floor"}:
+        draw.ellipse((cx - 135, cy - 115, cx + 120, cy + 125), fill=LIGHT_ROSE, outline=NAVY, width=4)
+        draw.line((cx - 30, cy - 90, cx - 55, cy + 85), fill=TEAL, width=12)
+        draw.line((cx + 35, cy - 80, cx + 60, cy + 88), fill=ROSE, width=12)
+        draw.arc((cx - 85, cy + 20, cx + 90, cy + 145), 185, 350, fill=GOLD, width=8)
+        if kind == "prolapse":
+            arrow(draw, (cx, cy - 15), (cx, cy + 105), ROSE, 7)
+        else:
+            draw.line((cx - 95, cy + 92, cx + 95, cy + 92), fill=TEAL, width=10)
+        return
+    pelvis(draw, cx, cy + 15, 0.72)
+    if kind in {"fibroids", "robot-fibroids", "cavity-fibroid"}:
+        spots = [(-38, -32, 24), (30, 12, 19), (3, -65, 16)]
+        for dx, dy, radius in spots:
+            draw.ellipse((cx + dx - radius, cy + dy - radius, cx + dx + radius, cy + dy + radius), fill=GOLD, outline=NAVY, width=3)
+    if kind == "cavity-fibroid":
+        draw.line((cx - 150, cy - 90, cx - 45, cy - 25), fill=TEAL, width=8)
+    elif kind == "polyp":
+        draw.ellipse((cx - 20, cy - 42, cx + 24, cy + 18), fill=GOLD, outline=NAVY, width=3)
+        draw.line((cx, cy + 18, cx, cy + 48), fill=GOLD, width=6)
+    elif kind == "endometriosis":
+        for dx, dy in [(-115, -25), (92, 38), (-28, 65), (125, -55)]:
+            draw.ellipse((cx + dx - 10, cy + dy - 10, cx + dx + 10, cy + dy + 10), fill=NAVY)
+        draw.ellipse((cx + 85, cy - 28, cx + 135, cy + 30), fill=ROSE, outline=GOLD, width=7)
+    elif kind == "cyst":
+        draw.ellipse((cx + 72, cy - 48, cx + 154, cy + 42), fill=CYAN, outline=NAVY, width=5)
+        draw.arc((cx + 55, cy - 78, cx + 165, cy + 65), 30, 310, fill=ROSE, width=5)
+    elif kind == "ovary":
+        draw.line((cx - 155, cy - 45, cx - 105, cy + 15), fill=ROSE, width=8)
+        draw.ellipse((cx - 175, cy - 72, cx - 125, cy - 12), outline=NAVY, width=5)
+    elif kind == "adnexa":
+        draw.rounded_rectangle((cx + 72, cy - 85, cx + 190, cy + 55), radius=20, outline=GOLD, width=6)
+    elif kind == "robot" or kind == "robot-fibroids":
+        for x in (cx - 120, cx + 120):
+            draw.line((x, cy - 135, x // 2 + cx // 2, cy - 30), fill=NAVY, width=9)
+            draw.ellipse((x - 10, cy - 145, x + 10, cy - 125), fill=TEAL)
+    elif kind == "vaginal":
+        arrow(draw, (cx, cy - 10), (cx, cy + 155), ROSE, 8)
+    elif kind == "open":
+        draw.line((cx - 135, cy + 135, cx + 135, cy + 135), fill=ROSE, width=10)
+        draw.line((cx, cy + 95, cx, cy + 172), fill=NAVY, width=5)
+    elif kind == "cancer":
+        draw.ellipse((cx - 34, cy - 55, cx + 35, cy + 20), fill=NAVY, outline=GOLD, width=5)
+        for dx, dy in [(-115, 65), (-80, 90), (85, 90), (120, 65)]:
+            draw.ellipse((cx + dx - 9, cy + dy - 9, cx + dx + 9, cy + dy + 9), fill=TEAL)
+
+
+def generic_anatomy(slug, spec):
+    heading, kind, labels, _, _ = spec
+    image = Image.new("RGB", (WIDTH, HEIGHT), PALE)
+    draw = ImageDraw.Draw(image)
+    title(draw, "Anatomy", f"{heading}: anatomy and scope", "Procedure-specific schematic · individualized plans vary")
+    rounded(draw, (45, 170, 680, 625))
+    disease_diagram(draw, kind, 350, 370)
+    rounded(draw, (715, 170, 1155, 625), fill=CYAN, outline="#9DCFD2")
+    draw.text((752, 207), "Key distinctions", font=font(26, True), fill=NAVY)
+    for index, label in enumerate(labels):
+        y = 282 + index * 72
+        draw.ellipse((752, y, 790, y + 38), fill=NAVY if index < 2 else TEAL)
+        centred(draw, 771, y + 7, str(index + 1), 18, WHITE, True)
+        draw.text((810, y + 5), label, font=font(18, True), fill=INK)
+    draw.text((752, 580), "Conceptual · not to scale", font=font(16), fill=MUTED)
+    image.save(OUT / f"{slug}-anatomy.webp", "WEBP", quality=86, method=6)
+
+
+def generic_procedure(slug, spec):
+    heading, kind, _, steps, _ = spec
+    image = Image.new("RGB", (WIDTH, HEIGHT), WHITE)
+    draw = ImageDraw.Draw(image)
+    title(draw, "Procedure", f"{heading}: planned pathway", "Six checkpoints · scope can change after clinical review")
+    for index, step in enumerate(steps):
+        x = 40 + index * 192
+        rounded(draw, (x, 185, x + 172, 558), fill=CYAN if index in (2, 3) else PALE)
+        draw.ellipse((x + 16, 202, x + 56, 242), fill=NAVY if index < 4 else TEAL)
+        centred(draw, x + 36, 210, str(index + 1), 18, WHITE, True)
+        for line_index, line in enumerate(wrap(step, width=15)):
+            centred(draw, x + 86, 274 + line_index * 25, line, 18, INK, True)
+        draw.ellipse((x + 42, 350, x + 130, 438), fill=WHITE, outline=TEAL, width=4)
+        symbol = {
+            "robot": "CONSOLE", "robot-fibroids": "ROBOT", "vaginal": "VAGINAL",
+            "open": "OPEN", "fibroids": "FIBROID", "cavity-fibroid": "CAVITY",
+            "endometriosis": "LESIONS", "polyp": "POLYP", "cyst": "CYST",
+            "ovary": "OVARY", "adnexa": "TUBE + OVARY", "prolapse": "SUPPORT",
+            "floor": "REPAIR", "cancer": "STAGING",
+        }[kind]
+        centred(draw, x + 86, 386, symbol, 13, NAVY, True)
+        if index < 5:
+            arrow(draw, (x + 174, 365), (x + 190, 365), TEAL, 4)
+    rounded(draw, (40, 586, 1160, 642), fill=NAVY, outline=NAVY, radius=16)
+    centred(draw, 600, 602, "Assessment, consent and safety findings determine the final procedure", 19, WHITE, True)
+    image.save(OUT / f"{slug}-procedure.webp", "WEBP", quality=86, method=6)
+
+
+def generic_recovery(slug, spec):
+    heading, _, _, _, stages = spec
+    image = Image.new("RGB", (WIDTH, HEIGHT), PALE)
+    draw = ImageDraw.Draw(image)
+    title(draw, "Recovery", f"{heading}: recovery pathway", "Monitoring, pathology and handover · no fixed flight date")
+    draw.line((120, 346, 1080, 346), fill="#A9D4D6", width=12)
+    for index, (x, stage) in enumerate(zip(range(120, 1081, 240), stages)):
+        rounded(draw, (x - 95, 185, x + 95, 286), fill=WHITE)
+        recovery_icon(draw, x, 235, ["monitor", "walk", "wound", "report", "report"][index])
+        draw.ellipse((x - 40, 306, x + 40, 386), fill=NAVY if index < 3 else TEAL, outline=WHITE, width=6)
+        centred(draw, x, 326, str(index + 1), 20, WHITE, True)
+        for line_index, line in enumerate(wrap(stage, width=17)):
+            centred(draw, x, 425 + line_index * 25, line, 18, INK, True)
+    rounded(draw, (55, 530, 1145, 630), fill=CYAN, outline="#9DCFD2", radius=20)
+    centred(draw, 600, 552, "Urgent symptoms need local review · travel requires treating-team clearance", 19, NAVY, True)
+    centred(draw, 600, 588, "Written procedure-specific instructions take priority", 17, MUTED)
+    image.save(OUT / f"{slug}-recovery.webp", "WEBP", quality=86, method=6)
+
+
+for existing in OUT.iterdir():
+    if existing.is_file():
+        existing.unlink()
+
 anatomy()
 procedure()
 recovery()
-print(f"Generated exactly 3 WebP diagrams in {OUT}")
+for slug, details in DATA.items():
+    generic_anatomy(slug, details)
+    generic_procedure(slug, details)
+    generic_recovery(slug, details)
+
+print(f"Generated exactly {3 + len(DATA) * 3} WebP diagrams in {OUT}")
