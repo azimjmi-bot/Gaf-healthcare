@@ -1,0 +1,25 @@
+# GAF Healthcare
+
+> GAF Healthcare is a private medical-travel desk that connects international patients with named specialists and accredited partner hospitals in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — and publishes indicative treatment-cost planning ranges in USD.
+
+All cost figures on the site are planning ranges compiled from partner hospital cost sheets. They are not hospital quotations and are not medical advice; a final quotation is issued by the treating hospital after case review.
+
+## Directories
+
+- [Doctors](https://gaf.healthcare/doctors): Named specialists by specialty, procedure and city, with hospital affiliations.
+- [Hospitals](https://gaf.healthcare/hospitals): Partner hospital profiles, accreditations (JCI, NABH, NABL) and the specialists who practise there.
+- [Treatment costs](https://gaf.healthcare/costs): Procedure-by-procedure cost guides for India with inclusions, exclusions, hospital stay, international comparisons and city breakdowns.
+- [Blogs](https://gaf.healthcare/blogs): Patient guides on planning treatment in India.
+
+## Cost guide coverage
+
+Long-form cost guides cover oncology (radiation, surgical and medical), hematology and bone marrow transplant, cardiac surgery and cardiology, bariatric surgery, cosmetic surgery, ENT, gastroenterology and HPB surgery, urology and kidney transplant, spine surgery, pulmonology, orthopaedics and paediatric orthopaedics, nephrology, neurology, neurosurgery, gynecology and ophthalmology. Each guide has a city variant for Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad.
+
+## Contact
+
+- [Request a treatment plan and cost estimate](https://gaf.healthcare/consult)
+
+## Sitemaps
+
+- [English sitemap](https://gaf.healthcare/sitemap.xml)
+- [Arabic sitemap](https://gaf.healthcare/sitemap-ar.xml)

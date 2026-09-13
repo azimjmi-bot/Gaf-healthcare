@@ -49,6 +49,19 @@ const nextConfig = {
           },
         ],
       },
+      {
+        // Static images under /public. Every asset here is content-addressed
+        // in practice (versioned query string, timestamped CMS uploads, or
+        // generated infographics replaced under a new slug), so a year-long
+        // immutable cache is safe and keeps repeat visits off the network.
+        source: "/:path*/:file(.*\\.(?:webp|png|jpg|jpeg|svg|avif|ico))",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
     ];
   },
   images: {

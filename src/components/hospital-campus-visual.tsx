@@ -55,7 +55,7 @@ export function HospitalCampusVisual({
   return (
     <div className={className} aria-hidden="true">
       <svg viewBox="0 0 640 480" className="h-full w-full" role="img">
-        <title>Illustrated campus for {hospital.name}</title>
+        <title>{`Illustrated campus for ${hospital.name}`}</title>
         <defs>
           <linearGradient id={`sky-${hospital.slug}`} x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor={tone.sky} />
