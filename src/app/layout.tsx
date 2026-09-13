@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Geist, Geist_Mono, Noto_Sans, Noto_Sans_Arabic } from "next/font/google";
+import { Cormorant_Garamond, Geist, Noto_Sans, Noto_Sans_Arabic } from "next/font/google";
 import { LocaleProvider } from "@/components/locale-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -15,21 +15,23 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
+// Noto Sans / Noto Sans Arabic only take effect under html[lang="ru"] and
+// html[lang="ar"] (see globals.css). With preload on, next/font would add
+// <link rel="preload"> for every subset on every page, so English pages
+// downloaded Cyrillic and Arabic font files that were never painted. The
+// @font-face rules stay in place, so those locales still fetch them on use.
 const notoSans = Noto_Sans({
   variable: "--font-noto",
   subsets: ["latin", "latin-ext", "cyrillic"],
   weight: ["400", "500", "600", "700"],
+  preload: false,
 });
 
 const notoArabic = Noto_Sans_Arabic({
   variable: "--font-arabic",
   subsets: ["arabic"],
   weight: ["400", "500", "600", "700"],
+  preload: false,
 });
 
 const cormorant = Cormorant_Garamond({
@@ -142,7 +144,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang={locale}
       dir={dir}
-      className={`${geistSans.variable} ${geistMono.variable} ${cormorant.variable} ${notoSans.variable} ${notoArabic.variable} h-full`}
+      className={`${geistSans.variable} ${cormorant.variable} ${notoSans.variable} ${notoArabic.variable} h-full`}
     >
       <body className="flex min-h-full flex-col">
         <LocaleProvider locale={locale} messages={messages}>
