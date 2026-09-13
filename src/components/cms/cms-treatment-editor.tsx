@@ -280,6 +280,23 @@ const LONGFORM_COST_SLUGS = new Set([
   "central-venous-catheter-permcath-insertion",
   "paired-kidney-exchange-swap-transplant",
   "kidney-transplant-evaluation-and-follow-up",
+  "eeg",
+  "video-eeg",
+  "electromyography-emg",
+  "nerve-conduction-study",
+  "evoked-potentials",
+  "lumbar-puncture",
+  "iv-thrombolysis",
+  "transcranial-doppler-tcd",
+  "carotid-doppler",
+  "mri-guided-focused-ultrasound-mrgfus",
+  "botulinum-toxin-therapy",
+  "plasmapheresis",
+  "ivig-intravenous-immunoglobulin",
+  "nerve-and-muscle-biopsy",
+  "vagus-nerve-stimulation-vns",
+  "sleep-study-polysomnography",
+  "migraine-nerve-block",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {

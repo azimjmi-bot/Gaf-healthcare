@@ -63,7 +63,7 @@ test("exports every exclusive Nephrology article without replacing shared slugs"
     assert.equal(getCostArticle(article.slug), article);
   }
   assert.equal(getCostArticle("kidney-transplantation"), undefined);
-  assert.equal(getCostArticle("plasmapheresis"), undefined);
+  assert.equal(getCostArticle("plasmapheresis")?.procedure, "Plasmapheresis");
   for (const name of NEPHROLOGY_EXCLUSIVE_PROCEDURES) {
     assert.ok(getCostArticle(toSlug(name)), `missing article for ${name}`);
   }
