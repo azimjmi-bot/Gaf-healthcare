@@ -359,6 +359,7 @@ const LONGFORM_COST_SLUGS = new Set([
   "pediatric-urological-surgery",
   "penile-implant",
   "varicocele-surgery",
+  "bronchoscopy",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {
