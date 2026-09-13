@@ -360,6 +360,20 @@ const LONGFORM_COST_SLUGS = new Set([
   "penile-implant",
   "varicocele-surgery",
   "bronchoscopy",
+  "ebus-endobronchial-ultrasound",
+  "rigid-bronchoscopy",
+  "airway-stenting",
+  "medical-thoracoscopy",
+  "medical-pleuroscopy",
+  "transbronchial-lung-biopsy",
+  "cryo-lung-biopsy",
+  "endobronchial-biopsy",
+  "tbna-transbronchial-needle-aspiration",
+  "bronchoscopic-tumor-debulking",
+  "foreign-body-removal-by-bronchoscopy",
+  "pleural-biopsy",
+  "chest-tube-intercostal-drainage",
+  "lung-transplantation",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {
