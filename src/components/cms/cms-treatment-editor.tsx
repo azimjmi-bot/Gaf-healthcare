@@ -267,6 +267,19 @@ const LONGFORM_COST_SLUGS = new Set([
   "endoscopic-third-ventriculostomy-etv",
   "chiari-surgery",
   "craniosynostosis-surgery",
+  "hemodialysis",
+  "peritoneal-dialysis",
+  "continuous-renal-replacement-therapy-crrt",
+  "sustained-low-efficiency-dialysis-sled",
+  "dialysis-catheter-placement",
+  "av-fistula-creation",
+  "dialysis-access-management",
+  "percutaneous-renal-biopsy",
+  "kidney-transplant-graft-biopsy",
+  "capd-catheter-insertion",
+  "central-venous-catheter-permcath-insertion",
+  "paired-kidney-exchange-swap-transplant",
+  "kidney-transplant-evaluation-and-follow-up",
 ]);
 
 export function CmsTreatmentEditor({ initial }: { initial: Treatment & { deleted?: boolean; added?: boolean } }) {

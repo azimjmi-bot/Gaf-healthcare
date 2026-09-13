@@ -141,6 +141,7 @@ export function CostArticleView({
   const isGastroenterology = treatment.specialtySlug === "gastroenterology";
   const isSurgicalGastroenterology = treatment.specialtySlugs.includes("surgical-gastroenterology");
   const isNeurosurgery = treatment.specialtySlug === "neurosurgery";
+  const isNephrology = treatment.specialtySlug === "nephrology";
   const isTavr = treatment.slug === "tavr-tavi-transcatheter-aortic-valve-replacement";
   const isNonsurgicalTreatment =
     isMedicalOncology || isHematology || isTavr || isBariatricSurgery;
@@ -155,6 +156,7 @@ export function CostArticleView({
     isGastroenterology ||
     isSurgicalGastroenterology ||
     isNeurosurgery ||
+    isNephrology ||
     isBariatricSurgery ||
     isCosmeticSurgery;
   const consultHref = `/consult?treatment=${treatment.slug}`;
@@ -604,6 +606,8 @@ export function CostArticleView({
                 ? "Surgical Gastroenterology services"
               : isNeurosurgery
                 ? "Neurosurgery services"
+              : isNephrology
+                ? "Nephrology services"
               : undefined
         }
       />
@@ -641,7 +645,7 @@ export function CostArticleView({
       </Accordion>
 
       <H2 id="total-pathway">
-        What should international patients budget beyond the {isHematology ? "hematology procedure or treatment" : isMedicalOncology ? "treatment medicine" : isCardiology ? "cardiac procedure" : isEnt ? "ENT procedure" : isGastroenterology ? "gastroenterology procedure" : isNeurosurgery ? "neurosurgery procedure" : "surgery"}?
+        What should international patients budget beyond the {isHematology ? "hematology procedure or treatment" : isMedicalOncology ? "treatment medicine" : isCardiology ? "cardiac procedure" : isEnt ? "ENT procedure" : isGastroenterology ? "gastroenterology procedure" : isNeurosurgery ? "neurosurgery procedure" : isNephrology ? "nephrology treatment" : "surgery"}?
       </H2>
       {article.fullPathway ? (
         <>
@@ -659,7 +663,7 @@ export function CostArticleView({
         </>
       ) : (
         <P>
-          The {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery || isCardiology ? "cardiac procedure" : isBariatricSurgery ? "bariatric procedure" : isCosmeticSurgery ? "cosmetic procedure" : isEnt ? "ENT" : isGastroenterology ? "gastroenterology" : isNeurosurgery ? "neurosurgery" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
+          The {isHematology ? "hematology" : isMedicalOncology ? "medical oncology" : isCardiacSurgery || isCardiology ? "cardiac procedure" : isBariatricSurgery ? "bariatric procedure" : isCosmeticSurgery ? "cosmetic procedure" : isEnt ? "ENT" : isGastroenterology ? "gastroenterology" : isNeurosurgery ? "neurosurgery" : isNephrology ? "nephrology" : "surgical"} estimate is only one line in a medical-travel budget. The rows below separate
           hospital charges from living and travel costs so you can plan without treating a brochure
           package as a trip total.
         </P>
@@ -708,6 +712,8 @@ export function CostArticleView({
                   ? "Need a case-specific GI surgery estimate?"
                 : isNeurosurgery
                   ? "Need a case-specific neurosurgery estimate?"
+                : isNephrology
+                  ? "Need a case-specific nephrology estimate?"
                 : isCardiacSurgery
                   ? "Need a case-specific cardiac surgery estimate?"
                 : isHematology
@@ -737,6 +743,8 @@ export function CostArticleView({
                   ? "Share endoscopy, CT, MRI, pathology or prior operative notes for review. A named surgical gastroenterology team can then discuss indication, reconstruction, ICU assumptions and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isNeurosurgery
                   ? "Share MRI or CT, angiography or EEG when those studies exist, histopathology and prior operative notes for review. A named neurosurgery team can then discuss indication, corridor or device plan, ICU assumptions and a written hospital estimate — this is not a quotation or a treatment decision."
+                : isNephrology
+                  ? "Share creatinine, eGFR, dialysis prescriptions, access or transplant records and recent laboratories for review. A named nephrology team can then discuss modality, access, monitoring and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isCardiacSurgery
                   ? "Share your cardiac records for review. A named cardiac team can then discuss anatomy, operative or catheter approach, implants, ICU assumptions and a written hospital estimate — this is not a quotation or a treatment decision."
                 : isHematology
@@ -756,6 +764,7 @@ export function CostArticleView({
           isGastroenterology ||
           isSurgicalGastroenterology ||
           isNeurosurgery ||
+          isNephrology ||
           isCardiacSurgery ||
           isNonsurgicalTreatment
             ? "Request a personalized treatment estimate"
@@ -782,6 +791,8 @@ export function CostArticleView({
                   ? "Speak with GAF Healthcare about GI surgery in India"
                 : isNeurosurgery
                   ? "Speak with GAF Healthcare about neurosurgery in India"
+                : isNephrology
+                  ? "Speak with GAF Healthcare about nephrology in India"
                 : isCardiacSurgery
                   ? "Speak with GAF Healthcare about cardiac surgery in India"
                 : isHematology
@@ -795,7 +806,7 @@ export function CostArticleView({
 
       <H2 id="clinical-detail">Clinical detail</H2>
       <H3>
-        {isBariatricSurgery || isCosmeticSurgery || isCardiology || isEnt || isGastroenterology || isSurgicalGastroenterology || isNeurosurgery
+        {isBariatricSurgery || isCosmeticSurgery || isCardiology || isEnt || isGastroenterology || isSurgicalGastroenterology || isNeurosurgery || isNephrology
           ? "How the procedure is performed"
           : treatment.specialtySlug === "radiation-oncology" || isNonsurgicalTreatment
             ? "How the treatment is delivered"
