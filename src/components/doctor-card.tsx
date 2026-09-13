@@ -1,5 +1,6 @@
 "use client";
 
+import { DoctorPhoto } from "@/components/doctor-photo";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { useState } from "react";
 import {
@@ -47,7 +48,7 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
     <article className="dcard">
       <div className="dcard__top">
         <div className="dcard__avatar">
-          <img src={doctor.image || "/doctors/avatar-placeholder.webp?v=2"} alt={doctor.image ? doctor.imageAlt || doctor.name : ""} />
+          <DoctorPhoto doctor={doctor} sizes="6.75rem" />
         </div>
 
         <div className="dcard__id">

@@ -1,5 +1,6 @@
 import { LocaleLink as Link } from "@/components/locale-link";
 import { AccreditationSeals } from "@/components/accreditation-seals";
+import { DoctorPhoto } from "@/components/doctor-photo";
 import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
 import { experienceBadge, keyProcedureLabels } from "@/lib/doctor-profile";
 import type { Doctor } from "@/lib/doctors";
@@ -68,12 +69,7 @@ export function CostDoctorCard({
   return (
     <article className="cost-dcard">
       <div className="cost-dcard__photo">
-        {/* Catalog portraits are local static files; match directory cards. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={doctor.image || "/doctors/avatar-placeholder.webp?v=2"}
-          alt={doctor.image ? doctor.imageAlt || doctor.name : ""}
-        />
+        <DoctorPhoto doctor={doctor} sizes="8.5rem" />
       </div>
       <div className="cost-dcard__body">
         <h3 className="cost-dcard__name">
