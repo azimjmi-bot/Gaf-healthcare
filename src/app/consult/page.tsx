@@ -34,7 +34,7 @@ export default async function ConsultPage({
         </div>
         <aside className="md:col-span-5">
           <div className="rounded-2xl bg-ink p-6 text-ivory sm:p-8 md:sticky md:top-24">
-            <p className="eyebrow text-gold">{t["consult.next"]}</p>
+            <p className="eyebrow text-gold-bright">{t["consult.next"]}</p>
             <ol className="mt-6 space-y-5 text-sm leading-relaxed text-ivory/75">
               <li>{t["consult.step1"]}</li>
               <li>{t["consult.step2"]}</li>

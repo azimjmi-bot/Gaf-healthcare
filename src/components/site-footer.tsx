@@ -48,7 +48,7 @@ export function SiteFooter() {
         </div>
         {columns.map((col) => (
           <div key={col.title} className="md:col-span-2">
-            <p className="eyebrow text-gold">{col.title}</p>
+            <p className="eyebrow text-gold-bright">{col.title}</p>
             <ul className="mt-4 space-y-2.5">
               {col.links.map((l) => (
                 <li key={l.href}>
@@ -61,12 +61,12 @@ export function SiteFooter() {
           </div>
         ))}
         <div className="md:col-span-3">
-          <p className="eyebrow text-gold">{t("footer.note")}</p>
+          <p className="eyebrow text-gold-bright">{t("footer.note")}</p>
           <p className="mt-4 text-sm leading-relaxed text-ivory/60">{t("footer.disclaimer")}</p>
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-xs text-ivory/45 md:flex-row md:justify-between md:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-2 px-5 py-6 text-xs text-ivory/70 md:flex-row md:justify-between md:px-8">
           <p>
             © {new Date().getFullYear()} GAF Healthcare. {t("footer.rights")}
           </p>

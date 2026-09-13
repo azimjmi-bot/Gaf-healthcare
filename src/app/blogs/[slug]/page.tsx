@@ -55,7 +55,7 @@ export default async function BlogPostPage({
         ) : null}
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/25" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-12 md:px-8">
-          <p className="eyebrow text-gold">
+          <p className="eyebrow text-gold-bright">
             Blogs · {post.category} · {post.date}
           </p>
           <h1 className="mt-3 max-w-4xl font-heading text-4xl leading-[1.05] md:text-6xl">

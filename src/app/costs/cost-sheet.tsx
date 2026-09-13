@@ -191,7 +191,7 @@ export async function CostSheet({ slug }: { slug: string }) {
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/50 to-ink/20" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-4 pb-10 sm:px-5 md:px-8 md:pb-12">
-          <p className="eyebrow text-gold">Treatment cost · {t.category}</p>
+          <p className="eyebrow text-gold-bright">Treatment cost · {t.category}</p>
           <h1 className="mt-3 max-w-5xl font-heading text-[2rem] leading-tight md:text-6xl">
             {guide ? guide.title : t.name}
           </h1>

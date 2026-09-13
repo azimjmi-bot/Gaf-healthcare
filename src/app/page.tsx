@@ -1,7 +1,8 @@
 import Image from "next/image";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { ArrowRight, Building2, Compass, HeartHandshake, ShieldCheck } from "lucide-react";
-import { CoverImage } from "@/components/article-body";
+import { DoctorPhoto } from "@/components/doctor-photo";
+import { HomeCover } from "@/components/home/home-cover";
 import { HomeSearch } from "@/components/home/home-search";
 import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
 import { JsonLd } from "@/components/json-ld";
@@ -110,7 +111,7 @@ export default async function HomePage() {
         />
         <div className="home-hero__shade" />
         <div className="home-hero__inner">
-          <p className="eyebrow text-gold">{t["home.heroEyebrow"]}</p>
+          <p className="eyebrow text-gold-bright">{t["home.heroEyebrow"]}</p>
           <h1>{t["home.heroTitle"]}</h1>
           <p className="home-hero__lede">{t["home.heroLede"]}</p>
           <HomeSearch />
@@ -179,12 +180,7 @@ export default async function HomePage() {
           {faculty.map((doctor) => (
             <Link key={doctor.slug} href={`/doctors/${doctor.slug}`} className="home-doc">
               <span className="home-doc__photo">
-                {/* Catalog portraits are local files, matching directory cards. */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={doctor.image || "/doctors/avatar-placeholder.webp?v=2"}
-                  alt={doctor.image ? doctor.imageAlt || doctor.name : ""}
-                />
+                <DoctorPhoto doctor={doctor} sizes="6.4rem" />
               </span>
               <strong>{doctor.name}</strong>
               <em>{taxonomyLabel(doctor.specialty, locale)}</em>
@@ -295,9 +291,7 @@ export default async function HomePage() {
           {posts.map((post) => (
             <Link key={post.slug} href={`/blogs/${post.slug}`} className="home-blog">
               <span className="home-blog__img">
-                {post.image ? (
-                  <CoverImage src={post.image} alt={post.imageAlt || ""} className="h-full w-full object-cover" />
-                ) : null}
+                <HomeCover src={post.image} alt={post.imageAlt || ""} sizes="(min-width: 640px) 33vw, 100vw" />
               </span>
               <p>{post.category}</p>
               <strong>{post.title}</strong>
