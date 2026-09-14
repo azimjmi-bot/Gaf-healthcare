@@ -1,4 +1,5 @@
-export type CostCitySlug = "delhi-ncr" | "mumbai" | "bengaluru" | "chennai" | "hyderabad";
+/** Canonical city taxonomy slug. Kept open so CMS-added cities do not require a type edit. */
+export type CostCitySlug = string;
 
 export type LabelledDetail = { label: string; detail: string };
 

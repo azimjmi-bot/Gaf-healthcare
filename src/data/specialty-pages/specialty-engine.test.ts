@@ -108,6 +108,7 @@ test("contains no fabricated rankings, guarantees or city prices", () => {
     /\bworld-class|number one|guaranteed (?:cure|success|outcome)|100% success|zero risk\b/i,
   );
   assert.doesNotMatch(text, /\$\d/);
+  assert.doesNotMatch(text, /\[(?:INDIA_COST|US_COST|STAY)\]/);
   assert.match(text, /qualified medical oncologist/i);
   assert.match(text, /qualified respiratory/i);
 });

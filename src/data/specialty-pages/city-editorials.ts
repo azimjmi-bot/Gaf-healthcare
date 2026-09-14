@@ -1,8 +1,21 @@
 import { costArticles } from "@/data/cost-articles";
 import type { SpecialtyCityEditorial } from "./types";
 
+function withoutProcedureTokens(value: string) {
+  return value
+    .replace(/\[INDIA_COST\]/g, "the stored India planning range")
+    .replace(/\[US_COST\]/g, "the stored US comparison range")
+    .replace(/\[STAY\]/g, "the procedure-specific stay guidance");
+}
+
 function unique(values: Array<string | undefined>) {
-  return [...new Set(values.filter((value): value is string => Boolean(value?.trim())))];
+  return [
+    ...new Set(
+      values
+        .filter((value): value is string => Boolean(value?.trim()))
+        .map(withoutProcedureTokens),
+    ),
+  ];
 }
 
 /**
@@ -45,6 +58,10 @@ export function cityEditorialsFromProcedureArticles(
         (faq, index, all) =>
           all.findIndex((candidate) => candidate.q === faq.q) === index,
       )
+      .map((faq) => ({
+        q: withoutProcedureTokens(faq.q),
+        a: withoutProcedureTokens(faq.a),
+      }))
       .slice(0, 3);
 
     if (
