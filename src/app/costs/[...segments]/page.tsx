@@ -1,10 +1,11 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { CostSheet, costSheetMetadata } from "@/app/costs/cost-sheet";
 import { CostsDirectory, costsDirectoryMetadata } from "@/app/costs/directory";
 import { canonicalizePrettyPath, readCatalogPage } from "@/lib/catalog-route";
 import { treatments } from "@/lib/data";
 import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
 import { getRequestLocale } from "@/lib/i18n/request";
+import { localePath } from "@/lib/i18n/path";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -37,7 +38,14 @@ export default async function CostsCatchAllPage({
   const page = readCatalogPage(await searchParams);
   const filter = parsePrettyCatalogSegments(segments);
   if (filter) {
-    canonicalizePrettyPath("/costs", segments, filter, page, await getRequestLocale());
+    const locale = await getRequestLocale();
+    if (filter.procedure && !filter.city) {
+      const treatment = treatments.find((row) => row.name === filter.procedure);
+      if (treatment) {
+        permanentRedirect(localePath(`/costs/${treatment.slug}`, locale));
+      }
+    }
+    canonicalizePrettyPath("/costs", segments, filter, page, locale);
     return <CostsDirectory query={filter} />;
   }
   if (segments.length === 1) return <CostSheet slug={segments[0]} />;

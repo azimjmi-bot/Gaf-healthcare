@@ -23,6 +23,7 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
   if (query.procedure) {
     const { costsProcedureMetadata } = await import("./costs-procedure-view");
     const meta = await costsProcedureMetadata(query);
+    if (!query.city) return meta;
     const wrapped = await catalogPageMetadata("treatments", query);
     return { ...meta, alternates: wrapped.alternates, openGraph: { ...meta.openGraph, ...wrapped.openGraph } };
   }

@@ -127,14 +127,18 @@ test("clinical copy is procedure-specific and medically restrained", () => {
   }
 });
 
-test("slash and parenthesis GI names stay in one pretty-path segment", () => {
+test("GI routes consolidate nationally and retain city context", () => {
   const metabolic = costsFilterPath({
     destination: "India",
     specialty: "Gastroenterology",
     procedure: "Bariatric / Metabolic Endoscopy",
   });
-  assert.equal(metabolic, "/costs/India/Gastroenterology/Bariatric-Metabolic-Endoscopy");
-  assert.deepEqual(parsePrettyCatalogSegments(metabolic.split("/").slice(2)), {
+  assert.equal(metabolic, "/costs/bariatric-metabolic-endoscopy");
+  assert.deepEqual(parsePrettyCatalogSegments([
+    "India",
+    "Gastroenterology",
+    "Bariatric-Metabolic-Endoscopy",
+  ]), {
     destination: "India",
     specialty: "Gastroenterology",
     procedure: "Bariatric / Metabolic Endoscopy",

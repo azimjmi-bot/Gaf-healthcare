@@ -31,6 +31,9 @@ export function costsFilterPath(opts: {
   specialty?: string;
   procedure?: string;
 }) {
+  // A national procedure is one catalog entity with one stable canonical sheet.
+  // City procedure pages remain hierarchical because they contain city editorial.
+  if (opts.procedure && !opts.city) return costPath(opts.procedure);
   return catalogHref("/costs", opts);
 }
 

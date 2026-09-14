@@ -136,14 +136,18 @@ test("clinical copy is procedure-specific and medically restrained", () => {
   }
 });
 
-test("parenthesis Nephrology names stay in one pretty-path segment", () => {
+test("Nephrology routes consolidate nationally and retain city context", () => {
   const crrt = costsFilterPath({
     destination: "India",
     specialty: "Nephrology",
     procedure: "Continuous Renal Replacement Therapy (CRRT)",
   });
-  assert.equal(crrt, "/costs/India/Nephrology/Continuous-Renal-Replacement-Therapy-(CRRT)");
-  assert.deepEqual(parsePrettyCatalogSegments(crrt.split("/").slice(2)), {
+  assert.equal(crrt, "/costs/continuous-renal-replacement-therapy-crrt");
+  assert.deepEqual(parsePrettyCatalogSegments([
+    "India",
+    "Nephrology",
+    "Continuous-Renal-Replacement-Therapy-(CRRT)",
+  ]), {
     destination: "India",
     specialty: "Nephrology",
     procedure: "Continuous Renal Replacement Therapy (CRRT)",

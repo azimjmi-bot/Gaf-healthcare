@@ -131,14 +131,18 @@ test("clinical copy is procedure-specific and medically restrained", () => {
   }
 });
 
-test("parenthesis Neurology names stay in one pretty-path segment", () => {
+test("Neurology routes consolidate nationally and retain city context", () => {
   const emg = costsFilterPath({
     destination: "India",
     specialty: "Neurology",
     procedure: "Electromyography (EMG)",
   });
-  assert.equal(emg, "/costs/India/Neurology/Electromyography-(EMG)");
-  assert.deepEqual(parsePrettyCatalogSegments(emg.split("/").slice(2)), {
+  assert.equal(emg, "/costs/electromyography-emg");
+  assert.deepEqual(parsePrettyCatalogSegments([
+    "India",
+    "Neurology",
+    "Electromyography-(EMG)",
+  ]), {
     destination: "India",
     specialty: "Neurology",
     procedure: "Electromyography (EMG)",

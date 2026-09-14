@@ -161,14 +161,14 @@ test("uses the exact eight-destination inventory and restrained comparisons", ()
   }
 });
 
-test("uses the existing pretty cost route convention", () => {
+test("uses one national canonical and preserves city procedure routes", () => {
   assert.equal(
     costsFilterPath({
       destination: "India",
       specialty: "Gynecology",
       procedure: "Laparoscopic Hysterectomy",
     }),
-    "/costs/India/Gynecology/Laparoscopic-Hysterectomy",
+    "/costs/laparoscopic-hysterectomy",
   );
   assert.equal(
     costsFilterPath({

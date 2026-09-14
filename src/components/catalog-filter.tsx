@@ -16,6 +16,7 @@ import {
   prettyCatalogPath,
   type CatalogBasePath,
 } from "@/lib/pretty-catalog-path";
+import { costPath } from "@/lib/catalog-links";
 import { useLocale, useT } from "@/components/locale-provider";
 import { localePath, stripLocalePrefix } from "@/lib/i18n/path";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
@@ -84,7 +85,11 @@ export function CatalogFilter({ basePath, resultCount, resultLabel, query, chipS
       const allowed = catalogProceduresFor(next.specialty);
       if (next.procedure && !allowed.includes(next.procedure)) delete next.procedure;
     }
-    router.push(localePath(prettyCatalogPath(basePath, next), locale), { scroll: false });
+    const target =
+      basePath === "/costs" && next.procedure && !next.city
+        ? costPath(next.procedure)
+        : prettyCatalogPath(basePath, next);
+    router.push(localePath(target, locale), { scroll: false });
   }
 
   return (

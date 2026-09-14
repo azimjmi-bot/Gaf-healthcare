@@ -146,14 +146,18 @@ test("clinical copy is procedure-specific and medically restrained", () => {
   }
 });
 
-test("slash and parenthesis Surgical Gastroenterology names stay in one pretty-path segment", () => {
+test("Surgical Gastro routes consolidate nationally and retain city context", () => {
   const ostomy = costsFilterPath({
     destination: "India",
     specialty: "Surgical Gastroenterology",
     procedure: "Ostomy / Stoma Surgery",
   });
-  assert.equal(ostomy, "/costs/India/Surgical-Gastroenterology/Ostomy-Stoma-Surgery");
-  assert.deepEqual(parsePrettyCatalogSegments(ostomy.split("/").slice(2)), {
+  assert.equal(ostomy, "/costs/ostomy-stoma-surgery");
+  assert.deepEqual(parsePrettyCatalogSegments([
+    "India",
+    "Surgical-Gastroenterology",
+    "Ostomy-Stoma-Surgery",
+  ]), {
     destination: "India",
     specialty: "Surgical Gastroenterology",
     procedure: "Ostomy / Stoma Surgery",

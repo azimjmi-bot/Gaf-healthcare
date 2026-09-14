@@ -121,14 +121,18 @@ test("clinical copy is procedure-specific and medically restrained", () => {
   }
 });
 
-test("ampersand and slash ENT names stay in one pretty-path segment", () => {
+test("ENT routes consolidate nationally and retain city context", () => {
   const headNeck = costsFilterPath({
     destination: "India",
     specialty: "ENT",
     procedure: "Head & Neck Cancer Surgery",
   });
-  assert.equal(headNeck, "/costs/India/ENT/Head-Neck-Cancer-Surgery");
-  assert.deepEqual(parsePrettyCatalogSegments(headNeck.split("/").slice(2)), {
+  assert.equal(headNeck, "/costs/head-neck-cancer-surgery");
+  assert.deepEqual(parsePrettyCatalogSegments([
+    "India",
+    "ENT",
+    "Head-Neck-Cancer-Surgery",
+  ]), {
     destination: "India",
     specialty: "ENT",
     procedure: "Head & Neck Cancer Surgery",

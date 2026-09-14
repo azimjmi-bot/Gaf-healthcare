@@ -202,10 +202,10 @@ test("avoids outcome promises, rankings and unsupported numeric claims", () => {
   assert.match(text, /may be considered/i);
 });
 
-test("uses the existing pretty cost route convention", () => {
+test("uses one national procedure canonical and preserves city procedure routes", () => {
   assert.equal(
     costsFilterPath({ destination: "India", specialty: "Urology", procedure: "PCNL (Percutaneous Nephrolithotomy)" }),
-    "/costs/India/Urology/PCNL-(Percutaneous-Nephrolithotomy)",
+    "/costs/pcnl-percutaneous-nephrolithotomy",
   );
   assert.equal(
     costsFilterPath({ destination: "India", city: "Chennai", specialty: "Urology", procedure: "Kidney Transplantation" }),

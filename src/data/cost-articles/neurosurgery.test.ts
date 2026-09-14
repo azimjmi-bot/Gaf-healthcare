@@ -147,14 +147,18 @@ test("clinical copy is procedure-specific and medically restrained", () => {
   }
 });
 
-test("parenthesis Neurosurgery names stay in one pretty-path segment", () => {
+test("Neurosurgery routes consolidate nationally and retain city context", () => {
   const etv = costsFilterPath({
     destination: "India",
     specialty: "Neurosurgery",
     procedure: "Endoscopic Third Ventriculostomy (ETV)",
   });
-  assert.equal(etv, "/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-(ETV)");
-  assert.deepEqual(parsePrettyCatalogSegments(etv.split("/").slice(2)), {
+  assert.equal(etv, "/costs/endoscopic-third-ventriculostomy-etv");
+  assert.deepEqual(parsePrettyCatalogSegments([
+    "India",
+    "Neurosurgery",
+    "Endoscopic-Third-Ventriculostomy-(ETV)",
+  ]), {
     destination: "India",
     specialty: "Neurosurgery",
     procedure: "Endoscopic Third Ventriculostomy (ETV)",

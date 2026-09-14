@@ -216,14 +216,14 @@ test("avoids outcome promises, rankings and unsupported numeric claims", () => {
   assert.match(text, /does not promise|cannot be promised|no outcome is promised/i);
 });
 
-test("uses the existing pretty cost route convention", () => {
+test("uses canonical national sheets and keeps differentiated city routes", () => {
   assert.equal(
     costsFilterPath({
       destination: "India",
       specialty: "Ophthalmology",
       procedure: "Cataract Surgery",
     }),
-    "/costs/India/Ophthalmology/Cataract-Surgery",
+    "/costs/cataract-surgery",
   );
   assert.equal(
     costsFilterPath({
@@ -240,7 +240,7 @@ test("uses the existing pretty cost route convention", () => {
       specialty: "Ophthalmology",
       procedure: "ICL (Implantable Collamer Lens)",
     }),
-    "/costs/India/Ophthalmology/ICL-(Implantable-Collamer-Lens)",
+    "/costs/icl-implantable-collamer-lens",
   );
   assert.equal(
     costsFilterPath({
@@ -248,7 +248,7 @@ test("uses the existing pretty cost route convention", () => {
       specialty: "Ophthalmology",
       procedure: "Glaucoma Drainage Device / Valve Implantation",
     }),
-    "/costs/India/Ophthalmology/Glaucoma-Drainage-Device-Valve-Implantation",
+    "/costs/glaucoma-drainage-device-valve-implantation",
   );
 });
 
