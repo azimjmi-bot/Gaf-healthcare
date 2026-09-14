@@ -25,6 +25,7 @@ export function SiteHeader() {
   const overlay = pathname === "/";
   const links = [
     { href: "/#destinations", label: t("nav.destinations") },
+    { href: "/specialties", label: t("nav.specialties") },
     { href: "/doctors", label: t("nav.doctors") },
     { href: "/hospitals", label: t("nav.hospitals") },
     { href: "/costs", label: t("nav.costs") },

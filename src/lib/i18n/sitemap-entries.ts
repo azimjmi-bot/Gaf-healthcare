@@ -42,6 +42,9 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     entry("/doctors", locale, { lastModified: now, changeFrequency: "weekly", priority: sectionPriority }),
     entry("/hospitals", locale, { lastModified: now, changeFrequency: "weekly", priority: sectionPriority }),
     entry("/costs", locale, { lastModified: now, changeFrequency: "weekly", priority: sectionPriority }),
+    ...(locale === "en"
+      ? [entry("/specialties", locale, { lastModified: now, changeFrequency: "weekly", priority: 0.8 })]
+      : []),
     entry("/blogs", locale, { lastModified: now, changeFrequency: "weekly", priority: locale === "en" ? 0.7 : 0.6 }),
     entry("/consult", locale, { lastModified: now, changeFrequency: "monthly", priority: 0.5 }),
   ];

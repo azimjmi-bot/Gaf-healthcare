@@ -15,6 +15,7 @@ export function SiteFooter() {
     {
       title: t("footer.explore"),
       links: [
+        { href: "/specialties", label: t("nav.specialties") },
         { href: "/doctors", label: t("nav.doctors") },
         { href: "/hospitals", label: t("nav.hospitals") },
         { href: "/costs", label: t("nav.costs") },

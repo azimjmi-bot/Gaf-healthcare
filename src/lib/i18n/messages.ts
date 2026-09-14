@@ -1,5 +1,6 @@
 export const UI_MESSAGE_FIELDS: Record<string, string> = {
   "nav.destinations": "Destinations",
+  "nav.specialties": "Specialties",
   "nav.doctors": "Doctors",
   "nav.hospitals": "Hospitals",
   "nav.costs": "Treatment Cost",

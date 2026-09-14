@@ -5,6 +5,7 @@ type TranslationFields = Record<string, string>;
 
 const RU: Record<string, string> = {
   "nav.destinations": "Направления",
+  "nav.specialties": "Специальности",
   "nav.doctors": "Врачи",
   "nav.hospitals": "Больницы",
   "nav.costs": "Стоимость лечения",
@@ -96,6 +97,7 @@ const RU: Record<string, string> = {
 
 const FR: Record<string, string> = {
   "nav.destinations": "Destinations",
+  "nav.specialties": "Spécialités",
   "nav.doctors": "Médecins",
   "nav.hospitals": "Hôpitaux",
   "nav.costs": "Coût du traitement",
@@ -187,6 +189,7 @@ const FR: Record<string, string> = {
 
 const AR: Record<string, string> = {
   "nav.destinations": "الوجهات",
+  "nav.specialties": "التخصصات",
   "nav.doctors": "الأطباء",
   "nav.hospitals": "المستشفيات",
   "nav.costs": "تكلفة العلاج",
@@ -485,6 +488,7 @@ const AR: Record<string, string> = {
 
 const SW: Record<string, string> = {
   "nav.destinations": "Maeneo",
+  "nav.specialties": "Taaluma",
   "nav.doctors": "Madaktari",
   "nav.hospitals": "Hospitali",
   "nav.costs": "Gharama ya matibabu",
