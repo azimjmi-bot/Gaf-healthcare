@@ -2,10 +2,29 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { treatments } from "../../lib/treatments";
 import { SPECIALTIES } from "../../lib/taxonomy";
-import { catalogSpecialtyProfiles } from "./catalog-profiles";
+import { bariatricSurgeryIndiaProfile } from "./bariatric-surgery";
+import { cardiacSurgeryIndiaProfile } from "./cardiac-surgery";
+import { cardiologyIndiaProfile } from "./cardiology";
+import { cosmeticSurgeryIndiaProfile } from "./cosmetic-surgery";
+import { entIndiaProfile } from "./ent";
+import { gastroenterologyIndiaProfile } from "./gastroenterology";
+import { gynecologyIndiaProfile } from "./gynecology";
+import { hematologyIndiaProfile } from "./hematology";
 import { medicalOncologyIndiaProfile } from "./medical-oncology";
+import { nephrologyIndiaProfile } from "./nephrology";
+import { neurologyIndiaProfile } from "./neurology";
+import { neurosurgeryIndiaProfile } from "./neurosurgery";
+import { ophthalmologyIndiaProfile } from "./ophthalmology";
+import { orthopedicsIndiaProfile } from "./orthopedics";
+import { pediatricCardiacSurgeryIndiaProfile } from "./pediatric-cardiac-surgery";
+import { pediatricHematologyIndiaProfile } from "./pediatric-hematology";
+import { pediatricOrthopaedicIndiaProfile } from "./pediatric-orthopaedic";
 import { pulmonologyIndiaProfile } from "./pulmonology";
 import { radiationOncologyIndiaProfile } from "./radiation-oncology";
+import { spineSurgeryIndiaProfile } from "./spine-surgery";
+import { surgicalGastroenterologyIndiaProfile } from "./surgical-gastroenterology";
+import { surgicalOncologyIndiaProfile } from "./surgical-oncology";
+import { urologyIndiaProfile } from "./urology";
 import {
   CITIES,
   MEDICAL_ONCOLOGY_PROCEDURES,
@@ -15,8 +34,31 @@ import {
 } from "../../lib/taxonomy";
 import type { SpecialtyPageProfile } from "./types";
 
+const factoryProfiles = [
+  surgicalOncologyIndiaProfile,
+  hematologyIndiaProfile,
+  pediatricHematologyIndiaProfile,
+  cardiacSurgeryIndiaProfile,
+  pediatricCardiacSurgeryIndiaProfile,
+  cardiologyIndiaProfile,
+  bariatricSurgeryIndiaProfile,
+  cosmeticSurgeryIndiaProfile,
+  entIndiaProfile,
+  gastroenterologyIndiaProfile,
+  surgicalGastroenterologyIndiaProfile,
+  urologyIndiaProfile,
+  spineSurgeryIndiaProfile,
+  pediatricOrthopaedicIndiaProfile,
+  orthopedicsIndiaProfile,
+  ophthalmologyIndiaProfile,
+  gynecologyIndiaProfile,
+  neurosurgeryIndiaProfile,
+  neurologyIndiaProfile,
+  nephrologyIndiaProfile,
+] satisfies SpecialtyPageProfile[];
+
 const profiles = [
-  ...catalogSpecialtyProfiles,
+  ...factoryProfiles,
   radiationOncologyIndiaProfile,
   medicalOncologyIndiaProfile,
   pulmonologyIndiaProfile,
@@ -55,7 +97,7 @@ test("ships every catalog specialty through one complete page contract", () => {
     MEDICAL_ONCOLOGY_PROCEDURES,
   );
   assertCompleteProfile(pulmonologyIndiaProfile, PULMONOLOGY_PROCEDURES);
-  for (const profile of catalogSpecialtyProfiles) {
+  for (const profile of factoryProfiles) {
     assertCompleteProfile(
       profile,
       treatments
