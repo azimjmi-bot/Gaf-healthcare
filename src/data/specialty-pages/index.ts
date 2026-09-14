@@ -7,7 +7,8 @@ import {
   filterTreatments,
 } from "@/lib/catalog";
 import { doctors, hospitals, treatments } from "@/lib/data";
-import { COUNTRIES, SPECIALTIES } from "@/lib/taxonomy";
+import { compareSpecialties, COUNTRIES, SPECIALTIES } from "@/lib/taxonomy";
+import { catalogSpecialtyProfiles } from "./catalog-profiles";
 import { medicalOncologyIndiaProfile } from "./medical-oncology";
 import { pulmonologyIndiaProfile } from "./pulmonology";
 import { radiationOncologyIndiaProfile } from "./radiation-oncology";
@@ -25,13 +26,21 @@ export type {
 } from "./types";
 
 const BASE_SPECIALTY_PAGES: Record<string, SpecialtyPageProfile> = {
+  ...Object.fromEntries(
+    catalogSpecialtyProfiles.map((profile) => [
+      `${profile.countrySlug}/${profile.specialtySlug}`,
+      profile,
+    ]),
+  ),
   "india/radiation-oncology": radiationOncologyIndiaProfile,
   "india/medical-oncology": medicalOncologyIndiaProfile,
   "india/pulmonology": pulmonologyIndiaProfile,
 };
 
 export function listBaseSpecialtyPages() {
-  return Object.values(BASE_SPECIALTY_PAGES);
+  return Object.values(BASE_SPECIALTY_PAGES).sort((a, b) =>
+    compareSpecialties(a.specialtySlug, b.specialtySlug),
+  );
 }
 
 function blankSpecialtyPage(

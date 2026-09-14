@@ -1,5 +1,8 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { treatments } from "../../lib/treatments";
+import { SPECIALTIES } from "../../lib/taxonomy";
+import { catalogSpecialtyProfiles } from "./catalog-profiles";
 import { medicalOncologyIndiaProfile } from "./medical-oncology";
 import { pulmonologyIndiaProfile } from "./pulmonology";
 import { radiationOncologyIndiaProfile } from "./radiation-oncology";
@@ -13,6 +16,7 @@ import {
 import type { SpecialtyPageProfile } from "./types";
 
 const profiles = [
+  ...catalogSpecialtyProfiles,
   radiationOncologyIndiaProfile,
   medicalOncologyIndiaProfile,
   pulmonologyIndiaProfile,
@@ -41,7 +45,7 @@ function assertCompleteProfile(
   assert.ok(profile.cityFaqQuestions.length >= 3);
 }
 
-test("ships three published profiles through one specialty page contract", () => {
+test("ships every catalog specialty through one complete page contract", () => {
   assertCompleteProfile(
     radiationOncologyIndiaProfile,
     RADIATION_PROCEDURES,
@@ -51,10 +55,34 @@ test("ships three published profiles through one specialty page contract", () =>
     MEDICAL_ONCOLOGY_PROCEDURES,
   );
   assertCompleteProfile(pulmonologyIndiaProfile, PULMONOLOGY_PROCEDURES);
+  for (const profile of catalogSpecialtyProfiles) {
+    assertCompleteProfile(
+      profile,
+      treatments
+        .filter((treatment) =>
+          treatment.specialtySlugs.includes(profile.specialtySlug),
+        )
+        .map((treatment) => treatment.name),
+    );
+  }
+  assert.deepEqual(
+    profiles.map((profile) => profile.specialtySlug).sort(),
+    SPECIALTIES.map((specialty) => specialty.slug).sort(),
+  );
   for (const profile of profiles) {
     assert.equal(profile.countrySlug, "india");
-    assert.equal(profile.status, "published");
-    assert.equal(profile.allowIndex, true);
+  }
+  const heldForArticleDepth = new Set([
+    "surgical-oncology",
+    "pediatric-hematology",
+    "urology",
+  ]);
+  for (const profile of profiles) {
+    assert.equal(
+      profile.status,
+      heldForArticleDepth.has(profile.specialtySlug) ? "draft" : "published",
+    );
+    assert.equal(profile.allowIndex, !heldForArticleDepth.has(profile.specialtySlug));
   }
 });
 
@@ -99,6 +127,10 @@ test("keeps specialty terminology, pathways and pricing bases distinct", () => {
     pulmonologyIndiaProfile.pricingGroups[0].basis,
     /per /i,
   );
+  assert.equal(
+    new Set(profiles.map((profile) => profile.terminology.practitioner)).size,
+    profiles.length,
+  );
 });
 
 test("contains no fabricated rankings, guarantees or city prices", () => {
@@ -111,4 +143,5 @@ test("contains no fabricated rankings, guarantees or city prices", () => {
   assert.doesNotMatch(text, /\[(?:INDIA_COST|US_COST|STAY)\]/);
   assert.match(text, /qualified medical oncologist/i);
   assert.match(text, /qualified respiratory/i);
+  assert.match(text, /catalog relationship does not guarantee/i);
 });
