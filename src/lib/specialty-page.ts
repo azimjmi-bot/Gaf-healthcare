@@ -1,7 +1,11 @@
 import "server-only";
 import { getCostArticle } from "@/data/cost-articles";
 import type { SpecialtyCityEditorial, SpecialtyPageProfile } from "@/data/specialty-pages";
-import { filterDoctors, filterHospitals, filterTreatments } from "@/lib/catalog";
+import {
+  filterDoctors,
+  filterHospitalsForDoctors,
+  filterTreatments,
+} from "@/lib/catalog";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { COUNTRIES, CITIES, getSpecialty, type CityTaxon } from "@/lib/taxonomy";
 import type { Doctor } from "@/lib/doctors";
@@ -52,6 +56,7 @@ export type SpecialtyCityData = {
   doctorCount: number;
   hospitalCount: number;
   procedureCount: number;
+  longFormArticleCoverage: number;
 };
 
 export type SpecialtyTreatmentGroupData = {
@@ -96,6 +101,8 @@ export type SpecialtyPageData = {
   pricedProcedureCount: number;
   cityPricedProcedureCount: number;
   hasCitySpecificPricing: boolean;
+  longFormArticleCount: number;
+  longFormArticleCoverage: number;
   cityUniqueness?: CityUniquenessAssessment;
 };
 
@@ -156,20 +163,39 @@ export function buildSpecialtyPageData(
     ? profile.cityEditorials.find((item) => item.citySlug === city.slug)
     : undefined;
   const nationalQuery = { destination: country.name, specialty: specialty.name };
+  const nationalDoctors = filterDoctors(nationalQuery, doctors);
+  const nationalHospitals = filterHospitalsForDoctors(
+    nationalQuery,
+    nationalDoctors,
+    hospitals,
+  );
   const nationalProcedures = filterTreatments(
     nationalQuery,
     treatments,
-    hospitals,
+    nationalHospitals,
   );
-  const nationalDoctors = filterDoctors(nationalQuery, doctors);
-  const nationalHospitals = filterHospitals(nationalQuery, hospitals);
   const query = {
     ...nationalQuery,
     ...(city ? { city: city.name } : {}),
   };
-  const matchedProcedures = filterTreatments(query, treatments, hospitals);
   const matchedDoctors = filterDoctors(query, doctors);
-  const matchedHospitals = filterHospitals(query, hospitals);
+  const matchedHospitals = filterHospitalsForDoctors(
+    query,
+    matchedDoctors,
+    nationalHospitals,
+  );
+  const matchedProcedures = filterTreatments(
+    query,
+    treatments,
+    matchedHospitals,
+  );
+  const longFormArticleCount = matchedProcedures.filter((procedure) =>
+    Boolean(getCostArticle(procedure.slug)),
+  ).length;
+  const longFormArticleCoverage =
+    matchedProcedures.length > 0
+      ? longFormArticleCount / matchedProcedures.length
+      : 0;
   const procedureIndex = new Map(
     matchedProcedures.map((procedure) => [procedure.slug, procedure]),
   );
@@ -183,25 +209,39 @@ export function buildSpecialtyPageData(
 
   const cities = CITIES.filter((city) => city.countrySlug === country.slug)
     .map((city) => {
-      const cityHospitals = nationalHospitals.filter(
-        (hospital) => hospital.citySlug === city.slug,
+      const cityQuery = { ...nationalQuery, city: city.name };
+      const cityDoctors = filterDoctors(cityQuery, nationalDoctors);
+      const cityHospitals = filterHospitalsForDoctors(
+        cityQuery,
+        cityDoctors,
+        nationalHospitals,
       );
-      const hospitalSlugs = new Set(cityHospitals.map((hospital) => hospital.slug));
+      const cityProcedures = filterTreatments(
+        cityQuery,
+        nationalProcedures,
+        cityHospitals,
+      );
+      const cityLongFormCount = cityProcedures.filter((procedure) =>
+        Boolean(getCostArticle(procedure.slug)),
+      ).length;
       return {
         name: city.name,
         slug: city.slug,
-        doctorCount: nationalDoctors.filter((doctor) => doctor.city === city.name).length,
+        doctorCount: cityDoctors.length,
         hospitalCount: cityHospitals.length,
-        procedureCount: nationalProcedures.filter((procedure) =>
-          procedure.hospitalSlugs.some((slug) => hospitalSlugs.has(slug)),
-        ).length,
+        procedureCount: cityProcedures.length,
+        longFormArticleCoverage:
+          cityProcedures.length > 0
+            ? cityLongFormCount / cityProcedures.length
+            : 0,
       };
     })
     .filter(
       (city) =>
-        city.doctorCount > 0 &&
-        city.hospitalCount > 0 &&
-        city.procedureCount > 0 &&
+        city.doctorCount >= 3 &&
+        city.hospitalCount >= 3 &&
+        city.procedureCount >= 3 &&
+        city.longFormArticleCoverage >= 0.9 &&
         profile.cityEditorials.some((editorial) => editorial.citySlug === city.slug),
     );
 
@@ -296,6 +336,8 @@ export function buildSpecialtyPageData(
     ...compatibleSummary,
     cityPricedProcedureCount,
     hasCitySpecificPricing: cityPricedProcedureCount > 0,
+    longFormArticleCount,
+    longFormArticleCoverage,
   };
   data.cityUniqueness = city ? assessCityUniqueness(data) : undefined;
   return data;
@@ -308,8 +350,8 @@ export function assessCityUniqueness(
   const evidence = {
     editorialIntroduction: Boolean(editorial?.introduction.length),
     treatmentInventory: data.procedures.length >= 3,
-    hospitalInventory: data.hospitals.length > 0,
-    doctorInventory: data.doctors.length > 0,
+    hospitalInventory: data.hospitals.length >= 3,
+    doctorInventory: data.doctors.length >= 3,
     cityPricing: data.cityPricedProcedureCount > 0,
     technologyRelationships: data.technologies.length > 0,
     ecosystemContext: Boolean(editorial?.whyCity.length),
@@ -353,8 +395,9 @@ export function specialtyPageMeetsQualityThreshold(data: SpecialtyPageData) {
     data.profile.recordsRequired.length >= 5 &&
     data.profile.faqs.length >= 8 &&
     data.procedures.length >= 3 &&
-    data.doctors.length > 0 &&
-    data.hospitals.length > 0 &&
+    data.longFormArticleCoverage >= 0.9 &&
+    data.doctors.length >= (data.city ? 3 : 1) &&
+    data.hospitals.length >= (data.city ? 3 : 1) &&
     data.procedures.every((procedure) => groupedProcedures.has(procedure.slug)) &&
     data.procedures.every((procedure) => pricedProcedures.has(procedure.slug)) &&
     (!data.city || Boolean(data.cityUniqueness?.meetsThreshold))

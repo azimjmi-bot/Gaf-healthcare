@@ -1,7 +1,11 @@
 import "server-only";
 import { loadCatalogCms } from "@/lib/cms/catalog-store";
 import type { CmsEdition } from "@/lib/cms/edition";
-import { filterDoctors, filterHospitals, filterTreatments } from "@/lib/catalog";
+import {
+  filterDoctors,
+  filterHospitalsForDoctors,
+  filterTreatments,
+} from "@/lib/catalog";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { COUNTRIES, SPECIALTIES } from "@/lib/taxonomy";
 import { medicalOncologyIndiaProfile } from "./medical-oncology";
@@ -83,10 +87,16 @@ export function listSpecialtyPageCandidates(): SpecialtyPageProfile[] {
   for (const country of COUNTRIES) {
     for (const specialty of SPECIALTIES) {
       const query = { destination: country.name, specialty: specialty.name };
+      const matchedDoctors = filterDoctors(query, doctors);
+      const matchedHospitals = filterHospitalsForDoctors(
+        query,
+        matchedDoctors,
+        hospitals,
+      );
       if (
-        filterTreatments(query, treatments, hospitals).length < 3 ||
-        filterDoctors(query, doctors).length === 0 ||
-        filterHospitals(query, hospitals).length === 0
+        filterTreatments(query, treatments, matchedHospitals).length < 3 ||
+        matchedDoctors.length === 0 ||
+        matchedHospitals.length === 0
       ) {
         continue;
       }

@@ -69,6 +69,25 @@ export function filterHospitals(q: CatalogQuery, rows: Hospital[] = hospitals): 
   });
 }
 
+/**
+ * Restrict specialty hospitals to campuses that have at least one matching
+ * doctor relationship. The legacy hospital capability arrays are broader than
+ * the reviewed doctor-to-campus inventory and are not sufficient provenance
+ * for specialty authority pages on their own.
+ */
+export function filterHospitalsForDoctors(
+  q: CatalogQuery,
+  matchedDoctors: Doctor[],
+  rows: Hospital[] = hospitals,
+): Hospital[] {
+  const doctorHospitalSlugs = new Set(
+    matchedDoctors.map((doctor) => doctor.hospitalSlug),
+  );
+  return filterHospitals(q, rows).filter((hospital) =>
+    doctorHospitalSlugs.has(hospital.slug),
+  );
+}
+
 /** Specialties that still have cost rows after destination/city filters. */
 export function listCostSpecialtyGroups(
   q: CatalogQuery,

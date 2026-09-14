@@ -15,6 +15,12 @@ const pilotSlugs = [
   "pulmonology",
 ];
 
+const qualifiedCitySlugs: Record<string, string[]> = {
+  "radiation-oncology": ["delhi-ncr", "chennai", "hyderabad"],
+  "medical-oncology": ["delhi-ncr", "mumbai", "chennai", "hyderabad"],
+  pulmonology: ["delhi-ncr", "mumbai", "bengaluru", "chennai", "hyderabad"],
+};
+
 test("discovers relationship-qualified specialty-country CMS candidates", () => {
   const candidates = listSpecialtyPageCandidates();
   assert.ok(candidates.length >= pilotSlugs.length);
@@ -36,16 +42,21 @@ test("publishes three data-qualified country profiles through one builder", () =
     assert.equal(specialtyPageMeetsQualityThreshold(data), true, specialtySlug);
     assert.equal(data.procedures.length, data.pricedProcedureCount);
     assert.ok(data.pricingGroups.length > 0);
+    assert.ok(data.longFormArticleCoverage >= 0.9);
   }
 });
 
-test("city pages pass an information-based uniqueness gate without requiring tariffs", () => {
+test("only doctor-backed, data-sufficient cities pass the authority-page gate", () => {
   for (const specialtySlug of pilotSlugs) {
     const profile = getSpecialtyPage("india", specialtySlug);
     assert.ok(profile, specialtySlug);
     const country = buildSpecialtyPageData(profile);
     assert.ok(country, specialtySlug);
-    assert.equal(country.cities.length, 5, specialtySlug);
+    assert.deepEqual(
+      country.cities.map((city) => city.slug),
+      qualifiedCitySlugs[specialtySlug],
+      specialtySlug,
+    );
     for (const city of country.cities) {
       const data = buildSpecialtyPageData(profile, city.slug);
       assert.ok(data, `${specialtySlug}/${city.slug}`);
@@ -61,6 +72,9 @@ test("city pages pass an information-based uniqueness gate without requiring tar
       assert.ok(
         (data.cityUniqueness?.estimatedInformationShare ?? 1) <= 0.35,
       );
+      assert.ok(data.doctors.length >= 3);
+      assert.ok(data.hospitals.length >= 3);
+      assert.ok(data.longFormArticleCoverage >= 0.9);
       if (!data.hasCitySpecificPricing) {
         assert.equal(data.cityPricedProcedureCount, 0);
         assert.ok(
@@ -69,6 +83,26 @@ test("city pages pass an information-based uniqueness gate without requiring tar
             .every((row) => row.cityRange === undefined),
         );
       }
+    }
+  }
+});
+
+test("city pages fail closed when doctor-backed hospital depth is insufficient", () => {
+  const rejectedCitySlugs: Record<string, string[]> = {
+    "radiation-oncology": ["mumbai", "bengaluru"],
+    "medical-oncology": ["bengaluru"],
+  };
+  for (const [specialtySlug, citySlugs] of Object.entries(rejectedCitySlugs)) {
+    const profile = getSpecialtyPage("india", specialtySlug);
+    assert.ok(profile, specialtySlug);
+    for (const citySlug of citySlugs) {
+      const data = buildSpecialtyPageData(profile, citySlug);
+      assert.ok(data, `${specialtySlug}/${citySlug}`);
+      assert.equal(
+        specialtyPageMeetsQualityThreshold(data),
+        false,
+        `${specialtySlug}/${citySlug}`,
+      );
     }
   }
 });
