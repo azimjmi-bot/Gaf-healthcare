@@ -3,6 +3,7 @@
 import { LocaleLink as Link } from "@/components/locale-link";
 import { useT } from "@/components/locale-provider";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { GOOGLE_MAPS_URL, YOUTUBE_CHANNEL } from "@/data/home";
 import { stripLocalePrefix } from "@/lib/i18n/path";
 import { site } from "@/lib/site";
@@ -27,7 +28,14 @@ export function SiteFooter() {
     <footer className="border-t border-border bg-ink text-ivory">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-5 md:grid-cols-12 md:gap-12 md:px-8 md:py-16">
         <div className="md:col-span-5">
-          <p className="font-heading text-2xl tracking-[0.12em] uppercase md:text-3xl">GAF Healthcare</p>
+          <Image
+            src="/brand/gaf-healthcare-light.svg"
+            alt="GAF Healthcare"
+            width={206}
+            height={199}
+            unoptimized
+            className="h-16 w-auto md:h-20"
+          />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-ivory/70">
             {site.tagline} {t("footer.tagline")}
           </p>

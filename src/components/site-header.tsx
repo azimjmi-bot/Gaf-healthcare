@@ -4,6 +4,7 @@ import { LocaleLink as Link } from "@/components/locale-link";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { useLocale, useT } from "@/components/locale-provider";
 import { usePathname } from "next/navigation";
+import Image from "next/image";
 import { Menu } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
@@ -41,8 +42,16 @@ export function SiteHeader() {
       }
     >
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 pt-[env(safe-area-inset-top)] sm:px-5 md:h-20 md:px-8">
-        <Link href="/" className="min-w-0 font-heading text-[0.95rem] tracking-[0.08em] uppercase sm:text-lg md:text-2xl md:tracking-[0.12em]">
-          GAF Healthcare
+        <Link href="/" className="shrink-0" aria-label="GAF Healthcare — home">
+          <Image
+            src={overlay ? "/brand/gaf-healthcare-light.svg" : "/brand/gaf-healthcare.svg"}
+            alt="GAF Healthcare"
+            width={206}
+            height={199}
+            priority
+            unoptimized
+            className="h-10 w-auto md:h-16"
+          />
         </Link>
         <nav className="hidden items-center gap-8 lg:flex">
           {links.map((l) => {
@@ -84,8 +93,15 @@ export function SiteHeader() {
             </SheetTrigger>
             <SheetContent side={locale === "ar" ? "left" : "right"} className="w-[min(100%,20rem)]">
               <SheetHeader>
-                <SheetTitle className="font-heading text-xl tracking-[0.12em] uppercase">
-                  GAF Healthcare
+                <SheetTitle>
+                  <Image
+                    src="/brand/gaf-healthcare.svg"
+                    alt="GAF Healthcare"
+                    width={206}
+                    height={199}
+                    unoptimized
+                    className="h-12 w-auto"
+                  />
                 </SheetTitle>
               </SheetHeader>
               <nav className="mt-6 flex flex-col gap-1 px-4">

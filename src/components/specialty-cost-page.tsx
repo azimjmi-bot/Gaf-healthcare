@@ -747,6 +747,10 @@ export function SpecialtyCostPage({
             "@type": "Organization",
             name: "GAF Healthcare",
             url: "https://gaf.healthcare/",
+            logo: {
+              "@type": "ImageObject",
+              url: "https://gaf.healthcare/brand/gaf-healthcare.png",
+            },
           },
           about: {
             "@type": "Thing",

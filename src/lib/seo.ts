@@ -413,7 +413,12 @@ export function medicalWebPageJsonLd(opts: {
     lastReviewed: opts.lastReviewed,
     dateModified: opts.lastReviewed,
     isPartOf: { "@type": "WebSite", name: site.name, url: absoluteUrl("/", locale) },
-    publisher: { "@type": "Organization", name: site.name, url: absoluteUrl("/", locale) },
+    publisher: {
+      "@type": "Organization",
+      name: site.name,
+      url: absoluteUrl("/", locale),
+      logo: { "@type": "ImageObject", url: absoluteUrl("/brand/gaf-healthcare.png") },
+    },
     audience: { "@type": "MedicalAudience", audienceType: "Patient" },
     specialty: opts.specialty,
     ...(opts.image ? { image: absoluteUrl(opts.image) } : {}),
