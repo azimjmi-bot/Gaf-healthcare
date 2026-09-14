@@ -103,7 +103,11 @@ function SectionHeading({
   return (
     <header className="max-w-3xl">
       {eyebrow ? (
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-gold">
+        <p
+          className={`text-xs font-medium uppercase tracking-[0.18em] ${
+            inverse ? "text-gold-bright" : "text-gold"
+          }`}
+        >
           {eyebrow}
         </p>
       ) : null}

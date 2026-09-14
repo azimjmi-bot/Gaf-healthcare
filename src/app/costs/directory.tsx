@@ -48,11 +48,11 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
     });
     const title =
       data?.city
-        ? `${data.specialty.name} Cost in ${data.city.name} | Treatments & Doctors`
+        ? `${data.specialty.name} Cost in ${data.city.name}, ${data.country.name} | Treatment Guide`
         : profile.seoTitle;
     const description =
       data?.city
-        ? `Explore ${data.procedures.length} ${data.specialty.name} treatments, ${data.hospitals.length} related hospitals and ${data.doctors.length} connected specialists in ${data.city.name}.`
+        ? `Explore ${data.procedures.length} ${data.specialty.name} treatments, ${data.hospitals.length} related hospitals and ${data.doctors.length} connected specialists in ${data.city.name}, ${data.country.name}.`
         : profile.seoDescription;
     return {
       ...wrapped,
