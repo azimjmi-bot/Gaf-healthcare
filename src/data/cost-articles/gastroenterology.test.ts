@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
-import { GASTROENTEROLOGY_PROCEDURES, toSlug } from "../../lib/taxonomy";
+import { GASTROENTEROLOGY_PROCEDURES } from "../../lib/taxonomy";
 import { costsFilterPath } from "../../lib/catalog-links";
 import { parsePrettyCatalogSegments } from "../../lib/pretty-catalog-path";
 import { gastroenterologyArticles, gastroenterologyArticlesBySlug } from "./gastroenterology";
