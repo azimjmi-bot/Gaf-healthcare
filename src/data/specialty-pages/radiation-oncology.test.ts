@@ -59,7 +59,7 @@ test("uses only existing procedure and specialty relationships", () => {
 });
 
 test("provides substantive specialty-level clinical, cost and travel content", () => {
-  const { cityEditorials: _cityEditorials, ...countryProfile } = profile;
+  const countryProfile = { ...profile, cityEditorials: [] };
   const words = countWords(countryProfile);
   assert.ok(words >= 2_500 && words <= 3_500, `${words} editorial words`);
   assert.ok(profile.overview.length >= 2);

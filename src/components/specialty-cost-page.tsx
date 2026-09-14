@@ -719,7 +719,9 @@ export function SpecialtyCostPage({
           },
           about: {
             "@type": "Thing",
-            name: `${data.specialty.name} in ${place}, ${data.country.name}`,
+            name: data.city
+              ? `${data.specialty.name} in ${data.city.name}, ${data.country.name}`
+              : `${data.specialty.name} in ${data.country.name}`,
           },
           mainEntity: {
             "@type": "Thing",
