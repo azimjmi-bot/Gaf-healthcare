@@ -1,5 +1,9 @@
 import { NextResponse } from "next/server";
-import { getBaseSpecialtyPage, saveableSpecialtyPageFields, specialtyPageKey } from "@/data/specialty-pages";
+import {
+  getEditableSpecialtyPage,
+  saveableSpecialtyPageFields,
+  specialtyPageKey,
+} from "@/data/specialty-pages";
 import type { SpecialtyPagePatch } from "@/data/specialty-pages/types";
 import { requireCmsSession } from "@/lib/cms/auth";
 import { editionFromRequest } from "@/lib/cms/edition";
@@ -15,7 +19,7 @@ export async function PUT(
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
   const { country, slug } = await params;
-  if (!getBaseSpecialtyPage(country, slug)) {
+  if (!getEditableSpecialtyPage(country, slug)) {
     return NextResponse.json({ error: "Specialty page not found." }, { status: 404 });
   }
   const body = (await request.json().catch(() => null)) as SpecialtyPagePatch | null;

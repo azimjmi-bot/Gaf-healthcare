@@ -14,6 +14,38 @@ type PriceBand = {
   max: number;
 };
 
+export type SpecialtyPriceRow = {
+  procedure: Treatment;
+  countryRange: string;
+  cityRange?: string;
+};
+
+export type SpecialtyPricingGroupData = {
+  name: string;
+  basis: string;
+  explanation: string;
+  rows: SpecialtyPriceRow[];
+};
+
+export type CityUniquenessAssessment = {
+  citySpecificBlocks: number;
+  sharedInformationBlocks: number;
+  estimatedInformationShare: number;
+  evidence: {
+    editorialIntroduction: boolean;
+    treatmentInventory: boolean;
+    hospitalInventory: boolean;
+    doctorInventory: boolean;
+    cityPricing: boolean;
+    technologyRelationships: boolean;
+    ecosystemContext: boolean;
+    patientLogistics: boolean;
+    cityFaqs: boolean;
+    entityLinks: boolean;
+  };
+  meetsThreshold: boolean;
+};
+
 export type SpecialtyCityData = {
   name: string;
   slug: string;
@@ -58,11 +90,13 @@ export type SpecialtyPageData = {
   treatmentGroups: SpecialtyTreatmentGroupData[];
   conditions: SpecialtyConditionData[];
   technologies: SpecialtyTechnologyData[];
+  pricingGroups: SpecialtyPricingGroupData[];
   relatedSpecialties: NonNullable<ReturnType<typeof getSpecialty>>[];
   costRange?: string;
   pricedProcedureCount: number;
-  /** The current catalog has country-level treatment prices, not city tariffs. */
+  cityPricedProcedureCount: number;
   hasCitySpecificPricing: boolean;
+  cityUniqueness?: CityUniquenessAssessment;
 };
 
 function parseUsdRange(value: string): PriceBand | undefined {
@@ -187,8 +221,38 @@ export function buildSpecialtyPageData(
         a.name.localeCompare(b.name),
     )
     .slice(0, 6);
+  const pricingGroups = profile.pricingGroups
+    .map((group) => ({
+      ...group,
+      rows: mapProcedures(group.procedureSlugs, procedureIndex).map(
+        (procedure) => {
+          const article = getCostArticle(procedure.slug);
+          const cityRange = city
+            ? article?.cities.find((item) => item.citySlug === city.slug)
+                ?.costRange
+            : undefined;
+          return {
+            procedure,
+            countryRange: procedure.partnerRange,
+            cityRange,
+          };
+        },
+      ),
+    }))
+    .filter((group) => group.rows.length > 0);
+  const cityPricedProcedureCount = pricingGroups.reduce(
+    (sum, group) =>
+      sum + group.rows.filter((row) => Boolean(row.cityRange)).length,
+    0,
+  );
+  const compatibleSummary =
+    pricingGroups.length === 1
+      ? aggregateCostRange(pricingGroups[0].rows.map((row) => row.procedure))
+      : { pricedProcedureCount: matchedProcedures.filter((procedure) =>
+          Boolean(parseUsdRange(procedure.partnerRange)),
+        ).length };
 
-  return {
+  const data: SpecialtyPageData = {
     profile,
     specialty,
     country,
@@ -208,16 +272,19 @@ export function buildSpecialtyPageData(
         procedures: mapProcedures(group.procedureSlugs, procedureIndex),
       }))
       .filter((group) => group.procedures.length > 0),
-    conditions: profile.conditions.map((condition) => ({
-      ...condition,
-      procedures: mapProcedures(condition.procedureSlugs, procedureIndex),
-    })),
+    conditions: profile.conditions
+      .map((condition) => ({
+        ...condition,
+        procedures: mapProcedures(condition.procedureSlugs, procedureIndex),
+      }))
+      .filter((condition) => !city || condition.procedures.length > 0),
     technologies: profile.technologies
       .map((technology) => ({
         ...technology,
         procedures: mapProcedures(technology.procedureSlugs, procedureIndex),
       }))
       .filter((technology) => technology.procedures.length > 0),
+    pricingGroups,
     relatedSpecialties: profile.relatedSpecialtySlugs
       .map((slug) => getSpecialty(slug))
       .filter(
@@ -226,19 +293,70 @@ export function buildSpecialtyPageData(
         ): related is NonNullable<ReturnType<typeof getSpecialty>> =>
           Boolean(related),
       ),
-    ...aggregateCostRange(matchedProcedures),
-    hasCitySpecificPricing: false,
+    ...compatibleSummary,
+    cityPricedProcedureCount,
+    hasCitySpecificPricing: cityPricedProcedureCount > 0,
+  };
+  data.cityUniqueness = city ? assessCityUniqueness(data) : undefined;
+  return data;
+}
+
+export function assessCityUniqueness(
+  data: SpecialtyPageData,
+): CityUniquenessAssessment {
+  const editorial = data.cityEditorial;
+  const evidence = {
+    editorialIntroduction: Boolean(editorial?.introduction.length),
+    treatmentInventory: data.procedures.length >= 3,
+    hospitalInventory: data.hospitals.length > 0,
+    doctorInventory: data.doctors.length > 0,
+    cityPricing: data.cityPricedProcedureCount > 0,
+    technologyRelationships: data.technologies.length > 0,
+    ecosystemContext: Boolean(editorial?.whyCity.length),
+    patientLogistics: Boolean(
+      editorial?.planning.length && editorial.logistics.length,
+    ),
+    cityFaqs: Boolean(editorial?.faqExtras.length),
+    entityLinks: data.cities.length > 1,
+  };
+  const citySpecificBlocks = Object.values(evidence).filter(Boolean).length;
+  // The shared specialty framework contains approximately twenty substantive
+  // clinical, cost, trust and navigation blocks.
+  const sharedInformationBlocks = 20;
+  const estimatedInformationShare =
+    citySpecificBlocks / (citySpecificBlocks + sharedInformationBlocks);
+  return {
+    citySpecificBlocks,
+    sharedInformationBlocks,
+    estimatedInformationShare,
+    evidence,
+    meetsThreshold:
+      Boolean(data.city && editorial) &&
+      citySpecificBlocks >= 8 &&
+      estimatedInformationShare >= 0.25,
   };
 }
 
 export function specialtyPageMeetsQualityThreshold(data: SpecialtyPageData) {
+  const groupedProcedures = new Set(
+    data.profile.treatmentGroups.flatMap((group) => group.procedureSlugs),
+  );
+  const pricedProcedures = new Set(
+    data.profile.pricingGroups.flatMap((group) => group.procedureSlugs),
+  );
   return (
     data.profile.status === "published" &&
     data.profile.overview.length >= 2 &&
-    data.profile.faqs.length >= 10 &&
+    data.profile.selection.length >= 2 &&
+    data.profile.treatmentProcess.length >= 5 &&
+    data.profile.costExplanation.length >= 2 &&
+    data.profile.recordsRequired.length >= 5 &&
+    data.profile.faqs.length >= 8 &&
     data.procedures.length >= 3 &&
     data.doctors.length > 0 &&
     data.hospitals.length > 0 &&
-    (!data.city || Boolean(data.cityEditorial))
+    data.procedures.every((procedure) => groupedProcedures.has(procedure.slug)) &&
+    data.procedures.every((procedure) => pricedProcedures.has(procedure.slug)) &&
+    (!data.city || Boolean(data.cityUniqueness?.meetsThreshold))
   );
 }

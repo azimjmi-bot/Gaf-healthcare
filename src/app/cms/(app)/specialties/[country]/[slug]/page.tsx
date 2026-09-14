@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { CmsSpecialtyPageEditor } from "@/components/cms/cms-specialty-page-editor";
-import { getSpecialtyPage } from "@/data/specialty-pages";
+import { getEditableSpecialtyPage } from "@/data/specialty-pages";
 import { editionFromCookies } from "@/lib/cms/edition-server";
 import { COUNTRIES, getSpecialty } from "@/lib/taxonomy";
 
@@ -12,7 +12,11 @@ export default async function CmsSpecialtyPageEditorPage({
   params: Promise<{ country: string; slug: string }>;
 }) {
   const { country, slug } = await params;
-  const page = getSpecialtyPage(country, slug, await editionFromCookies());
+  const page = getEditableSpecialtyPage(
+    country,
+    slug,
+    await editionFromCookies(),
+  );
   if (!page) notFound();
   const specialty = getSpecialty(slug);
   const countryRecord = COUNTRIES.find((item) => item.slug === country);

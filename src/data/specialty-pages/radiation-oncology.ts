@@ -13,6 +13,13 @@ export const radiationOncologyIndiaProfile = {
     "Understand radiation oncology in India, including treatment selection, planning, technology, course costs, records, stays and international patient care.",
   introAnswer:
     "Radiation oncology in India uses carefully planned external beams or internal sources to treat cancer and selected non-cancer conditions. The appropriate technique and course depend on the treatment site, intended number of fractions, nearby sensitive organs and planning complexity; a radiation oncologist confirms these after reviewing the diagnosis, imaging and any previous radiation.",
+  terminology: {
+    careItem: "treatment",
+    careItems: "treatments",
+    practitioner: "radiation oncologist",
+    practitioners: "radiation oncologists",
+    durationLabel: "Typical course or stay",
+  },
   overview: [
     "Radiation oncology is the medical specialty that uses ionising radiation to damage the DNA of abnormal cells while limiting dose to healthy tissue. A radiation oncologist is the physician who assesses whether radiation is appropriate, defines its intent, prescribes dose and fractionation, and manages treatment-related effects. External beam radiotherapy directs radiation from a machine outside the body; brachytherapy instead places a sealed source inside or close to the target for a steep, local dose fall-off.",
     "Planning usually begins with simulation, often a treatment-position CT with a mask, vacuum cushion or other immobilisation. The radiation oncologist contours the tumour or postoperative target and organs at risk, sometimes fusing MRI or PET information; dosimetrists and medical physicists then calculate and quality-check the plan. Fractionation divides the prescribed dose into treatment sessions. Fraction size and schedule differ by disease, intent, normal-tissue tolerance, prior treatment and the patient's ability to attend.",
@@ -255,6 +262,55 @@ export const radiationOncologyIndiaProfile = {
     "An external beam estimate may include review, simulation, immobilisation, contouring, dosimetry, physics checks, image guidance, scheduled fractions and treatment reviews. MRI or PET fusion, fiducials, replanning, extra fractions, concurrent medicines and later scans may be separate.",
     "Brachytherapy, plaque and IORT can add theatre, anaesthesia, applicators or implants, source logistics, insertion imaging and ward care. External beams are usually outpatient; implants, anaesthesia, transplant or surgery may require day-care or admission. Lodging and transport are generally separate.",
   ],
+  pricingGroups: [
+    {
+      name: "External beam courses",
+      basis: "Per prescribed treatment course",
+      explanation:
+        "Compare the complete prescribed course, including simulation, planning, image guidance and the stated number of fractions.",
+      procedureSlugs: [
+        "external-beam-radiotherapy-ebrt",
+        "3d-conformal-radiotherapy-3d-crt",
+        "intensity-modulated-radiotherapy-imrt",
+        "image-guided-radiotherapy-igrt",
+      ],
+    },
+    {
+      name: "Stereotactic treatment",
+      basis: "Per target and prescribed course",
+      explanation:
+        "Target count, fraction count, tracking, immobilisation and planning scope must match before prices are compared.",
+      procedureSlugs: [
+        "stereotactic-radiosurgery-srs",
+        "stereotactic-body-radiotherapy-sbrt",
+        "cyberknife",
+        "gamma-knife",
+      ],
+    },
+    {
+      name: "Brachytherapy",
+      basis: "Per insertion, implant or prescribed course",
+      explanation:
+        "The quotation must state insertion count, applicator or plaque, source handling, anaesthesia, theatre and admission.",
+      procedureSlugs: [
+        "brachytherapy",
+        "intracavitary-brachytherapy",
+        "interstitial-brachytherapy",
+        "plaque-brachytherapy",
+      ],
+    },
+    {
+      name: "Specialized protocols",
+      basis: "Per named treatment episode",
+      explanation:
+        "Proton, intraoperative and transplant-linked radiation require protocol-specific scope and cannot be compared as ordinary sessions.",
+      procedureSlugs: [
+        "proton-beam-therapy",
+        "intraoperative-radiotherapy-iort",
+        "total-body-irradiation-tbi",
+      ],
+    },
+  ],
   costFactors: [
     { label: "Technique", detail: "Conformal, modulated, stereotactic, proton and implant plans use different resources." },
     { label: "Fractions and targets", detail: "Session and target counts affect machine time, reviews and lodging." },
@@ -461,6 +517,14 @@ export const radiationOncologyIndiaProfile = {
       q: "What records are needed for a radiation treatment estimate?",
       a: "The team commonly needs pathology, current staging images, previous treatment and any prior radiation dose records. Additional tests depend on the diagnosis and proposed technique.",
     },
+  ],
+  cityFaqQuestions: [
+    "How many radiation sessions are usually required?",
+    "Is radiation treatment painful?",
+    "Does the patient become radioactive?",
+    "Can radiation be given again to a previously treated area?",
+    "Why is simulation needed?",
+    "What records are needed for a radiation treatment estimate?",
   ],
   cityEditorials: radiationOncologyIndiaCityEditorials,
   medicalDisclaimer:

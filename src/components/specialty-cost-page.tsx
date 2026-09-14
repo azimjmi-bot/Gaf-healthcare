@@ -45,21 +45,24 @@ function countrySpecialtyPath(data: SpecialtyPageData) {
 function visibleFaqs(data: SpecialtyPageData) {
   if (!data.city || !data.cityEditorial) return data.profile.faqs;
   const city = data.city.name;
+  const terms = data.profile.terminology;
   const generated = [
     {
       q: `How much does ${data.specialty.name} cost in ${city}?`,
-      a: `No verified ${city}-specific tariff is stored. The procedure table shows current India planning ranges only for the ${data.procedures.length} treatments represented by live ${city} relationships; request a case-specific hospital quotation after records review.`,
+      a: data.hasCitySpecificPricing
+        ? `${data.cityPricedProcedureCount} ${terms.careItems} currently have a stored ${city}-specific range. Other rows request a personalized estimate; every figure remains subject to clinical review and written scope.`
+        : `No verified ${city}-specific tariff is stored. The page does not copy a national range into a city price; request a case-specific hospital quotation after records review.`,
     },
     {
-      q: `Which ${data.specialty.name} treatments are represented in ${city}?`,
-      a: `${data.procedures.length} current procedure relationships appear on this page. The list updates from the GAF catalog and does not prove that every listed hospital offers every treatment.`,
+      q: `Which ${data.specialty.name} ${terms.careItems} are represented in ${city}?`,
+      a: `${data.procedures.length} current ${terms.careItem} relationships appear on this page. The list updates from the GAF catalog and does not prove that every listed hospital offers every item.`,
     },
     {
       q: `How many ${data.specialty.name} hospitals are represented in ${city}?`,
       a: `${data.hospitals.length} related hospital records currently meet the city and specialty filters. This is a factual catalog count, not a ranking or statement that every campus accepts every case.`,
     },
     {
-      q: `How many ${data.specialty.name} doctors are represented in ${city}?`,
+      q: `How many ${data.specialty.name} ${terms.practitioners} are represented in ${city}?`,
       a: `${data.doctors.length} connected doctor records currently meet the city and specialty filters. Profiles use stored CMS relationships and ordering is not a ranking.`,
     },
     {
@@ -68,23 +71,15 @@ function visibleFaqs(data: SpecialtyPageData) {
     },
     {
       q: `Can I compare ${data.specialty.name} hospitals in ${city}?`,
-      a: "Yes. Compare the stored hospital and clinician relationships, then request like-for-like written plans covering technique, fractions, simulation, guidance, inclusions and exclusions.",
+      a: "Yes. Compare the stored hospital and clinician relationships, then request like-for-like written plans with the same clinical scope, billing basis, inclusions, exclusions and follow-up.",
     },
     {
       q: `How long should an international patient stay in ${city}?`,
-      a: "There is no universal stay. Consultation and planning precede treatment; one- or few-session pathways can be shorter than weekday courses, while brachytherapy, surgery-linked radiation or transplant protocols can require admission.",
+      a: "There is no universal stay. Evaluation, treatment schedule, monitoring, recovery and fitness to travel are patient-specific; the treating team must confirm the practical timeline.",
     },
   ];
-  const clinicalQuestions = [
-    "How many radiation sessions are usually required?",
-    "Is radiation treatment painful?",
-    "Does the patient become radioactive?",
-    "Can radiation be given again to a previously treated area?",
-    "Why is simulation needed?",
-    "What records are needed for a radiation treatment estimate?",
-  ];
   const shared = data.profile.faqs.filter((faq) =>
-    clinicalQuestions.includes(faq.q),
+    data.profile.cityFaqQuestions.includes(faq.q),
   );
   return [...generated, ...data.cityEditorial.faqExtras, ...shared].slice(0, 18);
 }
@@ -144,7 +139,7 @@ function CityIntroduction({ data }: { data: SpecialtyPageData }) {
       <SectionHeading
         eyebrow={`${data.specialty.name} · ${data.city.name}`}
         title={`${data.specialty.name} in ${data.city.name}`}
-        intro={`${data.city.name} currently has ${data.procedures.length} procedures, ${data.hospitals.length} related hospitals and ${data.doctors.length} connected specialists represented by live GAF relationships.`}
+        intro={`${data.city.name} currently has ${data.procedures.length} ${data.profile.terminology.careItem} relationships, ${data.hospitals.length} related hospitals and ${data.doctors.length} connected ${data.profile.terminology.practitioners} represented by live GAF data.`}
       />
       <Paragraphs rows={data.cityEditorial.introduction} />
       <p className="mt-6 text-sm">
@@ -197,13 +192,14 @@ function ProcedureLink({
 
 function TreatmentDirectory({ data }: { data: SpecialtyPageData }) {
   const place = placeName(data);
+  const terms = data.profile.terminology;
   return (
     <section id="treatments" className="scroll-mt-28 bg-secondary/35 py-12 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-5 md:px-8">
         <SectionHeading
-          eyebrow="Treatments"
-          title={`${data.specialty.name} treatments available in ${place}`}
-          intro={`The ${data.procedures.length} current treatment records ${data.city ? `connected to ${data.city.name}` : `in ${data.country.name}`} are grouped by clinical approach. Every link opens a separate procedure-cost guide; a platform name is not a treatment recommendation.`}
+          eyebrow={terms.careItems}
+          title={`${data.specialty.name} ${terms.careItems} represented in ${place}`}
+          intro={`The ${data.procedures.length} current ${terms.careItem} records ${data.city ? `connected to ${data.city.name}` : `in ${data.country.name}`} are grouped by clinical approach. Every link opens a separate cost guide; a service or platform name is not a treatment recommendation.`}
         />
         <div className="mt-8 grid gap-6 lg:grid-cols-2">
           {data.treatmentGroups.map((group) => (
@@ -227,40 +223,62 @@ function TreatmentDirectory({ data }: { data: SpecialtyPageData }) {
 
 function ProcedureComparison({ data }: { data: SpecialtyPageData }) {
   const place = placeName(data);
+  const terms = data.profile.terminology;
+  const rows = data.pricingGroups.flatMap((group) =>
+    group.rows.map((row) => ({ ...row, basis: group.basis })),
+  );
+  if (rows.length === 0) return null;
   return (
     <section className="mx-auto max-w-7xl px-4 py-12 sm:px-5 md:px-8 md:py-20">
       <SectionHeading
         eyebrow="Compare"
-        title={`${data.specialty.name} procedure costs in ${place}`}
+        title={`${data.specialty.name} ${terms.careItem} costs in ${place}`}
         intro={
           data.city
-            ? `No verified ${data.city.name}-only tariffs are stored. These are India planning ranges for procedures represented by current city relationships; they may describe a course, insertion, operation-linked component or transplant protocol.`
-            : "These are current GAF catalog planning ranges. They may describe a course, insertion, operation-linked component or transplant protocol rather than one interchangeable session."
+            ? data.hasCitySpecificPricing
+              ? `${data.cityPricedProcedureCount} rows use stored ${data.city.name}-specific ranges. Rows without verified city pricing request a personalized estimate instead of copying the India range.`
+              : `No verified ${data.city.name}-specific tariffs are stored for these ${terms.careItems}. The table requests a personalized estimate instead of presenting national figures as city prices.`
+            : "These are current GAF catalog planning ranges, separated by compatible billing basis. A cycle, course, operation, test and treatment programme are not interchangeable units."
         }
       />
+      <div className="mt-8 grid gap-3 md:grid-cols-2">
+        {data.pricingGroups.map((group) => (
+          <div key={group.name} className="rounded-xl border border-border bg-card p-4">
+            <h3 className="font-medium">{group.name}</h3>
+            <p className="mt-1 text-sm text-muted-foreground">{group.basis}</p>
+            <p className="mt-2 text-sm leading-relaxed">{group.explanation}</p>
+          </div>
+        ))}
+      </div>
       <div className="mt-8 overflow-x-auto rounded-2xl border border-border">
-        <table className="min-w-[760px] w-full text-left text-sm">
+        <table className="min-w-[980px] w-full text-left text-sm">
           <thead className="bg-secondary/60 text-xs uppercase tracking-[0.14em] text-muted-foreground">
             <tr>
-              <th className="px-5 py-4 font-medium">Treatment</th>
+              <th className="px-5 py-4 font-medium">{terms.careItem}</th>
               <th className="px-5 py-4 font-medium">What it is used for</th>
-              <th className="px-5 py-4 font-medium">Typical course or stay</th>
-              <th className="px-5 py-4 font-medium">GAF India planning range</th>
+              <th className="px-5 py-4 font-medium">{terms.durationLabel}</th>
+              <th className="px-5 py-4 font-medium">Pricing basis</th>
+              <th className="px-5 py-4 font-medium">
+                {data.city ? `${data.city.name} cost` : "GAF India planning range"}
+              </th>
               <th className="px-5 py-4 font-medium">Details</th>
             </tr>
           </thead>
           <tbody>
-            {data.procedures.map((procedure) => (
-              <tr key={procedure.slug} className="border-t border-border bg-card align-top">
-                <td className="px-5 py-4 font-medium">{procedure.name}</td>
+            {rows.map((row) => (
+              <tr key={row.procedure.slug} className="border-t border-border bg-card align-top">
+                <td className="px-5 py-4 font-medium">{row.procedure.name}</td>
                 <td className="max-w-sm px-5 py-4 text-muted-foreground">
-                  {specialtyProcedureSummary(procedure)}
+                  {specialtyProcedureSummary(row.procedure)}
                 </td>
-                <td className="px-5 py-4 text-muted-foreground">{procedure.stay}</td>
-                <td className="px-5 py-4 whitespace-nowrap">{procedure.partnerRange}</td>
+                <td className="px-5 py-4 text-muted-foreground">{row.procedure.stay}</td>
+                <td className="px-5 py-4 text-muted-foreground">{row.basis}</td>
+                <td className="px-5 py-4 whitespace-nowrap">
+                  {data.city ? row.cityRange ?? "Personalized estimate" : row.countryRange}
+                </td>
                 <td className="px-5 py-4">
-                  <Link href={`/costs/${procedure.slug}`} className="whitespace-nowrap underline-offset-4 hover:underline">
-                    View treatment
+                  <Link href={`/costs/${row.procedure.slug}`} className="whitespace-nowrap underline-offset-4 hover:underline">
+                    View {terms.careItem}
                   </Link>
                 </td>
               </tr>
@@ -270,7 +288,7 @@ function ProcedureComparison({ data }: { data: SpecialtyPageData }) {
       </div>
       <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
         Indicative planning ranges, not guaranteed hospital quotations. The treating team confirms
-        technique, fractions, planning, admission and exclusions after clinical review.
+        the clinical scope, billing basis, schedule, admission, monitoring and exclusions after review.
       </p>
     </section>
   );
@@ -282,8 +300,8 @@ function Conditions({ data }: { data: SpecialtyPageData }) {
     <section id="conditions" className="mx-auto max-w-7xl px-4 py-12 sm:px-5 md:px-8 md:py-20">
       <SectionHeading
         eyebrow="Clinical scope"
-        title={`Conditions treated with ${data.specialty.name}${data.city ? ` in ${data.city.name}` : ""}`}
-        intro={`A specialty can have diagnostic, curative, supportive or palliative roles. A diagnosis alone does not establish that any listed treatment is appropriate${data.city ? ` or represented at every ${data.city.name} hospital` : ""}.`}
+        title={`Conditions assessed or treated in ${data.specialty.name}${data.city ? ` in ${data.city.name}` : ""}`}
+        intro={`A specialty can have diagnostic, medical, procedural, supportive or palliative roles. A diagnosis alone does not establish that any listed ${data.profile.terminology.careItem} is appropriate${data.city ? ` or represented at every ${data.city.name} hospital` : ""}.`}
       />
       <div className="mt-8 grid gap-x-10 gap-y-7 md:grid-cols-2">
         {data.conditions.map((condition) => (
@@ -319,7 +337,7 @@ function Process({ data }: { data: SpecialtyPageData }) {
         <SectionHeading
           eyebrow="Treatment pathway"
           title={`How ${data.specialty.name} treatment works`}
-          intro={`The exact sequence changes with the diagnosis and technique, but planning and safety checks come before treatment delivery.${data.city ? ` Patients travelling to ${data.city.name} should allow time for consultation, simulation, plan checks and the scheduled treatment course.` : ""}`}
+          intro={`This specialty-specific pathway is configured from approved editorial content. The exact sequence changes with the diagnosis, selected ${data.profile.terminology.careItem} and patient factors.${data.city ? ` Patients travelling to ${data.city.name} should keep the schedule flexible until the treating team confirms evaluation, treatment and follow-up.` : ""}`}
           inverse
         />
         <ol className="mt-8 grid gap-4 md:grid-cols-3">
@@ -347,10 +365,12 @@ function CostDetails({ data }: { data: SpecialtyPageData }) {
         title={`${data.specialty.name} cost in ${place}`}
         intro={
           data.city
-            ? `No verified ${data.city.name}-specific tariff is stored. The comparison table uses current India planning ranges only for the ${data.pricedProcedureCount} priced procedures represented in the city; final pricing depends on the selected hospital, treatment plan, clinical complexity and written inclusions.`
+            ? data.hasCitySpecificPricing
+              ? `${data.cityPricedProcedureCount} ${data.profile.terminology.careItems} have a stored ${data.city.name}-specific range. Missing city prices remain personalized estimates; final pricing depends on the selected hospital, clinical plan, billing basis and written inclusions.`
+              : `No verified ${data.city.name}-specific tariff is stored. National figures are not presented as local prices; request a personalized estimate tied to the selected hospital, clinical plan, billing basis and written inclusions.`
             : data.costRange
             ? `Current GAF-listed procedure ranges span ${data.costRange} across ${data.pricedProcedureCount} priced treatments. This is not a national average: the rows represent different techniques, courses and clinical scopes.`
-            : "Treatment costs vary by procedure and clinical complexity. A personalized estimate follows medical-record review."
+            : `Costs are shown by ${data.pricingGroups.length} compatible pricing ${data.pricingGroups.length === 1 ? "basis" : "bases"} rather than one misleading specialty-wide range. A personalized estimate follows medical-record review.`
         }
       />
       <Paragraphs rows={data.profile.costExplanation} />
@@ -474,7 +494,9 @@ function CityDirectory({ data }: { data: SpecialtyPageData }) {
               </p>
               <dl className="mt-4 space-y-2 text-sm">
                 <div className="flex justify-between gap-3">
-                  <dt className="text-muted-foreground">Procedures</dt>
+                  <dt className="text-muted-foreground">
+                    {data.profile.terminology.careItems}
+                  </dt>
                   <dd>{city.procedureCount}</dd>
                 </div>
                 <div className="flex justify-between gap-3">
@@ -692,15 +714,17 @@ export function SpecialtyCostPage({
   const place = placeName(data);
   const consultHref = `/consult?specialty=${data.profile.specialtySlug}`;
   const costAnswer = data.city
-    ? `No verified ${data.city.name}-specific tariff is stored. GAF shows India planning ranges only for procedures represented by current city relationships; a named hospital must issue the case-specific quotation.`
+    ? data.hasCitySpecificPricing
+      ? `${data.cityPricedProcedureCount} ${data.profile.terminology.careItems} have stored ${data.city.name}-specific planning ranges. Other services remain case-specific, and a named hospital must confirm every quotation.`
+      : `No verified ${data.city.name}-specific tariff is stored. National ranges are not reused as city prices; a named hospital must issue the case-specific quotation.`
     : data.costRange
     ? `${data.specialty.name} procedure prices currently listed by GAF span ${data.costRange} in ${data.country.name}. This is a cross-procedure planning span, not an average or hospital quotation.`
-    : `${data.specialty.name} costs vary by procedure and clinical complexity. A personalized estimate follows medical-record review.`;
+    : `${data.specialty.name} costs use different billing bases. Compare the relevant ${data.profile.terminology.careItem} row and request a personalized estimate after medical-record review.`;
   const pageName = data.city
     ? `${data.specialty.name} Cost in ${data.city.name}, ${data.country.name}`
     : data.profile.seoTitle;
   const pageDescription = data.city
-    ? `Explore ${data.procedures.length} ${data.specialty.name} treatments, ${data.hospitals.length} related hospitals and ${data.doctors.length} connected specialists in ${data.city.name}, ${data.country.name}.`
+    ? `Explore ${data.procedures.length} ${data.specialty.name} ${data.profile.terminology.careItems}, ${data.hospitals.length} related hospitals and ${data.doctors.length} connected ${data.profile.terminology.practitioners} in ${data.city.name}, ${data.country.name}.`
     : data.profile.seoDescription;
 
   return (
@@ -792,7 +816,7 @@ export function SpecialtyCostPage({
               </h1>
               <p className="mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">
                 {data.city
-                  ? `${data.city.name} currently has ${data.procedures.length} GAF-listed procedure relationships across ${data.hospitals.length} related hospitals and ${data.doctors.length} connected specialists. Treatment selection depends on diagnosis, intent, anatomy, previous treatment and verified capability at the named campus.`
+                  ? `${data.city.name} currently has ${data.procedures.length} GAF-listed ${data.profile.terminology.careItem} relationships across ${data.hospitals.length} related hospitals and ${data.doctors.length} connected ${data.profile.terminology.practitioners}. Selection depends on the diagnosis, patient-specific factors and verified capability at the named campus.`
                   : data.profile.introAnswer}
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
@@ -809,7 +833,11 @@ export function SpecialtyCostPage({
                 {data.city ? "City cost planning" : "Current catalog span"}
               </p>
               <p className="mt-2 font-heading text-4xl">
-                {data.city ? "Personalized estimate" : data.costRange ?? "Case-specific"}
+                {data.city
+                  ? data.hasCitySpecificPricing
+                    ? `${data.cityPricedProcedureCount} locally priced`
+                    : "Personalized estimate"
+                  : data.costRange ?? "Compare by pricing basis"}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{costAnswer}</p>
             </aside>
@@ -826,7 +854,11 @@ export function SpecialtyCostPage({
                 ),
               }}
               resultCount={data.procedures.length}
-              resultLabel={data.procedures.length === 1 ? "pathway" : "pathways"}
+              resultLabel={
+                data.procedures.length === 1
+                  ? data.profile.terminology.careItem
+                  : data.profile.terminology.careItems
+              }
             />
           </Suspense>
         </div>
@@ -837,11 +869,15 @@ export function SpecialtyCostPage({
         <dl className="mt-5 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
           {[
             [
-              data.city ? "City-specific tariff" : "Indicative cost span",
-              data.city ? "Not stored" : data.costRange ?? "Personalized estimate",
+              data.city ? "City-specific pricing" : "Indicative cost span",
+              data.city
+                ? data.hasCitySpecificPricing
+                  ? `${data.cityPricedProcedureCount} verified`
+                  : "Personalized estimate"
+                : data.costRange ?? "Multiple pricing bases",
             ],
-            ["Available procedures", String(data.procedures.length)],
-            ["Listed specialists", String(data.doctors.length)],
+            [`Available ${data.profile.terminology.careItems}`, String(data.procedures.length)],
+            [`Listed ${data.profile.terminology.practitioners}`, String(data.doctors.length)],
             ["Related hospitals", String(data.hospitals.length)],
             [
               data.city ? "Represented technologies" : "Indian cities",

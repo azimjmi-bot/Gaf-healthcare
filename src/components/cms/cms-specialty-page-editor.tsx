@@ -7,12 +7,14 @@ import { Textarea } from "@/components/ui/textarea";
 import type { SpecialtyPageProfile } from "@/data/specialty-pages/types";
 
 type JsonKey =
+  | "terminology"
   | "overview"
   | "conditions"
   | "treatmentGroups"
   | "selection"
   | "treatmentProcess"
   | "costExplanation"
+  | "pricingGroups"
   | "costFactors"
   | "mayInclude"
   | "mayBeAdditional"
@@ -23,15 +25,26 @@ type JsonKey =
   | "countryComparison"
   | "relatedSpecialtySlugs"
   | "faqs"
+  | "cityFaqQuestions"
   | "cityEditorials";
 
 const JSON_FIELDS: { key: JsonKey; label: string; help: string }[] = [
+  {
+    key: "terminology",
+    label: "Specialty terminology",
+    help: "JSON: careItem, careItems, practitioner, practitioners, durationLabel",
+  },
   { key: "overview", label: "Overview paragraphs", help: "JSON array of strings" },
   { key: "conditions", label: "Conditions", help: "JSON array: name, summary, procedureSlugs" },
   { key: "treatmentGroups", label: "Treatment groups", help: "JSON array: name, summary, procedureSlugs" },
   { key: "selection", label: "Treatment selection", help: "JSON array of strings" },
   { key: "treatmentProcess", label: "Treatment process", help: "JSON array: label, detail" },
   { key: "costExplanation", label: "Cost explanation", help: "JSON array of strings" },
+  {
+    key: "pricingGroups",
+    label: "Compatible pricing groups",
+    help: "JSON array: name, basis, explanation, procedureSlugs",
+  },
   { key: "costFactors", label: "Cost factors", help: "JSON array: label, detail" },
   { key: "mayInclude", label: "May include", help: "JSON array of strings" },
   { key: "mayBeAdditional", label: "May be additional", help: "JSON array of strings" },
@@ -46,6 +59,11 @@ const JSON_FIELDS: { key: JsonKey; label: string; help: string }[] = [
   { key: "countryComparison", label: "Country comparison", help: "JSON array of strings" },
   { key: "relatedSpecialtySlugs", label: "Related specialty slugs", help: "JSON array of exact slugs" },
   { key: "faqs", label: "FAQs", help: "JSON array: q, a" },
+  {
+    key: "cityFaqQuestions",
+    label: "Shared questions allowed on city pages",
+    help: "JSON array of exact FAQ question strings",
+  },
   {
     key: "cityEditorials",
     label: "City editorial guides",

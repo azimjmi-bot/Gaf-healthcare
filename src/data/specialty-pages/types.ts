@@ -18,6 +18,23 @@ export type SpecialtyTechnology = {
   procedureSlugs: string[];
 };
 
+export type SpecialtyTerminology = {
+  /** Clinically natural singular label, for example treatment, procedure or service. */
+  careItem: string;
+  careItems: string;
+  practitioner: string;
+  practitioners: string;
+  durationLabel: string;
+};
+
+export type SpecialtyPricingGroup = {
+  name: string;
+  /** The billing scope that must remain consistent within this group. */
+  basis: string;
+  explanation: string;
+  procedureSlugs: string[];
+};
+
 export type SpecialtyCityEditorial = {
   citySlug: string;
   /** City-specific context; counts and entity names stay dynamic. */
@@ -38,12 +55,14 @@ export type SpecialtyPageProfile = {
   seoTitle: string;
   seoDescription: string;
   introAnswer: string;
+  terminology: SpecialtyTerminology;
   overview: string[];
   conditions: SpecialtyCondition[];
   treatmentGroups: SpecialtyTreatmentGroup[];
   selection: string[];
   treatmentProcess: { label: string; detail: string }[];
   costExplanation: string[];
+  pricingGroups: SpecialtyPricingGroup[];
   costFactors: { label: string; detail: string }[];
   mayInclude: string[];
   mayBeAdditional: string[];
@@ -54,6 +73,8 @@ export type SpecialtyPageProfile = {
   countryComparison: string[];
   relatedSpecialtySlugs: string[];
   faqs: { q: string; a: string }[];
+  /** Exact shared FAQ questions that remain clinically useful on city pages. */
+  cityFaqQuestions: string[];
   cityEditorials: SpecialtyCityEditorial[];
   medicalDisclaimer: string;
 };
@@ -67,12 +88,14 @@ export type SpecialtyPagePatch = Partial<
     | "seoTitle"
     | "seoDescription"
     | "introAnswer"
+    | "terminology"
     | "overview"
     | "conditions"
     | "treatmentGroups"
     | "selection"
     | "treatmentProcess"
     | "costExplanation"
+    | "pricingGroups"
     | "costFactors"
     | "mayInclude"
     | "mayBeAdditional"
@@ -83,6 +106,7 @@ export type SpecialtyPagePatch = Partial<
     | "countryComparison"
     | "relatedSpecialtySlugs"
     | "faqs"
+    | "cityFaqQuestions"
     | "cityEditorials"
     | "medicalDisclaimer"
   >

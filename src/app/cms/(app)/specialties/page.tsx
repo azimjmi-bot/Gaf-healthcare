@@ -1,5 +1,8 @@
 import Link from "next/link";
-import { getSpecialtyPage, listBaseSpecialtyPages } from "@/data/specialty-pages";
+import {
+  getEditableSpecialtyPage,
+  listSpecialtyPageCandidates,
+} from "@/data/specialty-pages";
 import { editionFromCookies } from "@/lib/cms/edition-server";
 import { COUNTRIES, getSpecialty } from "@/lib/taxonomy";
 
@@ -7,9 +10,13 @@ export const dynamic = "force-dynamic";
 
 export default async function CmsSpecialtyPages() {
   const edition = await editionFromCookies();
-  const pages = listBaseSpecialtyPages().map(
+  const pages = listSpecialtyPageCandidates().map(
     (page) =>
-      getSpecialtyPage(page.countrySlug, page.specialtySlug, edition) ?? page,
+      getEditableSpecialtyPage(
+        page.countrySlug,
+        page.specialtySlug,
+        edition,
+      ) ?? page,
   );
   return (
     <div className="cms-page">

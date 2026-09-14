@@ -53,7 +53,7 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
         : profile.seoTitle;
     const description =
       data?.city
-        ? `Explore ${data.procedures.length} ${data.specialty.name} treatments, ${data.hospitals.length} related hospitals and ${data.doctors.length} connected specialists in ${data.city.name}, ${data.country.name}.`
+        ? `Explore ${data.procedures.length} ${data.specialty.name} ${data.profile.terminology.careItems}, ${data.hospitals.length} related hospitals and ${data.doctors.length} connected ${data.profile.terminology.practitioners} in ${data.city.name}, ${data.country.name}.`
         : profile.seoDescription;
     return {
       ...wrapped,
