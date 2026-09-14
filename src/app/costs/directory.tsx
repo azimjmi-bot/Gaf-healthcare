@@ -2,16 +2,21 @@ import { LocaleLink as Link } from "@/components/locale-link";
 import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { SpecialtyPager } from "@/components/specialty-pager";
+import { SpecialtyCostPage } from "@/components/specialty-cost-page";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, listCostSpecialtyGroups, type CatalogQuery } from "@/lib/catalog";
+import { costsFilterPath } from "@/lib/catalog-links";
+import { getSpecialtyPage } from "@/data/specialty-pages";
 import { hospitals, treatments } from "@/lib/data";
-import { faqJsonLd } from "@/lib/seo";
+import { absoluteUrl, faqJsonLd } from "@/lib/seo";
 import { catalogPageMetadata } from "@/lib/i18n/page-meta";
 import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { getRequestLocale } from "@/lib/i18n/request";
+import { getSpecialty, toSlug } from "@/lib/taxonomy";
+import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
 import type { Metadata } from "next";
 
 export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metadata> {
@@ -22,6 +27,43 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
     return { ...meta, alternates: wrapped.alternates, openGraph: { ...meta.openGraph, ...wrapped.openGraph } };
   }
   const wrapped = await catalogPageMetadata("treatments", query);
+  const locale = await getRequestLocale();
+  const specialty = query.specialty ? getSpecialty(query.specialty) : undefined;
+  const countrySlug = query.destination ? toSlug(query.destination) : undefined;
+  const profile =
+    locale === "en" && specialty && countrySlug && !query.city
+      ? getSpecialtyPage(countrySlug, specialty.slug)
+      : undefined;
+  if (profile) {
+    const data = buildSpecialtyPageData(profile);
+    const indexable =
+      Boolean(data && specialtyPageMeetsQualityThreshold(data)) &&
+      profile.allowIndex &&
+      profile.status === "published";
+    const path = costsFilterPath({
+      destination: query.destination,
+      specialty: specialty?.name ?? query.specialty,
+    });
+    return {
+      ...wrapped,
+      title: profile.seoTitle,
+      description: profile.seoDescription,
+      robots: indexable ? undefined : { index: false, follow: true },
+      alternates: { canonical: absoluteUrl(path) },
+      openGraph: {
+        ...wrapped.openGraph,
+        title: profile.seoTitle,
+        description: profile.seoDescription,
+        url: absoluteUrl(path),
+        type: "website",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: profile.seoTitle,
+        description: profile.seoDescription,
+      },
+    };
+  }
   const facets = [query.city, query.specialty].filter(Boolean).length;
   if (facets > 1) {
     return { ...wrapped, robots: { index: false, follow: true } };
@@ -36,6 +78,16 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
   }
 
   const locale = await getRequestLocale();
+  const specialty = query.specialty ? getSpecialty(query.specialty) : undefined;
+  const countrySlug = query.destination ? toSlug(query.destination) : undefined;
+  const profile =
+    locale === "en" && specialty && countrySlug && !query.city
+      ? getSpecialtyPage(countrySlug, specialty.slug)
+      : undefined;
+  const specialtyData = profile ? buildSpecialtyPageData(profile) : undefined;
+  if (specialtyData && specialtyPageMeetsQualityThreshold(specialtyData)) {
+    return <SpecialtyCostPage data={specialtyData} query={query} />;
+  }
   const messages = await localizeMessages(locale);
   const faqs = await localizeFaqs("costs", locale);
   const specialtyPages = listCostSpecialtyGroups(query, treatments, hospitals);

@@ -1,4 +1,5 @@
 import type { ArticleBlock } from "@/lib/cms/types";
+import type { SpecialtyPagePatch } from "@/data/specialty-pages/types";
 
 export type DoctorPatch = {
   bio?: string;
@@ -134,6 +135,8 @@ export type CatalogCms = {
   treatmentOverrides: Record<string, TreatmentPatch>;
   treatmentsAdded: Record<string, unknown>[];
   treatmentsDeleted: string[];
+  /** Editorial specialty-country content keyed as `{countrySlug}/{specialtySlug}`. */
+  specialtyPageOverrides: Record<string, SpecialtyPagePatch>;
 };
 
 export function emptyCatalogCms(): CatalogCms {
@@ -147,5 +150,6 @@ export function emptyCatalogCms(): CatalogCms {
     treatmentOverrides: {},
     treatmentsAdded: [],
     treatmentsDeleted: [],
+    specialtyPageOverrides: {},
   };
 }

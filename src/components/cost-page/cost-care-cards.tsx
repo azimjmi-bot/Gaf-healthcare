@@ -10,10 +10,12 @@ export function CostHospitalCard({
   hospital,
   doctorCount,
   consultHref,
+  doctorContext = "this pathway",
 }: {
   hospital: Hospital;
   doctorCount: number;
   consultHref: string;
+  doctorContext?: string;
 }) {
   const specialties = hospital.specialties.slice(0, 4);
   return (
@@ -38,7 +40,7 @@ export function CostHospitalCard({
         ) : null}
         <p className="cost-hcard__count">
           {doctorCount > 0
-            ? `${doctorCount} listed ${doctorCount === 1 ? "doctor" : "doctors"} for this pathway`
+            ? `${doctorCount} listed ${doctorCount === 1 ? "doctor" : "doctors"} for ${doctorContext}`
             : "Consultant match on request"}
         </p>
         {hospital.languages ? (

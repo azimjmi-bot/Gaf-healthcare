@@ -22,6 +22,7 @@ const NAV = [
   { href: "/cms/doctors", label: "Doctors", icon: Stethoscope },
   { href: "/cms/hospitals", label: "Hospitals", icon: Building2 },
   { href: "/cms/costs", label: "Cost sheets", icon: Wallet },
+  { href: "/cms/specialties", label: "Specialty pages", icon: FolderTree },
   { href: "/cms/media", label: "Media", icon: ImageIcon },
   { href: "/cms/taxonomies", label: "Categories & tags", icon: FolderTree },
   { href: "/cms/settings", label: "Settings", icon: Settings },

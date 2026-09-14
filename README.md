@@ -36,6 +36,7 @@ A WordPress-style desk lives at [`/cms`](http://localhost:43127/cms). Sign-in pa
 
 - **Articles** — create, edit, duplicate, trash and restore posts; body blocks, featured image, SEO, tags, related links. Public `/blogs` reads published articles from `content/cms.json`.
 - **Doctors, hospitals, cost sheets** — bio, photo and sheet fields are stored in `content/catalog-cms.json`. Doctor and hospital bios accept Markdown (`**bold**`, lists, links, headings) with a Write/Preview desk. The public profile renders that Markdown; directory cards and meta descriptions stay plain text. Add a consultant to an existing hospital and specialty, add a campus using an India city already in taxonomy, or add a cost sheet for a procedure slug that already exists. Remove hides the record on the live site (a tombstone). Restore brings it back. The Ginger JSON catalog, `*-costs.ts` files, and pSEO matching helpers are not rewritten.
+- **Specialty pages** — editorial specialty-country hub fields are managed at `/cms/specialties` and stored as `specialtyPageOverrides` in `content/catalog-cms.json`. Procedures, prices, doctors, hospitals and city counts are not copied into editorial content: they are recalculated from the live catalog. The first published profile is Radiation Oncology in India. Draft or data-thin profiles do not replace the established directory page and are noindexed.
 
 Draft articles stay off the public `/blogs` list. Media uploads land in `public/uploads/articles`.
 
