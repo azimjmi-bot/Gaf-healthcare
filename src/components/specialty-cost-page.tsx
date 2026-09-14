@@ -177,7 +177,7 @@ function Conditions({ data }: { data: SpecialtyPageData }) {
       <SectionHeading
         eyebrow="Clinical scope"
         title={`Conditions treated with ${data.specialty.name}`}
-        intro="Radiation may have curative, postoperative, definitive or palliative roles. A diagnosis alone does not establish that radiation—or any listed technique—is appropriate."
+        intro="A specialty can have diagnostic, curative, supportive or palliative roles. A diagnosis alone does not establish that any listed treatment is appropriate."
       />
       <div className="mt-8 grid gap-x-10 gap-y-7 md:grid-cols-2">
         {data.conditions.map((condition) => (
@@ -381,7 +381,7 @@ function CareDirectories({ data }: { data: SpecialtyPageData }) {
               <SectionHeading
                 eyebrow="Hospitals"
                 title={`Hospitals for ${data.specialty.name} in ${data.country.name}`}
-                intro={`${data.hospitals.length} hospitals currently have a Radiation Oncology specialty relationship. Cards show stored CMS information, not a ranking or universal capability claim.`}
+                intro={`${data.hospitals.length} hospitals currently have a ${data.specialty.name} specialty relationship. Cards show stored CMS information, not a ranking or universal capability claim.`}
               />
               <Link
                 href={hospitalsPath({
@@ -596,12 +596,14 @@ export function SpecialtyCostPage({
         data={doctorItemListJsonLd(data.featuredDoctors, {
           name: `${data.specialty.name} doctors in ${data.country.name}`,
           path,
+          addressCountry: data.country.name,
         })}
       />
       <JsonLd
         data={hospitalItemListJsonLd(data.featuredHospitals, {
           name: `${data.specialty.name} hospitals in ${data.country.name}`,
           path,
+          addressCountry: data.country.name,
         })}
       />
 
@@ -629,7 +631,7 @@ export function SpecialtyCostPage({
                   Get a Personalized Treatment Estimate
                 </Link>
                 <a href="#treatments" className="cost-btn cost-btn--ghost">
-                  Explore radiation treatments
+                  Explore treatments
                 </a>
               </div>
             </div>
@@ -665,7 +667,7 @@ export function SpecialtyCostPage({
           {[
             ["Indicative cost span", data.costRange ?? "Personalized estimate"],
             ["Available procedures", String(data.procedures.length)],
-            ["Radiation oncologists", String(data.doctors.length)],
+            ["Listed specialists", String(data.doctors.length)],
             ["Related hospitals", String(data.hospitals.length)],
             ["Indian cities", String(data.cities.length)],
           ].map(([label, value]) => (

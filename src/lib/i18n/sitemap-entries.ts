@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { costArticles } from "@/data/cost-articles";
+import { getSpecialtyPage } from "@/data/specialty-pages";
 import { listPublishedPosts } from "@/lib/blogs";
 import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { catalogSpecialtyName } from "@/lib/catalog-links";
@@ -7,6 +8,7 @@ import { doctors, hospitals, treatments } from "@/lib/data";
 import { absoluteUrl, SITE_URL } from "@/lib/seo";
 import type { AppLocale } from "@/lib/i18n/languages";
 import { CITIES, INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
+import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
 
 const SEARCH_CONSOLE_ORIGIN = SITE_URL;
 
@@ -57,7 +59,26 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
   for (const specialty of SPECIALTIES) {
     urls.push(entry(doctorsPath({ destination: "India", specialty: specialty.name }), locale, { priority: 0.55 }));
     urls.push(entry(hospitalsPath({ destination: "India", specialty: specialty.name }), locale, { priority: 0.55 }));
-    urls.push(entry(costsFilterPath({ destination: "India", specialty: specialty.name }), locale, { priority: 0.55 }));
+    const profile =
+      locale === "en" ? getSpecialtyPage("india", specialty.slug) : undefined;
+    const profileData = profile ? buildSpecialtyPageData(profile) : undefined;
+    if (
+      !profile ||
+      (profileData &&
+        profile.allowIndex &&
+        specialtyPageMeetsQualityThreshold(profileData))
+    ) {
+      urls.push(
+        entry(
+          costsFilterPath({ destination: "India", specialty: specialty.name }),
+          locale,
+          {
+            lastModified: profile?.lastReviewed,
+            priority: profile ? 0.8 : 0.55,
+          },
+        ),
+      );
+    }
   }
 
   for (const doctor of doctors) {

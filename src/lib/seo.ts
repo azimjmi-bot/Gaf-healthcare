@@ -426,7 +426,7 @@ export function medicalWebPageJsonLd(opts: {
   };
 }
 
-export function hospitalItemListJsonLd(rows: Hospital[], opts: { name: string; path: string; locale?: AppLocale }) {
+export function hospitalItemListJsonLd(rows: Hospital[], opts: { name: string; path: string; locale?: AppLocale; addressCountry?: string }) {
   const locale = opts.locale ?? "en";
   return {
     "@context": "https://schema.org",
@@ -446,14 +446,14 @@ export function hospitalItemListJsonLd(rows: Hospital[], opts: { name: string; p
         address: {
           "@type": "PostalAddress",
           addressLocality: hospital.city,
-          addressCountry: "IN",
+          addressCountry: opts.addressCountry ?? "IN",
         },
       },
     })),
   };
 }
 
-export function doctorItemListJsonLd(rows: Doctor[], opts: { name: string; path: string; locale?: AppLocale }) {
+export function doctorItemListJsonLd(rows: Doctor[], opts: { name: string; path: string; locale?: AppLocale; addressCountry?: string }) {
   const locale = opts.locale ?? "en";
   return {
     "@context": "https://schema.org",
@@ -474,7 +474,7 @@ export function doctorItemListJsonLd(rows: Doctor[], opts: { name: string; path:
         address: {
           "@type": "PostalAddress",
           addressLocality: doctor.city,
-          addressCountry: "IN",
+          addressCountry: opts.addressCountry ?? "IN",
         },
       },
     })),
