@@ -18,6 +18,16 @@ export type SpecialtyTechnology = {
   procedureSlugs: string[];
 };
 
+export type SpecialtyCityEditorial = {
+  citySlug: string;
+  /** City-specific context; counts and entity names stay dynamic. */
+  introduction: string[];
+  whyCity: string[];
+  planning: string[];
+  logistics: string[];
+  faqExtras: { q: string; a: string }[];
+};
+
 export type SpecialtyPageProfile = {
   specialtySlug: string;
   countrySlug: string;
@@ -44,6 +54,7 @@ export type SpecialtyPageProfile = {
   countryComparison: string[];
   relatedSpecialtySlugs: string[];
   faqs: { q: string; a: string }[];
+  cityEditorials: SpecialtyCityEditorial[];
   medicalDisclaimer: string;
 };
 
@@ -72,6 +83,7 @@ export type SpecialtyPagePatch = Partial<
     | "countryComparison"
     | "relatedSpecialtySlugs"
     | "faqs"
+    | "cityEditorials"
     | "medicalDisclaimer"
   >
 >;

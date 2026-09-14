@@ -22,7 +22,8 @@ type JsonKey =
   | "stayDuration"
   | "countryComparison"
   | "relatedSpecialtySlugs"
-  | "faqs";
+  | "faqs"
+  | "cityEditorials";
 
 const JSON_FIELDS: { key: JsonKey; label: string; help: string }[] = [
   { key: "overview", label: "Overview paragraphs", help: "JSON array of strings" },
@@ -45,6 +46,11 @@ const JSON_FIELDS: { key: JsonKey; label: string; help: string }[] = [
   { key: "countryComparison", label: "Country comparison", help: "JSON array of strings" },
   { key: "relatedSpecialtySlugs", label: "Related specialty slugs", help: "JSON array of exact slugs" },
   { key: "faqs", label: "FAQs", help: "JSON array: q, a" },
+  {
+    key: "cityEditorials",
+    label: "City editorial guides",
+    help: "JSON array: citySlug, introduction, whyCity, planning, logistics, faqExtras",
+  },
 ];
 
 export function CmsSpecialtyPageEditor({
@@ -182,7 +188,7 @@ export function CmsSpecialtyPageEditor({
             <span className="ml-2 text-xs text-muted-foreground">{help}</span>
             <Textarea
               className="mt-2 font-mono text-xs"
-              rows={key === "conditions" || key === "technologies" ? 18 : 10}
+              rows={key === "conditions" || key === "technologies" || key === "cityEditorials" ? 18 : 10}
               value={json[key]}
               onChange={(event) =>
                 setJson((current) => ({ ...current, [key]: event.target.value }))

@@ -1,4 +1,5 @@
 import type { SpecialtyPageProfile } from "./types";
+import { radiationOncologyIndiaCityEditorials } from "./radiation-oncology-cities";
 
 export const radiationOncologyIndiaProfile = {
   specialtySlug: "radiation-oncology",
@@ -461,6 +462,7 @@ export const radiationOncologyIndiaProfile = {
       a: "The team commonly needs pathology, current staging images, previous treatment and any prior radiation dose records. Additional tests depend on the diagnosis and proposed technique.",
     },
   ],
+  cityEditorials: radiationOncologyIndiaCityEditorials,
   medicalDisclaimer:
     "This page provides general educational and travel-planning information. Dynamic GAF price and stay figures are indicative planning estimates, not hospital quotations or promises of availability or outcome. Radiation technique, dose, fractions, timing, suitability and fitness to travel must be decided by a qualified radiation oncologist and relevant multidisciplinary clinicians after review of the patient, pathology, imaging, prior radiation and current condition.",
 } satisfies SpecialtyPageProfile;

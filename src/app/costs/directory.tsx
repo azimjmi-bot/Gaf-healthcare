@@ -15,7 +15,7 @@ import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { getRequestLocale } from "@/lib/i18n/request";
-import { getSpecialty, toSlug } from "@/lib/taxonomy";
+import { getCity, getSpecialty, toSlug } from "@/lib/taxonomy";
 import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
 import type { Metadata } from "next";
 
@@ -29,38 +29,48 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
   const wrapped = await catalogPageMetadata("treatments", query);
   const locale = await getRequestLocale();
   const specialty = query.specialty ? getSpecialty(query.specialty) : undefined;
+  const city = query.city ? getCity(query.city) : undefined;
   const countrySlug = query.destination ? toSlug(query.destination) : undefined;
   const profile =
-    locale === "en" && specialty && countrySlug && !query.city
+    locale === "en" && specialty && countrySlug && (!query.city || city)
       ? getSpecialtyPage(countrySlug, specialty.slug)
       : undefined;
   if (profile) {
-    const data = buildSpecialtyPageData(profile);
+    const data = buildSpecialtyPageData(profile, city?.slug);
     const indexable =
       Boolean(data && specialtyPageMeetsQualityThreshold(data)) &&
       profile.allowIndex &&
       profile.status === "published";
     const path = costsFilterPath({
       destination: query.destination,
+      city: query.city,
       specialty: specialty?.name ?? query.specialty,
     });
+    const title =
+      data?.city
+        ? `${data.specialty.name} Cost in ${data.city.name} | Treatments & Doctors`
+        : profile.seoTitle;
+    const description =
+      data?.city
+        ? `Explore ${data.procedures.length} ${data.specialty.name} treatments, ${data.hospitals.length} related hospitals and ${data.doctors.length} connected specialists in ${data.city.name}.`
+        : profile.seoDescription;
     return {
       ...wrapped,
-      title: profile.seoTitle,
-      description: profile.seoDescription,
+      title,
+      description,
       robots: indexable ? undefined : { index: false, follow: true },
       alternates: { canonical: absoluteUrl(path) },
       openGraph: {
         ...wrapped.openGraph,
-        title: profile.seoTitle,
-        description: profile.seoDescription,
+        title,
+        description,
         url: absoluteUrl(path),
         type: "website",
       },
       twitter: {
         card: "summary_large_image",
-        title: profile.seoTitle,
-        description: profile.seoDescription,
+        title,
+        description,
       },
     };
   }
@@ -79,12 +89,15 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
 
   const locale = await getRequestLocale();
   const specialty = query.specialty ? getSpecialty(query.specialty) : undefined;
+  const city = query.city ? getCity(query.city) : undefined;
   const countrySlug = query.destination ? toSlug(query.destination) : undefined;
   const profile =
-    locale === "en" && specialty && countrySlug && !query.city
+    locale === "en" && specialty && countrySlug && (!query.city || city)
       ? getSpecialtyPage(countrySlug, specialty.slug)
       : undefined;
-  const specialtyData = profile ? buildSpecialtyPageData(profile) : undefined;
+  const specialtyData = profile
+    ? buildSpecialtyPageData(profile, city?.slug)
+    : undefined;
   if (specialtyData && specialtyPageMeetsQualityThreshold(specialtyData)) {
     return <SpecialtyCostPage data={specialtyData} query={query} />;
   }

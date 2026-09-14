@@ -1,9 +1,9 @@
 import "server-only";
 import { getCostArticle } from "@/data/cost-articles";
-import type { SpecialtyPageProfile } from "@/data/specialty-pages";
+import type { SpecialtyCityEditorial, SpecialtyPageProfile } from "@/data/specialty-pages";
 import { filterDoctors, filterHospitals, filterTreatments } from "@/lib/catalog";
 import { doctors, hospitals, treatments } from "@/lib/data";
-import { COUNTRIES, CITIES, getSpecialty } from "@/lib/taxonomy";
+import { COUNTRIES, CITIES, getSpecialty, type CityTaxon } from "@/lib/taxonomy";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
@@ -45,7 +45,10 @@ export type SpecialtyPageData = {
   profile: SpecialtyPageProfile;
   specialty: NonNullable<ReturnType<typeof getSpecialty>>;
   country: (typeof COUNTRIES)[number];
+  city?: CityTaxon;
+  cityEditorial?: SpecialtyCityEditorial;
   procedures: Treatment[];
+  nationalProcedureCount: number;
   doctors: Doctor[];
   hospitals: Hospital[];
   featuredDoctors: Doctor[];
@@ -58,6 +61,8 @@ export type SpecialtyPageData = {
   relatedSpecialties: NonNullable<ReturnType<typeof getSpecialty>>[];
   costRange?: string;
   pricedProcedureCount: number;
+  /** The current catalog has country-level treatment prices, not city tariffs. */
+  hasCitySpecificPricing: boolean;
 };
 
 function parseUsdRange(value: string): PriceBand | undefined {
@@ -101,12 +106,33 @@ export function specialtyProcedureSummary(procedure: Treatment) {
 
 export function buildSpecialtyPageData(
   profile: SpecialtyPageProfile,
+  citySlug?: string,
 ): SpecialtyPageData | undefined {
   const specialty = getSpecialty(profile.specialtySlug);
   const country = COUNTRIES.find((item) => item.slug === profile.countrySlug);
   if (!specialty || !country) return undefined;
 
-  const query = { destination: country.name, specialty: specialty.name };
+  const city = citySlug
+    ? CITIES.find(
+        (item) => item.slug === citySlug && item.countrySlug === country.slug,
+      )
+    : undefined;
+  if (citySlug && !city) return undefined;
+  const cityEditorial = city
+    ? profile.cityEditorials.find((item) => item.citySlug === city.slug)
+    : undefined;
+  const nationalQuery = { destination: country.name, specialty: specialty.name };
+  const nationalProcedures = filterTreatments(
+    nationalQuery,
+    treatments,
+    hospitals,
+  );
+  const nationalDoctors = filterDoctors(nationalQuery, doctors);
+  const nationalHospitals = filterHospitals(nationalQuery, hospitals);
+  const query = {
+    ...nationalQuery,
+    ...(city ? { city: city.name } : {}),
+  };
   const matchedProcedures = filterTreatments(query, treatments, hospitals);
   const matchedDoctors = filterDoctors(query, doctors);
   const matchedHospitals = filterHospitals(query, hospitals);
@@ -123,23 +149,26 @@ export function buildSpecialtyPageData(
 
   const cities = CITIES.filter((city) => city.countrySlug === country.slug)
     .map((city) => {
-      const cityHospitals = matchedHospitals.filter(
+      const cityHospitals = nationalHospitals.filter(
         (hospital) => hospital.citySlug === city.slug,
       );
       const hospitalSlugs = new Set(cityHospitals.map((hospital) => hospital.slug));
       return {
         name: city.name,
         slug: city.slug,
-        doctorCount: matchedDoctors.filter((doctor) => doctor.city === city.name).length,
+        doctorCount: nationalDoctors.filter((doctor) => doctor.city === city.name).length,
         hospitalCount: cityHospitals.length,
-        procedureCount: matchedProcedures.filter((procedure) =>
+        procedureCount: nationalProcedures.filter((procedure) =>
           procedure.hospitalSlugs.some((slug) => hospitalSlugs.has(slug)),
         ).length,
       };
     })
     .filter(
       (city) =>
-        city.doctorCount > 0 || city.hospitalCount > 0 || city.procedureCount > 0,
+        city.doctorCount > 0 &&
+        city.hospitalCount > 0 &&
+        city.procedureCount > 0 &&
+        profile.cityEditorials.some((editorial) => editorial.citySlug === city.slug),
     );
 
   const featuredDoctors = [...matchedDoctors]
@@ -163,7 +192,10 @@ export function buildSpecialtyPageData(
     profile,
     specialty,
     country,
+    city,
+    cityEditorial,
     procedures: matchedProcedures,
+    nationalProcedureCount: nationalProcedures.length,
     doctors: matchedDoctors,
     hospitals: matchedHospitals,
     featuredDoctors,
@@ -195,6 +227,7 @@ export function buildSpecialtyPageData(
           Boolean(related),
       ),
     ...aggregateCostRange(matchedProcedures),
+    hasCitySpecificPricing: false,
   };
 }
 
@@ -205,6 +238,7 @@ export function specialtyPageMeetsQualityThreshold(data: SpecialtyPageData) {
     data.profile.faqs.length >= 10 &&
     data.procedures.length >= 3 &&
     data.doctors.length > 0 &&
-    data.hospitals.length > 0
+    data.hospitals.length > 0 &&
+    (!data.city || Boolean(data.cityEditorial))
   );
 }

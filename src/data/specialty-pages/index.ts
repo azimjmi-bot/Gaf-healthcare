@@ -5,6 +5,7 @@ import { radiationOncologyIndiaProfile } from "./radiation-oncology";
 import type { SpecialtyPagePatch, SpecialtyPageProfile } from "./types";
 
 export type {
+  SpecialtyCityEditorial,
   SpecialtyCondition,
   SpecialtyPagePatch,
   SpecialtyPageProfile,
@@ -71,6 +72,7 @@ export function saveableSpecialtyPageFields(
     countryComparison: value.countryComparison,
     relatedSpecialtySlugs: value.relatedSpecialtySlugs,
     faqs: value.faqs,
+    cityEditorials: value.cityEditorials,
     medicalDisclaimer: value.medicalDisclaimer,
   };
 }

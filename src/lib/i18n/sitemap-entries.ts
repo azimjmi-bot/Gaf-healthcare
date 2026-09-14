@@ -79,6 +79,31 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
         ),
       );
     }
+    if (
+      profile &&
+      profileData &&
+      profile.allowIndex &&
+      specialtyPageMeetsQualityThreshold(profileData)
+    ) {
+      for (const city of profileData.cities) {
+        const cityData = buildSpecialtyPageData(profile, city.slug);
+        if (!cityData || !specialtyPageMeetsQualityThreshold(cityData)) continue;
+        urls.push(
+          entry(
+            costsFilterPath({
+              destination: "India",
+              city: city.name,
+              specialty: specialty.name,
+            }),
+            locale,
+            {
+              lastModified: profile.lastReviewed,
+              priority: 0.7,
+            },
+          ),
+        );
+      }
+    }
   }
 
   for (const doctor of doctors) {

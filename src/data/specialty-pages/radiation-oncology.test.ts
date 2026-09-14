@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { radiationOncologyIndiaProfile as profile } from "./radiation-oncology";
 import { catalogTreatments } from "../../lib/treatments";
-import { RADIATION_PROCEDURES, SPECIALTIES, toSlug } from "../../lib/taxonomy";
+import { CITIES, RADIATION_PROCEDURES, SPECIALTIES, toSlug } from "../../lib/taxonomy";
 
 function countWords(value: unknown): number {
   if (typeof value === "string") {
@@ -59,7 +59,8 @@ test("uses only existing procedure and specialty relationships", () => {
 });
 
 test("provides substantive specialty-level clinical, cost and travel content", () => {
-  const words = countWords(profile);
+  const { cityEditorials: _cityEditorials, ...countryProfile } = profile;
+  const words = countWords(countryProfile);
   assert.ok(words >= 2_500 && words <= 3_500, `${words} editorial words`);
   assert.ok(profile.overview.length >= 2);
   assert.ok(profile.conditions.length >= 10);
@@ -70,6 +71,29 @@ test("provides substantive specialty-level clinical, cost and travel content", (
   assert.ok(profile.faqs.length >= 15 && profile.faqs.length <= 18);
   assert.match(JSON.stringify(profile), /planning estimate/i);
   assert.match(JSON.stringify(profile), /not a quotation/i);
+});
+
+test("provides five distinct city editorials without inventing city tariffs", () => {
+  const expected = CITIES.filter((city) => city.countrySlug === "india")
+    .map((city) => city.slug)
+    .sort();
+  assert.deepEqual(
+    profile.cityEditorials.map((city) => city.citySlug).sort(),
+    expected,
+  );
+  const introductions = new Set<string>();
+  for (const city of profile.cityEditorials) {
+    const words = countWords(city);
+    assert.ok(words >= 350 && words <= 750, `${city.citySlug}: ${words} words`);
+    assert.equal(city.introduction.length, 2);
+    assert.equal(city.whyCity.length, 2);
+    assert.equal(city.planning.length, 2);
+    assert.equal(city.logistics.length, 2);
+    assert.equal(city.faqExtras.length, 3);
+    assert.ok(!introductions.has(city.introduction[0]), `${city.citySlug}: duplicate intro`);
+    introductions.add(city.introduction[0]);
+    assert.doesNotMatch(JSON.stringify(city), /\$\d/);
+  }
 });
 
 test("avoids unsupported rankings, guarantees and universal treatment claims", () => {
