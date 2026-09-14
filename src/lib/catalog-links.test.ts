@@ -5,6 +5,10 @@ import {
   doctorsPath,
   hospitalsPath,
 } from "./catalog-links";
+import {
+  parsePrettyCatalogSegments,
+  prettyCatalogPath,
+} from "./pretty-catalog-path";
 
 test("national cost procedures use their stable entity URL", () => {
   assert.equal(
@@ -50,5 +54,19 @@ test("specialty hubs and care directories keep their existing pSEO routes", () =
       procedure: "Coronary Angioplasty & Stenting",
     }),
     "/hospitals/India/Mumbai/Cardiology/Coronary-Angioplasty-Stenting",
+  );
+});
+
+test("diacritic destinations use an ASCII route and encoded legacy input resolves", () => {
+  assert.equal(
+    prettyCatalogPath("/hospitals", {
+      destination: "Türkiye",
+      city: "Istanbul",
+    }),
+    "/hospitals/Turkiye/Istanbul",
+  );
+  assert.deepEqual(
+    parsePrettyCatalogSegments(["T%C3%BCrkiye", "Istanbul"]),
+    { destination: "Türkiye", city: "Istanbul" },
   );
 });

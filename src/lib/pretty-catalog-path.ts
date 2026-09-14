@@ -16,6 +16,8 @@ export type CatalogBasePath = "/costs" | "/doctors" | "/hospitals";
 export function toPrettySegment(name: string) {
   return name
     .trim()
+    .normalize("NFKD")
+    .replace(/\p{M}/gu, "")
     .replace(/&/g, "-")
     .replace(/\/+/g, "-")
     .replace(/\s+/g, "-")
@@ -24,7 +26,13 @@ export function toPrettySegment(name: string) {
 }
 
 function matchBySlug<T extends { name: string; slug: string }>(segment: string, rows: readonly T[]) {
-  const slug = toSlug(segment);
+  let decoded = segment;
+  try {
+    decoded = decodeURIComponent(segment);
+  } catch {
+    // Invalid percent-encoding cannot match a known taxonomy slug.
+  }
+  const slug = toSlug(decoded);
   return rows.find((row) => row.slug === slug || toSlug(row.name) === slug);
 }
 
