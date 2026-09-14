@@ -241,12 +241,15 @@ function ProcedureComparison({ data }: { data: SpecialtyPageData }) {
             : "These are current GAF catalog planning ranges, separated by compatible billing basis. A cycle, course, operation, test and treatment programme are not interchangeable units."
         }
       />
-      <div className="mt-8 grid gap-3 md:grid-cols-2">
+      <div className="mt-8 divide-y divide-border rounded-xl border border-border bg-card">
         {data.pricingGroups.map((group) => (
-          <div key={group.name} className="rounded-xl border border-border bg-card p-4">
+          <div
+            key={group.name}
+            className="grid gap-2 p-4 md:grid-cols-[minmax(12rem,0.7fr)_minmax(14rem,1fr)_minmax(18rem,1.4fr)] md:gap-5"
+          >
             <h3 className="font-medium">{group.name}</h3>
-            <p className="mt-1 text-sm text-muted-foreground">{group.basis}</p>
-            <p className="mt-2 text-sm leading-relaxed">{group.explanation}</p>
+            <p className="text-sm text-muted-foreground">{group.basis}</p>
+            <p className="text-sm leading-relaxed">{group.explanation}</p>
           </div>
         ))}
       </div>
