@@ -70,3 +70,18 @@ test("diacritic destinations use an ASCII route and encoded legacy input resolve
     { destination: "Türkiye", city: "Istanbul" },
   );
 });
+
+test("lowercase catalog aliases resolve for canonical path normalization", () => {
+  assert.deepEqual(
+    parsePrettyCatalogSegments([
+      "india",
+      "delhi-ncr",
+      "radiation-oncology",
+    ]),
+    {
+      destination: "India",
+      city: "Delhi NCR",
+      specialty: "Radiation Oncology",
+    },
+  );
+});
