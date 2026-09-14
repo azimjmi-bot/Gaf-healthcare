@@ -134,7 +134,7 @@ export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
         heading={cityPage?.heading ?? sheetArticle.heading}
         lede={cityPage?.subtitle ?? cityPage?.intro[0] ?? sheetArticle.heroSubtitle ?? sheetArticle.heroLede ?? sheet.summary}
         filters={
-          <div className="pb-8">
+          <div className="pt-4 pb-8">
             <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
               <CatalogFilter
                 basePath="/costs"

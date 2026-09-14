@@ -105,7 +105,7 @@ export async function CostSheet({ slug }: { slug: string }) {
           heading={article.heading}
           lede={article.heroSubtitle ?? article.heroLede ?? t.summary}
           filters={
-            <div className="pb-8">
+            <div className="pt-4 pb-8">
               <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
                 <CatalogFilter
                   basePath="/costs"
