@@ -114,13 +114,9 @@ test("ships every catalog specialty through one complete page contract", () => {
   for (const profile of profiles) {
     assert.equal(profile.countrySlug, "india");
   }
-  const heldForArticleDepth = new Set(["pediatric-hematology"]);
   for (const profile of profiles) {
-    assert.equal(
-      profile.status,
-      heldForArticleDepth.has(profile.specialtySlug) ? "draft" : "published",
-    );
-    assert.equal(profile.allowIndex, !heldForArticleDepth.has(profile.specialtySlug));
+    assert.equal(profile.status, "published");
+    assert.equal(profile.allowIndex, true);
   }
 });
 

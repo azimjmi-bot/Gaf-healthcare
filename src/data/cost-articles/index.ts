@@ -23,6 +23,7 @@ import { pediatricOrthopaedicArticlesBySlug } from "./pediatric-orthopaedic";
 import { radiationOncologyArticlesBySlug } from "./radiation-oncology";
 import { medicalOncologyArticlesBySlug } from "./medical-oncology";
 import { hematologyExclusiveArticlesBySlug } from "./hematology";
+import { pediatricHematologyArticlesBySlug } from "./pediatric-hematology";
 import { cardiacSurgeryArticlesBySlug } from "./cardiac-surgery";
 import { bariatricSurgeryArticlesBySlug } from "./bariatric-surgery";
 import { cosmeticSurgeryArticlesBySlug } from "./cosmetic-surgery";
@@ -56,6 +57,7 @@ export const costArticles: Record<string, CostArticle> = {
   ...radiationOncologyArticlesBySlug,
   ...medicalOncologyArticlesBySlug,
   ...hematologyExclusiveArticlesBySlug,
+  ...pediatricHematologyArticlesBySlug,
   ...cardiacSurgeryArticlesBySlug,
   ...bariatricSurgeryArticlesBySlug,
   ...cosmeticSurgeryArticlesBySlug,
