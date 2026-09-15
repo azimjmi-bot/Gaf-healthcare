@@ -16,6 +16,7 @@ export function CatalogPager({
   totalPages,
   query,
   searchParams,
+  extraParams,
   basePath,
   label,
 }: {
@@ -23,6 +24,7 @@ export function CatalogPager({
   totalPages: number;
   query?: CatalogQuery;
   searchParams?: Record<string, string | string[] | undefined>;
+  extraParams?: { hospital?: string; experience?: string };
   basePath: CatalogBasePath;
   label: string;
 }) {
@@ -38,7 +40,12 @@ export function CatalogPager({
 
   function hrefFor(nextPage: number) {
     const path = prettyCatalogPath(basePath, facets);
-    return nextPage > 1 ? `${path}?page=${nextPage}` : path;
+    const query = new URLSearchParams();
+    if (extraParams?.hospital) query.set("hospital", extraParams.hospital);
+    if (extraParams?.experience) query.set("experience", extraParams.experience);
+    if (nextPage > 1) query.set("page", String(nextPage));
+    const qs = query.toString();
+    return qs ? `${path}?${qs}` : path;
   }
 
   const nums = visiblePages(page, totalPages);

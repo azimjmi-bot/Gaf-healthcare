@@ -563,7 +563,11 @@ function CareDirectories({ data }: { data: SpecialtyPageData }) {
           <div className="flex flex-wrap items-end justify-between gap-4">
             <SectionHeading
               eyebrow="Specialists"
-              title={`${data.specialty.name} doctors in ${place}`}
+              title={
+                data.specialty.slug === "radiation-oncology"
+                  ? `Best Radiation Oncologists in ${place}`
+                  : `${data.specialty.name} doctors in ${place}`
+              }
               intro={`${data.doctors.length} doctor records meet the ${place} and ${data.specialty.name} relationship filters across ${data.hospitals.length} related hospitals. Profile facts come from the existing CMS; ordering is not a ranking.`}
             />
             <Link
@@ -574,7 +578,7 @@ function CareDirectories({ data }: { data: SpecialtyPageData }) {
               })}
               className="text-sm underline-offset-4 hover:underline"
             >
-              View all {data.doctors.length} doctors
+              View all {data.doctors.length} {data.specialty.slug === "radiation-oncology" ? "radiation oncologists" : "doctors"}
             </Link>
           </div>
           <div className="mt-8 grid gap-5 lg:grid-cols-2">

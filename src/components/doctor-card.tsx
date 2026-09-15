@@ -2,7 +2,7 @@
 
 import { DoctorPhoto } from "@/components/doctor-photo";
 import { LocaleLink as Link } from "@/components/locale-link";
-import { useState } from "react";
+import { useState, type ReactNode } from "react";
 import {
   BadgeCheck,
   Building2,
@@ -23,17 +23,16 @@ import {
 import type { Doctor } from "@/lib/doctors";
 import { medicalPhrase } from "@/lib/i18n/medical-phrases";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
-import { whatsappHref } from "@/lib/site";
 
 const PROC_PREVIEW = 6;
 
-function wa(doctor: Doctor, intent: string) {
-  return whatsappHref(
-    `Hello — I am writing about ${doctor.name} at ${doctor.hospitalName} in ${doctor.city}. ${intent}`,
-  );
-}
-
-export function DoctorCard({ doctor }: { doctor: Doctor }) {
+export function DoctorCard({
+  doctor,
+  compareSlot,
+}: {
+  doctor: Doctor;
+  compareSlot?: ReactNode;
+}) {
   const [open, setOpen] = useState(false);
   const locale = useLocale();
   const t = useT();
@@ -93,23 +92,13 @@ export function DoctorCard({ doctor }: { doctor: Doctor }) {
             </span>
           </Link>
           <div className="dcard__cta">
-            <a
-              className="dcard__btn dcard__btn--book"
-              href={wa(doctor, locale === "ar" ? "أرغب في حجز موعد." : "I would like to book an appointment.")}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <CalendarDays className="size-4" />
-              {t("card.book")}
-            </a>
-            <a
-              className="dcard__btn dcard__btn--wa"
-              href={wa(doctor, locale === "ar" ? "يرجى التواصل عبر واتساب." : "Please connect me on WhatsApp.")}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {t("card.whatsapp")}
-            </a>
+            <Link href={`/doctors/${doctor.slug}`} className="dcard__btn dcard__btn--book">
+              {t("card.viewProfile")}
+            </Link>
+            <Link href={`/consult?doctor=${doctor.slug}`} className="dcard__btn dcard__btn--consult">
+              {t("card.requestConsult")}
+            </Link>
+            {compareSlot}
           </div>
         </div>
       </div>

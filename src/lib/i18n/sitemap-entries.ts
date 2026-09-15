@@ -4,6 +4,7 @@ import { getSpecialtyPage } from "@/data/specialty-pages";
 import { listPublishedPosts } from "@/lib/blogs";
 import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { catalogSpecialtyName } from "@/lib/catalog-links";
+import { radiationOncologyDoctorSitemapPaths } from "@/lib/doctor-discovery";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { absoluteUrl, SITE_URL } from "@/lib/seo";
 import type { AppLocale } from "@/lib/i18n/languages";
@@ -107,6 +108,10 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
         );
       }
     }
+  }
+
+  for (const path of radiationOncologyDoctorSitemapPaths(doctors)) {
+    urls.push(entry(path, locale, { priority: path.endsWith("/Radiation-Oncology") ? 0.75 : 0.65 }));
   }
 
   for (const doctor of doctors) {

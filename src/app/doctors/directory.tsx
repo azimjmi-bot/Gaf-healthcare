@@ -2,30 +2,83 @@ import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { CatalogPager } from "@/components/catalog-pager";
 import { DoctorCard } from "@/components/doctor-card";
+import { DoctorSpecialtyHub } from "@/components/doctor-specialty-hub";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, filterDoctors, type CatalogQuery } from "@/lib/catalog";
 import { paginateDoctors } from "@/lib/doctors";
+import {
+  doctorListingIsIndexable,
+  isRadiationOncologyDiscovery,
+  radiationDoctorPageIndexable,
+  type DoctorListingExtras,
+} from "@/lib/doctor-discovery";
+import { buildRadiationDoctorHub } from "@/lib/doctor-specialty-page";
 import { doctorsForLocale } from "@/lib/locale-catalog";
-import { faqJsonLd } from "@/lib/seo";
+import { absoluteUrl, faqJsonLd } from "@/lib/seo";
 import { catalogPageMetadata } from "@/lib/i18n/page-meta";
+import { LOCALES } from "@/lib/i18n/languages";
+import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
-export async function doctorsDirectoryMetadata(query: CatalogQuery): Promise<Metadata> {
-  return catalogPageMetadata("doctors", query);
+export async function doctorsDirectoryMetadata(
+  query: CatalogQuery,
+  extras: DoctorListingExtras = {},
+  page = 1,
+): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  if (locale === "en" && isRadiationOncologyDiscovery(query)) {
+    const hub = buildRadiationDoctorHub(query, {}, 1, doctorsForLocale(locale));
+    if (hub) {
+      const indexable = radiationDoctorPageIndexable(query, extras, page, hub.paging.total);
+      return withLocaleMetadata(
+        {
+          title: hub.title,
+          description: hub.description,
+          robots: indexable ? undefined : { index: false, follow: true },
+          openGraph: {
+            title: hub.title,
+            description: hub.description,
+            url: absoluteUrl(hub.path),
+            type: "website",
+          },
+          twitter: {
+            card: "summary_large_image",
+            title: hub.title,
+            description: hub.description,
+          },
+        },
+        hub.path,
+        locale,
+        LOCALES,
+      );
+    }
+  }
+  const wrapped = await catalogPageMetadata("doctors", query);
+  if (!doctorListingIsIndexable(extras, page)) {
+    return { ...wrapped, robots: { index: false, follow: true } };
+  }
+  return wrapped;
 }
 
 export async function DoctorsDirectory({
   query,
   page = 1,
+  extras = {},
 }: {
   query: CatalogQuery;
   page?: number;
+  extras?: DoctorListingExtras;
 }) {
   const locale = await getRequestLocale();
+  if (locale === "en") {
+    const hub = buildRadiationDoctorHub(query, extras, page, doctorsForLocale(locale));
+    if (hub) return <DoctorSpecialtyHub data={hub} query={query} />;
+  }
+
   const messages = await localizeMessages(locale);
   const faqs = await localizeFaqs("doctors", locale);
   const list = filterDoctors(query, doctorsForLocale(locale));

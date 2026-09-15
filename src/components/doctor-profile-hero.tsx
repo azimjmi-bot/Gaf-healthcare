@@ -38,10 +38,12 @@ export function DoctorProfileHero({
   doctor,
   hospital,
   locale = "en",
+  heading,
 }: {
   doctor: Doctor;
   hospital: Hospital | undefined;
   locale?: AppLocale;
+  heading?: string;
 }) {
   const t = uiCatalogFor(locale);
   const highlights = heroHighlights(
@@ -94,7 +96,7 @@ export function DoctorProfileHero({
               </li>
             </ul>
 
-            <h1 className="dhero__name">{doctor.name}</h1>
+            <h1 className="dhero__name">{heading ?? doctor.name}</h1>
             {doctor.qualifications ? (
               <p className="dhero__degrees">{doctor.qualifications}</p>
             ) : null}
@@ -128,8 +130,11 @@ export function DoctorProfileHero({
             <div className="dhero__actions">
               <Link className="dhero__book" href={`/consult?doctor=${doctor.slug}`}>
                 <CalendarDays className="size-4" />
-                {t["profile.book"]}
+                {t["profile.requestConsult"] ?? "Request a Consultation"}
                 <span aria-hidden="true">→</span>
+              </Link>
+              <Link className="dhero__contact" href="/consult">
+                {t["profile.medicalOpinion"] ?? "Get a Medical Opinion"}
               </Link>
               <a className="dhero__contact" href={wa} target="_blank" rel="noreferrer">
                 <MessageCircle className="size-4" />

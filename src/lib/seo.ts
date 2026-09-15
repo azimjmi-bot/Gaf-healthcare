@@ -104,7 +104,10 @@ export function doctorMetadata(d: Doctor, locale: AppLocale = "en"): Metadata {
         : d.specialtySlug === "surgical-oncology"
           ? "surgical oncologist"
           : "radiation oncologist";
-  const title = `${d.name}, ${role} in ${d.city}, India`;
+  const title =
+    d.specialtySlug === "radiation-oncology"
+      ? `${d.name} – Radiation Oncologist in ${d.city}`
+      : `${d.name}, ${role} in ${d.city}, India`;
   const description = clip(
     `${d.name} is a ${role} at ${d.hospitalName} in ${d.city}, India. ${d.procedures.slice(0, 3).join(", ")}. Meet on camera before travel. ${stripMarkdown(d.bio)}`,
   );
@@ -222,7 +225,10 @@ export function catalogMetadata(
   const path = entity === "doctors" ? "/doctors" : entity === "hospitals" ? "/hospitals" : "/costs";
 
   if (entity === "doctors") {
-    if (proc) title = `${proc} specialists in ${place}`;
+    if (spec === "Radiation Oncology" && proc) {
+      title = `Best Radiation Oncologists for ${proc.replace(/\s*\([^)]+\)\s*/g, "").trim()} in ${place}`;
+    } else if (proc) title = `${proc} specialists in ${place}`;
+    else if (spec === "Radiation Oncology") title = `Best Radiation Oncologists in ${place}`;
     else if (spec === "Neurosurgery") title = `Neurosurgeons in ${place}`;
     else if (spec === "Neurology") title = `Neurologists in ${place}`;
     else if (spec === "Nephrology") title = `Nephrologists in ${place}`;
@@ -323,9 +329,11 @@ export function catalogMetadata(
 }
 
 export function physicianJsonLd(d: Doctor, locale: AppLocale = "en") {
+  const url = absoluteUrl(`/doctors/${d.slug}`, locale);
   return {
     "@context": "https://schema.org",
     "@type": "Physician",
+    "@id": `${url}#person`,
     name: d.name,
     inLanguage: locale === "ar" ? "ar" : "en",
     url: absoluteUrl(`/doctors/${d.slug}`, locale),
@@ -349,6 +357,7 @@ export function physicianJsonLd(d: Doctor, locale: AppLocale = "en") {
     },
     worksFor: {
       "@type": "Hospital",
+      "@id": absoluteUrl(`/hospitals/${d.hospitalSlug}`, locale),
       name: d.hospitalName,
       url: absoluteUrl(`/hospitals/${d.hospitalSlug}`, locale),
       address: {
@@ -356,6 +365,25 @@ export function physicianJsonLd(d: Doctor, locale: AppLocale = "en") {
         addressLocality: taxonomyLabel(d.city, locale),
         addressCountry: "IN",
       },
+    },
+  };
+}
+
+export function doctorProfilePageJsonLd(d: Doctor, locale: AppLocale = "en") {
+  const url = absoluteUrl(`/doctors/${d.slug}`, locale);
+  const person = physicianJsonLd(d, locale);
+  const { "@context": _context, ...entity } = person;
+  return {
+    "@context": "https://schema.org",
+    "@type": "ProfilePage",
+    name:
+      d.specialtySlug === "radiation-oncology"
+        ? `${d.name} — Radiation Oncologist in ${d.city}`
+        : `${d.name} — ${d.title.split(",")[0]?.trim() || d.specialty} in ${d.city}`,
+    url,
+    mainEntity: {
+      ...entity,
+      "@type": ["Person", "Physician"],
     },
   };
 }

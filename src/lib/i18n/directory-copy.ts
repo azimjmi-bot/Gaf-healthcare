@@ -142,8 +142,12 @@ function englishIntro(kind: DirectoryKind, query: CatalogQuery) {
   if (kind === "doctors") {
     const heading = home
       ? "Find the Right Doctor for Your Treatment"
+      : query.specialty === "Radiation Oncology" && query.procedure
+        ? `Best Radiation Oncologists for ${query.procedure.replace(/\s*\([^)]+\)\s*/g, "").trim()} in ${place}`
       : query.procedure
         ? `${query.procedure} specialists in ${place}`
+        : query.specialty === "Radiation Oncology"
+          ? `Best Radiation Oncologists in ${place}`
         : query.specialty === "Pediatric Hematology"
           ? `Pediatric hematologists in ${place}`
           : query.specialty === "Hematology"

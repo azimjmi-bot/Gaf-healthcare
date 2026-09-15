@@ -2,15 +2,17 @@ import { LocaleLink as Link } from "@/components/locale-link";
 import { notFound } from "next/navigation";
 import { AccreditationSeals } from "@/components/accreditation-seals";
 import { DoctorProfileHero } from "@/components/doctor-profile-hero";
+import { DoctorProfileGraph } from "@/components/doctor-profile-graph";
 import { JsonLd } from "@/components/json-ld";
 import { CtaBand } from "@/components/page-shell";
-import { getHospital, getTreatment } from "@/lib/data";
+import { getHospital } from "@/lib/data";
 import { MarkdownBody } from "@/components/markdown-body";
 import { displayBio } from "@/lib/hospital-profile";
-import { doctorsForHospitalLocale, getDoctorForLocale } from "@/lib/locale-catalog";
+import { doctorProfileHeading } from "@/lib/doctor-discovery";
+import { doctorsForHospitalLocale, doctorsForLocale, getDoctorForLocale } from "@/lib/locale-catalog";
 import { publicMarkdown } from "@/lib/markdown";
 import { doctorsPath } from "@/lib/catalog-links";
-import { breadcrumbJsonLd, physicianJsonLd } from "@/lib/seo";
+import { breadcrumbJsonLd, doctorProfilePageJsonLd } from "@/lib/seo";
 import { doctorPageMetadata } from "@/lib/i18n/page-meta";
 import { localizeHospital, localizeMessages } from "@/lib/i18n/localize";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
@@ -42,14 +44,14 @@ export async function DoctorProfile({ slug }: { slug: string }) {
   const t = await localizeMessages(locale);
   const hospitalRaw = getHospital(d.hospitalSlug);
   const hospital = hospitalRaw ? await localizeHospital(hospitalRaw, locale) : undefined;
-  const pathways = d.treatmentSlugs.map((s) => getTreatment(s)).filter(Boolean);
   const colleagues = doctorsForHospitalLocale(d.hospitalSlug, locale)
     .filter((x) => x.slug !== d.slug && x.specialtySlug === d.specialtySlug)
     .slice(0, 6);
+  const heading = doctorProfileHeading(d);
 
   return (
     <>
-      <JsonLd data={physicianJsonLd(d, locale)} />
+      <JsonLd data={doctorProfilePageJsonLd(d, locale)} />
       <JsonLd
         data={breadcrumbJsonLd(
           [
@@ -60,14 +62,14 @@ export async function DoctorProfile({ slug }: { slug: string }) {
             },
             {
               name: taxonomyLabel(d.city, locale),
-              path: doctorsPath({ destination: "India", city: d.city }),
+              path: doctorsPath({ destination: "India", city: d.city, specialty: d.specialty }),
             },
             { name: d.name, path: `/doctors/${d.slug}` },
           ],
           locale,
         )}
       />
-      <DoctorProfileHero doctor={d} hospital={hospital} locale={locale} />
+      <DoctorProfileHero doctor={d} hospital={hospital} locale={locale} heading={heading} />
 
       <article className="mx-auto max-w-3xl px-4 py-10 sm:px-5 md:px-8 md:py-20">
         <h3 className="text-sm tracking-[0.2em] text-gold uppercase">{t["profile.about"].replace("{name}", d.name)}</h3>
@@ -101,34 +103,8 @@ export async function DoctorProfile({ slug }: { slug: string }) {
         <ProfileList title={t["profile.memberships"]} items={d.memberships} />
         <ProfileList title={t["profile.awards"]} items={d.awards} />
         <ProfileList title={t["profile.research"]} items={d.research} />
+        <DoctorProfileGraph doctor={d} pool={doctorsForLocale(locale)} />
       </article>
-
-      {pathways.length > 0 ? (
-        <section className="border-t border-border bg-secondary/30">
-          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-16">
-            <h2 className="font-heading text-3xl">{t["profile.relatedCosts"]}</h2>
-            <ul className="mt-6 grid gap-4 md:grid-cols-2">
-              {pathways.map((row) =>
-                row ? (
-                  <li key={row.slug}>
-                    <Link
-                      href={`/costs/${row.slug}`}
-                      className="block rounded-xl border border-border bg-card p-6 hover:border-primary/30"
-                    >
-                      <p className="font-heading text-2xl">{taxonomyLabel(row.name, locale)}</p>
-                      <p className="mt-2 text-sm text-muted-foreground">
-                        {t["profile.partnerRange"]
-                          .replace("{partner}", row.partnerRange)
-                          .replace("{us}", row.usRange)}
-                      </p>
-                    </Link>
-                  </li>
-                ) : null,
-              )}
-            </ul>
-          </div>
-        </section>
-      ) : null}
 
       {colleagues.length > 0 ? (
         <section className="border-t border-border py-16">

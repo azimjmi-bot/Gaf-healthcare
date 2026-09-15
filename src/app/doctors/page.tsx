@@ -1,6 +1,7 @@
 import { DoctorsDirectory, doctorsDirectoryMetadata } from "@/app/doctors/directory";
 import { parseCatalogQuery } from "@/lib/catalog-options";
 import { readCatalogPage, redirectPrettyCatalog } from "@/lib/catalog-route";
+import { parseDoctorListingExtras } from "@/lib/doctor-discovery";
 import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
@@ -11,7 +12,8 @@ export async function generateMetadata({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }): Promise<Metadata> {
-  return doctorsDirectoryMetadata(parseCatalogQuery(await searchParams));
+  const raw = await searchParams;
+  return doctorsDirectoryMetadata(parseCatalogQuery(raw), parseDoctorListingExtras(raw), readCatalogPage(raw));
 }
 
 export default async function DoctorsPage({
@@ -23,5 +25,5 @@ export default async function DoctorsPage({
   const query = parseCatalogQuery(raw);
   const page = readCatalogPage(raw);
   redirectPrettyCatalog("/doctors", query, page, await getRequestLocale());
-  return <DoctorsDirectory query={query} page={page} />;
+  return <DoctorsDirectory query={query} page={page} extras={parseDoctorListingExtras(raw)} />;
 }

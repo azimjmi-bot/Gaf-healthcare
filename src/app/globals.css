@@ -334,6 +334,12 @@
   color: #fff;
 }
 
+.dcard__btn--consult {
+  background: #fff;
+  color: #142a33;
+  border: 1px solid #d7e0e6;
+}
+
 .dcard__btn--wa {
   background: #1fa855;
   color: #fff;

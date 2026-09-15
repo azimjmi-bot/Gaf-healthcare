@@ -5,7 +5,7 @@ import { absoluteUrl, SITE_URL } from "@/lib/seo";
 export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      { userAgent: "*", allow: "/", disallow: ["/cms", "/api/cms"] },
+      { userAgent: "*", allow: "/", disallow: ["/cms", "/api/cms", "/doctors/compare"] },
     ],
     sitemap: [absoluteUrl("/sitemap.xml"), absoluteUrl("/sitemap-ar.xml")],
     host: SITE_URL,

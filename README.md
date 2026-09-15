@@ -9,6 +9,16 @@ Doctors and hospitals are stored with denormalized **specialty**, **procedure**,
 
 Those lowercase pSEO landings are not live yet. Live directory filters use Title-Case path segments when a country is selected — `/costs/India/Surgical-Oncology/Mastectomy`, `/doctors/India/Delhi-NCR`, `/hospitals/India` — and old `?destination=` query URLs 301 to that look. Procedure cost sheets (`/costs/mastectomy`) and doctor/hospital profile slugs stay unchanged.
 
+Radiation Oncology doctor discovery is the first gold-standard specialty hub:
+
+- `/doctors/India/Radiation-Oncology` — **Best Radiation Oncologists in India**
+- `/doctors/India/Delhi-NCR/Radiation-Oncology` — city hubs with unique city context
+- `/doctors/India/Radiation-Oncology/Intensity-Modulated-Radiotherapy-(IMRT)` — procedure lists when enough mapped doctors exist
+- `/doctors/{slug}` — one canonical profile that links into existing treatment, cost, hospital and blog pages instead of duplicating them
+- `/doctors/compare?ids=` — compare 2–4 specialists (`noindex`)
+
+Hospital and experience filters stay on query strings and are not indexed. “Best” is the search-intent heading; inclusion is catalog-based, not a clinical ranking.
+
 The India roster (2,305 consultants, 37 campuses) and structured fields were sourced from Ginger Healthcare’s public listings for [radiation oncology](https://ginger.healthcare/destinations/india/radiation-oncology/), [surgical oncology](https://ginger.healthcare/destinations/india/surgical-oncology/), [medical oncology](https://ginger.healthcare/destinations/india/medical-oncology/), [hematology](https://ginger.healthcare/destinations/india/hematology/), [pediatric hematology](https://ginger.healthcare/destinations/india/pediatric-hematology/), [cardiac surgery](https://ginger.healthcare/destinations/india/cardiac-surgery/), [pediatric cardiac surgery](https://ginger.healthcare/destinations/india/pediatric-cardiac-surgery/), [cardiology](https://ginger.healthcare/destinations/india/cardiology/), [bariatric surgery](https://ginger.healthcare/destinations/india/bariatric-surgery/), [cosmetic surgery](https://ginger.healthcare/destinations/india/cosmetic-surgery/), [ENT](https://ginger.healthcare/destinations/india/ent/), [gastroenterology](https://ginger.healthcare/destinations/india/gastroenterology/), [surgical gastroenterology](https://ginger.healthcare/destinations/india/surgical-gastroenterology/), [urology](https://ginger.healthcare/destinations/india/urology/), [spine surgery](https://ginger.healthcare/destinations/india/spine-surgery/), [pulmonology](https://ginger.healthcare/destinations/india/pulmonology/), [pediatric orthopedics](https://ginger.healthcare/destinations/india/pediatric-orthopedics/), [orthopedics](https://ginger.healthcare/destinations/india/orthopedics/), [ophthalmology](https://ginger.healthcare/destinations/india/ophthalmology/), [gynecology](https://ginger.healthcare/destinations/india/gynecology/), [neurosurgery](https://ginger.healthcare/destinations/india/neurosurgery/), [neurology](https://ginger.healthcare/destinations/india/neurology/), and [nephrology](https://ginger.healthcare/destinations/india/nephrology/). Bios on this site are original GAF Healthcare copy. Portraits wait on CMS.
 
 ## Local development
