@@ -114,11 +114,7 @@ test("ships every catalog specialty through one complete page contract", () => {
   for (const profile of profiles) {
     assert.equal(profile.countrySlug, "india");
   }
-  const heldForArticleDepth = new Set([
-    "surgical-oncology",
-    "pediatric-hematology",
-    "urology",
-  ]);
+  const heldForArticleDepth = new Set(["pediatric-hematology"]);
   for (const profile of profiles) {
     assert.equal(
       profile.status,

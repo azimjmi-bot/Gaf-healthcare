@@ -75,12 +75,66 @@ const specificity: Record<string, RegExp[]> = {
     /air leak/i,
     /pulmonary function/i,
   ],
+  "Partial Nephrectomy": [
+    /remnant/i,
+    /warm-ischaemia|ischemia|clamped/i,
+    /collecting system/i,
+    /radical nephrectomy/i,
+  ],
+  "Radical Prostatectomy": [
+    /neurovascular|nerve-sparing/i,
+    /continence/i,
+    /seminal vesicle/i,
+    /PSA/i,
+  ],
+  "Radical Cystectomy": [
+    /ileal conduit/i,
+    /neobladder/i,
+    /stoma/i,
+    /TURBT/i,
+  ],
+  "Radical Hysterectomy": [
+    /parametri/i,
+    /ureter/i,
+    /fertility-sparing|trachelectomy/i,
+    /cervical/i,
+  ],
+  Lobectomy: [
+    /anatomical lobe|entire lobe/i,
+    /which lobe/i,
+    /sleeve/i,
+    /remaining lung/i,
+  ],
+  "VATS Lung Surgery": [
+    /video-assisted|keyhole/i,
+    /ports/i,
+    /conversion to open/i,
+    /stapler/i,
+  ],
+  "Robotic Thoracic Surgery": [
+    /console/i,
+    /platform/i,
+    /undock/i,
+    /not itself an indication|robot in the building/i,
+  ],
+  "Transoral Robotic Surgery (TORS)": [
+    /oropharyn/i,
+    /base of tongue|tonsil/i,
+    /through the mouth/i,
+    /HPV/i,
+  ],
+  "Microvascular Free Flap Reconstruction": [
+    /donor site/i,
+    /anastomos/i,
+    /fibula|forearm|thigh/i,
+    /two-team|two surgical teams/i,
+  ],
 };
 
 test("only adds surgical oncology procedures that had no long-form article", () => {
-  assert.equal(SURGICAL_ONCOLOGY_NEW_PROCEDURES.length, 4);
+  assert.equal(SURGICAL_ONCOLOGY_NEW_PROCEDURES.length, 13);
   assert.deepEqual(SURGICAL_ONCOLOGY_PILOT_PROCEDURES, ["Thyroidectomy for Thyroid Cancer"]);
-  assert.equal(surgicalOncologyArticles.length, 4);
+  assert.equal(surgicalOncologyArticles.length, 13);
   assert.deepEqual(
     surgicalOncologyArticles.map((article) => article.procedure).sort(),
     [...SURGICAL_ONCOLOGY_NEW_PROCEDURES].sort(),
@@ -105,6 +159,9 @@ test("only adds surgical oncology procedures that had no long-form article", () 
     assert.equal(surgicalOncologyArticlesBySlug[article.slug], article);
     assert.equal(getCostArticle(article.slug), article);
   }
+  for (const procedure of SURGICAL_ONCOLOGY_PROCEDURES) {
+    assert.ok(getCostArticle(toSlug(procedure)), `${procedure}: still missing a long-form guide`);
+  }
 });
 
 test("does not duplicate pulmonology airway and pleural procedures", () => {
@@ -120,18 +177,20 @@ test("does not duplicate pulmonology airway and pleural procedures", () => {
   assert.ok(lung.relatedProcedures.includes("EBUS (Endobronchial Ultrasound)"));
   assert.ok(lung.relatedProcedures.includes("Bronchoscopy"));
   assert.match(JSON.stringify(lung), /separate earlier procedure/i);
-  // Access route is the one place where these four operations genuinely diverge, so
-  // only lung cancer surgery carries the open/keyhole/robotic comparison table.
-  assert.ok((lung.accessComparison?.rows ?? []).length >= 3);
+  // Access route is the one place where these operations genuinely diverge.
+  const accessSlugs = new Set(["lung-cancer-surgery", "vats-lung-surgery", "robotic-thoracic-surgery"]);
   for (const article of surgicalOncologyArticles) {
-    if (article.slug === lung.slug) continue;
-    assert.equal(article.accessComparison, undefined, article.slug);
+    if (accessSlugs.has(article.slug)) {
+      assert.ok((article.accessComparison?.rows ?? []).length >= 3, article.slug);
+    } else {
+      assert.equal(article.accessComparison, undefined, article.slug);
+    }
   }
 });
 
 test("every article has unique metadata and complete long-form fields", () => {
   for (const field of ["slug", "seoTitle", "seoDescription", "heading", "heroSubtitle"] as const) {
-    assert.equal(new Set(surgicalOncologyArticles.map((article) => article[field])).size, 4, field);
+    assert.equal(new Set(surgicalOncologyArticles.map((article) => article[field])).size, 13, field);
   }
   for (const article of surgicalOncologyArticles) {
     assert.match(article.heading, /Cost in India$/);
@@ -261,7 +320,7 @@ test("uses one national canonical and preserves city procedure routes", () => {
   );
 });
 
-test("declares and ships twelve unique descriptive WebP figures", () => {
+test("declares and ships unique descriptive WebP figures for every new guide", () => {
   const directory = join(process.cwd(), "public/images/cost/surgical-oncology");
   const sources = new Set<string>();
   for (const article of surgicalOncologyArticles) {
@@ -283,8 +342,8 @@ test("declares and ships twelve unique descriptive WebP figures", () => {
       assert.equal(bytes.subarray(8, 12).toString("ascii"), "WEBP");
     }
   }
-  assert.equal(sources.size, 12);
+  assert.equal(sources.size, surgicalOncologyArticles.length * 3);
   const files = readdirSync(directory);
-  assert.equal(files.length, 12);
+  assert.equal(files.length, surgicalOncologyArticles.length * 3);
   assert.ok(files.every((file) => file.endsWith(".webp")));
 });

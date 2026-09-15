@@ -54,7 +54,11 @@ test("exports every exclusive ENT article without replacing Rhinoplasty or TORS"
   }
   assert.equal(getCostArticle("rhinoplasty")?.procedure, "Rhinoplasty");
   assert.ok(!entArticlesBySlug.rhinoplasty);
-  assert.equal(getCostArticle("transoral-robotic-surgery-tors"), undefined);
+  assert.equal(
+    getCostArticle("transoral-robotic-surgery-tors")?.procedure,
+    "Transoral Robotic Surgery (TORS)",
+  );
+  assert.ok(!entArticlesBySlug["transoral-robotic-surgery-tors"]);
 });
 
 test("metadata, H1, subtitles and clinical blocks are unique and direct", () => {

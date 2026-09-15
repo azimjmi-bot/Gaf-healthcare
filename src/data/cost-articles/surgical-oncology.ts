@@ -18,6 +18,15 @@ export const SURGICAL_ONCOLOGY_NEW_PROCEDURES = [
   "Neck Dissection",
   "Oral Cancer Surgery",
   "Lung Cancer Surgery",
+  "Partial Nephrectomy",
+  "Radical Prostatectomy",
+  "Radical Cystectomy",
+  "Radical Hysterectomy",
+  "Lobectomy",
+  "VATS Lung Surgery",
+  "Robotic Thoracic Surgery",
+  "Transoral Robotic Surgery (TORS)",
+  "Microvascular Free Flap Reconstruction",
 ] as const;
 
 export const SURGICAL_ONCOLOGY_PILOT_PROCEDURES = [
@@ -336,7 +345,6 @@ function makeCities(profile: SurgicalOncologyProfile): CityEditorial[] {
 
 function createSurgicalOncologyArticle(profile: SurgicalOncologyProfile): CostArticle {
   const slug = toSlug(profile.procedure);
-  const approachNames = profile.approaches.map((item) => item.label).join(", ");
   const topDrivers = profile.drivers
     .slice(0, 4)
     .map((item) => item.label.toLowerCase())
@@ -913,6 +921,715 @@ const profiles: SurgicalOncologyProfile[] = [
       "Medical illustration of lung anatomy for cancer surgery: three right and two left lobes with their bronchus, artery and vein, a peripheral tumour in one lobe, and the mediastinal node stations sampled for staging.",
       "Medical infographic comparing anatomical segmentectomy, lobectomy, sleeve resection reconstructing the airway to avoid removing a whole lung, and pneumonectomy, alongside keyhole, robotic and open access routes.",
       "Medical infographic of the lung cancer recovery pathway: chest drain and air leak monitoring, breathing exercises, nodal and molecular histopathology, the adjuvant therapy decision and pulmonary rehabilitation.",
+    ],
+  },
+  {
+    procedure: "Partial Nephrectomy",
+    shortName: "partial nephrectomy",
+    specialist: "urologic oncologist or surgical oncologist who operates on the kidney",
+    definition:
+      "Partial nephrectomy removes a kidney tumour with a rim of healthy tissue while leaving the rest of that kidney in place, so remaining kidney function is preserved whenever oncology and anatomy allow.",
+    candidacy:
+      "It is generally considered for a localised kidney mass that can be removed with a clear margin while leaving a useful remnant. A radical nephrectomy is the honest alternative when the tumour, its location or the remaining kidney make organ preservation unsafe.",
+    anatomy:
+      "Each kidney sits behind the abdominal cavity with an artery, vein and collecting system entering at the hilum. Tumours are judged by size, depth, nearness to the collecting system and vessels, and whether a second kidney is present and working.",
+    distinction:
+      "A small polar tumour may be excised with little ischaemia, while a central or endophytic mass may need longer vessel clamping, collecting-system repair and a higher chance of converting to radical nephrectomy. How much kidney can be saved without leaving tumour behind drives the plan.",
+    scopeShort:
+      "Whether a useful remnant can be preserved, how long the vessels are clamped, and whether conversion to radical nephrectomy is needed change the operation and the bill.",
+    staging:
+      "Planning uses cross-sectional imaging of both kidneys, chest imaging for staging, and kidney-function tests. Biopsy is used selectively when the result would change whether surgery is offered. The opposite kidney’s function matters as much as the tumour’s appearance.",
+    sequencing:
+      "Surgery is usually the first treatment for a resectable mass. Final pathology — tumour type, grade, margin and any vascular invasion — then decides surveillance intensity and whether systemic therapy is discussed.",
+    team:
+      "Planning normally involves the operating surgeon, a radiologist, a pathologist, a nephrologist when remaining kidney function is already reduced, and a medical oncologist where systemic options apply.",
+    evaluation:
+      "Assessment commonly includes kidney function, blood pressure review, cross-sectional imaging, anaesthetic checks and, where kidney function is borderline, a discussion of dialysis risk. Not every patient needs every test.",
+    technique:
+      "The kidney is mobilised through keyhole ports, a robotic platform or an open incision, the tumour is marked, the artery is often clamped, the mass is excised with a margin, the collecting system and vessels are repaired, and the remnant is closed. Warm-ischaemia time is recorded.",
+    conversion:
+      "A planned partial nephrectomy may become a radical nephrectomy if bleeding, an unexpected tumour extent or an unreconstructable collecting system makes preservation unsafe. Consent and the quotation should both allow for that.",
+    approaches: [
+      { label: "Open partial nephrectomy", detail: "Direct access, often chosen for complex, central or previously operated kidneys." },
+      { label: "Laparoscopic partial nephrectomy", detail: "Keyhole excision and repair of selected polar or exophytic tumours." },
+      { label: "Robotic-assisted partial nephrectomy", detail: "A surgeon-controlled platform for the same nephron-sparing resection and reconstruction." },
+      { label: "Off-clamp or selective clamping", detail: "Reduces ischaemia to the remnant when tumour location allows." },
+      { label: "Conversion to radical nephrectomy", detail: "Removes the whole kidney when a safe remnant cannot be left." },
+    ],
+    duration: "commonly 2–4 hours, longer for central tumours or prior kidney surgery",
+    stayGlance: "Three to six nights typical",
+    admission: "Admission is frequently three to six nights, watching drain output, urine colour and kidney function.",
+    recovery:
+      "Recovery is led by pain control, early walking, monitoring of urine and kidney function, and a period of lighter activity rather than a fixed date, with heavy lifting delayed until the team agrees.",
+    pathology:
+      "The specimen is examined for tumour type, grade, margin and vascular or collecting-system involvement. That report, not the incision, decides surveillance and whether systemic therapy is discussed.",
+    risks:
+      "Recognised risks include bleeding, urine leak from the collecting system, reduced kidney function, need to remove the whole kidney, infection, bowel or vessel injury, and a later rise in blood pressure.",
+    urgent:
+      "heavy blood in the urine, rapidly increasing abdominal swelling, fever, inability to pass urine, sudden breathlessness, or wound discharge",
+    functionalChange:
+      "Some loss of kidney function is expected even when a remnant is saved, and the amount depends on how much tissue is removed and how long the vessels are clamped. Lifelong kidney-function and blood-pressure review is part of follow-up.",
+    drivers: oncologyDrivers(
+      { label: "Tumour complexity and remnant", detail: "A polar excision and a central reconstruction with collecting-system repair differ greatly." },
+      { label: "Ischaemia and reconstruction", detail: "Clamp time, collecting-system repair and conversion to radical nephrectomy change theatre time." },
+      { label: "Surgical platform", detail: "Open, keyhole and robotic access carry different equipment and consumable costs." },
+      { label: "Remaining kidney function", detail: "Borderline function may add nephrology review, longer observation and dialysis contingency." },
+    ),
+    records: [
+      "Cross-sectional imaging of both kidneys with image files",
+      "Recent kidney-function results and blood-pressure record",
+      "Biopsy report if one has already been performed",
+    ],
+    followUp:
+      "The home team should receive the operation note, pathology and kidney-function trend, then coordinate imaging surveillance of the remnant, blood-pressure and kidney-function review, and any systemic-therapy discussion.",
+    quoteQuestions: [
+      "Is a useful remnant expected, and what would convert this to a radical nephrectomy?",
+      "How is warm-ischaemia time recorded, and is collecting-system repair assumed?",
+      "Is robotic or keyhole access included, or quoted as a separate platform charge?",
+    ],
+    related: ["Radical Nephrectomy", "Radical Cystectomy", "Targeted Therapy"],
+    campusFocus:
+      "Confirm the named kidney surgeon, whether a robotic platform is used, how conversion to radical nephrectomy is billed, and which laboratory follows remnant kidney function.",
+    imageAlts: [
+      "Medical illustration of kidney anatomy for partial nephrectomy: cortex, collecting system and hilum, a polar tumour with its planned parenchymal margin, and the artery that may be clamped during excision.",
+      "Medical infographic comparing polar excision with a preserved remnant, central tumour reconstruction with collecting-system repair, off-clamp technique, and conversion to radical nephrectomy when a remnant cannot be saved.",
+      "Medical infographic of the partial nephrectomy recovery pathway: drain and urine monitoring, kidney-function checks, histopathology, remnant surveillance imaging and long-term blood-pressure review.",
+    ],
+  },
+  {
+    procedure: "Radical Prostatectomy",
+    shortName: "radical prostatectomy",
+    specialist: "urologic oncologist",
+    definition:
+      "Radical prostatectomy removes the prostate gland and seminal vesicles to treat localised prostate cancer, with the pelvic lymph nodes taken when staging shows they are at material risk.",
+    candidacy:
+      "It is generally considered for clinically localised prostate cancer in a man whose life expectancy and other illnesses make curative local treatment appropriate. Active surveillance, radiation and systemic therapy are alternatives that must be compared, not assumed away.",
+    anatomy:
+      "The prostate sits below the bladder and in front of the rectum, wrapping the urethra. The nerves involved in erections run along its sides, and the sphincter that supports continence sits at its apex, so how those structures are handled is part of the operation.",
+    distinction:
+      "A nerve-sparing operation aims to keep the neurovascular bundles when the tumour does not reach them, while a wider resection is used when extra-prostatic extension is likely. Pelvic nodes are added only where risk tables or imaging support it.",
+    scopeShort:
+      "Whether nerve-sparing is attempted, whether pelvic nodes are taken, and whether the approach is open or robotic change the operation and the bill.",
+    staging:
+      "Planning uses PSA, biopsy grade and volume, digital examination and, where indicated, MRI of the prostate and PSMA or other metabolic imaging. Pelvic node risk and whether disease appears confined decide both the resection and whether radiation is a reasonable alternative.",
+    sequencing:
+      "Surgery is one of the curative local options. Pathology of the prostate and nodes — margin, extra-prostatic extension, seminal-vesicle involvement and nodal deposits — then decides whether adjuvant radiation or systemic therapy is discussed.",
+    team:
+      "Decisions usually involve the surgeon, a pathologist, a radiologist reading MRI or metabolic imaging, a radiation oncologist where radiation is an alternative or adjuvant, and continence and sexual-function rehabilitation services.",
+    evaluation:
+      "Assessment commonly includes PSA trend, biopsy and imaging review, continence and sexual-function baseline, anaesthetic checks and a discussion of alternatives. Not every patient needs every scan.",
+    technique:
+      "The prostate and seminal vesicles are removed through an open incision or a robotic platform, the bladder is joined to the urethra over a catheter, nerves are preserved where the tumour allows, and pelvic nodes are taken when planned. A drain is often left.",
+    conversion:
+      "A planned nerve-sparing dissection may be abandoned if the tumour is found more extensive than imaging suggested, and robotic cases may convert to open for bleeding or adhesions. Consent should state both possibilities.",
+    approaches: [
+      { label: "Open retropubic prostatectomy", detail: "Direct access through a lower abdominal incision." },
+      { label: "Robotic-assisted prostatectomy", detail: "The same anatomical resection performed from a surgeon-controlled console." },
+      { label: "Nerve-sparing dissection", detail: "Keeps one or both neurovascular bundles when oncology allows." },
+      { label: "Non-nerve-sparing resection", detail: "Takes a wider margin when extra-prostatic extension is likely." },
+      { label: "With pelvic lymph node dissection", detail: "Adds staging or treatment of the pelvic nodes at risk." },
+    ],
+    duration: "commonly 2–4 hours, longer when pelvic nodes are dissected",
+    stayGlance: "Three to seven nights typical",
+    admission: "Admission is frequently three to seven nights, with a urethral catheter left in place after discharge for a planned interval.",
+    recovery:
+      "Recovery is led by catheter care, pelvic-floor exercises, a gradual return of continence, and a defined interval before assessing erectile function rather than a fixed date for flying home.",
+    pathology:
+      "The specimen is examined for grade, extra-prostatic extension, seminal-vesicle involvement, margin status and the number of involved nodes. Those findings drive adjuvant radiation and systemic-therapy decisions.",
+    risks:
+      "Recognised risks include bleeding, infection, urine leak at the join, narrowing of the join, temporary or lasting incontinence, change in erectile function, lymph leak if nodes are taken, and rectal injury in rare cases.",
+    urgent:
+      "inability to pass urine after catheter removal, heavy bleeding, fever, calf swelling, sudden breathlessness, or increasing abdominal pain",
+    functionalChange:
+      "Some change in urinary control is expected in the early months, and erectile function can change even when nerves are spared. Pelvic-floor physiotherapy and a planned sexual-function review are part of treatment, not optional extras.",
+    drivers: oncologyDrivers(
+      { label: "Nerve-sparing versus wider resection", detail: "Preserving one or both nerve bundles changes theatre time and reconstruction." },
+      { label: "Pelvic lymph node dissection", detail: "Adding nodes lengthens surgery and can add a drain and a lymph-leak risk." },
+      { label: "Surgical platform", detail: "Open and robotic access carry different equipment and consumable costs." },
+      { label: "Continence and sexual-function rehabilitation", detail: "Physiotherapy, devices and medicines after discharge are frequently excluded." },
+    ),
+    records: [
+      "PSA history and prostate biopsy report with grade and core involvement",
+      "Prostate MRI or metabolic imaging files where already performed",
+      "Baseline continence and sexual-function notes",
+    ],
+    followUp:
+      "The home team should receive the operation note, pathology and PSA schedule, then coordinate pelvic-floor physiotherapy, sexual-function support, and adjuvant radiation or systemic therapy where advised.",
+    quoteQuestions: [
+      "Is nerve-sparing planned on one side, both, or neither, and what would change that?",
+      "Are pelvic nodes included in this estimate?",
+      "How many catheter days are assumed, and is continence physiotherapy included?",
+    ],
+    related: ["Hormone Therapy", "External Beam Radiotherapy (EBRT)", "Radical Cystectomy"],
+    campusFocus:
+      "Confirm the named urologic oncologist, whether a robotic platform is used, how pelvic nodes are billed, and which service supports continence after discharge.",
+    imageAlts: [
+      "Medical illustration of prostate anatomy for cancer surgery: prostate below the bladder, seminal vesicles, urethra, the neurovascular bundles along each side, and the pelvic nodes sometimes removed for staging.",
+      "Medical infographic comparing nerve-sparing prostatectomy, wider extra-prostatic resection, pelvic node dissection, and open versus robotic access for the same anatomical operation.",
+      "Medical infographic of the radical prostatectomy recovery pathway: catheter care, pelvic-floor exercises, histopathology, the first PSA, and the adjuvant radiation or systemic-therapy decision.",
+    ],
+  },
+  {
+    procedure: "Radical Cystectomy",
+    shortName: "radical cystectomy",
+    specialist: "urologic oncologist",
+    definition:
+      "Radical cystectomy removes the bladder to treat invasive or high-risk bladder cancer, and reconstructs a way for urine to leave the body — usually an ileal conduit or, in selected patients, a new bladder made from bowel.",
+    candidacy:
+      "It is generally considered for muscle-invasive bladder cancer, or for high-risk non-muscle-invasive disease that has not responded to bladder-preserving treatment. Bladder-preserving chemoradiotherapy is an alternative for some, not a default.",
+    anatomy:
+      "The bladder sits in the pelvis behind the pubic bone. In men the prostate is usually removed with it; in women the uterus, ovaries and part of the vagina may be included depending on disease and prior discussion. A segment of small bowel is commonly used to divert urine.",
+    distinction:
+      "An ileal conduit brings urine to a stoma on the abdominal wall, while a continent diversion or neobladder aims to restore urethral voiding in selected patients. Pelvic nodes are removed as a staging and treatment step, not as an optional extra.",
+    scopeShort:
+      "Whether the diversion is a conduit or a neobladder, which pelvic organs are included, and whether nodes are taken change the operation and the bill.",
+    staging:
+      "Planning uses TURBT pathology to confirm invasion, cross-sectional imaging of the abdomen and pelvis, chest imaging, and kidney-function and nutritional assessment. Hydronephrosis, carcinoma in situ and variant histology all change counselling.",
+    sequencing:
+      "Cisplatin-based chemotherapy is often given before surgery when the patient can receive it, because it can treat micrometastatic disease. Final pathology of the bladder and nodes then decides adjuvant systemic therapy.",
+    team:
+      "Care normally involves the surgeon, a medical oncologist for neoadjuvant or adjuvant therapy, a pathologist, a stoma therapist, a nutritionist, and a reconstructive urologist where a neobladder is planned.",
+    evaluation:
+      "Assessment commonly includes kidney function, nutrition, heart and lung review, stoma-site marking, discussion of diversion options, and anaesthetic checks. Smoking cessation support is relevant because it affects healing and cancer risk.",
+    technique:
+      "The bladder and planned adjacent organs are removed with the pelvic nodes, the ureters are joined to a bowel segment, and either a stoma is matured or a neobladder is joined to the urethra. Drains and, after a neobladder, catheters are left.",
+    conversion:
+      "A planned neobladder may become a conduit if urethral margins, bowel quality or anaesthetic fitness make reconstruction unsafe. Consent should name both diversions.",
+    approaches: [
+      { label: "Open radical cystectomy", detail: "Direct pelvic access, often chosen for bulky, previously irradiated or complex cases." },
+      { label: "Robotic-assisted cystectomy", detail: "Keyhole pelvic dissection with urinary diversion performed inside or through a small incision." },
+      { label: "Ileal conduit diversion", detail: "A short small-bowel segment brings urine to a permanent abdominal stoma." },
+      { label: "Orthotopic neobladder", detail: "Bowel is reconstructed into a reservoir joined to the urethra in selected patients." },
+      { label: "Pelvic lymph node dissection", detail: "Removes the pelvic nodes used to stage and treat this cancer." },
+    ],
+    duration: "commonly 4–8 hours, longer for neobladder reconstruction",
+    stayGlance: "Seven to fourteen nights typical",
+    admission: "Admission is frequently seven to fourteen nights, driven by bowel recovery, drain output and, after a neobladder, catheter teaching.",
+    recovery:
+      "Recovery is led by bowel function, stoma or neobladder teaching, nutrition, walking, and a defined interval before considering air travel rather than a calendar date.",
+    pathology:
+      "The bladder, adjacent organs and pelvic nodes are examined for residual tumour, margin, nodal involvement and variant histology. Those results, with the neoadjuvant response, drive adjuvant therapy.",
+    risks:
+      "Recognised risks include bleeding, infection, bowel leak or blockage, urine leak, kidney obstruction, metabolic change from using bowel, stoma complications, sexual-function change, and a period of intensive stoma or catheter care.",
+    urgent:
+      "no urine in the stoma bag, abdominal swelling, fever, vomiting, wound breakdown, sudden breathlessness, or confusion",
+    functionalChange:
+      "Life after cystectomy includes either a permanent stoma or a new bladder that is emptied by a different method. Sexual function commonly changes, and bowel-related metabolic effects need long-term blood tests.",
+    drivers: oncologyDrivers(
+      { label: "Urinary diversion type", detail: "A conduit and a neobladder differ in theatre time, teaching and consumables." },
+      { label: "Adjacent organ resection", detail: "Including prostate, uterus or vagina widens the operation and pathology work." },
+      { label: "Neoadjuvant chemotherapy already given", detail: "Prior systemic therapy changes tissue planes, timing and the overall episode cost." },
+      { label: "Stoma and continence support", detail: "Appliances, teaching and later revisions are frequently excluded from surgical estimates." },
+    ),
+    records: [
+      "TURBT pathology confirming invasion or high-risk non-muscle-invasive disease",
+      "Cross-sectional imaging of abdomen, pelvis and chest with image files",
+      "Kidney-function results and any neoadjuvant chemotherapy summary",
+    ],
+    followUp:
+      "The home team should receive the operation note, diversion details, pathology and discharge summary, then coordinate stoma or neobladder care, kidney-function and metabolic blood tests, and adjuvant therapy where advised.",
+    quoteQuestions: [
+      "Is the planned diversion a conduit or a neobladder, and what would change that during surgery?",
+      "Which adjacent organs and node fields are included in this estimate?",
+      "Are stoma appliances and teaching included after discharge?",
+    ],
+    related: ["TURBT (Transurethral Resection of Bladder Tumor)", "Urinary Diversion", "Neoadjuvant Chemotherapy"],
+    campusFocus:
+      "Confirm the named urologic oncologist, which diversion is planned, whether stoma therapy is available on that campus, and who manages neoadjuvant or adjuvant chemotherapy.",
+    imageAlts: [
+      "Medical illustration of pelvic anatomy for radical cystectomy: bladder behind the pubic bone, ureters, prostate in the male diagram, and a small-bowel segment prepared for urinary diversion.",
+      "Medical infographic comparing ileal conduit with an abdominal stoma, orthotopic neobladder joined to the urethra, pelvic node dissection, and open versus robotic cystectomy access.",
+      "Medical infographic of the radical cystectomy recovery pathway: bowel recovery, stoma or catheter teaching, histopathology, kidney-function checks and the adjuvant therapy decision.",
+    ],
+  },
+  {
+    procedure: "Radical Hysterectomy",
+    shortName: "radical hysterectomy",
+    specialist: "gynaecologic oncologist",
+    definition:
+      "Radical hysterectomy removes the uterus, cervix and a cuff of upper vagina, together with the tissues beside the cervix that contain the parametrial vessels and nodes at risk, to treat selected cervical or uterine cancers.",
+    candidacy:
+      "It is generally considered for early cervical cancer that appears confined to the cervix and immediate surroundings, and for selected uterine cancers where a radical rather than a simple hysterectomy is required. Fertility-sparing alternatives exist for some early cases and must be discussed explicitly.",
+    anatomy:
+      "The uterus and cervix sit in the pelvis between bladder and rectum. The ureters run through the parametrium beside the cervix, and the pelvic nerves that influence bladder emptying travel nearby, so identifying those structures is part of a radical rather than a simple hysterectomy.",
+    distinction:
+      "A simple hysterectomy removes the uterus and cervix; a radical operation takes additional parametrial tissue and a vaginal cuff because that is where early cervical cancer can spread. Pelvic nodes, and sometimes para-aortic nodes, are assessed in the same sitting.",
+    scopeShort:
+      "How much parametrium and vagina are taken, whether nodes are dissected or sampled, and whether fertility-sparing surgery is still an option change the operation and the bill.",
+    staging:
+      "Planning uses examination, cervical or endometrial pathology, pelvic MRI, and, where indicated, metabolic imaging. Tumour size, stromal invasion, lymphovascular space involvement and nodal status decide between radical surgery and primary chemoradiotherapy.",
+    sequencing:
+      "Surgery is chosen when the team expects to avoid combined radical surgery and pelvic radiation in the same patient. Final pathology — parametrial involvement, nodes, margins and risk features — then decides whether adjuvant radiation or chemoradiation is still needed.",
+    team:
+      "Planning normally involves a gynaecologic oncologist, a pathologist, a radiologist, a radiation oncologist, and bladder-rehabilitation and fertility counselling where relevant.",
+    evaluation:
+      "Assessment commonly includes pelvic examination, imaging, anaesthetic checks, discussion of ovarian conservation in selected younger patients, and a baseline note of bladder and bowel function.",
+    technique:
+      "Through an open incision, keyhole ports or a robotic platform, the surgeon develops the spaces around the cervix, identifies the ureters, removes the uterus with parametrium and a vaginal cuff, and addresses the pelvic nodes as planned. A catheter is left while bladder function recovers.",
+    conversion:
+      "A planned fertility-sparing or minimally invasive approach may be converted to a more extensive open operation if nodes are involved or the tumour is larger than expected. Consent should cover that change.",
+    approaches: [
+      { label: "Open radical hysterectomy", detail: "Direct pelvic access, often used for larger tumours or after prior pelvic treatment." },
+      { label: "Minimally invasive radical hysterectomy", detail: "Keyhole or robotic access for selected early tumours, after counselling on approach-specific evidence." },
+      { label: "Nerve-sparing radical hysterectomy", detail: "Aims to protect pelvic autonomic nerves that influence bladder emptying when oncology allows." },
+      { label: "Fertility-sparing radical trachelectomy", detail: "Removes the cervix and parametrium while keeping the uterine body in highly selected early cases." },
+      { label: "With pelvic node assessment", detail: "Dissection or sentinel-node mapping of the pelvic nodes at risk." },
+    ],
+    duration: "commonly 3–5 hours, longer when nodes are dissected or fertility-sparing reconstruction is performed",
+    stayGlance: "Four to eight nights typical",
+    admission: "Admission is frequently four to eight nights, often with a catheter until bladder emptying is documented.",
+    recovery:
+      "Recovery is led by bladder emptying, wound healing, and a gradual return to lifting and intercourse according to the team’s advice rather than a fixed calendar.",
+    pathology:
+      "The specimen is examined for tumour size, depth, parametrial and vaginal involvement, margins, lymphovascular space invasion and nodal status. Those results decide adjuvant radiation.",
+    risks:
+      "Recognised risks include bleeding, infection, ureteric injury, bladder or bowel injury, lymph collection, temporary or lasting change in bladder emptying, vaginal shortening, and menopausal symptoms if ovaries are removed.",
+    urgent:
+      "heavy vaginal bleeding, inability to pass urine, fever, calf swelling, sudden breathlessness, or increasing abdominal pain",
+    functionalChange:
+      "Fertility ends unless a fertility-sparing operation was performed. Bladder emptying can be slower for weeks, and vaginal length or ovarian function may change depending on what was removed and whether radiation follows.",
+    drivers: oncologyDrivers(
+      { label: "Radical versus simple hysterectomy", detail: "Parametrial and vaginal resection, not just removing the uterus, defines this operation." },
+      { label: "Node assessment method", detail: "Sentinel mapping and full pelvic dissection differ in time and pathology work." },
+      { label: "Fertility-sparing versus standard radical surgery", detail: "Trachelectomy and reconstruction are a different scope from hysterectomy." },
+      { label: "Adjuvant pelvic radiation if required", detail: "Radiation after radical surgery is a separate pathway and a separate estimate." },
+    ),
+    records: [
+      "Cervical or endometrial biopsy and any cone or LEEP pathology",
+      "Pelvic MRI and other staging imaging with image files",
+      "Prior pelvic surgery or radiation notes",
+    ],
+    followUp:
+      "The home team should receive the operation note, pathology and bladder-function status, then coordinate adjuvant radiation where advised, hormone support if ovaries were removed, and surveillance according to the cancer type.",
+    quoteQuestions: [
+      "Is this a radical or a simple hysterectomy, and how much parametrium is planned?",
+      "Are pelvic nodes mapped, dissected, or both, and is that included?",
+      "If fertility-sparing surgery is being considered, what would convert it during the operation?",
+    ],
+    related: ["Ovarian Cancer Cytoreductive Surgery", "Sentinel Lymph Node Biopsy", "Intensity-Modulated Radiotherapy (IMRT)"],
+    campusFocus:
+      "Confirm the named gynaecologic oncologist, whether sentinel-node mapping is used, how bladder recovery is supported, and which service delivers adjuvant radiation if advised.",
+    imageAlts: [
+      "Medical illustration of pelvic anatomy for radical hysterectomy: uterus and cervix between bladder and rectum, ureters running through the parametrium, a vaginal cuff, and the pelvic node basins assessed with the specimen.",
+      "Medical infographic comparing simple hysterectomy, radical hysterectomy with parametrium and vaginal cuff, nerve-sparing dissection, and fertility-sparing trachelectomy for selected early cervical cancer.",
+      "Medical infographic of the radical hysterectomy recovery pathway: catheter and bladder emptying, histopathology of parametrium and nodes, the adjuvant radiation decision, and surveillance.",
+    ],
+  },
+  {
+    procedure: "Lobectomy",
+    shortName: "lobectomy",
+    specialist: "thoracic surgical oncologist",
+    definition:
+      "Lobectomy removes one entire lobe of the lung — with its bronchus, artery and vein — as a single anatomical unit, most often to treat a lung cancer that is confined to that lobe.",
+    candidacy:
+      "It is generally considered when a tumour or selected other disease is confined to one lobe and the remaining lung can support the patient after that lobe is gone. Segmentectomy may be discussed for a small peripheral tumour; pneumonectomy is a larger alternative when a lobe is not enough.",
+    anatomy:
+      "The right lung has upper, middle and lower lobes; the left has upper and lower. Each lobe has its own bronchus and vessels. After the lobe is removed, the remaining lobes must fill the chest, and mediastinal nodes are sampled in the same operation when the indication is cancer.",
+    distinction:
+      "This page is about removing one anatomical lobe, not a wedge of lung and not a whole lung. Which lobe is taken, whether a sleeve of airway is needed, and whether nodes are dissected are the decisions that change recovery and cost.",
+    scopeShort:
+      "Which lobe is removed, whether a sleeve reconstruction is needed, and whether mediastinal nodes are dissected change the operation and the bill.",
+    staging:
+      "Cancer planning requires tissue diagnosis, chest and metabolic imaging, and usually mediastinal node assessment before resection. Lung-function and cardiac tests decide whether losing that specific lobe is tolerable.",
+    sequencing:
+      "Some tumours receive systemic treatment before lobectomy. Pathology of the lobe and nodes, including molecular markers, then decides adjuvant chemotherapy, targeted therapy or immunotherapy.",
+    team:
+      "Planning normally involves the thoracic surgeon, a respiratory physician for airway staging and lung function, a radiologist, a molecular pathologist, medical and radiation oncologists, and a physiotherapist.",
+    evaluation:
+      "Assessment commonly includes spirometry, oxygenation, cardiac evaluation, exercise testing where function is borderline, smoking cessation support and anaesthetic checks.",
+    technique:
+      "Under one-lung ventilation the surgeon divides the artery, vein and bronchus of the named lobe, removes it, samples mediastinal nodes when indicated, and places chest drains. Access may be keyhole, robotic or open.",
+    conversion:
+      "A planned lobectomy may become a sleeve resection or pneumonectomy if the tumour involves the airway or vessels more centrally than imaging showed, and keyhole cases may convert to open thoracotomy.",
+    approaches: [
+      { label: "Right upper, middle or lower lobectomy", detail: "The named right lobe is removed as an anatomical unit." },
+      { label: "Left upper or lower lobectomy", detail: "The named left lobe is removed; the left upper lobe includes the lingula." },
+      { label: "Sleeve lobectomy", detail: "The airway is reconstructed so a whole lung need not be removed." },
+      { label: "Keyhole or robotic lobectomy", detail: "The same anatomical resection through ports rather than a full thoracotomy." },
+      { label: "Open thoracotomy lobectomy", detail: "Direct access, often for central, adherent or previously treated tumours." },
+    ],
+    duration: "commonly 2–4 hours, longer for sleeve reconstruction or dense adhesions",
+    stayGlance: "Five to ten nights typical",
+    admission: "Admission is frequently five to ten nights, governed mainly by air leak and chest drain duration.",
+    recovery:
+      "Recovery is led by chest drain removal, breathing exercises and pain control that allows coughing, with breathlessness on exertion improving as the remaining lung adapts.",
+    pathology:
+      "The lobe is examined for tumour type, size, margin, pleural involvement and the node stations taken with it. Molecular testing on the same specimen guides adjuvant treatment.",
+    risks:
+      "Recognised risks include prolonged air leak, pneumonia, irregular heart rhythm, bleeding, a bronchial stump leak, persistent chest wall pain, reduced exercise tolerance and venous thromboembolism.",
+    urgent:
+      "worsening breathlessness, fever, productive cough, palpitations, bleeding, or air under the skin of the chest or neck",
+    functionalChange:
+      "Losing a lobe permanently reduces respiratory reserve. How much is noticed depends on which lobe is taken and on baseline lung function. Pulmonary rehabilitation after discharge is part of recovery.",
+    drivers: oncologyDrivers(
+      { label: "Which lobe is removed", detail: "Upper, middle and lower lobes differ in vessel anatomy and remaining volume." },
+      { label: "Sleeve reconstruction", detail: "Joining the airway to avoid pneumonectomy adds time and leak risk." },
+      { label: "Access route", detail: "Keyhole, robotic and open lobectomy carry different equipment costs." },
+      { label: "Chest drain duration", detail: "A prolonged air leak is the commonest reason an admission overruns." },
+    ),
+    records: [
+      "Biopsy confirming the diagnosis and, for cancer, the subtype",
+      "Chest imaging and pulmonary function tests",
+      "Any airway nodal staging reports",
+    ],
+    followUp:
+      "The home team should receive the operation note, which lobe was removed, nodal and molecular pathology, then coordinate adjuvant therapy where advised and pulmonary rehabilitation.",
+    quoteQuestions: [
+      "Which lobe is planned, and what would convert this to a sleeve resection or pneumonectomy?",
+      "Has mediastinal staging been completed, and is it inside this estimate?",
+      "How are extra chest drain days billed?",
+    ],
+    related: ["Lung Cancer Surgery", "VATS Lung Surgery", "EBUS (Endobronchial Ultrasound)"],
+    campusFocus:
+      "Confirm the named thoracic surgeon, which lobe is planned, the intended access, and whether lung-function testing and chest physiotherapy are available on that campus.",
+    imageAlts: [
+      "Medical illustration of lobectomy anatomy: the five pulmonary lobes, a tumour confined to one lobe, the lobar bronchus artery and vein divided at their origin, and the remaining lobes that stay in the chest.",
+      "Medical infographic comparing right upper lobectomy, left lower lobectomy, sleeve lobectomy reconstructing the airway, and conversion to pneumonectomy when a lobe is not enough.",
+      "Medical infographic of the lobectomy recovery pathway: chest drain and air leak monitoring, breathing exercises, histopathology of the lobe and nodes, and pulmonary rehabilitation.",
+    ],
+  },
+  {
+    procedure: "VATS Lung Surgery",
+    shortName: "VATS lung surgery",
+    specialist: "thoracic surgical oncologist",
+    definition:
+      "VATS lung surgery is video-assisted keyhole access to the chest, used to perform anatomical lung resections and selected other thoracic operations through small ports rather than a full thoracotomy.",
+    candidacy:
+      "It is generally considered when the same lung resection can be completed safely through ports — typically a peripheral or fissure-favourable tumour in a patient without dense pleural adhesions. It is an access choice, not a different cancer operation from open lobectomy.",
+    anatomy:
+      "Ports pass between the ribs into the pleural space. A camera and long instruments reach the fissures, the lobar vessels and the bronchus. The chest wall is spared a rib-spreading incision, but the lung operation inside is still an anatomical resection.",
+    distinction:
+      "VATS describes how the surgeon enters the chest, not which lobe is taken. A VATS lobectomy and an open lobectomy can remove the same tissue; conversion to open is a recognised part of the method, not a failure of care.",
+    scopeShort:
+      "Whether the keyhole plan completes the intended resection, converts to open, or needs extra ports and staplers changes the operation and the bill.",
+    staging:
+      "Cancer cases still need the same staging as any lung resection: tissue diagnosis, imaging, mediastinal node assessment, and lung-function testing. VATS does not replace EBUS or other staging tests.",
+    sequencing:
+      "Prior chemotherapy, radiation or chest surgery makes adhesions more likely and can make VATS conversion more common. Pathology of the resected lung still decides adjuvant treatment.",
+    team:
+      "The thoracic surgeon, thoracic anaesthetist skilled in one-lung ventilation, a scrub team familiar with endoscopic staplers, and a physiotherapist share the pathway.",
+    evaluation:
+      "Assessment is the same as for open resection, plus a review of prior chest surgery, pleural disease and whether the fissure looks complete enough on imaging for a keyhole dissection.",
+    technique:
+      "Under one-lung ventilation, ports are placed, the camera enters the pleural space, the fissure and vessels are dissected, endoscopic staplers divide artery, vein and bronchus, the specimen is removed in a bag, nodes are sampled, and a chest drain is placed.",
+    conversion:
+      "Bleeding, incomplete fissures, a more central tumour, or inability to sample nodes adequately can convert VATS to open thoracotomy. The quotation should assume that possibility.",
+    approaches: [
+      { label: "VATS lobectomy", detail: "Anatomical lobe removal through ports, the commonest cancer indication." },
+      { label: "VATS segmentectomy", detail: "Keyhole removal of one anatomical segment for selected small tumours." },
+      { label: "VATS wedge resection", detail: "A non-anatomical sample or excision, which is not a substitute for lobectomy when lobectomy is indicated." },
+      { label: "Uniportal or multiportal VATS", detail: "One or several ports; the inside resection, not the number of scars, defines the operation." },
+      { label: "Conversion to thoracotomy", detail: "Open completion of the same resection when keyhole dissection is unsafe." },
+    ],
+    access: [
+      {
+        name: "Video-assisted thoracoscopic surgery",
+        access: "Small ports between the ribs",
+        method: "Camera and long instruments, same anatomical resection",
+        resources: "Endoscopic staplers, single-lung ventilation",
+        recovery: "Often less chest wall pain; drain duration still governs discharge",
+        cost: "Consumable-heavy; compare at equal resection scope",
+      },
+      {
+        name: "Uniportal VATS",
+        access: "A single utility incision",
+        method: "Camera and instruments share one intercostal space",
+        resources: "Specialised uniportal instruments and staplers",
+        recovery: "Similar drain rules to multiportal VATS",
+        cost: "Still stapler-dependent; not automatically cheaper",
+      },
+      {
+        name: "Open thoracotomy",
+        access: "Chest wall incision with rib spreading",
+        method: "Direct handling when keyhole dissection is unsafe",
+        resources: "Standard thoracic instrumentation",
+        recovery: "More chest wall discomfort; physiotherapy matters more",
+        cost: "Lower stapler use; stay and analgesia may rise",
+      },
+    ],
+    duration: "commonly 2–4 hours for a VATS lobectomy, longer if conversion is required",
+    stayGlance: "Four to eight nights typical",
+    admission: "Admission is frequently four to eight nights, still governed by air leak and chest drain duration rather than by the size of the scars.",
+    recovery:
+      "Keyhole access may reduce chest wall pain, but drain duration, breathing exercises and fitness to fly still follow the lung operation, not the port count.",
+    pathology:
+      "The specimen must still be an intact anatomical resection with labelled nodes. A fragmented extraction that prevents margin or nodal assessment is not an adequate cancer operation.",
+    risks:
+      "Recognised risks include those of the underlying resection — air leak, bleeding, pneumonia, arrhythmia — plus port-site problems and the specific risk of emergency conversion for bleeding.",
+    urgent:
+      "worsening breathlessness, heavy bleeding, fever, sudden chest wall swelling, or air under the skin",
+    functionalChange:
+      "Respiratory reserve still falls by the amount of lung removed. Port-site numbness can persist. VATS does not restore lung tissue that has been taken.",
+    drivers: oncologyDrivers(
+      { label: "Resection performed through VATS", detail: "Wedge, segmentectomy and lobectomy are different operations that happen to share access." },
+      { label: "Stapler and consumable use", detail: "Endoscopic staplers are a major line item and vary with fissure anatomy." },
+      { label: "Conversion contingency", detail: "Open completion adds theatre time and a different admission profile." },
+      { label: "Chest drain duration", detail: "Air leak, not the number of ports, usually decides the length of stay." },
+    ),
+    records: [
+      "Imaging that shows fissures, pleural space and the intended resection",
+      "Pulmonary function tests and cardiac assessment",
+      "Prior chest surgery or pleural procedure notes",
+    ],
+    followUp:
+      "Handover should name the resection performed through VATS, whether conversion occurred, nodal pathology, and the chest-drain and rehabilitation plan.",
+    quoteQuestions: [
+      "Exactly which lung resection will be performed through VATS?",
+      "What stapler and consumable costs are assumed?",
+      "How is conversion to open thoracotomy billed if required?",
+    ],
+    related: ["Lung Cancer Surgery", "Lobectomy", "EBUS (Endobronchial Ultrasound)"],
+    campusFocus:
+      "Confirm the named thoracic surgeon’s VATS list, which resection will be done through ports, stapler assumptions, and the conversion plan.",
+    imageAlts: [
+      "Medical illustration of VATS lung surgery: camera and instruments entering the pleural space between the ribs, the fissure of the target lobe, and endoscopic staplers dividing the lobar vessels and bronchus.",
+      "Medical infographic comparing VATS lobectomy, VATS segmentectomy, uniportal access and conversion to open thoracotomy when keyhole dissection cannot finish the same anatomical resection.",
+      "Medical infographic of the VATS recovery pathway: port-site and drain care, air leak monitoring, histopathology of the resected lobe or segment, and breathing exercises before travel home.",
+    ],
+  },
+  {
+    procedure: "Robotic Thoracic Surgery",
+    shortName: "robotic thoracic surgery",
+    specialist: "thoracic surgical oncologist",
+    definition:
+      "Robotic thoracic surgery uses a surgeon-controlled console and articulated instruments to perform anatomical chest operations — most often lung resection with mediastinal node dissection — through ports.",
+    candidacy:
+      "It is considered when the named surgeon already performs the intended resection robotically and the anatomy is suitable. A robot in the building is not itself an indication, and open or VATS access may still be more appropriate.",
+    anatomy:
+      "Ports dock to a robotic platform. Wristed instruments work at the fissure, vessels and mediastinum with magnified three-dimensional vision. The resection inside the chest is still defined by which lobe, segment or nodes are taken.",
+    distinction:
+      "The robot is an access and instrument platform. It does not make a pneumonectomy into a lobectomy, and it does not replace staging. Compare robotic quotes only against the same named resection.",
+    scopeShort:
+      "Which resection is performed on the robot, how long the platform is docked, and whether conversion to VATS or open is needed change the bill.",
+    staging:
+      "Cancer cases need the same diagnosis, imaging, mediastinal assessment and lung-function testing as any other thoracic resection. Robotic access does not replace EBUS.",
+    sequencing:
+      "Prior chest treatment can make docking and dissection harder. Pathology of the resected lung and nodes still decides adjuvant therapy.",
+    team:
+      "A trained robotic thoracic team, a bedside assistant, a thoracic anaesthetist and a platform technician are required. That team is part of the product being quoted.",
+    evaluation:
+      "Assessment matches other lung resections, plus confirmation that the named surgeon, the platform and the intended date are actually available.",
+    technique:
+      "After one-lung ventilation, ports are placed, the robot is docked, the surgeon at the console divides the vessels and bronchus of the planned resection, nodes are dissected, the specimen is removed, and chest drains are placed.",
+    conversion:
+      "The case may be undocked to VATS or open thoracotomy for bleeding, equipment failure or anatomy that cannot be completed robotically. Consent and the estimate should name that pathway.",
+    approaches: [
+      { label: "Robotic lobectomy", detail: "Anatomical lobe removal from the console, the usual cancer indication." },
+      { label: "Robotic segmentectomy", detail: "Console-based removal of one anatomical segment." },
+      { label: "Robotic mediastinal node dissection", detail: "Node stations cleared or sampled with the same platform." },
+      { label: "Robotic thymectomy or other mediastinal work", detail: "Only where that exact operation is the consented indication, not inferred from a lung-resection quote." },
+      { label: "Undocking to VATS or open", detail: "Completes the same resection when the console pathway is unsafe." },
+    ],
+    access: [
+      {
+        name: "Robotic-assisted thoracic surgery",
+        access: "Ports docked to a surgeon-controlled console",
+        method: "Articulated instruments and magnified vision",
+        resources: "Platform time and single-use robotic instruments",
+        recovery: "Broadly similar drain rules to other keyhole chest surgery",
+        cost: "Usually the highest equipment component",
+      },
+      {
+        name: "Video-assisted thoracoscopic surgery",
+        access: "Ports without a robotic platform",
+        method: "Long instruments and a camera, same resection",
+        resources: "Endoscopic staplers, no console time",
+        recovery: "Drain duration still governs discharge",
+        cost: "Consumable-heavy, typically below robotic platform cost",
+      },
+      {
+        name: "Open thoracotomy",
+        access: "Chest wall incision",
+        method: "Direct handling of airway and vessels",
+        resources: "Standard thoracic instrumentation",
+        recovery: "More chest wall discomfort",
+        cost: "Lower equipment cost; stay may be longer",
+      },
+    ],
+    duration: "commonly 3–5 hours including docking, longer for complex anatomy",
+    stayGlance: "Four to eight nights typical",
+    admission: "Admission is frequently four to eight nights, still governed by air leak and drains rather than by the console.",
+    recovery:
+      "Recovery follows the lung resection performed, not the brand of platform. Drain removal, breathing exercises and fitness to fly remain clinical decisions.",
+    pathology:
+      "The same intact specimen and labelled nodes are required as in open or VATS cancer surgery. Platform choice does not change what pathology must report.",
+    risks:
+      "Recognised risks include those of the underlying resection plus docking-related delays, instrument injury, and emergency undocking for bleeding.",
+    urgent:
+      "worsening breathlessness, heavy bleeding, fever, or sudden chest swelling",
+    functionalChange:
+      "Lung tissue that is removed is gone regardless of robotic access. Remaining breathlessness depends on the resection, not the console.",
+    drivers: oncologyDrivers(
+      { label: "Named resection on the robot", detail: "Segmentectomy, lobectomy and mediastinal work are different operations." },
+      { label: "Platform and instrument time", detail: "Console minutes and single-use instruments are separate line items." },
+      { label: "Conversion or undocking", detail: "Completing the case by VATS or open changes time and consumables." },
+      { label: "Team availability", detail: "A trained bedside team and platform slot are part of what is being purchased." },
+    ),
+    records: [
+      "Imaging and lung-function tests for the intended resection",
+      "Prior chest treatment notes",
+      "Confirmation that a named robotic thoracic surgeon has accepted the case",
+    ],
+    followUp:
+      "Handover should name the resection performed robotically, docking or conversion events, nodal pathology and the rehabilitation plan.",
+    quoteQuestions: [
+      "What exact thoracic resection will be performed on the robot?",
+      "Are platform time and single-use instruments itemized?",
+      "How is undocking to VATS or open billed?",
+    ],
+    related: ["Lung Cancer Surgery", "VATS Lung Surgery", "Lobectomy"],
+    campusFocus:
+      "Confirm the named robotic thoracic surgeon, that a platform slot exists for the intended date, which resection will be done, and how conversion is billed. Cards appear only for an exact live CMS relationship; a general thoracic or surgical-oncology label is not enough.",
+    imageAlts: [
+      "Medical illustration of robotic thoracic surgery: ports in the chest wall docked to a surgeon-controlled console, articulated instruments at a lobar fissure, and the mediastinal node stations included with a cancer resection.",
+      "Medical infographic comparing robotic lobectomy, robotic segmentectomy, undocking to VATS, and conversion to open thoracotomy for the same anatomical lung resection.",
+      "Medical infographic of the robotic thoracic recovery pathway: undocking and drain care, air leak monitoring, histopathology, and pulmonary rehabilitation after the named resection.",
+    ],
+  },
+  {
+    procedure: "Transoral Robotic Surgery (TORS)",
+    shortName: "TORS",
+    specialist: "head and neck surgical oncologist",
+    definition:
+      "Transoral robotic surgery removes selected tumours of the oropharynx — tonsil, base of tongue or adjacent throat — through the mouth using a surgeon-controlled robotic platform, avoiding an open incision through the jaw or neck for the primary tumour.",
+    candidacy:
+      "It is generally considered for a well-visualised, resectable oropharyngeal tumour in a mouth that can be opened enough for the robot, often after HPV status and neck staging are known. Open resection or primary chemoradiotherapy remain alternatives.",
+    anatomy:
+      "The oropharynx includes the tonsil fossae, base of tongue, soft palate and lateral pharyngeal walls. Important nearby structures include the carotid artery, the nerves to the tongue and the swallowing sphincter. Neck nodes are usually addressed in the same treatment plan, often through a separate neck incision.",
+    distinction:
+      "TORS is a route to the primary tumour, not a substitute for neck dissection and not a smaller cancer operation. A tumour that cannot be seen completely through the mouth, or that encases the carotid, is not a TORS case.",
+    scopeShort:
+      "Which oropharyngeal site is resected, whether a neck dissection is combined, and whether a tracheostomy or feeding tube is added change the operation and the bill.",
+    staging:
+      "Planning uses examination of the throat, biopsy with HPV testing where relevant, cross-sectional and often metabolic imaging of the neck and chest, and an anaesthetic assessment of mouth opening and airway.",
+    sequencing:
+      "TORS may be used to de-intensify later radiation in selected HPV-related disease, or as the primary resection when the tumour is clearly resectable. Neck dissection timing and the radiation decision follow pathology.",
+    team:
+      "A TORS-trained head and neck surgeon, a bedside assistant, a pathologist reading margins, a neck-dissection plan, and speech and swallow therapists are required.",
+    evaluation:
+      "Assessment commonly includes mouth opening, dentition, airway, swallow baseline, neck imaging and a discussion of tracheostomy and feeding-tube likelihood.",
+    technique:
+      "With the patient asleep and the mouth held open, the robot is docked transorally, the tumour is excised with a three-dimensional margin, frozen section may guide further excision, haemostasis is secured, and the neck is addressed as planned, sometimes at the same sitting.",
+    conversion:
+      "Inadequate view, bleeding, or a tumour more extensive than expected can convert TORS to open resection, which may include dividing the jaw. Consent should cover tracheostomy, feeding tube and open conversion.",
+    approaches: [
+      { label: "TORS tonsillectomy for cancer", detail: "Radical tonsil resection of a tonsil primary through the mouth." },
+      { label: "TORS base-of-tongue resection", detail: "Removes a base-of-tongue tumour with a swallow-preserving margin where possible." },
+      { label: "TORS with ipsilateral neck dissection", detail: "The primary is removed through the mouth; the neck is opened separately." },
+      { label: "Staged TORS then neck surgery", detail: "Separates the two sittings when airway or pathology timing requires it." },
+      { label: "Open conversion", detail: "Mandibulotomy or other open access if transoral resection cannot be completed." },
+    ],
+    duration: "commonly 2–5 hours for the transoral component, longer when neck dissection is combined",
+    stayGlance: "Three to seven nights typical",
+    admission: "Admission is frequently three to seven nights, watching the airway, bleeding from the mouth and the ability to swallow saliva.",
+    recovery:
+      "Recovery is led by airway safety, bleeding watch, pain that allows swallowing, and speech and swallow therapy rather than a fixed date.",
+    pathology:
+      "Margins in three dimensions, HPV status, depth and the neck-node yield drive whether postoperative radiation can be reduced, kept or omitted.",
+    risks:
+      "Recognised risks include bleeding from the mouth that can threaten the airway, temporary or lasting swallow change, taste change, tooth or lip injury from the gag, airway swelling, and the usual risks of any neck dissection performed with it.",
+    urgent:
+      "bleeding from the mouth, difficulty breathing, inability to swallow saliva, fever, or sudden neck swelling",
+    functionalChange:
+      "Swallowing and speech are commonly affected for weeks and sometimes longer, especially after base-of-tongue resection. A feeding tube may be needed for a period, and taste change can persist.",
+    drivers: oncologyDrivers(
+      { label: "Oropharyngeal site and volume", detail: "Tonsil and base-of-tongue resections differ in time, airway risk and swallow recovery." },
+      { label: "Combination with neck dissection", detail: "Adding the neck is a second field with its own time and drain." },
+      { label: "Robot platform time", detail: "Docking and single-use instruments are separate from the resection itself." },
+      { label: "Airway and feeding support", detail: "Tracheostomy and feeding-tube placement add days and nursing intensity." },
+    ),
+    records: [
+      "Biopsy of the oropharyngeal tumour with HPV testing where performed",
+      "Imaging of the throat, neck and chest with image files",
+      "Notes on mouth opening, dentition and swallow",
+    ],
+    followUp:
+      "The home team should receive the operation note, margin and HPV pathology, neck-node results, and the swallow plan, then coordinate radiation where advised.",
+    quoteQuestions: [
+      "Which oropharyngeal site will be resected, and is neck dissection in the same estimate?",
+      "Are robot platform charges itemized?",
+      "Are tracheostomy and feeding-tube placement included if they become necessary?",
+    ],
+    related: ["Oral Cancer Surgery", "Neck Dissection", "Intensity-Modulated Radiotherapy (IMRT)"],
+    campusFocus:
+      "Confirm that a named TORS-trained surgeon, a robotic platform and a bedside team exist for the intended date. The catalog currently maps few or no TORS-specific doctor cards; empty cards are a data gap, not a ranking.",
+    imageAlts: [
+      "Medical illustration of transoral robotic surgery anatomy: tonsil and base of tongue in the oropharynx, the open-mouth corridor for robotic instruments, the carotid artery laterally, and the draining neck node levels.",
+      "Medical infographic comparing TORS tonsil resection, TORS base-of-tongue resection, combined ipsilateral neck dissection, and open conversion with mandibulotomy when the mouth corridor is insufficient.",
+      "Medical infographic of the TORS recovery pathway: airway and bleeding watch, swallow therapy, three-dimensional margin pathology, the postoperative radiation decision and feeding-tube weaning.",
+    ],
+  },
+  {
+    procedure: "Microvascular Free Flap Reconstruction",
+    shortName: "microvascular free flap reconstruction",
+    specialist: "reconstructive surgeon working with the resecting surgical oncologist",
+    definition:
+      "Microvascular free flap reconstruction transfers tissue — skin, fat, muscle or bone — with its own artery and vein from a donor site to rebuild a defect after cancer resection, joining those vessels under a microscope to vessels near the wound.",
+    candidacy:
+      "It is considered when a cancer resection would leave a defect that cannot be closed reliably with local tissue — typically after oral, jaw, throat or other head and neck ablation, and sometimes after other cancer operations. It is reconstruction, not a substitute for complete tumour removal.",
+    anatomy:
+      "Common donor sites include the forearm, thigh and lower leg (fibula) for bone. Each flap has a named artery and vein that must be joined to recipient vessels in the neck or near the defect. The donor site is a second surgical wound with its own healing needs.",
+    distinction:
+      "A local flap rotates nearby tissue; a free flap is detached and reconnected. Soft-tissue flaps restore lining and bulk; bone flaps restore a jaw segment. Two surgical teams often work together: one completing the cancer resection, one raising and joining the flap.",
+    scopeShort:
+      "Which donor site is used, whether bone is included, and how long two teams operate together change the operation and the bill.",
+    staging:
+      "The reconstruction plan follows the planned resection, not the other way around. Imaging of the defect, assessment of neck vessels (especially after prior radiation or neck dissection), and Allen tests or angiography for certain donor sites come before the flap is chosen.",
+    sequencing:
+      "The flap is usually performed in the same sitting as the cancer resection so the defect is known. Prior radiation, neck dissection or free-flap surgery changes recipient-vessel choice and risk.",
+    team:
+      "A reconstructive micro-surgeon, the resecting surgical oncologist, a microscope-trained theatre team, a flap-monitoring nursing protocol, and later speech, swallow or physiotherapy services share the pathway.",
+    evaluation:
+      "Assessment commonly includes donor-site circulation tests, neck-vessel imaging after prior treatment, anaesthetic fitness for a long operation, nutrition, and a discussion of donor-site trade-offs.",
+    technique:
+      "While the cancer team completes the resection, the reconstructive team raises the flap, divides its vessels, transfers it to the defect, joins artery and vein under the microscope, checks flow, shapes the tissue, and closes both wounds. The flap is watched closely for colour, temperature and Doppler signal.",
+    conversion:
+      "If the first flap fails on the table or recipient vessels are unusable, a second donor site or a non-free-flap option may be required. Consent should name a backup reconstruction.",
+    approaches: [
+      { label: "Radial forearm free flap", detail: "Thin lining for tongue or mouth defects, with a forearm donor site." },
+      { label: "Anterolateral thigh flap", detail: "Soft-tissue bulk from the thigh for larger defects." },
+      { label: "Fibula free flap", detail: "Bone and skin from the lower leg to rebuild a jaw segment." },
+      { label: "Other named free flaps", detail: "Used when the defect or prior surgery makes the usual donors unsuitable." },
+      { label: "Revision or salvage free flap", detail: "A second transfer after partial or complete failure of a prior flap." },
+    ],
+    duration: "commonly 6–12 hours when combined with the cancer resection, sometimes longer",
+    stayGlance: "Eight to fourteen nights typical",
+    admission: "Admission is frequently eight to fourteen nights because flap checks, donor-site care and, after head and neck surgery, airway and feeding support happen in hospital.",
+    recovery:
+      "Recovery is led by flap viability, donor-site healing, and the functional rehabilitation of whatever was reconstructed — speech, swallow or walking — rather than a fixed date.",
+    pathology:
+      "The cancer specimen is reported separately from the reconstruction. Flap success does not change margin or nodal results, which still decide adjuvant treatment.",
+    risks:
+      "Recognised risks include complete or partial flap failure needing urgent return to theatre, bleeding, fistula, donor-site wound problems or reduced function, anastomosis thrombosis, and the risks of the long anaesthetic.",
+    urgent:
+      "colour or temperature change in the reconstructed area, sudden swelling, bleeding, fever, or loss of the Doppler signal the team taught you to respect",
+    functionalChange:
+      "The donor site permanently trades tissue for the reconstruction: a forearm scar and possible sensation change, a thigh contour change, or reduced ankle strength after a fibula flap. The reconstructed area also needs therapy to work as intended.",
+    drivers: oncologyDrivers(
+      { label: "Donor site and tissue type", detail: "Soft-tissue and bone flaps differ in harvest time, implants and donor-site care." },
+      { label: "Two-team theatre time", detail: "A combined resection and reconstruction is a different episode from either operation alone." },
+      { label: "Microscope, implants and monitoring", detail: "Plates, Doppler probes and intensive flap checks are separate line items." },
+      { label: "Flap-salvage contingency", detail: "Return to theatre for anastomosis revision is a recognised extra cost." },
+    ),
+    records: [
+      "Operation plan for the cancer resection that creates the defect",
+      "Prior radiation, neck dissection or free-flap notes",
+      "Donor-site circulation tests and imaging of recipient vessels where performed",
+    ],
+    followUp:
+      "The home team should receive both the resection and flap operation notes, anastomosis details, donor-site care, and the speech, swallow or physiotherapy plan, plus cancer pathology for adjuvant treatment.",
+    quoteQuestions: [
+      "Which donor site is planned, and is a backup flap included in consent and cost?",
+      "Are two surgical teams, plates and flap-monitoring devices itemized?",
+      "How is urgent return to theatre for flap salvage billed?",
+    ],
+    related: ["Oral Cancer Surgery", "Neck Dissection", "Transoral Robotic Surgery (TORS)"],
+    campusFocus:
+      "Confirm a named micro-surgeon, a two-team theatre plan, overnight flap-watch nursing and a backup reconstruction. The catalog currently maps few or no procedure-specific doctor cards; empty cards are a data gap, not a ranking.",
+    imageAlts: [
+      "Medical illustration of microvascular free flap reconstruction: a donor flap with its artery and vein, the defect after cancer resection, and the microscopic joins to recipient vessels in the neck.",
+      "Medical infographic comparing radial forearm, anterolateral thigh and fibula bone flaps, two-team operating, and a salvage second flap if the first anastomosis fails.",
+      "Medical infographic of the free-flap recovery pathway: hourly flap colour and Doppler checks, donor-site care, cancer histopathology, and speech or walking rehabilitation before travel home.",
     ],
   },
 ];

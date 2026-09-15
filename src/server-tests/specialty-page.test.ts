@@ -27,7 +27,7 @@ test("publishes every article-qualified country profile through one builder", ()
   assert.equal(profiles.length, SPECIALTIES.length);
   assert.equal(
     profiles.filter((profile) => profile.status === "published").length,
-    20,
+    22,
   );
   for (const profile of profiles) {
     const data = buildSpecialtyPageData(profile);
