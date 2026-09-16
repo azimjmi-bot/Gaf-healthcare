@@ -33,7 +33,7 @@ test("Radiation Oncology India hub uses the Best H1 and existing cost URLs", () 
     `GAF currently lists ${hub.paging.total} radiation oncologists across ${hub.cities.length} cities and ${hub.hospitals.length} hospitals.`,
   );
   assert.match(hub.quickAnswers[1]?.answer ?? "", /IMRT, IGRT, SBRT, SRS, CyberKnife, Gamma Knife, proton therapy and brachytherapy/);
-  assert.equal(hub.quickAnswers[2]?.answer, `${hub.cities.map((row) => row.name).join(", ")}.`);
+  assert.equal(hub.quickAnswers[2]?.answer, "Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad.");
   assert.ok(hub.mainArticleAnswers.some((row) => row.question === "What is Radiation Oncology?"));
   assert.ok(hub.mainArticleAnswers.some((row) => row.question === "What does a Radiation Oncologist do?"));
   assert.ok(hub.procedures.some((row) => row.name === "Intensity-Modulated Radiotherapy (IMRT)"));

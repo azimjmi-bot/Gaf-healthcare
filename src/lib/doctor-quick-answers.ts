@@ -283,7 +283,11 @@ export function discoveryQuickAnswers(opts: {
   cityNames?: string[];
 }): QuickAnswerItem[] {
   if (!opts.cityName && !opts.procedure && opts.specialty === "Radiation Oncology") {
-    const cityList = opts.cityNames?.join(", ") || `${opts.cityCount} cities`;
+    const cityNames = opts.cityNames ?? [];
+    const cityList =
+      cityNames.length > 1
+        ? `${cityNames.slice(0, -1).join(", ")} and ${cityNames.at(-1)}`
+        : cityNames[0] || `${opts.cityCount} cities`;
     return [
       {
         question: "How many radiation oncologists are listed in India?",

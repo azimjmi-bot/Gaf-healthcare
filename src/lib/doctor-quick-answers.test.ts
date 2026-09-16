@@ -21,7 +21,7 @@ test("India Radiation Oncology quick answers prioritize directory facts", () => 
     [
       "GAF currently lists 70 radiation oncologists across 5 cities and 22 hospitals.",
       "Doctors are mapped to techniques including IMRT, IGRT, SBRT, SRS, CyberKnife, Gamma Knife, proton therapy and brachytherapy.",
-      "Delhi NCR, Mumbai, Bengaluru, Chennai, Hyderabad.",
+      "Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad.",
     ],
   );
 });
