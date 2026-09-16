@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/json-ld";
 import {
   CtaBand,
 } from "@/components/page-shell";
+import { PseoTrust } from "@/components/pseo-trust";
 import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import type { CatalogQuery } from "@/lib/catalog";
 import {
@@ -956,9 +957,11 @@ export function SpecialtyCostPage({
           {data.profile.medicalDisclaimer}
         </p>
         <p className="mt-3 text-xs text-muted-foreground">
-          Last medically reviewed: {data.profile.lastReviewed}. No reviewer name is shown because no named specialty-page reviewer is stored in the CMS.
+          Last medically reviewed: {data.profile.lastReviewed} by Dr. Saffiyyah Chaudhary. Content
+          curated by Dr. Shabnam Choudhary.
         </p>
       </section>
+      <PseoTrust />
       <CtaBand />
     </>
   );

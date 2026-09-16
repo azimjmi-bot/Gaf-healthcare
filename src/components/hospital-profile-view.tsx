@@ -41,6 +41,7 @@ import { HospitalGalleryButton } from "@/components/hospital-gallery";
 import { HospitalSectionNav } from "@/components/hospital-section-nav";
 import { MarkdownBody } from "@/components/markdown-body";
 import { CtaBand } from "@/components/page-shell";
+import { PseoTrust } from "@/components/pseo-trust";
 import { publicMarkdown } from "@/lib/markdown";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
@@ -563,6 +564,7 @@ export function HospitalProfileView({
           </ul>
         </div>
       </section>
+      <PseoTrust />
       <CtaBand />
     </div>
   );

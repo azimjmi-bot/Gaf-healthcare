@@ -5,6 +5,7 @@ import { DoctorProfileHero } from "@/components/doctor-profile-hero";
 import { DoctorProfileGraph } from "@/components/doctor-profile-graph";
 import { JsonLd } from "@/components/json-ld";
 import { CtaBand } from "@/components/page-shell";
+import { PseoTrust } from "@/components/pseo-trust";
 import { getHospital } from "@/lib/data";
 import { MarkdownBody } from "@/components/markdown-body";
 import { displayBio } from "@/lib/hospital-profile";
@@ -131,6 +132,7 @@ export async function DoctorProfile({ slug }: { slug: string }) {
           </div>
         </section>
       ) : null}
+      <PseoTrust />
       <CtaBand />
     </>
   );

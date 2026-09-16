@@ -3,6 +3,7 @@ import { CatalogFilter } from "@/components/catalog-filter";
 import { HospitalCard } from "@/components/hospital-card";
 import { CatalogPager } from "@/components/catalog-pager";
 import { CtaBand, PageIntro } from "@/components/page-shell";
+import { PseoTrust } from "@/components/pseo-trust";
 import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, filterHospitals, type CatalogQuery } from "@/lib/catalog";
 import { paginateHospitals } from "@/lib/hospitals";
@@ -110,6 +111,7 @@ export async function HospitalsDirectory({
           ))}
         </div>
       </section>
+      <PseoTrust />
       <CtaBand />
     </>
   );

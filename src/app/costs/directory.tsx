@@ -4,6 +4,7 @@ import { CatalogFilter } from "@/components/catalog-filter";
 import { SpecialtyPager } from "@/components/specialty-pager";
 import { SpecialtyCostPage } from "@/components/specialty-cost-page";
 import { CtaBand, PageIntro } from "@/components/page-shell";
+import { PseoTrust } from "@/components/pseo-trust";
 import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, listCostSpecialtyGroups, type CatalogQuery } from "@/lib/catalog";
 import { costsFilterPath } from "@/lib/catalog-links";
@@ -245,6 +246,7 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
           ))}
         </div>
       </section>
+      <PseoTrust />
       <CtaBand />
     </>
   );

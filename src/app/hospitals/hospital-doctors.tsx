@@ -1,6 +1,7 @@
 import { LocaleLink as Link } from "@/components/locale-link";
 import { DoctorCard } from "@/components/doctor-card";
 import { CtaBand } from "@/components/page-shell";
+import { PseoTrust } from "@/components/pseo-trust";
 import { loadHospitalCampus, requireHospitalCampus } from "@/lib/hospital-campus";
 import { LOCALES } from "@/lib/i18n/languages";
 import { facultyHeadingLocalized } from "@/lib/i18n/hospital-copy";
@@ -66,6 +67,7 @@ export async function HospitalDoctors({ slug }: { slug: string }) {
           ))}
         </div>
       </section>
+      <PseoTrust />
       <CtaBand />
     </div>
   );

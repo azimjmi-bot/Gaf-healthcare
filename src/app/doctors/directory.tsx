@@ -4,6 +4,7 @@ import { CatalogPager } from "@/components/catalog-pager";
 import { DoctorCard } from "@/components/doctor-card";
 import { DoctorSpecialtyHub } from "@/components/doctor-specialty-hub";
 import { CtaBand, PageIntro } from "@/components/page-shell";
+import { PseoTrust } from "@/components/pseo-trust";
 import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, filterDoctors, type CatalogQuery } from "@/lib/catalog";
 import { paginateDoctors } from "@/lib/doctors";
@@ -154,6 +155,7 @@ export async function DoctorsDirectory({
           ))}
         </div>
       </section>
+      <PseoTrust />
       <CtaBand />
     </>
   );

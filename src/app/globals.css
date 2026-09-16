@@ -3313,6 +3313,10 @@ img.dhero__art {
   margin-top: 3rem;
 }
 
+.cost-attr--flush {
+  margin-top: 0;
+}
+
 .cost-attr__card {
   display: grid;
   gap: 1.5rem;

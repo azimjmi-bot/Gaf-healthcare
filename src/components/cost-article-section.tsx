@@ -4,6 +4,7 @@ import { ArticleBlocks } from "@/components/article-body";
 import { CostArticleView } from "@/components/cost-article-view";
 import { CostHero } from "@/components/cost-page/cost-hero";
 import { CostStickyBar } from "@/components/cost-page/cost-sticky-bar";
+import { PseoTrust } from "@/components/pseo-trust";
 import { getCostArticle } from "@/data/cost-articles";
 import { doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import {
@@ -220,6 +221,7 @@ export function CostArticleSection({
           </div>
         </aside>
       </section>
+      <PseoTrust attribution={false} />
       <div className="h-20 md:hidden" />
     </>
   );

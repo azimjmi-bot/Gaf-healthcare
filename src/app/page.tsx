@@ -6,6 +6,7 @@ import { HomeCover } from "@/components/home/home-cover";
 import { HomeSearch } from "@/components/home/home-search";
 import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
 import { JsonLd } from "@/components/json-ld";
+import { PatientReviews } from "@/components/patient-reviews";
 import {
   GOOGLE_MAPS_URL,
   GOOGLE_PROFILE,
@@ -308,31 +309,15 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="home-section">
-        <div className="home-head">
-          <div>
-            <p className="eyebrow">{t["home.reviewsEyebrow"]}</p>
-            <h2>{t["home.reviewsTitle"]}</h2>
-            <p>
-              {t["home.reviewsSummary"]
-                ?.replace("{rating}", GOOGLE_PROFILE.rating)
-                .replace("{count}", String(GOOGLE_PROFILE.reviewCount))}
-            </p>
-          </div>
-          <a href={GOOGLE_MAPS_URL} className="home-more" target="_blank" rel="noreferrer">
-            {t["home.readGoogle"]} <ArrowRight className="size-4" />
-          </a>
-        </div>
-        <div className="home-reviewgrid">
-          {extras.reviews.map((review) => (
-            <blockquote key={review.name} className="home-review">
-              <p>★★★★★</p>
-              <p>{review.text}</p>
-              <footer>{review.name}</footer>
-            </blockquote>
-          ))}
-        </div>
-      </section>
+      <PatientReviews
+        reviews={extras.reviews}
+        eyebrow={t["home.reviewsEyebrow"]}
+        title={t["home.reviewsTitle"]}
+        summary={t["home.reviewsSummary"]
+          ?.replace("{rating}", GOOGLE_PROFILE.rating)
+          .replace("{count}", String(GOOGLE_PROFILE.reviewCount))}
+        readLabel={t["home.readGoogle"]}
+      />
 
       <section className="home-finale">
         <div>

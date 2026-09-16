@@ -7,6 +7,7 @@ import { ArticleBlocks, CoverImage } from "@/components/article-body";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
+import { PseoTrust } from "@/components/pseo-trust";
 import { JsonLd } from "@/components/json-ld";
 import { CostArticleSection, costArticleFor, hasCostArticle } from "@/components/cost-article-section";
 import { cityResultCounts } from "@/lib/catalog";
@@ -411,6 +412,7 @@ export async function CostSheet({ slug }: { slug: string }) {
           </ul>
         </div>
       </section>
+      <PseoTrust />
       <CtaBand />
     </>
   );

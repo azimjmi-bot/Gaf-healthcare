@@ -41,9 +41,13 @@ function AttributionCard({ person }: { person: CostAttributionPerson }) {
   );
 }
 
-export function CostAttribution() {
+export function CostAttribution({ flush = false }: { flush?: boolean }) {
   return (
-    <section id="attribution" className="cost-attr" aria-label="Content curator and medical review">
+    <section
+      id="attribution"
+      className={flush ? "cost-attr cost-attr--flush" : "cost-attr"}
+      aria-label="Content curator and medical review"
+    >
       {COST_ATTRIBUTION.map((person) => (
         <AttributionCard key={person.name} person={person} />
       ))}

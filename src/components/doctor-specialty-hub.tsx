@@ -11,6 +11,7 @@ import {
 } from "@/components/doctor-compare";
 import { JsonLd } from "@/components/json-ld";
 import { CtaBand, PageIntro } from "@/components/page-shell";
+import { PseoTrust } from "@/components/pseo-trust";
 import { QuickAnswer } from "@/components/quick-answer";
 import type { CatalogQuery } from "@/lib/catalog";
 import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
@@ -432,6 +433,7 @@ export function DoctorSpecialtyHub({
         </Link>
       </div>
 
+      <PseoTrust />
       <DoctorCompareTray />
       <CtaBand />
     </DoctorCompareProvider>

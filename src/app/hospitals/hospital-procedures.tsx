@@ -1,5 +1,6 @@
 import { LocaleLink as Link } from "@/components/locale-link";
 import { CtaBand } from "@/components/page-shell";
+import { PseoTrust } from "@/components/pseo-trust";
 import { doctorsPath } from "@/lib/catalog-links";
 import { loadHospitalCampus, requireHospitalCampus } from "@/lib/hospital-campus";
 import { LOCALES } from "@/lib/i18n/languages";
@@ -76,6 +77,7 @@ export async function HospitalProcedures({ slug }: { slug: string }) {
           )}
         </div>
       </section>
+      <PseoTrust />
       <CtaBand />
     </div>
   );

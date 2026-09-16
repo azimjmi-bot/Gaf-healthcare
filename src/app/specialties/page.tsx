@@ -2,6 +2,7 @@ import Link from "next/link";
 import { ArrowRight, Building2, MapPin, Stethoscope } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
 import { CtaBand, PageIntro } from "@/components/page-shell";
+import { PseoTrust } from "@/components/pseo-trust";
 import {
   getSpecialtyPage,
   listBaseSpecialtyPages,
@@ -146,6 +147,7 @@ export default function SpecialtiesPage() {
           })}
         </div>
       </main>
+      <PseoTrust />
       <CtaBand />
     </>
   );
