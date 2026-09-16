@@ -25,6 +25,7 @@ import {
   procedureDefinitionFromCanonical,
   relatedProcedureNames,
   specialtyConditionLinks,
+  specialtyGuideQuickAnswers,
   type QuickAnswerItem,
 } from "@/lib/doctor-quick-answers";
 import {
@@ -57,6 +58,7 @@ export type DoctorSpecialtyHubData = {
   howToChoose: string[];
   faqs: { q: string; a: string }[];
   quickAnswers: QuickAnswerItem[];
+  mainArticleAnswers: QuickAnswerItem[];
   relatedProcedures: DoctorHubLink[];
   treatmentGuides: DoctorHubLink[];
   aboutProcedure?: { definition: string; guideHref?: string; guideLabel?: string };
@@ -373,7 +375,12 @@ export function buildRadiationDoctorHub(
       doctorCount: matched.length,
       cityCount: cities.length,
       hospitalCount: hospitals.length,
+      cityNames: cities.map((row) => row.name),
     }),
+    mainArticleAnswers:
+      !query.city && !query.procedure
+        ? specialtyGuideQuickAnswers("Radiation Oncology")
+        : [],
     relatedProcedures,
     treatmentGuides,
     aboutProcedure: query.procedure

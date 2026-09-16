@@ -1,11 +1,30 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  discoveryQuickAnswers,
   mappedConditionsForProcedure,
   procedureDefinitionFromCanonical,
   relatedProcedureNames,
   specialtyDefinitionFromCanonical,
 } from "./doctor-quick-answers";
+
+test("India Radiation Oncology quick answers prioritize directory facts", () => {
+  const items = discoveryQuickAnswers({
+    specialty: "Radiation Oncology",
+    doctorCount: 70,
+    cityCount: 5,
+    hospitalCount: 22,
+    cityNames: ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"],
+  });
+  assert.deepEqual(
+    items.map((item) => item.answer),
+    [
+      "GAF currently lists 70 radiation oncologists across 5 cities and 22 hospitals.",
+      "Doctors are mapped to techniques including IMRT, IGRT, SBRT, SRS, CyberKnife, Gamma Knife, proton therapy and brachytherapy.",
+      "Delhi NCR, Mumbai, Bengaluru, Chennai, Hyderabad.",
+    ],
+  );
+});
 
 test("procedure definitions come from canonical cost articles", () => {
   const imrt = procedureDefinitionFromCanonical("Intensity-Modulated Radiotherapy (IMRT)");

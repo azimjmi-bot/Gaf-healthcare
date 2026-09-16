@@ -20,8 +20,22 @@ test("Radiation Oncology India hub uses the Best H1 and existing cost URLs", () 
   assert.ok(hub.costs.some((row) => row.href.includes("intensity-modulated-radiotherapy-imrt")));
   assert.ok(hub.conditions.every((row) => row.href === "/costs/India/Radiation-Oncology"));
   assert.ok(hub.cities.some((row) => row.href === "/doctors/India/Delhi-NCR/Radiation-Oncology"));
-  assert.ok(hub.quickAnswers.some((row) => row.question === "What is Radiation Oncology?"));
-  assert.ok(hub.quickAnswers.some((row) => row.question === "What does a Radiation Oncologist do?"));
+  assert.deepEqual(
+    hub.quickAnswers.map((row) => row.question),
+    [
+      "How many radiation oncologists are listed in India?",
+      "Which radiation techniques can I find specialists for?",
+      "Which cities are covered?",
+    ],
+  );
+  assert.equal(
+    hub.quickAnswers[0]?.answer,
+    `GAF currently lists ${hub.paging.total} radiation oncologists across ${hub.cities.length} cities and ${hub.hospitals.length} hospitals.`,
+  );
+  assert.match(hub.quickAnswers[1]?.answer ?? "", /IMRT, IGRT, SBRT, SRS, CyberKnife, Gamma Knife, proton therapy and brachytherapy/);
+  assert.equal(hub.quickAnswers[2]?.answer, `${hub.cities.map((row) => row.name).join(", ")}.`);
+  assert.ok(hub.mainArticleAnswers.some((row) => row.question === "What is Radiation Oncology?"));
+  assert.ok(hub.mainArticleAnswers.some((row) => row.question === "What does a Radiation Oncologist do?"));
   assert.ok(hub.procedures.some((row) => row.name === "Intensity-Modulated Radiotherapy (IMRT)"));
   assert.ok(hub.procedures.some((row) => row.name === "Proton Beam Therapy"));
   assert.equal(
@@ -48,6 +62,7 @@ test("Delhi NCR city hub is not a copy of the India page", () => {
   assert.notEqual(delhi.intro[0], india.intro[0]);
   assert.equal(delhi.cityCostHref, "/costs/India/Delhi-NCR/Radiation-Oncology");
   assert.ok(delhi.paging.total < india.paging.total);
+  assert.equal(delhi.mainArticleAnswers.length, 0);
   assert.ok(delhi.hospitals.every((row) => row.hospital.city === "Delhi NCR"));
   assert.ok(delhi.quickAnswers.some((row) => /Delhi NCR/.test(row.question) || /Delhi NCR/.test(row.answer)));
 });
@@ -74,6 +89,7 @@ test("generic procedure template works for multiple Radiation Oncology technique
     assert.ok(hub, procedure);
     assert.match(hub.heading, new RegExp(`Best Radiation Oncologists for .+ in India`));
     assert.equal(hub.procedure, procedure);
+    assert.equal(hub.mainArticleAnswers.length, 0);
     assert.ok(hub.quickAnswers.some((row) => row.question === `What is ${procedure}?`), procedure);
     assert.ok(hub.aboutProcedure?.guideHref?.startsWith("/costs/"), procedure);
     assert.equal(hub.paging.total, radiationDoctorCount({ procedure }, doctors), procedure);

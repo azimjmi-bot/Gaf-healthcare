@@ -244,6 +244,34 @@ export function doctorWhoAnswer(doctor: Doctor): QuickAnswerItem {
   };
 }
 
+export function specialtyGuideQuickAnswers(specialty: string): QuickAnswerItem[] {
+  const items: QuickAnswerItem[] = [];
+  const specialtySource = specialtyDefinitionFromCanonical(specialty);
+  const roleSource = radiationOncologistRoleFromCanonical(specialty);
+
+  if (specialtySource?.text) {
+    items.push({
+      question: `What is ${specialty}?`,
+      answer: specialtySource.text,
+      sourceHref: specialtySource.source.canonicalUrl,
+      sourceLabel: `Read the ${specialty} treatment guide`,
+      source: specialtySource.source,
+    });
+  }
+
+  if (roleSource?.text) {
+    items.push({
+      question: `What does a ${getSpecialty(specialty)?.name === "Radiation Oncology" ? "Radiation Oncologist" : `${specialty} specialist`} do?`,
+      answer: roleSource.text,
+      sourceHref: roleSource.source.canonicalUrl,
+      sourceLabel: `Read the ${specialty} treatment guide`,
+      source: roleSource.source,
+    });
+  }
+
+  return items;
+}
+
 export function discoveryQuickAnswers(opts: {
   specialty: string;
   cityName?: string;
@@ -252,12 +280,29 @@ export function discoveryQuickAnswers(opts: {
   doctorCount: number;
   cityCount: number;
   hospitalCount: number;
+  cityNames?: string[];
 }): QuickAnswerItem[] {
+  if (!opts.cityName && !opts.procedure && opts.specialty === "Radiation Oncology") {
+    const cityList = opts.cityNames?.join(", ") || `${opts.cityCount} cities`;
+    return [
+      {
+        question: "How many radiation oncologists are listed in India?",
+        answer: `GAF currently lists ${opts.doctorCount} radiation oncologists across ${opts.cityCount} cities and ${opts.hospitalCount} hospitals.`,
+      },
+      {
+        question: "Which radiation techniques can I find specialists for?",
+        answer:
+          "Doctors are mapped to techniques including IMRT, IGRT, SBRT, SRS, CyberKnife, Gamma Knife, proton therapy and brachytherapy.",
+      },
+      {
+        question: "Which cities are covered?",
+        answer: `${cityList}.`,
+      },
+    ];
+  }
+
   const items: QuickAnswerItem[] = [];
-  const specialtyHref = costsFilterPath({ destination: "India", specialty: opts.specialty });
   const procedureSource = opts.procedure ? procedureDefinitionFromCanonical(opts.procedure) : undefined;
-  const specialtySource = specialtyDefinitionFromCanonical(opts.specialty);
-  const roleSource = radiationOncologistRoleFromCanonical(opts.specialty);
   const citySource = cityEditorialFromCanonical(opts.specialty, opts.citySlug);
 
   if (opts.procedure && procedureSource?.text) {
@@ -268,24 +313,8 @@ export function discoveryQuickAnswers(opts: {
       sourceLabel: `Read the complete ${opts.procedure} treatment guide`,
       source: procedureSource.source,
     });
-  } else if (specialtySource?.text) {
-    items.push({
-      question: `What is ${opts.specialty}?`,
-      answer: specialtySource.text,
-      sourceHref: specialtySource.source.canonicalUrl,
-      sourceLabel: `Read the ${opts.specialty} treatment guide`,
-      source: specialtySource.source,
-    });
-  }
-
-  if (roleSource?.text) {
-    items.push({
-      question: `What does a ${getSpecialty(opts.specialty)?.name === "Radiation Oncology" ? "Radiation Oncologist" : `${opts.specialty} specialist`} do?`,
-      answer: roleSource.text,
-      sourceHref: roleSource.source.canonicalUrl,
-      sourceLabel: `Read the ${opts.specialty} treatment guide`,
-      source: roleSource.source,
-    });
+  } else {
+    items.push(...specialtyGuideQuickAnswers(opts.specialty));
   }
 
   if (citySource?.text && opts.cityName) {

@@ -101,7 +101,10 @@ export function DoctorSpecialtyHub({
         </Suspense>
       </PageIntro>
 
-      <QuickAnswer items={data.quickAnswers} />
+      <QuickAnswer
+        items={data.quickAnswers}
+        layout={!data.cityName && !data.procedure ? "stacked" : "grid"}
+      />
 
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
         <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
@@ -145,6 +148,31 @@ export function DoctorSpecialtyHub({
           ) : null}
         </p>
       </section>
+
+      {data.mainArticleAnswers.length > 0 ? (
+        <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-5 md:px-8 md:pb-14">
+          <HubHeading
+            eyebrow="Radiation Oncology guide"
+            title="Understanding Radiation Oncology"
+            intro="Clinical context from GAF Healthcare’s existing Radiation Oncology treatment guide."
+          />
+          <div className="mt-6 max-w-4xl space-y-8">
+            {data.mainArticleAnswers.map((item) => (
+              <article key={item.question}>
+                <h3 className="font-heading text-2xl">{item.question}</h3>
+                <p className="prose-gaf mt-3 max-w-none">{item.answer}</p>
+                {item.sourceHref ? (
+                  <p className="mt-3 text-sm">
+                    <Link href={item.sourceHref} className="underline-offset-4 hover:underline">
+                      {item.sourceLabel ?? "Read the full GAF guide"}
+                    </Link>
+                  </p>
+                ) : null}
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
 
       {data.aboutProcedure?.definition ? (
         <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-5 md:px-8">
