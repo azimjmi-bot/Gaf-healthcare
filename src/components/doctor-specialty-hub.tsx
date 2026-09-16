@@ -11,8 +11,9 @@ import {
 } from "@/components/doctor-compare";
 import { JsonLd } from "@/components/json-ld";
 import { CtaBand, PageIntro } from "@/components/page-shell";
+import { QuickAnswer } from "@/components/quick-answer";
 import type { CatalogQuery } from "@/lib/catalog";
-import { costsFilterPath, hospitalsPath } from "@/lib/catalog-links";
+import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import type { DoctorSpecialtyHubData } from "@/lib/doctor-specialty-page";
 import { breadcrumbJsonLd, doctorItemListJsonLd, faqJsonLd } from "@/lib/seo";
 
@@ -44,13 +45,17 @@ export function DoctorSpecialtyHub({
   const crumbs = [
     { name: "Doctors", path: "/doctors" },
     { name: "India", path: "/doctors/India" },
-    {
-      name: data.cityName ?? "Radiation Oncology",
-      path: data.cityName ? data.path : "/doctors/India/Radiation-Oncology",
-    },
+    { name: "Radiation Oncology", path: "/doctors/India/Radiation-Oncology" },
   ];
   if (data.cityName) {
-    crumbs.splice(2, 0, { name: "Radiation Oncology", path: "/doctors/India/Radiation-Oncology" });
+    crumbs.push({
+      name: data.cityName,
+      path: doctorsPath({
+        destination: "India",
+        city: data.cityName,
+        specialty: "Radiation Oncology",
+      }),
+    });
   }
   if (data.procedure) {
     crumbs.push({ name: data.procedure, path: data.path });
@@ -65,7 +70,9 @@ export function DoctorSpecialtyHub({
           name: data.heading,
           description: data.description,
           url: `https://gaf.healthcare${data.path}`,
-          about: { "@type": "MedicalSpecialty", name: "Radiation Oncology" },
+          about: data.procedure
+            ? { "@type": "MedicalProcedure", name: data.procedure }
+            : { "@type": "MedicalSpecialty", name: "Radiation Oncology" },
         }}
       />
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
@@ -93,6 +100,8 @@ export function DoctorSpecialtyHub({
         </Suspense>
       </PageIntro>
 
+      <QuickAnswer items={data.quickAnswers} />
+
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
         <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
           <h2 className="font-heading text-3xl">{data.methodology.question}</h2>
@@ -105,7 +114,7 @@ export function DoctorSpecialtyHub({
             ["Listed specialists", String(data.paging.total)],
             ["Featured profiles", String(data.featuredCount)],
             ["Hospitals represented", String(data.hospitals.length)],
-            ["Cities with listings", String(data.cities.filter((city) => city.count > 0).length)],
+            ["Cities with listings", String(data.cities.length)],
           ].map(([label, value]) => (
             <div key={label} className="rounded-2xl border border-border bg-white p-5">
               <dt className="text-xs uppercase tracking-[0.16em] text-muted-foreground">{label}</dt>
@@ -136,160 +145,21 @@ export function DoctorSpecialtyHub({
         </p>
       </section>
 
-      {!data.procedure ? (
-        <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+      {data.aboutProcedure?.definition ? (
+        <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-5 md:px-8">
           <HubHeading
-            eyebrow="Clinical decisions"
-            title={`How to choose a radiation oncologist in ${data.place}`}
-            intro="These are planning questions, not a scoring system. Technique, campus and follow-up still have to be confirmed in writing."
+            eyebrow="About the procedure"
+            title={data.procedure ? `About ${data.procedure}` : "About this procedure"}
+            intro="This is a short extract from the existing GAF treatment guide, not a second long-form article."
           />
-          <ol className="mt-6 max-w-3xl list-decimal space-y-3 pl-5 text-sm leading-relaxed text-muted-foreground">
-            {data.howToChoose.map((item) => (
-              <li key={item}>{item}</li>
-            ))}
-          </ol>
-        </section>
-      ) : null}
-
-      <section className="border-y border-border bg-secondary/30">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
-          <HubHeading
-            eyebrow="Cities"
-            title="Radiation oncologists by city"
-            intro="Permanent city pages use live catalog counts. Empty or low counts are directory facts, not quality scores."
-          />
-          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-            {data.cities.map((city) => (
-              <li key={city.slug}>
-                <Link
-                  href={city.href}
-                  className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30"
-                >
-                  <p className="font-heading text-2xl">{city.name}</p>
-                  <p className="mt-1 text-sm text-muted-foreground">{city.count} listed specialists</p>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
-        <HubHeading
-          eyebrow="Treatments"
-          title="Find radiation oncologists by treatment"
-          intro="Each technique keeps its canonical cost guide. Doctor lists only include exact procedure mappings."
-        />
-        <ul className="mt-6 grid gap-4 md:grid-cols-2">
-          {data.procedures.map((row) => (
-            <li key={row.name} className="rounded-2xl border border-border bg-white p-5">
-              <p className="font-heading text-2xl">{row.name}</p>
-              {row.note ? <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{row.note}</p> : null}
-              <p className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
-                <Link href={row.href} className="underline-offset-4 hover:underline">
-                  Radiation oncologists for {row.name}
-                </Link>
-                <Link
-                  href={costsFilterPath({ destination: "India", specialty: "Radiation Oncology", procedure: row.name })}
-                  className="underline-offset-4 hover:underline"
-                >
-                  {row.name} treatment in India
-                </Link>
-              </p>
-              {row.count != null ? (
-                <p className="mt-2 text-xs uppercase tracking-[0.14em] text-muted-foreground">
-                  {row.count} mapped specialists
-                </p>
-              ) : null}
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      {data.conditions.length > 0 ? (
-        <section className="border-y border-border bg-secondary/20">
-          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
-            <HubHeading
-              eyebrow="Cancer type"
-              title="Find a radiation oncologist by cancer type"
-              intro="Doctors are mapped to procedures, not to a separate cancer-type field. Disease context lives on the existing Radiation Oncology specialty guide."
-            />
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {data.conditions.map((row) => (
-                <li key={row.name}>
-                  <Link href={row.href} className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30">
-                    <p className="font-heading text-2xl">{row.name}</p>
-                    <p className="mt-2 text-sm text-muted-foreground">{row.note}</p>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      ) : null}
-
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
-        <HubHeading
-          eyebrow="Costs"
-          title={`Radiation Oncology treatment costs in ${data.place}`}
-          intro="These are the existing GAF cost guides. They are not doctor-specific prices."
-        />
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {data.costs.map((row) => (
-            <li key={row.href}>
-              <Link href={row.href} className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30">
-                <p className="font-heading text-xl">{row.name}</p>
-                <p className="mt-2 text-sm text-muted-foreground">View cost guide{row.note ? ` · ${row.note}` : ""}</p>
+          <p className="prose-gaf mt-4 max-w-3xl">{data.aboutProcedure.definition}</p>
+          {data.aboutProcedure.guideHref ? (
+            <p className="mt-4 text-sm">
+              <Link href={data.aboutProcedure.guideHref} className="underline-offset-4 hover:underline">
+                {data.aboutProcedure.guideLabel}
               </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-
-      <section className="border-y border-border bg-secondary/30">
-        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
-          <HubHeading
-            eyebrow="Hospitals"
-            title="Hospitals with radiation oncology specialists"
-            intro="Counts are current doctor relationships at each campus. A hospital profile remains the canonical campus page."
-          />
-          <ul className="mt-6 grid gap-3 md:grid-cols-2">
-            {data.hospitals.map(({ hospital, count }) => (
-              <li key={hospital.slug} className="rounded-2xl border border-border bg-white p-5">
-                <Link href={`/hospitals/${hospital.slug}`} className="font-heading text-2xl hover:text-gold">
-                  {hospital.name}
-                </Link>
-                <p className="mt-1 text-sm text-muted-foreground">
-                  {hospital.city} · {count} listed radiation oncologist{count === 1 ? "" : "s"}
-                </p>
-                <Link
-                  href={hospitalsPath({
-                    destination: "India",
-                    city: hospital.city,
-                    specialty: "Radiation Oncology",
-                  })}
-                  className="mt-3 inline-block text-sm underline-offset-4 hover:underline"
-                >
-                  Radiation oncology hospitals in {hospital.city}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {data.blogs.length > 0 ? (
-        <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8">
-          <HubHeading eyebrow="Guides" title="Existing Radiation Oncology reading" />
-          <ul className="mt-6 space-y-2 text-sm">
-            {data.blogs.map((row) => (
-              <li key={row.href}>
-                <Link href={row.href} className="underline-offset-4 hover:underline">
-                  {row.name}
-                </Link>
-              </li>
-            ))}
-          </ul>
+            </p>
+          ) : null}
         </section>
       ) : null}
 
@@ -330,6 +200,207 @@ export function DoctorSpecialtyHub({
           </>
         )}
       </section>
+
+      {!data.procedure ? (
+        <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+          <HubHeading
+            eyebrow="Clinical decisions"
+            title={`How to choose a radiation oncologist in ${data.place}`}
+            intro="These are planning questions, not a scoring system. Technique, campus and follow-up still have to be confirmed in writing."
+          />
+          <ol className="mt-6 max-w-3xl list-decimal space-y-3 pl-5 text-sm leading-relaxed text-muted-foreground">
+            {data.howToChoose.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ol>
+        </section>
+      ) : null}
+
+      <section className="border-y border-border bg-secondary/30">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+          <HubHeading
+            eyebrow="Treatments"
+            title="Find radiation oncologists by treatment"
+            intro="Each technique keeps its canonical cost guide. Doctor lists only include exact procedure mappings."
+          />
+          <ul className="mt-6 grid gap-4 md:grid-cols-2">
+            {data.procedures.map((row) => (
+              <li key={row.name} className="rounded-2xl border border-border bg-white p-5">
+                <p className="font-heading text-2xl">{row.name}</p>
+                {row.note ? <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{row.note}</p> : null}
+                <p className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                  <Link href={row.href} className="underline-offset-4 hover:underline">
+                    Radiation oncologists for {row.name}
+                  </Link>
+                  <Link
+                    href={costsFilterPath({ destination: "India", specialty: "Radiation Oncology", procedure: row.name })}
+                    className="underline-offset-4 hover:underline"
+                  >
+                    {row.name} treatment in India
+                  </Link>
+                </p>
+                {row.count != null ? (
+                  <p className="mt-2 text-xs uppercase tracking-[0.14em] text-muted-foreground">
+                    {row.count} mapped specialists
+                  </p>
+                ) : null}
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {data.relatedProcedures.length > 0 ? (
+        <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+          <HubHeading
+            eyebrow="Related procedures"
+            title="Related Radiation Oncology procedures"
+            intro="These links come from the controlled taxonomy and existing treatment guides. Distinct techniques are not merged."
+          />
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {data.relatedProcedures.map((row) => (
+              <li key={row.name}>
+                <Link href={row.href} className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30">
+                  <p className="font-heading text-xl">{row.name}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    {row.count ?? 0} mapped specialist{(row.count ?? 0) === 1 ? "" : "s"}
+                  </p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      <section className="border-y border-border bg-secondary/30">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+          <HubHeading
+            eyebrow="Cities"
+            title="Radiation oncologists by city"
+            intro="City pages use live catalog counts. Empty combinations are omitted rather than published as thin URLs."
+          />
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            {data.cities.map((city) => (
+              <li key={city.slug}>
+                <Link
+                  href={city.href}
+                  className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30"
+                >
+                  <p className="font-heading text-2xl">{city.name}</p>
+                  <p className="mt-1 text-sm text-muted-foreground">{city.count} listed specialists</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+        <HubHeading
+          eyebrow="Hospitals"
+          title="Hospitals with radiation oncology specialists"
+          intro="Counts are current doctor relationships at each campus. A hospital profile remains the canonical campus page."
+        />
+        <ul className="mt-6 grid gap-3 md:grid-cols-2">
+          {data.hospitals.map(({ hospital, count }) => (
+            <li key={hospital.slug} className="rounded-2xl border border-border bg-white p-5">
+              <Link href={`/hospitals/${hospital.slug}`} className="font-heading text-2xl hover:text-gold">
+                {hospital.name}
+              </Link>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {hospital.city} · {count} listed radiation oncologist{count === 1 ? "" : "s"}
+              </p>
+              <Link
+                href={hospitalsPath({
+                  destination: "India",
+                  city: hospital.city,
+                  specialty: "Radiation Oncology",
+                })}
+                className="mt-3 inline-block text-sm underline-offset-4 hover:underline"
+              >
+                Radiation oncology hospitals in {hospital.city}
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      {data.conditions.length > 0 ? (
+        <section className="border-y border-border bg-secondary/20">
+          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+            <HubHeading
+              eyebrow="Related conditions"
+              title="Conditions with an explicit Radiation Oncology relationship"
+              intro="These links come from the specialty guide taxonomy. They are not inferred from a doctor’s procedure list and are not a claim of individual doctor expertise."
+            />
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              {data.conditions.map((row) => (
+                <li key={row.name}>
+                  <Link href={row.href} className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30">
+                    <p className="font-heading text-2xl">{row.name}</p>
+                    <p className="mt-2 text-sm text-muted-foreground">{row.note}</p>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
+
+      {data.treatmentGuides.length > 0 ? (
+        <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8">
+          <HubHeading
+            eyebrow="Treatment guides"
+            title="Existing GAF treatment information"
+            intro="Canonical long-form articles remain the authoritative resource. This directory does not rewrite them."
+          />
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+            {data.treatmentGuides.map((row) => (
+              <li key={row.href}>
+                <Link href={row.href} className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30">
+                  <p className="font-heading text-xl">{row.name}</p>
+                  {row.note ? <p className="mt-2 text-sm text-muted-foreground">{row.note}</p> : null}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
+
+      <section className="border-y border-border bg-secondary/30">
+        <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+          <HubHeading
+            eyebrow="Costs"
+            title={`Radiation Oncology treatment costs in ${data.place}`}
+            intro="These are the existing GAF cost guides. They are not doctor-specific prices."
+          />
+          <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {data.costs.map((row) => (
+              <li key={row.href}>
+                <Link href={row.href} className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30">
+                  <p className="font-heading text-xl">{row.name}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">View cost guide{row.note ? ` · ${row.note}` : ""}</p>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      {data.blogs.length > 0 ? (
+        <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8">
+          <HubHeading eyebrow="Guides" title="Existing Radiation Oncology reading" />
+          <ul className="mt-6 space-y-2 text-sm">
+            {data.blogs.map((row) => (
+              <li key={row.href}>
+                <Link href={row.href} className="underline-offset-4 hover:underline">
+                  {row.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section className="mx-auto max-w-7xl px-4 pb-16 sm:px-5 md:px-8">
         <h2 className="font-heading text-3xl">Questions this page answers</h2>

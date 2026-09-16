@@ -1,7 +1,7 @@
 import { doctors, type Doctor } from "@/lib/doctors";
 import { hospitals, type Hospital } from "@/lib/hospitals";
 import { treatments, type Treatment } from "@/lib/treatments";
-import { INDIA_CITIES, SPECIALTIES, getSpecialty } from "@/lib/taxonomy";
+import { INDIA_CITIES, SPECIALTIES, getProcedure, getSpecialty, toSlug } from "@/lib/taxonomy";
 import { citiesForDestination, type CatalogEntity, type CatalogQuery } from "@/lib/catalog-options";
 
 export { INDIA_CITIES };
@@ -127,15 +127,21 @@ export function filterTreatments(
   });
 }
 
+export function doctorHasProcedure(doctor: Doctor, procedure: string) {
+  if (doctor.procedures.includes(procedure) || doctor.procedureSlugs.includes(procedure)) return true;
+  const taxon = getProcedure(procedure);
+  const name = taxon?.name ?? procedure;
+  const slug = taxon?.slug ?? toSlug(procedure);
+  return doctor.procedures.includes(name) || doctor.procedureSlugs.includes(slug);
+}
+
 export function filterDoctors(q: CatalogQuery, rows: Doctor[] = doctors): Doctor[] {
   const list = snapshot(rows);
   return list.filter((d) => {
     if (q.destination && d.country !== q.destination) return false;
     if (q.city && d.city !== q.city) return false;
     if (q.specialty && d.specialty !== q.specialty) return false;
-    if (q.procedure && !d.procedures.includes(q.procedure) && !d.procedureSlugs.includes(q.procedure)) {
-      return false;
-    }
+    if (q.procedure && !doctorHasProcedure(d, q.procedure)) return false;
     return true;
   });
 }

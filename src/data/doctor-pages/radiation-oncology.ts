@@ -1,12 +1,12 @@
 import { RADIATION_PROCEDURES } from "@/lib/taxonomy";
 
 export const RADIATION_ONCOLOGY_SELECTION_NOTE =
-  "GAF Healthcare's selection of doctors is based on available professional information such as specialty, experience, qualifications, hospital affiliation, clinical focus and relevant treatment expertise. Inclusion does not constitute a medical ranking or guarantee of treatment outcome.";
+  "GAF Healthcare's doctor listings are based on available professional information such as specialty, qualifications, experience, hospital affiliation and documented areas of clinical expertise. The listing is intended to help patients compare relevant specialists and should not be interpreted as a clinical ranking or endorsement. Inclusion does not constitute a medical ranking or guarantee of treatment outcome.";
 
 export const radiationOncologyDoctorMethodology = {
-  question: "How does GAF identify radiation oncologists in India?",
+  question: "How does GAF identify radiation oncologists?",
   answer:
-    "Listed specialists are radiation oncologists in the current GAF catalog for India, with a named hospital, city and procedure relationships where those mappings exist. Featured labels mark complete, reviewable profiles. They are not clinical ranks, outcome scores or a claim that one doctor is better than another.",
+    "GAF Healthcare's doctor listings are based on available professional information such as specialty, qualifications, experience, hospital affiliation and documented areas of clinical expertise. The listing is intended to help patients compare relevant specialists and should not be interpreted as a clinical ranking or endorsement. Featured labels mark complete, reviewable profiles, not outcome scores.",
 };
 
 export const radiationOncologyHowToChoose = [

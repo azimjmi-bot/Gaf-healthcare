@@ -8,9 +8,11 @@ import {
   doctorListingIsIndexable,
   doctorProfileHeading,
   parseDoctorListingExtras,
+  radiationDoctorCount,
   radiationDoctorPageIndexable,
   radiationOncologyDoctorSitemapPaths,
   similarDoctors,
+  validateRadiationOncologyDoctorGraph,
 } from "./doctor-discovery";
 import { RADIATION_ONCOLOGY_SELECTION_NOTE } from "../data/doctor-pages/radiation-oncology";
 
@@ -49,6 +51,23 @@ test("metadata titles stay unique and omit the layout site suffix", () => {
       specialty: "Radiation Oncology",
     }),
     "Best Radiation Oncologists in Mumbai, India – Doctors & Hospitals",
+  );
+  assert.equal(
+    doctorDiscoveryTitle({
+      destination: "India",
+      specialty: "Radiation Oncology",
+      procedure: "CyberKnife",
+    }),
+    "Best Radiation Oncologists for CyberKnife in India – Doctors & Hospitals",
+  );
+  assert.equal(
+    doctorDiscoveryTitle({
+      destination: "India",
+      city: "Delhi NCR",
+      specialty: "Radiation Oncology",
+      procedure: "CyberKnife",
+    }),
+    "Best Radiation Oncologists for CyberKnife in Delhi NCR, India",
   );
 });
 
@@ -91,13 +110,42 @@ test("thin procedure combinations stay noindex", () => {
   );
 });
 
-test("sitemap keeps city-specialty and procedure paths with enough doctors", () => {
+test("sitemap keeps city-specialty, procedure, and qualifying city-procedure paths", () => {
   const paths = radiationOncologyDoctorSitemapPaths();
   assert.ok(paths.includes("/doctors/India/Radiation-Oncology"));
   assert.ok(paths.includes("/doctors/India/Delhi-NCR/Radiation-Oncology"));
   assert.ok(paths.includes("/doctors/India/Radiation-Oncology/Intensity-Modulated-Radiotherapy-(IMRT)"));
+  assert.ok(paths.includes("/doctors/India/Radiation-Oncology/CyberKnife"));
   assert.equal(
     paths.some((path) => /Prostate-Cancer|Breast-Cancer/i.test(path)),
+    false,
+  );
+  const imrtDelhi = radiationDoctorCount({
+    city: "Delhi NCR",
+    procedure: "Intensity-Modulated Radiotherapy (IMRT)",
+  });
+  assert.equal(
+    paths.includes("/doctors/India/Delhi-NCR/Radiation-Oncology/Intensity-Modulated-Radiotherapy-(IMRT)"),
+    imrtDelhi >= 3,
+  );
+});
+
+test("procedure doctor counts share one relationship source", () => {
+  const imrt = radiationDoctorCount({ procedure: "Intensity-Modulated Radiotherapy (IMRT)" });
+  const igrt = radiationDoctorCount({ procedure: "Image-Guided Radiotherapy (IGRT)" });
+  assert.ok(imrt >= 3);
+  assert.ok(igrt >= 1);
+  assert.notEqual(imrt, igrt);
+});
+
+test("validation flags gaps without inventing relationships", () => {
+  const flags = validateRadiationOncologyDoctorGraph();
+  assert.equal(
+    flags.some((flag) => flag.code === "inconsistent-count"),
+    false,
+  );
+  assert.equal(
+    flags.some((flag) => flag.code === "duplicate-procedure-slug"),
     false,
   );
 });

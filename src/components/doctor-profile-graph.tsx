@@ -1,4 +1,5 @@
 import { LocaleLink as Link } from "@/components/locale-link";
+import { QuickAnswer } from "@/components/quick-answer";
 import {
   radiationOncologyConsultPrep,
   radiationOncologyInternationalNote,
@@ -12,6 +13,7 @@ import {
   relatedDoctorBlogs,
   similarDoctors,
 } from "@/lib/doctor-discovery";
+import { doctorWhoAnswer } from "@/lib/doctor-quick-answers";
 import type { Doctor } from "@/lib/doctors";
 
 export function DoctorProfileGraph({
@@ -39,6 +41,8 @@ export function DoctorProfileGraph({
 
   return (
     <div className="mt-12 space-y-12">
+      <QuickAnswer items={[doctorWhoAnswer(doctor)]} variant="embed" />
+
       <section>
         <h2 className="font-heading text-3xl">Quick facts</h2>
         <dl className="mt-4 grid gap-3 sm:grid-cols-2">
