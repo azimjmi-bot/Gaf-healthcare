@@ -469,7 +469,7 @@ export function ConversionPanel({
   secondaryHref?: string;
 }) {
   return (
-    <div className="cost-panel mt-12">
+    <aside className="cost-panel mt-12" aria-label="Personalized treatment estimate">
       <h2>{heading}</h2>
       <p className="mt-3 max-w-2xl text-[1.02rem] leading-relaxed text-ivory/75">{body}</p>
       <div className="mt-6 flex flex-wrap gap-3">
@@ -482,6 +482,6 @@ export function ConversionPanel({
           </Link>
         ) : null}
       </div>
-    </div>
+    </aside>
   );
 }
