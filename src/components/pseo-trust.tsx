@@ -1,7 +1,8 @@
 import { CostAttribution } from "@/components/cost-page/cost-attribution";
 import { PatientReviews } from "@/components/patient-reviews";
+import { PatientStories } from "@/components/patient-stories";
 
-/** Shared medical-review and Google-review blocks for programmatic SEO pages. */
+/** Shared medical-review, patient-story and Google-review blocks for programmatic SEO pages. */
 export function PseoTrust({ attribution = true }: { attribution?: boolean }) {
   return (
     <>
@@ -10,6 +11,7 @@ export function PseoTrust({ attribution = true }: { attribution?: boolean }) {
           <CostAttribution flush />
         </section>
       ) : null}
+      <PatientStories />
       <PatientReviews />
     </>
   );

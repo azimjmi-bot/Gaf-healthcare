@@ -7,6 +7,7 @@ import { HomeSearch } from "@/components/home/home-search";
 import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
 import { JsonLd } from "@/components/json-ld";
 import { PatientReviews } from "@/components/patient-reviews";
+import { PatientStories } from "@/components/patient-stories";
 import {
   GOOGLE_MAPS_URL,
   GOOGLE_PROFILE,
@@ -248,42 +249,12 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="home-section">
-        <div className="home-head">
-          <div>
-            <p className="eyebrow">{t["home.storiesEyebrow"]}</p>
-            <h2>{t["home.storiesTitle"]}</h2>
-          </div>
-          <a href={YOUTUBE_CHANNEL} className="home-more" target="_blank" rel="noreferrer">
-            {t["home.moreYoutube"]} <ArrowRight className="size-4" />
-          </a>
-        </div>
-        <div className="home-videogrid">
-          {extras.videos.map((video) => (
-            <a
-              key={video.id}
-              href={`https://www.youtube.com/watch?v=${video.id}`}
-              className="home-video"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <span className="home-video__thumb">
-                <Image
-                  src={`https://i.ytimg.com/vi/${video.id}/hqdefault.jpg`}
-                  alt=""
-                  fill
-                  className="object-cover"
-                  sizes="(min-width: 1024px) 24vw, (min-width: 640px) 50vw, 100vw"
-                />
-                <span className="home-video__play" aria-hidden>
-                  ▶
-                </span>
-              </span>
-              <strong>{video.title}</strong>
-            </a>
-          ))}
-        </div>
-      </section>
+      <PatientStories
+        videos={extras.videos}
+        eyebrow={t["home.storiesEyebrow"]}
+        title={t["home.storiesTitle"]}
+        moreLabel={t["home.moreYoutube"]}
+      />
 
       <section className="home-section home-section--tint">
         <div className="home-head">
