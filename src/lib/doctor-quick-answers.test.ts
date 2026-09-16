@@ -75,7 +75,7 @@ test("non-radiation quick answers reuse their specialty and procedure sources", 
     specialty.map((item) => item.question),
     [
       "How many cardiologists are listed in India?",
-      "Which Cardiology procedures can I find specialists for?",
+      "Which Cardiology procedures can I find cardiologists for?",
       "Which cities are covered?",
     ],
   );

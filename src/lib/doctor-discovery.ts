@@ -48,6 +48,17 @@ export function doctorSpecialtyLabels(specialtyName: string) {
   };
 }
 
+function headingCase(value: string) {
+  return value
+    .split(/\s+/)
+    .map((word) =>
+      word === word.toUpperCase()
+        ? word
+        : word.charAt(0).toUpperCase() + word.slice(1),
+    )
+    .join(" ");
+}
+
 export function doctorDiscoveryPlace(query: CatalogQuery) {
   return query.city ? `${query.city}, India` : "India";
 }
@@ -62,7 +73,7 @@ export function doctorDiscoveryHeading(query: CatalogQuery) {
   if (!isDoctorSpecialtyDiscovery(query) || !query.specialty) return undefined;
   const place = doctorDiscoveryPlace(query);
   const { plural } = doctorSpecialtyLabels(query.specialty);
-  const role = plural.charAt(0).toUpperCase() + plural.slice(1);
+  const role = headingCase(plural);
   if (query.procedure) {
     return `Best ${role} for ${shortProcedureLabel(query.procedure)} in ${place}`;
   }

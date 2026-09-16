@@ -297,6 +297,8 @@ export function discoveryQuickAnswers(opts: {
       const profile = specialtyProfileFor(opts.specialty);
       const practitioners = profile?.terminology.practitioners ?? "specialists";
       const careItems = profile?.terminology.careItems ?? "procedures";
+      const careItemsLabel =
+        careItems.charAt(0).toUpperCase() + careItems.slice(1);
       const procedureNames = (opts.procedureNames ?? []).slice(0, 8);
       const procedureList =
         procedureNames.length > 1
@@ -308,7 +310,7 @@ export function discoveryQuickAnswers(opts: {
           answer: `GAF currently lists ${opts.doctorCount} ${practitioners} across ${opts.cityCount} cities and ${opts.hospitalCount} hospitals.`,
         },
         {
-          question: `Which ${opts.specialty} ${careItems} can I find specialists for?`,
+          question: `Which ${careItemsLabel} can I find ${practitioners} for?`,
           answer: `Doctors are mapped to catalog procedures including ${procedureList}. Open a procedure page to see specialists with that exact relationship.`,
         },
         {
