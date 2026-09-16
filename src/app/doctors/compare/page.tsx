@@ -8,8 +8,8 @@ import type { Metadata } from "next";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Compare radiation oncologists",
-  description: "Compare listed radiation oncologists on experience, hospital, city and mapped techniques. This is not a clinical ranking.",
+  title: "Compare doctors in India",
+  description: "Compare listed doctors on specialty, experience, qualifications, hospital, city and mapped procedures. This is not a clinical ranking.",
   robots: { index: false, follow: false },
 };
 
@@ -38,8 +38,8 @@ export default async function DoctorComparePage({
         {doctors.length < 2 ? (
           <p className="text-muted-foreground">
             Select two to four specialists from a doctor list, then open compare.{" "}
-            <Link href={doctorsPath({ destination: "India", specialty: "Radiation Oncology" })} className="underline-offset-4 hover:underline">
-              Best Radiation Oncologists in India
+            <Link href={doctorsPath({ destination: "India" })} className="underline-offset-4 hover:underline">
+              Browse doctors in India
             </Link>
           </p>
         ) : (
