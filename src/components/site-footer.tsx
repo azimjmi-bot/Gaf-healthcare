@@ -47,10 +47,10 @@ export function SiteFooter() {
             {site.hours}
           </p>
           <p className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
-            <a href={YOUTUBE_CHANNEL} className="text-ivory/75 hover:text-ivory" target="_blank" rel="noreferrer">
+            <a href={YOUTUBE_CHANNEL} className="text-gold-bright underline underline-offset-4 hover:text-ivory" target="_blank" rel="noreferrer">
               {t("footer.youtube")}
             </a>
-            <a href={GOOGLE_MAPS_URL} className="text-ivory/75 hover:text-ivory" target="_blank" rel="noreferrer">
+            <a href={GOOGLE_MAPS_URL} className="text-gold-bright underline underline-offset-4 hover:text-ivory" target="_blank" rel="noreferrer">
               {t("footer.reviews")}
             </a>
           </p>
@@ -61,7 +61,7 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2.5">
               {col.links.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-ivory/75 hover:text-ivory">
+                  <Link href={l.href} className="text-sm text-gold-bright underline underline-offset-4 hover:text-ivory">
                     {l.label}
                   </Link>
                 </li>

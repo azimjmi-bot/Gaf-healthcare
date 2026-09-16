@@ -170,6 +170,126 @@
   color: var(--muted-foreground);
 }
 
+@utility gaf-link {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+
+/* In-content hyperlinks: teal + always-on underline so they never read as body copy.
+   Header, footer, orange CTAs, whole-card wrappers, and directory names stay on their
+   own palettes. */
+:where(main, article, .md-body, .article-body) a:not(
+  [class*="btn"],
+  [class*="bg-primary"],
+  [class*="bg-ink"],
+  [class~="block"],
+  [class*="rounded-full"],
+  [class*="dcard"],
+  [class*="dhero__book"],
+  [class*="dhero__contact"],
+  [class*="dhero__pill"],
+  [class*="hcard"],
+  [class*="home-dest"],
+  [class*="home-doc"],
+  [class*="home-hosp"],
+  [class*="home-cost"],
+  [class*="home-blog"],
+  [class*="home-video"],
+  [class*="home-finale"],
+  [class*="hp-btn"],
+  [class*="hp-nav"],
+  [class*="hp-nearby"],
+  [class*="hp-gallery"],
+  [class*="hp-support"],
+  [class*="hosp-pager"],
+  [class*="cost-hcard"],
+  [class*="cost-dcard"],
+  [class*="cost-city"],
+  [class*="cost-btn"],
+  [class*="cost-panel"],
+  [data-slot="button"]
+) {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 0.22em;
+  text-decoration-thickness: 1px;
+}
+
+:where(main, article, .md-body, .article-body) a:not(
+  [class*="btn"],
+  [class*="bg-primary"],
+  [class*="bg-ink"],
+  [class~="block"],
+  [class*="rounded-full"],
+  [class*="dcard"],
+  [class*="dhero__book"],
+  [class*="dhero__contact"],
+  [class*="dhero__pill"],
+  [class*="hcard"],
+  [class*="home-dest"],
+  [class*="home-doc"],
+  [class*="home-hosp"],
+  [class*="home-cost"],
+  [class*="home-blog"],
+  [class*="home-video"],
+  [class*="home-finale"],
+  [class*="hp-btn"],
+  [class*="hp-nav"],
+  [class*="hp-nearby"],
+  [class*="hp-gallery"],
+  [class*="hp-support"],
+  [class*="hosp-pager"],
+  [class*="cost-hcard"],
+  [class*="cost-dcard"],
+  [class*="cost-city"],
+  [class*="cost-btn"],
+  [class*="cost-panel"],
+  [data-slot="button"]
+):hover {
+  color: color-mix(in oklab, var(--gold) 40%, var(--ink));
+  text-decoration-thickness: 2px;
+}
+
+/* Heading-as-link (hospital names) even when the anchor is `display: block`. */
+:where(main, article) a.font-heading:not([class*="rounded"], [class*="btn"]) {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+:where(main, article) a.font-heading:not([class*="rounded"], [class*="btn"]):hover {
+  color: color-mix(in oklab, var(--gold) 40%, var(--ink));
+}
+
+/* Directory card titles stay navy; their inner name link has no class of its own. */
+.dcard__name a,
+.hcard__title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.dcard__name a:hover {
+  color: var(--hp);
+}
+
+.hcard__title a:hover {
+  color: var(--hp);
+}
+
+.hcard__chips a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.cms-shell a,
+.cms-login a {
+  color: inherit;
+  text-decoration: none;
+}
+
 .doc-grid {
   display: grid;
   gap: 1.25rem;
@@ -462,9 +582,14 @@
   color: #6b7c82;
 }
 
-.hp-crumbs a:hover {
-  color: var(--hp);
+.hp-crumbs a {
+  color: var(--gold);
   text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.hp-crumbs a:hover {
+  color: color-mix(in oklab, var(--gold) 40%, var(--ink));
 }
 
 .hp-hero__grid {
@@ -1358,6 +1483,12 @@
   color: #4a5c62;
 }
 
+.hcard__chips a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
 .hcard__aside {
   display: flex;
   flex-direction: column;
@@ -1448,9 +1579,14 @@
   color: #6b7c82;
 }
 
-.dhero__crumbs a:hover {
-  color: #16323a;
+.dhero__crumbs a {
+  color: var(--gold);
   text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.dhero__crumbs a:hover {
+  color: color-mix(in oklab, var(--gold) 40%, var(--ink));
 }
 
 .dhero__grid {
@@ -1519,8 +1655,14 @@
   color: #5a6d73;
 }
 
-.dhero__place a:hover {
+.dhero__place a {
+  color: var(--gold);
   text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.dhero__place a:hover {
+  color: color-mix(in oklab, var(--gold) 40%, var(--ink));
 }
 
 .dhero__highlights {
@@ -2321,6 +2463,7 @@ img.dhero__art {
 .md-body h2 { font-size: 1.45rem; }
 .md-body h3 { font-size: 1.2rem; }
 .md-body a {
+  color: var(--gold);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -2377,7 +2520,15 @@ img.dhero__art {
   color: var(--muted-foreground);
 }
 
-.cost-crumbs a:hover { text-decoration: underline; }
+.cost-crumbs a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.cost-crumbs a:hover {
+  color: color-mix(in oklab, var(--gold) 40%, var(--ink));
+}
 
 .cost-hero__eyebrow {
   margin-top: 0.85rem;
@@ -2542,10 +2693,14 @@ img.dhero__art {
 }
 
 .cost-jump a {
-  color: #3d4f55;
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
-.cost-jump a:hover { text-decoration: underline; }
+.cost-jump a:hover {
+  color: color-mix(in oklab, var(--gold) 40%, var(--ink));
+}
 
 .cost-why {
   border-radius: 1.15rem;
@@ -3113,6 +3268,9 @@ img.dhero__art {
   gap: 0.3rem;
   font-size: 0.88rem;
   font-weight: 600;
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
 }
 
 .home-destgrid,

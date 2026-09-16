@@ -50,7 +50,7 @@ export default async function DoctorComparePage({
                   <th className="px-4 py-3 font-medium text-muted-foreground">Field</th>
                   {doctors.map((doctor) => (
                     <th key={doctor.slug} className="px-4 py-3 font-heading text-xl">
-                      <Link href={`/doctors/${doctor.slug}`} className="hover:text-gold">
+                      <Link href={`/doctors/${doctor.slug}`} className="text-gold underline underline-offset-4">
                         {doctor.name}
                       </Link>
                     </th>

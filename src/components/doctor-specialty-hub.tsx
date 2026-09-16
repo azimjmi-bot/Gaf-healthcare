@@ -305,7 +305,7 @@ export function DoctorSpecialtyHub({
         <ul className="mt-6 grid gap-3 md:grid-cols-2">
           {data.hospitals.map(({ hospital, count }) => (
             <li key={hospital.slug} className="rounded-2xl border border-border bg-white p-5">
-              <Link href={`/hospitals/${hospital.slug}`} className="font-heading text-2xl hover:text-gold">
+              <Link href={`/hospitals/${hospital.slug}`} className="font-heading text-2xl text-gold underline underline-offset-4">
                 {hospital.name}
               </Link>
               <p className="mt-1 text-sm text-muted-foreground">

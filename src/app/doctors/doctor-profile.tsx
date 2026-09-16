@@ -79,7 +79,7 @@ export async function DoctorProfile({ slug }: { slug: string }) {
         {hospital ? (
           <div className="mt-10 rounded-2xl border border-border bg-card p-6">
             <p className="text-xs tracking-[0.18em] uppercase text-gold">{t["profile.practisesAt"]}</p>
-            <Link href={`/hospitals/${hospital.slug}`} className="mt-2 block font-heading text-3xl hover:text-gold">
+            <Link href={`/hospitals/${hospital.slug}`} className="mt-2 inline-block font-heading text-3xl text-gold underline underline-offset-4">
               {hospital.name}
             </Link>
             <p className="mt-1 text-sm text-muted-foreground">
