@@ -262,8 +262,14 @@ export function specialtyGuideQuickAnswers(specialty: string): QuickAnswerItem[]
     const practitioner =
       specialtyProfileFor(specialty)?.terminology.practitioner ??
       `${specialty} specialist`;
-    const displayPractitioner =
-      practitioner.charAt(0).toUpperCase() + practitioner.slice(1);
+    const displayPractitioner = practitioner
+      .split(/\s+/)
+      .map((word) =>
+        word === word.toUpperCase()
+          ? word
+          : word.charAt(0).toUpperCase() + word.slice(1),
+      )
+      .join(" ");
     items.push({
       question: `What does a ${displayPractitioner} do?`,
       answer: roleSource.text,
