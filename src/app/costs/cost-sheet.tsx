@@ -7,6 +7,7 @@ import { ArticleBlocks, CoverImage } from "@/components/article-body";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
+import { PseoEstimateCta, PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
 import { PseoTrust } from "@/components/pseo-trust";
 import { JsonLd } from "@/components/json-ld";
 import { CostArticleSection, costArticleFor, hasCostArticle } from "@/components/cost-article-section";
@@ -160,6 +161,7 @@ export async function CostSheet({ slug }: { slug: string }) {
   ]
     .filter(Boolean)
     .join(" and ");
+  const consultHref = `/consult?treatment=${t.slug}`;
 
   return (
     <>
@@ -198,6 +200,12 @@ export async function CostSheet({ slug }: { slug: string }) {
           </h1>
         </div>
       </section>
+      <PseoEstimateCtaSection
+        subject={t.name}
+        place="India"
+        consultHref={consultHref}
+        variant="records"
+      />
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:px-5 md:grid-cols-12 md:gap-12 md:px-8 md:py-16">
         <div className="md:col-span-7">
           {t.replaceGuide && t.blocks && t.blocks.length > 0 ? (
@@ -253,7 +261,7 @@ export async function CostSheet({ slug }: { slug: string }) {
               </div>
             </dl>
             <Button asChild className="mt-8 h-11 w-full rounded-full">
-              <Link href={`/consult?treatment=${t.slug}`}>Request this pathway</Link>
+              <Link href={consultHref}>Request this pathway</Link>
             </Button>
             <p className="mt-4 text-xs text-muted-foreground">
               Not a quote. {t.specialtySlug === "nephrology"
@@ -328,6 +336,12 @@ export async function CostSheet({ slug }: { slug: string }) {
           </div>
         </aside>
       </section>
+      <PseoEstimateCtaSection
+        subject={t.name}
+        place="India"
+        consultHref={consultHref}
+        variant="options"
+      />
       <section className="bg-secondary/40 py-10 md:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-5 md:px-8">
           <div className="flex flex-wrap items-end justify-between gap-4">
@@ -365,6 +379,12 @@ export async function CostSheet({ slug }: { slug: string }) {
             ))}
           </ul>
           )}
+          <PseoEstimateCta
+            subject={t.name}
+            place="India"
+            consultHref={consultHref}
+            variant="hospital"
+          />
           <div className="mt-14 flex flex-wrap items-end justify-between gap-4">
             <h2 className="font-heading text-3xl">Hospitals</h2>
             <Link
@@ -394,6 +414,12 @@ export async function CostSheet({ slug }: { slug: string }) {
               ) : null,
             )}
           </ul>
+          <PseoEstimateCta
+            subject={t.name}
+            place="India"
+            consultHref={consultHref}
+            variant="travel"
+          />
           <h2 className="mt-14 font-heading text-3xl">Related procedures</h2>
           <ul className="mt-6 grid gap-4 md:grid-cols-2">
             {related.map((r) => (
@@ -410,6 +436,12 @@ export async function CostSheet({ slug }: { slug: string }) {
               </li>
             ))}
           </ul>
+          <PseoEstimateCta
+            subject={t.name}
+            place="India"
+            consultHref={consultHref}
+            variant="plan"
+          />
         </div>
       </section>
       <PseoTrust />

@@ -9,6 +9,7 @@ import { JsonLd } from "@/components/json-ld";
 import {
   CtaBand,
 } from "@/components/page-shell";
+import { PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
 import { PseoTrust } from "@/components/pseo-trust";
 import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import type { CatalogQuery } from "@/lib/catalog";
@@ -721,6 +722,7 @@ export function SpecialtyCostPage({
   const faqs = visibleFaqs(data);
   const place = placeName(data);
   const consultHref = `/consult?specialty=${data.profile.specialtySlug}`;
+  const ctaSubject = `${data.specialty.name.toLowerCase()} treatment`;
   const costAnswer = data.city
     ? data.hasCitySpecificPricing
       ? `${data.cityPricedProcedureCount} ${data.profile.terminology.careItems} have stored ${data.city.name}-specific planning ranges. Other services remain case-specific, and a named hospital must confirm every quotation.`
@@ -910,9 +912,23 @@ export function SpecialtyCostPage({
         <Paragraphs rows={data.profile.overview} />
       </section>
 
+      <PseoEstimateCtaSection
+        subject={ctaSubject}
+        place={place}
+        consultHref={consultHref}
+        variant="records"
+      />
+
       <Conditions data={data} />
       <TreatmentDirectory data={data} />
       <ProcedureComparison data={data} />
+
+      <PseoEstimateCtaSection
+        subject={ctaSubject}
+        place={place}
+        consultHref={consultHref}
+        variant="options"
+      />
 
       <section className="mx-auto max-w-7xl px-4 py-12 sm:px-5 md:px-8 md:py-20">
         <SectionHeading eyebrow="Clinical decisions" title={`How is ${data.specialty.name} treatment selected?`} />
@@ -921,9 +937,21 @@ export function SpecialtyCostPage({
 
       <Process data={data} />
       <CostDetails data={data} />
+      <PseoEstimateCtaSection
+        subject={ctaSubject}
+        place={place}
+        consultHref={consultHref}
+        variant="hospital"
+      />
       <Technologies data={data} />
       {!data.city ? <CityDirectory data={data} /> : null}
       <CareDirectories data={data} />
+      <PseoEstimateCtaSection
+        subject={ctaSubject}
+        place={place}
+        consultHref={consultHref}
+        variant="travel"
+      />
       {data.city && data.cityEditorial ? (
         <section className="mx-auto max-w-7xl px-4 py-12 sm:px-5 md:px-8 md:py-20">
           <SectionHeading
@@ -934,6 +962,13 @@ export function SpecialtyCostPage({
         </section>
       ) : null}
       <InternationalGuide data={data} />
+
+      <PseoEstimateCtaSection
+        subject={ctaSubject}
+        place={place}
+        consultHref={consultHref}
+        variant="plan"
+      />
 
       {!data.city ? (
         <section className="mx-auto max-w-7xl px-4 py-12 sm:px-5 md:px-8 md:py-20">

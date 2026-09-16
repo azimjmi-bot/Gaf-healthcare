@@ -11,6 +11,7 @@ import {
 } from "@/components/doctor-compare";
 import { JsonLd } from "@/components/json-ld";
 import { CtaBand, PageIntro } from "@/components/page-shell";
+import { PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
 import { PseoTrust } from "@/components/pseo-trust";
 import { QuickAnswer } from "@/components/quick-answer";
 import type { CatalogQuery } from "@/lib/catalog";
@@ -43,6 +44,11 @@ export function DoctorSpecialtyHub({
   data: DoctorSpecialtyHubData;
   query: CatalogQuery;
 }) {
+  const ctaSubject = data.procedure ?? "radiation oncology treatment";
+  const consultParams = new URLSearchParams({ specialty: "radiation-oncology" });
+  if (data.procedure) consultParams.set("treatment", data.procedure);
+  if (data.cityName) consultParams.set("city", data.cityName);
+  const consultHref = `/consult?${consultParams.toString()}`;
   const crumbs = [
     { name: "Doctors", path: "/doctors" },
     { name: "India", path: "/doctors/India" },
@@ -192,6 +198,13 @@ export function DoctorSpecialtyHub({
         </section>
       ) : null}
 
+      <PseoEstimateCtaSection
+        subject={ctaSubject}
+        place={data.place}
+        consultHref={consultHref}
+        variant="records"
+      />
+
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-16">
         <HubHeading
           eyebrow="Specialists"
@@ -244,6 +257,13 @@ export function DoctorSpecialtyHub({
           </ol>
         </section>
       ) : null}
+
+      <PseoEstimateCtaSection
+        subject={ctaSubject}
+        place={data.place}
+        consultHref={consultHref}
+        variant="options"
+      />
 
       <section className="border-y border-border bg-secondary/30">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
@@ -301,6 +321,13 @@ export function DoctorSpecialtyHub({
         </section>
       ) : null}
 
+      <PseoEstimateCtaSection
+        subject={ctaSubject}
+        place={data.place}
+        consultHref={consultHref}
+        variant="hospital"
+      />
+
       <section className="border-y border-border bg-secondary/30">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
           <HubHeading
@@ -353,6 +380,13 @@ export function DoctorSpecialtyHub({
           ))}
         </ul>
       </section>
+
+      <PseoEstimateCtaSection
+        subject={ctaSubject}
+        place={data.place}
+        consultHref={consultHref}
+        variant="travel"
+      />
 
       {data.conditions.length > 0 ? (
         <section className="border-y border-border bg-secondary/20">
@@ -451,6 +485,13 @@ export function DoctorSpecialtyHub({
           ))}
         </div>
       </section>
+
+      <PseoEstimateCtaSection
+        subject={ctaSubject}
+        place={data.place}
+        consultHref={consultHref}
+        variant="plan"
+      />
 
       <div className="sticky bottom-3 z-30 mx-auto mb-3 flex max-w-7xl justify-end px-4 md:hidden">
         <Link

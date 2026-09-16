@@ -8,6 +8,7 @@ import {
 } from "@/components/ui/accordion";
 import { CostAttribution } from "@/components/cost-page/cost-attribution";
 import { CostDoctorCard, CostHospitalCard } from "@/components/cost-page/cost-care-cards";
+import { PseoEstimateCta } from "@/components/pseo-estimate-cta";
 import {
   CityCostGrid,
   ConversionPanel,
@@ -263,6 +264,13 @@ export function CostArticleView({
         </a>
       </p>
 
+      <PseoEstimateCta
+        subject={article.shortName}
+        place={city ?? "India"}
+        consultHref={consultHref}
+        variant="records"
+      />
+
       <H2 id="cost-in-india">{article.procedure} cost in India</H2>
       {article.indiaCost.map((para) => (
         <P key={para.slice(0, 40)}>{para}</P>
@@ -475,6 +483,13 @@ export function CostArticleView({
         </section>
       ))}
 
+      <PseoEstimateCta
+        subject={article.shortName}
+        place={city ?? "India"}
+        consultHref={consultHref}
+        variant="options"
+      />
+
       <H2 id="cost-by-country">{article.procedure} cost: India vs other medical tourism destinations</H2>
       {article.destinationIntro ? (
         article.destinationIntro.map((para) => <P key={para.slice(0, 40)}>{para}</P>)
@@ -569,6 +584,13 @@ export function CostArticleView({
           </p>
         </>
       )}
+
+      <PseoEstimateCta
+        subject={article.shortName}
+        place={city ?? "India"}
+        consultHref={consultHref}
+        variant="hospital"
+      />
 
       <H2 id="cost-by-city">{brief} cost by city in India</H2>
       {article.cityIntro ? (
@@ -890,6 +912,13 @@ export function CostArticleView({
       {article.overview.recovery.map((para) => (
         <P key={para.slice(0, 40)}>{para}</P>
       ))}
+
+      <PseoEstimateCta
+        subject={article.shortName}
+        place={city ?? "India"}
+        consultHref={consultHref}
+        variant="plan"
+      />
 
       <H2 id="questions">How to compare {brief} quotes from Indian hospitals</H2>
       <P>
