@@ -7,6 +7,9 @@ import {
   doctorDiscoveryTitle,
   doctorListingIsIndexable,
   doctorProfileHeading,
+  doctorSpecialtyCount,
+  doctorSpecialtyPageIndexable,
+  doctorSpecialtySitemapPaths,
   parseDoctorListingExtras,
   radiationDoctorCount,
   radiationDoctorPageIndexable,
@@ -173,4 +176,52 @@ test("doctor profile heading is city-specific", () => {
   const doctor = doctors.find((row) => row.specialtySlug === "radiation-oncology" && row.city === "Delhi NCR");
   assert.ok(doctor);
   assert.equal(doctorProfileHeading(doctor), `${doctor.name} — Radiation Oncologist in Delhi NCR`);
+});
+
+test("generic specialty headings use clinically natural practitioner labels", () => {
+  assert.equal(
+    doctorDiscoveryHeading({ destination: "India", specialty: "Cardiology" }),
+    "Best Cardiologists in India",
+  );
+  assert.equal(
+    doctorDiscoveryHeading({
+      destination: "India",
+      city: "Mumbai",
+      specialty: "Orthopedics",
+      procedure: "Total Knee Replacement",
+    }),
+    "Best Orthopaedic Surgeons for Total Knee Replacement in Mumbai, India",
+  );
+});
+
+test("generic specialty sitemap publishes qualified city and procedure routes", () => {
+  const paths = doctorSpecialtySitemapPaths(doctors);
+  assert.ok(paths.includes("/doctors/India/Cardiology"));
+  assert.ok(paths.includes("/doctors/India/Mumbai/Orthopedics"));
+  assert.ok(paths.includes("/doctors/India/Cardiology/Coronary-Angioplasty-Stenting"));
+  const cityCount = doctorSpecialtyCount(
+    "Cardiology",
+    { city: "Delhi NCR", procedure: "Coronary Angioplasty & Stenting" },
+    doctors,
+  );
+  assert.equal(
+    paths.includes("/doctors/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting"),
+    cityCount >= 3,
+  );
+});
+
+test("generic specialty indexability keeps thin procedure combinations noindex", () => {
+  assert.equal(
+    doctorSpecialtyPageIndexable(
+      {
+        destination: "India",
+        specialty: "Cardiology",
+        procedure: "Coronary Angioplasty & Stenting",
+      },
+      {},
+      1,
+      2,
+    ),
+    false,
+  );
 });

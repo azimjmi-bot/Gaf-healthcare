@@ -8,29 +8,7 @@ import {
 } from "@/lib/catalog";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { compareSpecialties, COUNTRIES, SPECIALTIES } from "@/lib/taxonomy";
-import { bariatricSurgeryIndiaProfile } from "./bariatric-surgery";
-import { cardiacSurgeryIndiaProfile } from "./cardiac-surgery";
-import { cardiologyIndiaProfile } from "./cardiology";
-import { cosmeticSurgeryIndiaProfile } from "./cosmetic-surgery";
-import { entIndiaProfile } from "./ent";
-import { gastroenterologyIndiaProfile } from "./gastroenterology";
-import { gynecologyIndiaProfile } from "./gynecology";
-import { hematologyIndiaProfile } from "./hematology";
-import { medicalOncologyIndiaProfile } from "./medical-oncology";
-import { nephrologyIndiaProfile } from "./nephrology";
-import { neurologyIndiaProfile } from "./neurology";
-import { neurosurgeryIndiaProfile } from "./neurosurgery";
-import { ophthalmologyIndiaProfile } from "./ophthalmology";
-import { orthopedicsIndiaProfile } from "./orthopedics";
-import { pediatricCardiacSurgeryIndiaProfile } from "./pediatric-cardiac-surgery";
-import { pediatricHematologyIndiaProfile } from "./pediatric-hematology";
-import { pediatricOrthopaedicIndiaProfile } from "./pediatric-orthopaedic";
-import { pulmonologyIndiaProfile } from "./pulmonology";
-import { radiationOncologyIndiaProfile } from "./radiation-oncology";
-import { spineSurgeryIndiaProfile } from "./spine-surgery";
-import { surgicalGastroenterologyIndiaProfile } from "./surgical-gastroenterology";
-import { surgicalOncologyIndiaProfile } from "./surgical-oncology";
-import { urologyIndiaProfile } from "./urology";
+import { BASE_SPECIALTY_PROFILES } from "./base-profiles";
 import type { SpecialtyPagePatch, SpecialtyPageProfile } from "./types";
 
 export type {
@@ -43,32 +21,6 @@ export type {
   SpecialtyTechnology,
   SpecialtyTreatmentGroup,
 } from "./types";
-
-const BASE_SPECIALTY_PROFILES: SpecialtyPageProfile[] = [
-  radiationOncologyIndiaProfile,
-  medicalOncologyIndiaProfile,
-  pulmonologyIndiaProfile,
-  surgicalOncologyIndiaProfile,
-  hematologyIndiaProfile,
-  pediatricHematologyIndiaProfile,
-  cardiacSurgeryIndiaProfile,
-  pediatricCardiacSurgeryIndiaProfile,
-  cardiologyIndiaProfile,
-  bariatricSurgeryIndiaProfile,
-  cosmeticSurgeryIndiaProfile,
-  entIndiaProfile,
-  gastroenterologyIndiaProfile,
-  surgicalGastroenterologyIndiaProfile,
-  urologyIndiaProfile,
-  spineSurgeryIndiaProfile,
-  pediatricOrthopaedicIndiaProfile,
-  orthopedicsIndiaProfile,
-  ophthalmologyIndiaProfile,
-  gynecologyIndiaProfile,
-  neurosurgeryIndiaProfile,
-  neurologyIndiaProfile,
-  nephrologyIndiaProfile,
-];
 
 const BASE_SPECIALTY_PAGES: Record<string, SpecialtyPageProfile> =
   Object.fromEntries(

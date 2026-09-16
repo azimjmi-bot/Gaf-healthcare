@@ -6,6 +6,7 @@ import {
   procedureDefinitionFromCanonical,
   relatedProcedureNames,
   specialtyDefinitionFromCanonical,
+  specialtyGuideQuickAnswers,
 } from "./doctor-quick-answers";
 
 test("India Radiation Oncology quick answers prioritize directory facts", () => {
@@ -59,4 +60,37 @@ test("specialty definition is taken from the published Radiation Oncology profil
   assert.ok(definition?.text);
   assert.equal(definition?.source.canonicalUrl, "/costs/India/Radiation-Oncology");
   assert.match(definition.text, /radiation oncology/i);
+});
+
+test("non-radiation quick answers reuse their specialty and procedure sources", () => {
+  const specialty = discoveryQuickAnswers({
+    specialty: "Cardiology",
+    doctorCount: 237,
+    cityCount: 5,
+    hospitalCount: 20,
+    cityNames: ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"],
+    procedureNames: ["Coronary Angioplasty & Stenting", "Coronary Angiography"],
+  });
+  assert.deepEqual(
+    specialty.map((item) => item.question),
+    [
+      "How many cardiologists are listed in India?",
+      "Which Cardiology procedures can I find specialists for?",
+      "Which cities are covered?",
+    ],
+  );
+  const guide = specialtyGuideQuickAnswers("Cardiology");
+  assert.ok(guide.some((item) => item.question === "What is Cardiology?"));
+  assert.ok(guide.some((item) => item.question === "What does a Cardiologist do?"));
+  assert.ok(guide.every((item) => item.sourceHref?.startsWith("/costs/")));
+
+  const procedure = discoveryQuickAnswers({
+    specialty: "Orthopedics",
+    procedure: "Total Knee Replacement",
+    doctorCount: 151,
+    cityCount: 5,
+    hospitalCount: 20,
+  });
+  assert.equal(procedure[0]?.question, "What is Total Knee Replacement?");
+  assert.equal(procedure[0]?.sourceHref, "/costs/total-knee-replacement");
 });

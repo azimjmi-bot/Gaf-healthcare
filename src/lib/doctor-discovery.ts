@@ -1,6 +1,7 @@
 import type { CatalogQuery } from "@/lib/catalog-options";
 import type { Doctor } from "@/lib/doctors";
 import { getCostArticle } from "@/data/cost-articles";
+import { baseSpecialtyProfileFor } from "@/data/specialty-pages/base-profiles";
 import { listPublishedPosts } from "@/lib/blogs";
 import { costPath, doctorsPath } from "@/lib/catalog-links";
 import { doctorHasProcedure, filterDoctors } from "@/lib/catalog";
@@ -8,12 +9,15 @@ import { getTreatment } from "@/lib/treatments";
 import { radiationOncologyContentInventory } from "@/data/doctor-pages/radiation-oncology";
 import {
   INDIA_CITIES,
+  SPECIALTIES,
   getProcedure,
+  getSpecialty,
   proceduresForSpecialty,
   toSlug,
 } from "@/lib/taxonomy";
 
-export const RADIATION_DOCTOR_INDEX_MIN = 3;
+export const DOCTOR_PROCEDURE_INDEX_MIN = 3;
+export const RADIATION_DOCTOR_INDEX_MIN = DOCTOR_PROCEDURE_INDEX_MIN;
 
 export type DoctorListingExtras = {
   hospital?: string;
@@ -22,6 +26,26 @@ export type DoctorListingExtras = {
 
 export function isRadiationOncologyDiscovery(query: CatalogQuery) {
   return query.destination === "India" && query.specialty === "Radiation Oncology";
+}
+
+export function isDoctorSpecialtyDiscovery(query: CatalogQuery) {
+  if (query.destination !== "India" || !query.specialty) return false;
+  const specialty = getSpecialty(query.specialty);
+  if (!specialty || !baseSpecialtyProfileFor(specialty.slug)) return false;
+  return !query.procedure || proceduresForSpecialty(specialty.name).some(
+    (procedure) => procedure.name === query.procedure,
+  );
+}
+
+export function doctorSpecialtyLabels(specialtyName: string) {
+  const specialty = getSpecialty(specialtyName);
+  const terminology = specialty
+    ? baseSpecialtyProfileFor(specialty.slug)?.terminology
+    : undefined;
+  return {
+    singular: terminology?.practitioner ?? `${specialtyName} specialist`,
+    plural: terminology?.practitioners ?? `${specialtyName} specialists`,
+  };
 }
 
 export function doctorDiscoveryPlace(query: CatalogQuery) {
@@ -35,12 +59,14 @@ export function shortProcedureLabel(procedure: string) {
 }
 
 export function doctorDiscoveryHeading(query: CatalogQuery) {
-  if (!isRadiationOncologyDiscovery(query)) return undefined;
+  if (!isDoctorSpecialtyDiscovery(query) || !query.specialty) return undefined;
   const place = doctorDiscoveryPlace(query);
+  const { plural } = doctorSpecialtyLabels(query.specialty);
+  const role = plural.charAt(0).toUpperCase() + plural.slice(1);
   if (query.procedure) {
-    return `Best Radiation Oncologists for ${shortProcedureLabel(query.procedure)} in ${place}`;
+    return `Best ${role} for ${shortProcedureLabel(query.procedure)} in ${place}`;
   }
-  return `Best Radiation Oncologists in ${place}`;
+  return `Best ${role} in ${place}`;
 }
 
 export function doctorDiscoveryTitle(query: CatalogQuery) {
@@ -53,18 +79,19 @@ export function doctorDiscoveryTitle(query: CatalogQuery) {
 }
 
 export function doctorDiscoveryDescription(query: CatalogQuery, count: number) {
-  if (!isRadiationOncologyDiscovery(query)) return undefined;
+  if (!isDoctorSpecialtyDiscovery(query) || !query.specialty) return undefined;
   const place = doctorDiscoveryPlace(query);
+  const { plural } = doctorSpecialtyLabels(query.specialty);
   if (query.procedure && query.city) {
-    return `Review ${count} listed radiation oncologists associated with ${query.procedure} in ${query.city}, India. Inclusion uses specialty, hospital affiliation and exact procedure relationships in the GAF catalog, not a clinical ranking.`;
+    return `Review ${count} listed ${plural} associated with ${query.procedure} in ${query.city}, India. Inclusion uses specialty, hospital affiliation and exact procedure relationships in the GAF catalog, not a clinical ranking.`;
   }
   if (query.procedure) {
-    return `Review ${count} listed radiation oncologists associated with ${query.procedure} in ${place}. Inclusion is based on specialty, hospital affiliation and procedure relationships in the GAF catalog, not a clinical ranking.`;
+    return `Review ${count} listed ${plural} associated with ${query.procedure} in ${place}. Inclusion is based on specialty, hospital affiliation and procedure relationships in the GAF catalog, not a clinical ranking.`;
   }
   if (query.city) {
-    return `Review ${count} listed radiation oncologists in ${query.city}, India, with hospital affiliations, technique relationships and links to existing GAF treatment-cost guides.`;
+    return `Review ${count} listed ${plural} in ${query.city}, India, with hospital affiliations, procedure relationships and links to existing GAF treatment-cost guides.`;
   }
-  return `Review ${count} listed radiation oncologists in India. City and procedure counts come from the same catalog relationships used on this listing. GAF selection uses professional catalog information, not outcome rankings.`;
+  return `Review ${count} listed ${plural} in India. City and procedure counts come from the same catalog relationships used on this listing. GAF selection uses professional catalog information, not outcome rankings.`;
 }
 
 export function parseDoctorListingExtras(
@@ -161,7 +188,7 @@ export function relatedDoctorBlogs(doctor: Doctor) {
     .map((post) => ({ slug: post.slug, title: post.title, href: `/blogs/${post.slug}` }));
 }
 
-export function relatedDiscoveryBlogs(procedure?: string) {
+export function relatedDiscoveryBlogs(procedure?: string, specialty?: string) {
   const posts = listPublishedPosts("en").filter((post) => post.allowIndex);
   if (procedure) {
     const article = getCostArticle(toSlug(procedure));
@@ -184,10 +211,22 @@ export function relatedDiscoveryBlogs(procedure?: string) {
       })
       .map((post) => ({ name: post.title, href: `/blogs/${post.slug}` }));
   }
-  return radiationOncologyContentInventory
-    .filter((row) => row.kind === "blog")
-    .map((row) => posts.find((post) => `/blogs/${post.slug}` === row.url))
-    .filter((post): post is NonNullable<typeof post> => Boolean(post))
+  if (specialty === "Radiation Oncology") {
+    return radiationOncologyContentInventory
+      .filter((row) => row.kind === "blog")
+      .map((row) => posts.find((post) => `/blogs/${post.slug}` === row.url))
+      .filter((post): post is NonNullable<typeof post> => Boolean(post))
+      .map((post) => ({ name: post.title, href: `/blogs/${post.slug}` }));
+  }
+  const tokens = specialty
+    ? [toSlug(specialty), ...toSlug(specialty).split("-").filter((part) => part.length > 4)]
+    : [];
+  return posts
+    .filter((post) => {
+      const hay = `${post.slug} ${post.title}`.toLowerCase();
+      return tokens.some((token) => hay.includes(token));
+    })
+    .slice(0, 6)
     .map((post) => ({ name: post.title, href: `/blogs/${post.slug}` }));
 }
 
@@ -205,10 +244,14 @@ export function doctorProfileTitle(doctor: Doctor) {
 }
 
 export function radiationProcedureDoctorPath(procedure: string, city?: string) {
+  return doctorProcedurePath("Radiation Oncology", procedure, city);
+}
+
+export function doctorProcedurePath(specialty: string, procedure: string, city?: string) {
   return doctorsPath({
     destination: "India",
     city,
-    specialty: "Radiation Oncology",
+    specialty,
     procedure,
   });
 }
@@ -225,11 +268,19 @@ export function radiationDoctorCount(
   opts: { city?: string; procedure?: string },
   rows?: Doctor[],
 ) {
+  return doctorSpecialtyCount("Radiation Oncology", opts, rows);
+}
+
+export function doctorSpecialtyCount(
+  specialty: string,
+  opts: { city?: string; procedure?: string },
+  rows?: Doctor[],
+) {
   return filterDoctors(
     {
       destination: "India",
       city: opts.city,
-      specialty: "Radiation Oncology",
+      specialty,
       procedure: opts.procedure,
     },
     rows,
@@ -242,59 +293,68 @@ export function radiationDoctorPageIndexable(
   page: number,
   procedureDoctorCount: number,
 ) {
-  if (!isRadiationOncologyDiscovery(query)) return doctorListingIsIndexable(extras, page);
+  return doctorSpecialtyPageIndexable(query, extras, page, procedureDoctorCount);
+}
+
+export function doctorSpecialtyPageIndexable(
+  query: CatalogQuery,
+  extras: DoctorListingExtras,
+  page: number,
+  procedureDoctorCount: number,
+) {
+  if (!isDoctorSpecialtyDiscovery(query)) return doctorListingIsIndexable(extras, page);
   if (!doctorListingIsIndexable(extras, page)) return false;
   if (procedureDoctorCount < 1) return false;
-  if (query.procedure && procedureDoctorCount < RADIATION_DOCTOR_INDEX_MIN) return false;
+  if (query.procedure && procedureDoctorCount < DOCTOR_PROCEDURE_INDEX_MIN) return false;
   return true;
 }
 
 export function radiationOncologyDoctorSitemapPaths(rows?: Doctor[]) {
-  const paths = [
-    doctorsPath({ destination: "India", specialty: "Radiation Oncology" }),
-  ];
-  const country = filterDoctors(
-    {
-      destination: "India",
-      specialty: "Radiation Oncology",
-    },
-    rows,
+  return doctorSpecialtySitemapPaths(rows).filter((path) =>
+    path.includes("/Radiation-Oncology"),
   );
-  for (const city of INDIA_CITIES) {
-    const count = country.filter((doctor) => doctor.city === city).length;
-    if (count > 0) {
-      paths.push(
-        doctorsPath({
-          destination: "India",
-          city,
-          specialty: "Radiation Oncology",
-        }),
-      );
+}
+
+export function doctorSpecialtySitemapPaths(rows?: Doctor[]) {
+  const paths: string[] = [];
+  for (const specialty of SPECIALTIES) {
+    const profile = baseSpecialtyProfileFor(specialty.slug);
+    if (!profile) continue;
+    const country = filterDoctors(
+      { destination: "India", specialty: specialty.name },
+      rows,
+    );
+    if (country.length === 0) continue;
+    paths.push(doctorsPath({ destination: "India", specialty: specialty.name }));
+    for (const city of INDIA_CITIES) {
+      const count = country.filter((doctor) => doctor.city === city).length;
+      if (count > 0) {
+        paths.push(
+          doctorsPath({
+            destination: "India",
+            city,
+            specialty: specialty.name,
+          }),
+        );
+      }
     }
-  }
-  const procedures = proceduresForSpecialty("Radiation Oncology").map((row) => row.name);
-  for (const procedure of procedures) {
-    const count = country.filter((doctor) => doctorHasProcedure(doctor, procedure)).length;
-    if (count >= RADIATION_DOCTOR_INDEX_MIN) {
+    for (const procedure of proceduresForSpecialty(specialty.name)) {
+      const count = country.filter((doctor) =>
+        doctorHasProcedure(doctor, procedure.name),
+      ).length;
+      if (count < DOCTOR_PROCEDURE_INDEX_MIN) continue;
       paths.push(
-        doctorsPath({
-          destination: "India",
-          specialty: "Radiation Oncology",
-          procedure,
-        }),
+        doctorProcedurePath(specialty.name, procedure.name),
       );
       for (const city of INDIA_CITIES) {
         const cityCount = country.filter(
-          (doctor) => doctor.city === city && doctorHasProcedure(doctor, procedure),
+          (doctor) =>
+            doctor.city === city &&
+            doctorHasProcedure(doctor, procedure.name),
         ).length;
-        if (cityCount >= RADIATION_DOCTOR_INDEX_MIN) {
+        if (cityCount >= DOCTOR_PROCEDURE_INDEX_MIN) {
           paths.push(
-            doctorsPath({
-              destination: "India",
-              city,
-              specialty: "Radiation Oncology",
-              procedure,
-            }),
+            doctorProcedurePath(specialty.name, procedure.name, city),
           );
         }
       }

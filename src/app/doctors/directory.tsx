@@ -9,12 +9,12 @@ import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, filterDoctors, type CatalogQuery } from "@/lib/catalog";
 import { paginateDoctors } from "@/lib/doctors";
 import {
+  doctorSpecialtyPageIndexable,
   doctorListingIsIndexable,
-  isRadiationOncologyDiscovery,
-  radiationDoctorPageIndexable,
+  isDoctorSpecialtyDiscovery,
   type DoctorListingExtras,
 } from "@/lib/doctor-discovery";
-import { buildRadiationDoctorHub } from "@/lib/doctor-specialty-page";
+import { buildDoctorSpecialtyHub } from "@/lib/doctor-specialty-page";
 import { doctorsForLocale } from "@/lib/locale-catalog";
 import { absoluteUrl, faqJsonLd } from "@/lib/seo";
 import { catalogPageMetadata } from "@/lib/i18n/page-meta";
@@ -31,10 +31,10 @@ export async function doctorsDirectoryMetadata(
   page = 1,
 ): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (locale === "en" && isRadiationOncologyDiscovery(query)) {
-    const hub = buildRadiationDoctorHub(query, {}, 1, doctorsForLocale(locale));
+  if (locale === "en" && isDoctorSpecialtyDiscovery(query)) {
+    const hub = buildDoctorSpecialtyHub(query, {}, 1, doctorsForLocale(locale));
     if (hub) {
-      const indexable = radiationDoctorPageIndexable(query, extras, page, hub.paging.total);
+      const indexable = doctorSpecialtyPageIndexable(query, extras, page, hub.paging.total);
       return withLocaleMetadata(
         {
           title: hub.title,
@@ -76,7 +76,7 @@ export async function DoctorsDirectory({
 }) {
   const locale = await getRequestLocale();
   if (locale === "en") {
-    const hub = buildRadiationDoctorHub(query, extras, page, doctorsForLocale(locale));
+    const hub = buildDoctorSpecialtyHub(query, extras, page, doctorsForLocale(locale));
     if (hub) return <DoctorSpecialtyHub data={hub} query={query} />;
   }
 

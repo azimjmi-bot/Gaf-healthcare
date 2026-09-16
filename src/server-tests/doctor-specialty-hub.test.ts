@@ -2,9 +2,15 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { radiationOncologyContentInventory } from "../data/doctor-pages/radiation-oncology";
 import { doctors } from "../lib/doctors";
-import { buildRadiationDoctorHub } from "../lib/doctor-specialty-page";
-import { radiationDoctorCount, radiationDoctorPageIndexable } from "../lib/doctor-discovery";
+import { buildDoctorSpecialtyHub, buildRadiationDoctorHub } from "../lib/doctor-specialty-page";
+import {
+  doctorSpecialtyCount,
+  doctorSpecialtyPageIndexable,
+  radiationDoctorCount,
+  radiationDoctorPageIndexable,
+} from "../lib/doctor-discovery";
 import { clipToWords, discoveryQuickAnswers, wordCount } from "../lib/doctor-quick-answers";
+import { SPECIALTIES } from "../lib/taxonomy";
 
 test("Radiation Oncology India hub uses the Best H1 and existing cost URLs", () => {
   const hub = buildRadiationDoctorHub(
@@ -171,4 +177,69 @@ test("quick answers clip canonical source text instead of inventing copy", () =>
   assert.match(definition.answer, /robotic radiosurgery/i);
   const clipped = clipToWords("One. Two. Three four five six seven eight nine ten.", 4);
   assert.ok(clipped.startsWith("One."));
+});
+
+test("every India specialty with listed doctors gets the full doctor hub", () => {
+  for (const specialty of SPECIALTIES) {
+    const count = doctorSpecialtyCount(specialty.name, {}, doctors);
+    if (count === 0) continue;
+    const hub = buildDoctorSpecialtyHub(
+      { destination: "India", specialty: specialty.name },
+      {},
+      1,
+      doctors,
+    );
+    assert.ok(hub, specialty.name);
+    assert.equal(hub.specialtyName, specialty.name);
+    assert.equal(hub.paging.total, count);
+    assert.ok(hub.heading.startsWith("Best "), specialty.name);
+    assert.ok(hub.cities.length > 0, specialty.name);
+    assert.ok(hub.hospitals.length > 0, specialty.name);
+    assert.ok(hub.quickAnswers.length > 0, specialty.name);
+    assert.ok(hub.mainArticleAnswers.length > 0, specialty.name);
+  }
+});
+
+test("non-radiation procedure and city pages use exact specialty mappings", () => {
+  const query = {
+    destination: "India",
+    city: "Delhi NCR",
+    specialty: "Cardiology",
+    procedure: "Coronary Angioplasty & Stenting",
+  };
+  const hub = buildDoctorSpecialtyHub(query, {}, 1, doctors);
+  assert.ok(hub);
+  assert.equal(
+    hub.heading,
+    "Best Cardiologists for Coronary Angioplasty & Stenting in Delhi NCR, India",
+  );
+  assert.equal(
+    hub.paging.total,
+    doctorSpecialtyCount("Cardiology", {
+      city: "Delhi NCR",
+      procedure: "Coronary Angioplasty & Stenting",
+    }, doctors),
+  );
+  assert.ok(hub.hospitals.every((row) => row.hospital.city === "Delhi NCR"));
+  assert.equal(hub.mainArticleAnswers.length, 0);
+  assert.equal(
+    doctorSpecialtyPageIndexable(query, {}, 1, hub.paging.total),
+    hub.paging.total >= 3,
+  );
+});
+
+test("procedure pages reject cross-specialty taxonomy combinations", () => {
+  assert.equal(
+    buildDoctorSpecialtyHub(
+      {
+        destination: "India",
+        specialty: "Cardiology",
+        procedure: "Intensity-Modulated Radiotherapy (IMRT)",
+      },
+      {},
+      1,
+      doctors,
+    ),
+    undefined,
+  );
 });

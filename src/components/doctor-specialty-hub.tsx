@@ -44,15 +44,19 @@ export function DoctorSpecialtyHub({
   data: DoctorSpecialtyHubData;
   query: CatalogQuery;
 }) {
-  const ctaSubject = data.procedure ?? "radiation oncology treatment";
-  const consultParams = new URLSearchParams({ specialty: "radiation-oncology" });
+  const ctaSubject = data.procedure ?? `${data.specialtyName.toLowerCase()} treatment`;
+  const consultParams = new URLSearchParams({ specialty: data.specialtySlug });
   if (data.procedure) consultParams.set("treatment", data.procedure);
   if (data.cityName) consultParams.set("city", data.cityName);
   const consultHref = `/consult?${consultParams.toString()}`;
+  const practitioners = data.practitioners.charAt(0).toUpperCase() + data.practitioners.slice(1);
   const crumbs = [
     { name: "Doctors", path: "/doctors" },
     { name: "India", path: "/doctors/India" },
-    { name: "Radiation Oncology", path: "/doctors/India/Radiation-Oncology" },
+    {
+      name: data.specialtyName,
+      path: doctorsPath({ destination: "India", specialty: data.specialtyName }),
+    },
   ];
   if (data.cityName) {
     crumbs.push({
@@ -60,7 +64,7 @@ export function DoctorSpecialtyHub({
       path: doctorsPath({
         destination: "India",
         city: data.cityName,
-        specialty: "Radiation Oncology",
+        specialty: data.specialtyName,
       }),
     });
   }
@@ -79,7 +83,7 @@ export function DoctorSpecialtyHub({
           url: `https://gaf.healthcare${data.path}`,
           about: data.procedure
             ? { "@type": "MedicalProcedure", name: data.procedure }
-            : { "@type": "MedicalSpecialty", name: "Radiation Oncology" },
+            : { "@type": "MedicalSpecialty", name: data.specialtyName },
         }}
       />
       <JsonLd data={breadcrumbJsonLd(crumbs)} />
@@ -91,7 +95,7 @@ export function DoctorSpecialtyHub({
       />
       <JsonLd data={faqJsonLd(data.faqs)} />
 
-      <PageIntro eyebrow="Doctor discovery · Radiation Oncology" title={data.heading} lede={data.intro[0]}>
+      <PageIntro eyebrow={`Doctor discovery · ${data.specialtyName}`} title={data.heading} lede={data.intro[0]}>
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
             basePath="/doctors"
@@ -99,7 +103,7 @@ export function DoctorSpecialtyHub({
             query={query}
             chipStats={data.cityChipStats}
             resultCount={data.paging.total}
-            resultLabel={data.paging.total === 1 ? "specialist" : "specialists"}
+            resultLabel={data.paging.total === 1 ? data.practitioner : data.practitioners}
           />
         </Suspense>
         <Suspense fallback={null}>
@@ -121,7 +125,7 @@ export function DoctorSpecialtyHub({
 
         <dl className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
-            ["Listed specialists", String(data.paging.total)],
+            [`Listed ${data.practitioners}`, String(data.paging.total)],
             ["Featured profiles", String(data.featuredCount)],
             ["Hospitals represented", String(data.hospitals.length)],
             ["Cities with listings", String(data.cities.length)],
@@ -142,13 +146,13 @@ export function DoctorSpecialtyHub({
         ))}
         <p className="mt-4 text-sm">
           <Link href={data.specialtyCostHref} className="underline-offset-4 hover:underline">
-            Radiation oncology treatment costs in {data.place}
+            {data.specialtyName} treatment costs in {data.place}
           </Link>
           {data.cityCostHref ? (
             <>
               {" · "}
               <Link href={data.cityCostHref} className="underline-offset-4 hover:underline">
-                {data.cityName} radiation oncology city guide
+                {data.cityName} {data.specialtyName} city guide
               </Link>
             </>
           ) : null}
@@ -158,9 +162,9 @@ export function DoctorSpecialtyHub({
       {data.mainArticleAnswers.length > 0 ? (
         <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-5 md:px-8 md:pb-14">
           <HubHeading
-            eyebrow="Radiation Oncology guide"
-            title="Understanding Radiation Oncology"
-            intro="Clinical context from GAF Healthcare’s existing Radiation Oncology treatment guide."
+            eyebrow={`${data.specialtyName} guide`}
+            title={`Understanding ${data.specialtyName}`}
+            intro={`Clinical context from GAF Healthcare’s existing ${data.specialtyName} treatment guide.`}
           />
           <div className="mt-6 max-w-4xl space-y-8">
             {data.mainArticleAnswers.map((item) => (
@@ -208,11 +212,11 @@ export function DoctorSpecialtyHub({
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-16">
         <HubHeading
           eyebrow="Specialists"
-          title={data.featuredCount ? "Featured specialists" : "Listed specialists"}
+          title={data.featuredCount ? `Featured ${data.practitioners}` : `Listed ${data.practitioners}`}
           intro={`${data.paging.total} catalog records match the current filters. Ordering is alphabetical by city and name, not a ranking.`}
         />
         {data.paging.total === 0 ? (
-          <p className="mt-6 text-muted-foreground">No listed radiation oncologists match these filters.</p>
+          <p className="mt-6 text-muted-foreground">No listed {data.practitioners} match these filters.</p>
         ) : (
           <>
             <p className="mt-4 text-sm text-muted-foreground">
@@ -247,7 +251,7 @@ export function DoctorSpecialtyHub({
         <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
           <HubHeading
             eyebrow="Clinical decisions"
-            title={`How to choose a radiation oncologist in ${data.place}`}
+            title={`How to choose a ${data.practitioner} in ${data.place}`}
             intro="These are planning questions, not a scoring system. Technique, campus and follow-up still have to be confirmed in writing."
           />
           <ol className="mt-6 max-w-3xl list-decimal space-y-3 pl-5 text-sm leading-relaxed text-muted-foreground">
@@ -269,8 +273,8 @@ export function DoctorSpecialtyHub({
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
           <HubHeading
             eyebrow="Treatments"
-            title="Find radiation oncologists by treatment"
-            intro="Each technique keeps its canonical cost guide. Doctor lists only include exact procedure mappings."
+            title={`Find ${data.practitioners} by ${data.careItem}`}
+            intro={`Each ${data.careItem} keeps its canonical cost guide. Doctor lists only include exact procedure mappings.`}
           />
           <ul className="mt-6 grid gap-4 md:grid-cols-2">
             {data.procedures.map((row) => (
@@ -279,10 +283,10 @@ export function DoctorSpecialtyHub({
                 {row.note ? <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{row.note}</p> : null}
                 <p className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
                   <Link href={row.href} className="underline-offset-4 hover:underline">
-                    Radiation oncologists for {row.name}
+                    {practitioners} for {row.name}
                   </Link>
                   <Link
-                    href={costsFilterPath({ destination: "India", specialty: "Radiation Oncology", procedure: row.name })}
+                    href={costsFilterPath({ destination: "India", specialty: data.specialtyName, procedure: row.name })}
                     className="underline-offset-4 hover:underline"
                   >
                     {row.name} treatment in India
@@ -303,8 +307,8 @@ export function DoctorSpecialtyHub({
         <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
           <HubHeading
             eyebrow="Related procedures"
-            title="Related Radiation Oncology procedures"
-            intro="These links come from the controlled taxonomy and existing treatment guides. Distinct techniques are not merged."
+            title={`Related ${data.specialtyName} ${data.careItems}`}
+            intro="These links come from the controlled taxonomy and existing treatment guides. Distinct procedures are not merged."
           />
           <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
             {data.relatedProcedures.map((row) => (
@@ -332,7 +336,7 @@ export function DoctorSpecialtyHub({
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
           <HubHeading
             eyebrow="Cities"
-            title="Radiation oncologists by city"
+            title={`${practitioners} by city`}
             intro="City pages use live catalog counts. Empty combinations are omitted rather than published as thin URLs."
           />
           <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
@@ -354,7 +358,7 @@ export function DoctorSpecialtyHub({
       <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
         <HubHeading
           eyebrow="Hospitals"
-          title="Hospitals with radiation oncology specialists"
+            title={`Hospitals with ${data.practitioners}`}
           intro="Counts are current doctor relationships at each campus. A hospital profile remains the canonical campus page."
         />
         <ul className="mt-6 grid gap-3 md:grid-cols-2">
@@ -364,17 +368,17 @@ export function DoctorSpecialtyHub({
                 {hospital.name}
               </Link>
               <p className="mt-1 text-sm text-muted-foreground">
-                {hospital.city} · {count} listed radiation oncologist{count === 1 ? "" : "s"}
+                {hospital.city} · {count} listed {count === 1 ? data.practitioner : data.practitioners}
               </p>
               <Link
                 href={hospitalsPath({
                   destination: "India",
                   city: hospital.city,
-                  specialty: "Radiation Oncology",
+                  specialty: data.specialtyName,
                 })}
                 className="mt-3 inline-block text-sm underline-offset-4 hover:underline"
               >
-                Radiation oncology hospitals in {hospital.city}
+                {data.specialtyName} hospitals in {hospital.city}
               </Link>
             </li>
           ))}
@@ -393,7 +397,7 @@ export function DoctorSpecialtyHub({
           <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
             <HubHeading
               eyebrow="Related conditions"
-              title="Conditions with an explicit Radiation Oncology relationship"
+              title={`Conditions with an explicit ${data.specialtyName} relationship`}
               intro="These links come from the specialty guide taxonomy. They are not inferred from a doctor’s procedure list and are not a claim of individual doctor expertise."
             />
             <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -434,7 +438,7 @@ export function DoctorSpecialtyHub({
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
           <HubHeading
             eyebrow="Costs"
-            title={`Radiation Oncology treatment costs in ${data.place}`}
+            title={`${data.specialtyName} treatment costs in ${data.place}`}
             intro="These are the existing GAF cost guides. They are not doctor-specific prices."
           />
           <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
@@ -452,7 +456,7 @@ export function DoctorSpecialtyHub({
 
       {data.blogs.length > 0 ? (
         <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8">
-          <HubHeading eyebrow="Guides" title="Existing Radiation Oncology reading" />
+          <HubHeading eyebrow="Guides" title={`Existing ${data.specialtyName} reading`} />
           <ul className="mt-6 space-y-2 text-sm">
             {data.blogs.map((row) => (
               <li key={row.href}>

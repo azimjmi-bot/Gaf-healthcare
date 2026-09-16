@@ -1,6 +1,6 @@
 import { getCostArticle } from "@/data/cost-articles";
+import { baseSpecialtyProfileFor } from "@/data/specialty-pages/base-profiles";
 import type { SpecialtyPageProfile } from "@/data/specialty-pages/types";
-import { radiationOncologyIndiaProfile } from "@/data/specialty-pages/radiation-oncology";
 import type { Doctor } from "@/lib/doctors";
 import { costPath, costsFilterPath } from "@/lib/catalog-links";
 import { getCity, getProcedure, getSpecialty, proceduresForSpecialty, toSlug } from "@/lib/taxonomy";
@@ -52,8 +52,7 @@ export function clipToWords(text: string, max = QUICK_ANSWER_MAX_WORDS) {
 
 export function specialtyProfileFor(specialty: string): SpecialtyPageProfile | undefined {
   const taxon = getSpecialty(specialty);
-  if (taxon?.slug === "radiation-oncology") return radiationOncologyIndiaProfile;
-  return undefined;
+  return taxon ? baseSpecialtyProfileFor(taxon.slug) : undefined;
 }
 
 export function procedureDefinitionFromCanonical(procedure: string) {
@@ -116,7 +115,7 @@ export function specialtyDefinitionFromCanonical(specialty: string) {
   };
 }
 
-export function radiationOncologistRoleFromCanonical(specialty = "Radiation Oncology") {
+export function specialistRoleFromCanonical(specialty: string) {
   const profile = specialtyProfileFor(specialty);
   const paragraph = profile?.overview[0];
   if (!paragraph) return undefined;
@@ -247,7 +246,7 @@ export function doctorWhoAnswer(doctor: Doctor): QuickAnswerItem {
 export function specialtyGuideQuickAnswers(specialty: string): QuickAnswerItem[] {
   const items: QuickAnswerItem[] = [];
   const specialtySource = specialtyDefinitionFromCanonical(specialty);
-  const roleSource = radiationOncologistRoleFromCanonical(specialty);
+  const roleSource = specialistRoleFromCanonical(specialty);
 
   if (specialtySource?.text) {
     items.push({
@@ -260,8 +259,13 @@ export function specialtyGuideQuickAnswers(specialty: string): QuickAnswerItem[]
   }
 
   if (roleSource?.text) {
+    const practitioner =
+      specialtyProfileFor(specialty)?.terminology.practitioner ??
+      `${specialty} specialist`;
+    const displayPractitioner =
+      practitioner.charAt(0).toUpperCase() + practitioner.slice(1);
     items.push({
-      question: `What does a ${getSpecialty(specialty)?.name === "Radiation Oncology" ? "Radiation Oncologist" : `${specialty} specialist`} do?`,
+      question: `What does a ${displayPractitioner} do?`,
       answer: roleSource.text,
       sourceHref: roleSource.source.canonicalUrl,
       sourceLabel: `Read the ${specialty} treatment guide`,
@@ -281,13 +285,38 @@ export function discoveryQuickAnswers(opts: {
   cityCount: number;
   hospitalCount: number;
   cityNames?: string[];
+  procedureNames?: string[];
 }): QuickAnswerItem[] {
-  if (!opts.cityName && !opts.procedure && opts.specialty === "Radiation Oncology") {
+  if (!opts.cityName && !opts.procedure) {
     const cityNames = opts.cityNames ?? [];
     const cityList =
       cityNames.length > 1
         ? `${cityNames.slice(0, -1).join(", ")} and ${cityNames.at(-1)}`
         : cityNames[0] || `${opts.cityCount} cities`;
+    if (opts.specialty !== "Radiation Oncology") {
+      const profile = specialtyProfileFor(opts.specialty);
+      const practitioners = profile?.terminology.practitioners ?? "specialists";
+      const careItems = profile?.terminology.careItems ?? "procedures";
+      const procedureNames = (opts.procedureNames ?? []).slice(0, 8);
+      const procedureList =
+        procedureNames.length > 1
+          ? `${procedureNames.slice(0, -1).join(", ")} and ${procedureNames.at(-1)}`
+          : procedureNames[0] || "the procedures shown in this directory";
+      return [
+        {
+          question: `How many ${practitioners} are listed in India?`,
+          answer: `GAF currently lists ${opts.doctorCount} ${practitioners} across ${opts.cityCount} cities and ${opts.hospitalCount} hospitals.`,
+        },
+        {
+          question: `Which ${opts.specialty} ${careItems} can I find specialists for?`,
+          answer: `Doctors are mapped to catalog procedures including ${procedureList}. Open a procedure page to see specialists with that exact relationship.`,
+        },
+        {
+          question: "Which cities are covered?",
+          answer: `${cityList}.`,
+        },
+      ];
+    }
     return [
       {
         question: "How many radiation oncologists are listed in India?",
