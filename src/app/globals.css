@@ -2474,6 +2474,72 @@ img.dhero__art {
   color: var(--muted-foreground);
 }
 
+.md-body hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+
+.md-body pre {
+  overflow-x: auto;
+  border-radius: 0.65rem;
+  background: var(--ink);
+  padding: 1rem;
+  color: var(--ivory);
+  font-size: 0.9rem;
+}
+
+.md-body :not(pre) > code {
+  border-radius: 0.3rem;
+  background: var(--secondary);
+  padding: 0.12rem 0.3rem;
+  font-size: 0.9em;
+}
+
+.md-body table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+
+.md-body th,
+.md-body td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.7rem;
+  text-align: start;
+}
+
+.md-body th {
+  background: var(--secondary);
+  color: var(--foreground);
+  font-weight: 650;
+}
+
+.md-body img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+
+.article-body > .md-body + .md-body {
+  margin-top: 1.4rem;
+}
+
+.article-body .md-body h2 {
+  margin-top: 1.4rem;
+  font-size: 2rem;
+}
+
+.article-body .md-body h3 {
+  margin-top: 1.2rem;
+  font-size: 1.5rem;
+}
+
+.article-body .md-body h4 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
 .cms-plain {
   width: 100%;
   min-height: 12rem;

@@ -1,7 +1,17 @@
 "use client";
 
 import { useRef, useState } from "react";
-import { Bold, Heading2, Italic, Link2, List } from "lucide-react";
+import {
+  Bold,
+  Code2,
+  Heading2,
+  ImageIcon,
+  Italic,
+  Link2,
+  List,
+  ListOrdered,
+  Quote,
+} from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import { MarkdownBody } from "@/components/markdown-body";
 
@@ -86,8 +96,20 @@ export function CmsMarkdownField({
             <button type="button" title="List" onClick={() => prefixLines("- ")}>
               <List className="size-3.5" />
             </button>
+            <button type="button" title="Numbered list" onClick={() => prefixLines("1. ")}>
+              <ListOrdered className="size-3.5" />
+            </button>
+            <button type="button" title="Quote" onClick={() => prefixLines("> ")}>
+              <Quote className="size-3.5" />
+            </button>
             <button type="button" title="Link" onClick={() => wrap("[", "](https://)")}>
               <Link2 className="size-3.5" />
+            </button>
+            <button type="button" title="Image" onClick={() => wrap("![", "](https://)", "alt text")}>
+              <ImageIcon className="size-3.5" />
+            </button>
+            <button type="button" title="Code block" onClick={() => wrap("```\n", "\n```", "code")}>
+              <Code2 className="size-3.5" />
             </button>
           </div>
           <Textarea

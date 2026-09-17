@@ -20,6 +20,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { CoverImage } from "@/components/article-body";
+import { CmsMarkdownField } from "@/components/cms/cms-markdown-field";
 import type { Article, ArticleBlock, CmsStore, MediaItem } from "@/lib/cms/types";
 import { newId } from "@/lib/cms/types";
 
@@ -166,7 +167,7 @@ export function CmsArticleEditor({
           <div className="cms-inserter">
             {(
               [
-                ["paragraph", Type, "Paragraph"],
+                ["paragraph", Type, "Markdown"],
                 ["heading", Heading2, "Heading"],
                 ["quote", Quote, "Quote"],
                 ["list", List, "List"],
@@ -213,7 +214,7 @@ export function CmsArticleEditor({
           {article.blocks.map((block, index) => (
             <div key={block.id} className="cms-block">
               <div className="cms-block__tools">
-                <span>{block.type}</span>
+                <span>{block.type === "paragraph" ? "markdown" : block.type}</span>
                 <button type="button" onClick={() => move(block.id, -1)} disabled={index === 0}>
                   <ArrowUp className="size-3.5" />
                 </button>
@@ -234,10 +235,12 @@ export function CmsArticleEditor({
                 </button>
               </div>
               {block.type === "paragraph" ? (
-                <Textarea
+                <CmsMarkdownField
+                  label="Article content"
                   value={block.text}
-                  placeholder="Write…"
-                  onChange={(e) => setBlock(block.id, { ...block, text: e.target.value })}
+                  rows={18}
+                  hint="Markdown supported: headings, bold, italic, links, images, quotes, lists, task lists, tables and code."
+                  onChange={(text) => setBlock(block.id, { ...block, text })}
                 />
               ) : null}
               {block.type === "heading" ? (

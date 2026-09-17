@@ -1,4 +1,5 @@
 import type { Article, ArticleBlock } from "@/lib/cms/types";
+import { MarkdownBody } from "@/components/markdown-body";
 
 export function CoverImage({
   src,
@@ -19,12 +20,32 @@ export function CoverImage({
   );
 }
 
-export function ArticleBlocks({ blocks }: { blocks: ArticleBlock[] }) {
+function withoutDuplicateTitle(source: string, title?: string) {
+  if (!title) return source;
+  const match = source.match(/^\s*#\s+(.+?)\s*(?:\n+|$)/);
+  if (!match) return source;
+  const normalize = (value: string) =>
+    value.trim().toLocaleLowerCase().replace(/\s+/g, " ");
+  return normalize(match[1]) === normalize(title)
+    ? source.slice(match[0].length)
+    : source;
+}
+
+export function ArticleBlocks({
+  blocks,
+  title,
+}: {
+  blocks: ArticleBlock[];
+  title?: string;
+}) {
   return (
     <div className="article-body">
       {blocks.map((block) => {
         if (block.type === "paragraph") {
-          return block.text.trim() ? <p key={block.id}>{block.text}</p> : null;
+          const source = withoutDuplicateTitle(block.text, title);
+          return source.trim() ? (
+            <MarkdownBody key={block.id} source={source} />
+          ) : null;
         }
         if (block.type === "heading") {
           if (block.level === 3) return <h3 key={block.id}>{block.text}</h3>;

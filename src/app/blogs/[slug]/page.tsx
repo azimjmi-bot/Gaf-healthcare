@@ -82,7 +82,7 @@ export default async function BlogPostPage({
           </p>
         ) : null}
         <div className="mt-8">
-          <ArticleBlocks blocks={post.blocks} />
+          <ArticleBlocks blocks={post.blocks} title={post.title} />
         </div>
         <ArticleRelated links={post.relatedLinks} />
         <Link
