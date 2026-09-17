@@ -192,6 +192,7 @@ export function validateTreatmentForSave(
       errors.push(`${locale.toUpperCase()}: short description is required to publish.`);
     }
     if (
+      !hasText(translation.editorialBody) &&
       !hasText(translation.fullDescription) &&
       !hasText(translation.overview) &&
       !hasText(translation.whatIsIt)

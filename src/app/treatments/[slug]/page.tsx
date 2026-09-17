@@ -23,6 +23,7 @@ import { treatmentUi } from "@/lib/i18n/treatment-ui";
 import { whatsappHref } from "@/lib/site";
 import { getCountry, getSpecialty } from "@/lib/taxonomy";
 import { catalogTreatments } from "@/lib/treatments";
+import { treatmentEditorialBody } from "@/lib/curated-treatment-editorial";
 
 type Params = Promise<{ slug: string }>;
 
@@ -56,22 +57,6 @@ export async function generateMetadata({
     `/treatments/${treatment.slug}`,
     locale,
     LOCALES,
-  );
-}
-
-function EditorialSection({
-  title,
-  source,
-}: {
-  title: string;
-  source: string;
-}) {
-  if (!source.trim()) return null;
-  return (
-    <section className="treatment-article__section">
-      <h2>{title}</h2>
-      <MarkdownBody source={source} />
-    </section>
   );
 }
 
@@ -235,20 +220,9 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
 
       <div className="page-wrap treatment-profile__content">
         <article className="treatment-article">
-          <EditorialSection title={ui.overview} source={copy.overview} />
-          {copy.fullDescription ? (
-            <section className="treatment-article__section treatment-article__intro">
-              <MarkdownBody source={copy.fullDescription} />
-            </section>
-          ) : null}
-          <EditorialSection title={ui.whatIsIt} source={copy.whatIsIt} />
-          <EditorialSection
-            title={ui.conditionsTreated}
-            source={copy.conditionsTreated}
-          />
-          <EditorialSection title={ui.whyPerformed} source={copy.whyPerformed} />
-          <EditorialSection title={ui.whoMayNeed} source={copy.whoMayNeed} />
-          <EditorialSection title={ui.howItWorks} source={copy.howItWorks} />
+          <section className="treatment-article__section treatment-article__intro">
+            <MarkdownBody source={treatmentEditorialBody(copy, locale)} />
+          </section>
 
           {copy.process.length > 0 ? (
             <section className="treatment-article__section">
@@ -266,19 +240,6 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
               </ol>
             </section>
           ) : null}
-
-          <EditorialSection title={ui.preparation} source={copy.preparation} />
-          <EditorialSection
-            title={ui.procedureDetails}
-            source={copy.procedureDetails}
-          />
-          <EditorialSection title={ui.recovery} source={copy.recovery} />
-          <EditorialSection title={ui.risks} source={copy.risks} />
-          <EditorialSection title={ui.followUp} source={copy.followUp} />
-          <EditorialSection
-            title={ui.considerations}
-            source={copy.importantConsiderations}
-          />
         </article>
 
         {keyInformation.length > 0 ? (

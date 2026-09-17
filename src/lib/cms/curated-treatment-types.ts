@@ -19,6 +19,8 @@ export type CuratedTreatmentTranslation = {
   status: TreatmentTranslationStatus;
   name: string;
   shortDescription: string;
+  editorialBody: string;
+  /** Legacy section fields remain readable for records authored before the unified editor. */
   fullDescription: string;
   overview: string;
   whatIsIt: string;
@@ -76,6 +78,7 @@ export function blankTreatmentTranslation(): CuratedTreatmentTranslation {
     status: "draft",
     name: "",
     shortDescription: "",
+    editorialBody: "",
     fullDescription: "",
     overview: "",
     whatIsIt: "",

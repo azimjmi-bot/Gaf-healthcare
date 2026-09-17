@@ -10,6 +10,7 @@ import { blankTreatmentTranslation } from "@/lib/cms/curated-treatment-types";
 import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
 import { LOCALES } from "@/lib/i18n/languages";
+import { treatmentEditorialBody } from "@/lib/curated-treatment-editorial";
 
 test("a curated Treatment stores shared relationships once", () => {
   const treatment = blankCuratedTreatment({ treatments: [] });
@@ -24,7 +25,7 @@ test("a curated Treatment stores shared relationships once", () => {
     status: "published",
     name: "Gamma Knife Radiosurgery",
     shortDescription: "A focused radiosurgery treatment.",
-    overview: "A patient-focused overview.",
+    editorialBody: "## Treatment overview\n\nA patient-focused overview.",
   };
   treatment.translations.ar = {
     ...blankTreatmentTranslation(),
@@ -54,9 +55,28 @@ test("publishing rejects incomplete core and language records", () => {
     status: "published",
     name: "Gamma Knife Radiosurgery",
     shortDescription: "A focused radiosurgery treatment.",
-    overview: "A detailed overview for patients.",
+    editorialBody: "## Treatment overview\n\nA detailed overview for patients.",
   };
   assert.deepEqual(validateTreatmentForSave(treatment), []);
+});
+
+test("the unified editor preserves legacy structured editorial content", () => {
+  const translation = {
+    ...blankTreatmentTranslation(),
+    fullDescription: "Introductory context.",
+    overview: "Existing overview.",
+    recovery: "Existing recovery guidance.",
+  };
+  const migrated = treatmentEditorialBody(translation, "en");
+  assert.match(migrated, /^Introductory context\./);
+  assert.match(migrated, /## Treatment Overview\n\nExisting overview\./);
+  assert.match(migrated, /## Recovery\n\nExisting recovery guidance\./);
+
+  translation.editorialBody = "## One article\n\nNew editorial copy.";
+  assert.equal(
+    treatmentEditorialBody(translation, "en"),
+    translation.editorialBody,
+  );
 });
 
 test("slug uniqueness covers current and historical canonical slugs", () => {

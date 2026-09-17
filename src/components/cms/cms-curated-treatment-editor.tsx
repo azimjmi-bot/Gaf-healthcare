@@ -19,6 +19,10 @@ import {
   CMS_EDITIONS,
   type CmsEdition,
 } from "@/lib/cms/edition";
+import {
+  LEGACY_TREATMENT_EDITORIAL_FIELDS,
+  treatmentEditorialBody,
+} from "@/lib/curated-treatment-editorial";
 import { toSlug, type Taxon } from "@/lib/taxonomy";
 
 type RelationKind = "doctors" | "hospitals" | "costs" | "related";
@@ -63,6 +67,20 @@ export function CmsCuratedTreatmentEditor({
         },
       },
     }));
+  }
+
+  function setEditorialBody(value: string) {
+    setTreatment((current) => {
+      const next = {
+        ...(current.translations[locale] ?? blankTreatmentTranslation()),
+        editorialBody: value,
+      };
+      for (const key of LEGACY_TREATMENT_EDITORIAL_FIELDS) next[key] = "";
+      return {
+        ...current,
+        translations: { ...current.translations, [locale]: next },
+      };
+    });
   }
 
   function addTranslation() {
@@ -486,33 +504,13 @@ export function CmsCuratedTreatmentEditor({
               </label>
             </div>
 
-            <div className="cms-treatment-editor__markdown">
-              {(
-                [
-                  ["fullDescription", "Full description"],
-                  ["overview", "Treatment overview"],
-                  ["whatIsIt", "What is the Treatment?"],
-                  ["conditionsTreated", "What condition does it treat?"],
-                  ["whyPerformed", "Why is it performed?"],
-                  ["whoMayNeed", "Who may need it?"],
-                  ["howItWorks", "How the Treatment works"],
-                  ["preparation", "Preparation"],
-                  ["procedureDetails", "Procedure details"],
-                  ["recovery", "Recovery"],
-                  ["risks", "Risks and possible complications"],
-                  ["followUp", "Follow-up"],
-                  ["importantConsiderations", "Important considerations"],
-                ] as const
-              ).map(([key, label]) => (
-                <CmsMarkdownField
-                  key={key}
-                  label={label}
-                  value={translation[key]}
-                  rows={7}
-                  onChange={(value) => setTranslation(key, value)}
-                />
-              ))}
-            </div>
+            <CmsMarkdownField
+              label="Treatment article"
+              value={treatmentEditorialBody(translation, locale)}
+              rows={36}
+              hint="One continuous Markdown article. Use H2/H3 headings, short paragraphs, lists and links. Key facts, process steps and FAQs remain structured below."
+              onChange={setEditorialBody}
+            />
 
             <div className="cms-form-grid">
               {(
