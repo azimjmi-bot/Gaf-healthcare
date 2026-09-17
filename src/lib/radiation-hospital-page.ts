@@ -12,7 +12,6 @@ import {
 import {
   costPath,
   costsFilterPath,
-  doctorsPath,
   hospitalsPath,
 } from "@/lib/catalog-links";
 import type { Doctor } from "@/lib/doctors";
@@ -339,10 +338,6 @@ export function buildRadiationHospitalHub(
   const paging = paginateHospitals(matchedHospitals, page);
   const procedure = query.procedure ? getProcedure(query.procedure) : undefined;
   const city = query.city ? getCity(query.city) : undefined;
-  const procedureSource = query.procedure
-    ? procedureDefinitionFromCanonical(query.procedure)
-    : undefined;
-
   const procedures = proceduresForSpecialty(RADIATION_HOSPITAL_SPECIALTY)
     .map((row) => {
       const count = validatedRadiationHospitals(
