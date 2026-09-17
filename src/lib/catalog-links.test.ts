@@ -85,3 +85,32 @@ test("lowercase catalog aliases resolve for canonical path normalization", () =>
     },
   );
 });
+
+test("unique procedure acronyms resolve to canonical taxonomy names", () => {
+  assert.deepEqual(
+    parsePrettyCatalogSegments([
+      "India",
+      "Radiation-Oncology",
+      "IMRT",
+    ]),
+    {
+      destination: "India",
+      specialty: "Radiation Oncology",
+      procedure: "Intensity-Modulated Radiotherapy (IMRT)",
+    },
+  );
+  assert.deepEqual(
+    parsePrettyCatalogSegments([
+      "India",
+      "Delhi-NCR",
+      "Radiation-Oncology",
+      "SBRT",
+    ]),
+    {
+      destination: "India",
+      city: "Delhi NCR",
+      specialty: "Radiation Oncology",
+      procedure: "Stereotactic Body Radiotherapy (SBRT)",
+    },
+  );
+});

@@ -51,7 +51,23 @@ function matchSpecialtyName(segment: string) {
 }
 
 function matchProcedureName(segment: string) {
-  return matchBySlug(segment, PROCEDURES)?.name;
+  const direct = matchBySlug(segment, PROCEDURES);
+  if (direct) return direct.name;
+  let decoded = segment;
+  try {
+    decoded = decodeURIComponent(segment);
+  } catch {
+    // Invalid percent-encoding cannot match a known alias.
+  }
+  const alias = decoded.replace(/[^a-z0-9]/gi, "").toLowerCase();
+  if (!alias) return undefined;
+  const acronymMatches = PROCEDURES.filter((procedure) => {
+    const match = procedure.name.match(/\(([^)]+)\)\s*$/);
+    return (
+      match?.[1].replace(/[^a-z0-9]/gi, "").toLowerCase() === alias
+    );
+  });
+  return acronymMatches.length === 1 ? acronymMatches[0].name : undefined;
 }
 
 export function isCountrySegment(segment: string) {
