@@ -3,6 +3,7 @@ import { CtaBand } from "@/components/page-shell";
 import { PseoTrust } from "@/components/pseo-trust";
 import { doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { doctorHasProcedure } from "@/lib/catalog";
+import { hospitalSpecialtyCombinationIndexable } from "@/lib/radiation-hospital-page";
 import { loadHospitalCampus, requireHospitalCampus } from "@/lib/hospital-campus";
 import { LOCALES } from "@/lib/i18n/languages";
 import { interpolate } from "@/lib/i18n/messages";
@@ -28,6 +29,22 @@ export async function HospitalProcedures({ slug }: { slug: string }) {
   const t = uiCatalogFor(locale);
   const { hospital, faculty, groups } = requireHospitalCampus(slug, locale);
   const procedureGroups = groups.filter((g) => g.treatments.length > 0);
+  const eligibleHospitalProcedurePaths =
+    locale === "en"
+      ? new Set(
+          procedureGroups.flatMap((group) =>
+            group.treatments
+              .filter((treatment) =>
+                hospitalSpecialtyCombinationIndexable({
+                  destination: "India",
+                  specialty: group.name,
+                  procedure: treatment.name,
+                }),
+              )
+              .map((treatment) => `${group.slug}:${treatment.slug}`),
+          ),
+        )
+      : new Set<string>();
 
   return (
     <div className="hospital-profile">
@@ -70,22 +87,20 @@ export async function HospitalProcedures({ slug }: { slug: string }) {
                       >
                         {t["hp.doctorsLink"]}
                       </Link>
-                      {locale === "en" &&
-                      g.slug === "radiation-oncology" &&
+                      {eligibleHospitalProcedurePaths.has(`${g.slug}:${row.slug}`) &&
                       faculty.some(
                         (doctor) =>
-                          doctor.specialty === "Radiation Oncology" &&
+                          doctor.specialtySlug === g.slug &&
                           doctorHasProcedure(doctor, row.name),
                       ) ? (
                         <Link
                           href={hospitalsPath({
                             destination: hospital.country,
-                            city: hospital.city,
-                            specialty: "Radiation Oncology",
+                            specialty: g.name,
                             procedure: row.name,
                           })}
                         >
-                          Hospitals for {row.name} in {hospital.city}
+                          Hospitals for {row.name} in India
                         </Link>
                       ) : null}
                     </li>

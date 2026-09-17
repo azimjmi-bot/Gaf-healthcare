@@ -7,11 +7,11 @@ import { CtaBand, PageIntro } from "@/components/page-shell";
 import { PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
 import { PseoTrust } from "@/components/pseo-trust";
 import { QuickAnswer } from "@/components/quick-answer";
-import { RadiationHospitalCard } from "@/components/radiation-hospital-card";
+import { HospitalSpecialtyCard } from "@/components/radiation-hospital-card";
 import { LocaleLink as Link } from "@/components/locale-link";
 import type { CatalogQuery } from "@/lib/catalog";
 import { doctorsPath, hospitalsPath } from "@/lib/catalog-links";
-import type { RadiationHospitalHubData } from "@/lib/radiation-hospital-page";
+import type { HospitalSpecialtyHubData } from "@/lib/radiation-hospital-page";
 import {
   breadcrumbJsonLd,
   doctorItemListJsonLd,
@@ -45,15 +45,15 @@ function SectionHeading({
   );
 }
 
-export function RadiationHospitalHub({
+export function HospitalSpecialtyHub({
   data,
   query,
 }: {
-  data: RadiationHospitalHubData;
+  data: HospitalSpecialtyHubData;
   query: CatalogQuery;
 }) {
-  const consultHref = `/consult?specialty=radiation-oncology${data.cityName ? `&city=${encodeURIComponent(data.cityName)}` : ""}${data.procedure ? `&treatment=${encodeURIComponent(data.procedure)}` : ""}`;
-  const ctaSubject = data.procedure ?? "radiation oncology treatment";
+  const consultHref = `/consult?specialty=${data.specialtySlug}${data.cityName ? `&city=${encodeURIComponent(data.cityName)}` : ""}${data.procedure ? `&treatment=${encodeURIComponent(data.procedure)}` : ""}`;
+  const ctaSubject = data.procedure ?? `${data.specialtyName.toLowerCase()} ${data.careItem}`;
   const visibleHospitals = data.paging.items
     .map((hospital) =>
       data.hospitals.find((row) => row.hospital.slug === hospital.slug),
@@ -72,14 +72,14 @@ export function RadiationHospitalHub({
         ]
       : []),
     {
-      name: "Radiation Oncology",
+      name: data.specialtyName,
       path: data.cityName
         ? hospitalsPath({
             destination: "India",
             city: data.cityName,
-            specialty: "Radiation Oncology",
+            specialty: data.specialtyName,
           })
-        : hospitalsPath({ destination: "India", specialty: "Radiation Oncology" }),
+        : hospitalsPath({ destination: "India", specialty: data.specialtyName }),
     },
     ...(data.procedure ? [{ name: data.procedure, path: data.path }] : []),
   ];
@@ -95,7 +95,7 @@ export function RadiationHospitalHub({
           url: `https://gaf.healthcare${data.path}`,
           about: data.procedure
             ? { "@type": "MedicalProcedure", name: data.procedure }
-            : { "@type": "MedicalSpecialty", name: "Radiation Oncology" },
+            : { "@type": "MedicalSpecialty", name: data.specialtyName },
         }}
       />
       <JsonLd data={breadcrumbJsonLd(breadcrumbItems)} />
@@ -109,14 +109,14 @@ export function RadiationHospitalHub({
       />
       <JsonLd
         data={doctorItemListJsonLd(data.doctors, {
-          name: `Radiation oncologists associated with ${data.procedure ?? "validated hospitals"} in ${data.place}`,
+          name: `${data.practitioners} associated with ${data.procedure ?? "validated hospitals"} in ${data.place}`,
           path: data.path,
           addressCountry: "IN",
         })}
       />
 
       <PageIntro
-        eyebrow="Hospital discovery · Radiation Oncology"
+        eyebrow={`Hospital discovery · ${data.specialtyName}`}
         title={data.heading}
         lede={data.description}
       >
@@ -159,8 +159,8 @@ export function RadiationHospitalHub({
           ))}
         </dl>
         <p className="mt-4 max-w-4xl text-sm leading-relaxed text-muted-foreground">
-          Hospital inclusion requires a Radiation Oncology specialty relationship and an
-          affiliated radiation oncologist. Procedure pages additionally require matching
+          Hospital inclusion requires a {data.specialtyName} relationship and an
+          affiliated {data.practitioner}. Procedure pages additionally require matching
           hospital-procedure and doctor-procedure relationships.
         </p>
       </section>
@@ -179,7 +179,7 @@ export function RadiationHospitalHub({
             title={
               data.procedure
                 ? `Hospitals offering ${data.procedure} in ${data.place}`
-                : `Radiation Oncology hospitals in ${data.place}`
+                : `${data.specialtyName} hospitals in ${data.place}`
             }
             intro="Cards use factual campus data and validated relationship counts. Ordering is alphabetical by city and hospital name, not a ranking."
           />
@@ -188,9 +188,12 @@ export function RadiationHospitalHub({
           </p>
           <div className="mt-6 grid gap-5">
             {visibleHospitals.map((relationship) => (
-              <RadiationHospitalCard
+              <HospitalSpecialtyCard
                 key={relationship.hospital.slug}
                 relationship={relationship}
+                specialtyName={data.specialtyName}
+                practitioner={data.practitioner}
+                practitioners={data.practitioners}
                 selectedProcedure={data.procedure}
               />
             ))}
@@ -258,8 +261,8 @@ export function RadiationHospitalHub({
             eyebrow="Procedures"
             title={
               data.procedure
-                ? `Related Radiation Oncology procedures`
-                : `Radiation Oncology procedures in ${data.place}`
+                ? `Related ${data.specialtyName} ${data.careItems}`
+                : `${data.specialtyName} ${data.careItems} in ${data.place}`
             }
           />
           <ul className="mt-6 grid gap-3">
@@ -284,7 +287,7 @@ export function RadiationHospitalHub({
             title={
               data.procedure
                 ? `Cities with hospitals offering ${data.procedure}`
-                : "Radiation Oncology hospitals by city"
+                : `${data.specialtyName} hospitals by city`
             }
           />
           <ul className="mt-6 grid gap-3 sm:grid-cols-2">
@@ -319,10 +322,10 @@ export function RadiationHospitalHub({
               eyebrow="Doctors"
               title={
                 data.procedure
-                  ? `Radiation oncologists associated with ${data.procedure}`
-                  : `Radiation oncologists at the listed hospitals`
+                  ? `${data.practitioners} associated with ${data.procedure}`
+                  : `${data.practitioners} at the listed hospitals`
               }
-              intro="Each doctor has a matching hospital and Radiation Oncology relationship. Procedure pages additionally require that exact doctor-procedure mapping."
+              intro={`Each doctor has a matching hospital and ${data.specialtyName} relationship. Procedure pages additionally require that exact doctor-procedure mapping.`}
             />
             <div className="hosp-list mt-6">
               {data.doctors.slice(0, 8).map((doctor) => (
@@ -334,11 +337,11 @@ export function RadiationHospitalHub({
                 href={doctorsPath({
                   destination: "India",
                   city: data.cityName,
-                  specialty: "Radiation Oncology",
+                  specialty: data.specialtyName,
                   procedure: data.procedure,
                 })}
               >
-                View all matching radiation oncologists
+                View all matching {data.practitioners}
               </Link>
             </p>
           </div>
@@ -356,7 +359,7 @@ export function RadiationHospitalHub({
         <section className="mx-auto max-w-7xl px-4 py-12 sm:px-5 md:px-8 md:py-16">
           <SectionHeading
             eyebrow="City context"
-            title={`Why patients consider ${data.cityName} for Radiation Oncology`}
+            title={`Why patients consider ${data.cityName} for ${data.specialtyName}`}
           />
           <div className="mt-6 max-w-4xl space-y-4 text-[1.05rem] leading-relaxed text-muted-foreground">
             {[
@@ -461,3 +464,5 @@ export function RadiationHospitalHub({
     </>
   );
 }
+
+export const RadiationHospitalHub = HospitalSpecialtyHub;

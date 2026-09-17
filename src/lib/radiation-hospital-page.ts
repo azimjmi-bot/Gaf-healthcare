@@ -1,9 +1,8 @@
-import { radiationOncologyIndiaProfile } from "@/data/specialty-pages/radiation-oncology";
-import { getCostArticle } from "@/data/cost-articles";
 import {
-  radiationOncologyCityNotes,
-  RADIATION_ONCOLOGY_SELECTION_NOTE,
-} from "@/data/doctor-pages/radiation-oncology";
+  BASE_SPECIALTY_PROFILES,
+  baseSpecialtyProfileFor,
+} from "@/data/specialty-pages/base-profiles";
+import { getCostArticle } from "@/data/cost-articles";
 import {
   doctorHasProcedure,
   filterDoctors,
@@ -32,13 +31,16 @@ import { getTreatment } from "@/lib/treatments";
 import {
   getCity,
   getProcedure,
+  getSpecialty,
   proceduresForSpecialty,
 } from "@/lib/taxonomy";
 
 export const RADIATION_HOSPITAL_SPECIALTY = "Radiation Oncology";
 export const RADIATION_HOSPITAL_SPECIALTY_SLUG = "radiation-oncology";
 export const RADIATION_HOSPITAL_INDEX_MIN = 1;
-export const RADIATION_HOSPITAL_CITY_PROCEDURE_DOCTOR_MIN = 3;
+export const HOSPITAL_PROCEDURE_DOCTOR_MIN = 3;
+export const RADIATION_HOSPITAL_CITY_PROCEDURE_DOCTOR_MIN =
+  HOSPITAL_PROCEDURE_DOCTOR_MIN;
 
 export type RadiationHospitalRelationship = {
   hospital: Hospital;
@@ -54,6 +56,12 @@ export type RadiationHospitalHubLink = {
 };
 
 export type RadiationHospitalHubData = {
+  specialtyName: string;
+  specialtySlug: string;
+  practitioner: string;
+  practitioners: string;
+  careItem: string;
+  careItems: string;
   heading: string;
   title: string;
   description: string;
@@ -83,31 +91,42 @@ export type RadiationHospitalHubData = {
   };
 };
 
-export function isRadiationHospitalScope(query: CatalogQuery) {
-  return (
-    query.destination === "India" &&
-    query.specialty === RADIATION_HOSPITAL_SPECIALTY
-  );
+export type HospitalSpecialtyRelationship = RadiationHospitalRelationship;
+export type HospitalSpecialtyHubLink = RadiationHospitalHubLink;
+export type HospitalSpecialtyHubData = RadiationHospitalHubData;
+
+export function isHospitalSpecialtyScope(query: CatalogQuery) {
+  if (query.destination !== "India" || !query.specialty) return false;
+  const specialty = getSpecialty(query.specialty);
+  return Boolean(specialty && baseSpecialtyProfileFor(specialty.slug));
 }
 
-export function isRadiationHospitalDiscovery(query: CatalogQuery) {
-  if (!isRadiationHospitalScope(query)) return false;
+export function isHospitalSpecialtyDiscovery(query: CatalogQuery) {
+  if (!isHospitalSpecialtyScope(query) || !query.specialty) return false;
   if (!query.procedure) return true;
   const procedure = getProcedure(query.procedure);
-  return Boolean(
-    procedure?.specialtySlugs.includes(RADIATION_HOSPITAL_SPECIALTY_SLUG),
-  );
+  const specialty = getSpecialty(query.specialty);
+  return Boolean(specialty && procedure?.specialtySlugs.includes(specialty.slug));
 }
 
-function radiationDoctors(
-  query: Pick<CatalogQuery, "city" | "procedure">,
+export const isRadiationHospitalScope = (query: CatalogQuery) =>
+  isHospitalSpecialtyScope(query) &&
+  query.specialty === RADIATION_HOSPITAL_SPECIALTY;
+
+export const isRadiationHospitalDiscovery = (query: CatalogQuery) =>
+  isHospitalSpecialtyDiscovery(query) &&
+  query.specialty === RADIATION_HOSPITAL_SPECIALTY;
+
+function specialtyDoctors(
+  query: Pick<CatalogQuery, "specialty" | "city" | "procedure">,
   rows: Doctor[],
 ) {
+  if (!query.specialty) return [];
   return filterDoctors(
     {
       destination: "India",
       city: query.city,
-      specialty: RADIATION_HOSPITAL_SPECIALTY,
+      specialty: query.specialty,
       procedure: query.procedure,
     },
     rows,
@@ -116,25 +135,28 @@ function radiationDoctors(
 
 /**
  * A hospital relationship is valid only when the campus carries the specialty,
- * a matching radiation oncologist is assigned to that campus, and procedure
+ * a matching specialist is assigned to that campus, and procedure
  * pages additionally have both hospital- and doctor-level procedure mappings.
  */
-export function validatedRadiationHospitals(
-  query: Pick<CatalogQuery, "city" | "procedure">,
+export function validatedSpecialtyHospitals(
+  query: Pick<CatalogQuery, "specialty" | "city" | "procedure">,
   hospitalRows: Hospital[] = hospitals,
   doctorRows: Doctor[] = doctors,
 ) {
+  if (!query.specialty) return [];
+  const specialty = getSpecialty(query.specialty);
+  if (!specialty || !baseSpecialtyProfileFor(specialty.slug)) return [];
   const procedure = query.procedure
     ? getProcedure(query.procedure)
     : undefined;
   if (
     query.procedure &&
-    !procedure?.specialtySlugs.includes(RADIATION_HOSPITAL_SPECIALTY_SLUG)
+    !procedure?.specialtySlugs.includes(specialty.slug)
   ) {
     return [];
   }
 
-  const matchingDoctors = radiationDoctors(query, doctorRows);
+  const matchingDoctors = specialtyDoctors(query, doctorRows);
   const doctorSlugsByHospital = new Map<string, Set<string>>();
   for (const doctor of matchingDoctors) {
     const current = doctorSlugsByHospital.get(doctor.hospitalSlug) ?? new Set();
@@ -146,7 +168,7 @@ export function validatedRadiationHospitals(
     if (
       hospital.country !== "India" ||
       (query.city && hospital.city !== query.city) ||
-      !hospital.specialtySlugs.includes(RADIATION_HOSPITAL_SPECIALTY_SLUG) ||
+      !hospital.specialtySlugs.includes(specialty.slug) ||
       !doctorSlugsByHospital.has(hospital.slug)
     ) {
       return false;
@@ -156,47 +178,91 @@ export function validatedRadiationHospitals(
   });
 }
 
-function validDoctorsForHospitals(
+export function validatedRadiationHospitals(
   query: Pick<CatalogQuery, "city" | "procedure">,
+  hospitalRows: Hospital[] = hospitals,
+  doctorRows: Doctor[] = doctors,
+) {
+  return validatedSpecialtyHospitals(
+    { ...query, specialty: RADIATION_HOSPITAL_SPECIALTY },
+    hospitalRows,
+    doctorRows,
+  );
+}
+
+function validDoctorsForHospitals(
+  query: Pick<CatalogQuery, "specialty" | "city" | "procedure">,
   matchedHospitals: Hospital[],
   doctorRows: Doctor[],
 ) {
   const hospitalSlugs = new Set(
     matchedHospitals.map((hospital) => hospital.slug),
   );
-  return radiationDoctors(query, doctorRows).filter((doctor) =>
+  return specialtyDoctors(query, doctorRows).filter((doctor) =>
     hospitalSlugs.has(doctor.hospitalSlug),
   );
 }
 
-function radiationHospitalCombinationEligible(
-  query: Pick<CatalogQuery, "city" | "procedure">,
+function hospitalSpecialtyCombinationEligible(
+  query: Pick<CatalogQuery, "specialty" | "city" | "procedure">,
   hospitalRows: Hospital[],
   doctorRows: Doctor[],
 ) {
-  const matchedHospitals = validatedRadiationHospitals(
+  const matchedHospitals = validatedSpecialtyHospitals(
     query,
     hospitalRows,
     doctorRows,
   );
   if (matchedHospitals.length < RADIATION_HOSPITAL_INDEX_MIN) return false;
-  if (!query.city || !query.procedure) return true;
+  if (!query.procedure) return true;
   return (
     validDoctorsForHospitals(query, matchedHospitals, doctorRows).length >=
-    RADIATION_HOSPITAL_CITY_PROCEDURE_DOCTOR_MIN
+    HOSPITAL_PROCEDURE_DOCTOR_MIN
   );
 }
 
-export function radiationHospitalRelationship(
+export function hospitalSpecialtyCombinationIndexable(
+  query: CatalogQuery,
+  hospitalRows: Hospital[] = hospitals,
+  doctorRows: Doctor[] = doctors,
+) {
+  if (
+    !isHospitalSpecialtyDiscovery(query) ||
+    !query.specialty
+  ) {
+    return false;
+  }
+  const specialty = getSpecialty(query.specialty);
+  const profile = specialty
+    ? baseSpecialtyProfileFor(specialty.slug)
+    : undefined;
+  return Boolean(
+    specialty &&
+      profile?.status === "published" &&
+      profile.allowIndex &&
+      hospitalSpecialtyCombinationEligible(
+        {
+          specialty: specialty.name,
+          city: query.city,
+          procedure: query.procedure,
+        },
+        hospitalRows,
+        doctorRows,
+      ),
+  );
+}
+
+export function hospitalSpecialtyRelationship(
   hospital: Hospital,
   doctorRows: Doctor[],
-): RadiationHospitalRelationship {
+  specialtyName: string,
+): HospitalSpecialtyRelationship {
   const faculty = doctorRows.filter(
     (doctor) =>
       doctor.hospitalSlug === hospital.slug &&
-      doctor.specialty === RADIATION_HOSPITAL_SPECIALTY,
+      doctor.specialty === specialtyName,
   );
-  const taxonomy = proceduresForSpecialty(RADIATION_HOSPITAL_SPECIALTY);
+  const taxonomy = proceduresForSpecialty(specialtyName);
   const procedures = taxonomy
     .filter(
       (procedure) =>
@@ -205,6 +271,17 @@ export function radiationHospitalRelationship(
     )
     .map(({ name, slug }) => ({ name, slug }));
   return { hospital, doctors: faculty, procedures };
+}
+
+export function radiationHospitalRelationship(
+  hospital: Hospital,
+  doctorRows: Doctor[],
+) {
+  return hospitalSpecialtyRelationship(
+    hospital,
+    doctorRows,
+    RADIATION_HOSPITAL_SPECIALTY,
+  );
 }
 
 function hospitalNames(rows: RadiationHospitalRelationship[], limit = 6) {
@@ -220,7 +297,17 @@ function procedureNames(rows: RadiationHospitalHubLink[], limit = 8) {
     .join(", ");
 }
 
+function indefiniteArticle(value: string) {
+  return /^[aeiou]/i.test(value) ? "an" : "a";
+}
+
 function buildQuickAnswers(opts: {
+  specialtyName: string;
+  practitioner: string;
+  practitioners: string;
+  careItem: string;
+  careItems: string;
+  introAnswer: string;
   city?: string;
   procedure?: string;
   hospitals: RadiationHospitalRelationship[];
@@ -236,7 +323,7 @@ function buildQuickAnswers(opts: {
         question: `What is ${opts.procedure}?`,
         answer:
           source?.text ??
-          `${opts.procedure} is a controlled Radiation Oncology procedure in the GAF catalog. Clinical suitability requires review by a qualified radiation oncologist.`,
+          `${opts.procedure} is a controlled ${opts.specialtyName} procedure in the GAF catalog. Clinical suitability requires review by a qualified ${opts.practitioner}.`,
         sourceHref: source?.source.canonicalUrl,
         sourceLabel: source
           ? `Read the complete ${opts.procedure} treatment and cost guide`
@@ -245,11 +332,11 @@ function buildQuickAnswers(opts: {
       },
       {
         question: `Which hospitals in ${place} offer ${opts.procedure}?`,
-        answer: `${opts.hospitals.length} validated hospital relationship${opts.hospitals.length === 1 ? "" : "s"} currently match ${opts.procedure} in ${place}${hospitals ? `: ${hospitals}` : ""}. Inclusion requires both a hospital procedure mapping and an affiliated radiation oncologist mapped to the same procedure.`,
+        answer: `${opts.hospitals.length} validated hospital relationship${opts.hospitals.length === 1 ? "" : "s"} currently match ${opts.procedure} in ${place}${hospitals ? `: ${hospitals}` : ""}. Inclusion requires both a hospital procedure mapping and an affiliated ${opts.practitioner} mapped to the same procedure.`,
       },
       {
         question: `Which doctors are associated with ${opts.procedure}${opts.city ? ` in ${opts.city}` : ""}?`,
-        answer: `${opts.doctors.length} listed radiation oncologist${opts.doctors.length === 1 ? "" : "s"} currently have an exact ${opts.procedure} relationship at the hospitals shown. A catalog relationship is not a guarantee that a clinician will accept every case.`,
+        answer: `${opts.doctors.length} listed ${opts.doctors.length === 1 ? opts.practitioner : opts.practitioners} currently have an exact ${opts.procedure} relationship at the hospitals shown. A catalog relationship is not a guarantee that a clinician will accept every case.`,
       },
     ];
   }
@@ -258,28 +345,35 @@ function buildQuickAnswers(opts: {
   return [
     {
       question: opts.city
-        ? "What is Radiation Oncology?"
-        : "What is a Radiation Oncology hospital?",
+        ? `What is ${opts.specialtyName}?`
+        : `What is ${indefiniteArticle(opts.specialtyName)} ${opts.specialtyName} hospital?`,
       answer: opts.city
-        ? `${radiationOncologyIndiaProfile.introAnswer} This ${opts.city} page is limited to hospitals with a listed radiation oncologist relationship.`
-        : "A Radiation Oncology hospital on this page is an Indian campus with Radiation Oncology in its controlled specialty data and at least one affiliated radiation oncologist in the current GAF catalog. The listing does not imply that every radiation technique is available at every campus.",
-      sourceHref: "/costs/India/Radiation-Oncology",
-      sourceLabel: "Read the Radiation Oncology treatment and cost guide",
+        ? `${opts.introAnswer} This ${opts.city} page is limited to hospitals with a listed ${opts.practitioner} relationship.`
+        : `${indefiniteArticle(opts.specialtyName) === "an" ? "An" : "A"} ${opts.specialtyName} hospital on this page is an Indian campus with ${opts.specialtyName} in its controlled specialty data and at least one affiliated ${opts.practitioner} in the current GAF catalog. The listing does not imply that every ${opts.careItem} is available at every campus.`,
+      sourceHref: costsFilterPath({
+        destination: "India",
+        specialty: opts.specialtyName,
+      }),
+      sourceLabel: `Read the ${opts.specialtyName} treatment and cost guide`,
     },
     {
-      question: `Which hospitals in ${place} offer Radiation Oncology?`,
-      answer: `${opts.hospitals.length} validated hospital relationship${opts.hospitals.length === 1 ? "" : "s"} currently match Radiation Oncology in ${place}${hospitals ? `, including ${hospitals}` : ""}. Counts require a matching hospital specialty and affiliated radiation oncologist; they are not rankings or claims about outcomes.`,
+      question: `Which hospitals in ${place} offer ${opts.specialtyName}?`,
+      answer: `${opts.hospitals.length} validated hospital relationship${opts.hospitals.length === 1 ? "" : "s"} currently match ${opts.specialtyName} in ${place}${hospitals ? `, including ${hospitals}` : ""}. Counts require a matching hospital specialty and affiliated ${opts.practitioner}; they are not rankings or claims about outcomes.`,
     },
     {
-      question: `Which Radiation Oncology procedures are available in ${place}?`,
+      question: `Which ${opts.specialtyName} ${opts.careItems} are available in ${place}?`,
       answer: procedures
-        ? `${opts.procedures.length} procedures have validated hospital and doctor relationships in ${place}, including ${procedures}. Open a procedure page for the exact hospitals and doctors connected to that procedure.`
-        : `No Radiation Oncology procedure currently has a validated hospital and doctor relationship in ${place}.`,
+        ? `${opts.procedures.length} ${opts.careItems} have validated hospital and doctor relationships in ${place}, including ${procedures}. Open a procedure page for the exact hospitals and doctors connected to that procedure.`
+        : `No ${opts.specialtyName} ${opts.careItems} currently have a validated hospital and doctor relationship in ${place}.`,
     },
   ];
 }
 
 function buildFaqs(opts: {
+  specialtyName: string;
+  practitioner: string;
+  practitioners: string;
+  careItems: string;
   city?: string;
   procedure?: string;
   hospitals: RadiationHospitalRelationship[];
@@ -306,7 +400,7 @@ function buildFaqs(opts: {
           : `No eligible city currently has a validated ${opts.procedure} hospital relationship.`,
       },
       {
-        q: `Which radiation oncologists are associated with ${opts.procedure}?`,
+        q: `Which ${opts.practitioners} are associated with ${opts.procedure}?`,
         a: `${opts.doctors.length} listed doctors have the exact procedure relationship at a hospital shown on this page. Inclusion is not a clinical ranking.`,
       },
       {
@@ -319,19 +413,19 @@ function buildFaqs(opts: {
   }
   return [
     {
-      q: `Which hospitals in ${place} offer Radiation Oncology?`,
+      q: `Which hospitals in ${place} offer ${opts.specialtyName}?`,
       a: `${opts.hospitals.length} hospitals currently meet the validated specialty and affiliated-doctor rules shown on this page.`,
     },
     {
-      q: `Which Radiation Oncology procedures are available in ${place}?`,
-      a: `${opts.procedures.length} controlled procedures currently have both hospital and doctor relationship evidence in ${place}.`,
+      q: `Which ${opts.specialtyName} ${opts.careItems} are available in ${place}?`,
+      a: `${opts.procedures.length} controlled ${opts.careItems} currently have both hospital and doctor relationship evidence in ${place}.`,
     },
     {
-      q: `Which radiation oncologists practice in ${place}?`,
-      a: `${opts.doctors.length} listed radiation oncologists are affiliated with the validated hospitals on this page.`,
+      q: `Which ${opts.practitioners} practice in ${place}?`,
+      a: `${opts.doctors.length} listed ${opts.practitioners} are affiliated with the validated hospitals on this page.`,
     },
     {
-      q: "How can I compare Radiation Oncology hospitals?",
+      q: `How can I compare ${opts.specialtyName} hospitals?`,
       a: "Compare factual details such as city, accreditation, beds, established year, validated procedures and affiliated doctors. GAF does not assign an overall score or clinical ranking.",
     },
     {
@@ -341,47 +435,53 @@ function buildFaqs(opts: {
   ];
 }
 
-export function buildRadiationHospitalHub(
+export function buildHospitalSpecialtyHub(
   query: CatalogQuery,
   page = 1,
   hospitalRows: Hospital[] = hospitals,
   doctorRows: Doctor[] = doctors,
 ): RadiationHospitalHubData | undefined {
-  if (!isRadiationHospitalDiscovery(query)) return undefined;
-  const matchedHospitals = validatedRadiationHospitals(
-    { city: query.city, procedure: query.procedure },
-    hospitalRows,
-    doctorRows,
-  );
+  if (!isHospitalSpecialtyDiscovery(query) || !query.specialty) return undefined;
+  const specialty = getSpecialty(query.specialty);
+  const profile = specialty
+    ? baseSpecialtyProfileFor(specialty.slug)
+    : undefined;
   if (
-    !radiationHospitalCombinationEligible(
-      { city: query.city, procedure: query.procedure },
-      hospitalRows,
-      doctorRows,
-    )
+    !specialty ||
+    !profile ||
+    !hospitalSpecialtyCombinationIndexable(query, hospitalRows, doctorRows)
   ) {
     return undefined;
   }
+  const { practitioner, practitioners, careItem, careItems } =
+    profile.terminology;
+  const matchedHospitals = validatedSpecialtyHospitals(
+    { specialty: specialty.name, city: query.city, procedure: query.procedure },
+    hospitalRows,
+    doctorRows,
+  );
 
   const relationships = matchedHospitals
-    .map((hospital) => radiationHospitalRelationship(hospital, doctorRows))
+    .map((hospital) =>
+      hospitalSpecialtyRelationship(hospital, doctorRows, specialty.name),
+    )
     .sort(
       (a, b) =>
         a.hospital.city.localeCompare(b.hospital.city) ||
         a.hospital.name.localeCompare(b.hospital.name),
     );
   const matchedDoctors = validDoctorsForHospitals(
-    { city: query.city, procedure: query.procedure },
+    { specialty: specialty.name, city: query.city, procedure: query.procedure },
     matchedHospitals,
     doctorRows,
   );
   const paging = paginateHospitals(matchedHospitals, page);
   const procedure = query.procedure ? getProcedure(query.procedure) : undefined;
   const city = query.city ? getCity(query.city) : undefined;
-  const procedures = proceduresForSpecialty(RADIATION_HOSPITAL_SPECIALTY)
+  const procedures = proceduresForSpecialty(specialty.name)
     .map((row) => {
-      const count = validatedRadiationHospitals(
-        { city: query.city, procedure: row.name },
+      const count = validatedSpecialtyHospitals(
+        { specialty: specialty.name, city: query.city, procedure: row.name },
         hospitalRows,
         doctorRows,
       ).length;
@@ -390,7 +490,7 @@ export function buildRadiationHospitalHub(
         href: hospitalsPath({
           destination: "India",
           city: query.city,
-          specialty: RADIATION_HOSPITAL_SPECIALTY,
+          specialty: specialty.name,
           procedure: row.name,
         }),
         count,
@@ -400,24 +500,28 @@ export function buildRadiationHospitalHub(
     .filter(
       (row) =>
         row.count > 0 &&
-        radiationHospitalCombinationEligible(
-          { city: query.city, procedure: row.name },
+        hospitalSpecialtyCombinationEligible(
+          { specialty: specialty.name, city: query.city, procedure: row.name },
           hospitalRows,
           doctorRows,
         ),
     );
 
   const nationalProcedureHospitals = query.procedure
-    ? validatedRadiationHospitals(
-        { procedure: query.procedure },
+    ? validatedSpecialtyHospitals(
+        { specialty: specialty.name, procedure: query.procedure },
         hospitalRows,
         doctorRows,
       )
-    : validatedRadiationHospitals({}, hospitalRows, doctorRows);
+    : validatedSpecialtyHospitals(
+        { specialty: specialty.name },
+        hospitalRows,
+        doctorRows,
+      );
   const cities = [...new Set(nationalProcedureHospitals.map((row) => row.city))]
     .map((name) => {
-      const count = validatedRadiationHospitals(
-        { city: name, procedure: query.procedure },
+      const count = validatedSpecialtyHospitals(
+        { specialty: specialty.name, city: name, procedure: query.procedure },
         hospitalRows,
         doctorRows,
       ).length;
@@ -426,7 +530,7 @@ export function buildRadiationHospitalHub(
         href: hospitalsPath({
           destination: "India",
           city: name,
-          specialty: RADIATION_HOSPITAL_SPECIALTY,
+          specialty: specialty.name,
           procedure: query.procedure,
         }),
         count,
@@ -435,8 +539,12 @@ export function buildRadiationHospitalHub(
     .filter(
       (row) =>
         row.count >= RADIATION_HOSPITAL_INDEX_MIN &&
-        radiationHospitalCombinationEligible(
-          { city: row.name, procedure: query.procedure },
+        hospitalSpecialtyCombinationEligible(
+          {
+            specialty: specialty.name,
+            city: row.name,
+            procedure: query.procedure,
+          },
           hospitalRows,
           doctorRows,
         ),
@@ -444,10 +552,10 @@ export function buildRadiationHospitalHub(
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const guideProcedures = query.procedure
-    ? proceduresForSpecialty(RADIATION_HOSPITAL_SPECIALTY).filter(
+    ? proceduresForSpecialty(specialty.name).filter(
         (row) => row.name === query.procedure,
       )
-    : proceduresForSpecialty(RADIATION_HOSPITAL_SPECIALTY).filter((row) =>
+    : proceduresForSpecialty(specialty.name).filter((row) =>
         procedures.some((item) => item.name === row.name),
       );
   const treatmentGuides = guideProcedures
@@ -479,7 +587,7 @@ export function buildRadiationHospitalHub(
               href: costsFilterPath({
                 destination: "India",
                 city: query.city,
-                specialty: RADIATION_HOSPITAL_SPECIALTY,
+                specialty: specialty.name,
                 procedure: row.name,
               }),
               note: "City-specific planning guide; a hospital quotation is still required",
@@ -490,10 +598,10 @@ export function buildRadiationHospitalHub(
   const costGuides = [...cityCostGuides, ...indiaCostGuides];
 
   const relatedProcedures = query.procedure
-    ? relatedProcedureNames(query.procedure, RADIATION_HOSPITAL_SPECIALTY)
+    ? relatedProcedureNames(query.procedure, specialty.name)
         .map((name) => {
-          const count = validatedRadiationHospitals(
-            { city: query.city, procedure: name },
+          const count = validatedSpecialtyHospitals(
+            { specialty: specialty.name, city: query.city, procedure: name },
             hospitalRows,
             doctorRows,
           ).length;
@@ -502,7 +610,7 @@ export function buildRadiationHospitalHub(
             href: hospitalsPath({
               destination: "India",
               city: query.city,
-              specialty: RADIATION_HOSPITAL_SPECIALTY,
+              specialty: specialty.name,
               procedure: name,
             }),
             count,
@@ -511,57 +619,62 @@ export function buildRadiationHospitalHub(
         .filter(
           (row) =>
             row.count > 0 &&
-            radiationHospitalCombinationEligible(
-              { city: query.city, procedure: row.name },
+            hospitalSpecialtyCombinationEligible(
+              {
+                specialty: specialty.name,
+                city: query.city,
+                procedure: row.name,
+              },
               hospitalRows,
               doctorRows,
             ),
         )
     : [];
   const conditions = query.procedure
-    ? mappedConditionsForProcedure(query.procedure, RADIATION_HOSPITAL_SPECIALTY)
-    : specialtyConditionLinks(RADIATION_HOSPITAL_SPECIALTY);
+    ? mappedConditionsForProcedure(query.procedure, specialty.name)
+    : specialtyConditionLinks(specialty.name);
 
   const place = query.city ? `${query.city}, India` : "India";
-  const heading = `Best Hospitals for ${query.procedure ?? RADIATION_HOSPITAL_SPECIALTY} in ${place}`;
+  const heading = `Best Hospitals for ${query.procedure ?? specialty.name} in ${place}`;
   const title = query.procedure
     ? query.city
       ? `Hospitals for ${query.procedure} in ${query.city}, India – Doctors & Cost`
       : `Hospitals for ${query.procedure} in India – Doctors, Treatment & Cost`
     : query.city
-      ? `Radiation Oncology Hospitals in ${query.city}, India – Doctors & Procedures`
-      : "Radiation Oncology Hospitals in India – Doctors, Procedures & Facilities";
+      ? `${specialty.name} Hospitals in ${query.city}, India – Doctors & Procedures`
+      : `${specialty.name} Hospitals in India – Doctors, Procedures & Facilities`;
   const description = query.procedure
-    ? `Review ${matchedHospitals.length} validated hospitals and ${matchedDoctors.length} associated radiation oncologists for ${query.procedure} in ${place}. Relationships require matching hospital and doctor procedure data.`
-    : `Review ${matchedHospitals.length} validated Radiation Oncology hospitals, ${matchedDoctors.length} affiliated radiation oncologists and ${procedures.length} mapped procedures in ${place}.`;
+    ? `Review ${matchedHospitals.length} validated hospitals and ${matchedDoctors.length} associated ${practitioners} for ${query.procedure} in ${place}. Relationships require matching hospital and doctor procedure data.`
+    : `Review ${matchedHospitals.length} validated ${specialty.name} hospitals, ${matchedDoctors.length} affiliated ${practitioners} and ${procedures.length} mapped ${careItems} in ${place}.`;
   const path = hospitalsPath({
     destination: "India",
     city: query.city,
-    specialty: RADIATION_HOSPITAL_SPECIALTY,
+    specialty: specialty.name,
     procedure: query.procedure,
   });
 
   const cityEditorial = city
-    ? radiationOncologyIndiaProfile.cityEditorials.find(
+    ? profile.cityEditorials.find(
         (row) => row.citySlug === city.slug,
       )
     : undefined;
-  const cityNote = city ? radiationOncologyCityNotes[city.slug] : undefined;
   const cityContext =
-    cityEditorial || cityNote
+    cityEditorial
       ? {
-          introduction:
-            cityEditorial?.introduction ??
-            (cityNote ? [cityNote.intro] : []),
-          whyCity: cityEditorial?.whyCity ?? [],
-          planning: cityEditorial?.planning ?? [],
-          logistics:
-            cityEditorial?.logistics ??
-            (cityNote ? [cityNote.logistics] : []),
+          introduction: cityEditorial.introduction,
+          whyCity: cityEditorial.whyCity,
+          planning: cityEditorial.planning,
+          logistics: cityEditorial.logistics,
         }
       : undefined;
 
   const quickAnswers = buildQuickAnswers({
+    specialtyName: specialty.name,
+    practitioner,
+    practitioners,
+    careItem,
+    careItems,
+    introAnswer: profile.introAnswer,
     city: query.city,
     procedure: query.procedure,
     hospitals: relationships,
@@ -569,6 +682,10 @@ export function buildRadiationHospitalHub(
     procedures,
   });
   const faqs = buildFaqs({
+    specialtyName: specialty.name,
+    practitioner,
+    practitioners,
+    careItems,
     city: query.city,
     procedure: query.procedure,
     hospitals: relationships,
@@ -579,7 +696,7 @@ export function buildRadiationHospitalHub(
   });
   const metrics = [
     { label: "Hospitals", value: matchedHospitals.length },
-    { label: "Radiation oncologists", value: matchedDoctors.length },
+    { label: practitioners, value: matchedDoctors.length },
     ...(!query.procedure
       ? [{ label: "Validated procedures", value: procedures.length }]
       : []),
@@ -589,6 +706,12 @@ export function buildRadiationHospitalHub(
   ];
 
   return {
+    specialtyName: specialty.name,
+    specialtySlug: specialty.slug,
+    practitioner,
+    practitioners,
+    careItem,
+    careItems,
     heading,
     title,
     description,
@@ -614,41 +737,71 @@ export function buildRadiationHospitalHub(
   };
 }
 
-export function radiationHospitalPageIndexable(page: number, total: number) {
+export function buildRadiationHospitalHub(
+  query: CatalogQuery,
+  page = 1,
+  hospitalRows: Hospital[] = hospitals,
+  doctorRows: Doctor[] = doctors,
+) {
+  return buildHospitalSpecialtyHub(
+    { ...query, specialty: RADIATION_HOSPITAL_SPECIALTY },
+    page,
+    hospitalRows,
+    doctorRows,
+  );
+}
+
+export function hospitalSpecialtyPageIndexable(page: number, total: number) {
   return page === 1 && total >= RADIATION_HOSPITAL_INDEX_MIN;
+}
+
+export const radiationHospitalPageIndexable = hospitalSpecialtyPageIndexable;
+
+export function hospitalSpecialtySitemapPaths(
+  hospitalRows: Hospital[] = hospitals,
+  doctorRows: Doctor[] = doctors,
+) {
+  const paths: string[] = [];
+  for (const profile of BASE_SPECIALTY_PROFILES) {
+    if (profile.status !== "published" || !profile.allowIndex) continue;
+    const specialty = getSpecialty(profile.specialtySlug);
+    if (!specialty) continue;
+    const base = buildHospitalSpecialtyHub(
+      { destination: "India", specialty: specialty.name },
+      1,
+      hospitalRows,
+      doctorRows,
+    );
+    if (!base) continue;
+    paths.push(base.path);
+    for (const city of base.cities) paths.push(city.href);
+    for (const procedure of base.procedures) {
+      paths.push(procedure.href);
+      const procedureHub = buildHospitalSpecialtyHub(
+        {
+          destination: "India",
+          specialty: specialty.name,
+          procedure: procedure.name,
+        },
+        1,
+        hospitalRows,
+        doctorRows,
+      );
+      for (const city of procedureHub?.cities ?? []) {
+        paths.push(city.href);
+      }
+    }
+  }
+  return [...new Set(paths)];
 }
 
 export function radiationHospitalSitemapPaths(
   hospitalRows: Hospital[] = hospitals,
   doctorRows: Doctor[] = doctors,
 ) {
-  const paths: string[] = [];
-  const base = buildRadiationHospitalHub(
-    { destination: "India", specialty: RADIATION_HOSPITAL_SPECIALTY },
-    1,
-    hospitalRows,
-    doctorRows,
+  return hospitalSpecialtySitemapPaths(hospitalRows, doctorRows).filter(
+    (path) => path.includes("/Radiation-Oncology"),
   );
-  if (!base) return paths;
-  paths.push(base.path);
-  for (const city of base.cities) paths.push(city.href);
-  for (const procedure of base.procedures) {
-    paths.push(procedure.href);
-    const procedureHub = buildRadiationHospitalHub(
-      {
-        destination: "India",
-        specialty: RADIATION_HOSPITAL_SPECIALTY,
-        procedure: procedure.name,
-      },
-      1,
-      hospitalRows,
-      doctorRows,
-    );
-    for (const city of procedureHub?.cities ?? []) {
-      paths.push(city.href);
-    }
-  }
-  return [...new Set(paths)];
 }
 
 export type RadiationHospitalGraphFlag = {
@@ -666,7 +819,10 @@ export function validateRadiationHospitalGraph(
   doctorRows: Doctor[] = doctors,
 ): RadiationHospitalGraphFlag[] {
   const flags: RadiationHospitalGraphFlag[] = [];
-  const radiationFaculty = radiationDoctors({}, doctorRows);
+  const radiationFaculty = specialtyDoctors(
+    { specialty: RADIATION_HOSPITAL_SPECIALTY },
+    doctorRows,
+  );
   for (const hospital of hospitalRows.filter((row) =>
     row.specialtySlugs.includes(RADIATION_HOSPITAL_SPECIALTY_SLUG),
   )) {
@@ -720,4 +876,89 @@ export function validateRadiationHospitalGraph(
 }
 
 export const radiationHospitalSelectionNote =
-  RADIATION_ONCOLOGY_SELECTION_NOTE;
+  "Hospital inclusion is based on available specialty, procedure and affiliated-doctor relationships in the GAF catalog. Listings support factual comparison and are not clinical rankings, endorsements or guarantees of treatment availability or outcomes.";
+
+export type HospitalSpecialtyGraphFlag = {
+  code:
+    | "hospital-without-specialty-doctor"
+    | "procedure-without-valid-hospital"
+    | "doctor-procedure-without-hospital-procedure"
+    | "duplicate-url"
+    | "missing-procedure-definition";
+  specialty: string;
+  detail: string;
+};
+
+export function validateHospitalSpecialtyGraph(
+  hospitalRows: Hospital[] = hospitals,
+  doctorRows: Doctor[] = doctors,
+): HospitalSpecialtyGraphFlag[] {
+  const flags: HospitalSpecialtyGraphFlag[] = [];
+  for (const profile of BASE_SPECIALTY_PROFILES) {
+    const specialty = getSpecialty(profile.specialtySlug);
+    if (!specialty || profile.status !== "published") continue;
+    const faculty = specialtyDoctors(
+      { specialty: specialty.name },
+      doctorRows,
+    );
+    for (const hospital of hospitalRows.filter((row) =>
+      row.specialtySlugs.includes(specialty.slug),
+    )) {
+      if (!faculty.some((doctor) => doctor.hospitalSlug === hospital.slug)) {
+        flags.push({
+          code: "hospital-without-specialty-doctor",
+          specialty: specialty.name,
+          detail: hospital.slug,
+        });
+      }
+    }
+    for (const procedure of proceduresForSpecialty(specialty.name)) {
+      if (
+        validatedSpecialtyHospitals(
+          { specialty: specialty.name, procedure: procedure.name },
+          hospitalRows,
+          doctorRows,
+        ).length === 0
+      ) {
+        flags.push({
+          code: "procedure-without-valid-hospital",
+          specialty: specialty.name,
+          detail: procedure.name,
+        });
+      }
+      if (!procedureDefinitionFromCanonical(procedure.name)?.text) {
+        flags.push({
+          code: "missing-procedure-definition",
+          specialty: specialty.name,
+          detail: procedure.name,
+        });
+      }
+      for (const doctor of faculty.filter((row) =>
+        doctorHasProcedure(row, procedure.name),
+      )) {
+        const hospital = hospitalRows.find(
+          (row) => row.slug === doctor.hospitalSlug,
+        );
+        if (!hospital?.procedureSlugs.includes(procedure.slug)) {
+          flags.push({
+            code: "doctor-procedure-without-hospital-procedure",
+            specialty: specialty.name,
+            detail: `${doctor.slug}:${procedure.slug}`,
+          });
+        }
+      }
+    }
+  }
+  const seen = new Set<string>();
+  for (const path of hospitalSpecialtySitemapPaths(hospitalRows, doctorRows)) {
+    if (seen.has(path)) {
+      flags.push({
+        code: "duplicate-url",
+        specialty: "All specialties",
+        detail: path,
+      });
+    }
+    seen.add(path);
+  }
+  return flags;
+}

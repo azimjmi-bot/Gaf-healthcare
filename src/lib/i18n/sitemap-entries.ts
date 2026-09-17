@@ -5,7 +5,7 @@ import { listPublishedPosts } from "@/lib/blogs";
 import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { catalogSpecialtyName } from "@/lib/catalog-links";
 import { doctorSpecialtySitemapPaths } from "@/lib/doctor-discovery";
-import { radiationHospitalSitemapPaths } from "@/lib/radiation-hospital-page";
+import { hospitalSpecialtySitemapPaths } from "@/lib/radiation-hospital-page";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { absoluteUrl, SITE_URL } from "@/lib/seo";
 import type { AppLocale } from "@/lib/i18n/languages";
@@ -117,7 +117,7 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
   }
 
   if (locale === "en") {
-    for (const path of radiationHospitalSitemapPaths(hospitals, doctors)) {
+    for (const path of hospitalSpecialtySitemapPaths(hospitals, doctors)) {
       const depth = path.split("/").filter(Boolean).length;
       urls.push(entry(path, locale, { priority: depth === 3 ? 0.8 : 0.7 }));
     }

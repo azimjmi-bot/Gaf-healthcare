@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { HospitalCard } from "@/components/hospital-card";
-import { RadiationHospitalHub } from "@/components/radiation-hospital-hub";
+import { HospitalSpecialtyHub } from "@/components/radiation-hospital-hub";
 import { CatalogPager } from "@/components/catalog-pager";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { PseoTrust } from "@/components/pseo-trust";
@@ -17,9 +17,9 @@ import { getRequestLocale } from "@/lib/i18n/request";
 import { hospitalsForLocale } from "@/lib/locale-catalog";
 import { doctorsForLocale } from "@/lib/locale-catalog";
 import {
-  buildRadiationHospitalHub,
-  isRadiationHospitalScope,
-  radiationHospitalPageIndexable,
+  buildHospitalSpecialtyHub,
+  hospitalSpecialtyPageIndexable,
+  isHospitalSpecialtyScope,
 } from "@/lib/radiation-hospital-page";
 import { absoluteUrl } from "@/lib/seo";
 import { LOCALES } from "@/lib/i18n/languages";
@@ -31,8 +31,8 @@ export async function hospitalsDirectoryMetadata(
   page = 1,
 ): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (locale === "en" && isRadiationHospitalScope(query)) {
-    const hub = buildRadiationHospitalHub(
+  if (locale === "en" && isHospitalSpecialtyScope(query)) {
+    const hub = buildHospitalSpecialtyHub(
       query,
       page,
       hospitalsForLocale(locale),
@@ -42,7 +42,7 @@ export async function hospitalsDirectoryMetadata(
       const fallback = await catalogPageMetadata("hospitals", query);
       return { ...fallback, robots: { index: false, follow: true } };
     }
-    const indexable = radiationHospitalPageIndexable(page, hub.paging.total);
+    const indexable = hospitalSpecialtyPageIndexable(page, hub.paging.total);
     return withLocaleMetadata(
       {
         title: hub.title,
@@ -76,15 +76,15 @@ export async function HospitalsDirectory({
   page?: number;
 }) {
   const locale = await getRequestLocale();
-  if (locale === "en" && isRadiationHospitalScope(query)) {
-    const hub = buildRadiationHospitalHub(
+  if (locale === "en" && isHospitalSpecialtyScope(query)) {
+    const hub = buildHospitalSpecialtyHub(
       query,
       page,
       hospitalsForLocale(locale),
       doctorsForLocale(locale),
     );
     if (!hub) notFound();
-    return <RadiationHospitalHub data={hub} query={query} />;
+    return <HospitalSpecialtyHub data={hub} query={query} />;
   }
   const messages = await localizeMessages(locale);
   const faqs = await localizeFaqs("hospitals", locale);

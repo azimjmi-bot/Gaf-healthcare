@@ -6,11 +6,17 @@ import { hospitalSpecialtyCardDescription } from "@/lib/hospital-specialty-copy"
 import type { RadiationHospitalRelationship } from "@/lib/radiation-hospital-page";
 import { hospitalsPath } from "@/lib/catalog-links";
 
-export function RadiationHospitalCard({
+export function HospitalSpecialtyCard({
   relationship,
+  specialtyName,
+  practitioner,
+  practitioners,
   selectedProcedure,
 }: {
   relationship: RadiationHospitalRelationship;
+  specialtyName: string;
+  practitioner: string;
+  practitioners: string;
   selectedProcedure?: string;
 }) {
   const { hospital, doctors, procedures } = relationship;
@@ -22,12 +28,12 @@ export function RadiationHospitalCard({
   ).slice(0, 3);
   const description = hospitalSpecialtyCardDescription({
     hospital,
-    specialty: "Radiation Oncology",
+    specialty: specialtyName,
     doctors,
     procedures,
     selectedProcedure,
-    practitionerSingular: "radiation oncologist",
-    practitionerPlural: "radiation oncologists",
+    practitionerSingular: practitioner,
+    practitionerPlural: practitioners,
   });
 
   return (
@@ -78,7 +84,7 @@ export function RadiationHospitalCard({
                   href={hospitalsPath({
                     destination: "India",
                     city: hospital.city,
-                    specialty: "Radiation Oncology",
+                    specialty: specialtyName,
                     procedure: procedure.name,
                   })}
                   className="inline-flex rounded-full border border-border px-3 py-1.5 text-xs"
@@ -94,7 +100,7 @@ export function RadiationHospitalCard({
       {shownDoctors.length > 0 ? (
         <details className="mt-5 rounded-xl border border-border bg-background px-4 py-3">
           <summary className="cursor-pointer text-sm font-medium">
-            View radiation oncologists at this hospital
+            View {practitioners} at this hospital
           </summary>
           <ul className="mt-3 space-y-2 text-sm">
             {shownDoctors.map((doctor) => (
@@ -126,3 +132,5 @@ export function RadiationHospitalCard({
     </article>
   );
 }
+
+export const RadiationHospitalCard = HospitalSpecialtyCard;

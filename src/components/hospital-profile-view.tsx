@@ -56,7 +56,12 @@ import {
   yearsLabelLocalized,
 } from "@/lib/hospital-profile";
 import { doctorsPath, hospitalsPath } from "@/lib/catalog-links";
-import { radiationHospitalRelationship } from "@/lib/radiation-hospital-page";
+import {
+  hospitalSpecialtyCombinationIndexable,
+  hospitalSpecialtyRelationship,
+} from "@/lib/radiation-hospital-page";
+import { baseSpecialtyProfileFor } from "@/data/specialty-pages/base-profiles";
+import { getSpecialty } from "@/lib/taxonomy";
 import type { AppLocale } from "@/lib/i18n/languages";
 import {
   bedsLabelLocalized,
@@ -152,12 +157,43 @@ export function HospitalProfileView({
   const t = uiCatalogFor(locale);
   const cityLabel = taxonomyLabel(hospital.city, locale);
   const countryLabel = taxonomyLabel(hospital.country, locale);
-  const radiationRelationship =
-    locale === "en" &&
-    hospital.specialtySlugs.includes("radiation-oncology") &&
-    faculty.some((doctor) => doctor.specialty === "Radiation Oncology")
-      ? radiationHospitalRelationship(hospital, faculty)
-      : undefined;
+  const specialtyRelationships =
+    locale === "en"
+      ? [...new Set(faculty.map((doctor) => doctor.specialtySlug))]
+          .map((specialtySlug) => {
+            const specialty = getSpecialty(specialtySlug);
+            const profile = baseSpecialtyProfileFor(specialtySlug);
+            if (
+              !specialty ||
+              !profile ||
+              profile.status !== "published" ||
+              !profile.allowIndex ||
+              !hospital.specialtySlugs.includes(specialtySlug)
+            ) {
+              return undefined;
+            }
+            const relationship = hospitalSpecialtyRelationship(
+              hospital,
+              faculty,
+              specialty.name,
+            );
+            return {
+              specialty,
+              terminology: profile.terminology,
+              relationship: {
+                ...relationship,
+                procedures: relationship.procedures.filter((procedure) =>
+                  hospitalSpecialtyCombinationIndexable({
+                    destination: "India",
+                    specialty: specialty.name,
+                    procedure: procedure.name,
+                  }),
+                ),
+              },
+            };
+          })
+          .filter((row): row is NonNullable<typeof row> => Boolean(row))
+      : [];
 
   const nav = [
     { id: "overview", label: t["hp.nav.overview"] },
@@ -335,58 +371,75 @@ export function HospitalProfileView({
         </div>
       </section>
 
-      {radiationRelationship ? (
+      {specialtyRelationships.length > 0 ? (
         <section className="hp-section">
           <div className="hp-wrap">
-            <p className="eyebrow">Validated Radiation Oncology relationships</p>
-            <h2>Radiation Oncology at {hospital.name}</h2>
+            <p className="eyebrow">Validated specialty relationships</p>
+            <h2>Explore specialty care at {hospital.name}</h2>
             <p className="hp-prose">
-              This campus is connected to {radiationRelationship.doctors.length} listed radiation
-              oncologist{radiationRelationship.doctors.length === 1 ? "" : "s"} and{" "}
-              {radiationRelationship.procedures.length} procedures where both hospital and doctor
-              mappings exist.
+              Each specialty below has at least one affiliated doctor in the current GAF catalog.
+              Procedure links appear only where hospital and doctor mappings both exist.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3">
-              <Link
-                href={hospitalsPath({
-                  destination: "India",
-                  city: hospital.city,
-                  specialty: "Radiation Oncology",
-                })}
-                className="cost-btn cost-btn--ghost"
-              >
-                Radiation Oncology hospitals in {hospital.city}
-              </Link>
-              <Link
-                href={doctorsPath({
-                  destination: "India",
-                  city: hospital.city,
-                  specialty: "Radiation Oncology",
-                })}
-                className="cost-btn cost-btn--ghost"
-              >
-                Radiation oncologists in {hospital.city}
-              </Link>
-            </div>
-            {radiationRelationship.procedures.length > 0 ? (
-              <ul className="mt-6 flex flex-wrap gap-2">
-                {radiationRelationship.procedures.map((procedure) => (
-                  <li key={procedure.slug}>
+            <div className="mt-6 grid gap-4 md:grid-cols-2">
+              {specialtyRelationships.map(({ specialty, terminology, relationship }) => (
+                <details
+                  key={specialty.slug}
+                  className="rounded-2xl border border-border bg-card p-5"
+                >
+                  <summary className="cursor-pointer font-heading text-2xl">
+                    {specialty.name}
+                  </summary>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
+                    {relationship.doctors.length} listed{" "}
+                    {relationship.doctors.length === 1
+                      ? terminology.practitioner
+                      : terminology.practitioners}
+                    {" · "}
+                    {relationship.procedures.length} validated {terminology.careItems}
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-3">
                     <Link
                       href={hospitalsPath({
                         destination: "India",
                         city: hospital.city,
-                        specialty: "Radiation Oncology",
-                        procedure: procedure.name,
+                        specialty: specialty.name,
                       })}
-                      className="inline-flex rounded-full border border-border bg-card px-3 py-2 text-sm"
+                      className="cost-btn cost-btn--ghost"
                     >
-                      {procedure.name} hospitals in {hospital.city}
+                      {specialty.name} hospitals in {hospital.city}
                     </Link>
-                  </li>
-                ))}
-              </ul>
-            ) : null}
+                    <Link
+                      href={doctorsPath({
+                        destination: "India",
+                        city: hospital.city,
+                        specialty: specialty.name,
+                      })}
+                      className="cost-btn cost-btn--ghost"
+                    >
+                      {terminology.practitioners} in {hospital.city}
+                    </Link>
+                  </div>
+                  {relationship.procedures.length > 0 ? (
+                    <ul className="mt-4 flex flex-wrap gap-2">
+                      {relationship.procedures.map((procedure) => (
+                        <li key={procedure.slug}>
+                          <Link
+                            href={hospitalsPath({
+                              destination: "India",
+                              specialty: specialty.name,
+                              procedure: procedure.name,
+                            })}
+                            className="inline-flex rounded-full border border-border px-3 py-2 text-sm"
+                          >
+                            {procedure.name}
+                          </Link>
+                        </li>
+                      ))}
+                    </ul>
+                  ) : null}
+                </details>
+              ))}
+            </div>
           </div>
         </section>
       ) : null}
