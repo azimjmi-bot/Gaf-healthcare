@@ -53,6 +53,21 @@ test("city specialty pages use actual city relationships and unique context", ()
   assert.notEqual(delhi.quickAnswers[1]?.answer, india.quickAnswers[1]?.answer);
 });
 
+test("city specialty pages expose only procedure landings with three mapped doctors", () => {
+  const expected = new Map([
+    ["Delhi NCR", 12],
+    ["Mumbai", 3],
+    ["Bengaluru", 10],
+    ["Chennai", 10],
+    ["Hyderabad", 12],
+  ]);
+  for (const [city, count] of expected) {
+    const hub = buildRadiationHospitalHub({ ...baseQuery, city });
+    assert.ok(hub);
+    assert.equal(hub.procedures.length, count, city);
+  }
+});
+
 test("procedure hospital pages require hospital and doctor procedure mappings", () => {
   for (const name of [
     "CyberKnife",
@@ -137,6 +152,29 @@ test("invalid and empty combinations do not create a hospital hub", () => {
     }),
     undefined,
   );
+  assert.equal(
+    buildRadiationHospitalHub({
+      ...baseQuery,
+      city: "Delhi NCR",
+      procedure: "Proton Beam Therapy",
+    }),
+    undefined,
+  );
+  assert.equal(
+    buildRadiationHospitalHub({
+      ...baseQuery,
+      city: "Mumbai",
+      procedure: "Intensity-Modulated Radiotherapy (IMRT)",
+    }),
+    undefined,
+  );
+  assert.ok(
+    buildRadiationHospitalHub({
+      ...baseQuery,
+      city: "Mumbai",
+      procedure: "CyberKnife",
+    }),
+  );
 });
 
 test("pagination keeps page one canonical and later pages noindex", () => {
@@ -150,12 +188,21 @@ test("pagination keeps page one canonical and later pages noindex", () => {
 test("sitemap emits only validated, unique hospital graph URLs", () => {
   const paths = radiationHospitalSitemapPaths();
   assert.equal(paths.length, new Set(paths).size);
+  assert.equal(paths.length, 68);
   assert.ok(paths.includes("/hospitals/India/Radiation-Oncology"));
   assert.ok(paths.includes("/hospitals/India/Delhi-NCR/Radiation-Oncology"));
   assert.ok(paths.includes("/hospitals/India/Radiation-Oncology/CyberKnife"));
   assert.ok(paths.includes("/hospitals/India/Delhi-NCR/Radiation-Oncology/CyberKnife"));
   assert.equal(
     paths.includes("/hospitals/India/Mumbai/Radiation-Oncology/Proton-Beam-Therapy"),
+    false,
+  );
+  assert.equal(
+    paths.includes("/hospitals/India/Delhi-NCR/Radiation-Oncology/Proton-Beam-Therapy"),
+    false,
+  );
+  assert.equal(
+    paths.includes("/hospitals/India/Mumbai/Radiation-Oncology/Intensity-Modulated-Radiotherapy-(IMRT)"),
     false,
   );
 });

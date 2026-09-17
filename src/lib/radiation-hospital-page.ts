@@ -38,6 +38,7 @@ import {
 export const RADIATION_HOSPITAL_SPECIALTY = "Radiation Oncology";
 export const RADIATION_HOSPITAL_SPECIALTY_SLUG = "radiation-oncology";
 export const RADIATION_HOSPITAL_INDEX_MIN = 1;
+export const RADIATION_HOSPITAL_CITY_PROCEDURE_DOCTOR_MIN = 3;
 
 export type RadiationHospitalRelationship = {
   hospital: Hospital;
@@ -153,6 +154,37 @@ export function validatedRadiationHospitals(
     if (!procedure) return true;
     return hospital.procedureSlugs.includes(procedure.slug);
   });
+}
+
+function validDoctorsForHospitals(
+  query: Pick<CatalogQuery, "city" | "procedure">,
+  matchedHospitals: Hospital[],
+  doctorRows: Doctor[],
+) {
+  const hospitalSlugs = new Set(
+    matchedHospitals.map((hospital) => hospital.slug),
+  );
+  return radiationDoctors(query, doctorRows).filter((doctor) =>
+    hospitalSlugs.has(doctor.hospitalSlug),
+  );
+}
+
+function radiationHospitalCombinationEligible(
+  query: Pick<CatalogQuery, "city" | "procedure">,
+  hospitalRows: Hospital[],
+  doctorRows: Doctor[],
+) {
+  const matchedHospitals = validatedRadiationHospitals(
+    query,
+    hospitalRows,
+    doctorRows,
+  );
+  if (matchedHospitals.length < RADIATION_HOSPITAL_INDEX_MIN) return false;
+  if (!query.city || !query.procedure) return true;
+  return (
+    validDoctorsForHospitals(query, matchedHospitals, doctorRows).length >=
+    RADIATION_HOSPITAL_CITY_PROCEDURE_DOCTOR_MIN
+  );
 }
 
 export function radiationHospitalRelationship(
@@ -321,7 +353,15 @@ export function buildRadiationHospitalHub(
     hospitalRows,
     doctorRows,
   );
-  if (matchedHospitals.length < RADIATION_HOSPITAL_INDEX_MIN) return undefined;
+  if (
+    !radiationHospitalCombinationEligible(
+      { city: query.city, procedure: query.procedure },
+      hospitalRows,
+      doctorRows,
+    )
+  ) {
+    return undefined;
+  }
 
   const relationships = matchedHospitals
     .map((hospital) => radiationHospitalRelationship(hospital, doctorRows))
@@ -330,11 +370,11 @@ export function buildRadiationHospitalHub(
         a.hospital.city.localeCompare(b.hospital.city) ||
         a.hospital.name.localeCompare(b.hospital.name),
     );
-  const hospitalSlugs = new Set(matchedHospitals.map((hospital) => hospital.slug));
-  const matchedDoctors = radiationDoctors(
+  const matchedDoctors = validDoctorsForHospitals(
     { city: query.city, procedure: query.procedure },
+    matchedHospitals,
     doctorRows,
-  ).filter((doctor) => hospitalSlugs.has(doctor.hospitalSlug));
+  );
   const paging = paginateHospitals(matchedHospitals, page);
   const procedure = query.procedure ? getProcedure(query.procedure) : undefined;
   const city = query.city ? getCity(query.city) : undefined;
@@ -357,7 +397,15 @@ export function buildRadiationHospitalHub(
         note: procedureDefinitionFromCanonical(row.name)?.text,
       };
     })
-    .filter((row) => row.count > 0);
+    .filter(
+      (row) =>
+        row.count > 0 &&
+        radiationHospitalCombinationEligible(
+          { city: query.city, procedure: row.name },
+          hospitalRows,
+          doctorRows,
+        ),
+    );
 
   const nationalProcedureHospitals = query.procedure
     ? validatedRadiationHospitals(
@@ -384,7 +432,15 @@ export function buildRadiationHospitalHub(
         count,
       };
     })
-    .filter((row) => row.count >= RADIATION_HOSPITAL_INDEX_MIN)
+    .filter(
+      (row) =>
+        row.count >= RADIATION_HOSPITAL_INDEX_MIN &&
+        radiationHospitalCombinationEligible(
+          { city: row.name, procedure: query.procedure },
+          hospitalRows,
+          doctorRows,
+        ),
+    )
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const guideProcedures = query.procedure
@@ -452,7 +508,15 @@ export function buildRadiationHospitalHub(
             count,
           };
         })
-        .filter((row) => row.count > 0)
+        .filter(
+          (row) =>
+            row.count > 0 &&
+            radiationHospitalCombinationEligible(
+              { city: query.city, procedure: row.name },
+              hospitalRows,
+              doctorRows,
+            ),
+        )
     : [];
   const conditions = query.procedure
     ? mappedConditionsForProcedure(query.procedure, RADIATION_HOSPITAL_SPECIALTY)
