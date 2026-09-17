@@ -5,6 +5,7 @@ import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { CMS_EDITION_COOKIE, CMS_EDITION_LABELS, CMS_EDITIONS, parseCmsEdition, type CmsEdition } from "@/lib/cms/edition";
 import {
+  Activity,
   Building2,
   FileText,
   FolderTree,
@@ -21,6 +22,7 @@ const NAV = [
   { href: "/cms/articles", label: "Articles", icon: FileText },
   { href: "/cms/doctors", label: "Doctors", icon: Stethoscope },
   { href: "/cms/hospitals", label: "Hospitals", icon: Building2 },
+  { href: "/cms/treatments", label: "Treatments", icon: Activity },
   { href: "/cms/costs", label: "Cost sheets", icon: Wallet },
   { href: "/cms/specialties", label: "Specialty pages", icon: FolderTree },
   { href: "/cms/media", label: "Media", icon: ImageIcon },

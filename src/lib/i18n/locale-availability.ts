@@ -5,6 +5,7 @@ export type LocaleSurface =
   | "consult"
   | "doctors"
   | "hospitals"
+  | "treatments"
   | "costs"
   | "specialties"
   | "blogs";
@@ -14,7 +15,7 @@ export function localeSurfaceIsAvailable(
   locale: AppLocale,
   surface: LocaleSurface,
 ) {
-  if (locale === "en" || surface === "home") return true;
+  if (locale === "en" || surface === "home" || surface === "treatments") return true;
   if (locale === "ar") {
     return surface === "doctors" || surface === "hospitals";
   }

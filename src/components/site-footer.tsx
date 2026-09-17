@@ -24,6 +24,7 @@ export function SiteFooter() {
         { href: "/specialties", label: t("nav.specialties"), surface: "specialties" },
         { href: "/doctors", label: t("nav.doctors"), surface: "doctors" },
         { href: "/hospitals", label: t("nav.hospitals"), surface: "hospitals" },
+        { href: "/treatments", label: t("nav.treatments"), surface: "treatments" },
         { href: "/costs", label: t("nav.costs"), surface: "costs" },
         { href: "/blogs", label: t("nav.blogs"), surface: "blogs" },
       ].filter((link) =>

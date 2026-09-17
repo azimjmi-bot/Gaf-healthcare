@@ -12,6 +12,7 @@ export default async function NotFound() {
   const links = [
     { href: "/doctors", label: messages["nav.doctors"], surface: "doctors" },
     { href: "/hospitals", label: messages["nav.hospitals"], surface: "hospitals" },
+    { href: "/treatments", label: messages["nav.treatments"], surface: "treatments" },
     { href: "/costs", label: messages["nav.costs"], surface: "costs" },
     { href: "/blogs", label: messages["nav.blogs"], surface: "blogs" },
   ].filter((link) =>

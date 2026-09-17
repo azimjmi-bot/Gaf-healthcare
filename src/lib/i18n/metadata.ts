@@ -11,9 +11,10 @@ export function localizedAbsoluteUrl(path: string, locale: AppLocale = SOURCE_LO
 }
 
 export function hreflangLanguages(englishPath: string, locales: readonly AppLocale[]) {
-  const languages: Record<string, string> = {
-    "x-default": localizedAbsoluteUrl(englishPath, "en"),
-  };
+  const languages: Record<string, string> = {};
+  if (locales.includes("en")) {
+    languages["x-default"] = localizedAbsoluteUrl(englishPath, "en");
+  }
   for (const locale of locales) {
     languages[locale] = localizedAbsoluteUrl(englishPath, locale);
   }

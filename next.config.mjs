@@ -13,8 +13,6 @@ const nextConfig = {
     return [
       { source: "/destinations", destination: "/hospitals", permanent: true },
       { source: "/destinations/:slug", destination: "/hospitals", permanent: true },
-      { source: "/treatments", destination: "/costs", permanent: true },
-      { source: "/treatments/:slug", destination: "/costs/:slug", permanent: true },
       { source: "/speciality", destination: "/specialties", permanent: true },
       { source: "/specialities", destination: "/specialties", permanent: true },
       { source: "/specialty", destination: "/specialties", permanent: true },

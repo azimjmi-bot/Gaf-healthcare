@@ -17,6 +17,7 @@ import {
   doctorsForLocale,
   hospitalsForLocale,
 } from "@/lib/locale-catalog";
+import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
 
 const SEARCH_CONSOLE_ORIGIN = SITE_URL;
 
@@ -54,7 +55,21 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
         changeFrequency: "weekly",
         priority: 0.8,
       }),
+      entry("/treatments", locale, {
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.7,
+      }),
     ];
+    for (const treatment of publishedCuratedTreatments(locale)) {
+      localized.push(
+        entry(`/treatments/${treatment.slug}`, locale, {
+          lastModified: treatment.updatedAt,
+          changeFrequency: "monthly",
+          priority: treatment.featured ? 0.7 : 0.6,
+        }),
+      );
+    }
     const localeDoctors = doctorsForLocale(locale);
     if (localeDoctors.length > 0) {
       localized.push(entry("/doctors", locale, { priority: 0.7 }));
@@ -110,12 +125,23 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     entry("/doctors", locale, { lastModified: now, changeFrequency: "weekly", priority: sectionPriority }),
     entry("/hospitals", locale, { lastModified: now, changeFrequency: "weekly", priority: sectionPriority }),
     entry("/costs", locale, { lastModified: now, changeFrequency: "weekly", priority: sectionPriority }),
+    entry("/treatments", locale, { lastModified: now, changeFrequency: "weekly", priority: 0.8 }),
     ...(locale === "en"
       ? [entry("/specialties", locale, { lastModified: now, changeFrequency: "weekly", priority: 0.8 })]
       : []),
     entry("/blogs", locale, { lastModified: now, changeFrequency: "weekly", priority: locale === "en" ? 0.7 : 0.6 }),
     entry("/consult", locale, { lastModified: now, changeFrequency: "monthly", priority: 0.5 }),
   ];
+
+  for (const treatment of publishedCuratedTreatments(locale)) {
+    urls.push(
+      entry(`/treatments/${treatment.slug}`, locale, {
+        lastModified: treatment.updatedAt,
+        changeFrequency: "monthly",
+        priority: treatment.featured ? 0.8 : 0.7,
+      }),
+    );
+  }
 
   urls.push(entry(costsFilterPath({ destination: "India" }), locale, { priority: 0.7 }));
   urls.push(entry(doctorsPath({ destination: "India" }), locale, { priority: 0.7 }));

@@ -9,6 +9,7 @@ import {
   hospitalsForLocale,
 } from "@/lib/locale-catalog";
 import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
+import { getPublishedCuratedTreatment } from "@/lib/cms/curated-treatment-store";
 import {
   LOCALES,
   SOURCE_LOCALE,
@@ -21,8 +22,15 @@ function segmentsFor(path: string) {
 }
 
 export function localePathIsPublished(locale: AppLocale, path: string) {
-  if (locale === SOURCE_LOCALE) return true;
   const segments = segmentsFor(path);
+  if (segments[0] === "treatments") {
+    if (segments.length === 1) return true;
+    return (
+      segments.length === 2 &&
+      Boolean(getPublishedCuratedTreatment(segments[1], locale))
+    );
+  }
+  if (locale === SOURCE_LOCALE) return true;
   if (segments.length === 0) return true;
   if (segments[0] === "consult") return false;
 
