@@ -36,7 +36,9 @@ import type { Metadata } from "next";
 
 export async function costSheetMetadata(slug: string): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, `/costs/${slug}`)) notFound();
+  if (!localePathIsPublished(locale, `/costs/${slug}`)) {
+    return { robots: { index: false, follow: false } };
+  }
   return costPageMetadata(slug);
 }
 

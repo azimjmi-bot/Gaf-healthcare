@@ -24,7 +24,9 @@ export const revalidate = 0;
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, "/specialties")) notFound();
+  if (!localePathIsPublished(locale, "/specialties")) {
+    return { robots: { index: false, follow: false } };
+  }
   return withLocaleMetadata(
     {
       title: "Medical Specialties in India",

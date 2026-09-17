@@ -34,7 +34,9 @@ export async function doctorsDirectoryMetadata(
   page = 1,
 ): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, doctorsPath(query))) notFound();
+  if (!localePathIsPublished(locale, doctorsPath(query))) {
+    return { robots: { index: false, follow: false } };
+  }
   if (locale === "en" && isDoctorSpecialtyDiscovery(query)) {
     const hub = buildDoctorSpecialtyHub(query, {}, 1, doctorsForLocale(locale));
     if (hub) {

@@ -14,7 +14,9 @@ export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, "/blogs")) notFound();
+  if (!localePathIsPublished(locale, "/blogs")) {
+    return { robots: { index: false, follow: false } };
+  }
   const messages = await localizeMessages(locale);
   return withLocaleMetadata({ title: messages["seo.blogsTitle"] || "Blogs" }, "/blogs", locale, LOCALES);
 }

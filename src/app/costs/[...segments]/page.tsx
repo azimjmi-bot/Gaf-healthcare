@@ -23,7 +23,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { segments } = await params;
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, `/costs/${segments.join("/")}`)) notFound();
+  if (!localePathIsPublished(locale, `/costs/${segments.join("/")}`)) {
+    return { robots: { index: false, follow: false } };
+  }
   const filter = parsePrettyCatalogSegments(segments);
   if (filter) return costsDirectoryMetadata(filter);
   if (segments.length === 1) return costSheetMetadata(segments[0]);

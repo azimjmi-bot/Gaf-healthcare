@@ -24,7 +24,9 @@ import type { Metadata } from "next";
 
 export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, costsFilterPath(query))) notFound();
+  if (!localePathIsPublished(locale, costsFilterPath(query))) {
+    return { robots: { index: false, follow: false } };
+  }
   if (query.procedure) {
     const { costsProcedureMetadata } = await import("./costs-procedure-view");
     const meta = await costsProcedureMetadata(query);

@@ -33,7 +33,9 @@ export async function hospitalsDirectoryMetadata(
   page = 1,
 ): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, hospitalsPath(query))) notFound();
+  if (!localePathIsPublished(locale, hospitalsPath(query))) {
+    return { robots: { index: false, follow: false } };
+  }
   if (locale === "en" && isHospitalSpecialtyScope(query)) {
     const hub = buildHospitalSpecialtyHub(
       query,

@@ -30,7 +30,9 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { segments } = await params;
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, `/hospitals/${segments.join("/")}`)) notFound();
+  if (!localePathIsPublished(locale, `/hospitals/${segments.join("/")}`)) {
+    return { robots: { index: false, follow: false } };
+  }
   const filter = parsePrettyCatalogSegments(segments);
   if (filter) return hospitalsDirectoryMetadata(filter, readCatalogPage(await searchParams));
   if (segments.length === 2 && segments[1] === "doctors") return hospitalDoctorsMetadata(segments[0]);

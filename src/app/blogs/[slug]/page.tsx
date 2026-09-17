@@ -24,7 +24,9 @@ export async function generateMetadata({
   const jar = await cookies();
   const preview = jar.get(CMS_COOKIE)?.value === cmsToken();
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, `/blogs/${slug}`) && !preview) notFound();
+  if (!localePathIsPublished(locale, `/blogs/${slug}`) && !preview) {
+    return { robots: { index: false, follow: false } };
+  }
   const post =
     getPost(slug, locale) ??
     (preview ? getArticleBySlug(slug, editionFromLocale(locale)) : undefined);

@@ -11,7 +11,9 @@ import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, "/consult")) notFound();
+  if (!localePathIsPublished(locale, "/consult")) {
+    return { robots: { index: false, follow: false } };
+  }
   const messages = await localizeMessages(locale);
   return withLocaleMetadata({ title: messages["seo.consultTitle"] }, "/consult", locale, LOCALES);
 }
