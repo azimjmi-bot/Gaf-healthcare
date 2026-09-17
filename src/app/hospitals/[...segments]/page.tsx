@@ -22,12 +22,14 @@ export function generateStaticParams() {
 
 export async function generateMetadata({
   params,
+  searchParams,
 }: {
   params: Promise<{ segments: string[] }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }): Promise<Metadata> {
   const { segments } = await params;
   const filter = parsePrettyCatalogSegments(segments);
-  if (filter) return hospitalsDirectoryMetadata(filter);
+  if (filter) return hospitalsDirectoryMetadata(filter, readCatalogPage(await searchParams));
   if (segments.length === 2 && segments[1] === "doctors") return hospitalDoctorsMetadata(segments[0]);
   if (segments.length === 2 && segments[1] === "procedures") return hospitalProceduresMetadata(segments[0]);
   if (segments.length === 1) return hospitalProfileMetadata(segments[0]);

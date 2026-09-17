@@ -1,7 +1,8 @@
 import { LocaleLink as Link } from "@/components/locale-link";
 import { CtaBand } from "@/components/page-shell";
 import { PseoTrust } from "@/components/pseo-trust";
-import { doctorsPath } from "@/lib/catalog-links";
+import { doctorsPath, hospitalsPath } from "@/lib/catalog-links";
+import { doctorHasProcedure } from "@/lib/catalog";
 import { loadHospitalCampus, requireHospitalCampus } from "@/lib/hospital-campus";
 import { LOCALES } from "@/lib/i18n/languages";
 import { interpolate } from "@/lib/i18n/messages";
@@ -25,7 +26,7 @@ export async function hospitalProceduresMetadata(slug: string): Promise<Metadata
 export async function HospitalProcedures({ slug }: { slug: string }) {
   const locale = await getRequestLocale();
   const t = uiCatalogFor(locale);
-  const { hospital, groups } = requireHospitalCampus(slug, locale);
+  const { hospital, faculty, groups } = requireHospitalCampus(slug, locale);
   const procedureGroups = groups.filter((g) => g.treatments.length > 0);
 
   return (
@@ -69,6 +70,24 @@ export async function HospitalProcedures({ slug }: { slug: string }) {
                       >
                         {t["hp.doctorsLink"]}
                       </Link>
+                      {locale === "en" &&
+                      g.slug === "radiation-oncology" &&
+                      faculty.some(
+                        (doctor) =>
+                          doctor.specialty === "Radiation Oncology" &&
+                          doctorHasProcedure(doctor, row.name),
+                      ) ? (
+                        <Link
+                          href={hospitalsPath({
+                            destination: hospital.country,
+                            city: hospital.city,
+                            specialty: "Radiation Oncology",
+                            procedure: row.name,
+                          })}
+                        >
+                          Hospitals for {row.name} in {hospital.city}
+                        </Link>
+                      ) : null}
                     </li>
                   ))}
                 </ul>

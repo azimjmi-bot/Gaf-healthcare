@@ -11,7 +11,8 @@ export async function generateMetadata({
 }: {
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }): Promise<Metadata> {
-  return hospitalsDirectoryMetadata(parseCatalogQuery(await searchParams));
+  const raw = await searchParams;
+  return hospitalsDirectoryMetadata(parseCatalogQuery(raw), readCatalogPage(raw));
 }
 
 export default async function HospitalsPage({

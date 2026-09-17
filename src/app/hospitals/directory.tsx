@@ -1,6 +1,8 @@
 import { Suspense } from "react";
+import { notFound } from "next/navigation";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { HospitalCard } from "@/components/hospital-card";
+import { RadiationHospitalHub } from "@/components/radiation-hospital-hub";
 import { CatalogPager } from "@/components/catalog-pager";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { PseoTrust } from "@/components/pseo-trust";
@@ -13,9 +15,56 @@ import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { hospitalsForLocale } from "@/lib/locale-catalog";
+import { doctorsForLocale } from "@/lib/locale-catalog";
+import {
+  buildRadiationHospitalHub,
+  isRadiationHospitalScope,
+  radiationHospitalPageIndexable,
+} from "@/lib/radiation-hospital-page";
+import { absoluteUrl } from "@/lib/seo";
+import { LOCALES } from "@/lib/i18n/languages";
+import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import type { Metadata } from "next";
 
-export async function hospitalsDirectoryMetadata(query: CatalogQuery): Promise<Metadata> {
+export async function hospitalsDirectoryMetadata(
+  query: CatalogQuery,
+  page = 1,
+): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  if (locale === "en" && isRadiationHospitalScope(query)) {
+    const hub = buildRadiationHospitalHub(
+      query,
+      page,
+      hospitalsForLocale(locale),
+      doctorsForLocale(locale),
+    );
+    if (!hub) {
+      const fallback = await catalogPageMetadata("hospitals", query);
+      return { ...fallback, robots: { index: false, follow: true } };
+    }
+    const indexable = radiationHospitalPageIndexable(page, hub.paging.total);
+    return withLocaleMetadata(
+      {
+        title: hub.title,
+        description: hub.description,
+        robots: indexable ? undefined : { index: false, follow: true },
+        openGraph: {
+          title: hub.title,
+          description: hub.description,
+          url: absoluteUrl(hub.path),
+          type: "website",
+        },
+        twitter: {
+          card: "summary_large_image",
+          title: hub.title,
+          description: hub.description,
+        },
+      },
+      hub.path,
+      locale,
+      LOCALES,
+    );
+  }
   return catalogPageMetadata("hospitals", query);
 }
 
@@ -27,6 +76,16 @@ export async function HospitalsDirectory({
   page?: number;
 }) {
   const locale = await getRequestLocale();
+  if (locale === "en" && isRadiationHospitalScope(query)) {
+    const hub = buildRadiationHospitalHub(
+      query,
+      page,
+      hospitalsForLocale(locale),
+      doctorsForLocale(locale),
+    );
+    if (!hub) notFound();
+    return <RadiationHospitalHub data={hub} query={query} />;
+  }
   const messages = await localizeMessages(locale);
   const faqs = await localizeFaqs("hospitals", locale);
   const list = filterHospitals(query, hospitalsForLocale(locale));
