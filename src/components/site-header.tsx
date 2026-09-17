@@ -16,6 +16,10 @@ import {
 } from "@/components/ui/sheet";
 import { useState } from "react";
 import { stripLocalePrefix } from "@/lib/i18n/path";
+import {
+  localeSurfaceIsAvailable,
+  type LocaleSurface,
+} from "@/lib/i18n/locale-availability";
 
 export function SiteHeader() {
   const pathname = stripLocalePrefix(usePathname() || "/").pathname;
@@ -25,13 +29,16 @@ export function SiteHeader() {
   if (pathname.startsWith("/cms")) return null;
   const overlay = pathname === "/";
   const links = [
-    { href: "/#destinations", label: t("nav.destinations") },
-    { href: "/specialties", label: t("nav.specialties") },
-    { href: "/doctors", label: t("nav.doctors") },
-    { href: "/hospitals", label: t("nav.hospitals") },
-    { href: "/costs", label: t("nav.costs") },
-    { href: "/blogs", label: t("nav.blogs") },
-  ];
+    { href: "/#destinations", label: t("nav.destinations"), surface: "hospitals" },
+    { href: "/specialties", label: t("nav.specialties"), surface: "specialties" },
+    { href: "/doctors", label: t("nav.doctors"), surface: "doctors" },
+    { href: "/hospitals", label: t("nav.hospitals"), surface: "hospitals" },
+    { href: "/costs", label: t("nav.costs"), surface: "costs" },
+    { href: "/blogs", label: t("nav.blogs"), surface: "blogs" },
+  ].filter((link) =>
+    localeSurfaceIsAvailable(locale, link.surface as LocaleSurface),
+  );
+  const consultAvailable = localeSurfaceIsAvailable(locale, "consult");
 
   return (
     <header
@@ -71,6 +78,7 @@ export function SiteHeader() {
         </nav>
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           <LanguageSwitcher className={overlay ? "text-white" : ""} />
+          {consultAvailable ? (
           <Button
             asChild
             className="h-10 rounded-full bg-primary px-3 text-sm text-primary-foreground hover:bg-primary/90 sm:px-5"
@@ -80,6 +88,7 @@ export function SiteHeader() {
               <span className="hidden md:inline">{t("nav.consult")}</span>
             </Link>
           </Button>
+          ) : null}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button
@@ -115,11 +124,13 @@ export function SiteHeader() {
                     {l.label}
                   </Link>
                 ))}
+                {consultAvailable ? (
                 <Button asChild className="mt-4 h-12 rounded-full">
                   <Link href="/consult" onClick={() => setOpen(false)}>
                     {t("nav.dossier")}
                   </Link>
                 </Button>
+                ) : null}
               </nav>
             </SheetContent>
           </Sheet>

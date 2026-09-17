@@ -23,7 +23,8 @@ function segmentsFor(path: string) {
 export function localePathIsPublished(locale: AppLocale, path: string) {
   if (locale === SOURCE_LOCALE) return true;
   const segments = segmentsFor(path);
-  if (segments.length === 0 || segments[0] === "consult") return true;
+  if (segments.length === 0) return true;
+  if (segments[0] === "consult") return false;
 
   if (segments[0] === "doctors") {
     if (segments[1] === "compare") return false;

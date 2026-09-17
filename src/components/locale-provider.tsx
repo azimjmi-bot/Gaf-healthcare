@@ -41,9 +41,12 @@ export function useMessages() {
 }
 
 export function useT() {
-  const messages = useMessages();
+  const { locale, messages } = useContext(LocaleContext);
   return (key: string, vars?: Record<string, string | number>) => {
-    let value = messages[key] || UI_MESSAGE_FIELDS[key] || key;
+    let value =
+      locale === SOURCE_LOCALE
+        ? messages[key] || UI_MESSAGE_FIELDS[key] || key
+        : messages[key] ?? "";
     if (vars) {
       value = value.replace(/\{(\w+)\}/g, (_, name: string) => String(vars[name] ?? ""));
     }

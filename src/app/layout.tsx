@@ -3,7 +3,7 @@ import { Cormorant_Garamond, Geist, Noto_Sans, Noto_Sans_Arabic } from "next/fon
 import { LocaleProvider } from "@/components/locale-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
-import { localeDir } from "@/lib/i18n/languages";
+import { LANGUAGE_OG, localeDir } from "@/lib/i18n/languages";
 import { localizeMessages } from "@/lib/i18n/localize";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { SITE_URL } from "@/lib/seo";
@@ -46,14 +46,7 @@ export const viewport: Viewport = {
   viewportFit: "cover",
 };
 
-export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: {
-    default: "Oncologists, ENT and GI in India | GAF Healthcare",
-    template: `%s — ${site.name}`,
-  },
-  description: site.description,
-  keywords: [
+const ENGLISH_KEYWORDS = [
     "medical oncologist India",
     "radiation oncologist India",
     "surgical oncologist India",
@@ -119,22 +112,40 @@ export const metadata: Metadata = {
     "Bengaluru oncologist",
     "Chennai oncologist",
     "Hyderabad oncologist",
-  ],
-  openGraph: {
-    type: "website",
-    locale: "en_IN",
-    siteName: site.name,
-    title: "Oncologists, ENT and GI in India | GAF Healthcare",
-    description: site.description,
-    url: SITE_URL,
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Oncologists, ENT and GI in India | GAF Healthcare",
-    description: site.description,
-  },
-  alternates: { canonical: SITE_URL },
-};
+];
+
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  const messages = await localizeMessages(locale);
+  const title =
+    locale === "en"
+      ? "Oncologists, ENT and GI in India | GAF Healthcare"
+      : messages["seo.homeTitle"];
+  const description =
+    locale === "en" ? site.description : messages["seo.homeDescription"];
+  return {
+    metadataBase: new URL(SITE_URL),
+    title: {
+      default: title,
+      template: `%s — ${site.name}`,
+    },
+    description,
+    keywords: locale === "en" ? ENGLISH_KEYWORDS : undefined,
+    openGraph: {
+      type: "website",
+      locale: LANGUAGE_OG[locale],
+      siteName: site.name,
+      title,
+      description,
+      url: locale === "en" ? SITE_URL : `${SITE_URL}/${locale}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+    },
+  };
+}
 
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   const locale = await getRequestLocale();

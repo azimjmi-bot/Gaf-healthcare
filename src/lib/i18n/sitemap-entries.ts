@@ -49,11 +49,6 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
         changeFrequency: "weekly",
         priority: 0.8,
       }),
-      entry("/consult", locale, {
-        lastModified: now,
-        changeFrequency: "monthly",
-        priority: 0.5,
-      }),
     ];
     const localeDoctors = doctorsForLocale(locale);
     if (localeDoctors.length > 0) {

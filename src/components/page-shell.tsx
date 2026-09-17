@@ -3,7 +3,8 @@
 import type { ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { LocaleLink as Link } from "@/components/locale-link";
-import { useT } from "@/components/locale-provider";
+import { useLocale, useT } from "@/components/locale-provider";
+import { localeSurfaceIsAvailable } from "@/lib/i18n/locale-availability";
 
 export function PageIntro({
   eyebrow,
@@ -34,6 +35,8 @@ export function PageIntro({
 
 export function CtaBand() {
   const t = useT();
+  const locale = useLocale();
+  if (!localeSurfaceIsAvailable(locale, "consult")) return null;
   return (
     <section className="bg-ink text-ivory">
       <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 py-12 sm:px-5 md:flex-row md:items-center md:gap-8 md:px-8 md:py-20">

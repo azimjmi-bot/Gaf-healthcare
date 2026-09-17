@@ -48,7 +48,7 @@ export async function DoctorProfile({ slug }: { slug: string }) {
   const colleagues = doctorsForHospitalLocale(d.hospitalSlug, locale)
     .filter((x) => x.slug !== d.slug && x.specialtySlug === d.specialtySlug)
     .slice(0, 6);
-  const heading = doctorProfileHeading(d);
+  const heading = doctorProfileHeading(d, locale);
 
   return (
     <>

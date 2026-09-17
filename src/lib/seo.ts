@@ -335,7 +335,7 @@ export function physicianJsonLd(d: Doctor, locale: AppLocale = "en") {
     "@type": "Physician",
     "@id": `${url}#person`,
     name: d.name,
-    inLanguage: locale === "ar" ? "ar" : "en",
+    inLanguage: locale,
     url: absoluteUrl(`/doctors/${d.slug}`, locale),
     jobTitle: d.title,
     description: clip(stripMarkdown(d.bio), 240),

@@ -1,29 +1,36 @@
 "use client";
 
 import { LocaleLink as Link } from "@/components/locale-link";
-import { useT } from "@/components/locale-provider";
+import { useLocale, useT } from "@/components/locale-provider";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { GOOGLE_MAPS_URL, YOUTUBE_CHANNEL } from "@/data/home";
 import { stripLocalePrefix } from "@/lib/i18n/path";
 import { site } from "@/lib/site";
+import {
+  localeSurfaceIsAvailable,
+  type LocaleSurface,
+} from "@/lib/i18n/locale-availability";
 
 export function SiteFooter() {
   const pathname = stripLocalePrefix(usePathname() || "/").pathname;
   const t = useT();
+  const locale = useLocale();
   if (pathname.startsWith("/cms")) return null;
   const columns = [
     {
       title: t("footer.explore"),
       links: [
-        { href: "/specialties", label: t("nav.specialties") },
-        { href: "/doctors", label: t("nav.doctors") },
-        { href: "/hospitals", label: t("nav.hospitals") },
-        { href: "/costs", label: t("nav.costs") },
-        { href: "/blogs", label: t("nav.blogs") },
-      ],
+        { href: "/specialties", label: t("nav.specialties"), surface: "specialties" },
+        { href: "/doctors", label: t("nav.doctors"), surface: "doctors" },
+        { href: "/hospitals", label: t("nav.hospitals"), surface: "hospitals" },
+        { href: "/costs", label: t("nav.costs"), surface: "costs" },
+        { href: "/blogs", label: t("nav.blogs"), surface: "blogs" },
+      ].filter((link) =>
+        localeSurfaceIsAvailable(locale, link.surface as LocaleSurface),
+      ),
     },
-  ];
+  ].filter((column) => column.links.length > 0);
   return (
     <footer className="border-t border-border bg-ink text-ivory">
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-5 md:grid-cols-12 md:gap-12 md:px-8 md:py-16">
@@ -37,14 +44,19 @@ export function SiteFooter() {
             className="h-16 w-auto md:h-20"
           />
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-ivory/70">
-            {site.tagline} {t("footer.tagline")}
+            {locale === "en" ? `${site.tagline} ` : null}
+            {t("footer.tagline")}
           </p>
           <p className="mt-6 text-sm text-ivory/60">
             {site.email}
             <br />
             {site.phone}
-            <br />
-            {site.hours}
+            {locale === "en" ? (
+              <>
+                <br />
+                {site.hours}
+              </>
+            ) : null}
           </p>
           <p className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm">
             <a href={YOUTUBE_CHANNEL} className="text-gold-bright underline underline-offset-4 hover:text-ivory" target="_blank" rel="noreferrer">

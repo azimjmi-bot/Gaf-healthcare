@@ -11,6 +11,7 @@ import {
   localePathIsPublished,
   publishedLocalesForPath,
 } from "@/lib/i18n/locale-publication";
+import { localeSurfaceIsAvailable } from "@/lib/i18n/locale-availability";
 import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
 import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 import {
@@ -58,6 +59,7 @@ test("untranslated routes stay unpublished", () => {
     false,
   );
   assert.equal(localePathIsPublished("ru", "/doctors"), false);
+  assert.equal(localePathIsPublished("ar", "/consult"), false);
   assert.equal(localePathIsPublished("ar", "/costs"), false);
   assert.equal(localePathIsPublished("ar", "/specialties"), false);
   assert.deepEqual(
@@ -70,7 +72,6 @@ test("localized sitemaps contain only published locale records", () => {
   const russianUrls = buildLocaleSitemap("ru").map((row) => row.url);
   assert.deepEqual(russianUrls.sort(), [
     "https://gaf.healthcare/ru",
-    "https://gaf.healthcare/ru/consult",
   ]);
 
   const arabicUrls = buildLocaleSitemap("ar").map((row) => row.url);
@@ -98,6 +99,13 @@ test("UI dictionaries do not fill missing translations with English", () => {
   assert.equal(uiCatalogFor("ru")["dir.showing"], "");
   assert.notEqual(uiCatalogFor("ru")["dir.showing"], uiCatalogFor("en")["dir.showing"]);
   assert.equal(uiCatalogFor("ar")["card.requestConsult"], "طلب استشارة");
+});
+
+test("navigation hides routes without authored locale content", () => {
+  assert.equal(localeSurfaceIsAvailable("ar", "doctors"), true);
+  assert.equal(localeSurfaceIsAvailable("ar", "consult"), false);
+  assert.equal(localeSurfaceIsAvailable("fr", "hospitals"), false);
+  assert.equal(localeSurfaceIsAvailable("en", "costs"), true);
 });
 
 test("specialty editorials do not inherit the English edition", () => {

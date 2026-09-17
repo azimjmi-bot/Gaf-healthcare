@@ -7,6 +7,8 @@ import { costPath, doctorsPath } from "@/lib/catalog-links";
 import { doctorHasProcedure, filterDoctors } from "@/lib/catalog";
 import { getTreatment } from "@/lib/treatments";
 import { radiationOncologyContentInventory } from "@/data/doctor-pages/radiation-oncology";
+import type { AppLocale } from "@/lib/i18n/languages";
+import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import {
   INDIA_CITIES,
   SPECIALTIES,
@@ -241,7 +243,12 @@ export function relatedDiscoveryBlogs(procedure?: string, specialty?: string) {
     .map((post) => ({ name: post.title, href: `/blogs/${post.slug}` }));
 }
 
-export function doctorProfileHeading(doctor: Doctor) {
+export function doctorProfileHeading(doctor: Doctor, locale: AppLocale = "en") {
+  if (locale !== "en") {
+    return `${doctor.name} — ${taxonomyLabel(doctor.specialty, locale)} ${
+      locale === "ar" ? "في" : "·"
+    } ${taxonomyLabel(doctor.city, locale)}`;
+  }
   const role =
     doctor.specialtySlug === "radiation-oncology" ? "Radiation Oncologist" : doctor.title.split(",")[0]?.trim() || doctor.specialty;
   return `${doctor.name} — ${role} in ${doctor.city}`;
