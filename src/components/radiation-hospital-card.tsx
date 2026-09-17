@@ -1,6 +1,8 @@
 import { BedDouble, CalendarDays, MapPin } from "lucide-react";
 import { AccreditationSeals } from "@/components/accreditation-seals";
 import { LocaleLink as Link } from "@/components/locale-link";
+import { doctorHasProcedure } from "@/lib/catalog";
+import { hospitalSpecialtyCardDescription } from "@/lib/hospital-specialty-copy";
 import type { RadiationHospitalRelationship } from "@/lib/radiation-hospital-page";
 import { hospitalsPath } from "@/lib/catalog-links";
 
@@ -15,9 +17,17 @@ export function RadiationHospitalCard({
   const shownProcedures = procedures.slice(0, 5);
   const shownDoctors = (
     selectedProcedure
-      ? doctors.filter((doctor) => doctor.procedures.includes(selectedProcedure))
+      ? doctors.filter((doctor) => doctorHasProcedure(doctor, selectedProcedure))
       : doctors
   ).slice(0, 3);
+  const description = hospitalSpecialtyCardDescription({
+    hospital,
+    specialty: "Radiation Oncology",
+    doctors,
+    procedures,
+    selectedProcedure,
+    practitionerPlural: "radiation oncologists",
+  });
 
   return (
     <article className="rounded-2xl border border-border bg-card p-5 md:p-7">
@@ -52,11 +62,7 @@ export function RadiationHospitalCard({
       </dl>
 
       <p className="mt-5 text-sm leading-relaxed text-muted-foreground">
-        {hospital.name} has a validated Radiation Oncology relationship through{" "}
-        {doctors.length} affiliated radiation oncologist{doctors.length === 1 ? "" : "s"}.
-        {selectedProcedure
-          ? ` The current hospital and doctor data both map this campus to ${selectedProcedure}.`
-          : ` ${procedures.length} Radiation Oncology procedures have matching hospital and doctor relationships.`}
+        {description}
       </p>
 
       {shownProcedures.length > 0 ? (

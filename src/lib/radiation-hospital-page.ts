@@ -523,9 +523,7 @@ export function buildRadiationHospitalHub(
     : specialtyConditionLinks(RADIATION_HOSPITAL_SPECIALTY);
 
   const place = query.city ? `${query.city}, India` : "India";
-  const heading = query.procedure
-    ? `Hospitals for ${query.procedure} in ${place}`
-    : `Radiation Oncology Hospitals in ${place}`;
+  const heading = `Best Hospitals for ${query.procedure ?? RADIATION_HOSPITAL_SPECIALTY} in ${place}`;
   const title = query.procedure
     ? query.city
       ? `Hospitals for ${query.procedure} in ${query.city}, India – Doctors & Cost`

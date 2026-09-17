@@ -120,6 +120,10 @@ export function RadiationHospitalHub({
         title={data.heading}
         lede={data.description}
       >
+        <p className="mb-4 max-w-3xl text-xs leading-relaxed text-muted-foreground">
+          “Best” reflects the hospital-discovery search phrase. Hospitals are ordered
+          alphabetically and are not clinically ranked, scored or endorsed.
+        </p>
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
           <CatalogFilter
             basePath="/hospitals"

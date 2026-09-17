@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { doctorHasProcedure } from "../lib/catalog";
 import { doctors } from "../lib/doctors";
+import { hospitalSpecialtyCardDescription } from "../lib/hospital-specialty-copy";
 import {
   buildRadiationHospitalHub,
   radiationHospitalPageIndexable,
@@ -19,7 +20,7 @@ const baseQuery = {
 test("India Radiation Oncology hospital page uses validated relationships", () => {
   const hub = buildRadiationHospitalHub(baseQuery);
   assert.ok(hub);
-  assert.equal(hub.heading, "Radiation Oncology Hospitals in India");
+  assert.equal(hub.heading, "Best Hospitals for Radiation Oncology in India");
   assert.equal(hub.paging.total, validatedRadiationHospitals({}).length);
   assert.equal(hub.paging.total, 22);
   assert.equal(hub.cities.length, 5);
@@ -46,7 +47,10 @@ test("city specialty pages use actual city relationships and unique context", ()
     city: "Delhi NCR",
   });
   assert.ok(india && delhi);
-  assert.equal(delhi.heading, "Radiation Oncology Hospitals in Delhi NCR, India");
+  assert.equal(
+    delhi.heading,
+    "Best Hospitals for Radiation Oncology in Delhi NCR, India",
+  );
   assert.ok(delhi.paging.total < india.paging.total);
   assert.ok(delhi.hospitals.every((row) => row.hospital.city === "Delhi NCR"));
   assert.ok(delhi.cityContext?.introduction.length);
@@ -81,7 +85,7 @@ test("procedure hospital pages require hospital and doctor procedure mappings", 
       procedure: name,
     });
     assert.ok(hub, name);
-    assert.equal(hub.heading, `Hospitals for ${name} in India`);
+    assert.equal(hub.heading, `Best Hospitals for ${name} in India`);
     assert.ok(hub.hospitals.length > 0, name);
     assert.ok(
       hub.hospitals.every(
@@ -114,11 +118,49 @@ test("city procedure pages contain only exact city hospital relationships", () =
     procedure: "CyberKnife",
   });
   assert.ok(hub);
-  assert.equal(hub.heading, "Hospitals for CyberKnife in Delhi NCR, India");
+  assert.equal(
+    hub.heading,
+    "Best Hospitals for CyberKnife in Delhi NCR, India",
+  );
   assert.ok(hub.hospitals.every((row) => row.hospital.city === "Delhi NCR"));
   assert.ok(hub.doctors.every((doctor) => doctor.city === "Delhi NCR"));
   assert.ok(hub.quickAnswers.some((row) => /Delhi NCR/.test(row.question)));
   assert.ok(hub.cityContext?.logistics.length);
+});
+
+test("hospital card descriptions use the current specialty instead of generic bios", () => {
+  const specialtyHub = buildRadiationHospitalHub(baseQuery);
+  assert.ok(specialtyHub);
+  for (const relationship of specialtyHub.hospitals) {
+    const description = hospitalSpecialtyCardDescription({
+      hospital: relationship.hospital,
+      specialty: "Radiation Oncology",
+      doctors: relationship.doctors,
+      procedures: relationship.procedures,
+      practitionerPlural: "radiation oncologists",
+    });
+    assert.match(description, /Radiation Oncology/);
+    assert.match(description, new RegExp(relationship.hospital.city));
+    assert.equal(description.includes(relationship.hospital.bio), false);
+  }
+
+  const procedureHub = buildRadiationHospitalHub({
+    ...baseQuery,
+    procedure: "CyberKnife",
+  });
+  assert.ok(procedureHub);
+  const relationship = procedureHub.hospitals[0];
+  const description = hospitalSpecialtyCardDescription({
+    hospital: relationship.hospital,
+    specialty: "Radiation Oncology",
+    doctors: relationship.doctors,
+    procedures: relationship.procedures,
+    selectedProcedure: "CyberKnife",
+    practitionerPlural: "radiation oncologists",
+  });
+  assert.match(description, /listed for CyberKnife/);
+  assert.match(description, /records the procedure at this campus/);
+  assert.equal(description.includes(relationship.hospital.bio), false);
 });
 
 test("every mapped Radiation Oncology procedure uses the generic template", () => {
