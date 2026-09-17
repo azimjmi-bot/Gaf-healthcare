@@ -104,7 +104,9 @@ export async function DoctorProfile({ slug }: { slug: string }) {
         <ProfileList title={t["profile.memberships"]} items={d.memberships} />
         <ProfileList title={t["profile.awards"]} items={d.awards} />
         <ProfileList title={t["profile.research"]} items={d.research} />
-        <DoctorProfileGraph doctor={d} pool={doctorsForLocale(locale)} />
+        {locale === "en" ? (
+          <DoctorProfileGraph doctor={d} pool={doctorsForLocale(locale)} />
+        ) : null}
       </article>
 
       {colleagues.length > 0 ? (

@@ -31,6 +31,7 @@ import { interpolate } from "@/lib/i18n/messages";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 import { whatsappHref } from "@/lib/site";
+import { localeSurfaceIsAvailable } from "@/lib/i18n/locale-availability";
 
 const HIGHLIGHT_ICONS = [Medal, Users, Settings2, Heart];
 
@@ -128,6 +129,8 @@ export function DoctorProfileHero({
             ) : null}
 
             <div className="dhero__actions">
+              {localeSurfaceIsAvailable(locale, "consult") ? (
+                <>
               <Link className="dhero__book" href={`/consult?doctor=${doctor.slug}`}>
                 <CalendarDays className="size-4" />
                 {t["profile.requestConsult"] ?? "Request a Consultation"}
@@ -136,6 +139,8 @@ export function DoctorProfileHero({
               <Link className="dhero__contact" href="/consult">
                 {t["profile.medicalOpinion"] ?? "Get a Medical Opinion"}
               </Link>
+                </>
+              ) : null}
               <a className="dhero__contact" href={wa} target="_blank" rel="noreferrer">
                 <MessageCircle className="size-4" />
                 {t["profile.contact"]}

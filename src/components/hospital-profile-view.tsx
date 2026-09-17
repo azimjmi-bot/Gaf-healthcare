@@ -80,6 +80,7 @@ import {
 import { interpolate } from "@/lib/i18n/messages";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
+import { localeSurfaceIsAvailable } from "@/lib/i18n/locale-availability";
 import { site } from "@/lib/site";
 
 const SPECIALTY_ICON: Record<string, LucideIcon> = {
@@ -155,6 +156,7 @@ export function HospitalProfileView({
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(travel.mapsQuery)}`;
   const tel = site.phone.replace(/[^\d+]/g, "");
   const t = uiCatalogFor(locale);
+  const consultAvailable = localeSurfaceIsAvailable(locale, "consult");
   const cityLabel = taxonomyLabel(hospital.city, locale);
   const countryLabel = taxonomyLabel(hospital.country, locale);
   const specialtyRelationships =
@@ -249,9 +251,11 @@ export function HospitalProfileView({
                 ) : null}
               </ul>
               <div className="hp-hero__cta">
+                {consultAvailable ? (
                 <Button asChild className="hp-btn-primary">
                   <Link href={`/consult?hospital=${hospital.slug}`}>{t["hp.plan"]}</Link>
                 </Button>
+                ) : null}
                 <Button asChild variant="outline" className="hp-btn-secondary">
                   <a href={`tel:${tel}`}>
                     <span className="inline-flex items-center gap-2">{t["hp.talk"]}</span>
@@ -583,7 +587,9 @@ export function HospitalProfileView({
             <div className="hp-support">
               <Ambulance className="size-5" />
               <p>{t["hp.support"]}</p>
-              <Link href={`/consult?hospital=${hospital.slug}`}>{t["hp.askHelp"]}</Link>
+              {consultAvailable ? (
+                <Link href={`/consult?hospital=${hospital.slug}`}>{t["hp.askHelp"]}</Link>
+              ) : null}
             </div>
           </div>
         </div>
@@ -657,9 +663,11 @@ export function HospitalProfileView({
         <div className="hp-wrap">
           <h2>{t["hp.journey"]}</h2>
           <p>{t["hp.journeyLede"]}</p>
+          {consultAvailable ? (
           <Button asChild className="hp-btn-gold">
             <Link href={`/consult?hospital=${hospital.slug}`}>{t["hp.getPlan"]}</Link>
           </Button>
+          ) : null}
           <ul className="hp-trust">
             <li>
               <CalendarCheck className="size-4" />

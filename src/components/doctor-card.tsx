@@ -23,6 +23,7 @@ import {
 import type { Doctor } from "@/lib/doctors";
 import { medicalPhrase } from "@/lib/i18n/medical-phrases";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
+import { localeSurfaceIsAvailable } from "@/lib/i18n/locale-availability";
 
 const PROC_PREVIEW = 6;
 
@@ -95,9 +96,11 @@ export function DoctorCard({
             <Link href={`/doctors/${doctor.slug}`} className="dcard__btn dcard__btn--book">
               {t("card.viewProfile")}
             </Link>
-            <Link href={`/consult?doctor=${doctor.slug}`} className="dcard__btn dcard__btn--consult">
-              {t("card.requestConsult")}
-            </Link>
+            {localeSurfaceIsAvailable(locale, "consult") ? (
+              <Link href={`/consult?doctor=${doctor.slug}`} className="dcard__btn dcard__btn--consult">
+                {t("card.requestConsult")}
+              </Link>
+            ) : null}
             {compareSlot}
           </div>
         </div>
