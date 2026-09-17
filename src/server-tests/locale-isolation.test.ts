@@ -76,6 +76,7 @@ test("localized sitemaps contain only published locale records", () => {
   const russianUrls = buildLocaleSitemap("ru").map((row) => row.url);
   assert.deepEqual(russianUrls.sort(), [
     "https://gaf.healthcare/ru",
+    "https://gaf.healthcare/ru/treatments",
   ]);
 
   const arabicUrls = buildLocaleSitemap("ar").map((row) => row.url);
