@@ -1,4 +1,5 @@
 import { CoverImage } from "@/components/article-body";
+import { notFound } from "next/navigation";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { blogSettings, listPublishedPosts } from "@/lib/blogs";
@@ -6,12 +7,14 @@ import { localizeBlog, localizeMessages } from "@/lib/i18n/localize";
 import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { getRequestLocale } from "@/lib/i18n/request";
+import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, "/blogs")) notFound();
   const messages = await localizeMessages(locale);
   return withLocaleMetadata({ title: messages["seo.blogsTitle"] || "Blogs" }, "/blogs", locale, LOCALES);
 }
@@ -23,6 +26,7 @@ export default async function BlogsPage({
 }) {
   const raw = await searchParams;
   const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, "/blogs")) notFound();
   const settings = blogSettings(locale);
   const messages = await localizeMessages(locale);
   const localizedSettings = {
@@ -50,7 +54,7 @@ export default async function BlogsPage({
       />
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:px-8 md:py-16">
         {all.length === 0 ? (
-          <p className="text-muted-foreground">No published notes yet.</p>
+          <p className="text-muted-foreground">{messages["blogs.empty"]}</p>
         ) : (
           <div className="grid gap-8 md:grid-cols-2">
             {posts.map((post) => (
@@ -83,15 +87,17 @@ export default async function BlogsPage({
           <p className="mt-10 flex gap-3 text-sm">
             {current > 1 ? (
               <Link href={`/blogs?page=${current - 1}${category ? `&category=${encodeURIComponent(category)}` : ""}`}>
-                Previous
+                {messages["pager.previous"]}
               </Link>
             ) : null}
             <span>
-              Page {current} of {totalPages}
+              {messages["pager.pageOf"]
+                .replace("{current}", String(current))
+                .replace("{total}", String(totalPages))}
             </span>
             {current < totalPages ? (
               <Link href={`/blogs?page=${current + 1}${category ? `&category=${encodeURIComponent(category)}` : ""}`}>
-                Next
+                {messages["pager.next"]}
               </Link>
             ) : null}
           </p>

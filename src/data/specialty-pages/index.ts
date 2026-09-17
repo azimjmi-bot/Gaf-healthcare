@@ -126,6 +126,10 @@ export function getEditableSpecialtyPage(
     loadCatalogCms(edition).specialtyPageOverrides?.[
       specialtyPageKey(countrySlug, specialtySlug)
     ];
+  if (edition !== "en") {
+    const blank = blankSpecialtyPage(countrySlug, specialtySlug);
+    return patch ? { ...blank, ...patch } : blank;
+  }
   return patch ? { ...candidate, ...patch } : candidate;
 }
 
@@ -149,8 +153,11 @@ export function getSpecialtyPage(
     loadCatalogCms(edition).specialtyPageOverrides?.[
       specialtyPageKey(countrySlug, specialtySlug)
     ];
+  if (edition !== "en" && !patch) return undefined;
   const base =
-    getBaseSpecialtyPage(countrySlug, specialtySlug) ??
+    (edition === "en"
+      ? getBaseSpecialtyPage(countrySlug, specialtySlug)
+      : blankSpecialtyPage(countrySlug, specialtySlug)) ??
     (patch
       ? blankSpecialtyPage(countrySlug, specialtySlug)
       : undefined);

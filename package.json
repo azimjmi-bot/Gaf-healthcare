@@ -10,7 +10,7 @@
     "build": "next build --webpack",
     "start": "next start --hostname 0.0.0.0",
     "test": "tsx --test src/lib/*.test.ts src/lib/i18n/*.test.ts src/data/cost-articles/*.test.ts src/data/specialty-pages/*.test.ts && npm run test:specialty-engine",
-    "test:specialty-engine": "NODE_OPTIONS='--conditions react-server' tsx --test src/server-tests/specialty-page.test.ts src/server-tests/doctor-specialty-hub.test.ts src/server-tests/radiation-hospital-hub.test.ts src/server-tests/hospital-specialty-hub.test.ts"
+    "test:specialty-engine": "NODE_OPTIONS='--conditions react-server' tsx --test src/server-tests/specialty-page.test.ts src/server-tests/doctor-specialty-hub.test.ts src/server-tests/radiation-hospital-hub.test.ts src/server-tests/hospital-specialty-hub.test.ts src/server-tests/locale-isolation.test.ts"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.1",

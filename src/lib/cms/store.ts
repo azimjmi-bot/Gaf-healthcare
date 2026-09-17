@@ -5,20 +5,23 @@ import type { Article, CmsStore } from "@/lib/cms/types";
 import { newId, slugify } from "@/lib/cms/types";
 
 function cmsFile(edition: CmsEdition = "en") {
-  return edition === "ar"
-    ? join(process.cwd(), "content/ar/cms.json")
-    : join(process.cwd(), "content/cms.json");
+  return edition === "en"
+    ? join(process.cwd(), "content/cms.json")
+    : join(process.cwd(), `content/${edition}/cms.json`);
 }
 
-function fallbackStore(): CmsStore {
+function fallbackStore(edition: CmsEdition = "en"): CmsStore {
+  const localized = edition !== "en";
   return {
     settings: {
-      defaultAuthor: "GAF Healthcare clinical desk",
+      defaultAuthor: localized ? "" : "GAF Healthcare clinical desk",
       postsPerPage: 12,
-      blogEyebrow: "Desk",
-      blogTitle: "Planning notes, not a magazine.",
+      blogEyebrow: localized ? "" : "Desk",
+      blogTitle: localized ? "" : "Planning notes, not a magazine.",
       blogLede:
-        "Short essays on radiation techniques, when travel is justified, and the records we ask for before anyone books a ticket.",
+        localized
+          ? ""
+          : "Short essays on radiation techniques, when travel is justified, and the records we ask for before anyone books a ticket.",
     },
     categories: [],
     tags: [],
@@ -31,18 +34,18 @@ export function loadCms(edition: CmsEdition = "en"): CmsStore {
   try {
     const raw = readFileSync(cmsFile(edition), "utf8");
     const data = JSON.parse(raw) as CmsStore;
-    if (!Array.isArray(data.articles)) return fallbackStore();
+    if (!Array.isArray(data.articles)) return fallbackStore(edition);
     return {
-      ...fallbackStore(),
+      ...fallbackStore(edition),
       ...data,
-      settings: { ...fallbackStore().settings, ...data.settings },
+      settings: { ...fallbackStore(edition).settings, ...data.settings },
       categories: data.categories ?? [],
       tags: data.tags ?? [],
       media: data.media ?? [],
       articles: data.articles ?? [],
     };
   } catch {
-    return fallbackStore();
+    return fallbackStore(edition);
   }
 }
 

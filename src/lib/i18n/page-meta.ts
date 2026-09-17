@@ -5,7 +5,7 @@ import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { getCostArticle } from "@/data/cost-articles";
-import { getHospital, getTreatment } from "@/lib/data";
+import { getTreatment } from "@/lib/data";
 import { getPost } from "@/lib/blogs";
 import { catalogMetadata, doctorMetadata, hospitalMetadata, treatmentMetadata, costArticleMetadata } from "@/lib/seo";
 import { interpolateCostArticle } from "@/lib/cost-article";
@@ -21,7 +21,7 @@ export async function doctorPageMetadata(slug: string): Promise<Metadata> {
 
 export async function hospitalPageMetadata(slug: string): Promise<Metadata> {
   const locale = await getRequestLocale();
-  const hospital = getHospitalForLocale(slug, locale) ?? getHospital(slug);
+  const hospital = getHospitalForLocale(slug, locale);
   if (!hospital) return { title: "Hospital" };
   return withLocaleMetadata(hospitalMetadata(hospital, locale), `/hospitals/${slug}`, locale, LOCALES);
 }

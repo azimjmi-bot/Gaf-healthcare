@@ -351,6 +351,7 @@ const AR: Record<string, string> = {
   "card.book": "احجز موعدًا",
   "card.whatsapp": "واتساب",
   "card.viewProfile": "عرض الملف ←",
+  "card.requestConsult": "طلب استشارة",
   "card.keyProcedures": "الإجراءات الرئيسية",
   "card.showMore": "عرض المزيد",
   "card.showLess": "عرض أقل",
@@ -359,6 +360,8 @@ const AR: Record<string, string> = {
   "profile.doctors": "الأطباء",
   "profile.featuredExpert": "خبير مميز",
   "profile.book": "احجز استشارة",
+  "profile.requestConsult": "طلب استشارة",
+  "profile.medicalOpinion": "طلب رأي طبي",
   "profile.contact": "تواصل الآن",
   "profile.sla": "عادةً نرد خلال ٢٤ ساعة",
   "profile.statExperience": "الخبرة",
@@ -694,7 +697,10 @@ export const HOME_EXTRA_CATALOGS: Record<TargetLocale, TranslationFields> = {
 
 export function uiCatalogFor(locale: AppLocale): Record<string, string> {
   if (locale === "en") return { ...UI_MESSAGE_FIELDS };
-  return { ...UI_MESSAGE_FIELDS, ...UI_CATALOGS[locale] };
+  const empty = Object.fromEntries(
+    Object.keys(UI_MESSAGE_FIELDS).map((key) => [key, ""]),
+  );
+  return { ...empty, ...UI_CATALOGS[locale] };
 }
 
 export function homeExtraCatalogFor(locale: AppLocale): TranslationFields {

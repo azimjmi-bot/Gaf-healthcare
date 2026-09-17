@@ -7,8 +7,10 @@ import { CMS_COOKIE, cmsToken } from "@/lib/cms/auth";
 import { getArticleBySlug } from "@/lib/cms/store";
 import { getPost, listPublishedPosts } from "@/lib/blogs";
 import { blogPageMetadata } from "@/lib/i18n/page-meta";
-import { localizeBlog } from "@/lib/i18n/localize";
+import { localizeBlog, localizeMessages } from "@/lib/i18n/localize";
 import { getRequestLocale } from "@/lib/i18n/request";
+import { editionFromLocale } from "@/lib/cms/edition";
+import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -22,7 +24,10 @@ export async function generateMetadata({
   const jar = await cookies();
   const preview = jar.get(CMS_COOKIE)?.value === cmsToken();
   const locale = await getRequestLocale();
-  const post = getPost(slug, locale) ?? (preview ? getArticleBySlug(slug) : undefined);
+  if (!localePathIsPublished(locale, `/blogs/${slug}`) && !preview) notFound();
+  const post =
+    getPost(slug, locale) ??
+    (preview ? getArticleBySlug(slug, editionFromLocale(locale)) : undefined);
   if (!post) return { title: "Blogs" };
   return blogPageMetadata(post);
 }
@@ -36,9 +41,13 @@ export default async function BlogPostPage({
   const jar = await cookies();
   const preview = jar.get(CMS_COOKIE)?.value === cmsToken();
   const locale = await getRequestLocale();
-  const source = getPost(slug, locale) ?? (preview ? getArticleBySlug(slug) : undefined);
+  if (!localePathIsPublished(locale, `/blogs/${slug}`) && !preview) notFound();
+  const source =
+    getPost(slug, locale) ??
+    (preview ? getArticleBySlug(slug, editionFromLocale(locale)) : undefined);
   if (!source) notFound();
   const post = await localizeBlog(source, locale);
+  const messages = await localizeMessages(locale);
 
   const others = await Promise.all(
     listPublishedPosts(locale)
@@ -56,7 +65,7 @@ export default async function BlogPostPage({
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/25" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-12 md:px-8">
           <p className="eyebrow text-gold-bright">
-            Blogs · {post.category} · {post.date}
+            {messages["seo.blogsTitle"]} · {post.category} · {post.date}
           </p>
           <h1 className="mt-3 max-w-4xl font-heading text-4xl leading-[1.05] md:text-6xl">
             {post.title}
@@ -78,13 +87,13 @@ export default async function BlogPostPage({
           href="/blogs"
           className="mt-12 inline-block text-sm underline-offset-4 hover:underline"
         >
-          All blogs
+          {messages["blogs.all"]}
         </Link>
       </article>
       {others.length > 0 ? (
         <section className="border-t border-border bg-secondary/40">
           <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-16">
-            <p className="eyebrow">Also on the desk</p>
+            <p className="eyebrow">{messages["seo.blogsTitle"]}</p>
             <ul className="mt-8 grid gap-6 md:grid-cols-3">
               {others.map((p) => (
                 <li key={p.slug}>

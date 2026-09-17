@@ -31,16 +31,20 @@ import {
 import { costPageMetadata } from "@/lib/i18n/page-meta";
 import { localizeCost } from "@/lib/i18n/localize";
 import { getRequestLocale } from "@/lib/i18n/request";
+import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import type { Metadata } from "next";
 
 export async function costSheetMetadata(slug: string): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, `/costs/${slug}`)) notFound();
   return costPageMetadata(slug);
 }
 
 export async function CostSheet({ slug }: { slug: string }) {
+  const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, `/costs/${slug}`)) notFound();
   const source = getTreatment(slug);
   if (!source) notFound();
-  const locale = await getRequestLocale();
   const localized = await localizeCost(source, locale);
   const t = localized.treatment;
   const article =

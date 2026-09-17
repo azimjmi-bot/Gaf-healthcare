@@ -6,6 +6,7 @@ import { doctors } from "@/lib/data";
 import { parseDoctorListingExtras } from "@/lib/doctor-discovery";
 import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
 import { getRequestLocale } from "@/lib/i18n/request";
+import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -23,6 +24,8 @@ export async function generateMetadata({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }): Promise<Metadata> {
   const { segments } = await params;
+  const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, `/doctors/${segments.join("/")}`)) notFound();
   const raw = await searchParams;
   const filter = parsePrettyCatalogSegments(segments);
   if (filter) {
@@ -40,11 +43,13 @@ export default async function DoctorsCatchAllPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { segments } = await params;
+  const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, `/doctors/${segments.join("/")}`)) notFound();
   const raw = await searchParams;
   const page = readCatalogPage(raw);
   const filter = parsePrettyCatalogSegments(segments);
   if (filter) {
-    canonicalizePrettyPath("/doctors", segments, filter, page, await getRequestLocale());
+    canonicalizePrettyPath("/doctors", segments, filter, page, locale);
     return <DoctorsDirectory query={filter} page={page} extras={parseDoctorListingExtras(raw)} />;
   }
   if (segments.length === 1) return <DoctorProfile slug={segments[0]} />;

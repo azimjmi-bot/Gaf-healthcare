@@ -6,6 +6,7 @@ import { treatments } from "@/lib/data";
 import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { localePath } from "@/lib/i18n/path";
+import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -21,6 +22,8 @@ export async function generateMetadata({
   params: Promise<{ segments: string[] }>;
 }): Promise<Metadata> {
   const { segments } = await params;
+  const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, `/costs/${segments.join("/")}`)) notFound();
   const filter = parsePrettyCatalogSegments(segments);
   if (filter) return costsDirectoryMetadata(filter);
   if (segments.length === 1) return costSheetMetadata(segments[0]);
@@ -35,10 +38,11 @@ export default async function CostsCatchAllPage({
   searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { segments } = await params;
+  const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, `/costs/${segments.join("/")}`)) notFound();
   const page = readCatalogPage(await searchParams);
   const filter = parsePrettyCatalogSegments(segments);
   if (filter) {
-    const locale = await getRequestLocale();
     if (filter.procedure && !filter.city) {
       const treatment = treatments.find((row) => row.name === filter.procedure);
       if (treatment) {

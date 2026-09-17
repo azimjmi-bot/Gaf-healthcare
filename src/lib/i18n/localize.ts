@@ -18,13 +18,13 @@ export async function localizeMessages(locale: AppLocale) {
 }
 
 export async function localizeDoctor(doctor: Doctor, locale: AppLocale) {
-  if (locale !== "ar") return doctor;
-  return getDoctorForLocale(doctor.slug, locale) ?? doctor;
+  if (locale === "en") return doctor;
+  return getDoctorForLocale(doctor.slug, locale);
 }
 
 export async function localizeHospital(hospital: Hospital, locale: AppLocale) {
-  if (locale !== "ar") return hospital;
-  return getHospitalForLocale(hospital.slug, locale) ?? hospital;
+  if (locale === "en") return hospital;
+  return getHospitalForLocale(hospital.slug, locale);
 }
 
 export async function localizeCost(
@@ -60,20 +60,26 @@ export async function localizeFaqs(kind: "doctors" | "hospitals" | "costs", loca
 
 export async function localizeHomeExtras(locale: AppLocale) {
   const fields = homeExtraCatalogFor(locale);
-  const destinations = HOME_DESTINATIONS.map((place, index) => ({
-    ...place,
-    name: fields[`dest.${index}.name`] || place.name,
-    blurb: fields[`dest.${index}.blurb`] || place.blurb,
-    imageAlt: fields[`dest.${index}.imageAlt`] || place.imageAlt,
-  }));
-  const videos = HOME_VIDEOS.map((video, index) => ({
-    ...video,
-    title: fields[`video.${index}.title`] || video.title,
-  }));
-  const reviews = HOME_REVIEWS.map((review, index) => ({
-    ...review,
-    text: fields[`review.${index}.text`] || review.text,
-  }));
+  const destinations = HOME_DESTINATIONS.map((place, index) =>
+    locale === "en"
+      ? place
+      : {
+          ...place,
+          name: fields[`dest.${index}.name`] || "",
+          blurb: fields[`dest.${index}.blurb`] || "",
+          imageAlt: fields[`dest.${index}.imageAlt`] || "",
+        },
+  ).filter((place) => locale === "en" || Boolean(place.name && place.blurb));
+  const videos = HOME_VIDEOS.map((video, index) =>
+    locale === "en"
+      ? video
+      : { ...video, title: fields[`video.${index}.title`] || "" },
+  ).filter((video) => locale === "en" || Boolean(video.title));
+  const reviews = HOME_REVIEWS.map((review, index) =>
+    locale === "en"
+      ? review
+      : { ...review, text: fields[`review.${index}.text`] || "" },
+  ).filter((review) => locale === "en" || Boolean(review.text));
   return { destinations, videos, reviews };
 }
 

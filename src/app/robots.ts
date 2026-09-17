@@ -7,7 +7,13 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       { userAgent: "*", allow: "/", disallow: ["/cms", "/api/cms", "/doctors/compare"] },
     ],
-    sitemap: [absoluteUrl("/sitemap.xml"), absoluteUrl("/sitemap-ar.xml")],
+    sitemap: [
+      absoluteUrl("/sitemap.xml"),
+      absoluteUrl("/sitemap-ar.xml"),
+      absoluteUrl("/sitemap-ru.xml"),
+      absoluteUrl("/sitemap-fr.xml"),
+      absoluteUrl("/sitemap-sw.xml"),
+    ],
     host: SITE_URL,
   };
 }

@@ -67,7 +67,7 @@ export function CmsShell({ children }: { children: React.ReactNode }) {
     <div className="cms-shell">
       <aside className="cms-nav">
         <p className="cms-nav__brand">GAF Healthcare desk</p>
-        <p className="cms-nav__sub">{edition === "ar" ? "Arabic edition" : "English edition"}</p>
+        <p className="cms-nav__sub">{CMS_EDITION_LABELS[edition]} edition</p>
         <div className="cms-edition" role="group" aria-label="CMS language edition">
           {CMS_EDITIONS.map((code) => (
             <button

@@ -24,6 +24,8 @@ import {
 import { absoluteUrl } from "@/lib/seo";
 import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
+import { localePathIsPublished } from "@/lib/i18n/locale-publication";
+import { hospitalsPath } from "@/lib/catalog-links";
 import type { Metadata } from "next";
 
 export async function hospitalsDirectoryMetadata(
@@ -31,6 +33,7 @@ export async function hospitalsDirectoryMetadata(
   page = 1,
 ): Promise<Metadata> {
   const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, hospitalsPath(query))) notFound();
   if (locale === "en" && isHospitalSpecialtyScope(query)) {
     const hub = buildHospitalSpecialtyHub(
       query,
@@ -76,6 +79,7 @@ export async function HospitalsDirectory({
   page?: number;
 }) {
   const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, hospitalsPath(query))) notFound();
   if (locale === "en" && isHospitalSpecialtyScope(query)) {
     const hub = buildHospitalSpecialtyHub(
       query,

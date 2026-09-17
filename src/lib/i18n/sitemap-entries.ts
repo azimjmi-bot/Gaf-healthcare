@@ -11,6 +11,11 @@ import { absoluteUrl, SITE_URL } from "@/lib/seo";
 import type { AppLocale } from "@/lib/i18n/languages";
 import { CITIES, INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
 import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
+import {
+  doctorsForHospitalLocale,
+  doctorsForLocale,
+  hospitalsForLocale,
+} from "@/lib/locale-catalog";
 
 const SEARCH_CONSOLE_ORIGIN = SITE_URL;
 
@@ -37,6 +42,67 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
   }
 
   const now = new Date();
+  if (locale !== "en") {
+    const localized: MetadataRoute.Sitemap = [
+      entry("/", locale, {
+        lastModified: now,
+        changeFrequency: "weekly",
+        priority: 0.8,
+      }),
+      entry("/consult", locale, {
+        lastModified: now,
+        changeFrequency: "monthly",
+        priority: 0.5,
+      }),
+    ];
+    const localeDoctors = doctorsForLocale(locale);
+    if (localeDoctors.length > 0) {
+      localized.push(entry("/doctors", locale, { priority: 0.7 }));
+      for (const doctor of localeDoctors) {
+        localized.push(
+          entry(`/doctors/${doctor.slug}`, locale, {
+            changeFrequency: "monthly",
+            priority: 0.6,
+          }),
+        );
+      }
+    }
+    const localeHospitals = hospitalsForLocale(locale);
+    if (localeHospitals.length > 0) {
+      localized.push(entry("/hospitals", locale, { priority: 0.7 }));
+      for (const hospital of localeHospitals) {
+        localized.push(
+          entry(`/hospitals/${hospital.slug}`, locale, {
+            changeFrequency: "monthly",
+            priority: 0.6,
+          }),
+        );
+        if (doctorsForHospitalLocale(hospital.slug, locale).length > 0) {
+          localized.push(
+            entry(`/hospitals/${hospital.slug}/doctors`, locale, {
+              changeFrequency: "monthly",
+              priority: 0.45,
+            }),
+          );
+        }
+      }
+    }
+    const localePosts = listPublishedPosts(locale).filter((post) => post.allowIndex);
+    if (localePosts.length > 0) {
+      localized.push(entry("/blogs", locale, { priority: 0.6 }));
+      for (const post of localePosts) {
+        localized.push(
+          entry(`/blogs/${post.slug}`, locale, {
+            lastModified: post.updatedAt || post.publishedAt || post.date,
+            changeFrequency: "monthly",
+            priority: 0.5,
+          }),
+        );
+      }
+    }
+    return dedupeSitemap(localized);
+  }
+
   const homePriority = locale === "en" ? 1 : 0.8;
   const sectionPriority = locale === "en" ? 0.8 : 0.7;
   const urls: MetadataRoute.Sitemap = [
@@ -172,14 +238,16 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     );
   }
 
+  return dedupeSitemap(urls);
+}
+
+function dedupeSitemap(urls: MetadataRoute.Sitemap) {
   const seen = new Set<string>();
-  const out: MetadataRoute.Sitemap = [];
-  for (const row of urls) {
-    if (seen.has(row.url)) continue;
+  return urls.filter((row) => {
+    if (seen.has(row.url)) return false;
     seen.add(row.url);
-    out.push(row);
-  }
-  return out;
+    return true;
+  });
 }
 
 export function sitemapXml(entries: MetadataRoute.Sitemap) {

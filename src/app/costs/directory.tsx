@@ -1,5 +1,6 @@
 import { LocaleLink as Link } from "@/components/locale-link";
 import { Suspense } from "react";
+import { notFound } from "next/navigation";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { SpecialtyPager } from "@/components/specialty-pager";
 import { SpecialtyCostPage } from "@/components/specialty-cost-page";
@@ -16,11 +17,14 @@ import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { getRequestLocale } from "@/lib/i18n/request";
+import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import { getCity, getSpecialty, toSlug } from "@/lib/taxonomy";
 import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
 import type { Metadata } from "next";
 
 export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, costsFilterPath(query))) notFound();
   if (query.procedure) {
     const { costsProcedureMetadata } = await import("./costs-procedure-view");
     const meta = await costsProcedureMetadata(query);
@@ -29,7 +33,6 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
     return { ...meta, alternates: wrapped.alternates, openGraph: { ...meta.openGraph, ...wrapped.openGraph } };
   }
   const wrapped = await catalogPageMetadata("treatments", query);
-  const locale = await getRequestLocale();
   const specialty = query.specialty ? getSpecialty(query.specialty) : undefined;
   const city = query.city ? getCity(query.city) : undefined;
   const countrySlug = query.destination ? toSlug(query.destination) : undefined;
@@ -84,12 +87,13 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
 }
 
 export async function CostsDirectory({ query }: { query: CatalogQuery }) {
+  const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, costsFilterPath(query))) notFound();
   if (query.procedure) {
     const { CostsProcedureView } = await import("./costs-procedure-view");
     return <CostsProcedureView query={query} />;
   }
 
-  const locale = await getRequestLocale();
   const specialty = query.specialty ? getSpecialty(query.specialty) : undefined;
   const city = query.city ? getCity(query.city) : undefined;
   const countrySlug = query.destination ? toSlug(query.destination) : undefined;

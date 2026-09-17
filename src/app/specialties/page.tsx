@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { ArrowRight, Building2, MapPin, Stethoscope } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
 import { CtaBand, PageIntro } from "@/components/page-shell";
@@ -9,6 +10,7 @@ import {
 } from "@/data/specialty-pages";
 import { costsFilterPath } from "@/lib/catalog-links";
 import { getRequestLocale } from "@/lib/i18n/request";
+import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { absoluteUrl } from "@/lib/seo";
 import {
@@ -22,6 +24,7 @@ export const revalidate = 0;
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, "/specialties")) notFound();
   return withLocaleMetadata(
     {
       title: "Medical Specialties in India",
@@ -46,7 +49,9 @@ function publishedSpecialties() {
     );
 }
 
-export default function SpecialtiesPage() {
+export default async function SpecialtiesPage() {
+  const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, "/specialties")) notFound();
   const specialties = publishedSpecialties();
   const itemList = {
     "@context": "https://schema.org",

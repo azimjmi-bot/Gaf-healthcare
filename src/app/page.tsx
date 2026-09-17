@@ -15,8 +15,8 @@ import {
   YOUTUBE_CHANNEL,
 } from "@/data/home";
 import { listPublishedPosts } from "@/lib/blogs";
-import { hospitals, treatments } from "@/lib/data";
-import { doctorsForLocale } from "@/lib/locale-catalog";
+import { treatments } from "@/lib/data";
+import { doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { hospitalsPath } from "@/lib/catalog-links";
 import { localizeBlog, localizeHomeExtras, localizeMessages } from "@/lib/i18n/localize";
@@ -73,10 +73,16 @@ export default async function HomePage() {
     ...doctors.filter((d) => d.featured && d.specialtySlug === "orthopedics").slice(0, 1),
     ...doctors.filter((d) => d.featured && d.specialtySlug === "ophthalmology").slice(0, 1),
   ];
-  const campuses = hospitals.filter((h, i, all) => all.findIndex((x) => x.citySlug === h.citySlug) === i).slice(0, 5);
-  const sheets = HOME_COST_SLUGS.map((slug) => treatments.find((t) => t.slug === slug)).filter(
-    (row): row is Treatment => Boolean(row),
-  );
+  const localizedHospitals = hospitalsForLocale(locale);
+  const campuses = localizedHospitals
+    .filter((h, i, all) => all.findIndex((x) => x.citySlug === h.citySlug) === i)
+    .slice(0, 5);
+  const sheets =
+    locale === "en"
+      ? HOME_COST_SLUGS.map((slug) => treatments.find((t) => t.slug === slug)).filter(
+          (row): row is Treatment => Boolean(row),
+        )
+      : [];
 
   return (
     <>
@@ -87,8 +93,7 @@ export default async function HomePage() {
           name: "GAF Healthcare",
           url: locale === "en" ? SITE_URL : `${SITE_URL}/${locale}`,
           sameAs: [YOUTUBE_CHANNEL, GOOGLE_MAPS_URL],
-          description:
-            "Named radiation, surgical and medical oncologists, haematologists, cardiac surgeons, cardiologists, bariatric surgeons, cosmetic surgeons, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists, gynecologists, neurosurgeons, neurologists and nephrologists in India — Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad — with partner hospital costs in USD.",
+          description: t["seo.homeDescription"],
           areaServed: ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"].map((city) => ({
             "@type": "City",
             name: city,
@@ -106,7 +111,7 @@ export default async function HomePage() {
       <section className="home-hero">
         <Image
           src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=2400&q=80"
-          alt="Reception desk in a modern hospital"
+          alt=""
           fill
           priority
           className="object-cover object-center"
@@ -116,7 +121,7 @@ export default async function HomePage() {
           <p className="eyebrow text-gold-bright">{t["home.heroEyebrow"]}</p>
           <h1>{t["home.heroTitle"]}</h1>
           <p className="home-hero__lede">{t["home.heroLede"]}</p>
-          <HomeSearch />
+          {doctors.length > 0 || localizedHospitals.length > 0 ? <HomeSearch /> : null}
         </div>
       </section>
 
@@ -141,6 +146,7 @@ export default async function HomePage() {
         </ul>
       </section>
 
+      {localizedHospitals.length > 0 ? (
       <section id="destinations" className="home-section scroll-mt-24">
         <div className="home-head">
           <div>
@@ -174,7 +180,9 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
+      ) : null}
 
+      {faculty.length > 0 ? (
       <section className="home-section home-section--tint">
         <div className="home-head">
           <div>
@@ -200,7 +208,9 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
+      ) : null}
 
+      {campuses.length > 0 ? (
       <section className="home-section">
         <div className="home-head">
           <div>
@@ -225,7 +235,9 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
+      ) : null}
 
+      {sheets.length > 0 ? (
       <section className="home-section home-section--tint">
         <div className="home-head">
           <div>
@@ -248,6 +260,7 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
+      ) : null}
 
       <PatientStories
         videos={extras.videos}
@@ -256,6 +269,7 @@ export default async function HomePage() {
         moreLabel={t["home.moreYoutube"]}
       />
 
+      {posts.length > 0 ? (
       <section className="home-section home-section--tint">
         <div className="home-head">
           <div>
@@ -279,6 +293,7 @@ export default async function HomePage() {
           ))}
         </div>
       </section>
+      ) : null}
 
       <PatientReviews
         reviews={extras.reviews}

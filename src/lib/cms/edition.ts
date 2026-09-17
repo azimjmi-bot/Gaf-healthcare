@@ -1,11 +1,17 @@
-import { SOURCE_LOCALE, isAppLocale, type AppLocale } from "@/lib/i18n/languages";
+import {
+  LANGUAGE_LABELS,
+  LOCALES,
+  SOURCE_LOCALE,
+  isAppLocale,
+  type AppLocale,
+} from "@/lib/i18n/languages";
 
 export const CMS_EDITION_COOKIE = "gaf_cms_edition";
-export const CMS_EDITIONS = ["en", "ar"] as const;
-export type CmsEdition = (typeof CMS_EDITIONS)[number];
+export const CMS_EDITIONS = LOCALES;
+export type CmsEdition = AppLocale;
 
 export function isCmsEdition(value: string | null | undefined): value is CmsEdition {
-  return value === "en" || value === "ar";
+  return Boolean(value && isAppLocale(value));
 }
 
 export function parseCmsEdition(value: string | null | undefined): CmsEdition {
@@ -13,7 +19,7 @@ export function parseCmsEdition(value: string | null | undefined): CmsEdition {
 }
 
 export function editionFromLocale(locale: AppLocale): CmsEdition {
-  return locale === "ar" ? "ar" : "en";
+  return locale;
 }
 
 export function localeFromEdition(edition: CmsEdition): AppLocale {
@@ -30,7 +36,4 @@ export function editionFromRequest(request: Request): CmsEdition {
   return parseCmsEdition(match?.[1] ? decodeURIComponent(match[1]) : undefined);
 }
 
-export const CMS_EDITION_LABELS: Record<CmsEdition, string> = {
-  en: "English",
-  ar: "العربية",
-};
+export const CMS_EDITION_LABELS: Record<CmsEdition, string> = LANGUAGE_LABELS;

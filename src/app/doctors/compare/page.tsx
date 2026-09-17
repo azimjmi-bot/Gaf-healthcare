@@ -1,17 +1,27 @@
 import { LocaleLink as Link } from "@/components/locale-link";
+import { notFound } from "next/navigation";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { getDoctor } from "@/lib/data";
 import { experienceYears } from "@/lib/doctor-discovery";
 import { doctorsPath } from "@/lib/catalog-links";
 import type { Metadata } from "next";
+import { getRequestLocale } from "@/lib/i18n/request";
+import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 
 export const dynamic = "force-dynamic";
 
-export const metadata: Metadata = {
-  title: "Compare doctors in India",
-  description: "Compare listed doctors on specialty, experience, qualifications, hospital, city and mapped procedures. This is not a clinical ranking.",
-  robots: { index: false, follow: false },
-};
+export async function generateMetadata(): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, "/doctors/compare")) {
+    return { robots: { index: false, follow: false } };
+  }
+  return {
+    title: "Compare doctors in India",
+    description:
+      "Compare listed doctors on specialty, experience, qualifications, hospital, city and mapped procedures. This is not a clinical ranking.",
+    robots: { index: false, follow: false },
+  };
+}
 
 function parseIds(raw: string | string[] | undefined) {
   const text = Array.isArray(raw) ? raw[0] : raw;
@@ -24,6 +34,8 @@ export default async function DoctorComparePage({
 }: {
   searchParams: Promise<{ ids?: string | string[] }>;
 }) {
+  const locale = await getRequestLocale();
+  if (!localePathIsPublished(locale, "/doctors/compare")) notFound();
   const ids = parseIds((await searchParams).ids);
   const doctors = ids.map((slug) => getDoctor(slug)).filter((row): row is NonNullable<typeof row> => Boolean(row));
 

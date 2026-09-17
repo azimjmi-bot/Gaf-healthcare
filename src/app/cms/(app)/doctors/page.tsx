@@ -14,9 +14,9 @@ export default async function CmsDoctorsPage() {
           <p className="cms-kicker">Catalog</p>
           <h1>Doctors</h1>
           <p className="cms-muted">
-            {edition === "ar"
-              ? "Arabic overlays write to content/ar/catalog-cms.json. The English catalog stays intact."
-              : "Edits write to content/catalog-cms.json. The Ginger catalog and pSEO helpers stay intact."}
+            {edition === "en"
+              ? "Edits write to content/catalog-cms.json. The Ginger catalog and pSEO helpers stay intact."
+              : `${edition.toUpperCase()} overlays write to content/${edition}/catalog-cms.json. Every other language edition stays intact.`}
           </p>
         </div>
         <Link href="/cms/doctors/new" className="cms-btn">

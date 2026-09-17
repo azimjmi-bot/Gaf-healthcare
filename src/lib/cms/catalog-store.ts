@@ -14,9 +14,9 @@ import {
 } from "@/lib/cms/catalog-types";
 
 function catalogFile(edition: CmsEdition = "en") {
-  return edition === "ar"
-    ? join(process.cwd(), "content/ar/catalog-cms.json")
-    : join(process.cwd(), "content/catalog-cms.json");
+  return edition === "en"
+    ? join(process.cwd(), "content/catalog-cms.json")
+    : join(process.cwd(), `content/${edition}/catalog-cms.json`);
 }
 
 function mapHospitalOverrides(map: Record<string, HospitalPatch> | undefined) {

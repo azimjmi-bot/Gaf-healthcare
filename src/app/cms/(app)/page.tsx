@@ -62,9 +62,9 @@ export default async function CmsDashboardPage() {
         </li>
       </ul>
       <p className="cms-muted">
-        {edition === "ar"
-          ? "Arabic catalog edits sit in content/ar/catalog-cms.json. English files stay untouched."
-          : "Catalog edits sit in content/catalog-cms.json. They do not rewrite the Ginger catalog or pSEO matching helpers."}
+        {edition === "en"
+          ? "Catalog edits sit in content/catalog-cms.json. They do not rewrite the Ginger catalog or pSEO matching helpers."
+          : `${edition.toUpperCase()} catalog edits sit in content/${edition}/catalog-cms.json. Every other language edition stays untouched.`}
       </p>
       <h2>Recently edited articles</h2>
       <table className="cms-table">

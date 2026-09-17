@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { LANGUAGE_OG, SOURCE_LOCALE, type AppLocale } from "@/lib/i18n/languages";
 import { localePath } from "@/lib/i18n/path";
+import { publishedLocalesForPath } from "@/lib/i18n/locale-publication";
 
 export const SITE_ORIGIN = "https://gaf.healthcare";
 
@@ -26,7 +27,11 @@ export function withLocaleMetadata(
   availableLocales: readonly AppLocale[],
 ): Metadata {
   const url = localizedAbsoluteUrl(englishPath, locale);
-  const languages = hreflangLanguages(englishPath, availableLocales);
+  const published = new Set(publishedLocalesForPath(englishPath));
+  const languages = hreflangLanguages(
+    englishPath,
+    availableLocales.filter((candidate) => published.has(candidate)),
+  );
   const og = meta.openGraph ? { ...meta.openGraph } : {};
   const twitter = meta.twitter ? { ...meta.twitter } : {};
   return {
