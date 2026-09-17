@@ -8,6 +8,7 @@ export function hospitalSpecialtyCardDescription({
   doctors,
   procedures,
   selectedProcedure,
+  practitionerSingular = "specialist",
   practitionerPlural = "specialists",
 }: {
   hospital: Hospital;
@@ -15,13 +16,16 @@ export function hospitalSpecialtyCardDescription({
   doctors: Doctor[];
   procedures: { name: string; slug: string }[];
   selectedProcedure?: string;
+  practitionerSingular?: string;
   practitionerPlural?: string;
 }) {
   if (selectedProcedure) {
     const matchedDoctors = doctors.filter((doctor) =>
       doctorHasProcedure(doctor, selectedProcedure),
     );
-    return `${hospital.name} is listed for ${selectedProcedure} in ${hospital.city} because GAF's current data records the procedure at this campus and connects ${matchedDoctors.length} affiliated ${practitionerPlural} with the same procedure. This is a catalog relationship, not confirmation that the procedure is suitable or currently scheduled for a specific patient.`;
+    const practitionerLabel =
+      matchedDoctors.length === 1 ? practitionerSingular : practitionerPlural;
+    return `${hospital.name} is listed for ${selectedProcedure} in ${hospital.city} because GAF's current data records the procedure at this campus and connects ${matchedDoctors.length} affiliated ${practitionerLabel} with the same procedure. This is a catalog relationship, not confirmation that the procedure is suitable or currently scheduled for a specific patient.`;
   }
 
   const procedureNames = procedures.slice(0, 4).map((procedure) => procedure.name);
@@ -29,5 +33,7 @@ export function hospitalSpecialtyCardDescription({
     procedureNames.length > 0
       ? ` Validated hospital-and-doctor mappings include ${procedureNames.join(", ")}${procedures.length > procedureNames.length ? ` and ${procedures.length - procedureNames.length} more` : ""}.`
       : "";
-  return `${hospital.name} is listed for ${specialty} in ${hospital.city} because GAF's current data connects this campus with ${doctors.length} affiliated ${practitionerPlural}.${procedureSummary}`;
+  const practitionerLabel =
+    doctors.length === 1 ? practitionerSingular : practitionerPlural;
+  return `${hospital.name} is listed for ${specialty} in ${hospital.city} because GAF's current data connects this campus with ${doctors.length} affiliated ${practitionerLabel}.${procedureSummary}`;
 }

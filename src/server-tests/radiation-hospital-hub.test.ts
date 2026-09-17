@@ -137,6 +137,7 @@ test("hospital card descriptions use the current specialty instead of generic bi
       specialty: "Radiation Oncology",
       doctors: relationship.doctors,
       procedures: relationship.procedures,
+      practitionerSingular: "radiation oncologist",
       practitionerPlural: "radiation oncologists",
     });
     assert.match(description, /Radiation Oncology/);
@@ -156,11 +157,13 @@ test("hospital card descriptions use the current specialty instead of generic bi
     doctors: relationship.doctors,
     procedures: relationship.procedures,
     selectedProcedure: "CyberKnife",
+    practitionerSingular: "radiation oncologist",
     practitionerPlural: "radiation oncologists",
   });
   assert.match(description, /listed for CyberKnife/);
   assert.match(description, /records the procedure at this campus/);
   assert.equal(description.includes(relationship.hospital.bio), false);
+  assert.doesNotMatch(description, /1 affiliated radiation oncologists/);
 });
 
 test("every mapped Radiation Oncology procedure uses the generic template", () => {

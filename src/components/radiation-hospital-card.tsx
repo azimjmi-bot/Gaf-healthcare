@@ -26,6 +26,7 @@ export function RadiationHospitalCard({
     doctors,
     procedures,
     selectedProcedure,
+    practitionerSingular: "radiation oncologist",
     practitionerPlural: "radiation oncologists",
   });
 
