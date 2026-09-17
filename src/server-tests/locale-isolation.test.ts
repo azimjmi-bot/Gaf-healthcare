@@ -12,7 +12,11 @@ import {
   publishedLocalesForPath,
 } from "@/lib/i18n/locale-publication";
 import { localeSurfaceIsAvailable } from "@/lib/i18n/locale-availability";
-import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
+import {
+  buildLocaleSitemap,
+  LANGUAGE_SITEMAP_PATHS,
+  sitemapXml,
+} from "@/lib/i18n/sitemap-entries";
 import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 import {
   doctorsForLocale,
@@ -93,6 +97,35 @@ test("localized sitemaps contain only published locale records", () => {
     );
   }
   assert.ok(hospitals.length > 0);
+});
+
+test("every language has a dedicated, complete sitemap document", () => {
+  assert.deepEqual(LANGUAGE_SITEMAP_PATHS, {
+    en: "/sitemap-en.xml",
+    ru: "/sitemap-ru.xml",
+    fr: "/sitemap-fr.xml",
+    ar: "/sitemap-ar.xml",
+    sw: "/sitemap-sw.xml",
+  });
+  for (const locale of CMS_EDITIONS) {
+    const entries = buildLocaleSitemap(locale);
+    assert.ok(entries.length > 0);
+    const expectedPrefix =
+      locale === "en"
+        ? "https://gaf.healthcare"
+        : `https://gaf.healthcare/${locale}`;
+    assert.ok(
+      entries.every(
+        (entry) =>
+          entry.url === expectedPrefix ||
+          entry.url.startsWith(`${expectedPrefix}/`),
+      ),
+    );
+    const xml = sitemapXml(entries);
+    assert.match(xml, /^<\?xml version="1\.0" encoding="UTF-8"\?>/);
+    assert.match(xml, /<changefreq>/);
+    assert.match(xml, /<priority>/);
+  }
 });
 
 test("UI dictionaries do not fill missing translations with English", () => {

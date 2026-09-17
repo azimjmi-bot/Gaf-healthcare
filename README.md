@@ -66,12 +66,23 @@ Existing English routes are unchanged. A Russian doctor page is `/ru/doctors/[sl
 
 `src/proxy.ts` (Next.js 16) reads the language prefix, sets `x-gaf-locale`, and rewrites to the existing English route. English stays at the root. There is no `/en/` prefix.
 
-Navigation, homepage chrome, footer and forms use built-in Russian, French, Arabic and Swahili catalogs. Arabic radiation-oncology doctor profiles (names, titles, bios, procedure lists) and all 37 India hospital profiles (bios, summaries, ward languages, ICU notes) live in `content/ar/catalog-cms.json` and appear on `/ar/doctors` and `/ar/hospitals`. English identity keys — slug, city, country, specialty, procedure slugs — stay English so pSEO can be mounted later under Country, City, Specialty and Procedure. Other doctor specialties still show English bodies on `/ar` until those overlays are written. Google Cloud Translation is not used.
+Navigation and homepage chrome use built-in Russian, French, Arabic and Swahili catalogs. Arabic radiation-oncology doctor profiles (names, titles, bios, procedure lists) and all 37 India hospital profiles (bios, summaries, ward languages, ICU notes) live in `content/ar/catalog-cms.json` and appear on `/ar/doctors` and `/ar/hospitals`. English identity keys — slug, city, country, specialty and procedure slugs — stay shared so relationships remain stable. Editorial copy never falls back across languages: an untranslated route is excluded from that locale’s sitemap and returns the localized 404 page. Google Cloud Translation is not used.
 
-The Arabic edition starts with the same filters as English on Doctors, Hospitals, and Treatment Cost. Dropdown **values** and pretty URLs stay English (`/ar/doctors/India/Delhi-NCR/Surgical-Oncology`). Visible labels are Arabic. English sitemap is `/sitemap.xml`. Arabic sitemap is `/sitemap-ar.xml`. Each language has its own CMS files:
+Each language has its own sitemap. `/sitemap.xml` remains an English compatibility URL; robots advertises the explicit language files:
+
+- English: `/sitemap-en.xml`
+- Russian: `/sitemap-ru.xml`
+- French: `/sitemap-fr.xml`
+- Arabic: `/sitemap-ar.xml`
+- Swahili: `/sitemap-sw.xml`
+
+Each language also has its own CMS files:
 
 - English: `content/cms.json`, `content/catalog-cms.json`
 - Arabic: `content/ar/cms.json`, `content/ar/catalog-cms.json`
+- Russian: `content/ru/cms.json`, `content/ru/catalog-cms.json`
+- French: `content/fr/cms.json`, `content/fr/catalog-cms.json`
+- Swahili: `content/sw/cms.json`, `content/sw/catalog-cms.json`
 
 Switch editions at the top of `/cms`. The public `/ar/blogs` list reads the Arabic CMS only.
 

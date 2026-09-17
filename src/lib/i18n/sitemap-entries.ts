@@ -9,6 +9,7 @@ import { hospitalSpecialtySitemapPaths } from "@/lib/radiation-hospital-page";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { absoluteUrl, SITE_URL } from "@/lib/seo";
 import type { AppLocale } from "@/lib/i18n/languages";
+import { LOCALES } from "@/lib/i18n/languages";
 import { CITIES, INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
 import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
 import {
@@ -18,6 +19,10 @@ import {
 } from "@/lib/locale-catalog";
 
 const SEARCH_CONSOLE_ORIGIN = SITE_URL;
+
+export const LANGUAGE_SITEMAP_PATHS = Object.fromEntries(
+  LOCALES.map((locale) => [locale, `/sitemap-${locale}.xml`]),
+) as Record<AppLocale, `/sitemap-${AppLocale}.xml`>;
 
 function entry(
   path: string,
@@ -249,7 +254,12 @@ export function sitemapXml(entries: MetadataRoute.Sitemap) {
   const body = entries
     .map((row) => {
       const last = row.lastModified instanceof Date ? row.lastModified.toISOString() : row.lastModified;
-      return `<url><loc>${escapeXml(row.url)}</loc>${last ? `<lastmod>${last}</lastmod>` : ""}</url>`;
+      const frequency = row.changeFrequency
+        ? `<changefreq>${row.changeFrequency}</changefreq>`
+        : "";
+      const priority =
+        row.priority !== undefined ? `<priority>${row.priority}</priority>` : "";
+      return `<url><loc>${escapeXml(row.url)}</loc>${last ? `<lastmod>${last}</lastmod>` : ""}${frequency}${priority}</url>`;
     })
     .join("");
   return `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${body}</urlset>`;
