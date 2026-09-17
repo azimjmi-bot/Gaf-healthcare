@@ -26,7 +26,7 @@ test("India Radiation Oncology hospital page uses validated relationships", () =
   assert.equal(hub.cities.length, 5);
   assert.equal(hub.procedures.length, 15);
   assert.equal(hub.quickAnswers.length, 3);
-  assert.ok(hub.metrics.some((row) => row.label === "Radiation oncologists"));
+  assert.ok(hub.metrics.some((row) => row.label === hub.practitioners));
   assert.ok(
     hub.hospitals.every(
       (row) =>
