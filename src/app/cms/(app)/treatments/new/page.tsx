@@ -1,11 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 
 export default function CmsNewCuratedTreatmentPage() {
   const router = useRouter();
+  const started = useRef(false);
   useEffect(() => {
+    if (started.current) return;
+    started.current = true;
     let active = true;
     fetch("/api/cms/curated-treatments", { method: "POST" })
       .then((response) => response.json())
