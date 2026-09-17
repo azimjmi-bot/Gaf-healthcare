@@ -191,6 +191,46 @@ export function RadiationHospitalHub({
               />
             ))}
           </div>
+          {visibleHospitals.length > 1 ? (
+            <div className="mt-12">
+              <h3 className="font-heading text-3xl">Compare hospital facts</h3>
+              <p className="mt-2 text-sm text-muted-foreground">
+                This table compares recorded attributes only. It does not score or rank hospitals.
+              </p>
+              <div className="mt-5 overflow-x-auto rounded-2xl border border-border bg-card">
+                <table className="min-w-[760px] w-full text-sm">
+                  <thead>
+                    <tr className="border-b border-border text-left">
+                      <th className="px-4 py-3 font-medium text-muted-foreground">Hospital</th>
+                      <th className="px-4 py-3 font-medium text-muted-foreground">City</th>
+                      <th className="px-4 py-3 font-medium text-muted-foreground">Accreditation</th>
+                      <th className="px-4 py-3 font-medium text-muted-foreground">Beds</th>
+                      <th className="px-4 py-3 font-medium text-muted-foreground">Established</th>
+                      <th className="px-4 py-3 font-medium text-muted-foreground">Validated procedures</th>
+                      <th className="px-4 py-3 font-medium text-muted-foreground">Listed doctors</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {visibleHospitals.slice(0, 6).map((relationship) => (
+                      <tr key={relationship.hospital.slug} className="border-t border-border align-top">
+                        <th className="px-4 py-3 text-left font-medium">
+                          <Link href={`/hospitals/${relationship.hospital.slug}`}>
+                            {relationship.hospital.name}
+                          </Link>
+                        </th>
+                        <td className="px-4 py-3 text-muted-foreground">{relationship.hospital.city}</td>
+                        <td className="px-4 py-3 text-muted-foreground">{relationship.hospital.accreditation || "Not recorded"}</td>
+                        <td className="px-4 py-3 text-muted-foreground">{relationship.hospital.beds || "Not recorded"}</td>
+                        <td className="px-4 py-3 text-muted-foreground">{relationship.hospital.established || "Not recorded"}</td>
+                        <td className="px-4 py-3 text-muted-foreground">{relationship.procedures.length}</td>
+                        <td className="px-4 py-3 text-muted-foreground">{relationship.doctors.length}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ) : null}
           <CatalogPager
             page={data.paging.page}
             totalPages={data.paging.totalPages}
