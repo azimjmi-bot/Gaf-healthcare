@@ -18,11 +18,7 @@ const substance = (d) => SUBSTANCE.reduce((n, k) => n + (d[k]?.length ?? 0), 0);
 const words = (s) => String(s ?? "").split(/\s+/).filter(Boolean).length;
 
 // Doctors deliberately left unchanged after review, with the reason recorded.
-const FLAGGED = {
-  "dr-b-ramakrishna-prasad": "record lacks the education, affiliation, membership, award and research detail needed for 200 words",
-  "dr-sri-sai-tejaswini-muddana": "only designation, hospital, city, 4+ years, an MBBS college and a technique list; qualifications and education disagree on the postgraduate degree",
-  "dr-arsheed-hussain-hakeem": "record contradicts itself: surgical designation and operative procedure list against purely medical-oncology qualifications",
-};
+const FLAGGED = JSON.parse(readFileSync("docs/doctor-bio-rewrite/flagged.json", "utf8"));
 
 const rows = [];
 const counts = { rewritten: 0, flagged: 0, rewritable: 0, thin: 0 };

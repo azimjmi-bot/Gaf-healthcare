@@ -15,14 +15,10 @@ const catalog = JSON.parse(readFileSync("src/data/ginger-catalog.json", "utf8"))
 const cms = JSON.parse(readFileSync("content/catalog-cms.json", "utf8"));
 const done = new Set(Object.keys(cms.doctorOverrides ?? {}));
 
-// Reviewed and deliberately left unchanged; see docs/doctor-bio-rewrite/change-log.md.
-const FLAGGED = new Set([
-  "dr-b-ramakrishna-prasad",
-  "dr-sri-sai-tejaswini-muddana",
-  "dr-arsheed-hussain-hakeem",
-  "dr-rohit-nayyar",
-  "dr-arvind-kumar-1",
-]);
+// Reviewed and deliberately left unchanged; see docs/doctor-bio-rewrite/flagged.json.
+const FLAGGED = new Set(
+  Object.keys(JSON.parse(readFileSync("docs/doctor-bio-rewrite/flagged.json", "utf8"))),
+);
 
 const SUBSTANCE = ["education", "affiliations", "memberships", "awards", "research"];
 const substance = (d) => SUBSTANCE.reduce((n, k) => n + (d[k]?.length ?? 0), 0);
