@@ -75,7 +75,8 @@ const COMMON = new Set(
    operatively teaching minimal imaging fertility robotics obstetric obstetrics
    gynaecology gynecology gynaecologist gynecologist gynaecologists surgeon surgeons
    robotically laparoscopically medically surgically hysteroscopically
-   laparoscopy hysteroscopy endoscopy four five six seven eight nine ten eleven twelve`
+   laparoscopy hysteroscopy endoscopy four five six seven eight nine ten eleven twelve
+   icds pacemakers stents devices arrhythmias`
     .split(/\s+/)
     .filter(Boolean),
 );
