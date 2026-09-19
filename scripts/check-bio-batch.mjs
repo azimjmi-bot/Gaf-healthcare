@@ -77,7 +77,7 @@ const COMMON = new Set(
    robotically laparoscopically medically surgically hysteroscopically
    laparoscopy hysteroscopy endoscopy four five six seven eight nine ten eleven twelve
    icds pacemakers stents devices arrhythmias all any every none both either neither
-   interventionally structurally diagnostically`
+   interventionally structurally diagnostically taking making holding reaching`
     .split(/\s+/)
     .filter(Boolean),
 );
