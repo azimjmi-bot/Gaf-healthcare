@@ -78,7 +78,7 @@ const COMMON = new Set(
    laparoscopy hysteroscopy endoscopy four five six seven eight nine ten eleven twelve
    icds pacemakers stents devices arrhythmias all any every none both either neither
    interventionally structurally diagnostically taking making holding reaching
-   congenital coronary cardiac vascular`
+   congenital coronary cardiac vascular reconstructive arthroplasty arthroscopic trauma`
     .split(/\s+/)
     .filter(Boolean),
 );
