@@ -71,7 +71,9 @@ const COMMON = new Set(
    he's she's does not much matter its english hindi kannada tamil telugu marathi
    families travelling travel outside sizeable substantial amount office
    sparse thin flagged review manual recommendation status ready word words count counts
-   technically internationally clinically academically day-to-day beyond alongside`
+   technically internationally clinically academically day-to-day beyond alongside
+   operatively teaching minimal imaging fertility robotics obstetric obstetrics
+   gynaecology gynecology gynaecologist gynecologist gynaecologists surgeon surgeons`
     .split(/\s+/)
     .filter(Boolean),
 );
