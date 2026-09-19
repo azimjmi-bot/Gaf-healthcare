@@ -73,7 +73,8 @@ const COMMON = new Set(
    sparse thin flagged review manual recommendation status ready word words count counts
    technically internationally clinically academically day-to-day beyond alongside
    operatively teaching minimal imaging fertility robotics obstetric obstetrics
-   gynaecology gynecology gynaecologist gynecologist gynaecologists surgeon surgeons`
+   gynaecology gynecology gynaecologist gynecologist gynaecologists surgeon surgeons
+   robotically laparoscopically medically surgically hysteroscopically`
     .split(/\s+/)
     .filter(Boolean),
 );
