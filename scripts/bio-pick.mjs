@@ -30,10 +30,13 @@ const pool = catalog.doctors
 
 console.log(`${specialty}: ${pool.length} remaining, showing ${offset}..${offset + count}`);
 
+// The stored bio is GAF platform boilerplate for these records, so it is only dumped on
+// request; the structured fields are what the rewrite draws on.
 const FIELDS = [
   "slug", "name", "experience", "qualifications", "designation", "hospitalName", "city",
   "specializations", "proceduresExpertise", "education", "affiliations", "memberships",
-  "awards", "research", "bio",
+  "awards", "research",
+  ...(process.argv.includes("--bio") ? ["bio"] : []),
 ];
 
 for (const d of pool.slice(offset, offset + count)) {
