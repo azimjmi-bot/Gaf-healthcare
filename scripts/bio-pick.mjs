@@ -15,11 +15,19 @@ const catalog = JSON.parse(readFileSync("src/data/ginger-catalog.json", "utf8"))
 const cms = JSON.parse(readFileSync("content/catalog-cms.json", "utf8"));
 const done = new Set(Object.keys(cms.doctorOverrides ?? {}));
 
+// Reviewed and deliberately left unchanged; see docs/doctor-bio-rewrite/change-log.md.
+const FLAGGED = new Set([
+  "dr-b-ramakrishna-prasad",
+  "dr-sri-sai-tejaswini-muddana",
+  "dr-arsheed-hussain-hakeem",
+]);
+
 const SUBSTANCE = ["education", "affiliations", "memberships", "awards", "research"];
 const substance = (d) => SUBSTANCE.reduce((n, k) => n + (d[k]?.length ?? 0), 0);
 
 const pool = catalog.doctors
-  .filter((d) => d.specialty === specialty && !done.has(d.slug))
+  .filter((d) => d.specialty === specialty && !done.has(d.slug) && !FLAGGED.has(d.slug))
+  .filter((d) => substance(d) >= 8)
   .sort((a, b) => substance(b) - substance(a));
 
 console.log(`${specialty}: ${pool.length} remaining, showing ${offset}..${offset + count}`);
