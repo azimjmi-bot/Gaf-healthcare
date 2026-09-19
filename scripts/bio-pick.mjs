@@ -20,6 +20,8 @@ const FLAGGED = new Set([
   "dr-b-ramakrishna-prasad",
   "dr-sri-sai-tejaswini-muddana",
   "dr-arsheed-hussain-hakeem",
+  "dr-rohit-nayyar",
+  "dr-arvind-kumar-1",
 ]);
 
 const SUBSTANCE = ["education", "affiliations", "memberships", "awards", "research"];
