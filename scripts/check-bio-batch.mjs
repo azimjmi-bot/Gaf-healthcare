@@ -76,7 +76,7 @@ const COMMON = new Set(
    gynaecology gynecology gynaecologist gynecologist gynaecologists surgeon surgeons
    robotically laparoscopically medically surgically hysteroscopically
    laparoscopy hysteroscopy endoscopy four five six seven eight nine ten eleven twelve
-   icds pacemakers stents devices arrhythmias`
+   icds pacemakers stents devices arrhythmias all any every none both either neither`
     .split(/\s+/)
     .filter(Boolean),
 );
