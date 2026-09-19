@@ -1,0 +1,46 @@
+#!/usr/bin/env node
+// Lists the next doctors to process for a specialty, ordered by how much
+// non-procedure substance their own record carries, and dumps their full records.
+// Read-only.
+//
+// Usage: node scripts/bio-pick.mjs "<specialty>" [count] [offset]
+
+import { readFileSync } from "node:fs";
+
+const [specialty, countArg, offsetArg] = process.argv.slice(2);
+const count = Number(countArg ?? 12);
+const offset = Number(offsetArg ?? 0);
+
+const catalog = JSON.parse(readFileSync("src/data/ginger-catalog.json", "utf8"));
+const cms = JSON.parse(readFileSync("content/catalog-cms.json", "utf8"));
+const done = new Set(Object.keys(cms.doctorOverrides ?? {}));
+
+const SUBSTANCE = ["education", "affiliations", "memberships", "awards", "research"];
+const substance = (d) => SUBSTANCE.reduce((n, k) => n + (d[k]?.length ?? 0), 0);
+
+const pool = catalog.doctors
+  .filter((d) => d.specialty === specialty && !done.has(d.slug))
+  .sort((a, b) => substance(b) - substance(a));
+
+console.log(`${specialty}: ${pool.length} remaining, showing ${offset}..${offset + count}`);
+
+const FIELDS = [
+  "slug", "name", "experience", "qualifications", "designation", "hospitalName", "city",
+  "specializations", "proceduresExpertise", "education", "affiliations", "memberships",
+  "awards", "research", "bio",
+];
+
+for (const d of pool.slice(offset, offset + count)) {
+  console.log("=".repeat(88), `| substance = ${substance(d)}`);
+  for (const key of FIELDS) {
+    const value = d[key];
+    if (Array.isArray(value)) {
+      if (value.length) {
+        console.log(`${key}:`);
+        for (const item of value) console.log(`   - ${item}`);
+      }
+    } else if (String(value ?? "").trim()) {
+      console.log(`${key}: ${value}`);
+    }
+  }
+}
