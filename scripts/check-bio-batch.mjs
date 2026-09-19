@@ -78,7 +78,7 @@ const COMMON = new Set(
 
 function sourceText(doc) {
   const parts = [];
-  for (const [key, value] of Object.entries(doc)) {
+  for (const value of Object.values(doc)) {
     if (Array.isArray(value)) parts.push(value.join(" "));
     else parts.push(String(value));
   }
