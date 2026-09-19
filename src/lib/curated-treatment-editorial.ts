@@ -48,3 +48,26 @@ export function treatmentEditorialBody(
     )
     .join("\n\n");
 }
+
+function normalizedHeading(value: string) {
+  return value
+    .replace(/[*_`]/g, "")
+    .replace(/[^\p{L}\p{N}]+/gu, " ")
+    .trim()
+    .toLocaleLowerCase();
+}
+
+export function treatmentEditorialBodyForDisplay(
+  translation: CuratedTreatmentTranslation,
+  locale: AppLocale,
+) {
+  const body = treatmentEditorialBody(translation, locale).trim();
+  const leadingHeading = body.match(/^#{1,2}\s+([^\n]+)\n+/);
+  if (
+    leadingHeading &&
+    normalizedHeading(leadingHeading[1]) === normalizedHeading(translation.name)
+  ) {
+    return body.slice(leadingHeading[0].length).trim();
+  }
+  return body;
+}

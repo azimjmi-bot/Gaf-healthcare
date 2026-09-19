@@ -10,7 +10,10 @@ import { blankTreatmentTranslation } from "@/lib/cms/curated-treatment-types";
 import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
 import { LOCALES } from "@/lib/i18n/languages";
-import { treatmentEditorialBody } from "@/lib/curated-treatment-editorial";
+import {
+  treatmentEditorialBody,
+  treatmentEditorialBodyForDisplay,
+} from "@/lib/curated-treatment-editorial";
 
 test("a curated Treatment stores shared relationships once", () => {
   const treatment = blankCuratedTreatment({ treatments: [] });
@@ -75,6 +78,26 @@ test("the unified editor preserves legacy structured editorial content", () => {
   translation.editorialBody = "## One article\n\nNew editorial copy.";
   assert.equal(
     treatmentEditorialBody(translation, "en"),
+    translation.editorialBody,
+  );
+});
+
+test("the public article removes a duplicate leading Treatment title", () => {
+  const translation = {
+    ...blankTreatmentTranslation(),
+    name: "Breast Cancer Treatment in India",
+    editorialBody:
+      "# Breast Cancer Treatment in India\n\n## Treatment overview\n\nPatient guidance.",
+  };
+  assert.equal(
+    treatmentEditorialBodyForDisplay(translation, "en"),
+    "## Treatment overview\n\nPatient guidance.",
+  );
+
+  translation.editorialBody =
+    "## A different clinical heading\n\nDistinct content.";
+  assert.equal(
+    treatmentEditorialBodyForDisplay(translation, "en"),
     translation.editorialBody,
   );
 });

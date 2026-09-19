@@ -3978,7 +3978,7 @@ img.dhero__art {
 }
 .treatment-pagination a[aria-current="page"] { border-color: var(--gold); background: var(--gold); color: #fff; }
 .treatment-profile__hero {
-  position: relative; overflow: hidden; min-height: 32rem; color: #fff;
+  position: relative; overflow: hidden; min-height: 29rem; color: #fff;
   background: radial-gradient(circle at 85% 25%, rgb(45 191 184 / 20%), transparent 25rem), linear-gradient(135deg, #0b2730, #16464c);
 }
 .treatment-profile__hero-image, .treatment-profile__hero-shade {
@@ -3987,8 +3987,8 @@ img.dhero__art {
 .treatment-profile__hero-image { object-fit: cover; }
 .treatment-profile__hero-shade { background: linear-gradient(90deg, rgb(8 30 37 / 96%) 0%, rgb(8 30 37 / 78%) 52%, rgb(8 30 37 / 38%)); }
 .treatment-profile__hero-content {
-  position: relative; z-index: 1; display: flex; min-height: 32rem;
-  flex-direction: column; justify-content: center; padding-block: 4.5rem;
+  position: relative; z-index: 1; display: flex; min-height: 29rem;
+  flex-direction: column; justify-content: center; padding-block: 3.25rem;
 }
 .treatment-breadcrumbs {
   display: flex; flex-wrap: wrap; gap: .5rem; margin-bottom: 2.5rem;
@@ -4002,11 +4002,12 @@ img.dhero__art {
 .treatment-profile__primary {
   display: inline-flex; align-items: center; align-self: flex-start; gap: .55rem;
   margin-top: 1.75rem; padding: .9rem 1.1rem; border-radius: .6rem;
-  background: var(--primary); color: #fff; font-weight: 800;
+  background: var(--primary); color: #fff !important; font-weight: 800;
+  text-decoration: none !important;
 }
 .treatment-profile__content {
-  display: grid; grid-template-columns: minmax(0, 1fr) minmax(15rem, 20rem);
-  gap: clamp(2rem, 6vw, 5rem); padding-block: clamp(3.5rem, 7vw, 6rem);
+  display: grid; grid-template-columns: minmax(0, 1fr) minmax(16rem, 20rem);
+  gap: clamp(1.5rem, 4vw, 3rem); padding-block: clamp(2rem, 5vw, 4rem);
 }
 .treatment-article__section + .treatment-article__section,
 .treatment-article__section + .treatment-article__intro,
@@ -4015,7 +4016,7 @@ img.dhero__art {
   margin-bottom: 1rem; color: #133a41; font-family: var(--font-heading);
   font-size: clamp(1.8rem, 4vw, 2.65rem); line-height: 1.12;
 }
-.treatment-article .md-body { color: #40585c; font-size: 1rem; line-height: 1.8; }
+.treatment-article .md-body { color: #40585c; font-size: 1.02rem; line-height: 1.82; }
 .treatment-key-info {
   align-self: start; position: sticky; top: 6.5rem; padding: 1.4rem;
   border: 1px solid #d8e4e1; border-radius: 1rem; background: #f4f8f6;
@@ -4027,6 +4028,149 @@ img.dhero__art {
   color: #688084; font-size: .7rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
 }
 .treatment-key-info dd { margin-top: .25rem; color: #173d43; font-weight: 700; }
+.treatment-profile__hero h1 {
+  max-width: 46rem;
+  font-size: clamp(2.75rem, 5vw, 4.7rem);
+  line-height: 1.02;
+}
+.treatment-profile__hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 21rem);
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: end;
+}
+.treatment-profile__hero-grid--single { grid-template-columns: minmax(0, 48rem); }
+.treatment-profile__hero-card {
+  padding: 1.3rem;
+  border: 1px solid rgb(255 255 255 / 18%);
+  border-radius: 1rem;
+  background: rgb(255 255 255 / 8%);
+  box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 12%);
+  backdrop-filter: blur(12px);
+}
+.treatment-profile__hero-card > p {
+  color: #86ddd4;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.treatment-profile__hero-card dl { margin-top: .5rem; }
+.treatment-profile__hero-card dl div {
+  display: grid;
+  grid-template-columns: minmax(6rem, .75fr) 1fr;
+  gap: .8rem;
+  padding-block: .65rem;
+  border-top: 1px solid rgb(255 255 255 / 12%);
+}
+.treatment-profile__hero-card dt {
+  color: rgb(255 255 255 / 58%);
+  font-size: .72rem;
+}
+.treatment-profile__hero-card dd {
+  color: #fff;
+  font-size: .82rem;
+  font-weight: 700;
+  line-height: 1.45;
+}
+.treatment-page-nav {
+  position: sticky;
+  z-index: 20;
+  top: 5rem;
+  overflow: hidden;
+  border-bottom: 1px solid #dce7e4;
+  background: rgb(255 255 255 / 96%);
+  box-shadow: 0 .4rem 1.4rem rgb(15 50 58 / 5%);
+  backdrop-filter: blur(12px);
+}
+.treatment-page-nav > div {
+  overflow-x: auto;
+  display: flex;
+  gap: 1.35rem;
+  scrollbar-width: none;
+}
+.treatment-page-nav > div::-webkit-scrollbar { display: none; }
+.treatment-page-nav a {
+  flex: none;
+  padding-block: 1rem .85rem;
+  border-bottom: 2px solid transparent;
+  color: #365b60;
+  font-size: .78rem;
+  font-weight: 750;
+  text-decoration: none;
+  white-space: nowrap;
+}
+.treatment-page-nav a:hover {
+  border-bottom-color: var(--gold);
+  color: var(--gold);
+}
+.treatment-guide-shell { background: #f5f8f6; }
+.treatment-article {
+  min-width: 0;
+  padding: clamp(1.3rem, 4vw, 3rem);
+  border: 1px solid #dfe8e5;
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 1rem 3rem rgb(15 50 58 / 5%);
+}
+.treatment-article__intro > .eyebrow {
+  margin-bottom: 1rem;
+  color: var(--gold);
+}
+.treatment-article .md-body > h2 {
+  margin-top: 2.8rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid #e1e9e6;
+}
+.treatment-article .md-body > h2:first-child { margin-top: 0; padding-top: 0; border-top: 0; }
+.treatment-article .md-body > h3 {
+  margin-top: 1.8rem;
+  color: #1d4b51;
+  font-size: 1.3rem;
+}
+.treatment-article .md-body > p,
+.treatment-article .md-body > ul,
+.treatment-article .md-body > ol,
+.treatment-article .md-body > blockquote {
+  max-width: 48rem;
+}
+.treatment-article .md-body ul,
+.treatment-article .md-body ol {
+  padding-inline-start: 1.25rem;
+}
+.treatment-article .md-body li + li { margin-top: .45rem; }
+.treatment-article .md-body blockquote {
+  margin-block: 1.5rem;
+  padding: 1rem 1.15rem;
+  border-inline-start: 3px solid var(--gold);
+  border-radius: 0 .55rem .55rem 0;
+  background: #f2f8f6;
+  color: #31565b;
+}
+.treatment-key-info {
+  box-shadow: 0 .8rem 2rem rgb(15 50 58 / 5%);
+}
+.treatment-key-info > a {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  width: 100%;
+  justify-content: center;
+  margin-top: 1rem;
+  padding: .75rem;
+  border-radius: .5rem;
+  background: var(--primary);
+  color: #fff !important;
+  font-size: .78rem;
+  font-weight: 800;
+  text-align: center;
+  text-decoration: none !important;
+}
+.treatment-article,
+.treatment-article__section,
+.treatment-related-section {
+  scroll-margin-top: 4.5rem;
+}
 .treatment-process { display: grid; gap: 0; }
 .treatment-process li {
   position: relative; display: grid; grid-template-columns: 2.5rem 1fr;
@@ -4080,6 +4224,8 @@ img.dhero__art {
   display: flex; cursor: pointer; align-items: center; justify-content: space-between;
   gap: 1rem; padding-block: 1.25rem; color: #163c43; font-weight: 800; list-style: none;
 }
+.treatment-faqs summary svg { flex: none; transition: transform .2s ease; }
+.treatment-faqs details[open] summary svg { transform: rotate(180deg); }
 .treatment-faqs details p { padding: 0 2rem 1.25rem 0; color: #536b6f; line-height: 1.7; }
 .treatment-related-treatment-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
@@ -4163,6 +4309,17 @@ img.dhero__art {
 
 @media (max-width: 800px) {
   .treatments-directory__layout, .treatment-profile__content { grid-template-columns: 1fr; }
+  .treatment-profile__hero-grid { grid-template-columns: 1fr; }
+  .treatment-profile__hero-card { display: none; }
+  .treatment-profile__hero,
+  .treatment-profile__hero-content { min-height: 0; }
+  .treatment-profile__hero-content { padding-block: 2rem 3rem; }
+  .treatment-breadcrumbs { margin-bottom: 1.5rem; }
+  .treatment-profile__hero h1 { font-size: clamp(2.6rem, 13vw, 4rem); }
+  .treatment-profile__lede { font-size: 1rem; }
+  .treatment-page-nav { top: 3.5rem; }
+  .treatment-page-nav > div { margin-inline: 0; padding-inline: 1rem; }
+  .treatment-article { padding: 1.25rem; border-radius: .75rem; }
   .treatment-filters, .treatment-key-info { position: static; }
   .treatment-grid, .cms-form-grid, .cms-relation-grid { grid-template-columns: 1fr; }
   .cms-span-2 { grid-column: auto; }

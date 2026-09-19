@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
-import { ArrowRight, Check, MapPin } from "lucide-react";
+import { ArrowRight, ChevronDown, MapPin } from "lucide-react";
 import { DoctorCard } from "@/components/doctor-card";
 import { HospitalCard } from "@/components/hospital-card";
 import { LocaleLink as Link } from "@/components/locale-link";
@@ -23,7 +23,7 @@ import { treatmentUi } from "@/lib/i18n/treatment-ui";
 import { whatsappHref } from "@/lib/site";
 import { getCountry, getSpecialty } from "@/lib/taxonomy";
 import { catalogTreatments } from "@/lib/treatments";
-import { treatmentEditorialBody } from "@/lib/curated-treatment-editorial";
+import { treatmentEditorialBodyForDisplay } from "@/lib/curated-treatment-editorial";
 
 type Params = Promise<{ slug: string }>;
 
@@ -172,6 +172,24 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
     taxonomyLabel(specialty?.name, locale),
     locale,
   );
+  const specialtyLabel = taxonomyLabel(specialty?.name, locale);
+  const heroFactCount = [
+    specialtyLabel,
+    copy.treatmentType,
+    copy.hospitalStay,
+    copy.recoveryPeriod,
+    destinations.length > 0 ? "destinations" : "",
+  ].filter(Boolean).length;
+  const sectionNavigation = [
+    { href: "#treatment-guide", label: ui.overview, visible: true },
+    { href: "#treatment-process", label: ui.process, visible: copy.process.length > 0 },
+    { href: "#treatment-destinations", label: ui.destinations, visible: destinations.length > 0 },
+    { href: "#treatment-hospitals", label: ui.hospitals, visible: hospitals.length > 0 },
+    { href: "#treatment-doctors", label: ui.doctors, visible: doctors.length > 0 },
+    { href: "#treatment-costs", label: ui.costGuides, visible: costs.length > 0 },
+    { href: "#treatment-faqs", label: ui.faqs, visible: copy.faqs.length > 0 },
+    { href: "#related-treatments", label: ui.related, visible: related.length > 0 },
+  ].filter((item) => item.visible);
 
   return (
     <main className="treatment-profile">
@@ -201,31 +219,94 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
             <span aria-hidden="true">/</span>
             <span>{copy.name}</span>
           </nav>
-          <p className="eyebrow">
-            {taxonomyLabel(specialty?.name, locale)}
-            {treatment.subspecialty ? ` · ${treatment.subspecialty}` : ""}
-          </p>
-          <h1>{copy.name}</h1>
-          <p className="treatment-profile__lede">{copy.shortDescription}</p>
-          <a
-            href={whatsappHref(copy.name)}
-            target="_blank"
-            rel="noreferrer"
-            className="treatment-profile__primary"
+          <div
+            className={`treatment-profile__hero-grid ${
+              heroFactCount < 2 ? "treatment-profile__hero-grid--single" : ""
+            }`}
           >
-            {ui.coordinator} <ArrowRight className="size-4" />
-          </a>
+            <div>
+              <p className="eyebrow">
+                {specialtyLabel}
+                {treatment.subspecialty ? ` · ${treatment.subspecialty}` : ""}
+              </p>
+              <h1>{copy.name}</h1>
+              <p className="treatment-profile__lede">{copy.shortDescription}</p>
+              <a
+                href={whatsappHref(copy.name)}
+                target="_blank"
+                rel="noreferrer"
+                className="treatment-profile__primary"
+              >
+                {ui.coordinator} <ArrowRight className="size-4" />
+              </a>
+            </div>
+            {heroFactCount >= 2 ? (
+              <aside className="treatment-profile__hero-card">
+              <p>{ui.keyInformation}</p>
+              <dl>
+                {specialtyLabel ? (
+                  <div>
+                    <dt>{ui.specialty}</dt>
+                    <dd>{specialtyLabel}</dd>
+                  </div>
+                ) : null}
+                {copy.treatmentType ? (
+                  <div>
+                    <dt>{ui.treatmentType}</dt>
+                    <dd>{copy.treatmentType}</dd>
+                  </div>
+                ) : null}
+                {copy.hospitalStay ? (
+                  <div>
+                    <dt>{ui.hospitalStay}</dt>
+                    <dd>{copy.hospitalStay}</dd>
+                  </div>
+                ) : null}
+                {copy.recoveryPeriod ? (
+                  <div>
+                    <dt>{ui.recoveryPeriod}</dt>
+                    <dd>{copy.recoveryPeriod}</dd>
+                  </div>
+                ) : null}
+                {destinations.length > 0 ? (
+                  <div>
+                    <dt>{ui.destinations}</dt>
+                    <dd>
+                      {destinations
+                        .map((destination) =>
+                          taxonomyLabel(destination.name, locale),
+                        )
+                        .join(" · ")}
+                    </dd>
+                  </div>
+                ) : null}
+              </dl>
+              </aside>
+            ) : null}
+          </div>
         </div>
       </section>
 
-      <div className="page-wrap treatment-profile__content">
-        <article className="treatment-article">
+      <nav className="treatment-page-nav" aria-label={ui.treatments}>
+        <div className="page-wrap">
+          {sectionNavigation.map((item) => (
+            <a key={item.href} href={item.href}>
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </nav>
+
+      <section className="treatment-guide-shell">
+        <div className="page-wrap treatment-profile__content">
+          <article className="treatment-article" id="treatment-guide">
           <section className="treatment-article__section treatment-article__intro">
-            <MarkdownBody source={treatmentEditorialBody(copy, locale)} />
+            <p className="eyebrow">{ui.overview}</p>
+            <MarkdownBody source={treatmentEditorialBodyForDisplay(copy, locale)} />
           </section>
 
           {copy.process.length > 0 ? (
-            <section className="treatment-article__section">
+            <section className="treatment-article__section" id="treatment-process">
               <h2>{ui.process}</h2>
               <ol className="treatment-process">
                 {copy.process.map((step, index) => (
@@ -240,25 +321,36 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
               </ol>
             </section>
           ) : null}
-        </article>
+          </article>
 
-        {keyInformation.length > 0 ? (
-          <aside className="treatment-key-info">
-            <h2>{ui.keyInformation}</h2>
-            <dl>
-              {keyInformation.map(([label, value]) => (
-                <div key={label}>
-                  <dt>{label}</dt>
-                  <dd>{value}</dd>
-                </div>
-              ))}
-            </dl>
-          </aside>
-        ) : null}
-      </div>
+          {keyInformation.length > 0 ? (
+            <aside className="treatment-key-info">
+              <h2>{ui.keyInformation}</h2>
+              <dl>
+                {keyInformation.map(([label, value]) => (
+                  <div key={label}>
+                    <dt>{label}</dt>
+                    <dd>{value}</dd>
+                  </div>
+                ))}
+              </dl>
+              <a
+                href={whatsappHref(copy.name)}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {ui.coordinator} <ArrowRight className="size-4" />
+              </a>
+            </aside>
+          ) : null}
+        </div>
+      </section>
 
       {destinations.length > 0 ? (
-        <section className="treatment-related-section treatment-destinations">
+        <section
+          className="treatment-related-section treatment-destinations"
+          id="treatment-destinations"
+        >
           <div className="page-wrap">
             <p className="eyebrow">{ui.destinations}</p>
             <h2>{ui.destinations}</h2>
@@ -275,7 +367,7 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
       ) : null}
 
       {hospitals.length > 0 ? (
-        <section className="treatment-related-section">
+        <section className="treatment-related-section" id="treatment-hospitals">
           <div className="page-wrap">
             <p className="eyebrow">{ui.hospitals}</p>
             <h2>{ui.hospitals}</h2>
@@ -289,7 +381,10 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
       ) : null}
 
       {doctors.length > 0 ? (
-        <section className="treatment-related-section treatment-related-section--soft">
+        <section
+          className="treatment-related-section treatment-related-section--soft"
+          id="treatment-doctors"
+        >
           <div className="page-wrap">
             <p className="eyebrow">{ui.doctors}</p>
             <h2>{ui.doctors}</h2>
@@ -303,7 +398,10 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
       ) : null}
 
       {costs.length > 0 ? (
-        <section className="treatment-related-section treatment-related-section--ink">
+        <section
+          className="treatment-related-section treatment-related-section--ink"
+          id="treatment-costs"
+        >
           <div className="page-wrap">
             <p className="eyebrow">{ui.costGuides}</p>
             <h2>{ui.costGuides}</h2>
@@ -324,14 +422,14 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
       ) : null}
 
       {copy.faqs.length > 0 ? (
-        <section className="treatment-related-section">
+        <section className="treatment-related-section" id="treatment-faqs">
           <div className="page-wrap treatment-faqs">
             <p className="eyebrow">{ui.faqs}</p>
             <h2>{ui.faqs}</h2>
             {copy.faqs.map((faq) => (
               <details key={faq.id}>
                 <summary>
-                  {faq.question} <Check className="size-4" aria-hidden="true" />
+                  {faq.question} <ChevronDown className="size-4" aria-hidden="true" />
                 </summary>
                 <p>{faq.answer}</p>
               </details>
@@ -341,7 +439,10 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
       ) : null}
 
       {related.length > 0 ? (
-        <section className="treatment-related-section treatment-related-section--soft">
+        <section
+          className="treatment-related-section treatment-related-section--soft"
+          id="related-treatments"
+        >
           <div className="page-wrap">
             <p className="eyebrow">{ui.related}</p>
             <h2>{ui.related}</h2>
