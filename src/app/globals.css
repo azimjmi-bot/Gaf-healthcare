@@ -3882,101 +3882,281 @@ img.dhero__art {
   }
 }
 
-/* Curated Treatment directory and profile */
-.treatments-directory { min-height: 70vh; background: #f7f8f6; }
-.treatments-directory__hero {
-  padding: clamp(4rem, 8vw, 7rem) 0 3.5rem;
-  color: #fff;
-  background: radial-gradient(circle at 85% 20%, rgb(45 191 184 / 18%), transparent 28rem), linear-gradient(135deg, #0c2630, #133d45);
+/* Shared treatment-page container matches cost/specialty max-w-7xl rhythm. */
+.page-wrap {
+  width: 100%;
+  max-width: 80rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
 }
-.treatments-directory__hero h1,
-.treatment-profile__hero h1 {
-  max-width: 52rem; margin-top: .7rem; font-family: var(--font-heading);
-  font-size: clamp(2.7rem, 6vw, 5.4rem); line-height: .98; letter-spacing: -.035em;
+@media (min-width: 640px) {
+  .page-wrap { padding-inline: 1.25rem; }
+}
+@media (min-width: 768px) {
+  .page-wrap { padding-inline: 2rem; }
+}
+
+/* Curated Treatment directory and profile */
+.treatments-directory {
+  min-height: 70vh;
+  background: var(--background);
+}
+.treatments-directory__hero {
+  padding: 1.75rem 0 2rem;
+  color: var(--foreground);
+  border-bottom: 1px solid var(--border);
+  background: linear-gradient(180deg, color-mix(in oklab, var(--secondary) 60%, white) 0%, var(--background) 100%);
+}
+@media (min-width: 768px) {
+  .treatments-directory__hero { padding: 2.5rem 0 2.5rem; }
+}
+.treatments-directory__hero .eyebrow {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  color: var(--gold);
+}
+.treatments-directory__hero h1 {
+  max-width: 56rem;
+  margin-top: 0.75rem;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: 2.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+@media (min-width: 768px) {
+  .treatments-directory__hero h1 {
+    font-size: 3.75rem;
+    line-height: 1.15;
+  }
 }
 .treatments-directory__hero > div > p:last-child {
-  max-width: 46rem; margin-top: 1.3rem; color: rgb(255 255 255 / 78%);
-  font-size: clamp(1rem, 2vw, 1.18rem); line-height: 1.7;
+  max-width: 48rem;
+  margin-top: 1.25rem;
+  color: var(--muted-foreground);
+  font-size: 1.125rem;
+  line-height: 1.625;
 }
 .treatments-directory__layout {
-  display: grid; grid-template-columns: minmax(15rem, 19rem) minmax(0, 1fr);
-  gap: 2rem; padding-block: 3rem 5rem;
+  display: grid;
+  grid-template-columns: minmax(15rem, 18rem) minmax(0, 1fr);
+  gap: 1.5rem;
+  padding-block: 1.5rem 4rem;
 }
 .treatment-filters {
-  align-self: start; position: sticky; top: 6.5rem; padding: 1.25rem;
-  border: 1px solid #dce5e2; border-radius: 1rem; background: #fff;
-  box-shadow: 0 1rem 3rem rgb(15 50 58 / 6%);
+  align-self: start;
+  position: sticky;
+  top: 6.5rem;
+  padding: 0.85rem 1rem 1rem;
+  border: 1px solid color-mix(in oklab, var(--border) 80%, transparent);
+  border-radius: 1rem;
+  background: #fff;
+  box-shadow: 0 12px 40px -18px rgba(20, 24, 40, 0.28);
 }
-.treatment-filters__title { display: flex; align-items: center; gap: .55rem; margin-bottom: 1rem; color: #113a42; }
-.treatment-filters form, .treatment-filters label { display: grid; gap: .45rem; }
-.treatment-filters form { gap: 1rem; }
+.treatment-filters__title {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.85rem;
+  color: var(--ink);
+  font-size: 0.92rem;
+}
+.treatment-filters form,
+.treatment-filters label { display: grid; gap: 0.4rem; }
+.treatment-filters form { gap: 0.9rem; }
 .treatment-filters label {
-  color: #344e53; font-size: .78rem; font-weight: 700;
-  letter-spacing: .05em; text-transform: uppercase;
+  color: var(--muted-foreground);
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
-.treatment-filters input, .treatment-filters select {
-  width: 100%; min-height: 2.8rem; padding: .65rem .75rem;
-  border: 1px solid #cad7d4; border-radius: .55rem; background: #fff;
-  color: #102f36; font-size: .9rem; font-weight: 500; letter-spacing: 0; text-transform: none;
+.treatment-filters input,
+.treatment-filters select {
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0.65rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: #fff;
+  color: var(--foreground);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  box-shadow: none;
+}
+.treatment-filters input:focus,
+.treatment-filters select:focus {
+  outline: none;
+  border-color: color-mix(in oklab, var(--gold) 45%, var(--border));
 }
 .treatment-search { position: relative; display: block; }
-.treatment-search svg { position: absolute; inset-inline-start: .75rem; top: .9rem; color: #6b8185; }
+.treatment-search svg {
+  position: absolute;
+  inset-inline-start: 0.75rem;
+  top: 0.85rem;
+  color: var(--muted-foreground);
+}
 .treatment-search input { padding-inline-start: 2.25rem; }
 .treatment-filters button {
-  min-height: 2.85rem; border-radius: .55rem; background: var(--primary); color: #fff; font-weight: 750;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 2.85rem;
+  padding: 0 1.25rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+.treatment-filters button:hover {
+  background: oklch(0.62 0.17 45);
 }
 .treatment-filters form > a {
-  color: var(--gold); font-size: .86rem; font-weight: 700; text-align: center;
-  text-decoration: underline; text-underline-offset: .22rem;
+  color: var(--gold);
+  font-size: 0.86rem;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: underline;
+  text-underline-offset: 0.22rem;
 }
 .treatment-results__count {
-  margin-bottom: 1rem; color: #61777b; font-size: .85rem;
-  font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  color: var(--muted-foreground);
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
 }
-.treatment-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; }
+.treatment-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+}
 .treatment-card {
-  overflow: hidden; display: flex; flex-direction: column; min-height: 100%;
-  border: 1px solid #dce5e2; border-radius: 1rem; background: #fff;
-  box-shadow: 0 .8rem 2.5rem rgb(15 50 58 / 5%); transition: transform .2s ease, box-shadow .2s ease;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  border: 1px solid var(--border);
+  border-radius: 0.75rem;
+  background: var(--card);
+  box-shadow: none;
+  transition: border-color 0.2s ease;
 }
-.treatment-card:hover { transform: translateY(-2px); box-shadow: 0 1rem 2.8rem rgb(15 50 58 / 10%); }
+.treatment-card:hover {
+  border-color: color-mix(in oklab, var(--primary) 40%, var(--border));
+}
 .treatment-card__image {
-  display: block; aspect-ratio: 16 / 8; overflow: hidden;
-  background: linear-gradient(135deg, #dceceb, #edf4f1);
+  display: block;
+  aspect-ratio: 16 / 8;
+  overflow: hidden;
+  background: var(--secondary);
 }
-.treatment-card__image img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
-.treatment-card:hover .treatment-card__image img { transform: scale(1.025); }
-.treatment-card__body { display: flex; flex: 1; flex-direction: column; padding: 1.35rem; }
+.treatment-card__image--empty { aspect-ratio: 16 / 5; }
+.treatment-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.treatment-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 1.15rem 1.2rem 1.25rem;
+}
 .treatment-card__meta {
-  display: flex; align-items: center; justify-content: space-between; gap: .75rem;
-  color: var(--gold); font-size: .7rem; font-weight: 800; letter-spacing: .09em; text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  color: var(--gold);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
 }
-.treatment-card__meta em { padding: .25rem .45rem; border-radius: 99rem; background: #eef8f6; font-style: normal; }
+.treatment-card__meta em {
+  padding: 0.2rem 0.45rem;
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--gold) 10%, white);
+  font-style: normal;
+}
 .treatment-card h2 {
-  margin-top: .7rem; color: #102f36; font-family: var(--font-heading);
-  font-size: clamp(1.45rem, 3vw, 1.9rem); line-height: 1.12;
+  margin-top: 0.55rem;
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-size: 1.35rem;
+  line-height: 1.2;
 }
 .treatment-card h2 a:hover { color: var(--gold); }
-.treatment-card__body > p { margin-top: .75rem; color: #5b6e72; font-size: .92rem; line-height: 1.65; }
-.treatment-card__destinations {
-  display: flex; align-items: flex-start; gap: .4rem; margin-top: 1rem;
-  color: #526a6e; font-size: .78rem; line-height: 1.5;
+.treatment-card__body > p {
+  margin-top: 0.55rem;
+  color: var(--muted-foreground);
+  font-size: 0.95rem;
+  line-height: 1.65;
 }
-.treatment-card__destinations svg { flex: none; margin-top: .1rem; color: var(--gold); }
+.treatment-card__destinations {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin-top: 0.85rem;
+  color: var(--muted-foreground);
+  font-size: 0.8rem;
+  line-height: 1.5;
+}
+.treatment-card__destinations svg {
+  flex: none;
+  margin-top: 0.1rem;
+  color: var(--gold);
+}
 .treatment-card__link {
-  display: inline-flex; align-items: center; gap: .4rem; margin-top: auto;
-  padding-top: 1.15rem; color: var(--gold); font-size: .86rem; font-weight: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 1rem;
+  color: var(--gold);
+  font-size: 0.86rem;
+  font-weight: 600;
 }
 .treatment-results__empty {
-  display: grid; place-items: center; min-height: 18rem; padding: 2rem;
-  border: 1px dashed #bdcfcb; border-radius: 1rem; color: #667d80; text-align: center;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 0.85rem;
+  min-height: 14rem;
+  padding: 2rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: var(--card);
+  color: var(--muted-foreground);
+  text-align: center;
 }
-.treatment-pagination { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
+.treatment-results__empty svg {
+  color: color-mix(in oklab, var(--muted-foreground) 70%, white);
+}
+.treatment-pagination { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.75rem; }
 .treatment-pagination a {
-  display: grid; width: 2.5rem; height: 2.5rem; place-items: center;
-  border: 1px solid #cbd9d6; border-radius: 50%; color: #1f5157; font-weight: 700;
+  display: grid;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--foreground);
+  font-weight: 600;
 }
-.treatment-pagination a[aria-current="page"] { border-color: var(--gold); background: var(--gold); color: #fff; }
+.treatment-pagination a[aria-current="page"] {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--ivory);
+}
 .treatment-profile__hero {
   position: relative; overflow: hidden; min-height: 29rem; color: #fff;
   background: radial-gradient(circle at 85% 25%, rgb(45 191 184 / 20%), transparent 25rem), linear-gradient(135deg, #0b2730, #16464c);
@@ -4308,7 +4488,11 @@ img.dhero__art {
 .cms-table-wrap { overflow-x: auto; }
 
 @media (max-width: 800px) {
+  .treatments-directory__hero { padding: 1.5rem 0 1.35rem; }
+  .treatments-directory__hero h1 { font-size: clamp(2rem, 9vw, 2.5rem); line-height: 1.2; }
+  .treatments-directory__hero > div > p:last-child { margin-top: 1rem; font-size: 1rem; }
   .treatments-directory__layout, .treatment-profile__content { grid-template-columns: 1fr; }
+  .treatments-directory__layout { gap: 1.15rem; padding-block: 1.15rem 2.75rem; }
   .treatment-profile__hero-grid { grid-template-columns: 1fr; }
   .treatment-profile__hero-card { display: none; }
   .treatment-profile__hero,
