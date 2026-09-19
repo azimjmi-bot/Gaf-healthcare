@@ -44,9 +44,17 @@ for (const d of pool.slice(offset, offset + count)) {
   for (const key of FIELDS) {
     const value = d[key];
     if (Array.isArray(value)) {
-      if (value.length) {
+      // Procedure lists repeat the same entry under long and short forms; collapse them.
+      const seen = new Map();
+      for (const item of value) {
+        const norm = String(item).toLowerCase().replace(/\(.*?\)/g, "").replace(/[^a-z]/g, "");
+        const prev = seen.get(norm);
+        if (!prev || String(item).length > prev.length) seen.set(norm, String(item));
+      }
+      const items = [...seen.values()];
+      if (items.length) {
         console.log(`${key}:`);
-        for (const item of value) console.log(`   - ${item}`);
+        for (const item of items) console.log(`   - ${item}`);
       }
     } else if (String(value ?? "").trim()) {
       console.log(`${key}: ${value}`);
