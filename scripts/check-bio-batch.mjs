@@ -74,7 +74,8 @@ const COMMON = new Set(
    technically internationally clinically academically day-to-day beyond alongside
    operatively teaching minimal imaging fertility robotics obstetric obstetrics
    gynaecology gynecology gynaecologist gynecologist gynaecologists surgeon surgeons
-   robotically laparoscopically medically surgically hysteroscopically`
+   robotically laparoscopically medically surgically hysteroscopically
+   laparoscopy hysteroscopy endoscopy four five six seven eight nine ten eleven twelve`
     .split(/\s+/)
     .filter(Boolean),
 );
