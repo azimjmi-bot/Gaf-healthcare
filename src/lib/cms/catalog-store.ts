@@ -72,7 +72,8 @@ function stripLockedKeys(patch: object): Record<string, unknown> {
   const locked = new Set<string>(PSEO_LOCKED_KEYS);
   const out: Record<string, unknown> = {};
   for (const [key, value] of Object.entries(src)) {
-    if (locked.has(key) || key === "slug") continue;
+    // status is review metadata, never content to merge onto a row.
+    if (locked.has(key) || key === "slug" || key === "status") continue;
     if (value === undefined) continue;
     out[key] = value;
   }

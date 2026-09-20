@@ -1,5 +1,9 @@
 import "server-only";
-import { DOCTOR_OVERLAY_KEYS, HOSPITAL_OVERLAY_KEYS } from "@/lib/cms/catalog-types";
+import {
+  DOCTOR_OVERLAY_KEYS,
+  HOSPITAL_OVERLAY_KEYS,
+  translationStatus,
+} from "@/lib/cms/catalog-types";
 import { applyCatalogLayer, loadCatalogCms } from "@/lib/cms/catalog-store";
 import {
   doctors as englishDoctors,
@@ -22,9 +26,16 @@ function hasText(value: unknown) {
   return typeof value === "string" && value.trim().length > 0;
 }
 
+/**
+ * Having the text is necessary but no longer sufficient: a translation is only
+ * live once someone has explicitly marked it published. Drafts and records
+ * awaiting native-speaker review stay out of the locale catalog entirely, which
+ * is what makes their pages 404 rather than serve unreviewed copy.
+ */
 function doctorPatchIsPublished(patch: Record<string, unknown> | undefined) {
   return Boolean(
     patch &&
+      translationStatus(patch) === "published" &&
       hasText(patch.name) &&
       hasText(patch.title) &&
       hasText(patch.bio),
@@ -34,6 +45,7 @@ function doctorPatchIsPublished(patch: Record<string, unknown> | undefined) {
 function hospitalPatchIsPublished(patch: Record<string, unknown> | undefined) {
   return Boolean(
     patch &&
+      translationStatus(patch) === "published" &&
       (hasText(patch.bio) || hasText(patch.summary)),
   );
 }
@@ -51,8 +63,8 @@ export function doctorsForLocale(locale: AppLocale): Doctor[] {
     authored,
     cms.doctorsDeleted,
     cms.doctorOverrides,
-    (cms.doctorsAdded as Doctor[]).filter(
-      (row) => hasText(row.name) && hasText(row.title) && hasText(row.bio),
+    (cms.doctorsAdded as Doctor[]).filter((row) =>
+      doctorPatchIsPublished(row as unknown as Record<string, unknown>),
     ),
     DOCTOR_OVERLAY_KEYS,
   );
@@ -88,8 +100,8 @@ export function hospitalsForLocale(locale: AppLocale): Hospital[] {
     authored,
     cms.hospitalsDeleted,
     cms.hospitalOverrides,
-    (cms.hospitalsAdded as Hospital[]).filter(
-      (row) => hasText(row.bio) || hasText(row.summary),
+    (cms.hospitalsAdded as Hospital[]).filter((row) =>
+      hospitalPatchIsPublished(row as unknown as Record<string, unknown>),
     ),
     HOSPITAL_OVERLAY_KEYS,
   );
