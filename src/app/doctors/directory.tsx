@@ -24,7 +24,7 @@ import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { getRequestLocale } from "@/lib/i18n/request";
-import { localePathIsPublished } from "@/lib/i18n/locale-publication";
+import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { doctorsPath } from "@/lib/catalog-links";
 import type { Metadata } from "next";
 
@@ -34,7 +34,7 @@ export async function doctorsDirectoryMetadata(
   page = 1,
 ): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, doctorsPath(query))) {
+  if (!localePageIsRenderable(locale, doctorsPath(query))) {
     return { robots: { index: false, follow: false } };
   }
   if (locale === "en" && isDoctorSpecialtyDiscovery(query)) {
@@ -81,7 +81,7 @@ export async function DoctorsDirectory({
   extras?: DoctorListingExtras;
 }) {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, doctorsPath(query))) notFound();
+  if (!localePageIsRenderable(locale, doctorsPath(query))) notFound();
   if (locale === "en") {
     const hub = buildDoctorSpecialtyHub(query, extras, page, doctorsForLocale(locale));
     if (hub) return <DoctorSpecialtyHub data={hub} query={query} />;

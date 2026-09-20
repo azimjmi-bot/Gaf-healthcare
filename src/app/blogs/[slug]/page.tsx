@@ -10,7 +10,7 @@ import { blogPageMetadata } from "@/lib/i18n/page-meta";
 import { localizeBlog, localizeMessages } from "@/lib/i18n/localize";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { editionFromLocale } from "@/lib/cms/edition";
-import { localePathIsPublished } from "@/lib/i18n/locale-publication";
+import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -24,7 +24,7 @@ export async function generateMetadata({
   const jar = await cookies();
   const preview = jar.get(CMS_COOKIE)?.value === cmsToken();
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, `/blogs/${slug}`) && !preview) {
+  if (!localePageIsRenderable(locale, `/blogs/${slug}`) && !preview) {
     return { robots: { index: false, follow: false } };
   }
   const post =
@@ -43,7 +43,7 @@ export default async function BlogPostPage({
   const jar = await cookies();
   const preview = jar.get(CMS_COOKIE)?.value === cmsToken();
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, `/blogs/${slug}`) && !preview) notFound();
+  if (!localePageIsRenderable(locale, `/blogs/${slug}`) && !preview) notFound();
   const source =
     getPost(slug, locale) ??
     (preview ? getArticleBySlug(slug, editionFromLocale(locale)) : undefined);

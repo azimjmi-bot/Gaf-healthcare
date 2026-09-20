@@ -10,7 +10,7 @@ import {
 } from "@/data/specialty-pages";
 import { costsFilterPath } from "@/lib/catalog-links";
 import { getRequestLocale } from "@/lib/i18n/request";
-import { localePathIsPublished } from "@/lib/i18n/locale-publication";
+import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { absoluteUrl } from "@/lib/seo";
 import {
@@ -24,7 +24,7 @@ export const revalidate = 0;
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, "/specialties")) {
+  if (!localePageIsRenderable(locale, "/specialties")) {
     return { robots: { index: false, follow: false } };
   }
   return withLocaleMetadata(
@@ -53,7 +53,7 @@ function publishedSpecialties() {
 
 export default async function SpecialtiesPage() {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, "/specialties")) notFound();
+  if (!localePageIsRenderable(locale, "/specialties")) notFound();
   const specialties = publishedSpecialties();
   const itemList = {
     "@context": "https://schema.org",

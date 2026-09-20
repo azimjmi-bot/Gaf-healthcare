@@ -9,7 +9,8 @@ import { hospitalSpecialtySitemapPaths } from "@/lib/radiation-hospital-page";
 import { doctors, hospitals, treatments } from "@/lib/data";
 import { absoluteUrl, SITE_URL } from "@/lib/seo";
 import type { AppLocale } from "@/lib/i18n/languages";
-import { LOCALES } from "@/lib/i18n/languages";
+import { LOCALES, isTargetLocale } from "@/lib/i18n/languages";
+import { localeIsPublished as targetLocaleIsPublished } from "@/lib/i18n/locale-gating";
 import { CITIES, getCountry, INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
 import { costCountryRecords } from "@/lib/cost-geo";
 import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
@@ -43,6 +44,10 @@ function cityName(slug: string) {
   return CITIES.find((city) => city.slug === slug)?.name ?? slug;
 }
 
+function localeIsPublished(locale: AppLocale) {
+  return !isTargetLocale(locale) || targetLocaleIsPublished(locale);
+}
+
 export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
   if (!SEARCH_CONSOLE_ORIGIN.startsWith("https://gaf.healthcare")) {
     throw new Error("Sitemap origin must match the verified Google Search Console property https://gaf.healthcare");
@@ -50,19 +55,29 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
 
   const now = new Date();
   if (locale !== "en") {
+    // A locale that is not live has nothing to advertise. Its pages still
+    // render, but noindex means listing them would only invite a crawl of
+    // pages we are asking not to be indexed.
+    if (!localeIsPublished(locale)) return [];
+
     const localized: MetadataRoute.Sitemap = [
       entry("/", locale, {
         lastModified: now,
         changeFrequency: "weekly",
         priority: 0.8,
       }),
-      entry("/treatments", locale, {
-        lastModified: now,
-        changeFrequency: "weekly",
-        priority: 0.7,
-      }),
     ];
-    for (const treatment of publishedCuratedTreatments(locale)) {
+    const localeTreatments = publishedCuratedTreatments(locale);
+    if (localeTreatments.length > 0) {
+      localized.push(
+        entry("/treatments", locale, {
+          lastModified: now,
+          changeFrequency: "weekly",
+          priority: 0.7,
+        }),
+      );
+    }
+    for (const treatment of localeTreatments) {
       localized.push(
         entry(`/treatments/${treatment.slug}`, locale, {
           lastModified: treatment.updatedAt,

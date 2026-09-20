@@ -6,7 +6,7 @@ import { doctors } from "@/lib/data";
 import { parseDoctorListingExtras } from "@/lib/doctor-discovery";
 import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
 import { getRequestLocale } from "@/lib/i18n/request";
-import { localePathIsPublished } from "@/lib/i18n/locale-publication";
+import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -25,7 +25,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { segments } = await params;
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, `/doctors/${segments.join("/")}`)) {
+  if (!localePageIsRenderable(locale, `/doctors/${segments.join("/")}`)) {
     return { robots: { index: false, follow: false } };
   }
   const raw = await searchParams;
@@ -46,7 +46,7 @@ export default async function DoctorsCatchAllPage({
 }) {
   const { segments } = await params;
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, `/doctors/${segments.join("/")}`)) notFound();
+  if (!localePageIsRenderable(locale, `/doctors/${segments.join("/")}`)) notFound();
   const raw = await searchParams;
   const page = readCatalogPage(raw);
   const filter = parsePrettyCatalogSegments(segments);

@@ -7,14 +7,14 @@ import { localizeBlog, localizeMessages } from "@/lib/i18n/localize";
 import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { getRequestLocale } from "@/lib/i18n/request";
-import { localePathIsPublished } from "@/lib/i18n/locale-publication";
+import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, "/blogs")) {
+  if (!localePageIsRenderable(locale, "/blogs")) {
     return { robots: { index: false, follow: false } };
   }
   const messages = await localizeMessages(locale);
@@ -28,7 +28,7 @@ export default async function BlogsPage({
 }) {
   const raw = await searchParams;
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, "/blogs")) notFound();
+  if (!localePageIsRenderable(locale, "/blogs")) notFound();
   const settings = blogSettings(locale);
   const messages = await localizeMessages(locale);
   const localizedSettings = {

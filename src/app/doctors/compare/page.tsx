@@ -6,13 +6,13 @@ import { experienceYears } from "@/lib/doctor-discovery";
 import { doctorsPath } from "@/lib/catalog-links";
 import type { Metadata } from "next";
 import { getRequestLocale } from "@/lib/i18n/request";
-import { localePathIsPublished } from "@/lib/i18n/locale-publication";
+import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 
 export const dynamic = "force-dynamic";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, "/doctors/compare")) {
+  if (!localePageIsRenderable(locale, "/doctors/compare")) {
     return { robots: { index: false, follow: false } };
   }
   return {
@@ -35,7 +35,7 @@ export default async function DoctorComparePage({
   searchParams: Promise<{ ids?: string | string[] }>;
 }) {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, "/doctors/compare")) notFound();
+  if (!localePageIsRenderable(locale, "/doctors/compare")) notFound();
   const ids = parseIds((await searchParams).ids);
   const doctors = ids.map((slug) => getDoctor(slug)).filter((row): row is NonNullable<typeof row> => Boolean(row));
 

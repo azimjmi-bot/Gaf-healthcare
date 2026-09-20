@@ -7,7 +7,7 @@ import { canonicalizePrettyPath, readCatalogPage } from "@/lib/catalog-route";
 import { hospitals } from "@/lib/data";
 import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
 import { getRequestLocale } from "@/lib/i18n/request";
-import { localePathIsPublished } from "@/lib/i18n/locale-publication";
+import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -30,7 +30,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { segments } = await params;
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, `/hospitals/${segments.join("/")}`)) {
+  if (!localePageIsRenderable(locale, `/hospitals/${segments.join("/")}`)) {
     return { robots: { index: false, follow: false } };
   }
   const filter = parsePrettyCatalogSegments(segments);
@@ -50,7 +50,7 @@ export default async function HospitalsCatchAllPage({
 }) {
   const { segments } = await params;
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, `/hospitals/${segments.join("/")}`)) notFound();
+  if (!localePageIsRenderable(locale, `/hospitals/${segments.join("/")}`)) notFound();
   const page = readCatalogPage(await searchParams);
   const filter = parsePrettyCatalogSegments(segments);
   if (filter) {

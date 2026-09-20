@@ -17,14 +17,14 @@ import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { getRequestLocale } from "@/lib/i18n/request";
-import { localePathIsPublished } from "@/lib/i18n/locale-publication";
+import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { getCity, getSpecialty, isPrimaryCountry, toSlug } from "@/lib/taxonomy";
 import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
 import type { Metadata } from "next";
 
 export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, costsFilterPath(query))) {
+  if (!localePageIsRenderable(locale, costsFilterPath(query))) {
     return { robots: { index: false, follow: false } };
   }
   if (query.procedure) {
@@ -92,7 +92,7 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
 
 export async function CostsDirectory({ query }: { query: CatalogQuery }) {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, costsFilterPath(query))) notFound();
+  if (!localePageIsRenderable(locale, costsFilterPath(query))) notFound();
   if (query.procedure) {
     const { CostsProcedureView } = await import("./costs-procedure-view");
     return <CostsProcedureView query={query} />;

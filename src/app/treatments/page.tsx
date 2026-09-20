@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import { Search, SlidersHorizontal } from "lucide-react";
 import { TreatmentCard } from "@/components/treatment-card";
 import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
@@ -7,6 +8,7 @@ import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { localePath } from "@/lib/i18n/path";
 import { getRequestLocale } from "@/lib/i18n/request";
+import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { treatmentUi } from "@/lib/i18n/treatment-ui";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { getCountry, getSpecialty } from "@/lib/taxonomy";
@@ -25,6 +27,9 @@ export async function generateMetadata({
   searchParams: SearchParams;
 }): Promise<Metadata> {
   const locale = await getRequestLocale();
+  if (!localePageIsRenderable(locale, "/treatments")) {
+    return { robots: { index: false, follow: false } };
+  }
   const ui = treatmentUi(locale);
   const query = await searchParams;
   const filtered = Object.values(query).some((value) =>
@@ -53,6 +58,9 @@ export default async function TreatmentsDirectoryPage({
   searchParams: SearchParams;
 }) {
   const locale = await getRequestLocale();
+  // A locale with nothing published here would otherwise render an empty
+  // directory shell, which is exactly the thin page the gate exists to stop.
+  if (!localePageIsRenderable(locale, "/treatments")) notFound();
   const ui = treatmentUi(locale);
   const query = await searchParams;
   const q = valueOf(query.q).toLocaleLowerCase(locale);

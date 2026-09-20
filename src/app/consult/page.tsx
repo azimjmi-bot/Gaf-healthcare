@@ -4,14 +4,14 @@ import { localizeMessages } from "@/lib/i18n/localize";
 import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { getRequestLocale } from "@/lib/i18n/request";
-import { localePathIsPublished } from "@/lib/i18n/locale-publication";
+import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { notFound } from "next/navigation";
 import { site } from "@/lib/site";
 import type { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, "/consult")) {
+  if (!localePageIsRenderable(locale, "/consult")) {
     return { robots: { index: false, follow: false } };
   }
   const messages = await localizeMessages(locale);
@@ -25,7 +25,7 @@ export default async function ConsultPage({
 }) {
   const q = await searchParams;
   const locale = await getRequestLocale();
-  if (!localePathIsPublished(locale, "/consult")) notFound();
+  if (!localePageIsRenderable(locale, "/consult")) notFound();
   const t = await localizeMessages(locale);
   return (
     <>

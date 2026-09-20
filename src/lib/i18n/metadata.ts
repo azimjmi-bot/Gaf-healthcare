@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { LANGUAGE_OG, SOURCE_LOCALE, type AppLocale } from "@/lib/i18n/languages";
 import { localePath } from "@/lib/i18n/path";
-import { publishedLocalesForPath } from "@/lib/i18n/locale-publication";
+import { localePageState, publishedLocalesForPath } from "@/lib/i18n/locale-publication";
 
 export const SITE_ORIGIN = "https://gaf.healthcare";
 
@@ -35,8 +35,16 @@ export function withLocaleMetadata(
   );
   const og = meta.openGraph ? { ...meta.openGraph } : {};
   const twitter = meta.twitter ? { ...meta.twitter } : {};
+  // Single place that turns "this page is not published in this locale" into a
+  // robots tag, so no route can forget it. Callers keep any stricter robots
+  // value they set themselves.
+  const robots =
+    localePageState(locale, englishPath) === "published"
+      ? meta.robots
+      : { index: false, follow: true };
   return {
     ...meta,
+    robots,
     alternates: {
       ...meta.alternates,
       canonical: url,
