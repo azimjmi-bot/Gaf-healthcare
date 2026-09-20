@@ -13,7 +13,7 @@ import {
   IdCard,
   Settings2,
 } from "lucide-react";
-import { useLocale, useT } from "@/components/locale-provider";
+import { useLocale, useSurfaceAvailable, useT } from "@/components/locale-provider";
 import {
   designationLabel,
   experienceBadge,
@@ -23,7 +23,6 @@ import {
 import type { Doctor } from "@/lib/doctors";
 import { medicalPhrase } from "@/lib/i18n/medical-phrases";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
-import { localeSurfaceIsAvailable } from "@/lib/i18n/locale-availability";
 
 const PROC_PREVIEW = 6;
 
@@ -37,6 +36,7 @@ export function DoctorCard({
   const [open, setOpen] = useState(false);
   const locale = useLocale();
   const t = useT();
+  const surfaceAvailable = useSurfaceAvailable();
   const bio = listingBio(doctor);
   const procedures = keyProcedureLabels(doctor).map((item) => medicalPhrase(item, locale));
   const shown = open ? procedures : procedures.slice(0, PROC_PREVIEW);
@@ -96,7 +96,7 @@ export function DoctorCard({
             <Link href={`/doctors/${doctor.slug}`} className="dcard__btn dcard__btn--book">
               {t("card.viewProfile")}
             </Link>
-            {localeSurfaceIsAvailable(locale, "consult") ? (
+            {surfaceAvailable("consult") ? (
               <Link href={`/consult?doctor=${doctor.slug}`} className="dcard__btn dcard__btn--consult">
                 {t("card.requestConsult")}
               </Link>

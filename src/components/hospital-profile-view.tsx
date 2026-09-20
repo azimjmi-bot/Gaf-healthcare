@@ -1,4 +1,5 @@
 import { LocaleLink as Link } from "@/components/locale-link";
+import { surfaceIsAvailable } from "@/lib/i18n/surfaces";
 import {
   Activity,
   Ambulance,
@@ -80,7 +81,6 @@ import {
 import { interpolate } from "@/lib/i18n/messages";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
-import { localeSurfaceIsAvailable } from "@/lib/i18n/locale-availability";
 import { site } from "@/lib/site";
 
 const SPECIALTY_ICON: Record<string, LucideIcon> = {
@@ -156,7 +156,7 @@ export function HospitalProfileView({
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(travel.mapsQuery)}`;
   const tel = site.phone.replace(/[^\d+]/g, "");
   const t = uiCatalogFor(locale);
-  const consultAvailable = localeSurfaceIsAvailable(locale, "consult");
+  const consultAvailable = surfaceIsAvailable(locale, "consult");
   const cityLabel = taxonomyLabel(hospital.city, locale);
   const countryLabel = taxonomyLabel(hospital.country, locale);
   const specialtyRelationships =

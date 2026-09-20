@@ -1,21 +1,19 @@
 "use client";
 
 import { LocaleLink as Link } from "@/components/locale-link";
-import { useLocale, useT } from "@/components/locale-provider";
+import { useLocale, useSurfaceAvailable, useT } from "@/components/locale-provider";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { GOOGLE_MAPS_URL, YOUTUBE_CHANNEL } from "@/data/home";
 import { stripLocalePrefix } from "@/lib/i18n/path";
 import { site } from "@/lib/site";
-import {
-  localeSurfaceIsAvailable,
-  type LocaleSurface,
-} from "@/lib/i18n/locale-availability";
+import type { LocaleSurface } from "@/lib/i18n/locale-availability";
 
 export function SiteFooter() {
   const pathname = stripLocalePrefix(usePathname() || "/").pathname;
   const t = useT();
   const locale = useLocale();
+  const surfaceAvailable = useSurfaceAvailable();
   if (pathname.startsWith("/cms")) return null;
   const columns = [
     {
@@ -28,7 +26,7 @@ export function SiteFooter() {
         { href: "/costs", label: t("nav.costs"), surface: "costs" },
         { href: "/blogs", label: t("nav.blogs"), surface: "blogs" },
       ].filter((link) =>
-        localeSurfaceIsAvailable(locale, link.surface as LocaleSurface),
+        surfaceAvailable(link.surface as LocaleSurface),
       ),
     },
   ].filter((column) => column.links.length > 0);

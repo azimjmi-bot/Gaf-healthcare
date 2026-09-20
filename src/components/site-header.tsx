@@ -2,7 +2,7 @@
 
 import { LocaleLink as Link } from "@/components/locale-link";
 import { LanguageSwitcher } from "@/components/language-switcher";
-import { useLocale, useT } from "@/components/locale-provider";
+import { useLocale, useSurfaceAvailable, useT } from "@/components/locale-provider";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Menu } from "lucide-react";
@@ -16,15 +16,13 @@ import {
 } from "@/components/ui/sheet";
 import { useState } from "react";
 import { stripLocalePrefix } from "@/lib/i18n/path";
-import {
-  localeSurfaceIsAvailable,
-  type LocaleSurface,
-} from "@/lib/i18n/locale-availability";
+import type { LocaleSurface } from "@/lib/i18n/locale-availability";
 
 export function SiteHeader() {
   const pathname = stripLocalePrefix(usePathname() || "/").pathname;
   const t = useT();
   const locale = useLocale();
+  const surfaceAvailable = useSurfaceAvailable();
   const [open, setOpen] = useState(false);
   if (pathname.startsWith("/cms")) return null;
   const overlay = pathname === "/";
@@ -37,9 +35,9 @@ export function SiteHeader() {
     { href: "/costs", label: t("nav.costs"), surface: "costs" },
     { href: "/blogs", label: t("nav.blogs"), surface: "blogs" },
   ].filter((link) =>
-    localeSurfaceIsAvailable(locale, link.surface as LocaleSurface),
+    surfaceAvailable(link.surface as LocaleSurface),
   );
-  const consultAvailable = localeSurfaceIsAvailable(locale, "consult");
+  const consultAvailable = surfaceAvailable("consult");
 
   return (
     <header

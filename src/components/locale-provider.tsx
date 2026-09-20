@@ -2,31 +2,36 @@
 
 import { createContext, useContext, type ReactNode } from "react";
 import { SOURCE_LOCALE, localeDir, type AppLocale } from "@/lib/i18n/languages";
+import type { LocaleSurface } from "@/lib/i18n/locale-availability";
 import { UI_MESSAGE_FIELDS } from "@/lib/i18n/messages";
 
 type LocaleContextValue = {
   locale: AppLocale;
   dir: "ltr" | "rtl";
   messages: Record<string, string>;
+  surfaces: readonly LocaleSurface[];
 };
 
 const LocaleContext = createContext<LocaleContextValue>({
   locale: SOURCE_LOCALE,
   dir: "ltr",
   messages: UI_MESSAGE_FIELDS,
+  surfaces: [],
 });
 
 export function LocaleProvider({
   locale,
   messages,
+  surfaces,
   children,
 }: {
   locale: AppLocale;
   messages: Record<string, string>;
+  surfaces: readonly LocaleSurface[];
   children: ReactNode;
 }) {
   return (
-    <LocaleContext.Provider value={{ locale, dir: localeDir(locale), messages }}>
+    <LocaleContext.Provider value={{ locale, dir: localeDir(locale), messages, surfaces }}>
       {children}
     </LocaleContext.Provider>
   );
@@ -38,6 +43,12 @@ export function useLocale() {
 
 export function useMessages() {
   return useContext(LocaleContext).messages;
+}
+
+/** Whether a nav surface has content in the current locale. */
+export function useSurfaceAvailable() {
+  const { surfaces } = useContext(LocaleContext);
+  return (surface: LocaleSurface) => surfaces.includes(surface);
 }
 
 export function useT() {

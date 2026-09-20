@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 import { LANGUAGE_OG, localeDir } from "@/lib/i18n/languages";
 import { localizeMessages } from "@/lib/i18n/localize";
 import { getRequestLocale } from "@/lib/i18n/request";
+import { availableSurfaces } from "@/lib/i18n/surfaces";
 import { SITE_URL } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
@@ -158,7 +159,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${cormorant.variable} ${notoSans.variable} ${notoArabic.variable} h-full`}
     >
       <body className="flex min-h-full flex-col">
-        <LocaleProvider locale={locale} messages={messages}>
+        <LocaleProvider locale={locale} messages={messages} surfaces={availableSurfaces(locale)}>
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />

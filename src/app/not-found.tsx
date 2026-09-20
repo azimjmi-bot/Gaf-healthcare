@@ -1,10 +1,8 @@
 import { LocaleLink as Link } from "@/components/locale-link";
 import { localizeMessages } from "@/lib/i18n/localize";
 import { getRequestLocale } from "@/lib/i18n/request";
-import {
-  localeSurfaceIsAvailable,
-  type LocaleSurface,
-} from "@/lib/i18n/locale-availability";
+import type { LocaleSurface } from "@/lib/i18n/locale-availability";
+import { surfaceIsAvailable } from "@/lib/i18n/surfaces";
 
 export default async function NotFound() {
   const locale = await getRequestLocale();
@@ -16,7 +14,7 @@ export default async function NotFound() {
     { href: "/costs", label: messages["nav.costs"], surface: "costs" },
     { href: "/blogs", label: messages["nav.blogs"], surface: "blogs" },
   ].filter((link) =>
-    localeSurfaceIsAvailable(locale, link.surface as LocaleSurface),
+    surfaceIsAvailable(locale, link.surface as LocaleSurface),
   );
   return (
     <section className="mx-auto max-w-3xl px-5 py-32 text-center md:px-8">

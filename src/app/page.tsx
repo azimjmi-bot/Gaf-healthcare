@@ -23,7 +23,7 @@ import { localizeBlog, localizeHomeExtras, localizeMessages } from "@/lib/i18n/l
 import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { getRequestLocale } from "@/lib/i18n/request";
-import { localeSurfaceIsAvailable } from "@/lib/i18n/locale-availability";
+import { surfaceIsAvailable } from "@/lib/i18n/surfaces";
 import { SITE_URL } from "@/lib/seo";
 import type { Treatment } from "@/lib/treatments";
 import type { Metadata } from "next";
@@ -306,7 +306,7 @@ export default async function HomePage() {
         readLabel={t["home.readGoogle"]}
       />
 
-      {localeSurfaceIsAvailable(locale, "consult") ? (
+      {surfaceIsAvailable(locale, "consult") ? (
       <section className="home-finale">
         <div>
           <h2>{t["home.finaleTitle"]}</h2>
