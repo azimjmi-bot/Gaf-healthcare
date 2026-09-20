@@ -9,6 +9,11 @@ export function CostHero({
   article,
   treatment,
   place = "India",
+  country = "India",
+  countryLabel,
+  eyebrow,
+  priceRange,
+  stay,
   heading,
   lede,
   subtitle,
@@ -20,6 +25,14 @@ export function CostHero({
   article: CostArticle;
   treatment: Treatment;
   place?: string;
+  /** Taxonomy country name, used for the breadcrumb links. */
+  country?: string;
+  /** Country name as the CMS writes it, used in visible copy. */
+  countryLabel?: string;
+  eyebrow?: string;
+  /** Planning band for this country. Defaults to the catalog's India partner range. */
+  priceRange?: string;
+  stay?: string;
   heading: string;
   lede?: string;
   /** Short procedure-specific line immediately under the H1. */
@@ -29,33 +42,42 @@ export function CostHero({
   doctorsHref?: string;
   children?: ReactNode;
 }) {
+  const countryName = countryLabel ?? country;
+  const range = priceRange ?? treatment.partnerRange;
+  const stayLabel = stay ?? treatment.stay;
+  const procedurePath = costsFilterPath({
+    destination: country,
+    specialty: catalogSpecialtyName(treatment),
+    procedure: treatment.name,
+  });
+  const trail = place.replace(`, ${countryName}`, "");
   return (
     <section className="cost-hero">
       <div className="mx-auto max-w-7xl px-4 sm:px-5 md:px-8">
         <div className="cost-hero__grid">
           <div className="cost-hero__copy">
             <nav aria-label="Breadcrumb" className="cost-crumbs">
-              <Link href={costsFilterPath({ destination: "India" })}>India</Link>
+              <Link href={costsFilterPath({ destination: country })}>{countryName}</Link>
               <span aria-hidden>›</span>
-              <Link href={costsFilterPath({ destination: "India", specialty: catalogSpecialtyName(treatment) })}>
+              <Link href={costsFilterPath({ destination: country, specialty: catalogSpecialtyName(treatment) })}>
                 {catalogSpecialtyName(treatment)}
               </Link>
               <span aria-hidden>›</span>
-              <Link href={`/costs/${treatment.slug}`}>{article.briefName || article.procedure}</Link>
-              {place !== "India" ? (
+              <Link href={procedurePath}>{article.briefName || article.procedure}</Link>
+              {place !== countryName ? (
                 <>
                   <span aria-hidden>›</span>
-                  <span>{place.replace(", India", "")}</span>
+                  <span>{trail}</span>
                 </>
               ) : null}
             </nav>
-            <p className="cost-hero__eyebrow">India planning ranges</p>
+            <p className="cost-hero__eyebrow">{eyebrow ?? `${countryName} planning ranges`}</p>
             <h1 className="cost-hero__title">{heading}</h1>
             {subtitle ? <p className="cost-hero__subtitle">{subtitle}</p> : null}
           </div>
           <aside className="cost-price">
             <p className="cost-price__kicker">{place}</p>
-            <p className="cost-price__num">{treatment.partnerRange}</p>
+            <p className="cost-price__num">{range}</p>
             <p className="cost-price__sub">Typical international-patient hospital package</p>
             <p className="cost-price__note">
               Indicative estimate. Final cost depends on hospital, specialist, treatment plan and clinical
@@ -67,7 +89,7 @@ export function CostHero({
             <p className="cost-hero__facts">
               <span>
                 <BedDouble className="size-4" />
-                {treatment.stay} typical hospital stay
+                {stayLabel} typical hospital stay
               </span>
               {article.duration ? (
                 <span>

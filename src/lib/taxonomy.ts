@@ -13,6 +13,15 @@ export type CityTaxon = Taxon & {
   countrySlug: string;
 };
 
+/**
+ * Names a country is also known by in URLs and in editorial records. The canonical
+ * `name`/`slug` still owns the address bar; aliases only resolve inbound requests so
+ * an English or short form redirects to the canonical path instead of 404ing.
+ */
+export type CountryTaxon = Taxon & {
+  aliases?: string[];
+};
+
 export type ProcedureTaxon = Taxon & {
   specialtySlug: string;
   specialtySlugs: string[];
@@ -33,15 +42,23 @@ function taxon(name: string, slug = toSlug(name)): Taxon {
   return { name, slug };
 }
 
-export const COUNTRIES: Taxon[] = [
+export const COUNTRIES: CountryTaxon[] = [
   taxon("India"),
-  taxon("South Korea"),
-  taxon("Türkiye", "turkiye"),
+  { ...taxon("South Korea"), aliases: ["Korea", "Republic of Korea"] },
+  { ...taxon("Türkiye", "turkiye"), aliases: ["Turkey"] },
   taxon("Thailand"),
-  taxon("United Arab Emirates"),
+  { ...taxon("United Arab Emirates"), aliases: ["UAE"] },
   taxon("Singapore"),
   taxon("Mexico"),
 ];
+
+/**
+ * The destination the cost catalog is authored around. Its procedure pages predate the
+ * multi-country routes and keep their flat `/costs/{procedure}` canonical, so this is a
+ * legacy-URL marker rather than a routing special case: every other country resolves
+ * through the same country/city/specialty/procedure path.
+ */
+export const PRIMARY_COUNTRY_SLUG = "india";
 
 export const CITIES: CityTaxon[] = [
   { name: "Delhi NCR", slug: "delhi-ncr", countrySlug: "india" },
@@ -747,6 +764,14 @@ function indexBySlug<T extends Taxon>(rows: T[]) {
 
 const countriesByName = indexByName(COUNTRIES);
 const countriesBySlug = indexBySlug(COUNTRIES);
+const countriesByAlias = new Map(
+  COUNTRIES.flatMap((row) =>
+    (row.aliases ?? []).flatMap((alias) => [
+      [alias, row] as const,
+      [toSlug(alias), row] as const,
+    ]),
+  ),
+);
 const citiesByName = indexByName(CITIES);
 const citiesBySlug = indexBySlug(CITIES);
 const specialtiesByName = indexByName(SPECIALTIES);
@@ -755,7 +780,19 @@ const proceduresByName = indexByName(PROCEDURES);
 const proceduresBySlug = indexBySlug(PROCEDURES);
 
 export function getCountry(nameOrSlug: string) {
-  return countriesByName.get(nameOrSlug) ?? countriesBySlug.get(nameOrSlug);
+  const slug = toSlug(nameOrSlug);
+  return (
+    countriesByName.get(nameOrSlug) ??
+    countriesBySlug.get(nameOrSlug) ??
+    countriesByAlias.get(nameOrSlug) ??
+    countriesBySlug.get(slug) ??
+    countriesByAlias.get(slug)
+  );
+}
+
+export function isPrimaryCountry(nameOrSlug?: string) {
+  if (!nameOrSlug) return true;
+  return getCountry(nameOrSlug)?.slug === PRIMARY_COUNTRY_SLUG;
 }
 
 export function getCity(nameOrSlug: string) {

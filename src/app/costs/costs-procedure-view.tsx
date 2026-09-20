@@ -5,8 +5,9 @@ import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, filterTreatments, type CatalogQuery } from "@/lib/catalog";
 import { costsFilterPath } from "@/lib/catalog-links";
 import { catalogSpecialtyName, cityEditorial, doctorsToConsiderHeading, hospitalsToConsiderHeading, interpolateCostArticle } from "@/lib/cost-article";
+import { CostsCountryView, costCountryMetadata } from "@/app/costs/costs-country-view";
 import { hospitals, treatments } from "@/lib/data";
-import { getSpecialty } from "@/lib/taxonomy";
+import { getSpecialty, isPrimaryCountry } from "@/lib/taxonomy";
 import type { Treatment } from "@/lib/treatments";
 import {
   absoluteUrl,
@@ -29,6 +30,8 @@ function treatmentForQuery(sheet: Treatment, query: CatalogQuery): Treatment {
 
 export async function costsProcedureMetadata(query: CatalogQuery): Promise<Metadata> {
   const base = catalogMetadata("treatments", query);
+  const country = costCountryMetadata(query);
+  if (country) return country;
   const source = query.procedure ? treatments.find((t) => t.name === query.procedure) : undefined;
   if (!source) return base;
   const sheet = treatmentForQuery(source, query);
@@ -65,6 +68,9 @@ export async function costsProcedureMetadata(query: CatalogQuery): Promise<Metad
 }
 
 export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
+  // Destinations other than the primary one are described by a CMS destination row, not
+  // by the long-form India article, so they render their own country/city view.
+  if (!isPrimaryCountry(query.destination)) return <CostsCountryView query={query} />;
   const list = filterTreatments(query, treatments, hospitals);
   const source = query.procedure ? treatments.find((t) => t.name === query.procedure) : undefined;
   if (!source) return null;

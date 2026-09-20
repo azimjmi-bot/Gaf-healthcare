@@ -1,11 +1,10 @@
-import { notFound, permanentRedirect } from "next/navigation";
+import { notFound } from "next/navigation";
 import { CostSheet, costSheetMetadata } from "@/app/costs/cost-sheet";
 import { CostsDirectory, costsDirectoryMetadata } from "@/app/costs/directory";
 import { canonicalizePrettyPath, readCatalogPage } from "@/lib/catalog-route";
 import { treatments } from "@/lib/data";
 import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
 import { getRequestLocale } from "@/lib/i18n/request";
-import { localePath } from "@/lib/i18n/path";
 import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import type { Metadata } from "next";
 
@@ -45,12 +44,9 @@ export default async function CostsCatchAllPage({
   const page = readCatalogPage(await searchParams);
   const filter = parsePrettyCatalogSegments(segments);
   if (filter) {
-    if (filter.procedure && !filter.city) {
-      const treatment = treatments.find((row) => row.name === filter.procedure);
-      if (treatment) {
-        permanentRedirect(localePath(`/costs/${treatment.slug}`, locale));
-      }
-    }
+    // Country and city procedure pages both live on this path. Normalising here keeps
+    // one address per record: alias and lowercase segments redirect to the Title-Case
+    // country/city/specialty/procedure form before anything renders.
     canonicalizePrettyPath("/costs", segments, filter, page, locale);
     return <CostsDirectory query={filter} />;
   }

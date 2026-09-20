@@ -18,7 +18,7 @@ import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/director
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { localePathIsPublished } from "@/lib/i18n/locale-publication";
-import { getCity, getSpecialty, toSlug } from "@/lib/taxonomy";
+import { getCity, getSpecialty, isPrimaryCountry, toSlug } from "@/lib/taxonomy";
 import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
 import type { Metadata } from "next";
 
@@ -30,6 +30,8 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
   if (query.procedure) {
     const { costsProcedureMetadata } = await import("./costs-procedure-view");
     const meta = await costsProcedureMetadata(query);
+    // Country views already carry their own canonical and country-specific copy.
+    if (!isPrimaryCountry(query.destination)) return meta;
     if (!query.city) return meta;
     const wrapped = await catalogPageMetadata("treatments", query);
     return { ...meta, alternates: wrapped.alternates, openGraph: { ...meta.openGraph, ...wrapped.openGraph } };

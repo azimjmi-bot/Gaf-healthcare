@@ -25,6 +25,25 @@ export type CityPageCopy = {
   faqs: { q: string; a: string }[];
 };
 
+/**
+ * Optional long-form country overlay, the country-level twin of `CityPageCopy`.
+ * A destination row on its own is enough to resolve
+ * `/costs/{country}/{specialty}/{procedure}`, but the page stays out of the index and
+ * the sitemap until this copy exists — the same bar city pages clear with `page`.
+ */
+export type CountryPageCopy = {
+  seoTitle: string;
+  seoDescription: string;
+  heading: string;
+  /** Short hero line under the H1. Keep to ~2–6 lines. */
+  subtitle?: string;
+  intro: string[];
+  answer: string[];
+  costExplanation: string[];
+  factors?: LabelledDetail[];
+  faqs?: { q: string; a: string }[];
+};
+
 export type CityEditorial = {
   citySlug: CostCitySlug;
   ecosystem: string;
@@ -48,6 +67,8 @@ export type DestinationRow = {
   /** Short market position, e.g. "Self-pay surgical oncology hub". */
   positioning?: string;
   context: string;
+  /** Country-level page copy. Its presence is what makes the country page indexable. */
+  page?: CountryPageCopy;
 };
 
 export type CostFigure = {

@@ -4,24 +4,19 @@ import { catalogSpecialtyName, doctorsPath, hospitalsPath, costsFilterPath } fro
 import { doctorsForTreatment, getHospital, getTreatment } from "@/lib/data";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
-import { CITIES, COUNTRIES, toSlug } from "@/lib/taxonomy";
+import { CITIES, getCountry, PRIMARY_COUNTRY_SLUG, toSlug } from "@/lib/taxonomy";
 import type { Treatment } from "@/lib/treatments";
 
 export { catalogSpecialtyName };
 
-const DESTINATION_ALIASES: Record<string, string> = {
-  turkey: "Türkiye",
-  uae: "United Arab Emirates",
-};
-
-/** Link only destinations that already exist as catalog filters. */
-export function destinationFilterHref(country: string, procedure: string) {
-  const aliased = DESTINATION_ALIASES[country.toLowerCase()] ?? country;
-  const match = COUNTRIES.find(
-    (row) => row.name === aliased || row.name.toLowerCase() === country.toLowerCase(),
-  );
+/**
+ * Link a comparison row to that country's own cost page. Countries outside the
+ * taxonomy stay unlinked: the row is context, not a destination we can route to.
+ */
+export function destinationFilterHref(country: string, procedure: string, specialty?: string) {
+  const match = getCountry(country);
   if (!match) return undefined;
-  return hospitalsPath({ destination: match.name, procedure });
+  return costsFilterPath({ destination: match.name, specialty, procedure });
 }
 
 const USD = /\$?([\d,]+)/g;
@@ -178,7 +173,12 @@ export function costCityRows(
   faculty: Doctor[],
   campuses: Hospital[],
 ): CostCityRow[] {
-  return article.cities.map((city: CityEditorial) => {
+  // City records are keyed by taxonomy slug across all countries; this table is the
+  // primary destination's, so a record for another country's city belongs elsewhere.
+  const indiaCities = article.cities.filter(
+    (city: CityEditorial) => CITIES.find((row) => row.slug === city.citySlug)?.countrySlug === PRIMARY_COUNTRY_SLUG,
+  );
+  return indiaCities.map((city: CityEditorial) => {
     const name = cityName(city.citySlug);
     const specialty = catalogSpecialtyName(treatment);
     const params = { destination: "India", city: name, procedure: treatment.name, specialty };
@@ -227,7 +227,7 @@ export function costDestinationRows(
         positioning,
         context: row.context,
         isIndia: true,
-        href: destinationFilterHref("India", treatment.name),
+        href: destinationFilterHref("India", treatment.name, catalogSpecialtyName(treatment)),
       };
     }
 
@@ -242,7 +242,7 @@ export function costDestinationRows(
         positioning,
         context: row.context,
         isIndia: false,
-        href: destinationFilterHref(row.country, treatment.name),
+        href: destinationFilterHref(row.country, treatment.name, catalogSpecialtyName(treatment)),
       };
     }
 
@@ -258,7 +258,7 @@ export function costDestinationRows(
         positioning,
         context: row.context,
         isIndia: false,
-        href: destinationFilterHref(row.country, treatment.name),
+        href: destinationFilterHref(row.country, treatment.name, catalogSpecialtyName(treatment)),
       };
     }
 
@@ -271,7 +271,7 @@ export function costDestinationRows(
       positioning,
       context: row.context,
       isIndia: false,
-      href: destinationFilterHref(row.country, treatment.name),
+      href: destinationFilterHref(row.country, treatment.name, catalogSpecialtyName(treatment)),
     };
   });
 

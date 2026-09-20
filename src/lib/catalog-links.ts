@@ -1,4 +1,4 @@
-import { SPECIALTIES, toSlug } from "@/lib/taxonomy";
+import { isPrimaryCountry, SPECIALTIES, toSlug } from "@/lib/taxonomy";
 import { prettyCatalogPath, type CatalogBasePath } from "@/lib/pretty-catalog-path";
 import type { Treatment } from "@/lib/treatments";
 
@@ -31,9 +31,13 @@ export function costsFilterPath(opts: {
   specialty?: string;
   procedure?: string;
 }) {
-  // A national procedure is one catalog entity with one stable canonical sheet.
-  // City procedure pages remain hierarchical because they contain city editorial.
-  if (opts.procedure && !opts.city) return costPath(opts.procedure);
+  // The primary destination's national procedure page is one catalog entity with one
+  // stable canonical sheet, which predates the country routes and stays where it is.
+  // Every other country has no flat sheet, so its country page is the hierarchical
+  // path. City procedure pages are always hierarchical: they carry city editorial.
+  if (opts.procedure && !opts.city && isPrimaryCountry(opts.destination)) {
+    return costPath(opts.procedure);
+  }
   return catalogHref("/costs", opts);
 }
 

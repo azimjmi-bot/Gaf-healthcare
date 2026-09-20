@@ -217,7 +217,8 @@ export function catalogMetadata(
   q: CatalogQuery,
 ): Metadata {
   const city = q.city;
-  const place = city ? `${city}, India` : "India";
+  const country = q.destination || "India";
+  const place = city ? `${city}, ${country}` : country;
   const spec = q.specialty;
   const proc = q.procedure;
   let title: string;

@@ -10,7 +10,8 @@ import { doctors, hospitals, treatments } from "@/lib/data";
 import { absoluteUrl, SITE_URL } from "@/lib/seo";
 import type { AppLocale } from "@/lib/i18n/languages";
 import { LOCALES } from "@/lib/i18n/languages";
-import { CITIES, INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
+import { CITIES, getCountry, INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
+import { costCountryRecords } from "@/lib/cost-geo";
 import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
 import {
   doctorsForHospitalLocale,
@@ -236,12 +237,34 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     );
 
     if (!article) continue;
+    const specialty = catalogSpecialtyName(treatment);
+
+    // Country and city cost pages are listed once their CMS record carries page copy.
+    // A destination or city row on its own still resolves, but stays unlisted so the
+    // sitemap never advertises a page the CMS has not written yet.
+    for (const record of costCountryRecords(article)) {
+      if (record.isPrimary || !record.row.page) continue;
+      urls.push(
+        entry(
+          costsFilterPath({
+            destination: record.country.name,
+            specialty,
+            procedure: treatment.name,
+          }),
+          locale,
+          { lastModified: article.lastUpdated, changeFrequency: "monthly", priority: 0.65 },
+        ),
+      );
+    }
+
     for (const city of article.cities) {
       if (!city.page) continue;
+      const country = CITIES.find((row) => row.slug === city.citySlug)?.countrySlug;
+      if (!country) continue;
       const path = costsFilterPath({
-        destination: "India",
+        destination: getCountry(country)?.name,
         city: cityName(city.citySlug),
-        specialty: catalogSpecialtyName(treatment),
+        specialty,
         procedure: treatment.name,
       });
       urls.push(
