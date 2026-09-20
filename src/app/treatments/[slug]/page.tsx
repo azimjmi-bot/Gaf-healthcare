@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { costPath } from "@/lib/catalog-links";
 import { notFound, redirect } from "next/navigation";
 import { ArrowRight, ChevronDown, MapPin } from "lucide-react";
 import { DoctorCard } from "@/components/doctor-card";
@@ -411,7 +412,7 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
                 <article key={cost.slug}>
                   <h3>{cost.name}</h3>
                   <p>{cost.summary}</p>
-                  <Link href={`/costs/${cost.slug}`}>
+                  <Link href={costPath(cost.name)}>
                     {ui.viewCost} <ArrowRight className="size-4" />
                   </Link>
                 </article>

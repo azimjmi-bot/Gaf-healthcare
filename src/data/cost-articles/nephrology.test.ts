@@ -142,7 +142,7 @@ test("Nephrology routes consolidate nationally and retain city context", () => {
     specialty: "Nephrology",
     procedure: "Continuous Renal Replacement Therapy (CRRT)",
   });
-  assert.equal(crrt, "/costs/continuous-renal-replacement-therapy-crrt");
+  assert.equal(crrt, "/costs/India/Nephrology/Continuous-Renal-Replacement-Therapy-(CRRT)");
   assert.deepEqual(parsePrettyCatalogSegments([
     "India",
     "Nephrology",

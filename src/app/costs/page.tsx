@@ -1,5 +1,6 @@
 import { permanentRedirect } from "next/navigation";
 import { parseCatalogQuery } from "@/lib/catalog-options";
+import { costsFilterPath } from "@/lib/catalog-links";
 import { redirectPrettyCatalog } from "@/lib/catalog-route";
 import { CostsDirectory, costsDirectoryMetadata } from "@/app/costs/directory";
 import { treatments } from "@/lib/data";
@@ -24,10 +25,14 @@ export default async function CostsPage({
 }) {
   const query = parseCatalogQuery(await searchParams);
   const locale = await getRequestLocale();
-  if (query.procedure && !query.city) {
+  // A ?procedure= query has no destination of its own, so send it to that
+  // procedure's canonical country path rather than rendering it here.
+  if (query.procedure && !query.city && !query.destination) {
     const treatment = treatments.find((row) => row.name === query.procedure);
     if (treatment) {
-      permanentRedirect(localePath(`/costs/${treatment.slug}`, locale));
+      permanentRedirect(
+        localePath(costsFilterPath({ specialty: query.specialty, procedure: treatment.name }), locale),
+      );
     }
   }
   redirectPrettyCatalog("/costs", query, 1, locale);

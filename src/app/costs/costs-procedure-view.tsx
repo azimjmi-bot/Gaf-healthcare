@@ -63,7 +63,15 @@ export async function costsProcedureMetadata(query: CatalogQuery): Promise<Metad
           imageAlt: article.figures?.[0]?.alt,
         })
       : base),
-    alternates: { canonical: absoluteUrl(`/costs/${sheet.slug}`) },
+    alternates: {
+      canonical: absoluteUrl(
+        costsFilterPath({
+          destination: query.destination,
+          specialty: query.specialty || catalogSpecialtyName(sheet),
+          procedure: sheet.name,
+        }),
+      ),
+    },
   };
 }
 
@@ -89,7 +97,11 @@ export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
         specialty: query.specialty || catalogSpecialtyName(sheet),
         procedure: sheet.name,
       })
-    : `/costs/${sheet.slug}`;
+    : costsFilterPath({
+        destination: query.destination,
+        specialty: query.specialty || catalogSpecialtyName(sheet),
+        procedure: sheet.name,
+      });
   const faqs = cityPage
     ? [...cityPage.faqs, ...sheetArticle.faqs.filter((item) => !cityPage.faqs.some((faq) => faq.q === item.q))]
     : sheetArticle.faqs;
@@ -113,7 +125,14 @@ export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
         data={breadcrumbJsonLd([
           { name: "Treatment Cost", path: "/costs" },
           { name: catalogSpecialtyName(sheet), path: costsFilterPath({ destination: query.destination || "India", specialty: catalogSpecialtyName(sheet) }) },
-          { name: sheet.name, path: `/costs/${sheet.slug}` },
+          {
+            name: sheet.name,
+            path: costsFilterPath({
+              destination: query.destination,
+              specialty: query.specialty || catalogSpecialtyName(sheet),
+              procedure: sheet.name,
+            }),
+          },
           ...(query.city ? [{ name: query.city, path: pagePath }] : []),
         ])}
       />

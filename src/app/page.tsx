@@ -18,7 +18,7 @@ import { listPublishedPosts } from "@/lib/blogs";
 import { treatments } from "@/lib/data";
 import { doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
-import { hospitalsPath } from "@/lib/catalog-links";
+import { costPath, hospitalsPath } from "@/lib/catalog-links";
 import { localizeBlog, localizeHomeExtras, localizeMessages } from "@/lib/i18n/localize";
 import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
@@ -252,7 +252,7 @@ export default async function HomePage() {
         </div>
         <div className="home-costgrid">
           {sheets.map((row) => (
-            <Link key={row.slug} href={`/costs/${row.slug}`} className="home-cost">
+            <Link key={row.slug} href={costPath(row.name)} className="home-cost">
               <p>{taxonomyLabel(row.category, locale)}</p>
               <strong>{taxonomyLabel(row.name, locale)}</strong>
               <em>{startingPrice(row.partnerRange)}</em>

@@ -307,7 +307,7 @@ test("uses one national canonical and preserves city procedure routes", () => {
       specialty: "Surgical Oncology",
       procedure: "Thyroidectomy for Thyroid Cancer",
     }),
-    "/costs/thyroidectomy-for-thyroid-cancer",
+    "/costs/India/Surgical-Oncology/Thyroidectomy-for-Thyroid-Cancer",
   );
   assert.equal(
     costsFilterPath({

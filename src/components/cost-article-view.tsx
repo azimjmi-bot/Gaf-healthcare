@@ -962,7 +962,7 @@ export function CostArticleView({
             {related.map((row) => (
               <li key={row.slug}>
                 <Link
-                  href={`/costs/${row.slug}`}
+                  href={costPath(row.name)}
                   className="block rounded-2xl border border-border bg-card p-5 no-underline transition-colors hover:border-primary/30"
                 >
                   <p className="font-heading text-lg leading-tight">{row.name} cost in India</p>

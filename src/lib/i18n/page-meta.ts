@@ -7,6 +7,7 @@ import { getRequestLocale } from "@/lib/i18n/request";
 import { getCostArticle } from "@/data/cost-articles";
 import { getTreatment } from "@/lib/data";
 import { getPost } from "@/lib/blogs";
+import { costPath } from "@/lib/catalog-links";
 import { catalogMetadata, doctorMetadata, hospitalMetadata, treatmentMetadata, costArticleMetadata } from "@/lib/seo";
 import { interpolateCostArticle } from "@/lib/cost-article";
 import { directoryIntro } from "@/lib/i18n/directory-copy";
@@ -37,7 +38,8 @@ export async function costPageMetadata(slug: string): Promise<Metadata> {
         imageAlt: article.figures?.[0]?.alt,
       })
     : treatmentMetadata(treatment);
-  return withLocaleMetadata(english, `/costs/${slug}`, locale, LOCALES);
+  // The flat sheet keeps serving, but the country path is the canonical address.
+  return withLocaleMetadata(english, costPath(treatment.name), locale, LOCALES);
 }
 
 export async function blogPageMetadata(post: NonNullable<ReturnType<typeof getPost>>): Promise<Metadata> {

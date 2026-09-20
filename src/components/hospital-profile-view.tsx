@@ -55,7 +55,7 @@ import {
   popularTreatments,
   yearsLabelLocalized,
 } from "@/lib/hospital-profile";
-import { doctorsPath, hospitalsPath } from "@/lib/catalog-links";
+import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import {
   hospitalSpecialtyCombinationIndexable,
   hospitalSpecialtyRelationship,
@@ -472,14 +472,14 @@ export function HospitalProfileView({
                       <IconFor slug={row.specialtySlug} className="size-5" />
                     </span>
                     <div>
-                      <Link href={`/costs/${row.treatment.slug}`}>
+                      <Link href={costPath(row.treatment.name)}>
                         {taxonomyLabel(row.treatment.name, locale)}
                       </Link>
                       <p>{taxonomyLabel(row.specialty, locale)}</p>
                     </div>
                     <strong>{fromUsdLocalized(row.treatment.partnerRange, locale)}</strong>
                     <Link
-                      href={`/costs/${row.treatment.slug}`}
+                      href={costPath(row.treatment.name)}
                       className="hp-row-arrow"
                       aria-label={interpolate(t["hp.costAria"], {
                         name: taxonomyLabel(row.treatment.name, locale),

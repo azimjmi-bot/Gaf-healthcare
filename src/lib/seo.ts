@@ -3,6 +3,7 @@ import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
 import type { CatalogQuery } from "@/lib/catalog-options";
+import { costPath } from "@/lib/catalog-links";
 import { displayBio } from "@/lib/hospital-profile";
 import { stripMarkdown } from "@/lib/markdown";
 import { prettyCatalogPath } from "@/lib/pretty-catalog-path";
@@ -195,7 +196,7 @@ export function treatmentMetadata(t: Treatment): Metadata {
   const description = clip(
     `${t.name} (${t.category}) in India: partner range ${t.partnerRange} beside typical US cash ${t.usRange}. ${t.summary}`,
   );
-  const url = absoluteUrl(`/costs/${t.slug}`);
+  const url = absoluteUrl(costPath(t.name));
   return {
     title,
     description,
@@ -520,7 +521,7 @@ export function costArticleMetadata(
   article: { seoTitle: string; seoDescription: string; lastUpdated: string },
   opts?: { path?: string; image?: string; imageAlt?: string },
 ): Metadata {
-  const url = absoluteUrl(opts?.path ?? `/costs/${t.slug}`);
+  const url = absoluteUrl(opts?.path ?? costPath(t.name));
   const description = clip(article.seoDescription);
   const ogImage = opts?.image
     ? [{ url: absoluteUrl(opts.image), alt: opts.imageAlt || article.seoTitle }]

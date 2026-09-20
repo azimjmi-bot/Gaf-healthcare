@@ -4,21 +4,29 @@ import {
   costsFilterPath,
   doctorsPath,
   hospitalsPath,
+  legacyCostSheetPath,
 } from "./catalog-links";
 import {
   parsePrettyCatalogSegments,
   prettyCatalogPath,
 } from "./pretty-catalog-path";
 
-test("national cost procedures use their stable entity URL", () => {
+test("national cost procedures address their country like any other", () => {
   assert.equal(
     costsFilterPath({
       destination: "India",
       specialty: "Urology",
       procedure: "Kidney Transplantation",
     }),
-    "/costs/kidney-transplantation",
+    "/costs/India/Urology/Kidney-Transplantation",
   );
+  // A procedure with no country named still resolves to the default destination.
+  assert.equal(
+    costsFilterPath({ procedure: "Kidney Transplantation" }),
+    "/costs/India/Urology/Kidney-Transplantation",
+  );
+  // The original flat sheet keeps serving, but only as a non-canonical address.
+  assert.equal(legacyCostSheetPath("Kidney Transplantation"), "/costs/kidney-transplantation");
 });
 
 test("city procedure pages retain their differentiated hierarchy", () => {

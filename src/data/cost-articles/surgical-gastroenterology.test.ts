@@ -152,7 +152,7 @@ test("Surgical Gastro routes consolidate nationally and retain city context", ()
     specialty: "Surgical Gastroenterology",
     procedure: "Ostomy / Stoma Surgery",
   });
-  assert.equal(ostomy, "/costs/ostomy-stoma-surgery");
+  assert.equal(ostomy, "/costs/India/Surgical-Gastroenterology/Ostomy-Stoma-Surgery");
   assert.deepEqual(parsePrettyCatalogSegments([
     "India",
     "Surgical-Gastroenterology",

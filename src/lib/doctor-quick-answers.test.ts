@@ -33,7 +33,7 @@ test("procedure definitions come from canonical cost articles", () => {
   assert.ok(imrt?.text);
   assert.ok(igrt?.text);
   assert.notEqual(imrt?.text, igrt?.text);
-  assert.equal(imrt?.source.canonicalUrl, "/costs/intensity-modulated-radiotherapy-imrt");
+  assert.equal(imrt?.source.canonicalUrl, "/costs/India/Radiation-Oncology/Intensity-Modulated-Radiotherapy-(IMRT)");
   assert.match(imrt.text, /IMRT/i);
   assert.match(igrt.text, /IGRT|image/i);
 });
@@ -92,5 +92,5 @@ test("non-radiation quick answers reuse their specialty and procedure sources", 
     hospitalCount: 20,
   });
   assert.equal(procedure[0]?.question, "What is Total Knee Replacement?");
-  assert.equal(procedure[0]?.sourceHref, "/costs/total-knee-replacement");
+  assert.equal(procedure[0]?.sourceHref, "/costs/India/Orthopedics/Total-Knee-Replacement");
 });

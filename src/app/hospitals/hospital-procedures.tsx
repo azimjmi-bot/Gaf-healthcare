@@ -1,7 +1,7 @@
 import { LocaleLink as Link } from "@/components/locale-link";
 import { CtaBand } from "@/components/page-shell";
 import { PseoTrust } from "@/components/pseo-trust";
-import { doctorsPath, hospitalsPath } from "@/lib/catalog-links";
+import { costPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { doctorHasProcedure } from "@/lib/catalog";
 import { hospitalSpecialtyCombinationIndexable } from "@/lib/radiation-hospital-page";
 import { loadHospitalCampus, requireHospitalCampus } from "@/lib/hospital-campus";
@@ -74,7 +74,7 @@ export async function HospitalProcedures({ slug }: { slug: string }) {
                 <ul>
                   {g.treatments.map((row) => (
                     <li key={row.slug}>
-                      <Link href={`/costs/${row.slug}`}>{taxonomyLabel(row.name, locale)}</Link>
+                      <Link href={costPath(row.name)}>{taxonomyLabel(row.name, locale)}</Link>
                       <span>
                         {interpolate(t["hp.partnerUs"], { partner: row.partnerRange, us: row.usRange })}
                       </span>

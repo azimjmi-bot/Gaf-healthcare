@@ -1,6 +1,6 @@
 import "server-only";
 import type { CityEditorial, CostArticle, DestinationRow } from "@/data/cost-articles/types";
-import { catalogSpecialtyName, doctorsPath, hospitalsPath, costsFilterPath } from "@/lib/catalog-links";
+import { catalogSpecialtyName, costPath, costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { doctorsForTreatment, getHospital, getTreatment } from "@/lib/data";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
@@ -128,7 +128,7 @@ export function resolveApproachComparison(
         relative: row.relative,
         detail: row.detail,
         range: sheet?.partnerRange,
-        href: sheet ? `/costs/${sheet.slug}` : undefined,
+        href: sheet ? costPath(sheet.name) : undefined,
         isCurrent: Boolean(sheet && sheet.slug === treatment.slug),
       };
     }),

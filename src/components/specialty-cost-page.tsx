@@ -11,7 +11,7 @@ import {
 } from "@/components/page-shell";
 import { PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
 import { PseoTrust } from "@/components/pseo-trust";
-import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
+import { costPath, costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import type { CatalogQuery } from "@/lib/catalog";
 import {
   breadcrumbJsonLd,
@@ -167,7 +167,7 @@ function ProcedureLink({
 }) {
   return (
     <Link
-      href={`/costs/${procedure.slug}`}
+      href={costPath(procedure.name)}
       className="group block rounded-xl border border-border bg-card p-4 transition-colors hover:border-primary/40"
     >
       <h3 className="font-heading text-xl leading-snug group-hover:underline">
@@ -282,7 +282,7 @@ function ProcedureComparison({ data }: { data: SpecialtyPageData }) {
                   {data.city ? row.cityRange ?? "Personalized estimate" : row.countryRange}
                 </td>
                 <td className="px-5 py-4">
-                  <Link href={`/costs/${row.procedure.slug}`} className="whitespace-nowrap underline-offset-4 hover:underline">
+                  <Link href={costPath(row.procedure.name)} className="whitespace-nowrap underline-offset-4 hover:underline">
                     View {terms.careItem}
                   </Link>
                 </td>
@@ -321,7 +321,7 @@ function Conditions({ data }: { data: SpecialtyPageData }) {
                 {condition.procedures.slice(0, 4).map((procedure, index) => (
                   <span key={procedure.slug}>
                     {index > 0 ? ", " : ""}
-                    <Link href={`/costs/${procedure.slug}`} className="underline-offset-4 hover:underline">
+                    <Link href={costPath(procedure.name)} className="underline-offset-4 hover:underline">
                       {procedure.name}
                     </Link>
                   </span>
@@ -447,7 +447,7 @@ function Technologies({ data }: { data: SpecialtyPageData }) {
                   {technology.procedures.map((procedure, index) => (
                     <span key={procedure.slug}>
                       {index > 0 ? " · " : ""}
-                      <Link href={`/costs/${procedure.slug}`} className="underline-offset-4 hover:underline">
+                      <Link href={costPath(procedure.name)} className="underline-offset-4 hover:underline">
                         {procedure.name}
                       </Link>
                     </span>

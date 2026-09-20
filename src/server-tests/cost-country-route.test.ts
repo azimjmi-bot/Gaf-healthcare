@@ -48,14 +48,14 @@ test("both cost levels resolve from their URL to the right CMS record", () => {
   });
 });
 
-test("the primary destination keeps the flat sheet and never renders the country view", () => {
+test("the default destination keeps its own article and never renders the country view", () => {
   assert.equal(
     resolveCostCountryPage({ destination: "India", specialty: RADONC, procedure: EBRT }),
     undefined,
   );
   assert.equal(
     costsFilterPath({ destination: "India", specialty: RADONC, procedure: EBRT }),
-    "/costs/external-beam-radiotherapy-ebrt",
+    "/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
   );
 });
 
@@ -117,12 +117,12 @@ test("country pages stay out of the index until the CMS carries country copy", (
 test("the sitemap lists one canonical URL per published country and city combination", () => {
   const urls = new Set(buildLocaleSitemap("en").map((row) => row.url));
   const base = "https://gaf.healthcare";
-  assert.ok(urls.has(`${base}/costs/external-beam-radiotherapy-ebrt`));
+  assert.ok(urls.has(`${base}/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)`));
   assert.ok(
     urls.has(`${base}/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)`),
   );
-  // The India country page is the flat sheet, so the hierarchical alias is never listed.
-  assert.ok(!urls.has(`${base}/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)`));
+  // The flat sheet still serves but canonicalises to the country path, so it is not listed.
+  assert.ok(!urls.has(`${base}/costs/external-beam-radiotherapy-ebrt`));
   // Unwritten country pages resolve but are not advertised.
   assert.ok(!urls.has(`${base}/costs/Turkiye/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)`));
   assert.equal(urls.size, buildLocaleSitemap("en").length, "sitemap contains no duplicate URLs");

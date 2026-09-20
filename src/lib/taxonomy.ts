@@ -53,12 +53,12 @@ export const COUNTRIES: CountryTaxon[] = [
 ];
 
 /**
- * The destination the cost catalog is authored around. Its procedure pages predate the
- * multi-country routes and keep their flat `/costs/{procedure}` canonical, so this is a
- * legacy-URL marker rather than a routing special case: every other country resolves
- * through the same country/city/specialty/procedure path.
+ * The destination the cost catalog is authored around, and the country a cost URL is
+ * assumed to mean when it names none. Routing itself is country-agnostic: every
+ * destination resolves through the same country/city/specialty/procedure path.
  */
 export const PRIMARY_COUNTRY_SLUG = "india";
+export const PRIMARY_COUNTRY_NAME = "India";
 
 export const CITIES: CityTaxon[] = [
   { name: "Delhi NCR", slug: "delhi-ncr", countrySlug: "india" },

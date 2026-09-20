@@ -137,7 +137,7 @@ test("Neurology routes consolidate nationally and retain city context", () => {
     specialty: "Neurology",
     procedure: "Electromyography (EMG)",
   });
-  assert.equal(emg, "/costs/electromyography-emg");
+  assert.equal(emg, "/costs/India/Neurology/Electromyography-(EMG)");
   assert.deepEqual(parsePrettyCatalogSegments([
     "India",
     "Neurology",

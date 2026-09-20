@@ -205,7 +205,7 @@ test("avoids outcome promises, rankings and unsupported numeric claims", () => {
 test("uses one national procedure canonical and preserves city procedure routes", () => {
   assert.equal(
     costsFilterPath({ destination: "India", specialty: "Urology", procedure: "PCNL (Percutaneous Nephrolithotomy)" }),
-    "/costs/pcnl-percutaneous-nephrolithotomy",
+    "/costs/India/Urology/PCNL-(Percutaneous-Nephrolithotomy)",
   );
   assert.equal(
     costsFilterPath({ destination: "India", city: "Chennai", specialty: "Urology", procedure: "Kidney Transplantation" }),

@@ -63,13 +63,14 @@ export async function CostSheet({ slug }: { slug: string }) {
       specialty: specialtyName,
       procedure: t.name,
     };
+    const canonicalPath = costsFilterPath(filterQuery);
     return (
       <>
         <JsonLd
           data={medicalWebPageJsonLd({
             name: article.seoTitle,
             description: article.seoDescription,
-            path: `/costs/${t.slug}`,
+            path: canonicalPath,
             lastReviewed: article.lastUpdated,
             procedureName: t.name,
             specialty: specialtyName,
@@ -83,7 +84,7 @@ export async function CostSheet({ slug }: { slug: string }) {
             [
               { name: "Treatment Cost", path: "/costs" },
               { name: specialtyName, path: costsFilterPath({ destination: "India", specialty: specialtyName }) },
-              { name: t.name, path: `/costs/${t.slug}` },
+              { name: t.name, path: canonicalPath },
             ],
             locale,
           )}
@@ -93,7 +94,7 @@ export async function CostSheet({ slug }: { slug: string }) {
           <JsonLd
             data={doctorItemListJsonLd(facultyForSchema, {
               name: article.doctorHeading || `Doctors to consider for ${brief} in India`,
-              path: `/costs/${t.slug}`,
+              path: canonicalPath,
               locale,
             })}
           />
@@ -102,7 +103,7 @@ export async function CostSheet({ slug }: { slug: string }) {
           <JsonLd
             data={hospitalItemListJsonLd(campusesForSchema, {
               name: hospitalsToConsiderHeading(brief),
-              path: `/costs/${t.slug}`,
+              path: canonicalPath,
               locale,
             })}
           />
@@ -177,7 +178,7 @@ export async function CostSheet({ slug }: { slug: string }) {
           "@type": "MedicalProcedure",
           name: t.name,
           procedureType: t.category,
-          url: `https://gaf.healthcare${locale === "en" ? "" : `/${locale}`}/costs/${t.slug}`,
+          url: `https://gaf.healthcare${locale === "en" ? "" : `/${locale}`}${costPath(t.name)}`,
           description: t.summary,
           inLanguage: locale,
         }}
@@ -187,7 +188,7 @@ export async function CostSheet({ slug }: { slug: string }) {
           [
             { name: "Treatment Cost", path: "/costs" },
             { name: t.category, path: costsFilterPath({ destination: "India", specialty: t.category }) },
-            { name: t.name, path: `/costs/${t.slug}` },
+            { name: t.name, path: costPath(t.name) },
           ],
           locale,
         )}

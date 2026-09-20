@@ -131,7 +131,7 @@ test("ENT routes consolidate nationally and retain city context", () => {
     specialty: "ENT",
     procedure: "Head & Neck Cancer Surgery",
   });
-  assert.equal(headNeck, "/costs/head-neck-cancer-surgery");
+  assert.equal(headNeck, "/costs/India/ENT/Head-Neck-Cancer-Surgery");
   assert.deepEqual(parsePrettyCatalogSegments([
     "India",
     "ENT",

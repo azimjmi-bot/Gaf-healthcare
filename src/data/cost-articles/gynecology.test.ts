@@ -168,7 +168,7 @@ test("uses one national canonical and preserves city procedure routes", () => {
       specialty: "Gynecology",
       procedure: "Laparoscopic Hysterectomy",
     }),
-    "/costs/laparoscopic-hysterectomy",
+    "/costs/India/Gynecology/Laparoscopic-Hysterectomy",
   );
   assert.equal(
     costsFilterPath({

@@ -70,7 +70,7 @@ test("city records only resolve inside their own country", () => {
   assert.equal(costCityRecord(article, "India", "Bengaluru"), undefined);
 });
 
-test("the primary destination keeps its flat national sheet, other countries do not", () => {
+test("every country addresses a procedure through the same country path", () => {
   assert.ok(isPrimaryCountry("India"));
   assert.ok(isPrimaryCountry(undefined));
   assert.ok(!isPrimaryCountry("Türkiye"));
@@ -80,7 +80,7 @@ test("the primary destination keeps its flat national sheet, other countries do 
       specialty: "Radiation Oncology",
       procedure: "External Beam Radiotherapy (EBRT)",
     }),
-    "/costs/external-beam-radiotherapy-ebrt",
+    "/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
   );
   assert.equal(
     costsFilterPath({
@@ -105,7 +105,7 @@ test("every country and city combination gets a distinct canonical path", () => 
   ];
   assert.equal(new Set(paths).size, paths.length);
   assert.deepEqual(paths, [
-    "/costs/external-beam-radiotherapy-ebrt",
+    "/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
     "/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
     "/costs/India/Mumbai/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
     "/costs/Turkiye/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",

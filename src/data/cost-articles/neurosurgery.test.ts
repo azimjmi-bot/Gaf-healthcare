@@ -153,7 +153,7 @@ test("Neurosurgery routes consolidate nationally and retain city context", () =>
     specialty: "Neurosurgery",
     procedure: "Endoscopic Third Ventriculostomy (ETV)",
   });
-  assert.equal(etv, "/costs/endoscopic-third-ventriculostomy-etv");
+  assert.equal(etv, "/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-(ETV)");
   assert.deepEqual(parsePrettyCatalogSegments([
     "India",
     "Neurosurgery",

@@ -223,7 +223,7 @@ test("uses canonical national sheets and keeps differentiated city routes", () =
       specialty: "Ophthalmology",
       procedure: "Cataract Surgery",
     }),
-    "/costs/cataract-surgery",
+    "/costs/India/Ophthalmology/Cataract-Surgery",
   );
   assert.equal(
     costsFilterPath({
@@ -240,7 +240,7 @@ test("uses canonical national sheets and keeps differentiated city routes", () =
       specialty: "Ophthalmology",
       procedure: "ICL (Implantable Collamer Lens)",
     }),
-    "/costs/icl-implantable-collamer-lens",
+    "/costs/India/Ophthalmology/ICL-(Implantable-Collamer-Lens)",
   );
   assert.equal(
     costsFilterPath({
@@ -248,7 +248,7 @@ test("uses canonical national sheets and keeps differentiated city routes", () =
       specialty: "Ophthalmology",
       procedure: "Glaucoma Drainage Device / Valve Implantation",
     }),
-    "/costs/glaucoma-drainage-device-valve-implantation",
+    "/costs/India/Ophthalmology/Glaucoma-Drainage-Device-Valve-Implantation",
   );
 });
 

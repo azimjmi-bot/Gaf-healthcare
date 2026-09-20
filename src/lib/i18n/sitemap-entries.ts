@@ -229,7 +229,7 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
   for (const treatment of treatments) {
     const article = costArticles[treatment.slug];
     urls.push(
-      entry(`/costs/${treatment.slug}`, locale, {
+      entry(costsFilterPath({ specialty: catalogSpecialtyName(treatment), procedure: treatment.name }), locale, {
         lastModified: article?.lastUpdated,
         changeFrequency: "monthly",
         priority: 0.7,

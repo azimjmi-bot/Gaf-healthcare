@@ -1,4 +1,10 @@
-import { isPrimaryCountry, SPECIALTIES, toSlug } from "@/lib/taxonomy";
+import {
+  getProcedure,
+  getSpecialty,
+  PRIMARY_COUNTRY_NAME,
+  SPECIALTIES,
+  toSlug,
+} from "@/lib/taxonomy";
 import { prettyCatalogPath, type CatalogBasePath } from "@/lib/pretty-catalog-path";
 import type { Treatment } from "@/lib/treatments";
 
@@ -8,8 +14,23 @@ export function catalogSpecialtyName(treatment: Pick<Treatment, "category" | "sp
   return SPECIALTIES.find((row) => row.slug === treatment.specialtySlug)?.name ?? treatment.category;
 }
 
-export function costPath(procedureName: string) {
+/**
+ * The original flat cost sheet URL. It is still served so existing links and indexed
+ * pages keep working, but it now points its canonical at the country path below.
+ */
+export function legacyCostSheetPath(procedureName: string) {
   return `/costs/${toSlug(procedureName)}`;
+}
+
+/** Canonical cost URL for a procedure in the default destination. */
+export function costPath(procedureName: string) {
+  return costsFilterPath({ procedure: procedureName });
+}
+
+/** The specialty a procedure files under, so a cost URL is never missing that segment. */
+function specialtyForProcedure(procedureName: string) {
+  const procedure = getProcedure(procedureName) ?? getProcedure(toSlug(procedureName));
+  return procedure ? getSpecialty(procedure.specialtySlug)?.name : undefined;
 }
 
 function catalogHref(
@@ -31,14 +52,17 @@ export function costsFilterPath(opts: {
   specialty?: string;
   procedure?: string;
 }) {
-  // The primary destination's national procedure page is one catalog entity with one
-  // stable canonical sheet, which predates the country routes and stays where it is.
-  // Every other country has no flat sheet, so its country page is the hierarchical
-  // path. City procedure pages are always hierarchical: they carry city editorial.
-  if (opts.procedure && !opts.city && isPrimaryCountry(opts.destination)) {
-    return costPath(opts.procedure);
-  }
-  return catalogHref("/costs", opts);
+  if (!opts.procedure) return catalogHref("/costs", opts);
+  // Every procedure page is addressed the same way, country first, so one country
+  // reads no differently from the next. A procedure the taxonomy does not know cannot
+  // be placed under a country and falls back to its flat sheet.
+  const specialty = opts.specialty ?? specialtyForProcedure(opts.procedure);
+  if (!specialty) return legacyCostSheetPath(opts.procedure);
+  return catalogHref("/costs", {
+    ...opts,
+    destination: opts.destination ?? PRIMARY_COUNTRY_NAME,
+    specialty,
+  });
 }
 
 export function doctorsPath(opts: {

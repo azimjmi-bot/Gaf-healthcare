@@ -23,7 +23,7 @@ test("Radiation Oncology India hub uses the Best H1 and existing cost URLs", () 
   assert.equal(hub.heading, "Best Radiation Oncologists in India");
   assert.ok(hub.paging.total >= 60);
   assert.ok(hub.costs.every((row) => row.href.startsWith("/costs/")));
-  assert.ok(hub.costs.some((row) => row.href.includes("intensity-modulated-radiotherapy-imrt")));
+  assert.ok(hub.costs.some((row) => row.href.includes("Intensity-Modulated-Radiotherapy-(IMRT)")));
   assert.ok(hub.conditions.every((row) => row.href === "/costs/India/Radiation-Oncology"));
   assert.ok(hub.cities.some((row) => row.href === "/doctors/India/Delhi-NCR/Radiation-Oncology"));
   assert.deepEqual(
@@ -120,7 +120,11 @@ test("IMRT doctor list reuses the existing cost guide and explicit condition tax
   );
   assert.ok(hub);
   assert.equal(hub.heading, "Best Radiation Oncologists for IMRT in India");
-  assert.ok(hub.costs.some((row) => row.href === "/costs/intensity-modulated-radiotherapy-imrt"));
+  assert.ok(
+    hub.costs.some(
+      (row) => row.href === "/costs/India/Radiation-Oncology/Intensity-Modulated-Radiotherapy-(IMRT)",
+    ),
+  );
   assert.ok(hub.conditions.some((row) => row.name === "Prostate cancer"));
   assert.ok(hub.relatedProcedures.some((row) => row.name === "Image-Guided Radiotherapy (IGRT)"));
   assert.ok(hub.relatedProcedures.every((row) => row.name !== "Intensity-Modulated Radiotherapy (IMRT)"));
@@ -173,7 +177,7 @@ test("quick answers clip canonical source text instead of inventing copy", () =>
   const definition = items.find((row) => row.question === "What is CyberKnife?");
   assert.ok(definition);
   assert.ok(wordCount(definition.answer) <= 120);
-  assert.equal(definition.sourceHref, "/costs/cyberknife");
+  assert.equal(definition.sourceHref, "/costs/India/Radiation-Oncology/CyberKnife");
   assert.match(definition.answer, /robotic radiosurgery/i);
   const clipped = clipToWords("One. Two. Three four five six seven eight nine ten.", 4);
   assert.ok(clipped.startsWith("One."));

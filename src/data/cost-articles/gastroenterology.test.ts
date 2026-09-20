@@ -133,7 +133,7 @@ test("GI routes consolidate nationally and retain city context", () => {
     specialty: "Gastroenterology",
     procedure: "Bariatric / Metabolic Endoscopy",
   });
-  assert.equal(metabolic, "/costs/bariatric-metabolic-endoscopy");
+  assert.equal(metabolic, "/costs/India/Gastroenterology/Bariatric-Metabolic-Endoscopy");
   assert.deepEqual(parsePrettyCatalogSegments([
     "India",
     "Gastroenterology",

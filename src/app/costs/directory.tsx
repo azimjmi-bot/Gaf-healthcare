@@ -8,7 +8,7 @@ import { CtaBand, PageIntro } from "@/components/page-shell";
 import { PseoTrust } from "@/components/pseo-trust";
 import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, listCostSpecialtyGroups, type CatalogQuery } from "@/lib/catalog";
-import { costsFilterPath } from "@/lib/catalog-links";
+import { costPath, costsFilterPath } from "@/lib/catalog-links";
 import { getSpecialtyPage } from "@/data/specialty-pages";
 import { hospitals, treatments } from "@/lib/data";
 import { absoluteUrl, faqJsonLd } from "@/lib/seo";
@@ -185,7 +185,7 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
                               <td className="px-6 py-5 text-muted-foreground">{t.stay}</td>
                               <td className="px-6 py-5 text-right">
                                 <Link
-                                  href={`/costs/${t.slug}`}
+                                  href={costPath(t.name)}
                                   className="text-sm underline-offset-4 hover:underline"
                                 >
                                   {messages["dir.costs.detail"]}
@@ -200,7 +200,7 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
                       {visibleItems.map((t) => (
                         <Link
                           key={t.slug}
-                          href={`/costs/${t.slug}`}
+                          href={costPath(t.name)}
                           className="rounded-2xl border border-border bg-card p-5"
                         >
                           <p className="text-xs tracking-[0.18em] uppercase text-muted-foreground">
