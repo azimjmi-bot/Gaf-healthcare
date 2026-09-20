@@ -3,6 +3,7 @@ import test from "node:test";
 import {
   blankCuratedTreatment,
   normalizeCuratedTreatment,
+  publishedCuratedTreatments,
   uniqueCuratedTreatmentSlug,
   validateTreatmentForSave,
 } from "@/lib/cms/curated-treatment-store";
@@ -116,7 +117,11 @@ test("slug uniqueness covers current and historical canonical slugs", () => {
 
 test("Treatment directory is canonical but no filter or combination routes exist", () => {
   for (const locale of LOCALES) {
-    assert.equal(localePathIsPublished(locale, "/treatments"), true);
+    // The directory is only live where something is published in it. English
+    // keeps its index; a target locale with an empty store 404s rather than
+    // serving an empty shell.
+    const directoryLive = locale === "en" || publishedCuratedTreatments(locale).length > 0;
+    assert.equal(localePathIsPublished(locale, "/treatments"), directoryLive);
     assert.equal(
       localePathIsPublished(locale, "/treatments/india/cardiology/ivf"),
       false,
@@ -128,7 +133,7 @@ test("Treatment directory is canonical but no filter or combination routes exist
         : `https://gaf.healthcare/${locale}/treatments`;
     assert.equal(
       entries.filter((entry) => entry.url === directoryUrl).length,
-      1,
+      directoryLive ? 1 : 0,
     );
     assert.ok(
       entries.every(

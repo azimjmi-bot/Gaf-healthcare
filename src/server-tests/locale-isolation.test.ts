@@ -11,7 +11,13 @@ import {
   localePathIsPublished,
   publishedLocalesForPath,
 } from "@/lib/i18n/locale-publication";
-import { localeSurfaceIsAvailable } from "@/lib/i18n/locale-availability";
+import { surfaceIsAvailable } from "@/lib/i18n/surfaces";
+import { isTargetLocale } from "@/lib/i18n/languages";
+import { localeIsPublished as targetLocaleIsPublished } from "@/lib/i18n/locale-gating";
+
+function localeIsPublished(locale: string) {
+  return !isTargetLocale(locale) || targetLocaleIsPublished(locale);
+}
 import {
   buildLocaleSitemap,
   LANGUAGE_SITEMAP_PATHS,
@@ -73,11 +79,9 @@ test("untranslated routes stay unpublished", () => {
 });
 
 test("localized sitemaps contain only published locale records", () => {
-  const russianUrls = buildLocaleSitemap("ru").map((row) => row.url);
-  assert.deepEqual(russianUrls.sort(), [
-    "https://gaf.healthcare/ru",
-    "https://gaf.healthcare/ru/treatments",
-  ]);
+  // Russian is not a live locale, so it advertises nothing at all. Its pages
+  // still render, but they are noindex and must not be listed.
+  assert.deepEqual(buildLocaleSitemap("ru"), []);
 
   const arabicUrls = buildLocaleSitemap("ar").map((row) => row.url);
   assert.ok(arabicUrls.includes("https://gaf.healthcare/ar/doctors"));
@@ -110,6 +114,12 @@ test("every language has a dedicated, complete sitemap document", () => {
   });
   for (const locale of CMS_EDITIONS) {
     const entries = buildLocaleSitemap(locale);
+    // A sitemap route exists for every locale, but an unpublished locale
+    // legitimately has nothing to put in it.
+    if (!localeIsPublished(locale)) {
+      assert.deepEqual(entries, [], `sitemap-${locale}.xml should be empty`);
+      continue;
+    }
     assert.ok(entries.length > 0);
     const expectedPrefix =
       locale === "en"
@@ -136,10 +146,14 @@ test("UI dictionaries do not fill missing translations with English", () => {
 });
 
 test("navigation hides routes without authored locale content", () => {
-  assert.equal(localeSurfaceIsAvailable("ar", "doctors"), true);
-  assert.equal(localeSurfaceIsAvailable("ar", "consult"), false);
-  assert.equal(localeSurfaceIsAvailable("fr", "hospitals"), false);
-  assert.equal(localeSurfaceIsAvailable("en", "costs"), true);
+  assert.equal(surfaceIsAvailable("ar", "doctors"), true);
+  assert.equal(surfaceIsAvailable("ar", "consult"), false);
+  assert.equal(surfaceIsAvailable("fr", "hospitals"), false);
+  assert.equal(surfaceIsAvailable("en", "costs"), true);
+  // No curated treatment is published, so the nav must not offer the
+  // directory in any target locale even though English keeps its index.
+  assert.equal(surfaceIsAvailable("ar", "treatments"), false);
+  assert.equal(surfaceIsAvailable("en", "treatments"), true);
 });
 
 test("specialty editorials do not inherit the English edition", () => {
