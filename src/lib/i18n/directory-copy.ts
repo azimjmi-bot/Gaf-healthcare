@@ -108,7 +108,7 @@ export function directoryIntro(kind: DirectoryKind, query: CatalogQuery, locale:
         ? t(locale, "dir.hospitals.homeLede")
         : !query.city && !query.specialty && !query.procedure && query.destination === "India"
           ? t(locale, "dir.hospitals.indiaLede", {
-              count: locale === "ar" ? "٣٧" : "37",
+              count: locale === "ar" ? "37" : "37",
               place,
             })
           : t(locale, "dir.hospitals.filteredLede", { place }),

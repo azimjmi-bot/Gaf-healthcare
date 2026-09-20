@@ -17,8 +17,6 @@ import {
 import type { AppLocale } from "@/lib/i18n/languages";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 
-const EASTERN = "٠١٢٣٤٥٦٧٨٩";
-const toEastern = (n: string | number) => String(n).replace(/\d/g, (d) => EASTERN[Number(d)]);
 
 const PEOPLE_AR: Record<string, { one: string; many: string }> = {
   "radiation-oncology": { one: "أخصائي علاج الأورام بالإشعاع", many: "أخصائيو علاج الأورام بالإشعاع" },
@@ -84,14 +82,14 @@ export function bedsLabelLocalized(beds: string, locale: AppLocale) {
   if (locale !== "ar" || !label) return label;
   const n = parseInt(beds.replace(/[^\d]/g, ""), 10);
   if (!Number.isFinite(n) || n <= 0) return beds;
-  return `${toEastern(n)}+ سرير`;
+  return `${String(n)}+ سرير`;
 }
 
 export function heroLedeLocalized(hospital: Hospital, locale: AppLocale) {
   if (locale !== "ar") return heroLedeForEn(hospital);
   const city = taxonomyLabel(hospital.city, "ar");
   const beds = bedsLabelLocalized(hospital.beds, "ar");
-  const year = hospital.established ? ` افتُتح عام ${toEastern(hospital.established)}.` : "";
+  const year = hospital.established ? ` افتُتح عام ${String(hospital.established)}.` : "";
   if (isEyeCampus(hospital)) {
     return `${hospital.name} مستشفى عيون في ${city}، الهند${beds ? ` — ${beds}` : ""}.${year} تصل العائلات إلى هنا لعمل الساد والقرنية والشبكية مع طبيب عيون مسمّى، لا لجناح عام يملك مصباحًا شقيًا.`;
   }
@@ -125,7 +123,7 @@ export function whyChooseLocalized(hospital: Hospital, facultyCount: number, loc
     {
       title: eye ? "أطباء عيون بأسمائهم" : "استشاريون بأسمائهم",
       body: facultyCount
-        ? `${toEastern(facultyCount)} ${facultyCount === 1 ? "طبيب مدرج" : "طبيبًا مدرجًا"} يمكنكم لقاؤهم على الكاميرا قبل حجز التذكرة.`
+        ? `${String(facultyCount)} ${facultyCount === 1 ? "طبيب مدرج" : "طبيبًا مدرجًا"} يمكنكم لقاؤهم على الكاميرا قبل حجز التذكرة.`
         : "نطابق استشاريًا مسمّى بعد السجلات — لا قائمة مناوبة بلا اسم.",
     },
     {
@@ -247,7 +245,7 @@ export function cityTravelLocalized(hospital: Hospital, locale: AppLocale) {
   if (hospital.citySlug === "mumbai") {
     return {
       airport: "مطار شاتراباتي شيفاجي مهراج الدولي",
-      airportHint: "عادة ٤٥–٩٠ دقيقة بالسيارة حسب الحرم والساعة.",
+      airportHint: "عادة 45–90 دقيقة بالسيارة حسب الحرم والساعة.",
       centreHint: "جنوب مومباي وباندرا حزام الفندق المعتاد؛ نافي مومباي على ضفتها.",
       mapsQuery,
     };
@@ -255,7 +253,7 @@ export function cityTravelLocalized(hospital: Hospital, locale: AppLocale) {
   if (hospital.citySlug === "bengaluru") {
     return {
       airport: "مطار كيمبيغودا الدولي",
-      airportHint: "عادة ٤٥–٧٥ دقيقة من بانيرغاتا والحرم الجنوبية الشرقية.",
+      airportHint: "عادة 45–75 دقيقة من بانيرغاتا والحرم الجنوبية الشرقية.",
       centreHint: "MG Road وكورامالا فنادق المرافق الشائعة؛ المطار شمال المدينة.",
       mapsQuery,
     };
@@ -263,7 +261,7 @@ export function cityTravelLocalized(hospital: Hospital, locale: AppLocale) {
   if (hospital.citySlug === "chennai") {
     return {
       airport: "مطار تشيناي الدولي",
-      airportHint: "معظم الحرم المدرجة على ٢٠–٥٠ دقيقة من المطار في حركة عادية.",
+      airportHint: "معظم الحرم المدرجة على 20–50 دقيقة من المطار في حركة عادية.",
       centreHint: "تي ناغار وفنادق الشاطئ الإقامة المعتادة للمرافق.",
       mapsQuery,
     };
@@ -271,14 +269,14 @@ export function cityTravelLocalized(hospital: Hospital, locale: AppLocale) {
   if (hospital.citySlug === "hyderabad") {
     return {
       airport: "مطار راجيف غاندي الدولي",
-      airportHint: "جوبلي هيلز وبانجارا هيلز عادة ٤٥–٧٠ دقيقة من المطار.",
+      airportHint: "جوبلي هيلز وبانجارا هيلز عادة 45–70 دقيقة من المطار.",
       centreHint: "بانجارا هيلز وHITEC City تحتفظان بمعظم الفنادق التي تستخدمها العائلات فعلًا.",
       mapsQuery,
     };
   }
   return {
     airport: "مطار إنديرا غاندي الدولي",
-    airportHint: "حرم دلهي إن سي آر تتراوح بين ٢٥ دقيقة وأكثر من ساعة حسب الطريق الدائري.",
+    airportHint: "حرم دلهي إن سي آر تتراوح بين 25 دقيقة وأكثر من ساعة حسب الطريق الدائري.",
     centreHint: "إيروسيتي وفاسانت كونج وغورغرام الإقامات المعتادة للمرافق.",
     mapsQuery,
   };
@@ -298,10 +296,10 @@ export function hospitalFaqsLocalized(
       ? "ما زال مطابقة الاستشاريين المسمّين لهذا الحرم جارية. سيقول المنسّق ذلك بوضوح."
       : listed.length <= 4
         ? `القوائم المسمّاة هنا تشمل حاليًا ${joinAr(listed)}.`
-        : `القوائم المسمّاة هنا تشمل حاليًا ${joinAr(listed.slice(0, 4))} و${toEastern(listed.length - 4)} أقسامًا أخرى.`;
+        : `القوائم المسمّاة هنا تشمل حاليًا ${joinAr(listed.slice(0, 4))} و${String(listed.length - 4)} أقسامًا أخرى.`;
   const city = taxonomyLabel(hospital.city, "ar");
-  const beds = hospital.beds ? toEastern(hospital.beds.replace(/[^\d]/g, "") || hospital.beds) : "";
-  const year = hospital.established ? toEastern(hospital.established) : "";
+  const beds = hospital.beds ? String(hospital.beds.replace(/[^\d]/g, "") || hospital.beds) : "";
+  const year = hospital.established ? String(hospital.established) : "";
   return [
     {
       q: `هل ${hospital.name} معتمد؟`,

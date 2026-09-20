@@ -12,8 +12,6 @@ const catalog = JSON.parse(readFileSync(join(root, "src/data/ginger-catalog.json
 const cmsPath = join(root, "content/ar/catalog-cms.json");
 const cms = JSON.parse(readFileSync(cmsPath, "utf8"));
 
-const EASTERN = "٠١٢٣٤٥٦٧٨٩";
-const toEastern = (n) => String(n).replace(/\d/g, (d) => EASTERN[Number(d)]);
 
 const FEMALE = new Set([
   "dr-anitha-gopinath",
@@ -379,7 +377,7 @@ function bioFor(doc, nameAr, titleAr, cityAr, years, proc1, proc2) {
   const hospital = doc.hospitalName || doc.hospitalCaption || "الحرم الشريك";
   const airport = AIRPORT[doc.city] || "المطار الدولي";
   const city = cityAr;
-  const n = toEastern(years);
+  const n = String(years);
   const pronoun = female ? "ها" : "ه";
   const verbReview = female ? "تراجع" : "يراجع";
   const verbHold = female ? "تمسك" : "يمسك";
@@ -431,6 +429,13 @@ if (doctors.length !== 70) {
 }
 
 const overlays = { ...cms.doctorOverrides };
+/**
+ * Regenerating must not change a record's review state: an existing overlay
+ * keeps the status it was signed off with, and anything new starts as a draft
+ * so freshly generated copy is never published unread.
+ */
+const statusOf = (slug) => overlays[slug]?.status ?? "draft";
+
 
 for (const doc of doctors) {
   const nameAr = NAMES[doc.name];
@@ -448,10 +453,11 @@ for (const doc of doctors) {
   const hospital = hospitalLabel(doc);
 
   overlays[doc.slug] = {
+    status: statusOf(doc.slug),
     name: nameAr,
     title: titleAr,
     qualifications: doc.qualifications,
-    experience: `${toEastern(years)}+ سنة خبرة`,
+    experience: `${String(years)}+ سنة خبرة`,
     languages: LANG_CITY[city] || "الإنجليزية، الهندية",
     imageAlt: `${nameAr}، ${titleAr} في ${hospital}، ${cityAr} — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند`,
     specializations: specs,

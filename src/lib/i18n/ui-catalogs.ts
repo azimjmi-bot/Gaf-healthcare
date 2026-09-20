@@ -366,7 +366,7 @@ const AR: Record<string, string> = {
   "profile.requestConsult": "طلب استشارة",
   "profile.medicalOpinion": "طلب رأي طبي",
   "profile.contact": "تواصل الآن",
-  "profile.sla": "عادةً نرد خلال ٢٤ ساعة",
+  "profile.sla": "عادةً نرد خلال 24 ساعة",
   "profile.statExperience": "الخبرة",
   "profile.statExperienceValue": "{years} من الخبرة",
   "profile.statExperienceFallback": "الخبرة مذكورة في الملف",

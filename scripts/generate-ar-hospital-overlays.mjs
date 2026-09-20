@@ -12,8 +12,6 @@ const catalog = JSON.parse(readFileSync(join(root, "src/data/ginger-catalog.json
 const cmsPath = join(root, "content/ar/catalog-cms.json");
 const cms = JSON.parse(readFileSync(cmsPath, "utf8"));
 
-const EASTERN = "٠١٢٣٤٥٦٧٨٩";
-const toEastern = (n) => String(n).replace(/\d/g, (d) => EASTERN[Number(d)]);
 
 const CITY_AR = {
   "Delhi NCR": "دلهي إن سي آر",
@@ -128,13 +126,13 @@ function hash(slug) {
 function easternBeds(beds) {
   const n = parseInt(String(beds || "").replace(/[^\d]/g, ""), 10);
   if (!Number.isFinite(n) || n <= 0) return "";
-  return `${toEastern(n)}+ سرير`;
+  return `${String(n)}+ سرير`;
 }
 
 function bioFor(h) {
   const cityAr = CITY_AR[h.city];
   const airport = AIRPORT[h.city];
-  const year = h.established ? toEastern(h.established) : "";
+  const year = h.established ? String(h.established) : "";
   const beds = easternBeds(h.beds);
   const eye = EYE_SLUGS.has(h.slug);
   const hook = HOOK[h.slug];
@@ -166,12 +164,20 @@ function bioFor(h) {
 }
 
 const overlays = { ...cms.hospitalOverrides };
+/**
+ * Regenerating must not change a record's review state: an existing overlay
+ * keeps the status it was signed off with, and anything new starts as a draft
+ * so freshly generated copy is never published unread.
+ */
+const statusOf = (slug) => overlays[slug]?.status ?? "draft";
+
 
 for (const h of catalog.hospitals) {
   const cityAr = CITY_AR[h.city];
   const eye = EYE_SLUGS.has(h.slug);
   const bio = bioFor(h);
   overlays[h.slug] = {
+    status: statusOf(h.slug),
     bio,
     summary: bio,
     languages: LANG[h.city],

@@ -319,6 +319,10 @@ export function doctorInitials(name: string) {
 
 const EASTERN_DIGITS = "٠١٢٣٤٥٦٧٨٩";
 
+/**
+ * Arabic copy is authored with Western digits, but older records may still hold
+ * Eastern Arabic-Indic ones, so parsing normalises them before matching.
+ */
 function westernDigits(value: string) {
   return value.replace(/[٠-٩]/g, (ch) => String(EASTERN_DIGITS.indexOf(ch)));
 }
@@ -335,10 +339,7 @@ export function yearsLabelLocalized(doctor: Doctor, locale: "en" | "ar" | string
   const fromExp = westernDigits(doctor.experience).match(/(\d+)/);
   const n = fromExp?.[1] || westernDigits(doctor.years || "").match(/(\d+)/)?.[1];
   if (!n) return doctor.experience || "";
-  if (locale === "ar") {
-    const eastern = n.replace(/\d/g, (d) => EASTERN_DIGITS[Number(d)]);
-    return `${eastern}+ سنة`;
-  }
+  if (locale === "ar") return `${n}+ سنة`;
   return `${n}+ years`;
 }
 
