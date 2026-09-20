@@ -7,16 +7,14 @@
  * Everything rendered here comes from that country's own CMS record plus the
  * country-agnostic clinical sections of the procedure.
  */
-import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { LocaleLink as Link } from "@/components/locale-link";
-import { CatalogFilter } from "@/components/catalog-filter";
 import { CostHero } from "@/components/cost-page/cost-hero";
 import { CostStickyBar } from "@/components/cost-page/cost-sticky-bar";
 import { InternationalComparison } from "@/components/cost-page/cost-blocks";
 import { JsonLd } from "@/components/json-ld";
 import { PseoTrust } from "@/components/pseo-trust";
-import { filterTreatments, type CatalogQuery } from "@/lib/catalog";
+import type { CatalogQuery } from "@/lib/catalog";
 import {
   costCountryPageIsPublishable,
   resolveCostCountryPage,
@@ -24,7 +22,6 @@ import {
 import { costsFilterPath } from "@/lib/catalog-links";
 import { costDestinationRows } from "@/lib/cost-article";
 import { costCountryRecords, costPlaceLabel } from "@/lib/cost-geo";
-import { hospitals, treatments } from "@/lib/data";
 import {
   absoluteUrl,
   breadcrumbJsonLd,
@@ -76,7 +73,6 @@ export function CostsCountryView({ query }: { query: CatalogQuery }) {
   const { rows, anyModelled } = costDestinationRows(article, treatment);
   const place = costPlaceLabel(record.label, city?.city.name);
   const consultHref = `/consult?treatment=${treatment.slug}`;
-  const list = filterTreatments(query, treatments, hospitals);
   const faqs = page?.faqs ?? [];
   const siblings = costCountryRecords(article).filter(
     (entry) => entry.country.slug !== record.country.slug,
@@ -136,19 +132,8 @@ export function CostsCountryView({ query }: { query: CatalogQuery }) {
         }
         consultHref={consultHref}
         hospitalsHref="#cost-by-country"
-      >
-        <div className="pt-4 pb-8">
-          <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
-            <CatalogFilter
-              basePath="/costs"
-              entity="treatments"
-              query={query}
-              resultCount={list.length}
-              resultLabel={list.length === 1 ? "pathway" : "pathways"}
-            />
-          </Suspense>
-        </div>
-      </CostHero>
+        hospitalsLabel="Compare Destinations"
+      />
       <CostStickyBar label={`${brief} cost in ${place}`} range={range} href={consultHref} />
 
       <section className="mx-auto grid max-w-7xl gap-10 px-4 py-8 sm:px-5 md:px-8 md:py-16 lg:grid-cols-12 lg:gap-14">

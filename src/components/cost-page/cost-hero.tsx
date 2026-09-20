@@ -19,6 +19,7 @@ export function CostHero({
   subtitle,
   consultHref,
   hospitalsHref,
+  hospitalsLabel,
   doctorsHref,
   children,
 }: {
@@ -39,6 +40,7 @@ export function CostHero({
   subtitle?: string;
   consultHref: string;
   hospitalsHref: string;
+  hospitalsLabel?: string;
   doctorsHref?: string;
   children?: ReactNode;
 }) {
@@ -109,7 +111,7 @@ export function CostHero({
                 Get a Personalized Cost Estimate
               </Link>
               <Link href={hospitalsHref} className="cost-btn cost-btn--ghost">
-                Compare Hospitals
+                {hospitalsLabel ?? "Compare Hospitals"}
               </Link>
               {doctorsHref ? (
                 <Link href={doctorsHref} className="cost-btn cost-btn--ghost">
