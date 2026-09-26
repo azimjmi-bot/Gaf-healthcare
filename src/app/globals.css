@@ -4527,3 +4527,73 @@ img.dhero__art {
 html[dir="rtl"] .icon-forward {
   transform: scaleX(-1);
 }
+
+.cms-studio__grid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 1100px) {
+  .cms-studio__grid {
+    grid-template-columns: minmax(20rem, 0.9fr) minmax(0, 1.2fr);
+    align-items: start;
+  }
+}
+
+.cms-studio__buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.cms-studio__advanced {
+  margin-top: 1rem;
+}
+
+.cms-studio__checks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 0.75rem;
+}
+
+.cms-studio__flags {
+  background: #fff6e8;
+  border: 1px solid #ead2a8;
+  border-radius: 0.6rem;
+  padding: 0.75rem 1rem;
+  display: grid;
+  gap: 0.35rem;
+}
+
+.cms-studio__compare {
+  display: grid;
+  gap: 0.75rem;
+}
+
+@media (min-width: 800px) {
+  .cms-studio__compare {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.cms-studio__compare pre {
+  white-space: pre-wrap;
+  font-size: 0.8rem;
+  background: #f7fbfb;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+}
+
+.cms-ai-actions {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.75rem 0;
+}
+
+.cms-ai-actions__row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}

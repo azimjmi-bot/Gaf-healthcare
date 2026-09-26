@@ -4,7 +4,9 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Plus, Trash2, Upload } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { CmsAiActions } from "@/components/cms/cms-ai-actions";
 import { CmsMarkdownField } from "@/components/cms/cms-markdown-field";
+import { composeEditorialBody } from "@/lib/ai/schema";
 import {
   CmsTreatmentRelationPicker,
   type TreatmentRelationChoice,
@@ -503,6 +505,33 @@ export function CmsCuratedTreatmentEditor({
                 />
               </label>
             </div>
+
+            <CmsAiActions
+              contentType="treatment"
+              recordId={treatment.id}
+              treatmentSlug={treatment.slug}
+              locale={locale}
+              onApply={(fields) => {
+                const body = composeEditorialBody(fields) || fields.section_rewritten;
+                if (body) setEditorialBody(body);
+                if (fields.title) setTranslation("name", fields.title);
+                if (fields.introduction || fields.quick_answer) {
+                  setTranslation("shortDescription", fields.introduction || fields.quick_answer);
+                }
+                if (fields.meta_title) setTranslation("seoTitle", fields.meta_title);
+                if (fields.meta_description) setTranslation("metaDescription", fields.meta_description);
+                if (fields.faqs.length) {
+                  setTranslation(
+                    "faqs",
+                    fields.faqs.map((faq) => ({
+                      id: crypto.randomUUID(),
+                      question: faq.question,
+                      answer: faq.answer,
+                    })),
+                  );
+                }
+              }}
+            />
 
             <CmsMarkdownField
               label="Treatment article"

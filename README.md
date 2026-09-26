@@ -126,6 +126,10 @@ All 14 Cardiology-only procedures have long-form India planning guides and five 
 ### Replit / production secrets
 
 - `CMS_PASSWORD` — CMS desk password
+- `OPENAI_API_KEY` — server-only key for the CMS AI Content Studio. Never prefix it with `NEXT_PUBLIC_`.
+- `OPENAI_MODEL` — optional model override (default `gpt-4.1-mini`)
+
+The AI Content Studio lives at `/cms/studio`. It reads existing CMS records, returns structured draft copy, and writes only when an administrator clicks Save draft or Publish. It does not change URLs, slugs, canonicals, sitemaps or pSEO templates.
 
 ```bash
 npm test

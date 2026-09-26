@@ -13,12 +13,14 @@ import {
   LayoutDashboard,
   LogOut,
   Settings,
+  Sparkles,
   Stethoscope,
   Wallet,
 } from "lucide-react";
 
 const NAV = [
   { href: "/cms", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/cms/studio", label: "AI Content Studio", icon: Sparkles },
   { href: "/cms/articles", label: "Articles", icon: FileText },
   { href: "/cms/doctors", label: "Doctors", icon: Stethoscope },
   { href: "/cms/hospitals", label: "Hospitals", icon: Building2 },
