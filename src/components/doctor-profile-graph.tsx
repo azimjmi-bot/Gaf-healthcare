@@ -156,7 +156,7 @@ export function DoctorProfileGraph({
         <>
           <section>
             <h2 className="font-heading text-3xl">Consultation preparation</h2>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+            <ul className="mt-4 list-disc space-y-2 ps-5 text-sm text-muted-foreground">
               {radiationOncologyConsultPrep.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -164,7 +164,7 @@ export function DoctorProfileGraph({
           </section>
           <section>
             <h2 className="font-heading text-3xl">Questions to ask</h2>
-            <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+            <ul className="mt-4 list-disc space-y-2 ps-5 text-sm text-muted-foreground">
               {radiationOncologyQuestionsToAsk.map((item) => (
                 <li key={item}>{item}</li>
               ))}

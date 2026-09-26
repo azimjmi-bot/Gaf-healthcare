@@ -4,7 +4,7 @@ import { ArrowRight, Building2, Compass, HeartHandshake, ShieldCheck } from "luc
 import { DoctorPhoto } from "@/components/doctor-photo";
 import { HomeCover } from "@/components/home/home-cover";
 import { HomeSearch } from "@/components/home/home-search";
-import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
+import { HospitalCampusVisual, campusCaption } from "@/components/hospital-campus-visual";
 import { JsonLd } from "@/components/json-ld";
 import { PatientReviews } from "@/components/patient-reviews";
 import { PatientStories } from "@/components/patient-stories";
@@ -24,6 +24,7 @@ import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { surfaceIsAvailable } from "@/lib/i18n/surfaces";
+import { ORGANISATION_ID } from "@/lib/jsonld";
 import { SITE_URL } from "@/lib/seo";
 import type { Treatment } from "@/lib/treatments";
 import type { Metadata } from "next";
@@ -91,14 +92,15 @@ export default async function HomePage() {
         data={{
           "@context": "https://schema.org",
           "@type": "MedicalBusiness",
+          "@id": ORGANISATION_ID,
           name: "GAF Healthcare",
           url: locale === "en" ? SITE_URL : `${SITE_URL}/${locale}`,
           sameAs: [YOUTUBE_CHANNEL, GOOGLE_MAPS_URL],
           description: t["seo.homeDescription"],
           areaServed: ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"].map((city) => ({
             "@type": "City",
-            name: city,
-            containedInPlace: { "@type": "Country", name: "India" },
+            name: taxonomyLabel(city, locale),
+            containedInPlace: { "@type": "Country", name: taxonomyLabel("India", locale) },
           })),
           aggregateRating: {
             "@type": "AggregateRating",
@@ -155,7 +157,7 @@ export default async function HomePage() {
             <h2>{t["home.destinationsTitle"]}</h2>
           </div>
           <Link href="/hospitals" className="home-more">
-            {t["home.viewAll"]} <ArrowRight className="size-4" />
+            {t["home.viewAll"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
         <div className="home-destgrid">
@@ -191,7 +193,7 @@ export default async function HomePage() {
             <h2>{t["home.doctorsTitle"]}</h2>
           </div>
           <Link href="/doctors" className="home-more">
-            {t["home.viewDoctors"]} <ArrowRight className="size-4" />
+            {t["home.viewDoctors"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
         <div className="home-docgrid">
@@ -219,14 +221,18 @@ export default async function HomePage() {
             <h2>{t["home.hospitalsTitle"]}</h2>
           </div>
           <Link href="/hospitals" className="home-more">
-            {t["home.viewHospitals"]} <ArrowRight className="size-4" />
+            {t["home.viewHospitals"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
         <div className="home-hospgrid">
           {campuses.map((hospital) => (
             <Link key={hospital.slug} href={`/hospitals/${hospital.slug}`} className="home-hosp">
               <span className="home-hosp__visual">
-                <HospitalCampusVisual hospital={hospital} className="home-hosp__art" />
+                <HospitalCampusVisual
+                  hospital={hospital}
+                  caption={campusCaption(hospital, locale)}
+                  className="home-hosp__art"
+                />
               </span>
               <strong>{hospital.name}</strong>
               <span>
@@ -247,7 +253,7 @@ export default async function HomePage() {
             <p>{t["home.costsLede"]}</p>
           </div>
           <Link href="/costs" className="home-more">
-            {t["home.viewCosts"]} <ArrowRight className="size-4" />
+            {t["home.viewCosts"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
         <div className="home-costgrid">
@@ -278,7 +284,7 @@ export default async function HomePage() {
             <h2>{t["home.deskTitle"]}</h2>
           </div>
           <Link href="/blogs" className="home-more">
-            {t["home.viewBlogs"]} <ArrowRight className="size-4" />
+            {t["home.viewBlogs"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
         <div className="home-bloggrid">
@@ -304,6 +310,7 @@ export default async function HomePage() {
           ?.replace("{rating}", GOOGLE_PROFILE.rating)
           .replace("{count}", String(GOOGLE_PROFILE.reviewCount))}
         readLabel={t["home.readGoogle"]}
+        label={t["a11y.patientReviews"]}
       />
 
       {surfaceIsAvailable(locale, "consult") ? (

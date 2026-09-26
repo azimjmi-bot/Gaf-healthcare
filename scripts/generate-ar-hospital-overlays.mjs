@@ -145,7 +145,7 @@ function bioFor(h) {
 
   const openings = [
     `يُدرَج ${h.name} في دليل GAF Healthcare كـ${kind} في ${cityAr}، الهند${size}.${opened} الاعتماد الحالي: ${acc}.`,
-    `GAF Healthcare تصنّف ${h.name} تحت بلد الهند، مدينة ${cityAr}، ثم التخصص ثم الإجراء حتى يمكن لاحقًا بناء صفحات pSEO دون تغيير المفاتيح الإنجليزية.${opened}${size ? ` ${size}.` : ""} ${acc} على الملف.`,
+    `GAF Healthcare تصنّف ${h.name} تحت بلد الهند، مدينة ${cityAr}، ثم التخصص ثم الإجراء، فتصل إليه من أي من هذه المداخل.${opened}${size ? ` ${size}.` : ""} ${acc} على الملف.`,
     `${h.name} — ${kind} في ${cityAr}${size ? `، ${size}` : ""}.${opened} ${acc}. نراجع السجلات قبل أي تاريخ عبر ${airport}.`,
     `الملف العربي لـ${h.name} يُفتح من باب ${cityAr} لا من كتيّب.${opened}${size ? ` ${size}.` : ""} ${acc} يُتحقق منه سنويًا لا يُنسخ من الإعلان.`,
     `في ${cityAr} يظهر ${h.name} مرة واحدة في دليل المستشفيات.${opened}${size ? ` ${size}.` : ""} ${acc}. المنسّق باسمك يرتّب الفيديو قبل التذكرة.`,

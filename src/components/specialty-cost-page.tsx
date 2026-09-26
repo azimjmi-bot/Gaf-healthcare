@@ -19,6 +19,9 @@ import {
   faqJsonLd,
   hospitalItemListJsonLd,
 } from "@/lib/seo";
+import { absoluteUrl } from "@/lib/seo";
+import { ORGANISATION_ID, documentId } from "@/lib/jsonld";
+import type { AppLocale } from "@/lib/i18n/languages";
 import {
   specialtyPageMeetsQualityThreshold,
   specialtyProcedureSummary,
@@ -256,7 +259,7 @@ function ProcedureComparison({ data }: { data: SpecialtyPageData }) {
         ))}
       </div>
       <div className="mt-8 overflow-x-auto rounded-2xl border border-border">
-        <table className="min-w-[980px] w-full text-left text-sm">
+        <table className="min-w-[980px] w-full text-start text-sm">
           <thead className="bg-secondary/60 text-xs uppercase tracking-[0.14em] text-muted-foreground">
             <tr>
               <th className="px-5 py-4 font-medium">{terms.careItem}</th>
@@ -310,7 +313,7 @@ function Conditions({ data }: { data: SpecialtyPageData }) {
       />
       <div className="mt-8 grid gap-x-10 gap-y-7 md:grid-cols-2">
         {data.conditions.map((condition) => (
-          <article key={condition.name} className="border-l-2 border-primary/30 pl-4">
+          <article key={condition.name} className="border-s-2 border-primary/30 ps-4">
             <h3 className="font-heading text-2xl">{condition.name}</h3>
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
               {condition.summary}
@@ -712,9 +715,11 @@ function FrequentlyAskedQuestions({ data }: { data: SpecialtyPageData }) {
 export function SpecialtyCostPage({
   data,
   query,
+  locale = "en",
 }: {
   data: SpecialtyPageData;
   query: CatalogQuery;
+  locale?: AppLocale;
 }) {
   if (!specialtyPageMeetsQualityThreshold(data)) return null;
   const path = specialtyPagePath(data);
@@ -743,15 +748,17 @@ export function SpecialtyCostPage({
         data={{
           "@context": "https://schema.org",
           "@type": ["MedicalWebPage", "WebPage"],
+          "@id": documentId(path, locale, "webpage"),
           name: pageName,
           description: pageDescription,
-          url: `https://gaf.healthcare${path}`,
-          inLanguage: "en",
+          url: absoluteUrl(path, locale),
+          inLanguage: locale,
           lastReviewed: data.profile.lastReviewed,
           dateModified: data.profile.lastReviewed,
           audience: { "@type": "MedicalAudience", audienceType: "Patient" },
           publisher: {
             "@type": "Organization",
+            "@id": ORGANISATION_ID,
             name: "GAF Healthcare",
             url: "https://gaf.healthcare/",
             logo: {
@@ -782,13 +789,14 @@ export function SpecialtyCostPage({
           },
           { name: data.specialty.name, path: parentPath },
           ...(data.city ? [{ name: data.city.name, path }] : []),
-        ])}
+        ], locale)}
       />
-      <JsonLd data={faqJsonLd(faqs)} />
+      <JsonLd data={faqJsonLd(faqs, { path, locale })} />
       <JsonLd
         data={doctorItemListJsonLd(data.featuredDoctors, {
           name: `${data.specialty.name} doctors in ${place}`,
           path,
+          locale,
           addressCountry: data.country.name,
         })}
       />
@@ -796,6 +804,7 @@ export function SpecialtyCostPage({
         data={hospitalItemListJsonLd(data.featuredHospitals, {
           name: `${data.specialty.name} hospitals in ${place}`,
           path,
+          locale,
           addressCountry: data.country.name,
         })}
       />

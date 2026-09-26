@@ -18,7 +18,7 @@ import type { AppLocale } from "@/lib/i18n/languages";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 
 
-const PEOPLE_AR: Record<string, { one: string; many: string }> = {
+export const PEOPLE_AR: Record<string, { one: string; many: string }> = {
   "radiation-oncology": { one: "أخصائي علاج الأورام بالإشعاع", many: "أخصائيو علاج الأورام بالإشعاع" },
   "surgical-oncology": { one: "جرّاح أورام", many: "جرّاحو الأورام" },
   "medical-oncology": { one: "طبيب علاج الأورام الطبي", many: "أطباء علاج الأورام الطبي" },
@@ -44,7 +44,7 @@ const PEOPLE_AR: Record<string, { one: string; many: string }> = {
   nephrology: { one: "طبيب كلى", many: "أطباء الكلى" },
 };
 
-const BLURB_AR: Record<string, string> = {
+export const BLURB_AR: Record<string, string> = {
   "radiation-oncology": "إشعاع يُخطَّط حول الورم الموجود فعلًا — لا آلة تبحث عن عمل.",
   "surgical-oncology": "جراحة سرطان عندما يكون القطع الخطوة الصادقة، مع الترميم على القائمة نفسها.",
   "medical-oncology": "علاج جهازي — كيميائي وموجّه ومناعي — باسم البروتوكول لا باسم الكتيّب.",
@@ -327,10 +327,8 @@ export function hospitalFaqsLocalized(
       a: "لا. الأرقام نطاقات تخطيط هندية إلى جانب النقد الأمريكي النموذجي حتى تفكر العائلة. يؤكد استشاري مسمّى البروتوكول بعد السجلات.",
     },
     {
-      q: `كيف يُصنَّف ${hospital.name} لصفحات pSEO لاحقًا؟`,
-      a: `يُحفظ الحرم تحت بلد الهند، مدينة ${city}، ثم التخصص ثم الإجراء. روابط الأطباء وبطاقات التكلفة تستخدم القيم الإنجليزية في العنوان حتى لا تتغير مسارات التوجيه.`,
+      q: `أين أجد ${hospital.name} في دليل المستشفيات؟`,
+      a: `يُحفظ الحرم تحت بلد الهند، مدينة ${city}، ثم التخصص ثم الإجراء، فتصل إليه من أي من هذه المداخل. تبقى عناوين الصفحات بالحروف اللاتينية في النسختين، فالرابط الذي تشاركه يعمل بالعربية والإنجليزية معًا.`,
     },
   ];
 }
-
-export { PEOPLE_AR };

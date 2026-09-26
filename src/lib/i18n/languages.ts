@@ -25,6 +25,13 @@ export const LANGUAGE_OG: Record<AppLocale, string> = {
 
 export const LOCALE_HEADER = "x-gaf-locale";
 
+/**
+ * The requested path with any locale prefix stripped. Set by the proxy so
+ * server components can work out which page a locale switch would land on
+ * without re-deriving it from the rewritten URL.
+ */
+export const PATH_HEADER = "x-gaf-path";
+
 export function isTargetLocale(value: string): value is TargetLocale {
   return (TARGET_LOCALES as readonly string[]).includes(value);
 }

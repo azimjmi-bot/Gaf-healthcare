@@ -20,6 +20,7 @@ import {
   hospitalsForLocale,
 } from "@/lib/locale-catalog";
 import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
+import { publishedFacetPaths } from "@/lib/i18n/facet-candidates";
 
 const SEARCH_CONSOLE_ORIGIN = SITE_URL;
 
@@ -117,6 +118,12 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
           );
         }
       }
+    }
+    // Facets are listed only once their page type is approved, and only when
+    // they are the canonical address for their own result set.
+    for (const path of publishedFacetPaths(locale)) {
+      const depth = path.split("/").filter(Boolean).length;
+      localized.push(entry(path, locale, { changeFrequency: "weekly", priority: depth <= 3 ? 0.6 : 0.5 }));
     }
     const localePosts = listPublishedPosts(locale).filter((post) => post.allowIndex);
     if (localePosts.length > 0) {

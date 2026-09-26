@@ -1,5 +1,6 @@
 import type { AppLocale } from "@/lib/i18n/languages";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
+import { canonicalTermKey } from "@/lib/i18n/term-aliases";
 
 /** Display phrases that are not taxonomy routing keys. */
 export const MEDICAL_PHRASE_AR: Record<string, string> = {
@@ -7,7 +8,6 @@ export const MEDICAL_PHRASE_AR: Record<string, string> = {
   "GI (Gastrointestinal) Radiation Oncology": "علاج أورام الجهاز الهضمي بالإشعاع",
   "Gynaecological Oncology": "أورام النساء",
   "Head and Neck Oncology": "أورام الرأس والعنق",
-  "Image-Guided Radiation Therapy (IMRT)": "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
   "Medical Oncology": "علاج الأورام الطبي",
   "Medical Oncology (multidisciplinary cancer care)": "علاج الأورام الطبي ضمن فريق متعدد التخصصات",
   "Medical Oncology (supportive role in multidisciplinary cancer care)":
@@ -18,8 +18,8 @@ export const MEDICAL_PHRASE_AR: Record<string, string> = {
   "Paediatric Oncology (Radiation)": "أورام الأطفال — مسار إشعاعي",
   "Radiation Oncology": "علاج الأورام بالإشعاع",
   "Radiation Therapy for Cancer": "العلاج الإشعاعي للأورام",
-  "Stereotactic Body Radiation Therapy (SBRT)": "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
-  "Stereotactic Radiosurgery (SRS)": "الجراحة الإشعاعية التجسيمية (SRS)",
+  // SBRT and SRS are routing keys, so their Arabic lives in TAXONOMY_AR and is
+  // reached from here through the taxonomy fallback rather than restated.
   "Surgical Oncology (Head & Neck, Breast, GI, Thoracic)":
     "جراحة الأورام بالتنسيق (رأس وعنق، ثدي، جهاز هضمي، صدر)",
   "Surgical Oncology (collaborative cancer programme involvement)":
@@ -64,7 +64,11 @@ export const MEDICAL_PHRASE_AR: Record<string, string> = {
 
 export function medicalPhrase(name: string, locale: AppLocale): string {
   if (locale !== "ar") return name;
-  return MEDICAL_PHRASE_AR[name] || taxonomyLabel(name, locale);
+  return (
+    MEDICAL_PHRASE_AR[name] ||
+    MEDICAL_PHRASE_AR[canonicalTermKey(name)] ||
+    taxonomyLabel(name, locale)
+  );
 }
 
 export function medicalPhrases(names: readonly string[], locale: AppLocale): string[] {

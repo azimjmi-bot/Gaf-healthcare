@@ -1,5 +1,5 @@
 import { NextResponse, type NextRequest } from "next/server";
-import { LOCALE_HEADER, isTargetLocale } from "@/lib/i18n/languages";
+import { LOCALE_HEADER, PATH_HEADER, isTargetLocale } from "@/lib/i18n/languages";
 
 const CMS_COOKIE = "gaf_cms";
 
@@ -22,6 +22,7 @@ async function cmsToken(password: string) {
 function withLocale(request: NextRequest, locale: string, pathname?: string) {
   const headers = new Headers(request.headers);
   headers.set(LOCALE_HEADER, locale);
+  headers.set(PATH_HEADER, pathname ?? request.nextUrl.pathname);
   if (!pathname || pathname === request.nextUrl.pathname) {
     const response = NextResponse.next({ request: { headers } });
     response.headers.set("x-gaf-locale", locale);

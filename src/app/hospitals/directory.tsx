@@ -13,6 +13,7 @@ import { faqJsonLd } from "@/lib/seo";
 import { catalogPageMetadata } from "@/lib/i18n/page-meta";
 import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
+import { arabicHospitalHub } from "@/lib/i18n/arabic-hub";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { hospitalsForLocale } from "@/lib/locale-catalog";
 import { doctorsForLocale } from "@/lib/locale-catalog";
@@ -22,6 +23,7 @@ import {
   isHospitalSpecialtyScope,
 } from "@/lib/radiation-hospital-page";
 import { absoluteUrl } from "@/lib/seo";
+import { documentId } from "@/lib/jsonld";
 import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
@@ -70,6 +72,25 @@ export async function hospitalsDirectoryMetadata(
       LOCALES,
     );
   }
+  const hub = arabicHospitalHub(query, locale);
+  if (hub) {
+    return withLocaleMetadata(
+      {
+        title: hub.title,
+        description: hub.description,
+        robots: page === 1 ? undefined : { index: false, follow: true },
+        openGraph: {
+          title: hub.title,
+          description: hub.description,
+          url: absoluteUrl(hospitalsPath(query), locale),
+          type: "website",
+        },
+      },
+      hospitalsPath(query),
+      locale,
+      LOCALES,
+    );
+  }
   return catalogPageMetadata("hospitals", query);
 }
 
@@ -90,14 +111,17 @@ export async function HospitalsDirectory({
       doctorsForLocale(locale),
     );
     if (!hub) notFound();
-    return <HospitalSpecialtyHub data={hub} query={query} />;
+    return <HospitalSpecialtyHub data={hub} query={query} locale={locale} />;
   }
   const messages = await localizeMessages(locale);
   const faqs = await localizeFaqs("hospitals", locale);
   const list = filterHospitals(query, hospitalsForLocale(locale));
   const paging = paginateHospitals(list, page);
   const chipStats = query.destination === "India" ? cityResultCounts("hospitals", query) : null;
-  const copy = directoryIntro("hospitals", query, locale);
+  const hub = arabicHospitalHub(query, locale);
+  const copy = hub
+    ? { eyebrow: hub.eyebrow, heading: hub.heading, lede: hub.intro[0] }
+    : directoryIntro("hospitals", query, locale);
 
   return (
     <>
@@ -105,12 +129,14 @@ export async function HospitalsDirectory({
         data={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
+          "@id": documentId(hospitalsPath(query), locale, "collection"),
           name: copy.heading,
           description: copy.lede,
           inLanguage: locale,
+          url: absoluteUrl(hospitalsPath(query), locale),
         }}
       />
-      <JsonLd data={faqJsonLd(faqs)} />
+      <JsonLd data={faqJsonLd(faqs, { path: hospitalsPath(query), locale })} />
       <PageIntro
         eyebrow={copy.eyebrow}
         title={copy.heading}
@@ -127,6 +153,15 @@ export async function HospitalsDirectory({
           />
         </Suspense>
       </PageIntro>
+      {hub ? (
+        <section className="mx-auto max-w-7xl px-4 pt-8 sm:px-5 md:px-8 md:pt-12">
+          {hub.intro.slice(1).map((paragraph) => (
+            <p key={paragraph.slice(0, 40)} className="prose-gaf mt-4 max-w-3xl">
+              {paragraph}
+            </p>
+          ))}
+        </section>
+      ) : null}
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:px-8 md:py-12">
         {paging.total === 0 ? (
           <p className="text-muted-foreground">{directoryEmpty("hospitals", query, locale)}</p>

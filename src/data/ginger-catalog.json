@@ -238,7 +238,7 @@
         "Brachytherapy",
         "Stereotactic Body Radiation Therapy",
         "Stereotactic Radiosurgery (SRS)",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Plaque Brachytherapy"
       ],
       "education": [
@@ -274,7 +274,7 @@
         "Radiation Therapy for Cancer",
         "Stereotactic Radiosurgery (SRS)",
         "Stereotactic Body Radiation Therapy",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Brachytherapy",
         "CyberKnife Radiosurgery"
       ],
@@ -316,7 +316,7 @@
       ],
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Body Radiation Therapy",
         "Stereotactic Radiosurgery (SRS)",
         "Brachytherapy",
@@ -366,7 +366,7 @@
         "CyberKnife Radiosurgery",
         "Stereotactic Body Radiation Therapy",
         "Stereotactic Radiosurgery (SRS)",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Radiation Therapy for Cancer",
         "Brachytherapy"
       ],
@@ -478,7 +478,7 @@
         "Proton Beam Therapy",
         "Radiation Therapy for Cancer",
         "Brachytherapy",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Body Radiation Therapy",
         "Stereotactic Radiosurgery (SRS)",
         "CyberKnife Radiosurgery",
@@ -577,7 +577,7 @@
       ],
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "CyberKnife Radiosurgery",
         "Stereotactic Radiosurgery (SRS)",
         "Stereotactic Body Radiation Therapy",
@@ -766,7 +766,7 @@
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
         "Brachytherapy",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Body Radiation Therapy",
         "Chemotherapy for Cancer",
         "Cancer Immunotherapy",
@@ -870,7 +870,7 @@
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
         "Brachytherapy",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Body Radiation Therapy",
         "Stereotactic Radiosurgery (SRS)",
         "CyberKnife Radiosurgery",
@@ -1194,7 +1194,7 @@
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
         "Brachytherapy",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Hormone Therapy for Breast Cancer",
         "Hormone Therapy for Gynecologic Cancers",
         "Stereotactic Body Radiation Therapy",
@@ -1411,7 +1411,7 @@
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
         "Brachytherapy",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Body Radiation Therapy",
         "Chemotherapy for Cancer",
         "Hormone Therapy for Gynecologic Cancers"
@@ -1741,7 +1741,7 @@
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
         "Brachytherapy",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Body Radiation Therapy",
         "Stereotactic Radiosurgery (SRS)",
         "Chemotherapy for Cancer (concurrent chemoradiation protocols)",
@@ -1839,7 +1839,7 @@
       ],
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Body Radiation Therapy",
         "Stereotactic Radiosurgery (SRS)",
         "Brachytherapy"
@@ -1935,7 +1935,7 @@
       ],
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Body Radiation Therapy",
         "Brachytherapy",
         "Breast Cancer Surgery",
@@ -2028,7 +2028,7 @@
       ],
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Radiosurgery (SRS)",
         "Stereotactic Body Radiation Therapy",
         "CyberKnife Radiosurgery",
@@ -2135,7 +2135,7 @@
       ],
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Body Radiation Therapy",
         "Stereotactic Radiosurgery (SRS)",
         "Brachytherapy",
@@ -2269,7 +2269,7 @@
       ],
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Radiosurgery (SRS)",
         "Stereotactic Body Radiation Therapy",
         "Total Body Irradiation (TBI)",
@@ -2455,14 +2455,14 @@
         "Brachytherapy",
         "Stereotactic Body Radiation Therapy (SBRT)",
         "Stereotactic Radiosurgery (SRS)",
-        "Image-Guided Radiation Therapy (IMRT)"
+        "Intensity-Modulated Radiation Therapy (IMRT)"
       ],
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
         "Brachytherapy",
         "Stereotactic Body Radiation Therapy (SBRT)",
         "Stereotactic Radiosurgery (SRS)",
-        "Image-Guided Radiation Therapy (IMRT)"
+        "Intensity-Modulated Radiation Therapy (IMRT)"
       ],
       "education": [
         "MD — Radiation Therapy",
@@ -2593,7 +2593,7 @@
       ],
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Body Radiation Therapy",
         "Stereotactic Radiosurgery (SRS)",
         "Brachytherapy",
@@ -2690,7 +2690,7 @@
         "Stereotactic Body Radiation Therapy",
         "Stereotactic Radiosurgery (SRS)",
         "Brachytherapy",
-        "Image-Guided Radiation Therapy (IMRT)"
+        "Intensity-Modulated Radiation Therapy (IMRT)"
       ],
       "education": [
         "Fellowship in \"Treating Oncology Patients During COVID-19\" from Scientia, Los Angeles",
@@ -2832,7 +2832,7 @@
         "CyberKnife Radiosurgery",
         "Stereotactic Radiosurgery (SRS)",
         "Stereotactic Body Radiation Therapy",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Brachytherapy",
         "Total Body Irradiation (TBI)"
       ],
@@ -2888,7 +2888,7 @@
         "Radiation Therapy for Cancer",
         "Stereotactic Body Radiation Therapy (SBRT)",
         "Brachytherapy",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Radiosurgery (SRS)",
         "Total Body Irradiation (TBI)",
         "Intraoperative Radiation Therapy (IORT)",
@@ -2986,7 +2986,7 @@
       ],
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Body Radiation Therapy",
         "Brachytherapy",
         "Stereotactic Radiosurgery (SRS)",
@@ -3319,7 +3319,7 @@
       ],
       "proceduresExpertise": [
         "Radiation Therapy for Cancer",
-        "Image-Guided Radiation Therapy (IMRT)",
+        "Intensity-Modulated Radiation Therapy (IMRT)",
         "Stereotactic Radiosurgery (SRS)",
         "Stereotactic Body Radiation Therapy",
         "Brachytherapy"

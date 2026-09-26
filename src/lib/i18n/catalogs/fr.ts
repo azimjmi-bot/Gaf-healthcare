@@ -1,0 +1,132 @@
+import type { TranslationFields } from "@/lib/i18n/catalogs/types";
+
+/**
+ * French UI strings, keyed to UI_MESSAGE_FIELDS.
+ *
+ * Partial. The locale is not published, so missing keys resolve to an
+ * empty string rather than English — see uiCatalogFor.
+ */
+export const UI: TranslationFields = {
+
+  "nav.destinations": "Destinations",
+  "nav.specialties": "Spécialités",
+  "nav.doctors": "Médecins",
+  "nav.hospitals": "Hôpitaux",
+  "nav.treatments": "Traitements",
+  "nav.costs": "Coût du traitement",
+  "nav.blogs": "Blog",
+  "nav.consult": "Demander une consultation",
+  "nav.consultShort": "Consultation",
+  "nav.menu": "Ouvrir le menu",
+  "nav.dossier": "Demander un dossier",
+  "footer.explore": "Explorer",
+  "footer.note": "Note",
+  "footer.tagline":
+    "Un atelier privé de voyage médical pour les patients qui veulent des hôpitaux accrédités, des médecins nommément identifiés et un coordinateur qui reste joignable après l’arrivée.",
+  "footer.disclaimer":
+    "GAF Healthcare n’est pas un hôpital et ne donne pas de conseils médicaux. Les fourchettes de coût sont indicatives. Les décisions cliniques vous appartiennent, ainsi qu’au médecin licencié que vous choisissez.",
+  "footer.rights": "Tous droits réservés.",
+  "footer.youtube": "YouTube",
+  "footer.reviews": "Avis Google",
+  "cta.eyebrow": "Commencer",
+  "cta.title": "Demandez un dossier privé. Sans obligation, sans clinique de masse.",
+  "cta.button": "Parler à un coordinateur",
+  "filter.destinations": "Toutes les destinations",
+  "filter.cities": "Toutes les villes",
+  "filter.specialities": "Toutes les spécialités",
+  "filter.procedures": "Toutes les procédures",
+  "filter.matching": "correspondent à vos filtres",
+  "pager.previous": "Précédent",
+  "pager.next": "Suivant",
+  "pager.pageOf": "Page {current} sur {total}",
+  "lang.label": "Langue",
+  "home.heroEyebrow": "Soins mondiaux · sans frontières",
+  "home.heroTitle": "Des soins de confiance au-delà des frontières",
+  "home.heroLede":
+    "Comparez les médecins, hôpitaux et coûts de traitement répertoriés dans nos destinations. Planifiez votre parcours avec un consultant nommé avant de voyager.",
+  "home.trust1": "Accompagnement personnalisé",
+  "home.trust2": "Accès aux hôpitaux répertoriés",
+  "home.trust3": "Fourchettes de planification transparentes",
+  "home.trust4": "Soutien à chaque étape",
+  "home.destinationsEyebrow": "Destinations",
+  "home.destinationsTitle": "Principales destinations",
+  "home.viewAll": "Tout voir",
+  "home.doctorsEyebrow": "Médecins",
+  "home.doctorsTitle": "Nos médecins",
+  "home.viewDoctors": "Tous les médecins",
+  "home.hospitalsEyebrow": "Hôpitaux",
+  "home.hospitalsTitle": "Les hôpitaux avec lesquels nous travaillons",
+  "home.viewHospitals": "Tous les hôpitaux",
+  "home.costsEyebrow": "Coûts de traitement",
+  "home.costsTitle": "Planifiez vos soins en confiance",
+  "home.costsLede": "Fourchettes indicatives en Inde issues des fiches de coût — pas des devis hospitaliers.",
+  "home.viewCosts": "Toutes les fiches de coût",
+  "home.typicalPackage": "forfait type",
+  "home.storiesEyebrow": "Récits de patients",
+  "home.storiesTitle": "Des personnes. De vrais parcours.",
+  "home.moreYoutube": "Plus sur YouTube",
+  "home.deskEyebrow": "Bureau",
+  "home.deskTitle": "Derniers articles et guides",
+  "home.viewBlogs": "Tous les articles",
+  "home.reviewsEyebrow": "Avis Google",
+  "home.reviewsTitle": "Ce que disent nos patients",
+  "home.readGoogle": "Lire sur Google",
+  "home.reviewsSummary": "{rating} sur {count} avis dans la fiche Google de GAF Healthcare Pvt Ltd.",
+  "home.finaleTitle": "Votre parcours de santé commence ici",
+  "home.finaleLede": "Envoyez vos dossiers. Recevez des options de médecins et d’hôpitaux avec une estimation indicative.",
+  "home.finaleButton": "Demander un dossier",
+  "home.searchDestination": "Destination",
+  "home.searchSpecialty": "Spécialité",
+  "home.searchProcedure": "Procédure",
+  "home.searchGo": "Des soins avancés en un clic",
+  "home.searchGoShort": "Trouver des spécialistes",
+  "blogs.empty": "Aucune note publiée pour le moment.",
+  "blogs.all": "Tous les articles",
+  "consult.eyebrow": "Admission",
+  "consult.title": "Douze minutes. Ensuite, nous faisons la lecture lourde.",
+  "consult.lede":
+    "Partagez ce que vous pouvez. Imagerie et dossiers peuvent suivre. Un coordinateur répond sous un jour ouvrable — avec les prochaines étapes, ou un non honnête.",
+  "consult.next": "Et ensuite",
+  "consult.step1": "01 — Nous confirmons que nous pouvons aider, ou nous disons que nous ne le pouvons pas.",
+  "consult.step2": "02 — Vous recevez deux ou trois options assorties avec le coût global.",
+  "consult.step3": "03 — Consultation vidéo avec le chirurgien. Aucun acompte avant cet appel.",
+  "consult.speak": "Vous préférez d’abord parler ?",
+  "notFound.title": "Cette page n’est pas sur l’itinéraire.",
+  "notFound.body": "GAF Healthcare a quatre espaces : médecins, hôpitaux, coût du traitement et blog.",
+  "seo.homeTitle": "Des soins de confiance au-delà des frontières | GAF Healthcare",
+  "seo.homeDescription":
+    "Médecins, hôpitaux et coûts de traitement indicatifs dans les destinations GAF Healthcare. Planifiez votre parcours avec un consultant nommé avant de voyager.",
+  "seo.blogsTitle": "Blog",
+  "seo.consultTitle": "Demander un dossier",
+};
+
+/**
+ * Home-page rows that are data rather than chrome: destination cards and video
+ * titles. Kept separate so the main catalog stays comparable to the English
+ * message list key for key.
+ */
+export const HOME_EXTRA: TranslationFields = {
+
+  "dest.0.name": "Inde",
+  "dest.0.blurb": "Delhi NCR, Mumbai, Bengaluru, Chennai et Hyderabad",
+  "dest.0.imageAlt": "Taj Mahal, Inde",
+  "dest.1.name": "Turquie",
+  "dest.1.blurb": "Istanbul",
+  "dest.1.imageAlt": "Skyline d’Istanbul, Turquie",
+  "dest.2.name": "Thaïlande",
+  "dest.2.blurb": "Bangkok",
+  "dest.2.imageAlt": "Temple à Bangkok, Thaïlande",
+  "dest.3.name": "EAU",
+  "dest.3.blurb": "Dubaï",
+  "dest.3.imageAlt": "Skyline de Dubaï, Émirats arabes unis",
+  "dest.4.name": "Singapour",
+  "dest.4.blurb": "Singapour",
+  "dest.4.imageAlt": "Marina Bay, Singapour",
+  "dest.5.name": "Corée du Sud",
+  "dest.5.blurb": "Séoul",
+  "dest.5.imageAlt": "Séoul, Corée du Sud",
+  "video.0.title": "Gratitude d’un grand-père : la chirurgie valvulaire congénitale de Raghd à Fortis, Inde",
+  "video.1.title": "Cœur soigné, espoir retrouvé | Chirurgie salvatrice d’Ibrahim",
+  "video.2.title": "Parcours d’une famille irakienne : chirurgie cardiaque du bébé Ibrahim en Inde",
+  "video.3.title": "Une expérience qui change une vie | Témoignage patient",
+};

@@ -5,45 +5,29 @@ import { join } from "node:path";
 import { LOCALES, TARGET_LOCALES, type AppLocale } from "@/lib/i18n/languages";
 import {
   ARABIC_TEMPLATE_APPROVED,
+  FACET_MAX_PARENT_OVERLAP,
   FACET_MIN_ARABIC_PROFILES,
+  facetDuplicatesParent,
   facetIsPublished,
   localeIsPublished,
+  type PseoPageType,
 } from "@/lib/i18n/locale-gating";
+import { canonicalFacetPath } from "@/lib/i18n/facet-canonical";
 import {
   localePageState,
   localePathIsPublished,
   publishedLocalesForPath,
 } from "@/lib/i18n/locale-publication";
 import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
-import { withLocaleMetadata } from "@/lib/i18n/metadata";
+import { localizedAbsoluteUrl, withLocaleMetadata } from "@/lib/i18n/metadata";
 import { doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
 import { listPublishedPosts } from "@/lib/blogs";
 import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
-import { doctorSpecialtySitemapPaths } from "@/lib/doctor-discovery";
-import { hospitalSpecialtySitemapPaths } from "@/lib/radiation-hospital-page";
-import { doctors, hospitals } from "@/lib/data";
-import { doctorsPath, hospitalsPath } from "@/lib/catalog-links";
-import { INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
+import { facetCandidatePaths, publishedFacetPaths } from "@/lib/i18n/facet-candidates";
 import { translationStatus } from "@/lib/cms/catalog-types";
 import robots from "@/app/robots";
 
-/** Every facet URL the English sitemap can produce, as candidates for Arabic. */
-function facetCandidates() {
-  const paths = new Set<string>();
-  for (const path of doctorSpecialtySitemapPaths(doctors)) paths.add(path);
-  for (const path of hospitalSpecialtySitemapPaths(hospitals, doctors)) paths.add(path);
-  paths.add(doctorsPath({ destination: "India" }));
-  paths.add(hospitalsPath({ destination: "India" }));
-  for (const city of INDIA_CITIES) {
-    paths.add(doctorsPath({ destination: "India", city }));
-    paths.add(hospitalsPath({ destination: "India", city }));
-  }
-  for (const specialty of SPECIALTIES) {
-    paths.add(doctorsPath({ destination: "India", specialty: specialty.name }));
-    paths.add(hospitalsPath({ destination: "India", specialty: specialty.name }));
-  }
-  return [...paths];
-}
+const facetCandidates = facetCandidatePaths;
 
 /** Everything that could conceivably be an Arabic page, facets included. */
 function everyArabicCandidate() {
@@ -60,27 +44,72 @@ function everyArabicCandidate() {
   return [...paths];
 }
 
-test("no Arabic facet is published while its template is unapproved", () => {
-  for (const approved of Object.values(ARABIC_TEMPLATE_APPROVED)) {
-    assert.equal(approved, false, "no pSEO template has been approved yet");
-  }
+/**
+ * What each page type publishes when its own gate is the only one open.
+ *
+ * The page types partition the candidate set — a URL is a doctor facet or a
+ * hospital facet, never both — so the number the site publishes at any moment
+ * is the sum over the open gates. Pinning the parts rather than the total
+ * means opening the next gate does not require re-deriving the ones already
+ * open, and a page count that moves for any other reason still fails here.
+ */
+const STAGE_FACETS: Record<PseoPageType, number> = {
+  doctorFacet: 74,
+  hospitalFacet: 56,
+  costFacet: 0,
+  specialtyHub: 0,
+};
+
+/** Every facet URL that renders in Arabic, published or not. */
+const FACET_CANDIDATES = 1268;
+
+function expectedPublishedFacets() {
+  return (Object.keys(STAGE_FACETS) as PseoPageType[])
+    .filter((type) => ARABIC_TEMPLATE_APPROVED[type])
+    .reduce((total, type) => total + STAGE_FACETS[type], 0);
+}
+
+test("the open gates publish exactly the reviewed facets and nothing else", () => {
+  assert.equal(ARABIC_TEMPLATE_APPROVED.costFacet, false, "no Arabic cost content exists");
+  assert.equal(ARABIC_TEMPLATE_APPROVED.specialtyHub, false, "specialty hubs are English long-form");
 
   const states = { published: 0, noindex: 0, missing: 0 };
   for (const path of facetCandidates()) states[localePageState("ar", path)] += 1;
 
-  assert.equal(states.published, 0, "facets must not be published before Phase 3");
+  const expected = expectedPublishedFacets();
+  assert.equal(states.published, expected, "published facet count");
   assert.equal(
     states.noindex,
-    1268,
-    "the facets that render in Arabic should all be noindex,follow",
+    FACET_CANDIDATES - expected,
+    "everything not published still renders as noindex,follow",
   );
+});
+
+test("a published facet that duplicates its parent stays out of the sitemap", () => {
+  const published = facetCandidates().filter((path) => localePathIsPublished("ar", path));
+  const listed = new Set(publishedFacetPaths("ar"));
+
+  assert.equal(published.length, expectedPublishedFacets());
+  // The 17 doctor facets that return exactly their parent's roster are
+  // published — they render, and they are reachable — but they name the parent
+  // as canonical, so advertising them would contradict their own head.
+  assert.equal(listed.size, expectedPublishedFacets() - 17);
+  for (const path of published) {
+    if (listed.has(path)) continue;
+    assert.notEqual(
+      canonicalFacetPath(path, "ar"),
+      path,
+      `${path} is published and self-canonical but absent from the sitemap`,
+    );
+  }
 });
 
 test("the facet gate needs both an approved template and enough profiles", () => {
   assert.equal(FACET_MIN_ARABIC_PROFILES, 3);
 
-  // Unapproved: no profile count is enough.
-  assert.equal(facetIsPublished("hospitalFacet", 99), false);
+  // Unapproved: no profile count is enough. costFacet is the page type still
+  // waiting on content, so it is the honest stand-in for a closed gate.
+  assert.equal(facetIsPublished("costFacet", 99), false);
 
   const original = ARABIC_TEMPLATE_APPROVED.hospitalFacet;
   try {
@@ -90,15 +119,93 @@ test("the facet gate needs both an approved template and enough profiles", () =>
     assert.equal(facetIsPublished("hospitalFacet", 2), false, "2 records is below the floor");
     assert.equal(facetIsPublished("hospitalFacet", 3), true, "3 records clears the floor");
     // Approving one page type must not approve another.
-    assert.equal(facetIsPublished("doctorFacet", 3), false);
+    assert.equal(facetIsPublished("costFacet", 3), false);
   } finally {
     ARABIC_TEMPLATE_APPROVED.hospitalFacet = original;
   }
 });
 
+test("the overlap gate suppresses a facet that reproduces its parent", () => {
+  assert.equal(FACET_MAX_PARENT_OVERLAP.hospitalFacet, 0.9);
+  assert.equal(FACET_MAX_PARENT_OVERLAP.doctorFacet, null, "doctor facets have no overlap gate");
+
+  // A facet with no parent, or an empty one, is never a duplicate.
+  assert.equal(facetDuplicatesParent("hospitalFacet", 37, undefined), false);
+  assert.equal(facetDuplicatesParent("hospitalFacet", 3, 0), false);
+
+  // The boundary sits at exactly the threshold.
+  assert.equal(facetDuplicatesParent("hospitalFacet", 9, 10), true, "90% is redundant");
+  assert.equal(facetDuplicatesParent("hospitalFacet", 8, 10), false, "80% narrows enough");
+  assert.equal(facetDuplicatesParent("hospitalFacet", 10, 10), true, "identical to parent");
+
+  // A page type with a null threshold ignores overlap entirely.
+  assert.equal(facetDuplicatesParent("doctorFacet", 70, 70), false);
+
+  const original = ARABIC_TEMPLATE_APPROVED.hospitalFacet;
+  try {
+    ARABIC_TEMPLATE_APPROVED.hospitalFacet = true;
+    assert.equal(facetIsPublished("hospitalFacet", 18, 37), true, "48% of its parent");
+    assert.equal(facetIsPublished("hospitalFacet", 36, 37), false, "97% of its parent");
+    // Both levers must clear, in either order.
+    assert.equal(facetIsPublished("hospitalFacet", 2, 37), false, "distinct but thin");
+  } finally {
+    ARABIC_TEMPLATE_APPROVED.hospitalFacet = original;
+  }
+});
+
+/**
+ * The approved Phase 3 staging plan, pinned so that opening a gate produces the
+ * page count that was reviewed rather than a surprise. Each stage is measured
+ * by flipping its own flag and counting what the real Arabic catalog publishes.
+ */
+test("each staging stage publishes the reviewed number of facets", () => {
+  const publishedCount = () =>
+    facetCandidates().filter((path) => localePageState("ar", path) === "published").length;
+
+  const doctorFlag = ARABIC_TEMPLATE_APPROVED.doctorFacet;
+  const hospitalFlag = ARABIC_TEMPLATE_APPROVED.hospitalFacet;
+  try {
+    ARABIC_TEMPLATE_APPROVED.doctorFacet = false;
+    ARABIC_TEMPLATE_APPROVED.hospitalFacet = false;
+    assert.equal(publishedCount(), 0, "a closed gate publishes nothing");
+
+    ARABIC_TEMPLATE_APPROVED.doctorFacet = true;
+    assert.equal(
+      publishedCount(),
+      STAGE_FACETS.doctorFacet,
+      "stage 1: every doctor facet clears the 3-profile floor",
+    );
+    ARABIC_TEMPLATE_APPROVED.doctorFacet = false;
+
+    // Stages 2 and 3 share one flag: the overlap gate is what separates the 56
+    // hospital facets that narrow their parent from the rest. Chennai's IGRT
+    // facet left this set when the malformed IMRT label was corrected and the
+    // procedure stopped being attributed to nine of the city's radiation staff.
+    ARABIC_TEMPLATE_APPROVED.hospitalFacet = true;
+    assert.equal(
+      publishedCount(),
+      STAGE_FACETS.hospitalFacet,
+      "stages 2+3: 6 at country/city depth, 50 deeper",
+    );
+
+    // The stages are independent: opening both publishes the sum, so no facet
+    // is counted twice and none is suppressed by the other gate.
+    ARABIC_TEMPLATE_APPROVED.doctorFacet = true;
+    assert.equal(
+      publishedCount(),
+      STAGE_FACETS.doctorFacet + STAGE_FACETS.hospitalFacet,
+    );
+  } finally {
+    ARABIC_TEMPLATE_APPROVED.doctorFacet = doctorFlag;
+    ARABIC_TEMPLATE_APPROVED.hospitalFacet = hospitalFlag;
+  }
+});
+
 test("a facet with no matching Arabic profiles 404s rather than rendering empty", () => {
   assert.equal(localePageState("ar", "/doctors/India/Nephrology"), "missing");
-  assert.equal(localePageState("ar", "/doctors/India/Delhi-NCR/Radiation-Oncology"), "noindex");
+  assert.equal(localePageState("ar", "/doctors/India/Delhi-NCR/Radiation-Oncology"), "published");
+  // A hospital facet that reproduces its parent renders but is not indexed.
+  assert.equal(localePageState("ar", "/hospitals/India/Radiation-Oncology"), "noindex");
 });
 
 test("the live Arabic overlays stay published", () => {
@@ -153,8 +260,13 @@ test("sitemap-ar.xml and the published Arabic set agree in both directions", () 
   const listed = new Set(sitemap);
   assert.equal(sitemap.length, listed.size, "sitemap-ar.xml contains a duplicate URL");
 
+  // A published facet that names its parent as canonical is the one thing that
+  // is published and still absent on purpose; everything else must be listed.
   const published = everyArabicCandidate()
-    .filter((path) => localePathIsPublished("ar", path))
+    .filter(
+      (path) =>
+        localePathIsPublished("ar", path) && canonicalFacetPath(path, "ar") === path,
+    )
     .map((path) => (path === "/" ? "/ar" : `/ar${path}`));
 
   for (const path of published) {
@@ -166,6 +278,11 @@ test("sitemap-ar.xml and the published Arabic set agree in both directions", () 
       localePageState("ar", english),
       "published",
       `listed in sitemap-ar.xml but not published: ${path}`,
+    );
+    assert.equal(
+      canonicalFacetPath(english, "ar"),
+      english,
+      `listed in sitemap-ar.xml but canonicalised elsewhere: ${path}`,
     );
   }
   assert.equal(listed.size, published.length);
@@ -222,15 +339,48 @@ test("noindex Arabic pages stay crawlable in robots.txt", () => {
   ]);
 });
 
-test("a page that is not published in its own locale is marked noindex", () => {
-  const facet = "/doctors/India/Delhi-NCR/Radiation-Oncology";
-  const arabic = withLocaleMetadata({}, facet, "ar", LOCALES);
-  assert.deepEqual(arabic.robots, { index: false, follow: true });
+test("a page that is not published in its own locale is noindex and bare", () => {
+  // A hospital facet that returns the whole country's campuses: it renders in
+  // Arabic, but the overlap gate keeps it out of the index.
+  const facet = "/hospitals/India/Radiation-Oncology";
 
-  const russianHome = withLocaleMetadata({}, "/", "ru", LOCALES);
-  assert.deepEqual(russianHome.robots, { index: false, follow: true });
+  for (const [label, path, locale] of [
+    ["Arabic facet", facet, "ar"],
+    ["Russian home", "/", "ru"],
+    ["French home", "/", "fr"],
+    ["Swahili home", "/", "sw"],
+  ] as const) {
+    const meta = withLocaleMetadata({}, path, locale, LOCALES);
+    const alternates = meta.alternates as {
+      canonical: string;
+      languages: Record<string, string>;
+    };
+    assert.deepEqual(meta.robots, { index: false, follow: true }, label);
+    // Bare: a self-referencing canonical, and nothing else.
+    assert.equal(alternates.canonical, localizedAbsoluteUrl(path, locale), label);
+    assert.deepEqual(alternates.languages, {}, `${label} must emit no hreflang`);
+    assert.deepEqual(meta.openGraph?.alternateLocale, [], label);
+  }
 
-  // English is unaffected.
-  assert.equal(withLocaleMetadata({}, facet, "en", LOCALES).robots, undefined);
-  assert.equal(withLocaleMetadata({}, "/", "en", LOCALES).robots, undefined);
+  // English is unaffected and keeps its full block.
+  const english = withLocaleMetadata({}, facet, "en", LOCALES);
+  assert.equal(english.robots, undefined);
+  assert.deepEqual(Object.keys((english.alternates as { languages: object }).languages), [
+    "x-default",
+    "en",
+  ]);
+});
+
+test("published pages declare the other published locales as og:locale:alternate", () => {
+  const home = withLocaleMetadata({}, "/", "en", LOCALES);
+  assert.equal(home.openGraph?.locale, "en_IN");
+  assert.deepEqual(home.openGraph?.alternateLocale, ["ar"]);
+
+  const arabicHome = withLocaleMetadata({}, "/", "ar", LOCALES);
+  assert.equal(arabicHome.openGraph?.locale, "ar");
+  assert.deepEqual(arabicHome.openGraph?.alternateLocale, ["en_IN"]);
+
+  // A page published only in English has no alternates to declare.
+  const costs = withLocaleMetadata({}, "/costs/India/Radiation-Oncology", "en", LOCALES);
+  assert.deepEqual(costs.openGraph?.alternateLocale, []);
 });

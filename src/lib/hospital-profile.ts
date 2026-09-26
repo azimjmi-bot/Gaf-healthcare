@@ -5,7 +5,7 @@ import type { Treatment } from "@/lib/treatments";
 import { treatmentMatchesSpecialty } from "@/lib/treatments";
 import { SPECIALTIES, compareSpecialties } from "@/lib/taxonomy";
 
-const SPECIALTY_BLURB: Record<string, string> = {
+export const SPECIALTY_BLURB: Record<string, string> = {
   "radiation-oncology": "Radiation planned around the tumour you actually have — not a machine looking for work.",
   "surgical-oncology": "Cancer surgery when the cut is the honest next step, with reconstruction on the same list.",
   "medical-oncology": "Systemic treatment — chemo, targeted drugs, immunotherapy — named to the protocol, not the brochure.",
@@ -31,7 +31,7 @@ const SPECIALTY_BLURB: Record<string, string> = {
   nephrology: "Dialysis, biopsy and transplant medicine, shared with urology when a kidney is changing hands.",
 };
 
-const SPECIALTY_PEOPLE: Record<string, { one: string; many: string }> = {
+export const SPECIALTY_PEOPLE: Record<string, { one: string; many: string }> = {
   "radiation-oncology": { one: "radiation oncologist", many: "radiation oncologists" },
   "surgical-oncology": { one: "surgical oncologist", many: "surgical oncologists" },
   "medical-oncology": { one: "medical oncologist", many: "medical oncologists" },

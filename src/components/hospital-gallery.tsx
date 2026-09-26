@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
+import { HospitalCampusVisual, campusCaption } from "@/components/hospital-campus-visual";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -43,7 +43,11 @@ export function HospitalGalleryButton({
           <DialogTitle className="font-heading text-3xl">{hospital.name}</DialogTitle>
           <DialogDescription>{t["hp.galleryDesc"]}</DialogDescription>
         </DialogHeader>
-        <HospitalCampusVisual hospital={hospital} className="mt-2 h-48 overflow-hidden rounded-xl" />
+        <HospitalCampusVisual
+          hospital={hospital}
+          caption={campusCaption(hospital, locale)}
+          className="mt-2 h-48 overflow-hidden rounded-xl"
+        />
         <ul className="mt-4 grid gap-3 sm:grid-cols-2">
           {tiles.map((tile) => (
             <li key={tile.title} className="rounded-xl border border-border bg-secondary/40 p-4">

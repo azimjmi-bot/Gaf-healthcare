@@ -203,7 +203,7 @@ export function CmsSpecialtyPageEditor({
         {JSON_FIELDS.map(({ key, label, help }) => (
           <label key={key}>
             {label}
-            <span className="ml-2 text-xs text-muted-foreground">{help}</span>
+            <span className="ms-2 text-xs text-muted-foreground">{help}</span>
             <Textarea
               className="mt-2 font-mono text-xs"
               rows={key === "conditions" || key === "technologies" || key === "cityEditorials" ? 18 : 10}

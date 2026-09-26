@@ -303,7 +303,108 @@ export const UI_MESSAGE_FIELDS: Record<string, string> = {
   "hp.waChatIntent": "Please connect me on WhatsApp.",
   "hp.waPlanIntent": "I would like a treatment plan for this campus.",
   "dir.hospitals.indiaLede":
-    "{count} partner campuses in {place}, filed by country, city, specialty and procedure so pSEO can mount later. One card per house — JCI and NABH on the file, named faculty where listed.",
+    "{count} partner campuses in {place}, filed by country, city, specialty and procedure so you reach the right campus from whichever of those you start from. One card per house — JCI and NABH on the file, named faculty where listed.",
+  "hospital.campusIllustration": "{place} — campus illustration",
+  "a11y.home": "GAF Healthcare — home",
+  "a11y.close": "Close",
+  "a11y.breadcrumb": "Breadcrumb",
+  "a11y.hospitalSections": "On this hospital page",
+  "a11y.patientReviews": "Patient reviews",
+  "seals.label": "Accreditations",
+  "seals.jci": "JCI Accredited",
+  "seals.nabh": "NABH Accredited",
+  "seals.nabl": "NABL Accredited",
+  "footer.offices": "New York · London · Singapore",
+  "consult.name": "Full name",
+  "consult.email": "Email",
+  "consult.phone": "Phone",
+  "consult.country": "Home country",
+  "consult.treatment": "Treatment interest",
+  "consult.treatmentPlaceholder": "Select a pathway",
+  "consult.treatmentUnsure": "Not sure yet",
+  "consult.hospital": "Hospital preference",
+  "consult.hospitalPlaceholder": "Open to guidance",
+  "consult.hospitalOpen": "Open — advise me",
+  "consult.timeline": "When would you like to travel?",
+  "consult.timelinePlaceholder": "Choose a window",
+  "consult.timelineUrgent": "Within 4 weeks",
+  "consult.timelineNear": "1–3 months",
+  "consult.timelinePlan": "3–6 months",
+  "consult.timelineExplore": "Exploring only",
+  "consult.notes": "What should we know?",
+  "consult.notesPlaceholder":
+    "Prior procedures, imaging you already have, constraints on travel, companion needs…",
+  "consult.consent":
+    "I understand GAF Healthcare is not a hospital, that this is not medical advice, and that my details will be used only to prepare a confidential dossier.",
+  "consult.submit": "Request my dossier",
+  "consult.submitting": "Sending…",
+  "consult.successEyebrow": "Received",
+  "consult.successTitle": "Your dossier is in motion.",
+  "consult.successBody":
+    "A coordinator will write within one business day — usually sooner. Keep this reference for your records.",
+  "consult.successAgain": "Submit another brief",
+  "consult.error.invalidRequest": "We could not read that request. Please try again.",
+  "consult.error.name": "Please share your name.",
+  "consult.error.email": "Please share a valid email.",
+  "consult.error.phone": "Please share a phone number.",
+  "consult.error.selection": "Please choose a treatment interest and a travel window.",
+  "consult.error.consent": "Consent is required to prepare a dossier.",
+  "consult.error.submit": "We could not submit your brief. Please try again.",
+  "consult.error.unknown": "Something went wrong. Please try again.",
+
+  // Specialty hub pages. English keeps its own generators in
+  // doctor-discovery.ts and radiation-hospital-page.ts; these exist so a
+  // target locale has the same page without reaching for them.
+  "hub.doctors.eyebrow": "Doctor directory",
+  "hub.doctors.headingProcedure": "Best {role} for {procedure} in {place}",
+  "hub.doctors.headingSpecialty": "Best {role} in {place}",
+  "hub.doctors.titlePlain": "{heading}",
+  "hub.doctors.titleDoctorsHospitals": "{heading} – Doctors & Hospitals",
+  "hub.doctors.titleWithExpertise": "{heading} – Doctors, Hospitals & Expertise",
+  "hub.doctors.descProcedureCity":
+    "Review {count} listed {role} associated with {procedure} in {city}, India. Inclusion uses specialty, hospital affiliation and exact procedure relationships in the GAF catalog, not a clinical ranking.",
+  "hub.doctors.descProcedure":
+    "Review {count} listed {role} associated with {procedure} in {place}. Inclusion is based on specialty, hospital affiliation and procedure relationships in the GAF catalog, not a clinical ranking.",
+  "hub.doctors.descCity":
+    "Review {count} listed {role} in {city}, India, with hospital affiliations, procedure relationships and links to existing GAF treatment-cost guides.",
+  "hub.doctors.descSpecialty":
+    "Review {count} listed {role} in India. City and procedure counts come from the same catalog relationships used on this listing.",
+  "hub.doctors.introProcedure":
+    "{procedure} listings use exact catalog procedure relationships. The clinical explanation belongs on the treatment guide where one exists.",
+  "hub.doctors.introProcedureCount":
+    "{count} {role} currently carry this procedure relationship in {place}. That count is directory evidence, not a claim that every listed clinician takes every case.",
+  "hub.doctors.introCity": "{count} listed {role} currently appear for {city}.",
+  "hub.doctors.introCityLogistics":
+    "Confirm the treating clinician and the campus before booking travel or lodging.",
+  "hub.doctors.introCityCount":
+    "{count} {role} and {hospitals} hospitals currently match this city and specialty filter.",
+  "hub.doctors.introIndia":
+    "This is the GAF Healthcare directory of listed {role} in India, with filters for city, hospital and documented procedure relationships.",
+  "hub.doctors.introIndiaSpan":
+    "{count} catalog records currently span {cities} cities and {hospitals} hospitals. Use the {specialty} treatment guide for clinical context; this directory does not replace it.",
+  "hub.doctors.selectionNote":
+    "This directory uses professional catalog information and exact specialty and procedure relationships. It is not a medical ranking, a guarantee of availability, or a substitute for a case review by a qualified {specialty} doctor.",
+
+  "hub.hospitals.eyebrow": "Hospital directory",
+  "hub.hospitals.heading": "Best hospitals for {subject} in {place}",
+  "hub.hospitals.titleProcedureCity": "Hospitals for {procedure} in {city}, India – Doctors & Cost",
+  "hub.hospitals.titleProcedure":
+    "Hospitals for {procedure} in India – Doctors, Treatment & Cost",
+  "hub.hospitals.titleCity": "{specialty} hospitals in {city}, India – Doctors & Procedures",
+  "hub.hospitals.titleSpecialty":
+    "{specialty} hospitals in India – Doctors, Procedures & Facilities",
+  "hub.hospitals.descProcedure":
+    "Review {hospitals} validated hospitals and {doctors} associated {role} for {procedure} in {place}. A relationship requires the hospital record and the doctor procedure record to agree.",
+  "hub.hospitals.descSpecialty":
+    "Review {hospitals} validated {specialty} hospitals, {doctors} affiliated {role} and {procedures} mapped procedures in {place}.",
+  "hub.hospitals.introProcedure":
+    "A campus is listed for {procedure} only where the house record and the doctor record both carry it. Neither one alone puts a hospital on this page.",
+  "hub.hospitals.introCount":
+    "{hospitals} campuses and {doctors} {role} currently match in {place}.",
+  "hub.hospitals.introSpecialty":
+    "These are the partner campuses whose {specialty} department the GAF catalog can evidence, with the affiliated doctors and the procedures each house can quote.",
+  "hub.hospitals.selectionNote":
+    "Listing follows accreditation and recorded department relationships. It is not a ranking of care quality, and the treating consultant is confirmed after records review rather than at booking.",
 };
 
 export function interpolate(template: string, vars: Record<string, string | number>) {

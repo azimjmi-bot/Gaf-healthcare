@@ -238,7 +238,7 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
                 rel="noreferrer"
                 className="treatment-profile__primary"
               >
-                {ui.coordinator} <ArrowRight className="size-4" />
+                {ui.coordinator} <ArrowRight className="size-4 icon-forward" />
               </a>
             </div>
             {heroFactCount >= 2 ? (
@@ -340,7 +340,7 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
                 target="_blank"
                 rel="noreferrer"
               >
-                {ui.coordinator} <ArrowRight className="size-4" />
+                {ui.coordinator} <ArrowRight className="size-4 icon-forward" />
               </a>
             </aside>
           ) : null}
@@ -413,7 +413,7 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
                   <h3>{cost.name}</h3>
                   <p>{cost.summary}</p>
                   <Link href={costPath(cost.name)}>
-                    {ui.viewCost} <ArrowRight className="size-4" />
+                    {ui.viewCost} <ArrowRight className="size-4 icon-forward" />
                   </Link>
                 </article>
               ))}
@@ -451,7 +451,7 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
               {related.map((row) => (
                 <Link key={row.slug} href={`/treatments/${row.slug}`}>
                   <span>{row.translations[locale]!.name}</span>
-                  <ArrowRight className="size-4" />
+                  <ArrowRight className="size-4 icon-forward" />
                 </Link>
               ))}
             </div>

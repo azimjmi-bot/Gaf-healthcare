@@ -1,0 +1,132 @@
+import type { TranslationFields } from "@/lib/i18n/catalogs/types";
+
+/**
+ * Swahili UI strings, keyed to UI_MESSAGE_FIELDS.
+ *
+ * Partial. The locale is not published, so missing keys resolve to an
+ * empty string rather than English — see uiCatalogFor.
+ */
+export const UI: TranslationFields = {
+
+  "nav.destinations": "Maeneo",
+  "nav.specialties": "Taaluma",
+  "nav.doctors": "Madaktari",
+  "nav.hospitals": "Hospitali",
+  "nav.treatments": "Matibabu",
+  "nav.costs": "Gharama ya matibabu",
+  "nav.blogs": "Blogu",
+  "nav.consult": "Omba ushauri",
+  "nav.consultShort": "Ushauri",
+  "nav.menu": "Fungua menyu",
+  "nav.dossier": "Omba faili",
+  "footer.explore": "Chunguza",
+  "footer.note": "Kumbuka",
+  "footer.tagline":
+    "Warsha ya faragha ya usafiri wa matibabu kwa wagonjwa wanaotaka hospitali zilizoidhinishwa, madaktari waliotajwa majina, na mratibu anayebaki kwenye mstari baada ya kufika.",
+  "footer.disclaimer":
+    "GAF Healthcare si hospitali na haitoi ushauri wa kimatibabu. Viwango vya gharama ni vya mwongozo. Maamuzi ya kimatibabu ni yako na daktari aliyeidhinishwa unayemchagua.",
+  "footer.rights": "Haki zote zimehifadhiwa.",
+  "footer.youtube": "YouTube",
+  "footer.reviews": "Tathmini za Google",
+  "cta.eyebrow": "Anza",
+  "cta.title": "Omba faili ya faragha. Bila wajibu, bila kliniki ya umati.",
+  "cta.button": "Zungumza na mratibu",
+  "filter.destinations": "Maeneo yote",
+  "filter.cities": "Miji yote",
+  "filter.specialities": "Umaalumu wote",
+  "filter.procedures": "Taratibu zote",
+  "filter.matching": "zinafaa vichujio vyako",
+  "pager.previous": "Iliyotangulia",
+  "pager.next": "Ifuatayo",
+  "pager.pageOf": "Ukurasa {current} kati ya {total}",
+  "lang.label": "Lugha",
+  "home.heroEyebrow": "Huduma ya kimataifa · bila mipaka",
+  "home.heroTitle": "Huduma ya kuaminika kuvuka mipaka",
+  "home.heroLede":
+    "Linganisha madaktari, hospitali na gharama za matibabu zilizoorodheshwa katika maeneo yetu. Panga safari yako ya matibabu na mshauri aliyepewa jina kabla ya kusafiri.",
+  "home.trust1": "Mwongozo wa kibinafsi",
+  "home.trust2": "Ufikiaji wa hospitali zilizoorodheshwa",
+  "home.trust3": "Viwango vya kupanga vilivyo wazi",
+  "home.trust4": "Msaada katika kila hatua",
+  "home.destinationsEyebrow": "Maeneo",
+  "home.destinationsTitle": "Maeneo makuu",
+  "home.viewAll": "Tazama yote",
+  "home.doctorsEyebrow": "Madaktari",
+  "home.doctorsTitle": "Madaktari wetu",
+  "home.viewDoctors": "Madaktari wote",
+  "home.hospitalsEyebrow": "Hospitali",
+  "home.hospitalsTitle": "Hospitali tunazoshirikiana nazo",
+  "home.viewHospitals": "Hospitali zote",
+  "home.costsEyebrow": "Gharama za matibabu",
+  "home.costsTitle": "Panga huduma yako kwa ujasiri",
+  "home.costsLede": "Viwango vya mwongozo vya India kutoka karatasi za gharama — si nukuu za hospitali.",
+  "home.viewCosts": "Karatasi zote za gharama",
+  "home.typicalPackage": "kifurushi cha kawaida",
+  "home.storiesEyebrow": "Hadithi za wagonjwa",
+  "home.storiesTitle": "Watu. Safari halisi.",
+  "home.moreYoutube": "Zaidi kwenye YouTube",
+  "home.deskEyebrow": "Dawati",
+  "home.deskTitle": "Makala na miongozo ya hivi karibuni",
+  "home.viewBlogs": "Blogu zote",
+  "home.reviewsEyebrow": "Tathmini za Google",
+  "home.reviewsTitle": "Wagonjwa wetu wanasema nini",
+  "home.readGoogle": "Soma kwenye Google",
+  "home.reviewsSummary": "{rating} kutoka tathmini {count} kwenye orodha ya Google ya GAF Healthcare Pvt Ltd.",
+  "home.finaleTitle": "Safari yako ya afya inaanza hapa",
+  "home.finaleLede": "Tuma rekodi zako. Pokea chaguzi za madaktari na hospitali zenye makadirio ya mwongozo.",
+  "home.finaleButton": "Omba faili",
+  "home.searchDestination": "Eneo",
+  "home.searchSpecialty": "Umaalumu",
+  "home.searchProcedure": "Taratibu",
+  "home.searchGo": "Huduma ya hali ya juu kwa bonyeza moja",
+  "home.searchGoShort": "Tafuta wataalamu",
+  "blogs.empty": "Bado hakuna maelezo yaliyochapishwa.",
+  "blogs.all": "Blogu zote",
+  "consult.eyebrow": "Usajili",
+  "consult.title": "Dakika kumi na mbili. Kisha sisi tunasoma kwa kina.",
+  "consult.lede":
+    "Shiriki unachoweza. Picha na rekodi zinaweza kufuata. Mratibu hujibu ndani ya siku moja ya kazi na hatua zinazofuata — au hapana ya uaminifu.",
+  "consult.next": "Kinachofuata",
+  "consult.step1": "01 — Tunathibitisha tunaweza kusaidia, au tunasema hatuwezi.",
+  "consult.step2": "02 — Unapokea chaguzi mbili au tatu zilizolinganishwa na gharama kamili.",
+  "consult.step3": "03 — Ushauri wa video na daktari wa upasuaji. Hakuna kiweko kabla ya simu hiyo.",
+  "consult.speak": "Unapendelea kuzungumza kwanza?",
+  "notFound.title": "Ukurasa huu hauko kwenye ratiba.",
+  "notFound.body": "GAF Healthcare ina sehemu nne: madaktari, hospitali, gharama ya matibabu, na blogu.",
+  "seo.homeTitle": "Huduma ya kuaminika kuvuka mipaka | GAF Healthcare",
+  "seo.homeDescription":
+    "Madaktari, hospitali na gharama za matibabu za mwongozo katika maeneo ya GAF Healthcare. Panga safari yako na mshauri aliyepewa jina kabla ya kusafiri.",
+  "seo.blogsTitle": "Blogu",
+  "seo.consultTitle": "Omba faili",
+};
+
+/**
+ * Home-page rows that are data rather than chrome: destination cards and video
+ * titles. Kept separate so the main catalog stays comparable to the English
+ * message list key for key.
+ */
+export const HOME_EXTRA: TranslationFields = {
+
+  "dest.0.name": "India",
+  "dest.0.blurb": "Delhi NCR, Mumbai, Bengaluru, Chennai na Hyderabad",
+  "dest.0.imageAlt": "Taj Mahal, India",
+  "dest.1.name": "Uturuki",
+  "dest.1.blurb": "Istanbul",
+  "dest.1.imageAlt": "Mandhari ya Istanbul, Uturuki",
+  "dest.2.name": "Uthai",
+  "dest.2.blurb": "Bangkok",
+  "dest.2.imageAlt": "Hekalu mjini Bangkok, Uthai",
+  "dest.3.name": "UAE",
+  "dest.3.blurb": "Dubai",
+  "dest.3.imageAlt": "Mandhari ya Dubai, Falme za Kiarabu",
+  "dest.4.name": "Singapore",
+  "dest.4.blurb": "Singapore",
+  "dest.4.imageAlt": "Marina Bay, Singapore",
+  "dest.5.name": "Korea Kusini",
+  "dest.5.blurb": "Seoul",
+  "dest.5.imageAlt": "Seoul, Korea Kusini",
+  "video.0.title": "Shukrani ya babu: upasuaji wa valvu ya kuzaliwa wa Raghd kwenye Fortis, India",
+  "video.1.title": "Moyo umepona, tumaini limerudi | Upasuaji wa kuokoa maisha wa Ibrahim",
+  "video.2.title": "Safari ya familia ya Iraqi: upasuaji wa moyo wa mtoto Ibrahim nchini India",
+  "video.3.title": "Uzoefu unaobadilisha maisha | Ushuhuda wa mgonjwa",
+};

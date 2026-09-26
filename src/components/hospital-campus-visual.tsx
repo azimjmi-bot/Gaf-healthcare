@@ -1,3 +1,7 @@
+import type { AppLocale } from "@/lib/i18n/languages";
+import { interpolate } from "@/lib/i18n/messages";
+import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
+import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 import type { Hospital } from "@/lib/hospitals";
 import { isEyeCampus } from "@/lib/hospital-profile";
 
@@ -34,12 +38,34 @@ const CITY_TONE: Record<string, { sky: string; building: string; glass: string; 
   },
 };
 
+/**
+ * The caption for a campus placeholder, in the reader's language.
+ *
+ * Lives beside the component rather than at each call site so the six places
+ * that draw a placeholder cannot drift apart.
+ */
+export function campusCaption(hospital: Hospital, locale: AppLocale) {
+  const t = uiCatalogFor(locale);
+  const place = interpolate(t["dir.placeCity"], {
+    city: taxonomyLabel(hospital.city, locale),
+    country: taxonomyLabel(hospital.country, locale),
+  });
+  return interpolate(t["hospital.campusIllustration"], { place });
+}
+
 export function HospitalCampusVisual({
   hospital,
   className,
+  caption,
 }: {
   hospital: Hospital;
   className?: string;
+  /**
+   * The watermark drawn into the placeholder, naming the campus and saying
+   * plainly that this is a drawing rather than a photograph. Passed in because
+   * one caller is a client component, so this cannot read the request locale.
+   */
+  caption?: string;
 }) {
   if (hospital.image) {
     return (
@@ -54,8 +80,9 @@ export function HospitalCampusVisual({
   const eye = isEyeCampus(hospital);
   return (
     <div className={className} aria-hidden="true">
-      <svg viewBox="0 0 640 480" className="h-full w-full" role="img">
-        <title>{`Illustrated campus for ${hospital.name}`}</title>
+      {/* No role or <title>: the wrapper is aria-hidden, so the title was
+          unreachable English text that would still have shipped on /ar pages. */}
+      <svg viewBox="0 0 640 480" className="h-full w-full">
         <defs>
           <linearGradient id={`sky-${hospital.slug}`} x1="0" y1="0" x2="0" y2="1">
             <stop offset="0%" stopColor={tone.sky} />
@@ -86,7 +113,7 @@ export function HospitalCampusVisual({
           <rect x="310" y="70" width="50" height="18" fill={tone.accent} />
         )}
         <text x="48" y="430" fill={tone.building} fontSize="16" fontFamily="ui-sans-serif, system-ui">
-          {hospital.city}, India — campus illustration
+          {caption ?? `${hospital.city}, ${hospital.country} — campus illustration`}
         </text>
       </svg>
     </div>

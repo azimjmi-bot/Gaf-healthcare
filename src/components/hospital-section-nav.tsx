@@ -1,10 +1,12 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useT } from "@/components/locale-provider";
 
 export type HospitalNavItem = { id: string; label: string };
 
 export function HospitalSectionNav({ items }: { items: HospitalNavItem[] }) {
+  const t = useT();
   const [active, setActive] = useState(items[0]?.id ?? "");
 
   useEffect(() => {
@@ -27,7 +29,7 @@ export function HospitalSectionNav({ items }: { items: HospitalNavItem[] }) {
   }, [items]);
 
   return (
-    <nav className="hp-nav" aria-label="On this hospital page">
+    <nav className="hp-nav" aria-label={t("a11y.hospitalSections")}>
       <div className="hp-nav__inner">
         {items.map((item) => (
           <a

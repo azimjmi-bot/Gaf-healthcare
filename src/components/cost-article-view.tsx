@@ -218,7 +218,7 @@ export function CostArticleView({
           <H3>What moves the quote in {city}</H3>
           <dl className="mt-6 space-y-5">
             {cityPage.factors.map((item) => (
-              <div key={item.label} className="border-l-2 border-border pl-4">
+              <div key={item.label} className="border-s-2 border-border ps-4">
                 <dt className="font-medium">{item.label}</dt>
                 <dd className="mt-1 text-[1.05rem] leading-relaxed text-muted-foreground">{item.detail}</dd>
               </div>
@@ -288,7 +288,7 @@ export function CostArticleView({
           </P>
           <dl className="mt-6 space-y-5">
             {article.costComponents.map((item) => (
-              <div key={item.label} className="border-l-2 border-border pl-4">
+              <div key={item.label} className="border-s-2 border-border ps-4">
                 <dt className="font-medium">{item.label}</dt>
                 <dd className="mt-1 text-[1.05rem] leading-relaxed text-muted-foreground">{item.detail}</dd>
               </div>
@@ -666,7 +666,7 @@ export function CostArticleView({
       <Accordion type="single" collapsible className="mt-6">
         {cityRows.map((row) => (
           <AccordionItem key={row.citySlug} value={row.citySlug} id={`city-${row.citySlug}`}>
-            <AccordionTrigger className="text-left font-heading text-xl md:text-2xl">
+            <AccordionTrigger className="text-start font-heading text-xl md:text-2xl">
               {article.procedure} cost in {row.city}
             </AccordionTrigger>
             <AccordionContent className="text-[1.05rem] leading-relaxed text-muted-foreground">
@@ -696,7 +696,7 @@ export function CostArticleView({
           ))}
           <dl className="mt-6 space-y-5">
             {article.fullPathway.stages.map((item) => (
-              <div key={item.label} className="border-l-2 border-border pl-4">
+              <div key={item.label} className="border-s-2 border-border ps-4">
                 <dt className="font-medium">{item.label}</dt>
                 <dd className="mt-1 text-[1.05rem] leading-relaxed text-muted-foreground">{item.detail}</dd>
               </div>
@@ -898,7 +898,7 @@ export function CostArticleView({
       <H3>Main variations</H3>
       <dl className="mt-6 space-y-5">
         {article.overview.variations.map((item) => (
-          <div key={item.label} className="border-l-2 border-border pl-4">
+          <div key={item.label} className="border-s-2 border-border ps-4">
             <dt className="font-medium">{item.label}</dt>
             <dd className="mt-1 text-[1.05rem] leading-relaxed text-muted-foreground">{item.detail}</dd>
           </div>

@@ -14,8 +14,9 @@ export function DoctorClinicianVisual({
 
   return (
     <div className={className} aria-hidden="true">
-      <svg viewBox="0 0 420 520" className="h-full w-full" role="img">
-        <title>Illustrated clinician mark for {name}</title>
+      {/* No role or <title>: the wrapper is aria-hidden, so the title was
+          unreachable English text that would still have shipped on /ar pages. */}
+      <svg viewBox="0 0 420 520" className="h-full w-full">
         <defs>
           <linearGradient id={`${gid}-bg`} x1="0" y1="0" x2="1" y2="1">
             <stop offset="0%" stopColor="#e8f1f6" />

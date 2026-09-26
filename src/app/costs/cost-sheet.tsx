@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button";
 import { CtaBand } from "@/components/page-shell";
 import { PseoEstimateCta, PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
 import { PseoTrust } from "@/components/pseo-trust";
+import { crawlableUrl, entityId } from "@/lib/jsonld";
 import { JsonLd } from "@/components/json-ld";
 import { CostArticleSection, costArticleFor, hasCostArticle } from "@/components/cost-article-section";
 import { cityResultCounts } from "@/lib/catalog";
@@ -89,7 +90,7 @@ export async function CostSheet({ slug }: { slug: string }) {
             locale,
           )}
         />
-        <JsonLd data={faqJsonLd(article.faqs)} />
+        <JsonLd data={faqJsonLd(article.faqs, { path: canonicalPath, locale })} />
         {facultyForSchema.length > 0 ? (
           <JsonLd
             data={doctorItemListJsonLd(facultyForSchema, {
@@ -176,11 +177,11 @@ export async function CostSheet({ slug }: { slug: string }) {
         data={{
           "@context": "https://schema.org",
           "@type": "MedicalProcedure",
+          "@id": entityId(costPath(t.name), "procedure"),
           name: t.name,
           procedureType: t.category,
-          url: `https://gaf.healthcare${locale === "en" ? "" : `/${locale}`}${costPath(t.name)}`,
+          url: crawlableUrl(costPath(t.name), locale),
           description: t.summary,
-          inLanguage: locale,
         }}
       />
       <JsonLd

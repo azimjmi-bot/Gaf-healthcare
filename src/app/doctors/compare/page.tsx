@@ -58,7 +58,7 @@ export default async function DoctorComparePage({
           <div className="overflow-x-auto rounded-2xl border border-border bg-white">
             <table className="min-w-[720px] w-full text-sm">
               <thead>
-                <tr className="border-b border-border text-left">
+                <tr className="border-b border-border text-start">
                   <th className="px-4 py-3 font-medium text-muted-foreground">Field</th>
                   {doctors.map((doctor) => (
                     <th key={doctor.slug} className="px-4 py-3 font-heading text-xl">
@@ -85,7 +85,7 @@ export default async function DoctorComparePage({
                   ["Languages", doctors.map((doctor) => doctor.languages || "—")],
                 ].map(([label, values]) => (
                   <tr key={String(label)} className="border-t border-border align-top">
-                    <th className="px-4 py-3 text-left font-medium text-muted-foreground">{label}</th>
+                    <th className="px-4 py-3 text-start font-medium text-muted-foreground">{label}</th>
                     {(values as string[]).map((value, index) => (
                       <td key={`${label}-${doctors[index]?.slug}`} className="px-4 py-3 text-muted-foreground">
                         {value}

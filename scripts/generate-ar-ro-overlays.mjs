@@ -6,6 +6,19 @@
 import { readFileSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import { fileURLToPath } from "url";
+import {
+  AFFILIATION_RULES,
+  AIRPORT,
+  AWARD_RULES,
+  CITY_AR,
+  EDUCATION_RULES,
+  LANG_CITY,
+  NAMES,
+  ORG,
+  PHRASE,
+  ROLE_WORDS,
+  TITLE_RULES,
+} from "./ar-overlay-tables.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const catalog = JSON.parse(readFileSync(join(root, "src/data/ginger-catalog.json"), "utf8"));
@@ -42,189 +55,6 @@ const FEMALE = new Set([
   "dr-y-nalini",
 ]);
 
-const NAMES = {
-  "Dr. Anil Kumar Anand": "د. أنيل كومار أناند",
-  "Dr. Anitha Gopinath": "د. أنيثا غوبيناث",
-  "Dr. Anusheel Munshi": "د. أنوشيل منشي",
-  "Dr. Ashwin M Shah": "د. أشوين م. شاه",
-  "Dr. B. Ramakrishna Prasad": "د. ب. راماكريشنا براساد",
-  "Dr. Christopher John": "د. كريستوفر جون",
-  "Dr. D. Shiva Prasad": "د. دي. شيفا براساد",
-  "Dr. Debnarayan Dutta": "د. دبنارايان دوتا",
-  "Dr. Dipali Bhorikar Borade": "د. ديبالي بهوريكار بوراد",
-  "Dr. Dodul Mondal": "د. دودول موندال",
-  "Dr. G K Jadhav": "د. جي. كيه. جادهاف",
-  "Dr. K. R. Prasanna Kumar": "د. ك. ر. براسانا كومار",
-  "Dr. Kalyani Premchandra": "د. كالياني بريمشاندرا",
-  "Dr. Kushal Narang": "د. كوشال نارانغ",
-  "Dr. M Vinay Ural": "د. م. فيناي أورال",
-  "Dr. M. Janarthinakani": "د. م. جانارثيناكاني",
-  "Dr. M. Suneetha": "د. م. سونيثا",
-  "Dr. Mathangi J": "د. ماثانغي جيه",
-  "Dr. Natarajan V": "د. ناتاراجان في",
-  "Dr. P. Vijay Anand Reddy": "د. ب. فيجاي أناند ريدي",
-  "Dr. Prashant Upadhyay": "د. براشانت أوبادهياي",
-  "Dr. Rajeev G": "د. راجيف جي",
-  "Dr. Rakesh Jalali": "د. راكيش جلالي",
-  "Dr. Ranjeet Bajpai": "د. رانغيت باجباي",
-  "Dr. S. Usha": "د. س. أوشا",
-  "Dr. Sandeep De": "د. سانديب دي",
-  "Dr. Sapna Nangia": "د. سابنا نانغيا",
-  "Dr. Satyesh Nadella": "د. ساتيش ناديلا",
-  "Dr. Shilpareddy Keesara": "د. شيلباريدي كيسارا",
-  "Dr. Sravanthi Reddy T": "د. سرافانتي ريدي تي",
-  "Dr. Sri Sai Tejaswini Muddana": "د. سري ساي تجاسويني مودانا",
-  "Dr. Sridhar P S": "د. سريدار بي. إس",
-  "Dr. Srinivas Chilukuri": "د. سرينيفاس تشيلوكوري",
-  "Dr. Subodh Chandra Pande": "د. سوبوده تشاندرا باندي",
-  "Dr. Susovan Banerjee": "د. سوسوفان بانيرجي",
-  "Dr. Tejinder Kataria": "د. تجيندر كاتاريا",
-  "Dr. V. Balasundaram": "د. ف. بالاسوندارام",
-  "Dr. Vijay Bhasker L": "د. فيجاي بهاسكر إل",
-  "Dr. Aditi Aggarwal": "د. أديتي أغاروال",
-  "Dr. Amal Roy Chaudhoory": "د. أمل روي تشودوري",
-  "Dr. Anbarasi Kumaresan": "د. أنباراسي كوماريسان",
-  "Dr. Anita Malik": "د. أنيتا مالك",
-  "Dr. Azmi Saundarya K": "د. عزمي سونداريا كيه",
-  "Dr. Bharath Chandra Gurram": "د. بهارات تشاندرا غورام",
-  "Dr. Charu Garg": "د. تشارو غارغ",
-  "Dr. Deepak Gupta": "د. ديباك غوبتا",
-  "Dr. Devashish Tripathi": "د. ديفاشيش تريباثي",
-  "Dr. Divya Gupta": "د. ديفيا غوبتا",
-  "Dr. Garima Singh": "د. غاريما سينغ",
-  "Dr. Gowhar Ahmad Shigan": "د. غوهر أحمد شيغان",
-  "Dr. Indu Bansal Aggarwal": "د. إندو بانسال أغاروال",
-  "Dr. K. Kiran Kumar": "د. ك. كيران كومار",
-  "Dr. Kamal Verma": "د. كمال فيرما",
-  "Dr. Khushboo Rastogi": "د. خوشبو راستوغي",
-  "Dr. M. R. Vishwateja": "د. م. ر. فيشواتيجا",
-  "Dr. Mayur Mayank": "د. مايور مايانك",
-  "Dr. Naman Utreja": "د. نامان أوتريجا",
-  "Dr. Neha Kakkar": "د. نيها كاكار",
-  "Dr. Neha Sehgal": "د. نيها سيغال",
-  "Dr. Pradeep Kumar Karumanchi": "د. براديب كومار كارومانشي",
-  "Dr. Prahlad Yathiraj": "د. براهلاد ياتيراي",
-  "Dr. S Jayalakshmi": "د. س. جايالاكشمي",
-  "Dr. S. Alex Antony Prasad": "د. س. أليكس أنتوني براساد",
-  "Dr. Sandeep Goel": "د. سانديب غويل",
-  "Dr. Sapna Manocha Verma": "د. سابنا مانوتشا فيرما",
-  "Dr. Shyam Singh Bisht": "د. شيام سينغ بيشت",
-  "Dr. Swarupa Mitra": "د. سواروبا ميترا",
-  "Dr. Vineet Nakra": "د. فينيت ناكرا",
-  "Dr. Vineeta Goel": "د. فينيتا غويل",
-  "Dr. Y. Nalini": "د. ي. ناليني",
-};
-
-const CITY_AR = {
-  "Delhi NCR": "دلهي إن سي آر",
-  Mumbai: "مومباي",
-  Bengaluru: "بنغالور",
-  Chennai: "تشيناي",
-  Hyderabad: "حيدر آباد",
-};
-
-const AIRPORT = {
-  "Delhi NCR": "مطار إنديرا غاندي",
-  Mumbai: "مطار شاتراباتي شيفاجي مهراج",
-  Bengaluru: "مطار كيمبيغودا",
-  Chennai: "مطار تشيناي الدولي",
-  Hyderabad: "مطار راجيف غاندي الدولي",
-};
-
-const LANG_CITY = {
-  Mumbai: "الإنجليزية، الهندية، الماراثية",
-  Bengaluru: "الإنجليزية، الكانادية، الهندية",
-  Chennai: "الإنجليزية، التاميلية، الهندية",
-  Hyderabad: "الإنجليزية، التيلوغو، الهندية",
-  "Delhi NCR": "الإنجليزية، الهندية",
-};
-
-const PHRASE = {
-  Brachytherapy: "المعالجة الكثبية",
-  "GI (Gastrointestinal) Radiation Oncology": "علاج أورام الجهاز الهضمي بالإشعاع",
-  "Gynaecological Oncology": "أورام النساء",
-  "Head and Neck Oncology": "أورام الرأس والعنق",
-  "Image-Guided Radiation Therapy (IMRT)": "العلاج الإشعاعي معدل الشدة الموجّه بالصور",
-  "Medical Oncology": "علاج الأورام الطبي",
-  "Medical Oncology (multidisciplinary cancer care)": "علاج الأورام الطبي ضمن فريق متعدد التخصصات",
-  "Medical Oncology (supportive role in multidisciplinary cancer care)":
-    "دور داعم في علاج الأورام الطبي ضمن الفريق المتعدد التخصصات",
-  "Medical Oncology (supportive/concurrent treatment protocols)":
-    "بروتوكولات داعمة أو متزامنة مع علاج الأورام الطبي",
-  "Neuro-Oncology (Radiation)": "أورام الجهاز العصبي — مسار إشعاعي",
-  "Paediatric Oncology (Radiation)": "أورام الأطفال — مسار إشعاعي",
-  "Radiation Oncology": "علاج الأورام بالإشعاع",
-  "Radiation Therapy for Cancer": "العلاج الإشعاعي للأورام",
-  "Stereotactic Body Radiation Therapy (SBRT)": "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
-  "Stereotactic Radiosurgery (SRS)": "الجراحة الإشعاعية التجسيمية (SRS)",
-  "Surgical Oncology (Head & Neck, Breast, GI, Thoracic)":
-    "جراحة الأورام بالتنسيق (رأس وعنق، ثدي، جهاز هضمي، صدر)",
-  "Surgical Oncology (collaborative cancer programme involvement)":
-    "مشاركة في برنامج جراحة الأورام التعاوني",
-  "3D Conformal Radiotherapy": "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
-  "Adjuvant Chemotherapy": "العلاج الكيميائي المساعد",
-  "Advanced Radiation Therapy Techniques- 3D Conformal Radiotherapy":
-    "تقنيات الإشعاع المتقدمة — العلاج الإشعاعي المطابق ثلاثي الأبعاد",
-  "Advanced Radiation Therapy Techniques- Stereotactic Body Radiation Therapy (SBRT)":
-    "تقنيات الإشعاع المتقدمة — العلاج الإشعاعي التجسيمي للجسم",
-  "Based on Dr. Muddana's specialization in Radiation Oncology, her clinical focus encompasses various aspects of radiation therapy, including advanced techniques that minimize side effects while maximizing treatment efficacy:":
-    "مسارها السريري يركّز على تخطيط الجرعة بحيث ينحصر الإشعاع في الهدف ويتراجع العبء على الأنسجة المجاورة:",
-  "Brain Tumor Surgery (Radiation Oncology support)": "دعم إشعاعي لجراحة أورام الدماغ",
-  "Breast Cancer Surgery": "جراحة سرطان الثدي — التنسيق الإشعاعي",
-  "Cancer Immunotherapy": "العلاج المناعي للسرطان",
-  "Cervical Cancer Surgery": "جراحة سرطان عنق الرحم — التنسيق الإشعاعي",
-  "Cervical Cancer Surgery (radiation management aspect)": "إدارة الإشعاع بعد جراحة سرطان عنق الرحم",
-  "Chemotherapy for Cancer": "العلاج الكيميائي للأورام",
-  "Chemotherapy for Cancer (concurrent chemoradiation protocols)": "بروتوكولات الكيميائي المتزامن مع الإشعاع",
-  "Chemotherapy for Solid Tumors": "العلاج الكيميائي للأورام الصلبة",
-  "CyberKnife Radiosurger": "الجراحة الإشعاعية بسايبر نايف",
-  "CyberKnife Radiosurgery": "الجراحة الإشعاعية بسايبر نايف",
-  "Endometrial Cancer Surgery": "جراحة سرطان بطانة الرحم — التنسيق الإشعاعي",
-  "External Beam Radiotherapy": "العلاج الإشعاعي الخارجي",
-  "Gamma Knife Radiosurgery": "الجراحة الإشعاعية بغاما نايف",
-  "Head & Neck Tumor Surgery": "جراحة أورام الرأس والعنق — التنسيق الإشعاعي",
-  "Hormone Therapy for Breast Cancer": "العلاج الهرموني لسرطان الثدي",
-  "Hormone Therapy for Gynecologic Cancers": "العلاج الهرموني لأورام النساء",
-  "Hormone-Based Therapies- Hormonal Therapy for Gynaecologic Cancers": "علاجات هرمونية لأورام النساء",
-  "Hypopharyngeal Cancer Surgery (radiation management aspect)": "إدارة الإشعاع لأورام البلعوم السفلي",
-  "Image-Guided Radiation Therapy": "العلاج الإشعاعي الموجّه بالصور",
-  "Image-Guided Radiation Therapy (IGRT)": "العلاج الإشعاعي الموجّه بالصور (IGRT)",
-  "Immunotherapy for Solid Tumors": "العلاج المناعي للأورام الصلبة",
-  "Intensity-Modulated Radiation Therapy": "العلاج الإشعاعي معدل الشدة (IMRT)",
-  "Intensity-Modulated Radiation Therapy (IMRT)": "العلاج الإشعاعي معدل الشدة (IMRT)",
-  "Interstitial Brachytherapy": "المعالجة الكثبية الخلالية",
-  "Intracavitary Brachytherapy": "المعالجة الكثبية داخل التجويف",
-  "Intraoperative Radiation Therapy (IORT)": "العلاج الإشعاعي أثناء الجراحة",
-  "Lung Cancer Surgery": "جراحة سرطان الرئة — التنسيق الإشعاعي",
-  "Medical Oncology Treatments- Chemotherapy for Cancer": "مسارات علاج الأورام الطبي — الكيميائي",
-  "Neoadjuvant Chemotherapy": "العلاج الكيميائي قبل الجراحة",
-  "Ovarian Cancer Surgery": "جراحة سرطان المبيض — التنسيق الإشعاعي",
-  "Palliative Chemotherapy": "العلاج الكيميائي التلطيفي",
-  "Plaque Brachytherapy": "المعالجة الكثبية باللوحة",
-  "Proton Beam Therapy": "العلاج بشعاع البروتون",
-  "Radiation Therapy Procedures- Radiation Therapy for Cancer": "إجراءات العلاج الإشعاعي للأورام",
-  "Retinoblastoma Treatment": "علاج الورم الأرومي الشبكي",
-  "Specialized Radiosurgery- CyberKnife Radiosurgery": "جراحة إشعاعية متخصصة — سايبر نايف",
-  "Stereotactic Body Radiation Therapy": "العلاج الإشعاعي التجسيمي للجسم",
-  "Stereotactic Procedures- Stereotactic Body Radiation Therapy (SBRT)":
-    "إجراءات تجسيمية — العلاج الإشعاعي التجسيمي للجسم",
-  "Targeted Therapy for Cancer": "العلاج الموجّه للسرطان",
-  "Total Body Irradiation (TBI)": "إشعاع الجسم الكامل",
-};
-
-const ORG = {
-  "Association of Radiation Oncologists of India": "رابطة أطباء الأورام بالإشعاع في الهند (AROI)",
-  AROI: "AROI",
-  "Indian Medical Association": "الجمعية الطبية الهندية (IMA)",
-  IMA: "IMA",
-  "American Society for Radiation Oncology": "الجمعية الأمريكية لعلاج الأورام بالإشعاع (ASTRO)",
-  "American Society of Radiation Oncology": "الجمعية الأمريكية لعلاج الأورام بالإشعاع (ASTRO)",
-  ASTRO: "ASTRO",
-  "Indian Society of Oncology": "الجمعية الهندية للأورام",
-  "European Society for Radiotherapy and Oncology": "الجمعية الأوروبية للعلاج الإشعاعي والأورام (ESTRO)",
-  ESTRO: "ESTRO",
-};
-
 function phrase(value) {
   if (!value) return value;
   if (PHRASE[value]) return PHRASE[value];
@@ -245,54 +75,20 @@ function yearsOf(experience) {
 }
 
 function arTitle(raw, female) {
+  // Only the specialty suffix the catalog appends is dropped up front. Stripping
+  // every "Radiation Oncology" first — as this used to — meant that no rule
+  // naming the specialty could ever match, and "Consultant, Radiation Oncology"
+  // fell through to "Consultant" untranslated. Fourteen profiles shipped that
+  // way. The remaining occurrences are translated after the rules have run.
   let t = String(raw || "")
-    .replace(/,?\s*Radiation Oncology$/i, "")
-    .replace(/\s*Radiation Oncology/gi, "")
+    .replace(/,?\s*Radiation Oncology\s*$/i, "")
     .replace(/\s+/g, " ")
     .replace(/[–—]/g, "-")
     .trim();
 
-  const rules = [
-    [/Principal Director and Head of Department of/i, female ? "المديرة الرئيسية ورئيسة قسم" : "المدير الرئيسي ورئيس قسم"],
-    [/Principal Director & HOD -/i, female ? "المديرة الرئيسية ورئيسة قسم" : "المدير الرئيسي ورئيس قسم"],
-    [/Principal Director of/i, female ? "المديرة الرئيسية لـ" : "المدير الرئيسي لـ"],
-    [/Group Director and Head of Department/i, female ? "مديرة المجموعة ورئيسة القسم" : "مدير المجموعة ورئيس القسم"],
-    [/Senior Director and Head of Department/i, female ? "المديرة الأولى ورئيسة القسم" : "المدير الأول ورئيس القسم"],
-    [/Senior Director & HOD of/i, female ? "المديرة الأولى ورئيسة قسم" : "المدير الأول ورئيس قسم"],
-    [/Senior Director/i, female ? "مديرة أولى" : "مدير أول"],
-    [/Associate Director - Radiation Oncology and Cancer Care/i, female ? "مديرة مساعدة — علاج الأورام بالإشعاع ورعاية السرطان" : "مدير مساعد — علاج الأورام بالإشعاع ورعاية السرطان"],
-    [/Associate Director/i, female ? "مديرة مساعدة" : "مدير مساعد"],
-    [/Vice Chairman/i, female ? "نائبة الرئيس" : "نائب الرئيس"],
-    [/Chairperson/i, female ? "رئيسة القسم" : "رئيس القسم"],
-    [/Chief of Radiation Oncology & Co-Chief of CyberKnife Centre/i, female ? "رئيسة علاج الأورام بالإشعاع والمشاركة في رئاسة مركز سايبر نايف" : "رئيس علاج الأورام بالإشعاع والمشارك في رئاسة مركز سايبر نايف"],
-    [/Head, Radiation Oncology & CyberKnife Centre \(Unit II\)/i, female ? "رئيسة علاج الأورام بالإشعاع ومركز سايبر نايف (الوحدة الثانية)" : "رئيس علاج الأورام بالإشعاع ومركز سايبر نايف (الوحدة الثانية)"],
-    [/Head of Department & Clinical Lead/i, female ? "رئيسة القسم والمسؤولة السريرية" : "رئيس القسم والمسؤول السريري"],
-    [/Director of Radiation Oncology/i, female ? "مديرة علاج الأورام بالإشعاع" : "مدير علاج الأورام بالإشعاع"],
-    [/Director, Department of/i, female ? "مديرة قسم" : "مدير قسم"],
-    [/Director,/i, female ? "مديرة" : "مدير"],
-    [/Clinical Lead & Consultant in/i, female ? "المسؤولة السريرية واستشارية" : "المسؤول السريري واستشاري"],
-    [/Senior Consultant Radiation Oncologist and Clinical Director/i, female ? "استشارية أولى ومديرة سريرية لعلاج الأورام بالإشعاع" : "استشاري أول ومدير سريري لعلاج الأورام بالإشعاع"],
-    [/Senior Consultant Radiation Oncologist/i, female ? "استشارية أولى لعلاج الأورام بالإشعاع" : "استشاري أول لعلاج الأورام بالإشعاع"],
-    [/Senior Consultant & Visiting Radiation Oncologist/i, female ? "استشارية أولى واستشارية زائرة لعلاج الأورام بالإشعاع" : "استشاري أول واستشاري زائر لعلاج الأورام بالإشعاع"],
-    [/Senior Consultant & Clinical Advisor/i, female ? "استشارية أولى ومستشارة سريرية" : "استشاري أول ومستشار سريري"],
-    [/Senior Consultant and In-Charge/i, female ? "استشارية أولى ومسؤولة القسم" : "استشاري أول ومسؤول القسم"],
-    [/Principal Consultant -/i, female ? "استشارية رئيسية —" : "استشاري رئيسي —"],
-    [/Principal Consultant/i, female ? "استشارية رئيسية" : "استشاري رئيسي"],
-    [/HOD & Senior Consultant/i, female ? "رئيسة القسم واستشارية أولى" : "رئيس القسم واستشاري أول"],
-    [/Senior Registrar \/ Consultant/i, female ? "مسجّلة أولى / استشارية" : "مسجّل أول / استشاري"],
-    [/Visiting Consultant/i, female ? "استشارية زائرة" : "استشاري زائر"],
-    [/Consultant Radiation Oncologist/i, female ? "استشارية علاج الأورام بالإشعاع" : "استشاري علاج الأورام بالإشعاع"],
-    [/Consultant Radiation Oncology/i, female ? "استشارية علاج الأورام بالإشعاع" : "استشاري علاج الأورام بالإشعاع"],
-    [/Consultant -/i, female ? "استشارية —" : "استشاري —"],
-    [/Consultant,/i, female ? "استشارية" : "استشاري"],
-    [/Radiation Specialist Oncologist/i, female ? "أخصائية علاج الأورام بالإشعاع" : "أخصائي علاج الأورام بالإشعاع"],
-    [/Radiation Oncologist/i, female ? "أخصائية علاج الأورام بالإشعاع" : "أخصائي علاج الأورام بالإشعاع"],
-    [/Senior Consultant/i, female ? "استشارية أولى" : "استشاري أول"],
-  ];
-
-  for (const [re, ar] of rules) {
-    if (re.test(t)) {
-      t = t.replace(re, ar);
+  for (const rule of TITLE_RULES) {
+    if (rule.match.test(t)) {
+      t = t.replace(rule.match, female ? rule.female : rule.male);
       break;
     }
   }
@@ -300,8 +96,16 @@ function arTitle(raw, female) {
   t = t
     .replace(/of Radiation Oncology/gi, "علاج الأورام بالإشعاع")
     .replace(/Radiation Oncology/gi, "علاج الأورام بالإشعاع")
-    .replace(/\s+,/g, "")
-    .replace(/,\s*$/g, "")
+    // The catalog joins rank and specialty with a Latin comma or hyphen. Arabic
+    // takes an em dash, and only where the rank does not already govern the
+    // following noun ("رئيس قسم علاج…" needs no separator).
+    .replace(/\s*[,،]\s*(?=علاج الأورام)/g, " — ")
+    .replace(/\s*-\s*(?=علاج الأورام)/g, " — ")
+    // "لـ" is a bound prefix; it attaches to the noun it governs.
+    .replace(/لـ\s*(?=علاج)/g, "ل")
+    .replace(/\s+[,،]/g, "")
+    .replace(/[,،]\s*$/g, "")
+    .replace(/\s*—\s*$/g, "")
     .replace(/\s{2,}/g, " ")
     .trim();
 
@@ -330,38 +134,32 @@ function arMemberships(items) {
 }
 
 function arEducation(items) {
-  return (items || []).map((line) =>
-    line
-      .replace(/Specialised Training in/gi, "تدريب متخصص في")
-      .replace(/Specialized Training in/gi, "تدريب متخصص في")
-      .replace(/Post-Doctorate Training in/gi, "تدريب ما بعد الدكتوراه في")
-      .replace(/Radiation Oncology/gi, "علاج الأورام بالإشعاع")
-      .replace(/Radiotherapy & Oncology/gi, "العلاج الإشعاعي والأورام")
-      .replace(/Radiotherapy of/gi, "العلاج الإشعاعي لـ")
-      .replace(/Radiotherapy/gi, "العلاج الإشعاعي")
-      .replace(/Overseas Fellowship/gi, "زمالة خارجية")
-      .replace(/Fellowship/gi, "زمالة")
-      .replace(/subsequently worked at/gi, "ثم عمل في"),
-  );
+  return (items || []).map((line) => {
+    let out = line;
+    for (const rule of EDUCATION_RULES) out = out.replace(rule.match, rule.ar);
+    return out;
+  });
 }
 
 function arAffiliations(items) {
-  return (items || []).map((line) => line.replace(/\bformer\b/gi, "سابقًا"));
+  return (items || []).map((line) => {
+    let out = line;
+    for (const rule of AFFILIATION_RULES) out = out.replace(rule.match, rule.ar);
+    return out;
+  });
 }
 
 function arAwards(items) {
-  return (items || []).map((line) =>
-    line
-      .replace(/Top Radiation Oncologist of South India/gi, "أبرز أخصائي علاج الأورام بالإشعاع في جنوب الهند")
-      .replace(/Best Radiation Oncologist of South India/gi, "أفضل أخصائي علاج الأورام بالإشعاع في جنوب الهند")
-      .replace(/Gold Medallist/gi, "حائز على الميدالية الذهبية")
-      .replace(/Gold Medalist/gi, "حائز على الميدالية الذهبية"),
-  );
+  return (items || []).map((line) => {
+    let out = line;
+    for (const rule of AWARD_RULES) out = out.replace(rule.match, rule.ar);
+    return out;
+  });
 }
 
 function roleWord(female, head) {
-  if (head) return female ? "رئيسة مسار علاج الأورام بالإشعاع" : "رئيس مسار علاج الأورام بالإشعاع";
-  return female ? "استشارية علاج الأورام بالإشعاع" : "استشاري علاج الأورام بالإشعاع";
+  const role = head ? ROLE_WORDS.head : ROLE_WORDS.consultant;
+  return female ? role.female : role.male;
 }
 
 function isHead(title) {

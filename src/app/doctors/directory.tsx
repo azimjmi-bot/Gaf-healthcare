@@ -23,6 +23,7 @@ import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
+import { arabicDoctorHub } from "@/lib/i18n/arabic-hub";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { doctorsPath } from "@/lib/catalog-links";
@@ -64,6 +65,25 @@ export async function doctorsDirectoryMetadata(
       );
     }
   }
+  const hub = arabicDoctorHub(query, locale);
+  if (hub) {
+    return withLocaleMetadata(
+      {
+        title: hub.title,
+        description: hub.description,
+        robots: doctorListingIsIndexable(extras, page) ? undefined : { index: false, follow: true },
+        openGraph: {
+          title: hub.title,
+          description: hub.description,
+          url: absoluteUrl(doctorsPath(query), locale),
+          type: "website",
+        },
+      },
+      doctorsPath(query),
+      locale,
+      LOCALES,
+    );
+  }
   const wrapped = await catalogPageMetadata("doctors", query);
   if (!doctorListingIsIndexable(extras, page)) {
     return { ...wrapped, robots: { index: false, follow: true } };
@@ -84,7 +104,7 @@ export async function DoctorsDirectory({
   if (!localePageIsRenderable(locale, doctorsPath(query))) notFound();
   if (locale === "en") {
     const hub = buildDoctorSpecialtyHub(query, extras, page, doctorsForLocale(locale));
-    if (hub) return <DoctorSpecialtyHub data={hub} query={query} />;
+    if (hub) return <DoctorSpecialtyHub data={hub} query={query} locale={locale} />;
   }
 
   const messages = await localizeMessages(locale);
@@ -92,11 +112,18 @@ export async function DoctorsDirectory({
   const list = filterDoctors(query, doctorsForLocale(locale));
   const paging = paginateDoctors(list, page);
   const chipStats = query.destination === "India" ? cityResultCounts("doctors", query) : null;
-  const copy = directoryIntro("doctors", query, locale);
+  // A specialty-scoped Arabic facet gets the hub lede and its evidence
+  // paragraphs; everything narrower or broader keeps the directory copy. The
+  // rest of the page — filters, cards, pager, FAQ — is already translated, so
+  // the hub only has to supply the prose above them.
+  const hub = arabicDoctorHub(query, locale);
+  const copy = hub
+    ? { eyebrow: hub.eyebrow, heading: hub.heading, lede: hub.intro[0] }
+    : directoryIntro("doctors", query, locale);
 
   return (
     <>
-      <JsonLd data={faqJsonLd(faqs)} />
+      <JsonLd data={faqJsonLd(faqs, { path: doctorsPath(query), locale })} />
       <PageIntro
         eyebrow={copy.eyebrow}
         title={copy.heading}
@@ -113,6 +140,15 @@ export async function DoctorsDirectory({
           />
         </Suspense>
       </PageIntro>
+      {hub ? (
+        <section className="mx-auto max-w-7xl px-4 pt-8 sm:px-5 md:px-8 md:pt-12">
+          {hub.intro.slice(1).map((paragraph) => (
+            <p key={paragraph.slice(0, 40)} className="prose-gaf mt-4 max-w-3xl">
+              {paragraph}
+            </p>
+          ))}
+        </section>
+      ) : null}
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:px-8 md:py-12">
         {paging.total === 0 ? (
           <p className="text-muted-foreground">{directoryEmpty("doctors", query, locale)}</p>

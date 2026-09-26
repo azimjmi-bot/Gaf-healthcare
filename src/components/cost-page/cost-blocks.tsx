@@ -144,7 +144,7 @@ export function PriceFactors({ article }: { article: CostArticle }) {
     <div className="mt-6">
       <Accordion type="single" collapsible>
         <AccordionItem value="why-quotes-differ">
-          <AccordionTrigger className="text-left text-base">
+          <AccordionTrigger className="text-start text-base">
             Why can two hospitals quote different prices?
           </AccordionTrigger>
           <AccordionContent className="text-[1.05rem] leading-relaxed text-muted-foreground">

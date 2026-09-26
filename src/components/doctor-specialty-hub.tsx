@@ -17,7 +17,9 @@ import { QuickAnswer } from "@/components/quick-answer";
 import type { CatalogQuery } from "@/lib/catalog";
 import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import type { DoctorSpecialtyHubData } from "@/lib/doctor-specialty-page";
-import { breadcrumbJsonLd, doctorItemListJsonLd, faqJsonLd } from "@/lib/seo";
+import { absoluteUrl, breadcrumbJsonLd, doctorItemListJsonLd, faqJsonLd } from "@/lib/seo";
+import { documentId } from "@/lib/jsonld";
+import type { AppLocale } from "@/lib/i18n/languages";
 
 function HubHeading({
   eyebrow,
@@ -40,9 +42,11 @@ function HubHeading({
 export function DoctorSpecialtyHub({
   data,
   query,
+  locale = "en",
 }: {
   data: DoctorSpecialtyHubData;
   query: CatalogQuery;
+  locale?: AppLocale;
 }) {
   const ctaSubject = data.procedure ?? `${data.specialtyName.toLowerCase()} treatment`;
   const consultParams = new URLSearchParams({ specialty: data.specialtySlug });
@@ -78,22 +82,25 @@ export function DoctorSpecialtyHub({
         data={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
+          "@id": documentId(data.path, locale, "collection"),
           name: data.heading,
           description: data.description,
-          url: `https://gaf.healthcare${data.path}`,
+          inLanguage: locale,
+          url: absoluteUrl(data.path, locale),
           about: data.procedure
             ? { "@type": "MedicalProcedure", name: data.procedure }
             : { "@type": "MedicalSpecialty", name: data.specialtyName },
         }}
       />
-      <JsonLd data={breadcrumbJsonLd(crumbs)} />
+      <JsonLd data={breadcrumbJsonLd(crumbs, locale)} />
       <JsonLd
         data={doctorItemListJsonLd(data.paging.items, {
           name: data.heading,
           path: data.path,
+          locale,
         })}
       />
-      <JsonLd data={faqJsonLd(data.faqs)} />
+      <JsonLd data={faqJsonLd(data.faqs, { path: data.path, locale })} />
 
       <PageIntro eyebrow={`Doctor discovery · ${data.specialtyName}`} title={data.heading} lede={data.intro[0]}>
         <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
@@ -254,7 +261,7 @@ export function DoctorSpecialtyHub({
             title={`How to choose a ${data.practitioner} in ${data.place}`}
             intro="These are planning questions, not a scoring system. Technique, campus and follow-up still have to be confirmed in writing."
           />
-          <ol className="mt-6 max-w-3xl list-decimal space-y-3 pl-5 text-sm leading-relaxed text-muted-foreground">
+          <ol className="mt-6 max-w-3xl list-decimal space-y-3 ps-5 text-sm leading-relaxed text-muted-foreground">
             {data.howToChoose.map((item) => (
               <li key={item}>{item}</li>
             ))}
