@@ -1,3 +1,4 @@
+import { connection } from "next/server";
 import { NextResponse } from "next/server";
 import { requireCmsSession } from "@/lib/cms/auth";
 import { editionFromRequest } from "@/lib/cms/edition";
@@ -16,6 +17,7 @@ export async function POST(request: Request) {
   } catch {
     return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   }
+  await connection();
   if (!openaiConfigured()) {
     return NextResponse.json({ error: OPENAI_NOT_CONFIGURED }, { status: 503 });
   }

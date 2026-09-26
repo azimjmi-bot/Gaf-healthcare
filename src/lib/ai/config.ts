@@ -9,9 +9,15 @@ export const MAX_INSTRUCTION_CHARS = 4000;
 export const MAX_OUTPUT_TOKENS = 3500;
 export const HOURLY_GENERATION_LIMIT = 30;
 
+function runtimeEnv(name: string) {
+  // Bracket access keeps Hostinger's runtime value. Dot access can be inlined
+  // as empty when the Hostinger build ran before OPENAI_API_KEY was set.
+  const env = process.env as Record<string, string | undefined>;
+  return env[name]?.trim() || "";
+}
+
 export function openaiApiKey() {
-  const value = process.env.OPENAI_API_KEY?.trim();
-  return value || "";
+  return runtimeEnv("OPENAI_API_KEY");
 }
 
 export function openaiConfigured() {
@@ -19,7 +25,7 @@ export function openaiConfigured() {
 }
 
 export function openaiModel() {
-  return process.env.OPENAI_MODEL?.trim() || "gpt-4.1-mini";
+  return runtimeEnv("OPENAI_MODEL") || "gpt-4.1-mini";
 }
 
 export function publicAiError(error: unknown) {
