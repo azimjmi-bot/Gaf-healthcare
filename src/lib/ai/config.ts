@@ -27,6 +27,9 @@ export function publicAiError(error: unknown) {
   if (/api key|authentication|401/i.test(message)) {
     return OPENAI_NOT_CONFIGURED;
   }
+  if (/credit|quota|insufficient/i.test(message)) {
+    return "The OpenAI account has no remaining credits. Add credit, then try again.";
+  }
   if (/rate limit|429/i.test(message)) {
     return "The AI service is busy. Wait a moment and try again.";
   }
