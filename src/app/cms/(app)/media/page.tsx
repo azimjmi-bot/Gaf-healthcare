@@ -15,8 +15,8 @@ export default async function CmsMediaPage() {
         </div>
       </header>
       <p className="cms-lede">
-        Uploads land in <code>public/uploads/articles</code> and can be attached as featured images
-        or in-body figures. CMS photos for doctors stay a later step.
+        Upload one image or several at once. Files land in <code>public/uploads/articles</code> and
+        can be used as the featured image or as figures inside an article.
       </p>
       <CmsMediaLibrary initial={store.media} />
     </div>

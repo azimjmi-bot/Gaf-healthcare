@@ -52,7 +52,7 @@ A WordPress-style desk lives at [`/cms`](http://localhost:43127/cms). Sign-in pa
 
 Published specialty profiles can expose data-qualified city authority pages at `/costs/{Country}/{City}/{Specialty}` without a second page system. A city page is rendered and added to the sitemap only when live relationships provide treatments, doctors and hospitals and its information-based uniqueness assessment finds enough city editorial, ecosystem, logistics, FAQ and entity-link evidence. Pricing is grouped by compatible billing basis. A city table uses a verified city range only when the underlying article stores one; otherwise it displays “Personalized estimate” and never presents the national range as a city tariff.
 
-Draft articles stay off the public `/blogs` list. Media uploads land in `public/uploads/articles`.
+Draft articles stay off the public `/blogs` list. On the article desk you can upload a featured image directly, drop several files in at once with **Upload images**, or use the markdown image button to insert photos at the cursor. Uploads land in `public/uploads/articles` (WebP, JPG, PNG, GIF or SVG, under 8 MB each).
 
 ## Languages
 

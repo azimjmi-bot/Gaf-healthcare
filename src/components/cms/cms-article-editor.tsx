@@ -1,12 +1,13 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   ArrowDown,
   ArrowUp,
   Heading2,
   ImageIcon,
+  Images,
   Link2,
   List,
   ListOrdered,
@@ -20,9 +21,21 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { CoverImage } from "@/components/article-body";
+import { CmsImageUpload } from "@/components/cms/cms-image-upload";
 import { CmsMarkdownField } from "@/components/cms/cms-markdown-field";
+import { CMS_IMAGE_ACCEPT, uploadCmsMediaMany } from "@/lib/cms/upload-client";
 import type { Article, ArticleBlock, CmsStore, MediaItem } from "@/lib/cms/types";
 import { newId } from "@/lib/cms/types";
+
+function imageBlocksFrom(items: MediaItem[]): ArticleBlock[] {
+  return items.map((item) => ({
+    id: newId("b"),
+    type: "image" as const,
+    src: item.url,
+    alt: item.alt || item.name,
+    caption: "",
+  }));
+}
 
 function addBlock(type: ArticleBlock["type"]): ArticleBlock {
   if (type === "heading") return { id: newId("b"), type, level: 2, text: "" };
@@ -43,6 +56,7 @@ export function CmsArticleEditor({
   store: CmsStore;
 }) {
   const router = useRouter();
+  const imagesInput = useRef<HTMLInputElement>(null);
   const [article, setArticle] = useState(initial);
   const [media, setMedia] = useState(store.media);
   const [busy, setBusy] = useState(false);
@@ -110,17 +124,36 @@ export function CmsArticleEditor({
     router.refresh();
   }
 
-  async function upload(file: File) {
-    const form = new FormData();
-    form.set("file", file);
-    const res = await fetch("/api/cms/media", { method: "POST", body: form });
-    const item = (await res.json()) as MediaItem & { error?: string };
-    if (!res.ok) {
-      setMessage(item.error || "Upload failed.");
-      return;
+  function rememberMedia(items: MediaItem[]) {
+    setMedia((m) => [...items, ...m]);
+  }
+
+  async function uploadIntoPicker(files: Iterable<File>) {
+    setBusy(true);
+    try {
+      const items = await uploadCmsMediaMany(files);
+      rememberMedia(items);
+      if (items[0]) applyMedia(items[0].url);
+    } catch (err) {
+      setMessage(err instanceof Error ? err.message : "Upload failed.");
+    } finally {
+      setBusy(false);
     }
-    setMedia((m) => [item, ...m]);
-    applyMedia(item.url);
+  }
+
+  async function insertUploadedImages(files: Iterable<File>) {
+    setBusy(true);
+    setMessage("");
+    try {
+      const items = await uploadCmsMediaMany(files);
+      rememberMedia(items);
+      setArticle((a) => ({ ...a, blocks: [...a.blocks, ...imageBlocksFrom(items)] }));
+      setMessage(items.length === 1 ? "Image added." : `${items.length} images added.`);
+    } catch (err) {
+      setMessage(err instanceof Error ? err.message : "Upload failed.");
+    } finally {
+      setBusy(false);
+    }
   }
 
   function applyMedia(url: string) {
@@ -171,7 +204,6 @@ export function CmsArticleEditor({
                 ["heading", Heading2, "Heading"],
                 ["quote", Quote, "Quote"],
                 ["list", List, "List"],
-                ["image", ImageIcon, "Image"],
                 ["button", Link2, "Link button"],
                 ["separator", Minus, "Divider"],
               ] as const
@@ -190,6 +222,30 @@ export function CmsArticleEditor({
                 {label}
               </button>
             ))}
+            <button
+              type="button"
+              onClick={() =>
+                setArticle((a) => ({ ...a, blocks: [...a.blocks, addBlock("image")] }))
+              }
+            >
+              <ImageIcon className="size-3.5" />
+              Image
+            </button>
+            <button type="button" disabled={busy} onClick={() => imagesInput.current?.click()}>
+              <Images className="size-3.5" />
+              Upload images
+            </button>
+            <input
+              ref={imagesInput}
+              type="file"
+              accept={CMS_IMAGE_ACCEPT}
+              multiple
+              hidden
+              onChange={(e) => {
+                if (e.target.files?.length) void insertUploadedImages(e.target.files);
+                e.target.value = "";
+              }}
+            />
             <button
               type="button"
               onClick={() =>
@@ -241,6 +297,8 @@ export function CmsArticleEditor({
                   rows={18}
                   hint="Markdown supported: headings, bold, italic, links, images, quotes, lists, task lists, tables and code."
                   onChange={(text) => setBlock(block.id, { ...block, text })}
+                  onMedia={rememberMedia}
+                  onError={setMessage}
                 />
               ) : null}
               {block.type === "heading" ? (
@@ -310,11 +368,20 @@ export function CmsArticleEditor({
                 </>
               ) : null}
               {block.type === "image" ? (
-                <>
-                  {block.src ? <CoverImage src={block.src} alt={block.alt} className="cms-block-img" /> : null}
+                <div className="cms-block-images">
+                  <CmsImageUpload
+                    label=""
+                    src={block.src}
+                    alt={block.alt}
+                    emptyHint="Upload a file, drop one here, or paste a URL below."
+                    chooseLabel={block.src ? "Replace image" : "Upload image"}
+                    onChange={(src) => setBlock(block.id, { ...block, src })}
+                    onUploaded={rememberMedia}
+                    onError={setMessage}
+                  />
                   <Input
                     value={block.src}
-                    placeholder="Image URL"
+                    placeholder="Or paste an image URL"
                     onChange={(e) => setBlock(block.id, { ...block, src: e.target.value })}
                   />
                   <Button
@@ -338,7 +405,7 @@ export function CmsArticleEditor({
                     placeholder="Caption"
                     onChange={(e) => setBlock(block.id, { ...block, caption: e.target.value })}
                   />
-                </>
+                </div>
               ) : null}
               {block.type === "html" ? (
                 <Textarea
@@ -460,12 +527,19 @@ export function CmsArticleEditor({
           </section>
           <section>
             <h2>Featured image</h2>
-            {article.image ? (
-              <CoverImage src={article.image} alt={article.imageAlt} className="cms-cover" />
-            ) : null}
+            <CmsImageUpload
+              label=""
+              src={article.image}
+              alt={article.imageAlt}
+              emptyHint="No featured image yet. Upload a file or paste a URL."
+              chooseLabel={article.image ? "Replace image" : "Upload image"}
+              onChange={(image) => patch({ image, ogImage: article.ogImage || image })}
+              onUploaded={rememberMedia}
+              onError={setMessage}
+            />
             <Input
               value={article.image}
-              placeholder="Image URL"
+              placeholder="Or paste an image URL"
               onChange={(e) => patch({ image: e.target.value })}
             />
             <Input
@@ -548,12 +622,14 @@ export function CmsArticleEditor({
         <div className="cms-modal" role="dialog">
           <div className="cms-modal__card">
             <h2>Media library</h2>
+            <p className="cms-muted">Upload one or more images, then click one to attach it.</p>
             <input
               type="file"
-              accept="image/webp,image/png,image/jpeg,image/gif,image/svg+xml"
+              accept={CMS_IMAGE_ACCEPT}
+              multiple
               onChange={(e) => {
-                const file = e.target.files?.[0];
-                if (file) void upload(file);
+                if (e.target.files?.length) void uploadIntoPicker(e.target.files);
+                e.target.value = "";
               }}
             />
             <ul className="cms-media-grid">

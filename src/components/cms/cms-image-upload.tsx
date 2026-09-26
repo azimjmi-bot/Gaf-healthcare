@@ -3,6 +3,11 @@
 import { useId, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { CoverImage } from "@/components/article-body";
+import {
+  CMS_IMAGE_ACCEPT,
+  uploadCmsMediaMany,
+} from "@/lib/cms/upload-client";
+import type { MediaItem } from "@/lib/cms/types";
 
 export function CmsImageUpload({
   label = "Photo",
@@ -10,49 +15,61 @@ export function CmsImageUpload({
   alt,
   onChange,
   onError,
+  onUploaded,
+  multiple = false,
+  emptyHint = "No photo yet. The public page keeps the illustrated portrait until you upload one.",
+  chooseLabel,
 }: {
   label?: string;
   src: string;
   alt: string;
   onChange: (url: string) => void;
   onError?: (message: string) => void;
+  onUploaded?: (items: MediaItem[]) => void;
+  multiple?: boolean;
+  emptyHint?: string | null;
+  chooseLabel?: string;
 }) {
   const id = useId();
   const inputRef = useRef<HTMLInputElement>(null);
   const [busy, setBusy] = useState(false);
   const [drag, setDrag] = useState(false);
 
-  async function upload(file: File) {
+  async function takeFiles(list?: FileList | File[] | null) {
+    const files = list ? [...list] : [];
+    if (!files.length) return;
     setBusy(true);
-    const form = new FormData();
-    form.set("file", file);
-    const res = await fetch("/api/cms/media", { method: "POST", body: form });
-    const item = await res.json();
-    setBusy(false);
-    if (!res.ok) {
-      onError?.(item.error || "Upload failed.");
-      return;
+    try {
+      const items = await uploadCmsMediaMany(files);
+      onUploaded?.(items);
+      if (items[0]) onChange(items[0].url);
+    } catch (err) {
+      onError?.(err instanceof Error ? err.message : "Upload failed.");
+    } finally {
+      setBusy(false);
     }
-    onChange(item.url);
   }
 
-  function takeFile(file?: File) {
-    if (!file) return;
-    if (!file.type.startsWith("image/")) {
-      onError?.("Choose a WebP, JPG, PNG or GIF.");
-      return;
-    }
-    void upload(file);
-  }
+  const action = chooseLabel
+    ? chooseLabel
+    : busy
+      ? "Uploading…"
+      : multiple
+        ? src
+          ? "Add more images"
+          : "Upload images"
+        : src
+          ? "Replace photo"
+          : "Upload photo";
 
   return (
     <div className="cms-upload">
-      <p className="cms-upload__label">{label}</p>
+      {label ? <p className="cms-upload__label">{label}</p> : null}
       {src ? (
         <CoverImage src={src} alt={alt} className="cms-cover" />
-      ) : (
-        <p className="cms-muted">No photo yet. The public page keeps the illustrated portrait until you upload one.</p>
-      )}
+      ) : emptyHint ? (
+        <p className="cms-muted">{emptyHint}</p>
+      ) : null}
       <div
         className={`cms-drop${drag ? " is-drag" : ""}`}
         onDragOver={(e) => {
@@ -63,17 +80,18 @@ export function CmsImageUpload({
         onDrop={(e) => {
           e.preventDefault();
           setDrag(false);
-          takeFile(e.dataTransfer.files[0]);
+          void takeFiles(e.dataTransfer.files);
         }}
       >
         <input
           ref={inputRef}
           id={id}
           type="file"
-          accept="image/webp,image/png,image/jpeg,image/gif"
+          accept={CMS_IMAGE_ACCEPT}
+          multiple={multiple}
           hidden
           onChange={(e) => {
-            takeFile(e.target.files?.[0]);
+            void takeFiles(e.target.files);
             e.target.value = "";
           }}
         />
@@ -83,14 +101,18 @@ export function CmsImageUpload({
           disabled={busy}
           onClick={() => inputRef.current?.click()}
         >
-          {busy ? "Uploading…" : src ? "Replace photo" : "Upload photo"}
+          {action}
         </Button>
         {src ? (
           <Button type="button" variant="ghost" disabled={busy} onClick={() => onChange("")}>
             Remove
           </Button>
         ) : null}
-        <p className="cms-muted">Drop a file here or choose one. WebP, JPG, PNG or GIF.</p>
+        <p className="cms-muted">
+          {multiple
+            ? "Drop files here or choose several at once. WebP, JPG, PNG, GIF or SVG, under 8 MB each."
+            : "Drop a file here or choose one. WebP, JPG, PNG, GIF or SVG, under 8 MB."}
+        </p>
       </div>
     </div>
   );

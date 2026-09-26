@@ -2397,6 +2397,21 @@ img.dhero__art {
   gap: 0.25rem;
 }
 
+.cms-md__write {
+  border-radius: 0.6rem;
+}
+
+.cms-md__write.is-drag {
+  outline: 2px dashed #0f3d44;
+  outline-offset: 2px;
+  background: #eef6f6;
+}
+
+.cms-block-images {
+  display: grid;
+  gap: 0.45rem;
+}
+
 .cms-md__input {
   min-height: 16rem;
   font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;

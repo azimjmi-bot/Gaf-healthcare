@@ -40,6 +40,9 @@ export async function POST(request: Request) {
     if (!allowed.includes(ext)) {
       return NextResponse.json({ error: "Use WebP, JPG, PNG, GIF or SVG." }, { status: 400 });
     }
+    if (file.size > 8 * 1024 * 1024) {
+      return NextResponse.json({ error: "Keep images under 8 MB." }, { status: 400 });
+    }
     const filename = `${Date.now()}-${safeName(file.name.replace(/\.[^.]+$/, ""))}${ext}`;
     const buf = Buffer.from(await file.arrayBuffer());
     writeFileSync(join(DIR, filename), buf);
