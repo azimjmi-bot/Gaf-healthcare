@@ -1,7 +1,7 @@
 import { LocaleLink as Link } from "@/components/locale-link";
 import { BedDouble, CalendarDays, MapPin, Stethoscope } from "lucide-react";
 import { AccreditationSeals } from "@/components/accreditation-seals";
-import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
+import { HospitalCampusVisual, campusCaption } from "@/components/hospital-campus-visual";
 import { HospitalGalleryButton } from "@/components/hospital-gallery";
 import type { Hospital } from "@/lib/hospitals";
 import { displayBio, isEyeCampus } from "@/lib/hospital-profile";
@@ -43,7 +43,11 @@ export async function HospitalCard({ hospital }: { hospital: Hospital }) {
   return (
     <article className="hcard">
       <div className="hcard__visual">
-        <HospitalCampusVisual hospital={hospital} className="hcard__art" />
+        <HospitalCampusVisual
+          hospital={hospital}
+          caption={campusCaption(hospital, locale)}
+          className="hcard__art"
+        />
         <HospitalGalleryButton
           hospital={hospital}
           locale={locale}

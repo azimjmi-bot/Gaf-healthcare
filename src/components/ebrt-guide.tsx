@@ -105,7 +105,7 @@ export function EbrtGuide() {
         inside the body after treatment.
       </P>
       <P>A typical EBRT session involves:</P>
-      <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+      <ul className="mt-4 list-disc space-y-2 ps-5 text-muted-foreground">
         <li>The patient lies on a treatment table.</li>
         <li>The body is positioned using marks and immobilisation devices created during planning.</li>
         <li>The treatment machine rotates around or moves into position around the patient.</li>
@@ -226,7 +226,7 @@ export function EbrtGuide() {
         the technique from the tumour and the clinical objective.
       </P>
       <div className="mt-6 overflow-x-auto rounded-2xl border border-border">
-        <table className="w-full min-w-[32rem] text-left text-sm">
+        <table className="w-full min-w-[32rem] text-start text-sm">
           <thead className="bg-secondary/60 text-xs tracking-[0.16em] uppercase text-muted-foreground">
             <tr>
               <th className="px-4 py-3 font-medium">Technique</th>
@@ -293,7 +293,7 @@ export function EbrtGuide() {
 
       <H2 id="sessions">How many EBRT sessions are required?</H2>
       <P>There is no single number for every patient. Depending on disease and intent, radiation may be delivered in:</P>
-      <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+      <ul className="mt-4 list-disc space-y-2 ps-5 text-muted-foreground">
         <li>1 session</li>
         <li>3–5 sessions</li>
         <li>10 sessions</li>
@@ -314,7 +314,7 @@ export function EbrtGuide() {
         radiation. Side effects can develop during or after a course and depend on which
         part of the body is treated.
       </P>
-      <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+      <ul className="mt-4 list-disc space-y-2 ps-5 text-muted-foreground">
         <li>
           <span className="text-foreground">Head &amp; neck:</span> mouth soreness,
           difficulty swallowing, dry mouth, taste changes, skin irritation
@@ -365,7 +365,7 @@ export function EbrtGuide() {
         lists named consultants in five of these cities.
       </P>
       <div className="mt-6 overflow-x-auto rounded-2xl border border-border">
-        <table className="w-full min-w-[28rem] text-left text-sm">
+        <table className="w-full min-w-[28rem] text-start text-sm">
           <thead className="bg-secondary/60 text-xs tracking-[0.16em] uppercase text-muted-foreground">
             <tr>
               <th className="px-4 py-3 font-medium">City</th>
@@ -420,7 +420,7 @@ export function EbrtGuide() {
         destination GAF Healthcare currently staffs with named radiation oncologists.
       </P>
       <div className="mt-6 overflow-x-auto rounded-2xl border border-border">
-        <table className="w-full min-w-[28rem] text-left text-sm">
+        <table className="w-full min-w-[28rem] text-start text-sm">
           <thead className="bg-secondary/60 text-xs tracking-[0.16em] uppercase text-muted-foreground">
             <tr>
               <th className="px-4 py-3 font-medium">Destination</th>
@@ -479,7 +479,7 @@ export function EbrtGuide() {
       <div className="mt-6 grid gap-6 sm:grid-cols-2">
         <div className="rounded-2xl border border-border bg-card p-6">
           <p className="text-xs tracking-[0.18em] uppercase text-gold">Usually included</p>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+          <ul className="mt-3 list-disc space-y-2 ps-5 text-sm text-muted-foreground">
             <li>Radiation oncologist consultation</li>
             <li>CT simulation</li>
             <li>Treatment planning</li>
@@ -493,7 +493,7 @@ export function EbrtGuide() {
         </div>
         <div className="rounded-2xl border border-border bg-card p-6">
           <p className="text-xs tracking-[0.18em] uppercase text-gold">Often separate</p>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+          <ul className="mt-3 list-disc space-y-2 ps-5 text-sm text-muted-foreground">
             <li>PET-CT</li>
             <li>Diagnostic MRI</li>
             <li>Biopsy/pathology</li>

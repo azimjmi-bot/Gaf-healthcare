@@ -26,7 +26,7 @@ export function PatientStories({
           <h2>{title}</h2>
         </div>
         <a href={YOUTUBE_CHANNEL} className="home-more" target="_blank" rel="noreferrer">
-          {moreLabel} <ArrowRight className="size-4" />
+          {moreLabel} <ArrowRight className="size-4 icon-forward" />
         </a>
       </div>
       <div className="home-videogrid">

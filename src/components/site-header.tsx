@@ -48,7 +48,7 @@ export function SiteHeader() {
       }
     >
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 pt-[env(safe-area-inset-top)] sm:px-5 md:h-20 md:px-8">
-        <Link href="/" className="shrink-0" aria-label="GAF Healthcare — home">
+        <Link href="/" className="shrink-0" aria-label={t("a11y.home")}>
           <Image
             src={overlay ? "/brand/gaf-healthcare-light.svg" : "/brand/gaf-healthcare.svg"}
             alt="GAF Healthcare"

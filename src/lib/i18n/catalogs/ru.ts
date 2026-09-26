@@ -1,0 +1,132 @@
+import type { TranslationFields } from "@/lib/i18n/catalogs/types";
+
+/**
+ * Russian UI strings, keyed to UI_MESSAGE_FIELDS.
+ *
+ * Partial. The locale is not published, so missing keys resolve to an
+ * empty string rather than English — see uiCatalogFor.
+ */
+export const UI: TranslationFields = {
+
+  "nav.destinations": "Направления",
+  "nav.specialties": "Специальности",
+  "nav.doctors": "Врачи",
+  "nav.hospitals": "Больницы",
+  "nav.treatments": "Лечение",
+  "nav.costs": "Стоимость лечения",
+  "nav.blogs": "Блог",
+  "nav.consult": "Запросить консультацию",
+  "nav.consultShort": "Консультация",
+  "nav.menu": "Открыть меню",
+  "nav.dossier": "Запросить досье",
+  "footer.explore": "Разделы",
+  "footer.note": "Примечание",
+  "footer.tagline":
+    "Частное ателье медицинского туризма для пациентов, которым нужны аккредитованные клиники, именные врачи и координатор, который остаётся на связи после прилёта.",
+  "footer.disclaimer":
+    "GAF Healthcare не является больницей и не даёт медицинских рекомендаций. Диапазоны стоимости ориентировочные. Клинические решения принимаете вы и лицензированный врач, которого вы выберете.",
+  "footer.rights": "Все права защищены.",
+  "footer.youtube": "YouTube",
+  "footer.reviews": "Отзывы Google",
+  "cta.eyebrow": "Начать",
+  "cta.title": "Запросите частное досье. Без обязательств и без конвейерной клиники.",
+  "cta.button": "Связаться с координатором",
+  "filter.destinations": "Все направления",
+  "filter.cities": "Все города",
+  "filter.specialities": "Все специальности",
+  "filter.procedures": "Все процедуры",
+  "filter.matching": "соответствуют фильтрам",
+  "pager.previous": "Назад",
+  "pager.next": "Далее",
+  "pager.pageOf": "Страница {current} из {total}",
+  "lang.label": "Язык",
+  "home.heroEyebrow": "Глобальная помощь · без границ",
+  "home.heroTitle": "Надёжная помощь без границ",
+  "home.heroLede":
+    "Сравните указанных врачей, больницы и стоимость лечения в наших направлениях. Спланируйте поездку с именным консультантом до вылета.",
+  "home.trust1": "Персональные рекомендации",
+  "home.trust2": "Доступ к указанным больницам",
+  "home.trust3": "Прозрачные ориентиры по стоимости",
+  "home.trust4": "Поддержка на каждом этапе",
+  "home.destinationsEyebrow": "Направления",
+  "home.destinationsTitle": "Основные направления",
+  "home.viewAll": "Смотреть все",
+  "home.doctorsEyebrow": "Врачи",
+  "home.doctorsTitle": "Наши врачи",
+  "home.viewDoctors": "Все врачи",
+  "home.hospitalsEyebrow": "Больницы",
+  "home.hospitalsTitle": "Больницы, с которыми мы работаем",
+  "home.viewHospitals": "Все больницы",
+  "home.costsEyebrow": "Стоимость лечения",
+  "home.costsTitle": "Планируйте лечение уверенно",
+  "home.costsLede": "Ориентировочные диапазоны по Индии из карточек стоимости — не предложения больниц.",
+  "home.viewCosts": "Все карточки стоимости",
+  "home.typicalPackage": "типичный пакет",
+  "home.storiesEyebrow": "Истории пациентов",
+  "home.storiesTitle": "Люди. Реальные маршруты.",
+  "home.moreYoutube": "Ещё на YouTube",
+  "home.deskEyebrow": "Стол",
+  "home.deskTitle": "Последние материалы и гиды",
+  "home.viewBlogs": "Все статьи",
+  "home.reviewsEyebrow": "Отзывы Google",
+  "home.reviewsTitle": "Что говорят наши пациенты",
+  "home.readGoogle": "Читать в Google",
+  "home.reviewsSummary": "{rating} из {count} отзывов в профиле GAF Healthcare Pvt Ltd в Google.",
+  "home.finaleTitle": "Ваш путь к здоровью начинается здесь",
+  "home.finaleLede": "Пришлите документы. Получите подходящие варианты врачей и больниц с ориентировочной сметой.",
+  "home.finaleButton": "Запросить досье",
+  "home.searchDestination": "Направление",
+  "home.searchSpecialty": "Специальность",
+  "home.searchProcedure": "Процедура",
+  "home.searchGo": "Передовая помощь в один клик",
+  "home.searchGoShort": "Найти специалистов",
+  "blogs.empty": "Опубликованных заметок пока нет.",
+  "blogs.all": "Все статьи",
+  "consult.eyebrow": "Анкета",
+  "consult.title": "Двенадцать минут. Дальше читаем мы.",
+  "consult.lede":
+    "Расскажите, что можете. Снимки и документы можно прислать позже. Координатор ответит в течение рабочего дня — со следующими шагами или честным отказом.",
+  "consult.next": "Что будет дальше",
+  "consult.step1": "01 — Мы подтверждаем, что можем помочь, или говорим, что не можем.",
+  "consult.step2": "02 — Вы получаете два-три подобранных варианта с полной стоимостью.",
+  "consult.step3": "03 — Видеоконсультация с хирургом. Без депозита до этого звонка.",
+  "consult.speak": "Сначала хотите поговорить?",
+  "notFound.title": "Этой страницы нет в маршруте.",
+  "notFound.body": "У GAF Healthcare четыре раздела: врачи, больницы, стоимость лечения и блог.",
+  "seo.homeTitle": "Надёжная помощь без границ | GAF Healthcare",
+  "seo.homeDescription":
+    "Указанные врачи, больницы и ориентировочная стоимость лечения в направлениях GAF Healthcare. Планируйте поездку с именным консультантом до вылета.",
+  "seo.blogsTitle": "Блог",
+  "seo.consultTitle": "Запросить досье",
+};
+
+/**
+ * Home-page rows that are data rather than chrome: destination cards and video
+ * titles. Kept separate so the main catalog stays comparable to the English
+ * message list key for key.
+ */
+export const HOME_EXTRA: TranslationFields = {
+
+  "dest.0.name": "Индия",
+  "dest.0.blurb": "Дели NCR, Мумбаи, Бенгалуру, Ченнаи и Хайдарабад",
+  "dest.0.imageAlt": "Тадж-Махал, Индия",
+  "dest.1.name": "Турция",
+  "dest.1.blurb": "Стамбул",
+  "dest.1.imageAlt": "Панорама Стамбула, Турция",
+  "dest.2.name": "Таиланд",
+  "dest.2.blurb": "Бангкок",
+  "dest.2.imageAlt": "Храм в Бангкоке, Таиланд",
+  "dest.3.name": "ОАЭ",
+  "dest.3.blurb": "Дубай",
+  "dest.3.imageAlt": "Панорама Дубая, ОАЭ",
+  "dest.4.name": "Сингапур",
+  "dest.4.blurb": "Сингапур",
+  "dest.4.imageAlt": "Марина Бэй, Сингапур",
+  "dest.5.name": "Южная Корея",
+  "dest.5.blurb": "Сеул",
+  "dest.5.imageAlt": "Сеул, Южная Корея",
+  "video.0.title": "Благодарность деда: операция на врождённом клапане Рагда в Fortis, Индия",
+  "video.1.title": "Сердце восстановлено, надежда возвращена | Спасительная операция Ибрагима",
+  "video.2.title": "Путь иракской семьи: спасительная операция на сердце малыша Ибрагима в Индии",
+  "video.3.title": "Опыт, который меняет жизнь | Отзыв пациента",
+};

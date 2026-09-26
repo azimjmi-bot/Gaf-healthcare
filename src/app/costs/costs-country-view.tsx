@@ -28,6 +28,7 @@ import {
   faqJsonLd,
   medicalWebPageJsonLd,
 } from "@/lib/seo";
+import type { AppLocale } from "@/lib/i18n/languages";
 import type { Metadata } from "next";
 
 export function costCountryMetadata(query: CatalogQuery): Metadata | undefined {
@@ -63,7 +64,7 @@ function H2({ id, children }: { id: string; children: React.ReactNode }) {
   );
 }
 
-export function CostsCountryView({ query }: { query: CatalogQuery }) {
+export function CostsCountryView({ query, locale = "en" }: { query: CatalogQuery; locale?: AppLocale }) {
   const resolved = resolveCostCountryPage(query);
   if (!resolved) notFound();
   const { treatment, article, record, city, range, modelled, relative, stay, path, heading, brief, specialty } =
@@ -91,6 +92,7 @@ export function CostsCountryView({ query }: { query: CatalogQuery }) {
           procedureName: treatment.name,
           specialty,
           about: page?.intro?.[0] ?? record.row.context,
+          locale,
         })}
       />
       <JsonLd
@@ -110,9 +112,9 @@ export function CostsCountryView({ query }: { query: CatalogQuery }) {
             }),
           },
           ...(city ? [{ name: city.city.name, path }] : []),
-        ])}
+        ], locale)}
       />
-      {faqs.length > 0 ? <JsonLd data={faqJsonLd(faqs)} /> : null}
+      {faqs.length > 0 ? <JsonLd data={faqJsonLd(faqs, { path, locale })} /> : null}
 
       <CostHero
         article={article}

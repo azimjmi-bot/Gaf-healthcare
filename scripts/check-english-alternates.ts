@@ -14,6 +14,7 @@ import {
   ENGLISH_ALTERNATES_BASELINE,
   type AlternatesBaseline,
 } from "@/server-tests/english-alternates-fixture";
+import { englishPathOf, mapLimit, publishedArabicPaths } from "./published-arabic";
 
 const BASE = process.env.BASE_URL ?? "http://127.0.0.1:43127";
 const LOCALE_PREFIXED = /^https:\/\/gaf\.healthcare\/(ru|fr|ar|sw)(\/|$)/;
@@ -124,7 +125,79 @@ async function main() {
       ? "\nAll served responses match the pinned baseline."
       : `\n${failed} page type(s) drifted from the pinned baseline.`,
   );
+
+  failed += await sweepPublishedArabic();
   process.exitCode = failed === 0 ? 0 : 1;
+}
+
+/**
+ * Every published Arabic URL, not just one per page type.
+ *
+ * The fixture pins the shapes; this checks the population. A facet gate opens
+ * a hundred pages at once and the fixture only names one of them, so the two
+ * answer different questions: "did this page type change" and "is every page
+ * the sitemap advertises actually indexable and reciprocally linked".
+ */
+/** The absolute URL as Next renders it, which drops the root trailing slash. */
+function served(path: string) {
+  return path === "/" ? "https://gaf.healthcare" : `https://gaf.healthcare${path}`;
+}
+
+async function sweepPublishedArabic() {
+  const paths = await publishedArabicPaths(BASE);
+  console.log(`\nSweeping ${paths.length} published Arabic URLs from sitemap-ar.xml`);
+
+  const failures = await mapLimit(paths, 12, async (arabicPath) => {
+    const englishPath = englishPathOf(arabicPath);
+    const [arabic, english] = await Promise.all([readHead(arabicPath), readHead(englishPath)]);
+    const problems: string[] = [];
+
+    if (arabic.status !== 200) problems.push(`Arabic HTTP ${arabic.status}`);
+    if (english.status !== 200) problems.push(`English HTTP ${english.status}`);
+    if (arabic.status !== 200 || english.status !== 200) return { arabicPath, problems };
+
+    // A sitemap entry is a claim that the page is the indexable address for
+    // itself, so it has to canonicalise to itself and not to its parent.
+    const selfCanonical = served(arabicPath);
+    const englishUrl = served(englishPath);
+    if (arabic.canonical !== selfCanonical) {
+      problems.push(`canonical is ${arabic.canonical}, expected ${selfCanonical}`);
+    }
+    if (english.canonical !== englishUrl) {
+      problems.push(`English canonical moved to ${english.canonical}`);
+    }
+    if (LOCALE_PREFIXED.test(english.canonical ?? "")) {
+      problems.push(`English canonical carries a locale prefix: ${english.canonical}`);
+    }
+
+    // hreflang has to be reciprocal or Google discards the whole block.
+    if (arabic.languages.ar !== selfCanonical) {
+      problems.push(`Arabic page does not point hreflang=ar at itself`);
+    }
+    if (english.languages.ar !== selfCanonical) {
+      problems.push(`English page does not advertise ar -> ${selfCanonical}`);
+    }
+    if (arabic.languages.en !== englishUrl) {
+      problems.push(`Arabic page does not point hreflang=en at the English URL`);
+    }
+    if (arabic.languages["x-default"] !== arabic.languages.en) {
+      problems.push("x-default does not match the en alternate");
+    }
+    return { arabicPath, problems };
+  });
+
+  const broken = failures.filter((row) => row.problems.length > 0);
+  for (const row of broken.slice(0, 20)) {
+    console.log(`FAIL  ${row.arabicPath}`);
+    for (const problem of row.problems) console.log(`      ${problem}`);
+  }
+  if (broken.length > 20) console.log(`      ... and ${broken.length - 20} more`);
+  console.log(
+    broken.length === 0
+      ? `All ${paths.length} published Arabic URLs self-canonicalise with reciprocal hreflang.`
+      : `${broken.length} of ${paths.length} published Arabic URLs are wrong.`,
+  );
+  return broken.length;
 }
 
 void main();

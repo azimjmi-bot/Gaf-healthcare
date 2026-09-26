@@ -9,15 +9,18 @@ import { stripMarkdown } from "@/lib/markdown";
 import { prettyCatalogPath } from "@/lib/pretty-catalog-path";
 import { site } from "@/lib/site";
 import type { AppLocale } from "@/lib/i18n/languages";
-import { localePath } from "@/lib/i18n/path";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
+import { SITE_URL, absoluteUrl } from "@/lib/seo-url";
+import {
+  ORGANISATION_ID,
+  alternateName,
+  compact,
+  crawlableUrl,
+  documentId,
+  entityId,
+} from "@/lib/jsonld";
 
-export const SITE_URL = "https://gaf.healthcare";
-
-export function absoluteUrl(path = "/", locale: AppLocale = "en") {
-  if (!path.startsWith("/")) path = `/${path}`;
-  return new URL(localePath(path, locale), SITE_URL).toString();
-}
+export { SITE_URL, absoluteUrl };
 
 function clip(text: string, max = 158) {
   const compact = text.replace(/\s+/g, " ").trim();
@@ -253,57 +256,14 @@ export function catalogMetadata(
     else if (spec === "Hematology") title = `Hematologists in ${place}`;
     else if (spec) title = `${spec} doctors in ${place}`;
     else title = `Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists and paediatric orthopaedic surgeons in ${place}`;
-    const citySlug = city ? city.toLowerCase().replace(/\s+/g, "-") : "delhi-ncr";
-    const example =
-      spec === "Nephrology"
-        ? `/doctors/india/${citySlug}/nephrology/hemodialysis`
-        : spec === "Neurology"
-        ? `/doctors/india/${citySlug}/neurology/eeg`
-        : spec === "Neurosurgery"
-        ? `/doctors/india/${citySlug}/neurosurgery/brain-tumor-surgery`
-        : spec === "Gynecology"
-        ? `/doctors/india/${citySlug}/gynecology/laparoscopic-hysterectomy`
-        : spec === "Ophthalmology"
-        ? `/doctors/india/${citySlug}/ophthalmology/cataract-surgery`
-        : spec === "Orthopedics"
-        ? `/doctors/india/${citySlug}/orthopedics/total-knee-replacement`
-        : spec === "Pediatric Orthopaedic"
-        ? `/doctors/india/${citySlug}/pediatric-orthopaedic/clubfoot-correction-surgery`
-        : spec === "Pulmonology"
-        ? `/doctors/india/${citySlug}/pulmonology/bronchoscopy`
-        : spec === "Spine Surgery"
-        ? `/doctors/india/${citySlug}/spine-surgery/spinal-fusion`
-        : spec === "Urology"
-        ? `/doctors/india/${citySlug}/urology/kidney-transplantation`
-        : spec === "Surgical Gastroenterology"
-        ? `/doctors/india/${citySlug}/surgical-gastroenterology/liver-transplantation`
-        : spec === "Gastroenterology"
-        ? `/doctors/india/${citySlug}/gastroenterology/upper-gi-endoscopy-gastroscopy`
-        : spec === "ENT"
-        ? `/doctors/india/${citySlug}/ent/cochlear-implantation`
-        : spec === "Cosmetic Surgery"
-        ? `/doctors/india/${citySlug}/cosmetic-surgery/rhinoplasty`
-        : spec === "Bariatric Surgery"
-        ? `/doctors/india/${citySlug}/bariatric-surgery/sleeve-gastrectomy`
-        : spec === "Cardiology"
-        ? `/doctors/india/${citySlug}/cardiology/coronary-angioplasty-stenting`
-        : spec === "Pediatric Cardiac Surgery"
-        ? `/doctors/india/${citySlug}/pediatric-cardiac-surgery/asd-closure-atrial-septal-defect`
-        : spec === "Cardiac Surgery"
-        ? `/doctors/india/${citySlug}/cardiac-surgery/cabg-coronary-artery-bypass-grafting`
-        : spec === "Pediatric Hematology"
-        ? `/doctors/india/${citySlug}/pediatric-hematology/pediatric-bone-marrow-transplantation`
-        : spec === "Hematology"
-          ? `/doctors/india/${citySlug}/hematology/bone-marrow-transplantation`
-          : `/doctors/india/${citySlug}/radiation-oncology/external-beam-radiotherapy-ebrt`;
     description = clip(
-      `Named ${spec ? spec.toLowerCase() : "oncology, ENT and gastroenterology"} specialists in ${place} at JCI partner campuses. Filter by city, specialty and procedure for later pSEO routes such as ${example}.`,
+      `Named ${spec ? spec.toLowerCase() : "oncology, ENT and gastroenterology"} specialists in ${place} at JCI partner campuses. Filter by city, specialty and procedure to shortlist a consultant.`,
     );
   } else if (entity === "hospitals") {
     title = spec ? `${spec} hospitals in ${place}` : `Oncology, ENT and GI hospitals in ${place}`;
     if (proc) title = `Hospitals for ${proc} in ${place}`;
     description = clip(
-      `Partner campuses in ${place} for ${spec ?? "oncology, ENT and gastroenterology"}. ${proc ? `${proc} is listed where the house can quote it. ` : ""}Country, city, specialty and procedure tags are ready for pSEO.`,
+      `Partner campuses in ${place} for ${spec ?? "oncology, ENT and gastroenterology"}. ${proc ? `${proc} is listed where the house can quote it. ` : ""}Filter by city, specialty and procedure to find the right house.`,
     );
   } else {
     title = spec ? `${spec} cost in ${place}` : `Oncology, ENT and GI treatment cost in ${place}`;
@@ -330,15 +290,16 @@ export function catalogMetadata(
   };
 }
 
-export function physicianJsonLd(d: Doctor, locale: AppLocale = "en") {
-  const url = absoluteUrl(`/doctors/${d.slug}`, locale);
-  return {
+export function physicianJsonLd(d: Doctor, locale: AppLocale = "en", english?: Doctor) {
+  const path = `/doctors/${d.slug}`;
+  const hospitalPath = `/hospitals/${d.hospitalSlug}`;
+  return compact({
     "@context": "https://schema.org",
     "@type": "Physician",
-    "@id": `${url}#person`,
+    "@id": entityId(path, "person"),
     name: d.name,
-    inLanguage: locale,
-    url: absoluteUrl(`/doctors/${d.slug}`, locale),
+    alternateName: english ? alternateName(d.name, english.name) : undefined,
+    url: crawlableUrl(path, locale),
     jobTitle: d.title,
     description: clip(stripMarkdown(d.bio), 240),
     medicalSpecialty: taxonomyLabel(d.specialty, locale),
@@ -359,30 +320,37 @@ export function physicianJsonLd(d: Doctor, locale: AppLocale = "en") {
     },
     worksFor: {
       "@type": "Hospital",
-      "@id": absoluteUrl(`/hospitals/${d.hospitalSlug}`, locale),
+      "@id": entityId(hospitalPath, "hospital"),
       name: d.hospitalName,
-      url: absoluteUrl(`/hospitals/${d.hospitalSlug}`, locale),
+      url: crawlableUrl(hospitalPath, locale),
       address: {
         "@type": "PostalAddress",
         addressLocality: taxonomyLabel(d.city, locale),
         addressCountry: "IN",
       },
     },
-  };
+  });
 }
 
-export function doctorProfilePageJsonLd(d: Doctor, locale: AppLocale = "en") {
-  const url = absoluteUrl(`/doctors/${d.slug}`, locale);
-  const person = physicianJsonLd(d, locale);
-  const { "@context": _context, ...entity } = person;
+export function doctorProfilePageJsonLd(
+  d: Doctor,
+  locale: AppLocale = "en",
+  opts?: { name?: string; english?: Doctor },
+) {
+  const path = `/doctors/${d.slug}`;
+  const entity: Record<string, unknown> = { ...physicianJsonLd(d, locale, opts?.english) };
+  delete entity["@context"];
   return {
     "@context": "https://schema.org",
     "@type": "ProfilePage",
+    "@id": documentId(path, locale, "profilepage"),
     name:
-      d.specialtySlug === "radiation-oncology"
+      opts?.name ??
+      (d.specialtySlug === "radiation-oncology"
         ? `${d.name} — Radiation Oncologist in ${d.city}`
-        : `${d.name} — ${d.title.split(",")[0]?.trim() || d.specialty} in ${d.city}`,
-    url,
+        : `${d.name} — ${d.title.split(",")[0]?.trim() || d.specialty} in ${d.city}`),
+    inLanguage: locale,
+    url: absoluteUrl(path, locale),
     mainEntity: {
       ...entity,
       "@type": ["Person", "Physician"],
@@ -391,12 +359,13 @@ export function doctorProfilePageJsonLd(d: Doctor, locale: AppLocale = "en") {
 }
 
 export function hospitalJsonLd(h: Hospital, locale: AppLocale = "en") {
-  return {
+  const path = `/hospitals/${h.slug}`;
+  return compact({
     "@context": "https://schema.org",
     "@type": "Hospital",
+    "@id": entityId(path, "hospital"),
     name: h.name,
-    inLanguage: locale,
-    url: absoluteUrl(`/hospitals/${h.slug}`, locale),
+    url: crawlableUrl(path, locale),
     description: clip(displayBio(h.bio), 240),
     medicalSpecialty: h.specialties.map((name) => taxonomyLabel(name, locale)),
     address: {
@@ -404,18 +373,25 @@ export function hospitalJsonLd(h: Hospital, locale: AppLocale = "en") {
       addressLocality: taxonomyLabel(h.city, locale),
       addressCountry: "IN",
     },
-  };
+  });
 }
 
 export function breadcrumbJsonLd(items: { name: string; path: string }[], locale: AppLocale = "en") {
+  // The trail always ends on the page doing the emitting, so the document @id
+  // comes from the last crumb rather than a separate argument.
+  const pagePath = items[items.length - 1]?.path ?? "/";
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
+    "@id": documentId(pagePath, locale, "breadcrumb"),
+    inLanguage: locale,
     itemListElement: items.map((item, i) => ({
       "@type": "ListItem",
       position: i + 1,
       name: item.name,
-      item: absoluteUrl(item.path, locale),
+      // A trail through an unpublished facet must point at the English page
+      // that exists, not the Arabic one that carries noindex.
+      item: crawlableUrl(item.path, locale),
     })),
   };
 }
@@ -436,17 +412,24 @@ export function medicalWebPageJsonLd(opts: {
   return {
     "@context": "https://schema.org",
     "@type": ["MedicalWebPage", "WebPage"],
+    "@id": documentId(opts.path, locale, "webpage"),
     name: opts.name,
     description: clip(opts.description),
     url,
     inLanguage: locale,
     lastReviewed: opts.lastReviewed,
     dateModified: opts.lastReviewed,
-    isPartOf: { "@type": "WebSite", name: site.name, url: absoluteUrl("/", locale) },
+    isPartOf: {
+      "@type": "WebSite",
+      "@id": entityId("/", "website"),
+      name: site.name,
+      url: crawlableUrl("/", locale),
+    },
     publisher: {
       "@type": "Organization",
+      "@id": ORGANISATION_ID,
       name: site.name,
-      url: absoluteUrl("/", locale),
+      url: crawlableUrl("/", locale),
       logo: { "@type": "ImageObject", url: absoluteUrl("/brand/gaf-healthcare.png") },
     },
     audience: { "@type": "MedicalAudience", audienceType: "Patient" },
@@ -466,7 +449,9 @@ export function hospitalItemListJsonLd(rows: Hospital[], opts: { name: string; p
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
+    "@id": documentId(opts.path, locale, "hospital-list"),
     name: opts.name,
+    inLanguage: locale,
     url: absoluteUrl(opts.path, locale),
     numberOfItems: rows.length,
     itemListOrder: "https://schema.org/ItemListUnordered",
@@ -475,12 +460,13 @@ export function hospitalItemListJsonLd(rows: Hospital[], opts: { name: string; p
       position: i + 1,
       item: {
         "@type": "Hospital",
+        "@id": entityId(`/hospitals/${hospital.slug}`, "hospital"),
         name: hospital.name,
-        url: absoluteUrl(`/hospitals/${hospital.slug}`, locale),
-        medicalSpecialty: hospital.specialties,
+        url: crawlableUrl(`/hospitals/${hospital.slug}`, locale),
+        medicalSpecialty: hospital.specialties.map((name) => taxonomyLabel(name, locale)),
         address: {
           "@type": "PostalAddress",
-          addressLocality: hospital.city,
+          addressLocality: taxonomyLabel(hospital.city, locale),
           addressCountry: opts.addressCountry ?? "IN",
         },
       },
@@ -493,7 +479,9 @@ export function doctorItemListJsonLd(rows: Doctor[], opts: { name: string; path:
   return {
     "@context": "https://schema.org",
     "@type": "ItemList",
+    "@id": documentId(opts.path, locale, "doctor-list"),
     name: opts.name,
+    inLanguage: locale,
     url: absoluteUrl(opts.path, locale),
     numberOfItems: rows.length,
     itemListOrder: "https://schema.org/ItemListUnordered",
@@ -501,14 +489,22 @@ export function doctorItemListJsonLd(rows: Doctor[], opts: { name: string; path:
       "@type": "ListItem",
       position: i + 1,
       item: {
-        "@type": "Physician",
+        // schema.org's Physician descends from MedicalOrganization, so the
+        // Person half is what carries worksFor and jobTitle. The profile page
+        // has always emitted both; the list items were the odd ones out.
+        "@type": ["Person", "Physician"],
+        "@id": entityId(`/doctors/${doctor.slug}`, "person"),
         name: doctor.name,
-        url: absoluteUrl(`/doctors/${doctor.slug}`, locale),
-        medicalSpecialty: doctor.specialty,
-        worksFor: { "@type": "Hospital", name: doctor.hospitalName },
+        url: crawlableUrl(`/doctors/${doctor.slug}`, locale),
+        medicalSpecialty: taxonomyLabel(doctor.specialty, locale),
+        worksFor: {
+          "@type": "Hospital",
+          "@id": entityId(`/hospitals/${doctor.hospitalSlug}`, "hospital"),
+          name: doctor.hospitalName,
+        },
         address: {
           "@type": "PostalAddress",
-          addressLocality: doctor.city,
+          addressLocality: taxonomyLabel(doctor.city, locale),
           addressCountry: opts.addressCountry ?? "IN",
         },
       },
@@ -557,10 +553,17 @@ export function costArticleMetadata(
   };
 }
 
-export function faqJsonLd(rows: { q: string; a: string }[]) {
+export function faqJsonLd(
+  rows: { q: string; a: string }[],
+  opts: { path: string; locale?: AppLocale },
+) {
+  const locale = opts.locale ?? "en";
   return {
     "@context": "https://schema.org",
     "@type": "FAQPage",
+    "@id": documentId(opts.path, locale, "faq"),
+    inLanguage: locale,
+    url: absoluteUrl(opts.path, locale),
     mainEntity: rows.map((row) => ({
       "@type": "Question",
       name: row.q,

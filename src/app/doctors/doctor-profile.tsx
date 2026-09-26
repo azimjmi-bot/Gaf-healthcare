@@ -29,7 +29,7 @@ function ProfileList({ title, items }: { title: string; items: string[] }) {
   return (
     <div className="mt-10">
       <h2 className="font-heading text-3xl">{title}</h2>
-      <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+      <ul className="mt-4 list-disc space-y-2 ps-5 text-muted-foreground">
         {items.map((item) => (
           <li key={item}>{item}</li>
         ))}
@@ -52,7 +52,10 @@ export async function DoctorProfile({ slug }: { slug: string }) {
 
   return (
     <>
-      <JsonLd data={doctorProfilePageJsonLd(d, locale)} />
+      <JsonLd data={doctorProfilePageJsonLd(d, locale, {
+          name: heading,
+          english: locale === "en" ? d : getDoctorForLocale(slug, "en"),
+        })} />
       <JsonLd
         data={breadcrumbJsonLd(
           [

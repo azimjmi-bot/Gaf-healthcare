@@ -5,7 +5,8 @@ import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { LANGUAGE_OG, localeDir } from "@/lib/i18n/languages";
 import { localizeMessages } from "@/lib/i18n/localize";
-import { getRequestLocale } from "@/lib/i18n/request";
+import { getRequestLocale, getRequestPath } from "@/lib/i18n/request";
+import { languageOptions } from "@/lib/i18n/language-options";
 import { availableSurfaces } from "@/lib/i18n/surfaces";
 import { SITE_URL } from "@/lib/seo";
 import { site } from "@/lib/site";
@@ -159,7 +160,12 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       className={`${geistSans.variable} ${cormorant.variable} ${notoSans.variable} ${notoArabic.variable} h-full`}
     >
       <body className="flex min-h-full flex-col">
-        <LocaleProvider locale={locale} messages={messages} surfaces={availableSurfaces(locale)}>
+        <LocaleProvider
+          locale={locale}
+          messages={messages}
+          surfaces={availableSurfaces(locale)}
+          languageOptions={languageOptions(await getRequestPath())}
+        >
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />

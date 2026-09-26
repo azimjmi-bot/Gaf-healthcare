@@ -90,7 +90,7 @@ export function SiteFooter() {
           <p>
             © {new Date().getFullYear()} GAF Healthcare. {t("footer.rights")}
           </p>
-          <p>New York · London · Singapore</p>
+          <p>{t("footer.offices")}</p>
         </div>
       </div>
     </footer>

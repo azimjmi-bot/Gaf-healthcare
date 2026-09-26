@@ -12,8 +12,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useT } from "@/components/locale-provider";
 import { hospitals } from "@/lib/hospitals";
 import { treatments } from "@/lib/treatments";
+import type { ConsultErrorCode } from "@/app/api/consult/route";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
@@ -26,9 +28,10 @@ export function ConsultForm({
   defaultHospital?: string;
   defaultDoctor?: string;
 }) {
+  const t = useT();
   const [status, setStatus] = useState<Status>("idle");
   const [reference, setReference] = useState("");
-  const [error, setError] = useState("");
+  const [errorCode, setErrorCode] = useState<ConsultErrorCode | "submit" | "unknown" | null>(null);
   const [treatment, setTreatment] = useState(defaultTreatment ?? "");
   const [hospital, setHospital] = useState(defaultHospital ?? "");
   const [timeline, setTimeline] = useState("");
@@ -39,7 +42,7 @@ export function ConsultForm({
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setStatus("submitting");
-    setError("");
+    setErrorCode(null);
     const form = e.currentTarget;
     const data = new FormData(form);
     const payload = {
@@ -57,7 +60,7 @@ export function ConsultForm({
 
     if (!payload.treatment || !payload.timeline) {
       setStatus("error");
-      setError("Please choose a treatment interest and a travel window.");
+      setErrorCode("selection");
       return;
     }
 
@@ -67,9 +70,15 @@ export function ConsultForm({
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
       });
-      const json = (await res.json()) as { ok?: boolean; reference?: string; error?: string };
+      const json = (await res.json()) as {
+        ok?: boolean;
+        reference?: string;
+        error?: ConsultErrorCode;
+      };
       if (!res.ok || !json.ok) {
-        throw new Error(json.error || "Could not submit.");
+        setStatus("error");
+        setErrorCode(json.error ?? "submit");
+        return;
       }
       setReference(json.reference || "");
       setStatus("success");
@@ -77,24 +86,21 @@ export function ConsultForm({
       setTreatment("");
       setHospital("");
       setTimeline("");
-    } catch (err) {
+    } catch {
       setStatus("error");
-      setError(err instanceof Error ? err.message : "Something went wrong.");
+      setErrorCode("unknown");
     }
   }
 
   if (status === "success") {
     return (
       <div className="rounded-2xl border border-border bg-card p-8 md:p-10">
-        <p className="eyebrow">Received</p>
-        <h2 className="mt-3 font-heading text-4xl">Your dossier is in motion.</h2>
-        <p className="prose-gaf mt-4">
-          A coordinator will write within one business day — usually sooner.
-          Keep this reference for your records.
-        </p>
+        <p className="eyebrow">{t("consult.successEyebrow")}</p>
+        <h2 className="mt-3 font-heading text-4xl">{t("consult.successTitle")}</h2>
+        <p className="prose-gaf mt-4">{t("consult.successBody")}</p>
         <p className="mt-6 font-heading text-3xl tracking-wide text-gold">{reference}</p>
         <Button className="mt-8 h-11 rounded-full px-6" onClick={() => setStatus("idle")}>
-          Submit another brief
+          {t("consult.successAgain")}
         </Button>
       </div>
     );
@@ -103,10 +109,10 @@ export function ConsultForm({
   return (
     <form onSubmit={onSubmit} className="space-y-6 rounded-2xl border border-border bg-card p-4 sm:p-6 md:p-10">
       <div className="grid gap-5 md:grid-cols-2">
-        <Field label="Full name" htmlFor="name">
+        <Field label={t("consult.name")} htmlFor="name">
           <Input id="name" name="name" required autoComplete="name" className="h-11" />
         </Field>
-        <Field label="Email" htmlFor="email">
+        <Field label={t("consult.email")} htmlFor="email">
           <Input
             id="email"
             name="email"
@@ -116,20 +122,20 @@ export function ConsultForm({
             className="h-11"
           />
         </Field>
-        <Field label="Phone" htmlFor="phone">
+        <Field label={t("consult.phone")} htmlFor="phone">
           <Input id="phone" name="phone" type="tel" required autoComplete="tel" className="h-11" />
         </Field>
-        <Field label="Home country" htmlFor="country">
+        <Field label={t("consult.country")} htmlFor="country">
           <Input id="country" name="country" required autoComplete="country-name" className="h-11" />
         </Field>
       </div>
 
       <div className="grid gap-5 md:grid-cols-2">
         <div className="space-y-2">
-          <Label>Treatment interest</Label>
+          <Label>{t("consult.treatment")}</Label>
           <Select value={treatment || undefined} onValueChange={setTreatment}>
             <SelectTrigger className="h-11 w-full">
-              <SelectValue placeholder="Select a pathway" />
+              <SelectValue placeholder={t("consult.treatmentPlaceholder")} />
             </SelectTrigger>
             <SelectContent>
               {treatmentOptions.map((t) => (
@@ -137,18 +143,18 @@ export function ConsultForm({
                   {t.name}
                 </SelectItem>
               ))}
-              <SelectItem value="unsure">Not sure yet</SelectItem>
+              <SelectItem value="unsure">{t("consult.treatmentUnsure")}</SelectItem>
             </SelectContent>
           </Select>
         </div>
         <div className="space-y-2">
-          <Label>Hospital preference</Label>
+          <Label>{t("consult.hospital")}</Label>
           <Select value={hospital || undefined} onValueChange={setHospital}>
             <SelectTrigger className="h-11 w-full">
-              <SelectValue placeholder="Open to guidance" />
+              <SelectValue placeholder={t("consult.hospitalPlaceholder")} />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="open">Open — advise me</SelectItem>
+              <SelectItem value="open">{t("consult.hospitalOpen")}</SelectItem>
               {hospitalOptions.map((h) => (
                 <SelectItem key={h.slug} value={h.slug}>
                   {h.name}
@@ -160,26 +166,26 @@ export function ConsultForm({
       </div>
 
       <div className="space-y-2">
-        <Label>When would you like to travel?</Label>
+        <Label>{t("consult.timeline")}</Label>
         <Select value={timeline || undefined} onValueChange={setTimeline}>
           <SelectTrigger className="h-11 w-full">
-            <SelectValue placeholder="Choose a window" />
+            <SelectValue placeholder={t("consult.timelinePlaceholder")} />
           </SelectTrigger>
           <SelectContent>
-            <SelectItem value="urgent">Within 4 weeks</SelectItem>
-            <SelectItem value="near">1–3 months</SelectItem>
-            <SelectItem value="plan">3–6 months</SelectItem>
-            <SelectItem value="explore">Exploring only</SelectItem>
+            <SelectItem value="urgent">{t("consult.timelineUrgent")}</SelectItem>
+            <SelectItem value="near">{t("consult.timelineNear")}</SelectItem>
+            <SelectItem value="plan">{t("consult.timelinePlan")}</SelectItem>
+            <SelectItem value="explore">{t("consult.timelineExplore")}</SelectItem>
           </SelectContent>
         </Select>
       </div>
 
-      <Field label="What should we know?" htmlFor="notes">
+      <Field label={t("consult.notes")} htmlFor="notes">
         <Textarea
           id="notes"
           name="notes"
           rows={5}
-          placeholder="Prior procedures, imaging you already have, constraints on travel, companion needs…"
+          placeholder={t("consult.notesPlaceholder")}
         />
       </Field>
 
@@ -190,15 +196,12 @@ export function ConsultForm({
           required
           className="mt-0.5 size-5 shrink-0 accent-[var(--ink)]"
         />
-        <span>
-          I understand GAF Healthcare is not a hospital, that this is not medical advice,
-          and that my details will be used only to prepare a confidential dossier.
-        </span>
+        <span>{t("consult.consent")}</span>
       </label>
 
-      {status === "error" ? (
+      {status === "error" && errorCode ? (
         <p className="text-sm text-destructive" role="alert">
-          {error}
+          {t(`consult.error.${errorCode}`)}
         </p>
       ) : null}
 
@@ -207,7 +210,7 @@ export function ConsultForm({
         disabled={status === "submitting"}
         className="h-12 w-full rounded-full px-8 md:w-auto"
       >
-        {status === "submitting" ? "Sending…" : "Request my dossier"}
+        {status === "submitting" ? t("consult.submitting") : t("consult.submit")}
       </Button>
     </form>
   );

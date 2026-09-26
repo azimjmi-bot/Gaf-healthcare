@@ -1,6 +1,7 @@
 import "server-only";
 import { listPublishedPosts } from "@/lib/blogs";
 import { filterDoctors, filterHospitals } from "@/lib/catalog";
+import { parentCatalogQuery } from "@/lib/catalog-options";
 import {
   doctorsForHospitalLocale,
   doctorsForLocale,
@@ -20,6 +21,10 @@ import {
   type AppLocale,
 } from "@/lib/i18n/languages";
 import { facetIsPublished, localeIsPublished } from "@/lib/i18n/locale-gating";
+// A cycle on purpose: canonicalFacetPath needs to know what is published, and
+// the hreflang set needs to know what canonicalises away. Both are function
+// declarations used at call time, so neither sees a half-initialised module.
+import { canonicalFacetPath } from "@/lib/i18n/facet-canonical";
 import { stripLocalePrefix } from "@/lib/i18n/path";
 
 /**
@@ -63,7 +68,9 @@ function targetLocaleState(locale: AppLocale, segments: string[]): LocalePageSta
     const query = parsePrettyCatalogSegments(segments.slice(1));
     if (query) {
       const matches = filterDoctors(query, rows).length;
-      return facetState(matches, facetIsPublished("doctorFacet", matches));
+      const parent = parentCatalogQuery(query);
+      const parentMatches = parent ? filterDoctors(parent, rows).length : undefined;
+      return facetState(matches, facetIsPublished("doctorFacet", matches, parentMatches));
     }
     return segments.length === 2 && getDoctorForLocale(segments[1], locale)
       ? "published"
@@ -76,7 +83,9 @@ function targetLocaleState(locale: AppLocale, segments: string[]): LocalePageSta
     const query = parsePrettyCatalogSegments(segments.slice(1));
     if (query) {
       const matches = filterHospitals(query, rows).length;
-      return facetState(matches, facetIsPublished("hospitalFacet", matches));
+      const parent = parentCatalogQuery(query);
+      const parentMatches = parent ? filterHospitals(parent, rows).length : undefined;
+      return facetState(matches, facetIsPublished("hospitalFacet", matches, parentMatches));
     }
     const hospital = getHospitalForLocale(segments[1], locale);
     if (!hospital) return "missing";
@@ -136,6 +145,20 @@ export function localePageIsRenderable(locale: AppLocale, path: string) {
   return localePageState(locale, path) !== "missing";
 }
 
+/**
+ * The locales whose version of this path is the indexable address for itself,
+ * which is what an hreflang block is allowed to claim.
+ *
+ * Being published is necessary but not sufficient. A locale can publish a
+ * facet and still have that facet name its parent as canonical — a doctor
+ * facet returning exactly the country roster does — and such a page emits no
+ * hreflang of its own. Advertising it from English would be a one-way claim,
+ * and Google discards hreflang that is not reciprocated, taking the rest of
+ * the block's credibility with it.
+ */
 export function publishedLocalesForPath(path: string) {
-  return LOCALES.filter((locale) => localePathIsPublished(locale, path));
+  return LOCALES.filter(
+    (locale) =>
+      localePathIsPublished(locale, path) && canonicalFacetPath(path, locale) === path,
+  );
 }

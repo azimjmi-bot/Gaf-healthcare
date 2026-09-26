@@ -19,6 +19,7 @@ import {
   hospitalItemListJsonLd,
   medicalWebPageJsonLd,
 } from "@/lib/seo";
+import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
 
 function treatmentForQuery(sheet: Treatment, query: CatalogQuery): Treatment {
@@ -76,9 +77,10 @@ export async function costsProcedureMetadata(query: CatalogQuery): Promise<Metad
 }
 
 export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
+  const locale = await getRequestLocale();
   // Destinations other than the primary one are described by a CMS destination row, not
   // by the long-form India article, so they render their own country/city view.
-  if (!isPrimaryCountry(query.destination)) return <CostsCountryView query={query} />;
+  if (!isPrimaryCountry(query.destination)) return <CostsCountryView query={query} locale={locale} />;
   const list = filterTreatments(query, treatments, hospitals);
   const source = query.procedure ? treatments.find((t) => t.name === query.procedure) : undefined;
   if (!source) return null;
@@ -119,6 +121,7 @@ export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
           specialty: catalogSpecialtyName(sheet),
           about: sheetArticle.heroLede || sheet.summary,
           image: sheetArticle.figures?.[0]?.src,
+          locale,
         })}
       />
       <JsonLd
@@ -134,9 +137,9 @@ export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
             }),
           },
           ...(query.city ? [{ name: query.city, path: pagePath }] : []),
-        ])}
+        ], locale)}
       />
-      <JsonLd data={faqJsonLd(faqs)} />
+      <JsonLd data={faqJsonLd(faqs, { path: pagePath, locale })} />
       {data && data.faculty.length > 0 ? (
         <JsonLd
           data={doctorItemListJsonLd(data.faculty, {

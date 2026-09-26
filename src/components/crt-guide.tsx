@@ -183,7 +183,7 @@ export function CrtGuide() {
 
       <H2 id="imrt">3D-CRT vs IMRT</H2>
       <div className="mt-6 overflow-x-auto rounded-2xl border border-border">
-        <table className="w-full min-w-[36rem] text-left text-sm">
+        <table className="w-full min-w-[36rem] text-start text-sm">
           <thead className="bg-secondary/60 text-xs tracking-[0.16em] uppercase text-muted-foreground">
             <tr>
               <th className="px-4 py-3 font-medium">Feature</th>
@@ -245,7 +245,7 @@ export function CrtGuide() {
         hospital and the plan.
       </P>
       <div className="mt-6 overflow-x-auto rounded-2xl border border-border">
-        <table className="w-full min-w-[28rem] text-left text-sm">
+        <table className="w-full min-w-[28rem] text-start text-sm">
           <thead className="bg-secondary/60 text-xs tracking-[0.16em] uppercase text-muted-foreground">
             <tr>
               <th className="px-4 py-3 font-medium">City</th>
@@ -299,7 +299,7 @@ export function CrtGuide() {
         currently staffs with named consultants.
       </P>
       <div className="mt-6 overflow-x-auto rounded-2xl border border-border">
-        <table className="w-full min-w-[28rem] text-left text-sm">
+        <table className="w-full min-w-[28rem] text-start text-sm">
           <thead className="bg-secondary/60 text-xs tracking-[0.16em] uppercase text-muted-foreground">
             <tr>
               <th className="px-4 py-3 font-medium">Destination</th>
@@ -326,7 +326,7 @@ export function CrtGuide() {
       <div className="mt-6 grid gap-6 sm:grid-cols-2">
         <div className="rounded-2xl border border-border bg-card p-6">
           <p className="text-xs tracking-[0.18em] uppercase text-gold">Often included</p>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+          <ul className="mt-3 list-disc space-y-2 ps-5 text-sm text-muted-foreground">
             <li>Radiation oncologist consultation</li>
             <li>CT simulation</li>
             <li>Treatment planning and dosimetry</li>
@@ -337,7 +337,7 @@ export function CrtGuide() {
         </div>
         <div className="rounded-2xl border border-border bg-card p-6">
           <p className="text-xs tracking-[0.18em] uppercase text-gold">Often separate</p>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-muted-foreground">
+          <ul className="mt-3 list-disc space-y-2 ps-5 text-sm text-muted-foreground">
             <li>MRI, PET-CT, biopsy, pathology, blood tests</li>
             <li>Immobilisation devices and extra imaging</li>
             <li>Chemotherapy or hormone therapy</li>
@@ -356,7 +356,7 @@ export function CrtGuide() {
         Side effects depend on the body area treated. Common general effects include
         fatigue, skin irritation, local changes and reduced appetite in some patients.
       </P>
-      <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+      <ul className="mt-4 list-disc space-y-2 ps-5 text-muted-foreground">
         <li>
           <span className="text-foreground">Head and neck:</span> mouth soreness,
           difficulty swallowing, dry mouth, taste changes
@@ -423,7 +423,7 @@ export function CrtGuide() {
       </Accordion>
 
       <H2 id="glance">3D-CRT cost at a glance</H2>
-      <ul className="mt-4 list-disc space-y-2 pl-5 text-muted-foreground">
+      <ul className="mt-4 list-disc space-y-2 ps-5 text-muted-foreground">
         <li>Treatment: 3D Conformal Radiation Therapy</li>
         <li>
           Type:{" "}

@@ -21,6 +21,21 @@ export type CityChipStats = {
   counts: Record<string, number>;
 };
 
+/**
+ * The facet one level up: the same query with its most specific filter dropped,
+ * in the order the URL nests them. Returns null for the country root, which has
+ * no parent facet.
+ *
+ * Used by the Arabic overlap gate to ask whether a facet narrows its parent's
+ * result set enough to deserve its own indexed page.
+ */
+export function parentCatalogQuery(query: CatalogQuery): CatalogQuery | null {
+  if (query.procedure) return { ...query, procedure: undefined };
+  if (query.specialty) return { ...query, specialty: undefined };
+  if (query.city) return { ...query, city: undefined };
+  return null;
+}
+
 export function parseCatalogQuery(
   params: Record<string, string | string[] | undefined>,
 ): CatalogQuery {

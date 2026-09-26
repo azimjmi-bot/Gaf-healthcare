@@ -12,6 +12,7 @@ import { costsFilterPath } from "@/lib/catalog-links";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
+import { crawlableUrl, documentId } from "@/lib/jsonld";
 import { absoluteUrl } from "@/lib/seo";
 import {
   buildSpecialtyPageData,
@@ -58,7 +59,10 @@ export default async function SpecialtiesPage() {
   const itemList = {
     "@context": "https://schema.org",
     "@type": "ItemList",
+    "@id": documentId("/specialties", locale, "specialty-list"),
     name: "Published medical specialty guides",
+    inLanguage: locale,
+    url: absoluteUrl("/specialties", locale),
     numberOfItems: specialties.length,
     itemListElement: specialties.map((data, index) => {
       const path = costsFilterPath({
@@ -69,7 +73,7 @@ export default async function SpecialtiesPage() {
         "@type": "ListItem",
         position: index + 1,
         name: `${data.specialty.name} in ${data.country.name}`,
-        url: absoluteUrl(path),
+        url: crawlableUrl(path, locale),
       };
     }),
   };
@@ -147,7 +151,7 @@ export default async function SpecialtiesPage() {
                   className="mt-7 inline-flex min-h-11 items-center gap-2 rounded-full bg-primary px-5 text-sm font-medium text-primary-foreground transition-colors hover:bg-primary/90"
                 >
                   Explore {data.specialty.name}
-                  <ArrowRight className="size-4" aria-hidden />
+                  <ArrowRight className="size-4 icon-forward" aria-hidden />
                 </Link>
               </article>
             );

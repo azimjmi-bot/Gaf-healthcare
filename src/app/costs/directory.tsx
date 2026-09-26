@@ -11,8 +11,10 @@ import { cityResultCounts, listCostSpecialtyGroups, type CatalogQuery } from "@/
 import { costPath, costsFilterPath } from "@/lib/catalog-links";
 import { getSpecialtyPage } from "@/data/specialty-pages";
 import { hospitals, treatments } from "@/lib/data";
-import { absoluteUrl, faqJsonLd } from "@/lib/seo";
+import { faqJsonLd } from "@/lib/seo";
 import { catalogPageMetadata } from "@/lib/i18n/page-meta";
+import { LOCALES } from "@/lib/i18n/languages";
+import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
@@ -32,7 +34,9 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
     const meta = await costsProcedureMetadata(query);
     // Country views already carry their own canonical and country-specific copy.
     if (!isPrimaryCountry(query.destination)) return meta;
-    if (!query.city) return meta;
+    // Country-level procedure pages chose their own canonical but emitted no
+    // hreflang. The path they canonicalise to is the one this query builds.
+    if (!query.city) return withLocaleMetadata(meta, costsFilterPath(query), locale, LOCALES);
     const wrapped = await catalogPageMetadata("treatments", query);
     return { ...meta, alternates: wrapped.alternates, openGraph: { ...meta.openGraph, ...wrapped.openGraph } };
   }
@@ -63,25 +67,31 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
       data?.city
         ? `Explore ${data.procedures.length} ${data.specialty.name} ${data.profile.terminology.careItems}, ${data.hospitals.length} related hospitals and ${data.doctors.length} connected ${data.profile.terminology.practitioners} in ${data.city.name}, ${data.country.name}.`
         : profile.seoDescription;
-    return {
-      ...wrapped,
-      title,
-      description,
-      robots: indexable ? undefined : { index: false, follow: true },
-      alternates: { canonical: absoluteUrl(path) },
-      openGraph: {
-        ...wrapped.openGraph,
+    // Overwriting alternates wholesale used to drop the hreflang block that
+    // catalogPageMetadata had just built, so this branch shipped a canonical
+    // and nothing else.
+    return withLocaleMetadata(
+      {
+        ...wrapped,
         title,
         description,
-        url: absoluteUrl(path),
-        type: "website",
+        robots: indexable ? undefined : { index: false, follow: true },
+        openGraph: {
+          ...wrapped.openGraph,
+          title,
+          description,
+          type: "website",
+        },
+        twitter: {
+          card: "summary_large_image",
+          title,
+          description,
+        },
       },
-      twitter: {
-        card: "summary_large_image",
-        title,
-        description,
-      },
-    };
+      path,
+      locale,
+      LOCALES,
+    );
   }
   const facets = [query.city, query.specialty].filter(Boolean).length;
   if (facets > 1) {
@@ -109,7 +119,7 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
     ? buildSpecialtyPageData(profile, city?.slug)
     : undefined;
   if (specialtyData && specialtyPageMeetsQualityThreshold(specialtyData)) {
-    return <SpecialtyCostPage data={specialtyData} query={query} />;
+    return <SpecialtyCostPage data={specialtyData} query={query} locale={locale} />;
   }
   const messages = await localizeMessages(locale);
   const faqs = await localizeFaqs("costs", locale);
@@ -126,7 +136,7 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
 
   return (
     <>
-      <JsonLd data={faqJsonLd(faqs)} />
+      <JsonLd data={faqJsonLd(faqs, { path: costsFilterPath(query), locale })} />
       <PageIntro
         eyebrow={copy.eyebrow}
         title={copy.heading}
@@ -163,7 +173,7 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
                 ) : (
                   <>
                     <div className="mt-6 hidden overflow-hidden rounded-2xl border border-border md:block">
-                      <table className="w-full text-left text-sm">
+                      <table className="w-full text-start text-sm">
                         <thead className="bg-secondary/60 text-xs tracking-[0.16em] uppercase text-muted-foreground">
                           <tr>
                             <th className="px-6 py-4 font-medium">{messages["dir.costs.pathway"]}</th>
@@ -183,7 +193,7 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
                               <td className="px-6 py-5">{t.usRange}</td>
                               <td className="px-6 py-5 font-medium">{t.partnerRange}</td>
                               <td className="px-6 py-5 text-muted-foreground">{t.stay}</td>
-                              <td className="px-6 py-5 text-right">
+                              <td className="px-6 py-5 text-end">
                                 <Link
                                   href={costPath(t.name)}
                                   className="text-sm underline-offset-4 hover:underline"

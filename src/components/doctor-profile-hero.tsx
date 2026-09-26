@@ -64,7 +64,7 @@ export function DoctorProfileHero({
   return (
     <section className="dhero">
       <div className="dhero__inner">
-        <nav className="dhero__crumbs" aria-label="Breadcrumb">
+        <nav className="dhero__crumbs" aria-label={t["a11y.breadcrumb"]}>
           <Link href="/">{t["profile.home"]}</Link>
           <span>/</span>
           <Link href="/doctors">{t["profile.doctors"]}</Link>

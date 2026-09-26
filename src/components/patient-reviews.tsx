@@ -7,19 +7,22 @@ export function PatientReviews({
   title = "What Our Patients Say",
   summary,
   readLabel = "Read on Google",
+  label = "Patient reviews",
 }: {
   reviews?: readonly { name: string; text: string }[];
   eyebrow?: string;
   title?: string;
   summary?: string;
   readLabel?: string;
+  /** Names the section for a screen reader; it has no visible heading. */
+  label?: string;
 }) {
   const lede =
     summary ??
     `${GOOGLE_PROFILE.rating} from ${GOOGLE_PROFILE.reviewCount} reviews on the GAF Healthcare Pvt Ltd Google listing.`;
 
   return (
-    <section className="home-section" aria-label="Patient reviews">
+    <section className="home-section" aria-label={label}>
       <div className="home-head">
         <div>
           <p className="eyebrow">{eyebrow}</p>
@@ -27,7 +30,7 @@ export function PatientReviews({
           <p>{lede}</p>
         </div>
         <a href={GOOGLE_MAPS_URL} className="home-more" target="_blank" rel="noreferrer">
-          {readLabel} <ArrowRight className="size-4" />
+          {readLabel} <ArrowRight className="size-4 icon-forward" />
         </a>
       </div>
       <div className="home-reviewgrid">

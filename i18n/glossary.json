@@ -1,0 +1,5980 @@
+{
+  "sourceLocale": "en",
+  "locale": "ar",
+  "about": "Approved English-to-Arabic terminology, consolidated from the tables the site already ships. Rebuild with `npm run glossary:build`. Terms are not authored here: change the source table and rebuild.",
+  "counts": {
+    "terms": 691,
+    "categories": {
+      "airport": 5,
+      "award-phrase": 4,
+      "city": 10,
+      "clinical-phrase": 48,
+      "country": 7,
+      "credential-phrase": 11,
+      "house-label": 23,
+      "job-title": 41,
+      "language": 12,
+      "organisation": 6,
+      "person-name": 70,
+      "practitioner-noun": 23,
+      "procedure": 380,
+      "specialty": 23,
+      "specialty-blurb": 23,
+      "ward-languages": 5
+    },
+    "unresolved": 0
+  },
+  "unresolved": [],
+  "terms": [
+    {
+      "en": "Bengaluru international airport",
+      "ar": "مطار كيمبيغودا",
+      "category": "airport",
+      "note": "Used in travel copy; the English side is descriptive, not a catalog key.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Chennai international airport",
+      "ar": "مطار تشيناي الدولي",
+      "category": "airport",
+      "note": "Used in travel copy; the English side is descriptive, not a catalog key.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Delhi NCR international airport",
+      "ar": "مطار إنديرا غاندي",
+      "category": "airport",
+      "note": "Used in travel copy; the English side is descriptive, not a catalog key.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Hyderabad international airport",
+      "ar": "مطار راجيف غاندي الدولي",
+      "category": "airport",
+      "note": "Used in travel copy; the English side is descriptive, not a catalog key.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Mumbai international airport",
+      "ar": "مطار شاتراباتي شيفاجي مهراج",
+      "category": "airport",
+      "note": "Used in travel copy; the English side is descriptive, not a catalog key.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Best Radiation Oncologist of South India",
+      "ar": "أفضل أخصائي علاج الأورام بالإشعاع في جنوب الهند",
+      "category": "award-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Gold Medalist",
+      "ar": "حائز على الميدالية الذهبية",
+      "category": "award-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Gold Medallist",
+      "ar": "حائز على الميدالية الذهبية",
+      "category": "award-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Top Radiation Oncologist of South India",
+      "ar": "أبرز أخصائي علاج الأورام بالإشعاع في جنوب الهند",
+      "category": "award-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Bangkok",
+      "ar": "بانكوك",
+      "category": "city",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Bengaluru",
+      "ar": "بنغالور",
+      "category": "city",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Chennai",
+      "ar": "تشيناي",
+      "category": "city",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Delhi NCR",
+      "ar": "دلهي إن سي آر",
+      "category": "city",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Dubai",
+      "ar": "دبي",
+      "category": "city",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Hyderabad",
+      "ar": "حيدر آباد",
+      "category": "city",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Istanbul",
+      "ar": "إسطنبول",
+      "category": "city",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Mexico City",
+      "ar": "مدينة مكسيكو",
+      "category": "city",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Mumbai",
+      "ar": "مومباي",
+      "category": "city",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Seoul",
+      "ar": "سيول",
+      "category": "city",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "3D Conformal Radiotherapy",
+      "ar": "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Advanced Radiation Therapy Techniques- 3D Conformal Radiotherapy",
+      "ar": "تقنيات الإشعاع المتقدمة — العلاج الإشعاعي المطابق ثلاثي الأبعاد",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Advanced Radiation Therapy Techniques- Stereotactic Body Radiation Therapy (SBRT)",
+      "ar": "تقنيات الإشعاع المتقدمة — العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Based on Dr. Muddana's specialization in Radiation Oncology, her clinical focus encompasses various aspects of radiation therapy, including advanced techniques that minimize side effects while maximizing treatment efficacy:",
+      "ar": "مسارها السريري يركّز على تخطيط الجرعة بحيث ينحصر الإشعاع في الهدف ويتراجع العبء على الأنسجة المجاورة:",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Brain Tumor Surgery (Radiation Oncology support)",
+      "ar": "دعم إشعاعي لجراحة أورام الدماغ",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Breast Cancer Surgery",
+      "ar": "جراحة سرطان الثدي — التنسيق الإشعاعي",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Cancer Immunotherapy",
+      "ar": "العلاج المناعي للسرطان",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Cervical Cancer Surgery",
+      "ar": "جراحة سرطان عنق الرحم — التنسيق الإشعاعي",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Cervical Cancer Surgery (radiation management aspect)",
+      "ar": "إدارة الإشعاع بعد جراحة سرطان عنق الرحم",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Chemotherapy for Cancer",
+      "ar": "العلاج الكيميائي للأورام",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Chemotherapy for Cancer (concurrent chemoradiation protocols)",
+      "ar": "بروتوكولات الكيميائي المتزامن مع الإشعاع",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Chemotherapy for Solid Tumors",
+      "ar": "العلاج الكيميائي للأورام الصلبة",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "CyberKnife Radiosurger",
+      "ar": "الجراحة الإشعاعية بسايبر نايف",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "CyberKnife Radiosurgery",
+      "ar": "الجراحة الإشعاعية بسايبر نايف",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Endometrial Cancer Surgery",
+      "ar": "جراحة سرطان بطانة الرحم — التنسيق الإشعاعي",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "External Beam Radiotherapy",
+      "ar": "العلاج الإشعاعي الخارجي (EBRT)",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Gamma Knife Radiosurgery",
+      "ar": "الجراحة الإشعاعية بغاما نايف",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "GI (Gastrointestinal) Radiation Oncology",
+      "ar": "علاج أورام الجهاز الهضمي بالإشعاع",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Gynaecological Oncology",
+      "ar": "أورام النساء",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Head & Neck Tumor Surgery",
+      "ar": "جراحة أورام الرأس والعنق — التنسيق الإشعاعي",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Head and Neck Oncology",
+      "ar": "أورام الرأس والعنق",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Hormone Therapy for Breast Cancer",
+      "ar": "العلاج الهرموني لسرطان الثدي",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Hormone Therapy for Gynecologic Cancers",
+      "ar": "العلاج الهرموني لأورام النساء",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Hormone-Based Therapies- Hormonal Therapy for Gynaecologic Cancers",
+      "ar": "علاجات هرمونية لأورام النساء",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Hypopharyngeal Cancer Surgery (radiation management aspect)",
+      "ar": "إدارة الإشعاع لأورام البلعوم السفلي",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Image-Guided Radiation Therapy",
+      "ar": "العلاج الإشعاعي الموجّه بالصور (IGRT)",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Image-Guided Radiation Therapy (IGRT)",
+      "ar": "العلاج الإشعاعي الموجّه بالصور (IGRT)",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Immunotherapy for Solid Tumors",
+      "ar": "العلاج المناعي للأورام الصلبة",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Intensity-Modulated Radiation Therapy",
+      "ar": "العلاج الإشعاعي المعدل الشدة (IMRT)",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Intensity-Modulated Radiation Therapy (IMRT)",
+      "ar": "العلاج الإشعاعي المعدل الشدة (IMRT)",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Intraoperative Radiation Therapy (IORT)",
+      "ar": "العلاج الإشعاعي أثناء الجراحة (IORT)",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Medical Oncology (multidisciplinary cancer care)",
+      "ar": "علاج الأورام الطبي ضمن فريق متعدد التخصصات",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Medical Oncology (supportive role in multidisciplinary cancer care)",
+      "ar": "دور داعم في علاج الأورام الطبي ضمن الفريق المتعدد التخصصات",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Medical Oncology (supportive/concurrent treatment protocols)",
+      "ar": "بروتوكولات داعمة أو متزامنة مع علاج الأورام الطبي",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Medical Oncology Treatments- Chemotherapy for Cancer",
+      "ar": "مسارات علاج الأورام الطبي — الكيميائي",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Neuro-Oncology (Radiation)",
+      "ar": "أورام الجهاز العصبي — مسار إشعاعي",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Ovarian Cancer Surgery",
+      "ar": "جراحة سرطان المبيض — التنسيق الإشعاعي",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Paediatric Oncology (Radiation)",
+      "ar": "أورام الأطفال — مسار إشعاعي",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Radiation Therapy for Cancer",
+      "ar": "العلاج الإشعاعي للأورام",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Radiation Therapy Procedures- Radiation Therapy for Cancer",
+      "ar": "إجراءات العلاج الإشعاعي للأورام",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Retinoblastoma Treatment",
+      "ar": "علاج الورم الأرومي الشبكي",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Specialized Radiosurgery- CyberKnife Radiosurgery",
+      "ar": "جراحة إشعاعية متخصصة — سايبر نايف",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Stereotactic Body Radiation Therapy",
+      "ar": "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Stereotactic Body Radiation Therapy (SBRT)",
+      "ar": "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Stereotactic Procedures- Stereotactic Body Radiation Therapy (SBRT)",
+      "ar": "إجراءات تجسيمية — العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Surgical Oncology (collaborative cancer programme involvement)",
+      "ar": "مشاركة في برنامج جراحة الأورام التعاوني",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Surgical Oncology (Head & Neck, Breast, GI, Thoracic)",
+      "ar": "جراحة الأورام بالتنسيق (رأس وعنق، ثدي، جهاز هضمي، صدر)",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Targeted Therapy for Cancer",
+      "ar": "العلاج الموجّه للسرطان",
+      "category": "clinical-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "India",
+      "ar": "الهند",
+      "category": "country",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Mexico",
+      "ar": "المكسيك",
+      "category": "country",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Singapore",
+      "ar": "سنغافورة",
+      "category": "country",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "South Korea",
+      "ar": "كوريا الجنوبية",
+      "category": "country",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Thailand",
+      "ar": "تايلاند",
+      "category": "country",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Türkiye",
+      "ar": "تركيا",
+      "category": "country",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "United Arab Emirates",
+      "ar": "الإمارات العربية المتحدة",
+      "category": "country",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Fellowship",
+      "ar": "زمالة",
+      "category": "credential-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "former",
+      "ar": "سابقًا",
+      "category": "credential-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Overseas Fellowship",
+      "ar": "زمالة خارجية",
+      "category": "credential-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Post-Doctorate Training in",
+      "ar": "تدريب ما بعد الدكتوراه في",
+      "category": "credential-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Radiation Oncology",
+      "ar": "علاج الأورام بالإشعاع",
+      "category": "credential-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Radiotherapy",
+      "ar": "العلاج الإشعاعي",
+      "category": "credential-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Radiotherapy & Oncology",
+      "ar": "العلاج الإشعاعي والأورام",
+      "category": "credential-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Radiotherapy of",
+      "ar": "العلاج الإشعاعي لـ",
+      "category": "credential-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Specialised Training in",
+      "ar": "تدريب متخصص في",
+      "category": "credential-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Specialized Training in",
+      "ar": "تدريب متخصص في",
+      "category": "credential-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "subsequently worked at",
+      "ar": "ثم عمل في",
+      "category": "credential-phrase",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Accreditation you can check",
+      "ar": "اعتماد يمكن التحقق منه",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Advanced ICU & OT",
+      "ar": "عناية مركزة وغرف عمليات متقدمة",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "After you fly home",
+      "ar": "بعد العودة",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Airport pickup",
+      "ar": "الاستقبال من المطار",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Companion stay",
+      "ar": "إقامة المرافق",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Cost clarity",
+      "ar": "وضوح التكلفة",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Dedicated eye theatres",
+      "ar": "غرف عمليات عيون مخصّصة",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Eye hospital",
+      "ar": "مستشفى عيون",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Eye theatres",
+      "ar": "غرف عمليات عيون",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "ICU and theatres",
+      "ar": "عناية مركزة وغرف عمليات",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "International desk",
+      "ar": "مكتب دولي",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "International patient desk",
+      "ar": "مكتب المرضى الدوليين",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Interpreters",
+      "ar": "مترجمون",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Languages on the ward",
+      "ar": "لغات الجناح",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Multi-speciality campus",
+      "ar": "حرم متعدد التخصصات",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Named consultants",
+      "ar": "استشاريون بأسمائهم",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Named ophthalmologists",
+      "ar": "أطباء عيون بأسمائهم",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "On the Delhi NCR map",
+      "ar": "على خريطة دلهي إن سي آر",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Records transfer",
+      "ar": "نقل الملفات",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Travel planning",
+      "ar": "تخطيط السفر",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Urgent eye care",
+      "ar": "رعاية عيون عاجلة",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Video first",
+      "ar": "الفيديو أولًا",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Visa assistance",
+      "ar": "مساعدة التأشيرة",
+      "category": "house-label",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Associate Director",
+      "ar": "مدير مساعد",
+      "category": "job-title",
+      "forms": {
+        "masculine": "مدير مساعد",
+        "feminine": "مديرة مساعدة"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Associate Director - Radiation Oncology and Cancer Care",
+      "ar": "مدير مساعد — علاج الأورام بالإشعاع ورعاية السرطان",
+      "category": "job-title",
+      "forms": {
+        "masculine": "مدير مساعد — علاج الأورام بالإشعاع ورعاية السرطان",
+        "feminine": "مديرة مساعدة — علاج الأورام بالإشعاع ورعاية السرطان"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Chairperson",
+      "ar": "رئيس القسم",
+      "category": "job-title",
+      "forms": {
+        "masculine": "رئيس القسم",
+        "feminine": "رئيسة القسم"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Chief",
+      "ar": "رئيس علاج الأورام بالإشعاع",
+      "category": "job-title",
+      "forms": {
+        "masculine": "رئيس علاج الأورام بالإشعاع",
+        "feminine": "رئيسة علاج الأورام بالإشعاع"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Chief of Radiation Oncology & Co-Chief of CyberKnife Centre",
+      "ar": "رئيس علاج الأورام بالإشعاع والمشارك في رئاسة مركز سايبر نايف",
+      "category": "job-title",
+      "forms": {
+        "masculine": "رئيس علاج الأورام بالإشعاع والمشارك في رئاسة مركز سايبر نايف",
+        "feminine": "رئيسة علاج الأورام بالإشعاع والمشاركة في رئاسة مركز سايبر نايف"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Clinical Lead & Consultant in",
+      "ar": "المسؤول السريري واستشاري",
+      "category": "job-title",
+      "forms": {
+        "masculine": "المسؤول السريري واستشاري",
+        "feminine": "المسؤولة السريرية واستشارية"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Consultant",
+      "ar": "استشاري علاج الأورام بالإشعاع",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري علاج الأورام بالإشعاع",
+        "feminine": "استشارية علاج الأورام بالإشعاع"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Consultant -",
+      "ar": "استشاري —",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري —",
+        "feminine": "استشارية —"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Consultant radiation oncologist",
+      "ar": "استشاري علاج الأورام بالإشعاع",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري علاج الأورام بالإشعاع",
+        "feminine": "استشارية علاج الأورام بالإشعاع"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Consultant Radiation Oncologist",
+      "ar": "استشاري علاج الأورام بالإشعاع",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري علاج الأورام بالإشعاع",
+        "feminine": "استشارية علاج الأورام بالإشعاع"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Consultant Radiation Oncology",
+      "ar": "استشاري علاج الأورام بالإشعاع",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري علاج الأورام بالإشعاع",
+        "feminine": "استشارية علاج الأورام بالإشعاع"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Consultant,",
+      "ar": "استشاري",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري",
+        "feminine": "استشارية"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Director",
+      "ar": "مدير",
+      "category": "job-title",
+      "forms": {
+        "masculine": "مدير",
+        "feminine": "مديرة"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Director (bare)",
+      "ar": "مدير علاج الأورام بالإشعاع",
+      "category": "job-title",
+      "forms": {
+        "masculine": "مدير علاج الأورام بالإشعاع",
+        "feminine": "مديرة علاج الأورام بالإشعاع"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Director of Radiation Oncology",
+      "ar": "مدير علاج الأورام بالإشعاع",
+      "category": "job-title",
+      "forms": {
+        "masculine": "مدير علاج الأورام بالإشعاع",
+        "feminine": "مديرة علاج الأورام بالإشعاع"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Director, Department of",
+      "ar": "مدير قسم",
+      "category": "job-title",
+      "forms": {
+        "masculine": "مدير قسم",
+        "feminine": "مديرة قسم"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Group Director and Head of Department",
+      "ar": "مدير المجموعة ورئيس القسم",
+      "category": "job-title",
+      "forms": {
+        "masculine": "مدير المجموعة ورئيس القسم",
+        "feminine": "مديرة المجموعة ورئيسة القسم"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Head",
+      "ar": "رئيس قسم علاج الأورام بالإشعاع",
+      "category": "job-title",
+      "forms": {
+        "masculine": "رئيس قسم علاج الأورام بالإشعاع",
+        "feminine": "رئيسة قسم علاج الأورام بالإشعاع"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Head of Department & Clinical Lead",
+      "ar": "رئيس القسم والمسؤول السريري",
+      "category": "job-title",
+      "forms": {
+        "masculine": "رئيس القسم والمسؤول السريري",
+        "feminine": "رئيسة القسم والمسؤولة السريرية"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Head of the radiation oncology service",
+      "ar": "رئيس مسار علاج الأورام بالإشعاع",
+      "category": "job-title",
+      "forms": {
+        "masculine": "رئيس مسار علاج الأورام بالإشعاع",
+        "feminine": "رئيسة مسار علاج الأورام بالإشعاع"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Head, Radiation Oncology & CyberKnife Centre (Unit II)",
+      "ar": "رئيس علاج الأورام بالإشعاع ومركز سايبر نايف (الوحدة الثانية)",
+      "category": "job-title",
+      "forms": {
+        "masculine": "رئيس علاج الأورام بالإشعاع ومركز سايبر نايف (الوحدة الثانية)",
+        "feminine": "رئيسة علاج الأورام بالإشعاع ومركز سايبر نايف (الوحدة الثانية)"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "HOD & Senior Consultant",
+      "ar": "رئيس القسم واستشاري أول",
+      "category": "job-title",
+      "forms": {
+        "masculine": "رئيس القسم واستشاري أول",
+        "feminine": "رئيسة القسم واستشارية أولى"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Principal Consultant",
+      "ar": "استشاري رئيسي",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري رئيسي",
+        "feminine": "استشارية رئيسية"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Principal Consultant -",
+      "ar": "استشاري رئيسي —",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري رئيسي —",
+        "feminine": "استشارية رئيسية —"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Principal Director & HOD",
+      "ar": "المدير الرئيسي ورئيس قسم",
+      "category": "job-title",
+      "forms": {
+        "masculine": "المدير الرئيسي ورئيس قسم",
+        "feminine": "المديرة الرئيسية ورئيسة قسم"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Principal Director and Head of Department of",
+      "ar": "المدير الرئيسي ورئيس قسم",
+      "category": "job-title",
+      "forms": {
+        "masculine": "المدير الرئيسي ورئيس قسم",
+        "feminine": "المديرة الرئيسية ورئيسة قسم"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Principal Director of",
+      "ar": "المدير الرئيسي لـ",
+      "category": "job-title",
+      "forms": {
+        "masculine": "المدير الرئيسي لـ",
+        "feminine": "المديرة الرئيسية لـ"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Radiation Oncologist",
+      "ar": "أخصائي علاج الأورام بالإشعاع",
+      "category": "job-title",
+      "forms": {
+        "masculine": "أخصائي علاج الأورام بالإشعاع",
+        "feminine": "أخصائية علاج الأورام بالإشعاع"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Radiation Specialist Oncologist",
+      "ar": "أخصائي علاج الأورام بالإشعاع",
+      "category": "job-title",
+      "forms": {
+        "masculine": "أخصائي علاج الأورام بالإشعاع",
+        "feminine": "أخصائية علاج الأورام بالإشعاع"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Senior Consultant",
+      "ar": "استشاري أول",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري أول",
+        "feminine": "استشارية أولى"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Senior Consultant & Clinical Advisor",
+      "ar": "استشاري أول ومستشار سريري",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري أول ومستشار سريري",
+        "feminine": "استشارية أولى ومستشارة سريرية"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Senior Consultant & Visiting Radiation Oncologist",
+      "ar": "استشاري أول واستشاري زائر لعلاج الأورام بالإشعاع",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري أول واستشاري زائر لعلاج الأورام بالإشعاع",
+        "feminine": "استشارية أولى واستشارية زائرة لعلاج الأورام بالإشعاع"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Senior Consultant and In-Charge",
+      "ar": "استشاري أول ومسؤول القسم",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري أول ومسؤول القسم",
+        "feminine": "استشارية أولى ومسؤولة القسم"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Senior Consultant Radiation Oncologist",
+      "ar": "استشاري أول لعلاج الأورام بالإشعاع",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري أول لعلاج الأورام بالإشعاع",
+        "feminine": "استشارية أولى لعلاج الأورام بالإشعاع"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Senior Consultant Radiation Oncologist and Clinical Director",
+      "ar": "استشاري أول ومدير سريري لعلاج الأورام بالإشعاع",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري أول ومدير سريري لعلاج الأورام بالإشعاع",
+        "feminine": "استشارية أولى ومديرة سريرية لعلاج الأورام بالإشعاع"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Senior Director",
+      "ar": "مدير أول",
+      "category": "job-title",
+      "forms": {
+        "masculine": "مدير أول",
+        "feminine": "مديرة أولى"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Senior Director & HOD of",
+      "ar": "المدير الأول ورئيس قسم",
+      "category": "job-title",
+      "forms": {
+        "masculine": "المدير الأول ورئيس قسم",
+        "feminine": "المديرة الأولى ورئيسة قسم"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Senior Director and Head of Department",
+      "ar": "المدير الأول ورئيس القسم",
+      "category": "job-title",
+      "forms": {
+        "masculine": "المدير الأول ورئيس القسم",
+        "feminine": "المديرة الأولى ورئيسة القسم"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Senior Registrar / Consultant",
+      "ar": "مسجّل أول / استشاري",
+      "category": "job-title",
+      "forms": {
+        "masculine": "مسجّل أول / استشاري",
+        "feminine": "مسجّلة أولى / استشارية"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Vice Chairman",
+      "ar": "نائب الرئيس",
+      "category": "job-title",
+      "forms": {
+        "masculine": "نائب الرئيس",
+        "feminine": "نائبة الرئيس"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Visiting Consultant",
+      "ar": "استشاري زائر",
+      "category": "job-title",
+      "forms": {
+        "masculine": "استشاري زائر",
+        "feminine": "استشارية زائرة"
+      },
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Bengali",
+      "ar": "البنغالية",
+      "category": "language",
+      "sources": [
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "English",
+      "ar": "الإنجليزية",
+      "category": "language",
+      "sources": [
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Gujarati",
+      "ar": "الغوجاراتية",
+      "category": "language",
+      "sources": [
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Hindi",
+      "ar": "الهندية",
+      "category": "language",
+      "sources": [
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Kannada",
+      "ar": "الكانادية",
+      "category": "language",
+      "sources": [
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Malayalam",
+      "ar": "المالايالامية",
+      "category": "language",
+      "sources": [
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Marathi",
+      "ar": "الماراثية",
+      "category": "language",
+      "sources": [
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Marwadi",
+      "ar": "الماروارية",
+      "category": "language",
+      "sources": [
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Punjabi",
+      "ar": "البنجابية",
+      "category": "language",
+      "sources": [
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Tamil",
+      "ar": "التاميلية",
+      "category": "language",
+      "sources": [
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Telugu",
+      "ar": "التيلوغو",
+      "category": "language",
+      "sources": [
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "Urdu",
+      "ar": "الأردية",
+      "category": "language",
+      "sources": [
+        "src/lib/i18n/medical-phrases.ts"
+      ]
+    },
+    {
+      "en": "American Society for Radiation Oncology",
+      "ar": "الجمعية الأمريكية لعلاج الأورام بالإشعاع (ASTRO)",
+      "category": "organisation",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "American Society of Radiation Oncology",
+      "ar": "الجمعية الأمريكية لعلاج الأورام بالإشعاع (ASTRO)",
+      "category": "organisation",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Association of Radiation Oncologists of India",
+      "ar": "رابطة أطباء الأورام بالإشعاع في الهند (AROI)",
+      "category": "organisation",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "European Society for Radiotherapy and Oncology",
+      "ar": "الجمعية الأوروبية للعلاج الإشعاعي والأورام (ESTRO)",
+      "category": "organisation",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Indian Medical Association",
+      "ar": "الجمعية الطبية الهندية (IMA)",
+      "category": "organisation",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Indian Society of Oncology",
+      "ar": "الجمعية الهندية للأورام",
+      "category": "organisation",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Aditi Aggarwal",
+      "ar": "د. أديتي أغاروال",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Amal Roy Chaudhoory",
+      "ar": "د. أمل روي تشودوري",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Anbarasi Kumaresan",
+      "ar": "د. أنباراسي كوماريسان",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Anil Kumar Anand",
+      "ar": "د. أنيل كومار أناند",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Anita Malik",
+      "ar": "د. أنيتا مالك",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Anitha Gopinath",
+      "ar": "د. أنيثا غوبيناث",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Anusheel Munshi",
+      "ar": "د. أنوشيل منشي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Ashwin M Shah",
+      "ar": "د. أشوين م. شاه",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Azmi Saundarya K",
+      "ar": "د. عزمي سونداريا كيه",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. B. Ramakrishna Prasad",
+      "ar": "د. ب. راماكريشنا براساد",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Bharath Chandra Gurram",
+      "ar": "د. بهارات تشاندرا غورام",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Charu Garg",
+      "ar": "د. تشارو غارغ",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Christopher John",
+      "ar": "د. كريستوفر جون",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. D. Shiva Prasad",
+      "ar": "د. دي. شيفا براساد",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Debnarayan Dutta",
+      "ar": "د. دبنارايان دوتا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Deepak Gupta",
+      "ar": "د. ديباك غوبتا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Devashish Tripathi",
+      "ar": "د. ديفاشيش تريباثي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Dipali Bhorikar Borade",
+      "ar": "د. ديبالي بهوريكار بوراد",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Divya Gupta",
+      "ar": "د. ديفيا غوبتا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Dodul Mondal",
+      "ar": "د. دودول موندال",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. G K Jadhav",
+      "ar": "د. جي. كيه. جادهاف",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Garima Singh",
+      "ar": "د. غاريما سينغ",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Gowhar Ahmad Shigan",
+      "ar": "د. غوهر أحمد شيغان",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Indu Bansal Aggarwal",
+      "ar": "د. إندو بانسال أغاروال",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. K. Kiran Kumar",
+      "ar": "د. ك. كيران كومار",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. K. R. Prasanna Kumar",
+      "ar": "د. ك. ر. براسانا كومار",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Kalyani Premchandra",
+      "ar": "د. كالياني بريمشاندرا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Kamal Verma",
+      "ar": "د. كمال فيرما",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Khushboo Rastogi",
+      "ar": "د. خوشبو راستوغي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Kushal Narang",
+      "ar": "د. كوشال نارانغ",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. M Vinay Ural",
+      "ar": "د. م. فيناي أورال",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. M. Janarthinakani",
+      "ar": "د. م. جانارثيناكاني",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. M. R. Vishwateja",
+      "ar": "د. م. ر. فيشواتيجا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. M. Suneetha",
+      "ar": "د. م. سونيثا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Mathangi J",
+      "ar": "د. ماثانغي جيه",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Mayur Mayank",
+      "ar": "د. مايور مايانك",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Naman Utreja",
+      "ar": "د. نامان أوتريجا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Natarajan V",
+      "ar": "د. ناتاراجان في",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Neha Kakkar",
+      "ar": "د. نيها كاكار",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Neha Sehgal",
+      "ar": "د. نيها سيغال",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. P. Vijay Anand Reddy",
+      "ar": "د. ب. فيجاي أناند ريدي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Pradeep Kumar Karumanchi",
+      "ar": "د. براديب كومار كارومانشي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Prahlad Yathiraj",
+      "ar": "د. براهلاد ياتيراي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Prashant Upadhyay",
+      "ar": "د. براشانت أوبادهياي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Rajeev G",
+      "ar": "د. راجيف جي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Rakesh Jalali",
+      "ar": "د. راكيش جلالي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Ranjeet Bajpai",
+      "ar": "د. رانغيت باجباي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. S Jayalakshmi",
+      "ar": "د. س. جايالاكشمي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. S. Alex Antony Prasad",
+      "ar": "د. س. أليكس أنتوني براساد",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. S. Usha",
+      "ar": "د. س. أوشا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Sandeep De",
+      "ar": "د. سانديب دي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Sandeep Goel",
+      "ar": "د. سانديب غويل",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Sapna Manocha Verma",
+      "ar": "د. سابنا مانوتشا فيرما",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Sapna Nangia",
+      "ar": "د. سابنا نانغيا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Satyesh Nadella",
+      "ar": "د. ساتيش ناديلا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Shilpareddy Keesara",
+      "ar": "د. شيلباريدي كيسارا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Shyam Singh Bisht",
+      "ar": "د. شيام سينغ بيشت",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Sravanthi Reddy T",
+      "ar": "د. سرافانتي ريدي تي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Sri Sai Tejaswini Muddana",
+      "ar": "د. سري ساي تجاسويني مودانا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Sridhar P S",
+      "ar": "د. سريدار بي. إس",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Srinivas Chilukuri",
+      "ar": "د. سرينيفاس تشيلوكوري",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Subodh Chandra Pande",
+      "ar": "د. سوبوده تشاندرا باندي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Susovan Banerjee",
+      "ar": "د. سوسوفان بانيرجي",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Swarupa Mitra",
+      "ar": "د. سواروبا ميترا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Tejinder Kataria",
+      "ar": "د. تجيندر كاتاريا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. V. Balasundaram",
+      "ar": "د. ف. بالاسوندارام",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Vijay Bhasker L",
+      "ar": "د. فيجاي بهاسكر إل",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Vineet Nakra",
+      "ar": "د. فينيت ناكرا",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Vineeta Goel",
+      "ar": "د. فينيتا غويل",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Dr. Y. Nalini",
+      "ar": "د. ي. ناليني",
+      "category": "person-name",
+      "note": "Transliteration, not translation.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "bariatric surgeon",
+      "ar": "جرّاح سمنة",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "جرّاح سمنة",
+        "plural": "جرّاحو السمنة"
+      },
+      "note": "Plural in English: bariatric surgeons",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "cardiac surgeon",
+      "ar": "جرّاح قلب",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "جرّاح قلب",
+        "plural": "جرّاحو القلب"
+      },
+      "note": "Plural in English: cardiac surgeons",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "cardiologist",
+      "ar": "طبيب قلب",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "طبيب قلب",
+        "plural": "أطباء القلب"
+      },
+      "note": "Plural in English: cardiologists",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "cosmetic surgeon",
+      "ar": "جرّاح تجميل",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "جرّاح تجميل",
+        "plural": "جرّاحو التجميل"
+      },
+      "note": "Plural in English: cosmetic surgeons",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "ENT surgeon",
+      "ar": "جرّاح أنف وأذن وحنجرة",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "جرّاح أنف وأذن وحنجرة",
+        "plural": "جرّاحو الأنف والأذن والحنجرة"
+      },
+      "note": "Plural in English: ENT surgeons",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "gastroenterologist",
+      "ar": "طبيب جهاز هضمي",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "طبيب جهاز هضمي",
+        "plural": "أطباء الجهاز الهضمي"
+      },
+      "note": "Plural in English: gastroenterologists",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "gynecologist",
+      "ar": "طبيب نساء",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "طبيب نساء",
+        "plural": "أطباء النساء"
+      },
+      "note": "Plural in English: gynecologists",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "hematologist",
+      "ar": "طبيب أمراض دم",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "طبيب أمراض دم",
+        "plural": "أطباء أمراض الدم"
+      },
+      "note": "Plural in English: hematologists",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "medical oncologist",
+      "ar": "طبيب علاج الأورام الطبي",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "طبيب علاج الأورام الطبي",
+        "plural": "أطباء علاج الأورام الطبي"
+      },
+      "note": "Plural in English: medical oncologists",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "nephrologist",
+      "ar": "طبيب كلى",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "طبيب كلى",
+        "plural": "أطباء الكلى"
+      },
+      "note": "Plural in English: nephrologists",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "neurologist",
+      "ar": "طبيب أعصاب",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "طبيب أعصاب",
+        "plural": "أطباء الأعصاب"
+      },
+      "note": "Plural in English: neurologists",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "neurosurgeon",
+      "ar": "جرّاح مخ وأعصاب",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "جرّاح مخ وأعصاب",
+        "plural": "جرّاحو المخ والأعصاب"
+      },
+      "note": "Plural in English: neurosurgeons",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "ophthalmologist",
+      "ar": "طبيب عيون",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "طبيب عيون",
+        "plural": "أطباء العيون"
+      },
+      "note": "Plural in English: ophthalmologists",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "orthopaedic surgeon",
+      "ar": "جرّاح عظام",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "جرّاح عظام",
+        "plural": "جرّاحو العظام"
+      },
+      "note": "Plural in English: orthopaedic surgeons",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "pediatric cardiac surgeon",
+      "ar": "جرّاح قلب أطفال",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "جرّاح قلب أطفال",
+        "plural": "جرّاحو قلب الأطفال"
+      },
+      "note": "Plural in English: pediatric cardiac surgeons",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "pediatric hematologist",
+      "ar": "طبيب أمراض دم الأطفال",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "طبيب أمراض دم الأطفال",
+        "plural": "أطباء أمراض دم الأطفال"
+      },
+      "note": "Plural in English: pediatric hematologists",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "pediatric orthopaedic surgeon",
+      "ar": "جرّاح عظام أطفال",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "جرّاح عظام أطفال",
+        "plural": "جرّاحو عظام الأطفال"
+      },
+      "note": "Plural in English: pediatric orthopaedic surgeons",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "pulmonologist",
+      "ar": "طبيب رئة",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "طبيب رئة",
+        "plural": "أطباء الرئة"
+      },
+      "note": "Plural in English: pulmonologists",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "radiation oncologist",
+      "ar": "أخصائي علاج الأورام بالإشعاع",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "أخصائي علاج الأورام بالإشعاع",
+        "plural": "أخصائيو علاج الأورام بالإشعاع"
+      },
+      "note": "Plural in English: radiation oncologists",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "spine surgeon",
+      "ar": "جرّاح عمود فقري",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "جرّاح عمود فقري",
+        "plural": "جرّاحو العمود الفقري"
+      },
+      "note": "Plural in English: spine surgeons",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "surgical gastroenterologist",
+      "ar": "جرّاح جهاز هضمي",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "جرّاح جهاز هضمي",
+        "plural": "جرّاحو الجهاز الهضمي"
+      },
+      "note": "Plural in English: surgical gastroenterologists",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "surgical oncologist",
+      "ar": "جرّاح أورام",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "جرّاح أورام",
+        "plural": "جرّاحو الأورام"
+      },
+      "note": "Plural in English: surgical oncologists",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "urologist",
+      "ar": "طبيب مسالك",
+      "category": "practitioner-noun",
+      "forms": {
+        "singular": "طبيب مسالك",
+        "plural": "أطباء المسالك البولية"
+      },
+      "note": "Plural in English: urologists",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "3D Conformal Radiotherapy (3D-CRT)",
+      "ar": "العلاج الإشعاعي المطابق ثلاثي الأبعاد (3D-CRT)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Abdominal Hysterectomy",
+      "ar": "استئصال الرحم البطني",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Abdominoperineal Resection (APR)",
+      "ar": "الاستئصال البطني العجاني (APR)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "ABO-Incompatible Kidney Transplantation",
+      "ar": "زراعة الكلى غير المتوافقة فصائليًا",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "ACDF (Anterior Cervical Discectomy and Fusion)",
+      "ar": "استئصال القرص العنقي الأمامي ودمجه (ACDF)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Achilles Repair",
+      "ar": "إصلاح وتر أخيل",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "ACL Reconstruction (Anterior Cruciate Ligament)",
+      "ar": "إعادة بناء الرباط الصليبي الأمامي (ACL)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Adenoidectomy",
+      "ar": "استئصال اللحمية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Adjuvant Chemotherapy",
+      "ar": "العلاج الكيميائي المساعد",
+      "category": "procedure",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Airway Stenting",
+      "ar": "تركيب دعامة مجرى الهواء",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "ALIF (Anterior Lumbar Interbody Fusion)",
+      "ar": "دمج الفقرات القطنية الأمامي (ALIF)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Allogeneic Stem Cell Transplant",
+      "ar": "زراعة الخلايا الجذعية الخيفية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Aneurysm Clipping",
+      "ar": "قصّ تمدد الأوعية الدماغية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Aneurysm Coiling",
+      "ar": "لفّ تمدد الأوعية الدماغية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Ankle Replacement",
+      "ar": "استبدال الكاحل",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Anorectal Manometry",
+      "ar": "قياس ضغط الشرج والمستقيم",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Anti-Reflux Surgery (Nissen Fundoplication)",
+      "ar": "جراحة مكافحة الارتجاع (نيسن)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Antibody-Drug Conjugate Therapy",
+      "ar": "علاج اقتران الجسم المضاد بالدواء",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Aortic Aneurysm Surgery",
+      "ar": "جراحة تمدد الشريان الأورطي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Aortic Root Replacement",
+      "ar": "استبدال جذر الشريان الأورطي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Aortic Valve Replacement",
+      "ar": "استبدال الصمام الأورطي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Arm Lift",
+      "ar": "شد الذراعين",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Arterial Switch Operation",
+      "ar": "عملية تبديل الشرايين",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Arthroscopic Surgery",
+      "ar": "الجراحة بالمنظار المفصلي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "ASD Closure (Atrial Septal Defect)",
+      "ar": "إغلاق عيب الحاجز الأذيني (ASD)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "ASD Device Closure",
+      "ar": "إغلاق عيب الحاجز الأذيني بجهاز (ASD)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Atrial Fibrillation Ablation",
+      "ar": "استئصال الرجفان الأذيني",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Autologous Stem Cell Transplant",
+      "ar": "زراعة الخلايا الجذعية الذاتية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "AV Fistula Creation",
+      "ar": "إنشاء ناسور شرياني وريدي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "AVM Embolization",
+      "ar": "انصمام التشوه الشرياني الوريدي (AVM)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "AVM Surgery",
+      "ar": "جراحة التشوه الشرياني الوريدي (AVM)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "AVSD Repair (Atrioventricular Septal Defect)",
+      "ar": "إصلاح عيب الحاجز الأذيني البطيني (AVSD)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "BAHA Implantation (Bone Anchored Hearing Aid)",
+      "ar": "زراعة سماعة مرتكزة على العظم (BAHA)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Balloon Mitral Valvotomy",
+      "ar": "توسيع الصمام التاجي بالبالون",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Balloon Sinuplasty",
+      "ar": "توسيع الجيوب بالبالون",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Bariatric / Metabolic Endoscopy",
+      "ar": "منظار السمنة والأيض",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Bile Duct Cancer Surgery",
+      "ar": "جراحة سرطان القناة الصفراوية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Bile Duct Stone Removal",
+      "ar": "إزالة حصوات القناة الصفراوية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Biliary Reconstruction",
+      "ar": "إعادة بناء القنوات الصفراوية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Biliary Stenting",
+      "ar": "تركيب دعامة صفراوية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Bladder Reconstruction",
+      "ar": "إعادة بناء المثانة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Blepharoplasty",
+      "ar": "جراحة الجفون",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Bone Marrow Aspiration",
+      "ar": "شفط نخاع العظم",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Bone Marrow Biopsy",
+      "ar": "خزعة نخاع العظم",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Bone Marrow Transplantation",
+      "ar": "زراعة نخاع العظم",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Botulinum Toxin Therapy",
+      "ar": "علاج ذيفان البوتولينوم",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Brachytherapy",
+      "ar": "المعالجة الكثبية",
+      "category": "procedure",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Brain Tumor Surgery",
+      "ar": "جراحة أورام الدماغ",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Brazilian Butt Lift",
+      "ar": "رفع الأرداف البرازيلي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Breast Augmentation",
+      "ar": "تكبير الثدي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Breast Lift",
+      "ar": "رفع الثدي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Breast Reconstruction",
+      "ar": "إعادة بناء الثدي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Breast Reduction",
+      "ar": "تصغير الثدي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Breast-Conserving Surgery (Lumpectomy)",
+      "ar": "جراحة الحفاظ على الثدي (استئصال الكتلة)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Bronchoscopic Tumor Debulking",
+      "ar": "إنقاص حجم ورم القصبات بالمنظار",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Bronchoscopy",
+      "ar": "تنظير القصبات",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Bunion Surgery",
+      "ar": "جراحة إبهام القدم",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "CABG (Coronary Artery Bypass Grafting)",
+      "ar": "طعم مجازة الشريان التاجي (CABG)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "CAPD Catheter Insertion",
+      "ar": "إدخال قسطرة الديال البريتوني المستمر (CAPD)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Capsule Endoscopy",
+      "ar": "التنظير بالكبسولة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "CAR-T Cell Therapy",
+      "ar": "علاج الخلايا التائية المعدلة (CAR-T)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Carotid Artery Stenting",
+      "ar": "تركيب دعامة الشريان السباتي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Carotid Doppler",
+      "ar": "دوبلر الشريان السباتي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Carpal Tunnel Release",
+      "ar": "تحرير النفق الرسغي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Cataract Surgery",
+      "ar": "جراحة الساد",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Central Venous Catheter (Permcath) Insertion",
+      "ar": "إدخال قسطرة وريدية مركزية (بيرمكاث)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Cerebral Bypass",
+      "ar": "مجازة دماغية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Cerebral Palsy Orthopedic Surgery",
+      "ar": "جراحة عظام الشلل الدماغي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Chemotherapy",
+      "ar": "العلاج الكيميائي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Chest Tube / Intercostal Drainage",
+      "ar": "أنبوب الصدر / نزح بين الأضلاع",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Chiari Surgery",
+      "ar": "جراحة كياري",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Cholangioscopy",
+      "ar": "تنظير القنوات الصفراوية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Clubfoot Correction Surgery",
+      "ar": "جراحة تصحيح القدم الحنفاء",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Coarctation Repair",
+      "ar": "إصلاح تضيق الشريان الأورطي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Cochlear Implantation",
+      "ar": "زراعة القوقعة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Colectomy",
+      "ar": "استئصال القولون",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Colonoscopy",
+      "ar": "تنظير القولون",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Colorectal Cancer Surgery",
+      "ar": "جراحة سرطان القولون والمستقيم",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Colorectal Resection",
+      "ar": "استئصال القولون والمستقيم",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Congenital Heart Surgery",
+      "ar": "جراحة القلب الخلقية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Continuous Renal Replacement Therapy (CRRT)",
+      "ar": "العلاج الكلوي البديل المستمر (CRRT)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Corneal Cross-Linking (C3R)",
+      "ar": "تثبيت القرنية بالأشعة (C3R)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Corneal Transplantation",
+      "ar": "زراعة القرنية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Coronary Angiography",
+      "ar": "تصوير الشرايين التاجية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Coronary Angioplasty & Stenting",
+      "ar": "رأب الشريان التاجي وتركيب دعامة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Craniosynostosis Surgery",
+      "ar": "جراحة تعظم الدروز الباكر",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "CRT/CRT-D Implantation",
+      "ar": "زراعة جهاز إعادة التزامن القلبي (CRT/CRT-D)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Cryo-Lung Biopsy",
+      "ar": "خزعة الرئة بالتجميد",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "CTO Angioplasty (Chronic Total Occlusion)",
+      "ar": "رأب الانسداد التام المزمن (CTO)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "CyberKnife",
+      "ar": "سايبر نايف",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Cytoreductive Surgery",
+      "ar": "الجراحة الاختزالية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Cytoreductive Surgery with HIPEC",
+      "ar": "الجراحة الاختزالية مع HIPEC",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Dacryocystorhinostomy (DCR) / Tear Duct Surgery",
+      "ar": "جراحة القناة الدمعية (DCR)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "DALK",
+      "ar": "زراعة القرنية الطبقية الأمامية العميقة (DALK)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Deceased Donor Kidney Transplantation",
+      "ar": "زراعة الكلى من متبرع متوفى",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Deceased Donor Liver Transplantation",
+      "ar": "زراعة الكبد من متبرع متوفى",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Deep Brain Stimulation",
+      "ar": "التحفيز العميق للدماغ",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Dendritic Cell Therapy",
+      "ar": "علاج الخلايا التغصنية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Developmental Dysplasia of Hip Surgery",
+      "ar": "جراحة خلل تنسج الورك التطوري",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Dialysis Access Management",
+      "ar": "إدارة منفذ الديال",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Dialysis Catheter Placement",
+      "ar": "تركيب قسطرة الديال",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Disc Replacement",
+      "ar": "استبدال القرص",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Discectomy",
+      "ar": "استئصال القرص",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Distal Pancreatectomy",
+      "ar": "استئصال البنكرياس القاصي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "DMEK",
+      "ar": "زراعة بطانة القرنية (DMEK)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Double Valve Replacement",
+      "ar": "استبدال صمامين",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "DSEK",
+      "ar": "زراعة بطانة القرنية (DSEK)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Duodenal Switch (BPD/DS)",
+      "ar": "تحويل الاثني عشر (BPD/DS)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "EBUS (Endobronchial Ultrasound)",
+      "ar": "الموجات فوق الصوتية داخل القصبات (EBUS)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "EEG",
+      "ar": "تخطيط كهربية الدماغ (EEG)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Electromyography (EMG)",
+      "ar": "تخطيط كهربية العضلات (EMG)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Endobronchial Biopsy",
+      "ar": "خزعة داخل القصبات",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Endometriosis Surgery",
+      "ar": "جراحة بطانة الرحم الهاجرة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Endoscopic Brain Surgery",
+      "ar": "جراحة الدماغ بالمنظار",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Endoscopic Hemostasis",
+      "ar": "إيقاف النزف بالمنظار",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Endoscopic Mucosal Resection (EMR)",
+      "ar": "استئصال المخاطية بالمنظار (EMR)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Endoscopic Skull Base Surgery",
+      "ar": "جراحة قاعدة الجمجمة بالمنظار",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Endoscopic Sleeve Gastroplasty (ESG)",
+      "ar": "تصغير المعدة بالمنظار (ESG)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Endoscopic Submucosal Dissection (ESD)",
+      "ar": "تسليخ تحت المخاطية بالمنظار (ESD)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Endoscopic Third Ventriculostomy (ETV)",
+      "ar": "فغر البطين الثالث بالمنظار (ETV)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Endoscopic Ultrasound (EUS)",
+      "ar": "التنظير بالموجات فوق الصوتية (EUS)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Enteroscopy",
+      "ar": "تنظير الأمعاء الدقيقة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Epilepsy Surgery",
+      "ar": "جراحة الصرع",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "ERCP",
+      "ar": "تصوير البنكرياس والقنوات الصفراوية بالتنظير (ERCP)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Esophageal Manometry",
+      "ar": "قياس ضغط المريء",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Esophagectomy",
+      "ar": "استئصال المريء",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "ESWL (Extracorporeal Shock Wave Lithotripsy)",
+      "ar": "تفتيت الحصى بالموجات الصادمة (ESWL)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Evoked Potentials",
+      "ar": "الكمونات المستثارة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "External Beam Radiotherapy (EBRT)",
+      "ar": "العلاج الإشعاعي الخارجي (EBRT)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Eyelid Reconstruction Surgery",
+      "ar": "إعادة بناء الجفن",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Facelift",
+      "ar": "شد الوجه",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Fat Transfer",
+      "ar": "نقل الدهون",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Femto Laser Cataract Surgery",
+      "ar": "جراحة الساد بليزر الفيمتو",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "FESS (Functional Endoscopic Sinus Surgery)",
+      "ar": "جراحة الجيوب الوظيفية بالمنظار (FESS)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Fontan Procedure",
+      "ar": "عملية فونتان",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Foreign Body Removal",
+      "ar": "إزالة جسم غريب",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Foreign Body Removal by Bronchoscopy",
+      "ar": "إزالة جسم غريب بتنظير القصبات",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Fracture Fixation",
+      "ar": "تثبيت الكسر",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "G-POEM",
+      "ar": "بضع عضلة المعدة بالمنظار (G-POEM)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Gallbladder Cancer Surgery",
+      "ar": "جراحة سرطان المرارة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Gamma Knife",
+      "ar": "غاما نايف",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Gastrectomy",
+      "ar": "استئصال المعدة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Gastric Balloon",
+      "ar": "بالون المعدة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Gastric Band Removal",
+      "ar": "إزالة حزام المعدة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Gastric Banding (Lap-Band)",
+      "ar": "حزام المعدة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Gastric Bypass (Roux-en-Y)",
+      "ar": "تحويل مسار المعدة (Roux-en-Y)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Gastric Bypass Surgery",
+      "ar": "جراحة تحويل مسار المعدة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Gastric Sleeve Revision Surgery",
+      "ar": "جراحة مراجعة تكميم المعدة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Glaucoma Drainage Device / Valve Implantation",
+      "ar": "زراعة صمام أو جهاز تصريف المياه الزرقاء",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Glaucoma Surgery",
+      "ar": "جراحة المياه الزرقاء",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Glenn Procedure",
+      "ar": "عملية غلين",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Glioma Surgery",
+      "ar": "جراحة الورم الدبقي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "GreenLight Laser Surgery",
+      "ar": "جراحة الليزر الأخضر",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Gynecologic Cancer Surgery",
+      "ar": "جراحة سرطان النساء",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Gynecomastia Surgery",
+      "ar": "جراحة التثدي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Hair Transplant",
+      "ar": "زراعة الشعر",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Hand Reconstruction",
+      "ar": "إعادة بناء اليد",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Haploidentical Stem Cell Transplant",
+      "ar": "زراعة الخلايا الجذعية النصف متطابقة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Head & Neck Cancer Surgery",
+      "ar": "جراحة سرطان الرأس والعنق",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Heart Transplant Surgery",
+      "ar": "جراحة زراعة القلب",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Heart Valve Repair",
+      "ar": "إصلاح صمام القلب",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Heart Valve Replacement",
+      "ar": "استبدال صمام القلب",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Heller Myotomy for Achalasia",
+      "ar": "بضع عضلة هيلر لعلاج تعذر الارتخاء",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Hematopoietic Stem Cell Transplantation",
+      "ar": "زراعة الخلايا الجذعية المكونة للدم",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Hemodialysis",
+      "ar": "الديلزة الدموية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Hiatal Hernia Surgery",
+      "ar": "جراحة فتق الحجاب الحاجز",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Hip Preservation Surgery",
+      "ar": "جراحة الحفاظ على الورك",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Hip Resurfacing",
+      "ar": "تغطية سطح الورك",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "HoLEP (Holmium Laser Enucleation)",
+      "ar": "استئصال البروستاتا بليزر الهولميوم (HoLEP)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Hormone Therapy",
+      "ar": "العلاج الهرموني",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Hydrocephalus Surgery",
+      "ar": "جراحة الاستسقاء الدماغي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Hypospadias Repair",
+      "ar": "إصلاح الإحليل السفلي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Hysteroscopic Myomectomy",
+      "ar": "استئصال الورم الليفي بالمنظار الرحمي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Hysteroscopic Polypectomy",
+      "ar": "استئصال السليلة بالمنظار الرحمي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "ICD Implantation (Implantable Cardioverter-Defibrillator)",
+      "ar": "زراعة مزيل الرجفان القابل للزرع (ICD)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "ICL (Implantable Collamer Lens)",
+      "ar": "عدسة كولامر القابلة للزرع (ICL)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Image-Guided Radiotherapy (IGRT)",
+      "ar": "العلاج الإشعاعي الموجّه بالصور (IGRT)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Immune Checkpoint Inhibitor Therapy",
+      "ar": "مثبطات نقاط التفتيش المناعية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Immunotherapy",
+      "ar": "العلاج المناعي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Intensity-Modulated Radiotherapy (IMRT)",
+      "ar": "العلاج الإشعاعي المعدل الشدة (IMRT)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Interstitial Brachytherapy",
+      "ar": "المعالجة الكثبية الخلالية",
+      "category": "procedure",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Intracavitary Brachytherapy",
+      "ar": "المعالجة الكثبية داخل التجويف",
+      "category": "procedure",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Intraoperative Radiotherapy (IORT)",
+      "ar": "العلاج الإشعاعي أثناء الجراحة (IORT)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Intraperitoneal Chemotherapy",
+      "ar": "العلاج الكيميائي داخل الصفاق",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Intrathecal Chemotherapy",
+      "ar": "العلاج الكيميائي داخل القراب",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Intravitreal Anti-VEGF Injection",
+      "ar": "حقن مضاد عامل النمو داخل الجسم الزجاجي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "IV Thrombolysis",
+      "ar": "إذابة الخثرة وريديًا",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "IVIG (Intravenous Immunoglobulin)",
+      "ar": "الغلوبولين المناعي الوريدي (IVIG)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Kidney Transplant Evaluation and Follow-up",
+      "ar": "تقييم زراعة الكلى والمتابعة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Kidney Transplant Graft Biopsy",
+      "ar": "خزعة الطعم الكلوي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Kidney Transplantation",
+      "ar": "زراعة الكلى",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Kyphoplasty",
+      "ar": "رأب الحدب",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Laminectomy",
+      "ar": "استئصال الصفيحة الفقرية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Laparoscopic Hysterectomy",
+      "ar": "استئصال الرحم بالمنظار",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Laparoscopic Myomectomy",
+      "ar": "استئصال الورم الليفي بالمنظار",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Laser Glaucoma Surgery",
+      "ar": "جراحة المياه الزرقاء بالليزر",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "LASIK Eye Surgery",
+      "ar": "تصحيح النظر بالليزك (LASIK)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Leadless Pacemaker Implantation",
+      "ar": "زراعة منظم ضربات بلا أسلاك",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Limb Lengthening Surgery",
+      "ar": "جراحة تطويل الأطراف",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Limb Reconstruction Surgery",
+      "ar": "جراحة إعادة بناء الأطراف",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Liposuction",
+      "ar": "شفط الدهون",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Liver Biopsy",
+      "ar": "خزعة الكبد",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Liver Resection (Hepatectomy)",
+      "ar": "استئصال الكبد",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Liver Retransplantation",
+      "ar": "إعادة زراعة الكبد",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Liver Transplantation",
+      "ar": "زراعة الكبد",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Living Donor Kidney Transplantation",
+      "ar": "زراعة الكلى من متبرع حي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Living Donor Liver Transplantation",
+      "ar": "زراعة الكبد من متبرع حي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Lobectomy",
+      "ar": "استئصال فص رئوي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Low Anterior Resection (LAR)",
+      "ar": "الاستئصال الأمامي المنخفض (LAR)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Lumbar Puncture",
+      "ar": "البزل القطني",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Lung Cancer Surgery",
+      "ar": "جراحة سرطان الرئة",
+      "category": "procedure",
+      "forms": {
+        "taxonomyLabel() — facets, filters, breadcrumbs": "جراحة سرطان الرئة",
+        "medicalPhrase() — doctor profiles": "جراحة سرطان الرئة — التنسيق الإشعاعي"
+      },
+      "note": "Deliberate. The facet and filter register names the operation; the profile register says what the radiation oncologist actually does with it. Do not collapse these into one string.",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Lung Transplantation",
+      "ar": "زراعة الرئة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "LVAD Implantation",
+      "ar": "زراعة جهاز مساعدة البطين الأيسر (LVAD)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Macular Hole Surgery",
+      "ar": "جراحة ثقب البقعة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Maintenance Therapy",
+      "ar": "العلاج الاستمراري",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Mastectomy",
+      "ar": "استئصال الثدي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Mastoidectomy",
+      "ar": "استئصال الخشاء",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Matched Sibling Donor Transplant",
+      "ar": "زراعة من شقيق متطابق",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Matched Unrelated Donor Transplant",
+      "ar": "زراعة من متبرع غير قريب متطابق",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Medical Pleuroscopy",
+      "ar": "تنظير الجنبة الطبي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Medical Thoracoscopy",
+      "ar": "تنظير الصدر الطبي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Meningioma Surgery",
+      "ar": "جراحة الورم السحائي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Meniscus Repair",
+      "ar": "إصلاح الغضروف الهلالي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Metabolic Surgery for Type 2 Diabetes",
+      "ar": "جراحة الأيض لداء السكري من النوع الثاني",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Microdiscectomy",
+      "ar": "استئصال القرص المجهري",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Microlaryngeal Surgery",
+      "ar": "جراحة الحنجرة المجهرية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Microvascular Free Flap Reconstruction",
+      "ar": "إعادة البناء بشريحة حرة مجهرية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Migraine Nerve Block",
+      "ar": "حصر عصب الشقيقة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Mini Gastric Bypass (OAGB/MGB)",
+      "ar": "تحويل مسار المعدة المصغّر (OAGB/MGB)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Minimally Invasive Cardiac Surgery",
+      "ar": "جراحة القلب طفيفة التوغل",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "MitraClip",
+      "ar": "ميترا كليب",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Mitral Valve Repair",
+      "ar": "إصلاح الصمام التاجي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Molecular Targeted Therapy",
+      "ar": "العلاج الجزيئي الموجّه",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "MRI-Guided Focused Ultrasound (MRgFUS)",
+      "ar": "الموجات فوق الصوتية المركّزة الموجّهة بالرنين (MRgFUS)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Neck Dissection",
+      "ar": "تسليخ العنق",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Neck Lift",
+      "ar": "شد العنق",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Neoadjuvant Chemotherapy",
+      "ar": "العلاج الكيميائي قبل الجراحة",
+      "category": "procedure",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Nerve and Muscle Biopsy",
+      "ar": "خزعة العصب والعضلة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Nerve Conduction Study",
+      "ar": "دراسة توصيل الأعصاب",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Nipple-Sparing Mastectomy",
+      "ar": "استئصال الثدي مع الحفاظ على الحلمة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Non-Union Repair",
+      "ar": "إصلاح عدم التئام الكسر",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Norwood Procedure",
+      "ar": "عملية نوروود",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Oculoplastic Surgery",
+      "ar": "جراحة تجميل العين",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Oncoplastic Breast Surgery",
+      "ar": "جراحة الثدي الورمية التجميلية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Oophorectomy",
+      "ar": "استئصال المبيض",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Oral Cancer Surgery",
+      "ar": "جراحة سرطان الفم",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "ORIF (Open Reduction and Internal Fixation)",
+      "ar": "ردّ مفتوح وتثبيت داخلي (ORIF)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Ostomy / Stoma Surgery",
+      "ar": "جراحة الفغرة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Otoplasty",
+      "ar": "تجميل الأذن",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Ovarian Cancer Cytoreductive Surgery",
+      "ar": "الجراحة الاختزالية لسرطان المبيض",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Ovarian Cyst Surgery",
+      "ar": "جراحة كيس المبيض",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pacemaker Implantation",
+      "ar": "زراعة منظم ضربات القلب",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Paired Kidney Exchange (Swap Transplant)",
+      "ar": "تبادل الكلى المزدوج",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Palliative Chemotherapy",
+      "ar": "العلاج الكيميائي التلطيفي",
+      "category": "procedure",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pancreatectomy",
+      "ar": "استئصال البنكرياس",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pancreatic Surgery",
+      "ar": "جراحة البنكرياس",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Partial Knee Replacement",
+      "ar": "استبدال جزئي للركبة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Partial Nephrectomy",
+      "ar": "استئصال جزئي للكلية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "PCL Reconstruction (Posterior Cruciate Ligament)",
+      "ar": "إعادة بناء الرباط الصليبي الخلفي (PCL)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "PCNL (Percutaneous Nephrolithotomy)",
+      "ar": "استخراج حصاة الكلية عبر الجلد (PCNL)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "PDA Closure (Patent Ductus Arteriosus)",
+      "ar": "إغلاق القناة الشريانية السالكة (PDA)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Bone Marrow Transplantation",
+      "ar": "زراعة نخاع العظم للأطفال",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Cataract Surgery",
+      "ar": "جراحة ساد الأطفال",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Deformity Correction",
+      "ar": "تصحيح تشوهات الأطفال",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Foot & Ankle Surgery",
+      "ar": "جراحة قدم وكاحل الأطفال",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Fracture Fixation",
+      "ar": "تثبيت كسور الأطفال",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Fracture Surgery",
+      "ar": "جراحة كسور الأطفال",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Heart Transplantation",
+      "ar": "زراعة قلب الأطفال",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Hip Reconstruction",
+      "ar": "إعادة بناء ورك الأطفال",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Liver Transplantation",
+      "ar": "زراعة كبد الأطفال",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Scoliosis Surgery",
+      "ar": "جراحة جنف الأطفال",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Spinal Deformity Correction",
+      "ar": "تصحيح تشوه العمود الفقري عند الأطفال",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Urological Surgery",
+      "ar": "جراحة المسالك البولية للأطفال",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pelvic Floor Repair",
+      "ar": "إصلاح قاع الحوض",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pelvic Organ Prolapse Surgery",
+      "ar": "جراحة هبوط أعضاء الحوض",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Penile Implant",
+      "ar": "زراعة قضيبية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Percutaneous Renal Biopsy",
+      "ar": "خزعة الكلية عبر الجلد",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Peripheral Angioplasty",
+      "ar": "رأب الأوعية المحيطية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Peritoneal Dialysis",
+      "ar": "الديلزة البريتونية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Peroral Endoscopic Myotomy (POEM)",
+      "ar": "بضع العضلة بالمنظار عبر الفم (POEM)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Phacoemulsification Cataract Surgery",
+      "ar": "جراحة الساد بالفاكو",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "PIPAC",
+      "ar": "العلاج الكيميائي الرذاذي داخل الصفاق (PIPAC)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pituitary Tumor Surgery",
+      "ar": "جراحة ورم الغدة النخامية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Plaque Brachytherapy",
+      "ar": "المعالجة الكثبية باللوحة",
+      "category": "procedure",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Plasmapheresis",
+      "ar": "فصادة البلازما",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pleural Biopsy",
+      "ar": "خزعة الجنبة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "PLIF (Posterior Lumbar Interbody Fusion)",
+      "ar": "دمج الفقرات القطنية الخلفي (PLIF)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Precision Oncology",
+      "ar": "علاج الأورام الدقيق",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Proton Beam Therapy",
+      "ar": "العلاج بشعاع البروتون",
+      "category": "procedure",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "PTBD (Percutaneous Transhepatic Biliary Drainage)",
+      "ar": "النزح الصفراوي عبر الكبد (PTBD)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pyeloplasty",
+      "ar": "رأب حوض الكلية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Radical Cystectomy",
+      "ar": "الاستئصال الجذري للمثانة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Radical Hysterectomy",
+      "ar": "الاستئصال الجذري للرحم",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Radical Nephrectomy",
+      "ar": "الاستئصال الجذري للكلية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Radical Prostatectomy",
+      "ar": "الاستئصال الجذري للبروستاتا",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Radiofrequency Ablation",
+      "ar": "الاستئصال بالتردد الراديوي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Rectal Cancer Surgery",
+      "ar": "جراحة سرطان المستقيم",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Redo CABG",
+      "ar": "إعادة طعم مجازة الشريان التاجي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Retinal Detachment Surgery",
+      "ar": "جراحة انفصال الشبكية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Revision Hip Replacement",
+      "ar": "مراجعة استبدال الورك",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Revision Knee Replacement",
+      "ar": "مراجعة استبدال الركبة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Revision Spine Surgery",
+      "ar": "جراحة مراجعة العمود الفقري",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Rhinoplasty",
+      "ar": "تجميل الأنف",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Rigid Bronchoscopy",
+      "ar": "تنظير القصبات الصلب",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "RIRS (Retrograde Intrarenal Surgery)",
+      "ar": "الجراحة الرجوعية داخل الكلية (RIRS)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Robotic Cardiac Surgery",
+      "ar": "جراحة القلب الروبوتية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Robotic Hysterectomy",
+      "ar": "استئصال الرحم الروبوتي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Robotic Knee Replacement",
+      "ar": "استبدال الركبة الروبوتي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Robotic Myomectomy",
+      "ar": "استئصال الورم الليفي الروبوتي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Robotic Thoracic Surgery",
+      "ar": "جراحة الصدر الروبوتية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Rotator Cuff Repair",
+      "ar": "إصلاح الكفة المدورة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "SADI-S Surgery",
+      "ar": "جراحة SADI-S",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Salpingo-Oophorectomy",
+      "ar": "استئصال المبيض والبوق",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "SCFE Hip Surgery (Slipped Capital Femoral Epiphysis)",
+      "ar": "جراحة انزلاق مشاش رأس الفخذ (SCFE)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Scoliosis Correction",
+      "ar": "تصحيح الجنف",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Sentinel Lymph Node Biopsy",
+      "ar": "خزعة العقدة الليمفاوية الحارسة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Septoplasty",
+      "ar": "تقويم الحاجز الأنفي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Shoulder Replacement",
+      "ar": "استبدال الكتف",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Skull Base Surgery",
+      "ar": "جراحة قاعدة الجمجمة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Sleep Apnea Surgery",
+      "ar": "جراحة انقطاع النفس النومي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Sleep Study (Polysomnography)",
+      "ar": "دراسة النوم",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Sleeve Gastrectomy",
+      "ar": "تكميم المعدة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "SMILE Eye Surgery",
+      "ar": "تصحيح النظر بتقنية سمايل (SMILE)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Spinal Decompression",
+      "ar": "تخفيف ضغط العمود الفقري",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Spinal Deformity Correction",
+      "ar": "تصحيح تشوه العمود الفقري",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Spinal Fusion",
+      "ar": "دمج الفقرات",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Spinal Tumor Surgery",
+      "ar": "جراحة أورام العمود الفقري",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Squint / Strabismus Surgery",
+      "ar": "جراحة الحول",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Stapedectomy / Stapedotomy",
+      "ar": "استئصال أو بضع الركاب",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Stem Cell Transplantation",
+      "ar": "زراعة الخلايا الجذعية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "STER (Submucosal Tunneling Endoscopic Resection)",
+      "ar": "الاستئصال بالمنظار عبر نفق تحت المخاطية (STER)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Stereotactic Body Radiotherapy (SBRT)",
+      "ar": "العلاج الإشعاعي التجسيمي للجسم (SBRT)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Stereotactic Brain Biopsy",
+      "ar": "خزعة الدماغ التجسيمية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Stereotactic Brain Surgery",
+      "ar": "جراحة الدماغ التجسيمية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Stereotactic Radiosurgery (SRS)",
+      "ar": "الجراحة الإشعاعية التجسيمية (SRS)",
+      "category": "procedure",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Stroke Thrombectomy",
+      "ar": "استخراج خثرة السكتة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Sustained Low-Efficiency Dialysis (SLED)",
+      "ar": "الديلزة المستمرة منخفضة الكفاءة (SLED)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "TAPVC Repair (Total Anomalous Pulmonary Venous Connection)",
+      "ar": "إصلاح الاتصال الوريدي الرئوي الشاذ التام (TAPVC)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Targeted Therapy",
+      "ar": "العلاج الموجّه",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "TAVR/TAVI (Transcatheter Aortic Valve Replacement)",
+      "ar": "استبدال الصمام الأورطي بالقسطرة (TAVR/TAVI)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "TBNA (Transbronchial Needle Aspiration)",
+      "ar": "الشفط بالإبرة عبر القصبات (TBNA)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Tendon Repair",
+      "ar": "إصلاح الوتر",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Tendon Repair Surgery",
+      "ar": "جراحة إصلاح الوتر",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Thyroid Surgery",
+      "ar": "جراحة الغدة الدرقية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Thyroidectomy for Thyroid Cancer",
+      "ar": "استئصال الدرقية لسرطان الغدة الدرقية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "TLIF (Transforaminal Lumbar Interbody Fusion)",
+      "ar": "دمج الفقرات القطنية عبر الثقبة (TLIF)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "TOF Repair (Tetralogy of Fallot)",
+      "ar": "إصلاح رباعية فالو (TOF)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Tonsillectomy",
+      "ar": "استئصال اللوزتين",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Total Body Irradiation (TBI)",
+      "ar": "إشعاع الجسم الكامل (TBI)",
+      "category": "procedure",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Total Hip Replacement",
+      "ar": "استبدال الورك الكامل",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Total Knee Replacement",
+      "ar": "استبدال الركبة الكامل",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Total Mesorectal Excision (TME)",
+      "ar": "الاستئصال التام للمساريق المستقيمية (TME)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Trabeculectomy",
+      "ar": "استئصال التربيق",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Transbronchial Lung Biopsy",
+      "ar": "خزعة الرئة عبر القصبات",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Transcranial Doppler (TCD)",
+      "ar": "دوبلر عبر الجمجمة (TCD)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Transjugular Liver Biopsy",
+      "ar": "خزعة الكبد عبر الوداجي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Transoral Robotic Surgery (TORS)",
+      "ar": "الجراحة الروبوتية عبر الفم (TORS)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Tummy Tuck",
+      "ar": "شد البطن",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "TURBT (Transurethral Resection of Bladder Tumor)",
+      "ar": "استئصال ورم المثانة عبر الإحليل (TURBT)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "TURP (Transurethral Resection of the Prostate)",
+      "ar": "استئصال البروستاتا عبر الإحليل (TURP)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Tympanoplasty",
+      "ar": "ترقيع طبلة الأذن",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Upper GI Endoscopy (Gastroscopy)",
+      "ar": "تنظير الجهاز الهضمي العلوي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Ureteroscopy",
+      "ar": "تنظير الحالب",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Urethroplasty",
+      "ar": "رأب الإحليل",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Urinary Diversion",
+      "ar": "تحويل مجرى البول",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Urinary Tract Reconstruction",
+      "ar": "إعادة بناء المسالك البولية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Vaginal Hysterectomy",
+      "ar": "استئصال الرحم المهبلي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Vagus Nerve Stimulation (VNS)",
+      "ar": "تحفيز العصب المبهم (VNS)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Variceal Band Ligation",
+      "ar": "ربط دوالي المريء",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Varicocele Surgery",
+      "ar": "جراحة دوالي الخصية",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "VATS Lung Surgery",
+      "ar": "جراحة الرئة بالمنظار الصدري (VATS)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Vertebroplasty",
+      "ar": "رأب الفقرة",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Video EEG",
+      "ar": "تخطيط كهربية الدماغ بالفيديو",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Vitrectomy",
+      "ar": "استئصال الجسم الزجاجي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "VIU (Visual Internal Urethrotomy)",
+      "ar": "بضع الإحليل الداخلي البصري (VIU)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Vocal Cord Surgery",
+      "ar": "جراحة الحبل الصوتي",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "VSD Closure (Ventricular Septal Defect)",
+      "ar": "إغلاق عيب الحاجز البطيني (VSD)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Whipple Procedure",
+      "ar": "عملية ويبل",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Whipple Procedure (Pancreaticoduodenectomy)",
+      "ar": "عملية ويبل (استئصال البنكرياس والإثني عشر)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Z-POEM",
+      "ar": "بضع عضلة زنكر بالمنظار (Z-POEM)",
+      "category": "procedure",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Bariatric Surgery",
+      "ar": "جراحة السمنة",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Cardiac Surgery",
+      "ar": "جراحة القلب",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Cardiology",
+      "ar": "أمراض القلب",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Cosmetic Surgery",
+      "ar": "الجراحة التجميلية",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "ENT",
+      "ar": "أنف وأذن وحنجرة",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Gastroenterology",
+      "ar": "أمراض الجهاز الهضمي",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Gynecology",
+      "ar": "أمراض النساء",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Hematology",
+      "ar": "أمراض الدم",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Medical Oncology",
+      "ar": "علاج الأورام الطبي",
+      "category": "specialty",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Nephrology",
+      "ar": "أمراض الكلى",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Neurology",
+      "ar": "طب الأعصاب",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Neurosurgery",
+      "ar": "جراحة المخ والأعصاب",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Ophthalmology",
+      "ar": "طب العيون",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Orthopedics",
+      "ar": "جراحة العظام",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Cardiac Surgery",
+      "ar": "جراحة قلب الأطفال",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Hematology",
+      "ar": "أمراض دم الأطفال",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pediatric Orthopaedic",
+      "ar": "عظام الأطفال",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Pulmonology",
+      "ar": "أمراض الرئة",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Radiation Oncology",
+      "ar": "علاج الأورام بالإشعاع",
+      "category": "specialty",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs",
+        "src/lib/i18n/medical-phrases.ts",
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Spine Surgery",
+      "ar": "جراحة العمود الفقري",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Surgical Gastroenterology",
+      "ar": "جراحة الجهاز الهضمي",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Surgical Oncology",
+      "ar": "جراحة الأورام",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Urology",
+      "ar": "المسالك البولية",
+      "category": "specialty",
+      "sources": [
+        "src/lib/i18n/taxonomy-ar.ts"
+      ]
+    },
+    {
+      "en": "Angioplasty, valves from the groin, electrophysiology — when the heart needs a catheter, not a saw.",
+      "ar": "قسطرة وصمامات من الفخذ وكهرباء القلب — عندما يحتاج القلب قسطرة لا منشارًا.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Blood cancers and marrow work, including transplant when the indication is real.",
+      "ar": "سرطانات الدم والنخاع، بما فيها الزراعة عندما يكون الاستطباب حقيقيًا.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Brain, spine and radiosurgery with a named neurosurgeon on the consent form.",
+      "ar": "دماغ وعمود فقري وجراحة إشعاعية مع جرّاح مسمّى على نموذج الموافقة.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Bypass, valves and the operations that belong in a cardiac theatre, not a cath lab.",
+      "ar": "تجاوز وصمامات والعمليات التي تنتمي لغرفة قلب لا لقسطرة.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Cancer surgery when the cut is the honest next step, with reconstruction on the same list.",
+      "ar": "جراحة سرطان عندما يكون القطع الخطوة الصادقة، مع الترميم على القائمة نفسها.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Cataract, cornea, retina and refractive work on a floor that only does eyes.",
+      "ar": "ساد وقرنية وشبكية وتصحيح نظر على طابق لا يعمل إلا العيون.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Children’s blood and marrow lists, held by consultants who treat children every week.",
+      "ar": "قوائم دم ونخاع الأطفال، لدى استشاريين يعالجون الأطفال كل أسبوع.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Children’s bones and joints: clubfoot, hips, growth plates — not adult replacement lists.",
+      "ar": "عظام ومفاصل الأطفال: حنف القدم، الوركين، صفائح النمو — لا قوائم استبدال البالغين.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Congenital heart surgery for children, with intensive care that already knows those nights.",
+      "ar": "جراحة قلب خلقية للأطفال، مع عناية مركزة تعرف تلك الليالي.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Dialysis, biopsy and transplant medicine, shared with urology when a kidney is changing hands.",
+      "ar": "ديال وخزعة وطب زراعة، مشترك مع المسالك عندما تتبدل كلية.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Ears, nose, throat and skull-base work, including cochlear implants when hearing is the brief.",
+      "ar": "أذن وأنف وحنجرة وقاعدة جمجمة، بما فيها زراعة القوقعة عندما يكون السمع هو الملف.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Elective reconstruction and aesthetics with a named surgeon you meet on camera first.",
+      "ar": "ترميم واختيار جمالي مع جرّاح تلتقونه على الكاميرا أولًا.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Endoscopy, ERCP and the medical gut list — cameras before knives whenever that is honest.",
+      "ar": "منظار وERCP وقائمة الجهاز الهضمي الطبية — كاميرا قبل السكين كلما صدق ذلك.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Fusion, discs and deformity when the spine, not the rest of orthopaedics, is the problem.",
+      "ar": "دمج وأقراص وتشوه عندما تكون المشكلة في العمود الفقري لا في بقية العظام.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Kidneys, prostate and stones — including transplant shared with the nephrology floor.",
+      "ar": "كلى وبروستاتا وحصى — بما فيها الزراعة المشتركة مع طابق أمراض الكلى.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Knees, hips, ligaments and trauma — replacement when the joint is finished, not because it is fashionable.",
+      "ar": "ركب ووركين وأربطة ورضوح — الاستبدال عندما ينتهي المفصل لا لأنه شائع.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Liver, pancreas and GI surgery, including transplant when the house can quote it.",
+      "ar": "كبد وبنكرياس وجهاز هضمي جراحي، بما فيها الزراعة عندما يستطيع الحرم تسعيرها.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Lungs, airways and EBUS — tissue when imaging is no longer enough.",
+      "ar": "رئة ومجارٍ وEBUS — نسيج عندما لا يعود التصوير كافيًا.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Metabolic surgery when diet has already had a fair run and the BMI still belongs on the list.",
+      "ar": "جراحة استقلابية بعد أن أخذ النظام الغذائي فرصته وما زال مؤشر الكتلة على القائمة.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Radiation planned around the tumour you actually have — not a machine looking for work.",
+      "ar": "إشعاع يُخطَّط حول الورم الموجود فعلًا — لا آلة تبحث عن عمل.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Stroke, epilepsy and movement lists — medicine and devices before a craniotomy whenever that is honest.",
+      "ar": "سكتة وصرع وحركة — دواء وأجهزة قبل فتح الجمجمة كلما صدق ذلك.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Systemic treatment — chemo, targeted drugs, immunotherapy — named to the protocol, not the brochure.",
+      "ar": "علاج جهازي — كيميائي وموجّه ومناعي — باسم البروتوكول لا باسم الكتيّب.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Womb, ovaries and endometriosis — laparoscopic when the pelvis allows it.",
+      "ar": "رحم ومبايض وبطانة هاجرة — بالمنظار عندما يسمح الحوض.",
+      "category": "specialty-blurb",
+      "sources": [
+        "src/lib/i18n/hospital-copy.ts"
+      ]
+    },
+    {
+      "en": "Languages spoken on the ward in Bengaluru",
+      "ar": "الإنجليزية، الكانادية، الهندية",
+      "category": "ward-languages",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Languages spoken on the ward in Chennai",
+      "ar": "الإنجليزية، التاميلية، الهندية",
+      "category": "ward-languages",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Languages spoken on the ward in Delhi NCR",
+      "ar": "الإنجليزية، الهندية",
+      "category": "ward-languages",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Languages spoken on the ward in Hyderabad",
+      "ar": "الإنجليزية، التيلوغو، الهندية",
+      "category": "ward-languages",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    },
+    {
+      "en": "Languages spoken on the ward in Mumbai",
+      "ar": "الإنجليزية، الهندية، الماراثية",
+      "category": "ward-languages",
+      "sources": [
+        "scripts/ar-overlay-tables.mjs"
+      ]
+    }
+  ]
+}

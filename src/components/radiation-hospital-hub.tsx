@@ -17,7 +17,10 @@ import {
   doctorItemListJsonLd,
   faqJsonLd,
   hospitalItemListJsonLd,
+  absoluteUrl,
 } from "@/lib/seo";
+import { documentId } from "@/lib/jsonld";
+import type { AppLocale } from "@/lib/i18n/languages";
 
 function SectionHeading({
   eyebrow,
@@ -48,9 +51,11 @@ function SectionHeading({
 export function HospitalSpecialtyHub({
   data,
   query,
+  locale = "en",
 }: {
   data: HospitalSpecialtyHubData;
   query: CatalogQuery;
+  locale?: AppLocale;
 }) {
   const consultHref = `/consult?specialty=${data.specialtySlug}${data.cityName ? `&city=${encodeURIComponent(data.cityName)}` : ""}${data.procedure ? `&treatment=${encodeURIComponent(data.procedure)}` : ""}`;
   const ctaSubject = data.procedure ?? `${data.specialtyName.toLowerCase()} ${data.careItem}`;
@@ -90,20 +95,23 @@ export function HospitalSpecialtyHub({
         data={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
+          "@id": documentId(data.path, locale, "collection"),
           name: data.heading,
           description: data.description,
-          url: `https://gaf.healthcare${data.path}`,
+          inLanguage: locale,
+          url: absoluteUrl(data.path, locale),
           about: data.procedure
             ? { "@type": "MedicalProcedure", name: data.procedure }
             : { "@type": "MedicalSpecialty", name: data.specialtyName },
         }}
       />
-      <JsonLd data={breadcrumbJsonLd(breadcrumbItems)} />
-      <JsonLd data={faqJsonLd(data.faqs)} />
+      <JsonLd data={breadcrumbJsonLd(breadcrumbItems, locale)} />
+      <JsonLd data={faqJsonLd(data.faqs, { path: data.path, locale })} />
       <JsonLd
         data={hospitalItemListJsonLd(data.paging.items, {
           name: data.heading,
           path: data.path,
+          locale,
           addressCountry: "IN",
         })}
       />
@@ -111,6 +119,7 @@ export function HospitalSpecialtyHub({
         data={doctorItemListJsonLd(data.doctors, {
           name: `${data.practitioners} associated with ${data.procedure ?? "validated hospitals"} in ${data.place}`,
           path: data.path,
+          locale,
           addressCountry: "IN",
         })}
       />
@@ -207,7 +216,7 @@ export function HospitalSpecialtyHub({
               <div className="mt-5 overflow-x-auto rounded-2xl border border-border bg-card">
                 <table className="min-w-[760px] w-full text-sm">
                   <thead>
-                    <tr className="border-b border-border text-left">
+                    <tr className="border-b border-border text-start">
                       <th className="px-4 py-3 font-medium text-muted-foreground">Hospital</th>
                       <th className="px-4 py-3 font-medium text-muted-foreground">City</th>
                       <th className="px-4 py-3 font-medium text-muted-foreground">Accreditation</th>
@@ -220,7 +229,7 @@ export function HospitalSpecialtyHub({
                   <tbody>
                     {visibleHospitals.slice(0, 6).map((relationship) => (
                       <tr key={relationship.hospital.slug} className="border-t border-border align-top">
-                        <th className="px-4 py-3 text-left font-medium">
+                        <th className="px-4 py-3 text-start font-medium">
                           <Link href={`/hospitals/${relationship.hospital.slug}`}>
                             {relationship.hospital.name}
                           </Link>

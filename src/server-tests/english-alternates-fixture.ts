@@ -11,8 +11,15 @@ import type { AppLocale } from "@/lib/i18n/languages";
  * not: the only edits this table has taken are locales being removed from a
  * hreflang block, never an English URL moving.
  *
- * Last updated by the Arabic publication gate, which removed:
- *   - `ar` from all 13 facet rows, since no pSEO template is approved yet
+ * Last updated by Phase 3, which opened the doctor and hospital facet gates
+ * and added `ar` to the seven facet rows whose Arabic page is published and
+ * self-canonical. The rest stay English-only for one of three reasons, each
+ * noted at the row: the Arabic facet returns exactly its parent's records and
+ * names the parent as canonical, it is below the three-record floor, or it
+ * reproduces 90% or more of its parent.
+ *
+ * Before that, the Arabic publication gate removed:
+ *   - `ar` from all 13 facet rows, since no pSEO template was approved
  *   - `ru`, `fr`, `sw` everywhere, since those locales are not live
  *   - `ar` from /treatments, since no curated treatment is published
  */
@@ -23,7 +30,7 @@ import type { AppLocale } from "@/lib/i18n/languages";
  *
  * - "hreflang":       canonical plus the full alternates block (the norm)
  * - "canonical-only": canonical but no alternates, because the route bypasses
- *                     withLocaleMetadata. Commit group (c) closes these.
+ *                     withLocaleMetadata. No route does this any more.
  * - "noindex":        deliberately excluded from search, no canonical
  * - "404":            no such page; present only to pin the empty-locales case
  */
@@ -45,12 +52,16 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     path: "/doctors/dr-anil-kumar-anand",
     published: ["en", "ar"],
   },
-  { label: "doctor facet: country", path: "/doctors/India", published: ["en"] },
+  { label: "doctor facet: country", path: "/doctors/India", published: ["en", "ar"] },
   {
     label: "doctor facet: country/city",
     path: "/doctors/India/Delhi-NCR",
-    published: ["en"],
+    published: ["en", "ar"],
   },
+  // Published in Arabic but not advertised: all 70 translated doctors are
+  // radiation oncologists, so this facet returns exactly what /doctors/India
+  // returns and names it as canonical. A page that defers to another URL is
+  // not the address of a language version, so English does not claim it is.
   {
     label: "doctor facet: country/specialty",
     path: "/doctors/India/Radiation-Oncology",
@@ -64,7 +75,7 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
   {
     label: "doctor facet: country/city/specialty/procedure",
     path: "/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
-    published: ["en"],
+    published: ["en", "ar"],
   },
   {
     label: "doctor facet with no Arabic profiles",
@@ -72,8 +83,9 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en"],
   },
   // Thinnest Arabic doctor facet in the catalog: exactly 3 matching profiles,
-  // so it clears FACET_MIN_ARABIC_PROFILES and is held back purely by the
-  // unapproved template. Approving doctorFacet in Phase 3 should republish it.
+  // so it clears FACET_MIN_ARABIC_PROFILES. It is still not advertised, for the
+  // same reason as the two rows above — Mumbai's radiation roster is Mumbai's
+  // whole roster — which is the floor being irrelevant here rather than broken.
   {
     label: "doctor facet at the 3-profile floor",
     path: "/doctors/India/Mumbai/Radiation-Oncology",
@@ -102,26 +114,31 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     path: "/hospitals/apollo-delhi/procedures",
     published: ["en"],
   },
-  { label: "hospital facet: country", path: "/hospitals/India", published: ["en"] },
+  { label: "hospital facet: country", path: "/hospitals/India", published: ["en", "ar"] },
   {
     label: "hospital facet: country/city",
     path: "/hospitals/India/Delhi-NCR",
-    published: ["en"],
+    published: ["en", "ar"],
   },
+  // 16 of the 18 Arabic campuses in Delhi NCR, which is 89% — just inside the
+  // 0.9 overlap gate. The country/specialty facet above it returns all 37 and
+  // stays suppressed.
   {
     label: "hospital facet: country/city/specialty",
     path: "/hospitals/India/Delhi-NCR/Radiation-Oncology",
-    published: ["en"],
+    published: ["en", "ar"],
   },
   {
     label: "hospital facet: country/city/specialty/procedure",
     path: "/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
-    published: ["en"],
+    published: ["en", "ar"],
   },
   // These three bracket the profile-count floor: one Arabic record, two, and
-  // three. All are held back by the unapproved template today, but once
-  // hospitalFacet is approved only the third may come back. If the first two
-  // ever regain an ar alternate, the floor has stopped working.
+  // three. All three stay English-only with hospitalFacet approved, but for
+  // two different reasons — the first two are below the 3-record floor, and
+  // the third clears it and is then caught by the overlap gate at 3 of 3. If
+  // either of the first two ever regains an ar alternate, the floor has
+  // stopped working.
   {
     label: "hospital facet with 1 Arabic record",
     path: "/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
@@ -140,22 +157,20 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
 
   { label: "costs index", path: "/costs", published: ["en"] },
   { label: "cost facet: country", path: "/costs/India", published: ["en"] },
-  // costsDirectoryMetadata returns the specialty-profile metadata as-is, so
-  // this branch never reaches withLocaleMetadata and serves no alternates.
+  // This branch used to overwrite alternates wholesale, dropping the block
+  // catalogPageMetadata had just built. It now goes through the wrapper.
   {
     label: "cost facet: country/specialty",
     path: "/costs/India/Radiation-Oncology",
     published: ["en"],
-    served: "canonical-only",
   },
-  // Same cause, different branch: a procedure with no city returns
-  // costsProcedureMetadata directly. Adding a city does reach the wrapper,
-  // which is why the next row serves a full block.
+  // Same cause, different branch: a procedure with no city used to return
+  // costsProcedureMetadata directly. Adding a city always reached the wrapper,
+  // which is why the row after this one never lost its block.
   {
     label: "cost facet: country/specialty/procedure",
     path: "/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
     published: ["en"],
-    served: "canonical-only",
   },
   {
     label: "cost facet: country/city/specialty/procedure",

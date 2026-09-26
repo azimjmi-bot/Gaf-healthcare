@@ -37,7 +37,7 @@ import {
 import { AccreditationSeals } from "@/components/accreditation-seals";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { HospitalCampusVisual } from "@/components/hospital-campus-visual";
+import { HospitalCampusVisual, campusCaption } from "@/components/hospital-campus-visual";
 import { HospitalGalleryButton } from "@/components/hospital-gallery";
 import { HospitalSectionNav } from "@/components/hospital-section-nav";
 import { MarkdownBody } from "@/components/markdown-body";
@@ -264,7 +264,11 @@ export function HospitalProfileView({
               </div>
             </div>
             <div className="hp-hero__visual">
-              <HospitalCampusVisual hospital={hospital} className="hp-hero__art" />
+              <HospitalCampusVisual
+                hospital={hospital}
+                caption={campusCaption(hospital, locale)}
+                className="hp-hero__art"
+              />
               <HospitalGalleryButton hospital={hospital} locale={locale} label={t["hp.photos"]} />
             </div>
           </div>
@@ -317,7 +321,11 @@ export function HospitalProfileView({
             </dl>
           </div>
           <figure className="hp-quote">
-            <HospitalCampusVisual hospital={hospital} className="hp-quote__art" />
+            <HospitalCampusVisual
+              hospital={hospital}
+              caption={campusCaption(hospital, locale)}
+              className="hp-quote__art"
+            />
             <blockquote>
               <p>{pullQuoteLocalized(hospital, locale)}</p>
               <footer>{hospital.name}</footer>
@@ -368,7 +376,7 @@ export function HospitalProfileView({
             <p className="mt-6">
               <Link href={`/hospitals/${hospital.slug}/doctors`} className="hp-viewall">
                 {t["hp.viewDepartments"]}
-                <ChevronRight className="size-4" />
+                <ChevronRight className="size-4 icon-forward" />
               </Link>
             </p>
           ) : null}
@@ -458,7 +466,7 @@ export function HospitalProfileView({
               </div>
               <Link href={`/hospitals/${hospital.slug}/procedures`} className="hp-viewall">
                 {t["hp.viewAllProcedures"]}
-                <ChevronRight className="size-4" />
+                <ChevronRight className="size-4 icon-forward" />
               </Link>
             </div>
             <p className="hp-note">{t["hp.procNote"]}</p>
@@ -485,7 +493,7 @@ export function HospitalProfileView({
                         name: taxonomyLabel(row.treatment.name, locale),
                       })}
                     >
-                      <ChevronRight className="size-4" />
+                      <ChevronRight className="size-4 icon-forward" />
                     </Link>
                   </li>
                 ))}
@@ -509,7 +517,7 @@ export function HospitalProfileView({
               </div>
               <Link href={`/hospitals/${hospital.slug}/doctors`} className="hp-viewall">
                 {t["hp.viewAllDoctors"]}
-                <ChevronRight className="size-4" />
+                <ChevronRight className="size-4 icon-forward" />
               </Link>
             </div>
             {topDoctors.length === 0 ? (
@@ -531,7 +539,7 @@ export function HospitalProfileView({
                     </div>
                     <Link href={`/doctors/${d.slug}`} className="hp-viewall hp-viewall--tight">
                       {t["hp.viewProfile"]}
-                      <ChevronRight className="size-4" />
+                      <ChevronRight className="size-4 icon-forward" />
                     </Link>
                   </li>
                 ))}
@@ -601,7 +609,11 @@ export function HospitalProfileView({
             <p className="eyebrow">{t["hp.findUs"]}</p>
             <h2>{t["hp.location"]}</h2>
             <div className="hp-map">
-              <HospitalCampusVisual hospital={hospital} className="hp-map__art" />
+              <HospitalCampusVisual
+                hospital={hospital}
+                caption={campusCaption(hospital, locale)}
+                className="hp-map__art"
+              />
               <MapPin className="hp-map__pin" />
             </div>
             <p className="mt-4 font-medium">
