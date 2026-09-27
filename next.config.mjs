@@ -37,7 +37,6 @@ const nextConfig = {
       { source: "/journey", destination: "/blogs", permanent: true },
       { source: "/stories", destination: "/blogs", permanent: true },
       { source: "/about", destination: "/", permanent: true },
-      { source: "/Robots.txt", destination: "/robots.txt", permanent: true },
     ];
   },
   async headers() {
