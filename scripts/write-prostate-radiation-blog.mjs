@@ -797,7 +797,7 @@ const blocks = [
     "[Prostate Cancer Treatment Cost in India](" + PILLAR + ") — surgery, radiation, hormone therapy and advanced treatment costs.",
     "[What Is the Best Treatment for Prostate Cancer?](" + OPTIONS + ") — how doctors choose treatment according to stage and risk.",
     "[Prostate Cancer Treatment by Stage](" + OPTIONS + ") — treatment options for Stage 1 through Stage 4.",
-    "[Brachytherapy for Prostate Cancer in India](" + BRACHY + ") — LDR and HDR cost and hospital pathways.",
+    "[Brachytherapy for Prostate Cancer](/blogs/brachytherapy-for-prostate-cancer) — LDR and HDR procedure, side effects and cost.",
     "[PSMA PET/CT for Prostate Cancer](" + PILLAR + ") — when advanced imaging may be useful.",
     "[Lutetium-177 PSMA Therapy in India](" + PILLAR + ") — treatment for selected advanced prostate cancers.",
   ]),

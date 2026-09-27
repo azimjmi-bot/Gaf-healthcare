@@ -937,7 +937,7 @@ const article = {
   relatedLinks: [
     { label: "Prostate Cancer Treatment in India", href: PILLAR },
     { label: "Prostate Cancer Treatment Options", href: OPTIONS },
-    { label: "Brachytherapy for Prostate Cancer", href: BRACHY },
+    { label: "Brachytherapy for Prostate Cancer", href: "/blogs/brachytherapy-for-prostate-cancer" },
     { label: "Hormone therapy cost", href: HT },
     { label: "External-beam radiation cost", href: EBRT },
     { label: "Robotic Prostatectomy in India", href: "/blogs/robotic-prostatectomy-in-india" },

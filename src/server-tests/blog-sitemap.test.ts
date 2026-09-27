@@ -4,6 +4,7 @@ import { listPublishedPosts } from "@/lib/blogs";
 import { buildBlogSitemap, buildLocaleSitemap, buildSitemapIndex, sitemapIndexXml, sitemapXml } from "@/lib/i18n/sitemap-entries";
 
 const NEW_SLUGS = [
+  "brachytherapy-for-prostate-cancer",
   "radiation-therapy-for-prostate-cancer",
   "robotic-prostatectomy-in-india",
   "prostate-cancer-treatment-without-surgery",
@@ -55,7 +56,7 @@ test("the blog sitemap lists every published English article, newest first", () 
     assert.equal(row.changeFrequency, "weekly");
     assert.equal(row.priority, 0.7);
   }
-  assert.equal(urls[1], "https://gaf.healthcare/blogs/radiation-therapy-for-prostate-cancer");
+  assert.equal(urls[1], "https://gaf.healthcare/blogs/brachytherapy-for-prostate-cancer");
   assert.equal(buildBlogSitemap("ar").length, 0);
 });
 
@@ -82,7 +83,7 @@ test("the root sitemap is an index of the language and blog sitemaps", () => {
     "https://gaf.healthcare/sitemap-ar.xml",
     "https://gaf.healthcare/sitemap-blogs.xml",
   ]);
-  assert.equal(files[0].lastModified, "2026-09-28T05:00:00.000Z");
+  assert.equal(files[0].lastModified, "2026-09-28T05:30:00.000Z");
   const xml = sitemapIndexXml(files);
   assert.match(xml, /<sitemapindex /);
   assert.match(xml, /<loc>https:\/\/gaf\.healthcare\/sitemap-blogs\.xml<\/loc>/);

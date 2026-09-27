@@ -70,7 +70,9 @@
     "prostate cancer",
     "active surveillance",
     "robotic prostatectomy",
-    "brachytherapy"
+    "brachytherapy",
+    "LDR",
+    "HDR"
   ],
   "media": [
     {
@@ -919,9 +921,2997 @@
       "name": "pca-rad-followup.webp",
       "alt": "Male patient in clinic with a pelvic overlay while a clinician reviews urinary and bowel recovery after radiation",
       "addedAt": "2026-09-28T05:00:00.000Z"
+    },
+    {
+      "id": "media_pca_brachy_anatomy_webp",
+      "url": "/uploads/articles/pca-brachy-anatomy.webp",
+      "name": "pca-brachy-anatomy.webp",
+      "alt": "Transparent male body highlighting the prostate in the pelvis as the target for internal radiation",
+      "addedAt": "2026-09-28T05:30:00.000Z"
+    },
+    {
+      "id": "media_pca_brachy_ldr_webp",
+      "url": "/uploads/articles/pca-brachy-ldr.webp",
+      "name": "pca-brachy-ldr.webp",
+      "alt": "Male pelvis highlighting the prostate with tiny gold grains inside the gland to explain LDR seed brachytherapy",
+      "addedAt": "2026-09-28T05:30:00.000Z"
+    },
+    {
+      "id": "media_pca_brachy_hdr_webp",
+      "url": "/uploads/articles/pca-brachy-hdr.webp",
+      "name": "pca-brachy-hdr.webp",
+      "alt": "Male patient on a treatment couch with a pelvic-bone overlay used to explain temporary HDR catheter placement",
+      "addedAt": "2026-09-28T05:30:00.000Z"
+    },
+    {
+      "id": "media_pca_brachy_followup_webp",
+      "url": "/uploads/articles/pca-brachy-followup.webp",
+      "name": "pca-brachy-followup.webp",
+      "alt": "Male patient in clinic with a pelvic overlay while a clinician reviews urinary recovery after brachytherapy",
+      "addedAt": "2026-09-28T05:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_brachytherapy_for_prostate_cancer",
+      "slug": "brachytherapy-for-prostate-cancer",
+      "title": "Brachytherapy for Prostate Cancer: Procedure, Benefits, Risks and Cost",
+      "excerpt": "LDR seed implantation and HDR temporary brachytherapy — who they are for, how they are performed, side effects, travel precautions and cost in India.",
+      "date": "28 September 2026",
+      "publishedAt": "2026-09-28T05:30:00.000Z",
+      "updatedAt": "2026-09-28T05:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Radiation Oncology",
+      "tags": [
+        "prostate cancer",
+        "radiation",
+        "brachytherapy",
+        "LDR",
+        "HDR",
+        "India",
+        "cost"
+      ],
+      "image": "/uploads/articles/pca-brachy-anatomy.webp",
+      "imageAlt": "Transparent male body highlighting the prostate in the pelvis as the target for internal radiation",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Brachytherapy for Prostate Cancer: Procedure & Cost",
+      "seoDescription": "LDR seed and HDR prostate brachytherapy: who they are for, procedure, side effects, radiation safety and cost in India. Itemized estimates for international patients.",
+      "canonical": "https://gaf.healthcare/blogs/brachytherapy-for-prostate-cancer",
+      "ogImage": "/uploads/articles/pca-brachy-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "brachytherapy for prostate cancer",
+        "prostate brachytherapy",
+        "prostate cancer brachytherapy",
+        "brachytherapy for prostate cancer in India",
+        "prostate brachytherapy cost in India",
+        "LDR brachytherapy prostate",
+        "HDR brachytherapy prostate",
+        "prostate seed implantation",
+        "prostate cancer seed therapy",
+        "brachytherapy side effects",
+        "prostate brachytherapy procedure",
+        "HDR boost prostate cancer"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Radiation Therapy for Prostate Cancer",
+          "href": "/blogs/radiation-therapy-for-prostate-cancer"
+        },
+        {
+          "label": "Prostate Cancer Treatment in India",
+          "href": "/treatments/prostate-cancer-treatment-in-india"
+        },
+        {
+          "label": "Treatment without surgery",
+          "href": "/blogs/prostate-cancer-treatment-without-surgery"
+        },
+        {
+          "label": "Robotic Prostatectomy in India",
+          "href": "/blogs/robotic-prostatectomy-in-india"
+        },
+        {
+          "label": "Brachytherapy cost",
+          "href": "/costs/India/Radiation-Oncology/Brachytherapy"
+        },
+        {
+          "label": "Radiation oncologists",
+          "href": "/doctors/India/Radiation-Oncology"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>What is brachytherapy for prostate cancer?</strong></p><p class=\"article-quick-answer__body\"><strong>Brachytherapy is a form of internal radiation therapy in which a radioactive source is placed inside or immediately next to the prostate to deliver radiation directly to the cancer.</strong></p><p class=\"article-quick-answer__body\">There are two main types:</p><ul class=\"article-quick-answer__list\"><li><strong>LDR brachytherapy:</strong> tiny radioactive seeds are permanently implanted in the prostate and release radiation gradually.</li><li><strong>HDR brachytherapy:</strong> temporary catheters are placed in the prostate and a radioactive source delivers a high dose for a short period before being removed.</li></ul><p class=\"article-quick-answer__body\">Brachytherapy can be used alone for selected localized, lower-risk prostate cancers. For higher-risk or locally advanced disease, it may be combined with external beam radiation therapy and hormone therapy.</p><p class=\"article-quick-answer__body\"><strong>How much does prostate brachytherapy cost in India?</strong></p><p class=\"article-quick-answer__body\">Published Indian hospital information gives an indicative range of approximately <strong>₹1 lakh to ₹2.5 lakh</strong>, although the actual price varies by hospital, technique, radioactive source, treatment planning, anaesthesia, hospitalisation and whether brachytherapy is combined with external radiation or hormone therapy.</p><p class=\"article-quick-answer__body\">A patient-specific quotation is therefore more useful than a single advertised price.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Brachytherapy is an established form of radiation treatment for prostate cancer. This guide sits beside the [Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer) article, the [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) pathway, [treatment without surgery](/blogs/prostate-cancer-treatment-without-surgery) and [Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india)."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "Instead of sending radiation toward the prostate from a machine outside the body, brachytherapy places the radiation source **inside the prostate or very close to it**."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "This allows a high radiation dose to be concentrated around the prostate while limiting radiation exposure to surrounding tissues."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "The prostate is located close to the bladder, rectum and other important structures."
+        },
+        {
+          "id": "p_006",
+          "type": "paragraph",
+          "text": "Because the radioactive source is placed close to the treatment target, brachytherapy can create a steep dose fall-off outside the prostate."
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "In simple terms:"
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "**The radiation is delivered where it is needed rather than travelling through the body from a distant machine.**"
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "The American Cancer Society describes brachytherapy as internal radiation therapy in which radioactive material is placed directly inside the prostate."
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "International patients comparing [radiation oncologists](/doctors/India/Radiation-Oncology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Radiation-Oncology), [Mumbai](/doctors/India/Mumbai/Radiation-Oncology), [Bengaluru](/doctors/India/Bengaluru/Radiation-Oncology), [Chennai](/doctors/India/Chennai/Radiation-Oncology) and [Hyderabad](/doctors/India/Hyderabad/Radiation-Oncology)."
+        },
+        {
+          "id": "btn_011",
+          "type": "button",
+          "label": "Ask whether brachytherapy is appropriate",
+          "href": "/consult?treatment=Prostate%20Brachytherapy"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your PSA, biopsy and MRI](https://wa.me/919044346292?text=Please%20review%20my%20PSA%2C%20biopsy%20and%20MRI%20and%20advise%20whether%20prostate%20brachytherapy%20in%20India%20is%20appropriate.)"
+        },
+        {
+          "id": "img_013",
+          "type": "image",
+          "src": "/uploads/articles/pca-brachy-anatomy.webp",
+          "alt": "Transparent male body highlighting the prostate in the pelvis as the target for internal radiation",
+          "caption": "Brachytherapy places the radiation source inside or next to the prostate. The gland stays in place; the dose is concentrated where the cancer is."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 2,
+          "text": "How Does Prostate Brachytherapy Work?"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "Brachytherapy uses a carefully planned radiation dose to damage the DNA of prostate cancer cells."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "Cancer cells are less able to repair this damage than normal cells."
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "The radiation source is positioned using imaging and specialised treatment-planning software."
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "The radiation oncologist determines:"
+        },
+        {
+          "id": "ul_019",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Where the prostate is located",
+            "Where the cancer is likely to be",
+            "How much radiation is required",
+            "Where the radioactive sources should be positioned",
+            "How much radiation nearby organs should receive"
+          ]
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "The objective is to treat the prostate effectively while limiting unnecessary radiation to the bladder, rectum, urethra and surrounding tissues."
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 2,
+          "text": "Types of Brachytherapy for Prostate Cancer"
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "There are two principal forms."
+        },
+        {
+          "id": "h_023",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Low-Dose-Rate Brachytherapy"
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "Also called **LDR brachytherapy** or **permanent seed brachytherapy**."
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "Tiny radioactive seeds are inserted into the prostate."
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "The seeds remain there and release radiation gradually over a period of months."
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "The seeds are approximately the size of grains of rice."
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "Common radioactive materials include:"
+        },
+        {
+          "id": "ul_029",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Iodine-125",
+            "Palladium-103"
+          ]
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "The choice depends on the treatment centre and clinical protocol."
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "The American Cancer Society explains that LDR seeds remain in the prostate and deliver low-dose radiation over weeks or months."
+        },
+        {
+          "id": "img_032",
+          "type": "image",
+          "src": "/uploads/articles/pca-brachy-ldr.webp",
+          "alt": "Male pelvis highlighting the prostate with tiny gold grains inside the gland to explain LDR seed brachytherapy",
+          "caption": "LDR seeds stay in the prostate and release radiation over months. Most of the dose is delivered in the first months after implantation."
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 2,
+          "text": "2. High-Dose-Rate Brachytherapy"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "Also called **HDR brachytherapy** or temporary brachytherapy."
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "Instead of leaving radioactive seeds inside the prostate, the treatment uses temporary tubes or catheters."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "A radioactive source travels through these tubes and remains in position for a short period, usually minutes at a time."
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "The source is then removed."
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "**Nothing radioactive remains inside the prostate after the HDR treatment is completed.**"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "This is one of the major differences between HDR and LDR brachytherapy."
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "Prostate Cancer UK describes HDR brachytherapy as a temporary treatment in which a radioactive source is passed through thin tubes into the prostate and then removed."
+        },
+        {
+          "id": "img_041",
+          "type": "image",
+          "src": "/uploads/articles/pca-brachy-hdr.webp",
+          "alt": "Male patient on a treatment couch with a pelvic-bone overlay used to explain temporary HDR catheter placement",
+          "caption": "HDR uses temporary tubes. The source is removed after each session, so no radioactive material stays in the body."
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 2,
+          "text": "LDR vs HDR Brachytherapy"
+        },
+        {
+          "id": "html_043",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>LDR Brachytherapy</th><th>HDR Brachytherapy</th></tr></thead><tbody><tr><td>Full name</td><td>Low-dose-rate</td><td>High-dose-rate</td></tr><tr><td>Radiation source</td><td>Permanent radioactive seeds</td><td>Temporary radioactive source</td></tr><tr><td>Source remains in body</td><td>Yes</td><td>No</td></tr><tr><td>Radiation delivery</td><td>Gradual</td><td>Short, high-dose delivery</td></tr><tr><td>Typical use</td><td>Selected localized prostate cancer</td><td>Often combined with external beam radiation</td></tr><tr><td>Procedure</td><td>Seed implantation</td><td>Temporary catheter placement</td></tr><tr><td>Anaesthesia</td><td>Usually required</td><td>Usually required</td></tr><tr><td>Radiation precautions afterward</td><td>May be required</td><td>Generally not required once source is removed</td></tr><tr><td>Hospital stay</td><td>Often short</td><td>Often one or two days, depending on protocol</td></tr><tr><td>Treatment schedule</td><td>Usually one implantation</td><td>One or more treatment sessions</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "The exact protocol varies between hospitals and patients. See [brachytherapy cost in India](/costs/India/Radiation-Oncology/Brachytherapy) for the GAF planning range."
+        },
+        {
+          "id": "btn_045",
+          "type": "button",
+          "label": "Get an LDR or HDR brachytherapy estimate",
+          "href": "/consult?treatment=Prostate%20Brachytherapy"
+        },
+        {
+          "id": "h_046",
+          "type": "heading",
+          "level": 2,
+          "text": "Who Can Have Prostate Brachytherapy?"
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "Brachytherapy is not suitable for every prostate cancer patient."
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "The radiation oncology team considers several factors."
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "These include:"
+        },
+        {
+          "id": "ul_050",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Cancer stage",
+            "PSA level",
+            "Gleason score",
+            "Grade Group",
+            "Risk category",
+            "Prostate size",
+            "Urinary symptoms",
+            "Baseline urinary function",
+            "Previous prostate procedures",
+            "MRI findings",
+            "Whether cancer has spread outside the prostate",
+            "Overall health"
+          ]
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "Brachytherapy is particularly relevant for selected localized prostate cancers."
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "The EAU patient guidance identifies radiotherapy, including brachytherapy, as an established treatment option for localized prostate cancer."
+        },
+        {
+          "id": "h_053",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Brachytherapy Suitable for Low-Risk Prostate Cancer?"
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "Yes."
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "For selected low-risk localized prostate cancers, **LDR brachytherapy can be used as a definitive treatment**."
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "However, [active surveillance](/blogs/prostate-cancer-treatment-without-surgery) may also be appropriate for some low-risk patients."
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "Therefore, the decision is not simply:"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "**“Can brachytherapy treat the cancer?”**"
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "It is:"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "**“Does definitive brachytherapy provide enough benefit to justify treatment in this particular patient?”**"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "Prostate Cancer UK notes that permanent seed brachytherapy can be used for localized low-risk prostate cancer and may provide cancer-control outcomes comparable with other established definitive treatments."
+        },
+        {
+          "id": "h_062",
+          "type": "heading",
+          "level": 2,
+          "text": "Brachytherapy for Intermediate-Risk Prostate Cancer"
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "Brachytherapy has an important role in selected intermediate-risk prostate cancers."
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "The treatment depends on whether the disease is:"
+        },
+        {
+          "id": "ul_065",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Favorable intermediate risk",
+            "Unfavorable intermediate risk"
+          ]
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "Some patients may receive **brachytherapy alone** while others may receive **[external beam radiation](/costs/India/Radiation-Oncology/EBRT) + brachytherapy**."
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "[Hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy) may also be added depending on the risk profile."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "The treatment should therefore be planned according to the specific risk category rather than simply the word “intermediate.”"
+        },
+        {
+          "id": "h_069",
+          "type": "heading",
+          "level": 2,
+          "text": "Brachytherapy for High-Risk Prostate Cancer"
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "High-risk prostate cancer generally requires more intensive treatment."
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "Brachytherapy may be used as a **boost** alongside external beam radiation."
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "For example:"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "**External beam radiation + HDR brachytherapy + hormone therapy**"
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "may be considered for selected patients."
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "The reason for combining treatments is that external beam radiation can treat a broader area while brachytherapy delivers an additional concentrated dose to the prostate."
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "Prostate Cancer UK describes HDR brachytherapy as a possible boost when combined with external beam radiation for localized or locally advanced prostate cancer."
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 2,
+          "text": "Brachytherapy for Locally Advanced Prostate Cancer"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "Locally advanced prostate cancer has extended outside the prostate but has not necessarily spread to distant organs."
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "Brachytherapy may be incorporated into a combination treatment plan in selected patients."
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "A typical treatment pathway may include:"
+        },
+        {
+          "id": "ul_081",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[External beam radiation](/costs/India/Radiation-Oncology/EBRT)",
+            "HDR brachytherapy boost",
+            "[Hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy)"
+          ]
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "The exact combination depends on extent of local disease, Grade Group, PSA, imaging, lymph-node involvement and patient health."
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "Not every locally advanced patient is suitable for brachytherapy."
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Brachytherapy Used for Metastatic Prostate Cancer?"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "Brachytherapy is **not generally the main treatment for widespread metastatic prostate cancer**."
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "When prostate cancer has spread to distant organs, systemic treatments such as hormone therapy and other medicines usually play the central role."
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "Radiation may still be used for selected areas of disease, particularly for symptom control."
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "Brachytherapy is primarily a treatment directed at the prostate rather than a whole-body treatment."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Permanent Seed Brachytherapy?"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Permanent seed brachytherapy is the classic LDR approach."
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "Small radioactive seeds are inserted directly into the prostate."
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "The seeds stay there permanently."
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "They release most of their radiation during the early months after implantation."
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "The radioactivity then gradually decreases."
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "Prostate Cancer UK notes that the seeds deliver radiation over several months, with most of the radiation released during the first few months and very little remaining after roughly 8–10 months."
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "The seeds do not normally need to be removed."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is LDR Brachytherapy Performed?"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "The procedure usually involves several stages."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 1: Anaesthesia"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "The patient receives anaesthesia, commonly general or spinal anaesthesia depending on the centre and clinical circumstances."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 2: Ultrasound imaging"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "A transrectal ultrasound probe is used to visualise the prostate."
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "This allows the team to see the prostate during the implantation procedure."
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 3: Treatment planning"
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "The prostate is mapped using imaging."
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Specialised software calculates where the radioactive seeds should be placed."
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "The goal is to cover the prostate adequately while limiting radiation to nearby structures."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 4: Needle placement"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Thin needles are passed through the perineum."
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "The perineum is the area between the scrotum and anus."
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "The needles are guided into predetermined positions."
+        },
+        {
+          "id": "h_112",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 5: Seed implantation"
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "Radioactive seeds are deposited through the needles."
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "The number of seeds depends on prostate size, treatment plan, prescribed radiation dose and seed type."
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 6: Needle removal"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "Once the seeds have been placed, the needles are removed."
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "The radioactive seeds remain inside the prostate."
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 about LDR seed implantation](https://wa.me/919044346292?text=I%20would%20like%20to%20discuss%20LDR%20seed%20brachytherapy%20for%20prostate%20cancer%20in%20India.)"
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is HDR Brachytherapy?"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "HDR brachytherapy uses a temporary radioactive source."
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "Thin tubes are inserted into the prostate through the perineum."
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "The radiation source is then passed through the tubes."
+        },
+        {
+          "id": "p_123",
+          "type": "paragraph",
+          "text": "It remains in position for a predetermined amount of time."
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "The source is subsequently withdrawn."
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "The catheters may then be removed, depending on the treatment protocol."
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "Prostate Cancer UK describes the HDR procedure as involving approximately 10–20 tubes in many treatment settings, followed by temporary insertion of the radioactive source."
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 2,
+          "text": "Step-by-Step HDR Brachytherapy Procedure"
+        },
+        {
+          "id": "h_128",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 1: Preparation"
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "The patient is given instructions about fasting, bowel preparation, medicines, blood thinners and other medical conditions."
+        },
+        {
+          "id": "h_130",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 2: Anaesthesia"
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "General or spinal anaesthesia may be used."
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "The patient generally does not feel the catheter-placement procedure while under anaesthesia."
+        },
+        {
+          "id": "h_133",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 3: Ultrasound guidance"
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "An ultrasound probe is inserted through the rectum."
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "This provides an image of the prostate."
+        },
+        {
+          "id": "h_136",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 4: Catheter placement"
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "Thin hollow tubes are placed through the perineum and into the prostate."
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "The position of each catheter is carefully checked."
+        },
+        {
+          "id": "h_139",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 5: Treatment planning"
+        },
+        {
+          "id": "p_140",
+          "type": "paragraph",
+          "text": "CT, MRI or ultrasound imaging may be used to calculate the exact radiation dose."
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "The treatment-planning system determines how long the radioactive source should remain in each catheter."
+        },
+        {
+          "id": "h_142",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 6: Radiation delivery"
+        },
+        {
+          "id": "p_143",
+          "type": "paragraph",
+          "text": "The radioactive source travels through the catheters."
+        },
+        {
+          "id": "p_144",
+          "type": "paragraph",
+          "text": "It stays at predetermined positions for specific periods."
+        },
+        {
+          "id": "p_145",
+          "type": "paragraph",
+          "text": "The source is then removed."
+        },
+        {
+          "id": "h_146",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 7: Catheter removal"
+        },
+        {
+          "id": "p_147",
+          "type": "paragraph",
+          "text": "After treatment, the catheters are removed according to the centre's protocol."
+        },
+        {
+          "id": "p_148",
+          "type": "paragraph",
+          "text": "Because the radioactive source is removed, there is no permanent radioactive material left inside the prostate."
+        },
+        {
+          "id": "h_149",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Does Prostate Brachytherapy Take?"
+        },
+        {
+          "id": "p_150",
+          "type": "paragraph",
+          "text": "The overall time depends on whether the patient receives LDR or HDR treatment."
+        },
+        {
+          "id": "p_151",
+          "type": "paragraph",
+          "text": "LDR usually involves a single implantation procedure."
+        },
+        {
+          "id": "p_152",
+          "type": "paragraph",
+          "text": "HDR may involve one or several treatment sessions depending on the treatment plan."
+        },
+        {
+          "id": "p_153",
+          "type": "paragraph",
+          "text": "The actual radiation delivery can be brief, but the complete procedure also includes anaesthesia, imaging, catheter or needle placement, treatment planning and recovery."
+        },
+        {
+          "id": "h_154",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Do You Stay in Hospital After Brachytherapy?"
+        },
+        {
+          "id": "p_155",
+          "type": "paragraph",
+          "text": "Some patients go home the same day."
+        },
+        {
+          "id": "p_156",
+          "type": "paragraph",
+          "text": "Others stay overnight."
+        },
+        {
+          "id": "p_157",
+          "type": "paragraph",
+          "text": "HDR brachytherapy may require a one- or two-day hospital stay depending on the treatment protocol."
+        },
+        {
+          "id": "p_158",
+          "type": "paragraph",
+          "text": "Prostate Cancer UK states that many men undergoing HDR brachytherapy stay in hospital for one or two days and may return to normal activities within about a week."
+        },
+        {
+          "id": "p_159",
+          "type": "paragraph",
+          "text": "The GAF planning sheet for [brachytherapy](/costs/India/Radiation-Oncology/Brachytherapy) uses a typical **1–7 night** range because some combination protocols and recovery needs take longer."
+        },
+        {
+          "id": "p_160",
+          "type": "paragraph",
+          "text": "The exact stay depends on type of brachytherapy, number of treatments, anaesthesia, urinary function, hospital protocol and recovery."
+        },
+        {
+          "id": "h_161",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Brachytherapy Painful?"
+        },
+        {
+          "id": "p_162",
+          "type": "paragraph",
+          "text": "The procedure itself is usually performed under anaesthesia."
+        },
+        {
+          "id": "p_163",
+          "type": "paragraph",
+          "text": "Therefore, the implantation procedure should not be painful while it is being performed."
+        },
+        {
+          "id": "p_164",
+          "type": "paragraph",
+          "text": "Afterwards, some patients may experience:"
+        },
+        {
+          "id": "ul_165",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Perineal soreness",
+            "Bruising",
+            "Mild pelvic discomfort",
+            "Burning while urinating",
+            "Blood in urine",
+            "Urinary frequency"
+          ]
+        },
+        {
+          "id": "p_166",
+          "type": "paragraph",
+          "text": "These symptoms are usually temporary but can vary in severity."
+        },
+        {
+          "id": "h_167",
+          "type": "heading",
+          "level": 2,
+          "text": "What Tests Are Needed Before Brachytherapy?"
+        },
+        {
+          "id": "p_168",
+          "type": "paragraph",
+          "text": "The radiation team needs to determine whether the prostate can be safely and accurately treated."
+        },
+        {
+          "id": "p_169",
+          "type": "paragraph",
+          "text": "Evaluation may include:"
+        },
+        {
+          "id": "ul_170",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "PSA",
+            "Biopsy",
+            "Gleason score",
+            "Grade Group",
+            "MRI",
+            "Prostate volume assessment",
+            "Urinary symptom assessment",
+            "Digital rectal examination",
+            "Imaging for staging where indicated"
+          ]
+        },
+        {
+          "id": "p_171",
+          "type": "paragraph",
+          "text": "The prostate's size and shape are particularly relevant for brachytherapy planning."
+        },
+        {
+          "id": "h_172",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Does Prostate Size Matter?"
+        },
+        {
+          "id": "p_173",
+          "type": "paragraph",
+          "text": "A very large prostate can make seed placement more difficult."
+        },
+        {
+          "id": "p_174",
+          "type": "paragraph",
+          "text": "It may also increase the risk of urinary problems after treatment."
+        },
+        {
+          "id": "p_175",
+          "type": "paragraph",
+          "text": "In selected patients, [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy) may be given before brachytherapy to shrink the prostate."
+        },
+        {
+          "id": "p_176",
+          "type": "paragraph",
+          "text": "The American Cancer Society notes that a large prostate can make seed placement more difficult and that hormone therapy may sometimes be used beforehand to reduce prostate size."
+        },
+        {
+          "id": "h_177",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Brachytherapy Be Used if You Have Urinary Problems?"
+        },
+        {
+          "id": "p_178",
+          "type": "paragraph",
+          "text": "This requires careful assessment."
+        },
+        {
+          "id": "p_179",
+          "type": "paragraph",
+          "text": "Patients with significant urinary obstruction may have a higher risk of urinary complications after brachytherapy."
+        },
+        {
+          "id": "p_180",
+          "type": "paragraph",
+          "text": "Symptoms that should be discussed include:"
+        },
+        {
+          "id": "ul_181",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Weak urine stream",
+            "Difficulty starting urination",
+            "Incomplete bladder emptying",
+            "Frequent urination",
+            "Urinary retention",
+            "Significant nighttime urination"
+          ]
+        },
+        {
+          "id": "p_182",
+          "type": "paragraph",
+          "text": "Brachytherapy may still be possible in some patients, but the urinary function needs to be evaluated first."
+        },
+        {
+          "id": "h_183",
+          "type": "heading",
+          "level": 2,
+          "text": "Brachytherapy After TURP"
+        },
+        {
+          "id": "p_184",
+          "type": "paragraph",
+          "text": "A previous **transurethral resection of the prostate (TURP)** does not automatically rule out brachytherapy."
+        },
+        {
+          "id": "p_185",
+          "type": "paragraph",
+          "text": "However, it can affect eligibility and complication risk."
+        },
+        {
+          "id": "p_186",
+          "type": "paragraph",
+          "text": "The timing of the TURP, size and location of the resection cavity and current urinary function may all matter."
+        },
+        {
+          "id": "p_187",
+          "type": "paragraph",
+          "text": "The American Cancer Society notes that men who have previously undergone TURP or have significant urinary problems may have a higher risk of urinary side effects from brachytherapy."
+        },
+        {
+          "id": "p_188",
+          "type": "paragraph",
+          "text": "Patients should provide the radiation oncologist with details of previous prostate procedures."
+        },
+        {
+          "id": "h_189",
+          "type": "heading",
+          "level": 2,
+          "text": "Brachytherapy and Hormone Therapy"
+        },
+        {
+          "id": "p_190",
+          "type": "paragraph",
+          "text": "Hormone therapy may be used before, during or after brachytherapy."
+        },
+        {
+          "id": "p_191",
+          "type": "paragraph",
+          "text": "It can have several purposes."
+        },
+        {
+          "id": "h_192",
+          "type": "heading",
+          "level": 3,
+          "text": "Shrinking the prostate"
+        },
+        {
+          "id": "p_193",
+          "type": "paragraph",
+          "text": "For a large prostate, hormone therapy may reduce its size before implantation."
+        },
+        {
+          "id": "h_194",
+          "type": "heading",
+          "level": 3,
+          "text": "Treating higher-risk disease"
+        },
+        {
+          "id": "p_195",
+          "type": "paragraph",
+          "text": "Hormone therapy may be combined with radiation for higher-risk prostate cancer."
+        },
+        {
+          "id": "h_196",
+          "type": "heading",
+          "level": 3,
+          "text": "Treating microscopic disease"
+        },
+        {
+          "id": "p_197",
+          "type": "paragraph",
+          "text": "Systemic hormone treatment can address cancer cells outside the prostate that local radiation cannot reach."
+        },
+        {
+          "id": "p_198",
+          "type": "paragraph",
+          "text": "The duration depends on the cancer risk group and treatment plan."
+        },
+        {
+          "id": "h_199",
+          "type": "heading",
+          "level": 2,
+          "text": "Brachytherapy as a Standalone Treatment"
+        },
+        {
+          "id": "p_200",
+          "type": "paragraph",
+          "text": "Brachytherapy alone can be appropriate for selected localized prostate cancers."
+        },
+        {
+          "id": "p_201",
+          "type": "paragraph",
+          "text": "It is most commonly considered when:"
+        },
+        {
+          "id": "ul_202",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Cancer is confined to the prostate",
+            "Risk is relatively low",
+            "Urinary function is acceptable",
+            "Prostate anatomy is suitable",
+            "There are no major contraindications"
+          ]
+        },
+        {
+          "id": "p_203",
+          "type": "paragraph",
+          "text": "The American Cancer Society states that brachytherapy alone is generally used for selected early-stage, lower-risk prostate cancers."
+        },
+        {
+          "id": "h_204",
+          "type": "heading",
+          "level": 2,
+          "text": "Brachytherapy as a Boost"
+        },
+        {
+          "id": "p_205",
+          "type": "paragraph",
+          "text": "For higher-risk disease, brachytherapy may be combined with [external beam radiation](/blogs/radiation-therapy-for-prostate-cancer)."
+        },
+        {
+          "id": "p_206",
+          "type": "paragraph",
+          "text": "This is sometimes called a **brachytherapy boost**."
+        },
+        {
+          "id": "p_207",
+          "type": "paragraph",
+          "text": "The logic is straightforward:"
+        },
+        {
+          "id": "p_208",
+          "type": "paragraph",
+          "text": "**External beam radiation treats a broader area, while brachytherapy delivers an additional high dose directly to the prostate.**"
+        },
+        {
+          "id": "p_209",
+          "type": "paragraph",
+          "text": "This can be useful when the cancer has a higher risk of recurrence."
+        },
+        {
+          "id": "p_210",
+          "type": "paragraph",
+          "text": "The trade-off is that combination treatment can also increase treatment burden and side effects."
+        },
+        {
+          "id": "btn_211",
+          "type": "button",
+          "label": "Discuss a brachytherapy boost with EBRT",
+          "href": "/consult?treatment=Prostate%20Brachytherapy"
+        },
+        {
+          "id": "h_212",
+          "type": "heading",
+          "level": 2,
+          "text": "Brachytherapy + External Beam Radiation"
+        },
+        {
+          "id": "p_213",
+          "type": "paragraph",
+          "text": "A combination plan may look like:"
+        },
+        {
+          "id": "p_214",
+          "type": "paragraph",
+          "text": "**External beam radiation + HDR brachytherapy + hormone therapy**"
+        },
+        {
+          "id": "p_215",
+          "type": "paragraph",
+          "text": "This is not necessary for every patient."
+        },
+        {
+          "id": "p_216",
+          "type": "paragraph",
+          "text": "It is considered mainly for selected intermediate- to high-risk or locally advanced disease."
+        },
+        {
+          "id": "p_217",
+          "type": "paragraph",
+          "text": "The exact sequence can vary."
+        },
+        {
+          "id": "p_218",
+          "type": "paragraph",
+          "text": "Some patients receive external radiation before HDR brachytherapy."
+        },
+        {
+          "id": "p_219",
+          "type": "paragraph",
+          "text": "Others receive brachytherapy first."
+        },
+        {
+          "id": "h_220",
+          "type": "heading",
+          "level": 2,
+          "text": "Benefits of Brachytherapy for Prostate Cancer"
+        },
+        {
+          "id": "h_221",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Radiation is delivered close to the cancer"
+        },
+        {
+          "id": "p_222",
+          "type": "paragraph",
+          "text": "The radioactive source is positioned directly in the prostate."
+        },
+        {
+          "id": "p_223",
+          "type": "paragraph",
+          "text": "This allows high radiation doses to be delivered to the target."
+        },
+        {
+          "id": "h_224",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Short treatment duration"
+        },
+        {
+          "id": "p_225",
+          "type": "paragraph",
+          "text": "LDR generally involves one implantation."
+        },
+        {
+          "id": "p_226",
+          "type": "paragraph",
+          "text": "HDR may involve a small number of treatment sessions."
+        },
+        {
+          "id": "p_227",
+          "type": "paragraph",
+          "text": "This can be much shorter than some conventional [external radiation](/costs/India/Radiation-Oncology/IMRT) schedules."
+        },
+        {
+          "id": "h_228",
+          "type": "heading",
+          "level": 3,
+          "text": "3. No large surgical incision"
+        },
+        {
+          "id": "p_229",
+          "type": "paragraph",
+          "text": "Brachytherapy does not require removal of the prostate."
+        },
+        {
+          "id": "p_230",
+          "type": "paragraph",
+          "text": "The procedure uses needles or catheters inserted through the perineum."
+        },
+        {
+          "id": "h_231",
+          "type": "heading",
+          "level": 3,
+          "text": "4. Outpatient or short-stay treatment"
+        },
+        {
+          "id": "p_232",
+          "type": "paragraph",
+          "text": "Many patients do not require prolonged hospitalisation."
+        },
+        {
+          "id": "h_233",
+          "type": "heading",
+          "level": 3,
+          "text": "5. Can be combined with external radiation"
+        },
+        {
+          "id": "p_234",
+          "type": "paragraph",
+          "text": "For selected higher-risk cancers, brachytherapy can provide a focused radiation boost."
+        },
+        {
+          "id": "h_235",
+          "type": "heading",
+          "level": 3,
+          "text": "6. Can avoid prostate removal"
+        },
+        {
+          "id": "p_236",
+          "type": "paragraph",
+          "text": "For patients who prefer a non-surgical definitive treatment, brachytherapy can be an important option when clinically appropriate."
+        },
+        {
+          "id": "h_237",
+          "type": "heading",
+          "level": 2,
+          "text": "Limitations of Brachytherapy"
+        },
+        {
+          "id": "p_238",
+          "type": "paragraph",
+          "text": "Brachytherapy is not appropriate for everyone."
+        },
+        {
+          "id": "p_239",
+          "type": "paragraph",
+          "text": "Potential limitations include:"
+        },
+        {
+          "id": "ul_240",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Significant urinary obstruction",
+            "Certain prostate anatomy",
+            "Very large prostate",
+            "Previous prostate procedures",
+            "Cancer extending beyond the area that can be safely treated",
+            "Metastatic disease",
+            "Medical conditions that make anaesthesia unsafe"
+          ]
+        },
+        {
+          "id": "p_241",
+          "type": "paragraph",
+          "text": "Patient selection is therefore critical."
+        },
+        {
+          "id": "h_242",
+          "type": "heading",
+          "level": 2,
+          "text": "Side Effects of Prostate Brachytherapy"
+        },
+        {
+          "id": "p_243",
+          "type": "paragraph",
+          "text": "Side effects depend on the technique and individual patient."
+        },
+        {
+          "id": "p_244",
+          "type": "paragraph",
+          "text": "The main categories are urinary, bowel, sexual and procedure-related."
+        },
+        {
+          "id": "img_245",
+          "type": "image",
+          "src": "/uploads/articles/pca-brachy-followup.webp",
+          "alt": "Male patient in clinic with a pelvic overlay while a clinician reviews urinary recovery after brachytherapy",
+          "caption": "Urinary irritation is the most common early effect. Sexual changes may appear later. LDR patients may also receive temporary radiation-safety instructions."
+        },
+        {
+          "id": "h_246",
+          "type": "heading",
+          "level": 2,
+          "text": "Urinary Side Effects"
+        },
+        {
+          "id": "p_247",
+          "type": "paragraph",
+          "text": "Urinary symptoms are among the most common side effects."
+        },
+        {
+          "id": "p_248",
+          "type": "paragraph",
+          "text": "Patients may experience:"
+        },
+        {
+          "id": "ul_249",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Frequent urination",
+            "Urgency",
+            "Burning",
+            "Weak urine stream",
+            "Difficulty starting urination",
+            "Feeling that the bladder has not emptied",
+            "Increased nighttime urination",
+            "Blood in urine"
+          ]
+        },
+        {
+          "id": "p_250",
+          "type": "paragraph",
+          "text": "The American Cancer Society notes that urinary irritation and frequency can occur because the urethra is close to the treated prostate."
+        },
+        {
+          "id": "h_251",
+          "type": "heading",
+          "level": 2,
+          "text": "Urinary Retention After Brachytherapy"
+        },
+        {
+          "id": "p_252",
+          "type": "paragraph",
+          "text": "Some patients can temporarily have difficulty passing urine after treatment."
+        },
+        {
+          "id": "p_253",
+          "type": "paragraph",
+          "text": "The risk may be higher in patients who already have poor urinary flow, a large prostate or significant urinary symptoms."
+        },
+        {
+          "id": "p_254",
+          "type": "paragraph",
+          "text": "In some cases, a urinary catheter may be required temporarily."
+        },
+        {
+          "id": "p_255",
+          "type": "paragraph",
+          "text": "This is one reason urinary function should be assessed before treatment."
+        },
+        {
+          "id": "h_256",
+          "type": "heading",
+          "level": 2,
+          "text": "Bowel Side Effects"
+        },
+        {
+          "id": "p_257",
+          "type": "paragraph",
+          "text": "The rectum lies immediately behind the prostate."
+        },
+        {
+          "id": "p_258",
+          "type": "paragraph",
+          "text": "Some radiation can therefore reach the rectum."
+        },
+        {
+          "id": "p_259",
+          "type": "paragraph",
+          "text": "Possible symptoms include:"
+        },
+        {
+          "id": "ul_260",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Increased bowel frequency",
+            "Rectal urgency",
+            "Loose stools",
+            "Rectal discomfort",
+            "Burning",
+            "Rectal bleeding"
+          ]
+        },
+        {
+          "id": "p_261",
+          "type": "paragraph",
+          "text": "Serious long-term bowel complications are uncommon, but they can occur."
+        },
+        {
+          "id": "p_262",
+          "type": "paragraph",
+          "text": "The American Cancer Society identifies radiation proctitis and bowel symptoms as possible complications of prostate brachytherapy."
+        },
+        {
+          "id": "h_263",
+          "type": "heading",
+          "level": 2,
+          "text": "Erectile Dysfunction After Brachytherapy"
+        },
+        {
+          "id": "p_264",
+          "type": "paragraph",
+          "text": "Brachytherapy can affect erections."
+        },
+        {
+          "id": "p_265",
+          "type": "paragraph",
+          "text": "However, erectile dysfunction may develop gradually rather than immediately."
+        },
+        {
+          "id": "p_266",
+          "type": "paragraph",
+          "text": "The risk depends on age, erectile function before treatment, other health conditions, radiation dose, hormone therapy and baseline cardiovascular health."
+        },
+        {
+          "id": "p_267",
+          "type": "paragraph",
+          "text": "A patient should discuss sexual function before treatment."
+        },
+        {
+          "id": "h_268",
+          "type": "heading",
+          "level": 2,
+          "text": "Sexual Function After Brachytherapy"
+        },
+        {
+          "id": "p_269",
+          "type": "paragraph",
+          "text": "Brachytherapy does not remove the prostate."
+        },
+        {
+          "id": "p_270",
+          "type": "paragraph",
+          "text": "Therefore, ejaculation may remain possible."
+        },
+        {
+          "id": "p_271",
+          "type": "paragraph",
+          "text": "However, radiation can affect erectile function, ejaculatory volume, sexual desire and semen production."
+        },
+        {
+          "id": "p_272",
+          "type": "paragraph",
+          "text": "Hormone therapy, when combined with brachytherapy, can also significantly reduce libido and erectile function while treatment is active."
+        },
+        {
+          "id": "h_273",
+          "type": "heading",
+          "level": 2,
+          "text": "Fertility After Brachytherapy"
+        },
+        {
+          "id": "p_274",
+          "type": "paragraph",
+          "text": "Radiation to the prostate can affect fertility."
+        },
+        {
+          "id": "p_275",
+          "type": "paragraph",
+          "text": "Men who may want biological children should discuss fertility preservation before treatment."
+        },
+        {
+          "id": "p_276",
+          "type": "paragraph",
+          "text": "Depending on the patient's age and circumstances, sperm banking may be considered."
+        },
+        {
+          "id": "p_277",
+          "type": "paragraph",
+          "text": "This discussion is best held **before radiation begins**."
+        },
+        {
+          "id": "h_278",
+          "type": "heading",
+          "level": 2,
+          "text": "Rare Complications of Brachytherapy"
+        },
+        {
+          "id": "p_279",
+          "type": "paragraph",
+          "text": "Rare complications may include:"
+        },
+        {
+          "id": "ul_280",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Severe urinary obstruction",
+            "Urethral stricture",
+            "Persistent rectal bleeding",
+            "Rectal injury",
+            "Fistula",
+            "Infection",
+            "Significant bleeding",
+            "Seed migration after LDR implantation"
+          ]
+        },
+        {
+          "id": "p_281",
+          "type": "paragraph",
+          "text": "Apollo Hospitals lists urinary difficulty, rectal bleeding and urethral narrowing among potential complications, while serious complications such as fistula are rare."
+        },
+        {
+          "id": "h_282",
+          "type": "heading",
+          "level": 2,
+          "text": "LDR Brachytherapy Radiation Safety"
+        },
+        {
+          "id": "p_283",
+          "type": "paragraph",
+          "text": "One important difference between LDR and HDR treatment is radiation safety after treatment."
+        },
+        {
+          "id": "p_284",
+          "type": "paragraph",
+          "text": "With LDR, radioactive seeds remain inside the prostate."
+        },
+        {
+          "id": "p_285",
+          "type": "paragraph",
+          "text": "The radiation emitted outside the body is low, but the medical team may provide temporary precautions."
+        },
+        {
+          "id": "p_286",
+          "type": "paragraph",
+          "text": "These may include limiting close contact with pregnant women and small children."
+        },
+        {
+          "id": "p_287",
+          "type": "paragraph",
+          "text": "The exact precautions depend on the radioactive isotope and hospital protocol."
+        },
+        {
+          "id": "p_288",
+          "type": "paragraph",
+          "text": "The American Cancer Society also notes that patients receiving permanent seed brachytherapy may receive temporary radiation-safety instructions and should carry treatment documentation when travelling because airport detection systems can sometimes detect low radiation levels."
+        },
+        {
+          "id": "h_289",
+          "type": "heading",
+          "level": 2,
+          "text": "Is HDR Brachytherapy Radioactive After Treatment?"
+        },
+        {
+          "id": "p_290",
+          "type": "paragraph",
+          "text": "No radioactive source remains in the body after HDR treatment."
+        },
+        {
+          "id": "p_291",
+          "type": "paragraph",
+          "text": "The radioactive source is removed at the end of each treatment."
+        },
+        {
+          "id": "p_292",
+          "type": "paragraph",
+          "text": "Therefore, once the treatment is complete and the source has been removed, patients do not continue emitting radiation from the treatment source."
+        },
+        {
+          "id": "p_293",
+          "type": "paragraph",
+          "text": "Prostate Cancer UK specifically notes that no radioactive material is left in the prostate following temporary HDR treatment."
+        },
+        {
+          "id": "h_294",
+          "type": "heading",
+          "level": 2,
+          "text": "Can You Travel After Brachytherapy?"
+        },
+        {
+          "id": "p_295",
+          "type": "paragraph",
+          "text": "Travel timing depends on the treatment type."
+        },
+        {
+          "id": "h_296",
+          "type": "heading",
+          "level": 3,
+          "text": "After HDR"
+        },
+        {
+          "id": "p_297",
+          "type": "paragraph",
+          "text": "Because the radioactive source is removed, there are generally no ongoing radiation precautions related to the source."
+        },
+        {
+          "id": "p_298",
+          "type": "paragraph",
+          "text": "However, the patient may still need time to recover from anaesthesia, catheter placement, perineal soreness and urinary symptoms."
+        },
+        {
+          "id": "h_299",
+          "type": "heading",
+          "level": 3,
+          "text": "After LDR"
+        },
+        {
+          "id": "p_300",
+          "type": "paragraph",
+          "text": "The seeds remain inside the prostate."
+        },
+        {
+          "id": "p_301",
+          "type": "paragraph",
+          "text": "Patients may therefore receive temporary radiation-safety instructions."
+        },
+        {
+          "id": "p_302",
+          "type": "paragraph",
+          "text": "International travellers should carry a treatment letter because security systems at airports can sometimes detect implanted radioactive material."
+        },
+        {
+          "id": "p_303",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 to plan travel after brachytherapy](https://wa.me/919044346292?text=Please%20help%20me%20plan%20prostate%20brachytherapy%20in%20India%2C%20including%20recovery%20and%20a%20safe%20return-travel%20date.)"
+        },
+        {
+          "id": "h_304",
+          "type": "heading",
+          "level": 2,
+          "text": "Recovery After Brachytherapy"
+        },
+        {
+          "id": "p_305",
+          "type": "paragraph",
+          "text": "Recovery is usually shorter than recovery from major prostate surgery."
+        },
+        {
+          "id": "p_306",
+          "type": "paragraph",
+          "text": "However, urinary symptoms can last longer than the immediate recovery period."
+        },
+        {
+          "id": "h_307",
+          "type": "heading",
+          "level": 3,
+          "text": "First few days"
+        },
+        {
+          "id": "p_308",
+          "type": "paragraph",
+          "text": "Possible symptoms include perineal soreness, bruising, blood in urine, burning while urinating and urinary frequency."
+        },
+        {
+          "id": "h_309",
+          "type": "heading",
+          "level": 3,
+          "text": "First few weeks"
+        },
+        {
+          "id": "p_310",
+          "type": "paragraph",
+          "text": "Urinary symptoms may continue. Some patients experience urgency, weak flow, nighttime urination and bowel changes. Symptoms often improve gradually."
+        },
+        {
+          "id": "h_311",
+          "type": "heading",
+          "level": 3,
+          "text": "Following months"
+        },
+        {
+          "id": "p_312",
+          "type": "paragraph",
+          "text": "Urinary function generally settles progressively."
+        },
+        {
+          "id": "p_313",
+          "type": "paragraph",
+          "text": "Sexual function may take longer to change and recover."
+        },
+        {
+          "id": "p_314",
+          "type": "paragraph",
+          "text": "PSA is monitored over time to evaluate the treatment response."
+        },
+        {
+          "id": "h_315",
+          "type": "heading",
+          "level": 2,
+          "text": "When Can You Return to Normal Activities?"
+        },
+        {
+          "id": "p_316",
+          "type": "paragraph",
+          "text": "Recovery depends on the treatment technique."
+        },
+        {
+          "id": "p_317",
+          "type": "paragraph",
+          "text": "After HDR brachytherapy, Prostate Cancer UK notes that many patients can return to normal activities within approximately a week."
+        },
+        {
+          "id": "p_318",
+          "type": "paragraph",
+          "text": "LDR recovery can also be relatively quick physically, although urinary symptoms may continue for several weeks or longer."
+        },
+        {
+          "id": "p_319",
+          "type": "paragraph",
+          "text": "Heavy lifting and strenuous exercise should be resumed according to the treating team's instructions."
+        },
+        {
+          "id": "h_320",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens to PSA After Brachytherapy?"
+        },
+        {
+          "id": "p_321",
+          "type": "paragraph",
+          "text": "The prostate remains in the body after brachytherapy."
+        },
+        {
+          "id": "p_322",
+          "type": "paragraph",
+          "text": "Therefore, PSA does not immediately fall to zero as it can after radical prostatectomy."
+        },
+        {
+          "id": "p_323",
+          "type": "paragraph",
+          "text": "Instead, PSA generally declines gradually."
+        },
+        {
+          "id": "p_324",
+          "type": "paragraph",
+          "text": "It can take months or longer to reach its lowest level."
+        },
+        {
+          "id": "p_325",
+          "type": "paragraph",
+          "text": "A temporary PSA increase can also occur."
+        },
+        {
+          "id": "p_326",
+          "type": "paragraph",
+          "text": "This is sometimes called a **PSA bounce**."
+        },
+        {
+          "id": "p_327",
+          "type": "paragraph",
+          "text": "A single PSA increase does not automatically mean the cancer has returned."
+        },
+        {
+          "id": "p_328",
+          "type": "paragraph",
+          "text": "The doctor evaluates the PSA pattern over time."
+        },
+        {
+          "id": "h_329",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is PSA Bounce After Brachytherapy?"
+        },
+        {
+          "id": "p_330",
+          "type": "paragraph",
+          "text": "A PSA bounce is a temporary increase in PSA followed by a subsequent decline."
+        },
+        {
+          "id": "p_331",
+          "type": "paragraph",
+          "text": "It is particularly recognised after radiation-based treatments such as brachytherapy."
+        },
+        {
+          "id": "p_332",
+          "type": "paragraph",
+          "text": "This can cause unnecessary anxiety if the patient assumes that every PSA increase represents recurrence."
+        },
+        {
+          "id": "p_333",
+          "type": "paragraph",
+          "text": "Doctors therefore interpret PSA using previous PSA levels, time since treatment, PSA trend, symptoms, treatment type and imaging when indicated."
+        },
+        {
+          "id": "h_334",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is Treatment Success Measured?"
+        },
+        {
+          "id": "p_335",
+          "type": "paragraph",
+          "text": "The main follow-up tool is PSA."
+        },
+        {
+          "id": "p_336",
+          "type": "paragraph",
+          "text": "Doctors may also use clinical assessment, MRI, PSMA PET/CT and other imaging when there is a specific concern."
+        },
+        {
+          "id": "p_337",
+          "type": "paragraph",
+          "text": "The PSA nadir and subsequent trend are important."
+        },
+        {
+          "id": "p_338",
+          "type": "paragraph",
+          "text": "The exact definition of biochemical recurrence after radiation differs from recurrence after prostatectomy."
+        },
+        {
+          "id": "p_339",
+          "type": "paragraph",
+          "text": "Patients should therefore not compare their PSA directly with someone who has had surgery."
+        },
+        {
+          "id": "h_340",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens If Prostate Cancer Returns After Brachytherapy?"
+        },
+        {
+          "id": "p_341",
+          "type": "paragraph",
+          "text": "Treatment depends on where the cancer has returned."
+        },
+        {
+          "id": "p_342",
+          "type": "paragraph",
+          "text": "Possibilities can include:"
+        },
+        {
+          "id": "ul_343",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy)",
+            "External radiation in selected circumstances",
+            "Salvage prostatectomy in highly selected patients",
+            "Salvage cryotherapy",
+            "Salvage HIFU",
+            "Other systemic treatments",
+            "Radiopharmaceutical therapy for selected advanced disease"
+          ]
+        },
+        {
+          "id": "p_344",
+          "type": "paragraph",
+          "text": "The previous radiation dose is an important factor when planning further treatment."
+        },
+        {
+          "id": "h_345",
+          "type": "heading",
+          "level": 2,
+          "text": "Brachytherapy vs External Beam Radiation"
+        },
+        {
+          "id": "html_346",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Brachytherapy</th><th>External Beam Radiation</th></tr></thead><tbody><tr><td>Radiation source</td><td>Inside prostate</td><td>Outside body</td></tr><tr><td>Treatment duration</td><td>Usually shorter</td><td>Can range from a few sessions to several weeks</td></tr><tr><td>Hospitalisation</td><td>Short stay or outpatient</td><td>Usually outpatient</td></tr><tr><td>Procedure</td><td>Invasive implantation</td><td>Non-invasive delivery</td></tr><tr><td>Anaesthesia</td><td>Usually required</td><td>Not normally required</td></tr><tr><td>Radiation source remains</td><td>LDR: yes; HDR: no</td><td>No</td></tr><tr><td>Urinary irritation</td><td>Common</td><td>Possible</td></tr><tr><td>Bowel effects</td><td>Possible</td><td>Possible</td></tr><tr><td>Suitable for</td><td>Selected patients</td><td>Wider range of patients</td></tr><tr><td>Combination treatment</td><td>Can be combined with EBRT</td><td>Can be combined with brachytherapy</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_347",
+          "type": "paragraph",
+          "text": "The two approaches can also be used together. See [Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer) for IMRT, IGRT, VMAT and SBRT."
+        },
+        {
+          "id": "h_348",
+          "type": "heading",
+          "level": 2,
+          "text": "Brachytherapy vs Robotic Prostatectomy"
+        },
+        {
+          "id": "p_349",
+          "type": "paragraph",
+          "text": "These treatments are fundamentally different."
+        },
+        {
+          "id": "html_350",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Brachytherapy</th><th>Robotic prostatectomy</th></tr></thead><tbody><tr><td>Prostate removed</td><td>No</td><td>Yes</td></tr><tr><td>Main treatment</td><td>Radiation</td><td>Surgery</td></tr><tr><td>Hospital stay</td><td>Usually short</td><td>Usually one or more days</td></tr><tr><td>Catheter</td><td>May be temporary</td><td>Usually required after surgery</td></tr><tr><td>Treatment duration</td><td>Usually short procedure</td><td>One operation</td></tr><tr><td>Urinary leakage</td><td>Generally less prominent</td><td>Common early after surgery</td></tr><tr><td>Bowel effects</td><td>Possible</td><td>Usually less prominent</td></tr><tr><td>Erectile dysfunction</td><td>Possible, often gradual</td><td>Possible, often earlier</td></tr><tr><td>PSA after treatment</td><td>Falls gradually</td><td>Expected to become very low/undetectable</td></tr><tr><td>Pathology specimen</td><td>No prostatectomy specimen</td><td>Complete prostate available for pathology</td></tr><tr><td>Radiation safety</td><td>LDR precautions may apply</td><td>None</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_351",
+          "type": "paragraph",
+          "text": "Neither treatment is automatically right for every patient. See [Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india)."
+        },
+        {
+          "id": "h_352",
+          "type": "heading",
+          "level": 2,
+          "text": "Brachytherapy vs Active Surveillance"
+        },
+        {
+          "id": "p_353",
+          "type": "paragraph",
+          "text": "Active surveillance and brachytherapy have different goals."
+        },
+        {
+          "id": "h_354",
+          "type": "heading",
+          "level": 3,
+          "text": "Active surveillance"
+        },
+        {
+          "id": "p_355",
+          "type": "paragraph",
+          "text": "No immediate definitive treatment. The cancer is monitored."
+        },
+        {
+          "id": "h_356",
+          "type": "heading",
+          "level": 3,
+          "text": "Brachytherapy"
+        },
+        {
+          "id": "p_357",
+          "type": "paragraph",
+          "text": "The cancer is actively treated with radiation."
+        },
+        {
+          "id": "p_358",
+          "type": "paragraph",
+          "text": "Active surveillance may be suitable for selected low-risk patients who want to avoid immediate treatment. See [treatment without surgery](/blogs/prostate-cancer-treatment-without-surgery)."
+        },
+        {
+          "id": "p_359",
+          "type": "paragraph",
+          "text": "Brachytherapy may be appropriate for patients who want definitive treatment and meet the selection criteria."
+        },
+        {
+          "id": "h_360",
+          "type": "heading",
+          "level": 2,
+          "text": "Brachytherapy for Prostate Cancer in India"
+        },
+        {
+          "id": "p_361",
+          "type": "paragraph",
+          "text": "Brachytherapy is available at specialised cancer centres in India."
+        },
+        {
+          "id": "p_362",
+          "type": "paragraph",
+          "text": "Depending on the centre, patients may have access to:"
+        },
+        {
+          "id": "ul_363",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "LDR seed implantation",
+            "HDR brachytherapy",
+            "[External beam radiation](/costs/India/Radiation-Oncology/EBRT)",
+            "[IMRT](/costs/India/Radiation-Oncology/IMRT)",
+            "[IGRT](/costs/India/Radiation-Oncology/IGRT)",
+            "VMAT",
+            "[SBRT](/costs/India/Radiation-Oncology/SBRT)",
+            "Image-guided treatment planning",
+            "Multidisciplinary cancer teams"
+          ]
+        },
+        {
+          "id": "p_364",
+          "type": "paragraph",
+          "text": "Availability varies between hospitals."
+        },
+        {
+          "id": "p_365",
+          "type": "paragraph",
+          "text": "Patients should confirm whether the centre performs **prostate-specific brachytherapy** and whether it offers LDR, HDR or both. Compare [radiation hospitals](/hospitals/India/Radiation-Oncology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Radiation-Oncology), [Mumbai](/hospitals/India/Mumbai/Radiation-Oncology), [Bengaluru](/hospitals/India/Bengaluru/Radiation-Oncology), [Chennai](/hospitals/India/Chennai/Radiation-Oncology) and [Hyderabad](/hospitals/India/Hyderabad/Radiation-Oncology)."
+        },
+        {
+          "id": "btn_366",
+          "type": "button",
+          "label": "Plan a brachytherapy stay in India",
+          "href": "/consult?treatment=Prostate%20Brachytherapy"
+        },
+        {
+          "id": "h_367",
+          "type": "heading",
+          "level": 2,
+          "text": "Prostate Brachytherapy Cost in India"
+        },
+        {
+          "id": "p_368",
+          "type": "paragraph",
+          "text": "The cost depends on the treatment technique and hospital."
+        },
+        {
+          "id": "p_369",
+          "type": "paragraph",
+          "text": "Apollo Hospitals currently publishes an indicative brachytherapy cost of approximately **₹1 lakh to ₹2.5 lakh**."
+        },
+        {
+          "id": "p_370",
+          "type": "paragraph",
+          "text": "This is a general brachytherapy estimate and should not be interpreted as a fixed price for every prostate cancer patient."
+        },
+        {
+          "id": "p_371",
+          "type": "paragraph",
+          "text": "GAF Healthcare's published planning range for [brachytherapy in India](/costs/India/Radiation-Oncology/Brachytherapy) is **$5,500–$13,000**, typically with a **1–7 night** stay depending on the technique."
+        },
+        {
+          "id": "p_372",
+          "type": "paragraph",
+          "text": "Prostate-specific costs can vary because of LDR vs HDR, radioactive isotope, number of treatment sessions, treatment planning, anaesthesia, hospitalisation, imaging, urologist and radiation-oncologist fees, additional [external beam radiation](/costs/India/Radiation-Oncology/EBRT) and [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy)."
+        },
+        {
+          "id": "p_373",
+          "type": "paragraph",
+          "text": "City pages use the same national planning ranges unless a hospital issues a verified quotation: [Delhi NCR](/costs/India/Delhi-NCR/Radiation-Oncology/Brachytherapy), [Mumbai](/costs/India/Mumbai/Radiation-Oncology/Brachytherapy), [Bengaluru](/costs/India/Bengaluru/Radiation-Oncology/Brachytherapy), [Chennai](/costs/India/Chennai/Radiation-Oncology/Brachytherapy) and [Hyderabad](/costs/India/Hyderabad/Radiation-Oncology/Brachytherapy)."
+        },
+        {
+          "id": "btn_374",
+          "type": "button",
+          "label": "Request an itemized brachytherapy estimate",
+          "href": "/consult?treatment=Prostate%20Brachytherapy"
+        },
+        {
+          "id": "p_375",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a hospital quotation](https://wa.me/919044346292?text=Please%20share%20an%20itemized%20prostate%20brachytherapy%20cost%20estimate%20in%20India.)"
+        },
+        {
+          "id": "h_376",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Included in Brachytherapy Cost?"
+        },
+        {
+          "id": "p_377",
+          "type": "paragraph",
+          "text": "Before accepting a quotation, ask whether it includes:"
+        },
+        {
+          "id": "ul_378",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Radiation oncologist consultation",
+            "Urologist consultation",
+            "Anaesthesia",
+            "Ultrasound guidance",
+            "Treatment planning",
+            "Radioactive seeds or source",
+            "Operating-room charges",
+            "Catheters/needles",
+            "Hospital stay",
+            "Medicines",
+            "Pathology if applicable",
+            "Post-treatment imaging",
+            "Follow-up"
+          ]
+        },
+        {
+          "id": "p_379",
+          "type": "paragraph",
+          "text": "Different hospitals package these services differently."
+        },
+        {
+          "id": "h_380",
+          "type": "heading",
+          "level": 2,
+          "text": "Cost of LDR vs HDR Brachytherapy"
+        },
+        {
+          "id": "p_381",
+          "type": "paragraph",
+          "text": "There is no universal price difference."
+        },
+        {
+          "id": "p_382",
+          "type": "paragraph",
+          "text": "LDR involves radioactive seeds, implantation, treatment planning and seed placement."
+        },
+        {
+          "id": "p_383",
+          "type": "paragraph",
+          "text": "HDR involves catheter placement, anaesthesia, treatment planning, a temporary radioactive source and one or more treatment sessions."
+        },
+        {
+          "id": "p_384",
+          "type": "paragraph",
+          "text": "If HDR is combined with external beam radiation and hormone therapy, the total treatment cost can be significantly higher than brachytherapy alone."
+        },
+        {
+          "id": "h_385",
+          "type": "heading",
+          "level": 2,
+          "text": "Additional Costs International Patients Should Consider"
+        },
+        {
+          "id": "p_386",
+          "type": "paragraph",
+          "text": "For a patient travelling to India, the hospital bill is only one component."
+        },
+        {
+          "id": "p_387",
+          "type": "paragraph",
+          "text": "The overall budget may include medical costs (consultation, imaging, biopsy review, brachytherapy, external radiation, hormone therapy, medicines, follow-up), travel (flights, airport transfers, local transportation), accommodation for the entire schedule, and attendant expenses."
+        },
+        {
+          "id": "p_388",
+          "type": "paragraph",
+          "text": "The length of stay depends on whether the patient is receiving brachytherapy alone, HDR + EBRT, or EBRT + hormone therapy."
+        },
+        {
+          "id": "h_389",
+          "type": "heading",
+          "level": 2,
+          "text": "How International Patients Can Get a Brachytherapy Quote Before Travelling"
+        },
+        {
+          "id": "p_390",
+          "type": "paragraph",
+          "text": "Send the hospital or medical coordinator:"
+        },
+        {
+          "id": "ul_391",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "PSA history",
+            "Biopsy report",
+            "Gleason score",
+            "Grade Group",
+            "MRI prostate",
+            "PSMA PET/CT if available",
+            "Previous treatment records",
+            "Medication list",
+            "Details of urinary symptoms",
+            "Previous TURP or prostate surgery information"
+          ]
+        },
+        {
+          "id": "p_392",
+          "type": "paragraph",
+          "text": "The specialist team can then determine whether brachytherapy is likely to be appropriate."
+        },
+        {
+          "id": "p_393",
+          "type": "paragraph",
+          "text": "A preliminary estimate can then be prepared."
+        },
+        {
+          "id": "p_394",
+          "type": "paragraph",
+          "text": "The final treatment plan may change after physical examination or additional imaging."
+        },
+        {
+          "id": "btn_395",
+          "type": "button",
+          "label": "Send records before travelling",
+          "href": "/consult?treatment=Prostate%20Brachytherapy"
+        },
+        {
+          "id": "h_396",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Should an International Patient Stay in India?"
+        },
+        {
+          "id": "p_397",
+          "type": "paragraph",
+          "text": "The answer depends on the treatment pathway."
+        },
+        {
+          "id": "h_398",
+          "type": "heading",
+          "level": 3,
+          "text": "Brachytherapy alone"
+        },
+        {
+          "id": "p_399",
+          "type": "paragraph",
+          "text": "The medical stay may be relatively short."
+        },
+        {
+          "id": "h_400",
+          "type": "heading",
+          "level": 3,
+          "text": "HDR + external beam radiation"
+        },
+        {
+          "id": "p_401",
+          "type": "paragraph",
+          "text": "The patient may need to remain in India for the complete external radiation schedule."
+        },
+        {
+          "id": "h_402",
+          "type": "heading",
+          "level": 3,
+          "text": "Brachytherapy + hormone therapy"
+        },
+        {
+          "id": "p_403",
+          "type": "paragraph",
+          "text": "Hormone therapy may continue after the patient returns home."
+        },
+        {
+          "id": "p_404",
+          "type": "paragraph",
+          "text": "The treating hospital should provide a clear timeline covering arrival, consultation, tests, treatment, recovery, follow-up and return travel."
+        },
+        {
+          "id": "h_405",
+          "type": "heading",
+          "level": 2,
+          "text": "What Should You Ask Before Choosing a Brachytherapy Centre?"
+        },
+        {
+          "id": "p_406",
+          "type": "paragraph",
+          "text": "Ask the hospital:"
+        },
+        {
+          "id": "ol_407",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Do you perform prostate brachytherapy regularly?",
+            "Do you offer LDR, HDR or both?",
+            "Which radioactive sources do you use?",
+            "How many prostate brachytherapy procedures does the team perform?",
+            "Is brachytherapy available as a standalone treatment?",
+            "Do you offer HDR brachytherapy boosts?",
+            "Do you combine brachytherapy with external beam radiation?",
+            "Is hormone therapy required?",
+            "What imaging is used during implantation?",
+            "How is the dose planned?",
+            "What are the expected urinary side effects?",
+            "What are the bowel risks?",
+            "What is the expected effect on erections?",
+            "How long will I stay in hospital?",
+            "What is the complete treatment cost?",
+            "What is excluded from the package?",
+            "What follow-up is required?",
+            "When can I safely travel home?"
+          ]
+        },
+        {
+          "id": "h_408",
+          "type": "heading",
+          "level": 2,
+          "text": "Common Myths About Prostate Brachytherapy"
+        },
+        {
+          "id": "h_409",
+          "type": "heading",
+          "level": 3,
+          "text": "Myth 1: Brachytherapy means radioactive material stays in the body forever."
+        },
+        {
+          "id": "p_410",
+          "type": "paragraph",
+          "text": "**Fact:** This applies to LDR permanent seeds, not HDR. HDR uses a radioactive source that is removed after treatment."
+        },
+        {
+          "id": "h_411",
+          "type": "heading",
+          "level": 3,
+          "text": "Myth 2: Brachytherapy is only for very old patients."
+        },
+        {
+          "id": "p_412",
+          "type": "paragraph",
+          "text": "**Fact:** Age alone does not determine eligibility. Cancer risk, anatomy, urinary function and overall health are more relevant."
+        },
+        {
+          "id": "h_413",
+          "type": "heading",
+          "level": 3,
+          "text": "Myth 3: Brachytherapy is experimental."
+        },
+        {
+          "id": "p_414",
+          "type": "paragraph",
+          "text": "**Fact:** Prostate brachytherapy is an established radiation treatment used for selected localized prostate cancers."
+        },
+        {
+          "id": "h_415",
+          "type": "heading",
+          "level": 3,
+          "text": "Myth 4: Brachytherapy is suitable for every prostate cancer patient."
+        },
+        {
+          "id": "p_416",
+          "type": "paragraph",
+          "text": "**Fact:** Patient selection is important. Prostate size, urinary symptoms, cancer risk and disease extent all matter."
+        },
+        {
+          "id": "h_417",
+          "type": "heading",
+          "level": 3,
+          "text": "Myth 5: Brachytherapy has no side effects because radiation is targeted."
+        },
+        {
+          "id": "p_418",
+          "type": "paragraph",
+          "text": "**Fact:** Urinary, bowel and sexual side effects can occur even with highly targeted treatment."
+        },
+        {
+          "id": "h_419",
+          "type": "heading",
+          "level": 3,
+          "text": "Myth 6: HDR and LDR are the same treatment."
+        },
+        {
+          "id": "p_420",
+          "type": "paragraph",
+          "text": "**Fact:** Both are brachytherapy, but the radiation delivery method is different."
+        },
+        {
+          "id": "h_421",
+          "type": "heading",
+          "level": 3,
+          "text": "Myth 7: Brachytherapy always requires weeks in hospital."
+        },
+        {
+          "id": "p_422",
+          "type": "paragraph",
+          "text": "**Fact:** Brachytherapy itself is generally a short-stay procedure. The overall stay becomes longer when it is combined with a course of external radiation."
+        },
+        {
+          "id": "h_423",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_424",
+          "type": "heading",
+          "level": 3,
+          "text": "What is brachytherapy for prostate cancer?"
+        },
+        {
+          "id": "p_425",
+          "type": "paragraph",
+          "text": "Brachytherapy is internal radiation therapy in which radioactive material is placed inside or near the prostate to deliver radiation directly to the treatment area."
+        },
+        {
+          "id": "h_426",
+          "type": "heading",
+          "level": 3,
+          "text": "Is brachytherapy a surgery?"
+        },
+        {
+          "id": "p_427",
+          "type": "paragraph",
+          "text": "It is an invasive radiation procedure rather than a prostate-removal operation. Needles or catheters are inserted through the perineum under imaging guidance."
+        },
+        {
+          "id": "h_428",
+          "type": "heading",
+          "level": 3,
+          "text": "What are the two types of prostate brachytherapy?"
+        },
+        {
+          "id": "p_429",
+          "type": "paragraph",
+          "text": "The two main types are LDR permanent seed brachytherapy and HDR temporary brachytherapy."
+        },
+        {
+          "id": "h_430",
+          "type": "heading",
+          "level": 3,
+          "text": "What is LDR brachytherapy?"
+        },
+        {
+          "id": "p_431",
+          "type": "paragraph",
+          "text": "LDR brachytherapy permanently places tiny radioactive seeds inside the prostate. The seeds release radiation gradually over several months."
+        },
+        {
+          "id": "h_432",
+          "type": "heading",
+          "level": 3,
+          "text": "What is HDR brachytherapy?"
+        },
+        {
+          "id": "p_433",
+          "type": "paragraph",
+          "text": "HDR brachytherapy places temporary tubes or catheters into the prostate. A radioactive source travels through them for a short period and is then removed."
+        },
+        {
+          "id": "h_434",
+          "type": "heading",
+          "level": 3,
+          "text": "Which is better: LDR or HDR brachytherapy?"
+        },
+        {
+          "id": "p_435",
+          "type": "paragraph",
+          "text": "Neither is universally better. The appropriate approach depends on cancer risk, prostate anatomy, urinary function, treatment goals and whether external radiation is also planned."
+        },
+        {
+          "id": "h_436",
+          "type": "heading",
+          "level": 3,
+          "text": "Is brachytherapy suitable for low-risk prostate cancer?"
+        },
+        {
+          "id": "p_437",
+          "type": "paragraph",
+          "text": "Yes. Selected men with localized low-risk prostate cancer can receive brachytherapy as definitive treatment. Active surveillance is another option for some patients."
+        },
+        {
+          "id": "h_438",
+          "type": "heading",
+          "level": 3,
+          "text": "Can brachytherapy treat intermediate-risk prostate cancer?"
+        },
+        {
+          "id": "p_439",
+          "type": "paragraph",
+          "text": "Yes. It can be used alone in selected cases or combined with external beam radiation and sometimes hormone therapy."
+        },
+        {
+          "id": "h_440",
+          "type": "heading",
+          "level": 3,
+          "text": "Can high-risk prostate cancer be treated with brachytherapy?"
+        },
+        {
+          "id": "p_441",
+          "type": "paragraph",
+          "text": "Yes, in selected patients. High-risk disease may receive external beam radiation with a brachytherapy boost and hormone therapy."
+        },
+        {
+          "id": "h_442",
+          "type": "heading",
+          "level": 3,
+          "text": "Can brachytherapy cure prostate cancer?"
+        },
+        {
+          "id": "p_443",
+          "type": "paragraph",
+          "text": "For appropriately selected localized prostate cancer, brachytherapy can be used with curative intent."
+        },
+        {
+          "id": "h_444",
+          "type": "heading",
+          "level": 3,
+          "text": "Is brachytherapy painful?"
+        },
+        {
+          "id": "p_445",
+          "type": "paragraph",
+          "text": "The implantation procedure is generally performed under anaesthesia. Some soreness, bruising or urinary discomfort can occur afterward."
+        },
+        {
+          "id": "h_446",
+          "type": "heading",
+          "level": 3,
+          "text": "Does brachytherapy cause urinary problems?"
+        },
+        {
+          "id": "p_447",
+          "type": "paragraph",
+          "text": "Yes. Frequency, urgency, burning, weak urine flow and difficulty emptying the bladder can occur."
+        },
+        {
+          "id": "h_448",
+          "type": "heading",
+          "level": 3,
+          "text": "Can brachytherapy cause urinary retention?"
+        },
+        {
+          "id": "p_449",
+          "type": "paragraph",
+          "text": "Yes, particularly in patients who already have significant urinary obstruction or certain prostate characteristics."
+        },
+        {
+          "id": "h_450",
+          "type": "heading",
+          "level": 3,
+          "text": "Does brachytherapy cause erectile dysfunction?"
+        },
+        {
+          "id": "p_451",
+          "type": "paragraph",
+          "text": "It can. Erectile function may decline gradually after treatment, and the risk depends on several patient and treatment factors."
+        },
+        {
+          "id": "h_452",
+          "type": "heading",
+          "level": 3,
+          "text": "Does brachytherapy affect ejaculation?"
+        },
+        {
+          "id": "p_453",
+          "type": "paragraph",
+          "text": "It can affect semen volume and ejaculation. The effect may be different from radical prostatectomy because the prostate remains in place."
+        },
+        {
+          "id": "h_454",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I have children after brachytherapy?"
+        },
+        {
+          "id": "p_455",
+          "type": "paragraph",
+          "text": "Fertility can be affected by prostate radiation. Men who may want biological children should discuss fertility preservation before treatment."
+        },
+        {
+          "id": "h_456",
+          "type": "heading",
+          "level": 3,
+          "text": "Are LDR seeds dangerous to family members?"
+        },
+        {
+          "id": "p_457",
+          "type": "paragraph",
+          "text": "The radiation from permanent seeds is low and decreases over time, but temporary precautions may be recommended, particularly around pregnant women and young children. Follow the instructions given by the treating team."
+        },
+        {
+          "id": "h_458",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I travel after LDR brachytherapy?"
+        },
+        {
+          "id": "p_459",
+          "type": "paragraph",
+          "text": "Yes, but patients should follow their hospital's radiation-safety instructions and carry treatment documentation because security systems at airports may detect implanted radioactive material."
+        },
+        {
+          "id": "h_460",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I travel after HDR brachytherapy?"
+        },
+        {
+          "id": "p_461",
+          "type": "paragraph",
+          "text": "Because the radioactive source is removed, there is no permanent radioactive source left in the prostate. Travel timing still depends on recovery from the procedure and anaesthesia."
+        },
+        {
+          "id": "h_462",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does brachytherapy take?"
+        },
+        {
+          "id": "p_463",
+          "type": "paragraph",
+          "text": "LDR commonly involves one implantation procedure. HDR can involve one or more treatment sessions depending on the treatment plan."
+        },
+        {
+          "id": "h_464",
+          "type": "heading",
+          "level": 3,
+          "text": "How long do I stay in hospital?"
+        },
+        {
+          "id": "p_465",
+          "type": "paragraph",
+          "text": "Many patients have a short stay. HDR brachytherapy may require one or two days depending on the protocol."
+        },
+        {
+          "id": "h_466",
+          "type": "heading",
+          "level": 3,
+          "text": "Can brachytherapy be combined with external beam radiation?"
+        },
+        {
+          "id": "p_467",
+          "type": "paragraph",
+          "text": "Yes. This is commonly considered for selected higher-risk disease."
+        },
+        {
+          "id": "h_468",
+          "type": "heading",
+          "level": 3,
+          "text": "Can brachytherapy be combined with hormone therapy?"
+        },
+        {
+          "id": "p_469",
+          "type": "paragraph",
+          "text": "Yes. Hormone therapy may be used with radiation for higher-risk disease or before treatment to shrink a large prostate."
+        },
+        {
+          "id": "h_470",
+          "type": "heading",
+          "level": 3,
+          "text": "Is brachytherapy better than robotic prostatectomy?"
+        },
+        {
+          "id": "p_471",
+          "type": "paragraph",
+          "text": "They are different treatment approaches. The appropriate choice depends on the cancer, patient health, urinary function, treatment goals and potential side effects."
+        },
+        {
+          "id": "h_472",
+          "type": "heading",
+          "level": 3,
+          "text": "Is brachytherapy cheaper than robotic prostatectomy in India?"
+        },
+        {
+          "id": "p_473",
+          "type": "paragraph",
+          "text": "The costs vary by hospital and treatment plan. Published estimates for brachytherapy can be lower than many robotic prostatectomy quotations, but the comparison must include all treatment components."
+        },
+        {
+          "id": "h_474",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does prostate brachytherapy cost in India?"
+        },
+        {
+          "id": "p_475",
+          "type": "paragraph",
+          "text": "Apollo Hospitals currently publishes a general brachytherapy estimate of approximately ₹1 lakh–₹2.5 lakh. GAF Healthcare planning ranges for brachytherapy in India are $5,500–$13,000. The actual cost depends on the technique, hospital, treatment plan and additional therapies."
+        },
+        {
+          "id": "h_476",
+          "type": "heading",
+          "level": 3,
+          "text": "Is brachytherapy available in India?"
+        },
+        {
+          "id": "p_477",
+          "type": "paragraph",
+          "text": "Yes. Specialised cancer centres in India offer prostate brachytherapy, including LDR and/or HDR depending on the centre."
+        },
+        {
+          "id": "h_478",
+          "type": "heading",
+          "level": 3,
+          "text": "What documents should international patients send before travelling?"
+        },
+        {
+          "id": "p_479",
+          "type": "paragraph",
+          "text": "Send the PSA history, biopsy and pathology report, Gleason score, Grade Group, MRI reports, PSMA PET/CT where available, previous treatment records and medication list."
+        },
+        {
+          "id": "h_480",
+          "type": "heading",
+          "level": 3,
+          "text": "What happens if prostate cancer returns after brachytherapy?"
+        },
+        {
+          "id": "p_481",
+          "type": "paragraph",
+          "text": "The treatment depends on whether the recurrence is local or distant. Options may include hormone therapy, systemic treatment and selected salvage procedures."
+        },
+        {
+          "id": "h_482",
+          "type": "heading",
+          "level": 2,
+          "text": "Key Takeaways"
+        },
+        {
+          "id": "p_483",
+          "type": "paragraph",
+          "text": "Brachytherapy is a **targeted form of internal radiation therapy** that can treat selected prostate cancers without removing the prostate."
+        },
+        {
+          "id": "p_484",
+          "type": "paragraph",
+          "text": "There are two main types:"
+        },
+        {
+          "id": "p_485",
+          "type": "paragraph",
+          "text": "**LDR brachytherapy** — permanent radioactive seeds, radiation delivered gradually, often used alone for selected localized disease."
+        },
+        {
+          "id": "p_486",
+          "type": "paragraph",
+          "text": "**HDR brachytherapy** — temporary catheters, short high-dose radiation delivery, often used as a boost with external beam radiation."
+        },
+        {
+          "id": "p_487",
+          "type": "paragraph",
+          "text": "Brachytherapy can be particularly useful when the treatment team wants to deliver a high dose directly to the prostate."
+        },
+        {
+          "id": "p_488",
+          "type": "paragraph",
+          "text": "However, it is not suitable for everyone."
+        },
+        {
+          "id": "p_489",
+          "type": "paragraph",
+          "text": "The most important factors include cancer stage, Grade Group, PSA, risk group, prostate size, urinary function, previous prostate procedures and overall health."
+        },
+        {
+          "id": "p_490",
+          "type": "paragraph",
+          "text": "The major side effects involve urinary irritation, urinary frequency, difficulty passing urine, bowel irritation and erectile dysfunction."
+        },
+        {
+          "id": "p_491",
+          "type": "paragraph",
+          "text": "For LDR treatment, temporary radiation-safety precautions may be necessary because the seeds remain inside the prostate."
+        },
+        {
+          "id": "p_492",
+          "type": "paragraph",
+          "text": "For HDR treatment, the radioactive source is removed after treatment."
+        },
+        {
+          "id": "p_493",
+          "type": "paragraph",
+          "text": "In India, published general brachytherapy costs are approximately **₹1 lakh–₹2.5 lakh**, while GAF planning ranges are **$5,500–$13,000**. Patients should obtain a prostate-specific, itemised quotation from the treating centre."
+        },
+        {
+          "id": "p_494",
+          "type": "paragraph",
+          "text": "For international patients, the complete budget should include diagnosis, treatment, hospitalisation, accommodation, travel, follow-up and any additional radiation or hormone therapy."
+        },
+        {
+          "id": "h_495",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Prostate Cancer Resources"
+        },
+        {
+          "id": "p_496",
+          "type": "paragraph",
+          "text": "This article stays focused on brachytherapy and connects to:"
+        },
+        {
+          "id": "ul_497",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) — the main treatment hub.",
+            "[Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer) — broader radiation treatment options.",
+            "[Prostate Cancer Treatment Without Surgery](/blogs/prostate-cancer-treatment-without-surgery) — non-surgical treatment pathways.",
+            "[Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india) — surgical alternative.",
+            "[Prostate Cancer Treatment Cost in India](/treatments/prostate-cancer-treatment-in-india) — broader cost guide.",
+            "[What Is the Best Treatment for Prostate Cancer?](/blogs/prostate-cancer-treatment-options-india) — treatment decision-making.",
+            "[Prostate Cancer Treatment by Stage](/blogs/prostate-cancer-treatment-options-india) — treatment options by stage.",
+            "[PSMA PET/CT for Prostate Cancer](/treatments/prostate-cancer-treatment-in-india) — staging and recurrence imaging.",
+            "[Lutetium-177 PSMA Therapy in India](/treatments/prostate-cancer-treatment-in-india) — radiopharmaceutical treatment for selected advanced disease."
+          ]
+        },
+        {
+          "id": "h_498",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_499",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates international patients who want [brachytherapy for prostate cancer in India](/treatments/prostate-cancer-treatment-in-india). Share PSA reports, biopsy and Grade Group, MRI or PSMA PET, urinary-symptom details and previous TURP records. A coordinator can arrange review with a [radiation oncologist](/doctors/India/Radiation-Oncology), confirm whether the centre offers LDR, HDR or both, and prepare an itemized estimate. The treating radiation oncology team makes the final recommendation."
+        },
+        {
+          "id": "btn_500",
+          "type": "button",
+          "label": "Share records for a brachytherapy review",
+          "href": "/consult?treatment=Prostate%20Brachytherapy"
+        },
+        {
+          "id": "p_501",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your records](https://wa.me/919044346292?text=I%20would%20like%20to%20share%20prostate%20cancer%20records%20for%20a%20brachytherapy%20review%20in%20India.)"
+        },
+        {
+          "id": "h_502",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_503",
+          "type": "paragraph",
+          "text": "This article is for general educational purposes and does not replace medical advice from a qualified radiation oncologist, urologist or multidisciplinary prostate cancer team."
+        },
+        {
+          "id": "p_504",
+          "type": "paragraph",
+          "text": "The suitability of LDR or HDR brachytherapy depends on the individual's PSA, Grade Group, stage, prostate anatomy, urinary function, previous procedures and overall health."
+        },
+        {
+          "id": "p_505",
+          "type": "paragraph",
+          "text": "Treatment outcomes, side effects, treatment schedules and costs vary between patients and hospitals. Published prices are indicative and can change. Patients should obtain a current treatment plan and written quotation from the treating hospital before making medical or travel arrangements."
+        },
+        {
+          "id": "h_506",
+          "type": "heading",
+          "level": 2,
+          "text": "Top 5 Sources"
+        },
+        {
+          "id": "p_507",
+          "type": "paragraph",
+          "text": "1. [American Cancer Society — Radiation Therapy for Prostate Cancer](https://www.cancer.org/cancer/types/prostate-cancer/treating/radiation-therapy.html) — LDR and HDR brachytherapy, eligibility, procedure, radiation precautions and side effects."
+        },
+        {
+          "id": "p_508",
+          "type": "paragraph",
+          "text": "2. [European Association of Urology — Radiotherapy for Prostate Cancer](https://patients.uroweb.org/treatments/radiotherapy/) — patient-focused radiotherapy, combination treatment and side effects."
+        },
+        {
+          "id": "p_509",
+          "type": "paragraph",
+          "text": "3. [Prostate Cancer UK — High-Dose-Rate Brachytherapy](https://prostatecanceruk.org/prostate-information-and-support/treatments/high-dose-rate-brachytherapy) — HDR eligibility, preparation, procedure, recovery and combination treatment."
+        },
+        {
+          "id": "p_510",
+          "type": "paragraph",
+          "text": "4. [Prostate Cancer UK — Permanent Seed Brachytherapy](https://prostatecanceruk.org/prostate-information-and-support/treatments/permanent-seed-brachytherapy) — LDR seed implantation, how the seeds work and treatment duration."
+        },
+        {
+          "id": "p_511",
+          "type": "paragraph",
+          "text": "5. [Apollo Hospitals — Brachytherapy](https://www.apollohospitals.com/procedures/brachytherapy) — India-specific information, potential complications and an indicative published cost range."
+        },
+        {
+          "id": "p_512",
+          "type": "paragraph",
+          "text": "**Last reviewed against the cited sources: September 2026.**"
+        }
+      ]
+    },
     {
       "id": "art_radiation_therapy_for_prostate_cancer",
       "slug": "radiation-therapy-for-prostate-cancer",
@@ -988,6 +3978,10 @@
         {
           "label": "Radiation oncologists",
           "href": "/doctors/India/Radiation-Oncology"
+        },
+        {
+          "label": "Brachytherapy for Prostate Cancer",
+          "href": "/blogs/brachytherapy-for-prostate-cancer"
         }
       ],
       "blocks": [
@@ -3990,7 +6984,7 @@
             "[Prostate Cancer Treatment Cost in India](/treatments/prostate-cancer-treatment-in-india) — surgery, radiation, hormone therapy and advanced treatment costs.",
             "[What Is the Best Treatment for Prostate Cancer?](/blogs/prostate-cancer-treatment-options-india) — how doctors choose treatment according to stage and risk.",
             "[Prostate Cancer Treatment by Stage](/blogs/prostate-cancer-treatment-options-india) — treatment options for Stage 1 through Stage 4.",
-            "[Brachytherapy for Prostate Cancer in India](/costs/India/Radiation-Oncology/Brachytherapy) — LDR and HDR cost and hospital pathways.",
+            "[Brachytherapy for Prostate Cancer](/blogs/brachytherapy-for-prostate-cancer) — LDR and HDR cost and hospital pathways.",
             "[PSMA PET/CT for Prostate Cancer](/treatments/prostate-cancer-treatment-in-india) — when advanced imaging may be useful.",
             "[Lutetium-177 PSMA Therapy in India](/treatments/prostate-cancer-treatment-in-india) — treatment for selected advanced prostate cancers."
           ]
@@ -4150,6 +7144,10 @@
         {
           "label": "Radiation Therapy for Prostate Cancer",
           "href": "/blogs/radiation-therapy-for-prostate-cancer"
+        },
+        {
+          "label": "Brachytherapy for Prostate Cancer",
+          "href": "/blogs/brachytherapy-for-prostate-cancer"
         }
       ],
       "blocks": [
@@ -7449,7 +10447,7 @@
         },
         {
           "label": "Brachytherapy for Prostate Cancer",
-          "href": "/costs/India/Radiation-Oncology/Brachytherapy"
+          "href": "/blogs/brachytherapy-for-prostate-cancer"
         },
         {
           "label": "Hormone therapy cost",
@@ -10385,7 +13383,7 @@
         },
         {
           "label": "Brachytherapy for Prostate Cancer",
-          "href": "/costs/India/Radiation-Oncology/Brachytherapy"
+          "href": "/blogs/brachytherapy-for-prostate-cancer"
         },
         {
           "label": "Lutetium-177 PSMA Therapy in India",
@@ -10997,7 +13995,7 @@
         {
           "id": "p_106",
           "type": "paragraph",
-          "text": "**Related:** [Brachytherapy for Prostate Cancer](/costs/India/Radiation-Oncology/Brachytherapy)."
+          "text": "**Related:** [Brachytherapy for Prostate Cancer](/blogs/brachytherapy-for-prostate-cancer)."
         },
         {
           "id": "h_107",

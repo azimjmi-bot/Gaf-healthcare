@@ -239,7 +239,7 @@ const blocks = [
   h3("High-dose-rate brachytherapy"),
   p("A radioactive source is temporarily introduced into the prostate and then removed."),
   p("Brachytherapy can be used alone in selected patients or combined with external-beam radiation for some higher-risk cancers. The GAF planning range is **$5,500–$13,000**."),
-  p("**Related:** [Brachytherapy for Prostate Cancer](" + BRACHY + ")."),
+  p("**Related:** [Brachytherapy for Prostate Cancer](/blogs/brachytherapy-for-prostate-cancer)."),
 
   h2("10. Hormone Therapy"),
   p("Hormone therapy is also called **androgen deprivation therapy (ADT)**."),
@@ -572,7 +572,7 @@ const article = {
   relatedLinks: [
     { label: "Prostate Cancer Treatment in India", href: PILLAR },
     { label: "Robotic Prostatectomy in India", href: "/blogs/robotic-prostatectomy-in-india" },
-    { label: "Brachytherapy for Prostate Cancer", href: BRACHY },
+    { label: "Brachytherapy for Prostate Cancer", href: "/blogs/brachytherapy-for-prostate-cancer" },
     { label: "Lutetium-177 PSMA Therapy in India", href: PILLAR },
     { label: "Prostate Cancer Treatment Cost in India", href: RP_COST },
     { label: "Hormone therapy cost", href: HT },
