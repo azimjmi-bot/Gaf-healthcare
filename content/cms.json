@@ -31,7 +31,10 @@
     "ER",
     "PR",
     "diagnosis",
-    "biopsy"
+    "biopsy",
+    "international patients",
+    "surgery",
+    "chemotherapy"
   ],
   "media": [
     {
@@ -180,9 +183,1049 @@
       "name": "breast-cancer-diagnosis-staging-visual.png",
       "alt": "Human body showing primary site, lymph nodes and distant organs used in staging",
       "addedAt": "2026-09-27T14:00:00.000Z"
+    },
+    {
+      "id": "media_bc_intl_records",
+      "url": "/uploads/articles/breast-cancer-intl-records-visual.png",
+      "name": "breast-cancer-intl-records-visual.png",
+      "alt": "International patient pathway for breast cancer treatment in India including diagnosis, surgery, chemotherapy and radiation",
+      "addedAt": "2026-09-27T15:00:00.000Z"
+    },
+    {
+      "id": "media_bc_intl_surgery",
+      "url": "/uploads/articles/breast-cancer-intl-surgery-visual.png",
+      "name": "breast-cancer-intl-surgery-visual.png",
+      "alt": "Patients with a surgeon and reconstructive specialist holding an implant model",
+      "addedAt": "2026-09-27T15:00:00.000Z"
+    },
+    {
+      "id": "media_bc_intl_team",
+      "url": "/uploads/articles/breast-cancer-intl-team-visual.png",
+      "name": "breast-cancer-intl-team-visual.png",
+      "alt": "Multidisciplinary team around an international patient",
+      "addedAt": "2026-09-27T15:00:00.000Z"
+    },
+    {
+      "id": "media_bc_intl_journey",
+      "url": "/uploads/articles/breast-cancer-intl-journey-visual.png",
+      "name": "breast-cancer-intl-journey-visual.png",
+      "alt": "Arrival, consultation, infusion and discharge for an international patient",
+      "addedAt": "2026-09-27T15:00:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_breast_cancer_treatment_india_international_patients",
+      "slug": "breast-cancer-treatment-india-international-patients",
+      "title": "Breast Cancer Treatment for International Patients in India: Complete Guide",
+      "excerpt": "How international patients plan breast cancer treatment in India — records review, surgery, systemic therapy, radiation, stay length, cost and follow-up after returning home.",
+      "date": "27 September 2026",
+      "publishedAt": "2026-09-27T15:00:00.000Z",
+      "updatedAt": "2026-09-27T15:00:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "breast cancer",
+        "international patients",
+        "India",
+        "travel",
+        "surgery",
+        "chemotherapy"
+      ],
+      "image": "/uploads/articles/breast-cancer-intl-records-visual.png",
+      "imageAlt": "International patient pathway for breast cancer treatment in India including diagnosis, surgery, chemotherapy and radiation",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Breast Cancer Treatment in India for International Patients | Cost & Process",
+      "seoDescription": "A complete guide to breast cancer treatment in India for international patients, covering surgery, chemotherapy, radiation, targeted therapy, costs and travel planning.",
+      "canonical": "https://gaf.healthcare/blogs/breast-cancer-treatment-india-international-patients",
+      "ogImage": "/uploads/articles/breast-cancer-intl-records-visual.png",
+      "allowIndex": true,
+      "keywords": [
+        "breast cancer treatment in India for international patients",
+        "breast cancer treatment in India",
+        "breast cancer treatment cost in India",
+        "breast cancer hospitals in India",
+        "breast cancer surgery in India",
+        "breast cancer doctors in India",
+        "cancer treatment in India for international patients",
+        "breast cancer treatment for foreign patients",
+        "breast cancer surgery cost India",
+        "chemotherapy for breast cancer in India",
+        "radiation therapy for breast cancer in India",
+        "breast reconstruction in India",
+        "HER2-positive breast cancer treatment India"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Breast Cancer Treatment in India",
+          "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Breast Cancer Diagnosis",
+          "href": "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2"
+        },
+        {
+          "label": "ER, PR and HER2 results",
+          "href": "/blogs/er-pr-her2-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Breast Cancer Treatment by Stage",
+          "href": "/blogs/breast-cancer-treatment-by-stage"
+        },
+        {
+          "label": "Breast Cancer Stages 0–4",
+          "href": "/blogs/breast-cancer-stages-0-1-2-3-4"
+        },
+        {
+          "label": "Breast Cancer Treatment Cost in India",
+          "href": "/blogs/breast-cancer-treatment-cost-in-india"
+        },
+        {
+          "label": "Lumpectomy doctors",
+          "href": "/doctors/India/Surgical-Oncology/Lumpectomy"
+        },
+        {
+          "label": "Mastectomy doctors",
+          "href": "/doctors/India/Surgical-Oncology/Mastectomy"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\">India provides a broad range of breast cancer treatment options for international patients, including breast-conserving surgery, mastectomy, breast reconstruction, chemotherapy, radiation therapy, hormone therapy, targeted therapy and immunotherapy.</p><p class=\"article-quick-answer__body\">The appropriate treatment depends on the type and stage of breast cancer, ER/PR status, HER2 status, lymph-node involvement, previous treatment and overall health. International patients should ideally have their pathology reports, imaging and previous treatment records reviewed before travelling.</p><p class=\"article-quick-answer__body\">Treatment may involve several specialists, including breast surgical oncologists, medical oncologists, radiation oncologists, radiologists, pathologists and reconstructive surgeons. Depending on the case, treatment can be completed in one visit or may require several weeks or months.</p><p class=\"article-quick-answer__body\">The cost of breast cancer treatment in India varies significantly because treatment may involve surgery, systemic medicines, radiation, hospital care, investigations and follow-up. International patients should obtain a case-specific treatment plan and quotation rather than relying on a single advertised price.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "A breast cancer diagnosis can be overwhelming, particularly when treatment needs to be arranged in another country. This guide explains how international patients can approach [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india), from [pre-travel diagnosis review](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2) through [treatment by stage](/blogs/breast-cancer-treatment-by-stage) and [follow-up](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "International patients considering India usually need answers to several practical questions:"
+        },
+        {
+          "id": "ul_004",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "What treatment do I need?",
+            "Can my pathology be reviewed before I travel?",
+            "Which specialists will be involved?",
+            "Will I need surgery?",
+            "How long will treatment take?",
+            "Can chemotherapy or radiation be arranged in India?",
+            "What documents should I bring?",
+            "How much will treatment cost?",
+            "How long should I stay in India?",
+            "What happens after I return home?"
+          ]
+        },
+        {
+          "id": "btn_005",
+          "type": "button",
+          "label": "Send your records for a pre-travel review",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "img_006",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-intl-records-visual.png",
+          "alt": "International patient with a medical folder, imaging tablet and suitcase meeting a clinician before treatment in India",
+          "caption": "Treatment planning should start with a complete file: pathology, ER/PR/HER2, imaging and previous treatment records."
+        },
+        {
+          "id": "h_007",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Do International Patients Consider India for Breast Cancer Treatment?"
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "India has hospitals providing multiple cancer-treatment specialties under one healthcare system. Multidisciplinary teams in [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) can coordinate surgery, systemic therapy and radiation."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "Depending on the hospital, patients may have access to:"
+        },
+        {
+          "id": "ul_010",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Breast surgical oncology",
+            "Medical oncology",
+            "Radiation oncology",
+            "Pathology",
+            "Diagnostic imaging",
+            "Reconstructive surgery",
+            "Nuclear medicine",
+            "Genetic and molecular testing where clinically indicated",
+            "Intensive care and supportive services"
+          ]
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "For a patient who needs several treatment modalities, having these services coordinated within the same hospital or healthcare network can simplify the treatment pathway. Patients should evaluate hospitals and treatment teams based on their specific diagnosis and treatment requirements, rather than assuming that every hospital offers the same services."
+        },
+        {
+          "id": "h_012",
+          "type": "heading",
+          "level": 2,
+          "text": "What Breast Cancer Treatments Are Available in India?"
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "Treatment depends on the individual cancer. Potential treatments include:"
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "**Surgery:** [breast-conserving surgery](/costs/India/Surgical-Oncology/Lumpectomy) (lumpectomy), [mastectomy](/costs/India/Surgical-Oncology/Mastectomy), [nipple-sparing mastectomy](/costs/India/Surgical-Oncology/Nipple-Sparing-Mastectomy) in selected patients, sentinel lymph node biopsy, axillary lymph node surgery where indicated, [oncoplastic breast surgery](/costs/India/Surgical-Oncology/Oncoplastic-Breast-Surgery) and [breast reconstruction](/costs/India/Surgical-Oncology/Breast-Reconstruction)."
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "**Medical oncology:** [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy), [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy), [HER2-targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy), [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) in selected cancers, and other systemic treatments depending on tumour biology."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "**Radiation oncology:** [radiation](/costs/India/Radiation-Oncology/EBRT) after breast-conserving surgery, post-mastectomy radiation for selected patients, and radiation for certain advanced or metastatic situations."
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "Not every patient needs all of these treatments."
+        },
+        {
+          "id": "h_018",
+          "type": "heading",
+          "level": 2,
+          "text": "The First Step: Get Your Diagnosis Reviewed"
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "For an international patient, treatment planning should ideally begin before travelling to India. The treating team needs to understand the [diagnosis](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2) as accurately as possible."
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "Important records may include the biopsy report, histopathology report, ER, PR and HER2 reports, mammography, breast ultrasound, breast MRI if performed, CT scans, PET-CT where clinically indicated, bone scans where applicable, previous surgery records, chemotherapy records, radiation treatment records and previous medication history."
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "The hospital may request digital copies of imaging studies rather than only written reports."
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "[WhatsApp your pathology and imaging file](https://wa.me/919044346292?text=I%20would%20like%20to%20send%20my%20breast%20cancer%20records%20for%20a%20pre-travel%20review%20in%20India.)"
+        },
+        {
+          "id": "h_023",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Pathology Review Is Important"
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "Breast cancer is not one single disease. Treatment can differ substantially according to histological type, tumour grade, ER status, PR status, HER2 status, tumour size, lymph-node status, stage and other pathological or molecular findings."
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "For this reason, a diagnosis such as \"breast cancer\" alone is usually not enough to create a complete treatment plan. The oncology team may review existing pathology and, when clinically appropriate, request additional testing. See [how diagnosis is built](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2) and [what ER, PR and HER2 mean](/blogs/er-pr-her2-breast-cancer-treatment-india)."
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 2,
+          "text": "Understanding ER, PR and HER2"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "Three important biomarkers commonly considered in breast cancer treatment are:"
+        },
+        {
+          "id": "ul_028",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Estrogen Receptor (ER) — an ER-positive tumour may respond to endocrine or hormone therapy.",
+            "Progesterone Receptor (PR) — PR status provides additional information about tumour biology and treatment planning.",
+            "HER2 — HER2-positive breast cancer may be treated with HER2-directed medicines."
+          ]
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "A patient may have ER-positive / HER2-negative cancer, ER-positive / HER2-positive cancer, ER-negative / HER2-positive cancer, triple-negative breast cancer, or other combinations. These distinctions can significantly affect the [treatment pathway](/blogs/er-pr-her2-breast-cancer-treatment-india)."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is Breast Cancer Staged?"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "Before treatment is finalized, doctors determine how extensive the cancer is. Staging may consider primary tumour size, lymph-node involvement, spread to distant organs and tumour biology."
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "Breast cancer is commonly described using [stages from 0 through 4](/blogs/breast-cancer-stages-0-1-2-3-4). The treatment approach for an early-stage tumour can be very different from treatment for metastatic disease. See [treatment by stage](/blogs/breast-cancer-treatment-by-stage)."
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens After an International Patient Contacts a Hospital?"
+        },
+        {
+          "id": "img_034",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-intl-journey-visual.png",
+          "alt": "Four moments of the same patient: arriving with a suitcase, consulting a doctor, receiving an infusion, then leaving with discharge records",
+          "caption": "A typical pathway: records review, in-person consultation, treatment, then a written summary for home-country follow-up."
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "The exact process varies between hospitals and medical-tourism facilitators, but a typical pathway may look like:"
+        },
+        {
+          "id": "ul_036",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Medical records submitted",
+            "Oncology/pathology review",
+            "Initial treatment recommendation",
+            "Estimated treatment plan and quotation",
+            "Travel planning",
+            "In-person consultation",
+            "Additional investigations if required",
+            "Final multidisciplinary treatment plan",
+            "Treatment",
+            "Follow-up and discharge planning"
+          ]
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "This sequence may change if the medical team needs additional information before making a recommendation."
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Doctors in India Review My Case Before I Travel?"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "In many situations, medical records can be reviewed before an international patient travels. This can be particularly useful when the patient has already undergone biopsy, surgery, chemotherapy, radiation, targeted therapy or hormone therapy."
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "Pre-travel review may help clarify whether the patient is likely to require surgery, additional systemic treatment, radiation, reconstruction, further diagnostic testing or a second opinion. It does not replace the in-person examination when one is required."
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "[Ask GAF to review your case before travel](/consult?treatment=Breast%20Cancer%20Treatment%20in%20India)"
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast Cancer Surgery in India"
+        },
+        {
+          "id": "img_043",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-intl-surgery-visual.png",
+          "alt": "Two patients standing with a surgeon and a reconstructive specialist holding an implant model",
+          "caption": "Surgical options range from breast-conserving surgery to mastectomy and reconstruction. The choice follows the diagnosis, not a single advertised procedure."
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "Surgery is an important part of treatment for many patients with localized breast cancer. Depending on the diagnosis, surgical options may include:"
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 3,
+          "text": "Lumpectomy"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Lumpectomy removes the tumour along with a margin of surrounding tissue while preserving most of the breast. It is generally followed by [radiation therapy](/costs/India/Radiation-Oncology/EBRT) when breast-conserving treatment is appropriate."
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "- [Breast-Conserving Surgery Doctors in India](/doctors/India/Surgical-Oncology/Lumpectomy)\n- [Lumpectomy cost in India](/costs/India/Surgical-Oncology/Lumpectomy)"
+        },
+        {
+          "id": "h_048",
+          "type": "heading",
+          "level": 3,
+          "text": "Mastectomy"
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "Mastectomy removes most or all of the breast tissue. It may be appropriate in several clinical situations. Reconstruction can sometimes be performed at the same time or later."
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "- [Mastectomy Doctors in India](/doctors/India/Surgical-Oncology/Mastectomy)\n- [Mastectomy cost in India](/costs/India/Surgical-Oncology/Mastectomy)"
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 3,
+          "text": "Nipple-Sparing Mastectomy"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "In selected patients, the nipple-areola complex and some breast skin can be preserved while the underlying breast tissue is removed. This may be combined with reconstruction."
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "- [Nipple-Sparing Mastectomy Doctors in India](/doctors/India/Surgical-Oncology/Nipple-Sparing-Mastectomy)\n- [Nipple-sparing mastectomy cost](/costs/India/Surgical-Oncology/Nipple-Sparing-Mastectomy)"
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 3,
+          "text": "Oncoplastic Breast Surgery"
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "Oncoplastic techniques combine cancer surgery with reconstructive principles to improve breast shape following tumour removal. They may be considered for selected patients undergoing breast-conserving surgery."
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "- [Oncoplastic Breast Surgery Doctors in India](/doctors/India/Surgical-Oncology/Oncoplastic-Breast-Surgery)\n- [Oncoplastic surgery cost](/costs/India/Surgical-Oncology/Oncoplastic-Breast-Surgery)"
+        },
+        {
+          "id": "h_057",
+          "type": "heading",
+          "level": 3,
+          "text": "Breast Reconstruction"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "Reconstruction can be performed during or after mastectomy. Options may include implant-based reconstruction, tissue-based reconstruction and staged reconstruction."
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "- [Breast Reconstruction Doctors in India](/doctors/India/Surgical-Oncology/Breast-Reconstruction)\n- [Breast reconstruction cost](/costs/India/Surgical-Oncology/Breast-Reconstruction)"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "[Ask whether surgery is likely in your case](/consult?treatment=Breast%20Cancer%20Treatment%20in%20India)"
+        },
+        {
+          "id": "h_061",
+          "type": "heading",
+          "level": 2,
+          "text": "Chemotherapy for International Patients"
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Chemotherapy may be recommended before surgery, after surgery, for advanced breast cancer, or in combination with targeted treatment. The exact regimen depends on cancer subtype and stage."
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "Chemotherapy is usually delivered in cycles, with treatment and recovery periods between administrations. For international patients, the number of planned cycles is particularly important because it can influence how long they need to remain in India."
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "- [Chemotherapy Doctors in India](/doctors/India/Medical-Oncology/Chemotherapy)\n- [Chemotherapy Cost in India](/costs/India/Medical-Oncology/Chemotherapy)"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "[Ask about chemotherapy timing](/consult?treatment=Chemotherapy)"
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 2,
+          "text": "Targeted Therapy for HER2-Positive Breast Cancer"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Patients with HER2-positive breast cancer may be candidates for HER2-targeted medicines. Depending on the clinical setting, treatment may involve medicines such as trastuzumab, pertuzumab and other HER2-directed therapies."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "Treatment can be administered before surgery, after surgery or for advanced disease depending on the patient's situation."
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "- [Targeted Therapy Doctors in India](/doctors/India/Medical-Oncology/Targeted-Therapy)\n- [Targeted Therapy Cost in India](/costs/India/Medical-Oncology/Targeted-Therapy)"
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 2,
+          "text": "Hormone Therapy"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "Patients with hormone receptor-positive breast cancer may receive endocrine therapy. Common medicines include tamoxifen, anastrozole, letrozole and exemestane. Some premenopausal patients may also receive ovarian-function suppression."
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Hormone therapy often continues for an extended period, meaning international patients may continue this treatment after returning home."
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "- [Hormone Therapy Doctors in India](/doctors/India/Medical-Oncology/Hormone-Therapy)\n- [Hormone Therapy Cost in India](/costs/India/Medical-Oncology/Hormone-Therapy)"
+        },
+        {
+          "id": "h_074",
+          "type": "heading",
+          "level": 2,
+          "text": "Immunotherapy"
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "Immunotherapy may have a role in selected breast cancer patients, depending on the cancer subtype and treatment setting. It is not required for every breast cancer patient."
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "The decision depends on tumour characteristics, stage, previous treatment, biomarker information, current treatment guidelines and individual clinical circumstances. International patients should provide their complete pathology and previous treatment records so the oncology team can assess whether immunotherapy is appropriate."
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "- [Immunotherapy Doctors in India](/doctors/India/Medical-Oncology/Immunotherapy)\n- [Immunotherapy Cost in India](/costs/India/Medical-Oncology/Immunotherapy)"
+        },
+        {
+          "id": "h_078",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation Therapy in India"
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "Radiation therapy uses high-energy radiation to treat cancer cells in a defined area. It may be recommended after breast-conserving surgery, after mastectomy for selected patients, or for certain areas of metastatic disease."
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Radiation treatment generally requires multiple visits rather than one procedure. The number of sessions varies according to the treatment plan. This is an important consideration for international patients planning accommodation and travel."
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "- [Radiation (EBRT) Doctors in India](/doctors/India/Radiation-Oncology/EBRT)\n- [EBRT cost in India](/costs/India/Radiation-Oncology/EBRT)"
+        },
+        {
+          "id": "h_082",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Does Breast Cancer Treatment Take in India?"
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "There is no standard duration for every patient. Treatment time depends on the treatment pathway."
+        },
+        {
+          "id": "ul_084",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Surgery only — hospital stay, postoperative recovery and follow-up.",
+            "Surgery + chemotherapy — treatment may extend over several months because chemotherapy is delivered in cycles.",
+            "Surgery + radiation — radiation usually requires multiple treatment visits.",
+            "Neoadjuvant treatment — systemic therapy before surgery may require an extended stay before the operation.",
+            "Long-term endocrine therapy — may continue for years but can generally be continued after returning home."
+          ]
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 2,
+          "text": "Should International Patients Stay in India for the Entire Treatment?"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "Not necessarily. The answer depends on the treatment."
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "Some procedures require the patient to remain in India through the immediate postoperative period. Other treatments can potentially be coordinated between the Indian treatment centre and the patient's home-country oncologist."
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "For example, after a patient has completed the required in-person treatment phase, long-term endocrine therapy may be continued at home under medical supervision. For chemotherapy or radiation, however, treatment schedules may require repeated visits to the treating centre. The treating hospital should provide a practical schedule before the patient makes travel arrangements."
+        },
+        {
+          "id": "btn_089",
+          "type": "button",
+          "label": "Ask how long you should plan to stay",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "h_090",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast Cancer Treatment Cost in India for International Patients"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "There is no single cost for breast cancer treatment in India. The total expense depends on the treatment pathway. See the [complete cost guide](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "| Cost component | What may influence the cost |\n| --- | --- |\n| Diagnosis | Pathology, imaging and additional testing |\n| Surgery | Type and complexity of surgery |\n| Hospitalization | Length of stay and room category |\n| Chemotherapy | Medicines, number of cycles and administration |\n| Targeted therapy | Medicine selected and treatment duration |\n| Radiation | Planning and number of treatment sessions |\n| Hormone therapy | Medicine and treatment duration |\n| Reconstruction | Technique, implants and surgical complexity |\n| Follow-up | Consultations, investigations and monitoring |"
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "A case-specific quotation is therefore more useful than a generic \"breast cancer treatment cost.\" Patients can review the individual GAF Healthcare cost pages relevant to their treatment."
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "[Request a case-specific quotation](/consult?treatment=Breast%20Cancer%20Treatment%20in%20India)"
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 2,
+          "text": "What Can Increase the Overall Treatment Cost?"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "Several factors can substantially change the final expense: cancer stage, treatment type, drug selection, treatment duration, reconstruction, additional testing and complications. Unplanned treatment or prolonged hospitalization can increase the overall cost."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 2,
+          "text": "What Documents Should International Patients Bring?"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Patients should create a complete medical file before travelling."
+        },
+        {
+          "id": "ul_099",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Passport identification details required by the hospital",
+            "Biopsy and histopathology reports",
+            "ER, PR and HER2 reports",
+            "Mammography, ultrasound and MRI reports if performed",
+            "CT/PET-CT reports where applicable",
+            "Previous surgery reports and discharge summaries",
+            "Chemotherapy and radiation records",
+            "Current medication list"
+          ]
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Where possible, bring the actual imaging files rather than only printed reports — mammography, MRI, CT and PET-CT images. This can allow the Indian medical team to review the original studies."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 2,
+          "text": "Should Pathology Slides or Blocks Be Brought to India?"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "In some cases, the treating hospital may request the original pathology material for review. This can be particularly relevant when the diagnosis is complex, the treatment plan depends heavily on pathology, previous testing is incomplete, there is uncertainty about receptor status, or a second pathology opinion is required."
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "Patients should ask the receiving hospital in advance whether slides or tissue blocks are required and how they should be transported. Hospitals in [Delhi NCR](/hospitals/India/Delhi-NCR), [Mumbai](/hospitals/India/Mumbai), [Bengaluru](/hospitals/India/Bengaluru), [Chennai](/hospitals/India/Chennai) and [Hyderabad](/hospitals/India/Hyderabad) can confirm what to send."
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens During the First Hospital Visit?"
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "The first in-person consultation may involve a medical history, physical examination, record review and a treatment discussion. Tests may be ordered if existing information is insufficient. The doctor explains the proposed treatment sequence and alternatives where appropriate."
+        },
+        {
+          "id": "h_106",
+          "type": "heading",
+          "level": 2,
+          "text": "Can International Patients Get a Second Opinion in India?"
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "Yes. A second opinion may be particularly useful when the recommended treatment is complex, several treatment options are possible, major surgery is being considered, reconstruction is involved, the patient has recurrent or metastatic disease, previous treatment has not worked as expected, or the pathology is unusual or unclear."
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "For an effective second opinion, the complete medical record should be provided."
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "[Request a second-opinion review](/consult?treatment=Breast%20Cancer%20Treatment%20in%20India)"
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 2,
+          "text": "Multidisciplinary Breast Cancer Care"
+        },
+        {
+          "id": "img_111",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-intl-team-visual.png",
+          "alt": "A patient seated with a surgeon, medical oncologist, radiation oncologist, radiologist and pathologist",
+          "caption": "Surgical oncology, medical oncology, radiation oncology, radiology and pathology often share one plan rather than working in isolation."
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "Breast cancer treatment can involve several medical specialties. A multidisciplinary team may include a breast surgical oncologist, medical oncologist, radiation oncologist, radiologist, pathologist and reconstructive surgeon. The exact team composition depends on the hospital and the patient's treatment needs."
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 2,
+          "text": "How Should International Patients Choose a Hospital in India?"
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "Patients should consider whether the hospital can provide the specific services required for their diagnosis. Important questions include whether the hospital has breast surgical oncology, medical oncology, radiation oncology, pathology review, advanced imaging, reconstruction if needed, coordinated specialists, international-patient logistics, a detailed quotation and follow-up after the patient returns home."
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "The right hospital depends on the patient's medical requirements rather than simply the hospital's overall reputation."
+        },
+        {
+          "id": "h_116",
+          "type": "heading",
+          "level": 2,
+          "text": "Questions to Ask Before Travelling to India"
+        },
+        {
+          "id": "ul_117",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Has my medical file been reviewed?",
+            "Does the hospital need my original pathology slides?",
+            "Will I need additional tests after arrival?",
+            "Which specialists will I meet?",
+            "Is surgery likely?",
+            "Will chemotherapy be required?",
+            "Will radiation be required?",
+            "Will I need targeted or hormone therapy?",
+            "How long is the expected treatment period?",
+            "How long should I plan to stay after surgery?",
+            "What is included in the quotation?",
+            "What expenses are excluded?",
+            "Will follow-up be possible remotely?",
+            "What medical care will I need after returning home?"
+          ]
+        },
+        {
+          "id": "h_118",
+          "type": "heading",
+          "level": 2,
+          "text": "Practical Travel Planning for Breast Cancer Treatment"
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "Medical treatment is only one part of international travel. Patients should also plan for accommodation, local transportation, medical appointments, caregiver support, medication, recovery time, travel after surgery, follow-up visits and emergency contact arrangements."
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "Patients undergoing major surgery may need a caregiver during the initial recovery period. The treating hospital should advise when the patient is medically fit to travel."
+        },
+        {
+          "id": "h_121",
+          "type": "heading",
+          "level": 2,
+          "text": "What About Accommodation During Treatment?"
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "Accommodation requirements vary according to treatment. A short consultation may need only a brief stay. Surgery may benefit from accommodation close to the hospital after discharge. Radiation and chemotherapy often require repeated visits, so staying nearby matters."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 2,
+          "text": "Continuing Treatment After Returning Home"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "Some patients can continue part of their treatment with an oncologist in their home country. This is particularly relevant for long-term treatments such as endocrine therapy."
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "Before leaving India, patients should request the final diagnosis, pathology reports, treatment summary, surgery report, medication list, chemotherapy details, radiation plan and treatment summary, targeted therapy details and follow-up recommendations."
+        },
+        {
+          "id": "h_126",
+          "type": "heading",
+          "level": 2,
+          "text": "What Should the Patient Carry After Treatment?"
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "Before leaving India, patients should ideally obtain copies of the final pathology report, operative report, discharge summary, imaging reports and files, treatment protocol, chemotherapy records, radiation summary, medication list and follow-up plan. Keep these records securely because they may be needed for future consultations."
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "[WhatsApp GAF if you need a document checklist](https://wa.me/919044346292?text=Please%20send%20a%20document%20checklist%20for%20breast%20cancer%20treatment%20in%20India.)"
+        },
+        {
+          "id": "h_129",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast Cancer Treatment in India: Key Takeaways for International Patients"
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "International patients can access a broad range of breast cancer treatment options in India, including breast-conserving surgery, mastectomy, nipple-sparing mastectomy, breast reconstruction, chemotherapy, radiation therapy, hormone therapy, HER2-targeted therapy and immunotherapy in selected cases."
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "The most important step is to understand the individual cancer diagnosis and treatment plan before making travel arrangements. Patients should ideally have their pathology, imaging and previous treatment records reviewed in advance."
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "The overall treatment duration and cost depend on the cancer stage, tumour biology, treatment sequence, medicines, surgery, radiation and follow-up requirements. For international patients, the goal should be to plan the complete treatment journey, not simply arrange one procedure."
+        },
+        {
+          "id": "btn_133",
+          "type": "button",
+          "label": "Start the Breast Cancer Treatment in India pathway",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "h_134",
+          "type": "heading",
+          "level": 2,
+          "text": "GAF Healthcare Resources"
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Breast Cancer Diagnosis](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)\n- [ER, PR and HER2 results](/blogs/er-pr-her2-breast-cancer-treatment-india)\n- [Breast Cancer Treatment by Stage](/blogs/breast-cancer-treatment-by-stage)\n- [Breast Cancer Stages 0–4](/blogs/breast-cancer-stages-0-1-2-3-4)\n- [Breast Cancer Treatment Cost in India](/blogs/breast-cancer-treatment-cost-in-india)\n- [Breast-Conserving Surgery Doctors in India](/doctors/India/Surgical-Oncology/Lumpectomy)\n- [Mastectomy Doctors in India](/doctors/India/Surgical-Oncology/Mastectomy)\n- [Nipple-Sparing Mastectomy Doctors in India](/doctors/India/Surgical-Oncology/Nipple-Sparing-Mastectomy)\n- [Oncoplastic Breast Surgery Doctors in India](/doctors/India/Surgical-Oncology/Oncoplastic-Breast-Surgery)\n- [Breast Reconstruction Doctors in India](/doctors/India/Surgical-Oncology/Breast-Reconstruction)\n- [Chemotherapy Doctors in India](/doctors/India/Medical-Oncology/Chemotherapy)\n- [Targeted Therapy Doctors in India](/doctors/India/Medical-Oncology/Targeted-Therapy)\n- [Hormone Therapy Doctors in India](/doctors/India/Medical-Oncology/Hormone-Therapy)\n- [Immunotherapy Doctors in India](/doctors/India/Medical-Oncology/Immunotherapy)"
+        },
+        {
+          "id": "h_136",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_137",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients get breast cancer treatment in India?"
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "Yes. International patients can travel to India for breast cancer evaluation and treatment, subject to applicable travel and medical requirements."
+        },
+        {
+          "id": "h_139",
+          "type": "heading",
+          "level": 3,
+          "text": "Can my medical records be reviewed before I travel?"
+        },
+        {
+          "id": "p_140",
+          "type": "paragraph",
+          "text": "In many cases, hospitals can review medical records, pathology and imaging before the patient's arrival. The receiving hospital should confirm exactly which documents it requires."
+        },
+        {
+          "id": "h_141",
+          "type": "heading",
+          "level": 3,
+          "text": "What medical records should I send first?"
+        },
+        {
+          "id": "p_142",
+          "type": "paragraph",
+          "text": "A useful initial file generally includes the biopsy and histopathology reports, ER/PR/HER2 results, imaging reports, previous treatment records and current medication list."
+        },
+        {
+          "id": "h_143",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I get a second opinion in India?"
+        },
+        {
+          "id": "p_144",
+          "type": "paragraph",
+          "text": "Yes. A second opinion can be sought from a breast cancer specialist or multidisciplinary team, particularly when treatment decisions are complex."
+        },
+        {
+          "id": "h_145",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does breast cancer treatment cost in India?"
+        },
+        {
+          "id": "p_146",
+          "type": "paragraph",
+          "text": "There is no universal cost. The total expense depends on the diagnosis, stage, surgery, medicines, chemotherapy, radiation, targeted treatment, hospitalization and follow-up."
+        },
+        {
+          "id": "h_147",
+          "type": "heading",
+          "level": 3,
+          "text": "How long do international patients need to stay in India?"
+        },
+        {
+          "id": "p_148",
+          "type": "paragraph",
+          "text": "The duration depends on treatment. Surgery, chemotherapy and radiation have different schedules, so the treating hospital should provide an individualized timeline."
+        },
+        {
+          "id": "h_149",
+          "type": "heading",
+          "level": 3,
+          "text": "Can chemotherapy be started in India and completed in my home country?"
+        },
+        {
+          "id": "p_150",
+          "type": "paragraph",
+          "text": "In some situations, treatment can be coordinated between medical teams, but this must be planned in advance with the treating oncologists."
+        },
+        {
+          "id": "h_151",
+          "type": "heading",
+          "level": 3,
+          "text": "Can hormone therapy be continued after returning home?"
+        },
+        {
+          "id": "p_152",
+          "type": "paragraph",
+          "text": "Hormone therapy is often a long-term treatment and may be continued under the supervision of an oncologist in the patient's home country when appropriate."
+        },
+        {
+          "id": "h_153",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast reconstruction be performed in India?"
+        },
+        {
+          "id": "p_154",
+          "type": "paragraph",
+          "text": "Yes. Reconstruction may be performed immediately with mastectomy or as a delayed procedure, depending on the patient's cancer treatment and reconstructive plan."
+        },
+        {
+          "id": "h_155",
+          "type": "heading",
+          "level": 3,
+          "text": "Do I need to bring my pathology slides to India?"
+        },
+        {
+          "id": "p_156",
+          "type": "paragraph",
+          "text": "Not necessarily in every case. However, the receiving hospital may request pathology slides or tissue blocks for review. Patients should confirm this before travelling."
+        },
+        {
+          "id": "h_157",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast cancer treatment be planned completely before I arrive?"
+        },
+        {
+          "id": "p_158",
+          "type": "paragraph",
+          "text": "A preliminary treatment plan may be possible after medical-record review, but the final plan can change after physical examination, additional investigations or multidisciplinary review."
+        },
+        {
+          "id": "h_159",
+          "type": "heading",
+          "level": 3,
+          "text": "Can GAF Healthcare help coordinate breast cancer treatment in India?"
+        },
+        {
+          "id": "p_160",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help international patients explore treatment pathways, doctors, hospitals and treatment-cost information in India. The final diagnosis and medical treatment plan are determined by the treating medical team."
+        }
+      ]
+    },
     {
       "id": "art_breast_cancer_diagnosis_tests_biopsy_er_pr_her2",
       "slug": "breast-cancer-diagnosis-tests-biopsy-er-pr-her2",
@@ -230,6 +1273,10 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Breast Cancer Treatment for International Patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
         },
         {
           "label": "ER, PR and HER2 results",
@@ -1299,6 +2346,10 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Breast Cancer Treatment for International Patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
         },
         {
           "label": "Breast Cancer Diagnosis: Tests, Biopsy, ER, PR and HER2",
@@ -2410,6 +3461,10 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Breast Cancer Treatment for International Patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
         },
         {
           "label": "Breast Cancer Diagnosis: Tests, Biopsy, ER, PR and HER2",
@@ -3669,6 +4724,10 @@
           "href": "/treatments/breast-cancer-treatment-in-india"
         },
         {
+          "label": "Breast Cancer Treatment for International Patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
           "label": "Breast Cancer Diagnosis: Tests, Biopsy, ER, PR and HER2",
           "href": "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2"
         },
@@ -4749,6 +5808,10 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Breast Cancer Treatment for International Patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
         },
         {
           "label": "Breast Cancer Diagnosis: Tests, Biopsy, ER, PR and HER2",

@@ -61,6 +61,11 @@ const nextConfig = {
         destination: "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2",
         permanent: true,
       },
+      {
+        source: "/blog/breast-cancer-treatment-india-international-patients",
+        destination: "/blogs/breast-cancer-treatment-india-international-patients",
+        permanent: true,
+      },
       { source: "/about", destination: "/", permanent: true },
     ];
   },
