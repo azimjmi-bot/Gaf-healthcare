@@ -71,6 +71,11 @@ const nextConfig = {
         destination: "/blogs/her2-positive-breast-cancer-treatment-india",
         permanent: true,
       },
+      {
+        source: "/blog/hormone-therapy-breast-cancer-india",
+        destination: "/blogs/hormone-therapy-breast-cancer-india",
+        permanent: true,
+      },
       { source: "/about", destination: "/", permanent: true },
     ];
   },
