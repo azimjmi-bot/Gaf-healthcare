@@ -4,6 +4,7 @@ import { listPublishedPosts } from "@/lib/blogs";
 import { buildBlogSitemap, buildLocaleSitemap, sitemapXml } from "@/lib/i18n/sitemap-entries";
 
 const NEW_SLUGS = [
+  "ductal-carcinoma-in-situ-dcis-treatment-india",
   "breast-cancer-during-pregnancy-treatment-india",
   "invasive-lobular-carcinoma-treatment-india",
   "breast-cancer-in-young-women-treatment-india",
@@ -50,7 +51,7 @@ test("the blog sitemap lists every published English article, newest first", () 
     assert.equal(row.changeFrequency, "weekly");
     assert.equal(row.priority, 0.7);
   }
-  assert.equal(urls[1], "https://gaf.healthcare/blogs/breast-cancer-during-pregnancy-treatment-india");
+  assert.equal(urls[1], "https://gaf.healthcare/blogs/ductal-carcinoma-in-situ-dcis-treatment-india");
   assert.equal(buildBlogSitemap("ar").length, 0);
 });
 

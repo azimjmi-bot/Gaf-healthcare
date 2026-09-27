@@ -8,6 +8,11 @@ import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
 
 const ARTICLES = [
   {
+    slug: "ductal-carcinoma-in-situ-dcis-treatment-india",
+    seoTitle: "Ductal Carcinoma in Situ (DCIS): Treatment & Cost in India",
+    image: "dcis-consult-visual.webp",
+  },
+  {
     slug: "breast-cancer-radiation-side-effects",
     seoTitle: "Breast Cancer Radiation Side Effects: Skin, Fatigue & Recovery",
     image: "radiation-side-effects-planning-visual.webp",

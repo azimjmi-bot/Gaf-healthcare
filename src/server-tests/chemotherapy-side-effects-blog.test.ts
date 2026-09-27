@@ -24,6 +24,7 @@ test("the published chemotherapy side-effects blog is complete, interlinked and 
   const texts = post.blocks
     .map((block) => {
       if (block.type === "paragraph") return block.text;
+      if (block.type === "heading") return block.text;
       if (block.type === "button") return `[${block.label}](${block.href})`;
       if (block.type === "image") return block.src;
       if (block.type === "html") return block.html;
@@ -34,6 +35,10 @@ test("the published chemotherapy side-effects blog is complete, interlinked and 
   assert.match(texts, /article-quick-answer/);
   assert.match(texts, /What are the most common chemotherapy side effects in breast cancer\?/);
   assert.match(texts, /Can chemotherapy affect fertility\?/);
+  assert.match(texts, /1\. Hair Loss During Breast Cancer Chemotherapy/);
+  assert.match(texts, /What Is Neutropenia\?/);
+  assert.match(texts, /12\. Hand-Foot Syndrome/);
+  assert.match(texts, /17\. Can Chemotherapy Cause Long-Term Side Effects\?/);
   assert.match(texts, /wa\.me\/919044346292/);
   assert.match(texts, /\/treatments\/breast-cancer-treatment-in-india/);
   assert.match(texts, /\/blogs\/chemotherapy-for-breast-cancer-in-india/);

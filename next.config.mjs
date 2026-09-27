@@ -161,6 +161,11 @@ const nextConfig = {
         destination: "/blogs/breast-cancer-during-pregnancy-treatment-india",
         permanent: true,
       },
+      {
+        source: "/blog/ductal-carcinoma-in-situ-dcis-treatment-india",
+        destination: "/blogs/ductal-carcinoma-in-situ-dcis-treatment-india",
+        permanent: true,
+      },
       { source: "/about", destination: "/", permanent: true },
     ];
   },
