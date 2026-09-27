@@ -190,7 +190,7 @@ const blocks = [
   h3("Potential benefits of minimally invasive surgery"),
   p("Patients may experience smaller incisions, less postoperative discomfort, lower blood loss in many cases, shorter hospitalisation and faster initial recovery."),
   p("But robotic surgery is not automatically the right treatment for every prostate cancer patient. The cancer stage and risk profile come first."),
-  p("**Related:** [Robotic Prostatectomy in India](" + RP_DOCTORS + ") and the [India treatment pathway](" + PILLAR + ")."),
+  p("**Related:** [Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india) and the [India treatment pathway](" + PILLAR + ")."),
   btn("Ask whether robotic prostatectomy is appropriate", consult("Radical Prostatectomy")),
   p("[WhatsApp +91 90443 46292 about robotic surgery](" + wa("I would like to know if robotic radical prostatectomy is appropriate for my case in India.") + ")"),
 
@@ -571,7 +571,7 @@ const article = {
   ],
   relatedLinks: [
     { label: "Prostate Cancer Treatment in India", href: PILLAR },
-    { label: "Robotic Prostatectomy in India", href: RP_DOCTORS },
+    { label: "Robotic Prostatectomy in India", href: "/blogs/robotic-prostatectomy-in-india" },
     { label: "Brachytherapy for Prostate Cancer", href: BRACHY },
     { label: "Lutetium-177 PSMA Therapy in India", href: PILLAR },
     { label: "Prostate Cancer Treatment Cost in India", href: RP_COST },

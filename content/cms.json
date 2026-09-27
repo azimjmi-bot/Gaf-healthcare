@@ -68,7 +68,8 @@
     "DCIS",
     "stage 0",
     "prostate cancer",
-    "active surveillance"
+    "active surveillance",
+    "robotic prostatectomy"
   ],
   "media": [
     {
@@ -861,9 +862,3349 @@
       "name": "pca-nonsurg-systemic.webp",
       "alt": "Male patient on an examination table with a lower-abdomen overlay while a clinician holds a medicine vial",
       "addedAt": "2026-09-28T04:00:00.000Z"
+    },
+    {
+      "id": "media_rarp_anatomy_webp",
+      "url": "/uploads/articles/rarp-anatomy.webp",
+      "name": "rarp-anatomy.webp",
+      "alt": "Transparent male body highlighting the lower abdomen and pelvis for robotic prostatectomy planning",
+      "addedAt": "2026-09-28T04:30:00.000Z"
+    },
+    {
+      "id": "media_rarp_ports_webp",
+      "url": "/uploads/articles/rarp-ports.webp",
+      "name": "rarp-ports.webp",
+      "alt": "Male patient on an operating couch with a pelvic-bone overlay showing the small-incision robotic approach",
+      "addedAt": "2026-09-28T04:30:00.000Z"
+    },
+    {
+      "id": "media_rarp_nerves_webp",
+      "url": "/uploads/articles/rarp-nerves.webp",
+      "name": "rarp-nerves.webp",
+      "alt": "Male pelvis with gold nerve pathways alongside the prostate, used to explain nerve-sparing robotic prostatectomy",
+      "addedAt": "2026-09-28T04:30:00.000Z"
+    },
+    {
+      "id": "media_rarp_recovery_webp",
+      "url": "/uploads/articles/rarp-recovery.webp",
+      "name": "rarp-recovery.webp",
+      "alt": "Male patient in a clinic chair with a pelvic overlay while a clinician reviews post-operative recovery on a tablet",
+      "addedAt": "2026-09-28T04:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_robotic_prostatectomy_in_india",
+      "slug": "robotic-prostatectomy-in-india",
+      "title": "Robotic Prostatectomy in India: Procedure, Recovery, Risks and Cost",
+      "excerpt": "How robot-assisted radical prostatectomy is performed, who may be a candidate, nerve-sparing, recovery, risks and indicative costs in India.",
+      "date": "28 September 2026",
+      "publishedAt": "2026-09-28T04:30:00.000Z",
+      "updatedAt": "2026-09-28T04:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "prostate cancer",
+        "surgery",
+        "robotic prostatectomy",
+        "India",
+        "travel",
+        "cost"
+      ],
+      "image": "/uploads/articles/rarp-anatomy.webp",
+      "imageAlt": "Transparent male body highlighting the lower abdomen and pelvis for robotic prostatectomy planning",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Robotic Prostatectomy in India: Procedure, Recovery & Cost",
+      "seoDescription": "Robot-assisted radical prostatectomy in India: who it is for, nerve-sparing, hospital stay, catheter, recovery, risks and cost. Itemized estimates for international patients.",
+      "canonical": "https://gaf.healthcare/blogs/robotic-prostatectomy-in-india",
+      "ogImage": "/uploads/articles/rarp-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "robotic prostatectomy in India",
+        "robotic prostatectomy cost in India",
+        "robotic radical prostatectomy India",
+        "robotic prostate cancer surgery India",
+        "robotic prostate surgery",
+        "robotic prostatectomy procedure",
+        "robotic prostatectomy recovery",
+        "nerve-sparing robotic prostatectomy",
+        "prostatectomy cost India",
+        "RARP India",
+        "robotic prostatectomy hospital stay",
+        "international robotic prostatectomy India"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Prostate Cancer Treatment in India",
+          "href": "/treatments/prostate-cancer-treatment-in-india"
+        },
+        {
+          "label": "Prostate Cancer Treatment Options",
+          "href": "/blogs/prostate-cancer-treatment-options-india"
+        },
+        {
+          "label": "Treatment without surgery",
+          "href": "/blogs/prostate-cancer-treatment-without-surgery"
+        },
+        {
+          "label": "Radical prostatectomy cost",
+          "href": "/costs/India/Surgical-Oncology/Radical-Prostatectomy"
+        },
+        {
+          "label": "Robotic prostatectomy doctors",
+          "href": "/doctors/India/Surgical-Oncology/Radical-Prostatectomy"
+        },
+        {
+          "label": "Hospitals for prostatectomy",
+          "href": "/hospitals/India/Surgical-Oncology/Radical-Prostatectomy"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>What is robotic prostatectomy?</strong></p><p class=\"article-quick-answer__body\"><strong>Robotic prostatectomy, usually called robot-assisted radical prostatectomy (RARP), is a minimally invasive operation used to remove the prostate gland and seminal vesicles, and sometimes nearby lymph nodes, most commonly to treat prostate cancer.</strong></p><p class=\"article-quick-answer__body\">The surgeon controls specialised robotic instruments from a console. The system provides a magnified three-dimensional view of the operating area and allows fine movements through small abdominal incisions.</p><p class=\"article-quick-answer__body\">Robotic surgery is generally considered for men whose prostate cancer is suitable for radical prostatectomy, particularly localized disease and selected locally advanced or higher-risk cancers. The European Association of Urology (EAU) describes radical prostatectomy as a treatment intended to remove the prostate completely with the aim of curing the cancer.</p><p class=\"article-quick-answer__body\"><strong>How much does robotic prostatectomy cost in India?</strong></p><p class=\"article-quick-answer__body\">Published hospital and medical-tourism estimates vary considerably. Apollo Hospitals currently lists <strong>₹2 lakh–₹4 lakh</strong> as an indicative range for robotic prostatectomy, while a Medanta estimate published through Vaidam lists approximately <strong>₹1.70 lakh–₹4.75 lakh</strong> for international patients. These are indicative figures, not guaranteed quotations.</p><p class=\"article-quick-answer__body\">The final price depends on:</p><ul class=\"article-quick-answer__list\"><li>Hospital</li><li>City</li><li>Surgeon</li><li>Robotic platform</li><li>Cancer stage</li><li>Whether lymph nodes need to be removed</li><li>Hospital stay</li><li>Diagnostic tests</li><li>Pathology</li><li>Medicines and consumables</li><li>Post-operative requirements</li></ul></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Robotic prostatectomy is a form of **[radical prostatectomy](/costs/India/Surgical-Oncology/Radical-Prostatectomy)** performed using a robotic-assisted surgical system. This guide sits beside the [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) pathway, the [treatment-options explainer](/blogs/prostate-cancer-treatment-options-india) and the [treatment-without-surgery guide](/blogs/prostate-cancer-treatment-without-surgery)."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "The word “robotic” can sometimes be misleading."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "The robot does **not** independently decide where to cut or perform the operation."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "The surgeon controls the instruments throughout the procedure."
+        },
+        {
+          "id": "p_006",
+          "type": "paragraph",
+          "text": "The robotic system translates the surgeon's hand movements into precise movements of small instruments inside the patient's body."
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "This allows the operation to be performed through several small incisions rather than one large abdominal incision."
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "The EAU describes robot-assisted laparoscopic surgery as a form of keyhole surgery in which trained surgeons control instruments from a console."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "International patients comparing [uro-oncology teams](/doctors/India/Surgical-Oncology/Radical-Prostatectomy) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Surgical-Oncology/Radical-Prostatectomy), [Mumbai](/doctors/India/Mumbai/Surgical-Oncology/Radical-Prostatectomy), [Bengaluru](/doctors/India/Bengaluru/Surgical-Oncology/Radical-Prostatectomy), [Chennai](/doctors/India/Chennai/Surgical-Oncology/Radical-Prostatectomy) and [Hyderabad](/doctors/India/Hyderabad/Surgical-Oncology/Radical-Prostatectomy)."
+        },
+        {
+          "id": "btn_010",
+          "type": "button",
+          "label": "Ask whether robotic prostatectomy is appropriate",
+          "href": "/consult?treatment=Robotic%20Prostatectomy"
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your PSA, biopsy and MRI](https://wa.me/919044346292?text=Please%20review%20my%20PSA%2C%20biopsy%20and%20MRI%20and%20advise%20whether%20robotic%20prostatectomy%20in%20India%20is%20appropriate.)"
+        },
+        {
+          "id": "img_012",
+          "type": "image",
+          "src": "/uploads/articles/rarp-anatomy.webp",
+          "alt": "Transparent male body highlighting the lower abdomen and pelvis for robotic prostatectomy planning",
+          "caption": "Robotic prostatectomy removes the prostate through small abdominal ports. The robot does not operate independently — the surgeon controls every movement."
+        },
+        {
+          "id": "h_013",
+          "type": "heading",
+          "level": 2,
+          "text": "What Does Radical Prostatectomy Remove?"
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "During a radical prostatectomy, the surgeon removes the entire prostate gland."
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "The seminal vesicles are generally removed as part of the operation."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "Depending on the patient's cancer risk, pelvic lymph nodes may also be removed and sent for pathological examination."
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "After the prostate is removed, the surgeon reconnects the bladder to the urethra."
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "This connection is called a **vesicourethral anastomosis**."
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "A urinary catheter is left temporarily to allow the connection to heal."
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Is Robotic Prostatectomy Performed?"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "The main reason is **prostate cancer that is considered suitable for surgical treatment**."
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "Radical prostatectomy can be considered when the cancer:"
+        },
+        {
+          "id": "ul_023",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Is confined to the prostate",
+            "Has a reasonable chance of being completely removed",
+            "Has not spread extensively to distant organs",
+            "Is appropriate for surgery based on the patient's health and life expectancy"
+          ]
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "Selected men with locally advanced or higher-risk disease may also undergo surgery as part of a broader treatment strategy."
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "The EAU notes that radical prostatectomy is commonly offered to men with localized higher-intermediate-risk and high-risk prostate cancer, as well as selected locally advanced cases."
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 2,
+          "text": "Who Is a Candidate for Robotic Prostatectomy?"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "There is no single PSA level or age that automatically makes someone eligible."
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "Doctors consider the complete clinical picture."
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "Important factors include:"
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Cancer stage"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "The cancer should be assessed to determine whether it is:"
+        },
+        {
+          "id": "ul_032",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Confined to the prostate",
+            "Extending outside the prostate",
+            "Involving lymph nodes",
+            "Metastatic"
+          ]
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Grade Group"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "The biopsy provides a Gleason score and Grade Group."
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "These help determine how aggressive the cancer appears."
+        },
+        {
+          "id": "h_036",
+          "type": "heading",
+          "level": 3,
+          "text": "3. PSA level"
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "PSA is an important part of risk assessment and follow-up."
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "However, PSA alone does not determine whether surgery is appropriate."
+        },
+        {
+          "id": "h_039",
+          "type": "heading",
+          "level": 3,
+          "text": "4. MRI findings"
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "Multiparametric MRI can provide information about:"
+        },
+        {
+          "id": "ul_041",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Tumour location",
+            "Extraprostatic extension",
+            "Seminal-vesicle involvement",
+            "Prostate anatomy"
+          ]
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 3,
+          "text": "5. Overall health"
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "The patient must be medically fit enough to undergo major surgery and general anaesthesia."
+        },
+        {
+          "id": "h_044",
+          "type": "heading",
+          "level": 3,
+          "text": "6. Life expectancy"
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "Radical prostatectomy is generally considered when the expected benefit of treating the cancer is meaningful over the patient's expected lifespan."
+        },
+        {
+          "id": "h_046",
+          "type": "heading",
+          "level": 3,
+          "text": "7. Patient preferences"
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "Some patients prefer surgery."
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "Others prefer [radiation](/costs/India/Radiation-Oncology/EBRT) or [another treatment](/blogs/prostate-cancer-treatment-without-surgery) after discussing the potential advantages and side effects."
+        },
+        {
+          "id": "btn_049",
+          "type": "button",
+          "label": "Share records for a surgical second opinion",
+          "href": "/consult?treatment=Robotic%20Prostatectomy"
+        },
+        {
+          "id": "h_050",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Robotic Prostatectomy Used Only for Early Prostate Cancer?"
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "No."
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Robotic prostatectomy is most commonly associated with localized prostate cancer, but surgery can also be considered in selected higher-risk or locally advanced cases."
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "In those situations, the operation may be more extensive and can include pelvic lymph-node dissection."
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "The decision depends on whether surgery forms a reasonable part of an overall cancer-control strategy."
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "The EAU specifically notes that radical prostatectomy can be used in selected locally advanced disease."
+        },
+        {
+          "id": "h_056",
+          "type": "heading",
+          "level": 2,
+          "text": "When Robotic Prostatectomy May Not Be the Right Treatment"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "Robotic surgery is not automatically appropriate for every prostate cancer patient."
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "It may not be the preferred approach when:"
+        },
+        {
+          "id": "ul_059",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Cancer has extensive distant spread",
+            "The patient is medically unfit for major surgery",
+            "Life expectancy is limited",
+            "Radiation or systemic treatment is more appropriate",
+            "The risks of surgery outweigh the expected benefit"
+          ]
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "For metastatic prostate cancer, treatment is usually centred on [systemic therapy](/costs/India/Medical-Oncology/Hormone-Therapy) rather than removing the prostate alone."
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "This is why staging before surgery is critical. See [Prostate Cancer Treatment Without Surgery](/blogs/prostate-cancer-treatment-without-surgery) when surgery is not the main pathway."
+        },
+        {
+          "id": "h_062",
+          "type": "heading",
+          "level": 2,
+          "text": "Tests Before Robotic Prostatectomy"
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "Before surgery, the medical team needs to understand both the cancer and the patient's fitness for an operation."
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "Depending on the case, pre-operative assessment may include:"
+        },
+        {
+          "id": "ul_065",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "PSA",
+            "Prostate biopsy",
+            "Gleason score",
+            "Grade Group",
+            "MRI prostate",
+            "PSMA PET/CT in selected patients",
+            "CT or other imaging where indicated",
+            "Blood tests",
+            "Kidney and liver function",
+            "ECG",
+            "Chest assessment where appropriate",
+            "Anaesthesia evaluation"
+          ]
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "Not every patient requires every test."
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "The staging work-up is selected according to the patient's risk and the information required to plan treatment."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "The 2026 EAU prostate cancer guideline updates include changes relating to MRI, staging and active-surveillance recommendations, reflecting continuing updates in prostate cancer management."
+        },
+        {
+          "id": "h_069",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens During Robotic Prostatectomy?"
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "The exact surgical technique varies between surgeons and patients, but the procedure generally follows several major steps."
+        },
+        {
+          "id": "img_071",
+          "type": "image",
+          "src": "/uploads/articles/rarp-ports.webp",
+          "alt": "Male patient on an operating couch with a pelvic-bone overlay showing the small-incision robotic approach",
+          "caption": "Several small abdominal ports carry the camera and instruments. The surgeon works from a console rather than standing over a large incision."
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 1: General anaesthesia"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "The patient is placed under general anaesthesia."
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "He remains asleep throughout the operation."
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 2: Small abdominal incisions"
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "Several small incisions are made in the abdomen."
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "Ports are inserted through these openings."
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "The robotic instruments and camera are introduced through the ports."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 3: Robotic system is positioned"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "The surgical team connects the instruments to the robotic system."
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "The surgeon sits at a console and controls the instruments."
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "The high-definition camera provides an enlarged view of the operating field."
+        },
+        {
+          "id": "h_083",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 4: The prostate is exposed"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "The surgeon carefully separates the prostate from surrounding structures."
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "The anatomy is particularly important because nerves, blood vessels, the bladder and rectum are located close to the prostate."
+        },
+        {
+          "id": "h_086",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 5: Nerve-sparing assessment"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "If cancer location allows it, the surgeon may attempt to preserve the neurovascular bundles responsible for erectile function."
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "This is known as **nerve-sparing prostatectomy**."
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "However, nerve preservation is not performed at the expense of cancer control."
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "If the tumour is close to or involves the nerves, the surgeon may need to remove part or all of the affected nerve tissue."
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "The EAU specifically states that nerve-sparing can reduce the risk of erectile dysfunction and urinary problems when oncologically safe, but the nerves may need to be removed if the cancer is close to them."
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 about nerve-sparing and lymph-node plans](https://wa.me/919044346292?text=I%20would%20like%20to%20discuss%20nerve-sparing%20robotic%20prostatectomy%20and%20lymph-node%20dissection%20in%20India.)"
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Nerve-Sparing Robotic Prostatectomy?"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "Nerve-sparing surgery aims to preserve the delicate nerve structures alongside the prostate."
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "These nerves are important for erections."
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "Preserving them may improve the possibility of recovering erectile function after surgery."
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "But **nerve-sparing does not guarantee normal erections after surgery**."
+        },
+        {
+          "id": "img_098",
+          "type": "image",
+          "src": "/uploads/articles/rarp-nerves.webp",
+          "alt": "Male pelvis with gold nerve pathways alongside the prostate, used to explain nerve-sparing robotic prostatectomy",
+          "caption": "Nerve-sparing is attempted only when cancer control allows it. Unilateral, bilateral or no nerve preservation may be appropriate."
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "Recovery depends on several factors:"
+        },
+        {
+          "id": "ul_100",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Age",
+            "Erectile function before surgery",
+            "Cancer location",
+            "Whether one or both sides can be spared",
+            "Surgical technique",
+            "Surgeon experience",
+            "Nerve healing",
+            "Other health conditions",
+            "Rehabilitation"
+          ]
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "The American Cancer Society notes that nerve-sparing surgery can improve the likelihood of recovering erections compared with surgery where nerve preservation is not possible."
+        },
+        {
+          "id": "h_102",
+          "type": "heading",
+          "level": 2,
+          "text": "Unilateral vs Bilateral Nerve Sparing"
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "Nerve-sparing does not always mean that both sides can be preserved."
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 3,
+          "text": "Bilateral nerve sparing"
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "The surgeon preserves the neurovascular bundles on both sides when it is considered oncologically safe."
+        },
+        {
+          "id": "h_106",
+          "type": "heading",
+          "level": 3,
+          "text": "Unilateral nerve sparing"
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "The surgeon preserves the nerves on one side but removes or reduces nerve tissue on the other side because of the tumour's location."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "Non-nerve-sparing surgery"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "If the cancer is close to or involving the nerves, preservation may compromise cancer removal."
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "In that situation, cancer control takes priority."
+        },
+        {
+          "id": "h_111",
+          "type": "heading",
+          "level": 2,
+          "text": "Pelvic Lymph-Node Dissection During Robotic Prostatectomy"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "Some patients undergoing radical prostatectomy also require **pelvic lymph-node dissection (PLND)**."
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "The purpose is to determine whether cancer has spread to nearby lymph nodes."
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "It is not automatically performed in every prostate cancer patient."
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "The decision depends on the estimated risk of lymph-node involvement and the treatment plan."
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "If lymph nodes are removed, the procedure can take longer and may increase the risk of complications such as lymphocele."
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "The EAU notes that lymph-node dissection may be performed in higher-risk situations for staging and can add operative complexity."
+        },
+        {
+          "id": "h_118",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Does Robotic Prostatectomy Take?"
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "The exact operating time varies."
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "Factors include:"
+        },
+        {
+          "id": "ul_121",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Patient anatomy",
+            "Previous abdominal surgery",
+            "Prostate size",
+            "Cancer stage",
+            "Nerve-sparing complexity",
+            "Lymph-node dissection",
+            "Surgeon and hospital protocols"
+          ]
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "It is therefore better to ask the treating team for the expected operating time rather than relying on a fixed number."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens Immediately After Surgery?"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "After the operation, the patient is moved to a recovery area."
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "The medical team monitors:"
+        },
+        {
+          "id": "ul_126",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Blood pressure",
+            "Heart rate",
+            "Oxygen levels",
+            "Urine output",
+            "Pain",
+            "Bleeding",
+            "Surgical sites"
+          ]
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "A urinary catheter remains in place while the bladder-to-urethra connection heals."
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "Patients are generally encouraged to start moving and walking as soon as medically appropriate."
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "Early movement helps reduce the risk of blood clots and supports recovery."
+        },
+        {
+          "id": "h_130",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Is the Hospital Stay?"
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "Many patients stay in hospital for approximately **one to two days** after robotic prostatectomy, although the exact duration depends on the patient's condition and the hospital's protocol. Apollo Hospitals currently describes a typical stay of one to two days. The GAF planning sheet for [radical prostatectomy](/costs/India/Surgical-Oncology/Radical-Prostatectomy) uses a typical **3–7 night** range because some patients need longer observation after lymph-node dissection or other medical issues."
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "A longer stay may be necessary if there are:"
+        },
+        {
+          "id": "ul_133",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Medical problems",
+            "Significant bleeding",
+            "Infection",
+            "Urinary issues",
+            "Bowel problems",
+            "Other complications"
+          ]
+        },
+        {
+          "id": "h_134",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Is the Catheter Kept After Robotic Prostatectomy?"
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "A urinary catheter is commonly kept for around **one to two weeks**."
+        },
+        {
+          "id": "p_136",
+          "type": "paragraph",
+          "text": "The exact timing depends on:"
+        },
+        {
+          "id": "ul_137",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Healing of the urinary connection",
+            "Urine leakage testing",
+            "Surgeon preference",
+            "Patient recovery"
+          ]
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "The American Cancer Society states that a catheter usually remains for about one to two weeks after radical prostatectomy."
+        },
+        {
+          "id": "p_139",
+          "type": "paragraph",
+          "text": "Having a catheter at home can be uncomfortable, but it is a temporary part of recovery."
+        },
+        {
+          "id": "h_140",
+          "type": "heading",
+          "level": 2,
+          "text": "Robotic Prostatectomy Recovery Timeline"
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "Recovery differs between patients, but the following provides a general framework."
+        },
+        {
+          "id": "img_142",
+          "type": "image",
+          "src": "/uploads/articles/rarp-recovery.webp",
+          "alt": "Male patient in a clinic chair with a pelvic overlay while a clinician reviews post-operative recovery on a tablet",
+          "caption": "Physical recovery and catheter removal often come weeks before urinary and sexual function fully settle. Follow-up includes PSA."
+        },
+        {
+          "id": "h_143",
+          "type": "heading",
+          "level": 3,
+          "text": "First few days"
+        },
+        {
+          "id": "p_144",
+          "type": "paragraph",
+          "text": "Patients may experience:"
+        },
+        {
+          "id": "ul_145",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Abdominal discomfort",
+            "Fatigue",
+            "Gas-related discomfort",
+            "Urinary catheter discomfort",
+            "Mild blood in the urine",
+            "Limited mobility"
+          ]
+        },
+        {
+          "id": "p_146",
+          "type": "paragraph",
+          "text": "Short walks are usually encouraged."
+        },
+        {
+          "id": "h_147",
+          "type": "heading",
+          "level": 3,
+          "text": "Week 1"
+        },
+        {
+          "id": "p_148",
+          "type": "paragraph",
+          "text": "The focus is on:"
+        },
+        {
+          "id": "ul_149",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Rest",
+            "Walking",
+            "Hydration",
+            "Catheter care",
+            "Wound care",
+            "Pain management"
+          ]
+        },
+        {
+          "id": "p_150",
+          "type": "paragraph",
+          "text": "Heavy lifting should be avoided."
+        },
+        {
+          "id": "h_151",
+          "type": "heading",
+          "level": 3,
+          "text": "Week 2"
+        },
+        {
+          "id": "p_152",
+          "type": "paragraph",
+          "text": "Depending on healing, the catheter may be removed."
+        },
+        {
+          "id": "p_153",
+          "type": "paragraph",
+          "text": "Urinary leakage can occur after catheter removal."
+        },
+        {
+          "id": "p_154",
+          "type": "paragraph",
+          "text": "Pelvic-floor exercises may be recommended."
+        },
+        {
+          "id": "p_155",
+          "type": "paragraph",
+          "text": "Many patients begin to feel considerably more mobile during this period."
+        },
+        {
+          "id": "h_156",
+          "type": "heading",
+          "level": 3,
+          "text": "Weeks 3–4"
+        },
+        {
+          "id": "p_157",
+          "type": "paragraph",
+          "text": "Energy levels generally begin to improve."
+        },
+        {
+          "id": "p_158",
+          "type": "paragraph",
+          "text": "Light daily activities may become easier."
+        },
+        {
+          "id": "p_159",
+          "type": "paragraph",
+          "text": "Patients should still avoid strenuous exercise and heavy lifting until cleared by the surgical team."
+        },
+        {
+          "id": "h_160",
+          "type": "heading",
+          "level": 3,
+          "text": "Weeks 4–6"
+        },
+        {
+          "id": "p_161",
+          "type": "paragraph",
+          "text": "Many patients can gradually return to normal activities."
+        },
+        {
+          "id": "p_162",
+          "type": "paragraph",
+          "text": "The exact timing depends on:"
+        },
+        {
+          "id": "ul_163",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Type of work",
+            "Recovery",
+            "Complications",
+            "Doctor's advice"
+          ]
+        },
+        {
+          "id": "p_164",
+          "type": "paragraph",
+          "text": "The American Cancer Society notes that activities are generally limited for approximately four to six weeks following radical prostatectomy."
+        },
+        {
+          "id": "h_165",
+          "type": "heading",
+          "level": 3,
+          "text": "Beyond 6 weeks"
+        },
+        {
+          "id": "p_166",
+          "type": "paragraph",
+          "text": "Physical recovery continues."
+        },
+        {
+          "id": "p_167",
+          "type": "paragraph",
+          "text": "Urinary control may continue to improve."
+        },
+        {
+          "id": "p_168",
+          "type": "paragraph",
+          "text": "Sexual recovery usually takes considerably longer than wound healing."
+        },
+        {
+          "id": "p_169",
+          "type": "paragraph",
+          "text": "This is an important distinction."
+        },
+        {
+          "id": "p_170",
+          "type": "paragraph",
+          "text": "**Feeling physically recovered does not necessarily mean erectile function has recovered.**"
+        },
+        {
+          "id": "btn_171",
+          "type": "button",
+          "label": "Plan recovery and travel after robotic surgery",
+          "href": "/consult?treatment=Robotic%20Prostatectomy"
+        },
+        {
+          "id": "h_172",
+          "type": "heading",
+          "level": 2,
+          "text": "When Can You Return to Work After Robotic Prostatectomy?"
+        },
+        {
+          "id": "p_173",
+          "type": "paragraph",
+          "text": "It depends on the job."
+        },
+        {
+          "id": "h_174",
+          "type": "heading",
+          "level": 3,
+          "text": "Desk-based work"
+        },
+        {
+          "id": "p_175",
+          "type": "paragraph",
+          "text": "Some patients may return relatively early if they feel comfortable."
+        },
+        {
+          "id": "h_176",
+          "type": "heading",
+          "level": 3,
+          "text": "Physically demanding work"
+        },
+        {
+          "id": "p_177",
+          "type": "paragraph",
+          "text": "A longer recovery period is usually required."
+        },
+        {
+          "id": "p_178",
+          "type": "paragraph",
+          "text": "Heavy lifting and strenuous activity should not be resumed until the surgeon confirms that it is safe."
+        },
+        {
+          "id": "p_179",
+          "type": "paragraph",
+          "text": "Apollo Hospitals states that many patients can return to work within several weeks, depending on the nature of their work and recovery."
+        },
+        {
+          "id": "h_180",
+          "type": "heading",
+          "level": 2,
+          "text": "When Can You Drive After Robotic Prostatectomy?"
+        },
+        {
+          "id": "p_181",
+          "type": "paragraph",
+          "text": "Driving should generally wait until:"
+        },
+        {
+          "id": "ul_182",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "You are no longer taking medicines that impair alertness",
+            "You can sit comfortably",
+            "You can move your legs and body normally",
+            "You can perform an emergency stop safely",
+            "Your surgeon has cleared you to drive"
+          ]
+        },
+        {
+          "id": "p_183",
+          "type": "paragraph",
+          "text": "The exact timing varies between patients."
+        },
+        {
+          "id": "h_184",
+          "type": "heading",
+          "level": 2,
+          "text": "When Can You Travel After Robotic Prostatectomy?"
+        },
+        {
+          "id": "p_185",
+          "type": "paragraph",
+          "text": "This is particularly important for international patients travelling to India."
+        },
+        {
+          "id": "p_186",
+          "type": "paragraph",
+          "text": "Long-distance air travel soon after major surgery can be uncomfortable and may increase concerns related to mobility and blood clots."
+        },
+        {
+          "id": "p_187",
+          "type": "paragraph",
+          "text": "Patients should discuss their flight schedule with their surgeon before booking a return flight."
+        },
+        {
+          "id": "p_188",
+          "type": "paragraph",
+          "text": "For international patients, the treatment plan should therefore include:"
+        },
+        {
+          "id": "p_189",
+          "type": "paragraph",
+          "text": "**Surgery + hospital stay + recovery period + post-operative review + safe travel date.**"
+        },
+        {
+          "id": "p_190",
+          "type": "paragraph",
+          "text": "Do not plan the return flight solely around the expected hospital discharge date."
+        },
+        {
+          "id": "p_191",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 to plan a surgical stay in India](https://wa.me/919044346292?text=Please%20help%20me%20plan%20a%20robotic%20prostatectomy%20stay%20in%20India%2C%20including%20recovery%20and%20a%20safe%20return-travel%20date.)"
+        },
+        {
+          "id": "h_192",
+          "type": "heading",
+          "level": 2,
+          "text": "Urinary Incontinence After Robotic Prostatectomy"
+        },
+        {
+          "id": "p_193",
+          "type": "paragraph",
+          "text": "Urinary leakage is one of the most discussed concerns after prostate surgery."
+        },
+        {
+          "id": "p_194",
+          "type": "paragraph",
+          "text": "Some men experience leakage immediately after the catheter is removed."
+        },
+        {
+          "id": "p_195",
+          "type": "paragraph",
+          "text": "This may happen when:"
+        },
+        {
+          "id": "ul_196",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Coughing",
+            "Sneezing",
+            "Standing",
+            "Exercising",
+            "Lifting",
+            "Changing position"
+          ]
+        },
+        {
+          "id": "p_197",
+          "type": "paragraph",
+          "text": "For many patients, urinary control improves gradually as the pelvic muscles and urinary sphincter recover."
+        },
+        {
+          "id": "p_198",
+          "type": "paragraph",
+          "text": "However, recovery varies."
+        },
+        {
+          "id": "p_199",
+          "type": "paragraph",
+          "text": "The EAU and American Cancer Society both identify urinary incontinence as an important potential side effect of radical prostatectomy."
+        },
+        {
+          "id": "h_200",
+          "type": "heading",
+          "level": 2,
+          "text": "Pelvic-Floor Exercises After Prostatectomy"
+        },
+        {
+          "id": "p_201",
+          "type": "paragraph",
+          "text": "Pelvic-floor exercises, often called **Kegel exercises**, may help patients improve urinary control."
+        },
+        {
+          "id": "p_202",
+          "type": "paragraph",
+          "text": "The timing and technique should be explained by the medical team."
+        },
+        {
+          "id": "p_203",
+          "type": "paragraph",
+          "text": "Doing the exercises incorrectly or excessively is not necessarily helpful."
+        },
+        {
+          "id": "p_204",
+          "type": "paragraph",
+          "text": "Some patients may benefit from guidance from a pelvic-floor physiotherapist."
+        },
+        {
+          "id": "h_205",
+          "type": "heading",
+          "level": 2,
+          "text": "Erectile Dysfunction After Robotic Prostatectomy"
+        },
+        {
+          "id": "p_206",
+          "type": "paragraph",
+          "text": "Erectile dysfunction is another major concern."
+        },
+        {
+          "id": "p_207",
+          "type": "paragraph",
+          "text": "The nerves responsible for erections lie very close to the prostate."
+        },
+        {
+          "id": "p_208",
+          "type": "paragraph",
+          "text": "During cancer surgery, these nerves can be stretched, bruised or removed if the tumour is close to them."
+        },
+        {
+          "id": "p_209",
+          "type": "paragraph",
+          "text": "Even when the nerves are preserved, they may take time to recover."
+        },
+        {
+          "id": "p_210",
+          "type": "paragraph",
+          "text": "The American Cancer Society notes that nerve damage during prostate surgery is a common reason for erectile problems after treatment, and that nerve-sparing can improve the chance of erectile recovery when it is oncologically possible."
+        },
+        {
+          "id": "h_211",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Does Erectile Function Take to Recover?"
+        },
+        {
+          "id": "p_212",
+          "type": "paragraph",
+          "text": "Sexual recovery is usually much slower than physical recovery."
+        },
+        {
+          "id": "p_213",
+          "type": "paragraph",
+          "text": "Some men begin to see improvement within months."
+        },
+        {
+          "id": "p_214",
+          "type": "paragraph",
+          "text": "Others take considerably longer."
+        },
+        {
+          "id": "p_215",
+          "type": "paragraph",
+          "text": "Recovery can continue for a year or more in some patients."
+        },
+        {
+          "id": "p_216",
+          "type": "paragraph",
+          "text": "The outcome depends on:"
+        },
+        {
+          "id": "ul_217",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Age",
+            "Pre-operative erections",
+            "Nerve-sparing status",
+            "Cancer location",
+            "Other medical conditions",
+            "Blood-vessel health",
+            "Rehabilitation",
+            "Use of erectile-dysfunction treatments"
+          ]
+        },
+        {
+          "id": "p_218",
+          "type": "paragraph",
+          "text": "No surgeon can accurately guarantee an individual patient's erectile outcome before surgery."
+        },
+        {
+          "id": "h_219",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Nerve-Sparing Always Possible?"
+        },
+        {
+          "id": "p_220",
+          "type": "paragraph",
+          "text": "No."
+        },
+        {
+          "id": "p_221",
+          "type": "paragraph",
+          "text": "The surgeon must balance two goals:"
+        },
+        {
+          "id": "h_222",
+          "type": "heading",
+          "level": 3,
+          "text": "Goal 1: Remove the cancer completely"
+        },
+        {
+          "id": "h_223",
+          "type": "heading",
+          "level": 3,
+          "text": "Goal 2: Preserve important nerves when safe"
+        },
+        {
+          "id": "p_224",
+          "type": "paragraph",
+          "text": "If imaging, biopsy or intra-operative findings suggest that the cancer is close to a nerve bundle, preserving that nerve may increase the risk of leaving cancer behind."
+        },
+        {
+          "id": "p_225",
+          "type": "paragraph",
+          "text": "In that situation, nerve removal may be necessary."
+        },
+        {
+          "id": "p_226",
+          "type": "paragraph",
+          "text": "**Cancer control comes first.**"
+        },
+        {
+          "id": "h_227",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens to Ejaculation After Radical Prostatectomy?"
+        },
+        {
+          "id": "p_228",
+          "type": "paragraph",
+          "text": "After radical prostatectomy, the prostate and seminal vesicles have been removed."
+        },
+        {
+          "id": "p_229",
+          "type": "paragraph",
+          "text": "As a result, semen is no longer produced in the same way."
+        },
+        {
+          "id": "p_230",
+          "type": "paragraph",
+          "text": "Men generally experience a **dry orgasm**, meaning orgasm can still occur but there is little or no semen released."
+        },
+        {
+          "id": "p_231",
+          "type": "paragraph",
+          "text": "This is different from erectile function."
+        },
+        {
+          "id": "p_232",
+          "type": "paragraph",
+          "text": "A man may have:"
+        },
+        {
+          "id": "ul_233",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "An erection but no semen",
+            "Difficulty achieving an erection but preserved sensation",
+            "Orgasm without ejaculation"
+          ]
+        },
+        {
+          "id": "p_234",
+          "type": "paragraph",
+          "text": "The effects should be discussed with the surgeon before treatment."
+        },
+        {
+          "id": "h_235",
+          "type": "heading",
+          "level": 2,
+          "text": "Can You Have Children After Robotic Prostatectomy?"
+        },
+        {
+          "id": "p_236",
+          "type": "paragraph",
+          "text": "Natural conception is generally no longer possible after radical prostatectomy because semen is not ejaculated normally."
+        },
+        {
+          "id": "p_237",
+          "type": "paragraph",
+          "text": "For men who may want biological children in the future, **sperm banking before treatment** can be discussed."
+        },
+        {
+          "id": "p_238",
+          "type": "paragraph",
+          "text": "This is especially relevant for younger patients."
+        },
+        {
+          "id": "h_239",
+          "type": "heading",
+          "level": 2,
+          "text": "Robotic Prostatectomy Risks and Complications"
+        },
+        {
+          "id": "p_240",
+          "type": "paragraph",
+          "text": "Robotic surgery is still major surgery."
+        },
+        {
+          "id": "p_241",
+          "type": "paragraph",
+          "text": "The robotic approach does not eliminate surgical risk."
+        },
+        {
+          "id": "p_242",
+          "type": "paragraph",
+          "text": "Potential complications include:"
+        },
+        {
+          "id": "h_243",
+          "type": "heading",
+          "level": 3,
+          "text": "Common or clinically important risks"
+        },
+        {
+          "id": "ul_244",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Urinary incontinence",
+            "Erectile dysfunction",
+            "Bleeding",
+            "Infection",
+            "Urinary leakage",
+            "Blood clots",
+            "Anaesthesia-related complications",
+            "Catheter-related problems"
+          ]
+        },
+        {
+          "id": "h_245",
+          "type": "heading",
+          "level": 3,
+          "text": "Less common complications"
+        },
+        {
+          "id": "ul_246",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Bladder injury",
+            "Bowel or rectal injury",
+            "Lymphocele",
+            "Anastomotic stricture",
+            "Hernia",
+            "Persistent pelvic discomfort",
+            "Need for additional treatment"
+          ]
+        },
+        {
+          "id": "p_247",
+          "type": "paragraph",
+          "text": "The EAU guideline provides complication data across radical prostatectomy approaches and emphasizes that complications can occur even with robot-assisted surgery."
+        },
+        {
+          "id": "h_248",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Robotic Prostatectomy Safer Than Open Surgery?"
+        },
+        {
+          "id": "p_249",
+          "type": "paragraph",
+          "text": "Robotic prostatectomy has several perioperative advantages in many settings, including smaller incisions and generally less blood loss."
+        },
+        {
+          "id": "p_250",
+          "type": "paragraph",
+          "text": "However, it should not be presented as completely risk-free or automatically superior for every patient."
+        },
+        {
+          "id": "p_251",
+          "type": "paragraph",
+          "text": "The EAU guideline includes comparative complication data for robotic-assisted, laparoscopic and open radical prostatectomy."
+        },
+        {
+          "id": "p_252",
+          "type": "paragraph",
+          "text": "The skill and experience of the surgical team remain important."
+        },
+        {
+          "id": "h_253",
+          "type": "heading",
+          "level": 2,
+          "text": "Robotic vs Open Prostatectomy"
+        },
+        {
+          "id": "html_254",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Robotic prostatectomy</th><th>Open prostatectomy</th></tr></thead><tbody><tr><td>Incisions</td><td>Several small incisions</td><td>One larger incision</td></tr><tr><td>Surgical control</td><td>Surgeon-controlled robotic instruments</td><td>Direct surgical instruments</td></tr><tr><td>Visualization</td><td>Magnified 3D view</td><td>Direct/open surgical view</td></tr><tr><td>Blood loss</td><td>Generally lower in many series</td><td>Generally higher</td></tr><tr><td>Hospital stay</td><td>Often shorter</td><td>Often longer</td></tr><tr><td>Post-operative pain</td><td>Often less</td><td>Often more</td></tr><tr><td>Recovery</td><td>Generally faster</td><td>Generally slower</td></tr><tr><td>Nerve sparing</td><td>Possible when oncologically safe</td><td>Also possible</td></tr><tr><td>Cancer removal</td><td>Depends on disease and surgical technique</td><td>Depends on disease and surgical technique</td></tr><tr><td>Cost in India</td><td>Generally higher</td><td>Usually lower</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_255",
+          "type": "paragraph",
+          "text": "The robotic system is a surgical platform."
+        },
+        {
+          "id": "p_256",
+          "type": "paragraph",
+          "text": "It does not independently perform the cancer operation."
+        },
+        {
+          "id": "h_257",
+          "type": "heading",
+          "level": 2,
+          "text": "Robotic vs Laparoscopic Prostatectomy"
+        },
+        {
+          "id": "p_258",
+          "type": "paragraph",
+          "text": "Both approaches are minimally invasive."
+        },
+        {
+          "id": "p_259",
+          "type": "paragraph",
+          "text": "The main difference is how the surgeon controls the instruments."
+        },
+        {
+          "id": "h_260",
+          "type": "heading",
+          "level": 3,
+          "text": "Laparoscopic surgery"
+        },
+        {
+          "id": "p_261",
+          "type": "paragraph",
+          "text": "The surgeon directly manipulates long instruments while viewing the operative field through a camera."
+        },
+        {
+          "id": "h_262",
+          "type": "heading",
+          "level": 3,
+          "text": "Robotic surgery"
+        },
+        {
+          "id": "p_263",
+          "type": "paragraph",
+          "text": "The surgeon controls articulated instruments from a console, with magnified three-dimensional visualization."
+        },
+        {
+          "id": "p_264",
+          "type": "paragraph",
+          "text": "The choice depends on:"
+        },
+        {
+          "id": "ul_265",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Surgeon experience",
+            "Hospital technology",
+            "Cancer characteristics",
+            "Patient anatomy",
+            "Availability",
+            "Cost"
+          ]
+        },
+        {
+          "id": "h_266",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Robotic Prostatectomy Better Than Open Surgery?"
+        },
+        {
+          "id": "p_267",
+          "type": "paragraph",
+          "text": "The more useful question is not simply which method is “better.”"
+        },
+        {
+          "id": "p_268",
+          "type": "paragraph",
+          "text": "The relevant issues include:"
+        },
+        {
+          "id": "ul_269",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Cancer control",
+            "Surgical margins",
+            "Urinary recovery",
+            "Sexual recovery",
+            "Complications",
+            "Blood loss",
+            "Hospital stay",
+            "Recovery time",
+            "Surgeon experience"
+          ]
+        },
+        {
+          "id": "p_270",
+          "type": "paragraph",
+          "text": "The EAU guideline continues to evaluate evidence across surgical approaches rather than treating the robotic approach as automatically appropriate for every patient."
+        },
+        {
+          "id": "p_271",
+          "type": "paragraph",
+          "text": "For an individual patient, the experience of the surgeon and the appropriateness of surgery for the cancer may be more important than simply choosing the newest technology."
+        },
+        {
+          "id": "p_272",
+          "type": "paragraph",
+          "text": "The [treatment-options guide](/blogs/prostate-cancer-treatment-options-india) compares surgery and radiation in more detail."
+        },
+        {
+          "id": "h_273",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is a Positive Surgical Margin?"
+        },
+        {
+          "id": "p_274",
+          "type": "paragraph",
+          "text": "After the prostate is removed, a pathologist examines the specimen."
+        },
+        {
+          "id": "p_275",
+          "type": "paragraph",
+          "text": "One important finding is the **surgical margin**."
+        },
+        {
+          "id": "p_276",
+          "type": "paragraph",
+          "text": "A positive surgical margin means cancer cells are found at the edge of the removed tissue."
+        },
+        {
+          "id": "p_277",
+          "type": "paragraph",
+          "text": "This can suggest that cancer may have been left behind microscopically."
+        },
+        {
+          "id": "p_278",
+          "type": "paragraph",
+          "text": "A positive margin does **not automatically mean that the cancer will recur**."
+        },
+        {
+          "id": "p_279",
+          "type": "paragraph",
+          "text": "However, it can influence follow-up and further treatment decisions."
+        },
+        {
+          "id": "h_280",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens to the Prostate After Surgery?"
+        },
+        {
+          "id": "p_281",
+          "type": "paragraph",
+          "text": "The removed prostate is sent to a pathology laboratory."
+        },
+        {
+          "id": "p_282",
+          "type": "paragraph",
+          "text": "The final pathology report can provide important information, including:"
+        },
+        {
+          "id": "ul_283",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Final Grade Group",
+            "Tumour size",
+            "Tumour location",
+            "Extraprostatic extension",
+            "Seminal-vesicle involvement",
+            "Surgical margins",
+            "Lymph-node status",
+            "Pathological stage"
+          ]
+        },
+        {
+          "id": "p_284",
+          "type": "paragraph",
+          "text": "This report may change the understanding of the patient's risk after surgery."
+        },
+        {
+          "id": "h_285",
+          "type": "heading",
+          "level": 2,
+          "text": "Why the Final Pathology Report Matters"
+        },
+        {
+          "id": "p_286",
+          "type": "paragraph",
+          "text": "The biopsy provides an initial understanding of the cancer."
+        },
+        {
+          "id": "p_287",
+          "type": "paragraph",
+          "text": "The prostatectomy specimen provides much more tissue for examination."
+        },
+        {
+          "id": "p_288",
+          "type": "paragraph",
+          "text": "The final pathology can therefore show whether:"
+        },
+        {
+          "id": "ul_289",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Cancer was confined to the prostate",
+            "Cancer extended outside the prostate",
+            "Seminal vesicles were involved",
+            "Lymph nodes contained cancer",
+            "Margins were clear"
+          ]
+        },
+        {
+          "id": "p_290",
+          "type": "paragraph",
+          "text": "The final report is an important part of deciding what happens next."
+        },
+        {
+          "id": "h_291",
+          "type": "heading",
+          "level": 2,
+          "text": "PSA After Robotic Prostatectomy"
+        },
+        {
+          "id": "p_292",
+          "type": "paragraph",
+          "text": "PSA is one of the most important follow-up tests after radical prostatectomy."
+        },
+        {
+          "id": "p_293",
+          "type": "paragraph",
+          "text": "Because the prostate has been removed, PSA should fall to a very low or undetectable level in patients whose treatment has successfully removed all PSA-producing prostate tissue."
+        },
+        {
+          "id": "p_294",
+          "type": "paragraph",
+          "text": "The timing and interpretation of PSA testing should follow the treating team's protocol."
+        },
+        {
+          "id": "p_295",
+          "type": "paragraph",
+          "text": "A detectable or subsequently rising PSA does not automatically mean metastatic cancer."
+        },
+        {
+          "id": "p_296",
+          "type": "paragraph",
+          "text": "It may indicate **biochemical recurrence**, which requires further evaluation."
+        },
+        {
+          "id": "h_297",
+          "type": "heading",
+          "level": 2,
+          "text": "What If PSA Rises After Robotic Prostatectomy?"
+        },
+        {
+          "id": "p_298",
+          "type": "paragraph",
+          "text": "A rising PSA may lead doctors to investigate:"
+        },
+        {
+          "id": "ul_299",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "PSA trend",
+            "Time since surgery",
+            "PSA level",
+            "PSA doubling time",
+            "Pathology findings",
+            "Imaging"
+          ]
+        },
+        {
+          "id": "p_300",
+          "type": "paragraph",
+          "text": "Depending on the situation, treatment may include:"
+        },
+        {
+          "id": "ul_301",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Salvage radiation](/costs/India/Radiation-Oncology/EBRT)",
+            "[Hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy)",
+            "Additional systemic treatment",
+            "Further imaging"
+          ]
+        },
+        {
+          "id": "p_302",
+          "type": "paragraph",
+          "text": "The earlier a potential recurrence is identified, the more options may be available."
+        },
+        {
+          "id": "h_303",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Robotic Prostatectomy Guarantee a Cure?"
+        },
+        {
+          "id": "p_304",
+          "type": "paragraph",
+          "text": "No cancer treatment can guarantee an individual outcome."
+        },
+        {
+          "id": "p_305",
+          "type": "paragraph",
+          "text": "For appropriately selected localized prostate cancer, radical prostatectomy is performed with curative intent."
+        },
+        {
+          "id": "p_306",
+          "type": "paragraph",
+          "text": "However, some cancers may recur after surgery."
+        },
+        {
+          "id": "p_307",
+          "type": "paragraph",
+          "text": "The risk depends on:"
+        },
+        {
+          "id": "ul_308",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Stage",
+            "Grade Group",
+            "PSA",
+            "Tumour characteristics",
+            "Surgical margins",
+            "Lymph-node involvement",
+            "Other pathology findings"
+          ]
+        },
+        {
+          "id": "p_309",
+          "type": "paragraph",
+          "text": "Long-term follow-up remains important."
+        },
+        {
+          "id": "h_310",
+          "type": "heading",
+          "level": 2,
+          "text": "Robotic Prostatectomy for High-Risk Prostate Cancer"
+        },
+        {
+          "id": "p_311",
+          "type": "paragraph",
+          "text": "High-risk disease requires careful planning."
+        },
+        {
+          "id": "p_312",
+          "type": "paragraph",
+          "text": "Robotic prostatectomy may be considered in selected patients, sometimes together with pelvic lymph-node dissection."
+        },
+        {
+          "id": "p_313",
+          "type": "paragraph",
+          "text": "However, patients should understand that surgery may not be the only treatment they eventually need."
+        },
+        {
+          "id": "p_314",
+          "type": "paragraph",
+          "text": "Depending on pathology and PSA after surgery, additional treatment may be considered."
+        },
+        {
+          "id": "p_315",
+          "type": "paragraph",
+          "text": "The EAU describes radical prostatectomy as one option in selected high-risk and locally advanced disease, rather than as a universal treatment for every high-risk patient."
+        },
+        {
+          "id": "h_316",
+          "type": "heading",
+          "level": 2,
+          "text": "Robotic Prostatectomy for Locally Advanced Prostate Cancer"
+        },
+        {
+          "id": "p_317",
+          "type": "paragraph",
+          "text": "Locally advanced cancer extends beyond the prostate but has not necessarily spread to distant organs."
+        },
+        {
+          "id": "p_318",
+          "type": "paragraph",
+          "text": "Selected patients may still undergo surgery as part of multimodal treatment."
+        },
+        {
+          "id": "p_319",
+          "type": "paragraph",
+          "text": "This requires careful staging."
+        },
+        {
+          "id": "p_320",
+          "type": "paragraph",
+          "text": "The surgical plan may be more extensive than for a small localized tumour."
+        },
+        {
+          "id": "p_321",
+          "type": "paragraph",
+          "text": "Pelvic lymph-node dissection may also be considered."
+        },
+        {
+          "id": "p_322",
+          "type": "paragraph",
+          "text": "The possibility of additional [radiation](/doctors/India/Radiation-Oncology) or [systemic treatment](/doctors/India/Medical-Oncology) after surgery should be discussed before the operation."
+        },
+        {
+          "id": "h_323",
+          "type": "heading",
+          "level": 2,
+          "text": "Robotic Prostatectomy for Metastatic Prostate Cancer"
+        },
+        {
+          "id": "p_324",
+          "type": "paragraph",
+          "text": "Robotic prostatectomy is generally **not the main treatment for widespread metastatic prostate cancer**."
+        },
+        {
+          "id": "p_325",
+          "type": "paragraph",
+          "text": "When cancer has spread to distant sites, systemic treatment usually plays the central role."
+        },
+        {
+          "id": "p_326",
+          "type": "paragraph",
+          "text": "In selected circumstances, local treatment may still have a role as part of a broader treatment strategy."
+        },
+        {
+          "id": "p_327",
+          "type": "paragraph",
+          "text": "The treatment should therefore be planned by a multidisciplinary prostate cancer team involving [urology](/doctors/India/Urology), radiation oncology and medical oncology."
+        },
+        {
+          "id": "h_328",
+          "type": "heading",
+          "level": 2,
+          "text": "Robotic Prostatectomy Cost in India"
+        },
+        {
+          "id": "p_329",
+          "type": "paragraph",
+          "text": "The cost of robotic prostatectomy varies significantly between hospitals."
+        },
+        {
+          "id": "p_330",
+          "type": "paragraph",
+          "text": "Apollo Hospitals currently publishes an indicative range of approximately **₹2 lakh–₹4 lakh** for robotic prostatectomy."
+        },
+        {
+          "id": "p_331",
+          "type": "paragraph",
+          "text": "A Vaidam listing for international patients at Medanta gives an estimated range of approximately **₹1.70 lakh–₹4.75 lakh** for robotic prostatectomy."
+        },
+        {
+          "id": "p_332",
+          "type": "paragraph",
+          "text": "These figures should be treated as **indicative ranges rather than fixed prices**."
+        },
+        {
+          "id": "p_333",
+          "type": "paragraph",
+          "text": "GAF Healthcare's published planning range for [radical prostatectomy in India](/costs/India/Surgical-Oncology/Radical-Prostatectomy), covering open, laparoscopic and robotic-assisted approaches, is **$7,000–$18,000**, typically with a **3–7 night** stay. A patient's final quotation may be higher or lower."
+        },
+        {
+          "id": "p_334",
+          "type": "paragraph",
+          "text": "City pages use the same national planning ranges unless a hospital issues a verified city quotation: [Delhi NCR](/costs/India/Delhi-NCR/Surgical-Oncology/Radical-Prostatectomy), [Mumbai](/costs/India/Mumbai/Surgical-Oncology/Radical-Prostatectomy), [Bengaluru](/costs/India/Bengaluru/Surgical-Oncology/Radical-Prostatectomy), [Chennai](/costs/India/Chennai/Surgical-Oncology/Radical-Prostatectomy) and [Hyderabad](/costs/India/Hyderabad/Surgical-Oncology/Radical-Prostatectomy)."
+        },
+        {
+          "id": "btn_335",
+          "type": "button",
+          "label": "Request an itemized robotic-prostatectomy estimate",
+          "href": "/consult?treatment=Robotic%20Prostatectomy"
+        },
+        {
+          "id": "p_336",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a hospital quotation](https://wa.me/919044346292?text=Please%20share%20an%20itemized%20robotic%20prostatectomy%20cost%20estimate%20in%20India.)"
+        },
+        {
+          "id": "h_337",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Included in Robotic Prostatectomy Cost?"
+        },
+        {
+          "id": "p_338",
+          "type": "paragraph",
+          "text": "A hospital quotation may include some of the following:"
+        },
+        {
+          "id": "ul_339",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Surgeon fee",
+            "Anaesthetist fee",
+            "Robotic system charges",
+            "Operating-room charges",
+            "Hospital room",
+            "Nursing",
+            "Medicines",
+            "Surgical consumables",
+            "Pathology",
+            "Catheter",
+            "Routine investigations",
+            "Follow-up consultation"
+          ]
+        },
+        {
+          "id": "p_340",
+          "type": "paragraph",
+          "text": "But not every hospital package includes all of these."
+        },
+        {
+          "id": "p_341",
+          "type": "paragraph",
+          "text": "Therefore, patients should ask for an **itemised quotation**."
+        },
+        {
+          "id": "h_342",
+          "type": "heading",
+          "level": 2,
+          "text": "Factors That Change Robotic Prostatectomy Cost in India"
+        },
+        {
+          "id": "h_343",
+          "type": "heading",
+          "level": 3,
+          "text": "Hospital"
+        },
+        {
+          "id": "p_344",
+          "type": "paragraph",
+          "text": "Hospital infrastructure and pricing policies affect the total cost. Compare [hospitals for radical prostatectomy](/hospitals/India/Surgical-Oncology/Radical-Prostatectomy) in [Delhi NCR](/hospitals/India/Delhi-NCR/Surgical-Oncology), [Mumbai](/hospitals/India/Mumbai/Surgical-Oncology), [Bengaluru](/hospitals/India/Bengaluru/Surgical-Oncology), [Chennai](/hospitals/India/Chennai/Surgical-Oncology) and [Hyderabad](/hospitals/India/Hyderabad/Surgical-Oncology)."
+        },
+        {
+          "id": "h_345",
+          "type": "heading",
+          "level": 3,
+          "text": "City"
+        },
+        {
+          "id": "p_346",
+          "type": "paragraph",
+          "text": "Costs can differ between Delhi NCR, Mumbai, Chennai, Bengaluru, Hyderabad and other major medical centres."
+        },
+        {
+          "id": "h_347",
+          "type": "heading",
+          "level": 3,
+          "text": "Robotic platform"
+        },
+        {
+          "id": "p_348",
+          "type": "paragraph",
+          "text": "Different hospitals may use different robotic systems."
+        },
+        {
+          "id": "h_349",
+          "type": "heading",
+          "level": 3,
+          "text": "Cancer complexity"
+        },
+        {
+          "id": "p_350",
+          "type": "paragraph",
+          "text": "A more extensive operation can require additional time and resources."
+        },
+        {
+          "id": "h_351",
+          "type": "heading",
+          "level": 3,
+          "text": "Lymph-node dissection"
+        },
+        {
+          "id": "p_352",
+          "type": "paragraph",
+          "text": "If lymph nodes need to be removed, the procedure may take longer."
+        },
+        {
+          "id": "h_353",
+          "type": "heading",
+          "level": 3,
+          "text": "Length of stay"
+        },
+        {
+          "id": "p_354",
+          "type": "paragraph",
+          "text": "An uncomplicated one- or two-day stay costs less than prolonged hospitalisation."
+        },
+        {
+          "id": "h_355",
+          "type": "heading",
+          "level": 3,
+          "text": "Diagnostic tests"
+        },
+        {
+          "id": "p_356",
+          "type": "paragraph",
+          "text": "Additional MRI, PSMA PET/CT, pathology review or other investigations add to the total."
+        },
+        {
+          "id": "h_357",
+          "type": "heading",
+          "level": 3,
+          "text": "Post-operative complications"
+        },
+        {
+          "id": "p_358",
+          "type": "paragraph",
+          "text": "Unexpected treatment can increase the final cost."
+        },
+        {
+          "id": "h_359",
+          "type": "heading",
+          "level": 2,
+          "text": "A Better Way to Compare Robotic Prostatectomy Prices"
+        },
+        {
+          "id": "p_360",
+          "type": "paragraph",
+          "text": "Do not compare hospitals using only the headline number."
+        },
+        {
+          "id": "p_361",
+          "type": "paragraph",
+          "text": "Ask:"
+        },
+        {
+          "id": "html_362",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Cost component</th><th>Included?</th></tr></thead><tbody><tr><td>Surgeon fee</td><td>Confirm</td></tr><tr><td>Anaesthesia</td><td>Confirm</td></tr><tr><td>Robotic system</td><td>Confirm</td></tr><tr><td>Operating room</td><td>Confirm</td></tr><tr><td>Hospital room</td><td>Confirm</td></tr><tr><td>Medicines</td><td>Confirm</td></tr><tr><td>Consumables</td><td>Confirm</td></tr><tr><td>Pathology</td><td>Confirm</td></tr><tr><td>Lymph-node dissection</td><td>Confirm</td></tr><tr><td>ICU if required</td><td>Confirm</td></tr><tr><td>Follow-up</td><td>Confirm</td></tr><tr><td>Additional hospital stay</td><td>Confirm</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_363",
+          "type": "paragraph",
+          "text": "This makes hospital quotations much easier to compare."
+        },
+        {
+          "id": "h_364",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Robotic Prostatectomy Cost More Than Open Surgery?"
+        },
+        {
+          "id": "p_365",
+          "type": "paragraph",
+          "text": "Generally, yes."
+        },
+        {
+          "id": "p_366",
+          "type": "paragraph",
+          "text": "Robotic surgery requires specialised equipment, operating-room infrastructure and trained staff."
+        },
+        {
+          "id": "p_367",
+          "type": "paragraph",
+          "text": "The additional cost should be considered alongside the potential benefits of minimally invasive surgery and the experience of the treating team."
+        },
+        {
+          "id": "p_368",
+          "type": "paragraph",
+          "text": "But a higher price does not automatically mean a better cancer outcome."
+        },
+        {
+          "id": "p_369",
+          "type": "paragraph",
+          "text": "The important question is whether robotic prostatectomy is **appropriate for the specific patient**."
+        },
+        {
+          "id": "h_370",
+          "type": "heading",
+          "level": 2,
+          "text": "Robotic Prostatectomy in India for International Patients"
+        },
+        {
+          "id": "p_371",
+          "type": "paragraph",
+          "text": "India is a major destination for patients seeking complex cancer treatment."
+        },
+        {
+          "id": "p_372",
+          "type": "paragraph",
+          "text": "For international patients, planning should begin before travel."
+        },
+        {
+          "id": "p_373",
+          "type": "paragraph",
+          "text": "A patient should ideally send the hospital:"
+        },
+        {
+          "id": "ul_374",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Biopsy report",
+            "Gleason score",
+            "Grade Group",
+            "PSA history",
+            "MRI report",
+            "PSMA PET/CT report, if available",
+            "Previous medical records",
+            "Medication list",
+            "Other relevant investigations"
+          ]
+        },
+        {
+          "id": "p_375",
+          "type": "paragraph",
+          "text": "The treating team can then determine whether the patient appears suitable for surgery and whether additional investigations are required."
+        },
+        {
+          "id": "btn_376",
+          "type": "button",
+          "label": "Send records before travelling to India",
+          "href": "/consult?treatment=Robotic%20Prostatectomy"
+        },
+        {
+          "id": "h_377",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Should an International Patient Stay in India?"
+        },
+        {
+          "id": "p_378",
+          "type": "paragraph",
+          "text": "The total stay should include more than the hospital admission."
+        },
+        {
+          "id": "p_379",
+          "type": "paragraph",
+          "text": "A practical plan may involve:"
+        },
+        {
+          "id": "h_380",
+          "type": "heading",
+          "level": 3,
+          "text": "Before surgery"
+        },
+        {
+          "id": "ul_381",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Specialist consultation",
+            "Medical evaluation",
+            "Additional tests"
+          ]
+        },
+        {
+          "id": "h_382",
+          "type": "heading",
+          "level": 3,
+          "text": "During surgery"
+        },
+        {
+          "id": "ul_383",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Hospital admission",
+            "Robotic prostatectomy",
+            "Post-operative monitoring"
+          ]
+        },
+        {
+          "id": "h_384",
+          "type": "heading",
+          "level": 3,
+          "text": "After surgery"
+        },
+        {
+          "id": "ul_385",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Recovery",
+            "Catheter management",
+            "Follow-up",
+            "Catheter removal or assessment",
+            "Clearance for travel"
+          ]
+        },
+        {
+          "id": "p_386",
+          "type": "paragraph",
+          "text": "The treating surgeon should provide the final travel recommendation."
+        },
+        {
+          "id": "p_387",
+          "type": "paragraph",
+          "text": "International patients should avoid booking a rigid return flight immediately after surgery."
+        },
+        {
+          "id": "h_388",
+          "type": "heading",
+          "level": 2,
+          "text": "Can International Patients Get a Cost Estimate Before Travelling?"
+        },
+        {
+          "id": "p_389",
+          "type": "paragraph",
+          "text": "Yes."
+        },
+        {
+          "id": "p_390",
+          "type": "paragraph",
+          "text": "A preliminary estimate can often be prepared after the hospital reviews the patient's medical records."
+        },
+        {
+          "id": "p_391",
+          "type": "paragraph",
+          "text": "However, a remote estimate may change if:"
+        },
+        {
+          "id": "ul_392",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Additional imaging is required",
+            "Pathology is reviewed differently",
+            "The cancer appears more extensive",
+            "Additional surgery is necessary",
+            "Lymph-node dissection is recommended",
+            "The patient has another medical condition"
+          ]
+        },
+        {
+          "id": "p_393",
+          "type": "paragraph",
+          "text": "A final quotation should therefore be considered an estimate until the treating team completes the clinical evaluation."
+        },
+        {
+          "id": "p_394",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a pre-travel estimate](https://wa.me/919044346292?text=I%20would%20like%20a%20pre-travel%20robotic%20prostatectomy%20estimate%20in%20India%20after%20records%20review.)"
+        },
+        {
+          "id": "h_395",
+          "type": "heading",
+          "level": 2,
+          "text": "How to Prepare for Robotic Prostatectomy"
+        },
+        {
+          "id": "p_396",
+          "type": "paragraph",
+          "text": "Before surgery, the medical team may provide specific instructions regarding:"
+        },
+        {
+          "id": "ul_397",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Food and drink",
+            "Medications",
+            "Blood thinners",
+            "Diabetes medicines",
+            "Bowel preparation",
+            "Smoking",
+            "Alcohol",
+            "Exercise",
+            "Pre-operative testing"
+          ]
+        },
+        {
+          "id": "p_398",
+          "type": "paragraph",
+          "text": "Do not stop prescription medicines without instructions from the treating medical team."
+        },
+        {
+          "id": "p_399",
+          "type": "paragraph",
+          "text": "Blood-thinning medicines are particularly important to discuss before surgery."
+        },
+        {
+          "id": "h_400",
+          "type": "heading",
+          "level": 2,
+          "text": "What Should You Take to the Hospital?"
+        },
+        {
+          "id": "p_401",
+          "type": "paragraph",
+          "text": "Patients can make the admission process easier by carrying:"
+        },
+        {
+          "id": "ul_402",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Identification documents",
+            "Medical records",
+            "Biopsy slides or blocks if available",
+            "MRI/PSMA PET imaging",
+            "Medication list",
+            "Previous discharge summaries",
+            "Insurance documents",
+            "Contact information for family members"
+          ]
+        },
+        {
+          "id": "p_403",
+          "type": "paragraph",
+          "text": "International patients should also maintain digital copies of all records."
+        },
+        {
+          "id": "h_404",
+          "type": "heading",
+          "level": 2,
+          "text": "What Should You Expect After Discharge?"
+        },
+        {
+          "id": "p_405",
+          "type": "paragraph",
+          "text": "At home, the focus is on gradual recovery."
+        },
+        {
+          "id": "p_406",
+          "type": "paragraph",
+          "text": "Patients are generally advised to:"
+        },
+        {
+          "id": "ul_407",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Walk regularly",
+            "Stay hydrated",
+            "Follow catheter instructions",
+            "Keep incisions clean",
+            "Take prescribed medicines",
+            "Avoid heavy lifting",
+            "Follow pelvic-floor rehabilitation instructions",
+            "Attend scheduled follow-up"
+          ]
+        },
+        {
+          "id": "p_408",
+          "type": "paragraph",
+          "text": "Any fever, severe pain, heavy bleeding, inability to pass urine, shortness of breath or other serious symptom should be reported to the treating team promptly."
+        },
+        {
+          "id": "h_409",
+          "type": "heading",
+          "level": 2,
+          "text": "Robotic Prostatectomy Recovery: What Is Normal?"
+        },
+        {
+          "id": "p_410",
+          "type": "paragraph",
+          "text": "Some symptoms can occur during normal recovery."
+        },
+        {
+          "id": "p_411",
+          "type": "paragraph",
+          "text": "These may include:"
+        },
+        {
+          "id": "ul_412",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Tiredness",
+            "Mild abdominal discomfort",
+            "Temporary urinary leakage",
+            "Catheter discomfort",
+            "Changes in bowel habits",
+            "Reduced physical stamina"
+          ]
+        },
+        {
+          "id": "p_413",
+          "type": "paragraph",
+          "text": "Recovery should generally progress gradually."
+        },
+        {
+          "id": "p_414",
+          "type": "paragraph",
+          "text": "Symptoms that become severe, worsen suddenly or are associated with fever or significant bleeding require medical assessment."
+        },
+        {
+          "id": "h_415",
+          "type": "heading",
+          "level": 2,
+          "text": "Lifestyle After Robotic Prostatectomy"
+        },
+        {
+          "id": "p_416",
+          "type": "paragraph",
+          "text": "After recovery, maintaining general health remains important."
+        },
+        {
+          "id": "p_417",
+          "type": "paragraph",
+          "text": "Patients can discuss with their doctor:"
+        },
+        {
+          "id": "ul_418",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Regular physical activity",
+            "Healthy body weight",
+            "Balanced nutrition",
+            "Smoking cessation",
+            "Limiting alcohol",
+            "Cardiovascular health",
+            "Diabetes and blood-pressure control"
+          ]
+        },
+        {
+          "id": "p_419",
+          "type": "paragraph",
+          "text": "These measures do not replace cancer follow-up."
+        },
+        {
+          "id": "p_420",
+          "type": "paragraph",
+          "text": "PSA monitoring remains essential."
+        },
+        {
+          "id": "h_421",
+          "type": "heading",
+          "level": 2,
+          "text": "Robotic Prostatectomy: Advantages and Limitations"
+        },
+        {
+          "id": "h_422",
+          "type": "heading",
+          "level": 3,
+          "text": "Potential advantages"
+        },
+        {
+          "id": "ul_423",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Small incisions",
+            "Less invasive approach",
+            "Magnified three-dimensional visualization",
+            "Fine instrument control",
+            "Potentially less blood loss",
+            "Short hospital stay",
+            "Faster physical recovery compared with open surgery in many patients",
+            "Nerve-sparing possible when oncologically appropriate"
+          ]
+        },
+        {
+          "id": "h_424",
+          "type": "heading",
+          "level": 3,
+          "text": "Important limitations"
+        },
+        {
+          "id": "ul_425",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Still major surgery",
+            "Requires general anaesthesia",
+            "Urinary incontinence can occur",
+            "Erectile dysfunction can occur",
+            "Sexual recovery can take months or longer",
+            "Not suitable for every prostate cancer patient",
+            "More expensive than conventional surgery in many centres",
+            "Surgeon experience is important",
+            "Robotic technology does not eliminate the possibility of cancer recurrence"
+          ]
+        },
+        {
+          "id": "h_426",
+          "type": "heading",
+          "level": 2,
+          "text": "Myths About Robotic Prostatectomy"
+        },
+        {
+          "id": "h_427",
+          "type": "heading",
+          "level": 3,
+          "text": "Myth 1: The robot performs the surgery automatically"
+        },
+        {
+          "id": "p_428",
+          "type": "paragraph",
+          "text": "**Fact:** The surgeon controls the robotic instruments throughout the operation."
+        },
+        {
+          "id": "h_429",
+          "type": "heading",
+          "level": 3,
+          "text": "Myth 2: Robotic surgery means there is no pain"
+        },
+        {
+          "id": "p_430",
+          "type": "paragraph",
+          "text": "**Fact:** It is minimally invasive, but patients can still experience pain or discomfort after surgery."
+        },
+        {
+          "id": "h_431",
+          "type": "heading",
+          "level": 3,
+          "text": "Myth 3: Robotic surgery guarantees no incontinence"
+        },
+        {
+          "id": "p_432",
+          "type": "paragraph",
+          "text": "**Fact:** Urinary leakage can occur after radical prostatectomy and may take time to improve."
+        },
+        {
+          "id": "h_433",
+          "type": "heading",
+          "level": 3,
+          "text": "Myth 4: Nerve-sparing guarantees normal erections"
+        },
+        {
+          "id": "p_434",
+          "type": "paragraph",
+          "text": "**Fact:** Nerve-sparing aims to preserve erectile nerves when it is safe, but recovery is not guaranteed."
+        },
+        {
+          "id": "h_435",
+          "type": "heading",
+          "level": 3,
+          "text": "Myth 5: Robotic prostatectomy is always better than radiation"
+        },
+        {
+          "id": "p_436",
+          "type": "paragraph",
+          "text": "**Fact:** Surgery and radiation are different treatment approaches. The appropriate choice depends on the cancer and the patient's circumstances."
+        },
+        {
+          "id": "h_437",
+          "type": "heading",
+          "level": 3,
+          "text": "Myth 6: Robotic surgery guarantees that prostate cancer will never return"
+        },
+        {
+          "id": "p_438",
+          "type": "paragraph",
+          "text": "**Fact:** Recurrence remains possible after radical prostatectomy."
+        },
+        {
+          "id": "h_439",
+          "type": "heading",
+          "level": 3,
+          "text": "Myth 7: A higher robotic surgery price means better cancer treatment"
+        },
+        {
+          "id": "p_440",
+          "type": "paragraph",
+          "text": "**Fact:** Cost and cancer outcomes are not the same thing. Surgeon experience, appropriate patient selection, cancer characteristics and quality of care all matter."
+        },
+        {
+          "id": "h_441",
+          "type": "heading",
+          "level": 2,
+          "text": "Questions to Ask a Robotic Prostate Surgeon"
+        },
+        {
+          "id": "p_442",
+          "type": "paragraph",
+          "text": "Before choosing a surgeon, consider asking:"
+        },
+        {
+          "id": "h_443",
+          "type": "heading",
+          "level": 3,
+          "text": "About cancer"
+        },
+        {
+          "id": "ol_444",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is my Grade Group?",
+            "What is my clinical stage?",
+            "Is the cancer confined to the prostate?",
+            "What does my MRI show?",
+            "Do I need PSMA PET/CT?"
+          ]
+        },
+        {
+          "id": "h_445",
+          "type": "heading",
+          "level": 3,
+          "text": "About surgery"
+        },
+        {
+          "id": "ol_446",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Am I a suitable candidate for robotic prostatectomy?",
+            "Will you perform nerve-sparing surgery?",
+            "Will nerve sparing be possible on both sides?",
+            "Do I need pelvic lymph-node dissection?",
+            "What are the main risks in my case?"
+          ]
+        },
+        {
+          "id": "h_447",
+          "type": "heading",
+          "level": 3,
+          "text": "About recovery"
+        },
+        {
+          "id": "ol_448",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "How long will I stay in hospital?",
+            "How long will I have a catheter?",
+            "When can I return to work?",
+            "When can I drive?",
+            "When can I travel internationally?",
+            "What urinary recovery should I expect?",
+            "What sexual recovery should I expect?"
+          ]
+        },
+        {
+          "id": "h_449",
+          "type": "heading",
+          "level": 3,
+          "text": "About cancer control"
+        },
+        {
+          "id": "ol_450",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What will happen to the prostate specimen after surgery?",
+            "When will the final pathology report be available?",
+            "When will my first PSA test be performed?",
+            "What happens if the PSA does not become undetectable?",
+            "What happens if the cancer returns?"
+          ]
+        },
+        {
+          "id": "h_451",
+          "type": "heading",
+          "level": 3,
+          "text": "About cost"
+        },
+        {
+          "id": "ol_452",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is included in the package?",
+            "Is robotic equipment included?",
+            "Is pathology included?",
+            "Are medicines included?",
+            "Are lymph-node dissection charges included?",
+            "What happens if I need a longer hospital stay?"
+          ]
+        },
+        {
+          "id": "btn_453",
+          "type": "button",
+          "label": "Send these questions with my records",
+          "href": "/consult?treatment=Robotic%20Prostatectomy"
+        },
+        {
+          "id": "h_454",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_455",
+          "type": "heading",
+          "level": 3,
+          "text": "What is robotic prostatectomy?"
+        },
+        {
+          "id": "p_456",
+          "type": "paragraph",
+          "text": "Robotic prostatectomy is a minimally invasive radical prostatectomy in which the surgeon uses robotic-assisted instruments controlled from a console to remove the prostate, usually for prostate cancer."
+        },
+        {
+          "id": "h_457",
+          "type": "heading",
+          "level": 3,
+          "text": "Is robotic prostatectomy the same as robotic radical prostatectomy?"
+        },
+        {
+          "id": "p_458",
+          "type": "paragraph",
+          "text": "In the prostate-cancer setting, the terms are commonly used to refer to robot-assisted radical prostatectomy (RARP), where the entire prostate is removed."
+        },
+        {
+          "id": "h_459",
+          "type": "heading",
+          "level": 3,
+          "text": "Is robotic prostatectomy a major surgery?"
+        },
+        {
+          "id": "p_460",
+          "type": "paragraph",
+          "text": "Yes. Although the operation uses small incisions, radical prostatectomy is still major surgery and requires general anaesthesia."
+        },
+        {
+          "id": "h_461",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does robotic prostatectomy take?"
+        },
+        {
+          "id": "p_462",
+          "type": "paragraph",
+          "text": "Operating time varies according to the patient's anatomy, cancer stage, surgical technique and whether lymph nodes are removed. The treating surgeon can provide a more accurate estimate."
+        },
+        {
+          "id": "h_463",
+          "type": "heading",
+          "level": 3,
+          "text": "How many days do I need to stay in hospital?"
+        },
+        {
+          "id": "p_464",
+          "type": "paragraph",
+          "text": "Many patients stay for approximately one to two days after robotic prostatectomy, although this can vary."
+        },
+        {
+          "id": "h_465",
+          "type": "heading",
+          "level": 3,
+          "text": "How long is the catheter kept?"
+        },
+        {
+          "id": "p_466",
+          "type": "paragraph",
+          "text": "A catheter commonly remains for approximately one to two weeks after radical prostatectomy."
+        },
+        {
+          "id": "h_467",
+          "type": "heading",
+          "level": 3,
+          "text": "Is robotic prostatectomy painful?"
+        },
+        {
+          "id": "p_468",
+          "type": "paragraph",
+          "text": "Some pain or discomfort is expected after surgery. The minimally invasive approach may reduce post-operative discomfort compared with open surgery, but individual experiences vary."
+        },
+        {
+          "id": "h_469",
+          "type": "heading",
+          "level": 3,
+          "text": "How quickly can I walk after robotic prostatectomy?"
+        },
+        {
+          "id": "p_470",
+          "type": "paragraph",
+          "text": "Patients are generally encouraged to begin walking soon after surgery when medically safe."
+        },
+        {
+          "id": "h_471",
+          "type": "heading",
+          "level": 3,
+          "text": "When can I return to work?"
+        },
+        {
+          "id": "p_472",
+          "type": "paragraph",
+          "text": "Some patients with desk-based jobs can return earlier, while physically demanding work may require several weeks of recovery."
+        },
+        {
+          "id": "h_473",
+          "type": "heading",
+          "level": 3,
+          "text": "When can I exercise?"
+        },
+        {
+          "id": "p_474",
+          "type": "paragraph",
+          "text": "Walking is usually encouraged early in recovery. Heavy lifting and strenuous exercise should wait until the surgeon gives clearance."
+        },
+        {
+          "id": "h_475",
+          "type": "heading",
+          "level": 3,
+          "text": "Will I become incontinent after robotic prostatectomy?"
+        },
+        {
+          "id": "p_476",
+          "type": "paragraph",
+          "text": "Urinary leakage is a common early side effect for some patients. Control often improves during recovery, but persistent incontinence can occur."
+        },
+        {
+          "id": "h_477",
+          "type": "heading",
+          "level": 3,
+          "text": "Will robotic prostatectomy cause erectile dysfunction?"
+        },
+        {
+          "id": "p_478",
+          "type": "paragraph",
+          "text": "It can. The risk depends on factors such as age, pre-operative erectile function, cancer location and whether the nerves can safely be preserved."
+        },
+        {
+          "id": "h_479",
+          "type": "heading",
+          "level": 3,
+          "text": "Does nerve-sparing prevent erectile dysfunction?"
+        },
+        {
+          "id": "p_480",
+          "type": "paragraph",
+          "text": "No. It improves the possibility of preserving erectile function when oncologically appropriate, but it does not guarantee recovery."
+        },
+        {
+          "id": "h_481",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I have sex after robotic prostatectomy?"
+        },
+        {
+          "id": "p_482",
+          "type": "paragraph",
+          "text": "Sexual activity should resume only after the surgical team confirms that healing is adequate. Erectile recovery often takes considerably longer than physical recovery."
+        },
+        {
+          "id": "h_483",
+          "type": "heading",
+          "level": 3,
+          "text": "Will I still ejaculate after prostate removal?"
+        },
+        {
+          "id": "p_484",
+          "type": "paragraph",
+          "text": "Normal ejaculation does not occur after radical prostatectomy because the prostate and seminal vesicles are removed."
+        },
+        {
+          "id": "h_485",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I have children after prostatectomy?"
+        },
+        {
+          "id": "p_486",
+          "type": "paragraph",
+          "text": "Natural conception is generally not possible after radical prostatectomy. Men who may want biological children should discuss sperm banking before treatment."
+        },
+        {
+          "id": "h_487",
+          "type": "heading",
+          "level": 3,
+          "text": "Does robotic prostatectomy remove the lymph nodes?"
+        },
+        {
+          "id": "p_488",
+          "type": "paragraph",
+          "text": "Not automatically. Pelvic lymph-node dissection is performed when indicated by the patient's cancer risk and treatment plan."
+        },
+        {
+          "id": "h_489",
+          "type": "heading",
+          "level": 3,
+          "text": "What happens to the removed prostate?"
+        },
+        {
+          "id": "p_490",
+          "type": "paragraph",
+          "text": "It is sent to a pathology laboratory for detailed examination."
+        },
+        {
+          "id": "h_491",
+          "type": "heading",
+          "level": 3,
+          "text": "When will I get the final pathology report?"
+        },
+        {
+          "id": "p_492",
+          "type": "paragraph",
+          "text": "Timing varies between hospitals and laboratories. The treating team will explain when the report is expected."
+        },
+        {
+          "id": "h_493",
+          "type": "heading",
+          "level": 3,
+          "text": "What happens to PSA after prostatectomy?"
+        },
+        {
+          "id": "p_494",
+          "type": "paragraph",
+          "text": "PSA should fall to a very low or undetectable level after successful removal of the prostate, and regular PSA testing is used to monitor for recurrence."
+        },
+        {
+          "id": "h_495",
+          "type": "heading",
+          "level": 3,
+          "text": "Can prostate cancer come back after robotic prostatectomy?"
+        },
+        {
+          "id": "p_496",
+          "type": "paragraph",
+          "text": "Yes. Recurrence is possible, which is why long-term PSA follow-up is important."
+        },
+        {
+          "id": "h_497",
+          "type": "heading",
+          "level": 3,
+          "text": "What happens if cancer is found in the lymph nodes?"
+        },
+        {
+          "id": "p_498",
+          "type": "paragraph",
+          "text": "The treatment team may recommend additional monitoring or treatment depending on the number of involved nodes and other pathology findings."
+        },
+        {
+          "id": "h_499",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I have radiation after robotic prostatectomy?"
+        },
+        {
+          "id": "p_500",
+          "type": "paragraph",
+          "text": "Yes. Radiation may be considered in selected patients if PSA rises or pathology indicates a significant risk of recurrence."
+        },
+        {
+          "id": "h_501",
+          "type": "heading",
+          "level": 3,
+          "text": "Is robotic prostatectomy suitable for Stage 4 prostate cancer?"
+        },
+        {
+          "id": "p_502",
+          "type": "paragraph",
+          "text": "Usually, widespread metastatic prostate cancer is primarily treated with systemic therapies. Surgery may have a role only in selected circumstances."
+        },
+        {
+          "id": "h_503",
+          "type": "heading",
+          "level": 3,
+          "text": "Is robotic prostatectomy available in India?"
+        },
+        {
+          "id": "p_504",
+          "type": "paragraph",
+          "text": "Yes. Robotic-assisted prostatectomy is available at a number of tertiary hospitals in India."
+        },
+        {
+          "id": "h_505",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does robotic prostatectomy cost in India?"
+        },
+        {
+          "id": "p_506",
+          "type": "paragraph",
+          "text": "Published hospital estimates vary. Apollo Hospitals currently lists approximately ₹2 lakh–₹4 lakh, while a Medanta estimate published through Vaidam lists approximately ₹1.70 lakh–₹4.75 lakh for international patients. GAF Healthcare planning ranges for radical prostatectomy, including robotic-assisted surgery, are $7,000–$18,000. The final quotation depends on the individual case and hospital."
+        },
+        {
+          "id": "h_507",
+          "type": "heading",
+          "level": 3,
+          "text": "Is robotic prostatectomy covered by insurance in India?"
+        },
+        {
+          "id": "p_508",
+          "type": "paragraph",
+          "text": "Coverage depends on the patient's insurance policy, hospital network and policy terms. Patients should confirm coverage and pre-authorisation requirements before surgery."
+        },
+        {
+          "id": "h_509",
+          "type": "heading",
+          "level": 3,
+          "text": "Is robotic prostatectomy cheaper in India than in other countries?"
+        },
+        {
+          "id": "p_510",
+          "type": "paragraph",
+          "text": "India can offer lower treatment costs than many high-cost healthcare systems, but meaningful comparison requires looking at the complete treatment package, not just the operation price."
+        },
+        {
+          "id": "h_511",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients arrange robotic prostatectomy in India before travelling?"
+        },
+        {
+          "id": "p_512",
+          "type": "paragraph",
+          "text": "A preliminary assessment can often be performed after the hospital reviews medical records. The final treatment plan should be confirmed after specialist evaluation."
+        },
+        {
+          "id": "h_513",
+          "type": "heading",
+          "level": 2,
+          "text": "Key Takeaways"
+        },
+        {
+          "id": "p_514",
+          "type": "paragraph",
+          "text": "Robotic prostatectomy is an advanced form of minimally invasive **radical prostatectomy** used mainly to treat prostate cancer that is suitable for surgical removal."
+        },
+        {
+          "id": "p_515",
+          "type": "paragraph",
+          "text": "The operation removes the prostate and usually the seminal vesicles. Lymph nodes may also be removed when clinically indicated."
+        },
+        {
+          "id": "p_516",
+          "type": "paragraph",
+          "text": "The major points patients should understand are:"
+        },
+        {
+          "id": "ul_517",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "The surgeon controls the robotic system.",
+            "It is still major surgery.",
+            "Small incisions can support a faster physical recovery than open surgery in many patients.",
+            "Nerve-sparing is possible when it is safe from a cancer-control perspective.",
+            "Urinary leakage can occur after surgery.",
+            "Erectile dysfunction can occur even after nerve-sparing surgery.",
+            "Sexual recovery is usually slower than physical recovery.",
+            "A urinary catheter commonly remains for around one to two weeks.",
+            "Final pathology provides important information about the cancer after surgery.",
+            "PSA monitoring remains essential after prostate removal.",
+            "Robotic prostatectomy does not guarantee that cancer will never return.",
+            "Published robotic prostatectomy costs in India vary substantially, so patients should request an itemised quotation."
+          ]
+        },
+        {
+          "id": "p_518",
+          "type": "paragraph",
+          "text": "For international patients, treatment planning should cover not only the surgery but also **diagnostic review, hospital stay, catheter management, post-operative assessment and safe return travel**."
+        },
+        {
+          "id": "h_519",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Prostate Cancer Resources"
+        },
+        {
+          "id": "p_520",
+          "type": "paragraph",
+          "text": "For patients researching prostate cancer treatment in India, these related guides can provide additional information:"
+        },
+        {
+          "id": "ul_521",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) – overview of treatment options, hospitals and the international patient journey.",
+            "[Prostate Cancer Treatment Without Surgery](/blogs/prostate-cancer-treatment-without-surgery) – radiation, active surveillance, hormone therapy and other non-surgical approaches.",
+            "[Prostate Cancer Treatment Cost in India](/costs/India/Surgical-Oncology/Radical-Prostatectomy) – surgery, radiation, hormone therapy and advanced treatment costs.",
+            "[What Is the Best Treatment for Prostate Cancer?](/blogs/prostate-cancer-treatment-options-india) – how doctors select treatment based on stage and risk.",
+            "[Prostate Cancer Treatment by Stage](/blogs/prostate-cancer-treatment-options-india) – treatment approaches for Stage 1 through Stage 4.",
+            "[Radiation Therapy for Prostate Cancer in India](/costs/India/Radiation-Oncology/EBRT) – IMRT, IGRT, VMAT, SBRT and [brachytherapy](/costs/India/Radiation-Oncology/Brachytherapy).",
+            "[Radical prostatectomy doctors in India](/doctors/India/Surgical-Oncology/Radical-Prostatectomy) – named uro-oncology teams who perform prostatectomy.",
+            "[Hospitals for radical prostatectomy](/hospitals/India/Surgical-Oncology/Radical-Prostatectomy) – campuses offering the procedure."
+          ]
+        },
+        {
+          "id": "p_522",
+          "type": "paragraph",
+          "text": "The primary internal link remains the main [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) page."
+        },
+        {
+          "id": "h_523",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_524",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates international patients who want [robotic prostatectomy in India](/treatments/prostate-cancer-treatment-in-india). Share PSA reports, biopsy and Grade Group, MRI or PSMA PET, and previous treatment records. A coordinator can arrange specialist review with a [uro-oncologist](/doctors/India/Surgical-Oncology/Radical-Prostatectomy), an itemized estimate and travel planning. The treating surgical team makes the final recommendation."
+        },
+        {
+          "id": "btn_525",
+          "type": "button",
+          "label": "Share records for a robotic-prostatectomy review",
+          "href": "/consult?treatment=Robotic%20Prostatectomy"
+        },
+        {
+          "id": "p_526",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your records](https://wa.me/919044346292?text=I%20would%20like%20to%20share%20prostate%20cancer%20records%20for%20a%20robotic%20prostatectomy%20review%20in%20India.)"
+        },
+        {
+          "id": "h_527",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_528",
+          "type": "paragraph",
+          "text": "This article is intended for general educational purposes and is not a substitute for medical advice."
+        },
+        {
+          "id": "p_529",
+          "type": "paragraph",
+          "text": "The suitability of robotic prostatectomy depends on the patient's cancer stage, Grade Group, PSA, imaging, overall health, life expectancy and other clinical factors."
+        },
+        {
+          "id": "p_530",
+          "type": "paragraph",
+          "text": "Surgical outcomes, recovery time, complications and costs vary between patients and hospitals. Patients should discuss their individual case with a qualified urologist or uro-oncology team before making a treatment decision."
+        },
+        {
+          "id": "p_531",
+          "type": "paragraph",
+          "text": "Published costs are indicative and can change. A current written quotation should be obtained from the treating hospital before making financial or travel arrangements."
+        },
+        {
+          "id": "h_532",
+          "type": "heading",
+          "level": 2,
+          "text": "Top 5 Sources"
+        },
+        {
+          "id": "p_533",
+          "type": "paragraph",
+          "text": "1. [European Association of Urology — Prostate Cancer Guidelines](https://uroweb.org/guidelines/prostate-cancer) — radical prostatectomy, nerve-sparing, lymph-node dissection, complications and the 2026 clinical update."
+        },
+        {
+          "id": "p_534",
+          "type": "paragraph",
+          "text": "2. [EAU Patient Information: Radical Prostatectomy](https://patients.uroweb.org/treatments/radical-prostatectomy/) — open, laparoscopic and robot-assisted prostatectomy, nerve-sparing and side effects."
+        },
+        {
+          "id": "p_535",
+          "type": "paragraph",
+          "text": "3. [American Cancer Society — Surgery for Prostate Cancer](https://www.cancer.org/cancer/types/prostate-cancer/treating/surgery.html) — radical prostatectomy, catheter use, recovery, incontinence and erectile dysfunction."
+        },
+        {
+          "id": "p_536",
+          "type": "paragraph",
+          "text": "4. [Apollo Hospitals — Robotic Prostatectomy](https://www.apollohospitals.com/procedures/robotic-prostatectomy) — India-specific procedure, recovery, risks and an indicative published cost range."
+        },
+        {
+          "id": "p_537",
+          "type": "paragraph",
+          "text": "5. [Vaidam Health — Robotic Cancer Surgery at Medanta](https://www.vaidam.com/node/32359) — indicative estimate for robotic prostatectomy for international patients."
+        },
+        {
+          "id": "p_538",
+          "type": "paragraph",
+          "text": "**Last reviewed against the cited sources: September 2026.**"
+        }
+      ]
+    },
     {
       "id": "art_prostate_cancer_treatment_without_surgery",
       "slug": "prostate-cancer-treatment-without-surgery",
@@ -928,7 +4269,7 @@
         },
         {
           "label": "Robotic Prostatectomy in India",
-          "href": "/doctors/India/Surgical-Oncology/Radical-Prostatectomy"
+          "href": "/blogs/robotic-prostatectomy-in-india"
         }
       ],
       "blocks": [
@@ -3365,7 +6706,7 @@
         {
           "id": "p_409",
           "type": "paragraph",
-          "text": "**Related:** [Robotic Prostatectomy in India](/doctors/India/Surgical-Oncology/Radical-Prostatectomy) and [radical prostatectomy cost](/costs/India/Surgical-Oncology/Radical-Prostatectomy)."
+          "text": "**Related:** [Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india) and [radical prostatectomy cost](/costs/India/Surgical-Oncology/Radical-Prostatectomy)."
         },
         {
           "id": "h_410",
@@ -3708,7 +7049,7 @@
             "[Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) – complete overview of treatment options and the international patient journey.",
             "[Prostate Cancer Treatment Options](/blogs/prostate-cancer-treatment-options-india) – explains how doctors compare surgery, radiation, hormone therapy and more.",
             "[Prostate Cancer Treatment Cost in India](/treatments/prostate-cancer-treatment-in-india) – detailed cost guide covering surgery, radiation, hormone therapy and advanced treatments.",
-            "[Robotic Prostatectomy in India](/doctors/India/Surgical-Oncology/Radical-Prostatectomy) – procedure, eligibility, recovery, risks and cost.",
+            "[Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india) – procedure, eligibility, recovery, risks and cost.",
             "[Prostate Cancer Treatment by Stage](/blogs/prostate-cancer-treatment-options-india) – treatment options for Stage 1, 2, 3 and 4 disease.",
             "[Radiation Therapy for Prostate Cancer in India](/costs/India/Radiation-Oncology/EBRT) – IMRT, IGRT, VMAT, SBRT and [brachytherapy](/costs/India/Radiation-Oncology/Brachytherapy).",
             "[PSMA PET/CT for Prostate Cancer](/treatments/prostate-cancer-treatment-in-india) – when advanced imaging may be useful.",
@@ -3844,7 +7185,7 @@
         },
         {
           "label": "Robotic Prostatectomy in India",
-          "href": "/doctors/India/Surgical-Oncology/Radical-Prostatectomy"
+          "href": "/blogs/robotic-prostatectomy-in-india"
         },
         {
           "label": "Brachytherapy for Prostate Cancer",
@@ -4241,7 +7582,7 @@
         {
           "id": "p_066",
           "type": "paragraph",
-          "text": "**Related:** [Robotic Prostatectomy in India](/doctors/India/Surgical-Oncology/Radical-Prostatectomy) and the [India treatment pathway](/treatments/prostate-cancer-treatment-in-india)."
+          "text": "**Related:** [Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india) and the [India treatment pathway](/treatments/prostate-cancer-treatment-in-india)."
         },
         {
           "id": "btn_067",

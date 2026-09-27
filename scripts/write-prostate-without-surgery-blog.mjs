@@ -810,7 +810,7 @@ const blocks = [
   ]),
   p("For selected localized cancers, surgery and radiation are both established definitive treatments."),
   p("The decision should be individualized rather than based solely on the desire to avoid an operation."),
-  p("**Related:** [Robotic Prostatectomy in India](" + RP_DOCTORS + ") and [radical prostatectomy cost](" + RP_COST + ")."),
+  p("**Related:** [Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india) and [radical prostatectomy cost](" + RP_COST + ")."),
 
   h2("Questions to Ask Your Doctor if You Want to Avoid Surgery"),
   p("If avoiding prostatectomy is important to you, ask:"),
@@ -868,7 +868,7 @@ const blocks = [
     "[Prostate Cancer Treatment in India](" + PILLAR + ") – complete overview of treatment options and the international patient journey.",
     "[Prostate Cancer Treatment Options](" + OPTIONS + ") – explains how doctors compare surgery, radiation, hormone therapy and more.",
     "[Prostate Cancer Treatment Cost in India](" + PILLAR + ") – detailed cost guide covering surgery, radiation, hormone therapy and advanced treatments.",
-    "[Robotic Prostatectomy in India](" + RP_DOCTORS + ") – procedure, eligibility, recovery, risks and cost.",
+    "[Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india) – procedure, eligibility, recovery, risks and cost.",
     "[Prostate Cancer Treatment by Stage](" + OPTIONS + ") – treatment options for Stage 1, 2, 3 and 4 disease.",
     "[Radiation Therapy for Prostate Cancer in India](" + EBRT + ") – IMRT, IGRT, VMAT, SBRT and [brachytherapy](" + BRACHY + ").",
     "[PSMA PET/CT for Prostate Cancer](" + PILLAR + ") – when advanced imaging may be useful.",
@@ -940,7 +940,7 @@ const article = {
     { label: "Brachytherapy for Prostate Cancer", href: BRACHY },
     { label: "Hormone therapy cost", href: HT },
     { label: "External-beam radiation cost", href: EBRT },
-    { label: "Robotic Prostatectomy in India", href: RP_DOCTORS },
+    { label: "Robotic Prostatectomy in India", href: "/blogs/robotic-prostatectomy-in-india" },
   ],
   blocks,
 };
