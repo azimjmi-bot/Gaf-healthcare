@@ -17,6 +17,8 @@ import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
 import { LOCALES } from "@/lib/i18n/languages";
 import {
+  splitTreatmentQuickAnswer,
+  treatmentBodyLocation,
   treatmentEditorialBody,
   treatmentEditorialBodyForDisplay,
 } from "@/lib/curated-treatment-editorial";
@@ -91,6 +93,49 @@ test("the published breast cancer page is complete and internally linked", () =>
   );
   assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
   assert.equal(publishedCuratedTreatments("ar").length, 0);
+});
+
+test("the published prostate cancer page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "prostate-cancer-treatment-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$1,000–\$6,000\+/);
+  assert.match(body, /\$6,500–\$14,500/);
+  assert.match(body, /\$1,000–\$4,500/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Radical-Prostatectomy/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Radical-Prostatectomy/);
+  assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Radical-Prostatectomy/);
+  assert.match(body, /\/hospitals\/India\/Bengaluru\/Surgical-Oncology/);
+  assert.match(body, /\/uploads\/treatments\/prostate-anatomy-male-pelvis\.webp/);
+  assert.match(body, /\/uploads\/treatments\/prostate-cancer-staging-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/prostate-treatment-pathways-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/prostate-radiation-anatomy\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.equal(qa.quickAnswer?.items.length, 5);
+  assert.match(qa.quickAnswer?.items[3]?.answer ?? "", /\$7,000–\$18,000/);
+  assert.equal(
+    treatmentBodyLocation(treatment.category, treatment.subspecialty, treatment.translations.en!.name),
+    "Prostate",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/prostate-cancer-treatment-in-india"),
+  );
 });
 
 test("Save recreates a missing Treatment instead of 404ing", () => {

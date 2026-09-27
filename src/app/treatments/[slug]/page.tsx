@@ -24,7 +24,11 @@ import { treatmentUi } from "@/lib/i18n/treatment-ui";
 import { whatsappHref } from "@/lib/site";
 import { getCountry, getSpecialty } from "@/lib/taxonomy";
 import { catalogTreatments } from "@/lib/treatments";
-import { treatmentEditorialBodyForDisplay } from "@/lib/curated-treatment-editorial";
+import {
+  splitTreatmentQuickAnswer,
+  treatmentBodyLocation,
+  treatmentEditorialBodyForDisplay,
+} from "@/lib/curated-treatment-editorial";
 
 type Params = Promise<{ slug: string }>;
 
@@ -185,9 +189,7 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
     taxonomyLabel(specialty?.name, locale),
     locale,
     destinations,
-    /breast/i.test(`${treatment.category} ${treatment.subspecialty} ${copy.name}`)
-      ? "Breast"
-      : undefined,
+    treatmentBodyLocation(treatment.category, treatment.subspecialty, copy.name),
   );
   const specialtyLabel = taxonomyLabel(specialty?.name, locale);
   const heroFactCount = [
@@ -319,7 +321,31 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
           <article className="treatment-article" id="treatment-guide">
           <section className="treatment-article__section treatment-article__intro">
             <p className="eyebrow">{ui.overview}</p>
-            <MarkdownBody source={treatmentEditorialBodyForDisplay(copy, locale)} />
+            {(() => {
+              const display = treatmentEditorialBodyForDisplay(copy, locale);
+              const { before, quickAnswer, after } =
+                splitTreatmentQuickAnswer(display);
+              return (
+                <>
+                  {before ? <MarkdownBody source={before} /> : null}
+                  {quickAnswer ? (
+                    <aside className="article-quick-answer">
+                      <p className="article-quick-answer__label">Quick answer</p>
+                      <h2>{quickAnswer.heading}</h2>
+                      {quickAnswer.items.map((item) => (
+                        <p
+                          key={item.question}
+                          className="article-quick-answer__body"
+                        >
+                          <strong>{item.question}</strong> {item.answer}
+                        </p>
+                      ))}
+                    </aside>
+                  ) : null}
+                  {after ? <MarkdownBody source={after} /> : null}
+                </>
+              );
+            })()}
           </section>
 
           {copy.process.length > 0 ? (

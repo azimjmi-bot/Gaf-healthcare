@@ -2542,6 +2542,19 @@ img.dhero__art {
   border-radius: 0.75rem;
 }
 
+.treatment-article .md-body,
+.article-body .md-body {
+  overflow-x: auto;
+}
+
+.treatment-article .article-quick-answer h2 {
+  margin: 0.45rem 0 0;
+  color: #133a41;
+  font-family: var(--font-heading);
+  font-size: clamp(1.35rem, 4vw, 1.7rem);
+  line-height: 1.25;
+}
+
 .treatment-article .md-body > p:has(> a.md-cta:only-child),
 .article-body > p:has(> a.md-cta:only-child),
 .article-body .md-body > p:has(> a.md-cta:only-child) {
@@ -2604,12 +2617,14 @@ img.dhero__art {
 }
 
 @media (max-width: 640px) {
-  .article-body {
+  .article-body,
+  .treatment-article .md-body {
     font-size: 1.05rem;
     overflow-wrap: anywhere;
   }
 
-  .article-body a.md-cta {
+  .article-body a.md-cta,
+  .treatment-article .md-body a.md-cta {
     width: 100%;
     text-align: center;
   }
@@ -2619,7 +2634,8 @@ img.dhero__art {
   }
 
   .md-body table,
-  .article-body table {
+  .article-body table,
+  .treatment-article .md-body table {
     font-size: 0.92rem;
   }
 }

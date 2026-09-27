@@ -71,3 +71,49 @@ export function treatmentEditorialBodyForDisplay(
   }
   return body;
 }
+
+export type TreatmentQuickAnswerItem = {
+  question: string;
+  answer: string;
+};
+
+export type TreatmentQuickAnswer = {
+  heading: string;
+  items: TreatmentQuickAnswerItem[];
+};
+
+export function splitTreatmentQuickAnswer(body: string): {
+  before: string;
+  quickAnswer: TreatmentQuickAnswer | null;
+  after: string;
+} {
+  const match = body.match(
+    /(^|\n)##\s+(Quick Answer[^\n]*)\n+([\s\S]*?)(?=\n##\s+)/,
+  );
+  if (!match || match.index === undefined) {
+    return { before: body, quickAnswer: null, after: "" };
+  }
+  const heading = match[2].trim();
+  const section = match[3].trim();
+  const items: TreatmentQuickAnswerItem[] = [];
+  const itemRe = /\*\*([^*]+)\*\*\s*\n+([\s\S]*?)(?=\n\*\*|$)/g;
+  for (const itemMatch of section.matchAll(itemRe)) {
+    items.push({
+      question: itemMatch[1].trim(),
+      answer: itemMatch[2].trim(),
+    });
+  }
+  if (items.length === 0) {
+    return { before: body, quickAnswer: null, after: "" };
+  }
+  const before = body.slice(0, match.index).trim();
+  const after = body.slice(match.index + match[0].length).trim();
+  return { before, quickAnswer: { heading, items }, after };
+}
+
+export function treatmentBodyLocation(...parts: Array<string | undefined>) {
+  const text = parts.filter(Boolean).join(" ");
+  if (/breast/i.test(text)) return "Breast";
+  if (/prostate/i.test(text)) return "Prostate";
+  return undefined;
+}
