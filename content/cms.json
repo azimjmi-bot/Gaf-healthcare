@@ -66,7 +66,8 @@
     "ILC",
     "pregnancy",
     "DCIS",
-    "stage 0"
+    "stage 0",
+    "prostate cancer"
   ],
   "media": [
     {
@@ -803,9 +804,1805 @@
       "name": "dcis-followup-visual.webp",
       "alt": "Follow-up after DCIS treatment",
       "addedAt": "2026-09-28T03:00:00.000Z"
+    },
+    {
+      "id": "media_pca_options_categories_webp",
+      "url": "/uploads/articles/pca-options-categories.webp",
+      "name": "pca-options-categories.webp",
+      "alt": "Transparent male body highlighting the prostate in the pelvis as the starting point for treatment planning",
+      "addedAt": "2026-09-28T03:30:00.000Z"
+    },
+    {
+      "id": "media_pca_options_surgery_webp",
+      "url": "/uploads/articles/pca-options-surgery.webp",
+      "name": "pca-options-surgery.webp",
+      "alt": "Sagittal male pelvis for radical prostatectomy planning",
+      "addedAt": "2026-09-28T03:30:00.000Z"
+    },
+    {
+      "id": "media_pca_options_radiation_webp",
+      "url": "/uploads/articles/pca-options-radiation.webp",
+      "name": "pca-options-radiation.webp",
+      "alt": "Male patient on a couch for prostate radiation planning",
+      "addedAt": "2026-09-28T03:30:00.000Z"
+    },
+    {
+      "id": "media_pca_options_followup_webp",
+      "url": "/uploads/articles/pca-options-followup.webp",
+      "name": "pca-options-followup.webp",
+      "alt": "PSA follow-up after prostate cancer treatment",
+      "addedAt": "2026-09-28T03:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_prostate_cancer_treatment_options_india",
+      "slug": "prostate-cancer-treatment-options-india",
+      "title": "Prostate Cancer Treatment Options: Surgery, Radiation, Hormone Therapy and More",
+      "excerpt": "How doctors choose between active surveillance, radical prostatectomy, radiation, hormone therapy, chemotherapy and PSMA treatment — and what that means for care in India.",
+      "date": "28 September 2026",
+      "publishedAt": "2026-09-28T03:30:00.000Z",
+      "updatedAt": "2026-09-28T03:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "prostate cancer",
+        "surgery",
+        "radiation",
+        "hormone therapy",
+        "India",
+        "travel"
+      ],
+      "image": "/uploads/articles/pca-options-categories.webp",
+      "imageAlt": "Transparent male body highlighting the prostate in the pelvis as the starting point for treatment planning",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Prostate Cancer Treatment Options: Surgery, Radiation & ADT",
+      "seoDescription": "Compare active surveillance, radical prostatectomy, radiation, hormone therapy, chemotherapy and PSMA treatment. How doctors choose, side effects, and India care pathways.",
+      "canonical": "https://gaf.healthcare/blogs/prostate-cancer-treatment-options-india",
+      "ogImage": "/uploads/articles/pca-options-categories.webp",
+      "allowIndex": true,
+      "keywords": [
+        "prostate cancer treatment options",
+        "prostate cancer surgery vs radiation",
+        "active surveillance prostate cancer",
+        "robotic prostatectomy India",
+        "prostate radiation therapy",
+        "hormone therapy ADT prostate cancer",
+        "PSMA therapy India",
+        "prostate cancer treatment in India",
+        "brachytherapy for prostate cancer",
+        "metastatic prostate cancer treatment",
+        "prostate cancer side effects",
+        "international prostate cancer treatment India"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Prostate Cancer Treatment in India",
+          "href": "/treatments/prostate-cancer-treatment-in-india"
+        },
+        {
+          "label": "Robotic Prostatectomy in India",
+          "href": "/doctors/India/Surgical-Oncology/Radical-Prostatectomy"
+        },
+        {
+          "label": "Brachytherapy for Prostate Cancer",
+          "href": "/costs/India/Radiation-Oncology/Brachytherapy"
+        },
+        {
+          "label": "Lutetium-177 PSMA Therapy in India",
+          "href": "/treatments/prostate-cancer-treatment-in-india"
+        },
+        {
+          "label": "Prostate Cancer Treatment Cost in India",
+          "href": "/costs/India/Surgical-Oncology/Radical-Prostatectomy"
+        },
+        {
+          "label": "Hormone therapy cost",
+          "href": "/costs/India/Medical-Oncology/Hormone-Therapy"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>What are the main treatment options for prostate cancer?</strong></p><p class=\"article-quick-answer__body\">The main options include:</p><ul class=\"article-quick-answer__list\"><li>Active surveillance</li><li>Watchful waiting</li><li>Radical prostatectomy</li><li>Robotic-assisted prostatectomy</li><li>External-beam radiation therapy</li><li>Brachytherapy</li><li>Hormone therapy or androgen deprivation therapy (ADT)</li><li>Chemotherapy</li><li>Targeted therapy</li><li>Immunotherapy in selected cases</li><li>PSMA-targeted radiopharmaceutical treatment</li><li>Focal treatments such as HIFU or cryotherapy in selected circumstances</li></ul><p class=\"article-quick-answer__body\">For <strong>low-risk localised prostate cancer</strong>, active surveillance is often an important option. For selected localised cancers, surgery or radiation can be used with curative intent. Higher-risk or locally advanced disease may require combinations of local treatment and hormone therapy. Metastatic prostate cancer is generally managed with systemic treatment, sometimes combined with radiation or other therapies.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "A diagnosis of prostate cancer does not automatically mean that surgery is required."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "Treatment can range from **active surveillance for selected low-risk cancers** to [surgery](/costs/India/Surgical-Oncology/Radical-Prostatectomy), [radiation therapy](/costs/India/Radiation-Oncology/EBRT), [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy), [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy), [targeted treatment](/costs/India/Medical-Oncology/Targeted-Therapy) or radiopharmaceutical therapy for more advanced disease. Some patients need only one treatment, while others require a combination of treatments."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "The right approach depends on several factors, including the **stage of prostate cancer, PSA level, Gleason score, Grade Group, MRI findings, whether the cancer has spread, age, overall health, life expectancy and the patient's priorities**."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "For this reason, there is no single \"best prostate cancer treatment\" that applies to every patient. This guide sits beside the [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) pathway and the city directories for [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad)."
+        },
+        {
+          "id": "btn_006",
+          "type": "button",
+          "label": "Ask GAF about a prostate cancer treatment plan",
+          "href": "/consult?treatment=Prostate%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your PSA, biopsy and MRI](https://wa.me/919044346292?text=Please%20review%20my%20PSA%2C%20biopsy%20and%20MRI%20and%20advise%20on%20prostate%20cancer%20treatment%20options%20in%20India.)"
+        },
+        {
+          "id": "img_008",
+          "type": "image",
+          "src": "/uploads/articles/pca-options-categories.webp",
+          "alt": "Transparent male body highlighting the prostate in the pelvis as the starting point for treatment planning",
+          "caption": "Treatment is chosen after doctors know where the cancer is and how aggressive it looks — not from the word prostate cancer alone."
+        },
+        {
+          "id": "h_009",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is Prostate Cancer Treatment Decided?"
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "The treatment decision usually starts with one question:"
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "**Where is the cancer, and how aggressive is it?**"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Doctors then combine information from the patient's:"
+        },
+        {
+          "id": "ul_013",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "PSA blood test",
+            "Prostate biopsy",
+            "Gleason score",
+            "Grade Group",
+            "MRI",
+            "Clinical stage",
+            "Lymph-node assessment",
+            "Metastatic imaging when appropriate",
+            "General health",
+            "Life expectancy",
+            "Urinary function",
+            "Sexual function",
+            "Previous treatments"
+          ]
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "Stage is important, but it is not the only factor."
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "Two men with the same stage can receive different treatments because their Grade Group, PSA, age, health and personal circumstances may differ. The American Cancer Society also notes that treatment decisions for prostate cancer are influenced by risk group, age, overall health, life expectancy and personal preferences."
+        },
+        {
+          "id": "h_016",
+          "type": "heading",
+          "level": 2,
+          "text": "Understanding the Main Prostate Cancer Treatment Categories"
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "A useful way to understand prostate cancer treatment is to divide it into four broad groups."
+        },
+        {
+          "id": "h_018",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Monitoring"
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "Used for selected cancers that may not need immediate treatment."
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "**Examples:** active surveillance and watchful waiting."
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Local treatment"
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "Designed to treat cancer in and around the prostate."
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "**Examples:** [radical prostatectomy](/doctors/India/Surgical-Oncology/Radical-Prostatectomy), [radiation therapy](/doctors/India/Radiation-Oncology), [brachytherapy](/costs/India/Radiation-Oncology/Brachytherapy) and selected focal treatments."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Systemic treatment"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "Medicines travel through the body and are used when cancer may be outside the prostate or when systemic treatment is otherwise appropriate."
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "**Examples:** [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy), [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy), [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) and selected [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy)."
+        },
+        {
+          "id": "h_027",
+          "type": "heading",
+          "level": 3,
+          "text": "4. Radiopharmaceutical treatment"
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "These treatments use radioactive substances linked to molecules that target cancer cells or their environment."
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "**Example:** lutetium-177 PSMA therapy in selected advanced prostate cancers, discussed on the [India treatment page](/treatments/prostate-cancer-treatment-in-india)."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 2,
+          "text": "1. Active Surveillance"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "Active surveillance is one of the most important treatment approaches for selected men with low-risk prostate cancer."
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "It does **not** mean ignoring the cancer."
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "Instead, the cancer is monitored closely, with treatment started if there are signs that the disease is becoming more aggressive or clinically significant."
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "Monitoring may include:"
+        },
+        {
+          "id": "ul_035",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "PSA testing",
+            "Digital rectal examination",
+            "Prostate MRI",
+            "Repeat biopsy when indicated",
+            "Review of clinical findings"
+          ]
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "The 2026 EAU guideline recommends active surveillance as standard care for suitable patients with low-risk disease and selected patients with favourable intermediate-risk disease."
+        },
+        {
+          "id": "h_037",
+          "type": "heading",
+          "level": 3,
+          "text": "Why choose active surveillance?"
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "The main reason is to avoid unnecessary treatment and its potential side effects when immediate treatment may not provide enough additional benefit."
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "Surgery and radiation can affect urinary, bowel and sexual function. If a low-risk cancer is unlikely to cause problems for many years, immediate treatment may not always be necessary."
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "However, active surveillance is a **structured medical programme**, not simply \"doing nothing.\" There is no single package price; follow-up is billed per visit, PSA test, MRI or biopsy."
+        },
+        {
+          "id": "h_041",
+          "type": "heading",
+          "level": 2,
+          "text": "2. Watchful Waiting"
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "Watchful waiting is different from active surveillance."
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "With active surveillance, the intention is generally to identify disease progression early enough to offer curative treatment if needed."
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "With watchful waiting, the approach is usually more conservative. It may be appropriate for men whose overall health or life expectancy makes curative treatment less suitable."
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "Treatment is generally introduced if the cancer causes symptoms or becomes clinically significant."
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "The EAU distinguishes active surveillance from watchful waiting and considers health status and life expectancy important parts of treatment planning."
+        },
+        {
+          "id": "h_047",
+          "type": "heading",
+          "level": 2,
+          "text": "3. Radical Prostatectomy"
+        },
+        {
+          "id": "img_048",
+          "type": "image",
+          "src": "/uploads/articles/pca-options-surgery.webp",
+          "alt": "Sagittal male pelvis showing the bladder and the gland beneath it that is removed during radical prostatectomy",
+          "caption": "Radical prostatectomy removes the prostate and usually the seminal vesicles. Lymph nodes may be taken when the estimated risk of spread warrants it."
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "[Radical prostatectomy](/costs/India/Surgical-Oncology/Radical-Prostatectomy) is an operation in which the prostate gland is removed."
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "The seminal vesicles are usually removed as part of the procedure, and nearby lymph nodes may also be removed when indicated."
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "The objective is to remove the cancer completely when the disease is suitable for curative surgery. The GAF planning range in India is **$7,000–$18,000**, typically with a **3–7 night** stay, covering open, laparoscopic and robotic-assisted approaches."
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Radical prostatectomy can be performed through:"
+        },
+        {
+          "id": "ul_053",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Open surgery",
+            "Laparoscopic surgery",
+            "Robotic-assisted surgery"
+          ]
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "The American Cancer Society describes radical prostatectomy as a major surgical treatment for prostate cancer that has not spread beyond the prostate, with the exact surgical approach depending on the clinical situation."
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "**Explore radical prostatectomy** — [doctors](/doctors/India/Surgical-Oncology/Radical-Prostatectomy), [hospitals](/hospitals/India/Surgical-Oncology/Radical-Prostatectomy) and [cost in India](/costs/India/Surgical-Oncology/Radical-Prostatectomy), including [Delhi NCR](/costs/India/Delhi-NCR/Surgical-Oncology/Radical-Prostatectomy) and [Mumbai](/costs/India/Mumbai/Surgical-Oncology/Radical-Prostatectomy)."
+        },
+        {
+          "id": "h_056",
+          "type": "heading",
+          "level": 2,
+          "text": "4. Robotic-Assisted Radical Prostatectomy"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "Robotic prostatectomy is a minimally invasive form of radical prostatectomy."
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "The surgeon controls specialised instruments from a console while operating through small incisions."
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "The system can provide magnified visualisation, three-dimensional views, articulated instruments and fine control in confined anatomical spaces."
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "However, the robot does not independently perform the surgery. The surgeon remains responsible for the procedure and makes the operative decisions."
+        },
+        {
+          "id": "h_061",
+          "type": "heading",
+          "level": 3,
+          "text": "Who may be considered for robotic prostatectomy?"
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "It may be considered for selected men with localised prostate cancer, some locally advanced cancers, and adequate overall health for surgery. The suitability of surgery depends on the tumour's characteristics and the surgeon's assessment."
+        },
+        {
+          "id": "h_063",
+          "type": "heading",
+          "level": 3,
+          "text": "Potential benefits of minimally invasive surgery"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "Patients may experience smaller incisions, less postoperative discomfort, lower blood loss in many cases, shorter hospitalisation and faster initial recovery."
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "But robotic surgery is not automatically the right treatment for every prostate cancer patient. The cancer stage and risk profile come first."
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "**Related:** [Robotic Prostatectomy in India](/doctors/India/Surgical-Oncology/Radical-Prostatectomy) and the [India treatment pathway](/treatments/prostate-cancer-treatment-in-india)."
+        },
+        {
+          "id": "btn_067",
+          "type": "button",
+          "label": "Ask whether robotic prostatectomy is appropriate",
+          "href": "/consult?treatment=Radical%20Prostatectomy"
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 about robotic surgery](https://wa.me/919044346292?text=I%20would%20like%20to%20know%20if%20robotic%20radical%20prostatectomy%20is%20appropriate%20for%20my%20case%20in%20India.)"
+        },
+        {
+          "id": "h_069",
+          "type": "heading",
+          "level": 2,
+          "text": "5. Nerve-Sparing Prostatectomy"
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "The nerves involved in erectile function lie close to the prostate."
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "When the cancer's location allows it, surgeons may try to preserve these nerves during prostatectomy. This is called **nerve-sparing surgery**."
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "It may be bilateral, unilateral, partial, or not performed. The decision depends on the likelihood that cancer has extended outside the prostate in the area where the nerves are located."
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "The priority remains cancer control. Therefore, nerve preservation is considered only when it is oncologically safe."
+        },
+        {
+          "id": "h_074",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Pelvic Lymph Node Dissection"
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "Some men undergoing radical prostatectomy may also require pelvic lymph node dissection."
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "During this procedure, selected lymph nodes around the pelvis are removed and examined by a pathologist. The results can help determine whether prostate cancer has spread to the lymph nodes."
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "This information may influence final staging, risk assessment, postoperative treatment and follow-up. Lymph-node surgery is not required for every prostate cancer patient."
+        },
+        {
+          "id": "h_078",
+          "type": "heading",
+          "level": 2,
+          "text": "7. Radiation Therapy"
+        },
+        {
+          "id": "img_079",
+          "type": "image",
+          "src": "/uploads/articles/pca-options-radiation.webp",
+          "alt": "Male patient on an imaging couch with a pelvic-bone overlay used in prostate radiation planning",
+          "caption": "External-beam radiation treats the prostate from outside the body. Session count depends on IMRT, IGRT, SBRT or another planned technique."
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Radiation therapy uses high-energy radiation to damage cancer cells."
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "It can be used as a curative treatment for selected localised prostate cancers and as part of treatment for higher-risk or locally advanced disease. Radiation can also be used to relieve symptoms caused by metastatic prostate cancer."
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "Modern radiation treatment can include [IMRT](/costs/India/Radiation-Oncology/IMRT), VMAT, [IGRT](/costs/India/Radiation-Oncology/IGRT), moderate hypofractionation, [SBRT](/costs/India/Radiation-Oncology/SBRT) and [brachytherapy](/costs/India/Radiation-Oncology/Brachytherapy)."
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "The EAU guideline includes modern image-guided radiation techniques and different fractionation schedules among established treatment approaches for appropriately selected patients. See [radiation oncologists in India](/doctors/India/Radiation-Oncology) and [radiation hospitals in Delhi NCR](/hospitals/India/Delhi-NCR/Radiation-Oncology)."
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 2,
+          "text": "8. External-Beam Radiation Therapy"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "[External-beam radiation therapy](/costs/India/Radiation-Oncology/EBRT) delivers radiation from a machine outside the body."
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "The radiation is carefully planned so that the prostate and areas at risk receive the prescribed dose while surrounding organs are protected as much as possible."
+        },
+        {
+          "id": "h_087",
+          "type": "heading",
+          "level": 3,
+          "text": "IMRT"
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "**Intensity-modulated radiation therapy** uses multiple radiation beams with different intensities. The GAF planning range is **$6,500–$14,500**."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 3,
+          "text": "VMAT"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "**Volumetric modulated arc therapy** delivers radiation while the treatment machine rotates around the patient."
+        },
+        {
+          "id": "h_091",
+          "type": "heading",
+          "level": 3,
+          "text": "IGRT"
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "**Image-guided radiation therapy** uses imaging to improve treatment positioning. The GAF planning range is **$7,200–$16,000**."
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 3,
+          "text": "SBRT"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "**Stereotactic body radiation therapy** delivers a highly focused radiation dose over a small number of treatment sessions in selected patients. The GAF planning range is **$8,000–$17,500**."
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "The number of treatment sessions depends on the technique and the patient's disease characteristics. Conventional [EBRT](/costs/India/Radiation-Oncology/EBRT) planning ranges start at **$1,000–$6,000+** for about 15–35 sessions."
+        },
+        {
+          "id": "btn_096",
+          "type": "button",
+          "label": "Get a radiation estimate",
+          "href": "/consult?treatment=External%20Beam%20Radiotherapy%20(EBRT)"
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a radiation quote](https://wa.me/919044346292?text=Please%20share%20a%20radiation%20therapy%20estimate%20for%20prostate%20cancer%20in%20India.)"
+        },
+        {
+          "id": "h_098",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Brachytherapy"
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "[Brachytherapy](/costs/India/Radiation-Oncology/Brachytherapy) is an internal form of radiation therapy."
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Instead of delivering radiation from outside the body, a radioactive source is placed in or close to the prostate."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "Low-dose-rate brachytherapy"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "Small radioactive seeds are placed within the prostate."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "High-dose-rate brachytherapy"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "A radioactive source is temporarily introduced into the prostate and then removed."
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "Brachytherapy can be used alone in selected patients or combined with external-beam radiation for some higher-risk cancers. The GAF planning range is **$5,500–$13,000**."
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "**Related:** [Brachytherapy for Prostate Cancer](/costs/India/Radiation-Oncology/Brachytherapy)."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 2,
+          "text": "10. Hormone Therapy"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "Hormone therapy is also called **androgen deprivation therapy (ADT)**."
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Prostate cancer cells can use male hormones called androgens to support their growth. Hormone therapy reduces androgen stimulation."
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "Depending on the disease setting, [hormone treatment](/costs/India/Medical-Oncology/Hormone-Therapy) may involve LHRH/GnRH agonists, LHRH/GnRH antagonists, androgen-receptor pathway inhibitors or other hormonal approaches."
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "Medicines such as abiraterone, enzalutamide, apalutamide and darolutamide may be used in appropriate clinical situations."
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "Hormone therapy can be used with radiation therapy, in locally advanced disease, in metastatic hormone-sensitive prostate cancer, in castration-resistant disease, and as part of combination systemic treatment."
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "The exact combination and duration depend on the disease stage and previous treatment. The GAF planning range is **$1,000–$4,500**. See [hormone therapy doctors](/doctors/India/Medical-Oncology/Hormone-Therapy) and [hospitals](/hospitals/India/Medical-Oncology/Hormone-Therapy)."
+        },
+        {
+          "id": "btn_114",
+          "type": "button",
+          "label": "Get a hormone-therapy estimate",
+          "href": "/consult?treatment=Hormone%20Therapy"
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 2,
+          "text": "Side Effects of Hormone Therapy"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "Because ADT changes hormone levels, it can cause side effects such as:"
+        },
+        {
+          "id": "ul_117",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Hot flashes",
+            "Reduced sexual desire",
+            "Erectile dysfunction",
+            "Fatigue",
+            "Loss of muscle mass",
+            "Changes in body composition",
+            "Metabolic changes",
+            "Bone loss",
+            "Mood or quality-of-life changes"
+          ]
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "Long-term hormone treatment therefore requires appropriate monitoring. Bone health is particularly important in men receiving prolonged androgen deprivation."
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Chemotherapy"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "[Chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) uses medicines that circulate throughout the body to attack cancer cells."
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "**Docetaxel** is an important chemotherapy drug used in selected advanced prostate cancer settings."
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "Chemotherapy is particularly relevant when prostate cancer has spread or when systemic treatment is needed."
+        },
+        {
+          "id": "p_123",
+          "type": "paragraph",
+          "text": "Modern treatment is increasingly based on combinations rather than viewing chemotherapy in isolation. For example, selected patients with metastatic hormone-sensitive prostate cancer may receive ADT together with an androgen-receptor pathway inhibitor and, in appropriate cases, chemotherapy. The 2026 EAU guideline includes updated recommendations for systemic treatment combinations in metastatic disease."
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "The GAF planning range is **$1,500–$8,000+**, usually as outpatient cycles. See [chemotherapy doctors](/doctors/India/Medical-Oncology/Chemotherapy)."
+        },
+        {
+          "id": "h_125",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Targeted Therapy"
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "[Targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) works against specific molecular characteristics of cancer."
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "This is particularly important in advanced prostate cancer because genetic testing can identify alterations that may open additional treatment options."
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "Some prostate cancers have abnormalities involving DNA-repair genes such as BRCA1, BRCA2, ATM and other homologous recombination repair genes."
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "PARP inhibitors are an example of targeted treatment used in selected patients with relevant molecular alterations."
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "The important point is that **targeted therapy is not automatically appropriate simply because prostate cancer is advanced**. The tumour's molecular profile matters. The GAF planning range is **$8,000–$30,000**."
+        },
+        {
+          "id": "h_131",
+          "type": "heading",
+          "level": 2,
+          "text": "13. Immunotherapy"
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "Immunotherapy uses the body's immune system to recognise and attack cancer cells."
+        },
+        {
+          "id": "p_133",
+          "type": "paragraph",
+          "text": "Its role in prostate cancer is more selective than in some other cancers."
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "It may be considered for specific patients based on tumour characteristics, previous treatment and eligibility criteria."
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "Patients should therefore not assume that an immunotherapy used successfully for another cancer will necessarily work for prostate cancer. Where used, the GAF planning range for [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) is **$15,000–$45,000**."
+        },
+        {
+          "id": "h_136",
+          "type": "heading",
+          "level": 2,
+          "text": "14. PSMA-Targeted Treatment"
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "PSMA stands for **prostate-specific membrane antigen**. Many prostate cancer cells express PSMA on their surface. This characteristic can be used for both imaging and treatment."
+        },
+        {
+          "id": "h_138",
+          "type": "heading",
+          "level": 3,
+          "text": "PSMA PET/CT"
+        },
+        {
+          "id": "p_139",
+          "type": "paragraph",
+          "text": "A PSMA-targeting tracer is injected into the body and detected using PET imaging. It can help identify prostate cancer deposits in selected staging and recurrence situations."
+        },
+        {
+          "id": "h_140",
+          "type": "heading",
+          "level": 3,
+          "text": "PSMA-targeted radiopharmaceutical therapy"
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "A radioactive isotope can be attached to a PSMA-targeting molecule. One example is **lutetium-177 PSMA therapy**."
+        },
+        {
+          "id": "p_142",
+          "type": "paragraph",
+          "text": "The targeting molecule carries the radioactive substance toward PSMA-expressing cancer cells, allowing radiation to be delivered more directly to those cells."
+        },
+        {
+          "id": "p_143",
+          "type": "paragraph",
+          "text": "This treatment is primarily relevant to selected patients with advanced disease and requires specialist assessment. The 2026 EAU guidelines specifically include updated recommendations around imaging and systemic treatment for advanced prostate cancer."
+        },
+        {
+          "id": "p_144",
+          "type": "paragraph",
+          "text": "**Related:** [Lutetium-177 PSMA Therapy in India](/treatments/prostate-cancer-treatment-in-india)."
+        },
+        {
+          "id": "btn_145",
+          "type": "button",
+          "label": "Request a metastatic-treatment review",
+          "href": "/consult?treatment=Prostate%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_146",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 about PSMA therapy](https://wa.me/919044346292?text=Please%20advise%20whether%20PSMA%20PET%20or%20lutetium-177%20PSMA%20therapy%20is%20relevant%20for%20my%20prostate%20cancer%20in%20India.)"
+        },
+        {
+          "id": "h_147",
+          "type": "heading",
+          "level": 2,
+          "text": "15. Focal Therapy"
+        },
+        {
+          "id": "p_148",
+          "type": "paragraph",
+          "text": "Focal treatments aim to destroy the cancerous area while leaving much of the prostate untreated."
+        },
+        {
+          "id": "p_149",
+          "type": "paragraph",
+          "text": "Examples include high-intensity focused ultrasound (HIFU), cryotherapy and other ablative approaches."
+        },
+        {
+          "id": "p_150",
+          "type": "paragraph",
+          "text": "These treatments can sound attractive because they appear to offer a middle ground between surveillance and complete prostate removal. However, they are not appropriate for every patient."
+        },
+        {
+          "id": "p_151",
+          "type": "paragraph",
+          "text": "Current EAU guidance is cautious about focal and whole-gland ablative approaches and recommends their use only in specific circumstances, including clinical trials or registries for some applications."
+        },
+        {
+          "id": "p_152",
+          "type": "paragraph",
+          "text": "Patients should therefore ask about the quality of long-term evidence before choosing focal treatment."
+        },
+        {
+          "id": "h_153",
+          "type": "heading",
+          "level": 2,
+          "text": "Prostate Cancer Treatment by Risk Group"
+        },
+        {
+          "id": "h_154",
+          "type": "heading",
+          "level": 3,
+          "text": "Very Low- and Low-Risk Prostate Cancer"
+        },
+        {
+          "id": "p_155",
+          "type": "paragraph",
+          "text": "For suitable patients, **active surveillance is often the preferred approach**."
+        },
+        {
+          "id": "p_156",
+          "type": "paragraph",
+          "text": "Other possible treatments may include radical prostatectomy, radiation therapy and brachytherapy in selected cases. The choice depends on factors such as life expectancy, tumour characteristics and patient preferences."
+        },
+        {
+          "id": "h_157",
+          "type": "heading",
+          "level": 3,
+          "text": "Intermediate-Risk Prostate Cancer"
+        },
+        {
+          "id": "p_158",
+          "type": "paragraph",
+          "text": "Intermediate-risk disease is not one uniform category. Doctors often distinguish between favourable intermediate risk and unfavourable intermediate risk."
+        },
+        {
+          "id": "p_159",
+          "type": "paragraph",
+          "text": "Depending on the patient's exact disease, treatment may include active surveillance in selected favourable cases, radical prostatectomy, external-beam radiation, brachytherapy, or radiation combined with short-term hormone therapy."
+        },
+        {
+          "id": "p_160",
+          "type": "paragraph",
+          "text": "The EAU and other major cancer organisations emphasise risk stratification rather than treating every intermediate-risk cancer in exactly the same way."
+        },
+        {
+          "id": "h_161",
+          "type": "heading",
+          "level": 3,
+          "text": "High-Risk Prostate Cancer"
+        },
+        {
+          "id": "p_162",
+          "type": "paragraph",
+          "text": "High-risk prostate cancer has a greater likelihood of recurrence and progression. Treatment often involves more than one modality."
+        },
+        {
+          "id": "p_163",
+          "type": "paragraph",
+          "text": "Potential approaches include radical prostatectomy in selected patients, external-beam radiation plus long-term hormone therapy, radiation plus brachytherapy in selected patients, and additional systemic treatment in specific high-risk settings."
+        },
+        {
+          "id": "p_164",
+          "type": "paragraph",
+          "text": "The EAU 2026 guideline includes long-term ADT with radiation and additional systemic approaches for selected high-risk patients."
+        },
+        {
+          "id": "h_165",
+          "type": "heading",
+          "level": 3,
+          "text": "Locally Advanced Prostate Cancer"
+        },
+        {
+          "id": "p_166",
+          "type": "paragraph",
+          "text": "Locally advanced prostate cancer has extended outside the prostate or involves nearby structures and/or regional lymph nodes, depending on the specific stage."
+        },
+        {
+          "id": "p_167",
+          "type": "paragraph",
+          "text": "Treatment may involve radiation therapy, long-term hormone therapy, additional systemic treatment, and surgery in carefully selected patients. The exact approach depends on the pattern and extent of local spread."
+        },
+        {
+          "id": "h_168",
+          "type": "heading",
+          "level": 3,
+          "text": "Metastatic Prostate Cancer"
+        },
+        {
+          "id": "p_169",
+          "type": "paragraph",
+          "text": "Metastatic prostate cancer has spread to distant parts of the body. The bones and distant lymph nodes are common sites of spread, although other organs can also be involved."
+        },
+        {
+          "id": "p_170",
+          "type": "paragraph",
+          "text": "At this stage, treatment usually focuses on controlling cancer throughout the body."
+        },
+        {
+          "id": "p_171",
+          "type": "paragraph",
+          "text": "Options can include androgen deprivation therapy, androgen-receptor pathway inhibitors, chemotherapy, targeted therapy, radiopharmaceutical therapy, radiation to selected sites, bone-directed treatment and clinical trials."
+        },
+        {
+          "id": "p_172",
+          "type": "paragraph",
+          "text": "For many men, metastatic prostate cancer is treatable but not considered curable with currently available standard treatments. The goal may be to control the disease, delay progression, relieve symptoms and maintain quality of life."
+        },
+        {
+          "id": "h_173",
+          "type": "heading",
+          "level": 2,
+          "text": "Prostate Cancer Treatment by Stage"
+        },
+        {
+          "id": "html_174",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Stage</th><th>General disease pattern</th><th>Possible treatment approaches</th></tr></thead><tbody><tr><td>Stage I</td><td>Low-volume, localised disease</td><td>Active surveillance, surgery or radiation in selected patients</td></tr><tr><td>Stage II</td><td>Localised but with varying risk</td><td>Surveillance in selected cases, surgery, radiation or brachytherapy</td></tr><tr><td>Stage III</td><td>Higher-risk or locally advanced disease</td><td>Surgery in selected cases, radiation + hormone therapy, systemic treatment</td></tr><tr><td>Stage IV</td><td>Regional-node or distant metastatic disease</td><td>Systemic treatment, radiation and selected surgery/supportive treatments</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_175",
+          "type": "paragraph",
+          "text": "This table is a simplified overview. Actual treatment decisions depend on the **TNM stage, PSA, Grade Group, imaging, health status and life expectancy**."
+        },
+        {
+          "id": "h_176",
+          "type": "heading",
+          "level": 2,
+          "text": "Surgery vs Radiation for Prostate Cancer"
+        },
+        {
+          "id": "p_177",
+          "type": "paragraph",
+          "text": "One of the most common questions after diagnosis is:"
+        },
+        {
+          "id": "p_178",
+          "type": "paragraph",
+          "text": "**\"Should I have surgery or radiation?\"**"
+        },
+        {
+          "id": "p_179",
+          "type": "paragraph",
+          "text": "There is no universal answer. For some men with localised disease, both can be appropriate curative treatments."
+        },
+        {
+          "id": "h_180",
+          "type": "heading",
+          "level": 3,
+          "text": "Surgery may involve:"
+        },
+        {
+          "id": "ul_181",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Removal of the prostate",
+            "Removal of seminal vesicles",
+            "Lymph-node dissection when indicated",
+            "Possible nerve-sparing"
+          ]
+        },
+        {
+          "id": "h_182",
+          "type": "heading",
+          "level": 3,
+          "text": "Radiation may involve:"
+        },
+        {
+          "id": "ul_183",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "External-beam radiation",
+            "IMRT",
+            "VMAT",
+            "IGRT",
+            "SBRT in selected patients",
+            "Brachytherapy"
+          ]
+        },
+        {
+          "id": "p_184",
+          "type": "paragraph",
+          "text": "The decision can depend on cancer risk, tumour location, age, life expectancy, urinary symptoms, baseline sexual function, other health conditions, patient priorities and local expertise."
+        },
+        {
+          "id": "p_185",
+          "type": "paragraph",
+          "text": "The American Cancer Society notes that men with early prostate cancer can have several reasonable treatment options, and the choice involves balancing cancer control against potential treatment effects and personal priorities."
+        },
+        {
+          "id": "h_186",
+          "type": "heading",
+          "level": 2,
+          "text": "Surgery vs Radiation: Key Differences"
+        },
+        {
+          "id": "html_187",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Factor</th><th>Surgery</th><th>Radiation</th></tr></thead><tbody><tr><td>Main treatment</td><td>Removes prostate</td><td>Destroys cancer cells with radiation</td></tr><tr><td>Common use</td><td>Selected localised/locally advanced disease</td><td>Localised and selected higher-risk disease</td></tr><tr><td>Hospitalisation</td><td>Usually required</td><td>Often outpatient</td></tr><tr><td>Urinary effects</td><td>Incontinence can occur</td><td>Frequency/irritation can occur</td></tr><tr><td>Sexual effects</td><td>Erectile dysfunction can occur</td><td>Erectile dysfunction may develop over time</td></tr><tr><td>Bowel effects</td><td>Usually less prominent</td><td>Bowel/rectal effects can occur</td></tr><tr><td>PSA behaviour</td><td>Usually falls to very low levels</td><td>Declines gradually</td></tr><tr><td>Additional treatment</td><td>May be needed depending on pathology/recurrence</td><td>Hormone therapy may be added depending on risk</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_188",
+          "type": "paragraph",
+          "text": "Neither column represents a recommendation. The appropriate treatment depends on the patient's clinical situation."
+        },
+        {
+          "id": "btn_189",
+          "type": "button",
+          "label": "Discuss surgery versus radiation",
+          "href": "/consult?treatment=Prostate%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "h_190",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Prostate Cancer Be Treated Without Surgery?"
+        },
+        {
+          "id": "p_191",
+          "type": "paragraph",
+          "text": "Yes. Surgery is not required for every prostate cancer patient."
+        },
+        {
+          "id": "p_192",
+          "type": "paragraph",
+          "text": "Depending on the disease, alternatives may include:"
+        },
+        {
+          "id": "ul_193",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Active surveillance for selected low-risk disease",
+            "Radiation therapy for many localised and selected locally advanced cancers",
+            "Brachytherapy for selected patients",
+            "Hormone therapy, particularly in advanced or higher-risk disease",
+            "Systemic treatment for metastatic or otherwise appropriate advanced disease"
+          ]
+        },
+        {
+          "id": "p_194",
+          "type": "paragraph",
+          "text": "The important question is not simply \"Can I avoid surgery?\" It is: **which treatment gives appropriate cancer control while fitting my disease, health and priorities?**"
+        },
+        {
+          "id": "h_195",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Prostate Cancer Be Cured?"
+        },
+        {
+          "id": "p_196",
+          "type": "paragraph",
+          "text": "It depends on the stage and biology of the cancer."
+        },
+        {
+          "id": "p_197",
+          "type": "paragraph",
+          "text": "For many men with localised prostate cancer, treatment is given with **curative intent**."
+        },
+        {
+          "id": "p_198",
+          "type": "paragraph",
+          "text": "For metastatic prostate cancer, treatment generally aims to control the disease rather than eradicate every cancer cell."
+        },
+        {
+          "id": "p_199",
+          "type": "paragraph",
+          "text": "A patient's prognosis cannot be determined from the word \"prostate cancer\" alone. Doctors need to consider stage, PSA, Grade Group, Gleason score, tumour volume, lymph-node involvement, metastases and response to treatment."
+        },
+        {
+          "id": "h_200",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens After Prostate Cancer Treatment?"
+        },
+        {
+          "id": "img_201",
+          "type": "image",
+          "src": "/uploads/articles/pca-options-followup.webp",
+          "alt": "Clinic visit after prostate cancer treatment with PSA blood testing and a pelvic overlay",
+          "caption": "PSA is the main follow-up marker after surgery or radiation. A confirmed rise can lead to imaging and a new plan."
+        },
+        {
+          "id": "p_202",
+          "type": "paragraph",
+          "text": "Treatment does not necessarily mark the end of the cancer journey. Follow-up is important after surgery, radiation and systemic treatment."
+        },
+        {
+          "id": "p_203",
+          "type": "paragraph",
+          "text": "PSA is one of the most important follow-up tests. After radical prostatectomy, PSA is expected to fall to a very low level. After radiation, PSA behaves differently and can take time to reach its lowest level."
+        },
+        {
+          "id": "p_204",
+          "type": "paragraph",
+          "text": "Doctors may also monitor urinary function, sexual function, bowel symptoms, hormone-treatment effects, bone health and imaging findings when indicated."
+        },
+        {
+          "id": "p_205",
+          "type": "paragraph",
+          "text": "The EAU describes follow-up as an important part of assessing cancer control, treatment compliance, side effects, functional outcomes and the need for additional treatment."
+        },
+        {
+          "id": "h_206",
+          "type": "heading",
+          "level": 2,
+          "text": "What If Prostate Cancer Comes Back?"
+        },
+        {
+          "id": "p_207",
+          "type": "paragraph",
+          "text": "Recurrence does not mean that there are no further treatment options."
+        },
+        {
+          "id": "p_208",
+          "type": "paragraph",
+          "text": "The next step depends on where the recurrence is located and what treatment the patient received initially."
+        },
+        {
+          "id": "p_209",
+          "type": "paragraph",
+          "text": "Doctors may assess PSA, PSA doubling time, MRI, PSMA PET/CT, other imaging, previous pathology, and previous radiation or surgery."
+        },
+        {
+          "id": "p_210",
+          "type": "paragraph",
+          "text": "Possible treatments can include salvage radiation, hormone therapy, systemic therapy, selected surgery, targeted therapy and PSMA-targeted radiopharmaceutical treatment."
+        },
+        {
+          "id": "p_211",
+          "type": "paragraph",
+          "text": "The treatment pathway for recurrence is different from the initial treatment pathway and should be planned by a specialist team."
+        },
+        {
+          "id": "h_212",
+          "type": "heading",
+          "level": 2,
+          "text": "What Are the Side Effects of Prostate Cancer Treatment?"
+        },
+        {
+          "id": "p_213",
+          "type": "paragraph",
+          "text": "The side effects depend on the treatment."
+        },
+        {
+          "id": "h_214",
+          "type": "heading",
+          "level": 3,
+          "text": "Surgery"
+        },
+        {
+          "id": "ul_215",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Urinary incontinence",
+            "Erectile dysfunction",
+            "Bleeding",
+            "Infection",
+            "Anaesthesia-related complications",
+            "Changes in ejaculation"
+          ]
+        },
+        {
+          "id": "h_216",
+          "type": "heading",
+          "level": 3,
+          "text": "Radiation"
+        },
+        {
+          "id": "ul_217",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Urinary frequency",
+            "Urinary irritation",
+            "Bowel changes",
+            "Rectal irritation",
+            "Erectile dysfunction",
+            "Fatigue"
+          ]
+        },
+        {
+          "id": "h_218",
+          "type": "heading",
+          "level": 3,
+          "text": "Hormone Therapy"
+        },
+        {
+          "id": "ul_219",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Hot flashes",
+            "Reduced libido",
+            "Erectile dysfunction",
+            "Fatigue",
+            "Muscle loss",
+            "Weight changes",
+            "Metabolic effects",
+            "Bone loss"
+          ]
+        },
+        {
+          "id": "h_220",
+          "type": "heading",
+          "level": 3,
+          "text": "Chemotherapy"
+        },
+        {
+          "id": "p_221",
+          "type": "paragraph",
+          "text": "Possible effects vary according to the drug but can include fatigue, nausea, lower blood-cell counts, infection risk, hair loss and peripheral neuropathy with some drugs."
+        },
+        {
+          "id": "p_222",
+          "type": "paragraph",
+          "text": "Patients should discuss the expected side effects of their specific treatment rather than assuming that every side effect will occur."
+        },
+        {
+          "id": "h_223",
+          "type": "heading",
+          "level": 2,
+          "text": "How Do Doctors Balance Cancer Control and Quality of Life?"
+        },
+        {
+          "id": "p_224",
+          "type": "paragraph",
+          "text": "This is an important part of prostate cancer treatment."
+        },
+        {
+          "id": "p_225",
+          "type": "paragraph",
+          "text": "A treatment decision is not based only on removing or destroying cancer. Doctors also consider what treatment may mean for urinary control, sexual function, bowel function, physical independence, daily activities, long-term health and emotional wellbeing."
+        },
+        {
+          "id": "p_226",
+          "type": "paragraph",
+          "text": "This is particularly important in localised prostate cancer, where several treatment options may be available."
+        },
+        {
+          "id": "p_227",
+          "type": "paragraph",
+          "text": "A younger, otherwise healthy man with a long life expectancy may approach the decision differently from an older man with significant medical conditions."
+        },
+        {
+          "id": "p_228",
+          "type": "paragraph",
+          "text": "The EAU specifically recommends incorporating health status, comorbidities and life expectancy into prostate cancer management."
+        },
+        {
+          "id": "h_229",
+          "type": "heading",
+          "level": 2,
+          "text": "Why a Multidisciplinary Team Can Matter"
+        },
+        {
+          "id": "p_230",
+          "type": "paragraph",
+          "text": "Prostate cancer can involve several specialties. Depending on the disease, the treatment team may include a uro-oncologist, [urologist](/doctors/India/Urology), [radiation oncologist](/doctors/India/Radiation-Oncology), [medical oncologist](/doctors/India/Medical-Oncology), radiologist, pathologist, nuclear medicine specialist, oncology nurse and rehabilitation specialists."
+        },
+        {
+          "id": "p_231",
+          "type": "paragraph",
+          "text": "A multidisciplinary review can be particularly useful when the cancer is high-risk, surgery and radiation are both possible, the cancer has spread or returned, multiple treatment options are being considered, or advanced systemic treatment is required."
+        },
+        {
+          "id": "h_232",
+          "type": "heading",
+          "level": 2,
+          "text": "Prostate Cancer Treatment in India"
+        },
+        {
+          "id": "p_233",
+          "type": "paragraph",
+          "text": "India has tertiary cancer centres offering a broad range of prostate cancer services, including uro-oncology, robotic-assisted prostate surgery, radiation oncology, brachytherapy, medical oncology, advanced imaging, PSMA PET/CT and selected radiopharmaceutical treatments."
+        },
+        {
+          "id": "p_234",
+          "type": "paragraph",
+          "text": "For an international patient, the most useful approach is to choose the **treatment centre based on the clinical requirement**, rather than simply selecting a hospital because it is well known."
+        },
+        {
+          "id": "p_235",
+          "type": "paragraph",
+          "text": "For example, a patient being evaluated for robotic prostatectomy may need a centre with experienced uro-oncology surgeons in [Delhi NCR](/hospitals/India/Delhi-NCR/Surgical-Oncology) or [Mumbai](/hospitals/India/Mumbai/Surgical-Oncology), while a patient with metastatic disease may need a centre with medical oncology, molecular testing, nuclear medicine and radiopharmaceutical capabilities in [Bengaluru](/hospitals/India/Bengaluru), [Chennai](/hospitals/India/Chennai) or [Hyderabad](/hospitals/India/Hyderabad)."
+        },
+        {
+          "id": "p_236",
+          "type": "paragraph",
+          "text": "**Related:** [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india)."
+        },
+        {
+          "id": "btn_237",
+          "type": "button",
+          "label": "Plan a treatment stay in India",
+          "href": "/consult?treatment=Prostate%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_238",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 to plan travel](https://wa.me/919044346292?text=Please%20help%20me%20plan%20a%20prostate%20cancer%20treatment%20stay%20in%20India.)"
+        },
+        {
+          "id": "h_239",
+          "type": "heading",
+          "level": 2,
+          "text": "Prostate Cancer Treatment Cost in India"
+        },
+        {
+          "id": "p_240",
+          "type": "paragraph",
+          "text": "There is no single cost for prostate cancer treatment."
+        },
+        {
+          "id": "p_241",
+          "type": "paragraph",
+          "text": "The total expense depends on the type of treatment, cancer stage, hospital, city, surgical approach, robotic technology, radiation technique, number of treatment sessions, medicines, hospital stay, diagnostic investigations, follow-up and treatment complications."
+        },
+        {
+          "id": "p_242",
+          "type": "paragraph",
+          "text": "Current GAF planning ranges include [radical prostatectomy $7,000–$18,000](/costs/India/Surgical-Oncology/Radical-Prostatectomy), [EBRT $1,000–$6,000+](/costs/India/Radiation-Oncology/EBRT), [IMRT $6,500–$14,500](/costs/India/Radiation-Oncology/IMRT), [brachytherapy $5,500–$13,000](/costs/India/Radiation-Oncology/Brachytherapy), [hormone therapy $1,000–$4,500](/costs/India/Medical-Oncology/Hormone-Therapy) and [chemotherapy $1,500–$8,000+](/costs/India/Medical-Oncology/Chemotherapy). These are planning ranges, not hospital quotations."
+        },
+        {
+          "id": "p_243",
+          "type": "paragraph",
+          "text": "For international patients, the total budget may also include accommodation, flights, local transportation, medical visa expenses, attendant expenses and additional stay."
+        },
+        {
+          "id": "p_244",
+          "type": "paragraph",
+          "text": "A personalised hospital quotation is therefore more useful than relying on a generic online price."
+        },
+        {
+          "id": "p_245",
+          "type": "paragraph",
+          "text": "**Related:** [Prostate Cancer Treatment Cost in India](/treatments/prostate-cancer-treatment-in-india)."
+        },
+        {
+          "id": "btn_246",
+          "type": "button",
+          "label": "Request an itemized hospital estimate",
+          "href": "/consult?treatment=Prostate%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "h_247",
+          "type": "heading",
+          "level": 2,
+          "text": "How to Prepare Before Travelling to India for Treatment"
+        },
+        {
+          "id": "p_248",
+          "type": "paragraph",
+          "text": "International patients can often make the process easier by collecting their medical records before travelling."
+        },
+        {
+          "id": "p_249",
+          "type": "paragraph",
+          "text": "Important documents include:"
+        },
+        {
+          "id": "ul_250",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "PSA reports",
+            "Biopsy report",
+            "Gleason score",
+            "Grade Group",
+            "MRI report",
+            "MRI images",
+            "PSMA PET/CT report, if performed",
+            "CT/PET reports",
+            "Previous treatment records",
+            "Medication list",
+            "Discharge summaries",
+            "Pathology slides or tissue blocks, where available"
+          ]
+        },
+        {
+          "id": "p_251",
+          "type": "paragraph",
+          "text": "A specialist can then review the records and determine whether additional testing is needed. This can reduce unnecessary duplication of investigations after arrival."
+        },
+        {
+          "id": "h_252",
+          "type": "heading",
+          "level": 2,
+          "text": "Questions to Ask Your Prostate Cancer Specialist"
+        },
+        {
+          "id": "p_253",
+          "type": "paragraph",
+          "text": "Before making a treatment decision, consider asking:"
+        },
+        {
+          "id": "ol_254",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is my exact prostate cancer stage?",
+            "What is my Gleason score?",
+            "What is my Grade Group?",
+            "What is my PSA?",
+            "Is the cancer confined to the prostate?",
+            "Do I need an MRI or PSMA PET/CT?",
+            "Am I suitable for active surveillance?",
+            "Is surgery appropriate for me?",
+            "Would robotic surgery be appropriate?",
+            "Is nerve-sparing surgery possible?",
+            "Could radiation be an alternative?",
+            "Would I need hormone therapy?",
+            "What are the likely urinary side effects?",
+            "How might treatment affect sexual function?",
+            "What is the expected recovery period?",
+            "Will I need additional treatment afterward?",
+            "How often will my PSA be monitored?",
+            "What happens if the cancer comes back?",
+            "What is the estimated treatment cost?",
+            "How long would I need to stay in India?"
+          ]
+        },
+        {
+          "id": "h_255",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_256",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the most common treatment for prostate cancer?"
+        },
+        {
+          "id": "p_257",
+          "type": "paragraph",
+          "text": "There is no single treatment used for every patient. Treatment depends on the cancer's risk group and stage. Active surveillance, surgery and radiation are important options for selected localised cancers, while systemic treatments become increasingly important in advanced disease."
+        },
+        {
+          "id": "h_258",
+          "type": "heading",
+          "level": 3,
+          "text": "Is surgery always necessary for prostate cancer?"
+        },
+        {
+          "id": "p_259",
+          "type": "paragraph",
+          "text": "No. Some low-risk cancers can be managed with active surveillance, while radiation and other treatments may be appropriate for selected patients."
+        },
+        {
+          "id": "h_260",
+          "type": "heading",
+          "level": 3,
+          "text": "Is robotic surgery better than radiation?"
+        },
+        {
+          "id": "p_261",
+          "type": "paragraph",
+          "text": "They are different treatment approaches and are suitable for different clinical situations. For selected localised cancers, both surgery and radiation can be used with curative intent. The decision should consider cancer risk, health, life expectancy and potential side effects."
+        },
+        {
+          "id": "h_262",
+          "type": "heading",
+          "level": 3,
+          "text": "Can prostate cancer be treated without removing the prostate?"
+        },
+        {
+          "id": "p_263",
+          "type": "paragraph",
+          "text": "Yes. Treatment options can include active surveillance, radiation therapy, brachytherapy and, in selected advanced cases, systemic treatment."
+        },
+        {
+          "id": "h_264",
+          "type": "heading",
+          "level": 3,
+          "text": "What treatment is used for metastatic prostate cancer?"
+        },
+        {
+          "id": "p_265",
+          "type": "paragraph",
+          "text": "Treatment generally involves systemic therapy. Depending on the disease, this may include ADT, androgen-receptor pathway inhibitors, chemotherapy, targeted therapy and selected radiopharmaceutical treatments."
+        },
+        {
+          "id": "h_266",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the role of hormone therapy?"
+        },
+        {
+          "id": "p_267",
+          "type": "paragraph",
+          "text": "Hormone therapy reduces androgen stimulation of prostate cancer cells. It may be used alone in selected circumstances or combined with radiation and other systemic treatments."
+        },
+        {
+          "id": "h_268",
+          "type": "heading",
+          "level": 3,
+          "text": "What is PSMA therapy?"
+        },
+        {
+          "id": "p_269",
+          "type": "paragraph",
+          "text": "PSMA-targeted radiopharmaceutical therapy uses a molecule that targets PSMA-expressing prostate cancer cells and carries a radioactive substance to them."
+        },
+        {
+          "id": "h_270",
+          "type": "heading",
+          "level": 3,
+          "text": "Is HIFU a standard treatment for prostate cancer?"
+        },
+        {
+          "id": "p_271",
+          "type": "paragraph",
+          "text": "HIFU and other focal treatments may be considered in selected circumstances, but they are not established as a universal replacement for surgery or radiation. Current EAU guidance recommends caution and restricts some focal treatment approaches to clinical trials or registries."
+        },
+        {
+          "id": "h_272",
+          "type": "heading",
+          "level": 3,
+          "text": "Can prostate cancer return after treatment?"
+        },
+        {
+          "id": "p_273",
+          "type": "paragraph",
+          "text": "Yes. Some patients experience biochemical or clinical recurrence after treatment. PSA monitoring and appropriate imaging help identify recurrence and guide further treatment."
+        },
+        {
+          "id": "h_274",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does prostate cancer treatment take?"
+        },
+        {
+          "id": "p_275",
+          "type": "paragraph",
+          "text": "It depends on the treatment. Surgery is generally completed during a hospital admission, while radiation can involve multiple treatment sessions. Hormone therapy and systemic treatment may continue for months or longer."
+        },
+        {
+          "id": "h_276",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a second opinion help?"
+        },
+        {
+          "id": "p_277",
+          "type": "paragraph",
+          "text": "A second opinion can be particularly useful when major treatment choices are involved, such as deciding between surgery and radiation or planning treatment for high-risk, recurrent or metastatic disease. A second opinion is more useful when the specialist can review the actual pathology and imaging rather than only a written diagnosis."
+        },
+        {
+          "id": "h_278",
+          "type": "heading",
+          "level": 2,
+          "text": "Key Takeaway"
+        },
+        {
+          "id": "p_279",
+          "type": "paragraph",
+          "text": "**Prostate cancer treatment is highly individualised.**"
+        },
+        {
+          "id": "p_280",
+          "type": "paragraph",
+          "text": "A low-risk cancer may require careful monitoring rather than immediate treatment. A localised cancer may be treated with surgery or radiation. Higher-risk disease may require combined treatment, while metastatic prostate cancer often requires long-term systemic therapy."
+        },
+        {
+          "id": "p_281",
+          "type": "paragraph",
+          "text": "The most important information for deciding treatment is:"
+        },
+        {
+          "id": "p_282",
+          "type": "paragraph",
+          "text": "**PSA + Gleason score/Grade Group + stage + imaging + overall health + life expectancy + treatment priorities.**"
+        },
+        {
+          "id": "p_283",
+          "type": "paragraph",
+          "text": "If you have recently received a prostate cancer diagnosis, the next useful step is usually not to choose a treatment based on a single online article. It is to have your **PSA, biopsy, pathology and imaging reviewed by an appropriate prostate cancer specialist** and discuss the benefits and risks of the available options."
+        },
+        {
+          "id": "h_284",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_285",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates international patients who want [prostate cancer treatment in India](/treatments/prostate-cancer-treatment-in-india). Share PSA reports, biopsy and Grade Group, MRI or PSMA PET, and previous treatment records. A coordinator can arrange specialist review, an itemized estimate and travel planning. The treating uro-oncology, radiation or medical oncology team makes the final recommendation."
+        },
+        {
+          "id": "btn_286",
+          "type": "button",
+          "label": "Share records for a second opinion",
+          "href": "/consult?treatment=Prostate%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_287",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your records](https://wa.me/919044346292?text=I%20would%20like%20to%20share%20prostate%20cancer%20records%20for%20a%20treatment-options%20review%20in%20India.)"
+        },
+        {
+          "id": "h_288",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_289",
+          "type": "paragraph",
+          "text": "This article is intended for educational purposes and does not replace medical advice from a qualified urologist, uro-oncologist, radiation oncologist or medical oncologist."
+        },
+        {
+          "id": "p_290",
+          "type": "paragraph",
+          "text": "Treatment recommendations can differ according to the patient's pathology, stage, imaging, health status, previous treatment and individual circumstances."
+        },
+        {
+          "id": "h_291",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "p_292",
+          "type": "paragraph",
+          "text": "1. [European Association of Urology — Prostate Cancer Guidelines 2026](https://uroweb.org/guidelines/prostate-cancer) — active surveillance, surgery, radiation, systemic treatment, metastatic disease and follow-up."
+        },
+        {
+          "id": "p_293",
+          "type": "paragraph",
+          "text": "2. [National Cancer Institute — Prostate Cancer Treatment (PDQ)](https://www.cancer.gov/types/prostate/patient/prostate-treatment-pdq) — surgery, radiation, hormone therapy, chemotherapy, targeted therapy and other treatments."
+        },
+        {
+          "id": "p_294",
+          "type": "paragraph",
+          "text": "3. [American Cancer Society — Prostate Cancer Treatment by Stage](https://www.cancer.org/cancer/types/prostate-cancer/treating/by-stage.html) — how options vary by stage, risk group, PSA, Grade Group, health and circumstances."
+        },
+        {
+          "id": "p_295",
+          "type": "paragraph",
+          "text": "4. [American Cancer Society — Treating Prostate Cancer](https://www.cancer.org/cancer/types/prostate-cancer/treating.html) — surveillance, surgery, radiation, hormone therapy, chemotherapy, immunotherapy, targeted therapy and metastatic disease."
+        },
+        {
+          "id": "p_296",
+          "type": "paragraph",
+          "text": "5. [American Cancer Society — Prostate Cancer Staging](https://www.cancer.org/cancer/types/prostate-cancer/detection-diagnosis-staging/staging.html) — how PSA, Grade Group, tumour extent, lymph nodes and metastases contribute to staging."
+        },
+        {
+          "id": "p_297",
+          "type": "paragraph",
+          "text": "**Last reviewed against the cited sources: September 2026.**"
+        }
+      ]
+    },
     {
       "id": "art_ductal_carcinoma_in_situ_dcis_treatment_india",
       "slug": "ductal-carcinoma-in-situ-dcis-treatment-india",
