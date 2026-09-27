@@ -9,7 +9,10 @@ import {
   uniqueCuratedTreatmentSlug,
   validateTreatmentForSave,
 } from "@/lib/cms/curated-treatment-store";
-import { blankTreatmentTranslation } from "@/lib/cms/curated-treatment-types";
+import {
+  blankTreatmentTranslation,
+  type CuratedTreatmentStore,
+} from "@/lib/cms/curated-treatment-types";
 import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
 import { LOCALES } from "@/lib/i18n/languages";
@@ -87,7 +90,7 @@ test("the published breast cancer page is complete and internally linked", () =>
 });
 
 test("Save recreates a missing Treatment instead of 404ing", () => {
-  const store = { treatments: [] };
+  const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";
   const { treatment, created, errors } = applyCuratedTreatmentPatch(store, id, {
     baseName: "Breast Cancer Treatment in India",
