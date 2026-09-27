@@ -66,6 +66,11 @@ const nextConfig = {
         destination: "/blogs/breast-cancer-treatment-india-international-patients",
         permanent: true,
       },
+      {
+        source: "/blog/her2-positive-breast-cancer-treatment-india",
+        destination: "/blogs/her2-positive-breast-cancer-treatment-india",
+        permanent: true,
+      },
       { source: "/about", destination: "/", permanent: true },
     ];
   },
