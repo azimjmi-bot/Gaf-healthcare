@@ -2,6 +2,7 @@ import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { cn } from "cn";
+import { consultToWhatsappHref } from "@/lib/site";
 
 const ALLOWED = [
   "p",
@@ -31,10 +32,12 @@ const ALLOWED = [
   "td",
 ];
 
-const components: Components = {
+function markdownComponents(whatsappCtas?: boolean): Components {
+  return {
   h1: ({ children }) => <h2>{children}</h2>,
   a: ({ href, children }) => {
-    const safe = typeof href === "string" && /^(https?:|mailto:|\/|#)/i.test(href) ? href : undefined;
+    const raw = typeof href === "string" && /^(https?:|mailto:|\/|#)/i.test(href) ? href : undefined;
+    const safe = raw && whatsappCtas ? consultToWhatsappHref(raw) : raw;
     const cta =
       typeof safe === "string" &&
       (/^\/consult(?:\?|$)/.test(safe) || /^https:\/\/wa\.me\//i.test(safe));
@@ -57,14 +60,17 @@ const components: Components = {
     // eslint-disable-next-line @next/next/no-img-element
     return <img src={safe} alt={alt || ""} loading="lazy" />;
   },
-};
+  };
+}
 
 export function MarkdownBody({
   source,
   className,
+  whatsappCtas = false,
 }: {
   source: string;
   className?: string;
+  whatsappCtas?: boolean;
 }) {
   const text = source.trim();
   if (!text) return null;
@@ -73,7 +79,7 @@ export function MarkdownBody({
       <ReactMarkdown
         allowedElements={ALLOWED}
         unwrapDisallowed
-        components={components}
+        components={markdownComponents(whatsappCtas)}
         remarkPlugins={[remarkGfm]}
       >
         {text}

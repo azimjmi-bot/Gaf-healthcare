@@ -3,7 +3,8 @@ import { ArticleBlocks, ArticleRelated, CoverImage } from "@/components/article-
 import { JsonLd } from "@/components/json-ld";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { notFound } from "next/navigation";
-import { CtaBand } from "@/components/page-shell";
+import { PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
+import { blogCtaSubject, blogEstimateWhatsapp } from "@/lib/site";
 import { CMS_COOKIE, cmsToken } from "@/lib/cms/auth";
 import { getArticleBySlug } from "@/lib/cms/store";
 import { faqsFromArticleBlocks, getPost, listPublishedPosts } from "@/lib/blogs";
@@ -105,6 +106,9 @@ export default async function BlogPostPage({
   );
 
   const schema = blogStructuredData(post, locale);
+  const subject = blogCtaSubject(post.title);
+  const place = "India";
+  const wa = blogEstimateWhatsapp(subject, place);
 
   return (
     <>
@@ -125,6 +129,13 @@ export default async function BlogPostPage({
           </h1>
         </div>
       </section>
+      <PseoEstimateCtaSection
+        subject={subject}
+        place={place}
+        consultHref={wa.primary}
+        secondaryHref={wa.secondary}
+        variant="records"
+      />
       <article className="mx-auto max-w-3xl px-4 py-10 sm:px-5 md:px-8 md:py-20">
         <p className="text-sm text-muted-foreground">{post.author}</p>
         {post.tags.length > 0 ? (
@@ -133,7 +144,7 @@ export default async function BlogPostPage({
           </p>
         ) : null}
         <div className="mt-8">
-          <ArticleBlocks blocks={post.blocks} title={post.title} />
+          <ArticleBlocks blocks={post.blocks} title={post.title} whatsappCtas />
         </div>
         <ArticleRelated links={post.relatedLinks} />
         <Link
@@ -143,6 +154,13 @@ export default async function BlogPostPage({
           {messages["blogs.all"]}
         </Link>
       </article>
+      <PseoEstimateCtaSection
+        subject={subject}
+        place={place}
+        consultHref={wa.primary}
+        secondaryHref={wa.secondary}
+        variant="plan"
+      />
       {others.length > 0 ? (
         <section className="border-t border-border bg-secondary/40">
           <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-16">
@@ -160,7 +178,6 @@ export default async function BlogPostPage({
           </div>
         </section>
       ) : null}
-      <CtaBand />
     </>
   );
 }

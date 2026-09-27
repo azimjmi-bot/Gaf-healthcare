@@ -1,8 +1,10 @@
 import { CoverImage } from "@/components/article-body";
 import { notFound } from "next/navigation";
 import { LocaleLink as Link } from "@/components/locale-link";
-import { CtaBand, PageIntro } from "@/components/page-shell";
+import { PageIntro } from "@/components/page-shell";
+import { PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
 import { blogSettings, listPublishedPosts } from "@/lib/blogs";
+import { blogEstimateWhatsapp } from "@/lib/site";
 import { localizeBlog, localizeMessages } from "@/lib/i18n/localize";
 import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
@@ -46,6 +48,7 @@ export default async function BlogsPage({
   const posts = await Promise.all(
     all.slice((current - 1) * size, current * size).map((post) => localizeBlog(post, locale)),
   );
+  const listingWa = blogEstimateWhatsapp("treatment");
 
   return (
     <>
@@ -105,7 +108,13 @@ export default async function BlogsPage({
           </p>
         ) : null}
       </section>
-      <CtaBand />
+      <PseoEstimateCtaSection
+        subject="treatment"
+        place="India"
+        consultHref={listingWa.primary}
+        secondaryHref={listingWa.secondary}
+        variant="records"
+      />
     </>
   );
 }

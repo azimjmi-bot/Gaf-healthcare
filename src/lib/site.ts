@@ -12,3 +12,29 @@ export const site = {
 export function whatsappHref(message: string) {
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
 }
+
+/** Turn a /consult CTA into a prefilled WhatsApp chat. Other hrefs are unchanged. */
+export function consultToWhatsappHref(href: string, fallbackMessage?: string) {
+  if (!/^\/consult(?:\?|$)/i.test(href)) return href;
+  const query = href.includes("?") ? href.slice(href.indexOf("?") + 1) : "";
+  const treatment = new URLSearchParams(query).get("treatment")?.trim();
+  const message = treatment
+    ? `Please review my medical records and advise on ${treatment} in India. I would like a case-specific estimate.`
+    : fallbackMessage ||
+      "Please review my medical records and share a case-specific treatment estimate in India.";
+  return whatsappHref(message);
+}
+
+export function blogCtaSubject(title: string) {
+  const trimmed = title.replace(/\s+in India\b.*$/i, "").split(":")[0]?.trim();
+  return trimmed || "treatment";
+}
+
+export function blogEstimateWhatsapp(subject: string, place = "India") {
+  return {
+    primary: whatsappHref(
+      `Please review my medical records and share a case-specific estimate for ${subject} in ${place}.`,
+    ),
+    secondary: whatsappHref(`I would like to speak with GAF Healthcare about ${subject} in ${place}.`),
+  };
+}

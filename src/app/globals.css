@@ -3222,6 +3222,12 @@ img.dhero__art {
   line-height: 1.15;
 }
 
+@media (max-width: 767px) {
+  .cost-panel .cost-btn {
+    width: 100%;
+  }
+}
+
 .cost-sticky {
   position: fixed;
   z-index: 40;

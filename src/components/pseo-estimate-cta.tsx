@@ -1,5 +1,29 @@
-import type { ComponentProps } from "react";
+import type { ComponentProps, ReactNode } from "react";
 import { LocaleLink as Link } from "@/components/locale-link";
+
+function EstimateCtaLink({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className: string;
+  children: ReactNode;
+}) {
+  const external = /^(https?:|mailto:)/i.test(href);
+  if (external) {
+    return (
+      <a href={href} className={className} target="_blank" rel="noreferrer noopener">
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  );
+}
 
 type EstimateCtaVariant = "records" | "options" | "hospital" | "travel" | "plan";
 
@@ -53,14 +77,17 @@ export function PseoEstimateCta({
   subject,
   place,
   consultHref,
+  secondaryHref,
   variant,
 }: {
   subject: string;
   place: string;
   consultHref: string;
+  secondaryHref?: string;
   variant: EstimateCtaVariant;
 }) {
   const copy = COPY[variant];
+  const nextHref = secondaryHref || consultHref;
 
   return (
     <aside className="cost-panel mt-12" aria-label="Personalized treatment estimate">
@@ -69,15 +96,15 @@ export function PseoEstimateCta({
         {copy.body(subject, place)}
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
-        <Link href={consultHref} className="cost-btn cost-btn--primary">
+        <EstimateCtaLink href={consultHref} className="cost-btn cost-btn--primary">
           {copy.primary}
-        </Link>
-        <Link
-          href={consultHref}
+        </EstimateCtaLink>
+        <EstimateCtaLink
+          href={nextHref}
           className="cost-btn border border-ivory/25 text-ivory hover:bg-white/5"
         >
           {copy.secondary(subject, place)}
-        </Link>
+        </EstimateCtaLink>
       </div>
     </aside>
   );

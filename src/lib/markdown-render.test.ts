@@ -49,6 +49,30 @@ test("removes a duplicate Markdown title from a blog body", () => {
   assert.match(html, /<p>Body paragraph.<\/p>/);
 });
 
+test("rewrites consult CTAs to WhatsApp when requested", () => {
+  const html = renderToStaticMarkup(
+    createElement(ArticleBlocks, {
+      whatsappCtas: true,
+      blocks: [
+        {
+          id: "p",
+          type: "paragraph" as const,
+          text: "[Ask GAF](/consult?treatment=Lumpectomy)",
+        },
+        {
+          id: "b",
+          type: "button" as const,
+          label: "Request a quote",
+          href: "/consult?treatment=Mastectomy",
+        },
+      ],
+    }),
+  );
+  assert.match(html, /https:\/\/wa\.me\/919044346292\?text=/);
+  assert.doesNotMatch(html, /href="\/consult/);
+  assert.equal((html.match(/wa\.me\/919044346292/g) ?? []).length, 2);
+});
+
 test("drops unsafe Markdown link and image destinations", () => {
   const html = renderToStaticMarkup(
     createElement(MarkdownBody, {

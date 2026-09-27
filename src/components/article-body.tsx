@@ -1,5 +1,6 @@
 import type { Article, ArticleBlock } from "@/lib/cms/types";
 import { MarkdownBody } from "@/components/markdown-body";
+import { consultToWhatsappHref } from "@/lib/site";
 
 export function CoverImage({
   src,
@@ -34,9 +35,11 @@ function withoutDuplicateTitle(source: string, title?: string) {
 export function ArticleBlocks({
   blocks,
   title,
+  whatsappCtas = false,
 }: {
   blocks: ArticleBlock[];
   title?: string;
+  whatsappCtas?: boolean;
 }) {
   return (
     <div className="article-body">
@@ -44,7 +47,7 @@ export function ArticleBlocks({
         if (block.type === "paragraph") {
           const source = withoutDuplicateTitle(block.text, title);
           return source.trim() ? (
-            <MarkdownBody key={block.id} source={source} />
+            <MarkdownBody key={block.id} source={source} whatsappCtas={whatsappCtas} />
           ) : null;
         }
         if (block.type === "heading") {
@@ -85,15 +88,16 @@ export function ArticleBlocks({
           return <hr key={block.id} />;
         }
         if (block.type === "button") {
+          const href = whatsappCtas ? consultToWhatsappHref(block.href) : block.href;
           const cta =
-            /^\/consult(?:\?|$)/.test(block.href) || /^https:\/\/wa\.me\//i.test(block.href);
+            /^\/consult(?:\?|$)/.test(href) || /^https:\/\/wa\.me\//i.test(href);
           return (
             <p key={block.id}>
               <a
-                href={block.href}
+                href={href}
                 className={cta ? "md-cta" : undefined}
-                target={block.href.startsWith("http") ? "_blank" : undefined}
-                rel={block.href.startsWith("http") ? "noreferrer noopener" : undefined}
+                target={href.startsWith("http") ? "_blank" : undefined}
+                rel={href.startsWith("http") ? "noreferrer noopener" : undefined}
               >
                 {block.label}
               </a>
