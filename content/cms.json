@@ -13737,12 +13737,12 @@
           "href": "/treatments/breast-cancer-treatment-in-india"
         },
         {
-          "label": "Breast Cancer Recurrence",
-          "href": "/blogs/breast-cancer-recurrence-treatment-india"
-        },
-        {
           "label": "Diagnosis and biopsy",
           "href": "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2"
+        },
+        {
+          "label": "Recurrence",
+          "href": "/blogs/breast-cancer-recurrence-treatment-india"
         },
         {
           "label": "Hormone therapy side effects",
@@ -13757,17 +13757,17 @@
         {
           "id": "html_001",
           "type": "html",
-          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>What tests are usually done after breast cancer treatment?</strong> Follow-up commonly includes medical appointments, physical examination and mammography when breast tissue remains. Other tests are added when symptoms, examination findings or the patient's treatment history make them appropriate.</p><p class=\"article-quick-answer__body\"><strong>Do I need a mammogram after breast cancer treatment?</strong> Usually, yes, if breast tissue remains. After breast-conserving surgery, mammography of the treated breast is generally performed about 6–12 months after surgery and radiation, followed by regular mammograms.</p><p class=\"article-quick-answer__body\"><strong>Do I need mammography after a mastectomy?</strong> The removed breast generally does not require routine mammography. If only one breast was removed, the remaining breast usually continues to need mammographic surveillance.</p><p class=\"article-quick-answer__body\"><strong>Do breast cancer survivors need routine PET-CT scans?</strong> Not routinely if they have no symptoms or clinical findings suggesting recurrence. PET-CT and other advanced imaging may be used when there is a specific reason to investigate possible recurrence or spread.</p><p class=\"article-quick-answer__body\"><strong>Are blood tests used to detect breast cancer recurrence?</strong> Routine blood tests are not generally used as the main surveillance method for asymptomatic patients with treated early-stage breast cancer. Blood tests may be appropriate when symptoms or other clinical findings require investigation.</p><p class=\"article-quick-answer__body\"><strong>When is breast MRI used after breast cancer?</strong> MRI is not automatically required for every breast cancer survivor. It may be recommended for selected patients based on factors such as breast cancer risk, age, genetics, breast density or specific clinical findings.</p><p class=\"article-quick-answer__body\"><strong>What if I develop a new lump after treatment?</strong> Contact your doctor. A new lump or other breast or chest-wall change may have several causes, including treatment-related changes, but it should be assessed rather than assumed to be recurrence.</p><p class=\"article-quick-answer__body\"><strong>Can recurrence occur even when my mammogram is normal?</strong> Yes. Mammography is an important surveillance tool, but it cannot detect every recurrence. New or persistent symptoms should be reported even after a normal imaging result.</p><p class=\"article-quick-answer__body\"><strong>How long do I need follow-up after breast cancer?</strong> Follow-up continues for years. Appointments are generally more frequent during the earlier years and become less frequent over time, although the exact schedule is individualized.</p><p class=\"article-quick-answer__body\"><strong>Why Is Follow-Up Needed After Breast Cancer Treatment?</strong> Breast cancer follow-up has several purposes.</p></aside>"
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>What tests are usually done after breast cancer treatment?</strong> Follow-up commonly includes medical appointments, physical examination and mammography when breast tissue remains. Other tests are added when symptoms, examination findings or the patient's treatment history make them appropriate.</p><p class=\"article-quick-answer__body\"><strong>Do I need a mammogram after breast cancer treatment?</strong> Usually, yes, if breast tissue remains. After breast-conserving surgery, mammography of the treated breast is generally performed about 6–12 months after surgery and radiation, followed by regular mammograms.</p><p class=\"article-quick-answer__body\"><strong>Do I need mammography after a mastectomy?</strong> The removed breast generally does not require routine mammography. If only one breast was removed, the remaining breast usually continues to need mammographic surveillance.</p><p class=\"article-quick-answer__body\"><strong>Do breast cancer survivors need routine PET-CT scans?</strong> Not routinely if they have no symptoms or clinical findings suggesting recurrence. PET-CT and other advanced imaging may be used when there is a specific reason to investigate possible recurrence or spread.</p><p class=\"article-quick-answer__body\"><strong>Are blood tests used to detect breast cancer recurrence?</strong> Routine blood tests are not generally used as the main surveillance method for asymptomatic patients with treated early-stage breast cancer. Blood tests may be appropriate when symptoms or other clinical findings require investigation.</p><p class=\"article-quick-answer__body\"><strong>When is breast MRI used after breast cancer?</strong> MRI is not automatically required for every breast cancer survivor. It may be recommended for selected patients based on factors such as breast cancer risk, age, genetics, breast density or specific clinical findings.</p><p class=\"article-quick-answer__body\"><strong>What if I develop a new lump after treatment?</strong> Contact your doctor. A new lump or other breast or chest-wall change may have several causes, including treatment-related changes, but it should be assessed rather than assumed to be recurrence.</p><p class=\"article-quick-answer__body\"><strong>Can recurrence occur even when my mammogram is normal?</strong> Yes. Mammography is an important surveillance tool, but it cannot detect every recurrence. New or persistent symptoms should be reported even after a normal imaging result.</p><p class=\"article-quick-answer__body\"><strong>How long do I need follow-up after breast cancer?</strong> Follow-up continues for years. Appointments are generally more frequent during the earlier years and become less frequent over time, although the exact schedule is individualized.</p></aside>"
         },
         {
           "id": "p_002",
           "type": "paragraph",
-          "text": "Finishing breast cancer treatment does not mean that medical care suddenly stops. The next phase is follow-up care. For many patients, this means regular appointments, physical examinations and breast imaging. The exact plan depends on the original cancer, its stage, treatment received and whether any ongoing medicines or treatment-related problems need monitoring. One question comes up repeatedly: “Do I need a PET-CT, CT scan, MRI or blood tests every few months to make sure the cancer hasn't returned?” Usually, not everyone needs all of these tests routinely. For people treated for early-stage breast cancer who have no symptoms, routine follow-up generally focuses on clinical assessment and appropriate breast imaging rather than repeated whole-body scans or extensive blood testing. Additional tests are usually considered when symptoms, examination findings or other clinical concerns suggest they may be useful. That distinction is important. More testing does not automatically mean better follow-up. The right tests are the ones that answer a specific clinical question. This guide supports the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) pathway."
+          "text": "Finishing breast cancer treatment does not mean that medical care suddenly stops. The next phase is follow-up care: regular appointments, physical examinations and breast imaging. The exact plan depends on the original cancer, its [stage](/blogs/breast-cancer-stages-0-1-2-3-4), treatment received and whether ongoing medicines need monitoring. This guide supports the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) pathway and the [diagnosis explainer](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)."
         },
         {
           "id": "btn_003",
           "type": "button",
-          "label": "Ask GAF about breast cancer follow-up tests after treatment",
+          "label": "Ask GAF about a follow-up plan",
           "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
@@ -13780,1606 +13780,437 @@
           "type": "image",
           "src": "/uploads/articles/followup-tests-mammogram-visual.webp",
           "alt": "Breast cancer follow-up tests including mammogram MRI PET CT and blood tests after treatment",
-          "caption": "If breast tissue remains, mammography is usually part of surveillance after treatment."
+          "caption": "More testing does not automatically mean better follow-up. The right tests are the ones that answer a specific clinical question."
         },
         {
-          "id": "p_006",
-          "type": "paragraph",
-          "text": "The first is to look for signs that the cancer has returned."
+          "id": "h_006",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Is Follow-Up Needed After Breast Cancer Treatment?"
         },
         {
           "id": "p_007",
           "type": "paragraph",
-          "text": "The second is to monitor side effects that may continue after treatment."
+          "text": "Breast cancer follow-up has several purposes. The first is to look for signs that the cancer has returned. The second is to monitor side effects that may continue after treatment. The third is to manage long-term health issues related to cancer treatment and general health. For some patients, follow-up also includes monitoring long-term medicines such as endocrine therapy. A follow-up appointment is not simply a cancer scan. It is a broader assessment of your health after treatment."
         },
         {
-          "id": "p_008",
-          "type": "paragraph",
-          "text": "The third is to manage long-term health issues related to cancer treatment and general health."
+          "id": "h_008",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens During a Follow-Up Appointment?"
         },
         {
           "id": "p_009",
           "type": "paragraph",
-          "text": "For some patients, follow-up also includes monitoring long-term medicines such as endocrine therapy."
+          "text": "A visit may be quite straightforward. Your doctor may ask about new breast changes, pain, swelling, shortness of breath, bone or back pain, neurological symptoms, medication side effects, menopausal symptoms, arm swelling or lymphedema, and general health. A physical examination of the treated breast or chest wall, the remaining breast, surgical area and lymph-node regions may then be performed. The exact examination depends on the treatment history."
         },
         {
           "id": "h_010",
           "type": "heading",
           "level": 2,
-          "text": "So a follow-up appointment is not simply a \"cancer scan.\""
+          "text": "How Often Should You See Your Doctor?"
         },
         {
           "id": "p_011",
           "type": "paragraph",
-          "text": "It is a broader assessment of your health after treatment."
+          "text": "There is no universal schedule. Frequency depends on the type of breast cancer, original stage, treatment received, current medication, treatment-related complications, overall health and new symptoms. Visits are often every 3–6 months initially, becoming less frequent as more time passes. After five years, annual visits are common, although individual plans vary."
         },
         {
           "id": "h_012",
-          "type": "heading",
-          "level": 3,
-          "text": "What Happens During a Breast Cancer Follow-Up Appointment?"
-        },
-        {
-          "id": "p_013",
-          "type": "paragraph",
-          "text": "A follow-up visit may be quite straightforward."
-        },
-        {
-          "id": "h_014",
-          "type": "heading",
-          "level": 2,
-          "text": "Your doctor may ask about:"
-        },
-        {
-          "id": "ul_015",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "New breast changes",
-            "Pain",
-            "Swelling",
-            "Shortness of breath",
-            "Bone or back pain",
-            "Neurological symptoms",
-            "Medication side effects",
-            "Menopausal symptoms",
-            "Arm swelling or lymphedema",
-            "General health"
-          ]
-        },
-        {
-          "id": "p_016",
-          "type": "paragraph",
-          "text": "A physical examination may then be performed."
-        },
-        {
-          "id": "p_017",
-          "type": "paragraph",
-          "text": "The doctor may examine the treated breast or chest wall, the remaining breast, surgical area and lymph-node regions."
-        },
-        {
-          "id": "p_018",
-          "type": "paragraph",
-          "text": "The exact examination depends on the patient's treatment history."
-        },
-        {
-          "id": "h_019",
-          "type": "heading",
-          "level": 3,
-          "text": "How Often Should You See Your Doctor?"
-        },
-        {
-          "id": "p_020",
-          "type": "paragraph",
-          "text": "There is no universal schedule for every breast cancer survivor."
-        },
-        {
-          "id": "h_021",
-          "type": "heading",
-          "level": 2,
-          "text": "Follow-up frequency depends on:"
-        },
-        {
-          "id": "ul_022",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Type of breast cancer",
-            "Original stage",
-            "Treatment received",
-            "Current medication",
-            "Treatment-related complications",
-            "Overall health",
-            "New symptoms"
-          ]
-        },
-        {
-          "id": "p_023",
-          "type": "paragraph",
-          "text": "The American Cancer Society notes that visits are often every 3–6 months initially, becoming less frequent as more time passes. After five years, annual visits are common, although individual plans vary."
-        },
-        {
-          "id": "p_024",
-          "type": "paragraph",
-          "text": "Your oncologist may recommend a different schedule based on your circumstances."
-        },
-        {
-          "id": "h_025",
           "type": "heading",
           "level": 2,
           "text": "Mammogram After Breast-Conserving Surgery"
         },
         {
-          "id": "p_026",
+          "id": "p_013",
           "type": "paragraph",
-          "text": "If you had a lumpectomy or other breast-conserving surgery, you generally continue mammographic surveillance."
+          "text": "If you had a [lumpectomy](/blogs/lumpectomy-vs-mastectomy) or other breast-conserving surgery, you generally continue mammographic surveillance. The treated breast looks different after surgery, and [radiation](/blogs/breast-cancer-radiation-side-effects) can also change the tissue. The first post-treatment mammogram — generally around 6–12 months after surgery and radiation — establishes a new baseline for future comparison."
         },
         {
-          "id": "p_027",
-          "type": "paragraph",
-          "text": "The treated breast looks different after surgery."
-        },
-        {
-          "id": "p_028",
-          "type": "paragraph",
-          "text": "Radiation can also cause changes in the breast tissue."
-        },
-        {
-          "id": "p_029",
-          "type": "paragraph",
-          "text": "For this reason, the first post-treatment mammogram establishes a new baseline for future comparison."
-        },
-        {
-          "id": "p_030",
-          "type": "paragraph",
-          "text": "The American Cancer Society notes that this mammogram is generally performed around 6–12 months after surgery and radiation, followed by regular [mammography](/blogs/breast-cancer-follow-up-tests)."
-        },
-        {
-          "id": "p_031",
-          "type": "paragraph",
-          "text": "The exact timing should come from your treating team."
-        },
-        {
-          "id": "h_032",
+          "id": "h_014",
           "type": "heading",
           "level": 3,
           "text": "Why Is the First Mammogram After Treatment Important?"
         },
         {
-          "id": "p_033",
+          "id": "p_015",
           "type": "paragraph",
-          "text": "It gives the radiologist a new reference point."
+          "text": "It gives the radiologist a new reference point. The breast may have scar tissue, surgical changes, skin thickening, radiation-related changes or architectural distortion. These findings can make interpretation different from a routine screening mammogram. Future images can then be compared with the post-treatment baseline to recognise whether a finding is stable or has changed."
         },
         {
-          "id": "h_034",
-          "type": "heading",
-          "level": 2,
-          "text": "The breast may have:"
-        },
-        {
-          "id": "ul_035",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Scar tissue",
-            "Surgical changes",
-            "Skin thickening",
-            "Changes related to radiation",
-            "Architectural distortion"
-          ]
-        },
-        {
-          "id": "p_036",
-          "type": "paragraph",
-          "text": "These findings can make interpretation different from a routine screening mammogram."
-        },
-        {
-          "id": "p_037",
-          "type": "paragraph",
-          "text": "Future images can then be compared with the post-treatment baseline."
-        },
-        {
-          "id": "p_038",
-          "type": "paragraph",
-          "text": "This comparison can help radiologists recognize whether a finding is stable or has changed."
-        },
-        {
-          "id": "h_039",
+          "id": "h_016",
           "type": "heading",
           "level": 2,
           "text": "Mammogram After Mastectomy"
         },
         {
-          "id": "p_040",
+          "id": "p_017",
           "type": "paragraph",
-          "text": "If the entire breast has been removed, routine [mammography](/blogs/breast-cancer-follow-up-tests) of that side is generally no longer necessary because there is little or no breast tissue to image."
+          "text": "If the entire breast has been removed, routine mammography of that side is generally no longer necessary because there is little or no breast tissue to image. If only one breast was removed, the remaining breast usually continues to need mammographic surveillance. Nipple-sparing or skin-sparing procedures can require individualised advice because some breast tissue may remain. After [bilateral mastectomy](/blogs/breast-cancer-surgery-in-india), routine mammography is generally not required, but chest-wall examination continues. A new lump, swelling or skin change should still be evaluated."
         },
         {
-          "id": "p_041",
-          "type": "paragraph",
-          "text": "However, the situation is different if only one breast was removed."
-        },
-        {
-          "id": "p_042",
-          "type": "paragraph",
-          "text": "The remaining breast generally continues to require mammographic surveillance."
-        },
-        {
-          "id": "p_043",
-          "type": "paragraph",
-          "text": "Nipple-sparing or skin-sparing procedures can require individualized advice because some breast tissue may remain."
-        },
-        {
-          "id": "p_044",
-          "type": "paragraph",
-          "text": "Your breast surgeon and radiologist can determine the appropriate imaging plan."
-        },
-        {
-          "id": "h_045",
-          "type": "heading",
-          "level": 3,
-          "text": "What If I Had Bilateral Mastectomy?"
-        },
-        {
-          "id": "p_046",
-          "type": "paragraph",
-          "text": "If both breasts have been removed, routine [mammography](/blogs/breast-cancer-follow-up-tests) is generally not required."
-        },
-        {
-          "id": "p_047",
-          "type": "paragraph",
-          "text": "However, that does not mean you no longer need follow-up."
-        },
-        {
-          "id": "p_048",
-          "type": "paragraph",
-          "text": "Your doctor may still examine the chest wall and surgical areas."
-        },
-        {
-          "id": "p_049",
-          "type": "paragraph",
-          "text": "If you notice a new lump, swelling, skin change or other abnormality, it should be evaluated."
-        },
-        {
-          "id": "p_050",
-          "type": "paragraph",
-          "text": "Imaging may then be used to investigate a specific finding."
-        },
-        {
-          "id": "h_051",
+          "id": "h_018",
           "type": "heading",
           "level": 3,
           "text": "Do I Need a Mammogram Every Year?"
         },
         {
-          "id": "p_052",
+          "id": "p_019",
           "type": "paragraph",
-          "text": "For many breast cancer survivors who retain breast tissue, annual [mammography](/blogs/breast-cancer-follow-up-tests) is part of ongoing surveillance."
+          "text": "For many survivors who retain breast tissue, annual mammography is part of ongoing surveillance. Some patients are advised to have imaging more frequently for a period of time. The plan should be based on your surgery, remaining breast tissue, age, risk factors and previous findings."
         },
         {
-          "id": "p_053",
-          "type": "paragraph",
-          "text": "However, the exact schedule can vary."
-        },
-        {
-          "id": "p_054",
-          "type": "paragraph",
-          "text": "Some patients may be advised to have imaging more frequently for a period of time."
-        },
-        {
-          "id": "p_055",
-          "type": "paragraph",
-          "text": "Others may follow a standard annual schedule."
-        },
-        {
-          "id": "p_056",
-          "type": "paragraph",
-          "text": "Your imaging plan should be based on your surgery, remaining breast tissue, age, risk factors and previous findings."
-        },
-        {
-          "id": "h_057",
+          "id": "h_020",
           "type": "heading",
-          "level": 3,
-          "text": "What Is a Diagnostic Mammogram?"
+          "level": 2,
+          "text": "What Is a Diagnostic Mammogram, and When Is Ultrasound Used?"
         },
         {
-          "id": "img_058",
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "A diagnostic mammogram is performed when there is a specific concern — a new lump, focal pain, skin or nipple changes, or an abnormal screening mammogram. Additional views and ultrasound may be used. Ultrasound can help distinguish certain fluid-filled structures from solid masses and is often used alongside mammography rather than as a replacement. If a suspicious abnormality remains, a biopsy may be recommended."
+        },
+        {
+          "id": "img_022",
           "type": "image",
           "src": "/uploads/articles/followup-tests-consult-visual.webp",
           "alt": "Oncology follow-up visit after breast cancer treatment",
           "caption": "A follow-up visit is a broader assessment of health after treatment, not simply a cancer scan."
         },
         {
-          "id": "p_059",
-          "type": "paragraph",
-          "text": "A diagnostic mammogram is different from routine screening [mammography](/blogs/breast-cancer-follow-up-tests)."
-        },
-        {
-          "id": "p_060",
-          "type": "paragraph",
-          "text": "It is performed when there is a specific concern or an area that needs closer evaluation."
-        },
-        {
-          "id": "h_061",
+          "id": "h_023",
           "type": "heading",
           "level": 2,
-          "text": "For example, your doctor may order a diagnostic mammogram if you have:"
-        },
-        {
-          "id": "ul_062",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "A new lump",
-            "Focal pain",
-            "Skin changes",
-            "Nipple changes",
-            "An abnormal screening mammogram"
-          ]
-        },
-        {
-          "id": "p_063",
-          "type": "paragraph",
-          "text": "Additional views may be taken to examine the area more closely."
-        },
-        {
-          "id": "p_064",
-          "type": "paragraph",
-          "text": "An ultrasound may also be performed."
-        },
-        {
-          "id": "p_065",
-          "type": "paragraph",
-          "text": "If a suspicious abnormality remains, a biopsy may be recommended."
-        },
-        {
-          "id": "h_066",
-          "type": "heading",
-          "level": 3,
-          "text": "What Is Breast Ultrasound Used For After Breast Cancer?"
-        },
-        {
-          "id": "p_067",
-          "type": "paragraph",
-          "text": "Ultrasound can be useful when a particular area needs further assessment."
-        },
-        {
-          "id": "p_068",
-          "type": "paragraph",
-          "text": "It can help distinguish certain fluid-filled structures from solid masses and can provide additional information about a palpable abnormality."
-        },
-        {
-          "id": "p_069",
-          "type": "paragraph",
-          "text": "It is often used alongside [mammography](/blogs/breast-cancer-follow-up-tests) rather than as a universal replacement for it."
-        },
-        {
-          "id": "p_070",
-          "type": "paragraph",
-          "text": "The appropriate imaging depends on the patient's age, symptoms, previous surgery and clinical findings."
-        },
-        {
-          "id": "h_071",
-          "type": "heading",
-          "level": 3,
           "text": "Do Breast Cancer Survivors Need Breast MRI?"
         },
         {
-          "id": "p_072",
-          "type": "paragraph",
-          "text": "Not automatically."
-        },
-        {
-          "id": "p_073",
-          "type": "paragraph",
-          "text": "Breast MRI is a powerful imaging tool, but it is not necessary for every patient who has previously had breast cancer."
-        },
-        {
-          "id": "h_074",
-          "type": "heading",
-          "level": 2,
-          "text": "MRI may be considered in selected patients based on factors such as:"
-        },
-        {
-          "id": "ul_075",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "High inherited breast cancer risk",
-            "BRCA or other pathogenic genetic variants",
-            "Strong family history",
-            "Age at diagnosis",
-            "Breast density",
-            "Particular imaging findings",
-            "Clinical concern"
-          ]
-        },
-        {
-          "id": "p_076",
-          "type": "paragraph",
-          "text": "The decision should be individualized."
-        },
-        {
-          "id": "p_077",
-          "type": "paragraph",
-          "text": "MRI can also produce findings that require additional imaging or biopsy, so it is not simply a \"more detailed mammogram.\""
-        },
-        {
-          "id": "h_078",
-          "type": "heading",
-          "level": 3,
-          "text": "MRI After Lumpectomy: When Can It Be Useful?"
-        },
-        {
-          "id": "p_079",
-          "type": "paragraph",
-          "text": "MRI may be useful when conventional imaging does not adequately answer a clinical question."
-        },
-        {
-          "id": "p_080",
-          "type": "paragraph",
-          "text": "For example, if a patient has a new suspicious finding that cannot be clearly characterized by [mammography](/blogs/breast-cancer-follow-up-tests) and ultrasound, MRI may sometimes provide additional information."
-        },
-        {
-          "id": "p_081",
-          "type": "paragraph",
-          "text": "However, MRI should not automatically replace [mammography](/blogs/breast-cancer-follow-up-tests) in routine follow-up."
-        },
-        {
-          "id": "p_082",
-          "type": "paragraph",
-          "text": "The treating breast-imaging team determines when it adds meaningful information."
-        },
-        {
-          "id": "h_083",
-          "type": "heading",
-          "level": 3,
-          "text": "What About MRI After Mastectomy?"
-        },
-        {
-          "id": "p_084",
-          "type": "paragraph",
-          "text": "MRI is not routinely required after every mastectomy."
-        },
-        {
-          "id": "p_085",
-          "type": "paragraph",
-          "text": "If a patient develops a new lump or other concerning change along the chest wall or reconstruction, imaging may be recommended."
-        },
-        {
-          "id": "h_086",
-          "type": "heading",
-          "level": 2,
-          "text": "Depending on the situation, this may involve:"
-        },
-        {
-          "id": "ul_087",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Ultrasound",
-            "MRI",
-            "Mammography of remaining tissue",
-            "Other imaging"
-          ]
-        },
-        {
-          "id": "p_088",
-          "type": "paragraph",
-          "text": "The choice depends on the clinical finding."
-        },
-        {
-          "id": "h_089",
-          "type": "heading",
-          "level": 3,
-          "text": "Do I Need a PET-CT After Breast Cancer Treatment?"
-        },
-        {
-          "id": "p_090",
-          "type": "paragraph",
-          "text": "This is one of the most common questions."
-        },
-        {
-          "id": "p_091",
-          "type": "paragraph",
-          "text": "For patients who have completed treatment for early-stage breast cancer and have no symptoms or concerning findings, routine PET-CT is generally not part of standard surveillance."
-        },
-        {
-          "id": "p_092",
-          "type": "paragraph",
-          "text": "NCI's breast cancer treatment guidance notes that routine imaging such as bone scans, liver imaging and chest imaging has not been shown to improve survival or quality of life in asymptomatic patients after treatment for stages I–III breast cancer."
-        },
-        {
-          "id": "p_093",
-          "type": "paragraph",
-          "text": "That does not mean PET-CT is never useful."
-        },
-        {
-          "id": "p_094",
-          "type": "paragraph",
-          "text": "It can be very useful when there is a specific clinical question."
-        },
-        {
-          "id": "h_095",
-          "type": "heading",
-          "level": 3,
-          "text": "When Might a PET-CT Be Recommended?"
-        },
-        {
-          "id": "p_096",
-          "type": "paragraph",
-          "text": "Your doctor may consider advanced imaging when there is concern about recurrence or metastatic disease."
-        },
-        {
-          "id": "h_097",
-          "type": "heading",
-          "level": 2,
-          "text": "Examples might include:"
-        },
-        {
-          "id": "p_098",
-          "type": "paragraph",
-          "text": "A suspicious new lesion Persistent unexplained symptoms Concerning physical examination Abnormal conventional imaging Suspected distant spread Monitoring a known metastatic cancer in an appropriate clinical setting"
-        },
-        {
-          "id": "p_099",
-          "type": "paragraph",
-          "text": "The choice between PET-CT, CT, MRI, bone imaging or another test depends on what doctors are trying to investigate."
-        },
-        {
-          "id": "h_100",
-          "type": "heading",
-          "level": 3,
-          "text": "Do I Need a CT Scan During Routine Follow-Up?"
-        },
-        {
-          "id": "p_101",
-          "type": "paragraph",
-          "text": "Not necessarily."
-        },
-        {
-          "id": "p_102",
-          "type": "paragraph",
-          "text": "A CT scan may be appropriate if there is a specific concern involving organs such as the lungs, liver or other areas."
-        },
-        {
-          "id": "p_103",
-          "type": "paragraph",
-          "text": "But routine CT scanning of an asymptomatic breast cancer survivor is not generally performed simply because the patient previously had cancer."
-        },
-        {
-          "id": "p_104",
-          "type": "paragraph",
-          "text": "This is an important difference between surveillance and diagnostic investigation."
-        },
-        {
-          "id": "h_105",
-          "type": "heading",
-          "level": 3,
-          "text": "What About Bone Scans?"
-        },
-        {
-          "id": "p_106",
-          "type": "paragraph",
-          "text": "Bone scans may be used when doctors are concerned about possible bone involvement."
-        },
-        {
-          "id": "p_107",
-          "type": "paragraph",
-          "text": "For example, persistent unexplained bone pain in a breast cancer survivor may require investigation."
-        },
-        {
-          "id": "p_108",
-          "type": "paragraph",
-          "text": "But routine bone scans are not generally performed repeatedly in asymptomatic patients after early-stage breast cancer treatment."
-        },
-        {
-          "id": "h_109",
-          "type": "heading",
-          "level": 3,
-          "text": "Do Blood Tests Detect Breast Cancer Recurrence?"
-        },
-        {
-          "id": "p_110",
-          "type": "paragraph",
-          "text": "Blood tests can be useful in many situations."
-        },
-        {
-          "id": "p_111",
-          "type": "paragraph",
-          "text": "But they are not a universal screening tool for recurrence."
-        },
-        {
-          "id": "p_112",
-          "type": "paragraph",
-          "text": "Routine blood tests and tumor-marker testing are not generally recommended as the main surveillance method for asymptomatic patients treated for early-stage breast cancer."
-        },
-        {
-          "id": "p_113",
-          "type": "paragraph",
-          "text": "Blood tests may still be ordered when there is a specific reason."
-        },
-        {
-          "id": "p_114",
-          "type": "paragraph",
-          "text": "For example, doctors may use them to investigate symptoms or monitor organ function during treatment."
-        },
-        {
-          "id": "h_115",
-          "type": "heading",
-          "level": 3,
-          "text": "What About CA 15-3 and CEA?"
-        },
-        {
-          "id": "p_116",
-          "type": "paragraph",
-          "text": "CA 15-3 and CEA are blood markers that may be associated with breast cancer."
-        },
-        {
-          "id": "p_117",
-          "type": "paragraph",
-          "text": "Patients sometimes assume that checking these markers regularly can tell them whether the cancer has returned."
-        },
-        {
-          "id": "p_118",
-          "type": "paragraph",
-          "text": "For routine surveillance of asymptomatic patients after early-stage breast cancer treatment, however, these markers are not generally used as a substitute for clinical assessment and appropriate imaging."
-        },
-        {
-          "id": "p_119",
-          "type": "paragraph",
-          "text": "A doctor may use tumor markers in selected situations, particularly in the management of known advanced disease."
-        },
-        {
-          "id": "p_120",
-          "type": "paragraph",
-          "text": "That is different from routine surveillance after curative-intent treatment."
-        },
-        {
-          "id": "img_121",
+          "id": "img_024",
           "type": "image",
           "src": "/uploads/articles/followup-tests-mri-visual.webp",
           "alt": "Breast MRI used selectively after breast cancer treatment",
           "caption": "MRI is not automatically required for every survivor. It is used when it answers a specific question."
         },
         {
-          "id": "h_122",
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "Breast MRI is a powerful tool, but it is not necessary for every patient who has previously had breast cancer. It may be considered for high inherited risk, BRCA or other pathogenic variants, strong family history, age at diagnosis, breast density, particular imaging findings or clinical concern. MRI can also produce findings that require additional imaging or biopsy, so it is not simply a more detailed mammogram."
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "After lumpectomy, MRI may help when mammography and ultrasound cannot clearly characterise a new finding. It should not automatically replace mammography in routine follow-up. After mastectomy, MRI is not routinely required. A new lump or change along the chest wall or [reconstruction](${RECON}) may be investigated with ultrasound, MRI, mammography of remaining tissue or other imaging."
+        },
+        {
+          "id": "h_027",
           "type": "heading",
-          "level": 3,
-          "text": "What If My Blood Tests Are Normal?"
+          "level": 2,
+          "text": "Do I Need a PET-CT, CT or Bone Scan?"
         },
         {
-          "id": "p_123",
+          "id": "p_028",
           "type": "paragraph",
-          "text": "Normal blood results do not prove that breast cancer has not returned."
+          "text": "For patients who have completed treatment for early-stage breast cancer and have no symptoms or concerning findings, routine PET-CT is generally not part of standard surveillance. Routine bone scans, liver imaging and chest imaging have not been shown to improve survival or quality of life in asymptomatic patients after treatment for stages I–III breast cancer. That does not mean PET-CT is never useful. It can be very useful when there is a specific clinical question."
         },
         {
-          "id": "p_124",
+          "id": "p_029",
           "type": "paragraph",
-          "text": "Many breast cancer recurrences do not produce abnormalities on routine blood tests."
+          "text": "Advanced imaging may be considered for a suspicious new lesion, persistent unexplained symptoms, a concerning examination, abnormal conventional imaging, suspected distant spread, or monitoring known metastatic cancer. A CT scan may be appropriate if there is a specific concern involving the lungs, liver or other organs. Bone scans may be used for persistent unexplained bone pain. See the [recurrence guide](/blogs/breast-cancer-recurrence-treatment-india) if new findings need investigation."
         },
         {
-          "id": "p_125",
-          "type": "paragraph",
-          "text": "That is why follow-up is based on the overall clinical picture."
-        },
-        {
-          "id": "p_126",
-          "type": "paragraph",
-          "text": "If you develop a new symptom, tell your doctor even if your recent blood tests were normal."
-        },
-        {
-          "id": "p_127",
+          "id": "btn_030",
           "type": "button",
-          "label": "Request a case-specific treatment review",
+          "label": "Ask whether you need PET-CT or MRI",
           "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
-          "id": "p_128",
+          "id": "p_031",
           "type": "paragraph",
-          "text": "[WhatsApp +91 90443 46292 for a case-specific plan](https://wa.me/919044346292?text=Do%20I%20need%20mammogram%2C%20MRI%20or%20PET-CT%20for%20follow-up%20after%20breast%20cancer%20treatment%3F)"
+          "text": "[WhatsApp +91 90443 46292 about your imaging plan](https://wa.me/919044346292?text=Do%20I%20need%20mammogram%2C%20MRI%20or%20PET-CT%20for%20follow-up%20after%20breast%20cancer%20treatment%3F)"
         },
         {
-          "id": "h_129",
-          "type": "heading",
-          "level": 3,
-          "text": "What Symptoms Should I Report Between Appointments?"
-        },
-        {
-          "id": "p_130",
-          "type": "paragraph",
-          "text": "Do not wait for your next scheduled visit if you notice a persistent or unusual change."
-        },
-        {
-          "id": "h_131",
+          "id": "h_032",
           "type": "heading",
           "level": 2,
-          "text": "Possible warning signs include:"
+          "text": "Do Blood Tests Detect Breast Cancer Recurrence?"
         },
         {
-          "id": "ul_132",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "New lump in the breast or chest wall",
-            "New swelling",
-            "Skin dimpling",
-            "Persistent redness",
-            "Nipple changes",
-            "New swelling under the arm",
-            "Persistent chest pain",
-            "Unexplained arm swelling",
-            "Persistent bone or back pain",
-            "Persistent cough or breathing difficulty",
-            "Unexplained weight loss",
-            "New neurological symptoms"
-          ]
-        },
-        {
-          "id": "p_133",
-          "type": "paragraph",
-          "text": "These symptoms do not automatically mean recurrence."
-        },
-        {
-          "id": "p_134",
-          "type": "paragraph",
-          "text": "There can be many other explanations."
-        },
-        {
-          "id": "p_135",
-          "type": "paragraph",
-          "text": "But they deserve assessment."
-        },
-        {
-          "id": "h_136",
-          "type": "heading",
-          "level": 3,
-          "text": "Can a Normal Mammogram Rule Out Recurrence?"
-        },
-        {
-          "id": "p_137",
-          "type": "paragraph",
-          "text": "No."
-        },
-        {
-          "id": "p_138",
-          "type": "paragraph",
-          "text": "A normal mammogram is reassuring, but it cannot detect every possible recurrence."
-        },
-        {
-          "id": "p_139",
-          "type": "paragraph",
-          "text": "For example, a recurrence may occur in the chest wall after mastectomy, in lymph nodes, or in another part of the body."
-        },
-        {
-          "id": "p_140",
-          "type": "paragraph",
-          "text": "A new symptom therefore needs to be evaluated even if your most recent mammogram was normal."
-        },
-        {
-          "id": "p_141",
-          "type": "paragraph",
-          "text": "NCI specifically advises people treated for breast cancer to report unusual changes or symptoms rather than relying only on routine imaging."
-        },
-        {
-          "id": "h_142",
-          "type": "heading",
-          "level": 3,
-          "text": "What If My Mammogram Shows BI-RADS 3?"
-        },
-        {
-          "id": "p_143",
-          "type": "paragraph",
-          "text": "BI-RADS is a standardized system used to describe breast imaging findings."
-        },
-        {
-          "id": "p_144",
-          "type": "paragraph",
-          "text": "A BI-RADS 3 finding is considered probably benign and generally leads to short-interval imaging follow-up rather than immediate biopsy."
-        },
-        {
-          "id": "p_145",
-          "type": "paragraph",
-          "text": "NCI describes BI-RADS 3 as \"probably benign\" and notes that follow-up is generally recommended."
-        },
-        {
-          "id": "p_146",
-          "type": "paragraph",
-          "text": "However, breast cancer survivors can have more complicated imaging histories because surgery and radiation can alter breast appearance."
-        },
-        {
-          "id": "p_147",
-          "type": "paragraph",
-          "text": "Your radiologist will interpret the finding in context."
-        },
-        {
-          "id": "h_148",
-          "type": "heading",
-          "level": 3,
-          "text": "What If My Mammogram Is BI-RADS 4 or 5?"
-        },
-        {
-          "id": "p_149",
-          "type": "paragraph",
-          "text": "These categories indicate increasing concern."
-        },
-        {
-          "id": "p_150",
-          "type": "paragraph",
-          "text": "BI-RADS 4 is a suspicious abnormality for which biopsy may be recommended."
-        },
-        {
-          "id": "p_151",
-          "type": "paragraph",
-          "text": "BI-RADS 5 is highly suggestive of malignancy and generally requires tissue diagnosis."
-        },
-        {
-          "id": "p_152",
-          "type": "paragraph",
-          "text": "A BI-RADS score is an imaging assessment."
-        },
-        {
-          "id": "p_153",
-          "type": "paragraph",
-          "text": "It is not the same as a cancer stage."
-        },
-        {
-          "id": "p_154",
-          "type": "paragraph",
-          "text": "A biopsy may be needed to establish what the finding actually represents."
-        },
-        {
-          "id": "h_155",
-          "type": "heading",
-          "level": 3,
-          "text": "Why Can Imaging Be Difficult After Breast Cancer Surgery?"
-        },
-        {
-          "id": "p_156",
-          "type": "paragraph",
-          "text": "Surgery changes breast tissue."
-        },
-        {
-          "id": "p_157",
-          "type": "paragraph",
-          "text": "Radiation can also produce changes."
-        },
-        {
-          "id": "h_158",
-          "type": "heading",
-          "level": 2,
-          "text": "These can include:"
-        },
-        {
-          "id": "ul_159",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Scarring",
-            "Architectural distortion",
-            "Skin thickening",
-            "Fluid collections",
-            "Fat necrosis",
-            "Changes around the surgical site"
-          ]
-        },
-        {
-          "id": "p_160",
-          "type": "paragraph",
-          "text": "Some of these findings can look concerning on imaging."
-        },
-        {
-          "id": "p_161",
-          "type": "paragraph",
-          "text": "Comparison with previous scans is therefore extremely valuable."
-        },
-        {
-          "id": "h_162",
-          "type": "heading",
-          "level": 3,
-          "text": "What Is Fat Necrosis?"
-        },
-        {
-          "id": "p_163",
-          "type": "paragraph",
-          "text": "Fat necrosis can occur after surgery, trauma or radiation."
-        },
-        {
-          "id": "p_164",
-          "type": "paragraph",
-          "text": "It involves damaged fatty tissue in the breast."
-        },
-        {
-          "id": "p_165",
-          "type": "paragraph",
-          "text": "It can sometimes feel like a lump and may appear suspicious on imaging."
-        },
-        {
-          "id": "p_166",
-          "type": "paragraph",
-          "text": "Additional imaging or biopsy may sometimes be needed to distinguish it from cancer recurrence."
-        },
-        {
-          "id": "p_167",
-          "type": "paragraph",
-          "text": "This is one reason that a new lump after breast cancer treatment should be assessed rather than assumed to be recurrence."
-        },
-        {
-          "id": "h_168",
-          "type": "heading",
-          "level": 3,
-          "text": "Do I Need Genetic Testing During Follow-Up?"
-        },
-        {
-          "id": "h_169",
-          "type": "heading",
-          "level": 2,
-          "text": "Genetic testing is not a routine \"follow-up scan.\""
-        },
-        {
-          "id": "h_170",
-          "type": "heading",
-          "level": 2,
-          "text": "However, some breast cancer survivors may benefit from genetic assessment depending on factors such as:"
-        },
-        {
-          "id": "ul_171",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Age at diagnosis",
-            "Family history",
-            "Multiple cancers in the family",
-            "Bilateral breast cancer",
-            "Male breast cancer in the family",
-            "Triple-negative disease in certain age groups",
-            "Known familial mutation"
-          ]
-        },
-        {
-          "id": "p_172",
-          "type": "paragraph",
-          "text": "If a pathogenic inherited mutation is identified, the long-term surveillance plan may change."
-        },
-        {
-          "id": "p_173",
-          "type": "paragraph",
-          "text": "It may also have implications for relatives."
-        },
-        {
-          "id": "h_174",
-          "type": "heading",
-          "level": 3,
-          "text": "What About Follow-Up for HER2-Positive Breast Cancer?"
-        },
-        {
-          "id": "p_175",
-          "type": "paragraph",
-          "text": "Patients who receive certain HER2-targeted treatments may require monitoring for treatment-related effects, particularly cardiac function."
-        },
-        {
-          "id": "p_176",
-          "type": "paragraph",
-          "text": "The specific monitoring depends on the medicine, treatment duration and individual risk."
-        },
-        {
-          "id": "p_177",
-          "type": "paragraph",
-          "text": "This is an example of why follow-up is not only about looking for recurrence."
-        },
-        {
-          "id": "p_178",
-          "type": "paragraph",
-          "text": "It also involves checking for late or long-term effects of treatment."
-        },
-        {
-          "id": "h_179",
-          "type": "heading",
-          "level": 3,
-          "text": "What About Hormone Therapy Follow-Up?"
-        },
-        {
-          "id": "p_180",
-          "type": "paragraph",
-          "text": "Patients receiving endocrine therapy may remain on treatment for several years."
-        },
-        {
-          "id": "p_181",
-          "type": "paragraph",
-          "text": "Oncology teams in [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) can confirm the next step. Hospitals in [Delhi NCR](/hospitals/India/Delhi-NCR) and [Mumbai](/hospitals/India/Mumbai) handle international follow-up."
-        },
-        {
-          "id": "h_182",
-          "type": "heading",
-          "level": 2,
-          "text": "Follow-up can include discussion of:"
-        },
-        {
-          "id": "img_183",
+          "id": "img_033",
           "type": "image",
           "src": "/uploads/articles/followup-tests-blood-visual.webp",
           "alt": "Blood tests during breast cancer follow-up when clinically indicated",
           "caption": "Routine blood tests are not generally the main surveillance method for asymptomatic early-stage patients."
         },
         {
-          "id": "ul_184",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Hot flashes",
-            "Joint pain",
-            "Bone health",
-            "Menstrual changes",
-            "Sexual health",
-            "Medication adherence",
-            "Other side effects"
-          ]
-        },
-        {
-          "id": "p_185",
+          "id": "p_034",
           "type": "paragraph",
-          "text": "Your doctor may also recommend other health assessments depending on the specific medicine and your age."
+          "text": "Blood tests can be useful in many situations, but they are not a universal screening tool for recurrence. Routine blood tests and tumour-marker testing are not generally recommended as the main surveillance method for asymptomatic patients treated for early-stage breast cancer. They may still be ordered to investigate symptoms or monitor organ function."
         },
         {
-          "id": "h_186",
+          "id": "h_035",
           "type": "heading",
           "level": 3,
-          "text": "What About Bone Density After Breast Cancer?"
+          "text": "What About CA 15-3 and CEA?"
         },
         {
-          "id": "p_187",
+          "id": "p_036",
           "type": "paragraph",
-          "text": "Bone health can become particularly important for some patients receiving endocrine therapy."
+          "text": "CA 15-3 and CEA are blood markers that may be associated with breast cancer. For routine surveillance of asymptomatic patients after early-stage treatment, these markers are not generally used as a substitute for clinical assessment and appropriate imaging. A doctor may use tumour markers in selected situations, particularly in known advanced disease. Normal blood results do not prove that breast cancer has not returned. Many recurrences do not produce abnormalities on routine blood tests."
         },
         {
-          "id": "p_188",
-          "type": "paragraph",
-          "text": "For example, aromatase inhibitors can contribute to bone loss in postmenopausal women."
-        },
-        {
-          "id": "p_189",
-          "type": "paragraph",
-          "text": "Depending on your treatment and risk factors, your doctor may recommend bone-density assessment such as a DEXA scan."
-        },
-        {
-          "id": "p_190",
-          "type": "paragraph",
-          "text": "This is different from a scan looking for breast cancer recurrence."
-        },
-        {
-          "id": "p_191",
-          "type": "paragraph",
-          "text": "It is part of managing treatment-related health risks."
-        },
-        {
-          "id": "h_192",
-          "type": "heading",
-          "level": 3,
-          "text": "What Records Should You Keep After Breast Cancer Treatment?"
-        },
-        {
-          "id": "p_193",
-          "type": "paragraph",
-          "text": "Do not keep only the final discharge summary."
-        },
-        {
-          "id": "p_194",
-          "type": "paragraph",
-          "text": "Create a complete cancer record."
-        },
-        {
-          "id": "h_195",
+          "id": "h_037",
           "type": "heading",
           "level": 2,
-          "text": "It should ideally contain:"
+          "text": "What Symptoms Should I Report Between Appointments?"
         },
         {
-          "id": "ul_196",
+          "id": "ul_038",
           "type": "list",
           "style": "ul",
           "items": [
-            "Diagnosis",
-            "Original biopsy report",
-            "Pathology report",
-            "ER result",
-            "PR result",
-            "HER2 result",
-            "Ki-67",
-            "Genetic testing, if performed",
-            "Surgery",
-            "Operative report",
-            "Final surgical pathology",
-            "Lymph-node results",
-            "Margin status",
-            "Systemic treatment",
-            "Chemotherapy medicines",
-            "Number of cycles",
-            "Dates of treatment",
-            "Targeted therapy",
-            "Immunotherapy",
-            "Hormone therapy",
-            "Radiation",
-            "Radiation treatment summary",
-            "Dose and treatment area",
-            "Imaging",
-            "Mammograms",
-            "Ultrasounds",
-            "MRI",
-            "CT",
-            "PET-CT",
-            "Other relevant imaging"
+            "New lump in the breast or chest wall, new swelling or skin dimpling",
+            "Persistent redness or nipple changes",
+            "New swelling under the arm or unexplained arm swelling",
+            "Persistent chest, bone or back pain",
+            "Persistent cough or breathing difficulty",
+            "Unexplained weight loss or new neurological symptoms"
           ]
         },
         {
-          "id": "p_197",
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "These symptoms do not automatically mean recurrence. There can be many other explanations. But they deserve assessment. A normal mammogram is reassuring, but it cannot detect every possible recurrence — for example in the chest wall after mastectomy, in lymph nodes, or in another part of the body."
+        },
+        {
+          "id": "h_040",
+          "type": "heading",
+          "level": 2,
+          "text": "What If My Mammogram Shows BI-RADS 3, 4 or 5?"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "BI-RADS is a standardised system used to describe breast imaging findings. BI-RADS 3 is considered probably benign and generally leads to short-interval imaging follow-up rather than immediate biopsy. BI-RADS 4 is a suspicious abnormality for which biopsy may be recommended. BI-RADS 5 is highly suggestive of malignancy and generally requires tissue diagnosis. A BI-RADS score is an imaging assessment. It is not the same as a cancer stage."
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Can Imaging Be Difficult After Surgery, and What Is Fat Necrosis?"
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "Surgery and radiation can produce scarring, architectural distortion, skin thickening, fluid collections, fat necrosis and changes around the surgical site. Some of these findings can look concerning on imaging. Comparison with previous scans is therefore extremely valuable. Fat necrosis involves damaged fatty tissue. It can feel like a lump and may appear suspicious. Additional imaging or biopsy may be needed to distinguish it from recurrence. A new lump after treatment should be assessed rather than assumed to be cancer."
+        },
+        {
+          "id": "h_044",
+          "type": "heading",
+          "level": 2,
+          "text": "Genetic Testing, HER2 Monitoring, Hormone Therapy and Bone Density"
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "Genetic testing is not a routine follow-up scan. Some survivors may benefit from genetic assessment because of age at diagnosis, family history, bilateral disease, male breast cancer in the family, triple-negative disease in certain age groups or a known familial mutation. If a pathogenic inherited mutation is identified, the long-term surveillance plan may change."
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Patients who received certain [HER2-targeted treatments](/blogs/her2-positive-breast-cancer-treatment-india) may need cardiac monitoring. Patients on [endocrine therapy](/blogs/breast-cancer-hormone-therapy-side-effects) may discuss hot flashes, joint pain, bone health, menstrual changes, sexual health and adherence. Aromatase inhibitors can contribute to bone loss; a DEXA scan is a bone-health test, not a recurrence scan."
+        },
+        {
+          "id": "h_047",
+          "type": "heading",
+          "level": 2,
+          "text": "What Records Should International Patients Keep?"
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "Keep more than the discharge summary. A complete record should include the original biopsy and pathology, ER, PR, HER2, Ki-67, genetic testing if performed, operative and lymph-node reports, margin status, chemotherapy, targeted therapy, immunotherapy and hormone-therapy details, the radiation summary, and imaging files — not just written reports. See the [international-patient guide](/blogs/breast-cancer-treatment-india-international-patients) and the [cost guide](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "Some international patients return to the same Indian hospital for follow-up. Others arrange periodic consultations in India while receiving routine care closer to home. Some aspects can be handled remotely — new imaging, pathology, blood reports, medication history and symptoms — but a new lump or swelling should not wait for an online consult alone. Teams in [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) can confirm the schedule. Hospitals in [Delhi NCR](/hospitals/India/Delhi-NCR) and [Mumbai](/hospitals/India/Mumbai) can store or review imaging files."
+        },
+        {
+          "id": "p_050",
           "type": "paragraph",
           "text": "[WhatsApp +91 90443 46292 your records before travel](https://wa.me/919044346292?text=I%20would%20like%20to%20send%20my%20pathology%20and%20imaging%20for%20a%20follow-up%20plan%20in%20India.)"
         },
         {
-          "id": "p_198",
-          "type": "paragraph",
-          "text": "Keeping the actual imaging files—not just the written reports—can be very useful if you later seek a second opinion."
-        },
-        {
-          "id": "h_199",
-          "type": "heading",
-          "level": 3,
-          "text": "Why Is This Especially Important for International Patients?"
-        },
-        {
-          "id": "p_200",
-          "type": "paragraph",
-          "text": "If you were treated in India and later return to your home country, your next doctor may not have access to the original hospital's records."
-        },
-        {
-          "id": "p_201",
-          "type": "paragraph",
-          "text": "The same problem can occur in reverse."
-        },
-        {
-          "id": "p_202",
-          "type": "paragraph",
-          "text": "If you were originally treated outside India and later travel to India, an Indian cancer team needs to understand what was previously done."
-        },
-        {
-          "id": "p_203",
-          "type": "paragraph",
-          "text": "Having a complete record can reduce unnecessary repetition of tests and help doctors interpret new findings against the original diagnosis."
-        },
-        {
-          "id": "h_204",
-          "type": "heading",
-          "level": 3,
-          "text": "Can International Patients Have Follow-Up in India?"
-        },
-        {
-          "id": "p_205",
-          "type": "paragraph",
-          "text": "Yes."
-        },
-        {
-          "id": "p_206",
-          "type": "paragraph",
-          "text": "Some international patients return to the same Indian hospital for follow-up."
-        },
-        {
-          "id": "p_207",
-          "type": "paragraph",
-          "text": "Others arrange periodic consultations in India while receiving routine care closer to home."
-        },
-        {
-          "id": "h_208",
+          "id": "h_051",
           "type": "heading",
           "level": 2,
-          "text": "The appropriate arrangement depends on:"
+          "text": "What Should I Ask, and What Is a Survivorship Care Plan?"
         },
         {
-          "id": "ul_209",
+          "id": "ul_052",
           "type": "list",
           "style": "ul",
           "items": [
-            "Original cancer",
-            "Stage",
-            "Treatment",
-            "Current medication",
-            "Distance from India",
-            "Availability of oncology care at home",
-            "New symptoms or findings"
-          ]
-        },
-        {
-          "id": "p_210",
-          "type": "paragraph",
-          "text": "A follow-up plan should be agreed with the treating team rather than based simply on how frequently a patient can travel."
-        },
-        {
-          "id": "h_211",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Follow-Up Be Done Remotely?"
-        },
-        {
-          "id": "p_212",
-          "type": "paragraph",
-          "text": "Some aspects can be handled remotely."
-        },
-        {
-          "id": "h_213",
-          "type": "heading",
-          "level": 2,
-          "text": "For example, a doctor may review:"
-        },
-        {
-          "id": "ul_214",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "New imaging",
-            "Pathology",
-            "Blood reports",
-            "Medication history",
-            "Symptoms"
-          ]
-        },
-        {
-          "id": "p_215",
-          "type": "paragraph",
-          "text": "However, some situations require physical examination or in-person imaging."
-        },
-        {
-          "id": "p_216",
-          "type": "paragraph",
-          "text": "If a new lump, swelling or other physical change appears, an online consultation should not delay necessary examination."
-        },
-        {
-          "id": "h_217",
-          "type": "heading",
-          "level": 3,
-          "text": "What Should I Ask My Oncologist About Follow-Up?"
-        },
-        {
-          "id": "p_218",
-          "type": "paragraph",
-          "text": "Before finishing active treatment, ask for a written follow-up plan."
-        },
-        {
-          "id": "h_219",
-          "type": "heading",
-          "level": 2,
-          "text": "Useful questions include:"
-        },
-        {
-          "id": "ul_220",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "When is my next appointment?",
-            "When should I have my next mammogram?",
-            "Do I need MRI?",
-            "Do I need any blood tests?",
-            "Do I need PET-CT or CT?",
+            "When is my next appointment and next mammogram?",
+            "Do I need MRI, blood tests, PET-CT or CT?",
             "Which symptoms should make me contact you immediately?",
             "How long will I continue endocrine therapy?",
-            "Do I need bone-density testing?",
-            "Do I need cardiac monitoring?",
-            "Who will coordinate my long-term follow-up?",
-            "What records should I keep?"
+            "Do I need bone-density testing or cardiac monitoring?",
+            "Who will coordinate long-term follow-up, and what records should I keep?"
           ]
         },
         {
-          "id": "p_221",
+          "id": "p_053",
           "type": "paragraph",
-          "text": "A written plan is particularly useful if you will be returning to another country."
+          "text": "A survivorship care plan summarises the diagnosis, stage, treatment received, follow-up schedule, recommended imaging, possible late effects, medication plan and contact information. It is particularly useful if you will be returning to another country."
         },
         {
-          "id": "h_222",
-          "type": "heading",
-          "level": 3,
-          "text": "What Is a Breast Cancer Survivorship Care Plan?"
-        },
-        {
-          "id": "p_223",
-          "type": "paragraph",
-          "text": "A survivorship care plan summarizes what happened during cancer treatment and what should happen afterward."
-        },
-        {
-          "id": "h_224",
-          "type": "heading",
-          "level": 2,
-          "text": "It can include:"
-        },
-        {
-          "id": "ul_225",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Original diagnosis",
-            "Stage",
-            "Treatment received",
-            "Follow-up schedule",
-            "Recommended imaging",
-            "Possible late effects",
-            "Medication plan",
-            "Lifestyle recommendations",
-            "Contact information for the treating team"
-          ]
-        },
-        {
-          "id": "p_226",
-          "type": "paragraph",
-          "text": "NCI and the American Cancer Society both emphasize the usefulness of structured follow-up and survivorship planning after cancer treatment."
-        },
-        {
-          "id": "h_227",
+          "id": "h_054",
           "type": "heading",
           "level": 2,
           "text": "Follow-Up Tests: A Simple Way to Think About Them"
         },
         {
-          "id": "p_228",
+          "id": "p_055",
           "type": "paragraph",
-          "text": "It can help to divide tests into three groups."
+          "text": "Routine surveillance is performed because your treatment history means you should be monitored — for many patients, clinical follow-up and mammography when breast tissue remains. Tests for symptoms are ordered because something has changed: a new lump leads to examination, mammogram or ultrasound, and possibly biopsy. Tests for treatment effects are performed because a particular treatment can affect another part of the body, such as cardiac monitoring after certain systemic treatments. That is why two survivors may have very different schedules."
         },
         {
-          "id": "h_229",
-          "type": "heading",
-          "level": 2,
-          "text": "Routine surveillance"
-        },
-        {
-          "id": "p_230",
-          "type": "paragraph",
-          "text": "These are tests performed because your treatment history means you should be monitored."
-        },
-        {
-          "id": "p_231",
-          "type": "paragraph",
-          "text": "For many patients, this primarily means clinical follow-up and [mammography](/blogs/breast-cancer-follow-up-tests) when breast tissue remains."
-        },
-        {
-          "id": "h_232",
-          "type": "heading",
-          "level": 2,
-          "text": "Tests for symptoms"
-        },
-        {
-          "id": "p_233",
-          "type": "paragraph",
-          "text": "These are ordered because something has changed."
-        },
-        {
-          "id": "h_234",
-          "type": "heading",
-          "level": 2,
-          "text": "For example:"
-        },
-        {
-          "id": "h_235",
-          "type": "heading",
-          "level": 2,
-          "text": "New lump → examination → mammogram/ultrasound → possible biopsy"
-        },
-        {
-          "id": "h_236",
-          "type": "heading",
-          "level": 2,
-          "text": "Tests for treatment effects"
-        },
-        {
-          "id": "p_237",
-          "type": "paragraph",
-          "text": "These are performed because a particular treatment can affect another part of the body."
-        },
-        {
-          "id": "h_238",
-          "type": "heading",
-          "level": 2,
-          "text": "For example:"
-        },
-        {
-          "id": "h_239",
-          "type": "heading",
-          "level": 2,
-          "text": "Certain systemic treatments → cardiac monitoring"
-        },
-        {
-          "id": "p_240",
-          "type": "paragraph",
-          "text": "This distinction helps explain why two breast cancer survivors may have very different follow-up schedules."
-        },
-        {
-          "id": "h_241",
-          "type": "heading",
-          "level": 2,
-          "text": "Final Takeaway"
-        },
-        {
-          "id": "p_242",
-          "type": "paragraph",
-          "text": "Breast cancer follow-up is not about having every possible scan."
-        },
-        {
-          "id": "p_243",
-          "type": "paragraph",
-          "text": "It is about having the right surveillance plan for your particular cancer and treatment history."
-        },
-        {
-          "id": "p_244",
-          "type": "paragraph",
-          "text": "For many people treated for early-stage breast cancer, follow-up includes regular clinical visits and [mammography](/blogs/breast-cancer-follow-up-tests) when breast tissue remains. Routine PET-CT, CT scans, bone scans and extensive blood testing are generally not required when there are no symptoms or concerning findings."
-        },
-        {
-          "id": "p_245",
-          "type": "paragraph",
-          "text": "But that does not mean you should ignore new symptoms between appointments."
-        },
-        {
-          "id": "p_246",
-          "type": "paragraph",
-          "text": "A new lump, persistent pain, swelling, skin change, breathing problem, unexplained weight loss or neurological symptom should be discussed with your doctor."
-        },
-        {
-          "id": "p_247",
-          "type": "paragraph",
-          "text": "The next test depends on what has changed."
-        },
-        {
-          "id": "p_248",
-          "type": "paragraph",
-          "text": "For international patients, there is one additional practical point: keep your complete cancer record."
-        },
-        {
-          "id": "p_249",
-          "type": "paragraph",
-          "text": "Your pathology, imaging, operative reports, [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) records, radiation summary and medication history can be extremely valuable if you need follow-up in another country or decide to seek a second opinion."
-        },
-        {
-          "id": "p_250",
-          "type": "paragraph",
-          "text": "The goal of follow-up is not simply to look for recurrence."
-        },
-        {
-          "id": "p_251",
-          "type": "paragraph",
-          "text": "It is also to help you manage life after treatment, identify late effects, maintain your health and know what to do if something changes."
-        },
-        {
-          "id": "h_252",
+          "id": "h_056",
           "type": "heading",
           "level": 2,
           "text": "Frequently Asked Questions"
         },
         {
-          "id": "h_253",
+          "id": "h_057",
           "type": "heading",
           "level": 3,
           "text": "What tests are usually done after breast cancer treatment?"
         },
         {
-          "id": "p_254",
+          "id": "p_058",
           "type": "paragraph",
-          "text": "Follow-up commonly includes medical appointments, physical examination and mammography when breast tissue remains. Other tests are added when symptoms, examination findings or the patient's treatment history make them appropriate."
+          "text": "Follow-up commonly includes medical appointments, physical examination and mammography when breast tissue remains. Other tests are added when they answer a specific question."
         },
         {
-          "id": "h_255",
+          "id": "h_059",
           "type": "heading",
           "level": 3,
           "text": "Do I need a mammogram after breast cancer treatment?"
         },
         {
-          "id": "p_256",
+          "id": "p_060",
           "type": "paragraph",
-          "text": "Usually, yes, if breast tissue remains. After breast-conserving surgery, mammography of the treated breast is generally performed about 6–12 months after surgery and radiation, followed by regular mammograms."
+          "text": "Usually yes if breast tissue remains. After breast-conserving surgery, the first mammogram is generally about 6–12 months after surgery and radiation."
         },
         {
-          "id": "h_257",
+          "id": "h_061",
           "type": "heading",
           "level": 3,
           "text": "Do I need mammography after a mastectomy?"
         },
         {
-          "id": "p_258",
+          "id": "p_062",
           "type": "paragraph",
-          "text": "The removed breast generally does not require routine mammography. If only one breast was removed, the remaining breast usually continues to need mammographic surveillance."
+          "text": "The removed breast generally does not require routine mammography. The remaining breast usually continues to need surveillance."
         },
         {
-          "id": "h_259",
+          "id": "h_063",
           "type": "heading",
           "level": 3,
           "text": "Do breast cancer survivors need routine PET-CT scans?"
         },
         {
-          "id": "p_260",
+          "id": "p_064",
           "type": "paragraph",
-          "text": "Not routinely if they have no symptoms or clinical findings suggesting recurrence. PET-CT and other advanced imaging may be used when there is a specific reason to investigate possible recurrence or spread."
+          "text": "Not routinely if there are no symptoms or clinical findings suggesting recurrence."
         },
         {
-          "id": "h_261",
+          "id": "h_065",
           "type": "heading",
           "level": 3,
           "text": "Are blood tests used to detect breast cancer recurrence?"
         },
         {
-          "id": "p_262",
+          "id": "p_066",
           "type": "paragraph",
-          "text": "Routine blood tests are not generally used as the main surveillance method for asymptomatic patients with treated early-stage breast cancer. Blood tests may be appropriate when symptoms or other clinical findings require investigation."
+          "text": "They are not generally the main surveillance method for asymptomatic early-stage patients."
         },
         {
-          "id": "h_263",
+          "id": "h_067",
           "type": "heading",
           "level": 3,
           "text": "When is breast MRI used after breast cancer?"
         },
         {
-          "id": "p_264",
+          "id": "p_068",
           "type": "paragraph",
-          "text": "MRI is not automatically required for every breast cancer survivor. It may be recommended for selected patients based on factors such as breast cancer risk, age, genetics, breast density or specific clinical findings."
+          "text": "It may be recommended for selected patients based on risk, genetics, density or a specific clinical finding."
         },
         {
-          "id": "h_265",
+          "id": "h_069",
           "type": "heading",
           "level": 3,
           "text": "What if I develop a new lump after treatment?"
         },
         {
-          "id": "p_266",
+          "id": "p_070",
           "type": "paragraph",
-          "text": "Contact your doctor. A new lump or other breast or chest-wall change may have several causes, including treatment-related changes, but it should be assessed rather than assumed to be recurrence."
+          "text": "Contact your doctor. It may have several causes, including treatment-related changes, but it should be assessed."
         },
         {
-          "id": "h_267",
+          "id": "h_071",
           "type": "heading",
           "level": 3,
           "text": "Can recurrence occur even when my mammogram is normal?"
         },
         {
-          "id": "p_268",
+          "id": "p_072",
           "type": "paragraph",
-          "text": "Yes. Mammography is an important surveillance tool, but it cannot detect every recurrence. New or persistent symptoms should be reported even after a normal imaging result."
+          "text": "Yes. Mammography cannot detect every recurrence. Report new or persistent symptoms even after a normal result."
         },
         {
-          "id": "h_269",
+          "id": "h_073",
           "type": "heading",
           "level": 3,
           "text": "How long do I need follow-up after breast cancer?"
         },
         {
-          "id": "p_270",
+          "id": "p_074",
           "type": "paragraph",
-          "text": "Follow-up continues for years. Appointments are generally more frequent during the earlier years and become less frequent over time, although the exact schedule is individualized."
+          "text": "Follow-up continues for years. Appointments are usually more frequent at first and become less frequent over time."
         },
         {
-          "id": "h_271",
+          "id": "h_075",
           "type": "heading",
-          "level": 3,
-          "text": "Why Is Follow-Up Needed After Breast Cancer Treatment?"
+          "level": 2,
+          "text": "Follow-Up Tests: Key Takeaways"
         },
         {
-          "id": "p_272",
+          "id": "p_076",
           "type": "paragraph",
-          "text": "Breast cancer follow-up has several purposes."
+          "text": "Follow-up is not about having every possible scan. For many people treated for early-stage breast cancer, it includes regular clinical visits and mammography when breast tissue remains. Routine PET-CT, CT, bone scans and extensive blood testing are generally not required when there are no symptoms. A new lump, persistent pain, swelling, skin change, breathing problem, unexplained weight loss or neurological symptom should still be discussed. International patients should keep the complete cancer record — pathology, imaging files, operative reports, chemotherapy records, radiation summary and medication history."
         },
         {
-          "id": "btn_273",
+          "id": "btn_077",
           "type": "button",
           "label": "Start the Breast Cancer Treatment in India pathway",
           "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
-          "id": "p_274",
+          "id": "p_078",
           "type": "paragraph",
           "text": "[WhatsApp +91 90443 46292 to plan the next step](https://wa.me/919044346292?text=Please%20help%20me%20plan%20breast%20cancer%20follow-up%20and%20survivorship%20care%20in%20India.)"
         },
         {
-          "id": "h_275",
+          "id": "h_079",
           "type": "heading",
           "level": 2,
           "text": "GAF Healthcare Resources"
         },
         {
-          "id": "p_276",
+          "id": "p_080",
           "type": "paragraph",
-          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Hormone therapy side effects](/blogs/breast-cancer-hormone-therapy-side-effects)\n- [Chemotherapy side effects](/blogs/breast-cancer-chemotherapy-side-effects)\n- [Targeted therapy side effects](/blogs/breast-cancer-targeted-therapy-side-effects)\n- [Radiation therapy](/blogs/radiation-therapy-for-breast-cancer)\n- [Diagnosis](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)\n- [International patients](/blogs/breast-cancer-treatment-india-international-patients)\n- [Chemotherapy doctors](/doctors/India/Medical-Oncology/Chemotherapy) · [Hormone therapy doctors](/doctors/India/Medical-Oncology/Hormone-Therapy)\n- [Radiation oncology doctors](/doctors/India/Radiation-Oncology)\n- [Breast-conserving surgery doctors](/doctors/India/Surgical-Oncology/Breast-Conserving-Surgery)"
+          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Diagnosis](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)\n- [Recurrence](/blogs/breast-cancer-recurrence-treatment-india)\n- [Hormone therapy side effects](/blogs/breast-cancer-hormone-therapy-side-effects)\n- [Chemotherapy side effects](/blogs/breast-cancer-chemotherapy-side-effects)\n- [Targeted therapy side effects](/blogs/breast-cancer-targeted-therapy-side-effects)\n- [Radiation side effects](/blogs/breast-cancer-radiation-side-effects)\n- [Breast-conserving surgery doctors](/doctors/India/Surgical-Oncology/Breast-Conserving-Surgery)\n- [Mastectomy doctors](/doctors/India/Surgical-Oncology/Mastectomy)\n- [Reconstruction doctors](/doctors/India/Surgical-Oncology/Breast-Reconstruction)\n- [Chemotherapy doctors](/doctors/India/Medical-Oncology/Chemotherapy)\n- [Hormone therapy doctors](/doctors/India/Medical-Oncology/Hormone-Therapy)\n- [Targeted therapy doctors](/doctors/India/Medical-Oncology/Targeted-Therapy)\n- [Immunotherapy doctors](/doctors/India/Medical-Oncology/Immunotherapy)\n- [International patients](/blogs/breast-cancer-treatment-india-international-patients)"
         }
       ]
     },
