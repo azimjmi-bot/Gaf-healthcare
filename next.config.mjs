@@ -81,6 +81,16 @@ const nextConfig = {
         destination: "/blogs/breast-reconstruction-after-mastectomy-india",
         permanent: true,
       },
+      {
+        source: "/blog/radiation-therapy-for-breast-cancer",
+        destination: "/blogs/radiation-therapy-for-breast-cancer",
+        permanent: true,
+      },
+      {
+        source: "/blog/chemotherapy-for-breast-cancer-in-india",
+        destination: "/blogs/chemotherapy-for-breast-cancer-in-india",
+        permanent: true,
+      },
       { source: "/about", destination: "/", permanent: true },
     ];
   },

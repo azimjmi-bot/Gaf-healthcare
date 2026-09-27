@@ -42,7 +42,11 @@
     "endocrine therapy",
     "tamoxifen",
     "breast reconstruction",
-    "mastectomy"
+    "mastectomy",
+    "radiation therapy",
+    "radiotherapy",
+    "neoadjuvant",
+    "systemic therapy"
   ],
   "media": [
     {
@@ -303,9 +307,2044 @@
       "name": "breast-reconstruction-recovery-visual.webp",
       "alt": "Postoperative recovery for an international reconstruction patient",
       "addedAt": "2026-09-27T18:00:00.000Z"
+    },
+    {
+      "id": "media_rt_planning",
+      "url": "/uploads/articles/radiation-breast-planning-visual.webp",
+      "name": "radiation-breast-planning-visual.webp",
+      "alt": "Radiation therapy for breast cancer showing treatment planning and targeted radiation delivery",
+      "addedAt": "2026-09-27T19:00:00.000Z"
+    },
+    {
+      "id": "media_rt_session",
+      "url": "/uploads/articles/radiation-breast-session-visual.webp",
+      "name": "radiation-breast-session-visual.webp",
+      "alt": "External-beam radiotherapy session on a linear accelerator",
+      "addedAt": "2026-09-27T19:00:00.000Z"
+    },
+    {
+      "id": "media_rt_dibh",
+      "url": "/uploads/articles/radiation-breast-breath-hold-visual.webp",
+      "name": "radiation-breast-breath-hold-visual.webp",
+      "alt": "Deep-inspiration breath-hold coaching during breast radiotherapy",
+      "addedAt": "2026-09-27T19:00:00.000Z"
+    },
+    {
+      "id": "media_rt_followup",
+      "url": "/uploads/articles/radiation-breast-followup-visual.webp",
+      "name": "radiation-breast-followup-visual.webp",
+      "alt": "Radiation oncology consultation over a treatment-planning scan",
+      "addedAt": "2026-09-27T19:00:00.000Z"
+    },
+    {
+      "id": "media_chemo_infusion",
+      "url": "/uploads/articles/chemo-breast-infusion-visual.webp",
+      "name": "chemo-breast-infusion-visual.webp",
+      "alt": "Chemotherapy for breast cancer in India showing oncology treatment and intravenous chemotherapy",
+      "addedAt": "2026-09-27T19:30:00.000Z"
+    },
+    {
+      "id": "media_chemo_blood",
+      "url": "/uploads/articles/chemo-breast-blood-test-visual.webp",
+      "name": "chemo-breast-blood-test-visual.webp",
+      "alt": "Blood-count review before a chemotherapy cycle",
+      "addedAt": "2026-09-27T19:30:00.000Z"
+    },
+    {
+      "id": "media_chemo_cycles",
+      "url": "/uploads/articles/chemo-breast-cycles-visual.webp",
+      "name": "chemo-breast-cycles-visual.webp",
+      "alt": "Chemotherapy cycle calendar discussion",
+      "addedAt": "2026-09-27T19:30:00.000Z"
+    },
+    {
+      "id": "media_chemo_intl",
+      "url": "/uploads/articles/chemo-breast-international-visual.webp",
+      "name": "chemo-breast-international-visual.webp",
+      "alt": "International patient arriving for day-care chemotherapy",
+      "addedAt": "2026-09-27T19:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_chemotherapy_for_breast_cancer_in_india",
+      "slug": "chemotherapy-for-breast-cancer-in-india",
+      "title": "Chemotherapy for Breast Cancer in India: Cost, Cycles and Side Effects",
+      "excerpt": "When chemotherapy is used before or after surgery, how cycles work, side effects and why India quotations must name the regimen rather than a generic per-cycle price.",
+      "date": "27 September 2026",
+      "publishedAt": "2026-09-27T19:30:00.000Z",
+      "updatedAt": "2026-09-27T19:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Medical Oncology",
+      "tags": [
+        "breast cancer",
+        "chemotherapy",
+        "neoadjuvant",
+        "India",
+        "travel",
+        "systemic therapy"
+      ],
+      "image": "/uploads/articles/chemo-breast-infusion-visual.webp",
+      "imageAlt": "Chemotherapy for breast cancer in India showing oncology treatment and intravenous chemotherapy",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Chemotherapy for Breast Cancer in India | Cost, Cycles & Side Effects",
+      "seoDescription": "Learn about chemotherapy for breast cancer in India, including treatment cycles, cost, side effects, chemotherapy before or after surgery and international patient care.",
+      "canonical": "https://gaf.healthcare/blogs/chemotherapy-for-breast-cancer-in-india",
+      "ogImage": "/uploads/articles/chemo-breast-infusion-visual.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Chemotherapy for breast cancer in India",
+        "breast cancer chemotherapy",
+        "chemotherapy cost for breast cancer in India",
+        "breast cancer chemotherapy cost",
+        "chemotherapy cycles for breast cancer",
+        "chemotherapy before breast cancer surgery",
+        "chemotherapy after breast cancer surgery",
+        "chemotherapy side effects",
+        "breast cancer chemotherapy hospitals in India",
+        "breast cancer chemotherapy doctors in India",
+        "neoadjuvant chemotherapy breast cancer",
+        "adjuvant chemotherapy breast cancer",
+        "chemotherapy for Stage 2 breast cancer",
+        "chemotherapy for Stage 3 breast cancer",
+        "chemotherapy for triple-negative breast cancer",
+        "chemotherapy for HER2-positive breast cancer"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Breast Cancer Treatment in India",
+          "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Chemotherapy Cost in India",
+          "href": "/costs/India/Medical-Oncology/Chemotherapy"
+        },
+        {
+          "label": "Chemotherapy Doctors in India",
+          "href": "/doctors/India/Medical-Oncology/Chemotherapy"
+        },
+        {
+          "label": "Radiation Therapy for Breast Cancer",
+          "href": "/blogs/radiation-therapy-for-breast-cancer"
+        },
+        {
+          "label": "Hormone Therapy for Breast Cancer",
+          "href": "/blogs/hormone-therapy-breast-cancer-india"
+        },
+        {
+          "label": "HER2-Positive Breast Cancer Treatment",
+          "href": "/blogs/her2-positive-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Breast Cancer Treatment Cost in India",
+          "href": "/blogs/breast-cancer-treatment-cost-in-india"
+        },
+        {
+          "label": "International patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\">Chemotherapy is a systemic treatment that uses anti-cancer medicines to destroy or control breast cancer cells.</p><p class=\"article-quick-answer__body\">It may be recommended:</p><ul class=\"article-quick-answer__list\"><li>Before surgery to shrink a tumour or treat cancer systemically before an operation</li><li>After surgery to reduce the risk of recurrence in patients for whom chemotherapy is appropriate</li><li>For metastatic breast cancer to control disease or symptoms</li></ul><p class=\"article-quick-answer__body\">Chemotherapy is not required for every breast cancer patient. The decision depends on cancer stage, tumour biology, ER/PR and HER2 status, lymph-node involvement and other clinical factors.</p><p class=\"article-quick-answer__body\">Treatment is usually given in cycles, with periods of treatment followed by recovery. The number of cycles and medicines depend on the selected regimen.</p><p class=\"article-quick-answer__body\">The cost in India varies according to the chemotherapy medicines, dose, number of cycles, supportive medicines, hospital/day-care charges, investigations and the patient's treatment plan. There is no single fixed chemotherapy cost for every breast cancer patient.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Chemotherapy is one of the systemic treatments used to treat breast cancer. It uses medicines that travel through the bloodstream to destroy or control cancer cells. This guide supports the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) pathway and the [cost guide](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "btn_003",
+          "type": "button",
+          "label": "Ask GAF whether chemotherapy applies",
+          "href": "/consult?treatment=Chemotherapy"
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your pathology report](https://wa.me/919044346292?text=Please%20review%20my%20breast%20cancer%20records%20to%20see%20if%20chemotherapy%20is%20needed%20in%20India.)"
+        },
+        {
+          "id": "img_005",
+          "type": "image",
+          "src": "/uploads/articles/chemo-breast-infusion-visual.webp",
+          "alt": "Chemotherapy for breast cancer in India showing oncology treatment and intravenous chemotherapy",
+          "caption": "Many regimens are given as day-care infusions. The medicine, dose and cycle count — not a generic package — determine the quotation."
+        },
+        {
+          "id": "h_006",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Chemotherapy for Breast Cancer?"
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "Chemotherapy uses medicines that target rapidly dividing cells. Because chemotherapy medicines circulate throughout the body, they can treat cancer cells that may have moved away from the original breast tumour but are not yet detectable on imaging."
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "This is different from [surgery](/costs/India/Surgical-Oncology/Lumpectomy) and [radiation therapy](/blogs/radiation-therapy-for-breast-cancer), which primarily treat specific areas of the body. Chemotherapy can therefore form part of a multimodal breast cancer treatment plan."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "Depending on the situation, a patient may receive chemotherapy → surgery → radiation, or surgery → chemotherapy → radiation, or another sequence determined by the oncology team. Medical oncology teams in [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) decide the sequence from the type and [stage](/blogs/breast-cancer-stages-0-1-2-3-4) of breast cancer."
+        },
+        {
+          "id": "h_010",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Every Breast Cancer Patient Need Chemotherapy?"
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "No. Chemotherapy is not automatically required simply because someone has been diagnosed with breast cancer."
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Doctors consider [cancer stage](/blogs/breast-cancer-treatment-by-stage), tumour size, lymph-node involvement, tumour grade, [ER, PR and HER2 status](/blogs/er-pr-her2-breast-cancer-treatment-india), breast cancer subtype, age and menopausal status, overall health, previous treatment, response to treatment, and certain genomic or molecular test results in selected patients."
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "The purpose is to determine whether chemotherapy is likely to provide enough benefit to justify its potential risks and side effects. For some hormone-receptor-positive early breast cancers, additional genomic testing may help inform the chemotherapy decision in appropriate patients."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 2,
+          "text": "When Is Chemotherapy Used for Breast Cancer?"
+        },
+        {
+          "id": "img_015",
+          "type": "image",
+          "src": "/uploads/articles/chemo-breast-cycles-visual.webp",
+          "alt": "Medical oncologist discussing a chemotherapy cycle calendar with a patient",
+          "caption": "Neoadjuvant treatment comes before surgery. Adjuvant treatment comes after. Metastatic treatment is planned around disease control."
+        },
+        {
+          "id": "h_016",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Chemotherapy Before Surgery"
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "Chemotherapy given before surgery is called neoadjuvant chemotherapy. The treatment may be used to reduce tumour size, make surgery easier or possible, treat microscopic cancer cells throughout the body, assess how the cancer responds to treatment, and help guide subsequent treatment."
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "Neoadjuvant treatment is particularly relevant in some larger or locally advanced breast cancers and in selected [HER2-positive](/blogs/her2-positive-breast-cancer-treatment-india) and triple-negative cancers. Depending on the cancer subtype, neoadjuvant treatment may include chemotherapy combined with [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) or [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy)."
+        },
+        {
+          "id": "h_019",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Chemotherapy After Surgery"
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "Chemotherapy given after surgery is called adjuvant chemotherapy. The objective is to treat cancer cells that may remain elsewhere in the body even when the visible tumour has been removed after [lumpectomy](/costs/India/Surgical-Oncology/Lumpectomy) or [mastectomy](/costs/India/Surgical-Oncology/Mastectomy)."
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "The need for adjuvant chemotherapy depends on the patient's risk profile and tumour biology. It is not automatically recommended after every breast cancer operation."
+        },
+        {
+          "id": "h_022",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Chemotherapy for Metastatic Breast Cancer"
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "In Stage 4 breast cancer, chemotherapy may be used when systemic treatment is appropriate. The treatment goal is generally different from treatment of early-stage disease."
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "For metastatic breast cancer, treatment may aim to control the cancer, reduce symptoms, slow disease progression, maintain quality of life and extend survival. The choice between chemotherapy, hormone therapy, targeted therapy and other systemic treatments depends strongly on the cancer subtype."
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "[Ask whether chemotherapy belongs before or after surgery](/consult?treatment=Chemotherapy) · [WhatsApp +91 90443 46292](https://wa.me/919044346292?text=Should%20my%20breast%20cancer%20chemotherapy%20be%20neoadjuvant%20or%20adjuvant%3F)"
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 2,
+          "text": "Chemotherapy and Breast Cancer Subtypes"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "One of the most important aspects of breast cancer treatment is that different biological subtypes can respond differently to systemic therapies."
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 3,
+          "text": "Hormone-Receptor-Positive Breast Cancer"
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "If a breast cancer is ER-positive and/or PR-positive, [hormone therapy](/blogs/hormone-therapy-breast-cancer-india) can play an important role. Chemotherapy may or may not be required. The decision depends on the overall risk and characteristics of the cancer."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 3,
+          "text": "HER2-Positive Breast Cancer"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "HER2-positive breast cancers can be treated with [HER2-directed therapies](/blogs/her2-positive-breast-cancer-treatment-india). Chemotherapy may be combined with HER2-targeted treatment in appropriate patients. The exact combination depends on the stage and treatment setting."
+        },
+        {
+          "id": "h_032",
+          "type": "heading",
+          "level": 3,
+          "text": "Triple-Negative Breast Cancer"
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "Triple-negative breast cancer does not have significant expression of ER, PR or HER2. Chemotherapy is an important component of treatment for many patients with triple-negative disease. In selected situations, [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) may also form part of treatment."
+        },
+        {
+          "id": "h_034",
+          "type": "heading",
+          "level": 2,
+          "text": "How Many Chemotherapy Cycles Are Needed?"
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "There is no universal number of chemotherapy cycles for breast cancer. The number depends on the type of breast cancer, stage, treatment objective, selected chemotherapy regimen, whether chemotherapy is being given before or after surgery, whether other systemic treatments are being used, patient response and tolerance of treatment."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "Some regimens involve a small number of cycles, while others involve a longer course. The oncologist should provide a treatment schedule explaining medicine names, dose, frequency, number of cycles, expected duration, blood tests required and supportive medicines."
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "Patients should not compare their number of cycles directly with another patient's treatment because the underlying cancers and treatment regimens may be different."
+        },
+        {
+          "id": "btn_038",
+          "type": "button",
+          "label": "WhatsApp +91 90443 46292 about cycle count",
+          "href": "https://wa.me/919044346292?text=How%20many%20chemotherapy%20cycles%20would%20I%20need%2C%20and%20what%20would%20a%20quotation%20include%3F"
+        },
+        {
+          "id": "h_039",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is a Chemotherapy Cycle?"
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "A chemotherapy cycle generally consists of a treatment period followed by a recovery period — for example, chemotherapy → recovery → chemotherapy → recovery. The interval allows healthy cells and the body to recover between treatments."
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "A cycle is not necessarily one day of treatment. Some chemotherapy regimens involve treatment on one day, while others may involve several treatment days followed by a longer recovery period."
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is Chemotherapy Given?"
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "**Intravenous chemotherapy.** Many breast cancer chemotherapy medicines are administered through a vein. This may be done through a peripheral IV line, a central venous access device or an implanted port. The choice depends on the treatment plan and the patient's veins and treatment duration."
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "**Oral chemotherapy.** Some anti-cancer medicines are taken by mouth. Oral treatment still requires careful monitoring because dosage, timing and side effects remain important. The route of administration depends on the specific medicine and treatment plan."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens on a Chemotherapy Day?"
+        },
+        {
+          "id": "img_046",
+          "type": "image",
+          "src": "/uploads/articles/chemo-breast-blood-test-visual.webp",
+          "alt": "Medical oncologist reviewing blood-test results with a patient before a chemotherapy cycle",
+          "caption": "A typical visit includes assessment, blood counts, pre-medication, the infusion and a period of observation."
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "A typical chemotherapy visit may involve medical assessment of current symptoms and side effects, blood tests to decide whether treatment can proceed, medication review, pre-medication to reduce nausea or allergic reactions, the chemotherapy infusion, observation, and discharge if the treatment is provided as day care."
+        },
+        {
+          "id": "h_048",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Does a Chemotherapy Session Take?"
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "There is no single duration. The time can depend on the number of medicines, infusion speed, pre-medications, observation requirements, hydration, laboratory testing and the type of chemotherapy regimen."
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "Some treatment visits may take a few hours, while others can take longer. Patients travelling internationally should ask their hospital how long they should expect to remain at the hospital on each treatment day."
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 2,
+          "text": "Common Side Effects of Breast Cancer Chemotherapy"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Chemotherapy affects cancer cells but can also affect some healthy cells. Possible side effects include fatigue, nausea, vomiting, hair loss, reduced appetite, mouth sores, changes in taste, diarrhoea or constipation, reduced blood-cell counts, increased risk of infection, numbness or tingling in hands and feet, menstrual changes and fertility effects."
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Not every patient experiences all of these effects. Side effects vary according to the specific chemotherapy medicines and the individual patient."
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 3,
+          "text": "Fatigue During Chemotherapy"
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "Fatigue is common during cancer treatment. It may be caused by chemotherapy, anaemia, poor sleep, reduced food intake, emotional stress, other medicines or the cancer itself. Patients should discuss persistent or severe fatigue with their oncology team because potentially treatable causes may need to be evaluated."
+        },
+        {
+          "id": "h_056",
+          "type": "heading",
+          "level": 3,
+          "text": "Hair Loss During Chemotherapy"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "Some chemotherapy medicines cause significant hair loss, while others may cause less. Hair loss can affect scalp hair, eyebrows, eyelashes and other body hair. Hair usually begins to grow back after chemotherapy ends, although the timing varies between patients."
+        },
+        {
+          "id": "h_058",
+          "type": "heading",
+          "level": 3,
+          "text": "Nausea and Vomiting"
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "Modern chemotherapy protocols commonly include medicines designed to prevent or reduce chemotherapy-related nausea and vomiting. Patients should take anti-nausea medicines exactly as prescribed. If nausea or vomiting becomes difficult to control, the oncology team should be informed because treatment can often be adjusted."
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 3,
+          "text": "Low Blood Counts"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "Chemotherapy can temporarily reduce blood-cell production in the bone marrow. This may affect white blood cells, red blood cells and platelets. A low white blood-cell count can increase infection risk. Low red blood-cell levels can contribute to fatigue. Low platelet levels can increase the risk of bleeding or bruising. For this reason, blood tests are commonly performed during chemotherapy."
+        },
+        {
+          "id": "h_062",
+          "type": "heading",
+          "level": 3,
+          "text": "Peripheral Neuropathy"
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "Some chemotherapy medicines can cause peripheral neuropathy. Symptoms may include tingling, numbness, burning sensations, sensitivity to touch and weakness. Patients should tell their oncology team if these symptoms develop. Early reporting can help doctors determine whether treatment adjustments are necessary."
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Chemotherapy Side Effects Be Managed?"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "Many chemotherapy side effects can be managed or reduced with supportive treatment. Depending on the problem, the oncology team may use anti-nausea medicines, pain medicines, nutritional support, medicines to manage diarrhoea or constipation, growth-factor support in selected situations, treatment for infections or dose adjustments."
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "Patients should not stop or modify chemotherapy medicines themselves. Any significant side effect should be discussed with the treating oncology team."
+        },
+        {
+          "id": "h_067",
+          "type": "heading",
+          "level": 2,
+          "text": "What Should You Eat During Chemotherapy?"
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "There is no single \"chemotherapy diet\" suitable for everyone. The nutritional goal is generally to maintain adequate calories, protein, fluids, vitamins and minerals. Patients may find it easier to eat smaller, more frequent, protein-rich meals that are easier to tolerate."
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "If nausea, mouth sores or taste changes make eating difficult, a dietitian or oncology team can provide individualized advice. Patients should also be cautious about supplements and herbal products because some can interact with cancer medicines."
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 2,
+          "text": "Can You Work During Chemotherapy?"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "Some patients continue working during chemotherapy, while others need to reduce their workload or take time away from work. It depends on the chemotherapy regimen, side effects, type of work, travel requirements, energy levels, infection risk and overall health. There is no universal rule."
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 2,
+          "text": "Can You Travel During Chemotherapy?"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Travel may be possible for some patients, but it needs to be discussed with the treating oncology team. For international patients receiving chemotherapy in India, treatment planning should consider the chemotherapy schedule, blood counts, risk of infection, recovery between cycles, hospital access, emergency care, follow-up appointments and flight timing."
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "It is generally sensible to avoid planning international travel immediately around a treatment session without discussing the timing with the oncology team."
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 2,
+          "text": "Chemotherapy for International Patients in India"
+        },
+        {
+          "id": "img_076",
+          "type": "image",
+          "src": "/uploads/articles/chemo-breast-international-visual.webp",
+          "alt": "International patient meeting a day-care nurse before a chemotherapy visit in India",
+          "caption": "Share pathology and imaging before travel so the regimen, cycle count and stay length can be estimated."
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "International patients often need to coordinate chemotherapy over several weeks or months. Before travelling, it can be useful to obtain a preliminary treatment opinion based on the [biopsy and histopathology](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2), ER/PR and HER2 results, imaging, previous treatment and medical history. See the [international-patient guide](/blogs/breast-cancer-treatment-india-international-patients)."
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "A possible pathway is: medical records shared → oncology review → additional testing if required → treatment plan → cost estimate → travel to India → chemotherapy → monitoring and follow-up → return home or continue treatment in India. Hospitals in [Delhi NCR](/hospitals/India/Delhi-NCR), [Mumbai](/hospitals/India/Mumbai), [Bengaluru](/hospitals/India/Bengaluru), [Chennai](/hospitals/India/Chennai) and [Hyderabad](/hospitals/India/Hyderabad) can confirm what to send."
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 your records before travel](https://wa.me/919044346292?text=I%20would%20like%20to%20send%20my%20breast%20cancer%20records%20for%20a%20chemotherapy%20opinion%20before%20travelling%20to%20India.)"
+        },
+        {
+          "id": "h_080",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast Cancer Chemotherapy Cost in India"
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "There is no single fixed chemotherapy price. See [Chemotherapy Cost in India](/costs/India/Medical-Oncology/Chemotherapy), [Chemotherapy Doctors in India](/doctors/India/Medical-Oncology/Chemotherapy) and the [breast cancer treatment cost guide](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "The total cost can vary according to chemotherapy medicines, drug dosage, number of cycles, treatment regimen, supportive medicines, blood tests, doctor consultations, day-care or hospital charges, port placement where required, management of side effects and other systemic treatments."
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "A published hospital quotation should therefore specify the actual chemotherapy regimen rather than simply giving a generic \"cost per cycle.\""
+        },
+        {
+          "id": "btn_084",
+          "type": "button",
+          "label": "Request a chemotherapy quotation",
+          "href": "/consult?treatment=Chemotherapy"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a case-specific quote](https://wa.me/919044346292?text=Please%20send%20a%20case-specific%20quotation%20for%20breast%20cancer%20chemotherapy%20in%20India.)"
+        },
+        {
+          "id": "h_086",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Usually Included in a Chemotherapy Cost?"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "| Cost component | May be included? |\n| --- | --- |\n| Medical oncology consultation | Depends on hospital |\n| Chemotherapy medicines | Depends on quotation |\n| Day-care/infusion charges | Depends on hospital |\n| Pre-medications | Depends on regimen |\n| Blood tests | May be separate |\n| Imaging | Usually separate |\n| Supportive medicines | May be separate |\n| Port placement | Usually separate |\n| Hospital admission | Depends on treatment |\n| Management of complications | Usually additional |"
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "The exact inclusions should be confirmed directly with the treating hospital."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Can Chemotherapy Costs Differ Between Patients?"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Two patients may both be diagnosed with breast cancer but receive very different chemotherapy bills. Costs can differ because one patient may receive a different chemotherapy regimen, a different drug dose, fewer or more cycles, targeted therapy in addition to chemotherapy, immunotherapy in addition to chemotherapy, or more supportive medicines."
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "Therefore, comparing only the number of cycles does not provide a meaningful cost comparison."
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 2,
+          "text": "Chemotherapy vs Targeted Therapy"
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "These treatments are different, although they may sometimes be given together. Chemotherapy generally targets rapidly dividing cells. [Targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is designed to act on specific molecular characteristics of cancer — for example, HER2-targeted medicines in appropriate HER2-positive breast cancers."
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "- [Targeted Therapy Doctors in India](/doctors/India/Medical-Oncology/Targeted-Therapy)\n- [Targeted Therapy Cost in India](/costs/India/Medical-Oncology/Targeted-Therapy)"
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 2,
+          "text": "Chemotherapy vs Hormone Therapy"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "[Hormone therapy](/blogs/hormone-therapy-breast-cancer-india) works differently from chemotherapy. For hormone-receptor-positive breast cancer, hormone therapy may be used to interfere with hormonal signals that help certain cancer cells grow. It may be given after surgery, before surgery in selected situations, or for metastatic disease. Chemotherapy may or may not be required in addition."
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "- [Hormone Therapy Cost in India](/costs/India/Medical-Oncology/Hormone-Therapy)"
+        },
+        {
+          "id": "h_098",
+          "type": "heading",
+          "level": 2,
+          "text": "Chemotherapy vs Immunotherapy"
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "[Immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) works by helping the immune system recognize and attack cancer cells. It is not appropriate for every breast cancer patient. It may be used in selected breast cancer settings, including certain triple-negative breast cancers."
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "- [Immunotherapy Doctors in India](/doctors/India/Medical-Oncology/Immunotherapy)\n- [Immunotherapy Cost in India](/costs/India/Medical-Oncology/Immunotherapy)"
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens After the Final Chemotherapy Cycle?"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "Finishing chemotherapy does not necessarily mean that breast cancer treatment is complete. Depending on the patient's treatment plan, the next steps may include surgery, [radiation therapy](/blogs/radiation-therapy-for-breast-cancer), [hormone therapy](/blogs/hormone-therapy-breast-cancer-india), targeted therapy, immunotherapy, follow-up imaging, blood tests and long-term surveillance."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 2,
+          "text": "Chemotherapy Before Surgery: Example"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "A patient with locally advanced HER2-positive breast cancer may receive systemic treatment before surgery. A simplified pathway could be: diagnosis → biopsy → HER2 testing → neoadjuvant systemic treatment → surgery → radiation/systemic treatment. The actual medicines and sequence depend on the patient's individual diagnosis."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 2,
+          "text": "Chemotherapy After Surgery: Example"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "A patient with an early-stage breast cancer for whom chemotherapy is recommended may have: diagnosis → [lumpectomy](/costs/India/Surgical-Oncology/Lumpectomy) → pathology → chemotherapy → [radiation](/costs/India/Radiation-Oncology/EBRT) → [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy). This is an example rather than a standard sequence for every patient."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 2,
+          "text": "Chemotherapy for Stage 4 Breast Cancer"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "For metastatic breast cancer, systemic therapy is central to treatment. Chemotherapy may be used depending on cancer subtype, previous treatment, rate of disease progression, symptoms, organ involvement, hormone-receptor status, HER2 status and other biomarkers."
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "For some metastatic breast cancers, hormone therapy or targeted therapy may be preferred over chemotherapy depending on the tumour biology. The treatment objective is generally disease control and management rather than simply removing the original breast tumour."
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 2,
+          "text": "What Records Should International Patients Bring?"
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "Patients travelling to India for chemotherapy should ideally bring copies of all previous medical records: biopsy and histopathology, ER, PR, HER2 and other biomarker reports; mammography, ultrasound, MRI, CT, PET-CT and bone scans where applicable; surgery reports, chemotherapy records, radiation records, previous medication lists and discharge summaries; plus allergies, other medical conditions, current medicines and previous treatment side effects."
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "If possible, pathology slides or tissue blocks may also be requested for review."
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 2,
+          "text": "Questions to Ask Your Medical Oncologist"
+        },
+        {
+          "id": "ul_114",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Why do I need chemotherapy?",
+            "Is chemotherapy being given before or after surgery?",
+            "What chemotherapy medicines will I receive?",
+            "How many cycles are planned?",
+            "How frequently will I receive treatment?",
+            "How long will each visit take?",
+            "What side effects are most likely?",
+            "Which side effects require urgent medical attention?",
+            "Will I need a port?",
+            "What blood tests are required?",
+            "Can I continue working?",
+            "Can I travel between cycles?",
+            "What should I eat during treatment?",
+            "Will I need additional treatment after chemotherapy?",
+            "What is included in the treatment quotation?"
+          ]
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 2,
+          "text": "When Should a Patient Contact the Oncology Team?"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "Patients receiving chemotherapy should have clear instructions from their treatment team about symptoms that require urgent assessment. Depending on the chemotherapy regimen, these may include fever, chills, difficulty breathing, severe vomiting, persistent diarrhoea, significant bleeding, severe weakness, new confusion and signs of infection."
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "The exact emergency instructions should be provided by the treating oncology team because risks vary between chemotherapy regimens."
+        },
+        {
+          "id": "h_118",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 3,
+          "text": "Is chemotherapy necessary for every breast cancer patient?"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "No. The need for chemotherapy depends on stage, tumour biology, lymph-node status and other clinical factors."
+        },
+        {
+          "id": "h_121",
+          "type": "heading",
+          "level": 3,
+          "text": "How many chemotherapy cycles are needed for breast cancer?"
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "There is no universal number. The number of cycles depends on the specific chemotherapy regimen and treatment objective."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 3,
+          "text": "Can chemotherapy be given before breast cancer surgery?"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "Yes. This is called neoadjuvant chemotherapy and is used in selected patients."
+        },
+        {
+          "id": "h_125",
+          "type": "heading",
+          "level": 3,
+          "text": "Can chemotherapy be given after surgery?"
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "Yes. This is called adjuvant chemotherapy and may be recommended depending on the patient's risk and tumour characteristics."
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does one chemotherapy session take?"
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "It varies according to the medicines, infusion schedule, pre-medications and monitoring requirements. Some treatments take a few hours, while others can take longer."
+        },
+        {
+          "id": "h_129",
+          "type": "heading",
+          "level": 3,
+          "text": "Does chemotherapy cause hair loss?"
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "Some chemotherapy medicines cause significant hair loss, while others may cause less. The oncology team can explain the expected effects of the specific regimen."
+        },
+        {
+          "id": "h_131",
+          "type": "heading",
+          "level": 3,
+          "text": "Does chemotherapy cause nausea?"
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "It can. Anti-nausea medicines are commonly used to prevent or control chemotherapy-related nausea and vomiting."
+        },
+        {
+          "id": "h_133",
+          "type": "heading",
+          "level": 3,
+          "text": "Can chemotherapy affect fertility?"
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "Some chemotherapy medicines can affect fertility. Patients who may wish to have children in the future should discuss fertility preservation with their oncology team before treatment begins."
+        },
+        {
+          "id": "h_135",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I work while receiving chemotherapy?"
+        },
+        {
+          "id": "p_136",
+          "type": "paragraph",
+          "text": "Some patients continue working, while others reduce their workload or take time off. The decision depends on the treatment and how the patient feels."
+        },
+        {
+          "id": "h_137",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients receive chemotherapy in India?"
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "Yes. International patients can seek chemotherapy treatment in India. Their medical records can be reviewed before travel to help develop a treatment plan."
+        },
+        {
+          "id": "h_139",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does chemotherapy for breast cancer cost in India?"
+        },
+        {
+          "id": "p_140",
+          "type": "paragraph",
+          "text": "There is no single fixed price. Cost depends on the medicines, dosage, number of cycles, supportive treatment, investigations and hospital charges."
+        },
+        {
+          "id": "h_141",
+          "type": "heading",
+          "level": 3,
+          "text": "Can chemotherapy be combined with targeted therapy?"
+        },
+        {
+          "id": "p_142",
+          "type": "paragraph",
+          "text": "Yes. In selected breast cancers, particularly certain HER2-positive cancers, chemotherapy and targeted therapy may be used together."
+        },
+        {
+          "id": "h_143",
+          "type": "heading",
+          "level": 3,
+          "text": "Can chemotherapy be combined with immunotherapy?"
+        },
+        {
+          "id": "p_144",
+          "type": "paragraph",
+          "text": "Yes, in selected treatment settings. Whether this is appropriate depends on the cancer subtype, stage and treatment plan."
+        },
+        {
+          "id": "h_145",
+          "type": "heading",
+          "level": 2,
+          "text": "Chemotherapy for Breast Cancer in India: Key Takeaways"
+        },
+        {
+          "id": "p_146",
+          "type": "paragraph",
+          "text": "Chemotherapy is an important treatment option for some breast cancer patients, but it is not automatically required for everyone. The decision depends on the complete cancer profile, including stage, tumour size, lymph-node involvement, ER and PR status, HER2 status, tumour grade, breast cancer subtype, previous treatment and overall health."
+        },
+        {
+          "id": "p_147",
+          "type": "paragraph",
+          "text": "Chemotherapy can be given before surgery, after surgery or for metastatic breast cancer. For international patients considering treatment in India, the most useful first step is to have the complete pathology and medical records reviewed by a medical oncology team."
+        },
+        {
+          "id": "btn_148",
+          "type": "button",
+          "label": "Start the Breast Cancer Treatment in India pathway",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_149",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 to plan the next step](https://wa.me/919044346292?text=Please%20help%20me%20plan%20chemotherapy%20for%20breast%20cancer%20in%20India.)"
+        },
+        {
+          "id": "h_150",
+          "type": "heading",
+          "level": 2,
+          "text": "GAF Healthcare Resources"
+        },
+        {
+          "id": "p_151",
+          "type": "paragraph",
+          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Chemotherapy Doctors in India](/doctors/India/Medical-Oncology/Chemotherapy)\n- [Chemotherapy Cost in India](/costs/India/Medical-Oncology/Chemotherapy)\n- [Medical Oncology Doctors in India](/doctors/India/Medical-Oncology)\n- [Medical Oncology Hospitals in India](/hospitals/India/Medical-Oncology)\n- [Radiation Therapy for Breast Cancer](/blogs/radiation-therapy-for-breast-cancer)\n- [Hormone Therapy for Breast Cancer](/blogs/hormone-therapy-breast-cancer-india)\n- [HER2-Positive Breast Cancer Treatment](/blogs/her2-positive-breast-cancer-treatment-india)\n- [Breast Reconstruction After Mastectomy](/blogs/breast-reconstruction-after-mastectomy-india)\n- [Breast Cancer Treatment by Stage](/blogs/breast-cancer-treatment-by-stage)\n- [Treatment for international patients](/blogs/breast-cancer-treatment-india-international-patients)"
+        }
+      ]
+    },
+    {
+      "id": "art_radiation_therapy_for_breast_cancer",
+      "slug": "radiation-therapy-for-breast-cancer",
+      "title": "Radiation Therapy for Breast Cancer: When Is It Needed and How Does It Work?",
+      "excerpt": "When radiation is needed after lumpectomy or mastectomy, how CT simulation and sessions work, side effects, reconstruction timing and why India quotes must be case-specific.",
+      "date": "27 September 2026",
+      "publishedAt": "2026-09-27T19:00:00.000Z",
+      "updatedAt": "2026-09-27T19:00:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Radiation Oncology",
+      "tags": [
+        "breast cancer",
+        "radiation therapy",
+        "radiotherapy",
+        "India",
+        "travel",
+        "EBRT"
+      ],
+      "image": "/uploads/articles/radiation-breast-planning-visual.webp",
+      "imageAlt": "Radiation therapy for breast cancer showing treatment planning and targeted radiation delivery",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Radiation Therapy for Breast Cancer in India | Cost & Sessions",
+      "seoDescription": "Learn when radiation therapy is needed for breast cancer, how many sessions may be required, side effects, treatment planning and radiation cost in India.",
+      "canonical": "https://gaf.healthcare/blogs/radiation-therapy-for-breast-cancer",
+      "ogImage": "/uploads/articles/radiation-breast-planning-visual.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Radiation therapy for breast cancer",
+        "radiation therapy for breast cancer in India",
+        "breast cancer radiation therapy",
+        "radiation after lumpectomy",
+        "radiation after mastectomy",
+        "breast cancer radiotherapy cost",
+        "radiation therapy cost in India",
+        "breast cancer radiation sessions",
+        "radiation oncology for breast cancer",
+        "breast cancer radiation side effects",
+        "breast cancer radiation treatment",
+        "radiation oncologist for breast cancer",
+        "breast cancer treatment in India",
+        "post mastectomy radiation therapy",
+        "breast cancer radiotherapy in India"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Breast Cancer Treatment in India",
+          "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Radiation Oncology Doctors in India",
+          "href": "/doctors/India/Radiation-Oncology"
+        },
+        {
+          "label": "EBRT cost in India",
+          "href": "/costs/India/Radiation-Oncology/EBRT"
+        },
+        {
+          "label": "Lumpectomy",
+          "href": "/costs/India/Surgical-Oncology/Lumpectomy"
+        },
+        {
+          "label": "Mastectomy",
+          "href": "/costs/India/Surgical-Oncology/Mastectomy"
+        },
+        {
+          "label": "Breast Reconstruction After Mastectomy",
+          "href": "/blogs/breast-reconstruction-after-mastectomy-india"
+        },
+        {
+          "label": "Chemotherapy for Breast Cancer",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Hormone Therapy for Breast Cancer",
+          "href": "/blogs/hormone-therapy-breast-cancer-india"
+        },
+        {
+          "label": "International patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\">Radiation therapy uses high-energy radiation to destroy or control breast cancer cells in a specific treatment area.</p><p class=\"article-quick-answer__body\">It is commonly recommended after breast-conserving surgery (lumpectomy) to reduce the risk of cancer returning in the treated breast.</p><p class=\"article-quick-answer__body\">After mastectomy, radiation may be recommended for selected patients, particularly when factors such as tumour size, lymph-node involvement or other pathological findings indicate a higher risk of recurrence.</p><p class=\"article-quick-answer__body\">Radiation may also be used in selected patients with metastatic breast cancer to control symptoms or treat a specific area of disease.</p><p class=\"article-quick-answer__body\">Treatment is planned individually using imaging and radiation-planning systems. The number of treatment sessions varies according to the patient's cancer and radiation protocol.</p><p class=\"article-quick-answer__body\">Radiation therapy is not required for every breast cancer patient, and mastectomy does not automatically mean that radiation can be avoided.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Radiation therapy is an important part of breast cancer treatment for many patients. It uses high-energy radiation to destroy or control cancer cells in a specific area of the body. This guide supports the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) pathway and the [cost guide](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "btn_003",
+          "type": "button",
+          "label": "Ask GAF whether radiation applies",
+          "href": "/consult?treatment=Breast%20Cancer%20Radiation%20Therapy"
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your pathology and surgery records](https://wa.me/919044346292?text=Please%20review%20my%20breast%20cancer%20records%20to%20see%20if%20radiation%20therapy%20is%20needed%20in%20India.)"
+        },
+        {
+          "id": "img_005",
+          "type": "image",
+          "src": "/uploads/articles/radiation-breast-planning-visual.webp",
+          "alt": "Radiation therapy for breast cancer showing treatment planning and targeted radiation delivery",
+          "caption": "Radiation is planned on a CT simulation before the first session so the dose can be aimed at the treatment area rather than the whole body."
+        },
+        {
+          "id": "h_006",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Radiation Therapy for Breast Cancer?"
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "Radiation therapy, also called radiotherapy, uses high-energy radiation to damage the DNA of cancer cells and prevent them from continuing to grow and divide."
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "For breast cancer, radiation can be directed toward the breast after [lumpectomy](/costs/India/Surgical-Oncology/Lumpectomy), the chest wall after [mastectomy](/costs/India/Surgical-Oncology/Mastectomy), nearby lymph-node regions, or a specific metastatic tumour site when clinically indicated."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "Radiation is a local treatment, unlike [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy), which travels throughout the body. A patient may receive both systemic treatment and radiation because they address different potential areas of cancer. Radiation oncology teams in [Delhi NCR](/doctors/India/Delhi-NCR/Radiation-Oncology), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) plan this as part of the broader pathway rather than as an isolated procedure."
+        },
+        {
+          "id": "h_010",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Is Radiation Used After Breast Cancer Surgery?"
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "Breast cancer surgery removes visible cancer from the breast. However, microscopic cancer cells may remain in the surrounding area even when the surgeon has removed the tumour successfully."
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Radiation is used to reduce the risk of cancer returning in the treated area. After breast-conserving surgery, radiation is commonly part of the treatment plan because the breast remains in place."
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "The National Cancer Institute notes that lumpectomy followed by radiation is an established alternative to mastectomy for appropriately selected early-stage breast cancer."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Radiation Required After Lumpectomy?"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "For many patients, yes. Radiation therapy is generally recommended after breast-conserving surgery for invasive breast cancer and DCIS, although selected patients may be able to omit radiation based on specific clinical characteristics."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "The decision can depend on age, tumour size, tumour grade, [ER/PR status](/blogs/er-pr-her2-breast-cancer-treatment-india), [HER2 status](/blogs/her2-positive-breast-cancer-treatment-india), lymph-node involvement, surgical margins, recurrence risk, overall health and other treatments. The treating radiation oncologist determines the appropriate approach."
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "- [Breast-conserving surgery / lumpectomy cost](/costs/India/Surgical-Oncology/Lumpectomy)\n- [Lumpectomy doctors in India](/doctors/India/Surgical-Oncology/Lumpectomy)"
+        },
+        {
+          "id": "h_018",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Radiation Required After Mastectomy?"
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "Not necessarily. Some patients do not require radiation after mastectomy. Others may benefit from it depending on their risk of local or regional recurrence."
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "Factors that may influence the decision include larger tumour size, significant lymph-node involvement, cancer involving the chest wall or skin, positive or close surgical margins and other pathological characteristics."
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "Therefore, the statement \"mastectomy means no radiation\" is not correct for every patient. The radiation recommendation is made after the final [pathology report](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2) and other clinical information are reviewed."
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "[Ask whether radiation is needed after lumpectomy or mastectomy](/consult?treatment=Breast%20Cancer%20Radiation%20Therapy) · [WhatsApp +91 90443 46292](https://wa.me/919044346292?text=Do%20I%20need%20radiation%20after%20lumpectomy%20or%20mastectomy%3F)"
+        },
+        {
+          "id": "h_023",
+          "type": "heading",
+          "level": 2,
+          "text": "When Is Radiation Used After Mastectomy?"
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "Post-mastectomy radiation therapy may be recommended when the cancer has features suggesting a higher risk of recurrence in the chest wall or regional lymph nodes."
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "**Tumour size.** Larger tumours may have a different radiation requirement from smaller tumours."
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "**Lymph-node involvement.** The number and extent of involved lymph nodes can influence the radiation plan."
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "**Surgical margins.** The presence of cancer close to or at a surgical margin can affect treatment decisions."
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "**Local tumour extension.** Cancer involving the skin or chest wall may require more extensive local treatment."
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "The final decision should be based on the complete pathology and treatment history rather than one factor alone."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 2,
+          "text": "What Areas Are Treated With Radiation?"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "Radiation is not necessarily delivered to the entire body. The treatment area depends on the individual cancer."
+        },
+        {
+          "id": "ul_032",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Whole breast — commonly used after breast-conserving surgery.",
+            "Partial breast — selected patients may receive radiation focused on the area around the original tumour.",
+            "Chest wall — this may be treated after mastectomy when indicated.",
+            "Regional lymph nodes — axillary, supraclavicular or internal mammary nodes when the plan requires it."
+          ]
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "The exact treatment area is determined during radiation planning."
+        },
+        {
+          "id": "h_034",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is Radiation Therapy Planned?"
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "Radiation treatment is carefully planned before the first treatment session."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "A typical pathway includes: radiation oncology consultation → review of pathology and imaging → CT simulation → treatment planning → dose calculation → quality checks → radiation treatment → follow-up."
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "The objective is to deliver the prescribed dose to the target while minimizing exposure to nearby healthy organs."
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is CT Simulation?"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "CT simulation is a planning procedure used to determine exactly how radiation should be delivered."
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "During the simulation the patient is positioned in the treatment position, a CT scan is performed, the radiation oncology team identifies the treatment area and nearby organs, the radiation plan is designed, and the treatment position is reproduced during subsequent sessions."
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "For breast cancer, special positioning techniques may be used to reduce radiation exposure to nearby organs."
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Deep Inspiration Breath Hold?"
+        },
+        {
+          "id": "img_043",
+          "type": "image",
+          "src": "/uploads/articles/radiation-breast-breath-hold-visual.webp",
+          "alt": "Patient practising a deep-inspiration breath-hold on a radiotherapy couch with a therapist coaching the breath",
+          "caption": "For selected left-sided treatments, a deep-inspiration breath hold can move the heart farther from the chest wall during the beam."
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "For selected patients, particularly when treating the left breast, a technique called deep inspiration breath hold (DIBH) may be considered. The patient takes a deep breath and holds it during radiation delivery."
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "When the lungs are expanded, the heart can move farther away from the chest wall, potentially reducing the amount of radiation received by the heart."
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Whether DIBH is appropriate depends on treatment side, anatomy, radiation plan, equipment and the patient's ability to follow breathing instructions. The radiation team determines whether this technique is appropriate."
+        },
+        {
+          "id": "h_047",
+          "type": "heading",
+          "level": 2,
+          "text": "How Many Radiation Sessions Are Needed for Breast Cancer?"
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "There is no single number of sessions for every patient. The treatment schedule depends on the type of surgery, cancer stage, treatment area, radiation technique, patient characteristics, whether regional lymph nodes are treated and whether a boost is required."
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "Radiation may be delivered over several weeks, a shorter hypofractionated schedule, or other specialized schedules in selected patients. Modern breast radiation has increasingly incorporated shorter treatment schedules for appropriate patients."
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "The radiation oncologist should provide the exact number of sessions before treatment begins."
+        },
+        {
+          "id": "btn_051",
+          "type": "button",
+          "label": "WhatsApp +91 90443 46292 about session number",
+          "href": "https://wa.me/919044346292?text=How%20many%20breast%20radiation%20sessions%20would%20I%20need%2C%20and%20what%20would%20a%20quotation%20include%3F"
+        },
+        {
+          "id": "h_052",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens During a Radiation Session?"
+        },
+        {
+          "id": "img_053",
+          "type": "image",
+          "src": "/uploads/articles/radiation-breast-session-visual.webp",
+          "alt": "Patient positioned on a linear-accelerator couch during an external-beam radiotherapy session",
+          "caption": "The beam itself is brief. Most of the appointment is spent on positioning and verification."
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "**Positioning.** The patient lies in the planned treatment position."
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "**Verification.** The radiation team checks positioning using imaging or other verification techniques."
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "**Radiation delivery.** The machine delivers radiation according to the treatment plan."
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "**Completion.** The patient can usually leave after the session if no other treatment is scheduled."
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "The radiation itself is generally delivered for only a short period during the appointment, although the total time at the hospital can be longer because of positioning and verification."
+        },
+        {
+          "id": "h_059",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Radiation Therapy Hurt?"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "Radiation delivery itself is generally not painful. Patients do not normally feel the radiation being delivered. However, side effects can develop during or after a course of treatment."
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "These may include skin changes, redness, darkening of the skin, breast swelling, tenderness and fatigue. The severity varies between patients."
+        },
+        {
+          "id": "h_062",
+          "type": "heading",
+          "level": 2,
+          "text": "Common Side Effects of Breast Radiation"
+        },
+        {
+          "id": "h_063",
+          "type": "heading",
+          "level": 3,
+          "text": "Skin Changes"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "The skin in the treated area may gradually become red, darker, dry, sensitive or irritated. These changes usually develop gradually rather than immediately after the first treatment."
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "The radiation team can recommend appropriate skin-care measures. Patients should avoid applying creams, oils or other products to the treatment area unless advised by the radiation oncology team."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 3,
+          "text": "Fatigue"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Fatigue is one of the commonly reported side effects of radiation therapy. It may become more noticeable as treatment progresses. Daily travel, other cancer treatments, poor sleep, stress, anaemia and nutrition can also contribute."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "Patients should inform their treatment team if fatigue is severe or interfering significantly with daily activities."
+        },
+        {
+          "id": "h_069",
+          "type": "heading",
+          "level": 3,
+          "text": "Breast Swelling and Tenderness"
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "Some patients experience breast swelling, heaviness, tenderness or temporary changes in breast texture. These effects may improve after treatment finishes, although some changes can persist."
+        },
+        {
+          "id": "h_071",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Radiation Cause Long-Term Changes?"
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Some patients experience longer-term effects after breast radiation. These can include changes in skin colour, changes in breast texture, fibrosis, changes in breast size or shape, lymphedema in selected patients and rare effects involving nearby organs."
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Modern radiation planning techniques are designed to reduce unnecessary radiation exposure to surrounding tissues. The individual risk depends on the treatment area, technique and patient's anatomy."
+        },
+        {
+          "id": "h_074",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation and Lymphedema"
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "Lymphedema is swelling caused by impaired lymphatic drainage. Breast cancer patients can have an increased risk because of lymph-node surgery, radiation to lymph-node regions, or a combination of surgery and radiation."
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "The risk varies between patients. Patients should report persistent swelling of the arm, hand, breast or chest area to their healthcare team."
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation and the Heart"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "Radiation for left-sided breast cancer can potentially expose part of the heart to radiation. Modern radiation planning attempts to minimize this exposure."
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "Techniques such as deep inspiration breath hold, advanced treatment planning, image guidance and careful target definition may be used when appropriate. The actual technique depends on the patient's anatomy and treatment plan."
+        },
+        {
+          "id": "h_080",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation and the Lungs"
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "Part of the lung may be close to the radiation treatment area. Radiation planning therefore includes assessment of the lung and other nearby structures. The treatment team aims to deliver the required dose to the cancer treatment area while minimizing unnecessary exposure to healthy tissue."
+        },
+        {
+          "id": "h_082",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Radiation Be Given With Chemotherapy?"
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "Radiation and [chemotherapy](/blogs/chemotherapy-for-breast-cancer-in-india) may both be part of breast cancer treatment, but they are often given sequentially rather than simultaneously."
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "For example, a patient may undergo surgery → chemotherapy → radiation. Another patient may have surgery → radiation → [hormone therapy](/blogs/hormone-therapy-breast-cancer-india). The sequence depends on cancer subtype, stage, surgery, chemotherapy regimen, need for [targeted treatment](/costs/India/Medical-Oncology/Targeted-Therapy), pathology and the overall treatment plan."
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Radiation Be Given Before Surgery?"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "In most breast cancer treatment pathways, surgery is generally performed before breast radiation when radiation is part of breast-conserving treatment. However, radiation can be used before surgery in selected clinical situations."
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "The treatment sequence depends on the specific diagnosis and treatment objective. For international patients, the oncology team should provide a complete treatment sequence rather than treating radiation as an isolated procedure. See the [international-patient guide](/blogs/breast-cancer-treatment-india-international-patients)."
+        },
+        {
+          "id": "h_088",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation for Stage 1 Breast Cancer"
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "For selected [Stage 1](/blogs/breast-cancer-stages-0-1-2-3-4) breast cancers treated with lumpectomy, radiation is commonly recommended. The treatment objective is to reduce the risk of cancer returning in the treated breast."
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Some carefully selected patients, particularly older patients with specific low-risk hormone-receptor-positive cancers, may be candidates for omission of radiation. This is a clinical decision and should not be generalized to all Stage 1 patients."
+        },
+        {
+          "id": "h_091",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation for Stage 2 Breast Cancer"
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "Radiation may be part of treatment for [Stage 2](/blogs/breast-cancer-treatment-by-stage) breast cancer. The recommendation depends on the type of surgery, tumour size, lymph-node involvement, surgical margins and cancer biology."
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "After lumpectomy, radiation is commonly considered. After mastectomy, radiation depends on the risk of local or regional recurrence."
+        },
+        {
+          "id": "h_094",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation for Stage 3 Breast Cancer"
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "Radiation is generally an important component of treatment for many Stage 3 breast cancers. A common treatment sequence can involve systemic treatment → surgery → radiation."
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "The radiation field may include the breast or chest wall and regional lymph-node areas depending on the disease. The final plan depends on the response to treatment and surgical pathology."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation for Stage 4 Breast Cancer"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Stage 4 breast cancer is metastatic disease. Systemic therapy usually plays a central role. However, radiation can still be useful in selected situations."
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "For example, radiation may be used to reduce pain from bone metastases, treat a symptomatic brain metastasis, control a localized tumour, reduce bleeding or relieve pressure on nearby structures. In metastatic disease, radiation is usually selected based on the specific clinical problem being treated."
+        },
+        {
+          "id": "h_100",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Radiation Treat Breast Cancer Without Surgery?"
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "In most standard breast cancer treatment pathways, radiation is not simply substituted for surgery when surgery is appropriate. Radiation is generally used as part of a broader treatment strategy."
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "However, there are specific clinical situations in which radiation can be used when surgery is not possible or when the treatment objective is symptom control. The appropriate approach depends on the individual diagnosis."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation After Breast Reconstruction"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "Radiation can affect reconstructed breast tissue. For this reason, the possibility of radiation should be discussed before deciding on [reconstruction](/blogs/breast-reconstruction-after-mastectomy-india) timing and technique."
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "Some patients may have mastectomy → immediate reconstruction → radiation, while others may have mastectomy → radiation → delayed reconstruction."
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "The choice depends on cancer stage, need for radiation, reconstruction technique, patient anatomy, surgical preference and patient preference. A breast surgeon and reconstructive surgeon should ideally coordinate with the radiation oncologist. See [Breast Reconstruction Doctors in India](/doctors/India/Surgical-Oncology/Breast-Reconstruction) and [reconstruction cost](/costs/India/Surgical-Oncology/Breast-Reconstruction)."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation Therapy Cost for Breast Cancer in India"
+        },
+        {
+          "id": "img_108",
+          "type": "image",
+          "src": "/uploads/articles/radiation-breast-followup-visual.webp",
+          "alt": "Radiation oncologist reviewing a treatment-planning scan with a patient during a cost and session discussion",
+          "caption": "Ask for an itemized quotation after the radiation plan is known — technique, sessions and lymph-node fields change the total."
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "There is no single fixed cost for breast radiation therapy in India. See [Radiation Therapy Cost in India](/costs/India/Radiation-Oncology), [EBRT cost](/costs/India/Radiation-Oncology/EBRT) and the [breast cancer treatment cost guide](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "The total cost can depend on radiation technique, number of treatment sessions, treatment area, CT simulation, treatment planning, image guidance, radiation equipment, hospital, city, whether lymph nodes are included and additional planning procedures."
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "Therefore, patients should request an itemized radiation quotation. The quotation should clearly state whether the following are included: radiation oncology consultation, CT simulation, treatment planning, dosimetry, radiation sessions, image guidance and follow-up consultation."
+        },
+        {
+          "id": "btn_112",
+          "type": "button",
+          "label": "Request a radiation quotation",
+          "href": "/consult?treatment=Breast%20Cancer%20Radiation%20Therapy"
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a case-specific quote](https://wa.me/919044346292?text=Please%20send%20a%20case-specific%20quotation%20for%20breast%20cancer%20radiation%20therapy%20in%20India.)"
+        },
+        {
+          "id": "h_114",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is the Cost of Radiation Therapy After Lumpectomy?"
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "The cost depends on the radiation schedule and technique. A patient receiving breast-only radiation may have a different treatment plan from a patient who also requires regional lymph-node irradiation."
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "The total cost therefore cannot be accurately determined simply from the fact that the patient had a lumpectomy."
+        },
+        {
+          "id": "h_117",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is the Cost of Radiation After Mastectomy?"
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "Post-mastectomy radiation can involve treatment of the chest wall and potentially regional lymph-node areas. The cost depends on the treatment field, number of sessions, planning complexity, radiation technology and hospital. See [Mastectomy Cost in India](/costs/India/Surgical-Oncology/Mastectomy)."
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "Patients should obtain a treatment-specific quotation after radiation planning."
+        },
+        {
+          "id": "h_120",
+          "type": "heading",
+          "level": 2,
+          "text": "What Radiation Technology Is Used in India?"
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "Modern cancer centres may use technologies and planning approaches such as [3D conformal radiation therapy](/costs/India/Radiation-Oncology/3D-CRT), [IMRT](/costs/India/Radiation-Oncology/IMRT), image-guided radiation therapy, VMAT, deep inspiration breath hold and other specialized planning techniques. Compare [IMRT versus 3D-CRT](/blogs/imrt-vs-3d-crt) and review [what records to send before EBRT](/blogs/records-before-you-book-ebrt)."
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "The appropriate technology is not determined simply by choosing the newest machine. The radiation oncologist selects a technique based on target location, patient anatomy, required dose, nearby organs and the treatment objective."
+        },
+        {
+          "id": "p_123",
+          "type": "paragraph",
+          "text": "- [Radiation Oncology Doctors in India](/doctors/India/Radiation-Oncology)\n- [Radiation Oncology Hospitals in India](/hospitals/India/Radiation-Oncology)\n- [EBRT doctors in India](/doctors/India/Radiation-Oncology/EBRT)\n- [EBRT cost in India](/costs/India/Radiation-Oncology/EBRT)"
+        },
+        {
+          "id": "h_124",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation Therapy vs Chemotherapy"
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "| Feature | Radiation Therapy | Chemotherapy |\n| --- | --- | --- |\n| Treatment type | Local | Systemic |\n| Main target | Specific treatment area | Cancer cells throughout the body |\n| Common breast cancer use | After surgery or selected metastatic sites | Before/after surgery or metastatic disease |\n| Administration | External radiation or other specialized approaches | IV or oral medicines |\n| Daily treatment | Often repeated sessions | Usually given in cycles |\n| Main side effects | Often localized to treatment area | Can affect multiple body systems |"
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "A patient may receive both because they serve different purposes. See [Chemotherapy for Breast Cancer in India](/blogs/chemotherapy-for-breast-cancer-in-india) and [Chemotherapy Cost in India](/costs/India/Medical-Oncology/Chemotherapy)."
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation Therapy vs Surgery"
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "Surgery physically removes the cancer. Radiation damages cancer cells in the treatment area. For breast cancer, the two are often complementary."
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "For example, [lumpectomy](/costs/India/Surgical-Oncology/Lumpectomy) → radiation is a common treatment pathway for appropriately selected patients. [Mastectomy](/doctors/India/Surgical-Oncology/Mastectomy) may or may not be followed by radiation depending on pathology."
+        },
+        {
+          "id": "h_130",
+          "type": "heading",
+          "level": 2,
+          "text": "How Should Patients Prepare for Radiation Therapy?"
+        },
+        {
+          "id": "ul_131",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Attend the radiation planning appointment.",
+            "Follow positioning instructions.",
+            "Tell the team about previous radiation.",
+            "Tell the team about implants or reconstruction.",
+            "Discuss pregnancy where relevant.",
+            "Inform the team about medications and medical conditions.",
+            "Ask about skin care.",
+            "Plan transportation if daily travel is difficult."
+          ]
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "Patients should not make major changes to their medication or diet without discussing them with their medical team."
+        },
+        {
+          "id": "h_133",
+          "type": "heading",
+          "level": 2,
+          "text": "Can International Patients Complete Radiation Therapy in India?"
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "Yes, but radiation usually involves repeated visits over a period of time. International patients therefore need to plan accommodation near the hospital, transportation, treatment dates, attendant arrangements, follow-up appointments, emergency contact arrangements and travel home after treatment."
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "The exact duration depends on the prescribed radiation schedule. Hospitals in [Delhi NCR](/hospitals/India/Delhi-NCR), [Mumbai](/hospitals/India/Mumbai), [Bengaluru](/hospitals/India/Bengaluru), [Chennai](/hospitals/India/Chennai) and [Hyderabad](/hospitals/India/Hyderabad) can confirm start and completion dates before final travel arrangements."
+        },
+        {
+          "id": "h_136",
+          "type": "heading",
+          "level": 2,
+          "text": "What Records Should International Patients Send Before Travelling?"
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "For a radiation opinion, useful records may include [pathology](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2) (biopsy, histopathology, ER, PR, HER2 and other biomarkers), imaging (mammography, ultrasound, breast MRI, CT, PET-CT where applicable), surgery (operative report, final pathology, lymph-node pathology) and previous treatment (chemotherapy, targeted therapy and previous radiation records)."
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "The radiation oncologist may request the actual imaging or pathology material if the available reports are insufficient."
+        },
+        {
+          "id": "p_139",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 your records before travel](https://wa.me/919044346292?text=I%20would%20like%20to%20send%20my%20breast%20cancer%20records%20for%20a%20radiation%20opinion%20before%20travelling%20to%20India.)"
+        },
+        {
+          "id": "h_140",
+          "type": "heading",
+          "level": 2,
+          "text": "Questions to Ask Your Radiation Oncologist"
+        },
+        {
+          "id": "ul_141",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Why do I need radiation?",
+            "What area will be treated?",
+            "Will the lymph nodes be included?",
+            "How many sessions will I need?",
+            "What radiation technique will be used?",
+            "Will I need CT simulation?",
+            "Can deep inspiration breath hold be used?",
+            "What side effects should I expect?",
+            "What skin-care instructions should I follow?",
+            "How long will each visit take?",
+            "Can I continue normal activities?",
+            "Can I travel during treatment?",
+            "When can I return home?",
+            "How will radiation affect reconstruction?",
+            "What is included in the radiation cost estimate?"
+          ]
+        },
+        {
+          "id": "h_142",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_143",
+          "type": "heading",
+          "level": 3,
+          "text": "Is radiation necessary after breast cancer surgery?"
+        },
+        {
+          "id": "p_144",
+          "type": "paragraph",
+          "text": "Not always. Radiation is commonly used after breast-conserving surgery and may be recommended after mastectomy depending on the patient's risk factors."
+        },
+        {
+          "id": "h_145",
+          "type": "heading",
+          "level": 3,
+          "text": "Do I need radiation after lumpectomy?"
+        },
+        {
+          "id": "p_146",
+          "type": "paragraph",
+          "text": "Many patients do, although selected low-risk patients may be able to omit it. The decision depends on the patient's age, tumour characteristics, pathology and overall treatment plan."
+        },
+        {
+          "id": "h_147",
+          "type": "heading",
+          "level": 3,
+          "text": "Do I need radiation after mastectomy?"
+        },
+        {
+          "id": "p_148",
+          "type": "paragraph",
+          "text": "Some patients do and others do not. Tumour size, lymph-node involvement, margins and other pathological findings can influence the recommendation."
+        },
+        {
+          "id": "h_149",
+          "type": "heading",
+          "level": 3,
+          "text": "How many radiation sessions are needed for breast cancer?"
+        },
+        {
+          "id": "p_150",
+          "type": "paragraph",
+          "text": "There is no universal number. The schedule depends on the treatment plan, cancer characteristics and radiation technique."
+        },
+        {
+          "id": "h_151",
+          "type": "heading",
+          "level": 3,
+          "text": "Is radiation therapy painful?"
+        },
+        {
+          "id": "p_152",
+          "type": "paragraph",
+          "text": "The radiation delivery itself is generally not painful. Side effects such as skin irritation, swelling or fatigue can develop during treatment."
+        },
+        {
+          "id": "h_153",
+          "type": "heading",
+          "level": 3,
+          "text": "Does radiation cause hair loss?"
+        },
+        {
+          "id": "p_154",
+          "type": "paragraph",
+          "text": "Radiation affects hair only in the area being treated. Breast radiation does not normally cause the type of whole-body hair loss associated with some chemotherapy medicines."
+        },
+        {
+          "id": "h_155",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I work during radiation therapy?"
+        },
+        {
+          "id": "p_156",
+          "type": "paragraph",
+          "text": "Many patients continue some or all of their normal activities during radiation, although fatigue may increase as treatment progresses."
+        },
+        {
+          "id": "h_157",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I travel while receiving radiation?"
+        },
+        {
+          "id": "p_158",
+          "type": "paragraph",
+          "text": "It may be possible, but patients receiving daily or frequent treatment need to remain close enough to the treatment centre. International travel should be planned with the radiation oncology team."
+        },
+        {
+          "id": "h_159",
+          "type": "heading",
+          "level": 3,
+          "text": "Can radiation be given after chemotherapy?"
+        },
+        {
+          "id": "p_160",
+          "type": "paragraph",
+          "text": "Yes. Chemotherapy and radiation can both be part of breast cancer treatment, and the sequence is determined by the oncology team."
+        },
+        {
+          "id": "h_161",
+          "type": "heading",
+          "level": 3,
+          "text": "Can radiation damage the heart?"
+        },
+        {
+          "id": "p_162",
+          "type": "paragraph",
+          "text": "Radiation to the left breast can expose part of the heart to radiation. Modern planning techniques aim to minimize this exposure, and techniques such as deep inspiration breath hold may be used for selected patients."
+        },
+        {
+          "id": "h_163",
+          "type": "heading",
+          "level": 3,
+          "text": "Can radiation affect breast reconstruction?"
+        },
+        {
+          "id": "p_164",
+          "type": "paragraph",
+          "text": "Yes. Radiation can influence reconstructed breast tissue and can affect reconstruction planning. The breast surgeon, reconstructive surgeon and radiation oncologist should coordinate when reconstruction is being considered."
+        },
+        {
+          "id": "h_165",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does breast cancer radiation therapy cost in India?"
+        },
+        {
+          "id": "p_166",
+          "type": "paragraph",
+          "text": "There is no single fixed price. Cost depends on the radiation technique, number of sessions, treatment area, planning requirements, hospital and other factors."
+        },
+        {
+          "id": "h_167",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation Therapy for Breast Cancer in India: Key Takeaways"
+        },
+        {
+          "id": "p_168",
+          "type": "paragraph",
+          "text": "Radiation therapy is an important component of breast cancer treatment for many patients, particularly after breast-conserving surgery. It may also be recommended after mastectomy when the cancer has characteristics associated with a higher risk of local or regional recurrence."
+        },
+        {
+          "id": "p_169",
+          "type": "paragraph",
+          "text": "The radiation plan depends on breast cancer stage, tumour size, lymph-node involvement, surgical margins, type of surgery, ER/PR/HER2 status, previous treatment, reconstruction and individual anatomy."
+        },
+        {
+          "id": "p_170",
+          "type": "paragraph",
+          "text": "Modern radiation treatment is carefully planned to deliver radiation to the required area while limiting exposure to nearby healthy tissues. For international patients, radiation treatment requires additional planning because treatment may involve multiple hospital visits over several weeks or a shorter prescribed schedule."
+        },
+        {
+          "id": "p_171",
+          "type": "paragraph",
+          "text": "The most useful next step is to have the complete pathology, imaging and surgical records reviewed by a radiation oncology team so that the treatment area, number of sessions, technique and estimated cost can be determined for the individual patient."
+        },
+        {
+          "id": "btn_172",
+          "type": "button",
+          "label": "Start the Breast Cancer Treatment in India pathway",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_173",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 to plan the next step](https://wa.me/919044346292?text=Please%20help%20me%20plan%20radiation%20therapy%20for%20breast%20cancer%20in%20India.)"
+        },
+        {
+          "id": "h_174",
+          "type": "heading",
+          "level": 2,
+          "text": "GAF Healthcare Resources"
+        },
+        {
+          "id": "p_175",
+          "type": "paragraph",
+          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Radiation Oncology Doctors in India](/doctors/India/Radiation-Oncology)\n- [Radiation Oncology Hospitals in India](/hospitals/India/Radiation-Oncology)\n- [Radiation therapy cost in India](/costs/India/Radiation-Oncology)\n- [EBRT doctors](/doctors/India/Radiation-Oncology/EBRT)\n- [EBRT cost](/costs/India/Radiation-Oncology/EBRT)\n- [Lumpectomy](/costs/India/Surgical-Oncology/Lumpectomy)\n- [Mastectomy](/costs/India/Surgical-Oncology/Mastectomy)\n- [Breast Reconstruction](/blogs/breast-reconstruction-after-mastectomy-india)\n- [Chemotherapy for Breast Cancer](/blogs/chemotherapy-for-breast-cancer-in-india)\n- [Hormone Therapy for Breast Cancer](/blogs/hormone-therapy-breast-cancer-india)\n- [Breast Cancer Treatment by Stage](/blogs/breast-cancer-treatment-by-stage)\n- [Treatment for international patients](/blogs/breast-cancer-treatment-india-international-patients)"
+        }
+      ]
+    },
     {
       "id": "art_breast_reconstruction_after_mastectomy_india",
       "slug": "breast-reconstruction-after-mastectomy-india",
@@ -350,6 +2389,14 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Chemotherapy for Breast Cancer in India",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Radiation Therapy for Breast Cancer in India",
+          "href": "/blogs/radiation-therapy-for-breast-cancer"
         },
         {
           "label": "Breast Reconstruction Cost in India",
@@ -1158,6 +3205,14 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Chemotherapy for Breast Cancer in India",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Radiation Therapy for Breast Cancer in India",
+          "href": "/blogs/radiation-therapy-for-breast-cancer"
         },
         {
           "label": "Breast Reconstruction After Mastectomy in India",
@@ -2046,6 +4101,14 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Chemotherapy for Breast Cancer in India",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Radiation Therapy for Breast Cancer in India",
+          "href": "/blogs/radiation-therapy-for-breast-cancer"
         },
         {
           "label": "Breast Reconstruction After Mastectomy in India",
@@ -2937,6 +5000,14 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Chemotherapy for Breast Cancer in India",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Radiation Therapy for Breast Cancer in India",
+          "href": "/blogs/radiation-therapy-for-breast-cancer"
         },
         {
           "label": "Breast Reconstruction After Mastectomy in India",
@@ -3962,6 +6033,14 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Chemotherapy for Breast Cancer in India",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Radiation Therapy for Breast Cancer in India",
+          "href": "/blogs/radiation-therapy-for-breast-cancer"
         },
         {
           "label": "Breast Reconstruction After Mastectomy in India",
@@ -5047,6 +7126,14 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Chemotherapy for Breast Cancer in India",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Radiation Therapy for Breast Cancer in India",
+          "href": "/blogs/radiation-therapy-for-breast-cancer"
         },
         {
           "label": "Breast Reconstruction After Mastectomy in India",
@@ -6174,6 +8261,14 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Chemotherapy for Breast Cancer in India",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Radiation Therapy for Breast Cancer in India",
+          "href": "/blogs/radiation-therapy-for-breast-cancer"
         },
         {
           "label": "Breast Reconstruction After Mastectomy in India",
@@ -7449,6 +9544,14 @@
           "href": "/treatments/breast-cancer-treatment-in-india"
         },
         {
+          "label": "Chemotherapy for Breast Cancer in India",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Radiation Therapy for Breast Cancer in India",
+          "href": "/blogs/radiation-therapy-for-breast-cancer"
+        },
+        {
           "label": "Breast Reconstruction After Mastectomy in India",
           "href": "/blogs/breast-reconstruction-after-mastectomy-india"
         },
@@ -8545,6 +10648,14 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Chemotherapy for Breast Cancer in India",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Radiation Therapy for Breast Cancer in India",
+          "href": "/blogs/radiation-therapy-for-breast-cancer"
         },
         {
           "label": "Breast Reconstruction After Mastectomy in India",

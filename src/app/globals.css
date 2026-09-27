@@ -2574,6 +2574,18 @@ img.dhero__art {
   line-height: 1.6;
 }
 
+.article-quick-answer__list {
+  margin: 0.45rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--foreground);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+
+.article-quick-answer__list li + li {
+  margin-top: 0.25rem;
+}
+
 @media (max-width: 640px) {
   .article-body {
     font-size: 1.05rem;
