@@ -12125,1565 +12125,485 @@
         {
           "label": "HER2-positive treatment",
           "href": "/blogs/her2-positive-breast-cancer-treatment-india"
+        },
+        {
+          "label": "International patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
         }
       ],
       "blocks": [
         {
           "id": "html_001",
           "type": "html",
-          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>What is neoadjuvant therapy for breast cancer?</strong> Neoadjuvant therapy is treatment given before breast cancer surgery. It may include chemotherapy, targeted therapy, immunotherapy or, in selected situations, hormone therapy.</p><p class=\"article-quick-answer__body\"><strong>Why is treatment given before surgery?</strong> It may shrink the tumor, make breast-conserving surgery possible, treat cancer cells elsewhere in the body early, and show how the tumor responds to treatment.</p><p class=\"article-quick-answer__body\"><strong>Which breast cancers commonly receive neoadjuvant treatment?</strong> It may be considered for larger tumors, lymph-node-positive disease, high-grade cancers, HER2-positive breast cancer, triple-negative breast cancer and inflammatory breast cancer. The decision is individualized.</p><p class=\"article-quick-answer__body\"><strong>Is neoadjuvant therapy the same as chemotherapy?</strong> No. Chemotherapy is one type of neoadjuvant treatment. Depending on the cancer subtype, treatment before surgery may also include HER2-targeted therapy, immunotherapy or hormone therapy.</p><p class=\"article-quick-answer__body\"><strong>Can neoadjuvant treatment shrink a tumor enough to avoid mastectomy?</strong> Sometimes. Tumor shrinkage can make breast-conserving surgery possible for some patients who initially were not suitable candidates.</p><p class=\"article-quick-answer__body\"><strong>Does everyone need chemotherapy before breast cancer surgery?</strong> No. Some patients are better suited to surgery first, while others may benefit from treatment before surgery.</p><p class=\"article-quick-answer__body\"><strong>How long does neoadjuvant treatment take?</strong> The duration depends on the cancer subtype, treatment regimen and response. Some regimens involve several cycles over a number of months.</p><p class=\"article-quick-answer__body\"><strong>What happens if the tumor disappears before surgery?</strong> Imaging may show no detectable tumor, but that does not automatically mean surgery can be skipped. The surgical plan depends on the cancer type, treatment response and current evidence.</p><p class=\"article-quick-answer__body\"><strong>What is pathological complete response?</strong> It means that no residual invasive cancer is found in the breast and sampled lymph nodes when the surgical tissue is examined under a microscope after neoadjuvant treatment. The exact definition can vary by study.</p><p class=\"article-quick-answer__body\"><strong>Can neoadjuvant therapy be given in India?</strong> Yes. Breast cancer centers in India use multidisciplinary treatment approaches that can include medical oncology, breast surgery, radiation oncology, pathology and diagnostic imaging.</p><p class=\"article-quick-answer__body\"><strong>What Is Neoadjuvant Therapy?</strong> Neoadjuvant therapy means treatment given before the main local treatment, usually surgery.</p></aside>"
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>What is neoadjuvant therapy for breast cancer?</strong> Neoadjuvant therapy is treatment given before breast cancer surgery. It may include chemotherapy, targeted therapy, immunotherapy or, in selected situations, hormone therapy.</p><p class=\"article-quick-answer__body\"><strong>Why is treatment given before surgery?</strong> It may shrink the tumor, make breast-conserving surgery possible, treat cancer cells elsewhere in the body early, and show how the tumor responds to treatment.</p><p class=\"article-quick-answer__body\"><strong>Which breast cancers commonly receive neoadjuvant treatment?</strong> It may be considered for larger tumors, lymph-node-positive disease, high-grade cancers, HER2-positive breast cancer, triple-negative breast cancer and inflammatory breast cancer. The decision is individualized.</p><p class=\"article-quick-answer__body\"><strong>Is neoadjuvant therapy the same as chemotherapy?</strong> No. Chemotherapy is one type of neoadjuvant treatment. Depending on the cancer subtype, treatment before surgery may also include HER2-targeted therapy, immunotherapy or hormone therapy.</p><p class=\"article-quick-answer__body\"><strong>Can neoadjuvant treatment shrink a tumor enough to avoid mastectomy?</strong> Sometimes. Tumor shrinkage can make breast-conserving surgery possible for some patients who initially were not suitable candidates.</p><p class=\"article-quick-answer__body\"><strong>Does everyone need chemotherapy before breast cancer surgery?</strong> No. Some patients are better suited to surgery first, while others may benefit from treatment before surgery.</p><p class=\"article-quick-answer__body\"><strong>How long does neoadjuvant treatment take?</strong> The duration depends on the cancer subtype, treatment regimen and response. Some regimens involve several cycles over a number of months.</p><p class=\"article-quick-answer__body\"><strong>What happens if the tumor disappears before surgery?</strong> Imaging may show no detectable tumor, but that does not automatically mean surgery can be skipped. The surgical plan depends on the cancer type, treatment response and current evidence.</p><p class=\"article-quick-answer__body\"><strong>What is pathological complete response?</strong> It means that no residual invasive cancer is found in the breast and sampled lymph nodes when the surgical tissue is examined under a microscope after neoadjuvant treatment. The exact definition can vary by study.</p><p class=\"article-quick-answer__body\"><strong>Can neoadjuvant therapy be given in India?</strong> Yes. Breast cancer centers in India use multidisciplinary treatment approaches that can include medical oncology, breast surgery, radiation oncology, pathology and diagnostic imaging.</p></aside>"
         },
         {
           "id": "p_002",
           "type": "paragraph",
-          "text": "For some people with breast cancer, surgery is the first major treatment. For others, doctors recommend treatment before surgery. This approach is called neoadjuvant therapy. The idea can feel unusual at first. A patient may reasonably ask, “If the cancer needs to be removed, why aren't we operating immediately?” There are several reasons. Treatment given before surgery can shrink a breast tumor, treat cancer cells that may already have travelled beyond the breast, and sometimes make breast-conserving surgery possible when mastectomy might otherwise have been considered. It can also provide doctors with information about how the cancer responds to treatment. Neoadjuvant treatment is particularly important in some HER2-positive, triple-negative, high-grade, larger or lymph-node-positive breast cancers. However, it is not automatically appropriate for every patient. For international patients considering breast cancer treatment in India, understanding this sequence can make discussions with an oncology team much easier. This guide supports the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) pathway."
+          "text": "For some people with breast cancer, surgery is the first major treatment. For others, doctors recommend treatment before surgery. This approach is called neoadjuvant therapy. A patient may reasonably ask, “If the cancer needs to be removed, why aren't we operating immediately?” There are several reasons. This guide supports the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) pathway and the [chemotherapy](/blogs/chemotherapy-for-breast-cancer-in-india) and [surgery](/blogs/breast-cancer-surgery-in-india) explainers."
         },
         {
           "id": "btn_003",
           "type": "button",
-          "label": "Ask GAF about breast cancer neoadjuvant therapy",
+          "label": "Ask GAF whether treatment should start before surgery",
           "href": "/consult?treatment=Chemotherapy"
         },
         {
           "id": "p_004",
           "type": "paragraph",
-          "text": "[WhatsApp +91 90443 46292 with your records](https://wa.me/919044346292?text=Please%20review%20my%20records%20and%20advise%20whether%20neoadjuvant%20therapy%20before%20surgery%20is%20appropriate%20in%20India.)"
+          "text": "[WhatsApp +91 90443 46292 with your pathology](https://wa.me/919044346292?text=Please%20review%20my%20records%20and%20advise%20whether%20neoadjuvant%20therapy%20before%20surgery%20is%20appropriate%20in%20India.)"
         },
         {
           "id": "img_005",
           "type": "image",
           "src": "/uploads/articles/neoadjuvant-infusion-visual.webp",
           "alt": "Neoadjuvant breast cancer treatment before surgery showing chemotherapy and tumor response",
-          "caption": "Neoadjuvant therapy is given before surgery so doctors can see how the cancer responds."
+          "caption": "Neoadjuvant therapy is given before surgery so doctors can shrink the tumour, treat microscopic disease early and see how the cancer responds."
         },
         {
-          "id": "p_006",
-          "type": "paragraph",
-          "text": "In breast cancer, the most familiar example is [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) before surgery."
+          "id": "h_006",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Neoadjuvant Therapy?"
         },
         {
           "id": "p_007",
           "type": "paragraph",
-          "text": "But neoadjuvant treatment is broader than [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects)."
+          "text": "Neoadjuvant therapy means treatment given before the main local treatment, usually surgery. The most familiar example is [chemotherapy](/blogs/chemotherapy-for-breast-cancer-in-india) before surgery, but the approach is broader. Depending on the type of breast cancer, it can involve chemotherapy, [HER2-targeted therapy](/blogs/her2-positive-breast-cancer-treatment-india), immunotherapy or [hormone therapy](/blogs/hormone-therapy-breast-cancer-india) in selected patients. ER, PR and HER2 status, tumour size, lymph-node involvement, grade and [clinical stage](/blogs/breast-cancer-treatment-by-stage) all help doctors decide whether treatment before surgery is appropriate. See [what ER, PR and HER2 results mean](/blogs/er-pr-her2-breast-cancer-treatment-india)."
         },
         {
           "id": "h_008",
           "type": "heading",
           "level": 2,
-          "text": "Depending on the type of breast cancer, it can involve:"
+          "text": "Why Give Treatment Before Removing the Tumour?"
         },
         {
-          "id": "ul_009",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Chemotherapy",
-            "HER2-targeted therapy",
-            "Immunotherapy",
-            "Hormone therapy in selected patients"
-          ]
-        },
-        {
-          "id": "p_010",
+          "id": "p_009",
           "type": "paragraph",
-          "text": "The treatment is chosen according to the tumor's characteristics."
+          "text": "There is more than one reason. A large tumour may become smaller after systemic treatment, which can sometimes make surgery less extensive. Some patients initially require a mastectomy because of the size or extent of the tumour; if it responds well, [breast-conserving surgery](${LUMP}) may become an option in selected cases. Systemic treatment also reaches the bloodstream and can address microscopic cancer cells throughout the body. And the tumour's response can provide information that may influence treatment after surgery."
+        },
+        {
+          "id": "h_010",
+          "type": "heading",
+          "level": 2,
+          "text": "Which Patients May Need Neoadjuvant Therapy?"
         },
         {
           "id": "p_011",
           "type": "paragraph",
-          "text": "ER, PR and HER2 status, tumor size, lymph-node involvement, grade and clinical stage all help doctors decide whether treatment before surgery is appropriate."
+          "text": "There is no single tumour size or stage that automatically means neoadjuvant treatment is required. Doctors look at the complete picture. It may be considered for larger tumours, lymph-node-positive disease, high-grade breast cancer, [HER2-positive](/blogs/her2-positive-breast-cancer-treatment-india) breast cancer, triple-negative breast cancer, inflammatory breast cancer and locally advanced disease. These are examples rather than an exhaustive list. Oncology teams in [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) can confirm the sequence after reviewing pathology and imaging."
         },
         {
-          "id": "h_012",
-          "type": "heading",
-          "level": 3,
-          "text": "Why Give Treatment Before Removing the Tumor?"
-        },
-        {
-          "id": "p_013",
-          "type": "paragraph",
-          "text": "There is more than one reason."
-        },
-        {
-          "id": "h_014",
-          "type": "heading",
-          "level": 2,
-          "text": "To shrink the tumor"
-        },
-        {
-          "id": "p_015",
-          "type": "paragraph",
-          "text": "A large tumor may become smaller after systemic treatment."
-        },
-        {
-          "id": "p_016",
-          "type": "paragraph",
-          "text": "That can sometimes make surgery less extensive."
-        },
-        {
-          "id": "h_017",
-          "type": "heading",
-          "level": 2,
-          "text": "To make breast conservation possible"
-        },
-        {
-          "id": "p_018",
-          "type": "paragraph",
-          "text": "Some patients initially require a mastectomy because of the size or extent of the tumor."
-        },
-        {
-          "id": "p_019",
-          "type": "paragraph",
-          "text": "If the tumor responds well to neoadjuvant treatment, breast-conserving surgery may become an option in selected cases."
-        },
-        {
-          "id": "h_020",
-          "type": "heading",
-          "level": 2,
-          "text": "To treat microscopic disease early"
-        },
-        {
-          "id": "p_021",
-          "type": "paragraph",
-          "text": "Breast cancer is a systemic disease in some patients."
-        },
-        {
-          "id": "p_022",
-          "type": "paragraph",
-          "text": "Even when scans show cancer only in the breast and nearby lymph nodes, doctors may be concerned about microscopic cancer cells elsewhere."
-        },
-        {
-          "id": "p_023",
-          "type": "paragraph",
-          "text": "Systemic treatment reaches the bloodstream and can address cancer cells throughout the body."
-        },
-        {
-          "id": "h_024",
-          "type": "heading",
-          "level": 2,
-          "text": "To see how the cancer responds"
-        },
-        {
-          "id": "p_025",
-          "type": "paragraph",
-          "text": "This is one of the distinctive advantages of neoadjuvant treatment."
-        },
-        {
-          "id": "p_026",
-          "type": "paragraph",
-          "text": "The tumor's response can provide information that may influence treatment after surgery."
-        },
-        {
-          "id": "h_027",
-          "type": "heading",
-          "level": 3,
-          "text": "Which Breast Cancer Patients May Need Neoadjuvant Therapy?"
-        },
-        {
-          "id": "p_028",
-          "type": "paragraph",
-          "text": "There is no single tumor size or stage that automatically means neoadjuvant treatment is required."
-        },
-        {
-          "id": "p_029",
-          "type": "paragraph",
-          "text": "Doctors look at the complete picture."
-        },
-        {
-          "id": "h_030",
-          "type": "heading",
-          "level": 2,
-          "text": "Neoadjuvant chemotherapy may be considered for patients with:"
-        },
-        {
-          "id": "ul_031",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Larger breast tumors",
-            "Lymph-node-positive disease",
-            "High-grade breast cancer",
-            "HER2-positive breast cancer",
-            "Triple-negative breast cancer",
-            "Inflammatory breast cancer",
-            "Locally advanced disease"
-          ]
-        },
-        {
-          "id": "p_032",
-          "type": "paragraph",
-          "text": "These are examples rather than an exhaustive list."
-        },
-        {
-          "id": "p_033",
-          "type": "paragraph",
-          "text": "The treatment sequence should be decided by the breast cancer team after reviewing the pathology and imaging."
-        },
-        {
-          "id": "h_034",
-          "type": "heading",
-          "level": 2,
-          "text": "Neoadjuvant Therapy for HER2-Positive Breast Cancer"
-        },
-        {
-          "id": "p_035",
-          "type": "paragraph",
-          "text": "HER2-positive breast cancer is one of the situations where treatment before surgery has become particularly important."
-        },
-        {
-          "id": "p_036",
-          "type": "paragraph",
-          "text": "Treatment may combine [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) with HER2-targeted medicines."
-        },
-        {
-          "id": "p_037",
-          "type": "paragraph",
-          "text": "The exact combination depends on the patient's disease characteristics and the treatment protocol selected by the oncology team."
-        },
-        {
-          "id": "p_038",
-          "type": "paragraph",
-          "text": "One reason the response to treatment matters is that the amount of cancer remaining at surgery can influence subsequent treatment decisions."
-        },
-        {
-          "id": "p_039",
-          "type": "paragraph",
-          "text": "Current treatment approaches can therefore involve a planned sequence of therapy before and after surgery rather than treating each step independently."
-        },
-        {
-          "id": "h_040",
-          "type": "heading",
-          "level": 2,
-          "text": "Neoadjuvant Therapy for Triple-Negative Breast Cancer"
-        },
-        {
-          "id": "p_041",
-          "type": "paragraph",
-          "text": "Triple-negative breast cancer does not have estrogen receptors, progesterone receptors or excess HER2."
-        },
-        {
-          "id": "p_042",
-          "type": "paragraph",
-          "text": "Because [hormone therapy](/blogs/breast-cancer-hormone-therapy-side-effects) and HER2-[targeted therapy](/blogs/breast-cancer-targeted-therapy-side-effects) are not options for the cancer itself, systemic [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) has an important role."
-        },
-        {
-          "id": "p_043",
-          "type": "paragraph",
-          "text": "For appropriate patients with early-stage or locally advanced triple-negative breast cancer, [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) may be given before surgery, sometimes together with immunotherapy such as pembrolizumab."
-        },
-        {
-          "id": "p_044",
-          "type": "paragraph",
-          "text": "Treatment decisions depend on the patient's stage, eligibility and overall clinical situation."
-        },
-        {
-          "id": "h_045",
-          "type": "heading",
-          "level": 2,
-          "text": "Neoadjuvant Therapy for Inflammatory Breast Cancer"
-        },
-        {
-          "id": "p_046",
-          "type": "paragraph",
-          "text": "Inflammatory breast cancer is a distinct and aggressive form of breast cancer."
-        },
-        {
-          "id": "p_047",
-          "type": "paragraph",
-          "text": "Because it often involves a large area of the breast and skin, treatment usually begins with systemic therapy rather than immediate surgery."
-        },
-        {
-          "id": "p_048",
-          "type": "paragraph",
-          "text": "NCI describes [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) before surgery as neoadjuvant treatment and notes that surgery for inflammatory breast cancer generally follows systemic treatment, with modified radical mastectomy used as the standard surgical approach."
-        },
-        {
-          "id": "p_049",
-          "type": "paragraph",
-          "text": "Radiation is also commonly incorporated into treatment."
-        },
-        {
-          "id": "p_050",
-          "type": "paragraph",
-          "text": "This is a different treatment pathway from that used for many small, early breast cancers."
-        },
-        {
-          "id": "h_051",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Hormone Therapy Be Given Before Surgery?"
-        },
-        {
-          "id": "p_052",
-          "type": "paragraph",
-          "text": "In selected patients, yes."
-        },
-        {
-          "id": "img_053",
+          "id": "img_012",
           "type": "image",
           "src": "/uploads/articles/neoadjuvant-consult-visual.webp",
           "alt": "Multidisciplinary planning for neoadjuvant breast cancer treatment",
           "caption": "The plan depends on subtype, stage, biomarkers and whether breast-conserving surgery is a goal."
         },
         {
-          "id": "p_054",
-          "type": "paragraph",
-          "text": "This is sometimes called neoadjuvant endocrine therapy."
-        },
-        {
-          "id": "p_055",
-          "type": "paragraph",
-          "text": "It may be considered particularly in certain postmenopausal patients with hormone receptor-positive breast cancer when [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) is not appropriate or when the goal is to reduce tumor size before surgery."
-        },
-        {
-          "id": "p_056",
-          "type": "paragraph",
-          "text": "NCI notes that preoperative endocrine therapy can be an option for some postmenopausal women with hormone receptor-positive breast cancer who cannot receive [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects)."
-        },
-        {
-          "id": "p_057",
-          "type": "paragraph",
-          "text": "It is not routinely used as a substitute for [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) in every patient."
-        },
-        {
-          "id": "h_058",
+          "id": "h_013",
           "type": "heading",
-          "level": 3,
+          "level": 2,
+          "text": "Neoadjuvant Therapy for HER2-Positive Breast Cancer"
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "HER2-positive breast cancer is one of the situations where treatment before surgery has become particularly important. Treatment may combine chemotherapy with [HER2-targeted medicines](/blogs/breast-cancer-targeted-therapy-side-effects). The exact combination depends on the disease characteristics and the protocol selected by the oncology team. The amount of cancer remaining at surgery can influence subsequent treatment. Current approaches often involve a planned sequence of therapy before and after surgery rather than treating each step independently."
+        },
+        {
+          "id": "h_015",
+          "type": "heading",
+          "level": 2,
+          "text": "Neoadjuvant Therapy for Triple-Negative Breast Cancer"
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "Triple-negative breast cancer does not have estrogen receptors, progesterone receptors or excess HER2. Because hormone therapy and HER2-targeted therapy are not options for the cancer itself, systemic chemotherapy has an important role. For appropriate patients with early-stage or locally advanced triple-negative breast cancer, chemotherapy may be given before surgery, sometimes together with immunotherapy such as pembrolizumab. Treatment decisions depend on stage, eligibility and the overall clinical situation."
+        },
+        {
+          "id": "h_017",
+          "type": "heading",
+          "level": 2,
+          "text": "Neoadjuvant Therapy for Inflammatory Breast Cancer"
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "Inflammatory breast cancer is a distinct and aggressive form of breast cancer. Because it often involves a large area of the breast and skin, treatment usually begins with systemic therapy rather than immediate surgery. Surgery generally follows systemic treatment, with modified radical mastectomy used as the standard surgical approach. [Radiation](${RAD}) is also commonly incorporated. This is a different pathway from that used for many small, early breast cancers."
+        },
+        {
+          "id": "h_019",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Hormone Therapy Be Given Before Surgery?"
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "In selected patients, yes. This is sometimes called neoadjuvant endocrine therapy. It may be considered particularly in certain postmenopausal patients with hormone receptor-positive breast cancer when chemotherapy is not appropriate or when the goal is to reduce tumour size before surgery. It is not routinely used as a substitute for chemotherapy in every patient. See the [hormone therapy guide](/blogs/hormone-therapy-breast-cancer-india)."
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 2,
           "text": "What Happens Before Neoadjuvant Treatment Starts?"
         },
         {
-          "id": "p_059",
+          "id": "p_022",
           "type": "paragraph",
-          "text": "Treatment usually begins only after the cancer has been characterized sufficiently."
+          "text": "Treatment usually begins only after the cancer has been characterised. The evaluation may include a biopsy confirming invasive breast cancer; pathology for ER, PR, HER2, grade and histologic type; imaging such as mammography, ultrasound, MRI, CT or PET-CT when indicated; lymph-node assessment and possible node biopsy; and a medical assessment of blood counts, kidney and liver function, heart function when relevant, existing conditions and current medicines. See [diagnosis and biopsy](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)."
         },
         {
-          "id": "h_060",
-          "type": "heading",
-          "level": 2,
-          "text": "The evaluation may include:"
-        },
-        {
-          "id": "h_061",
-          "type": "heading",
-          "level": 2,
-          "text": "Biopsy"
-        },
-        {
-          "id": "p_062",
+          "id": "p_023",
           "type": "paragraph",
-          "text": "The diagnosis of invasive breast cancer needs to be established."
+          "text": "HER2 status can significantly influence the plan. A patient with HER2-positive disease may be eligible for HER2-targeted treatment; a HER2-negative cancer follows a different pathway. If there is uncertainty about the HER2 result, the treating centre may recommend pathology review. ER and PR indicate whether the cancer has hormone receptors and affect both the treatment sequence and treatments after surgery. Carry the original immunohistochemistry report rather than only a summary stating \"hormone positive.\""
         },
         {
-          "id": "h_063",
-          "type": "heading",
-          "level": 2,
-          "text": "Pathology testing"
-        },
-        {
-          "id": "h_064",
-          "type": "heading",
-          "level": 2,
-          "text": "Important information may include:"
-        },
-        {
-          "id": "ul_065",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "ER",
-            "PR",
-            "HER2",
-            "Grade",
-            "Histologic type",
-            "Imaging"
-          ]
-        },
-        {
-          "id": "h_066",
-          "type": "heading",
-          "level": 2,
-          "text": "Depending on the situation, imaging may include:"
-        },
-        {
-          "id": "ul_067",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Mammography",
-            "Breast ultrasound",
-            "Breast MRI",
-            "CT",
-            "PET-CT or other staging investigations when indicated",
-            "Lymph-node assessment"
-          ]
-        },
-        {
-          "id": "p_068",
-          "type": "paragraph",
-          "text": "Doctors may evaluate lymph nodes clinically and with imaging."
-        },
-        {
-          "id": "p_069",
-          "type": "paragraph",
-          "text": "A suspicious lymph node may require biopsy."
-        },
-        {
-          "id": "h_070",
-          "type": "heading",
-          "level": 2,
-          "text": "Medical assessment"
-        },
-        {
-          "id": "h_071",
-          "type": "heading",
-          "level": 2,
-          "text": "Before systemic treatment, doctors may evaluate:"
-        },
-        {
-          "id": "ul_072",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Blood counts",
-            "Kidney function",
-            "Liver function",
-            "Heart function when relevant",
-            "Existing medical conditions",
-            "Current medications"
-          ]
-        },
-        {
-          "id": "p_073",
-          "type": "paragraph",
-          "text": "The exact work-up varies according to the planned treatment."
-        },
-        {
-          "id": "h_074",
-          "type": "heading",
-          "level": 3,
-          "text": "Why Is HER2 Testing Important Before Treatment?"
-        },
-        {
-          "id": "p_075",
-          "type": "paragraph",
-          "text": "HER2 status can significantly influence the treatment plan."
-        },
-        {
-          "id": "p_076",
-          "type": "paragraph",
-          "text": "A patient with HER2-positive disease may be eligible for HER2-targeted treatment."
-        },
-        {
-          "id": "p_077",
-          "type": "paragraph",
-          "text": "A patient whose cancer is HER2-negative would follow a different treatment pathway."
-        },
-        {
-          "id": "p_078",
-          "type": "paragraph",
-          "text": "This is why obtaining a reliable pathology report before travelling internationally can be particularly helpful."
-        },
-        {
-          "id": "p_079",
-          "type": "paragraph",
-          "text": "If there is uncertainty about the HER2 result, the treating cancer center may recommend pathology review or additional testing."
-        },
-        {
-          "id": "h_080",
-          "type": "heading",
-          "level": 3,
-          "text": "Why Is ER and PR Testing Important?"
-        },
-        {
-          "id": "p_081",
-          "type": "paragraph",
-          "text": "ER and PR indicate whether the cancer has hormone receptors."
-        },
-        {
-          "id": "p_082",
-          "type": "paragraph",
-          "text": "Hormone receptor-positive breast cancers may respond to endocrine treatment."
-        },
-        {
-          "id": "p_083",
-          "type": "paragraph",
-          "text": "Hormone receptor status can therefore affect both the treatment sequence and the treatments considered after surgery."
-        },
-        {
-          "id": "p_084",
-          "type": "paragraph",
-          "text": "For international patients, it is useful to carry the original immunohistochemistry report rather than only a summary stating \"hormone positive.\""
-        },
-        {
-          "id": "h_085",
-          "type": "heading",
-          "level": 3,
-          "text": "How Is the Response to Neoadjuvant Treatment Monitored?"
-        },
-        {
-          "id": "p_086",
-          "type": "paragraph",
-          "text": "Doctors do not simply give treatment and wait until surgery to see what happened."
-        },
-        {
-          "id": "p_087",
-          "type": "paragraph",
-          "text": "The patient is monitored during treatment."
-        },
-        {
-          "id": "h_088",
-          "type": "heading",
-          "level": 2,
-          "text": "This can involve:"
-        },
-        {
-          "id": "ul_089",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Physical examination",
-            "Assessment of the breast",
-            "Assessment of lymph nodes",
-            "Imaging when appropriate",
-            "Review of symptoms",
-            "Blood tests",
-            "Monitoring treatment side effects"
-          ]
-        },
-        {
-          "id": "p_090",
-          "type": "paragraph",
-          "text": "If breast conservation is being considered, imaging can be particularly important in assessing whether the tumor has responded sufficiently. NCI notes that repeat radiographic assessment is required when breast conservation is the surgical goal."
-        },
-        {
-          "id": "h_091",
-          "type": "heading",
-          "level": 3,
-          "text": "What If the Tumor Gets Smaller?"
-        },
-        {
-          "id": "p_092",
-          "type": "paragraph",
-          "text": "That is generally evidence that the cancer is responding to treatment."
-        },
-        {
-          "id": "p_093",
-          "type": "paragraph",
-          "text": "But tumor shrinkage does not automatically determine the final surgery."
-        },
-        {
-          "id": "h_094",
-          "type": "heading",
-          "level": 2,
-          "text": "The surgeon will consider:"
-        },
-        {
-          "id": "ul_095",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Original tumor size",
-            "Current tumor extent",
-            "Location",
-            "Relationship to surrounding structures",
-            "Imaging findings",
-            "Pathology",
-            "Breast size",
-            "Previous treatment",
-            "Patient preference"
-          ]
-        },
-        {
-          "id": "p_096",
-          "type": "paragraph",
-          "text": "Some patients may become candidates for breast-conserving surgery."
-        },
-        {
-          "id": "p_097",
-          "type": "paragraph",
-          "text": "Others may still require mastectomy."
-        },
-        {
-          "id": "h_098",
-          "type": "heading",
-          "level": 3,
-          "text": "What If the Tumor Does Not Shrink?"
-        },
-        {
-          "id": "p_099",
-          "type": "paragraph",
-          "text": "Not every breast cancer responds in the same way."
-        },
-        {
-          "id": "p_100",
-          "type": "paragraph",
-          "text": "If the cancer does not respond adequately, the oncology team may reassess the treatment plan."
-        },
-        {
-          "id": "p_101",
-          "type": "paragraph",
-          "text": "NCI notes that patients with progressive disease during preoperative therapy may transition to another treatment regimen or proceed to surgery when feasible."
-        },
-        {
-          "id": "p_102",
-          "type": "paragraph",
-          "text": "The exact decision depends on the cancer and the circumstances."
-        },
-        {
-          "id": "h_103",
-          "type": "heading",
-          "level": 3,
-          "text": "What Is Pathological Complete Response?"
-        },
-        {
-          "id": "p_104",
-          "type": "paragraph",
-          "text": "You may hear your doctor use the abbreviation pCR."
-        },
-        {
-          "id": "p_105",
-          "type": "paragraph",
-          "text": "It stands for pathological complete response."
-        },
-        {
-          "id": "p_106",
-          "type": "paragraph",
-          "text": "In broad terms, it means that after neoadjuvant treatment, no residual invasive cancer is identified in the breast and sampled lymph nodes when the surgical specimen is examined under the microscope."
-        },
-        {
-          "id": "p_107",
-          "type": "paragraph",
-          "text": "The precise definition can vary depending on the clinical trial or reporting system."
-        },
-        {
-          "id": "p_108",
-          "type": "paragraph",
-          "text": "pCR is particularly useful in certain breast cancer subtypes because it provides information about how strongly the tumor responded to treatment."
-        },
-        {
-          "id": "h_109",
-          "type": "heading",
-          "level": 3,
-          "text": "Does Pathological Complete Response Mean the Cancer Is Cured?"
-        },
-        {
-          "id": "img_110",
+          "id": "img_024",
           "type": "image",
           "src": "/uploads/articles/neoadjuvant-imaging-visual.webp",
           "alt": "Response imaging during neoadjuvant breast cancer therapy",
           "caption": "Imaging during treatment helps the team decide whether surgery can be less extensive."
         },
         {
-          "id": "p_111",
-          "type": "paragraph",
-          "text": "No."
+          "id": "h_025",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is the Response Monitored?"
         },
         {
-          "id": "p_112",
+          "id": "p_026",
           "type": "paragraph",
-          "text": "This is an important distinction."
+          "text": "Doctors do not simply give treatment and wait until surgery. Monitoring can involve physical examination of the breast and lymph nodes, imaging when appropriate, review of symptoms, blood tests and side-effect checks. If breast conservation is being considered, repeat radiographic assessment is particularly important."
         },
         {
-          "id": "p_113",
-          "type": "paragraph",
-          "text": "A pathological complete response is a very encouraging treatment-response finding, but it does not mean that recurrence is impossible."
+          "id": "h_027",
+          "type": "heading",
+          "level": 3,
+          "text": "What If the Tumour Gets Smaller?"
         },
         {
-          "id": "p_114",
+          "id": "p_028",
           "type": "paragraph",
-          "text": "Patients still require the rest of their recommended treatment and follow-up."
+          "text": "That is generally evidence that the cancer is responding. But tumour shrinkage does not automatically determine the final surgery. The surgeon will consider original and current extent, location, imaging, pathology, breast size, previous treatment and patient preference. Some patients may become candidates for lumpectomy. Others may still require mastectomy."
         },
         {
-          "id": "p_115",
+          "id": "h_029",
+          "type": "heading",
+          "level": 3,
+          "text": "What If the Tumour Does Not Shrink?"
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "Not every breast cancer responds in the same way. If the cancer does not respond adequately, the team may reassess the plan. Patients with progressive disease during preoperative therapy may transition to another regimen or proceed to surgery when feasible."
+        },
+        {
+          "id": "btn_031",
           "type": "button",
-          "label": "Request a case-specific treatment review",
+          "label": "Request a neoadjuvant treatment review",
           "href": "/consult?treatment=Chemotherapy"
         },
         {
-          "id": "p_116",
+          "id": "p_032",
           "type": "paragraph",
-          "text": "[WhatsApp +91 90443 46292 for a case-specific plan](https://wa.me/919044346292?text=Please%20advise%20on%20chemotherapy%20or%20targeted%20therapy%20before%20breast%20cancer%20surgery%20in%20India.)"
+          "text": "[WhatsApp +91 90443 46292 about chemotherapy or targeted therapy before surgery](https://wa.me/919044346292?text=Please%20advise%20on%20chemotherapy%20or%20targeted%20therapy%20before%20breast%20cancer%20surgery%20in%20India.)"
         },
         {
-          "id": "p_117",
-          "type": "paragraph",
-          "text": "Conversely, residual cancer after neoadjuvant treatment does not mean that treatment has failed completely."
-        },
-        {
-          "id": "p_118",
-          "type": "paragraph",
-          "text": "Additional treatments may be available based on the amount and characteristics of residual disease."
-        },
-        {
-          "id": "h_119",
+          "id": "h_033",
           "type": "heading",
-          "level": 3,
+          "level": 2,
+          "text": "What Is Pathological Complete Response?"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "You may hear the abbreviation pCR. In broad terms, it means that after neoadjuvant treatment, no residual invasive cancer is identified in the breast and sampled lymph nodes when the surgical specimen is examined under the microscope. The precise definition can vary by study. pCR is particularly useful in certain subtypes because it shows how strongly the tumour responded."
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "A pathological complete response is a very encouraging finding, but it does not mean the cancer is cured or that recurrence is impossible. Patients still require the rest of their recommended treatment and follow-up. Conversely, residual cancer after neoadjuvant treatment does not mean that treatment has failed completely. Additional treatments may be available based on the amount and characteristics of residual disease."
+        },
+        {
+          "id": "h_036",
+          "type": "heading",
+          "level": 2,
           "text": "What Happens After Neoadjuvant Therapy?"
         },
         {
-          "id": "p_120",
+          "id": "p_037",
           "type": "paragraph",
-          "text": "Once the planned preoperative treatment has been completed, the patient is reassessed."
+          "text": "Once the planned preoperative treatment has been completed, the patient is reassessed. If surgery remains appropriate, the operation may involve lumpectomy, mastectomy, sentinel lymph-node biopsy, axillary lymph-node surgery and [breast reconstruction](/blogs/breast-reconstruction-after-mastectomy-india). The approach depends on the response and the original cancer characteristics."
         },
         {
-          "id": "p_121",
+          "id": "p_038",
           "type": "paragraph",
-          "text": "If surgery remains appropriate, the patient proceeds to the planned operation."
+          "text": "Preoperative chemotherapy can sometimes reduce the need for axillary lymph-node dissection in patients who initially have node-positive disease. That does not mean every patient who responds well can avoid lymph-node surgery. The decision is based on original nodal status, treatment response, surgical assessment and current guidelines."
         },
         {
-          "id": "h_122",
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "Tumour shrinkage can make lumpectomy possible for some patients who initially appeared to need mastectomy. Shrinkage alone does not guarantee that lumpectomy will be appropriate. The surgical plan should be discussed again after neoadjuvant treatment, because it may be influenced by response of the primary tumour and nodes, original location, post-treatment imaging and breast anatomy."
+        },
+        {
+          "id": "h_040",
           "type": "heading",
           "level": 2,
-          "text": "Depending on the situation, surgery may involve:"
-        },
-        {
-          "id": "ul_123",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Lumpectomy",
-            "Mastectomy",
-            "Sentinel lymph-node biopsy",
-            "Axillary lymph-node surgery",
-            "Breast reconstruction"
-          ]
-        },
-        {
-          "id": "p_124",
-          "type": "paragraph",
-          "text": "The surgical approach depends on the patient's response and the original cancer characteristics."
-        },
-        {
-          "id": "h_125",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Neoadjuvant Therapy Reduce the Need for Lymph-Node Surgery?"
-        },
-        {
-          "id": "p_126",
-          "type": "paragraph",
-          "text": "In selected patients, it can affect the extent of lymph-node surgery."
-        },
-        {
-          "id": "p_127",
-          "type": "paragraph",
-          "text": "NCI notes that preoperative [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) can sometimes reduce the need for axillary lymph-node dissection in patients who initially have node-positive disease."
-        },
-        {
-          "id": "p_128",
-          "type": "paragraph",
-          "text": "However, this does not mean every patient who responds well can avoid lymph-node surgery."
-        },
-        {
-          "id": "p_129",
-          "type": "paragraph",
-          "text": "The decision is based on the original nodal status, treatment response, surgical assessment and current clinical guidelines."
-        },
-        {
-          "id": "h_130",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Neoadjuvant Treatment Allow Lumpectomy Instead of Mastectomy?"
-        },
-        {
-          "id": "p_131",
-          "type": "paragraph",
-          "text": "Sometimes."
-        },
-        {
-          "id": "p_132",
-          "type": "paragraph",
-          "text": "Imagine a patient with a large tumor who initially appears unlikely to be a candidate for breast-conserving surgery."
-        },
-        {
-          "id": "p_133",
-          "type": "paragraph",
-          "text": "If systemic treatment produces substantial tumor shrinkage, the surgeon may be able to remove the remaining disease while preserving an acceptable amount of breast tissue."
-        },
-        {
-          "id": "p_134",
-          "type": "paragraph",
-          "text": "NCI specifically identifies making breast-conserving surgery possible as one reason neoadjuvant [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) may be used."
-        },
-        {
-          "id": "p_135",
-          "type": "paragraph",
-          "text": "But tumor shrinkage alone does not guarantee that lumpectomy will be appropriate."
-        },
-        {
-          "id": "h_136",
-          "type": "heading",
-          "level": 3,
-          "text": "Does Neoadjuvant Therapy Change the Surgery?"
-        },
-        {
-          "id": "p_137",
-          "type": "paragraph",
-          "text": "It can."
-        },
-        {
-          "id": "h_138",
-          "type": "heading",
-          "level": 2,
-          "text": "The surgery may be influenced by:"
-        },
-        {
-          "id": "ul_139",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Response of the primary tumor",
-            "Response of lymph nodes",
-            "Original tumor location",
-            "Extent of disease",
-            "Imaging after treatment",
-            "Pathological findings",
-            "Breast anatomy"
-          ]
-        },
-        {
-          "id": "p_140",
-          "type": "paragraph",
-          "text": "The surgical plan should therefore be discussed again after completion of neoadjuvant treatment."
-        },
-        {
-          "id": "h_141",
-          "type": "heading",
-          "level": 3,
           "text": "What Side Effects Can Neoadjuvant Therapy Cause?"
         },
         {
-          "id": "p_142",
+          "id": "p_041",
           "type": "paragraph",
-          "text": "Side effects depend entirely on the treatment regimen."
+          "text": "[Chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) side effects can include fatigue, nausea, hair loss, reduced blood-cell counts, increased infection risk, mouth sores, changes in appetite, neuropathy and menstrual or fertility changes. Not everyone experiences all of them. [HER2-targeted medicines](/blogs/breast-cancer-targeted-therapy-side-effects) have their own profile; doctors may monitor heart function and recommend a baseline cardiac assessment. Immunotherapy can cause immune-related side effects involving the skin, thyroid, liver, lungs, intestines or other endocrine organs. Report symptoms promptly because some require treatment interruption or medicines that suppress the immune response."
         },
         {
-          "id": "h_143",
+          "id": "h_042",
           "type": "heading",
           "level": 2,
-          "text": "For chemotherapy, possible side effects include:"
-        },
-        {
-          "id": "ul_144",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Fatigue",
-            "Nausea",
-            "Hair loss",
-            "Reduced blood-cell counts",
-            "Increased infection risk",
-            "Mouth sores",
-            "Changes in appetite",
-            "Neuropathy",
-            "Menstrual or fertility changes"
-          ]
-        },
-        {
-          "id": "p_145",
-          "type": "paragraph",
-          "text": "Not everyone experiences all of these effects."
-        },
-        {
-          "id": "p_146",
-          "type": "paragraph",
-          "text": "The severity also varies."
-        },
-        {
-          "id": "h_147",
-          "type": "heading",
-          "level": 3,
-          "text": "What Side Effects Can HER2-Targeted Treatment Cause?"
-        },
-        {
-          "id": "p_148",
-          "type": "paragraph",
-          "text": "HER2-targeted medicines have their own potential side effects."
-        },
-        {
-          "id": "p_149",
-          "type": "paragraph",
-          "text": "Depending on the specific medicine, doctors may monitor heart function as part of treatment."
-        },
-        {
-          "id": "p_150",
-          "type": "paragraph",
-          "text": "This is one reason a baseline cardiac assessment may be recommended for some patients receiving HER2-directed therapy."
-        },
-        {
-          "id": "p_151",
-          "type": "paragraph",
-          "text": "The exact monitoring schedule depends on the medication and the patient's risk factors."
-        },
-        {
-          "id": "h_152",
-          "type": "heading",
-          "level": 3,
-          "text": "What Side Effects Can Immunotherapy Cause?"
-        },
-        {
-          "id": "p_153",
-          "type": "paragraph",
-          "text": "Immunotherapy works differently from [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects)."
-        },
-        {
-          "id": "p_154",
-          "type": "paragraph",
-          "text": "It can cause immune-related side effects, where the immune system attacks normal organs or tissues."
-        },
-        {
-          "id": "h_155",
-          "type": "heading",
-          "level": 2,
-          "text": "These can involve organs such as:"
-        },
-        {
-          "id": "ul_156",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Skin",
-            "Thyroid",
-            "Liver",
-            "Lungs",
-            "Intestines",
-            "Other endocrine organs"
-          ]
-        },
-        {
-          "id": "p_157",
-          "type": "paragraph",
-          "text": "Symptoms should be reported promptly because some immune-related side effects require treatment interruption or medicines that suppress the immune response."
-        },
-        {
-          "id": "h_158",
-          "type": "heading",
-          "level": 3,
           "text": "Can Neoadjuvant Treatment Affect Fertility?"
         },
         {
-          "id": "p_159",
+          "id": "p_043",
           "type": "paragraph",
-          "text": "Yes."
+          "text": "Yes. Some systemic treatments can affect fertility. This is particularly important for younger patients who may want children after treatment. If fertility preservation matters, discuss it before treatment begins. Options may include egg freezing, embryo freezing or other approaches depending on age, treatment urgency, ovarian reserve and circumstances."
         },
         {
-          "id": "p_160",
-          "type": "paragraph",
-          "text": "Some systemic cancer treatments can affect fertility."
-        },
-        {
-          "id": "p_161",
-          "type": "paragraph",
-          "text": "This is particularly important for younger patients who may want children after treatment."
-        },
-        {
-          "id": "p_162",
-          "type": "paragraph",
-          "text": "If fertility preservation is important to you, discuss it before treatment begins."
-        },
-        {
-          "id": "h_163",
-          "type": "heading",
-          "level": 2,
-          "text": "Depending on the circumstances, options may include:"
-        },
-        {
-          "id": "p_164",
-          "type": "paragraph",
-          "text": "Oncology teams in [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) can confirm the next step. Hospitals in [Delhi NCR](/hospitals/India/Delhi-NCR) and [Mumbai](/hospitals/India/Mumbai) handle international follow-up."
-        },
-        {
-          "id": "img_165",
+          "id": "img_044",
           "type": "image",
           "src": "/uploads/articles/neoadjuvant-recovery-visual.webp",
           "alt": "Follow-up after neoadjuvant therapy and before breast cancer surgery",
-          "caption": "International patients should plan enough time in India for cycles, imaging and the operation."
+          "caption": "International patients should plan enough time in India for cycles, imaging and the operation — or agree which cycles can be given at home."
         },
         {
-          "id": "ul_166",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Egg freezing",
-            "Embryo freezing",
-            "Other fertility-preservation approaches"
-          ]
-        },
-        {
-          "id": "p_167",
-          "type": "paragraph",
-          "text": "The available options depend on age, treatment urgency, ovarian reserve and individual circumstances."
-        },
-        {
-          "id": "h_168",
-          "type": "heading",
-          "level": 3,
-          "text": "Can I Work During Neoadjuvant Treatment?"
-        },
-        {
-          "id": "p_169",
-          "type": "paragraph",
-          "text": "Some patients continue working during treatment."
-        },
-        {
-          "id": "p_170",
-          "type": "paragraph",
-          "text": "Others need reduced hours or time away from work."
-        },
-        {
-          "id": "h_171",
+          "id": "h_045",
           "type": "heading",
           "level": 2,
-          "text": "The experience depends on:"
+          "text": "Work, Travel and How Long to Stay in India"
         },
         {
-          "id": "ul_172",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Treatment regimen",
-            "Side effects",
-            "Type of work",
-            "Travel requirements",
-            "Recovery between treatment cycles"
-          ]
-        },
-        {
-          "id": "p_173",
+          "id": "p_046",
           "type": "paragraph",
-          "text": "If you are travelling to India, discuss the expected treatment schedule before making travel and accommodation arrangements."
+          "text": "Some patients continue working; others need reduced hours. The experience depends on the regimen, side effects, type of work and recovery between cycles. There is no single stay length. Some international patients travel for consultation, staging and planning and then return home for part of systemic treatment. Others remain in India for several cycles. The decision depends on the schedule, visa, home-country oncology support, drug availability, monitoring, cost and preference. See the [international-patient guide](/blogs/breast-cancer-treatment-india-international-patients) and the [cost guide](/blogs/breast-cancer-treatment-cost-in-india)."
         },
         {
-          "id": "h_174",
-          "type": "heading",
-          "level": 3,
-          "text": "How Long Do Patients Stay in India for Neoadjuvant Treatment?"
-        },
-        {
-          "id": "p_175",
+          "id": "p_047",
           "type": "paragraph",
-          "text": "There is no single answer."
+          "text": "Indian cancer centres provide multidisciplinary treatment including medical oncology, breast surgery, radiation oncology, pathology and imaging. Planning can often begin with a remote review of the biopsy, immunohistochemistry, imaging, previous records and medical history. Hospitals in [Delhi NCR](/hospitals/India/Delhi-NCR) and [Mumbai](/hospitals/India/Mumbai) can confirm cycle timing."
         },
         {
-          "id": "p_176",
-          "type": "paragraph",
-          "text": "Some international patients travel to India for an initial consultation, staging and treatment planning and then return home for part of their systemic treatment."
-        },
-        {
-          "id": "p_177",
-          "type": "paragraph",
-          "text": "Others choose to remain in India for several cycles."
-        },
-        {
-          "id": "p_178",
+          "id": "p_048",
           "type": "paragraph",
           "text": "[WhatsApp +91 90443 46292 your records before travel](https://wa.me/919044346292?text=I%20would%20like%20to%20send%20my%20pathology%20and%20imaging%20for%20a%20neoadjuvant%20treatment%20plan%20in%20India.)"
         },
         {
-          "id": "h_179",
+          "id": "h_049",
           "type": "heading",
           "level": 2,
-          "text": "The decision depends on:"
+          "text": "How Much Does Neoadjuvant Treatment Cost in India?"
         },
         {
-          "id": "ul_180",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Treatment schedule",
-            "Visa arrangements",
-            "Home-country oncology support",
-            "Drug availability",
-            "Monitoring requirements",
-            "Financial considerations",
-            "Patient preference"
-          ]
-        },
-        {
-          "id": "p_181",
+          "id": "p_050",
           "type": "paragraph",
-          "text": "Before travelling, it is worth discussing whether the entire treatment needs to be administered in India."
+          "text": "There is no meaningful single price. Expenses may include consultation, pathology review, imaging, [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy), [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy), [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy), blood tests, infusion charges, supportive medicines, day-care services, [surgery](/costs/India/Surgical-Oncology/Mastectomy) after systemic treatment and radiation when indicated. Medicines can account for a substantial part of the cost, particularly when targeted therapies or immunotherapy are involved. A reliable estimate should be prepared after reviewing the pathology and plan."
         },
         {
-          "id": "h_182",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Neoadjuvant Treatment Be Given in India?"
-        },
-        {
-          "id": "p_183",
-          "type": "paragraph",
-          "text": "Yes."
-        },
-        {
-          "id": "p_184",
-          "type": "paragraph",
-          "text": "Indian cancer centers provide multidisciplinary breast cancer treatment that can include medical oncology, breast surgery, radiation oncology, pathology and diagnostic imaging."
-        },
-        {
-          "id": "p_185",
-          "type": "paragraph",
-          "text": "The exact regimen depends on the patient's cancer subtype and stage."
-        },
-        {
-          "id": "h_186",
+          "id": "h_051",
           "type": "heading",
           "level": 2,
-          "text": "For international patients, treatment planning can often begin with a remote review of:"
+          "text": "What Should International Patients Bring?"
         },
         {
-          "id": "ul_187",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Biopsy report",
-            "Immunohistochemistry",
-            "Imaging",
-            "Previous treatment records",
-            "Medical history"
-          ]
-        },
-        {
-          "id": "p_188",
+          "id": "p_052",
           "type": "paragraph",
-          "text": "The treating oncologist then decides whether further testing is required after arrival."
+          "text": "Bring the biopsy report, ER, PR, HER2 and Ki-67 results, genomic tests if performed, mammogram, ultrasound, MRI, CT or PET-CT files, previous consultation notes, medication list, medical history, previous cancer-treatment records and genetic reports if available. If treatment has already started, also bring drug names, doses, dates, number of cycles completed, response information and side-effect records."
         },
         {
-          "id": "h_189",
-          "type": "heading",
-          "level": 3,
-          "text": "How Much Does Neoadjuvant Breast Cancer Treatment Cost in India?"
-        },
-        {
-          "id": "p_190",
-          "type": "paragraph",
-          "text": "There is no meaningful single price for neoadjuvant treatment."
-        },
-        {
-          "id": "p_191",
-          "type": "paragraph",
-          "text": "The total cost depends on the treatment regimen and how long treatment continues."
-        },
-        {
-          "id": "h_192",
-          "type": "heading",
-          "level": 2,
-          "text": "Expenses may include:"
-        },
-        {
-          "id": "ul_193",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Oncology consultation",
-            "Pathology review",
-            "Additional testing",
-            "Imaging",
-            "Chemotherapy",
-            "Targeted therapy",
-            "Immunotherapy",
-            "Blood tests",
-            "Infusion charges",
-            "Supportive medicines",
-            "Hospital or day-care services",
-            "Surgery after systemic treatment",
-            "Radiation therapy when indicated"
-          ]
-        },
-        {
-          "id": "p_194",
-          "type": "paragraph",
-          "text": "The medicines can account for a substantial part of the overall treatment cost, particularly when targeted therapies or immunotherapy are involved."
-        },
-        {
-          "id": "p_195",
-          "type": "paragraph",
-          "text": "For an international patient, a reliable estimate should therefore be prepared after reviewing the pathology and treatment plan, rather than using a generic online figure."
-        },
-        {
-          "id": "h_196",
-          "type": "heading",
-          "level": 3,
-          "text": "What Should International Patients Bring to India?"
-        },
-        {
-          "id": "p_197",
-          "type": "paragraph",
-          "text": "If you are seeking neoadjuvant treatment in India, bring as much original medical documentation as possible."
-        },
-        {
-          "id": "ul_198",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Pathology",
-            "Biopsy report",
-            "ER report",
-            "PR report",
-            "HER2 report",
-            "Ki-67 report",
-            "Molecular/genomic tests if performed",
-            "Imaging",
-            "Mammogram",
-            "Ultrasound",
-            "Breast MRI",
-            "CT or PET-CT if performed",
-            "Original imaging files",
-            "Medical records",
-            "Previous consultation notes",
-            "Medication list",
-            "Medical history",
-            "Previous cancer treatment records",
-            "Genetic testing reports, if available"
-          ]
-        },
-        {
-          "id": "h_199",
-          "type": "heading",
-          "level": 2,
-          "text": "If treatment has already started, also bring:"
-        },
-        {
-          "id": "ul_200",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Drug names",
-            "Doses",
-            "Dates of treatment",
-            "Number of cycles completed",
-            "Treatment response information",
-            "Side-effect records"
-          ]
-        },
-        {
-          "id": "p_201",
-          "type": "paragraph",
-          "text": "This can save valuable time when an Indian oncology team reviews your case."
-        },
-        {
-          "id": "h_202",
+          "id": "h_053",
           "type": "heading",
           "level": 2,
           "text": "Questions to Ask Your Oncologist"
         },
         {
-          "id": "h_203",
-          "type": "heading",
-          "level": 2,
-          "text": "Before starting neoadjuvant treatment, consider asking:"
-        },
-        {
-          "id": "ul_204",
+          "id": "ul_054",
           "type": "list",
           "style": "ul",
           "items": [
-            "About the reason",
-            "Why do I need treatment before surgery?",
-            "Would surgery first be an alternative?",
-            "What is the goal of neoadjuvant treatment in my case?",
-            "About the cancer",
-            "What is my breast cancer subtype?",
-            "What are my ER, PR and HER2 results?",
-            "Are my lymph nodes involved?",
-            "What is my clinical stage?",
-            "About treatment",
-            "Which medicines will I receive?",
-            "How many cycles are planned?",
-            "How will we monitor my response?",
-            "What side effects should I expect?",
-            "About surgery",
-            "Could treatment make lumpectomy possible?",
-            "Will I still need lymph-node surgery?",
-            "When will surgery take place?",
-            "Will I need radiation afterward?",
-            "About fertility and travel",
-            "Could treatment affect fertility?",
-            "Should I see a fertility specialist before starting?",
-            "Can some treatment be completed in my home country?",
-            "How long should I expect to stay in India?",
-            "Neoadjuvant Therapy vs Adjuvant Therapy"
+            "Why do I need treatment before surgery, and would surgery first be an alternative?",
+            "What is my subtype, ER/PR/HER2 result, nodal status and clinical stage?",
+            "Which medicines will I receive, how many cycles, and how will we monitor response?",
+            "Could treatment make lumpectomy possible? Will I still need lymph-node surgery?",
+            "When will surgery take place, and will I need radiation afterward?",
+            "Could treatment affect fertility? Can some treatment be completed in my home country?",
+            "How long should I expect to stay in India?"
           ]
         },
         {
-          "id": "p_205",
-          "type": "paragraph",
-          "text": "These terms are easy to confuse."
-        },
-        {
-          "id": "p_206",
-          "type": "paragraph",
-          "text": "Neoadjuvant therapy is given before surgery."
-        },
-        {
-          "id": "p_207",
-          "type": "paragraph",
-          "text": "Adjuvant therapy is given after surgery."
-        },
-        {
-          "id": "p_208",
-          "type": "paragraph",
-          "text": "Both are used to reduce the risk of breast cancer returning and to treat cancer cells that may exist beyond the primary tumor."
-        },
-        {
-          "id": "p_209",
-          "type": "paragraph",
-          "text": "A patient may receive both."
-        },
-        {
-          "id": "h_210",
+          "id": "h_055",
           "type": "heading",
           "level": 2,
-          "text": "For example:"
+          "text": "Neoadjuvant Therapy vs Adjuvant Therapy"
         },
         {
-          "id": "h_211",
-          "type": "heading",
-          "level": 2,
-          "text": "Diagnosis → Neoadjuvant treatment → Surgery → Additional systemic treatment → Radiation when indicated"
-        },
-        {
-          "id": "p_212",
+          "id": "p_056",
           "type": "paragraph",
-          "text": "The exact sequence varies by cancer subtype and individual circumstances."
+          "text": "Neoadjuvant therapy is given before surgery. Adjuvant therapy is given after surgery. Both are used to reduce the risk of breast cancer returning and to treat cancer cells that may exist beyond the primary tumour. A patient may receive both: diagnosis → neoadjuvant treatment → surgery → additional systemic treatment → radiation when indicated. The exact sequence varies by subtype."
         },
         {
-          "id": "h_213",
-          "type": "heading",
-          "level": 3,
-          "text": "Does Everyone Need Treatment Before Surgery?"
-        },
-        {
-          "id": "p_214",
+          "id": "p_057",
           "type": "paragraph",
-          "text": "No."
+          "text": "Not everyone needs treatment before surgery. For some patients, surgery is the appropriate first treatment. The choice depends on tumour size, lymph-node status, ER/PR, HER2, grade, subtype, clinical stage, surgical feasibility and patient-specific factors."
         },
         {
-          "id": "p_215",
-          "type": "paragraph",
-          "text": "For some patients, surgery is the appropriate first treatment."
-        },
-        {
-          "id": "h_216",
-          "type": "heading",
-          "level": 2,
-          "text": "The choice between surgery first and neoadjuvant treatment depends on factors such as:"
-        },
-        {
-          "id": "ul_217",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Tumor size",
-            "Lymph-node status",
-            "ER/PR status",
-            "HER2 status",
-            "Grade",
-            "Cancer subtype",
-            "Clinical stage",
-            "Surgical feasibility",
-            "Patient-specific factors"
-          ]
-        },
-        {
-          "id": "p_218",
-          "type": "paragraph",
-          "text": "NCI describes the decision about systemic therapy before or after surgery as an individualized part of treatment planning for stages I–III breast cancer."
-        },
-        {
-          "id": "h_219",
-          "type": "heading",
-          "level": 2,
-          "text": "Final Takeaway"
-        },
-        {
-          "id": "p_220",
-          "type": "paragraph",
-          "text": "Neoadjuvant therapy has changed the way many breast cancers are treated."
-        },
-        {
-          "id": "p_221",
-          "type": "paragraph",
-          "text": "Instead of removing the tumor first and giving systemic treatment afterward, some patients begin with drug treatment and undergo surgery later."
-        },
-        {
-          "id": "p_222",
-          "type": "paragraph",
-          "text": "This approach can shrink tumors, sometimes make breast-conserving surgery possible, treat microscopic disease early and provide valuable information about how the cancer responds to treatment."
-        },
-        {
-          "id": "p_223",
-          "type": "paragraph",
-          "text": "It is particularly relevant for some patients with HER2-positive, triple-negative, high-grade, larger or lymph-node-positive breast cancers, as well as inflammatory breast cancer."
-        },
-        {
-          "id": "p_224",
-          "type": "paragraph",
-          "text": "But neoadjuvant treatment is not automatically better or necessary for every patient."
-        },
-        {
-          "id": "p_225",
-          "type": "paragraph",
-          "text": "The right sequence depends on the pathology, biomarkers, imaging, stage and surgical considerations."
-        },
-        {
-          "id": "p_226",
-          "type": "paragraph",
-          "text": "For international patients coming to India, one of the most useful things you can do before travelling is to have your biopsy, immunohistochemistry, imaging and previous medical records reviewed by the treating team."
-        },
-        {
-          "id": "p_227",
-          "type": "paragraph",
-          "text": "That allows the oncologist and breast surgeon to determine whether treatment should begin before surgery and what the overall treatment pathway may look like."
-        },
-        {
-          "id": "h_228",
+          "id": "h_058",
           "type": "heading",
           "level": 2,
           "text": "Frequently Asked Questions"
         },
         {
-          "id": "h_229",
+          "id": "h_059",
           "type": "heading",
           "level": 3,
           "text": "What is neoadjuvant therapy for breast cancer?"
         },
         {
-          "id": "p_230",
+          "id": "p_060",
           "type": "paragraph",
-          "text": "Neoadjuvant therapy is treatment given before breast cancer surgery. It may include chemotherapy, targeted therapy, immunotherapy or, in selected situations, hormone therapy."
+          "text": "It is treatment given before breast cancer surgery. It may include chemotherapy, targeted therapy, immunotherapy or, in selected situations, hormone therapy."
         },
         {
-          "id": "h_231",
+          "id": "h_061",
           "type": "heading",
           "level": 3,
           "text": "Why is treatment given before surgery?"
         },
         {
-          "id": "p_232",
+          "id": "p_062",
           "type": "paragraph",
-          "text": "It may shrink the tumor, make breast-conserving surgery possible, treat cancer cells elsewhere in the body early, and show how the tumor responds to treatment."
+          "text": "It may shrink the tumour, make breast-conserving surgery possible, treat cancer cells elsewhere in the body early, and show how the tumour responds."
         },
         {
-          "id": "h_233",
+          "id": "h_063",
           "type": "heading",
           "level": 3,
           "text": "Which breast cancers commonly receive neoadjuvant treatment?"
         },
         {
-          "id": "p_234",
+          "id": "p_064",
           "type": "paragraph",
-          "text": "It may be considered for larger tumors, lymph-node-positive disease, high-grade cancers, HER2-positive breast cancer, triple-negative breast cancer and inflammatory breast cancer. The decision is individualized."
+          "text": "It may be considered for larger tumours, node-positive disease, high-grade cancers, HER2-positive, triple-negative and inflammatory breast cancer."
         },
         {
-          "id": "h_235",
+          "id": "h_065",
           "type": "heading",
           "level": 3,
           "text": "Is neoadjuvant therapy the same as chemotherapy?"
         },
         {
-          "id": "p_236",
+          "id": "p_066",
           "type": "paragraph",
-          "text": "No. Chemotherapy is one type of neoadjuvant treatment. Depending on the cancer subtype, treatment before surgery may also include HER2-targeted therapy, immunotherapy or hormone therapy."
+          "text": "No. Chemotherapy is one type. Treatment before surgery may also include HER2-targeted therapy, immunotherapy or hormone therapy."
         },
         {
-          "id": "h_237",
+          "id": "h_067",
           "type": "heading",
           "level": 3,
           "text": "Can neoadjuvant treatment shrink a tumor enough to avoid mastectomy?"
         },
         {
-          "id": "p_238",
+          "id": "p_068",
           "type": "paragraph",
-          "text": "Sometimes. Tumor shrinkage can make breast-conserving surgery possible for some patients who initially were not suitable candidates."
+          "text": "Sometimes. Shrinkage can make breast-conserving surgery possible for some patients who initially were not suitable candidates."
         },
         {
-          "id": "h_239",
+          "id": "h_069",
           "type": "heading",
           "level": 3,
           "text": "Does everyone need chemotherapy before breast cancer surgery?"
         },
         {
-          "id": "p_240",
+          "id": "p_070",
           "type": "paragraph",
-          "text": "No. Some patients are better suited to surgery first, while others may benefit from treatment before surgery."
+          "text": "No. Some patients are better suited to surgery first."
         },
         {
-          "id": "h_241",
+          "id": "h_071",
           "type": "heading",
           "level": 3,
           "text": "How long does neoadjuvant treatment take?"
         },
         {
-          "id": "p_242",
+          "id": "p_072",
           "type": "paragraph",
-          "text": "The duration depends on the cancer subtype, treatment regimen and response. Some regimens involve several cycles over a number of months."
+          "text": "The duration depends on subtype, regimen and response. Some regimens involve several cycles over a number of months."
         },
         {
-          "id": "h_243",
+          "id": "h_073",
           "type": "heading",
           "level": 3,
           "text": "What happens if the tumor disappears before surgery?"
         },
         {
-          "id": "p_244",
+          "id": "p_074",
           "type": "paragraph",
-          "text": "Imaging may show no detectable tumor, but that does not automatically mean surgery can be skipped. The surgical plan depends on the cancer type, treatment response and current evidence."
+          "text": "Imaging may show no detectable tumour, but that does not automatically mean surgery can be skipped."
         },
         {
-          "id": "h_245",
+          "id": "h_075",
           "type": "heading",
           "level": 3,
           "text": "What is pathological complete response?"
         },
         {
-          "id": "p_246",
+          "id": "p_076",
           "type": "paragraph",
-          "text": "It means that no residual invasive cancer is found in the breast and sampled lymph nodes when the surgical tissue is examined under a microscope after neoadjuvant treatment. The exact definition can vary by study."
+          "text": "It means no residual invasive cancer is found in the breast and sampled lymph nodes when the surgical tissue is examined under a microscope."
         },
         {
-          "id": "h_247",
+          "id": "h_077",
           "type": "heading",
           "level": 3,
           "text": "Can neoadjuvant therapy be given in India?"
         },
         {
-          "id": "p_248",
+          "id": "p_078",
           "type": "paragraph",
-          "text": "Yes. Breast cancer centers in India use multidisciplinary treatment approaches that can include medical oncology, breast surgery, radiation oncology, pathology and diagnostic imaging."
+          "text": "Yes. Indian cancer centres use multidisciplinary approaches that include medical oncology, breast surgery, radiation, pathology and imaging."
         },
         {
-          "id": "h_249",
+          "id": "h_079",
           "type": "heading",
-          "level": 3,
-          "text": "What Is Neoadjuvant Therapy?"
+          "level": 2,
+          "text": "Neoadjuvant Therapy: Key Takeaways"
         },
         {
-          "id": "p_250",
+          "id": "p_080",
           "type": "paragraph",
-          "text": "Neoadjuvant therapy means treatment given before the main local treatment, usually surgery."
+          "text": "Neoadjuvant therapy can shrink tumours, sometimes make breast-conserving surgery possible, treat microscopic disease early and show how the cancer responds. It is particularly relevant for some HER2-positive, triple-negative, high-grade, larger or lymph-node-positive cancers, as well as inflammatory breast cancer. It is not automatically better or necessary for every patient. For international patients, have the biopsy, immunohistochemistry, imaging and previous records reviewed before travelling so the oncologist and breast surgeon can determine the sequence."
         },
         {
-          "id": "btn_251",
+          "id": "btn_081",
           "type": "button",
           "label": "Start the Breast Cancer Treatment in India pathway",
           "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
-          "id": "p_252",
+          "id": "p_082",
           "type": "paragraph",
           "text": "[WhatsApp +91 90443 46292 to plan the next step](https://wa.me/919044346292?text=Please%20help%20me%20plan%20treatment%20before%20breast%20cancer%20surgery%20in%20India.)"
         },
         {
-          "id": "h_253",
+          "id": "h_083",
           "type": "heading",
           "level": 2,
           "text": "GAF Healthcare Resources"
         },
         {
-          "id": "p_254",
+          "id": "p_084",
           "type": "paragraph",
-          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Hormone therapy side effects](/blogs/breast-cancer-hormone-therapy-side-effects)\n- [Chemotherapy side effects](/blogs/breast-cancer-chemotherapy-side-effects)\n- [Targeted therapy side effects](/blogs/breast-cancer-targeted-therapy-side-effects)\n- [Radiation therapy](/blogs/radiation-therapy-for-breast-cancer)\n- [Diagnosis](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)\n- [International patients](/blogs/breast-cancer-treatment-india-international-patients)\n- [Chemotherapy doctors](/doctors/India/Medical-Oncology/Chemotherapy) · [Hormone therapy doctors](/doctors/India/Medical-Oncology/Hormone-Therapy)\n- [Radiation oncology doctors](/doctors/India/Radiation-Oncology)\n- [Breast-conserving surgery doctors](/doctors/India/Surgical-Oncology/Breast-Conserving-Surgery)"
+          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Chemotherapy](/blogs/chemotherapy-for-breast-cancer-in-india) · [side effects](/blogs/breast-cancer-chemotherapy-side-effects)\n- [HER2-positive treatment](/blogs/her2-positive-breast-cancer-treatment-india)\n- [Hormone therapy](/blogs/hormone-therapy-breast-cancer-india)\n- [Surgery](/blogs/breast-cancer-surgery-in-india) · [lumpectomy vs mastectomy](/blogs/lumpectomy-vs-mastectomy)\n- [Chemotherapy doctors](/doctors/India/Medical-Oncology/Chemotherapy) · [cost](/costs/India/Medical-Oncology/Chemotherapy)\n- [Immunotherapy doctors](/doctors/India/Medical-Oncology/Immunotherapy) · [cost](/costs/India/Medical-Oncology/Immunotherapy)\n- [Targeted therapy doctors](/doctors/India/Medical-Oncology/Targeted-Therapy) · [cost](/costs/India/Medical-Oncology/Targeted-Therapy)\n- [Breast-conserving surgery doctors](/doctors/India/Surgical-Oncology/Breast-Conserving-Surgery)\n- [Mastectomy doctors](/doctors/India/Surgical-Oncology/Mastectomy)\n- [International patients](/blogs/breast-cancer-treatment-india-international-patients)"
         }
       ]
     },
@@ -21983,6 +20903,10 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Neoadjuvant Therapy",
+          "href": "/blogs/breast-cancer-neoadjuvant-therapy"
         },
         {
           "label": "Chemotherapy Side Effects",
