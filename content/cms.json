@@ -3085,1813 +3085,673 @@
         {
           "label": "Surgery",
           "href": "/blogs/breast-cancer-surgery-in-india"
+        },
+        {
+          "label": "International patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
         }
       ],
       "blocks": [
         {
           "id": "html_001",
           "type": "html",
-          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>What is invasive lobular carcinoma?</strong> Invasive lobular carcinoma is a type of invasive breast cancer that begins in the milk-producing lobules and grows into surrounding breast tissue.</p><p class=\"article-quick-answer__body\"><strong>How common is ILC?</strong> ILC accounts for approximately 10% to 15% of invasive breast cancers.</p><p class=\"article-quick-answer__body\"><strong>Does ILC cause a lump?</strong> Not always. ILC can grow in thin strands through breast tissue rather than forming a distinct lump, so some patients notice thickening, fullness or a subtle change instead.</p><p class=\"article-quick-answer__body\"><strong>Is ILC harder to detect on a mammogram?</strong> It can be. Its diffuse growth pattern may make it less obvious on mammography or ultrasound than a more typical mass-forming breast cancer.</p><p class=\"article-quick-answer__body\"><strong>Is invasive lobular carcinoma usually hormone receptor-positive?</strong> Many ILCs are hormone receptor-positive, although individual tumors can have different biomarker profiles.</p><p class=\"article-quick-answer__body\"><strong>How is ILC treated?</strong> Treatment depends on stage and tumor biology. Surgery is commonly used, with radiation, hormone therapy, chemotherapy or targeted therapy added when indicated.</p><p class=\"article-quick-answer__body\"><strong>Is chemotherapy always needed for ILC?</strong> No. Chemotherapy is not automatically required. The decision depends on factors including stage, grade, biomarkers and the overall risk profile.</p><p class=\"article-quick-answer__body\"><strong>Can ILC affect both breasts?</strong> It is more likely to involve both breasts than many other breast cancer types.</p><p class=\"article-quick-answer__body\"><strong>Can ILC spread to other organs?</strong> Yes. Like other invasive breast cancers, ILC can spread through the lymphatic system or bloodstream. Its pattern of spread can differ from invasive ductal carcinoma.</p><p class=\"article-quick-answer__body\"><strong>How much does invasive lobular carcinoma treatment cost in India?</strong> There is no single price. The cost depends on the stage, surgery, pathology, radiation, medicines and whether chemotherapy or targeted treatment is required. A case-specific estimate is more useful than a generic figure.</p><p class=\"article-quick-answer__body\"><strong>What Is Invasive Lobular Carcinoma?</strong> The breast contains milk-producing glands called lobules.</p></aside>"
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>What is invasive lobular carcinoma?</strong> Invasive lobular carcinoma is a type of invasive breast cancer that begins in the milk-producing lobules and grows into surrounding breast tissue.</p><p class=\"article-quick-answer__body\"><strong>How common is ILC?</strong> ILC accounts for approximately 10% to 15% of invasive breast cancers.</p><p class=\"article-quick-answer__body\"><strong>Does ILC cause a lump?</strong> Not always. ILC can grow in thin strands through breast tissue rather than forming a distinct lump, so some patients notice thickening, fullness or a subtle change instead.</p><p class=\"article-quick-answer__body\"><strong>Is ILC harder to detect on a mammogram?</strong> It can be. Its diffuse growth pattern may make it less obvious on mammography or ultrasound than a more typical mass-forming breast cancer.</p><p class=\"article-quick-answer__body\"><strong>Is invasive lobular carcinoma usually hormone receptor-positive?</strong> Many ILCs are hormone receptor-positive, although individual tumors can have different biomarker profiles.</p><p class=\"article-quick-answer__body\"><strong>How is ILC treated?</strong> Treatment depends on stage and tumor biology. Surgery is commonly used, with radiation, hormone therapy, chemotherapy or targeted therapy added when indicated.</p><p class=\"article-quick-answer__body\"><strong>Is chemotherapy always needed for ILC?</strong> No. Chemotherapy is not automatically required. The decision depends on factors including stage, grade, biomarkers and the overall risk profile.</p><p class=\"article-quick-answer__body\"><strong>Can ILC affect both breasts?</strong> It is more likely to involve both breasts than many other breast cancer types.</p><p class=\"article-quick-answer__body\"><strong>Can ILC spread to other organs?</strong> Yes. Like other invasive breast cancers, ILC can spread through the lymphatic system or bloodstream. Its pattern of spread can differ from invasive ductal carcinoma.</p><p class=\"article-quick-answer__body\"><strong>How much does invasive lobular carcinoma treatment cost in India?</strong> There is no single price. The cost depends on the stage, surgery, pathology, radiation, medicines and whether chemotherapy or targeted treatment is required. A case-specific estimate is more useful than a generic figure.</p></aside>"
         },
         {
           "id": "p_002",
           "type": "paragraph",
-          "text": "Not every breast cancer forms a clear, easily felt lump. Invasive lobular carcinoma (ILC) is a good example. ILC begins in the milk-producing lobules of the breast and then grows into the surrounding breast tissue. It accounts for roughly 10% to 15% of invasive breast cancers and has some features that make it different from the more common invasive ductal carcinoma. One of the biggest challenges is that ILC may grow in a diffuse or single-file pattern rather than forming a firm, round mass. As a result, some patients notice only subtle changes in the breast, and the cancer can sometimes be harder to see on routine imaging. The good news is that ILC is treatable. Treatment is based primarily on the stage, tumor grade, ER/PR status, HER2 status and other clinical factors. Depending on the individual case, treatment may include surgery, [radiation therapy](/blogs/radiation-therapy-for-breast-cancer), [hormone therapy](/blogs/breast-cancer-hormone-therapy-side-effects), [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) or targeted treatment. For international patients considering treatment in India, the first step should be a careful review of the pathology and imaging. With lobular cancer, understanding exactly how extensively the tumor involves the breast can be particularly important when planning surgery. This guide supports the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) pathway."
+          "text": "Not every breast cancer forms a clear, easily felt lump. Invasive lobular carcinoma (ILC) is a good example. ILC begins in the milk-producing lobules and then grows into the surrounding tissue. It accounts for roughly 10% to 15% of invasive breast cancers and has features that make it different from the more common invasive ductal carcinoma. This guide supports the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) pathway and the [pathology report](/blogs/breast-cancer-pathology-report-explained) explainer."
         },
         {
           "id": "btn_003",
           "type": "button",
-          "label": "Ask GAF about invasive lobular carcinoma",
+          "label": "Ask GAF to review your ILC pathology and imaging",
           "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
           "id": "p_004",
           "type": "paragraph",
-          "text": "[WhatsApp +91 90443 46292 with your records](https://wa.me/919044346292?text=Please%20review%20my%20records%20and%20advise%20on%20invasive%20lobular%20carcinoma%20treatment%20in%20India.)"
+          "text": "[WhatsApp +91 90443 46292 with your records](https://wa.me/919044346292?text=Please%20review%20my%20invasive%20lobular%20carcinoma%20pathology%20and%20imaging%20and%20advise%20on%20treatment%20in%20India.)"
         },
         {
           "id": "img_005",
           "type": "image",
           "src": "/uploads/articles/ilc-consult-visual.webp",
           "alt": "Invasive lobular carcinoma showing cancer cells spreading through the breast lobules and surrounding tissue",
-          "caption": "Lobular carcinoma can be harder to feel and harder to see on mammography than ductal cancers."
+          "caption": "ILC may cause thickening or a subtle change rather than a firm, round lump. Persistent changes still need assessment."
         },
         {
-          "id": "p_006",
-          "type": "paragraph",
-          "text": "These lobules connect to the milk ducts, which carry milk toward the nipple."
+          "id": "h_006",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Invasive Lobular Carcinoma?"
         },
         {
           "id": "p_007",
           "type": "paragraph",
-          "text": "Invasive lobular carcinoma begins in the cells lining these lobules."
+          "text": "The breast contains milk-producing glands called lobules. These lobules connect to the milk ducts, which carry milk toward the nipple. Invasive lobular carcinoma begins in the cells lining these lobules. Invasive means the cancer cells have moved beyond the lobule where they started and entered the surrounding breast tissue. This is different from lobular carcinoma in situ (LCIS), which remains within the lobules and is generally considered a marker of increased risk rather than an invasive cancer itself. That distinction is important when reading a pathology report."
         },
         {
-          "id": "p_008",
-          "type": "paragraph",
-          "text": "The word invasive means that the cancer cells have moved beyond the lobule where they started and entered the surrounding breast tissue."
-        },
-        {
-          "id": "p_009",
-          "type": "paragraph",
-          "text": "This is different from lobular carcinoma in situ (LCIS)."
-        },
-        {
-          "id": "p_010",
-          "type": "paragraph",
-          "text": "LCIS remains within the lobules and is generally considered a marker of increased breast cancer risk rather than an invasive breast cancer itself."
-        },
-        {
-          "id": "p_011",
-          "type": "paragraph",
-          "text": "That distinction is important when reading a pathology report."
-        },
-        {
-          "id": "h_012",
+          "id": "h_008",
           "type": "heading",
           "level": 2,
           "text": "ILC vs Invasive Ductal Carcinoma"
         },
         {
-          "id": "p_013",
+          "id": "p_009",
           "type": "paragraph",
-          "text": "The two names describe where the cancer began."
+          "text": "The two names describe where the cancer began.\n\n| Feature | Invasive lobular carcinoma | Invasive ductal carcinoma |\n| --- | --- | --- |\n| Starting point | Milk-producing lobules | Milk ducts |\n| Growth pattern | Often single-file or diffuse | More often forms a defined mass |\n| Frequency | About 10–15% of invasive breast cancers | Most common invasive breast cancer |\n| Palpable lump | May be subtle or absent | More commonly forms a noticeable mass |\n| Hormone receptors | Frequently hormone receptor-positive | Variable |\n| Imaging | Can be more difficult to define | Often easier to visualise as a mass |\n| Treatment | Based on stage and biomarkers | Based on stage and biomarkers |\n\nThe differences help explain the disease, but they do not mean that every ILC behaves in exactly the same way. The patient's individual pathology and stage remain central to treatment decisions."
         },
         {
-          "id": "p_014",
+          "id": "h_010",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Does ILC Grow Differently?"
+        },
+        {
+          "id": "p_011",
           "type": "paragraph",
-          "text": "Feature\tInvasive Lobular Carcinoma\tInvasive Ductal Carcinoma Starting point\tMilk-producing lobules\tMilk ducts Growth pattern\tOften single-file or diffuse\tMore often forms a defined mass Frequency\tAbout 10–15% of invasive breast cancers\tMost common invasive breast cancer Palpable lump\tMay be subtle or absent\tMore commonly forms a noticeable mass Hormone receptors\tFrequently hormone receptor-positive\tVariable Imaging\tCan be more difficult to define\tOften easier to visualize as a mass Treatment\tBased on stage and biomarkers\tBased on stage and biomarkers"
+          "text": "One important feature of lobular cancer is loss of a cell-adhesion protein called E-cadherin. When this protein is absent, cancer cells can lose some of the normal connections that hold neighbouring cells together. The cells can grow in a more dispersed, single-file pattern instead of forming a compact mass. This helps explain why a person with ILC may have significant cancer in the breast without having an obvious hard lump."
+        },
+        {
+          "id": "h_012",
+          "type": "heading",
+          "level": 2,
+          "text": "What Are the Symptoms of ILC?"
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "ILC can be difficult to recognise because its symptoms may be subtle. Possible changes include thickening of part of the breast, fullness or swelling, a change in size or shape, a firm area that is difficult to define, skin changes, nipple inversion, nipple discharge, a change in texture, a lump in some cases, or swollen lymph nodes. Some people have no noticeable symptoms and are diagnosed through imaging. If a breast change persists, it should be assessed rather than assumed to be a normal variation."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 2,
+          "text": "Does ILC Always Cause a Lump?"
         },
         {
           "id": "p_015",
           "type": "paragraph",
-          "text": "The differences are useful for understanding the disease, but they do not mean that every ILC behaves in exactly the same way."
+          "text": "No. This is one of the most important things to understand about lobular breast cancer. ILC often grows in thin strands through the breast rather than creating a rounded tumor. Instead of saying \"I found a lump,\" a patient may describe thickening, a slight change in how the breast looks, or a firm area that does not feel like a distinct lump. These subtle changes still deserve evaluation."
         },
         {
-          "id": "p_016",
-          "type": "paragraph",
-          "text": "The patient's individual pathology and stage remain central to treatment decisions."
-        },
-        {
-          "id": "h_017",
+          "id": "h_016",
           "type": "heading",
-          "level": 3,
-          "text": "Why Does ILC Grow Differently?"
+          "level": 2,
+          "text": "Why Can ILC Be Difficult to Detect?"
         },
         {
-          "id": "p_018",
+          "id": "p_017",
           "type": "paragraph",
-          "text": "One important feature of lobular cancer is loss of a cell-adhesion protein called E-cadherin."
+          "text": "The diffuse growth pattern can make ILC less obvious on physical examination and some imaging tests. The American Cancer Society notes that ILC can be harder to feel during a breast examination or see on mammography or ultrasound because it tends to spread through the breast in thin strands. This does not mean that mammography is ineffective. It means that the entire clinical picture matters. If symptoms and imaging do not match, doctors may recommend additional evaluation."
         },
         {
-          "id": "p_019",
-          "type": "paragraph",
-          "text": "When this protein is absent, cancer cells can lose some of the normal connections that hold neighboring cells together."
+          "id": "h_018",
+          "type": "heading",
+          "level": 2,
+          "text": "Mammography, Ultrasound and MRI for ILC"
+        },
+        {
+          "id": "img_019",
+          "type": "image",
+          "src": "/uploads/articles/ilc-imaging-visual.webp",
+          "alt": "MRI used to map the extent of invasive lobular carcinoma in the body",
+          "caption": "MRI can help show how extensively ILC involves the breast when mammography and ultrasound are less clear."
         },
         {
           "id": "p_020",
           "type": "paragraph",
-          "text": "As a result, the cells can grow in a more dispersed, single-file pattern instead of forming a compact mass."
+          "text": "Mammography is commonly used to investigate breast abnormalities. ILC may not always appear as a clearly defined mass. It can instead cause architectural distortion, asymmetry, an area of increased density or subtle tissue changes. The radiologist needs to interpret the images alongside the physical examination."
         },
         {
           "id": "p_021",
           "type": "paragraph",
-          "text": "This helps explain why a person with ILC may have significant cancer in the breast without having an obvious hard lump."
+          "text": "Ultrasound can help investigate a suspicious area and examine lymph nodes. It may not fully show the extent of lobular cancer in every patient. If the clinical findings, mammogram and ultrasound do not provide a clear picture, additional imaging may be considered."
         },
         {
-          "id": "h_022",
-          "type": "heading",
-          "level": 3,
-          "text": "What Are the Symptoms of ILC?"
-        },
-        {
-          "id": "p_023",
+          "id": "p_022",
           "type": "paragraph",
-          "text": "ILC can be difficult to recognize because its symptoms may be subtle."
+          "text": "MRI can be particularly useful when doctors need to understand the extent of disease within the breast. It may help identify additional areas of cancer, the overall extent of the tumor, disease in another part of the same breast, or findings that are difficult to characterise on conventional imaging. NCI notes that the linear growth pattern of lobular carcinoma can make mammography less sensitive and increase the utility of MRI. MRI is not automatically required for every patient."
         },
         {
-          "id": "h_024",
+          "id": "h_023",
           "type": "heading",
           "level": 2,
-          "text": "Possible changes include:"
+          "text": "How Is Invasive Lobular Carcinoma Diagnosed?"
         },
         {
-          "id": "ul_025",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Thickening of part of the breast",
-            "Fullness or swelling",
-            "A change in breast size or shape",
-            "A firm area that is difficult to define",
-            "Skin changes",
-            "Nipple inversion",
-            "Nipple discharge",
-            "A change in breast texture",
-            "A lump in some cases",
-            "Swollen lymph nodes"
-          ]
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "Imaging can identify a suspicious area. The diagnosis requires tissue. A typical pathway may include clinical examination, mammography, ultrasound, MRI when appropriate, core needle biopsy, pathology examination, ER and PR testing, HER2 testing, tumor grading and staging investigations when required. The [biopsy](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2) is the key step that confirms the diagnosis."
+        },
+        {
+          "id": "btn_025",
+          "type": "button",
+          "label": "Ask whether you need MRI before surgery",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
           "id": "p_026",
           "type": "paragraph",
-          "text": "Some people have no noticeable symptoms and are diagnosed through breast imaging."
+          "text": "[WhatsApp +91 90443 46292 about imaging](https://wa.me/919044346292?text=Please%20advise%20whether%20I%20need%20MRI%20in%20addition%20to%20mammogram%20and%20ultrasound%20for%20invasive%20lobular%20carcinoma%20in%20India.)"
         },
         {
-          "id": "p_027",
-          "type": "paragraph",
-          "text": "If a breast change persists, it should be assessed rather than assuming that it is simply a normal variation."
-        },
-        {
-          "id": "h_028",
+          "id": "h_027",
           "type": "heading",
-          "level": 3,
-          "text": "Does ILC Always Cause a Lump?"
+          "level": 2,
+          "text": "What Does the Pathology Report Tell You?"
         },
         {
-          "id": "p_029",
+          "id": "p_028",
           "type": "paragraph",
-          "text": "No."
+          "text": "The [pathology report](/blogs/breast-cancer-pathology-report-explained) may confirm histological type (lobular, ductal or another type), grade, ER and PR status, HER2 status, the size of the invasive component, lymphovascular invasion and lymph-node status if nodes were removed. These findings are interpreted together rather than individually."
+        },
+        {
+          "id": "h_029",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Invasive Lobular Carcinoma Usually ER-Positive?"
         },
         {
           "id": "p_030",
           "type": "paragraph",
-          "text": "This is one of the most important things to understand about lobular breast cancer."
+          "text": "Many ILCs are hormone receptor-positive. The American Cancer Society notes that ILCs are usually hormone receptor-positive and generally tend to grow more slowly than many other breast cancers. \"Usually\" does not mean \"always.\" A patient's own pathology report determines whether [hormone therapy](/blogs/hormone-therapy-breast-cancer-india) is relevant. See [ER, PR and HER2](/blogs/er-pr-her2-breast-cancer-treatment-india)."
         },
         {
-          "id": "p_031",
-          "type": "paragraph",
-          "text": "ILC often grows in thin strands through the breast rather than creating a rounded tumor."
-        },
-        {
-          "id": "h_032",
+          "id": "h_031",
           "type": "heading",
           "level": 2,
-          "text": "Instead of saying:"
+          "text": "Does HER2 Matter in ILC?"
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "Yes. Although many ILCs are hormone receptor-positive and HER2-negative, HER2 testing is still important. NCI identifies ER, PR and HER2 among the key biomarkers used to classify breast cancers and guide treatment. If a tumor is HER2-positive, [HER2-targeted therapy](/blogs/her2-positive-breast-cancer-treatment-india) may become part of treatment."
         },
         {
           "id": "h_033",
           "type": "heading",
           "level": 2,
-          "text": "\"I found a lump.\""
+          "text": "How Is ILC Staged?"
         },
         {
-          "id": "h_034",
-          "type": "heading",
-          "level": 2,
-          "text": "A patient may describe:"
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "The [stage](/blogs/breast-cancer-stages-0-1-2-3-4) describes how far the cancer has progressed. Staging considers tumor size, lymph-node involvement, distant spread, grade, ER, PR and HER2. NCI distinguishes between clinical prognostic staging before treatment and pathological prognostic staging after surgery. Two patients with the same histological type can receive very different treatment plans."
         },
         {
           "id": "h_035",
           "type": "heading",
           "level": 2,
-          "text": "\"This part of my breast feels thicker.\""
+          "text": "Does ILC Need Genetic Testing?"
         },
         {
-          "id": "h_036",
-          "type": "heading",
-          "level": 2,
-          "text": "Or:"
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "Genetic testing is not automatically required simply because a tumor is lobular. Some patients may be offered hereditary cancer testing based on age at diagnosis, family history, multiple cancers in the family, a personal history of certain cancers, bilateral breast cancer or other clinical features. The decision should be based on established genetic-testing criteria rather than the word \"lobular\" alone."
         },
         {
           "id": "h_037",
           "type": "heading",
           "level": 2,
-          "text": "\"My breast looks slightly different.\""
+          "text": "How Is Early-Stage ILC Treated?"
         },
         {
-          "id": "h_038",
+          "id": "img_038",
+          "type": "image",
+          "src": "/uploads/articles/ilc-surgery-visual.webp",
+          "alt": "Surgical planning for invasive lobular carcinoma after imaging and pathology review",
+          "caption": "Lobular histology by itself does not automatically require mastectomy. The extent of disease in the breast guides the operation."
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "For operable ILC, [surgery](/blogs/breast-cancer-surgery-in-india) is often an important part of treatment. Options may include breast-conserving surgery, mastectomy, sentinel lymph-node biopsy and other lymph-node procedures when indicated. The choice depends on the extent of disease, tumor size, imaging findings, lymph-node status and other clinical factors."
+        },
+        {
+          "id": "h_040",
           "type": "heading",
           "level": 2,
-          "text": "Or:"
+          "text": "Can ILC Be Treated With Lumpectomy?"
         },
         {
-          "id": "h_039",
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "Yes. Lobular histology by itself does not automatically require mastectomy. [Breast-conserving surgery](/blogs/lumpectomy-vs-mastectomy) can be considered when the cancer can be removed with appropriate margins while preserving an acceptable amount of breast tissue. NCI notes that all histological types of invasive breast cancer may be treated with breast-conserving surgery followed by radiation when appropriate. ILC can sometimes be more extensive than it initially appears, which is one reason careful imaging before surgery matters."
+        },
+        {
+          "id": "h_042",
           "type": "heading",
           "level": 2,
-          "text": "\"There is a firm area, but I cannot really feel a lump.\""
-        },
-        {
-          "id": "p_040",
-          "type": "paragraph",
-          "text": "These subtle changes still deserve evaluation."
-        },
-        {
-          "id": "h_041",
-          "type": "heading",
-          "level": 3,
-          "text": "Why Can ILC Be Difficult to Detect?"
-        },
-        {
-          "id": "p_042",
-          "type": "paragraph",
-          "text": "The diffuse growth pattern can make ILC less obvious on physical examination and some imaging tests."
+          "text": "When Is Mastectomy Considered for ILC?"
         },
         {
           "id": "p_043",
           "type": "paragraph",
-          "text": "The American Cancer Society notes that ILC can be harder to feel during a breast examination or see on [mammography](/blogs/breast-cancer-follow-up-tests) or ultrasound because it tends to spread through the breast in thin strands."
+          "text": "Mastectomy may be considered when the tumor is extensive, multiple areas of cancer are present, clear margins cannot be achieved with breast-conserving surgery, the breast would be significantly distorted by removing the tumor, or the patient has other factors affecting surgical choice. The decision should be based on the actual extent of disease rather than the diagnosis of ILC alone. [Reconstruction](/blogs/breast-reconstruction-after-mastectomy-india) can be discussed at the same time."
         },
         {
-          "id": "p_044",
-          "type": "paragraph",
-          "text": "This does not mean that [mammography](/blogs/breast-cancer-follow-up-tests) is ineffective."
+          "id": "h_044",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Are Surgical Margins Important in ILC?"
         },
         {
           "id": "p_045",
           "type": "paragraph",
-          "text": "It means that the entire clinical picture matters."
+          "text": "The surgeon needs to remove the cancer with an appropriate margin of surrounding tissue. This can sometimes be challenging when ILC spreads in a diffuse pattern. If cancer cells remain at the surgical margin, additional surgery may be considered. The final pathology report helps determine whether the margins are satisfactory."
         },
         {
-          "id": "p_046",
-          "type": "paragraph",
-          "text": "If symptoms and imaging do not match, doctors may recommend additional evaluation."
-        },
-        {
-          "id": "h_047",
+          "id": "h_046",
           "type": "heading",
           "level": 2,
-          "text": "Mammography for Invasive Lobular Carcinoma"
+          "text": "Does ILC Require Lymph-Node Surgery?"
         },
         {
-          "id": "p_048",
+          "id": "p_047",
           "type": "paragraph",
-          "text": "Mammography is commonly used to investigate breast abnormalities."
+          "text": "Lymph-node evaluation is commonly considered for invasive breast cancer. For many patients with clinically node-negative disease, sentinel lymph-node biopsy is used to check the first draining nodes. If nodes contain cancer, the plan may change depending on the number of involved nodes and other features. More extensive axillary surgery is not automatically required for every patient."
+        },
+        {
+          "id": "btn_048",
+          "type": "button",
+          "label": "Ask about lumpectomy versus mastectomy for ILC",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
           "id": "p_049",
           "type": "paragraph",
-          "text": "However, ILC may not always appear as a clearly defined mass."
+          "text": "[WhatsApp +91 90443 46292 about surgery](https://wa.me/919044346292?text=Please%20advise%20whether%20lumpectomy%20or%20mastectomy%20is%20more%20appropriate%20for%20my%20invasive%20lobular%20carcinoma%20in%20India.)"
         },
         {
           "id": "h_050",
           "type": "heading",
           "level": 2,
-          "text": "It can instead cause:"
-        },
-        {
-          "id": "ul_051",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Architectural distortion",
-            "Asymmetry",
-            "An area of increased density",
-            "Subtle changes in breast tissue"
-          ]
-        },
-        {
-          "id": "p_052",
-          "type": "paragraph",
-          "text": "Because the imaging appearance can be less obvious, the radiologist needs to interpret the images alongside the physical examination and other available information."
-        },
-        {
-          "id": "h_053",
-          "type": "heading",
-          "level": 3,
-          "text": "Is Ultrasound Useful for ILC?"
-        },
-        {
-          "id": "p_054",
-          "type": "paragraph",
-          "text": "Yes."
-        },
-        {
-          "id": "p_055",
-          "type": "paragraph",
-          "text": "Ultrasound can help investigate a suspicious area and can also be used to examine lymph nodes."
-        },
-        {
-          "id": "p_056",
-          "type": "paragraph",
-          "text": "However, ultrasound may not fully show the extent of lobular cancer in every patient."
-        },
-        {
-          "id": "p_057",
-          "type": "paragraph",
-          "text": "If the clinical findings, mammogram and ultrasound do not provide a clear picture, additional imaging may be considered."
-        },
-        {
-          "id": "h_058",
-          "type": "heading",
-          "level": 3,
-          "text": "Why Is MRI Sometimes Used for ILC?"
-        },
-        {
-          "id": "p_059",
-          "type": "paragraph",
-          "text": "MRI can be particularly useful when doctors need to understand the extent of disease within the breast."
-        },
-        {
-          "id": "p_060",
-          "type": "paragraph",
-          "text": "This matters because ILC can be more diffuse than a typical mass-forming tumor."
-        },
-        {
-          "id": "h_061",
-          "type": "heading",
-          "level": 2,
-          "text": "MRI may help identify:"
-        },
-        {
-          "id": "ul_062",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Additional areas of cancer",
-            "The overall extent of the tumor",
-            "Disease in another part of the same breast",
-            "Findings that are difficult to characterize on conventional imaging"
-          ]
-        },
-        {
-          "id": "img_063",
-          "type": "image",
-          "src": "/uploads/articles/ilc-imaging-visual.webp",
-          "alt": "MRI evaluation of invasive lobular carcinoma",
-          "caption": "MRI may be used when the extent of disease is unclear on mammography and ultrasound."
-        },
-        {
-          "id": "p_064",
-          "type": "paragraph",
-          "text": "NCI notes that the linear growth pattern of lobular carcinoma can make [mammography](/blogs/breast-cancer-follow-up-tests) less sensitive and increase the utility of MRI for assessing the extent of disease."
-        },
-        {
-          "id": "p_065",
-          "type": "paragraph",
-          "text": "MRI is not automatically required for every patient."
-        },
-        {
-          "id": "p_066",
-          "type": "paragraph",
-          "text": "The decision depends on the clinical and imaging findings."
-        },
-        {
-          "id": "h_067",
-          "type": "heading",
-          "level": 3,
-          "text": "How Is Invasive Lobular Carcinoma Diagnosed?"
-        },
-        {
-          "id": "p_068",
-          "type": "paragraph",
-          "text": "Imaging can identify a suspicious area."
-        },
-        {
-          "id": "p_069",
-          "type": "paragraph",
-          "text": "But the diagnosis requires tissue."
-        },
-        {
-          "id": "h_070",
-          "type": "heading",
-          "level": 2,
-          "text": "A typical diagnostic pathway may include:"
-        },
-        {
-          "id": "ul_071",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Clinical breast examination",
-            "Mammography",
-            "Ultrasound",
-            "MRI when appropriate",
-            "Core needle biopsy",
-            "Pathology examination",
-            "ER and PR testing",
-            "HER2 testing",
-            "Tumor grading",
-            "Staging investigations when required"
-          ]
-        },
-        {
-          "id": "p_072",
-          "type": "paragraph",
-          "text": "The biopsy is the key step that confirms the diagnosis."
-        },
-        {
-          "id": "h_073",
-          "type": "heading",
-          "level": 3,
-          "text": "What Does the Pathology Report Tell You?"
-        },
-        {
-          "id": "p_074",
-          "type": "paragraph",
-          "text": "A pathology report may contain several pieces of information."
-        },
-        {
-          "id": "h_075",
-          "type": "heading",
-          "level": 2,
-          "text": "Important findings include:"
-        },
-        {
-          "id": "h_076",
-          "type": "heading",
-          "level": 2,
-          "text": "Histological type"
-        },
-        {
-          "id": "p_077",
-          "type": "paragraph",
-          "text": "This confirms whether the tumor is lobular, ductal or another histological type."
-        },
-        {
-          "id": "h_078",
-          "type": "heading",
-          "level": 2,
-          "text": "Grade"
-        },
-        {
-          "id": "p_079",
-          "type": "paragraph",
-          "text": "Grade describes how abnormal the cancer cells appear and gives information about their biological behavior."
-        },
-        {
-          "id": "h_080",
-          "type": "heading",
-          "level": 2,
-          "text": "ER status"
-        },
-        {
-          "id": "p_081",
-          "type": "paragraph",
-          "text": "This determines whether the tumor expresses estrogen receptors."
-        },
-        {
-          "id": "h_082",
-          "type": "heading",
-          "level": 2,
-          "text": "PR status"
-        },
-        {
-          "id": "p_083",
-          "type": "paragraph",
-          "text": "This determines whether progesterone receptors are present."
-        },
-        {
-          "id": "h_084",
-          "type": "heading",
-          "level": 2,
-          "text": "HER2 status"
-        },
-        {
-          "id": "p_085",
-          "type": "paragraph",
-          "text": "This identifies whether the tumor has HER2 overexpression or amplification."
-        },
-        {
-          "id": "h_086",
-          "type": "heading",
-          "level": 2,
-          "text": "Tumor size"
-        },
-        {
-          "id": "p_087",
-          "type": "paragraph",
-          "text": "The size of the invasive component contributes to staging."
-        },
-        {
-          "id": "h_088",
-          "type": "heading",
-          "level": 2,
-          "text": "Lymphovascular invasion"
-        },
-        {
-          "id": "p_089",
-          "type": "paragraph",
-          "text": "The pathologist may report whether cancer cells are seen within lymphatic or blood vessels."
-        },
-        {
-          "id": "h_090",
-          "type": "heading",
-          "level": 2,
-          "text": "Lymph-node status"
-        },
-        {
-          "id": "p_091",
-          "type": "paragraph",
-          "text": "If lymph nodes are removed, pathology can determine whether cancer cells are present."
-        },
-        {
-          "id": "p_092",
-          "type": "paragraph",
-          "text": "These findings are interpreted together rather than individually."
-        },
-        {
-          "id": "h_093",
-          "type": "heading",
-          "level": 3,
-          "text": "Is Invasive Lobular Carcinoma Usually ER-Positive?"
-        },
-        {
-          "id": "p_094",
-          "type": "paragraph",
-          "text": "Many ILCs are hormone receptor-positive."
-        },
-        {
-          "id": "p_095",
-          "type": "paragraph",
-          "text": "The American Cancer Society notes that ILCs are usually hormone receptor-positive and generally tend to grow more slowly than many other breast cancers."
-        },
-        {
-          "id": "h_096",
-          "type": "heading",
-          "level": 2,
-          "text": "However, \"usually\" does not mean \"always.\""
-        },
-        {
-          "id": "p_097",
-          "type": "paragraph",
-          "text": "A patient's own pathology report determines whether [hormone therapy](/blogs/breast-cancer-hormone-therapy-side-effects) is relevant."
-        },
-        {
-          "id": "h_098",
-          "type": "heading",
-          "level": 3,
-          "text": "Does HER2 Matter in ILC?"
-        },
-        {
-          "id": "p_099",
-          "type": "paragraph",
-          "text": "Yes."
-        },
-        {
-          "id": "p_100",
-          "type": "paragraph",
-          "text": "Although many ILCs are hormone receptor-positive and HER2-negative, HER2 testing is still important."
-        },
-        {
-          "id": "p_101",
-          "type": "paragraph",
-          "text": "HER2 status can affect treatment decisions."
-        },
-        {
-          "id": "p_102",
-          "type": "paragraph",
-          "text": "NCI identifies ER, PR and HER2 among the key biomarkers used to classify breast cancers and guide treatment."
-        },
-        {
-          "id": "p_103",
-          "type": "paragraph",
-          "text": "If a tumor is HER2-positive, HER2-[targeted therapy](/blogs/breast-cancer-targeted-therapy-side-effects) may become part of treatment."
-        },
-        {
-          "id": "h_104",
-          "type": "heading",
-          "level": 3,
-          "text": "How Is ILC Staged?"
-        },
-        {
-          "id": "p_105",
-          "type": "paragraph",
-          "text": "The stage describes how far the cancer has progressed."
-        },
-        {
-          "id": "h_106",
-          "type": "heading",
-          "level": 2,
-          "text": "Breast cancer staging considers factors including:"
-        },
-        {
-          "id": "ul_107",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Tumor size",
-            "Lymph-node involvement",
-            "Distant spread",
-            "Tumor grade",
-            "ER status",
-            "PR status",
-            "HER2 status"
-          ]
-        },
-        {
-          "id": "p_108",
-          "type": "paragraph",
-          "text": "NCI distinguishes between clinical prognostic staging before treatment and pathological prognostic staging after surgery."
-        },
-        {
-          "id": "p_109",
-          "type": "paragraph",
-          "text": "This is why two patients with the same histological type can receive very different treatment plans."
-        },
-        {
-          "id": "h_110",
-          "type": "heading",
-          "level": 3,
-          "text": "Does ILC Need Genetic Testing?"
-        },
-        {
-          "id": "p_111",
-          "type": "paragraph",
-          "text": "Genetic testing is not automatically required simply because a tumor is lobular."
-        },
-        {
-          "id": "h_112",
-          "type": "heading",
-          "level": 2,
-          "text": "However, some patients may be offered hereditary cancer testing based on factors such as:"
-        },
-        {
-          "id": "ul_113",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Age at diagnosis",
-            "Family history",
-            "Multiple cancers in the family",
-            "Personal history of certain cancers",
-            "Bilateral breast cancer",
-            "Other clinical or genetic features"
-          ]
-        },
-        {
-          "id": "p_114",
-          "type": "paragraph",
-          "text": "The decision should be based on established genetic-testing criteria rather than the word \"lobular\" alone."
-        },
-        {
-          "id": "h_115",
-          "type": "heading",
-          "level": 3,
-          "text": "How Is Early-Stage ILC Treated?"
-        },
-        {
-          "id": "p_116",
-          "type": "paragraph",
-          "text": "For operable ILC, surgery is often an important part of treatment."
-        },
-        {
-          "id": "h_117",
-          "type": "heading",
-          "level": 2,
-          "text": "Depending on the tumor and breast anatomy, the surgical options may include:"
-        },
-        {
-          "id": "ul_118",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Breast-conserving surgery",
-            "Mastectomy",
-            "Sentinel lymph-node biopsy",
-            "Other lymph-node procedures when indicated"
-          ]
-        },
-        {
-          "id": "p_119",
-          "type": "paragraph",
-          "text": "The choice depends on the extent of disease within the breast, tumor size, imaging findings, lymph-node status and other clinical factors."
-        },
-        {
-          "id": "h_120",
-          "type": "heading",
-          "level": 3,
-          "text": "Can ILC Be Treated With Lumpectomy?"
-        },
-        {
-          "id": "p_121",
-          "type": "paragraph",
-          "text": "Yes."
-        },
-        {
-          "id": "p_122",
-          "type": "paragraph",
-          "text": "Lobular histology by itself does not automatically require mastectomy."
-        },
-        {
-          "id": "p_123",
-          "type": "paragraph",
-          "text": "Breast-conserving surgery can be considered when the cancer can be removed with appropriate margins while preserving an acceptable amount of breast tissue. NCI notes that all histological types of invasive breast cancer may be treated with breast-conserving surgery followed by radiation when appropriate."
-        },
-        {
-          "id": "p_124",
-          "type": "paragraph",
-          "text": "However, ILC can sometimes be more extensive than it initially appears."
-        },
-        {
-          "id": "p_125",
-          "type": "paragraph",
-          "text": "This is one reason careful imaging before surgery can be important."
-        },
-        {
-          "id": "h_126",
-          "type": "heading",
-          "level": 3,
-          "text": "When Is Mastectomy Considered for ILC?"
-        },
-        {
-          "id": "h_127",
-          "type": "heading",
-          "level": 2,
-          "text": "Mastectomy may be considered when:"
-        },
-        {
-          "id": "ul_128",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "The tumor is extensive",
-            "Multiple areas of cancer are present",
-            "Clear margins cannot be achieved with breast-conserving surgery",
-            "The breast would be significantly distorted by removing the tumor",
-            "The patient has other factors affecting surgical choice"
-          ]
-        },
-        {
-          "id": "p_129",
-          "type": "paragraph",
-          "text": "The decision should be based on the actual extent of disease rather than the diagnosis of ILC alone."
-        },
-        {
-          "id": "h_130",
-          "type": "heading",
-          "level": 3,
-          "text": "Why Are Surgical Margins Important in ILC?"
-        },
-        {
-          "id": "p_131",
-          "type": "paragraph",
-          "text": "The surgeon needs to remove the cancer with an appropriate margin of surrounding tissue."
-        },
-        {
-          "id": "img_132",
-          "type": "image",
-          "src": "/uploads/articles/ilc-surgery-visual.webp",
-          "alt": "Surgical planning for invasive lobular carcinoma",
-          "caption": "The operation depends on the extent of disease, not on the word lobular alone."
-        },
-        {
-          "id": "p_133",
-          "type": "paragraph",
-          "text": "This can sometimes be challenging when ILC spreads in a diffuse pattern."
-        },
-        {
-          "id": "p_134",
-          "type": "paragraph",
-          "text": "If cancer cells remain at the surgical margin, additional surgery may be considered."
-        },
-        {
-          "id": "p_135",
-          "type": "paragraph",
-          "text": "The final pathology report helps determine whether the margins are satisfactory."
-        },
-        {
-          "id": "h_136",
-          "type": "heading",
-          "level": 3,
-          "text": "Does ILC Require Lymph-Node Surgery?"
-        },
-        {
-          "id": "p_137",
-          "type": "paragraph",
-          "text": "Lymph-node evaluation is commonly considered for invasive breast cancer."
-        },
-        {
-          "id": "p_138",
-          "type": "button",
-          "label": "Request a case-specific treatment review",
-          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
-        },
-        {
-          "id": "p_139",
-          "type": "paragraph",
-          "text": "[WhatsApp +91 90443 46292 for a case-specific plan](https://wa.me/919044346292?text=Please%20advise%20whether%20I%20need%20MRI%20or%20a%20different%20surgery%20for%20lobular%20breast%20cancer.)"
-        },
-        {
-          "id": "p_140",
-          "type": "paragraph",
-          "text": "For many patients with clinically node-negative disease, sentinel lymph-node biopsy is used to check the first draining lymph nodes."
-        },
-        {
-          "id": "p_141",
-          "type": "paragraph",
-          "text": "If lymph nodes contain cancer, the treatment plan may change depending on the number of involved nodes and other features."
-        },
-        {
-          "id": "p_142",
-          "type": "paragraph",
-          "text": "More extensive axillary surgery is not automatically required for every patient."
-        },
-        {
-          "id": "h_143",
-          "type": "heading",
-          "level": 3,
           "text": "Does ILC Require Chemotherapy?"
         },
         {
-          "id": "p_144",
+          "id": "p_051",
           "type": "paragraph",
-          "text": "Not necessarily."
+          "text": "Not necessarily. Patients sometimes assume that every invasive cancer automatically requires [chemotherapy](/blogs/chemotherapy-for-breast-cancer-in-india). The decision depends on stage, grade, ER/PR and HER2 status, lymph-node involvement, tumor biology, patient factors and sometimes genomic testing. NCI notes that tumor histology, stage, grade and molecular status all contribute to treatment selection. Because many ILCs are hormone receptor-positive, chemotherapy decisions need to be individualised."
         },
         {
-          "id": "p_145",
-          "type": "paragraph",
-          "text": "This is an important point because patients sometimes assume that every invasive cancer automatically requires [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects)."
-        },
-        {
-          "id": "h_146",
+          "id": "h_052",
           "type": "heading",
           "level": 2,
-          "text": "The decision depends on:"
-        },
-        {
-          "id": "ul_147",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Stage",
-            "Tumor grade",
-            "ER/PR status",
-            "HER2 status",
-            "Lymph-node involvement",
-            "Tumor biology",
-            "Patient factors",
-            "Sometimes genomic testing"
-          ]
-        },
-        {
-          "id": "p_148",
-          "type": "paragraph",
-          "text": "NCI specifically notes that tumor histology, stage, grade and molecular status all contribute to treatment selection."
-        },
-        {
-          "id": "p_149",
-          "type": "paragraph",
-          "text": "Because many ILCs are hormone receptor-positive and may have other biological characteristics, [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) decisions need to be individualized."
-        },
-        {
-          "id": "h_150",
-          "type": "heading",
-          "level": 3,
           "text": "Can Genomic Tests Help Decide About Chemotherapy?"
         },
         {
-          "id": "p_151",
+          "id": "p_053",
           "type": "paragraph",
-          "text": "For some patients with hormone receptor-positive, HER2-negative invasive breast cancer, genomic assays can provide additional information about the likelihood of benefit from [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects)."
+          "text": "For some patients with hormone receptor-positive, HER2-negative invasive breast cancer, genomic assays such as Oncotype DX and MammaPrint can provide additional information about the likelihood of benefit from chemotherapy. NCI lists gene-expression profiling among molecular approaches used in breast cancer. Whether such a test is appropriate depends on the individual cancer. It is not automatically necessary for every patient with ILC."
         },
         {
-          "id": "p_152",
-          "type": "paragraph",
-          "text": "Examples include tests such as Oncotype DX and MammaPrint."
-        },
-        {
-          "id": "p_153",
-          "type": "paragraph",
-          "text": "NCI lists gene-expression profiling among molecular approaches used in breast cancer."
-        },
-        {
-          "id": "p_154",
-          "type": "paragraph",
-          "text": "Whether such a test is appropriate depends on the individual cancer."
-        },
-        {
-          "id": "p_155",
-          "type": "paragraph",
-          "text": "It is not automatically necessary for every patient with ILC."
-        },
-        {
-          "id": "h_156",
+          "id": "h_054",
           "type": "heading",
           "level": 2,
           "text": "Hormone Therapy for Invasive Lobular Carcinoma"
         },
         {
-          "id": "p_157",
-          "type": "paragraph",
-          "text": "Hormone therapy is particularly relevant when ILC is estrogen receptor-positive or progesterone receptor-positive."
+          "id": "img_055",
+          "type": "image",
+          "src": "/uploads/articles/ilc-followup-visual.webp",
+          "alt": "Long-term hormone therapy discussion after hormone receptor-positive invasive lobular carcinoma",
+          "caption": "Many ILCs are hormone receptor-positive. Endocrine therapy may continue for several years."
         },
         {
-          "id": "h_158",
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "Hormone therapy is particularly relevant when ILC is estrogen receptor-positive or progesterone receptor-positive. Depending on menopausal status, treatment may include tamoxifen, aromatase inhibitors or ovarian suppression in selected premenopausal patients. Treatment may continue for several years. Many ILC tumors depend on hormone signalling for growth. For patients taking long-term endocrine therapy, [side effects](/blogs/breast-cancer-hormone-therapy-side-effects) and adherence should be discussed regularly."
+        },
+        {
+          "id": "h_057",
           "type": "heading",
           "level": 2,
-          "text": "Depending on menopausal status and other factors, treatment may include:"
+          "text": "What If ILC Is HER2-Positive or Triple-Negative?"
         },
         {
-          "id": "ul_159",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Tamoxifen",
-            "Aromatase inhibitors",
-            "Ovarian suppression in selected premenopausal patients"
-          ]
-        },
-        {
-          "id": "p_160",
+          "id": "p_058",
           "type": "paragraph",
-          "text": "The treatment may continue for several years."
+          "text": "If testing shows that the cancer is HER2-positive, HER2-directed treatment may be included, often with chemotherapy, surgery, radiation and hormone therapy when the tumor is also hormone receptor-positive. Triple-negative ILC is less common. In that situation the tumor does not express estrogen receptors, progesterone receptors or HER2, so treatment is different from the more commonly encountered hormone receptor-positive ILC. Chemotherapy and immunotherapy may be considered depending on stage. NCI notes that treatment selection is based on stage and molecular characteristics rather than histological type alone."
         },
         {
-          "id": "p_161",
-          "type": "paragraph",
-          "text": "The exact medicine and duration depend on the individual's cancer and treatment history."
-        },
-        {
-          "id": "h_162",
-          "type": "heading",
-          "level": 3,
-          "text": "Why Is Hormone Therapy Important in ILC?"
-        },
-        {
-          "id": "p_163",
-          "type": "paragraph",
-          "text": "Many ILC tumors depend on hormone signaling for growth."
-        },
-        {
-          "id": "p_164",
-          "type": "paragraph",
-          "text": "When a tumor is hormone receptor-positive, endocrine therapy can reduce stimulation of those cancer cells."
-        },
-        {
-          "id": "p_165",
-          "type": "paragraph",
-          "text": "NCI identifies hormone receptor status as an important factor in predicting response to endocrine therapy and planning treatment."
-        },
-        {
-          "id": "p_166",
-          "type": "paragraph",
-          "text": "For patients taking long-term [hormone therapy](/blogs/breast-cancer-hormone-therapy-side-effects), side effects and adherence should be discussed regularly with the oncology team."
-        },
-        {
-          "id": "h_167",
-          "type": "heading",
-          "level": 3,
-          "text": "What If ILC Is HER2-Positive?"
-        },
-        {
-          "id": "p_168",
-          "type": "paragraph",
-          "text": "If testing shows that the cancer is HER2-positive, HER2-directed treatment may be included."
-        },
-        {
-          "id": "h_169",
+          "id": "h_059",
           "type": "heading",
           "level": 2,
-          "text": "Treatment may involve a combination of:"
-        },
-        {
-          "id": "ul_170",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "HER2-targeted therapy",
-            "Chemotherapy",
-            "Surgery",
-            "Radiation",
-            "Hormone therapy when the tumor is also hormone receptor-positive"
-          ]
-        },
-        {
-          "id": "p_171",
-          "type": "paragraph",
-          "text": "The exact sequence depends on stage and the individual tumor profile."
-        },
-        {
-          "id": "h_172",
-          "type": "heading",
-          "level": 3,
-          "text": "What If ILC Is Triple-Negative?"
-        },
-        {
-          "id": "p_173",
-          "type": "paragraph",
-          "text": "Triple-negative ILC is less common."
-        },
-        {
-          "id": "p_174",
-          "type": "paragraph",
-          "text": "In this situation, the tumor does not express estrogen receptors, progesterone receptors or HER2."
-        },
-        {
-          "id": "p_175",
-          "type": "paragraph",
-          "text": "Treatment is therefore different from the hormone receptor-positive ILC that is more commonly encountered."
-        },
-        {
-          "id": "p_176",
-          "type": "paragraph",
-          "text": "Depending on stage and other factors, [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) and immunotherapy may be considered."
-        },
-        {
-          "id": "p_177",
-          "type": "paragraph",
-          "text": "NCI notes that treatment selection is based on stage and molecular characteristics rather than histological type alone."
-        },
-        {
-          "id": "h_178",
-          "type": "heading",
-          "level": 3,
           "text": "Can ILC Be Treated With Radiation?"
         },
         {
-          "id": "p_179",
+          "id": "p_060",
           "type": "paragraph",
-          "text": "Yes."
+          "text": "[Radiation](/blogs/radiation-therapy-for-breast-cancer) may be recommended after breast-conserving surgery. It can also be recommended after mastectomy in selected patients depending on tumor size, lymph-node involvement and other risk factors. Radiation is a local treatment, while chemotherapy and many drug treatments are systemic."
         },
         {
-          "id": "p_180",
-          "type": "paragraph",
-          "text": "Radiation therapy may be recommended after breast-conserving surgery."
-        },
-        {
-          "id": "p_181",
-          "type": "paragraph",
-          "text": "It can also be recommended after mastectomy in selected patients depending on tumor size, lymph-node involvement and other risk factors."
-        },
-        {
-          "id": "p_182",
-          "type": "paragraph",
-          "text": "Radiation is a local treatment, while [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) and many drug treatments are systemic."
-        },
-        {
-          "id": "h_183",
-          "type": "heading",
-          "level": 3,
-          "text": "What Happens If ILC Has Spread to Lymph Nodes?"
-        },
-        {
-          "id": "p_184",
-          "type": "paragraph",
-          "text": "Lymph-node involvement affects staging and can influence the treatment plan."
-        },
-        {
-          "id": "h_185",
+          "id": "h_061",
           "type": "heading",
           "level": 2,
-          "text": "Depending on the number of involved nodes and tumor biology, treatment may include combinations of:"
+          "text": "What Happens If ILC Has Spread to Lymph Nodes or Distant Organs?"
         },
         {
-          "id": "ul_186",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Surgery",
-            "Radiation",
-            "Chemotherapy",
-            "Hormone therapy",
-            "HER2-targeted treatment",
-            "Other systemic therapies"
-          ]
-        },
-        {
-          "id": "p_187",
+          "id": "p_062",
           "type": "paragraph",
-          "text": "The presence of lymph-node involvement does not by itself determine the entire treatment plan."
+          "text": "Lymph-node involvement affects staging and can influence the plan. Treatment may include combinations of surgery, radiation, chemotherapy, hormone therapy, HER2-targeted treatment and other systemic therapies. Because ILC is invasive, it can also spread through the lymphatic system or bloodstream. The American Cancer Society notes that ILC can spread to bones, liver, lungs and brain and may have a greater tendency than ductal carcinoma to involve certain less typical sites, including the digestive tract, ovaries or lining of the abdomen. If distant spread is suspected, staging investigations are performed. See [recurrence](/blogs/breast-cancer-recurrence-treatment-india)."
         },
         {
-          "id": "h_188",
+          "id": "h_063",
           "type": "heading",
-          "level": 3,
-          "text": "Can Invasive Lobular Carcinoma Spread to Other Organs?"
-        },
-        {
-          "id": "p_189",
-          "type": "paragraph",
-          "text": "Yes."
-        },
-        {
-          "id": "p_190",
-          "type": "paragraph",
-          "text": "Because ILC is an invasive cancer, it can spread through the lymphatic system or bloodstream."
-        },
-        {
-          "id": "p_191",
-          "type": "paragraph",
-          "text": "The American Cancer Society notes that ILC can spread to sites such as the bones, liver, lungs and brain and may also have a greater tendency than ductal carcinoma to involve certain less typical sites, including the digestive tract, ovaries or lining of the abdomen."
-        },
-        {
-          "id": "p_192",
-          "type": "paragraph",
-          "text": "If distant spread is suspected, staging investigations are performed to determine where the cancer is located."
-        },
-        {
-          "id": "h_193",
-          "type": "heading",
-          "level": 3,
+          "level": 2,
           "text": "Does ILC Behave Differently After Treatment?"
         },
         {
-          "id": "p_194",
+          "id": "p_064",
           "type": "paragraph",
-          "text": "ILC can have a somewhat different pattern of recurrence compared with invasive ductal carcinoma."
+          "text": "ILC can have a somewhat different pattern of recurrence compared with invasive ductal carcinoma. The American Cancer Society notes that when ILC recurs, it may recur later than ductal carcinoma, sometimes more than 10 years after the original diagnosis. This is one reason long-term [follow-up](${FOLLOW}) remains important, including completing recommended hormone therapy."
         },
         {
-          "id": "p_195",
-          "type": "paragraph",
-          "text": "The American Cancer Society notes that when ILC recurs, it may recur later than ductal carcinoma, sometimes more than 10 years after the original diagnosis."
-        },
-        {
-          "id": "p_196",
-          "type": "paragraph",
-          "text": "This is one reason long-term follow-up remains important."
-        },
-        {
-          "id": "p_197",
-          "type": "paragraph",
-          "text": "Oncology teams in [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) can confirm the next step. Hospitals in [Delhi NCR](/hospitals/India/Delhi-NCR) and [Mumbai](/hospitals/India/Mumbai) handle international follow-up."
-        },
-        {
-          "id": "img_198",
-          "type": "image",
-          "src": "/uploads/articles/ilc-followup-visual.webp",
-          "alt": "Follow-up after invasive lobular carcinoma treatment",
-          "caption": "Most invasive lobular carcinomas are hormone receptor-positive and may need long-term endocrine therapy."
-        },
-        {
-          "id": "p_199",
-          "type": "paragraph",
-          "text": "It also reinforces why completing recommended [hormone therapy](/blogs/breast-cancer-hormone-therapy-side-effects) and follow-up should be discussed carefully with the treating team."
-        },
-        {
-          "id": "h_200",
+          "id": "h_065",
           "type": "heading",
-          "level": 3,
+          "level": 2,
           "text": "What Is Metastatic Invasive Lobular Carcinoma?"
         },
         {
-          "id": "p_201",
+          "id": "p_066",
           "type": "paragraph",
-          "text": "Metastatic ILC means the cancer has spread from the breast to distant parts of the body."
+          "text": "Metastatic ILC means the cancer has spread from the breast to distant parts of the body. Treatment at this stage is primarily systemic: hormone therapy, targeted therapy, chemotherapy, immunotherapy in appropriate settings and other systemic treatments. Radiation or surgery can still be useful for particular symptoms or specific sites of disease."
         },
         {
-          "id": "p_202",
+          "id": "btn_067",
+          "type": "button",
+          "label": "Ask about hormone therapy or chemotherapy for ILC",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_068",
           "type": "paragraph",
-          "text": "Treatment at this stage is primarily systemic."
+          "text": "[WhatsApp +91 90443 46292 about systemic treatment](https://wa.me/919044346292?text=Please%20advise%20whether%20I%20need%20chemotherapy%20or%20hormone%20therapy%20for%20invasive%20lobular%20carcinoma%20in%20India.)"
         },
         {
-          "id": "h_203",
-          "type": "heading",
-          "level": 2,
-          "text": "Depending on the tumor's biology, treatment may include:"
-        },
-        {
-          "id": "ul_204",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Hormone therapy",
-            "Targeted therapy",
-            "Chemotherapy",
-            "Immunotherapy in appropriate settings",
-            "Other systemic treatments"
-          ]
-        },
-        {
-          "id": "p_205",
-          "type": "paragraph",
-          "text": "Radiation or surgery can still be useful for particular symptoms or specific sites of disease."
-        },
-        {
-          "id": "p_206",
-          "type": "paragraph",
-          "text": "The treatment goal and sequence depend on the extent of metastatic disease and tumor biology."
-        },
-        {
-          "id": "h_207",
+          "id": "h_069",
           "type": "heading",
           "level": 2,
           "text": "Invasive Lobular Carcinoma Treatment in India"
         },
         {
-          "id": "p_208",
+          "id": "p_070",
           "type": "paragraph",
-          "text": "India has multidisciplinary cancer centers where ILC can be evaluated and treated."
+          "text": "India has multidisciplinary cancer centres where ILC can be evaluated and treated. A comprehensive team may include a breast surgical oncologist, medical oncologist, radiation oncologist, breast radiologist, pathologist, reconstructive surgeon, genetic counsellor when indicated and an oncology rehabilitation team. For international patients, reviewing pathology and imaging before travel can save time and show whether additional tests are needed before surgery. Teams in [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) can confirm the extent of disease before an operation is booked."
         },
         {
-          "id": "h_209",
+          "id": "h_071",
           "type": "heading",
           "level": 2,
-          "text": "A comprehensive team may include:"
-        },
-        {
-          "id": "ul_210",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Breast surgical oncologist",
-            "Medical oncologist",
-            "Radiation oncologist",
-            "Breast radiologist",
-            "Pathologist",
-            "Reconstructive surgeon",
-            "Genetic counselor when indicated",
-            "Oncology rehabilitation team"
-          ]
-        },
-        {
-          "id": "p_211",
-          "type": "paragraph",
-          "text": "For international patients, the ability to review pathology and imaging before travel can save time."
-        },
-        {
-          "id": "p_212",
-          "type": "paragraph",
-          "text": "It also allows the hospital to determine whether additional tests are needed before surgery."
-        },
-        {
-          "id": "h_213",
-          "type": "heading",
-          "level": 3,
           "text": "Why Is Pathology Review Important for International Patients?"
         },
         {
-          "id": "p_214",
+          "id": "p_072",
           "type": "paragraph",
-          "text": "[WhatsApp +91 90443 46292 your records before travel](https://wa.me/919044346292?text=I%20would%20like%20to%20send%20my%20pathology%20and%20imaging%20for%20an%20ILC%20treatment%20plan%20in%20India.)"
+          "text": "If your biopsy was performed outside India, an Indian cancer centre may recommend reviewing the original pathology to confirm invasive lobular carcinoma, grade, ER, PR, HER2 and other features. The hospital may request the original slides or tissue blocks. A review can be particularly useful when treatment recommendations differ between doctors. See the [international-patient guide](/blogs/breast-cancer-treatment-india-international-patients)."
         },
         {
-          "id": "p_215",
-          "type": "paragraph",
-          "text": "If your biopsy was performed outside India, an Indian cancer center may recommend reviewing the original pathology."
-        },
-        {
-          "id": "h_216",
+          "id": "h_073",
           "type": "heading",
           "level": 2,
-          "text": "This can help confirm:"
-        },
-        {
-          "id": "ul_217",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Invasive lobular carcinoma",
-            "Tumor grade",
-            "ER status",
-            "PR status",
-            "HER2 status",
-            "Other pathological features"
-          ]
-        },
-        {
-          "id": "p_218",
-          "type": "paragraph",
-          "text": "If necessary, the hospital may request the original slides or tissue blocks."
-        },
-        {
-          "id": "p_219",
-          "type": "paragraph",
-          "text": "A pathology review can be particularly useful when treatment recommendations differ between doctors."
-        },
-        {
-          "id": "h_220",
-          "type": "heading",
-          "level": 3,
           "text": "What Should International Patients Bring to India?"
         },
         {
-          "id": "h_221",
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "Bring the original pathology report, biopsy slides, tissue blocks if available, mammography, ultrasound and MRI images, CT or PET scans if performed, previous consultation notes, surgical records, medication list and genetic test results if available. Digital copies are useful, but original pathology material may be needed for review. Hospitals in [Delhi NCR](/hospitals/India/Delhi-NCR) and [Mumbai](/hospitals/India/Mumbai) can coordinate pathology review before surgery."
+        },
+        {
+          "id": "h_075",
           "type": "heading",
           "level": 2,
-          "text": "Try to bring:"
-        },
-        {
-          "id": "ul_222",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Original pathology report",
-            "Biopsy slides",
-            "Tissue blocks, if available",
-            "Mammography images",
-            "Ultrasound images",
-            "MRI images",
-            "CT/PET scans, if performed",
-            "Previous consultation notes",
-            "Surgical records",
-            "Medication list",
-            "Genetic test results, if available"
-          ]
-        },
-        {
-          "id": "p_223",
-          "type": "paragraph",
-          "text": "Digital copies are useful, but original pathology material may be needed for review."
-        },
-        {
-          "id": "h_224",
-          "type": "heading",
-          "level": 3,
           "text": "How Much Does Invasive Lobular Carcinoma Treatment Cost in India?"
         },
         {
-          "id": "p_225",
+          "id": "p_076",
           "type": "paragraph",
-          "text": "There is no single price for treating ILC."
+          "text": "There is no single price. Cost depends on diagnostic imaging, pathology review, biopsy, MRI, surgery, sentinel lymph-node biopsy, hospitalisation, radiation, chemotherapy, hormone therapy, HER2-targeted treatment, immunotherapy when indicated, reconstruction and follow-up. A patient requiring lumpectomy and hormone therapy will have a very different cost from someone requiring mastectomy, chemotherapy, radiation and targeted treatment. GAF Healthcare provides a case-specific quotation after reviewing the records. See the [cost guide](/blogs/breast-cancer-treatment-cost-in-india)."
         },
         {
-          "id": "p_226",
+          "id": "p_077",
           "type": "paragraph",
-          "text": "The cost depends on what the individual patient needs."
+          "text": "[Breast-conserving surgery doctors](/doctors/India/Surgical-Oncology/Breast-Conserving-Surgery) · [cost](/costs/India/Surgical-Oncology/Breast-Conserving-Surgery) · [mastectomy doctors](/doctors/India/Surgical-Oncology/Mastectomy) · [cost](/costs/India/Surgical-Oncology/Mastectomy) · [reconstruction](/doctors/India/Surgical-Oncology/Breast-Reconstruction) · [cost](/costs/India/Surgical-Oncology/Breast-Reconstruction) · [chemotherapy](/doctors/India/Medical-Oncology/Chemotherapy) · [cost](/costs/India/Medical-Oncology/Chemotherapy) · [hormone therapy](/doctors/India/Medical-Oncology/Hormone-Therapy) · [cost](/costs/India/Medical-Oncology/Hormone-Therapy) · [targeted therapy](/doctors/India/Medical-Oncology/Targeted-Therapy) · [cost](/costs/India/Medical-Oncology/Targeted-Therapy) · [immunotherapy](/doctors/India/Medical-Oncology/Immunotherapy) · [cost](/costs/India/Medical-Oncology/Immunotherapy)."
         },
         {
-          "id": "h_227",
+          "id": "h_078",
           "type": "heading",
           "level": 2,
-          "text": "Possible expenses include:"
-        },
-        {
-          "id": "ul_228",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Diagnostic imaging",
-            "Pathology review",
-            "Breast biopsy",
-            "MRI",
-            "Surgery",
-            "Sentinel lymph-node biopsy",
-            "Hospitalization",
-            "Radiation therapy",
-            "Chemotherapy",
-            "Hormone therapy",
-            "HER2-targeted treatment",
-            "Immunotherapy when indicated",
-            "Reconstruction",
-            "Follow-up"
-          ]
-        },
-        {
-          "id": "p_229",
-          "type": "paragraph",
-          "text": "A patient requiring lumpectomy and [hormone therapy](/blogs/breast-cancer-hormone-therapy-side-effects) will have a very different cost from someone requiring mastectomy, [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects), radiation and targeted treatment."
-        },
-        {
-          "id": "p_230",
-          "type": "paragraph",
-          "text": "For this reason, GAF Healthcare should provide a case-specific quotation after reviewing the patient's records rather than publishing a single number as the expected cost."
-        },
-        {
-          "id": "p_231",
-          "type": "paragraph",
-          "text": "Relevant treatment resources include Breast-Conserving Surgery (Lumpectomy), Mastectomy and Breast Reconstruction."
-        },
-        {
-          "id": "h_232",
-          "type": "heading",
-          "level": 3,
           "text": "How Long Does ILC Treatment Take?"
         },
         {
-          "id": "p_233",
+          "id": "p_079",
           "type": "paragraph",
-          "text": "There is no standard treatment duration."
+          "text": "There is no standard duration. Some patients undergo surgery first and then receive radiation or systemic treatment. Others receive systemic treatment before surgery. The sequence depends on tumor size, lymph-node status, HER2 status, hormone-receptor status, grade, overall stage and the planned operation. International patients should ask the hospital for an estimated timeline before arranging flights and accommodation."
         },
         {
-          "id": "p_234",
-          "type": "paragraph",
-          "text": "Some patients undergo surgery first and then receive radiation or systemic treatment."
-        },
-        {
-          "id": "p_235",
-          "type": "paragraph",
-          "text": "Others receive systemic treatment before surgery."
-        },
-        {
-          "id": "h_236",
+          "id": "h_080",
           "type": "heading",
           "level": 2,
-          "text": "The sequence depends on:"
-        },
-        {
-          "id": "ul_237",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Tumor size",
-            "Lymph-node status",
-            "HER2 status",
-            "Hormone-receptor status",
-            "Tumor grade",
-            "Overall stage",
-            "Planned surgery"
-          ]
-        },
-        {
-          "id": "p_238",
-          "type": "paragraph",
-          "text": "NCI emphasizes that treatment is individualized according to stage and other clinical and pathological factors."
-        },
-        {
-          "id": "p_239",
-          "type": "paragraph",
-          "text": "International patients should therefore ask the hospital for an estimated treatment timeline before arranging flights and accommodation."
-        },
-        {
-          "id": "h_240",
-          "type": "heading",
-          "level": 3,
           "text": "What Happens After ILC Treatment?"
         },
         {
-          "id": "p_241",
+          "id": "p_081",
           "type": "paragraph",
-          "text": "Follow-up continues after active treatment."
+          "text": "Follow-up may include clinical examinations, breast imaging, monitoring hormone therapy, management of side effects, assessment of arm and shoulder function, reconstruction follow-up and monitoring for new symptoms. There is no universal need for routine PET-CT in every asymptomatic survivor. The surveillance plan should be based on the treatment history and clinical situation."
         },
         {
-          "id": "h_242",
+          "id": "btn_082",
+          "type": "button",
+          "label": "Request a case-specific ILC estimate",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a cost estimate](https://wa.me/919044346292?text=Please%20share%20a%20case-specific%20treatment%20and%20cost%20estimate%20for%20invasive%20lobular%20carcinoma%20in%20India.)"
+        },
+        {
+          "id": "h_084",
           "type": "heading",
           "level": 2,
-          "text": "Depending on the treatment received, follow-up may include:"
-        },
-        {
-          "id": "ul_243",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Clinical examinations",
-            "Breast imaging",
-            "Monitoring hormone therapy",
-            "Management of treatment side effects",
-            "Assessment of arm and shoulder function",
-            "Reconstruction follow-up",
-            "Monitoring for new symptoms"
-          ]
-        },
-        {
-          "id": "p_244",
-          "type": "paragraph",
-          "text": "There is no universal need for routine PET-CT or other advanced scans in every asymptomatic survivor."
-        },
-        {
-          "id": "p_245",
-          "type": "paragraph",
-          "text": "The surveillance plan should be based on the patient's treatment history and clinical situation."
-        },
-        {
-          "id": "h_246",
-          "type": "heading",
-          "level": 3,
           "text": "What Questions Should You Ask Your ILC Specialist?"
         },
         {
-          "id": "h_247",
-          "type": "heading",
-          "level": 2,
-          "text": "Before finalizing treatment, consider asking:"
-        },
-        {
-          "id": "ul_248",
+          "id": "ul_085",
           "type": "list",
           "style": "ul",
           "items": [
-            "About the diagnosis",
-            "Is this definitely invasive lobular carcinoma?",
-            "What is the tumor grade?",
-            "What is the tumor size?",
-            "Is the cancer multifocal?",
-            "Are the lymph nodes involved?",
-            "About biomarkers",
-            "Is the cancer ER-positive?",
-            "Is it PR-positive?",
-            "Is it HER2-positive?",
-            "Is additional molecular testing needed?",
-            "About surgery",
-            "Can I have breast-conserving surgery?",
-            "Would MRI change the surgical plan?",
-            "Do I need sentinel lymph-node biopsy?",
-            "Is reconstruction appropriate?",
-            "About systemic treatment",
-            "Do I need chemotherapy?",
-            "Would a genomic test help?",
-            "Will I need hormone therapy?",
-            "Is targeted therapy required?",
-            "About radiation",
-            "Will I need radiation after surgery?",
-            "What area will be treated?",
-            "How long will treatment take?"
+            "Is this definitely invasive lobular carcinoma, and what are the grade, size and lymph-node findings?",
+            "Is the cancer multifocal, ER-positive, PR-positive or HER2-positive?",
+            "Can I have breast-conserving surgery, and would MRI change the surgical plan?",
+            "Do I need sentinel lymph-node biopsy, and is reconstruction appropriate?",
+            "Do I need chemotherapy, and would a genomic test help?",
+            "Will I need hormone therapy, targeted therapy or radiation, and how long will treatment take?"
           ]
         },
         {
-          "id": "p_249",
-          "type": "paragraph",
-          "text": "These questions can make a consultation much more productive."
-        },
-        {
-          "id": "p_250",
-          "type": "paragraph",
-          "text": "Frequently Asked Questions Is invasive lobular carcinoma a serious type of breast cancer?"
-        },
-        {
-          "id": "p_251",
-          "type": "paragraph",
-          "text": "ILC is an invasive breast cancer, meaning it has grown beyond the lobules into surrounding tissue. Its seriousness depends on the stage, grade, biomarkers and other characteristics of the individual tumor."
-        },
-        {
-          "id": "h_252",
+          "id": "h_086",
           "type": "heading",
-          "level": 3,
-          "text": "Is ILC worse than invasive ductal carcinoma?"
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
         },
         {
-          "id": "p_253",
+          "id": "p_087",
           "type": "paragraph",
-          "text": "The two cancers have different biological and growth characteristics, so comparing them as simply \"better\" or \"worse\" is misleading. Treatment and outlook depend on the individual cancer's stage, grade and biomarkers."
+          "text": "GAF Healthcare can help international patients send pathology and imaging for review, coordinate surgical and medical oncology opinions in India, and obtain a case-specific treatment and cost estimate. The pathway depends on the extent of disease in the breast and the current biomarker profile."
         },
         {
-          "id": "h_254",
-          "type": "heading",
-          "level": 3,
-          "text": "Can ILC be felt as a lump?"
-        },
-        {
-          "id": "p_255",
-          "type": "paragraph",
-          "text": "Sometimes, but not always. It can grow diffusely through breast tissue and may instead cause thickening or a change in breast shape."
-        },
-        {
-          "id": "h_256",
-          "type": "heading",
-          "level": 3,
-          "text": "Is ILC usually hormone receptor-positive?"
-        },
-        {
-          "id": "p_257",
-          "type": "paragraph",
-          "text": "Many ILCs are hormone receptor-positive, although individual tumors vary. The pathology report determines whether [hormone therapy](/blogs/breast-cancer-hormone-therapy-side-effects) is appropriate."
-        },
-        {
-          "id": "h_258",
-          "type": "heading",
-          "level": 3,
-          "text": "Does ILC require chemotherapy?"
-        },
-        {
-          "id": "p_259",
-          "type": "paragraph",
-          "text": "Not automatically. Chemotherapy decisions depend on stage, grade, biomarkers, lymph-node status and other clinical factors."
-        },
-        {
-          "id": "h_260",
-          "type": "heading",
-          "level": 3,
-          "text": "Can ILC be treated with lumpectomy?"
-        },
-        {
-          "id": "p_261",
-          "type": "paragraph",
-          "text": "Yes. Breast-conserving surgery can be considered when the cancer can be adequately removed while preserving the breast."
-        },
-        {
-          "id": "h_262",
-          "type": "heading",
-          "level": 3,
-          "text": "Is mastectomy necessary for ILC?"
-        },
-        {
-          "id": "p_263",
-          "type": "paragraph",
-          "text": "No, not simply because the cancer is lobular. It may be recommended when the disease is extensive or cannot be adequately removed with breast-conserving surgery."
-        },
-        {
-          "id": "h_264",
-          "type": "heading",
-          "level": 3,
-          "text": "Does ILC spread to lymph nodes?"
-        },
-        {
-          "id": "p_265",
-          "type": "paragraph",
-          "text": "It can. Lymph-node assessment is therefore part of staging for many patients with invasive breast cancer."
-        },
-        {
-          "id": "h_266",
-          "type": "heading",
-          "level": 3,
-          "text": "Can ILC spread to the other breast?"
-        },
-        {
-          "id": "p_267",
-          "type": "paragraph",
-          "text": "ILC is more likely than many other breast cancers to be found in both breasts. Appropriate imaging and clinical assessment help evaluate the opposite breast."
-        },
-        {
-          "id": "h_268",
-          "type": "heading",
-          "level": 3,
-          "text": "Can ILC recur many years later?"
-        },
-        {
-          "id": "p_269",
-          "type": "paragraph",
-          "text": "Yes. The American Cancer Society notes that ILC can recur later than invasive ductal carcinoma, sometimes more than 10 years after the initial diagnosis."
-        },
-        {
-          "id": "h_270",
-          "type": "heading",
-          "level": 3,
-          "text": "Can ILC be treated in India?"
-        },
-        {
-          "id": "p_271",
-          "type": "paragraph",
-          "text": "Yes. Treatment can be provided through multidisciplinary breast cancer centers involving surgical oncology, medical oncology, radiation oncology, radiology and pathology."
-        },
-        {
-          "id": "h_272",
-          "type": "heading",
-          "level": 3,
-          "text": "How much does ILC treatment cost in India?"
-        },
-        {
-          "id": "p_273",
-          "type": "paragraph",
-          "text": "There is no fixed cost. The total depends on the stage, surgery, pathology, radiation and systemic treatment required."
-        },
-        {
-          "id": "h_274",
+          "id": "h_088",
           "type": "heading",
           "level": 2,
           "text": "Frequently Asked Questions"
         },
         {
-          "id": "h_275",
+          "id": "h_089",
           "type": "heading",
           "level": 3,
-          "text": "What is invasive lobular carcinoma?"
+          "text": "Is invasive lobular carcinoma a serious type of breast cancer?"
         },
         {
-          "id": "p_276",
+          "id": "p_090",
           "type": "paragraph",
-          "text": "Invasive lobular carcinoma is a type of invasive breast cancer that begins in the milk-producing lobules and grows into surrounding breast tissue."
+          "text": "ILC is an invasive breast cancer, meaning it has grown beyond the lobules into surrounding tissue. Its seriousness depends on the stage, grade, biomarkers and other characteristics of the individual tumor."
         },
         {
-          "id": "h_277",
+          "id": "h_091",
           "type": "heading",
           "level": 3,
-          "text": "How common is ILC?"
+          "text": "Is ILC worse than invasive ductal carcinoma?"
         },
         {
-          "id": "p_278",
+          "id": "p_092",
           "type": "paragraph",
-          "text": "ILC accounts for approximately 10% to 15% of invasive breast cancers."
+          "text": "The two cancers have different biological and growth characteristics, so comparing them as simply better or worse is misleading. Treatment and outlook depend on the individual cancer's stage, grade and biomarkers."
         },
         {
-          "id": "h_279",
+          "id": "h_093",
           "type": "heading",
           "level": 3,
-          "text": "Does ILC cause a lump?"
+          "text": "Can ILC be felt as a lump?"
         },
         {
-          "id": "p_280",
+          "id": "p_094",
           "type": "paragraph",
-          "text": "Not always. ILC can grow in thin strands through breast tissue rather than forming a distinct lump, so some patients notice thickening, fullness or a subtle change instead."
+          "text": "Sometimes, but not always. It can grow diffusely through breast tissue and may instead cause thickening or a change in breast shape."
         },
         {
-          "id": "h_281",
+          "id": "h_095",
           "type": "heading",
           "level": 3,
-          "text": "Is ILC harder to detect on a mammogram?"
+          "text": "Is ILC usually hormone receptor-positive?"
         },
         {
-          "id": "p_282",
+          "id": "p_096",
           "type": "paragraph",
-          "text": "It can be. Its diffuse growth pattern may make it less obvious on mammography or ultrasound than a more typical mass-forming breast cancer."
+          "text": "Many ILCs are hormone receptor-positive, although individual tumors vary. The pathology report determines whether hormone therapy is appropriate."
         },
         {
-          "id": "h_283",
+          "id": "h_097",
           "type": "heading",
           "level": 3,
-          "text": "Is invasive lobular carcinoma usually hormone receptor-positive?"
+          "text": "Does ILC require chemotherapy?"
         },
         {
-          "id": "p_284",
+          "id": "p_098",
           "type": "paragraph",
-          "text": "Many ILCs are hormone receptor-positive, although individual tumors can have different biomarker profiles."
+          "text": "Not automatically. Chemotherapy decisions depend on stage, grade, biomarkers, lymph-node status and other clinical factors."
         },
         {
-          "id": "h_285",
+          "id": "h_099",
           "type": "heading",
           "level": 3,
-          "text": "How is ILC treated?"
+          "text": "Can ILC be treated with lumpectomy?"
         },
         {
-          "id": "p_286",
+          "id": "p_100",
           "type": "paragraph",
-          "text": "Treatment depends on stage and tumor biology. Surgery is commonly used, with radiation, hormone therapy, chemotherapy or targeted therapy added when indicated."
+          "text": "Yes. Breast-conserving surgery can be considered when the cancer can be adequately removed while preserving the breast."
         },
         {
-          "id": "h_287",
+          "id": "h_101",
           "type": "heading",
           "level": 3,
-          "text": "Is chemotherapy always needed for ILC?"
+          "text": "Is mastectomy necessary for ILC?"
         },
         {
-          "id": "p_288",
+          "id": "p_102",
           "type": "paragraph",
-          "text": "No. Chemotherapy is not automatically required. The decision depends on factors including stage, grade, biomarkers and the overall risk profile."
+          "text": "No, not simply because the cancer is lobular. It may be recommended when the disease is extensive or cannot be adequately removed with breast-conserving surgery."
         },
         {
-          "id": "h_289",
+          "id": "h_103",
           "type": "heading",
           "level": 3,
-          "text": "Can ILC affect both breasts?"
+          "text": "Does ILC spread to lymph nodes?"
         },
         {
-          "id": "p_290",
+          "id": "p_104",
           "type": "paragraph",
-          "text": "It is more likely to involve both breasts than many other breast cancer types."
+          "text": "It can. Lymph-node assessment is therefore part of staging for many patients with invasive breast cancer."
         },
         {
-          "id": "h_291",
+          "id": "h_105",
           "type": "heading",
           "level": 3,
-          "text": "Can ILC spread to other organs?"
+          "text": "Can ILC spread to the other breast?"
         },
         {
-          "id": "p_292",
+          "id": "p_106",
           "type": "paragraph",
-          "text": "Yes. Like other invasive breast cancers, ILC can spread through the lymphatic system or bloodstream. Its pattern of spread can differ from invasive ductal carcinoma."
+          "text": "ILC is more likely than many other breast cancers to be found in both breasts. Appropriate imaging and clinical assessment help evaluate the opposite breast."
         },
         {
-          "id": "h_293",
+          "id": "h_107",
           "type": "heading",
           "level": 3,
-          "text": "How much does invasive lobular carcinoma treatment cost in India?"
+          "text": "Can ILC recur many years later?"
         },
         {
-          "id": "p_294",
+          "id": "p_108",
           "type": "paragraph",
-          "text": "There is no single price. The cost depends on the stage, surgery, pathology, radiation, medicines and whether chemotherapy or targeted treatment is required. A case-specific estimate is more useful than a generic figure."
+          "text": "Yes. The American Cancer Society notes that ILC can recur later than invasive ductal carcinoma, sometimes more than 10 years after the initial diagnosis."
         },
         {
-          "id": "h_295",
+          "id": "h_109",
           "type": "heading",
           "level": 3,
-          "text": "What Is Invasive Lobular Carcinoma?"
+          "text": "Can ILC be treated in India?"
         },
         {
-          "id": "p_296",
+          "id": "p_110",
           "type": "paragraph",
-          "text": "The breast contains milk-producing glands called lobules."
+          "text": "Yes. Treatment can be provided through multidisciplinary breast cancer centres involving surgical oncology, medical oncology, radiation oncology, radiology and pathology."
         },
         {
-          "id": "btn_297",
+          "id": "h_111",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does ILC treatment cost in India?"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "There is no fixed cost. The total depends on the stage, surgery, pathology, radiation and systemic treatment required."
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 2,
+          "text": "ILC: Key Takeaways"
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "Invasive lobular carcinoma begins in the milk-producing lobules and may spread through the breast in thin strands rather than forming a clearly defined lump. The word \"lobular\" does not determine treatment by itself. Stage, grade, ER, PR, HER2, lymph-node status and how extensive the disease is within the breast guide the plan. For international patients coming to India, a detailed review of pathology and imaging before travel is particularly useful."
+        },
+        {
+          "id": "btn_115",
           "type": "button",
           "label": "Start the Breast Cancer Treatment in India pathway",
           "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
-          "id": "p_298",
+          "id": "p_116",
           "type": "paragraph",
           "text": "[WhatsApp +91 90443 46292 to plan the next step](https://wa.me/919044346292?text=Please%20help%20me%20plan%20invasive%20lobular%20carcinoma%20treatment%20in%20India.)"
         },
         {
-          "id": "h_299",
+          "id": "h_117",
           "type": "heading",
           "level": 2,
           "text": "GAF Healthcare Resources"
         },
         {
-          "id": "p_300",
+          "id": "p_118",
           "type": "paragraph",
-          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Hormone therapy side effects](/blogs/breast-cancer-hormone-therapy-side-effects)\n- [Chemotherapy side effects](/blogs/breast-cancer-chemotherapy-side-effects)\n- [Targeted therapy side effects](/blogs/breast-cancer-targeted-therapy-side-effects)\n- [Radiation therapy](/blogs/radiation-therapy-for-breast-cancer)\n- [Diagnosis](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)\n- [International patients](/blogs/breast-cancer-treatment-india-international-patients)\n- [Chemotherapy doctors](/doctors/India/Medical-Oncology/Chemotherapy) · [Hormone therapy doctors](/doctors/India/Medical-Oncology/Hormone-Therapy)\n- [Radiation oncology doctors](/doctors/India/Radiation-Oncology)\n- [Breast-conserving surgery doctors](/doctors/India/Surgical-Oncology/Breast-Conserving-Surgery)"
+          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Diagnosis](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2) · [pathology report](/blogs/breast-cancer-pathology-report-explained)\n- [Surgery](/blogs/breast-cancer-surgery-in-india) · [lumpectomy vs mastectomy](/blogs/lumpectomy-vs-mastectomy) · [reconstruction](/blogs/breast-reconstruction-after-mastectomy-india)\n- [Hormone therapy](/blogs/hormone-therapy-breast-cancer-india) · [HER2-positive](/blogs/her2-positive-breast-cancer-treatment-india)\n- [Follow-up](/blogs/breast-cancer-follow-up-tests) · [recurrence](/blogs/breast-cancer-recurrence-treatment-india)\n- [Breast-conserving surgery doctors](/doctors/India/Surgical-Oncology/Breast-Conserving-Surgery)\n- [Mastectomy doctors](/doctors/India/Surgical-Oncology/Mastectomy) · [reconstruction doctors](/doctors/India/Surgical-Oncology/Breast-Reconstruction)\n- [International patients](/blogs/breast-cancer-treatment-india-international-patients) · [cost guide](/blogs/breast-cancer-treatment-cost-in-india)"
         }
       ]
     },
@@ -11588,6 +10448,10 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Invasive lobular carcinoma",
+          "href": "/blogs/invasive-lobular-carcinoma-treatment-india"
         },
         {
           "label": "DCIS treatment",
@@ -18514,6 +17378,10 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Invasive lobular carcinoma",
+          "href": "/blogs/invasive-lobular-carcinoma-treatment-india"
         },
         {
           "label": "DCIS treatment",
