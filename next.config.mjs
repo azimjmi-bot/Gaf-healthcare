@@ -41,6 +41,11 @@ const nextConfig = {
         destination: "/blogs/breast-cancer-treatment-by-stage",
         permanent: true,
       },
+      {
+        source: "/blog/breast-cancer-treatment-cost-in-india",
+        destination: "/blogs/breast-cancer-treatment-cost-in-india",
+        permanent: true,
+      },
       { source: "/about", destination: "/", permanent: true },
     ];
   },
