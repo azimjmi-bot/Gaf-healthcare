@@ -86,6 +86,10 @@ test("the published breast cancer page is complete and internally linked", () =>
   assert.match(body, /\/uploads\/treatments\/breast-cancer-treatment-sequence\.png/);
   assert.match(body, /\/uploads\/treatments\/breast-cancer-international-pathway\.png/);
   assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
   assert.equal(publishedCuratedTreatments("ar").length, 0);
 });
 

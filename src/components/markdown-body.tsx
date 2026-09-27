@@ -35,8 +35,16 @@ const components: Components = {
   h1: ({ children }) => <h2>{children}</h2>,
   a: ({ href, children }) => {
     const safe = typeof href === "string" && /^(https?:|mailto:|\/|#)/i.test(href) ? href : undefined;
+    const cta =
+      typeof safe === "string" &&
+      (/^\/consult(?:\?|$)/.test(safe) || /^https:\/\/wa\.me\//i.test(safe));
     return (
-      <a href={safe} target={safe?.startsWith("http") ? "_blank" : undefined} rel="noreferrer noopener">
+      <a
+        href={safe}
+        className={cta ? "md-cta" : undefined}
+        target={safe?.startsWith("http") ? "_blank" : undefined}
+        rel="noreferrer noopener"
+      >
         {children}
       </a>
     );

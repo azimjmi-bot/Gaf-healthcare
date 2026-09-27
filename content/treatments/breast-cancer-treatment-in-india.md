@@ -6,6 +6,8 @@ For international patients, it is also important to look beyond the operation it
 
 India has treatment pathways covering [surgical oncology](/doctors/India/Surgical-Oncology), [medical oncology](/doctors/India/Medical-Oncology), [radiation oncology](/doctors/India/Radiation-Oncology) and reconstructive surgery, so different parts of breast cancer care can be coordinated in the same healthcare system.
 
+[Request a breast cancer records review](/consult?treatment=Breast%20Cancer%20Treatment%20in%20India)
+
 ![Diagram comparing local breast cancer treatment with systemic medicines](/uploads/treatments/breast-cancer-local-vs-systemic.png)
 
 ## What is breast cancer treatment?
@@ -58,6 +60,8 @@ A biopsy provides tissue for pathological examination. The pathology report can 
 
 Doctors may consider tumour size, location and grade; number of tumour sites; lymph node involvement; estrogen and progesterone receptor status; HER2 status; stage of disease; menopausal status; genetic or molecular findings; and previous treatment. These factors help the oncology team determine which combination of treatments may be appropriate.
 
+[Send pathology for a second opinion](/consult?treatment=Breast%20Cancer%20Treatment%20in%20India)
+
 ## Breast cancer surgery in India
 
 Surgery is an important part of treatment for many patients with breast cancer that can be treated locally. The appropriate procedure depends on the tumour and the patient's circumstances.
@@ -81,6 +85,8 @@ Breast-conserving surgery is commonly followed by [radiation therapy](/costs/Ind
 - [Breast-conserving surgery doctors in India](/doctors/India/Surgical-Oncology/Lumpectomy)
 - [Hospitals for breast-conserving surgery](/hospitals/India/Surgical-Oncology/Lumpectomy)
 - [Lumpectomy cost in India](/costs/India/Surgical-Oncology/Lumpectomy)
+
+[Ask whether lumpectomy is possible](/consult?treatment=Breast-Conserving%20Surgery%20%28Lumpectomy%29)
 
 ### Mastectomy
 
@@ -140,6 +146,8 @@ Immediate reconstruction is performed during the mastectomy. Delayed reconstruct
 - [Hospitals for breast reconstruction](/hospitals/India/Surgical-Oncology/Breast-Reconstruction)
 - [Breast reconstruction cost in India](/costs/India/Surgical-Oncology/Breast-Reconstruction)
 
+[Discuss reconstruction timing with a coordinator](/consult?treatment=Breast%20Reconstruction)
+
 ## Systemic treatment for breast cancer
 
 Breast cancer can require treatment beyond surgery. Systemic treatment uses medicines that act throughout the body and may be recommended before or after surgery, or for advanced disease.
@@ -198,6 +206,8 @@ Final cost can depend on the medicine, dose, number of cycles, interval, duratio
 - [Hospitals for immunotherapy](/hospitals/India/Medical-Oncology/Immunotherapy)
 - [Immunotherapy cost in India](/costs/India/Medical-Oncology/Immunotherapy)
 
+[Get a systemic-therapy estimate](/consult?treatment=Chemotherapy)
+
 ## Radiation therapy for breast cancer
 
 Radiation therapy uses high-energy radiation to treat cancer cells in a defined treatment area. It may be recommended after breast-conserving surgery, after mastectomy in selected patients, for specific areas of advanced disease, or for symptom control in selected situations.
@@ -210,6 +220,8 @@ Radiation typically involves multiple treatment sessions. For international pati
 
 - [External beam radiotherapy cost in India](/costs/India/Radiation-Oncology/EBRT)
 - [Radiation oncologists in India](/doctors/India/Radiation-Oncology)
+
+[Plan a radiation stay in India](https://wa.me/919044346292?text=I%20need%20help%20planning%20breast%20cancer%20radiation%20in%20India.)
 
 ## How is breast cancer treatment sequenced?
 
@@ -249,6 +261,8 @@ These are planning ranges rather than patient-specific hospital quotations. They
 ### What affects the cost?
 
 The final quotation may be influenced by the type of surgery, hospital, city, surgeon, procedure complexity, hospital stay, room category, anaesthesia, pathology, imaging, lymph node surgery, reconstruction, chemotherapy and number of cycles, targeted medicines, immunotherapy, radiation, hormone therapy, additional investigations, treatment-related complications and follow-up requirements. Ask the hospital for an itemized estimate showing what is included and excluded.
+
+[Request an itemized hospital estimate](/consult?treatment=Breast%20Cancer%20Treatment%20in%20India)
 
 ## Breast cancer treatment cost in major Indian cities
 
@@ -317,7 +331,9 @@ Hospital selection should reflect the patient's treatment requirements.
 - **Reconstruction:** implant reconstruction, autologous reconstruction and microsurgical reconstruction where appropriate.
 - **International patient services:** medical-record coordination, interpreters, travel coordination, airport transfers, accommodation assistance, discharge documentation and follow-up coordination.
 
-The hospital should have the specific services required for the patient's treatment plan. [Request a treatment plan and estimate](/consult).
+The hospital should have the specific services required for the patient's treatment plan.
+
+[Request a treatment plan and estimate](/consult?treatment=Breast%20Cancer%20Treatment%20in%20India)
 
 ## How long should an international patient stay in India?
 
@@ -334,3 +350,5 @@ The required stay depends on the treatment pathway.
 Follow-up depends on the diagnosis and treatments received. The oncology team may monitor surgical recovery, radiation effects, chemotherapy-related effects, hormone therapy, targeted therapy, imaging, recurrence surveillance, lymphoedema, reconstruction and general recovery.
 
 International patients should request a detailed treatment summary before returning home. It can include the final diagnosis and stage, pathology findings, surgery performed, lymph node findings, ER/PR and HER2 status, chemotherapy regimen, radiation plan, targeted therapy, hormone therapy and recommended follow-up. This information helps the patient's local medical team continue care.
+
+[Share records on WhatsApp](https://wa.me/919044346292?text=I%20would%20like%20to%20share%20breast%20cancer%20records%20for%20a%20treatment%20plan%20in%20India.)
