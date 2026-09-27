@@ -106,6 +106,16 @@ const nextConfig = {
         destination: "/blogs/breast-cancer-targeted-therapy-side-effects",
         permanent: true,
       },
+      {
+        source: "/blog/breast-cancer-hormone-therapy-side-effects",
+        destination: "/blogs/breast-cancer-hormone-therapy-side-effects",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-chemotherapy-side-effects",
+        destination: "/blogs/breast-cancer-chemotherapy-side-effects",
+        permanent: true,
+      },
       { source: "/about", destination: "/", permanent: true },
     ];
   },

@@ -4,6 +4,8 @@ import { listPublishedPosts } from "@/lib/blogs";
 import { buildBlogSitemap, buildLocaleSitemap, sitemapXml } from "@/lib/i18n/sitemap-entries";
 
 const NEW_SLUGS = [
+  "breast-cancer-chemotherapy-side-effects",
+  "breast-cancer-hormone-therapy-side-effects",
   "breast-cancer-targeted-therapy-side-effects",
   "lumpectomy-vs-mastectomy",
   "breast-cancer-surgery-in-india",
@@ -39,7 +41,7 @@ test("the blog sitemap lists every published English article, newest first", () 
     assert.equal(row.changeFrequency, "weekly");
     assert.equal(row.priority, 0.7);
   }
-  assert.equal(urls[1], "https://gaf.healthcare/blogs/breast-cancer-targeted-therapy-side-effects");
+  assert.equal(urls[1], "https://gaf.healthcare/blogs/breast-cancer-chemotherapy-side-effects");
   assert.equal(buildBlogSitemap("ar").length, 0);
 });
 
