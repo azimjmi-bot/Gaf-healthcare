@@ -101,6 +101,11 @@ const nextConfig = {
         destination: "/blogs/lumpectomy-vs-mastectomy",
         permanent: true,
       },
+      {
+        source: "/blog/breast-cancer-targeted-therapy-side-effects",
+        destination: "/blogs/breast-cancer-targeted-therapy-side-effects",
+        permanent: true,
+      },
       { source: "/about", destination: "/", permanent: true },
     ];
   },
