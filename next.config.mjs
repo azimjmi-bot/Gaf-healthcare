@@ -91,6 +91,16 @@ const nextConfig = {
         destination: "/blogs/chemotherapy-for-breast-cancer-in-india",
         permanent: true,
       },
+      {
+        source: "/blog/breast-cancer-surgery-in-india",
+        destination: "/blogs/breast-cancer-surgery-in-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/lumpectomy-vs-mastectomy",
+        destination: "/blogs/lumpectomy-vs-mastectomy",
+        permanent: true,
+      },
       { source: "/about", destination: "/", permanent: true },
     ];
   },
