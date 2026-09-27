@@ -95,7 +95,7 @@ const blocks = [
   p("A diagnosis of prostate cancer does not automatically mean that surgery is required."),
   p("Treatment can range from **active surveillance for selected low-risk cancers** to [surgery](" + RP_COST + "), [radiation therapy](" + EBRT + "), [hormone therapy](" + HT + "), [chemotherapy](" + CHEMO + "), [targeted treatment](" + TARGET + ") or radiopharmaceutical therapy for more advanced disease. Some patients need only one treatment, while others require a combination of treatments."),
   p("The right approach depends on several factors, including the **stage of prostate cancer, PSA level, Gleason score, Grade Group, MRI findings, whether the cancer has spread, age, overall health, life expectancy and the patient's priorities**."),
-  p("For this reason, there is no single \"best prostate cancer treatment\" that applies to every patient. This guide sits beside the [Prostate Cancer Treatment in India](" + PILLAR + ") pathway and the city directories for [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad)."),
+  p("For this reason, there is no single \"best prostate cancer treatment\" that applies to every patient. This guide sits beside the [Prostate Cancer Treatment in India](" + PILLAR + ") pathway, the [treatment-without-surgery guide](/blogs/prostate-cancer-treatment-without-surgery) and the city directories for [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad)."),
   btn("Ask GAF about a prostate cancer treatment plan", consult("Prostate Cancer Treatment in India")),
   p("[WhatsApp +91 90443 46292 with your PSA, biopsy and MRI](" + wa("Please review my PSA, biopsy and MRI and advise on prostate cancer treatment options in India.") + ")"),
   img(
@@ -576,6 +576,7 @@ const article = {
     { label: "Lutetium-177 PSMA Therapy in India", href: PILLAR },
     { label: "Prostate Cancer Treatment Cost in India", href: RP_COST },
     { label: "Hormone therapy cost", href: HT },
+    { label: "Prostate Cancer Treatment Without Surgery", href: "/blogs/prostate-cancer-treatment-without-surgery" },
   ],
   blocks,
 };

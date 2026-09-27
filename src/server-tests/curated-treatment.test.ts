@@ -111,6 +111,7 @@ test("the published prostate cancer page uses site USD ranges and GEO links", ()
   assert.match(body, /\$6,500–\$14,500/);
   assert.match(body, /\$1,000–\$4,500/);
   assert.match(body, /\/blogs\/prostate-cancer-treatment-options-india/);
+  assert.match(body, /\/blogs\/prostate-cancer-treatment-without-surgery/);
   assert.match(body, /\/costs\/India\/Surgical-Oncology\/Radical-Prostatectomy/);
   assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Radical-Prostatectomy/);
   assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Radical-Prostatectomy/);
