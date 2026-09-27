@@ -76,6 +76,11 @@ const nextConfig = {
         destination: "/blogs/hormone-therapy-breast-cancer-india",
         permanent: true,
       },
+      {
+        source: "/blog/breast-reconstruction-after-mastectomy-india",
+        destination: "/blogs/breast-reconstruction-after-mastectomy-india",
+        permanent: true,
+      },
       { source: "/about", destination: "/", permanent: true },
     ];
   },
