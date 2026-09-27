@@ -36,6 +36,11 @@ const nextConfig = {
       },
       { source: "/journey", destination: "/blogs", permanent: true },
       { source: "/stories", destination: "/blogs", permanent: true },
+      {
+        source: "/blog/breast-cancer-treatment-by-stage",
+        destination: "/blogs/breast-cancer-treatment-by-stage",
+        permanent: true,
+      },
       { source: "/about", destination: "/", permanent: true },
     ];
   },

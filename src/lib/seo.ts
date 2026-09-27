@@ -406,10 +406,12 @@ export function medicalWebPageJsonLd(opts: {
   about: string;
   image?: string;
   locale?: AppLocale;
+  keywords?: string[];
+  spatialCoverage?: { "@type": "Country" | "City"; name: string }[];
 }) {
   const locale = opts.locale ?? "en";
   const url = absoluteUrl(opts.path, locale);
-  return {
+  return compact({
     "@context": "https://schema.org",
     "@type": ["MedicalWebPage", "WebPage"],
     "@id": documentId(opts.path, locale, "webpage"),
@@ -434,6 +436,8 @@ export function medicalWebPageJsonLd(opts: {
     },
     audience: { "@type": "MedicalAudience", audienceType: "Patient" },
     specialty: opts.specialty,
+    keywords: opts.keywords?.join(", "),
+    spatialCoverage: opts.spatialCoverage,
     ...(opts.image ? { image: absoluteUrl(opts.image) } : {}),
     about: {
       "@type": "MedicalProcedure",
@@ -441,7 +445,7 @@ export function medicalWebPageJsonLd(opts: {
       procedureType: opts.specialty,
       description: clip(opts.about, 300),
     },
-  };
+  });
 }
 
 export function hospitalItemListJsonLd(rows: Hospital[], opts: { name: string; path: string; locale?: AppLocale; addressCountry?: string }) {

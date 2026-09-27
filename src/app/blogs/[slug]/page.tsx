@@ -1,17 +1,63 @@
 import { cookies } from "next/headers";
 import { ArticleBlocks, ArticleRelated, CoverImage } from "@/components/article-body";
+import { JsonLd } from "@/components/json-ld";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { notFound } from "next/navigation";
 import { CtaBand } from "@/components/page-shell";
 import { CMS_COOKIE, cmsToken } from "@/lib/cms/auth";
 import { getArticleBySlug } from "@/lib/cms/store";
-import { getPost, listPublishedPosts } from "@/lib/blogs";
+import { faqsFromArticleBlocks, getPost, listPublishedPosts } from "@/lib/blogs";
 import { blogPageMetadata } from "@/lib/i18n/page-meta";
 import { localizeBlog, localizeMessages } from "@/lib/i18n/localize";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { editionFromLocale } from "@/lib/cms/edition";
 import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
+import { breadcrumbJsonLd, faqJsonLd, medicalWebPageJsonLd } from "@/lib/seo";
+import type { Article } from "@/lib/cms/types";
+import type { AppLocale } from "@/lib/i18n/languages";
 import type { Metadata } from "next";
+
+const INDIA_COVERAGE = [
+  { "@type": "Country" as const, name: "India" },
+  { "@type": "City" as const, name: "Delhi NCR" },
+  { "@type": "City" as const, name: "Mumbai" },
+  { "@type": "City" as const, name: "Bengaluru" },
+  { "@type": "City" as const, name: "Chennai" },
+  { "@type": "City" as const, name: "Hyderabad" },
+];
+
+function blogStructuredData(post: Article, locale: AppLocale) {
+  if (!post.seoTitle) return [];
+  const path = `/blogs/${post.slug}`;
+  const lastReviewed = (post.updatedAt || post.publishedAt || "").slice(0, 10) || "2026-09-27";
+  const faqs = faqsFromArticleBlocks(post.blocks);
+  const india = /india/i.test(`${post.title} ${post.seoTitle} ${post.seoDescription} ${post.tags.join(" ")}`);
+  const blocks: unknown[] = [
+    medicalWebPageJsonLd({
+      name: post.seoTitle || post.title,
+      description: post.seoDescription || post.excerpt,
+      path,
+      lastReviewed,
+      procedureName: post.title,
+      specialty: post.category || "Oncology",
+      about: post.excerpt,
+      image: post.ogImage || post.image || undefined,
+      locale,
+      keywords: post.keywords?.length ? post.keywords : post.tags,
+      spatialCoverage: india ? INDIA_COVERAGE : undefined,
+    }),
+    breadcrumbJsonLd(
+      [
+        { name: "GAF Healthcare", path: "/" },
+        { name: "Blogs", path: "/blogs" },
+        { name: post.title, path },
+      ],
+      locale,
+    ),
+  ];
+  if (faqs.length) blocks.push(faqJsonLd(faqs, { path, locale }));
+  return blocks;
+}
 
 export const dynamic = "force-dynamic";
 
@@ -58,8 +104,13 @@ export default async function BlogPostPage({
       .map((p) => localizeBlog(p, locale)),
   );
 
+  const schema = blogStructuredData(post, locale);
+
   return (
     <>
+      {schema.map((block, index) => (
+        <JsonLd key={index} data={block} />
+      ))}
       <section className="relative h-[50vh] min-h-[22rem] bg-ink text-ivory">
         {post.image ? (
           <CoverImage src={post.image} alt={post.imageAlt || ""} className="absolute inset-0 h-full w-full object-cover" />

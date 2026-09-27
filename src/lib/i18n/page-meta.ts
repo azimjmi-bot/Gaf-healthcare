@@ -46,14 +46,17 @@ export async function blogPageMetadata(post: NonNullable<ReturnType<typeof getPo
   const locale = await getRequestLocale();
   const title = post.seoTitle || post.title;
   const description = post.seoDescription || post.excerpt;
+  const keywords = post.keywords?.length ? post.keywords : post.tags;
   return withLocaleMetadata(
     {
       title,
       description,
+      keywords: keywords.length ? keywords : undefined,
       robots: post.allowIndex ? undefined : { index: false, follow: true },
       openGraph: {
         title,
         description,
+        type: "article",
         images: post.ogImage || post.image ? [{ url: post.ogImage || post.image }] : undefined,
       },
     },

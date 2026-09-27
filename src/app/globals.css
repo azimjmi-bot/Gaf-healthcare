@@ -2524,11 +2524,14 @@ img.dhero__art {
   border-radius: 0.75rem;
 }
 
-.treatment-article .md-body > p:has(> a.md-cta:only-child) {
+.treatment-article .md-body > p:has(> a.md-cta:only-child),
+.article-body > p:has(> a.md-cta:only-child),
+.article-body .md-body > p:has(> a.md-cta:only-child) {
   margin-block: 1.5rem 1.75rem;
 }
 
-.treatment-article .md-body a.md-cta {
+.treatment-article .md-body a.md-cta,
+.article-body a.md-cta {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -2541,7 +2544,8 @@ img.dhero__art {
   text-decoration: none !important;
 }
 
-.treatment-article .md-body a.md-cta[href^="https://wa.me"] {
+.treatment-article .md-body a.md-cta[href^="https://wa.me"],
+.article-body a.md-cta[href^="https://wa.me"] {
   background: #128c7e;
 }
 

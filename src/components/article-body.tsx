@@ -85,9 +85,18 @@ export function ArticleBlocks({
           return <hr key={block.id} />;
         }
         if (block.type === "button") {
+          const cta =
+            /^\/consult(?:\?|$)/.test(block.href) || /^https:\/\/wa\.me\//i.test(block.href);
           return (
             <p key={block.id}>
-              <a href={block.href}>{block.label}</a>
+              <a
+                href={block.href}
+                className={cta ? "md-cta" : undefined}
+                target={block.href.startsWith("http") ? "_blank" : undefined}
+                rel={block.href.startsWith("http") ? "noreferrer noopener" : undefined}
+              >
+                {block.label}
+              </a>
             </p>
           );
         }
