@@ -1330,1696 +1330,747 @@
         {
           "label": "International patients",
           "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "Cost guide",
+          "href": "/blogs/breast-cancer-treatment-cost-in-india"
         }
       ],
       "blocks": [
         {
           "id": "html_001",
           "type": "html",
-          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>Can breast cancer be treated during pregnancy?</strong> Yes. Breast cancer can usually be treated during pregnancy, although the type and timing of treatment may need to be modified to protect the developing baby. (cancer.gov)</p><p class=\"article-quick-answer__body\"><strong>How is breast cancer diagnosed during pregnancy?</strong> Clinical examination, ultrasound, mammography and biopsy can be used when breast cancer is suspected. Ultrasound does not use radiation, and mammography can be performed when clinically necessary with appropriate precautions. (cancer.gov)</p><p class=\"article-quick-answer__body\"><strong>Can a pregnant woman have breast cancer surgery?</strong> Yes. Surgery is generally considered possible during pregnancy, with the timing and anesthesia plan coordinated between the surgical and obstetric teams. (cancer.org)</p><p class=\"article-quick-answer__body\"><strong>Can chemotherapy be given during pregnancy?</strong> Certain chemotherapy medicines can be given during the second and third trimesters. Chemotherapy is generally avoided during the first trimester and is usually stopped several weeks before delivery. (cancer.org)</p><p class=\"article-quick-answer__body\"><strong>Can radiation therapy be given during pregnancy?</strong> Radiation to the breast is generally postponed until after delivery because radiation can harm the developing fetus. (cancer.gov)</p><p class=\"article-quick-answer__body\"><strong>Can hormone therapy be taken during pregnancy?</strong> Hormone therapy is generally delayed until after delivery because these medicines can affect the fetus. (cancer.org)</p><p class=\"article-quick-answer__body\"><strong>Can HER2-targeted therapy be given during pregnancy?</strong> HER2-targeted medicines such as trastuzumab are generally avoided during pregnancy because of potential fetal harm. (cancer.gov)</p><p class=\"article-quick-answer__body\"><strong>Does breast cancer spread to the baby?</strong> Breast cancer itself does not normally pass from the mother to the fetus. The main concern is choosing cancer treatment that controls the mother's cancer while minimizing risks to the developing baby. (cancer.gov)</p><p class=\"article-quick-answer__body\"><strong>Does pregnancy have to be ended after a breast cancer diagnosis?</strong> Not routinely. The decision is highly individual and depends on the cancer, stage, pregnancy stage and treatment options. Most patients can be treated without automatically ending the pregnancy. (cancer.org)</p><p class=\"article-quick-answer__body\"><strong>Can breast cancer during pregnancy be treated in India?</strong> Yes. Treatment requires coordination between a breast cancer team and a high-risk obstetric team, with treatment timing planned around the pregnancy.</p><p class=\"article-quick-answer__body\"><strong>What Is Pregnancy-Associated Breast Cancer?</strong> Breast cancer diagnosed during pregnancy, within one year after giving birth or during lactation is often referred to as pregnancy-associated breast cancer. (cancer.gov)</p></aside>"
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>Can breast cancer be treated during pregnancy?</strong> Yes. Breast cancer can usually be treated during pregnancy, although the type and timing of treatment may need to be modified to protect the developing baby. (cancer.gov)</p><p class=\"article-quick-answer__body\"><strong>How is breast cancer diagnosed during pregnancy?</strong> Clinical examination, ultrasound, mammography and biopsy can be used when breast cancer is suspected. Ultrasound does not use radiation, and mammography can be performed when clinically necessary with appropriate precautions. (cancer.gov)</p><p class=\"article-quick-answer__body\"><strong>Can a pregnant woman have breast cancer surgery?</strong> Yes. Surgery is generally considered possible during pregnancy, with the timing and anesthesia plan coordinated between the surgical and obstetric teams. (cancer.org)</p><p class=\"article-quick-answer__body\"><strong>Can chemotherapy be given during pregnancy?</strong> Certain chemotherapy medicines can be given during the second and third trimesters. Chemotherapy is generally avoided during the first trimester and is usually stopped several weeks before delivery. (cancer.org)</p><p class=\"article-quick-answer__body\"><strong>Can radiation therapy be given during pregnancy?</strong> Radiation to the breast is generally postponed until after delivery because radiation can harm the developing fetus. (cancer.gov)</p><p class=\"article-quick-answer__body\"><strong>Can hormone therapy be taken during pregnancy?</strong> Hormone therapy is generally delayed until after delivery because these medicines can affect the fetus. (cancer.org)</p><p class=\"article-quick-answer__body\"><strong>Can HER2-targeted therapy be given during pregnancy?</strong> HER2-targeted medicines such as trastuzumab are generally avoided during pregnancy because of potential fetal harm. (cancer.gov)</p><p class=\"article-quick-answer__body\"><strong>Does breast cancer spread to the baby?</strong> Breast cancer itself does not normally pass from the mother to the fetus. The main concern is choosing cancer treatment that controls the mother's cancer while minimizing risks to the developing baby. (cancer.gov)</p><p class=\"article-quick-answer__body\"><strong>Does pregnancy have to be ended after a breast cancer diagnosis?</strong> Not routinely. The decision is highly individual and depends on the cancer, stage, pregnancy stage and treatment options. Most patients can be treated without automatically ending the pregnancy. (cancer.org)</p><p class=\"article-quick-answer__body\"><strong>Can breast cancer during pregnancy be treated in India?</strong> Yes. Treatment requires coordination between a breast cancer team and a high-risk obstetric team, with treatment timing planned around the pregnancy.</p></aside>"
         },
         {
           "id": "p_002",
           "type": "paragraph",
-          "text": "Being diagnosed with breast cancer is difficult at any time. Being diagnosed while pregnant can make the situation even more complicated. A pregnant woman may naturally notice changes in her breasts during pregnancy. The breasts become larger, more tender and denser, and these normal changes can sometimes make a new lump or other abnormality harder to recognize. (cancer.gov) The good news is that breast cancer can be treated during pregnancy. The treatment plan simply has to account for two patients: the mother and the developing baby. Surgery can generally be performed during pregnancy when needed. Certain [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) treatments can be given after the first trimester, while treatments such as [radiation therapy](/blogs/radiation-therapy-for-breast-cancer), [hormone therapy](/blogs/breast-cancer-hormone-therapy-side-effects) and most HER2-targeted treatments are generally postponed until after delivery. (cancer.gov) This means that a breast cancer diagnosis during pregnancy does not automatically mean that treatment must wait until the baby is born. Instead, the oncology and obstetric teams work together to decide what needs to happen immediately, what can safely be given during pregnancy and what should wait. This guide supports the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) pathway."
+          "text": "Being diagnosed with breast cancer is difficult at any time. Being diagnosed while pregnant can make the situation even more complicated. A pregnant woman may naturally notice changes in her breasts during pregnancy. The breasts become larger, more tender and denser, and these normal changes can sometimes make a new lump or other abnormality harder to recognize. (cancer.gov)"
         },
         {
-          "id": "btn_003",
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "The good news is that breast cancer can be treated during pregnancy. The treatment plan simply has to account for two patients: the mother and the developing baby. Surgery can generally be performed during pregnancy when needed. Certain [chemotherapy](/blogs/chemotherapy-for-breast-cancer-in-india) treatments can be given after the first trimester, while treatments such as [radiation therapy](/blogs/radiation-therapy-for-breast-cancer), [hormone therapy](/blogs/hormone-therapy-breast-cancer-india) and most HER2-targeted treatments are generally postponed until after delivery. (cancer.gov)"
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "This means that a breast cancer diagnosis during pregnancy does not automatically mean that treatment must wait until the baby is born. Instead, the oncology and obstetric teams work together to decide what needs to happen immediately, what can safely be given during pregnancy and what should wait. This guide supports the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) pathway and the [young women](/blogs/breast-cancer-in-young-women-treatment-india) guide."
+        },
+        {
+          "id": "btn_005",
           "type": "button",
           "label": "Ask GAF about breast cancer during pregnancy",
           "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
-          "id": "p_004",
+          "id": "p_006",
           "type": "paragraph",
           "text": "[WhatsApp +91 90443 46292 with your records](https://wa.me/919044346292?text=Please%20review%20my%20records%20and%20advise%20on%20breast%20cancer%20treatment%20during%20pregnancy%20in%20India.)"
         },
         {
-          "id": "img_005",
+          "id": "img_007",
           "type": "image",
           "src": "/uploads/articles/pregnancy-consult-visual.webp",
           "alt": "Breast cancer diagnosis and treatment during pregnancy with coordinated oncology and obstetric care",
           "caption": "Treatment decisions during pregnancy need both oncology and obstetric teams."
         },
         {
-          "id": "p_006",
-          "type": "paragraph",
-          "text": "It is uncommon."
-        },
-        {
-          "id": "p_007",
-          "type": "paragraph",
-          "text": "NCI estimates that breast cancer occurs in approximately 1 in 3,000 pregnancies. (cancer.gov)"
-        },
-        {
-          "id": "p_008",
-          "type": "paragraph",
-          "text": "The exact terminology can vary between studies and clinical settings, so doctors may distinguish between cancer diagnosed during pregnancy and cancer diagnosed after delivery while breastfeeding."
-        },
-        {
-          "id": "h_009",
+          "id": "h_008",
           "type": "heading",
-          "level": 3,
+          "level": 2,
+          "text": "What Is Pregnancy-Associated Breast Cancer?"
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "Breast cancer diagnosed during pregnancy, within one year after giving birth or during lactation is often referred to as pregnancy-associated breast cancer. (cancer.gov) It is uncommon. NCI estimates that breast cancer occurs in approximately 1 in 3,000 pregnancies. (cancer.gov) The exact terminology can vary between studies and clinical settings, so doctors may distinguish between cancer diagnosed during pregnancy and cancer diagnosed after delivery while breastfeeding."
+        },
+        {
+          "id": "h_010",
+          "type": "heading",
+          "level": 2,
           "text": "Why Can Breast Cancer Be Difficult to Detect During Pregnancy?"
         },
         {
-          "id": "p_010",
+          "id": "p_011",
           "type": "paragraph",
-          "text": "Pregnancy changes the breasts significantly."
+          "text": "Pregnancy changes the breasts significantly. They become larger, more tender, more glandular, denser and more nodular or lumpy to feel. These changes can make a new abnormality harder to distinguish from normal pregnancy-related changes. (cancer.gov) That does not mean that a new breast lump during pregnancy should simply be attributed to pregnancy. It should be assessed."
         },
         {
-          "id": "h_011",
+          "id": "h_012",
           "type": "heading",
           "level": 2,
-          "text": "The breasts become:"
-        },
-        {
-          "id": "ul_012",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Larger",
-            "More tender",
-            "More glandular",
-            "Denser",
-            "More nodular or lumpy to feel"
-          ]
+          "text": "What Should You Do If You Find a Breast Lump During Pregnancy?"
         },
         {
           "id": "p_013",
           "type": "paragraph",
-          "text": "These changes can make a new abnormality harder to distinguish from normal pregnancy-related changes. (cancer.gov)"
+          "text": "Do not wait until after delivery to have it checked. Most breast lumps during pregnancy are not cancer. However, the only way to determine the cause is through appropriate clinical assessment. Your doctor may start with a breast examination and ultrasound. If the finding remains suspicious, further imaging and biopsy may be recommended. Pregnancy should not prevent appropriate investigation of a concerning breast change. See [diagnosis tests](${DIAGNOSIS})."
         },
         {
-          "id": "p_014",
-          "type": "paragraph",
-          "text": "That does not mean that a new breast lump during pregnancy should simply be attributed to pregnancy."
+          "id": "btn_014",
+          "type": "button",
+          "label": "Send imaging and pregnancy records for review",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
           "id": "p_015",
           "type": "paragraph",
-          "text": "It should be assessed."
+          "text": "[WhatsApp +91 90443 46292 your imaging](https://wa.me/919044346292?text=Please%20review%20my%20breast%20imaging%20and%20pregnancy%20records%20and%20advise%20whether%20further%20tests%20are%20needed%20in%20India.)"
         },
         {
           "id": "h_016",
           "type": "heading",
-          "level": 3,
-          "text": "What Should You Do If You Find a Breast Lump During Pregnancy?"
+          "level": 2,
+          "text": "Is Breast Ultrasound Safe During Pregnancy?"
         },
         {
-          "id": "p_017",
-          "type": "paragraph",
-          "text": "Do not wait until after delivery to have it checked."
+          "id": "img_017",
+          "type": "image",
+          "src": "/uploads/articles/pregnancy-ultrasound-visual.webp",
+          "alt": "Obstetric ultrasound used alongside breast imaging when cancer is suspected during pregnancy",
+          "caption": "Ultrasound does not use ionizing radiation and is commonly the first imaging test for a breast change during pregnancy."
         },
         {
           "id": "p_018",
           "type": "paragraph",
-          "text": "Most breast lumps during pregnancy are not cancer."
+          "text": "Yes. Ultrasound does not use ionizing radiation and is commonly used as the initial imaging test when a breast abnormality is found during pregnancy. (cancer.gov) It can help distinguish solid masses, cysts, normal pregnancy-related changes and areas that need biopsy. The doctor may recommend additional imaging depending on what the ultrasound shows."
         },
         {
-          "id": "p_019",
-          "type": "paragraph",
-          "text": "However, the only way to determine the cause is through appropriate clinical assessment."
+          "id": "h_019",
+          "type": "heading",
+          "level": 2,
+          "text": "Can You Have a Mammogram While Pregnant?"
         },
         {
           "id": "p_020",
           "type": "paragraph",
-          "text": "Your doctor may start with a breast examination and ultrasound."
+          "text": "Yes, when medically necessary. Mammography uses a relatively small amount of radiation, and appropriate precautions can be taken to minimize fetal exposure. (cancer.gov) Pregnancy is therefore not an absolute reason to avoid mammography when a suspicious breast finding needs to be investigated. The decision should be made by the treating team based on the clinical situation. See [follow-up imaging](/blogs/breast-cancer-follow-up-tests)."
         },
         {
-          "id": "p_021",
-          "type": "paragraph",
-          "text": "If the finding remains suspicious, further imaging and biopsy may be recommended."
-        },
-        {
-          "id": "h_022",
+          "id": "h_021",
           "type": "heading",
           "level": 2,
-          "text": "The important principle is simple:"
+          "text": "Is a Breast Biopsy Safe During Pregnancy?"
         },
         {
-          "id": "p_023",
+          "id": "p_022",
           "type": "paragraph",
-          "text": "Pregnancy should not prevent appropriate investigation of a concerning breast change."
+          "text": "A breast biopsy can be performed during pregnancy when required. A biopsy is important because imaging alone cannot establish whether a suspicious area is cancer. The tissue can be examined by a pathologist and, if cancer is found, tested for estrogen receptor (ER), progesterone receptor (PR), HER2 and tumor grade. These results help determine the treatment plan. NCI specifically lists biopsy and hormone-receptor testing among the diagnostic procedures used for breast cancer during pregnancy. (cancer.gov) See the [pathology report](/blogs/breast-cancer-pathology-report-explained) explainer."
         },
         {
-          "id": "h_024",
+          "id": "h_023",
           "type": "heading",
-          "level": 3,
-          "text": "Is Breast Ultrasound Safe During Pregnancy?"
+          "level": 2,
+          "text": "Can MRI Be Used During Pregnancy?"
         },
         {
-          "id": "p_025",
+          "id": "p_024",
           "type": "paragraph",
-          "text": "Yes."
+          "text": "MRI may sometimes be used when additional information is needed. However, the decision about MRI during pregnancy is more complicated than simply ordering it as routine breast imaging. In particular, the use of contrast agents requires careful consideration. NCI notes that MRI without contrast may be used in selected circumstances during pregnancy, while gadolinium crosses the placenta and is generally avoided unless there is a strong clinical reason. (cancer.gov) Your radiologist and oncology team should determine whether MRI is appropriate."
+        },
+        {
+          "id": "h_025",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens If the Biopsy Confirms Breast Cancer?"
         },
         {
           "id": "p_026",
           "type": "paragraph",
-          "text": "Ultrasound does not use ionizing radiation and is commonly used as the initial imaging test when a breast abnormality is found during pregnancy. (cancer.gov)"
+          "text": "Once breast cancer is confirmed, the next step is determining the type of breast cancer, the tumor size, lymph-node involvement, whether there is distant spread, ER status, PR status, HER2 status and the stage of pregnancy. The pregnancy itself does not change the biological characteristics of the tumor. But it changes which treatments can safely be given and when. See [ER, PR and HER2](/blogs/er-pr-her2-breast-cancer-treatment-india) and [stages](/blogs/breast-cancer-stages-0-1-2-3-4)."
         },
         {
           "id": "h_027",
           "type": "heading",
           "level": 2,
-          "text": "It can help distinguish:"
+          "text": "Does Pregnancy Make Breast Cancer More Aggressive?"
         },
         {
-          "id": "ul_028",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Solid masses",
-            "Cysts",
-            "Normal pregnancy-related changes",
-            "Areas that need biopsy"
-          ]
-        },
-        {
-          "id": "p_029",
+          "id": "p_028",
           "type": "paragraph",
-          "text": "The doctor may recommend additional imaging depending on what the ultrasound shows."
+          "text": "This question is more complicated than it first appears. Pregnancy can make breast cancer harder to detect, which may contribute to diagnosis at a later stage. Research comparing outcomes of pregnant and non-pregnant patients has produced mixed results. Some studies find similar outcomes when cancers are compared at the same stage, while other research has reported differences. (cancer.gov) It is therefore more useful to focus on the individual's stage, tumor biology, response to treatment and overall health rather than assuming pregnancy itself determines the outcome."
         },
         {
-          "id": "h_030",
+          "id": "h_029",
           "type": "heading",
-          "level": 3,
-          "text": "Can You Have a Mammogram While Pregnant?"
+          "level": 2,
+          "text": "Can Breast Cancer Surgery Be Performed During Pregnancy?"
+        },
+        {
+          "id": "img_030",
+          "type": "image",
+          "src": "/uploads/articles/pregnancy-followup-visual.webp",
+          "alt": "Surgical and obstetric teams planning breast cancer surgery during pregnancy",
+          "caption": "Surgery is generally possible during pregnancy when the surgical, anaesthetic and obstetric teams plan together."
         },
         {
           "id": "p_031",
           "type": "paragraph",
-          "text": "Yes, when medically necessary."
+          "text": "Yes. Surgery is an important part of treatment for many pregnant patients with early breast cancer. The operation may involve lumpectomy, mastectomy or lymph-node surgery. The choice depends on the cancer and the stage of pregnancy. (cancer.gov) The surgical plan also has to account for anesthesia and obstetric monitoring. See [breast cancer surgery](/blogs/breast-cancer-surgery-in-india) and [lumpectomy versus mastectomy](/blogs/lumpectomy-vs-mastectomy)."
         },
         {
-          "id": "p_032",
-          "type": "paragraph",
-          "text": "Mammography uses a relatively small amount of radiation, and appropriate precautions can be taken to minimize fetal exposure. (cancer.gov)"
+          "id": "btn_032",
+          "type": "button",
+          "label": "Ask about surgery timing during pregnancy",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
           "id": "p_033",
           "type": "paragraph",
-          "text": "Pregnancy is therefore not an absolute reason to avoid [mammography](/blogs/breast-cancer-follow-up-tests) when a suspicious breast finding needs to be investigated."
+          "text": "[WhatsApp +91 90443 46292 about surgery](https://wa.me/919044346292?text=Please%20advise%20on%20the%20safest%20timing%20for%20breast%20cancer%20surgery%20during%20pregnancy%20in%20India.)"
         },
         {
-          "id": "p_034",
-          "type": "paragraph",
-          "text": "The decision should be made by the treating team based on the clinical situation."
-        },
-        {
-          "id": "h_035",
+          "id": "h_034",
           "type": "heading",
-          "level": 3,
-          "text": "Is a Breast Biopsy Safe During Pregnancy?"
+          "level": 2,
+          "text": "Is Anesthesia Safe During Pregnancy?"
         },
         {
-          "id": "p_036",
+          "id": "p_035",
           "type": "paragraph",
-          "text": "A breast biopsy can be performed during pregnancy when required."
+          "text": "Modern anesthesia can be used during pregnancy when surgery is medically necessary. However, pregnancy changes how the body responds to anesthesia and surgery. The surgical team may therefore work with a breast surgeon or surgical oncologist, an anesthesiologist, an obstetrician and a maternal-fetal medicine specialist. The timing of surgery and the medications used are selected with both the mother's and baby's safety in mind. (cancer.org)"
+        },
+        {
+          "id": "h_036",
+          "type": "heading",
+          "level": 2,
+          "text": "Lumpectomy or Mastectomy During Pregnancy?"
         },
         {
           "id": "p_037",
           "type": "paragraph",
-          "text": "A biopsy is important because imaging alone cannot establish whether a suspicious area is cancer."
+          "text": "Both procedures may be considered. However, the timing of pregnancy can influence the decision. [Radiation therapy](/blogs/radiation-therapy-for-breast-cancer) is generally postponed until after delivery. Because radiation is commonly part of treatment after lumpectomy, some patients diagnosed earlier in pregnancy may instead be advised to undergo mastectomy to avoid delaying necessary radiation for too long. (cancer.gov) This does not mean that mastectomy is automatically required during pregnancy. The decision depends on the cancer, timing, available treatment options and the patient's circumstances."
         },
         {
           "id": "h_038",
           "type": "heading",
           "level": 2,
-          "text": "The tissue can be examined by a pathologist and, if cancer is found, tested for characteristics such as:"
+          "text": "Can Sentinel Lymph Node Biopsy Be Performed During Pregnancy?"
         },
         {
-          "id": "ul_039",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Estrogen receptor (ER)",
-            "Progesterone receptor (PR)",
-            "HER2",
-            "Tumor grade"
-          ]
-        },
-        {
-          "id": "p_040",
+          "id": "p_039",
           "type": "paragraph",
-          "text": "These results help determine the treatment plan."
+          "text": "Lymph-node evaluation may be needed because breast cancer can spread to lymph nodes. The approach during pregnancy requires additional consideration. NCI notes that evidence regarding sentinel lymph-node biopsy during pregnancy is limited, while the American Cancer Society describes circumstances in which sentinel-node biopsy may be considered with specific techniques. (cancer.gov; cancer.org) The blue dye sometimes used in sentinel-node mapping is generally avoided during pregnancy. The exact lymph-node procedure should therefore be decided by the breast surgical team in consultation with the obstetric team."
         },
         {
-          "id": "p_041",
-          "type": "paragraph",
-          "text": "NCI specifically lists biopsy and hormone-receptor testing among the diagnostic procedures used for breast cancer during pregnancy. (cancer.gov)"
-        },
-        {
-          "id": "h_042",
+          "id": "h_040",
           "type": "heading",
-          "level": 3,
-          "text": "Can MRI Be Used During Pregnancy?"
+          "level": 2,
+          "text": "Can Chemotherapy Be Given During Pregnancy?"
         },
         {
-          "id": "p_043",
+          "id": "img_041",
+          "type": "image",
+          "src": "/uploads/articles/pregnancy-infusion-visual.webp",
+          "alt": "Chemotherapy infusion planned after the first trimester for a pregnant woman with breast cancer",
+          "caption": "Certain chemotherapy regimens can be used in the second and third trimesters and are usually stopped several weeks before delivery."
+        },
+        {
+          "id": "p_042",
           "type": "paragraph",
-          "text": "MRI may sometimes be used when additional information is needed."
+          "text": "Yes, but timing is critical. Chemotherapy is generally not given during the first trimester because this is a major period of fetal development. (cancer.org) Certain chemotherapy regimens can be used during the second and third trimesters. NCI notes that early-stage breast cancer during pregnancy may be treated with chemotherapy after the first trimester when indicated. (cancer.gov) The specific drugs and schedule must be selected by the oncology team. See [chemotherapy](/blogs/chemotherapy-for-breast-cancer-in-india) and [side effects](/blogs/breast-cancer-chemotherapy-side-effects)."
+        },
+        {
+          "id": "btn_043",
+          "type": "button",
+          "label": "Ask whether chemotherapy can start this trimester",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
           "id": "p_044",
           "type": "paragraph",
-          "text": "However, the decision about MRI during pregnancy is more complicated than simply ordering it as routine breast imaging."
+          "text": "[WhatsApp +91 90443 46292 about chemotherapy](https://wa.me/919044346292?text=Please%20advise%20whether%20chemotherapy%20can%20be%20given%20during%20my%20pregnancy%20and%20which%20regimen%20may%20be%20considered%20in%20India.)"
         },
         {
-          "id": "p_045",
-          "type": "paragraph",
-          "text": "In particular, the use of contrast agents requires careful consideration."
+          "id": "h_045",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Is Chemotherapy Avoided During the First Trimester?"
         },
         {
           "id": "p_046",
           "type": "paragraph",
-          "text": "NCI notes that MRI without contrast may be used in selected circumstances during pregnancy, while gadolinium crosses the placenta and is generally avoided unless there is a strong clinical reason. (cancer.gov)"
+          "text": "During the first trimester, the developing fetus undergoes major organ formation. Exposure to certain chemotherapy medicines during this period can increase the risk of developmental problems and pregnancy loss. For that reason, if chemotherapy is necessary, doctors generally plan it after the first trimester when possible. (cancer.org) This is one of the situations where treatment timing becomes especially important."
         },
         {
-          "id": "p_047",
-          "type": "paragraph",
-          "text": "Your radiologist and oncology team should determine whether MRI is appropriate."
-        },
-        {
-          "id": "h_048",
+          "id": "h_047",
           "type": "heading",
-          "level": 3,
-          "text": "What Happens If the Biopsy Confirms Breast Cancer?"
+          "level": 2,
+          "text": "What Happens If Breast Cancer Is Diagnosed in the First Trimester?"
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "This can be one of the most difficult situations. The medical team has to consider cancer stage, tumor biology, how quickly treatment needs to begin, the type of treatment required, gestational age, available treatment alternatives and the patient's wishes. Surgery may still be possible. Chemotherapy may need to be delayed until the second trimester. Treatments that are not considered safe during pregnancy may need to wait until after delivery. For aggressive or advanced cancers where immediate treatment is critical, the medical team will discuss all available options with the patient."
         },
         {
           "id": "h_049",
           "type": "heading",
           "level": 2,
-          "text": "Once breast cancer is confirmed, the next step is determining:"
+          "text": "Can Radiation Therapy Be Given During Pregnancy?"
         },
         {
-          "id": "ul_050",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "The type of breast cancer",
-            "The tumor size",
-            "Lymph-node involvement",
-            "Whether there is distant spread",
-            "ER status",
-            "PR status",
-            "HER2 status",
-            "The stage of pregnancy"
-          ]
-        },
-        {
-          "id": "p_051",
+          "id": "p_050",
           "type": "paragraph",
-          "text": "The pregnancy itself does not change the biological characteristics of the tumor."
+          "text": "Breast radiation is generally postponed until after delivery. Radiation involves ionizing radiation, and therapeutic doses can expose the developing fetus to potentially harmful radiation. (cancer.gov) This can create an important treatment-planning issue. For example, a patient who normally would have lumpectomy followed by radiation may need a different surgical approach depending on how far along the pregnancy is. See [radiation therapy](/blogs/radiation-therapy-for-breast-cancer) and [radiation side effects](/blogs/breast-cancer-radiation-side-effects)."
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens to Radiation After Delivery?"
         },
         {
           "id": "p_052",
           "type": "paragraph",
-          "text": "But it changes which treatments can safely be given and when."
+          "text": "If radiation was postponed during pregnancy, it can generally be incorporated into treatment after delivery when it remains indicated. The timing depends on surgery, wound healing, chemotherapy, delivery, cancer stage and the overall treatment plan. The oncology team will establish the sequence."
         },
         {
           "id": "h_053",
           "type": "heading",
-          "level": 3,
-          "text": "Does Pregnancy Make Breast Cancer More Aggressive?"
+          "level": 2,
+          "text": "Can Hormone Therapy Be Given During Pregnancy?"
         },
         {
           "id": "p_054",
           "type": "paragraph",
-          "text": "This question is more complicated than it first appears."
+          "text": "Generally, no. If the breast cancer is ER-positive or PR-positive, hormone therapy may be an important part of treatment. But hormone therapy is generally delayed until after delivery because these medicines can affect the fetus. (cancer.gov) For example, tamoxifen is not considered appropriate during pregnancy. The treatment can be started after delivery when the medical team determines that it is appropriate. See [hormone therapy](/blogs/hormone-therapy-breast-cancer-india) and [side effects](/blogs/breast-cancer-hormone-therapy-side-effects)."
         },
         {
-          "id": "p_055",
-          "type": "paragraph",
-          "text": "Pregnancy can make breast cancer harder to detect, which may contribute to diagnosis at a later stage."
+          "id": "h_055",
+          "type": "heading",
+          "level": 2,
+          "text": "What About HER2-Targeted Therapy?"
         },
         {
           "id": "p_056",
           "type": "paragraph",
-          "text": "Research comparing outcomes of pregnant and non-pregnant patients has produced mixed results. Some studies find similar outcomes when cancers are compared at the same stage, while other research has reported differences. (cancer.gov)"
+          "text": "HER2-targeted medicines are generally not used during pregnancy. Trastuzumab, for example, has been associated with fetal complications, particularly involving the developing kidneys and amniotic fluid. (cancer.org) Other HER2-directed medicines are also generally avoided. This means that a patient with HER2-positive breast cancer may receive some components of treatment during pregnancy while postponing HER2-directed therapy until after delivery. The exact sequence depends on the cancer and gestational age. See [HER2-positive treatment](/blogs/her2-positive-breast-cancer-treatment-india)."
         },
         {
           "id": "h_057",
           "type": "heading",
           "level": 2,
-          "text": "It is therefore more useful to focus on the individual's:"
+          "text": "Can Immunotherapy Be Given During Pregnancy?"
         },
         {
-          "id": "ul_058",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Stage",
-            "Tumor biology",
-            "Response to treatment",
-            "Overall health"
-          ]
-        },
-        {
-          "id": "p_059",
+          "id": "p_058",
           "type": "paragraph",
-          "text": "rather than assuming pregnancy itself determines the outcome."
+          "text": "Immunotherapy is generally avoided during pregnancy. There is limited evidence about the safety of immune checkpoint inhibitors during pregnancy, and there are concerns about the effect of altering the maternal immune system on pregnancy. (cancer.org) If immunotherapy would ordinarily form part of treatment, the oncology team has to determine whether it can safely be postponed or whether the clinical situation requires a different approach."
         },
         {
-          "id": "img_060",
-          "type": "image",
-          "src": "/uploads/articles/pregnancy-ultrasound-visual.webp",
-          "alt": "Obstetric ultrasound during breast cancer treatment in pregnancy",
-          "caption": "The baby is monitored while cancer treatment is planned around the trimester."
+          "id": "h_059",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Targeted Therapy Be Given During Pregnancy?"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "Most targeted breast cancer treatments are not routinely given during pregnancy. This includes many HER2-targeted medicines and other targeted therapies. The reason is that these medicines can affect fetal development, and safety data during pregnancy are limited. (cancer.org) Targeted therapy can often be introduced after delivery when medically appropriate."
         },
         {
           "id": "h_061",
           "type": "heading",
-          "level": 3,
-          "text": "Can Breast Cancer Surgery Be Performed During Pregnancy?"
+          "level": 2,
+          "text": "Can a Pregnant Woman Continue Breastfeeding During Cancer Treatment?"
         },
         {
           "id": "p_062",
           "type": "paragraph",
-          "text": "Yes."
+          "text": "Usually not. Many chemotherapy, hormone and targeted medicines can pass into breast milk and potentially harm the baby. Therefore, breastfeeding is generally not recommended while receiving these systemic cancer treatments. (cancer.org) If cancer is diagnosed after delivery while the mother is breastfeeding, the treatment team will explain when breastfeeding needs to stop."
         },
         {
-          "id": "p_063",
-          "type": "paragraph",
-          "text": "Surgery is an important part of treatment for many pregnant patients with early breast cancer."
-        },
-        {
-          "id": "h_064",
+          "id": "h_063",
           "type": "heading",
           "level": 2,
-          "text": "The operation may involve:"
+          "text": "What If Breast Cancer Is Diagnosed While Breastfeeding?"
         },
         {
-          "id": "ul_065",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Lumpectomy",
-            "Mastectomy",
-            "Lymph-node surgery"
-          ]
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "The situation is slightly different from breast cancer diagnosed during pregnancy. The baby is no longer exposed through the placenta, but some cancer medicines can enter breast milk. Diagnostic imaging and biopsy can still be performed when necessary. The treatment plan will determine whether breastfeeding can continue. If chemotherapy, hormone therapy or targeted treatment is required, breastfeeding will generally need to stop. (cancer.gov)"
+        },
+        {
+          "id": "h_065",
+          "type": "heading",
+          "level": 2,
+          "text": "Does the Baby Have Breast Cancer?"
         },
         {
           "id": "p_066",
           "type": "paragraph",
-          "text": "The choice depends on the cancer and the stage of pregnancy. (cancer.gov)"
+          "text": "No. Breast cancer does not normally pass from a pregnant mother to her fetus. The main medical concern is the effect that cancer treatment may have on fetal development. (cancer.gov) This distinction is important because patients sometimes worry that the cancer itself will spread directly to the baby. That is not how breast cancer normally behaves."
         },
         {
-          "id": "p_067",
-          "type": "paragraph",
-          "text": "The surgical plan also has to account for anesthesia and obstetric monitoring."
-        },
-        {
-          "id": "h_068",
+          "id": "h_067",
           "type": "heading",
-          "level": 3,
-          "text": "Is Anesthesia Safe During Pregnancy?"
+          "level": 2,
+          "text": "Does a Breast Cancer Diagnosis Mean the Pregnancy Must End?"
         },
         {
-          "id": "p_069",
+          "id": "p_068",
           "type": "paragraph",
-          "text": "Modern anesthesia can be used during pregnancy when surgery is medically necessary."
+          "text": "Not routinely. A breast cancer diagnosis does not automatically require termination of pregnancy. Many patients can receive surgery and, when appropriate, chemotherapy during pregnancy while postponing treatments that are unsafe for the fetus. (cancer.org) However, there can be exceptional circumstances. For example, a patient with a very aggressive or advanced cancer diagnosed very early in pregnancy may face a situation where the safest cancer treatment cannot be given while continuing the pregnancy. In such cases, the decision requires detailed discussion between the patient and her medical team. It is not a decision that can be made from the diagnosis alone."
+        },
+        {
+          "id": "h_069",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Ending the Pregnancy Improve Breast Cancer Survival?"
         },
         {
           "id": "p_070",
           "type": "paragraph",
-          "text": "However, pregnancy changes how the body responds to anesthesia and surgery."
+          "text": "Available evidence does not support ending a pregnancy as a routine strategy to improve breast cancer outcomes. NCI and the American Cancer Society both note that pregnancy termination does not generally improve prognosis. (cancer.gov; cancer.org) There can, however, be exceptional cases where treatment needs create a serious conflict between maternal cancer care and continuation of pregnancy. Those situations require individualized medical and ethical discussion."
         },
         {
           "id": "h_071",
           "type": "heading",
           "level": 2,
-          "text": "The surgical team may therefore work with:"
+          "text": "Does Pregnancy Make Breast Cancer Treatment Less Effective?"
         },
         {
-          "id": "ul_072",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Breast surgeon or surgical oncologist",
-            "Anesthesiologist",
-            "Obstetrician",
-            "Maternal-fetal medicine specialist"
-          ]
-        },
-        {
-          "id": "p_073",
+          "id": "p_072",
           "type": "paragraph",
-          "text": "The timing of surgery and the medications used are selected with both the mother's and baby's safety in mind. (cancer.org)"
+          "text": "The goal of treatment remains the same: control or eliminate the cancer while protecting the pregnancy as much as medically possible. Some treatments may need to be delayed. Others can be given during pregnancy. Therefore, the treatment plan may look different from that of a non-pregnant patient with the same diagnosis. The stage and biological characteristics of the cancer remain central to deciding treatment."
         },
         {
-          "id": "h_074",
+          "id": "h_073",
           "type": "heading",
-          "level": 3,
-          "text": "Lumpectomy or Mastectomy During Pregnancy?"
+          "level": 2,
+          "text": "What Specialists Are Needed?"
         },
         {
-          "id": "p_075",
+          "id": "p_074",
           "type": "paragraph",
-          "text": "Both procedures may be considered."
+          "text": "Breast cancer during pregnancy requires more coordination than ordinary breast cancer care. The team may include a breast surgeon or surgical oncologist, medical oncologist, radiation oncologist, high-risk obstetrician, maternal-fetal medicine specialist, breast radiologist, pathologist, anesthesiologist and a neonatal team when appropriate. The oncologist and obstetric team need to communicate throughout treatment."
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Is a High-Risk Obstetric Team Important?"
         },
         {
           "id": "p_076",
           "type": "paragraph",
-          "text": "However, the timing of pregnancy can influence the decision."
+          "text": "The pregnancy needs its own monitoring while cancer treatment is taking place. The obstetric team can assess fetal growth, pregnancy development, timing of delivery, maternal health, potential effects of treatment and medication-related risks. This does not replace the oncology team. Both teams are necessary."
         },
         {
-          "id": "p_077",
-          "type": "paragraph",
-          "text": "Radiation therapy is generally postponed until after delivery."
+          "id": "h_077",
+          "type": "heading",
+          "level": 2,
+          "text": "Can a Baby Be Delivered Early Because of Breast Cancer?"
         },
         {
           "id": "p_078",
           "type": "paragraph",
-          "text": "Because radiation is commonly part of treatment after lumpectomy, some patients diagnosed earlier in pregnancy may instead be advised to undergo mastectomy to avoid delaying necessary radiation for too long. (cancer.gov)"
+          "text": "Sometimes. The decision depends on gestational age, the cancer treatment schedule, the mother's condition, fetal development, planned chemotherapy and the overall urgency of cancer treatment. Chemotherapy is generally avoided close to delivery because it can affect blood counts and increase complications around childbirth. (cancer.org) The obstetric and oncology teams coordinate the timing."
         },
         {
-          "id": "p_079",
-          "type": "paragraph",
-          "text": "This does not mean that mastectomy is automatically required during pregnancy."
+          "id": "h_079",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Breast Cancer Treatment Affect Fertility?"
         },
         {
           "id": "p_080",
           "type": "paragraph",
-          "text": "The decision depends on the cancer, timing, available treatment options and the patient's circumstances."
+          "text": "It can. Chemotherapy and some hormone-related treatments can affect ovarian function and future fertility. Because pregnancy itself is already ongoing, fertility preservation before treatment is obviously different from the situation faced by someone who has not yet conceived. For patients who want more children after completing treatment, fertility and reproductive planning should still be discussed early. The important point is that this conversation should happen before treatment begins whenever possible. See [breast cancer in young women](/blogs/breast-cancer-in-young-women-treatment-india)."
         },
         {
           "id": "h_081",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Sentinel Lymph Node Biopsy Be Performed During Pregnancy?"
-        },
-        {
-          "id": "p_082",
-          "type": "paragraph",
-          "text": "Lymph-node evaluation may be needed because breast cancer can spread to lymph nodes."
-        },
-        {
-          "id": "p_083",
-          "type": "paragraph",
-          "text": "The approach during pregnancy requires additional consideration."
-        },
-        {
-          "id": "p_084",
-          "type": "paragraph",
-          "text": "NCI notes that evidence regarding sentinel lymph-node biopsy during pregnancy is limited, while the American Cancer Society describes circumstances in which sentinel-node biopsy may be considered with specific techniques. (cancer.gov; cancer.org)"
-        },
-        {
-          "id": "p_085",
-          "type": "paragraph",
-          "text": "The blue dye sometimes used in sentinel-node mapping is generally avoided during pregnancy."
-        },
-        {
-          "id": "p_086",
-          "type": "paragraph",
-          "text": "The exact lymph-node procedure should therefore be decided by the breast surgical team in consultation with the obstetric team."
-        },
-        {
-          "id": "h_087",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Chemotherapy Be Given During Pregnancy?"
-        },
-        {
-          "id": "p_088",
-          "type": "paragraph",
-          "text": "Yes, but timing is critical."
-        },
-        {
-          "id": "p_089",
-          "type": "paragraph",
-          "text": "Chemotherapy is generally not given during the first trimester because this is a major period of fetal development. (cancer.org)"
-        },
-        {
-          "id": "p_090",
-          "type": "paragraph",
-          "text": "Certain [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) regimens can be used during the second and third trimesters."
-        },
-        {
-          "id": "p_091",
-          "type": "paragraph",
-          "text": "NCI notes that early-stage breast cancer during pregnancy may be treated with [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) after the first trimester when indicated. (cancer.gov)"
-        },
-        {
-          "id": "p_092",
-          "type": "paragraph",
-          "text": "The specific drugs and schedule must be selected by the oncology team."
-        },
-        {
-          "id": "h_093",
-          "type": "heading",
-          "level": 3,
-          "text": "Why Is Chemotherapy Avoided During the First Trimester?"
-        },
-        {
-          "id": "p_094",
-          "type": "paragraph",
-          "text": "During the first trimester, the developing fetus undergoes major organ formation."
-        },
-        {
-          "id": "p_095",
-          "type": "paragraph",
-          "text": "Exposure to certain [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) medicines during this period can increase the risk of developmental problems and pregnancy loss."
-        },
-        {
-          "id": "p_096",
-          "type": "paragraph",
-          "text": "For that reason, if [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) is necessary, doctors generally plan it after the first trimester when possible. (cancer.org)"
-        },
-        {
-          "id": "p_097",
-          "type": "paragraph",
-          "text": "This is one of the situations where treatment timing becomes especially important."
-        },
-        {
-          "id": "h_098",
-          "type": "heading",
-          "level": 3,
-          "text": "What Happens If Breast Cancer Is Diagnosed in the First Trimester?"
-        },
-        {
-          "id": "p_099",
-          "type": "paragraph",
-          "text": "This can be one of the most difficult situations."
-        },
-        {
-          "id": "h_100",
-          "type": "heading",
-          "level": 2,
-          "text": "The medical team has to consider:"
-        },
-        {
-          "id": "ul_101",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Cancer stage",
-            "Tumor biology",
-            "How quickly treatment needs to begin",
-            "Type of treatment required",
-            "Gestational age",
-            "Available treatment alternatives",
-            "Patient's wishes"
-          ]
-        },
-        {
-          "id": "p_102",
-          "type": "paragraph",
-          "text": "Surgery may still be possible."
-        },
-        {
-          "id": "p_103",
-          "type": "paragraph",
-          "text": "Chemotherapy may need to be delayed until the second trimester."
-        },
-        {
-          "id": "p_104",
-          "type": "paragraph",
-          "text": "Treatments that are not considered safe during pregnancy may need to wait until after delivery."
-        },
-        {
-          "id": "p_105",
-          "type": "paragraph",
-          "text": "For aggressive or advanced cancers where immediate treatment is critical, the medical team will discuss all available options with the patient."
-        },
-        {
-          "id": "h_106",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Radiation Therapy Be Given During Pregnancy?"
-        },
-        {
-          "id": "p_107",
-          "type": "paragraph",
-          "text": "Breast radiation is generally postponed until after delivery."
-        },
-        {
-          "id": "p_108",
-          "type": "paragraph",
-          "text": "Radiation involves ionizing radiation, and therapeutic doses can expose the developing fetus to potentially harmful radiation. (cancer.gov)"
-        },
-        {
-          "id": "p_109",
-          "type": "paragraph",
-          "text": "This can create an important treatment-planning issue."
-        },
-        {
-          "id": "p_110",
-          "type": "paragraph",
-          "text": "For example, a patient who normally would have lumpectomy followed by radiation may need a different surgical approach depending on how far along the pregnancy is."
-        },
-        {
-          "id": "h_111",
-          "type": "heading",
-          "level": 3,
-          "text": "What Happens to Radiation After Delivery?"
-        },
-        {
-          "id": "p_112",
-          "type": "paragraph",
-          "text": "If radiation was postponed during pregnancy, it can generally be incorporated into treatment after delivery when it remains indicated."
-        },
-        {
-          "id": "h_113",
-          "type": "heading",
-          "level": 2,
-          "text": "The timing depends on:"
-        },
-        {
-          "id": "ul_114",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Surgery",
-            "Wound healing",
-            "Chemotherapy",
-            "Delivery",
-            "Cancer stage",
-            "Overall treatment plan"
-          ]
-        },
-        {
-          "id": "p_115",
-          "type": "paragraph",
-          "text": "The oncology team will establish the sequence."
-        },
-        {
-          "id": "h_116",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Hormone Therapy Be Given During Pregnancy?"
-        },
-        {
-          "id": "p_117",
-          "type": "paragraph",
-          "text": "Generally, no."
-        },
-        {
-          "id": "p_118",
-          "type": "paragraph",
-          "text": "If the breast cancer is ER-positive or PR-positive, [hormone therapy](/blogs/breast-cancer-hormone-therapy-side-effects) may be an important part of treatment."
-        },
-        {
-          "id": "p_119",
-          "type": "paragraph",
-          "text": "But [hormone therapy](/blogs/breast-cancer-hormone-therapy-side-effects) is generally delayed until after delivery because these medicines can affect the fetus. (cancer.gov)"
-        },
-        {
-          "id": "p_120",
-          "type": "paragraph",
-          "text": "For example, tamoxifen is not considered appropriate during pregnancy."
-        },
-        {
-          "id": "p_121",
-          "type": "paragraph",
-          "text": "The treatment can be started after delivery when the medical team determines that it is appropriate."
-        },
-        {
-          "id": "h_122",
-          "type": "heading",
-          "level": 3,
-          "text": "What About HER2-Targeted Therapy?"
-        },
-        {
-          "id": "p_123",
-          "type": "paragraph",
-          "text": "HER2-targeted medicines are generally not used during pregnancy."
-        },
-        {
-          "id": "p_124",
-          "type": "paragraph",
-          "text": "Trastuzumab, for example, has been associated with fetal complications, particularly involving the developing kidneys and amniotic fluid. (cancer.org)"
-        },
-        {
-          "id": "img_125",
-          "type": "image",
-          "src": "/uploads/articles/pregnancy-infusion-visual.webp",
-          "alt": "Carefully timed chemotherapy during pregnancy for breast cancer",
-          "caption": "Some chemotherapy can be given in later trimesters; radiation and some medicines are deferred."
-        },
-        {
-          "id": "p_126",
-          "type": "paragraph",
-          "text": "Other HER2-directed medicines are also generally avoided."
-        },
-        {
-          "id": "p_127",
-          "type": "paragraph",
-          "text": "This means that a patient with HER2-positive breast cancer may receive some components of treatment during pregnancy while postponing HER2-directed therapy until after delivery."
-        },
-        {
-          "id": "p_128",
-          "type": "paragraph",
-          "text": "The exact sequence depends on the cancer and gestational age."
-        },
-        {
-          "id": "h_129",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Immunotherapy Be Given During Pregnancy?"
-        },
-        {
-          "id": "p_130",
-          "type": "paragraph",
-          "text": "Immunotherapy is generally avoided during pregnancy."
-        },
-        {
-          "id": "p_131",
-          "type": "button",
-          "label": "Request a case-specific treatment review",
-          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
-        },
-        {
-          "id": "p_132",
-          "type": "paragraph",
-          "text": "[WhatsApp +91 90443 46292 for a case-specific plan](https://wa.me/919044346292?text=Please%20advise%20which%20treatments%20are%20safe%20during%20pregnancy%20and%20what%20should%20wait.)"
-        },
-        {
-          "id": "p_133",
-          "type": "paragraph",
-          "text": "There is limited evidence about the safety of immune checkpoint inhibitors during pregnancy, and there are concerns about the effect of altering the maternal immune system on pregnancy. (cancer.org)"
-        },
-        {
-          "id": "p_134",
-          "type": "paragraph",
-          "text": "If immunotherapy would ordinarily form part of treatment, the oncology team has to determine whether it can safely be postponed or whether the clinical situation requires a different approach."
-        },
-        {
-          "id": "h_135",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Targeted Therapy Be Given During Pregnancy?"
-        },
-        {
-          "id": "p_136",
-          "type": "paragraph",
-          "text": "Most targeted breast cancer treatments are not routinely given during pregnancy."
-        },
-        {
-          "id": "p_137",
-          "type": "paragraph",
-          "text": "This includes many HER2-targeted medicines and other targeted therapies."
-        },
-        {
-          "id": "p_138",
-          "type": "paragraph",
-          "text": "The reason is that these medicines can affect fetal development, and safety data during pregnancy are limited. (cancer.org)"
-        },
-        {
-          "id": "p_139",
-          "type": "paragraph",
-          "text": "Targeted therapy can often be introduced after delivery when medically appropriate."
-        },
-        {
-          "id": "h_140",
-          "type": "heading",
-          "level": 3,
-          "text": "Can a Pregnant Woman Continue Breastfeeding During Cancer Treatment?"
-        },
-        {
-          "id": "p_141",
-          "type": "paragraph",
-          "text": "Usually not."
-        },
-        {
-          "id": "p_142",
-          "type": "paragraph",
-          "text": "Many [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects), hormone and targeted medicines can pass into breast milk and potentially harm the baby."
-        },
-        {
-          "id": "p_143",
-          "type": "paragraph",
-          "text": "Therefore, breastfeeding is generally not recommended while receiving these systemic cancer treatments. (cancer.org)"
-        },
-        {
-          "id": "p_144",
-          "type": "paragraph",
-          "text": "If cancer is diagnosed after delivery while the mother is breastfeeding, the treatment team will explain when breastfeeding needs to stop."
-        },
-        {
-          "id": "h_145",
-          "type": "heading",
-          "level": 3,
-          "text": "What If Breast Cancer Is Diagnosed While Breastfeeding?"
-        },
-        {
-          "id": "p_146",
-          "type": "paragraph",
-          "text": "The situation is slightly different from breast cancer diagnosed during pregnancy."
-        },
-        {
-          "id": "p_147",
-          "type": "paragraph",
-          "text": "The baby is no longer exposed through the placenta, but some cancer medicines can enter breast milk."
-        },
-        {
-          "id": "p_148",
-          "type": "paragraph",
-          "text": "Diagnostic imaging and biopsy can still be performed when necessary."
-        },
-        {
-          "id": "p_149",
-          "type": "paragraph",
-          "text": "The treatment plan will determine whether breastfeeding can continue."
-        },
-        {
-          "id": "p_150",
-          "type": "paragraph",
-          "text": "If [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects), [hormone therapy](/blogs/breast-cancer-hormone-therapy-side-effects) or targeted treatment is required, breastfeeding will generally need to stop. (cancer.gov)"
-        },
-        {
-          "id": "h_151",
-          "type": "heading",
-          "level": 3,
-          "text": "Does the Baby Have Breast Cancer?"
-        },
-        {
-          "id": "p_152",
-          "type": "paragraph",
-          "text": "No."
-        },
-        {
-          "id": "p_153",
-          "type": "paragraph",
-          "text": "Breast cancer does not normally pass from a pregnant mother to her fetus."
-        },
-        {
-          "id": "p_154",
-          "type": "paragraph",
-          "text": "The main medical concern is the effect that cancer treatment may have on fetal development. (cancer.gov)"
-        },
-        {
-          "id": "p_155",
-          "type": "paragraph",
-          "text": "This distinction is important because patients sometimes worry that the cancer itself will spread directly to the baby."
-        },
-        {
-          "id": "p_156",
-          "type": "paragraph",
-          "text": "That is not how breast cancer normally behaves."
-        },
-        {
-          "id": "h_157",
-          "type": "heading",
-          "level": 3,
-          "text": "Does a Breast Cancer Diagnosis Mean the Pregnancy Must End?"
-        },
-        {
-          "id": "p_158",
-          "type": "paragraph",
-          "text": "Not routinely."
-        },
-        {
-          "id": "p_159",
-          "type": "paragraph",
-          "text": "A breast cancer diagnosis does not automatically require termination of pregnancy."
-        },
-        {
-          "id": "p_160",
-          "type": "paragraph",
-          "text": "Many patients can receive surgery and, when appropriate, [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) during pregnancy while postponing treatments that are unsafe for the fetus. (cancer.org)"
-        },
-        {
-          "id": "p_161",
-          "type": "paragraph",
-          "text": "However, there can be exceptional circumstances."
-        },
-        {
-          "id": "p_162",
-          "type": "paragraph",
-          "text": "For example, a patient with a very aggressive or advanced cancer diagnosed very early in pregnancy may face a situation where the safest cancer treatment cannot be given while continuing the pregnancy."
-        },
-        {
-          "id": "p_163",
-          "type": "paragraph",
-          "text": "In such cases, the decision requires detailed discussion between the patient and her medical team."
-        },
-        {
-          "id": "p_164",
-          "type": "paragraph",
-          "text": "It is not a decision that can be made from the diagnosis alone."
-        },
-        {
-          "id": "h_165",
-          "type": "heading",
-          "level": 3,
-          "text": "Does Ending the Pregnancy Improve Breast Cancer Survival?"
-        },
-        {
-          "id": "p_166",
-          "type": "paragraph",
-          "text": "Available evidence does not support ending a pregnancy as a routine strategy to improve breast cancer outcomes."
-        },
-        {
-          "id": "p_167",
-          "type": "paragraph",
-          "text": "NCI and the American Cancer Society both note that pregnancy termination does not generally improve prognosis. (cancer.gov; cancer.org)"
-        },
-        {
-          "id": "p_168",
-          "type": "paragraph",
-          "text": "There can, however, be exceptional cases where treatment needs create a serious conflict between maternal cancer care and continuation of pregnancy."
-        },
-        {
-          "id": "p_169",
-          "type": "paragraph",
-          "text": "Those situations require individualized medical and ethical discussion."
-        },
-        {
-          "id": "h_170",
-          "type": "heading",
-          "level": 3,
-          "text": "Does Pregnancy Make Breast Cancer Treatment Less Effective?"
-        },
-        {
-          "id": "p_171",
-          "type": "paragraph",
-          "text": "The goal of treatment remains the same: control or eliminate the cancer while protecting the pregnancy as much as medically possible."
-        },
-        {
-          "id": "p_172",
-          "type": "paragraph",
-          "text": "Some treatments may need to be delayed."
-        },
-        {
-          "id": "p_173",
-          "type": "paragraph",
-          "text": "Others can be given during pregnancy."
-        },
-        {
-          "id": "p_174",
-          "type": "paragraph",
-          "text": "Therefore, the treatment plan may look different from that of a non-pregnant patient with the same diagnosis."
-        },
-        {
-          "id": "p_175",
-          "type": "paragraph",
-          "text": "The stage and biological characteristics of the cancer remain central to deciding treatment."
-        },
-        {
-          "id": "h_176",
-          "type": "heading",
-          "level": 3,
-          "text": "What Specialists Are Needed?"
-        },
-        {
-          "id": "p_177",
-          "type": "paragraph",
-          "text": "Breast cancer during pregnancy requires more coordination than ordinary breast cancer care."
-        },
-        {
-          "id": "h_178",
-          "type": "heading",
-          "level": 2,
-          "text": "The team may include:"
-        },
-        {
-          "id": "ul_179",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Breast surgeon or surgical oncologist",
-            "Medical oncologist",
-            "Radiation oncologist",
-            "High-risk obstetrician",
-            "Maternal-fetal medicine specialist",
-            "Breast radiologist",
-            "Pathologist",
-            "Anesthesiologist",
-            "Neonatal team when appropriate"
-          ]
-        },
-        {
-          "id": "p_180",
-          "type": "paragraph",
-          "text": "The oncologist and obstetric team need to communicate throughout treatment."
-        },
-        {
-          "id": "h_181",
-          "type": "heading",
-          "level": 3,
-          "text": "Why Is a High-Risk Obstetric Team Important?"
-        },
-        {
-          "id": "p_182",
-          "type": "paragraph",
-          "text": "The pregnancy needs its own monitoring while cancer treatment is taking place."
-        },
-        {
-          "id": "h_183",
-          "type": "heading",
-          "level": 2,
-          "text": "The obstetric team can assess:"
-        },
-        {
-          "id": "ul_184",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Fetal growth",
-            "Pregnancy development",
-            "Timing of delivery",
-            "Maternal health",
-            "Potential effects of treatment",
-            "Medication-related risks"
-          ]
-        },
-        {
-          "id": "p_185",
-          "type": "paragraph",
-          "text": "This does not replace the oncology team."
-        },
-        {
-          "id": "p_186",
-          "type": "paragraph",
-          "text": "Both teams are necessary."
-        },
-        {
-          "id": "p_187",
-          "type": "paragraph",
-          "text": "Oncology teams in [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) can confirm the next step. Hospitals in [Delhi NCR](/hospitals/India/Delhi-NCR) and [Mumbai](/hospitals/India/Mumbai) handle international follow-up."
-        },
-        {
-          "id": "img_188",
-          "type": "image",
-          "src": "/uploads/articles/pregnancy-followup-visual.webp",
-          "alt": "Coordinated follow-up for breast cancer during pregnancy",
-          "caption": "Delivery timing, surgery and later radiation are sequenced with the obstetric plan."
-        },
-        {
-          "id": "h_189",
-          "type": "heading",
-          "level": 3,
-          "text": "Can a Baby Be Delivered Early Because of Breast Cancer?"
-        },
-        {
-          "id": "p_190",
-          "type": "paragraph",
-          "text": "Sometimes."
-        },
-        {
-          "id": "h_191",
-          "type": "heading",
-          "level": 2,
-          "text": "The decision depends on:"
-        },
-        {
-          "id": "ul_192",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Gestational age",
-            "Cancer treatment schedule",
-            "Mother's condition",
-            "Fetal development",
-            "Planned chemotherapy",
-            "Overall urgency of cancer treatment"
-          ]
-        },
-        {
-          "id": "p_193",
-          "type": "paragraph",
-          "text": "Chemotherapy is generally avoided close to delivery because it can affect blood counts and increase complications around childbirth. (cancer.org)"
-        },
-        {
-          "id": "p_194",
-          "type": "paragraph",
-          "text": "The obstetric and oncology teams coordinate the timing."
-        },
-        {
-          "id": "h_195",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Breast Cancer Treatment Affect Fertility?"
-        },
-        {
-          "id": "p_196",
-          "type": "paragraph",
-          "text": "It can."
-        },
-        {
-          "id": "p_197",
-          "type": "paragraph",
-          "text": "Chemotherapy and some hormone-related treatments can affect ovarian function and future fertility."
-        },
-        {
-          "id": "p_198",
-          "type": "paragraph",
-          "text": "Because pregnancy itself is already ongoing, fertility preservation before treatment is obviously different from the situation faced by someone who has not yet conceived."
-        },
-        {
-          "id": "p_199",
-          "type": "paragraph",
-          "text": "For patients who want more children after completing treatment, fertility and reproductive planning should still be discussed early."
-        },
-        {
-          "id": "p_200",
-          "type": "paragraph",
-          "text": "The important point is that this conversation should happen before treatment begins whenever possible."
-        },
-        {
-          "id": "h_201",
           "type": "heading",
           "level": 2,
           "text": "Breast Cancer During Pregnancy Treatment in India"
         },
         {
-          "id": "p_202",
+          "id": "p_082",
           "type": "paragraph",
-          "text": "India has cancer centers capable of treating breast cancer in pregnant patients, but this is a situation where choosing a hospital based only on the availability of a breast surgeon is not enough."
+          "text": "India has cancer centres capable of treating breast cancer in pregnant patients, but this is a situation where choosing a hospital based only on the availability of a breast surgeon is not enough. The hospital should be able to coordinate oncology and obstetric care. For an international patient, it is useful to ask whether the hospital has access to medical oncology, surgical oncology, radiation oncology, breast imaging, pathology, high-risk obstetrics, maternal-fetal medicine and neonatal care. This multidisciplinary setup is important because treatment decisions can change as the pregnancy progresses. Teams in [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) can coordinate oncology and high-risk obstetric consultations."
         },
         {
-          "id": "p_203",
-          "type": "paragraph",
-          "text": "[WhatsApp +91 90443 46292 your records before travel](https://wa.me/919044346292?text=I%20would%20like%20to%20send%20my%20pathology%20and%20obstetric%20records%20for%20a%20pregnancy-and-cancer%20plan%20in%20India.)"
-        },
-        {
-          "id": "p_204",
-          "type": "paragraph",
-          "text": "The hospital should be able to coordinate oncology and obstetric care."
-        },
-        {
-          "id": "h_205",
+          "id": "h_083",
           "type": "heading",
           "level": 2,
-          "text": "For an international patient, it is useful to ask whether the hospital has access to:"
-        },
-        {
-          "id": "ul_206",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Medical oncology",
-            "Surgical oncology",
-            "Radiation oncology",
-            "Breast imaging",
-            "Pathology",
-            "High-risk obstetrics",
-            "Maternal-fetal medicine",
-            "Neonatal care"
-          ]
-        },
-        {
-          "id": "p_207",
-          "type": "paragraph",
-          "text": "This multidisciplinary setup is important because treatment decisions can change as the pregnancy progresses."
-        },
-        {
-          "id": "h_208",
-          "type": "heading",
-          "level": 3,
           "text": "What Should International Patients Do Before Traveling to India?"
         },
         {
-          "id": "p_209",
+          "id": "p_084",
           "type": "paragraph",
-          "text": "If you have been diagnosed with breast cancer during pregnancy and are considering treatment in India, send your medical records before traveling whenever possible."
+          "text": "If you have been diagnosed with breast cancer during pregnancy and are considering treatment in India, send your medical records before traveling whenever possible. Useful documents include the biopsy and pathology reports, ER, PR and HER2 results, mammogram, ultrasound, MRI if performed, CT or PET reports if any, current pregnancy records, obstetric ultrasound reports, current medications and previous medical opinions. The Indian oncology team can then review the case before you travel. This can be particularly helpful when the treatment sequence needs to be planned around a specific gestational age. See the [international-patient guide](/blogs/breast-cancer-treatment-india-international-patients). Hospitals in [Delhi NCR](/hospitals/India/Delhi-NCR) and [Mumbai](/hospitals/India/Mumbai) can arrange oncology and obstetric visits before the first treatment."
         },
         {
-          "id": "h_210",
+          "id": "h_085",
           "type": "heading",
           "level": 2,
-          "text": "Useful documents include:"
-        },
-        {
-          "id": "ul_211",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Biopsy report",
-            "Pathology report",
-            "ER result",
-            "PR result",
-            "HER2 result",
-            "Mammogram",
-            "Ultrasound",
-            "MRI, if performed",
-            "CT/PET reports, if any",
-            "Current pregnancy records",
-            "Ultrasound reports from your obstetrician",
-            "Current medications",
-            "Previous medical opinions"
-          ]
-        },
-        {
-          "id": "p_212",
-          "type": "paragraph",
-          "text": "The Indian oncology team can then review the case before you travel."
-        },
-        {
-          "id": "p_213",
-          "type": "paragraph",
-          "text": "This can be particularly helpful when the treatment sequence needs to be planned around a specific gestational age."
-        },
-        {
-          "id": "h_214",
-          "type": "heading",
-          "level": 3,
           "text": "Can International Patients Continue Pregnancy Care in Their Home Country?"
         },
         {
-          "id": "p_215",
+          "id": "p_086",
           "type": "paragraph",
-          "text": "Yes."
+          "text": "Yes. A patient may receive cancer treatment in India while continuing certain aspects of pregnancy care with an obstetrician in her home country. However, communication between the teams is essential. Before traveling, establish who will manage the pregnancy, who will manage the cancer, where delivery is expected to occur, when the patient needs to return to India, which treatments are planned before delivery and which treatments will be postponed until after delivery."
         },
         {
-          "id": "p_216",
-          "type": "paragraph",
-          "text": "A patient may receive cancer treatment in India while continuing certain aspects of pregnancy care with an obstetrician in her home country."
-        },
-        {
-          "id": "p_217",
-          "type": "paragraph",
-          "text": "However, communication between the teams is essential."
-        },
-        {
-          "id": "h_218",
+          "id": "h_087",
           "type": "heading",
           "level": 2,
-          "text": "Before traveling, establish:"
+          "text": "How Much Does Breast Cancer Treatment During Pregnancy Cost in India?"
         },
         {
-          "id": "ul_219",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Who will manage the pregnancy",
-            "Who will manage the cancer",
-            "Where delivery is expected to occur",
-            "When the patient needs to return to India",
-            "Which treatments are planned before delivery",
-            "Which treatments will be postponed until after delivery",
-            "How Much Does Breast Cancer Treatment During Pregnancy Cost in India?"
-          ]
-        },
-        {
-          "id": "p_220",
+          "id": "p_088",
           "type": "paragraph",
-          "text": "There is no fixed cost."
+          "text": "There is no fixed cost. The pregnancy adds another layer of medical care, so expenses can include both cancer treatment and obstetric monitoring. Potential costs include breast imaging, biopsy, pathology, cancer consultations, surgery, chemotherapy, obstetric monitoring, hospitalization, radiation after delivery, hormone therapy after delivery, targeted therapy after delivery, and delivery and neonatal care. The final cost depends heavily on the cancer stage, subtype, trimester and treatment sequence. For this reason, an individual treatment quotation should be prepared after the medical records have been reviewed. See the [cost guide](/blogs/breast-cancer-treatment-cost-in-india) and the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) page."
         },
         {
-          "id": "p_221",
+          "id": "p_089",
           "type": "paragraph",
-          "text": "The pregnancy adds another layer of medical care, so expenses can include both cancer treatment and obstetric monitoring."
+          "text": "[Breast-conserving surgery doctors](/doctors/India/Surgical-Oncology/Breast-Conserving-Surgery) · [cost](/costs/India/Surgical-Oncology/Breast-Conserving-Surgery) · [mastectomy doctors](/doctors/India/Surgical-Oncology/Mastectomy) · [cost](/costs/India/Surgical-Oncology/Mastectomy) · [chemotherapy](/doctors/India/Medical-Oncology/Chemotherapy) · [cost](/costs/India/Medical-Oncology/Chemotherapy) · [hormone therapy](/doctors/India/Medical-Oncology/Hormone-Therapy) · [cost](/costs/India/Medical-Oncology/Hormone-Therapy) · [targeted therapy](/doctors/India/Medical-Oncology/Targeted-Therapy) · [cost](/costs/India/Medical-Oncology/Targeted-Therapy) · [immunotherapy](/doctors/India/Medical-Oncology/Immunotherapy) · [cost](/costs/India/Medical-Oncology/Immunotherapy)."
         },
         {
-          "id": "h_222",
+          "id": "btn_090",
+          "type": "button",
+          "label": "Request a pregnancy-coordinated treatment estimate",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a cost estimate](https://wa.me/919044346292?text=Please%20share%20a%20treatment%20estimate%20for%20breast%20cancer%20during%20pregnancy%20in%20India%2C%20including%20oncology%20and%20obstetric%20care.)"
+        },
+        {
+          "id": "h_092",
           "type": "heading",
           "level": 2,
-          "text": "Potential costs include:"
-        },
-        {
-          "id": "ul_223",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Breast imaging",
-            "Biopsy",
-            "Pathology",
-            "Cancer consultations",
-            "Surgery",
-            "Chemotherapy",
-            "Obstetric monitoring",
-            "Hospitalization",
-            "Radiation after delivery",
-            "Hormone therapy after delivery",
-            "Targeted therapy after delivery",
-            "Delivery and neonatal care"
-          ]
-        },
-        {
-          "id": "p_224",
-          "type": "paragraph",
-          "text": "The final cost depends heavily on the cancer stage, subtype, trimester and treatment sequence."
-        },
-        {
-          "id": "p_225",
-          "type": "paragraph",
-          "text": "For this reason, an individual treatment quotation should be prepared after the medical records have been reviewed."
-        },
-        {
-          "id": "p_226",
-          "type": "paragraph",
-          "text": "GAF Healthcare's [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) page can serve as the main treatment resource, while relevant surgery and systemic-treatment cost pages can be linked once the patient's treatment plan is established."
-        },
-        {
-          "id": "h_227",
-          "type": "heading",
-          "level": 3,
           "text": "What Questions Should You Ask Your Doctors?"
         },
         {
-          "id": "p_228",
+          "id": "p_093",
           "type": "paragraph",
-          "text": "A breast cancer diagnosis during pregnancy creates many decisions at once."
+          "text": "A breast cancer diagnosis during pregnancy creates many decisions at once. Before starting treatment, consider asking about the type and stage of cancer, whether it is ER-positive, PR-positive or HER2-positive, and whether it has spread to lymph nodes or elsewhere. Ask how many weeks pregnant you are, which treatments can be given now, which need to wait, and how the pregnancy will be monitored. Ask whether you need lumpectomy or mastectomy, whether lymph nodes need to be evaluated, and when surgery is safest. Ask whether chemotherapy is needed, whether it can start during pregnancy, which medicines are being considered, and when chemotherapy would stop before delivery. Ask whether treatment will change the expected delivery date, where delivery should take place, and whether a neonatal team needs to be available. After delivery, ask when radiation, hormone therapy or targeted therapy can begin, and whether breastfeeding is possible. Having these answers in writing can make an extremely stressful situation easier to manage."
         },
         {
-          "id": "h_229",
+          "id": "btn_094",
+          "type": "button",
+          "label": "Ask GAF to prepare a written treatment sequence",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 your questions](https://wa.me/919044346292?text=Please%20help%20me%20prepare%20a%20written%20treatment%20sequence%20for%20breast%20cancer%20during%20pregnancy%20in%20India.)"
+        },
+        {
+          "id": "h_096",
           "type": "heading",
           "level": 2,
-          "text": "Before starting treatment, consider asking:"
+          "text": "How GAF Healthcare Can Help"
         },
         {
-          "id": "ul_230",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "About the cancer",
-            "What type of breast cancer do I have?",
-            "What is the stage?",
-            "Is it ER-positive, PR-positive or HER2-positive?",
-            "Has it spread to lymph nodes or elsewhere?",
-            "About pregnancy",
-            "How many weeks pregnant am I?",
-            "Which treatments can be given now?",
-            "Which treatments need to wait?",
-            "How will the pregnancy be monitored?",
-            "About surgery",
-            "Do I need lumpectomy or mastectomy?",
-            "Do my lymph nodes need to be evaluated?",
-            "When is the safest time for surgery?",
-            "About chemotherapy",
-            "Do I need chemotherapy?",
-            "Can it be started during pregnancy?",
-            "Which medicines are being considered?",
-            "When would chemotherapy stop before delivery?",
-            "About delivery",
-            "Will treatment change the expected delivery date?",
-            "Where should delivery take place?",
-            "Will a neonatal team need to be available?",
-            "After delivery",
-            "When can radiation begin?",
-            "When can hormone therapy begin?",
-            "When can targeted therapy begin?",
-            "Can I breastfeed?"
-          ]
-        },
-        {
-          "id": "p_231",
+          "id": "p_097",
           "type": "paragraph",
-          "text": "Having these answers in writing can make an extremely stressful situation easier to manage."
+          "text": "GAF Healthcare can help an international patient send pathology, imaging and pregnancy records for review before travel, then coordinate a breast cancer team with a high-risk obstetric or maternal-fetal medicine team in India. The useful output is a written sequence: what can start now, what must wait until after delivery, and where delivery should be planned."
         },
         {
-          "id": "p_232",
-          "type": "paragraph",
-          "text": "Frequently Asked Questions Can a woman have breast cancer while pregnant?"
-        },
-        {
-          "id": "p_233",
-          "type": "paragraph",
-          "text": "Yes. Breast cancer is uncommon during pregnancy but can occur. NCI estimates approximately one case per 3,000 pregnancies. (cancer.gov)"
-        },
-        {
-          "id": "h_234",
-          "type": "heading",
-          "level": 3,
-          "text": "Can breast cancer be treated while pregnant?"
-        },
-        {
-          "id": "p_235",
-          "type": "paragraph",
-          "text": "Yes. Surgery is generally possible, and certain [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) can be given after the first trimester. Some other treatments are postponed until after delivery. (cancer.gov)"
-        },
-        {
-          "id": "h_236",
-          "type": "heading",
-          "level": 3,
-          "text": "Is breast ultrasound safe during pregnancy?"
-        },
-        {
-          "id": "p_237",
-          "type": "paragraph",
-          "text": "Yes. Ultrasound does not use ionizing radiation and is commonly used to investigate a breast lump during pregnancy. (cancer.gov)"
-        },
-        {
-          "id": "h_238",
-          "type": "heading",
-          "level": 3,
-          "text": "Can a pregnant woman have a mammogram?"
-        },
-        {
-          "id": "p_239",
-          "type": "paragraph",
-          "text": "Yes, when medically necessary. Mammography uses a small amount of radiation, and precautions can be taken to minimize fetal exposure. (cancer.gov)"
-        },
-        {
-          "id": "h_240",
-          "type": "heading",
-          "level": 3,
-          "text": "Can a breast biopsy be performed during pregnancy?"
-        },
-        {
-          "id": "p_241",
-          "type": "paragraph",
-          "text": "Yes. Biopsy is an important part of diagnosing suspicious breast changes during pregnancy. (cancer.gov)"
-        },
-        {
-          "id": "h_242",
-          "type": "heading",
-          "level": 3,
-          "text": "Can chemotherapy be given during pregnancy?"
-        },
-        {
-          "id": "p_243",
-          "type": "paragraph",
-          "text": "Certain [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) can be given during the second and third trimesters. It is generally avoided during the first trimester. (cancer.org)"
-        },
-        {
-          "id": "h_244",
-          "type": "heading",
-          "level": 3,
-          "text": "Can radiation therapy be given during pregnancy?"
-        },
-        {
-          "id": "p_245",
-          "type": "paragraph",
-          "text": "Breast radiation is generally delayed until after delivery because therapeutic radiation can harm the developing fetus. (cancer.gov)"
-        },
-        {
-          "id": "h_246",
-          "type": "heading",
-          "level": 3,
-          "text": "Can hormone therapy be given during pregnancy?"
-        },
-        {
-          "id": "p_247",
-          "type": "paragraph",
-          "text": "Usually not. Hormone therapy is generally postponed until after delivery. (cancer.gov)"
-        },
-        {
-          "id": "h_248",
-          "type": "heading",
-          "level": 3,
-          "text": "Can HER2-positive breast cancer be treated during pregnancy?"
-        },
-        {
-          "id": "p_249",
-          "type": "paragraph",
-          "text": "Some components of treatment can be given, but HER2-targeted therapies such as trastuzumab are generally avoided during pregnancy and may be started after delivery when appropriate. (cancer.org)"
-        },
-        {
-          "id": "h_250",
-          "type": "heading",
-          "level": 3,
-          "text": "Does breast cancer spread to the unborn baby?"
-        },
-        {
-          "id": "p_251",
-          "type": "paragraph",
-          "text": "Breast cancer itself does not normally pass from the mother to the fetus. Treatment safety is the major concern during pregnancy. (cancer.gov)"
-        },
-        {
-          "id": "h_252",
-          "type": "heading",
-          "level": 3,
-          "text": "Does a woman have to terminate her pregnancy if she develops breast cancer?"
-        },
-        {
-          "id": "p_253",
-          "type": "paragraph",
-          "text": "No. Pregnancy termination is not routinely required. Treatment can often be adapted to the stage of pregnancy. Exceptional situations involving aggressive or advanced disease require individualized discussion. (cancer.org)"
-        },
-        {
-          "id": "h_254",
-          "type": "heading",
-          "level": 3,
-          "text": "Can breast cancer treatment affect the baby?"
-        },
-        {
-          "id": "p_255",
-          "type": "paragraph",
-          "text": "Some treatments can affect fetal development, which is why treatment selection and timing are carefully planned. Surgery and certain [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) can be used during pregnancy, while radiation, [hormone therapy](/blogs/breast-cancer-hormone-therapy-side-effects) and many targeted treatments are generally delayed. (cancer.gov)"
-        },
-        {
-          "id": "h_256",
-          "type": "heading",
-          "level": 3,
-          "text": "Can I breastfeed while receiving chemotherapy?"
-        },
-        {
-          "id": "p_257",
-          "type": "paragraph",
-          "text": "Breastfeeding is generally not recommended during [chemotherapy](/blogs/breast-cancer-chemotherapy-side-effects) because medicines can pass into breast milk and potentially harm the baby. (cancer.org)"
-        },
-        {
-          "id": "h_258",
-          "type": "heading",
-          "level": 3,
-          "text": "Can breast cancer during pregnancy be treated in India?"
-        },
-        {
-          "id": "p_259",
-          "type": "paragraph",
-          "text": "Yes. Treatment should be coordinated between a multidisciplinary breast cancer team and a high-risk obstetric or maternal-fetal medicine team."
-        },
-        {
-          "id": "h_260",
+          "id": "h_098",
           "type": "heading",
           "level": 2,
           "text": "Frequently Asked Questions"
         },
         {
-          "id": "h_261",
+          "id": "h_099",
           "type": "heading",
           "level": 3,
-          "text": "Can breast cancer be treated during pregnancy?"
+          "text": "Can a woman have breast cancer while pregnant?"
         },
         {
-          "id": "p_262",
+          "id": "p_100",
           "type": "paragraph",
-          "text": "Yes. Breast cancer can usually be treated during pregnancy, although the type and timing of treatment may need to be modified to protect the developing baby. (cancer.gov)"
+          "text": "Yes. Breast cancer is uncommon during pregnancy but can occur. NCI estimates approximately one case per 3,000 pregnancies. (cancer.gov)"
         },
         {
-          "id": "h_263",
+          "id": "h_101",
           "type": "heading",
           "level": 3,
-          "text": "How is breast cancer diagnosed during pregnancy?"
+          "text": "Can breast cancer be treated while pregnant?"
         },
         {
-          "id": "p_264",
+          "id": "p_102",
           "type": "paragraph",
-          "text": "Clinical examination, ultrasound, mammography and biopsy can be used when breast cancer is suspected. Ultrasound does not use radiation, and mammography can be performed when clinically necessary with appropriate precautions. (cancer.gov)"
+          "text": "Yes. Surgery is generally possible, and certain chemotherapy can be given after the first trimester. Some other treatments are postponed until after delivery. (cancer.gov)"
         },
         {
-          "id": "h_265",
+          "id": "h_103",
           "type": "heading",
           "level": 3,
-          "text": "Can a pregnant woman have breast cancer surgery?"
+          "text": "Is breast ultrasound safe during pregnancy?"
         },
         {
-          "id": "p_266",
+          "id": "p_104",
           "type": "paragraph",
-          "text": "Yes. Surgery is generally considered possible during pregnancy, with the timing and anesthesia plan coordinated between the surgical and obstetric teams. (cancer.org)"
+          "text": "Yes. Ultrasound does not use ionizing radiation and is commonly used to investigate a breast lump during pregnancy. (cancer.gov)"
         },
         {
-          "id": "h_267",
+          "id": "h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a pregnant woman have a mammogram?"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Yes, when medically necessary. Mammography uses a small amount of radiation, and precautions can be taken to minimize fetal exposure. (cancer.gov)"
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a breast biopsy be performed during pregnancy?"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "Yes. Biopsy is an important part of diagnosing suspicious breast changes during pregnancy. (cancer.gov)"
+        },
+        {
+          "id": "h_109",
           "type": "heading",
           "level": 3,
           "text": "Can chemotherapy be given during pregnancy?"
         },
         {
-          "id": "p_268",
+          "id": "p_110",
           "type": "paragraph",
-          "text": "Certain chemotherapy medicines can be given during the second and third trimesters. Chemotherapy is generally avoided during the first trimester and is usually stopped several weeks before delivery. (cancer.org)"
+          "text": "Certain chemotherapy can be given during the second and third trimesters. It is generally avoided during the first trimester. (cancer.org)"
         },
         {
-          "id": "h_269",
+          "id": "h_111",
           "type": "heading",
           "level": 3,
           "text": "Can radiation therapy be given during pregnancy?"
         },
         {
-          "id": "p_270",
+          "id": "p_112",
           "type": "paragraph",
-          "text": "Radiation to the breast is generally postponed until after delivery because radiation can harm the developing fetus. (cancer.gov)"
+          "text": "Breast radiation is generally delayed until after delivery because therapeutic radiation can harm the developing fetus. (cancer.gov)"
         },
         {
-          "id": "h_271",
+          "id": "h_113",
           "type": "heading",
           "level": 3,
-          "text": "Can hormone therapy be taken during pregnancy?"
+          "text": "Can hormone therapy be given during pregnancy?"
         },
         {
-          "id": "p_272",
+          "id": "p_114",
           "type": "paragraph",
-          "text": "Hormone therapy is generally delayed until after delivery because these medicines can affect the fetus. (cancer.org)"
+          "text": "Usually not. Hormone therapy is generally postponed until after delivery. (cancer.gov)"
         },
         {
-          "id": "h_273",
+          "id": "h_115",
           "type": "heading",
           "level": 3,
-          "text": "Can HER2-targeted therapy be given during pregnancy?"
+          "text": "Can HER2-positive breast cancer be treated during pregnancy?"
         },
         {
-          "id": "p_274",
+          "id": "p_116",
           "type": "paragraph",
-          "text": "HER2-targeted medicines such as trastuzumab are generally avoided during pregnancy because of potential fetal harm. (cancer.gov)"
+          "text": "Some components of treatment can be given, but HER2-targeted therapies such as trastuzumab are generally avoided during pregnancy and may be started after delivery when appropriate. (cancer.org)"
         },
         {
-          "id": "h_275",
+          "id": "h_117",
           "type": "heading",
           "level": 3,
-          "text": "Does breast cancer spread to the baby?"
+          "text": "Does breast cancer spread to the unborn baby?"
         },
         {
-          "id": "p_276",
+          "id": "p_118",
           "type": "paragraph",
-          "text": "Breast cancer itself does not normally pass from the mother to the fetus. The main concern is choosing cancer treatment that controls the mother's cancer while minimizing risks to the developing baby. (cancer.gov)"
+          "text": "Breast cancer itself does not normally pass from the mother to the fetus. Treatment safety is the major concern during pregnancy. (cancer.gov)"
         },
         {
-          "id": "h_277",
+          "id": "h_119",
           "type": "heading",
           "level": 3,
-          "text": "Does pregnancy have to be ended after a breast cancer diagnosis?"
+          "text": "Does a woman have to terminate her pregnancy if she develops breast cancer?"
         },
         {
-          "id": "p_278",
+          "id": "p_120",
           "type": "paragraph",
-          "text": "Not routinely. The decision is highly individual and depends on the cancer, stage, pregnancy stage and treatment options. Most patients can be treated without automatically ending the pregnancy. (cancer.org)"
+          "text": "No. Pregnancy termination is not routinely required. Treatment can often be adapted to the stage of pregnancy. Exceptional situations involving aggressive or advanced disease require individualized discussion. (cancer.org)"
         },
         {
-          "id": "h_279",
+          "id": "h_121",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast cancer treatment affect the baby?"
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "Some treatments can affect fetal development, which is why treatment selection and timing are carefully planned. Surgery and certain chemotherapy can be used during pregnancy, while radiation, hormone therapy and many targeted treatments are generally delayed. (cancer.gov)"
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I breastfeed while receiving chemotherapy?"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "Breastfeeding is generally not recommended during chemotherapy because medicines can pass into breast milk and potentially harm the baby. (cancer.org)"
+        },
+        {
+          "id": "h_125",
           "type": "heading",
           "level": 3,
           "text": "Can breast cancer during pregnancy be treated in India?"
         },
         {
-          "id": "p_280",
+          "id": "p_126",
           "type": "paragraph",
-          "text": "Yes. Treatment requires coordination between a breast cancer team and a high-risk obstetric team, with treatment timing planned around the pregnancy."
+          "text": "Yes. Treatment should be coordinated between a multidisciplinary breast cancer team and a high-risk obstetric or maternal-fetal medicine team."
         },
         {
-          "id": "h_281",
+          "id": "h_127",
           "type": "heading",
-          "level": 3,
-          "text": "What Is Pregnancy-Associated Breast Cancer?"
+          "level": 2,
+          "text": "Final Takeaway"
         },
         {
-          "id": "p_282",
+          "id": "p_128",
           "type": "paragraph",
-          "text": "Breast cancer diagnosed during pregnancy, within one year after giving birth or during lactation is often referred to as pregnancy-associated breast cancer. (cancer.gov)"
+          "text": "A breast cancer diagnosis during pregnancy is complicated, but pregnancy does not mean that cancer treatment has to stop. The first priority is establishing an accurate diagnosis and understanding the cancer's stage and biology. After that, the treatment team has to decide what can be done immediately and what should wait until after delivery. Surgery can generally be performed during pregnancy when necessary. Certain chemotherapy can be given after the first trimester. Radiation therapy, hormone therapy and many targeted treatments are generally postponed until after delivery. (cancer.gov)"
         },
         {
-          "id": "btn_283",
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "The treatment plan therefore depends on more than the cancer diagnosis alone. It depends on the type and stage of breast cancer, the trimester of pregnancy, the baby's development, the mother's health and the treatments required. For an international patient considering treatment in India, the most useful step is to have the pathology, imaging and pregnancy records reviewed before travel. The ideal setup is a coordinated team involving medical oncology, surgical oncology, radiation oncology and high-risk obstetric care. That allows the cancer and pregnancy to be managed together rather than treating them as two completely separate problems."
+        },
+        {
+          "id": "btn_130",
           "type": "button",
           "label": "Start the Breast Cancer Treatment in India pathway",
           "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
-          "id": "p_284",
+          "id": "p_131",
           "type": "paragraph",
           "text": "[WhatsApp +91 90443 46292 to plan the next step](https://wa.me/919044346292?text=Please%20help%20me%20plan%20breast%20cancer%20treatment%20during%20pregnancy%20in%20India.)"
         },
         {
-          "id": "h_285",
+          "id": "h_132",
           "type": "heading",
           "level": 2,
           "text": "GAF Healthcare Resources"
         },
         {
-          "id": "p_286",
+          "id": "p_133",
           "type": "paragraph",
-          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Hormone therapy side effects](/blogs/breast-cancer-hormone-therapy-side-effects)\n- [Chemotherapy side effects](/blogs/breast-cancer-chemotherapy-side-effects)\n- [Targeted therapy side effects](/blogs/breast-cancer-targeted-therapy-side-effects)\n- [Radiation therapy](/blogs/radiation-therapy-for-breast-cancer)\n- [Diagnosis](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)\n- [International patients](/blogs/breast-cancer-treatment-india-international-patients)\n- [Chemotherapy doctors](/doctors/India/Medical-Oncology/Chemotherapy) · [Hormone therapy doctors](/doctors/India/Medical-Oncology/Hormone-Therapy)\n- [Radiation oncology doctors](/doctors/India/Radiation-Oncology)\n- [Breast-conserving surgery doctors](/doctors/India/Surgical-Oncology/Breast-Conserving-Surgery)"
+          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Young women](/blogs/breast-cancer-in-young-women-treatment-india) · [pathology report](/blogs/breast-cancer-pathology-report-explained)\n- [Surgery](/blogs/breast-cancer-surgery-in-india) · [lumpectomy vs mastectomy](/blogs/lumpectomy-vs-mastectomy)\n- [Chemotherapy](/blogs/chemotherapy-for-breast-cancer-in-india) · [hormone therapy](/blogs/hormone-therapy-breast-cancer-india) · [HER2-positive](/blogs/her2-positive-breast-cancer-treatment-india)\n- [Breast-conserving surgery doctors](/doctors/India/Surgical-Oncology/Breast-Conserving-Surgery)\n- [Mastectomy doctors](/doctors/India/Surgical-Oncology/Mastectomy) · [chemotherapy doctors](/doctors/India/Medical-Oncology/Chemotherapy)\n- [International patients](/blogs/breast-cancer-treatment-india-international-patients) · [cost guide](/blogs/breast-cancer-treatment-cost-in-india)"
         }
       ]
     },
@@ -8325,6 +7376,10 @@
         {
           "label": "Breast Cancer Treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Breast cancer during pregnancy",
+          "href": "/blogs/breast-cancer-during-pregnancy-treatment-india"
         },
         {
           "label": "Chemotherapy for Breast Cancer",
