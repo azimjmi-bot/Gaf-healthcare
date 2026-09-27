@@ -16,9 +16,12 @@ export function robotsPolicy(): MetadataRoute.Robots {
       // Arabic facets have to stay crawlable for the tag to ever be read.
       { userAgent: "*", allow: "/", disallow: ["/cms", "/api/cms", "/doctors/compare"] },
     ],
-    sitemap: LOCALES.filter(
-      (locale) => !isTargetLocale(locale) || localeIsPublished(locale),
-    ).map((locale) => absoluteUrl(`/sitemap-${locale}.xml`)),
+    sitemap: [
+      ...LOCALES.filter(
+        (locale) => !isTargetLocale(locale) || localeIsPublished(locale),
+      ).map((locale) => absoluteUrl(`/sitemap-${locale}.xml`)),
+      absoluteUrl("/sitemap-blogs.xml"),
+    ],
     host: new URL(SITE_URL).host,
   };
 }

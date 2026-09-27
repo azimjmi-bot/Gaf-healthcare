@@ -12,6 +12,7 @@ describe("robots.txt policy", () => {
     assert.deepEqual(policy.sitemap, [
       "https://gaf.healthcare/sitemap-en.xml",
       "https://gaf.healthcare/sitemap-ar.xml",
+      "https://gaf.healthcare/sitemap-blogs.xml",
     ]);
   });
 

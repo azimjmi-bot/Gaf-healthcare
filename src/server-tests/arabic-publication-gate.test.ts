@@ -336,6 +336,7 @@ test("noindex Arabic pages stay crawlable in robots.txt", () => {
   assert.deepEqual(sitemap, [
     "https://gaf.healthcare/sitemap-en.xml",
     "https://gaf.healthcare/sitemap-ar.xml",
+    "https://gaf.healthcare/sitemap-blogs.xml",
   ]);
   // Yandex Host is a hostname. A scheme here fails Lighthouse's robots-txt audit.
   assert.equal(host, "gaf.healthcare");

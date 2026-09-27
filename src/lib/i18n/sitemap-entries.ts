@@ -45,6 +45,56 @@ function cityName(slug: string) {
   return CITIES.find((city) => city.slug === slug)?.name ?? slug;
 }
 
+function postTimestamp(post: { updatedAt?: string; publishedAt?: string; date?: string }) {
+  return post.updatedAt || post.publishedAt || post.date;
+}
+
+function blogPostSitemapOpts(post: {
+  updatedAt?: string;
+  publishedAt?: string;
+  date?: string;
+  featured?: boolean;
+}) {
+  const lastModified = postTimestamp(post);
+  const ageMs = lastModified ? Date.now() - Date.parse(String(lastModified)) : Number.POSITIVE_INFINITY;
+  const recent = Number.isFinite(ageMs) && ageMs < 1000 * 60 * 60 * 24 * 60;
+  return {
+    lastModified,
+    changeFrequency: (recent ? "weekly" : "monthly") as MetadataRoute.Sitemap[number]["changeFrequency"],
+    priority: post.featured || recent ? 0.7 : 0.55,
+  };
+}
+
+function publishedIndexablePosts(locale: AppLocale) {
+  return listPublishedPosts(locale)
+    .filter((post) => post.allowIndex)
+    .slice()
+    .sort((a, b) => {
+      const left = Date.parse(String(postTimestamp(a) || "")) || 0;
+      const right = Date.parse(String(postTimestamp(b) || "")) || 0;
+      return right - left;
+    });
+}
+
+/** Dedicated article sitemap so new blog posts are crawlable without the 7k-URL English index. */
+export function buildBlogSitemap(locale: AppLocale = "en"): MetadataRoute.Sitemap {
+  if (locale !== "en" && !localeIsPublished(locale)) return [];
+  const posts = publishedIndexablePosts(locale);
+  if (posts.length === 0) return [];
+  const newest = postTimestamp(posts[0]);
+  const urls: MetadataRoute.Sitemap = [
+    entry("/blogs", locale, {
+      lastModified: newest,
+      changeFrequency: "weekly",
+      priority: locale === "en" ? 0.7 : 0.6,
+    }),
+  ];
+  for (const post of posts) {
+    urls.push(entry(`/blogs/${post.slug}`, locale, blogPostSitemapOpts(post)));
+  }
+  return dedupeSitemap(urls);
+}
+
 function localeIsPublished(locale: AppLocale) {
   return !isTargetLocale(locale) || targetLocaleIsPublished(locale);
 }
@@ -125,17 +175,17 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
       const depth = path.split("/").filter(Boolean).length;
       localized.push(entry(path, locale, { changeFrequency: "weekly", priority: depth <= 3 ? 0.6 : 0.5 }));
     }
-    const localePosts = listPublishedPosts(locale).filter((post) => post.allowIndex);
+    const localePosts = publishedIndexablePosts(locale);
     if (localePosts.length > 0) {
-      localized.push(entry("/blogs", locale, { priority: 0.6 }));
+      localized.push(
+        entry("/blogs", locale, {
+          lastModified: postTimestamp(localePosts[0]),
+          changeFrequency: "weekly",
+          priority: 0.6,
+        }),
+      );
       for (const post of localePosts) {
-        localized.push(
-          entry(`/blogs/${post.slug}`, locale, {
-            lastModified: post.updatedAt || post.publishedAt || post.date,
-            changeFrequency: "monthly",
-            priority: 0.5,
-          }),
-        );
+        localized.push(entry(`/blogs/${post.slug}`, locale, blogPostSitemapOpts(post)));
       }
     }
     return dedupeSitemap(localized);
@@ -299,14 +349,8 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     }
   }
 
-  for (const post of listPublishedPosts(locale).filter((p) => p.allowIndex)) {
-    urls.push(
-      entry(`/blogs/${post.slug}`, locale, {
-        lastModified: post.updatedAt || post.publishedAt || post.date,
-        changeFrequency: "monthly",
-        priority: 0.5,
-      }),
-    );
+  for (const post of publishedIndexablePosts(locale)) {
+    urls.push(entry(`/blogs/${post.slug}`, locale, blogPostSitemapOpts(post)));
   }
 
   return dedupeSitemap(urls);

@@ -22,4 +22,6 @@ Long-form cost guides cover oncology (radiation, surgical and medical), hematolo
 ## Sitemaps
 
 - [English sitemap](https://gaf.healthcare/sitemap.xml)
+- [English language sitemap](https://gaf.healthcare/sitemap-en.xml)
+- [Blog sitemap](https://gaf.healthcare/sitemap-blogs.xml)
 - [Arabic sitemap](https://gaf.healthcare/sitemap-ar.xml)
