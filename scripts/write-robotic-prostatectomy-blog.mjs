@@ -882,7 +882,7 @@ const blocks = [
     "[Prostate Cancer Treatment Cost in India](" + RP_COST + ") – surgery, radiation, hormone therapy and advanced treatment costs.",
     "[What Is the Best Treatment for Prostate Cancer?](" + OPTIONS + ") – how doctors select treatment based on stage and risk.",
     "[Prostate Cancer Treatment by Stage](" + OPTIONS + ") – treatment approaches for Stage 1 through Stage 4.",
-    "[Radiation Therapy for Prostate Cancer in India](" + EBRT + ") – IMRT, IGRT, VMAT, SBRT and [brachytherapy](" + BRACHY + ").",
+    "[Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer) – IMRT, IGRT, VMAT, SBRT and [brachytherapy](" + BRACHY + ").",
     "[Radical prostatectomy doctors in India](" + RP_DOCTORS + ") – named uro-oncology teams who perform prostatectomy.",
     "[Hospitals for radical prostatectomy](" + RP_HOSP + ") – campuses offering the procedure.",
   ]),

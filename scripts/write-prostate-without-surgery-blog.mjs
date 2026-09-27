@@ -870,7 +870,7 @@ const blocks = [
     "[Prostate Cancer Treatment Cost in India](" + PILLAR + ") – detailed cost guide covering surgery, radiation, hormone therapy and advanced treatments.",
     "[Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india) – procedure, eligibility, recovery, risks and cost.",
     "[Prostate Cancer Treatment by Stage](" + OPTIONS + ") – treatment options for Stage 1, 2, 3 and 4 disease.",
-    "[Radiation Therapy for Prostate Cancer in India](" + EBRT + ") – IMRT, IGRT, VMAT, SBRT and [brachytherapy](" + BRACHY + ").",
+    "[Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer) – IMRT, IGRT, VMAT, SBRT and [brachytherapy](" + BRACHY + ").",
     "[PSMA PET/CT for Prostate Cancer](" + PILLAR + ") – when advanced imaging may be useful.",
     "[Lutetium-177 PSMA Therapy in India](" + PILLAR + ") – eligibility, treatment process, side effects and cost.",
   ]),
