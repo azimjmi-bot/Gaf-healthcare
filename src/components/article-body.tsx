@@ -172,7 +172,7 @@ export function ArticleBlocks({
         if (rest) {
           rendered.push(<MarkdownBody key={`${block.id}-copy`} source={rest} />);
         }
-        const group = [block];
+        const group: ArticleBlock[] = [block];
         index += 1;
         while (index < blocks.length && isCtaOnlyBlock(blocks[index])) {
           group.push(blocks[index]);
@@ -192,7 +192,7 @@ export function ArticleBlocks({
       }
     }
     if (isCtaOnlyBlock(block)) {
-      const group = [block];
+      const group: ArticleBlock[] = [block];
       const startId = block.id;
       index += 1;
       while (index < blocks.length && isCtaOnlyBlock(blocks[index])) {
