@@ -116,6 +116,51 @@ const nextConfig = {
         destination: "/blogs/breast-cancer-chemotherapy-side-effects",
         permanent: true,
       },
+      {
+        source: "/blog/breast-cancer-radiation-side-effects",
+        destination: "/blogs/breast-cancer-radiation-side-effects",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-follow-up-tests",
+        destination: "/blogs/breast-cancer-follow-up-tests",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-neoadjuvant-therapy",
+        destination: "/blogs/breast-cancer-neoadjuvant-therapy",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-lymphedema",
+        destination: "/blogs/breast-cancer-lymphedema",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-pathology-report-explained",
+        destination: "/blogs/breast-cancer-pathology-report-explained",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-recurrence-treatment-india",
+        destination: "/blogs/breast-cancer-recurrence-treatment-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-in-young-women-treatment-india",
+        destination: "/blogs/breast-cancer-in-young-women-treatment-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/invasive-lobular-carcinoma-treatment-india",
+        destination: "/blogs/invasive-lobular-carcinoma-treatment-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-during-pregnancy-treatment-india",
+        destination: "/blogs/breast-cancer-during-pregnancy-treatment-india",
+        permanent: true,
+      },
       { source: "/about", destination: "/", permanent: true },
     ];
   },

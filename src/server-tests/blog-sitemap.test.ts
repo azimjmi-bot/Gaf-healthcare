@@ -4,6 +4,15 @@ import { listPublishedPosts } from "@/lib/blogs";
 import { buildBlogSitemap, buildLocaleSitemap, sitemapXml } from "@/lib/i18n/sitemap-entries";
 
 const NEW_SLUGS = [
+  "breast-cancer-during-pregnancy-treatment-india",
+  "invasive-lobular-carcinoma-treatment-india",
+  "breast-cancer-in-young-women-treatment-india",
+  "breast-cancer-recurrence-treatment-india",
+  "breast-cancer-pathology-report-explained",
+  "breast-cancer-lymphedema",
+  "breast-cancer-neoadjuvant-therapy",
+  "breast-cancer-follow-up-tests",
+  "breast-cancer-radiation-side-effects",
   "breast-cancer-chemotherapy-side-effects",
   "breast-cancer-hormone-therapy-side-effects",
   "breast-cancer-targeted-therapy-side-effects",
@@ -41,7 +50,7 @@ test("the blog sitemap lists every published English article, newest first", () 
     assert.equal(row.changeFrequency, "weekly");
     assert.equal(row.priority, 0.7);
   }
-  assert.equal(urls[1], "https://gaf.healthcare/blogs/breast-cancer-chemotherapy-side-effects");
+  assert.equal(urls[1], "https://gaf.healthcare/blogs/breast-cancer-during-pregnancy-treatment-india");
   assert.equal(buildBlogSitemap("ar").length, 0);
 });
 
