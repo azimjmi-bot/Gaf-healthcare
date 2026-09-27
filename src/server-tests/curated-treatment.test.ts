@@ -3,6 +3,7 @@ import test from "node:test";
 import {
   applyCuratedTreatmentPatch,
   blankCuratedTreatment,
+  loadCuratedTreatments,
   normalizeCuratedTreatment,
   publishedCuratedTreatments,
   uniqueCuratedTreatmentSlug,
@@ -63,6 +64,26 @@ test("publishing rejects incomplete core and language records", () => {
     editorialBody: "## Treatment overview\n\nA detailed overview for patients.",
   };
   assert.deepEqual(validateTreatmentForSave(treatment), []);
+});
+
+test("the published breast cancer page is complete and internally linked", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "breast-cancer-treatment-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Lumpectomy/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Mastectomy/);
+  assert.match(body, /\/uploads\/treatments\/breast-cancer-local-vs-systemic\.png/);
+  assert.match(body, /\/uploads\/treatments\/breast-cancer-surgery-options\.png/);
+  assert.match(body, /\/uploads\/treatments\/breast-cancer-treatment-sequence\.png/);
+  assert.match(body, /\/uploads\/treatments\/breast-cancer-international-pathway\.png/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  assert.equal(publishedCuratedTreatments("ar").length, 0);
 });
 
 test("Save recreates a missing Treatment instead of 404ing", () => {

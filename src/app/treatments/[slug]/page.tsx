@@ -46,6 +46,7 @@ export async function generateMetadata({
     {
       title,
       description,
+      keywords: copy.searchKeywords.length ? copy.searchKeywords : undefined,
       openGraph: {
         title,
         description,
@@ -66,8 +67,11 @@ function structuredData(
   copy: CuratedTreatmentTranslation,
   specialtyName: string,
   locale: AppLocale,
+  destinations: { name: string }[],
+  bodyLocation?: string,
 ) {
   const url = localizedAbsoluteUrl(`/treatments/${slug}`, locale);
+  const india = destinations.some((row) => row.name === "India");
   const graph: Record<string, unknown>[] = [
     {
       "@type": "MedicalProcedure",
@@ -76,9 +80,17 @@ function structuredData(
       description: copy.metaDescription || copy.shortDescription,
       url,
       procedureType: copy.treatmentType || undefined,
-      bodyLocation: undefined,
+      bodyLocation: bodyLocation || undefined,
       inLanguage: locale,
       relevantSpecialty: specialtyName || undefined,
+      areaServed: [
+        ...destinations.map((row) => ({ "@type": "Country", name: row.name })),
+        ...(india
+          ? ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"].map(
+              (name) => ({ "@type": "City", name }),
+            )
+          : []),
+      ],
     },
     {
       "@type": "BreadcrumbList",
@@ -172,6 +184,10 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
     copy,
     taxonomyLabel(specialty?.name, locale),
     locale,
+    destinations,
+    /breast/i.test(`${treatment.category} ${treatment.subspecialty} ${copy.name}`)
+      ? "Breast"
+      : undefined,
   );
   const specialtyLabel = taxonomyLabel(specialty?.name, locale);
   const heroFactCount = [
