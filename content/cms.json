@@ -10365,16 +10365,16 @@
           "href": "/treatments/breast-cancer-treatment-in-india"
         },
         {
-          "label": "Radiation Side Effects",
-          "href": "/blogs/breast-cancer-radiation-side-effects"
-        },
-        {
           "label": "Surgery in India",
           "href": "/blogs/breast-cancer-surgery-in-india"
         },
         {
           "label": "Radiation therapy",
           "href": "/blogs/radiation-therapy-for-breast-cancer"
+        },
+        {
+          "label": "Radiation side effects",
+          "href": "/blogs/breast-cancer-radiation-side-effects"
         },
         {
           "label": "International patients",
@@ -10385,17 +10385,17 @@
         {
           "id": "html_001",
           "type": "html",
-          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>What is lymphedema after breast cancer treatment?</strong> Lymphedema is swelling caused by a buildup of lymph fluid when the lymphatic system has been damaged or its drainage has been reduced. After breast cancer treatment, it most commonly affects the arm, hand, breast or chest wall on the treated side.</p><p class=\"article-quick-answer__body\"><strong>Why does breast cancer treatment cause lymphedema?</strong> Lymph nodes and lymphatic vessels can be affected by lymph-node surgery and radiation therapy. Removing or damaging lymphatic pathways can make it harder for lymph fluid to drain normally.</p><p class=\"article-quick-answer__body\"><strong>What are the early signs?</strong> Early symptoms can include a feeling of heaviness, tightness, fullness or swelling in the arm, hand, breast or chest area. Rings, watches or clothing may also feel tighter.</p><p class=\"article-quick-answer__body\"><strong>Can lymphedema happen years after breast cancer treatment?</strong> Yes. It can develop months or years after treatment, so new swelling should not automatically be attributed to an old surgery or ignored.</p><p class=\"article-quick-answer__body\"><strong>Does lymphedema mean breast cancer has returned?</strong> No. Lymphedema itself does not mean that cancer has returned. However, unexplained or new swelling should be assessed by a doctor to determine its cause.</p><p class=\"article-quick-answer__body\"><strong>Can lymphedema be cured?</strong> There is currently no universal cure for established lymphedema, but treatment can reduce swelling, improve function and help prevent complications.</p><p class=\"article-quick-answer__body\"><strong>How is breast-cancer-related lymphedema treated?</strong> Treatment may include compression garments, exercise, skin care, specialized lymphatic therapy and other interventions. Selected patients may be evaluated for surgical procedures.</p><p class=\"article-quick-answer__body\"><strong>Can I exercise after breast cancer surgery?</strong> In most cases, appropriate physical activity and gradual exercises are part of recovery. The exact timing and type of exercise should be discussed with the treating team, particularly after lymph-node surgery.</p><p class=\"article-quick-answer__body\"><strong>Does every patient who has lymph nodes removed develop lymphedema?</strong> No. The risk varies according to the extent of lymph-node treatment, radiation, individual factors and other aspects of treatment.</p><p class=\"article-quick-answer__body\"><strong>Can lymphedema treatment be provided in India?</strong> Yes. Breast cancer centers in India may provide multidisciplinary assessment involving surgical oncology, rehabilitation, physiotherapy and, where appropriate, specialists experienced in lymphedema management.</p><p class=\"article-quick-answer__body\"><strong>What Is Lymphedema?</strong> The lymphatic system is a network of vessels and lymph nodes that helps move lymph fluid through the body.</p></aside>"
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>What is lymphedema after breast cancer treatment?</strong> Lymphedema is swelling caused by a buildup of lymph fluid when the lymphatic system has been damaged or its drainage has been reduced. After breast cancer treatment, it most commonly affects the arm, hand, breast or chest wall on the treated side.</p><p class=\"article-quick-answer__body\"><strong>Why does breast cancer treatment cause lymphedema?</strong> Lymph nodes and lymphatic vessels can be affected by lymph-node surgery and radiation therapy. Removing or damaging lymphatic pathways can make it harder for lymph fluid to drain normally.</p><p class=\"article-quick-answer__body\"><strong>What are the early signs?</strong> Early symptoms can include a feeling of heaviness, tightness, fullness or swelling in the arm, hand, breast or chest area. Rings, watches or clothing may also feel tighter.</p><p class=\"article-quick-answer__body\"><strong>Can lymphedema happen years after breast cancer treatment?</strong> Yes. It can develop months or years after treatment, so new swelling should not automatically be attributed to an old surgery or ignored.</p><p class=\"article-quick-answer__body\"><strong>Does lymphedema mean breast cancer has returned?</strong> No. Lymphedema itself does not mean that cancer has returned. However, unexplained or new swelling should be assessed by a doctor to determine its cause.</p><p class=\"article-quick-answer__body\"><strong>Can lymphedema be cured?</strong> There is currently no universal cure for established lymphedema, but treatment can reduce swelling, improve function and help prevent complications.</p><p class=\"article-quick-answer__body\"><strong>How is breast-cancer-related lymphedema treated?</strong> Treatment may include compression garments, exercise, skin care, specialized lymphatic therapy and other interventions. Selected patients may be evaluated for surgical procedures.</p><p class=\"article-quick-answer__body\"><strong>Can I exercise after breast cancer surgery?</strong> In most cases, appropriate physical activity and gradual exercises are part of recovery. The exact timing and type of exercise should be discussed with the treating team, particularly after lymph-node surgery.</p><p class=\"article-quick-answer__body\"><strong>Does every patient who has lymph nodes removed develop lymphedema?</strong> No. The risk varies according to the extent of lymph-node treatment, radiation, individual factors and other aspects of treatment.</p><p class=\"article-quick-answer__body\"><strong>Can lymphedema treatment be provided in India?</strong> Yes. Breast cancer centers in India may provide multidisciplinary assessment involving surgical oncology, rehabilitation, physiotherapy and, where appropriate, specialists experienced in lymphedema management.</p></aside>"
         },
         {
           "id": "p_002",
           "type": "paragraph",
-          "text": "Lymphedema is one of the complications that some people experience after breast cancer treatment. It usually affects the arm, hand, breast or chest area on the side where treatment was performed. It can develop soon after surgery or radiation, but in some people it appears months or even years later. The swelling may be mild at first. A person may simply notice that one arm feels heavier, tighter or different from the other. Lymphedema is not the same as cancer recurrence. However, new or persistent swelling after breast cancer treatment should be evaluated because there can be several possible causes. The good news is that lymphedema can often be managed. Early recognition, appropriate assessment and treatment can help control symptoms and reduce their impact on everyday life. For patients travelling to India for breast cancer treatment, understanding lymphedema is also useful when planning surgery, lymph-node treatment and recovery. This guide supports the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) pathway."
+          "text": "Lymphedema is one of the complications that some people experience after breast cancer treatment. It usually affects the arm, hand, breast or chest area on the side where treatment was performed. It can develop soon after [surgery](/blogs/breast-cancer-surgery-in-india) or [radiation](/blogs/breast-cancer-radiation-side-effects), but in some people it appears months or even years later. This guide supports the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) pathway."
         },
         {
           "id": "btn_003",
           "type": "button",
-          "label": "Ask GAF about breast cancer and lymphedema",
+          "label": "Ask GAF about lymphedema risk after surgery",
           "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
@@ -10408,1660 +10408,580 @@
           "type": "image",
           "src": "/uploads/articles/lymphedema-measure-visual.webp",
           "alt": "Lymphedema after breast cancer treatment showing arm swelling and lymphatic drainage",
-          "caption": "Early measurement and recognition make lymphedema easier to manage."
+          "caption": "Early measurement and recognition make lymphedema easier to manage. New swelling should be assessed rather than ignored."
         },
         {
-          "id": "p_006",
-          "type": "paragraph",
-          "text": "When this drainage system is damaged or blocked, fluid can accumulate in the affected area."
+          "id": "h_006",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Lymphedema?"
         },
         {
           "id": "p_007",
           "type": "paragraph",
-          "text": "This is called lymphedema."
+          "text": "The lymphatic system is a network of vessels and lymph nodes that helps move lymph fluid through the body. When this drainage system is damaged or blocked, fluid can accumulate in the affected area. After breast cancer treatment, it most commonly affects the arm or hand on the side where surgery or radiation was performed. Some patients can also develop swelling in the breast or chest wall. The condition can range from barely noticeable swelling to more persistent changes in the tissues."
         },
         {
-          "id": "p_008",
-          "type": "paragraph",
-          "text": "After breast cancer treatment, it most commonly affects the arm or hand on the side where surgery or radiation was performed. Some patients can also develop swelling in the breast or chest wall."
+          "id": "h_008",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Can Breast Cancer Treatment Cause Lymphedema?"
         },
         {
           "id": "p_009",
           "type": "paragraph",
-          "text": "The condition can range from barely noticeable swelling to more persistent changes in the tissues."
+          "text": "The most important treatment-related risk factors include removal of lymph nodes, extensive axillary lymph-node surgery, radiation involving regional lymph nodes, a combination of surgery and radiation, and infection or injury affecting lymphatic drainage. The more lymphatic pathways that are removed or damaged, the greater the potential for drainage problems. Treatment does not mean that lymphedema is inevitable."
         },
         {
           "id": "h_010",
           "type": "heading",
-          "level": 3,
-          "text": "Why Can Breast Cancer Treatment Cause Lymphedema?"
+          "level": 2,
+          "text": "What Is the Role of Axillary Lymph Nodes?"
         },
         {
           "id": "p_011",
           "type": "paragraph",
-          "text": "Breast cancer treatment can involve the lymphatic system in several ways."
+          "text": "The axillary lymph nodes are located in the armpit. Breast cancer can spread to these nodes, which is why they may need to be assessed during treatment. Depending on the situation, doctors may perform a sentinel lymph-node biopsy or a more extensive lymph-node procedure. A sentinel lymph-node biopsy generally removes fewer nodes than an axillary lymph-node dissection. This difference can matter when considering the potential risk of lymphedema."
         },
         {
           "id": "h_012",
           "type": "heading",
           "level": 2,
-          "text": "The most important treatment-related risk factors include:"
+          "text": "Sentinel Lymph-Node Biopsy vs Axillary Dissection"
         },
         {
-          "id": "ul_013",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Removal of lymph nodes",
-            "Extensive axillary lymph-node surgery",
-            "Radiation therapy involving regional lymph nodes",
-            "Combination of surgery and radiation",
-            "Infection or injury affecting lymphatic drainage"
-          ]
-        },
-        {
-          "id": "p_014",
+          "id": "p_013",
           "type": "paragraph",
-          "text": "The more lymphatic pathways that are removed or damaged, the greater the potential for drainage problems."
+          "text": "These procedures are not the same. A sentinel lymph-node biopsy identifies and removes the first nodes that drain the breast. If those nodes do not contain cancer, further lymph-node surgery may not be necessary in many situations. An axillary lymph-node dissection removes a larger number of nodes from the armpit and may be recommended when there is more significant involvement or in particular clinical circumstances. Because more lymphatic tissue is affected, axillary dissection generally carries a greater lymphedema risk than sentinel-node surgery. The appropriate procedure depends on the patient's cancer and treatment plan. See [surgery in India](/blogs/breast-cancer-surgery-in-india) and [neoadjuvant therapy](/blogs/breast-cancer-neoadjuvant-therapy), which can sometimes reduce the extent of later node surgery."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 2,
+          "text": "What Are the Early Symptoms of Lymphedema?"
         },
         {
           "id": "p_015",
           "type": "paragraph",
-          "text": "However, treatment does not mean that lymphedema is inevitable."
+          "text": "Lymphedema does not always begin with obvious swelling. Early symptoms can include a feeling of heaviness in the arm, tightness, fullness, mild swelling, reduced flexibility, skin feeling tighter, rings or watches becoming tighter, difficulty fitting into clothing on one side, or a sensation that one arm feels different from the other. Some people notice symptoms before visible swelling becomes obvious. That is why changes in how the arm feels can be worth discussing with the treating team."
         },
         {
           "id": "h_016",
           "type": "heading",
-          "level": 3,
-          "text": "What Is the Role of Axillary Lymph Nodes?"
+          "level": 2,
+          "text": "What Does Lymphedema Swelling Look Like?"
         },
         {
           "id": "p_017",
           "type": "paragraph",
-          "text": "The axillary lymph nodes are located in the armpit."
+          "text": "In early stages, the difference between the two arms may be very subtle. As lymphedema progresses, swelling can become more noticeable around the hand, wrist, forearm, upper arm, breast or chest wall. The skin may become thicker or feel firmer in longstanding cases. Not every swollen arm after breast cancer treatment is lymphedema. Infection, blood clots, injury and other conditions can also cause swelling."
         },
         {
-          "id": "p_018",
-          "type": "paragraph",
-          "text": "Breast cancer can spread to these nodes, which is why they may need to be assessed during treatment."
+          "id": "h_018",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Lymphedema Affect the Breast?"
         },
         {
           "id": "p_019",
           "type": "paragraph",
-          "text": "Depending on the situation, doctors may perform a sentinel lymph-node biopsy or a more extensive lymph-node procedure."
+          "text": "Yes. Lymphedema does not always occur in the arm. Some patients develop swelling or changes in the breast, chest wall or area around the surgical site — heaviness, tightness, skin thickening, changes in shape or a feeling of fullness. Breast swelling after surgery can also occur as part of normal healing. The timing and clinical examination help doctors determine whether the symptoms are related to lymphedema or another postoperative change."
         },
         {
-          "id": "p_020",
-          "type": "paragraph",
-          "text": "A sentinel lymph-node biopsy generally removes fewer nodes than an axillary lymph-node dissection."
+          "id": "h_020",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Lymphedema Affect the Hand?"
         },
         {
           "id": "p_021",
           "type": "paragraph",
-          "text": "This difference can matter when considering the potential risk of lymphedema."
+          "text": "Yes. Some patients notice swelling around the hand or fingers. Rings may become tight, making a fist may be harder, finger movement may reduce, and the skin may feel tight or full. Hand swelling should be assessed rather than assumed to be lymphedema."
         },
         {
-          "id": "h_022",
-          "type": "heading",
-          "level": 2,
-          "text": "Sentinel Lymph-Node Biopsy vs Axillary Dissection"
+          "id": "btn_022",
+          "type": "button",
+          "label": "Ask GAF about new arm or hand swelling",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
           "id": "p_023",
           "type": "paragraph",
-          "text": "These procedures are not the same."
+          "text": "[WhatsApp +91 90443 46292 if one arm feels heavier](https://wa.me/919044346292?text=I%20have%20heaviness%20or%20swelling%20in%20my%20arm%20after%20breast%20cancer%20treatment.%20Please%20advise.)"
         },
         {
           "id": "h_024",
           "type": "heading",
           "level": 2,
-          "text": "Sentinel lymph-node biopsy"
+          "text": "When Can Lymphedema Develop?"
         },
         {
           "id": "p_025",
           "type": "paragraph",
-          "text": "Doctors identify and remove the first lymph nodes that drain the breast."
+          "text": "There is no single time at which it appears. It can develop shortly after treatment, several months later or years later. Completing breast cancer treatment does not necessarily mean the risk disappears immediately. A new change in the treated arm or chest should be discussed with a healthcare professional."
         },
         {
-          "id": "p_026",
-          "type": "paragraph",
-          "text": "If these nodes do not contain cancer, further lymph-node surgery may not be necessary in many situations."
-        },
-        {
-          "id": "h_027",
+          "id": "h_026",
           "type": "heading",
           "level": 2,
-          "text": "Axillary lymph-node dissection"
+          "text": "Who Is More Likely to Develop Lymphedema?"
         },
         {
-          "id": "p_028",
+          "id": "p_027",
           "type": "paragraph",
-          "text": "A larger number of lymph nodes are removed from the armpit."
+          "text": "Risk varies between individuals. Factors associated with increased risk include more extensive lymph-node surgery, axillary dissection, regional lymph-node radiation, a higher number of nodes removed, higher body weight, infection or inflammation, injury to the affected limb, and previous treatment involving the lymphatic system. Having one or more risk factors does not mean lymphedema will definitely develop."
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Radiation Therapy Increase Lymphedema Risk?"
         },
         {
           "id": "p_029",
           "type": "paragraph",
-          "text": "It may be recommended when there is more significant lymph-node involvement or in particular clinical circumstances."
+          "text": "[Radiation](/blogs/radiation-therapy-for-breast-cancer) involving regional lymph nodes can affect lymphatic drainage. The risk can be higher when radiation is combined with more extensive lymph-node surgery. Radiation may still be an important part of treatment for appropriate patients. Doctors balance the benefits of cancer treatment against potential side effects when developing an individual plan. Teams in [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) can confirm whether sentinel-node surgery is appropriate."
         },
         {
-          "id": "p_030",
-          "type": "paragraph",
-          "text": "Because more lymphatic tissue is affected, axillary dissection generally carries a greater lymphedema risk than sentinel-node surgery."
+          "id": "h_030",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Lymphedema the Same as Cancer Recurrence?"
         },
         {
           "id": "p_031",
           "type": "paragraph",
-          "text": "The appropriate procedure depends on the patient's cancer and treatment plan."
+          "text": "No. Lymphedema is a problem with lymphatic fluid drainage. Breast cancer recurrence means that cancer has returned. A patient who later develops swelling should not assume either explanation without an evaluation. Cancer involving lymph nodes or tissues that interfere with drainage can sometimes contribute to swelling. Persistent or unexplained swelling needs assessment. See the [recurrence guide](/blogs/breast-cancer-recurrence-treatment-india) and [follow-up tests](/blogs/breast-cancer-follow-up-tests)."
         },
         {
-          "id": "h_032",
-          "type": "heading",
-          "level": 3,
-          "text": "What Are the Early Symptoms of Lymphedema?"
-        },
-        {
-          "id": "p_033",
-          "type": "paragraph",
-          "text": "Lymphedema does not always begin with obvious swelling."
-        },
-        {
-          "id": "h_034",
-          "type": "heading",
-          "level": 2,
-          "text": "Early symptoms can include:"
-        },
-        {
-          "id": "ul_035",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "A feeling of heaviness in the arm",
-            "Tightness",
-            "Fullness",
-            "Mild swelling",
-            "Reduced flexibility",
-            "Skin feeling tighter",
-            "Rings or watches becoming tighter",
-            "Difficulty fitting into clothing on one side",
-            "A sensation that one arm feels different from the other"
-          ]
-        },
-        {
-          "id": "p_036",
-          "type": "paragraph",
-          "text": "Some people notice symptoms before visible swelling becomes obvious."
-        },
-        {
-          "id": "p_037",
-          "type": "paragraph",
-          "text": "That is why changes in how the arm feels can be worth discussing with the treating team."
-        },
-        {
-          "id": "h_038",
-          "type": "heading",
-          "level": 3,
-          "text": "What Does Lymphedema Swelling Look Like?"
-        },
-        {
-          "id": "p_039",
-          "type": "paragraph",
-          "text": "The appearance can vary."
-        },
-        {
-          "id": "p_040",
-          "type": "paragraph",
-          "text": "In early stages, the difference between the two arms may be very subtle."
-        },
-        {
-          "id": "h_041",
-          "type": "heading",
-          "level": 2,
-          "text": "As lymphedema progresses, swelling can become more noticeable around:"
-        },
-        {
-          "id": "ul_042",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "The hand",
-            "Wrist",
-            "Forearm",
-            "Upper arm",
-            "Breast",
-            "Chest wall"
-          ]
-        },
-        {
-          "id": "p_043",
-          "type": "paragraph",
-          "text": "The skin may also become thicker or feel firmer in longstanding cases."
-        },
-        {
-          "id": "p_044",
-          "type": "paragraph",
-          "text": "Not every swollen arm after breast cancer treatment is lymphedema."
-        },
-        {
-          "id": "p_045",
-          "type": "paragraph",
-          "text": "Infection, blood clots, injury and other conditions can also cause swelling."
-        },
-        {
-          "id": "h_046",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Lymphedema Affect the Breast?"
-        },
-        {
-          "id": "p_047",
-          "type": "paragraph",
-          "text": "Yes."
-        },
-        {
-          "id": "p_048",
-          "type": "paragraph",
-          "text": "Lymphedema does not always occur in the arm."
-        },
-        {
-          "id": "p_049",
-          "type": "paragraph",
-          "text": "Some patients develop swelling or changes in the breast, chest wall or area around the surgical site."
-        },
-        {
-          "id": "h_050",
-          "type": "heading",
-          "level": 2,
-          "text": "Possible symptoms include:"
-        },
-        {
-          "id": "ul_051",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Breast heaviness",
-            "Swelling",
-            "Tightness",
-            "Skin thickening",
-            "Changes in breast shape",
-            "A feeling of fullness"
-          ]
-        },
-        {
-          "id": "p_052",
-          "type": "paragraph",
-          "text": "Breast swelling after surgery can also occur as part of normal healing."
-        },
-        {
-          "id": "p_053",
-          "type": "paragraph",
-          "text": "The timing and clinical examination help doctors determine whether the symptoms are related to lymphedema or another postoperative change."
-        },
-        {
-          "id": "h_054",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Lymphedema Affect the Hand?"
-        },
-        {
-          "id": "p_055",
-          "type": "paragraph",
-          "text": "Yes."
-        },
-        {
-          "id": "p_056",
-          "type": "paragraph",
-          "text": "Some patients notice swelling around the hand or fingers."
-        },
-        {
-          "id": "h_057",
-          "type": "heading",
-          "level": 2,
-          "text": "You may notice:"
-        },
-        {
-          "id": "ul_058",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Rings becoming tight",
-            "Difficulty making a fist",
-            "Reduced finger movement",
-            "A feeling of fullness",
-            "Skin tightness"
-          ]
-        },
-        {
-          "id": "p_059",
-          "type": "paragraph",
-          "text": "Hand swelling should be assessed rather than assumed to be lymphedema."
-        },
-        {
-          "id": "img_060",
-          "type": "image",
-          "src": "/uploads/articles/lymphedema-physio-visual.webp",
-          "alt": "Guided arm exercises after breast cancer lymph-node treatment",
-          "caption": "Gentle movement and rehabilitation help maintain shoulder mobility and lymphatic flow."
-        },
-        {
-          "id": "h_061",
-          "type": "heading",
-          "level": 3,
-          "text": "When Can Lymphedema Develop?"
-        },
-        {
-          "id": "p_062",
-          "type": "paragraph",
-          "text": "There is no single time at which it appears."
-        },
-        {
-          "id": "h_063",
-          "type": "heading",
-          "level": 2,
-          "text": "It can develop:"
-        },
-        {
-          "id": "ul_064",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Shortly after treatment",
-            "Several months later",
-            "Years after treatment"
-          ]
-        },
-        {
-          "id": "p_065",
-          "type": "paragraph",
-          "text": "This means that completing breast cancer treatment does not necessarily mean the risk disappears immediately."
-        },
-        {
-          "id": "p_066",
-          "type": "paragraph",
-          "text": "A new change in the treated arm or breast should be discussed with a healthcare professional."
-        },
-        {
-          "id": "h_067",
-          "type": "heading",
-          "level": 3,
-          "text": "Who Is More Likely to Develop Lymphedema?"
-        },
-        {
-          "id": "p_068",
-          "type": "paragraph",
-          "text": "Risk varies between individuals."
-        },
-        {
-          "id": "h_069",
-          "type": "heading",
-          "level": 2,
-          "text": "Factors associated with increased risk can include:"
-        },
-        {
-          "id": "ul_070",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "More extensive lymph-node surgery",
-            "Axillary lymph-node dissection",
-            "Regional lymph-node radiation",
-            "Higher number of lymph nodes removed",
-            "Higher body weight",
-            "Infection or inflammation",
-            "Injury to the affected limb",
-            "Previous treatment involving the lymphatic system"
-          ]
-        },
-        {
-          "id": "p_071",
-          "type": "paragraph",
-          "text": "Having one or more risk factors does not mean lymphedema will definitely develop."
-        },
-        {
-          "id": "h_072",
-          "type": "heading",
-          "level": 3,
-          "text": "Does Radiation Therapy Increase Lymphedema Risk?"
-        },
-        {
-          "id": "p_073",
-          "type": "paragraph",
-          "text": "It can."
-        },
-        {
-          "id": "p_074",
-          "type": "paragraph",
-          "text": "Radiation involving regional lymph nodes can affect lymphatic drainage."
-        },
-        {
-          "id": "p_075",
-          "type": "paragraph",
-          "text": "The risk can be higher when radiation is combined with more extensive lymph-node surgery."
-        },
-        {
-          "id": "p_076",
-          "type": "paragraph",
-          "text": "However, [radiation therapy](/blogs/radiation-therapy-for-breast-cancer) may be an important part of breast cancer treatment for appropriate patients."
-        },
-        {
-          "id": "p_077",
-          "type": "paragraph",
-          "text": "Doctors balance the benefits of cancer treatment against potential side effects when developing an individual treatment plan."
-        },
-        {
-          "id": "h_078",
-          "type": "heading",
-          "level": 3,
-          "text": "Is Lymphedema the Same as Cancer Recurrence?"
-        },
-        {
-          "id": "p_079",
-          "type": "paragraph",
-          "text": "No."
-        },
-        {
-          "id": "p_080",
-          "type": "paragraph",
-          "text": "This distinction is important."
-        },
-        {
-          "id": "p_081",
-          "type": "paragraph",
-          "text": "Lymphedema is a problem with lymphatic fluid drainage."
-        },
-        {
-          "id": "p_082",
-          "type": "paragraph",
-          "text": "Breast cancer recurrence means that cancer has returned."
-        },
-        {
-          "id": "p_083",
-          "type": "paragraph",
-          "text": "A patient who has had breast cancer and later develops swelling should not assume either explanation without an evaluation."
-        },
-        {
-          "id": "p_084",
-          "type": "paragraph",
-          "text": "Persistent or unexplained swelling needs appropriate medical assessment."
-        },
-        {
-          "id": "h_085",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Breast Cancer Recurrence Cause Swelling?"
-        },
-        {
-          "id": "p_086",
-          "type": "paragraph",
-          "text": "It can, depending on where the cancer returns."
-        },
-        {
-          "id": "p_087",
-          "type": "paragraph",
-          "text": "Cancer involving lymph nodes or tissues that interfere with lymphatic drainage can sometimes contribute to swelling."
-        },
-        {
-          "id": "p_088",
-          "type": "paragraph",
-          "text": "That is why new or worsening swelling after breast cancer treatment should be discussed with an oncologist or another appropriate healthcare professional."
-        },
-        {
-          "id": "p_089",
-          "type": "paragraph",
-          "text": "The goal is to identify the actual cause rather than assuming every swelling is postoperative lymphedema."
-        },
-        {
-          "id": "h_090",
-          "type": "heading",
-          "level": 3,
-          "text": "How Is Lymphedema Diagnosed?"
-        },
-        {
-          "id": "p_091",
-          "type": "paragraph",
-          "text": "In many patients, diagnosis begins with a medical history and physical examination."
-        },
-        {
-          "id": "p_092",
-          "type": "paragraph",
-          "text": "The doctor may compare the affected and unaffected limbs."
-        },
-        {
-          "id": "h_093",
-          "type": "heading",
-          "level": 2,
-          "text": "They may assess:"
-        },
-        {
-          "id": "ul_094",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Swelling",
-            "Skin changes",
-            "Limb circumference",
-            "Tissue texture",
-            "Range of motion",
-            "Symptoms",
-            "Previous breast cancer treatment"
-          ]
-        },
-        {
-          "id": "p_095",
-          "type": "paragraph",
-          "text": "In some cases, additional measurements or imaging may be useful."
-        },
-        {
-          "id": "h_096",
-          "type": "heading",
-          "level": 3,
-          "text": "Is There a Test for Lymphedema?"
-        },
-        {
-          "id": "p_097",
-          "type": "paragraph",
-          "text": "There is no single test that every patient needs."
-        },
-        {
-          "id": "p_098",
-          "type": "paragraph",
-          "text": "Clinical examination is often an important part of diagnosis."
-        },
-        {
-          "id": "h_099",
-          "type": "heading",
-          "level": 2,
-          "text": "Depending on the situation, specialists may use tools such as:"
-        },
-        {
-          "id": "ul_100",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Limb-volume measurements",
-            "Bioimpedance measurements",
-            "Ultrasound",
-            "Lymphoscintigraphy",
-            "Indocyanine green lymphatic imaging",
-            "Other specialized lymphatic imaging"
-          ]
-        },
-        {
-          "id": "p_101",
-          "type": "paragraph",
-          "text": "The appropriate test depends on the patient's symptoms and the clinical question."
-        },
-        {
-          "id": "h_102",
-          "type": "heading",
-          "level": 3,
-          "text": "What Is Complex Decongestive Therapy?"
-        },
-        {
-          "id": "p_103",
-          "type": "paragraph",
-          "text": "One of the commonly used approaches for lymphedema management is complex decongestive therapy (CDT)."
-        },
-        {
-          "id": "h_104",
-          "type": "heading",
-          "level": 2,
-          "text": "It can include several components:"
-        },
-        {
-          "id": "ul_105",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Compression",
-            "Exercise",
-            "Skin care",
-            "Manual lymphatic techniques",
-            "Education about self-management"
-          ]
-        },
-        {
-          "id": "p_106",
-          "type": "paragraph",
-          "text": "Treatment is individualized."
-        },
-        {
-          "id": "p_107",
-          "type": "paragraph",
-          "text": "Not every patient requires exactly the same combination or intensity of therapy."
-        },
-        {
-          "id": "h_108",
-          "type": "heading",
-          "level": 3,
-          "text": "How Does Compression Help?"
-        },
-        {
-          "id": "p_109",
-          "type": "paragraph",
-          "text": "Compression garments provide controlled pressure around the affected area."
-        },
-        {
-          "id": "p_110",
-          "type": "paragraph",
-          "text": "This can help support fluid movement and control swelling."
-        },
-        {
-          "id": "h_111",
-          "type": "heading",
-          "level": 2,
-          "text": "Depending on the patient's condition, compression may involve:"
-        },
-        {
-          "id": "ul_112",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Sleeves",
-            "Gloves or gauntlets",
-            "Bandaging",
-            "Specialized garments for the breast or chest"
-          ]
-        },
-        {
-          "id": "p_113",
-          "type": "paragraph",
-          "text": "The garment should be appropriately fitted."
-        },
-        {
-          "id": "p_114",
-          "type": "paragraph",
-          "text": "A poorly fitting compression garment can be uncomfortable and may not provide the intended benefit."
-        },
-        {
-          "id": "h_115",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Exercise Help Lymphedema?"
-        },
-        {
-          "id": "p_116",
-          "type": "paragraph",
-          "text": "Appropriate exercise can be an important part of lymphedema management."
-        },
-        {
-          "id": "h_117",
-          "type": "heading",
-          "level": 2,
-          "text": "Exercises may include:"
-        },
-        {
-          "id": "ul_118",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Gentle range-of-motion exercises",
-            "Stretching",
-            "Gradual strengthening",
-            "Aerobic activity",
-            "Breathing exercises"
-          ]
-        },
-        {
-          "id": "p_119",
-          "type": "paragraph",
-          "text": "Exercise should generally be introduced progressively."
-        },
-        {
-          "id": "p_120",
-          "type": "paragraph",
-          "text": "People recovering from breast cancer surgery may need guidance about when to begin specific movements, particularly if they have had extensive surgery or complications."
-        },
-        {
-          "id": "h_121",
-          "type": "heading",
-          "level": 3,
-          "text": "Should You Avoid Using the Arm After Breast Cancer Surgery?"
-        },
-        {
-          "id": "p_122",
-          "type": "paragraph",
-          "text": "Routine avoidance of normal arm use is generally not the goal."
-        },
-        {
-          "id": "p_123",
-          "type": "paragraph",
-          "text": "Historically, patients were sometimes given extensive restrictions after lymph-node surgery."
-        },
-        {
-          "id": "p_124",
-          "type": "paragraph",
-          "text": "Current approaches generally emphasize gradual return to normal activity and appropriately progressed exercise rather than permanently avoiding use of the arm."
-        },
-        {
-          "id": "img_125",
-          "type": "image",
-          "src": "/uploads/articles/lymphedema-compression-visual.webp",
-          "alt": "Compression sleeve fitting for breast cancer–related lymphedema",
-          "caption": "Compression and specialist physiotherapy are common treatments when swelling develops."
-        },
-        {
-          "id": "p_126",
-          "type": "paragraph",
-          "text": "Your surgeon or rehabilitation specialist can advise you about lifting, resistance exercise and the timing of activities based on your operation and recovery."
-        },
-        {
-          "id": "h_127",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Weight Training Cause Lymphedema?"
-        },
-        {
-          "id": "p_128",
-          "type": "paragraph",
-          "text": "This is a common concern."
-        },
-        {
-          "id": "p_129",
-          "type": "paragraph",
-          "text": "Many breast cancer survivors worry that lifting weights will trigger swelling."
-        },
-        {
-          "id": "p_130",
-          "type": "paragraph",
-          "text": "Current rehabilitation approaches generally support gradually introduced resistance exercise when appropriate rather than avoiding strength training altogether."
-        },
-        {
-          "id": "p_131",
-          "type": "button",
-          "label": "Request a case-specific treatment review",
-          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
-        },
-        {
-          "id": "p_132",
-          "type": "paragraph",
-          "text": "[WhatsApp +91 90443 46292 for a case-specific plan](https://wa.me/919044346292?text=Please%20advise%20on%20prevention%20and%20treatment%20of%20arm%20swelling%20after%20breast%20cancer%20surgery.)"
-        },
-        {
-          "id": "p_133",
-          "type": "paragraph",
-          "text": "The important principle is progression."
-        },
-        {
-          "id": "p_134",
-          "type": "paragraph",
-          "text": "If you are starting resistance exercise after surgery or lymph-node treatment, begin at an appropriate level and increase gradually under professional guidance when needed."
-        },
-        {
-          "id": "h_135",
-          "type": "heading",
-          "level": 3,
-          "text": "What About Blood Pressure Checks on the Treated Arm?"
-        },
-        {
-          "id": "p_136",
-          "type": "paragraph",
-          "text": "Patients are often told to avoid blood pressure measurements, injections or blood draws in the arm on the treated side."
-        },
-        {
-          "id": "p_137",
-          "type": "paragraph",
-          "text": "However, modern evidence does not clearly support blanket avoidance of all routine procedures in every patient solely because they are at risk of lymphedema."
-        },
-        {
-          "id": "p_138",
-          "type": "paragraph",
-          "text": "The practical approach should be individualized."
-        },
-        {
-          "id": "p_139",
-          "type": "paragraph",
-          "text": "Tell healthcare professionals about your breast cancer surgery and lymph-node treatment so they can consider the safest option available."
-        },
-        {
-          "id": "h_140",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Blood Tests Be Done From the Affected Arm?"
-        },
-        {
-          "id": "p_141",
-          "type": "paragraph",
-          "text": "If another arm is readily available, some clinicians may prefer it."
-        },
-        {
-          "id": "p_142",
-          "type": "paragraph",
-          "text": "But an occasional blood draw from the treated side does not automatically mean that lymphedema will develop."
-        },
-        {
-          "id": "p_143",
-          "type": "paragraph",
-          "text": "The decision can depend on the patient's lymph-node treatment, existing lymphedema and the availability of alternative access."
-        },
-        {
-          "id": "h_144",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Infections Make Lymphedema Worse?"
-        },
-        {
-          "id": "p_145",
-          "type": "paragraph",
-          "text": "Yes."
-        },
-        {
-          "id": "p_146",
-          "type": "paragraph",
-          "text": "Lymphedema can make the affected area more vulnerable to skin infections such as cellulitis."
-        },
-        {
-          "id": "h_147",
-          "type": "heading",
-          "level": 2,
-          "text": "Signs that require prompt medical attention can include:"
-        },
-        {
-          "id": "ul_148",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Increasing redness",
-            "Warmth",
-            "Pain",
-            "Rapid swelling",
-            "Fever",
-            "Chills",
-            "Feeling generally unwell"
-          ]
-        },
-        {
-          "id": "p_149",
-          "type": "paragraph",
-          "text": "These symptoms should not be managed as routine lymphedema."
-        },
-        {
-          "id": "p_150",
-          "type": "paragraph",
-          "text": "An infection may require medical treatment."
-        },
-        {
-          "id": "h_151",
-          "type": "heading",
-          "level": 3,
-          "text": "Why Is Skin Care Important?"
-        },
-        {
-          "id": "p_152",
-          "type": "paragraph",
-          "text": "Healthy skin provides an important barrier against infection."
-        },
-        {
-          "id": "h_153",
-          "type": "heading",
-          "level": 2,
-          "text": "If you have lymphedema, basic skin care can include:"
-        },
-        {
-          "id": "ul_154",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Keeping the skin clean",
-            "Moisturizing dry skin",
-            "Treating cuts promptly",
-            "Avoiding unnecessary skin injury",
-            "Looking after nails and cuticles",
-            "Monitoring for redness or infection"
-          ]
-        },
-        {
-          "id": "p_155",
-          "type": "paragraph",
-          "text": "The aim is to reduce opportunities for bacteria to enter damaged skin."
-        },
-        {
-          "id": "h_156",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Lymphedema Be Prevented?"
-        },
-        {
-          "id": "p_157",
-          "type": "paragraph",
-          "text": "There is no guaranteed way to prevent breast-cancer-related lymphedema."
-        },
-        {
-          "id": "p_158",
-          "type": "paragraph",
-          "text": "But risk can sometimes be reduced or managed through appropriate cancer treatment and rehabilitation."
-        },
-        {
-          "id": "h_159",
-          "type": "heading",
-          "level": 2,
-          "text": "Important measures include:"
-        },
-        {
-          "id": "p_160",
-          "type": "paragraph",
-          "text": "Using the least extensive lymph-node surgery that is appropriate for the cancer Following postoperative exercise guidance Maintaining a healthy body weight where appropriate Looking after the skin Treating infections promptly Recognizing early swelling Seeking assessment when symptoms appear"
-        },
-        {
-          "id": "p_161",
-          "type": "paragraph",
-          "text": "The cancer treatment should always remain the priority."
-        },
-        {
-          "id": "p_162",
-          "type": "paragraph",
-          "text": "Lymph-node surgery should not be avoided when it is medically necessary simply because of concern about lymphedema."
-        },
-        {
-          "id": "h_163",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Lymphedema Go Away on Its Own?"
-        },
-        {
-          "id": "p_164",
-          "type": "paragraph",
-          "text": "Mild postoperative swelling can sometimes improve as healing progresses."
-        },
-        {
-          "id": "p_165",
-          "type": "paragraph",
-          "text": "Established lymphedema is different."
-        },
-        {
-          "id": "p_166",
-          "type": "paragraph",
-          "text": "Once the lymphatic system has been significantly impaired, persistent swelling may require ongoing management."
-        },
-        {
-          "id": "p_167",
-          "type": "paragraph",
-          "text": "Early assessment is therefore useful."
-        },
-        {
-          "id": "p_168",
-          "type": "paragraph",
-          "text": "It is better to have a mild symptom evaluated than to wait until swelling becomes severe."
-        },
-        {
-          "id": "h_169",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Lymphedema Be Cured?"
-        },
-        {
-          "id": "p_170",
-          "type": "paragraph",
-          "text": "There is currently no universal cure for established lymphedema."
-        },
-        {
-          "id": "p_171",
-          "type": "paragraph",
-          "text": "However, many patients can manage the condition effectively."
-        },
-        {
-          "id": "h_172",
-          "type": "heading",
-          "level": 2,
-          "text": "Treatment aims to:"
-        },
-        {
-          "id": "ul_173",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Reduce swelling",
-            "Improve movement",
-            "Reduce discomfort",
-            "Protect the skin",
-            "Prevent infections",
-            "Improve daily function",
-            "Maintain long-term control"
-          ]
-        },
-        {
-          "id": "p_174",
-          "type": "paragraph",
-          "text": "Some patients may also be evaluated for surgical procedures when conservative management is insufficient."
-        },
-        {
-          "id": "h_175",
-          "type": "heading",
-          "level": 3,
-          "text": "When Is Lymphedema Surgery Considered?"
-        },
-        {
-          "id": "p_176",
-          "type": "paragraph",
-          "text": "Surgical treatment is not required for everyone."
-        },
-        {
-          "id": "h_177",
-          "type": "heading",
-          "level": 2,
-          "text": "Selected patients may be assessed for procedures such as:"
-        },
-        {
-          "id": "h_178",
-          "type": "heading",
-          "level": 2,
-          "text": "Lymphovenous bypass"
-        },
-        {
-          "id": "p_179",
-          "type": "paragraph",
-          "text": "Small lymphatic vessels are connected to nearby veins to help redirect lymphatic fluid."
-        },
-        {
-          "id": "h_180",
-          "type": "heading",
-          "level": 2,
-          "text": "Vascularized lymph-node transfer"
-        },
-        {
-          "id": "p_181",
-          "type": "paragraph",
-          "text": "Lymph-node tissue with its blood supply may be transferred to an area affected by lymphedema."
-        },
-        {
-          "id": "h_182",
-          "type": "heading",
-          "level": 2,
-          "text": "Liposuction"
-        },
-        {
-          "id": "p_183",
-          "type": "paragraph",
-          "text": "In some patients with longstanding lymphedema and significant fatty tissue accumulation, specialized liposuction may be considered."
-        },
-        {
-          "id": "p_184",
-          "type": "paragraph",
-          "text": "These procedures require specialist assessment."
-        },
-        {
-          "id": "p_185",
-          "type": "paragraph",
-          "text": "The appropriate operation depends on the condition of the patient's lymphatic system and the type and severity of lymphedema."
-        },
-        {
-          "id": "h_186",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Lymphedema Surgery Be Done After Breast Cancer Treatment?"
-        },
-        {
-          "id": "p_187",
-          "type": "paragraph",
-          "text": "Oncology teams in [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) can confirm the next step. Hospitals in [Delhi NCR](/hospitals/India/Delhi-NCR) and [Mumbai](/hospitals/India/Mumbai) handle international follow-up."
-        },
-        {
-          "id": "img_188",
+          "id": "img_032",
           "type": "image",
           "src": "/uploads/articles/lymphedema-consult-visual.webp",
           "alt": "Lymphedema consult after breast cancer surgery or radiation",
           "caption": "Report new heaviness, tightness or arm swelling rather than waiting for the next appointment."
         },
         {
-          "id": "p_189",
-          "type": "paragraph",
-          "text": "Yes."
-        },
-        {
-          "id": "p_190",
-          "type": "paragraph",
-          "text": "Patients who have developed persistent breast-cancer-related lymphedema may be evaluated by specialists in lymphatic surgery."
-        },
-        {
-          "id": "p_191",
-          "type": "paragraph",
-          "text": "Before surgery, doctors may perform detailed lymphatic imaging to understand how the lymphatic system is functioning."
-        },
-        {
-          "id": "p_192",
-          "type": "paragraph",
-          "text": "Not every patient is a candidate for every procedure."
-        },
-        {
-          "id": "h_193",
-          "type": "heading",
-          "level": 3,
-          "text": "Can Lymphedema Affect Quality of Life?"
-        },
-        {
-          "id": "p_194",
-          "type": "paragraph",
-          "text": "Yes."
-        },
-        {
-          "id": "h_195",
+          "id": "h_033",
           "type": "heading",
           "level": 2,
-          "text": "Even when swelling is relatively mild, patients may experience:"
+          "text": "How Is Lymphedema Diagnosed?"
         },
         {
-          "id": "ul_196",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Heaviness",
-            "Tightness",
-            "Reduced arm movement",
-            "Difficulty with clothing",
-            "Difficulty exercising",
-            "Self-consciousness",
-            "Anxiety about worsening symptoms"
-          ]
-        },
-        {
-          "id": "p_197",
+          "id": "p_034",
           "type": "paragraph",
-          "text": "For some patients, the psychological effect can be significant."
+          "text": "In many patients, diagnosis begins with a medical history and physical examination. The doctor may compare the affected and unaffected limbs and assess swelling, skin changes, limb circumference, tissue texture, range of motion, symptoms and previous treatment. There is no single test that every patient needs. Depending on the situation, specialists may use limb-volume measurements, bioimpedance, ultrasound, lymphoscintigraphy, indocyanine green lymphatic imaging or other specialised lymphatic imaging."
         },
         {
-          "id": "p_198",
+          "id": "btn_035",
+          "type": "button",
+          "label": "Ask whether swelling needs a lymphedema assessment",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_036",
           "type": "paragraph",
-          "text": "Managing lymphedema is therefore not simply about reducing arm circumference."
+          "text": "[WhatsApp +91 90443 46292 about diagnosis](https://wa.me/919044346292?text=Please%20advise%20how%20lymphedema%20is%20diagnosed%20after%20breast%20cancer%20treatment%20in%20India.)"
         },
         {
-          "id": "p_199",
-          "type": "paragraph",
-          "text": "The broader goal is helping the person return to comfortable daily life."
-        },
-        {
-          "id": "h_200",
+          "id": "h_037",
           "type": "heading",
-          "level": 3,
+          "level": 2,
+          "text": "What Is Complex Decongestive Therapy?"
+        },
+        {
+          "id": "img_038",
+          "type": "image",
+          "src": "/uploads/articles/lymphedema-compression-visual.webp",
+          "alt": "Compression sleeve fitting for breast cancer–related lymphedema",
+          "caption": "Compression and specialist physiotherapy are common treatments when swelling develops. The garment should be appropriately fitted."
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "One commonly used approach is complex decongestive therapy (CDT). It can include compression, exercise, skin care, manual lymphatic techniques and education about self-management. Treatment is individualised. Not every patient requires exactly the same combination or intensity of therapy."
+        },
+        {
+          "id": "h_040",
+          "type": "heading",
+          "level": 2,
+          "text": "How Does Compression Help?"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "Compression garments provide controlled pressure around the affected area. This can help support fluid movement and control swelling. Depending on the patient's condition, compression may involve sleeves, gloves or gauntlets, bandaging, or specialised garments for the chest. The garment should be appropriately fitted. A poorly fitting compression garment can be uncomfortable and may not provide the intended benefit."
+        },
+        {
+          "id": "img_042",
+          "type": "image",
+          "src": "/uploads/articles/lymphedema-physio-visual.webp",
+          "alt": "Guided arm exercises after breast cancer lymph-node treatment",
+          "caption": "Gentle movement and rehabilitation help maintain shoulder mobility and lymphatic flow."
+        },
+        {
+          "id": "h_043",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Exercise Help Lymphedema?"
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "Appropriate exercise can include gentle range-of-motion work, stretching, gradual strengthening, aerobic activity and breathing exercises. Exercise should generally be introduced progressively. People recovering from surgery may need guidance about when to begin specific movements, particularly after extensive surgery or complications."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 2,
+          "text": "Should You Avoid Using the Arm After Surgery?"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Routine avoidance of normal arm use is generally not the goal. Historically, patients were sometimes given extensive restrictions after lymph-node surgery. Current approaches emphasise a gradual return to normal activity and appropriately progressed exercise rather than permanently avoiding the arm. Your surgeon or rehabilitation specialist can advise you about lifting, resistance exercise and timing based on your operation and recovery."
+        },
+        {
+          "id": "h_047",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Weight Training Cause Lymphedema?"
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "This is a common concern. Many survivors worry that lifting weights will trigger swelling. Current rehabilitation approaches generally support gradually introduced resistance exercise when appropriate rather than avoiding strength training altogether. The important principle is progression. If you are starting resistance exercise after surgery or lymph-node treatment, begin at an appropriate level and increase gradually under professional guidance when needed."
+        },
+        {
+          "id": "btn_049",
+          "type": "button",
+          "label": "Ask about physiotherapy after lymph-node surgery",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 about prevention and treatment](https://wa.me/919044346292?text=Please%20advise%20on%20prevention%20and%20treatment%20of%20arm%20swelling%20after%20breast%20cancer%20surgery.)"
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 2,
+          "text": "What About Blood Pressure Checks on the Treated Arm?"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Patients are often told to avoid blood pressure measurements, injections or blood draws in the arm on the treated side. Modern evidence does not clearly support blanket avoidance of all routine procedures in every patient solely because they are at risk of lymphedema. The practical approach should be individualised. Tell healthcare professionals about your surgery and lymph-node treatment so they can consider the safest option available."
+        },
+        {
+          "id": "h_053",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Blood Tests Be Done From the Affected Arm?"
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "If another arm is readily available, some clinicians may prefer it. An occasional blood draw from the treated side does not automatically mean that lymphedema will develop. The decision can depend on the patient's lymph-node treatment, existing lymphedema and the availability of alternative access."
+        },
+        {
+          "id": "h_055",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Infections Make Lymphedema Worse?"
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "Yes. Lymphedema can make the affected area more vulnerable to skin infections such as cellulitis. Seek prompt medical attention for increasing redness, warmth, pain, rapid swelling, fever, chills or feeling generally unwell. These symptoms should not be managed as routine lymphedema. An infection may require medical treatment."
+        },
+        {
+          "id": "h_057",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Is Skin Care Important?"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "Healthy skin provides an important barrier against infection. If you have lymphedema, basic skin care can include keeping the skin clean, moisturising dry skin, treating cuts promptly, avoiding unnecessary skin injury, looking after nails and cuticles, and monitoring for redness or infection. The aim is to reduce opportunities for bacteria to enter damaged skin."
+        },
+        {
+          "id": "h_059",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Lymphedema Be Prevented?"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "There is no guaranteed way to prevent breast-cancer-related lymphedema. Risk can sometimes be reduced by using the least extensive lymph-node surgery that is appropriate for the cancer, following postoperative exercise guidance, maintaining a healthy body weight where appropriate, looking after the skin, treating infections promptly, recognising early swelling and seeking assessment when symptoms appear. The cancer treatment should always remain the priority. Lymph-node surgery should not be avoided when it is medically necessary simply because of concern about lymphedema."
+        },
+        {
+          "id": "h_061",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Lymphedema Go Away on Its Own?"
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Mild postoperative swelling can sometimes improve as healing progresses. Established lymphedema is different. Once the lymphatic system has been significantly impaired, persistent swelling may require ongoing management. Early assessment is therefore useful. It is better to have a mild symptom evaluated than to wait until swelling becomes severe."
+        },
+        {
+          "id": "h_063",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Lymphedema Be Cured?"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "There is currently no universal cure for established lymphedema. However, many patients can manage the condition effectively. Treatment aims to reduce swelling, improve movement, reduce discomfort, protect the skin, prevent infections, improve daily function and maintain long-term control. Some patients may also be evaluated for surgical procedures when conservative management is insufficient."
+        },
+        {
+          "id": "h_065",
+          "type": "heading",
+          "level": 2,
+          "text": "When Is Lymphedema Surgery Considered?"
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "Surgical treatment is not required for everyone. Selected patients may be assessed for lymphovenous bypass (connecting small lymphatic vessels to nearby veins), vascularized lymph-node transfer, or specialised liposuction when longstanding lymphedema includes significant fatty tissue accumulation. These procedures require specialist assessment. The appropriate operation depends on the condition of the patient's lymphatic system and the type and severity of lymphedema. Patients who have developed persistent breast-cancer-related lymphedema may be evaluated by specialists in lymphatic surgery. Before surgery, doctors may perform detailed lymphatic imaging. Not every patient is a candidate for every procedure."
+        },
+        {
+          "id": "h_067",
+          "type": "heading",
+          "level": 2,
           "text": "Lymphedema After Breast Cancer: What Should You Do?"
         },
         {
-          "id": "p_201",
-          "type": "paragraph",
-          "text": "If you notice new swelling after breast cancer treatment, do not panic."
+          "id": "ul_068",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Compare both arms or hands and notice whether the swelling is persistent",
+            "Look for redness, warmth or pain",
+            "Contact your cancer care team and ask whether you need a lymphedema assessment",
+            "Follow recommended exercise and compression guidance",
+            "Do not start aggressive massage or compression without advice if swelling appeared suddenly or is painful"
+          ]
         },
         {
-          "id": "h_202",
+          "id": "h_069",
           "type": "heading",
           "level": 2,
-          "text": "Instead:"
+          "text": "Can Lymphedema Affect Quality of Life?"
         },
         {
-          "id": "p_203",
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "Yes. Even when swelling is relatively mild, patients may experience heaviness, tightness, reduced arm movement, difficulty with clothing, difficulty exercising, self-consciousness and anxiety about worsening symptoms. For some patients, the psychological effect can be significant. Managing lymphedema is therefore not simply about reducing arm circumference. The broader goal is helping the person return to comfortable daily life."
+        },
+        {
+          "id": "h_071",
+          "type": "heading",
+          "level": 2,
+          "text": "What Should International Patients Know Before Breast Cancer Surgery in India?"
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "If you are travelling to India for breast cancer surgery, lymphedema should be part of the pre-treatment discussion. Ask whether you need lymph-node surgery, whether sentinel-node biopsy is appropriate, whether you need an axillary dissection or regional radiation, what your estimated risk is, when you can begin arm exercises, whether you should see a physiotherapist, and which symptoms should make you contact the hospital. See the [international-patient guide](/blogs/breast-cancer-treatment-india-international-patients)."
+        },
+        {
+          "id": "h_073",
+          "type": "heading",
+          "level": 2,
+          "text": "What Should International Patients Do After Returning Home?"
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "Before leaving India, keep the operative report, lymph-node pathology, final pathology, radiation summary, chemotherapy records, medication list, rehabilitation recommendations and follow-up plan. If swelling develops later, your local doctor can use this information to understand exactly what lymph-node and cancer treatments you received. Hospitals in [Delhi NCR](/hospitals/India/Delhi-NCR) and [Mumbai](/hospitals/India/Mumbai) can coordinate surgical oncology, radiation oncology, physiotherapy and lymphedema management."
+        },
+        {
+          "id": "btn_075",
+          "type": "button",
+          "label": "Send records for a lymphedema plan in India",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_076",
           "type": "paragraph",
           "text": "[WhatsApp +91 90443 46292 your records before travel](https://wa.me/919044346292?text=I%20would%20like%20to%20send%20my%20surgery%20and%20radiation%20records%20for%20a%20lymphedema%20plan%20in%20India.)"
         },
         {
-          "id": "p_204",
-          "type": "paragraph",
-          "text": "Compare both arms or hands. Notice whether the swelling is persistent. Look for redness, warmth or pain. Contact your cancer care team. Ask whether you need a lymphedema assessment. Follow recommended exercise and compression guidance."
-        },
-        {
-          "id": "p_205",
-          "type": "paragraph",
-          "text": "Do not start aggressive massage or compression without appropriate advice, particularly if the swelling appeared suddenly or is accompanied by pain, redness or other concerning symptoms."
-        },
-        {
-          "id": "h_206",
-          "type": "heading",
-          "level": 3,
-          "text": "What Should International Patients Know Before Breast Cancer Surgery in India?"
-        },
-        {
-          "id": "p_207",
-          "type": "paragraph",
-          "text": "If you are travelling to India for breast cancer surgery, lymphedema should be part of the pre-treatment discussion."
-        },
-        {
-          "id": "h_208",
-          "type": "heading",
-          "level": 2,
-          "text": "Ask your surgical team:"
-        },
-        {
-          "id": "ul_209",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Will I need lymph-node surgery?",
-            "Is sentinel-node biopsy appropriate?",
-            "Do I need an axillary dissection?",
-            "Will I need regional radiation?",
-            "What is my estimated lymphedema risk?",
-            "When can I begin arm exercises?",
-            "Should I see a physiotherapist?",
-            "What symptoms should make me contact the hospital?"
-          ]
-        },
-        {
-          "id": "p_210",
-          "type": "paragraph",
-          "text": "These questions can help you understand the recovery process before you travel home."
-        },
-        {
-          "id": "h_211",
-          "type": "heading",
-          "level": 3,
-          "text": "What Should International Patients Do After Returning Home?"
-        },
-        {
-          "id": "p_212",
-          "type": "paragraph",
-          "text": "Before leaving India, request a copy of your complete treatment summary."
-        },
-        {
-          "id": "h_213",
-          "type": "heading",
-          "level": 2,
-          "text": "Keep:"
-        },
-        {
-          "id": "ul_214",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Operative report",
-            "Lymph-node pathology",
-            "Final pathology report",
-            "Radiation treatment summary",
-            "Chemotherapy records",
-            "Medication list",
-            "Rehabilitation recommendations",
-            "Follow-up plan"
-          ]
-        },
-        {
-          "id": "p_215",
-          "type": "paragraph",
-          "text": "If swelling develops later, your local doctor can use this information to understand exactly what lymph-node and cancer treatments you received."
-        },
-        {
-          "id": "h_216",
+          "id": "h_077",
           "type": "heading",
           "level": 2,
           "text": "How GAF Healthcare Can Help"
         },
         {
-          "id": "p_217",
+          "id": "p_078",
           "type": "paragraph",
-          "text": "International patients undergoing breast cancer treatment in India may require coordinated care across several specialties."
+          "text": "International patients undergoing breast cancer treatment in India may require coordinated care across several specialties: breast surgical oncology, medical oncology, radiation oncology, pathology, radiology, physiotherapy and rehabilitation, and lymphedema management. GAF Healthcare can help international patients coordinate medical records, consultations and treatment planning with hospitals and specialists in India. The exact specialist pathway depends on the patient's diagnosis and previous treatment."
         },
         {
-          "id": "h_218",
-          "type": "heading",
-          "level": 2,
-          "text": "Depending on the patient's situation, this can include:"
-        },
-        {
-          "id": "ul_219",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "Breast surgical oncology",
-            "Medical oncology",
-            "Radiation oncology",
-            "Pathology",
-            "Radiology",
-            "Physiotherapy and rehabilitation",
-            "Lymphedema management"
-          ]
-        },
-        {
-          "id": "p_220",
-          "type": "paragraph",
-          "text": "GAF Healthcare can help international patients coordinate medical records, consultations and treatment planning with hospitals and specialists in India."
-        },
-        {
-          "id": "p_221",
-          "type": "paragraph",
-          "text": "The exact specialist pathway depends on the patient's diagnosis and previous treatment."
-        },
-        {
-          "id": "p_222",
-          "type": "paragraph",
-          "text": "Frequently Asked Questions Can lymphedema happen after sentinel lymph-node biopsy?"
-        },
-        {
-          "id": "p_223",
-          "type": "paragraph",
-          "text": "Yes, although the risk is generally lower than with more extensive axillary lymph-node surgery."
-        },
-        {
-          "id": "p_224",
-          "type": "paragraph",
-          "text": "Individual risk varies."
-        },
-        {
-          "id": "h_225",
-          "type": "heading",
-          "level": 3,
-          "text": "Can lymphedema happen after breast reconstruction?"
-        },
-        {
-          "id": "p_226",
-          "type": "paragraph",
-          "text": "It can."
-        },
-        {
-          "id": "p_227",
-          "type": "paragraph",
-          "text": "The risk depends largely on the lymph-node and radiation treatment rather than reconstruction alone, although the complete surgical history matters."
-        },
-        {
-          "id": "h_228",
-          "type": "heading",
-          "level": 3,
-          "text": "Can radiation cause lymphedema?"
-        },
-        {
-          "id": "p_229",
-          "type": "paragraph",
-          "text": "Yes. Radiation involving regional lymphatic areas can increase the risk."
-        },
-        {
-          "id": "h_230",
-          "type": "heading",
-          "level": 3,
-          "text": "Can lymphedema appear 10 years after breast cancer treatment?"
-        },
-        {
-          "id": "p_231",
-          "type": "paragraph",
-          "text": "Yes. Lymphedema can develop long after the original treatment."
-        },
-        {
-          "id": "p_232",
-          "type": "paragraph",
-          "text": "New swelling should still be evaluated rather than automatically attributed to lymphedema."
-        },
-        {
-          "id": "h_233",
-          "type": "heading",
-          "level": 3,
-          "text": "Is arm swelling always lymphedema?"
-        },
-        {
-          "id": "p_234",
-          "type": "paragraph",
-          "text": "No."
-        },
-        {
-          "id": "p_235",
-          "type": "paragraph",
-          "text": "Other causes include infection, injury, blood clots and other medical conditions."
-        },
-        {
-          "id": "h_236",
-          "type": "heading",
-          "level": 3,
-          "text": "Does lymphedema mean the cancer has returned?"
-        },
-        {
-          "id": "p_237",
-          "type": "paragraph",
-          "text": "No."
-        },
-        {
-          "id": "p_238",
-          "type": "paragraph",
-          "text": "Lymphedema itself is not cancer recurrence."
-        },
-        {
-          "id": "p_239",
-          "type": "paragraph",
-          "text": "However, new unexplained swelling after cancer treatment should be assessed."
-        },
-        {
-          "id": "h_240",
-          "type": "heading",
-          "level": 3,
-          "text": "Can I exercise if I have lymphedema?"
-        },
-        {
-          "id": "p_241",
-          "type": "paragraph",
-          "text": "Often yes."
-        },
-        {
-          "id": "p_242",
-          "type": "paragraph",
-          "text": "Gradually introduced exercise is commonly incorporated into lymphedema management, but the type and intensity should be appropriate for the individual."
-        },
-        {
-          "id": "h_243",
-          "type": "heading",
-          "level": 3,
-          "text": "Should I wear a compression sleeve all the time?"
-        },
-        {
-          "id": "p_244",
-          "type": "paragraph",
-          "text": "Not necessarily."
-        },
-        {
-          "id": "p_245",
-          "type": "paragraph",
-          "text": "The timing and duration of compression depend on the severity of lymphedema, activity and treatment plan."
-        },
-        {
-          "id": "p_246",
-          "type": "paragraph",
-          "text": "A lymphedema professional can recommend the appropriate garment and schedule."
-        },
-        {
-          "id": "h_247",
-          "type": "heading",
-          "level": 3,
-          "text": "Can lymphedema be treated without surgery?"
-        },
-        {
-          "id": "p_248",
-          "type": "paragraph",
-          "text": "Yes."
-        },
-        {
-          "id": "p_249",
-          "type": "paragraph",
-          "text": "Many patients are managed with conservative measures such as compression, exercise, skin care and specialized therapy."
-        },
-        {
-          "id": "h_250",
-          "type": "heading",
-          "level": 3,
-          "text": "Is lymphedema treatment available in India?"
-        },
-        {
-          "id": "p_251",
-          "type": "paragraph",
-          "text": "Yes. Assessment and management can be coordinated through cancer centers, rehabilitation services and specialists experienced in lymphatic disorders."
-        },
-        {
-          "id": "h_252",
-          "type": "heading",
-          "level": 2,
-          "text": "Final Takeaway"
-        },
-        {
-          "id": "p_253",
-          "type": "paragraph",
-          "text": "Lymphedema is a possible long-term complication of breast cancer treatment, particularly after lymph-node surgery and regional radiation."
-        },
-        {
-          "id": "p_254",
-          "type": "paragraph",
-          "text": "It may appear as swelling, but the first symptoms can be much more subtle—a feeling of heaviness, tightness or fullness in the arm, hand, breast or chest."
-        },
-        {
-          "id": "p_255",
-          "type": "paragraph",
-          "text": "The important thing is not to ignore new or persistent changes."
-        },
-        {
-          "id": "p_256",
-          "type": "paragraph",
-          "text": "At the same time, lymphedema should not be confused with breast cancer recurrence."
-        },
-        {
-          "id": "p_257",
-          "type": "paragraph",
-          "text": "Many patients with breast cancer treatment never develop significant lymphedema, and for those who do, treatment can help control the condition and improve everyday function."
-        },
-        {
-          "id": "p_258",
-          "type": "paragraph",
-          "text": "If you are preparing for breast cancer treatment in India, discuss lymph-node surgery, radiation, postoperative exercise and lymphedema prevention with your treatment team before the procedure."
-        },
-        {
-          "id": "p_259",
-          "type": "paragraph",
-          "text": "And if you develop swelling after treatment, get it assessed early."
-        },
-        {
-          "id": "h_260",
+          "id": "h_079",
           "type": "heading",
           "level": 2,
           "text": "Frequently Asked Questions"
         },
         {
-          "id": "h_261",
+          "id": "h_080",
           "type": "heading",
           "level": 3,
           "text": "What is lymphedema after breast cancer treatment?"
         },
         {
-          "id": "p_262",
+          "id": "p_081",
           "type": "paragraph",
-          "text": "Lymphedema is swelling caused by a buildup of lymph fluid when the lymphatic system has been damaged or its drainage has been reduced. After breast cancer treatment, it most commonly affects the arm, hand, breast or chest wall on the treated side."
+          "text": "It is swelling from a buildup of lymph fluid when drainage has been reduced. It most commonly affects the arm, hand, breast or chest wall on the treated side."
         },
         {
-          "id": "h_263",
+          "id": "h_082",
           "type": "heading",
           "level": 3,
-          "text": "Why does breast cancer treatment cause lymphedema?"
+          "text": "Can lymphedema happen after sentinel lymph-node biopsy?"
         },
         {
-          "id": "p_264",
+          "id": "p_083",
           "type": "paragraph",
-          "text": "Lymph nodes and lymphatic vessels can be affected by lymph-node surgery and radiation therapy. Removing or damaging lymphatic pathways can make it harder for lymph fluid to drain normally."
+          "text": "Yes, although the risk is generally lower than with more extensive axillary lymph-node surgery."
         },
         {
-          "id": "h_265",
+          "id": "h_084",
           "type": "heading",
           "level": 3,
-          "text": "What are the early signs?"
+          "text": "Can lymphedema happen after breast reconstruction?"
         },
         {
-          "id": "p_266",
+          "id": "p_085",
           "type": "paragraph",
-          "text": "Early symptoms can include a feeling of heaviness, tightness, fullness or swelling in the arm, hand, breast or chest area. Rings, watches or clothing may also feel tighter."
+          "text": "It can. The risk depends largely on the lymph-node and radiation treatment rather than reconstruction alone."
         },
         {
-          "id": "h_267",
+          "id": "h_086",
           "type": "heading",
           "level": 3,
-          "text": "Can lymphedema happen years after breast cancer treatment?"
+          "text": "Can radiation cause lymphedema?"
         },
         {
-          "id": "p_268",
+          "id": "p_087",
           "type": "paragraph",
-          "text": "Yes. It can develop months or years after treatment, so new swelling should not automatically be attributed to an old surgery or ignored."
+          "text": "Yes. Radiation involving regional lymphatic areas can increase the risk."
         },
         {
-          "id": "h_269",
+          "id": "h_088",
           "type": "heading",
           "level": 3,
-          "text": "Does lymphedema mean breast cancer has returned?"
+          "text": "Can lymphedema appear 10 years after breast cancer treatment?"
         },
         {
-          "id": "p_270",
+          "id": "p_089",
           "type": "paragraph",
-          "text": "No. Lymphedema itself does not mean that cancer has returned. However, unexplained or new swelling should be assessed by a doctor to determine its cause."
+          "text": "Yes. New swelling should still be evaluated rather than automatically attributed to lymphedema."
         },
         {
-          "id": "h_271",
+          "id": "h_090",
           "type": "heading",
           "level": 3,
-          "text": "Can lymphedema be cured?"
+          "text": "Is arm swelling always lymphedema?"
         },
         {
-          "id": "p_272",
+          "id": "p_091",
           "type": "paragraph",
-          "text": "There is currently no universal cure for established lymphedema, but treatment can reduce swelling, improve function and help prevent complications."
+          "text": "No. Other causes include infection, injury, blood clots and other medical conditions."
         },
         {
-          "id": "h_273",
+          "id": "h_092",
           "type": "heading",
           "level": 3,
-          "text": "How is breast-cancer-related lymphedema treated?"
+          "text": "Does lymphedema mean the cancer has returned?"
         },
         {
-          "id": "p_274",
+          "id": "p_093",
           "type": "paragraph",
-          "text": "Treatment may include compression garments, exercise, skin care, specialized lymphatic therapy and other interventions. Selected patients may be evaluated for surgical procedures."
+          "text": "No. Lymphedema itself is not cancer recurrence. New unexplained swelling should still be assessed."
         },
         {
-          "id": "h_275",
+          "id": "h_094",
           "type": "heading",
           "level": 3,
-          "text": "Can I exercise after breast cancer surgery?"
+          "text": "Can I exercise if I have lymphedema?"
         },
         {
-          "id": "p_276",
+          "id": "p_095",
           "type": "paragraph",
-          "text": "In most cases, appropriate physical activity and gradual exercises are part of recovery. The exact timing and type of exercise should be discussed with the treating team, particularly after lymph-node surgery."
+          "text": "Often yes. Gradually introduced exercise is commonly part of management, but intensity should be individualised."
         },
         {
-          "id": "h_277",
+          "id": "h_096",
           "type": "heading",
           "level": 3,
-          "text": "Does every patient who has lymph nodes removed develop lymphedema?"
+          "text": "Should I wear a compression sleeve all the time?"
         },
         {
-          "id": "p_278",
+          "id": "p_097",
           "type": "paragraph",
-          "text": "No. The risk varies according to the extent of lymph-node treatment, radiation, individual factors and other aspects of treatment."
+          "text": "Not necessarily. Timing and duration depend on severity, activity and the treatment plan."
         },
         {
-          "id": "h_279",
+          "id": "h_098",
           "type": "heading",
           "level": 3,
-          "text": "Can lymphedema treatment be provided in India?"
+          "text": "Can lymphedema be treated without surgery?"
         },
         {
-          "id": "p_280",
+          "id": "p_099",
           "type": "paragraph",
-          "text": "Yes. Breast cancer centers in India may provide multidisciplinary assessment involving surgical oncology, rehabilitation, physiotherapy and, where appropriate, specialists experienced in lymphedema management."
+          "text": "Yes. Many patients are managed with compression, exercise, skin care and specialised therapy."
         },
         {
-          "id": "h_281",
+          "id": "h_100",
           "type": "heading",
           "level": 3,
-          "text": "What Is Lymphedema?"
+          "text": "Is lymphedema treatment available in India?"
         },
         {
-          "id": "p_282",
+          "id": "p_101",
           "type": "paragraph",
-          "text": "The lymphatic system is a network of vessels and lymph nodes that helps move lymph fluid through the body."
+          "text": "Yes. Assessment and management can be coordinated through cancer centres, rehabilitation services and lymphatic specialists."
         },
         {
-          "id": "btn_283",
+          "id": "h_102",
+          "type": "heading",
+          "level": 2,
+          "text": "Lymphedema: Key Takeaways"
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "Lymphedema is a possible long-term complication of breast cancer treatment, particularly after lymph-node surgery and regional radiation. The first symptoms can be subtle — heaviness, tightness or fullness. Do not ignore new or persistent changes, and do not confuse lymphedema with recurrence. Many patients never develop significant lymphedema. For those who do, treatment can help control the condition. Discuss lymph-node surgery, radiation, postoperative exercise and prevention with your team before the procedure, and get swelling assessed early."
+        },
+        {
+          "id": "btn_104",
           "type": "button",
           "label": "Start the Breast Cancer Treatment in India pathway",
           "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
         },
         {
-          "id": "p_284",
+          "id": "p_105",
           "type": "paragraph",
           "text": "[WhatsApp +91 90443 46292 to plan the next step](https://wa.me/919044346292?text=Please%20help%20me%20plan%20lymphedema%20care%20after%20breast%20cancer%20treatment%20in%20India.)"
         },
         {
-          "id": "h_285",
+          "id": "h_106",
           "type": "heading",
           "level": 2,
           "text": "GAF Healthcare Resources"
         },
         {
-          "id": "p_286",
+          "id": "p_107",
           "type": "paragraph",
-          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Hormone therapy side effects](/blogs/breast-cancer-hormone-therapy-side-effects)\n- [Chemotherapy side effects](/blogs/breast-cancer-chemotherapy-side-effects)\n- [Targeted therapy side effects](/blogs/breast-cancer-targeted-therapy-side-effects)\n- [Radiation therapy](/blogs/radiation-therapy-for-breast-cancer)\n- [Diagnosis](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)\n- [International patients](/blogs/breast-cancer-treatment-india-international-patients)\n- [Chemotherapy doctors](/doctors/India/Medical-Oncology/Chemotherapy) · [Hormone therapy doctors](/doctors/India/Medical-Oncology/Hormone-Therapy)\n- [Radiation oncology doctors](/doctors/India/Radiation-Oncology)\n- [Breast-conserving surgery doctors](/doctors/India/Surgical-Oncology/Breast-Conserving-Surgery)"
+          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Surgery](/blogs/breast-cancer-surgery-in-india) · [lumpectomy vs mastectomy](/blogs/lumpectomy-vs-mastectomy)\n- [Reconstruction](/blogs/breast-reconstruction-after-mastectomy-india)\n- [Radiation](/blogs/radiation-therapy-for-breast-cancer) · [radiation side effects](/blogs/breast-cancer-radiation-side-effects)\n- [Neoadjuvant therapy](/blogs/breast-cancer-neoadjuvant-therapy)\n- [Follow-up tests](/blogs/breast-cancer-follow-up-tests)\n- [Breast-conserving surgery doctors](/doctors/India/Surgical-Oncology/Breast-Conserving-Surgery)\n- [Mastectomy doctors](/doctors/India/Surgical-Oncology/Mastectomy)\n- [Radiation oncology doctors](/doctors/India/Radiation-Oncology)\n- [International patients](/blogs/breast-cancer-treatment-india-international-patients)"
         }
       ]
     },
