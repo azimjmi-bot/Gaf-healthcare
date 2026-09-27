@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { listPublishedPosts } from "@/lib/blogs";
-import { buildBlogSitemap, buildLocaleSitemap, sitemapXml } from "@/lib/i18n/sitemap-entries";
+import { buildBlogSitemap, buildLocaleSitemap, buildSitemapIndex, sitemapIndexXml, sitemapXml } from "@/lib/i18n/sitemap-entries";
 
 const NEW_SLUGS = [
   "ductal-carcinoma-in-situ-dcis-treatment-india",
@@ -63,4 +63,23 @@ test("the English language sitemap also carries the new articles", () => {
   const xml = sitemapXml(buildBlogSitemap("en"));
   assert.match(xml, /<loc>https:\/\/gaf\.healthcare\/blogs\/lumpectomy-vs-mastectomy<\/loc>/);
   assert.match(xml, /<lastmod>2026-09-27T20:30:00.000Z<\/lastmod>/);
+  assert.match(xml, /xmlns:image="http:\/\/www\.google\.com\/schemas\/sitemap-image\/1\.1"/);
+  assert.match(
+    xml,
+    /<image:loc>https:\/\/gaf\.healthcare\/uploads\/articles\/dcis-consult-visual\.webp<\/image:loc>/,
+  );
+});
+
+test("the root sitemap is an index of the language and blog sitemaps", () => {
+  const files = buildSitemapIndex();
+  const locs = files.map((row) => row.loc);
+  assert.deepEqual(locs, [
+    "https://gaf.healthcare/sitemap-en.xml",
+    "https://gaf.healthcare/sitemap-ar.xml",
+    "https://gaf.healthcare/sitemap-blogs.xml",
+  ]);
+  assert.equal(files[0].lastModified, "2026-09-28T03:00:00.000Z");
+  const xml = sitemapIndexXml(files);
+  assert.match(xml, /<sitemapindex /);
+  assert.match(xml, /<loc>https:\/\/gaf\.healthcare\/sitemap-blogs\.xml<\/loc>/);
 });

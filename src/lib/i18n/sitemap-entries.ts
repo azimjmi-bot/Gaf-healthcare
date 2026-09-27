@@ -31,14 +31,46 @@ export const LANGUAGE_SITEMAP_PATHS = Object.fromEntries(
 function entry(
   path: string,
   locale: AppLocale,
-  opts: { lastModified?: Date | string; changeFrequency?: MetadataRoute.Sitemap[number]["changeFrequency"]; priority?: number } = {},
+  opts: {
+    lastModified?: Date | string;
+    changeFrequency?: MetadataRoute.Sitemap[number]["changeFrequency"];
+    priority?: number;
+    images?: string[];
+  } = {},
 ): MetadataRoute.Sitemap[number] {
   return {
     url: absoluteUrl(path, locale),
     lastModified: opts.lastModified ? new Date(opts.lastModified) : new Date(),
     changeFrequency: opts.changeFrequency ?? "weekly",
     priority: opts.priority ?? 0.6,
+    ...(opts.images?.length ? { images: opts.images } : {}),
   };
+}
+
+function blogAssetUrl(src?: string) {
+  if (!src) return "";
+  if (/^https?:\/\//i.test(src)) return src;
+  return new URL(src, SITE_URL).toString();
+}
+
+function blogPostImages(post: {
+  image?: string;
+  ogImage?: string;
+  blocks?: { type: string; src?: string }[];
+}) {
+  const seen = new Set<string>();
+  const images: string[] = [];
+  for (const src of [
+    post.image,
+    post.ogImage,
+    ...(post.blocks ?? []).flatMap((block) => (block.type === "image" && block.src ? [block.src] : [])),
+  ]) {
+    const url = blogAssetUrl(src);
+    if (!url || seen.has(url)) continue;
+    seen.add(url);
+    images.push(url);
+  }
+  return images;
 }
 
 function cityName(slug: string) {
@@ -54,6 +86,9 @@ function blogPostSitemapOpts(post: {
   publishedAt?: string;
   date?: string;
   featured?: boolean;
+  image?: string;
+  ogImage?: string;
+  blocks?: { type: string; src?: string }[];
 }) {
   const lastModified = postTimestamp(post);
   const ageMs = lastModified ? Date.now() - Date.parse(String(lastModified)) : Number.POSITIVE_INFINITY;
@@ -62,6 +97,7 @@ function blogPostSitemapOpts(post: {
     lastModified,
     changeFrequency: (recent ? "weekly" : "monthly") as MetadataRoute.Sitemap[number]["changeFrequency"],
     priority: post.featured || recent ? 0.7 : 0.55,
+    images: blogPostImages(post),
   };
 }
 
@@ -93,6 +129,25 @@ export function buildBlogSitemap(locale: AppLocale = "en"): MetadataRoute.Sitema
     urls.push(entry(`/blogs/${post.slug}`, locale, blogPostSitemapOpts(post)));
   }
   return dedupeSitemap(urls);
+}
+
+export function buildSitemapIndex(): { loc: string; lastModified?: string }[] {
+  const blogs = buildBlogSitemap("en");
+  const newestBlog = blogs[0]?.lastModified;
+  const lastModified =
+    newestBlog instanceof Date ? newestBlog.toISOString() : newestBlog ? String(newestBlog) : undefined;
+  const files: { loc: string; lastModified?: string }[] = [
+    { loc: absoluteUrl("/sitemap-en.xml"), lastModified },
+  ];
+  for (const locale of LOCALES) {
+    if (locale === "en") continue;
+    if (!localeIsPublished(locale) || buildLocaleSitemap(locale).length === 0) continue;
+    files.push({ loc: absoluteUrl(`/sitemap-${locale}.xml`) });
+  }
+  if (blogs.length > 0) {
+    files.push({ loc: absoluteUrl("/sitemap-blogs.xml"), lastModified });
+  }
+  return files;
 }
 
 function localeIsPublished(locale: AppLocale) {
@@ -366,6 +421,10 @@ function dedupeSitemap(urls: MetadataRoute.Sitemap) {
 }
 
 export function sitemapXml(entries: MetadataRoute.Sitemap) {
+  const hasImages = entries.some((row) => row.images?.length);
+  const ns = hasImages
+    ? 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"'
+    : 'xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"';
   const body = entries
     .map((row) => {
       const last = row.lastModified instanceof Date ? row.lastModified.toISOString() : row.lastModified;
@@ -374,10 +433,23 @@ export function sitemapXml(entries: MetadataRoute.Sitemap) {
         : "";
       const priority =
         row.priority !== undefined ? `<priority>${row.priority}</priority>` : "";
-      return `<url><loc>${escapeXml(row.url)}</loc>${last ? `<lastmod>${last}</lastmod>` : ""}${frequency}${priority}</url>`;
+      const images = (row.images ?? [])
+        .map((src) => `<image:image><image:loc>${escapeXml(src)}</image:loc></image:image>`)
+        .join("");
+      return `<url><loc>${escapeXml(row.url)}</loc>${last ? `<lastmod>${last}</lastmod>` : ""}${frequency}${priority}${images}</url>`;
     })
     .join("");
-  return `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${body}</urlset>`;
+  return `<?xml version="1.0" encoding="UTF-8"?><urlset ${ns}>${body}</urlset>`;
+}
+
+export function sitemapIndexXml(files: { loc: string; lastModified?: Date | string }[]) {
+  const body = files
+    .map((row) => {
+      const last = row.lastModified instanceof Date ? row.lastModified.toISOString() : row.lastModified;
+      return `<sitemap><loc>${escapeXml(row.loc)}</loc>${last ? `<lastmod>${last}</lastmod>` : ""}</sitemap>`;
+    })
+    .join("");
+  return `<?xml version="1.0" encoding="UTF-8"?><sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${body}</sitemapindex>`;
 }
 
 function escapeXml(value: string) {

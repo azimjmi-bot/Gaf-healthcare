@@ -17,6 +17,7 @@ export function robotsPolicy(): MetadataRoute.Robots {
       { userAgent: "*", allow: "/", disallow: ["/cms", "/api/cms", "/doctors/compare"] },
     ],
     sitemap: [
+      absoluteUrl("/sitemap.xml"),
       ...LOCALES.filter(
         (locale) => !isTargetLocale(locale) || localeIsPublished(locale),
       ).map((locale) => absoluteUrl(`/sitemap-${locale}.xml`)),

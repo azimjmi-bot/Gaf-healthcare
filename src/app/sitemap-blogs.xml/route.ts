@@ -1,5 +1,7 @@
 import { buildBlogSitemap, sitemapXml } from "@/lib/i18n/sitemap-entries";
 
+export const dynamic = "force-dynamic";
+
 export function GET() {
   return new Response(sitemapXml(buildBlogSitemap("en")), {
     headers: {
