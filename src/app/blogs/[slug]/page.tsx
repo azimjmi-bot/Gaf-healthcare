@@ -144,7 +144,13 @@ export default async function BlogPostPage({
           </p>
         ) : null}
         <div className="mt-8">
-          <ArticleBlocks blocks={post.blocks} title={post.title} whatsappCtas />
+          <ArticleBlocks
+            blocks={post.blocks}
+            title={post.title}
+            whatsappCtas
+            ctaSubject={subject}
+            ctaPlace={place}
+          />
         </div>
         <ArticleRelated links={post.relatedLinks} />
         <Link

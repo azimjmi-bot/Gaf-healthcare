@@ -53,6 +53,7 @@ test("rewrites consult CTAs to WhatsApp when requested", () => {
   const html = renderToStaticMarkup(
     createElement(ArticleBlocks, {
       whatsappCtas: true,
+      ctaSubject: "Breast Reconstruction After Mastectomy",
       blocks: [
         {
           id: "p",
@@ -68,9 +69,12 @@ test("rewrites consult CTAs to WhatsApp when requested", () => {
       ],
     }),
   );
+  assert.match(html, /cost-panel/);
+  assert.match(html, /Need a case-specific Breast Reconstruction After Mastectomy estimate/);
+  assert.match(html, /Request a personalized treatment estimate/);
   assert.match(html, /https:\/\/wa\.me\/919044346292\?text=/);
   assert.doesNotMatch(html, /href="\/consult/);
-  assert.equal((html.match(/wa\.me\/919044346292/g) ?? []).length, 2);
+  assert.doesNotMatch(html, /md-cta/);
 });
 
 test("drops unsafe Markdown link and image destinations", () => {

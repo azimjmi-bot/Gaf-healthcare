@@ -1903,6 +1903,23 @@ img.dhero__art {
 }
 
 .article-body h2 { font-size: clamp(1.55rem, 5vw, 2rem); }
+
+.article-body .cost-panel,
+.article-body .article-estimate-cta {
+  margin-block: 1.75rem;
+}
+
+.article-body .cost-panel.mt-12,
+.article-body .article-estimate-cta {
+  margin-top: 1.75rem;
+}
+
+.article-body .cost-panel h2 {
+  margin: 0;
+  color: inherit;
+  font-size: clamp(1.5rem, 4.2vw, 2.1rem);
+  line-height: 1.15;
+}
 .article-body h3 { font-size: clamp(1.25rem, 4vw, 1.5rem); }
 .article-body h4 { font-size: clamp(1.1rem, 3.6vw, 1.25rem); }
 .article-body ul { list-style: disc; padding-inline-start: 1.2rem; }

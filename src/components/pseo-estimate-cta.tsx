@@ -79,18 +79,20 @@ export function PseoEstimateCta({
   consultHref,
   secondaryHref,
   variant,
+  className,
 }: {
   subject: string;
   place: string;
   consultHref: string;
   secondaryHref?: string;
   variant: EstimateCtaVariant;
+  className?: string;
 }) {
   const copy = COPY[variant];
   const nextHref = secondaryHref || consultHref;
 
   return (
-    <aside className="cost-panel mt-12" aria-label="Personalized treatment estimate">
+    <aside className={["cost-panel mt-12", className].filter(Boolean).join(" ")} aria-label="Personalized treatment estimate">
       <h2>{copy.heading(subject, place)}</h2>
       <p className="mt-3 max-w-3xl text-[1.02rem] leading-relaxed text-ivory/75">
         {copy.body(subject, place)}
