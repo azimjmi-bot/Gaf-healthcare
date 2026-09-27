@@ -116,6 +116,7 @@ export function CmsCuratedTreatmentEditor({
     );
     const data = await response.json();
     setSaving(false);
+    if (data.treatment) setTreatment(data.treatment);
     if (!response.ok) {
       setMessage(data.error || "Could not save Treatment.");
       return;
@@ -264,17 +265,32 @@ export function CmsCuratedTreatmentEditor({
             Core status
             <select
               value={treatment.status}
-              onChange={(event) =>
-                setField(
-                  "status",
-                  event.target.value as CuratedTreatment["status"],
-                )
-              }
+              onChange={(event) => {
+                const status = event.target.value as CuratedTreatment["status"];
+                setTreatment((current) => {
+                  const translations = { ...current.translations };
+                  if (
+                    status === "published" &&
+                    !translations.en &&
+                    current.baseName.trim()
+                  ) {
+                    translations.en = {
+                      ...blankTreatmentTranslation(),
+                      name: current.baseName,
+                    };
+                  }
+                  return { ...current, status, translations };
+                });
+              }}
             >
               <option value="draft">Draft</option>
               <option value="published">Published</option>
               <option value="archived">Archived / unpublished</option>
             </select>
+            <small>
+              Publishing also needs an English version with a name, short
+              description, article body, and translation status set to Published.
+            </small>
           </label>
           <label>
             Existing specialty

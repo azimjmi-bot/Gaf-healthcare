@@ -1,8 +1,10 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
 import { CmsCuratedTreatmentEditor } from "@/components/cms/cms-curated-treatment-editor";
 import type { TreatmentRelationChoice } from "@/components/cms/cms-treatment-relation-picker";
-import { loadCuratedTreatments } from "@/lib/cms/curated-treatment-store";
+import {
+  blankCuratedTreatment,
+  loadCuratedTreatments,
+} from "@/lib/cms/curated-treatment-store";
 import { doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
 import { catalogTreatments } from "@/lib/treatments";
 import { COUNTRIES, SPECIALTIES } from "@/lib/taxonomy";
@@ -16,8 +18,9 @@ export default async function CmsEditCuratedTreatmentPage({
 }) {
   const { id } = await params;
   const store = loadCuratedTreatments();
-  const treatment = store.treatments.find((row) => row.id === id);
-  if (!treatment) notFound();
+  const treatment =
+    store.treatments.find((row) => row.id === id) ??
+    { ...blankCuratedTreatment(store), id };
 
   const doctorMap = new Map(doctorsForLocale("en").map((row) => [row.slug, row]));
   const hospitalMap = new Map(

@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import {
+  applyCuratedTreatmentPatch,
   blankCuratedTreatment,
   normalizeCuratedTreatment,
   publishedCuratedTreatments,
@@ -62,6 +63,25 @@ test("publishing rejects incomplete core and language records", () => {
     editorialBody: "## Treatment overview\n\nA detailed overview for patients.",
   };
   assert.deepEqual(validateTreatmentForSave(treatment), []);
+});
+
+test("Save recreates a missing Treatment instead of 404ing", () => {
+  const store = { treatments: [] };
+  const id = "099c61a5-a4e5-4227-9711-500eb3636730";
+  const { treatment, created, errors } = applyCuratedTreatmentPatch(store, id, {
+    baseName: "Breast Cancer Treatment in India",
+    slug: "breast-cancer-treatment-in-india",
+    specialtySlug: "surgical-oncology",
+    status: "published",
+  });
+  assert.equal(created, true);
+  assert.equal(treatment.id, id);
+  assert.equal(treatment.status, "draft");
+  assert.equal(treatment.translations.en?.name, "Breast Cancer Treatment in India");
+  assert.equal(store.treatments[0]?.id, id);
+  assert.ok(
+    errors.some((error) => error.includes("Publish at least one language version")),
+  );
 });
 
 test("the unified editor preserves legacy structured editorial content", () => {
