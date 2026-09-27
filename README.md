@@ -69,7 +69,7 @@ Existing English routes are unchanged. A Russian doctor page is `/ru/doctors/[sl
 
 Navigation and homepage chrome use built-in Russian, French, Arabic and Swahili catalogs. Arabic radiation-oncology doctor profiles (names, titles, bios, procedure lists) and all 37 India hospital profiles (bios, summaries, ward languages, ICU notes) live in `content/ar/catalog-cms.json` and appear on `/ar/doctors` and `/ar/hospitals`. English identity keys — slug, city, country, specialty and procedure slugs — stay shared so relationships remain stable. Editorial copy never falls back across languages: an untranslated route is excluded from that locale’s sitemap and returns the localized 404 page. Google Cloud Translation is not used.
 
-Each language has its own sitemap. `/sitemap.xml` remains an English compatibility URL; robots advertises the explicit language files:
+Each language has its own sitemap. `/sitemap.xml` remains an English compatibility URL; `/robots.txt` is a static file that advertises only the published language sitemaps:
 
 - English: `/sitemap-en.xml`
 - Russian: `/sitemap-ru.xml`

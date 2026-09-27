@@ -37,6 +37,7 @@ const nextConfig = {
       { source: "/journey", destination: "/blogs", permanent: true },
       { source: "/stories", destination: "/blogs", permanent: true },
       { source: "/about", destination: "/", permanent: true },
+      { source: "/Robots.txt", destination: "/robots.txt", permanent: true },
     ];
   },
   async headers() {
@@ -47,6 +48,30 @@ const nextConfig = {
           {
             key: "Cache-Control",
             value: "private, no-cache, no-store, max-age=0, must-revalidate",
+          },
+        ],
+      },
+      {
+        // Static crawl file. Long-lived so Hostinger CDN can answer PageSpeed
+        // and Googlebot from the edge; the CSP lets Lighthouse fetch it from
+        // the page origin (its robots-txt audit otherwise times out).
+        source: "/robots.txt",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
+          },
+          {
+            key: "Content-Type",
+            value: "text/plain; charset=utf-8",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: "connect-src 'self'; script-src 'none'; object-src 'none'; frame-src 'none'",
+          },
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
           },
         ],
       },
