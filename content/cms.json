@@ -27,7 +27,9 @@
     "India",
     "HER2",
     "cost",
-    "TNM"
+    "TNM",
+    "ER",
+    "PR"
   ],
   "media": [
     {
@@ -120,9 +122,1145 @@
       "name": "breast-cancer-stage-pathways-visual.png",
       "alt": "Treatment tools changing as disease extent increases",
       "addedAt": "2026-09-27T12:00:00.000Z"
+    },
+    {
+      "id": "media_bc_receptors_visual",
+      "url": "/uploads/articles/breast-cancer-receptors-visual.png",
+      "name": "breast-cancer-receptors-visual.png",
+      "alt": "ER PR and HER2 breast cancer biomarkers explained with treatment pathways",
+      "addedAt": "2026-09-27T13:00:00.000Z"
+    },
+    {
+      "id": "media_bc_biomarker_pathways",
+      "url": "/uploads/articles/breast-cancer-biomarker-pathways-visual.png",
+      "name": "breast-cancer-biomarker-pathways-visual.png",
+      "alt": "Four visual treatment pathways from hormone therapy to triple-negative care",
+      "addedAt": "2026-09-27T13:00:00.000Z"
+    },
+    {
+      "id": "media_bc_biomarker_testing",
+      "url": "/uploads/articles/breast-cancer-biomarker-testing-visual.png",
+      "name": "breast-cancer-biomarker-testing-visual.png",
+      "alt": "How tumour tissue is tested for ER, PR and HER2",
+      "addedAt": "2026-09-27T13:00:00.000Z"
+    },
+    {
+      "id": "media_bc_biomarker_vs_stage",
+      "url": "/uploads/articles/breast-cancer-biomarker-vs-stage-visual.png",
+      "name": "breast-cancer-biomarker-vs-stage-visual.png",
+      "alt": "Biology versus extent of disease as two separate medical facts",
+      "addedAt": "2026-09-27T13:00:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_er_pr_her2_breast_cancer_treatment_india",
+      "slug": "er-pr-her2-breast-cancer-treatment-india",
+      "title": "ER-Positive, PR-Positive and HER2-Positive Breast Cancer: What Do These Results Mean?",
+      "excerpt": "What ER, PR and HER2 results mean, how the combinations change treatment, and which pathology records international patients should send before travelling to India.",
+      "date": "27 September 2026",
+      "publishedAt": "2026-09-27T13:00:00.000Z",
+      "updatedAt": "2026-09-27T13:00:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "breast cancer",
+        "ER",
+        "PR",
+        "HER2",
+        "India",
+        "travel"
+      ],
+      "image": "/uploads/articles/breast-cancer-receptors-visual.png",
+      "imageAlt": "ER PR and HER2 breast cancer biomarkers explained with treatment pathways",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "ER, PR & HER2 Positive Breast Cancer | Treatment in India",
+      "seoDescription": "Understand ER, PR and HER2 results in breast cancer, what positive and negative results mean, and how they influence treatment options in India.",
+      "canonical": "https://gaf.healthcare/blogs/er-pr-her2-breast-cancer-treatment-india",
+      "ogImage": "/uploads/articles/breast-cancer-receptors-visual.png",
+      "allowIndex": true,
+      "keywords": [
+        "ER PR HER2 breast cancer",
+        "ER positive breast cancer",
+        "PR positive breast cancer",
+        "HER2 positive breast cancer",
+        "ER PR HER2 testing",
+        "hormone receptor positive breast cancer",
+        "HER2 negative breast cancer",
+        "triple negative breast cancer",
+        "ER positive HER2 negative breast cancer",
+        "ER positive HER2 positive breast cancer",
+        "breast cancer receptor status",
+        "breast cancer treatment in India",
+        "ER PR HER2 test cost in India"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Breast Cancer Treatment in India",
+          "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Breast Cancer Treatment by Stage",
+          "href": "/blogs/breast-cancer-treatment-by-stage"
+        },
+        {
+          "label": "Breast Cancer Stages 0–4",
+          "href": "/blogs/breast-cancer-stages-0-1-2-3-4"
+        },
+        {
+          "label": "Breast Cancer Treatment Cost in India",
+          "href": "/blogs/breast-cancer-treatment-cost-in-india"
+        },
+        {
+          "label": "Hormone therapy cost in India",
+          "href": "/costs/India/Medical-Oncology/Hormone-Therapy"
+        },
+        {
+          "label": "Targeted therapy cost in India",
+          "href": "/costs/India/Medical-Oncology/Targeted-Therapy"
+        },
+        {
+          "label": "Chemotherapy cost in India",
+          "href": "/costs/India/Medical-Oncology/Chemotherapy"
+        },
+        {
+          "label": "Immunotherapy cost in India",
+          "href": "/costs/India/Medical-Oncology/Immunotherapy"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\">ER, PR and HER2 are biological markers used to classify breast cancer and guide treatment. ER means estrogen receptors, PR means progesterone receptors, and HER2 means human epidermal growth factor receptor 2. An ER-positive/HER2-negative cancer may be treated with endocrine therapy. A HER2-positive cancer may be considered for HER2-targeted treatment. A tumour can be both hormone receptor-positive and HER2-positive. These results do not replace stage, grade, lymph-node findings or overall health.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "ER, PR and HER2 are important biological markers used to classify breast cancer and guide treatment. ER refers to estrogen receptors, PR to progesterone receptors, and HER2 to human epidermal growth factor receptor 2."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "A breast cancer may be ER-positive, PR-positive, HER2-positive, or have different combinations of these markers. These results help doctors determine whether treatments such as hormone therapy or HER2-targeted therapy may be appropriate."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "For example, an ER-positive/HER2-negative cancer may be treated with [endocrine therapy](/costs/India/Medical-Oncology/Hormone-Therapy), while a HER2-positive cancer may be considered for [HER2-targeted treatment](/costs/India/Medical-Oncology/Targeted-Therapy). A cancer can also be both hormone receptor-positive and HER2-positive, in which case more than one type of systemic treatment may have a role."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "ER, PR and HER2 results do not determine the complete treatment plan by themselves. Doctors also consider tumour size, lymph-node involvement, [stage](/blogs/breast-cancer-stages-0-1-2-3-4), tumour grade, menopausal status, previous treatment and other pathological findings. This explainer supports the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) pathway, the [treatment-by-stage](/blogs/breast-cancer-treatment-by-stage) guide and the [cost guide](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "btn_006",
+          "type": "button",
+          "label": "Ask GAF to review your ER, PR and HER2 report",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "img_007",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-receptors-visual.png",
+          "alt": "Three circular medical panels showing estrogen-receptor locks, progesterone-receptor locks, and tall HER2 surface spikes on a cell membrane",
+          "caption": "ER and PR are lock-like hormone receptors. HER2 is a growth-signal protein on the cell surface. The three results are read together."
+        },
+        {
+          "id": "h_008",
+          "type": "heading",
+          "level": 2,
+          "text": "What Are ER, PR and HER2 in Breast Cancer?"
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "Breast cancer is not a single disease. Two patients can both be diagnosed with breast cancer but have very different tumour biology and therefore require different treatment approaches."
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "Three of the most important biomarkers routinely discussed in breast cancer are:"
+        },
+        {
+          "id": "ul_011",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "ER — Estrogen Receptor",
+            "PR — Progesterone Receptor",
+            "HER2 — Human Epidermal Growth Factor Receptor 2"
+          ]
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "These markers are usually assessed using tissue obtained through a biopsy or surgery. The results help the oncology team understand how the cancer cells behave and which treatments may be useful."
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "In India, multidisciplinary teams in [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) use these results together with stage and pathology to plan treatment."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 2,
+          "text": "What Does ER-Positive Breast Cancer Mean?"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "ER-positive breast cancer means that the cancer cells have estrogen receptors. Estrogen can stimulate the growth of some breast cancer cells."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "When a tumour is ER-positive, treatment that interferes with estrogen signalling may be useful. This is known as endocrine therapy or [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy)."
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "Common endocrine treatments include tamoxifen, anastrozole, letrozole, exemestane, and ovarian-function suppression in selected premenopausal patients."
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "The exact treatment depends on factors such as age, menopausal status, cancer stage, recurrence risk and previous treatment."
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "- [Hormone Therapy Doctors in India](/doctors/India/Medical-Oncology/Hormone-Therapy)\n- [Hormone Therapy Cost in India](/costs/India/Medical-Oncology/Hormone-Therapy)"
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "[Ask whether hormone therapy applies](/consult?treatment=Hormone%20Therapy)"
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 2,
+          "text": "What Does PR-Positive Breast Cancer Mean?"
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "PR stands for progesterone receptor. A PR-positive result means the cancer cells have progesterone receptors."
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "PR status is interpreted alongside ER status and other tumour characteristics. For example, a pathology report may describe a tumour as ER-positive / PR-positive, ER-positive / PR-negative, ER-negative / PR-positive, or ER-negative / PR-negative."
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "The combination provides information about the biological characteristics of the tumour."
+        },
+        {
+          "id": "h_025",
+          "type": "heading",
+          "level": 2,
+          "text": "What Does Hormone Receptor-Positive Mean?"
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "You may hear doctors use the term hormone receptor-positive breast cancer. This generally refers to breast cancer that expresses estrogen receptors and/or progesterone receptors."
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "Therefore: ER-positive and/or PR-positive → hormone receptor-positive. This distinction is important because hormone receptor-positive breast cancers may respond to endocrine treatment."
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is HER2?"
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "HER2 is a protein involved in signalling that helps cells grow and divide. Some breast cancers have abnormally increased HER2 activity."
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "These cancers are classified as HER2-positive when they meet the relevant testing criteria. HER2 status is important because HER2-positive breast cancers may respond to medicines specifically designed to [target the HER2 pathway](/costs/India/Medical-Oncology/Targeted-Therapy)."
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "- [Targeted Therapy Doctors in India](/doctors/India/Medical-Oncology/Targeted-Therapy)\n- [Targeted Therapy Cost in India](/costs/India/Medical-Oncology/Targeted-Therapy)"
+        },
+        {
+          "id": "h_032",
+          "type": "heading",
+          "level": 2,
+          "text": "How Are ER, PR and HER2 Tested?"
+        },
+        {
+          "id": "img_033",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-biomarker-testing-visual.png",
+          "alt": "Visual process from a core-needle biopsy and tissue cassette, through a microscope and stain scores, to a report that guides medicine or surgery",
+          "caption": "The markers are read from tumour tissue. Equivocal HER2 stains may need a second laboratory method before treatment is chosen."
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "These biomarkers are generally assessed using tumour tissue. The tissue may come from a core needle biopsy, other biopsy procedures, or breast surgery."
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "The pathology laboratory examines the tumour and performs the relevant tests."
+        },
+        {
+          "id": "h_036",
+          "type": "heading",
+          "level": 3,
+          "text": "ER and PR"
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "ER and PR are commonly evaluated using immunohistochemistry (IHC). The report may provide a percentage of tumour cells showing receptor expression and an intensity or scoring description."
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 3,
+          "text": "HER2"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "HER2 is commonly assessed using IHC. Results may be reported as 0, 1+, 2+ or 3+."
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "An IHC 3+ result is generally considered HER2-positive. An IHC 2+ result is usually considered equivocal and may require additional testing, such as in situ hybridization (ISH). The final interpretation should come from the pathology report and treating team."
+        },
+        {
+          "id": "h_041",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Are ER, PR and HER2 So Important?"
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "These results can directly affect treatment decisions."
+        },
+        {
+          "id": "ul_043",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "ER-positive may indicate a role for endocrine therapy.",
+            "PR-positive provides additional information about hormone receptor biology.",
+            "HER2-positive may indicate a role for HER2-targeted therapy."
+          ]
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "The results are combined with other information to create the treatment plan. Doctors do not generally decide treatment based on one biomarker alone."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 2,
+          "text": "Common ER, PR and HER2 Combinations"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Breast cancer can have different combinations of these biomarkers."
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "| ER | PR | HER2 | General biological classification |\n| --- | --- | --- | --- |\n| Positive | Positive | Negative | Hormone receptor-positive, HER2-negative |\n| Positive | Negative | Negative | Hormone receptor-positive, HER2-negative |\n| Negative | Positive | Negative | Hormone receptor-positive based on PR expression |\n| Positive | Positive | Positive | Hormone receptor-positive and HER2-positive |\n| Positive | Negative | Positive | Hormone receptor-positive and HER2-positive |\n| Negative | Negative | Positive | HER2-positive |\n| Negative | Negative | Negative | Triple-negative |"
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "This table is a simplified explanation. The treating team may also consider additional pathological and molecular information."
+        },
+        {
+          "id": "img_049",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-biomarker-pathways-visual.png",
+          "alt": "Four visual treatment pathways: hormone-receptor disease with pills, HER2-positive disease with a targeted vial, dual biology with both medicines, and triple-negative disease with a drip and shield",
+          "caption": "Hormone therapy, HER2-directed medicines, both together, or chemotherapy with selected immunotherapy — the pathway follows the receptor pattern."
+        },
+        {
+          "id": "h_050",
+          "type": "heading",
+          "level": 2,
+          "text": "ER-Positive, PR-Positive, HER2-Negative Breast Cancer"
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "This is a common biological category of breast cancer. The cancer expresses hormone receptors but does not meet the criteria for HER2-positive disease."
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Treatment may include [surgery](/costs/India/Surgical-Oncology/Lumpectomy), [radiation therapy](/costs/India/Radiation-Oncology/EBRT), [endocrine therapy](/costs/India/Medical-Oncology/Hormone-Therapy), [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) in selected patients, and other systemic treatments depending on the individual case."
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Endocrine therapy is an important component for many patients with hormone receptor-positive disease."
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 2,
+          "text": "ER-Positive, PR-Negative, HER2-Negative Breast Cancer"
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "A tumour does not have to be positive for both ER and PR to be considered hormone receptor-positive. If the tumour is ER-positive but PR-negative, endocrine therapy may still have an important role."
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "The oncology team will consider ER expression, PR expression, HER2 status, tumour grade, tumour size, lymph-node status, stage and other pathological features. Therefore, a PR-negative result does not automatically mean that hormone therapy will not work."
+        },
+        {
+          "id": "h_057",
+          "type": "heading",
+          "level": 2,
+          "text": "ER-Negative, PR-Positive Breast Cancer"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "ER-negative/PR-positive results are less common. When this pattern appears, the pathology and clinical context may need careful review."
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "The treating team may consider whether additional testing or pathology review is appropriate. Patients should avoid interpreting one receptor result independently from the rest of the pathology report."
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 2,
+          "text": "ER-Positive, HER2-Positive Breast Cancer"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "A breast cancer can be both hormone receptor-positive and HER2-positive. This is an important distinction."
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Such a tumour may have two relevant treatment pathways: endocrine treatment because of hormone receptor expression, and HER2-targeted treatment because of HER2 positivity."
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "Depending on the stage and other factors, treatment may also include chemotherapy, surgery and radiation therapy. The exact sequence depends on the individual case."
+        },
+        {
+          "id": "btn_064",
+          "type": "button",
+          "label": "Ask how dual-positive disease is treated",
+          "href": "/consult?treatment=Targeted%20Therapy"
+        },
+        {
+          "id": "h_065",
+          "type": "heading",
+          "level": 2,
+          "text": "ER-Negative, PR-Negative, HER2-Positive Breast Cancer"
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "This tumour does not express ER or PR but meets the criteria for HER2-positive disease. HER2-targeted treatment may therefore be an important part of systemic treatment."
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Depending on stage and treatment setting, chemotherapy, surgery and radiation may also be involved."
+        },
+        {
+          "id": "h_068",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Triple-Negative Breast Cancer?"
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "Triple-negative breast cancer is generally defined by the absence of estrogen receptors, progesterone receptors and HER2."
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "Because these three targets are absent, endocrine therapy and standard HER2-targeted therapy do not have the same role. Treatment can include [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy), surgery, [radiation therapy](/costs/India/Radiation-Oncology/EBRT), [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) in selected situations, and other systemic treatment where appropriate."
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "- [Chemotherapy Doctors in India](/doctors/India/Medical-Oncology/Chemotherapy)\n- [Chemotherapy Cost in India](/costs/India/Medical-Oncology/Chemotherapy)\n- [Immunotherapy Doctors in India](/doctors/India/Medical-Oncology/Immunotherapy)\n- [Immunotherapy Cost in India](/costs/India/Medical-Oncology/Immunotherapy)"
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "[Ask about triple-negative treatment options](/consult?treatment=Immunotherapy)"
+        },
+        {
+          "id": "h_073",
+          "type": "heading",
+          "level": 2,
+          "text": "Does ER/PR/HER2 Status Determine the Stage?"
+        },
+        {
+          "id": "img_074",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-biomarker-vs-stage-visual.png",
+          "alt": "Split visual: a cell with receptors and medicines on the left, and a torso with local, nodal and distant organ spread on the right",
+          "caption": "Biology describes what the tumour is like. Stage describes how far it has spread. Both are needed for a treatment plan."
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "No. This is an important distinction. Biomarker status and cancer stage are different things."
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "**Biomarkers** describe biological characteristics of the tumour. **[Stage](/blogs/breast-cancer-stages-0-1-2-3-4)** describes how extensive the cancer is — tumour size, lymph-node involvement and distant spread."
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "A patient can therefore have Stage 1, 2, 3 or 4 ER-positive cancer. The treatment plan can be very different even though the tumour has the same receptor status."
+        },
+        {
+          "id": "h_078",
+          "type": "heading",
+          "level": 2,
+          "text": "Does ER/PR/HER2 Status Affect Breast Cancer Treatment?"
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "Yes. These results are important components of treatment planning."
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "ER-positive / HER2-negative disease may include endocrine therapy. HER2-positive disease may include HER2-targeted treatment. Triple-negative disease may rely more heavily on chemotherapy and, in selected situations, immunotherapy."
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "However, these are broad categories rather than individual treatment prescriptions."
+        },
+        {
+          "id": "h_082",
+          "type": "heading",
+          "level": 2,
+          "text": "ER, PR and HER2 Results After a Biopsy"
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "The initial biopsy may establish the diagnosis and provide receptor information. However, surgery can provide additional tissue for pathology."
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "The surgical pathology report may provide information about final tumour size, histological type, tumour grade, lymph-node status, margins, ER, PR, HER2 and other pathological features."
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "Sometimes additional testing or review is necessary after surgery."
+        },
+        {
+          "id": "h_086",
+          "type": "heading",
+          "level": 2,
+          "text": "Can HER2 Results Change Between Biopsy and Surgery?"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "Biological characteristics can sometimes show differences between samples. This is one reason pathology is an important part of ongoing treatment planning."
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "If there is an unexpected result or a result that does not fit the overall clinical picture, doctors may consider repeat or confirmatory testing. Patients should discuss any difference between biopsy and surgical pathology with their treating oncologist and pathologist."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is the Role of Ki-67?"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Ki-67 is a marker of cell proliferation. It can provide information about how actively tumour cells are dividing. It may appear on a breast cancer pathology report."
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "However, Ki-67 is different from ER, PR and HER2. It should not be interpreted in isolation. Its clinical usefulness can vary depending on the specific treatment situation and laboratory methodology."
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 2,
+          "text": "ER/PR/HER2 and Breast Cancer Treatment by Stage"
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 3,
+          "text": "Stage 0"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "Stage 0 includes non-invasive disease such as DCIS. Treatment may involve [breast-conserving surgery](/costs/India/Surgical-Oncology/Lumpectomy), [mastectomy](/costs/India/Surgical-Oncology/Mastectomy) in selected situations, [radiation](/costs/India/Radiation-Oncology/EBRT) after breast-conserving surgery, and endocrine therapy in selected hormone receptor-positive cases."
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 3,
+          "text": "Stage 1"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "Early-stage invasive breast cancer may be treated with surgery, radiation where indicated, endocrine therapy if hormone receptor-positive, HER2-targeted treatment if HER2-positive, and chemotherapy in selected patients. The exact treatment depends on tumour size, biology and other risk factors."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 3,
+          "text": "Stage 2"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Stage 2 disease may require a combination of surgery, chemotherapy, HER2-targeted therapy, radiation and endocrine therapy. The sequence may vary. Some patients receive systemic therapy before surgery."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "Stage 3"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Locally advanced breast cancer often requires multimodal treatment. Depending on tumour biology, treatment may involve systemic therapy before surgery, surgery, radiation, endocrine therapy, HER2-targeted therapy and other systemic treatments. The exact sequence is individualized."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "Stage 4"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "Stage 4 breast cancer has spread to distant parts of the body. Treatment is primarily systemic and depends heavily on tumour biology."
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "Hormone receptor-positive disease may receive endocrine-based treatment. HER2-positive disease may receive HER2-directed treatment. Triple-negative disease may be treated with chemotherapy and selected immunotherapy or other systemic approaches. Treatment can change over time depending on response and disease progression."
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "For how stage changes the sequence, read [Breast Cancer Stages 0–4](/blogs/breast-cancer-stages-0-1-2-3-4) and [treatment by stage](/blogs/breast-cancer-treatment-by-stage)."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 2,
+          "text": "How Does Hormone Therapy Work in ER-Positive Breast Cancer?"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Hormone therapy aims to reduce the ability of estrogen to stimulate cancer cells. Depending on the medicine, it may block estrogen receptors, reduce estrogen production, or suppress ovarian estrogen production."
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "**Tamoxifen** blocks estrogen's effects in breast tissue."
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "**Aromatase inhibitors** such as anastrozole, letrozole and exemestane reduce estrogen production and are commonly used in postmenopausal patients."
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "**Ovarian-function suppression** may be used in selected premenopausal patients, sometimes together with another endocrine medicine."
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 2,
+          "text": "How Does HER2-Targeted Therapy Work?"
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "HER2-targeted medicines are designed to interfere with HER2-driven signalling. Examples include trastuzumab, pertuzumab, trastuzumab emtansine and trastuzumab deruxtecan."
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "The medicine used depends on the treatment setting. For example, the treatment of newly diagnosed early-stage disease can differ substantially from treatment of metastatic disease that has already received HER2-directed therapy."
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 2,
+          "text": "Can a Patient Receive Both Hormone Therapy and HER2-Targeted Therapy?"
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "Yes. This can occur when a breast cancer is both hormone receptor-positive and HER2-positive. The patient may receive a treatment plan that addresses both biological pathways."
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "Depending on the stage, this can include chemotherapy + HER2-targeted therapy + surgery + radiation + endocrine therapy. Not every patient needs all of these treatments."
+        },
+        {
+          "id": "h_116",
+          "type": "heading",
+          "level": 2,
+          "text": "How Does the Treatment Team Decide What Comes First?"
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "Treatment sequencing depends on stage, tumour size, lymph-node involvement, ER/PR status, HER2 status, tumour grade, the patient's health, menopausal status, planned surgery, need for radiation and previous treatment."
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "Some patients undergo surgery first. Others receive systemic treatment before surgery. This is known as neoadjuvant treatment."
+        },
+        {
+          "id": "btn_119",
+          "type": "button",
+          "label": "Ask whether treatment should start before surgery",
+          "href": "/consult?treatment=Chemotherapy"
+        },
+        {
+          "id": "h_120",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Is Neoadjuvant Treatment Used?"
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "Neoadjuvant treatment is treatment given before the main local treatment, usually surgery. It may include chemotherapy, HER2-targeted therapy and endocrine therapy in selected situations."
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "Potential reasons include shrinking the tumour, treating microscopic disease early, assessing treatment response and helping determine subsequent treatment. The decision depends on the patient's specific cancer."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Hormone Receptor Status Affect Chemotherapy Decisions?"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "It can be one of several factors considered. Doctors may evaluate ER/PR status, HER2 status, tumour size, grade, lymph nodes, menopausal status and other pathological or genomic information where appropriate."
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "For some hormone receptor-positive, HER2-negative cancers, additional genomic testing may help inform chemotherapy decisions. Whether such testing is useful depends on the individual clinical situation."
+        },
+        {
+          "id": "h_126",
+          "type": "heading",
+          "level": 2,
+          "text": "Do All ER-Positive Patients Need Chemotherapy?"
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "No. ER-positive breast cancer can range from very small, lower-risk tumours to more advanced or biologically aggressive cancers. Chemotherapy decisions depend on multiple factors."
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "Some patients may receive surgery, radiation and endocrine therapy, while others may require chemotherapy as well. The treatment plan should be based on the complete pathology and clinical assessment."
+        },
+        {
+          "id": "h_129",
+          "type": "heading",
+          "level": 2,
+          "text": "Do All HER2-Positive Patients Need the Same Treatment?"
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "No. HER2-positive breast cancer includes different clinical situations. Treatment can vary according to tumour size, lymph-node status, stage, whether treatment is before or after surgery, previous HER2-targeted therapy, and whether the disease is metastatic."
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "Therefore, the term \"HER2-positive\" alone is not enough to determine the entire treatment regimen."
+        },
+        {
+          "id": "h_132",
+          "type": "heading",
+          "level": 2,
+          "text": "What Should International Patients Know About ER, PR and HER2?"
+        },
+        {
+          "id": "p_133",
+          "type": "paragraph",
+          "text": "For patients travelling to India for treatment, these reports are particularly important. Before travelling, collect:"
+        },
+        {
+          "id": "ul_134",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Biopsy report",
+            "Histopathology report",
+            "ER result",
+            "PR result",
+            "HER2 result",
+            "HER2 confirmatory testing if performed",
+            "Imaging reports",
+            "Previous surgery reports",
+            "Chemotherapy records",
+            "Radiation records",
+            "Previous targeted therapy",
+            "Current medicines"
+          ]
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "The Indian treating team can use these records to understand the previous diagnosis and treatment. GAF Healthcare coordinates this review with teams in [Delhi NCR](/hospitals/India/Delhi-NCR), [Mumbai](/hospitals/India/Mumbai), [Bengaluru](/hospitals/India/Bengaluru), [Chennai](/hospitals/India/Chennai) and [Hyderabad](/hospitals/India/Hyderabad)."
+        },
+        {
+          "id": "btn_136",
+          "type": "button",
+          "label": "WhatsApp your pathology for a biomarker review",
+          "href": "https://wa.me/919044346292?text=I%20would%20like%20a%20review%20of%20my%20ER%2C%20PR%20and%20HER2%20breast%20cancer%20report%20for%20treatment%20in%20India."
+        },
+        {
+          "id": "h_137",
+          "type": "heading",
+          "level": 2,
+          "text": "Should International Patients Repeat ER, PR and HER2 Testing in India?"
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "Not necessarily. The treating hospital may accept existing reports."
+        },
+        {
+          "id": "p_139",
+          "type": "paragraph",
+          "text": "However, repeat or confirmatory testing may be considered if the report is incomplete, the testing methodology is unclear, the result is equivocal, the result is unexpected, the treatment decision depends on confirmation, or the pathology material needs specialist review."
+        },
+        {
+          "id": "p_140",
+          "type": "paragraph",
+          "text": "Patients should ask the receiving hospital before travelling whether additional testing is expected."
+        },
+        {
+          "id": "h_141",
+          "type": "heading",
+          "level": 2,
+          "text": "What Does an ER/PR/HER2 Pathology Report Look Like?"
+        },
+        {
+          "id": "p_142",
+          "type": "paragraph",
+          "text": "A simplified report might contain information such as:"
+        },
+        {
+          "id": "p_143",
+          "type": "paragraph",
+          "text": "| Marker | Example result |\n| --- | --- |\n| ER | Positive |\n| PR | Positive |\n| HER2 IHC | 0 / 1+ / 2+ / 3+ |\n| HER2 ISH | If required |\n| Tumour grade | Grade 1, 2 or 3 |\n| Histological type | e.g. invasive carcinoma |"
+        },
+        {
+          "id": "p_144",
+          "type": "paragraph",
+          "text": "The exact format varies between laboratories. A patient should have the complete report interpreted by the treating medical team rather than relying on one line."
+        },
+        {
+          "id": "h_145",
+          "type": "heading",
+          "level": 2,
+          "text": "Questions to Ask Your Oncologist"
+        },
+        {
+          "id": "p_146",
+          "type": "paragraph",
+          "text": "After receiving the pathology report, consider asking:"
+        },
+        {
+          "id": "ul_147",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Is my cancer ER-positive or ER-negative?",
+            "Is it PR-positive or PR-negative?",
+            "What is my HER2 result?",
+            "Does my HER2 result require confirmatory testing?",
+            "What is my tumour grade?",
+            "What is my cancer stage?",
+            "Are lymph nodes involved?",
+            "Is my cancer hormone receptor-positive?",
+            "Is my cancer HER2-positive?",
+            "Do I need hormone therapy?",
+            "Do I need HER2-targeted therapy?",
+            "Do I need chemotherapy?",
+            "Will I need radiation therapy?",
+            "Should I have genomic or molecular testing?",
+            "Should I have a pathology second opinion?",
+            "What treatment should happen first?"
+          ]
+        },
+        {
+          "id": "h_148",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_149",
+          "type": "heading",
+          "level": 3,
+          "text": "What does ER-positive breast cancer mean?"
+        },
+        {
+          "id": "p_150",
+          "type": "paragraph",
+          "text": "It means the cancer cells express estrogen receptors. Endocrine therapy may therefore be an important part of treatment."
+        },
+        {
+          "id": "h_151",
+          "type": "heading",
+          "level": 3,
+          "text": "What does PR-positive breast cancer mean?"
+        },
+        {
+          "id": "p_152",
+          "type": "paragraph",
+          "text": "It means the cancer cells express progesterone receptors. PR status is interpreted alongside ER, HER2 and other tumour characteristics."
+        },
+        {
+          "id": "h_153",
+          "type": "heading",
+          "level": 3,
+          "text": "What does HER2-positive mean?"
+        },
+        {
+          "id": "p_154",
+          "type": "paragraph",
+          "text": "It means the tumour meets accepted criteria for increased HER2 activity based on pathology testing. HER2-targeted medicines may therefore be considered."
+        },
+        {
+          "id": "h_155",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast cancer be ER-positive and HER2-positive?"
+        },
+        {
+          "id": "p_156",
+          "type": "paragraph",
+          "text": "Yes. A tumour can express hormone receptors and also be HER2-positive."
+        },
+        {
+          "id": "h_157",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast cancer be ER-positive but PR-negative?"
+        },
+        {
+          "id": "p_158",
+          "type": "paragraph",
+          "text": "Yes. ER and PR are separate biomarkers, so they can have different results."
+        },
+        {
+          "id": "h_159",
+          "type": "heading",
+          "level": 3,
+          "text": "What does triple-negative mean?"
+        },
+        {
+          "id": "p_160",
+          "type": "paragraph",
+          "text": "Triple-negative breast cancer lacks estrogen receptors, progesterone receptors and HER2 according to the relevant testing criteria."
+        },
+        {
+          "id": "h_161",
+          "type": "heading",
+          "level": 3,
+          "text": "Does HER2-positive mean the cancer is Stage 4?"
+        },
+        {
+          "id": "p_162",
+          "type": "paragraph",
+          "text": "No. HER2 status and stage are different characteristics. A HER2-positive cancer can be diagnosed at an early stage or at an advanced stage."
+        },
+        {
+          "id": "h_163",
+          "type": "heading",
+          "level": 3,
+          "text": "Does ER-positive mean the cancer is less serious?"
+        },
+        {
+          "id": "p_164",
+          "type": "paragraph",
+          "text": "ER status alone cannot determine how serious a cancer is. Stage, tumour biology and multiple other factors are important."
+        },
+        {
+          "id": "h_165",
+          "type": "heading",
+          "level": 3,
+          "text": "Does every ER-positive patient need hormone therapy?"
+        },
+        {
+          "id": "p_166",
+          "type": "paragraph",
+          "text": "Endocrine therapy is commonly considered for hormone receptor-positive breast cancer, but the final treatment plan depends on the individual clinical situation."
+        },
+        {
+          "id": "h_167",
+          "type": "heading",
+          "level": 3,
+          "text": "Does every HER2-positive patient need trastuzumab?"
+        },
+        {
+          "id": "p_168",
+          "type": "paragraph",
+          "text": "Trastuzumab has an important role in many HER2-positive breast cancer treatment settings, but whether it is appropriate and how it is used depends on the individual diagnosis and previous treatment."
+        },
+        {
+          "id": "h_169",
+          "type": "heading",
+          "level": 3,
+          "text": "Can ER, PR or HER2 status change?"
+        },
+        {
+          "id": "p_170",
+          "type": "paragraph",
+          "text": "Tumour biology can sometimes differ between samples or between the original tumour and recurrent/metastatic disease. When clinically appropriate, doctors may recommend reassessment."
+        },
+        {
+          "id": "h_171",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients have their pathology reviewed in India?"
+        },
+        {
+          "id": "p_172",
+          "type": "paragraph",
+          "text": "Yes. A hospital may review pathology reports and, where necessary, the original slides or tissue blocks."
+        },
+        {
+          "id": "btn_173",
+          "type": "button",
+          "label": "Send records for an India second opinion",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "h_174",
+          "type": "heading",
+          "level": 2,
+          "text": "ER, PR and HER2: Key Takeaways"
+        },
+        {
+          "id": "p_175",
+          "type": "paragraph",
+          "text": "ER, PR and HER2 are among the most important biomarkers used in breast cancer treatment planning."
+        },
+        {
+          "id": "p_176",
+          "type": "paragraph",
+          "text": "**ER** indicates estrogen receptor expression and can identify patients who may benefit from endocrine therapy."
+        },
+        {
+          "id": "p_177",
+          "type": "paragraph",
+          "text": "**PR** provides additional information about hormone receptor biology."
+        },
+        {
+          "id": "p_178",
+          "type": "paragraph",
+          "text": "**HER2** identifies cancers that may benefit from HER2-targeted treatment."
+        },
+        {
+          "id": "p_179",
+          "type": "paragraph",
+          "text": "Importantly, these markers should never be interpreted separately from cancer stage and the rest of the pathology report."
+        },
+        {
+          "id": "p_180",
+          "type": "paragraph",
+          "text": "A complete breast cancer treatment plan may involve surgery, chemotherapy, radiation therapy, hormone therapy, HER2-targeted therapy and immunotherapy in selected situations. The combination and sequence depend on the individual patient."
+        },
+        {
+          "id": "p_181",
+          "type": "paragraph",
+          "text": "For international patients considering treatment in India, sending the complete pathology and imaging records before travel can help the receiving oncology team understand the diagnosis and plan the next steps."
+        },
+        {
+          "id": "h_182",
+          "type": "heading",
+          "level": 2,
+          "text": "GAF Healthcare Resources"
+        },
+        {
+          "id": "p_183",
+          "type": "paragraph",
+          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Breast Cancer Treatment by Stage](/blogs/breast-cancer-treatment-by-stage)\n- [Breast Cancer Stages 0–4](/blogs/breast-cancer-stages-0-1-2-3-4)\n- [Breast Cancer Treatment Cost in India](/blogs/breast-cancer-treatment-cost-in-india)\n- [Hormone Therapy Doctors in India](/doctors/India/Medical-Oncology/Hormone-Therapy)\n- [Hormone Therapy Cost in India](/costs/India/Medical-Oncology/Hormone-Therapy)\n- [Targeted Therapy Doctors in India](/doctors/India/Medical-Oncology/Targeted-Therapy)\n- [Targeted Therapy Cost in India](/costs/India/Medical-Oncology/Targeted-Therapy)\n- [Chemotherapy Doctors in India](/doctors/India/Medical-Oncology/Chemotherapy)\n- [Chemotherapy Cost in India](/costs/India/Medical-Oncology/Chemotherapy)\n- [Immunotherapy Doctors in India](/doctors/India/Medical-Oncology/Immunotherapy)\n- [Immunotherapy Cost in India](/costs/India/Medical-Oncology/Immunotherapy)\n- [Breast-Conserving Surgery in India](/costs/India/Surgical-Oncology/Lumpectomy)\n- [Lumpectomy doctors](/doctors/India/Surgical-Oncology/Lumpectomy)\n- [Mastectomy in India](/costs/India/Surgical-Oncology/Mastectomy)\n- [Mastectomy doctors](/doctors/India/Surgical-Oncology/Mastectomy)"
+        },
+        {
+          "id": "p_184",
+          "type": "paragraph",
+          "text": "[Start the Breast Cancer Treatment in India pathway](/consult?treatment=Breast%20Cancer%20Treatment%20in%20India)"
+        }
+      ]
+    },
     {
       "id": "art_breast_cancer_stages_0_1_2_3_4",
       "slug": "breast-cancer-stages-0-1-2-3-4",

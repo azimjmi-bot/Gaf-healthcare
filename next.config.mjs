@@ -51,6 +51,11 @@ const nextConfig = {
         destination: "/blogs/breast-cancer-stages-0-1-2-3-4",
         permanent: true,
       },
+      {
+        source: "/blog/er-pr-her2-breast-cancer-treatment-india",
+        destination: "/blogs/er-pr-her2-breast-cancer-treatment-india",
+        permanent: true,
+      },
       { source: "/about", destination: "/", permanent: true },
     ];
   },
