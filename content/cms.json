@@ -85,7 +85,9 @@
     "MRI",
     "symptoms",
     "urinary",
-    "BPH"
+    "BPH",
+    "Gleason score",
+    "Grade Group"
   ],
   "media": [
     {
@@ -1102,9 +1104,1389 @@
       "name": "pca-sx-consult.webp",
       "alt": "Male patient on a clinic couch while a clinician indicates a gold overlay of bladder and prostate",
       "addedAt": "2026-09-28T08:00:00.000Z"
+    },
+    {
+      "id": "media_pca_gg_anatomy_webp",
+      "url": "/uploads/articles/pca-gg-anatomy.webp",
+      "name": "pca-gg-anatomy.webp",
+      "alt": "Transparent male body with a teal bladder above a gold-highlighted prostate in the pelvis",
+      "addedAt": "2026-09-28T08:30:00.000Z"
+    },
+    {
+      "id": "media_pca_gg_pathology_webp",
+      "url": "/uploads/articles/pca-gg-pathology.webp",
+      "name": "pca-gg-pathology.webp",
+      "alt": "Male patient in clinic with a gold pelvic overlay while a clinician reviews biopsy pathology on a tablet",
+      "addedAt": "2026-09-28T08:30:00.000Z"
+    },
+    {
+      "id": "media_pca_gg_localized_webp",
+      "url": "/uploads/articles/pca-gg-localized.webp",
+      "name": "pca-gg-localized.webp",
+      "alt": "Male patient in clinic with a gold overlay of bladder and prostate while a clinician explains localized disease",
+      "addedAt": "2026-09-28T08:30:00.000Z"
+    },
+    {
+      "id": "media_pca_gg_stage_webp",
+      "url": "/uploads/articles/pca-gg-stage.webp",
+      "name": "pca-gg-stage.webp",
+      "alt": "Transparent male figure with a gold prostate, teal pelvic nodes and a gold spine highlight used to explain staging versus grade",
+      "addedAt": "2026-09-28T08:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_gleason_score_grade_group_prostate_cancer",
+      "slug": "gleason-score-grade-group-prostate-cancer",
+      "title": "Gleason Score and Grade Group in Prostate Cancer: What Do They Mean?",
+      "excerpt": "Gleason 3+4 is not the same as 4+3. Grade Group 1–5 explains the microscope; stage explains spread. How to read a prostate biopsy report.",
+      "date": "28 September 2026",
+      "publishedAt": "2026-09-28T08:30:00.000Z",
+      "updatedAt": "2026-09-28T08:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "prostate cancer",
+        "Gleason score",
+        "Grade Group",
+        "biopsy",
+        "pathology",
+        "India"
+      ],
+      "image": "/uploads/articles/pca-gg-anatomy.webp",
+      "imageAlt": "Transparent male body with a teal bladder above a gold-highlighted prostate in the pelvis",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Gleason Score and Grade Group in Prostate Cancer",
+      "seoDescription": "Gleason 6 is Grade Group 1, not “medium.” Why 3+4 differs from 4+3, what Grade Groups 1–5 mean, and how grade is not the same as stage.",
+      "canonical": "https://gaf.healthcare/blogs/gleason-score-grade-group-prostate-cancer",
+      "ogImage": "/uploads/articles/pca-gg-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Gleason score and Grade Group",
+        "Gleason score prostate cancer",
+        "Grade Group prostate cancer",
+        "Gleason 6",
+        "Gleason 7 prostate cancer",
+        "Gleason 3+4 vs 4+3",
+        "Gleason score 8",
+        "Gleason score 9",
+        "Grade Group 1 to 5",
+        "prostate biopsy report",
+        "prostate cancer grading"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Prostate cancer diagnosis",
+          "href": "/blogs/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet"
+        },
+        {
+          "label": "Active surveillance",
+          "href": "/blogs/active-surveillance-prostate-cancer"
+        },
+        {
+          "label": "Treatment options",
+          "href": "/blogs/prostate-cancer-treatment-options-india"
+        },
+        {
+          "label": "Robotic Prostatectomy in India",
+          "href": "/blogs/robotic-prostatectomy-in-india"
+        },
+        {
+          "label": "Radiation Therapy for Prostate Cancer",
+          "href": "/blogs/radiation-therapy-for-prostate-cancer"
+        },
+        {
+          "label": "Prostate Cancer Treatment in India",
+          "href": "/treatments/prostate-cancer-treatment-in-india"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>What do Gleason score and Grade Group mean in prostate cancer?</strong></p><p class=\"article-quick-answer__body\">The <strong>Gleason score</strong> describes how prostate cancer cells look under a microscope and how abnormal their growth pattern is. The pathologist identifies the main cancerous patterns, assigns grades to them, and combines the two most important patterns to produce a Gleason score.</p><p class=\"article-quick-answer__body\">The <strong>Grade Group</strong> is a newer, simpler way of expressing the same underlying grading information on a scale from <strong>1 to 5</strong>.</p><div class=\"md-body\"><table><thead><tr><th>Gleason pattern / score</th><th>Grade Group</th><th>General interpretation</th></tr></thead><tbody><tr><td>3+3=6</td><td><strong>1</strong></td><td>Lowest Grade Group used for prostate cancer</td></tr><tr><td>3+4=7</td><td><strong>2</strong></td><td>Intermediate grade</td></tr><tr><td>4+3=7</td><td><strong>3</strong></td><td>Higher-grade pattern than 3+4</td></tr><tr><td>8</td><td><strong>4</strong></td><td>High grade</td></tr><tr><td>9–10</td><td><strong>5</strong></td><td>Highest Grade Group</td></tr></tbody></table></div><p class=\"article-quick-answer__body\">A <strong>Gleason score is not the same as prostate cancer stage</strong>. Grade describes how the cancer looks and behaves biologically, while stage describes how far the cancer has spread. Doctors also consider PSA, MRI or other imaging, biopsy findings, lymph nodes, metastases, overall health and other factors before recommending treatment.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "This is the grading hub for the prostate cluster. It sits between [diagnosis](/blogs/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet) and [treatment options](/blogs/prostate-cancer-treatment-options-india), and next to [active surveillance](/blogs/active-surveillance-prostate-cancer), [symptoms](/blogs/prostate-cancer-symptoms), [robotic prostatectomy](/blogs/robotic-prostatectomy-in-india), [radiation](/blogs/radiation-therapy-for-prostate-cancer), [brachytherapy](/blogs/brachytherapy-for-prostate-cancer) and [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india)."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "International patients comparing [surgical oncologists](/doctors/India/Surgical-Oncology) and [radiation oncologists](/doctors/India/Radiation-Oncology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Surgical-Oncology), [Mumbai](/doctors/India/Mumbai/Radiation-Oncology), [Bengaluru](/doctors/India/Bengaluru/Surgical-Oncology), [Chennai](/doctors/India/Chennai/Radiation-Oncology) and [Hyderabad](/doctors/India/Hyderabad/Surgical-Oncology)."
+        },
+        {
+          "id": "btn_004",
+          "type": "button",
+          "label": "Ask about a Gleason score or Grade Group",
+          "href": "/consult?treatment=Gleason%20Score%20Grade%20Group"
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your biopsy report](https://wa.me/919044346292?text=Please%20review%20my%20prostate%20biopsy%20Gleason%20score%20and%20Grade%20Group%20and%20advise%20the%20next%20step%20in%20India.)"
+        },
+        {
+          "id": "img_006",
+          "type": "image",
+          "src": "/uploads/articles/pca-gg-anatomy.webp",
+          "alt": "Transparent male body with a teal bladder above a gold-highlighted prostate in the pelvis",
+          "caption": "Grade describes how the cancer looks under the microscope. It does not, by itself, say how large the tumour is or whether it has spread."
+        },
+        {
+          "id": "h_007",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is a Gleason Score?"
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "A Gleason score is a grading system used for **prostate cancer**."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "It is determined by a pathologist who examines prostate tissue under a microscope, usually from a biopsy."
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "The pathologist looks at the arrangement of the cancer cells and asks: **how closely does the cancerous tissue resemble normal prostate tissue?**"
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "Prostate cancers can contain different microscopic patterns. Some areas may still form recognizable glands, while other areas may have poorly formed glands or lose normal glandular architecture."
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "In modern practice, prostate cancer is generally graded using patterns **3, 4 and 5**. Patterns 1 and 2 are essentially not used for diagnosing and reporting typical prostate adenocarcinoma."
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "The two most important patterns are then combined to produce the Gleason score. How that tissue is obtained is covered in [Prostate Cancer Diagnosis](/blogs/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet)."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 2,
+          "text": "What Does the Gleason Score Actually Measure?"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "The Gleason score measures **tumor grade**, not tumor size."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "A prostate tumor can be relatively small but contain high-grade cancer cells. Conversely, a larger localized tumor can sometimes have a lower Grade Group."
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "So the Gleason score does **not** directly tell you how large the prostate tumor is, whether cancer has spread to the lymph nodes or bones, whether the cancer is Stage 1, 2, 3 or 4, your PSA level, or whether surgery is definitely required."
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "It provides information about the **microscopic aggressiveness of the cancer**. Doctors combine that information with other findings to determine the overall risk and treatment strategy."
+        },
+        {
+          "id": "h_019",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is a Gleason Score Calculated?"
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "Suppose the pathology report says **Gleason 3+4=7**."
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "The first number, **3**, represents the most common cancer pattern seen in the sample. The second number, **4**, represents the next most significant pattern. The two numbers are added: **3 + 4 = 7**."
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "But the order matters. A **3+4=7** cancer is not considered biologically identical to a **4+3=7** cancer, because the first number represents the **predominant pattern**."
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "**3+4=7** means pattern 3 is predominant and pattern 4 is present but less extensive. **4+3=7** means pattern 4 is predominant and pattern 3 is the lesser component."
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "Although both have a total Gleason score of 7, **4+3=7 represents a higher Grade Group and generally carries a less favorable prognosis than 3+4=7**. This is one of the main reasons the Grade Group system was introduced."
+        },
+        {
+          "id": "img_025",
+          "type": "image",
+          "src": "/uploads/articles/pca-gg-pathology.webp",
+          "alt": "Male patient in clinic with a gold pelvic overlay while a clinician reviews biopsy pathology on a tablet",
+          "caption": "If the report says Gleason 7, ask whether it is 3+4 (Grade Group 2) or 4+3 (Grade Group 3). The order is the clinical difference."
+        },
+        {
+          "id": "btn_026",
+          "type": "button",
+          "label": "Ask whether your Gleason 7 is 3+4 or 4+3",
+          "href": "/consult?treatment=Gleason%203%2B4%20vs%204%2B3"
+        },
+        {
+          "id": "h_027",
+          "type": "heading",
+          "level": 2,
+          "text": "Gleason Score vs Grade Group"
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "The two terms describe closely related information, but they are not the same thing."
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "The **Gleason score** uses the microscopic patterns identified by the pathologist: 3+3=6, 3+4=7, 4+3=7, 4+4=8, 4+5=9."
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "The **Grade Group** converts these findings into five groups from 1 to 5."
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "The Grade Group system makes it easier to understand that **Gleason 6 is at the lower end of clinically significant prostate cancer grading**, rather than being a middle value on a 2-to-10 scale. It also separates Gleason 7 into two clinically meaningful categories: **3+4 and 4+3**."
+        },
+        {
+          "id": "h_032",
+          "type": "heading",
+          "level": 2,
+          "text": "Grade Group 1 to 5: Complete Guide"
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 3,
+          "text": "Grade Group 1"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "**Gleason score: 6 or less.** The usual report is **Gleason 3+3=6**."
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "The cancer is made up predominantly of well-formed glands corresponding to Gleason pattern 3. Grade Group 1 represents the lowest Grade Group used for prostate cancer."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "Many Grade Group 1 cancers grow slowly and, when they meet other low-risk criteria, may be managed with **[active surveillance](/blogs/active-surveillance-prostate-cancer)** rather than immediate treatment."
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "However, Grade Group alone does not determine whether surveillance is appropriate. PSA, tumor volume, MRI findings, clinical stage and biopsy characteristics also matter."
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 about Grade Group 1](https://wa.me/919044346292?text=I%20have%20Gleason%203%2B3%3D6%20%2F%20Grade%20Group%201.%20Please%20advise%20whether%20active%20surveillance%20in%20India%20is%20appropriate.)"
+        },
+        {
+          "id": "h_039",
+          "type": "heading",
+          "level": 3,
+          "text": "Grade Group 2"
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "**Gleason score: 3+4=7.** Pattern 3 remains predominant, but there is a component of pattern 4."
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "A patient with Gleason 3+4=7 should not simply be described as having the same cancer as someone with Gleason 4+3=7."
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "The percentage of Gleason pattern 4 may be reported in pathology reports and can help further characterize Grade Group 2 disease."
+        },
+        {
+          "id": "h_043",
+          "type": "heading",
+          "level": 3,
+          "text": "Grade Group 3"
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "**Gleason score: 4+3=7.** Pattern 4 is predominant."
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "This is why **Gleason 4+3=7 is Grade Group 3**, while **3+4=7 is Grade Group 2**. The total score is still 7, but the biological implications are different."
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "This is one of the most important details to look for when reading a prostate biopsy report."
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 about Grade Group 2 or 3](https://wa.me/919044346292?text=I%20have%20Gleason%207%20prostate%20cancer.%20Please%20check%20whether%20it%20is%203%2B4%20or%204%2B3%20and%20advise%20treatment%20options%20in%20India.)"
+        },
+        {
+          "id": "h_048",
+          "type": "heading",
+          "level": 3,
+          "text": "Grade Group 4"
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "**Gleason score: 8**, including 4+4=8, 3+5=8 and 5+3=8."
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "These cancers contain a greater proportion of high-grade patterns. Grade Group 4 is generally considered **high-grade prostate cancer** and often places a patient into a higher-risk category, depending on PSA, clinical stage and other findings."
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 3,
+          "text": "Grade Group 5"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "**Gleason score: 9 or 10**, including 4+5=9, 5+4=9 and 5+5=10."
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Grade Group 5 represents the highest grade category. These cancers contain substantial high-grade patterns and have a greater likelihood of aggressive behavior and spread compared with lower Grade Groups."
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "However, even Grade Group 5 does not by itself tell you whether the cancer is localized or metastatic. **Stage still matters.**"
+        },
+        {
+          "id": "h_055",
+          "type": "heading",
+          "level": 2,
+          "text": "Gleason Score and Grade Group Chart"
+        },
+        {
+          "id": "html_056",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Gleason score</th><th>Common pattern</th><th>Grade Group</th><th>General grade</th></tr></thead><tbody><tr><td>6</td><td>3+3</td><td>1</td><td>Lowest grade</td></tr><tr><td>7</td><td>3+4</td><td>2</td><td>Intermediate</td></tr><tr><td>7</td><td>4+3</td><td>3</td><td>Higher intermediate</td></tr><tr><td>8</td><td>4+4, 3+5, 5+3</td><td>4</td><td>High grade</td></tr><tr><td>9</td><td>4+5, 5+4</td><td>5</td><td>Highest grade</td></tr><tr><td>10</td><td>5+5</td><td>5</td><td>Highest grade</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "This five-group classification is based on the modern Grade Group system developed through international pathology consensus and incorporated into contemporary prostate cancer classification."
+        },
+        {
+          "id": "h_058",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Is Gleason 3+4 Different From 4+3?"
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "This is probably the single most important question patients ask after seeing a Gleason score of 7. Both are technically Gleason 7. But the first number tells you which pattern dominates."
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "**Gleason 3+4=7:** pattern 3 is predominant; pattern 4 is present but represents a smaller component. **Grade Group 2.**"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "**Gleason 4+3=7:** pattern 4 is predominant; pattern 3 represents the smaller component. **Grade Group 3.**"
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Because pattern 4 is a higher-grade architectural pattern, having it as the predominant pattern is clinically more significant."
+        },
+        {
+          "id": "h_063",
+          "type": "heading",
+          "level": 2,
+          "text": "What Are Gleason Patterns 3, 4 and 5?"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "**Pattern 3** generally consists of recognizable, relatively well-formed individual glands. A cancer consisting of Gleason pattern 3 alone is generally reported as **3+3=6** and classified as **Grade Group 1**."
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "**Pattern 4** represents more abnormal glandular architecture. It can include poorly formed glands, fused glands, cribriform architecture and other recognized pattern 4 structures. Modern pathology classifications have specifically refined the definition of pattern 4. Cribriform and glomeruloid structures are recognized as Gleason pattern 4."
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "**Pattern 5** represents the most abnormal growth pattern. There is little or no recognizable glandular formation. Necrosis may also be present in certain pattern 5 configurations. Pattern 5 contributes to Gleason scores of 8, 9 and 10."
+        },
+        {
+          "id": "h_067",
+          "type": "heading",
+          "level": 2,
+          "text": "What Does Gleason 6 Mean?"
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "A diagnosis of **Gleason 6** can sound more serious than it actually is because patients naturally see “6 out of 10” and assume it is in the middle of the scale."
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "That interpretation is misleading. In modern clinical prostate cancer grading, **Gleason 6 is the lowest score generally assigned to prostate cancer**. It corresponds to **Grade Group 1.**"
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "It does not mean the cancer is “medium grade” simply because the number is 6. This was one of the reasons Grade Groups were introduced."
+        },
+        {
+          "id": "h_071",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Gleason 6 Really Cancer?"
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Yes. Gleason 3+3=6 prostate adenocarcinoma is still classified as prostate cancer."
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "However, many Grade Group 1 cancers behave very differently from high-grade prostate cancers. Some grow extremely slowly and may never cause symptoms or become clinically significant during a patient's lifetime."
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "That is why selected men with Grade Group 1 disease may be monitored through **[active surveillance](/blogs/active-surveillance-prostate-cancer)** rather than treated immediately. The decision depends on the complete clinical picture rather than the Gleason score alone."
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 2,
+          "text": "What Does Gleason 7, 8, 9 or 10 Mean?"
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "Gleason 7 is not one single category. **3+4=7 is Grade Group 2**; **4+3=7 is Grade Group 3**. When a pathology report says simply “Gleason 7,” check the actual pattern."
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "Gleason 8 is **Grade Group 4** (4+4, 3+5 or 5+3). It is generally considered high-grade and often requires a more intensive evaluation of stage and overall risk."
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "Gleason 9 and 10 are **Grade Group 5**. They contain substantial amounts of Gleason pattern 5 and are considered high-grade cancers with a greater risk of progression and spread."
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "**Grade Group 5 does not automatically mean Stage 4.** A Grade Group 5 tumor can still be confined to the prostate. Conversely, prostate cancer with a lower Grade Group can sometimes have spread to lymph nodes or distant organs."
+        },
+        {
+          "id": "img_080",
+          "type": "image",
+          "src": "/uploads/articles/pca-gg-localized.webp",
+          "alt": "Male patient in clinic with a gold overlay of bladder and prostate while a clinician explains localized disease",
+          "caption": "High Grade Group can still be confined to the gland. Low Grade Group can still have spread. Grade and stage answer different questions."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 2,
+          "text": "Gleason Score vs Prostate Cancer Stage"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "These terms are often confused. They should not be used interchangeably."
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "**Gleason score / Grade Group** answers: how abnormal and potentially aggressive does the cancer look under the microscope?"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "**Stage** answers: how far has the cancer spread? Staging incorporates T (primary tumor), N (regional lymph nodes), M (distant metastases), PSA and Grade Group."
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "A patient could have **Grade Group 5 + localized disease**, or **Grade Group 2 + metastatic disease**. These are very different clinical situations."
+        },
+        {
+          "id": "img_086",
+          "type": "image",
+          "src": "/uploads/articles/pca-gg-stage.webp",
+          "alt": "Transparent male figure with a gold prostate, teal pelvic nodes and a gold spine highlight used to explain staging versus grade",
+          "caption": "Stage asks whether disease is in the prostate, nodes or bones. Gleason asks how the sampled tissue looks. Both are needed before treatment is chosen."
+        },
+        {
+          "id": "h_087",
+          "type": "heading",
+          "level": 2,
+          "text": "Gleason Score vs PSA"
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "PSA is a blood test measuring prostate-specific antigen. Gleason score is based on microscopic examination of cancer tissue."
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "A patient may have high PSA with a lower Grade Group, lower PSA with a higher Grade Group, or both high, or both low. Doctors interpret these findings together."
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "PSA can also be affected by conditions other than cancer, including benign prostate enlargement and prostatitis. Therefore, PSA alone does not determine cancer grade. See [symptoms](/blogs/prostate-cancer-symptoms) and [diagnosis](/blogs/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet)."
+        },
+        {
+          "id": "h_091",
+          "type": "heading",
+          "level": 2,
+          "text": "Gleason Score vs Risk Group"
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "For localized prostate cancer, doctors commonly combine PSA, Grade Group, clinical T stage, number of positive biopsy cores, percentage of cancer in cores, MRI findings and other pathology features."
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "This can place a patient into very low, low, favorable intermediate, unfavorable intermediate, high or very high risk."
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "**Grade Group is one component of risk classification, not the entire risk classification.**"
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Does the Percentage of Gleason Pattern 4 Matter?"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "Two patients can both have **Gleason 3+4=7 / Grade Group 2** but have different amounts of pattern 4."
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "The pathology report may therefore include the **percentage of Gleason pattern 4**. This can provide additional information when doctors are assessing the biological characteristics of a Grade Group 2 cancer."
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Pathology reporting standards have emphasized documenting pattern 4, particularly in Gleason score 7 cancers. Do not stop reading after “Gleason 7.”"
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Cribriform Pattern?"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Cribriform architecture describes a particular microscopic arrangement in which tumor cells form sieve-like or perforated glandular structures."
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "Modern prostate cancer pathology recognizes **invasive cribriform carcinoma as an important adverse pathological feature**. The 2019 International Society of Urological Pathology consensus specifically addressed cribriform carcinoma and intraductal carcinoma."
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "If your pathology report mentions **“cribriform pattern present,”** discuss the finding with your urologist or pathologist. It may provide additional information beyond the headline Gleason score."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Intraductal Carcinoma of the Prostate?"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "**Intraductal carcinoma of the prostate (IDC-P)** is a distinct pathological finding involving malignant cells growing within pre-existing prostate ducts or acini."
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "It is important because it can be associated with more aggressive prostate cancer. Modern pathology recommendations specifically address how intraductal carcinoma should be reported."
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "If IDC-P is mentioned on your pathology report, ask your treating team how it affects your risk assessment."
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 if cribriform or IDC-P is mentioned](https://wa.me/919044346292?text=My%20prostate%20biopsy%20mentions%20cribriform%20pattern%20or%20intraductal%20carcinoma.%20Please%20review%20the%20report%20and%20advise%20next%20steps%20in%20India.)"
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Different Biopsy Cores Have Different Gleason Scores?"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Yes. A biopsy samples multiple areas of the prostate. Cancer may not have exactly the same microscopic appearance everywhere."
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "One core could show 3+3=6, another 3+4=7, and another 4+3=7. Doctors consider the complete biopsy rather than looking at only one core. The highest-grade finding may be particularly important when discussing treatment options."
+        },
+        {
+          "id": "h_111",
+          "type": "heading",
+          "level": 2,
+          "text": "What Does “Number of Positive Cores” Mean?"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "A prostate biopsy commonly involves multiple tissue cores. **Cancer present in 4 of 12 cores** means cancer was identified in four of the twelve sampled cores."
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "The report may also provide length of cancer in each core, percentage of each core involved, location of positive cores, Gleason pattern, Gleason score and Grade Group."
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "These details help doctors understand the **volume and distribution** of cancer within the sampled prostate tissue. A Gleason score should therefore never be interpreted completely in isolation."
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 2,
+          "text": "Can a Prostate Biopsy Underestimate the Gleason Score?"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "Yes. A biopsy samples only selected areas of the prostate. It is possible for a biopsy to miss a higher-grade area elsewhere in the gland."
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "This is one reason doctors sometimes recommend multiparametric MRI, MRI-targeted biopsy, repeat biopsy, pathology review or additional imaging. See [diagnosis](/blogs/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet)."
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "If the prostate is subsequently removed during [radical prostatectomy](/blogs/robotic-prostatectomy-in-india), the entire specimen can be examined. The final surgical pathology can sometimes show a different Grade Group from the original biopsy."
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 2,
+          "text": "Can the Gleason Score Change After Surgery?"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "Yes. After [radical prostatectomy](/blogs/robotic-prostatectomy-in-india), the entire prostate can be examined."
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "The surgical pathology may show the same Grade Group, a higher Grade Group, a different tumor extent, extraprostatic extension, seminal vesicle involvement, positive or negative surgical margins, and lymph node involvement if nodes were removed."
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "This is sometimes referred to as **pathological upgrading**. It does not necessarily mean that the cancer suddenly became more aggressive. It can mean that the biopsy did not capture the complete tumor architecture."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 2,
+          "text": "Does a Higher Gleason Score Always Mean a Higher Stage?"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "No. **Grade and stage are separate.**"
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "A high-grade tumor can remain localized. For example, a patient can have **Grade Group 5 + N0 + M0** — a high-grade cancer without documented lymph-node or distant metastatic spread."
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "On the other hand, a lower-grade cancer can sometimes spread beyond the prostate."
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Gleason Score Determine Treatment?"
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "It strongly influences treatment planning, but it does not determine treatment by itself."
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "Treatment decisions may consider Grade Group, Gleason pattern, PSA, MRI findings, clinical stage, number and extent of positive biopsy cores, lymph node status, metastatic disease, age, overall health, life expectancy, previous treatment and patient preferences."
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "Depending on the disease, options can include [active surveillance](/blogs/active-surveillance-prostate-cancer), [radical prostatectomy](/blogs/robotic-prostatectomy-in-india), [external beam radiation](/blogs/radiation-therapy-for-prostate-cancer), [brachytherapy](/blogs/brachytherapy-for-prostate-cancer), androgen deprivation therapy, other systemic treatments, targeted or radiopharmaceutical treatment for selected advanced disease, and clinical trials."
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "If treatment follows, GAF Healthcare planning ranges in India include [radical prostatectomy](/costs/India/Surgical-Oncology/Radical-Prostatectomy) **$7,000–$18,000**, [EBRT](/costs/India/Radiation-Oncology/EBRT) **$1,000–$6,000+**, [IMRT](/costs/India/Radiation-Oncology/IMRT) **$6,500–$14,500**, [brachytherapy](/costs/India/Radiation-Oncology/Brachytherapy) **$5,500–$13,000** and [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy) **$1,000–$4,500**. City pages such as [Delhi NCR prostatectomy](/costs/India/Delhi-NCR/Surgical-Oncology/Radical-Prostatectomy) use the same national ranges unless a hospital issues a verified quotation."
+        },
+        {
+          "id": "btn_132",
+          "type": "button",
+          "label": "Ask how Grade Group should change the treatment plan",
+          "href": "/consult?treatment=Gleason%20Score%20Treatment%20Options"
+        },
+        {
+          "id": "h_133",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Grade Group 1 Be Treated Without Surgery?"
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "Yes. For appropriately selected patients with Grade Group 1 prostate cancer, **[active surveillance](/blogs/active-surveillance-prostate-cancer)** may be an option."
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "Active surveillance is not the same as ignoring the cancer. It involves monitoring through PSA testing, digital rectal examination when appropriate, MRI, repeat biopsy and other clinical assessments."
+        },
+        {
+          "id": "p_136",
+          "type": "paragraph",
+          "text": "If evidence suggests that the cancer is becoming more significant, treatment can then be considered. Not every patient with Grade Group 1 disease is automatically suitable for surveillance."
+        },
+        {
+          "id": "h_137",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Grade Group 2 Always Require Treatment?"
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "No single Grade Group automatically determines treatment."
+        },
+        {
+          "id": "p_139",
+          "type": "paragraph",
+          "text": "Some patients with favorable Grade Group 2 disease may be considered for active surveillance in carefully selected circumstances. Other patients may have larger tumor volume, higher PSA, more extensive pattern 4, unfavorable MRI findings, higher clinical stage or adverse pathological features that make definitive treatment more appropriate."
+        },
+        {
+          "id": "h_140",
+          "type": "heading",
+          "level": 2,
+          "text": "What Does a Gleason Score Mean for Prognosis?"
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "In general, a lower Grade Group means a lower likelihood of aggressive behavior, and a higher Grade Group means a greater likelihood of aggressive behavior."
+        },
+        {
+          "id": "p_142",
+          "type": "paragraph",
+          "text": "But prognosis cannot be calculated accurately from Gleason score alone. Doctors also consider stage, PSA, tumor volume, lymph node status, metastatic disease, imaging, pathology details, response to treatment, and whether the cancer is newly diagnosed or recurrent."
+        },
+        {
+          "id": "p_143",
+          "type": "paragraph",
+          "text": "NCI and the American Cancer Society both emphasize that Grade Group is an important component of prognosis but should be interpreted alongside other disease characteristics."
+        },
+        {
+          "id": "h_144",
+          "type": "heading",
+          "level": 2,
+          "text": "What Do Common Report Lines Mean in Plain Language?"
+        },
+        {
+          "id": "p_145",
+          "type": "paragraph",
+          "text": "**Gleason 3+4=7, Grade Group 2:** the biopsy found prostate cancer in which the predominant microscopic pattern is Gleason pattern 3, with a smaller component of pattern 4. This does not by itself tell you the cancer stage, whether it has spread, or whether surgery is necessary."
+        },
+        {
+          "id": "p_146",
+          "type": "paragraph",
+          "text": "**Gleason 4+3=7, Grade Group 3:** the predominant microscopic pattern is Gleason pattern 4, with a smaller component of pattern 3. This is a higher Grade Group than 3+4=7. The difference is which pattern dominates, not the total number."
+        },
+        {
+          "id": "p_147",
+          "type": "paragraph",
+          "text": "**Gleason 4+5=9, Grade Group 5:** the biopsy contains a predominant Gleason pattern 4 and a substantial secondary pattern 5. This is the highest Grade Group. The next step is to determine the full extent of the cancer using examination, imaging, PSA and appropriate staging investigations."
+        },
+        {
+          "id": "h_148",
+          "type": "heading",
+          "level": 2,
+          "text": "How Doctors Read a Prostate Cancer Pathology Report"
+        },
+        {
+          "id": "ol_149",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Is cancer present?",
+            "What is the Gleason score (3+3, 3+4, 4+3, 4+4, 4+5)?",
+            "What is the Grade Group (1–5)?",
+            "How many biopsy cores are positive?",
+            "How much cancer is present in each core (percentage or millimetres)?",
+            "Is Gleason pattern 4 present, and is its percentage reported?",
+            "Are cribriform or intraductal features mentioned?",
+            "What does MRI show?",
+            "What is the PSA?",
+            "What is the clinical stage?"
+          ]
+        },
+        {
+          "id": "p_150",
+          "type": "paragraph",
+          "text": "Only after putting these pieces together can the treatment options be properly discussed. Compare [surgical hospitals](/hospitals/India/Surgical-Oncology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Surgical-Oncology) and [Mumbai](/hospitals/India/Mumbai/Surgical-Oncology) when a second look is needed."
+        },
+        {
+          "id": "h_151",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Two Men With the Same Gleason Score May Receive Different Treatments"
+        },
+        {
+          "id": "p_152",
+          "type": "paragraph",
+          "text": "Imagine two patients who both have **Gleason 3+4=7**."
+        },
+        {
+          "id": "p_153",
+          "type": "paragraph",
+          "text": "One may have low PSA, small-volume disease, favorable MRI, limited positive biopsy cores and no evidence of spread. Another may have higher PSA, extensive disease in multiple cores, more pattern 4, unfavorable imaging and higher clinical stage."
+        },
+        {
+          "id": "p_154",
+          "type": "paragraph",
+          "text": "The same Gleason score does not mean the same overall risk. Prostate cancer treatment is based on a **combination of pathological, laboratory and imaging findings**, not a single number. See [treatment options](/blogs/prostate-cancer-treatment-options-india)."
+        },
+        {
+          "id": "h_155",
+          "type": "heading",
+          "level": 2,
+          "text": "Can a Pathologist Recheck the Gleason Score?"
+        },
+        {
+          "id": "p_156",
+          "type": "paragraph",
+          "text": "Yes. A pathology review can be useful when the diagnosis has major treatment implications or when there is uncertainty about the grade."
+        },
+        {
+          "id": "p_157",
+          "type": "paragraph",
+          "text": "This may be particularly relevant when the Gleason score is 7 or higher, major surgery or radiation is being considered, [active surveillance](/blogs/active-surveillance-prostate-cancer) is being considered, pathology and imaging do not seem to match, or there is a disagreement between pathology reports."
+        },
+        {
+          "id": "p_158",
+          "type": "paragraph",
+          "text": "A second pathology opinion from a specialist genitourinary pathologist can sometimes clarify the Grade Group or other important features."
+        },
+        {
+          "id": "btn_159",
+          "type": "button",
+          "label": "Ask for a pathology second opinion",
+          "href": "/consult?treatment=Prostate%20Pathology%20Review"
+        },
+        {
+          "id": "p_160",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 to send slides or the biopsy PDF](https://wa.me/919044346292?text=I%20would%20like%20a%20genitourinary%20pathology%20review%20of%20my%20prostate%20biopsy%20Gleason%20score%20and%20Grade%20Group%20in%20India.)"
+        },
+        {
+          "id": "h_161",
+          "type": "heading",
+          "level": 2,
+          "text": "Does MRI or PSMA PET Replace the Gleason Score?"
+        },
+        {
+          "id": "p_162",
+          "type": "paragraph",
+          "text": "No. MRI can provide information about suspicious lesions, tumor location, local extension, possible extracapsular disease and seminal vesicle involvement. Biopsy provides tissue for Gleason patterns, Gleason score, Grade Group and other pathological characteristics."
+        },
+        {
+          "id": "p_163",
+          "type": "paragraph",
+          "text": "PSMA PET can help identify prostate cancer deposits elsewhere in the body in appropriate clinical settings. The biopsy provides microscopic information about the cancer. The two tests complement each other rather than replacing each other. See [diagnosis](/blogs/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet) and [recurrence after surgery](/blogs/prostate-cancer-recurrence-after-surgery)."
+        },
+        {
+          "id": "h_164",
+          "type": "heading",
+          "level": 2,
+          "text": "Gleason Score and Active Surveillance, Surgery, Radiation and Hormone Therapy"
+        },
+        {
+          "id": "p_165",
+          "type": "paragraph",
+          "text": "Patients with **Grade Group 1** disease are commonly considered for [active surveillance](/blogs/active-surveillance-prostate-cancer) when other criteria are favorable. Selected patients with **Grade Group 2** disease may also be considered in carefully chosen circumstances."
+        },
+        {
+          "id": "p_166",
+          "type": "paragraph",
+          "text": "The biopsy Grade Group helps the team assess whether [radical prostatectomy](/blogs/robotic-prostatectomy-in-india) may be appropriate. After surgery, the entire prostate specimen is examined and can provide a more complete picture than the original biopsy."
+        },
+        {
+          "id": "p_167",
+          "type": "paragraph",
+          "text": "For higher-risk localized or locally advanced prostate cancer, [radiation](/blogs/radiation-therapy-for-prostate-cancer) may be combined with hormonal treatment depending on the overall risk profile. Forms include EBRT, IMRT, IGRT, SBRT in selected patients, [brachytherapy](/blogs/brachytherapy-for-prostate-cancer) and combination approaches."
+        },
+        {
+          "id": "p_168",
+          "type": "paragraph",
+          "text": "Hormone therapy (ADT) may be used with radiation for selected higher-risk localized or locally advanced disease, and is a major component of treatment for many patients with advanced or metastatic prostate cancer. Stage, metastatic status and previous treatment matter as much as Grade Group. See [hormone therapy cost](/costs/India/Medical-Oncology/Hormone-Therapy)."
+        },
+        {
+          "id": "h_169",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Gleason Score the Same as ISUP Grade?"
+        },
+        {
+          "id": "p_170",
+          "type": "paragraph",
+          "text": "You may see the term **ISUP Grade Group** on some reports."
+        },
+        {
+          "id": "p_171",
+          "type": "paragraph",
+          "text": "For practical purposes: ISUP Grade Group 1 → Gleason 6; 2 → 3+4=7; 3 → 4+3=7; 4 → Gleason 8; 5 → Gleason 9–10."
+        },
+        {
+          "id": "p_172",
+          "type": "paragraph",
+          "text": "The terminology may vary slightly between pathology reports, institutions and countries, but the underlying five-group classification is widely used."
+        },
+        {
+          "id": "h_173",
+          "type": "heading",
+          "level": 2,
+          "text": "Common Mistakes Patients Make When Reading a Gleason Report"
+        },
+        {
+          "id": "ul_174",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Thinking Gleason 6 means “60% cancer.”** It does not. Gleason 6 is a grade, not a percentage.",
+            "**Thinking Gleason 7 is always the same.** 3+4=7 and 4+3=7 belong to different Grade Groups.",
+            "**Assuming Gleason score equals stage.** Grade and stage describe different aspects of cancer.",
+            "**Looking only at the highest number.** The pattern combination matters.",
+            "**Ignoring biopsy volume.** Positive cores and amount of cancer in each core add information.",
+            "**Assuming the biopsy is the final word.** MRI, repeat biopsy or surgical pathology may provide additional information."
+          ]
+        },
+        {
+          "id": "h_175",
+          "type": "heading",
+          "level": 2,
+          "text": "Questions to Ask Your Urologist After Receiving a Gleason Score"
+        },
+        {
+          "id": "ol_176",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is my exact Gleason score?",
+            "Is it 3+4 or 4+3?",
+            "What is my Grade Group?",
+            "How many biopsy cores contain cancer?",
+            "What percentage of each core is involved?",
+            "What percentage of the tumor is Gleason pattern 4?",
+            "Is cribriform architecture present?",
+            "Is intraductal carcinoma present?",
+            "What is my PSA level?",
+            "What does my MRI show?",
+            "What is my clinical stage?",
+            "Is the disease considered low, intermediate, high or very high risk?",
+            "Do I need additional staging scans?",
+            "Would a specialist pathology review be useful?",
+            "What treatment options are appropriate for my specific risk group?",
+            "Is active surveillance appropriate in my case?",
+            "If treatment is recommended, why is that treatment being proposed?",
+            "Would surgery, radiation or another approach be reasonable alternatives?"
+          ]
+        },
+        {
+          "id": "h_177",
+          "type": "heading",
+          "level": 2,
+          "text": "Gleason Score and Grade Group: Simple Summary"
+        },
+        {
+          "id": "p_178",
+          "type": "paragraph",
+          "text": "**Gleason score** = microscopic pattern information. **Grade Group** = simplified 1-to-5 grading system. **PSA** = blood marker. **Stage** = how far the cancer has spread. **Risk group** = combination of several clinical factors."
+        },
+        {
+          "id": "p_179",
+          "type": "paragraph",
+          "text": "Grade Group 1 → Gleason 6. Grade Group 2 → Gleason 3+4=7. Grade Group 3 → Gleason 4+3=7. Grade Group 4 → Gleason 8. Grade Group 5 → Gleason 9–10."
+        },
+        {
+          "id": "p_180",
+          "type": "paragraph",
+          "text": "The most important practical lesson is that **no single number tells the entire story**. A prostate cancer diagnosis needs to be interpreted using the pathology report, PSA, imaging, clinical stage and other relevant patient factors."
+        },
+        {
+          "id": "h_181",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_182",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the Gleason score in prostate cancer?"
+        },
+        {
+          "id": "p_183",
+          "type": "paragraph",
+          "text": "The Gleason score is a grading system based on how prostate cancer cells and their glandular architecture look under a microscope. It helps estimate how aggressively the cancer may behave and contributes to treatment and risk assessment."
+        },
+        {
+          "id": "h_184",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the normal Gleason score?"
+        },
+        {
+          "id": "p_185",
+          "type": "paragraph",
+          "text": "There is no “normal” Gleason score because Gleason scoring is used to grade prostate cancer tissue. When cancer is present, the lowest commonly reported Gleason score is 6, corresponding to Grade Group 1."
+        },
+        {
+          "id": "h_186",
+          "type": "heading",
+          "level": 3,
+          "text": "Is Gleason 6 considered cancer?"
+        },
+        {
+          "id": "p_187",
+          "type": "paragraph",
+          "text": "Yes. Gleason 3+3=6 is prostate cancer and corresponds to Grade Group 1. Many such cancers are slow-growing and may be suitable for active surveillance when other clinical factors are favorable."
+        },
+        {
+          "id": "h_188",
+          "type": "heading",
+          "level": 3,
+          "text": "Is Gleason 7 prostate cancer serious?"
+        },
+        {
+          "id": "p_189",
+          "type": "paragraph",
+          "text": "Gleason 7 represents two different Grade Groups. 3+4=7 is Grade Group 2, while 4+3=7 is Grade Group 3. The distinction is clinically important."
+        },
+        {
+          "id": "h_190",
+          "type": "heading",
+          "level": 3,
+          "text": "Which is worse: Gleason 3+4 or 4+3?"
+        },
+        {
+          "id": "p_191",
+          "type": "paragraph",
+          "text": "They have the same total score but different predominant patterns. 4+3=7 is Grade Group 3, while 3+4=7 is Grade Group 2, reflecting the greater predominance of pattern 4 in 4+3 disease."
+        },
+        {
+          "id": "h_192",
+          "type": "heading",
+          "level": 3,
+          "text": "What does Grade Group 1 mean?"
+        },
+        {
+          "id": "p_193",
+          "type": "paragraph",
+          "text": "Grade Group 1 corresponds to Gleason 6 or less, usually 3+3=6. It is the lowest Grade Group used for prostate cancer."
+        },
+        {
+          "id": "h_194",
+          "type": "heading",
+          "level": 3,
+          "text": "What does Grade Group 2 mean?"
+        },
+        {
+          "id": "p_195",
+          "type": "paragraph",
+          "text": "Grade Group 2 corresponds to Gleason 3+4=7. Pattern 3 is predominant and pattern 4 is present as a lesser component."
+        },
+        {
+          "id": "h_196",
+          "type": "heading",
+          "level": 3,
+          "text": "What does Grade Group 3 mean?"
+        },
+        {
+          "id": "p_197",
+          "type": "paragraph",
+          "text": "Grade Group 3 corresponds to Gleason 4+3=7. Pattern 4 is predominant."
+        },
+        {
+          "id": "h_198",
+          "type": "heading",
+          "level": 3,
+          "text": "What does Grade Group 4 mean?"
+        },
+        {
+          "id": "p_199",
+          "type": "paragraph",
+          "text": "Grade Group 4 generally corresponds to Gleason score 8, including combinations such as 4+4, 3+5 and 5+3."
+        },
+        {
+          "id": "h_200",
+          "type": "heading",
+          "level": 3,
+          "text": "What does Grade Group 5 mean?"
+        },
+        {
+          "id": "p_201",
+          "type": "paragraph",
+          "text": "Grade Group 5 corresponds to Gleason scores 9 or 10 and represents the highest Grade Group."
+        },
+        {
+          "id": "h_202",
+          "type": "heading",
+          "level": 3,
+          "text": "Is Grade Group the same as Gleason score?"
+        },
+        {
+          "id": "p_203",
+          "type": "paragraph",
+          "text": "No. Grade Group is a newer five-level system derived from Gleason grading. Both may appear together on a pathology report."
+        },
+        {
+          "id": "h_204",
+          "type": "heading",
+          "level": 3,
+          "text": "Can Gleason score change after prostate surgery?"
+        },
+        {
+          "id": "p_205",
+          "type": "paragraph",
+          "text": "Yes. The prostate removed during surgery provides a larger tissue specimen than a biopsy, and the final pathology can reveal a different Grade Group or additional features."
+        },
+        {
+          "id": "h_206",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a low Gleason score still spread?"
+        },
+        {
+          "id": "p_207",
+          "type": "paragraph",
+          "text": "Yes, although lower-grade cancers generally have a lower likelihood of aggressive behavior. Stage and other clinical factors must also be assessed."
+        },
+        {
+          "id": "h_208",
+          "type": "heading",
+          "level": 3,
+          "text": "Does Gleason score determine life expectancy?"
+        },
+        {
+          "id": "p_209",
+          "type": "paragraph",
+          "text": "No. Gleason score is an important prognostic factor, but life expectancy and individual prognosis depend on stage, PSA, overall health, age, treatment response and many other factors."
+        },
+        {
+          "id": "h_210",
+          "type": "heading",
+          "level": 3,
+          "text": "Can active surveillance be used with Gleason 6?"
+        },
+        {
+          "id": "p_211",
+          "type": "paragraph",
+          "text": "Yes. Active surveillance is commonly considered for appropriately selected men with Grade Group 1 disease, depending on the complete risk profile."
+        },
+        {
+          "id": "h_212",
+          "type": "heading",
+          "level": 3,
+          "text": "Does Gleason score determine whether surgery is needed?"
+        },
+        {
+          "id": "p_213",
+          "type": "paragraph",
+          "text": "No. Gleason score is one factor in treatment planning. Doctors also consider stage, PSA, MRI, tumor volume, overall health, life expectancy and patient preferences."
+        },
+        {
+          "id": "h_214",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Prostate Cancer Resources"
+        },
+        {
+          "id": "p_215",
+          "type": "paragraph",
+          "text": "This article is the grading hub. Other cluster pages keep their own search intent:"
+        },
+        {
+          "id": "ul_216",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Prostate Cancer Diagnosis](/blogs/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet) — how biopsy tissue is obtained and how PSA, MRI and PSMA PET fit around it.",
+            "[Prostate Cancer Symptoms](/blogs/prostate-cancer-symptoms) — why grade is not the same as how you feel.",
+            "[Active Surveillance for Prostate Cancer](/blogs/active-surveillance-prostate-cancer) — Grade Group 1 and selected Grade Group 2.",
+            "[Prostate Cancer Treatment Options](/blogs/prostate-cancer-treatment-options-india) — how teams choose first treatment after Grade Group and stage.",
+            "[Prostate Cancer Treatment Without Surgery](/blogs/prostate-cancer-treatment-without-surgery) — radiation, hormone therapy and other options.",
+            "[Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india) — surgery and the final prostatectomy pathology.",
+            "[Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer) — IMRT, IGRT and SBRT when grade supports radiation.",
+            "[Brachytherapy for Prostate Cancer](/blogs/brachytherapy-for-prostate-cancer) — internal radiation for selected grades.",
+            "[Prostate Cancer Recurrence After Surgery](/blogs/prostate-cancer-recurrence-after-surgery) — Grade Group remains relevant if PSA later rises.",
+            "[Prostate Cancer Diet](/blogs/prostate-cancer-diet) — eating during later treatment.",
+            "[Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) — staging, PSMA PET and Lutetium-177 PSMA therapy."
+          ]
+        },
+        {
+          "id": "h_217",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_218",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates international patients who have a new Gleason score and need a second look in India. Share the full biopsy PDF (not only “Gleason 7”), every PSA date, MRI files, and slides or blocks if a pathology review is needed. A coordinator can arrange a [uro-oncologist](/doctors/India/Surgical-Oncology) and, when radiation is on the table, a [radiation oncologist](/doctors/India/Radiation-Oncology), then help set [active surveillance](/blogs/active-surveillance-prostate-cancer), [surgery](/blogs/robotic-prostatectomy-in-india) or [radiation](/blogs/radiation-therapy-for-prostate-cancer) if the complete picture supports it."
+        },
+        {
+          "id": "btn_219",
+          "type": "button",
+          "label": "Share a biopsy report for a Grade Group review",
+          "href": "/consult?treatment=Gleason%20Score%20Grade%20Group"
+        },
+        {
+          "id": "p_220",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your pathology PDF](https://wa.me/919044346292?text=I%20would%20like%20to%20share%20my%20prostate%20biopsy%20Gleason%20score%2C%20Grade%20Group%20and%20PSA%20for%20a%20second%20opinion%20in%20India.)"
+        },
+        {
+          "id": "h_221",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_222",
+          "type": "paragraph",
+          "text": "This article is intended for general educational purposes and should not be used as a substitute for medical advice, diagnosis or treatment."
+        },
+        {
+          "id": "p_223",
+          "type": "paragraph",
+          "text": "A Gleason score or Grade Group should always be interpreted together with the complete pathology report, PSA, imaging, clinical stage and other medical information."
+        },
+        {
+          "id": "p_224",
+          "type": "paragraph",
+          "text": "If you have recently received a prostate biopsy report, discuss the findings with a qualified urologist, uro-oncologist, radiation oncologist or specialist pathologist before making treatment decisions."
+        },
+        {
+          "id": "h_225",
+          "type": "heading",
+          "level": 2,
+          "text": "Top 5 Sources"
+        },
+        {
+          "id": "p_226",
+          "type": "paragraph",
+          "text": "1. [American Cancer Society — Understanding Your Pathology Report: Prostate Cancer](https://www.cancer.org/cancer/diagnosis-staging/tests/pathology-reports/prostate-pathology/prostate-cancer-pathology.html) — how to read Gleason score, Grade Group and cores."
+        },
+        {
+          "id": "p_227",
+          "type": "paragraph",
+          "text": "2. [NCI — Prostate Cancer Treatment (PDQ)](https://www.cancer.gov/types/prostate/patient/prostate-treatment-pdq) — grade, stage and how they feed treatment."
+        },
+        {
+          "id": "p_228",
+          "type": "paragraph",
+          "text": "3. [American Cancer Society — Prostate Cancer Staging](https://www.cancer.org/cancer/types/prostate-cancer/detection-diagnosis-staging/staging.html) — why Grade Group is not the same as stage."
+        },
+        {
+          "id": "p_229",
+          "type": "paragraph",
+          "text": "4. [ISUP 2019 Consensus on Grading of Prostatic Carcinoma](https://pubmed.ncbi.nlm.nih.gov/32459716/) — cribriform, intraductal carcinoma and modern Grade Groups."
+        },
+        {
+          "id": "p_230",
+          "type": "paragraph",
+          "text": "5. [College of American Pathologists — Prostate Cancer Pathology Protocol](https://www.cap.org/protocols-and-guidelines/cancer-reporting-tools/cancer-protocol-templates) — how pattern 4 percentage and cores are reported."
+        },
+        {
+          "id": "p_231",
+          "type": "paragraph",
+          "text": "**Last reviewed against the cited sources: September 2026.**"
+        }
+      ]
+    },
     {
       "id": "art_prostate_cancer_symptoms",
       "slug": "prostate-cancer-symptoms",
@@ -1147,6 +2529,10 @@
         "when to see a doctor for prostate cancer"
       ],
       "relatedLinks": [
+        {
+          "label": "Gleason score and Grade Group",
+          "href": "/blogs/gleason-score-grade-group-prostate-cancer"
+        },
         {
           "label": "Prostate cancer diagnosis",
           "href": "/blogs/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet"
@@ -2896,6 +4282,10 @@
         "PSMA PET CT prostate cancer"
       ],
       "relatedLinks": [
+        {
+          "label": "Gleason score and Grade Group",
+          "href": "/blogs/gleason-score-grade-group-prostate-cancer"
+        },
         {
           "label": "Prostate cancer symptoms",
           "href": "/blogs/prostate-cancer-symptoms"
@@ -5519,6 +6909,10 @@
       ],
       "relatedLinks": [
         {
+          "label": "Gleason score and Grade Group",
+          "href": "/blogs/gleason-score-grade-group-prostate-cancer"
+        },
+        {
           "label": "Prostate cancer symptoms",
           "href": "/blogs/prostate-cancer-symptoms"
         },
@@ -8121,6 +9515,10 @@
       ],
       "relatedLinks": [
         {
+          "label": "Gleason score and Grade Group",
+          "href": "/blogs/gleason-score-grade-group-prostate-cancer"
+        },
+        {
           "label": "Prostate cancer symptoms",
           "href": "/blogs/prostate-cancer-symptoms"
         },
@@ -10613,6 +12011,10 @@
         "diet during prostate radiation"
       ],
       "relatedLinks": [
+        {
+          "label": "Gleason score and Grade Group",
+          "href": "/blogs/gleason-score-grade-group-prostate-cancer"
+        },
         {
           "label": "Prostate cancer symptoms",
           "href": "/blogs/prostate-cancer-symptoms"
@@ -13943,6 +15345,10 @@
       ],
       "relatedLinks": [
         {
+          "label": "Gleason score and Grade Group",
+          "href": "/blogs/gleason-score-grade-group-prostate-cancer"
+        },
+        {
           "label": "Prostate cancer symptoms",
           "href": "/blogs/prostate-cancer-symptoms"
         },
@@ -16922,6 +18328,10 @@
         "prostate radiation therapy India"
       ],
       "relatedLinks": [
+        {
+          "label": "Gleason score and Grade Group",
+          "href": "/blogs/gleason-score-grade-group-prostate-cancer"
+        },
         {
           "label": "Prostate cancer symptoms",
           "href": "/blogs/prostate-cancer-symptoms"
@@ -20104,6 +21514,10 @@
         "international robotic prostatectomy India"
       ],
       "relatedLinks": [
+        {
+          "label": "Gleason score and Grade Group",
+          "href": "/blogs/gleason-score-grade-group-prostate-cancer"
+        },
         {
           "label": "Prostate cancer symptoms",
           "href": "/blogs/prostate-cancer-symptoms"
@@ -23445,6 +24859,10 @@
       ],
       "relatedLinks": [
         {
+          "label": "Gleason score and Grade Group",
+          "href": "/blogs/gleason-score-grade-group-prostate-cancer"
+        },
+        {
           "label": "Prostate cancer symptoms",
           "href": "/blogs/prostate-cancer-symptoms"
         },
@@ -26400,6 +27818,10 @@
         "international prostate cancer treatment India"
       ],
       "relatedLinks": [
+        {
+          "label": "Gleason score and Grade Group",
+          "href": "/blogs/gleason-score-grade-group-prostate-cancer"
+        },
         {
           "label": "Prostate cancer symptoms",
           "href": "/blogs/prostate-cancer-symptoms"
