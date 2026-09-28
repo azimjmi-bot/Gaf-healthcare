@@ -88,7 +88,10 @@
     "BPH",
     "Gleason score",
     "Grade Group",
-    "Stage 4"
+    "Stage 4",
+    "Lu-177 PSMA",
+    "radioligand therapy",
+    "mCRPC"
   ],
   "media": [
     {
@@ -1161,9 +1164,1742 @@
       "name": "pca-st-mets.webp",
       "alt": "Transparent male figure with a gold prostate, gold spine and teal pelvic nodes used to explain distant stage",
       "addedAt": "2026-09-28T09:00:00.000Z"
+    },
+    {
+      "id": "media_pca_lu_anatomy_webp",
+      "url": "/uploads/articles/pca-lu-anatomy.webp",
+      "name": "pca-lu-anatomy.webp",
+      "alt": "Transparent male body with a gold prostate, teal pelvic nodes and gold traces along the spine used to explain PSMA-targeted radioligand therapy",
+      "addedAt": "2026-09-28T09:30:00.000Z"
+    },
+    {
+      "id": "media_pca_lu_infusion_webp",
+      "url": "/uploads/articles/pca-lu-infusion.webp",
+      "name": "pca-lu-infusion.webp",
+      "alt": "Male patient receiving an intravenous infusion while a clinician works, with a gold-spine overlay of PSMA-targeted disease",
+      "addedAt": "2026-09-28T09:30:00.000Z"
+    },
+    {
+      "id": "media_pca_lu_organs_webp",
+      "url": "/uploads/articles/pca-lu-organs.webp",
+      "name": "pca-lu-organs.webp",
+      "alt": "Transparent male figure with gold salivary glands, teal kidneys and a gold prostate used to explain Lu-177 monitoring",
+      "addedAt": "2026-09-28T09:30:00.000Z"
+    },
+    {
+      "id": "media_pca_lu_bones_webp",
+      "url": "/uploads/articles/pca-lu-bones.webp",
+      "name": "pca-lu-bones.webp",
+      "alt": "Male patient in clinic with a gold pelvic overlay of bladder, prostate and spine while a clinician explains metastatic disease",
+      "addedAt": "2026-09-28T09:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_lutetium_177_psma_therapy_in_india",
+      "slug": "lutetium-177-psma-therapy-in-india",
+      "title": "Lutetium-177 PSMA Therapy in India: Eligibility, Procedure, Cost and Side Effects",
+      "excerpt": "Lu-177 PSMA is radioligand therapy, not chemotherapy. Who may be eligible, how 7.4 GBq cycles work, side effects, and why Indian prices need an itemised quotation.",
+      "date": "28 September 2026",
+      "publishedAt": "2026-09-28T09:30:00.000Z",
+      "updatedAt": "2026-09-28T09:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Medical Oncology",
+      "tags": [
+        "prostate cancer",
+        "Lu-177 PSMA",
+        "radioligand therapy",
+        "PSMA PET",
+        "mCRPC",
+        "India"
+      ],
+      "image": "/uploads/articles/pca-lu-anatomy.webp",
+      "imageAlt": "Transparent male body with a gold prostate, teal pelvic nodes and gold traces along the spine used to explain PSMA-targeted radioligand therapy",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Lutetium-177 PSMA Therapy in India: Eligibility, Cost, Side Effects",
+      "seoDescription": "Lu-177 PSMA radioligand therapy for PSMA-positive metastatic prostate cancer: eligibility, 7.4 GBq cycles, dry mouth and kidney monitoring, and why Indian cost is not one number.",
+      "canonical": "https://gaf.healthcare/blogs/lutetium-177-psma-therapy-in-india",
+      "ogImage": "/uploads/articles/pca-lu-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Lutetium-177 PSMA therapy in India",
+        "Lu-177 PSMA",
+        "PSMA radioligand therapy",
+        "Lu-177 PSMA cost India",
+        "PSMA-positive mCRPC",
+        "VISION trial",
+        "Pluvicto India",
+        "Lu-177 side effects",
+        "PSMA PET before Lu-177",
+        "7.4 GBq PSMA",
+        "radioligand therapy prostate cancer"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Prostate cancer diagnosis",
+          "href": "/blogs/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet"
+        },
+        {
+          "label": "Prostate cancer stages 1 to 4",
+          "href": "/blogs/prostate-cancer-stages-1-to-4"
+        },
+        {
+          "label": "Treatment without surgery",
+          "href": "/blogs/prostate-cancer-treatment-without-surgery"
+        },
+        {
+          "label": "Radiation Therapy for Prostate Cancer",
+          "href": "/blogs/radiation-therapy-for-prostate-cancer"
+        },
+        {
+          "label": "Prostate Cancer Treatment in India",
+          "href": "/treatments/prostate-cancer-treatment-in-india"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>What is Lutetium-177 PSMA therapy?</strong></p><p class=\"article-quick-answer__body\">Lu-177 PSMA therapy is a targeted radioligand treatment that delivers radioactive lutetium-177 to prostate cancer cells expressing PSMA.</p><p class=\"article-quick-answer__body\"><strong>Who may be eligible?</strong></p><p class=\"article-quick-answer__body\">Eligibility depends on several factors, including:</p><ul class=\"article-quick-answer__list\"><li>Confirmed prostate cancer</li><li>Metastatic disease in the treatment settings where Lu-177 PSMA is appropriate</li><li>PSMA-positive disease on PET imaging</li><li>Disease progression or treatment setting appropriate for the specific indication</li><li>Adequate kidney function</li><li>Adequate bone-marrow reserve</li><li>Overall health sufficient to tolerate treatment</li></ul><p class=\"article-quick-answer__body\">The exact eligibility criteria depend on the approved indication, country, product and treatment protocol.</p><p class=\"article-quick-answer__body\"><strong>How is the treatment given?</strong></p><p class=\"article-quick-answer__body\">Lu-177 PSMA is administered through an intravenous infusion.</p><p class=\"article-quick-answer__body\">A commonly used regimen for Lu-177 PSMA-617 is approximately <strong>7.4 GBq (200 mCi) every 6 weeks</strong>, for up to six cycles in patients who continue to benefit and meet safety criteria.</p><p class=\"article-quick-answer__body\"><strong>What are the main side effects?</strong></p><p class=\"article-quick-answer__body\">Common or important side effects include:</p><ul class=\"article-quick-answer__list\"><li>Fatigue</li><li>Dry mouth</li><li>Nausea</li><li>Reduced blood-cell counts</li><li>Kidney toxicity</li><li>Reduced appetite</li><li>Changes in taste</li><li>Salivary-gland effects</li></ul><p class=\"article-quick-answer__body\">Bone-marrow suppression and kidney toxicity require particular attention during treatment.</p><p class=\"article-quick-answer__body\"><strong>What is the cost of Lu-177 PSMA therapy in India?</strong></p><p class=\"article-quick-answer__body\">There is no single national price.</p><p class=\"article-quick-answer__body\">Published Indian sources currently show very wide ranges depending on the radiopharmaceutical source, hospital, dose, services included and whether the quotation is for the therapy alone or a complete treatment package.</p><p class=\"article-quick-answer__body\">Some published Indian estimates place therapy around <strong>₹3.5 lakh–₹7 lakh per cycle</strong>, while specific institutional pricing can be substantially lower or higher depending on the product and package.</p><p class=\"article-quick-answer__body\">A written, itemised quotation is therefore much more useful than a generic online price.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "**Lutetium-177 PSMA therapy**, also called **Lu-177 PSMA radioligand therapy (RLT)**, is a targeted treatment for selected patients with advanced prostate cancer."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "Instead of delivering radiation from outside the body, the treatment carries a radioactive form of lutetium-177 directly to prostate cancer cells that express **prostate-specific membrane antigen (PSMA)**."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "A PSMA-targeting molecule attaches to the cancer cell. The lutetium-177 then delivers beta radiation over a short distance, damaging the targeted cancer cell and nearby tumour tissue. This approach is known as **radioligand therapy** or **targeted radionuclide therapy**."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "It is particularly important in **PSMA-positive metastatic prostate cancer**, especially when the disease has progressed despite previous systemic treatment. How metastatic stage is assigned is covered in [Prostate Cancer Stages 1 to 4](/blogs/prostate-cancer-stages-1-to-4). How PSMA PET is used in diagnosis is covered in [Prostate Cancer Diagnosis](/blogs/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet)."
+        },
+        {
+          "id": "p_006",
+          "type": "paragraph",
+          "text": "The treatment has moved from an experimental approach into established clinical practice for selected patients. In the VISION phase 3 trial, Lu-177 PSMA-617 plus standard care improved both imaging-based progression-free survival and overall survival in a specific group of patients with metastatic castration-resistant prostate cancer (mCRPC)."
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "The treatment landscape is also changing rapidly. In March 2025, the U.S. FDA expanded Pluvicto's indication to certain PSMA-positive mCRPC patients after androgen-receptor pathway inhibitor treatment who were considered appropriate to delay taxane chemotherapy. In July 2026, the FDA approved an additional indication in combination with an androgen-receptor pathway inhibitor for selected PSMA-positive metastatic androgen pathway modulation-naïve or hormone-sensitive disease."
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "This means that **eligibility should always be assessed using the patient's current disease status and the treatment regulations applicable in the country where treatment is being given** — including India."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "This is the radioligand hub for the prostate cluster. It sits beside [treatment without surgery](/blogs/prostate-cancer-treatment-without-surgery), [treatment options](/blogs/prostate-cancer-treatment-options-india), [radiation](/blogs/radiation-therapy-for-prostate-cancer), [recurrence after surgery](/blogs/prostate-cancer-recurrence-after-surgery) and [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india)."
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "International patients comparing [medical oncologists](/doctors/India/Medical-Oncology) and [radiation oncologists](/doctors/India/Radiation-Oncology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Medical-Oncology), [Mumbai](/doctors/India/Mumbai/Medical-Oncology), [Bengaluru](/doctors/India/Bengaluru/Medical-Oncology), [Chennai](/doctors/India/Chennai/Radiation-Oncology) and [Hyderabad](/doctors/India/Hyderabad/Medical-Oncology). Partner [medical-oncology hospitals](/hospitals/India/Medical-Oncology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Medical-Oncology) and [Mumbai](/hospitals/India/Mumbai/Medical-Oncology) are a typical first filter."
+        },
+        {
+          "id": "btn_011",
+          "type": "button",
+          "label": "Ask whether Lu-177 PSMA is appropriate",
+          "href": "/consult?treatment=Lutetium-177%20PSMA%20Therapy"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your PSMA PET and treatment history](https://wa.me/919044346292?text=Please%20review%20my%20PSMA%20PET%2C%20PSA%20and%20previous%20prostate%20cancer%20treatment%20and%20advise%20whether%20Lu-177%20PSMA%20therapy%20in%20India%20is%20appropriate.)"
+        },
+        {
+          "id": "img_013",
+          "type": "image",
+          "src": "/uploads/articles/pca-lu-anatomy.webp",
+          "alt": "Transparent male body with a gold prostate, teal pelvic nodes and gold traces along the spine used to explain PSMA-targeted radioligand therapy",
+          "caption": "Lu-177 PSMA is systemic. One infusion can reach PSMA-expressing disease in several places at once. It is not the same as a radiation beam aimed at one field."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Lutetium-177 PSMA Therapy?"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "Lutetium-177 PSMA therapy belongs to a group of treatments called **radioligand therapies**. The treatment has two important components."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "**1. PSMA-targeting molecule.** The ligand is designed to recognize and bind to PSMA."
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "**2. Lutetium-177.** Lutetium-177 is a radioactive isotope that emits beta radiation."
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "When the ligand binds to a PSMA-expressing cancer cell, the radioactive payload delivers radiation to the tumour. The concept can be simplified as: **PSMA target → ligand attaches → Lu-177 delivers radiation → cancer-cell damage**."
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "The radiation travels only a limited distance through tissue, which allows treatment to be concentrated around PSMA-expressing disease rather than exposing the entire body to the same radiation dose."
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "It is not completely tumour-specific. Normal tissues that express or accumulate PSMA-targeting compounds can also receive radiation. This is why kidney, salivary-gland and blood-count monitoring are important."
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 2,
+          "text": "What Does PSMA Stand For?"
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "**PSMA means prostate-specific membrane antigen.** PSMA is a protein found on prostate cells and is often expressed at much higher levels in prostate cancer."
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "Many clinically significant prostate cancers express PSMA, which makes it useful for both **imaging** and **treatment**. This is the foundation of the **theranostic approach**: the same biological target can first be identified using PSMA PET imaging and then targeted using a radioactive therapeutic molecule."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Theranostics?"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "**Theranostics** combines diagnosis and treatment around the same biological target. In prostate cancer, the concept commonly works like this:"
+        },
+        {
+          "id": "ol_026",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Find the target.** A PSMA PET scan identifies whether the cancer expresses PSMA. See [diagnosis](/blogs/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet).",
+            "**Confirm distribution.** Doctors assess where the PSMA-positive disease is located.",
+            "**Treat the target.** A PSMA-targeting molecule carrying lutetium-177 is administered.",
+            "**Monitor response.** PSA, blood tests, symptoms and imaging are used to assess whether treatment is working and whether another cycle is appropriate."
+          ]
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "This is one of the major reasons PSMA PET has become so important in modern prostate cancer care."
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Lu-177 PSMA Chemotherapy?"
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "**No.** Lu-177 PSMA therapy is not conventional chemotherapy. Chemotherapy circulates cytotoxic medicines throughout the body. Lu-177 PSMA is a **radioligand therapy**. The radioactive payload is carried to cells expressing the PSMA target."
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "This does not mean the treatment has no systemic effects. The radioactive compound circulates through the bloodstream and some normal organs are exposed. The difference is the treatment mechanism. [Chemotherapy cost in India](/costs/India/Medical-Oncology/Chemotherapy) remains a separate planning line when taxanes are still on the table."
+        },
+        {
+          "id": "h_031",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Lu-177 PSMA the Same as Radiation Therapy?"
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "It is a form of radiation treatment, but it is fundamentally different from conventional [external-beam radiation](/blogs/radiation-therapy-for-prostate-cancer)."
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "**External-beam radiation** is produced by a machine outside the body and directed toward a defined treatment area. GAF Healthcare planning ranges include [EBRT](/costs/India/Radiation-Oncology/EBRT) **$1,000–$6,000+** and [IMRT](/costs/India/Radiation-Oncology/IMRT) **$6,500–$14,500**."
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "**Lu-177 PSMA therapy** is administered into the bloodstream and travels to PSMA-expressing disease. This allows multiple metastatic sites to be treated during the same systemic therapy. It is also different from [brachytherapy](/blogs/brachytherapy-for-prostate-cancer), which places a radioactive source inside the prostate."
+        },
+        {
+          "id": "h_035",
+          "type": "heading",
+          "level": 2,
+          "text": "Which Prostate Cancer Patients May Receive Lu-177 PSMA Therapy?"
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "The answer depends on the **specific treatment indication**."
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "Historically, the strongest phase 3 evidence came from patients with metastatic, castration-resistant, PSMA-positive prostate cancer whose disease had progressed after androgen-receptor pathway inhibitor treatment and previous taxane chemotherapy. This was the population studied in the VISION trial."
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "The field has moved beyond the original VISION population. The FDA expanded Pluvicto's mCRPC indication in 2025 to include selected patients who had received an ARPI and were considered appropriate to delay taxane chemotherapy. In July 2026, the FDA also approved Lu-177 vipivotide tetraxetan with ARPI therapy for selected PSMA-positive metastatic androgen pathway modulation-naïve or hormone-sensitive disease."
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "Therefore, an article written using only the original “after chemotherapy” eligibility criteria would now be incomplete. **The exact indication available to a patient in India must be confirmed with the treating nuclear medicine and oncology team.**"
+        },
+        {
+          "id": "btn_040",
+          "type": "button",
+          "label": "Ask about Lu-177 eligibility in India",
+          "href": "/consult?treatment=Lu-177%20PSMA%20Eligibility"
+        },
+        {
+          "id": "h_041",
+          "type": "heading",
+          "level": 2,
+          "text": "Main Eligibility Criteria for Lu-177 PSMA Therapy"
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "A patient is generally assessed across several categories."
+        },
+        {
+          "id": "h_043",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Confirmed prostate cancer"
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "The patient must have a diagnosis of prostate cancer. Pathology is usually reviewed together with imaging and treatment history. [Gleason score and Grade Group](/blogs/gleason-score-grade-group-prostate-cancer) remain part of that record even when the current question is metastatic treatment."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Appropriate disease stage"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Lu-177 PSMA is primarily used for **advanced or metastatic disease in defined treatment settings**. It is not a routine treatment for newly diagnosed low-risk localized prostate cancer. See [stages 1 to 4](/blogs/prostate-cancer-stages-1-to-4) and [active surveillance](/blogs/active-surveillance-prostate-cancer)."
+        },
+        {
+          "id": "h_047",
+          "type": "heading",
+          "level": 3,
+          "text": "3. PSMA-positive disease"
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "This is one of the most important requirements. A PSMA PET scan is generally performed to determine whether the cancer expresses enough PSMA to make targeted treatment reasonable. The imaging should represent the patient's current disease status."
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "SNMMI consensus guidance recommends recent PSMA PET imaging for treatment selection and notes the importance of assessing both PSMA-positive and potentially PSMA-negative disease."
+        },
+        {
+          "id": "h_050",
+          "type": "heading",
+          "level": 3,
+          "text": "4. Adequate kidney function"
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "The kidneys are an important route of clearance for the radioligand. Renal function is assessed before treatment. Patients with severe kidney impairment may not be suitable, or treatment may require modification depending on the circumstances."
+        },
+        {
+          "id": "h_052",
+          "type": "heading",
+          "level": 3,
+          "text": "5. Adequate bone-marrow function"
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Blood counts are checked before treatment. Doctors pay particular attention to haemoglobin, white-cell count, neutrophils and platelets. Patients with significant pre-existing marrow suppression may have a higher risk of treatment-related complications."
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 3,
+          "text": "6. Overall clinical condition"
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "The treatment team also considers performance status, symptoms, disease burden, previous therapies, organ function, expected benefit and alternative treatment options. Lu-177 PSMA should not be selected solely because a PSMA PET scan is positive."
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with blood counts and kidney results](https://wa.me/919044346292?text=Please%20review%20my%20blood%20counts%2C%20kidney%20function%20and%20PSMA%20PET%20for%20Lu-177%20PSMA%20eligibility%20in%20India.)"
+        },
+        {
+          "id": "h_057",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is PSMA-Positive Disease?"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "A PSMA-positive scan means that the cancer demonstrates sufficient tracer uptake to indicate the presence of the molecular target. There is an important distinction. A patient may have **PSMA-positive lesions** and also **PSMA-negative lesions**."
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "The second situation matters because Lu-177 PSMA may not adequately target cancer that does not express the target. Treatment selection can require careful review of the complete PSMA PET/CT rather than simply reading the words “PSMA positive.”"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "The VISION trial used specific imaging criteria to ensure that patients did not have clinically significant PSMA-negative disease that could undermine the effectiveness of targeted treatment."
+        },
+        {
+          "id": "h_061",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Is PSMA PET Done Before Lu-177 PSMA Therapy?"
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "PSMA PET serves as the **companion diagnostic** for PSMA-targeted therapy. It helps answer whether the cancer is PSMA-positive, where the disease is, how extensive it is, whether there are lesions with little or no PSMA uptake, and whether the target is sufficiently expressed to justify treatment."
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "The treatment should not be thought of as simply “giving lutetium.” The key question is whether **the cancer can be effectively targeted by the radioligand**. How PSMA PET sits with PSA, MRI and biopsy is in [Prostate Cancer Diagnosis](/blogs/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet)."
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 2,
+          "text": "Does a High PSMA Uptake Mean Lu-177 PSMA Will Definitely Work?"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "No. High PSMA expression can make a patient more suitable for treatment, but it does not guarantee a response. Treatment response also depends on cancer biology, disease burden, previous treatments, PSMA heterogeneity, overall health, bone-marrow reserve and other molecular characteristics. PSMA expression is an important selection factor, not a guarantee of treatment success."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 2,
+          "text": "What Tests Are Done Before Lu-177 PSMA Therapy?"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "The pre-treatment assessment commonly includes cancer evaluation (PSA, testosterone, PSMA PET/CT, previous CT/MRI, bone imaging when relevant, previous treatment records), blood tests (complete blood count, creatinine, kidney-function assessment, liver-function tests, electrolytes), and clinical assessment (performance status, pain, urinary symptoms, hydration status, medication review, previous treatment toxicity)."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "The EANM/SNMMI guideline recommends appropriate renal and marrow assessment before treatment."
+        },
+        {
+          "id": "h_069",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens Before the First Cycle?"
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "The first cycle is generally not booked immediately after a patient arrives at the hospital. The treatment team first confirms eligibility."
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "A typical pathway is: medical records review → oncology/nuclear medicine consultation → PSMA PET/CT → blood and kidney-function assessment → eligibility review → treatment planning → Lu-177 PSMA administration."
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "This is particularly important for international patients. It is better to have the records reviewed before travelling to India whenever possible."
+        },
+        {
+          "id": "h_073",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is Lu-177 PSMA Therapy Given?"
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "The treatment is usually administered intravenously. A typical treatment day includes clinical assessment, blood-test review, hydration (oral or intravenous according to the centre's protocol), anti-nausea medication if required, radioligand administration through an IV line, observation, and radiation-safety instructions."
+        },
+        {
+          "id": "img_075",
+          "type": "image",
+          "src": "/uploads/articles/pca-lu-infusion.webp",
+          "alt": "Male patient receiving an intravenous infusion while a clinician works, with a gold-spine overlay of PSMA-targeted disease",
+          "caption": "The infusion itself is usually brief. The hospital visit can still last several hours because of checks, observation and radiation-safety briefing."
+        },
+        {
+          "id": "h_076",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Does a Lu-177 PSMA Treatment Take?"
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "The exact duration varies between centres. The treatment itself may not take very long, but the complete hospital visit can take several hours. Some centres use outpatient or day-care models. Others keep patients under observation or admit them for a short period because of radiation-safety requirements and local regulations."
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "International patients should therefore ask the hospital: **“How many hours or nights do I need to stay in the hospital for each cycle?”** This can make a significant difference to travel planning."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 2,
+          "text": "How Many Lu-177 PSMA Cycles Are Needed?"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "A commonly used regimen for Lu-177 PSMA-617 is **7.4 GBq (200 mCi) every 6 weeks, for up to 6 cycles.** Treatment is not automatically six cycles for everyone. A cycle may be delayed, dose-adjusted, stopped or continued depending on response, blood counts, kidney function, side effects, disease progression and overall clinical benefit."
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "The EANM/SNMMI guideline describes six-week intervals as the approved regimen for the established Lu-177 PSMA-617 protocol and notes that clinical practice may use different intervals or activities in selected settings."
+        },
+        {
+          "id": "h_082",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens Between Treatment Cycles?"
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "The period between cycles is not simply “waiting.” The medical team monitors PSA, complete blood count, creatinine, kidney function, symptoms, pain, fatigue, salivary-gland symptoms and treatment tolerance."
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "The EANM/SNMMI guideline recommends blood counts and creatinine monitoring approximately 2–3 weeks after each cycle and additional assessment before subsequent treatment."
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 2,
+          "text": "Does PSA Fall Immediately After Lu-177 PSMA?"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "Not necessarily. PSA response can take time. There can also be early fluctuations. The EANM/SNMMI guideline notes that PSA may be affected by early treatment-related changes and that PSA response becomes more reliable after the early treatment period, particularly after the second cycle. Doctors therefore do not usually declare treatment failure based on a single early PSA value."
+        },
+        {
+          "id": "h_087",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is Response to Lu-177 PSMA Measured?"
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "Doctors use several measures: the PSA trend; symptoms such as bone pain, energy, appetite and physical activity; blood counts and kidney function for safety; and imaging (PSMA PET/CT, CT, MRI or other imaging depending on the disease)."
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "The EANM/SNMMI guideline identifies PSMA PET/CT as an important imaging modality for restaging and recommends a second imaging modality when appropriate to identify potentially PSMA-negative disease."
+        },
+        {
+          "id": "h_090",
+          "type": "heading",
+          "level": 2,
+          "text": "What Are the Benefits of Lu-177 PSMA Therapy?"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "The main potential benefits include targeted radiation to PSMA-expressing cancer, treatment of multiple metastatic sites simultaneously, reduction in tumour burden in some patients, PSA reduction in responding patients, delayed radiographic progression, potential improvement in cancer-related symptoms, and potential improvement in overall survival in appropriate treatment populations."
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "The VISION phase 3 trial found median imaging-based progression-free survival of **8.7 months versus 3.4 months** and median overall survival of **15.3 versus 11.3 months** for Lu-177 PSMA-617 plus standard care compared with standard care alone in the studied mCRPC population."
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "These figures describe a clinical trial population. They **do not predict how long an individual patient will live**."
+        },
+        {
+          "id": "h_094",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Lu-177 PSMA a Cure for Prostate Cancer?"
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "For advanced metastatic prostate cancer, Lu-177 PSMA is generally considered a disease-control treatment rather than a guaranteed cure. Some patients experience substantial responses. Others have limited or temporary benefit. The cancer can eventually become resistant to treatment."
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "The goal may therefore be to reduce disease activity, delay progression, reduce symptoms, maintain quality of life and extend survival. The treatment objective should be discussed individually with the treating oncology team."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 2,
+          "text": "Side Effects of Lu-177 PSMA Therapy"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "The most important side effects involve salivary glands, bone marrow, kidneys, the gastrointestinal system and general energy levels. Not every patient experiences all of these effects."
+        },
+        {
+          "id": "img_099",
+          "type": "image",
+          "src": "/uploads/articles/pca-lu-organs.webp",
+          "alt": "Transparent male figure with gold salivary glands, teal kidneys and a gold prostate used to explain Lu-177 monitoring",
+          "caption": "Targeted does not mean side-effect free. Salivary glands and kidneys can receive radiation and are watched throughout the course."
+        },
+        {
+          "id": "h_100",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Dry mouth"
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "**Xerostomia**, or dry mouth, is one of the characteristic side effects of Lu-177 PSMA therapy. This occurs because salivary glands can show PSMA-related uptake. Symptoms may include dry mouth, increased thirst, difficulty swallowing dry food, changes in taste and oral discomfort. The EANM/SNMMI guideline recommends supportive measures such as water, artificial saliva products or xylitol-containing lozenges for appropriate patients."
+        },
+        {
+          "id": "h_102",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Fatigue"
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "Fatigue is common during systemic cancer treatment. After Lu-177 PSMA, patients may experience reduced energy, sleepiness, lower exercise tolerance and general weakness. Fatigue can also be caused by advanced cancer, anaemia, pain, hormone therapy or previous chemotherapy. Severe fatigue should not automatically be attributed to the radioligand."
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Reduced blood counts"
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "Lu-177 PSMA can affect bone marrow. Possible changes include anaemia, reduced white blood cells, neutropenia and reduced platelets. This risk can be greater in patients with extensive bone metastases, previous chemotherapy or poor baseline marrow reserve. Regular blood counts are therefore essential. The EANM/SNMMI guideline provides specific management pathways for clinically significant haematological toxicity, including delaying or modifying treatment when necessary."
+        },
+        {
+          "id": "h_106",
+          "type": "heading",
+          "level": 3,
+          "text": "4. Kidney toxicity"
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "The kidneys are an important clearance pathway. Renal toxicity is therefore monitored throughout treatment. Doctors may check creatinine, eGFR, electrolytes and overall kidney function. Patients with significant kidney impairment may not be suitable for treatment or may require an altered approach. The current Pluvicto prescribing information includes renal toxicity among its important warnings and precautions."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "5. Nausea"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Some patients experience nausea around the treatment period. It may be managed with anti-nausea medicines. Severe or persistent vomiting should be reported because dehydration can place additional stress on the kidneys."
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 3,
+          "text": "6. Appetite changes and taste"
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "Some patients report reduced appetite, taste changes, dry mouth and nausea. These effects can make eating more difficult. Maintaining adequate nutrition is particularly important in patients with advanced cancer. Practical eating notes are in [Prostate Cancer Diet](/blogs/prostate-cancer-diet)."
+        },
+        {
+          "id": "h_112",
+          "type": "heading",
+          "level": 3,
+          "text": "7. Bone pain flare"
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "Some patients with extensive bone metastases may experience a temporary increase in tumour-related pain shortly after treatment. The EANM/SNMMI guideline describes a possible pain flare during the first week and notes that it can subsequently improve in responding patients. Pain should still be reported because severe new pain can have other causes."
+        },
+        {
+          "id": "h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "8. Rare or serious complications"
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "Serious complications are less common but can include severe bone-marrow suppression, significant kidney injury, severe infection related to low blood counts, serious bleeding related to thrombocytopenia, persistent severe salivary-gland toxicity and other organ toxicity. The treatment should be delivered in a centre equipped to provide nuclear medicine therapy, radiation safety and appropriate medical monitoring."
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "**New weakness, numbness or loss of bladder or bowel control in a man with known prostate cancer and possible spinal metastases requires urgent evaluation in a local emergency department — not a delayed WhatsApp message.**"
+        },
+        {
+          "id": "h_117",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Lu-177 PSMA Cause Hair Loss?"
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "Hair loss is **not one of the defining toxicities** of Lu-177 PSMA therapy in the way it can be with some chemotherapy regimens. If a patient experiences significant hair loss, other medicines or previous chemotherapy should also be considered."
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Lu-177 PSMA Cause Infertility?"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "The issue is less central in men receiving Lu-177 PSMA for advanced metastatic prostate cancer because many patients are older and are also receiving long-term androgen-deprivation therapy. However, systemic radiation exposure can affect reproductive tissues. Men who may wish to preserve fertility should discuss this **before treatment**."
+        },
+        {
+          "id": "h_121",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Lu-177 PSMA Damage the Kidneys?"
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "It can. The kidneys receive some radiation because they participate in clearing the radioligand. This is why kidney function is checked before treatment, hydration is encouraged when medically appropriate, creatinine/eGFR are monitored, and treatment may be delayed or adjusted if significant toxicity occurs."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Are Salivary Glands Affected?"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "Salivary glands naturally show PSMA-related tracer uptake. When Lu-177 PSMA is administered, some of the radioactive compound reaches these glands. The radiation can therefore affect saliva production. This is one reason dry mouth is a characteristic adverse effect."
+        },
+        {
+          "id": "h_125",
+          "type": "heading",
+          "level": 2,
+          "text": "How Can Dry Mouth Be Managed?"
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "Depending on the treatment centre's protocol, supportive measures may include frequent water intake, artificial saliva, sugar-free or xylitol lozenges, good oral hygiene, regular dental care, and saliva-stimulating measures when medically appropriate. The EANM/SNMMI guideline specifically discusses artificial saliva and xylitol products for symptomatic relief."
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation Safety After Lu-177 PSMA Therapy"
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "Lu-177 emits radiation after administration. Because some radioactivity remains in the patient's body temporarily, the treatment centre provides radiation-safety instructions. These may include guidance about time spent close to other people, sleeping arrangements, bathroom hygiene, handwashing, handling bodily fluids, laundry, travel, and contact with children or pregnant women."
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "The exact restrictions depend on the administered activity, local regulations and the patient's individual circumstances. **The hospital's radiation-safety instructions should always take priority over generic internet advice.**"
+        },
+        {
+          "id": "h_130",
+          "type": "heading",
+          "level": 2,
+          "text": "Can a Patient Go Home After Lu-177 PSMA Therapy?"
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "Yes, in some centres and treatment protocols. Other centres may require a short hospital stay. The decision depends on radiation levels, local regulations, treatment activity, hospital infrastructure, the patient's home circumstances and radiation-safety requirements. Patients travelling from abroad should confirm this before booking accommodation."
+        },
+        {
+          "id": "h_132",
+          "type": "heading",
+          "level": 2,
+          "text": "Can International Patients Travel After Lu-177 PSMA Therapy?"
+        },
+        {
+          "id": "p_133",
+          "type": "paragraph",
+          "text": "Travel may be possible, but it should be planned around radiation-safety requirements. Airports may use radiation detectors, and some patients can trigger sensitive detection systems shortly after radionuclide treatment. The hospital should provide documentation of the treatment and administered radiopharmaceutical."
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "International patients should ask the nuclear medicine team: when can I fly, do I need a treatment certificate, can I pass airport radiation screening, how long should I maintain precautions, and are there restrictions on public transport?"
+        },
+        {
+          "id": "h_135",
+          "type": "heading",
+          "level": 2,
+          "text": "What Should International Patients Carry When Travelling Home?"
+        },
+        {
+          "id": "ul_136",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Treatment summary, radiopharmaceutical name, date of administration and administered activity",
+            "Radiation-safety certificate",
+            "Latest blood reports, PSA results and imaging reports",
+            "Medication list and treating doctor's contact information"
+          ]
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "This can be particularly useful if the next cycle will be performed in another country."
+        },
+        {
+          "id": "h_138",
+          "type": "heading",
+          "level": 2,
+          "text": "Lu-177 PSMA Therapy Cost in India"
+        },
+        {
+          "id": "p_139",
+          "type": "paragraph",
+          "text": "Cost is one of the most searched questions by international prostate cancer patients. There is **no single fixed Lu-177 PSMA therapy cost in India**. The price varies because the treatment is not simply the cost of the radioactive isotope."
+        },
+        {
+          "id": "p_140",
+          "type": "paragraph",
+          "text": "A complete treatment may include PSMA PET/CT, the radiopharmaceutical, treatment administration, hospital/day-care charges, nuclear medicine physician fees, medical physicist/radiation-safety services, blood tests, kidney-function testing, post-treatment imaging, medications, accommodation or inpatient stay, and follow-up consultation."
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "GAF Healthcare does not publish a dedicated Lu-177 catalog page. Adjacent systemic planning ranges on this site include [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy) **$1,000–$4,500**, [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) **$1,500–$8,000+** and [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy). Surgery and external radiation remain separate lines: [radical prostatectomy](/costs/India/Surgical-Oncology/Radical-Prostatectomy) **$7,000–$18,000**, including city pages such as [Delhi NCR prostatectomy](/costs/India/Delhi-NCR/Surgical-Oncology/Radical-Prostatectomy)."
+        },
+        {
+          "id": "h_142",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is the Current Cost of Lu-177 PSMA Therapy in India?"
+        },
+        {
+          "id": "p_143",
+          "type": "paragraph",
+          "text": "Published Indian sources show a very broad range. One recent India-focused medical source gives an indicative range of approximately **₹3.5 lakh to ₹7 lakh per cycle**, with four to six cycles often used depending on the clinical protocol. For international planning that is roughly **$4,000–$8,500 per cycle** at current conversion — an illustration, not a GAF quotation."
+        },
+        {
+          "id": "p_144",
+          "type": "paragraph",
+          "text": "A published Medanta hospital tariff document lists **₹1.50 lakh per dose for BRIT Lu-177 PSMA therapy** and ₹2.75 lakh for a non-carrier-added BRIT Lu-177 PSMA therapy code, illustrating why the source of the radiopharmaceutical and the hospital's billing structure can substantially affect the final quotation."
+        },
+        {
+          "id": "p_145",
+          "type": "paragraph",
+          "text": "Other Indian providers publish still different package prices. Some centres quote substantially higher amounts for imported or branded products and international-patient packages. Therefore, it would be misleading to present one number as **“the cost of Lu-177 PSMA therapy in India.”**"
+        },
+        {
+          "id": "p_146",
+          "type": "paragraph",
+          "text": "For international patients, a reasonable approach is to budget based on a **written hospital quotation**, rather than relying on a generic internet figure. A current published private-sector reference of roughly **₹3.5–7 lakh per cycle** can be used only as an indicative planning range, not as a guaranteed price."
+        },
+        {
+          "id": "btn_147",
+          "type": "button",
+          "label": "Ask for an itemised Lu-177 quotation",
+          "href": "/consult?treatment=Lu-177%20PSMA%20Cost%20in%20India"
+        },
+        {
+          "id": "p_148",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a cycle-by-cycle cost list](https://wa.me/919044346292?text=Please%20send%20an%20itemised%20Lu-177%20PSMA%20quotation%20in%20India%20covering%20the%20radiopharmaceutical%2C%20PSMA%20PET%2C%20hospital%20stay%20and%20blood%20tests.)"
+        },
+        {
+          "id": "h_149",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Does Lu-177 PSMA Cost Differ So Much in India?"
+        },
+        {
+          "id": "ul_150",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Radiopharmaceutical source** and formulation.",
+            "**Activity administered** — the dose is determined clinically.",
+            "**Hospital** — government, academic and private centres may have different pricing structures.",
+            "**City** — infrastructure and operating costs differ.",
+            "**Imported versus domestically supplied product.**",
+            "**Hospital stay** — some centres include admission and radiation-safety monitoring; others bill these separately.",
+            "**Imaging** — PSMA PET, post-treatment SPECT/CT and other scans may be charged separately."
+          ]
+        },
+        {
+          "id": "h_151",
+          "type": "heading",
+          "level": 2,
+          "text": "Indian-Source vs Imported Lu-177 PSMA"
+        },
+        {
+          "id": "p_152",
+          "type": "paragraph",
+          "text": "Patients sometimes see very different quotations and assume that the cheaper option must be inferior. That conclusion should not be made simply from price."
+        },
+        {
+          "id": "p_153",
+          "type": "paragraph",
+          "text": "The important questions are which radiopharmaceutical is being used, who manufactures it, what regulatory approvals apply, what ligand is attached to Lu-177, what treatment protocol is being followed, what activity will be administered, what monitoring is included, and whether the product is being used within its approved indication or under another regulatory pathway."
+        },
+        {
+          "id": "p_154",
+          "type": "paragraph",
+          "text": "A hospital should be able to explain the product and treatment protocol in writing. Do not compare two prices without comparing what is actually included."
+        },
+        {
+          "id": "h_155",
+          "type": "heading",
+          "level": 2,
+          "text": "What Should Be Included in a Lu-177 PSMA Cost Estimate?"
+        },
+        {
+          "id": "p_156",
+          "type": "paragraph",
+          "text": "For international patients, ask for an itemised quotation covering:"
+        },
+        {
+          "id": "html_157",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Cost component</th><th>Included?</th></tr></thead><tbody><tr><td>Pre-treatment consultation</td><td>Confirm</td></tr><tr><td>PSMA PET/CT</td><td>Confirm</td></tr><tr><td>Lu-177 PSMA radiopharmaceutical</td><td>Confirm</td></tr><tr><td>Administration</td><td>Confirm</td></tr><tr><td>Hospital/day-care stay</td><td>Confirm</td></tr><tr><td>Radiation-safety monitoring</td><td>Confirm</td></tr><tr><td>Blood tests</td><td>Confirm</td></tr><tr><td>Kidney-function tests</td><td>Confirm</td></tr><tr><td>Post-treatment imaging</td><td>Confirm</td></tr><tr><td>Medicines</td><td>Confirm</td></tr><tr><td>Follow-up consultation</td><td>Confirm</td></tr><tr><td>Additional scans</td><td>Confirm</td></tr><tr><td>Emergency care if required</td><td>Confirm</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_158",
+          "type": "paragraph",
+          "text": "This prevents a low advertised price from becoming a much higher final bill."
+        },
+        {
+          "id": "h_159",
+          "type": "heading",
+          "level": 2,
+          "text": "How Much Does a Full Course Cost?"
+        },
+        {
+          "id": "p_160",
+          "type": "paragraph",
+          "text": "A full course can involve multiple cycles. If a centre quotes **₹3.5–7 lakh per cycle**, four cycles would theoretically correspond to approximately **₹14–28 lakh**, while six cycles would correspond to approximately **₹21–42 lakh**, before adding services that may not be included."
+        },
+        {
+          "id": "p_161",
+          "type": "paragraph",
+          "text": "These are arithmetic illustrations based on the published per-cycle range, **not treatment quotations**. The actual number of cycles and total cost depend on clinical response, toxicity, treatment protocol and the hospital's pricing."
+        },
+        {
+          "id": "h_162",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Lu-177 PSMA Therapy Covered by Insurance in India?"
+        },
+        {
+          "id": "p_163",
+          "type": "paragraph",
+          "text": "Coverage depends on the insurance company, policy terms, product used, hospital, approved indication, pre-authorisation requirements, and whether the therapy is categorized as covered cancer treatment under the policy. Patients should obtain written confirmation before starting treatment. Do not assume that because a hospital offers the therapy, the insurance policy automatically covers it."
+        },
+        {
+          "id": "h_164",
+          "type": "heading",
+          "level": 2,
+          "text": "Lu-177 PSMA Therapy in India for International Patients"
+        },
+        {
+          "id": "p_165",
+          "type": "paragraph",
+          "text": "India has developed significant nuclear-medicine and theranostics capacity, making Lu-177 PSMA therapy an option considered by some international prostate cancer patients. The process can be organized in stages."
+        },
+        {
+          "id": "p_166",
+          "type": "paragraph",
+          "text": "**Before travelling**, send the pathology report, PSA trend, testosterone, previous treatment history, PSMA PET/CT, CT/MRI, bone imaging, blood counts, kidney-function results and current medicines. The hospital's nuclear medicine and oncology teams can then assess eligibility."
+        },
+        {
+          "id": "img_167",
+          "type": "image",
+          "src": "/uploads/articles/pca-lu-bones.webp",
+          "alt": "Male patient in clinic with a gold pelvic overlay of bladder, prostate and spine while a clinician explains metastatic disease",
+          "caption": "Have the PSMA PET files reviewed before you fly. A positive scan is not the same as a treatment booking."
+        },
+        {
+          "id": "h_168",
+          "type": "heading",
+          "level": 2,
+          "text": "International Patient Treatment Pathway"
+        },
+        {
+          "id": "ol_169",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Remote medical review** of records before travel.",
+            "**Confirm PSMA positivity** — a recent PSMA PET/CT is reviewed or arranged.",
+            "**Treatment quotation** — the hospital provides an itemised estimate.",
+            "**Travel to India** after the treatment schedule is confirmed.",
+            "**Pre-treatment assessment** — blood tests and clinical evaluation.",
+            "**First Lu-177 PSMA cycle** — the radioligand is administered.",
+            "**Radiation-safety period** — the patient follows the hospital's precautions.",
+            "**Follow-up** — PSA, blood counts and kidney function are monitored.",
+            "**Next cycle** if the patient remains eligible, either remaining in India or returning according to the treating centre and travel plan."
+          ]
+        },
+        {
+          "id": "h_170",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens If PSMA PET Shows Some PSMA-Negative Lesions?"
+        },
+        {
+          "id": "p_171",
+          "type": "paragraph",
+          "text": "This is an important treatment-planning issue. If some lesions are PSMA-negative while others are strongly PSMA-positive, Lu-177 PSMA may not adequately treat all areas of disease. Doctors may therefore consider additional imaging, CT/MRI, FDG PET in selected cases, biopsy of unusual lesions, another systemic treatment, combination treatment, or local treatment of selected lesions."
+        },
+        {
+          "id": "p_172",
+          "type": "paragraph",
+          "text": "The EANM/SNMMI guideline emphasizes the importance of identifying potentially PSMA-negative disease because it can influence treatment selection."
+        },
+        {
+          "id": "h_173",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Lu-177 PSMA Be Combined With Hormone Therapy?"
+        },
+        {
+          "id": "p_174",
+          "type": "paragraph",
+          "text": "Yes. In many treatment settings, androgen-deprivation therapy remains part of the overall prostate cancer treatment strategy. The exact combination depends on the disease setting. The FDA's 2026 approval of Lu-177 vipivotide tetraxetan for selected metastatic androgen pathway modulation-naïve or hormone-sensitive disease specifically involves combination with an androgen-receptor pathway inhibitor."
+        },
+        {
+          "id": "p_175",
+          "type": "paragraph",
+          "text": "Patients should therefore not stop ADT or another prostate cancer medicine simply because Lu-177 PSMA is being started. [Hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy) planning ranges on this site are **$1,000–$4,500** and are a separate line from the radioligand quotation."
+        },
+        {
+          "id": "h_176",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Lu-177 PSMA Be Given With Chemotherapy?"
+        },
+        {
+          "id": "p_177",
+          "type": "paragraph",
+          "text": "The answer depends on the treatment protocol and clinical setting. Combination approaches are an area of active research and may be considered in selected circumstances. However, Lu-177 PSMA should not simply be added to chemotherapy without a specialist assessment. Bone-marrow toxicity is particularly important when treatments that suppress blood counts are combined."
+        },
+        {
+          "id": "h_178",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Lu-177 PSMA Be Repeated After the First Course?"
+        },
+        {
+          "id": "p_179",
+          "type": "paragraph",
+          "text": "Potentially, but this is highly individualized. Some patients may receive additional cycles if disease continues to respond, side effects remain acceptable, blood counts and kidney function remain adequate, and the treatment team believes additional benefit is likely. Other patients may stop because of disease progression, significant toxicity, poor performance status, loss of PSMA expression or lack of clinical benefit."
+        },
+        {
+          "id": "h_180",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens If Lu-177 PSMA Stops Working?"
+        },
+        {
+          "id": "p_181",
+          "type": "paragraph",
+          "text": "If the cancer progresses, doctors reassess the entire treatment strategy. Possible options may include another androgen-receptor pathway treatment, [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy), PARP-targeted therapy for selected genomic alterations, other radioligand therapies in selected settings, [external radiation](/blogs/radiation-therapy-for-prostate-cancer) for symptomatic lesions, radium-223 in appropriate bone-predominant disease, clinical trials, and supportive and palliative treatment."
+        },
+        {
+          "id": "p_182",
+          "type": "paragraph",
+          "text": "The next step depends heavily on what treatments the patient has already received. See [recurrence after surgery](/blogs/prostate-cancer-recurrence-after-surgery) when the original treatment was prostatectomy, and [treatment options](/blogs/prostate-cancer-treatment-options-india) for the wider menu."
+        },
+        {
+          "id": "h_183",
+          "type": "heading",
+          "level": 2,
+          "text": "Lu-177 PSMA vs Chemotherapy"
+        },
+        {
+          "id": "html_184",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Lu-177 PSMA</th><th>Chemotherapy</th></tr></thead><tbody><tr><td>Treatment type</td><td>Radioligand therapy</td><td>Cytotoxic systemic therapy</td></tr><tr><td>Target</td><td>PSMA-expressing cells</td><td>Rapidly dividing cells</td></tr><tr><td>Administration</td><td>Usually IV</td><td>Usually IV or oral depending on drug</td></tr><tr><td>PSMA PET needed</td><td>Generally for treatment selection</td><td>Not usually</td></tr><tr><td>Major concerns</td><td>Salivary glands, marrow, kidneys</td><td>Marrow, gastrointestinal effects, neuropathy and others depending on drug</td></tr><tr><td>Can treat metastatic disease?</td><td>Yes, in selected PSMA-positive disease</td><td>Yes</td></tr><tr><td>Requires specialist nuclear medicine infrastructure</td><td>Yes</td><td>Not specifically</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_185",
+          "type": "paragraph",
+          "text": "Neither treatment is universally superior. The choice depends on the patient's disease and previous treatment."
+        },
+        {
+          "id": "h_186",
+          "type": "heading",
+          "level": 2,
+          "text": "Lu-177 PSMA vs Hormone Therapy"
+        },
+        {
+          "id": "p_187",
+          "type": "paragraph",
+          "text": "Hormone therapy changes androgen signalling. Lu-177 PSMA directly delivers radiation to PSMA-expressing cancer cells. They can be used at different points in the same patient's treatment journey. A patient with metastatic prostate cancer may receive ADT and other systemic therapies before becoming eligible for Lu-177 PSMA."
+        },
+        {
+          "id": "h_188",
+          "type": "heading",
+          "level": 2,
+          "text": "Lu-177 PSMA vs Radium-223"
+        },
+        {
+          "id": "p_189",
+          "type": "paragraph",
+          "text": "Both are radioactive treatments, but they are fundamentally different. **Lu-177 PSMA** targets PSMA-expressing prostate cancer cells. **Radium-223** targets areas of increased bone turnover and is used primarily in selected patients with symptomatic bone-predominant metastatic castration-resistant prostate cancer without certain visceral metastases. The choice depends on disease distribution and previous treatments."
+        },
+        {
+          "id": "h_190",
+          "type": "heading",
+          "level": 2,
+          "text": "Lu-177 PSMA vs External Radiation"
+        },
+        {
+          "id": "p_191",
+          "type": "paragraph",
+          "text": "External radiation generally treats a specific anatomical region. Lu-177 PSMA is systemic and can target multiple PSMA-positive metastases throughout the body. However, external radiation can be extremely useful for controlling pain or preventing complications from a particular bone or soft-tissue metastasis. The treatments can sometimes be used as part of the same overall care plan. See [Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer)."
+        },
+        {
+          "id": "h_192",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is the VISION Trial?"
+        },
+        {
+          "id": "p_193",
+          "type": "paragraph",
+          "text": "The **VISION trial** was a landmark phase 3 study that established strong evidence for Lu-177 PSMA-617 in a selected group of patients with advanced PSMA-positive mCRPC. The trial included patients who had previously received an androgen-receptor pathway inhibitor and one or two taxane regimens."
+        },
+        {
+          "id": "p_194",
+          "type": "paragraph",
+          "text": "Patients receiving Lu-177 PSMA-617 plus standard care had longer imaging-based progression-free survival, longer overall survival and longer time to symptomatic skeletal events. Median overall survival was **15.3 months versus 11.3 months** in the treatment and control groups, respectively."
+        },
+        {
+          "id": "p_195",
+          "type": "paragraph",
+          "text": "These results were in a heavily pre-treated population. They should not be used to predict an individual patient's outcome."
+        },
+        {
+          "id": "h_196",
+          "type": "heading",
+          "level": 2,
+          "text": "What Did the 2025 FDA Expansion Change?"
+        },
+        {
+          "id": "p_197",
+          "type": "paragraph",
+          "text": "In March 2025, the FDA expanded Pluvicto's mCRPC indication. The treatment became available for certain adults with PSMA-positive mCRPC who had received ARPI therapy and were considered appropriate to delay taxane chemotherapy. This was an important change because it allowed treatment in selected patients **before taxane chemotherapy**, rather than restricting the indication to patients who had already received taxanes."
+        },
+        {
+          "id": "h_198",
+          "type": "heading",
+          "level": 2,
+          "text": "What Changed in 2026?"
+        },
+        {
+          "id": "p_199",
+          "type": "paragraph",
+          "text": "On **July 31, 2026**, the FDA approved Lu-177 vipivotide tetraxetan in combination with an androgen receptor pathway inhibitor for selected adults with PSMA-positive metastatic androgen pathway modulation-naïve or hormone-sensitive prostate cancer. This represents a significant expansion of the treatment landscape."
+        },
+        {
+          "id": "p_200",
+          "type": "paragraph",
+          "text": "However, treatment availability and approved indications are **country-specific**. Therefore, Indian patients should ask the treating centre which indication, product and regulatory pathway applies to their case."
+        },
+        {
+          "id": "h_201",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Lu-177 PSMA Available in India?"
+        },
+        {
+          "id": "p_202",
+          "type": "paragraph",
+          "text": "Lu-177 PSMA radioligand therapy is available at selected nuclear medicine and cancer centres in India. However, **availability of a treatment does not mean every patient is eligible**."
+        },
+        {
+          "id": "p_203",
+          "type": "paragraph",
+          "text": "The centre should have appropriate nuclear medicine infrastructure, radiation-safety systems, radiopharmaceutical handling capability, trained nuclear medicine specialists, medical physics support, laboratory monitoring and emergency medical support. Patients should also verify which radiopharmaceutical product is being used and under what approved or regulated treatment pathway."
+        },
+        {
+          "id": "h_204",
+          "type": "heading",
+          "level": 2,
+          "text": "How to Choose a Lu-177 PSMA Treatment Centre in India"
+        },
+        {
+          "id": "p_205",
+          "type": "paragraph",
+          "text": "Price should not be the only factor."
+        },
+        {
+          "id": "h_206",
+          "type": "heading",
+          "level": 3,
+          "text": "Medical questions"
+        },
+        {
+          "id": "ul_207",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "How many Lu-177 PSMA patients do you treat?",
+            "Which PSMA radiopharmaceutical do you use, and which PSMA PET tracer?",
+            "Who interprets the PSMA PET?",
+            "How do you assess eligibility, including blood-count and kidney criteria?"
+          ]
+        },
+        {
+          "id": "h_208",
+          "type": "heading",
+          "level": 3,
+          "text": "Treatment questions"
+        },
+        {
+          "id": "ul_209",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "What activity will be administered, how many cycles, and how far apart?",
+            "Will the dose be adjusted based on toxicity?",
+            "Is post-treatment SPECT/CT performed?"
+          ]
+        },
+        {
+          "id": "h_210",
+          "type": "heading",
+          "level": 3,
+          "text": "Safety questions"
+        },
+        {
+          "id": "ul_211",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "What radiation precautions are required, and how long will I remain in the hospital?",
+            "What happens if my blood counts fall, and how is kidney toxicity monitored?",
+            "What emergency support is available?"
+          ]
+        },
+        {
+          "id": "h_212",
+          "type": "heading",
+          "level": 3,
+          "text": "Cost questions"
+        },
+        {
+          "id": "ul_213",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Is the PSMA PET, radiopharmaceutical, hospital stay, blood tests and post-treatment imaging included?",
+            "What happens if a cycle is delayed?",
+            "Are international-patient charges different?"
+          ]
+        },
+        {
+          "id": "h_214",
+          "type": "heading",
+          "level": 2,
+          "text": "Questions International Patients Should Ask Before Flying to India"
+        },
+        {
+          "id": "ol_215",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Has my PSMA PET been reviewed by your nuclear medicine team?",
+            "Am I eligible based on my current disease status?",
+            "Which Lu-177 PSMA product will be used, and is it domestically supplied or imported?",
+            "What is the dose per cycle, and how many cycles are expected?",
+            "How many days do I need to remain in India per cycle, and is hospital admission required?",
+            "What is the complete cost per cycle, and what is excluded from the quotation?",
+            "When can I fly home after treatment, and will I receive a radiation-safety certificate?",
+            "Can subsequent cycles be coordinated with my doctor in my home country?",
+            "What blood tests are required before the next cycle?",
+            "What happens if my PSA rises or my blood counts fall?"
+          ]
+        },
+        {
+          "id": "h_216",
+          "type": "heading",
+          "level": 2,
+          "text": "Myths About Lu-177 PSMA Therapy"
+        },
+        {
+          "id": "ul_217",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Myth: it cures every advanced prostate cancer.** Fact: it can produce meaningful responses in selected patients, but advanced prostate cancer can eventually progress despite treatment.",
+            "**Myth: a positive PSMA PET means the patient automatically qualifies.** Fact: PSMA positivity is important but is only one part of eligibility.",
+            "**Myth: Lu-177 PSMA has no side effects because it is targeted.** Fact: salivary glands and kidneys can also receive radiation.",
+            "**Myth: six cycles are mandatory.** Fact: six cycles may be the planned maximum in a common protocol, but treatment can be delayed, adjusted or stopped.",
+            "**Myth: the cheapest Lu-177 PSMA treatment is automatically the same as the most expensive.** Fact: compare itemised treatment plans, not headlines.",
+            "**Myth: PSMA PET is only needed to diagnose prostate cancer.** Fact: it is also used for staging, recurrence assessment and selecting patients for PSMA-targeted therapy.",
+            "**Myth: Lu-177 PSMA is chemotherapy.** Fact: it is a radioligand therapy, not conventional chemotherapy."
+          ]
+        },
+        {
+          "id": "h_218",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_219",
+          "type": "heading",
+          "level": 3,
+          "text": "What is Lutetium-177 PSMA therapy?"
+        },
+        {
+          "id": "p_220",
+          "type": "paragraph",
+          "text": "It is a targeted radioligand treatment in which lutetium-177 is attached to a PSMA-targeting molecule. The molecule binds to PSMA-expressing prostate cancer cells and delivers beta radiation to the tumour."
+        },
+        {
+          "id": "h_221",
+          "type": "heading",
+          "level": 3,
+          "text": "Who is eligible for Lu-177 PSMA therapy?"
+        },
+        {
+          "id": "p_222",
+          "type": "paragraph",
+          "text": "Eligibility depends on the disease setting, PSMA expression, previous treatment, kidney function, bone-marrow function and overall health. Current international indications are broader than the original VISION population, so eligibility should be assessed using the latest applicable regulatory and clinical criteria."
+        },
+        {
+          "id": "h_223",
+          "type": "heading",
+          "level": 3,
+          "text": "Is PSMA PET required before Lu-177 PSMA?"
+        },
+        {
+          "id": "p_224",
+          "type": "paragraph",
+          "text": "PSMA PET is generally central to patient selection because it demonstrates whether the cancer expresses the molecular target and helps identify the distribution of disease."
+        },
+        {
+          "id": "h_225",
+          "type": "heading",
+          "level": 3,
+          "text": "How many cycles of Lu-177 PSMA are needed?"
+        },
+        {
+          "id": "p_226",
+          "type": "paragraph",
+          "text": "A commonly used regimen is 7.4 GBq every six weeks for up to six cycles, although the actual number can vary according to response and toxicity."
+        },
+        {
+          "id": "h_227",
+          "type": "heading",
+          "level": 3,
+          "text": "How often is Lu-177 PSMA given?"
+        },
+        {
+          "id": "p_228",
+          "type": "paragraph",
+          "text": "A common schedule is once every six weeks."
+        },
+        {
+          "id": "h_229",
+          "type": "heading",
+          "level": 3,
+          "text": "Is Lu-177 PSMA painful?"
+        },
+        {
+          "id": "p_230",
+          "type": "paragraph",
+          "text": "The infusion itself is generally not painful apart from IV insertion. Some patients may experience nausea, fatigue or other treatment-related symptoms."
+        },
+        {
+          "id": "h_231",
+          "type": "heading",
+          "level": 3,
+          "text": "What are the most common side effects?"
+        },
+        {
+          "id": "p_232",
+          "type": "paragraph",
+          "text": "Fatigue, dry mouth, nausea and reductions in blood counts are among the important adverse effects. Kidney function also needs monitoring."
+        },
+        {
+          "id": "h_233",
+          "type": "heading",
+          "level": 3,
+          "text": "Does Lu-177 PSMA cause dry mouth?"
+        },
+        {
+          "id": "p_234",
+          "type": "paragraph",
+          "text": "Yes. Salivary glands can receive radiation from the treatment, making dry mouth one of the characteristic side effects."
+        },
+        {
+          "id": "h_235",
+          "type": "heading",
+          "level": 3,
+          "text": "Does Lu-177 PSMA damage the kidneys?"
+        },
+        {
+          "id": "p_236",
+          "type": "paragraph",
+          "text": "Kidney toxicity is a recognized risk, which is why renal function is assessed before and during treatment."
+        },
+        {
+          "id": "h_237",
+          "type": "heading",
+          "level": 3,
+          "text": "Can Lu-177 PSMA lower PSA?"
+        },
+        {
+          "id": "p_238",
+          "type": "paragraph",
+          "text": "Yes. Many responding patients experience a PSA decline, although the timing and degree vary."
+        },
+        {
+          "id": "h_239",
+          "type": "heading",
+          "level": 3,
+          "text": "Can PSA rise after the first Lu-177 PSMA cycle?"
+        },
+        {
+          "id": "p_240",
+          "type": "paragraph",
+          "text": "Yes. PSA changes should be interpreted in context, and early fluctuations do not necessarily prove treatment failure."
+        },
+        {
+          "id": "h_241",
+          "type": "heading",
+          "level": 3,
+          "text": "How effective is Lu-177 PSMA therapy?"
+        },
+        {
+          "id": "p_242",
+          "type": "paragraph",
+          "text": "In the VISION trial population, Lu-177 PSMA-617 improved imaging-based progression-free survival and overall survival compared with standard care. Median overall survival was 15.3 versus 11.3 months. These trial results should not be interpreted as an individual survival prediction."
+        },
+        {
+          "id": "h_243",
+          "type": "heading",
+          "level": 3,
+          "text": "Is Lu-177 PSMA a cure?"
+        },
+        {
+          "id": "p_244",
+          "type": "paragraph",
+          "text": "It is generally used to control advanced prostate cancer rather than as a guaranteed cure."
+        },
+        {
+          "id": "h_245",
+          "type": "heading",
+          "level": 3,
+          "text": "Can Lu-177 PSMA be used before chemotherapy?"
+        },
+        {
+          "id": "p_246",
+          "type": "paragraph",
+          "text": "In selected treatment settings, yes. The FDA expanded the mCRPC indication in 2025 to certain patients after ARPI treatment who were considered appropriate to delay taxane chemotherapy."
+        },
+        {
+          "id": "h_247",
+          "type": "heading",
+          "level": 3,
+          "text": "Can Lu-177 PSMA be used for hormone-sensitive metastatic prostate cancer?"
+        },
+        {
+          "id": "p_248",
+          "type": "paragraph",
+          "text": "The international regulatory landscape changed in July 2026 when the FDA approved Lu-177 vipivotide tetraxetan with an ARPI for selected PSMA-positive metastatic androgen pathway modulation-naïve or hormone-sensitive disease. The availability and indication in India must be confirmed locally."
+        },
+        {
+          "id": "h_249",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does Lu-177 PSMA therapy cost in India?"
+        },
+        {
+          "id": "p_250",
+          "type": "paragraph",
+          "text": "Published Indian sources vary considerably. A recent India-focused source gives an indicative range of approximately ₹3.5–7 lakh per cycle, while individual hospitals and radiopharmaceutical products can have substantially different pricing."
+        },
+        {
+          "id": "h_251",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does six cycles of Lu-177 PSMA cost in India?"
+        },
+        {
+          "id": "p_252",
+          "type": "paragraph",
+          "text": "There is no universal price. Using ₹3.5–7 lakh as an illustrative per-cycle range gives approximately ₹21–42 lakh for six cycles before any separately billed services. This is only an arithmetic planning illustration, not a hospital quotation."
+        },
+        {
+          "id": "h_253",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients get Lu-177 PSMA therapy in India?"
+        },
+        {
+          "id": "p_254",
+          "type": "paragraph",
+          "text": "Selected Indian centres provide Lu-177 PSMA therapy, but international patients should have their medical records and PSMA PET reviewed before travel."
+        },
+        {
+          "id": "h_255",
+          "type": "heading",
+          "level": 3,
+          "text": "How long should an international patient stay in India?"
+        },
+        {
+          "id": "p_256",
+          "type": "paragraph",
+          "text": "The required stay varies by centre and treatment protocol. The hospital should provide a cycle-by-cycle schedule before travel."
+        },
+        {
+          "id": "h_257",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I fly after Lu-177 PSMA therapy?"
+        },
+        {
+          "id": "p_258",
+          "type": "paragraph",
+          "text": "Travel may be possible after an appropriate radiation-safety interval, but the exact timing depends on the treatment activity and local radiation-safety requirements. Obtain written clearance and a treatment certificate from the treating centre."
+        },
+        {
+          "id": "h_259",
+          "type": "heading",
+          "level": 3,
+          "text": "Can Lu-177 PSMA therapy be repeated?"
+        },
+        {
+          "id": "p_260",
+          "type": "paragraph",
+          "text": "Additional cycles may be possible if the disease continues to respond and kidney function, blood counts and overall clinical condition remain acceptable."
+        },
+        {
+          "id": "h_261",
+          "type": "heading",
+          "level": 3,
+          "text": "What happens if Lu-177 PSMA does not work?"
+        },
+        {
+          "id": "p_262",
+          "type": "paragraph",
+          "text": "The oncology team can reassess the disease and consider other systemic treatments, chemotherapy, targeted therapies, additional radiation, clinical trials or supportive treatment depending on the patient's previous treatment and disease biology."
+        },
+        {
+          "id": "h_263",
+          "type": "heading",
+          "level": 2,
+          "text": "Final Takeaway"
+        },
+        {
+          "id": "p_264",
+          "type": "paragraph",
+          "text": "**Lutetium-177 PSMA therapy is a targeted radioligand treatment that delivers radiation directly to PSMA-expressing prostate cancer cells.**"
+        },
+        {
+          "id": "p_265",
+          "type": "paragraph",
+          "text": "Its role is particularly important in advanced prostate cancer, especially metastatic disease in treatment settings where PSMA-targeted radioligand therapy is appropriate. The most important eligibility factor is not simply having advanced prostate cancer. The cancer needs to demonstrate the appropriate **PSMA target**, and the patient must also have adequate organ function and an overall treatment profile that makes the therapy reasonable."
+        },
+        {
+          "id": "p_266",
+          "type": "paragraph",
+          "text": "The treatment commonly involves repeated IV administrations, often at approximately six-week intervals. A widely used Lu-177 PSMA-617 regimen is **7.4 GBq every six weeks for up to six cycles**, although treatment can be modified or stopped depending on response and toxicity."
+        },
+        {
+          "id": "p_267",
+          "type": "paragraph",
+          "text": "The major side effects to understand are **dry mouth, fatigue, reduced blood counts and kidney toxicity**. Monitoring is therefore an essential part of treatment rather than something done only after complications occur."
+        },
+        {
+          "id": "p_268",
+          "type": "paragraph",
+          "text": "For patients considering treatment in India, **cost varies substantially**. Published Indian sources currently show anything from institution-specific lower-cost radiopharmaceutical pricing to several lakh rupees per cycle in private-sector treatment packages. Ask for a **complete, written and itemised quotation** covering the radiopharmaceutical, dose, hospital stay, monitoring, imaging and follow-up."
+        },
+        {
+          "id": "p_269",
+          "type": "paragraph",
+          "text": "For international patients, the safest approach is to have the medical records and recent PSMA PET/CT reviewed by the treating centre **before travelling to India**. That can prevent an unnecessary trip when the disease does not meet the centre's eligibility criteria."
+        },
+        {
+          "id": "h_270",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Prostate Cancer Resources"
+        },
+        {
+          "id": "p_271",
+          "type": "paragraph",
+          "text": "This article is the radioligand hub. Other cluster pages keep their own search intent:"
+        },
+        {
+          "id": "ul_272",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Prostate Cancer Diagnosis](/blogs/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet) — how PSMA PET sits with PSA, MRI and biopsy.",
+            "[Prostate Cancer Stages 1 to 4](/blogs/prostate-cancer-stages-1-to-4) — why metastatic disease is not one stage number.",
+            "[Gleason Score and Grade Group](/blogs/gleason-score-grade-group-prostate-cancer) — the microscope map still on the pathology report.",
+            "[Prostate Cancer Treatment Options](/blogs/prostate-cancer-treatment-options-india) — where radioligand therapy sits in the menu.",
+            "[Prostate Cancer Treatment Without Surgery](/blogs/prostate-cancer-treatment-without-surgery) — systemic and radiation options.",
+            "[Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer) — external beams versus a circulating radioligand.",
+            "[Brachytherapy for Prostate Cancer](/blogs/brachytherapy-for-prostate-cancer) — internal radiation of a different kind.",
+            "[Prostate Cancer Recurrence After Surgery](/blogs/prostate-cancer-recurrence-after-surgery) — when PSA later rises.",
+            "[Hormone therapy cost in India](/costs/India/Medical-Oncology/Hormone-Therapy) — ADT remains part of many Lu-177 pathways.",
+            "[Prostate Cancer Diet](/blogs/prostate-cancer-diet) — eating when dry mouth and appetite change.",
+            "[Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) — coordinated staging, PSMA PET and Lu-177."
+          ]
+        },
+        {
+          "id": "h_273",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_274",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates international patients who are asking whether Lu-177 PSMA is the next step in India. Share the recent PSMA PET/CT files (not a one-line “PSMA positive”), the PSA trend, testosterone, blood counts, kidney function, and the complete treatment history including ARPI and taxane exposure. A coordinator can introduce a [medical oncologist](/doctors/India/Medical-Oncology) and, when external radiation is still on the table, a [radiation oncologist](/doctors/India/Radiation-Oncology), then help collect an itemised quotation covering the radiopharmaceutical, stay and monitoring."
+        },
+        {
+          "id": "btn_275",
+          "type": "button",
+          "label": "Share PSMA PET files for a Lu-177 review",
+          "href": "/consult?treatment=Lutetium-177%20PSMA%20Therapy"
+        },
+        {
+          "id": "p_276",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your PSMA PET and blood reports](https://wa.me/919044346292?text=I%20would%20like%20to%20share%20my%20PSMA%20PET%2C%20PSA%2C%20blood%20counts%20and%20kidney%20function%20for%20a%20Lu-177%20PSMA%20second%20opinion%20in%20India.)"
+        },
+        {
+          "id": "h_277",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_278",
+          "type": "paragraph",
+          "text": "This article is for educational purposes only and does not replace consultation with a qualified oncologist, urologic oncologist or nuclear medicine specialist."
+        },
+        {
+          "id": "p_279",
+          "type": "paragraph",
+          "text": "Lu-177 PSMA therapy is not appropriate for every patient with prostate cancer. Eligibility depends on disease stage, PSMA expression, previous treatments, blood counts, kidney function, overall health and the treatment indication approved or permitted in the relevant country."
+        },
+        {
+          "id": "p_280",
+          "type": "paragraph",
+          "text": "Treatment protocols, radiopharmaceutical products, prices and regulatory approvals can change. Patients should obtain a current treatment assessment and written quotation from the treating centre before making travel or treatment arrangements."
+        },
+        {
+          "id": "p_281",
+          "type": "paragraph",
+          "text": "Do not stop hormone therapy, chemotherapy or any other cancer treatment without speaking with your treating doctor."
+        },
+        {
+          "id": "h_282",
+          "type": "heading",
+          "level": 2,
+          "text": "Top 5 Sources"
+        },
+        {
+          "id": "p_283",
+          "type": "paragraph",
+          "text": "1. [FDA — July 2026 Pluvicto Approval](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-lutetium-lu-177-vipivotide-tetraxetan-androgen-receptor-pathway-inhibitor-therapy) — Lu-177 vipivotide tetraxetan with an ARPI for selected metastatic androgen pathway modulation-naïve or hormone-sensitive disease."
+        },
+        {
+          "id": "p_284",
+          "type": "paragraph",
+          "text": "2. [FDA — 2025 Pluvicto Indication Expansion](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-expands-pluvictos-metastatic-castration-resistant-prostate-cancer-indication) — selected PSMA-positive mCRPC after ARPI who may appropriately delay taxane chemotherapy."
+        },
+        {
+          "id": "p_285",
+          "type": "paragraph",
+          "text": "3. [EANM/SNMMI — 177Lu-PSMA Radioligand Therapy Guideline](https://snmmi.org/common/Uploaded%20files/Web/Clinical%20Practice/Procedure%20Standards/2023-01-27/EANM_SNMMI_Guideline%20Use%20of%20177Lu_PSMA%20Therapy%20Final.pdf) — patient selection, administration, monitoring, dose schedules and side-effect management."
+        },
+        {
+          "id": "p_286",
+          "type": "paragraph",
+          "text": "4. [NEJM — Lutetium-177–PSMA-617 for Metastatic Castration-Resistant Prostate Cancer](https://www.nejm.org/doi/full/10.1056/NEJMoa2107322) — the VISION phase 3 trial."
+        },
+        {
+          "id": "p_287",
+          "type": "paragraph",
+          "text": "5. [Medanta — Nuclear Medicine Published Tariff](https://cdnbbsr.s3waas.gov.in/s35679fb79d04e9ed91e292858c54df4e8/uploads/2026/01/202601081828840099.pdf) — a real-world Indian reference showing how Lu-177 PSMA pricing can vary by product category."
+        },
+        {
+          "id": "p_288",
+          "type": "paragraph",
+          "text": "**Last reviewed against the cited sources: September 2026.**"
+        }
+      ]
+    },
     {
       "id": "art_prostate_cancer_stages_1_to_4",
       "slug": "prostate-cancer-stages-1-to-4",
@@ -1206,6 +2942,10 @@
         "prostate cancer prognosis"
       ],
       "relatedLinks": [
+        {
+          "label": "Lutetium-177 PSMA therapy in India",
+          "href": "/blogs/lutetium-177-psma-therapy-in-india"
+        },
         {
           "label": "Gleason score and Grade Group",
           "href": "/blogs/gleason-score-grade-group-prostate-cancer"
@@ -2769,6 +4509,10 @@
       ],
       "relatedLinks": [
         {
+          "label": "Lutetium-177 PSMA therapy in India",
+          "href": "/blogs/lutetium-177-psma-therapy-in-india"
+        },
+        {
           "label": "Prostate cancer stages 1 to 4",
           "href": "/blogs/prostate-cancer-stages-1-to-4"
         },
@@ -4125,6 +5869,10 @@
         "when to see a doctor for prostate cancer"
       ],
       "relatedLinks": [
+        {
+          "label": "Lutetium-177 PSMA therapy in India",
+          "href": "/blogs/lutetium-177-psma-therapy-in-india"
+        },
         {
           "label": "Prostate cancer stages 1 to 4",
           "href": "/blogs/prostate-cancer-stages-1-to-4"
@@ -5882,6 +7630,10 @@
         "PSMA PET CT prostate cancer"
       ],
       "relatedLinks": [
+        {
+          "label": "Lutetium-177 PSMA therapy in India",
+          "href": "/blogs/lutetium-177-psma-therapy-in-india"
+        },
         {
           "label": "Prostate cancer stages 1 to 4",
           "href": "/blogs/prostate-cancer-stages-1-to-4"
@@ -8513,6 +10265,10 @@
       ],
       "relatedLinks": [
         {
+          "label": "Lutetium-177 PSMA therapy in India",
+          "href": "/blogs/lutetium-177-psma-therapy-in-india"
+        },
+        {
           "label": "Prostate cancer stages 1 to 4",
           "href": "/blogs/prostate-cancer-stages-1-to-4"
         },
@@ -11123,6 +12879,10 @@
       ],
       "relatedLinks": [
         {
+          "label": "Lutetium-177 PSMA therapy in India",
+          "href": "/blogs/lutetium-177-psma-therapy-in-india"
+        },
+        {
           "label": "Prostate cancer stages 1 to 4",
           "href": "/blogs/prostate-cancer-stages-1-to-4"
         },
@@ -13623,6 +15383,10 @@
         "diet during prostate radiation"
       ],
       "relatedLinks": [
+        {
+          "label": "Lutetium-177 PSMA therapy in India",
+          "href": "/blogs/lutetium-177-psma-therapy-in-india"
+        },
         {
           "label": "Prostate cancer stages 1 to 4",
           "href": "/blogs/prostate-cancer-stages-1-to-4"
@@ -16961,6 +18725,10 @@
       ],
       "relatedLinks": [
         {
+          "label": "Lutetium-177 PSMA therapy in India",
+          "href": "/blogs/lutetium-177-psma-therapy-in-india"
+        },
+        {
           "label": "Prostate cancer stages 1 to 4",
           "href": "/blogs/prostate-cancer-stages-1-to-4"
         },
@@ -19948,6 +21716,10 @@
         "prostate radiation therapy India"
       ],
       "relatedLinks": [
+        {
+          "label": "Lutetium-177 PSMA therapy in India",
+          "href": "/blogs/lutetium-177-psma-therapy-in-india"
+        },
         {
           "label": "Prostate cancer stages 1 to 4",
           "href": "/blogs/prostate-cancer-stages-1-to-4"
@@ -23138,6 +24910,10 @@
         "international robotic prostatectomy India"
       ],
       "relatedLinks": [
+        {
+          "label": "Lutetium-177 PSMA therapy in India",
+          "href": "/blogs/lutetium-177-psma-therapy-in-india"
+        },
         {
           "label": "Prostate cancer stages 1 to 4",
           "href": "/blogs/prostate-cancer-stages-1-to-4"
@@ -26487,6 +28263,10 @@
       ],
       "relatedLinks": [
         {
+          "label": "Lutetium-177 PSMA therapy in India",
+          "href": "/blogs/lutetium-177-psma-therapy-in-india"
+        },
+        {
           "label": "Prostate cancer stages 1 to 4",
           "href": "/blogs/prostate-cancer-stages-1-to-4"
         },
@@ -29450,6 +31230,10 @@
         "international prostate cancer treatment India"
       ],
       "relatedLinks": [
+        {
+          "label": "Lutetium-177 PSMA therapy in India",
+          "href": "/blogs/lutetium-177-psma-therapy-in-india"
+        },
         {
           "label": "Prostate cancer stages 1 to 4",
           "href": "/blogs/prostate-cancer-stages-1-to-4"
