@@ -118,6 +118,7 @@ test("the published prostate cancer page uses site USD ranges and GEO links", ()
   assert.match(body, /\/blogs\/prostate-cancer-diet/);
   assert.match(body, /\/blogs\/prostate-cancer-recurrence-after-surgery/);
   assert.match(body, /\/blogs\/active-surveillance-prostate-cancer/);
+  assert.match(body, /\/blogs\/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet/);
   assert.match(body, /\/costs\/India\/Surgical-Oncology\/Radical-Prostatectomy/);
   assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Radical-Prostatectomy/);
   assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Radical-Prostatectomy/);
