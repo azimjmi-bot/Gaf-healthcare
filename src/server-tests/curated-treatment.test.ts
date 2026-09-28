@@ -190,6 +190,7 @@ test("the published colon cancer page uses site USD ranges and GEO links", () =>
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
   }
   assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-surgery-in-india/);
   assert.match(body, /\/uploads\/treatments\/colon-anatomy-body\.webp/);
   assert.match(body, /\/uploads\/treatments\/colon-staging-body\.webp/);
   assert.match(body, /\/uploads\/treatments\/colon-surgery-clinic\.webp/);
