@@ -72,7 +72,10 @@
     "robotic prostatectomy",
     "brachytherapy",
     "LDR",
-    "HDR"
+    "HDR",
+    "diet",
+    "nutrition",
+    "ADT"
   ],
   "media": [
     {
@@ -949,9 +952,3349 @@
       "name": "pca-brachy-followup.webp",
       "alt": "Male patient in clinic with a pelvic overlay while a clinician reviews urinary recovery after brachytherapy",
       "addedAt": "2026-09-28T05:30:00.000Z"
+    },
+    {
+      "id": "media_pca_diet_anatomy_webp",
+      "url": "/uploads/articles/pca-diet-anatomy.webp",
+      "name": "pca-diet-anatomy.webp",
+      "alt": "Transparent male body with the digestive tract in teal and a gold highlight on the prostate in the pelvis",
+      "addedAt": "2026-09-28T06:00:00.000Z"
+    },
+    {
+      "id": "media_pca_diet_adt_webp",
+      "url": "/uploads/articles/pca-diet-adt.webp",
+      "name": "pca-diet-adt.webp",
+      "alt": "Male anatomical figure highlighting muscle, spine and hip bones with a gold band at the midsection to show body-composition change during hormone therapy",
+      "addedAt": "2026-09-28T06:00:00.000Z"
+    },
+    {
+      "id": "media_pca_diet_radiation_webp",
+      "url": "/uploads/articles/pca-diet-radiation.webp",
+      "name": "pca-diet-radiation.webp",
+      "alt": "Male patient on a radiation couch with a gold pelvic-bone overlay showing the treatment target in the lower abdomen",
+      "addedAt": "2026-09-28T06:00:00.000Z"
+    },
+    {
+      "id": "media_pca_diet_protein_webp",
+      "url": "/uploads/articles/pca-diet-protein.webp",
+      "name": "pca-diet-protein.webp",
+      "alt": "Male patient in clinic with a muscle and hip-bone overlay while a clinician reviews nutrition and recovery on a tablet",
+      "addedAt": "2026-09-28T06:00:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_prostate_cancer_diet",
+      "slug": "prostate-cancer-diet",
+      "title": "Prostate Cancer Diet: What to Eat and What to Limit During Treatment",
+      "excerpt": "No diet cures prostate cancer. A plant-forward pattern with enough protein can support muscle, weight and side effects during surgery, radiation and hormone therapy.",
+      "date": "28 September 2026",
+      "publishedAt": "2026-09-28T06:00:00.000Z",
+      "updatedAt": "2026-09-28T06:00:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Medical Oncology",
+      "tags": [
+        "prostate cancer",
+        "diet",
+        "nutrition",
+        "hormone therapy",
+        "ADT",
+        "India"
+      ],
+      "image": "/uploads/articles/pca-diet-anatomy.webp",
+      "imageAlt": "Transparent male body with the digestive tract in teal and a gold highlight on the prostate in the pelvis",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Prostate Cancer Diet: What to Eat During Treatment",
+      "seoDescription": "What to eat and limit during prostate cancer treatment, including ADT, radiation and surgery. Protein, plant foods, dairy, supplements and India-specific meals.",
+      "canonical": "https://gaf.healthcare/blogs/prostate-cancer-diet",
+      "ogImage": "/uploads/articles/pca-diet-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "prostate cancer diet",
+        "prostate cancer diet during treatment",
+        "what to eat with prostate cancer",
+        "foods to avoid with prostate cancer",
+        "ADT diet prostate cancer",
+        "hormone therapy nutrition prostate",
+        "prostate cancer diet India",
+        "lycopene prostate cancer",
+        "soy and prostate cancer",
+        "protein during prostate cancer treatment",
+        "diet after prostatectomy",
+        "diet during prostate radiation"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Prostate Cancer Treatment in India",
+          "href": "/treatments/prostate-cancer-treatment-in-india"
+        },
+        {
+          "label": "Treatment options",
+          "href": "/blogs/prostate-cancer-treatment-options-india"
+        },
+        {
+          "label": "Treatment without surgery",
+          "href": "/blogs/prostate-cancer-treatment-without-surgery"
+        },
+        {
+          "label": "Robotic Prostatectomy in India",
+          "href": "/blogs/robotic-prostatectomy-in-india"
+        },
+        {
+          "label": "Radiation Therapy for Prostate Cancer",
+          "href": "/blogs/radiation-therapy-for-prostate-cancer"
+        },
+        {
+          "label": "Brachytherapy for Prostate Cancer",
+          "href": "/blogs/brachytherapy-for-prostate-cancer"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\">There is <strong>no single prostate cancer diet that can cure cancer or replace medical treatment</strong>. However, eating well during prostate cancer treatment can help maintain muscle, support a healthy body weight, improve overall nutrition, and make it easier to cope with some treatment-related side effects.</p><p class=\"article-quick-answer__body\">A practical eating pattern is built around <strong>vegetables, fruits, whole grains, beans, lentils, nuts, seeds, healthy fats and adequate protein</strong>. Fish, poultry and other lean protein sources can be included, while red and processed meats, highly processed foods, sugary drinks and large amounts of saturated fat should generally be limited.</p><p class=\"article-quick-answer__body\">For men receiving <strong>hormone therapy (ADT)</strong>, nutrition becomes particularly important because treatment can affect body composition, muscle, bone health, weight and metabolic health.</p><p class=\"article-quick-answer__body\">During treatment, however, the priority is not always weight loss. If you are losing weight, have a poor appetite or are struggling to eat, your cancer team may recommend <strong>more calories and protein</strong>, even if some of those foods would not normally be part of a weight-loss diet.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "This guide sits beside [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india), [treatment options](/blogs/prostate-cancer-treatment-options-india), [treatment without surgery](/blogs/prostate-cancer-treatment-without-surgery), [Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india), [Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer) and [brachytherapy](/blogs/brachytherapy-for-prostate-cancer). Diet does not replace those treatments. It supports the body while they are given."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "International patients comparing [radiation oncologists](/doctors/India/Radiation-Oncology) and [medical oncologists](/doctors/India/Medical-Oncology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Radiation-Oncology), [Mumbai](/doctors/India/Mumbai/Medical-Oncology), [Bengaluru](/doctors/India/Bengaluru/Radiation-Oncology), [Chennai](/doctors/India/Chennai/Medical-Oncology) and [Hyderabad](/doctors/India/Hyderabad/Radiation-Oncology)."
+        },
+        {
+          "id": "btn_004",
+          "type": "button",
+          "label": "Ask how diet fits your prostate treatment plan",
+          "href": "/consult?treatment=Prostate%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your PSA, biopsy and current diet questions](https://wa.me/919044346292?text=Please%20review%20my%20prostate%20cancer%20records%20and%20advise%20on%20diet%20during%20treatment%20in%20India.)"
+        },
+        {
+          "id": "img_006",
+          "type": "image",
+          "src": "/uploads/articles/pca-diet-anatomy.webp",
+          "alt": "Transparent male body with the digestive tract in teal and a gold highlight on the prostate in the pelvis",
+          "caption": "Food does not treat the prostate the way radiation or hormone therapy does. Nutrition still supports muscle, weight and recovery while those treatments run."
+        },
+        {
+          "id": "h_007",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Diet Matters During Prostate Cancer Treatment"
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "Food does not work like chemotherapy, radiation therapy or hormone therapy."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "There is currently no food that has been proven to destroy prostate cancer in the way a cancer treatment does."
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "But nutrition still matters."
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "Cancer treatment can affect appetite, taste, digestion, weight, muscle mass and energy levels. Poor nutrition can make it harder to maintain strength and may interfere with the body's ability to cope with treatment."
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "A good diet during prostate cancer treatment has several practical goals:"
+        },
+        {
+          "id": "ul_013",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Maintain a healthy body weight when possible",
+            "Preserve muscle mass",
+            "Provide enough protein",
+            "Provide adequate calories",
+            "Support bone health",
+            "Support cardiovascular and metabolic health",
+            "Help manage treatment side effects",
+            "Prevent nutritional deficiencies",
+            "Support recovery after treatment"
+          ]
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "The right diet therefore depends partly on **what treatment you are receiving**."
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "A man recovering from [robotic prostatectomy](/blogs/robotic-prostatectomy-in-india) may have different nutritional priorities from someone receiving [radiation](/blogs/radiation-therapy-for-prostate-cancer) or long-term [androgen deprivation therapy](/costs/India/Medical-Oncology/Hormone-Therapy)."
+        },
+        {
+          "id": "h_016",
+          "type": "heading",
+          "level": 2,
+          "text": "What Should You Eat If You Have Prostate Cancer?"
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "Rather than focusing on one “superfood,” build your diet around a variety of minimally processed foods."
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "A useful foundation is:"
+        },
+        {
+          "id": "h_019",
+          "type": "heading",
+          "level": 3,
+          "text": "Eat more often"
+        },
+        {
+          "id": "ul_020",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Vegetables",
+            "Fruits",
+            "Beans",
+            "Lentils",
+            "Chickpeas",
+            "Whole grains",
+            "Nuts",
+            "Seeds",
+            "Fish",
+            "Lean poultry",
+            "Soy foods",
+            "Low-fat or unsweetened dairy, if tolerated",
+            "Healthy plant oils such as olive oil"
+          ]
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 3,
+          "text": "Eat less often"
+        },
+        {
+          "id": "ul_022",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Processed meat",
+            "Large amounts of red meat",
+            "Fried foods",
+            "Highly processed foods",
+            "Sugary drinks",
+            "Foods high in added sugar",
+            "Foods high in saturated fat",
+            "Large portions of refined carbohydrates",
+            "Heavy alcohol consumption"
+          ]
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "The World Cancer Research Fund recommends making whole grains, vegetables, fruits and legumes a major part of the usual diet and limiting fast foods, processed foods, red meat and processed meat."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 2,
+          "text": "The Prostate Cancer Plate"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "A simple plate method can make dietary changes easier."
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "For many people, a meal can look roughly like this:"
+        },
+        {
+          "id": "html_027",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Part of meal</th><th>Examples</th></tr></thead><tbody><tr><td><strong>½ plate</strong></td><td>Vegetables and/or salad</td></tr><tr><td><strong>¼ plate</strong></td><td>Protein such as fish, beans, lentils, tofu, chicken</td></tr><tr><td><strong>¼ plate</strong></td><td>Whole grains or other high-fibre carbohydrate</td></tr><tr><td><strong>Healthy fat</strong></td><td>Nuts, seeds, olive oil or avocado</td></tr><tr><td><strong>Drink</strong></td><td>Water or another unsweetened drink</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "This is not a rigid medical prescription."
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "If you are losing weight or struggling to eat during treatment, your dietitian may recommend a more calorie-dense version."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 2,
+          "text": "Best Foods to Include in a Prostate Cancer Diet"
+        },
+        {
+          "id": "h_031",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Vegetables"
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "Vegetables should form a major part of the diet."
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "Good choices include:"
+        },
+        {
+          "id": "ul_034",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Broccoli",
+            "Cauliflower",
+            "Cabbage",
+            "Brussels sprouts",
+            "Spinach",
+            "Kale",
+            "Carrots",
+            "Bell peppers",
+            "Green beans",
+            "Okra",
+            "Eggplant",
+            "Pumpkin",
+            "Tomatoes",
+            "Mushrooms",
+            "Leafy greens"
+          ]
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "Cruciferous vegetables such as broccoli and cauliflower are commonly included in prostate-health dietary recommendations."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "The important point is variety."
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "You do not need to eat broccoli every day or rely on one particular vegetable."
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Tomatoes and Lycopene"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "Tomatoes are frequently promoted as a prostate cancer food because they contain **lycopene**, a carotenoid with antioxidant properties."
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "However, the evidence is more complicated than many online articles suggest."
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "Earlier observational research suggested that tomatoes or lycopene might reduce prostate cancer risk. More recent evidence reviewed by AICR/WCRF has not established a significant association between tomato consumption, blood lycopene levels and total or advanced prostate cancer risk."
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "That does not mean tomatoes are unhealthy."
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "They are nutritious foods that can easily fit into a balanced diet."
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "Good options include:"
+        },
+        {
+          "id": "ul_045",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Fresh tomatoes",
+            "Tomato-based vegetable curry",
+            "Tomato soup",
+            "Tomato sauce",
+            "Cooked tomatoes with olive oil"
+          ]
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "You should eat tomatoes because they are nutritious—not because they are a proven prostate cancer treatment."
+        },
+        {
+          "id": "h_047",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Cruciferous Vegetables"
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "Broccoli, cauliflower, cabbage, kale and Brussels sprouts are rich in fibre and plant compounds."
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "They can be included regularly as part of a plant-forward eating pattern."
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "You do not need supplements containing concentrated broccoli compounds to obtain the benefits of eating vegetables."
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "Whole foods are generally the better starting point."
+        },
+        {
+          "id": "h_052",
+          "type": "heading",
+          "level": 3,
+          "text": "4. Beans, Lentils and Chickpeas"
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Legumes are particularly useful because they provide:"
+        },
+        {
+          "id": "ul_054",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Protein",
+            "Fibre",
+            "Complex carbohydrates",
+            "Vitamins and minerals"
+          ]
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "Examples include:"
+        },
+        {
+          "id": "ul_056",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Dal",
+            "Rajma",
+            "Chana",
+            "Black beans",
+            "Kidney beans",
+            "Lentils",
+            "Chickpeas",
+            "Peas"
+          ]
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "For Indian patients, traditional foods such as **dal, rajma, chole and mixed vegetable preparations** can fit very naturally into a prostate-friendly eating pattern."
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "There is no requirement to follow a Western or Mediterranean menu."
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "The principles can be adapted to local foods."
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 3,
+          "text": "5. Whole Grains"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "Choose whole or minimally processed grains when tolerated."
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Examples include:"
+        },
+        {
+          "id": "ul_063",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Oats",
+            "Brown rice",
+            "Whole-wheat roti",
+            "Whole-grain bread",
+            "Barley",
+            "Quinoa",
+            "Millets",
+            "Buckwheat"
+          ]
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "Whole grains can provide fibre and help make meals more filling."
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "If treatment causes diarrhea or digestive problems, however, your dietitian may temporarily recommend lower-fibre choices."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 3,
+          "text": "6. Fruits"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Fruit can be part of a healthy prostate cancer diet."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "Good options include:"
+        },
+        {
+          "id": "ul_069",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Apples",
+            "Oranges",
+            "Guava",
+            "Papaya",
+            "Berries",
+            "Pomegranate",
+            "Kiwi",
+            "Pears",
+            "Bananas",
+            "Melons",
+            "Mango in appropriate portions"
+          ]
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "Whole fruit is generally preferable to fruit juice because it provides fibre and is less concentrated in naturally occurring sugar."
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "The WCRF recommends a diet rich in fruits and vegetables and encourages a wide variety of plant foods."
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 3,
+          "text": "7. Nuts and Seeds"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Nuts and seeds can provide:"
+        },
+        {
+          "id": "ul_074",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Protein",
+            "Fibre",
+            "Unsaturated fats",
+            "Minerals"
+          ]
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "Useful choices include:"
+        },
+        {
+          "id": "ul_076",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Almonds",
+            "Walnuts",
+            "Pistachios",
+            "Peanuts",
+            "Chia seeds",
+            "Flaxseed",
+            "Pumpkin seeds",
+            "Sesame seeds"
+          ]
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "Because nuts and seeds are calorie-dense, portion size matters if you are trying to control weight."
+        },
+        {
+          "id": "h_078",
+          "type": "heading",
+          "level": 3,
+          "text": "8. Fish"
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "Fish can be a useful protein source."
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Examples include:"
+        },
+        {
+          "id": "ul_081",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Salmon",
+            "Sardines",
+            "Mackerel",
+            "Trout",
+            "Tuna",
+            "Local oily fish"
+          ]
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "Fish can provide protein and, depending on the type, omega-3 fatty acids."
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "It is generally better to eat fish as a food rather than relying on high-dose fish-oil supplements unless your doctor recommends supplementation."
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 3,
+          "text": "9. Soy Foods"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "Soy is sometimes surrounded by misinformation because soy contains compounds called **isoflavones** that have weak estrogen-like activity."
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "Current evidence does not support the idea that ordinary soy foods should automatically be avoided by men with prostate cancer."
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "Foods such as:"
+        },
+        {
+          "id": "ul_088",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Tofu",
+            "Tempeh",
+            "Edamame",
+            "Unsweetened soy milk"
+          ]
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "can fit into a healthy diet."
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "The American Cancer Society states that eating soy foods as part of a normal diet is safe and may be beneficial, while evidence for soy-isoflavone supplements is less clear."
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "**Food and concentrated supplements are not the same thing.**"
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 3,
+          "text": "10. Healthy Fats"
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "Not all dietary fat needs to be eliminated."
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "Focus on unsaturated fats from foods such as:"
+        },
+        {
+          "id": "ul_095",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Olive oil",
+            "Nuts",
+            "Seeds",
+            "Avocado",
+            "Fish"
+          ]
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "At the same time, reduce excessive saturated fat from foods such as:"
+        },
+        {
+          "id": "ul_097",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Fatty meats",
+            "Butter",
+            "Ghee in large amounts",
+            "Cream",
+            "Full-fat dairy",
+            "Highly processed foods"
+          ]
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "The goal is not a fat-free diet."
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "It is a better balance of fat sources."
+        },
+        {
+          "id": "h_100",
+          "type": "heading",
+          "level": 2,
+          "text": "What Foods Should You Limit During Prostate Cancer Treatment?"
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "There is no universally forbidden food list."
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "However, several categories are worth limiting."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Processed Meat"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "Processed meats include foods such as:"
+        },
+        {
+          "id": "ul_105",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Sausages",
+            "Salami",
+            "Bacon",
+            "Ham",
+            "Hot dogs",
+            "Certain deli meats"
+          ]
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "These foods are generally high in sodium and may contain preservatives such as nitrates or nitrites."
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "Cancer-prevention organizations recommend limiting processed meat."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Large Amounts of Red Meat"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Red meat includes:"
+        },
+        {
+          "id": "ul_110",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Beef",
+            "Lamb",
+            "Mutton",
+            "Pork"
+          ]
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "You do not necessarily have to eliminate red meat completely."
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "The practical approach is to keep portions moderate and make plant proteins, fish and lean poultry more frequent choices."
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "The WCRF recommends eating moderate amounts of red meat and little, if any, processed meat."
+        },
+        {
+          "id": "h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Charred and Heavily Grilled Meat"
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "Very high-temperature cooking that heavily chars meat can produce compounds that are undesirable from a cancer-prevention perspective."
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "Instead:"
+        },
+        {
+          "id": "ul_117",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Avoid heavily blackened portions",
+            "Do not repeatedly burn meat",
+            "Use lower-temperature cooking when practical",
+            "Include vegetables and plant foods alongside protein"
+          ]
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "The Prostate Cancer Foundation also recommends avoiding charred meats."
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 3,
+          "text": "4. Sugary Drinks"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "Limit:"
+        },
+        {
+          "id": "ul_121",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Soft drinks",
+            "Sweetened packaged juices",
+            "Energy drinks",
+            "Sugary tea and coffee",
+            "Sweetened beverages"
+          ]
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "Whole fruit is generally a better choice than fruit juice."
+        },
+        {
+          "id": "p_123",
+          "type": "paragraph",
+          "text": "Water should usually be the main drink unless your treatment team has given you different fluid instructions."
+        },
+        {
+          "id": "h_124",
+          "type": "heading",
+          "level": 3,
+          "text": "5. Highly Processed Foods"
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "Examples include:"
+        },
+        {
+          "id": "ul_126",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Packaged snacks",
+            "Fast food",
+            "Deep-fried foods",
+            "Processed desserts",
+            "Sugary breakfast cereals",
+            "Highly refined packaged foods"
+          ]
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "You do not need to remove every packaged food from your kitchen."
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "The goal is to make minimally processed foods the foundation of the diet."
+        },
+        {
+          "id": "h_129",
+          "type": "heading",
+          "level": 3,
+          "text": "6. Excess Saturated Fat"
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "High intake of saturated fat can make it harder to maintain cardiovascular health and healthy body composition."
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "This matters particularly for men receiving long-term ADT, because [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy) can increase metabolic and cardiovascular concerns. GAF Healthcare planning ranges for hormone therapy in India are **$1,000–$4,500**."
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "A practical approach is to replace some saturated fats with unsaturated fats rather than trying to eliminate all fat."
+        },
+        {
+          "id": "h_133",
+          "type": "heading",
+          "level": 2,
+          "text": "What About Dairy Products?"
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "This is one of the more complicated areas of prostate cancer nutrition."
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "Some studies have reported associations between high dairy intake and prostate cancer risk or progression, but the evidence is not strong enough to justify telling every man with prostate cancer to eliminate dairy."
+        },
+        {
+          "id": "p_136",
+          "type": "paragraph",
+          "text": "The WCRF states that evidence concerning dairy and prostate cancer is limited and chose not to make a general recommendation against dairy."
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "The Prostate Cancer Foundation recommends reducing high-fat dairy and notes that whole milk has been associated with worse prostate cancer outcomes in observational research. It does **not** say that all dairy must be eliminated."
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "If you consume dairy, reasonable choices may include:"
+        },
+        {
+          "id": "ul_139",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Low-fat milk",
+            "Plain yogurt",
+            "Low-fat curd",
+            "Unsweetened dairy products"
+          ]
+        },
+        {
+          "id": "p_140",
+          "type": "paragraph",
+          "text": "Your doctor or dietitian may recommend a different approach depending on your nutritional needs."
+        },
+        {
+          "id": "h_141",
+          "type": "heading",
+          "level": 2,
+          "text": "What About Calcium?"
+        },
+        {
+          "id": "p_142",
+          "type": "paragraph",
+          "text": "Calcium is important for:"
+        },
+        {
+          "id": "ul_143",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Bone health",
+            "Muscle function",
+            "Nerve function"
+          ]
+        },
+        {
+          "id": "p_144",
+          "type": "paragraph",
+          "text": "This becomes especially relevant for men receiving long-term hormone therapy because ADT can contribute to bone loss."
+        },
+        {
+          "id": "p_145",
+          "type": "paragraph",
+          "text": "Do not eliminate calcium simply because you have prostate cancer."
+        },
+        {
+          "id": "p_146",
+          "type": "paragraph",
+          "text": "Instead, discuss your individual calcium and vitamin D needs with your oncology team."
+        },
+        {
+          "id": "p_147",
+          "type": "paragraph",
+          "text": "Food sources include:"
+        },
+        {
+          "id": "ul_148",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Low-fat dairy",
+            "Fortified plant milk",
+            "Tofu made with calcium",
+            "Leafy greens",
+            "Beans",
+            "Certain fish eaten with bones"
+          ]
+        },
+        {
+          "id": "p_149",
+          "type": "paragraph",
+          "text": "The Prostate Cancer Foundation specifically notes that calcium and vitamin D are important for bone health, particularly during hormone therapy."
+        },
+        {
+          "id": "h_150",
+          "type": "heading",
+          "level": 2,
+          "text": "Should Men With Prostate Cancer Avoid Milk?"
+        },
+        {
+          "id": "p_151",
+          "type": "paragraph",
+          "text": "Not automatically."
+        },
+        {
+          "id": "p_152",
+          "type": "paragraph",
+          "text": "There is no evidence-based rule that every prostate cancer patient must stop drinking milk."
+        },
+        {
+          "id": "p_153",
+          "type": "paragraph",
+          "text": "If you enjoy milk and your medical team has not advised otherwise, a moderate amount can fit into an overall healthy eating pattern."
+        },
+        {
+          "id": "p_154",
+          "type": "paragraph",
+          "text": "If you are concerned about saturated fat or consume large quantities of dairy, switching from whole milk to lower-fat milk or an appropriate unsweetened fortified plant alternative may be reasonable."
+        },
+        {
+          "id": "h_155",
+          "type": "heading",
+          "level": 2,
+          "text": "Are Eggs Bad for Prostate Cancer?"
+        },
+        {
+          "id": "p_156",
+          "type": "paragraph",
+          "text": "Eggs are another food that is frequently presented too simply online."
+        },
+        {
+          "id": "p_157",
+          "type": "paragraph",
+          "text": "Some observational research has raised questions about egg consumption and aggressive prostate cancer, but a direct causal relationship in men who already have prostate cancer has not been firmly established."
+        },
+        {
+          "id": "p_158",
+          "type": "paragraph",
+          "text": "The Prostate Cancer Foundation states that there is currently no strong evidence requiring complete exclusion of eggs for men with prostate cancer."
+        },
+        {
+          "id": "p_159",
+          "type": "paragraph",
+          "text": "Eggs can therefore be considered as one protein option, especially when maintaining protein intake is important."
+        },
+        {
+          "id": "h_160",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Sugar Feeding Prostate Cancer?"
+        },
+        {
+          "id": "p_161",
+          "type": "paragraph",
+          "text": "This is one of the most common cancer nutrition myths."
+        },
+        {
+          "id": "p_162",
+          "type": "paragraph",
+          "text": "Your body needs glucose for normal biological functions, including the energy needs of healthy cells."
+        },
+        {
+          "id": "p_163",
+          "type": "paragraph",
+          "text": "Simply eliminating sugar from your diet does not “starve” prostate cancer."
+        },
+        {
+          "id": "p_164",
+          "type": "paragraph",
+          "text": "However, eating large amounts of added sugar can make it easier to gain excess weight and can displace more nutritious foods."
+        },
+        {
+          "id": "p_165",
+          "type": "paragraph",
+          "text": "A better goal is to:"
+        },
+        {
+          "id": "ul_166",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Reduce sugary drinks",
+            "Limit sweets and desserts",
+            "Reduce highly processed foods",
+            "Choose whole fruit",
+            "Eat balanced meals"
+          ]
+        },
+        {
+          "id": "p_167",
+          "type": "paragraph",
+          "text": "The Prostate Cancer Foundation similarly recommends limiting added sugar and sugar-sweetened beverages rather than claiming that all dietary carbohydrates must be eliminated."
+        },
+        {
+          "id": "h_168",
+          "type": "heading",
+          "level": 2,
+          "text": "Should You Follow a Keto Diet for Prostate Cancer?"
+        },
+        {
+          "id": "p_169",
+          "type": "paragraph",
+          "text": "A ketogenic diet is very low in carbohydrates and high in fat."
+        },
+        {
+          "id": "p_170",
+          "type": "paragraph",
+          "text": "It has attracted interest in cancer research, but it should not be presented as a proven treatment for prostate cancer."
+        },
+        {
+          "id": "p_171",
+          "type": "paragraph",
+          "text": "There is not enough evidence to recommend a ketogenic diet as a replacement for established prostate cancer treatment."
+        },
+        {
+          "id": "p_172",
+          "type": "paragraph",
+          "text": "It may also make it harder for some patients to consume adequate calories, fibre or other nutrients."
+        },
+        {
+          "id": "p_173",
+          "type": "paragraph",
+          "text": "If you are considering a restrictive diet during cancer treatment, discuss it with your oncology team and a registered dietitian first."
+        },
+        {
+          "id": "h_174",
+          "type": "heading",
+          "level": 2,
+          "text": "Is a Vegan Diet Better for Prostate Cancer?"
+        },
+        {
+          "id": "p_175",
+          "type": "paragraph",
+          "text": "A completely vegan diet is not required."
+        },
+        {
+          "id": "p_176",
+          "type": "paragraph",
+          "text": "A plant-forward diet can be very healthy, but patients do not need to eliminate every animal product to benefit from eating more plant foods."
+        },
+        {
+          "id": "p_177",
+          "type": "paragraph",
+          "text": "The Prostate Cancer Foundation notes that higher-quality plant-based dietary patterns have been associated with better outcomes in observational research, while also emphasizing that patients do not need to become completely vegan."
+        },
+        {
+          "id": "p_178",
+          "type": "paragraph",
+          "text": "The more practical goal is:"
+        },
+        {
+          "id": "p_179",
+          "type": "paragraph",
+          "text": "**more plants, fewer highly processed foods, and better-quality protein and fat sources.**"
+        },
+        {
+          "id": "h_180",
+          "type": "heading",
+          "level": 2,
+          "text": "What About a Mediterranean Diet?"
+        },
+        {
+          "id": "p_181",
+          "type": "paragraph",
+          "text": "A Mediterranean-style eating pattern is often used as a model for healthy eating."
+        },
+        {
+          "id": "p_182",
+          "type": "paragraph",
+          "text": "It typically emphasizes:"
+        },
+        {
+          "id": "ul_183",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Vegetables",
+            "Fruits",
+            "Whole grains",
+            "Beans",
+            "Nuts",
+            "Seeds",
+            "Olive oil",
+            "Fish",
+            "Moderate poultry and dairy",
+            "Limited red meat",
+            "Limited highly processed foods"
+          ]
+        },
+        {
+          "id": "p_184",
+          "type": "paragraph",
+          "text": "This pattern can be adapted easily to Indian, Middle Eastern, African or other cuisines."
+        },
+        {
+          "id": "p_185",
+          "type": "paragraph",
+          "text": "You do not need to eat traditional Mediterranean dishes to follow its basic principles."
+        },
+        {
+          "id": "p_186",
+          "type": "paragraph",
+          "text": "The WCRF describes Mediterranean-type patterns as generally rich in fruits, vegetables and minimally refined plant foods, with olive oil, moderate fish and poultry, and smaller amounts of red meat."
+        },
+        {
+          "id": "h_187",
+          "type": "heading",
+          "level": 2,
+          "text": "Prostate Cancer Diet During Hormone Therapy"
+        },
+        {
+          "id": "p_188",
+          "type": "paragraph",
+          "text": "Nutrition becomes especially important during **androgen deprivation therapy (ADT)**."
+        },
+        {
+          "id": "p_189",
+          "type": "paragraph",
+          "text": "ADT can affect:"
+        },
+        {
+          "id": "ul_190",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Body composition",
+            "Muscle mass",
+            "Fat distribution",
+            "Bone health",
+            "Blood sugar",
+            "Cholesterol",
+            "Cardiovascular risk"
+          ]
+        },
+        {
+          "id": "img_191",
+          "type": "image",
+          "src": "/uploads/articles/pca-diet-adt.webp",
+          "alt": "Male anatomical figure highlighting muscle, spine and hip bones with a gold band at the midsection to show body-composition change during hormone therapy",
+          "caption": "Hormone therapy can change muscle, fat and bone. Protein, vegetables and calcium-rich foods matter more than a crash diet."
+        },
+        {
+          "id": "p_192",
+          "type": "paragraph",
+          "text": "A diet that supports a healthy weight and adequate protein can therefore be particularly useful."
+        },
+        {
+          "id": "p_193",
+          "type": "paragraph",
+          "text": "Focus on:"
+        },
+        {
+          "id": "h_194",
+          "type": "heading",
+          "level": 3,
+          "text": "Protein"
+        },
+        {
+          "id": "p_195",
+          "type": "paragraph",
+          "text": "Include protein at each meal:"
+        },
+        {
+          "id": "ul_196",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Fish",
+            "Chicken",
+            "Tofu",
+            "Soy",
+            "Dal",
+            "Beans",
+            "Lentils",
+            "Greek yogurt or curd",
+            "Eggs, if appropriate",
+            "Nuts and seeds"
+          ]
+        },
+        {
+          "id": "h_197",
+          "type": "heading",
+          "level": 3,
+          "text": "Fibre"
+        },
+        {
+          "id": "p_198",
+          "type": "paragraph",
+          "text": "Choose:"
+        },
+        {
+          "id": "ul_199",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Vegetables",
+            "Fruit",
+            "Whole grains",
+            "Beans",
+            "Lentils",
+            "Nuts",
+            "Seeds"
+          ]
+        },
+        {
+          "id": "h_200",
+          "type": "heading",
+          "level": 3,
+          "text": "Healthy fats"
+        },
+        {
+          "id": "p_201",
+          "type": "paragraph",
+          "text": "Use:"
+        },
+        {
+          "id": "ul_202",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Olive oil",
+            "Nuts",
+            "Seeds",
+            "Avocado",
+            "Fish"
+          ]
+        },
+        {
+          "id": "h_203",
+          "type": "heading",
+          "level": 3,
+          "text": "Limit"
+        },
+        {
+          "id": "ul_204",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Sugary drinks",
+            "Refined snacks",
+            "Processed meat",
+            "Excess saturated fat",
+            "Excess alcohol"
+          ]
+        },
+        {
+          "id": "p_205",
+          "type": "paragraph",
+          "text": "International patients reviewing [hormone therapy in India](/costs/India/Medical-Oncology/Hormone-Therapy) can compare [Delhi NCR](/costs/India/Delhi-NCR/Medical-Oncology/Hormone-Therapy), [Mumbai](/costs/India/Mumbai/Medical-Oncology/Hormone-Therapy) and [Bengaluru](/costs/India/Bengaluru/Medical-Oncology/Hormone-Therapy). GAF planning ranges remain **$1,000–$4,500** unless a hospital issues a verified quotation."
+        },
+        {
+          "id": "btn_206",
+          "type": "button",
+          "label": "Ask about diet while on hormone therapy",
+          "href": "/consult?treatment=Hormone%20Therapy"
+        },
+        {
+          "id": "p_207",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 if you are on ADT and gaining or losing weight](https://wa.me/919044346292?text=I%20am%20on%20hormone%20therapy%20for%20prostate%20cancer.%20Please%20advise%20on%20diet%2C%20muscle%20and%20bone%20health%20during%20treatment%20in%20India.)"
+        },
+        {
+          "id": "h_208",
+          "type": "heading",
+          "level": 2,
+          "text": "Protein: One of the Most Important Nutrients During Treatment"
+        },
+        {
+          "id": "p_209",
+          "type": "paragraph",
+          "text": "Protein helps maintain muscle and other tissues."
+        },
+        {
+          "id": "p_210",
+          "type": "paragraph",
+          "text": "This becomes particularly important if you:"
+        },
+        {
+          "id": "ul_211",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Are losing weight",
+            "Have reduced appetite",
+            "Are undergoing surgery",
+            "Are receiving multiple treatments",
+            "Are older",
+            "Are receiving long-term hormone therapy",
+            "Are physically inactive"
+          ]
+        },
+        {
+          "id": "img_212",
+          "type": "image",
+          "src": "/uploads/articles/pca-diet-protein.webp",
+          "alt": "Male patient in clinic with a muscle and hip-bone overlay while a clinician reviews nutrition and recovery on a tablet",
+          "caption": "If you are losing weight, the priority is more calories and protein — not a stricter clean-eating plan."
+        },
+        {
+          "id": "p_213",
+          "type": "paragraph",
+          "text": "Good protein choices include:"
+        },
+        {
+          "id": "ul_214",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Fish",
+            "Chicken",
+            "Eggs",
+            "Tofu",
+            "Soy",
+            "Dal",
+            "Beans",
+            "Lentils",
+            "Yogurt",
+            "Milk",
+            "Nuts",
+            "Seeds"
+          ]
+        },
+        {
+          "id": "p_215",
+          "type": "paragraph",
+          "text": "If you are losing weight unintentionally, do not focus only on eating “clean.”"
+        },
+        {
+          "id": "p_216",
+          "type": "paragraph",
+          "text": "You may need **more calories and protein**, not fewer."
+        },
+        {
+          "id": "p_217",
+          "type": "paragraph",
+          "text": "NCI recommends protein- and calorie-rich foods for people experiencing appetite loss or weight loss during cancer treatment."
+        },
+        {
+          "id": "h_218",
+          "type": "heading",
+          "level": 2,
+          "text": "What If You Are Losing Weight During Prostate Cancer Treatment?"
+        },
+        {
+          "id": "p_219",
+          "type": "paragraph",
+          "text": "Unintentional weight loss deserves attention."
+        },
+        {
+          "id": "p_220",
+          "type": "paragraph",
+          "text": "Do not automatically start a low-calorie diet because you have been diagnosed with cancer."
+        },
+        {
+          "id": "p_221",
+          "type": "paragraph",
+          "text": "If you are losing weight:"
+        },
+        {
+          "id": "ul_222",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Eat smaller meals more frequently",
+            "Add protein to meals",
+            "Use calorie-dense nutritious foods",
+            "Add nuts or nut butter",
+            "Add avocado",
+            "Use smoothies if tolerated",
+            "Consider nutritional drinks if recommended",
+            "Eat when your appetite is best",
+            "Speak with an oncology dietitian"
+          ]
+        },
+        {
+          "id": "p_223",
+          "type": "paragraph",
+          "text": "NCI recommends small frequent meals and high-protein, high-calorie foods when appetite loss or weight loss is a problem."
+        },
+        {
+          "id": "btn_224",
+          "type": "button",
+          "label": "Share records if you are losing weight on treatment",
+          "href": "/consult?treatment=Prostate%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "h_225",
+          "type": "heading",
+          "level": 2,
+          "text": "What If You Gain Weight During Hormone Therapy?"
+        },
+        {
+          "id": "p_226",
+          "type": "paragraph",
+          "text": "Weight gain can occur during ADT."
+        },
+        {
+          "id": "p_227",
+          "type": "paragraph",
+          "text": "Instead of crash dieting:"
+        },
+        {
+          "id": "ul_228",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Prioritize vegetables and whole foods",
+            "Keep protein adequate",
+            "Reduce sugary drinks",
+            "Limit highly processed snacks",
+            "Watch portion sizes",
+            "Choose whole grains more often",
+            "Maintain regular physical activity if medically appropriate",
+            "Monitor waist circumference and body weight"
+          ]
+        },
+        {
+          "id": "p_229",
+          "type": "paragraph",
+          "text": "If weight is increasing rapidly, discuss it with your oncology team."
+        },
+        {
+          "id": "p_230",
+          "type": "paragraph",
+          "text": "Nutrition and exercise are often most effective when considered together."
+        },
+        {
+          "id": "h_231",
+          "type": "heading",
+          "level": 2,
+          "text": "Diet During Radiation Therapy for Prostate Cancer"
+        },
+        {
+          "id": "p_232",
+          "type": "paragraph",
+          "text": "[Radiation therapy](/blogs/radiation-therapy-for-prostate-cancer) can affect bowel and urinary symptoms."
+        },
+        {
+          "id": "p_233",
+          "type": "paragraph",
+          "text": "Some patients experience:"
+        },
+        {
+          "id": "ul_234",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Loose stools",
+            "Increased bowel frequency",
+            "Gas",
+            "Bloating",
+            "Urgency",
+            "Urinary frequency"
+          ]
+        },
+        {
+          "id": "img_235",
+          "type": "image",
+          "src": "/uploads/articles/pca-diet-radiation.webp",
+          "alt": "Male patient on a radiation couch with a gold pelvic-bone overlay showing the treatment target in the lower abdomen",
+          "caption": "Diet during radiation is not identical for everyone. Bowel and urinary symptoms decide whether fibre, fat or caffeine needs a temporary change."
+        },
+        {
+          "id": "p_236",
+          "type": "paragraph",
+          "text": "The ideal diet during radiation is therefore **not identical for everyone**."
+        },
+        {
+          "id": "p_237",
+          "type": "paragraph",
+          "text": "If bowel symptoms develop, your radiation oncology team or dietitian may temporarily adjust:"
+        },
+        {
+          "id": "ul_238",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Fibre intake",
+            "Fat intake",
+            "Caffeine",
+            "Spicy foods",
+            "Gas-producing foods",
+            "Dairy, if lactose intolerance develops"
+          ]
+        },
+        {
+          "id": "p_239",
+          "type": "paragraph",
+          "text": "Do not automatically eliminate large food groups before symptoms occur."
+        },
+        {
+          "id": "p_240",
+          "type": "paragraph",
+          "text": "Your treatment team can help identify what is actually triggering your symptoms."
+        },
+        {
+          "id": "p_241",
+          "type": "paragraph",
+          "text": "External beam courses in India are planned against GAF ranges of **$1,000–$6,000+** for [EBRT](/costs/India/Radiation-Oncology/EBRT). Compare [radiation hospitals](/hospitals/India/Radiation-Oncology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Radiation-Oncology), [Mumbai](/hospitals/India/Mumbai/Radiation-Oncology) and [Chennai](/hospitals/India/Chennai/Radiation-Oncology). [Brachytherapy](/blogs/brachytherapy-for-prostate-cancer) has its own recovery and diet questions."
+        },
+        {
+          "id": "btn_242",
+          "type": "button",
+          "label": "Ask about diet during prostate radiation",
+          "href": "/consult?treatment=Radiation%20Therapy%20for%20Prostate%20Cancer"
+        },
+        {
+          "id": "p_243",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 if radiation is changing your bowel habits](https://wa.me/919044346292?text=I%20am%20receiving%20prostate%20radiation.%20Please%20advise%20on%20diet%20if%20I%20have%20bowel%20or%20urinary%20symptoms.)"
+        },
+        {
+          "id": "h_244",
+          "type": "heading",
+          "level": 2,
+          "text": "Diet After Prostate Cancer Surgery"
+        },
+        {
+          "id": "p_245",
+          "type": "paragraph",
+          "text": "After [prostatectomy](/blogs/robotic-prostatectomy-in-india), the main nutritional priorities are usually:"
+        },
+        {
+          "id": "ul_246",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Adequate protein",
+            "Adequate calories",
+            "Hydration",
+            "Healthy weight",
+            "Fibre according to bowel tolerance",
+            "Recovery from surgery"
+          ]
+        },
+        {
+          "id": "p_247",
+          "type": "paragraph",
+          "text": "There is no special food that makes the prostate heal faster."
+        },
+        {
+          "id": "p_248",
+          "type": "paragraph",
+          "text": "A balanced diet can support recovery while your body repairs itself."
+        },
+        {
+          "id": "p_249",
+          "type": "paragraph",
+          "text": "If constipation develops because of reduced activity or pain medication, your doctor may recommend more fluid, fibre and physical activity when appropriate."
+        },
+        {
+          "id": "p_250",
+          "type": "paragraph",
+          "text": "GAF Healthcare planning ranges for [radical prostatectomy](/costs/India/Surgical-Oncology/Radical-Prostatectomy) in India are **$7,000–$18,000**. Compare [surgical hospitals](/hospitals/India/Surgical-Oncology) in [Mumbai](/hospitals/India/Mumbai/Surgical-Oncology) and [Bengaluru](/hospitals/India/Bengaluru/Surgical-Oncology)."
+        },
+        {
+          "id": "p_251",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 about recovery nutrition after robotic prostatectomy](https://wa.me/919044346292?text=Please%20advise%20on%20diet%20and%20protein%20after%20robotic%20prostatectomy%20in%20India.)"
+        },
+        {
+          "id": "h_252",
+          "type": "heading",
+          "level": 2,
+          "text": "What to Eat If You Have Constipation"
+        },
+        {
+          "id": "p_253",
+          "type": "paragraph",
+          "text": "Constipation can occur during cancer treatment or recovery."
+        },
+        {
+          "id": "p_254",
+          "type": "paragraph",
+          "text": "Depending on your treatment and medical advice, useful foods may include:"
+        },
+        {
+          "id": "ul_255",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Oats",
+            "Whole grains",
+            "Fruits",
+            "Vegetables",
+            "Beans",
+            "Lentils",
+            "Prunes",
+            "Kiwi",
+            "Nuts",
+            "Seeds"
+          ]
+        },
+        {
+          "id": "p_256",
+          "type": "paragraph",
+          "text": "Drink adequate fluids unless your doctor has restricted your fluid intake."
+        },
+        {
+          "id": "p_257",
+          "type": "paragraph",
+          "text": "Increase fibre gradually rather than suddenly."
+        },
+        {
+          "id": "p_258",
+          "type": "paragraph",
+          "text": "If constipation is severe or persistent, talk to your medical team."
+        },
+        {
+          "id": "h_259",
+          "type": "heading",
+          "level": 2,
+          "text": "What to Eat If You Have Diarrhea"
+        },
+        {
+          "id": "p_260",
+          "type": "paragraph",
+          "text": "During diarrhea, a high-fibre diet may not always be appropriate."
+        },
+        {
+          "id": "p_261",
+          "type": "paragraph",
+          "text": "Your doctor or dietitian may temporarily recommend easier-to-digest foods."
+        },
+        {
+          "id": "p_262",
+          "type": "paragraph",
+          "text": "Examples can include:"
+        },
+        {
+          "id": "ul_263",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Rice",
+            "Bananas",
+            "Potatoes",
+            "Toast",
+            "Oatmeal",
+            "Yogurt if tolerated",
+            "Eggs",
+            "Lean chicken",
+            "Soups",
+            "Well-cooked vegetables"
+          ]
+        },
+        {
+          "id": "p_264",
+          "type": "paragraph",
+          "text": "NCI recommends adapting food choices to treatment-related digestive symptoms and using easy-to-digest foods when appropriate."
+        },
+        {
+          "id": "p_265",
+          "type": "paragraph",
+          "text": "Persistent diarrhea requires medical attention because dehydration and electrolyte disturbances can occur."
+        },
+        {
+          "id": "h_266",
+          "type": "heading",
+          "level": 2,
+          "text": "What to Eat If You Have Nausea"
+        },
+        {
+          "id": "p_267",
+          "type": "paragraph",
+          "text": "If treatment makes you nauseated:"
+        },
+        {
+          "id": "ul_268",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Eat small meals",
+            "Avoid very large portions",
+            "Choose foods with mild smells",
+            "Eat slowly",
+            "Keep easy snacks available",
+            "Try dry foods such as crackers if tolerated",
+            "Drink fluids between meals",
+            "Choose foods that you personally tolerate"
+          ]
+        },
+        {
+          "id": "p_269",
+          "type": "paragraph",
+          "text": "NCI recommends small, frequent meals and adapting food texture and smell to individual tolerance."
+        },
+        {
+          "id": "h_270",
+          "type": "heading",
+          "level": 2,
+          "text": "What If Food Tastes Different During Treatment?"
+        },
+        {
+          "id": "p_271",
+          "type": "paragraph",
+          "text": "Cancer treatment can change taste and smell."
+        },
+        {
+          "id": "p_272",
+          "type": "paragraph",
+          "text": "Some patients experience:"
+        },
+        {
+          "id": "ul_273",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Metallic taste",
+            "Reduced taste",
+            "Increased sensitivity to smells",
+            "Foods suddenly tasting unpleasant"
+          ]
+        },
+        {
+          "id": "p_274",
+          "type": "paragraph",
+          "text": "Try:"
+        },
+        {
+          "id": "ul_275",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Different herbs and spices",
+            "Lemon or lime if tolerated",
+            "Cold foods",
+            "Smoothies",
+            "Yogurt",
+            "Fresh fruit",
+            "Different protein sources"
+          ]
+        },
+        {
+          "id": "p_276",
+          "type": "paragraph",
+          "text": "If meat tastes metallic, NCI suggests trying alternative protein sources such as poultry, dairy or plant-based proteins."
+        },
+        {
+          "id": "h_277",
+          "type": "heading",
+          "level": 2,
+          "text": "Are Prostate Cancer Supplements Necessary?"
+        },
+        {
+          "id": "p_278",
+          "type": "paragraph",
+          "text": "Usually, supplements should **not be used as a substitute for a healthy diet or cancer treatment**."
+        },
+        {
+          "id": "p_279",
+          "type": "paragraph",
+          "text": "Popular supplements include:"
+        },
+        {
+          "id": "ul_280",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Lycopene",
+            "Selenium",
+            "Vitamin E",
+            "Vitamin D",
+            "Zinc",
+            "Turmeric/curcumin",
+            "Green tea extract",
+            "Broccoli extracts",
+            "Pomegranate",
+            "Fish oil"
+          ]
+        },
+        {
+          "id": "p_281",
+          "type": "paragraph",
+          "text": "The evidence for using these supplements specifically to treat prostate cancer is not strong enough to recommend them routinely."
+        },
+        {
+          "id": "p_282",
+          "type": "paragraph",
+          "text": "The American Cancer Society notes that vitamin E and selenium supplements have not been shown to prevent prostate cancer, and some research has raised concerns about high-dose supplementation."
+        },
+        {
+          "id": "p_283",
+          "type": "paragraph",
+          "text": "The WCRF also recommends meeting nutritional needs through food rather than using supplements for cancer prevention."
+        },
+        {
+          "id": "h_284",
+          "type": "heading",
+          "level": 2,
+          "text": "Can I Take Vitamin D During Prostate Cancer Treatment?"
+        },
+        {
+          "id": "p_285",
+          "type": "paragraph",
+          "text": "Vitamin D may be important for bone health, particularly for patients receiving ADT."
+        },
+        {
+          "id": "p_286",
+          "type": "paragraph",
+          "text": "But that does not mean everyone should take high-dose vitamin D."
+        },
+        {
+          "id": "p_287",
+          "type": "paragraph",
+          "text": "Your doctor may check your vitamin D level and recommend supplementation when necessary."
+        },
+        {
+          "id": "p_288",
+          "type": "paragraph",
+          "text": "The Prostate Cancer Foundation specifically notes that vitamin D and calcium may be important for people receiving hormone therapy and that supplementation should be individualized."
+        },
+        {
+          "id": "h_289",
+          "type": "heading",
+          "level": 2,
+          "text": "What About Selenium?"
+        },
+        {
+          "id": "p_290",
+          "type": "paragraph",
+          "text": "Selenium is an essential nutrient, but **more is not better**."
+        },
+        {
+          "id": "p_291",
+          "type": "paragraph",
+          "text": "High-dose selenium supplements should not be taken simply because you have prostate cancer."
+        },
+        {
+          "id": "p_292",
+          "type": "paragraph",
+          "text": "The large SELECT trial did not show that selenium prevented prostate cancer, and the American Cancer Society advises discussing supplements with your healthcare team."
+        },
+        {
+          "id": "h_293",
+          "type": "heading",
+          "level": 2,
+          "text": "What About Vitamin E?"
+        },
+        {
+          "id": "p_294",
+          "type": "paragraph",
+          "text": "Vitamin E supplements have also been studied extensively."
+        },
+        {
+          "id": "p_295",
+          "type": "paragraph",
+          "text": "The SELECT trial found that vitamin E supplementation increased prostate cancer risk rather than preventing it."
+        },
+        {
+          "id": "p_296",
+          "type": "paragraph",
+          "text": "This is one reason why patients should be cautious about taking high-dose antioxidant supplements without medical advice."
+        },
+        {
+          "id": "p_297",
+          "type": "paragraph",
+          "text": "Eating foods naturally rich in vitamins is different from taking concentrated supplements."
+        },
+        {
+          "id": "h_298",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Green Tea Cure Prostate Cancer?"
+        },
+        {
+          "id": "p_299",
+          "type": "paragraph",
+          "text": "No."
+        },
+        {
+          "id": "p_300",
+          "type": "paragraph",
+          "text": "Green tea contains compounds that have been studied in prostate cancer research."
+        },
+        {
+          "id": "p_301",
+          "type": "paragraph",
+          "text": "However, evidence is not strong enough to consider green tea a treatment for prostate cancer."
+        },
+        {
+          "id": "p_302",
+          "type": "paragraph",
+          "text": "You can drink unsweetened tea if you enjoy it, unless your treatment team has given you a reason to avoid it."
+        },
+        {
+          "id": "p_303",
+          "type": "paragraph",
+          "text": "Do not replace prescribed treatment with concentrated green tea extracts."
+        },
+        {
+          "id": "h_304",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Turmeric Good for Prostate Cancer?"
+        },
+        {
+          "id": "p_305",
+          "type": "paragraph",
+          "text": "Turmeric and its compound curcumin have attracted significant research interest."
+        },
+        {
+          "id": "p_306",
+          "type": "paragraph",
+          "text": "Laboratory studies have suggested potential biological effects, but that is not the same as proving that turmeric treats prostate cancer in patients."
+        },
+        {
+          "id": "p_307",
+          "type": "paragraph",
+          "text": "Using turmeric as a food spice is very different from taking concentrated curcumin supplements."
+        },
+        {
+          "id": "p_308",
+          "type": "paragraph",
+          "text": "Tell your oncology team about supplements because concentrated products can interact with medicines or affect treatment safety."
+        },
+        {
+          "id": "h_309",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Pomegranate Juice Good for Prostate Cancer?"
+        },
+        {
+          "id": "p_310",
+          "type": "paragraph",
+          "text": "Pomegranate has been studied in prostate cancer research, particularly in relation to PSA progression."
+        },
+        {
+          "id": "p_311",
+          "type": "paragraph",
+          "text": "However, the evidence does not establish pomegranate juice as a prostate cancer treatment."
+        },
+        {
+          "id": "p_312",
+          "type": "paragraph",
+          "text": "If you enjoy pomegranate, eating the fruit as part of a balanced diet is reasonable."
+        },
+        {
+          "id": "p_313",
+          "type": "paragraph",
+          "text": "There is no need to consume large quantities or expensive concentrated extracts."
+        },
+        {
+          "id": "h_314",
+          "type": "heading",
+          "level": 2,
+          "text": "Should You Avoid Carbohydrates?"
+        },
+        {
+          "id": "p_315",
+          "type": "paragraph",
+          "text": "No."
+        },
+        {
+          "id": "p_316",
+          "type": "paragraph",
+          "text": "Carbohydrates are an important energy source."
+        },
+        {
+          "id": "p_317",
+          "type": "paragraph",
+          "text": "Good choices include:"
+        },
+        {
+          "id": "ul_318",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Oats",
+            "Brown rice",
+            "Whole-wheat roti",
+            "Barley",
+            "Quinoa",
+            "Millets",
+            "Beans",
+            "Lentils",
+            "Fruits"
+          ]
+        },
+        {
+          "id": "p_319",
+          "type": "paragraph",
+          "text": "The better approach is to reduce highly refined and heavily processed carbohydrate sources while choosing nutrient-rich carbohydrates more often."
+        },
+        {
+          "id": "h_320",
+          "type": "heading",
+          "level": 2,
+          "text": "What About White Rice and Roti?"
+        },
+        {
+          "id": "p_321",
+          "type": "paragraph",
+          "text": "You do not need to completely eliminate them."
+        },
+        {
+          "id": "p_322",
+          "type": "paragraph",
+          "text": "If you regularly eat rice or roti, consider:"
+        },
+        {
+          "id": "ul_323",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Reasonable portions",
+            "More vegetables",
+            "Dal or beans",
+            "Fish or lean protein",
+            "Whole-wheat or mixed-grain roti",
+            "Brown rice or other whole grains when tolerated"
+          ]
+        },
+        {
+          "id": "p_324",
+          "type": "paragraph",
+          "text": "A sustainable diet is more useful than an unnecessarily restrictive one."
+        },
+        {
+          "id": "h_325",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Coffee Be Part of a Prostate Cancer Diet?"
+        },
+        {
+          "id": "p_326",
+          "type": "paragraph",
+          "text": "For many people, moderate coffee consumption can fit into a healthy diet."
+        },
+        {
+          "id": "p_327",
+          "type": "paragraph",
+          "text": "However, caffeine may worsen:"
+        },
+        {
+          "id": "ul_328",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Urinary frequency",
+            "Urgency",
+            "Sleep problems",
+            "Some gastrointestinal symptoms"
+          ]
+        },
+        {
+          "id": "p_329",
+          "type": "paragraph",
+          "text": "This can matter during or after prostate treatment."
+        },
+        {
+          "id": "p_330",
+          "type": "paragraph",
+          "text": "If coffee makes urinary symptoms worse, reduce the amount or switch to decaffeinated coffee."
+        },
+        {
+          "id": "h_331",
+          "type": "heading",
+          "level": 2,
+          "text": "What About Alcohol?"
+        },
+        {
+          "id": "p_332",
+          "type": "paragraph",
+          "text": "Alcohol should generally be limited."
+        },
+        {
+          "id": "p_333",
+          "type": "paragraph",
+          "text": "Alcohol can add calories without providing much nutritional value and can interact with some medicines or worsen certain treatment-related symptoms."
+        },
+        {
+          "id": "p_334",
+          "type": "paragraph",
+          "text": "If you are receiving cancer treatment, ask your oncology team whether alcohol is appropriate with your specific medications."
+        },
+        {
+          "id": "h_335",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Intermittent Fasting Safe During Prostate Cancer Treatment?"
+        },
+        {
+          "id": "p_336",
+          "type": "paragraph",
+          "text": "Intermittent fasting is increasingly popular, but it is not automatically appropriate during cancer treatment."
+        },
+        {
+          "id": "p_337",
+          "type": "paragraph",
+          "text": "If you are:"
+        },
+        {
+          "id": "ul_338",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Losing weight",
+            "Underweight",
+            "Eating poorly",
+            "Recovering from surgery",
+            "Experiencing significant treatment side effects"
+          ]
+        },
+        {
+          "id": "p_339",
+          "type": "paragraph",
+          "text": "fasting could make it harder to meet your nutritional needs."
+        },
+        {
+          "id": "p_340",
+          "type": "paragraph",
+          "text": "Research into fasting and cancer treatment continues, but it should not be undertaken without discussing it with your oncology team."
+        },
+        {
+          "id": "h_341",
+          "type": "heading",
+          "level": 2,
+          "text": "Should You Try a Juice Diet?"
+        },
+        {
+          "id": "p_342",
+          "type": "paragraph",
+          "text": "A juice-only diet is not recommended as a cancer treatment."
+        },
+        {
+          "id": "p_343",
+          "type": "paragraph",
+          "text": "Juicing can remove much of the fibre found in whole fruits and vegetables and may make it difficult to consume enough protein and calories."
+        },
+        {
+          "id": "p_344",
+          "type": "paragraph",
+          "text": "Whole vegetables and fruits are generally more useful as part of a balanced diet."
+        },
+        {
+          "id": "h_345",
+          "type": "heading",
+          "level": 2,
+          "text": "What About Fasting Before Chemotherapy?"
+        },
+        {
+          "id": "p_346",
+          "type": "paragraph",
+          "text": "Do not fast before chemotherapy unless your oncology team specifically instructs you to do so."
+        },
+        {
+          "id": "p_347",
+          "type": "paragraph",
+          "text": "Cancer treatment protocols vary."
+        },
+        {
+          "id": "p_348",
+          "type": "paragraph",
+          "text": "Your nutritional needs also vary depending on the drugs, dose, treatment schedule and your current nutritional status."
+        },
+        {
+          "id": "h_349",
+          "type": "heading",
+          "level": 2,
+          "text": "A Simple 1-Day Prostate Cancer Diet Plan"
+        },
+        {
+          "id": "p_350",
+          "type": "paragraph",
+          "text": "This is an example of how a balanced diet could look."
+        },
+        {
+          "id": "p_351",
+          "type": "paragraph",
+          "text": "It is **not a personalized medical diet**."
+        },
+        {
+          "id": "h_352",
+          "type": "heading",
+          "level": 3,
+          "text": "Breakfast"
+        },
+        {
+          "id": "ul_353",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Oatmeal",
+            "Berries or banana",
+            "A small portion of walnuts",
+            "Unsweetened milk or fortified soy milk"
+          ]
+        },
+        {
+          "id": "h_354",
+          "type": "heading",
+          "level": 3,
+          "text": "Mid-morning"
+        },
+        {
+          "id": "ul_355",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Guava, apple or another whole fruit",
+            "A handful of nuts"
+          ]
+        },
+        {
+          "id": "h_356",
+          "type": "heading",
+          "level": 3,
+          "text": "Lunch"
+        },
+        {
+          "id": "ul_357",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Two whole-wheat rotis or brown rice",
+            "Dal",
+            "Mixed vegetables",
+            "Salad",
+            "Plain curd or another suitable protein source"
+          ]
+        },
+        {
+          "id": "h_358",
+          "type": "heading",
+          "level": 3,
+          "text": "Evening"
+        },
+        {
+          "id": "ul_359",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Unsweetened tea",
+            "Roasted chickpeas or a small portion of nuts"
+          ]
+        },
+        {
+          "id": "h_360",
+          "type": "heading",
+          "level": 3,
+          "text": "Dinner"
+        },
+        {
+          "id": "ul_361",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Grilled fish, tofu or chicken",
+            "Cooked vegetables",
+            "Whole grain or a moderate portion of rice/roti"
+          ]
+        },
+        {
+          "id": "h_362",
+          "type": "heading",
+          "level": 3,
+          "text": "If additional calories or protein are needed"
+        },
+        {
+          "id": "p_363",
+          "type": "paragraph",
+          "text": "A dietitian may add:"
+        },
+        {
+          "id": "ul_364",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Yogurt",
+            "Milk",
+            "Protein-rich smoothie",
+            "Nut butter",
+            "Nutrition supplement drink"
+          ]
+        },
+        {
+          "id": "p_365",
+          "type": "paragraph",
+          "text": "The plan should change if you have diarrhea, constipation, nausea, weight loss or other treatment-related symptoms."
+        },
+        {
+          "id": "h_366",
+          "type": "heading",
+          "level": 2,
+          "text": "Indian Foods That Can Fit Into a Prostate Cancer Diet"
+        },
+        {
+          "id": "p_367",
+          "type": "paragraph",
+          "text": "You do not need expensive “cancer foods.”"
+        },
+        {
+          "id": "p_368",
+          "type": "paragraph",
+          "text": "Common Indian foods can work well."
+        },
+        {
+          "id": "h_369",
+          "type": "heading",
+          "level": 3,
+          "text": "Protein-rich foods"
+        },
+        {
+          "id": "ul_370",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Dal",
+            "Rajma",
+            "Chole",
+            "Moong",
+            "Masoor",
+            "Tofu",
+            "Soy",
+            "Fish",
+            "Chicken",
+            "Eggs",
+            "Curd"
+          ]
+        },
+        {
+          "id": "h_371",
+          "type": "heading",
+          "level": 3,
+          "text": "Vegetables"
+        },
+        {
+          "id": "ul_372",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Palak",
+            "Bhindi",
+            "Gajar",
+            "Gobi",
+            "Broccoli",
+            "Lauki",
+            "Tori",
+            "Beans",
+            "Baingan",
+            "Capsicum",
+            "Mixed vegetables"
+          ]
+        },
+        {
+          "id": "h_373",
+          "type": "heading",
+          "level": 3,
+          "text": "Whole or minimally processed grains"
+        },
+        {
+          "id": "ul_374",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Whole-wheat atta",
+            "Oats",
+            "Brown rice",
+            "Barley",
+            "Millets",
+            "Quinoa"
+          ]
+        },
+        {
+          "id": "h_375",
+          "type": "heading",
+          "level": 3,
+          "text": "Healthy snacks"
+        },
+        {
+          "id": "ul_376",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Walnuts",
+            "Almonds",
+            "Roasted chana",
+            "Fruit",
+            "Seeds",
+            "Unsweetened yogurt"
+          ]
+        },
+        {
+          "id": "p_377",
+          "type": "paragraph",
+          "text": "The goal is not to abandon familiar food."
+        },
+        {
+          "id": "p_378",
+          "type": "paragraph",
+          "text": "It is to improve the overall pattern."
+        },
+        {
+          "id": "h_379",
+          "type": "heading",
+          "level": 2,
+          "text": "African and Middle Eastern Foods Can Also Fit"
+        },
+        {
+          "id": "p_380",
+          "type": "paragraph",
+          "text": "For international patients, the same principles can be adapted to local cuisine."
+        },
+        {
+          "id": "p_381",
+          "type": "paragraph",
+          "text": "Examples include:"
+        },
+        {
+          "id": "ul_382",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Lentils",
+            "Chickpeas",
+            "Beans",
+            "Whole grains",
+            "Vegetables",
+            "Fish",
+            "Lean poultry",
+            "Nuts",
+            "Seeds",
+            "Fresh fruits",
+            "Olive oil"
+          ]
+        },
+        {
+          "id": "p_383",
+          "type": "paragraph",
+          "text": "Patients do not need to follow an imported “Western cancer diet.”"
+        },
+        {
+          "id": "p_384",
+          "type": "paragraph",
+          "text": "A healthy dietary pattern can be built from the foods they already eat."
+        },
+        {
+          "id": "h_385",
+          "type": "heading",
+          "level": 2,
+          "text": "What Should You Eat During Advanced Prostate Cancer?"
+        },
+        {
+          "id": "p_386",
+          "type": "paragraph",
+          "text": "Advanced or metastatic prostate cancer can create additional nutritional challenges."
+        },
+        {
+          "id": "p_387",
+          "type": "paragraph",
+          "text": "Treatment may include:"
+        },
+        {
+          "id": "ul_388",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy)",
+            "Androgen-receptor pathway inhibitors",
+            "Chemotherapy",
+            "[Radiation](/blogs/radiation-therapy-for-prostate-cancer)",
+            "Radioligand therapy",
+            "Other systemic treatments"
+          ]
+        },
+        {
+          "id": "p_389",
+          "type": "paragraph",
+          "text": "The nutritional priority may shift depending on symptoms and treatment."
+        },
+        {
+          "id": "p_390",
+          "type": "paragraph",
+          "text": "For example, a patient losing weight may need more calories and protein rather than a strict low-fat or low-carbohydrate diet."
+        },
+        {
+          "id": "p_391",
+          "type": "paragraph",
+          "text": "NCI emphasizes maintaining adequate calories and protein and preventing malnutrition during cancer treatment."
+        },
+        {
+          "id": "h_392",
+          "type": "heading",
+          "level": 2,
+          "text": "Nutrition During Lutetium-177 PSMA Therapy"
+        },
+        {
+          "id": "p_393",
+          "type": "paragraph",
+          "text": "Patients receiving **Lutetium-177 PSMA therapy** may have treatment-specific instructions regarding hydration, food, medicines and radiation safety. See [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) for how this sits in the wider pathway."
+        },
+        {
+          "id": "p_394",
+          "type": "paragraph",
+          "text": "These instructions vary by treatment center and radiopharmaceutical protocol."
+        },
+        {
+          "id": "p_395",
+          "type": "paragraph",
+          "text": "Do not follow generic online fasting or supplement advice during radioligand therapy without checking with the nuclear medicine team."
+        },
+        {
+          "id": "p_396",
+          "type": "paragraph",
+          "text": "Your treatment center's instructions take priority."
+        },
+        {
+          "id": "h_397",
+          "type": "heading",
+          "level": 2,
+          "text": "When Should You See an Oncology Dietitian?"
+        },
+        {
+          "id": "p_398",
+          "type": "paragraph",
+          "text": "Ask for a dietitian referral if you:"
+        },
+        {
+          "id": "ul_399",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Are losing weight without trying",
+            "Have little appetite",
+            "Are struggling to eat enough",
+            "Have persistent diarrhea",
+            "Have persistent constipation",
+            "Have repeated nausea or vomiting",
+            "Have difficulty swallowing",
+            "Have diabetes and your treatment is affecting blood sugar",
+            "Are receiving long-term ADT",
+            "Are considering a restrictive diet",
+            "Want to use supplements",
+            "Are following a vegan or vegetarian diet and are concerned about protein",
+            "Are preparing for major cancer treatment"
+          ]
+        },
+        {
+          "id": "p_400",
+          "type": "paragraph",
+          "text": "A dietitian can personalize calorie, protein, fluid and micronutrient needs."
+        },
+        {
+          "id": "h_401",
+          "type": "heading",
+          "level": 2,
+          "text": "The Biggest Diet Mistakes to Avoid During Prostate Cancer Treatment"
+        },
+        {
+          "id": "h_402",
+          "type": "heading",
+          "level": 3,
+          "text": "Mistake 1: Believing one food can cure cancer"
+        },
+        {
+          "id": "p_403",
+          "type": "paragraph",
+          "text": "No single food has been proven to cure prostate cancer."
+        },
+        {
+          "id": "h_404",
+          "type": "heading",
+          "level": 3,
+          "text": "Mistake 2: Cutting out all carbohydrates"
+        },
+        {
+          "id": "p_405",
+          "type": "paragraph",
+          "text": "This can unnecessarily reduce energy intake."
+        },
+        {
+          "id": "h_406",
+          "type": "heading",
+          "level": 3,
+          "text": "Mistake 3: Starting a severe fasting diet"
+        },
+        {
+          "id": "p_407",
+          "type": "paragraph",
+          "text": "This can be particularly problematic if you are already losing weight."
+        },
+        {
+          "id": "h_408",
+          "type": "heading",
+          "level": 3,
+          "text": "Mistake 4: Taking multiple supplements"
+        },
+        {
+          "id": "p_409",
+          "type": "paragraph",
+          "text": "High-dose supplements can have risks and may interfere with some treatments."
+        },
+        {
+          "id": "h_410",
+          "type": "heading",
+          "level": 3,
+          "text": "Mistake 5: Eliminating dairy completely without a replacement plan"
+        },
+        {
+          "id": "p_411",
+          "type": "paragraph",
+          "text": "This can make it harder to meet calcium and protein requirements."
+        },
+        {
+          "id": "h_412",
+          "type": "heading",
+          "level": 3,
+          "text": "Mistake 6: Focusing only on cancer and ignoring heart health"
+        },
+        {
+          "id": "p_413",
+          "type": "paragraph",
+          "text": "Men with prostate cancer also need protection against cardiovascular disease, diabetes and other chronic conditions."
+        },
+        {
+          "id": "h_414",
+          "type": "heading",
+          "level": 3,
+          "text": "Mistake 7: Trying to lose weight aggressively during treatment"
+        },
+        {
+          "id": "p_415",
+          "type": "paragraph",
+          "text": "If you are already undernourished or losing muscle, aggressive calorie restriction can be harmful."
+        },
+        {
+          "id": "h_416",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Diet Reduce the Risk of Prostate Cancer Coming Back?"
+        },
+        {
+          "id": "p_417",
+          "type": "paragraph",
+          "text": "Research is ongoing."
+        },
+        {
+          "id": "p_418",
+          "type": "paragraph",
+          "text": "Observational studies have linked healthier dietary patterns—particularly those emphasizing plant foods and minimizing certain animal and highly processed foods—with better outcomes in some men with prostate cancer."
+        },
+        {
+          "id": "p_419",
+          "type": "paragraph",
+          "text": "However, these studies do not prove that a particular food prevents recurrence."
+        },
+        {
+          "id": "p_420",
+          "type": "paragraph",
+          "text": "The Prostate Cancer Foundation describes research linking healthier, more plant-forward eating patterns with lower risk of prostate cancer progression or death, while emphasizing overall dietary quality rather than a single food."
+        },
+        {
+          "id": "p_421",
+          "type": "paragraph",
+          "text": "Therefore, the sensible goal is:"
+        },
+        {
+          "id": "p_422",
+          "type": "paragraph",
+          "text": "**build a healthy dietary pattern rather than search for a “prostate cancer-fighting food.”**"
+        },
+        {
+          "id": "h_423",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Diet Affect PSA?"
+        },
+        {
+          "id": "p_424",
+          "type": "paragraph",
+          "text": "Diet can influence overall health, but **you should not use food to try to manipulate your PSA result**."
+        },
+        {
+          "id": "p_425",
+          "type": "paragraph",
+          "text": "A change in PSA should be interpreted medically."
+        },
+        {
+          "id": "p_426",
+          "type": "paragraph",
+          "text": "If your PSA is rising after treatment, changing your diet is not a substitute for appropriate evaluation."
+        },
+        {
+          "id": "p_427",
+          "type": "paragraph",
+          "text": "This is particularly important after prostatectomy, radiation or during active surveillance. See [treatment without surgery](/blogs/prostate-cancer-treatment-without-surgery) if surveillance is still on the table."
+        },
+        {
+          "id": "h_428",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Diet Replace Prostate Cancer Treatment?"
+        },
+        {
+          "id": "p_429",
+          "type": "paragraph",
+          "text": "No."
+        },
+        {
+          "id": "p_430",
+          "type": "paragraph",
+          "text": "Diet cannot replace:"
+        },
+        {
+          "id": "ul_431",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Surgery](/blogs/robotic-prostatectomy-in-india)",
+            "[Radiation therapy](/blogs/radiation-therapy-for-prostate-cancer)",
+            "[Hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy)",
+            "Chemotherapy",
+            "Targeted therapy",
+            "Radioligand therapy",
+            "Active surveillance",
+            "Other evidence-based cancer treatments"
+          ]
+        },
+        {
+          "id": "p_432",
+          "type": "paragraph",
+          "text": "Nutrition is supportive care."
+        },
+        {
+          "id": "p_433",
+          "type": "paragraph",
+          "text": "It can help you maintain strength and overall health while your medical team treats the cancer."
+        },
+        {
+          "id": "h_434",
+          "type": "heading",
+          "level": 2,
+          "text": "Prostate Cancer Diet: The Practical Checklist"
+        },
+        {
+          "id": "p_435",
+          "type": "paragraph",
+          "text": "If you want a simple starting point, focus on these habits:"
+        },
+        {
+          "id": "h_436",
+          "type": "heading",
+          "level": 3,
+          "text": "Eat more"
+        },
+        {
+          "id": "ul_437",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Vegetables every day",
+            "Whole fruits",
+            "Beans and lentils",
+            "Whole grains",
+            "Nuts and seeds",
+            "Fish",
+            "Lean protein",
+            "Soy foods if you enjoy them",
+            "Healthy unsaturated fats"
+          ]
+        },
+        {
+          "id": "h_438",
+          "type": "heading",
+          "level": 3,
+          "text": "Eat less"
+        },
+        {
+          "id": "ul_439",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Processed meat",
+            "Large amounts of red meat",
+            "Highly processed foods",
+            "Sugary drinks",
+            "Excess added sugar",
+            "Excess saturated fat",
+            "Heavily charred meat",
+            "Large amounts of alcohol"
+          ]
+        },
+        {
+          "id": "h_440",
+          "type": "heading",
+          "level": 3,
+          "text": "During treatment"
+        },
+        {
+          "id": "ul_441",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Monitor weight",
+            "Prioritize protein",
+            "Drink enough fluid unless restricted",
+            "Adjust food choices for side effects",
+            "Do not start supplements without medical advice",
+            "Ask about dietitian support if eating becomes difficult"
+          ]
+        },
+        {
+          "id": "h_442",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_443",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the best diet for prostate cancer?"
+        },
+        {
+          "id": "p_444",
+          "type": "paragraph",
+          "text": "There is no single medically proven “best” prostate cancer diet. A plant-forward eating pattern rich in vegetables, fruits, whole grains, beans, nuts and seeds, with appropriate protein and limited processed foods, red meat, sugary drinks and excess saturated fat, is a practical evidence-based approach."
+        },
+        {
+          "id": "h_445",
+          "type": "heading",
+          "level": 3,
+          "text": "What foods should prostate cancer patients avoid?"
+        },
+        {
+          "id": "p_446",
+          "type": "paragraph",
+          "text": "There is no universal forbidden-food list. It is generally sensible to limit processed meat, large amounts of red meat, highly processed foods, sugary drinks, excess added sugar, heavily charred meat and excessive saturated fat."
+        },
+        {
+          "id": "h_447",
+          "type": "heading",
+          "level": 3,
+          "text": "Are tomatoes good for prostate cancer?"
+        },
+        {
+          "id": "p_448",
+          "type": "paragraph",
+          "text": "Tomatoes are nutritious and can be part of a healthy diet. They contain lycopene, but current evidence does not establish tomatoes or lycopene as a treatment for prostate cancer."
+        },
+        {
+          "id": "h_449",
+          "type": "heading",
+          "level": 3,
+          "text": "Can prostate cancer patients eat dairy?"
+        },
+        {
+          "id": "p_450",
+          "type": "paragraph",
+          "text": "Yes, many can. Evidence concerning dairy and prostate cancer is mixed. Limiting high-fat dairy may be reasonable, but there is no evidence-based requirement for every prostate cancer patient to eliminate all dairy."
+        },
+        {
+          "id": "h_451",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I stop drinking milk if I have prostate cancer?"
+        },
+        {
+          "id": "p_452",
+          "type": "paragraph",
+          "text": "Not necessarily. Discuss your overall dairy intake, calcium needs and nutritional status with your doctor or dietitian."
+        },
+        {
+          "id": "h_453",
+          "type": "heading",
+          "level": 3,
+          "text": "Is soy safe for men with prostate cancer?"
+        },
+        {
+          "id": "p_454",
+          "type": "paragraph",
+          "text": "Ordinary soy foods such as tofu, edamame and unsweetened soy milk can be part of a healthy diet. Soy foods should not be confused with high-dose isoflavone supplements."
+        },
+        {
+          "id": "h_455",
+          "type": "heading",
+          "level": 3,
+          "text": "Can sugar make prostate cancer grow faster?"
+        },
+        {
+          "id": "p_456",
+          "type": "paragraph",
+          "text": "The idea that eating sugar directly “feeds” cancer and therefore eliminating all sugar cures cancer is not supported. Reducing added sugar and sugary drinks is still sensible because it helps support healthy weight and overall metabolic health."
+        },
+        {
+          "id": "h_457",
+          "type": "heading",
+          "level": 3,
+          "text": "Is red meat bad for prostate cancer?"
+        },
+        {
+          "id": "p_458",
+          "type": "paragraph",
+          "text": "Large amounts of red meat are generally best limited. Processed meat should be limited even more strongly. Plant proteins, fish and lean poultry can provide alternative protein sources."
+        },
+        {
+          "id": "h_459",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I eat eggs during prostate cancer treatment?"
+        },
+        {
+          "id": "p_460",
+          "type": "paragraph",
+          "text": "There is not strong evidence that men with existing prostate cancer must completely eliminate eggs. If you eat eggs, they can be included as one source of protein within a varied diet."
+        },
+        {
+          "id": "h_461",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I take lycopene supplements?"
+        },
+        {
+          "id": "p_462",
+          "type": "paragraph",
+          "text": "Not routinely. Eating tomatoes and other vegetables is different from taking concentrated supplements. There is not enough evidence to recommend lycopene supplements as a prostate cancer treatment."
+        },
+        {
+          "id": "h_463",
+          "type": "heading",
+          "level": 3,
+          "text": "Is green tea good for prostate cancer?"
+        },
+        {
+          "id": "p_464",
+          "type": "paragraph",
+          "text": "Green tea can be part of a healthy diet, but it has not been established as a treatment for prostate cancer. Concentrated green tea extracts should be discussed with your healthcare team."
+        },
+        {
+          "id": "h_465",
+          "type": "heading",
+          "level": 3,
+          "text": "Is turmeric good for prostate cancer?"
+        },
+        {
+          "id": "p_466",
+          "type": "paragraph",
+          "text": "Turmeric can be used as a food spice, but concentrated curcumin supplements should not be considered a prostate cancer treatment. Discuss supplements with your oncology team."
+        },
+        {
+          "id": "h_467",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I eat during hormone therapy?"
+        },
+        {
+          "id": "p_468",
+          "type": "paragraph",
+          "text": "Prioritize adequate protein, vegetables, fruits, whole grains, legumes, nuts and healthy fats. Limit highly processed foods, sugary drinks and excess saturated fat. Maintaining muscle, healthy weight and bone health is particularly important during ADT."
+        },
+        {
+          "id": "h_469",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I eat if I am losing weight during cancer treatment?"
+        },
+        {
+          "id": "p_470",
+          "type": "paragraph",
+          "text": "Do not automatically restrict calories. You may need more protein and calories. Small frequent meals, protein-rich foods, smoothies and nutritional supplements may help when recommended by your healthcare team."
+        },
+        {
+          "id": "h_471",
+          "type": "heading",
+          "level": 3,
+          "text": "Should prostate cancer patients follow a keto diet?"
+        },
+        {
+          "id": "p_472",
+          "type": "paragraph",
+          "text": "A ketogenic diet is not an established treatment for prostate cancer. Restrictive diets can also make it difficult to meet nutritional needs during treatment."
+        },
+        {
+          "id": "h_473",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a vegan diet cure prostate cancer?"
+        },
+        {
+          "id": "p_474",
+          "type": "paragraph",
+          "text": "No. A vegan diet can be nutritionally healthy when properly planned, but there is no evidence that becoming vegan cures prostate cancer."
+        },
+        {
+          "id": "h_475",
+          "type": "heading",
+          "level": 3,
+          "text": "Can diet prevent prostate cancer recurrence?"
+        },
+        {
+          "id": "p_476",
+          "type": "paragraph",
+          "text": "No diet has been proven to guarantee prevention of recurrence. However, healthier dietary patterns are associated with better overall health and have been linked in observational research with better prostate cancer outcomes."
+        },
+        {
+          "id": "h_477",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I drink during prostate cancer treatment?"
+        },
+        {
+          "id": "p_478",
+          "type": "paragraph",
+          "text": "Water is usually the main choice. Unsweetened tea and coffee may also fit depending on your symptoms and treatment. If caffeine worsens urinary symptoms, reduce it."
+        },
+        {
+          "id": "h_479",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I drink alcohol during prostate cancer treatment?"
+        },
+        {
+          "id": "p_480",
+          "type": "paragraph",
+          "text": "Alcohol may interact with certain medicines and can worsen some treatment-related problems. Ask your oncology team whether alcohol is appropriate with your specific treatment."
+        },
+        {
+          "id": "h_481",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I take vitamins during prostate cancer treatment?"
+        },
+        {
+          "id": "p_482",
+          "type": "paragraph",
+          "text": "Only when there is a nutritional need or your healthcare team recommends them. High-dose supplements are not automatically beneficial and some have been associated with harm."
+        },
+        {
+          "id": "h_483",
+          "type": "heading",
+          "level": 2,
+          "text": "Final Takeaway"
+        },
+        {
+          "id": "p_484",
+          "type": "paragraph",
+          "text": "The best prostate cancer diet is not a complicated list of exotic foods."
+        },
+        {
+          "id": "p_485",
+          "type": "paragraph",
+          "text": "It is a **sustainable eating pattern** that provides enough calories and protein while emphasizing vegetables, fruits, whole grains, beans, nuts, seeds, fish and other nutritious protein sources."
+        },
+        {
+          "id": "p_486",
+          "type": "paragraph",
+          "text": "At the same time, limit processed meat, large amounts of red meat, sugary drinks, highly processed foods and excessive saturated fat."
+        },
+        {
+          "id": "p_487",
+          "type": "paragraph",
+          "text": "Most importantly, **change the diet according to the treatment situation**."
+        },
+        {
+          "id": "p_488",
+          "type": "paragraph",
+          "text": "Someone losing weight during chemotherapy or advanced prostate cancer may need more calories—not fewer. Someone receiving long-term ADT may need particular attention to muscle, body weight, cardiovascular health and bone health. Someone experiencing diarrhea during radiation may temporarily need a different fibre pattern."
+        },
+        {
+          "id": "p_489",
+          "type": "paragraph",
+          "text": "Nutrition should therefore work alongside cancer treatment, not compete with it."
+        },
+        {
+          "id": "p_490",
+          "type": "paragraph",
+          "text": "If you have prostate cancer and want to make major dietary changes, particularly if you are losing weight, taking hormone therapy, receiving chemotherapy or using supplements, discuss the plan with your oncologist or an oncology dietitian."
+        },
+        {
+          "id": "h_491",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Prostate Cancer Resources"
+        },
+        {
+          "id": "p_492",
+          "type": "paragraph",
+          "text": "For readers building a complete understanding of prostate cancer, this article links to:"
+        },
+        {
+          "id": "ul_493",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) — the main treatment hub, including staging, PSMA PET and Lutetium-177 PSMA therapy.",
+            "[Prostate Cancer Treatment Options](/blogs/prostate-cancer-treatment-options-india) — how teams choose between surveillance, surgery, radiation and systemic treatment.",
+            "[Prostate Cancer Treatment Without Surgery](/blogs/prostate-cancer-treatment-without-surgery) — active surveillance and non-surgical pathways.",
+            "[Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india) — surgery and recovery nutrition.",
+            "[Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer) — EBRT, IMRT, IGRT, SBRT and bowel-related diet changes.",
+            "[Brachytherapy for Prostate Cancer](/blogs/brachytherapy-for-prostate-cancer) — internal radiation and recovery.",
+            "[Hormone therapy cost in India](/costs/India/Medical-Oncology/Hormone-Therapy) — ADT planning ranges and why muscle and bone health matter."
+          ]
+        },
+        {
+          "id": "h_494",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_495",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates international patients who want [prostate cancer treatment in India](/treatments/prostate-cancer-treatment-in-india) and need a diet that matches the actual plan — [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy), [radiation](/blogs/radiation-therapy-for-prostate-cancer), [brachytherapy](/blogs/brachytherapy-for-prostate-cancer) or [robotic prostatectomy](/blogs/robotic-prostatectomy-in-india). Share PSA reports, biopsy and Grade Group, current medicines, weight change and any bowel or urinary symptoms. A coordinator can arrange review with the treating team and an itemized estimate. The oncologist and dietitian make the final nutrition advice."
+        },
+        {
+          "id": "btn_496",
+          "type": "button",
+          "label": "Share records for a treatment and diet review",
+          "href": "/consult?treatment=Prostate%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_497",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your records](https://wa.me/919044346292?text=I%20would%20like%20to%20share%20prostate%20cancer%20records%20and%20ask%20about%20diet%20during%20treatment%20in%20India.)"
+        },
+        {
+          "id": "h_498",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_499",
+          "type": "paragraph",
+          "text": "This article is for educational purposes and does not replace medical advice. Nutritional needs can change significantly depending on prostate cancer stage, treatment type, weight, kidney function, diabetes, medications, appetite and other health conditions. Patients experiencing significant weight loss, difficulty eating, persistent vomiting or diarrhea, or other nutritional problems should speak with their oncology team or a qualified oncology dietitian."
+        },
+        {
+          "id": "h_500",
+          "type": "heading",
+          "level": 2,
+          "text": "Top 5 Sources"
+        },
+        {
+          "id": "p_501",
+          "type": "paragraph",
+          "text": "1. [National Cancer Institute — Nutrition During Cancer Treatment](https://www.cancer.gov/about-cancer/treatment/side-effects/nutrition) — calories, protein and adapting food to treatment side effects."
+        },
+        {
+          "id": "p_502",
+          "type": "paragraph",
+          "text": "2. [World Cancer Research Fund — Evidence-Based Cancer Prevention Recommendations](https://www.wcrf.org/research-policy/evidence-for-our-recommendations/) — plant foods, red meat, processed meat and dairy evidence."
+        },
+        {
+          "id": "p_503",
+          "type": "paragraph",
+          "text": "3. [Prostate Cancer Foundation — Nutrition and Prostate Cancer](https://www.pcf.org/patient-support/physical-mental-wellness/nutrition/) — plant-forward patterns, dairy, eggs, sugar and ADT-related nutrition."
+        },
+        {
+          "id": "p_504",
+          "type": "paragraph",
+          "text": "4. [American Cancer Society — Prostate Cancer Prevention, Diet and Supplements](https://www.cancer.org/cancer/types/prostate-cancer/causes-risks-prevention/prevention.html) — soy foods versus supplements, selenium and vitamin E."
+        },
+        {
+          "id": "p_505",
+          "type": "paragraph",
+          "text": "5. [American Institute for Cancer Research — Tomatoes, Lycopene and Prostate Cancer](https://www.aicr.org/cancer-prevention/food-facts/tomatoes/) — tomato and lycopene evidence."
+        },
+        {
+          "id": "p_506",
+          "type": "paragraph",
+          "text": "**Last reviewed against the cited sources: September 2026.**"
+        }
+      ]
+    },
     {
       "id": "art_brachytherapy_for_prostate_cancer",
       "slug": "brachytherapy-for-prostate-cancer",
@@ -995,6 +4338,10 @@
         "HDR boost prostate cancer"
       ],
       "relatedLinks": [
+        {
+          "label": "Prostate cancer diet",
+          "href": "/blogs/prostate-cancer-diet"
+        },
         {
           "label": "Radiation Therapy for Prostate Cancer",
           "href": "/blogs/radiation-therapy-for-prostate-cancer"
@@ -3955,6 +7302,10 @@
         "prostate radiation therapy India"
       ],
       "relatedLinks": [
+        {
+          "label": "Prostate cancer diet",
+          "href": "/blogs/prostate-cancer-diet"
+        },
         {
           "label": "Prostate Cancer Treatment in India",
           "href": "/treatments/prostate-cancer-treatment-in-india"
@@ -7117,6 +10468,10 @@
         "international robotic prostatectomy India"
       ],
       "relatedLinks": [
+        {
+          "label": "Prostate cancer diet",
+          "href": "/blogs/prostate-cancer-diet"
+        },
         {
           "label": "Prostate Cancer Treatment in India",
           "href": "/treatments/prostate-cancer-treatment-in-india"
@@ -10438,6 +13793,10 @@
       ],
       "relatedLinks": [
         {
+          "label": "Prostate cancer diet",
+          "href": "/blogs/prostate-cancer-diet"
+        },
+        {
           "label": "Prostate Cancer Treatment in India",
           "href": "/treatments/prostate-cancer-treatment-in-india"
         },
@@ -13373,6 +16732,10 @@
         "international prostate cancer treatment India"
       ],
       "relatedLinks": [
+        {
+          "label": "Prostate cancer diet",
+          "href": "/blogs/prostate-cancer-diet"
+        },
         {
           "label": "Prostate Cancer Treatment in India",
           "href": "/treatments/prostate-cancer-treatment-in-india"
