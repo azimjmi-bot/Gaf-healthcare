@@ -5,6 +5,7 @@ import { sitemapIndexDocument } from "@/lib/i18n/blog-sitemap";
 import { buildBlogSitemap, buildLocaleSitemap, buildSitemapIndex, sitemapIndexXml, sitemapXml } from "@/lib/i18n/sitemap-entries";
 
 const NEW_SLUGS = [
+  "prostate-cancer-stages-1-to-4",
   "gleason-score-grade-group-prostate-cancer",
   "prostate-cancer-symptoms",
   "prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet",
@@ -63,7 +64,7 @@ test("the blog sitemap lists every published English article, newest first", () 
     assert.equal(row.changeFrequency, "weekly");
     assert.equal(row.priority, 0.7);
   }
-  assert.equal(urls[1], "https://gaf.healthcare/blogs/gleason-score-grade-group-prostate-cancer");
+  assert.equal(urls[1], "https://gaf.healthcare/blogs/prostate-cancer-stages-1-to-4");
   assert.equal(buildBlogSitemap("ar").length, 0);
 });
 
@@ -90,8 +91,8 @@ test("the root sitemap is an index of the language and blog sitemaps", () => {
     "https://gaf.healthcare/sitemap-ar.xml",
     "https://gaf.healthcare/sitemap-blogs.xml",
   ]);
-  assert.equal(files[0].lastModified, "2026-09-28T08:30:00.000Z");
-  assert.equal(files[2].lastModified, "2026-09-28T08:30:00.000Z");
+  assert.equal(files[0].lastModified, "2026-09-28T09:00:00.000Z");
+  assert.equal(files[2].lastModified, "2026-09-28T09:00:00.000Z");
   const xml = sitemapIndexXml(files);
   assert.match(xml, /<sitemapindex /);
   assert.match(xml, /<loc>https:\/\/gaf\.healthcare\/sitemap-blogs\.xml<\/loc>/);
@@ -100,7 +101,7 @@ test("the root sitemap is an index of the language and blog sitemaps", () => {
 test("the Yoast sitemap_index.xml alias is the same document as /sitemap.xml", () => {
   const xml = sitemapIndexDocument();
   assert.equal(xml, sitemapIndexXml(buildSitemapIndex()));
-  assert.match(xml, /<lastmod>2026-09-28T08:30:00.000Z<\/lastmod>/);
+  assert.match(xml, /<lastmod>2026-09-28T09:00:00.000Z<\/lastmod>/);
   assert.match(xml, /<loc>https:\/\/gaf\.healthcare\/sitemap-blogs\.xml<\/loc>/);
   assert.doesNotMatch(xml, /sitemap_index\.xml/);
 });
