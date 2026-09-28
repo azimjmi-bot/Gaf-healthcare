@@ -26,6 +26,7 @@ test("the published colon surgery blog is complete, interlinked and indexed only
       if (block.type === "paragraph") return block.text;
       if (block.type === "heading") return block.text;
       if (block.type === "button") return `[${block.label}](${block.href})`;
+      if (block.type === "list") return block.items.join("\n");
       if (block.type === "image") return block.src;
       if (block.type === "html") return block.html;
       return "";
