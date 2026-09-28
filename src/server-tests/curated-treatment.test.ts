@@ -124,6 +124,7 @@ test("the published prostate cancer page uses site USD ranges and GEO links", ()
   assert.match(body, /\/blogs\/prostate-cancer-stages-1-to-4/);
   assert.match(body, /\/blogs\/lutetium-177-psma-therapy-in-india/);
   assert.match(body, /\/blogs\/psma-pet-scan-for-prostate-cancer/);
+  assert.match(body, /\/blogs\/hormone-therapy-for-prostate-cancer/);
   assert.match(body, /\/costs\/India\/Surgical-Oncology\/Radical-Prostatectomy/);
   assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Radical-Prostatectomy/);
   assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Radical-Prostatectomy/);
