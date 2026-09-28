@@ -110,7 +110,8 @@
     "CAPOX",
     "stage 4 colon cancer",
     "metastatic colon cancer",
-    "immunotherapy"
+    "immunotherapy",
+    "FOLFIRI"
   ],
   "media": [
     {
@@ -1407,9 +1408,789 @@
       "name": "colon-s4-systemic.webp",
       "alt": "Adult in a chemotherapy day-care chair with a colon, liver-metastasis and peritoneal-deposit overlay used to explain systemic treatment for Stage 4 colon cancer",
       "addedAt": "2026-09-28T19:30:00.000Z"
+    },
+    {
+      "id": "media_colon_chemo_anatomy_webp",
+      "url": "/uploads/articles/colon-chemo-anatomy.webp",
+      "name": "colon-chemo-anatomy.webp",
+      "alt": "Transparent adult body with a teal colon and a gold tumour used to explain systemic colon cancer chemotherapy",
+      "addedAt": "2026-09-28T20:00:00.000Z"
+    },
+    {
+      "id": "media_colon_chemo_nodes_webp",
+      "url": "/uploads/articles/colon-chemo-nodes.webp",
+      "name": "colon-chemo-nodes.webp",
+      "alt": "Transparent adult abdomen showing a teal colon, gold tumour and mixed gold and teal mesenteric lymph nodes used to explain adjuvant chemotherapy",
+      "addedAt": "2026-09-28T20:00:00.000Z"
+    },
+    {
+      "id": "media_colon_chemo_clinic_webp",
+      "url": "/uploads/articles/colon-chemo-clinic.webp",
+      "name": "colon-chemo-clinic.webp",
+      "alt": "Adult patient in clinic with a colon-and-lymph-node overlay while a medical oncologist explains FOLFOX versus CAPOX",
+      "addedAt": "2026-09-28T20:00:00.000Z"
+    },
+    {
+      "id": "media_colon_chemo_infusion_webp",
+      "url": "/uploads/articles/colon-chemo-infusion.webp",
+      "name": "colon-chemo-infusion.webp",
+      "alt": "Adult in a chemotherapy day-care chair with a colon-and-tumour overlay used to explain outpatient FOLFOX or FOLFIRI",
+      "addedAt": "2026-09-28T20:00:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_colon_cancer_chemotherapy_in_india",
+      "slug": "colon-cancer-chemotherapy-in-india",
+      "title": "Colon Cancer Chemotherapy in India: FOLFOX, CAPOX and FOLFIRI",
+      "excerpt": "When colon cancer needs chemotherapy: FOLFOX vs CAPOX, 3 vs 6 months, FOLFIRI, FOLFOXIRI, MSI/MMR immunotherapy and GAF planning ranges.",
+      "date": "28 September 2026",
+      "publishedAt": "2026-09-28T20:00:00.000Z",
+      "updatedAt": "2026-09-28T20:00:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Medical Oncology",
+      "tags": [
+        "colon cancer",
+        "chemotherapy",
+        "FOLFOX",
+        "CAPOX",
+        "FOLFIRI",
+        "India"
+      ],
+      "image": "/uploads/articles/colon-chemo-anatomy.webp",
+      "imageAlt": "Transparent adult body with a teal colon and a gold tumour used to explain systemic colon cancer chemotherapy",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Colon Cancer Chemotherapy in India: FOLFOX, CAPOX and FOLFIRI",
+      "seoDescription": "Colon cancer chemotherapy in India: FOLFOX vs CAPOX, 3 vs 6 months, FOLFIRI, FOLFOXIRI, MSI/MMR immunotherapy and GAF USD planning ranges.",
+      "canonical": "https://gaf.healthcare/blogs/colon-cancer-chemotherapy-in-india",
+      "ogImage": "/uploads/articles/colon-chemo-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "colon cancer chemotherapy in India",
+        "FOLFOX CAPOX colon cancer",
+        "FOLFIRI FOLFOXIRI",
+        "adjuvant chemotherapy Stage 3",
+        "3 vs 6 months CAPOX",
+        "oxaliplatin neuropathy",
+        "colon cancer chemo cost in India",
+        "MSI-H immunotherapy vs chemotherapy",
+        "conversion therapy colon cancer"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Colon Cancer Treatment in India",
+          "href": "/treatments/colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "Stage 3 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-3-colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "Stage 4 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-4-colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "Colon Cancer Surgery in India",
+          "href": "/blogs/colon-cancer-surgery-in-india"
+        },
+        {
+          "label": "Chemotherapy cost in India",
+          "href": "/costs/India/Medical-Oncology/Chemotherapy"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\">Colon cancer chemotherapy is selected according to the stage and biology of the cancer.</p><p class=\"article-quick-answer__body\"><strong>Stage 1</strong></p><p class=\"article-quick-answer__body\">Chemotherapy is <strong>usually not required</strong> after adequate surgical treatment.</p><p class=\"article-quick-answer__body\"><strong>Stage 2</strong></p><p class=\"article-quick-answer__body\">Chemotherapy is <strong>not routinely required for every patient</strong>. It may be considered when pathological or molecular features indicate a higher recurrence risk.</p><p class=\"article-quick-answer__body\"><strong>Stage 3</strong></p><p class=\"article-quick-answer__body\">Chemotherapy after surgery is generally recommended.</p><p class=\"article-quick-answer__body\">The most commonly used regimens are:</p><ul class=\"article-quick-answer__list\"><li><strong>FOLFOX</strong></li><li><strong>CAPOX</strong></li></ul><p class=\"article-quick-answer__body\">The duration may be approximately three to six months depending on the patient's risk category, regimen and clinical circumstances.</p><p class=\"article-quick-answer__body\"><strong>Stage 4</strong></p><p class=\"article-quick-answer__body\">Treatment is usually systemic and may include:</p><ul class=\"article-quick-answer__list\"><li>FOLFOX</li><li>CAPOX</li><li>FOLFIRI</li><li>FOLFOXIRI</li></ul><p class=\"article-quick-answer__body\">These may be combined with targeted medicines or, in biomarker-selected patients, immunotherapy.</p><p class=\"article-quick-answer__body\">The treatment plan can change over time if the cancer responds, remains stable or progresses.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Colon cancer chemotherapy in India is used to destroy cancer cells, reduce the risk of recurrence after surgery, shrink advanced tumors, control metastatic disease and, in selected patients, make previously difficult-to-remove tumors suitable for surgery. Chemotherapy is not one single treatment. The appropriate drugs, combination, number of cycles and duration depend on the **stage of colon cancer, molecular characteristics of the tumor, treatment objective, previous treatment, overall health and ability to tolerate side effects**."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "This article is the chemotherapy hub for the colon cluster. The broader pathway is in [Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india). [Stage 1](/blogs/stage-1-colon-cancer-treatment-in-india) usually needs surgery only. [Stage 2](/blogs/stage-2-colon-cancer-treatment-in-india) discusses when adjuvant chemotherapy is considered. [Stage 3](/blogs/stage-3-colon-cancer-treatment-in-india) covers FOLFOX versus CAPOX and 3 versus 6 months. [Stage 4](/blogs/stage-4-colon-cancer-treatment-in-india) covers metastatic resectability, conversion therapy and biomarker-directed treatment. How the operation itself is planned is in [Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india). It is **not** a rectal-cancer page: radiation has a much larger role when the tumour is rectal. See [rectal cancer surgery](/costs/India/Surgical-Oncology/Rectal-Cancer-Surgery)."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "GAF Healthcare planning ranges for [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) are **$1,500–$8,000+**. [Targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is **$8,000–$30,000**. [Immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) is **$15,000–$45,000**. [Precision oncology / molecular testing](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000**. These are planning ranges, not hospital quotations."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "International patients comparing [medical oncologists](/doctors/India/Medical-Oncology) commonly start with [Delhi NCR chemotherapy](/doctors/India/Delhi-NCR/Medical-Oncology/Chemotherapy), [Mumbai](/doctors/India/Mumbai/Medical-Oncology/Chemotherapy), [Bengaluru](/doctors/India/Bengaluru/Medical-Oncology/Chemotherapy), [Chennai](/doctors/India/Chennai/Medical-Oncology/Chemotherapy) and [Hyderabad](/doctors/India/Hyderabad/Medical-Oncology/Chemotherapy). Partner [medical-oncology hospitals](/hospitals/India/Medical-Oncology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Medical-Oncology) and [Mumbai](/hospitals/India/Mumbai/Medical-Oncology) are a typical first filter. [Surgical oncologists](/doctors/India/Surgical-Oncology) remain part of the same tumour board when conversion surgery is possible."
+        },
+        {
+          "id": "btn_006",
+          "type": "button",
+          "label": "Ask about colon cancer chemotherapy in India",
+          "href": "/consult?treatment=Colon%20Cancer%20Chemotherapy"
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with stage, node count and MSI/MMR](https://wa.me/919044346292?text=Please%20review%20my%20colon%20cancer%20pathology%2C%20stage%2C%20node%20count%20and%20MSI%2FMMR%20and%20advise%20whether%20FOLFOX%2C%20CAPOX%20or%20immunotherapy%20is%20appropriate%20in%20India.)"
+        },
+        {
+          "id": "img_008",
+          "type": "image",
+          "src": "/uploads/articles/colon-chemo-anatomy.webp",
+          "alt": "Transparent adult body with a teal colon and a gold tumour used to explain systemic colon cancer chemotherapy",
+          "caption": "Unlike surgery, systemic chemotherapy travels through the bloodstream and can reach microscopic cancer cells throughout the body."
+        },
+        {
+          "id": "h_009",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Chemotherapy for Colon Cancer?"
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "Chemotherapy uses medicines that interfere with the growth and survival of cancer cells. Unlike surgery, which treats a specific physical tumour, **systemic chemotherapy travels through the bloodstream**. This makes it useful when microscopic cancer cells may remain after surgery or when cancer has spread beyond the colon. It may be given before surgery, after surgery, instead of immediate surgery in selected advanced situations, together with targeted therapy, as conversion therapy, or as later-line treatment after progression."
+        },
+        {
+          "id": "h_011",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Is Chemotherapy Used?"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "**Adjuvant chemotherapy** reduces recurrence after surgery — particularly important in [Stage 3 colon cancer](/blogs/stage-3-colon-cancer-treatment-in-india). The purpose is to eliminate microscopic cells that may remain after the visible tumour has been removed."
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "**Neoadjuvant therapy** may shrink a selected locally advanced tumour before surgery, make complete removal more likely and treat microscopic disease earlier."
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "**Conversion therapy** may shrink initially unresectable metastases so that surgery or another local treatment becomes possible. See [Stage 4 colon cancer treatment](/blogs/stage-4-colon-cancer-treatment-in-india). When metastatic disease cannot be completely removed, systemic treatment can slow growth, control symptoms, delay progression and maintain quality of life."
+        },
+        {
+          "id": "h_015",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Chemotherapy Necessary for Every Colon Cancer Patient?"
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "No. Chemotherapy depends heavily on the stage and risk profile."
+        },
+        {
+          "id": "html_017",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Colon cancer stage</th><th>Typical role of chemotherapy</th></tr></thead><tbody><tr><td>Stage 0</td><td>Usually not required</td></tr><tr><td>Stage 1</td><td>Usually not required</td></tr><tr><td>Stage 2</td><td>Selected high-risk patients</td></tr><tr><td>Stage 3</td><td>Generally recommended after surgery</td></tr><tr><td>Stage 4</td><td>Major systemic treatment option</td></tr><tr><td>Recurrent disease</td><td>Depends on previous treatment and tumor biology</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "The final decision should be based on pathology, imaging, molecular testing and overall health — not on the word \"colon cancer\" alone."
+        },
+        {
+          "id": "h_019",
+          "type": "heading",
+          "level": 2,
+          "text": "Colon Cancer Chemotherapy by Stage"
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 3,
+          "text": "Stage 1"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "Most [Stage 1 colon cancers](/blogs/stage-1-colon-cancer-treatment-in-india) are treated with surgery alone. Chemotherapy is generally not needed because the risk of systemic recurrence is relatively low after adequate removal."
+        },
+        {
+          "id": "h_022",
+          "type": "heading",
+          "level": 3,
+          "text": "Stage 2"
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "[Stage 2](/blogs/stage-2-colon-cancer-treatment-in-india) is more complicated. Some patients require only surgery and surveillance. Others may be considered for adjuvant chemotherapy because of T4 disease, inadequate lymph-node evaluation, poor differentiation in appropriate contexts, lymphovascular or perineural invasion, obstruction, perforation, concerning margins or other unfavorable features. **MMR/MSI status** can also influence the discussion. A Stage 2 patient should not be told that chemotherapy is automatically necessary or automatically unnecessary."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 3,
+          "text": "Stage 3"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "[Stage 3](/blogs/stage-3-colon-cancer-treatment-in-india) means regional lymph nodes contain cancer. For most patients after complete surgical removal, **adjuvant chemotherapy is a standard component**. Common regimens are **FOLFOX** and **CAPOX**. Choice depends on T and N stage, age, kidney function, neuropathy risk, performance status, previous chemotherapy, preference and duration considerations."
+        },
+        {
+          "id": "img_026",
+          "type": "image",
+          "src": "/uploads/articles/colon-chemo-nodes.webp",
+          "alt": "Transparent adult abdomen showing a teal colon, gold tumour and mixed gold and teal mesenteric lymph nodes used to explain adjuvant chemotherapy",
+          "caption": "Node-positive Stage 3 disease is why adjuvant FOLFOX or CAPOX is generally recommended after surgery."
+        },
+        {
+          "id": "h_027",
+          "type": "heading",
+          "level": 3,
+          "text": "How long is Stage 3 chemotherapy?"
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "Treatment can be approximately **3 months** or **6 months**. The major evidence for shorter treatment comes from the **IDEA** collaboration comparing three versus six months of oxaliplatin-based chemotherapy. Three months of CAPOX is an established option for many lower-risk Stage 3 patients (often T1–3 N1), while the decision is different for higher-risk disease (T4 and/or N2) and for FOLFOX."
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "A 2026 final analysis of the **SCOT** trial reported five-year overall survival of **82.4%** with both three and six months of treatment in its study population, with noninferiority for CAPOX but not for FOLFOX. This does **not** mean that every Stage 3 patient should receive three months. The decision should be individualized."
+        },
+        {
+          "id": "btn_030",
+          "type": "button",
+          "label": "Ask about FOLFOX versus CAPOX and 3 vs 6 months",
+          "href": "/consult?treatment=Chemotherapy"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 about chemotherapy duration](https://wa.me/919044346292?text=Please%20advise%20whether%203%20months%20of%20CAPOX%20or%206%20months%20of%20FOLFOX%20is%20more%20appropriate%20for%20my%20colon%20cancer%20risk%20group%20in%20India.)"
+        },
+        {
+          "id": "h_032",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is FOLFOX?"
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "**FOLFOX** combines folinic acid/leucovorin (**FOL**), fluorouracil/5-FU (**F**) and oxaliplatin (**OX**). It is used in Stage 3 disease, selected high-risk Stage 2 disease, Stage 4 disease and selected conversion settings. It is usually given intravenously. A common schedule repeats every two weeks: blood tests, pre-medications, oxaliplatin, leucovorin, 5-FU (sometimes with a portable infusion pump), then a recovery period. Doses can be modified for blood counts, kidney and liver function, neuropathy, diarrhea and overall tolerance."
+        },
+        {
+          "id": "h_034",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is CAPOX?"
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "**CAPOX**, also called **XELOX**, combines **capecitabine** and **oxaliplatin**. The major difference from FOLFOX is that capecitabine is taken orally instead of continuous intravenous 5-FU. A typical cycle may involve oxaliplatin on day 1, capecitabine tablets for a defined number of days, a treatment-free period, then a three-week cycle. Kidney function is particularly important when determining suitability and dosing of capecitabine. NCI recognizes CAPOX as an established colorectal cancer chemotherapy combination."
+        },
+        {
+          "id": "html_036",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>FOLFOX</th><th>CAPOX</th></tr></thead><tbody><tr><td>Main fluoropyrimidine</td><td>5-FU</td><td>Capecitabine</td></tr><tr><td>Fluoropyrimidine route</td><td>IV</td><td>Oral</td></tr><tr><td>Oxaliplatin</td><td>Yes</td><td>Yes</td></tr><tr><td>Typical cycle pattern</td><td>Often 2 weeks</td><td>Often 3 weeks</td></tr><tr><td>Infusion requirement</td><td>More extensive</td><td>Less continuous infusion</td></tr><tr><td>Home medication</td><td>Usually limited</td><td>Capecitabine tablets</td></tr><tr><td>Important toxicity</td><td>Neuropathy, cytopenias, diarrhea</td><td>Neuropathy, diarrhea, hand-foot syndrome</td></tr><tr><td>Common use</td><td>Stage 3 and metastatic disease</td><td>Stage 3 and metastatic disease</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "Neither regimen is universally \"better.\" The choice depends on the patient and treatment objective."
+        },
+        {
+          "id": "img_038",
+          "type": "image",
+          "src": "/uploads/articles/colon-chemo-clinic.webp",
+          "alt": "Adult patient in clinic with a colon-and-lymph-node overlay while a medical oncologist explains FOLFOX versus CAPOX",
+          "caption": "Ask why this regimen, how long it will last, and how neuropathy will be monitored — not only which protocol is newest."
+        },
+        {
+          "id": "h_039",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is FOLFIRI? What Is FOLFOXIRI?"
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "**FOLFIRI** combines leucovorin, 5-FU and **irinotecan**. It is particularly important in metastatic colon cancer — as first-line therapy, after progression on oxaliplatin-based treatment, as part of conversion therapy, or with targeted therapy in selected patients. The choice between FOLFOX and FOLFIRI often depends on what the patient has already received. After progression, **FOLFOX → FOLFIRI** or **FOLFIRI → FOLFOX** may be used."
+        },
+        {
+          "id": "html_041",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>FOLFOX</th><th>FOLFIRI</th></tr></thead><tbody><tr><td>Key drug</td><td>Oxaliplatin</td><td>Irinotecan</td></tr><tr><td>Fluoropyrimidine</td><td>5-FU</td><td>5-FU</td></tr><tr><td>Main cumulative concern</td><td>Peripheral neuropathy</td><td>Diarrhea and other irinotecan-related toxicity</td></tr><tr><td>Common use</td><td>Adjuvant and metastatic</td><td>Mainly metastatic / later-line</td></tr><tr><td>Can be sequenced?</td><td>Yes</td><td>Yes</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "**FOLFOXIRI** (5-FU, leucovorin, oxaliplatin and irinotecan) is a more intensive regimen for selected fit patients with metastatic disease — high tumour burden, rapidly progressive disease, need for substantial shrinkage, or conversion to potentially resectable disease. The trade-off is increased toxicity. The 2025 Indian metastatic colorectal cancer consensus supports FOLFOXIRI/mFOLFIRINOX in selected fit patients when a substantial response or conversion to resection is an important objective."
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "Not every patient is fit enough for combination chemotherapy. For selected older or frail patients, doctors may use capecitabine, 5-FU or other less-intensive regimens. The 2025 Indian consensus emphasizes age, frailty, comorbidities, organ function and preferences when selecting intensity."
+        },
+        {
+          "id": "h_044",
+          "type": "heading",
+          "level": 2,
+          "text": "Metastatic Disease, Targeted Therapy and Immunotherapy"
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "In [Stage 4 colon cancer](/blogs/stage-4-colon-cancer-treatment-in-india), chemotherapy is generally used as systemic treatment. Choice depends on MSI/MMR, RAS, BRAF, HER2, sidedness, tumour burden, symptoms, resectability, need for rapid shrinkage, previous chemotherapy and fitness. GAF planning ranges for [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) are **$1,500–$8,000+**."
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Chemotherapy can be combined with [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) (**$8,000–$30,000**) such as bevacizumab, cetuximab or panitumumab. **RAS status is critical** for anti-EGFR therapy. For appropriate **RAS wild-type, BRAF wild-type, left-sided** metastatic tumours, anti-EGFR plus chemotherapy can be an important first-line option. For many right-sided tumours, an anti-VEGF approach may be preferred first-line. The 2025 Indian consensus emphasizes primary tumour location, RAS/BRAF status and the goal of treatment when selecting chemotherapy plus a biologic."
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "Not every metastatic patient should automatically begin with chemotherapy. For **MSI-H/dMMR** tumours, [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) (**$15,000–$45,000**) can be an important first-line treatment. Current ESMO guidance identifies dMMR/MSI-H status as a major first decision point in metastatic colorectal cancer. ASCO guidance recommends pembrolizumab as first-line treatment for appropriately selected MSI-H/dMMR metastatic colorectal cancer. **MMR/MSI testing should be part of treatment planning** for advanced disease. GAF planning ranges for [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) are **$2,000–$7,000**."
+        },
+        {
+          "id": "btn_048",
+          "type": "button",
+          "label": "Ask whether immunotherapy should come before chemotherapy",
+          "href": "/consult?treatment=Immunotherapy"
+        },
+        {
+          "id": "btn_049",
+          "type": "button",
+          "label": "Ask how RAS, BRAF, HER2 and sidedness change the chemo backbone",
+          "href": "/consult?treatment=Targeted%20Therapy"
+        },
+        {
+          "id": "btn_050",
+          "type": "button",
+          "label": "Ask which molecular tests to complete before the first cycle",
+          "href": "/consult?treatment=Precision%20Oncology"
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 2,
+          "text": "Chemotherapy Before or After Surgery"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Chemotherapy before surgery is not required for every patient. It may be considered for locally advanced or T4b tumours, borderline resectable disease, selected metastatic disease, conversion therapy or clinical-trial settings. After surgery, **adjuvant chemotherapy** typically follows: colon surgery → final pathology → stage and recurrence-risk assessment → oncology consultation → adjuvant chemotherapy → surveillance. Treatment generally begins after sufficient postoperative recovery — adequate wound healing, nutrition, blood counts, kidney and liver function, and recovery from major complications."
+        },
+        {
+          "id": "img_053",
+          "type": "image",
+          "src": "/uploads/articles/colon-chemo-infusion.webp",
+          "alt": "Adult in a chemotherapy day-care chair with a colon-and-tumour overlay used to explain outpatient FOLFOX or FOLFIRI",
+          "caption": "Most standard colon cancer chemotherapy is given in outpatient daycare, not as an overnight admission."
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 2,
+          "text": "Cycles, Daycare, Ports and Oral vs IV"
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "A **cycle** is one planned period of treatment followed by recovery. CAPOX commonly uses a three-week cycle; FOLFOX commonly uses a two-week cycle — so \"six cycles\" does not mean the same amount of time. Adjuvant Stage 3 treatment is approximately **3–6 months**. Metastatic treatment may continue much longer, with intensive treatment, maintenance, breaks, second-line and later-line therapy."
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "A typical visit includes blood tests, oncology assessment, dose review, pre-medications, infusion and observation. Most standard regimens are given through **outpatient chemotherapy daycare**. A central venous **port** may be recommended for repeated intravenous treatment; it is not always required. Oral medicines such as capecitabine do not mean milder treatment — they can still cause significant diarrhea and hand-foot syndrome."
+        },
+        {
+          "id": "h_057",
+          "type": "heading",
+          "level": 2,
+          "text": "Side Effects and When to Seek Emergency Care"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "Common effects include fatigue, nausea, vomiting, diarrhea, constipation, reduced appetite, taste changes, mouth sores, low blood counts, infection, neuropathy, hand-foot syndrome and skin changes. **Oxaliplatin** can cause cumulative peripheral neuropathy and unusual **cold sensitivity**. **Capecitabine** can cause hand-foot syndrome. **Irinotecan** can cause early or delayed diarrhea that may lead to dehydration. Low white cells raise infection risk; low platelets raise bleeding risk. Blood tests are therefore performed regularly. A cycle may be delayed or the dose reduced to keep treatment safe — that does not automatically mean treatment has failed."
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "**Fever, chills, severe diarrhea, persistent vomiting, shortness of breath, significant bleeding, new confusion, severe abdominal pain with vomiting or inability to pass stool, chest pain, sudden weakness or collapse belongs in a local emergency department — not a delayed WhatsApp message.** Follow the fever threshold given by the treating oncology team."
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 2,
+          "text": "If First-Line Treatment Stops Working"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "Stage 4 disease is often treated through multiple lines: FOLFOX/CAPOX or FOLFIRI-based treatment, then a backbone switch after progression, then later-line trifluridine/tipiracil, regorafenib, fruquintinib, biomarker-specific therapy or clinical trials. The 2025 Indian consensus supports changing the chemotherapy backbone after progression on an oxaliplatin- or irinotecan-based regimen in appropriate patients. After good control, intensive chemotherapy may be stepped down to **maintenance** — for example discontinuing oxaliplatin because of neuropathy while continuing the fluoropyrimidine."
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Liver metastases that may become resectable need regular reassessment — [liver resection](/costs/India/Surgical-Oncology/Liver-Resection-(Hepatectomy)) planning ranges are **$10,000–$26,000**. Limited lung disease may also involve surgery, ablation or [SBRT](/costs/India/Radiation-Oncology/SBRT). Peritoneal disease may be evaluated for [CRS/HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC). A falling CEA can be encouraging but does not by itself mean the cancer is gone; imaging remains essential."
+        },
+        {
+          "id": "h_063",
+          "type": "heading",
+          "level": 2,
+          "text": "Colon Cancer Chemotherapy Cost in India"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "There is **no single price** for colon cancer chemotherapy because different patients receive different drugs and durations. A Stage 3 patient on CAPOX after surgery has a more predictable chemotherapy cost than a Stage 4 patient on FOLFOXIRI plus targeted therapy, then maintenance, then second-line treatment. GAF Healthcare publishes USD planning ranges compiled from partner hospital cost sheets. They are not hospital quotations. The largest variation usually occurs when targeted therapy or immunotherapy is added."
+        },
+        {
+          "id": "html_065",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Component</th><th>GAF planning range in India</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemotherapy</a> (FOLFOX, CAPOX, FOLFIRI)</td><td>$1,500–$8,000+</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Targeted-Therapy\">Targeted therapy</a></td><td>$8,000–$30,000</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Immunotherapy\">Immunotherapy</a></td><td>$15,000–$45,000</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Precision-Oncology\">Precision oncology / molecular testing</a></td><td>$2,000–$7,000</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Colectomy\">Colectomy</a></td><td>$7,000–$18,000</td></tr><tr><td><a href=\"/costs/India/Gastroenterology/Colonoscopy\">Colonoscopy</a></td><td>$200–$550</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Liver-Resection-(Hepatectomy)\">Liver resection</a> if conversion succeeds</td><td>$10,000–$26,000</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "City pages such as [Delhi NCR chemotherapy](/costs/India/Delhi-NCR/Medical-Oncology/Chemotherapy), [Mumbai](/costs/India/Mumbai/Medical-Oncology/Chemotherapy), [Bengaluru](/costs/India/Bengaluru/Medical-Oncology/Chemotherapy), [Chennai](/costs/India/Chennai/Medical-Oncology/Chemotherapy) and [Hyderabad](/costs/India/Hyderabad/Medical-Oncology/Chemotherapy) use the same national range unless a hospital issues a verified quotation."
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Ask whether the quotation names the drugs, manufacturer, generic versus branded product, number of cycles, daycare charges, labs, imaging, supportive medicines and what is excluded (admission for infection, extra cycles, targeted therapy, immunotherapy). Treatment decisions should never be based solely on the cheapest medicine."
+        },
+        {
+          "id": "btn_068",
+          "type": "button",
+          "label": "Ask for an itemised chemotherapy quotation",
+          "href": "/consult?treatment=Colon%20Cancer%20Chemotherapy%20Cost%20in%20India"
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a regimen-specific estimate](https://wa.me/919044346292?text=Please%20send%20an%20itemised%20colon%20cancer%20chemotherapy%20quotation%20in%20India%20naming%20FOLFOX%20or%20CAPOX%2C%20cycles%2C%20daycare%2C%20labs%20and%20whether%20targeted%20therapy%20or%20immunotherapy%20is%20included.)"
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 2,
+          "text": "How to Choose a Hospital and What to Ask"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "Chemotherapy safety depends more on the quality of the cancer program and monitoring than simply the country. Look for experienced medical oncologists, qualified oncology nurses, proper chemotherapy preparation, blood-count monitoring, emergency support, infection-control, pharmacy controls, molecular pathology, colorectal surgery on the same tumour board and international-patient services."
+        },
+        {
+          "id": "ul_072",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Medical oncology hospitals in Delhi NCR](/hospitals/India/Delhi-NCR/Medical-Oncology)",
+            "[Medical oncology hospitals in Mumbai](/hospitals/India/Mumbai/Medical-Oncology)",
+            "[Medical oncology hospitals in Bengaluru](/hospitals/India/Bengaluru/Medical-Oncology)",
+            "[Medical oncology hospitals in Chennai](/hospitals/India/Chennai/Medical-Oncology)",
+            "[Medical oncology hospitals in Hyderabad](/hospitals/India/Hyderabad/Medical-Oncology)"
+          ]
+        },
+        {
+          "id": "ol_073",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What stage is my colon cancer, and why is chemotherapy being recommended — curative-intent adjuvant treatment or disease control?",
+            "Which regimen — FOLFOX, CAPOX, FOLFIRI or FOLFOXIRI — and can duration be 3 rather than 6 months in my risk group?",
+            "Has MMR/MSI, RAS, BRAF and HER2 been tested, and would immunotherapy or a targeted medicine come first?",
+            "Do I need a port, will treatment be daycare, and what side effects require emergency care?",
+            "How will neuropathy, diarrhea and blood counts be monitored, and when is the next CT?",
+            "Can later cycles continue in my home country, and what is the estimated total cost with drugs named?"
+          ]
+        },
+        {
+          "id": "h_074",
+          "type": "heading",
+          "level": 2,
+          "text": "The Bottom Line"
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "Chemotherapy is not automatically required for every colon cancer patient. Stage 1 usually does not need it. Selected Stage 2 patients may benefit. Stage 3 generally needs postoperative FOLFOX or CAPOX for about 3–6 months, individualized by risk and neuropathy. FOLFIRI and FOLFOXIRI matter in metastatic disease. MSI-H/dMMR metastatic colon cancer may start with immunotherapy rather than chemotherapy. Molecular testing is essential before first-line Stage 4 treatment. Oxaliplatin neuropathy, capecitabine hand-foot syndrome and irinotecan diarrhea should be reported early. A patient-specific quotation should always be obtained before planning travel."
+        },
+        {
+          "id": "h_076",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 3,
+          "text": "Is chemotherapy necessary after colon cancer surgery?"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "It depends on the stage and pathology. Stage 3 patients generally receive adjuvant chemotherapy unless there is a specific reason not to. Stage 2 patients may be considered for chemotherapy when higher-risk features are present."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 3,
+          "text": "Which chemotherapy is best for colon cancer?"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "There is no single best regimen for every patient. FOLFOX and CAPOX are commonly used after surgery for Stage 3 disease, while FOLFOX, CAPOX, FOLFIRI and FOLFOXIRI have roles in metastatic disease."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 3,
+          "text": "Is CAPOX better than FOLFOX?"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "Neither is universally better. CAPOX offers an oral fluoropyrimidine and a three-week cycle, while FOLFOX uses intravenous 5-FU and commonly has a two-week cycle. The choice should consider efficacy, side effects, kidney function, lifestyle and patient preference."
+        },
+        {
+          "id": "h_083",
+          "type": "heading",
+          "level": 3,
+          "text": "Is FOLFOX chemotherapy painful?"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "The infusion itself is not necessarily painful, although patients can experience discomfort from the IV or port. Side effects such as neuropathy, nausea, fatigue or cold sensitivity may occur."
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 3,
+          "text": "How many cycles of FOLFOX are needed?"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "The number depends on the treatment setting. Adjuvant treatment for Stage 3 disease is commonly planned around a three- to six-month duration, while metastatic treatment may continue longer and change according to response and toxicity."
+        },
+        {
+          "id": "h_087",
+          "type": "heading",
+          "level": 3,
+          "text": "How many cycles of CAPOX are needed?"
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "The number depends on whether CAPOX is being used for adjuvant or metastatic treatment and on the intended duration. The oncologist should specify the exact number."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 3,
+          "text": "Does colon cancer chemotherapy cause hair loss?"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Hair loss is not necessarily complete with common colon cancer regimens. The extent varies according to the drugs used."
+        },
+        {
+          "id": "h_091",
+          "type": "heading",
+          "level": 3,
+          "text": "Does chemotherapy cause weight loss?"
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "It can, particularly if nausea, diarrhea, poor appetite or other complications occur. Some patients maintain or gain weight during treatment."
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 3,
+          "text": "Can chemotherapy cure colon cancer?"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "In the adjuvant setting, chemotherapy is intended to reduce the risk of recurrence after surgery. In selected metastatic patients, systemic therapy may contribute to a curative treatment strategy when all metastatic disease can ultimately be removed or controlled locally. For widespread metastatic disease, chemotherapy is generally used to control the cancer."
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 3,
+          "text": "Can chemotherapy shrink colon cancer?"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "Yes. Chemotherapy can shrink tumors in some patients. This is particularly important when treatment is being used as conversion therapy to make metastatic disease potentially removable."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 3,
+          "text": "What happens if chemotherapy does not work?"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "The oncology team may change the regimen, add or change targeted treatment, use immunotherapy when appropriate, consider biomarker-directed treatment, or evaluate clinical-trial options."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "Can colon cancer chemotherapy be given at home?"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Some medicines, such as capecitabine, are taken orally at home. Other medicines require hospital or chemotherapy-daycare administration."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does colon cancer chemotherapy cost in India?"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "Costs vary according to the regimen, number of cycles, hospital, drug brands, targeted therapy and other medical requirements. GAF planning ranges for chemotherapy are $1,500–$8,000+. A patient-specific quotation is more reliable than a generic online estimate."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Colon Cancer Resources"
+        },
+        {
+          "id": "ul_104",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and systemic medicines around chemotherapy.",
+            "[Stage 3 Colon Cancer Treatment in India](/blogs/stage-3-colon-cancer-treatment-in-india) — adjuvant FOLFOX/CAPOX and 3 versus 6 months.",
+            "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic resectability, conversion therapy and later lines.",
+            "[Stage 2 Colon Cancer Treatment in India](/blogs/stage-2-colon-cancer-treatment-in-india) — when adjuvant chemotherapy is only discussed.",
+            "[Stage 1 Colon Cancer Treatment in India](/blogs/stage-1-colon-cancer-treatment-in-india) — why chemotherapy is usually not required.",
+            "[Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india) — hemicolectomy, anastomosis and recovery before adjuvant treatment.",
+            "[Chemotherapy cost in India](/costs/India/Medical-Oncology/Chemotherapy) — GAF planning range $1,500–$8,000+.",
+            "[Immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) — first-line option for MSI-H/dMMR metastatic disease.",
+            "[Rectal cancer surgery](/costs/India/Surgical-Oncology/Rectal-Cancer-Surgery) — a different pathway when radiation may be part of treatment.",
+            "[Breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india) and [prostate cancer treatment in India](/treatments/prostate-cancer-treatment-in-india) — other GAF cancer pathways."
+          ]
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates international patients who need a colon cancer chemotherapy opinion in India — after Stage 3 pathology, a question about FOLFOX versus CAPOX, or an MSI/RAS result before first-line metastatic treatment. Share the colonoscopy PDF, the **complete pathology report**, CT/MRI, CEA, previous chemotherapy records and any molecular results. A coordinator can introduce a [medical oncologist](/doctors/India/Medical-Oncology) and, when conversion surgery is possible, a [surgical oncologist](/doctors/India/Surgical-Oncology), then help collect an itemised quotation naming the regimen, cycles, daycare and supportive medicines."
+        },
+        {
+          "id": "btn_107",
+          "type": "button",
+          "label": "Share records for a chemotherapy review",
+          "href": "/consult?treatment=Colon%20Cancer%20Chemotherapy"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with pathology, stage and previous cycles](https://wa.me/919044346292?text=I%20would%20like%20to%20share%20my%20colon%20cancer%20pathology%2C%20stage%2C%20CEA%20and%20previous%20chemotherapy%20records%20for%20a%20chemotherapy%20second%20opinion%20in%20India.)"
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "This article is intended for general educational purposes and should not replace consultation with a qualified medical oncologist or colorectal cancer team. Chemotherapy should be prescribed according to the patient's pathology, stage, molecular profile, previous treatment, kidney and liver function, general health and individual treatment goals. Patients should not start, stop or change cancer treatment without discussing it with their treating doctor."
+        },
+        {
+          "id": "h_111",
+          "type": "heading",
+          "level": 2,
+          "text": "Top 10 Sources"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "1. [NCI — Colon Cancer Treatment (PDQ®)](https://www.cancer.gov/types/colorectal/hp/colon-treatment-pdq) — adjuvant and metastatic chemotherapy, Stage III and Stage IV."
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "2. [ASCO — Gastrointestinal cancer guidelines](https://www.asco.org/practice-patients/guidelines/gastrointestinal-cancer) — treatment of metastatic colorectal cancer, including pembrolizumab for MSI-H/dMMR disease."
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "3. [ESMO — Gastrointestinal cancer guidelines](https://www.esmo.org/guidelines/guidelines-by-topic/esmo-clinical-practice-guidelines-gastrointestinal-cancers) — dMMR/MSI-H as a first decision point in metastatic colorectal cancer."
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "4. [2025 Indian consensus statements for advanced/metastatic colorectal cancer](https://www.thieme-connect.de/products/ejournals/html/10.1055/s-0045-1809380) — FOLFOXIRI in selected fit patients, backbone switch after progression, frailty and chemo plus targeted therapy."
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "5. [IDEA collaboration — duration of adjuvant chemotherapy](https://www.nejm.org/doi/full/10.1056/NEJMoa1713709) — 3 versus 6 months in Stage III colon cancer."
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "6. [SCOT trial — final overall-survival results](https://ascopubs.org/doi/10.1200/JCO-25-00621) — 5-year OS 82.4% with both 3 and 6 months; noninferiority for CAPOX but not FOLFOX."
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "7. [NCI — drugs approved for colon cancer](https://www.cancer.gov/about-cancer/treatment/drugs/colon) — CAPOX/XELOX and other established combinations."
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "8. [NCI — chemotherapy to treat cancer](https://www.cancer.gov/about-cancer/treatment/types/chemotherapy) — how systemic chemotherapy is given and monitored."
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "9. [NCI — nerve problems (peripheral neuropathy)](https://www.cancer.gov/about-cancer/treatment/side-effects/nerve-problems) — oxaliplatin-associated chemotherapy-induced peripheral neuropathy."
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "10. [NCI — Colon Cancer Treatment PDQ, Stage III and Stage IV sections](https://www.cancer.gov/types/colorectal/hp/colon-treatment-pdq) — adjuvant FOLFOX/CAPOX and metastatic systemic options."
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "**Last reviewed against the cited sources: September 2026.**"
+        }
+      ]
+    },
     {
       "id": "art_stage_4_colon_cancer_treatment_in_india",
       "slug": "stage-4-colon-cancer-treatment-in-india",
@@ -1449,6 +2230,10 @@
         "BRAF HER2 RAS colon cancer"
       ],
       "relatedLinks": [
+        {
+          "label": "Colon Cancer Chemotherapy in India",
+          "href": "/blogs/colon-cancer-chemotherapy-in-india"
+        },
         {
           "label": "Colon Cancer Treatment in India",
           "href": "/treatments/colon-cancer-treatment-in-india"
@@ -2117,6 +2902,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india) — FOLFOX vs CAPOX, 3 versus 6 months, FOLFIRI and when immunotherapy comes first.",
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and systemic medicines around metastatic disease.",
             "[Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india) — hemicolectomy types, anastomosis, stomas and approach choice.",
             "[Stage 3 Colon Cancer Treatment in India](/blogs/stage-3-colon-cancer-treatment-in-india) — node-positive M0 disease, FOLFOX/CAPOX and 3 versus 6 months.",
@@ -2263,6 +3049,10 @@
         "dMMR immunotherapy stage III"
       ],
       "relatedLinks": [
+        {
+          "label": "Colon Cancer Chemotherapy in India",
+          "href": "/blogs/colon-cancer-chemotherapy-in-india"
+        },
         {
           "label": "Stage 4 Colon Cancer Treatment in India",
           "href": "/blogs/stage-4-colon-cancer-treatment-in-india"
@@ -2826,6 +3616,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india) — FOLFOX vs CAPOX, 3 versus 6 months, FOLFIRI and when immunotherapy comes first.",
             "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic disease, resectability, conversion therapy and biomarker-directed treatment.",
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and systemic medicines around Stage III.",
             "[Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india) — hemicolectomy types, anastomosis, stomas and approach choice.",
@@ -2972,6 +3763,10 @@
         "stage IIA IIB IIC colon cancer"
       ],
       "relatedLinks": [
+        {
+          "label": "Colon Cancer Chemotherapy in India",
+          "href": "/blogs/colon-cancer-chemotherapy-in-india"
+        },
         {
           "label": "Stage 4 Colon Cancer Treatment in India",
           "href": "/blogs/stage-4-colon-cancer-treatment-in-india"
@@ -3663,6 +4458,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india) — FOLFOX vs CAPOX, 3 versus 6 months, FOLFIRI and when immunotherapy comes first.",
             "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic disease, resectability, conversion therapy and biomarker-directed treatment.",
             "[Stage 3 Colon Cancer Treatment in India](/blogs/stage-3-colon-cancer-treatment-in-india) — node-positive disease, FOLFOX/CAPOX and 3 versus 6 months of adjuvant chemotherapy.",
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and systemic medicines around Stage II.",
@@ -3809,6 +4605,10 @@
         "stage I colon cancer India"
       ],
       "relatedLinks": [
+        {
+          "label": "Colon Cancer Chemotherapy in India",
+          "href": "/blogs/colon-cancer-chemotherapy-in-india"
+        },
         {
           "label": "Stage 4 Colon Cancer Treatment in India",
           "href": "/blogs/stage-4-colon-cancer-treatment-in-india"
@@ -4552,6 +5352,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india) — FOLFOX vs CAPOX, 3 versus 6 months, FOLFIRI and when immunotherapy comes first.",
             "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic disease, resectability, conversion therapy and biomarker-directed treatment.",
             "[Stage 3 Colon Cancer Treatment in India](/blogs/stage-3-colon-cancer-treatment-in-india) — node-positive disease, FOLFOX/CAPOX and 3 versus 6 months of adjuvant chemotherapy.",
             "[Stage 2 Colon Cancer Treatment in India](/blogs/stage-2-colon-cancer-treatment-in-india) — deeper wall invasion, high-risk features and the chemotherapy discussion.",
@@ -4698,6 +5499,10 @@
         "colon cancer recovery"
       ],
       "relatedLinks": [
+        {
+          "label": "Colon Cancer Chemotherapy in India",
+          "href": "/blogs/colon-cancer-chemotherapy-in-india"
+        },
         {
           "label": "Stage 4 Colon Cancer Treatment in India",
           "href": "/blogs/stage-4-colon-cancer-treatment-in-india"
@@ -5631,6 +6436,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india) — FOLFOX vs CAPOX, 3 versus 6 months, FOLFIRI and when immunotherapy comes first.",
             "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic disease, resectability, conversion therapy and biomarker-directed treatment.",
             "[Stage 3 Colon Cancer Treatment in India](/blogs/stage-3-colon-cancer-treatment-in-india) — node-positive disease, FOLFOX/CAPOX and 3 versus 6 months of adjuvant chemotherapy.",
             "[Stage 2 Colon Cancer Treatment in India](/blogs/stage-2-colon-cancer-treatment-in-india) — T3/T4, high-risk features, MSI/MMR and when adjuvant chemotherapy is discussed.",
