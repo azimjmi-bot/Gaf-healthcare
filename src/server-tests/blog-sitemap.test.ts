@@ -74,7 +74,7 @@ test("the blog sitemap lists every published English article, newest first", () 
     assert.equal(row.changeFrequency, "weekly");
     assert.equal(row.priority, 0.7);
   }
-  assert.equal(urls[1], "https://gaf.healthcare/blogs/colon-cancer-chemotherapy-in-india");
+  assert.equal(urls[1], "https://gaf.healthcare/blogs/colon-cancer-immunotherapy-in-india");
   assert.equal(buildBlogSitemap("ar").length, 0);
 });
 
