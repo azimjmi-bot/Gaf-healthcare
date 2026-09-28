@@ -18,6 +18,8 @@ export function robotsPolicy(): MetadataRoute.Robots {
     ],
     sitemap: [
       absoluteUrl("/sitemap.xml"),
+      // Search Console still has the Yoast URL submitted; keep serving it.
+      absoluteUrl("/sitemap_index.xml"),
       ...LOCALES.filter(
         (locale) => !isTargetLocale(locale) || localeIsPublished(locale),
       ).map((locale) => absoluteUrl(`/sitemap-${locale}.xml`)),

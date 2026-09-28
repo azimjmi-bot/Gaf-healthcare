@@ -6,6 +6,7 @@ Disallow: /doctors/compare
 
 Host: gaf.healthcare
 Sitemap: https://gaf.healthcare/sitemap.xml
+Sitemap: https://gaf.healthcare/sitemap_index.xml
 Sitemap: https://gaf.healthcare/sitemap-en.xml
 Sitemap: https://gaf.healthcare/sitemap-ar.xml
 Sitemap: https://gaf.healthcare/sitemap-blogs.xml

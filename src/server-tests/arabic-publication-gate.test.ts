@@ -335,6 +335,7 @@ test("noindex Arabic pages stay crawlable in robots.txt", () => {
   // Only sitemaps with something in them get advertised.
   assert.deepEqual(sitemap, [
     "https://gaf.healthcare/sitemap.xml",
+    "https://gaf.healthcare/sitemap_index.xml",
     "https://gaf.healthcare/sitemap-en.xml",
     "https://gaf.healthcare/sitemap-ar.xml",
     "https://gaf.healthcare/sitemap-blogs.xml",

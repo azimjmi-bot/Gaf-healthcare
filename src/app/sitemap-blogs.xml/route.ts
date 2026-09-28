@@ -1,12 +1,8 @@
-import { buildBlogSitemap, sitemapXml } from "@/lib/i18n/sitemap-entries";
+import { blogSitemapDocument } from "@/lib/i18n/blog-sitemap";
+import { sitemapResponse } from "@/lib/i18n/sitemap-xml";
 
-export const dynamic = "force-dynamic";
+export const revalidate = 300;
 
 export function GET() {
-  return new Response(sitemapXml(buildBlogSitemap("en")), {
-    headers: {
-      "Content-Type": "application/xml; charset=utf-8",
-      "Cache-Control": "public, max-age=300",
-    },
-  });
+  return sitemapResponse(blogSitemapDocument());
 }

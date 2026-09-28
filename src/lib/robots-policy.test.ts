@@ -11,6 +11,7 @@ describe("robots.txt policy", () => {
     assert.ok(!String(policy.host).includes("://"));
     assert.deepEqual(policy.sitemap, [
       "https://gaf.healthcare/sitemap.xml",
+      "https://gaf.healthcare/sitemap_index.xml",
       "https://gaf.healthcare/sitemap-en.xml",
       "https://gaf.healthcare/sitemap-ar.xml",
       "https://gaf.healthcare/sitemap-blogs.xml",

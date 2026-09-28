@@ -1,4 +1,19 @@
 /** @type {import('next').NextConfig} */
+const sitemapHeaders = [
+  {
+    key: "Content-Type",
+    value: "application/xml; charset=utf-8",
+  },
+  {
+    key: "Cache-Control",
+    value: "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400",
+  },
+  {
+    key: "X-Content-Type-Options",
+    value: "nosniff",
+  },
+];
+
 const nextConfig = {
   allowedDevOrigins: [
     "127.0.0.1",
@@ -203,6 +218,18 @@ const nextConfig = {
             value: "nosniff",
           },
         ],
+      },
+      {
+        source: "/sitemap.xml",
+        headers: sitemapHeaders,
+      },
+      {
+        source: "/sitemap_index.xml",
+        headers: sitemapHeaders,
+      },
+      {
+        source: "/sitemap-:name.xml",
+        headers: sitemapHeaders,
       },
       {
         // Static images under /public. Every asset here is content-addressed
