@@ -107,7 +107,10 @@
     "MSI MMR",
     "stage 3 colon cancer",
     "FOLFOX",
-    "CAPOX"
+    "CAPOX",
+    "stage 4 colon cancer",
+    "metastatic colon cancer",
+    "immunotherapy"
   ],
   "media": [
     {
@@ -1376,9 +1379,852 @@
       "name": "colon-s3-chemo.webp",
       "alt": "Adult in a chemotherapy day-care chair with a colon-and-lymph-node overlay used to explain adjuvant FOLFOX or CAPOX after Stage 3 surgery",
       "addedAt": "2026-09-28T19:00:00.000Z"
+    },
+    {
+      "id": "media_colon_s4_anatomy_webp",
+      "url": "/uploads/articles/colon-s4-anatomy.webp",
+      "name": "colon-s4-anatomy.webp",
+      "alt": "Transparent adult body with a teal colon, gold primary tumour and gold liver metastases used to explain Stage 4 colon cancer",
+      "addedAt": "2026-09-28T19:30:00.000Z"
+    },
+    {
+      "id": "media_colon_s4_liver_webp",
+      "url": "/uploads/articles/colon-s4-liver.webp",
+      "name": "colon-s4-liver.webp",
+      "alt": "Transparent adult abdomen showing a teal colon with a gold primary tumour and a brown liver containing gold metastatic nodules",
+      "addedAt": "2026-09-28T19:30:00.000Z"
+    },
+    {
+      "id": "media_colon_s4_clinic_webp",
+      "url": "/uploads/articles/colon-s4-clinic.webp",
+      "name": "colon-s4-clinic.webp",
+      "alt": "Adult patient in clinic with a colon-and-liver-metastasis overlay while a medical oncologist explains Stage 4 treatment",
+      "addedAt": "2026-09-28T19:30:00.000Z"
+    },
+    {
+      "id": "media_colon_s4_systemic_webp",
+      "url": "/uploads/articles/colon-s4-systemic.webp",
+      "name": "colon-s4-systemic.webp",
+      "alt": "Adult in a chemotherapy day-care chair with a colon, liver-metastasis and peritoneal-deposit overlay used to explain systemic treatment for Stage 4 colon cancer",
+      "addedAt": "2026-09-28T19:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_stage_4_colon_cancer_treatment_in_india",
+      "slug": "stage-4-colon-cancer-treatment-in-india",
+      "title": "Stage 4 Colon Cancer Treatment in India: Metastatic Care, Surgery and Targeted Therapy",
+      "excerpt": "Metastatic colon cancer: resectable vs unresectable disease, conversion therapy, FOLFOX/FOLFIRI, MSI/MMR immunotherapy, liver surgery and CRS/HIPEC.",
+      "date": "28 September 2026",
+      "publishedAt": "2026-09-28T19:30:00.000Z",
+      "updatedAt": "2026-09-28T19:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "colon cancer",
+        "stage 4 colon cancer",
+        "metastatic colon cancer",
+        "FOLFOX",
+        "immunotherapy",
+        "India"
+      ],
+      "image": "/uploads/articles/colon-s4-anatomy.webp",
+      "imageAlt": "Transparent adult body with a teal colon, gold primary tumour and gold liver metastases used to explain Stage 4 colon cancer",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Stage 4 Colon Cancer Treatment in India: Metastatic Care",
+      "seoDescription": "Stage 4 colon cancer treatment in India: resectability, conversion therapy, FOLFOX/FOLFIRI, MSI/MMR immunotherapy, liver surgery and CRS/HIPEC. GAF planning ranges.",
+      "canonical": "https://gaf.healthcare/blogs/stage-4-colon-cancer-treatment-in-india",
+      "ogImage": "/uploads/articles/colon-s4-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "stage 4 colon cancer treatment in India",
+        "metastatic colon cancer India",
+        "colon cancer liver metastases",
+        "conversion therapy colon cancer",
+        "FOLFOX FOLFIRI stage 4",
+        "MSI-H immunotherapy colon cancer",
+        "CRS HIPEC colon cancer India",
+        "stage 4 colon cancer cost in India",
+        "BRAF HER2 RAS colon cancer"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Colon Cancer Treatment in India",
+          "href": "/treatments/colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "Stage 3 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-3-colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "Colon Cancer Surgery in India",
+          "href": "/blogs/colon-cancer-surgery-in-india"
+        },
+        {
+          "label": "Stage 2 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-2-colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "Immunotherapy cost in India",
+          "href": "/costs/India/Medical-Oncology/Immunotherapy"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\">Treatment depends on whether the metastatic disease is <strong>resectable, potentially resectable or unresectable</strong>, together with the tumor's molecular characteristics and the patient's overall health.</p><p class=\"article-quick-answer__body\">Treatment may include:</p><ul class=\"article-quick-answer__list\"><li>Surgery to remove the primary colon tumor</li><li>Surgery to remove liver or lung metastases</li><li>Ablation of selected metastatic lesions</li><li>Chemotherapy</li><li>Targeted therapy</li><li>Immunotherapy</li><li>Radiation or stereotactic radiation in selected situations</li><li>Cytoreductive surgery for selected peritoneal metastases</li><li>HIPEC in carefully selected patients and specialist centers</li><li>Maintenance therapy</li><li>Later-line systemic treatment</li><li>Clinical trials</li><li>Supportive and palliative care when appropriate</li></ul><p class=\"article-quick-answer__body\">Common first-line chemotherapy backbones include:</p><ul class=\"article-quick-answer__list\"><li><strong>FOLFOX</strong></li><li><strong>CAPOX</strong></li><li><strong>FOLFIRI</strong></li></ul><p class=\"article-quick-answer__body\">Selected fit patients may receive more intensive combinations such as <strong>FOLFOXIRI</strong>.</p><p class=\"article-quick-answer__body\">Treatment is then combined with a biologic or targeted medicine when appropriate.</p><p class=\"article-quick-answer__body\">For tumors that are <strong>MSI-H/dMMR</strong>, immunotherapy can be a first-line treatment option and has become a major part of metastatic colorectal cancer care.</p><p class=\"article-quick-answer__body\">For other tumors, treatment may depend on:</p><ul class=\"article-quick-answer__list\"><li>RAS status</li><li>BRAF V600E status</li><li>HER2 status</li><li>Tumor sidedness</li><li>MSI/MMR status</li><li>Other actionable molecular alterations</li></ul><p class=\"article-quick-answer__body\">The treatment plan should be determined by a multidisciplinary colorectal cancer team.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Stage 4 colon cancer, also called **metastatic colon cancer**, means that the cancer has spread from the colon to distant parts of the body. Common sites include the liver, lungs, peritoneum (abdominal lining), distant lymph nodes, ovaries and, in more advanced disease, other organs."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "A Stage 4 diagnosis does **not** mean that every patient has the same treatment options or the same outlook. Some patients have a small number of metastases that can potentially be removed or destroyed completely. Others have disease that is initially unresectable but may become removable after systemic treatment. For patients with widespread disease that cannot be completely removed, modern chemotherapy, targeted therapy and immunotherapy can control the cancer, relieve symptoms and prolong life."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "The most important question is therefore not simply **\"Is Stage 4 colon cancer treatable?\"** It is: **where has the cancer spread, can all visible disease potentially be controlled or removed, and what does the tumor's molecular profile tell us about treatment?**"
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "This article is the Stage 4 / metastatic hub for the colon cluster. The broader pathway is in [Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india). How hemicolectomy, stomas and approach choice are planned is in [Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india). [Stage 1](/blogs/stage-1-colon-cancer-treatment-in-india), [Stage 2](/blogs/stage-2-colon-cancer-treatment-in-india) and [Stage 3](/blogs/stage-3-colon-cancer-treatment-in-india) cover earlier, non-metastatic disease. It is **not** a rectal-cancer page: radiation has a much larger role when the tumour is rectal. See [rectal cancer surgery](/costs/India/Surgical-Oncology/Rectal-Cancer-Surgery)."
+        },
+        {
+          "id": "p_006",
+          "type": "paragraph",
+          "text": "GAF Healthcare planning ranges include [colectomy](/costs/India/Surgical-Oncology/Colectomy) **$7,000–$18,000**, [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) **$1,500–$8,000+**, [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) **$8,000–$30,000**, [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) **$15,000–$45,000**, [precision oncology / molecular testing](/costs/India/Medical-Oncology/Precision-Oncology) **$2,000–$7,000**, [liver resection](/costs/India/Surgical-Oncology/Liver-Resection-(Hepatectomy)) **$10,000–$26,000** and [CRS with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) **$18,000–$40,000**. These are planning ranges, not hospital quotations."
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "International patients comparing [surgical oncologists](/doctors/India/Surgical-Oncology), [surgical gastroenterologists](/doctors/India/Surgical-Gastroenterology), [medical oncologists](/doctors/India/Medical-Oncology) and [radiation oncologists](/doctors/India/Radiation-Oncology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Surgical-Oncology/Colectomy), [Mumbai](/doctors/India/Mumbai/Surgical-Oncology/Colectomy), [Bengaluru](/doctors/India/Bengaluru/Surgical-Oncology/Colectomy), [Chennai](/doctors/India/Chennai/Surgical-Oncology/Colectomy) and [Hyderabad](/doctors/India/Hyderabad/Surgical-Oncology/Colectomy). Partner [surgical-oncology hospitals](/hospitals/India/Surgical-Oncology) and [medical-oncology hospitals](/hospitals/India/Medical-Oncology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Surgical-Oncology) and [Mumbai](/hospitals/India/Mumbai/Surgical-Oncology) are a typical first filter."
+        },
+        {
+          "id": "btn_008",
+          "type": "button",
+          "label": "Ask about Stage 4 colon cancer treatment in India",
+          "href": "/consult?treatment=Stage%204%20Colon%20Cancer%20Treatment"
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with scans, CEA and molecular results](https://wa.me/919044346292?text=Please%20review%20my%20Stage%204%20colon%20cancer%20CT%2FMRI%2C%20CEA%20and%20MSI%2FRAS%2FBRAF%2FHER2%20results%20and%20advise%20whether%20the%20metastases%20look%20resectable%20in%20India.)"
+        },
+        {
+          "id": "img_010",
+          "type": "image",
+          "src": "/uploads/articles/colon-s4-anatomy.webp",
+          "alt": "Transparent adult body with a teal colon, gold primary tumour and gold liver metastases used to explain Stage 4 colon cancer",
+          "caption": "Stage 4 means distant spread. Colon cancer in the liver is still colon cancer — not primary liver cancer."
+        },
+        {
+          "id": "h_011",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Stage 4 Colon Cancer?"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Stage 4 colon cancer means that the cancer has spread beyond the regional lymph nodes to distant sites. This is called **metastatic colorectal cancer (mCRC)**. The metastatic tumour remains colon cancer even when it grows in another organ. Colon cancer that spreads to the liver is metastatic colon cancer involving the liver — not the same disease as primary liver cancer. The same is true of lung metastases."
+        },
+        {
+          "id": "html_013",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Stage</th><th>General meaning</th></tr></thead><tbody><tr><td>Stage IVA</td><td>Cancer has spread to one distant organ or site</td></tr><tr><td>Stage IVB</td><td>Cancer has spread to multiple distant organs or sites</td></tr><tr><td>Stage IVC</td><td>Cancer has spread to the peritoneal lining of the abdomen, with or without other distant spread</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "The exact staging system used by the treating centre and the current TNM edition should be confirmed from the pathology and imaging reports. **The stage alone does not determine whether surgery is possible.**"
+        },
+        {
+          "id": "h_015",
+          "type": "heading",
+          "level": 2,
+          "text": "Where Does Colon Cancer Commonly Spread?"
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "The **liver** is one of the most frequent sites. Some patients have only a few liver lesions that can be surgically removed or ablated. Selected **lung** metastases may be candidates for metastasectomy, ablation or [SBRT](/costs/India/Radiation-Oncology/SBRT) (**$8,000–$17,500**). **Peritoneal** spread across the abdominal lining is treated differently from liver- or lung-limited disease. Less commonly, metastatic colon cancer can involve ovaries, bone, distant lymph nodes, adrenal glands or other organs. The pattern and number of sites matter when deciding whether local treatment is possible."
+        },
+        {
+          "id": "h_017",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Stage 4 Colon Cancer Curable?"
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "This question needs an individualized answer. For some patients with limited metastatic disease — particularly when all visible disease can be completely removed or destroyed — treatment can potentially achieve long-term disease control and, in selected cases, cure. This is most relevant to carefully selected patients with resectable liver metastases, selected resectable lung metastases, limited metastases involving a small number of sites, a favorable response to systemic therapy, and disease that can be completely removed or locally controlled."
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "For widespread unresectable metastatic disease, treatment is generally focused on controlling the cancer, prolonging survival and maintaining quality of life. **Stage 4 does not automatically mean that surgery is impossible, and it does not automatically mean that treatment is only palliative.** A specialist multidisciplinary assessment is essential."
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 2,
+          "text": "The Most Important Question: Is the Metastatic Disease Resectable?"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "Modern treatment planning often divides Stage 4 colon cancer into three broad groups."
+        },
+        {
+          "id": "h_022",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Resectable metastatic disease"
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "All known disease can potentially be removed or locally treated. The plan may be **surgery → chemotherapy** or **chemotherapy → surgery → additional systemic treatment**, depending on the disease pattern."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Potentially resectable disease"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "The metastases cannot safely be removed initially, but treatment may shrink them enough to make surgery possible. This is **conversion therapy**. The disease should be reassessed regularly so that a surgical window is not missed."
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Unresectable metastatic disease"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "Complete removal is not currently possible because of extensive disease, multiple organs, lesion number or location, inability to preserve organ function, fitness or other technical limits. Treatment usually focuses on systemic therapy, targeted therapy, immunotherapy where appropriate, local treatment of selected symptomatic lesions, and quality of life. **Unresectable today does not always mean unresectable forever.**"
+        },
+        {
+          "id": "btn_028",
+          "type": "button",
+          "label": "Ask whether liver or lung metastases look resectable",
+          "href": "/consult?treatment=Liver%20Resection%20(Hepatectomy)"
+        },
+        {
+          "id": "h_029",
+          "type": "heading",
+          "level": 2,
+          "text": "Why a Multidisciplinary Team Is Essential"
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "Stage 4 colon cancer can involve a colorectal surgeon, hepatobiliary/liver surgeon, thoracic surgeon, medical oncologist, interventional radiologist, radiation oncologist, pathologist, molecular pathologist, genetic counselor, palliative-care and nutrition specialists. For potentially curative metastatic disease, decisions about resectability should ideally be made **before** committing to a long course of systemic treatment that is never reassessed for surgery."
+        },
+        {
+          "id": "img_031",
+          "type": "image",
+          "src": "/uploads/articles/colon-s4-clinic.webp",
+          "alt": "Adult patient in clinic with a colon-and-liver-metastasis overlay while a medical oncologist explains Stage 4 treatment",
+          "caption": "Ask where the cancer has spread and whether all visible disease could be removed — not only which drug is newest."
+        },
+        {
+          "id": "h_032",
+          "type": "heading",
+          "level": 2,
+          "text": "Diagnosis, Staging and Molecular Testing"
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "Before treatment starts, the team needs to know where the primary tumour is, whether it has caused obstruction or perforation, how many metastatic lesions are present and where, whether all known disease could be removed, the molecular profile, and whether the patient is fit enough for intensive treatment."
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "[Colonoscopy](/costs/India/Gastroenterology/Colonoscopy) (**$200–$550**) identifies the primary tumour and allows biopsy. Contrast-enhanced CT of the chest, abdomen and pelvis is commonly used for initial staging. When liver metastases are present or suspected, high-quality **liver MRI** may show number, size, location, relationship to blood vessels and potential resectability. PET-CT is not required for every Stage 4 patient; it may help in selected potentially resectable or uncertain cases. CEA is a useful baseline and follow-up marker, not a stand-alone test of response."
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "**Severe abdominal pain with vomiting, inability to pass stool or gas, heavy rectal bleeding, sudden collapse, chest pain or sudden shortness of breath belongs in a local emergency department — not a delayed WhatsApp message.**"
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "Molecular testing is essential in Stage 4 care — one of the biggest differences from older chemotherapy-only approaches. Important tests may include **MMR/MSI, KRAS, NRAS, BRAF V600E, HER2, NTRK fusion** where appropriate, and other next-generation sequencing findings in selected patients. GAF planning ranges for [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) are **$2,000–$7,000**."
+        },
+        {
+          "id": "btn_037",
+          "type": "button",
+          "label": "Ask which molecular tests to complete before first-line treatment",
+          "href": "/consult?treatment=Precision%20Oncology"
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 2,
+          "text": "Immunotherapy for MSI-H/dMMR Stage 4 Colon Cancer"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "Tumors may be MSI-H, MSS, dMMR or pMMR. This distinction is extremely important. Patients with **MSI-H/dMMR metastatic colorectal cancer** can respond particularly well to immune checkpoint inhibitors, so an MSI/MMR result should be obtained before finalizing systemic treatment whenever feasible."
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "For appropriately selected patients, pembrolizumab, nivolumab, or **nivolumab plus ipilimumab** can be used. The FDA approved nivolumab plus ipilimumab for initial treatment of MSI-H/dMMR advanced colorectal cancer in 2025 following CheckMate-8HW. Choice depends on the clinical situation, regulatory approvals, patient factors and the treating oncologist. GAF planning ranges for [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) are **$15,000–$45,000**."
+        },
+        {
+          "id": "btn_041",
+          "type": "button",
+          "label": "Ask whether immunotherapy is first-line for MSI-H/dMMR disease",
+          "href": "/consult?treatment=Immunotherapy"
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 2,
+          "text": "Chemotherapy and Targeted Therapy"
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "For tumours not treated with first-line immunotherapy, systemic chemotherapy remains a major component. Common backbones are **FOLFOX** (5-FU, leucovorin, oxaliplatin), **CAPOX** (capecitabine plus oxaliplatin), **FOLFIRI** (5-FU, leucovorin, irinotecan) and, for selected fit patients when a high response rate is particularly important, **FOLFOXIRI**. Not every patient needs the most intensive chemotherapy. Age, fitness, organ function, tumour burden, symptoms, goals and expected toxicity all matter. GAF planning ranges for [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) are **$1,500–$8,000+**."
+        },
+        {
+          "id": "img_044",
+          "type": "image",
+          "src": "/uploads/articles/colon-s4-systemic.webp",
+          "alt": "Adult in a chemotherapy day-care chair with a colon, liver-metastasis and peritoneal-deposit overlay used to explain systemic treatment for Stage 4 colon cancer",
+          "caption": "FOLFOX, CAPOX, FOLFIRI or immunotherapy may all be first-line — the molecular profile decides more than stage alone."
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "Targeted medicines are often combined with chemotherapy or used in biomarker-selected later-line settings. [Targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) planning ranges are **$8,000–$30,000**."
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "**Anti-VEGF** medicines such as bevacizumab are commonly used with chemotherapy in appropriate patients. **Anti-EGFR** medicines (cetuximab, panitumumab) can be useful for selected tumours, but **RAS status is critical** — they are generally not used when the tumour contains an activating RAS mutation. Tumor **sidedness** also matters. For treatment-naive RAS wild-type, BRAF wild-type, MSS/pMMR **left-sided** tumours, an anti-EGFR antibody plus chemotherapy can be an important first-line strategy. **Right-sided** tumours generally have a different biological profile; an anti-VEGF strategy is often favored over anti-EGFR in the first-line setting."
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "**BRAF V600E** identifies a distinct subtype. Encorafenib plus cetuximab has been an established approach after prior therapy, while newer evidence has supported encorafenib, cetuximab and mFOLFOX6 in previously untreated BRAF V600E metastatic disease. **HER2** amplification or overexpression may support tucatinib plus trastuzumab in appropriately selected previously treated RAS wild-type patients. **KRAS G12C** may support adagrasib plus cetuximab after prior standard chemotherapy. These examples illustrate why comprehensive molecular profiling becomes increasingly important as treatment progresses."
+        },
+        {
+          "id": "btn_048",
+          "type": "button",
+          "label": "Ask how RAS, BRAF, HER2 and sidedness change first-line therapy",
+          "href": "/consult?treatment=Targeted%20Therapy"
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 about FOLFOX versus immunotherapy](https://wa.me/919044346292?text=Please%20advise%20whether%20FOLFOX%2C%20FOLFIRI%2C%20targeted%20therapy%20or%20immunotherapy%20is%20more%20appropriate%20for%20my%20Stage%204%20colon%20cancer%20molecular%20profile%20in%20India.)"
+        },
+        {
+          "id": "h_050",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens If First-Line Treatment Stops Working?"
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "Stage 4 colon cancer is often managed through multiple treatment lines. First-line may be FOLFOX/CAPOX or FOLFIRI ± targeted therapy, or immunotherapy for appropriate MSI-H/dMMR disease. Second-line often switches the chemotherapy backbone (**FOLFOX → FOLFIRI** or the reverse). Later lines may include trifluridine/tipiracil ± bevacizumab, regorafenib, fruquintinib, biomarker-specific targeted therapy or clinical trials. The exact sequence depends on previous treatments and molecular findings."
+        },
+        {
+          "id": "h_052",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Stage 4 Colon Cancer Surgery Still Be Performed?"
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Yes. Stage 4 disease does **not automatically rule out surgery**. Surgery may be considered when the primary tumour is obstructing, bleeding or perforated; when metastatic disease is limited; when liver or lung metastases are resectable; when the disease has responded enough to chemotherapy; or when complete removal of visible disease appears achievable. If the primary tumour is asymptomatic and metastatic disease is extensive, systemic therapy may be prioritized. In selected obstructing tumours, an expandable metal stent may relieve obstruction, avoid emergency surgery and allow time to start systemic therapy. See [Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india)."
+        },
+        {
+          "id": "img_054",
+          "type": "image",
+          "src": "/uploads/articles/colon-s4-liver.webp",
+          "alt": "Transparent adult abdomen showing a teal colon with a gold primary tumour and a brown liver containing gold metastatic nodules",
+          "caption": "A few resectable liver lesions are not managed the same way as widespread liver, lung and peritoneal disease."
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "Selected patients may undergo **colon surgery + liver metastasectomy** at the same operation, in staged procedures, after systemic therapy, or as part of a planned sequence. The decision depends on number, size, location, relationship to blood vessels, future liver remnant, extrahepatic disease, response to chemotherapy and fitness. Ablation (radiofrequency, microwave or other image-guided techniques) can destroy selected small lesions when surgery would remove too much healthy liver. [SBRT](/costs/India/Radiation-Oncology/SBRT) may be considered for selected liver, lung or other oligometastatic sites. Selected isolated pulmonary metastases may undergo pulmonary metastasectomy."
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "**Oligometastatic disease** generally means a limited number of metastatic lesions that may be amenable to local treatment. A patient with three resectable liver metastases is not necessarily managed the same way as a patient with extensive disease throughout the liver, lungs and peritoneum."
+        },
+        {
+          "id": "h_057",
+          "type": "heading",
+          "level": 2,
+          "text": "Conversion Therapy and Imaging Intervals"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "Conversion therapy means giving systemic treatment — sometimes intensive combinations such as FOLFOXIRI plus appropriate targeted therapy — with the objective of shrinking metastatic disease enough to make local treatment possible. This requires frequent imaging and close coordination between medical oncology and surgical teams. Treatment should not simply continue indefinitely without reassessing whether the disease has become technically treatable."
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "The 2025 Indian expert consensus on advanced/metastatic colorectal cancer recommends reassessment of potentially resectable metastatic disease at approximately **8–10 week intervals** in relevant circumstances so that a potential surgical window is not missed. Prolonged chemotherapy can also create treatment-related toxicity."
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 2,
+          "text": "Peritoneal Metastases, CRS and HIPEC"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "Peritoneal metastases occur when colon cancer spreads across the abdominal lining. Possible approaches include systemic chemotherapy, [cytoreductive surgery](/costs/India/Surgical-Oncology/Cytoreductive-Surgery) (**$10,000–$24,000**), intraperitoneal treatment in selected settings, [HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) (**$18,000–$40,000**) in carefully selected patients, clinical trials and symptom-directed treatment."
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "CRS aims to remove visible tumour deposits from the peritoneal cavity. **HIPEC** (hyperthermic intraperitoneal chemotherapy) circulates heated chemotherapy in the abdomen after visible peritoneal tumour has been removed. Neither is appropriate for every patient with peritoneal metastases. Selection depends on extent of disease, ability to achieve complete or near-complete cytoreduction, control of disease elsewhere, fitness, histology and previous treatment. Assessment belongs at centres with peritoneal-surface expertise."
+        },
+        {
+          "id": "btn_063",
+          "type": "button",
+          "label": "Ask whether CRS or HIPEC could be considered",
+          "href": "/consult?treatment=Cytoreductive%20Surgery%20with%20HIPEC"
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 2,
+          "text": "Side Effects, Nutrition and Follow-Up"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "Chemotherapy may cause fatigue, nausea, diarrhea, mouth sores, low blood counts, infection, neuropathy, appetite changes and hand-foot syndrome. Bevacizumab may cause hypertension, bleeding, clots, protein in urine, delayed wound healing and, rarely, gastrointestinal perforation. Anti-EGFR therapy commonly causes an acne-like rash, dry skin, nail changes, diarrhea and infusion reactions. Immunotherapy can cause immune-related effects involving skin, thyroid, liver, colon, lungs or other organs — report symptoms early."
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "There is no Stage 4 diet that can cure metastatic cancer. The goal is adequate calories, protein, hydration, muscle mass and treatment tolerance. Exercise such as walking, light resistance work and stretching should be individualized, particularly after major surgery or during intensive chemotherapy."
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Follow-up during Stage 4 treatment is different from Stage 1–3 surveillance. Doctors monitor symptoms, examination, CEA where useful, blood counts, kidney and liver function, CT or MRI, treatment response, side effects and new molecular information. Imaging is particularly important because the strategy may change if the cancer shrinks, remains stable, becomes resectable or progresses. **Stable disease** can still be a meaningful outcome if treatment is controlling the cancer and the patient is tolerating it. **Progression** means meaningful growth or new disease on the assessment criteria being used."
+        },
+        {
+          "id": "h_068",
+          "type": "heading",
+          "level": 2,
+          "text": "Stage 4 vs Stage 3"
+        },
+        {
+          "id": "html_069",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Stage 3</th><th>Stage 4</th></tr></thead><tbody><tr><td>Regional lymph nodes</td><td>Cancer may be present</td><td>May be involved</td></tr><tr><td>Distant metastasis</td><td>No</td><td>Yes</td></tr><tr><td>Primary treatment</td><td>Surgery + adjuvant chemotherapy in most cases</td><td>Systemic/local treatment individualized</td></tr><tr><td>Surgery</td><td>Usually central</td><td>Selected patients</td></tr><tr><td>Molecular profiling</td><td>Important</td><td>Critical for treatment selection</td></tr><tr><td>Immunotherapy</td><td>Selected situations</td><td>Major option for MSI-H/dMMR disease</td></tr><tr><td>Targeted therapy</td><td>Limited routine role</td><td>Major role in biomarker-selected disease</td></tr><tr><td>Liver/lung surgery</td><td>Not usually relevant</td><td>Important for selected metastatic disease</td></tr><tr><td>CRS/HIPEC</td><td>Not routine</td><td>Selected peritoneal disease</td></tr><tr><td>Treatment goal</td><td>Usually curative</td><td>Curative in selected cases; disease control in others</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 2,
+          "text": "Stage 4 Colon Cancer Treatment Pathways"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "**Pathway 1 — resectable liver metastases:** diagnosis → molecular testing and staging → multidisciplinary review → colon and liver surgery, or planned systemic therapy followed by surgery → postoperative systemic treatment when appropriate → surveillance."
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "**Pathway 2 — potentially resectable liver metastases:** diagnosis → systemic therapy ± targeted therapy → imaging reassessment → if the tumour becomes resectable, liver/colon surgery or local treatment → further systemic treatment when appropriate."
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "**Pathway 3 — unresectable metastatic disease:** diagnosis → molecular profiling → first-line systemic therapy or immunotherapy → response assessment → maintenance or continuation → second-line treatment if progression → biomarker-directed or later-line treatment → clinical trials or supportive care where appropriate."
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "**Pathway 4 — MSI-H/dMMR metastatic disease:** diagnosis → confirm MSI-H/dMMR → immunotherapy-based treatment → imaging and clinical response assessment → continue, modify or consider local treatment according to response."
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 2,
+          "text": "Stage 4 Colon Cancer Treatment Cost in India"
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "There is **no reliable single package price** because Stage 4 disease can require anything from systemic therapy alone to complex combinations of chemotherapy, targeted treatment, surgery and local treatment. Two patients with the same Stage 4 label may need completely different pathways — limited resectable liver disease, long-term systemic treatment, MSI-H/dMMR immunotherapy, or CRS ± HIPEC. GAF Healthcare publishes USD planning ranges compiled from partner hospital cost sheets. They are not hospital quotations."
+        },
+        {
+          "id": "html_077",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Component</th><th>GAF planning range in India</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Gastroenterology/Colonoscopy\">Colonoscopy</a></td><td>$200–$550</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Colectomy\">Colectomy</a></td><td>$7,000–$18,000</td></tr><tr><td><a href=\"/costs/India/Surgical-Gastroenterology/Colorectal-Cancer-Surgery\">Colorectal cancer surgery</a></td><td>$8,000–$20,000</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemotherapy</a></td><td>$1,500–$8,000+</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Targeted-Therapy\">Targeted therapy</a></td><td>$8,000–$30,000</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Immunotherapy\">Immunotherapy</a></td><td>$15,000–$45,000</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Precision-Oncology\">Precision oncology / molecular testing</a></td><td>$2,000–$7,000</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Liver-Resection-(Hepatectomy)\">Liver resection (hepatectomy)</a></td><td>$10,000–$26,000</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery\">Cytoreductive surgery</a></td><td>$10,000–$24,000</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr><tr><td><a href=\"/costs/India/Radiation-Oncology/SBRT\">SBRT</a></td><td>$8,000–$17,500</td></tr><tr><td><a href=\"/costs/India/Radiation-Oncology/EBRT\">EBRT</a></td><td>$1,000–$6,000+</td></tr><tr><td><a href=\"/costs/India/Surgical-Gastroenterology/Ostomy-Stoma-Surgery\">Ostomy / stoma surgery</a> if required</td><td>$2,500–$6,800</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "City pages such as [Delhi NCR colectomy](/costs/India/Delhi-NCR/Surgical-Oncology/Colectomy), [Mumbai](/costs/India/Mumbai/Surgical-Oncology/Colectomy), [Bengaluru](/costs/India/Bengaluru/Surgical-Oncology/Colectomy), [Chennai](/costs/India/Chennai/Surgical-Oncology/Colectomy) and [Hyderabad](/costs/India/Hyderabad/Surgical-Oncology/Colectomy) use the same national range unless a hospital issues a verified quotation."
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "A written hospital estimate based on the patient's medical records is much more useful than a generic online cost figure. Ask whether the quotation separates surgeon fees, hospital and OT charges, anaesthesia, pathology, imaging, chemotherapy or immunotherapy drugs, day-care, medical-oncology consultation, molecular testing, liver or peritoneal surgery and follow-up — and what is excluded (ICU, complications, additional surgery, extra cycles)."
+        },
+        {
+          "id": "btn_080",
+          "type": "button",
+          "label": "Ask for an itemised Stage 4 quotation",
+          "href": "/consult?treatment=Stage%204%20Colon%20Cancer%20Treatment%20Cost%20in%20India"
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a patient-specific Stage 4 estimate](https://wa.me/919044346292?text=Please%20send%20an%20itemised%20Stage%204%20colon%20cancer%20quotation%20in%20India%20covering%20molecular%20testing%2C%20systemic%20therapy%2C%20and%20liver%20surgery%20or%20CRS%2FHIPEC%20if%20they%20apply.)"
+        },
+        {
+          "id": "h_082",
+          "type": "heading",
+          "level": 2,
+          "text": "How to Choose a Hospital and What to Ask"
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "Stage 4 disease requires a different hospital-selection approach from straightforward early-stage cancer. Look for colorectal surgery, hepatobiliary surgery when liver metastases are present, thoracic surgery for selected lung metastases, medical oncology for chemotherapy/targeted therapy/immunotherapy, molecular pathology, interventional radiology for ablation, radiation oncology when SBRT is being considered, and peritoneal-surface expertise when CRS/HIPEC is on the table."
+        },
+        {
+          "id": "ul_084",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Surgical oncology hospitals in Delhi NCR](/hospitals/India/Delhi-NCR/Surgical-Oncology)",
+            "[Surgical oncology hospitals in Mumbai](/hospitals/India/Mumbai/Surgical-Oncology)",
+            "[Surgical oncology hospitals in Bengaluru](/hospitals/India/Bengaluru/Surgical-Oncology)",
+            "[Medical oncology hospitals in Delhi NCR](/hospitals/India/Delhi-NCR/Medical-Oncology)",
+            "[Medical oncology hospitals in Mumbai](/hospitals/India/Mumbai/Medical-Oncology)"
+          ]
+        },
+        {
+          "id": "ol_085",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Where exactly has the cancer spread, and is the metastatic disease resectable now — or could it become resectable?",
+            "Do I have liver-only, lung-only or peritoneal disease, and could surgery, ablation, SBRT, CRS or HIPEC be considered?",
+            "What is my MMR/MSI, RAS, BRAF V600E and HER2 status, and is broader genomic testing appropriate?",
+            "Should I receive chemotherapy, targeted therapy or immunotherapy first, and what is the goal of that first treatment?",
+            "How often will imaging be repeated, and when will we reassess for surgery?",
+            "What happens if the cancer progresses, can later cycles continue in my home country, and what will treatment cost in India?"
+          ]
+        },
+        {
+          "id": "h_086",
+          "type": "heading",
+          "level": 2,
+          "text": "The Bottom Line"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "Stage 4 colon cancer means distant spread, most often to the liver, lungs or peritoneum. It does not automatically mean surgery is impossible. Limited metastatic disease may sometimes be treated with curative intent. Potentially resectable disease may become resectable after conversion therapy. FOLFOX, CAPOX, FOLFIRI and selected intensive regimens such as FOLFOXIRI are common chemotherapy backbones. Targeted therapy may be selected according to RAS, BRAF, HER2, sidedness and other findings. **MSI/MMR testing is essential** because MSI-H/dMMR tumours can respond strongly to immunotherapy. CRS and HIPEC are options only for selected peritoneal disease. Treatment should be reassessed regularly so a surgical window is not missed."
+        },
+        {
+          "id": "h_088",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 3,
+          "text": "Is Stage 4 colon cancer treatable?"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Yes. Stage 4 colon cancer has multiple treatment options. Treatment may include systemic therapy, surgery, targeted therapy, immunotherapy and local treatment depending on the metastatic pattern and molecular profile."
+        },
+        {
+          "id": "h_091",
+          "type": "heading",
+          "level": 3,
+          "text": "Is Stage 4 colon cancer curable?"
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "A subset of patients with limited metastatic disease may undergo treatment with curative intent, particularly when all known disease can be completely removed or locally controlled. Widespread unresectable disease is generally managed with disease-control and symptom-management goals."
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 3,
+          "text": "Can Stage 4 colon cancer be operated on?"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "Yes. Surgery can be appropriate for selected patients, including some patients with liver-only or lung-only metastases and some patients whose disease becomes resectable after chemotherapy."
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 3,
+          "text": "Does every Stage 4 patient need chemotherapy?"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "Systemic therapy is a major component of treatment for many patients with unresectable metastatic disease. However, treatment differs for biomarker-defined groups, including MSI-H/dMMR disease, where immunotherapy may be used."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the best chemotherapy for Stage 4 colon cancer?"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "There is no single chemotherapy regimen that is best for every patient. FOLFOX, CAPOX, FOLFIRI and FOLFOXIRI may all have roles depending on disease characteristics, previous treatment, fitness and treatment objectives."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "Is immunotherapy available for Stage 4 colon cancer?"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Yes. Immunotherapy is particularly important for MSI-H/dMMR metastatic colorectal cancer."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "What if my cancer has spread only to the liver?"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "Liver-only metastatic disease can sometimes be treated aggressively. Depending on the number, location and resectability of lesions, options may include liver surgery, ablation, systemic therapy or combinations of these approaches."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "What if the cancer has spread to both the liver and lungs?"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "Treatment depends on the number, size and location of lesions and whether all sites can potentially be controlled. Selected patients may still be candidates for aggressive local treatment."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "What is conversion therapy?"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Conversion therapy means using systemic treatment to shrink metastatic disease so that previously unresectable cancer may become suitable for surgery or another local treatment."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 3,
+          "text": "What is CRS and HIPEC?"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "CRS is cytoreductive surgery to remove visible peritoneal cancer. HIPEC is heated chemotherapy delivered within the abdominal cavity during selected procedures. It is appropriate only for carefully selected patients."
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 3,
+          "text": "Does Stage 4 colon cancer always cause symptoms?"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "No. Some patients have substantial symptoms, while others have relatively few symptoms despite metastatic disease."
+        },
+        {
+          "id": "h_111",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does Stage 4 colon cancer treatment take?"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "There is no single treatment duration. Some patients undergo surgery followed by several months of systemic treatment, while others require ongoing systemic therapy with periodic treatment changes."
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 3,
+          "text": "Can treatment be continued in my home country after starting in India?"
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "In some cases, yes. This should be planned jointly by the Indian oncology team and the patient's local oncologist."
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Colon Cancer Resources"
+        },
+        {
+          "id": "ul_116",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and systemic medicines around metastatic disease.",
+            "[Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india) — hemicolectomy types, anastomosis, stomas and approach choice.",
+            "[Stage 3 Colon Cancer Treatment in India](/blogs/stage-3-colon-cancer-treatment-in-india) — node-positive M0 disease, FOLFOX/CAPOX and 3 versus 6 months.",
+            "[Stage 2 Colon Cancer Treatment in India](/blogs/stage-2-colon-cancer-treatment-in-india) — node-negative T3/T4 and when chemotherapy is only discussed.",
+            "[Stage 1 Colon Cancer Treatment in India](/blogs/stage-1-colon-cancer-treatment-in-india) — T1/T2 and when endoscopic removal is enough.",
+            "[Liver resection](/costs/India/Surgical-Oncology/Liver-Resection-(Hepatectomy)) — selected metastases, $10,000–$26,000.",
+            "[CRS with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) — selected peritoneal disease, $18,000–$40,000.",
+            "[Immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) — first-line option for MSI-H/dMMR metastatic disease.",
+            "[Rectal cancer surgery](/costs/India/Surgical-Oncology/Rectal-Cancer-Surgery) — a different pathway when radiation may be part of treatment.",
+            "[Breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india) and [prostate cancer treatment in India](/treatments/prostate-cancer-treatment-in-india) — other GAF cancer pathways."
+          ]
+        },
+        {
+          "id": "h_117",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates international patients who need a Stage 4 colon cancer opinion in India — after liver or lung metastases are found, a question about conversion therapy, or an MSI/RAS/BRAF/HER2 result. Share the colonoscopy PDF, the **complete pathology report**, CT/MRI (the actual images, not only the written report), CEA, previous chemotherapy records and any molecular results. A coordinator can introduce a [surgical oncologist](/doctors/India/Surgical-Oncology) and a [medical oncologist](/doctors/India/Medical-Oncology), then help collect an itemised quotation covering systemic therapy, molecular testing and any planned liver, lung or peritoneal operation."
+        },
+        {
+          "id": "btn_119",
+          "type": "button",
+          "label": "Share records for a Stage 4 review",
+          "href": "/consult?treatment=Stage%204%20Colon%20Cancer%20Treatment"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with colonoscopy, scans and molecular reports](https://wa.me/919044346292?text=I%20would%20like%20to%20share%20my%20colonoscopy%2C%20complete%20pathology%2C%20CT%2FMRI%20images%20and%20molecular%20reports%20for%20a%20Stage%204%20colon%20cancer%20second%20opinion%20in%20India.)"
+        },
+        {
+          "id": "h_121",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "This article is intended for general educational purposes and should not replace consultation with a qualified colorectal surgeon, medical oncologist, radiologist or multidisciplinary cancer team. Stage 4 colon cancer treatment is highly individualized. Surgery, conversion therapy, chemotherapy, targeted therapy, immunotherapy, CRS/HIPEC and later-line medicines depend on imaging, pathology, molecular findings, previous treatment, general health and the availability of appropriate therapies. Patients should not start, stop or change cancer treatment without discussing it with their treating doctor."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 2,
+          "text": "Top 10 Sources"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "1. [NCI — Colon Cancer Treatment (PDQ®)](https://www.cancer.gov/types/colorectal/hp/colon-treatment-pdq) — metastatic (Stage IV) treatment, surgery, systemic therapy and local options."
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "2. [NCI — Colon Cancer Treatment (PDQ®) for patients](https://www.cancer.gov/types/colorectal/patient/colon-treatment-pdq) — patient-facing Stage IV overview."
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "3. [ASCO — Gastrointestinal cancer guidelines](https://www.asco.org/practice-patients/guidelines/gastrointestinal-cancer) — treatment of metastatic colorectal cancer."
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "4. [2025 Indian consensus statements for advanced/metastatic colorectal cancer](https://www.thieme-connect.de/products/ejournals/html/10.1055/s-0045-1809380) — biomarker testing, conversion therapy and 8–10 week reassessment in the Indian context."
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "5. [NCI — Colon Cancer Treatment PDQ, immunotherapy discussion](https://www.cancer.gov/types/colorectal/hp/colon-treatment-pdq) — MSI-H/dMMR immune checkpoint inhibitors in advanced disease."
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "6. [FDA — nivolumab plus ipilimumab for MSI-H/dMMR advanced colorectal cancer](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-nivolumab-ipilimumab-unresectable-or-metastatic-msi-h-or-dmmr-colorectal-cancer) — CheckMate-8HW first-line approval, 2025."
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "7. [FDA — encorafenib for BRAF V600E metastatic colorectal cancer](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-traditional-approval-encorafenib-metastatic-colorectal-cancer-braf-v600e-mutation) — encorafenib plus cetuximab with fluorouracil-based chemotherapy."
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "8. [FDA — tucatinib plus trastuzumab for HER2-positive metastatic colorectal cancer](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-tucatinib-trastuzumab-her2-positive-ras-wild-type-unresectable-or) — previously treated RAS wild-type disease."
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "9. [FDA — trifluridine/tipiracil plus bevacizumab](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-trifluridine-and-tipiracil-bevacizumab-previously-treated-metastatic-colorectal-cancer) — later-line SUNLIGHT regimen."
+        },
+        {
+          "id": "p_133",
+          "type": "paragraph",
+          "text": "10. [FDA — fruquintinib for previously treated metastatic colorectal cancer](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-fruquintinib-metastatic-colorectal-cancer) — oral VEGFR-targeted later-line therapy."
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "**Last reviewed against the cited sources: September 2026.**"
+        }
+      ]
+    },
     {
       "id": "art_stage_3_colon_cancer_treatment_in_india",
       "slug": "stage-3-colon-cancer-treatment-in-india",
@@ -1417,6 +2263,10 @@
         "dMMR immunotherapy stage III"
       ],
       "relatedLinks": [
+        {
+          "label": "Stage 4 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-4-colon-cancer-treatment-in-india"
+        },
         {
           "label": "Colon Cancer Treatment in India",
           "href": "/treatments/colon-cancer-treatment-in-india"
@@ -1976,6 +2826,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic disease, resectability, conversion therapy and biomarker-directed treatment.",
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and systemic medicines around Stage III.",
             "[Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india) — hemicolectomy types, anastomosis, stomas and approach choice.",
             "[Stage 1 Colon Cancer Treatment in India](/blogs/stage-1-colon-cancer-treatment-in-india) — T1/T2 and when endoscopic removal is enough.",
@@ -2121,6 +2972,10 @@
         "stage IIA IIB IIC colon cancer"
       ],
       "relatedLinks": [
+        {
+          "label": "Stage 4 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-4-colon-cancer-treatment-in-india"
+        },
         {
           "label": "Stage 3 Colon Cancer Treatment in India",
           "href": "/blogs/stage-3-colon-cancer-treatment-in-india"
@@ -2808,6 +3663,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic disease, resectability, conversion therapy and biomarker-directed treatment.",
             "[Stage 3 Colon Cancer Treatment in India](/blogs/stage-3-colon-cancer-treatment-in-india) — node-positive disease, FOLFOX/CAPOX and 3 versus 6 months of adjuvant chemotherapy.",
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and systemic medicines around Stage II.",
             "[Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india) — hemicolectomy types, anastomosis, stomas and approach choice.",
@@ -2953,6 +3809,10 @@
         "stage I colon cancer India"
       ],
       "relatedLinks": [
+        {
+          "label": "Stage 4 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-4-colon-cancer-treatment-in-india"
+        },
         {
           "label": "Stage 3 Colon Cancer Treatment in India",
           "href": "/blogs/stage-3-colon-cancer-treatment-in-india"
@@ -3692,6 +4552,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic disease, resectability, conversion therapy and biomarker-directed treatment.",
             "[Stage 3 Colon Cancer Treatment in India](/blogs/stage-3-colon-cancer-treatment-in-india) — node-positive disease, FOLFOX/CAPOX and 3 versus 6 months of adjuvant chemotherapy.",
             "[Stage 2 Colon Cancer Treatment in India](/blogs/stage-2-colon-cancer-treatment-in-india) — deeper wall invasion, high-risk features and the chemotherapy discussion.",
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and systemic medicines around early disease.",
@@ -3837,6 +4698,10 @@
         "colon cancer recovery"
       ],
       "relatedLinks": [
+        {
+          "label": "Stage 4 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-4-colon-cancer-treatment-in-india"
+        },
         {
           "label": "Stage 3 Colon Cancer Treatment in India",
           "href": "/blogs/stage-3-colon-cancer-treatment-in-india"
@@ -4766,6 +5631,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic disease, resectability, conversion therapy and biomarker-directed treatment.",
             "[Stage 3 Colon Cancer Treatment in India](/blogs/stage-3-colon-cancer-treatment-in-india) — node-positive disease, FOLFOX/CAPOX and 3 versus 6 months of adjuvant chemotherapy.",
             "[Stage 2 Colon Cancer Treatment in India](/blogs/stage-2-colon-cancer-treatment-in-india) — T3/T4, high-risk features, MSI/MMR and when adjuvant chemotherapy is discussed.",
             "[Stage 1 Colon Cancer Treatment in India](/blogs/stage-1-colon-cancer-treatment-in-india) — T1/T2, polyp pathology and when endoscopic removal is enough.",
