@@ -104,7 +104,10 @@
     "colonoscopy",
     "stage 2 colon cancer",
     "adjuvant chemotherapy",
-    "MSI MMR"
+    "MSI MMR",
+    "stage 3 colon cancer",
+    "FOLFOX",
+    "CAPOX"
   ],
   "media": [
     {
@@ -1345,9 +1348,741 @@
       "name": "colon-s2-nodes.webp",
       "alt": "Transparent adult torso showing a teal right colon, gold wall-invasive tumour and teal mesenteric lymph nodes used to explain Stage 2 node sampling",
       "addedAt": "2026-09-28T18:30:00.000Z"
+    },
+    {
+      "id": "media_colon_s3_anatomy_webp",
+      "url": "/uploads/articles/colon-s3-anatomy.webp",
+      "name": "colon-s3-anatomy.webp",
+      "alt": "Transparent adult body with a teal colon, gold tumour and gold regional lymph nodes used to explain Stage 3 colon cancer",
+      "addedAt": "2026-09-28T19:00:00.000Z"
+    },
+    {
+      "id": "media_colon_s3_nodes_webp",
+      "url": "/uploads/articles/colon-s3-nodes.webp",
+      "name": "colon-s3-nodes.webp",
+      "alt": "Transparent adult abdomen showing a teal colon, gold tumour and mixed gold and teal mesenteric lymph nodes used to explain Stage 3 nodal sampling",
+      "addedAt": "2026-09-28T19:00:00.000Z"
+    },
+    {
+      "id": "media_colon_s3_clinic_webp",
+      "url": "/uploads/articles/colon-s3-clinic.webp",
+      "name": "colon-s3-clinic.webp",
+      "alt": "Adult patient in clinic with a colon-and-lymph-node overlay while a medical oncologist explains Stage 3 chemotherapy",
+      "addedAt": "2026-09-28T19:00:00.000Z"
+    },
+    {
+      "id": "media_colon_s3_chemo_webp",
+      "url": "/uploads/articles/colon-s3-chemo.webp",
+      "name": "colon-s3-chemo.webp",
+      "alt": "Adult in a chemotherapy day-care chair with a colon-and-lymph-node overlay used to explain adjuvant FOLFOX or CAPOX after Stage 3 surgery",
+      "addedAt": "2026-09-28T19:00:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_stage_3_colon_cancer_treatment_in_india",
+      "slug": "stage-3-colon-cancer-treatment-in-india",
+      "title": "Stage 3 Colon Cancer Treatment in India: Surgery, FOLFOX and CAPOX",
+      "excerpt": "Node-positive colon cancer: surgery plus adjuvant FOLFOX or CAPOX, 3 versus 6 months, MSI/MMR testing, and why Stage 3 is not Stage 4.",
+      "date": "28 September 2026",
+      "publishedAt": "2026-09-28T19:00:00.000Z",
+      "updatedAt": "2026-09-28T19:00:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "colon cancer",
+        "stage 3 colon cancer",
+        "FOLFOX",
+        "CAPOX",
+        "India"
+      ],
+      "image": "/uploads/articles/colon-s3-anatomy.webp",
+      "imageAlt": "Transparent adult body with a teal colon, gold tumour and gold regional lymph nodes used to explain Stage 3 colon cancer",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Stage 3 Colon Cancer Treatment in India: Surgery and Chemotherapy",
+      "seoDescription": "Stage 3 colon cancer treatment in India: surgery, FOLFOX vs CAPOX, 3 vs 6 months, MSI/MMR and why node-positive disease is not Stage 4. GAF planning ranges.",
+      "canonical": "https://gaf.healthcare/blogs/stage-3-colon-cancer-treatment-in-india",
+      "ogImage": "/uploads/articles/colon-s3-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "stage 3 colon cancer treatment in India",
+        "FOLFOX CAPOX stage 3",
+        "adjuvant chemotherapy colon cancer",
+        "T4 N2 colon cancer",
+        "IDEA 3 vs 6 months",
+        "MSI MMR stage 3 colon cancer",
+        "stage 3 colectomy India",
+        "stage 3 colon cancer cost in India",
+        "dMMR immunotherapy stage III"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Colon Cancer Treatment in India",
+          "href": "/treatments/colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "Colon Cancer Surgery in India",
+          "href": "/blogs/colon-cancer-surgery-in-india"
+        },
+        {
+          "label": "Stage 2 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-2-colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "Stage 1 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-1-colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "Chemotherapy cost in India",
+          "href": "/costs/India/Medical-Oncology/Chemotherapy"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\">For most patients with resectable Stage 3 colon cancer, treatment follows this broad pathway:</p><p class=\"article-quick-answer__body\"><strong>Diagnosis → Complete staging → Colon surgery → Final pathology → Adjuvant chemotherapy → Surveillance</strong></p><p class=\"article-quick-answer__body\">The standard treatment generally includes:</p><ul class=\"article-quick-answer__list\"><li>Surgical removal of the cancer-containing portion of the colon</li><li>Removal and examination of regional lymph nodes</li><li>Pathology to determine the exact T and N stage</li><li>Molecular testing, particularly <strong>MMR/MSI testing</strong></li><li>Adjuvant chemotherapy, commonly <strong>FOLFOX or CAPOX</strong></li><li>Regular follow-up with CEA testing, imaging and colonoscopy</li><li>Assessment of recurrence risk throughout follow-up</li></ul><p class=\"article-quick-answer__body\">Some locally advanced tumors may require treatment before surgery. For selected patients with <strong>dMMR/MSI-H tumors</strong>, immunotherapy is an increasingly important area of treatment and clinical research.</p><p class=\"article-quick-answer__body\">The exact treatment should be decided by a multidisciplinary team after reviewing the complete pathology and imaging.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Stage 3 colon cancer means that cancer has spread from the colon to nearby lymph nodes, but there is no evidence of distant spread to organs such as the liver or lungs. Unlike Stage 1 or many Stage 2 cancers, Stage 3 colon cancer usually requires **both surgery and chemotherapy** as part of curative-intent treatment."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "Treatment has become increasingly individualized. The number of affected lymph nodes, depth of tumor invasion, surgical margins, tumor biology, mismatch repair status, overall health, and the patient's ability to tolerate chemotherapy can all influence the treatment plan."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "The most important point is that **Stage 3 colon cancer is not the same as Stage 4 colon cancer**. Stage 3 disease is regional disease without confirmed distant metastasis, and treatment is generally planned with the goal of eliminating the cancer and reducing the risk of recurrence."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "This article is the Stage 3 hub for the colon cluster. The broader pathway is in [Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india). How hemicolectomy, stomas and open versus laparoscopic versus robotic approaches are planned is in [Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india). [Stage 1](/blogs/stage-1-colon-cancer-treatment-in-india) covers T1/T2 and endoscopic removal. [Stage 2](/blogs/stage-2-colon-cancer-treatment-in-india) covers T3/T4 node-negative disease and when adjuvant chemotherapy is only discussed, not assumed. It is **not** a rectal-cancer page: radiation has a much larger role when the tumour is rectal. See [rectal cancer surgery](/costs/India/Surgical-Oncology/Rectal-Cancer-Surgery)."
+        },
+        {
+          "id": "p_006",
+          "type": "paragraph",
+          "text": "GAF Healthcare planning ranges for [colectomy](/costs/India/Surgical-Oncology/Colectomy) are **$7,000–$18,000** (typically 5–10 nights). The broader [colorectal cancer surgery](/costs/India/Surgical-Gastroenterology/Colorectal-Cancer-Surgery) sheet lists **$8,000–$20,000**. Adjuvant [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) is **$1,500–$8,000+**. [Precision oncology / MSI-MMR testing](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000**."
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "International patients comparing [surgical oncologists](/doctors/India/Surgical-Oncology), [surgical gastroenterologists](/doctors/India/Surgical-Gastroenterology) and [medical oncologists](/doctors/India/Medical-Oncology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Surgical-Oncology/Colectomy), [Mumbai](/doctors/India/Mumbai/Surgical-Oncology/Colectomy), [Bengaluru](/doctors/India/Bengaluru/Surgical-Oncology/Colectomy), [Chennai](/doctors/India/Chennai/Surgical-Oncology/Colectomy) and [Hyderabad](/doctors/India/Hyderabad/Surgical-Oncology/Colectomy). Partner [surgical-oncology hospitals](/hospitals/India/Surgical-Oncology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Surgical-Oncology) and [Mumbai](/hospitals/India/Mumbai/Surgical-Oncology) are a typical first filter."
+        },
+        {
+          "id": "btn_008",
+          "type": "button",
+          "label": "Ask about Stage 3 colon cancer treatment in India",
+          "href": "/consult?treatment=Stage%203%20Colon%20Cancer%20Treatment"
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with node count, T stage and MSI/MMR](https://wa.me/919044346292?text=Please%20review%20my%20Stage%203%20colon%20cancer%20pathology%2C%20positive%20lymph-node%20count%2C%20T%20stage%20and%20MSI%2FMMR%20and%20advise%20on%20FOLFOX%20versus%20CAPOX%20and%20duration%20in%20India.)"
+        },
+        {
+          "id": "img_010",
+          "type": "image",
+          "src": "/uploads/articles/colon-s3-anatomy.webp",
+          "alt": "Transparent adult body with a teal colon, gold tumour and gold regional lymph nodes used to explain Stage 3 colon cancer",
+          "caption": "Stage 3 means regional lymph-node involvement without confirmed distant metastasis in organs such as the liver or lungs."
+        },
+        {
+          "id": "h_011",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Stage 3 Colon Cancer?"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Colon cancer is staged using the **TNM system**: **T** — how deeply the tumor has grown through the colon wall or into nearby structures; **N** — whether regional lymph nodes contain cancer; **M** — whether the cancer has spread to distant organs. Stage 3 colon cancer is characterized by **regional lymph-node involvement without distant metastasis**, meaning **M0**."
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "Stage 3 is further divided into **Stage IIIA, IIIB and IIIC** according to the combination of the tumor's T category and lymph-node involvement. The exact sub-stage should be taken from the pathology report rather than assumed from the scan alone."
+        },
+        {
+          "id": "html_014",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Sub-stage</th><th>General TNM pattern</th><th>What it means</th></tr></thead><tbody><tr><td>Stage IIIA</td><td>Earlier T category with limited nodal disease</td><td>Tumor is relatively less deeply invasive and/or has limited regional node involvement</td></tr><tr><td>Stage IIIB</td><td>More advanced local invasion and/or greater nodal involvement</td><td>Cancer has spread to regional nodes with deeper tumor invasion</td></tr><tr><td>Stage IIIC</td><td>Advanced T category and/or extensive nodal involvement</td><td>Greater local or regional disease burden</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "Two people can both have Stage 3 colon cancer but have different recurrence risks. **T1–3 N1** is generally considered lower-risk Stage III disease. **T4 and/or N2** is generally considered higher-risk Stage III disease. This distinction becomes particularly important when discussing the duration of adjuvant chemotherapy."
+        },
+        {
+          "id": "h_016",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Stage 3 Colon Cancer Curable?"
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "Stage 3 colon cancer can be treated with **curative intent** when the cancer can be completely removed and there is no distant metastatic disease. However, no doctor can guarantee that an individual patient will never experience recurrence."
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "The purpose of combining surgery with postoperative chemotherapy is to remove all visible cancer, remove regional lymph nodes that may contain microscopic disease, destroy microscopic cancer cells that may remain elsewhere, and reduce the risk of recurrence. Outlook depends on T stage, number of positive nodes, number of nodes examined, grade, lymphovascular and perineural invasion, margins, tumour deposits, MMR/MSI status, response to treatment, fitness, and whether treatment can be completed as planned."
+        },
+        {
+          "id": "h_019",
+          "type": "heading",
+          "level": 2,
+          "text": "Symptoms and Diagnosis"
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "Symptoms can vary. Some patients have blood in the stool, a change in bowel habits, persistent constipation or diarrhea, narrower stools, abdominal pain, bloating, unexplained weight loss, fatigue, iron-deficiency anemia or a feeling that the bowel has not completely emptied. A person does not need to have all of these symptoms to have colon cancer."
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "Treatment planning starts with [colonoscopy](/costs/India/Gastroenterology/Colonoscopy) (**$200–$550**) and biopsy, then histopathology, contrast-enhanced CT of the chest, abdomen and pelvis, blood tests and CEA as a baseline. After surgery, the pathology report becomes even more important because the final pathological stage is generally more accurate than the initial clinical estimate."
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "**Severe abdominal pain with vomiting, inability to pass stool or gas, heavy rectal bleeding, chest pain, sudden shortness of breath or collapse belongs in a local emergency department — not a delayed WhatsApp message.**"
+        },
+        {
+          "id": "h_023",
+          "type": "heading",
+          "level": 2,
+          "text": "Molecular Testing in Stage 3 Colon Cancer"
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "Modern colon cancer treatment is no longer based only on anatomical staging. **MMR and MSI testing** is particularly important. The tumor may be MMR-proficient (pMMR), MMR-deficient (dMMR), microsatellite stable (MSS) or MSI-high (MSI-H). Results can influence prognostic assessment, identification of possible Lynch syndrome, treatment planning, and eligibility for certain immunotherapy approaches or clinical trials. GAF planning ranges for [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) include **$2,000–$7,000**."
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "Broader testing such as KRAS, NRAS, BRAF, HER2 and NTRK becomes especially important if the cancer later becomes metastatic. For a typical resectable Stage 3 colon cancer, **MMR/MSI testing is particularly relevant to treatment planning**. [Targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) (**$8,000–$30,000**) is generally a later-line or metastatic discussion rather than routine adjuvant Stage 3 care."
+        },
+        {
+          "id": "btn_026",
+          "type": "button",
+          "label": "Ask about MSI/MMR testing after Stage 3 surgery",
+          "href": "/consult?treatment=Precision%20Oncology"
+        },
+        {
+          "id": "h_027",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Stage 3 Colon Cancer Require Surgery?"
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "For a resectable Stage 3 colon cancer, **surgery is usually a central component of treatment**. The objective is to remove the primary tumor, an appropriate length of surrounding colon, and the regional lymphatic drainage. The surgeon then reconnects the bowel whenever it is safe to do so — an **anastomosis**. See [Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india) for hemicolectomy types, stomas and approach choice."
+        },
+        {
+          "id": "img_029",
+          "type": "image",
+          "src": "/uploads/articles/colon-s3-nodes.webp",
+          "alt": "Transparent adult abdomen showing a teal colon, gold tumour and mixed gold and teal mesenteric lymph nodes used to explain Stage 3 nodal sampling",
+          "caption": "A commonly used quality benchmark is examination of at least 12 regional lymph nodes. How many contain cancer decides N1 versus N2."
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "The operation depends largely on tumour location: right hemicolectomy, left hemicolectomy, sigmoid colectomy or an extended colectomy in selected cases. Surgery may be **open, laparoscopic or robotic-assisted**. Laparoscopic colectomy is an established option for appropriately selected patients. Robotic surgery is not automatically appropriate for every colon cancer patient. Open surgery remains important for very large or locally advanced tumours, emergency presentations and extensive adhesions."
+        },
+        {
+          "id": "btn_031",
+          "type": "button",
+          "label": "Ask whether laparoscopic or robotic colectomy is appropriate",
+          "href": "/consult?treatment=Colectomy"
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "Adequate lymph-node evaluation is essential. A commonly used quality benchmark is evaluation of **at least 12 regional lymph nodes**. Most patients undergoing planned Stage 3 colon cancer surgery do not require a permanent colostomy. A temporary or permanent stoma may be considered depending on tumour location, emergency presentation, anastomotic safety and other surgical factors. [Ostomy / stoma surgery](/costs/India/Surgical-Gastroenterology/Ostomy-Stoma-Surgery) planning ranges are **$2,500–$6,800** if a stoma is required."
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Is Chemotherapy Needed After Surgery?"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "Stage 3 colon cancer has a higher risk of microscopic residual disease than Stage 1 or many Stage 2 cancers because cancer cells have already reached regional lymph nodes. Even when the surgeon removes all visible cancer, microscopic cells may remain. Adjuvant chemotherapy is therefore used to reduce the risk of recurrence. The standard approach is generally an **oxaliplatin-based chemotherapy regimen combined with a fluoropyrimidine**: **FOLFOX** (5-fluorouracil, leucovorin and oxaliplatin) or **CAPOX / CAPEOX** (capecitabine plus oxaliplatin). GAF planning ranges for [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) are **$1,500–$8,000+**."
+        },
+        {
+          "id": "img_035",
+          "type": "image",
+          "src": "/uploads/articles/colon-s3-chemo.webp",
+          "alt": "Adult in a chemotherapy day-care chair with a colon-and-lymph-node overlay used to explain adjuvant FOLFOX or CAPOX after Stage 3 surgery",
+          "caption": "Adjuvant chemotherapy is generally recommended after Stage 3 resection unless there is a specific medical reason it cannot be given."
+        },
+        {
+          "id": "h_036",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does chemotherapy last?"
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "Historically, six months of chemotherapy was commonly used. Research from the International Duration Evaluation of Adjuvant Chemotherapy (**IDEA**) collaboration showed that treatment duration can sometimes be shortened, particularly in selected lower-risk patients receiving CAPOX. **Lower-risk Stage 3** often refers to **T1–3 N1**. **Higher-risk Stage 3** generally refers to **T4 and/or N2**."
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "Evidence from IDEA and subsequent studies, including the **SCOT** trial, supports individualized duration decisions, with three months of CAPOX being an established option for many lower-risk patients, while six months may be favored in higher-risk situations or when FOLFOX is used. This decision should be made by the treating oncologist rather than based on stage alone."
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "Oxaliplatin can cause peripheral neuropathy — tingling, numbness, burning, sensitivity to cold, difficulty with fine motor tasks, and changes in walking or balance in more severe cases. Longer exposure generally increases cumulative neuropathy risk. Chemotherapy duration therefore balances **cancer-control benefit vs. treatment toxicity**."
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "When adjuvant chemotherapy is indicated, many guidelines recommend starting as soon as reasonably possible, ideally within approximately **8 weeks after surgery**, when medically appropriate. A short delay does not automatically mean that chemotherapy is no longer useful, but unnecessary delays should generally be avoided."
+        },
+        {
+          "id": "btn_041",
+          "type": "button",
+          "label": "Ask about FOLFOX versus CAPOX and 3 vs 6 months",
+          "href": "/consult?treatment=Chemotherapy"
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 about chemotherapy duration](https://wa.me/919044346292?text=Please%20advise%20whether%203%20months%20of%20CAPOX%20or%206%20months%20of%20FOLFOX%20is%20more%20appropriate%20for%20my%20Stage%203%20colon%20cancer%20risk%20group%20in%20India.)"
+        },
+        {
+          "id": "img_043",
+          "type": "image",
+          "src": "/uploads/articles/colon-s3-clinic.webp",
+          "alt": "Adult patient in clinic with a colon-and-lymph-node overlay while a medical oncologist explains Stage 3 chemotherapy",
+          "caption": "Ask for the T and N risk group and the expected neuropathy trade-off — not only which regimen is newest."
+        },
+        {
+          "id": "h_044",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Immunotherapy Used for Stage 3 Colon Cancer?"
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "Immunotherapy is becoming increasingly important, particularly for tumors with **dMMR/MSI-H biology**. Stage 3 colon cancer should not automatically be treated with immunotherapy simply because a tumor has an MSI-H result. The treatment setting matters."
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Recent clinical-trial results, including the **ATOMIC** study reported in 2025, showed a substantial disease-free-survival improvement when atezolizumab was added to mFOLFOX6 in patients with resected Stage 3 dMMR colon cancer. These results represent an important development in adjuvant treatment, but treatment availability, regulatory approvals, guideline updates and individual patient factors must be considered when applying newer evidence in clinical practice. GAF planning ranges for [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) are **$15,000–$45,000** in settings where it is used."
+        },
+        {
+          "id": "btn_047",
+          "type": "button",
+          "label": "Ask whether immunotherapy is relevant for dMMR Stage 3 disease",
+          "href": "/consult?treatment=Immunotherapy"
+        },
+        {
+          "id": "h_048",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Radiation Used? Can Treatment Start Before Surgery?"
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "For **colon cancer**, [radiation](/costs/India/Radiation-Oncology/EBRT) is not routinely part of standard Stage 3 treatment. This is an important distinction from [rectal cancer](/costs/India/Surgical-Oncology/Rectal-Cancer-Surgery). Radiation may occasionally be considered for selected unresectable or very locally invasive colon tumours, but this is not the routine pathway."
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "Most resectable Stage 3 colon cancers traditionally proceed to surgery followed by adjuvant chemotherapy. Treatment before surgery may be considered for very locally advanced tumours, T4b disease, bulky regional disease, situations where shrinkage could improve resectability, selected dMMR/MSI-H tumours, or clinical-trial settings. The decision should be made by a multidisciplinary tumour board."
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 2,
+          "text": "Recovery, Stoma and Follow-Up"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Many patients gradually return to normal activities over several weeks. Recovery may involve pain management, early walking, gradual diet progression, bowel-function monitoring, wound care and nutrition support. Completing surgery and chemotherapy does not mean follow-up stops. Surveillance is designed to detect recurrence, a new colorectal cancer, treatable complications and long-term treatment effects — commonly with clinical examinations, CEA, CT of the chest/abdomen/pelvis and colonoscopy. Current ASCRS surveillance guidance recommends cross-sectional imaging as part of surveillance after curative treatment for Stage II and III colorectal cancer."
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Stage 3 colon cancer has a meaningful risk of recurrence, which is why postoperative chemotherapy and structured surveillance are important. Higher-risk features include T4, N2, multiple positive nodes, inadequate node assessment, lymphovascular or perineural invasion, tumour deposits, positive or close margins and certain aggressive pathological features."
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 2,
+          "text": "Stage 3 vs Stage 2 vs Stage 4"
+        },
+        {
+          "id": "html_055",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Stage 2</th><th>Stage 3</th></tr></thead><tbody><tr><td>Local tumor invasion</td><td>Can be deep</td><td>Can be deep</td></tr><tr><td>Regional lymph nodes</td><td>No cancer in regional nodes</td><td>Cancer present in regional nodes</td></tr><tr><td>Distant metastasis</td><td>No</td><td>No</td></tr><tr><td>Surgery</td><td>Usually central</td><td>Usually central</td></tr><tr><td>Adjuvant chemotherapy</td><td>Selected patients</td><td>Generally recommended</td></tr><tr><td>Risk assessment</td><td>Pathological risk factors important</td><td>T and N risk groups particularly important</td></tr><tr><td>MMR/MSI</td><td>Important</td><td>Important</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "html_056",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Stage 3</th><th>Stage 4</th></tr></thead><tbody><tr><td>Regional lymph nodes</td><td>May contain cancer</td><td>May contain cancer</td></tr><tr><td>Distant organs</td><td>No confirmed metastasis</td><td>Distant metastasis present</td></tr><tr><td>Main treatment objective</td><td>Usually curative intent</td><td>Depends on resectability and disease pattern</td></tr><tr><td>Surgery</td><td>Common for primary tumor</td><td>Selected cases</td></tr><tr><td>Chemotherapy</td><td>Usually adjuvant after surgery</td><td>Usually systemic treatment</td></tr><tr><td>Molecular profiling</td><td>Increasingly important</td><td>Essential for treatment selection</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "h_057",
+          "type": "heading",
+          "level": 2,
+          "text": "Stage 3 Colon Cancer Treatment Cost in India"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "There is **no single fixed price** because treatment usually includes surgery plus several months of chemotherapy, along with diagnostic testing, pathology and follow-up. GAF Healthcare publishes USD planning ranges compiled from partner hospital cost sheets. They are not hospital quotations."
+        },
+        {
+          "id": "html_059",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Component</th><th>GAF planning range in India</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Gastroenterology/Colonoscopy\">Colonoscopy</a></td><td>$200–$550</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Colectomy\">Colectomy</a></td><td>$7,000–$18,000</td></tr><tr><td><a href=\"/costs/India/Surgical-Gastroenterology/Colorectal-Cancer-Surgery\">Colorectal cancer surgery</a></td><td>$8,000–$20,000</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemotherapy</a> (FOLFOX or CAPOX)</td><td>$1,500–$8,000+</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Precision-Oncology\">Precision oncology / MSI-MMR testing</a></td><td>$2,000–$7,000</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Immunotherapy\">Immunotherapy</a> in selected dMMR/MSI-H settings</td><td>$15,000–$45,000</td></tr><tr><td><a href=\"/costs/India/Surgical-Gastroenterology/Ostomy-Stoma-Surgery\">Ostomy / stoma surgery</a> if required</td><td>$2,500–$6,800</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "City pages such as [Delhi NCR colectomy](/costs/India/Delhi-NCR/Surgical-Oncology/Colectomy), [Mumbai](/costs/India/Mumbai/Surgical-Oncology/Colectomy), [Bengaluru](/costs/India/Bengaluru/Surgical-Oncology/Colectomy), [Chennai](/costs/India/Chennai/Surgical-Oncology/Colectomy) and [Hyderabad](/costs/India/Hyderabad/Surgical-Oncology/Colectomy) use the same national range unless a hospital issues a verified quotation."
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "A written hospital estimate based on the patient's medical records is much more useful than a generic online cost figure. Ask whether the quotation separates surgeon fees, hospital and OT charges, anaesthesia, pathology, imaging, chemotherapy drugs, day-care, medical-oncology consultation, molecular testing and follow-up — and what is excluded (ICU, complications, additional surgery, extra cycles)."
+        },
+        {
+          "id": "btn_062",
+          "type": "button",
+          "label": "Ask for an itemised Stage 3 quotation",
+          "href": "/consult?treatment=Stage%203%20Colon%20Cancer%20Treatment%20Cost%20in%20India"
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for surgery plus chemotherapy pricing](https://wa.me/919044346292?text=Please%20send%20an%20itemised%20Stage%203%20colon%20cancer%20quotation%20in%20India%20covering%20colectomy%2C%20stay%2C%20pathology%2C%20MSI%2FMMR%20testing%20and%20FOLFOX%20or%20CAPOX.)"
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 2,
+          "text": "How to Choose a Hospital and What to Ask"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "For Stage 3 colon cancer, evaluate whether the centre has experienced colorectal/GI cancer surgeons, dedicated medical oncology, advanced pathology and molecular testing, minimally invasive colorectal surgery, ICU and emergency support, a multidisciplinary tumour board, chemotherapy day-care and international-patient services. Access to **both surgery and medical oncology** is essential."
+        },
+        {
+          "id": "ul_066",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Surgical oncology hospitals in Delhi NCR](/hospitals/India/Delhi-NCR/Surgical-Oncology)",
+            "[Surgical oncology hospitals in Mumbai](/hospitals/India/Mumbai/Surgical-Oncology)",
+            "[Surgical oncology hospitals in Bengaluru](/hospitals/India/Bengaluru/Surgical-Oncology)",
+            "[Surgical oncology hospitals in Chennai](/hospitals/India/Chennai/Surgical-Oncology)",
+            "[Surgical oncology hospitals in Hyderabad](/hospitals/India/Hyderabad/Surgical-Oncology)"
+          ]
+        },
+        {
+          "id": "ol_067",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is my exact TNM stage — IIIA, IIIB or IIIC — and how many lymph nodes contain cancer?",
+            "Are the surgical margins clear, and were at least 12 nodes examined?",
+            "Do I have T4 or N2 disease, lymphovascular invasion or perineural invasion?",
+            "What is my MMR/MSI status, and do I need FOLFOX or CAPOX?",
+            "Can three months of chemotherapy be considered, or would six months provide additional benefit for my risk group?",
+            "What are my risks of oxaliplatin neuropathy, when can chemotherapy begin after surgery, and what will surveillance look like?"
+          ]
+        },
+        {
+          "id": "h_068",
+          "type": "heading",
+          "level": 2,
+          "text": "The Bottom Line"
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "Stage 3 colon cancer has spread to nearby lymph nodes but has no confirmed distant metastasis. Treatment is generally planned with **curative intent** when the disease is resectable: **surgery → final pathology → MMR/MSI → adjuvant FOLFOX or CAPOX → surveillance**. Three versus six months of chemotherapy should be individualized according to T/N risk, regimen and neuropathy risk. Immunotherapy is an evolving area for dMMR/MSI-H Stage 3 disease. Radiation is not routinely used for colon cancer."
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_071",
+          "type": "heading",
+          "level": 3,
+          "text": "Is Stage 3 colon cancer serious?"
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Stage 3 colon cancer is a significant diagnosis because the cancer has spread to regional lymph nodes. However, it is different from metastatic Stage 4 disease because Stage 3 disease does not involve confirmed distant metastasis. Many patients are treated with curative intent using surgery followed by chemotherapy."
+        },
+        {
+          "id": "h_073",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the main treatment for Stage 3 colon cancer?"
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "For resectable disease, the usual treatment consists of surgical removal of the tumor and regional lymph nodes followed by adjuvant chemotherapy."
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 3,
+          "text": "Is chemotherapy always needed for Stage 3 colon cancer?"
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "Adjuvant chemotherapy is generally recommended for Stage 3 colon cancer unless there is a specific medical reason it cannot be given."
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 3,
+          "text": "Which chemotherapy is used for Stage 3 colon cancer?"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "FOLFOX and CAPOX are two commonly used oxaliplatin-based regimens."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 3,
+          "text": "Is three months of chemotherapy enough?"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "For selected lower-risk Stage 3 patients, particularly those receiving CAPOX, three months can be an appropriate option. Higher-risk disease may lead the oncologist to recommend a longer course. The decision should be individualized."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 3,
+          "text": "What is high-risk Stage 3 colon cancer?"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "In clinical discussions, T4 and/or N2 disease is generally categorized as higher-risk Stage 3 disease."
+        },
+        {
+          "id": "h_083",
+          "type": "heading",
+          "level": 3,
+          "text": "Is Stage 3 colon cancer curable?"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "Treatment is usually given with curative intent when the tumor can be completely removed and there is no distant metastatic disease. However, recurrence remains possible."
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 3,
+          "text": "Does Stage 3 colon cancer need radiation?"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "Routine radiation is generally not used for colon cancer. It is much more commonly used in the management of locally advanced rectal cancer."
+        },
+        {
+          "id": "h_087",
+          "type": "heading",
+          "level": 3,
+          "text": "Is robotic surgery better than open surgery?"
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "Robotic surgery can be useful for selected patients, but it is not automatically better for every tumor. The appropriate approach depends on tumor location, complexity, anatomy and surgeon expertise."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 3,
+          "text": "Can Stage 3 colon cancer return after treatment?"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Yes. Recurrence can occur even after apparently complete treatment. This is why structured surveillance is important."
+        },
+        {
+          "id": "h_091",
+          "type": "heading",
+          "level": 3,
+          "text": "How long is chemotherapy for Stage 3 colon cancer?"
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "Depending on the risk category, regimen and patient factors, adjuvant chemotherapy may last approximately three to six months."
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 3,
+          "text": "Can Stage 3 colon cancer be treated in India?"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "Yes. India has multidisciplinary cancer centers offering colorectal surgery, medical oncology, chemotherapy, pathology, molecular testing and structured follow-up."
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Colon Cancer Resources"
+        },
+        {
+          "id": "ul_096",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and systemic medicines around Stage III.",
+            "[Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india) — hemicolectomy types, anastomosis, stomas and approach choice.",
+            "[Stage 1 Colon Cancer Treatment in India](/blogs/stage-1-colon-cancer-treatment-in-india) — T1/T2 and when endoscopic removal is enough.",
+            "[Stage 2 Colon Cancer Treatment in India](/blogs/stage-2-colon-cancer-treatment-in-india) — node-negative T3/T4 and when chemotherapy is only discussed.",
+            "[Colectomy cost in India](/costs/India/Surgical-Oncology/Colectomy) — GAF planning range $7,000–$18,000.",
+            "[Chemotherapy cost in India](/costs/India/Medical-Oncology/Chemotherapy) — $1,500–$8,000+ for adjuvant FOLFOX or CAPOX.",
+            "[Precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) — MSI/MMR testing, $2,000–$7,000.",
+            "[Rectal cancer surgery](/costs/India/Surgical-Oncology/Rectal-Cancer-Surgery) — a different pathway when radiation may be part of treatment.",
+            "[Breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india) and [prostate cancer treatment in India](/treatments/prostate-cancer-treatment-in-india) — other GAF cancer pathways."
+          ]
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates international patients who need a Stage 3 colon cancer opinion in India — after a node-positive pathology report, a question about FOLFOX versus CAPOX, or an MSI/MMR result. Share the colonoscopy PDF, the **complete pathology report** (including positive-node count), CT files, CEA and any MSI/MMR result. A coordinator can introduce a [surgical oncologist](/doctors/India/Surgical-Oncology) and a [medical oncologist](/doctors/India/Medical-Oncology), then help collect an itemised quotation covering the operation, stay, pathology and planned chemotherapy duration."
+        },
+        {
+          "id": "btn_099",
+          "type": "button",
+          "label": "Share records for a Stage 3 review",
+          "href": "/consult?treatment=Stage%203%20Colon%20Cancer%20Treatment"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with colonoscopy, node count and MSI/MMR](https://wa.me/919044346292?text=I%20would%20like%20to%20share%20my%20colonoscopy%2C%20complete%20pathology%2C%20positive%20lymph-node%20count%20and%20MSI%2FMMR%20for%20a%20Stage%203%20colon%20cancer%20second%20opinion%20in%20India.)"
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "This article is intended for general educational purposes and should not replace consultation with a qualified colorectal surgeon or medical oncologist. Stage 3 colon cancer treatment is highly individualized. Surgery, chemotherapy regimen, duration, immunotherapy and surveillance depend on the complete pathology, imaging, molecular profile, medical history and multidisciplinary specialist assessment. Patients should not start, stop or change cancer treatment without discussing it with their treating doctor."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 2,
+          "text": "Top 10 Sources"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "1. [NCI — Colon Cancer Treatment (PDQ®)](https://www.cancer.gov/types/colorectal/hp/colon-treatment-pdq) — Stage III surgery, adjuvant chemotherapy and high-risk features."
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "2. [American Cancer Society — Treatment of Colon Cancer, by Stage](https://www.cancer.org/cancer/types/colon-rectal-cancer/treating/by-stage-colon.html) — Stage III treatment, FOLFOX/CAPOX and selected neoadjuvant options."
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "3. [ESMO — Gastrointestinal cancer guidelines](https://www.esmo.org/guidelines/guidelines-by-topic/esmo-clinical-practice-guidelines-gastrointestinal-cancers) — localised colon cancer, risk groups and adjuvant treatment."
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "4. [ASCRS — Clinical Practice Guidelines](https://fascrs.org/healthcare-providers/education/clinical-practice-guidelines) — colon cancer surgery and postoperative treatment."
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "5. [ASCRS surveillance and survivorship guidance](https://fascrs.org/healthcare-providers/education/clinical-practice-guidelines) — imaging after curative Stage II and III treatment."
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "6. [IDEA collaboration — duration of adjuvant chemotherapy](https://www.nejm.org/doi/full/10.1056/NEJMoa1713709) — 3 versus 6 months in Stage III colon cancer."
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "7. [SCOT trial — 3 vs 6 months of adjuvant chemotherapy](https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(17)30706-6/fulltext) — oxaliplatin-based duration and neuropathy."
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "8. [ICMR — Consensus Document for Management of Colorectal Cancer](https://main.icmr.nic.in/sites/default/files/guidelines/Colorectal%20Cancer.pdf) — India-specific staging, surgery and adjuvant chemotherapy."
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "9. [SEOM clinical guidelines](https://seom.org/publicaciones/guias-clinicas) — adjuvant colon-cancer treatment."
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "10. [ASCO — Gastrointestinal cancer guidelines](https://www.asco.org/practice-patients/guidelines/gastrointestinal-cancer) — adjuvant evidence, including evolving dMMR/MSI-H immunotherapy (ATOMIC)."
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "**Last reviewed against the cited sources: September 2026.**"
+        }
+      ]
+    },
     {
       "id": "art_stage_2_colon_cancer_treatment_in_india",
       "slug": "stage-2-colon-cancer-treatment-in-india",
@@ -1386,6 +2121,10 @@
         "stage IIA IIB IIC colon cancer"
       ],
       "relatedLinks": [
+        {
+          "label": "Stage 3 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-3-colon-cancer-treatment-in-india"
+        },
         {
           "label": "Colon Cancer Treatment in India",
           "href": "/treatments/colon-cancer-treatment-in-india"
@@ -2069,6 +2808,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Stage 3 Colon Cancer Treatment in India](/blogs/stage-3-colon-cancer-treatment-in-india) — node-positive disease, FOLFOX/CAPOX and 3 versus 6 months of adjuvant chemotherapy.",
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and systemic medicines around Stage II.",
             "[Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india) — hemicolectomy types, anastomosis, stomas and approach choice.",
             "[Stage 1 Colon Cancer Treatment in India](/blogs/stage-1-colon-cancer-treatment-in-india) — T1/T2, polyp pathology and when endoscopic removal is enough.",
@@ -2213,6 +2953,10 @@
         "stage I colon cancer India"
       ],
       "relatedLinks": [
+        {
+          "label": "Stage 3 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-3-colon-cancer-treatment-in-india"
+        },
         {
           "label": "Stage 2 Colon Cancer Treatment in India",
           "href": "/blogs/stage-2-colon-cancer-treatment-in-india"
@@ -2948,6 +3692,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Stage 3 Colon Cancer Treatment in India](/blogs/stage-3-colon-cancer-treatment-in-india) — node-positive disease, FOLFOX/CAPOX and 3 versus 6 months of adjuvant chemotherapy.",
             "[Stage 2 Colon Cancer Treatment in India](/blogs/stage-2-colon-cancer-treatment-in-india) — deeper wall invasion, high-risk features and the chemotherapy discussion.",
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and systemic medicines around early disease.",
             "[Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india) — hemicolectomy types, anastomosis, stomas and approach choice.",
@@ -3092,6 +3837,10 @@
         "colon cancer recovery"
       ],
       "relatedLinks": [
+        {
+          "label": "Stage 3 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-3-colon-cancer-treatment-in-india"
+        },
         {
           "label": "Stage 2 Colon Cancer Treatment in India",
           "href": "/blogs/stage-2-colon-cancer-treatment-in-india"
@@ -4017,6 +4766,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Stage 3 Colon Cancer Treatment in India](/blogs/stage-3-colon-cancer-treatment-in-india) — node-positive disease, FOLFOX/CAPOX and 3 versus 6 months of adjuvant chemotherapy.",
             "[Stage 2 Colon Cancer Treatment in India](/blogs/stage-2-colon-cancer-treatment-in-india) — T3/T4, high-risk features, MSI/MMR and when adjuvant chemotherapy is discussed.",
             "[Stage 1 Colon Cancer Treatment in India](/blogs/stage-1-colon-cancer-treatment-in-india) — T1/T2, polyp pathology and when endoscopic removal is enough.",
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and systemic medicines around the operation.",

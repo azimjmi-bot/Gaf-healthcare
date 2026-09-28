@@ -6,19 +6,19 @@ import { articleCtaCount, faqsFromArticleBlocks, getPost, listPublishedPosts } f
 import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
 import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
 
-const SLUG = "colon-cancer-surgery-in-india";
+const SLUG = "stage-3-colon-cancer-treatment-in-india";
 
-test("the published colon surgery blog is complete, interlinked and indexed only in English", () => {
+test("the published Stage 3 colon blog is complete, interlinked and indexed only in English", () => {
   const post = getPost(SLUG, "en");
   assert.ok(post);
   assert.equal(post.status, "published");
   assert.equal(post.allowIndex, true);
-  assert.equal(post.seoTitle, "Colon Cancer Surgery in India: Colectomy, Recovery and Cost");
-  assert.match(post.seoDescription, /hemicolectomy|laparoscopic|robotic|stoma/i);
+  assert.equal(post.seoTitle, "Stage 3 Colon Cancer Treatment in India: Surgery and Chemotherapy");
+  assert.match(post.seoDescription, /FOLFOX|CAPOX|MSI|Stage 3/i);
   assert.ok((post.keywords?.length ?? 0) >= 8);
   assert.equal(
     post.imageAlt,
-    "Transparent adult body with a teal colon and a gold tumour overlay used to explain colon cancer surgery",
+    "Transparent adult body with a teal colon, gold tumour and gold regional lymph nodes used to explain Stage 3 colon cancer",
   );
 
   const texts = post.blocks
@@ -34,23 +34,25 @@ test("the published colon surgery blog is complete, interlinked and indexed only
     .join("\n");
 
   assert.match(texts, /article-quick-answer/);
-  assert.match(texts, /Right hemicolectomy/);
-  assert.match(texts, /anastomosis/);
-  assert.match(texts, /ileostomy or colostomy/);
+  assert.match(texts, /Diagnosis → Complete staging → Colon surgery → Final pathology → Adjuvant chemotherapy → Surveillance/);
+  assert.match(texts, /FOLFOX or CAPOX/);
+  assert.match(texts, /MMR\/MSI testing/);
+  assert.match(texts, /dMMR\/MSI-H/);
+  assert.match(texts, /T1–3 N1/);
+  assert.match(texts, /T4 and\/or N2/);
   assert.match(texts, /\$7,000–\$18,000/);
-  assert.match(texts, /\$8,000–\$20,000/);
   assert.match(texts, /\$1,500–\$8,000\+/);
-  assert.match(texts, /\$10,000–\$26,000/);
+  assert.match(texts, /\$2,000–\$7,000/);
   assert.match(texts, /How GAF Healthcare Can Help/);
   assert.match(texts, /wa\.me\/919044346292/);
   assert.match(texts, /local emergency department/);
   assert.match(texts, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(texts, /\/blogs\/colon-cancer-surgery-in-india/);
   assert.match(texts, /\/blogs\/stage-1-colon-cancer-treatment-in-india/);
   assert.match(texts, /\/blogs\/stage-2-colon-cancer-treatment-in-india/);
-  assert.match(texts, /\/blogs\/stage-3-colon-cancer-treatment-in-india/);
   assert.match(texts, /\/costs\/India\/Surgical-Oncology\/Colectomy/);
-  assert.match(texts, /\/costs\/India\/Surgical-Gastroenterology\/Colorectal-Cancer-Surgery/);
-  assert.match(texts, /\/doctors\/India\/Surgical-Oncology/);
+  assert.match(texts, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
+  assert.match(texts, /\/costs\/India\/Medical-Oncology\/Precision-Oncology/);
   for (const path of [
     "/doctors/India/Delhi-NCR/Surgical-Oncology/Colectomy",
     "/doctors/India/Mumbai/Surgical-Oncology/Colectomy",
@@ -63,10 +65,10 @@ test("the published colon surgery blog is complete, interlinked and indexed only
   }
 
   for (const file of [
-    "colon-sx-anatomy.webp",
-    "colon-sx-resection.webp",
-    "colon-sx-clinic.webp",
-    "colon-sx-liver.webp",
+    "colon-s3-anatomy.webp",
+    "colon-s3-nodes.webp",
+    "colon-s3-clinic.webp",
+    "colon-s3-chemo.webp",
   ]) {
     assert.match(texts, new RegExp(file.replace(/[.]/g, "\\.")));
     assert.ok(existsSync(join(process.cwd(), "public/uploads/articles", file)), file);
@@ -77,4 +79,11 @@ test("the published colon surgery blog is complete, interlinked and indexed only
   assert.ok(faqsFromArticleBlocks(post.blocks).length >= 8);
   assert.equal(listPublishedPosts("ar").some((row) => row.slug === SLUG), false);
   assert.ok(buildLocaleSitemap("en").some((row) => row.url.endsWith(`/blogs/${SLUG}`)));
+
+  const surgery = getPost("colon-cancer-surgery-in-india", "en");
+  assert.ok(surgery?.relatedLinks.some((link) => link.href === `/blogs/${SLUG}`));
+  const stage1 = getPost("stage-1-colon-cancer-treatment-in-india", "en");
+  assert.ok(stage1?.relatedLinks.some((link) => link.href === `/blogs/${SLUG}`));
+  const stage2 = getPost("stage-2-colon-cancer-treatment-in-india", "en");
+  assert.ok(stage2?.relatedLinks.some((link) => link.href === `/blogs/${SLUG}`));
 });
