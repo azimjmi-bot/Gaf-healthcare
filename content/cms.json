@@ -114,7 +114,10 @@
     "FOLFIRI",
     "MSI-H",
     "pembrolizumab",
-    "nivolumab"
+    "nivolumab",
+    "KRAS",
+    "BRAF",
+    "cetuximab"
   ],
   "media": [
     {
@@ -1467,9 +1470,824 @@
       "name": "colon-io-clinic.webp",
       "alt": "Adult patient in clinic with a colon-and-immune overlay while a medical oncologist explains MSI-H immunotherapy",
       "addedAt": "2026-09-28T20:30:00.000Z"
+    },
+    {
+      "id": "media_colon_tt_anatomy_webp",
+      "url": "/uploads/articles/colon-tt-anatomy.webp",
+      "name": "colon-tt-anatomy.webp",
+      "alt": "Transparent adult body with a teal colon and a gold tumour used to explain biomarker-directed colon cancer targeted therapy",
+      "addedAt": "2026-09-28T21:00:00.000Z"
+    },
+    {
+      "id": "media_colon_tt_liver_webp",
+      "url": "/uploads/articles/colon-tt-liver.webp",
+      "name": "colon-tt-liver.webp",
+      "alt": "Transparent adult abdomen showing a teal colon, a gold colon tumour and gold liver metastases used to explain conversion targeted therapy",
+      "addedAt": "2026-09-28T21:00:00.000Z"
+    },
+    {
+      "id": "media_colon_tt_infusion_webp",
+      "url": "/uploads/articles/colon-tt-infusion.webp",
+      "name": "colon-tt-infusion.webp",
+      "alt": "Adult in a day-care infusion chair with a colon-and-tumour overlay used to explain bevacizumab or cetuximab targeted therapy",
+      "addedAt": "2026-09-28T21:00:00.000Z"
+    },
+    {
+      "id": "media_colon_tt_clinic_webp",
+      "url": "/uploads/articles/colon-tt-clinic.webp",
+      "name": "colon-tt-clinic.webp",
+      "alt": "Adult patient in clinic with a colon-and-liver overlay while a medical oncologist explains RAS, BRAF and HER2 targeted therapy",
+      "addedAt": "2026-09-28T21:00:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_colon_cancer_targeted_therapy_in_india",
+      "slug": "colon-cancer-targeted-therapy-in-india",
+      "title": "Colon Cancer Targeted Therapy in India: RAS, BRAF, HER2 and EGFR",
+      "excerpt": "When colon cancer targeted therapy is appropriate: RAS, BRAF V600E, HER2, KRAS G12C, cetuximab, bevacizumab, later-line options and GAF planning ranges.",
+      "date": "28 September 2026",
+      "publishedAt": "2026-09-28T21:00:00.000Z",
+      "updatedAt": "2026-09-28T21:00:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Medical Oncology",
+      "tags": [
+        "colon cancer",
+        "targeted therapy",
+        "KRAS",
+        "BRAF",
+        "cetuximab",
+        "India"
+      ],
+      "image": "/uploads/articles/colon-tt-anatomy.webp",
+      "imageAlt": "Transparent adult body with a teal colon and a gold tumour used to explain biomarker-directed colon cancer targeted therapy",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Colon Cancer Targeted Therapy in India: RAS, BRAF, HER2 and EGFR",
+      "seoDescription": "Colon cancer targeted therapy in India: RAS, BRAF V600E, HER2, KRAS G12C, cetuximab, bevacizumab, later-line options and GAF USD planning ranges.",
+      "canonical": "https://gaf.healthcare/blogs/colon-cancer-targeted-therapy-in-india",
+      "ogImage": "/uploads/articles/colon-tt-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "colon cancer targeted therapy in India",
+        "KRAS NRAS cetuximab panitumumab",
+        "bevacizumab colon cancer",
+        "BRAF V600E encorafenib",
+        "HER2 tucatinib trastuzumab",
+        "KRAS G12C adagrasib sotorasib",
+        "colon cancer targeted therapy cost in India",
+        "RAS wild-type left-sided colon cancer",
+        "regorafenib fruquintinib"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Colon Cancer Treatment in India",
+          "href": "/treatments/colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "Colon Cancer Chemotherapy in India",
+          "href": "/blogs/colon-cancer-chemotherapy-in-india"
+        },
+        {
+          "label": "Colon Cancer Immunotherapy in India",
+          "href": "/blogs/colon-cancer-immunotherapy-in-india"
+        },
+        {
+          "label": "Stage 4 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-4-colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "Targeted therapy cost in India",
+          "href": "/costs/India/Medical-Oncology/Targeted-Therapy"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\">Targeted therapy uses medicines designed to interfere with specific biological pathways involved in cancer growth.</p><p class=\"article-quick-answer__body\">In colon cancer, targeted treatment is primarily important in <strong>advanced or metastatic disease</strong>.</p><p class=\"article-quick-answer__body\">The treatment depends on molecular testing.</p><p class=\"article-quick-answer__body\"><strong>RAS wild-type, BRAF wild-type left-sided metastatic colon cancer</strong></p><p class=\"article-quick-answer__body\">An anti-EGFR medicine such as:</p><ul class=\"article-quick-answer__list\"><li>Cetuximab</li><li>Panitumumab</li></ul><p class=\"article-quick-answer__body\">may be combined with chemotherapy in appropriate patients.</p><p class=\"article-quick-answer__body\"><strong>RAS-mutated metastatic colon cancer</strong></p><p class=\"article-quick-answer__body\">Anti-EGFR therapy is generally not appropriate.</p><p class=\"article-quick-answer__body\">An anti-VEGF strategy such as <strong>bevacizumab combined with chemotherapy</strong> is commonly considered.</p><p class=\"article-quick-answer__body\"><strong>BRAF V600E-mutated disease</strong></p><p class=\"article-quick-answer__body\">BRAF-directed treatment can be used in appropriate treatment settings.</p><p class=\"article-quick-answer__body\">An established approach includes:</p><p class=\"article-quick-answer__body\"><strong>Encorafenib + cetuximab</strong></p><p class=\"article-quick-answer__body\">with newer first-line strategies incorporating chemotherapy in selected patients.</p><p class=\"article-quick-answer__body\"><strong>HER2-positive, RAS wild-type disease</strong></p><p class=\"article-quick-answer__body\">HER2-directed treatments may be considered, particularly after standard chemotherapy.</p><p class=\"article-quick-answer__body\">Options can include:</p><ul class=\"article-quick-answer__list\"><li>Tucatinib + trastuzumab</li><li>Trastuzumab deruxtecan</li><li>Other HER2-directed strategies depending on the treatment setting</li></ul><p class=\"article-quick-answer__body\"><strong>KRAS G12C-mutated disease</strong></p><p class=\"article-quick-answer__body\">Selected previously treated patients may receive:</p><ul class=\"article-quick-answer__list\"><li>Adagrasib + cetuximab</li><li>Sotorasib + panitumumab</li></ul><p class=\"article-quick-answer__body\">depending on the clinical setting and applicable approvals.</p><p class=\"article-quick-answer__body\"><strong>MSI-H/dMMR disease</strong></p><p class=\"article-quick-answer__body\">Immunotherapy may be more relevant than conventional targeted therapy.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Colon cancer targeted therapy in India is an important part of modern treatment for **advanced and metastatic colon cancer**. Unlike conventional [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy), which affects rapidly dividing cells more broadly, targeted therapy is designed to interfere with specific molecules, receptors or biological pathways that help cancer cells grow, survive or spread. **Targeted therapy is not one medicine and it is not suitable for every colon cancer patient.** Treatment is selected according to the tumor's molecular profile, stage, location of the primary tumor, previous treatment, overall health and the goal of treatment."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "This article is the targeted-therapy hub for the colon cluster. The broader pathway is in [Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india). How FOLFOX, CAPOX and FOLFIRI are planned as the chemotherapy backbone is in [Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india). For **MSI-H/dMMR** tumors, [Colon Cancer Immunotherapy in India](/blogs/colon-cancer-immunotherapy-in-india) is often the more important biomarker-driven strategy. [Stage 4](/blogs/stage-4-colon-cancer-treatment-in-india) covers resectability and conversion. [Stage 3](/blogs/stage-3-colon-cancer-treatment-in-india) explains why targeted therapy is not routine after surgery. How the operation itself is planned is in [Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india). This is **not** a rectal-cancer page: radiation has a much larger role when the tumor is rectal. See [rectal cancer surgery](/costs/India/Surgical-Oncology/Rectal-Cancer-Surgery)."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "GAF Healthcare planning ranges for [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) are **$8,000–$30,000**. [Precision oncology / molecular testing](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000**. [Chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) is **$1,500–$8,000+**. [Immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) is **$15,000–$45,000**. These are planning ranges, not hospital quotations."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "International patients comparing [medical oncologists](/doctors/India/Medical-Oncology) for biomarker-directed treatment commonly start with [Delhi NCR targeted therapy](/doctors/India/Delhi-NCR/Medical-Oncology/Targeted-Therapy), [Mumbai](/doctors/India/Mumbai/Medical-Oncology/Targeted-Therapy), [Bengaluru](/doctors/India/Bengaluru/Medical-Oncology/Targeted-Therapy), [Chennai](/doctors/India/Chennai/Medical-Oncology/Targeted-Therapy) and [Hyderabad](/doctors/India/Hyderabad/Medical-Oncology/Targeted-Therapy). Partner [medical-oncology hospitals](/hospitals/India/Medical-Oncology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Medical-Oncology) and [Mumbai](/hospitals/India/Mumbai/Medical-Oncology) are a typical first filter. [Surgical oncologists](/doctors/India/Surgical-Oncology) remain on the same tumour board if conversion surgery later becomes possible."
+        },
+        {
+          "id": "btn_006",
+          "type": "button",
+          "label": "Ask which targeted therapy matches this molecular profile",
+          "href": "/consult?treatment=Colon%20Cancer%20Targeted%20Therapy"
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with KRAS, NRAS, BRAF, HER2 and MSI/MMR](https://wa.me/919044346292?text=Please%20review%20my%20colon%20cancer%20KRAS%2C%20NRAS%2C%20BRAF%2C%20HER2%20and%20MSI%2FMMR%20results%20and%20advise%20whether%20cetuximab%2C%20bevacizumab%2C%20BRAF-directed%20or%20HER2-directed%20therapy%20is%20appropriate%20in%20India.)"
+        },
+        {
+          "id": "img_008",
+          "type": "image",
+          "src": "/uploads/articles/colon-tt-anatomy.webp",
+          "alt": "Transparent adult body with a teal colon and a gold tumour used to explain biomarker-directed colon cancer targeted therapy",
+          "caption": "The same Stage 4 colon cancer can lead to completely different medicines depending on RAS, BRAF, HER2 and MSI/MMR status."
+        },
+        {
+          "id": "h_009",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Targeted Therapy?"
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "Targeted therapy is a form of cancer treatment designed to interfere with specific molecules involved in cancer development. Cancer cells often acquire genetic or molecular changes that allow them to grow continuously, avoid normal growth controls, form new blood vessels, escape immune responses, invade surrounding tissues and spread to distant organs. Targeted medicines attempt to interrupt these specific processes. This is different from conventional [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy). Targeted therapy does not mean that side effects are absent. A targeted drug can still cause significant or even serious toxicity."
+        },
+        {
+          "id": "html_011",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Targeted therapy</th><th>Chemotherapy</th></tr></thead><tbody><tr><td>Main principle</td><td>Targets specific biological pathways</td><td>Damages rapidly dividing cells</td></tr><tr><td>Biomarker testing</td><td>Often essential</td><td>Less dependent on a single biomarker</td></tr><tr><td>Selectivity</td><td>More molecularly specific</td><td>Broader cellular effect</td></tr><tr><td>Use in colon cancer</td><td>Mainly advanced/metastatic disease</td><td>Stage 3 and metastatic disease</td></tr><tr><td>Can be combined?</td><td>Yes</td><td>Yes</td></tr><tr><td>Side effects</td><td>Depend on target and drug</td><td>Depend on chemotherapy regimen</td></tr><tr><td>Works for everyone?</td><td>No</td><td>No</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "h_012",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Molecular Testing Is Essential"
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "Modern metastatic colon cancer treatment should not be planned from the stage alone. The same Stage 4 diagnosis can lead to completely different treatment depending on the tumor's molecular profile."
+        },
+        {
+          "id": "ul_014",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Patient A — KRAS-mutated:** anti-EGFR therapy is generally not appropriate.",
+            "**Patient B — RAS wild-type, BRAF wild-type, left-sided:** anti-EGFR therapy may be an important first-line option.",
+            "**Patient C — BRAF V600E-mutated:** BRAF-directed treatment may be appropriate.",
+            "**Patient D — HER2-positive, RAS wild-type:** HER2-targeted therapy may become relevant.",
+            "**Patient E — MSI-H/dMMR:** [immunotherapy](/blogs/colon-cancer-immunotherapy-in-india) may be a major treatment option."
+          ]
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "Current ESMO guidance recommends testing metastatic colorectal cancer for **RAS, BRAF, MSI/MMR and HER2** status, with broader genomic testing considered when appropriate. The 2025 Indian consensus recommends at least RAS, BRAF, MSI/MMR and HER2 testing for metastatic colorectal cancer when resources permit. GAF planning ranges for [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) are **$2,000–$7,000**."
+        },
+        {
+          "id": "btn_016",
+          "type": "button",
+          "label": "Ask which biomarkers to complete before first-line treatment",
+          "href": "/consult?treatment=Precision%20Oncology"
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with the pathology and any NGS report](https://wa.me/919044346292?text=Please%20review%20my%20colon%20cancer%20pathology%20and%20molecular%20report%20and%20advise%20whether%20RAS%2C%20BRAF%2C%20HER2%2C%20MSI%2FMMR%20or%20NGS%20still%20needs%20to%20be%20completed%20in%20India.)"
+        },
+        {
+          "id": "h_018",
+          "type": "heading",
+          "level": 2,
+          "text": "KRAS, NRAS and RAS Wild-Type"
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "KRAS and NRAS are part of the **RAS gene family**. Mutations can activate signaling pathways downstream of the EGFR receptor. If a colon cancer contains an activating RAS mutation, blocking EGFR from outside the cell may not effectively stop the downstream signal. Therefore: **RAS mutation → anti-EGFR therapy generally not appropriate**, while **RAS wild-type → anti-EGFR therapy may be considered in the appropriate clinical setting**."
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "Testing should include relevant exons of both KRAS and NRAS. Current ESMO guidance recommends testing exons 2, 3 and 4 of KRAS and NRAS when assessing eligibility for anti-EGFR therapy. RAS wild-type status alone does not automatically mean that cetuximab or panitumumab should be used. Doctors also consider primary tumor location, BRAF status, MSI/MMR, previous treatment, treatment objective and patient fitness. A report that simply says **\"KRAS positive\"** is not enough — the exact mutation should be documented."
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 2,
+          "text": "EGFR-Targeted Therapy: Cetuximab and Panitumumab"
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "EGFR stands for epidermal growth factor receptor. Two important EGFR-targeted antibodies are **cetuximab** and **panitumumab**. They bind to EGFR and interfere with downstream signaling. Effectiveness is strongly influenced by RAS status, BRAF status, primary tumor location and previous treatment."
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "For first-line treatment, the strongest evidence is in **RAS wild-type, BRAF wild-type, left-sided metastatic colon cancer**, where cetuximab or panitumumab can be combined with chemotherapy. If the RAS pathway is already activated by a mutation, blocking EGFR may not shut down the signaling pathway: **KRAS/NRAS mutation → likely resistance to anti-EGFR therapy**."
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "Primary tumor location matters. For many **right-sided** metastatic tumors, an anti-VEGF strategy is preferred in the first-line setting. The 2026 ESMO guideline continues to emphasize this distinction."
+        },
+        {
+          "id": "img_025",
+          "type": "image",
+          "src": "/uploads/articles/colon-tt-clinic.webp",
+          "alt": "Adult patient in clinic with a colon-and-liver overlay while a medical oncologist explains RAS, BRAF and HER2 targeted therapy",
+          "caption": "Ask for the exact KRAS mutation, sidedness, BRAF and HER2 result — not only whether \"targeted therapy is available.\""
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 2,
+          "text": "Anti-VEGF Therapy: Bevacizumab, Ramucirumab and Ziv-Aflibercept"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "VEGF stands for vascular endothelial growth factor. Tumors can stimulate angiogenesis — new blood vessels — to obtain oxygen and nutrients. Blocking VEGF signaling can interfere with tumor blood-vessel formation."
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "**Bevacizumab** is a monoclonal antibody that targets VEGF-A and is one of the most widely used targeted therapies in metastatic colorectal cancer. It can be combined with FOLFOX, FOLFIRI, CAPOX or FOLFOXIRI depending on the setting. The 2025 Indian consensus identifies bevacizumab as a major option and notes that its benefit is **not restricted to one particular RAS subgroup**. Important potential adverse effects include high blood pressure, protein in urine, bleeding, blood clots, delayed wound healing, gastrointestinal perforation and rare serious complications. This is particularly important around major surgery."
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "**Ramucirumab** targets the VEGF receptor rather than VEGF itself. It is commonly used with FOLFIRI in selected patients who have progressed after oxaliplatin-based treatment and bevacizumab-containing therapy — generally a later-line rather than a first-line treatment. **Ziv-aflibercept** acts as a VEGF trap and may be combined with FOLFIRI after progression on an oxaliplatin-containing regimen. Availability varies between institutions."
+        },
+        {
+          "id": "btn_030",
+          "type": "button",
+          "label": "Ask whether bevacizumab or an anti-EGFR antibody should be added to chemotherapy",
+          "href": "/consult?treatment=Targeted%20Therapy"
+        },
+        {
+          "id": "h_031",
+          "type": "heading",
+          "level": 2,
+          "text": "BRAF V600E-Directed Treatment"
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "The **BRAF V600E** mutation is the most clinically important BRAF alteration in metastatic colorectal cancer. It occurs in a minority of metastatic colorectal cancers and is associated with a distinct tumor biology. One established targeted approach is **encorafenib + cetuximab**. Encorafenib blocks BRAF signaling; cetuximab blocks EGFR. The combination attacks the pathway at two points because blocking BRAF alone may lead to activation of alternative signaling pathways."
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "The BEACON CRC trial established the importance of BRAF-targeted therapy in previously treated BRAF V600E metastatic colorectal cancer. The 2025 Indian consensus recognizes encorafenib plus cetuximab as an important option for chemotherapy-refractory BRAF-mutated metastatic colorectal cancer, although access to encorafenib can be a practical consideration in India."
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "Treatment continues to evolve. The BREAKWATER study supported **encorafenib + cetuximab + modified FOLFOX6** in previously untreated BRAF V600E metastatic colorectal cancer, leading to an FDA approval in December 2024. This represents an important shift from reserving BRAF-targeted therapy only for later lines. The exact availability and regulatory status of this approach in India should be confirmed with the treating cancer center."
+        },
+        {
+          "id": "h_035",
+          "type": "heading",
+          "level": 2,
+          "text": "HER2-Directed Treatment"
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "Some colorectal cancers have HER2 amplification or overexpression. HER2-positive metastatic colorectal cancer is a relatively small subgroup, more commonly seen in left-sided, RAS wild-type tumors. Potential approaches include **tucatinib + trastuzumab**, **trastuzumab deruxtecan**, trastuzumab-based combinations and other HER2-directed strategies. The 2025 Indian consensus recognizes several HER2-directed approaches for HER2-positive metastatic colorectal cancer."
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "The MOUNTAINEER study formed the basis for FDA accelerated approval of tucatinib plus trastuzumab in previously treated HER2-positive, RAS wild-type metastatic colorectal cancer. Current ESMO guidance also identifies tucatinib–trastuzumab as an option after prior fluoropyrimidine, oxaliplatin and irinotecan. Trastuzumab deruxtecan is an antibody-drug conjugate; a major safety concern is **interstitial lung disease/pneumonitis**, which requires careful monitoring."
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 2,
+          "text": "KRAS G12C-Directed Treatment"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "KRAS G12C is a specific mutation found in a small subset of metastatic colorectal cancers. Not all KRAS mutations can currently be targeted with the same medicines — G12C, G12D, G12V and other KRAS mutations are biologically different. Two important strategies in previously treated metastatic disease are **adagrasib + cetuximab** and **sotorasib + panitumumab**."
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "The FDA approved adagrasib plus cetuximab for KRAS G12C-mutated locally advanced or metastatic colorectal cancer after prior fluoropyrimidine-, oxaliplatin- and irinotecan-containing chemotherapy. The CodeBreaK 300 study supported sotorasib plus panitumumab, and the FDA granted approval for this combination in previously treated KRAS G12C-mutated advanced colorectal cancer. Investigational KRAS G12D/G12V approaches, SHP2 inhibitors and other combinations may be available through clinical trials rather than routine standard treatment."
+        },
+        {
+          "id": "html_041",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Biomarker / clinical feature</th><th>Potential targeted approach</th></tr></thead><tbody><tr><td>RAS wild-type + left-sided</td><td>Cetuximab or panitumumab + chemotherapy</td></tr><tr><td>RAS-mutated</td><td>Anti-VEGF strategy such as bevacizumab + chemotherapy</td></tr><tr><td>BRAF V600E</td><td>Encorafenib + cetuximab; selected first-line combinations may include chemotherapy</td></tr><tr><td>HER2-positive + RAS wild-type</td><td>Tucatinib + trastuzumab; other HER2-directed options</td></tr><tr><td>KRAS G12C</td><td>Adagrasib + cetuximab or sotorasib + panitumumab in appropriate later-line settings</td></tr><tr><td>Previously treated metastatic disease</td><td>Regorafenib, fruquintinib or other approved later-line therapies</td></tr><tr><td>MSI-H/dMMR</td><td>Immunotherapy is often more relevant than conventional targeted therapy</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "This table is a treatment-orientation framework, not a prescription."
+        },
+        {
+          "id": "h_043",
+          "type": "heading",
+          "level": 2,
+          "text": "Later-Line Medicines, Rechallenge and ctDNA"
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "**Regorafenib** is an oral multikinase inhibitor used in previously treated metastatic colorectal cancer. Side effects can include hand-foot skin reaction, fatigue, diarrhea, high blood pressure, reduced appetite and liver toxicity. Dose-escalation strategies may be considered to improve tolerability. **Fruquintinib** is an oral selective VEGFR inhibitor for previously treated metastatic colorectal cancer after specified standard therapies. The choice between fruquintinib, regorafenib, trifluridine/tipiracil-based treatment and biomarker-specific therapy depends on previous treatment history and molecular profile."
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "Some patients previously respond to cetuximab or panitumumab and later develop resistance. In certain cases, a **liquid biopsy (ctDNA)** can determine whether resistant RAS, BRAF or EGFR alterations remain detectable. If the molecular profile becomes favorable again, an anti-EGFR **rechallenge** may be considered. This is a specialized strategy, not appropriate for every patient. Current ESMO guidance recognizes ctDNA-guided anti-EGFR rechallenge as a potential option for carefully selected patients, and ctDNA testing when rapid molecular results are clinically important or tissue testing is not possible."
+        },
+        {
+          "id": "html_046",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Tissue biopsy</th><th>Liquid biopsy</th></tr></thead><tbody><tr><td>Sample</td><td>Tumor tissue</td><td>Blood</td></tr><tr><td>Molecular information</td><td>Extensive</td><td>Depends on circulating tumor DNA</td></tr><tr><td>Useful when tissue unavailable</td><td>Sometimes difficult</td><td>Particularly useful</td></tr><tr><td>Can reflect evolving disease</td><td>Limited</td><td>Can capture emerging mutations</td></tr><tr><td>Common use</td><td>Initial molecular profiling</td><td>Selected advanced/refractory settings</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "**Next-generation sequencing (NGS)** can evaluate multiple genes simultaneously — KRAS, NRAS, BRAF, HER2-related alterations, NTRK fusions, RET fusions, POLE/POLD1 and other potentially actionable alterations. It should not be ordered simply because it sounds more advanced. The 2025 Indian consensus notes that NGS can identify additional alterations but does not necessarily need to replace established initial biomarker testing in every patient."
+        },
+        {
+          "id": "h_048",
+          "type": "heading",
+          "level": 2,
+          "text": "Conversion Therapy, Liver, Lung and Peritoneal Disease"
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "Targeted therapy can be incorporated into **conversion therapy**: unresectable metastatic disease → systemic treatment plus appropriate targeted therapy → tumor shrinkage → reassessment → potential surgery or ablation. This is particularly important when [liver](/costs/India/Surgical-Oncology/Liver-Resection-(Hepatectomy)) (**$10,000–$26,000**) or lung metastases may become technically removable. See [Stage 4 colon cancer treatment](/blogs/stage-4-colon-cancer-treatment-in-india)."
+        },
+        {
+          "id": "img_050",
+          "type": "image",
+          "src": "/uploads/articles/colon-tt-liver.webp",
+          "alt": "Transparent adult abdomen showing a teal colon, a gold colon tumour and gold liver metastases used to explain conversion targeted therapy",
+          "caption": "If liver metastases shrink on chemotherapy plus a matched targeted medicine, the tumour board may reassess resectability."
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "Limited lung metastases may combine systemic targeted treatment with surgery, ablation or [SBRT](/costs/India/Radiation-Oncology/SBRT). Peritoneal disease may still need specialist assessment for [cytoreductive surgery with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) (**$18,000–$40,000**). Targeted therapy does not replace that surgical assessment. Targeted therapy can contribute to a curative-intent strategy in selected patients when metastatic disease becomes completely treatable with surgery or local therapy. It should not be described as a guaranteed cure."
+        },
+        {
+          "id": "h_052",
+          "type": "heading",
+          "level": 2,
+          "text": "Side Effects and When to Seek Emergency Care"
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "**Anti-EGFR therapy** (cetuximab, panitumumab) commonly causes acne-like rash, dry skin, itching, nail changes, skin infections, diarrhea and infusion reactions. Patients should not deliberately try to develop a rash as proof that treatment is working. **Bevacizumab** can cause high blood pressure, proteinuria, bleeding, thromboembolic events, delayed wound healing and gastrointestinal perforation — blood pressure and urine protein are commonly monitored, and the surgical team must know if bevacizumab was recently given."
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "**Encorafenib-based treatment** can cause fatigue, nausea, diarrhea, abdominal pain, skin problems, muscle or joint symptoms and liver-function abnormalities, plus EGFR-related skin toxicity when combined with cetuximab. **Trastuzumab** may affect heart function. **Tucatinib** may cause diarrhea and liver-function abnormalities. **Trastuzumab deruxtecan** can cause nausea, low blood counts, fatigue and interstitial lung disease/pneumonitis. KRAS G12C combinations, regorafenib and fruquintinib have their own gastrointestinal, skin, blood-pressure and liver profiles."
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "**Severe bleeding, sudden severe abdominal pain suggesting perforation, chest pain, new breathlessness, a serious infusion reaction, fainting or collapse belongs in a local emergency department — not a delayed WhatsApp message.** Patients should never stop a targeted medicine around surgery without speaking to both the oncologist and the surgeon."
+        },
+        {
+          "id": "img_056",
+          "type": "image",
+          "src": "/uploads/articles/colon-tt-infusion.webp",
+          "alt": "Adult in a day-care infusion chair with a colon-and-tumour overlay used to explain bevacizumab or cetuximab targeted therapy",
+          "caption": "Most monoclonal-antibody targeted therapies are given in outpatient daycare, often on the same day as the chemotherapy backbone."
+        },
+        {
+          "id": "html_057",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Targeted therapy</th><th>Immunotherapy</th></tr></thead><tbody><tr><td>Primary principle</td><td>Blocks cancer-specific pathways</td><td>Activates immune response</td></tr><tr><td>Main selection method</td><td>Molecular alteration/receptor</td><td>MSI/MMR and selected biomarkers</td></tr><tr><td>Examples</td><td>BRAF, EGFR, VEGF, HER2, KRAS G12C</td><td>Pembrolizumab, nivolumab, ipilimumab</td></tr><tr><td>Major role</td><td>Advanced/metastatic disease</td><td>Particularly MSI-H/dMMR advanced disease</td></tr><tr><td>Can be combined with chemotherapy?</td><td>Frequently</td><td>Depends on setting</td></tr><tr><td>Side effects</td><td>Drug/pathway specific</td><td>Immune-related</td></tr><tr><td>Biomarker-driven?</td><td>Yes</td><td>Yes</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "A patient may receive both targeted therapy and [immunotherapy](/blogs/colon-cancer-immunotherapy-in-india) at different stages, but they are not interchangeable. For MSI-H/dMMR metastatic disease, immunotherapy is often the first biomarker-driven choice."
+        },
+        {
+          "id": "h_059",
+          "type": "heading",
+          "level": 2,
+          "text": "Colon Cancer Targeted Therapy Cost in India"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "There is **no single price** for targeted therapy because the drug, dose, duration, combination chemotherapy, hospital, manufacturer, molecular testing, cycles, supportive care, imaging and toxicity management all change the total. A targeted medicine can substantially increase the cost of metastatic colon cancer treatment compared with chemotherapy alone. GAF Healthcare publishes USD planning ranges compiled from partner hospital cost sheets. They are not hospital quotations."
+        },
+        {
+          "id": "html_061",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Component</th><th>GAF planning range in India</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Medical-Oncology/Targeted-Therapy\">Targeted therapy</a> (bevacizumab, cetuximab, BRAF/HER2/KRAS strategies)</td><td>$8,000–$30,000</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Precision-Oncology\">Precision oncology / RAS-BRAF-HER2-MSI testing</a></td><td>$2,000–$7,000</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemotherapy</a> backbone (FOLFOX, FOLFIRI, CAPOX)</td><td>$1,500–$8,000+</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Immunotherapy\">Immunotherapy</a> if the tumor is MSI-H/dMMR</td><td>$15,000–$45,000</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Colectomy\">Colectomy</a></td><td>$7,000–$18,000</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Liver-Resection-(Hepatectomy)\">Liver resection</a> after conversion</td><td>$10,000–$26,000</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">CRS/HIPEC</a> for selected peritoneal disease</td><td>$18,000–$40,000</td></tr><tr><td><a href=\"/costs/India/Gastroenterology/Colonoscopy\">Colonoscopy</a></td><td>$200–$550</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "The cost difference between **chemotherapy + bevacizumab** and **chemotherapy + a rare molecularly targeted medicine** can be substantial. Brand versus biosimilar, treatment duration until progression, and whether NGS is added all matter. City pages such as [Delhi NCR targeted therapy](/costs/India/Delhi-NCR/Medical-Oncology/Targeted-Therapy), [Mumbai](/costs/India/Mumbai/Medical-Oncology/Targeted-Therapy), [Bengaluru](/costs/India/Bengaluru/Medical-Oncology/Targeted-Therapy), [Chennai](/costs/India/Chennai/Medical-Oncology/Targeted-Therapy) and [Hyderabad](/costs/India/Hyderabad/Medical-Oncology/Targeted-Therapy) use the same national range unless a hospital issues a verified quotation."
+        },
+        {
+          "id": "btn_063",
+          "type": "button",
+          "label": "Ask for an itemised targeted-therapy quotation",
+          "href": "/consult?treatment=Colon%20Cancer%20Targeted%20Therapy%20Cost"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a drug-specific estimate](https://wa.me/919044346292?text=Please%20send%20an%20itemised%20colon%20cancer%20targeted%20therapy%20quotation%20in%20India%20naming%20bevacizumab%2C%20cetuximab%20or%20the%20biomarker-matched%20medicine%2C%20cycles%2C%20infusion%20charges%2C%20labs%20and%20the%20chemotherapy%20backbone.)"
+        },
+        {
+          "id": "h_065",
+          "type": "heading",
+          "level": 2,
+          "text": "How to Choose a Hospital and What International Patients Should Bring"
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "A hospital should not be selected simply because it advertises \"targeted therapy.\" Look for molecular pathology able to perform RAS, BRAF, MSI/MMR, HER2 and NGS where appropriate; medical oncology experienced in colorectal cancer, multiple treatment lines and clinical trials; colorectal and hepatobiliary surgery if disease may be resectable; interventional radiology; radiation oncology for selected SBRT; and a multidisciplinary tumour board."
+        },
+        {
+          "id": "ul_067",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Medical oncology hospitals in Delhi NCR](/hospitals/India/Delhi-NCR/Medical-Oncology)",
+            "[Medical oncology hospitals in Mumbai](/hospitals/India/Mumbai/Medical-Oncology)",
+            "[Medical oncology hospitals in Bengaluru](/hospitals/India/Bengaluru/Medical-Oncology)",
+            "[Medical oncology hospitals in Chennai](/hospitals/India/Chennai/Medical-Oncology)",
+            "[Medical oncology hospitals in Hyderabad](/hospitals/India/Hyderabad/Medical-Oncology)"
+          ]
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "International patients should send colonoscopy, biopsy, histopathology, CT/MRI/PET, CEA, previous chemotherapy and surgery reports, MSI/MMR, KRAS/NRAS, BRAF, HER2 and any NGS reports before travelling. Bring the passport, pathology slides and blocks, medication list and discharge summaries. For long-term treatment, subsequent cycles may sometimes be coordinated with a local oncologist."
+        },
+        {
+          "id": "ol_069",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is my KRAS, NRAS, BRAF (including V600E), HER2 and MSI/MMR status, and do I have KRAS G12C?",
+            "Is the primary tumor right-sided or left-sided, and why is this targeted drug being recommended?",
+            "Will it be combined with FOLFOX or FOLFIRI, and is treatment intended to shrink disease for surgery?",
+            "When will scans be repeated, and what side effects — including wound healing around bevacizumab — should I expect?",
+            "Do I need NGS or ctDNA, and are biomarker-specific clinical trials available?",
+            "Is a biosimilar option available, what is the cost per cycle, and can later cycles continue in my home country?"
+          ]
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 2,
+          "text": "Targeted Therapy Treatment Pathway"
+        },
+        {
+          "id": "ol_071",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Confirm colon cancer with colonoscopy, biopsy and histopathology.",
+            "Stage the cancer with CT/MRI and other appropriate imaging.",
+            "If disease is metastatic, complete KRAS, NRAS, BRAF, MSI/MMR, HER2 and other actionable genes when appropriate.",
+            "Determine whether the goal is curative-intent metastatic treatment or disease control.",
+            "Select systemic treatment — chemotherapy plus anti-EGFR for RAS/BRAF wild-type left-sided disease; chemotherapy plus anti-VEGF for RAS-mutated disease; BRAF-, HER2- or KRAS G12C-directed treatment in the matching subgroups; immunotherapy for MSI-H/dMMR disease.",
+            "Reassess with CT/MRI, clinical assessment and CEA where appropriate.",
+            "Consider local treatment (surgery, ablation, SBRT) if disease becomes resectable.",
+            "Continue or change systemic therapy based on response, progression, toxicity and molecular evolution."
+          ]
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 2,
+          "text": "The Bottom Line"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Targeted therapy is a major part of modern metastatic colon cancer treatment, but it is not a single drug. **Molecular testing determines which medicines may be useful.** KRAS and NRAS status are critical before anti-EGFR therapy. BRAF V600E, HER2 and KRAS G12C identify further actionable subgroups. Bevacizumab is an important anti-VEGF option across RAS subgroups. MSI-H/dMMR tumors usually need an immunotherapy pathway rather than conventional targeted therapy. Targeted therapy can be combined with chemotherapy and used during conversion treatment. It can have significant side effects and requires specialist monitoring. A patient-specific quotation should always be obtained before planning travel."
+        },
+        {
+          "id": "h_074",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 3,
+          "text": "What is targeted therapy for colon cancer?"
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "Targeted therapy uses medicines designed to interfere with specific molecular pathways involved in cancer growth. In colon cancer it is primarily important in advanced or metastatic disease."
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 3,
+          "text": "Is targeted therapy used for all colon cancer patients?"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "No. It is mainly important in advanced and metastatic disease and is selected according to tumor biology and clinical circumstances."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 3,
+          "text": "Which targeted therapy is commonly used for colon cancer?"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Important targeted medicines include bevacizumab, cetuximab, panitumumab, encorafenib, tucatinib, trastuzumab, adagrasib, sotorasib, ramucirumab, regorafenib, fruquintinib and ziv-aflibercept. The appropriate drug depends on the patient's molecular profile and treatment line."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 3,
+          "text": "Is targeted therapy the same as chemotherapy?"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "No. Chemotherapy broadly affects rapidly dividing cells, while targeted therapy is designed around specific molecular pathways. They are frequently used together. GAF planning ranges are $1,500–$8,000+ for chemotherapy and $8,000–$30,000 for targeted therapy."
+        },
+        {
+          "id": "h_083",
+          "type": "heading",
+          "level": 3,
+          "text": "Does targeted therapy work in Stage 3 colon cancer?"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "Targeted therapy is not routinely used as postoperative treatment for all Stage 3 colon cancer patients. Its major role is in advanced or metastatic disease."
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the most important test before targeted therapy?"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "There is no single test for every targeted medicine. In metastatic colon cancer, important testing includes KRAS, NRAS, BRAF, MSI/MMR and HER2. GAF planning ranges for precision oncology are $2,000–$7,000."
+        },
+        {
+          "id": "h_087",
+          "type": "heading",
+          "level": 3,
+          "text": "Can KRAS-mutated colon cancer receive cetuximab?"
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "Generally, activating KRAS or NRAS mutations predict resistance to anti-EGFR antibodies, so cetuximab and panitumumab are generally not used on that basis."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 3,
+          "text": "Can KRAS G12C be targeted?"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Yes. Selected previously treated patients with KRAS G12C-mutated metastatic colorectal cancer may receive targeted combinations such as adagrasib plus cetuximab or sotorasib plus panitumumab."
+        },
+        {
+          "id": "h_091",
+          "type": "heading",
+          "level": 3,
+          "text": "What is BRAF-targeted therapy?"
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "It is treatment directed against a BRAF mutation, particularly BRAF V600E. Encorafenib combined with cetuximab is an established example."
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 3,
+          "text": "What is HER2-targeted therapy?"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "It is treatment aimed at HER2-positive cancer. Options may include tucatinib plus trastuzumab or other HER2-directed medicines in selected patients."
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 3,
+          "text": "Can targeted therapy cure Stage 4 colon cancer?"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "Targeted therapy can contribute to curative-intent treatment in selected patients whose metastatic disease can ultimately be completely removed or locally controlled. However, it cannot be described as a guaranteed cure."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 3,
+          "text": "Can targeted therapy shrink liver metastases?"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Yes. When combined with appropriate chemotherapy, targeted therapy may help shrink metastatic disease and, in selected patients, facilitate subsequent liver surgery. GAF planning ranges for liver resection are $10,000–$26,000."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does targeted therapy continue?"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "It depends on the drug and treatment setting. In metastatic disease, treatment may continue until disease progression, unacceptable toxicity, completion of a planned course, or a change to another treatment."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "Does targeted therapy have side effects?"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "Yes. The side effects depend on the drug. EGFR inhibitors commonly cause skin toxicity, while VEGF-targeted medicines can affect blood pressure and wound healing. Severe bleeding, perforation, chest pain or sudden collapse belongs in a local emergency department."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "Is targeted therapy expensive in India?"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "Some targeted medicines can substantially increase treatment costs. GAF planning ranges for targeted therapy are $8,000–$30,000. The actual cost depends on the drug, dose, frequency, duration and hospital."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "Can targeted therapy be given in India to international patients?"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Yes, where the relevant medicine is available and clinically appropriate. International patients should obtain a specialist treatment plan and medicine-specific quotation before travelling."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Colon Cancer Resources"
+        },
+        {
+          "id": "ul_108",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and where targeted therapy sits in the pathway.",
+            "[Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india) — FOLFOX, CAPOX, FOLFIRI and when a biologic is added.",
+            "[Colon Cancer Immunotherapy in India](/blogs/colon-cancer-immunotherapy-in-india) — MSI-H/dMMR checkpoint inhibitors when immunotherapy comes first.",
+            "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic resectability, conversion therapy and later lines.",
+            "[Stage 3 Colon Cancer Treatment in India](/blogs/stage-3-colon-cancer-treatment-in-india) — why targeted therapy is not routine adjuvant treatment.",
+            "[Stage 2 Colon Cancer Treatment in India](/blogs/stage-2-colon-cancer-treatment-in-india) and [Stage 1 Colon Cancer Treatment in India](/blogs/stage-1-colon-cancer-treatment-in-india) — surgery-first pathways.",
+            "[Colon Cancer Surgery in India](/blogs/colon-cancer-surgery-in-india) — hemicolectomy, anastomosis and recovery.",
+            "[Targeted therapy cost in India](/costs/India/Medical-Oncology/Targeted-Therapy) — GAF planning range $8,000–$30,000.",
+            "[Precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) — RAS, BRAF, HER2 and MSI/MMR testing ($2,000–$7,000).",
+            "[Rectal cancer surgery](/costs/India/Surgical-Oncology/Rectal-Cancer-Surgery) — a different pathway when radiation may be part of treatment.",
+            "[Breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india) and [prostate cancer treatment in India](/treatments/prostate-cancer-treatment-in-india) — other GAF cancer pathways."
+          ]
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates international patients who need a colon cancer targeted-therapy opinion in India — after a RAS or BRAF result, a question about cetuximab versus bevacizumab, or a Stage 4 plan that may later include liver surgery. Share the colonoscopy PDF, the **complete pathology report**, KRAS/NRAS, BRAF, HER2, MSI/MMR, CT/MRI, CEA and previous treatment records. A coordinator can introduce a [medical oncologist](/doctors/India/Medical-Oncology) and, when conversion surgery is possible, a [surgical oncologist](/doctors/India/Surgical-Oncology), then help collect an itemised quotation naming the targeted drug, chemotherapy backbone, cycles and monitoring."
+        },
+        {
+          "id": "btn_111",
+          "type": "button",
+          "label": "Share records for a targeted-therapy review",
+          "href": "/consult?treatment=Colon%20Cancer%20Targeted%20Therapy"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with molecular reports, imaging and previous treatments](https://wa.me/919044346292?text=I%20would%20like%20to%20share%20my%20colon%20cancer%20RAS%2C%20BRAF%2C%20HER2%20and%20MSI%2FMMR%20reports%2C%20imaging%20and%20previous%20treatment%20records%20for%20a%20targeted-therapy%20second%20opinion%20in%20India.)"
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "This article is intended for educational and medical-tourism information only. It does not replace consultation with a qualified medical oncologist, colorectal surgeon, molecular pathologist or multidisciplinary cancer team. Targeted treatment should be selected only after reviewing the patient's pathology, molecular profile, imaging, previous treatment, general health and applicable treatment approvals. Patients should not start, stop or change cancer treatment without discussing it with their treating doctor."
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 2,
+          "text": "Top 10 Sources"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "1. [ESMO — Gastrointestinal cancer guidelines](https://www.esmo.org/guidelines/guidelines-by-topic/esmo-clinical-practice-guidelines-gastrointestinal-cancers) — RAS, BRAF, MSI/MMR and HER2 testing; sidedness and anti-EGFR versus anti-VEGF choices."
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "2. [NCI — Colon Cancer Treatment (PDQ®)](https://www.cancer.gov/types/colorectal/hp/colon-treatment-pdq) — systemic options by stage, including targeted therapy in metastatic disease."
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "3. [NCI — drugs approved for colon and rectal cancer](https://www.cancer.gov/about-cancer/treatment/drugs/colon) — bevacizumab, cetuximab, panitumumab, ramucirumab, regorafenib, fruquintinib and related medicines."
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "4. [2025 Indian consensus statements for advanced/metastatic colorectal cancer](https://www.thieme-connect.de/products/ejournals/html/10.1055/s-0045-1809380) — RAS, BRAF, MSI/MMR and HER2 testing; bevacizumab, encorafenib and HER2-directed options in Indian practice."
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "5. [ASCO — Gastrointestinal cancer guidelines](https://www.asco.org/practice-patients/guidelines/gastrointestinal-cancer) — treatment of metastatic colorectal cancer."
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "6. [U.S. FDA — encorafenib, cetuximab and mFOLFOX6 for untreated BRAF V600E metastatic colorectal cancer](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-encorafenib-cetuximab-and-mfolfox6-untreated-metastatic-colorectal-cancer-braf-v600e) — BREAKWATER first-line BRAF-directed combination."
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "7. [U.S. FDA — tucatinib with trastuzumab for HER2-positive colorectal cancer](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-tucatinib-trastuzumab-colorectal-cancer) — MOUNTAINEER later-line HER2-directed treatment."
+        },
+        {
+          "id": "p_123",
+          "type": "paragraph",
+          "text": "8. [U.S. FDA — adagrasib with cetuximab for KRAS G12C-mutated colorectal cancer](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-grants-accelerated-approval-adagrasib-cetuximab-kras-g12c-mutated-colorectal-cancer) — previously treated KRAS G12C disease."
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "9. [U.S. FDA — sotorasib with panitumumab for KRAS G12C-mutated colorectal cancer](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-sotorasib-panitumumab-kras-g12c-mutated-colorectal-cancer) — CodeBreaK 300 combination approval."
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "10. [U.S. FDA — fruquintinib for refractory metastatic colorectal cancer](https://www.fda.gov/drugs/resources-information-approved-drugs/fda-approves-fruquintinib-refractory-metastatic-colorectal-cancer) — later-line VEGFR inhibition after standard therapies."
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "**Last reviewed against the cited sources: September 2026.**"
+        }
+      ]
+    },
     {
       "id": "art_colon_cancer_immunotherapy_in_india",
       "slug": "colon-cancer-immunotherapy-in-india",
@@ -1509,6 +2327,10 @@
         "Lynch syndrome colon cancer"
       ],
       "relatedLinks": [
+        {
+          "label": "Colon Cancer Targeted Therapy in India",
+          "href": "/blogs/colon-cancer-targeted-therapy-in-india"
+        },
         {
           "label": "Colon Cancer Treatment in India",
           "href": "/treatments/colon-cancer-treatment-in-india"
@@ -2301,6 +3123,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Colon Cancer Targeted Therapy in India](/blogs/colon-cancer-targeted-therapy-in-india) — RAS, BRAF V600E, HER2, KRAS G12C, cetuximab, bevacizumab and later-line options.",
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and when immunotherapy sits in the pathway.",
             "[Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india) — FOLFOX, CAPOX, FOLFIRI and when immunotherapy comes first.",
             "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic resectability, conversion therapy and later lines.",
@@ -2449,6 +3272,10 @@
         "conversion therapy colon cancer"
       ],
       "relatedLinks": [
+        {
+          "label": "Colon Cancer Targeted Therapy in India",
+          "href": "/blogs/colon-cancer-targeted-therapy-in-india"
+        },
         {
           "label": "Colon Cancer Immunotherapy in India",
           "href": "/blogs/colon-cancer-immunotherapy-in-india"
@@ -3058,6 +3885,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Colon Cancer Targeted Therapy in India](/blogs/colon-cancer-targeted-therapy-in-india) — RAS, BRAF V600E, HER2, KRAS G12C, cetuximab, bevacizumab and later-line options.",
             "[Colon Cancer Immunotherapy in India](/blogs/colon-cancer-immunotherapy-in-india) — MSI-H/dMMR testing, pembrolizumab, nivolumab plus ipilimumab and immune-related side effects.",
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and systemic medicines around chemotherapy.",
             "[Stage 3 Colon Cancer Treatment in India](/blogs/stage-3-colon-cancer-treatment-in-india) — adjuvant FOLFOX/CAPOX and 3 versus 6 months.",
@@ -3206,6 +4034,10 @@
         "BRAF HER2 RAS colon cancer"
       ],
       "relatedLinks": [
+        {
+          "label": "Colon Cancer Targeted Therapy in India",
+          "href": "/blogs/colon-cancer-targeted-therapy-in-india"
+        },
         {
           "label": "Colon Cancer Immunotherapy in India",
           "href": "/blogs/colon-cancer-immunotherapy-in-india"
@@ -3882,6 +4714,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Colon Cancer Targeted Therapy in India](/blogs/colon-cancer-targeted-therapy-in-india) — RAS, BRAF V600E, HER2, KRAS G12C, cetuximab, bevacizumab and later-line options.",
             "[Colon Cancer Immunotherapy in India](/blogs/colon-cancer-immunotherapy-in-india) — MSI-H/dMMR testing, pembrolizumab, nivolumab plus ipilimumab and immune-related side effects.",
             "[Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india) — FOLFOX vs CAPOX, 3 versus 6 months, FOLFIRI and when immunotherapy comes first.",
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india) — stage, molecular tests and systemic medicines around metastatic disease.",
@@ -4030,6 +4863,10 @@
         "dMMR immunotherapy stage III"
       ],
       "relatedLinks": [
+        {
+          "label": "Colon Cancer Targeted Therapy in India",
+          "href": "/blogs/colon-cancer-targeted-therapy-in-india"
+        },
         {
           "label": "Colon Cancer Immunotherapy in India",
           "href": "/blogs/colon-cancer-immunotherapy-in-india"
@@ -4601,6 +5438,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Colon Cancer Targeted Therapy in India](/blogs/colon-cancer-targeted-therapy-in-india) — RAS, BRAF V600E, HER2, KRAS G12C, cetuximab, bevacizumab and later-line options.",
             "[Colon Cancer Immunotherapy in India](/blogs/colon-cancer-immunotherapy-in-india) — MSI-H/dMMR testing, pembrolizumab, nivolumab plus ipilimumab and immune-related side effects.",
             "[Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india) — FOLFOX vs CAPOX, 3 versus 6 months, FOLFIRI and when immunotherapy comes first.",
             "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic disease, resectability, conversion therapy and biomarker-directed treatment.",
@@ -4749,6 +5587,10 @@
         "stage IIA IIB IIC colon cancer"
       ],
       "relatedLinks": [
+        {
+          "label": "Colon Cancer Targeted Therapy in India",
+          "href": "/blogs/colon-cancer-targeted-therapy-in-india"
+        },
         {
           "label": "Colon Cancer Immunotherapy in India",
           "href": "/blogs/colon-cancer-immunotherapy-in-india"
@@ -5448,6 +6290,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Colon Cancer Targeted Therapy in India](/blogs/colon-cancer-targeted-therapy-in-india) — RAS, BRAF V600E, HER2, KRAS G12C, cetuximab, bevacizumab and later-line options.",
             "[Colon Cancer Immunotherapy in India](/blogs/colon-cancer-immunotherapy-in-india) — MSI-H/dMMR testing, pembrolizumab, nivolumab plus ipilimumab and immune-related side effects.",
             "[Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india) — FOLFOX vs CAPOX, 3 versus 6 months, FOLFIRI and when immunotherapy comes first.",
             "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic disease, resectability, conversion therapy and biomarker-directed treatment.",
@@ -5596,6 +6439,10 @@
         "stage I colon cancer India"
       ],
       "relatedLinks": [
+        {
+          "label": "Colon Cancer Targeted Therapy in India",
+          "href": "/blogs/colon-cancer-targeted-therapy-in-india"
+        },
         {
           "label": "Colon Cancer Immunotherapy in India",
           "href": "/blogs/colon-cancer-immunotherapy-in-india"
@@ -6347,6 +7194,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Colon Cancer Targeted Therapy in India](/blogs/colon-cancer-targeted-therapy-in-india) — RAS, BRAF V600E, HER2, KRAS G12C, cetuximab, bevacizumab and later-line options.",
             "[Colon Cancer Immunotherapy in India](/blogs/colon-cancer-immunotherapy-in-india) — MSI-H/dMMR testing, pembrolizumab, nivolumab plus ipilimumab and immune-related side effects.",
             "[Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india) — FOLFOX vs CAPOX, 3 versus 6 months, FOLFIRI and when immunotherapy comes first.",
             "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic disease, resectability, conversion therapy and biomarker-directed treatment.",
@@ -6495,6 +7343,10 @@
         "colon cancer recovery"
       ],
       "relatedLinks": [
+        {
+          "label": "Colon Cancer Targeted Therapy in India",
+          "href": "/blogs/colon-cancer-targeted-therapy-in-india"
+        },
         {
           "label": "Colon Cancer Immunotherapy in India",
           "href": "/blogs/colon-cancer-immunotherapy-in-india"
@@ -7436,6 +8288,7 @@
           "type": "list",
           "style": "ul",
           "items": [
+            "[Colon Cancer Targeted Therapy in India](/blogs/colon-cancer-targeted-therapy-in-india) — RAS, BRAF V600E, HER2, KRAS G12C, cetuximab, bevacizumab and later-line options.",
             "[Colon Cancer Immunotherapy in India](/blogs/colon-cancer-immunotherapy-in-india) — MSI-H/dMMR testing, pembrolizumab, nivolumab plus ipilimumab and immune-related side effects.",
             "[Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india) — FOLFOX vs CAPOX, 3 versus 6 months, FOLFIRI and when immunotherapy comes first.",
             "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india) — metastatic disease, resectability, conversion therapy and biomarker-directed treatment.",
