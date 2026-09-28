@@ -75,7 +75,10 @@
     "HDR",
     "diet",
     "nutrition",
-    "ADT"
+    "ADT",
+    "PSA",
+    "salvage radiation",
+    "PSMA PET"
   ],
   "media": [
     {
@@ -980,9 +983,2518 @@
       "name": "pca-diet-protein.webp",
       "alt": "Male patient in clinic with a muscle and hip-bone overlay while a clinician reviews nutrition and recovery on a tablet",
       "addedAt": "2026-09-28T06:00:00.000Z"
+    },
+    {
+      "id": "media_pca_recur_anatomy_webp",
+      "url": "/uploads/articles/pca-recur-anatomy.webp",
+      "name": "pca-recur-anatomy.webp",
+      "alt": "Transparent male body with a gold highlight on the empty pelvic bed after prostatectomy and teal pelvic nodes",
+      "addedAt": "2026-09-28T06:30:00.000Z"
+    },
+    {
+      "id": "media_pca_recur_psa_webp",
+      "url": "/uploads/articles/pca-recur-psa.webp",
+      "name": "pca-recur-psa.webp",
+      "alt": "Male patient in clinic with a gold pelvic-bone overlay while a clinician reviews PSA results on a tablet",
+      "addedAt": "2026-09-28T06:30:00.000Z"
+    },
+    {
+      "id": "media_pca_recur_psma_webp",
+      "url": "/uploads/articles/pca-recur-psma.webp",
+      "name": "pca-recur-psma.webp",
+      "alt": "Male patient on a PET imaging couch with a gold pelvic overlay used to explain PSMA scanning after a PSA rise",
+      "addedAt": "2026-09-28T06:30:00.000Z"
+    },
+    {
+      "id": "media_pca_recur_salvage_webp",
+      "url": "/uploads/articles/pca-recur-salvage.webp",
+      "name": "pca-recur-salvage.webp",
+      "alt": "Male patient on a radiotherapy couch with a gold pelvic overlay showing a salvage treatment field after prostatectomy",
+      "addedAt": "2026-09-28T06:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_prostate_cancer_recurrence_after_surgery",
+      "slug": "prostate-cancer-recurrence-after-surgery",
+      "title": "Prostate Cancer Recurrence After Surgery: PSA Rise, Tests and Treatment Options",
+      "excerpt": "A rising PSA after prostatectomy is usually how recurrence is found. How doctors use doubling time, PSMA PET and early salvage radiation — and when observation is still reasonable.",
+      "date": "28 September 2026",
+      "publishedAt": "2026-09-28T06:30:00.000Z",
+      "updatedAt": "2026-09-28T06:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Radiation Oncology",
+      "tags": [
+        "prostate cancer",
+        "recurrence",
+        "PSA",
+        "salvage radiation",
+        "PSMA PET",
+        "India"
+      ],
+      "image": "/uploads/articles/pca-recur-anatomy.webp",
+      "imageAlt": "Transparent male body with a gold highlight on the empty pelvic bed after prostatectomy and teal pelvic nodes",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Prostate Cancer Recurrence After Surgery: PSA Rise",
+      "seoDescription": "Rising PSA after prostatectomy: biochemical recurrence, doubling time, PSMA PET, early salvage radiation and when observation is reasonable. Second opinions in India.",
+      "canonical": "https://gaf.healthcare/blogs/prostate-cancer-recurrence-after-surgery",
+      "ogImage": "/uploads/articles/pca-recur-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "prostate cancer recurrence after surgery",
+        "PSA rise after prostatectomy",
+        "biochemical recurrence prostate cancer",
+        "salvage radiation after prostatectomy",
+        "PSMA PET biochemical recurrence",
+        "PSA doubling time after prostatectomy",
+        "prostate cancer recurrence treatment India",
+        "salvage radiotherapy PSA 0.2",
+        "PSA persistence vs recurrence",
+        "negative PSMA PET rising PSA",
+        "ADT with salvage radiation",
+        "prostate bed radiation after surgery"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Robotic Prostatectomy in India",
+          "href": "/blogs/robotic-prostatectomy-in-india"
+        },
+        {
+          "label": "Radiation Therapy for Prostate Cancer",
+          "href": "/blogs/radiation-therapy-for-prostate-cancer"
+        },
+        {
+          "label": "Prostate Cancer Treatment in India",
+          "href": "/treatments/prostate-cancer-treatment-in-india"
+        },
+        {
+          "label": "Hormone therapy cost",
+          "href": "/costs/India/Medical-Oncology/Hormone-Therapy"
+        },
+        {
+          "label": "Prostate cancer diet",
+          "href": "/blogs/prostate-cancer-diet"
+        },
+        {
+          "label": "Treatment options",
+          "href": "/blogs/prostate-cancer-treatment-options-india"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\"><strong>Prostate cancer recurrence after surgery is usually first detected through a rising PSA level rather than symptoms.</strong> After radical prostatectomy, PSA is expected to fall to an undetectable or very low level because the prostate has been removed.</p><p class=\"article-quick-answer__body\">A confirmed PSA rise does not automatically mean that cancer has spread. The recurrence may be microscopic and confined to the prostate bed or nearby tissues, or it may involve pelvic lymph nodes or distant parts of the body.</p><p class=\"article-quick-answer__body\">Doctors assess the <strong>PSA trend, PSA doubling time, original Gleason Grade Group, surgical margins, pathological stage, lymph-node status, time since surgery, and imaging findings</strong> before deciding what to do next.</p><p class=\"article-quick-answer__body\">For men with biochemical recurrence after radical prostatectomy, <strong>early salvage radiation therapy can potentially treat recurrent disease while it is still limited</strong>, and current guidelines emphasize that salvage radiation is more effective when delivered at lower PSA levels. PSMA PET/CT may help identify where recurrent disease is located and guide treatment planning.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "This is the recurrence and PSA-after-surgery hub for the prostate cluster. It sits beside [Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india), [Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer), [brachytherapy](/blogs/brachytherapy-for-prostate-cancer), [treatment without surgery](/blogs/prostate-cancer-treatment-without-surgery), [treatment options](/blogs/prostate-cancer-treatment-options-india), [Prostate Cancer Diet](/blogs/prostate-cancer-diet) and [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india)."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "International patients comparing [radiation oncologists](/doctors/India/Radiation-Oncology) and [surgical oncologists](/doctors/India/Surgical-Oncology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Radiation-Oncology), [Mumbai](/doctors/India/Mumbai/Surgical-Oncology), [Bengaluru](/doctors/India/Bengaluru/Radiation-Oncology), [Chennai](/doctors/India/Chennai/Radiation-Oncology) and [Hyderabad](/doctors/India/Hyderabad/Surgical-Oncology)."
+        },
+        {
+          "id": "btn_004",
+          "type": "button",
+          "label": "Ask about a rising PSA after prostatectomy",
+          "href": "/consult?treatment=Prostate%20Cancer%20Recurrence%20After%20Surgery"
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your PSA dates and pathology report](https://wa.me/919044346292?text=My%20PSA%20is%20rising%20after%20prostatectomy.%20Please%20review%20my%20PSA%20dates%2C%20pathology%20and%20scans%20for%20a%20second%20opinion%20in%20India.)"
+        },
+        {
+          "id": "img_006",
+          "type": "image",
+          "src": "/uploads/articles/pca-recur-anatomy.webp",
+          "alt": "Transparent male body with a gold highlight on the empty pelvic bed after prostatectomy and teal pelvic nodes",
+          "caption": "After the prostate is removed, PSA should fall very low. A later rise is how recurrence is usually found — often before any scan shows a tumour."
+        },
+        {
+          "id": "h_007",
+          "type": "heading",
+          "level": 2,
+          "text": "What Does Prostate Cancer Recurrence After Surgery Mean?"
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "[Radical prostatectomy](/blogs/robotic-prostatectomy-in-india) removes the prostate and usually the seminal vesicles. Nearby lymph nodes may also be removed depending on the patient's risk and surgical plan."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "After surgery, doctors monitor PSA to look for evidence that prostate cancer may still be present or has returned."
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "If PSA becomes detectable or begins rising after previously becoming undetectable, doctors may investigate for **biochemical recurrence**, sometimes called biochemical relapse."
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "Importantly, biochemical recurrence does not necessarily mean that cancer is visible on a scan."
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Cancer cells can be present at levels too small for conventional imaging to detect. PSA may therefore become abnormal before a recurrence produces symptoms or a visible tumor."
+        },
+        {
+          "id": "h_013",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Prostate Cancer Come Back After Prostatectomy?"
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "Yes."
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "Radical prostatectomy is intended to remove localized prostate cancer completely, but some men subsequently develop a rising PSA."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "Recurrence can happen because microscopic cancer cells were already outside the area removed during surgery or because a small amount of cancer remained locally."
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "The recurrence may occur:"
+        },
+        {
+          "id": "ul_018",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "In the prostate bed",
+            "In nearby tissues",
+            "In pelvic lymph nodes",
+            "In distant lymph nodes",
+            "In bones",
+            "In other organs"
+          ]
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "The location matters because treatment can be very different for a small local recurrence compared with metastatic recurrence."
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "The EAU notes that PSA recurrence can occur years after treatment, including long after the initial operation."
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 2,
+          "text": "PSA After Prostatectomy: What Should Happen?"
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "After radical prostatectomy, PSA should fall to a very low or undetectable level."
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "The EAU states that PSA is generally expected to be undetectable around two months after radical prostatectomy. The American Cancer Society similarly notes that doctors commonly wait at least 6–8 weeks after surgery before checking PSA because PSA can remain in the bloodstream for several weeks."
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "The exact timing of the first PSA test varies between clinicians."
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "The important point is that **PSA should become very low after the prostate has been removed.**"
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 2,
+          "text": "What Does a Rising PSA After Prostatectomy Mean?"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "A rising PSA after prostatectomy can have different meanings."
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "It may represent:"
+        },
+        {
+          "id": "ol_029",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**PSA persistence** — PSA never became undetectable after surgery.",
+            "**Biochemical recurrence** — PSA became undetectable and later became detectable and rises.",
+            "**Very-low-level detectable PSA** — an ultrasensitive test detects a tiny amount that may not yet represent clinically significant recurrence.",
+            "**Established recurrent disease** — imaging or other testing identifies cancer."
+          ]
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "These situations should not be treated as identical."
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "The PSA number needs to be interpreted together with its **trend and the patient's pathology and risk factors**."
+        },
+        {
+          "id": "img_032",
+          "type": "image",
+          "src": "/uploads/articles/pca-recur-psa.webp",
+          "alt": "Male patient in clinic with a gold pelvic-bone overlay while a clinician reviews PSA results on a tablet",
+          "caption": "One low PSA value is not a plan. Doctors look at the trend, doubling time and the original pathology before deciding on scans or salvage treatment."
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Biochemical Recurrence After Prostatectomy?"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "The commonly used AUA definition of biochemical recurrence after radical prostatectomy is a PSA of **≥0.2 ng/mL followed by a confirmatory PSA of ≥0.2 ng/mL**."
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "However, modern practice is more nuanced than simply waiting until PSA reaches 0.2 ng/mL."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "The 2024 AUA/ASTRO/SUO Salvage Therapy Guideline emphasizes that salvage radiation is more effective when PSA is lower. It recommends providing salvage radiation when PSA is **≤0.5 ng/mL** when salvage radiation is being considered, and says clinicians may offer it at PSA levels below 0.2 ng/mL in patients with high-risk features."
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "This creates an important distinction:"
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "**The PSA level used to define biochemical recurrence is not necessarily the PSA level at which doctors should wait before considering treatment.**"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "Treatment decisions are individualized."
+        },
+        {
+          "id": "h_040",
+          "type": "heading",
+          "level": 2,
+          "text": "PSA Persistence vs PSA Recurrence"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "These terms are sometimes confused."
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 3,
+          "text": "PSA persistence"
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "PSA remains detectable after surgery and never reaches the expected undetectable level."
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "Persistent PSA can suggest that prostate cancer cells remain somewhere in the body, although the precise cause requires clinical assessment."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 3,
+          "text": "PSA recurrence"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "PSA initially becomes undetectable and later becomes detectable and starts increasing."
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "This pattern can indicate that prostate cancer has returned."
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "The distinction is important because persistent PSA may carry a different risk profile and can lead to earlier investigation and treatment planning."
+        },
+        {
+          "id": "h_049",
+          "type": "heading",
+          "level": 2,
+          "text": "Does One PSA Rise Mean Prostate Cancer Has Returned?"
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "Not necessarily."
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "A single low PSA measurement should be interpreted carefully."
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Modern ultrasensitive PSA tests can detect extremely small quantities of PSA. A very low detectable result does not automatically prove clinically significant recurrent cancer."
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Doctors may repeat the PSA test and look for a **consistent upward trend**."
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "The NCI specifically notes that one elevated PSA measurement after treatment does not always mean recurrence and that doctors may repeat PSA or perform additional tests."
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "This is especially relevant when PSA is detectable at a very low level."
+        },
+        {
+          "id": "h_056",
+          "type": "heading",
+          "level": 2,
+          "text": "Why PSA Trend Matters More Than One Number"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "Doctors often look at how PSA behaves over time."
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "For example:"
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "**PSA pattern A**"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "0.04 → 0.05 → 0.04"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "This is different from:"
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "**PSA pattern B**"
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "0.04 → 0.08 → 0.14 → 0.22"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "The second pattern demonstrates a clearer upward trend."
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "The speed of increase can also provide important prognostic information."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is PSA Doubling Time?"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "**PSA doubling time (PSADT)** estimates how quickly the PSA level doubles."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "A shorter doubling time generally indicates more biologically active disease and is associated with a higher risk of progression."
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "A longer doubling time generally indicates slower PSA progression."
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "For example, a PSA that doubles over several years represents a different clinical situation from a PSA that doubles within a few months."
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "The AUA/ASTRO/SUO guideline specifically identifies PSA doubling time as an important prognostic factor when assessing men with detectable PSA after prostatectomy."
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Can PSA Rise Even After the Prostate Has Been Removed?"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "The prostate is the major source of PSA, but extremely small amounts of PSA can be detected after treatment."
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "When PSA becomes persistently detectable or rises over time following prostatectomy, doctors become concerned about residual or recurrent prostate cancer."
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "The possible locations include:"
+        },
+        {
+          "id": "ul_076",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Prostate bed",
+            "Seminal-vesicle region",
+            "Pelvic lymph nodes",
+            "Distant lymph nodes",
+            "Bone",
+            "Other metastatic sites"
+          ]
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "Imaging is used when it can help determine the likely location and influence treatment."
+        },
+        {
+          "id": "h_078",
+          "type": "heading",
+          "level": 2,
+          "text": "Risk Factors for Prostate Cancer Recurrence After Surgery"
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "Not every patient has the same recurrence risk."
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Doctors consider the original pathology report and postoperative PSA history."
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "Important factors include:"
+        },
+        {
+          "id": "html_082",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Factor</th><th>Why it matters</th></tr></thead><tbody><tr><td>Gleason Grade Group</td><td>Higher-grade cancer generally carries greater recurrence risk</td></tr><tr><td>Pathological stage</td><td>Cancer extending outside the prostate increases concern</td></tr><tr><td>Surgical margins</td><td>Positive margins can indicate cancer cells at the edge of the removed specimen</td></tr><tr><td>Seminal vesicle invasion</td><td>Associated with higher-risk disease</td></tr><tr><td>Lymph-node involvement</td><td>Indicates regional spread</td></tr><tr><td>PSA persistence</td><td>Detectable PSA immediately after surgery may indicate residual disease</td></tr><tr><td>PSA doubling time</td><td>Faster PSA growth is generally more concerning</td></tr><tr><td>Time to recurrence</td><td>Earlier recurrence can indicate higher-risk biology</td></tr><tr><td>Genomic classifier</td><td>May provide additional prognostic information in selected patients</td></tr><tr><td>PSMA PET findings</td><td>Can help identify the location of recurrent disease</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "The AUA specifically recommends using factors such as PSA doubling time, Grade Group, pathological stage, surgical margins, genomic classifiers and PET findings when counselling patients with detectable PSA."
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 2,
+          "text": "Positive Surgical Margins: Do They Mean the Cancer Will Come Back?"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "No."
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "A **positive surgical margin** means cancer cells were found at the edge of the tissue removed during prostatectomy."
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "It increases concern about residual local disease, but it does not mean recurrence is inevitable."
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "Some men with positive margins never develop biochemical recurrence."
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "Doctors therefore consider margin status together with PSA, Grade Group, pathological stage and other risk factors rather than using it alone to decide treatment."
+        },
+        {
+          "id": "h_090",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is Prostate Cancer Recurrence Diagnosed?"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "The evaluation usually begins with PSA monitoring."
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "Depending on the patient's situation, doctors may use:"
+        },
+        {
+          "id": "ul_093",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Repeat PSA testing",
+            "PSA doubling time calculation",
+            "Review of the original pathology",
+            "Digital examination when clinically appropriate",
+            "Pelvic MRI",
+            "PSMA PET/CT",
+            "Other PET imaging",
+            "CT or bone imaging in selected situations",
+            "Biopsy in selected cases"
+          ]
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "The purpose is not simply to prove that PSA is rising."
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "The larger question is:"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "**Where is the recurrent cancer, and can it still be treated with curative intent?**"
+        },
+        {
+          "id": "btn_097",
+          "type": "button",
+          "label": "Send PSA dates and pathology for a recurrence review",
+          "href": "/consult?treatment=Prostate%20Cancer%20Recurrence%20After%20Surgery"
+        },
+        {
+          "id": "h_098",
+          "type": "heading",
+          "level": 2,
+          "text": "PSMA PET/CT for Prostate Cancer Recurrence"
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "PSMA PET/CT has become an important tool in evaluating biochemical recurrence."
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "PSMA is a protein found at higher levels on many prostate cancer cells."
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "A radioactive tracer targeting PSMA can highlight areas suspicious for prostate cancer on PET imaging."
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "The scan may identify:"
+        },
+        {
+          "id": "ul_103",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Local recurrence",
+            "Pelvic lymph-node disease",
+            "Distant lymph nodes",
+            "Bone metastases",
+            "Other metastatic disease"
+          ]
+        },
+        {
+          "id": "img_104",
+          "type": "image",
+          "src": "/uploads/articles/pca-recur-psma.webp",
+          "alt": "Male patient on a PET imaging couch with a gold pelvic overlay used to explain PSMA scanning after a PSA rise",
+          "caption": "PSMA PET can show local, nodal or distant recurrence — and a negative scan still does not prove there is no microscopic disease."
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "The AUA/ASTRO/SUO guideline recommends next-generation molecular PET imaging for men with biochemical recurrence after prostatectomy when salvage radiation is being considered."
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "The EAU recommends PSMA PET/CT after radical prostatectomy when PSA is above 0.2 ng/mL and the result could influence subsequent treatment decisions."
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 if you already have a PSMA PET](https://wa.me/919044346292?text=I%20have%20a%20rising%20PSA%20after%20prostatectomy%20and%20a%20PSMA%20PET.%20Please%20advise%20whether%20salvage%20radiation%20in%20India%20is%20appropriate.)"
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 2,
+          "text": "Can PSMA PET Be Negative Even When PSA Is Rising?"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Yes."
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "A negative PSMA PET does not necessarily mean there is no recurrent prostate cancer."
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "Small-volume disease may be below the detection capability of the scan."
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "This is particularly important when PSA is very low."
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "The AUA guideline specifically states that salvage prostate-bed radiation should **not be withheld solely because PET/CT is negative** when the clinical situation supports salvage radiation."
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "This is one reason PSA kinetics, pathology and imaging must be interpreted together."
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 2,
+          "text": "Is MRI Useful After Prostatectomy?"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "Yes, particularly when doctors are assessing the prostate bed for possible local recurrence."
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "MRI can provide detailed anatomical information and may complement PSMA PET."
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "The AUA guideline states that pelvic MRI may be obtained in addition to PET/CT when evaluating suspected local recurrence."
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "MRI can be particularly useful when the clinical question is whether recurrence is confined to the surgical bed."
+        },
+        {
+          "id": "h_120",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Everyone With Rising PSA Need a PSMA PET Scan?"
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "No."
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "The decision depends on:"
+        },
+        {
+          "id": "ul_123",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "PSA level",
+            "PSA trend",
+            "PSA doubling time",
+            "Original cancer risk",
+            "Pathology",
+            "Previous treatments",
+            "Whether imaging will change treatment",
+            "Availability and cost",
+            "Local clinical practice"
+          ]
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "Imaging is most useful when its findings can change the treatment plan."
+        },
+        {
+          "id": "h_125",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Salvage Radiation Therapy?"
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "**Salvage radiation therapy (SRT)** is radiation given after prostatectomy when there is evidence or significant suspicion that prostate cancer remains or has returned."
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "The goal can be to eliminate microscopic cancer cells before they develop into more extensive disease."
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "When recurrence is believed to be confined to the prostate bed or nearby pelvic region, salvage radiation may be considered with curative intent."
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "The American Cancer Society describes radiation after prostatectomy as an option when cancer was not completely removed or returns after surgery."
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "See [Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer) for how IMRT, IGRT and VMAT are planned. GAF Healthcare planning ranges for [EBRT](/costs/India/Radiation-Oncology/EBRT) are **$1,000–$6,000+** and for [IMRT](/costs/India/Radiation-Oncology/IMRT) **$6,500–$14,500**; salvage fields are quoted after the radiation oncologist sees the PSA trend and imaging."
+        },
+        {
+          "id": "img_131",
+          "type": "image",
+          "src": "/uploads/articles/pca-recur-salvage.webp",
+          "alt": "Male patient on a radiotherapy couch with a gold pelvic overlay showing a salvage treatment field after prostatectomy",
+          "caption": "Salvage radiation is generally more effective at a lower PSA. A negative PET is not, by itself, a reason to withhold prostate-bed treatment."
+        },
+        {
+          "id": "btn_132",
+          "type": "button",
+          "label": "Ask whether salvage radiation is appropriate",
+          "href": "/consult?treatment=Salvage%20Radiation%20After%20Prostatectomy"
+        },
+        {
+          "id": "h_133",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Is Early Salvage Radiation Important?"
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "Timing matters."
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "The AUA/ASTRO/SUO guideline states that salvage radiation is more effective when administered at lower PSA levels and recommends offering salvage radiation when PSA is **≤0.5 ng/mL** in patients for whom salvage radiation is being considered."
+        },
+        {
+          "id": "p_136",
+          "type": "paragraph",
+          "text": "For patients with high-risk features, treatment may be considered even below 0.2 ng/mL."
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "This does **not** mean every man with a PSA of 0.2 needs immediate radiation."
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "Instead, it means that doctors generally should not wait for PSA to become substantially higher before discussing salvage treatment when the overall clinical picture supports it."
+        },
+        {
+          "id": "h_139",
+          "type": "heading",
+          "level": 2,
+          "text": "Salvage Radiation vs Waiting for a Higher PSA"
+        },
+        {
+          "id": "p_140",
+          "type": "paragraph",
+          "text": "The modern approach has moved toward **early salvage treatment rather than automatically waiting for obvious clinical recurrence**."
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "Studies comparing routine adjuvant radiation with early salvage radiation have found that many men can avoid immediate radiation and its side effects while still receiving radiation if PSA subsequently rises."
+        },
+        {
+          "id": "p_142",
+          "type": "paragraph",
+          "text": "For example, the GETUG-AFU 17 randomized trial found no significant event-free survival advantage for routine adjuvant radiation over early salvage radiation in its study population, while late genitourinary toxicity and erectile dysfunction were higher with adjuvant radiation."
+        },
+        {
+          "id": "p_143",
+          "type": "paragraph",
+          "text": "This supports an individualized strategy rather than automatically irradiating every patient with adverse pathological features."
+        },
+        {
+          "id": "h_144",
+          "type": "heading",
+          "level": 2,
+          "text": "What Areas Are Treated During Salvage Radiation?"
+        },
+        {
+          "id": "p_145",
+          "type": "paragraph",
+          "text": "The radiation plan depends on where recurrence is suspected."
+        },
+        {
+          "id": "p_146",
+          "type": "paragraph",
+          "text": "It may include:"
+        },
+        {
+          "id": "ul_147",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Prostate bed",
+            "Pelvic lymph nodes",
+            "PSMA-positive lymph nodes",
+            "Selected areas of suspected recurrence"
+          ]
+        },
+        {
+          "id": "p_148",
+          "type": "paragraph",
+          "text": "The AUA guideline recommends incorporating PET-positive pelvic nodal disease into the radiation plan when appropriate."
+        },
+        {
+          "id": "p_149",
+          "type": "paragraph",
+          "text": "Modern radiation techniques may include:"
+        },
+        {
+          "id": "ul_150",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "IMRT",
+            "VMAT",
+            "Image-guided radiation therapy",
+            "PET/MRI-informed planning in selected centers"
+          ]
+        },
+        {
+          "id": "p_151",
+          "type": "paragraph",
+          "text": "The exact field, dose and treatment schedule depend on the patient's disease characteristics and radiation oncology plan. Compare [radiation hospitals](/hospitals/India/Radiation-Oncology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Radiation-Oncology), [Mumbai](/hospitals/India/Mumbai/Radiation-Oncology) and [Chennai](/hospitals/India/Chennai/Radiation-Oncology)."
+        },
+        {
+          "id": "h_152",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Salvage Radiation Always Include Hormone Therapy?"
+        },
+        {
+          "id": "p_153",
+          "type": "paragraph",
+          "text": "No."
+        },
+        {
+          "id": "p_154",
+          "type": "paragraph",
+          "text": "Some men receive salvage radiation alone."
+        },
+        {
+          "id": "p_155",
+          "type": "paragraph",
+          "text": "Others receive **androgen deprivation therapy (ADT)** alongside radiation."
+        },
+        {
+          "id": "p_156",
+          "type": "paragraph",
+          "text": "The decision depends on recurrence risk."
+        },
+        {
+          "id": "p_157",
+          "type": "paragraph",
+          "text": "The AUA/ASTRO/SUO guideline recommends adding ADT to salvage radiation for patients with high-risk features such as:"
+        },
+        {
+          "id": "ul_158",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Higher post-prostatectomy PSA",
+            "Grade Group 4–5 disease",
+            "PSA doubling time ≤6 months",
+            "Persistently detectable postoperative PSA",
+            "Seminal vesicle involvement"
+          ]
+        },
+        {
+          "id": "p_159",
+          "type": "paragraph",
+          "text": "For patients without high-risk features, radiation alone may be appropriate."
+        },
+        {
+          "id": "p_160",
+          "type": "paragraph",
+          "text": "GAF Healthcare planning ranges for [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy) in India are **$1,000–$4,500**. City pages use the same national ranges unless a hospital issues a verified quotation: [Delhi NCR](/costs/India/Delhi-NCR/Medical-Oncology/Hormone-Therapy), [Mumbai](/costs/India/Mumbai/Medical-Oncology/Hormone-Therapy)."
+        },
+        {
+          "id": "p_161",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 about radiation with or without ADT](https://wa.me/919044346292?text=Please%20advise%20whether%20salvage%20radiation%20after%20prostatectomy%20should%20include%20hormone%20therapy%20in%20my%20case.)"
+        },
+        {
+          "id": "h_162",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Hormone Therapy Doing in This Situation?"
+        },
+        {
+          "id": "p_163",
+          "type": "paragraph",
+          "text": "Prostate cancer cells often depend on androgen signalling."
+        },
+        {
+          "id": "p_164",
+          "type": "paragraph",
+          "text": "ADT reduces androgen stimulation and can slow or suppress prostate cancer growth."
+        },
+        {
+          "id": "p_165",
+          "type": "paragraph",
+          "text": "When combined with salvage radiation in selected higher-risk patients, ADT may improve cancer control."
+        },
+        {
+          "id": "p_166",
+          "type": "paragraph",
+          "text": "However, ADT has its own effects and potential side effects."
+        },
+        {
+          "id": "p_167",
+          "type": "paragraph",
+          "text": "These can include:"
+        },
+        {
+          "id": "ul_168",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Hot flashes",
+            "Reduced libido",
+            "Erectile difficulties",
+            "Fatigue",
+            "Changes in body composition",
+            "Bone-density loss",
+            "Metabolic changes",
+            "Mood changes"
+          ]
+        },
+        {
+          "id": "p_169",
+          "type": "paragraph",
+          "text": "The duration and choice of hormone therapy should therefore be individualized. [Prostate Cancer Diet](/blogs/prostate-cancer-diet) covers protein, bone health and weight while ADT is running."
+        },
+        {
+          "id": "h_170",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Salvage Radiation Cure Recurrent Prostate Cancer?"
+        },
+        {
+          "id": "p_171",
+          "type": "paragraph",
+          "text": "In selected men, yes."
+        },
+        {
+          "id": "p_172",
+          "type": "paragraph",
+          "text": "The possibility of long-term disease control is greatest when recurrence remains localized or limited and treatment is started while PSA is still low."
+        },
+        {
+          "id": "p_173",
+          "type": "paragraph",
+          "text": "However, salvage radiation is not guaranteed to eliminate the disease."
+        },
+        {
+          "id": "p_174",
+          "type": "paragraph",
+          "text": "Its potential effectiveness depends on factors such as:"
+        },
+        {
+          "id": "ul_175",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "PSA before radiation",
+            "PSA doubling time",
+            "Grade Group",
+            "Pathological stage",
+            "Surgical margins",
+            "Seminal vesicle involvement",
+            "Lymph-node status",
+            "PSMA PET findings",
+            "Whether disease is local or metastatic"
+          ]
+        },
+        {
+          "id": "p_176",
+          "type": "paragraph",
+          "text": "The EAU guideline describes early salvage radiation as potentially curative for men with increasing PSA after prostatectomy."
+        },
+        {
+          "id": "h_177",
+          "type": "heading",
+          "level": 2,
+          "text": "What If PSMA PET Shows Pelvic Lymph Nodes?"
+        },
+        {
+          "id": "p_178",
+          "type": "paragraph",
+          "text": "A PSMA-positive pelvic lymph node can change the radiation plan."
+        },
+        {
+          "id": "p_179",
+          "type": "paragraph",
+          "text": "Rather than treating only the prostate bed, the radiation oncologist may incorporate the affected lymph nodes into the treatment field."
+        },
+        {
+          "id": "p_180",
+          "type": "paragraph",
+          "text": "ADT may also be considered depending on the overall risk profile."
+        },
+        {
+          "id": "p_181",
+          "type": "paragraph",
+          "text": "This is one of the major advantages of molecular imaging: treatment can be planned using more information about where the recurrent disease is located."
+        },
+        {
+          "id": "p_182",
+          "type": "paragraph",
+          "text": "However, PSMA-positive findings still need to be interpreted in clinical context."
+        },
+        {
+          "id": "h_183",
+          "type": "heading",
+          "level": 2,
+          "text": "What If the Recurrence Has Spread to Distant Sites?"
+        },
+        {
+          "id": "p_184",
+          "type": "paragraph",
+          "text": "If PSMA PET or other imaging shows distant metastatic disease, treatment usually shifts from purely local salvage treatment toward systemic management."
+        },
+        {
+          "id": "p_185",
+          "type": "paragraph",
+          "text": "Possible treatments may include:"
+        },
+        {
+          "id": "ul_186",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[ADT](/costs/India/Medical-Oncology/Hormone-Therapy)",
+            "Androgen-receptor pathway inhibitors",
+            "Chemotherapy",
+            "Radiation to selected metastatic sites",
+            "PSMA-targeted radioligand therapy in appropriate patients",
+            "Other systemic or targeted treatments based on tumor characteristics"
+          ]
+        },
+        {
+          "id": "p_187",
+          "type": "paragraph",
+          "text": "The exact treatment depends on whether the disease remains hormone-sensitive or has become castration-resistant, where the metastases are located, previous treatments and other clinical factors. See [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) for how Lutetium-177 PSMA therapy sits in the wider pathway."
+        },
+        {
+          "id": "h_188",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Recurrence Be Treated Without Another Surgery?"
+        },
+        {
+          "id": "p_189",
+          "type": "paragraph",
+          "text": "Yes."
+        },
+        {
+          "id": "p_190",
+          "type": "paragraph",
+          "text": "After radical prostatectomy, a second prostate surgery is generally not the standard approach for biochemical recurrence."
+        },
+        {
+          "id": "p_191",
+          "type": "paragraph",
+          "text": "Because the prostate has already been removed, salvage radiation is often the principal local treatment when recurrence is believed to be confined to the prostate bed."
+        },
+        {
+          "id": "p_192",
+          "type": "paragraph",
+          "text": "Systemic treatment may be used when disease is more extensive."
+        },
+        {
+          "id": "p_193",
+          "type": "paragraph",
+          "text": "Original [radical prostatectomy](/costs/India/Surgical-Oncology/Radical-Prostatectomy) planning ranges in India are **$7,000–$18,000**; a rising PSA is a new problem and should not be quoted from the first operation package."
+        },
+        {
+          "id": "h_194",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Prostate Cancer Recurrence Be Treated Without Radiation?"
+        },
+        {
+          "id": "p_195",
+          "type": "paragraph",
+          "text": "Sometimes."
+        },
+        {
+          "id": "p_196",
+          "type": "paragraph",
+          "text": "Observation may be reasonable in selected patients with low-risk biochemical recurrence, particularly when PSA is rising slowly and the expected benefit of immediate treatment is limited."
+        },
+        {
+          "id": "p_197",
+          "type": "paragraph",
+          "text": "Systemic therapy may be used when the recurrence is not suitable for local treatment."
+        },
+        {
+          "id": "p_198",
+          "type": "paragraph",
+          "text": "The American Cancer Society notes that observation can be an option for some men with biochemical recurrence, while treatment decisions depend on PSA kinetics, original cancer characteristics and the likelihood that localized treatment will help."
+        },
+        {
+          "id": "h_199",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens If PSA Rises Very Slowly?"
+        },
+        {
+          "id": "p_200",
+          "type": "paragraph",
+          "text": "A slow PSA rise does not necessarily require immediate treatment."
+        },
+        {
+          "id": "p_201",
+          "type": "paragraph",
+          "text": "Doctors may assess:"
+        },
+        {
+          "id": "ul_202",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "PSA doubling time",
+            "Grade Group",
+            "Pathological stage",
+            "Time since surgery",
+            "Surgical margins",
+            "Patient age and life expectancy",
+            "Other medical conditions",
+            "Imaging findings",
+            "Patient preferences"
+          ]
+        },
+        {
+          "id": "p_203",
+          "type": "paragraph",
+          "text": "Some men can be monitored carefully."
+        },
+        {
+          "id": "p_204",
+          "type": "paragraph",
+          "text": "The EAU specifically includes monitoring as an option for men with lower-risk biochemical recurrence."
+        },
+        {
+          "id": "h_205",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens If PSA Rises Quickly?"
+        },
+        {
+          "id": "p_206",
+          "type": "paragraph",
+          "text": "A rapidly increasing PSA is more concerning."
+        },
+        {
+          "id": "p_207",
+          "type": "paragraph",
+          "text": "A short PSA doubling time can indicate biologically aggressive recurrence and may prompt earlier imaging and treatment."
+        },
+        {
+          "id": "p_208",
+          "type": "paragraph",
+          "text": "The AUA guideline identifies short PSA doubling time as an important high-risk feature when deciding how aggressively to manage biochemical recurrence."
+        },
+        {
+          "id": "p_209",
+          "type": "paragraph",
+          "text": "This is one reason that **PSA velocity and doubling time can be as important as the absolute PSA number.**"
+        },
+        {
+          "id": "h_210",
+          "type": "heading",
+          "level": 2,
+          "text": "What Are the Side Effects of Salvage Radiation?"
+        },
+        {
+          "id": "p_211",
+          "type": "paragraph",
+          "text": "Because radiation is delivered to tissues around the prostate bed, side effects can involve the urinary, bowel and sexual systems."
+        },
+        {
+          "id": "p_212",
+          "type": "paragraph",
+          "text": "Possible effects include:"
+        },
+        {
+          "id": "h_213",
+          "type": "heading",
+          "level": 3,
+          "text": "Urinary"
+        },
+        {
+          "id": "ul_214",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Increased urinary frequency",
+            "Urgency",
+            "Burning during urination",
+            "Leakage or worsening continence",
+            "Rarely, more significant urinary complications"
+          ]
+        },
+        {
+          "id": "h_215",
+          "type": "heading",
+          "level": 3,
+          "text": "Bowel"
+        },
+        {
+          "id": "ul_216",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Loose stools",
+            "Increased bowel frequency",
+            "Rectal irritation",
+            "Rectal bleeding in some patients"
+          ]
+        },
+        {
+          "id": "h_217",
+          "type": "heading",
+          "level": 3,
+          "text": "Sexual"
+        },
+        {
+          "id": "ul_218",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Erectile dysfunction",
+            "Reduced sexual function"
+          ]
+        },
+        {
+          "id": "p_219",
+          "type": "paragraph",
+          "text": "The AUA/ASTRO/SUO guideline specifically recommends discussing the potential effects of salvage radiation on urinary control, erectile function and bowel function before treatment."
+        },
+        {
+          "id": "h_220",
+          "type": "heading",
+          "level": 2,
+          "text": "Does Salvage Radiation Make Incontinence Worse?"
+        },
+        {
+          "id": "p_221",
+          "type": "paragraph",
+          "text": "It can."
+        },
+        {
+          "id": "p_222",
+          "type": "paragraph",
+          "text": "This is an important consideration for men who have already experienced urinary leakage after prostatectomy."
+        },
+        {
+          "id": "p_223",
+          "type": "paragraph",
+          "text": "Radiation can affect urinary tissues and may worsen existing urinary symptoms in some patients."
+        },
+        {
+          "id": "p_224",
+          "type": "paragraph",
+          "text": "The decision therefore involves balancing:"
+        },
+        {
+          "id": "p_225",
+          "type": "paragraph",
+          "text": "**risk of cancer progression without treatment** against **potential urinary, bowel and sexual side effects from salvage treatment.**"
+        },
+        {
+          "id": "h_226",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long After Surgery Can Prostate Cancer Return?"
+        },
+        {
+          "id": "p_227",
+          "type": "paragraph",
+          "text": "There is no single time point."
+        },
+        {
+          "id": "p_228",
+          "type": "paragraph",
+          "text": "Recurrence may appear:"
+        },
+        {
+          "id": "ul_229",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Within months",
+            "Within a few years",
+            "Many years later"
+          ]
+        },
+        {
+          "id": "p_230",
+          "type": "paragraph",
+          "text": "The EAU notes that PSA recurrence can occur even long after treatment and that the timing depends partly on the original risk group."
+        },
+        {
+          "id": "p_231",
+          "type": "paragraph",
+          "text": "This is why long-term PSA follow-up remains important after prostatectomy."
+        },
+        {
+          "id": "h_232",
+          "type": "heading",
+          "level": 2,
+          "text": "How Often Should PSA Be Checked After Prostatectomy?"
+        },
+        {
+          "id": "p_233",
+          "type": "paragraph",
+          "text": "Follow-up schedules vary."
+        },
+        {
+          "id": "p_234",
+          "type": "paragraph",
+          "text": "The EAU describes PSA testing generally every six months for the first three years and annually thereafter, while emphasizing that the evidence for one specific testing interval is limited."
+        },
+        {
+          "id": "p_235",
+          "type": "paragraph",
+          "text": "Your urologist may recommend a different schedule based on:"
+        },
+        {
+          "id": "ul_236",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Pathology",
+            "Risk of recurrence",
+            "Previous PSA results",
+            "Age",
+            "Treatment history",
+            "Other clinical factors"
+          ]
+        },
+        {
+          "id": "h_237",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is the Difference Between Biochemical Recurrence and Metastatic Recurrence?"
+        },
+        {
+          "id": "p_238",
+          "type": "paragraph",
+          "text": "These terms describe different situations."
+        },
+        {
+          "id": "html_239",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Situation</th><th>Meaning</th></tr></thead><tbody><tr><td>Detectable/rising PSA</td><td>PSA suggests possible residual or recurrent disease</td></tr><tr><td>Biochemical recurrence</td><td>PSA meets the accepted biochemical criteria for recurrence</td></tr><tr><td>Local recurrence</td><td>Cancer appears to have returned near the prostate bed</td></tr><tr><td>Regional recurrence</td><td>Cancer involves nearby pelvic lymph nodes</td></tr><tr><td>Distant recurrence</td><td>Cancer has spread to distant sites</td></tr><tr><td>Metastatic recurrence</td><td>Recurrent cancer is found outside the original local/regional area</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_240",
+          "type": "paragraph",
+          "text": "A man can have biochemical recurrence without any visible metastasis."
+        },
+        {
+          "id": "p_241",
+          "type": "paragraph",
+          "text": "That distinction is critical because localized biochemical recurrence may still be treated with curative intent."
+        },
+        {
+          "id": "h_242",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is the Difference Between PSA Recurrence and Clinical Recurrence?"
+        },
+        {
+          "id": "p_243",
+          "type": "paragraph",
+          "text": "**Biochemical recurrence** is detected through PSA."
+        },
+        {
+          "id": "p_244",
+          "type": "paragraph",
+          "text": "**Clinical recurrence** means recurrent cancer is identified through imaging, examination, biopsy or symptoms."
+        },
+        {
+          "id": "p_245",
+          "type": "paragraph",
+          "text": "PSA recurrence often comes first."
+        },
+        {
+          "id": "p_246",
+          "type": "paragraph",
+          "text": "The NCI notes that biochemical relapse can appear months or years before clinically apparent recurrence."
+        },
+        {
+          "id": "h_247",
+          "type": "heading",
+          "level": 2,
+          "text": "What Tests Should Be Done After a Confirmed PSA Rise?"
+        },
+        {
+          "id": "p_248",
+          "type": "paragraph",
+          "text": "There is no universal testing package for every patient."
+        },
+        {
+          "id": "p_249",
+          "type": "paragraph",
+          "text": "A typical evaluation may include:"
+        },
+        {
+          "id": "h_250",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Repeat PSA"
+        },
+        {
+          "id": "p_251",
+          "type": "paragraph",
+          "text": "Confirms whether the rise is persistent."
+        },
+        {
+          "id": "h_252",
+          "type": "heading",
+          "level": 3,
+          "text": "2. PSA doubling time"
+        },
+        {
+          "id": "p_253",
+          "type": "paragraph",
+          "text": "Provides information about the speed of progression."
+        },
+        {
+          "id": "h_254",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Original pathology review"
+        },
+        {
+          "id": "p_255",
+          "type": "paragraph",
+          "text": "The doctor may reassess:"
+        },
+        {
+          "id": "ul_256",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Gleason score / Grade Group",
+            "Pathological T stage",
+            "Surgical margins",
+            "Seminal vesicle invasion",
+            "Lymph-node status"
+          ]
+        },
+        {
+          "id": "h_257",
+          "type": "heading",
+          "level": 3,
+          "text": "4. PSMA PET/CT"
+        },
+        {
+          "id": "p_258",
+          "type": "paragraph",
+          "text": "Helps locate recurrent disease when imaging is clinically appropriate."
+        },
+        {
+          "id": "h_259",
+          "type": "heading",
+          "level": 3,
+          "text": "5. Pelvic MRI"
+        },
+        {
+          "id": "p_260",
+          "type": "paragraph",
+          "text": "May provide additional information about local recurrence."
+        },
+        {
+          "id": "h_261",
+          "type": "heading",
+          "level": 3,
+          "text": "6. Biopsy"
+        },
+        {
+          "id": "p_262",
+          "type": "paragraph",
+          "text": "May occasionally be considered when confirming a local recurrence would alter treatment."
+        },
+        {
+          "id": "p_263",
+          "type": "paragraph",
+          "text": "The AUA recommends using imaging selectively when it will influence treatment planning."
+        },
+        {
+          "id": "h_264",
+          "type": "heading",
+          "level": 2,
+          "text": "Is a Biopsy Always Needed Before Salvage Radiation?"
+        },
+        {
+          "id": "p_265",
+          "type": "paragraph",
+          "text": "No."
+        },
+        {
+          "id": "p_266",
+          "type": "paragraph",
+          "text": "A biopsy is not necessarily required in every patient before salvage radiation."
+        },
+        {
+          "id": "p_267",
+          "type": "paragraph",
+          "text": "The decision depends on the clinical situation, PSA pattern, pathology and imaging."
+        },
+        {
+          "id": "p_268",
+          "type": "paragraph",
+          "text": "For example, a man with a convincing postoperative PSA rise and high-risk pathology may have enough evidence to proceed with salvage treatment planning without a biopsy."
+        },
+        {
+          "id": "p_269",
+          "type": "paragraph",
+          "text": "The treating team determines whether tissue confirmation would add useful information."
+        },
+        {
+          "id": "h_270",
+          "type": "heading",
+          "level": 2,
+          "text": "Genomic Testing in Prostate Cancer Recurrence"
+        },
+        {
+          "id": "p_271",
+          "type": "paragraph",
+          "text": "Some patients may undergo genomic testing of the original tumor."
+        },
+        {
+          "id": "p_272",
+          "type": "paragraph",
+          "text": "A validated genomic classifier may provide additional prognostic information regarding the likelihood of progression."
+        },
+        {
+          "id": "p_273",
+          "type": "paragraph",
+          "text": "The AUA/ASTRO/SUO guideline lists validated post-prostatectomy genomic classifiers among the factors that may help counsel patients with detectable PSA."
+        },
+        {
+          "id": "p_274",
+          "type": "paragraph",
+          "text": "Genomic testing does not replace PSA, pathology or imaging."
+        },
+        {
+          "id": "h_275",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is the Difference Between Adjuvant Radiation and Salvage Radiation?"
+        },
+        {
+          "id": "p_276",
+          "type": "paragraph",
+          "text": "This distinction is important."
+        },
+        {
+          "id": "h_277",
+          "type": "heading",
+          "level": 3,
+          "text": "Adjuvant radiation"
+        },
+        {
+          "id": "p_278",
+          "type": "paragraph",
+          "text": "Radiation is given after prostatectomy because pathology suggests a high risk of recurrence, even though PSA may still be undetectable."
+        },
+        {
+          "id": "h_279",
+          "type": "heading",
+          "level": 3,
+          "text": "Salvage radiation"
+        },
+        {
+          "id": "p_280",
+          "type": "paragraph",
+          "text": "Radiation is given after evidence of biochemical recurrence or persistent disease."
+        },
+        {
+          "id": "p_281",
+          "type": "paragraph",
+          "text": "Modern evidence supports close PSA monitoring with early salvage radiation for many men rather than automatically treating everyone after surgery."
+        },
+        {
+          "id": "p_282",
+          "type": "paragraph",
+          "text": "The appropriate strategy depends on pathology and recurrence risk."
+        },
+        {
+          "id": "h_283",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Salvage Radiation Better Than Waiting?"
+        },
+        {
+          "id": "p_284",
+          "type": "paragraph",
+          "text": "There is no single answer for every patient."
+        },
+        {
+          "id": "p_285",
+          "type": "paragraph",
+          "text": "For men with a meaningful biochemical recurrence, early salvage radiation can provide an opportunity for local control while PSA remains low."
+        },
+        {
+          "id": "p_286",
+          "type": "paragraph",
+          "text": "For men with very low-risk PSA recurrence, immediate treatment may not always be necessary."
+        },
+        {
+          "id": "p_287",
+          "type": "paragraph",
+          "text": "The decision depends on the probability that recurrence will progress, the likelihood that salvage treatment can control it, life expectancy, existing urinary/sexual function, other medical conditions and personal preferences."
+        },
+        {
+          "id": "p_288",
+          "type": "paragraph",
+          "text": "The EAU and AUA both emphasize risk-based decision-making rather than treating every PSA rise identically."
+        },
+        {
+          "id": "h_289",
+          "type": "heading",
+          "level": 2,
+          "text": "A Simple Example of How Doctors May Approach Recurrence"
+        },
+        {
+          "id": "p_290",
+          "type": "paragraph",
+          "text": "Consider a hypothetical patient:"
+        },
+        {
+          "id": "ul_291",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Radical prostatectomy completed",
+            "PSA initially becomes undetectable",
+            "PSA later becomes detectable",
+            "Repeat tests show a consistent increase",
+            "Pathology shows Grade Group 3 disease",
+            "Surgical margins were positive",
+            "PSA doubling time is relatively short"
+          ]
+        },
+        {
+          "id": "p_292",
+          "type": "paragraph",
+          "text": "The doctor may consider this a higher-risk biochemical recurrence."
+        },
+        {
+          "id": "p_293",
+          "type": "paragraph",
+          "text": "The next steps could include:"
+        },
+        {
+          "id": "p_294",
+          "type": "paragraph",
+          "text": "**Repeat PSA → calculate PSA doubling time → review pathology → PSMA PET/CT → radiation oncology consultation → consider salvage radiation ± ADT.**"
+        },
+        {
+          "id": "p_295",
+          "type": "paragraph",
+          "text": "Another patient might have:"
+        },
+        {
+          "id": "ul_296",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Very low PSA",
+            "Very slow PSA increase",
+            "Lower-grade original cancer",
+            "Long interval since surgery",
+            "No concerning imaging findings"
+          ]
+        },
+        {
+          "id": "p_297",
+          "type": "paragraph",
+          "text": "That patient may be monitored more closely before treatment."
+        },
+        {
+          "id": "p_298",
+          "type": "paragraph",
+          "text": "This illustrates why **the same PSA number can lead to different decisions in different patients.**"
+        },
+        {
+          "id": "h_299",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Prostate Cancer Recurrence Be Prevented?"
+        },
+        {
+          "id": "p_300",
+          "type": "paragraph",
+          "text": "There is no guaranteed method to prevent recurrence after prostatectomy."
+        },
+        {
+          "id": "p_301",
+          "type": "paragraph",
+          "text": "The most important step is appropriate postoperative follow-up."
+        },
+        {
+          "id": "p_302",
+          "type": "paragraph",
+          "text": "Regular PSA testing allows recurrence to be identified early."
+        },
+        {
+          "id": "p_303",
+          "type": "paragraph",
+          "text": "For patients with high-risk pathology, doctors may discuss additional strategies based on the expected recurrence risk."
+        },
+        {
+          "id": "p_304",
+          "type": "paragraph",
+          "text": "Lifestyle measures such as maintaining a healthy weight, exercising regularly, avoiding tobacco and following a balanced diet are generally beneficial for overall health, but they should not be presented as a substitute for cancer surveillance or treatment. See [Prostate Cancer Diet](/blogs/prostate-cancer-diet)."
+        },
+        {
+          "id": "h_305",
+          "type": "heading",
+          "level": 2,
+          "text": "What Should International Patients Bring for a Second Opinion?"
+        },
+        {
+          "id": "p_306",
+          "type": "paragraph",
+          "text": "If you are travelling to India for evaluation of prostate cancer recurrence, bring as much of the original medical record as possible."
+        },
+        {
+          "id": "h_307",
+          "type": "heading",
+          "level": 3,
+          "text": "Essential documents"
+        },
+        {
+          "id": "ul_308",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Preoperative PSA reports",
+            "All postoperative PSA reports",
+            "PSA dates and values",
+            "Radical prostatectomy operative report",
+            "Complete histopathology report",
+            "Gleason score / Grade Group",
+            "Pathological TNM stage",
+            "Surgical margin status",
+            "Seminal vesicle findings",
+            "Lymph-node pathology",
+            "Previous imaging",
+            "PSMA PET/CT reports and DICOM images, if performed",
+            "MRI reports and images",
+            "Previous treatment records",
+            "Medication list",
+            "Previous radiation or hormone therapy details, if applicable"
+          ]
+        },
+        {
+          "id": "h_309",
+          "type": "heading",
+          "level": 3,
+          "text": "Particularly useful"
+        },
+        {
+          "id": "p_310",
+          "type": "paragraph",
+          "text": "Bring the **actual imaging files**, not only the written reports."
+        },
+        {
+          "id": "p_311",
+          "type": "paragraph",
+          "text": "A specialist may want to review the original scans."
+        },
+        {
+          "id": "btn_312",
+          "type": "button",
+          "label": "Share records before travelling for a recurrence review",
+          "href": "/consult?treatment=Prostate%20Cancer%20Recurrence%20After%20Surgery"
+        },
+        {
+          "id": "p_313",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 to send PSA dates and DICOM files](https://wa.me/919044346292?text=I%20would%20like%20to%20send%20postoperative%20PSA%20dates%2C%20pathology%20and%20PSMA%20PET%20files%20for%20a%20recurrence%20second%20opinion%20in%20India.)"
+        },
+        {
+          "id": "h_314",
+          "type": "heading",
+          "level": 2,
+          "text": "Prostate Cancer Recurrence Treatment in India"
+        },
+        {
+          "id": "p_315",
+          "type": "paragraph",
+          "text": "India has multidisciplinary cancer centers where recurrent prostate cancer can be evaluated by teams involving:"
+        },
+        {
+          "id": "ul_316",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Urologists",
+            "Uro-oncologists",
+            "Radiation oncologists",
+            "Medical oncologists",
+            "Nuclear medicine specialists",
+            "Radiologists",
+            "Pathologists"
+          ]
+        },
+        {
+          "id": "p_317",
+          "type": "paragraph",
+          "text": "A complex recurrence is often best assessed through a multidisciplinary approach."
+        },
+        {
+          "id": "p_318",
+          "type": "paragraph",
+          "text": "For international patients, the evaluation may involve reviewing the pathology and PSA history first, followed by PSMA PET/CT or MRI when clinically appropriate."
+        },
+        {
+          "id": "p_319",
+          "type": "paragraph",
+          "text": "Treatment may then be planned around whether the recurrence appears:"
+        },
+        {
+          "id": "p_320",
+          "type": "paragraph",
+          "text": "**local → regional → oligometastatic → widely metastatic.**"
+        },
+        {
+          "id": "p_321",
+          "type": "paragraph",
+          "text": "The exact treatment should be determined after reviewing the patient's records and current investigations."
+        },
+        {
+          "id": "h_322",
+          "type": "heading",
+          "level": 2,
+          "text": "Questions to Ask Your Doctor After a Rising PSA"
+        },
+        {
+          "id": "p_323",
+          "type": "paragraph",
+          "text": "If PSA starts rising after prostatectomy, consider asking:"
+        },
+        {
+          "id": "ol_324",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Is this confirmed biochemical recurrence?",
+            "Could this be PSA persistence rather than recurrence?",
+            "What is my PSA doubling time?",
+            "What was my original Grade Group?",
+            "What was my pathological stage?",
+            "Were my surgical margins positive?",
+            "Were lymph nodes involved?",
+            "Should I have a PSMA PET/CT?",
+            "Would pelvic MRI add useful information?",
+            "Is salvage radiation appropriate?",
+            "How low is my PSA, and should treatment be discussed now?",
+            "Would ADT be added to radiation?",
+            "How long would ADT be given?",
+            "What are the expected urinary, bowel and sexual side effects?",
+            "What happens if the scan is negative?",
+            "What happens if the scan shows lymph nodes?",
+            "Is the goal cure, long-term control, or symptom management?",
+            "Should my pathology be reviewed by another specialist?",
+            "Would genomic testing change the treatment decision?",
+            "Should I seek a multidisciplinary second opinion?"
+          ]
+        },
+        {
+          "id": "h_325",
+          "type": "heading",
+          "level": 2,
+          "text": "Prostate Cancer Recurrence After Surgery: A Practical Decision Framework"
+        },
+        {
+          "id": "p_326",
+          "type": "paragraph",
+          "text": "A useful way to understand the decision-making process is:"
+        },
+        {
+          "id": "h_327",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 1: Confirm the PSA pattern"
+        },
+        {
+          "id": "p_328",
+          "type": "paragraph",
+          "text": "Is PSA genuinely rising?"
+        },
+        {
+          "id": "h_329",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 2: Establish the risk"
+        },
+        {
+          "id": "p_330",
+          "type": "paragraph",
+          "text": "Look at Grade Group, pathological stage, margins, nodes, PSA doubling time and time from surgery to recurrence."
+        },
+        {
+          "id": "h_331",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 3: Look for the location"
+        },
+        {
+          "id": "p_332",
+          "type": "paragraph",
+          "text": "Use PSMA PET/CT and/or MRI when the result can influence treatment."
+        },
+        {
+          "id": "h_333",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 4: Determine whether local treatment is possible"
+        },
+        {
+          "id": "p_334",
+          "type": "paragraph",
+          "text": "If recurrence appears limited to the prostate bed or pelvis, salvage treatment may still have curative intent."
+        },
+        {
+          "id": "h_335",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 5: Consider systemic treatment"
+        },
+        {
+          "id": "p_336",
+          "type": "paragraph",
+          "text": "Higher-risk recurrence or metastatic disease may require ADT and/or other systemic therapy."
+        },
+        {
+          "id": "h_337",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 6: Balance cancer control with quality of life"
+        },
+        {
+          "id": "p_338",
+          "type": "paragraph",
+          "text": "Urinary control, bowel function, sexual function, other medical conditions and life expectancy all matter."
+        },
+        {
+          "id": "h_339",
+          "type": "heading",
+          "level": 2,
+          "text": "Can PSA Rise Without Prostate Cancer Recurrence?"
+        },
+        {
+          "id": "p_340",
+          "type": "paragraph",
+          "text": "A very low detectable PSA after prostatectomy does not automatically prove recurrent cancer."
+        },
+        {
+          "id": "p_341",
+          "type": "paragraph",
+          "text": "Ultrasensitive PSA assays can detect tiny PSA concentrations, and doctors may need to establish whether the value is stable or increasing."
+        },
+        {
+          "id": "p_342",
+          "type": "paragraph",
+          "text": "However, a persistent upward trend after an initial undetectable PSA requires appropriate medical evaluation."
+        },
+        {
+          "id": "p_343",
+          "type": "paragraph",
+          "text": "The NCI and American Cancer Society both emphasize that PSA should be interpreted as part of the overall clinical picture rather than as an isolated number."
+        },
+        {
+          "id": "h_344",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Can Someone Live With Biochemical Recurrence?"
+        },
+        {
+          "id": "p_345",
+          "type": "paragraph",
+          "text": "Biochemical recurrence is not the same as terminal or metastatic prostate cancer."
+        },
+        {
+          "id": "p_346",
+          "type": "paragraph",
+          "text": "Some men with PSA recurrence remain free of symptoms for many years."
+        },
+        {
+          "id": "p_347",
+          "type": "paragraph",
+          "text": "The NCI notes that a substantial proportion of men with elevated or rising PSA after curative-intent treatment can remain clinically well for extended periods."
+        },
+        {
+          "id": "p_348",
+          "type": "paragraph",
+          "text": "The risk varies substantially according to tumor grade, PSA kinetics, pathological stage, time to recurrence and whether metastatic disease is present."
+        },
+        {
+          "id": "p_349",
+          "type": "paragraph",
+          "text": "For that reason, a PSA recurrence should be taken seriously without assuming that it automatically means widespread cancer."
+        },
+        {
+          "id": "h_350",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens If Salvage Radiation Does Not Work?"
+        },
+        {
+          "id": "p_351",
+          "type": "paragraph",
+          "text": "If PSA continues to rise after salvage radiation, doctors reassess the situation."
+        },
+        {
+          "id": "p_352",
+          "type": "paragraph",
+          "text": "Possible next steps include:"
+        },
+        {
+          "id": "ul_353",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Repeat PSA testing",
+            "PSA doubling time",
+            "PSMA PET/CT",
+            "MRI",
+            "Assessment for local or metastatic disease",
+            "Systemic treatment",
+            "Clinical trials",
+            "Metastasis-directed treatment in selected cases"
+          ]
+        },
+        {
+          "id": "p_354",
+          "type": "paragraph",
+          "text": "The next treatment depends heavily on where the recurrent cancer is found and what treatments have already been given."
+        },
+        {
+          "id": "h_355",
+          "type": "heading",
+          "level": 2,
+          "text": "What If the PSA Is Rising but All Scans Are Negative?"
+        },
+        {
+          "id": "p_356",
+          "type": "paragraph",
+          "text": "This situation is relatively common."
+        },
+        {
+          "id": "p_357",
+          "type": "paragraph",
+          "text": "A negative scan does not necessarily exclude microscopic cancer."
+        },
+        {
+          "id": "p_358",
+          "type": "paragraph",
+          "text": "If PSA is rising and the clinical/pathological risk is significant, doctors may still consider salvage radiation."
+        },
+        {
+          "id": "p_359",
+          "type": "paragraph",
+          "text": "The AUA specifically advises against withholding prostate-bed salvage radiation solely because PET/CT is negative when salvage treatment remains clinically appropriate."
+        },
+        {
+          "id": "p_360",
+          "type": "paragraph",
+          "text": "This is an important point for patients who receive a “negative scan” but continue to have rising PSA."
+        },
+        {
+          "id": "h_361",
+          "type": "heading",
+          "level": 2,
+          "text": "Prostate Cancer Recurrence After Surgery: Key Takeaways"
+        },
+        {
+          "id": "ul_362",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**PSA is the main surveillance test after radical prostatectomy.**",
+            "PSA should generally become very low or undetectable after surgery.",
+            "A single very-low PSA result does not automatically prove recurrence.",
+            "A consistent PSA rise requires evaluation.",
+            "**Biochemical recurrence is not the same as metastatic disease.**",
+            "PSA doubling time helps estimate the aggressiveness of recurrence.",
+            "Original Grade Group, pathological stage, margins and lymph-node status remain important.",
+            "PSMA PET/CT can help locate recurrent prostate cancer.",
+            "MRI can provide additional information about local recurrence.",
+            "**Salvage radiation is generally more effective when delivered at a lower PSA.**",
+            "Some patients need radiation alone; others may benefit from radiation plus ADT.",
+            "A negative PSMA PET does not automatically rule out microscopic recurrence.",
+            "Some lower-risk patients can be monitored rather than treated immediately.",
+            "Metastatic recurrence may require systemic treatment.",
+            "Long-term PSA monitoring remains important because recurrence can occur years after surgery."
+          ]
+        },
+        {
+          "id": "h_363",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_364",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the first sign of prostate cancer recurrence after surgery?"
+        },
+        {
+          "id": "p_365",
+          "type": "paragraph",
+          "text": "The most common first sign is a rising PSA level. Biochemical recurrence can occur before symptoms or visible disease on imaging."
+        },
+        {
+          "id": "h_366",
+          "type": "heading",
+          "level": 3,
+          "text": "What PSA level indicates recurrence after prostatectomy?"
+        },
+        {
+          "id": "p_367",
+          "type": "paragraph",
+          "text": "A commonly used AUA definition is PSA ≥0.2 ng/mL followed by a confirmatory value of ≥0.2 ng/mL. However, doctors may discuss salvage treatment before PSA reaches 0.2 ng/mL in selected high-risk patients."
+        },
+        {
+          "id": "h_368",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a PSA of 0.2 after prostatectomy recurrence?"
+        },
+        {
+          "id": "p_369",
+          "type": "paragraph",
+          "text": "A confirmed PSA of 0.2 ng/mL or higher is commonly used to define biochemical recurrence after radical prostatectomy. The overall PSA trend and clinical risk factors still need to be considered."
+        },
+        {
+          "id": "h_370",
+          "type": "heading",
+          "level": 3,
+          "text": "Can prostate cancer return after the prostate is removed?"
+        },
+        {
+          "id": "p_371",
+          "type": "paragraph",
+          "text": "Yes. Microscopic cancer cells may remain after surgery or cancer may recur later in the prostate bed, lymph nodes or distant sites."
+        },
+        {
+          "id": "h_372",
+          "type": "heading",
+          "level": 3,
+          "text": "How quickly should salvage radiation be given?"
+        },
+        {
+          "id": "p_373",
+          "type": "paragraph",
+          "text": "When salvage radiation is appropriate, current AUA guidance emphasizes giving it at a lower PSA level, with treatment recommended when PSA is ≤0.5 ng/mL and consideration of treatment below 0.2 ng/mL in selected high-risk patients."
+        },
+        {
+          "id": "h_374",
+          "type": "heading",
+          "level": 3,
+          "text": "Can salvage radiation cure prostate cancer recurrence?"
+        },
+        {
+          "id": "p_375",
+          "type": "paragraph",
+          "text": "It can potentially provide long-term disease control and may be curative when recurrent disease remains localized or limited. It is not successful in every patient."
+        },
+        {
+          "id": "h_376",
+          "type": "heading",
+          "level": 3,
+          "text": "Do I need a PSMA PET scan if PSA is rising?"
+        },
+        {
+          "id": "p_377",
+          "type": "paragraph",
+          "text": "Not necessarily. PSMA PET is particularly useful when the results can influence treatment planning. Guidelines increasingly recommend molecular PET imaging for selected patients with biochemical recurrence."
+        },
+        {
+          "id": "h_378",
+          "type": "heading",
+          "level": 3,
+          "text": "Can PSMA PET miss recurrent prostate cancer?"
+        },
+        {
+          "id": "p_379",
+          "type": "paragraph",
+          "text": "Yes. Very small-volume disease may be below the detection capability of imaging, particularly at very low PSA levels."
+        },
+        {
+          "id": "h_380",
+          "type": "heading",
+          "level": 3,
+          "text": "What if PSMA PET is negative but PSA keeps rising?"
+        },
+        {
+          "id": "p_381",
+          "type": "paragraph",
+          "text": "A negative scan does not automatically exclude microscopic recurrence. Salvage radiation may still be appropriate in selected patients."
+        },
+        {
+          "id": "h_382",
+          "type": "heading",
+          "level": 3,
+          "text": "Does biochemical recurrence mean the cancer has spread?"
+        },
+        {
+          "id": "p_383",
+          "type": "paragraph",
+          "text": "No. Biochemical recurrence means PSA suggests persistent or recurrent disease. It does not by itself establish that cancer has spread to distant organs."
+        },
+        {
+          "id": "h_384",
+          "type": "heading",
+          "level": 3,
+          "text": "Is radiation always combined with hormone therapy?"
+        },
+        {
+          "id": "p_385",
+          "type": "paragraph",
+          "text": "No. Some patients receive salvage radiation alone, while patients with higher-risk features may be offered ADT alongside radiation."
+        },
+        {
+          "id": "h_386",
+          "type": "heading",
+          "level": 3,
+          "text": "Can prostate cancer recur 10 years after surgery?"
+        },
+        {
+          "id": "p_387",
+          "type": "paragraph",
+          "text": "Yes. Recurrence can occur many years after radical prostatectomy, which is why long-term PSA surveillance is important."
+        },
+        {
+          "id": "h_388",
+          "type": "heading",
+          "level": 3,
+          "text": "What does a short PSA doubling time mean?"
+        },
+        {
+          "id": "p_389",
+          "type": "paragraph",
+          "text": "A short PSA doubling time means PSA is increasing relatively quickly. It is generally considered a higher-risk feature and can influence decisions about imaging and treatment."
+        },
+        {
+          "id": "h_390",
+          "type": "heading",
+          "level": 3,
+          "text": "Is another prostatectomy possible after recurrence?"
+        },
+        {
+          "id": "p_391",
+          "type": "paragraph",
+          "text": "Because the prostate has already been removed, another prostatectomy is generally not the standard treatment for biochemical recurrence after radical prostatectomy. Salvage radiation and/or systemic therapy are more commonly considered depending on the location of recurrence."
+        },
+        {
+          "id": "h_392",
+          "type": "heading",
+          "level": 3,
+          "text": "Can recurrent prostate cancer be treated without symptoms?"
+        },
+        {
+          "id": "p_393",
+          "type": "paragraph",
+          "text": "Yes. Biochemical recurrence is often detected through PSA before symptoms develop. Treatment decisions can therefore be made before clinically obvious recurrence occurs."
+        },
+        {
+          "id": "h_394",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I get a second opinion after PSA recurrence?"
+        },
+        {
+          "id": "p_395",
+          "type": "paragraph",
+          "text": "A second opinion can be particularly useful when deciding between observation, salvage radiation, ADT, advanced imaging or multidisciplinary treatment. Reviewing the original pathology and PSA history is often an important part of that assessment."
+        },
+        {
+          "id": "h_396",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Prostate Cancer Resources"
+        },
+        {
+          "id": "p_397",
+          "type": "paragraph",
+          "text": "This article is the recurrence/PSA-after-surgery hub. Other cluster pages keep their own search intent:"
+        },
+        {
+          "id": "ul_398",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india) — the original operation, recovery and risks.",
+            "[Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer) — IMRT, IGRT, SBRT and salvage technique.",
+            "[Brachytherapy for Prostate Cancer](/blogs/brachytherapy-for-prostate-cancer) — internal radiation, not the usual salvage after prostatectomy.",
+            "[Hormone therapy cost in India](/costs/India/Medical-Oncology/Hormone-Therapy) — ADT when it is added to salvage radiation.",
+            "[Prostate Cancer Treatment Without Surgery](/blogs/prostate-cancer-treatment-without-surgery) — surveillance and non-surgical first treatments.",
+            "[Prostate Cancer Treatment Options](/blogs/prostate-cancer-treatment-options-india) — how teams choose first treatment.",
+            "[Prostate Cancer Diet](/blogs/prostate-cancer-diet) — eating during ADT and radiation.",
+            "[Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) — staging, PSMA PET and Lutetium-177 PSMA therapy."
+          ]
+        },
+        {
+          "id": "h_399",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_400",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates international patients who have a rising PSA after [prostatectomy](/blogs/robotic-prostatectomy-in-india) and need a second look in India. Share every PSA date and value, the operative note, full histopathology, margin and node status, and PSMA PET or MRI files when you have them. A coordinator can arrange review with a [radiation oncologist](/doctors/India/Radiation-Oncology) and, when needed, a uro-oncologist, then prepare an itemized estimate for salvage radiation ± [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy). The treating team decides whether observation, prostate-bed radiation or systemic treatment is appropriate."
+        },
+        {
+          "id": "btn_401",
+          "type": "button",
+          "label": "Share records for a recurrence second opinion",
+          "href": "/consult?treatment=Prostate%20Cancer%20Recurrence%20After%20Surgery"
+        },
+        {
+          "id": "p_402",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with your records](https://wa.me/919044346292?text=I%20would%20like%20to%20share%20postoperative%20PSA%20dates%20and%20pathology%20for%20a%20prostate%20cancer%20recurrence%20review%20in%20India.)"
+        },
+        {
+          "id": "h_403",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_404",
+          "type": "paragraph",
+          "text": "This article is intended for educational purposes only. A rising PSA after prostate cancer surgery requires evaluation by a qualified urologist, uro-oncologist or radiation oncologist. PSA values, pathology findings and imaging results must be interpreted together, and treatment decisions should be individualized based on the patient's cancer characteristics, previous treatment, overall health and preferences."
+        },
+        {
+          "id": "h_405",
+          "type": "heading",
+          "level": 2,
+          "text": "Top 5 Sources"
+        },
+        {
+          "id": "p_406",
+          "type": "paragraph",
+          "text": "1. [AUA / ASTRO / SUO — Salvage Therapy for Prostate Cancer Guideline](https://www.auanet.org/guidelines-and-quality/guidelines/salvage-therapy-for-prostate-cancer) — early salvage radiation, PET imaging, ADT and counselling."
+        },
+        {
+          "id": "p_407",
+          "type": "paragraph",
+          "text": "2. [EAU Prostate Cancer Guidelines — Treatment](https://uroweb.org/guidelines/prostate-cancer/chapter/treatment) — biochemical recurrence and potentially curative salvage radiation."
+        },
+        {
+          "id": "p_408",
+          "type": "paragraph",
+          "text": "3. [EAU Prostate Cancer Guidelines — Follow-up](https://uroweb.org/guidelines/prostate-cancer/chapter/followup) — PSA timing after treatment and long-interval recurrence."
+        },
+        {
+          "id": "p_409",
+          "type": "paragraph",
+          "text": "4. [NCI — Prostate-Specific Antigen (PSA) Test](https://www.cancer.gov/types/prostate/psa-fact-sheet) — one elevated PSA does not always mean recurrence."
+        },
+        {
+          "id": "p_410",
+          "type": "paragraph",
+          "text": "5. [American Cancer Society — Treating Prostate Cancer That Doesn't Go Away or Comes Back](https://www.cancer.org/cancer/types/prostate-cancer/treating/recurrence.html) — observation, salvage radiation and systemic options."
+        },
+        {
+          "id": "p_411",
+          "type": "paragraph",
+          "text": "**Last reviewed against the cited sources: September 2026.**"
+        }
+      ]
+    },
     {
       "id": "art_prostate_cancer_diet",
       "slug": "prostate-cancer-diet",
@@ -1025,6 +3537,10 @@
         "diet during prostate radiation"
       ],
       "relatedLinks": [
+        {
+          "label": "Recurrence after surgery",
+          "href": "/blogs/prostate-cancer-recurrence-after-surgery"
+        },
         {
           "label": "Prostate Cancer Treatment in India",
           "href": "/treatments/prostate-cancer-treatment-in-india"
@@ -4339,6 +6855,10 @@
       ],
       "relatedLinks": [
         {
+          "label": "Recurrence after surgery",
+          "href": "/blogs/prostate-cancer-recurrence-after-surgery"
+        },
+        {
           "label": "Prostate cancer diet",
           "href": "/blogs/prostate-cancer-diet"
         },
@@ -7302,6 +9822,10 @@
         "prostate radiation therapy India"
       ],
       "relatedLinks": [
+        {
+          "label": "Recurrence after surgery",
+          "href": "/blogs/prostate-cancer-recurrence-after-surgery"
+        },
         {
           "label": "Prostate cancer diet",
           "href": "/blogs/prostate-cancer-diet"
@@ -10468,6 +12992,10 @@
         "international robotic prostatectomy India"
       ],
       "relatedLinks": [
+        {
+          "label": "Recurrence after surgery",
+          "href": "/blogs/prostate-cancer-recurrence-after-surgery"
+        },
         {
           "label": "Prostate cancer diet",
           "href": "/blogs/prostate-cancer-diet"
@@ -13793,6 +16321,10 @@
       ],
       "relatedLinks": [
         {
+          "label": "Recurrence after surgery",
+          "href": "/blogs/prostate-cancer-recurrence-after-surgery"
+        },
+        {
           "label": "Prostate cancer diet",
           "href": "/blogs/prostate-cancer-diet"
         },
@@ -16732,6 +19264,10 @@
         "international prostate cancer treatment India"
       ],
       "relatedLinks": [
+        {
+          "label": "Recurrence after surgery",
+          "href": "/blogs/prostate-cancer-recurrence-after-surgery"
+        },
         {
           "label": "Prostate cancer diet",
           "href": "/blogs/prostate-cancer-diet"
