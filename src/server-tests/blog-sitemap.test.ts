@@ -105,3 +105,27 @@ test("building the index does not pull unpublished locale catalogs", () => {
   assert.equal(locs.some((loc) => loc.includes("sitemap-ru.xml")), false);
   assert.equal(locs.some((loc) => loc.includes("sitemap-sw.xml")), false);
 });
+
+test("every sitemap loc belongs to https://gaf.healthcare", () => {
+  const documents = [
+    sitemapIndexXml(buildSitemapIndex()),
+    sitemapXml(buildBlogSitemap("en")),
+    sitemapXml(buildLocaleSitemap("en")),
+    sitemapXml(buildLocaleSitemap("ar")),
+    sitemapXml(buildLocaleSitemap("fr")),
+    sitemapXml(buildLocaleSitemap("ru")),
+    sitemapXml(buildLocaleSitemap("sw")),
+  ];
+  const locTag = /<(?:image:)?loc>([^<]+)<\/(?:image:)?loc>/g;
+  let counted = 0;
+  for (const xml of documents) {
+    for (const match of xml.matchAll(locTag)) {
+      counted += 1;
+      const loc = match[1].replaceAll("&amp;", "&");
+      assert.match(loc, /^https:\/\/gaf\.healthcare(?:\/|$)/, loc);
+      assert.equal(new URL(loc).hostname, "gaf.healthcare", loc);
+    }
+  }
+  assert.ok(counted > 7000, `expected the English catalog, got ${counted} locs`);
+  assert.equal(sitemapXml(buildBlogSitemap("en")).includes("unsplash.com"), false);
+});

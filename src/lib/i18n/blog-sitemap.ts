@@ -4,7 +4,7 @@ import type { AppLocale } from "@/lib/i18n/languages";
 import { LOCALES, isTargetLocale } from "@/lib/i18n/languages";
 import { localeIsPublished as targetLocaleIsPublished } from "@/lib/i18n/locale-gating";
 import { sitemapIndexXml, sitemapXml } from "@/lib/i18n/sitemap-xml";
-import { SITE_URL, absoluteUrl } from "@/lib/seo-url";
+import { SITE_URL, absoluteUrl, isSiteUrl } from "@/lib/seo-url";
 
 export function isLocaleLive(locale: AppLocale) {
   return !isTargetLocale(locale) || targetLocaleIsPublished(locale);
@@ -31,8 +31,8 @@ export function sitemapEntry(
 
 function blogAssetUrl(src?: string) {
   if (!src) return "";
-  if (/^https?:\/\//i.test(src)) return src;
-  return new URL(src, SITE_URL).toString();
+  const url = /^https?:\/\//i.test(src) ? src : new URL(src, SITE_URL).toString();
+  return isSiteUrl(url) ? url : "";
 }
 
 function blogPostImages(post: {
