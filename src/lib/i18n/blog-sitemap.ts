@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { listPublishedPosts } from "@/lib/blogs";
+import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
 import type { AppLocale } from "@/lib/i18n/languages";
 import { LOCALES, isTargetLocale } from "@/lib/i18n/languages";
 import { localeIsPublished as targetLocaleIsPublished } from "@/lib/i18n/locale-gating";
@@ -123,11 +124,25 @@ export function buildBlogSitemap(locale: AppLocale = "en"): MetadataRoute.Sitema
  * 7k-URL English catalog and is what made /sitemap.xml take ~13s, which is
  * long enough for Google Search Console to mark the file "Couldn't fetch".
  */
+function isoStamp(value: Date | string | undefined) {
+  if (!value) return undefined;
+  if (value instanceof Date) return Number.isNaN(value.getTime()) ? undefined : value.toISOString();
+  const parsed = Date.parse(String(value));
+  return Number.isNaN(parsed) ? undefined : new Date(parsed).toISOString();
+}
+
+function newestPublishedStamp() {
+  const stamps = [
+    isoStamp(buildBlogSitemap("en")[0]?.lastModified),
+    ...publishedCuratedTreatments("en").map((row) => isoStamp(row.updatedAt)),
+  ].filter((value): value is string => Boolean(value));
+  stamps.sort();
+  return stamps.at(-1);
+}
+
 export function buildSitemapIndex(): { loc: string; lastModified?: string }[] {
   const blogs = buildBlogSitemap("en");
-  const newestBlog = blogs[0]?.lastModified;
-  const lastModified =
-    newestBlog instanceof Date ? newestBlog.toISOString() : newestBlog ? String(newestBlog) : undefined;
+  const lastModified = newestPublishedStamp();
   const files: { loc: string; lastModified?: string }[] = [{ loc: absoluteUrl("/sitemap-en.xml"), lastModified }];
   for (const locale of LOCALES) {
     if (locale === "en") continue;

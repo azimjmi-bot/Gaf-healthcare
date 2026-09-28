@@ -115,5 +115,6 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   const text = parts.filter(Boolean).join(" ");
   if (/breast/i.test(text)) return "Breast";
   if (/prostate/i.test(text)) return "Prostate";
+  if (/colon|colorectal/i.test(text)) return "Colon";
   return undefined;
 }

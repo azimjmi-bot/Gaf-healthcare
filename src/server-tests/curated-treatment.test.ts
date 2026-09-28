@@ -16,6 +16,7 @@ import {
 import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
 import { LOCALES } from "@/lib/i18n/languages";
+import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
 import {
   splitTreatmentQuickAnswer,
   treatmentBodyLocation,
@@ -150,6 +151,68 @@ test("the published prostate cancer page uses site USD ranges and GEO links", ()
   const english = buildLocaleSitemap("en").map((row) => row.url);
   assert.ok(
     english.includes("https://gaf.healthcare/treatments/prostate-cancer-treatment-in-india"),
+  );
+});
+
+test("the published colon cancer page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "colon-cancer-treatment-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /\$15,000–\$45,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: Colon Cancer Treatment in India/);
+  assert.match(body, /Stage 0:/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Colectomy/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Colectomy/);
+  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Colorectal-Cancer-Surgery/);
+  assert.match(body, /\/costs\/India\/Gastroenterology\/Colonoscopy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Immunotherapy/);
+  assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Colectomy/);
+  assert.match(body, /\/hospitals\/India\/Bengaluru\/Surgical-Oncology/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Surgical-Oncology/Colectomy",
+    "/doctors/India/Mumbai/Surgical-Oncology/Colectomy",
+    "/hospitals/India/Bengaluru/Surgical-Oncology",
+    "/costs/India/Delhi-NCR/Surgical-Oncology/Colectomy",
+    "/costs/India/Surgical-Gastroenterology/Colorectal-Cancer-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/colon-anatomy-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/colon-staging-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/colon-surgery-clinic\.webp/);
+  assert.match(body, /\/uploads\/treatments\/colon-liver-mets-body\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 1);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /stage and molecular/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /Stage 0:/);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /Stage IV:/);
+  assert.equal(
+    treatmentBodyLocation(treatment.category, treatment.subspecialty, treatment.translations.en!.name),
+    "Colon",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/colon-cancer-treatment-in-india"),
   );
 });
 
