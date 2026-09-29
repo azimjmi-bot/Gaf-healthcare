@@ -129,7 +129,7 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   }
   if (/tendon/i.test(text)) return "Tendon";
   if (
-    /craniotomy|brain tumor|glioma|meningioma|aneurysm clipping|endoscopic brain|neuroendoscop|pituitary/i.test(
+    /craniotomy|brain tumor|glioma|meningioma|aneurysm clipping|endoscopic brain|neuroendoscop|pituitary|hydrocephalus|ventriculostomy|vp shunt/i.test(
       text,
     )
   ) {

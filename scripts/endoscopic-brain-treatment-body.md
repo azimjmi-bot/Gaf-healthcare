@@ -94,7 +94,7 @@ The anatomy is complex, and the suitability of an endoscopic route varies consid
 
 Endoscopic third ventriculostomy (ETV) is another important neuroendoscopic procedure. Instead of inserting a permanent shunt, the surgeon creates an opening in the floor of the third ventricle to allow cerebrospinal fluid (CSF) to bypass an obstruction.
 
-ETV is particularly considered for selected patients with obstructive hydrocephalus, although it is not appropriate for everyone. Named [ETV](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-(ETV)) is **$3,000–$8,000** (typically **2–5 nights**). Neighbouring [hydrocephalus surgery](/costs/India/Neurosurgery/Hydrocephalus-Surgery) is **$3,000–$8,000** (typically **3–7 nights**) when a shunt list is the product.
+ETV is particularly considered for selected patients with obstructive hydrocephalus, although it is not appropriate for everyone. Named [ETV](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-(ETV)) is **$3,000–$8,000** (typically **2–5 nights**). Neighbouring [hydrocephalus surgery](/costs/India/Neurosurgery/Hydrocephalus-Surgery) is **$3,000–$8,000** (typically **3–7 nights**) when a shunt list is the product. The named shunt and ETV products sit on [Hydrocephalus Surgery in India](/treatments/hydrocephalus-surgery-in-india).
 
 ![Endoscopic view of the floor of the third ventricle during ETV for obstructive hydrocephalus](/uploads/treatments/endoscopic-brain-etv.webp)
 

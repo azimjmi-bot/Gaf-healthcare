@@ -84,7 +84,7 @@ The decision to operate is based on much more than the presence of a tumour on a
 
 A neurosurgical team considers tumour type, grade, size, exact anatomical location, whether the tumour is superficial or deep, relationship to blood vessels, relationship to speech and movement centres, vision pathways, brainstem involvement, presence of hydrocephalus or increased intracranial pressure, neurological symptoms, the patient's age and general health, molecular characteristics of the tumour, and whether the tumour is newly diagnosed or recurrent.
 
-Some small, slow-growing tumours that cause no symptoms may be monitored rather than immediately operated on. Conversely, a tumour causing significant pressure, seizures, neurological deterioration, hydrocephalus, or other complications may require intervention.
+Some small, slow-growing tumours that cause no symptoms may be monitored rather than immediately operated on. Conversely, a tumour causing significant pressure, seizures, neurological deterioration, hydrocephalus, or other complications may require intervention. Named CSF diversion sits on [Hydrocephalus Surgery in India](/treatments/hydrocephalus-surgery-in-india).
 
 ## Brain Tumor Surgery vs Brain Cancer Surgery
 
