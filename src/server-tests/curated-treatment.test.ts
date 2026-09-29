@@ -1081,6 +1081,100 @@ test("the published shoulder arthroscopy page uses site USD ranges and GEO links
   );
 });
 
+test("the published limb lengthening page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "limb-lengthening-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$12,000–\$28,000/);
+  assert.match(body, /\$10,000–\$25,000/);
+  assert.match(body, /\$4,500–\$13,000/);
+  assert.match(body, /\$5,000–\$14,000/);
+  assert.match(body, /\$2,500–\$8,000/);
+  assert.match(body, /\$50,000–\$150,000/);
+  assert.match(body, /7–14 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Limb Lengthening Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Pediatric-Orthopaedic\/Limb-Lengthening-Surgery/);
+  assert.match(body, /\/costs\/India\/Pediatric-Orthopaedic\/Limb-Reconstruction-Surgery/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Non-Union-Repair/);
+  assert.match(body, /\/treatments\/knee-replacement-surgery-in-india/);
+  assert.match(body, /\/treatments\/hip-replacement-surgery-in-india/);
+  assert.match(body, /\/treatments\/acl-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/limb-lengthening-distraction\.webp/);
+  assert.match(body, /\/uploads\/treatments\/limb-lengthening-nail\.webp/);
+  assert.match(body, /\/uploads\/treatments\/limb-lengthening-frame\.webp/);
+  assert.match(body, /\/uploads\/treatments\/limb-lengthening-physio\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Pediatric-Orthopaedic/Limb-Lengthening-Surgery",
+    "/doctors/India/Mumbai/Pediatric-Orthopaedic/Limb-Lengthening-Surgery",
+    "/doctors/India/Bengaluru/Pediatric-Orthopaedic/Limb-Lengthening-Surgery",
+    "/doctors/India/Chennai/Pediatric-Orthopaedic/Limb-Lengthening-Surgery",
+    "/doctors/India/Hyderabad/Pediatric-Orthopaedic/Limb-Lengthening-Surgery",
+    "/doctors/India/Delhi-NCR/Orthopedics/Limb-Lengthening-Surgery",
+    "/hospitals/India/Delhi-NCR/Pediatric-Orthopaedic",
+    "/hospitals/India/Mumbai/Pediatric-Orthopaedic",
+    "/hospitals/India/Bengaluru/Pediatric-Orthopaedic",
+    "/costs/India/Delhi-NCR/Pediatric-Orthopaedic/Limb-Lengthening-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Limb lengthening surgery in India is an advanced orthopaedic procedure/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Lower Limb",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/limb-lengthening-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/limb-lengthening/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/limb-lengthening-surgery-in-india/,
+  );
+  const hip = store.treatments.find(
+    (row) => row.slug === "hip-replacement-surgery-in-india",
+  );
+  assert.match(
+    hip?.translations.en?.editorialBody ?? "",
+    /\/treatments\/limb-lengthening-surgery-in-india/,
+  );
+  const knee = store.treatments.find(
+    (row) => row.slug === "knee-replacement-surgery-in-india",
+  );
+  assert.match(
+    knee?.translations.en?.editorialBody ?? "",
+    /\/treatments\/limb-lengthening-surgery-in-india/,
+  );
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";
