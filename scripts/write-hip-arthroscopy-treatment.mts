@@ -91,7 +91,7 @@ const treatment = {
     "revision-hip-replacement",
     "total-knee-replacement",
   ],
-  relatedTreatmentSlugs: [HIP, KNEE_ARTHRO],
+  relatedTreatmentSlugs: [HIP, KNEE_ARTHRO, "shoulder-arthroscopy-surgery-in-india"],
   status: "published" as const,
   featured: true,
   sortOrder: 13,

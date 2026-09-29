@@ -123,5 +123,6 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   if (/acl|anterior cruciate/i.test(text)) return "Knee";
   if (/knee/i.test(text)) return "Knee";
   if (/hip/i.test(text)) return "Hip";
+  if (/shoulder|rotator cuff/i.test(text)) return "Shoulder";
   return undefined;
 }
