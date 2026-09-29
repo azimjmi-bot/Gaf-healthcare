@@ -188,7 +188,7 @@ The cancer has extended beyond the prostate or involves nearby structures and/or
 
 The cancer has spread to distant parts of the body.
 
-Common sites of metastatic prostate cancer include the bones and lymph nodes, although other organs can also be affected.
+Common sites of metastatic prostate cancer include the bones and lymph nodes, although other organs can also be affected. Selected spinal metastases that need decompression or stabilization sit on [Spine Tumor Surgery in India](/treatments/spine-tumor-surgery-in-india).
 
 ## Prostate Cancer Risk Groups
 

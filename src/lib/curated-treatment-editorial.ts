@@ -131,5 +131,8 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   if (/craniotomy|brain tumor|glioma|meningioma|aneurysm clipping/i.test(text)) {
     return "Brain";
   }
+  if (/spine tumor|spinal tumor|spinal cord tumor/i.test(text)) {
+    return "Spine";
+  }
   return undefined;
 }
