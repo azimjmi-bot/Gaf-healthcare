@@ -807,6 +807,98 @@ test("the published ACL surgery page uses site USD ranges and GEO links", () => 
   );
 });
 
+test("the published knee arthroscopy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "knee-arthroscopy-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$2,000–\$5,500/);
+  assert.match(body, /\$1,800–\$4,500/);
+  assert.match(body, /\$2,500–\$6,500/);
+  assert.match(body, /\$3,000–\$7,500/);
+  assert.match(body, /\$5,500–\$12,000/);
+  assert.match(body, /outpatient or 1–2 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: What Is Knee Arthroscopy/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Arthroscopic-Surgery/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Meniscus-Repair/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/ACL-Reconstruction-\(Anterior-Cruciate-Ligament\)/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/PCL-Reconstruction-\(Posterior-Cruciate-Ligament\)/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Total-Knee-Replacement/);
+  assert.match(body, /\/treatments\/acl-surgery-in-india/);
+  assert.match(body, /\/treatments\/knee-replacement-surgery-in-india/);
+  assert.match(body, /\/treatments\/hip-replacement-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/arthro-meniscus-tear\.webp/);
+  assert.match(body, /\/uploads\/treatments\/arthro-portals\.webp/);
+  assert.match(body, /\/uploads\/treatments\/arthro-loose-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/arthro-physio\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Orthopedics/Arthroscopic-Surgery",
+    "/doctors/India/Mumbai/Orthopedics/Arthroscopic-Surgery",
+    "/doctors/India/Bengaluru/Orthopedics/Arthroscopic-Surgery",
+    "/doctors/India/Chennai/Orthopedics/Arthroscopic-Surgery",
+    "/doctors/India/Hyderabad/Orthopedics/Arthroscopic-Surgery",
+    "/hospitals/India/Delhi-NCR/Orthopedics",
+    "/hospitals/India/Mumbai/Orthopedics",
+    "/hospitals/India/Bengaluru/Orthopedics",
+    "/costs/India/Delhi-NCR/Orthopedics/Arthroscopic-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Knee arthroscopy is keyhole surgery of the knee/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Knee",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/knee-arthroscopy-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/knee-arthroscopy/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/knee-arthroscopy-surgery-in-india/,
+  );
+  const acl = store.treatments.find((row) => row.slug === "acl-surgery-in-india");
+  assert.match(
+    acl?.translations.en?.editorialBody ?? "",
+    /\/treatments\/knee-arthroscopy-surgery-in-india/,
+  );
+  const knee = store.treatments.find(
+    (row) => row.slug === "knee-replacement-surgery-in-india",
+  );
+  assert.match(
+    knee?.translations.en?.editorialBody ?? "",
+    /\/treatments\/knee-arthroscopy-surgery-in-india/,
+  );
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";

@@ -89,7 +89,7 @@ const treatment = {
     "arthroscopic-surgery",
     "total-knee-replacement",
   ],
-  relatedTreatmentSlugs: [KNEE, HIP],
+  relatedTreatmentSlugs: [KNEE, HIP, "knee-arthroscopy-surgery-in-india"],
   status: "published" as const,
   featured: true,
   sortOrder: 11,
