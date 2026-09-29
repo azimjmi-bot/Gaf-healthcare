@@ -118,5 +118,6 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   if (/colon|colorectal/i.test(text)) return "Colon";
   if (/pancreas|pancreatic|whipple/i.test(text)) return "Pancreas";
   if (/hipec|periton/i.test(text)) return "Peritoneum";
+  if (/cervix|cervical/i.test(text)) return "Cervix";
   return undefined;
 }

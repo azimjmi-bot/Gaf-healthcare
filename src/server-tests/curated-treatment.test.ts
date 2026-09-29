@@ -411,6 +411,86 @@ test("the published HIPEC surgery page uses site USD ranges and GEO links", () =
   assert.match(colon?.translations.en?.editorialBody ?? "", /\/treatments\/hipec-surgery-in-india/);
 });
 
+test("the published cervical cancer page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "cervical-cancer-treatment-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$5,000–\$12,000/);
+  assert.match(body, /\$6,000–\$14,000/);
+  assert.match(body, /\$1,000–\$6,000\+/);
+  assert.match(body, /\$5,500–\$13,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /\$15,000–\$45,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: What is the treatment for cervical cancer in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /KEYNOTE-A18/);
+  assert.match(body, /\/costs\/India\/Gynecology\/Gynecologic-Cancer-Surgery/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Gynecology\/Gynecologic-Cancer-Surgery/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Radical-Hysterectomy/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/Brachytherapy/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/IMRT/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/EBRT/);
+  assert.match(body, /\/doctors\/India\/Mumbai\/Gynecology\/Gynecologic-Cancer-Surgery/);
+  assert.match(body, /\/hospitals\/India\/Bengaluru\/Gynecology/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Gynecology/Gynecologic-Cancer-Surgery",
+    "/doctors/India/Mumbai/Gynecology/Gynecologic-Cancer-Surgery",
+    "/hospitals/India/Bengaluru/Gynecology",
+    "/costs/India/Delhi-NCR/Gynecology/Gynecologic-Cancer-Surgery",
+    "/costs/India/Surgical-Oncology/Radical-Hysterectomy",
+    "/costs/India/Radiation-Oncology/Intracavitary-Brachytherapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/hipec-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/cervical-anatomy-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cervical-figo-spread\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cervical-brachytherapy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cervical-clinic\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 1);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /What is the treatment for cervical cancer in India/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Cervix",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/cervical-cancer-treatment-in-india"));
+  const breast = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/cervical-cancer-treatment-in-india/,
+  );
+  const hipec = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");
+  assert.match(
+    hipec?.translations.en?.editorialBody ?? "",
+    /\/treatments\/cervical-cancer-treatment-in-india/,
+  );
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";

@@ -161,7 +161,7 @@ A patient with colorectal peritoneal metastases should not assume that HIPEC is 
 
 ### 4. Ovarian Cancer
 
-HIPEC has also been studied in advanced ovarian cancer.
+HIPEC has also been studied in advanced ovarian cancer. Cervical cancer uses a different pathway — see [Cervical Cancer Treatment in India](/treatments/cervical-cancer-treatment-in-india).
 
 The OVHIPEC-1 randomized trial evaluated HIPEC during interval cytoreductive surgery in selected patients receiving neoadjuvant chemotherapy.
 
