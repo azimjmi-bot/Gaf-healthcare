@@ -56,6 +56,7 @@ test("the published knee replacement blog is complete, interlinked and indexed o
   assert.match(texts, /\/doctors\/India\/Orthopedics/);
   assert.doesNotMatch(texts, /\/blogs\/total-knee-replacement-in-india/);
   assert.doesNotMatch(texts, /\/blogs\/robotic-knee-replacement-in-india/);
+  assert.match(texts, /\/treatments\/knee-replacement-surgery-in-india/);
   assert.doesNotMatch(texts, /\/treatments\/india\/knee-replacement-surgery/);
   for (const path of [
     "/doctors/India/Delhi-NCR/Orthopedics/Total-Knee-Replacement",

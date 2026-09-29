@@ -575,6 +575,80 @@ test("the published ovarian cancer page uses site USD ranges and GEO links", () 
   );
 });
 
+test("the published knee replacement page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "knee-replacement-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$5,500–\$12,000/);
+  assert.match(body, /\$7,000–\$15,000/);
+  assert.match(body, /\$4,500–\$10,000/);
+  assert.match(body, /\$9,000–\$18,000/);
+  assert.match(body, /\$6,000–\$13,000/);
+  assert.match(body, /4–7 nights/);
+  assert.match(
+    body,
+    /article-quick-answer|Quick Answer: Knee Replacement Surgery in India/,
+  );
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Total-Knee-Replacement/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Robotic-Knee-Replacement/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Partial-Knee-Replacement/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Revision-Knee-Replacement/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Total-Hip-Replacement/);
+  assert.match(body, /\/blogs\/knee-replacement-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/knee-oa-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/knee-tkr-implants\.webp/);
+  assert.match(body, /\/uploads\/treatments\/knee-robotic\.webp/);
+  assert.match(body, /\/uploads\/treatments\/knee-physio\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Orthopedics/Total-Knee-Replacement",
+    "/doctors/India/Mumbai/Orthopedics/Total-Knee-Replacement",
+    "/doctors/India/Bengaluru/Orthopedics/Total-Knee-Replacement",
+    "/doctors/India/Chennai/Orthopedics/Total-Knee-Replacement",
+    "/doctors/India/Hyderabad/Orthopedics/Total-Knee-Replacement",
+    "/hospitals/India/Delhi-NCR/Orthopedics",
+    "/hospitals/India/Mumbai/Orthopedics",
+    "/hospitals/India/Bengaluru/Orthopedics",
+    "/costs/India/Delhi-NCR/Orthopedics/Total-Knee-Replacement",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Knee replacement surgery in India is a procedure that replaces damaged knee joint surfaces/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Knee",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/knee-replacement-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";

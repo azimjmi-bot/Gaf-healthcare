@@ -127,7 +127,7 @@ const faqs = [
 
 const blocks = [
   { id: id("html"), type: "html", html: qa },
-  p("**Knee replacement surgery in India** is an established treatment for people with severe knee arthritis, advanced joint damage, deformity, or persistent knee pain that no longer improves adequately with non-surgical treatment."),
+  p("**Knee replacement surgery in India** is an established treatment for people with severe knee arthritis, advanced joint damage, deformity, or persistent knee pain that no longer improves adequately with non-surgical treatment. The coordinated care pathway is published as [Knee Replacement Surgery in India](/treatments/knee-replacement-surgery-in-india)."),
   p("The surgery, also called **knee arthroplasty**, involves removing damaged portions of the knee joint and replacing the worn joint surfaces with artificial components. Depending on the extent and location of damage, a patient may require a **[total knee replacement](" + TKR + "), [partial knee replacement](" + PARTIAL + "), or [revision knee replacement](" + REVISION + ")**."),
   p("India has developed a large orthopaedic and joint-replacement ecosystem, with hospitals offering conventional, computer-assisted and [robotic-assisted](" + ROBOTIC + ") knee replacement procedures. Patients travelling to India can also access multidisciplinary evaluation, imaging, surgery, inpatient care and rehabilitation through major private hospitals."),
   p("Choosing knee replacement is not simply a question of finding the lowest price or the newest technology. The appropriate operation depends on the patient's symptoms, X-rays, ligament stability, deformity, age, activity level, medical conditions and the surgeon's assessment."),
@@ -700,6 +700,7 @@ const article = {
     "knee replacement hospitals in Hyderabad",
   ],
   relatedLinks: [
+    { label: "Knee replacement surgery in India — treatment pathway", href: "/treatments/knee-replacement-surgery-in-india" },
     { label: "Total knee replacement cost in India", href: TKR },
     { label: "Robotic knee replacement cost in India", href: ROBOTIC },
     { label: "Partial knee replacement cost in India", href: PARTIAL },

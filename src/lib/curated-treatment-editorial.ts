@@ -120,5 +120,6 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   if (/hipec|periton/i.test(text)) return "Peritoneum";
   if (/cervix|cervical/i.test(text)) return "Cervix";
   if (/ovary|ovarian/i.test(text)) return "Ovary";
+  if (/knee/i.test(text)) return "Knee";
   return undefined;
 }
