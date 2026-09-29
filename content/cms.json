@@ -13,7 +13,8 @@
     "Brachytherapy",
     "Planning",
     "Surgical Oncology",
-    "Medical Oncology"
+    "Medical Oncology",
+    "Orthopedics"
   ],
   "tags": [
     "IMRT",
@@ -117,7 +118,11 @@
     "nivolumab",
     "KRAS",
     "BRAF",
-    "cetuximab"
+    "cetuximab",
+    "knee replacement",
+    "total knee replacement",
+    "robotic knee replacement",
+    "orthopedics"
   ],
   "media": [
     {
@@ -1498,9 +1503,2153 @@
       "name": "colon-tt-clinic.webp",
       "alt": "Adult patient in clinic with a colon-and-liver overlay while a medical oncologist explains RAS, BRAF and HER2 targeted therapy",
       "addedAt": "2026-09-28T21:00:00.000Z"
+    },
+    {
+      "id": "media_knee_oa_anatomy_webp",
+      "url": "/uploads/articles/knee-oa-anatomy.webp",
+      "name": "knee-oa-anatomy.webp",
+      "alt": "Close-up of an osteoarthritic adult knee showing worn cartilage and exposed bone on the femur, tibia and patella",
+      "addedAt": "2026-09-29T00:30:00.000Z"
+    },
+    {
+      "id": "media_knee_tkr_implants_webp",
+      "url": "/uploads/articles/knee-tkr-implants.webp",
+      "name": "knee-tkr-implants.webp",
+      "alt": "Total knee replacement implants seated on the femur and tibia with a polyethylene insert between the metal components",
+      "addedAt": "2026-09-29T00:30:00.000Z"
+    },
+    {
+      "id": "media_knee_robotic_webp",
+      "url": "/uploads/articles/knee-robotic.webp",
+      "name": "knee-robotic.webp",
+      "alt": "Orthopaedic surgeon performing robotic-assisted knee replacement while a robotic arm assists bone preparation in an operating theatre",
+      "addedAt": "2026-09-29T00:30:00.000Z"
+    },
+    {
+      "id": "media_knee_physio_webp",
+      "url": "/uploads/articles/knee-physio.webp",
+      "name": "knee-physio.webp",
+      "alt": "Adult patient walking with a walker during physiotherapy after knee replacement while a therapist supports the operated knee",
+      "addedAt": "2026-09-29T00:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_knee_replacement_surgery_in_india",
+      "slug": "knee-replacement-surgery-in-india",
+      "title": "Knee Replacement Surgery in India",
+      "excerpt": "Total, partial, revision and robotic knee replacement in India: who needs surgery, how the operation is done, recovery, risks and GAF planning ranges for international patients.",
+      "date": "29 September 2026",
+      "publishedAt": "2026-09-29T00:30:00.000Z",
+      "updatedAt": "2026-09-29T00:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Orthopedics",
+      "tags": [
+        "knee replacement",
+        "total knee replacement",
+        "robotic knee replacement",
+        "orthopedics",
+        "India"
+      ],
+      "image": "/uploads/articles/knee-oa-anatomy.webp",
+      "imageAlt": "Close-up of an osteoarthritic adult knee showing worn cartilage and exposed bone on the femur, tibia and patella",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Knee Replacement Surgery in India: Cost, Hospitals & Recovery",
+      "seoDescription": "Explore knee replacement surgery in India, including types, cost, implants, robotic surgery, top hospitals, recovery, risks and treatment options for international patients.",
+      "canonical": "https://gaf.healthcare/blogs/knee-replacement-surgery-in-india",
+      "ogImage": "/uploads/articles/knee-oa-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "knee replacement surgery in India",
+        "knee replacement cost in India",
+        "total knee replacement in India",
+        "knee replacement surgery cost India",
+        "knee replacement hospitals in India",
+        "best knee replacement surgeons in India",
+        "total knee replacement cost in India",
+        "robotic knee replacement in India",
+        "robotic knee replacement cost India",
+        "partial knee replacement in India",
+        "bilateral knee replacement in India",
+        "knee replacement for international patients",
+        "knee arthroplasty in India",
+        "knee replacement recovery time",
+        "knee implant cost in India",
+        "knee replacement hospitals in Delhi",
+        "knee replacement hospitals in Mumbai",
+        "knee replacement hospitals in Chennai",
+        "knee replacement hospitals in Bengaluru",
+        "knee replacement hospitals in Hyderabad"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Total knee replacement cost in India",
+          "href": "/costs/India/Orthopedics/Total-Knee-Replacement"
+        },
+        {
+          "label": "Robotic knee replacement cost in India",
+          "href": "/costs/India/Orthopedics/Robotic-Knee-Replacement"
+        },
+        {
+          "label": "Partial knee replacement cost in India",
+          "href": "/costs/India/Orthopedics/Partial-Knee-Replacement"
+        },
+        {
+          "label": "Revision knee replacement cost in India",
+          "href": "/costs/India/Orthopedics/Revision-Knee-Replacement"
+        },
+        {
+          "label": "Total hip replacement cost in India",
+          "href": "/costs/India/Orthopedics/Total-Hip-Replacement"
+        },
+        {
+          "label": "Orthopaedic surgeons in India",
+          "href": "/doctors/India/Orthopedics"
+        },
+        {
+          "label": "Orthopaedic hospitals in India",
+          "href": "/hospitals/India/Orthopedics"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"md-body\"><table><thead><tr><th>Question</th><th>Quick Answer</th></tr></thead><tbody><tr><td><strong>What is knee replacement surgery?</strong></td><td>Surgery that replaces damaged knee joint surfaces with artificial components to reduce pain and improve function.</td></tr><tr><td><strong>Most common procedure</strong></td><td>Total Knee Replacement (TKR/TKA)</td></tr><tr><td><strong>Other options</strong></td><td>Partial/Unicompartmental Knee Replacement and Revision Knee Replacement</td></tr><tr><td><strong>Common reason</strong></td><td>Advanced osteoarthritis</td></tr><tr><td><strong>Other indications</strong></td><td>Rheumatoid/inflammatory arthritis, post-traumatic arthritis, severe deformity and certain other forms of joint destruction</td></tr><tr><td><strong>Typical surgery duration</strong></td><td>Around 1–2 hours, although total hospital and perioperative time is longer</td></tr><tr><td><strong>Hospital stay</strong></td><td>GAF planning notes typically 4–7 nights for total knee replacement, depending on recovery and hospital protocol</td></tr><tr><td><strong>Walking after surgery</strong></td><td>Many patients begin assisted walking soon after surgery</td></tr><tr><td><strong>Recovery</strong></td><td>Functional recovery commonly progresses over several weeks; full recovery can take several months</td></tr><tr><td><strong>Indicative cost in India</strong></td><td>GAF planning range approximately <strong>$5,500–$12,000</strong> for total knee replacement; actual quotations vary substantially</td></tr><tr><td><strong>Bilateral replacement</strong></td><td>Quoted after case review. Planning starts from the single-knee sheet; simultaneous versus staged surgery changes stay, anaesthesia and implant counts</td></tr><tr><td><strong>Robotic knee replacement</strong></td><td>Available at selected Indian hospitals; GAF planning range <strong>$7,000–$15,000</strong>; whether it is appropriate depends on the patient's case</td></tr><tr><td><strong>Implant life</strong></td><td>Many modern knee replacements can last around 15–25 years or longer, but individual implant survival varies</td></tr><tr><td><strong>International patients</strong></td><td>Medical evaluation, visa support, airport transfers, accommodation and rehabilitation can be coordinated as part of a medical-tourism journey</td></tr></tbody></table></div><p class=\"article-quick-answer__body\"><strong>Knee replacement surgery in India</strong> is a procedure that replaces damaged knee joint surfaces with artificial components to reduce pain and improve mobility. Total knee replacement is the most common type, while selected patients may qualify for partial or revision knee replacement. The GAF planning range for total knee replacement in India is approximately <strong>$5,500–$12,000</strong> for one knee, although the final price depends on the hospital, surgeon, implant, city and the patient's medical requirements.</p><p class=\"article-quick-answer__body\"><strong>Important:</strong> Cost and recovery figures are indicative planning ranges rather than guarantees. The final treatment plan and quotation should come from the treating orthopaedic team.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "**Knee replacement surgery in India** is an established treatment for people with severe knee arthritis, advanced joint damage, deformity, or persistent knee pain that no longer improves adequately with non-surgical treatment."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "The surgery, also called **knee arthroplasty**, involves removing damaged portions of the knee joint and replacing the worn joint surfaces with artificial components. Depending on the extent and location of damage, a patient may require a **[total knee replacement](/costs/India/Orthopedics/Total-Knee-Replacement), [partial knee replacement](/costs/India/Orthopedics/Partial-Knee-Replacement), or [revision knee replacement](/costs/India/Orthopedics/Revision-Knee-Replacement)**."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "India has developed a large orthopaedic and joint-replacement ecosystem, with hospitals offering conventional, computer-assisted and [robotic-assisted](/costs/India/Orthopedics/Robotic-Knee-Replacement) knee replacement procedures. Patients travelling to India can also access multidisciplinary evaluation, imaging, surgery, inpatient care and rehabilitation through major private hospitals."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "Choosing knee replacement is not simply a question of finding the lowest price or the newest technology. The appropriate operation depends on the patient's symptoms, X-rays, ligament stability, deformity, age, activity level, medical conditions and the surgeon's assessment."
+        },
+        {
+          "id": "p_006",
+          "type": "paragraph",
+          "text": "GAF Healthcare planning ranges for [total knee replacement](/costs/India/Orthopedics/Total-Knee-Replacement) are **$5,500–$12,000** (typically **4–7 nights**). [Robotic-assisted knee replacement](/costs/India/Orthopedics/Robotic-Knee-Replacement) is **$7,000–$15,000** (4–7 nights). [Partial knee replacement](/costs/India/Orthopedics/Partial-Knee-Replacement) is **$4,500–$10,000** (3–5 nights). [Revision knee replacement](/costs/India/Orthopedics/Revision-Knee-Replacement) is **$9,000–$18,000** (5–10 nights). These are planning ranges from partner hospital cost sheets, not hospital quotations."
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "International patients comparing [orthopaedic surgeons](/doctors/India/Orthopedics) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Orthopedics/Total-Knee-Replacement), [Mumbai](/doctors/India/Mumbai/Orthopedics/Total-Knee-Replacement), [Bengaluru](/doctors/India/Bengaluru/Orthopedics/Total-Knee-Replacement), [Chennai](/doctors/India/Chennai/Orthopedics/Total-Knee-Replacement) and [Hyderabad](/doctors/India/Hyderabad/Orthopedics/Total-Knee-Replacement). Partner [orthopaedic hospitals](/hospitals/India/Orthopedics) in [Delhi NCR](/hospitals/India/Delhi-NCR/Orthopedics), [Mumbai](/hospitals/India/Mumbai/Orthopedics) and [Bengaluru](/hospitals/India/Bengaluru/Orthopedics) are a typical first filter. City cost sheets for the same procedure include [Delhi NCR](/costs/India/Delhi-NCR/Orthopedics/Total-Knee-Replacement), [Mumbai](/costs/India/Mumbai/Orthopedics/Total-Knee-Replacement), [Bengaluru](/costs/India/Bengaluru/Orthopedics/Total-Knee-Replacement), [Chennai](/costs/India/Chennai/Orthopedics/Total-Knee-Replacement) and [Hyderabad](/costs/India/Hyderabad/Orthopedics/Total-Knee-Replacement)."
+        },
+        {
+          "id": "btn_008",
+          "type": "button",
+          "label": "Ask about knee replacement in India",
+          "href": "/consult?treatment=Knee%20Replacement%20Surgery"
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with knee X-rays and symptom history](https://wa.me/919044346292?text=Please%20review%20my%20knee%20X-rays%2C%20symptom%20history%20and%20medical%20reports%20and%20advise%20whether%20knee%20replacement%20in%20India%20may%20be%20appropriate.)"
+        },
+        {
+          "id": "img_010",
+          "type": "image",
+          "src": "/uploads/articles/knee-oa-anatomy.webp",
+          "alt": "Close-up of an osteoarthritic adult knee showing worn cartilage and exposed bone on the femur, tibia and patella",
+          "caption": "Knee replacement is considered when cartilage wear, pain and loss of function no longer respond adequately to non-surgical care — not because an X-ray looks severe on its own."
+        },
+        {
+          "id": "h_011",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Knee Replacement Surgery?"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Knee replacement surgery is an operation in which damaged portions of the knee are removed and replaced with artificial components."
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "The knee is formed primarily by the:"
+        },
+        {
+          "id": "ul_014",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Femur — thigh bone",
+            "Tibia — shin bone",
+            "Patella — kneecap"
+          ]
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "Healthy cartilage allows these surfaces to move smoothly against one another. With advanced arthritis or other forms of joint damage, cartilage can become severely worn, resulting in pain, stiffness, deformity and reduced movement."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "During knee replacement surgery, the surgeon removes damaged joint surfaces and places prosthetic components designed to restore the functional relationship between the femur and tibia."
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "In a **[total knee replacement](/costs/India/Orthopedics/Total-Knee-Replacement)**, the damaged surfaces of the femur and tibia are replaced, and the patella may also be resurfaced depending on the surgeon's approach and the patient's condition."
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "The objective is not to create a completely \"new\" natural knee. The primary goals are to:"
+        },
+        {
+          "id": "ul_019",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Reduce severe knee pain",
+            "Improve mobility",
+            "Correct significant deformity where appropriate",
+            "Improve the ability to perform daily activities",
+            "Improve overall knee function and quality of life"
+          ]
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Do People Need Knee Replacement?"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "The most common reason for knee replacement is **advanced osteoarthritis**."
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "Osteoarthritis progressively damages the structures of a joint. The knee is the most commonly affected joint in osteoarthritis. WHO estimates that around 528 million people worldwide were living with osteoarthritis in 2019, with the knee accounting for approximately 365 million cases."
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "Other conditions that can eventually lead to knee replacement include severe osteoarthritis, rheumatoid or inflammatory arthritis, post-traumatic arthritis, severe deformity, and other forms of joint destruction when function is lost."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Severe osteoarthritis"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "The cartilage covering the joint surfaces becomes progressively damaged. Symptoms may include persistent knee pain, pain while walking, difficulty climbing stairs, pain when standing up, morning or post-rest stiffness, reduced walking distance, swelling, deformity and difficulty performing everyday activities."
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Rheumatoid or inflammatory arthritis"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "Inflammatory diseases can progressively damage cartilage and bone and may eventually result in severe joint destruction."
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Post-traumatic arthritis"
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "A previous fracture, ligament injury or significant knee trauma can contribute to long-term joint degeneration. A remote [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) or [meniscus repair](/costs/India/Orthopedics/Meniscus-Repair) does not by itself mean a later replacement will be needed, but post-traumatic arthritis can still develop years after injury."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 3,
+          "text": "4. Severe knee deformity"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "Advanced arthritis may result in deformities such as bow-legged alignment, knock-kneed alignment or flexion deformity."
+        },
+        {
+          "id": "h_032",
+          "type": "heading",
+          "level": 3,
+          "text": "5. Other severe joint damage"
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "The treating orthopaedic surgeon may consider replacement when the joint is severely damaged and other appropriate treatments no longer provide sufficient functional improvement. Fortis, Medanta, Max Healthcare and other major Indian hospital systems describe severe arthritis, rheumatoid arthritis, post-traumatic arthritis and significant functional limitation among common reasons for considering knee replacement."
+        },
+        {
+          "id": "h_034",
+          "type": "heading",
+          "level": 2,
+          "text": "When Is Knee Replacement Surgery Recommended?"
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "Knee replacement is generally considered when **pain and loss of function become substantial and reasonable non-surgical treatments are no longer providing adequate relief**."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "The decision should not be based on an X-ray alone. A patient may have severe radiographic arthritis but relatively manageable symptoms. Another patient may have substantial symptoms and functional limitations requiring detailed evaluation."
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "Doctors generally consider:"
+        },
+        {
+          "id": "ul_038",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Severity and location of arthritis",
+            "Pain intensity",
+            "Impact on daily activities",
+            "Walking limitations",
+            "Knee stiffness",
+            "Deformity",
+            "Range of motion",
+            "Ligament stability",
+            "Previous injuries or surgeries",
+            "Response to conservative treatment",
+            "Overall health",
+            "Weight and metabolic health",
+            "Cardiovascular and respiratory status",
+            "Patient expectations and activity goals"
+          ]
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "The 2023 ACR/AAHKS guideline addresses timing of total hip and knee arthroplasty for patients with symptomatic, moderate-to-severe osteoarthritis who have not responded adequately to non-operative therapy. The timing of surgery remains an individual clinical decision."
+        },
+        {
+          "id": "btn_040",
+          "type": "button",
+          "label": "Ask whether total knee replacement is appropriate",
+          "href": "/consult?treatment=Total%20Knee%20Replacement"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with standing X-rays](https://wa.me/919044346292?text=I%20would%20like%20an%20orthopaedic%20opinion%20on%20whether%20total%20knee%20replacement%20in%20India%20is%20appropriate.%20I%20can%20share%20standing%20knee%20X-rays%20and%20my%20medical%20history.)"
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 2,
+          "text": "Knee Replacement Does Not Always Mean Total Knee Replacement"
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "This is one of the most important distinctions for patients. There are several forms of knee replacement surgery."
+        },
+        {
+          "id": "img_044",
+          "type": "image",
+          "src": "/uploads/articles/knee-tkr-implants.webp",
+          "alt": "Total knee replacement implants seated on the femur and tibia with a polyethylene insert between the metal components",
+          "caption": "A total knee replacement resurfaces the worn femur and tibia. A partial replacement is a different operation when only one compartment is honestly damaged."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Total knee replacement"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "**Total Knee Replacement (TKR)**, also called **Total Knee Arthroplasty (TKA)**, is the most common form. The damaged surfaces of the femur and tibia are replaced with prosthetic components. The patella may also be resurfaced. Total knee replacement may be considered when arthritis affects multiple compartments of the knee or when the overall joint damage requires a more comprehensive replacement. GAF planning: **$5,500–$12,000**, typically **4–7 nights**."
+        },
+        {
+          "id": "h_047",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Partial knee replacement"
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "A **[partial knee replacement](/costs/India/Orthopedics/Partial-Knee-Replacement)**, also known as unicompartmental knee replacement, replaces only the damaged compartment of the knee. It may be appropriate for carefully selected patients whose arthritis is largely confined to one compartment and whose remaining structures meet the requirements for this procedure."
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "Potential advantages may include smaller surgical exposure, preservation of more natural knee structures, and potentially faster recovery in selected patients. However, not every patient with arthritis is suitable for partial replacement. The decision depends on the location of arthritis, ligament condition, alignment, deformity and other findings. GAF planning: **$4,500–$10,000**, typically **3–5 nights**."
+        },
+        {
+          "id": "h_050",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Revision knee replacement"
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "[Revision knee replacement](/costs/India/Orthopedics/Revision-Knee-Replacement) is performed when an existing knee replacement has developed a significant problem requiring further surgery. Possible reasons include implant loosening, infection, wear, instability, fracture around the implant, significant bone loss and persistent problems after the initial replacement."
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Revision surgery is generally more complex than primary knee replacement and may require specialised implants and reconstruction techniques. GAF planning: **$9,000–$18,000**, typically **5–10 nights**. Neighbouring [revision hip replacement](/costs/India/Orthopedics/Revision-Hip-Replacement) is a different joint and a different sheet (**$10,000–$20,000**)."
+        },
+        {
+          "id": "h_053",
+          "type": "heading",
+          "level": 3,
+          "text": "4. Bilateral knee replacement"
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "Some patients have severe arthritis in both knees. Depending on the patient's health and clinical circumstances, surgery may be performed on one knee first and the other later, on both knees during the same hospitalisation, or as staged procedures separated by a period of recovery."
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "The appropriate strategy should be decided by the orthopaedic and anaesthesia teams after evaluating the patient's overall health. There is no separate GAF bilateral sheet: planning starts from the [total knee replacement](/costs/India/Orthopedics/Total-Knee-Replacement) range of **$5,500–$12,000** per knee. Two knees are not automatically double a single-knee package."
+        },
+        {
+          "id": "btn_056",
+          "type": "button",
+          "label": "Compare partial and total knee replacement",
+          "href": "/consult?treatment=Partial%20Knee%20Replacement"
+        },
+        {
+          "id": "h_057",
+          "type": "heading",
+          "level": 2,
+          "text": "Robotic Knee Replacement Surgery in India"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "Robotic-assisted knee replacement has become increasingly available in Indian hospitals. However, **robotic surgery does not mean that a robot independently performs the operation**."
+        },
+        {
+          "id": "img_059",
+          "type": "image",
+          "src": "/uploads/articles/knee-robotic.webp",
+          "alt": "Orthopaedic surgeon performing robotic-assisted knee replacement while a robotic arm assists bone preparation in an operating theatre",
+          "caption": "The surgeon remains responsible for planning and performing the procedure. The robot is a positioning and measurement tool, not an independent operator."
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "The orthopaedic surgeon remains responsible for planning and performing the procedure. Robotic or computer-assisted systems can help with preoperative planning, bone preparation, alignment assessment, implant positioning, intraoperative measurements and surgical precision. Some Indian hospitals currently offer robotic-assisted knee replacement using digital imaging and computer-assisted planning."
+        },
+        {
+          "id": "h_061",
+          "type": "heading",
+          "level": 3,
+          "text": "Is robotic knee replacement better for everyone?"
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Not necessarily. The important question is whether robotic assistance provides a meaningful benefit **for that particular patient's anatomy and surgical plan**."
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "Patients should ask:"
+        },
+        {
+          "id": "ol_064",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Is robotic assistance appropriate for my knee?",
+            "What problem does the technology solve in my case?",
+            "Which robotic system is being used?",
+            "Does my surgeon routinely perform this procedure?",
+            "Will the implant be different?",
+            "What additional cost is involved?",
+            "Does the hospital have a rehabilitation pathway for robotic knee replacement?"
+          ]
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "Technology should support clinical decision-making rather than replace it. GAF planning for [robotic knee replacement](/costs/India/Orthopedics/Robotic-Knee-Replacement) is **$7,000–$15,000** (typically 4–7 nights)."
+        },
+        {
+          "id": "btn_066",
+          "type": "button",
+          "label": "Ask about robotic knee replacement",
+          "href": "/consult?treatment=Robotic%20Knee%20Replacement"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 about robotic versus conventional TKR](https://wa.me/919044346292?text=Please%20advise%20whether%20robotic-assisted%20knee%20replacement%20is%20appropriate%20for%20my%20X-rays%2C%20and%20how%20the%20cost%20compares%20with%20conventional%20total%20knee%20replacement%20in%20India.)"
+        },
+        {
+          "id": "h_068",
+          "type": "heading",
+          "level": 2,
+          "text": "Conventional vs Robotic Knee Replacement"
+        },
+        {
+          "id": "html_069",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Conventional Knee Replacement</th><th>Robotic-Assisted Knee Replacement</th></tr></thead><tbody><tr><td>Surgeon performs procedure</td><td>Yes</td><td>Yes</td></tr><tr><td>Preoperative planning</td><td>Standard imaging and planning</td><td>May include advanced digital planning</td></tr><tr><td>Computer assistance</td><td>Limited/varies</td><td>Yes</td></tr><tr><td>Implant positioning</td><td>Surgeon-guided</td><td>Surgeon-guided with robotic assistance</td></tr><tr><td>Suitability</td><td>Broad</td><td>Patient and system dependent</td></tr><tr><td>GAF planning range</td><td><a href=\"/costs/India/Orthopedics/Total-Knee-Replacement\">$5,500–$12,000</a></td><td><a href=\"/costs/India/Orthopedics/Robotic-Knee-Replacement\">$7,000–$15,000</a></td></tr><tr><td>Typical stay</td><td>4–7 nights</td><td>4–7 nights</td></tr><tr><td>Recovery</td><td>Depends on many factors</td><td>Depends on many factors</td></tr><tr><td>Is robotic automatically better?</td><td>—</td><td>No</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "A patient's recovery depends on many factors beyond the surgical platform, including health, pain management, rehabilitation, surgical technique, implant selection and adherence to physiotherapy."
+        },
+        {
+          "id": "h_071",
+          "type": "heading",
+          "level": 2,
+          "text": "Knee Replacement Implants: What Patients Should Know"
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "The implant is one of the most important components of knee replacement surgery. Modern knee implants generally contain combinations of metal components, medical-grade polyethylene and, in some designs, ceramic or other specialised materials."
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Implant selection depends on patient anatomy, bone quality, age, activity level, ligament condition, deformity, surgeon preference, implant design, surgical technique and availability."
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "Patients should not choose an implant solely because it is described as \"premium,\" \"latest,\" or \"long-lasting.\" Instead, ask the surgeon: **Why is this implant appropriate for my knee?**"
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 2,
+          "text": "Cemented vs Cementless Knee Replacement"
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "Knee implants can be fixed to bone using different approaches."
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 3,
+          "text": "Cemented fixation"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "Bone cement is used to secure the implant."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 3,
+          "text": "Cementless fixation"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "The implant is designed to achieve fixation through bone growth into or around specially designed surfaces."
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "The choice depends on patient characteristics, bone quality, implant system and surgeon assessment. There is no single fixation method that is automatically appropriate for every patient."
+        },
+        {
+          "id": "h_082",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is Knee Replacement Surgery Performed?"
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "The exact technique varies according to the surgeon, implant and patient's anatomy. A typical total knee replacement involves several stages."
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 1: Anaesthesia"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "Knee replacement may be performed using spinal anaesthesia, general anaesthesia, or regional or local anaesthesia techniques combined with other forms of anaesthesia. The anaesthesiologist determines the appropriate approach based on the patient's health and surgical plan."
+        },
+        {
+          "id": "h_086",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 2: Surgical exposure"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "The surgeon makes an incision to access the knee joint."
+        },
+        {
+          "id": "h_088",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 3: Removal of damaged bone and cartilage"
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "Damaged joint surfaces are carefully removed according to the planned implant and alignment."
+        },
+        {
+          "id": "h_090",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 4: Implant preparation"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "The femur and tibia are prepared to receive the prosthetic components."
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 5: Implant placement"
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "The femoral and tibial components are positioned. A polyethylene insert is placed between the components to provide a smooth bearing surface. The patella may also be resurfaced."
+        },
+        {
+          "id": "h_094",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 6: Alignment and stability assessment"
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "The surgeon checks alignment, stability, range of motion, soft-tissue balance and implant positioning."
+        },
+        {
+          "id": "h_096",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 7: Closure"
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "The incision is closed and the patient is transferred to recovery. The surgical procedure itself commonly takes around **1–2 hours**, although the total perioperative process is longer."
+        },
+        {
+          "id": "h_098",
+          "type": "heading",
+          "level": 2,
+          "text": "Tests Before Knee Replacement Surgery"
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "Before surgery, patients usually undergo a detailed medical and orthopaedic evaluation."
+        },
+        {
+          "id": "h_100",
+          "type": "heading",
+          "level": 3,
+          "text": "Orthopaedic evaluation"
+        },
+        {
+          "id": "ul_101",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Physical examination",
+            "Knee range of motion",
+            "Ligament stability assessment",
+            "Alignment assessment",
+            "Walking assessment"
+          ]
+        },
+        {
+          "id": "h_102",
+          "type": "heading",
+          "level": 3,
+          "text": "Imaging"
+        },
+        {
+          "id": "ul_103",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Standing X-rays",
+            "AP and lateral knee X-rays",
+            "Additional specialised views where required",
+            "CT or MRI in selected cases"
+          ]
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 3,
+          "text": "Blood tests"
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "Depending on the patient's health: complete blood count, kidney function, liver function, blood glucose, coagulation testing and other tests requested by the medical team."
+        },
+        {
+          "id": "h_106",
+          "type": "heading",
+          "level": 3,
+          "text": "Cardiac evaluation"
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "Depending on age and risk factors: ECG, echocardiography and cardiology evaluation."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "Infection screening"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "The medical team may evaluate for active infections before elective joint replacement. This is important because infection involving an artificial joint can be a serious complication."
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 2,
+          "text": "Preparing for Knee Replacement Surgery"
+        },
+        {
+          "id": "h_111",
+          "type": "heading",
+          "level": 3,
+          "text": "Before travelling to India"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "International patients should ideally send previous X-rays, MRI/CT reports if available, medical history, previous surgical reports, medication list, allergy information, blood test reports and cardiac reports where relevant. The Indian hospital can then review the information before the patient's arrival."
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 3,
+          "text": "Improve general health before surgery"
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "Doctors may advise patients to stop smoking, optimise blood sugar, control blood pressure, maintain appropriate nutrition, improve physical conditioning, address anaemia, manage weight where appropriate and review medications. The NHS similarly recommends preparation involving exercise, smoking cessation, healthy diet and weight management where appropriate before knee replacement."
+        },
+        {
+          "id": "btn_115",
+          "type": "button",
+          "label": "Share records for a knee replacement opinion",
+          "href": "/consult?treatment=Knee%20Replacement%20Surgery"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with X-rays, medicines and cardiac reports](https://wa.me/919044346292?text=I%20am%20planning%20knee%20replacement%20in%20India.%20I%20can%20share%20X-rays%2C%20medication%20list%2C%20medical%20history%20and%20cardiac%20reports%20for%20a%20preliminary%20opinion.)"
+        },
+        {
+          "id": "h_117",
+          "type": "heading",
+          "level": 2,
+          "text": "Knee Replacement Surgery Recovery Timeline"
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "Recovery varies from patient to patient. A typical pathway may look like this."
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 3,
+          "text": "Day 0–1"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "The patient is monitored after surgery. Pain control begins, and physiotherapy may start early. Many patients begin standing and walking with assistance relatively soon after surgery."
+        },
+        {
+          "id": "h_121",
+          "type": "heading",
+          "level": 3,
+          "text": "Days 1–3"
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "The focus usually includes walking with assistance, knee exercises, pain control, wound care, DVT prevention, physiotherapy and safe movement. Some enhanced-recovery protocols aim for earlier discharge; GAF partner-hospital planning for [total knee replacement](/costs/India/Orthopedics/Total-Knee-Replacement) is typically **4–7 nights**."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 3,
+          "text": "Weeks 1–2"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "The patient gradually increases walking and performs prescribed exercises. Swelling and discomfort are common."
+        },
+        {
+          "id": "h_125",
+          "type": "heading",
+          "level": 3,
+          "text": "Weeks 3–6"
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "Many patients become increasingly independent. Walking ability generally improves, although strength and range of motion continue to develop."
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 3,
+          "text": "Weeks 6–12"
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "Many patients resume a broader range of daily activities. Return to work depends on the occupation and recovery."
+        },
+        {
+          "id": "h_129",
+          "type": "heading",
+          "level": 3,
+          "text": "3–6 months"
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "Strength, endurance and confidence may continue improving. Some patients continue experiencing improvement beyond six months. The NHS notes that complete recovery can take several months or longer and that recovery differs between individuals."
+        },
+        {
+          "id": "img_131",
+          "type": "image",
+          "src": "/uploads/articles/knee-physio.webp",
+          "alt": "Adult patient walking with a walker during physiotherapy after knee replacement while a therapist supports the operated knee",
+          "caption": "Physiotherapy is not an optional extra. Early assisted walking is part of recovery and of reducing blood-clot risk."
+        },
+        {
+          "id": "h_132",
+          "type": "heading",
+          "level": 2,
+          "text": "Physiotherapy After Knee Replacement"
+        },
+        {
+          "id": "p_133",
+          "type": "paragraph",
+          "text": "Physiotherapy is not an optional extra. It is a central part of recovery."
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "The rehabilitation programme may include:"
+        },
+        {
+          "id": "ul_135",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Knee range-of-motion exercises",
+            "Quadriceps strengthening",
+            "Hamstring exercises",
+            "Straight-leg raises",
+            "Walking training",
+            "Balance exercises",
+            "Stair training",
+            "Functional exercises"
+          ]
+        },
+        {
+          "id": "p_136",
+          "type": "paragraph",
+          "text": "The exact programme should be individualised. A patient who undergoes technically successful surgery but does not follow an appropriate rehabilitation plan may not achieve the desired functional result."
+        },
+        {
+          "id": "h_137",
+          "type": "heading",
+          "level": 2,
+          "text": "What Can You Do After Knee Replacement?"
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "Many patients can return to activities such as walking, swimming, cycling, golf, low-impact exercise and normal household activities."
+        },
+        {
+          "id": "p_139",
+          "type": "paragraph",
+          "text": "High-impact activities may not be recommended depending on the individual case. Activities such as running, jumping and repetitive high-impact sports should be discussed with the treating surgeon."
+        },
+        {
+          "id": "p_140",
+          "type": "paragraph",
+          "text": "The aim is generally to create a functional, stable and comfortable knee — not necessarily to reproduce the performance of a young natural knee."
+        },
+        {
+          "id": "h_141",
+          "type": "heading",
+          "level": 2,
+          "text": "Risks and Complications of Knee Replacement Surgery"
+        },
+        {
+          "id": "p_142",
+          "type": "paragraph",
+          "text": "Knee replacement is a major operation and, like all surgery, carries risks. Most patients do not develop serious complications, but patients should understand the possibilities before making a decision."
+        },
+        {
+          "id": "h_143",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Infection"
+        },
+        {
+          "id": "p_144",
+          "type": "paragraph",
+          "text": "Infection can occur around the surgical wound or, more seriously, around the prosthetic joint. A deep prosthetic joint infection can require prolonged antibiotics and sometimes additional surgery. CDC notes that surgical-site infections can involve implanted material and may sometimes require additional medical care or surgery."
+        },
+        {
+          "id": "h_145",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Blood clots"
+        },
+        {
+          "id": "p_146",
+          "type": "paragraph",
+          "text": "Deep vein thrombosis (DVT) can occur after major surgery. A clot can potentially travel to the lungs, causing pulmonary embolism. Hospitals use measures such as early mobilisation, compression devices or stockings where appropriate, anticoagulant medication when indicated, and exercise to reduce this risk."
+        },
+        {
+          "id": "h_147",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Bleeding"
+        },
+        {
+          "id": "p_148",
+          "type": "paragraph",
+          "text": "Some blood loss is expected during surgery. The need for transfusion varies according to the individual patient and surgical circumstances."
+        },
+        {
+          "id": "h_149",
+          "type": "heading",
+          "level": 3,
+          "text": "4. Persistent pain"
+        },
+        {
+          "id": "p_150",
+          "type": "paragraph",
+          "text": "Although pain generally improves substantially for many patients, some people may continue to experience pain."
+        },
+        {
+          "id": "h_151",
+          "type": "heading",
+          "level": 3,
+          "text": "5. Stiffness"
+        },
+        {
+          "id": "p_152",
+          "type": "paragraph",
+          "text": "Some patients may develop restricted knee movement after surgery. Physiotherapy and appropriate early rehabilitation are important."
+        },
+        {
+          "id": "h_153",
+          "type": "heading",
+          "level": 3,
+          "text": "6. Implant loosening or wear"
+        },
+        {
+          "id": "p_154",
+          "type": "paragraph",
+          "text": "Over time, the implant may wear or loosen. This may eventually require [revision surgery](/costs/India/Orthopedics/Revision-Knee-Replacement)."
+        },
+        {
+          "id": "h_155",
+          "type": "heading",
+          "level": 3,
+          "text": "7. Nerve or blood vessel injury"
+        },
+        {
+          "id": "p_156",
+          "type": "paragraph",
+          "text": "Injury to nearby structures is uncommon but possible."
+        },
+        {
+          "id": "h_157",
+          "type": "heading",
+          "level": 3,
+          "text": "8. Fracture"
+        },
+        {
+          "id": "p_158",
+          "type": "paragraph",
+          "text": "A fracture can occur around the artificial joint during or after surgery."
+        },
+        {
+          "id": "h_159",
+          "type": "heading",
+          "level": 3,
+          "text": "9. Instability"
+        },
+        {
+          "id": "p_160",
+          "type": "paragraph",
+          "text": "The knee may feel unstable if the soft-tissue balance or implant function is not optimal."
+        },
+        {
+          "id": "h_161",
+          "type": "heading",
+          "level": 3,
+          "text": "10. Need for revision surgery"
+        },
+        {
+          "id": "p_162",
+          "type": "paragraph",
+          "text": "Some patients eventually require another operation. NHS patient information lists blood clots, infection, nerve or tissue injury, persistent pain, stiffness and instability among potential complications."
+        },
+        {
+          "id": "p_163",
+          "type": "paragraph",
+          "text": "**Emergency symptoms are not a WhatsApp question.** Sudden chest pain, shortness of breath, a swollen painful calf, fever with wound drainage, or sudden inability to walk should be assessed in a **local emergency department**."
+        },
+        {
+          "id": "h_164",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Does a Knee Replacement Last?"
+        },
+        {
+          "id": "p_165",
+          "type": "paragraph",
+          "text": "Many modern knee replacements can provide long-term function. NHS patient information states that many knee replacements can last **around 25 years**, although individual results vary."
+        },
+        {
+          "id": "p_166",
+          "type": "paragraph",
+          "text": "Implant longevity depends on factors including patient age, body weight, activity level, implant design, surgical technique, alignment, bone quality, infection, trauma and implant wear."
+        },
+        {
+          "id": "p_167",
+          "type": "paragraph",
+          "text": "A younger, highly active patient may place different mechanical demands on an implant than an older patient with a lower-impact lifestyle. Therefore, \"lifelong guarantee\" should not be used as a blanket promise."
+        },
+        {
+          "id": "h_168",
+          "type": "heading",
+          "level": 2,
+          "text": "Knee Replacement Surgery Cost in India"
+        },
+        {
+          "id": "p_169",
+          "type": "paragraph",
+          "text": "The cost of knee replacement surgery in India varies considerably. GAF Healthcare planning ranges from partner hospital cost sheets are the figures used on this site — not rupee brochure quotes."
+        },
+        {
+          "id": "html_170",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Treatment</th><th>GAF planning range in India</th><th>Typical stay</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Orthopedics/Total-Knee-Replacement\">Total knee replacement — one knee</a></td><td>$5,500–$12,000</td><td>4–7 nights</td></tr><tr><td><a href=\"/costs/India/Orthopedics/Partial-Knee-Replacement\">Partial knee replacement</a></td><td>$4,500–$10,000</td><td>3–5 nights</td></tr><tr><td><a href=\"/costs/India/Orthopedics/Robotic-Knee-Replacement\">Robotic-assisted knee replacement</a></td><td>$7,000–$15,000</td><td>4–7 nights</td></tr><tr><td><a href=\"/costs/India/Orthopedics/Revision-Knee-Replacement\">Revision knee replacement</a></td><td>$9,000–$18,000</td><td>5–10 nights</td></tr><tr><td>Bilateral (both knees)</td><td>Quoted after case review from the single-knee sheet</td><td>Depends on simultaneous vs staged surgery</td></tr><tr><td><a href=\"/costs/India/Orthopedics/Total-Hip-Replacement\">Total hip replacement</a> (neighbouring joint)</td><td>$6,000–$13,000</td><td>4–7 nights</td></tr><tr><td><a href=\"/costs/India/Orthopedics/Revision-Hip-Replacement\">Revision hip replacement</a></td><td>$10,000–$20,000</td><td>5–10 nights</td></tr><tr><td>Additional rehabilitation</td><td>Depends on duration and facility</td><td>—</td></tr><tr><td>International travel, visa, hotel</td><td>Not normally included in the surgical sheet</td><td>—</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_171",
+          "type": "paragraph",
+          "text": "**These figures are indicative planning ranges, not fixed package prices.** For international patients, the final quotation should be based on the specific hospital, surgeon, implant and clinical requirements."
+        },
+        {
+          "id": "p_172",
+          "type": "paragraph",
+          "text": "City sheets for the same total-knee procedure include [Delhi NCR](/costs/India/Delhi-NCR/Orthopedics/Total-Knee-Replacement), [Mumbai](/costs/India/Mumbai/Orthopedics/Total-Knee-Replacement), [Bengaluru](/costs/India/Bengaluru/Orthopedics/Total-Knee-Replacement), [Chennai](/costs/India/Chennai/Orthopedics/Total-Knee-Replacement) and [Hyderabad](/costs/India/Hyderabad/Orthopedics/Total-Knee-Replacement). Neighbouring hip arthroplasty sits on [total hip replacement](/costs/India/Orthopedics/Total-Hip-Replacement) (**$6,000–$13,000**)."
+        },
+        {
+          "id": "btn_173",
+          "type": "button",
+          "label": "Request a knee replacement cost estimate",
+          "href": "/consult?treatment=Total%20Knee%20Replacement"
+        },
+        {
+          "id": "p_174",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for an itemised knee replacement estimate](https://wa.me/919044346292?text=Please%20share%20an%20itemised%20planning%20estimate%20for%20total%20knee%20replacement%20in%20India.%20I%20can%20send%20X-rays%2C%20age%2C%20country%20and%20whether%20one%20or%20both%20knees%20are%20involved.)"
+        },
+        {
+          "id": "h_175",
+          "type": "heading",
+          "level": 2,
+          "text": "What Determines the Cost of Knee Replacement in India?"
+        },
+        {
+          "id": "h_176",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Hospital"
+        },
+        {
+          "id": "p_177",
+          "type": "paragraph",
+          "text": "Hospital infrastructure, location, room category and service package influence cost. Compare partner [orthopaedic hospitals](/hospitals/India/Orthopedics) in [Chennai](/hospitals/India/Chennai/Orthopedics) and [Hyderabad](/hospitals/India/Hyderabad/Orthopedics) as well as Delhi NCR, Mumbai and Bengaluru."
+        },
+        {
+          "id": "h_178",
+          "type": "heading",
+          "level": 3,
+          "text": "2. City"
+        },
+        {
+          "id": "p_179",
+          "type": "paragraph",
+          "text": "Prices can differ between Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad."
+        },
+        {
+          "id": "h_180",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Implant"
+        },
+        {
+          "id": "p_181",
+          "type": "paragraph",
+          "text": "The implant system and design can significantly affect the cost."
+        },
+        {
+          "id": "h_182",
+          "type": "heading",
+          "level": 3,
+          "text": "4. Type of surgery"
+        },
+        {
+          "id": "p_183",
+          "type": "paragraph",
+          "text": "Total, partial, bilateral and revision procedures have different cost structures."
+        },
+        {
+          "id": "h_184",
+          "type": "heading",
+          "level": 3,
+          "text": "5. Robotic assistance"
+        },
+        {
+          "id": "p_185",
+          "type": "paragraph",
+          "text": "Robotic-assisted procedures may involve additional technology and planning costs. See the [robotic knee replacement](/costs/India/Orthopedics/Robotic-Knee-Replacement) sheet."
+        },
+        {
+          "id": "h_186",
+          "type": "heading",
+          "level": 3,
+          "text": "6. Room category"
+        },
+        {
+          "id": "p_187",
+          "type": "paragraph",
+          "text": "Private rooms, suites and other accommodation categories can change the hospital bill."
+        },
+        {
+          "id": "h_188",
+          "type": "heading",
+          "level": 3,
+          "text": "7. Medical conditions"
+        },
+        {
+          "id": "p_189",
+          "type": "paragraph",
+          "text": "Patients with diabetes, heart disease, obesity or other medical conditions may require additional investigations or specialist clearance."
+        },
+        {
+          "id": "h_190",
+          "type": "heading",
+          "level": 3,
+          "text": "8. Complications"
+        },
+        {
+          "id": "p_191",
+          "type": "paragraph",
+          "text": "Unexpected complications can increase hospitalisation and treatment costs."
+        },
+        {
+          "id": "h_192",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Usually Included in a Knee Replacement Package?"
+        },
+        {
+          "id": "p_193",
+          "type": "paragraph",
+          "text": "A hospital package may include some or all of:"
+        },
+        {
+          "id": "ul_194",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Surgeon fees",
+            "Anaesthesia",
+            "Operating room charges",
+            "Implant",
+            "Hospital accommodation",
+            "Nursing",
+            "Routine medications",
+            "Standard investigations",
+            "Physiotherapy during admission",
+            "Routine postoperative care"
+          ]
+        },
+        {
+          "id": "p_195",
+          "type": "paragraph",
+          "text": "However, packages differ. Before confirming treatment, international patients should request a **written cost estimate** specifying what is included and excluded."
+        },
+        {
+          "id": "h_196",
+          "type": "heading",
+          "level": 2,
+          "text": "Knee Replacement Surgery in India for International Patients"
+        },
+        {
+          "id": "p_197",
+          "type": "paragraph",
+          "text": "India is a significant destination for patients seeking orthopaedic treatment. For international patients, the medical journey involves more than surgery."
+        },
+        {
+          "id": "h_198",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 1: Medical record review"
+        },
+        {
+          "id": "p_199",
+          "type": "paragraph",
+          "text": "Send previous medical reports and imaging for preliminary review."
+        },
+        {
+          "id": "h_200",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 2: Orthopaedic opinion"
+        },
+        {
+          "id": "p_201",
+          "type": "paragraph",
+          "text": "The hospital or surgeon evaluates whether knee replacement is appropriate."
+        },
+        {
+          "id": "h_202",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 3: Cost estimate"
+        },
+        {
+          "id": "p_203",
+          "type": "paragraph",
+          "text": "The hospital provides a treatment estimate based on the expected procedure."
+        },
+        {
+          "id": "h_204",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 4: Visa documentation"
+        },
+        {
+          "id": "p_205",
+          "type": "paragraph",
+          "text": "Where required, hospitals and medical facilitators can assist with medical-visa documentation."
+        },
+        {
+          "id": "h_206",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 5: Travel planning"
+        },
+        {
+          "id": "p_207",
+          "type": "paragraph",
+          "text": "Arrange flights, airport transfer, hotel or serviced apartment, and hospital admission."
+        },
+        {
+          "id": "h_208",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 6: In-person assessment"
+        },
+        {
+          "id": "p_209",
+          "type": "paragraph",
+          "text": "The patient undergoes clinical examination and any additional tests required."
+        },
+        {
+          "id": "h_210",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 7: Surgery"
+        },
+        {
+          "id": "p_211",
+          "type": "paragraph",
+          "text": "The patient undergoes the planned knee replacement."
+        },
+        {
+          "id": "h_212",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 8: Rehabilitation"
+        },
+        {
+          "id": "p_213",
+          "type": "paragraph",
+          "text": "Physiotherapy begins during the hospital stay and continues after discharge."
+        },
+        {
+          "id": "h_214",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 9: Follow-up"
+        },
+        {
+          "id": "p_215",
+          "type": "paragraph",
+          "text": "The treating team determines when the patient is medically fit to travel and how follow-up should be managed after returning home."
+        },
+        {
+          "id": "btn_216",
+          "type": "button",
+          "label": "Plan an international knee replacement journey",
+          "href": "/consult?treatment=Knee%20Replacement%20Surgery"
+        },
+        {
+          "id": "h_217",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Should an International Patient Stay in India?"
+        },
+        {
+          "id": "p_218",
+          "type": "paragraph",
+          "text": "The exact duration depends on the patient's condition, procedure and recovery. For an uncomplicated primary knee replacement, international patients may need to remain in India for several weeks when the travel period, postoperative monitoring and rehabilitation are considered."
+        },
+        {
+          "id": "p_219",
+          "type": "paragraph",
+          "text": "A practical medical-tourism plan can include: **pre-arrival evaluation → surgery → hospital stay → initial rehabilitation → follow-up → travel clearance**."
+        },
+        {
+          "id": "p_220",
+          "type": "paragraph",
+          "text": "Patients should not book a return flight immediately after surgery without discussing travel timing with their treating team."
+        },
+        {
+          "id": "h_221",
+          "type": "heading",
+          "level": 2,
+          "text": "Choosing a Hospital for Knee Replacement in India"
+        },
+        {
+          "id": "p_222",
+          "type": "paragraph",
+          "text": "Patients should evaluate hospitals using clinical criteria rather than marketing claims alone."
+        },
+        {
+          "id": "ul_223",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Orthopaedic expertise — does the hospital have dedicated joint-replacement surgeons?",
+            "Surgical volume — how frequently does the team perform the relevant procedure?",
+            "Implant availability — which implant systems are available?",
+            "Infection-control practices — what protocols are followed for preventing and managing infection?",
+            "Anaesthesia support — is there appropriate perioperative support for older patients and patients with medical conditions?",
+            "Physiotherapy — is there an established rehabilitation programme?",
+            "ICU and emergency support — particularly important for elderly patients and those with cardiovascular or other medical conditions",
+            "Accreditation — NABH accreditation evaluates areas including patient care, infection control, patient safety, governance, facilities and quality improvement"
+          ]
+        },
+        {
+          "id": "h_224",
+          "type": "heading",
+          "level": 2,
+          "text": "Hospitals in India Offering Knee Replacement Surgery"
+        },
+        {
+          "id": "p_225",
+          "type": "paragraph",
+          "text": "Major Indian hospital networks offer knee replacement and joint-replacement services. Examples include Fortis Healthcare, Apollo Hospitals, Medanta – The Medicity, Max Healthcare, Manipal Hospitals and other accredited multispecialty and orthopaedic hospitals across India."
+        },
+        {
+          "id": "p_226",
+          "type": "paragraph",
+          "text": "These should **not be treated as a ranking**. The appropriate hospital depends on the patient's location, surgeon expertise, implant requirements, medical history, budget and rehabilitation needs. Filter [orthopaedic hospitals](/hospitals/India/Orthopedics) by city rather than by brochure claims."
+        },
+        {
+          "id": "h_227",
+          "type": "heading",
+          "level": 2,
+          "text": "How to Choose a Knee Replacement Surgeon in India"
+        },
+        {
+          "id": "p_228",
+          "type": "paragraph",
+          "text": "The surgeon is at least as important as the hospital. Patients should look for an [orthopaedic surgeon](/doctors/India/Orthopedics) with relevant experience in total knee replacement, partial knee replacement, revision knee replacement if required, complex deformity correction, robotic or computer-assisted replacement where appropriate, and joint-replacement rehabilitation."
+        },
+        {
+          "id": "p_229",
+          "type": "paragraph",
+          "text": "Questions to ask the surgeon:"
+        },
+        {
+          "id": "ol_230",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Do I actually need knee replacement?",
+            "Could partial replacement be appropriate?",
+            "What does my X-ray show?",
+            "Which compartments of my knee are damaged?",
+            "What implant do you recommend?",
+            "Why is this implant appropriate for me?",
+            "Will you use robotic assistance?",
+            "If yes, what advantage does it provide in my case?",
+            "How long will I stay in hospital?",
+            "When can I walk?",
+            "When can I fly back home?",
+            "What complications should I specifically be concerned about?",
+            "What rehabilitation will I need?",
+            "What happens if the knee remains stiff or painful?",
+            "What is the expected long-term follow-up plan?"
+          ]
+        },
+        {
+          "id": "btn_231",
+          "type": "button",
+          "label": "Find a knee replacement surgeon in India",
+          "href": "/consult?treatment=Total%20Knee%20Replacement"
+        },
+        {
+          "id": "h_232",
+          "type": "heading",
+          "level": 2,
+          "text": "Knee Replacement in India: What International Patients Should Bring"
+        },
+        {
+          "id": "p_233",
+          "type": "paragraph",
+          "text": "Bring both physical and digital copies of:"
+        },
+        {
+          "id": "ul_234",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Passport",
+            "Medical reports",
+            "X-rays",
+            "MRI/CT scans",
+            "Previous surgical reports",
+            "Current medication list",
+            "Allergy information",
+            "Blood test reports",
+            "Cardiac reports",
+            "Previous physiotherapy records",
+            "Insurance documents, if applicable"
+          ]
+        },
+        {
+          "id": "p_235",
+          "type": "paragraph",
+          "text": "If possible, provide the hospital with imaging files before travelling. This allows the orthopaedic team to review the case before the patient's arrival."
+        },
+        {
+          "id": "h_236",
+          "type": "heading",
+          "level": 2,
+          "text": "Knee Replacement and Diabetes"
+        },
+        {
+          "id": "p_237",
+          "type": "paragraph",
+          "text": "Diabetes does not automatically mean that knee replacement cannot be performed. However, poorly controlled diabetes can increase the risk of complications, including infection and impaired wound healing."
+        },
+        {
+          "id": "p_238",
+          "type": "paragraph",
+          "text": "The surgical team may therefore ask for blood glucose testing, HbA1c, medical optimisation and medication review. The exact requirements depend on the patient."
+        },
+        {
+          "id": "h_239",
+          "type": "heading",
+          "level": 2,
+          "text": "Knee Replacement and Obesity"
+        },
+        {
+          "id": "p_240",
+          "type": "paragraph",
+          "text": "Body weight can influence knee arthritis as well as surgical risk. WHO identifies overweight and obesity as risk factors associated with knee osteoarthritis."
+        },
+        {
+          "id": "p_241",
+          "type": "paragraph",
+          "text": "A patient with obesity may still be considered for knee replacement, but the surgical team may recommend weight optimisation where clinically appropriate. The decision should be individualised."
+        },
+        {
+          "id": "h_242",
+          "type": "heading",
+          "level": 2,
+          "text": "Is Knee Replacement Painful?"
+        },
+        {
+          "id": "p_243",
+          "type": "paragraph",
+          "text": "There is postoperative pain because knee replacement is major surgery. Modern pain-management strategies may include regional anaesthesia, local anaesthetic techniques, oral pain medicines, intravenous medication when required, ice and early mobilisation."
+        },
+        {
+          "id": "p_244",
+          "type": "paragraph",
+          "text": "Pain generally decreases as healing progresses. Patients should expect discomfort in the first days and weeks rather than expecting the knee to feel normal immediately after surgery."
+        },
+        {
+          "id": "h_245",
+          "type": "heading",
+          "level": 2,
+          "text": "Can You Walk After Knee Replacement?"
+        },
+        {
+          "id": "p_246",
+          "type": "paragraph",
+          "text": "Many patients begin walking with assistance soon after surgery. A physiotherapist may help the patient stand, transfer from bed to chair, walk with a walker and use stairs where appropriate."
+        },
+        {
+          "id": "p_247",
+          "type": "paragraph",
+          "text": "The exact timing depends on the patient's medical condition and surgical protocol. Early movement is also an important component of postoperative recovery and blood-clot prevention."
+        },
+        {
+          "id": "h_248",
+          "type": "heading",
+          "level": 2,
+          "text": "Can You Bend Your Knee After Replacement?"
+        },
+        {
+          "id": "p_249",
+          "type": "paragraph",
+          "text": "Yes. The goal of knee replacement rehabilitation is to achieve useful knee movement for daily activities. The amount of movement varies among patients."
+        },
+        {
+          "id": "p_250",
+          "type": "paragraph",
+          "text": "Factors influencing postoperative movement include preoperative stiffness, surgical technique, swelling, rehabilitation, muscle strength and individual healing. A patient should not judge the final result during the first few weeks."
+        },
+        {
+          "id": "h_251",
+          "type": "heading",
+          "level": 2,
+          "text": "Can You Squat or Sit Cross-Legged After Knee Replacement?"
+        },
+        {
+          "id": "p_252",
+          "type": "paragraph",
+          "text": "This depends on the individual patient's movement, implant, surgical approach, cultural activities and surgeon's advice. Deep squatting and prolonged kneeling may be difficult after knee replacement."
+        },
+        {
+          "id": "p_253",
+          "type": "paragraph",
+          "text": "Patients from South Asia and Africa should specifically discuss activities such as floor sitting, squatting, cross-legged sitting, prayer positions, low chairs and frequent stair climbing with their surgeon and physiotherapist before surgery. Postoperative goals should reflect the patient's actual lifestyle rather than only Western-style activities."
+        },
+        {
+          "id": "h_254",
+          "type": "heading",
+          "level": 2,
+          "text": "Knee Replacement for Patients from Africa, the Middle East and Other Countries"
+        },
+        {
+          "id": "p_255",
+          "type": "paragraph",
+          "text": "For international patients, the treatment plan should consider more than the surgical procedure. Patients may have different expectations regarding floor sitting, squatting, religious practices, walking distances, family responsibilities, return-to-work requirements, travel time and access to physiotherapy after returning home."
+        },
+        {
+          "id": "p_256",
+          "type": "paragraph",
+          "text": "A medical-tourism provider should communicate these functional goals to the hospital before surgery. This approach can make the journey more predictable for patients travelling from countries such as Tanzania, Kenya, Ethiopia, Uganda, Zambia, Cameroon, South Sudan, Nigeria, Ghana, Iraq, Oman, Saudi Arabia and other African and Middle Eastern countries."
+        },
+        {
+          "id": "h_257",
+          "type": "heading",
+          "level": 2,
+          "text": "What Are Alternatives to Knee Replacement?"
+        },
+        {
+          "id": "p_258",
+          "type": "paragraph",
+          "text": "Knee replacement is not the first treatment for every person with knee pain. Depending on the diagnosis, alternatives may include weight management, exercise therapy, physiotherapy, strengthening exercises, activity modification, walking aids, bracing, medicines, selected injections and other joint-preserving procedures in appropriately selected patients."
+        },
+        {
+          "id": "p_259",
+          "type": "paragraph",
+          "text": "When the problem is a sports injury rather than end-stage arthritis, [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) (**$2,500–$6,500**) or [meniscus repair](/costs/India/Orthopedics/Meniscus-Repair) (**$1,800–$4,500**) may be the honest sheet — not arthroplasty."
+        },
+        {
+          "id": "p_260",
+          "type": "paragraph",
+          "text": "ICMR's Standard Treatment Workflow for knee osteoarthritis recommends conservative measures such as exercise, weight loss and appropriate medications and emphasises a high threshold for invasive procedures. For severe arthritis with substantial functional impairment, however, joint replacement may eventually become appropriate."
+        },
+        {
+          "id": "h_261",
+          "type": "heading",
+          "level": 2,
+          "text": "When Knee Replacement May Not Be Appropriate Immediately"
+        },
+        {
+          "id": "p_262",
+          "type": "paragraph",
+          "text": "Surgery may need to be delayed or reconsidered in situations such as:"
+        },
+        {
+          "id": "ul_263",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Active infection",
+            "Uncontrolled medical illness",
+            "Certain serious cardiovascular problems",
+            "Severe uncontrolled diabetes",
+            "Poor skin condition around the knee",
+            "Significant untreated dental or other infection depending on clinical assessment",
+            "Inadequate medical optimisation"
+          ]
+        },
+        {
+          "id": "p_264",
+          "type": "paragraph",
+          "text": "ICMR's knee osteoarthritis workflow identifies active or recent knee sepsis and certain other conditions among contraindications or situations requiring particular caution. The treating surgeon and medical team make the final decision."
+        },
+        {
+          "id": "h_265",
+          "type": "heading",
+          "level": 2,
+          "text": "Knee Replacement Surgery: Advantages"
+        },
+        {
+          "id": "p_266",
+          "type": "paragraph",
+          "text": "For appropriately selected patients, knee replacement can provide significant pain reduction, improved walking ability, better knee function, improved ability to perform daily activities, correction of certain deformities and improved quality of life. WHO notes that joint replacement can reduce pain, restore movement and improve quality of life for people with severely affected joints."
+        },
+        {
+          "id": "h_267",
+          "type": "heading",
+          "level": 2,
+          "text": "Knee Replacement Surgery: Limitations"
+        },
+        {
+          "id": "p_268",
+          "type": "paragraph",
+          "text": "A knee replacement is not a return to the original biological knee. Patients should understand that:"
+        },
+        {
+          "id": "ul_269",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Some stiffness may remain",
+            "Kneeling may remain uncomfortable",
+            "High-impact activities may be discouraged",
+            "A clicking sensation can occur",
+            "Some numbness around the scar can occur",
+            "Recovery takes time",
+            "A future revision may sometimes be necessary"
+          ]
+        },
+        {
+          "id": "p_270",
+          "type": "paragraph",
+          "text": "Having realistic expectations is an important part of successful treatment."
+        },
+        {
+          "id": "h_271",
+          "type": "heading",
+          "level": 2,
+          "text": "Knee Replacement Surgery in India vs Treatment Abroad"
+        },
+        {
+          "id": "p_272",
+          "type": "paragraph",
+          "text": "One reason international patients consider India is the combination of established orthopaedic services, specialist availability and comparatively lower treatment costs in many cases. However, a cost comparison should include the **complete medical journey**, not simply the surgical package."
+        },
+        {
+          "id": "html_273",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Factor</th><th>What to compare</th></tr></thead><tbody><tr><td>Surgery</td><td>Type of knee replacement</td></tr><tr><td>Surgeon</td><td>Relevant experience</td></tr><tr><td>Implant</td><td>Brand, model and specifications</td></tr><tr><td>Hospital</td><td>Infrastructure and accreditation</td></tr><tr><td>Anaesthesia</td><td>Included or separate</td></tr><tr><td>Hospital stay</td><td>Number of nights included</td></tr><tr><td>Physiotherapy</td><td>Inpatient and outpatient</td></tr><tr><td>Complications</td><td>What is covered</td></tr><tr><td>Follow-up</td><td>Included or separate</td></tr><tr><td>Accommodation</td><td>Hotel or serviced apartment</td></tr><tr><td>Travel</td><td>Flights and transfers</td></tr><tr><td>Visa</td><td>Medical visa and attendant requirements</td></tr><tr><td>Aftercare</td><td>Support after returning home</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_274",
+          "type": "paragraph",
+          "text": "The cheapest surgical quote is not necessarily the lowest overall cost once travel, accommodation, rehabilitation and follow-up are included."
+        },
+        {
+          "id": "h_275",
+          "type": "heading",
+          "level": 2,
+          "text": "A Typical Medical Tourism Journey for Knee Replacement in India"
+        },
+        {
+          "id": "p_276",
+          "type": "paragraph",
+          "text": "**Before arrival:** medical records → orthopaedic review → treatment recommendation → cost estimate → visa documentation → travel."
+        },
+        {
+          "id": "p_277",
+          "type": "paragraph",
+          "text": "**During treatment:** hospital admission → investigations → anaesthesia assessment → knee replacement → early mobilisation → physiotherapy."
+        },
+        {
+          "id": "p_278",
+          "type": "paragraph",
+          "text": "**After surgery:** discharge → rehabilitation → follow-up → travel clearance → return home → remote follow-up."
+        },
+        {
+          "id": "h_279",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_280",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does knee replacement cost in India?"
+        },
+        {
+          "id": "p_281",
+          "type": "paragraph",
+          "text": "GAF planning ranges for one knee are approximately $5,500–$12,000 for total knee replacement, $4,500–$10,000 for partial replacement, $7,000–$15,000 for robotic-assisted replacement and $9,000–$18,000 for revision. The actual quotation depends on the hospital, surgeon, implant, city, room category, surgical technique and medical complexity."
+        },
+        {
+          "id": "h_282",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the cost of bilateral knee replacement in India?"
+        },
+        {
+          "id": "p_283",
+          "type": "paragraph",
+          "text": "Both-knee replacement is quoted after case review. Planning starts from the total-knee sheet of $5,500–$12,000 per knee. Simultaneous versus staged surgery changes anaesthesia, stay and implant counts, so two knees are not automatically double a single-knee package."
+        },
+        {
+          "id": "h_284",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does knee replacement surgery take?"
+        },
+        {
+          "id": "p_285",
+          "type": "paragraph",
+          "text": "The operation commonly takes around 1–2 hours, although the overall hospital process takes longer."
+        },
+        {
+          "id": "h_286",
+          "type": "heading",
+          "level": 3,
+          "text": "How long do I stay in hospital after knee replacement?"
+        },
+        {
+          "id": "p_287",
+          "type": "paragraph",
+          "text": "GAF planning notes typically 4–7 nights after total knee replacement, 3–5 nights after partial replacement and 5–10 nights after revision. Some enhanced-recovery protocols discharge sooner. The treating team decides."
+        },
+        {
+          "id": "h_288",
+          "type": "heading",
+          "level": 3,
+          "text": "When can I walk after knee replacement?"
+        },
+        {
+          "id": "p_289",
+          "type": "paragraph",
+          "text": "Many patients begin assisted walking soon after surgery under physiotherapy supervision."
+        },
+        {
+          "id": "h_290",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does recovery take?"
+        },
+        {
+          "id": "p_291",
+          "type": "paragraph",
+          "text": "Initial functional recovery occurs over several weeks, but full recovery can take several months or longer."
+        },
+        {
+          "id": "h_292",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does a knee replacement last?"
+        },
+        {
+          "id": "p_293",
+          "type": "paragraph",
+          "text": "Many modern knee replacements can last around 15–25 years or longer, depending on patient and implant factors. NHS guidance states that knee replacements can last around 25 years. Individual implant survival varies."
+        },
+        {
+          "id": "h_294",
+          "type": "heading",
+          "level": 3,
+          "text": "Is robotic knee replacement better?"
+        },
+        {
+          "id": "p_295",
+          "type": "paragraph",
+          "text": "Robotic assistance can help with planning and surgical execution, but it is not automatically better for every patient. The appropriate technology depends on the individual's condition and the surgeon's assessment. GAF planning for robotic-assisted knee replacement is $7,000–$15,000."
+        },
+        {
+          "id": "h_296",
+          "type": "heading",
+          "level": 3,
+          "text": "Is knee replacement safe for elderly patients?"
+        },
+        {
+          "id": "p_297",
+          "type": "paragraph",
+          "text": "Age alone does not determine suitability. Overall health, heart and lung function, medications, mobility, frailty and other medical conditions must be assessed."
+        },
+        {
+          "id": "h_298",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a diabetic patient undergo knee replacement?"
+        },
+        {
+          "id": "p_299",
+          "type": "paragraph",
+          "text": "Yes, many diabetic patients undergo knee replacement, but blood sugar should be appropriately managed and the patient's overall medical condition evaluated."
+        },
+        {
+          "id": "h_300",
+          "type": "heading",
+          "level": 3,
+          "text": "Can obese patients undergo knee replacement?"
+        },
+        {
+          "id": "p_301",
+          "type": "paragraph",
+          "text": "Yes, but obesity can influence surgical risk and recovery. Weight optimisation may be recommended depending on the individual case."
+        },
+        {
+          "id": "h_302",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I travel to India alone for knee replacement?"
+        },
+        {
+          "id": "p_303",
+          "type": "paragraph",
+          "text": "It is generally preferable for international patients to have an attendant, especially during the early recovery period."
+        },
+        {
+          "id": "h_304",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I fly after knee replacement?"
+        },
+        {
+          "id": "p_305",
+          "type": "paragraph",
+          "text": "Travel timing should be decided by the treating medical team. Long-haul travel soon after major surgery requires particular consideration because of blood-clot risk. Sudden chest pain, breathlessness or a swollen painful calf after travel is an emergency-department problem, not a WhatsApp question."
+        },
+        {
+          "id": "h_306",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I have both knees replaced at the same time?"
+        },
+        {
+          "id": "p_307",
+          "type": "paragraph",
+          "text": "Some patients can undergo simultaneous bilateral knee replacement, while others may be better suited to staged surgery. The decision depends on overall health and surgical assessment."
+        },
+        {
+          "id": "h_308",
+          "type": "heading",
+          "level": 3,
+          "text": "Is partial knee replacement better than total knee replacement?"
+        },
+        {
+          "id": "p_309",
+          "type": "paragraph",
+          "text": "Neither is universally better. Partial replacement may be appropriate for selected patients with disease limited to a specific compartment, while total replacement is used when the damage is more extensive."
+        },
+        {
+          "id": "h_310",
+          "type": "heading",
+          "level": 3,
+          "text": "Is physiotherapy necessary after knee replacement?"
+        },
+        {
+          "id": "p_311",
+          "type": "paragraph",
+          "text": "Yes. Rehabilitation is an important part of achieving strength, movement and functional recovery."
+        },
+        {
+          "id": "h_312",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I return to normal life after knee replacement?"
+        },
+        {
+          "id": "p_313",
+          "type": "paragraph",
+          "text": "Many patients return to walking and everyday activities after recovery. However, expectations should be realistic, and high-impact activities may not be advisable."
+        },
+        {
+          "id": "h_314",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Choose GAF Healthcare for Knee Replacement in India?"
+        },
+        {
+          "id": "p_315",
+          "type": "paragraph",
+          "text": "For international patients, arranging surgery involves much more than finding a hospital. GAF Healthcare can assist international patients with the broader treatment journey, including hospital coordination, orthopaedic consultation, medical record sharing, treatment-cost estimates, appointment scheduling, medical visa documentation support, airport transfer coordination, accommodation assistance, hospital admission coordination, interpreter support where required, local assistance during treatment, discharge coordination and follow-up coordination."
+        },
+        {
+          "id": "p_316",
+          "type": "paragraph",
+          "text": "The medical decision remains between the patient and treating medical team. GAF Healthcare's role is to help make the international treatment journey more organised and accessible."
+        },
+        {
+          "id": "h_317",
+          "type": "heading",
+          "level": 2,
+          "text": "What Information Do We Need for a Knee Replacement Opinion?"
+        },
+        {
+          "id": "p_318",
+          "type": "paragraph",
+          "text": "To request an initial review, patients can provide:"
+        },
+        {
+          "id": "ol_319",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Full name",
+            "Age",
+            "Country of residence",
+            "Main knee symptoms",
+            "Duration of symptoms",
+            "Previous treatments",
+            "Previous knee surgeries",
+            "X-ray images",
+            "MRI/CT if available",
+            "Medical history",
+            "Current medications",
+            "Diabetes or hypertension history",
+            "Previous cardiac problems",
+            "Preferred travel timeline"
+          ]
+        },
+        {
+          "id": "p_320",
+          "type": "paragraph",
+          "text": "The more complete the information, the easier it is for the hospital to provide a meaningful preliminary opinion."
+        },
+        {
+          "id": "h_321",
+          "type": "heading",
+          "level": 2,
+          "text": "Key Takeaways"
+        },
+        {
+          "id": "ul_322",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Total knee replacement is the most common form of knee arthroplasty.",
+            "Partial knee replacement may be suitable for carefully selected patients.",
+            "Revision surgery is more complex and is performed when an existing replacement develops a significant problem.",
+            "Robotic assistance is a surgical technology, not a replacement for surgeon expertise.",
+            "The implant should be selected according to the patient's anatomy and clinical requirements.",
+            "Physiotherapy is an essential part of recovery.",
+            "Recovery generally takes weeks to months rather than days.",
+            "Knee replacements can provide long-term function, but no implant should be presented as guaranteed to last forever.",
+            "GAF planning for total knee replacement in India is $5,500–$12,000 for one knee; hospital quotations vary.",
+            "International patients should consider the entire treatment journey — not just the surgical price.",
+            "Hospital accreditation, infection-control systems, surgeon experience, implant choice and rehabilitation should all be considered."
+          ]
+        },
+        {
+          "id": "h_323",
+          "type": "heading",
+          "level": 2,
+          "text": "Request a Knee Replacement Treatment Plan in India"
+        },
+        {
+          "id": "p_324",
+          "type": "paragraph",
+          "text": "If you are considering knee replacement surgery in India, share your medical reports and recent knee X-rays with GAF Healthcare. Our team can coordinate with appropriate Indian hospitals and orthopaedic specialists to help you understand whether knee replacement may be appropriate, which type may be considered, estimated treatment cost, hospital options, surgeon consultation, expected hospital stay, rehabilitation requirements, medical visa requirements, and travel and accommodation arrangements."
+        },
+        {
+          "id": "p_325",
+          "type": "paragraph",
+          "text": "**A final diagnosis, surgical recommendation and treatment plan should always be made by a qualified orthopaedic surgeon after reviewing the patient's medical history and examining the knee.**"
+        },
+        {
+          "id": "btn_326",
+          "type": "button",
+          "label": "Request a knee replacement treatment plan",
+          "href": "/consult?treatment=Knee%20Replacement%20Surgery"
+        },
+        {
+          "id": "p_327",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with reports and a preferred travel month](https://wa.me/919044346292?text=I%20would%20like%20a%20knee%20replacement%20treatment%20plan%20in%20India.%20I%20can%20share%20X-rays%2C%20medical%20history%20and%20a%20preferred%20travel%20month.)"
+        },
+        {
+          "id": "h_328",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Orthopaedic Resources"
+        },
+        {
+          "id": "p_329",
+          "type": "paragraph",
+          "text": "Use the published cost sheets rather than unpublished cluster blogs: [total knee replacement](/costs/India/Orthopedics/Total-Knee-Replacement), [robotic knee replacement](/costs/India/Orthopedics/Robotic-Knee-Replacement), [partial knee replacement](/costs/India/Orthopedics/Partial-Knee-Replacement), [revision knee replacement](/costs/India/Orthopedics/Revision-Knee-Replacement), neighbouring [total hip replacement](/costs/India/Orthopedics/Total-Hip-Replacement), [orthopaedic surgeons](/doctors/India/Orthopedics) and [orthopaedic hospitals](/hospitals/India/Orthopedics)."
+        },
+        {
+          "id": "h_330",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_331",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates international patients who need a total, partial, robotic-assisted or revision knee replacement plan in India. Share standing X-rays, symptom duration, previous treatments, medicines, diabetes or cardiac history and whether one or both knees are involved. A coordinator can introduce an [orthopaedic surgeon](/doctors/India/Orthopedics) in [Delhi NCR](/doctors/India/Delhi-NCR/Orthopedics/Total-Knee-Replacement) or [Mumbai](/doctors/India/Mumbai/Orthopedics/Total-Knee-Replacement), then help collect an itemised quotation covering the implant, stay, physiotherapy and planned duration."
+        },
+        {
+          "id": "btn_332",
+          "type": "button",
+          "label": "Share records for a surgery review",
+          "href": "/consult?treatment=Knee%20Replacement%20Surgery"
+        },
+        {
+          "id": "p_333",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with X-rays and both-knee questions](https://wa.me/919044346292?text=Please%20review%20my%20knee%20X-rays%20for%20a%20second%20opinion%20on%20total%2C%20partial%20or%20robotic%20knee%20replacement%20in%20India.)"
+        },
+        {
+          "id": "h_334",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_335",
+          "type": "paragraph",
+          "text": "This article is intended for general educational purposes and should not replace consultation with a qualified orthopaedic surgeon. Knee replacement is highly individualised. The choice of operation, implant, robotic assistance and duration of stay depends on imaging, ligament stability, deformity, previous treatment, overall health and other clinical factors. Patients should not start, stop or change treatment without discussing it with their treating doctor. Emergency symptoms belong in a local emergency department."
+        },
+        {
+          "id": "h_336",
+          "type": "heading",
+          "level": 2,
+          "text": "Top 10 Sources"
+        },
+        {
+          "id": "p_337",
+          "type": "paragraph",
+          "text": "1. [World Health Organization — Osteoarthritis](https://www.who.int/news-room/fact-sheets/detail/osteoarthritis) — global data, risk factors, symptoms and treatment principles for osteoarthritis."
+        },
+        {
+          "id": "p_338",
+          "type": "paragraph",
+          "text": "2. [Indian Council of Medical Research — Standard Treatment Workflow: Osteoarthritis of Knee Joint](https://stw.icmr.org.in) — Indian clinical guidance covering diagnosis, conservative management and indications relevant to knee osteoarthritis."
+        },
+        {
+          "id": "p_339",
+          "type": "paragraph",
+          "text": "3. [American College of Rheumatology / AAHKS — Optimal Timing of Elective Hip or Knee Arthroplasty](https://rheumatology.org/hip-knee-guideline) — evidence-based guidance concerning timing of joint replacement in appropriate patients."
+        },
+        {
+          "id": "p_340",
+          "type": "paragraph",
+          "text": "4. [NHS — Knee replacement](https://www.nhs.uk/tests-and-treatments/knee-replacement/) — patient-focused information about knee replacement, indications and expected outcomes."
+        },
+        {
+          "id": "p_341",
+          "type": "paragraph",
+          "text": "5. [NHS — How a knee replacement is done](https://www.nhs.uk/tests-and-treatments/knee-replacement/how-it-is-performed/) — information about total and partial knee replacement and the surgical process."
+        },
+        {
+          "id": "p_342",
+          "type": "paragraph",
+          "text": "6. [NHS — Recovery after a knee replacement](https://www.nhs.uk/tests-and-treatments/knee-replacement/recovery/) — information about hospital recovery, walking, physiotherapy and return to activities."
+        },
+        {
+          "id": "p_343",
+          "type": "paragraph",
+          "text": "7. [NHS — Risks of a knee replacement](https://www.nhs.uk/tests-and-treatments/knee-replacement/risks/) — information about infection, DVT, persistent pain, stiffness and other potential complications."
+        },
+        {
+          "id": "p_344",
+          "type": "paragraph",
+          "text": "8. [CDC — Surgical Site Infection Basics](https://www.cdc.gov/surgical-site-infections/about/index.html) — information about surgical-site infections and infection prevention."
+        },
+        {
+          "id": "p_345",
+          "type": "paragraph",
+          "text": "9. [NABH — Hospital Accreditation Programme](https://nabh.co/accreditation-standards/) — information about hospital quality, patient-safety and accreditation standards in India."
+        },
+        {
+          "id": "p_346",
+          "type": "paragraph",
+          "text": "10. [GAF Healthcare total knee replacement cost sheet](/costs/India/Orthopedics/Total-Knee-Replacement) — indicative USD planning ranges; costs vary by hospital, city and surgical plan."
+        },
+        {
+          "id": "p_347",
+          "type": "paragraph",
+          "text": "**Last reviewed against the cited sources: September 2026.**"
+        }
+      ]
+    },
     {
       "id": "art_colon_cancer_targeted_therapy_in_india",
       "slug": "colon-cancer-targeted-therapy-in-india",

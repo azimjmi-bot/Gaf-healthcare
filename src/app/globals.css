@@ -2616,6 +2616,39 @@ img.dhero__art {
   margin-top: 0.25rem;
 }
 
+.article-quick-answer .md-body {
+  margin-top: 0.7rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.article-quick-answer table {
+  display: table;
+  width: max(100%, 32rem);
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.article-quick-answer th,
+.article-quick-answer td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.65rem;
+  text-align: start;
+  vertical-align: top;
+}
+
+.article-quick-answer th {
+  background: color-mix(in oklab, var(--secondary) 70%, white);
+  font-weight: 700;
+}
+
+.article-quick-answer th:first-child,
+.article-quick-answer td:first-child {
+  font-weight: 650;
+  min-width: 9.5rem;
+}
+
 @media (max-width: 640px) {
   .article-body,
   .treatment-article .md-body {
