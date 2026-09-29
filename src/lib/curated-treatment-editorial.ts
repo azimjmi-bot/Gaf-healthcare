@@ -116,5 +116,6 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   if (/breast/i.test(text)) return "Breast";
   if (/prostate/i.test(text)) return "Prostate";
   if (/colon|colorectal/i.test(text)) return "Colon";
+  if (/pancreas|pancreatic/i.test(text)) return "Pancreas";
   return undefined;
 }
