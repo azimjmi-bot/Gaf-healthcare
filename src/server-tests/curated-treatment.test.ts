@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import {
   applyCuratedTreatmentPatch,
@@ -647,6 +648,88 @@ test("the published knee replacement page uses site USD ranges and GEO links", (
     english.includes("https://gaf.healthcare/treatments/knee-replacement-surgery-in-india"),
   );
   assert.equal(treatment.translations.ar, undefined);
+  assert.match(body, /\/treatments\/hip-replacement-surgery-in-india/);
+});
+
+test("the published hip replacement page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "hip-replacement-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$6,000–\$13,000/);
+  assert.match(body, /\$10,000–\$20,000/);
+  assert.match(body, /\$6,500–\$14,000/);
+  assert.match(body, /\$5,500–\$12,000/);
+  assert.match(body, /\$7,000–\$15,000/);
+  assert.match(body, /\$4,500–\$10,000/);
+  assert.match(body, /\$9,000–\$18,000/);
+  assert.match(body, /4–7 nights/);
+  assert.match(
+    body,
+    /article-quick-answer|Quick Answer: Hip Replacement Surgery in India/,
+  );
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Total-Hip-Replacement/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Revision-Hip-Replacement/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Hip-Resurfacing/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Total-Knee-Replacement/);
+  assert.match(body, /\/treatments\/knee-replacement-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/hip-oa-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hip-thr-implants\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hip-avn\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hip-physio\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Orthopedics/Total-Hip-Replacement",
+    "/doctors/India/Mumbai/Orthopedics/Total-Hip-Replacement",
+    "/doctors/India/Bengaluru/Orthopedics/Total-Hip-Replacement",
+    "/doctors/India/Chennai/Orthopedics/Total-Hip-Replacement",
+    "/doctors/India/Hyderabad/Orthopedics/Total-Hip-Replacement",
+    "/hospitals/India/Delhi-NCR/Orthopedics",
+    "/hospitals/India/Mumbai/Orthopedics",
+    "/hospitals/India/Bengaluru/Orthopedics",
+    "/costs/India/Delhi-NCR/Orthopedics/Total-Hip-Replacement",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Hip replacement surgery in India is a procedure that replaces damaged portions of the hip joint/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Hip",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/hip-replacement-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/hip-replacement-surgery/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/hip-replacement-surgery-in-india/);
 });
 
 test("Save recreates a missing Treatment instead of 404ing", () => {

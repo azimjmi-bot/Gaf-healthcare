@@ -91,7 +91,7 @@ const treatment = {
     "acl-reconstruction-anterior-cruciate-ligament",
     "meniscus-repair",
   ],
-  relatedTreatmentSlugs: [],
+  relatedTreatmentSlugs: ["hip-replacement-surgery-in-india"],
   status: "published" as const,
   featured: true,
   sortOrder: 9,
