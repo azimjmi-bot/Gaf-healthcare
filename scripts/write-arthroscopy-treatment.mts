@@ -90,7 +90,7 @@ const treatment = {
     "pcl-reconstruction-posterior-cruciate-ligament",
     "total-knee-replacement",
   ],
-  relatedTreatmentSlugs: [ACL, KNEE],
+  relatedTreatmentSlugs: [ACL, KNEE, "hip-arthroscopy-surgery-in-india"],
   status: "published" as const,
   featured: true,
   sortOrder: 12,
