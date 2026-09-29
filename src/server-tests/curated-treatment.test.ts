@@ -1270,6 +1270,111 @@ test("the published tendon repair page uses site USD ranges and GEO links", () =
   );
 });
 
+test("the published craniotomy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "craniotomy-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$6,000–\$15,000/);
+  assert.match(body, /\$7,000–\$16,000/);
+  assert.match(body, /\$6,500–\$15,000/);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$8,000–\$22,000/);
+  assert.match(body, /\$5,000–\$12,000/);
+  assert.match(body, /\$2,000–\$6,000/);
+  assert.match(body, /\$8,000–\$18,000/);
+  assert.match(body, /\$10,000–\$25,000/);
+  assert.match(body, /\$8,500–\$18,000/);
+  assert.match(body, /\$10,500–\$22,000/);
+  assert.match(body, /\$50,000–\$150,000/);
+  assert.match(body, /5–10 nights/);
+  assert.match(body, /5–12 nights/);
+  assert.match(body, /7–14 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Craniotomy Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Brain-Tumor-Surgery/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Glioma-Surgery/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Meningioma-Surgery/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Aneurysm-Clipping/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/AVM-Surgery/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/Gamma-Knife/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/craniotomy-bone-flap\.webp/);
+  assert.match(body, /\/uploads\/treatments\/craniotomy-meningioma\.webp/);
+  assert.match(body, /\/uploads\/treatments\/craniotomy-aneurysm\.webp/);
+  assert.match(body, /\/uploads\/treatments\/craniotomy-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Mumbai/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Bengaluru/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Chennai/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Hyderabad/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Delhi-NCR/Neurosurgery/Aneurysm-Clipping",
+    "/hospitals/India/Delhi-NCR/Neurosurgery",
+    "/hospitals/India/Mumbai/Neurosurgery",
+    "/hospitals/India/Bengaluru/Neurosurgery",
+    "/costs/India/Delhi-NCR/Neurosurgery/Brain-Tumor-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Craniotomy surgery in India is a major neurosurgical procedure/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Brain",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/craniotomy-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/craniotomy/);
+  assert.doesNotMatch(body, /\/treatments\/craniotomy-surgery\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/craniotomy-surgery-in-india/,
+  );
+  const breast = store.treatments.find(
+    (row) => row.slug === "breast-cancer-treatment-in-india",
+  );
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/craniotomy-surgery-in-india/,
+  );
+  const colon = store.treatments.find(
+    (row) => row.slug === "colon-cancer-treatment-in-india",
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/craniotomy-surgery-in-india/,
+  );
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";

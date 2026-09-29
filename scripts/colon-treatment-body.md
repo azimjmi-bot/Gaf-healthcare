@@ -402,7 +402,7 @@ A multidisciplinary team involving colorectal surgeons, hepatobiliary surgeons, 
 
 ## Colon Cancer With Lung Metastases
 
-The lungs can also be a site of metastatic spread. Selected patients with limited pulmonary metastases may be considered for surgical removal, ablation, systemic therapy, or stereotactic radiation in selected circumstances.
+The lungs can also be a site of metastatic spread. Selected patients with limited pulmonary metastases may be considered for surgical removal, ablation, systemic therapy, or stereotactic radiation in selected circumstances. Selected brain metastases that need an open neurosurgical corridor sit on [Craniotomy Surgery in India](/treatments/craniotomy-surgery-in-india).
 
 The treatment depends on the number and location of metastases and whether disease elsewhere is controlled.
 
