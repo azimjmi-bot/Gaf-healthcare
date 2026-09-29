@@ -352,6 +352,64 @@ test("the published Whipple surgery page uses site USD ranges and GEO links", ()
   assert.ok(english.includes("https://gaf.healthcare/treatments/whipple-surgery-in-india"));
 });
 
+test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$18,000–\$40,000/);
+  assert.match(body, /\$10,000–\$24,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /article-quick-answer|Quick Answer: What Is HIPEC Surgery/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /PRODIGE 7/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Cytoreductive-Surgery-with-HIPEC/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Cytoreductive-Surgery-with-HIPEC/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Cytoreductive-Surgery/);
+  assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Cytoreductive-Surgery-with-HIPEC/);
+  assert.match(body, /\/hospitals\/India\/Bengaluru\/Surgical-Oncology/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC",
+    "/doctors/India/Mumbai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC",
+    "/hospitals/India/Bengaluru/Surgical-Oncology",
+    "/costs/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC",
+    "/costs/India/Surgical-Oncology/Cytoreductive-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/pancreatic-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/stage-4-colon-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-chemotherapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/hipec-peritoneum-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hipec-cytoreduction\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hipec-heated-chemo\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hipec-clinic\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 1);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /HIPEC surgery is a two-part cancer treatment/i);
+  assert.equal(
+    treatmentBodyLocation(treatment.category, treatment.subspecialty, treatment.translations.en!.name),
+    "Peritoneum",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/hipec-surgery-in-india"));
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  assert.match(colon?.translations.en?.editorialBody ?? "", /\/treatments\/hipec-surgery-in-india/);
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";

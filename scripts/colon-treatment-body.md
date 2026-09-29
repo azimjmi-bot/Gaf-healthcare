@@ -412,7 +412,7 @@ Some colon cancers spread across the lining of the abdominal cavity. This is cal
 
 Selected patients may be evaluated for **cytoreductive surgery (CRS)** with or without **hyperthermic intraperitoneal chemotherapy (HIPEC)**. HIPEC involves circulating heated chemotherapy within the abdominal cavity during surgery.
 
-CRS and HIPEC are highly specialised procedures. They are not suitable for every patient with peritoneal metastases. Patient selection is critical. GAF planning ranges are **$10,000–$24,000** for [cytoreductive surgery](/costs/India/Surgical-Oncology/Cytoreductive-Surgery) and **$18,000–$40,000** for [CRS with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC).
+How CRS and HIPEC are planned is covered in [HIPEC Surgery in India](/treatments/hipec-surgery-in-india). CRS and HIPEC are highly specialised procedures. They are not suitable for every patient with peritoneal metastases. Patient selection is critical. GAF planning ranges are **$10,000–$24,000** for [cytoreductive surgery](/costs/India/Surgical-Oncology/Cytoreductive-Surgery) and **$18,000–$40,000** for [CRS with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC).
 
 [Ask about CRS and HIPEC](/consult?treatment=Cytoreductive%20Surgery%20with%20HIPEC)
 
