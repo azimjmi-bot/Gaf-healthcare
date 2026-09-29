@@ -127,5 +127,6 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   if (/limb lengthen|stature lengthen|distraction osteogenesis|leg.length discrepancy/i.test(text)) {
     return "Lower Limb";
   }
+  if (/tendon/i.test(text)) return "Tendon";
   return undefined;
 }

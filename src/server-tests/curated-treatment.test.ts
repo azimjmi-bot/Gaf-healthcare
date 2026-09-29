@@ -1175,6 +1175,101 @@ test("the published limb lengthening page uses site USD ranges and GEO links", (
   );
 });
 
+test("the published tendon repair page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "tendon-repair-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$1,500–\$5,000/);
+  assert.match(body, /\$2,000–\$6,000/);
+  assert.match(body, /\$2,800–\$7,000/);
+  assert.match(body, /\$3,500–\$10,000/);
+  assert.match(body, /\$8,000–\$22,000/);
+  assert.match(body, /outpatient or 1–2 nights/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Tendon Repair Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Tendon-Repair/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Achilles-Repair/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Rotator-Cuff-Repair/);
+  assert.match(body, /\/treatments\/shoulder-arthroscopy-surgery-in-india/);
+  assert.match(body, /\/treatments\/acl-surgery-in-india/);
+  assert.match(body, /\/treatments\/limb-lengthening-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/tendon-flexor-laceration\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tendon-achilles-rupture\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tendon-biceps-avulsion\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tendon-physio-splint\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Orthopedics/Tendon-Repair",
+    "/doctors/India/Mumbai/Orthopedics/Tendon-Repair",
+    "/doctors/India/Bengaluru/Orthopedics/Tendon-Repair",
+    "/doctors/India/Chennai/Orthopedics/Tendon-Repair",
+    "/doctors/India/Hyderabad/Orthopedics/Tendon-Repair",
+    "/doctors/India/Delhi-NCR/Orthopedics/Achilles-Repair",
+    "/hospitals/India/Delhi-NCR/Orthopedics",
+    "/hospitals/India/Mumbai/Orthopedics",
+    "/hospitals/India/Bengaluru/Orthopedics",
+    "/costs/India/Delhi-NCR/Orthopedics/Tendon-Repair",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Tendon repair surgery in India is a procedure used to reconnect/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Tendon",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/tendon-repair-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/tendon-repair/);
+  assert.doesNotMatch(body, /\/treatments\/tendon-repair-surgery\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/tendon-repair-surgery-in-india/,
+  );
+  const shoulder = store.treatments.find(
+    (row) => row.slug === "shoulder-arthroscopy-surgery-in-india",
+  );
+  assert.match(
+    shoulder?.translations.en?.editorialBody ?? "",
+    /\/treatments\/tendon-repair-surgery-in-india/,
+  );
+  const limb = store.treatments.find(
+    (row) => row.slug === "limb-lengthening-surgery-in-india",
+  );
+  assert.match(
+    limb?.translations.en?.editorialBody ?? "",
+    /\/treatments\/tendon-repair-surgery-in-india/,
+  );
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";
