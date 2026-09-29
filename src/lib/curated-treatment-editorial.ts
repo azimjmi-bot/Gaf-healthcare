@@ -128,7 +128,11 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
     return "Lower Limb";
   }
   if (/tendon/i.test(text)) return "Tendon";
-  if (/craniotomy|brain tumor|glioma|meningioma|aneurysm clipping/i.test(text)) {
+  if (
+    /craniotomy|brain tumor|glioma|meningioma|aneurysm clipping|endoscopic brain|neuroendoscop/i.test(
+      text,
+    )
+  ) {
     return "Brain";
   }
   if (/spine tumor|spinal tumor|spinal cord tumor/i.test(text)) {

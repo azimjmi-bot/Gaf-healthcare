@@ -149,7 +149,7 @@ The surgical approach is selected according to the location of the brain lesion 
 
 **Conventional craniotomy.** A conventional craniotomy uses a larger bone flap to provide adequate surgical exposure. It remains an important approach for many complex neurosurgical procedures.
 
-**Keyhole craniotomy.** A keyhole approach uses a relatively small opening to reach selected areas of the brain. It may be appropriate for carefully selected tumours and skull-base conditions. Smaller access does not necessarily mean that every patient is suitable for this technique. Selected endoscopic corridors sit on [endoscopic brain surgery](/costs/India/Neurosurgery/Endoscopic-Brain-Surgery) rather than on a generic keyhole brochure.
+**Keyhole craniotomy.** A keyhole approach uses a relatively small opening to reach selected areas of the brain. It may be appropriate for carefully selected tumours and skull-base conditions. Smaller access does not necessarily mean that every patient is suitable for this technique. Selected endoscopic corridors sit on [endoscopic brain surgery](/costs/India/Neurosurgery/Endoscopic-Brain-Surgery) rather than on a generic keyhole brochure. See [Endoscopic Brain Surgery in India](/treatments/endoscopic-brain-surgery-in-india).
 
 **Stereotactic or image-guided craniotomy.** Image guidance can combine preoperative imaging with computer-assisted navigation. This helps the surgical team plan and navigate toward the target while identifying important surrounding structures. A tissue sample without a larger opening may sit on [stereotactic brain biopsy](/costs/India/Neurosurgery/Stereotactic-Brain-Biopsy).
 
