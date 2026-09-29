@@ -354,7 +354,7 @@ The major pancreatic cancer operations include:
 
 ## Whipple Procedure for Pancreatic Cancer
 
-The Whipple procedure, or pancreaticoduodenectomy, is commonly used for tumors located in the head of the pancreas.
+The [Whipple procedure](/treatments/whipple-surgery-in-india), or pancreaticoduodenectomy, is commonly used for tumors located in the head of the pancreas. How the operation, recovery and quotation are planned is covered in [Whipple Surgery in India](/treatments/whipple-surgery-in-india).
 
 Depending on the surgical approach and tumor characteristics, the operation can involve removal of:
 

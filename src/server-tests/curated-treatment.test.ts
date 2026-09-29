@@ -263,6 +263,7 @@ test("the published pancreatic cancer page uses site USD ranges and GEO links", 
   assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
   assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
   assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/whipple-surgery-in-india/);
   assert.match(body, /\/blogs\/colon-cancer-immunotherapy-in-india/);
   assert.match(body, /\/uploads\/treatments\/pancreas-anatomy-body\.webp/);
   assert.match(body, /\/uploads\/treatments\/pancreas-resectability-body\.webp/);
@@ -292,6 +293,63 @@ test("the published pancreatic cancer page uses site USD ranges and GEO links", 
     colon?.translations.en?.editorialBody ?? "",
     /\/treatments\/pancreatic-cancer-treatment-in-india/,
   );
+});
+
+test("the published Whipple surgery page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "whipple-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$14,000–\$32,000/);
+  assert.match(body, /\$9,000–\$22,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /article-quick-answer|Quick Answer: Whipple Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Whipple-Procedure/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Whipple-Procedure/);
+  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Whipple-Procedure-\(Pancreaticoduodenectomy\)/);
+  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Distal-Pancreatectomy/);
+  assert.match(body, /\/costs\/India\/Gastroenterology\/Endoscopic-Ultrasound-\(EUS\)/);
+  assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Whipple-Procedure/);
+  assert.match(body, /\/hospitals\/India\/Bengaluru\/Surgical-Oncology/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Surgical-Oncology/Whipple-Procedure",
+    "/doctors/India/Mumbai/Surgical-Oncology/Whipple-Procedure",
+    "/hospitals/India/Bengaluru/Surgical-Oncology",
+    "/costs/India/Delhi-NCR/Surgical-Oncology/Whipple-Procedure",
+    "/costs/India/Surgical-Gastroenterology/Whipple-Procedure-(Pancreaticoduodenectomy)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.match(body, /\/treatments\/pancreatic-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-immunotherapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/whipple-anatomy-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/whipple-resection-organs\.webp/);
+  assert.match(body, /\/uploads\/treatments\/whipple-reconstruction\.webp/);
+  assert.match(body, /\/uploads\/treatments\/whipple-clinic\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.equal(qa.quickAnswer?.items.length, 4);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is Whipple surgery/i);
+  assert.match(qa.quickAnswer?.items[3]?.answer ?? "", /\$14,000–\$32,000/);
+  assert.equal(
+    treatmentBodyLocation(treatment.category, treatment.subspecialty, treatment.translations.en!.name),
+    "Pancreas",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/whipple-surgery-in-india"));
 });
 
 test("Save recreates a missing Treatment instead of 404ing", () => {
