@@ -90,7 +90,7 @@ const treatment = {
     "partial-knee-replacement",
     "revision-knee-replacement",
   ],
-  relatedTreatmentSlugs: [KNEE],
+  relatedTreatmentSlugs: [KNEE, "acl-surgery-in-india"],
   status: "published" as const,
   featured: true,
   sortOrder: 10,
