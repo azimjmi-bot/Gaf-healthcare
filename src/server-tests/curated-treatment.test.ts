@@ -491,6 +491,90 @@ test("the published cervical cancer page uses site USD ranges and GEO links", ()
   );
 });
 
+test("the published ovarian cancer page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "ovarian-cancer-treatment-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$18,000–\$40,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /\$8,000–\$30,000/);
+  assert.match(body, /\$2,000–\$7,000/);
+  assert.match(
+    body,
+    /article-quick-answer|Quick Answer: Ovarian Cancer Treatment in India/,
+  );
+  assert.match(body, /local emergency department/);
+  assert.match(body, /OVHIPEC-1/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Ovarian-Cancer-Cytoreductive-Surgery/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Ovarian-Cancer-Cytoreductive-Surgery/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Cytoreductive-Surgery-with-HIPEC/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/PIPAC/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Precision-Oncology/);
+  assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Ovarian-Cancer-Cytoreductive-Surgery/);
+  assert.match(body, /\/hospitals\/India\/Bengaluru\/Gynecology/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Surgical-Oncology/Ovarian-Cancer-Cytoreductive-Surgery",
+    "/doctors/India/Mumbai/Surgical-Oncology/Ovarian-Cancer-Cytoreductive-Surgery",
+    "/hospitals/India/Bengaluru/Gynecology",
+    "/costs/India/Delhi-NCR/Surgical-Oncology/Ovarian-Cancer-Cytoreductive-Surgery",
+    "/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC",
+    "/costs/India/Medical-Oncology/Precision-Oncology",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.match(body, /\/treatments\/cervical-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/hipec-surgery-in-india/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/ovarian-anatomy-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ovarian-peritoneal-spread\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ovarian-cytoreduction\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ovarian-clinic\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 1);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Ovarian cancer treatment in India typically involves surgery and chemotherapy/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Ovary",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/ovarian-cancer-treatment-in-india"),
+  );
+  const cervical = store.treatments.find((row) => row.slug === "cervical-cancer-treatment-in-india");
+  assert.match(
+    cervical?.translations.en?.editorialBody ?? "",
+    /\/treatments\/ovarian-cancer-treatment-in-india/,
+  );
+  const hipec = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");
+  assert.match(
+    hipec?.translations.en?.editorialBody ?? "",
+    /\/treatments\/ovarian-cancer-treatment-in-india/,
+  );
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";

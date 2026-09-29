@@ -167,7 +167,7 @@ The OVHIPEC-1 randomized trial evaluated HIPEC during interval cytoreductive sur
 
 Long-term follow-up showed a survival benefit in the studied population.
 
-However, the decision to use HIPEC depends on the ovarian cancer subtype, treatment response, surgical resectability and the treatment protocol being followed. GAF planning ranges for [ovarian cancer cytoreductive surgery](/costs/India/Surgical-Oncology/Ovarian-Cancer-Cytoreductive-Surgery) sit on a neighbouring sheet.
+However, the decision to use HIPEC depends on the ovarian cancer subtype, treatment response, surgical resectability and the treatment protocol being followed. The full ovarian pathway is covered in [Ovarian Cancer Treatment in India](/treatments/ovarian-cancer-treatment-in-india). GAF planning ranges for [ovarian cancer cytoreductive surgery](/costs/India/Surgical-Oncology/Ovarian-Cancer-Cytoreductive-Surgery) sit on a neighbouring sheet.
 
 ### 5. Gastric Cancer
 

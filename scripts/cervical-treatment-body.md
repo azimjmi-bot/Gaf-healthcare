@@ -4,7 +4,7 @@ Treatment may include **surgery, radiation therapy, chemotherapy, brachytherapy,
 
 India has a large network of tertiary cancer centers offering gynecologic oncology, radiation oncology, medical oncology, pathology, advanced imaging and multidisciplinary cancer care.
 
-This page is the cervical-cancer pathway for GAF Healthcare. It sits beside [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india). Ovarian peritoneal disease is a different pathway — see [HIPEC surgery in India](/treatments/hipec-surgery-in-india) when CRS-HIPEC is being considered.
+This page is the cervical-cancer pathway for GAF Healthcare. It sits beside [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india) and [ovarian cancer treatment in India](/treatments/ovarian-cancer-treatment-in-india). Ovarian peritoneal disease is a different pathway — see [HIPEC surgery in India](/treatments/hipec-surgery-in-india) when CRS-HIPEC is being considered.
 
 [Request a cervical cancer records review](/consult?treatment=Cervical%20Cancer%20Treatment%20in%20India)
 
