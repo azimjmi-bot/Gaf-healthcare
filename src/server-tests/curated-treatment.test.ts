@@ -367,6 +367,7 @@ test("the published HIPEC surgery page uses site USD ranges and GEO links", () =
   assert.match(body, /article-quick-answer|Quick Answer: What Is HIPEC Surgery/);
   assert.match(body, /local emergency department/);
   assert.match(body, /PRODIGE 7/);
+  assert.match(body, /Why Choose India for HIPEC Treatment/);
   assert.match(body, /\/costs\/India\/Surgical-Oncology\/Cytoreductive-Surgery-with-HIPEC/);
   assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Cytoreductive-Surgery-with-HIPEC/);
   assert.match(body, /\/costs\/India\/Surgical-Oncology\/Cytoreductive-Surgery/);

@@ -902,6 +902,31 @@ No. HIPEC can be part of a potentially curative strategy for selected cancers, b
 * GAF planning ranges for CRS with HIPEC are approximately **$18,000–$40,000**.
 * International patients should obtain a specialist review before travelling to India.
 
+## Why Choose India for HIPEC Treatment?
+
+India has developed dedicated expertise in peritoneal surface malignancy management, including CRS-HIPEC.
+
+The country's growing experience has been accompanied by national professional collaboration and India-specific consensus work addressing patient selection, surgical management, HIPEC and enhanced recovery.
+
+For an international patient, the most important consideration should not simply be the availability of a HIPEC machine.
+
+A suitable treatment center should have:
+
+* Experienced peritoneal surface surgeons
+* Medical oncology support
+* Specialized anesthesia
+* Critical-care facilities
+* Advanced imaging
+* Experienced pathology
+* Nutritional support
+* Complication-management capability
+* Multidisciplinary tumor-board discussion
+* Structured postoperative follow-up
+
+The objective should be **the right treatment for the right cancer and the right patient**, rather than HIPEC simply because it is available.
+
+Compare named teams in [Delhi NCR](/doctors/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Mumbai](/doctors/India/Mumbai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Bengaluru](/doctors/India/Bengaluru/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Chennai](/doctors/India/Chennai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) and [Hyderabad](/doctors/India/Hyderabad/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC).
+
 ## How GAF Healthcare Can Help International Patients
 
 For patients travelling to India for HIPEC evaluation, the treatment journey can involve medical-record collection, specialist opinion, hospital coordination, cost estimation, treatment scheduling, visa invitation coordination where applicable, airport and local assistance, accommodation support and follow-up coordination.

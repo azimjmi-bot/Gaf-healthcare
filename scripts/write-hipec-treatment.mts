@@ -44,7 +44,7 @@ const store = JSON.parse(readFileSync(storePath, "utf8")) as {
   }>;
 };
 const existing = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");
-const now = "2026-09-28T22:30:00.000Z";
+const now = "2026-09-28T23:00:00.000Z";
 const SLUG = "hipec-surgery-in-india";
 
 const treatment = {
