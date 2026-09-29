@@ -80,7 +80,7 @@ This is particularly important in the treatment of pituitary tumours. The surgeo
 
 It can be used for selected pituitary adenomas, functioning and non-functioning pituitary tumours, tumours causing visual problems, and tumours producing excess hormones. Treatment selection depends on the tumour's size, type, hormonal activity and extension into surrounding structures.
 
-Named [pituitary tumor surgery](/costs/India/Neurosurgery/Pituitary-Tumor-Surgery) is **$5,000–$12,000** (typically **3–7 nights**) when that is the product rather than a generic endoscope count.
+Named [pituitary tumor surgery](/costs/India/Neurosurgery/Pituitary-Tumor-Surgery) is **$5,000–$12,000** (typically **3–7 nights**) when that is the product rather than a generic endoscope count. The named tumour product sits on [Pituitary Tumor Surgery in India](/treatments/pituitary-tumor-surgery-in-india).
 
 ![Pituitary adenoma in the sella turcica beneath the optic chiasm, approached through the sphenoid sinus](/uploads/treatments/endoscopic-brain-pituitary.webp)
 
