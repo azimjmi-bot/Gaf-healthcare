@@ -2402,6 +2402,82 @@ test("the published rhinoplasty page uses site USD ranges and GEO links", () => 
   assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/rhinoplasty-in-india/);
 });
 
+test("the published blepharoplasty page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "blepharoplasty-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$1,500–\$3,800/);
+  assert.match(body, /\$4,000–\$9,000/);
+  assert.match(body, /\$2,500–\$5,500/);
+  assert.match(body, /\$4,000–\$9,500/);
+  assert.match(body, /\$1,200–\$4,000/);
+  assert.match(body, /\$1,500–\$5,000/);
+  assert.match(body, /\$2,000–\$5,500/);
+  assert.match(body, /day-care or overnight/);
+  assert.match(body, /article-quick-answer|Quick Answer: Blepharoplasty in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Blepharoplasty/);
+  assert.match(body, /\/costs\/India\/Ophthalmology\/Oculoplastic-Surgery/);
+  assert.match(body, /\/treatments\/rhinoplasty-in-india/);
+  assert.match(body, /\/uploads\/treatments\/blepharoplasty-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/blepharoplasty-incisions\.webp/);
+  assert.match(body, /\/uploads\/treatments\/blepharoplasty-vs-ptosis\.webp/);
+  assert.match(body, /\/uploads\/treatments\/blepharoplasty-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cosmetic-Surgery/Blepharoplasty",
+    "/doctors/India/Mumbai/Cosmetic-Surgery/Blepharoplasty",
+    "/doctors/India/Bengaluru/Cosmetic-Surgery/Blepharoplasty",
+    "/doctors/India/Chennai/Cosmetic-Surgery/Blepharoplasty",
+    "/doctors/India/Hyderabad/Cosmetic-Surgery/Blepharoplasty",
+    "/hospitals/India/Delhi-NCR/Cosmetic-Surgery",
+    "/hospitals/India/Mumbai/Cosmetic-Surgery",
+    "/hospitals/India/Bengaluru/Cosmetic-Surgery",
+    "/costs/India/Delhi-NCR/Cosmetic-Surgery/Blepharoplasty",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /medical name/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Eyelid",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/blepharoplasty-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/blepharoplasty/);
+  assert.doesNotMatch(body, /\/treatments\/blepharoplasty\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/blepharoplasty-in-india/);
+  const rhino = store.treatments.find((row) => row.slug === "rhinoplasty-in-india");
+  assert.match(
+    rhino?.translations.en?.editorialBody ?? "",
+    /\/treatments\/blepharoplasty-in-india/,
+  );
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";

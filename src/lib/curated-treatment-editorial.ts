@@ -124,6 +124,9 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   if (/knee/i.test(text)) return "Knee";
   if (/hip/i.test(text)) return "Hip";
   if (/shoulder|rotator cuff/i.test(text)) return "Shoulder";
+  if (/blepharoplasty|eyelid|oculoplastic/i.test(text)) {
+    return "Eyelid";
+  }
   if (/rhinoplasty|septorhinoplasty|septoplasty|\bnose\b|nasal/i.test(text)) {
     return "Nose";
   }

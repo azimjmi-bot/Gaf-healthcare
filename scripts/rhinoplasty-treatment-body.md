@@ -656,7 +656,7 @@ The objective should be a well-planned improvement that is appropriate for the i
 Rhinoplasty is one facial-plastic list. Neighbouring GAF sheets that patients sometimes compare, and that must not be used as a rhinoplasty quotation, include:
 
 - [Facelift](/costs/India/Cosmetic-Surgery/Facelift) — **$4,000–$9,500**, typically **1–4 nights**
-- [Blepharoplasty](/costs/India/Cosmetic-Surgery/Blepharoplasty) — **$1,500–$3,800**, day-care or overnight
+- [Blepharoplasty in India](/treatments/blepharoplasty-in-india) — named lists sit on [blepharoplasty](/costs/India/Cosmetic-Surgery/Blepharoplasty) at **$1,500–$3,800**, day-care or overnight
 - [Otoplasty](/costs/India/Cosmetic-Surgery/Otoplasty) — **$1,500–$3,500**, day-care or overnight
 - [Neck lift](/costs/India/Cosmetic-Surgery/Neck-Lift) — **$3,500–$7,800**, typically **1–4 nights**
 - [Septoplasty](/costs/India/ENT/Septoplasty) — **$1,500–$3,800**, day-care or overnight
