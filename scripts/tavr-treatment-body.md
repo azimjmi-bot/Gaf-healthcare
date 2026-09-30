@@ -64,7 +64,7 @@ In aortic stenosis, the valve becomes narrowed, often because of progressive cal
 
 During TAVR, a collapsible biological valve mounted on a stent is compressed onto a catheter. The catheter is advanced to the heart, most commonly through the femoral artery. The replacement valve is positioned inside the diseased native valve and expanded, pushing the old leaflets aside and creating a new pathway for blood flow.
 
-Unlike conventional surgical aortic valve replacement, TAVR does not normally require opening the chest or removing the old valve surgically.
+Unlike conventional surgical aortic valve replacement, TAVR does not normally require opening the chest or removing the old valve surgically. Balloon aortic valvuloplasty only widens the native valve and sits on [Aortic Balloon Valvuloplasty in India](/treatments/aortic-balloon-valvuloplasty-in-india).
 
 ![Educational illustration of a healthy aortic valve versus calcific aortic stenosis](/uploads/treatments/tavr-aortic-stenosis.webp)
 
