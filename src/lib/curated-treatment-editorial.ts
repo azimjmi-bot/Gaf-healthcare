@@ -124,6 +124,9 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   if (/knee/i.test(text)) return "Knee";
   if (/hip/i.test(text)) return "Hip";
   if (/shoulder|rotator cuff/i.test(text)) return "Shoulder";
+  if (/rhinoplasty|septorhinoplasty|septoplasty|\bnose\b|nasal/i.test(text)) {
+    return "Nose";
+  }
   if (/limb lengthen|stature lengthen|distraction osteogenesis|leg.length discrepancy/i.test(text)) {
     return "Lower Limb";
   }
