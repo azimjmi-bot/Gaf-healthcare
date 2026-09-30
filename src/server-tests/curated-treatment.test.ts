@@ -1909,6 +1909,88 @@ test("the published hydrocephalus page uses site USD ranges and GEO links", () =
   );
 });
 
+test("the published coronary angioplasty page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "coronary-angioplasty-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,200–\$8,500/);
+  assert.match(body, /\$400–\$1,200/);
+  assert.match(body, /\$5,500–\$14,000/);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Coronary Angioplasty in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cardiology\/Coronary-Angioplasty-Stenting/);
+  assert.match(body, /\/costs\/India\/Cardiology\/Coronary-Angiography/);
+  assert.match(
+    body,
+    /\/costs\/India\/Cardiology\/CTO-Angioplasty-\(Chronic-Total-Occlusion\)/,
+  );
+  assert.match(
+    body,
+    /\/costs\/India\/Cardiac-Surgery\/CABG-\(Coronary-Artery-Bypass-Grafting\)/,
+  );
+  assert.match(body, /\/uploads\/treatments\/coronary-angioplasty-plaque\.webp/);
+  assert.match(body, /\/uploads\/treatments\/coronary-angioplasty-balloon\.webp/);
+  assert.match(body, /\/uploads\/treatments\/coronary-angioplasty-stent\.webp/);
+  assert.match(body, /\/uploads\/treatments\/coronary-angioplasty-radial\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting",
+    "/doctors/India/Mumbai/Cardiology/Coronary-Angioplasty-Stenting",
+    "/doctors/India/Bengaluru/Cardiology/Coronary-Angioplasty-Stenting",
+    "/doctors/India/Chennai/Cardiology/Coronary-Angioplasty-Stenting",
+    "/doctors/India/Hyderabad/Cardiology/Coronary-Angioplasty-Stenting",
+    "/hospitals/India/Delhi-NCR/Cardiology",
+    "/hospitals/India/Mumbai/Cardiology",
+    "/hospitals/India/Bengaluru/Cardiology",
+    "/costs/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /What is coronary angioplasty\?/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/coronary-angioplasty-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/coronary/);
+  assert.doesNotMatch(body, /\/treatments\/coronary-angioplasty\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/coronary-angioplasty-in-india/,
+  );
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";
