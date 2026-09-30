@@ -220,7 +220,7 @@ City starting points:
 
 ## Pacemaker vs ICD vs CRT vs a Stent
 
-A pacemaker treats selected slow rhythms. An ICD detects and treats dangerous ventricular arrhythmias and can deliver shocks. CRT-P is intended to improve ventricular synchrony in selected heart-failure patients. A **stent** keeps a narrowed coronary artery open and sits on [Coronary Angioplasty in India](/treatments/coronary-angioplasty-in-india). These products are not interchangeable. The ACC/AHA/HRS guideline emphasizes assessing sudden-death risk separately when choosing an implanted cardiac device.
+A pacemaker treats selected slow rhythms. An ICD detects and treats dangerous ventricular arrhythmias and can deliver shocks. Named ICD lists sit on [ICD Device Implantation in India](/treatments/icd-device-implantation-in-india). CRT-P is intended to improve ventricular synchrony in selected heart-failure patients. A **stent** keeps a narrowed coronary artery open and sits on [Coronary Angioplasty in India](/treatments/coronary-angioplasty-in-india). These products are not interchangeable. The ACC/AHA/HRS guideline emphasizes assessing sudden-death risk separately when choosing an implanted cardiac device.
 
 ## Why Consider India for Pacemaker Implantation?
 
