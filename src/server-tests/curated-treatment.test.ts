@@ -2711,6 +2711,87 @@ test("the published breast-reconstruction page uses site USD ranges and GEO link
   assert.match(lift?.translations.en?.editorialBody ?? "", /\/treatments\/breast-reconstruction-in-india/);
 });
 
+test("the published breast-augmentation page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "breast-augmentation-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,000–\$6,500/);
+  assert.match(body, /\$6,500–\$15,000/);
+  assert.match(body, /\$3,200–\$6,800/);
+  assert.match(body, /\$2,000–\$5,500/);
+  assert.match(body, /\$1,500–\$4,200/);
+  assert.match(body, /\$1,800–\$4,200/);
+  assert.match(body, /\$6,000–\$18,000/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Breast Augmentation in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Breast-Augmentation/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Breast-Lift/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Fat-Transfer/);
+  assert.match(body, /\/treatments\/breast-lift-in-india/);
+  assert.match(body, /\/treatments\/breast-reconstruction-in-india/);
+  assert.match(body, /\/treatments\/liposuction-in-india/);
+  assert.match(body, /\/uploads\/treatments\/breast-aug-implant-vs-fat\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-aug-placement\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-aug-incisions\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-aug-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cosmetic-Surgery/Breast-Augmentation",
+    "/doctors/India/Mumbai/Cosmetic-Surgery/Breast-Augmentation",
+    "/doctors/India/Bengaluru/Cosmetic-Surgery/Breast-Augmentation",
+    "/doctors/India/Chennai/Cosmetic-Surgery/Breast-Augmentation",
+    "/doctors/India/Hyderabad/Cosmetic-Surgery/Breast-Augmentation",
+    "/hospitals/India/Delhi-NCR/Cosmetic-Surgery",
+    "/hospitals/India/Mumbai/Cosmetic-Surgery",
+    "/hospitals/India/Bengaluru/Cosmetic-Surgery",
+    "/costs/India/Delhi-NCR/Cosmetic-Surgery/Breast-Augmentation",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 6);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is breast augmentation\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Breast",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/breast-augmentation-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/breast-augmentation/);
+  assert.doesNotMatch(body, /\/treatments\/india\/plastic-surgery/);
+  assert.doesNotMatch(body, /\/treatments\/breast-augmentation\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/breast-augmentation-in-india/);
+  const lift = store.treatments.find((row) => row.slug === "breast-lift-in-india");
+  assert.match(lift?.translations.en?.editorialBody ?? "", /\/treatments\/breast-augmentation-in-india/);
+  const recon = store.treatments.find((row) => row.slug === "breast-reconstruction-in-india");
+  assert.match(recon?.translations.en?.editorialBody ?? "", /\/treatments\/breast-augmentation-in-india/);
+  const lipo = store.treatments.find((row) => row.slug === "liposuction-in-india");
+  assert.match(lipo?.translations.en?.editorialBody ?? "", /\/treatments\/breast-augmentation-in-india/);
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";

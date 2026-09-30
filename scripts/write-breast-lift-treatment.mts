@@ -96,7 +96,7 @@ const treatment = {
     "gynecomastia-surgery",
     "tummy-tuck",
   ],
-  relatedTreatmentSlugs: [LIPO, RHINO, BLEPH],
+  relatedTreatmentSlugs: [LIPO, RHINO, BLEPH, "breast-reconstruction-in-india", "breast-augmentation-in-india"],
   status: "published" as const,
   featured: true,
   sortOrder: 31,

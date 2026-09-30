@@ -103,7 +103,7 @@ const treatment = {
     "breast-lift",
     "chemotherapy",
   ],
-  relatedTreatmentSlugs: [CANCER, LIFT],
+  relatedTreatmentSlugs: [CANCER, LIFT, "breast-augmentation-in-india"],
   status: "published" as const,
   featured: true,
   sortOrder: 32,
