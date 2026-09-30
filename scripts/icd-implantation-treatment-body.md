@@ -21,7 +21,7 @@ A device implanted under the skin that continuously monitors heart rhythm and ca
 Mainly to prevent sudden cardiac death in people who have had, or are at significant risk of, life-threatening ventricular arrhythmias.
 
 **Is an ICD the same as a pacemaker?**
-No. An ICD can provide pacing, but its defining function is detecting and treating potentially fatal fast ventricular rhythms. Named pacing lists sit on [Pacemaker Implantation in India](/treatments/pacemaker-implantation-in-india).
+No. An ICD can provide pacing, but its defining function is detecting and treating potentially fatal fast ventricular rhythms.
 
 **How is an ICD implanted?**
 Usually through a small incision below or near the collarbone. Transvenous leads are passed through a vein into the heart and connected to the ICD generator.
@@ -30,16 +30,16 @@ Usually through a small incision below or near the collarbone. Transvenous leads
 Often around 1–3 hours, although complex cases can take longer.
 
 **How long is the hospital stay?**
-GAF planning for [ICD implantation](/costs/India/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)) is typically **1–4 nights**. The duration depends on the procedure and the patient's condition.
+GAF planning is typically 1–4 nights. The duration depends on the procedure and the patient's condition.
 
 **What is ICD implantation cost in India?**
-GAF [ICD implantation](/costs/India/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)) planning is **$8,000–$18,000**. Named pacemaker, CRT-D and leadless sheets differ. A patient-specific quotation after device selection is necessary.
+GAF planning is $8,000–$18,000. Named pacemaker, CRT-D and leadless sheets differ. A patient-specific quotation after device selection is necessary.
 
 **Is ICD implantation major surgery?**
 It is generally less invasive than open-heart surgery, but it remains an important cardiac procedure requiring specialist care.
 
 **Can an ICD prevent a heart attack?**
-No. An ICD treats certain dangerous electrical rhythms. It does not remove blocked coronary arteries or prevent every heart attack. Named PCI sits on [Coronary Angioplasty in India](/treatments/coronary-angioplasty-in-india).
+No. An ICD treats certain dangerous electrical rhythms. It does not remove blocked coronary arteries or prevent every heart attack.
 
 **Can I travel after ICD implantation?**
 Travel is often possible after recovery and medical clearance, but the timing should be decided by the treating team.
