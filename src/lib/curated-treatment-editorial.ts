@@ -128,7 +128,11 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
     return "Lower Limb";
   }
   if (/tendon/i.test(text)) return "Tendon";
-  if (/coronary|percutaneous coronary|\bpci\b|pacemaker|bradycardia|heart block|\bicd\b|leadless pacing|resynchronization/i.test(text)) {
+  if (
+    /coronary|percutaneous coronary|\bpci\b|pacemaker|bradycardia|heart block|\bicd\b|leadless pacing|resynchronization|tavr|tavi|aortic stenosis|aortic valve/i.test(
+      text,
+    )
+  ) {
     return "Heart";
   }
   if (

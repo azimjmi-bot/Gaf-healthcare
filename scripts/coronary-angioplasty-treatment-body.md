@@ -191,7 +191,7 @@ NHS guidance advises avoiding heavy lifting and strenuous activities for around 
 
 Patients who receive a stent are commonly prescribed dual antiplatelet therapy. The 2025 ACC/AHA ACS guideline states that aspirin plus a P2Y12 inhibitor is the default strategy for at least 12 months in many ACS patients who are not at high bleeding risk. **Never stop antiplatelet medication after stent placement without speaking to your cardiologist.** Premature discontinuation can increase the risk of stent thrombosis and heart attack.
 
-Angioplasty treats a blockage. It does not eliminate the underlying tendency to develop coronary artery disease. A stent is not a pacemaker. Named pacing lists sit on [Pacemaker Implantation in India](/treatments/pacemaker-implantation-in-india). Long-term care includes stopping tobacco, controlling blood pressure, diabetes and cholesterol, a heart-healthy diet, activity, medicines, follow-up and cardiac rehabilitation when recommended.
+Angioplasty treats a blockage. It does not eliminate the underlying tendency to develop coronary artery disease. A stent is not a pacemaker. A stent is also not a transcatheter aortic valve. Named TAVR lists sit on [TAVR in India](/treatments/tavr-in-india). Named pacing lists sit on [Pacemaker Implantation in India](/treatments/pacemaker-implantation-in-india). Long-term care includes stopping tobacco, controlling blood pressure, diabetes and cholesterol, a heart-healthy diet, activity, medicines, follow-up and cardiac rehabilitation when recommended.
 
 [Plan an international angioplasty stay](/consult?treatment=Coronary%20Angioplasty)
 
