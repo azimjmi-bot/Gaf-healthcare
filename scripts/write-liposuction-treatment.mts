@@ -100,7 +100,7 @@ const treatment = {
     "neck-lift",
     "sleeve-gastrectomy",
   ],
-  relatedTreatmentSlugs: [RHINO, BLEPH, "breast-lift-in-india", "breast-augmentation-in-india"],
+  relatedTreatmentSlugs: [RHINO, BLEPH, "breast-lift-in-india", "breast-augmentation-in-india", "mommy-makeover-in-india"],
   status: "published" as const,
   featured: true,
   sortOrder: 30,

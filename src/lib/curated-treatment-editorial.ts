@@ -127,6 +127,9 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   if (/blepharoplasty|eyelid|oculoplastic/i.test(text)) {
     return "Eyelid";
   }
+  if (/mommy makeover|tummy tuck|abdominoplasty|diastasis recti/i.test(text)) {
+    return "Abdomen";
+  }
   if (/liposuction|lipoplasty|lipectomy|body contour/i.test(text)) {
     return "Subcutaneous Tissue";
   }
