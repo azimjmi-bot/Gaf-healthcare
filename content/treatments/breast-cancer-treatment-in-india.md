@@ -148,6 +148,8 @@ Immediate reconstruction is performed during the mastectomy. Delayed reconstruct
 
 [Discuss reconstruction timing with a coordinator](/consult?treatment=Breast%20Reconstruction)
 
+The full reconstructive pathway sits on [Breast Reconstruction Surgery in India](/treatments/breast-reconstruction-in-india).
+
 ## Systemic treatment for breast cancer
 
 Breast cancer can require treatment beyond surgery. Systemic treatment uses medicines that act throughout the body and may be recommended before or after surgery, or for advanced disease.
