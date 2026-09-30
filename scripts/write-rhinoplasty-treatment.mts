@@ -53,7 +53,7 @@ const treatment = {
   specialtySlug: "cosmetic-surgery",
   subspecialty: "Facial Plastic Surgery",
   category: "Rhinoplasty",
-  image: "/uploads/treatments/rhinoplasty-anatomy.webp",
+  image: "/uploads/treatments/rhinoplasty-hero.webp",
   destinationSlugs: ["india"],
   doctorSlugs: [
     "dr-aditya-aggarwal",
@@ -270,7 +270,7 @@ const treatment = {
         },
       ],
       imageAlt:
-        "Educational illustration of nasal bone, cartilage, septum and airway structures relevant to rhinoplasty",
+        "Educational illustration of a nasal profile used as the rhinoplasty treatment hero",
       seoTitle: "Rhinoplasty in India: Cost, Recovery & Types",
       metaDescription:
         "Learn about rhinoplasty in India, including open versus closed techniques, $2,500–$5,500 partner planning, recovery, breathing and how GAF coordinates treatment.",
