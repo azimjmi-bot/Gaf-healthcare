@@ -99,7 +99,7 @@ const treatment = {
     "fat-transfer",
     "arm-lift",
   ],
-  relatedTreatmentSlugs: [LIPO, LIFT, AUG],
+  relatedTreatmentSlugs: [LIPO, LIFT, AUG, "breast-reduction-in-india"],
   status: "published" as const,
   featured: true,
   sortOrder: 34,

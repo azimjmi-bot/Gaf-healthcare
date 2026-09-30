@@ -105,7 +105,7 @@ const treatment = {
     "gynecomastia-surgery",
     "breast-reconstruction",
   ],
-  relatedTreatmentSlugs: [LIFT, RECON, LIPO, "mommy-makeover-in-india"],
+  relatedTreatmentSlugs: [LIFT, RECON, LIPO, "mommy-makeover-in-india", "breast-reduction-in-india"],
   status: "published" as const,
   featured: true,
   sortOrder: 33,

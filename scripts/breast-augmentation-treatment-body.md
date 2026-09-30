@@ -559,7 +559,7 @@ Augmentation is one breast list. Neighbouring GAF sheets that patients sometimes
 - [Breast Reconstruction Surgery in India](/treatments/breast-reconstruction-in-india) — named lists sit on [breast reconstruction](/costs/India/Surgical-Oncology/Breast-Reconstruction) at **$6,000–$18,000**
 - [Gynecomastia surgery](/costs/India/Cosmetic-Surgery/Gynecomastia-Surgery) — **$1,800–$4,200**, typically **1–2 nights**
 
-Lift lists raise position. Reconstruction lists restore form after mastectomy. They are not a substitute augmentation price. Mommy-makeover combination lists sit on [Mommy Makeover in India](/treatments/mommy-makeover-in-india).
+Lift lists raise position. Reconstruction lists restore form after mastectomy. They are not a substitute augmentation price. Mommy-makeover combination lists sit on [Mommy Makeover in India](/treatments/mommy-makeover-in-india). Reduction lists sit on [Breast Reduction Surgery in India](/treatments/breast-reduction-in-india).
 
 ## Warning Signs After Breast Augmentation
 

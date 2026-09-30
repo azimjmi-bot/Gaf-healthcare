@@ -544,7 +544,7 @@ Liposuction is one body-contouring list. Neighbouring GAF sheets that patients s
 - [Rhinoplasty in India](/treatments/rhinoplasty-in-india) — named lists sit on [rhinoplasty](/costs/India/Cosmetic-Surgery/Rhinoplasty) at **$2,500–$5,500**
 - [Blepharoplasty in India](/treatments/blepharoplasty-in-india) — named lists sit on [blepharoplasty](/costs/India/Cosmetic-Surgery/Blepharoplasty) at **$1,500–$3,800**
 
-Bariatric lists treat obesity. Skin-excision lists treat loose skin. They are not a substitute liposuction price. Breast-lift lists sit on [Breast Lift in India](/treatments/breast-lift-in-india). Augmentation lists sit on [Breast Augmentation in India](/treatments/breast-augmentation-in-india). Mommy-makeover combination lists sit on [Mommy Makeover in India](/treatments/mommy-makeover-in-india).
+Bariatric lists treat obesity. Skin-excision lists treat loose skin. They are not a substitute liposuction price. Breast-lift lists sit on [Breast Lift in India](/treatments/breast-lift-in-india). Augmentation lists sit on [Breast Augmentation in India](/treatments/breast-augmentation-in-india). Mommy-makeover combination lists sit on [Mommy Makeover in India](/treatments/mommy-makeover-in-india). Reduction lists sit on [Breast Reduction Surgery in India](/treatments/breast-reduction-in-india).
 
 ## Liposuction for Men
 

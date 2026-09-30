@@ -552,7 +552,7 @@ A mommy makeover is an umbrella plan. Neighbouring GAF sheets that patients some
 - [Arm lift](/costs/India/Cosmetic-Surgery/Arm-Lift) — **$2,800–$6,200**, typically **1–3 nights**
 - [Breast Reconstruction Surgery in India](/treatments/breast-reconstruction-in-india) — named lists sit on [breast reconstruction](/costs/India/Surgical-Oncology/Breast-Reconstruction) at **$6,000–$18,000**
 
-Single-procedure lists treat one brief. They are not a substitute combination price.
+Single-procedure lists treat one brief. They are not a substitute combination price. Reduction lists sit on [Breast Reduction Surgery in India](/treatments/breast-reduction-in-india).
 
 ## Warning Signs After Mommy Makeover
 
