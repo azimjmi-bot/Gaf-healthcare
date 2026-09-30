@@ -663,7 +663,7 @@ Rhinoplasty is one facial-plastic list. Neighbouring GAF sheets that patients so
 - [FESS](/costs/India/ENT/FESS-(Functional-Endoscopic-Sinus-Surgery)) — **$2,000–$5,200**, typically **1–3 nights**
 - [Balloon sinuplasty](/costs/India/ENT/Balloon-Sinuplasty) — **$2,000–$5,000**, day-care or overnight
 
-Sinus lists treat sinus disease. They are not a substitute rhinoplasty price.
+Sinus lists treat sinus disease. They are not a substitute rhinoplasty price. Body-contouring lists sit on [Liposuction in India](/treatments/liposuction-in-india).
 
 ## Is Rhinoplasty Safe?
 

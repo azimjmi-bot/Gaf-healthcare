@@ -127,6 +127,9 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   if (/blepharoplasty|eyelid|oculoplastic/i.test(text)) {
     return "Eyelid";
   }
+  if (/liposuction|lipoplasty|lipectomy|body contour/i.test(text)) {
+    return "Subcutaneous Tissue";
+  }
   if (/rhinoplasty|septorhinoplasty|septoplasty|\bnose\b|nasal/i.test(text)) {
     return "Nose";
   }

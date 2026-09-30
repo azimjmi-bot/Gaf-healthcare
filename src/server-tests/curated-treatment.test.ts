@@ -2478,6 +2478,84 @@ test("the published blepharoplasty page uses site USD ranges and GEO links", () 
   );
 });
 
+test("the published liposuction page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "liposuction-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$1,500–\$4,200/);
+  assert.match(body, /\$4,000–\$12,000/);
+  assert.match(body, /\$3,500–\$7,200/);
+  assert.match(body, /\$2,000–\$5,500/);
+  assert.match(body, /\$1,800–\$4,200/);
+  assert.match(body, /\$2,800–\$6,200/);
+  assert.match(body, /\$3,500–\$8,000/);
+  assert.match(body, /\$4,500–\$8,500/);
+  assert.match(body, /day-care to 2 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Liposuction in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Liposuction/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Tummy-Tuck/);
+  assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Sleeve-Gastrectomy/);
+  assert.match(body, /\/treatments\/rhinoplasty-in-india/);
+  assert.match(body, /\/treatments\/blepharoplasty-in-india/);
+  assert.match(body, /\/uploads\/treatments\/liposuction-fat-layers\.webp/);
+  assert.match(body, /\/uploads\/treatments\/liposuction-treatment-areas\.webp/);
+  assert.match(body, /\/uploads\/treatments\/liposuction-cannula\.webp/);
+  assert.match(body, /\/uploads\/treatments\/liposuction-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cosmetic-Surgery/Liposuction",
+    "/doctors/India/Mumbai/Cosmetic-Surgery/Liposuction",
+    "/doctors/India/Bengaluru/Cosmetic-Surgery/Liposuction",
+    "/doctors/India/Chennai/Cosmetic-Surgery/Liposuction",
+    "/doctors/India/Hyderabad/Cosmetic-Surgery/Liposuction",
+    "/hospitals/India/Delhi-NCR/Cosmetic-Surgery",
+    "/hospitals/India/Mumbai/Cosmetic-Surgery",
+    "/hospitals/India/Bengaluru/Cosmetic-Surgery",
+    "/costs/India/Delhi-NCR/Cosmetic-Surgery/Liposuction",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is liposuction\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Subcutaneous Tissue",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/liposuction-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/liposuction/);
+  assert.doesNotMatch(body, /\/treatments\/liposuction\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/liposuction-in-india/);
+  const rhino = store.treatments.find((row) => row.slug === "rhinoplasty-in-india");
+  assert.match(rhino?.translations.en?.editorialBody ?? "", /\/treatments\/liposuction-in-india/);
+  const bleph = store.treatments.find((row) => row.slug === "blepharoplasty-in-india");
+  assert.match(bleph?.translations.en?.editorialBody ?? "", /\/treatments\/liposuction-in-india/);
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";

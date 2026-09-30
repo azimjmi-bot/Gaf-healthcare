@@ -527,7 +527,7 @@ Blepharoplasty is one eyelid list. Neighbouring GAF sheets that patients sometim
 - [Oculoplastic surgery](/costs/India/Ophthalmology/Oculoplastic-Surgery) — **$1,200–$4,000**, outpatient or 1 night
 - [Eyelid reconstruction](/costs/India/Ophthalmology/Eyelid-Reconstruction-Surgery) — **$1,500–$5,000**, typically **1–2 nights**
 
-Reconstruction and oculoplastic lists treat different briefs. They are not a substitute cosmetic eyelid price.
+Reconstruction and oculoplastic lists treat different briefs. They are not a substitute cosmetic eyelid price. Body-contouring lists sit on [Liposuction in India](/treatments/liposuction-in-india).
 
 ## What Results Can You Expect?
 
