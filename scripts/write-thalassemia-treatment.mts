@@ -104,7 +104,7 @@ const treatment = {
     "bone-marrow-biopsy",
     "precision-oncology",
   ],
-  relatedTreatmentSlugs: [BMT, LEUKEMIA, LYMPHOMA],
+  relatedTreatmentSlugs: [BMT, LEUKEMIA, LYMPHOMA, "sickle-cell-anemia-treatment-in-india"],
   status: "published" as const,
   featured: true,
   sortOrder: 39,

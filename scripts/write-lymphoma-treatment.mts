@@ -116,7 +116,7 @@ const treatment = {
     "intensity-modulated-radiotherapy-imrt",
     "3d-conformal-radiotherapy-3d-crt",
   ],
-  relatedTreatmentSlugs: [BMT, LEUKEMIA, "thalassemia-treatment-in-india"],
+  relatedTreatmentSlugs: [BMT, LEUKEMIA, "thalassemia-treatment-in-india", "sickle-cell-anemia-treatment-in-india"],
   status: "published" as const,
   featured: true,
   sortOrder: 38,
