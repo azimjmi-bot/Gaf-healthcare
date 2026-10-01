@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Geist, Noto_Sans, Noto_Sans_Arabic } from "next/font/google";
+import Script from "next/script";
 import { LocaleProvider } from "@/components/locale-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -11,6 +12,8 @@ import { availableSurfaces } from "@/lib/i18n/surfaces";
 import { SITE_URL } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
+
+const GA_MEASUREMENT_ID = "G-F12D7QK2B2";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -171,6 +174,18 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           <SiteFooter />
         </LocaleProvider>
       </body>
+      <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
+        strategy="afterInteractive"
+      />
+      <Script id="google-analytics" strategy="afterInteractive">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', '${GA_MEASUREMENT_ID}');
+        `}
+      </Script>
     </html>
   );
 }
