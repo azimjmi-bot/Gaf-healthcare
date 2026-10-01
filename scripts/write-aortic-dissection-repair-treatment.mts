@@ -270,7 +270,7 @@ const treatment = {
           id: "adr-faq-12",
           question: "Is there a GAF TEVAR or Bentall treatment page?",
           answer:
-            "No. TEVAR-only, Bentall-only, aortic-root-only and aortic-aneurysm-repair treatment pages are not live. Use this page and the named modality sheets.",
+            "No. TEVAR-only, aortic-root-only and aortic-aneurysm-repair treatment pages are not live. Bentall lists sit on Bentall Procedure in India.",
         },
       ],
       imageAlt:
