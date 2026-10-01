@@ -151,7 +151,7 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   }
   if (/tendon/i.test(text)) return "Tendon";
   if (
-    /coronary|percutaneous coronary|\bpci\b|\bcabg\b|bypass graft|heart valve|valve replacement|mitral valve|tricuspid|pulmonary valve|pacemaker|bradycardia|heart block|\bicd\b|leadless pacing|resynchronization|tavr|tavi|aortic stenosis|aortic valve|valvuloplasty|\bbav\b/i.test(
+    /coronary|percutaneous coronary|\bpci\b|\bcabg\b|bypass graft|heart valve|valve replacement|mitral valve|tricuspid|pulmonary valve|pacemaker|bradycardia|heart block|\bicd\b|leadless pacing|resynchronization|tavr|tavi|aortic stenosis|aortic valve|valvuloplasty|\bbav\b|aortic dissection|\btevar\b|aortic aneurysm|aortic root|bentall|frozen elephant/i.test(
       text,
     )
   ) {
