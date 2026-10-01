@@ -113,6 +113,9 @@ export function splitTreatmentQuickAnswer(body: string): {
 
 export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   const text = parts.filter(Boolean).join(" ");
+  if (/bone marrow|hematopoietic|\bhsct\b|\bbmt\b/i.test(text)) {
+    return "Bone Marrow";
+  }
   if (/breast/i.test(text)) return "Breast";
   if (/prostate/i.test(text)) return "Prostate";
   if (/colon|colorectal/i.test(text)) return "Colon";
