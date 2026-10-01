@@ -113,7 +113,11 @@ export function splitTreatmentQuickAnswer(body: string): {
 
 export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   const text = parts.filter(Boolean).join(" ");
-  if (/leukemia|leukaemia|bone marrow|hematopoietic|\bhsct\b|\bbmt\b/i.test(text)) {
+  if (
+    /leukemia|leukaemia|thalassemia|thalassaemia|bone marrow|hematopoietic|\bhsct\b|\bbmt\b/i.test(
+      text,
+    )
+  ) {
     return "Bone Marrow";
   }
   if (/lymphoma|hodgkin|lymphatic|lymph node/i.test(text)) {

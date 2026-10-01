@@ -533,7 +533,7 @@ GAF Healthcare can support international patients with medical-record coordinati
 
 Leukemia, lymphoma, myeloma, thalassemia and aplastic-anemia treatment pages are not live on this site. Use the named transplant sheets rather than an invented disease page.
 
-Auto and allo lists treat different grafts. They are not a substitute BMT price when the protocol has already been named. Leukemia lists sit on [Leukemia Treatment in India](/treatments/leukemia-treatment-in-india). Lymphoma lists sit on [Lymphoma Treatment in India](/treatments/lymphoma-treatment-in-india).
+Auto and allo lists treat different grafts. They are not a substitute BMT price when the protocol has already been named. Leukemia lists sit on [Leukemia Treatment in India](/treatments/leukemia-treatment-in-india). Lymphoma lists sit on [Lymphoma Treatment in India](/treatments/lymphoma-treatment-in-india). Thalassemia lists sit on [Thalassemia Treatment in India](/treatments/thalassemia-treatment-in-india).
 
 ## Top 10 Medical Sources
 

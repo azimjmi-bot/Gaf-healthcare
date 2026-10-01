@@ -3184,6 +3184,86 @@ test("the published lymphoma page uses modality USD ranges and GEO links", () =>
   assert.match(leukemia?.translations.en?.editorialBody ?? "", /\/treatments\/lymphoma-treatment-in-india/);
 });
 
+test("the published thalassemia page uses modality USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "thalassemia-treatment-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /\$28,000–\$75,000/);
+  assert.match(body, /\$28,000–\$70,000/);
+  assert.match(body, /\$40,000–\$95,000/);
+  assert.match(body, /\$150,000–\$400,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: Thalassemia Treatment in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Hematology\/Bone-Marrow-Transplantation/);
+  assert.match(body, /\/costs\/India\/Hematology\/Allogeneic-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Pediatric-Hematology\/Pediatric-Bone-Marrow-Transplantation/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/leukemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/lymphoma-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/thalassemia-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/thalassemia-care\.webp/);
+  assert.match(body, /\/uploads\/treatments\/thalassemia-iron\.webp/);
+  assert.match(body, /\/uploads\/treatments\/thalassemia-hsct\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Hematology",
+    "/doctors/India/Mumbai/Hematology",
+    "/doctors/India/Bengaluru/Hematology",
+    "/doctors/India/Chennai/Hematology",
+    "/doctors/India/Hyderabad/Hematology",
+    "/doctors/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
+    "/doctors/India/Delhi-NCR/Hematology/Allogeneic-Stem-Cell-Transplant",
+    "/hospitals/India/Delhi-NCR/Hematology",
+    "/hospitals/India/Mumbai/Hematology",
+    "/costs/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
+    "/costs/India/Delhi-NCR/Hematology/Allogeneic-Stem-Cell-Transplant",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is thalassemia\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Bone Marrow",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/thalassemia-treatment-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/hematology\/thalassemia/);
+  assert.doesNotMatch(body, /\/treatments\/alpha-thalassemia-treatment-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/thalassemia-treatment-in-india/);
+  const bmt = store.treatments.find((row) => row.slug === "bone-marrow-transplant-in-india");
+  const leukemia = store.treatments.find((row) => row.slug === "leukemia-treatment-in-india");
+  const lymphoma = store.treatments.find((row) => row.slug === "lymphoma-treatment-in-india");
+  assert.match(bmt?.translations.en?.editorialBody ?? "", /\/treatments\/thalassemia-treatment-in-india/);
+  assert.match(leukemia?.translations.en?.editorialBody ?? "", /\/treatments\/thalassemia-treatment-in-india/);
+  assert.match(lymphoma?.translations.en?.editorialBody ?? "", /\/treatments\/thalassemia-treatment-in-india/);
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";

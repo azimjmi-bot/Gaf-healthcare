@@ -104,7 +104,7 @@ const treatment = {
     "pediatric-bone-marrow-transplantation",
     "bone-marrow-biopsy",
   ],
-  relatedTreatmentSlugs: [BMT, "lymphoma-treatment-in-india"],
+  relatedTreatmentSlugs: [BMT, "lymphoma-treatment-in-india", "thalassemia-treatment-in-india"],
   status: "published" as const,
   featured: true,
   sortOrder: 37,
