@@ -58,7 +58,7 @@ Aplastic anemia is different from ordinary nutritional anaemia. Iron-deficiency 
 
 No. Aplastic anemia is not itself a cancer. It is classified as a bone marrow failure disorder.
 
-It can be associated with clonal disorders such as paroxysmal nocturnal haemoglobinuria (PNH), and a small proportion of patients can later develop myelodysplastic syndrome or acute myeloid leukemia. That is one reason long-term haematology follow-up is important. PNH, Fanconi-anemia, MDS and aplastic-anemia-BMT treatment pages are not live on this site. Use this pillar page plus the named modality sheets. Autologous transplant lists sit on [Autologous Bone Marrow Transplant in India](/treatments/autologous-bone-marrow-transplant-in-india).
+It can be associated with clonal disorders such as paroxysmal nocturnal haemoglobinuria (PNH), and a small proportion of patients can later develop myelodysplastic syndrome or acute myeloid leukemia. That is one reason long-term haematology follow-up is important. PNH, MDS and aplastic-anemia-BMT treatment pages are not live on this site. Use this pillar page plus the named modality sheets. Autologous transplant lists sit on [Autologous Bone Marrow Transplant in India](/treatments/autologous-bone-marrow-transplant-in-india). Fanconi anemia lists sit on [Fanconi Anemia Treatment in India](/treatments/fanconi-anemia-treatment-in-india).
 
 Leukemia lists sit on [Leukemia Treatment in India](/treatments/leukemia-treatment-in-india). Myeloma lists sit on [Multiple Myeloma Treatment in India](/treatments/multiple-myeloma-treatment-in-india). Lymphoma lists sit on [Lymphoma Treatment in India](/treatments/lymphoma-treatment-in-india).
 

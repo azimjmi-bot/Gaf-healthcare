@@ -280,7 +280,7 @@ A remote review can begin before travel. Useful documents include a passport or 
 
 The choice is not simply between transplant and no treatment. Modern plans can include combination drug therapy, immunotherapy, targeted therapy, chemotherapy, stem-cell transplantation, maintenance therapy, CAR-T therapy in selected diseases and clinical trials. For some diseases ASCT is an established component. For others its role may be limited or evolving.
 
-Hodgkin-lymphoma, non-Hodgkin-lymphoma, allogeneic-BMT, CAR-T-treatment, haematology-treatment and autologous-BMT-cost pages are not live on this site. Use this pillar page plus the named modality sheets.
+Hodgkin-lymphoma, non-Hodgkin-lymphoma, allogeneic-BMT, CAR-T-treatment, haematology-treatment and autologous-BMT-cost pages are not live on this site. Use this pillar page plus the named modality sheets. Fanconi anemia lists sit on [Fanconi Anemia Treatment in India](/treatments/fanconi-anemia-treatment-in-india).
 
 ## Questions to ask
 

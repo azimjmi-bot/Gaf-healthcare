@@ -283,7 +283,7 @@ Myeloma and lymphoma are also different types of haematological cancer. Myeloma 
 
 Inherited marrow-failure lists sit on [Thalassemia Treatment in India](/treatments/thalassemia-treatment-in-india) and [Sickle Cell Anemia Treatment in India](/treatments/sickle-cell-anemia-treatment-in-india). Transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india).
 
-MGUS, smoldering-myeloma, plasmacytoma, daratumumab, bispecific-antibody and BCMA-CAR-T treatment pages are not live on this site. Use the named modality sheets rather than an invented disease page. Aplastic anemia lists sit on [Aplastic Anemia Treatment in India](/treatments/aplastic-anemia-treatment-in-india). Autologous transplant lists sit on [Autologous Bone Marrow Transplant in India](/treatments/autologous-bone-marrow-transplant-in-india).
+MGUS, smoldering-myeloma, plasmacytoma, daratumumab, bispecific-antibody and BCMA-CAR-T treatment pages are not live on this site. Use the named modality sheets rather than an invented disease page. Aplastic anemia lists sit on [Aplastic Anemia Treatment in India](/treatments/aplastic-anemia-treatment-in-india). Autologous transplant lists sit on [Autologous Bone Marrow Transplant in India](/treatments/autologous-bone-marrow-transplant-in-india). Fanconi anemia lists sit on [Fanconi Anemia Treatment in India](/treatments/fanconi-anemia-treatment-in-india).
 
 ## Questions to ask a myeloma specialist
 
