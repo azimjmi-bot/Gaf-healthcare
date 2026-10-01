@@ -437,7 +437,7 @@ GAF Healthcare can help coordinate the process with appropriate hospitals and ha
 - [Matched sibling donor transplant](/costs/India/Pediatric-Hematology/Matched-Sibling-Donor-Transplant) — **$28,000–$70,000**
 - [Bone marrow biopsy](/costs/India/Hematology/Bone-Marrow-Biopsy) — **$300–$900**
 
-Alpha-thalassemia, beta-thalassemia, thalassemia-major, gene-therapy, haematology-treatment and genetic-testing treatment pages are not live on this site. Use the named modality sheets rather than an invented disease page. Sickle cell lists sit on [Sickle Cell Anemia Treatment in India](/treatments/sickle-cell-anemia-treatment-in-india). Myeloma lists sit on [Multiple Myeloma Treatment in India](/treatments/multiple-myeloma-treatment-in-india).
+Alpha-thalassemia, beta-thalassemia, thalassemia-major, gene-therapy, haematology-treatment and genetic-testing treatment pages are not live on this site. Use the named modality sheets rather than an invented disease page. Sickle cell lists sit on [Sickle Cell Anemia Treatment in India](/treatments/sickle-cell-anemia-treatment-in-india). Myeloma lists sit on [Multiple Myeloma Treatment in India](/treatments/multiple-myeloma-treatment-in-india). Aplastic anemia lists sit on [Aplastic Anemia Treatment in India](/treatments/aplastic-anemia-treatment-in-india).
 
 Transfusion, chelation, transplant and gene-therapy lists treat different briefs. They are not a substitute thalassemia package.
 

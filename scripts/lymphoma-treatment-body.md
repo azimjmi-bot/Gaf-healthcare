@@ -557,7 +557,7 @@ GAF Healthcare can help coordinate the process with appropriate hospitals and ha
 - [Pediatric bone marrow transplantation](/costs/India/Pediatric-Hematology/Pediatric-Bone-Marrow-Transplantation) — **$28,000–$75,000**
 - [Bone marrow biopsy](/costs/India/Hematology/Bone-Marrow-Biopsy) — **$300–$900**
 
-Hodgkin lymphoma, non-Hodgkin lymphoma, DLBCL, follicular lymphoma, mantle-cell lymphoma, Burkitt lymphoma and blood-cancer treatment pages are not live on this site. Use the named modality sheets rather than an invented disease page. Thalassemia lists sit on [Thalassemia Treatment in India](/treatments/thalassemia-treatment-in-india). Sickle cell lists sit on [Sickle Cell Anemia Treatment in India](/treatments/sickle-cell-anemia-treatment-in-india). Myeloma lists sit on [Multiple Myeloma Treatment in India](/treatments/multiple-myeloma-treatment-in-india).
+Hodgkin lymphoma, non-Hodgkin lymphoma, DLBCL, follicular lymphoma, mantle-cell lymphoma, Burkitt lymphoma and blood-cancer treatment pages are not live on this site. Use the named modality sheets rather than an invented disease page. Thalassemia lists sit on [Thalassemia Treatment in India](/treatments/thalassemia-treatment-in-india). Sickle cell lists sit on [Sickle Cell Anemia Treatment in India](/treatments/sickle-cell-anemia-treatment-in-india). Myeloma lists sit on [Multiple Myeloma Treatment in India](/treatments/multiple-myeloma-treatment-in-india). Aplastic anemia lists sit on [Aplastic Anemia Treatment in India](/treatments/aplastic-anemia-treatment-in-india).
 
 Chemotherapy, radiation, transplant and CAR-T lists treat different briefs. They are not a substitute lymphoma package.
 
