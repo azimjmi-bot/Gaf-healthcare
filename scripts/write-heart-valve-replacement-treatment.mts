@@ -270,7 +270,7 @@ const treatment = {
           id: "hvr-faq-12",
           question: "Is there a GAF aortic-stenosis or mitral-regurgitation treatment page?",
           answer:
-            "No. Aortic-stenosis, mitral-regurgitation, rheumatic-heart-disease, tricuspid and pulmonary-valve treatment pages are not live. Use this pillar page and the named modality sheets.",
+            "No. Aortic-stenosis, mitral-regurgitation, rheumatic-heart-disease and pulmonary-valve treatment pages are not live. Named tricuspid replacement sits on Tricuspid Valve Replacement Surgery in India.",
         },
       ],
       imageAlt:

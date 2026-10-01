@@ -73,7 +73,7 @@ Valve replacement can be performed for all four heart valves, although the frequ
 
 **2. Mitral valve replacement.** The mitral valve sits between the left atrium and left ventricle. Disease may include stenosis, severe regurgitation, rheumatic disease, degenerative disease, functional regurgitation or endocarditis-related destruction. Whenever a durable repair is possible, neighbouring [mitral valve repair](/costs/India/Cardiac-Surgery/Mitral-Valve-Repair) at **$7,500–$18,000** may be the honest product. When the valve cannot be repaired reliably, replacement may be recommended.
 
-**3. Tricuspid valve replacement.** The tricuspid valve lies between the right atrium and right ventricle. Disease may follow severe regurgitation, rheumatic disease, congenital abnormalities, previous left-sided valve disease, pacemaker or ICD leads, infective endocarditis or structural degeneration. Right-ventricular function and the condition of other organs influence timing. There is no live GAF tricuspid-only treatment page. Use this pillar page plus the named valve-repair or replacement sheet.
+**3. Tricuspid valve replacement.** The tricuspid valve lies between the right atrium and right ventricle. Disease may follow severe regurgitation, rheumatic disease, congenital abnormalities, previous left-sided valve disease, pacemaker or ICD leads, infective endocarditis or structural degeneration. Right-ventricular function and the condition of other organs influence timing. There is no live GAF tricuspid-only treatment page. Use this pillar page plus the named valve-repair or replacement sheet. Tricuspid replacement lists sit on [Tricuspid Valve Replacement Surgery in India](/treatments/tricuspid-valve-replacement-in-india).
 
 **4. Pulmonary valve replacement.** This is less common in adults than aortic or mitral replacement. It may be required after congenital heart disease, previous Tetralogy of Fallot repair, severe pulmonary regurgitation or stenosis, or dysfunction of a previous pulmonary prosthesis. There is no live GAF pulmonary-valve treatment page.
 
@@ -467,7 +467,7 @@ Yes. Prosthetic valve endocarditis is a serious complication. Patients should se
 
 Depending on anatomy and surgical risk, options may include another surgical replacement or a transcatheter valve-in-valve procedure on the named [TAVR](/treatments/tavr-in-india) pathway.
 
-Aortic-stenosis-treatment, mitral-stenosis-treatment, mitral-regurgitation-treatment, rheumatic-heart-disease, tricuspid-valve-surgery, pulmonary-valve-replacement and city-valve-cost pages are not live on this site. Use this pillar page plus the named modality sheets.
+Aortic-stenosis-treatment, mitral-stenosis-treatment, mitral-regurgitation-treatment, rheumatic-heart-disease, pulmonary-valve-replacement and city-valve-cost pages are not live on this site. Use this pillar page plus the named modality sheets.
 
 ## Recovery timeline after surgical valve replacement
 

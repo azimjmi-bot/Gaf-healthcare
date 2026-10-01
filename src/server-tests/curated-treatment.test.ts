@@ -3835,6 +3835,97 @@ test("the published heart valve replacement page uses GAF USD ranges and cardiac
   assert.match(bav?.translations.en?.editorialBody ?? "", /\/treatments\/heart-valve-replacement-in-india/);
 });
 
+test("the published tricuspid valve replacement page uses GAF USD ranges and cardiac GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "tricuspid-valve-replacement-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$7,000–\$18,500/);
+  assert.match(body, /\$6,500–\$16,500/);
+  assert.match(body, /\$7,500–\$18,000/);
+  assert.match(body, /\$12,000–\$28,000/);
+  assert.match(body, /\$18,000–\$42,000/);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$8,000–\$28,000/);
+  assert.match(body, /\$80,000–\$220,000/);
+  assert.match(body, /8–16 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Tricuspid Valve Replacement in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Heart-Valve-Replacement/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Heart-Valve-Repair/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/TAVR-TAVI-\(Transcatheter-Aortic-Valve-Replacement\)/);
+  assert.match(body, /\/treatments\/heart-valve-replacement-in-india/);
+  assert.match(body, /\/treatments\/tavr-in-india/);
+  assert.match(body, /\/treatments\/cabg-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/tricuspid-valve-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tricuspid-valve-decision\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tricuspid-valve-pathways\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tricuspid-valve-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Mumbai/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Chennai/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/costs/India/Mumbai/Cardiac-Surgery/Heart-Valve-Replacement",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /Procedure/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /Tricuspid Valve Replacement/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/tricuspid-valve-replacement-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/cardiology\/tricuspid/);
+  assert.doesNotMatch(body, /\/treatments\/mitral-valve-replacement-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/aortic-valve-replacement-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/tricuspid-valve-repair-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/minimally-invasive-heart-surgery-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/tricuspid-valve-replacement-in-india/);
+  const valve = store.treatments.find((row) => row.slug === "heart-valve-replacement-in-india");
+  const tavr = store.treatments.find((row) => row.slug === "tavr-in-india");
+  const cabg = store.treatments.find((row) => row.slug === "cabg-surgery-in-india");
+  assert.match(valve?.translations.en?.editorialBody ?? "", /\/treatments\/tricuspid-valve-replacement-in-india/);
+  assert.match(tavr?.translations.en?.editorialBody ?? "", /\/treatments\/tricuspid-valve-replacement-in-india/);
+  assert.match(cabg?.translations.en?.editorialBody ?? "", /\/treatments\/tricuspid-valve-replacement-in-india/);
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";
