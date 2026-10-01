@@ -142,7 +142,7 @@ TAVR planning is considerably more detailed than a routine cardiac procedure.
 
 ![Educational illustration of CT TAVR planning for annulus size, coronary height and vascular access](/uploads/treatments/tavr-ct-planning.webp)
 
-**Coronary evaluation.** Some patients require coronary angiography or CT coronary assessment. If significant coronary artery disease is present, the treatment strategy may need to incorporate coronary intervention or surgical treatment. Named PCI sits on [Coronary Angioplasty in India](/treatments/coronary-angioplasty-in-india). Named [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) is a neighbouring surgical product.
+**Coronary evaluation.** Some patients require coronary angiography or CT coronary assessment. If significant coronary artery disease is present, the treatment strategy may need to incorporate coronary intervention or surgical treatment. Named PCI sits on [Coronary Angioplasty in India](/treatments/coronary-angioplasty-in-india). Named [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) is a neighbouring surgical product. CABG lists sit on [CABG Surgery in India](/treatments/cabg-surgery-in-india).
 
 **ECG** establishes the patient's baseline rhythm and conduction status. This is important because conduction abnormalities can occur after TAVR and some patients may require permanent pacing.
 

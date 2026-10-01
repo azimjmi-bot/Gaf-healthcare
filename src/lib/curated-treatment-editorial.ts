@@ -151,7 +151,7 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   }
   if (/tendon/i.test(text)) return "Tendon";
   if (
-    /coronary|percutaneous coronary|\bpci\b|pacemaker|bradycardia|heart block|\bicd\b|leadless pacing|resynchronization|tavr|tavi|aortic stenosis|aortic valve|valvuloplasty|\bbav\b/i.test(
+    /coronary|percutaneous coronary|\bpci\b|\bcabg\b|bypass graft|pacemaker|bradycardia|heart block|\bicd\b|leadless pacing|resynchronization|tavr|tavi|aortic stenosis|aortic valve|valvuloplasty|\bbav\b/i.test(
       text,
     )
   ) {
