@@ -116,6 +116,9 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   if (/leukemia|leukaemia|bone marrow|hematopoietic|\bhsct\b|\bbmt\b/i.test(text)) {
     return "Bone Marrow";
   }
+  if (/lymphoma|hodgkin|lymphatic|lymph node/i.test(text)) {
+    return "Lymphatic System";
+  }
   if (/breast/i.test(text)) return "Breast";
   if (/prostate/i.test(text)) return "Prostate";
   if (/colon|colorectal/i.test(text)) return "Colon";

@@ -94,7 +94,7 @@ const treatment = {
     "car-t-cell-therapy",
     "bone-marrow-biopsy",
   ],
-  relatedTreatmentSlugs: ["leukemia-treatment-in-india"],
+  relatedTreatmentSlugs: ["leukemia-treatment-in-india", "lymphoma-treatment-in-india"],
   status: "published" as const,
   featured: true,
   sortOrder: 36,

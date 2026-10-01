@@ -387,7 +387,7 @@ Yes. The options for relapse depend on the subtype, previous therapy, molecular 
 
 ### What is the difference between leukemia and lymphoma?
 
-Leukemia primarily involves abnormal blood and bone marrow cells, while lymphoma typically forms masses in lymph nodes or other lymphatic tissues. There can be overlap. There is no live lymphoma treatment page on this site.
+Leukemia primarily involves abnormal blood and bone marrow cells, while lymphoma typically forms masses in lymph nodes or other lymphatic tissues. There can be overlap. Lymphoma lists sit on [Lymphoma Treatment in India](/treatments/lymphoma-treatment-in-india).
 
 ### What is acute leukemia?
 
@@ -449,7 +449,7 @@ GAF Healthcare can help coordinate the process with appropriate hospitals and ha
 - [Pediatric bone marrow transplantation](/costs/India/Pediatric-Hematology/Pediatric-Bone-Marrow-Transplantation) — **$28,000–$75,000**
 - [Bone marrow biopsy](/costs/India/Hematology/Bone-Marrow-Biopsy) — **$300–$900**
 
-AML, ALL, CML, CLL, lymphoma and blood-cancer treatment pages are not live on this site. Use the named modality sheets rather than an invented disease page.
+AML, ALL, CML, CLL and blood-cancer treatment pages are not live on this site. Lymphoma lists sit on [Lymphoma Treatment in India](/treatments/lymphoma-treatment-in-india).
 
 Chemotherapy, targeted-therapy and transplant lists treat different briefs. They are not a substitute leukemia package.
 
