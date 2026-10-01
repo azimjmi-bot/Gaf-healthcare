@@ -4174,6 +4174,88 @@ test("the published LVAD implantation page uses GAF USD ranges and cardiac GEO l
   assert.match(icd?.translations.en?.editorialBody ?? "", /\/treatments\/lvad-implantation-in-india/);
 });
 
+test("the published heart bypass surgery cost page uses GAF USD ranges and cardiac GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "heart-bypass-surgery-cost-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$5,500–\$14,000/);
+  assert.match(body, /\$8,500–\$20,000/);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$10,000–\$24,000/);
+  assert.match(body, /\$3,200–\$8,500/);
+  assert.match(body, /\$400–\$1,200/);
+  assert.match(body, /\$70,000–\$200,000/);
+  assert.match(body, /7–14 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Heart Bypass Surgery Cost in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/CABG-\(Coronary-Artery-Bypass-Grafting\)/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Redo-CABG/);
+  assert.match(body, /\/costs\/India\/Cardiology\/Coronary-Angioplasty-Stenting/);
+  assert.match(body, /\/treatments\/cabg-surgery-in-india/);
+  assert.match(body, /\/treatments\/coronary-angioplasty-in-india/);
+  assert.match(body, /\/uploads\/treatments\/cabg-cost-circuit\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cabg-cost-grafts\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cabg-cost-drivers\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cabg-cost-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/doctors/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/doctors/India/Chennai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/costs/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is a practical preliminary budget for CABG in India\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/heart-bypass-surgery-cost-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/cardiac/);
+  assert.doesNotMatch(body, /\/treatments\/heart-attack-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/redo-cabg-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/minimally-invasive-heart-surgery-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/heart-bypass-surgery-cost-in-india/);
+  const cabg = store.treatments.find((row) => row.slug === "cabg-surgery-in-india");
+  const angioplasty = store.treatments.find((row) => row.slug === "coronary-angioplasty-in-india");
+  const valve = store.treatments.find((row) => row.slug === "heart-valve-replacement-in-india");
+  assert.match(cabg?.translations.en?.editorialBody ?? "", /\/treatments\/heart-bypass-surgery-cost-in-india/);
+  assert.match(angioplasty?.translations.en?.editorialBody ?? "", /\/treatments\/heart-bypass-surgery-cost-in-india/);
+  assert.match(valve?.translations.en?.editorialBody ?? "", /\/treatments\/heart-bypass-surgery-cost-in-india/);
+});
+
 test("Save recreates a missing Treatment instead of 404ing", () => {
   const store: CuratedTreatmentStore = { treatments: [] };
   const id = "099c61a5-a4e5-4227-9711-500eb3636730";
