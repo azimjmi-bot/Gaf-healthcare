@@ -1,9 +1,6 @@
-"use client";
-
 import type { ReactNode } from "react";
-import { Button } from "@/components/ui/button";
-import { LocaleLink as Link } from "@/components/locale-link";
-import { useLocale, useSurfaceAvailable, useT } from "@/components/locale-provider";
+import { PseoEstimateCta } from "@/components/pseo-estimate-cta";
+import { blogEstimateWhatsapp } from "@/lib/site";
 
 export function PageIntro({
   eyebrow,
@@ -32,27 +29,23 @@ export function PageIntro({
   );
 }
 
-export function CtaBand() {
-  const t = useT();
-  const locale = useLocale();
-  const surfaceAvailable = useSurfaceAvailable();
-  if (!surfaceAvailable("consult")) return null;
+export function CtaBand({
+  subject = "treatment",
+  place = "India",
+}: {
+  subject?: string;
+  place?: string;
+} = {}) {
+  const wa = blogEstimateWhatsapp(subject, place);
   return (
-    <section className="bg-ink text-ivory">
-      <div className="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 py-12 sm:px-5 md:flex-row md:items-center md:gap-8 md:px-8 md:py-20">
-        <div>
-          <p className="eyebrow text-gold-bright">{t("cta.eyebrow")}</p>
-          <h2 className="mt-3 max-w-xl font-heading text-[1.85rem] leading-tight md:text-5xl">
-            {t("cta.title")}
-          </h2>
-        </div>
-        <Button
-          asChild
-          className="h-12 w-full rounded-full bg-primary px-8 text-primary-foreground hover:bg-primary/90 md:w-auto"
-        >
-          <Link href="/consult">{t("cta.button")}</Link>
-        </Button>
-      </div>
+    <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+      <PseoEstimateCta
+        subject={subject}
+        place={place}
+        consultHref={wa.primary}
+        secondaryHref={wa.secondary}
+        variant="records"
+      />
     </section>
   );
 }

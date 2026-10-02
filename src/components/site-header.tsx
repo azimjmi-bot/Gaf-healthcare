@@ -37,8 +37,6 @@ export function SiteHeader() {
   ].filter((link) =>
     surfaceAvailable(link.surface as LocaleSurface),
   );
-  const consultAvailable = surfaceAvailable("consult");
-
   return (
     <header
       className={
@@ -77,7 +75,6 @@ export function SiteHeader() {
         </nav>
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
           <LanguageSwitcher className={overlay ? "text-white" : ""} />
-          {consultAvailable ? (
           <Button
             asChild
             className="h-10 rounded-full bg-primary px-3 text-sm text-primary-foreground hover:bg-primary/90 sm:px-5"
@@ -87,7 +84,6 @@ export function SiteHeader() {
               <span className="hidden md:inline">{t("nav.consult")}</span>
             </Link>
           </Button>
-          ) : null}
           <Sheet open={open} onOpenChange={setOpen}>
             <SheetTrigger asChild>
               <Button
@@ -123,13 +119,11 @@ export function SiteHeader() {
                     {l.label}
                   </Link>
                 ))}
-                {consultAvailable ? (
                 <Button asChild className="mt-4 h-12 rounded-full">
                   <Link href="/consult" onClick={() => setOpen(false)}>
                     {t("nav.dossier")}
                   </Link>
                 </Button>
-                ) : null}
               </nav>
             </SheetContent>
           </Sheet>

@@ -72,12 +72,11 @@ function BlogEstimatePanel({
 function renderStandardBlock(
   block: ArticleBlock,
   title?: string,
-  whatsappCtas = false,
 ) {
   if (block.type === "paragraph") {
     const source = withoutDuplicateTitle(block.text, title);
     return source.trim() ? (
-      <MarkdownBody key={block.id} source={source} whatsappCtas={whatsappCtas} />
+      <MarkdownBody key={block.id} source={source} />
     ) : null;
   }
   if (block.type === "heading") {
@@ -118,9 +117,8 @@ function renderStandardBlock(
     return <hr key={block.id} />;
   }
   if (block.type === "button") {
-    const href = whatsappCtas ? consultToWhatsappHref(block.href) : block.href;
-    const cta =
-      /^\/consult(?:\?|$)/.test(href) || /^https:\/\/wa\.me\//i.test(href);
+    const href = consultToWhatsappHref(block.href);
+    const cta = /^https:\/\/wa\.me\//i.test(href);
     return (
       <p key={block.id}>
         <a
@@ -140,7 +138,7 @@ function renderStandardBlock(
 export function ArticleBlocks({
   blocks,
   title,
-  whatsappCtas = false,
+  whatsappCtas = true,
   ctaSubject,
   ctaPlace = "India",
 }: {
@@ -155,7 +153,7 @@ export function ArticleBlocks({
   if (!whatsappCtas) {
     return (
       <div className="article-body">
-        {blocks.map((block) => renderStandardBlock(block, title, false))}
+        {blocks.map((block) => renderStandardBlock(block, title))}
       </div>
     );
   }
@@ -212,7 +210,7 @@ export function ArticleBlocks({
       panel += 1;
       continue;
     }
-    rendered.push(renderStandardBlock(block, title, true));
+    rendered.push(renderStandardBlock(block, title));
     index += 1;
   }
 

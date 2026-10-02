@@ -1,5 +1,6 @@
 import type { ComponentProps, ReactNode } from "react";
 import { LocaleLink as Link } from "@/components/locale-link";
+import { consultToWhatsappHref } from "@/lib/site";
 
 function EstimateCtaLink({
   href,
@@ -89,7 +90,14 @@ export function PseoEstimateCta({
   className?: string;
 }) {
   const copy = COPY[variant];
-  const nextHref = secondaryHref || consultHref;
+  const primaryHref = consultToWhatsappHref(
+    consultHref,
+    `Please review my medical records and share a case-specific estimate for ${subject} in ${place}.`,
+  );
+  const nextHref = consultToWhatsappHref(
+    secondaryHref || consultHref,
+    `I would like to speak with GAF Healthcare about ${subject} in ${place}.`,
+  );
 
   return (
     <aside className={["cost-panel mt-12", className].filter(Boolean).join(" ")} aria-label="Personalized treatment estimate">
@@ -98,7 +106,7 @@ export function PseoEstimateCta({
         {copy.body(subject, place)}
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
-        <EstimateCtaLink href={consultHref} className="cost-btn cost-btn--primary">
+        <EstimateCtaLink href={primaryHref} className="cost-btn cost-btn--primary">
           {copy.primary}
         </EstimateCtaLink>
         <EstimateCtaLink

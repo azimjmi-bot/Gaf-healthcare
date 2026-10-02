@@ -217,13 +217,13 @@ export async function CostSheet({ slug }: { slug: string }) {
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:px-5 md:grid-cols-12 md:gap-12 md:px-8 md:py-16">
         <div className="md:col-span-7">
           {t.replaceGuide && t.blocks && t.blocks.length > 0 ? (
-            <ArticleBlocks blocks={t.blocks} />
+            <ArticleBlocks blocks={t.blocks} ctaSubject={t.name} />
           ) : guide ? (
             <>
               <guide.Guide />
               {t.blocks && t.blocks.length > 0 ? (
                 <div className="mt-12">
-                  <ArticleBlocks blocks={t.blocks} />
+                  <ArticleBlocks blocks={t.blocks} ctaSubject={t.name} />
                 </div>
               ) : null}
             </>
@@ -242,7 +242,7 @@ export async function CostSheet({ slug }: { slug: string }) {
               </ul>
               {t.blocks && t.blocks.length > 0 ? (
                 <div className="mt-12">
-                  <ArticleBlocks blocks={t.blocks} />
+                  <ArticleBlocks blocks={t.blocks} ctaSubject={t.name} />
                 </div>
               ) : null}
             </>

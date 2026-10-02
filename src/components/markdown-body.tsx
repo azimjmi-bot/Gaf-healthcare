@@ -33,15 +33,13 @@ const ALLOWED = [
   "td",
 ];
 
-function markdownComponents(whatsappCtas?: boolean): Components {
+function markdownComponents(): Components {
   return {
   h1: ({ children }) => <h2>{children}</h2>,
   a: ({ href, children }) => {
     const raw = typeof href === "string" && /^(https?:|mailto:|\/|#)/i.test(href) ? href : undefined;
-    const safe = raw && whatsappCtas ? consultToWhatsappHref(raw) : raw;
-    const cta =
-      typeof safe === "string" &&
-      (/^\/consult(?:\?|$)/.test(safe) || /^https:\/\/wa\.me\//i.test(safe));
+    const safe = raw ? consultToWhatsappHref(raw) : raw;
+    const cta = typeof safe === "string" && /^https:\/\/wa\.me\//i.test(safe);
     return (
       <a
         href={safe}
@@ -67,11 +65,9 @@ function markdownComponents(whatsappCtas?: boolean): Components {
 export function MarkdownBody({
   source,
   className,
-  whatsappCtas = false,
 }: {
   source: string;
   className?: string;
-  whatsappCtas?: boolean;
 }) {
   const text = source.trim();
   if (!text) return null;
@@ -80,7 +76,7 @@ export function MarkdownBody({
       <ReactMarkdown
         allowedElements={ALLOWED}
         unwrapDisallowed
-        components={markdownComponents(whatsappCtas)}
+        components={markdownComponents()}
         remarkPlugins={[remarkGfm]}
       >
         {text}

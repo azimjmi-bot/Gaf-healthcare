@@ -122,7 +122,7 @@ export function CostArticleSection({
           />
           {treatment.blocks && treatment.blocks.length > 0 ? (
             <div className="mt-14 max-w-3xl">
-              <ArticleBlocks blocks={treatment.blocks} />
+              <ArticleBlocks blocks={treatment.blocks} ctaSubject={treatment.name} />
             </div>
           ) : null}
         </div>

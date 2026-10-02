@@ -8,6 +8,7 @@ import { HospitalCampusVisual, campusCaption } from "@/components/hospital-campu
 import { JsonLd } from "@/components/json-ld";
 import { PatientReviews } from "@/components/patient-reviews";
 import { PatientStories } from "@/components/patient-stories";
+import { PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
 import {
   GOOGLE_MAPS_URL,
   GOOGLE_PROFILE,
@@ -23,7 +24,6 @@ import { localizeBlog, localizeHomeExtras, localizeMessages } from "@/lib/i18n/l
 import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { getRequestLocale } from "@/lib/i18n/request";
-import { surfaceIsAvailable } from "@/lib/i18n/surfaces";
 import { ORGANISATION_ID } from "@/lib/jsonld";
 import { SITE_URL } from "@/lib/seo";
 import type { Treatment } from "@/lib/treatments";
@@ -313,17 +313,12 @@ export default async function HomePage() {
         label={t["a11y.patientReviews"]}
       />
 
-      {surfaceIsAvailable(locale, "consult") ? (
-      <section className="home-finale">
-        <div>
-          <h2>{t["home.finaleTitle"]}</h2>
-          <p>{t["home.finaleLede"]}</p>
-        </div>
-        <Link href="/consult" className="home-finale__btn">
-          {t["home.finaleButton"]}
-        </Link>
-      </section>
-      ) : null}
+      <PseoEstimateCtaSection
+        subject="treatment"
+        place="India"
+        consultHref="/consult"
+        variant="records"
+      />
     </>
   );
 }

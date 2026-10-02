@@ -1,5 +1,4 @@
 import { LocaleLink as Link } from "@/components/locale-link";
-import { surfaceIsAvailable } from "@/lib/i18n/surfaces";
 import {
   Award,
   Building2,
@@ -129,8 +128,6 @@ export function DoctorProfileHero({
             ) : null}
 
             <div className="dhero__actions">
-              {surfaceIsAvailable(locale, "consult") ? (
-                <>
               <Link className="dhero__book" href={`/consult?doctor=${doctor.slug}`}>
                 <CalendarDays className="size-4" />
                 {t["profile.requestConsult"] ?? "Request a Consultation"}
@@ -139,8 +136,6 @@ export function DoctorProfileHero({
               <Link className="dhero__contact" href="/consult">
                 {t["profile.medicalOpinion"] ?? "Get a Medical Opinion"}
               </Link>
-                </>
-              ) : null}
               <a className="dhero__contact" href={wa} target="_blank" rel="noreferrer">
                 <MessageCircle className="size-4" />
                 {t["profile.contact"]}

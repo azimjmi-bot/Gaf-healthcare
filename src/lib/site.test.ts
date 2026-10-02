@@ -12,6 +12,19 @@ test("consultToWhatsappHref rewrites consult links and leaves other hrefs alone"
   const rewritten = consultToWhatsappHref("/consult?treatment=Lumpectomy%20vs%20Mastectomy");
   assert.match(rewritten, /^https:\/\/wa\.me\/919044346292\?text=/);
   assert.match(rewritten, /Lumpectomy/);
+  assert.match(
+    consultToWhatsappHref("/consult?doctor=dr-aditya-gupta&city=Delhi-NCR"),
+    /aditya/i,
+  );
+  assert.match(
+    consultToWhatsappHref("/consult?hospital=apollo-delhi"),
+    /apollo/,
+  );
+  assert.match(
+    consultToWhatsappHref("/consult?specialty=radiation-oncology"),
+    /radiation/,
+  );
+  assert.match(consultToWhatsappHref("/consult"), /case-specific/);
   assert.equal(consultToWhatsappHref("/blogs/lumpectomy-vs-mastectomy"), "/blogs/lumpectomy-vs-mastectomy");
   assert.equal(
     consultToWhatsappHref("https://wa.me/919044346292?text=Hello"),

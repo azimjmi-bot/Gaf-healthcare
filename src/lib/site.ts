@@ -19,15 +19,41 @@ export function isPublicWhatsAppFloatPath(pathname: string) {
   return !/(^|\/)cms(\/|$)/i.test(path);
 }
 
+function prettyConsultValue(value: string) {
+  try {
+    return decodeURIComponent(value).replace(/[-_]+/g, " ").replace(/\s+/g, " ").trim();
+  } catch {
+    return value.replace(/[-_]+/g, " ").replace(/\s+/g, " ").trim();
+  }
+}
+
 /** Turn a /consult CTA into a prefilled WhatsApp chat. Other hrefs are unchanged. */
 export function consultToWhatsappHref(href: string, fallbackMessage?: string) {
-  if (!/^\/consult(?:\?|$)/i.test(href)) return href;
+  const pathAndQuery = href.replace(/^https?:\/\/[^/]+/i, "");
+  if (!/(?:^|\/)consult(?:\?|$)/i.test(pathAndQuery)) return href;
   const query = href.includes("?") ? href.slice(href.indexOf("?") + 1) : "";
-  const treatment = new URLSearchParams(query).get("treatment")?.trim();
-  const message = treatment
-    ? `Please review my medical records and advise on ${treatment} in India. I would like a case-specific estimate.`
-    : fallbackMessage ||
-      "Please review my medical records and share a case-specific treatment estimate in India.";
+  const params = new URLSearchParams(query);
+  const treatment = params.get("treatment")?.trim();
+  const doctor = params.get("doctor")?.trim();
+  const hospital = params.get("hospital")?.trim();
+  const specialty = params.get("specialty")?.trim();
+  const city = params.get("city")?.trim();
+  const place = city ? prettyConsultValue(city) : "India";
+  let message = fallbackMessage;
+  if (!message) {
+    if (treatment) {
+      message = `Please review my medical records and advise on ${prettyConsultValue(treatment)} in ${place}. I would like a case-specific estimate.`;
+    } else if (doctor) {
+      message = `Please review my medical records. I would like to discuss care with ${prettyConsultValue(doctor)} in ${place}.`;
+    } else if (hospital) {
+      message = `Please review my medical records. I would like a case-specific estimate at ${prettyConsultValue(hospital)} in ${place}.`;
+    } else if (specialty) {
+      message = `Please review my medical records and advise on ${prettyConsultValue(specialty)} in ${place}. I would like a case-specific estimate.`;
+    } else {
+      message =
+        "Please review my medical records and share a case-specific treatment estimate in India.";
+    }
+  }
   return whatsappHref(message);
 }
 

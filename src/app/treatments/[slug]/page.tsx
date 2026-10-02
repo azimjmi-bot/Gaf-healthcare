@@ -5,7 +5,7 @@ import { ArrowRight, ChevronDown, MapPin } from "lucide-react";
 import { DoctorCard } from "@/components/doctor-card";
 import { HospitalCard } from "@/components/hospital-card";
 import { LocaleLink as Link } from "@/components/locale-link";
-import { MarkdownBody } from "@/components/markdown-body";
+import { MarkdownWithEstimateCtas } from "@/components/markdown-with-estimate-ctas";
 import {
   publishedCuratedTreatments,
   resolvePublishedCuratedTreatment,
@@ -22,7 +22,7 @@ import { getRequestLocale } from "@/lib/i18n/request";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { treatmentUi } from "@/lib/i18n/treatment-ui";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
-import { whatsappHref } from "@/lib/site";
+import { blogCtaSubject, blogEstimateWhatsapp } from "@/lib/site";
 import { getCountry, getSpecialty } from "@/lib/taxonomy";
 import { catalogTreatments } from "@/lib/treatments";
 import {
@@ -252,7 +252,7 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
               <h1>{copy.name}</h1>
               <p className="treatment-profile__lede">{copy.shortDescription}</p>
               <a
-                href={whatsappHref(copy.name)}
+                href={blogEstimateWhatsapp(blogCtaSubject(copy.name)).primary}
                 target="_blank"
                 rel="noreferrer"
                 className="treatment-profile__primary"
@@ -327,9 +327,12 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
               const display = treatmentEditorialBodyForDisplay(copy, locale);
               const { before, quickAnswer, after } =
                 splitTreatmentQuickAnswer(display);
+              const subject = blogCtaSubject(copy.name);
               return (
                 <>
-                  {before ? <MarkdownBody source={before} /> : null}
+                  {before ? (
+                    <MarkdownWithEstimateCtas source={before} subject={subject} />
+                  ) : null}
                   {quickAnswer ? (
                     <aside className="article-quick-answer">
                       <p className="article-quick-answer__label">Quick answer</p>
@@ -344,7 +347,9 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
                       ))}
                     </aside>
                   ) : null}
-                  {after ? <MarkdownBody source={after} /> : null}
+                  {after ? (
+                    <MarkdownWithEstimateCtas source={after} subject={subject} />
+                  ) : null}
                 </>
               );
             })()}
@@ -380,7 +385,7 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
                 ))}
               </dl>
               <a
-                href={whatsappHref(copy.name)}
+                href={blogEstimateWhatsapp(blogCtaSubject(copy.name)).primary}
                 target="_blank"
                 rel="noreferrer"
               >

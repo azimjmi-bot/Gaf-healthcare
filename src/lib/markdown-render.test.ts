@@ -4,6 +4,7 @@ import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { ArticleBlocks } from "@/components/article-body";
 import { MarkdownBody } from "@/components/markdown-body";
+import { MarkdownWithEstimateCtas } from "@/components/markdown-with-estimate-ctas";
 
 test("renders CMS Markdown with GFM elements", () => {
   const html = renderToStaticMarkup(
@@ -29,7 +30,8 @@ test("renders CMS Markdown with GFM elements", () => {
   assert.match(html, /<ul>/);
   assert.match(html, /<table>/);
   assert.match(html, /<del>Outdated<\/del>/);
-  assert.match(html, /href="\/consult"/);
+  assert.match(html, /https:\/\/wa\.me\/919044346292\?text=/);
+  assert.doesNotMatch(html, /href="\/consult"/);
   assert.match(html, /class="md-cta"/);
   assert.match(html, /class="wa-icon"/);
 });
@@ -75,6 +77,33 @@ test("rewrites consult CTAs to WhatsApp when requested", () => {
   assert.match(html, /Need a case-specific Breast Reconstruction After Mastectomy estimate/);
   assert.match(html, /Request a personalized treatment estimate/);
   assert.match(html, /https:\/\/wa\.me\/919044346292\?text=/);
+  assert.doesNotMatch(html, /href="\/consult/);
+  assert.doesNotMatch(html, /md-cta/);
+});
+
+test("turns treatment Markdown CTAs into navy estimate cards", () => {
+  const html = renderToStaticMarkup(
+    createElement(MarkdownWithEstimateCtas, {
+      subject: "Proton Beam Therapy",
+      source: [
+        "Protons are a plan-comparison product.",
+        "",
+        "[Share imaging for a proton review](/consult?treatment=proton-beam-therapy-in-india)",
+        "",
+        "[Message GAF Healthcare on WhatsApp](https://wa.me/919044346292)",
+        "",
+        "## How it works",
+        "",
+        "A cyclotron generates the beam.",
+      ].join("\n"),
+    }),
+  );
+  assert.match(html, /cost-panel/);
+  assert.match(html, /Need a case-specific Proton Beam Therapy estimate/);
+  assert.match(html, /Request a personalized treatment estimate/);
+  assert.match(html, /Speak with GAF Healthcare about Proton Beam Therapy in India/);
+  assert.match(html, /https:\/\/wa\.me\/919044346292\?text=/);
+  assert.match(html, /<h2>How it works<\/h2>/);
   assert.doesNotMatch(html, /href="\/consult/);
   assert.doesNotMatch(html, /md-cta/);
 });
