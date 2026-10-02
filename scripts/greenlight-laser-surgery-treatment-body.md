@@ -4,7 +4,7 @@
 
 Compared with traditional TURP, GreenLight PVP can offer less bleeding, a shorter catheter time and a shorter stay in appropriately selected patients. The 2026 European Association of Urology guideline recognizes 80W, 120W and 180W GreenLight vaporization as surgical alternatives to TURP for selected men with moderate-to-severe lower urinary tract symptoms and prostate volumes of 30–80 mL.
 
-This page is the named GreenLight product. It is **not** prostate cancer surgery. Cancer lists sit on [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) and [Radical Prostatectomy in India](/treatments/radical-prostatectomy-in-india). There is no live GAF TURP, HoLEP, Aquablation, UroLift or BPH-only treatment page. Those neighbouring sheets must not be used as a GreenLight quotation.
+This page is the named GreenLight product. It is **not** prostate cancer surgery. Cancer lists sit on [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) and [Radical Prostatectomy in India](/treatments/radical-prostatectomy-in-india). There is no live GAF TURP, Aquablation, UroLift or BPH-only treatment page. Named HoLEP lists sit on [HoLEP Surgery in India](/treatments/holep-surgery-in-india). Those neighbouring sheets must not be used as a GreenLight quotation.
 
 GAF Healthcare planning for [GreenLight laser surgery](/costs/India/Urology/GreenLight-Laser-Surgery) is **$3,200–$7,800** (typically **1–3 nights**). US comparison is **$14,000–$28,000**. Neighbouring [TURP](/costs/India/Urology/TURP-(Transurethral-Resection-of-the-Prostate)) is **$2,500–$6,200** (typically **2–4 nights**). Neighbouring [HoLEP](/costs/India/Urology/HoLEP-(Holmium-Laser-Enucleation)) is **$3,800–$8,500** (typically **2–4 nights**). Neighbouring [radical prostatectomy](/costs/India/Surgical-Oncology/Radical-Prostatectomy) is **$7,000–$18,000** when the product is cancer, not BPH. Neighbouring [penile implant](/costs/India/Urology/Penile-Implant) is **$5,000–$12,000** when rigidity, not flow, is the product. These are planning ranges from partner hospital cost sheets, not hospital quotations.
 
@@ -100,7 +100,7 @@ The urologist may name another procedure when:
 - Prostate cancer is suspected
 - HoLEP or TURP is the more honest tool for that anatomy
 
-The EAU notes a lack of randomized trials for prostates above **100 mL**. For those glands, HoLEP or another enucleation list may deserve the first conversation. There is no live GAF HoLEP or TURP treatment page; those products sit on neighbouring cost sheets until named separately.
+The EAU notes a lack of randomized trials for prostates above **100 mL**. For those glands, HoLEP or another enucleation list may deserve the first conversation. There is no live GAF TURP treatment page. Named HoLEP lists sit on [HoLEP Surgery in India](/treatments/holep-surgery-in-india).
 
 ## GreenLight PVP vs TURP vs HoLEP
 
