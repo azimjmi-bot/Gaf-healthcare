@@ -262,7 +262,7 @@ const treatment = {
           id: "aso-faq-11",
           question: "Is there a GAF Mustard, Senning or ECMO treatment page?",
           answer:
-            "No. Mustard, Senning, balloon-atrial-septostomy-only, ECMO, ASD-closure, TOF, Glenn and Fontan treatment pages are not live. Neighbouring sheets exist.",
+            "No. Mustard, Senning, balloon-atrial-septostomy-only, ECMO, ASD-closure, TOF and Glenn treatment pages are not live. Neighbouring sheets exist. Fontan lists sit on the Fontan procedure page.",
         },
         {
           id: "aso-faq-12",
