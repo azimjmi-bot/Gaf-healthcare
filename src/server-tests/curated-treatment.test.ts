@@ -680,7 +680,7 @@ test("the published radical prostatectomy page uses GAF USD ranges and uro-oncol
   assert.doesNotMatch(body, /\/treatments\/turp/);
   assert.doesNotMatch(body, /\/treatments\/holep/);
   assert.doesNotMatch(body, /\/treatments\/robotic-prostatectomy-in-india/);
-  assert.doesNotMatch(body, /\/treatments\/penile-implantation/);
+  assert.match(body, /\/treatments\/penile-implantation-in-india/);
   assert.doesNotMatch(body, /Best hospitals/i);
   assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
   assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
@@ -693,6 +693,88 @@ test("the published radical prostatectomy page uses GAF USD ranges and uro-oncol
     /\/treatments\/radical-prostatectomy-in-india/,
   );
   assert.ok(prostate?.relatedTreatmentSlugs?.includes("radical-prostatectomy-in-india"));
+  assert.ok(treatment.relatedTreatmentSlugs?.includes("penile-implantation-in-india"));
+});
+
+test("the published penile implantation page uses GAF USD ranges and urology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "penile-implantation-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$5,000–\$12,000/);
+  assert.match(body, /\$18,000–\$40,000/);
+  assert.match(body, /\$1,500–\$4,200/);
+  assert.match(body, /\$3,500–\$9,000/);
+  assert.match(body, /\$2,500–\$6,200/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Penile Implantation in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Urology\/Penile-Implant/);
+  assert.match(body, /\/doctors\/India\/Urology\/Penile-Implant/);
+  assert.match(body, /\/treatments\/radical-prostatectomy-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/robotic-prostatectomy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/pi-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pi-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pi-threepiece\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pi-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Urology/Penile-Implant",
+    "/doctors/India/Mumbai/Urology/Penile-Implant",
+    "/doctors/India/Bengaluru/Urology/Penile-Implant",
+    "/doctors/India/Chennai/Urology/Penile-Implant",
+    "/doctors/India/Hyderabad/Urology/Penile-Implant",
+    "/hospitals/India/Delhi-NCR/Urology",
+    "/hospitals/India/Mumbai/Urology",
+    "/hospitals/India/Bengaluru/Urology",
+    "/costs/India/Delhi-NCR/Urology/Penile-Implant",
+    "/costs/India/Mumbai/Urology/Penile-Implant",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is penile implantation/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /corporal chambers|prosthesis/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Penis",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/penile-implantation-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/turp/);
+  assert.doesNotMatch(body, /\/treatments\/holep/);
+  assert.doesNotMatch(body, /\/treatments\/greenlight/);
+  assert.doesNotMatch(body, /\/treatments\/erectile-dysfunction/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/penile-implantation-in-india/);
+  const rp = store.treatments.find((row) => row.slug === "radical-prostatectomy-in-india");
+  assert.match(rp?.translations.en?.editorialBody ?? "", /\/treatments\/penile-implantation-in-india/);
+  assert.ok(rp?.relatedTreatmentSlugs?.includes("penile-implantation-in-india"));
 });
 
 test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {

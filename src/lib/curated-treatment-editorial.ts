@@ -124,6 +124,7 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
     return "Lymphatic System";
   }
   if (/breast/i.test(text)) return "Breast";
+  if (/penile|penis|androlog/i.test(text)) return "Penis";
   if (/prostate/i.test(text)) return "Prostate";
   if (/colon|colorectal/i.test(text)) return "Colon";
   if (/bile duct|cholangiocarcinoma|klatskin|perihilar/i.test(text)) return "Bile Duct";

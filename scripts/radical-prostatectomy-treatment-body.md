@@ -6,7 +6,7 @@ India has substantial experience with open, laparoscopic and robot-assisted radi
 
 For international patients, planning commonly includes a review of the biopsy, PSA results, prostate MRI and other staging investigations before travel. That review decides whether surgery is appropriate and whether additional treatment may be required.
 
-This page is the named radical-prostatectomy product. The wider pathway sits on [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india). Robotic technique detail sits on [Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india). There is no live GAF TURP, HoLEP, GreenLight, robotic-prostatectomy-only or penile-implantation treatment page. BPH operations that remove part of the prostate to improve urine flow are not this product.
+This page is the named radical-prostatectomy product. The wider pathway sits on [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india). Robotic technique detail sits on [Robotic Prostatectomy in India](/blogs/robotic-prostatectomy-in-india). There is no live GAF TURP, HoLEP, GreenLight or robotic-prostatectomy-only treatment page. Named implant lists sit on [Penile Implantation in India](/treatments/penile-implantation-in-india). BPH operations that remove part of the prostate to improve urine flow are not this product.
 
 GAF Healthcare planning for [radical prostatectomy](/costs/India/Surgical-Oncology/Radical-Prostatectomy) is **$7,000–$18,000** (typically **3–7 nights**). US comparison is **$30,000–$70,000**. The same sheet covers open, laparoscopic and robotic-assisted approaches. Neighbouring [external-beam radiotherapy](/costs/India/Radiation-Oncology/EBRT) is **$1,000–$6,000+**. Neighbouring [IMRT](/costs/India/Radiation-Oncology/IMRT) is **$6,500–$14,500**. Neighbouring [IGRT](/costs/India/Radiation-Oncology/IGRT) is **$7,200–$16,000**. Neighbouring [SBRT](/costs/India/Radiation-Oncology/SBRT) is **$8,000–$17,500**. Neighbouring [brachytherapy](/costs/India/Radiation-Oncology/Brachytherapy) is **$5,500–$13,000**. Neighbouring [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy) is **$1,000–$4,500**. Neighbouring [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) is **$1,500–$8,000+**. These are planning ranges from partner hospital cost sheets, not hospital quotations.
 
@@ -216,7 +216,7 @@ Erectile dysfunction is another important possible consequence. Likelihood depen
 
 Nerve-sparing can help preserve erectile function when oncologically appropriate. It does not guarantee normal erections. Recovery can take months and sometimes longer.
 
-Sexual rehabilitation may involve PDE5 inhibitor medication, vacuum erection devices, other medical treatments, specialist sexual-health counselling or a penile rehabilitation programme. The treating urologist names the approach. There is no live GAF penile-implantation treatment page.
+Sexual rehabilitation may involve PDE5 inhibitor medication, vacuum erection devices, other medical treatments, specialist sexual-health counselling or a penile rehabilitation programme. The treating urologist names the approach. Named implant lists sit on [Penile Implantation in India](/treatments/penile-implantation-in-india).
 
 ## Fertility After Radical Prostatectomy
 
