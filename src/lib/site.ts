@@ -13,6 +13,12 @@ export function whatsappHref(message: string) {
   return `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(message)}`;
 }
 
+/** Hide the floating WhatsApp CTA on CMS screens. */
+export function isPublicWhatsAppFloatPath(pathname: string) {
+  const path = pathname.split(/[?#]/)[0] || "/";
+  return !/(^|\/)cms(\/|$)/i.test(path);
+}
+
 /** Turn a /consult CTA into a prefilled WhatsApp chat. Other hrefs are unchanged. */
 export function consultToWhatsappHref(href: string, fallbackMessage?: string) {
   if (!/^\/consult(?:\?|$)/i.test(href)) return href;

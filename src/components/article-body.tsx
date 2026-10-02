@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import type { Article, ArticleBlock } from "@/lib/cms/types";
 import { MarkdownBody } from "@/components/markdown-body";
 import { PseoEstimateCta } from "@/components/pseo-estimate-cta";
+import { WhatsAppCtaLabel } from "@/components/whatsapp-icon";
 import {
   BLOG_CTA_VARIANTS,
   ctaLinksFromBlock,
@@ -128,7 +129,7 @@ function renderStandardBlock(
           target={href.startsWith("http") ? "_blank" : undefined}
           rel={href.startsWith("http") ? "noreferrer noopener" : undefined}
         >
-          {block.label}
+          {cta ? <WhatsAppCtaLabel>{block.label}</WhatsAppCtaLabel> : block.label}
         </a>
       </p>
     );

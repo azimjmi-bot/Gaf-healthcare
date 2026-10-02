@@ -4,6 +4,7 @@ import {
   blogCtaSubject,
   blogEstimateWhatsapp,
   consultToWhatsappHref,
+  isPublicWhatsAppFloatPath,
   whatsappHref,
 } from "@/lib/site";
 
@@ -16,6 +17,14 @@ test("consultToWhatsappHref rewrites consult links and leaves other hrefs alone"
     consultToWhatsappHref("https://wa.me/919044346292?text=Hello"),
     "https://wa.me/919044346292?text=Hello",
   );
+});
+
+test("the floating WhatsApp CTA stays off CMS screens", () => {
+  assert.equal(isPublicWhatsAppFloatPath("/"), true);
+  assert.equal(isPublicWhatsAppFloatPath("/treatments/stereotactic-radiosurgery-in-india"), true);
+  assert.equal(isPublicWhatsAppFloatPath("/cms"), false);
+  assert.equal(isPublicWhatsAppFloatPath("/cms/treatments"), false);
+  assert.equal(isPublicWhatsAppFloatPath("/ar/cms"), false);
 });
 
 test("blog estimate WhatsApp links use the article subject", () => {

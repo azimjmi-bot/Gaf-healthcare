@@ -21,6 +21,7 @@ import { localePath } from "@/lib/i18n/path";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { treatmentUi } from "@/lib/i18n/treatment-ui";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { whatsappHref } from "@/lib/site";
 import { getCountry, getSpecialty } from "@/lib/taxonomy";
 import { catalogTreatments } from "@/lib/treatments";
@@ -256,6 +257,7 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
                 rel="noreferrer"
                 className="treatment-profile__primary"
               >
+                <WhatsAppIcon />
                 {ui.coordinator} <ArrowRight className="size-4 icon-forward" />
               </a>
             </div>
@@ -382,6 +384,7 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
                 target="_blank"
                 rel="noreferrer"
               >
+                <WhatsAppIcon />
                 {ui.coordinator} <ArrowRight className="size-4 icon-forward" />
               </a>
             </aside>

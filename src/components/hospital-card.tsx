@@ -1,6 +1,7 @@
 import { LocaleLink as Link } from "@/components/locale-link";
 import { BedDouble, CalendarDays, MapPin, Stethoscope } from "lucide-react";
 import { AccreditationSeals } from "@/components/accreditation-seals";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { HospitalCampusVisual, campusCaption } from "@/components/hospital-campus-visual";
 import { HospitalGalleryButton } from "@/components/hospital-gallery";
 import type { Hospital } from "@/lib/hospitals";
@@ -134,6 +135,7 @@ export async function HospitalCard({ hospital }: { hospital: Hospital }) {
             target="_blank"
             rel="noreferrer"
           >
+            <WhatsAppIcon />
             {t["hp.whatsapp"]}
           </a>
           <a

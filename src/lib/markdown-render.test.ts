@@ -30,6 +30,8 @@ test("renders CMS Markdown with GFM elements", () => {
   assert.match(html, /<table>/);
   assert.match(html, /<del>Outdated<\/del>/);
   assert.match(html, /href="\/consult"/);
+  assert.match(html, /class="md-cta"/);
+  assert.match(html, /class="wa-icon"/);
 });
 
 test("removes a duplicate Markdown title from a blog body", () => {

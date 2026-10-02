@@ -4,6 +4,7 @@ import Script from "next/script";
 import { LocaleProvider } from "@/components/locale-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { WhatsAppFloat } from "@/components/whatsapp-float";
 import { LANGUAGE_OG, localeDir } from "@/lib/i18n/languages";
 import { localizeMessages } from "@/lib/i18n/localize";
 import { getRequestLocale, getRequestPath } from "@/lib/i18n/request";
@@ -172,6 +173,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
+          <WhatsAppFloat />
         </LocaleProvider>
       </body>
       <Script

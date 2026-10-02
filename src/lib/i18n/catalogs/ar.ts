@@ -310,6 +310,11 @@ export const UI: TranslationFields = {
   "dir.hospitals.indiaLede":
     "{count} حرمًا شريكًا في {place}، مصنّفة حسب البلد والمدينة والتخصص والإجراء، فتصل إلى الحرم المناسب من أي من هذه المداخل. بطاقة واحدة لكل بيت — JCI وNABH على الملف، وفريق مسمّى حيث وُجد.",
   "hospital.campusIllustration": "{place} — رسم توضيحي للحرم",
+  "wa.floatTitle": "الدردشة على واتساب",
+  "wa.floatStatus": "متصل الآن",
+  "wa.floatSla": "الرد خلال نحو 15 دقيقة",
+  "wa.floatAria": "الدردشة مع GAF Healthcare على واتساب",
+  "wa.floatMessage": "مرحبًا — أرغب في المساعدة لتخطيط العلاج في الهند.",
   "a11y.home": "GAF Healthcare — الصفحة الرئيسية",
   "a11y.close": "إغلاق",
   "a11y.breadcrumb": "مسار التنقل",

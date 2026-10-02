@@ -2,6 +2,7 @@ import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import { cn } from "cn";
+import { WhatsAppCtaLabel } from "@/components/whatsapp-icon";
 import { consultToWhatsappHref } from "@/lib/site";
 
 const ALLOWED = [
@@ -48,7 +49,7 @@ function markdownComponents(whatsappCtas?: boolean): Components {
         target={safe?.startsWith("http") ? "_blank" : undefined}
         rel="noreferrer noopener"
       >
-        {children}
+        {cta ? <WhatsAppCtaLabel>{children}</WhatsAppCtaLabel> : children}
       </a>
     );
   },
