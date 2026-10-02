@@ -6,7 +6,7 @@ For many children and adults, PDA can now be closed through a minimally invasive
 
 This guide explains PDA closure in India in detail—including symptoms, diagnosis, who needs closure, device closure versus surgery, preparation, procedure, recovery, risks, cost, hospital stay, follow-up and considerations for international patients.
 
-Ventricular holes sit on [Ventricular Septal Defect (VSD) Surgery in India](/treatments/ventricular-septal-defect-surgery-in-india). Aortic narrowing sits on [Coarctation Repair Surgery in India](/treatments/coarctation-repair-surgery-in-india). Broader surgical valve lists sit on [Heart Valve Replacement Surgery in India](/treatments/heart-valve-replacement-in-india). Pacing after heart block sits on [Pacemaker Implantation in India](/treatments/pacemaker-implantation-in-india). There is no live GAF ASD-closure, Tetralogy-of-Fallot or pediatric-cardiac-surgery-only treatment page. This page is the named PDA-closure product. Glenn lists sit on [Glenn Procedure Surgery in India](/treatments/glenn-procedure-surgery-in-india). Fontan lists sit on [Fontan Procedure Surgery in India](/treatments/fontan-procedure-surgery-in-india). Arterial-switch lists sit on [Arterial Switch Operation in India](/treatments/arterial-switch-operation-in-india).
+Ventricular holes sit on [Ventricular Septal Defect (VSD) Surgery in India](/treatments/ventricular-septal-defect-surgery-in-india). Aortic narrowing sits on [Coarctation Repair Surgery in India](/treatments/coarctation-repair-surgery-in-india). Broader surgical valve lists sit on [Heart Valve Replacement Surgery in India](/treatments/heart-valve-replacement-in-india). Pacing after heart block sits on [Pacemaker Implantation in India](/treatments/pacemaker-implantation-in-india). There is no live GAF ASD-closure or pediatric-cardiac-surgery-only treatment page. This page is the named PDA-closure product. TOF lists sit on [TOF Repair Surgery in India](/treatments/tof-repair-surgery-in-india). Glenn lists sit on [Glenn Procedure Surgery in India](/treatments/glenn-procedure-surgery-in-india). Fontan lists sit on [Fontan Procedure Surgery in India](/treatments/fontan-procedure-surgery-in-india). Arterial-switch lists sit on [Arterial Switch Operation in India](/treatments/arterial-switch-operation-in-india).
 
 GAF Healthcare planning for [PDA closure](/costs/India/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)) is **$3,500–$8,500** (typically **3–8 nights**; parent stay expected). US comparison is **$20,000–$60,000**. Neighbouring [congenital heart surgery](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery) is **$8,000–$28,000** (typically **7–21 nights**) when a broader congenital list is the honest product. Neighbouring [VSD closure](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)) is **$4,500–$11,000**. Neighbouring [ASD closure](/costs/India/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)) is **$4,000–$9,500**. Neighbouring [coarctation repair](/costs/India/Pediatric-Cardiac-Surgery/Coarctation-Repair) is **$6,000–$15,000**. Neighbouring [TOF repair](/costs/India/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)) is **$6,500–$16,000**. Neighbouring [Glenn](/costs/India/Pediatric-Cardiac-Surgery/Glenn-Procedure) is **$8,000–$18,000**. Neighbouring [Fontan](/costs/India/Pediatric-Cardiac-Surgery/Fontan-Procedure) is **$9,000–$22,000**. Neighbouring [arterial switch](/costs/India/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation) is **$12,000–$26,000**. These are planning ranges from partner hospital cost sheets, not hospital quotations.
 
@@ -128,7 +128,7 @@ An adult with PDA may require closure when there is a significant left-to-right 
 
 The 2025 ACC/AHA adult congenital heart disease guidance recommends closure in appropriately selected adults with PDA-associated left-heart enlargement, net left-to-right shunting and no significant pulmonary vascular disease. It advises against closure when severe pulmonary hypertension and right-to-left shunting make closure unsafe.
 
-Associated ventricular holes sit on [VSD surgery](/treatments/ventricular-septal-defect-surgery-in-india). Associated aortic narrowing sits on [coarctation repair](/treatments/coarctation-repair-surgery-in-india). There is no live GAF ASD-closure or Tetralogy-of-Fallot treatment page.
+Associated ventricular holes sit on [VSD surgery](/treatments/ventricular-septal-defect-surgery-in-india). Associated aortic narrowing sits on [coarctation repair](/treatments/coarctation-repair-surgery-in-india). There is no live GAF ASD-closure treatment page.
 
 [Ask whether device or ligation is the honest product](/consult?treatment=pda-closure-surgery-in-india)
 
@@ -971,7 +971,7 @@ And even after a successful closure, follow-up echocardiography remains importan
 - [Pediatric cardiac surgeons in India](/doctors/India/Pediatric-Cardiac-Surgery)
 - [Pediatric cardiac surgery hospitals in India](/hospitals/India/Pediatric-Cardiac-Surgery)
 
-ASD-closure and Tetralogy-of-Fallot treatment pages are not live on this site. Use this page plus the named modality sheets.
+ASD-closure treatment pages are not live on this site. Use this page plus the named modality sheets.
 
 ## Top 10 sources
 
