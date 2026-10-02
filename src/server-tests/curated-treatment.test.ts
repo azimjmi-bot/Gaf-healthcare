@@ -611,6 +611,90 @@ test("the published sleeve gastrectomy page uses GAF USD ranges and bariatric GE
   assert.doesNotMatch(bypass?.translations.en?.editorialBody ?? "", /no live GAF sleeve-gastrectomy treatment page/i);
 });
 
+test("the published radical prostatectomy page uses GAF USD ranges and uro-oncology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "radical-prostatectomy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$30,000–\$70,000/);
+  assert.match(body, /\$1,000–\$6,000\+/);
+  assert.match(body, /\$6,500–\$14,500/);
+  assert.match(body, /\$1,000–\$4,500/);
+  assert.match(body, /3–7 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Radical Prostatectomy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Radical-Prostatectomy/);
+  assert.match(body, /\/doctors\/India\/Urology\/Radical-Prostatectomy/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/robotic-prostatectomy-in-india/);
+  assert.match(body, /\/blogs\/active-surveillance-prostate-cancer/);
+  assert.match(body, /\/blogs\/radiation-therapy-for-prostate-cancer/);
+  assert.match(body, /\/uploads\/treatments\/rp-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/rp-approaches\.webp/);
+  assert.match(body, /\/uploads\/treatments\/rp-nerve\.webp/);
+  assert.match(body, /\/uploads\/treatments\/rp-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Surgical-Oncology/Radical-Prostatectomy",
+    "/doctors/India/Mumbai/Surgical-Oncology/Radical-Prostatectomy",
+    "/doctors/India/Bengaluru/Surgical-Oncology/Radical-Prostatectomy",
+    "/doctors/India/Chennai/Surgical-Oncology/Radical-Prostatectomy",
+    "/doctors/India/Hyderabad/Surgical-Oncology/Radical-Prostatectomy",
+    "/hospitals/India/Delhi-NCR/Surgical-Oncology",
+    "/hospitals/India/Mumbai/Surgical-Oncology",
+    "/hospitals/India/Bengaluru/Surgical-Oncology",
+    "/costs/India/Delhi-NCR/Surgical-Oncology/Radical-Prostatectomy",
+    "/costs/India/Mumbai/Surgical-Oncology/Radical-Prostatectomy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is radical prostatectomy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /entire prostate gland/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Prostate",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/radical-prostatectomy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/turp/);
+  assert.doesNotMatch(body, /\/treatments\/holep/);
+  assert.doesNotMatch(body, /\/treatments\/robotic-prostatectomy-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/penile-implantation/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/radical-prostatectomy-in-india/);
+  const prostate = store.treatments.find((row) => row.slug === "prostate-cancer-treatment-in-india");
+  assert.match(
+    prostate?.translations.en?.editorialBody ?? "",
+    /\/treatments\/radical-prostatectomy-in-india/,
+  );
+  assert.ok(prostate?.relatedTreatmentSlugs?.includes("radical-prostatectomy-in-india"));
+});
+
 test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {
   const store = loadCuratedTreatments();
   const treatment = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");
