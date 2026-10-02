@@ -4,7 +4,7 @@ For international patients considering treatment in India, Whipple surgery can i
 
 India has major tertiary-care hospitals with pancreatic surgery, surgical oncology, medical oncology, radiation oncology, gastroenterology, interventional radiology, intensive-care and pathology teams under one system.
 
-This page is the Whipple-surgery pathway for GAF Healthcare. It sits under [pancreatic cancer treatment in India](/treatments/pancreatic-cancer-treatment-in-india) and beside [colon cancer treatment in India](/treatments/colon-cancer-treatment-in-india). It explains who may need pancreaticoduodenectomy, how the operation is performed, preparation, recovery, complications, hospital stay, cost, surgical approaches, chemotherapy, pathology, second opinions and practical information for international patients.
+This page is the Whipple-surgery pathway for GAF Healthcare. Bile-duct lists sit on [Bile Duct Cancer Surgery in India](/treatments/bile-duct-cancer-surgery-in-india). It sits under [pancreatic cancer treatment in India](/treatments/pancreatic-cancer-treatment-in-india) and beside [colon cancer treatment in India](/treatments/colon-cancer-treatment-in-india). It explains who may need pancreaticoduodenectomy, how the operation is performed, preparation, recovery, complications, hospital stay, cost, surgical approaches, chemotherapy, pathology, second opinions and practical information for international patients.
 
 [Request a Whipple surgery records review](/consult?treatment=Whipple%20Surgery%20in%20India)
 

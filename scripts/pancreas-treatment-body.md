@@ -4,7 +4,7 @@ One of the most important decisions is whether the tumor is resectable, borderli
 
 India has major tertiary hospitals offering gastrointestinal and hepatopancreatobiliary surgery, medical oncology, radiation oncology, advanced imaging, interventional radiology, pathology and intensive care. For international patients, treatment can also be coordinated with remote medical review, specialist consultations, hospital appointments and treatment-cost estimates.
 
-This page is the pancreatic-cancer pathway for GAF Healthcare. It sits beside [colon cancer treatment in India](/treatments/colon-cancer-treatment-in-india), [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india) and [prostate cancer treatment in India](/treatments/prostate-cancer-treatment-in-india). Pancreatic neuroendocrine tumors (pNETs) are biologically different and may require a different pathway.
+This page is the pancreatic-cancer pathway for GAF Healthcare. Bile-duct lists sit on [Bile Duct Cancer Surgery in India](/treatments/bile-duct-cancer-surgery-in-india). It sits beside [colon cancer treatment in India](/treatments/colon-cancer-treatment-in-india), [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india) and [prostate cancer treatment in India](/treatments/prostate-cancer-treatment-in-india). Pancreatic neuroendocrine tumors (pNETs) are biologically different and may require a different pathway.
 
 [Request a pancreatic cancer records review](/consult?treatment=Pancreatic%20Cancer%20Treatment%20in%20India)
 

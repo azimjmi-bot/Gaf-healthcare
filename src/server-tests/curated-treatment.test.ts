@@ -329,6 +329,7 @@ test("the published Whipple surgery page uses site USD ranges and GEO links", ()
   }
   assert.match(body, /\/treatments\/pancreatic-cancer-treatment-in-india/);
   assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/bile-duct-cancer-surgery-in-india/);
   assert.match(body, /\/blogs\/colon-cancer-immunotherapy-in-india/);
   assert.match(body, /\/uploads\/treatments\/whipple-anatomy-body\.webp/);
   assert.match(body, /\/uploads\/treatments\/whipple-resection-organs\.webp/);
@@ -351,6 +352,88 @@ test("the published Whipple surgery page uses site USD ranges and GEO links", ()
   );
   const english = buildLocaleSitemap("en").map((row) => row.url);
   assert.ok(english.includes("https://gaf.healthcare/treatments/whipple-surgery-in-india"));
+});
+
+test("the published bile duct cancer surgery page uses GAF USD ranges and HPB GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "bile-duct-cancer-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$10,000–\$26,000/);
+  assert.match(body, /\$14,000–\$32,000/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$28,000–\$55,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /\$45,000–\$110,000/);
+  assert.match(body, /8–16 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Bile Duct Cancer Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Bile-Duct-Cancer-Surgery/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Whipple-Procedure/);
+  assert.match(body, /\/treatments\/whipple-surgery-in-india/);
+  assert.match(body, /\/treatments\/pancreatic-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/bile-duct-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bile-duct-operations\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bile-duct-resectability\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bile-duct-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Surgical-Oncology/Bile-Duct-Cancer-Surgery",
+    "/doctors/India/Mumbai/Surgical-Oncology/Bile-Duct-Cancer-Surgery",
+    "/doctors/India/Bengaluru/Surgical-Oncology/Bile-Duct-Cancer-Surgery",
+    "/doctors/India/Chennai/Surgical-Oncology/Bile-Duct-Cancer-Surgery",
+    "/doctors/India/Hyderabad/Surgical-Oncology/Bile-Duct-Cancer-Surgery",
+    "/hospitals/India/Delhi-NCR/Surgical-Oncology",
+    "/hospitals/India/Mumbai/Surgical-Oncology",
+    "/hospitals/India/Bengaluru/Surgical-Oncology",
+    "/costs/India/Delhi-NCR/Surgical-Gastroenterology/Bile-Duct-Cancer-Surgery",
+    "/costs/India/Mumbai/Surgical-Gastroenterology/Bile-Duct-Cancer-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 7);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /Bile duct cancer surgery in India/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /cholangiocarcinoma can potentially be removed completely/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Bile Duct",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/bile-duct-cancer-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/surgical/);
+  assert.doesNotMatch(body, /\/treatments\/gallbladder-cancer-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/liver-transplant-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/cholangiocarcinoma-surgery-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/bile-duct-cancer-surgery-in-india/);
+  const whipple = store.treatments.find((row) => row.slug === "whipple-surgery-in-india");
+  const pancreas = store.treatments.find((row) => row.slug === "pancreatic-cancer-treatment-in-india");
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  assert.match(whipple?.translations.en?.editorialBody ?? "", /\/treatments\/bile-duct-cancer-surgery-in-india/);
+  assert.match(pancreas?.translations.en?.editorialBody ?? "", /\/treatments\/bile-duct-cancer-surgery-in-india/);
+  assert.match(colon?.translations.en?.editorialBody ?? "", /\/treatments\/bile-duct-cancer-surgery-in-india/);
 });
 
 test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {

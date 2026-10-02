@@ -4,7 +4,7 @@ For localized colon cancer, [surgery](/costs/India/Surgical-Oncology/Colectomy) 
 
 India has established cancer centres with colorectal surgeons, gastrointestinal oncologists, medical oncologists, radiation oncologists, interventional radiologists, pathologists, genetic specialists, nutrition teams and critical-care services working together for complex cases.
 
-This page is the colon-cancer pathway for GAF Healthcare. It sits beside [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india) , [prostate cancer treatment in India](/treatments/prostate-cancer-treatment-in-india) and [pancreatic cancer treatment in India](/treatments/pancreatic-cancer-treatment-in-india). It is **not** a rectal-cancer page: tumours of the rectum often need a different mix of surgery, chemotherapy and radiation — see [rectal cancer surgery](/costs/India/Surgical-Oncology/Rectal-Cancer-Surgery).
+This page is the colon-cancer pathway for GAF Healthcare. Bile-duct lists sit on [Bile Duct Cancer Surgery in India](/treatments/bile-duct-cancer-surgery-in-india). It sits beside [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india) , [prostate cancer treatment in India](/treatments/prostate-cancer-treatment-in-india) and [pancreatic cancer treatment in India](/treatments/pancreatic-cancer-treatment-in-india). It is **not** a rectal-cancer page: tumours of the rectum often need a different mix of surgery, chemotherapy and radiation — see [rectal cancer surgery](/costs/India/Surgical-Oncology/Rectal-Cancer-Surgery).
 
 [Request a colon cancer records review](/consult?treatment=Colon%20Cancer%20Treatment%20in%20India)
 

@@ -12,7 +12,7 @@ However, HIPEC is not suitable for every patient with cancer spread to the abdom
 
 The decision depends on the **type of cancer, extent of peritoneal disease, Peritoneal Cancer Index (PCI), possibility of complete cytoreduction, overall health, previous treatment and whether cancer has spread outside the peritoneal cavity**.
 
-This page is the HIPEC pathway for GAF Healthcare. It sits beside [colon cancer treatment in India](/treatments/colon-cancer-treatment-in-india) and [pancreatic cancer treatment in India](/treatments/pancreatic-cancer-treatment-in-india). For colon cancer that has reached the peritoneum, also see [Stage 4 colon cancer treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india).
+This page is the HIPEC pathway for GAF Healthcare. Bile-duct lists sit on [Bile Duct Cancer Surgery in India](/treatments/bile-duct-cancer-surgery-in-india). It sits beside [colon cancer treatment in India](/treatments/colon-cancer-treatment-in-india) and [pancreatic cancer treatment in India](/treatments/pancreatic-cancer-treatment-in-india). For colon cancer that has reached the peritoneum, also see [Stage 4 colon cancer treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india).
 
 [Request a HIPEC records review](/consult?treatment=HIPEC%20Surgery%20in%20India)
 
