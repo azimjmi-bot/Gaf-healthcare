@@ -1118,6 +1118,96 @@ test("the published radical nephrectomy page uses GAF USD ranges and urology GEO
   assert.ok(rp?.relatedTreatmentSlugs?.includes("radical-nephrectomy-in-india"));
 });
 
+test("the published EBRT page uses GAF USD ranges and radiation GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "external-beam-radiotherapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$1,000–\$6,000\+/);
+  assert.match(body, /\$12,000–\$25,000/);
+  assert.match(body, /\$6,500–\$14,500/);
+  assert.match(body, /\$7,200–\$16,000/);
+  assert.match(body, /\$8,000–\$17,500/);
+  assert.match(body, /\$28,000–\$55,000/);
+  assert.match(body, /15–35 sessions/);
+  assert.match(body, /article-quick-answer|Quick Answer: External Beam Radiotherapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/EBRT/);
+  assert.match(body, /\/doctors\/India\/Radiation-Oncology\/EBRT/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/cervical-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/radiation-therapy-for-prostate-cancer/);
+  assert.match(body, /\/blogs\/radiation-therapy-for-breast-cancer/);
+  assert.match(body, /\/uploads\/treatments\/eb-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/eb-plan\.webp/);
+  assert.match(body, /\/uploads\/treatments\/eb-techniques\.webp/);
+  assert.match(body, /\/uploads\/treatments\/eb-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/EBRT",
+    "/doctors/India/Mumbai/Radiation-Oncology/EBRT",
+    "/doctors/India/Bengaluru/Radiation-Oncology/EBRT",
+    "/doctors/India/Chennai/Radiation-Oncology/EBRT",
+    "/doctors/India/Hyderabad/Radiation-Oncology/EBRT",
+    "/hospitals/India/Delhi-NCR/Radiation-Oncology",
+    "/hospitals/India/Mumbai/Radiation-Oncology",
+    "/hospitals/India/Bengaluru/Radiation-Oncology",
+    "/costs/India/Delhi-NCR/Radiation-Oncology/EBRT",
+    "/costs/India/Mumbai/Radiation-Oncology/EBRT",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is external beam radiotherapy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /high-energy radiation/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/external-beam-radiotherapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/imrt/);
+  assert.doesNotMatch(body, /\/treatments\/igrt/);
+  assert.doesNotMatch(body, /\/treatments\/sbrt/);
+  assert.doesNotMatch(body, /\/treatments\/vmat/);
+  assert.doesNotMatch(body, /\/treatments\/proton/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/external-beam-radiotherapy-in-india/);
+  const prostate = store.treatments.find((row) => row.slug === "prostate-cancer-treatment-in-india");
+  const breast = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  const cervical = store.treatments.find((row) => row.slug === "cervical-cancer-treatment-in-india");
+  assert.match(prostate?.translations.en?.editorialBody ?? "", /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(breast?.translations.en?.editorialBody ?? "", /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(cervical?.translations.en?.editorialBody ?? "", /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.ok(prostate?.relatedTreatmentSlugs?.includes("external-beam-radiotherapy-in-india"));
+  assert.ok(breast?.relatedTreatmentSlugs?.includes("external-beam-radiotherapy-in-india"));
+  assert.ok(cervical?.relatedTreatmentSlugs?.includes("external-beam-radiotherapy-in-india"));
+});
+
 test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {
   const store = loadCuratedTreatments();
   const treatment = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");
