@@ -4,7 +4,7 @@
 
 India has established bariatric surgery programs across major cities, with experienced multidisciplinary teams involving bariatric surgeons, anesthetists, physicians, dietitians and other specialists. The right procedure, however, depends on BMI, medical conditions, eating patterns, previous weight-loss attempts, nutritional status and individual surgical risk—not simply on body weight alone.
 
-There is no live GAF sleeve-gastrectomy, mini-gastric-bypass, gastric-balloon, ESG or bariatric-surgery-only treatment page. Neighbouring [sleeve gastrectomy](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy) is a cost sheet, not a second named treatment product. Body-contouring lists sit on [Liposuction in India](/treatments/liposuction-in-india). Combined contour lists sit on [Mommy Makeover in India](/treatments/mommy-makeover-in-india). This page is the named gastric-bypass product.
+Sleeve lists sit on [Sleeve Gastrectomy in India](/treatments/sleeve-gastrectomy-in-india). There is no live GAF mini-gastric-bypass, gastric-balloon, ESG or bariatric-surgery-only treatment page. Body-contouring lists sit on [Liposuction in India](/treatments/liposuction-in-india). Combined contour lists sit on [Mommy Makeover in India](/treatments/mommy-makeover-in-india). This page is the named gastric-bypass product.
 
 GAF Healthcare planning for [Gastric Bypass (Roux-en-Y)](/costs/India/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)) is **$6,000–$11,000** (typically **3–6 nights**). US comparison is **$20,000–$38,000**. The same sitting also has a [surgical-gastroenterology gastric bypass sheet](/costs/India/Surgical-Gastroenterology/Gastric-Bypass-Surgery) at the same **$6,000–$11,000** range when a surgical-gastro list holds the case. Neighbouring [sleeve gastrectomy](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy) is **$4,500–$8,500** (typically **2–5 nights**). Neighbouring [mini gastric bypass (OAGB/MGB)](/costs/India/Bariatric-Surgery/Mini-Gastric-Bypass-(OAGB-MGB)) is **$5,500–$10,000** (typically **3–6 nights**). Neighbouring [metabolic surgery for type 2 diabetes](/costs/India/Bariatric-Surgery/Metabolic-Surgery-for-Type-2-Diabetes) is **$6,000–$12,000** (typically **3–7 nights**) when glycaemic effect, not only kilograms, is the brief. Neighbouring [gastric balloon](/costs/India/Bariatric-Surgery/Gastric-Balloon) is **$2,000–$4,500** (day-care or overnight). Neighbouring [endoscopic sleeve gastroplasty](/costs/India/Bariatric-Surgery/Endoscopic-Sleeve-Gastroplasty-(ESG)) is **$4,500–$9,000** (typically **1–3 nights**). These are planning ranges from partner hospital cost sheets, not hospital quotations.
 
@@ -215,7 +215,7 @@ Long-term observational evidence suggests that both RYGB and sleeve gastrectomy 
 
 The question is not simply "Which surgery is better?" The appropriate procedure depends on the patient's BMI, diabetes, reflux, eating patterns, nutritional status, previous surgery, anatomy and long-term goals.
 
-There is no live GAF sleeve-gastrectomy treatment page. Use the [sleeve gastrectomy cost sheet](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy) when that sitting is named.
+Sleeve lists sit on [Sleeve Gastrectomy in India](/treatments/sleeve-gastrectomy-in-india). Use the [sleeve gastrectomy cost sheet](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy) when that sitting is named.
 
 ## Gastric Bypass vs One-Anastomosis Gastric Bypass
 
@@ -726,7 +726,7 @@ GAF planning is typically 3–6 nights. Some published notes for uncomplicated l
 Gastric bypass is generally considered a permanent operation. Although reversal or revision may sometimes be technically possible, it is complex and is not something patients should expect as a routine option.
 
 **Is gastric bypass better than sleeve gastrectomy?**
-Neither procedure is universally better for every patient. The choice depends on BMI, diabetes, reflux, nutritional considerations, eating patterns, anatomy, previous surgery and other clinical factors. There is no live GAF sleeve-gastrectomy treatment page.
+Neither procedure is universally better for every patient. The choice depends on BMI, diabetes, reflux, nutritional considerations, eating patterns, anatomy, previous surgery and other clinical factors. Sleeve lists sit on [Sleeve Gastrectomy in India](/treatments/sleeve-gastrectomy-in-india).
 
 **Does gastric bypass cure diabetes?**
 Gastric bypass can lead to major improvement or remission of type 2 diabetes in some patients, but "cure" is not guaranteed. Long-term studies have demonstrated substantial diabetes improvement after RYGB.
@@ -801,13 +801,14 @@ Planned questions can also go to WhatsApp at [+91 90443 46292](https://wa.me/919
 - [Mommy Makeover in India](/treatments/mommy-makeover-in-india)
 - [Gastric Bypass (Roux-en-Y) cost](/costs/India/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y))
 - [Surgical-gastroenterology gastric bypass cost](/costs/India/Surgical-Gastroenterology/Gastric-Bypass-Surgery)
+- [Sleeve Gastrectomy in India](/treatments/sleeve-gastrectomy-in-india)
 - [Sleeve gastrectomy cost](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy)
 - [Mini gastric bypass cost](/costs/India/Bariatric-Surgery/Mini-Gastric-Bypass-(OAGB-MGB))
 - [Metabolic surgery for type 2 diabetes cost](/costs/India/Bariatric-Surgery/Metabolic-Surgery-for-Type-2-Diabetes)
 - [Bariatric surgeons in India](/doctors/India/Bariatric-Surgery)
 - [Bariatric hospitals in India](/hospitals/India/Bariatric-Surgery)
 
-Sleeve-gastrectomy, mini-gastric-bypass, gastric-balloon, ESG and bariatric-surgery-only treatment pages are not live on this site. Use this page plus the named modality sheets.
+Mini-gastric-bypass, gastric-balloon, ESG and bariatric-surgery-only treatment pages are not live on this site. Sleeve lists sit on [Sleeve Gastrectomy in India](/treatments/sleeve-gastrectomy-in-india).
 
 ## Sources
 

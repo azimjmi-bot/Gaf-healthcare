@@ -92,7 +92,7 @@ A person may lose some weight after surgery because fat is removed, but the prim
 
 Liposuction may be considered when a person has relatively stable weight but has localized fat deposits that are resistant to conventional lifestyle measures.
 
-For people with significant obesity, the appropriate treatment may instead involve structured weight management, medical obesity treatment or [sleeve gastrectomy](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy) and other bariatric lists, depending on health and circumstances. Those sheets must not be used as a liposuction quotation. Roux-en-Y lists sit on [Gastric Bypass Surgery in India](/treatments/gastric-bypass-surgery-in-india).
+For people with significant obesity, the appropriate treatment may instead involve structured weight management, medical obesity treatment or [sleeve gastrectomy](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy) and other bariatric lists, depending on health and circumstances. Those sheets must not be used as a liposuction quotation. Sleeve lists sit on [Sleeve Gastrectomy in India](/treatments/sleeve-gastrectomy-in-india). Roux-en-Y lists sit on [Gastric Bypass Surgery in India](/treatments/gastric-bypass-surgery-in-india).
 
 ## Who Is a Good Candidate for Liposuction?
 

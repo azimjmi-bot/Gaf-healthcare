@@ -504,7 +504,7 @@ test("the published gastric bypass page uses GAF USD ranges and bariatric GEO li
   assert.ok(english.includes("https://gaf.healthcare/treatments/gastric-bypass-surgery-in-india"));
   assert.equal(treatment.translations.ar, undefined);
   assert.doesNotMatch(body, /\/treatments\/india\//);
-  assert.doesNotMatch(body, /\/treatments\/sleeve-gastrectomy-in-india/);
+  assert.match(body, /\/treatments\/sleeve-gastrectomy-in-india/);
   assert.doesNotMatch(body, /\/treatments\/bariatric-surgery-in-india/);
   assert.doesNotMatch(body, /\/treatments\/mini-gastric-bypass-in-india/);
   assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
@@ -518,6 +518,96 @@ test("the published gastric bypass page uses GAF USD ranges and bariatric GEO li
   assert.match(mommy?.translations.en?.editorialBody ?? "", /\/treatments\/gastric-bypass-surgery-in-india/);
   assert.ok(lipo?.relatedTreatmentSlugs?.includes("gastric-bypass-surgery-in-india"));
   assert.ok(mommy?.relatedTreatmentSlugs?.includes("gastric-bypass-surgery-in-india"));
+});
+
+test("the published sleeve gastrectomy page uses GAF USD ranges and bariatric GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "sleeve-gastrectomy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$4,500–\$8,500/);
+  assert.match(body, /\$6,000–\$11,000/);
+  assert.match(body, /\$5,500–\$10,000/);
+  assert.match(body, /\$6,000–\$12,000/);
+  assert.match(body, /\$2,000–\$4,500/);
+  assert.match(body, /\$4,500–\$9,000/);
+  assert.match(body, /\$7,000–\$14,000/);
+  assert.match(body, /\$15,000–\$28,000/);
+  assert.match(body, /2–5 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Sleeve Gastrectomy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /This page is the named sleeve-gastrectomy product/);
+  assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Sleeve-Gastrectomy/);
+  assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Gastric-Bypass-\(Roux-en-Y\)/);
+  assert.match(body, /\/treatments\/gastric-bypass-surgery-in-india/);
+  assert.match(body, /\/treatments\/liposuction-in-india/);
+  assert.match(body, /\/treatments\/mommy-makeover-in-india/);
+  assert.match(body, /\/uploads\/treatments\/sleeve-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sleeve-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sleeve-reflux\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sleeve-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Bariatric-Surgery/Sleeve-Gastrectomy",
+    "/doctors/India/Mumbai/Bariatric-Surgery/Sleeve-Gastrectomy",
+    "/doctors/India/Bengaluru/Bariatric-Surgery/Sleeve-Gastrectomy",
+    "/doctors/India/Chennai/Bariatric-Surgery/Sleeve-Gastrectomy",
+    "/doctors/India/Hyderabad/Bariatric-Surgery/Sleeve-Gastrectomy",
+    "/hospitals/India/Delhi-NCR/Bariatric-Surgery",
+    "/hospitals/India/Mumbai/Bariatric-Surgery",
+    "/hospitals/India/Bengaluru/Bariatric-Surgery",
+    "/costs/India/Delhi-NCR/Bariatric-Surgery/Sleeve-Gastrectomy",
+    "/costs/India/Mumbai/Bariatric-Surgery/Sleeve-Gastrectomy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 7);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /Sleeve gastrectomy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /70–80%/);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Stomach",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/sleeve-gastrectomy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/bariatric-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/mini-gastric-bypass-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/gastric-balloon-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/endoscopic-sleeve-gastroplasty-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore|Jaipur)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore|Jaipur)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore|Jaipur)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/sleeve-gastrectomy-in-india/);
+  const bypass = store.treatments.find((row) => row.slug === "gastric-bypass-surgery-in-india");
+  const lipo = store.treatments.find((row) => row.slug === "liposuction-in-india");
+  const mommy = store.treatments.find((row) => row.slug === "mommy-makeover-in-india");
+  assert.match(bypass?.translations.en?.editorialBody ?? "", /\/treatments\/sleeve-gastrectomy-in-india/);
+  assert.match(lipo?.translations.en?.editorialBody ?? "", /\/treatments\/sleeve-gastrectomy-in-india/);
+  assert.match(mommy?.translations.en?.editorialBody ?? "", /\/treatments\/sleeve-gastrectomy-in-india/);
+  assert.ok(bypass?.relatedTreatmentSlugs?.includes("sleeve-gastrectomy-in-india"));
+  assert.ok(lipo?.relatedTreatmentSlugs?.includes("sleeve-gastrectomy-in-india"));
+  assert.ok(mommy?.relatedTreatmentSlugs?.includes("sleeve-gastrectomy-in-india"));
+  assert.doesNotMatch(bypass?.translations.en?.editorialBody ?? "", /no live GAF sleeve-gastrectomy treatment page/i);
 });
 
 test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {

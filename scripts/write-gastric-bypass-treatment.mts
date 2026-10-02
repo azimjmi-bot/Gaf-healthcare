@@ -240,7 +240,7 @@ const treatment = {
           id: "gastric-bypass-faq-9",
           question: "Is gastric bypass better than sleeve gastrectomy?",
           answer:
-            "Neither procedure is universally better. The choice depends on BMI, diabetes, reflux, nutrition and anatomy. There is no live GAF sleeve-gastrectomy treatment page.",
+            "Neither procedure is universally better. The choice depends on BMI, diabetes, reflux, nutrition and anatomy. Sleeve lists sit on the sleeve gastrectomy page.",
         },
         {
           id: "gastric-bypass-faq-10",
