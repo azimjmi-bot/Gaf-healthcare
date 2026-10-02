@@ -262,9 +262,9 @@ const treatment = {
         },
         {
           id: "pda-faq-11",
-          question: "Is there a GAF ASD, TOF or arterial-switch treatment page?",
+          question: "Is there a GAF ASD, TOF or Fontan treatment page?",
           answer:
-            "No. ASD-closure, Tetralogy-of-Fallot, Glenn, Fontan and arterial-switch treatment pages are not live. Neighbouring sheets exist. VSD and coarctation lists sit on those treatment pages.",
+            "No. ASD-closure, Tetralogy-of-Fallot, Glenn and Fontan treatment pages are not live. Neighbouring sheets exist. VSD and coarctation lists sit on those treatment pages. Arterial-switch lists sit on the arterial switch page.",
         },
         {
           id: "pda-faq-12",
