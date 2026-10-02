@@ -8,7 +8,7 @@ India has treatment pathways covering [surgical oncology](/doctors/India/Surgica
 
 [Request a breast cancer records review](/consult?treatment=Breast%20Cancer%20Treatment%20in%20India)
 
-![Diagram comparing local breast cancer treatment with systemic medicines](/uploads/treatments/breast-cancer-local-vs-systemic.png)
+![Diagram comparing local breast cancer treatment with systemic medicines](/uploads/treatments/breast-cancer-local-vs-systemic.webp)
 
 ## What is breast cancer treatment?
 
@@ -66,7 +66,7 @@ Doctors may consider tumour size, location and grade; number of tumour sites; ly
 
 Surgery is an important part of treatment for many patients with breast cancer that can be treated locally. The appropriate procedure depends on the tumour and the patient's circumstances.
 
-![Four-card diagram of lumpectomy, mastectomy, nipple-sparing mastectomy and reconstruction](/uploads/treatments/breast-cancer-surgery-options.png)
+![Four-card diagram of lumpectomy, mastectomy, nipple-sparing mastectomy and reconstruction](/uploads/treatments/breast-cancer-surgery-options.webp)
 
 Common surgical approaches include [lumpectomy](/doctors/India/Surgical-Oncology/Lumpectomy), [mastectomy](/doctors/India/Surgical-Oncology/Mastectomy), [nipple-sparing mastectomy](/doctors/India/Surgical-Oncology/Nipple-Sparing-Mastectomy), [oncoplastic breast surgery](/doctors/India/Surgical-Oncology/Oncoplastic-Breast-Surgery), [breast reconstruction](/doctors/India/Surgical-Oncology/Breast-Reconstruction), sentinel lymph node surgery and axillary lymph node surgery when indicated.
 
@@ -229,7 +229,7 @@ Radiation typically involves multiple treatment sessions. For international pati
 
 Breast cancer treatment is often planned by a multidisciplinary team. Depending on the diagnosis, the team may include a surgical oncologist or breast surgeon, medical oncologist, radiation oncologist, radiologist, pathologist, reconstructive surgeon and, where appropriate, a genetic counsellor.
 
-![Diagram of multidisciplinary breast cancer treatment sequences](/uploads/treatments/breast-cancer-treatment-sequence.png)
+![Diagram of multidisciplinary breast cancer treatment sequences](/uploads/treatments/breast-cancer-treatment-sequence.webp)
 
 Treatment sequence varies from patient to patient. Illustrative examples include:
 
@@ -315,7 +315,7 @@ Potential additional costs can include MRI, PET-CT, genetic or genomic testing, 
 
 International patients should ideally have their medical records reviewed before travelling to India. This allows the treating team to understand the diagnosis and determine what additional investigations may be required.
 
-![International patient pathway from records review to treatment in India and follow-up at home](/uploads/treatments/breast-cancer-international-pathway.png)
+![International patient pathway from records review to treatment in India and follow-up at home](/uploads/treatments/breast-cancer-international-pathway.webp)
 
 Depending on the case, patients may be asked to provide a biopsy and histopathology report, ER/PR/HER2 reports, mammography, breast ultrasound, breast MRI, PET-CT or other staging scans, previous surgery, chemotherapy and radiation records, blood tests, a current medication list, and genetic or molecular reports.
 

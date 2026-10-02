@@ -86,10 +86,10 @@ test("the published breast cancer page is complete and internally linked", () =>
   const body = treatment.translations.en!.editorialBody;
   assert.match(body, /\/costs\/India\/Surgical-Oncology\/Lumpectomy/);
   assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Mastectomy/);
-  assert.match(body, /\/uploads\/treatments\/breast-cancer-local-vs-systemic\.png/);
-  assert.match(body, /\/uploads\/treatments\/breast-cancer-surgery-options\.png/);
-  assert.match(body, /\/uploads\/treatments\/breast-cancer-treatment-sequence\.png/);
-  assert.match(body, /\/uploads\/treatments\/breast-cancer-international-pathway\.png/);
+  assert.match(body, /\/uploads\/treatments\/breast-cancer-local-vs-systemic\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-cancer-surgery-options\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-cancer-treatment-sequence\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-cancer-international-pathway\.webp/);
   assert.ok(treatment.translations.en!.faqs.length >= 10);
   const ctas = body.match(
     /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,

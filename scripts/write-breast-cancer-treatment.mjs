@@ -94,7 +94,7 @@ const store = {
       specialtySlug: "surgical-oncology",
       subspecialty: "Breast Cancer",
       category: "Breast Cancer",
-      image: "/uploads/treatments/breast-cancer-local-vs-systemic.png",
+      image: "/uploads/treatments/breast-cancer-local-vs-systemic.webp",
       destinationSlugs: ["india"],
       doctorSlugs: [
         "dr-ananya-deori",
