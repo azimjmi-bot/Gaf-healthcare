@@ -1,55 +1,55 @@
 ![Abstract ventricular chambers without labels](/uploads/treatments/vsd-surgery-hero.webp)
 
-**Ventricular Septal Defect (VSD) surgery in India** is a procedure used to close an abnormal opening between the heart's two lower chambers, called the ventricles. VSD is a congenital heart defect, meaning it is usually present from birth. Small VSDs may close naturally and may only require regular monitoring, while larger or hemodynamically significant defects may require surgical or catheter-based closure.
+**VSD closure surgery in India** is performed to close a ventricular septal defect (VSD), an opening in the wall between the heart's two lower chambers. Depending on the size, location and effect of the defect, treatment may involve observation, open-heart surgical closure, catheter-based device closure, or, in selected complex cases, a hybrid approach.
 
-India has established pediatric cardiac centers equipped to diagnose and treat children and adults with congenital heart defects. Treatment may include observation, medicines to control symptoms, open-heart VSD repair, or transcatheter device closure depending on the size, location, anatomy of the defect, symptoms, pulmonary pressure, age and overall health of the patient.
+Small VSDs may close naturally and may never require an operation. Larger or hemodynamically significant VSDs can allow excessive blood flow to the lungs, enlarge the heart and, if left untreated when closure is indicated, contribute to pulmonary hypertension, heart failure, valve problems and other complications.
 
-For international patients, VSD treatment in India can involve the complete pathway from diagnostic evaluation and echocardiography to pediatric cardiac surgery, intensive care, rehabilitation and follow-up.
+India has established pediatric and adult congenital-heart programs capable of managing VSDs ranging from straightforward isolated defects to complex congenital heart disease. The appropriate treatment, however, should be selected only after reviewing the patient's echocardiogram, clinical condition, pulmonary pressures, VSD anatomy and associated heart defects.
 
-Valve lists sit on [Heart Valve Replacement Surgery in India](/treatments/heart-valve-replacement-in-india) when an outlet VSD has damaged the aortic valve. Pacing after complete heart block sits on [Pacemaker Implantation in India](/treatments/pacemaker-implantation-in-india). Aortic wall tears are a different product and sit on [Aortic Dissection Repair Surgery in India](/treatments/aortic-dissection-repair-in-india). There is no live GAF ASD-closure or pediatric-cardiac-surgery-only treatment page. This page is the named VSD-surgery product. TOF lists sit on [TOF Repair Surgery in India](/treatments/tof-repair-surgery-in-india). Glenn lists sit on [Glenn Procedure Surgery in India](/treatments/glenn-procedure-surgery-in-india). Fontan lists sit on [Fontan Procedure Surgery in India](/treatments/fontan-procedure-surgery-in-india). Arterial-switch lists sit on [Arterial Switch Operation in India](/treatments/arterial-switch-operation-in-india). PDA lists sit on [PDA Closure Surgery in India](/treatments/pda-closure-surgery-in-india). Coarctation lists sit on [Coarctation Repair Surgery in India](/treatments/coarctation-repair-surgery-in-india). LVAD lists sit on [Left Ventricular Assist Device (LVAD) Procedure in India](/treatments/lvad-implantation-in-india).
+Valve lists sit on [Heart Valve Replacement Surgery in India](/treatments/heart-valve-replacement-in-india) when an outlet VSD has damaged the aortic valve. Pacing after complete heart block sits on [Pacemaker Implantation in India](/treatments/pacemaker-implantation-in-india). Aortic wall tears are a different product and sit on [Aortic Dissection Repair Surgery in India](/treatments/aortic-dissection-repair-in-india). There is no live GAF ASD-closure, AVSD-only or pediatric-cardiac-surgery-only treatment page. This page is the named VSD-surgery product. TOF lists sit on [TOF Repair Surgery in India](/treatments/tof-repair-surgery-in-india). Glenn lists sit on [Glenn Procedure Surgery in India](/treatments/glenn-procedure-surgery-in-india). Fontan lists sit on [Fontan Procedure Surgery in India](/treatments/fontan-procedure-surgery-in-india). Arterial-switch lists sit on [Arterial Switch Operation in India](/treatments/arterial-switch-operation-in-india). PDA lists sit on [PDA Closure Surgery in India](/treatments/pda-closure-surgery-in-india). Coarctation lists sit on [Coarctation Repair Surgery in India](/treatments/coarctation-repair-surgery-in-india). LVAD lists sit on [Left Ventricular Assist Device (LVAD) Procedure in India](/treatments/lvad-implantation-in-india).
 
-There is no live GAF VSD-only cost sheet. Neighbouring [congenital heart surgery](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery) is **$8,000–$28,000** (typically **7–21 nights**; parent stay expected). US comparison is **$80,000–$250,000**. Neighbouring [heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) is **$7,000–$18,000** (typically **8–16 nights**) when a valve is named in the same sitting. Named [aortic valve replacement](/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement) is **$7,000–$18,500** (typically **8–16 nights**) when SAVR is added for VSD-related aortic leak. Neighbouring [pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) is **$3,500–$9,000** (typically **1–3 nights**) if complete heart block requires pacing. Neighbouring [minimally invasive cardiac surgery](/costs/India/Cardiac-Surgery/Minimally-Invasive-Cardiac-Surgery) is **$8,000–$20,000** when a mini approach can honestly complete isolated work. Transcatheter VSD device closure has no live GAF sheet and is quoted after echo and device selection. These are planning ranges from partner hospital cost sheets, not hospital quotations.
+GAF Healthcare planning for [VSD closure](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)) is **$4,500–$11,000** (typically **6–12 nights**; parent stay expected). US comparison is **$35,000–$90,000**. Neighbouring [congenital heart surgery](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery) is **$8,000–$28,000** (typically **7–21 nights**; parent stay expected) when a broader congenital list is the honest product. US comparison for that broader sheet is **$80,000–$250,000**. Neighbouring [TOF repair](/costs/India/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)) is **$6,500–$16,000**. Neighbouring [PDA closure](/costs/India/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)) is **$3,500–$8,500**. Neighbouring [ASD closure](/costs/India/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)) is **$4,000–$9,500**. Neighbouring [heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) is **$7,000–$18,000** (typically **8–16 nights**) when a valve is named in the same sitting. Named [aortic valve replacement](/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement) is **$7,000–$18,500** (typically **8–16 nights**) when SAVR is added for VSD-related aortic leak. Neighbouring [pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) is **$3,500–$9,000** (typically **1–3 nights**) if complete heart block requires pacing. Neighbouring [minimally invasive cardiac surgery](/costs/India/Cardiac-Surgery/Minimally-Invasive-Cardiac-Surgery) is **$8,000–$20,000** when a mini approach can honestly complete isolated work. Transcatheter VSD device work is quoted after echo and device selection. These are planning ranges from partner hospital cost sheets, not hospital quotations.
 
-International patients comparing [cardiac surgeons](/doctors/India/Cardiac-Surgery) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery), [Mumbai](/doctors/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery), [Bengaluru](/doctors/India/Bengaluru/Cardiac-Surgery/Congenital-Heart-Surgery), [Chennai](/doctors/India/Chennai/Cardiac-Surgery/Congenital-Heart-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Cardiac-Surgery/Congenital-Heart-Surgery). Partner [cardiac surgery hospitals](/hospitals/India/Cardiac-Surgery) in [Delhi NCR](/hospitals/India/Delhi-NCR/Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Cardiac-Surgery) and [Bengaluru](/hospitals/India/Bengaluru/Cardiac-Surgery), and in [Chennai](/hospitals/India/Chennai/Cardiac-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Cardiac-Surgery), are a typical first filter because VSD closure needs a pediatric or congenital cardiac ICU, echo and emergency backup. City cost sheets include [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery), [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery), [Bengaluru](/costs/India/Bengaluru/Cardiac-Surgery/Congenital-Heart-Surgery), [Chennai](/costs/India/Chennai/Cardiac-Surgery/Congenital-Heart-Surgery) and [Hyderabad](/costs/India/Hyderabad/Cardiac-Surgery/Congenital-Heart-Surgery). Kolkata, Pune, Ahmedabad, Chandigarh and Kochi may have congenital theatres. They are not live GAF catalog cities on this site.
+International patients comparing [pediatric cardiac surgeons](/doctors/India/Pediatric-Cardiac-Surgery) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)), [Mumbai](/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)), [Bengaluru](/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)), [Chennai](/doctors/India/Chennai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)) and [Hyderabad](/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)). Partner [pediatric cardiac surgery hospitals](/hospitals/India/Pediatric-Cardiac-Surgery) in [Delhi NCR](/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery) and [Bengaluru](/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery), and in [Chennai](/hospitals/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Pediatric-Cardiac-Surgery), are a typical first filter because VSD closure needs a pediatric cardiac ICU, echo and emergency backup. City VSD sheets include [Delhi NCR](/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)), [Mumbai](/costs/India/Mumbai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)), [Bengaluru](/costs/India/Bengaluru/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)), [Chennai](/costs/India/Chennai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)) and [Hyderabad](/costs/India/Hyderabad/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)). Broader congenital lists still sit with [cardiac surgeons](/doctors/India/Cardiac-Surgery) in [Delhi NCR](/doctors/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery), [Mumbai](/doctors/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery), [Bengaluru](/doctors/India/Bengaluru/Cardiac-Surgery/Congenital-Heart-Surgery), [Chennai](/doctors/India/Chennai/Cardiac-Surgery/Congenital-Heart-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Cardiac-Surgery/Congenital-Heart-Surgery), and with [cardiac surgery hospitals](/hospitals/India/Cardiac-Surgery) in [Delhi NCR](/hospitals/India/Delhi-NCR/Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Cardiac-Surgery) and [Bengaluru](/hospitals/India/Bengaluru/Cardiac-Surgery), [Chennai](/hospitals/India/Chennai/Cardiac-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Cardiac-Surgery). Neighbouring congenital city sheets include [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery) and [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery), plus [Bengaluru](/costs/India/Bengaluru/Cardiac-Surgery/Congenital-Heart-Surgery), [Chennai](/costs/India/Chennai/Cardiac-Surgery/Congenital-Heart-Surgery) and [Hyderabad](/costs/India/Hyderabad/Cardiac-Surgery/Congenital-Heart-Surgery). Kolkata, Pune, Ahmedabad, Chandigarh and Kochi may have congenital theatres. They are not live GAF catalog cities on this site.
 
 > Important: Severe breathing difficulty, bluish discoloration, poor feeding, extreme lethargy or fainting belongs in a **local emergency department** first. WhatsApp at +91 90443 46292 is for planned record review, not an acute infant emergency.
 
 [Share echo for a VSD Heart Team review](/consult?treatment=ventricular-septal-defect-surgery-in-india)
 
-## Quick Answer: VSD Surgery in India
+## Quick Answer: VSD Closure Surgery in India
 
 **What is VSD?**
-A hole between the heart's two lower chambers, the ventricles.
+A hole in the wall separating the heart's two ventricles
 
-**Is every VSD treated with surgery?**
-No. Many small VSDs close on their own and only require monitoring.
+**Does every VSD require surgery?**
+No. Many small VSDs close spontaneously or only require monitoring
 
-**When is VSD surgery needed?**
-Usually when the defect is large, causes significant blood flow to the lungs, symptoms, poor growth, heart failure, pulmonary hypertension, ventricular enlargement or other complications.
+**When is closure considered?**
+When the VSD causes significant shunting, heart enlargement, symptoms, pulmonary pressure problems, valve damage or other accepted indications
 
-**How is VSD closed?**
-Most significant VSDs are closed surgically with a patch or, in selected cases, through a catheter using a closure device.
+**Main treatment**
+Surgical patch closure for many VSDs
 
-**What is the usual VSD surgery?**
-Open-heart surgical closure using a patch is the standard approach for many VSDs.
+**Alternative**
+Catheter-based device closure for carefully selected VSDs
 
-**Can VSD be closed without open-heart surgery?**
-Some anatomically suitable VSDs can be closed through a catheter.
+**Anaesthesia**
+Usually general anaesthesia for surgical closure; catheter procedures may also require general anaesthesia, particularly in children
 
-**Does a small VSD always need treatment?**
-No. Many small VSDs close spontaneously.
+**Hospital stay**
+Commonly several days after surgical closure; catheter recovery can be shorter. GAF Healthcare planning is typically 6–12 nights, with parent stay expected.
 
-**How long does VSD surgery take?**
-The exact duration depends on the defect and whether other repairs are required.
+**Surgical recovery**
+Children often return toward normal activity over several weeks, depending on age and recovery
 
-**How long is hospital stay?**
-It varies with age, complexity, surgical approach and recovery. Neighbouring congenital heart surgery planning is typically 7–21 nights, with parent stay expected.
+**India cost**
+GAF Healthcare planning for VSD closure is $4,500–$11,000 (typically 6–12 nights; parent stay expected). US comparison is $35,000–$90,000. Anatomy, device versus patch, ICU nights and associated procedures can change the final bill.
 
-**What is the VSD surgery cost in India?**
-There is no live GAF VSD-only sheet. Neighbouring congenital heart surgery is $8,000–$28,000 (typically 7–21 nights). US comparison is $80,000–$250,000. Device closure is hospital-priced.
+**Who performs it?**
+Pediatric cardiac surgeon, congenital heart surgeon and/or interventional pediatric cardiologist depending on the treatment
 
-**Is VSD surgery successful?**
-Most children whose VSDs are successfully closed have good long-term outcomes, although lifelong or periodic congenital-heart follow-up may be recommended.
+**Long-term outlook**
+Generally very good after successful closure, but lifelong or periodic congenital-heart follow-up may be appropriate depending on the patient
 
 Medical decisions should be based on the patient's echocardiogram, anatomy, symptoms and assessment by a congenital or pediatric cardiology team rather than cost or age alone.
 
@@ -238,7 +238,7 @@ Open surgery remains the preferred approach for many VSDs. There is no live GAF 
 | Suitable for selected muscular VSDs | Yes | Sometimes |
 | Device required | No | Yes |
 | Hospital recovery | Depends on age and complexity | Often shorter when uncomplicated |
-| Neighbouring GAF sheet | Congenital heart surgery $8,000–$28,000 | Hospital-priced; no GAF device sheet |
+| Neighbouring GAF sheet | VSD closure $4,500–$11,000 | Hospital-priced after echo |
 
 The choice should be made by a congenital or pediatric cardiac team after reviewing the complete cardiac anatomy rather than simply choosing the least invasive option.
 
@@ -324,10 +324,11 @@ The long-term outlook is generally favorable for children whose VSD is successfu
 
 The cost of VSD surgery in India depends on the patient's age, complexity of the defect, surgical approach, hospital, ICU requirements, room category, investigations and whether additional cardiac procedures are required.
 
-There is no live GAF VSD-only sheet. Neighbouring [congenital heart surgery](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery) planning is **$8,000–$28,000**, typically **7–21 nights**. Comparable US planning is **$80,000–$250,000**. Brochure rupee figures are not international self-pay quotations and are not used on this page.
+GAF Healthcare planning for [VSD closure](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)) is **$4,500–$11,000**, typically **6–12 nights**, with parent stay expected. US comparison is **$35,000–$90,000**. Neighbouring [congenital heart surgery](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery) planning is **$8,000–$28,000**, typically **7–21 nights**. Comparable US planning for that broader sheet is **$80,000–$250,000**. Published Indian rupee listings are not GAF quotations.
 
 | Neighbouring GAF sheet | Planning range | Typical stay |
 | --- | --- | --- |
+| [VSD closure](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)) | $4,500–$11,000 | 6–12 nights |
 | [Congenital heart surgery](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery) | $8,000–$28,000 | 7–21 nights |
 | [Heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) | $7,000–$18,000 | 8–16 nights |
 | [Aortic valve replacement](/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement) | $7,000–$18,500 | 8–16 nights |
@@ -581,10 +582,10 @@ A significant untreated VSD can result in excessive pulmonary blood flow, heart 
 Yes. Infants with significant symptomatic VSDs may require repair during infancy. The timing depends on the baby's symptoms, growth, anatomy and pulmonary circulation.
 
 **What is the VSD surgery cost in India?**
-There is no live GAF VSD-only sheet. Neighbouring congenital heart surgery is $8,000–$28,000 (typically 7–21 nights). Device closure is hospital-priced.
+GAF Healthcare planning for [VSD closure](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)) is **$4,500–$11,000**, typically **6–12 nights**, with parent stay expected. US comparison is **$35,000–$90,000**. Neighbouring congenital heart surgery is $8,000–$28,000 (typically 7–21 nights). Device work is quoted after echo.
 
 **How long does a child stay in hospital after VSD surgery?**
-Neighbouring congenital-heart planning is typically 7–21 nights. Infants and children with associated congenital heart conditions may require longer hospitalization.
+GAF VSD planning is typically 6–12 nights, with parent stay expected. Neighbouring congenital-heart planning is typically 7–21 nights. Infants and children with associated congenital heart conditions may require longer hospitalization.
 
 **Is VSD surgery painful?**
 The operation itself is performed under general anesthesia. After surgery, children may experience discomfort, which is managed with appropriate pain-control medicines.
@@ -611,7 +612,7 @@ There is no single best city. Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderaba
 Severe breathing difficulty, bluish discoloration, poor feeding, extreme lethargy or fainting belongs in a local emergency department, not in a WhatsApp message.
 
 **Is there a GAF ASD, PDA or Tetralogy of Fallot treatment page?**
-No. ASD-closure treatment pages are not live. Use this page and the named congenital-heart-surgery sheet.
+ASD-closure treatment pages are not live. PDA lists sit on [PDA Closure Surgery in India](/treatments/pda-closure-surgery-in-india). TOF lists sit on [TOF Repair Surgery in India](/treatments/tof-repair-surgery-in-india).
 
 ## Key takeaways
 
@@ -622,7 +623,7 @@ No. ASD-closure treatment pages are not live. Use this page and the named congen
 - Echocardiography is the key investigation for assessing VSD anatomy and physiological impact.
 - Open surgical patch closure is used for many significant VSDs.
 - Selected VSDs can be closed through a catheter using a device.
-- There is no live GAF VSD-only sheet. Neighbouring congenital heart surgery is $8,000–$28,000.
+- GAF Healthcare planning for [VSD closure](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)) is **$4,500–$11,000**. Neighbouring congenital heart surgery is $8,000–$28,000.
 - Significant untreated VSD can cause heart failure and pulmonary vascular disease.
 - Long-term follow-up remains important after VSD repair.
 
@@ -638,17 +639,19 @@ Planned questions can also go to WhatsApp at [+91 90443 46292](https://wa.me/919
 
 ## Related GAF Healthcare pages
 
+- [TOF Repair Surgery in India](/treatments/tof-repair-surgery-in-india)
+- [PDA Closure Surgery in India](/treatments/pda-closure-surgery-in-india)
+- [Glenn Procedure Surgery in India](/treatments/glenn-procedure-surgery-in-india)
 - [Heart Valve Replacement Surgery in India](/treatments/heart-valve-replacement-in-india)
-- [Tricuspid Valve Replacement Surgery in India](/treatments/tricuspid-valve-replacement-in-india)
-- [Aortic Dissection Repair Surgery in India](/treatments/aortic-dissection-repair-in-india)
-- [CABG Surgery in India](/treatments/cabg-surgery-in-india)
 - [Pacemaker Implantation in India](/treatments/pacemaker-implantation-in-india)
-- [TAVR in India](/treatments/tavr-in-india)
+- [VSD closure cost](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect))
 - [Congenital heart surgery cost](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery)
+- [Pediatric cardiac surgeons in India](/doctors/India/Pediatric-Cardiac-Surgery)
+- [Pediatric cardiac surgery hospitals in India](/hospitals/India/Pediatric-Cardiac-Surgery)
 - [Cardiac surgeons in India](/doctors/India/Cardiac-Surgery)
 - [Cardiac surgery hospitals in India](/hospitals/India/Cardiac-Surgery)
 
-ASD-closure, Tetralogy-of-Fallot, pulmonary-valve-replacement and pediatric-cardiac-surgery-only treatment pages are not live on this site. Use this page plus the named congenital-heart-surgery sheet.
+ASD-closure, AVSD-only and pediatric-cardiac-surgery-only treatment pages are not live on this site. Use this page plus the named VSD-closure sheet.
 
 ## Sources
 
@@ -658,7 +661,7 @@ ASD-closure, Tetralogy-of-Fallot, pulmonary-valve-replacement and pediatric-card
 4. **Centers for Disease Control and Prevention (CDC) — Ventricular Septal Defect.**
 5. **Mayo Clinic — VSD Diagnosis & Treatment.**
 6. **Merck Manual Professional — Ventricular Septal Defect.**
-7. **GAF Healthcare congenital heart surgery cost sheet** — [Congenital Heart Surgery](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery).
+7. **GAF Healthcare VSD closure cost sheet** — [VSD Closure (Ventricular Septal Defect)](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)).
 8. **American Heart Association — Surgery for Congenital Heart Disease.**
 9. **Mayo Clinic — VSD Symptoms & Causes.**
 10. **Merck Manual — Atrial and Ventricular Septal Defects in Children.**

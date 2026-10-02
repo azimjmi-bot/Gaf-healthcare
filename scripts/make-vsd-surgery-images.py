@@ -145,10 +145,10 @@ def make_types():
 def make_pathways():
     im = Image.new("RGB", (1280, 720), WHITE)
     d = ImageDraw.Draw(im)
-    header(d, "WATCH, PATCH OR DEVICE", "There is no VSD-only GAF sheet. Neighbouring congenital heart surgery is $8,000–$28,000.")
+    header(d, "WATCH, PATCH OR DEVICE", "GAF VSD closure is $4,500–$11,000. Neighbouring congenital heart surgery is $8,000–$28,000.")
     tiles = [
         (48, 130, 424, 680, PURPLE, "WATCH", "Many small holes close. Echo, not a brochure, says when observation is honest."),
-        (452, 130, 828, 680, CORAL, "SURGICAL PATCH", "Open closure on bypass for large or complex holes. Neighbouring congenital surgery is $8,000–$28,000."),
+        (452, 130, 828, 680, CORAL, "SURGICAL PATCH", "Open closure on bypass for large or complex holes. GAF VSD planning is $4,500–$11,000."),
         (856, 130, 1232, 680, TEAL, "DEVICE", "Selected muscular holes can take a catheter device. Device work is hospital-priced."),
     ]
     title_f = font(BOLD, 20)
@@ -169,7 +169,7 @@ def make_pathways():
 def make_steps():
     im = Image.new("RGB", (1280, 720), WHITE)
     d = ImageDraw.Draw(im)
-    header(d, "VSD CLOSURE JOURNEY", "Neighbouring congenital heart surgery is $8,000–$28,000. Parent stay is expected.")
+    header(d, "VSD CLOSURE JOURNEY", "GAF VSD closure is $4,500–$11,000. Stay is typically 6–12 nights; parent stay expected.")
     steps = [
         ("1", "ECHO", "Size, location and shunt"),
         ("2", "TEAM", "Watch, patch or device is named"),

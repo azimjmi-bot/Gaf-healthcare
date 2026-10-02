@@ -4023,14 +4023,18 @@ test("the published VSD surgery page uses GAF USD ranges and cardiac GEO links",
   assert.deepEqual(validateTreatmentForSave(treatment, store), []);
   const body = treatment.translations.en!.editorialBody;
   assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$4,500–\$11,000/);
   assert.match(body, /\$8,000–\$28,000/);
   assert.match(body, /\$7,000–\$18,000/);
   assert.match(body, /\$7,000–\$18,500/);
   assert.match(body, /\$3,500–\$9,000/);
+  assert.match(body, /\$35,000–\$90,000/);
   assert.match(body, /\$80,000–\$250,000/);
+  assert.match(body, /6–12 nights/);
   assert.match(body, /7–21 nights/);
-  assert.match(body, /article-quick-answer|Quick Answer: VSD Surgery in India/);
+  assert.match(body, /article-quick-answer|Quick Answer: VSD Closure Surgery in India/);
   assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/VSD-Closure-\(Ventricular-Septal-Defect\)/);
   assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Congenital-Heart-Surgery/);
   assert.match(body, /\/treatments\/heart-valve-replacement-in-india/);
   assert.match(body, /\/treatments\/pacemaker-implantation-in-india/);
@@ -4040,6 +4044,16 @@ test("the published VSD surgery page uses GAF USD ranges and cardiac GEO links",
   assert.match(body, /\/uploads\/treatments\/vsd-surgery-steps\.webp/);
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   for (const path of [
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
     "/doctors/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery",
     "/doctors/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery",
     "/doctors/India/Bengaluru/Cardiac-Surgery/Congenital-Heart-Surgery",

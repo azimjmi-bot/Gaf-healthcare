@@ -44,7 +44,7 @@ const store = JSON.parse(readFileSync(storePath, "utf8")) as {
   }>;
 };
 const existing = store.treatments.find((row) => row.slug === "ventricular-septal-defect-surgery-in-india");
-const now = "2026-09-29T21:00:00.000Z";
+const now = "2026-09-30T03:00:00.000Z";
 const SLUG = "ventricular-septal-defect-surgery-in-india";
 const VALVE = "heart-valve-replacement-in-india";
 const TAVR = "tavr-in-india";
@@ -52,6 +52,13 @@ const CABG = "cabg-surgery-in-india";
 const ADR = "aortic-dissection-repair-in-india";
 const TVR = "tricuspid-valve-replacement-in-india";
 const PACEMAKER = "pacemaker-implantation-in-india";
+const TOF = "tof-repair-surgery-in-india";
+const PDA = "pda-closure-surgery-in-india";
+const GLENN = "glenn-procedure-surgery-in-india";
+const FONTAN = "fontan-procedure-surgery-in-india";
+const ASO = "arterial-switch-operation-in-india";
+const COA = "coarctation-repair-surgery-in-india";
+const LVAD = "lvad-implantation-in-india";
 const ADDITION =
   " VSD lists sit on [Ventricular Septal Defect (VSD) Surgery in India](/treatments/ventricular-septal-defect-surgery-in-india).";
 const VALVE_NEEDLE = "This page is the named surgical heart-valve-replacement product.";
@@ -65,10 +72,10 @@ const treatment = {
   id: existing?.id ?? "a1b7c3e8-9d52-8b14-c06f-5e8a2d4f7b90",
   slug: SLUG,
   previousSlugs: [],
-  baseName: "Ventricular Septal Defect (VSD) Surgery in India",
-  specialtySlug: "cardiac-surgery",
+  baseName: "VSD Closure Surgery in India",
+  specialtySlug: "pediatric-cardiac-surgery",
   subspecialty: "Congenital Heart Surgery",
-  category: "Congenital Heart Surgery",
+  category: "VSD Closure (Ventricular Septal Defect)",
   image: "/uploads/treatments/vsd-surgery-hero.webp",
   destinationSlugs: ["india"],
   doctorSlugs: [
@@ -99,13 +106,17 @@ const treatment = {
     "yashoda-hospitals-hi-tech-city",
   ],
   costPageSlugs: [
+    "vsd-closure-ventricular-septal-defect",
     "congenital-heart-surgery",
+    "tof-repair-tetralogy-of-fallot",
+    "pda-closure-patent-ductus-arteriosus",
+    "asd-closure-atrial-septal-defect",
     "heart-valve-replacement",
     "aortic-valve-replacement",
     "minimally-invasive-cardiac-surgery",
     "pacemaker-implantation",
   ],
-  relatedTreatmentSlugs: [VALVE, TAVR, CABG, ADR, TVR, PACEMAKER],
+  relatedTreatmentSlugs: [VALVE, TAVR, CABG, ADR, TVR, PACEMAKER, TOF, PDA, GLENN, FONTAN, ASO, COA, LVAD],
   status: "published" as const,
   featured: true,
   sortOrder: 49,
@@ -115,9 +126,9 @@ const treatment = {
     en: {
       ...blankTranslation,
       status: "published" as const,
-      name: "Ventricular Septal Defect (VSD) Surgery in India",
+      name: "VSD Closure Surgery in India",
       shortDescription:
-        "VSD surgery in India closes a hole between the ventricles when observation is not honest. Neighbouring congenital heart surgery is $8,000–$28,000.",
+        "VSD closure in India closes a hole between the ventricles when observation is not honest. GAF planning is $4,500–$11,000, typically 6–12 nights.",
       editorialBody: body,
       process: [
         {
@@ -142,7 +153,7 @@ const treatment = {
           id: "vsd-step-4",
           title: "Itemized estimate",
           description:
-            "There is no live GAF VSD-only sheet. Neighbouring congenital heart surgery is $8,000–$28,000. Device work is hospital-priced.",
+            "GAF VSD planning is $4,500–$11,000. Neighbouring congenital heart surgery is $8,000–$28,000. Device work is hospital-priced.",
         },
         {
           id: "vsd-step-5",
@@ -178,13 +189,13 @@ const treatment = {
       preparation:
         "Share echocardiography images, not only the written report, so the congenital team can judge observation versus patch versus device.",
       recovery:
-        "Feeding and energy often recover gradually. Neighbouring congenital-heart planning is 7–21 nights, with parent stay expected.",
-      hospitalStay: "Neighbouring congenital heart surgery typically 7–21 nights; parent stay expected",
+        "Feeding and energy often recover gradually. GAF VSD planning is 6–12 nights, with parent stay expected.",
+      hospitalStay: "Typically 6–12 nights; parent stay expected. Broader congenital lists may stay 7–21 nights.",
       recoveryPeriod: "Varies with age and complexity. Isolated VSD closure is usually shorter than combined congenital work.",
       followUp:
         "Request a written summary covering residual shunt, rhythm, activity advice and who will follow the child after returning home.",
       importantConsiderations:
-        "Not every VSD needs surgery. There is no live GAF VSD-only sheet. Severe breathing difficulty or poor feeding belongs in a local emergency department.",
+        "Not every VSD needs surgery. GAF VSD planning is $4,500–$11,000. Severe breathing difficulty or poor feeding belongs in a local emergency department.",
       treatmentType: "VSD Closure / Congenital Heart Surgery",
       treatmentSetting: "Accredited partner pediatric and congenital cardiac theatres and ICUs in India",
       technology:
@@ -214,7 +225,7 @@ const treatment = {
           id: "vsd-faq-3",
           question: "How much does VSD surgery cost in India?",
           answer:
-            "There is no live GAF VSD-only sheet. Neighbouring congenital heart surgery is $8,000–$28,000, typically 7–21 nights. Device closure is hospital-priced.",
+            "GAF Healthcare planning for VSD closure is $4,500–$11,000, typically 6–12 nights, with parent stay expected. US comparison is $35,000–$90,000.",
         },
         {
           id: "vsd-faq-4",
@@ -226,7 +237,7 @@ const treatment = {
           id: "vsd-faq-5",
           question: "How long is hospital stay after VSD surgery?",
           answer:
-            "Neighbouring congenital-heart planning is typically 7–21 nights, with parent stay expected.",
+            "GAF VSD planning is typically 6–12 nights, with parent stay expected. Complex recoveries stay longer.",
         },
         {
           id: "vsd-faq-6",
@@ -262,7 +273,7 @@ const treatment = {
           id: "vsd-faq-11",
           question: "Is there a GAF ASD or Tetralogy of Fallot treatment page?",
           answer:
-            "No. ASD-closure and Tetralogy-of-Fallot treatment pages are not live. Use this page and the named congenital-heart-surgery sheet. PDA lists sit on the PDA closure surgery page.",
+            "No. ASD-closure treatment pages are not live. TOF lists sit on the TOF repair page. PDA lists sit on the PDA closure surgery page.",
         },
         {
           id: "vsd-faq-12",
@@ -273,9 +284,9 @@ const treatment = {
       ],
       imageAlt:
         "Educational illustration of overlapping ventricular chambers used as the VSD surgery hero",
-      seoTitle: "Ventricular Septal Defect (VSD) Surgery in India: Cost, Procedure & Recovery",
+      seoTitle: "VSD Closure Surgery in India: Cost, Procedure, Recovery & Hospitals",
       metaDescription:
-        "Learn about VSD surgery in India, including types, symptoms, patch versus device closure, neighbouring GAF planning $8,000–$28,000 and how to send echo records.",
+        "VSD closure surgery in India explained: types of VSD, surgical and device closure, GAF planning $4,500–$11,000, recovery, hospitals and FAQs.",
     },
   },
 };
