@@ -4,7 +4,7 @@
 
 Unlike vaporization, HoLEP removes a substantial volume of obstructing tissue and sends it for pathology. The American Urological Association describes HoLEP as a prostate-size-independent surgical option for LUTS/BPH. It can be used for small, medium or very large glands when the anatomy and the surgeon's enucleation experience make that honest.
 
-This page is the named HoLEP product. It is **not** prostate cancer surgery and it does **not** remove the entire prostate. Cancer lists sit on [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) and [Radical Prostatectomy in India](/treatments/radical-prostatectomy-in-india). Neighbouring vaporization lists sit on [GreenLight Laser Surgery in India](/treatments/greenlight-laser-surgery-in-india). There is no live GAF TURP, Aquablation, UroLift or BPH-only treatment page. Those neighbouring sheets must not be used as a HoLEP quotation.
+This page is the named HoLEP product. It is **not** prostate cancer surgery and it does **not** remove the entire prostate. Cancer lists sit on [Prostate Cancer Treatment in India](/treatments/prostate-cancer-treatment-in-india) and [Radical Prostatectomy in India](/treatments/radical-prostatectomy-in-india). Neighbouring vaporization lists sit on [GreenLight Laser Surgery in India](/treatments/greenlight-laser-surgery-in-india). There is no live GAF Aquablation, UroLift or BPH-only treatment page. Named TURP lists sit on [TURP Surgery in India](/treatments/turp-surgery-in-india). Those neighbouring sheets must not be used as a HoLEP quotation.
 
 GAF Healthcare planning for [HoLEP](/costs/India/Urology/HoLEP-(Holmium-Laser-Enucleation)) is **$3,800–$8,500** (typically **2–4 nights**). US comparison is **$16,000–$32,000**. Neighbouring [GreenLight laser surgery](/costs/India/Urology/GreenLight-Laser-Surgery) is **$3,200–$7,800** (typically **1–3 nights**). Neighbouring [TURP](/costs/India/Urology/TURP-(Transurethral-Resection-of-the-Prostate)) is **$2,500–$6,200** (typically **2–4 nights**). Neighbouring [radical prostatectomy](/costs/India/Surgical-Oncology/Radical-Prostatectomy) is **$7,000–$18,000** when the product is cancer, not BPH. These are planning ranges from partner hospital cost sheets, not hospital quotations.
 
@@ -100,7 +100,7 @@ A holmium brochure is not enough. Anatomy, bladder function, surgeon experience 
 | Tissue for pathology | Yes | Yes |
 | Retrograde ejaculation | Common | Common |
 
-Randomized trials have found HoLEP urinary outcomes comparable with TURP, with durable flow and symptom scores. Long-term follow-up has shown sustained results. There is no live GAF TURP treatment page; TURP sits on the neighbouring cost sheet until named separately.
+Randomized trials have found HoLEP urinary outcomes comparable with TURP, with durable flow and symptom scores. Long-term follow-up has shown sustained results. Named TURP lists sit on [TURP Surgery in India](/treatments/turp-surgery-in-india).
 
 GreenLight PVP vaporizes tissue. HoLEP enucleates and morcellates it. That distinction matters when a large volume of adenoma must come out. Named vaporization lists sit on [GreenLight Laser Surgery in India](/treatments/greenlight-laser-surgery-in-india). Do not choose a list because the word “laser” is in the name.
 
