@@ -125,7 +125,9 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   }
   if (/breast/i.test(text)) return "Breast";
   if (/penile|penis|androlog/i.test(text)) return "Penis";
-  if (/prostate/i.test(text)) return "Prostate";
+  if (/prostate|greenlight|photoselective vapori|\bpvp\b|\bholep\b|\bturp\b|benign prostatic|\bbph\b|\bbpo\b/i.test(text)) {
+    return "Prostate";
+  }
   if (/colon|colorectal/i.test(text)) return "Colon";
   if (/bile duct|cholangiocarcinoma|klatskin|perihilar/i.test(text)) return "Bile Duct";
   if (/pancreas|pancreatic|whipple/i.test(text)) return "Pancreas";

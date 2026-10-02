@@ -764,7 +764,7 @@ test("the published penile implantation page uses GAF USD ranges and urology GEO
   assert.doesNotMatch(body, /\/treatments\/india\//);
   assert.doesNotMatch(body, /\/treatments\/turp/);
   assert.doesNotMatch(body, /\/treatments\/holep/);
-  assert.doesNotMatch(body, /\/treatments\/greenlight/);
+  assert.match(body, /\/treatments\/greenlight-laser-surgery-in-india/);
   assert.doesNotMatch(body, /\/treatments\/erectile-dysfunction/);
   assert.doesNotMatch(body, /Best hospitals/i);
   assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
@@ -775,6 +775,90 @@ test("the published penile implantation page uses GAF USD ranges and urology GEO
   const rp = store.treatments.find((row) => row.slug === "radical-prostatectomy-in-india");
   assert.match(rp?.translations.en?.editorialBody ?? "", /\/treatments\/penile-implantation-in-india/);
   assert.ok(rp?.relatedTreatmentSlugs?.includes("penile-implantation-in-india"));
+  assert.ok(treatment.relatedTreatmentSlugs?.includes("greenlight-laser-surgery-in-india"));
+});
+
+test("the published GreenLight laser surgery page uses GAF USD ranges and urology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "greenlight-laser-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,200–\$7,800/);
+  assert.match(body, /\$14,000–\$28,000/);
+  assert.match(body, /\$2,500–\$6,200/);
+  assert.match(body, /\$3,800–\$8,500/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: GreenLight Laser Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Urology\/GreenLight-Laser-Surgery/);
+  assert.match(body, /\/doctors\/India\/Urology\/GreenLight-Laser-Surgery/);
+  assert.match(body, /\/treatments\/radical-prostatectomy-in-india/);
+  assert.match(body, /\/treatments\/penile-implantation-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/gl-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gl-laser\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gl-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gl-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Urology/GreenLight-Laser-Surgery",
+    "/doctors/India/Mumbai/Urology/GreenLight-Laser-Surgery",
+    "/doctors/India/Bengaluru/Urology/GreenLight-Laser-Surgery",
+    "/doctors/India/Chennai/Urology/GreenLight-Laser-Surgery",
+    "/doctors/India/Hyderabad/Urology/GreenLight-Laser-Surgery",
+    "/hospitals/India/Delhi-NCR/Urology",
+    "/hospitals/India/Mumbai/Urology",
+    "/hospitals/India/Bengaluru/Urology",
+    "/costs/India/Delhi-NCR/Urology/GreenLight-Laser-Surgery",
+    "/costs/India/Mumbai/Urology/GreenLight-Laser-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is GreenLight laser surgery/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /532-nm|vaporize|transurethral/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Prostate",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/greenlight-laser-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/turp/);
+  assert.doesNotMatch(body, /\/treatments\/holep/);
+  assert.doesNotMatch(body, /\/treatments\/aquablation/);
+  assert.doesNotMatch(body, /\/treatments\/urolift/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/greenlight-laser-surgery-in-india/);
+  const rp = store.treatments.find((row) => row.slug === "radical-prostatectomy-in-india");
+  const penile = store.treatments.find((row) => row.slug === "penile-implantation-in-india");
+  assert.match(rp?.translations.en?.editorialBody ?? "", /\/treatments\/greenlight-laser-surgery-in-india/);
+  assert.match(penile?.translations.en?.editorialBody ?? "", /\/treatments\/greenlight-laser-surgery-in-india/);
+  assert.ok(rp?.relatedTreatmentSlugs?.includes("greenlight-laser-surgery-in-india"));
+  assert.ok(penile?.relatedTreatmentSlugs?.includes("greenlight-laser-surgery-in-india"));
 });
 
 test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {
