@@ -104,7 +104,7 @@ Depending on the anatomy, the surgeon may recommend a breast lift, augmentation,
 
 Some women retain localized fat around the abdomen, waist, flanks, hips, thighs or back.
 
-Liposuction may be used to contour these areas when diet and exercise have not adequately changed the distribution of localized fat. Liposuction is **not a weight-loss treatment**. Neighbouring [sleeve gastrectomy](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy) is **$4,500–$8,500** when obesity, not post-pregnancy contour, is the product.
+Liposuction may be used to contour these areas when diet and exercise have not adequately changed the distribution of localized fat. Liposuction is **not a weight-loss treatment**. Neighbouring [sleeve gastrectomy](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy) is **$4,500–$8,500** when obesity, not post-pregnancy contour, is the product. Roux-en-Y lists sit on [Gastric Bypass Surgery in India](/treatments/gastric-bypass-surgery-in-india).
 
 ## What Procedures Are Included in a Mommy Makeover?
 

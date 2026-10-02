@@ -152,6 +152,13 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   }
   if (/tendon/i.test(text)) return "Tendon";
   if (
+    /gastric bypass|bariatric|roux-en-y|sleeve gastrectomy|oagb|metabolic surgery|gastric balloon|endoscopic sleeve/i.test(
+      text,
+    )
+  ) {
+    return "Stomach";
+  }
+  if (
     /coronary|percutaneous coronary|\bpci\b|\bcabg\b|bypass graft|heart bypass|bypass surgery|heart valve|valve replacement|mitral valve|tricuspid|pulmonary valve|pacemaker|bradycardia|heart block|\bicd\b|leadless pacing|resynchronization|tavr|tavi|aortic stenosis|aortic valve|valvuloplasty|\bbav\b|aortic dissection|\btevar\b|aortic aneurysm|aortic root|bentall|frozen elephant|ventricular septal|\bvsd\b|atrial septal|\basd\b|congenital heart|coarctation|\bcoa\b|\bpda\b|patent ductus|arterial switch|jatene|\bd-tga\b|transposition of the great|\bfontan\b|\bglenn\b|tetralogy|fallot|\btof\b|single.ventricle|cavopulmonary|\blvad\b|left ventricular assist|mechanical circulatory|destination therapy/i.test(
       text,
     )

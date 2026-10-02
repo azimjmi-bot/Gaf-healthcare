@@ -436,6 +436,90 @@ test("the published bile duct cancer surgery page uses GAF USD ranges and HPB GE
   assert.match(colon?.translations.en?.editorialBody ?? "", /\/treatments\/bile-duct-cancer-surgery-in-india/);
 });
 
+test("the published gastric bypass page uses GAF USD ranges and bariatric GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "gastric-bypass-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$6,000–\$11,000/);
+  assert.match(body, /\$4,500–\$8,500/);
+  assert.match(body, /\$5,500–\$10,000/);
+  assert.match(body, /\$6,000–\$12,000/);
+  assert.match(body, /\$2,000–\$4,500/);
+  assert.match(body, /\$4,500–\$9,000/);
+  assert.match(body, /\$20,000–\$38,000/);
+  assert.match(body, /3–6 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Gastric Bypass Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /This page is the named gastric-bypass product/);
+  assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Gastric-Bypass-\(Roux-en-Y\)/);
+  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Gastric-Bypass-Surgery/);
+  assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Sleeve-Gastrectomy/);
+  assert.match(body, /\/treatments\/liposuction-in-india/);
+  assert.match(body, /\/treatments\/mommy-makeover-in-india/);
+  assert.match(body, /\/uploads\/treatments\/gastric-bypass-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gastric-bypass-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gastric-bypass-diabetes\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gastric-bypass-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+    "/doctors/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+    "/doctors/India/Bengaluru/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+    "/doctors/India/Chennai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+    "/doctors/India/Hyderabad/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+    "/hospitals/India/Delhi-NCR/Bariatric-Surgery",
+    "/hospitals/India/Mumbai/Bariatric-Surgery",
+    "/hospitals/India/Bengaluru/Bariatric-Surgery",
+    "/costs/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+    "/costs/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 7);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is gastric bypass/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /small stomach pouch/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Stomach",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/gastric-bypass-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/sleeve-gastrectomy-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/bariatric-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/mini-gastric-bypass-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/gastric-bypass-surgery-in-india/);
+  const lipo = store.treatments.find((row) => row.slug === "liposuction-in-india");
+  const mommy = store.treatments.find((row) => row.slug === "mommy-makeover-in-india");
+  assert.match(lipo?.translations.en?.editorialBody ?? "", /\/treatments\/gastric-bypass-surgery-in-india/);
+  assert.match(mommy?.translations.en?.editorialBody ?? "", /\/treatments\/gastric-bypass-surgery-in-india/);
+  assert.ok(lipo?.relatedTreatmentSlugs?.includes("gastric-bypass-surgery-in-india"));
+  assert.ok(mommy?.relatedTreatmentSlugs?.includes("gastric-bypass-surgery-in-india"));
+});
+
 test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {
   const store = loadCuratedTreatments();
   const treatment = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");
