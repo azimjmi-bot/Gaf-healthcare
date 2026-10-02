@@ -125,6 +125,9 @@ export function treatmentBodyLocation(...parts: Array<string | undefined>) {
   }
   if (/breast/i.test(text)) return "Breast";
   if (/penile|penis|androlog/i.test(text)) return "Penis";
+  if (/nephrectomy|kidney cancer|renal cell|renal tumou?r|\brcc\b/i.test(text)) {
+    return "Kidney";
+  }
   if (/prostate|greenlight|photoselective vapori|\bpvp\b|\bholep\b|\bturp\b|benign prostatic|\bbph\b|\bbpo\b/i.test(text)) {
     return "Prostate";
   }
