@@ -8,7 +8,7 @@ Fontan surgery may be considered for children with conditions such as **tricuspi
 
 India has established pediatric cardiac surgery programs capable of managing complex congenital heart disease, including staged single-ventricle palliation. The decision to proceed with Fontan completion, however, depends on the child's anatomy, ventricular function, pulmonary arteries, pulmonary vascular resistance, heart rhythm, oxygen saturation, and overall clinical condition.
 
-Associated ventricular holes sit on [Ventricular Septal Defect (VSD) Surgery in India](/treatments/ventricular-septal-defect-surgery-in-india). A persistent duct sits on [PDA Closure Surgery in India](/treatments/pda-closure-surgery-in-india). d-TGA anatomical repair sits on [Arterial Switch Operation in India](/treatments/arterial-switch-operation-in-india). Aortic narrowing sits on [Coarctation Repair Surgery in India](/treatments/coarctation-repair-surgery-in-india). Broader surgical valve lists sit on [Heart Valve Replacement Surgery in India](/treatments/heart-valve-replacement-in-india). There is no live GAF Glenn, Norwood, HLHS-only, heart-transplant or pediatric-cardiac-surgery-only treatment page. This page is the named Fontan-procedure product.
+Associated ventricular holes sit on [Ventricular Septal Defect (VSD) Surgery in India](/treatments/ventricular-septal-defect-surgery-in-india). A persistent duct sits on [PDA Closure Surgery in India](/treatments/pda-closure-surgery-in-india). d-TGA anatomical repair sits on [Arterial Switch Operation in India](/treatments/arterial-switch-operation-in-india). Aortic narrowing sits on [Coarctation Repair Surgery in India](/treatments/coarctation-repair-surgery-in-india). Broader surgical valve lists sit on [Heart Valve Replacement Surgery in India](/treatments/heart-valve-replacement-in-india). There is no live GAF Norwood, HLHS-only, heart-transplant or pediatric-cardiac-surgery-only treatment page. This page is the named Fontan-procedure product.
 
 GAF Healthcare planning for [Fontan procedure](/costs/India/Pediatric-Cardiac-Surgery/Fontan-Procedure) is **$9,000–$22,000** (typically **10–18 nights**; parent stay expected). US comparison is **$70,000–$180,000**. Neighbouring [Glenn procedure](/costs/India/Pediatric-Cardiac-Surgery/Glenn-Procedure) is **$8,000–$18,000** (typically **8–16 nights**) when the second stage is the honest product. Neighbouring [Norwood procedure](/costs/India/Pediatric-Cardiac-Surgery/Norwood-Procedure) is **$18,000–$40,000** (typically **3–8 weeks** in a paediatric cardiac ICU) when first-stage HLHS palliation is named. Neighbouring [arterial switch](/costs/India/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation) is **$12,000–$26,000**. Neighbouring [congenital heart surgery](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery) is **$8,000–$28,000**. Neighbouring [VSD closure](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)) is **$4,500–$11,000**. Neighbouring [PDA closure](/costs/India/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)) is **$3,500–$8,500**. Neighbouring [pediatric heart transplantation](/costs/India/Pediatric-Cardiac-Surgery/Pediatric-Heart-Transplantation) is **$50,000–$120,000** when Fontan failure later names listing. These are planning ranges from partner hospital cost sheets, not hospital quotations.
 
@@ -91,7 +91,7 @@ This distinction is extremely important.
 
 A pediatric cardiology and congenital cardiac surgery team generally evaluates the anatomy and physiology before deciding which pathway is appropriate.
 
-There is no live GAF HLHS-only or Glenn treatment page. Neighbouring [Norwood](/costs/India/Pediatric-Cardiac-Surgery/Norwood-Procedure) and [Glenn](/costs/India/Pediatric-Cardiac-Surgery/Glenn-Procedure) sheets exist when those stages are named.
+There is no live GAF HLHS-only treatment page. Neighbouring [Norwood](/costs/India/Pediatric-Cardiac-Surgery/Norwood-Procedure) and [Glenn](/costs/India/Pediatric-Cardiac-Surgery/Glenn-Procedure) sheets exist when those stages are named.
 
 [Ask whether Fontan completion is the honest product](/consult?treatment=fontan-procedure-surgery-in-india)
 
@@ -149,7 +149,7 @@ The Glenn procedure reduces the workload on the single ventricle and prepares th
 
 The precise timing depends on the child's anatomy, oxygen saturation, ventricular function, pulmonary arteries and clinical condition.
 
-Neighbouring [Glenn procedure](/costs/India/Pediatric-Cardiac-Surgery/Glenn-Procedure) is **$8,000–$18,000**. There is no live GAF Glenn treatment page.
+Neighbouring [Glenn procedure](/costs/India/Pediatric-Cardiac-Surgery/Glenn-Procedure) is **$8,000–$18,000**. Glenn lists sit on [Glenn Procedure Surgery in India](/treatments/glenn-procedure-surgery-in-india).
 
 ### Stage 3: Fontan completion
 
@@ -807,7 +807,7 @@ The Glenn and Fontan procedures are related but they are **not the same operatio
 | Purpose | Reduce workload on the single ventricle and prepare for Fontan | Complete the total cavopulmonary circulation |
 | Typical timing | Earlier childhood | Later than Glenn, individualized |
 | Long-term status | Intermediate stage | Fontan circulation |
-| Live GAF product | Named [Glenn sheet](/costs/India/Pediatric-Cardiac-Surgery/Glenn-Procedure) only | This treatment page plus the [Fontan sheet](/costs/India/Pediatric-Cardiac-Surgery/Fontan-Procedure) |
+| Live GAF product | [Glenn Procedure Surgery in India](/treatments/glenn-procedure-surgery-in-india) plus the [Glenn sheet](/costs/India/Pediatric-Cardiac-Surgery/Glenn-Procedure) | This treatment page plus the [Fontan sheet](/costs/India/Pediatric-Cardiac-Surgery/Fontan-Procedure) |
 
 For families considering treatment in India, it is useful to understand that **Glenn surgery and Fontan completion are stages of the same broader single-ventricle treatment pathway**, but their objectives and anatomy are different.
 
@@ -927,7 +927,7 @@ For international patients, obtaining a specialist review before travelling can 
 - [Pediatric cardiac surgeons in India](/doctors/India/Pediatric-Cardiac-Surgery)
 - [Pediatric cardiac surgery hospitals in India](/hospitals/India/Pediatric-Cardiac-Surgery)
 
-Glenn, Norwood, HLHS-only, heart-transplant, ASD-closure and Tetralogy-of-Fallot treatment pages are not live on this site. Use this page plus the named modality sheets.
+Norwood, HLHS-only, heart-transplant, ASD-closure and Tetralogy-of-Fallot treatment pages are not live on this site. Use this page plus the named modality sheets.
 
 ## Top 10 sources
 
