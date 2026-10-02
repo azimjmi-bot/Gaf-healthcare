@@ -262,7 +262,7 @@ const treatment = {
           id: "vsd-faq-11",
           question: "Is there a GAF ASD or Tetralogy of Fallot treatment page?",
           answer:
-            "No. ASD-closure, PDA-closure and Tetralogy-of-Fallot treatment pages are not live. Use this page and the named congenital-heart-surgery sheet.",
+            "No. ASD-closure and Tetralogy-of-Fallot treatment pages are not live. Use this page and the named congenital-heart-surgery sheet. PDA lists sit on the PDA closure surgery page.",
         },
         {
           id: "vsd-faq-12",

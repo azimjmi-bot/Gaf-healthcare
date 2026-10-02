@@ -4080,7 +4080,7 @@ test("the published VSD surgery page uses GAF USD ranges and cardiac GEO links",
   assert.doesNotMatch(body, /\/treatments\/india\/cardiology\/vsd/);
   assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india/);
   assert.doesNotMatch(body, /\/treatments\/tetralogy-of-fallot-surgery-in-india/);
-  assert.doesNotMatch(body, /\/treatments\/pda-closure-in-india/);
+  assert.match(body, /\/treatments\/pda-closure-surgery-in-india/);
   assert.doesNotMatch(body, /\/treatments\/pediatric-cardiac-surgery-in-india/);
   assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
   assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
@@ -4589,7 +4589,7 @@ test("the published coarctation repair page uses GAF USD ranges and pediatric GE
   assert.equal(treatment.translations.ar, undefined);
   assert.doesNotMatch(body, /\/treatments\/india\/cardiology\/coarctation/);
   assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india/);
-  assert.doesNotMatch(body, /\/treatments\/pda-closure-in-india/);
+  assert.match(body, /\/treatments\/pda-closure-surgery-in-india/);
   assert.doesNotMatch(body, /\/treatments\/tetralogy-of-fallot-surgery-in-india/);
   assert.doesNotMatch(body, /\/treatments\/pediatric-cardiac-surgery-in-india/);
   assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
@@ -4603,6 +4603,91 @@ test("the published coarctation repair page uses GAF USD ranges and pediatric GE
   assert.match(vsd?.translations.en?.editorialBody ?? "", /\/treatments\/coarctation-repair-surgery-in-india/);
   assert.match(adr?.translations.en?.editorialBody ?? "", /\/treatments\/coarctation-repair-surgery-in-india/);
   assert.match(bentall?.translations.en?.editorialBody ?? "", /\/treatments\/coarctation-repair-surgery-in-india/);
+});
+
+test("the published PDA closure page uses GAF USD ranges and pediatric GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "pda-closure-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,500–\$8,500/);
+  assert.match(body, /\$8,000–\$28,000/);
+  assert.match(body, /\$4,500–\$11,000/);
+  assert.match(body, /\$4,000–\$9,500/);
+  assert.match(body, /\$6,000–\$15,000/);
+  assert.match(body, /\$6,500–\$16,000/);
+  assert.match(body, /\$20,000–\$60,000/);
+  assert.match(body, /3–8 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: PDA Closure Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/PDA-Closure-\(Patent-Ductus-Arteriosus\)/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Congenital-Heart-Surgery/);
+  assert.match(body, /\/treatments\/ventricular-septal-defect-surgery-in-india/);
+  assert.match(body, /\/treatments\/coarctation-repair-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/pda-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pda-decision\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pda-device\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pda-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is PDA\?/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /persistent connection between the aorta and pulmonary artery/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/pda-closure-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/pediatric/);
+  assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/tetralogy-of-fallot-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/glenn-procedure-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/fontan-procedure-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/arterial-switch-operation-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/pediatric-cardiac-surgery-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/pda-closure-surgery-in-india/);
+  const vsd = store.treatments.find((row) => row.slug === "ventricular-septal-defect-surgery-in-india");
+  const coa = store.treatments.find((row) => row.slug === "coarctation-repair-surgery-in-india");
+  const valve = store.treatments.find((row) => row.slug === "heart-valve-replacement-in-india");
+  assert.match(vsd?.translations.en?.editorialBody ?? "", /\/treatments\/pda-closure-surgery-in-india/);
+  assert.match(coa?.translations.en?.editorialBody ?? "", /\/treatments\/pda-closure-surgery-in-india/);
+  assert.match(valve?.translations.en?.editorialBody ?? "", /\/treatments\/pda-closure-surgery-in-india/);
 });
 
 test("Save recreates a missing Treatment instead of 404ing", () => {
