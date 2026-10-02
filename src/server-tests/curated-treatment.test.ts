@@ -1477,7 +1477,8 @@ test("the published SRS page uses GAF USD ranges and radiation GEO links", () =>
   assert.doesNotMatch(body, /\/treatments\/vmat/);
   assert.doesNotMatch(body, /\/treatments\/proton/);
   assert.doesNotMatch(body, /\/treatments\/gamma-knife/);
-  assert.doesNotMatch(body, /\/treatments\/cyberknife/);
+  assert.doesNotMatch(body, /\/treatments\/cyberknife(?:-in-india)?(?:\/|$)/);
+  assert.match(body, /\/treatments\/cyberknife-robotic-radiosurgery-in-india/);
   assert.doesNotMatch(body, /Best hospitals/i);
   assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
   assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
@@ -1575,7 +1576,8 @@ test("the published SBRT page uses GAF USD ranges and radiation GEO links", () =
   assert.doesNotMatch(body, /\/treatments\/vmat/);
   assert.doesNotMatch(body, /\/treatments\/proton/);
   assert.doesNotMatch(body, /\/treatments\/gamma-knife/);
-  assert.doesNotMatch(body, /\/treatments\/cyberknife/);
+  assert.doesNotMatch(body, /\/treatments\/cyberknife(?:-in-india)?(?:\/|$)/);
+  assert.match(body, /\/treatments\/cyberknife-robotic-radiosurgery-in-india/);
   assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
   assert.doesNotMatch(body, /\/treatments\/liver-cancer/);
   assert.doesNotMatch(body, /Best hospitals/i);
@@ -1599,6 +1601,115 @@ test("the published SBRT page uses GAF USD ranges and radiation GEO links", () =
   );
   assert.ok(ebrt?.relatedTreatmentSlugs?.includes("stereotactic-body-radiation-therapy-sbrt-in-india"));
   assert.ok(srs?.relatedTreatmentSlugs?.includes("stereotactic-body-radiation-therapy-sbrt-in-india"));
+});
+
+test("the published CyberKnife page uses GAF USD ranges and radiation GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "cyberknife-robotic-radiosurgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$11,000–\$24,000/);
+  assert.match(body, /\$30,000–\$70,000/);
+  assert.match(body, /1–5 sessions/);
+  assert.match(body, /article-quick-answer|Quick Answer: CyberKnife Robotic Radiosurgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/CyberKnife/);
+  assert.match(body, /\/doctors\/India\/Radiation-Oncology\/CyberKnife/);
+  assert.match(body, /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(body, /\/treatments\/intensity-modulated-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/image-guided-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/stereotactic-radiosurgery-in-india/);
+  assert.match(body, /\/treatments\/stereotactic-body-radiation-therapy-sbrt-in-india/);
+  assert.match(body, /\/treatments\/brain-tumor-surgery-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/ck-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ck-indications\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ck-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ck-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/CyberKnife",
+    "/doctors/India/Mumbai/Radiation-Oncology/CyberKnife",
+    "/doctors/India/Bengaluru/Radiation-Oncology/CyberKnife",
+    "/doctors/India/Chennai/Radiation-Oncology/CyberKnife",
+    "/doctors/India/Hyderabad/Radiation-Oncology/CyberKnife",
+    "/hospitals/India/Delhi-NCR/Radiation-Oncology",
+    "/hospitals/India/Mumbai/Radiation-Oncology",
+    "/hospitals/India/Bengaluru/Radiation-Oncology",
+    "/costs/India/Delhi-NCR/Radiation-Oncology/CyberKnife",
+    "/costs/India/Mumbai/Radiation-Oncology/CyberKnife",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is CyberKnife/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /robotic|image-guided|stereotactic/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/cyberknife-robotic-radiosurgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/cyberknife(?:-in-india)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/sbrt(?:-in-india|\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/vmat/);
+  assert.doesNotMatch(body, /\/treatments\/proton/);
+  assert.doesNotMatch(body, /\/treatments\/gamma-knife/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/liver-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/head-and-neck/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/cyberknife-robotic-radiosurgery-in-india/,
+  );
+  const ebrt = store.treatments.find((row) => row.slug === "external-beam-radiotherapy-in-india");
+  const srs = store.treatments.find((row) => row.slug === "stereotactic-radiosurgery-in-india");
+  const sbrt = store.treatments.find(
+    (row) => row.slug === "stereotactic-body-radiation-therapy-sbrt-in-india",
+  );
+  assert.match(
+    ebrt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/cyberknife-robotic-radiosurgery-in-india/,
+  );
+  assert.match(
+    srs?.translations.en?.editorialBody ?? "",
+    /\/treatments\/cyberknife-robotic-radiosurgery-in-india/,
+  );
+  assert.match(
+    sbrt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/cyberknife-robotic-radiosurgery-in-india/,
+  );
+  assert.ok(ebrt?.relatedTreatmentSlugs?.includes("cyberknife-robotic-radiosurgery-in-india"));
+  assert.ok(srs?.relatedTreatmentSlugs?.includes("cyberknife-robotic-radiosurgery-in-india"));
+  assert.ok(sbrt?.relatedTreatmentSlugs?.includes("cyberknife-robotic-radiosurgery-in-india"));
 });
 
 test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {
