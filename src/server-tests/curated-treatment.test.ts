@@ -24,6 +24,7 @@ import {
   treatmentEditorialBody,
   treatmentEditorialBodyForDisplay,
 } from "@/lib/curated-treatment-editorial";
+import { getDoctor } from "@/lib/doctors";
 
 test("a curated Treatment stores shared relationships once", () => {
   const treatment = blankCuratedTreatment({ treatments: [] });
@@ -5389,6 +5390,28 @@ test("the published ASD closure page uses GAF USD ranges and pediatric GEO links
   assert.match(vsd?.translations.en?.editorialBody ?? "", /\/treatments\/asd-closure-surgery-in-india/);
   assert.match(pda?.translations.en?.editorialBody ?? "", /\/treatments\/asd-closure-surgery-in-india/);
   assert.match(tof?.translations.en?.editorialBody ?? "", /\/treatments\/asd-closure-surgery-in-india/);
+});
+
+test("pediatric cardiac surgery pages list Pediatric Cardiac Surgery doctors only", () => {
+  const store = loadCuratedTreatments();
+  const pages = store.treatments.filter(
+    (row) => row.specialtySlug === "pediatric-cardiac-surgery",
+  );
+  assert.ok(pages.length >= 8, `expected congenital pages, found ${pages.length}`);
+  for (const treatment of pages) {
+    assert.ok(treatment.doctorSlugs.length > 0, treatment.slug);
+    assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+    for (const slug of treatment.doctorSlugs) {
+      const doctor = getDoctor(slug);
+      assert.ok(doctor, `${treatment.slug} lists unknown doctor ${slug}`);
+      assert.equal(
+        doctor.specialtySlug,
+        "pediatric-cardiac-surgery",
+        `${treatment.slug} listed ${slug} (${doctor.specialty} / ${doctor.specialtySlug})`,
+      );
+      assert.notEqual(doctor.specialty, "Cardiac Surgery");
+    }
+  }
 });
 
 test("Save recreates a missing Treatment instead of 404ing", () => {
