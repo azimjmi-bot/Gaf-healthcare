@@ -8,7 +8,7 @@ The exact surgical approach is not the same for every child. Depending on the an
 
 For families considering **TOF surgery in India**, the most important factors are not simply the hospital location or quoted price. The child's cardiac anatomy, pulmonary arteries, coronary artery pattern, oxygen level, age, weight, previous procedures, associated abnormalities, and the experience of the pediatric congenital-heart team all influence treatment planning.
 
-Associated ventricular holes sit on [Ventricular Septal Defect (VSD) Surgery in India](/treatments/ventricular-septal-defect-surgery-in-india). A persistent duct sits on [PDA Closure Surgery in India](/treatments/pda-closure-surgery-in-india). Aortic narrowing sits on [Coarctation Repair Surgery in India](/treatments/coarctation-repair-surgery-in-india). d-TGA anatomical repair sits on [Arterial Switch Operation in India](/treatments/arterial-switch-operation-in-india). Staged single-ventricle lists sit on [Glenn Procedure Surgery in India](/treatments/glenn-procedure-surgery-in-india) and [Fontan Procedure Surgery in India](/treatments/fontan-procedure-surgery-in-india). Later pulmonary-valve work sits on [Heart Valve Replacement Surgery in India](/treatments/heart-valve-replacement-in-india). Pacing after heart block sits on [Pacemaker Implantation in India](/treatments/pacemaker-implantation-in-india). There is no live GAF ASD-closure, BT-shunt-only, pulmonary-valve-replacement-only or pediatric-cardiac-surgery-only treatment page. This page is the named TOF-repair product.
+Associated ventricular holes sit on [Ventricular Septal Defect (VSD) Surgery in India](/treatments/ventricular-septal-defect-surgery-in-india). A persistent duct sits on [PDA Closure Surgery in India](/treatments/pda-closure-surgery-in-india). Aortic narrowing sits on [Coarctation Repair Surgery in India](/treatments/coarctation-repair-surgery-in-india). d-TGA anatomical repair sits on [Arterial Switch Operation in India](/treatments/arterial-switch-operation-in-india). Staged single-ventricle lists sit on [Glenn Procedure Surgery in India](/treatments/glenn-procedure-surgery-in-india) and [Fontan Procedure Surgery in India](/treatments/fontan-procedure-surgery-in-india). Later pulmonary-valve work sits on [Heart Valve Replacement Surgery in India](/treatments/heart-valve-replacement-in-india). Pacing after heart block sits on [Pacemaker Implantation in India](/treatments/pacemaker-implantation-in-india). There is no live GAF BT-shunt-only, pulmonary-valve-replacement-only or pediatric-cardiac-surgery-only treatment page. This page is the named TOF-repair product. ASD lists sit on [ASD Closure Surgery in India](/treatments/asd-closure-surgery-in-india).
 
 GAF Healthcare planning for [TOF repair](/costs/India/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)) is **$6,500–$16,000** (typically **8–16 nights**; parent stay expected). US comparison is **$50,000–$140,000**. Neighbouring [VSD closure](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)) is **$4,500–$11,000** when an isolated ventricular hole is the honest product. Neighbouring [PDA closure](/costs/India/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)) is **$3,500–$8,500**. Neighbouring [ASD closure](/costs/India/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)) is **$4,000–$9,500**. Neighbouring [coarctation repair](/costs/India/Pediatric-Cardiac-Surgery/Coarctation-Repair) is **$6,000–$15,000**. Neighbouring [Glenn procedure](/costs/India/Pediatric-Cardiac-Surgery/Glenn-Procedure) is **$8,000–$18,000**. Neighbouring [arterial switch](/costs/India/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation) is **$12,000–$26,000**. Neighbouring [congenital heart surgery](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery) is **$8,000–$28,000** when a broader congenital list is named. These are planning ranges from partner hospital cost sheets, not hospital quotations.
 
@@ -1055,7 +1055,7 @@ Yes. Some patients require later surgical or catheter-based interventions, parti
 
 ### Is there a GAF ASD-closure or BT-shunt treatment page?
 
-No. ASD-closure, BT-shunt-only and pulmonary-valve-replacement-only treatment pages are not live. Neighbouring sheets exist. VSD, PDA, Glenn, Fontan, arterial-switch and coarctation lists sit on those treatment pages.
+No. BT-shunt-only and pulmonary-valve-replacement-only treatment pages are not live. ASD lists sit on the ASD closure surgery page. Neighbouring sheets exist. VSD, PDA, Glenn, Fontan, arterial-switch and coarctation lists sit on those treatment pages.
 
 ### When should I go to an emergency department?
 
@@ -1094,7 +1094,7 @@ For families considering **TOF repair surgery in India**, the most important ste
 - [Pediatric cardiac surgeons in India](/doctors/India/Pediatric-Cardiac-Surgery)
 - [Pediatric cardiac surgery hospitals in India](/hospitals/India/Pediatric-Cardiac-Surgery)
 
-ASD-closure, BT-shunt-only, pulmonary-valve-replacement-only and pediatric-cardiac-surgery-only treatment pages are not live on this site. Use this page plus the named modality sheets.
+BT-shunt-only, pulmonary-valve-replacement-only and pediatric-cardiac-surgery-only treatment pages are not live on this site. Use this page plus the named modality sheets.
 
 ## Top 10 sources
 

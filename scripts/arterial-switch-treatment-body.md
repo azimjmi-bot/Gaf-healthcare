@@ -92,7 +92,7 @@ Some mixing can occur through structures such as:
 
 The amount of mixing varies from baby to baby. Severe cyanosis can occur shortly after birth when mixing is inadequate.
 
-Named [PDA closure](/treatments/pda-closure-surgery-in-india) and [VSD surgery](/treatments/ventricular-septal-defect-surgery-in-india) are different products. There is no live GAF ASD-closure treatment page.
+Named [PDA closure](/treatments/pda-closure-surgery-in-india) and [VSD surgery](/treatments/ventricular-septal-defect-surgery-in-india) are different products. ASD lists sit on [ASD Closure Surgery in India](/treatments/asd-closure-surgery-in-india).
 
 ## Why is arterial switch surgery needed?
 
@@ -875,7 +875,7 @@ And even after a successful repair, arterial switch should be considered the beg
 - [Pediatric cardiac surgeons in India](/doctors/India/Pediatric-Cardiac-Surgery)
 - [Pediatric cardiac surgery hospitals in India](/hospitals/India/Pediatric-Cardiac-Surgery)
 
-TGA-only, Mustard, Senning, balloon-atrial-septostomy-only, ECMO, ASD-closure treatment pages are not live on this site. Use this page plus the named modality sheets.
+TGA-only, Mustard, Senning, balloon-atrial-septostomy-only and ECMO treatment pages are not live on this site. Use this page plus the named modality sheets.
 
 ## Top 10 sources
 

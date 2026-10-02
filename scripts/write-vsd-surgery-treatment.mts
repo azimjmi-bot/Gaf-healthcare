@@ -273,7 +273,7 @@ const treatment = {
           id: "vsd-faq-11",
           question: "Is there a GAF ASD or Tetralogy of Fallot treatment page?",
           answer:
-            "No. ASD-closure treatment pages are not live. TOF lists sit on the TOF repair page. PDA lists sit on the PDA closure surgery page.",
+            "ASD lists sit on the ASD closure surgery page. TOF lists sit on the TOF repair page. PDA lists sit on the PDA closure surgery page.",
         },
         {
           id: "vsd-faq-12",

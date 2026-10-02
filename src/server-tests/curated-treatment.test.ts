@@ -4093,6 +4093,7 @@ test("the published VSD surgery page uses GAF USD ranges and cardiac GEO links",
   assert.equal(treatment.translations.ar, undefined);
   assert.doesNotMatch(body, /\/treatments\/india\/cardiology\/vsd/);
   assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india/);
+  assert.match(body, /\/treatments\/asd-closure-surgery-in-india/);
   assert.match(body, /\/treatments\/tof-repair-surgery-in-india/);
   assert.doesNotMatch(body, /\/treatments\/tetralogy-of-fallot-surgery-in-india/);
   assert.match(body, /\/treatments\/pda-closure-surgery-in-india/);
@@ -4604,6 +4605,7 @@ test("the published coarctation repair page uses GAF USD ranges and pediatric GE
   assert.equal(treatment.translations.ar, undefined);
   assert.doesNotMatch(body, /\/treatments\/india\/cardiology\/coarctation/);
   assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india/);
+  assert.match(body, /\/treatments\/asd-closure-surgery-in-india/);
   assert.match(body, /\/treatments\/pda-closure-surgery-in-india/);
   assert.match(body, /\/treatments\/tof-repair-surgery-in-india/);
   assert.doesNotMatch(body, /\/treatments\/tetralogy-of-fallot-surgery-in-india/);
@@ -4688,6 +4690,7 @@ test("the published PDA closure page uses GAF USD ranges and pediatric GEO links
   assert.equal(treatment.translations.ar, undefined);
   assert.doesNotMatch(body, /\/treatments\/india\/pediatric/);
   assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india/);
+  assert.match(body, /\/treatments\/asd-closure-surgery-in-india/);
   assert.match(body, /\/treatments\/tof-repair-surgery-in-india/);
   assert.doesNotMatch(body, /\/treatments\/tetralogy-of-fallot-surgery-in-india/);
   assert.match(body, /\/treatments\/glenn-procedure-surgery-in-india/);
@@ -4777,6 +4780,7 @@ test("the published arterial switch page uses GAF USD ranges and pediatric GEO l
   assert.doesNotMatch(body, /\/treatments\/senning-procedure-in-india/);
   assert.doesNotMatch(body, /\/treatments\/ecmo-in-india/);
   assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india/);
+  assert.match(body, /\/treatments\/asd-closure-surgery-in-india/);
   assert.match(body, /\/treatments\/tof-repair-surgery-in-india/);
   assert.doesNotMatch(body, /\/treatments\/tetralogy-of-fallot-surgery-in-india/);
   assert.match(body, /\/treatments\/glenn-procedure-surgery-in-india/);
@@ -5033,6 +5037,7 @@ test("the published TOF repair page uses GAF USD ranges and pediatric GEO links"
   assert.doesNotMatch(body, /\/treatments\/india\/pediatric/);
   assert.doesNotMatch(body, /\/treatments\/tetralogy-of-fallot-surgery-in-india/);
   assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india/);
+  assert.match(body, /\/treatments\/asd-closure-surgery-in-india/);
   assert.doesNotMatch(body, /\/treatments\/pediatric-cardiac-surgery-in-india/);
   assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
   assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
@@ -5045,6 +5050,88 @@ test("the published TOF repair page uses GAF USD ranges and pediatric GEO links"
   assert.match(vsd?.translations.en?.editorialBody ?? "", /\/treatments\/tof-repair-surgery-in-india/);
   assert.match(glenn?.translations.en?.editorialBody ?? "", /\/treatments\/tof-repair-surgery-in-india/);
   assert.match(pda?.translations.en?.editorialBody ?? "", /\/treatments\/tof-repair-surgery-in-india/);
+});
+
+test("the published ASD closure page uses GAF USD ranges and pediatric GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "asd-closure-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$4,000–\$9,500/);
+  assert.match(body, /\$4,500–\$11,000/);
+  assert.match(body, /\$3,500–\$8,500/);
+  assert.match(body, /\$6,500–\$16,000/);
+  assert.match(body, /\$8,000–\$28,000/);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /5–10 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: ASD Closure in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/ASD-Closure-\(Atrial-Septal-Defect\)/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/VSD-Closure-\(Ventricular-Septal-Defect\)/);
+  assert.match(body, /\/treatments\/ventricular-septal-defect-surgery-in-india/);
+  assert.match(body, /\/treatments\/pda-closure-surgery-in-india/);
+  assert.match(body, /\/treatments\/tof-repair-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/asd-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/asd-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/asd-options\.webp/);
+  assert.match(body, /\/uploads\/treatments\/asd-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is ASD\?/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /hole between the two upper chambers/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/asd-closure-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/pediatric/);
+  assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india(?!-surgery)/);
+  assert.doesNotMatch(body, /\/treatments\/pediatric-cardiac-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/avsd/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/asd-closure-surgery-in-india/);
+  const vsd = store.treatments.find((row) => row.slug === "ventricular-septal-defect-surgery-in-india");
+  const pda = store.treatments.find((row) => row.slug === "pda-closure-surgery-in-india");
+  const tof = store.treatments.find((row) => row.slug === "tof-repair-surgery-in-india");
+  assert.match(vsd?.translations.en?.editorialBody ?? "", /\/treatments\/asd-closure-surgery-in-india/);
+  assert.match(pda?.translations.en?.editorialBody ?? "", /\/treatments\/asd-closure-surgery-in-india/);
+  assert.match(tof?.translations.en?.editorialBody ?? "", /\/treatments\/asd-closure-surgery-in-india/);
 });
 
 test("Save recreates a missing Treatment instead of 404ing", () => {
