@@ -3516,6 +3516,7 @@ body:has(.cost-dock) .wa-float {
   .home-search {
     grid-template-columns: 1fr 1fr 1fr auto;
     border-radius: 999px;
+    max-width: calc(100% - 15.75rem);
   }
 }
 
