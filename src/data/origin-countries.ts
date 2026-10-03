@@ -224,6 +224,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Somalia is not currently on India’s e-Visa list. Somali patients apply for a Medical Visa through the High Commission of India in Nairobi, which is concurrently accredited to Somalia, or through the live receiving Mission including the Embassy of India in Addis Ababa.",
   },
   {
+    name: "South Africa",
+    city: "Johannesburg",
+    destination: "India",
+    href: "/south-africa/treatment-in-india",
+    flag: "🇿🇦",
+    flagLabel: "Flag of South Africa",
+    visaNote:
+      "South Africa is currently on India’s e-Visa list. The official fee list shows South Africa at US$00 (gratis). South African patients can use the e-Medical Visa or apply through the High Commission of India in Pretoria.",
+  },
+  {
     name: "South Sudan",
     city: "Juba",
     destination: "India",
@@ -252,6 +262,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     flagLabel: "Flag of Tanzania",
     visaNote:
       "Tanzanian passport holders can currently use India’s e-Medical Visa or apply through the High Commission of India in Dar es Salaam.",
+  },
+  {
+    name: "Uganda",
+    city: "Kampala",
+    destination: "India",
+    href: "/uganda/treatment-in-india",
+    flag: "🇺🇬",
+    flagLabel: "Flag of Uganda",
+    visaNote:
+      "Uganda is currently on India’s e-Visa list. Ugandan patients can use the e-Medical Visa or apply through the High Commission of India in Kampala. The Mission currently notes that online e-Visa and regular visa applications were enabled from 10 September 2026.",
   },
   {
     name: "Zambia",
