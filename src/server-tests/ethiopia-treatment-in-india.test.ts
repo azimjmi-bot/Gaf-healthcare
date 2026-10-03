@@ -97,6 +97,7 @@ test("Ethiopia hub copy stays Ethiopia-specific and medically responsible", () =
   assert.equal(copy.journey.steps.length, 10);
   assert.match(blob, /WhatsApp \+91 90443 46292/);
   assert.match(page, /blogEstimateWhatsapp/);
+  assert.match(page, /OriginCountryVisaCta/);
 
   const whatsappCtas = page.match(/wa\.primary|wa\.secondary|WhatsAppCta|PseoEstimateCtaSection|CtaBand/g) ?? [];
   assert.ok(whatsappCtas.length >= 5, `expected at least 5 WhatsApp CTAs, found ${whatsappCtas.length}`);
@@ -125,9 +126,9 @@ test("the homepage origin-country section links Ethiopia and Tanzania to publish
   assert.match(home, /from-your-country/);
   assert.match(home, /ORIGIN_COUNTRY_HUBS/);
   assert.match(home, /country\.href/);
-  assert.match(home, /home-origin-cta/);
-  assert.match(home, /blogEstimateWhatsapp/);
-  assert.match(home, /ORIGIN_COUNTRY_SECTION\.ctaLabel/);
+  assert.doesNotMatch(home, /home-origin-visa/);
+  assert.doesNotMatch(home, /home-origin-cta/);
+  assert.doesNotMatch(home, /OriginCountryVisaCta/);
   assert.ok(!HOME_DESTINATIONS.some((row) => /ethiopia|tanzania/i.test(row.name)));
   assert.deepEqual(
     ORIGIN_COUNTRY_HUBS.map((row) => ({ name: row.name, href: row.href })),

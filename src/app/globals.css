@@ -3715,61 +3715,51 @@ body:has(.cost-dock) .wa-float {
   font-size: 0.82rem;
   color: var(--muted-foreground);
 }
-.home-origin-visa-list {
-  display: grid;
-  gap: 0.75rem;
-  margin-top: 1.75rem;
-}
-.home-origin-visa {
-  margin-top: 0;
+.origin-visa-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin: 0 0 1.5rem;
   border-radius: 1.35rem;
   background: #102f36;
   padding: 1.25rem 1.35rem;
   color: #fff;
   text-align: start;
 }
-.home-origin-visa strong {
+.origin-visa-cta strong {
   display: block;
   font-family: var(--font-heading);
   font-size: 1.25rem;
 }
-.home-origin-visa em {
+.origin-visa-cta em {
   display: block;
   margin-top: 0.3rem;
   font-style: normal;
   color: rgb(255 255 255 / 72%);
   line-height: 1.55;
 }
-.home-origin-cta {
-  display: grid;
-  justify-items: center;
-  gap: 0.7rem;
-  margin-top: 1.75rem;
-}
-.home-origin-cta__btn {
+.origin-visa-cta__btn {
   display: inline-flex;
-  min-height: 3rem;
+  min-height: 2.6rem;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
   border-radius: 999px;
-  background: #102f36;
-  padding: 0.75rem 1.4rem;
-  color: #fff;
-  font-size: 1rem;
+  background: #fff;
+  padding: 0.55rem 1rem;
+  color: #102f36;
+  font-size: 0.9rem;
   font-weight: 650;
+  white-space: nowrap;
 }
-.home-origin-cta__btn:hover {
-  background: color-mix(in oklch, #102f36 88%, white);
+.origin-visa-cta__btn:hover {
+  background: var(--secondary);
 }
-.home-origin-cta__btn .wa-icon {
-  width: 1.15rem;
-  height: 1.15rem;
-}
-.home-origin-cta p {
-  max-width: 28rem;
-  color: var(--muted-foreground);
-  line-height: 1.55;
+.origin-visa-cta__btn .wa-icon {
+  width: 1.05rem;
+  height: 1.05rem;
 }
 
 .home-dest {
@@ -4133,12 +4123,12 @@ body:has(.cost-dock) .wa-float {
     width: min(100%, 12.5rem);
   }
 
-  .home-origin-visa {
+  .origin-visa-cta {
     padding: 1.1rem 1rem;
   }
 
-  .home-origin-cta__btn {
-    width: min(100%, 22rem);
+  .origin-visa-cta__btn {
+    width: 100%;
   }
 
   .home-finale {

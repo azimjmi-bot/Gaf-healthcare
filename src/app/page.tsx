@@ -15,9 +15,7 @@ import {
   HOME_COST_SLUGS,
   YOUTUBE_CHANNEL,
 } from "@/data/home";
-import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { ORIGIN_COUNTRY_HUBS, ORIGIN_COUNTRY_SECTION } from "@/data/origin-countries";
-import { blogEstimateWhatsapp } from "@/lib/site";
 import { listPublishedPosts } from "@/lib/blogs";
 import { treatments } from "@/lib/data";
 import { doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
@@ -88,7 +86,6 @@ export default async function HomePage() {
           (row): row is Treatment => Boolean(row),
         )
       : [];
-  const originWhatsapp = blogEstimateWhatsapp("medical treatment for international patients", "India");
 
   return (
     <>
@@ -206,26 +203,6 @@ export default async function HomePage() {
               <em>{ORIGIN_COUNTRY_SECTION.routeLabel(country.city, country.destination)}</em>
             </Link>
           ))}
-        </div>
-        <div className="home-origin-visa-list">
-          {ORIGIN_COUNTRY_HUBS.map((country) => (
-            <article key={`${country.href}-visa`} className="home-origin-visa">
-              <strong>{ORIGIN_COUNTRY_SECTION.visaTitle(country.name)}</strong>
-              <em>{country.visaNote}</em>
-            </article>
-          ))}
-        </div>
-        <div className="home-origin-cta">
-          <a
-            href={originWhatsapp.primary}
-            className="home-origin-cta__btn"
-            target="_blank"
-            rel="noreferrer"
-          >
-            <WhatsAppIcon />
-            {ORIGIN_COUNTRY_SECTION.ctaLabel}
-          </a>
-          <p>{ORIGIN_COUNTRY_SECTION.ctaHint}</p>
         </div>
       </section>
       ) : null}

@@ -5,6 +5,7 @@ import { DoctorCard } from "@/components/doctor-card";
 import { HospitalCard } from "@/components/hospital-card";
 import { JsonLd } from "@/components/json-ld";
 import { LocaleLink as Link } from "@/components/locale-link";
+import { OriginCountryVisaCta } from "@/components/origin-country-visa-cta";
 import { PageIntro, CtaBand } from "@/components/page-shell";
 import { PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
 import { QuickAnswer } from "@/components/quick-answer";
@@ -419,6 +420,7 @@ export default async function EthiopiaTreatmentInIndiaPage() {
 
       <section className="tanzania-hub__section" id="medical-visa">
         <div className="page-wrap tanzania-hub__prose">
+          <OriginCountryVisaCta href={ETHIOPIA_PAGE_PATH} whatsappHref={wa.primary} />
           <h2>{copy.visa.heading}</h2>
           <p>{copy.visa.intro}</p>
           <ul>

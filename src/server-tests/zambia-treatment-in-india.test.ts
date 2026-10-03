@@ -102,6 +102,7 @@ test("Zambia hub copy stays Zambia-specific and medically responsible", () => {
   assert.equal(copy.journey.steps.length, 12);
   assert.match(blob, /WhatsApp \+91 90443 46292/);
   assert.match(page, /blogEstimateWhatsapp/);
+  assert.match(page, /OriginCountryVisaCta/);
 
   const whatsappCtas = page.match(/wa\.primary|wa\.secondary|WhatsAppCta|PseoEstimateCtaSection|CtaBand/g) ?? [];
   assert.ok(whatsappCtas.length >= 5, `expected at least 5 WhatsApp CTAs, found ${whatsappCtas.length}`);
@@ -134,9 +135,9 @@ test("the homepage origin-country section links Zambia to its published hub", ()
   const home = readFileSync(HOME_FILE, "utf8");
   assert.match(home, /from-your-country/);
   assert.match(home, /ORIGIN_COUNTRY_HUBS/);
-  assert.match(home, /home-origin-cta/);
-  assert.match(home, /blogEstimateWhatsapp/);
-  assert.match(home, /ORIGIN_COUNTRY_SECTION\.ctaLabel/);
+  assert.doesNotMatch(home, /home-origin-visa/);
+  assert.doesNotMatch(home, /home-origin-cta/);
+  assert.doesNotMatch(home, /OriginCountryVisaCta/);
   assert.ok(!HOME_DESTINATIONS.some((row) => /zambia/i.test(row.name)));
   assert.ok(ORIGIN_COUNTRY_HUBS.some((row) => row.name === "Zambia" && row.href === "/zambia/treatment-in-india"));
 });

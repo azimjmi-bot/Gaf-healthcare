@@ -77,6 +77,7 @@ test("Tanzania hub content links only to live curated treatments and cost rows",
 
 test("Tanzania hub copy stays Tanzania-specific and medically responsible", () => {
   const page = readFileSync(PAGE_FILE, "utf8");
+  assert.match(page, /OriginCountryVisaCta/);
   const data = readFileSync("src/data/tanzania-treatment-in-india.ts", "utf8");
   const blob = `${page}\n${data}\n${JSON.stringify(copy)}`;
 
