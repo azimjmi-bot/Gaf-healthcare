@@ -104,6 +104,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Ghana is currently on India’s e-Visa list. Ghanaian patients can use the e-Medical Visa or apply through the High Commission of India in Accra.",
   },
   {
+    name: "Guinea",
+    city: "Conakry",
+    destination: "India",
+    href: "/guinea/treatment-in-india",
+    flag: "🇬🇳",
+    flagLabel: "Flag of Guinea",
+    visaNote:
+      "Guinea is currently on India’s e-Visa list. Guinean patients can use the e-Medical Visa or apply through the Embassy of India in Conakry.",
+  },
+  {
     name: "Kenya",
     city: "Nairobi",
     destination: "India",
