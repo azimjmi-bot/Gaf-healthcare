@@ -269,7 +269,7 @@ Some chemotherapy drugs can affect the heart. Patients receiving potentially car
 
 Modern cancer treatment increasingly relies on molecular and biomarker information. Depending on the cancer, testing may include HER2, hormone receptors, PD-L1, MSI/MMR, EGFR, ALK and other actionable genomic alterations.
 
-The exact tests depend on the cancer type and treatment plan. Neighbouring [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000**.
+The exact tests depend on the cancer type and treatment plan. Neighbouring [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000**. Named genomic-testing lists sit on [Precision Oncology in India](/treatments/precision-oncology-in-india).
 
 ## How neoadjuvant chemotherapy is given
 

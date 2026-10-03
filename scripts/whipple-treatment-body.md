@@ -295,7 +295,7 @@ Potentially relevant alterations can include abnormalities involving pathways su
 * KRAS
 * Other molecular alterations depending on the tumor
 
-[Precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) planning ranges on this site are **$2,000–$7,000**. Testing does not mean that a targeted treatment will necessarily be available.
+[Precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) planning ranges on this site are **$2,000–$7,000**. Testing does not mean that a targeted treatment will necessarily be available. Named genomic-testing lists sit on [Precision Oncology in India](/treatments/precision-oncology-in-india).
 
 Its usefulness depends on the specific tumor and clinical situation. MSI-H/dMMR immunotherapy for selected GI cancers is also discussed in [colon cancer immunotherapy in India](/blogs/colon-cancer-immunotherapy-in-india).
 

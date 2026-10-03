@@ -202,7 +202,7 @@ Therefore, CA 19-9 should be interpreted alongside imaging, pathology and the pa
 
 ## Genetic and Molecular Testing in Pancreatic Cancer
 
-Genetic and molecular testing has become an increasingly important part of pancreatic cancer care. [Precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) planning ranges on this site are **$2,000–$7,000**.
+Genetic and molecular testing has become an increasingly important part of pancreatic cancer care. [Precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) planning ranges on this site are **$2,000–$7,000**. Named genomic-testing lists sit on [Precision Oncology in India](/treatments/precision-oncology-in-india).
 
 Testing may include:
 

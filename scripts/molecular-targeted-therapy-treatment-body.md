@@ -64,7 +64,7 @@ A simple way to understand the concept is:
 
 **Cancer → Molecular testing → Identify actionable biomarker → Match treatment to target → Monitor response and resistance**
 
-This is why molecular targeted therapy is closely connected with **precision oncology**. Neighbouring [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000**.
+This is why molecular targeted therapy is closely connected with **precision oncology**. Neighbouring [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000**. Named genomic-testing lists sit on [Precision Oncology in India](/treatments/precision-oncology-in-india).
 
 ![Unlabeled schematic of a tumour receptor and a matching targeted medicine](/uploads/treatments/mtt-hero.webp)
 

@@ -161,7 +161,7 @@ The goal is to determine whether the cancer is confined to the colon, has reache
 
 Modern colon cancer treatment increasingly depends on the biological characteristics of the tumour. Molecular testing can help determine which treatments may be appropriate, particularly for advanced disease.
 
-Important biomarkers may include **MMR**, **MSI**, **KRAS**, **NRAS**, **BRAF**, **HER2**, and other molecular alterations depending on the clinical setting. [Precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) planning ranges on this site are **$2,000–$7,000**.
+Important biomarkers may include **MMR**, **MSI**, **KRAS**, **NRAS**, **BRAF**, **HER2**, and other molecular alterations depending on the clinical setting. [Precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) planning ranges on this site are **$2,000–$7,000**. Named genomic-testing lists sit on [Precision Oncology in India](/treatments/precision-oncology-in-india).
 
 ### MSI and MMR
 

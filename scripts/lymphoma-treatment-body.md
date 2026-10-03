@@ -132,7 +132,7 @@ A proper lymphoma diagnosis generally involves several stages.
 
 **Bone marrow examination.** A marrow biopsy may be recommended in selected patients. Neighbouring [bone marrow biopsy](/costs/India/Hematology/Bone-Marrow-Biopsy) is **$300–$900** (day-care). Whether it is necessary depends on the subtype, staging approach and other findings.
 
-**Molecular and genetic testing.** Selected aggressive B-cell lymphomas may require evaluation of MYC, BCL2 and BCL6 abnormalities. Neighbouring [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000** when an NGS panel plus clinic visit is the named product.
+**Molecular and genetic testing.** Selected aggressive B-cell lymphomas may require evaluation of MYC, BCL2 and BCL6 abnormalities. Neighbouring [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000** when an NGS panel plus clinic visit is the named product. Named genomic-testing lists sit on [Precision Oncology in India](/treatments/precision-oncology-in-india).
 
 ![Six-step lymphoma diagnostic pathway from examination to genetics](/uploads/treatments/lymphoma-diagnosis.webp)
 

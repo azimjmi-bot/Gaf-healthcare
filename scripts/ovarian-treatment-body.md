@@ -168,7 +168,7 @@ Modern ovarian cancer treatment increasingly incorporates molecular information.
 
 ESMO recommendations emphasize individualized hereditary-risk assessment and genetic counseling when hereditary breast and ovarian cancer syndromes are suspected.
 
-GAF planning ranges for [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) panels sit at **$2,000–$7,000**. They do not replace a hospital quotation for BRCA or HRD assays.
+GAF planning ranges for [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) panels sit at **$2,000–$7,000**. They do not replace a hospital quotation for BRCA or HRD assays. Named genomic-testing lists sit on [Precision Oncology in India](/treatments/precision-oncology-in-india).
 
 [Ask about BRCA and HRD testing](/consult?treatment=Precision%20Oncology)
 

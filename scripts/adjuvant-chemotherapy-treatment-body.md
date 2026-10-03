@@ -133,7 +133,7 @@ The medical-oncology team usually considers stage, the final pathology report, l
 
 Important pathology features may include histological type, tumour grade, tumour size, lymphovascular invasion, perineural invasion, surgical margins, number of lymph nodes examined and biomarker findings.
 
-Depending on the cancer, testing may include hormone receptors, HER2, EGFR, ALK, ROS1, BRAF, MSI/MMR, KRAS/NRAS, PD-L1 and other molecular alterations. Not every biomarker is relevant to every cancer. Neighbouring [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000**.
+Depending on the cancer, testing may include hormone receptors, HER2, EGFR, ALK, ROS1, BRAF, MSI/MMR, KRAS/NRAS, PD-L1 and other molecular alterations. Not every biomarker is relevant to every cancer. Neighbouring [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000**. Named genomic-testing lists sit on [Precision Oncology in India](/treatments/precision-oncology-in-india).
 
 Doctors may also assess kidney function, liver function, blood counts, heart function, nutritional status, performance status, existing medical conditions and previous cancer treatment.
 

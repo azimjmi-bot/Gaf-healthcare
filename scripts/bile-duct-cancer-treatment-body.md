@@ -350,7 +350,7 @@ The NCI notes that molecular testing can identify potentially targetable alterat
 
 Molecular testing should be interpreted by the treating oncology team because the clinical significance of a particular alteration depends on disease stage, previous treatment and available therapies.
 
-Neighbouring [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000** when an NGS panel is named.
+Neighbouring [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000** when an NGS panel is named. Named genomic-testing lists sit on [Precision Oncology in India](/treatments/precision-oncology-in-india).
 
 ## Bile duct cancer surgery cost in India
 
