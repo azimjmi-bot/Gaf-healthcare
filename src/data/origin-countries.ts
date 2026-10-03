@@ -44,6 +44,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Ethiopia is not currently on India’s e-Visa list. Ethiopian patients apply for a Medical Visa through the Embassy of India in Addis Ababa.",
   },
   {
+    name: "Ghana",
+    city: "Accra",
+    destination: "India",
+    href: "/ghana/treatment-in-india",
+    flag: "🇬🇭",
+    flagLabel: "Flag of Ghana",
+    visaNote:
+      "Ghana is currently on India’s e-Visa list. Ghanaian patients can use the e-Medical Visa or apply through the High Commission of India in Accra.",
+  },
+  {
     name: "Mauritius",
     city: "Port Louis",
     destination: "India",

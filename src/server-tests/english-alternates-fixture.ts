@@ -213,6 +213,11 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en"],
   },
   {
+    label: "ghana treatment in India hub",
+    path: "/ghana/treatment-in-india",
+    published: ["en"],
+  },
+  {
     label: "mauritius treatment in India hub",
     path: "/mauritius/treatment-in-india",
     published: ["en"],
