@@ -208,6 +208,11 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en"],
   },
   {
+    label: "south sudan treatment in India hub",
+    path: "/south-sudan/treatment-in-india",
+    published: ["en"],
+  },
+  {
     label: "sudan treatment in India hub",
     path: "/sudan/treatment-in-india",
     published: ["en"],
