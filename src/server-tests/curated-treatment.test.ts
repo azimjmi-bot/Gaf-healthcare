@@ -2331,6 +2331,98 @@ test("the published CAR-T Cell Therapy page uses GAF USD ranges and haematology 
   assert.ok(bmt?.relatedTreatmentSlugs?.includes("car-t-cell-therapy-in-india"));
 });
 
+test("the published Intrathecal Chemotherapy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "intrathecal-chemotherapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,000–\$10,000/);
+  assert.match(body, /\$15,000–\$40,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /Day-care LP or Ommaya access/);
+  assert.match(body, /article-quick-answer|Quick Answer: How Much Does Intrathecal Chemotherapy Cost in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Intrathecal-Chemotherapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Intrathecal-Chemotherapy/);
+  assert.match(body, /\/treatments\/leukemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/lymphoma-treatment-in-india/);
+  assert.match(body, /\/treatments\/car-t-cell-therapy-in-india/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/stem-cell-transplantation-in-india/);
+  assert.match(body, /\/treatments\/brain-tumor-surgery-in-india/);
+  assert.match(body, /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/itc-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/itc-lp\.webp/);
+  assert.match(body, /\/uploads\/treatments\/itc-ommaya\.webp/);
+  assert.match(body, /\/uploads\/treatments\/itc-compare\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Intrathecal-Chemotherapy",
+    "/doctors/India/Mumbai/Medical-Oncology/Intrathecal-Chemotherapy",
+    "/doctors/India/Bengaluru/Medical-Oncology/Intrathecal-Chemotherapy",
+    "/doctors/India/Chennai/Medical-Oncology/Intrathecal-Chemotherapy",
+    "/doctors/India/Hyderabad/Medical-Oncology/Intrathecal-Chemotherapy",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Intrathecal-Chemotherapy",
+    "/costs/India/Mumbai/Medical-Oncology/Intrathecal-Chemotherapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /How much does intrathecal chemotherapy cost in India/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /\$3,000–\$10,000/);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/intrathecal-chemotherapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/intrathecal(?:-chemotherapy)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/ommaya/);
+  assert.doesNotMatch(body, /\/treatments\/methotrexate/);
+  assert.doesNotMatch(body, /\/treatments\/pediatric-bone-marrow/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/intrathecal-chemotherapy-in-india/);
+  const leukemia = store.treatments.find((row) => row.slug === "leukemia-treatment-in-india");
+  const lymphoma = store.treatments.find((row) => row.slug === "lymphoma-treatment-in-india");
+  assert.match(
+    leukemia?.translations.en?.editorialBody ?? "",
+    /\/treatments\/intrathecal-chemotherapy-in-india/,
+  );
+  assert.match(
+    lymphoma?.translations.en?.editorialBody ?? "",
+    /\/treatments\/intrathecal-chemotherapy-in-india/,
+  );
+  assert.ok(leukemia?.relatedTreatmentSlugs?.includes("intrathecal-chemotherapy-in-india"));
+  assert.ok(lymphoma?.relatedTreatmentSlugs?.includes("intrathecal-chemotherapy-in-india"));
+});
+
 test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {
   const store = loadCuratedTreatments();
   const treatment = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");

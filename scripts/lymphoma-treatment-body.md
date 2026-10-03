@@ -245,7 +245,7 @@ Non-Hodgkin lymphoma requires a subtype-specific approach.
 
 **Mantle cell lymphoma.** Treatment may involve immunochemotherapy, BTK inhibitors, maintenance therapy, stem cell transplantation in selected patients and cellular therapies in appropriate relapsed cases. Neighbouring [maintenance therapy](/costs/India/Medical-Oncology/Maintenance-Therapy) is **$4,000–$18,000** when a lower-intensity course after induction is the named product.
 
-**Burkitt lymphoma.** An aggressive lymphoma that can progress rapidly and requires urgent specialist treatment. Treatment generally involves intensive combination chemotherapy and may include central-nervous-system-directed therapy. Neighbouring [intrathecal chemotherapy](/costs/India/Medical-Oncology/Intrathecal-Chemotherapy) is **$3,000–$10,000** when CNS-directed drug is named separately.
+**Burkitt lymphoma.** An aggressive lymphoma that can progress rapidly and requires urgent specialist treatment. Treatment generally involves intensive combination chemotherapy and may include central-nervous-system-directed therapy. Neighbouring [intrathecal chemotherapy](/costs/India/Medical-Oncology/Intrathecal-Chemotherapy) is **$3,000–$10,000** when CNS-directed drug is named separately. Named CSF-directed lists sit on [Intrathecal Chemotherapy in India](/treatments/intrathecal-chemotherapy-in-india).
 
 **T-cell lymphomas.** A diverse group. Options may include combination chemotherapy, targeted therapy, immunotherapy, radiation therapy, stem cell transplantation and clinical trials.
 

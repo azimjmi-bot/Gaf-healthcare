@@ -88,7 +88,7 @@ ALL develops from lymphoid precursor cells and can affect both children and adul
 
 Treatment generally involves remission induction, CNS-directed therapy, consolidation or intensification and, in many protocols, prolonged maintenance. Treatment can differ substantially between children, adolescents, young adults and older adults.
 
-Some patients have Philadelphia chromosome-positive (Ph-positive) ALL, in which BCR::ABL1-targeted tyrosine kinase inhibitors form an important part of treatment. Immunotherapies such as blinatumomab and inotuzumab ozogamicin may be used in appropriate situations. Neighbouring [intrathecal chemotherapy](/costs/India/Medical-Oncology/Intrathecal-Chemotherapy) is **$3,000–$10,000** when CNS-directed drug is named separately.
+Some patients have Philadelphia chromosome-positive (Ph-positive) ALL, in which BCR::ABL1-targeted tyrosine kinase inhibitors form an important part of treatment. Immunotherapies such as blinatumomab and inotuzumab ozogamicin may be used in appropriate situations. Neighbouring [intrathecal chemotherapy](/costs/India/Medical-Oncology/Intrathecal-Chemotherapy) is **$3,000–$10,000** when CNS-directed drug is named separately. Named CSF-directed lists sit on [Intrathecal Chemotherapy in India](/treatments/intrathecal-chemotherapy-in-india).
 
 ### 3. Chronic myeloid leukemia (CML)
 
