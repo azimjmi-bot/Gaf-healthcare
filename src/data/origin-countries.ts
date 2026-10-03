@@ -134,6 +134,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Liberia is currently on India’s e-Visa list. Liberian patients can use the e-Medical Visa or apply through the Embassy of India in Monrovia.",
   },
   {
+    name: "Malawi",
+    city: "Lilongwe",
+    destination: "India",
+    href: "/malawi/treatment-in-india",
+    flag: "🇲🇼",
+    flagLabel: "Flag of Malawi",
+    visaNote:
+      "Malawi is currently on India’s e-Visa list. Malawian patients can use the e-Medical Visa or apply through the High Commission of India in Lilongwe.",
+  },
+  {
     name: "Mauritius",
     city: "Port Louis",
     destination: "India",
