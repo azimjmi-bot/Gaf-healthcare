@@ -125,7 +125,8 @@ test("the homepage origin-country section links Ethiopia and Tanzania to publish
   assert.match(home, /from-your-country/);
   assert.match(home, /ORIGIN_COUNTRY_HUBS/);
   assert.match(home, /country\.href/);
-  assert.match(home, /#medical-visa/);
+  assert.match(home, /Get a medical opinion/);
+  assert.match(home, /wa\.me\/919044346292/);
   assert.ok(!HOME_DESTINATIONS.some((row) => /ethiopia|tanzania/i.test(row.name)));
   assert.deepEqual(
     ORIGIN_COUNTRY_HUBS.map((row) => ({ name: row.name, href: row.href })),

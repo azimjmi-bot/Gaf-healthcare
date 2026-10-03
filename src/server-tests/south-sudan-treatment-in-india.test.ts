@@ -140,7 +140,8 @@ test("the homepage origin-country section links South Sudan to its published hub
   const home = readFileSync(HOME_FILE, "utf8");
   assert.match(home, /from-your-country/);
   assert.match(home, /ORIGIN_COUNTRY_HUBS/);
-  assert.match(home, /#medical-visa/);
+  assert.match(home, /Get a medical opinion/);
+  assert.match(home, /wa\.me\/919044346292/);
   assert.ok(!HOME_DESTINATIONS.some((row) => /south sudan/i.test(row.name)));
   assert.ok(
     ORIGIN_COUNTRY_HUBS.some((row) => row.name === "South Sudan" && row.href === "/south-sudan/treatment-in-india"),

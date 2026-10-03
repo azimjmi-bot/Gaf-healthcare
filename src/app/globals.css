@@ -3721,11 +3721,6 @@ body:has(.cost-dock) .wa-float {
   margin-top: 1.75rem;
 }
 .home-origin-visa {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem 1.5rem;
   margin-top: 0;
   border-radius: 1.35rem;
   background: #102f36;
@@ -3745,21 +3740,36 @@ body:has(.cost-dock) .wa-float {
   color: rgb(255 255 255 / 72%);
   line-height: 1.55;
 }
-.home-origin-visa__cta {
-  display: inline-flex;
-  min-height: 2.6rem;
-  align-items: center;
-  gap: 0.4rem;
-  border-radius: 999px;
-  background: #fff;
-  padding: 0.55rem 1rem;
-  color: #102f36;
-  font-size: 0.9rem;
-  font-weight: 650;
-  white-space: nowrap;
+.home-origin-cta {
+  display: grid;
+  justify-items: center;
+  gap: 0.7rem;
+  margin-top: 1.75rem;
 }
-.home-origin-visa:hover .home-origin-visa__cta {
-  background: var(--secondary);
+.home-origin-cta__btn {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  background: #102f36;
+  padding: 0.75rem 1.4rem;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 650;
+}
+.home-origin-cta__btn:hover {
+  background: color-mix(in oklch, #102f36 88%, white);
+}
+.home-origin-cta__btn .wa-icon {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+.home-origin-cta p {
+  max-width: 28rem;
+  color: var(--muted-foreground);
+  line-height: 1.55;
 }
 
 .home-dest {
@@ -4127,9 +4137,8 @@ body:has(.cost-dock) .wa-float {
     padding: 1.1rem 1rem;
   }
 
-  .home-origin-visa__cta {
-    width: 100%;
-    justify-content: center;
+  .home-origin-cta__btn {
+    width: min(100%, 22rem);
   }
 
   .home-finale {

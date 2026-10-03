@@ -161,5 +161,6 @@ export const ORIGIN_COUNTRY_SECTION = {
   lede: "Medical visa guidance, what to budget and how the journey works — written for patients from each country we publish a guide for.",
   routeLabel: (city: string, destination: string) => `${city} → ${destination}`,
   visaTitle: (name: string) => `Medical visa to India from ${name}`,
-  visaCta: (name: string) => `Read the ${name} visa notes`,
+  ctaLabel: "Get a medical opinion",
+  ctaHint: "WhatsApp +91 90443 46292. Share your medical records before you travel.",
 } as const;

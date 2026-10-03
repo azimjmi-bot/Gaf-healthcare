@@ -15,7 +15,9 @@ import {
   HOME_COST_SLUGS,
   YOUTUBE_CHANNEL,
 } from "@/data/home";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
 import { ORIGIN_COUNTRY_HUBS, ORIGIN_COUNTRY_SECTION } from "@/data/origin-countries";
+import { blogEstimateWhatsapp } from "@/lib/site";
 import { listPublishedPosts } from "@/lib/blogs";
 import { treatments } from "@/lib/data";
 import { doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
@@ -86,6 +88,7 @@ export default async function HomePage() {
           (row): row is Treatment => Boolean(row),
         )
       : [];
+  const originWhatsapp = blogEstimateWhatsapp("medical treatment for international patients", "India");
 
   return (
     <>
@@ -206,21 +209,23 @@ export default async function HomePage() {
         </div>
         <div className="home-origin-visa-list">
           {ORIGIN_COUNTRY_HUBS.map((country) => (
-            <Link
-              key={`${country.href}-visa`}
-              href={`${country.href}#medical-visa`}
-              className="home-origin-visa"
-            >
-              <span>
-                <strong>{ORIGIN_COUNTRY_SECTION.visaTitle(country.name)}</strong>
-                <em>{country.visaNote}</em>
-              </span>
-              <span className="home-origin-visa__cta">
-                {ORIGIN_COUNTRY_SECTION.visaCta(country.name)}
-                <ArrowRight className="size-4 icon-forward" aria-hidden />
-              </span>
-            </Link>
+            <article key={`${country.href}-visa`} className="home-origin-visa">
+              <strong>{ORIGIN_COUNTRY_SECTION.visaTitle(country.name)}</strong>
+              <em>{country.visaNote}</em>
+            </article>
           ))}
+        </div>
+        <div className="home-origin-cta">
+          <a
+            href={originWhatsapp.primary}
+            className="home-origin-cta__btn"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <WhatsAppIcon />
+            {ORIGIN_COUNTRY_SECTION.ctaLabel}
+          </a>
+          <p>{ORIGIN_COUNTRY_SECTION.ctaHint}</p>
         </div>
       </section>
       ) : null}
