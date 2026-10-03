@@ -95,7 +95,7 @@ test("Ethiopia hub copy stays Ethiopia-specific and medically responsible", () =
   assert.equal(copy.quickAnswer.length, 6);
   assert.equal(copy.quickAnswer[1]?.question, "Can Ethiopian patients get an Indian e-Medical Visa?");
   assert.equal(copy.journey.steps.length, 10);
-  assert.match(page, /wa\.me|WhatsApp \+91 90443 46292/);
+  assert.match(blob, /WhatsApp \+91 90443 46292/);
   assert.match(page, /blogEstimateWhatsapp/);
 
   const whatsappCtas = page.match(/wa\.primary|wa\.secondary|WhatsAppCta|PseoEstimateCtaSection|CtaBand/g) ?? [];
