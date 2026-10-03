@@ -161,7 +161,7 @@ Transplant evaluation may be considered particularly after previous stroke, sign
 
 A fully matched sibling donor has historically been an important option. Alternative-donor transplantation is more complex and requires careful risk-benefit assessment. Autologous transplant is a neighbouring sheet for other diseases. It is not the typical SCD product.
 
-Named transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india). The BMT sheet is **$25,000–$70,000**. Neighbouring allogeneic is **$30,000–$80,000**. Neighbouring haploidentical is **$35,000–$85,000**. Neighbouring matched unrelated-donor is **$40,000–$95,000**. Neighbouring paediatric BMT is **$28,000–$75,000**. Neighbouring matched-sibling is **$28,000–$70,000**.
+Named transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india). The BMT sheet is **$25,000–$70,000**. Neighbouring allogeneic is **$30,000–$80,000**. The HCT umbrella sits on [Stem Cell Transplantation in India](/treatments/stem-cell-transplantation-in-india). Neighbouring haploidentical is **$35,000–$85,000**. Neighbouring matched unrelated-donor is **$40,000–$95,000**. Neighbouring paediatric BMT is **$28,000–$75,000**. Neighbouring matched-sibling is **$28,000–$70,000**.
 
 The pathway usually involves comprehensive evaluation, donor evaluation, conditioning, stem-cell infusion, engraftment, monitoring and long-term follow-up. Potential risks include infections, graft-versus-host disease, organ toxicity, infertility, graft failure, conditioning-related complications and transplant-related mortality.
 

@@ -184,7 +184,7 @@ A transplant may be considered based on subtype, genetic risk, response to initi
 
 Potential sources include a matched sibling, a matched unrelated donor, a haploidentical family donor and, in selected settings, umbilical cord blood.
 
-Named transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india). The BMT sheet is **$25,000–$70,000**. Neighbouring allogeneic is **$30,000–$80,000**. Neighbouring haploidentical is **$35,000–$85,000**. Neighbouring matched unrelated-donor is **$40,000–$95,000**. Neighbouring paediatric BMT is **$28,000–$75,000**.
+Named transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india). The BMT sheet is **$25,000–$70,000**. Neighbouring allogeneic is **$30,000–$80,000**. The HCT umbrella sits on [Stem Cell Transplantation in India](/treatments/stem-cell-transplantation-in-india). Neighbouring haploidentical is **$35,000–$85,000**. Neighbouring matched unrelated-donor is **$40,000–$95,000**. Neighbouring paediatric BMT is **$28,000–$75,000**.
 
 ### 6. Supportive care
 

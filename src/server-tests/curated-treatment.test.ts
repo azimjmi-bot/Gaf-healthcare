@@ -2133,6 +2133,109 @@ test("the published Dendritic Cell Therapy page uses GAF USD ranges and medical-
   assert.ok(myeloma?.relatedTreatmentSlugs?.includes("dendritic-cell-therapy-in-india"));
 });
 
+test("the published Stem Cell Transplantation page uses GAF USD ranges and haematology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "stem-cell-transplantation-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$22,000–\$65,000/);
+  assert.match(body, /\$140,000–\$380,000/);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$18,000–\$48,000/);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /\$35,000–\$85,000/);
+  assert.match(body, /\$40,000–\$95,000/);
+  assert.match(body, /\$28,000–\$75,000/);
+  assert.match(body, /3–8 weeks/);
+  assert.match(body, /article-quick-answer|Quick Answer: Stem Cell Transplantation in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Hematology\/Stem-Cell-Transplantation/);
+  assert.match(body, /\/costs\/India\/Hematology\/Bone-Marrow-Transplantation/);
+  assert.match(body, /\/costs\/India\/Hematology\/Autologous-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Hematology\/Allogeneic-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Pediatric-Hematology\/Pediatric-Bone-Marrow-Transplantation/);
+  assert.match(body, /\/doctors\/India\/Hematology\/Stem-Cell-Transplantation/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/autologous-bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/leukemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/multiple-myeloma-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/hsct-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hsct-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hsct-steps\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hsct-engraft\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Hematology/Stem-Cell-Transplantation",
+    "/doctors/India/Mumbai/Hematology/Stem-Cell-Transplantation",
+    "/doctors/India/Bengaluru/Hematology/Stem-Cell-Transplantation",
+    "/doctors/India/Chennai/Hematology/Stem-Cell-Transplantation",
+    "/doctors/India/Hyderabad/Hematology/Stem-Cell-Transplantation",
+    "/hospitals/India/Delhi-NCR/Hematology",
+    "/hospitals/India/Mumbai/Hematology",
+    "/hospitals/India/Bengaluru/Hematology",
+    "/costs/India/Delhi-NCR/Hematology/Stem-Cell-Transplantation",
+    "/costs/India/Mumbai/Hematology/Stem-Cell-Transplantation",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is stem cell transplantation/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /blood-forming stem cells/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Bone Marrow",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/stem-cell-transplantation-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/stem-cell-transplantation(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/allogeneic/);
+  assert.doesNotMatch(body, /\/treatments\/haploidentical/);
+  assert.doesNotMatch(body, /\/treatments\/aml/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/stem-cell-transplantation-in-india/);
+  const bmt = store.treatments.find((row) => row.slug === "bone-marrow-transplant-in-india");
+  const auto = store.treatments.find((row) => row.slug === "autologous-bone-marrow-transplant-in-india");
+  const leukemia = store.treatments.find((row) => row.slug === "leukemia-treatment-in-india");
+  assert.match(
+    bmt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/stem-cell-transplantation-in-india/,
+  );
+  assert.match(
+    auto?.translations.en?.editorialBody ?? "",
+    /\/treatments\/stem-cell-transplantation-in-india/,
+  );
+  assert.match(
+    leukemia?.translations.en?.editorialBody ?? "",
+    /\/treatments\/stem-cell-transplantation-in-india/,
+  );
+  assert.ok(bmt?.relatedTreatmentSlugs?.includes("stem-cell-transplantation-in-india"));
+  assert.ok(auto?.relatedTreatmentSlugs?.includes("stem-cell-transplantation-in-india"));
+  assert.ok(leukemia?.relatedTreatmentSlugs?.includes("stem-cell-transplantation-in-india"));
+});
+
 test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {
   const store = loadCuratedTreatments();
   const treatment = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");

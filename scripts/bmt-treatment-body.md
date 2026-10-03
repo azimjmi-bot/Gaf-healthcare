@@ -74,7 +74,7 @@ A bone marrow transplant does not usually mean surgically replacing the patient'
 
 The infused cells travel to the bone marrow and, when successful, begin producing new blood cells.
 
-Although the term bone marrow transplant remains widely used, many modern transplants use stem cells collected from the bloodstream. In those cases, the technically preferred term is hematopoietic stem cell transplant or peripheral blood stem cell transplant. Neighbouring [stem cell transplantation](/costs/India/Hematology/Stem-Cell-Transplantation) is **$22,000–$65,000** when the product is written as HCT rather than a named autologous or allogeneic sheet.
+Although the term bone marrow transplant remains widely used, many modern transplants use stem cells collected from the bloodstream. In those cases, the technically preferred term is hematopoietic stem cell transplant or peripheral blood stem cell transplant. Neighbouring [stem cell transplantation](/costs/India/Hematology/Stem-Cell-Transplantation) is **$22,000–$65,000** when the product is written as HCT rather than a named autologous or allogeneic sheet. The HCT umbrella sits on [Stem Cell Transplantation in India](/treatments/stem-cell-transplantation-in-india).
 
 ![Educational comparison of autologous and allogeneic bone marrow transplant](/uploads/treatments/bmt-types.webp)
 

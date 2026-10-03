@@ -81,7 +81,7 @@ The most important distinction is the source of the stem cells.
 | Neighbouring GAF USD planning | $18,000–$48,000 | $30,000–$80,000 |
 | Common examples | Multiple myeloma, selected lymphomas | Leukemia, aplastic anemia and selected other disorders |
 
-Autologous transplantation therefore differs fundamentally from a donor or allogeneic stem cell transplant. Allogeneic lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india) and [Aplastic Anemia Treatment in India](/treatments/aplastic-anemia-treatment-in-india). Leukemia lists sit on [Leukemia Treatment in India](/treatments/leukemia-treatment-in-india). An allogeneic-BMT treatment page is not live on this site.
+Autologous transplantation therefore differs fundamentally from a donor or allogeneic stem cell transplant. Allogeneic lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india) and [Aplastic Anemia Treatment in India](/treatments/aplastic-anemia-treatment-in-india). Leukemia lists sit on [Leukemia Treatment in India](/treatments/leukemia-treatment-in-india). An allogeneic-BMT treatment page is not live on this site. The HCT umbrella sits on [Stem Cell Transplantation in India](/treatments/stem-cell-transplantation-in-india).
 
 ![Autologous rescue versus a donor graft](/uploads/treatments/autologous-bmt-compare.webp)
 

@@ -160,7 +160,7 @@ The situation becomes more complex when there is no matched sibling. Doctors may
 
 Neighbouring [allogeneic stem cell transplant](/costs/India/Hematology/Allogeneic-Stem-Cell-Transplant) planning is **$30,000–$80,000**. The neighbouring [bone marrow transplantation](/costs/India/Hematology/Bone-Marrow-Transplantation) umbrella is **$25,000–$70,000** and is not a substitute allogeneic quote when the graft type has already been named. Neighbouring [pediatric bone marrow transplantation](/costs/India/Pediatric-Hematology/Pediatric-Bone-Marrow-Transplantation) is **$28,000–$75,000**. Neighbouring [hematopoietic stem cell transplantation](/costs/India/Pediatric-Hematology/Hematopoietic-Stem-Cell-Transplantation) is **$24,000–$70,000**.
 
-Transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india).
+Transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india). The HCT umbrella sits on [Stem Cell Transplantation in India](/treatments/stem-cell-transplantation-in-india).
 
 ![Allogeneic transplant steps from evaluation to follow-up](/uploads/treatments/aplastic-anemia-hsct.webp)
 

@@ -135,7 +135,7 @@ Doctors generally assess age, thalassemia type, transfusion dependence, HLA comp
 
 Possible donor categories include an HLA-identical sibling, a matched related donor, a matched unrelated donor and selected alternative donors in experienced centres. Haploidentical transplantation may be considered in specialised programmes. Autologous transplant is a neighbouring sheet for other diseases. It is not the typical TDT product.
 
-Named transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india). The BMT sheet is **$25,000–$70,000**. Neighbouring allogeneic is **$30,000–$80,000**. Neighbouring haploidentical is **$35,000–$85,000**. Neighbouring matched unrelated-donor is **$40,000–$95,000**. Neighbouring paediatric BMT is **$28,000–$75,000**. Neighbouring matched-sibling is **$28,000–$70,000**.
+Named transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india). The BMT sheet is **$25,000–$70,000**. Neighbouring allogeneic is **$30,000–$80,000**. The HCT umbrella sits on [Stem Cell Transplantation in India](/treatments/stem-cell-transplantation-in-india). Neighbouring haploidentical is **$35,000–$85,000**. Neighbouring matched unrelated-donor is **$40,000–$95,000**. Neighbouring paediatric BMT is **$28,000–$75,000**. Neighbouring matched-sibling is **$28,000–$70,000**.
 
 The process usually involves detailed evaluation, donor evaluation, conditioning, stem-cell infusion, engraftment and post-transplant monitoring for graft-versus-host disease, infections, graft failure, organ complications and immune recovery.
 

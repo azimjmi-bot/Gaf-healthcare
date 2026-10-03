@@ -194,7 +194,7 @@ Named [external beam radiotherapy (EBRT)](/costs/India/Radiation-Oncology/Extern
 
 **Allogeneic transplant.** Stem cells come from a donor. This can be considered for selected high-risk or relapsed lymphomas. Neighbouring [allogeneic stem cell transplant](/costs/India/Hematology/Allogeneic-Stem-Cell-Transplant) is **$30,000–$80,000**. Neighbouring haploidentical is **$35,000–$85,000**.
 
-Named transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india). The BMT sheet is **$25,000–$70,000**.
+Named transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india). The BMT sheet is **$25,000–$70,000**. The HCT umbrella sits on [Stem Cell Transplantation in India](/treatments/stem-cell-transplantation-in-india).
 
 ### 7. CAR T-cell therapy
 

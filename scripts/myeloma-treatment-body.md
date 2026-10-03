@@ -137,7 +137,7 @@ The process generally involves initial anti-myeloma treatment, stem-cell mobilis
 
 Neighbouring [autologous stem cell transplant](/costs/India/Hematology/Autologous-Stem-Cell-Transplant) planning is **$18,000–$48,000**, typically 3–5 weeks in or near the unit. Comparable US planning is **$140,000–$320,000**. The neighbouring [bone marrow transplantation](/costs/India/Hematology/Bone-Marrow-Transplantation) umbrella is **$25,000–$70,000** and is not a substitute autologous quote when ASCT has already been named. Neighbouring [allogeneic stem cell transplant](/costs/India/Hematology/Allogeneic-Stem-Cell-Transplant) planning is **$30,000–$80,000**. Allogeneic transplant is not typical first-line myeloma care and is discussed only for selected refractory or high-risk situations.
 
-Transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india).
+Transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india). The HCT umbrella sits on [Stem Cell Transplantation in India](/treatments/stem-cell-transplantation-in-india).
 
 ![Autologous transplant steps from induction to maintenance](/uploads/treatments/myeloma-asct.webp)
 
@@ -281,7 +281,7 @@ Multiple myeloma and leukemia are both blood cancers, but they are different dis
 
 Myeloma and lymphoma are also different types of haematological cancer. Myeloma originates from plasma cells, whereas lymphoma generally develops from lymphocytes and commonly involves lymph nodes or other lymphatic tissues. Some treatments overlap, but the diagnostic approach and treatment strategy are different. Lymphoma lists sit on [Lymphoma Treatment in India](/treatments/lymphoma-treatment-in-india).
 
-Inherited marrow-failure lists sit on [Thalassemia Treatment in India](/treatments/thalassemia-treatment-in-india) and [Sickle Cell Anemia Treatment in India](/treatments/sickle-cell-anemia-treatment-in-india). Transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india).
+Inherited marrow-failure lists sit on [Thalassemia Treatment in India](/treatments/thalassemia-treatment-in-india) and [Sickle Cell Anemia Treatment in India](/treatments/sickle-cell-anemia-treatment-in-india). Transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone-marrow-transplant-in-india). The HCT umbrella sits on [Stem Cell Transplantation in India](/treatments/stem-cell-transplantation-in-india).
 
 MGUS, smoldering-myeloma, plasmacytoma, daratumumab, bispecific-antibody and BCMA-CAR-T treatment pages are not live on this site. Use the named modality sheets rather than an invented disease page. Aplastic anemia lists sit on [Aplastic Anemia Treatment in India](/treatments/aplastic-anemia-treatment-in-india). Autologous transplant lists sit on [Autologous Bone Marrow Transplant in India](/treatments/autologous-bone-marrow-transplant-in-india). Fanconi anemia lists sit on [Fanconi Anemia Treatment in India](/treatments/fanconi-anemia-treatment-in-india).
 
