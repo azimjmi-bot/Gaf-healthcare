@@ -93,7 +93,7 @@ function WhatsAppCta({
   );
 }
 
-export default async function South AfricaTreatmentInIndiaPage() {
+export default async function SouthAfricaTreatmentInIndiaPage() {
   const locale = await getRequestLocale();
   if (!localePageIsRenderable(locale, SOUTH_AFRICA_PAGE_PATH)) notFound();
 
