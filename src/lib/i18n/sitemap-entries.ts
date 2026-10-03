@@ -149,6 +149,15 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
       : []),
     sitemapEntry("/blogs", locale, { lastModified: now, changeFrequency: "weekly", priority: locale === "en" ? 0.7 : 0.6 }),
     sitemapEntry("/consult", locale, { lastModified: now, changeFrequency: "monthly", priority: 0.5 }),
+    ...(locale === "en"
+      ? [
+          sitemapEntry("/tanzania/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+        ]
+      : []),
   ];
 
   for (const treatment of publishedCuratedTreatments(locale)) {

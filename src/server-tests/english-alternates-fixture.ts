@@ -197,4 +197,9 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
   { label: "blogs index", path: "/blogs", published: ["en"] },
   { label: "blog post", path: "/blogs/imrt-vs-3d-crt", published: ["en"] },
   { label: "consult", path: "/consult", published: ["en"] },
+  {
+    label: "tanzania treatment in India hub",
+    path: "/tanzania/treatment-in-india",
+    published: ["en"],
+  },
 ];
