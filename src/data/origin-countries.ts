@@ -83,6 +83,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     visaNote:
       "Tanzanian passport holders can currently use India’s e-Medical Visa or apply through the High Commission of India in Dar es Salaam.",
   },
+  {
+    name: "Zambia",
+    city: "Lusaka",
+    destination: "India",
+    href: "/zambia/treatment-in-india",
+    flag: "🇿🇲",
+    flagLabel: "Flag of Zambia",
+    visaNote:
+      "Zambia is currently on India’s e-Visa list. Zambian patients can use the e-Medical Visa or apply through the High Commission of India in Lusaka.",
+  },
 ];
 
 export const ORIGIN_COUNTRY_SECTION = {
