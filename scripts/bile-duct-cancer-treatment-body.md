@@ -332,7 +332,7 @@ After the pathology report becomes available, the oncology team reviews margin s
 
 **Adjuvant treatment** may then be considered.
 
-The 2025 EASL guideline update for extrahepatic cholangiocarcinoma recommends consideration of **adjuvant capecitabine after resection**, while the exact treatment plan remains individualized.
+The 2025 EASL guideline update for extrahepatic cholangiocarcinoma recommends consideration of **adjuvant capecitabine after resection**, while the exact treatment plan remains individualized. Named post-operative lists sit on [Adjuvant Chemotherapy in India](/treatments/adjuvant-chemotherapy-in-india).
 
 For patients with unresectable, recurrent or metastatic disease, systemic treatment can include chemotherapy combined with immunotherapy in appropriate patients. Molecular testing can also identify potentially actionable alterations.
 

@@ -255,7 +255,7 @@ MSI/MMR status can also influence the discussion about postoperative chemotherap
 
 ## Stage III Colon Cancer Treatment
 
-Stage III colon cancer generally involves regional lymph-node involvement. The usual treatment pathway includes **surgery → pathology → adjuvant chemotherapy**.
+Stage III colon cancer generally involves regional lymph-node involvement. The usual treatment pathway includes **surgery → pathology → adjuvant chemotherapy**. Named post-operative lists sit on [Adjuvant Chemotherapy in India](/treatments/adjuvant-chemotherapy-in-india).
 
 The purpose of postoperative chemotherapy is to eliminate microscopic cancer cells that may remain after surgery and reduce the risk of recurrence.
 

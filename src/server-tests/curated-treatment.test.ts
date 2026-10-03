@@ -2522,6 +2522,107 @@ test("the published Intraperitoneal Chemotherapy page uses site USD ranges and G
   assert.ok(hipec?.relatedTreatmentSlugs?.includes("intraperitoneal-chemotherapy-in-india"));
 });
 
+test("the published Adjuvant Chemotherapy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "adjuvant-chemotherapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$2,500–\$10,000/);
+  assert.match(body, /\$15,000–\$45,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /Cycles after surgery · 3–6 months/);
+  assert.match(body, /article-quick-answer|Quick Answer: What Is Adjuvant Chemotherapy/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Adjuvant-Chemotherapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Neoadjuvant-Chemotherapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Adjuvant-Chemotherapy/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/ovarian-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/pancreatic-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/bile-duct-cancer-surgery-in-india/);
+  assert.match(body, /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(body, /\/blogs\/chemotherapy-for-breast-cancer-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-chemotherapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/adj-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/adj-cycle\.webp/);
+  assert.match(body, /\/uploads\/treatments\/adj-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/adj-monitor\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Adjuvant-Chemotherapy",
+    "/doctors/India/Mumbai/Medical-Oncology/Adjuvant-Chemotherapy",
+    "/doctors/India/Bengaluru/Medical-Oncology/Adjuvant-Chemotherapy",
+    "/doctors/India/Chennai/Medical-Oncology/Adjuvant-Chemotherapy",
+    "/doctors/India/Hyderabad/Medical-Oncology/Adjuvant-Chemotherapy",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Adjuvant-Chemotherapy",
+    "/costs/India/Mumbai/Medical-Oncology/Adjuvant-Chemotherapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is adjuvant chemotherapy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /after the primary treatment/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/adjuvant-chemotherapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/adjuvant(?:-chemotherapy)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/gastric-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/endometrial/);
+  assert.doesNotMatch(body, /\/treatments\/neoadjuvant-chemotherapy-in-india/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/adjuvant-chemotherapy-in-india/);
+  const breast = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  const pancreas = store.treatments.find((row) => row.slug === "pancreatic-cancer-treatment-in-india");
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/adjuvant-chemotherapy-in-india/,
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/adjuvant-chemotherapy-in-india/,
+  );
+  assert.match(
+    pancreas?.translations.en?.editorialBody ?? "",
+    /\/treatments\/adjuvant-chemotherapy-in-india/,
+  );
+  assert.ok(breast?.relatedTreatmentSlugs?.includes("adjuvant-chemotherapy-in-india"));
+  assert.ok(colon?.relatedTreatmentSlugs?.includes("adjuvant-chemotherapy-in-india"));
+  assert.ok(pancreas?.relatedTreatmentSlugs?.includes("adjuvant-chemotherapy-in-india"));
+});
+
 test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {
   const store = loadCuratedTreatments();
   const treatment = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");

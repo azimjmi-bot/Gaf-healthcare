@@ -204,7 +204,7 @@ A patient should not assume that IP chemotherapy is automatically preferable to 
 
 Surgery can remove visible tumour, but microscopic disease may remain. Depending on the cancer, the oncology team may recommend chemotherapy after surgery to reduce the risk of recurrence or control residual disease.
 
-In selected ovarian-cancer patients, IP chemotherapy has been used after optimal cytoreduction. Eligibility is highly individualised and modern treatment pathways differ according to disease stage, molecular profile and treatment strategy. Neighbouring [adjuvant chemotherapy](/costs/India/Medical-Oncology/Adjuvant-Chemotherapy) is a different systemic sheet and is not an IP quotation.
+In selected ovarian-cancer patients, IP chemotherapy has been used after optimal cytoreduction. Eligibility is highly individualised and modern treatment pathways differ according to disease stage, molecular profile and treatment strategy. Neighbouring [adjuvant chemotherapy](/costs/India/Medical-Oncology/Adjuvant-Chemotherapy) is a different systemic sheet and is not an IP quotation. Named post-operative lists sit on [Adjuvant Chemotherapy in India](/treatments/adjuvant-chemotherapy-in-india).
 
 ## Intraperitoneal chemotherapy and cytoreductive surgery
 

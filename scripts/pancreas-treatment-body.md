@@ -422,7 +422,7 @@ It may be considered to:
 
 This is called adjuvant chemotherapy.
 
-It aims to treat microscopic cancer cells that may remain after surgery.
+It aims to treat microscopic cancer cells that may remain after surgery. Named post-operative lists sit on [Adjuvant Chemotherapy in India](/treatments/adjuvant-chemotherapy-in-india).
 
 ### For Unresectable or Metastatic Disease
 
