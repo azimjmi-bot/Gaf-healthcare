@@ -194,6 +194,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Nigeria is not currently on India’s e-Visa list. Nigerian patients apply for a Medical Visa through the High Commission of India in Abuja or the Consulate General of India in Lagos.",
   },
   {
+    name: "Rwanda",
+    city: "Kigali",
+    destination: "India",
+    href: "/rwanda/treatment-in-india",
+    flag: "🇷🇼",
+    flagLabel: "Flag of Rwanda",
+    visaNote:
+      "Rwanda is currently on India’s e-Visa list. Rwandan patients can use the e-Medical Visa or apply through the High Commission of India. The High Commission of India in Kigali currently notes that visa services are rendered by the High Commission of India, Kampala until further notice — confirm the live receiving Mission before applying.",
+  },
+  {
     name: "South Sudan",
     city: "Juba",
     destination: "India",
