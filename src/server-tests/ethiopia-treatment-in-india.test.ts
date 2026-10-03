@@ -144,6 +144,7 @@ test("the homepage origin-country section links Ethiopia and Tanzania to publish
       { name: "Ghana", href: "/ghana/treatment-in-india" },
       { name: "Guinea", href: "/guinea/treatment-in-india" },
       { name: "Kenya", href: "/kenya/treatment-in-india" },
+      { name: "Liberia", href: "/liberia/treatment-in-india" },
       { name: "Mauritius", href: "/mauritius/treatment-in-india" },
       { name: "Morocco", href: "/morocco/treatment-in-india" },
       { name: "Mozambique", href: "/mozambique/treatment-in-india" },

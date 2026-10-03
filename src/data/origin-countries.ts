@@ -124,6 +124,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Kenya is currently on India’s e-Visa list. Kenyan patients can use the e-Medical Visa or apply through the High Commission of India in Nairobi.",
   },
   {
+    name: "Liberia",
+    city: "Monrovia",
+    destination: "India",
+    href: "/liberia/treatment-in-india",
+    flag: "🇱🇷",
+    flagLabel: "Flag of Liberia",
+    visaNote:
+      "Liberia is currently on India’s e-Visa list. Liberian patients can use the e-Medical Visa or apply through the Embassy of India in Monrovia.",
+  },
+  {
     name: "Mauritius",
     city: "Port Louis",
     destination: "India",
