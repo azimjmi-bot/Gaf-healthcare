@@ -158,7 +158,7 @@ Selected patients may still receive treatment with curative intent, particularly
 
 Cancer has spread to distant organs or distant lymph nodes.
 
-Treatment is generally systemic and may include chemotherapy, immunotherapy and targeted therapy. Radiation can also be used for symptom control or selected metastatic sites.
+Treatment is generally systemic and may include chemotherapy, immunotherapy and targeted therapy. Radiation can also be used for symptom control or selected metastatic sites. Named immunotherapy lists sit on [Immunotherapy in India](/treatments/immunotherapy-in-india).
 
 ## Cervical Cancer Treatment by Stage
 

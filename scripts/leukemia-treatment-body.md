@@ -166,7 +166,7 @@ Named [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is **$8
 
 Depending on the disease, approaches may include monoclonal antibodies, bispecific antibodies, antibody-drug conjugates and other immune-based treatments. For ALL, drugs such as blinatumomab and inotuzumab may be considered in appropriate circumstances.
 
-Named [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) is **$15,000–$45,000**. Neighbouring [antibody-drug conjugate therapy](/costs/India/Medical-Oncology/Antibody-Drug-Conjugate-Therapy) is **$25,000–$70,000**.
+Named [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) is **$15,000–$45,000**. Neighbouring [antibody-drug conjugate therapy](/costs/India/Medical-Oncology/Antibody-Drug-Conjugate-Therapy) is **$25,000–$70,000**. Named immunotherapy lists sit on [Immunotherapy in India](/treatments/immunotherapy-in-india).
 
 ### 4. CAR-T cell therapy
 

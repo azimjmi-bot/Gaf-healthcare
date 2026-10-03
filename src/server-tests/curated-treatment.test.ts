@@ -3159,6 +3159,108 @@ test("the published Targeted Therapy page uses site USD ranges and GEO links", (
   assert.ok(leukemia?.relatedTreatmentSlugs?.includes("targeted-therapy-in-india"));
 });
 
+test("the published Immunotherapy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "immunotherapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$15,000–\$45,000/);
+  assert.match(body, /\$100,000–\$250,000/);
+  assert.match(body, /\$18,000–\$50,000/);
+  assert.match(body, /\$80,000–\$180,000/);
+  assert.match(body, /Outpatient q2–6 weeks/);
+  assert.match(body, /article-quick-answer|Quick Answer: Immunotherapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Immunotherapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Immune-Checkpoint-Inhibitor-Therapy/);
+  assert.match(body, /\/costs\/India\/Hematology\/CAR-T-Cell-Therapy/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Immunotherapy/);
+  assert.match(body, /\/treatments\/targeted-therapy-in-india/);
+  assert.match(body, /\/treatments\/car-t-cell-therapy-in-india/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/lymphoma-treatment-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-immunotherapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/io-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/io-checkpoint\.webp/);
+  assert.match(body, /\/uploads\/treatments\/io-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/io-monitor\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Immunotherapy",
+    "/doctors/India/Mumbai/Medical-Oncology/Immunotherapy",
+    "/doctors/India/Bengaluru/Medical-Oncology/Immunotherapy",
+    "/doctors/India/Chennai/Medical-Oncology/Immunotherapy",
+    "/doctors/India/Hyderabad/Medical-Oncology/Immunotherapy",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Immunotherapy",
+    "/costs/India/Mumbai/Medical-Oncology/Immunotherapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 15);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is immunotherapy/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/immunotherapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatment\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/immunotherapy(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/gastric-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/melanoma/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/immunotherapy-in-india/);
+  const breast = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  const lymphoma = store.treatments.find((row) => row.slug === "lymphoma-treatment-in-india");
+  const cart = store.treatments.find((row) => row.slug === "car-t-cell-therapy-in-india");
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/immunotherapy-in-india/,
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/immunotherapy-in-india/,
+  );
+  assert.match(
+    lymphoma?.translations.en?.editorialBody ?? "",
+    /\/treatments\/immunotherapy-in-india/,
+  );
+  assert.match(cart?.translations.en?.editorialBody ?? "", /\/treatments\/immunotherapy-in-india/);
+  assert.ok(breast?.relatedTreatmentSlugs?.includes("immunotherapy-in-india"));
+  assert.ok(colon?.relatedTreatmentSlugs?.includes("immunotherapy-in-india"));
+  assert.ok(lymphoma?.relatedTreatmentSlugs?.includes("immunotherapy-in-india"));
+  assert.ok(cart?.relatedTreatmentSlugs?.includes("immunotherapy-in-india"));
+});
+
 test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {
   const store = loadCuratedTreatments();
   const treatment = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");

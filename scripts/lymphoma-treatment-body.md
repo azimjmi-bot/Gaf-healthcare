@@ -168,7 +168,7 @@ Named [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) is **$1,500–$
 
 ### 2. Immunotherapy
 
-Depending on the subtype, immunotherapy may include monoclonal antibodies, checkpoint inhibitors and other immune-directed therapies. Rituximab targets CD20 and is an important component of treatment for many CD20-positive B-cell lymphomas. Checkpoint inhibitors such as nivolumab and pembrolizumab have roles in selected Hodgkin lymphoma settings.
+Depending on the subtype, immunotherapy may include monoclonal antibodies, checkpoint inhibitors and other immune-directed therapies. Rituximab targets CD20 and is an important component of treatment for many CD20-positive B-cell lymphomas. Checkpoint inhibitors such as nivolumab and pembrolizumab have roles in selected Hodgkin lymphoma settings. Named immunotherapy lists sit on [Immunotherapy in India](/treatments/immunotherapy-in-india).
 
 Named [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) is **$15,000–$45,000**. Neighbouring [immune checkpoint inhibitor therapy](/costs/India/Medical-Oncology/Immune-Checkpoint-Inhibitor-Therapy) is **$18,000–$50,000**.
 

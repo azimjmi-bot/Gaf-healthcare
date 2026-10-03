@@ -56,7 +56,7 @@ Precision oncology therefore adds another layer to conventional cancer assessmen
 
 **Cancer type + stage + pathology + patient factors + molecular characteristics → individualised treatment strategy**
 
-This does not mean abandoning established treatments such as surgery, chemotherapy, radiation therapy, hormone therapy or immunotherapy. Named endocrine-therapy lists sit on [Hormone Therapy in India](/treatments/hormone-therapy-in-india).
+This does not mean abandoning established treatments such as surgery, chemotherapy, radiation therapy, hormone therapy or immunotherapy. Named endocrine-therapy lists sit on [Hormone Therapy in India](/treatments/hormone-therapy-in-india). Named immunotherapy lists sit on [Immunotherapy in India](/treatments/immunotherapy-in-india).
 
 Instead, precision oncology can help determine which patients may benefit from a targeted treatment, whether a tumour has a biomarker associated with immunotherapy, whether a particular treatment is unlikely to work, whether additional molecular testing is justified, whether a patient may qualify for a biomarker-driven clinical trial, and whether a cancer has developed a molecular mechanism of treatment resistance.
 

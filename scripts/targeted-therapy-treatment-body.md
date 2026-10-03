@@ -196,7 +196,7 @@ Chemotherapy remains an important cancer treatment and is not made obsolete by t
 
 ## Targeted therapy versus immunotherapy
 
-Targeted therapy acts on a specific molecular pathway, protein or alteration associated with cancer. Immunotherapy uses or modifies the immune system to help recognise and attack cancer.
+Targeted therapy acts on a specific molecular pathway, protein or alteration associated with cancer. Immunotherapy uses or modifies the immune system to help recognise and attack cancer. Named immunotherapy lists sit on [Immunotherapy in India](/treatments/immunotherapy-in-india).
 
 Biomarker testing can be relevant to both approaches, although the biomarkers used are not necessarily the same. Neighbouring immunotherapy planning on this site is **$15,000–$45,000**.
 

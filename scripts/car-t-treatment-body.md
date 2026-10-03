@@ -69,7 +69,7 @@ NexCAR19 is one Indian example: a CD19-directed autologous product approved for 
 
 **3. Manufacturing.** Cells are genetically modified to express the CAR, expanded and released only after quality-control testing. This stage is why CAR-T needs specialised infrastructure and coordination between hospital and manufacturing facility.
 
-**4. Bridging treatment when required.** Some patients need chemotherapy, targeted therapy or immunotherapy while cells are manufactured. Not every patient needs bridging.
+**4. Bridging treatment when required.** Some patients need chemotherapy, targeted therapy or immunotherapy while cells are manufactured. Not every patient needs bridging. Named immunotherapy lists sit on [Immunotherapy in India](/treatments/immunotherapy-in-india).
 
 **5. Lymphodepleting chemotherapy.** Preparatory chemotherapy reduces certain existing immune cells so the infused CAR-T cells can expand. Medicines and schedule depend on the product.
 

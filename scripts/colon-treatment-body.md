@@ -283,7 +283,7 @@ For example:
 * Another patient may have widespread liver and lung disease.
 * Another may have peritoneal metastases.
 * Another may have a tumour causing bowel obstruction.
-* A patient with MSI-H/dMMR disease may have immunotherapy as a key treatment option.
+* A patient with MSI-H/dMMR disease may have immunotherapy as a key treatment option. Named immunotherapy lists sit on [Immunotherapy in India](/treatments/immunotherapy-in-india).
 
 Therefore, treatment should be individualized. Possible treatments include chemotherapy, targeted therapy, immunotherapy, surgery, liver-directed treatment, lung metastasectomy in selected patients, ablation, radiation for selected situations, clinical trials, and supportive and palliative care.
 

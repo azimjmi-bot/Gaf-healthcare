@@ -100,7 +100,7 @@ A detailed hospital quotation should always specify exactly what is included.
 
 It is a mistake to compare one dendritic-cell programme with one cycle of [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy). Chemotherapy is usually a named regimen. A cellular programme can add collection and manufacturing.
 
-[Immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) on this site is the broader checkpoint and antibody family. [Colon Cancer Immunotherapy in India](/blogs/colon-cancer-immunotherapy-in-india) explains MSI-H/dMMR checkpoint use in colon cancer. That is **not** a dendritic-cell vaccine.
+[Immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) on this site is the broader checkpoint and antibody family. [Colon Cancer Immunotherapy in India](/blogs/colon-cancer-immunotherapy-in-india) explains MSI-H/dMMR checkpoint use in colon cancer. That is **not** a dendritic-cell vaccine. Named immunotherapy lists sit on [Immunotherapy in India](/treatments/immunotherapy-in-india).
 
 **CAR-T and dendritic-cell therapy are not the same treatment.** [CAR-T cell therapy](/costs/India/Hematology/CAR-T-Cell-Therapy) genetically modifies T cells. Named CAR-T lists sit on [CAR-T Cell Therapy in India](/treatments/car-t-cell-therapy-in-india). Dendritic-cell vaccines generally aim to enhance antigen presentation. Do not accept a quotation labelled only “advanced cell therapy.”
 

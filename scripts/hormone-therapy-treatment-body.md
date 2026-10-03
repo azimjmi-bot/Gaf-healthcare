@@ -92,7 +92,7 @@ Hormone therapy is most strongly associated with:
 
 The presence of a hormone receptor or another relevant biological pathway does not automatically mean that hormone therapy will be the only treatment.
 
-Cancer treatment is often multimodal and may combine surgery, radiation therapy, chemotherapy, targeted therapy, immunotherapy and hormone therapy depending on the individual case. Neighbouring matched-medicine lists sit on [molecular targeted therapy in India](/treatments/molecular-targeted-therapy-in-india). Genomic-testing lists sit on [precision oncology in India](/treatments/precision-oncology-in-india).
+Cancer treatment is often multimodal and may combine surgery, radiation therapy, chemotherapy, targeted therapy, immunotherapy and hormone therapy depending on the individual case. Neighbouring matched-medicine lists sit on [molecular targeted therapy in India](/treatments/molecular-targeted-therapy-in-india). Genomic-testing lists sit on [precision oncology in India](/treatments/precision-oncology-in-india). Named immunotherapy lists sit on [Immunotherapy in India](/treatments/immunotherapy-in-india).
 
 ## Hormone therapy for breast cancer in India
 
