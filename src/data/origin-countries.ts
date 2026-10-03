@@ -74,6 +74,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Mauritius is currently on India’s e-Visa list. Mauritian patients can use the e-Medical Visa or apply through the High Commission of India in Port Louis.",
   },
   {
+    name: "Morocco",
+    city: "Casablanca",
+    destination: "India",
+    href: "/morocco/treatment-in-india",
+    flag: "🇲🇦",
+    flagLabel: "Flag of Morocco",
+    visaNote:
+      "Morocco is currently on India’s e-Visa list. Moroccan patients can use the e-Medical Visa or apply through the Embassy of India in Rabat.",
+  },
+  {
     name: "Mozambique",
     city: "Maputo",
     destination: "India",
