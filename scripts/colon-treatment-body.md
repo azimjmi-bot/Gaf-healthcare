@@ -21,7 +21,7 @@ This page is the colon-cancer pathway for GAF Healthcare. Bile-duct lists sit on
 * **Radiation therapy is not routinely used for most colon cancers** and has a much more established role in rectal cancer. It may nevertheless be considered in selected colon cancer situations.
 * Treatment should ideally be planned by a **multidisciplinary colorectal cancer team**.
 
-The National Cancer Institute identifies surgery, chemotherapy, radiation therapy, targeted therapy and immunotherapy among the major treatment modalities for colon cancer, with treatment selected according to stage and individual disease characteristics.
+The National Cancer Institute identifies surgery, chemotherapy, radiation therapy, targeted therapy and immunotherapy among the major treatment modalities for colon cancer, with treatment selected according to stage and individual disease characteristics. Named targeted-therapy lists sit on [Targeted Therapy in India](/treatments/targeted-therapy-in-india).
 
 ## What Is Colon Cancer?
 

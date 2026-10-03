@@ -24,7 +24,7 @@ Treatment may include chemotherapy, immunotherapy, targeted therapy, radiation t
 Some slow-growing lymphomas may initially be managed with active surveillance (watchful waiting) rather than immediate treatment. In contrast, aggressive lymphomas generally require prompt systemic treatment.
 
 **What is the cost of lymphoma treatment in India?**
-The cost of lymphoma treatment in India can vary substantially because treatment may range from a limited course of chemotherapy or radiotherapy to prolonged targeted therapy, transplantation or cellular therapy.
+The cost of lymphoma treatment in India can vary substantially because treatment may range from a limited course of chemotherapy or radiotherapy to prolonged targeted therapy, transplantation or cellular therapy. Named targeted-therapy lists sit on [Targeted Therapy in India](/treatments/targeted-therapy-in-india).
 
 **What is lymphoma?**
 A cancer of the lymphatic system. It develops when abnormal lymphocytes grow or survive in an uncontrolled way and can accumulate in lymph nodes or other organs.

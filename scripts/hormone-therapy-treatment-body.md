@@ -347,7 +347,7 @@ No.
 
 Hormone therapy specifically interferes with hormone production, hormone receptors or hormone signalling.
 
-Targeted therapy is designed to act on particular molecular abnormalities or biological pathways in cancer cells.
+Targeted therapy is designed to act on particular molecular abnormalities or biological pathways in cancer cells. Named targeted-therapy lists sit on [Targeted Therapy in India](/treatments/targeted-therapy-in-india).
 
 There can be situations where endocrine therapy and targeted therapy are given together, particularly in advanced hormone receptor-positive breast cancer. Named lists sit on [molecular targeted therapy in India](/treatments/molecular-targeted-therapy-in-india). Testing lists sit on [precision oncology in India](/treatments/precision-oncology-in-india).
 

@@ -491,7 +491,7 @@ Radiation should be incorporated into the treatment plan only when the expected 
 
 ## Targeted Therapy for Pancreatic Cancer
 
-[Targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is designed to act against particular molecular abnormalities. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india).
+[Targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is designed to act against particular molecular abnormalities. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india). Named targeted-therapy lists sit on [Targeted Therapy in India](/treatments/targeted-therapy-in-india).
 
 It is not appropriate for every pancreatic cancer patient.
 

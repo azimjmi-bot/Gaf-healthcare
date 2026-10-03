@@ -22,7 +22,7 @@ Acute myeloid leukemia (AML), acute lymphoblastic leukemia (ALL), chronic myeloi
 Depending on the subtype: chemotherapy, targeted therapy, immunotherapy, molecular therapy, stem cell transplant and supportive treatment may be used.
 
 **Is chemotherapy always required?**
-No. Some leukemias, particularly many cases of CML and selected CLL, may initially be managed predominantly with targeted oral medicines or observation.
+No. Some leukemias, particularly many cases of CML and selected CLL, may initially be managed predominantly with targeted oral medicines or observation. Named targeted-therapy lists sit on [Targeted Therapy in India](/treatments/targeted-therapy-in-india).
 
 **When is bone marrow transplant considered?**
 It may be considered for selected high-risk, relapsed or refractory leukemias and other situations where the expected benefits outweigh the transplant risks.
