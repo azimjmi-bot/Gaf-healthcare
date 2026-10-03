@@ -257,4 +257,9 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     path: "/zambia/treatment-in-india",
     published: ["en"],
   },
+  {
+    label: "zimbabwe treatment in India hub",
+    path: "/zimbabwe/treatment-in-india",
+    published: ["en"],
+  },
 ];

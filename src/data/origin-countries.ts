@@ -133,6 +133,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     visaNote:
       "Zambia is currently on India’s e-Visa list. Zambian patients can use the e-Medical Visa or apply through the High Commission of India in Lusaka.",
   },
+  {
+    name: "Zimbabwe",
+    city: "Harare",
+    destination: "India",
+    href: "/zimbabwe/treatment-in-india",
+    flag: "🇿🇼",
+    flagLabel: "Flag of Zimbabwe",
+    visaNote:
+      "Zimbabwe is currently on India’s e-Visa list. Zimbabwean patients can use the e-Medical Visa or apply through the Embassy of India in Harare.",
+  },
 ];
 
 export const ORIGIN_COUNTRY_SECTION = {
