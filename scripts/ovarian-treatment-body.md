@@ -327,7 +327,7 @@ GAF planning ranges for [immunotherapy](/costs/India/Medical-Oncology/Immunother
 
 ## Hormonal Therapy
 
-Hormonal treatment can have a role in selected ovarian tumors, particularly certain low-grade serous or hormone-sensitive cancers.
+Hormonal treatment can have a role in selected ovarian tumors, particularly certain low-grade serous or hormone-sensitive cancers. Named endocrine-therapy lists sit on [Hormone Therapy in India](/treatments/hormone-therapy-in-india).
 
 Examples of endocrine approaches can include aromatase inhibitors, tamoxifen and other hormone-directed strategies.
 

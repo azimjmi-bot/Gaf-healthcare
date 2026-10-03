@@ -89,7 +89,7 @@ Adjuvant chemotherapy is used in several cancers, but **not every patient with t
 
 Adjuvant chemotherapy may be recommended after breast-cancer surgery when the risk of recurrence is sufficiently high. The decision may consider tumour size, lymph-node involvement, grade, hormone-receptor status, HER2 status, age, menopausal status, genomic testing where appropriate and previous treatment.
 
-Some patients may also receive endocrine therapy, anti-HER2 treatment, radiation or other systemic therapies. See [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india) and [chemotherapy for breast cancer](/blogs/chemotherapy-for-breast-cancer-in-india).
+Some patients may also receive endocrine therapy, anti-HER2 treatment, radiation or other systemic therapies. See [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india) and [chemotherapy for breast cancer](/blogs/chemotherapy-for-breast-cancer-in-india). Named endocrine-therapy lists sit on [Hormone Therapy in India](/treatments/hormone-therapy-in-india).
 
 ### Colon cancer
 

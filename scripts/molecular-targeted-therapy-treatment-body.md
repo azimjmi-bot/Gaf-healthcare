@@ -1,6 +1,6 @@
 Molecular targeted therapy in India is an advanced cancer treatment approach that uses specific molecular or genetic characteristics of a patient’s cancer to identify treatments designed to interfere with the signals that help cancer cells grow, divide, survive, or spread.
 
-Unlike conventional chemotherapy, which can affect many rapidly dividing cells, targeted therapies are designed around a particular biological target. Depending on the cancer and biomarker, these treatments may be used alone or combined with chemotherapy, immunotherapy, hormone therapy, radiation therapy, or surgery.
+Unlike conventional chemotherapy, which can affect many rapidly dividing cells, targeted therapies are designed around a particular biological target. Depending on the cancer and biomarker, these treatments may be used alone or combined with chemotherapy, immunotherapy, hormone therapy, radiation therapy, or surgery. Named endocrine-therapy lists sit on [Hormone Therapy in India](/treatments/hormone-therapy-in-india).
 
 There **is a named GAF Healthcare partner planning sheet** for [molecular targeted therapy](/costs/India/Medical-Oncology/Molecular-Targeted-Therapy): **$10,000–$32,000**, typically **Oral or infusion by mutation**. Neighbouring United States comparison figures on the same sheet are **$90,000–$180,000**. That India band is a **pathway planning range** for oncology review, a matched medicine and associated monitoring. It is **not** the price of a single tablet and it is **not** a whole-cancer package.
 

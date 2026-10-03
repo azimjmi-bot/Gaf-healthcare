@@ -267,7 +267,7 @@ Some chemotherapy drugs can affect the heart. Patients receiving potentially car
 
 ### Biomarker testing
 
-Modern cancer treatment increasingly relies on molecular and biomarker information. Depending on the cancer, testing may include HER2, hormone receptors, PD-L1, MSI/MMR, EGFR, ALK and other actionable genomic alterations.
+Modern cancer treatment increasingly relies on molecular and biomarker information. Depending on the cancer, testing may include HER2, hormone receptors, PD-L1, MSI/MMR, EGFR, ALK and other actionable genomic alterations. Named endocrine-therapy lists sit on [Hormone Therapy in India](/treatments/hormone-therapy-in-india).
 
 The exact tests depend on the cancer type and treatment plan. Neighbouring [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000**. Named genomic-testing lists sit on [Precision Oncology in India](/treatments/precision-oncology-in-india).
 

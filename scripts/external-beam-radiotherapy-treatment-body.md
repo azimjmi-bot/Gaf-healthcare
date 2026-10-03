@@ -92,7 +92,7 @@ Do not judge quality by session count. A five-session SBRT list and a six-week c
 Whether EBRT is honest depends on the diagnosis, not a machine brochure.
 
 - **Breast.** Breast, chest wall and/or nodes after surgery in selected patients. Partial-breast external-beam lists exist for some patients. See [Radiation Therapy for Breast Cancer](/blogs/radiation-therapy-for-breast-cancer).
-- **Prostate.** Definitive treatment for selected localized or locally advanced disease, sometimes with hormone therapy. Hypofractionation can reduce visit count when appropriate. See [Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer) and [Brachytherapy for Prostate Cancer](/blogs/brachytherapy-for-prostate-cancer).
+- **Prostate.** Definitive treatment for selected localized or locally advanced disease, sometimes with hormone therapy. Hypofractionation can reduce visit count when appropriate. See [Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer) and [Brachytherapy for Prostate Cancer](/blogs/brachytherapy-for-prostate-cancer). Named endocrine-therapy lists sit on [Hormone Therapy in India](/treatments/hormone-therapy-in-india).
 - **Lung.** Conventional EBRT or SBRT for selected small, localized tumours.
 - **Head and neck.** Primary and nodal volumes, often with systemic therapy.
 - **Cervix.** External beam combined with brachytherapy and chemotherapy for appropriate patients.

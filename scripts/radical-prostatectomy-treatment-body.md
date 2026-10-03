@@ -100,7 +100,7 @@ Surgery is not automatically the right treatment simply because prostate cancer 
 
 **Radiotherapy.** External-beam radiotherapy, stereotactic radiotherapy or brachytherapy may be appropriate alternatives. Those lists sit on [Radiation Therapy for Prostate Cancer](/blogs/radiation-therapy-for-prostate-cancer) and [Brachytherapy for Prostate Cancer](/blogs/brachytherapy-for-prostate-cancer).
 
-**Hormone therapy.** Androgen-deprivation therapy may be used in selected intermediate-risk, high-risk, locally advanced or metastatic disease, often in combination with other treatments. That pathway sits on [Hormone Therapy for Prostate Cancer](/blogs/hormone-therapy-for-prostate-cancer).
+**Hormone therapy.** Androgen-deprivation therapy may be used in selected intermediate-risk, high-risk, locally advanced or metastatic disease, often in combination with other treatments. That pathway sits on [Hormone Therapy for Prostate Cancer](/blogs/hormone-therapy-for-prostate-cancer). Named endocrine-therapy lists sit on [Hormone Therapy in India](/treatments/hormone-therapy-in-india).
 
 **Advanced or metastatic disease.** When prostate cancer has spread to distant sites, radical prostatectomy is generally not used as the sole treatment. Management usually requires systemic treatment, with local treatment considered only in specific circumstances. Men comparing radiation, surveillance and systemic options without prostatectomy can start on [Prostate Cancer Treatment Without Surgery](/blogs/prostate-cancer-treatment-without-surgery).
 

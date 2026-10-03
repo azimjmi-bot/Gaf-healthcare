@@ -397,7 +397,7 @@ The GAF planning range for brachytherapy in India is **$5,500–$13,000**, typic
 
 Prostate cancer cells can be driven by male hormones called androgens.
 
-[Hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy) reduces androgen production or blocks androgen activity.
+[Hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy) reduces androgen production or blocks androgen activity. Named endocrine-therapy lists sit on [Hormone Therapy in India](/treatments/hormone-therapy-in-india).
 
 Androgen deprivation therapy (ADT) can be delivered using medicines or surgical removal of the testicles.
 
