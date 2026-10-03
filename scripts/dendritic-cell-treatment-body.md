@@ -102,7 +102,7 @@ It is a mistake to compare one dendritic-cell programme with one cycle of [chemo
 
 [Immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) on this site is the broader checkpoint and antibody family. [Colon Cancer Immunotherapy in India](/blogs/colon-cancer-immunotherapy-in-india) explains MSI-H/dMMR checkpoint use in colon cancer. That is **not** a dendritic-cell vaccine.
 
-**CAR-T and dendritic-cell therapy are not the same treatment.** [CAR-T cell therapy](/costs/India/Hematology/CAR-T-Cell-Therapy) genetically modifies T cells. Dendritic-cell vaccines generally aim to enhance antigen presentation. Do not accept a quotation labelled only “advanced cell therapy.”
+**CAR-T and dendritic-cell therapy are not the same treatment.** [CAR-T cell therapy](/costs/India/Hematology/CAR-T-Cell-Therapy) genetically modifies T cells. Named CAR-T lists sit on [CAR-T Cell Therapy in India](/treatments/car-t-cell-therapy-in-india). Dendritic-cell vaccines generally aim to enhance antigen presentation. Do not accept a quotation labelled only “advanced cell therapy.”
 
 ![Unlabeled three-panel schematic comparing a dendritic-cell vaccine, cytotoxic chemotherapy and an engineered T cell](/uploads/treatments/dct-compare.webp)
 

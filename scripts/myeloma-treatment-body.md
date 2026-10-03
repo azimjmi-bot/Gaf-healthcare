@@ -169,7 +169,7 @@ CAR-T therapy involves collecting a patient's T cells, modifying them so they ca
 
 Patients need to distinguish CAR-T availability in India generally from CAR-T specifically approved for myeloma. India has approved indigenous CD19-directed CAR-T products for certain B-cell malignancies, but those products are not the same as BCMA-directed CAR-T used for myeloma. As of 2026, access to BCMA-directed CAR-T for myeloma in India may depend on clinical-trial or other specialised regulatory pathways rather than routine commercial availability. This status can change, so eligibility and availability should be confirmed before travel or financial arrangements.
 
-Neighbouring [CAR-T cell therapy](/costs/India/Hematology/CAR-T-Cell-Therapy) planning is **$80,000–$180,000** for apheresis plus 3–6 weeks nearby when a named product is actually available. Comparable US planning is **$400,000–$550,000**. That sheet is not a BCMA-myeloma quote and is not a substitute for CD19 products used in other blood cancers.
+Neighbouring [CAR-T cell therapy](/costs/India/Hematology/CAR-T-Cell-Therapy) planning is **$80,000–$180,000** for apheresis plus 3–6 weeks nearby when a named product is actually available. Comparable US planning is **$400,000–$550,000**. That sheet is not a BCMA-myeloma quote and is not a substitute for CD19 products used in other blood cancers. Named CAR-T lists sit on [CAR-T Cell Therapy in India](/treatments/car-t-cell-therapy-in-india).
 
 ## Bispecific antibody therapy
 

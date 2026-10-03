@@ -200,7 +200,7 @@ Named transplant lists sit on [Bone Marrow Transplant in India](/treatments/bone
 
 CAR-T collects a patient's T cells, genetically modifies them to recognise cancer cells and returns them to the patient. It is used for selected relapsed or refractory B-cell malignancies. It is not a routine first-line treatment for every lymphoma patient.
 
-Eligibility depends on subtype, previous treatments, response, disease status, overall condition and availability of an appropriate CAR-T programme. Neighbouring [CAR-T cell therapy](/costs/India/Hematology/CAR-T-Cell-Therapy) is **$80,000–$180,000** (apheresis plus 3–6 weeks nearby). Cellular therapy invoices often have several billed components beyond the infusion itself. It is a different product from BMT.
+Eligibility depends on subtype, previous treatments, response, disease status, overall condition and availability of an appropriate CAR-T programme. Neighbouring [CAR-T cell therapy](/costs/India/Hematology/CAR-T-Cell-Therapy) is **$80,000–$180,000** (apheresis plus 3–6 weeks nearby). Cellular therapy invoices often have several billed components beyond the infusion itself. It is a different product from BMT. Named CAR-T lists sit on [CAR-T Cell Therapy in India](/treatments/car-t-cell-therapy-in-india).
 
 ### 8. Active surveillance or watchful waiting
 

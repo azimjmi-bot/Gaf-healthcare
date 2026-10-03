@@ -111,7 +111,7 @@ Autologous stem cell transplantation has an important role in selected patients 
 
 ASCT may also be considered for selected patients with certain types of non-Hodgkin lymphoma, particularly in the relapsed setting when the disease responds to salvage treatment. The approach depends on subtype, previous therapy, duration of first remission, response to salvage, disease biology, fitness and alternative treatments. EBMT recommendations increasingly consider ASCT alongside other approaches, including CAR-T therapy, depending on subtype and setting.
 
-Hodgkin-lymphoma and non-Hodgkin-lymphoma treatment pages are not live on this site. Lymphoma lists sit on [Lymphoma Treatment in India](/treatments/lymphoma-treatment-in-india). Neighbouring [CAR-T cell therapy](/costs/India/Hematology/CAR-T-Cell-Therapy) is **$80,000–$180,000** when a named product is actually available. That sheet is not an ASCT quote.
+Hodgkin-lymphoma and non-Hodgkin-lymphoma treatment pages are not live on this site. Lymphoma lists sit on [Lymphoma Treatment in India](/treatments/lymphoma-treatment-in-india). Neighbouring [CAR-T cell therapy](/costs/India/Hematology/CAR-T-Cell-Therapy) is **$80,000–$180,000** when a named product is actually available. That sheet is not an ASCT quote. Named CAR-T lists sit on [CAR-T Cell Therapy in India](/treatments/car-t-cell-therapy-in-india).
 
 ### Other conditions
 

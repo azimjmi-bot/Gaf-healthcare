@@ -488,7 +488,7 @@ Yes, international patients can seek evaluation and treatment at Indian transpla
 
 ### Does CAR-T use the bone-marrow-transplant sheet?
 
-No. Neighbouring [CAR-T cell therapy](/costs/India/Hematology/CAR-T-Cell-Therapy) is **$80,000–$180,000** and is a different cellular-therapy product. Named dendritic-cell lists sit on [Dendritic Cell Therapy in India](/treatments/dendritic-cell-therapy-in-india).
+No. Neighbouring [CAR-T cell therapy](/costs/India/Hematology/CAR-T-Cell-Therapy) is **$80,000–$180,000** and is a different cellular-therapy product. Named dendritic-cell lists sit on [Dendritic Cell Therapy in India](/treatments/dendritic-cell-therapy-in-india). Named CAR-T lists sit on [CAR-T Cell Therapy in India](/treatments/car-t-cell-therapy-in-india).
 
 ### Which city in India is best for bone marrow transplant?
 

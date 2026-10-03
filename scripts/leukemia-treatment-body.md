@@ -174,7 +174,7 @@ CAR-T therapy collects a patient's T cells, genetically modifies them to recogni
 
 Eligibility depends on subtype, disease status, previous treatments, age and health, availability of an approved product, centre expertise and regulatory or trial considerations.
 
-Neighbouring [CAR-T cell therapy](/costs/India/Hematology/CAR-T-Cell-Therapy) is **$80,000–$180,000** (apheresis plus 3–6 weeks nearby). It is a different cellular-therapy product from BMT.
+Neighbouring [CAR-T cell therapy](/costs/India/Hematology/CAR-T-Cell-Therapy) is **$80,000–$180,000** (apheresis plus 3–6 weeks nearby). It is a different cellular-therapy product from BMT. Named CAR-T lists sit on [CAR-T Cell Therapy in India](/treatments/car-t-cell-therapy-in-india).
 
 ### 5. Stem cell transplant / bone marrow transplant
 

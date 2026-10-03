@@ -2236,6 +2236,101 @@ test("the published Stem Cell Transplantation page uses GAF USD ranges and haema
   assert.ok(leukemia?.relatedTreatmentSlugs?.includes("stem-cell-transplantation-in-india"));
 });
 
+test("the published CAR-T Cell Therapy page uses GAF USD ranges and haematology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "car-t-cell-therapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$80,000–\$180,000/);
+  assert.match(body, /\$400,000–\$550,000/);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /apheresis plus 3–6 weeks nearby/);
+  assert.match(body, /article-quick-answer|Quick Answer: CAR-T Cell Therapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Hematology\/CAR-T-Cell-Therapy/);
+  assert.match(body, /\/costs\/India\/Hematology\/Bone-Marrow-Transplantation/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
+  assert.match(body, /\/doctors\/India\/Hematology\/CAR-T-Cell-Therapy/);
+  assert.match(body, /\/treatments\/leukemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/lymphoma-treatment-in-india/);
+  assert.match(body, /\/treatments\/multiple-myeloma-treatment-in-india/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/stem-cell-transplantation-in-india/);
+  assert.match(body, /\/uploads\/treatments\/cart-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cart-steps\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cart-monitor\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cart-compare\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Hematology/CAR-T-Cell-Therapy",
+    "/doctors/India/Mumbai/Hematology/CAR-T-Cell-Therapy",
+    "/doctors/India/Bengaluru/Hematology/CAR-T-Cell-Therapy",
+    "/doctors/India/Chennai/Hematology/CAR-T-Cell-Therapy",
+    "/doctors/India/Hyderabad/Hematology/CAR-T-Cell-Therapy",
+    "/hospitals/India/Delhi-NCR/Hematology",
+    "/hospitals/India/Mumbai/Hematology",
+    "/hospitals/India/Bengaluru/Hematology",
+    "/costs/India/Delhi-NCR/Hematology/CAR-T-Cell-Therapy",
+    "/costs/India/Mumbai/Hematology/CAR-T-Cell-Therapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is CAR-T therapy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /T cells/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/car-t-cell-therapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/car-t(?:-cell-therapy)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/nexcar/);
+  assert.doesNotMatch(body, /\/treatments\/bcma/);
+  assert.doesNotMatch(body, /\/treatments\/dlbcl/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/car-t-cell-therapy-in-india/);
+  const leukemia = store.treatments.find((row) => row.slug === "leukemia-treatment-in-india");
+  const lymphoma = store.treatments.find((row) => row.slug === "lymphoma-treatment-in-india");
+  const bmt = store.treatments.find((row) => row.slug === "bone-marrow-transplant-in-india");
+  assert.match(
+    leukemia?.translations.en?.editorialBody ?? "",
+    /\/treatments\/car-t-cell-therapy-in-india/,
+  );
+  assert.match(
+    lymphoma?.translations.en?.editorialBody ?? "",
+    /\/treatments\/car-t-cell-therapy-in-india/,
+  );
+  assert.match(bmt?.translations.en?.editorialBody ?? "", /\/treatments\/car-t-cell-therapy-in-india/);
+  assert.ok(leukemia?.relatedTreatmentSlugs?.includes("car-t-cell-therapy-in-india"));
+  assert.ok(lymphoma?.relatedTreatmentSlugs?.includes("car-t-cell-therapy-in-india"));
+  assert.ok(bmt?.relatedTreatmentSlugs?.includes("car-t-cell-therapy-in-india"));
+});
+
 test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {
   const store = loadCuratedTreatments();
   const treatment = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");
