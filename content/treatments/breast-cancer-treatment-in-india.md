@@ -156,7 +156,7 @@ Breast cancer can require treatment beyond surgery. Systemic treatment uses medi
 
 ### Chemotherapy
 
-Chemotherapy uses anti-cancer medicines to destroy or inhibit cancer cells. It can be given before or after surgery.
+Chemotherapy uses anti-cancer medicines to destroy or inhibit cancer cells. It can be given before or after surgery. Named chemotherapy lists sit on [Chemotherapy in India](/treatments/chemotherapy-in-india).
 
 Neoadjuvant chemotherapy is given before surgery. Depending on the cancer, it may be used to reduce tumour size, treat microscopic disease, assess treatment response, make surgery more feasible, or provide information about how the tumour responds.
 

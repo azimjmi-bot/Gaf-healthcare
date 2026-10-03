@@ -154,7 +154,7 @@ Chemotherapy uses medicines that destroy rapidly dividing leukemia cells. It rem
 
 For AML, intensive chemotherapy may be used in patients who are suitable for it, while lower-intensity approaches may be appropriate for patients who are not candidates for intensive treatment. For ALL, combination chemotherapy remains a major component, generally delivered through different phases.
 
-Named [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) is **$1,500–$8,000+**. Drugs, doses and schedule depend entirely on the subtype and protocol.
+Named [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) is **$1,500–$8,000+**. Drugs, doses and schedule depend entirely on the subtype and protocol. Named chemotherapy lists sit on [Chemotherapy in India](/treatments/chemotherapy-in-india).
 
 ### 2. Targeted therapy
 

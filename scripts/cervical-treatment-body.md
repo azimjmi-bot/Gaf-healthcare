@@ -353,7 +353,7 @@ Commonly used agents can include cisplatin, carboplatin, paclitaxel, topotecan, 
 
 The choice depends on the patient's treatment history, kidney function, blood counts, neuropathy, performance status and other clinical factors.
 
-GAF planning ranges for [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) are **$1,500–$8,000+**.
+GAF planning ranges for [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) are **$1,500–$8,000+**. Named chemotherapy lists sit on [Chemotherapy in India](/treatments/chemotherapy-in-india).
 
 ## Immunotherapy for Cervical Cancer
 

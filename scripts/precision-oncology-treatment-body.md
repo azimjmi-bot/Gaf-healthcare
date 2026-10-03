@@ -258,7 +258,7 @@ No. This is an important misconception.
 
 Chemotherapy remains an important cancer treatment for many patients. Precision oncology can help determine whether targeted therapy is appropriate, whether immunotherapy may be useful, whether chemotherapy remains appropriate, whether treatments should be combined, and whether a particular therapy is unlikely to help.
 
-See [adjuvant chemotherapy in India](/treatments/adjuvant-chemotherapy-in-india) and [neoadjuvant chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india). Neighbouring [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) is **$1,500–$8,000+**.
+See [adjuvant chemotherapy in India](/treatments/adjuvant-chemotherapy-in-india) and [neoadjuvant chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india). Neighbouring [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) is **$1,500–$8,000+**. Named chemotherapy lists sit on [Chemotherapy in India](/treatments/chemotherapy-in-india).
 
 ## Precision oncology and molecular tumour boards
 

@@ -269,7 +269,7 @@ Common chemotherapy approaches include combinations based on oxaliplatin, 5-fluo
 
 Capecitabine + oxaliplatin.
 
-The appropriate regimen and duration depend on disease risk, patient fitness, toxicity considerations and the treating oncology team's assessment. GAF Healthcare planning ranges for [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) are **$1,500–$8,000+**.
+The appropriate regimen and duration depend on disease risk, patient fitness, toxicity considerations and the treating oncology team's assessment. GAF Healthcare planning ranges for [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) are **$1,500–$8,000+**. Named chemotherapy lists sit on [Chemotherapy in India](/treatments/chemotherapy-in-india).
 
 [Get a chemotherapy estimate](/consult?treatment=Chemotherapy)
 

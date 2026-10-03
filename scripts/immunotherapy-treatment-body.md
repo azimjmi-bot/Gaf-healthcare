@@ -189,7 +189,7 @@ Immunotherapy and chemotherapy are different types of cancer treatment.
 | Timing of toxicity | Can occur during or after treatment | Often related to treatment cycles, but varies |
 | Treatment combinations | May be combined with chemotherapy or other treatments | Frequently combined with surgery, radiation, targeted therapy or immunotherapy |
 
-Neither treatment can simply be described as universally better. Neighbouring cytotoxic lists sit on [adjuvant chemotherapy in India](/treatments/adjuvant-chemotherapy-in-india) and [neoadjuvant chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india).
+Neither treatment can simply be described as universally better. Neighbouring cytotoxic lists sit on [adjuvant chemotherapy in India](/treatments/adjuvant-chemotherapy-in-india) and [neoadjuvant chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india). Named chemotherapy lists sit on [Chemotherapy in India](/treatments/chemotherapy-in-india).
 
 ## Immunotherapy versus targeted therapy
 

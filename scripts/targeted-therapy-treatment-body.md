@@ -190,7 +190,7 @@ Patients often ask whether targeted therapy is better than chemotherapy. There i
 | Combination treatment | May be combined with other therapies | Frequently combined with surgery, radiation, targeted therapy or immunotherapy |
 | Eligibility | Often depends on biomarker or disease characteristics | Depends on cancer type, stage and clinical factors |
 
-Chemotherapy remains an important cancer treatment and is not made obsolete by targeted therapy. Neighbouring cytotoxic lists sit on [adjuvant chemotherapy in India](/treatments/adjuvant-chemotherapy-in-india) and [neoadjuvant chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india).
+Chemotherapy remains an important cancer treatment and is not made obsolete by targeted therapy. Neighbouring cytotoxic lists sit on [adjuvant chemotherapy in India](/treatments/adjuvant-chemotherapy-in-india) and [neoadjuvant chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india). Named chemotherapy lists sit on [Chemotherapy in India](/treatments/chemotherapy-in-india).
 
 ![Unlabeled schematic contrasting a lock-and-key targeted drug with a broader cytotoxic field](/uploads/treatments/tt-compare.webp)
 

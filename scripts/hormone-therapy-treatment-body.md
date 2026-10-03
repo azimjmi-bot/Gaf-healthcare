@@ -339,7 +339,7 @@ No. Hormone therapy and chemotherapy are different types of systemic cancer trea
 | Examples include tamoxifen and aromatase inhibitors | Examples include taxanes, platinum drugs and anthracyclines |
 | Side effects are largely related to hormonal changes | Side effects depend on the chemotherapy drugs used |
 
-Some patients may receive both treatments at different stages of their cancer journey. Neighbouring cytotoxic lists sit on [adjuvant chemotherapy in India](/treatments/adjuvant-chemotherapy-in-india) and [neoadjuvant chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india).
+Some patients may receive both treatments at different stages of their cancer journey. Neighbouring cytotoxic lists sit on [adjuvant chemotherapy in India](/treatments/adjuvant-chemotherapy-in-india) and [neoadjuvant chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india). Named chemotherapy lists sit on [Chemotherapy in India](/treatments/chemotherapy-in-india).
 
 ## Is hormone therapy the same as targeted therapy?
 

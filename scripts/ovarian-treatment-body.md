@@ -265,7 +265,7 @@ The number and timing of cycles depend on the clinical situation and the treatme
 
 Chemotherapy may be used after surgery, before surgery, before and after interval surgery, for recurrent disease, and as part of disease-control treatment.
 
-GAF planning ranges for [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) are **$1,500–$8,000+**.
+GAF planning ranges for [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) are **$1,500–$8,000+**. Named chemotherapy lists sit on [Chemotherapy in India](/treatments/chemotherapy-in-india).
 
 [Get a chemotherapy estimate](/consult?treatment=Chemotherapy)
 

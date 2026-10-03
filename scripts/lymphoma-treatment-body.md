@@ -162,7 +162,7 @@ Lymphoma treatment is individualised. Depending on the diagnosis, treatment may 
 
 Chemotherapy remains important for many lymphoma subtypes. Treatment is generally administered in cycles. The exact combination depends on the subtype.
 
-Examples of commonly used regimens include ABVD-based therapy, A+AVD in selected Hodgkin lymphoma patients, R-CHOP-based therapy, DA-R-EPOCH in selected aggressive lymphomas, bendamustine-based treatment, ICE-based salvage therapy and other subtype-specific regimens. The appropriate regimen should be selected by a haematologist or medical oncologist after the individual diagnosis.
+Examples of commonly used regimens include ABVD-based therapy, A+AVD in selected Hodgkin lymphoma patients, R-CHOP-based therapy, DA-R-EPOCH in selected aggressive lymphomas, bendamustine-based treatment, ICE-based salvage therapy and other subtype-specific regimens. The appropriate regimen should be selected by a haematologist or medical oncologist after the individual diagnosis. Named chemotherapy lists sit on [Chemotherapy in India](/treatments/chemotherapy-in-india).
 
 Named [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) is **$1,500–$8,000+**.
 
