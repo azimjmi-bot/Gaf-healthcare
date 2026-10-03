@@ -131,6 +131,7 @@ test("the homepage origin-country section links Ethiopia and Tanzania to publish
     ORIGIN_COUNTRY_HUBS.map((row) => ({ name: row.name, href: row.href })),
     [
       { name: "Botswana", href: "/botswana/treatment-in-india" },
+      { name: "Chad", href: "/chad/treatment-in-india" },
       { name: "Ethiopia", href: "/ethiopia/treatment-in-india" },
       { name: "Mauritius", href: "/mauritius/treatment-in-india" },
       { name: "Mozambique", href: "/mozambique/treatment-in-india" },
