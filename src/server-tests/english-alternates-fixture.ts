@@ -218,6 +218,11 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en"],
   },
   {
+    label: "burkina faso treatment in India hub",
+    path: "/burkina-faso/treatment-in-india",
+    published: ["en"],
+  },
+  {
     label: "chad treatment in India hub",
     path: "/chad/treatment-in-india",
     published: ["en"],

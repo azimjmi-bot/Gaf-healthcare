@@ -54,6 +54,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Botswana is currently on India’s e-Visa list. Batswana patients can use the e-Medical Visa or apply through the High Commission of India in Gaborone.",
   },
   {
+    name: "Burkina Faso",
+    city: "Ouagadougou",
+    destination: "India",
+    href: "/burkina-faso/treatment-in-india",
+    flag: "🇧🇫",
+    flagLabel: "Flag of Burkina Faso",
+    visaNote:
+      "Burkina Faso is not currently on India’s e-Visa list. Burkinabè patients apply for a Medical Visa through the Embassy of India in Ouagadougou.",
+  },
+  {
     name: "Chad",
     city: "N'Djamena",
     destination: "India",
