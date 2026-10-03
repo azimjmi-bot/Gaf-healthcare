@@ -34,6 +34,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Mozambique is currently on India’s e-Visa list. Mozambican patients can use the e-Medical Visa or apply through the High Commission of India in Maputo.",
   },
   {
+    name: "Sudan",
+    city: "Khartoum",
+    destination: "India",
+    href: "/sudan/treatment-in-india",
+    flag: "🇸🇩",
+    flagLabel: "Flag of Sudan",
+    visaNote:
+      "Sudan is not currently on India’s e-Visa list. Sudanese patients apply for a Medical Visa through the Embassy of India in Khartoum, which currently operates from Camp Port Sudan.",
+  },
+  {
     name: "Tanzania",
     city: "Dar es Salaam",
     destination: "India",

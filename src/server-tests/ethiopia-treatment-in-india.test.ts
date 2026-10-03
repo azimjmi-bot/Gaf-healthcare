@@ -132,6 +132,7 @@ test("the homepage origin-country section links Ethiopia and Tanzania to publish
     [
       { name: "Ethiopia", href: "/ethiopia/treatment-in-india" },
       { name: "Mozambique", href: "/mozambique/treatment-in-india" },
+      { name: "Sudan", href: "/sudan/treatment-in-india" },
       { name: "Tanzania", href: "/tanzania/treatment-in-india" },
     ],
   );
