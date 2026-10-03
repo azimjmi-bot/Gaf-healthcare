@@ -2423,6 +2423,105 @@ test("the published Intrathecal Chemotherapy page uses site USD ranges and GEO l
   assert.ok(lymphoma?.relatedTreatmentSlugs?.includes("intrathecal-chemotherapy-in-india"));
 });
 
+test("the published Intraperitoneal Chemotherapy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "intraperitoneal-chemotherapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$5,000–\$14,000/);
+  assert.match(body, /\$20,000–\$55,000/);
+  assert.match(body, /\$18,000–\$40,000/);
+  assert.match(body, /\$7,000–\$16,000/);
+  assert.match(body, /tied to cytoreduction or IP ports/);
+  assert.match(body, /article-quick-answer|Quick Answer: Intraperitoneal Chemotherapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Intraperitoneal-Chemotherapy/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Cytoreductive-Surgery-with-HIPEC/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/PIPAC/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Intraperitoneal-Chemotherapy/);
+  assert.match(body, /\/treatments\/hipec-surgery-in-india/);
+  assert.match(body, /\/treatments\/ovarian-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/pancreatic-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/stage-4-colon-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/ip-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ip-catheter\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ip-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ip-pci\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Intraperitoneal-Chemotherapy",
+    "/doctors/India/Mumbai/Medical-Oncology/Intraperitoneal-Chemotherapy",
+    "/doctors/India/Bengaluru/Medical-Oncology/Intraperitoneal-Chemotherapy",
+    "/doctors/India/Chennai/Medical-Oncology/Intraperitoneal-Chemotherapy",
+    "/doctors/India/Hyderabad/Medical-Oncology/Intraperitoneal-Chemotherapy",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Intraperitoneal-Chemotherapy",
+    "/costs/India/Mumbai/Medical-Oncology/Intraperitoneal-Chemotherapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is IP chemotherapy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /peritoneal cavity/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Peritoneum",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/intraperitoneal-chemotherapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/intraperitoneal(?:-chemotherapy)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/pipac/);
+  assert.doesNotMatch(body, /\/treatments\/hipec-treatment/);
+  assert.doesNotMatch(body, /\/treatments\/cytoreductive-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/peritoneal-cancer/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/intraperitoneal-chemotherapy-in-india/);
+  const ovarian = store.treatments.find((row) => row.slug === "ovarian-cancer-treatment-in-india");
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  const hipec = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");
+  assert.match(
+    ovarian?.translations.en?.editorialBody ?? "",
+    /\/treatments\/intraperitoneal-chemotherapy-in-india/,
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/intraperitoneal-chemotherapy-in-india/,
+  );
+  assert.match(
+    hipec?.translations.en?.editorialBody ?? "",
+    /\/treatments\/intraperitoneal-chemotherapy-in-india/,
+  );
+  assert.ok(ovarian?.relatedTreatmentSlugs?.includes("intraperitoneal-chemotherapy-in-india"));
+  assert.ok(colon?.relatedTreatmentSlugs?.includes("intraperitoneal-chemotherapy-in-india"));
+  assert.ok(hipec?.relatedTreatmentSlugs?.includes("intraperitoneal-chemotherapy-in-india"));
+});
+
 test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {
   const store = loadCuratedTreatments();
   const treatment = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");

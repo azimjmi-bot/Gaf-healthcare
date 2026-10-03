@@ -349,7 +349,7 @@ Patient selection, timing, disease extent, surgical expertise and institutional 
 
 The OVHIPEC-1 trial provides randomized evidence supporting HIPEC in a selected interval-cytoreduction setting. How that pathway is planned is covered in [HIPEC Surgery in India](/treatments/hipec-surgery-in-india).
 
-GAF planning ranges for [CRS with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) are **$18,000–$40,000**, typically **10–21 nights**.
+GAF planning ranges for [CRS with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) are **$18,000–$40,000**, typically **10–21 nights**. Named catheter-based IP lists sit on [Intraperitoneal Chemotherapy in India](/treatments/intraperitoneal-chemotherapy-in-india).
 
 [Ask about HIPEC for ovarian cancer](/consult?treatment=Cytoreductive%20Surgery%20with%20HIPEC)
 

@@ -173,7 +173,7 @@ However, the decision to use HIPEC depends on the ovarian cancer subtype, treatm
 
 Gastric cancer can spread to the peritoneum.
 
-CRS and intraperitoneal chemotherapy, including HIPEC, have been investigated in selected patients.
+CRS and intraperitoneal chemotherapy, including HIPEC, have been investigated in selected patients. Named catheter-based IP lists sit on [Intraperitoneal Chemotherapy in India](/treatments/intraperitoneal-chemotherapy-in-india).
 
 However, HIPEC is not automatically standard treatment for all patients with gastric cancer and peritoneal metastases.
 
