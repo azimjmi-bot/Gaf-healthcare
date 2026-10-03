@@ -511,7 +511,7 @@ These treatments are not necessarily alternatives.
 
 For localized resectable disease: **surgery → pathology → consideration of adjuvant treatment**.
 
-For unresectable or metastatic disease: **systemic therapy ± immunotherapy ± targeted therapy ± radiation or drainage**.
+For unresectable or metastatic disease: **systemic therapy ± immunotherapy ± targeted therapy ± radiation or drainage**. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india).
 
 The exact sequence depends on the disease and the multidisciplinary treatment plan.
 

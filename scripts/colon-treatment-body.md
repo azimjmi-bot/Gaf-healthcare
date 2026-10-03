@@ -358,7 +358,7 @@ Not every patient experiences all of these effects. Modern supportive care can h
 
 ## Targeted Therapy for Colon Cancer
 
-Targeted therapy focuses on specific molecular pathways involved in tumour growth. Examples used in colorectal cancer treatment include bevacizumab, cetuximab, panitumumab, encorafenib in appropriate BRAF-mutated disease, regorafenib, fruquintinib, and other biomarker-directed therapies depending on tumour characteristics and treatment setting.
+Targeted therapy focuses on specific molecular pathways involved in tumour growth. Examples used in colorectal cancer treatment include bevacizumab, cetuximab, panitumumab, encorafenib in appropriate BRAF-mutated disease, regorafenib, fruquintinib, and other biomarker-directed therapies depending on tumour characteristics and treatment setting. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india).
 
 Targeted therapy is generally most relevant in advanced or metastatic disease. The suitability of a particular drug depends on the tumour's molecular profile and previous treatment. GAF planning ranges for [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) are **$8,000–$30,000**.
 

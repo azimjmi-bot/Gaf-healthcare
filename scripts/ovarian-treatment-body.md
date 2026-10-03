@@ -285,7 +285,7 @@ Modern supportive medicines can substantially improve the management of chemothe
 
 ## Targeted Therapy for Ovarian Cancer
 
-Targeted therapy is increasingly important in ovarian cancer.
+Targeted therapy is increasingly important in ovarian cancer. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india).
 
 Treatment selection depends on the tumor's molecular characteristics and previous treatment.
 

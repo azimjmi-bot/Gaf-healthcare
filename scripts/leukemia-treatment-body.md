@@ -158,7 +158,7 @@ Named [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) is **$1,500–$
 
 ### 2. Targeted therapy
 
-Targeted therapy attacks specific molecular pathways. Examples include tyrosine kinase inhibitors for BCR::ABL1-positive leukemia, FLT3-targeted therapy in selected AML, IDH-targeted therapies in selected AML, BCL-2-directed therapy in appropriate AML settings and other molecularly directed treatments.
+Targeted therapy attacks specific molecular pathways. Examples include tyrosine kinase inhibitors for BCR::ABL1-positive leukemia, FLT3-targeted therapy in selected AML, IDH-targeted therapies in selected AML, BCL-2-directed therapy in appropriate AML settings and other molecularly directed treatments. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india).
 
 Named [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is **$8,000–$30,000**. Neighbouring [molecular targeted therapy](/costs/India/Medical-Oncology/Molecular-Targeted-Therapy) is **$10,000–$32,000** when a documented mutation is the product.
 

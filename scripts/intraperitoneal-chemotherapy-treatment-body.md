@@ -198,7 +198,7 @@ Randomised trials established clinically meaningful benefits for certain optimal
 
 Treatment standards have evolved. Modern ovarian cancer care can include cytoreductive surgery, intravenous platinum-based chemotherapy, intraperitoneal chemotherapy in selected circumstances, targeted therapy, PARP inhibitors, bevacizumab in appropriate patients, HIPEC in selected settings and clinical trials.
 
-A patient should not assume that IP chemotherapy is automatically preferable to modern IV-based treatment. Neighbouring [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is **$8,000–$30,000**. Neighbouring [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000**.
+A patient should not assume that IP chemotherapy is automatically preferable to modern IV-based treatment. Neighbouring [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is **$8,000–$30,000**. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india). Neighbouring [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) is **$2,000–$7,000**.
 
 ## Intraperitoneal chemotherapy after surgery
 

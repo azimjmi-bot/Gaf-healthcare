@@ -440,7 +440,7 @@ The GAF planning range is **$1,500–$8,000+**, usually as outpatient cycles.
 
 ## 8. Targeted Therapy
 
-[Targeted treatments](/costs/India/Medical-Oncology/Targeted-Therapy) are designed to act against specific biological characteristics of cancer cells.
+[Targeted treatments](/costs/India/Medical-Oncology/Targeted-Therapy) are designed to act against specific biological characteristics of cancer cells. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india).
 
 For prostate cancer, genomic testing may be considered in appropriate patients, particularly those with advanced or metastatic disease.
 

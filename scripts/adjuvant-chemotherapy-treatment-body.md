@@ -247,7 +247,7 @@ Good nutrition can help patients maintain strength. Patients should be cautious 
 
 Chemotherapy and radiation therapy may both be used after surgery in selected cancers. The sequence varies. See [external beam radiotherapy in India](/treatments/external-beam-radiotherapy-in-india).
 
-Chemotherapy is different from targeted therapy and from immunotherapy. Some patients receive chemotherapy together with targeted treatment, while others receive targeted therapy sequentially or instead of conventional chemotherapy. Neighbouring [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is **$8,000–$30,000**. Neighbouring [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) is **$15,000–$45,000**. Neighbouring [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy) is **$1,000–$4,500**.
+Chemotherapy is different from targeted therapy and from immunotherapy. Some patients receive chemotherapy together with targeted treatment, while others receive targeted therapy sequentially or instead of conventional chemotherapy. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india). Neighbouring [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is **$8,000–$30,000**. Neighbouring [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) is **$15,000–$45,000**. Neighbouring [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy) is **$1,000–$4,500**.
 
 Patients should ask about the **complete postoperative treatment plan**, rather than viewing chemotherapy in isolation.
 
