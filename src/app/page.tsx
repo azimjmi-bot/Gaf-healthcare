@@ -15,6 +15,7 @@ import {
   HOME_COST_SLUGS,
   YOUTUBE_CHANNEL,
 } from "@/data/home";
+import { ORIGIN_COUNTRY_HUBS, ORIGIN_COUNTRY_SECTION } from "@/data/origin-countries";
 import { listPublishedPosts } from "@/lib/blogs";
 import { treatments } from "@/lib/data";
 import { doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
@@ -182,6 +183,37 @@ export default async function HomePage() {
             </Link>
           ))}
         </div>
+      </section>
+      ) : null}
+
+      {locale === "en" && ORIGIN_COUNTRY_HUBS.length > 0 ? (
+      <section id="from-your-country" className="home-section home-origin scroll-mt-24">
+        <div className="home-origin__intro">
+          <p className="eyebrow">{ORIGIN_COUNTRY_SECTION.eyebrow}</p>
+          <h2>{ORIGIN_COUNTRY_SECTION.title}</h2>
+          <p>{ORIGIN_COUNTRY_SECTION.lede}</p>
+        </div>
+        <div className="home-origingrid">
+          {ORIGIN_COUNTRY_HUBS.map((country) => (
+            <Link key={country.href} href={country.href} className="home-origin-card">
+              <span className="home-origin-card__flag" role="img" aria-label={country.flagLabel}>
+                {country.flag}
+              </span>
+              <strong>{country.name}</strong>
+              <em>{ORIGIN_COUNTRY_SECTION.routeLabel(country.city, country.destination)}</em>
+            </Link>
+          ))}
+        </div>
+        <Link href={ORIGIN_COUNTRY_SECTION.visaHref} className="home-origin-visa">
+          <span>
+            <strong>{ORIGIN_COUNTRY_SECTION.visaTitle}</strong>
+            <em>{ORIGIN_COUNTRY_SECTION.visaBody}</em>
+          </span>
+          <span className="home-origin-visa__cta">
+            {ORIGIN_COUNTRY_SECTION.visaCta}
+            <ArrowRight className="size-4 icon-forward" aria-hidden />
+          </span>
+        </Link>
       </section>
       ) : null}
 

@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import { HOME_DESTINATIONS } from "@/data/home";
+import { ORIGIN_COUNTRY_HUBS } from "@/data/origin-countries";
 import {
   TANZANIA_CANCER_TREATMENT_SLUGS,
   TANZANIA_COST_PROCEDURE_NAMES,
@@ -101,8 +102,13 @@ test("Tanzania hub copy stays Tanzania-specific and medically responsible", () =
   assert.equal(TANZANIA_OFFICIAL_LINKS.hciMedicalVisa, "https://hcindiatz.gov.in/medical-visa.php");
 });
 
-test("the homepage was not given a Tanzania origin-country card", () => {
+test("the homepage origin-country section links Tanzania to its published hub", () => {
   const home = readFileSync(HOME_FILE, "utf8");
-  assert.doesNotMatch(home, /tanzania\/treatment-in-india/);
+  assert.match(home, /tanzania\/treatment-in-india/);
+  assert.match(home, /from-your-country/);
   assert.ok(!HOME_DESTINATIONS.some((row) => /tanzania/i.test(row.name)));
+  assert.deepEqual(
+    ORIGIN_COUNTRY_HUBS.map((row) => row.href),
+    ["/tanzania/treatment-in-india"],
+  );
 });

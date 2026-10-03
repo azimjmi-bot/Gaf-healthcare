@@ -193,6 +193,7 @@
   [class*="dhero__pill"],
   [class*="hcard"],
   [class*="home-dest"],
+  [class*="home-origin"],
   [class*="home-doc"],
   [class*="home-hosp"],
   [class*="home-cost"],
@@ -230,6 +231,7 @@
   [class*="dhero__pill"],
   [class*="hcard"],
   [class*="home-dest"],
+  [class*="home-origin"],
   [class*="home-doc"],
   [class*="home-hosp"],
   [class*="home-cost"],
@@ -3655,6 +3657,106 @@ body:has(.cost-dock) .wa-float {
   .home-videogrid { grid-template-columns: repeat(4, 1fr); }
 }
 
+.home-origin {
+  text-align: center;
+}
+.home-origin__intro {
+  max-width: 38rem;
+  margin-inline: auto;
+}
+.home-origin__intro h2 {
+  margin-top: 0.4rem;
+  font-size: clamp(2.1rem, 4.4vw, 3.2rem);
+}
+.home-origin__intro p:last-child {
+  margin-top: 0.7rem;
+  color: var(--muted-foreground);
+  line-height: 1.65;
+}
+.home-origingrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+.home-origin-card {
+  display: grid;
+  justify-items: center;
+  gap: 0.45rem;
+  width: min(100%, 11.5rem);
+  border: 1px solid var(--border);
+  border-radius: 1.35rem;
+  background: #fff;
+  padding: 1.35rem 1rem 1.2rem;
+  color: var(--foreground);
+  text-align: center;
+}
+.home-origin-card:hover {
+  border-color: color-mix(in oklch, var(--gold) 45%, var(--border));
+  box-shadow: 0 16px 32px -28px rgba(16, 47, 54, 0.55);
+}
+.home-origin-card__flag {
+  display: grid;
+  width: 3.1rem;
+  height: 3.1rem;
+  place-items: center;
+  border-radius: 999px;
+  background: var(--secondary);
+  font-size: 1.7rem;
+  line-height: 1;
+}
+.home-origin-card strong {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+}
+.home-origin-card em {
+  font-style: normal;
+  font-size: 0.82rem;
+  color: var(--muted-foreground);
+}
+.home-origin-visa {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem 1.5rem;
+  margin-top: 1.75rem;
+  border-radius: 1.35rem;
+  background: #102f36;
+  padding: 1.25rem 1.35rem;
+  color: #fff;
+  text-align: start;
+}
+.home-origin-visa strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+}
+.home-origin-visa em {
+  display: block;
+  margin-top: 0.3rem;
+  font-style: normal;
+  color: rgb(255 255 255 / 72%);
+  line-height: 1.55;
+}
+.home-origin-visa__cta {
+  display: inline-flex;
+  min-height: 2.6rem;
+  align-items: center;
+  gap: 0.4rem;
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.55rem 1rem;
+  color: #102f36;
+  font-size: 0.9rem;
+  font-weight: 650;
+  white-space: nowrap;
+}
+.home-origin-visa:hover .home-origin-visa__cta {
+  background: var(--secondary);
+}
+
 .home-dest {
   position: relative;
   overflow: hidden;
@@ -4010,6 +4112,19 @@ body:has(.cost-dock) .wa-float {
 
   .home-dest {
     min-height: 12.5rem;
+  }
+
+  .home-origin-card {
+    width: min(100%, 12.5rem);
+  }
+
+  .home-origin-visa {
+    padding: 1.1rem 1rem;
+  }
+
+  .home-origin-visa__cta {
+    width: 100%;
+    justify-content: center;
   }
 
   .home-finale {
