@@ -174,6 +174,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Mozambique is currently on India’s e-Visa list. Mozambican patients can use the e-Medical Visa or apply through the High Commission of India in Maputo.",
   },
   {
+    name: "Namibia",
+    city: "Windhoek",
+    destination: "India",
+    href: "/namibia/treatment-in-india",
+    flag: "🇳🇦",
+    flagLabel: "Flag of Namibia",
+    visaNote:
+      "Namibia is currently on India’s e-Visa list. Namibian patients can use the e-Medical Visa or apply through the High Commission of India in Windhoek.",
+  },
+  {
     name: "Nigeria",
     city: "Lagos",
     destination: "India",
