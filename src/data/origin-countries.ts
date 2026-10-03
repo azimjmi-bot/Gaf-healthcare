@@ -64,6 +64,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Ghana is currently on India’s e-Visa list. Ghanaian patients can use the e-Medical Visa or apply through the High Commission of India in Accra.",
   },
   {
+    name: "Kenya",
+    city: "Nairobi",
+    destination: "India",
+    href: "/kenya/treatment-in-india",
+    flag: "🇰🇪",
+    flagLabel: "Flag of Kenya",
+    visaNote:
+      "Kenya is currently on India’s e-Visa list. Kenyan patients can use the e-Medical Visa or apply through the High Commission of India in Nairobi.",
+  },
+  {
     name: "Mauritius",
     city: "Port Louis",
     destination: "India",
@@ -162,5 +172,4 @@ export const ORIGIN_COUNTRY_SECTION = {
   routeLabel: (city: string, destination: string) => `${city} → ${destination}`,
   visaTitle: (name: string) => `Medical visa to India from ${name}`,
   ctaLabel: "Get a medical opinion",
-  ctaHint: "WhatsApp +91 90443 46292. Share your medical records before you travel.",
 } as const;
