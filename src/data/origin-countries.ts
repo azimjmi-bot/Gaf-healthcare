@@ -9,9 +9,20 @@ export type OriginCountryHub = {
   href: string;
   flag: string;
   flagLabel: string;
+  visaNote: string;
 };
 
 export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
+  {
+    name: "Ethiopia",
+    city: "Addis Ababa",
+    destination: "India",
+    href: "/ethiopia/treatment-in-india",
+    flag: "🇪🇹",
+    flagLabel: "Flag of Ethiopia",
+    visaNote:
+      "Ethiopia is not currently on India’s e-Visa list. Ethiopian patients apply for a Medical Visa through the Embassy of India in Addis Ababa.",
+  },
   {
     name: "Tanzania",
     city: "Dar es Salaam",
@@ -19,6 +30,8 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     href: "/tanzania/treatment-in-india",
     flag: "🇹🇿",
     flagLabel: "Flag of Tanzania",
+    visaNote:
+      "Tanzanian passport holders can currently use India’s e-Medical Visa or apply through the High Commission of India in Dar es Salaam.",
   },
 ];
 
@@ -27,9 +40,6 @@ export const ORIGIN_COUNTRY_SECTION = {
   title: "Travelling from your country",
   lede: "Medical visa guidance, what to budget and how the journey works — written for patients from each country we publish a guide for.",
   routeLabel: (city: string, destination: string) => `${city} → ${destination}`,
-  visaTitle: "Medical visa to India — the step-by-step notes",
-  visaBody:
-    "e-Visa or High Commission route, documents, attendant visas and the hospital invitation letter. Confirm current rules before you apply.",
-  visaCta: "Read the Tanzania visa notes",
-  visaHref: "/tanzania/treatment-in-india#medical-visa",
+  visaTitle: (name: string) => `Medical visa to India from ${name}`,
+  visaCta: (name: string) => `Read the ${name} visa notes`,
 } as const;

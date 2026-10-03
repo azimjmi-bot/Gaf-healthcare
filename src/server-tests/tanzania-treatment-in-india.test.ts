@@ -108,8 +108,6 @@ test("the homepage origin-country section links Tanzania to its published hub", 
   assert.match(home, /ORIGIN_COUNTRY_HUBS/);
   assert.match(home, /country\.href/);
   assert.ok(!HOME_DESTINATIONS.some((row) => /tanzania/i.test(row.name)));
-  assert.deepEqual(
-    ORIGIN_COUNTRY_HUBS.map((row) => ({ name: row.name, href: row.href })),
-    [{ name: "Tanzania", href: "/tanzania/treatment-in-india" }],
-  );
+  assert.ok(ORIGIN_COUNTRY_HUBS.some((row) => row.name === "Tanzania" && row.href === "/tanzania/treatment-in-india"));
+  assert.ok(ORIGIN_COUNTRY_HUBS.some((row) => row.name === "Ethiopia" && row.href === "/ethiopia/treatment-in-india"));
 });

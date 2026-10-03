@@ -204,16 +204,24 @@ export default async function HomePage() {
             </Link>
           ))}
         </div>
-        <Link href={ORIGIN_COUNTRY_SECTION.visaHref} className="home-origin-visa">
-          <span>
-            <strong>{ORIGIN_COUNTRY_SECTION.visaTitle}</strong>
-            <em>{ORIGIN_COUNTRY_SECTION.visaBody}</em>
-          </span>
-          <span className="home-origin-visa__cta">
-            {ORIGIN_COUNTRY_SECTION.visaCta}
-            <ArrowRight className="size-4 icon-forward" aria-hidden />
-          </span>
-        </Link>
+        <div className="home-origin-visa-list">
+          {ORIGIN_COUNTRY_HUBS.map((country) => (
+            <Link
+              key={`${country.href}-visa`}
+              href={`${country.href}#medical-visa`}
+              className="home-origin-visa"
+            >
+              <span>
+                <strong>{ORIGIN_COUNTRY_SECTION.visaTitle(country.name)}</strong>
+                <em>{country.visaNote}</em>
+              </span>
+              <span className="home-origin-visa__cta">
+                {ORIGIN_COUNTRY_SECTION.visaCta(country.name)}
+                <ArrowRight className="size-4 icon-forward" aria-hidden />
+              </span>
+            </Link>
+          ))}
+        </div>
       </section>
       ) : null}
 

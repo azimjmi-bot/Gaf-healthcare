@@ -3715,13 +3715,18 @@ body:has(.cost-dock) .wa-float {
   font-size: 0.82rem;
   color: var(--muted-foreground);
 }
+.home-origin-visa-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+}
 .home-origin-visa {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
   gap: 1rem 1.5rem;
-  margin-top: 1.75rem;
+  margin-top: 0;
   border-radius: 1.35rem;
   background: #102f36;
   padding: 1.25rem 1.35rem;
@@ -5249,6 +5254,39 @@ html[dir="rtl"] .icon-forward {
 .tanzania-hub__reviewed {
   margin-top: 1.25rem;
   color: var(--muted-foreground);
+  font-size: 0.92rem;
+}
+.tanzania-hub__directory {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+@media (min-width: 720px) {
+  .tanzania-hub__directory { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 1100px) {
+  .tanzania-hub__directory { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.tanzania-hub__directory-group {
+  border: 1px solid var(--border);
+  border-radius: 1.15rem;
+  background: #fff;
+  padding: 1.1rem 1.15rem;
+}
+.tanzania-hub__directory-group h3 { margin-bottom: 0.15rem; }
+.tanzania-hub__pill-list--plain {
+  list-style: none;
+  padding: 0;
+}
+.tanzania-hub__pill-list--plain li,
+.tanzania-hub__directory-group .tanzania-hub__pill-list span {
+  display: inline-flex;
+  min-height: 2.4rem;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.4rem 0.9rem;
   font-size: 0.92rem;
 }
 
