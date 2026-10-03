@@ -31,9 +31,11 @@ export const UGANDA_OFFICIAL_LINKS = {
   embassyVisa: "https://hcikampala.gov.in/",
   embassyEvisa: "https://hcikampala.gov.in/page/e-visa/",
   meaBrief: "https://www.mea.gov.in/Portal/ForeignRelation/India-Uganda_bilateral_brief_1_.pdf",
+  meaBrief2026: "https://www.mea.gov.in/Portal/ForeignRelation/India-Uganda26.pdf",
   globocan: "https://gco.iarc.who.int/media/globocan/factsheets/populations/800-uganda-fact-sheet.pdf",
   iarcToday: "https://gco.iarc.who.int/today/en/fact-sheets-populations",
   whoData: "https://data.who.int/countries/800",
+  whoAfro: "https://afro.who.int/countries/uganda/topic/health-topics-uganda",
   mohfwYellowFever: "https://ihpoe.mohfw.gov.in/vaccination.php",
   boi: "https://boi.gov.in",
 } as const;
@@ -166,7 +168,7 @@ export const ugandaPageCopyEn = {
       {
         question: "Can Ugandan citizens apply for an Indian e-Medical Visa?",
         answer:
-          "Yes. Uganda is listed among the countries eligible for India's e-Visa services, which include an e-Medical Visa category. The official fee list currently shows Uganda at US$80.",
+          "Yes. Uganda is listed among the countries eligible for India's e-Visa services, which include an e-Medical Visa category.",
       },
       {
         question: "What treatments can Ugandan patients receive in India?",
@@ -197,6 +199,7 @@ export const ugandaPageCopyEn = {
     points: [
       "A practical pathway is diagnosis, specialty, subspecialty, treatment, doctor, hospital, cost, visa and then travel",
       "India has tertiary and quaternary hospitals covering cancer, cardiac care, neurosurgery, orthopaedics, urology, gastroenterology, fertility, paediatrics and selected transplantation",
+      "India and Uganda already have a documented healthcare relationship, including a Bhabhatron cancer-therapy machine announced during the 2018 visit, a radiotherapy machine commissioned at Mulago Hospital in February 2020, and the second phase of the Pan-Africa e-network / e-VBAB programme",
       "Multidisciplinary assessment can be useful when surgery, oncology, diagnostics and rehabilitation need to be coordinated",
       "A second medical opinion can be requested from existing records before a flight is booked",
     ],
@@ -206,8 +209,10 @@ export const ugandaPageCopyEn = {
   relationship: {
     heading: "India–Uganda Healthcare Cooperation",
     paragraphs: [
-      "India and Uganda have a long-standing development and healthcare relationship. An official MEA bilateral brief records that a telemedicine centre was established at Mulago Hospital in Kampala under the Pan-African e-Network, with diagnostic equipment including ECG, X-ray and ultrasound, and a connection to 11 Indian hospitals. The centres were inaugurated in August 2010.",
-      "The same official brief family records that a radiotherapy machine was commissioned at Mulago Hospital in February 2020. A later brief records that the second phase of the Pan-Africa e-network was launched in Uganda, with a university and a hospital identified for e-VBAB, and that an e-Vidya Bharati / e-Arogya Bharati learning centre was inaugurated at Makerere University in November 2021.",
+      "India and Uganda have a long-standing relationship that official MEA briefs list among political, economic, education, health and other fields. During Prime Minister Narendra Modi's July 2018 visit to Uganda, India announced the gifting of a Bhabhatron cancer-therapy machine to the Uganda Cancer Institute. The official brief records that the radiotherapy machine was commissioned at Mulago Hospital in February 2020.",
+      "The same official records describe India's COVID-period medical support: 100,000 hydroxychloroquine tablets and 100,000 paracetamol tablets in May 2020, a further consignment of 521 cartons of medicines in August 2020, and 100,000 Covishield vaccines gifted in March 2021.",
+      "The Government of India also launched the second phase of the Pan-Africa e-network project in Uganda. Official briefs record that a university and a hospital were identified for e-VBAB, and that online courses under e-Vidya Bharati began from the 2020–21 academic year.",
+      "In August 2024, a two-member team from Uganda's Ministry of Health and National Drug Authority visited India for the Policy Makers Forum. The official 2026 brief records that the Indian Pharmacopoeia Commission assisted the delegates on India's drug-quality and safety-control regime, recognition of the Indian Pharmacopoeia, and private-sector pharmaceutical capabilities.",
       "The High Commission of India in Kampala is concurrently accredited to Burundi. The Mission currently states that online application for e-Visa and regular visa services was enabled with effect from 10 September 2026 for Ugandan nationals and other foreigners residing in Uganda.",
       "These government-to-government relationships provide useful context for a Uganda–India medical pathway. They do not determine which treatment is appropriate for an individual patient.",
     ],
@@ -217,6 +222,7 @@ export const ugandaPageCopyEn = {
     intro:
       "Uganda's healthcare system manages both infectious diseases and a growing noncommunicable-disease burden, including cancer and cardiovascular disease. Some patients travel when they need a particular subspecialist, advanced procedure, multidisciplinary service or second opinion.",
     points: [
+      "WHO Africa's Uganda health-topics profile reports a maternal mortality ratio of 189 deaths per 100,000 live births and a neonatal mortality rate of 22 per 1,000 live births. These are country-level indicators and do not determine an individual patient's treatment pathway.",
       "English is an official language of Uganda, and Luganda is widely spoken. Indian hospitals generally use English for medical records and specialist consultations, which can simplify communication for many Ugandan patients. Interpretation can still be arranged when needed.",
       "Most international medical journeys begin at Entebbe International Airport. Patients travelling from Kampala, Jinja, Mbarara, Gulu, Mbale or other regions may first need to reach Entebbe.",
       "For some patients, appropriate treatment is available within Uganda. International treatment may become relevant when a particular specialist, technology or second opinion is required.",
@@ -767,7 +773,19 @@ export const ugandaPageCopyEn = {
     },
     {
       q: "Does India have an existing healthcare relationship with Uganda?",
-      a: "Yes. Official MEA records include the Mulago Hospital telemedicine centre connected to 11 Indian hospitals, a radiotherapy machine commissioned at Mulago in February 2020, and e-VBAB / e-Vidya Bharati activity including a Makerere University learning centre.",
+      a: "Yes. Official MEA records include a Bhabhatron cancer-therapy machine announced during the July 2018 visit and commissioned as a radiotherapy machine at Mulago Hospital in February 2020, COVID-period medicine and Covishield support, the second phase of the Pan-Africa e-network / e-VBAB programme, and an August 2024 visit by Uganda's Ministry of Health and National Drug Authority to India's Policy Makers Forum.",
+    },
+    {
+      q: "Can I get cancer treatment in India?",
+      a: "Yes. Indian cancer centres provide medical oncology, surgical oncology, radiation oncology and advanced systemic treatments according to the patient's diagnosis. GLOBOCAN 2024 estimates that cervix, breast, prostate, oesophagus and colorectum are the leading sites by new cases in Uganda.",
+    },
+    {
+      q: "Do I need to carry my previous medical reports?",
+      a: "Yes. Patients should carry physical and digital copies of important medical records, including diagnosis, imaging, pathology, previous treatment notes, current medicines and hospital letters.",
+    },
+    {
+      q: "Does GAF Healthcare help with hospital selection?",
+      a: "Yes. GAF Healthcare can help map the patient's diagnosis to the relevant specialty, treatment, doctor and hospital, then coordinate a specialist opinion, an indicative estimate and the hospital letter required for the visa process.",
     },
     {
       q: "Can Ugandan patients get heart surgery in India?",
@@ -830,9 +848,14 @@ export const ugandaPageCopyEn = {
         detail: "Mission e-Visa page. Confirm the live instructions before applying.",
       },
       {
-        label: "Ministry of External Affairs, India — India–Uganda bilateral brief",
+        label: "Ministry of External Affairs, India — India–Uganda bilateral brief, November 2022",
         href: UGANDA_OFFICIAL_LINKS.meaBrief,
-        detail: "Mulago telemedicine centre, radiotherapy machine at Mulago in February 2020, and e-VBAB / Makerere learning-centre context.",
+        detail: "July 2018 Bhabhatron announcement for the Uganda Cancer Institute, radiotherapy machine commissioned at Mulago in February 2020, COVID medicines and Covishield, and the second phase of the Pan-Africa e-network / e-VBAB.",
+      },
+      {
+        label: "Ministry of External Affairs, India — India–Uganda bilateral brief, April 2026",
+        href: UGANDA_OFFICIAL_LINKS.meaBrief2026,
+        detail: "Confirms Mulago radiotherapy commissioning, COVID-period medical support, e-VBAB / e-Vidya Bharati, and the August 2024 Ministry of Health / National Drug Authority visit to India's Policy Makers Forum.",
       },
       {
         label: "IARC / WHO — GLOBOCAN 2024 Uganda fact sheet",
@@ -843,6 +866,11 @@ export const ugandaPageCopyEn = {
         label: "WHO — Uganda health data overview",
         href: UGANDA_OFFICIAL_LINKS.whoData,
         detail: "Country-level WHO health information and health-system indicators.",
+      },
+      {
+        label: "WHO Regional Office for Africa — Uganda health topics",
+        href: UGANDA_OFFICIAL_LINKS.whoAfro,
+        detail: "Maternal mortality ratio of 189 per 100,000 live births and neonatal mortality rate of 22 per 1,000 live births.",
       },
       {
         label: "Ministry of Health and Family Welfare, India — IHR yellow-fever vaccination",

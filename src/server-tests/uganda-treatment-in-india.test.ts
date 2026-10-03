@@ -92,10 +92,18 @@ test("Uganda hub copy stays Uganda-specific and medically responsible", () => {
   assert.match(blob, /59,662/);
   assert.match(blob, /GLOBOCAN 2024/);
   assert.match(blob, /10 September 2026/);
+  assert.match(blob, /Bhabhatron/);
+  assert.match(blob, /Covishield/);
+  assert.match(blob, /National Drug Authority/);
+  assert.match(blob, /189 deaths per 100,000/);
   assert.ok(copy.faqs.length >= 15);
   assert.equal(copy.quickAnswer.heading, "Quick Answer: Medical Treatment in India for Ugandan Patients");
   assert.equal(copy.quickAnswer.items[0]?.question, "Can Ugandan patients travel to India for medical treatment?");
-  assert.match(copy.quickAnswer.items[1]?.answer ?? "", /US\$80/);
+  assert.equal(
+    copy.quickAnswer.items[1]?.answer,
+    "Yes. Uganda is listed among the countries eligible for India's e-Visa services, which include an e-Medical Visa category.",
+  );
+  assert.match(copy.visa.points.join(" "), /US\$80/);
   assert.equal(copy.journey.steps.length, 12);
   assert.match(blob, /WhatsApp \+91 90443 46292/);
   assert.match(page, /blogEstimateWhatsapp/);
