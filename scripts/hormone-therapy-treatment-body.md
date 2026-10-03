@@ -44,8 +44,6 @@ Major comprehensive cancer centres and medical-oncology programmes. Live GAF cat
 **What records should I send first?**
 Pathology with ER/PR/HER2 where relevant, PSA reports for prostate cancer, imaging, previous treatment summaries and a current medication list.
 
-![Unlabeled schematic of a hormone ligand approaching a receptor on a cancer cell, with a blocking wedge](/uploads/treatments/ht-hero.webp)
-
 ## What is hormone therapy?
 
 Hormone therapy is a type of systemic cancer treatment, meaning the medicine can act throughout the body rather than only at the original tumour site.
@@ -64,6 +62,8 @@ Hormone therapy works by either:
 3. Interfering with the hormone receptor or pathway that sends growth signals.
 
 The exact approach depends on the type of cancer and its molecular characteristics.
+
+![Unlabeled schematic of a hormone ligand approaching a receptor on a cancer cell, with a blocking wedge](/uploads/treatments/ht-hero.webp)
 
 [Ask whether endocrine therapy is appropriate for your pathology](/consult?treatment=hormone-therapy-in-india)
 
