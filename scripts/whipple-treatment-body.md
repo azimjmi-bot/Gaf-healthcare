@@ -1411,7 +1411,7 @@ Patients should not book a fixed early departure date without discussing it with
 
 Yes.
 
-In selected patients, chemotherapy may be given before surgery as part of a neoadjuvant treatment strategy.
+In selected patients, chemotherapy may be given before surgery as part of a neoadjuvant treatment strategy. Named pre-operative lists sit on [Neoadjuvant Chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india).
 
 ### 29. What happens if the tumor involves the portal vein?
 

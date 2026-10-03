@@ -41,7 +41,7 @@ This distinction is particularly important when researching treatment in India.
 
 **Colon cancer** generally involves the large intestine above the rectum.
 
-**Rectal cancer** develops in the rectum and often requires a different combination of surgery, chemotherapy and radiation or other neoadjuvant approaches.
+**Rectal cancer** develops in the rectum and often requires a different combination of surgery, chemotherapy and radiation or other neoadjuvant approaches. Named pre-operative lists sit on [Neoadjuvant Chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india).
 
 This page focuses specifically on **colon cancer treatment**.
 

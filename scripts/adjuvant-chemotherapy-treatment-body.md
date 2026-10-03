@@ -77,7 +77,7 @@ The terms are often confused.
 | GAF Healthcare India planning | $2,500–$10,000 | $2,500–$10,000 |
 | Typical stay on the cost sheet | Cycles before surgery · 2–4 months | Cycles after surgery · 3–6 months |
 
-The correct sequence depends on the individual cancer. Neighbouring [neoadjuvant chemotherapy](/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy) is a different sheet and is not an adjuvant quotation.
+The correct sequence depends on the individual cancer. Neighbouring [neoadjuvant chemotherapy](/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy) is a different sheet and is not an adjuvant quotation. Named pre-operative lists sit on [Neoadjuvant Chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india).
 
 ![Comparison of chemotherapy given before surgery and after surgery](/uploads/treatments/adj-compare.webp)
 

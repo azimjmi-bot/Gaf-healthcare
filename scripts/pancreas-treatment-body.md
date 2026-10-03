@@ -409,7 +409,7 @@ It may be used before surgery, after surgery or as the main cancer-directed trea
 
 ### Before Surgery
 
-This is called neoadjuvant chemotherapy.
+This is called neoadjuvant chemotherapy. Named pre-operative lists sit on [Neoadjuvant Chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india).
 
 It may be considered to:
 

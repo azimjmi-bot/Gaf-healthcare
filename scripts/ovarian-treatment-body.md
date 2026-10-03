@@ -233,7 +233,7 @@ Some patients with advanced ovarian cancer may not be ideal candidates for immed
 
 In such cases, doctors may use:
 
-**Neoadjuvant chemotherapy → Interval cytoreductive surgery → Additional chemotherapy**
+**Neoadjuvant chemotherapy → Interval cytoreductive surgery → Additional chemotherapy** Named pre-operative lists sit on [Neoadjuvant Chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india).
 
 The purpose is to reduce tumor burden before surgery and potentially make complete or optimal cytoreduction more achievable.
 
