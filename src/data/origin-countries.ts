@@ -14,6 +14,16 @@ export type OriginCountryHub = {
 
 export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
   {
+    name: "Botswana",
+    city: "Gaborone",
+    destination: "India",
+    href: "/botswana/treatment-in-india",
+    flag: "🇧🇼",
+    flagLabel: "Flag of Botswana",
+    visaNote:
+      "Botswana is currently on India’s e-Visa list. Batswana patients can use the e-Medical Visa or apply through the High Commission of India in Gaborone.",
+  },
+  {
     name: "Ethiopia",
     city: "Addis Ababa",
     destination: "India",
