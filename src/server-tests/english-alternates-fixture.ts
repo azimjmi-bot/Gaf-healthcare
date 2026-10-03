@@ -228,6 +228,11 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en"],
   },
   {
+    label: "cote divoire treatment in India hub",
+    path: "/cote-divoire/treatment-in-india",
+    published: ["en"],
+  },
+  {
     label: "ethiopia treatment in India hub",
     path: "/ethiopia/treatment-in-india",
     published: ["en"],

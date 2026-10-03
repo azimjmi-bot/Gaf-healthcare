@@ -74,6 +74,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Chad is not currently on India’s e-Visa list. Chadian patients apply for a Medical Visa through the Embassy of India in N'Djamena.",
   },
   {
+    name: "Côte d'Ivoire",
+    city: "Abidjan",
+    destination: "India",
+    href: "/cote-divoire/treatment-in-india",
+    flag: "🇨🇮",
+    flagLabel: "Flag of Côte d'Ivoire",
+    visaNote:
+      "Côte d'Ivoire is currently on India’s e-Visa list. Ivorian patients can use the e-Medical Visa or apply through the Embassy of India in Abidjan.",
+  },
+  {
     name: "Ethiopia",
     city: "Addis Ababa",
     destination: "India",
