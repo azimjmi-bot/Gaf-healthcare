@@ -130,6 +130,7 @@ test("the homepage origin-country section links Ethiopia and Tanzania to publish
   assert.deepEqual(
     ORIGIN_COUNTRY_HUBS.map((row) => ({ name: row.name, href: row.href })),
     [
+      { name: "Algeria", href: "/algeria/treatment-in-india" },
       { name: "Botswana", href: "/botswana/treatment-in-india" },
       { name: "Chad", href: "/chad/treatment-in-india" },
       { name: "Ethiopia", href: "/ethiopia/treatment-in-india" },

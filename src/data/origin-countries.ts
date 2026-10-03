@@ -14,6 +14,16 @@ export type OriginCountryHub = {
 
 export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
   {
+    name: "Algeria",
+    city: "Algiers",
+    destination: "India",
+    href: "/algeria/treatment-in-india",
+    flag: "🇩🇿",
+    flagLabel: "Flag of Algeria",
+    visaNote:
+      "Algeria is not currently on India’s e-Visa list. Algerian patients apply for a Medical Visa through the Embassy of India in Algiers.",
+  },
+  {
     name: "Botswana",
     city: "Gaborone",
     destination: "India",

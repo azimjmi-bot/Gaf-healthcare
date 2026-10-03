@@ -151,6 +151,11 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     sitemapEntry("/consult", locale, { lastModified: now, changeFrequency: "monthly", priority: 0.5 }),
     ...(locale === "en"
       ? [
+          sitemapEntry("/algeria/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
           sitemapEntry("/botswana/treatment-in-india", locale, {
             lastModified: now,
             changeFrequency: "monthly",

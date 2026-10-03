@@ -198,6 +198,11 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
   { label: "blog post", path: "/blogs/imrt-vs-3d-crt", published: ["en"] },
   { label: "consult", path: "/consult", published: ["en"] },
   {
+    label: "algeria treatment in India hub",
+    path: "/algeria/treatment-in-india",
+    published: ["en"],
+  },
+  {
     label: "botswana treatment in India hub",
     path: "/botswana/treatment-in-india",
     published: ["en"],
