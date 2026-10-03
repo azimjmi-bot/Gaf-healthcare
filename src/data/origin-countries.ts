@@ -204,6 +204,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Rwanda is currently on India’s e-Visa list. Rwandan patients can use the e-Medical Visa or apply through the High Commission of India. The High Commission of India in Kigali currently notes that visa services are rendered by the High Commission of India, Kampala until further notice — confirm the live receiving Mission before applying.",
   },
   {
+    name: "Senegal",
+    city: "Dakar",
+    destination: "India",
+    href: "/senegal/treatment-in-india",
+    flag: "🇸🇳",
+    flagLabel: "Flag of Senegal",
+    visaNote:
+      "Senegal is currently on India’s e-Visa list. Senegalese patients can use the e-Medical Visa or apply through the Embassy of India in Dakar. The Embassy states that it does not process e-Visa applications.",
+  },
+  {
     name: "South Sudan",
     city: "Juba",
     destination: "India",

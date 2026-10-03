@@ -246,6 +246,11 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
             changeFrequency: "monthly",
             priority: 0.75,
           }),
+          sitemapEntry("/senegal/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
           sitemapEntry("/south-sudan/treatment-in-india", locale, {
             lastModified: now,
             changeFrequency: "monthly",
