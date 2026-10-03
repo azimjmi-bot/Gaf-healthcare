@@ -214,6 +214,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Senegal is currently on India’s e-Visa list. Senegalese patients can use the e-Medical Visa or apply through the Embassy of India in Dakar. The Embassy states that it does not process e-Visa applications.",
   },
   {
+    name: "Somalia",
+    city: "Mogadishu",
+    destination: "India",
+    href: "/somalia/treatment-in-india",
+    flag: "🇸🇴",
+    flagLabel: "Flag of Somalia",
+    visaNote:
+      "Somalia is not currently on India’s e-Visa list. Somali patients apply for a Medical Visa through the High Commission of India in Nairobi, which is concurrently accredited to Somalia, or through the live receiving Mission including the Embassy of India in Addis Ababa.",
+  },
+  {
     name: "South Sudan",
     city: "Juba",
     destination: "India",
