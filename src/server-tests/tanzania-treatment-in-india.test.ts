@@ -104,11 +104,12 @@ test("Tanzania hub copy stays Tanzania-specific and medically responsible", () =
 
 test("the homepage origin-country section links Tanzania to its published hub", () => {
   const home = readFileSync(HOME_FILE, "utf8");
-  assert.match(home, /tanzania\/treatment-in-india/);
   assert.match(home, /from-your-country/);
+  assert.match(home, /ORIGIN_COUNTRY_HUBS/);
+  assert.match(home, /country\.href/);
   assert.ok(!HOME_DESTINATIONS.some((row) => /tanzania/i.test(row.name)));
   assert.deepEqual(
-    ORIGIN_COUNTRY_HUBS.map((row) => row.href),
-    ["/tanzania/treatment-in-india"],
+    ORIGIN_COUNTRY_HUBS.map((row) => ({ name: row.name, href: row.href })),
+    [{ name: "Tanzania", href: "/tanzania/treatment-in-india" }],
   );
 });
