@@ -32,6 +32,8 @@ export const SOUTH_AFRICA_OFFICIAL_LINKS = {
   embassyEvisa: "https://www.hcipretoria.gov.in/page/e-visa/",
   embassyFoc: "https://www.hcipretoria.gov.in/section/news/11th-round-of-foreign-office-consultations-between-india-and-south-africa/",
   meaBrief: "https://www.mea.gov.in/Portal/ForeignRelation/Bilateral-brief_SA-for-XPD-June-2024.pdf",
+  mea2006: "https://www.mea.gov.in/images/pdf/main_2006.pdf",
+  pib2026: "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2268311",
   globocan: "https://gco.iarc.who.int/media/globocan/factsheets/populations/710-south-africa-fact-sheet.pdf",
   iarcToday: "https://gco.iarc.who.int/today/en/fact-sheets-populations",
   whoData: "https://data.who.int/countries/710",
@@ -168,7 +170,7 @@ export const southAfricaPageCopyEn = {
       {
         question: "Can South African citizens apply for an Indian e-Medical Visa?",
         answer:
-          "Yes. South Africa is listed among the countries eligible for India's e-Visa services, which include e-Medical and e-Medical Attendant Visas. The official fee list currently shows South Africa at US$00 (gratis). Confirm the live amount before payment.",
+          "Yes. South Africa is listed among the countries eligible for India's e-Visa services, which include e-Medical and e-Medical Attendant Visas.",
       },
       {
         question: "What treatments can South African patients receive in India?",
@@ -199,6 +201,7 @@ export const southAfricaPageCopyEn = {
     points: [
       "A practical pathway is diagnosis, specialty, subspecialty, treatment, doctor, hospital, cost, visa and then travel",
       "India has tertiary and quaternary hospitals covering cancer, cardiac care, neurosurgery, orthopaedics, urology, gastroenterology, fertility, paediatrics and selected transplantation",
+      "India and South Africa have discussed health cooperation for many years, including the 2006 joint discussions on health services, diagnostics and medical care, and more recent scientific cooperation in biotechnology, genomics, vaccine development, health technologies and pandemic preparedness",
       "Multidisciplinary assessment can be useful when surgery, oncology, diagnostics and rehabilitation need to be coordinated",
       "A second medical opinion can be requested from existing records before a flight is booked",
     ],
@@ -210,7 +213,9 @@ export const southAfricaPageCopyEn = {
     paragraphs: [
       "India and South Africa have a long-standing strategic relationship. The official MEA brief records that the two countries signed a Strategic Partnership in March 1997 — the Red Fort Declaration — making South Africa India's first strategic partner. 2023 marked 30 years of re-established diplomatic relations.",
       "The same official brief records that bilateral agreements have been concluded in diverse areas including health, science and technology, and human-resource development through ITEC. South Africa's Minister of Health attended the G20 Health Ministers' Meeting in Gandhinagar on 18–19 August 2023 during India's G20 Presidency.",
+      "In the 2006 India–South Africa joint discussions, recorded in the Ministry of External Affairs compilation of India's foreign relations, both sides recognised the priority attached to the health sector and agreed that the Agreement on Co-operation in Health and Medicine should be implemented expeditiously. The same record states that South African and Indian companies providing health services, including diagnostics and medical care, would be encouraged to work jointly to provide affordable health care to nationals of both countries as well as in third countries.",
       "The High Commission of India in Pretoria records that the 11th round of Foreign Office Consultations, held in New Delhi on 3 August 2022, reviewed the spectrum of bilateral relations including cooperation in health.",
+      "In June 2026, the Press Information Bureau recorded that India and South Africa discussed expanding scientific cooperation, including substantial opportunities in biotechnology, genomics, vaccine development, health technologies and pandemic preparedness. India highlighted capabilities in biotechnology, affordable healthcare innovation and vaccine manufacturing, while South Africa expressed interest in expanding health-science and vaccine-research cooperation.",
       "These government-to-government relationships provide useful context for a South Africa–India medical pathway. They do not determine which treatment is appropriate for an individual patient.",
     ],
   },
@@ -219,6 +224,7 @@ export const southAfricaPageCopyEn = {
     intro:
       "South Africa has a substantial public and private healthcare system. Some patients still travel when they want a particular subspecialist, a second opinion, an advanced procedure or a multidisciplinary pathway they have chosen to access in India.",
     points: [
+      "South Africa has a large and sophisticated healthcare system, including specialist public and private hospitals, medical schools, research institutions and advanced clinical services. International treatment should therefore not be presented as the only or automatic solution for South African patients.",
       "South Africa has 11 official languages, including English, Afrikaans, isiZulu and isiXhosa. English is widely used in South African healthcare and in Indian hospitals, which can simplify consultations, consent and discharge instructions.",
       "Many international medical journeys begin at O.R. Tambo International Airport in Johannesburg. Patients may also depart from Cape Town, Durban, Pretoria or Gqeberha depending on the itinerary.",
       "For some patients, appropriate treatment is already available in South Africa. International treatment may become relevant when a particular specialist, technology, multidisciplinary service or second opinion is required.",
@@ -774,7 +780,15 @@ export const southAfricaPageCopyEn = {
     },
     {
       q: "Does India have an existing healthcare relationship with South Africa?",
-      a: "Yes. Official MEA records include a 1997 Strategic Partnership, health among the areas of bilateral agreements, ITEC capacity building, and South Africa's Health Minister attending the G20 Health Ministers' Meeting in Gandhinagar in August 2023. HCI Pretoria records that the 2022 Foreign Office Consultations reviewed health among other fields.",
+      a: "Yes. Official MEA records include a 1997 Strategic Partnership, health among the areas of bilateral agreements, ITEC capacity building, and South Africa's Health Minister attending the G20 Health Ministers' Meeting in Gandhinagar in August 2023. The 2006 joint discussions encouraged Indian and South African companies providing health services, including diagnostics and medical care, to work jointly. HCI Pretoria records that the 2022 Foreign Office Consultations reviewed health. A June 2026 PIB release also records discussion of biotechnology, genomics, vaccine development, health technologies and pandemic preparedness.",
+    },
+    {
+      q: "Do I need to carry my previous medical reports to India?",
+      a: "Yes. Patients should carry physical and digital copies of important medical records, including diagnosis, imaging, pathology, previous treatment notes, current medicines and hospital letters. Complete records make both the visa process and the first hospital review more useful.",
+    },
+    {
+      q: "Does GAF Healthcare help with hospital selection?",
+      a: "Yes. GAF Healthcare can help map the patient's diagnosis to the relevant specialty, treatment, doctor and hospital, then coordinate a specialist opinion, an indicative estimate and the hospital letter required for the visa process.",
     },
     {
       q: "Can South African patients get heart surgery in India?",
@@ -845,6 +859,16 @@ export const southAfricaPageCopyEn = {
         label: "Ministry of External Affairs, India — India–South Africa bilateral brief, June 2024",
         href: SOUTH_AFRICA_OFFICIAL_LINKS.meaBrief,
         detail: "1997 Red Fort Declaration Strategic Partnership, health among bilateral agreement areas, ITEC, and the August 2023 G20 Health Ministers' Meeting.",
+      },
+      {
+        label: "Ministry of External Affairs, India — India's Foreign Relations 2006",
+        href: SOUTH_AFRICA_OFFICIAL_LINKS.mea2006,
+        detail: "2006 India–South Africa joint discussions on implementing the Agreement on Co-operation in Health and Medicine, and encouraging companies providing health services, diagnostics and medical care to work jointly.",
+      },
+      {
+        label: "Press Information Bureau, Government of India — India–South Africa science and technology talks, 3 June 2026",
+        href: SOUTH_AFRICA_OFFICIAL_LINKS.pib2026,
+        detail: "Discussions highlighting biotechnology, genomics, vaccine development, health technologies and pandemic preparedness.",
       },
       {
         label: "IARC / WHO — GLOBOCAN 2024 South Africa fact sheet",

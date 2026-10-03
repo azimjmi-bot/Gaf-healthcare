@@ -91,10 +91,17 @@ test("South Africa hub copy stays South Africa-specific and medically responsibl
   assert.match(blob, /240,745/);
   assert.match(blob, /GLOBOCAN 2024/);
   assert.match(blob, /Red Fort Declaration/);
+  assert.match(blob, /diagnostics and medical care/);
+  assert.match(blob, /biotechnology, genomics, vaccine development/);
+  assert.match(blob, /Press Information Bureau/);
   assert.ok(copy.faqs.length >= 15);
   assert.equal(copy.quickAnswer.heading, "Quick Answer: Medical Treatment in India for South African Patients");
   assert.equal(copy.quickAnswer.items[0]?.question, "Can South African patients travel to India for medical treatment?");
-  assert.match(copy.quickAnswer.items[1]?.answer ?? "", /US\$00/);
+  assert.equal(
+    copy.quickAnswer.items[1]?.answer,
+    "Yes. South Africa is listed among the countries eligible for India's e-Visa services, which include e-Medical and e-Medical Attendant Visas.",
+  );
+  assert.match(copy.visa.points.join(" "), /US\$00/);
   assert.equal(copy.journey.steps.length, 12);
   assert.match(blob, /WhatsApp \+91 90443 46292/);
   assert.match(page, /blogEstimateWhatsapp/);
