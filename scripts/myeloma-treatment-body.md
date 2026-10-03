@@ -319,7 +319,7 @@ There is no single treatment that is best for every patient. Treatment depends o
 Multiple myeloma is generally not considered curable, but it can often be controlled for long periods. Treatment in India follows modern approaches including combination drug therapy, stem-cell transplantation and selected advanced therapies.
 
 **How much does multiple myeloma treatment cost in India?**
-The cost varies widely. Neighbouring GAF USD sheets name the procedure that is actually booked. Autologous transplant planning is $18,000–$48,000. Chemotherapy is $1,500–$8,000+. Targeted therapy is $8,000–$30,000. Immunotherapy is $15,000–$45,000. Maintenance is $4,000–$18,000. CAR-T is $80,000–$180,000 when a named product is available. A patient-specific itemised estimate is necessary for an accurate figure.
+The cost varies widely. Neighbouring GAF USD sheets name the procedure that is actually booked. Autologous transplant planning is $18,000–$48,000. Chemotherapy is $1,500–$8,000+. Targeted therapy is $8,000–$30,000. Immunotherapy is $15,000–$45,000. Maintenance is $4,000–$18,000. Named dendritic-cell lists sit on [Dendritic Cell Therapy in India](/treatments/dendritic-cell-therapy-in-india). CAR-T is $80,000–$180,000 when a named product is available. A patient-specific itemised estimate is necessary for an accurate figure.
 
 **Is bone marrow transplant required for multiple myeloma?**
 Not every patient requires transplantation. Autologous stem cell transplantation is an important option for patients who are medically suitable. Eligibility is determined by overall health, frailty, organ function and disease characteristics rather than age alone.

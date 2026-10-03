@@ -222,7 +222,7 @@ The principal treatment approaches include:
 6. [Hormone therapy / androgen deprivation therapy](/doctors/India/Medical-Oncology/Hormone-Therapy)
 7. [Chemotherapy](/doctors/India/Medical-Oncology/Chemotherapy)
 8. [Targeted therapy](/doctors/India/Medical-Oncology/Targeted-Therapy)
-9. Immunotherapy in selected situations
+9. Immunotherapy in selected situations. Named dendritic-cell lists sit on [Dendritic Cell Therapy in India](/treatments/dendritic-cell-therapy-in-india).
 10. Radiopharmaceutical therapy
 11. Selected focal treatments
 12. Palliative and supportive treatment

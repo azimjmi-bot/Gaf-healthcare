@@ -323,7 +323,7 @@ Its use depends on tumor biology, specific biomarkers, previous treatment and th
 
 Patients should not assume that immunotherapy is appropriate simply because a cancer diagnosis has been made.
 
-GAF planning ranges for [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) are **$15,000–$45,000** when a named indication exists.
+GAF planning ranges for [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) are **$15,000–$45,000** when a named indication exists. Named dendritic-cell lists sit on [Dendritic Cell Therapy in India](/treatments/dendritic-cell-therapy-in-india).
 
 ## Hormonal Therapy
 

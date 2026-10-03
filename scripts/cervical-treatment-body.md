@@ -371,7 +371,7 @@ The eligibility requirements depend on the disease setting and applicable regula
 
 The KEYNOTE-A18 trial showed improved progression-free survival when pembrolizumab was added to chemoradiation in certain newly diagnosed high-risk cervical cancers.
 
-GAF planning ranges for [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) are **$15,000–$45,000**.
+GAF planning ranges for [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) are **$15,000–$45,000**. Named dendritic-cell lists sit on [Dendritic Cell Therapy in India](/treatments/dendritic-cell-therapy-in-india).
 
 ## Targeted Therapy for Cervical Cancer
 
