@@ -5293,3 +5293,25 @@ html[dir="rtl"] .icon-forward {
   .tanzania-hub__btn { width: 100%; }
   .tanzania-hub__table-wrap table { min-width: 28rem; }
 }
+
+.tanzania-hub__sticky { display: none; }
+@media (max-width: 767px) {
+  .tanzania-hub__sticky {
+    position: sticky;
+    bottom: 0;
+    z-index: 40;
+    display: flex;
+    gap: 0.4rem;
+    padding: 0.65rem 0.75rem calc(0.65rem + env(safe-area-inset-bottom));
+    background: color-mix(in oklch, var(--background) 92%, white);
+    border-top: 1px solid var(--border);
+  }
+  .tanzania-hub__sticky .tanzania-hub__btn {
+    flex: 1;
+    justify-content: center;
+    min-height: 2.75rem;
+    font-size: 0.78rem;
+    padding-inline: 0.4rem;
+    width: auto;
+  }
+}

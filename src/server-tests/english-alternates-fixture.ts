@@ -203,6 +203,11 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en"],
   },
   {
+    label: "angola treatment in India hub",
+    path: "/angola/treatment-in-india",
+    published: ["en"],
+  },
+  {
     label: "benin treatment in India hub",
     path: "/benin/treatment-in-india",
     published: ["en"],

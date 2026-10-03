@@ -24,6 +24,16 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Algeria is not currently on India’s e-Visa list. Algerian patients apply for a Medical Visa through the Embassy of India in Algiers.",
   },
   {
+    name: "Angola",
+    city: "Luanda",
+    destination: "India",
+    href: "/angola/treatment-in-india",
+    flag: "🇦🇴",
+    flagLabel: "Flag of Angola",
+    visaNote:
+      "Angola is currently on India’s e-Visa list. Angolan patients can use the e-Medical Visa or apply through the Embassy of India in Luanda.",
+  },
+  {
     name: "Benin",
     city: "Cotonou",
     destination: "India",
