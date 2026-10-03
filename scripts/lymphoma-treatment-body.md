@@ -24,7 +24,7 @@ Treatment may include chemotherapy, immunotherapy, targeted therapy, radiation t
 Some slow-growing lymphomas may initially be managed with active surveillance (watchful waiting) rather than immediate treatment. In contrast, aggressive lymphomas generally require prompt systemic treatment.
 
 **What is the cost of lymphoma treatment in India?**
-The cost of lymphoma treatment in India can vary substantially because treatment may range from a limited course of chemotherapy or radiotherapy to prolonged targeted therapy, transplantation or cellular therapy. Named targeted-therapy lists sit on [Targeted Therapy in India](/treatments/targeted-therapy-in-india).
+The cost of lymphoma treatment in India can vary substantially because treatment may range from a limited course of chemotherapy or radiotherapy to prolonged targeted therapy, transplantation or cellular therapy.
 
 **What is lymphoma?**
 A cancer of the lymphatic system. It develops when abnormal lymphocytes grow or survive in an uncontrolled way and can accumulate in lymph nodes or other organs.
@@ -174,7 +174,7 @@ Named [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) is **$15,000�
 
 ### 3. Targeted therapy
 
-Targeted therapies interfere with specific molecular pathways. Depending on the subtype, drugs may be directed against CD20, CD30, BTK, BCL2 or other molecular targets. They can be used alone or in combination.
+Targeted therapies interfere with specific molecular pathways. Depending on the subtype, drugs may be directed against CD20, CD30, BTK, BCL2 or other molecular targets. They can be used alone or in combination. Named targeted-therapy lists sit on [Targeted Therapy in India](/treatments/targeted-therapy-in-india).
 
 Named [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is **$8,000–$30,000**. Neighbouring [molecular targeted therapy](/costs/India/Medical-Oncology/Molecular-Targeted-Therapy) is **$10,000–$32,000**.
 

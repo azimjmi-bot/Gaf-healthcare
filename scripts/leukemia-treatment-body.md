@@ -22,7 +22,7 @@ Acute myeloid leukemia (AML), acute lymphoblastic leukemia (ALL), chronic myeloi
 Depending on the subtype: chemotherapy, targeted therapy, immunotherapy, molecular therapy, stem cell transplant and supportive treatment may be used.
 
 **Is chemotherapy always required?**
-No. Some leukemias, particularly many cases of CML and selected CLL, may initially be managed predominantly with targeted oral medicines or observation. Named targeted-therapy lists sit on [Targeted Therapy in India](/treatments/targeted-therapy-in-india).
+No. Some leukemias, particularly many cases of CML and selected CLL, may initially be managed predominantly with targeted oral medicines or observation.
 
 **When is bone marrow transplant considered?**
 It may be considered for selected high-risk, relapsed or refractory leukemias and other situations where the expected benefits outweigh the transplant risks.
@@ -158,7 +158,7 @@ Named [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) is **$1,500–$
 
 ### 2. Targeted therapy
 
-Targeted therapy attacks specific molecular pathways. Examples include tyrosine kinase inhibitors for BCR::ABL1-positive leukemia, FLT3-targeted therapy in selected AML, IDH-targeted therapies in selected AML, BCL-2-directed therapy in appropriate AML settings and other molecularly directed treatments. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india).
+Targeted therapy attacks specific molecular pathways. Examples include tyrosine kinase inhibitors for BCR::ABL1-positive leukemia, FLT3-targeted therapy in selected AML, IDH-targeted therapies in selected AML, BCL-2-directed therapy in appropriate AML settings and other molecularly directed treatments. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india). Named targeted-therapy lists sit on [Targeted Therapy in India](/treatments/targeted-therapy-in-india).
 
 Named [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is **$8,000–$30,000**. Neighbouring [molecular targeted therapy](/costs/India/Medical-Oncology/Molecular-Targeted-Therapy) is **$10,000–$32,000** when a documented mutation is the product.
 

@@ -12,7 +12,7 @@ This page is the ovarian-cancer pathway for GAF Healthcare. It sits beside [cerv
 
 ## Quick Answer: Ovarian Cancer Treatment in India
 
-**Ovarian cancer treatment in India typically involves surgery and chemotherapy, with targeted medicines used for selected patients based on tumor characteristics and genetic or molecular testing.** Named targeted-therapy lists sit on [Targeted Therapy in India](/treatments/targeted-therapy-in-india).
+**Ovarian cancer treatment in India typically involves surgery and chemotherapy, with targeted medicines used for selected patients based on tumor characteristics and genetic or molecular testing.**
 
 For early-stage disease, surgery may provide both diagnosis and staging and may be followed by chemotherapy depending on the tumor type and stage.
 
@@ -285,7 +285,7 @@ Modern supportive medicines can substantially improve the management of chemothe
 
 ## Targeted Therapy for Ovarian Cancer
 
-Targeted therapy is increasingly important in ovarian cancer. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india).
+Targeted therapy is increasingly important in ovarian cancer. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india). Named targeted-therapy lists sit on [Targeted Therapy in India](/treatments/targeted-therapy-in-india).
 
 Treatment selection depends on the tumor's molecular characteristics and previous treatment.
 

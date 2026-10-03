@@ -70,20 +70,20 @@ const REPLACEMENTS: Array<[string, string]> = [
     `The National Cancer Institute identifies surgery, chemotherapy, radiation therapy, targeted therapy and immunotherapy among the major treatment modalities for colon cancer, with treatment selected according to stage and individual disease characteristics.${LINK}`,
   ],
   [
-    "**Ovarian cancer treatment in India typically involves surgery and chemotherapy, with targeted medicines used for selected patients based on tumor characteristics and genetic or molecular testing.**",
-    `**Ovarian cancer treatment in India typically involves surgery and chemotherapy, with targeted medicines used for selected patients based on tumor characteristics and genetic or molecular testing.**${LINK}`,
+    "Targeted therapy is increasingly important in ovarian cancer. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india).",
+    `Targeted therapy is increasingly important in ovarian cancer. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india).${LINK}`,
   ],
   [
     "[Targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is designed to act against particular molecular abnormalities. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india).",
     `[Targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is designed to act against particular molecular abnormalities. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india).${LINK}`,
   ],
   [
-    "No. Some leukemias, particularly many cases of CML and selected CLL, may initially be managed predominantly with targeted oral medicines or observation.",
-    `No. Some leukemias, particularly many cases of CML and selected CLL, may initially be managed predominantly with targeted oral medicines or observation.${LINK}`,
+    "Targeted therapy attacks specific molecular pathways. Examples include tyrosine kinase inhibitors for BCR::ABL1-positive leukemia, FLT3-targeted therapy in selected AML, IDH-targeted therapies in selected AML, BCL-2-directed therapy in appropriate AML settings and other molecularly directed treatments. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india).",
+    `Targeted therapy attacks specific molecular pathways. Examples include tyrosine kinase inhibitors for BCR::ABL1-positive leukemia, FLT3-targeted therapy in selected AML, IDH-targeted therapies in selected AML, BCL-2-directed therapy in appropriate AML settings and other molecularly directed treatments. Named molecular-matched lists sit on [Molecular Targeted Therapy in India](/treatments/molecular-targeted-therapy-in-india).${LINK}`,
   ],
   [
-    "The cost of lymphoma treatment in India can vary substantially because treatment may range from a limited course of chemotherapy or radiotherapy to prolonged targeted therapy, transplantation or cellular therapy.",
-    `The cost of lymphoma treatment in India can vary substantially because treatment may range from a limited course of chemotherapy or radiotherapy to prolonged targeted therapy, transplantation or cellular therapy.${LINK}`,
+    "Targeted therapies interfere with specific molecular pathways. Depending on the subtype, drugs may be directed against CD20, CD30, BTK, BCL2 or other molecular targets. They can be used alone or in combination.",
+    `Targeted therapies interfere with specific molecular pathways. Depending on the subtype, drugs may be directed against CD20, CD30, BTK, BCL2 or other molecular targets. They can be used alone or in combination.${LINK}`,
   ],
   [
     "Unlike conventional chemotherapy, which can affect many rapidly dividing cells, targeted therapies are designed around a particular biological target. Depending on the cancer and biomarker, these treatments may be used alone or combined with chemotherapy, immunotherapy, hormone therapy, radiation therapy, or surgery. Named endocrine-therapy lists sit on [Hormone Therapy in India](/treatments/hormone-therapy-in-india).",
