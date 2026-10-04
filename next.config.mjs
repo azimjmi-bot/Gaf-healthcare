@@ -1,3 +1,9 @@
+import { fileURLToPath } from "node:url";
+
+const modernPolyfills = fileURLToPath(
+  new URL("./src/lib/polyfills/modern-browsers.js", import.meta.url),
+);
+
 /** @type {import('next').NextConfig} */
 const sitemapHeaders = [
   {
@@ -19,6 +25,23 @@ const nextConfig = {
     // Production-only: emit <style> instead of render-blocking <link> CSS.
     // That removes the homepage CSS waterfall PageSpeed times at ~1.7s on 4G.
     inlineCss: true,
+  },
+  // Dev runs on Turbopack with no custom options; this key only tells Next the
+  // webpack hook below is intentional.
+  turbopack: {},
+  // Production builds run with --webpack (see package.json). Next always
+  // bundles its ES2019+ polyfill module into the client entry regardless of
+  // browserslist; swap it for the one shim our targets can still lack.
+  webpack(config, { isServer, webpack }) {
+    if (!isServer) {
+      config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(
+          /polyfills[\\/]polyfill-module(\.js)?$/,
+          modernPolyfills,
+        ),
+      );
+    }
+    return config;
   },
   allowedDevOrigins: [
     "127.0.0.1",
@@ -274,9 +297,9 @@ const nextConfig = {
     // desktop masters for hero, cards, or avatars.
     deviceSizes: [640, 750, 828, 1080, 1200, 1600, 1920],
     imageSizes: [64, 96, 128, 256, 384],
-    // 60 is used for small photo tiles (destination cards) where the
-    // default 75 spends bytes that are invisible at ~200px.
-    qualities: [60, 75],
+    // 40 is for the destination tiles (photo under a text gradient, ~220px
+    // tall); 60 for the hero; 75 default elsewhere.
+    qualities: [40, 60, 75],
     remotePatterns: [
       {
         protocol: "https",
