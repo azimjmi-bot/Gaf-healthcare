@@ -288,6 +288,11 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en"],
   },
   {
+    label: "russia treatment in India hub",
+    path: "/russia/treatment-in-india",
+    published: ["en"],
+  },
+  {
     label: "rwanda treatment in India hub",
     path: "/rwanda/treatment-in-india",
     published: ["en"],

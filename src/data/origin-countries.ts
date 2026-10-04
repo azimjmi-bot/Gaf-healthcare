@@ -228,6 +228,17 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Nigeria is not currently on India’s e-Visa list. Nigerian patients apply for a Medical Visa through the High Commission of India in Abuja or the Consulate General of India in Lagos.",
   },
   {
+    name: "Russia",
+    city: "Moscow",
+    destination: "India",
+    continent: "Europe",
+    href: "/russia/treatment-in-india",
+    flag: "🇷🇺",
+    flagLabel: "Flag of Russia",
+    visaNote:
+      "Russia is currently on India’s e-Visa list. A category-wise official table lists the e-Medical Visa at US$120. Russian patients can use the e-Medical Visa or apply through the Embassy of India in Moscow.",
+  },
+  {
     name: "Rwanda",
     city: "Kigali",
     destination: "India",
