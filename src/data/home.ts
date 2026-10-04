@@ -38,48 +38,42 @@ export const HOME_DESTINATIONS = [
     name: "India",
     filter: "India",
     blurb: "Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad",
-    image:
-      "https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/india.webp",
     imageAlt: "Taj Mahal, India",
   },
   {
     name: "Turkey",
     filter: "Türkiye",
     blurb: "Istanbul",
-    image:
-      "https://images.unsplash.com/photo-1524231757912-21f4fe3a7200?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/turkey.webp",
     imageAlt: "Istanbul skyline, Turkey",
   },
   {
     name: "Thailand",
     filter: "Thailand",
     blurb: "Bangkok",
-    image:
-      "https://images.unsplash.com/photo-1508009603885-50cf7c579365?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/thailand.webp",
     imageAlt: "Temple in Bangkok, Thailand",
   },
   {
     name: "UAE",
     filter: "United Arab Emirates",
     blurb: "Dubai",
-    image:
-      "https://images.unsplash.com/photo-1518684079-3c830dcef090?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/uae.webp",
     imageAlt: "Burj Al Arab and the Dubai coastline, United Arab Emirates",
   },
   {
     name: "Singapore",
     filter: "Singapore",
     blurb: "Singapore",
-    image:
-      "https://images.unsplash.com/photo-1525625293386-3f8f99389edd?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/singapore.webp",
     imageAlt: "Marina Bay, Singapore",
   },
   {
     name: "South Korea",
     filter: "South Korea",
     blurb: "Seoul",
-    image:
-      "https://images.unsplash.com/photo-1517154421773-0529f29ea451?auto=format&fit=crop&w=1200&q=80",
+    image: "/images/destinations/south-korea.webp",
     imageAlt: "Seoul cityscape, South Korea",
   },
 ] as const;

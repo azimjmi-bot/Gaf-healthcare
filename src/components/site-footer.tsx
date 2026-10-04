@@ -1,33 +1,38 @@
-"use client";
-
-import { LocaleLink as Link } from "@/components/locale-link";
-import { useLocale, useSurfaceAvailable, useT } from "@/components/locale-provider";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
+import Link from "next/link";
 import { GOOGLE_MAPS_URL, YOUTUBE_CHANNEL } from "@/data/home";
-import { stripLocalePrefix } from "@/lib/i18n/path";
-import { site } from "@/lib/site";
+import { SOURCE_LOCALE } from "@/lib/i18n/languages";
+import { localizeMessages } from "@/lib/i18n/localize";
 import type { LocaleSurface } from "@/lib/i18n/locale-availability";
+import { UI_MESSAGE_FIELDS } from "@/lib/i18n/messages";
+import { localePath } from "@/lib/i18n/path";
+import { getRequestLocale, getRequestPath } from "@/lib/i18n/request";
+import { surfaceIsAvailable } from "@/lib/i18n/surfaces";
+import { site } from "@/lib/site";
 
-export function SiteFooter() {
-  const pathname = stripLocalePrefix(usePathname() || "/").pathname;
-  const t = useT();
-  const locale = useLocale();
-  const surfaceAvailable = useSurfaceAvailable();
+export async function SiteFooter() {
+  const locale = await getRequestLocale();
+  const pathname = await getRequestPath();
+  const messages = await localizeMessages(locale);
   if (pathname.startsWith("/cms")) return null;
+  const t = (key: string) =>
+    locale === SOURCE_LOCALE
+      ? messages[key] || UI_MESSAGE_FIELDS[key] || key
+      : messages[key] || "";
+  const href = (path: string) => localePath(path, locale);
   const columns = [
     {
       title: t("footer.explore"),
-      links: [
-        { href: "/specialties", label: t("nav.specialties"), surface: "specialties" },
-        { href: "/doctors", label: t("nav.doctors"), surface: "doctors" },
-        { href: "/hospitals", label: t("nav.hospitals"), surface: "hospitals" },
-        { href: "/treatments", label: t("nav.treatments"), surface: "treatments" },
-        { href: "/costs", label: t("nav.costs"), surface: "costs" },
-        { href: "/blogs", label: t("nav.blogs"), surface: "blogs" },
-      ].filter((link) =>
-        surfaceAvailable(link.surface as LocaleSurface),
-      ),
+      links: (
+        [
+          { href: "/specialties", label: t("nav.specialties"), surface: "specialties" },
+          { href: "/doctors", label: t("nav.doctors"), surface: "doctors" },
+          { href: "/hospitals", label: t("nav.hospitals"), surface: "hospitals" },
+          { href: "/treatments", label: t("nav.treatments"), surface: "treatments" },
+          { href: "/costs", label: t("nav.costs"), surface: "costs" },
+          { href: "/blogs", label: t("nav.blogs"), surface: "blogs" },
+        ] as const
+      ).filter((link) => surfaceIsAvailable(locale, link.surface as LocaleSurface)),
     },
   ].filter((column) => column.links.length > 0);
   return (
@@ -72,7 +77,7 @@ export function SiteFooter() {
             <ul className="mt-4 space-y-2.5">
               {col.links.map((l) => (
                 <li key={l.href}>
-                  <Link href={l.href} className="text-sm text-gold-bright underline underline-offset-4 hover:text-ivory">
+                  <Link href={href(l.href)} className="text-sm text-gold-bright underline underline-offset-4 hover:text-ivory">
                     {l.label}
                   </Link>
                 </li>

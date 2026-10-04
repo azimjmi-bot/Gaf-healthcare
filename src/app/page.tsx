@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { LocaleLink as Link } from "@/components/locale-link";
+import Link from "next/link";
+import { localePath } from "@/lib/i18n/path";
 import { ArrowRight, Building2, Compass, HeartHandshake, ShieldCheck } from "lucide-react";
 import { DoctorPhoto } from "@/components/doctor-photo";
 import { HomeCover } from "@/components/home/home-cover";
@@ -30,8 +31,7 @@ import { SITE_URL } from "@/lib/seo";
 import type { Treatment } from "@/lib/treatments";
 import type { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const revalidate = 120;
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
@@ -60,6 +60,7 @@ function startingPrice(range: string) {
 
 export default async function HomePage() {
   const locale = await getRequestLocale();
+  const href = (path: string) => localePath(path, locale);
   const t = await localizeMessages(locale);
   const extras = await localizeHomeExtras(locale);
   const published = listPublishedPosts(locale);
@@ -170,7 +171,7 @@ export default async function HomePage() {
             <p className="eyebrow">{t["home.destinationsEyebrow"]}</p>
             <h2>{t["home.destinationsTitle"]}</h2>
           </div>
-          <Link href="/hospitals" className="home-more">
+          <Link href={href("/hospitals")} className="home-more">
             {t["home.viewAll"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
@@ -178,7 +179,7 @@ export default async function HomePage() {
           {extras.destinations.map((place) => (
             <Link
               key={place.name}
-              href={hospitalsPath({ destination: place.filter })}
+              href={href(hospitalsPath({ destination: place.filter }))}
               className="home-dest"
             >
               <Image
@@ -211,7 +212,7 @@ export default async function HomePage() {
             <h3>{group.continent}</h3>
             <div className="home-origingrid">
               {group.countries.map((country) => (
-                <Link key={country.href} href={country.href} className="home-origin-card">
+                <Link key={country.href} href={href(country.href)} className="home-origin-card">
                   <span className="home-origin-card__flag" role="img" aria-label={country.flagLabel}>
                     {country.flag}
                   </span>
@@ -232,13 +233,13 @@ export default async function HomePage() {
             <p className="eyebrow">{t["home.doctorsEyebrow"]}</p>
             <h2>{t["home.doctorsTitle"]}</h2>
           </div>
-          <Link href="/doctors" className="home-more">
+          <Link href={href("/doctors")} className="home-more">
             {t["home.viewDoctors"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
         <div className="home-docgrid">
           {faculty.map((doctor) => (
-            <Link key={doctor.slug} href={`/doctors/${doctor.slug}`} className="home-doc">
+            <Link key={doctor.slug} href={href(`/doctors/${doctor.slug}`)} className="home-doc">
               <span className="home-doc__photo">
                 <DoctorPhoto doctor={doctor} sizes="6.4rem" />
               </span>
@@ -260,13 +261,13 @@ export default async function HomePage() {
             <p className="eyebrow">{t["home.hospitalsEyebrow"]}</p>
             <h2>{t["home.hospitalsTitle"]}</h2>
           </div>
-          <Link href="/hospitals" className="home-more">
+          <Link href={href("/hospitals")} className="home-more">
             {t["home.viewHospitals"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
         <div className="home-hospgrid">
           {campuses.map((hospital) => (
-            <Link key={hospital.slug} href={`/hospitals/${hospital.slug}`} className="home-hosp">
+            <Link key={hospital.slug} href={href(`/hospitals/${hospital.slug}`)} className="home-hosp">
               <span className="home-hosp__visual">
                 <HospitalCampusVisual
                   hospital={hospital}
@@ -292,13 +293,13 @@ export default async function HomePage() {
             <h2>{t["home.costsTitle"]}</h2>
             <p>{t["home.costsLede"]}</p>
           </div>
-          <Link href="/costs" className="home-more">
+          <Link href={href("/costs")} className="home-more">
             {t["home.viewCosts"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
         <div className="home-costgrid">
           {sheets.map((row) => (
-            <Link key={row.slug} href={costPath(row.name)} className="home-cost">
+            <Link key={row.slug} href={href(costPath(row.name))} className="home-cost">
               <p>{taxonomyLabel(row.category, locale)}</p>
               <strong>{taxonomyLabel(row.name, locale)}</strong>
               <em>{startingPrice(row.partnerRange)}</em>
@@ -323,13 +324,13 @@ export default async function HomePage() {
             <p className="eyebrow">{t["home.deskEyebrow"]}</p>
             <h2>{t["home.deskTitle"]}</h2>
           </div>
-          <Link href="/blogs" className="home-more">
+          <Link href={href("/blogs")} className="home-more">
             {t["home.viewBlogs"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
         <div className="home-bloggrid">
           {posts.map((post) => (
-            <Link key={post.slug} href={`/blogs/${post.slug}`} className="home-blog">
+            <Link key={post.slug} href={href(`/blogs/${post.slug}`)} className="home-blog">
               <span className="home-blog__img">
                 <HomeCover src={post.image} alt={post.imageAlt || ""} sizes="(min-width: 640px) 33vw, 100vw" />
               </span>

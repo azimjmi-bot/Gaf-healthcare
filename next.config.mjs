@@ -232,6 +232,24 @@ const nextConfig = {
         headers: sitemapHeaders,
       },
       {
+        source: "/brand/:file*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
         // Static images under /public. Every asset here is content-addressed
         // in practice (versioned query string, timestamped CMS uploads, or
         // generated infographics replaced under a new slug), so a year-long

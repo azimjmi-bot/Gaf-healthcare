@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Geist, Noto_Sans, Noto_Sans_Arabic } from "next/font/google";
-import Script from "next/script";
+import { DeferredAnalytics } from "@/components/deferred-analytics";
 import { LocaleProvider } from "@/components/locale-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -19,7 +19,8 @@ const GA_MEASUREMENT_ID = "G-F12D7QK2B2";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
-  display: "swap",
+  display: "optional",
+  preload: false,
 });
 
 // Noto Sans / Noto Sans Arabic only take effect under html[lang="ru"] and
@@ -48,7 +49,7 @@ const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
   weight: ["500", "600", "700"],
   preload: false,
-  display: "swap",
+  display: "optional",
 });
 
 export const viewport: Viewport = {
@@ -161,6 +162,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   const locale = await getRequestLocale();
   const messages = await localizeMessages(locale);
+  const pathname = await getRequestPath();
   const dir = localeDir(locale);
   return (
     <html
@@ -168,31 +170,30 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       dir={dir}
       className={`${geistSans.variable} ${cormorant.variable} ${notoSans.variable} ${notoArabic.variable} h-full`}
     >
+      {pathname === "/" ? (
+        <head>
+          <style
+            dangerouslySetInnerHTML={{
+              __html:
+                ".home-hero{min-height:100svh;background:#16324a;color:#f4f1e8}.home-hero h1{margin-top:.85rem;max-width:16ch;font-family:ui-serif,Georgia,serif;font-size:clamp(2.35rem,12vw,3.4rem);line-height:1.02;font-weight:500}",
+            }}
+          />
+        </head>
+      ) : null}
       <body className="flex min-h-full flex-col">
         <LocaleProvider
           locale={locale}
           messages={messages}
           surfaces={availableSurfaces(locale)}
-          languageOptions={languageOptions(await getRequestPath())}
+          languageOptions={languageOptions(pathname)}
         >
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
           <WhatsAppFloat />
+          <DeferredAnalytics id={GA_MEASUREMENT_ID} />
         </LocaleProvider>
       </body>
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        strategy="lazyOnload"
-      />
-      <Script id="google-analytics" strategy="lazyOnload">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', '${GA_MEASUREMENT_ID}');
-        `}
-      </Script>
     </html>
   );
 }

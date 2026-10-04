@@ -1,12 +1,13 @@
-import { LocaleLink as Link } from "@/components/locale-link";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import Image from "next/image";
+import Link from "next/link";
 import { Menu } from "lucide-react";
 import { Suspense } from "react";
 import { localizeMessages } from "@/lib/i18n/localize";
 import { SOURCE_LOCALE } from "@/lib/i18n/languages";
 import type { LocaleSurface } from "@/lib/i18n/locale-availability";
 import { UI_MESSAGE_FIELDS } from "@/lib/i18n/messages";
+import { localePath } from "@/lib/i18n/path";
 import { getRequestLocale, getRequestPath } from "@/lib/i18n/request";
 import { surfaceIsAvailable } from "@/lib/i18n/surfaces";
 
@@ -20,6 +21,7 @@ export async function SiteHeader() {
     locale === SOURCE_LOCALE
       ? messages[key] || UI_MESSAGE_FIELDS[key] || key
       : messages[key] || "";
+  const href = (path: string) => localePath(path, locale);
   const links = (
     [
       { href: "/#destinations", label: t("nav.destinations"), surface: "hospitals" },
@@ -41,7 +43,7 @@ export async function SiteHeader() {
       }
     >
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 pt-[env(safe-area-inset-top)] sm:px-5 md:h-20 md:px-8">
-        <Link href="/" className="shrink-0" aria-label={t("a11y.home")}>
+        <Link href={href("/")} className="shrink-0" aria-label={t("a11y.home")}>
           <Image
             src={overlay ? "/brand/gaf-healthcare-light.svg" : "/brand/gaf-healthcare.svg"}
             alt="GAF Healthcare"
@@ -58,7 +60,7 @@ export async function SiteHeader() {
             return (
               <Link
                 key={l.href}
-                href={l.href}
+                href={href(l.href)}
                 className={`text-[13px] tracking-wide transition-opacity hover:opacity-100 ${
                   active ? "opacity-100" : "opacity-70"
                 }`}
@@ -73,7 +75,7 @@ export async function SiteHeader() {
             <LanguageSwitcher className={overlay ? "text-white" : ""} />
           </Suspense>
           <Link
-            href="/consult"
+            href={href("/consult")}
             className="inline-flex h-10 items-center justify-center rounded-full bg-primary px-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 sm:px-5"
           >
             <span className="md:hidden">{t("nav.consultShort")}</span>
@@ -96,11 +98,11 @@ export async function SiteHeader() {
               </p>
               <nav>
                 {links.map((l) => (
-                  <Link key={l.href} href={l.href} className="site-menu__link">
+                  <Link key={l.href} href={href(l.href)} className="site-menu__link">
                     {l.label}
                   </Link>
                 ))}
-                <Link href="/consult" className="site-menu__consult">
+                <Link href={href("/consult")} className="site-menu__consult">
                   {t("nav.dossier")}
                 </Link>
               </nav>

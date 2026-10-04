@@ -5,6 +5,12 @@
   "engines": {
     "node": ">=20"
   },
+  "browserslist": [
+    "chrome 111",
+    "edge 111",
+    "firefox 111",
+    "safari 16.4"
+  ],
   "scripts": {
     "dev": "next dev --hostname 0.0.0.0 --port 43127",
     "build": "NODE_OPTIONS='--max-old-space-size=4096' next build --webpack",
