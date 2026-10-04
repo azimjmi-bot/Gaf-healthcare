@@ -1,48 +1,31 @@
-"use client";
-
-import { useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
 import {
   catalogDestinations,
-  catalogProceduresFor,
+  catalogProcedures,
   catalogSpecialties,
 } from "@/lib/catalog-options";
-import { useLocale, useT } from "@/components/locale-provider";
+import type { AppLocale } from "@/lib/i18n/languages";
 import { localePath } from "@/lib/i18n/path";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 
-const ALL = "all";
-
-export function HomeSearch() {
-  const router = useRouter();
-  const locale = useLocale();
-  const t = useT();
-  const [destination, setDestination] = useState(ALL);
-  const [specialty, setSpecialty] = useState(ALL);
-  const [procedure, setProcedure] = useState(ALL);
-  const procedures = useMemo(() => catalogProceduresFor(specialty === ALL ? undefined : specialty), [specialty]);
-
-  function onSpecialty(value: string) {
-    setSpecialty(value);
-    if (value === ALL || !catalogProceduresFor(value).includes(procedure)) setProcedure(ALL);
-  }
-
-  function onSubmit(e: React.FormEvent) {
-    e.preventDefault();
-    const q = new URLSearchParams();
-    if (destination !== ALL) q.set("destination", destination);
-    if (specialty !== ALL) q.set("specialty", specialty);
-    if (procedure !== ALL) q.set("procedure", procedure);
-    const qs = q.toString();
-    router.push(localePath(qs ? `/doctors?${qs}` : "/doctors", locale));
-  }
-
+export function HomeSearch({
+  locale,
+  labels,
+}: {
+  locale: AppLocale;
+  labels: {
+    destination: string;
+    specialty: string;
+    procedure: string;
+    go: string;
+    goShort: string;
+  };
+}) {
   return (
-    <form className="home-search" onSubmit={onSubmit}>
+    <form className="home-search" action={localePath("/doctors", locale)} method="get">
       <label>
-        <span className="sr-only">{t("home.searchDestination")}</span>
-        <select value={destination} onChange={(e) => setDestination(e.target.value)}>
-          <option value={ALL}>{t("home.searchDestination")}</option>
+        <span className="sr-only">{labels.destination}</span>
+        <select name="destination" defaultValue="">
+          <option value="">{labels.destination}</option>
           {catalogDestinations.map((name) => (
             <option key={name} value={name}>
               {taxonomyLabel(name, locale)}
@@ -51,9 +34,9 @@ export function HomeSearch() {
         </select>
       </label>
       <label>
-        <span className="sr-only">{t("home.searchSpecialty")}</span>
-        <select value={specialty} onChange={(e) => onSpecialty(e.target.value)}>
-          <option value={ALL}>{t("home.searchSpecialty")}</option>
+        <span className="sr-only">{labels.specialty}</span>
+        <select name="specialty" defaultValue="">
+          <option value="">{labels.specialty}</option>
           {catalogSpecialties.map((name) => (
             <option key={name} value={name}>
               {taxonomyLabel(name, locale)}
@@ -62,10 +45,10 @@ export function HomeSearch() {
         </select>
       </label>
       <label>
-        <span className="sr-only">{t("home.searchProcedure")}</span>
-        <select value={procedure} onChange={(e) => setProcedure(e.target.value)}>
-          <option value={ALL}>{t("home.searchProcedure")}</option>
-          {procedures.map((name) => (
+        <span className="sr-only">{labels.procedure}</span>
+        <select name="procedure" defaultValue="">
+          <option value="">{labels.procedure}</option>
+          {catalogProcedures.map((name) => (
             <option key={name} value={name}>
               {taxonomyLabel(name, locale)}
             </option>
@@ -73,8 +56,8 @@ export function HomeSearch() {
         </select>
       </label>
       <button type="submit" className="home-search__go">
-        <span className="md:hidden">{t("home.searchGoShort")}</span>
-        <span className="hidden md:inline">{t("home.searchGo")}</span>
+        <span className="md:hidden">{labels.goShort}</span>
+        <span className="hidden md:inline">{labels.go}</span>
       </button>
     </form>
   );

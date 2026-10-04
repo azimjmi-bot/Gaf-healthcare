@@ -191,7 +191,7 @@ const nextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "private, no-cache, no-store, max-age=0, must-revalidate",
+            value: "public, max-age=0, s-maxage=120, stale-while-revalidate=600",
           },
         ],
       },
@@ -247,6 +247,10 @@ const nextConfig = {
     ];
   },
   images: {
+    // Skip 2048/3840 defaults so mobile Lighthouse does not download
+    // desktop masters for hero, cards, or avatars.
+    deviceSizes: [640, 750, 828, 1080, 1200, 1600, 1920],
+    imageSizes: [64, 96, 128, 256, 384],
     // 60 is used for small photo tiles (destination cards) where the
     // default 75 spends bytes that are invisible at ~200px.
     qualities: [60, 75],

@@ -19,6 +19,7 @@ const GA_MEASUREMENT_ID = "G-F12D7QK2B2";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 // Noto Sans / Noto Sans Arabic only take effect under html[lang="ru"] and
@@ -31,6 +32,7 @@ const notoSans = Noto_Sans({
   subsets: ["latin", "latin-ext", "cyrillic"],
   weight: ["400", "500", "600", "700"],
   preload: false,
+  display: "swap",
 });
 
 const notoArabic = Noto_Sans_Arabic({
@@ -38,12 +40,15 @@ const notoArabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
   weight: ["400", "500", "600", "700"],
   preload: false,
+  display: "swap",
 });
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["500", "600", "700"],
+  preload: false,
+  display: "swap",
 });
 
 export const viewport: Viewport = {
@@ -178,9 +183,9 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
       </body>
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_MEASUREMENT_ID}`}
-        strategy="afterInteractive"
+        strategy="lazyOnload"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script id="google-analytics" strategy="lazyOnload">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}

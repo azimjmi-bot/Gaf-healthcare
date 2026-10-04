@@ -114,10 +114,12 @@ export default async function HomePage() {
 
       <section className="home-hero">
         <Image
-          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=2400&q=80"
+          src="/images/home-hero.webp"
           alt=""
           fill
           priority
+          quality={60}
+          sizes="100vw"
           className="object-cover object-center"
         />
         <div className="home-hero__shade" />
@@ -125,7 +127,18 @@ export default async function HomePage() {
           <p className="eyebrow text-gold-bright">{t["home.heroEyebrow"]}</p>
           <h1>{t["home.heroTitle"]}</h1>
           <p className="home-hero__lede">{t["home.heroLede"]}</p>
-          {doctors.length > 0 || localizedHospitals.length > 0 ? <HomeSearch /> : null}
+          {doctors.length > 0 || localizedHospitals.length > 0 ? (
+            <HomeSearch
+              locale={locale}
+              labels={{
+                destination: t["home.searchDestination"],
+                specialty: t["home.searchSpecialty"],
+                procedure: t["home.searchProcedure"],
+                go: t["home.searchGo"],
+                goShort: t["home.searchGoShort"],
+              }}
+            />
+          ) : null}
         </div>
       </section>
 

@@ -1,42 +1,37 @@
-"use client";
-
 import { LocaleLink as Link } from "@/components/locale-link";
 import { LanguageSwitcher } from "@/components/language-switcher";
-import { useLocale, useSurfaceAvailable, useT } from "@/components/locale-provider";
-import { usePathname } from "next/navigation";
 import Image from "next/image";
 import { Menu } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
-import { useState } from "react";
-import { stripLocalePrefix } from "@/lib/i18n/path";
+import { Suspense } from "react";
+import { localizeMessages } from "@/lib/i18n/localize";
+import { SOURCE_LOCALE } from "@/lib/i18n/languages";
 import type { LocaleSurface } from "@/lib/i18n/locale-availability";
+import { UI_MESSAGE_FIELDS } from "@/lib/i18n/messages";
+import { getRequestLocale, getRequestPath } from "@/lib/i18n/request";
+import { surfaceIsAvailable } from "@/lib/i18n/surfaces";
 
-export function SiteHeader() {
-  const pathname = stripLocalePrefix(usePathname() || "/").pathname;
-  const t = useT();
-  const locale = useLocale();
-  const surfaceAvailable = useSurfaceAvailable();
-  const [open, setOpen] = useState(false);
+export async function SiteHeader() {
+  const locale = await getRequestLocale();
+  const pathname = await getRequestPath();
+  const messages = await localizeMessages(locale);
   if (pathname.startsWith("/cms")) return null;
   const overlay = pathname === "/";
-  const links = [
-    { href: "/#destinations", label: t("nav.destinations"), surface: "hospitals" },
-    { href: "/specialties", label: t("nav.specialties"), surface: "specialties" },
-    { href: "/doctors", label: t("nav.doctors"), surface: "doctors" },
-    { href: "/hospitals", label: t("nav.hospitals"), surface: "hospitals" },
-    { href: "/treatments", label: t("nav.treatments"), surface: "treatments" },
-    { href: "/costs", label: t("nav.costs"), surface: "costs" },
-    { href: "/blogs", label: t("nav.blogs"), surface: "blogs" },
-  ].filter((link) =>
-    surfaceAvailable(link.surface as LocaleSurface),
-  );
+  const t = (key: string) =>
+    locale === SOURCE_LOCALE
+      ? messages[key] || UI_MESSAGE_FIELDS[key] || key
+      : messages[key] || "";
+  const links = (
+    [
+      { href: "/#destinations", label: t("nav.destinations"), surface: "hospitals" },
+      { href: "/specialties", label: t("nav.specialties"), surface: "specialties" },
+      { href: "/doctors", label: t("nav.doctors"), surface: "doctors" },
+      { href: "/hospitals", label: t("nav.hospitals"), surface: "hospitals" },
+      { href: "/treatments", label: t("nav.treatments"), surface: "treatments" },
+      { href: "/costs", label: t("nav.costs"), surface: "costs" },
+      { href: "/blogs", label: t("nav.blogs"), surface: "blogs" },
+    ] as const
+  ).filter((link) => surfaceIsAvailable(locale, link.surface as LocaleSurface));
+
   return (
     <header
       className={
@@ -74,59 +69,43 @@ export function SiteHeader() {
           })}
         </nav>
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
-          <LanguageSwitcher className={overlay ? "text-white" : ""} />
-          <Button
-            asChild
-            className="h-10 rounded-full bg-primary px-3 text-sm text-primary-foreground hover:bg-primary/90 sm:px-5"
+          <Suspense fallback={null}>
+            <LanguageSwitcher className={overlay ? "text-white" : ""} />
+          </Suspense>
+          <Link
+            href="/consult"
+            className="inline-flex h-10 items-center justify-center rounded-full bg-primary px-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 sm:px-5"
           >
-            <Link href="/consult">
-              <span className="md:hidden">{t("nav.consultShort")}</span>
-              <span className="hidden md:inline">{t("nav.consult")}</span>
-            </Link>
-          </Button>
-          <Sheet open={open} onOpenChange={setOpen}>
-            <SheetTrigger asChild>
-              <Button
-                variant="ghost"
-                size="icon"
-                className={`size-11 lg:hidden ${overlay ? "text-white hover:bg-white/10 hover:text-white" : ""}`}
-                aria-label={t("nav.menu")}
-              >
-                <Menu />
-              </Button>
-            </SheetTrigger>
-            <SheetContent side={locale === "ar" ? "left" : "right"} className="w-[min(100%,20rem)]">
-              <SheetHeader>
-                <SheetTitle>
-                  <Image
-                    src="/brand/gaf-healthcare.svg"
-                    alt="GAF Healthcare"
-                    width={206}
-                    height={199}
-                    unoptimized
-                    className="h-12 w-auto"
-                  />
-                </SheetTitle>
-              </SheetHeader>
-              <nav className="mt-6 flex flex-col gap-1 px-4">
+            <span className="md:hidden">{t("nav.consultShort")}</span>
+            <span className="hidden md:inline">{t("nav.consult")}</span>
+          </Link>
+          <details className="site-menu lg:hidden">
+            <summary className={overlay ? "text-white" : ""} aria-label={t("nav.menu")}>
+              <Menu className="size-5" aria-hidden="true" />
+            </summary>
+            <div className="site-menu__panel">
+              <p className="site-menu__brand">
+                <Image
+                  src="/brand/gaf-healthcare.svg"
+                  alt="GAF Healthcare"
+                  width={206}
+                  height={199}
+                  unoptimized
+                  className="h-12 w-auto"
+                />
+              </p>
+              <nav>
                 {links.map((l) => (
-                  <Link
-                    key={l.href}
-                    href={l.href}
-                    onClick={() => setOpen(false)}
-                    className="flex min-h-12 items-center text-lg"
-                  >
+                  <Link key={l.href} href={l.href} className="site-menu__link">
                     {l.label}
                   </Link>
                 ))}
-                <Button asChild className="mt-4 h-12 rounded-full">
-                  <Link href="/consult" onClick={() => setOpen(false)}>
-                    {t("nav.dossier")}
-                  </Link>
-                </Button>
+                <Link href="/consult" className="site-menu__consult">
+                  {t("nav.dossier")}
+                </Link>
               </nav>
-            </SheetContent>
-          </Sheet>
+            </div>
+          </details>
         </div>
       </div>
     </header>
