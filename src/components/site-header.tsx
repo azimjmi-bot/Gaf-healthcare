@@ -1,3 +1,5 @@
+import logoDark from "@/assets/brand/gaf-healthcare.svg";
+import logoLight from "@/assets/brand/gaf-healthcare-light.svg";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import Image from "next/image";
 import Link from "next/link";
@@ -45,7 +47,7 @@ export async function SiteHeader() {
       <div className="mx-auto flex h-14 max-w-7xl items-center justify-between gap-3 px-4 pt-[env(safe-area-inset-top)] sm:px-5 md:h-20 md:px-8">
         <Link href={href("/")} className="shrink-0" aria-label={t("a11y.home")}>
           <Image
-            src={overlay ? "/brand/gaf-healthcare-light.svg" : "/brand/gaf-healthcare.svg"}
+            src={overlay ? logoLight : logoDark}
             alt="GAF Healthcare"
             width={206}
             height={199}
@@ -91,7 +93,7 @@ export async function SiteHeader() {
             <div className="site-menu__panel">
               <p className="site-menu__brand">
                 <Image
-                  src="/brand/gaf-healthcare.svg"
+                  src={logoDark}
                   alt="GAF Healthcare"
                   width={206}
                   height={199}

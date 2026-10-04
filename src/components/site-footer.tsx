@@ -1,3 +1,4 @@
+import logoLight from "@/assets/brand/gaf-healthcare-light.svg";
 import Image from "next/image";
 import Link from "next/link";
 import { GOOGLE_MAPS_URL, YOUTUBE_CHANNEL } from "@/data/home";
@@ -40,7 +41,7 @@ export async function SiteFooter() {
       <div className="mx-auto grid max-w-7xl gap-10 px-4 py-12 sm:px-5 md:grid-cols-12 md:gap-12 md:px-8 md:py-16">
         <div className="md:col-span-5">
           <Image
-            src="/brand/gaf-healthcare-light.svg"
+            src={logoLight}
             alt="GAF Healthcare"
             width={206}
             height={199}
