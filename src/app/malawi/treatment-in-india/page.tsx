@@ -1,3 +1,5 @@
+import "@/styles/origin-hub.css";
+import "@/styles/treatments.css";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ArrowRight, ChevronDown, FileText, MapPin, Plane, Stethoscope } from "lucide-react";

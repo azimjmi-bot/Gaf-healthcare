@@ -1,0 +1,321 @@
+/* Tanzania → India country hub */
+.tanzania-hub {
+  background: var(--background);
+}
+.tanzania-hub__crumbs {
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 1.15rem 1rem 0.25rem;
+  color: var(--muted-foreground);
+  font-size: 0.9rem;
+}
+
+@media (min-width: 640px) {
+  .tanzania-hub__crumbs { padding-inline: 1.25rem; }
+}
+
+@media (min-width: 768px) {
+  .tanzania-hub__crumbs { padding-inline: 2rem; }
+}
+.tanzania-hub__crumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tanzania-hub__crumbs a:hover { color: var(--foreground); }
+.tanzania-hub__hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.tanzania-hub__btn {
+  display: inline-flex;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 999px;
+  padding: 0.7rem 1.15rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.tanzania-hub__btn--primary {
+  background: var(--primary);
+  color: var(--primary-foreground);
+}
+.tanzania-hub__btn--primary:hover { background: color-mix(in oklch, var(--primary) 90%, black); }
+.tanzania-hub__btn--secondary {
+  border: 1px solid var(--border);
+  background: #fff;
+  color: var(--foreground);
+}
+.tanzania-hub__btn--secondary:hover { background: var(--secondary); }
+.tanzania-hub__section {
+  padding-block: clamp(2.25rem, 6vw, 4.5rem);
+  scroll-margin-top: 5rem;
+}
+.tanzania-hub__section--soft { background: color-mix(in oklch, var(--secondary) 70%, white); }
+.tanzania-hub h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(1.85rem, 4.5vw, 3rem);
+  line-height: 1.15;
+  color: var(--ink);
+}
+.tanzania-hub h3 {
+  font-family: var(--font-heading);
+  font-size: 1.45rem;
+  line-height: 1.25;
+}
+.tanzania-hub__lede,
+.tanzania-hub__prose p {
+  max-width: 46rem;
+  margin-top: 0.9rem;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+}
+.tanzania-hub__prose ul,
+.tanzania-hub__card ul,
+.tanzania-hub__check-grid ul,
+.tanzania-hub__factor-list {
+  margin-top: 0.9rem;
+  padding-inline-start: 1.15rem;
+  color: var(--muted-foreground);
+  line-height: 1.7;
+}
+.tanzania-hub__prose li + li,
+.tanzania-hub__card li + li,
+.tanzania-hub__check-grid li + li,
+.tanzania-hub__factor-list li + li { margin-top: 0.35rem; }
+.tanzania-hub__cards {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 720px) {
+  .tanzania-hub__cards { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1100px) {
+  .tanzania-hub__cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .tanzania-hub__cards--cities,
+  .tanzania-hub__cards--help { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.tanzania-hub__card {
+  border: 1px solid var(--border);
+  border-radius: 1.25rem;
+  background: #fff;
+  padding: 1.25rem 1.3rem;
+}
+.tanzania-hub__card p { margin-top: 0.7rem; color: var(--muted-foreground); line-height: 1.65; }
+.tanzania-hub__card .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.tanzania-hub__text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 1rem;
+  font-weight: 650;
+}
+.tanzania-hub__treatment-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 900px) {
+  .tanzania-hub__treatment-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.tanzania-hub__pill-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
+}
+.tanzania-hub__pill-list a {
+  display: inline-flex;
+  min-height: 2.4rem;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.92rem;
+}
+.tanzania-hub__table-wrap {
+  margin-top: 1.25rem;
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  background: #fff;
+}
+.tanzania-hub__table-wrap table {
+  width: 100%;
+  min-width: 36rem;
+  border-collapse: collapse;
+}
+.tanzania-hub__table-wrap th,
+.tanzania-hub__table-wrap td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border);
+  text-align: start;
+  vertical-align: top;
+}
+.tanzania-hub__table-wrap thead th {
+  background: var(--secondary);
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.tanzania-hub__stay {
+  display: block;
+  margin-top: 0.25rem;
+  color: var(--muted-foreground);
+  font-size: 0.85rem;
+}
+.tanzania-hub__callout {
+  margin-top: 1.25rem;
+  max-width: 46rem;
+  border-inline-start: 3px solid var(--gold);
+  padding-inline-start: 0.9rem;
+  color: var(--foreground);
+  font-weight: 550;
+  line-height: 1.65;
+}
+.tanzania-hub__inline-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem 1.15rem;
+  margin-top: 0.9rem;
+}
+.tanzania-hub__check-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 800px) {
+  .tanzania-hub__check-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+.tanzania-hub__check-grid article {
+  border: 1px solid var(--border);
+  border-radius: 1.15rem;
+  background: #fff;
+  padding: 1.15rem 1.2rem;
+}
+.tanzania-hub__check-grid h3 {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+.tanzania-hub__final {
+  margin: 0 auto 1rem;
+  max-width: 80rem;
+  padding: 2rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .tanzania-hub__final { padding: 2.5rem 2rem; }
+}
+.tanzania-hub__final > div {
+  border: 1px solid var(--border);
+  border-radius: 1.5rem;
+  background: #102f36;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  color: #fff;
+}
+.tanzania-hub__final h2 { color: #fff; }
+.tanzania-hub__final p {
+  max-width: 40rem;
+  margin: 0.9rem 0 1.25rem;
+  color: rgb(255 255 255 / 78%);
+  line-height: 1.7;
+}
+.tanzania-hub__final .tanzania-hub__btn--secondary {
+  background: transparent;
+  border-color: rgb(255 255 255 / 28%);
+  color: #fff;
+}
+.tanzania-hub__sources {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+  padding-inline-start: 1.15rem;
+}
+.tanzania-hub__sources span {
+  display: block;
+  color: var(--muted-foreground);
+  line-height: 1.55;
+}
+.tanzania-hub__reviewed {
+  margin-top: 1.25rem;
+  color: var(--muted-foreground);
+  font-size: 0.92rem;
+}
+.tanzania-hub__directory {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 720px) {
+  .tanzania-hub__directory { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (min-width: 1100px) {
+  .tanzania-hub__directory { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+.tanzania-hub__directory-group {
+  border: 1px solid var(--border);
+  border-radius: 1.15rem;
+  background: #fff;
+  padding: 1.1rem 1.15rem;
+}
+.tanzania-hub__directory-group h3 { margin-bottom: 0.15rem; }
+.tanzania-hub__pill-list--plain {
+  list-style: none;
+  padding: 0;
+}
+.tanzania-hub__pill-list--plain li,
+.tanzania-hub__directory-group .tanzania-hub__pill-list span {
+  display: inline-flex;
+  min-height: 2.4rem;
+  align-items: center;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: #fff;
+  padding: 0.4rem 0.9rem;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 720px) {
+  .tanzania-hub__btn { width: 100%; }
+  .tanzania-hub__table-wrap table { min-width: 28rem; }
+}
+.tanzania-hub__sticky { display: none; }
+
+@media (max-width: 767px) {
+  .tanzania-hub__sticky {
+    position: sticky;
+    bottom: 0;
+    z-index: 40;
+    display: flex;
+    gap: 0.4rem;
+    padding: 0.65rem 0.75rem calc(0.65rem + env(safe-area-inset-bottom));
+    background: color-mix(in oklch, var(--background) 92%, white);
+    border-top: 1px solid var(--border);
+  }
+  .tanzania-hub__sticky .tanzania-hub__btn {
+    flex: 1;
+    justify-content: center;
+    min-height: 2.75rem;
+    font-size: 0.78rem;
+    padding-inline: 0.4rem;
+    width: auto;
+  }
+}

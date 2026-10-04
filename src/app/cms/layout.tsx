@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import "./cms.css";
 
 export const metadata: Metadata = {
   title: "GAF Healthcare CMS",

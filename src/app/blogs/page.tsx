@@ -1,3 +1,4 @@
+import "@/styles/treatments.css";
 import { CoverImage } from "@/components/article-body";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";

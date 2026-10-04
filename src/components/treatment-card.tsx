@@ -1,3 +1,4 @@
+import "@/styles/treatments.css";
 import { ArrowUpRight, MapPin } from "lucide-react";
 import { LocaleLink as Link } from "@/components/locale-link";
 import type { CuratedTreatment } from "@/lib/cms/curated-treatment-types";

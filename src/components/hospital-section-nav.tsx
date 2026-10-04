@@ -1,5 +1,7 @@
 "use client";
 
+import "@/styles/hospital-profile.css";
+
 import { useEffect, useState } from "react";
 import { useT } from "@/components/locale-provider";
 

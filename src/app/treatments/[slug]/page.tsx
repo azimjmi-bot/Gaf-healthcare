@@ -1,3 +1,4 @@
+import "@/styles/treatments.css";
 import type { Metadata } from "next";
 import { costPath } from "@/lib/catalog-links";
 import { notFound, redirect } from "next/navigation";

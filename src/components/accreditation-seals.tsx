@@ -1,3 +1,4 @@
+import "@/styles/hospital-profile.css";
 import { parseAccreditationMarks } from "@/lib/hospital-profile";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
