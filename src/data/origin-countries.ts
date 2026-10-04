@@ -184,6 +184,17 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Mauritius is currently on India’s e-Visa list. Mauritian patients can use the e-Medical Visa or apply through the High Commission of India in Port Louis.",
   },
   {
+    name: "Moldova",
+    city: "Chișinău",
+    destination: "India",
+    continent: "Europe",
+    href: "/moldova/treatment-in-india",
+    flag: "🇲🇩",
+    flagLabel: "Flag of Moldova",
+    visaNote:
+      "Moldova is currently on India’s e-Visa list. The official fee tables list the e-Medical Visa at US$80. Moldovan patients can use the e-Medical Visa or apply through the Embassy of India in Bucharest, which is accredited to Moldova.",
+  },
+  {
     name: "Morocco",
     city: "Casablanca",
     destination: "India",
