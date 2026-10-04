@@ -151,6 +151,10 @@ export const UI: TranslationFields = {
   "home.searchGoShort": "ابحث عن أخصائيين",
   "blogs.empty": "لا توجد مقالات منشورة بعد.",
   "blogs.all": "كل المقالات",
+  "blogs.searchLabel": "ابحث في المدونة",
+  "blogs.searchPlaceholder": "ابحث بعنوان المقال أو كلمة مفتاحية…",
+  "blogs.results": "مقال متاح",
+  "blogs.noResults": "لا توجد مقالات منشورة تطابق هذه الفلاتر.",
   "consult.eyebrow": "الاستقبال",
   "consult.title": "اثنتا عشرة دقيقة. ثم نتولى القراءة الثقيلة.",
   "consult.lede":

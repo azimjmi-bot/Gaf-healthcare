@@ -4447,7 +4447,8 @@ body:has(.cost-dock) .wa-float {
   letter-spacing: 0;
   text-transform: none;
 }
-.treatment-grid {
+.treatment-grid,
+.blogs-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.5rem;
@@ -4919,7 +4920,7 @@ body:has(.cost-dock) .wa-float {
   .treatment-page-nav > div { margin-inline: 0; padding-inline: 1rem; }
   .treatment-article { padding: 1.25rem; border-radius: .75rem; }
   .treatment-filters, .treatment-key-info { position: static; }
-  .treatment-grid, .cms-form-grid, .cms-relation-grid { grid-template-columns: 1fr; }
+  .treatment-grid, .blogs-grid, .cms-form-grid, .cms-relation-grid { grid-template-columns: 1fr; }
   .cms-span-2 { grid-column: auto; }
   .cms-language-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .cms-nested-row, .cms-nested-row--faq { grid-template-columns: 1fr; }

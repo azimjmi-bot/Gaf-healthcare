@@ -143,6 +143,10 @@ export const UI_MESSAGE_FIELDS: Record<string, string> = {
   "home.finaleButton": "Request a Dossier",
   "blogs.empty": "No published notes yet.",
   "blogs.all": "All blogs",
+  "blogs.searchLabel": "Search blogs",
+  "blogs.searchPlaceholder": "Search by article title or keyword…",
+  "blogs.results": "articles found",
+  "blogs.noResults": "No published articles match these filters.",
   "consult.eyebrow": "Intake",
   "consult.title": "Twelve minutes. Then we do the heavy reading.",
   "consult.lede":
