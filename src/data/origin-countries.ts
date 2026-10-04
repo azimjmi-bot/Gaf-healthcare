@@ -52,6 +52,17 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Angola is currently on India’s e-Visa list. Angolan patients can use the e-Medical Visa or apply through the Embassy of India in Luanda.",
   },
   {
+    name: "Belarus",
+    city: "Minsk",
+    destination: "India",
+    continent: "Europe",
+    href: "/belarus/treatment-in-india",
+    flag: "🇧🇾",
+    flagLabel: "Flag of Belarus",
+    visaNote:
+      "Belarus is currently on India’s e-Visa list. A category-wise official table lists the e-Medical Visa at US$80. Belarusian patients can use the e-Medical Visa or apply through the Embassy of India in Minsk.",
+  },
+  {
     name: "Benin",
     city: "Cotonou",
     destination: "India",
