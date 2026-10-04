@@ -1,5 +1,5 @@
 import type { ComponentProps, ReactNode } from "react";
-import { LocaleLink as Link } from "@/components/locale-link";
+import Link from "next/link";
 import { consultToWhatsappHref } from "@/lib/site";
 
 function EstimateCtaLink({

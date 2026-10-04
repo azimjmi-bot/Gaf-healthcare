@@ -17,3 +17,11 @@ test("site header no longer hydrates a radix sheet on every page", () => {
   assert.doesNotMatch(source, /components\/ui\/sheet/);
   assert.match(source, /<details className="site-menu/);
 });
+
+test("language switcher is server-rendered links, not a client select", () => {
+  const source = readFileSync(join(process.cwd(), "src/components/language-switcher.tsx"), "utf8");
+  assert.doesNotMatch(source, /"use client"/);
+  assert.doesNotMatch(source, /useSearchParams/);
+  assert.doesNotMatch(source, /window\.location/);
+  assert.match(source, /hrefLang/);
+});

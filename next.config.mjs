@@ -15,6 +15,11 @@ const sitemapHeaders = [
 ];
 
 const nextConfig = {
+  experimental: {
+    // Production-only: emit <style> instead of render-blocking <link> CSS.
+    // That removes the homepage CSS waterfall PageSpeed times at ~1.7s on 4G.
+    inlineCss: true,
+  },
   allowedDevOrigins: [
     "127.0.0.1",
     "localhost",

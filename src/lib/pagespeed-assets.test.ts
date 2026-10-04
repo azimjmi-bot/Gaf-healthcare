@@ -23,3 +23,23 @@ test("analytics is deferred off the first document", () => {
   assert.doesNotMatch(layout, /next\/script/);
   assert.doesNotMatch(layout, /strategy="lazyOnload"/);
 });
+
+test("production config inlines CSS so the homepage has no blocking stylesheet request", () => {
+  const config = readFileSync(join(process.cwd(), "next.config.mjs"), "utf8");
+  assert.match(config, /inlineCss:\s*true/);
+});
+
+test("English root layout does not construct unused Noto families", () => {
+  const layout = readFileSync(join(process.cwd(), "src/app/layout.tsx"), "utf8");
+  assert.doesNotMatch(layout, /Noto_Sans/);
+  assert.doesNotMatch(layout, /Noto_Sans_Arabic/);
+  assert.match(layout, /LocaleFontLinks/);
+  assert.match(layout, /clientMessagesFor/);
+});
+
+test("homepage estimate CTA stays off the LocaleLink client graph", () => {
+  const source = readFileSync(join(process.cwd(), "src/components/pseo-estimate-cta.tsx"), "utf8");
+  assert.doesNotMatch(source, /locale-link/);
+  assert.doesNotMatch(source, /"use client"/);
+});
+

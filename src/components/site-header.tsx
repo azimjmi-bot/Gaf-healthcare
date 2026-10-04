@@ -2,7 +2,7 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import Image from "next/image";
 import Link from "next/link";
 import { Menu } from "lucide-react";
-import { Suspense } from "react";
+import { languageOptions } from "@/lib/i18n/language-options";
 import { localizeMessages } from "@/lib/i18n/localize";
 import { SOURCE_LOCALE } from "@/lib/i18n/languages";
 import type { LocaleSurface } from "@/lib/i18n/locale-availability";
@@ -71,9 +71,12 @@ export async function SiteHeader() {
           })}
         </nav>
         <div className="flex shrink-0 items-center gap-1.5 sm:gap-2">
-          <Suspense fallback={null}>
-            <LanguageSwitcher className={overlay ? "text-white" : ""} />
-          </Suspense>
+          <LanguageSwitcher
+            className={overlay ? "text-white" : ""}
+            locale={locale}
+            options={languageOptions(pathname)}
+            label={t("lang.label")}
+          />
           <Link
             href={href("/consult")}
             className="inline-flex h-10 items-center justify-center rounded-full bg-primary px-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 sm:px-5"
