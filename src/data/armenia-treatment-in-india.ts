@@ -611,7 +611,7 @@ export const armeniaPageCopyEn = {
       "Armenian is the official language of Armenia. Russian is also widely used. Indian hospitals generally use English for medical documentation and specialist consultations. Armenian- or Russian-language support can be arranged where needed. Patients should never sign medical consent documentation they do not understand.",
   },
   stay: {
-    heading: "How Long Will a Armenian Patient Need to Stay in India?",
+    heading: "How Long Will an Armenian Patient Need to Stay in India?",
     intro:
       "There is no standard treatment duration. A consultation may require a short stay. Major surgery, cancer treatment, transplantation and rehabilitation may require several weeks or longer. Ask the hospital for an estimated treatment timeline before booking the return flight.",
     rows: [
@@ -709,7 +709,7 @@ export const armeniaPageCopyEn = {
       a: "Yes. Armenia is included in India's official e-Visa eligible-country list, and the e-Visa system includes e-Medical and e-Medical Attendant categories. A category-wise official fee table currently lists those medical categories at US$80. Confirm the live amount before payment.",
     },
     {
-      q: "Can a family member accompany a Armenian patient?",
+      q: "Can a family member accompany an Armenian patient?",
       a: "Yes. Eligible attendants can use the Medical Attendant or e-Medical Attendant route. The current e-Visa rules allow up to two e-Medical Attendant Visas against one e-Medical Visa.",
     },
     {
@@ -745,7 +745,7 @@ export const armeniaPageCopyEn = {
       a: "GAF Healthcare can coordinate specialist opinions, hospital selection, treatment estimates, medical visa documentation, travel arrangements and other medical-tourism logistics.",
     },
     {
-      q: "How early can a Armenian patient apply for an e-Medical Visa?",
+      q: "How early can an Armenian patient apply for an e-Medical Visa?",
       a: "The current Government of India guidance says eligible applicants for e-Medical and e-Medical Attendant visas can apply online at least four days before arrival, with a 120-day window.",
     },
     {
