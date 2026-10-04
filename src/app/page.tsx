@@ -186,7 +186,7 @@ export default async function HomePage() {
                 src={place.image}
                 alt={place.imageAlt}
                 fill
-                quality={60}
+                quality={40}
                 className="object-cover"
                 sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 100vw"
               />
