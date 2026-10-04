@@ -2,7 +2,7 @@
  * Origin-country hubs (where patients travel from), not care destinations.
  * Only published pages are listed. Do not add a card until its route exists.
  */
-export type OriginCountryContinent = "Africa" | "Central Asia";
+export type OriginCountryContinent = "Africa" | "Central Asia" | "Europe";
 
 export type OriginCountryHub = {
   name: string;
@@ -15,7 +15,11 @@ export type OriginCountryHub = {
   continent: OriginCountryContinent;
 };
 
-export const ORIGIN_COUNTRY_CONTINENT_ORDER: OriginCountryContinent[] = ["Africa", "Central Asia"];
+export const ORIGIN_COUNTRY_CONTINENT_ORDER: OriginCountryContinent[] = [
+  "Africa",
+  "Central Asia",
+  "Europe",
+];
 
 export function originCountryHubsByContinent() {
   return ORIGIN_COUNTRY_CONTINENT_ORDER.map((continent) => ({
@@ -310,6 +314,17 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     flagLabel: "Flag of Uganda",
     visaNote:
       "Uganda is currently on India’s e-Visa list. Ugandan patients can use the e-Medical Visa or apply through the High Commission of India in Kampala. The Mission currently notes that online e-Visa and regular visa applications were enabled from 10 September 2026.",
+  },
+  {
+    name: "Ukraine",
+    city: "Kyiv",
+    destination: "India",
+    continent: "Europe",
+    href: "/ukraine/treatment-in-india",
+    flag: "🇺🇦",
+    flagLabel: "Flag of Ukraine",
+    visaNote:
+      "Ukraine is currently on India’s e-Visa list. A category-wise official table lists the e-Medical Visa at US$85. Ukrainian patients can use the e-Medical Visa or apply through the Embassy of India in Kyiv.",
   },
   {
     name: "Uzbekistan",

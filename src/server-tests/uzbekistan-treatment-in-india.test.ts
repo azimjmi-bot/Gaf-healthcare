@@ -149,7 +149,7 @@ test("the homepage origin-country section links Uzbekistan under Central Asia", 
   const groups = originCountryHubsByContinent();
   assert.deepEqual(
     groups.map((group) => group.continent),
-    ["Africa", "Central Asia"],
+    ["Africa", "Central Asia", "Europe"],
   );
   assert.ok(groups[1]?.countries.some((row) => row.name === "Uzbekistan"));
 });
