@@ -151,6 +151,17 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Kenya is currently on India’s e-Visa list. Kenyan patients can use the e-Medical Visa or apply through the High Commission of India in Nairobi.",
   },
   {
+    name: "Kyrgyzstan",
+    city: "Bishkek",
+    destination: "India",
+    continent: "Central Asia",
+    href: "/kyrgyzstan/treatment-in-india",
+    flag: "🇰🇬",
+    flagLabel: "Flag of Kyrgyzstan",
+    visaNote:
+      "Kyrgyzstan is currently on India’s e-Visa list. The official fee tables list the e-Medical Visa at US$80. Kyrgyz patients can use the e-Medical Visa or apply through the Embassy of India in Bishkek.",
+  },
+  {
     name: "Liberia",
     city: "Monrovia",
     destination: "India",

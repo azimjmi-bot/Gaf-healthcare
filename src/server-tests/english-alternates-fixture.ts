@@ -253,6 +253,11 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en"],
   },
   {
+    label: "kyrgyzstan treatment in India hub",
+    path: "/kyrgyzstan/treatment-in-india",
+    published: ["en"],
+  },
+  {
     label: "liberia treatment in India hub",
     path: "/liberia/treatment-in-india",
     published: ["en"],
