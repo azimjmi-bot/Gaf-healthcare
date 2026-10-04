@@ -305,6 +305,17 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Tanzanian passport holders can currently use India’s e-Medical Visa or apply through the High Commission of India in Dar es Salaam.",
   },
   {
+    name: "Turkmenistan",
+    city: "Ashgabat",
+    destination: "India",
+    continent: "Central Asia",
+    href: "/turkmenistan/treatment-in-india",
+    flag: "🇹🇲",
+    flagLabel: "Flag of Turkmenistan",
+    visaNote:
+      "Turkmenistan is not currently on India’s e-Visa list. Turkmen patients apply for a Medical Visa through the Embassy of India in Ashgabat.",
+  },
+  {
     name: "Uganda",
     city: "Kampala",
     destination: "India",

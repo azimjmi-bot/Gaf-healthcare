@@ -323,6 +323,11 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en"],
   },
   {
+    label: "turkmenistan treatment in India hub",
+    path: "/turkmenistan/treatment-in-india",
+    published: ["en"],
+  },
+  {
     label: "uganda treatment in India hub",
     path: "/uganda/treatment-in-india",
     published: ["en"],
