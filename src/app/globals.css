@@ -3673,12 +3673,20 @@ body:has(.cost-dock) .wa-float {
   color: var(--muted-foreground);
   line-height: 1.65;
 }
+.home-origin__region {
+  margin-top: 2rem;
+}
+.home-origin__region h3 {
+  margin: 0 0 0.85rem;
+  font-family: var(--font-heading);
+  font-size: clamp(1.2rem, 2.4vw, 1.55rem);
+  letter-spacing: 0.02em;
+}
 .home-origingrid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 0.85rem;
-  margin-top: 2rem;
 }
 .home-origin-card {
   display: grid;

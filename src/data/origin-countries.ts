@@ -2,6 +2,8 @@
  * Origin-country hubs (where patients travel from), not care destinations.
  * Only published pages are listed. Do not add a card until its route exists.
  */
+export type OriginCountryContinent = "Africa" | "Central Asia";
+
 export type OriginCountryHub = {
   name: string;
   city: string;
@@ -10,13 +12,24 @@ export type OriginCountryHub = {
   flag: string;
   flagLabel: string;
   visaNote: string;
+  continent: OriginCountryContinent;
 };
+
+export const ORIGIN_COUNTRY_CONTINENT_ORDER: OriginCountryContinent[] = ["Africa", "Central Asia"];
+
+export function originCountryHubsByContinent() {
+  return ORIGIN_COUNTRY_CONTINENT_ORDER.map((continent) => ({
+    continent,
+    countries: ORIGIN_COUNTRY_HUBS.filter((row) => row.continent === continent),
+  })).filter((group) => group.countries.length > 0);
+}
 
 export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
   {
     name: "Algeria",
     city: "Algiers",
     destination: "India",
+    continent: "Africa",
     href: "/algeria/treatment-in-india",
     flag: "🇩🇿",
     flagLabel: "Flag of Algeria",
@@ -27,6 +40,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Angola",
     city: "Luanda",
     destination: "India",
+    continent: "Africa",
     href: "/angola/treatment-in-india",
     flag: "🇦🇴",
     flagLabel: "Flag of Angola",
@@ -37,6 +51,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Benin",
     city: "Cotonou",
     destination: "India",
+    continent: "Africa",
     href: "/benin/treatment-in-india",
     flag: "🇧🇯",
     flagLabel: "Flag of Benin",
@@ -47,6 +62,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Botswana",
     city: "Gaborone",
     destination: "India",
+    continent: "Africa",
     href: "/botswana/treatment-in-india",
     flag: "🇧🇼",
     flagLabel: "Flag of Botswana",
@@ -57,6 +73,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Burkina Faso",
     city: "Ouagadougou",
     destination: "India",
+    continent: "Africa",
     href: "/burkina-faso/treatment-in-india",
     flag: "🇧🇫",
     flagLabel: "Flag of Burkina Faso",
@@ -67,6 +84,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Chad",
     city: "N'Djamena",
     destination: "India",
+    continent: "Africa",
     href: "/chad/treatment-in-india",
     flag: "🇹🇩",
     flagLabel: "Flag of Chad",
@@ -77,6 +95,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Côte d'Ivoire",
     city: "Abidjan",
     destination: "India",
+    continent: "Africa",
     href: "/cote-divoire/treatment-in-india",
     flag: "🇨🇮",
     flagLabel: "Flag of Côte d'Ivoire",
@@ -87,6 +106,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Ethiopia",
     city: "Addis Ababa",
     destination: "India",
+    continent: "Africa",
     href: "/ethiopia/treatment-in-india",
     flag: "🇪🇹",
     flagLabel: "Flag of Ethiopia",
@@ -97,6 +117,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Ghana",
     city: "Accra",
     destination: "India",
+    continent: "Africa",
     href: "/ghana/treatment-in-india",
     flag: "🇬🇭",
     flagLabel: "Flag of Ghana",
@@ -107,6 +128,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Guinea",
     city: "Conakry",
     destination: "India",
+    continent: "Africa",
     href: "/guinea/treatment-in-india",
     flag: "🇬🇳",
     flagLabel: "Flag of Guinea",
@@ -117,6 +139,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Kenya",
     city: "Nairobi",
     destination: "India",
+    continent: "Africa",
     href: "/kenya/treatment-in-india",
     flag: "🇰🇪",
     flagLabel: "Flag of Kenya",
@@ -127,6 +150,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Liberia",
     city: "Monrovia",
     destination: "India",
+    continent: "Africa",
     href: "/liberia/treatment-in-india",
     flag: "🇱🇷",
     flagLabel: "Flag of Liberia",
@@ -137,6 +161,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Malawi",
     city: "Lilongwe",
     destination: "India",
+    continent: "Africa",
     href: "/malawi/treatment-in-india",
     flag: "🇲🇼",
     flagLabel: "Flag of Malawi",
@@ -147,6 +172,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Mauritius",
     city: "Port Louis",
     destination: "India",
+    continent: "Africa",
     href: "/mauritius/treatment-in-india",
     flag: "🇲🇺",
     flagLabel: "Flag of Mauritius",
@@ -157,6 +183,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Morocco",
     city: "Casablanca",
     destination: "India",
+    continent: "Africa",
     href: "/morocco/treatment-in-india",
     flag: "🇲🇦",
     flagLabel: "Flag of Morocco",
@@ -167,6 +194,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Mozambique",
     city: "Maputo",
     destination: "India",
+    continent: "Africa",
     href: "/mozambique/treatment-in-india",
     flag: "🇲🇿",
     flagLabel: "Flag of Mozambique",
@@ -177,6 +205,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Namibia",
     city: "Windhoek",
     destination: "India",
+    continent: "Africa",
     href: "/namibia/treatment-in-india",
     flag: "🇳🇦",
     flagLabel: "Flag of Namibia",
@@ -187,6 +216,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Nigeria",
     city: "Lagos",
     destination: "India",
+    continent: "Africa",
     href: "/nigeria/treatment-in-india",
     flag: "🇳🇬",
     flagLabel: "Flag of Nigeria",
@@ -197,6 +227,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Rwanda",
     city: "Kigali",
     destination: "India",
+    continent: "Africa",
     href: "/rwanda/treatment-in-india",
     flag: "🇷🇼",
     flagLabel: "Flag of Rwanda",
@@ -207,6 +238,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Senegal",
     city: "Dakar",
     destination: "India",
+    continent: "Africa",
     href: "/senegal/treatment-in-india",
     flag: "🇸🇳",
     flagLabel: "Flag of Senegal",
@@ -217,6 +249,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Somalia",
     city: "Mogadishu",
     destination: "India",
+    continent: "Africa",
     href: "/somalia/treatment-in-india",
     flag: "🇸🇴",
     flagLabel: "Flag of Somalia",
@@ -227,6 +260,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "South Africa",
     city: "Johannesburg",
     destination: "India",
+    continent: "Africa",
     href: "/south-africa/treatment-in-india",
     flag: "🇿🇦",
     flagLabel: "Flag of South Africa",
@@ -237,6 +271,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "South Sudan",
     city: "Juba",
     destination: "India",
+    continent: "Africa",
     href: "/south-sudan/treatment-in-india",
     flag: "🇸🇸",
     flagLabel: "Flag of South Sudan",
@@ -247,6 +282,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Sudan",
     city: "Khartoum",
     destination: "India",
+    continent: "Africa",
     href: "/sudan/treatment-in-india",
     flag: "🇸🇩",
     flagLabel: "Flag of Sudan",
@@ -257,6 +293,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Tanzania",
     city: "Dar es Salaam",
     destination: "India",
+    continent: "Africa",
     href: "/tanzania/treatment-in-india",
     flag: "🇹🇿",
     flagLabel: "Flag of Tanzania",
@@ -267,6 +304,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Uganda",
     city: "Kampala",
     destination: "India",
+    continent: "Africa",
     href: "/uganda/treatment-in-india",
     flag: "🇺🇬",
     flagLabel: "Flag of Uganda",
@@ -274,9 +312,21 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Uganda is currently on India’s e-Visa list. Ugandan patients can use the e-Medical Visa or apply through the High Commission of India in Kampala. The Mission currently notes that online e-Visa and regular visa applications were enabled from 10 September 2026.",
   },
   {
+    name: "Uzbekistan",
+    city: "Tashkent",
+    destination: "India",
+    continent: "Central Asia",
+    href: "/uzbekistan/treatment-in-india",
+    flag: "🇺🇿",
+    flagLabel: "Flag of Uzbekistan",
+    visaNote:
+      "Uzbekistan is currently on India’s e-Visa list. The official fee list shows Uzbekistan at US$80. Uzbek patients can use the e-Medical Visa or apply through the Embassy of India in Tashkent.",
+  },
+  {
     name: "Zambia",
     city: "Lusaka",
     destination: "India",
+    continent: "Africa",
     href: "/zambia/treatment-in-india",
     flag: "🇿🇲",
     flagLabel: "Flag of Zambia",
@@ -287,6 +337,7 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
     name: "Zimbabwe",
     city: "Harare",
     destination: "India",
+    continent: "Africa",
     href: "/zimbabwe/treatment-in-india",
     flag: "🇿🇼",
     flagLabel: "Flag of Zimbabwe",
