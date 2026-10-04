@@ -140,6 +140,17 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
       "Guinea is currently on India’s e-Visa list. Guinean patients can use the e-Medical Visa or apply through the Embassy of India in Conakry.",
   },
   {
+    name: "Kazakhstan",
+    city: "Almaty",
+    destination: "India",
+    continent: "Central Asia",
+    href: "/kazakhstan/treatment-in-india",
+    flag: "🇰🇿",
+    flagLabel: "Flag of Kazakhstan",
+    visaNote:
+      "Kazakhstan is currently on India’s e-Visa list. A category-wise official table lists the e-Medical Visa at US$00. Kazakhstani patients can use the e-Medical Visa or apply through the Embassy of India in Astana or the Representative Office in Almaty.",
+  },
+  {
     name: "Kenya",
     city: "Nairobi",
     destination: "India",

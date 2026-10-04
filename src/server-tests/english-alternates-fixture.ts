@@ -248,6 +248,11 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en"],
   },
   {
+    label: "kazakhstan treatment in India hub",
+    path: "/kazakhstan/treatment-in-india",
+    published: ["en"],
+  },
+  {
     label: "kenya treatment in India hub",
     path: "/kenya/treatment-in-india",
     published: ["en"],
