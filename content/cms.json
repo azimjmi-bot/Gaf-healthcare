@@ -1868,9 +1868,790 @@
       "name": "consult-vs-angiogram.webp",
       "alt": "A stethoscope examination beside a catheter from the arm to the heart",
       "addedAt": "2026-10-10T19:30:00.000Z"
+    },
+    {
+      "id": "media_hospital_pci_webp",
+      "url": "/uploads/articles/hospital-pci.webp",
+      "name": "hospital-pci.webp",
+      "alt": "A catheter from the wrist to a mesh stent in a coronary artery",
+      "addedAt": "2026-10-10T20:30:00.000Z"
+    },
+    {
+      "id": "media_hospital_cabg_webp",
+      "url": "/uploads/articles/hospital-cabg.webp",
+      "name": "hospital-cabg.webp",
+      "alt": "A graft tube from the aorta past a yellow blockage on a coronary artery",
+      "addedAt": "2026-10-10T20:30:00.000Z"
+    },
+    {
+      "id": "media_hospital_valve_webp",
+      "url": "/uploads/articles/hospital-valve.webp",
+      "name": "hospital-valve.webp",
+      "alt": "Thickened valve leaflets where the aorta leaves the heart, beside a mechanical valve in that place",
+      "addedAt": "2026-10-10T20:30:00.000Z"
+    },
+    {
+      "id": "media_hospital_ablation_webp",
+      "url": "/uploads/articles/hospital-ablation.webp",
+      "name": "hospital-ablation.webp",
+      "alt": "Four vein openings ringed with ablation points, and a catheter",
+      "addedAt": "2026-10-10T20:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_how_to_choose_a_hospital_for_heart_treatment_in_india",
+      "slug": "how-to-choose-a-hospital-for-heart-treatment-in-india",
+      "title": "How to Choose the Best Hospital for Heart Treatment in India: A Complete Patient Guide",
+      "excerpt": "Choosing a hospital for heart treatment requires more than comparing names and prices. Learn how to evaluate cardiac specialists, hospital facilities, accreditation, treatment estimates, emergency support and follow-up care in India.",
+      "date": "10 October 2026",
+      "publishedAt": "2026-10-10T20:30:00.000Z",
+      "updatedAt": "2026-10-10T20:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "hospital",
+        "heart treatment",
+        "cardiology",
+        "India",
+        "travel"
+      ],
+      "image": "/uploads/articles/hospital-pci.webp",
+      "imageAlt": "A catheter from the wrist to a mesh stent in a coronary artery",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Best Hospital for Heart Treatment in India: How to Choose",
+      "seoDescription": "Learn how to choose a hospital for heart treatment in India. Compare cardiac specialists, facilities, accreditation, costs, treatment options and patient support.",
+      "canonical": "https://gaf.healthcare/blogs/how-to-choose-a-hospital-for-heart-treatment-in-india",
+      "ogImage": "/uploads/articles/hospital-pci.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Best hospital for heart treatment in India",
+        "Best cardiac hospital in India",
+        "Heart treatment hospitals in India",
+        "Best heart hospital in India for international patients",
+        "Cardiology hospitals in India",
+        "Cardiac surgery hospitals in India",
+        "Heart bypass surgery hospital in India",
+        "Angioplasty hospitals in India",
+        "Heart valve replacement hospitals in India",
+        "Cardiac care centres in India",
+        "Affordable heart treatment in India",
+        "Heart specialist hospitals in India",
+        "How to choose a cardiac hospital"
+      ],
+      "blocks": [
+        {
+          "id": "p_001",
+          "type": "paragraph",
+          "text": "The useful question is which hospital can look after this condition, not which name is most famous. Angioplasty, bypass surgery, a valve procedure, and a rhythm procedure need different teams. A hospital that does one of them well may be the wrong place for another."
+        },
+        {
+          "id": "html_002",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>The right hospital for heart treatment is one that can provide the clinical expertise, facilities and coordinated care required for your specific condition. A hospital known for coronary angioplasty may not necessarily be the most suitable choice for complex congenital heart surgery, advanced heart failure or a specialised heart rhythm procedure.</p><p>Before making a decision, evaluate:</p><ul class=\"article-quick-answer__list\"><li>The experience of the cardiac team in treating your specific condition.</li><li>The availability of the required cardiology or cardiac surgery service.</li><li>Critical care, emergency support and diagnostic facilities.</li><li>Hospital accreditation and patient-safety processes.</li><li>The proposed treatment plan and available alternatives.</li><li>A transparent, itemised cost estimate.</li><li>Communication, patient coordination and follow-up arrangements.</li></ul><p>For international patients, travel logistics, language support, visa planning and continuity of care after returning home are also important.</p><p>GAF Healthcare helps international patients explore cardiology specialists and hospitals in India, coordinate medical-record reviews and understand the practical steps involved in planning treatment.</p><p><a href=\"/doctors/India/Cardiology\">Explore cardiologists in India</a>.</p></div></aside>"
+        },
+        {
+          "id": "toc_003",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-start-with-the-condition-not-the-hospital-name\">1. Start With the Condition, Not the Hospital Name</a></li><li><a href=\"#2-which-cardiac-service-the-hospital-must-offer\">2. Which Cardiac Service the Hospital Must Offer</a></li><li><a href=\"#3-twelve-checks-before-you-choose\">3. Twelve Checks Before You Choose</a></li><li><a href=\"#4-how-to-compare-two-hospitals\">4. How to Compare Two Hospitals</a></li><li><a href=\"#5-a-large-hospital-and-a-cardiac-centre\">5. A Large Hospital and a Cardiac Centre</a></li><li><a href=\"#6-questions-to-ask\">6. Questions to Ask</a></li><li><a href=\"#7-published-planning-ranges-are-not-a-hospital-ranking\">7. Published Planning Ranges Are Not a Hospital Ranking</a></li><li><a href=\"#8-if-you-are-travelling-to-india\">8. If You Are Travelling to India</a></li><li><a href=\"#9-the-service-depends-on-the-condition\">9. The Service Depends on the Condition</a></li><li><a href=\"#10-cities-are-directories-not-rankings\">10. Cities Are Directories, Not Rankings</a></li><li><a href=\"#11-mistakes-that-skew-the-choice\">11. Mistakes That Skew the Choice</a></li><li><a href=\"#12-frequently-asked-questions-about-choosing-a-heart-hospital\">12. Frequently Asked Questions About Choosing a Heart Hospital</a></li><li><a href=\"#conclusion-choose-the-team-for-this-condition\">Conclusion: Choose the Team for This Condition</a></li><li><a href=\"#sources\">Sources</a></li></ol></nav>"
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "[Cardiology hospitals in India](/hospitals/India/Cardiology) and [cardiac surgery hospitals in India](/hospitals/India/Cardiac-Surgery) are directories. They are not a ranking, and they are not a price list. [Cardiologists in India](/doctors/India/Cardiology) and [cardiac surgeons in India](/doctors/India/Cardiac-Surgery) are the doctor lists. City lists include [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology), [Mumbai](/doctors/India/Mumbai/Cardiology), [Chennai](/doctors/India/Chennai/Cardiology), [Bengaluru](/doctors/India/Bengaluru/Cardiology), and [Hyderabad](/doctors/India/Hyderabad/Cardiology)."
+        },
+        {
+          "id": "btn_005",
+          "type": "button",
+          "label": "Tell us the condition before we suggest a hospital",
+          "href": "https://wa.me/919044346292?text=Please%20look%20at%20the%20heart%20diagnosis%20I%20can%20share%20and%20tell%20me%20which%20kind%20of%20hospital%20service%20in%20India%20should%20be%20able%20to%20assess%20it.%20Do%20not%20suggest%20a%20hospital%20from%20a%20ranking."
+        },
+        {
+          "id": "h_006",
+          "type": "heading",
+          "level": 2,
+          "text": "1. Start With the Condition, Not the Hospital Name"
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "Cardiovascular disease is a group of conditions, not one operation. The World Health Organization’s [cardiovascular disease fact sheet](https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)) describes coronary heart disease, cerebrovascular disease, rheumatic heart disease, and other disorders of the heart and blood vessels. WHO’s [India topic page](https://www.who.int/india/health-topics/cardiovascular-diseases) is the same kind of background. Neither page names a hospital."
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "Someone being assessed for a narrowed coronary artery needs a different pathway from a child with a congenital heart condition, or an adult with a complex rhythm problem. If the diagnosis is still unclear, the first step is an assessment, not a booking for a major procedure. A hospital should be able to explain the plan, why it was recommended, the expected benefits and risks, and how recovery and follow-up will work."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "This site does not rank hospitals, and it does not publish success rates. A famous name, a large building, or an advertisement is a weak way to choose."
+        },
+        {
+          "id": "h_010",
+          "type": "heading",
+          "level": 2,
+          "text": "2. Which Cardiac Service the Hospital Must Offer"
+        },
+        {
+          "id": "h_011",
+          "type": "heading",
+          "level": 3,
+          "text": "Clinical cardiology"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "This is assessment, tests, medicines, and follow-up. Chest discomfort, breathlessness, heart failure, blood-pressure-related heart problems, and a general cardiovascular review often start here. Many people do not need surgery or a catheter procedure."
+        },
+        {
+          "id": "h_013",
+          "type": "heading",
+          "level": 3,
+          "text": "Interventional cardiology"
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "Catheter work includes coronary angiography, angioplasty and stenting, and some structural procedures. If angioplasty is being discussed, ask whether that hospital has a catheterisation laboratory, interventional cardiologists who do that procedure, and support if something goes wrong."
+        },
+        {
+          "id": "img_015",
+          "type": "image",
+          "src": "/uploads/articles/hospital-pci.webp",
+          "alt": "A catheter from the wrist to a mesh stent in a coronary artery",
+          "caption": "Angioplasty is a catheter from an artery, often at the wrist, to a stent in a coronary artery. The yellow area is plaque. This is a teaching drawing, not an angiogram."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "How the choice between a stent and surgery is made is in [angioplasty vs bypass surgery in India](/blogs/angioplasty-vs-bypass-surgery-in-india). The procedure page is [coronary angioplasty in India](/treatments/coronary-angioplasty-in-india)."
+        },
+        {
+          "id": "h_017",
+          "type": "heading",
+          "level": 3,
+          "text": "Cardiac surgery"
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "Surgery may be bypass grafting, valve repair or replacement, selected congenital operations, or surgery on the aorta. Ask about the surgeon’s experience with that operation, the anaesthetic team, intensive care, and how recovery is organised. The bypass page is [CABG surgery in India](/treatments/cabg-surgery-in-india)."
+        },
+        {
+          "id": "img_019",
+          "type": "image",
+          "src": "/uploads/articles/hospital-cabg.webp",
+          "alt": "A graft tube from the aorta past a yellow blockage on a coronary artery",
+          "caption": "Bypass uses a graft to carry blood past a narrowing. Here a tube leaves the aorta and arches past yellow plaque. This is a teaching drawing, not an operation photograph."
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 3,
+          "text": "Rhythm treatment"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "Palpitations, atrial fibrillation, and device decisions may need an electrophysiology service: medicines, a rhythm study, ablation, a pacemaker, or an ICD. Confirm that the hospital offers the specific service, not only a general cardiology clinic."
+        },
+        {
+          "id": "img_022",
+          "type": "image",
+          "src": "/uploads/articles/hospital-ablation.webp",
+          "alt": "Four vein openings ringed with ablation points, and a catheter",
+          "caption": "One rhythm procedure isolates veins where they enter the heart. This drawing shows four openings, each ringed with ablation points, and a catheter. It is a teaching drawing, not a map of one person’s veins."
+        },
+        {
+          "id": "h_023",
+          "type": "heading",
+          "level": 3,
+          "text": "Children, heart failure, and rehabilitation"
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "A child with congenital heart disease needs paediatric cardiology and, when an operation is proposed, a paediatric cardiac surgical team, with facilities suited to that age. Advanced heart failure may need imaging, intensive care, and a team used to that stage of disease. After a procedure, ask whether rehabilitation, medicine review, and exercise guidance happen at that hospital or with another qualified service. [Heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india) is about the stay after an operation."
+        },
+        {
+          "id": "h_025",
+          "type": "heading",
+          "level": 2,
+          "text": "3. Twelve Checks Before You Choose"
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "**The diagnosis.** Write down the question you need answered. Stable coronary disease, a suspected heart attack, valve surgery, and recurrent atrial fibrillation are different problems. Emergency symptoms need emergency care, not a comparison of hospitals."
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "**The team.** Depending on the case, that may be a clinical cardiologist, an interventional cardiologist, an electrophysiologist, a cardiothoracic surgeon, a paediatric cardiologist, a cardiac anaesthesiologist, and intensive care. Ask whether those people regularly manage a condition like yours. Check registration on the [National Medical Register](https://nmr.nmc.org.in/)."
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "**The procedure itself.** Do not assume a cardiology department offers every advanced service. Confirm the proposed treatment, the assessment before it, and the care after it. For a complex case, ask whether a team review or a [second opinion from a cardiologist](/blogs/second-opinion-from-a-cardiologist-in-india) can be arranged without delaying urgent treatment."
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "**Diagnostics.** ECG, echocardiography, stress testing when it is appropriate, rhythm monitoring, cardiac CT or MRI when indicated, coronary angiography, and a laboratory may all matter. Not every person needs every test. The doctor should say which results will change the plan."
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "**Emergency and intensive care.** Ask about emergency care, cardiac monitoring, an intensive care unit, critical care doctors, emergency catheterisation when that is relevant, cardiac anaesthesia, a blood bank, and a laboratory. The level of support should match the procedure."
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "**Accreditation.** NABH runs hospital accreditation programmes in India. The standards cover patient care, infection control, medicines, patient rights, safety, and continuity of care. The official lists are the [hospital accreditation programme](https://portal.nabh.co/Hospitals.aspx), the [NABH FAQ](https://portal.nabh.co/faq.aspx), and the [standards page](https://international.nabh.co/standard.aspx). Confirm the status and the scope for the exact facility. Accreditation of one branch does not automatically cover every site in a group. Accreditation is one check. It does not promise an outcome."
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "**The plan and the alternatives.** For coronary disease, medicines, angioplasty, and bypass are not interchangeable. Ask for the diagnosis and how severe it is, the purpose of the treatment, the expected benefit, the important risks, the alternatives, what delay would mean, and the recovery. An elective procedure should come with time to ask questions. The list in [questions to ask before heart surgery](/blogs/questions-to-ask-before-heart-surgery) is a useful prompt."
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "**A written estimate.** The bill can include the visit, tests, professional fees, the room, devices, medicines, intensive care, rehabilitation, and follow-up. Ask what is included and what can be extra. [Cardiologist consultation fees in India](/blogs/cardiologist-consultation-fees-in-india) explains that this site does not publish a single consultation fee. The visit and a procedure are different bills."
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "**Communication.** You should be able to understand the plan and reach the relevant department. For international patients, ask about appointment coordination, a language you understand, and documents you can take home. Coordination does not replace a conversation with the treating doctor."
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "**Infection control and consent.** Ask how the hospital handles infection prevention, medicine safety, consent, and identification, who explains the risks, and how a concern is raised. The NHS pages on [heart and circulatory conditions](https://www.nhs.uk/conditions/) and MedlinePlus on [heart diseases](https://medlineplus.gov/heartdiseases.html) are general background, not a hospital score."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "**Recovery.** Ask who oversees rehabilitation, wound care, repeat imaging, rhythm checks, and the local cardiologist. For major surgery, ask how long you should stay near the hospital after leaving the ward."
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "**Follow-up.** Before discharge, ask for the medicine list, activity guidance, the next appointments, tests still due, and symptoms that need urgent care. If you live elsewhere, name a local doctor and take the records they will need."
+        },
+        {
+          "id": "btn_038",
+          "type": "button",
+          "label": "Ask for the team, the procedure, and the written estimate together",
+          "href": "https://wa.me/919044346292?text=Please%20confirm%20which%20specialist%20would%20manage%20this%20heart%20condition%2C%20whether%20that%20procedure%20is%20available%20at%20the%20hospital%2C%20and%20send%20a%20written%20estimate%20that%20lists%20inclusions%20and%20exclusions."
+        },
+        {
+          "id": "h_039",
+          "type": "heading",
+          "level": 2,
+          "text": "4. How to Compare Two Hospitals"
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "Use the same questions at each place. Reputation, a slogan, or the first number on a quote is a poor comparison."
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "| Comparison factor | Questions to ask |\n|---|---|\n| Specialist expertise | Does this team regularly manage this condition? |\n| Procedure availability | Is the recommended procedure done at this facility? |\n| Diagnostic support | Are the tests this case needs available here? |\n| Emergency support | Can the hospital manage the relevant complications? |\n| Accreditation | Is accreditation current for this exact location? |\n| Treatment plan | Are benefits, risks, and alternatives explained? |\n| Cost estimate | Is the quotation itemised, with exclusions stated? |\n| Communication | Can you understand and contact the care team? |\n| Recovery | Are discharge planning and rehabilitation available? |\n| Follow-up | Is there a clear plan after you leave? |\n| Travel | Can the stay and the appointments be coordinated? |\n| Your situation | Does the plan fit the other illnesses and the practical limits? |"
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "For each hospital, write down the city, the doctor and the specialty, the recommended treatment, extra tests, the expected stay, the written estimate, what is included and excluded, accreditation if you have checked it, follow-up, and travel if you are coming from elsewhere."
+        },
+        {
+          "id": "h_043",
+          "type": "heading",
+          "level": 2,
+          "text": "5. A Large Hospital and a Cardiac Centre"
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "A large multispecialty hospital can matter when kidney disease, neurology, cancer care, or another specialty has to sit beside the heart team. A centre that concentrates on cardiovascular work can be the right place for a defined cardiac assessment or procedure. Size does not decide quality. Compare the specialists, the proposed treatment, emergency support, and follow-up."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Questions to Ask"
+        },
+        {
+          "id": "ol_046",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is the exact diagnosis?",
+            "Which specialist is responsible for this care?",
+            "What treatment options exist?",
+            "Why this treatment?",
+            "Is it urgent, or is there time for another opinion?",
+            "What benefit is realistic?",
+            "What are the important risks and limits?",
+            "Which tests are necessary?",
+            "Who would perform a procedure, if one is needed?",
+            "What is available if a complication occurs?",
+            "How long might the hospital stay be?",
+            "What does the written estimate include?",
+            "Which costs could be extra?",
+            "What recovery and rehabilitation are expected?",
+            "How is follow-up arranged after discharge?"
+          ]
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "Start with the diagnosis, the options, the major risks, and the costs. The records to take in are listed in [what to bring to a cardiologist appointment](/blogs/what-to-bring-to-a-cardiologist-appointment)."
+        },
+        {
+          "id": "h_048",
+          "type": "heading",
+          "level": 2,
+          "text": "7. Published Planning Ranges Are Not a Hospital Ranking"
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "This site does not publish a single price for heart treatment in India. A consultation is a different expense from angioplasty, bypass, valve replacement, or a rhythm procedure. The final bill can change if the team finds another problem or advises another test. City, room category, devices, intensive care, and the length of stay all move the number. A lower quote that leaves out a device or the intensive care stay is not comparable with a quote that includes them."
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "The figures below are indicative planning ranges from the current cost pages. They are not a hospital quotation, and they do not say which hospital should treat you."
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "| If the hospital is quoting this | India planning range | Typical stay on the cost page |\n|---|---|---|\n| [Coronary angiography](/costs/India/Cardiology/Coronary-Angiography) | US$400–US$1,200 | Day-care or overnight |\n| [Coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) | US$3,200–US$8,500 | 1–3 nights typical |\n| [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | US$5,500–US$14,000 | 7–14 nights, then nearby recovery |\n| [Heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) | US$7,000–US$18,000 | 8–16 nights |\n| [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) | US$18,000–US$42,000 | 3–7 nights typical |\n| [Pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) | US$3,500–US$9,000 | 1–3 nights |\n| [Atrial fibrillation ablation](/costs/India/Cardiology/Atrial-Fibrillation-Ablation) | US$6,500–US$16,000 | 1–3 nights |"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "The angioplasty page lists a US comparison of **US$25,000–US$70,000**. The CABG page lists **US$70,000–US$200,000**. The heart valve replacement page lists **US$80,000–US$220,000**. The TAVR page lists **US$50,000–US$150,000**. Each of those figures is not an India price. A city filter is the same listing, for example angioplasty in [Delhi NCR](/costs/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting) and [Mumbai](/costs/India/Mumbai/Cardiology/Coronary-Angioplasty-Stenting)."
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Read the cost guides beside the hospital questions: [angioplasty cost in India](/blogs/angioplasty-cost-in-india), [bypass surgery cost in India](/blogs/bypass-surgery-cost-in-india), [heart valve replacement cost in India](/blogs/heart-valve-replacement-cost-in-india), [pacemaker cost in India](/blogs/pacemaker-cost-in-india), [ICD implantation cost in India](/blogs/icd-implantation-cost-in-india), and [cardiac ablation cost in India](/blogs/cardiac-ablation-cost-in-india). Treatment pages: [heart valve replacement in India](/treatments/heart-valve-replacement-in-india) and [TAVR in India](/treatments/tavr-in-india)."
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "Ask whether a quotation includes the consultation, tests and imaging, professional fees, anaesthesia where it applies, the room and nursing, devices, intensive care if it is expected, medicines during the stay, follow-up visits, rehabilitation, and what changes if the plan changes."
+        },
+        {
+          "id": "btn_055",
+          "type": "button",
+          "label": "Keep two hospital estimates side by side, with the same inclusions",
+          "href": "https://wa.me/919044346292?text=Please%20compare%20written%20heart-treatment%20estimates%20from%20the%20hospitals%20I%20name.%20List%20what%20each%20quote%20includes%20and%20excludes%2C%20and%20keep%20the%20consultation%20fee%20separate%20from%20any%20procedure."
+        },
+        {
+          "id": "h_056",
+          "type": "heading",
+          "level": 2,
+          "text": "8. If You Are Travelling to India"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "Patients coming from Africa, the Middle East, Central Asia, and elsewhere should start with the clinical question, then the tickets. You can message +91 90443 46292 with the reports you already have."
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "Send ECGs, echocardiograms, angiography reports and images if you have them, cardiac CT or MRI when relevant, blood results, discharge summaries, the medicine list, allergies, and earlier procedure notes. For a child, include the paediatric records. Do not delay emergency care to finish the folder."
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "A remote reading can suggest next steps. It cannot always make a final diagnosis or confirm that a procedure is suitable. If a treatment is proposed, ask for the approach, the alternatives, the expected stay, and the costs, and whether an in-person visit and more tests are required first."
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "Confirm the appointment and the likely length of stay before you book travel. Check the current visa rules with the official authority. If the person is unstable, or the symptoms need urgent care, do not travel on the strength of a future appointment."
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "Ask how long to remain near the hospital after a major procedure, who will travel with the patient, and how follow-up will work at home. Take the discharge summary, the procedure report, the medicine list, and the follow-up plan."
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "GAF Healthcare helps international patients explore cardiologists and hospitals in India, share medical records, arrange appointments, and understand the planning steps. The treating hospital and doctor remain responsible for assessment and for whether a procedure is appropriate."
+        },
+        {
+          "id": "btn_063",
+          "type": "button",
+          "label": "Send the records before any travel is booked",
+          "href": "https://wa.me/919044346292?text=I%20am%20considering%20heart%20treatment%20in%20India.%20Please%20say%20which%20reports%20to%20send%2C%20whether%20a%20remote%20review%20is%20enough%20to%20plan%20travel%2C%20and%20what%20the%20hospital%20still%20has%20to%20confirm%20in%20person."
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 2,
+          "text": "9. The Service Depends on the Condition"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "**Coronary artery disease.** Confirm clinical assessment and the interventional or surgical service that might be needed. Ask why angioplasty or bypass was recommended and whether medicines are still reasonable."
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "**Valve disease.** Confirm experience with that valve. Options can include medicines, repair, surgical replacement, or a catheter procedure such as TAVR/TAVI in selected people. The drawing below is the idea of a stiffened valve and a mechanical valve in the same place. It is not a recommendation."
+        },
+        {
+          "id": "img_067",
+          "type": "image",
+          "src": "/uploads/articles/hospital-valve.webp",
+          "alt": "Thickened valve leaflets where the aorta leaves the heart, beside a mechanical valve in that place",
+          "caption": "Left: thickened leaflets where the aorta leaves the heart. Right: a mechanical valve drawn in that same place. This is a teaching drawing."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "**Rhythm disorders.** Confirm an electrophysiology service for that arrhythmia. Treatment may be medicines, monitoring, cardioversion, ablation, or a device."
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "**Heart failure.** Look for a team used to heart function, medicines, and the other illnesses that travel with heart failure. Ask which advanced services exist on that site and who coordinates long-term care."
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "**Congenital heart disease.** Confirm paediatric cardiology and, if an operation is proposed, paediatric cardiac surgery, facilities for that age, and the follow-up."
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "**Several problems at once.** Ask who holds the overall plan when one treatment affects another condition."
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 2,
+          "text": "10. Cities Are Directories, Not Rankings"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Delhi NCR, Mumbai, Chennai, Bengaluru, and Hyderabad are places to look, not a league table. The choice depends on the condition, the service, the specialist, the facilities, the written estimate, and follow-up."
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "In Delhi NCR, confirm the doctor, the services at that building, and the pathway. In Mumbai, compare the team, the facilities, and the written estimate. In Chennai, confirm the particular service and the follow-up. In Bengaluru, judge the team and the plan, not the city. Hyderabad and other cities can be appropriate when the procedure, the specialist, and the travel fit. A fee advertised for one doctor does not apply to the city."
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Mistakes That Skew the Choice"
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "A well-known hospital can still be the wrong team for this condition. Compare the specialist, the plan, and the support around the procedure."
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "A low quote may omit tests, devices, hospital days, or follow-up. Ask for an itemised quotation before you treat two numbers as the same service."
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "Not every heart condition needs a procedure. Ask what else is reasonable and what each option is expected to change."
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "Online lists rarely explain how the hospitals were chosen, or whether the list matches your condition. Use them as a starting point, then check the doctor, the facilities, and the plan."
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Book travel after a clinician has reviewed the records and said the trip fits. Severe chest pain, serious difficulty breathing, fainting, or signs of a possible stroke need local emergency care. Do not wait to compare hospitals."
+        },
+        {
+          "id": "btn_081",
+          "type": "button",
+          "label": "Ask whether there is time for a second hospital opinion",
+          "href": "https://wa.me/919044346292?text=This%20is%20not%20an%20emergency.%20Please%20tell%20me%20whether%20another%20hospital%20review%20can%20be%20arranged%20without%20delaying%20treatment%2C%20and%20which%20records%20that%20reviewer%20needs."
+        },
+        {
+          "id": "h_082",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Frequently Asked Questions About Choosing a Heart Hospital"
+        },
+        {
+          "id": "h_083",
+          "type": "heading",
+          "level": 3,
+          "text": "Which is the best hospital for heart treatment in India?"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "There is no single best hospital for every heart condition. The useful choice is the team that regularly manages this diagnosis, with the facilities the plan needs, a written estimate, and a follow-up path. This site does not rank hospitals."
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 3,
+          "text": "How do I compare cardiac hospitals in India?"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "Use the same questions at each place: the relevant doctor’s experience, whether the procedure is done there, diagnostics and critical care, accreditation for that site, the treatment plan, the itemised estimate, and follow-up."
+        },
+        {
+          "id": "h_087",
+          "type": "heading",
+          "level": 3,
+          "text": "Is NABH accreditation important when choosing a cardiac hospital?"
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "It shows the hospital has been assessed against standards that include patient care and safety. Check the current status for the actual facility on the NABH portal. Accreditation sits beside the team’s experience. It does not promise an outcome."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I choose a multispecialty hospital or a specialised cardiac centre?"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Either can be right. A multispecialty hospital can help when several illnesses have to be managed together. A cardiac centre can be the right place for a defined heart procedure. Compare the facilities, the specialists, and the pathway."
+        },
+        {
+          "id": "h_091",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I check before undergoing heart surgery in India?"
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "Check the surgeon’s experience with that operation, the alternatives, intensive care, the expected recovery, the written costs, and follow-up. Ask until the benefits and risks are clear. The planning range for CABG on this site is US$5,500–US$14,000, with 7–14 nights, then nearby recovery. That is an indicative range, not a quotation for a named hospital."
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I get a second opinion before heart surgery?"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "When the situation is not an emergency, another opinion can clarify the diagnosis, the alternatives, and the expected course. If the team says the procedure is urgent, ask whether there is time for another opinion without raising the risk."
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does heart treatment cost in India?"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "It depends on the condition, the treatment, the hospital, devices, the length of stay, and other illnesses. This site does not publish a single price for heart treatment. Ask the hospital for an itemised estimate. Published procedure ranges, such as angioplasty at US$3,200–US$8,500 with 1–3 nights typical, are planning ranges, not the consultation fee."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 3,
+          "text": "Do hospitals in India treat international cardiac patients?"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Some coordinate appointments for people travelling from abroad. Confirm that the clinical service exists, send the records first, and ask the treating team whether travel is appropriate and how follow-up will work at home."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "Which documents should I send to a hospital before travelling?"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Send relevant ECGs, echocardiograms, angiography reports and images, discharge summaries, the medicine list, and other tests tied to the diagnosis. The hospital may ask for more before it offers even a preliminary view."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "How long should an international patient stay in India after cardiac treatment?"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "It depends on the procedure, recovery, and the treating doctor. Ask for an expected timeline and whether you should remain near the hospital after discharge. Do not book the flight home until the team says travel is appropriate. The cost-page stays, such as day-care or overnight for angiography, are planning windows, not a personal discharge date."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "Can GAF Healthcare help me compare hospitals?"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help international patients explore specialists and hospitals in India, share records, arrange appointments, and sort the practical steps. The treating doctors decide which treatment is appropriate. Message +91 90443 46292."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I do if I have severe chest pain or difficulty breathing?"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Seek emergency medical care immediately. Do not delay that assessment to compare hospitals, message a coordinator, or arrange international travel."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 3,
+          "text": "Does this site name a best cardiac hospital?"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "No. The hospital directories are lists of providers, not a ranking and not a success-rate table. Choose from the condition, the team, the facilities, and a written estimate."
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 3,
+          "text": "If angioplasty or bypass is proposed, what ranges are published?"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "Those ranges are not a hospital’s fee schedule. The cost pages list coronary angiography at US$400–US$1,200, typically day-care or overnight; coronary angioplasty and stenting at US$3,200–US$8,500, with 1–3 nights typical; and CABG at US$5,500–US$14,000, with 7–14 nights, then nearby recovery. They are indicative planning ranges, not a quotation."
+        },
+        {
+          "id": "h_111",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a US comparison band an India price?"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "No. The angioplasty US comparison of US$25,000–US$70,000 and the CABG US comparison of US$70,000–US$200,000 are not an India price. Each of those figures is not an India price."
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 3,
+          "text": "Does a city page on this site show a different hospital tariff?"
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "No. A city filter on a procedure cost page is the same procedure listing. It is not a local hospital tariff and it is not a ranking of hospitals in that city."
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion: Choose the Team for This Condition"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "Start from the diagnosis and the service it needs. Compare the specialists, the facilities, safety processes, the alternatives, the written costs, and follow-up. Ask again when the plan is unclear. For international patients, review the records and settle travel with the treating team, and arrange care at home before you leave."
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "[Explore cardiologists in India](/doctors/India/Cardiology)."
+        },
+        {
+          "id": "btn_118",
+          "type": "button",
+          "label": "Confirm the hospital service and the estimate before travel",
+          "href": "https://wa.me/919044346292?text=Please%20confirm%2C%20in%20writing%2C%20which%20heart%20service%20this%20hospital%20can%20provide%20for%20my%20condition%2C%20who%20the%20specialist%20would%20be%2C%20and%20what%20the%20itemised%20estimate%20includes%2C%20before%20any%20travel%20is%20booked."
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "ol_120",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "World Health Organization — [Cardiovascular diseases](https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds))",
+            "World Health Organization — [Cardiovascular diseases in India](https://www.who.int/india/health-topics/cardiovascular-diseases)",
+            "NABH — [Hospital accreditation programme](https://portal.nabh.co/Hospitals.aspx)",
+            "NABH — [Frequently asked questions](https://portal.nabh.co/faq.aspx)",
+            "NABH — [Hospital accreditation standards](https://international.nabh.co/standard.aspx)",
+            "National Medical Commission — [National Medical Register](https://nmr.nmc.org.in/)",
+            "American Heart Association — [Heart-health topics](https://www.heart.org/en/health-topics)",
+            "American College of Cardiology — [Guidelines](https://www.acc.org/Guidelines)",
+            "NHS — [Heart and circulatory conditions](https://www.nhs.uk/conditions/)",
+            "MedlinePlus — [Heart diseases](https://medlineplus.gov/heartdiseases.html)"
+          ]
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "This article is for general education. It has not been signed by a named cardiologist or cardiac surgeon. It does not rank hospitals or quote success rates. Treatment depends on the diagnosis and the treating team. Accreditation and fees should be confirmed with the provider. Seek emergency care for severe chest pain, serious difficulty breathing, fainting, or signs of a possible stroke. Do not delay urgent treatment to compare hospitals or to arrange travel."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Cardiology hospitals in India",
+          "href": "/hospitals/India/Cardiology"
+        },
+        {
+          "label": "Cardiac surgery hospitals in India",
+          "href": "/hospitals/India/Cardiac-Surgery"
+        },
+        {
+          "label": "Cardiologists in India",
+          "href": "/doctors/India/Cardiology"
+        },
+        {
+          "label": "Cardiologist consultation fees in India",
+          "href": "/blogs/cardiologist-consultation-fees-in-india"
+        },
+        {
+          "label": "Second opinion from a cardiologist in India",
+          "href": "/blogs/second-opinion-from-a-cardiologist-in-india"
+        },
+        {
+          "label": "Angioplasty cost in India",
+          "href": "/blogs/angioplasty-cost-in-india"
+        }
+      ]
+    },
     {
       "id": "art_cardiologist_consultation_fees_in_india",
       "slug": "cardiologist-consultation-fees-in-india",
