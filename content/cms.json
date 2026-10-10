@@ -1756,9 +1756,970 @@
       "name": "pci-cabg-recovery.webp",
       "alt": "A wrist dressing and a walk, then a chest dressing and a person walking with a hand on the chest",
       "addedAt": "2026-10-10T15:30:00.000Z"
+    },
+    {
+      "id": "media_questions_three_procedures_webp",
+      "url": "/uploads/articles/questions-three-procedures.webp",
+      "name": "questions-three-procedures.webp",
+      "alt": "A stent inside an artery, a graft on a heart, and aortic valve leaflets seen from above",
+      "addedAt": "2026-10-10T16:30:00.000Z"
+    },
+    {
+      "id": "media_questions_aortic_valve_webp",
+      "url": "/uploads/articles/questions-aortic-valve.webp",
+      "name": "questions-aortic-valve.webp",
+      "alt": "Thickened tissue where the aorta leaves the heart, beside a mechanical valve in the same place",
+      "addedAt": "2026-10-10T16:30:00.000Z"
+    },
+    {
+      "id": "media_questions_pacemaker_webp",
+      "url": "/uploads/articles/questions-pacemaker.webp",
+      "name": "questions-pacemaker.webp",
+      "alt": "A pacemaker box under the left collarbone with leads drawn into the heart",
+      "addedAt": "2026-10-10T16:30:00.000Z"
+    },
+    {
+      "id": "media_questions_records_prep_webp",
+      "url": "/uploads/articles/questions-records-prep.webp",
+      "name": "questions-records-prep.webp",
+      "alt": "An ECG trace, a heart on a screen, a pill box, and a folder of reports",
+      "addedAt": "2026-10-10T16:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_questions_to_ask_before_heart_surgery",
+      "slug": "questions-to-ask-before-heart-surgery",
+      "title": "Questions to Ask Before Heart Surgery or a Cardiac Procedure in India: A Complete Patient Guide",
+      "excerpt": "Preparing for heart surgery or a cardiac procedure? Use this practical checklist of questions to ask your cardiologist or cardiac surgeon about diagnosis, treatment options, risks, costs, recovery and follow-up care—whether you are seeking treatment in India or elsewhere.",
+      "date": "10 October 2026",
+      "publishedAt": "2026-10-10T16:30:00.000Z",
+      "updatedAt": "2026-10-10T16:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "heart surgery",
+        "questions",
+        "cost",
+        "India",
+        "travel"
+      ],
+      "image": "/uploads/articles/questions-three-procedures.webp",
+      "imageAlt": "A stent inside an artery, a graft on a heart, and aortic valve leaflets seen from above",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Questions to Ask Before Heart Surgery or a Cardiac Procedure",
+      "seoDescription": "Learn what to ask before heart surgery, angioplasty, stent placement or a heart valve procedure in India. Understand risks, alternatives, costs and recovery.",
+      "canonical": "https://gaf.healthcare/blogs/questions-to-ask-before-heart-surgery",
+      "ogImage": "/uploads/articles/questions-three-procedures.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Questions to ask before heart surgery",
+        "Questions to ask a cardiac surgeon",
+        "Questions to ask before angioplasty",
+        "Questions to ask before heart surgery in India",
+        "Questions before bypass surgery",
+        "Questions to ask a cardiologist before a procedure",
+        "Heart surgery risks and benefits",
+        "Alternatives to heart surgery",
+        "Cost of heart surgery in India",
+        "Second opinion before heart surgery",
+        "Recovery after cardiac surgery"
+      ],
+      "blocks": [
+        {
+          "id": "p_001",
+          "type": "paragraph",
+          "text": "Being told you may need heart surgery or a catheter procedure raises practical questions: whether it is necessary, whether medicines could be enough, what the risks are, what it costs, and how long recovery takes. If the hospital is in another city, travel and follow-up sit on the same list."
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "You do not need every medical term before the visit. You do need a plain account of the diagnosis, the options, and why one of them is being recommended. This checklist covers heart surgery, angioplasty, stent placement, valve treatment, a pacemaker, an ICD, and ablation. Save it and take the questions that apply to you."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "**If you have severe or new chest pain, severe breathlessness, fainting, or other symptoms that could be an emergency, seek emergency care now.** Do not delay that care to research options or arrange a second opinion."
+        },
+        {
+          "id": "html_004",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>The right questions can help you make an informed decision, but they cannot replace an individual medical assessment. The best treatment depends on your diagnosis, symptoms, test results, overall health and personal circumstances.</p></div></aside>"
+        },
+        {
+          "id": "toc_005",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-understand-the-diagnosis-first\">1. Understand the Diagnosis First</a></li><li><a href=\"#2-why-this-procedure\">2. Why This Procedure?</a></li><li><a href=\"#3-what-are-the-alternatives\">3. What Are the Alternatives?</a></li><li><a href=\"#4-benefits-you-can-expect\">4. Benefits You Can Expect</a></li><li><a href=\"#5-risks-in-your-case\">5. Risks in Your Case</a></li><li><a href=\"#6-questions-before-angioplasty-or-a-stent\">6. Questions Before Angioplasty or a Stent</a></li><li><a href=\"#7-questions-before-bypass-surgery\">7. Questions Before Bypass Surgery</a></li><li><a href=\"#8-questions-before-valve-surgery-or-tavr\">8. Questions Before Valve Surgery or TAVR</a></li><li><a href=\"#9-questions-before-a-pacemaker-an-icd-or-ablation\">9. Questions Before a Pacemaker, an ICD, or Ablation</a></li><li><a href=\"#10-the-specialist-and-the-hospital\">10. The Specialist and the Hospital</a></li><li><a href=\"#11-tests-medicines-and-the-day-itself\">11. Tests, Medicines, and the Day Itself</a></li><li><a href=\"#12-anaesthesia-and-pain\">12. Anaesthesia and Pain</a></li><li><a href=\"#13-what-to-ask-about-cost-in-india\">13. What to Ask About Cost in India</a></li><li><a href=\"#14-recovery\">14. Recovery</a></li><li><a href=\"#15-if-you-are-travelling-to-india\">15. If You Are Travelling to India</a></li><li><a href=\"#16-a-second-opinion\">16. A Second Opinion</a></li><li><a href=\"#17-how-to-use-the-appointment\">17. How to Use the Appointment</a></li><li><a href=\"#18-a-checklist-to-take-with-you\">18. A Checklist to Take With You</a></li><li><a href=\"#19-frequently-asked-questions-about-questions-before-heart-surgery\">19. Frequently Asked Questions About Questions Before Heart Surgery</a></li><li><a href=\"#conclusion-leave-with-a-plan-you-can-repeat\">Conclusion: Leave With a Plan You Can Repeat</a></li><li><a href=\"#sources\">Sources</a></li></ol></nav>"
+        },
+        {
+          "id": "btn_006",
+          "type": "button",
+          "label": "Send the reports and ask which procedure is actually being recommended",
+          "href": "https://wa.me/919044346292?text=Please%20review%20my%20heart%20reports%20and%20say%20which%20procedure%20is%20being%20considered%2C%20why%2C%20and%20which%20questions%20I%20should%20settle%20before%20I%20travel."
+        },
+        {
+          "id": "h_007",
+          "type": "heading",
+          "level": 2,
+          "text": "1. Understand the Diagnosis First"
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "A procedure treats a condition. The diagnosis is what tells you whether another option exists."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "Ask:"
+        },
+        {
+          "id": "ol_010",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is the exact diagnosis?",
+            "Which part of the heart or circulation is affected?",
+            "How serious is it?",
+            "What do the ECG, echocardiogram, angiogram, or other tests show?",
+            "Is this stable, or does it need urgent treatment?",
+            "What is causing the symptoms?",
+            "Is it likely to worsen if it is not treated now?",
+            "Are other illnesses affecting the heart?",
+            "Which findings are confirmed, and which are still uncertain?",
+            "Are more tests needed before a decision?"
+          ]
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "Reports use terms such as coronary stenosis, a reduced ejection fraction, aortic stenosis, an arrhythmia, or mitral regurgitation. Ask what those words mean in this case, and which findings are actually driving the recommendation."
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "A narrowed coronary artery does not automatically mean a stent. A valve abnormality may need watching, medicines, or a procedure, depending on severity. A useful line to use in the room: “Could you explain the diagnosis in simple language and tell me which findings are driving the recommendation?”"
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "[Cardiologists in India](/doctors/India/Cardiology) and [cardiac surgeons in India](/doctors/India/Cardiac-Surgery) are directories, not rankings."
+        },
+        {
+          "id": "img_014",
+          "type": "image",
+          "src": "/uploads/articles/questions-three-procedures.webp",
+          "alt": "A stent inside an artery, a graft on a heart, and aortic valve leaflets seen from above",
+          "caption": "Three different jobs. Left: a stent inside an artery. Center: a graft tube from the aorta onto the heart. Right: aortic valve leaflets, drawn inside the chest. This is a teaching drawing, not a scan."
+        },
+        {
+          "id": "h_015",
+          "type": "heading",
+          "level": 2,
+          "text": "2. Why This Procedure?"
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "Angioplasty, bypass surgery, valve replacement, ablation, and a pacemaker are not interchangeable. Ask why this one is proposed for this diagnosis."
+        },
+        {
+          "id": "ol_017",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Why this procedure for me?",
+            "What problem is it meant to treat?",
+            "What benefit do you expect in this case?",
+            "Is the aim symptom relief, better heart function, a lower future risk, or an immediate danger?",
+            "How urgent is it?",
+            "What could happen if it waits?",
+            "Is there time for another opinion?",
+            "What makes me suitable, or unsuitable?",
+            "What is still uncertain about the diagnosis or the result?",
+            "How will we know whether it worked?"
+          ]
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "Some procedures are mainly for symptoms. Others are meant to change the outlook, or to deal with a risk if nothing is done. Ask which of those applies, and what “better” would look like for you. Avoid a general claim that one procedure is always better. The American Heart Association’s page on [cardiac procedures and surgeries](https://www.heart.org/en/health-topics/heart-attack/treatment-of-a-heart-attack/cardiac-procedures-and-surgeries) is background, not a personal plan. The NHS page on [seeing a specialist before an operation](https://www.nhs.uk/tests-and-treatments/having-surgery/specialist/) is a useful list of the same kind of questions."
+        },
+        {
+          "id": "h_019",
+          "type": "heading",
+          "level": 2,
+          "text": "3. What Are the Alternatives?"
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "Unless this is an emergency, you should hear the reasonable alternatives. Depending on the condition, those can include medicines, lifestyle measures, monitoring, a catheter procedure, surgery, or a combination. Not every option fits every person."
+        },
+        {
+          "id": "ol_021",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Is there a treatment that is not an operation?",
+            "Could medicines manage this adequately?",
+            "Is watching, with repeat tests, reasonable?",
+            "Could a less invasive procedure fit?",
+            "What does each alternative do well, and what does it leave undone?",
+            "How do they compare for symptoms and for later results?",
+            "What is the risk of not having the procedure?",
+            "If I am not suitable for the one you recommend, what else is reasonable?",
+            "Would another specialist clarify the choice?",
+            "Which option do you recommend, and why?"
+          ]
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "For coronary disease, the choice may be medicines, angioplasty with a stent, or coronary artery bypass grafting. Anatomy, the extent of disease, symptoms, heart function, other illnesses, and surgical risk decide it. Ask whether angioplasty would treat the important narrowings, why bypass might offer a different benefit, whether medicines remain reasonable, what the short-term and long-term trade-offs are, and whether a heart team should review the films. The comparison on this site is [angioplasty vs bypass surgery in India](/blogs/angioplasty-vs-bypass-surgery-in-india)."
+        },
+        {
+          "id": "btn_023",
+          "type": "button",
+          "label": "Ask whether another option is still reasonable",
+          "href": "https://wa.me/919044346292?text=Please%20say%20whether%20medicines%2C%20angioplasty%2C%20or%20bypass%20are%20still%20open%20for%20these%20reports%2C%20and%20which%20findings%20would%20close%20one%20of%20them."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 2,
+          "text": "4. Benefits You Can Expect"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "No procedure guarantees a result. Ask what improvement is realistic, how likely symptoms are to ease, whether heart function is expected to change, whether a future event is less likely, how soon a change might be noticed, whether medicines continue, whether another procedure may be needed later, and what would make a good result less likely. Ask what “success” means for this condition, and how progress will be checked."
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "Also ask about walking, sleep, work, travel, and looking after family. If you are coming from another country, ask how recovery affects the flight home."
+        },
+        {
+          "id": "h_027",
+          "type": "heading",
+          "level": 2,
+          "text": "5. Risks in Your Case"
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "Every procedure has risks. The useful list is the one that applies to you, not a general brochure."
+        },
+        {
+          "id": "ol_029",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What are the important risks of this procedure for me?",
+            "Which are more likely because of my history?",
+            "What are the anaesthesia risks, if anaesthesia is planned?",
+            "Could this affect the kidneys, bleeding, or the heart rhythm?",
+            "What is the chance of infection or another complication?",
+            "Might I need a blood transfusion?",
+            "Could the procedure fail to do what it is meant to do?",
+            "Might I need another procedure, or emergency surgery?",
+            "What will the team do to reduce these risks?",
+            "Which warning signs matter after I leave hospital?"
+          ]
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "Tell the team about diabetes, kidney disease, lung disease, reduced heart function, a previous stroke, bleeding problems, previous heart surgery, frailty, a current infection, and allergies or reactions to medicines or anaesthesia. Do not assume another doctor’s notes have reached this team."
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "Ask whether intensive care is available, what emergency support exists during and after the procedure, who to call if symptoms appear after discharge, and what happens if the stay is longer than planned. The NHS explains [consent to treatment](https://www.nhs.uk/tests-and-treatments/consent-to-treatment/) in general terms. Consent is a conversation about this procedure, not a signature on its own."
+        },
+        {
+          "id": "h_032",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Questions Before Angioplasty or a Stent"
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "Angioplasty uses a catheter to improve flow through a selected coronary narrowing. A stent is often placed. The decision depends on the clinical picture and the investigations."
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "Ask what the angiogram showed, which arteries are narrowed and how significant that is, whether the aim is symptoms or an urgent problem, whether medicines alone are reasonable, whether bypass should also be considered, how many stents may be needed and why, which type of stent is proposed, the main risks, how long you might stay, which medicines follow, how long antiplatelet medicines are expected, and what follow-up is planned."
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "After a coronary stent, antiplatelet medicines are commonly prescribed. Ask which ones, for how long, and what to do if you bleed or need another procedure. **Do not stop an antiplatelet or anticoagulant medicine on your own.** Stopping some of them early can allow a clot. Any change belongs with the treating clinician."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "GAF’s angioplasty page plans **1–3 nights typical**. That is a planning window, not a discharge time. A chronic total occlusion is a different procedure, planned at **1–4 nights**. Read [angioplasty cost in India](/blogs/angioplasty-cost-in-india) and the procedure page [coronary angioplasty in India](/treatments/coronary-angioplasty-in-india)."
+        },
+        {
+          "id": "h_037",
+          "type": "heading",
+          "level": 2,
+          "text": "7. Questions Before Bypass Surgery"
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "CABG uses grafts to carry blood around selected narrowings. It is a major operation. Ask why bypass is recommended rather than angioplasty or medicines, how many areas are expected to be bypassed, which graft vessels may be used, whether the operation uses a heart-lung machine or another suitable technique, the main risks, how other illnesses affect the operation, how long intensive care and the whole stay might last, what pain, wound care, and walking will involve, what you cannot do during recovery, when rehabilitation might start, when routine activity might resume, and when flying is reasonable if you live abroad."
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "Recovery is not the same for every person. The team should give a plan, not a fixed promise. Before you travel, ask how long you may need to stay near the hospital, and which visits must happen before you go home. The NHS describes full recovery after CABG as commonly taking around two to three months, and the timeline varies. [NHS: recovery after CABG](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/recovery/). GAF’s CABG page plans **7–14 nights, then nearby recovery**. A redo is a different stay. See [bypass surgery cost in India](/blogs/bypass-surgery-cost-in-india), [CABG surgery in India](/treatments/cabg-surgery-in-india), and [heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india)."
+        },
+        {
+          "id": "h_040",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Questions Before Valve Surgery or TAVR"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "Valve disease can mean narrowing, leakage, or both. Care may be monitoring, medicines for related problems, repair, surgical replacement, or a catheter procedure such as TAVR/TAVI."
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "Ask which valve is affected, whether the problem is narrowing or leakage, how severe it is, whether treatment is needed now or watching is reasonable, which symptoms and tests drive the decision, and the risk of waiting. Then ask whether repair, surgical replacement, or a catheter option fits, why that approach is recommended, which valve or device is proposed, the main risks and expected benefits, how age, heart function, and other illnesses change the choice, what imaging and follow-up follow, whether blood-thinning medicines are needed, and what long-term care of the valve involves. Durability and medicines are part of the same choice."
+        },
+        {
+          "id": "img_043",
+          "type": "image",
+          "src": "/uploads/articles/questions-aortic-valve.webp",
+          "alt": "Thickened tissue where the aorta leaves the heart, beside a mechanical valve in the same place",
+          "caption": "Left: thickened tissue drawn where the aorta leaves the heart. Right: a mechanical valve drawn in that same place. This is a teaching drawing, not an operation photograph."
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "The planning pages are [heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement), [heart valve repair](/costs/India/Cardiac-Surgery/Heart-Valve-Repair), [aortic valve replacement](/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement), and [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)). The guides are [heart valve replacement cost in India](/blogs/heart-valve-replacement-cost-in-india), [heart valve replacement in India](/treatments/heart-valve-replacement-in-india), and [TAVR in India](/treatments/tavr-in-india)."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Questions Before a Pacemaker, an ICD, or Ablation"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "A slow rhythm or a conduction problem is not the same as a blocked artery. A pacemaker, an ICD, and catheter ablation are not substitutes for one another."
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "Before a pacemaker or an ICD, ask what rhythm was found, why a device is recommended, whether watching or medicines are reasonable, which device fits, the risks of implantation, how long the battery usually lasts, how the device will be checked, what limits apply to work, exercise, or equipment, what to do after an ICD shock or new symptoms, and which device card to carry when travelling. A leadless pacemaker is a different device and a different listing from a standard pacemaker."
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "Before ablation, ask which rhythm is being treated, why ablation is recommended, whether medicines or monitoring could fit, the expected benefit in this case, the important risks, whether the rhythm can return, whether medicines continue, how long the stay might be, what activity limits follow, and what rhythm checks are planned."
+        },
+        {
+          "id": "img_049",
+          "type": "image",
+          "src": "/uploads/articles/questions-pacemaker.webp",
+          "alt": "A pacemaker box under the left collarbone with leads drawn into the heart",
+          "caption": "A pacemaker box under the collarbone, with leads drawn into the heart. An ICD is a different device. This is a teaching drawing."
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "See [pacemaker cost in India](/blogs/pacemaker-cost-in-india), [ICD implantation cost in India](/blogs/icd-implantation-cost-in-india), and [cardiac ablation cost in India](/blogs/cardiac-ablation-cost-in-india)."
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 2,
+          "text": "10. The Specialist and the Hospital"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "“Who is the best?” is a weak question. Ask about training, registration, and whether this person regularly does this procedure for a condition like yours. Ask who will actually perform it, who else is involved, and who answers questions before and after. Procedure counts do not by themselves prove quality, and no clinician can guarantee your result. Check registration on the [National Medical Register](https://nmr.nmc.org.in/)."
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Ask whether this hospital routinely provides the procedure, whether the surgical or interventional team is available, what intensive care and emergency support exist, whether the imaging you need is on site, whether the hospital can manage the complications relevant to you, how rehabilitation and discharge are arranged, and whether you will receive copies of the reports. City starting points include [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology), [Mumbai](/doctors/India/Mumbai/Cardiology), [Bengaluru](/doctors/India/Bengaluru/Cardiology), [Chennai](/doctors/India/Chennai/Cardiology) and [Hyderabad](/doctors/India/Hyderabad/Cardiology) for cardiologists, and the same cities for surgeons: [Delhi NCR](/doctors/India/Delhi-NCR/Cardiac-Surgery), [Mumbai](/doctors/India/Mumbai/Cardiac-Surgery), [Bengaluru](/doctors/India/Bengaluru/Cardiac-Surgery), [Chennai](/doctors/India/Chennai/Cardiac-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Cardiac-Surgery). Hospital lists: [cardiology](/hospitals/India/Cardiology) and [cardiac surgery](/hospitals/India/Cardiac-Surgery)."
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Tests, Medicines, and the Day Itself"
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "Ask which tests are still required, whether existing reports have been reviewed, whether ECG, echo, blood tests, or imaging must be repeated, whether any test needs fasting, whether contrast dye is a concern for your kidneys, how a result could change the plan, whether missing reports would delay treatment, when the results will be explained, and whether you get copies."
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "Tell the team about every prescription medicine, anything bought without a prescription, vitamins, supplements, herbal or traditional remedies, allergies and drug reactions, problems with anaesthesia, bleeding or clots, diabetes, kidney or lung disease, recent fever or infection, and previous heart procedures. A supplement can affect bleeding, blood pressure, or anaesthesia."
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "Do not stop aspirin, clopidogrel, warfarin, apixaban, or another blood-thinning medicine on your own. Ask which medicines to take on the day, and what to do if you eat, drink, or take a dose outside the instructions. MedlinePlus has a general note on [getting ready before surgery](https://medlineplus.gov/ency/patientinstructions/000433.htm) and on [tests and visits before surgery](https://medlineplus.gov/ency/patientinstructions/000479.htm). The NHS page on [preparing for surgery](https://www.nhs.uk/tests-and-treatments/having-surgery/preparation/) covers fasting and hospital arrangements in general terms."
+        },
+        {
+          "id": "img_058",
+          "type": "image",
+          "src": "/uploads/articles/questions-records-prep.webp",
+          "alt": "An ECG trace, a heart on a screen, a pill box, and a folder of reports",
+          "caption": "Bring the ECG, the echo or angiogram images, the medicine list, and the reports. Paper summaries are not a substitute for the image files."
+        },
+        {
+          "id": "h_059",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Anaesthesia and Pain"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "Some catheter procedures use local anaesthesia and sedation. Major heart surgery usually needs general anaesthesia. Ask which is planned, who assesses you, how the heart and breathing are monitored, how your other illnesses change the plan, which anaesthesia risks matter in your case, how pain will be treated, whether nausea or confusion is expected, when you might be awake and moving, when you can eat, and who to call later. Mention any past reaction to anaesthesia, even if it was years ago. MedlinePlus lists [questions about anaesthesia](https://medlineplus.gov/ency/patientinstructions/000183.htm)."
+        },
+        {
+          "id": "h_061",
+          "type": "heading",
+          "level": 2,
+          "text": "13. What to Ask About Cost in India"
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Compare the estimate with the clinical plan and the inclusions. A lower headline is not a simpler operation."
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "These figures are indicative planning ranges from the current cost pages. They are not a hospital quotation. Extra devices, a longer stay, intensive care beyond the plan, or a change of procedure after you are seen are quoted separately."
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "| Procedure | India planning range | Typical stay on the cost page |\n|---|---|---|\n| [Coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) | US$3,200–US$8,500 | 1–3 nights typical |\n| [Coronary angiography](/costs/India/Cardiology/Coronary-Angiography) | US$400–US$1,200 | Day-care or overnight |\n| [CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-(Chronic-Total-Occlusion)) | US$5,500–US$14,000 | 1–4 nights |\n| [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | US$5,500–US$14,000 | 7–14 nights, then nearby recovery |\n| [Redo CABG](/costs/India/Cardiac-Surgery/Redo-CABG) | US$8,500–US$20,000 | 10–18 nights |\n| [Heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) | US$7,000–US$18,000 | 8–16 nights |\n| [Heart valve repair](/costs/India/Cardiac-Surgery/Heart-Valve-Repair) | US$6,500–US$16,500 | 7–14 nights |\n| [Aortic valve replacement](/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement) | US$7,000–US$18,500 | 8–16 nights |\n| [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) | US$18,000–US$42,000 | 3–7 nights typical |\n| [Pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) | US$3,500–US$9,000 | 1–3 nights |\n| [Leadless pacemaker](/costs/India/Cardiology/Leadless-Pacemaker-Implantation) | US$12,000–US$25,000 | 1–3 nights |\n| [ICD implantation](/costs/India/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)) | US$8,000–US$18,000 | 1–4 nights |\n| [Atrial fibrillation ablation](/costs/India/Cardiology/Atrial-Fibrillation-Ablation) | US$6,500–US$16,000 | 1–3 nights |\n| [Radiofrequency ablation](/costs/India/Cardiology/Radiofrequency-Ablation) | US$5,000–US$13,000 | 1–3 nights |"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "The angioplasty page lists a US comparison of **US$25,000–US$70,000**. The CABG page lists **US$70,000–US$200,000**. The heart valve replacement page lists **US$80,000–US$220,000**. The TAVR page lists **US$50,000–US$150,000**. The pacemaker page lists **US$20,000–US$50,000**. None of these is an India price."
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "A city filter is not a different tariff. Angioplasty can be opened for [Delhi NCR](/costs/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting) and [Mumbai](/costs/India/Mumbai/Cardiology/Coronary-Angioplasty-Stenting). CABG can be opened for [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) and [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting))."
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Ask the total, which specialist and hospital fees are inside it, whether tests, anaesthesia or the cath lab, and devices are inside it, how many days and how much intensive care are included, whether medicines in hospital and at discharge are included, how complications and extra days are billed, whether follow-up is included, what deposit is required, whether you will get an itemised bill, and how long the estimate stays valid. Ask for exclusions in writing. If two hospitals differ, compare the plan, the stay, and the assumptions before you compare the numbers."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "People travelling to India should also budget for the visa, flights, transfers, lodging before and after admission, food, a companion, discharge medicines, follow-up visits, and a ticket you can change. Ask the likely time near the hospital before you lock a return flight."
+        },
+        {
+          "id": "btn_069",
+          "type": "button",
+          "label": "Ask for a written estimate that names the procedure",
+          "href": "https://wa.me/919044346292?text=Please%20send%20a%20written%20estimate%20for%20the%20procedure%20recommended%20in%20these%20reports.%20List%20devices%2C%20nights%2C%20intensive%20care%2C%20medicines%2C%20and%20what%20is%20excluded."
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 2,
+          "text": "14. Recovery"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "A short catheter procedure and bypass or valve surgery do not share a recovery plan. Ask how long you might stay, whether intensive care is expected, when you might sit and walk, what pain is usual, how a wound is cared for, what you should not do, when work might resume, whether cardiac rehabilitation fits and when it starts, when the first follow-up is, and which symptoms cannot wait."
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "New or severe chest pain, severe breathlessness, fainting, signs of a stroke, or significant bleeding need emergency care. Follow the discharge sheet for fever, wound problems, or swelling. Do not wait for a routine visit if a serious warning sign appears. The American Heart Association’s [heart surgery resources](https://www.heart.org/en/health-topics/consumer-healthcare/what-is-cardiovascular-disease/heart-surgery-resources) discuss recovery and rehabilitation in general. Your own sheet overrides a general page. The recovery guide here is [heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india)."
+        },
+        {
+          "id": "h_073",
+          "type": "heading",
+          "level": 2,
+          "text": "15. If You Are Travelling to India"
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "A review of records can suggest the next step. The final plan can change after you are examined. Ask whether a relevant specialist has seen the records, which tests may still be needed after you arrive, whether the plan is preliminary, how urgent treatment is, whether you should travel with someone, which files to bring, how long to stay in India, what could extend the stay, what to do if you become unwell in transit, and who decides fitness to fly."
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "For the visa, use official Government of India guidance for your nationality. Ask which department coordinates the appointment, what the estimate includes, where you can stay before and after admission, how you will receive the discharge summary and procedure report, what follow-up must happen before you leave, whether your doctor at home can write to the treating team, and who to contact if the dates change. Do not lock a return date that leaves no room to recover, especially after major surgery. Message the coordination desk on WhatsApp at +91 90443 46292."
+        },
+        {
+          "id": "btn_076",
+          "type": "button",
+          "label": "Send the records before any flights are booked",
+          "href": "https://wa.me/919044346292?text=I%20am%20considering%20travel%20to%20India%20for%20a%20heart%20procedure.%20Please%20review%20the%20reports%20and%20say%20whether%20a%20preliminary%20opinion%20is%20possible%20before%20flights%20are%20booked."
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 2,
+          "text": "16. A Second Opinion"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "A second opinion can help before a major planned procedure, when the alternatives are unclear, or when you want another specialist to look at the same films. It should not delay emergency care. If the team says treatment is urgent, ask whether there is time."
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "Ask whether the second specialist agrees with the diagnosis, whether they agree the procedure is indicated, what alternatives they see, how they read the benefits and limits, whether they read a test differently, whether a heart-team review would help, what else they need, and whether the decision can wait. Send the images, not only the written report. The aim is to understand the options. [Cardiologists in India](/doctors/India/Cardiology) is a place to start that conversation."
+        },
+        {
+          "id": "h_080",
+          "type": "heading",
+          "level": 2,
+          "text": "17. How to Use the Appointment"
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "Before you go, collect recent reports and image files, list medicines and doses, note symptoms and when they happen, list previous operations and admissions, list allergies and other illnesses, and decide which worries matter most. Ask if a family member can attend, and ask for an interpreter if you need one."
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "In the room, start with the diagnosis and the reason for the recommendation. Ask for plain language. Write down the risks, benefits, and alternatives, and what is still uncertain. Confirm the next step and the person who arranges it. Before you leave, you should be able to say what the plan is, what happens next and how soon, and who to contact if you have another question or your condition changes. Ask for that in writing where the hospital can provide it. The American Heart Association’s note on [preparing for medical visits](https://www.heart.org/en/health-topics/cardiac-rehab/communicating-with-professionals/preparing-for-medical-visits) is a general communication aid."
+        },
+        {
+          "id": "h_083",
+          "type": "heading",
+          "level": 2,
+          "text": "18. A Checklist to Take With You"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "Diagnosis and urgency:"
+        },
+        {
+          "id": "ul_085",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "What is the exact diagnosis, and what do the tests show?",
+            "How urgent is treatment?",
+            "Which findings are driving the recommendation?"
+          ]
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "Options:"
+        },
+        {
+          "id": "ul_087",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Why this procedure?",
+            "What else is reasonable, and what does each option leave undone?",
+            "What could happen if treatment waits or is declined?"
+          ]
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "Risks and results:"
+        },
+        {
+          "id": "ul_089",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "What are the main risks in this case?",
+            "How do other illnesses change the result?",
+            "What improvement is realistic, and which complications need urgent care?"
+          ]
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "People and place:"
+        },
+        {
+          "id": "ul_091",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Who performs the procedure, and what is their relevant training?",
+            "Can this hospital provide the specialist care and emergency support?",
+            "Who is responsible for follow-up?"
+          ]
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "Medicines and preparation:"
+        },
+        {
+          "id": "ul_093",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Which tests are still required?",
+            "What should happen to regular medicines?",
+            "When to stop eating and drinking, if that was instructed?",
+            "Which allergies and past reactions must the team know?"
+          ]
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "Cost and recovery:"
+        },
+        {
+          "id": "ul_095",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "What is inside the written estimate, and what is excluded?",
+            "How long might the stay last?",
+            "What limits and follow-up apply after discharge?"
+          ]
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "If you are travelling:"
+        },
+        {
+          "id": "ul_097",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Is travel medically reasonable, and which visa rules should I check officially?",
+            "How long should I stay near the hospital, and when is flying home reasonable?",
+            "How does follow-up work with my doctor at home?"
+          ]
+        },
+        {
+          "id": "btn_098",
+          "type": "button",
+          "label": "Ask for the three answers in writing",
+          "href": "https://wa.me/919044346292?text=Please%20write%20the%20proposed%20plan%2C%20the%20next%20step%20and%20its%20timing%2C%20and%20who%20I%20should%20contact%20if%20my%20condition%20changes%20before%20the%20procedure."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 2,
+          "text": "19. Frequently Asked Questions About Questions Before Heart Surgery"
+        },
+        {
+          "id": "h_100",
+          "type": "heading",
+          "level": 3,
+          "text": "What are the most important questions to ask before heart surgery?"
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "Ask why the procedure is recommended, what the alternatives are, what benefit and risk apply in your case, what happens if treatment waits, and how recovery works. Also ask the expected cost, who is responsible for your care, and how follow-up is arranged. The diagnosis comes before the price."
+        },
+        {
+          "id": "h_102",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I get a second opinion before heart surgery?"
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "It can help before a major planned procedure, especially when the diagnosis or the options are uncertain. It should not delay emergency treatment. Ask the treating team whether there is time. Bring the image files and the first recommendation."
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I refuse or change my mind about a planned procedure?"
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "A person who can make their own decisions should be given clear information and be able to choose freely. If you are unsure, say so before the procedure. The legal details of consent depend on the place and the situation. The NHS describes informed consent in general terms. It is not a reason to delay emergency care."
+        },
+        {
+          "id": "h_106",
+          "type": "heading",
+          "level": 3,
+          "text": "Is angioplasty always better than bypass surgery?"
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "No. They are different treatments. The choice depends on the coronary anatomy, symptoms, overall health, and the other clinical facts. Ask the cardiologist and the cardiac surgeon to explain both for this angiogram. On this site, ordinary angioplasty and stenting is listed at US$3,200–US$8,500, and CABG at US$5,500–US$14,000. Those are planning ranges, not a reason to pick the lower one."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "What questions should I ask before angioplasty?"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Ask why it is recommended, which arteries are involved, whether medicines or bypass remain reasonable, how many stents may be needed, which type, what the risks are, which medicines follow, and how follow-up works. Ask how long antiplatelet medicines are expected to continue. Do not stop them on your own."
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 3,
+          "text": "What questions should I ask before bypass surgery?"
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "Ask why bypass is preferred, what operation is planned, which grafts may be used, the main risks, how long you may stay, what recovery involves, when everyday activity might resume, and whether rehabilitation is planned. GAF’s CABG page plans 7–14 nights, then nearby recovery. The NHS describes full recovery as commonly taking around two to three months, and the timeline varies."
+        },
+        {
+          "id": "h_112",
+          "type": "heading",
+          "level": 3,
+          "text": "How can I compare the cost of heart surgery in India?"
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "Use the written estimate for the same operation, and compare specialist and hospital fees, tests, devices, medicines, intensive care, the stay, and follow-up. Confirm exclusions and how extra days or complications are billed. GAF’s current pages list indicative planning ranges, not quotations: angioplasty and stenting US$3,200–US$8,500, CABG US$5,500–US$14,000, heart valve replacement US$7,000–US$18,000, and TAVR/TAVI US$18,000–US$42,000. A US comparison on those pages is not an India price."
+        },
+        {
+          "id": "h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "What documents should I bring to a cardiac consultation?"
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "Bring recent ECG and echocardiography reports, angiogram images if you have them, relevant blood tests, discharge summaries, previous procedure records, a current medicine list with doses, allergy details, and your questions. Image files matter as much as the paper report."
+        },
+        {
+          "id": "h_116",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I ask about anaesthesia?"
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "Ask which anaesthesia or sedation is planned, which risks apply to you, how medicines will be handled, when to stop eating and drinking if you were told to, how pain will be treated, and who watches you afterwards. Mention any past reaction."
+        },
+        {
+          "id": "h_118",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I travel immediately after heart surgery?"
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "Fitness to travel depends on the procedure, recovery, complications, and the treating team. Ask when flying is reasonable and whether the airline needs medical clearance. Do not book a fixed return without room for a longer recovery. Uncomplicated angioplasty and bypass do not need the same amount of time near the hospital."
+        },
+        {
+          "id": "h_120",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I do if I do not understand the explanation?"
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "Ask for simpler language. You can ask for written information, an interpreter, or another conversation before a planned procedure. It is better to clarify the plan than to sign a consent form you do not understand."
+        },
+        {
+          "id": "h_122",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I stop my medicines before a cardiac procedure?"
+        },
+        {
+          "id": "p_123",
+          "type": "paragraph",
+          "text": "Do not stop or change a medicine without instructions from the treating team. Some medicines are adjusted before certain procedures. Stopping others is dangerous. Give a complete list, including medicines bought without a prescription and supplements."
+        },
+        {
+          "id": "h_124",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I ask about recovery?"
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "Ask how long you may stay, what you should avoid, how to care for a wound, when follow-up is due, whether cardiac rehabilitation fits, and which symptoms need urgent care. A planning stay on a cost page is not a discharge date."
+        },
+        {
+          "id": "h_126",
+          "type": "heading",
+          "level": 3,
+          "text": "Can GAF Healthcare help me prepare for a cardiac consultation in India?"
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help send records, request appointments, ask for preliminary estimates, and arrange practical travel on WhatsApp at +91 90443 46292. Diagnosis and the decision to treat stay with the clinicians. A message is not a quotation."
+        },
+        {
+          "id": "h_128",
+          "type": "heading",
+          "level": 3,
+          "text": "Are the US dollar comparisons on the cost pages India prices?"
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "No. They are US comparisons published beside the India planning ranges. Examples include US$25,000–US$70,000 beside angioplasty, US$70,000–US$200,000 beside CABG, and US$80,000–US$220,000 beside heart valve replacement. Ask the hospital for a written estimate in the currency they bill."
+        },
+        {
+          "id": "h_130",
+          "type": "heading",
+          "level": 3,
+          "text": "Why do a pacemaker and a leadless pacemaker have different ranges?"
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "They are different devices. A standard pacemaker implantation is listed at US$3,500–US$9,000, typically 1–3 nights. A leadless pacemaker is listed at US$12,000–US$25,000, also typically 1–3 nights. An ICD is another listing, at US$8,000–US$18,000, typically 1–4 nights. Ask which device is proposed before you compare prices."
+        },
+        {
+          "id": "btn_132",
+          "type": "button",
+          "label": "Ask who to call if a warning sign appears after you go home",
+          "href": "https://wa.me/919044346292?text=Please%20write%20which%20symptoms%20need%20emergency%20care%20after%20the%20procedure%2C%20and%20who%20my%20doctor%20at%20home%20should%20contact%20if%20a%20question%20comes%20up%20after%20discharge."
+        },
+        {
+          "id": "h_133",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion: Leave With a Plan You Can Repeat"
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "Before you agree to heart surgery or a cardiac procedure, you should be able to say what the diagnosis is, why this treatment was recommended, what benefit is realistic, which risks matter in your case, and what else was considered. You should also know how medicines will be handled, what recovery may require, and who follows you afterwards."
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "If you are considering treatment in India, settle the plan and the written estimate before you travel. Ask about the hospital’s ability to do this procedure and to manage a complication, and about the arrangements after discharge."
+        },
+        {
+          "id": "p_136",
+          "type": "paragraph",
+          "text": "You do not need every question in this guide in one visit. Start with the ones that change your decision."
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "These pages are live:"
+        },
+        {
+          "id": "ul_138",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Cardiologists in India](/doctors/India/Cardiology)",
+            "[Cardiac surgeons in India](/doctors/India/Cardiac-Surgery)",
+            "[Angioplasty vs bypass surgery in India](/blogs/angioplasty-vs-bypass-surgery-in-india)",
+            "[Angioplasty cost in India](/blogs/angioplasty-cost-in-india)",
+            "[Bypass surgery cost in India](/blogs/bypass-surgery-cost-in-india)",
+            "[Heart valve replacement cost in India](/blogs/heart-valve-replacement-cost-in-india)",
+            "[Heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india)"
+          ]
+        },
+        {
+          "id": "h_139",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "ol_140",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "NHS — [Seeing a specialist before an operation](https://www.nhs.uk/tests-and-treatments/having-surgery/specialist/)",
+            "NHS — [Consent to treatment](https://www.nhs.uk/tests-and-treatments/consent-to-treatment/)",
+            "MedlinePlus — [Getting yourself healthy before surgery](https://medlineplus.gov/ency/patientinstructions/000433.htm)",
+            "MedlinePlus — [Anaesthesia: what to ask your doctor](https://medlineplus.gov/ency/patientinstructions/000183.htm)",
+            "MedlinePlus — [Tests and visits before surgery](https://medlineplus.gov/ency/patientinstructions/000479.htm)",
+            "American Heart Association — [Heart surgery resources](https://www.heart.org/en/health-topics/consumer-healthcare/what-is-cardiovascular-disease/heart-surgery-resources)",
+            "American Heart Association — [Cardiac procedures and surgeries](https://www.heart.org/en/health-topics/heart-attack/treatment-of-a-heart-attack/cardiac-procedures-and-surgeries)",
+            "American Heart Association — [Preparing for medical visits](https://www.heart.org/en/health-topics/cardiac-rehab/communicating-with-professionals/preparing-for-medical-visits)",
+            "National Medical Commission — [National Medical Register](https://nmr.nmc.org.in/)",
+            "NHS — [Preparing for surgery](https://www.nhs.uk/tests-and-treatments/having-surgery/preparation/) and [recovery after CABG](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/recovery/)"
+          ]
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "This article is for general education. It has not been signed by a named cardiologist or cardiac surgeon. Whether a procedure is suitable, and when it should happen, depends on an individual assessment. If you suspect a heart attack or another emergency, seek emergency care immediately."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Cardiologists in India",
+          "href": "/doctors/India/Cardiology"
+        },
+        {
+          "label": "Cardiac surgeons in India",
+          "href": "/doctors/India/Cardiac-Surgery"
+        },
+        {
+          "label": "Angioplasty vs bypass surgery in India",
+          "href": "/blogs/angioplasty-vs-bypass-surgery-in-india"
+        },
+        {
+          "label": "Angioplasty cost in India",
+          "href": "/blogs/angioplasty-cost-in-india"
+        },
+        {
+          "label": "Bypass surgery cost in India",
+          "href": "/blogs/bypass-surgery-cost-in-india"
+        },
+        {
+          "label": "Heart valve replacement cost in India",
+          "href": "/blogs/heart-valve-replacement-cost-in-india"
+        },
+        {
+          "label": "Heart surgery recovery in India",
+          "href": "/blogs/heart-surgery-recovery-in-india"
+        }
+      ]
+    },
     {
       "id": "art_angioplasty_vs_bypass_surgery_in_india",
       "slug": "angioplasty-vs-bypass-surgery-in-india",
