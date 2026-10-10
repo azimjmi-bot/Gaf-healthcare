@@ -1616,9 +1616,1188 @@
       "name": "pacemaker-follow-up.webp",
       "alt": "Four-step illustration of an upper-chest dressing, a device check with a programmer, an identification card and walking after recovery",
       "addedAt": "2026-10-10T10:30:00.000Z"
+    },
+    {
+      "id": "media_valve_surgical_chest_webp",
+      "url": "/uploads/articles/valve-surgical-chest.webp",
+      "name": "valve-surgical-chest.webp",
+      "alt": "Chest illustration with a replacement valve seated where the aorta leaves the top of the heart",
+      "addedAt": "2026-10-10T11:30:00.000Z"
+    },
+    {
+      "id": "media_mechanical_tissue_valve_webp",
+      "url": "/uploads/articles/mechanical-tissue-valve.webp",
+      "name": "mechanical-tissue-valve.webp",
+      "alt": "A mechanical bileaflet valve beside a tissue valve with three soft leaflets",
+      "addedAt": "2026-10-10T11:30:00.000Z"
+    },
+    {
+      "id": "media_tavr_delivery_webp",
+      "url": "/uploads/articles/tavr-delivery.webp",
+      "name": "tavr-delivery.webp",
+      "alt": "A mesh valve expanding inside the aorta at the top of the heart, still attached to a catheter from below",
+      "addedAt": "2026-10-10T11:30:00.000Z"
+    },
+    {
+      "id": "media_valve_recovery_webp",
+      "url": "/uploads/articles/valve-recovery.webp",
+      "name": "valve-recovery.webp",
+      "alt": "Four steps after valve treatment: a monitored hospital bed, walking with a clinician, an echocardiogram, and a valve identification card",
+      "addedAt": "2026-10-10T11:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_heart_valve_replacement_cost_in_india",
+      "slug": "heart-valve-replacement-cost-in-india",
+      "title": "Heart Valve Replacement Cost in India: A Complete Patient Guide",
+      "excerpt": "Heart valve replacement cost in India depends on the affected valve, the type of procedure, the replacement valve, hospital facilities and the patient's medical condition. This guide explains surgical valve replacement, mechanical and tissue valves, TAVR/TAVI, hospital package charges, recovery and planning treatment in India.",
+      "date": "10 October 2026",
+      "publishedAt": "2026-10-10T11:30:00.000Z",
+      "updatedAt": "2026-10-10T11:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "heart valve",
+        "TAVR",
+        "cost",
+        "India",
+        "travel"
+      ],
+      "image": "/uploads/articles/valve-surgical-chest.webp",
+      "imageAlt": "Chest illustration with a replacement valve seated where the aorta leaves the top of the heart",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Heart Valve Replacement Cost in India: Surgery & TAVR Prices",
+      "seoDescription": "Explore heart valve replacement cost in India, mechanical vs tissue valves, TAVR/TAVI, hospital package inclusions, recovery and tips for international patients.",
+      "canonical": "https://gaf.healthcare/blogs/heart-valve-replacement-cost-in-india",
+      "ogImage": "/uploads/articles/valve-surgical-chest.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Heart valve replacement cost in India",
+        "Heart valve surgery cost in India",
+        "Aortic valve replacement cost in India",
+        "Mitral valve replacement cost in India",
+        "TAVR cost in India",
+        "TAVI procedure cost in India",
+        "Mechanical heart valve replacement cost",
+        "Tissue heart valve replacement cost",
+        "Double valve replacement cost in India",
+        "Heart valve surgery hospitals in India",
+        "Heart valve replacement for international patients"
+      ],
+      "blocks": [
+        {
+          "id": "p_001",
+          "type": "paragraph",
+          "text": "Heart valve replacement cost in India varies with the valve being treated, the procedure, the replacement valve, the hospital, the patient's condition and the length of hospitalisation."
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Some patients need surgical replacement of the aortic valve. Others need mitral valve replacement, double valve surgery, or a more complex operation that also involves the aorta or the coronary arteries. Selected patients may be eligible for a catheter-based procedure called transcatheter aortic valve replacement (TAVR), also called transcatheter aortic valve implantation (TAVI)."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "These procedures are not interchangeable. A suitable plan depends on imaging, anatomy, surgical risk and a discussion with the heart team. Compare written, procedure-specific quotations rather than one advertised price."
+        },
+        {
+          "id": "html_004",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>There is no single standard price for heart valve replacement in India. The final amount depends on the procedure, valve device, hospital package, room category, investigations, ICU stay and any additional treatment required.</p><p>A published Medanta–The Medicity tariff effective from 12 August 2025 listed the package charge for <strong>single valve replacement or repair at ₹3.19 lakh to ₹8.07 lakh across the listed room categories</strong>. The tariff also specifies limits for medicines and investigations and states that valve or device charges are extra unless otherwise specified. This is a dated, institution-specific example—not a current national average or a guaranteed all-inclusive quotation. Confirm the latest tariff and exact inclusions directly with the hospital. <a href=\"https://cdnbbsr.s3waas.gov.in/s35679fb79d04e9ed91e292858c54df4e8/uploads/2026/01/202601081639734353.pdf\">Source: Medanta package tariff</a></p><p>TAVR/TAVI costs require a separate quotation because the procedure uses a transcatheter valve and specialised equipment. It should not be compared directly with a conventional surgical package without reviewing what each estimate includes.</p><p><strong>Before making a decision, request an itemised estimate that identifies the procedure, valve device, expected ICU and ward stay, investigations, medicines, follow-up and possible additional charges.</strong></p></div></aside>"
+        },
+        {
+          "id": "toc_005",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-is-heart-valve-replacement\">1. What Is Heart Valve Replacement?</a></li><li><a href=\"#2-types-of-heart-valve-procedures-in-india\">2. Types of Heart Valve Procedures in India</a></li><li><a href=\"#3-heart-valve-replacement-cost-in-india-what-a-tariff-can-tell-you\">3. Heart Valve Replacement Cost in India: What a Tariff Can Tell You</a></li><li><a href=\"#4-what-determines-the-cost-of-heart-valve-replacement\">4. What Determines the Cost of Heart Valve Replacement?</a></li><li><a href=\"#5-mechanical-vs-tissue-heart-valve\">5. Mechanical vs Tissue Heart Valve</a></li><li><a href=\"#6-what-is-tavr-tavi-and-how-does-its-cost-differ\">6. What Is TAVR/TAVI, and How Does Its Cost Differ?</a></li><li><a href=\"#7-what-is-included-in-a-heart-valve-package\">7. What Is Included in a Heart Valve Package?</a></li><li><a href=\"#8-tests-required-before-heart-valve-replacement\">8. Tests Required Before Heart Valve Replacement</a></li><li><a href=\"#9-how-long-does-the-procedure-take\">9. How Long Does the Procedure Take?</a></li><li><a href=\"#10-recovery-after-heart-valve-replacement\">10. Recovery After Heart Valve Replacement</a></li><li><a href=\"#11-medicines-and-follow-up-after-valve-replacement\">11. Medicines and Follow-Up After Valve Replacement</a></li><li><a href=\"#12-heart-valve-replacement-for-international-patients\">12. Heart Valve Replacement for International Patients</a></li><li><a href=\"#13-how-to-compare-quotations\">13. How to Compare Quotations</a></li><li><a href=\"#14-how-to-choose-a-surgeon-or-hospital-in-india\">14. How to Choose a Surgeon or Hospital in India</a></li><li><a href=\"#15-questions-to-ask-before-heart-valve-replacement\">15. Questions to Ask Before Heart Valve Replacement</a></li><li><a href=\"#16-frequently-asked-questions-about-heart-valve-replacement-cost-in-india\">16. Frequently Asked Questions About Heart Valve Replacement Cost in India</a></li><li><a href=\"#conclusion-compare-the-full-treatment-plan-not-just-the-price\">Conclusion: Compare the Full Treatment Plan, Not Just the Price</a></li><li><a href=\"#sources\">Sources</a></li></ol></nav>"
+        },
+        {
+          "id": "p_006",
+          "type": "paragraph",
+          "text": "GAF Healthcare's cost pages publish a separate indicative planning range. For [heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) that range is **US$7,000–US$18,000**, with a typical stay of **8–16 nights**. The same page lists a US comparison of **US$80,000–US$220,000**. That US figure is a comparison, not an India price, and neither figure is a hospital quotation. The Medanta rupee package above is also not this planning range: it is one hospital's procedure package, and the valve may be extra."
+        },
+        {
+          "id": "btn_007",
+          "type": "button",
+          "label": "Request an itemised valve quotation",
+          "href": "https://wa.me/919044346292?text=Please%20review%20my%20echo%20and%20share%20a%20written%20quotation%20for%20heart%20valve%20treatment%20in%20India.%20Please%20name%20the%20procedure%2C%20say%20whether%20the%20valve%20device%20is%20included%2C%20and%20separate%20ICU%20days%2C%20ward%20days%2C%20tests%20and%20medicines."
+        },
+        {
+          "id": "h_008",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Is Heart Valve Replacement?"
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "The heart has four valves that keep blood moving in one direction: the aortic valve, the mitral valve, the tricuspid valve and the pulmonary valve."
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "A valve may narrow (stenosis), leak (regurgitation), or do both. When the disease is severe it can affect blood flow, heart function and daily activity. Treatment may be monitoring, medicine for symptoms or complications, valve repair, surgical replacement, or a catheter-based procedure."
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "Replacement means a new valve is placed where a damaged valve can no longer do its job. Which valve, and which operation, depends on anatomy and the clinical assessment. The NHS explains [what heart valve replacement is](https://www.nhs.uk/tests-and-treatments/heart-valve-replacement/what-it-is/)."
+        },
+        {
+          "id": "img_012",
+          "type": "image",
+          "src": "/uploads/articles/valve-surgical-chest.webp",
+          "alt": "Chest illustration with a replacement valve seated where the aorta leaves the top of the heart",
+          "caption": "A surgical replacement valve sits at the outlet of the heart, where the aorta begins. This is a teaching drawing, not an operation photograph."
+        },
+        {
+          "id": "h_013",
+          "type": "heading",
+          "level": 3,
+          "text": "When may replacement be recommended?"
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "A specialist may consider intervention when severe valve disease is causing symptoms or affecting heart function, or when tests show that treatment is needed even if symptoms are limited."
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "Possible symptoms include breathlessness, chest discomfort, dizziness or fainting, reduced exercise tolerance, unusual fatigue, swelling of the legs or ankles, and palpitations in some patients. These symptoms have many causes. They do not automatically mean a valve must be replaced."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "An echocardiogram is often central. Other tests may include an ECG, a CT scan or cardiac catheterisation."
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "**Seek emergency care** for severe chest pain, sudden severe breathlessness, fainting, or symptoms of a stroke. Do not delay emergency care to compare prices."
+        },
+        {
+          "id": "h_018",
+          "type": "heading",
+          "level": 2,
+          "text": "2. Types of Heart Valve Procedures in India"
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "The procedure is one of the largest cost factors. A lower quote is not a reason to choose an approach."
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "| Procedure | What it involves | What changes the bill |\n|---|---|---|\n| Surgical aortic valve replacement | Replacing the aortic valve at surgery | Surgical package, valve, ICU stay |\n| Surgical mitral valve replacement | Replacing the mitral valve | Valve type, complexity, other procedures |\n| Double valve replacement | Treating two valves in one operation | Longer surgery and two devices |\n| Minimally invasive valve surgery | A smaller incision in selected patients | Technique and whether the anatomy allows it |\n| TAVR/TAVI | A catheter-based aortic valve | Transcatheter valve, imaging, access |\n| Valve surgery plus another heart operation | For example valve surgery with CABG or aortic surgery | A second procedure and a longer stay |"
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 3,
+          "text": "Aortic valve replacement"
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "The aortic valve controls flow from the left ventricle into the aorta. Severe aortic stenosis, and some other aortic valve problems, may need treatment. Options can include conventional surgical replacement and, for selected patients, TAVR/TAVI. Age, anatomy, other illnesses, surgical risk and how long a valve is expected to last all matter. GAF's published indicative planning range for [aortic valve replacement](/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement) is **US$7,000–US$18,500**, with a typical stay of **8–16 nights**."
+        },
+        {
+          "id": "h_023",
+          "type": "heading",
+          "level": 3,
+          "text": "Mitral valve replacement"
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "The mitral valve sits between the left atrium and the left ventricle. It may narrow or leak. Some patients can have the valve repaired rather than replaced. Repair keeps the patient's own valve when the anatomy allows it. Ask the surgeon whether repair is feasible and why replacement is being recommended. There is no separate published mitral-replacement band on this site. Surgical replacement is planned from the [heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) range. When repair is the operation, [mitral valve repair](/costs/India/Cardiac-Surgery/Mitral-Valve-Repair) is listed at **US$7,500–US$18,000**, typically **7–14 nights**. The procedure is also described on [mitral valve replacement surgery in India](/treatments/mitral-valve-replacement-surgery-in-india)."
+        },
+        {
+          "id": "h_025",
+          "type": "heading",
+          "level": 3,
+          "text": "Double valve replacement"
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "Treating two valves, often the aortic and the mitral, is a different operation from a single-valve case. Operating time, two prostheses and recovery can all change the bill. GAF lists [double valve replacement](/costs/India/Cardiac-Surgery/Double-Valve-Replacement) at **US$12,000–US$28,000**, typically **10–18 nights**."
+        },
+        {
+          "id": "h_027",
+          "type": "heading",
+          "level": 3,
+          "text": "Valve surgery combined with bypass surgery"
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "Some patients have valve disease and coronary artery disease. The plan may include valve surgery and coronary artery bypass grafting in the same sitting. That is not a routine single-valve package. GAF lists [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) at **US$5,500–US$14,000**, typically **7–14 nights, then nearby recovery**, when grafts are part of the plan. Read [CABG surgery in India](/treatments/cabg-surgery-in-india) and [heart bypass surgery cost in India](/treatments/heart-bypass-surgery-cost-in-india). The quotation should name every planned procedure."
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "The tricuspid valve is a separate operation when that is the valve being treated. See [tricuspid valve replacement in India](/treatments/tricuspid-valve-replacement-in-india). Do not price it from an aortic quote."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 2,
+          "text": "3. Heart Valve Replacement Cost in India: What a Tariff Can Tell You"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "A published tariff shows how a package is built. It is not a bill for every patient."
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "The Medanta–The Medicity tariff effective from 12 August 2025 lists single valve replacement or repair by room category, with medicine and investigation limits, and states that a valve or other device may be charged separately unless the package says it is included. The listed single-valve packages run from ₹3.19 lakh in a general ward category to ₹8.07 lakh in a suite category. That document is historical and specific to one hospital."
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "**A headline package is not the final bill.** Room category, the valve, medicine caps, tests, extra procedures and extra days can all change what is payable. Confirm the current tariff and whether it covers the exact operation."
+        },
+        {
+          "id": "h_034",
+          "type": "heading",
+          "level": 3,
+          "text": "Planning ranges already published by GAF"
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "These figures are the indicative planning ranges on the current cost pages. They come from partner hospital cost sheets. They are not the Medanta rupee packages, and they are not a confirmed quotation. A bill can sit outside them once the valve model and the operation are named."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "| Procedure | India planning range | Typical stay on the cost page |\n|---|---|---|\n| [Heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) | US$7,000–US$18,000 | 8–16 nights |\n| [Aortic valve replacement](/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement) | US$7,000–US$18,500 | 8–16 nights |\n| [Heart valve repair](/costs/India/Cardiac-Surgery/Heart-Valve-Repair) | US$6,500–US$16,500 | 7–14 nights |\n| [Mitral valve repair](/costs/India/Cardiac-Surgery/Mitral-Valve-Repair) | US$7,500–US$18,000 | 7–14 nights |\n| [Double valve replacement](/costs/India/Cardiac-Surgery/Double-Valve-Replacement) | US$12,000–US$28,000 | 10–18 nights |\n| [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) | US$18,000–US$42,000 | 3–7 nights typical |\n| [Minimally invasive cardiac surgery](/costs/India/Cardiac-Surgery/Minimally-Invasive-Cardiac-Surgery) | US$8,000–US$20,000 | 5–12 nights |\n| [Robotic cardiac surgery](/costs/India/Cardiac-Surgery/Robotic-Cardiac-Surgery) | US$10,000–US$24,000 | 5–12 nights |\n| [CABG, if grafts are added](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | US$5,500–US$14,000 | 7–14 nights, then nearby recovery |"
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "The US comparison published beside heart valve replacement is **US$80,000–US$220,000**. Use it only as a comparison with typical charges in the United States. It is not the India range. The same procedure can also be opened for [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/Heart-Valve-Replacement) and [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/Heart-Valve-Replacement). A city filter is not a different tariff."
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "If the aortic root itself must be replaced, that is a different listing: [aortic root replacement](/costs/India/Cardiac-Surgery/Aortic-Root-Replacement) is **US$10,000–US$24,000**, typically **10–18 nights**. If a conduction problem after surgery needs a pacemaker, that is also a different listing, at **US$3,500–US$9,000** on the [pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) page, typically **1–3 nights**."
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "Hospitals differ in technique, valve brand, ICU, room category, what the package covers, and whether the case is an emergency or needs a longer stay. A quotation should follow the records and the proposed operation."
+        },
+        {
+          "id": "h_040",
+          "type": "heading",
+          "level": 2,
+          "text": "4. What Determines the Cost of Heart Valve Replacement?"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "**Heart valve surgery cost in India**, **aortic valve replacement cost in India**, **mitral valve replacement cost in India**, **TAVR cost in India** and **TAVI procedure cost in India** are different questions. A **mechanical heart valve replacement cost** and a **tissue heart valve replacement cost** can differ because the device and the long-term medicines differ. **Double valve replacement cost in India** should be quoted as a two-valve operation."
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 3,
+          "text": "1. The valve being treated"
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "Aortic, mitral, tricuspid and pulmonary procedures do not use the same technique."
+        },
+        {
+          "id": "h_044",
+          "type": "heading",
+          "level": 3,
+          "text": "2. The type of replacement valve"
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "Mechanical and tissue valves differ in material, how long they are expected to last, and whether lifelong anticoagulation is required. Price alone should not decide this."
+        },
+        {
+          "id": "h_046",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Surgery versus a transcatheter valve"
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "Open or minimally invasive surgery and TAVR/TAVI use different devices, rooms and teams. A catheter procedure is not automatically cheaper."
+        },
+        {
+          "id": "h_048",
+          "type": "heading",
+          "level": 3,
+          "text": "4. One valve or more than one"
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "A second valve, or CABG in the same sitting, changes the resources."
+        },
+        {
+          "id": "h_050",
+          "type": "heading",
+          "level": 3,
+          "text": "5. Other medical conditions"
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "Diabetes, kidney disease, lung disease, weak heart function, infection or a previous heart operation can add tests and treatment."
+        },
+        {
+          "id": "h_052",
+          "type": "heading",
+          "level": 3,
+          "text": "6. Hospital and room category"
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "A private room or suite can change the package, not only the bed charge. [Hospitals listed for cardiac surgery in India](/hospitals/India/Cardiac-Surgery) are a directory, not a price list."
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 3,
+          "text": "7. ICU and ward days"
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "Packages usually cover a defined number of days. Extra days are often extra."
+        },
+        {
+          "id": "h_056",
+          "type": "heading",
+          "level": 3,
+          "text": "8. Tests before the operation"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "An echo, ECG, blood tests, CT or coronary angiography may be needed. Not every patient needs every test. [Coronary angiography](/costs/India/Cardiology/Coronary-Angiography) is its own listing when that test is planned."
+        },
+        {
+          "id": "h_058",
+          "type": "heading",
+          "level": 3,
+          "text": "9. Medicines and consumables"
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "Ask what is inside the cap, including blood products."
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 3,
+          "text": "10. Extra procedures and complications"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "Infection, a long period on a ventilator, more imaging or a second procedure can increase the bill. Ask how unplanned care is billed."
+        },
+        {
+          "id": "btn_062",
+          "type": "button",
+          "label": "Ask whether the valve is inside the package",
+          "href": "https://wa.me/919044346292?text=I%20need%20a%20heart%20valve%20quotation%20in%20India%20that%20states%20the%20valve%20brand%20and%20price%20separately%20from%20the%20surgical%20package%2C%20the%20room%20category%20and%20the%20ICU%20days."
+        },
+        {
+          "id": "h_063",
+          "type": "heading",
+          "level": 2,
+          "text": "5. Mechanical vs Tissue Heart Valve"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "Neither is best for every person. Age, bleeding risk, whether regular blood tests are realistic, and the chance of a later procedure all matter. The American Heart Association compares the options in its [guide to heart valve replacement](https://www.heart.org/en/health-topics/heart-valve-problems-and-disease/understanding-your-heart-valve-treatment-options/options-for-heart-valve-replacement)."
+        },
+        {
+          "id": "img_065",
+          "type": "image",
+          "src": "/uploads/articles/mechanical-tissue-valve.webp",
+          "alt": "A mechanical bileaflet valve beside a tissue valve with three soft leaflets",
+          "caption": "Left: a mechanical valve, with two tilting discs. Right: a tissue valve, with three leaflets. The drawing is simplified. The choice is clinical, not a price comparison."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 3,
+          "text": "Mechanical valves"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Mechanical valves are made from durable artificial materials and are built for long-term use. Patients with a mechanical valve generally need lifelong anticoagulation with a vitamin K antagonist such as warfarin, and regular blood tests. The dose and the target range come from the treating clinician. Patients should understand bleeding, clotting, and interactions with food and other medicines."
+        },
+        {
+          "id": "h_068",
+          "type": "heading",
+          "level": 3,
+          "text": "Tissue valves"
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "Tissue valves are made from biological material, often animal tissue. They do not always require lifelong anticoagulation just because of the valve. Anticoagulation may still be needed for another reason, or for a period after the operation. Tissue valves can wear out and may need another procedure later. How long one lasts depends on the valve and the patient."
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "| Factor | Mechanical valve | Tissue valve |\n|---|---|---|\n| Material | Artificial | Biological tissue |\n| Durability | Generally highly durable | Can wear out |\n| Lifelong anticoagulation | Usually required | Not always required only because of the valve |\n| Blood tests | Regular anticoagulation checks | Depends on the valve and other conditions |\n| Later procedure | Structural wear is less common; other problems remain possible | May be needed if the valve deteriorates |\n| What should decide | Durability, anticoagulation, lifestyle, clinical fit | Age, bleeding risk, preference, expected durability |"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "Do not choose a valve only because it costs less to buy. Medicines, monitoring and a possible future procedure belong in the conversation before surgery."
+        },
+        {
+          "id": "btn_072",
+          "type": "button",
+          "label": "Ask which valve is being proposed for you",
+          "href": "https://wa.me/919044346292?text=Please%20ask%20the%20heart%20team%20whether%20a%20mechanical%20or%20a%20tissue%20valve%20is%20proposed%2C%20whether%20I%20would%20need%20lifelong%20anticoagulation%2C%20and%20whether%20that%20valve%27s%20cost%20is%20inside%20the%20quotation."
+        },
+        {
+          "id": "h_073",
+          "type": "heading",
+          "level": 2,
+          "text": "6. What Is TAVR/TAVI, and How Does Its Cost Differ?"
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "TAVR and TAVI are two names for the same catheter-based aortic valve replacement. The new valve is delivered through a catheter, commonly from an artery in the groin, rather than by removing the old valve through a chest incision. The route depends on anatomy. Read [TAVR in India](/treatments/tavr-in-india) for the procedure page on this site."
+        },
+        {
+          "id": "img_075",
+          "type": "image",
+          "src": "/uploads/articles/tavr-delivery.webp",
+          "alt": "A mesh valve expanding inside the aorta at the top of the heart, still attached to a catheter from below",
+          "caption": "During TAVR a catheter carries a mesh valve into the aorta. The catheter is removed. The valve stays. This shows delivery, not a finished X-ray."
+        },
+        {
+          "id": "h_076",
+          "type": "heading",
+          "level": 3,
+          "text": "Who may be considered?"
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "TAVR/TAVI may suit selected patients with aortic stenosis. Severity, symptoms, heart function, age, overall health, surgical risk, the shape of the valve and the arteries, and other heart disease all matter. It is not suitable for every valve problem. An experienced heart team should decide. It is not a substitute for mitral valve surgery."
+        },
+        {
+          "id": "h_078",
+          "type": "heading",
+          "level": 3,
+          "text": "What changes the TAVR quotation?"
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "The transcatheter valve, the CT used to plan it, the catheter laboratory or hybrid theatre, specialist and anaesthesia fees, the stay, extra procedures, and follow-up imaging. GAF's published indicative planning range for [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) is **US$18,000–US$42,000**, typically **3–7 nights**. That band is separate from surgical valve replacement at US$7,000–US$18,000. Ask whether the valve, the planning CT, anaesthesia, the stay, medicines and the echo after the procedure are included."
+        },
+        {
+          "id": "h_080",
+          "type": "heading",
+          "level": 3,
+          "text": "TAVR/TAVI compared with surgical replacement"
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "| Consideration | Surgical valve replacement | TAVR/TAVI |\n|---|---|---|\n| Approach | An incision, often in the chest | A catheter, commonly from the groin |\n| Usual setting | Patients who need surgical valve treatment | Selected aortic stenosis |\n| Recovery | Often longer after open surgery | The first days may be shorter in suitable patients |\n| Cost structure | Surgical package, valve, ICU | Transcatheter valve, CT, specialist equipment, stay |\n| Who decides | The cardiac surgical team | A multidisciplinary heart team |\n| Planning range on this site | US$7,000–US$18,000 for heart valve replacement | US$18,000–US$42,000 |"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "A shorter first recovery does not make TAVR better or cheaper. Suitability comes first."
+        },
+        {
+          "id": "btn_083",
+          "type": "button",
+          "label": "Ask whether the plan is surgery or TAVR",
+          "href": "https://wa.me/919044346292?text=My%20records%20are%20ready%20for%20review.%20Please%20say%20whether%20surgical%20valve%20replacement%20or%20TAVR/TAVI%20is%20being%20considered%2C%20and%20send%20a%20quotation%20for%20that%20procedure%20only."
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 2,
+          "text": "7. What Is Included in a Heart Valve Package?"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "“Valve replacement package” does not mean every expense is covered."
+        },
+        {
+          "id": "h_086",
+          "type": "heading",
+          "level": 3,
+          "text": "Possible inclusions"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "Surgeon and team, theatre, anaesthesia, a defined ICU period, a defined ward period, routine tests within a limit, medicines and consumables within a limit, routine care after the operation, and standard discharge planning."
+        },
+        {
+          "id": "h_088",
+          "type": "heading",
+          "level": 3,
+          "text": "Often extra"
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "The valve or device, extra ICU or ward days, tests above the limit, extra consultations, blood products, another heart procedure, treatment of complications, rehabilitation, outpatient visits after discharge, and travel, lodging and a caregiver."
+        },
+        {
+          "id": "h_090",
+          "type": "heading",
+          "level": 3,
+          "text": "Questions for the billing team"
+        },
+        {
+          "id": "ol_091",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Is the replacement valve included?",
+            "Which brand and model, if that is already decided?",
+            "How many ICU days and ward days are included?",
+            "What are the medicine and investigation limits?",
+            "What happens if the stay is longer?",
+            "Are extra procedures billed separately?",
+            "Are the echo after surgery and the first follow-up included?",
+            "How long is the quotation valid?",
+            "Are taxes, the deposit and administrative charges included?",
+            "What changes if the clinical plan changes?"
+          ]
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Tests Required Before Heart Valve Replacement"
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "The list depends on the valve, the symptoms and the proposed procedure."
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "An echocardiogram assesses structure and function. An ECG looks at rhythm. Blood tests may cover blood count, kidney function, electrolytes and clotting. CT is often required to plan TAVR/TAVI, and it can show the valve, the aorta and the access vessels. Some patients need coronary angiography or another look at the coronary arteries before valve surgery. Lung tests, infection screening or other checks may be added."
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "Ask for a written list, and ask whether recent tests from home can be reviewed so they are not repeated without a reason. The NHS describes [how heart valve replacement is done](https://www.nhs.uk/tests-and-treatments/heart-valve-replacement/how-its-done/)."
+        },
+        {
+          "id": "h_096",
+          "type": "heading",
+          "level": 2,
+          "text": "9. How Long Does the Procedure Take?"
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "Duration depends on the operation, the valve, the anatomy and whether another procedure is done at the same time. Time in the operating room or catheter laboratory is only part of the day. Preparation, anaesthesia and ICU care take time as well. Ask the hospital for the expected sequence of care rather than a single number of hours."
+        },
+        {
+          "id": "h_098",
+          "type": "heading",
+          "level": 2,
+          "text": "10. Recovery After Heart Valve Replacement"
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "Recovery after surgery and recovery after TAVR/TAVI are different."
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "The NHS describes full recovery after surgical valve replacement as commonly taking around two to three months, a hospital stay of often about a week after surgery, and a shorter stay after TAVI. Those are general UK patient-guidance figures, not a promise about an Indian hospital. [NHS recovery guide](https://www.nhs.uk/tests-and-treatments/heart-valve-replacement/recovery/). GAF's cost pages describe a longer planning window for international patients: about 8–16 nights for surgical valve replacement and about 3–7 nights for TAVR. The treating team sets the actual stay."
+        },
+        {
+          "id": "img_101",
+          "type": "image",
+          "src": "/uploads/articles/valve-recovery.webp",
+          "alt": "Four steps after valve treatment: a monitored hospital bed, walking with a clinician, an echocardiogram, and a valve identification card",
+          "caption": "After valve treatment: monitoring in hospital, walking, an echocardiogram, and the valve card. The number of days comes from the treating team."
+        },
+        {
+          "id": "h_102",
+          "type": "heading",
+          "level": 3,
+          "text": "In hospital"
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "The team watches rhythm, blood pressure, breathing, pain and the wound. Walking usually starts when it is safe. Before discharge, the medicine list, activity limits, wound care, warning signs and the follow-up plan should be written down."
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 3,
+          "text": "At home"
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "Help with daily tasks is often needed at first. Fatigue is common. Increase activity only as advised. Ask when driving, lifting, work and flying are reasonable."
+        },
+        {
+          "id": "h_106",
+          "type": "heading",
+          "level": 3,
+          "text": "Cardiac rehabilitation"
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "Ask whether a structured programme is appropriate, and how to continue it after returning home."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "Warning signs"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Seek emergency care for severe chest pain, sudden breathlessness, fainting, stroke symptoms or heavy bleeding. Contact the treating team for fever, a wound that is more red or leaking, new palpitations, increasing swelling, or any warning on the discharge sheet. People taking anticoagulants need to know their own bleeding precautions."
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Medicines and Follow-Up After Valve Replacement"
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "Medicines depend on the valve, the procedure and other conditions. They may include anticoagulation, rhythm medicines, blood-pressure medicines or a diuretic."
+        },
+        {
+          "id": "h_112",
+          "type": "heading",
+          "level": 3,
+          "text": "After a mechanical valve"
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "Lifelong anticoagulation with a vitamin K antagonist such as warfarin is the usual plan, with regular INR checks. The target range depends on the valve and the person. Do not stop it or change the dose without medical advice. Tell every clinician and dentist about the valve before a new medicine or a procedure."
+        },
+        {
+          "id": "h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "After a tissue valve or TAVR/TAVI"
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "Plans differ. Some people need anticoagulation for another reason. Others take an antiplatelet medicine or a different combination. Do not copy another patient's prescription."
+        },
+        {
+          "id": "h_116",
+          "type": "heading",
+          "level": 3,
+          "text": "Follow-up"
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "A review, an echocardiogram, an ECG, blood tests or INR checks may be scheduled. Leave with a written plan and a contact if symptoms change."
+        },
+        {
+          "id": "h_118",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Heart Valve Replacement for International Patients"
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "Budget for more than the operation: consultation, tests, the procedure and the device, extra hospital days, medicines, follow-up, lodging, a caregiver, local transport, a possible delay, and a cardiologist at home. Message the coordination desk on WhatsApp at +91 90443 46292. Device choice and fitness to fly stay with the treating clinicians. If the patient is unstable, use local emergency care. Do not wait to travel."
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "| Expense | What to confirm |\n|---|---|\n| Consultation | Whether a records review is included |\n| Tests | Which reports from home can be reused |\n| Procedure | Surgery or TAVR, named in the quotation |\n| Valve or device | Brand, model, and whether it is inside the package |\n| Extra days | How an additional ICU or ward day is billed |\n| Medicines | In hospital and at discharge, including anticoagulation |\n| Follow-up | Echo and the first review |\n| Stay and travel | Patient, caregiver, and room to delay the flight |\n| Home clinic | Who will read the echo and check the INR |"
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "Share the echo, any CT, coronary reports, the medicine list and previous operation notes before booking flights. The team should say whether travel is appropriate and how long to stay nearby after discharge. Do not assume a flight the day after leaving hospital."
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "Before leaving India, collect the discharge summary, the operation or procedure report, the valve card, the latest echo, the medicine list with doses, anticoagulation instructions if they apply, wound and activity instructions, the follow-up schedule and a clinic contact."
+        },
+        {
+          "id": "btn_123",
+          "type": "button",
+          "label": "Plan travel only after the operation is named",
+          "href": "https://wa.me/919044346292?text=I%20am%20considering%20travel%20to%20India%20for%20a%20heart%20valve.%20Please%20arrange%20a%20records%20review%20and%20a%20quotation%20that%20names%20surgery%20or%20TAVR%2C%20and%20the%20valve%2C%20before%20any%20flights%20are%20booked."
+        },
+        {
+          "id": "h_124",
+          "type": "heading",
+          "level": 2,
+          "text": "13. How to Compare Quotations"
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "A lower headline is not automatically a lower total. Two packages can omit different things."
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "| Item to line up | What to confirm |\n|---|---|\n| Procedure | The same operation, not “valve package” |\n| Valve or device | Included, excluded, or not yet chosen |\n| Surgeon and anaesthesia | Named in the estimate |\n| ICU days and ward days | The number included |\n| Medicine and test limits | The cap, and what happens above it |\n| Extra procedures | CABG, a second valve, or a root replacement |\n| Echo and follow-up | Included or billed later |\n| Longer stay | The daily charge |\n| Total and exclusions | In writing, with a validity date |"
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "Ask both hospitals to quote the same plan and the same room category."
+        },
+        {
+          "id": "h_128",
+          "type": "heading",
+          "level": 2,
+          "text": "14. How to Choose a Surgeon or Hospital in India"
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "Check registration on the [National Medical Register](https://nmr.nmc.org.in/). Ask about experience with the specific operation, not only with heart surgery in general. For TAVR/TAVI, ask how the heart team decides suitability and how complications are managed."
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "Ask about the cardiac ICU, monitoring, imaging and emergency support. The team should explain the diagnosis, the options, the expected benefit, the risks, and why this procedure is the one proposed. Ask who reviews you after discharge and how they will write to a doctor at home."
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "City directories are a place to start, not a ranking: [Delhi NCR](/doctors/India/Delhi-NCR/Cardiac-Surgery/Heart-Valve-Replacement), [Mumbai](/doctors/India/Mumbai/Cardiac-Surgery/Heart-Valve-Replacement), [Bengaluru](/doctors/India/Bengaluru/Cardiac-Surgery/Heart-Valve-Replacement), [Chennai](/doctors/India/Chennai/Cardiac-Surgery/Heart-Valve-Replacement) and [Hyderabad](/doctors/India/Hyderabad/Cardiac-Surgery/Heart-Valve-Replacement). [Cardiac surgeons in India](/doctors/India/Cardiac-Surgery) is the wider directory. Hospital lists by city include [Delhi NCR](/hospitals/India/Delhi-NCR/Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Cardiac-Surgery) and [Bengaluru](/hospitals/India/Bengaluru/Cardiac-Surgery)."
+        },
+        {
+          "id": "h_132",
+          "type": "heading",
+          "level": 2,
+          "text": "15. Questions to Ask Before Heart Valve Replacement"
+        },
+        {
+          "id": "h_133",
+          "type": "heading",
+          "level": 3,
+          "text": "About the diagnosis"
+        },
+        {
+          "id": "ul_134",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Which valve is affected, and is the problem narrowing, leakage, or both?",
+            "How severe is it, and what do the echo and other tests show?",
+            "What are the risks of waiting?"
+          ]
+        },
+        {
+          "id": "h_135",
+          "type": "heading",
+          "level": 3,
+          "text": "About the procedure"
+        },
+        {
+          "id": "ul_136",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Is repair possible, or is replacement necessary?",
+            "Why surgery, or why TAVR/TAVI?",
+            "What else could be done?",
+            "Will another heart procedure happen at the same time?"
+          ]
+        },
+        {
+          "id": "h_137",
+          "type": "heading",
+          "level": 3,
+          "text": "About the valve"
+        },
+        {
+          "id": "ul_138",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Mechanical or tissue, and why that one for me?",
+            "Will I need long-term anticoagulation?",
+            "How will the valve be checked over the years?",
+            "Might I need another procedure later?"
+          ]
+        },
+        {
+          "id": "h_139",
+          "type": "heading",
+          "level": 3,
+          "text": "About the bill"
+        },
+        {
+          "id": "ul_140",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Is the valve inside the quotation?",
+            "Which ICU days, ward days, tests and medicines are covered?",
+            "How is an extra night or a complication billed?"
+          ]
+        },
+        {
+          "id": "h_141",
+          "type": "heading",
+          "level": 3,
+          "text": "About afterwards"
+        },
+        {
+          "id": "ul_142",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "How long might I be in hospital, and when can I work?",
+            "Which follow-up tests are planned?",
+            "If I live abroad, when may I be fit to fly?"
+          ]
+        },
+        {
+          "id": "h_143",
+          "type": "heading",
+          "level": 2,
+          "text": "16. Frequently Asked Questions About Heart Valve Replacement Cost in India"
+        },
+        {
+          "id": "h_144",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does heart valve replacement cost in India?"
+        },
+        {
+          "id": "p_145",
+          "type": "paragraph",
+          "text": "There is no single national price. GAF Healthcare's current cost page gives an indicative planning range of US$7,000–US$18,000 for heart valve replacement, with a typical stay of 8–16 nights. The same page lists a US comparison of US$80,000–US$220,000, which is not an India price. A published Medanta tariff effective from August 2025 listed single valve replacement or repair packages from ₹3.19 lakh to ₹8.07 lakh across room categories, with limits, and with the valve possibly charged extra. Those rupee figures are historical and specific to one hospital. They are not the same thing as GAF's dollar planning range. Confirm a current quotation with the treating hospital."
+        },
+        {
+          "id": "h_146",
+          "type": "heading",
+          "level": 3,
+          "text": "Is the cost of the replacement valve included in the hospital package?"
+        },
+        {
+          "id": "p_147",
+          "type": "paragraph",
+          "text": "Not always. The Medanta tariff cited here treats the valve or device as an additional charge unless the package says otherwise. GAF's US$7,000–US$18,000 figure is an indicative planning range for the episode, not a promise that a named valve is included. Ask for the valve model and its price as its own line."
+        },
+        {
+          "id": "h_148",
+          "type": "heading",
+          "level": 3,
+          "text": "Is aortic valve replacement more expensive than mitral valve replacement?"
+        },
+        {
+          "id": "p_149",
+          "type": "paragraph",
+          "text": "There is no universal rule, and this site does not publish a separate mitral-replacement band. Surgical aortic valve replacement is listed at US$7,000–US$18,500. Heart valve replacement, which covers a surgical replacement episode, is listed at US$7,000–US$18,000. Mitral valve repair, which is not the same operation as replacement, is listed at US$7,500–US$18,000. The quotation has to name the operation."
+        },
+        {
+          "id": "h_150",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does double valve replacement cost in India?"
+        },
+        {
+          "id": "p_151",
+          "type": "paragraph",
+          "text": "GAF lists double valve replacement at an indicative planning range of US$12,000–US$28,000, typically 10–18 nights. That is a different listing from a single valve. The bill still depends on the valves, the devices, the room, the stay and other heart disease. Ask for a quotation for the two valves that are actually planned."
+        },
+        {
+          "id": "h_152",
+          "type": "heading",
+          "level": 3,
+          "text": "Is TAVR/TAVI cheaper than open-heart valve surgery?"
+        },
+        {
+          "id": "p_153",
+          "type": "paragraph",
+          "text": "Not on the ranges published here. TAVR/TAVI is listed at US$18,000–US$42,000, typically 3–7 nights. Surgical heart valve replacement is listed at US$7,000–US$18,000, typically 8–16 nights. The procedures use different valves and different hospital pathways. The right one is the one the heart team says fits the anatomy, not the lower number."
+        },
+        {
+          "id": "h_154",
+          "type": "heading",
+          "level": 3,
+          "text": "Which is better: a mechanical or tissue heart valve?"
+        },
+        {
+          "id": "p_155",
+          "type": "paragraph",
+          "text": "Neither is better for every patient. Mechanical valves are generally more durable and usually need lifelong anticoagulation with regular blood tests. Tissue valves may avoid lifelong anticoagulation solely because of the valve, and they can wear out. Decide with the surgeon who will do the operation."
+        },
+        {
+          "id": "h_156",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does recovery take after heart valve replacement?"
+        },
+        {
+          "id": "p_157",
+          "type": "paragraph",
+          "text": "The NHS describes full recovery after surgical valve replacement as commonly taking around two to three months, and a shorter early recovery after TAVI. Individual recovery differs. GAF's planning stays are about 8–16 nights for surgical valve replacement and about 3–7 nights for TAVR. Those are planning windows for the cost pages, not a discharge date."
+        },
+        {
+          "id": "h_158",
+          "type": "heading",
+          "level": 3,
+          "text": "Will I need blood-thinning medicines after valve replacement?"
+        },
+        {
+          "id": "p_159",
+          "type": "paragraph",
+          "text": "Many patients with a mechanical valve need lifelong anticoagulation. Patients with a tissue valve or a TAVR valve may have a different plan, depending on the procedure and on other conditions such as atrial fibrillation. Do not stop or change these medicines without medical advice."
+        },
+        {
+          "id": "h_160",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients travel to India for heart valve surgery?"
+        },
+        {
+          "id": "p_161",
+          "type": "paragraph",
+          "text": "Some do. Share the echo and other records first, get a clinical review, confirm whether the plan is repair, surgical replacement or TAVR, and get a written estimate before booking flights. Do not travel in order to avoid emergency care at home."
+        },
+        {
+          "id": "h_162",
+          "type": "heading",
+          "level": 3,
+          "text": "How long should I stay in India after heart valve replacement?"
+        },
+        {
+          "id": "p_163",
+          "type": "paragraph",
+          "text": "There is no universal minimum. The treating team should advise on the hospital stay, the first review and fitness to fly. Keep flexibility for extra monitoring if recovery is slower than expected."
+        },
+        {
+          "id": "h_164",
+          "type": "heading",
+          "level": 3,
+          "text": "Does insurance cover heart valve replacement in India?"
+        },
+        {
+          "id": "p_165",
+          "type": "paragraph",
+          "text": "It depends on the policy, the hospital network, exclusions and eligibility. Ask the insurer in writing about pre-authorisation, the valve device, room limits and complications. A hospital quotation is not proof of cover."
+        },
+        {
+          "id": "h_166",
+          "type": "heading",
+          "level": 3,
+          "text": "Can heart valve disease be treated without replacement?"
+        },
+        {
+          "id": "p_167",
+          "type": "paragraph",
+          "text": "Some people are monitored or treated with medicine. Some can have the valve repaired. Some with aortic stenosis can have TAVR. Others need replacement. The echo, the symptoms and the specialist assessment decide. [Heart valve repair](/costs/India/Cardiac-Surgery/Heart-Valve-Repair) is a different listing, at US$6,500–US$16,500."
+        },
+        {
+          "id": "h_168",
+          "type": "heading",
+          "level": 3,
+          "text": "How can GAF Healthcare help with heart valve treatment in India?"
+        },
+        {
+          "id": "p_169",
+          "type": "paragraph",
+          "text": "GAF Healthcare can coordinate appointments, hospital communication, records, quotations and practical travel on WhatsApp at +91 90443 46292. Diagnosis, the choice of operation and fitness to travel stay with the treating clinicians. A message to the desk is not a quotation."
+        },
+        {
+          "id": "h_170",
+          "type": "heading",
+          "level": 3,
+          "text": "Does the US$7,000–US$18,000 range include the valve device?"
+        },
+        {
+          "id": "p_171",
+          "type": "paragraph",
+          "text": "Not as a promise. It is the indicative planning range for a heart valve replacement episode on the cost page. Hospitals often bill the valve on actual cost, which is also how the Medanta tariff treats implants unless they are specified. Ask for the procedure and the valve as separate lines, with the model name, before comparing two quotations."
+        },
+        {
+          "id": "h_172",
+          "type": "heading",
+          "level": 3,
+          "text": "Why do the Medanta rupee package and GAF's dollar range look so different?"
+        },
+        {
+          "id": "p_173",
+          "type": "paragraph",
+          "text": "They measure different things. The Medanta figures are one hospital's procedure packages for single valve replacement or repair, effective 12 August 2025, from ₹3.19 lakh to ₹8.07 lakh across the listed rooms, and the valve may be extra. GAF's US$7,000–US$18,000 band is an indicative planning range for international patients for the pathway as published on the cost page. The US$80,000–US$220,000 figure on that page is a US comparison, not an India price. None of these is a confirmed bill."
+        },
+        {
+          "id": "h_174",
+          "type": "heading",
+          "level": 3,
+          "text": "Why is TAVR not inside the US$7,000–US$18,000 band?"
+        },
+        {
+          "id": "p_175",
+          "type": "paragraph",
+          "text": "The valve, the imaging and the procedure are different. GAF publishes US$18,000–US$42,000 as the indicative planning range for TAVR/TAVI. Do not budget a transcatheter aortic valve from a surgical package, and do not budget mitral or tricuspid surgery from the TAVR band."
+        },
+        {
+          "id": "h_176",
+          "type": "heading",
+          "level": 3,
+          "text": "Which records should I send before asking for a quotation?"
+        },
+        {
+          "id": "p_177",
+          "type": "paragraph",
+          "text": "Send the latest echocardiogram report, any CT of the aorta, coronary angiography if it has been done, the medicine list, and notes of previous heart operations. Say which valve is affected and whether the question is repair, surgical replacement, a double valve, or TAVR. Without that, a hospital can only describe its usual package."
+        },
+        {
+          "id": "btn_178",
+          "type": "button",
+          "label": "Ask who will follow the valve after you go home",
+          "href": "https://wa.me/919044346292?text=I%20need%20to%20know%20who%20can%20review%20a%20heart%20valve%20after%20I%20return%20home%2C%20including%20echo%20and%20anticoagulation%20checks%2C%20and%20whether%20the%20first%20follow-up%20is%20included%20in%20the%20India%20quotation."
+        },
+        {
+          "id": "h_179",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion: Compare the Full Treatment Plan, Not Just the Price"
+        },
+        {
+          "id": "p_180",
+          "type": "paragraph",
+          "text": "Heart valve replacement cost in India depends on the valve, the device, surgery versus TAVR, the hospital package, the ICU stay and the medical need. A mechanical valve and a tissue valve are not one decision, and TAVR is not a cheaper version of open surgery on the ranges published here."
+        },
+        {
+          "id": "p_181",
+          "type": "paragraph",
+          "text": "Confirm whether the quotation includes the valve, the stay, the tests, the medicines and the first echo. For international patients, that means a records review before travel, a written estimate, discharge papers and a clinic at home that can continue the care."
+        },
+        {
+          "id": "p_182",
+          "type": "paragraph",
+          "text": "These pages are live:"
+        },
+        {
+          "id": "ul_183",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Heart valve replacement](/treatments/heart-valve-replacement-in-india)",
+            "[Heart valve replacement cost](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement)",
+            "[TAVR in India](/treatments/tavr-in-india)",
+            "[Aortic valve replacement](/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement)",
+            "[Double valve replacement](/costs/India/Cardiac-Surgery/Double-Valve-Replacement)",
+            "[CABG surgery in India](/treatments/cabg-surgery-in-india)",
+            "[Cardiac surgeons in India](/doctors/India/Cardiac-Surgery)"
+          ]
+        },
+        {
+          "id": "h_184",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "ol_185",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "NHS — [What is heart valve replacement?](https://www.nhs.uk/tests-and-treatments/heart-valve-replacement/what-it-is/)",
+            "NHS — [How heart valve replacement is done](https://www.nhs.uk/tests-and-treatments/heart-valve-replacement/how-its-done/)",
+            "NHS — [Recovery after heart valve replacement](https://www.nhs.uk/tests-and-treatments/heart-valve-replacement/recovery/)",
+            "American Heart Association — [Options for heart valve replacement](https://www.heart.org/en/health-topics/heart-valve-problems-and-disease/understanding-your-heart-valve-treatment-options/options-for-heart-valve-replacement)",
+            "American College of Cardiology and American Heart Association — [2020 guideline for valvular heart disease](https://www.jacc.org/doi/10.1016/j.jacc.2020.11.018)",
+            "American Heart Association — [Heart valve problems and disease](https://www.heart.org/en/health-topics/heart-valve-problems-and-disease)",
+            "Medanta–The Medicity — [package tariff effective 12 August 2025](https://cdnbbsr.s3waas.gov.in/s35679fb79d04e9ed91e292858c54df4e8/uploads/2026/01/202601081639734353.pdf)",
+            "National Medical Commission — [National Medical Register](https://nmr.nmc.org.in/)",
+            "NHS — [Heart valve replacement](https://www.nhs.uk/tests-and-treatments/heart-valve-replacement/)",
+            "American Heart Association — [Health topics](https://www.heart.org/en/health-topics)"
+          ]
+        },
+        {
+          "id": "p_186",
+          "type": "paragraph",
+          "text": "This article is for general education. It has not been signed by a named cardiac surgeon or cardiologist. The need for valve treatment, the choice of valve, the risks and the follow-up depend on individual assessment. Hospital tariffs change, and a procedure package may exclude the device. Confirm clinical and financial details with the treating hospital."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Heart valve replacement",
+          "href": "/treatments/heart-valve-replacement-in-india"
+        },
+        {
+          "label": "Heart valve replacement cost",
+          "href": "/costs/India/Cardiac-Surgery/Heart-Valve-Replacement"
+        },
+        {
+          "label": "TAVR in India",
+          "href": "/treatments/tavr-in-india"
+        },
+        {
+          "label": "TAVR/TAVI cost",
+          "href": "/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)"
+        },
+        {
+          "label": "Aortic valve replacement",
+          "href": "/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement"
+        },
+        {
+          "label": "Double valve replacement",
+          "href": "/costs/India/Cardiac-Surgery/Double-Valve-Replacement"
+        },
+        {
+          "label": "CABG surgery in India",
+          "href": "/treatments/cabg-surgery-in-india"
+        },
+        {
+          "label": "Cardiac surgeons in India",
+          "href": "/doctors/India/Cardiac-Surgery"
+        }
+      ]
+    },
     {
       "id": "art_pacemaker_cost_in_india",
       "slug": "pacemaker-cost-in-india",
