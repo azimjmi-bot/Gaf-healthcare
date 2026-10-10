@@ -1924,9 +1924,737 @@
       "name": "afib-pvi.webp",
       "alt": "Four openings on the heart, each ringed with ablation points, and a catheter",
       "addedAt": "2026-10-10T21:30:00.000Z"
+    },
+    {
+      "id": "media_tavr_stenosis_webp",
+      "url": "/uploads/articles/tavr-stenosis.webp",
+      "name": "tavr-stenosis.webp",
+      "alt": "Thick yellow valve leaflets where the aorta leaves the top of the heart",
+      "addedAt": "2026-10-10T22:30:00.000Z"
+    },
+    {
+      "id": "media_tavr_echo_webp",
+      "url": "/uploads/articles/tavr-echo.webp",
+      "name": "tavr-echo.webp",
+      "alt": "An ultrasound probe on the chest beside a circular view of three valve leaflets, one thickened",
+      "addedAt": "2026-10-10T22:30:00.000Z"
+    },
+    {
+      "id": "media_tavr_catheter_webp",
+      "url": "/uploads/articles/tavr-catheter.webp",
+      "name": "tavr-catheter.webp",
+      "alt": "A catheter from the groin to a mesh valve in the aorta above the heart",
+      "addedAt": "2026-10-10T22:30:00.000Z"
+    },
+    {
+      "id": "media_tavr_vs_surgery_webp",
+      "url": "/uploads/articles/tavr-vs-surgery.webp",
+      "name": "tavr-vs-surgery.webp",
+      "alt": "A mesh valve on a catheter beside a three-leaflet valve at the upper heart",
+      "addedAt": "2026-10-10T22:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_how_to_choose_a_tavr_tavi_specialist_in_india",
+      "slug": "how-to-choose-a-tavr-tavi-specialist-in-india",
+      "title": "What Is a TAVR/TAVI Specialist? How to Find the Right Heart Valve Team in India",
+      "excerpt": "Learn how to choose a TAVR/TAVI specialist in India. Understand aortic stenosis, heart valve teams, doctor qualifications, hospital facilities, costs and treatment options.",
+      "date": "10 October 2026",
+      "publishedAt": "2026-10-10T22:30:00.000Z",
+      "updatedAt": "2026-10-10T22:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "TAVR",
+        "TAVI",
+        "aortic stenosis",
+        "India",
+        "travel"
+      ],
+      "image": "/uploads/articles/tavr-stenosis.webp",
+      "imageAlt": "Thick yellow valve leaflets where the aorta leaves the top of the heart",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "TAVR/TAVI Specialist in India: How to Choose the Right Doctor",
+      "seoDescription": "Learn how to choose a TAVR/TAVI specialist in India. Understand aortic stenosis, heart valve teams, doctor qualifications, hospital facilities, costs and treatment options.",
+      "canonical": "https://gaf.healthcare/blogs/how-to-choose-a-tavr-tavi-specialist-in-india",
+      "ogImage": "/uploads/articles/tavr-stenosis.webp",
+      "allowIndex": true,
+      "keywords": [
+        "TAVR/TAVI specialist in India",
+        "Best TAVR doctor in India",
+        "TAVI specialist in India",
+        "Transcatheter aortic valve replacement in India",
+        "Transcatheter aortic valve implantation",
+        "Aortic stenosis treatment in India",
+        "Structural heart specialist in India",
+        "TAVR vs open heart surgery",
+        "TAVR hospital in India",
+        "TAVR cost in India",
+        "Heart valve replacement specialist",
+        "TAVR eligibility",
+        "TAVR for elderly patients"
+      ],
+      "blocks": [
+        {
+          "id": "p_001",
+          "type": "paragraph",
+          "text": "Being told a heart valve may need replacing raises three different questions: how severe the narrowing is, whether a catheter valve or an operation is the better fit, and which team should make that call. TAVR and TAVI are two names for the same catheter procedure. They are not the right next step for every narrowed aortic valve."
+        },
+        {
+          "id": "html_002",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>A suitable TAVR/TAVI specialist should have relevant training and experience in transcatheter heart valve procedures and work with a hospital team equipped to assess, perform and monitor the treatment.</p><p>The procedure is commonly performed by an appropriately trained interventional cardiologist or cardiac surgeon, depending on the clinical setting and local practice. The treatment decision should involve a multidisciplinary heart valve team when appropriate.</p><p>Use this checklist when comparing specialists:</p><ul class=\"article-quick-answer__list\"><li><strong>Relevant expertise:</strong> Confirm that the doctor performs TAVR/TAVI and has experience with your type of valve disease.</li><li><strong>Comprehensive assessment:</strong> Check whether the team reviews echocardiography, CT imaging, symptoms and other medical conditions before recommending treatment.</li><li><strong>Heart valve team:</strong> Ask whether interventional cardiology, cardiac surgery, cardiac imaging and anaesthesia expertise are available as needed.</li><li><strong>Hospital facilities:</strong> Confirm access to appropriate catheterisation facilities, imaging, intensive care and emergency support.</li><li><strong>Treatment alternatives:</strong> Understand why TAVR/TAVI is being recommended instead of surgical valve replacement or continued monitoring.</li><li><strong>Cost transparency:</strong> Request a written estimate covering the valve device, procedure, hospital stay, investigations and follow-up.</li><li><strong>Recovery and follow-up:</strong> Confirm medication instructions, follow-up imaging and arrangements for managing complications.</li><li><strong>Second opinion:</strong> Consider another specialist opinion when the decision is complex and there is time to obtain one safely.</li></ul><p>No single doctor or hospital is the right choice for every patient. The aim is to identify a qualified team whose expertise, facilities and treatment recommendation fit the patient's individual circumstances.</p></div></aside>"
+        },
+        {
+          "id": "toc_003",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-tavr-and-tavi-mean\">1. What TAVR and TAVI Mean</a></li><li><a href=\"#2-what-aortic-stenosis-is\">2. What Aortic Stenosis Is</a></li><li><a href=\"#3-who-is-on-the-valve-team\">3. Who Is on the Valve Team</a></li><li><a href=\"#4-who-may-be-considered\">4. Who May Be Considered</a></li><li><a href=\"#5-tavr-and-surgical-replacement\">5. TAVR and Surgical Replacement</a></li><li><a href=\"#6-how-to-compare-a-specialist\">6. How to Compare a Specialist</a></li><li><a href=\"#7-tests-before-the-procedure\">7. Tests Before the Procedure</a></li><li><a href=\"#8-what-the-procedure-involves\">8. What the Procedure Involves</a></li><li><a href=\"#9-risks-to-ask-about\">9. Risks to Ask About</a></li><li><a href=\"#10-published-planning-ranges-are-not-a-quotation\">10. Published Planning Ranges Are Not a Quotation</a></li><li><a href=\"#11-recovery-and-follow-up\">11. Recovery and Follow-Up</a></li><li><a href=\"#12-if-you-are-travelling-to-india\">12. If You Are Travelling to India</a></li><li><a href=\"#13-how-to-compare-hospitals\">13. How to Compare Hospitals</a></li><li><a href=\"#14-questions-worth-taking-in\">14. Questions Worth Taking In</a></li><li><a href=\"#15-signs-to-slow-down\">15. Signs to Slow Down</a></li><li><a href=\"#16-frequently-asked-questions-about-choosing-a-tavr-specialist\">16. Frequently Asked Questions About Choosing a TAVR Specialist</a></li><li><a href=\"#conclusion-match-the-team-to-the-valve-decision\">Conclusion: Match the Team to the Valve Decision</a></li><li><a href=\"#sources\">Sources</a></li></ol></nav>"
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "[Cardiologists in India](/doctors/India/Cardiology) and [cardiac surgeons in India](/doctors/India/Cardiac-Surgery) are directories, not a ranking of valve doctors. City lists include [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology), [Mumbai](/doctors/India/Mumbai/Cardiology), [Chennai](/doctors/India/Chennai/Cardiology), [Bengaluru](/doctors/India/Bengaluru/Cardiology), and [Hyderabad](/doctors/India/Hyderabad/Cardiology). Hospital lists: [cardiology](/hospitals/India/Cardiology) and [cardiac surgery](/hospitals/India/Cardiac-Surgery). How to judge a hospital is in [how to choose a hospital for heart treatment in India](/blogs/how-to-choose-a-hospital-for-heart-treatment-in-india)."
+        },
+        {
+          "id": "btn_005",
+          "type": "button",
+          "label": "Send the echo before anyone names a valve doctor",
+          "href": "https://wa.me/919044346292?text=Please%20look%20at%20the%20aortic%20valve%20reports%20I%20can%20send%20and%20say%20whether%20the%20next%20review%20should%20be%20a%20valve%20team%20that%20offers%20both%20TAVR%20and%20surgical%20replacement.%20Do%20not%20suggest%20a%20doctor%20from%20a%20ranking."
+        },
+        {
+          "id": "h_006",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What TAVR and TAVI Mean"
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "TAVR means transcatheter aortic valve replacement. TAVI means transcatheter aortic valve implantation. Both names describe the same general procedure: a new valve is delivered on a catheter, usually through an artery in the groin, and opened inside the diseased aortic valve. The old valve is not cut out through a conventional open-heart operation."
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "The aortic valve sits where the left ventricle sends blood into the aorta. When it is severely narrowed, the heart works harder to push blood through a small opening. The American Heart Association’s page on [what TAVR is](https://www.heart.org/en/health-topics/heart-valve-problems-and-disease/understanding-your-heart-valve-treatment-options/what-is-tavr) is a plain explanation. It is not a list of doctors in India. The treatment page on this site is [TAVR in India](/treatments/tavr-in-india)."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "Not everyone with aortic stenosis needs a new valve now. Not everyone who needs a new valve should have it by catheter. Some people are better served by surgical replacement. Some should be watched. The specialist’s job is that choice, not only the placement of a device."
+        },
+        {
+          "id": "h_010",
+          "type": "heading",
+          "level": 2,
+          "text": "2. What Aortic Stenosis Is"
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "The leaflets can thicken, stiffen, or calcify. Age-related wear is common. A valve that was formed differently from birth can also narrow. Early on there may be no symptoms. Later, people notice breathlessness on effort, chest discomfort, dizziness or fainting, less stamina, fatigue, or signs of heart failure. Those symptoms are not unique to this valve. They need an assessment."
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "**New or severe chest pain, severe breathlessness, or fainting with worrying symptoms needs urgent care.** Do not wait for a routine valve clinic."
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "An echocardiogram is the main test for how tight the valve is, how well the heart pumps, and whether another valve is involved. The team may add an ECG, a CT planned for the valve and the access vessels, blood tests, a look at the coronary arteries, or other imaging. A diagnosis of aortic stenosis is not an automatic booking for TAVR. The American Heart Association’s pages on [aortic stenosis](https://www.heart.org/en/health-topics/heart-valve-problems-and-disease/heart-valve-problems-and-causes/aortic-stenosis) and [aortic stenosis resources](https://www.heart.org/en/health-topics/heart-valve-problems-and-disease/heart-valve-disease-resources/aortic-stenosis-resources) are background. The World Health Organization’s [cardiovascular diseases topic](https://www.who.int/health-topics/cardiovascular-diseases) is broader still."
+        },
+        {
+          "id": "img_014",
+          "type": "image",
+          "src": "/uploads/articles/tavr-stenosis.webp",
+          "alt": "Thick yellow valve leaflets where the aorta leaves the top of the heart",
+          "caption": "Aortic stenosis is a narrowed valve where the aorta leaves the heart. The yellow leaflets in this drawing sit at that junction. It is a teaching drawing, not a scan."
+        },
+        {
+          "id": "img_015",
+          "type": "image",
+          "src": "/uploads/articles/tavr-echo.webp",
+          "alt": "An ultrasound probe on the chest beside a circular view of three valve leaflets, one thickened",
+          "caption": "Left: a probe on the chest. Right: a circular teaching drawing of three leaflets, one of them thickened. It is not an echocardiogram still."
+        },
+        {
+          "id": "h_016",
+          "type": "heading",
+          "level": 2,
+          "text": "3. Who Is on the Valve Team"
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "A TAVR specialist is someone with training in this catheter valve procedure. The work includes whether it is appropriate, the anatomy, the alternatives, and care before and after. The American Heart Association’s note on [the aortic stenosis care team](https://www.heart.org/en/health-topics/heart-valve-problems-and-disease/understanding-your-heart-valve-treatment-options/your-aortic-stenosis-care-team) describes those roles in general."
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "An interventional cardiologist does catheter procedures. In a TAVR programme that person may judge suitability, review the arteries and the valve, plan the case, and perform it. Not every interventional cardiologist does TAVR. Ask about this procedure, not only the title."
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "A cardiac surgeon replaces valves at an operation and may also take part in a TAVR programme. That voice matters when the choice is catheter versus surgery, or when another heart problem needs an operation. A clinical cardiologist often finds the narrowing and refers on. Imaging doctors read the echo and the CT. Anaesthesia and critical care plan the procedure and the recovery."
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "NHS explanations of the procedure are published by [Guy’s and St Thomas’](https://www.guysandstthomas.nhs.uk/health-information/tavi-aortic-stenosis/tavi-procedure) and [Leeds Teaching Hospitals](https://www.leedsth.nhs.uk/patients/resources/transcatheter-aortic-valve-implantation-tavi/). They describe one health system’s pathway. They are not an India hospital list."
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 2,
+          "text": "4. Who May Be Considered"
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "Eligibility rests on how severe the stenosis is, the symptoms, heart function, age and general health, other illnesses, the valve and the vessels, surgical risk, how long the new valve is expected to last, and what the person wants from treatment. Age is one factor. It is not the only one."
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "TAVR is not reserved for older people, and it is not automatically better for a younger person because the incision is smaller. An older person is not automatically unfit for surgery. Kidney disease, lung disease, diabetes, or frailty can still allow a catheter valve, and they can also change the risk and the recovery. The team should say what those conditions change."
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "The catheter route may be a poor fit when the valve or the vessels will not accept the device, when another heart problem needs surgery, when a different valve is the real issue, or when the expected benefit is small. Only the treating team can say which of those applies."
+        },
+        {
+          "id": "h_025",
+          "type": "heading",
+          "level": 2,
+          "text": "5. TAVR and Surgical Replacement"
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "Both replace a diseased aortic valve. The routes differ."
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "| Feature | TAVR/TAVI | Surgical aortic valve replacement |\n|---|---|---|\n| Method | A valve on a catheter | The valve is replaced at an operation |\n| Usual access | Often an artery in the groin, without a full breastbone opening | Surgical access to the heart |\n| The old valve | The new valve sits inside it | The diseased valve is removed |\n| What decides | Anatomy, expected benefit, and procedural risk | Anatomy, surgical suitability, and expected benefit |"
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "For some people the catheter route means a smaller incision and a shorter recovery. That is not guaranteed. Surgery can be the better fit because of anatomy, age, how long the valve should last, or another problem that an operation would treat at the same time. The comparison on this site for the operation itself is [heart valve replacement in India](/treatments/heart-valve-replacement-in-india)."
+        },
+        {
+          "id": "img_029",
+          "type": "image",
+          "src": "/uploads/articles/tavr-vs-surgery.webp",
+          "alt": "A mesh valve on a catheter beside a three-leaflet valve at the upper heart",
+          "caption": "Left: a mesh valve on a catheter, drawn at the upper heart. Right: a three-leaflet valve in that same region. Both are inside the chest. This is a teaching drawing of two ways to replace an aortic valve, not an operation photograph."
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "Ask why replacement is needed, whether both routes are reasonable, which facts favour one, the benefits and risks, what durability means for a later procedure, and what recovery looks like. If the recommendation is unclear and there is time, a [second opinion from a cardiologist](/blogs/second-opinion-from-a-cardiologist-in-india) can help. Do not delay emergency care for that review."
+        },
+        {
+          "id": "h_031",
+          "type": "heading",
+          "level": 2,
+          "text": "6. How to Compare a Specialist"
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "This site does not rank TAVR doctors. Check qualifications and registration on the [National Medical Register](https://nmr.nmc.org.in/). The [National Medical Commission](https://www.nmc.org.in/) is the council’s own site. If a detail is missing online, ask the hospital."
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "Ask whether this doctor performs TAVR at this hospital, how suitability is judged, who else decides, who is in the room, what happens if there is a complication, and how follow-up works. If the hospital quotes volumes or outcomes, ask how those numbers are defined and whether they describe people with a risk like yours. This article does not publish case volumes or success rates."
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "A heart-valve meeting is especially useful when the anatomy is awkward, several illnesses sit together, or the catheter-versus-surgery choice is not obvious. Confirm the campus. A group can offer TAVR at one site and not at another."
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "Facilities to ask about include a catheterisation laboratory, echo and cardiac CT, interventional staff, cardiac anaesthesia, intensive care, access to cardiac surgery if it is needed, and a follow-up path. The specialist should be able to explain the diagnosis, the alternatives, and the risks without pushing an elective procedure you do not understand. A true emergency is a different situation. The longer prompt list is in [questions to ask before heart surgery](/blogs/questions-to-ask-before-heart-surgery)."
+        },
+        {
+          "id": "btn_036",
+          "type": "button",
+          "label": "Ask who sits on the valve decision, not only who is famous",
+          "href": "https://wa.me/919044346292?text=Please%20confirm%20whether%20this%20hospital%E2%80%99s%20valve%20team%20includes%20interventional%20cardiology%2C%20cardiac%20surgery%2C%20and%20imaging%2C%20and%20whether%20TAVR%20is%20actually%20performed%20on%20that%20campus."
+        },
+        {
+          "id": "h_037",
+          "type": "heading",
+          "level": 2,
+          "text": "7. Tests Before the Procedure"
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "Echo shows severity, flow, pumping, and other structural problems. A planning CT looks at the valve ring, the aortic root, and the vessels the catheter will travel. Kidney function matters before contrast. An ECG can show rhythm problems. Some people need the coronary arteries looked at because that finding can change the plan. Blood tests and a review of frailty and other illnesses belong in the same assessment. Not every person needs every test. Bring reports you already have. The file to gather is in [what to bring to a cardiologist appointment](/blogs/what-to-bring-to-a-cardiologist-appointment). This site does not publish a price for an echocardiogram or a CT."
+        },
+        {
+          "id": "h_039",
+          "type": "heading",
+          "level": 2,
+          "text": "8. What the Procedure Involves"
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "The team reviews history, tests, and medicines, and tells you about fasting and which tablets to take. Do not stop a prescribed medicine unless they say so."
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "The catheter usually enters at the groin and is guided to the heart. Another route is used when the groin vessels will not do. The new valve is opened inside the old one. Imaging checks position and function. Sedation or anaesthesia follows the hospital’s protocol and your condition."
+        },
+        {
+          "id": "img_042",
+          "type": "image",
+          "src": "/uploads/articles/tavr-catheter.webp",
+          "alt": "A catheter from the groin to a mesh valve in the aorta above the heart",
+          "caption": "A common TAVR route is one catheter from the groin to a valve opened in the aorta where it leaves the heart. This is a teaching drawing, not an X-ray."
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "Afterwards the team watches rhythm, bleeding, blood pressure, and the new valve. Before discharge, ask for medicines, care of the access site, activity, follow-up imaging, and which symptoms need urgent help."
+        },
+        {
+          "id": "h_044",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Risks to Ask About"
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "Possible problems include bleeding or injury at the access vessel, stroke, damage near the valve, a leak around the new valve, rhythm or conduction trouble, a permanent pacemaker in some people, kidney injury, infection, and, in serious cases, death. That list is not a prediction for one person."
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Ask which of those risks are the relevant ones: the vessels, stroke, a pacemaker, a leak, the kidneys, and what the hospital can do if the valve does not sit as planned. Also ask what happens if severe stenosis is left untreated. If a pacemaker becomes necessary, that is a separate procedure from the valve. The published pacemaker planning range is below, and it is not part of the TAVR figure."
+        },
+        {
+          "id": "h_047",
+          "type": "heading",
+          "level": 2,
+          "text": "10. Published Planning Ranges Are Not a Quotation"
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "This site does not publish a single price for TAVR/TAVI in India, and it does not publish a single consultation fee. The valve device, the hospital, the city, the tests, the stay, and other illnesses all move the bill. A written estimate after the records have been read is the number that matters. [Cardiologist consultation fees in India](/blogs/cardiologist-consultation-fees-in-india) explains the visit as its own charge."
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "The figures below are indicative planning ranges from the current cost pages. They are not a hospital quotation and they do not name a doctor or a campus."
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "| If the plan is this | India planning range | Typical stay on the cost page |\n|---|---|---|\n| [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) | US$18,000–US$42,000 | 3–7 nights typical |\n| [Aortic valve replacement](/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement) | US$7,000–US$18,500 | 8–16 nights |\n| [Heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) | US$7,000–US$18,000 | 8–16 nights |\n| [Pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation), if a pacemaker is actually required | US$3,500–US$9,000 | 1–3 nights |"
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "Aortic valve replacement and heart valve replacement are different listings. They are both operations, not the catheter procedure. A pacemaker is not included in the TAVR range."
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "The TAVR page lists a US comparison of **US$50,000–US$150,000**. The aortic valve replacement page lists **US$80,000–US$220,000**. Each of those figures is not an India price. The cost guides are [heart valve replacement cost in India](/blogs/heart-valve-replacement-cost-in-india) and, if a pacemaker is discussed, [pacemaker cost in India](/blogs/pacemaker-cost-in-india)."
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Ask the written estimate to name the consultation and assessment, echo and CT, the valve device, professional fees, the room and monitoring, intensive care if it is expected, medicines, follow-up, and what can change the bill. Compare two quotes only when the device, the tests, the stay, and the follow-up match. A higher number does not prove better care. A lower number that leaves out the valve is not a saving."
+        },
+        {
+          "id": "btn_054",
+          "type": "button",
+          "label": "Ask for the valve device and the stay as separate lines on the estimate",
+          "href": "https://wa.me/919044346292?text=Please%20quote%20TAVR%20only%20if%20the%20valve%20team%20has%20said%20it%20is%20the%20proposed%20route.%20List%20the%20valve%20device%2C%20the%20hospital%20stay%2C%20tests%2C%20and%20follow-up%20as%20separate%20lines%2C%20and%20keep%20any%20pacemaker%20as%20its%20own%20item."
+        },
+        {
+          "id": "h_055",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Recovery and Follow-Up"
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "Some people return to usual activity sooner than after an open operation. Frailty, other illnesses, and complications change that. Age alone does not set the timetable. The cost-page stay of 3–7 nights typical is a planning window, not a discharge date."
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "Follow the instructions for the groin site, lifting, washing, and walking. Medicines after TAVR, including any antiplatelet or anticoagulant drug, are an individual decision. Do not start, stop, or change them on your own. Keep the procedure report, the valve details, and later echoes. A new valve does not erase blood pressure, coronary disease, or heart failure. Ask for the long-term plan before you leave."
+        },
+        {
+          "id": "h_058",
+          "type": "heading",
+          "level": 2,
+          "text": "12. If You Are Travelling to India"
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "Send the echo, CT if you have it, clinic notes, ECGs, the medicine list, earlier procedure reports, and relevant blood tests. Ask which image files they still need. A remote reading can suggest next steps. Final suitability often needs more tests and a visit in person. You can message +91 90443 46292 with what you already have."
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "Confirm who will assess the case and that interventional cardiology, cardiac surgery, imaging, anaesthesia, and critical care are available as needed. Ask for an estimate tied to the records, how long to remain nearby after discharge, and do not book the flight home until the team says travel is appropriate. Take the discharge summary, valve details, medicine instructions, and the follow-up plan for a doctor at home."
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "GAF Healthcare helps international patients explore cardiologists and hospitals, share records, and arrange appointments. The valve team remains responsible for the assessment and the recommendation."
+        },
+        {
+          "id": "btn_062",
+          "type": "button",
+          "label": "Send the valve images before travel is booked",
+          "href": "https://wa.me/919044346292?text=I%20am%20considering%20aortic%20valve%20treatment%20in%20India.%20Please%20say%20which%20echo%20and%20CT%20files%20to%20send%2C%20and%20whether%20a%20remote%20review%20is%20enough%20before%20I%20book%20travel."
+        },
+        {
+          "id": "h_063",
+          "type": "heading",
+          "level": 2,
+          "text": "13. How to Compare Hospitals"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "| What to check | What to ask |\n|---|---|\n| The programme | Is TAVR performed here, and who is on the team? |\n| The specialist | Who assesses the case and who does the procedure? |\n| Imaging | Are echo and a planning CT available? |\n| The valve meeting | Can cardiology and cardiac surgery both speak to the choice? |\n| Emergencies | What is available if something goes wrong? |\n| The decision | How do they choose between TAVR and surgery? |\n| The estimate | Is it written, and what does it leave out? |\n| Follow-up | What imaging and which medicines follow? |"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "A general cardiac reputation is not the same as TAVR on that campus."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 2,
+          "text": "14. Questions Worth Taking In"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "About the diagnosis: how severe is the stenosis, what the echo shows, which extra tests are needed, whether the symptoms fit the valve, and how urgent replacement is."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "About the choice: why TAVR, whether surgery is also reasonable, which facts favour one, the benefits and risks, durability and a later procedure, whether a valve-team review would help, and what delay would mean."
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "About the procedure: the access route, which device and why, the personal risks of stroke, bleeding, or rhythm trouble, the chance of a pacemaker, what happens if there is a complication, and how long the stay might be."
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "About money and recovery: a written itemised estimate, inclusions and exclusions, medicines, follow-up imaging, when usual activity resumes, and which symptoms are urgent."
+        },
+        {
+          "id": "h_071",
+          "type": "heading",
+          "level": 2,
+          "text": "15. Signs to Slow Down"
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Pause if qualifications cannot be confirmed, if experience with this procedure cannot be described, if someone promises a risk-free result, if you are pressed into an elective booking you do not understand, if alternatives are not discussed, if the estimate will not say what it includes, or if there is no follow-up plan. A thin online profile is not proof that training is missing. Ask, and check the register. Urgent symptoms are not a moment for that comparison."
+        },
+        {
+          "id": "h_073",
+          "type": "heading",
+          "level": 2,
+          "text": "16. Frequently Asked Questions About Choosing a TAVR Specialist"
+        },
+        {
+          "id": "h_074",
+          "type": "heading",
+          "level": 3,
+          "text": "Who performs TAVR/TAVI in India?"
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "Appropriately trained clinicians, often an interventional cardiologist or a cardiac surgeon, depending on the programme. A heart valve team may share the assessment and the plan. The title cardiologist alone does not show that the doctor performs this procedure."
+        },
+        {
+          "id": "h_076",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the difference between TAVR and TAVI?"
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "TAVR is transcatheter aortic valve replacement. TAVI is transcatheter aortic valve implantation. Both names refer to the same general procedure."
+        },
+        {
+          "id": "h_078",
+          "type": "heading",
+          "level": 3,
+          "text": "Is TAVR/TAVI better than open-heart surgery?"
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "Neither is better for everyone. The choice depends on age, anatomy, other illnesses, surgical risk, expected benefit, and how long the valve needs to last."
+        },
+        {
+          "id": "h_080",
+          "type": "heading",
+          "level": 3,
+          "text": "Is TAVR/TAVI suitable for every patient with aortic stenosis?"
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "No. Some people are watched. Some are better served by surgical replacement. Severity, symptoms, anatomy, other illnesses, and the expected benefit decide."
+        },
+        {
+          "id": "h_082",
+          "type": "heading",
+          "level": 3,
+          "text": "Is TAVR/TAVI only for elderly patients?"
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "No. Age is one consideration beside anatomy, life expectancy, durability, procedural risk, and the evidence that applies to that person."
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 3,
+          "text": "What qualifications should a TAVR/TAVI specialist have?"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "Recognised qualifications, specialist training relevant to transcatheter valve work, and a current hospital affiliation you can check. The National Medical Register is one place to start."
+        },
+        {
+          "id": "h_086",
+          "type": "heading",
+          "level": 3,
+          "text": "How do I choose the best TAVR/TAVI specialist in India?"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "Compare experience with this procedure, imaging and critical care, a valve team that can discuss surgery as well, a written estimate, and follow-up. This site does not rank doctors. No single specialist is the right choice for every patient."
+        },
+        {
+          "id": "h_088",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does TAVR/TAVI cost in India?"
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "This site does not publish a single price. The cost page lists an indicative planning range of US$18,000–US$42,000, with 3–7 nights typical. That is not a quotation. The device, the hospital, the tests, and the stay change the bill. Ask the hospital for a written estimate."
+        },
+        {
+          "id": "h_090",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does TAVR/TAVI take?"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "It depends on the anatomy, the access route, and the hospital’s practice. The treating team can say what they expect for this case. A clock time from another person’s procedure is not a plan."
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does a patient stay in hospital after TAVR/TAVI?"
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "It depends on recovery, other illnesses, and whether a complication occurs. The cost page uses 3–7 nights typical as a planning window, not as a discharge date. Follow the treating team."
+        },
+        {
+          "id": "h_094",
+          "type": "heading",
+          "level": 3,
+          "text": "Will I need a pacemaker after TAVR/TAVI?"
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "Some people do, because of a rhythm or conduction problem, and many do not. If a pacemaker is required, the published planning range is US$3,500–US$9,000, with 1–3 nights. That is a separate listing, not part of the TAVR range."
+        },
+        {
+          "id": "h_096",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does a replacement valve last?"
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "It varies with the device, the person, and what follow-up shows. The team should say what is known about the valve they propose and how it will be watched."
+        },
+        {
+          "id": "h_098",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients travel to India for TAVR/TAVI?"
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "They can seek an assessment. Share the records, confirm the valve team, get a written estimate, and plan follow-up before travel. Whether travel is safe, and whether TAVR is appropriate, is the treating team’s judgement."
+        },
+        {
+          "id": "h_100",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I get a second opinion before TAVR/TAVI?"
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "Yes, when there is time. Share the echo, the CT, and the notes. Do not delay treatment the team says is urgent."
+        },
+        {
+          "id": "h_102",
+          "type": "heading",
+          "level": 3,
+          "text": "Where can I find cardiologists in India who may be relevant to valve treatment?"
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "Start with the [cardiology directory](/doctors/India/Cardiology) and the [cardiac surgery directory](/doctors/India/Cardiac-Surgery). They are not rankings. Confirm with the hospital that the doctor performs TAVR and that the campus offers it."
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 3,
+          "text": "What planning range is published for surgical aortic valve replacement?"
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "The aortic valve replacement page lists US$7,000–US$18,500, with 8–16 nights. Heart valve replacement is a separate listing at US$7,000–US$18,000, also 8–16 nights. Both are indicative planning ranges for operations, not the TAVR price."
+        },
+        {
+          "id": "h_106",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a US comparison band an India price?"
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "No. The TAVR page lists a US comparison of US$50,000–US$150,000. That figure is not an India price."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion: Match the Team to the Valve Decision"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Confirm the diagnosis, the doctor’s experience with this procedure, and whether the hospital can assess, perform, and look after the result. TAVR is an important option for selected people with severe aortic stenosis. Surgery or watching can be the better plan. Ask why this route, what else exists, which risks apply, and how follow-up will work."
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "[Explore cardiologists in India](/doctors/India/Cardiology)."
+        },
+        {
+          "id": "btn_111",
+          "type": "button",
+          "label": "Confirm the valve route and the estimate before travel",
+          "href": "https://wa.me/919044346292?text=Please%20confirm%20in%20writing%20whether%20the%20proposed%20treatment%20is%20TAVR%20or%20surgical%20valve%20replacement%2C%20who%20is%20on%20the%20valve%20team%2C%20and%20what%20the%20itemised%20estimate%20includes%2C%20before%20any%20travel%20is%20booked."
+        },
+        {
+          "id": "h_112",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "ol_113",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "American Heart Association — [What is TAVR?](https://www.heart.org/en/health-topics/heart-valve-problems-and-disease/understanding-your-heart-valve-treatment-options/what-is-tavr)",
+            "American Heart Association — [Your aortic stenosis care team](https://www.heart.org/en/health-topics/heart-valve-problems-and-disease/understanding-your-heart-valve-treatment-options/your-aortic-stenosis-care-team)",
+            "American Heart Association — [Aortic stenosis](https://www.heart.org/en/health-topics/heart-valve-problems-and-disease/heart-valve-problems-and-causes/aortic-stenosis)",
+            "American Heart Association — [Aortic stenosis resources](https://www.heart.org/en/health-topics/heart-valve-problems-and-disease/heart-valve-disease-resources/aortic-stenosis-resources)",
+            "Guy’s and St Thomas’ NHS Foundation Trust — [TAVI procedure](https://www.guysandstthomas.nhs.uk/health-information/tavi-aortic-stenosis/tavi-procedure)",
+            "Leeds Teaching Hospitals NHS Trust — [Transcatheter aortic valve implantation](https://www.leedsth.nhs.uk/patients/resources/transcatheter-aortic-valve-implantation-tavi/)",
+            "National Medical Commission — [National Medical Register](https://nmr.nmc.org.in/)",
+            "National Medical Commission — [Official website](https://www.nmc.org.in/)",
+            "American College of Cardiology — [Guidelines](https://www.acc.org/guidelines)",
+            "World Health Organization — [Cardiovascular diseases](https://www.who.int/health-topics/cardiovascular-diseases)"
+          ]
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "This article is for general education. It has not been signed by a named cardiologist or heart valve specialist. It does not rank doctors or quote success rates or case volumes. A qualified team should assess the valve, the symptoms, and the tests before recommending treatment. Seek emergency care for severe chest pain, severe breathlessness, fainting with worrying symptoms, or signs of a possible stroke."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Cardiologists in India",
+          "href": "/doctors/India/Cardiology"
+        },
+        {
+          "label": "Cardiac surgeons in India",
+          "href": "/doctors/India/Cardiac-Surgery"
+        },
+        {
+          "label": "TAVR in India",
+          "href": "/treatments/tavr-in-india"
+        },
+        {
+          "label": "TAVR/TAVI cost",
+          "href": "/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)"
+        },
+        {
+          "label": "Heart valve replacement cost in India",
+          "href": "/blogs/heart-valve-replacement-cost-in-india"
+        },
+        {
+          "label": "How to choose a hospital for heart treatment",
+          "href": "/blogs/how-to-choose-a-hospital-for-heart-treatment-in-india"
+        }
+      ]
+    },
     {
       "id": "art_best_cardiologists_for_atrial_fibrillation_in_india",
       "slug": "best-cardiologists-for-atrial-fibrillation-in-india",
