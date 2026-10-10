@@ -1784,9 +1784,819 @@
       "name": "questions-records-prep.webp",
       "alt": "An ECG trace, a heart on a screen, a pill box, and a folder of reports",
       "addedAt": "2026-10-10T16:30:00.000Z"
+    },
+    {
+      "id": "media_bring_ecg_tracing_webp",
+      "url": "/uploads/articles/bring-ecg-tracing.webp",
+      "name": "bring-ecg-tracing.webp",
+      "alt": "Chest electrodes connected to a small monitor, with a heartbeat tracing beside them",
+      "addedAt": "2026-10-10T17:30:00.000Z"
+    },
+    {
+      "id": "media_bring_echo_heart_webp",
+      "url": "/uploads/articles/bring-echo-heart.webp",
+      "name": "bring-echo-heart.webp",
+      "alt": "An ultrasound probe on the upper chest beside a simplified four-chamber view of the heart",
+      "addedAt": "2026-10-10T17:30:00.000Z"
+    },
+    {
+      "id": "media_bring_angiogram_films_webp",
+      "url": "/uploads/articles/bring-angiogram-films.webp",
+      "name": "bring-angiogram-films.webp",
+      "alt": "A catheter drawn toward the coronary arteries on the surface of the heart",
+      "addedAt": "2026-10-10T17:30:00.000Z"
+    },
+    {
+      "id": "media_bring_device_records_webp",
+      "url": "/uploads/articles/bring-device-records.webp",
+      "name": "bring-device-records.webp",
+      "alt": "A waist rhythm recorder, a stent inside an artery, a pacemaker on the upper chest, and a pill box",
+      "addedAt": "2026-10-10T17:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_what_to_bring_to_a_cardiologist_appointment",
+      "slug": "what-to-bring-to-a-cardiologist-appointment",
+      "title": "What to Bring to a Cardiologist Appointment in India: Medical Records, Tests and Questions",
+      "excerpt": "Preparing for a cardiologist appointment? Learn which medical records, test reports, medication details and questions to bring, and how to prepare for an in-person or online consultation in India.",
+      "date": "10 October 2026",
+      "publishedAt": "2026-10-10T17:30:00.000Z",
+      "updatedAt": "2026-10-10T17:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "cardiologist",
+        "records",
+        "appointment",
+        "India",
+        "travel"
+      ],
+      "image": "/uploads/articles/bring-ecg-tracing.webp",
+      "imageAlt": "Chest electrodes connected to a small monitor, with a heartbeat tracing beside them",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "What to Bring to a Cardiologist Appointment | India",
+      "seoDescription": "Preparing for a cardiologist appointment in India? Use this checklist for medical records, ECGs, medicines, symptoms, questions and online consultations.",
+      "canonical": "https://gaf.healthcare/blogs/what-to-bring-to-a-cardiologist-appointment",
+      "ogImage": "/uploads/articles/bring-ecg-tracing.webp",
+      "allowIndex": true,
+      "keywords": [
+        "What to bring to a cardiologist appointment",
+        "Documents required for cardiologist consultation",
+        "Medical records for cardiologist appointment",
+        "Tests to bring to a cardiologist",
+        "First cardiologist appointment checklist",
+        "Questions to ask a cardiologist",
+        "ECG report for cardiologist consultation",
+        "Cardiologist consultation in India",
+        "Cardiology second opinion documents",
+        "Medical records for heart treatment in India",
+        "Online cardiologist consultation preparation",
+        "Cardiology consultation for international patients"
+      ],
+      "blocks": [
+        {
+          "id": "p_001",
+          "type": "paragraph",
+          "text": "A cardiology visit goes better when the doctor can see what has already been done. That means the reports, the tracings and images behind those reports, the medicines you actually take, and a short account of the symptoms."
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "You do not need a test you have never had. Bring what exists. The cardiologist decides what is still missing."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "**If you have severe chest pain, serious difficulty breathing, fainting with worrying symptoms, or signs of a possible stroke, seek emergency care now.** Do not wait for a routine appointment while you collect papers."
+        },
+        {
+          "id": "html_004",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>Before visiting a cardiologist, gather your previous heart-related reports, current medication list, details of your symptoms, known allergies and relevant medical history. If available, bring your ECGs, echocardiogram reports, blood-test results, rhythm-monitoring reports and hospital discharge summaries.</p><p>You do not need every test listed in this guide. The documents required depend on your symptoms, medical history and the reason for your appointment.</p><p>A useful preparation checklist includes:</p><ul class=\"article-quick-answer__list\"><li>Previous cardiology consultation notes and diagnoses.</li><li>ECG reports and tracings, if available.</li><li>Echocardiogram reports and images, if available.</li><li>Relevant blood-test results.</li><li>Reports from previous hospital admissions or cardiac procedures.</li><li>A current list of medicines, doses and allergies.</li><li>A short timeline of symptoms.</li><li>Your most important questions for the doctor.</li><li>Identification, referral documents or insurance details if requested by the hospital.</li></ul><p>If you are seeking a second opinion, bring the original treatment recommendation and the relevant test images whenever possible.</p></div></aside>"
+        },
+        {
+          "id": "toc_005",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-why-the-papers-matter\">1. Why the Papers Matter</a></li><li><a href=\"#2-which-records-to-gather\">2. Which Records to Gather</a></li><li><a href=\"#3-the-medicine-list\">3. The Medicine List</a></li><li><a href=\"#4-a-short-symptom-diary\">4. A Short Symptom Diary</a></li><li><a href=\"#5-questions-worth-asking\">5. Questions Worth Asking</a></li><li><a href=\"#6-a-first-visit-and-a-follow-up-are-different-bags\">6. A First Visit and a Follow-Up Are Different Bags</a></li><li><a href=\"#7-documents-for-a-second-opinion\">7. Documents for a Second Opinion</a></li><li><a href=\"#8-how-to-sort-the-file\">8. How to Sort the File</a></li><li><a href=\"#9-an-online-consultation\">9. An Online Consultation</a></li><li><a href=\"#10-if-you-are-sending-records-to-india\">10. If You Are Sending Records to India</a></li><li><a href=\"#11-consultation-fees-and-procedure-ranges-are-different-numbers\">11. Consultation Fees and Procedure Ranges Are Different Numbers</a></li><li><a href=\"#12-mistakes-that-waste-the-visit\">12. Mistakes That Waste the Visit</a></li><li><a href=\"#13-frequently-asked-questions-about-what-to-bring\">13. Frequently Asked Questions About What to Bring</a></li><li><a href=\"#conclusion-bring-the-file-you-have-and-the-question-you-came-with\">Conclusion: Bring the File You Have, and the Question You Came With</a></li><li><a href=\"#sources\">Sources</a></li></ol></nav>"
+        },
+        {
+          "id": "p_006",
+          "type": "paragraph",
+          "text": "[Cardiologists in India](/doctors/India/Cardiology) is a directory, not a ranking. City lists include [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology), [Mumbai](/doctors/India/Mumbai/Cardiology), [Bengaluru](/doctors/India/Bengaluru/Cardiology), [Chennai](/doctors/India/Chennai/Cardiology) and [Hyderabad](/doctors/India/Hyderabad/Cardiology)."
+        },
+        {
+          "id": "btn_007",
+          "type": "button",
+          "label": "Send the reports you already have before the appointment",
+          "href": "https://wa.me/919044346292?text=Please%20look%20at%20the%20heart%20reports%20I%20can%20share%20and%20tell%20me%20which%20files%20are%20still%20missing%20before%20a%20cardiologist%20appointment%20in%20India."
+        },
+        {
+          "id": "h_008",
+          "type": "heading",
+          "level": 2,
+          "text": "1. Why the Papers Matter"
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "The visit is a review of symptoms, history, old tests, and current treatment. A person with palpitations often cannot reconstruct every episode from memory. A few notes on when they start, how long they last, and what was happening at the time give the doctor a pattern. Reports from several hospitals are easier to read in date order."
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "Preparation does not produce a diagnosis, and it does not remove the need for new tests. It shows what has already been looked at. The American Heart Association’s page on [preparing for medical visits](https://www.heart.org/en/health-topics/cardiac-rehab/communicating-with-professionals/preparing-for-medical-visits) and MedlinePlus on [talking with your doctor](https://medlineplus.gov/talkingwithyourdoctor.html) make the same practical point: list medicines and allergies, write down symptoms, and keep the records together. MedlinePlus also has a short note on [making the most of a visit](https://medlineplus.gov/ency/patientinstructions/000860.htm)."
+        },
+        {
+          "id": "h_011",
+          "type": "heading",
+          "level": 2,
+          "text": "2. Which Records to Gather"
+        },
+        {
+          "id": "h_012",
+          "type": "heading",
+          "level": 3,
+          "text": "Previous consultation notes"
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "Bring the diagnosis or the suspected diagnosis, the assessment, tests that were advised, the treatment prescribed, follow-up plans, and any written note about a proposed procedure. If another hospital has treated the same problem, include those notes too."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 3,
+          "text": "ECG reports and the tracing"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "An ECG records the heart’s electrical activity. Bring the written report and the tracing itself when you have both. A normal ECG on an earlier day does not rule out a rhythm that comes and goes. The doctor decides whether a new ECG or a longer recording is needed."
+        },
+        {
+          "id": "img_016",
+          "type": "image",
+          "src": "/uploads/articles/bring-ecg-tracing.webp",
+          "alt": "Chest electrodes connected to a small monitor, with a heartbeat tracing beside them",
+          "caption": "An ECG is the tracing, not only a line in a letter that says the ECG was normal. Bring the tracing if you have it."
+        },
+        {
+          "id": "h_017",
+          "type": "heading",
+          "level": 3,
+          "text": "Echocardiogram reports and images"
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "An echocardiogram is an ultrasound of the heart’s structure, valves, and pumping. Bring the report and the images, especially if the question is heart failure, a valve problem, a murmur, breathlessness, or a change in pumping function. Older and newer studies can be compared. A printed conclusion is not the same as the image file."
+        },
+        {
+          "id": "img_019",
+          "type": "image",
+          "src": "/uploads/articles/bring-echo-heart.webp",
+          "alt": "An ultrasound probe on the upper chest beside a simplified four-chamber view of the heart",
+          "caption": "Left: a probe on the chest. Right: a simplified four-chamber view. This is a teaching drawing, not an echocardiogram still. Ask the centre for the image files if you only have paper."
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 3,
+          "text": "Blood tests"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "Bring recent results that relate to the heart or to other illnesses: blood counts, kidney function, electrolytes, glucose or HbA1c, cholesterol, thyroid tests, and anything else a clinician has already ordered. You do not need a test that was never done. The cardiologist decides what to add."
+        },
+        {
+          "id": "h_022",
+          "type": "heading",
+          "level": 3,
+          "text": "Rhythm recordings"
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "For palpitations, an irregular heartbeat, dizziness, or a suspected arrhythmia, bring Holter reports and any other ambulatory ECG. If the device produced a file, ask the provider for that file. A one-line summary is often not enough."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 3,
+          "text": "Stress tests"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "Bring the report from an exercise test or another stress test. A previous normal result does not close every question. Timing and symptoms decide whether it still applies."
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 3,
+          "text": "Coronary angiography: report and images"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "If you have had an angiogram, bring the written report and the original images or digital files. The report describes narrowings. The pictures are what another cardiologist needs when angioplasty or bypass has been suggested. This is the file that most often gets left behind."
+        },
+        {
+          "id": "img_028",
+          "type": "image",
+          "src": "/uploads/articles/bring-angiogram-films.webp",
+          "alt": "A catheter drawn toward the coronary arteries on the surface of the heart",
+          "caption": "A catheter drawn toward the coronary arteries on the heart. Bring the original angiogram files with the written report. This is a teaching drawing, not an angiogram."
+        },
+        {
+          "id": "h_029",
+          "type": "heading",
+          "level": 3,
+          "text": "Cardiac CT or MRI"
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "Bring the report. For many decisions the images matter as well. Ask the imaging centre how to obtain them if you only have paper."
+        },
+        {
+          "id": "h_031",
+          "type": "heading",
+          "level": 3,
+          "text": "Discharge summaries"
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "A discharge summary usually names the diagnosis, procedures, medicines, important results, and follow-up. If there was more than one admission, keep them in date order."
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 3,
+          "text": "Procedure and device records"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "After angioplasty, bypass, valve surgery, ablation, or a pacemaker or ICD, bring the procedure report, device details, discharge instructions, later test results, and any note of a complication or a change in treatment. For a pacemaker or ICD, bring the device identification and the latest check report. The team will say if they need more."
+        },
+        {
+          "id": "img_035",
+          "type": "image",
+          "src": "/uploads/articles/bring-device-records.webp",
+          "alt": "A waist rhythm recorder, a stent inside an artery, a pacemaker on the upper chest, and a pill box",
+          "caption": "Bring the recording, the procedure report, the device card, and the current medicines. Left to right: a waist recorder with chest leads, a stent inside an artery, a pacemaker on the upper chest with a lead into the heart, and a pill box."
+        },
+        {
+          "id": "h_036",
+          "type": "heading",
+          "level": 2,
+          "text": "3. The Medicine List"
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "Some medicines change blood pressure, heart rate, or clotting. Write the name, dose, and usual time for every prescribed medicine. If you do not know the dose, bring the box or a clear photo of the label."
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "Also list pain tablets, cold remedies, and anything else you buy without a prescription. Some of those affect blood pressure or do not mix with heart treatment. Vitamins, herbal products, traditional remedies, and supplements belong on the same list. People leave them off because they do not think of them as medicines."
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "Record allergies and what happened: the name of the medicine if you know it, the reaction, and roughly when. **Do not stop a prescribed medicine, including a blood thinner or a rhythm medicine, because a visit or a test is coming.** Some tests need specific instructions. Follow the clinician or the hospital, not a general article. The American Heart Association’s page on [taking control of your medicines](https://www.heart.org/en/health-topics/cardiac-rehab/managing-your-medicines/taking-control-of-your-medicines) says the same: review prescriptions, non-prescription drugs, and supplements with the clinician."
+        },
+        {
+          "id": "h_040",
+          "type": "heading",
+          "level": 2,
+          "text": "4. A Short Symptom Diary"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "A notebook or a phone note is enough."
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "Write when the problem started and whether it has changed. Describe it in ordinary words: a racing heartbeat, fluttering, chest pressure, dizziness, breathlessness, or unusual fatigue. For symptoms that come and go, note how often and roughly how long. If you can say so safely, note whether the heartbeat felt fast, irregular, or as if a beat was skipped. If you notice a pattern, record what you were doing. Do not try to provoke a symptom, and do not do a hard effort just to see what triggers it."
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "Mention whether dizziness, nausea, sweating, unusual fatigue, or breathlessness came with it. Severe symptoms are an emergency, not a diary entry."
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "If you already record blood pressure, heart rate, weight, or glucose because a clinician asked you to, bring recent readings with the date and time. Do not buy a monitor or check yourself repeatedly only to prepare for the visit, unless someone treating you has asked for that."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 2,
+          "text": "5. Questions Worth Asking"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "You will not get through every question. Start with the ones that change what you do next. A fuller list is in [questions to ask before heart surgery](/blogs/questions-to-ask-before-heart-surgery)."
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "About the diagnosis: what it is, how certain it is, which findings in the reports matter, what might be causing the symptoms, whether more tests are needed, and which symptoms cannot wait."
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "About treatment: which options exist, why this one is recommended, what benefit is realistic, the main risks and limits, whether something else is reasonable, and what happens if treatment waits. For narrowed coronary arteries, the comparison of the two main procedures is [angioplasty vs bypass surgery in India](/blogs/angioplasty-vs-bypass-surgery-in-india)."
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "About medicines: what each one is for, how to take it, which effects to watch, whether they interact, what to do about a missed dose, and whether any must change before a test. Do not change a medicine because of a general article or someone else’s experience."
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "About follow-up: when to return, which tests and when, who to call if symptoms worsen, whether a doctor at home can continue the care, and whether you will get a written summary. If a procedure is being discussed, also ask about recovery, the stay, and a written estimate."
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "The American Heart Association’s page on [questions to ask your doctor](https://www.heart.org/en/health-topics/consumer-healthcare/doctor-appointments-questions-to-ask-your-doctor) and the NHS page on [what to ask your doctor](https://www.nhs.uk/nhs-services/gps/what-to-ask-your-doctor/) are general lists. They are not a plan for your reports."
+        },
+        {
+          "id": "btn_052",
+          "type": "button",
+          "label": "Ask which three questions to settle at this visit",
+          "href": "https://wa.me/919044346292?text=These%20are%20my%20reports%20and%20my%20main%20symptom.%20Please%20say%20which%20three%20questions%20are%20worth%20settling%20at%20the%20first%20cardiologist%20visit%2C%20and%20which%20can%20wait."
+        },
+        {
+          "id": "h_053",
+          "type": "heading",
+          "level": 2,
+          "text": "6. A First Visit and a Follow-Up Are Different Bags"
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "A first visit may have almost no cardiac reports. That is fine. Bring identification and the appointment confirmation if the hospital asks, a referral if you have one, any reports you do have, the medicine list, allergies, other illnesses, relevant family history, a short symptom note, your main questions, and insurance or payment papers if the hospital asked for them. Do not book a stack of tests on your own before anyone has seen you. The NHS page on [outpatients and day patients](https://www.nhs.uk/nhs-services/hospitals/going-into-hospital/outpatients-and-day-patients/) is general advice about hospital appointments."
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "A follow-up is about what changed. Bring the last consultation note, the tests that were ordered then, the current medicine list, symptoms since the last visit, any new discharge summary, side effects or medicine changes, home readings you were asked to keep, and questions about the next step. If another doctor changed a medicine, say what changed and when. Do not assume the first hospital can see every report from the second."
+        },
+        {
+          "id": "h_056",
+          "type": "heading",
+          "level": 2,
+          "text": "7. Documents for a Second Opinion"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "A second look needs the original diagnosis, the evidence, and the treatment already proposed."
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "Try to include the consultation notes, the written recommendation, ECGs, echo reports and images, coronary angiogram images if they exist, cardiac CT or MRI when that was the test, procedure reports, discharge summaries, the medicine history, blood tests, and notes on other illnesses."
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "A report summarises a test. The images can change a decision about angioplasty or bypass. Ask the first hospital how to get files the next doctor can open. If something is missing, still go. Say what you could not get. The cardiologist can say whether the rest is enough for a first discussion. The question guide on this site covers how to use that conversation: [questions to ask before heart surgery](/blogs/questions-to-ask-before-heart-surgery)."
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 2,
+          "text": "8. How to Sort the File"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "Put the oldest relevant report first and the newest last, or write the date on each one. If there are many, group them: consultation notes, ECG and rhythm recordings, echo and other imaging, blood tests, admissions, procedures, medicines and allergies."
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Bring the full report, not a page you picked out. Ask whether the hospital can give a downloadable copy. For an online visit, name files by what they are and the date, using your real dates, for example `ECG_2026-08-12.pdf` or `Echo_2026-09-02.pdf`."
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "A single page at the front helps: main symptoms, known diagnosis, previous procedures, current medicines, important allergies, major other illnesses, and the question you want answered. Keep it factual. Do not interpret the tests yourself."
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 2,
+          "text": "9. An Online Consultation"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "A video visit can review reports you already have and plan the next step before travel. The doctor cannot examine you, and they cannot see a test you did not send."
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "Confirm the time and the time zone. Check the platform, the connection, the camera, and the microphone. Send the reports in the way the hospital asks, before the call. Keep the medicine list and the symptom notes next to you. Use a quiet, private place. A family member or an interpreter can join if you and the provider have agreed."
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Say the main concern first. Ask whether these records are enough for a preliminary view, or whether you need to be examined. Ask for plain language. Before you hang up, repeat the next step and how you will receive anything in writing."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "An online visit is not emergency care. Severe chest pain, serious breathing difficulty, fainting with worrying symptoms, or possible stroke symptoms need emergency care, not a scheduled call. The American Heart Association has a short guide, [how to get ready for a telehealth appointment](https://www.heart.org/-/media/Files/Telehealth-Patient-Resources/How-to-Get-Ready-for-a-Telehealth-Appointment.pdf)."
+        },
+        {
+          "id": "h_069",
+          "type": "heading",
+          "level": 2,
+          "text": "10. If You Are Sending Records to India"
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "A hospital can look at records before you travel. That review does not always settle the diagnosis or confirm that a procedure is suitable. You may still need to be examined, and you may still need new tests."
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "Collect ECGs, echo images, angiogram files, other heart imaging, blood tests, the medicine list, and discharge summaries from home. Add the procedure report if you have had one. Label each file with the date and the type of test. Add a short note: diagnosis, symptoms, previous treatment, and the question you want answered."
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Ask how to send files securely, and whether a report in another language needs a translation. Keep copies. Do not post an original unless the hospital has asked for it and you can replace it."
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Ask whether the doctor will see the file before the appointment, what else they need, what the consultation itself costs at that hospital, and whether more tests are likely after you arrive. This website does not publish one national consultation fee. The hospital quotes that figure. Travel should wait until a clinician has said the trip is reasonable for your condition. Unstable symptoms need care where you are, not a routine flight."
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "Before you go home after treatment, take the consultation note, test reports, discharge summary, medicine list, and follow-up plan for your doctor at home."
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help send records, request an appointment, and ask for a preliminary view on WhatsApp at +91 90443 46292. The decision stays with the treating clinicians. A message is not a diagnosis. For the visa, use official Government of India guidance. India’s digital health programme is described by the National Health Authority at [Ayushman Bharat Digital Mission](https://abdm.gov.in/). Registration of doctors can be checked on the [National Medical Register](https://nmr.nmc.org.in/)."
+        },
+        {
+          "id": "btn_076",
+          "type": "button",
+          "label": "Send the file list before you book flights",
+          "href": "https://wa.me/919044346292?text=I%20want%20a%20cardiologist%20in%20India%20to%20review%20records%20before%20I%20travel.%20Please%20say%20which%20files%20to%20send%2C%20and%20whether%20a%20preliminary%20opinion%20is%20possible%20before%20flights%20are%20booked."
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Consultation Fees and Procedure Ranges Are Different Numbers"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "This site does not publish a single fee for a cardiologist consultation in India. Ask the hospital what the visit costs, what a video review costs, and whether looking at old films is included. Insurance papers, if the hospital asked for them, belong in the same folder as the reports."
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "If the appointment is to discuss a named procedure, the planning ranges already on the cost pages are separate from that visit fee. They are indicative ranges, not a quotation. Extra tests, devices, and a longer stay are quoted after the records are reviewed."
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "| If the records are for this | India planning range | Typical stay on the cost page |\n|---|---|---|\n| [Coronary angiography](/costs/India/Cardiology/Coronary-Angiography) | US$400–US$1,200 | Day-care or overnight |\n| [Coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) | US$3,200–US$8,500 | 1–3 nights typical |\n| [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | US$5,500–US$14,000 | 7–14 nights, then nearby recovery |\n| [Heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) | US$7,000–US$18,000 | 8–16 nights |\n| [Pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) | US$3,500–US$9,000 | 1–3 nights |\n| [Atrial fibrillation ablation](/costs/India/Cardiology/Atrial-Fibrillation-Ablation) | US$6,500–US$16,000 | 1–3 nights |"
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "The angioplasty page lists a US comparison of **US$25,000–US$70,000**. The CABG page lists **US$70,000–US$200,000**. Each of those figures is not an India price. A city page is the same listing: angioplasty for [Delhi NCR](/costs/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting) and [Mumbai](/costs/India/Mumbai/Cardiology/Coronary-Angioplasty-Stenting)."
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "Do not arrange an angiogram, a stent, or an operation in order to “complete the file” before anyone has seen you. The longer guides are [angioplasty cost in India](/blogs/angioplasty-cost-in-india), [bypass surgery cost in India](/blogs/bypass-surgery-cost-in-india), [heart valve replacement cost in India](/blogs/heart-valve-replacement-cost-in-india), [pacemaker cost in India](/blogs/pacemaker-cost-in-india), and [cardiac ablation cost in India](/blogs/cardiac-ablation-cost-in-india). Hospital lists: [cardiology](/hospitals/India/Cardiology) and [cardiac surgery](/hospitals/India/Cardiac-Surgery)."
+        },
+        {
+          "id": "btn_083",
+          "type": "button",
+          "label": "Ask whether these records are enough for a written estimate",
+          "href": "https://wa.me/919044346292?text=Please%20say%20whether%20these%20reports%20are%20enough%20for%20a%20preliminary%20estimate%2C%20or%20which%20images%20are%20still%20required.%20Keep%20the%20consultation%20fee%20separate%20from%20any%20procedure%20range."
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Mistakes That Waste the Visit"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "Arriving without a medicine list, including supplements and recent changes. Bringing only the newest report, when an older one shows whether something changed. Assuming every test must be repeated, or assuming none should be. The doctor may use an old report, or may repeat one that is out of date or incomplete. Ask why a repeat was advised."
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "Using a search result as a diagnosis. Online pages can help you write questions. They cannot name the cause of a symptom. Forgetting to ask what happens next, when results come, and who to call. Changing a medicine before the visit. And delaying emergency care in order to finish a checklist."
+        },
+        {
+          "id": "h_087",
+          "type": "heading",
+          "level": 2,
+          "text": "13. Frequently Asked Questions About What to Bring"
+        },
+        {
+          "id": "h_088",
+          "type": "heading",
+          "level": 3,
+          "text": "Do I need an ECG before seeing a cardiologist?"
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "Not necessarily. The visit can start from symptoms and history. The cardiologist decides whether an ECG or another test is needed. Bring old ECGs if you have them. Do not book tests on your own unless a clinician has asked you to."
+        },
+        {
+          "id": "h_090",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I bring old echocardiogram reports?"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "Yes, when you have them and they relate to the problem. Older studies show whether structure or pumping has changed. Bring the written report and the images if you can get the file."
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 3,
+          "text": "What if I do not have any medical records?"
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "You can still attend a first visit. Bring identification if the hospital requires it, the medicine list, the symptom note, and other relevant history. The doctor decides which tests, if any, come next."
+        },
+        {
+          "id": "h_094",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I bring original medical records or copies?"
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "Bring originals or complete copies the doctor can read. For images, ask the first hospital for a file the next hospital can open. Keep your own copy. Do not give away the only original unless you have to."
+        },
+        {
+          "id": "h_096",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I bring for a second opinion about angioplasty or bypass surgery?"
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "Bring the written recommendation, the cardiology notes, ECGs, echocardiograms, relevant blood tests, and the coronary angiogram report together with the images. The reviewing doctor often needs the pictures, not only the paragraph that describes them. The comparison of the two procedures is on this site, and the planning ranges are US$3,200–US$8,500 for angioplasty and stenting and US$5,500–US$14,000 for CABG. Those ranges are not a consultation fee."
+        },
+        {
+          "id": "h_098",
+          "type": "heading",
+          "level": 3,
+          "text": "Do I need to fast before a cardiology appointment?"
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "A routine conversation usually does not require fasting. A particular test might. Follow the hospital’s instruction. Do not fast, and do not change a medicine, because a general article suggested it."
+        },
+        {
+          "id": "h_100",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I send my reports to the cardiologist before the appointment?"
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "Many hospitals accept files in advance. Ask which formats they take and how to send them securely. Confirm that the doctor can see them. Do not assume a file you uploaded has been opened."
+        },
+        {
+          "id": "h_102",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I bring my medicines to the appointment?"
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "A complete list is the useful item: name, dose, and schedule, including supplements. Bring the boxes or photos of the labels if the names are unclear. Ask the hospital whether they want the list, the packages, or both."
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 3,
+          "text": "What should international patients send before travelling to India?"
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "Send the relevant reports, image files, medicine details, and discharge summaries. Ask about format, translation, how the file is sent, and whether you still need to be examined in person. A remote review is preliminary. This site does not publish one national consultation fee. Ask the hospital for that figure separately from any procedure range."
+        },
+        {
+          "id": "h_106",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a family member attend the cardiology consultation?"
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "Rules differ by hospital. A family member can help with notes, questions, or language when you want them there and the hospital agrees. Your privacy still applies."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "What if my symptoms become worse before the appointment?"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Do not wait for the booking if you develop severe chest pain, serious difficulty breathing, fainting with worrying symptoms, or signs of a possible stroke. Get emergency care. A records checklist is for a routine visit."
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 3,
+          "text": "Can GAF Healthcare help me prepare for a cardiology consultation in India?"
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help send records and request appointments with cardiology providers, on WhatsApp at +91 90443 46292. Ask the hospital which documents they need. The clinical decision stays with the treating doctor. A message is not a consultation."
+        },
+        {
+          "id": "h_112",
+          "type": "heading",
+          "level": 3,
+          "text": "Does this website publish a cardiologist consultation fee?"
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "No. The published figures are planning ranges for named procedures and tests, such as coronary angiography at US$400–US$1,200, typically day-care or overnight. A consultation fee, a video review, and a procedure package are different bills. Ask the hospital for the visit fee in writing."
+        },
+        {
+          "id": "h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "Which images matter most if angioplasty or surgery has already been suggested?"
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "The coronary angiogram images, the echocardiogram images, and the written recommendation. A summary that says “triple vessel disease” is not a substitute for the film. GAF’s angioplasty page plans 1–3 nights typical. The CABG page plans 7–14 nights, then nearby recovery. Those stays are planning windows, not a reason to travel before the images have been seen."
+        },
+        {
+          "id": "h_116",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I bring if I already have a pacemaker or an ICD?"
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "Bring the device identification card, the latest device check, the implant report if you have it, and the current medicine list. A standard pacemaker and a leadless pacemaker are different devices on the cost pages. An ICD is another listing. The person checking the device can say which extra printout they need. The guides are [pacemaker cost in India](/blogs/pacemaker-cost-in-india) and [ICD implantation cost in India](/blogs/icd-implantation-cost-in-india)."
+        },
+        {
+          "id": "h_118",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I repeat every blood test before the appointment?"
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "No. Bring the results you already have, especially kidney function, blood counts, glucose, and cholesterol if those were done. The cardiologist orders a repeat when the old result is missing, out of date, or not the right test for the question. Arranging a full panel on your own does not make the visit more complete."
+        },
+        {
+          "id": "btn_120",
+          "type": "button",
+          "label": "Ask what to carry home after the visit",
+          "href": "https://wa.me/919044346292?text=After%20the%20consultation%2C%20please%20say%20which%20papers%20I%20should%20leave%20with%3A%20the%20summary%2C%20any%20new%20test%20requests%2C%20medicine%20changes%2C%20and%20who%20to%20call%20if%20a%20symptom%20worsens."
+        },
+        {
+          "id": "h_121",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion: Bring the File You Have, and the Question You Came With"
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "You do not need every test in this guide. Start with the reports you already hold, a medicine list that includes supplements, a short symptom note, and the question you most want answered. For a second opinion, add the original recommendation and the images. If you are sending a file to India, ask how to share it and what the hospital still needs before you book travel."
+        },
+        {
+          "id": "p_123",
+          "type": "paragraph",
+          "text": "Leave knowing the next step, why any new test was asked for, how to take the medicines, and when to get help sooner."
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "These pages are live:"
+        },
+        {
+          "id": "ul_125",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Cardiologists in India](/doctors/India/Cardiology)",
+            "[Questions to ask before heart surgery](/blogs/questions-to-ask-before-heart-surgery)",
+            "[Angioplasty vs bypass surgery in India](/blogs/angioplasty-vs-bypass-surgery-in-india)",
+            "[Coronary angiography](/costs/India/Cardiology/Coronary-Angiography)",
+            "[Hospitals for cardiology in India](/hospitals/India/Cardiology)"
+          ]
+        },
+        {
+          "id": "h_126",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "ol_127",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "American Heart Association — [Preparing for medical visits](https://www.heart.org/en/health-topics/cardiac-rehab/communicating-with-professionals/preparing-for-medical-visits)",
+            "MedlinePlus — [Talking with your doctor](https://medlineplus.gov/talkingwithyourdoctor.html)",
+            "MedlinePlus — [Make the most of your doctor visit](https://medlineplus.gov/ency/patientinstructions/000860.htm)",
+            "American Heart Association — [Doctor appointments: questions to ask](https://www.heart.org/en/health-topics/consumer-healthcare/doctor-appointments-questions-to-ask-your-doctor)",
+            "American Heart Association — [Taking control of your medicines](https://www.heart.org/en/health-topics/cardiac-rehab/managing-your-medicines/taking-control-of-your-medicines)",
+            "American Heart Association — [How to get ready for a telehealth appointment](https://www.heart.org/-/media/Files/Telehealth-Patient-Resources/How-to-Get-Ready-for-a-Telehealth-Appointment.pdf)",
+            "NHS — [Outpatients and day patients](https://www.nhs.uk/nhs-services/hospitals/going-into-hospital/outpatients-and-day-patients/)",
+            "NHS — [What to ask your doctor](https://www.nhs.uk/nhs-services/gps/what-to-ask-your-doctor/)",
+            "National Medical Commission — [National Medical Register](https://nmr.nmc.org.in/)",
+            "National Health Authority — [Ayushman Bharat Digital Mission](https://abdm.gov.in/)"
+          ]
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "This article is for general education. It has not been signed by a named cardiologist. The records you need depend on your symptoms. Do not start, stop, or change a prescribed medicine because of something you read here. Seek emergency care for severe chest pain, serious difficulty breathing, fainting with worrying symptoms, or signs of a possible stroke."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Cardiologists in India",
+          "href": "/doctors/India/Cardiology"
+        },
+        {
+          "label": "Questions to ask before heart surgery",
+          "href": "/blogs/questions-to-ask-before-heart-surgery"
+        },
+        {
+          "label": "Angioplasty vs bypass surgery in India",
+          "href": "/blogs/angioplasty-vs-bypass-surgery-in-india"
+        },
+        {
+          "label": "Coronary angiography",
+          "href": "/costs/India/Cardiology/Coronary-Angiography"
+        },
+        {
+          "label": "Angioplasty cost in India",
+          "href": "/blogs/angioplasty-cost-in-india"
+        },
+        {
+          "label": "Hospitals for cardiology in India",
+          "href": "/hospitals/India/Cardiology"
+        }
+      ]
+    },
     {
       "id": "art_questions_to_ask_before_heart_surgery",
       "slug": "questions-to-ask-before-heart-surgery",
