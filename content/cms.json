@@ -1672,9 +1672,893 @@
       "name": "recovery-follow-up.webp",
       "alt": "Four steps: a clinician checking a limb dressing, a pill organizer, an echocardiogram, and a folder beside a suitcase",
       "addedAt": "2026-10-10T12:30:00.000Z"
+    },
+    {
+      "id": "media_cabg_bypass_graft_webp",
+      "url": "/uploads/articles/cabg-bypass-graft.webp",
+      "name": "cabg-bypass-graft.webp",
+      "alt": "A simplified heart with a graft vessel running past a narrowed coronary artery",
+      "addedAt": "2026-10-10T13:30:00.000Z"
+    },
+    {
+      "id": "media_cabg_graft_sources_webp",
+      "url": "/uploads/articles/cabg-graft-sources.webp",
+      "name": "cabg-graft-sources.webp",
+      "alt": "Three panels showing a vessel along the chest wall, a vessel in the forearm, and a vein in the lower leg",
+      "addedAt": "2026-10-10T13:30:00.000Z"
+    },
+    {
+      "id": "media_cabg_on_off_pump_webp",
+      "url": "/uploads/articles/cabg-on-off-pump.webp",
+      "name": "cabg-on-off-pump.webp",
+      "alt": "Left, a heart connected by tubes to a heart-lung machine. Right, a heart with a stabilizing ring and no external machine",
+      "addedAt": "2026-10-10T13:30:00.000Z"
+    },
+    {
+      "id": "media_cabg_recovery_path_webp",
+      "url": "/uploads/articles/cabg-recovery-path.webp",
+      "name": "cabg-recovery-path.webp",
+      "alt": "Four steps after bypass surgery: a monitored hospital bed, a leg dressing check, walking in a corridor, and a discharge folder",
+      "addedAt": "2026-10-10T13:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_bypass_surgery_cost_in_india",
+      "slug": "bypass-surgery-cost-in-india",
+      "title": "Bypass Surgery Cost in India: Hospital Packages, Recovery and What Affects the Final Bill",
+      "excerpt": "The cost of bypass surgery in India depends on the complexity of coronary artery disease, hospital facilities, intensive care, room category and recovery needs. This guide explains CABG packages, possible additional charges, insurance, recovery and how to compare written estimates.",
+      "date": "10 October 2026",
+      "publishedAt": "2026-10-10T13:30:00.000Z",
+      "updatedAt": "2026-10-10T13:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "CABG",
+        "bypass",
+        "cost",
+        "India",
+        "travel"
+      ],
+      "image": "/uploads/articles/cabg-bypass-graft.webp",
+      "imageAlt": "A simplified heart with a graft vessel running past a narrowed coronary artery",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Bypass Surgery Cost in India: CABG Packages & Recovery",
+      "seoDescription": "Explore bypass surgery cost in India, CABG hospital packages, ICU charges, recovery, insurance and travel expenses. Learn how to compare estimates.",
+      "canonical": "https://gaf.healthcare/blogs/bypass-surgery-cost-in-india",
+      "ogImage": "/uploads/articles/cabg-bypass-graft.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Bypass surgery cost in India",
+        "CABG surgery cost in India",
+        "Heart bypass surgery cost",
+        "Coronary artery bypass graft cost",
+        "Bypass surgery package in India",
+        "Open heart bypass surgery cost",
+        "CABG cost in private hospitals",
+        "Bypass surgery cost for international patients",
+        "Recovery after bypass surgery",
+        "Bypass surgery hospital charges",
+        "Insurance coverage for CABG in India"
+      ],
+      "blocks": [
+        {
+          "id": "p_001",
+          "type": "paragraph",
+          "text": "When a cardiologist recommends heart bypass surgery, families usually want two things at once: what the operation involves, and what it will cost."
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Planning is harder when the stay also includes tests, intensive care, medicines and several weeks of recovery. A planned operation in a stable patient is not the same bill as emergency surgery, or as an operation that also treats a valve."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "Room category, length of stay, blood products, tests, medicines and the treatment of a complication can all change the final amount. There is no single price that fits every bypass operation in India. The useful starting point is a written estimate based on the coronary anatomy and the operation that is actually proposed."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "**If someone has new or severe chest pain, severe breathlessness, fainting, or other symptoms that could be a heart attack, seek emergency care now.** Do not delay that care to compare prices or to arrange travel."
+        },
+        {
+          "id": "html_005",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>The total cost depends on the type and complexity of surgery, the hospital's package and the care required before and after the operation.</p><p>The main cost factors include:</p><ul class=\"article-quick-answer__list\"><li>The complexity of the coronary artery disease</li><li>Whether surgery is planned, urgent or an emergency</li><li>The number and type of bypass grafts required</li><li>The surgeon's, anaesthetist's and hospital's charges</li><li>Operating theatre and equipment costs</li><li>Intensive care and hospital room category</li><li>Preoperative investigations</li><li>Medicines, consumables and blood products</li><li>The length of hospital stay</li><li>Additional medical conditions</li><li>Complications or a longer recovery</li><li>Follow-up consultations and rehabilitation</li></ul><p>A written estimate should explain what is included, what is excluded and how the hospital will bill for additional care if the patient's condition changes.</p></div></aside>"
+        },
+        {
+          "id": "toc_006",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-is-bypass-surgery\">1. What Is Bypass Surgery?</a></li><li><a href=\"#2-how-much-does-bypass-surgery-cost-in-india\">2. How Much Does Bypass Surgery Cost in India?</a></li><li><a href=\"#3-what-is-included-in-a-cabg-package\">3. What Is Included in a CABG Package?</a></li><li><a href=\"#4-what-changes-the-bypass-bill\">4. What Changes the Bypass Bill?</a></li><li><a href=\"#5-standard-high-risk-and-repeat-bypass\">5. Standard, High-Risk and Repeat Bypass</a></li><li><a href=\"#6-does-the-number-of-bypasses-set-the-price\">6. Does the Number of Bypasses Set the Price?</a></li><li><a href=\"#7-government-hospitals-private-hospitals-and-insurance\">7. Government Hospitals, Private Hospitals and Insurance</a></li><li><a href=\"#8-planning-the-money-including-after-discharge\">8. Planning the Money, Including After Discharge</a></li><li><a href=\"#9-bypass-surgery-cost-for-international-patients\">9. Bypass Surgery Cost for International Patients</a></li><li><a href=\"#10-before-and-during-the-operation\">10. Before and During the Operation</a></li><li><a href=\"#11-hospital-stay-recovery-and-extra-charges\">11. Hospital Stay, Recovery and Extra Charges</a></li><li><a href=\"#12-how-to-compare-two-estimates\">12. How to Compare Two Estimates</a></li><li><a href=\"#13-bypass-and-angioplasty-are-not-the-same-bill\">13. Bypass and Angioplasty Are Not the Same Bill</a></li><li><a href=\"#14-how-to-choose-a-hospital-and-what-to-ask-before-you-pay\">14. How to Choose a Hospital, and What to Ask Before You Pay</a></li><li><a href=\"#15-frequently-asked-questions-about-bypass-surgery-cost-in-india\">15. Frequently Asked Questions About Bypass Surgery Cost in India</a></li><li><a href=\"#conclusion-compare-the-plan-not-only-the-lowest-number\">Conclusion: Compare the Plan, Not Only the Lowest Number</a></li><li><a href=\"#sources\">Sources</a></li></ol></nav>"
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "GAF Healthcare's cost page for [CABG (coronary artery bypass grafting)](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) publishes an indicative planning range of **US$5,500–US$14,000**, with a typical stay of **7–14 nights, then nearby recovery**. The same page lists a US comparison of **US$70,000–US$200,000**. That US figure is a comparison, not an India price. Neither figure is a hospital quotation."
+        },
+        {
+          "id": "btn_008",
+          "type": "button",
+          "label": "Request a written CABG estimate from the records",
+          "href": "https://wa.me/919044346292?text=Please%20review%20my%20coronary%20angiography%20and%20share%20a%20written%20bypass%20quotation%20for%20India.%20Name%20whether%20it%20is%20a%20first%20bypass%2C%20a%20repeat%20bypass%20or%20a%20combined%20operation%2C%20and%20separate%20ICU%20days%2C%20ward%20days%2C%20medicines%20and%20blood%20products."
+        },
+        {
+          "id": "h_009",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Is Bypass Surgery?"
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "Coronary artery bypass grafting, also called bypass surgery or CABG, creates a new route for blood around a narrowed or blocked coronary artery."
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "Coronary arteries carry blood to the heart muscle. Plaque can narrow them. Some people get chest discomfort. Others have a heart attack. During CABG the surgeon uses a blood vessel from elsewhere in the body to bypass the narrowed segment. The graft may come from the chest, the arm or the leg. The NHS explains [what a coronary artery bypass graft is](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/)."
+        },
+        {
+          "id": "img_012",
+          "type": "image",
+          "src": "/uploads/articles/cabg-bypass-graft.webp",
+          "alt": "A simplified heart with a graft vessel running past a narrowed coronary artery",
+          "caption": "A bypass graft carries blood past a narrowed coronary artery. The drawing is simplified. It is not an angiogram, and it does not show how many grafts one person needs."
+        },
+        {
+          "id": "h_013",
+          "type": "heading",
+          "level": 3,
+          "text": "Why bypass may be recommended"
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "CABG may be considered when coronary disease is better treated with surgery than with medicine alone or with a catheter. Examples include complex disease in several arteries, significant left main disease, some people with diabetes and multivessel disease, some people with reduced heart function, and anatomy that angioplasty is unlikely to treat well. These are examples, not automatic rules. Anatomy, symptoms, overall health, surgical risk and expected benefit decide. Angioplasty is the right operation for some people. Medicine and follow-up are right for others. The cardiologist and the surgeon should say why this option is the one proposed."
+        },
+        {
+          "id": "h_015",
+          "type": "heading",
+          "level": 2,
+          "text": "2. How Much Does Bypass Surgery Cost in India?"
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "The accurate figure depends on the hospital and the operation. A published tariff shows how a package is built. It is not a national average and it is not a quotation."
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "One publicly available 2025–26 institutional tariff lists on-pump CABG package charges from about **₹3.98 lakh to ₹7.57 lakh** across room categories. That package has defined inclusions and limits. Emergency surgery, extra treatment, or services outside the package can be charged differently. It is a historical example from one institution, not a current universal price. [2025–26 CABG package tariff](https://cdnbbsr.s3waas.gov.in/s35679fb79d04e9ed91e292858c54df4e8/uploads/2025/09/202509031351771870.pdf). Confirm the hospital's current tariff before you use any published figure. For a personal estimate, the hospital should read the records and name the operation and the inclusions."
+        },
+        {
+          "id": "h_018",
+          "type": "heading",
+          "level": 3,
+          "text": "Planning ranges already on this site"
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "These are indicative planning ranges from the current cost pages. They are not the rupee package above, and they are not a confirmed bill. A straightforward first bypass may sit toward the lower end. Complex anatomy, a long ICU stay or extra products can sit higher, or move onto a different listing."
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "| Operation | India planning range | Typical stay on the cost page |\n|---|---|---|\n| [CABG, first bypass](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | US$5,500–US$14,000 | 7–14 nights, then nearby recovery |\n| [Redo CABG](/costs/India/Cardiac-Surgery/Redo-CABG) | US$8,500–US$20,000 | 10–18 nights |\n| [Minimally invasive cardiac surgery](/costs/India/Cardiac-Surgery/Minimally-Invasive-Cardiac-Surgery) | US$8,000–US$20,000 | 5–12 nights |\n| [Robotic cardiac surgery](/costs/India/Cardiac-Surgery/Robotic-Cardiac-Surgery) | US$10,000–US$24,000 | 5–12 nights |\n| [Angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) | US$3,200–US$8,500 | 1–3 nights typical |"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "The US comparison published beside CABG is **US$70,000–US$200,000**. Use it only as a comparison with typical charges in the United States. The same CABG page can be opened for [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) and [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)). A city filter is not a different tariff."
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "A lower package may cover a defined stay, standard tests and a cap on medicines. Another package may change the room or the services. Some costs are capped, and anything above the cap is extra. Compare the plan, the inclusions, the exclusions and what happens if the stay is longer. Do not compare two headlines that leave out different things."
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "How the grafts are done is described on [CABG surgery in India](/treatments/cabg-surgery-in-india). The cost narrative on this site also sits on [heart bypass surgery cost in India](/treatments/heart-bypass-surgery-cost-in-india)."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 2,
+          "text": "3. What Is Included in a CABG Package?"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "There is no single definition of a bypass package. Some hospitals bundle a stay. Others itemise."
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "| Component | What to verify |\n|---|---|\n| Surgeon | Whether the operating surgeon's fee is inside the package |\n| Anaesthesia | Anaesthetist and routine anaesthesia charges |\n| Theatre | Theatre time and named equipment |\n| Intensive care | How many ICU or cardiac ICU days are included |\n| Room | Category and how many ward days |\n| Nursing | Routine nursing and standard monitoring |\n| Tests | Which tests before and after surgery are covered, and the cap |\n| Medicines | The allowance, and what happens above it |\n| Consumables | Whether there is a limit |\n| Blood bank | Crossmatch, blood products and related charges |\n| Rehabilitation | Whether physiotherapy or a rehab programme is included |\n| Follow-up | Which visits after discharge are covered |"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "Ask for that list in writing."
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 3,
+          "text": "Why ICU days matter"
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "After bypass, people usually spend time in a closely watched unit, often a cardiac ICU. How long depends on the operation and the recovery. A package may include a set number of days. Extra days are often extra. Ask the daily charge, and whether medicines and tests during those extra days are still inside the cap."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 3,
+          "text": "Medicines and consumables"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "If use goes over the allowance, the extra is billed. Ask whether routine medicines, antibiotics, blood products and extra tests are inside the estimate. The words “CABG package” do not mean every line is included."
+        },
+        {
+          "id": "btn_032",
+          "type": "button",
+          "label": "Ask how many ICU days and what medicine cap are included",
+          "href": "https://wa.me/919044346292?text=I%20need%20the%20bypass%20quotation%20to%20state%20ICU%20days%2C%20ward%20days%2C%20the%20medicine%20and%20consumable%20limits%2C%20and%20whether%20blood%20products%20are%20included."
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 2,
+          "text": "4. What Changes the Bypass Bill?"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "**CABG surgery cost in India**, **heart bypass surgery cost**, **coronary artery bypass graft cost** and **open heart bypass surgery cost** are the same family of questions only when the operation is the same. A **bypass surgery package in India** still has to name the room, the stay and the caps. **CABG cost in private hospitals** can differ from a government scheme rate. **Bypass surgery hospital charges** are not one number."
+        },
+        {
+          "id": "h_035",
+          "type": "heading",
+          "level": 3,
+          "text": "1. How complex the coronary disease is"
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "The number and position of narrowings, heart function, previous surgery and other heart problems change the plan."
+        },
+        {
+          "id": "h_037",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Planned, urgent or emergency"
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "A planned operation can be prepared. An emergency admission can add monitoring and a more difficult recovery. Both the risk and the bill can change."
+        },
+        {
+          "id": "h_039",
+          "type": "heading",
+          "level": 3,
+          "text": "3. How many grafts, and which vessels"
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "The surgeon uses as many grafts as the anatomy needs. The count is not a price list and it is not a quality score."
+        },
+        {
+          "id": "img_041",
+          "type": "image",
+          "src": "/uploads/articles/cabg-graft-sources.webp",
+          "alt": "Three panels showing a vessel along the chest wall, a vessel in the forearm, and a vein in the lower leg",
+          "caption": "Grafts are commonly taken from the chest wall, the arm or the leg. This is a teaching drawing of those sites, not a surgical plan."
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 3,
+          "text": "4. On-pump or off-pump"
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "CABG can be done with a heart-lung machine, or, in selected people, without it. The surgeon chooses from the anatomy and the condition. The two are not interchangeable for everyone. Ask which technique is proposed and whether it changes the estimate."
+        },
+        {
+          "id": "img_044",
+          "type": "image",
+          "src": "/uploads/articles/cabg-on-off-pump.webp",
+          "alt": "Left, a heart connected by tubes to a heart-lung machine. Right, a heart with a stabilizing ring and no external machine",
+          "caption": "Left: on-pump surgery, with the circulation supported by a heart-lung machine. Right: off-pump surgery, with a stabilizer steadying part of the heart. The drawing is simplified. The surgeon decides which applies."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 3,
+          "text": "5. Room category"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "A general ward, a shared room, a single room or a suite can change the package, not only the bed charge."
+        },
+        {
+          "id": "h_047",
+          "type": "heading",
+          "level": 3,
+          "text": "6. Other illnesses"
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "Diabetes, kidney disease, lung disease, anaemia and frailty can add tests and days."
+        },
+        {
+          "id": "h_049",
+          "type": "heading",
+          "level": 3,
+          "text": "7. Another procedure in the same admission"
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "Bypass plus a valve, or another heart operation, is not isolated CABG. [Heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) is a separate listing, at **US$7,000–US$18,000**, typically **8–16 nights**. Do not add that band to the CABG band and call it a combined price. Ask for one quotation that names every procedure. The valve guide is [heart valve replacement cost in India](/blogs/heart-valve-replacement-cost-in-india)."
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 3,
+          "text": "8. A complication or a longer stay"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Packages often assume an uncomplicated course and a defined stay. Infection, another operation or a long ICU stay can raise the bill. Ask the daily charge for extra care. The point is to understand the bill, not to predict a complication."
+        },
+        {
+          "id": "h_053",
+          "type": "heading",
+          "level": 2,
+          "text": "5. Standard, High-Risk and Repeat Bypass"
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "Some hospitals publish different packages for a standard bypass, an emergency or high-risk case, a repeat bypass, and a combined operation. The labels mean different resources. They do not mean every “high-risk” patient will have a complication. Ask what the label means in clinical words, and which rules decide who fits the standard package."
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "A second bypass is a different operation. Adhesions and a shortage of graft vessels change the work. GAF lists [redo CABG](/costs/India/Cardiac-Surgery/Redo-CABG) at **US$8,500–US$20,000**, typically **10–18 nights**. First-time CABG pricing does not apply. Say so in the quotation."
+        },
+        {
+          "id": "h_056",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Does the Number of Bypasses Set the Price?"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "A single, double, triple or quadruple bypass is a rough way of saying how many targets are bypassed. The plan follows the angiogram. A higher count does not by itself mean a worse outlook, and it does not prove one hospital is better."
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "Ask how many grafts are expected, which arteries, which graft vessels, whether the plan can change once surgery starts, whether the estimate assumes a number, and whether a change changes the package. Choose the operation the anatomy needs, not a graft count that matches a price."
+        },
+        {
+          "id": "h_059",
+          "type": "heading",
+          "level": 2,
+          "text": "7. Government Hospitals, Private Hospitals and Insurance"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "Government and private hospitals can differ in charges, who qualifies, and how long the wait is."
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "Some government hospitals provide cardiac surgery at subsidised rates or under a public scheme. What you pay depends on the hospital, eligibility and the scheme rules. Ask whether that hospital does the operation you need, whether you qualify, which package applies, whether medicines, tests and ICU are inside it, what is extra, and what the wait is. A scheme rate is not a rate for every patient in every hospital. The CGHS rate schedule is one official example of how specified categories are priced for eligible care. [CGHS rates](https://dmd.esic.gov.in/attachments/circularfile/CGHS_rates_applicable_for_treatment_at_healthcare_organisation_English_1762758908.pdf). Confirm that it applies to you. Public scheme packages can also cover defined inpatient services under their own rules. [Scheme package information](https://rmlh.mohfw.gov.in/Contents.aspx?langid=1&lev=2&lid=3618&lsid=2565&pid=1234)."
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Private hospitals may offer a package or an itemised estimate. The price can move with the room, the surgeon, the complexity and the ICU. An international desk may review records and send a preliminary estimate. That estimate can change after you are examined."
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "Compare the surgical plan, the team's experience with this operation, the ICU, emergency support, follow-up and the written estimate. A lower price is poor value if the services you need are excluded."
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "**Insurance coverage for CABG in India** depends on the policy. Network hospital, room limit, waiting period, exclusions, co-payment and pre-authorisation all matter. Ask the insurer whether CABG is covered, whether this hospital is in network, whether pre-authorisation is required, whether ICU and extra days are covered, what the room limit is, what happens if the bill exceeds the approval, and which papers reimbursement needs. Cashless means the insurer may pay the approved amount to a network hospital. Reimbursement means you may pay first and claim later. Confirm the path before a planned admission. A hospital quotation is not proof of cover."
+        },
+        {
+          "id": "h_065",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Planning the Money, Including After Discharge"
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "Before admission: consultations, tests, travel and medicines. Ask which of these are in the estimate. [Coronary angiography](/costs/India/Cardiology/Coronary-Angiography) is its own listing when that test is still needed."
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "During the stay: the operation, anaesthesia, ICU, the room, tests, medicines and consumables. Know the caps and how an extra cost is approved."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "After discharge: medicines, reviews, wound checks, rehabilitation and tests. [Heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india) covers the timeline. Ask which of those visits are inside the package."
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "Keep room in the budget for extra ICU days, extra tests or a longer admission. For people travelling from abroad, extra hospital days also mean lodging and a later flight."
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Bypass Surgery Cost for International Patients"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "The medical estimate often excludes flights, visas, lodging, food, local transport and a family member. **Bypass surgery cost for international patients** should be planned as the whole journey."
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "| Expense | What to confirm |\n|---|---|\n| Consultation | Whether the first opinion is separate |\n| Tests | Which ones are still required |\n| CABG package | The exact operation and the inclusions |\n| ICU | Days included, and the charge for more |\n| Medicines and blood | The caps |\n| Room | Category and days |\n| Lodging | Before admission and after discharge |\n| Travel | Flights, transfers, and a ticket you can change |\n| A companion | Stay, meals and transport |\n| Follow-up | Visits and tests before you leave India |"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Send the cardiologist's notes, the angiography report and images, the echo, the ECG, blood tests, old discharge summaries and the medicine list before you book flights. A preliminary opinion can change after examination. Do not assume you can fly home the day you leave hospital. The team should say when travel is reasonable and how long to stay nearby. Message the coordination desk on WhatsApp at +91 90443 46292. Fitness to fly stays with the clinicians."
+        },
+        {
+          "id": "btn_074",
+          "type": "button",
+          "label": "Send the angiogram before any flights are booked",
+          "href": "https://wa.me/919044346292?text=I%20am%20considering%20travel%20to%20India%20for%20bypass%20surgery.%20Please%20review%20the%20angiography%20and%20say%20whether%20a%20preliminary%20quotation%20is%20possible%20before%20flights%20are%20booked."
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 2,
+          "text": "10. Before and During the Operation"
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "The tests depend on what is already known and how urgent the surgery is. The team may review the angiogram, ECG, echo, blood count, kidney function, glucose, blood group, and lung tests when they are needed. The NHLBI describes [preparing for CABG](https://www.nhlbi.nih.gov/health/coronary-artery-bypass-grafting/preparing) and [what happens during CABG](https://www.nhlbi.nih.gov/health/coronary-artery-bypass-grafting/during)."
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "Ask which tests are still required, whether the angiogram images have been seen, what to do with current medicines, when to stop eating if you are told to, what to bring, the expected stay, who explains consent, and the main risks in your case. Do not stop aspirin, an anticoagulant, a diabetes medicine or any other prescribed drug unless the treating team says so."
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "The operation is done under general anaesthesia. On-pump surgery uses a heart-lung machine while the grafts are sewn. Off-pump surgery, in selected people, does not. Neither is automatically better. Duration depends on the anatomy, the number of grafts and any extra procedure. Ask what to expect in this case rather than using a fixed number of hours. The NHS describes [how a bypass graft is done](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/how-its-done/)."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Hospital Stay, Recovery and Extra Charges"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Recovery is part of the budget. People usually go to intensive care or a closely watched unit, then to a ward. Many stay about a week. Some stay longer. The NHS describes full recovery after CABG as commonly taking around two to three months, with the timeline varying. [NHS recovery after CABG](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/recovery/). GAF's cost page plans **7–14 nights, then nearby recovery**. That is a planning window for the hospital episode, not a discharge date. The NHLBI also describes [recovery after CABG](https://www.nhlbi.nih.gov/health/coronary-artery-bypass-grafting/recovery)."
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "The plan may include monitoring, pain relief, wound care, gradual walking, breathing exercises, a medicine review, and discharge planning. Cardiac rehabilitation, when it is offered, is described by the American Heart Association among [cardiac procedures and recovery resources](https://www.heart.org/en/health-topics/heart-attack/treatment-of-a-heart-attack/cardiac-procedures-and-surgeries). A longer stay can add room charges, medicines, tests, nursing or ICU time. Ask how extra days are billed before the operation."
+        },
+        {
+          "id": "img_082",
+          "type": "image",
+          "src": "/uploads/articles/cabg-recovery-path.webp",
+          "alt": "Four steps after bypass surgery: a monitored hospital bed, a leg dressing check, walking in a corridor, and a discharge folder",
+          "caption": "After CABG: close monitoring, care of the graft-site wound as well as the chest, walking, then the discharge papers. The number of days comes from the treating team."
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "Items that are often outside a defined package include ICU beyond the included days, extra ward days, medicines or tests above the cap, blood products, extra specialist visits, organ support if it is needed, treatment of infection, a further procedure, rehabilitation, and the medicines you take home. Not every patient needs these. Ask which are excluded, and for a rate where the hospital can give one."
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 2,
+          "text": "12. How to Compare Two Estimates"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "Use the same questions for both hospitals. Confirm the exact operation, whether surgeon and anaesthesia are included, how many ICU days, the room and how many ward days, test and medicine caps, whether blood is included, the charge for an extra day, how a complication is billed, which follow-up is included, and the written total. Two estimates that both say “CABG” can still differ. Also compare whether the team and the hospital can manage this anatomy and a complication. The European Society of Cardiology publishes [clinical practice guidelines](https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines) used by specialists when they choose between treatments. Those guidelines do not set a price."
+        },
+        {
+          "id": "h_086",
+          "type": "heading",
+          "level": 2,
+          "text": "13. Bypass and Angioplasty Are Not the Same Bill"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "Angioplasty is usually less invasive and the first recovery is often shorter. CABG is a major operation with a longer recovery. For some people with complex multivessel disease, bypass can offer longer-term benefits, including fewer repeat procedures, than a stent strategy. For others, angioplasty is the appropriate treatment. A lower first price is not automatically a lower cost over time. Repeat procedures, medicines and recovery all count."
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "[Coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) is listed at **US$3,200–US$8,500**, typically **1–3 nights**. That is a different procedure from CABG at **US$5,500–US$14,000**. Do not treat the angioplasty band as a discount on bypass. The procedure page is [coronary angioplasty in India](/treatments/coronary-angioplasty-in-india)."
+        },
+        {
+          "id": "btn_089",
+          "type": "button",
+          "label": "Ask whether the plan is bypass or angioplasty",
+          "href": "https://wa.me/919044346292?text=Please%20say%20whether%20bypass%20or%20angioplasty%20is%20being%20considered%20for%20these%20coronary%20arteries%2C%20and%20send%20a%20quotation%20only%20for%20the%20procedure%20the%20team%20recommends."
+        },
+        {
+          "id": "h_090",
+          "type": "heading",
+          "level": 2,
+          "text": "14. How to Choose a Hospital, and What to Ask Before You Pay"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "Ask who will operate, what their training and experience with CABG are, whether the hospital does this operation regularly, whether a cardiac ICU is available, what happens if there is a complication, which other specialists are on site, what rehabilitation and follow-up exist, whether you will get a written estimate with exclusions, who explains the medicines, and how records will reach a doctor outside India. Do not choose a hospital only because it advertises the lowest price or a guaranteed result."
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "Check registration on the [National Medical Register](https://nmr.nmc.org.in/). [Cardiac surgeons in India](/doctors/India/Cardiac-Surgery) and [cardiologists in India](/doctors/India/Cardiology) are directories, not rankings. City starting points include [Delhi NCR](/doctors/India/Delhi-NCR/Cardiac-Surgery), [Mumbai](/doctors/India/Mumbai/Cardiac-Surgery), [Bengaluru](/doctors/India/Bengaluru/Cardiac-Surgery), [Chennai](/doctors/India/Chennai/Cardiac-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Cardiac-Surgery). [Hospitals for cardiac surgery in India](/hospitals/India/Cardiac-Surgery) is the hospital list."
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "Before you pay a deposit, ask:"
+        },
+        {
+          "id": "ul_094",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Is this standard CABG, a high-risk or emergency case, a repeat bypass, or a combined operation?",
+            "What could change the plan once surgery starts, and who operates?",
+            "What is the estimated total, and how many ICU and ward days does it include?",
+            "Are the surgeon, the anaesthetist and the theatre inside that total?",
+            "Which tests, medicines, consumables and blood products are covered, and what is excluded?",
+            "What is the expected stay, which support is needed after discharge, and are rehabilitation and the first reviews included?",
+            "Which medicines will I go home with, and which symptoms need urgent care?",
+            "Does insurance or a scheme apply, is pre-authorisation required, what deposit is due, and how are extra days billed?"
+          ]
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 2,
+          "text": "15. Frequently Asked Questions About Bypass Surgery Cost in India"
+        },
+        {
+          "id": "h_096",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the cost of bypass surgery in India?"
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "There is no single national price. GAF Healthcare's current cost page gives an indicative planning range of US$5,500–US$14,000 for CABG, with a typical stay of 7–14 nights, then nearby recovery. The same page lists a US comparison of US$70,000–US$200,000, which is not an India price. A published 2025–26 institutional tariff listed on-pump CABG packages from about ₹3.98 lakh to ₹7.57 lakh across room categories, with limits. That rupee range is a historical example from one institution. It is not GAF's planning range and it is not a guaranteed quote. Ask the treating hospital for a current written estimate."
+        },
+        {
+          "id": "h_098",
+          "type": "heading",
+          "level": 3,
+          "text": "Why does bypass surgery cost more at some hospitals?"
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "Room category, professional fees, ICU arrangements, what the package includes, and how the hospital bills extras all differ. The patient's anatomy, an emergency admission and any extra procedure change the cost as well. Compare those lines, not only the headline."
+        },
+        {
+          "id": "h_100",
+          "type": "heading",
+          "level": 3,
+          "text": "What is included in a CABG package?"
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "It may include the operation, anaesthesia, the surgeon, a defined stay, ICU monitoring, routine tests and a capped amount of medicines or consumables. The list is different in every hospital. Ask for it in writing, and ask what is excluded."
+        },
+        {
+          "id": "h_102",
+          "type": "heading",
+          "level": 3,
+          "text": "Does the package include ICU charges?"
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "Some packages include a set number of ICU days. Further days are often billed separately. Confirm the number and the charge if monitoring needs to continue."
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 3,
+          "text": "Does the number of bypass grafts determine the price?"
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "The number and the difficulty of the grafts can change the operation. The bill also depends on the hospital, the person's other illnesses, the stay and the package caps. Do not compare hospitals by graft count alone."
+        },
+        {
+          "id": "h_106",
+          "type": "heading",
+          "level": 3,
+          "text": "Is bypass surgery covered by health insurance?"
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "It may be, if the policy covers CABG and the hospital, room and authorisation rules are met. Ask the insurer and the hospital before a planned admission. A quotation is not proof of cover."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "Can government healthcare schemes cover bypass surgery?"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Some eligible patients can have CABG under a public scheme. It depends on eligibility, whether the hospital is empanelled, and the package rules. Confirm the current rules with the scheme and the hospital. Do not assume a rate you saw online applies to you."
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 3,
+          "text": "How long will I stay in hospital after bypass surgery?"
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "Many people stay about a week. GAF's CABG page plans 7–14 nights, then nearby recovery. Some people stay longer because of the operation, other illnesses or a complication. The team sets the discharge day."
+        },
+        {
+          "id": "h_112",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does recovery take after bypass surgery?"
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "It varies. The NHS describes full recovery after CABG as commonly taking around two to three months. Activity, wound care, medicines and rehabilitation should follow the surgical team, not a calendar. The recovery guide on this site is [heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india)."
+        },
+        {
+          "id": "h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "What additional costs should I expect after discharge?"
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "Medicines, reviews, wound checks, tests, rehabilitation and transport may be separate. Ask which follow-up is inside the package before you leave."
+        },
+        {
+          "id": "h_116",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients obtain a CABG estimate before travelling to India?"
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "Many hospitals can give a preliminary estimate after they see the angiography and the other records. The plan can change after examination and further tests. Confirm the stay, the inclusions and the travel dates before you buy tickets."
+        },
+        {
+          "id": "h_118",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I return home immediately after bypass surgery?"
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "Usually not. There is a recovery period before a long flight. The treating team should say when travel is reasonable. Keep the ticket flexible."
+        },
+        {
+          "id": "h_120",
+          "type": "heading",
+          "level": 3,
+          "text": "Is bypass surgery always better than angioplasty?"
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "No. Bypass can help selected people with complex multivessel disease. Angioplasty is appropriate for others. Anatomy, symptoms, heart function and the expected risks decide. The angioplasty planning range on this site, US$3,200–US$8,500, is a different procedure, not a cheaper bypass."
+        },
+        {
+          "id": "h_122",
+          "type": "heading",
+          "level": 3,
+          "text": "How can GAF Healthcare help international patients seeking bypass surgery in India?"
+        },
+        {
+          "id": "p_123",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help send records, request appointments, ask hospitals for preliminary estimates and arrange practical travel on WhatsApp at +91 90443 46292. The decision to operate stays with the treating team. A message to the desk is not a quotation and it is not clearance to fly."
+        },
+        {
+          "id": "h_124",
+          "type": "heading",
+          "level": 3,
+          "text": "Does the US$5,500–US$14,000 range include extra ICU days and the grafts?"
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "Not as a promise. It is the indicative planning range for a CABG episode on the cost page. Hospitals often cap ICU days, medicines and consumables, and they bill blood products or a longer stay outside the package. Ask for those lines separately. The grafts themselves are part of the operation, but the package still has to say what is included."
+        },
+        {
+          "id": "h_126",
+          "type": "heading",
+          "level": 3,
+          "text": "Why do the rupee package and GAF's dollar range look so different?"
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "They measure different things. The ₹3.98 lakh to ₹7.57 lakh figures are one institution's 2025–26 on-pump CABG packages across room categories, with limits. GAF's US$5,500–US$14,000 band is an indicative planning range for international patients on the CABG cost page. The US$70,000–US$200,000 figure is a US comparison, not an India price. None of these is a confirmed bill."
+        },
+        {
+          "id": "h_128",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a repeat bypass the same price as a first bypass?"
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "No. GAF lists redo CABG at US$8,500–US$20,000, typically 10–18 nights, because a second operation is a different job. Do not budget a re-operation from the first-time band. A bypass combined with valve surgery is also a different quotation."
+        },
+        {
+          "id": "btn_130",
+          "type": "button",
+          "label": "Ask who will review the bypass after you go home",
+          "href": "https://wa.me/919044346292?text=I%20need%20a%20written%20follow-up%20plan%20after%20CABG%2C%20including%20medicines%2C%20wound%20checks%20and%20who%20the%20surgeon%20will%20write%20to%20in%20my%20home%20country."
+        },
+        {
+          "id": "h_131",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion: Compare the Plan, Not Only the Lowest Number"
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "Bypass surgery is a major operation. The bill can include the team, anaesthesia, intensive care, the room, medicines, tests and recovery. Caps, a second procedure and a longer stay change the total."
+        },
+        {
+          "id": "p_133",
+          "type": "paragraph",
+          "text": "Ask for a current written estimate that names the operation, the inclusions, the exclusions, the charge for an extra day, and the follow-up. If you are travelling, also budget for lodging, local transport, a companion and a ticket you can change."
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "The useful comparison is which suitable plan has a clear cost, the right team, the facilities the case needs, and a realistic recovery. [Cardiologists in India](/doctors/India/Cardiology) and [cardiac surgeons in India](/doctors/India/Cardiac-Surgery) are places to start that conversation."
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "These pages are live:"
+        },
+        {
+          "id": "ul_136",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[CABG cost](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting))",
+            "[CABG surgery in India](/treatments/cabg-surgery-in-india)",
+            "[Heart bypass surgery cost in India](/treatments/heart-bypass-surgery-cost-in-india)",
+            "[Redo CABG](/costs/India/Cardiac-Surgery/Redo-CABG)",
+            "[Heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india)",
+            "[Coronary angioplasty in India](/treatments/coronary-angioplasty-in-india)"
+          ]
+        },
+        {
+          "id": "h_137",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "ol_138",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "NHS — [Coronary artery bypass graft](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/)",
+            "NHS — [Recovery after CABG](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/recovery/)",
+            "National Heart, Lung, and Blood Institute — [CABG recovery](https://www.nhlbi.nih.gov/health/coronary-artery-bypass-grafting/recovery)",
+            "National Heart, Lung, and Blood Institute — [Preparing for CABG](https://www.nhlbi.nih.gov/health/coronary-artery-bypass-grafting/preparing)",
+            "National Heart, Lung, and Blood Institute — [During CABG](https://www.nhlbi.nih.gov/health/coronary-artery-bypass-grafting/during)",
+            "Government of India — [CGHS rates for treatment at healthcare organisations](https://dmd.esic.gov.in/attachments/circularfile/CGHS_rates_applicable_for_treatment_at_healthcare_organisation_English_1762758908.pdf)",
+            "Government of India — [public healthcare scheme package information](https://rmlh.mohfw.gov.in/Contents.aspx?langid=1&lev=2&lid=3618&lsid=2565&pid=1234)",
+            "Published institutional tariff — [2025–26 CABG package example](https://cdnbbsr.s3waas.gov.in/s35679fb79d04e9ed91e292858c54df4e8/uploads/2025/09/202509031351771870.pdf)",
+            "European Society of Cardiology — [Clinical practice guidelines](https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines)",
+            "American Heart Association — [Cardiac procedures and surgeries](https://www.heart.org/en/health-topics/heart-attack/treatment-of-a-heart-attack/cardiac-procedures-and-surgeries)"
+          ]
+        },
+        {
+          "id": "p_139",
+          "type": "paragraph",
+          "text": "This article is for general education. It has not been signed by a named cardiac surgeon or cardiologist. Whether CABG is appropriate, and what it will cost, depend on an individual assessment. Tariffs change. Confirm prices with the hospital. Do not delay emergency care to compare prices."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "CABG cost",
+          "href": "/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)"
+        },
+        {
+          "label": "CABG surgery in India",
+          "href": "/treatments/cabg-surgery-in-india"
+        },
+        {
+          "label": "Redo CABG",
+          "href": "/costs/India/Cardiac-Surgery/Redo-CABG"
+        },
+        {
+          "label": "Heart surgery recovery in India",
+          "href": "/blogs/heart-surgery-recovery-in-india"
+        },
+        {
+          "label": "Coronary angioplasty in India",
+          "href": "/treatments/coronary-angioplasty-in-india"
+        },
+        {
+          "label": "Cardiac surgeons in India",
+          "href": "/doctors/India/Cardiac-Surgery"
+        },
+        {
+          "label": "Cardiologists in India",
+          "href": "/doctors/India/Cardiology"
+        }
+      ]
+    },
     {
       "id": "art_heart_surgery_recovery_in_india",
       "slug": "heart-surgery-recovery-in-india",
