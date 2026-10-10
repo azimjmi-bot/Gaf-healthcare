@@ -1840,9 +1840,925 @@
       "name": "second-opinion-ablation.webp",
       "alt": "Four veins entering a heart chamber, each opening ringed with ablation points, and a catheter",
       "addedAt": "2026-10-10T18:30:00.000Z"
+    },
+    {
+      "id": "media_consult_ecg_webp",
+      "url": "/uploads/articles/consult-ecg.webp",
+      "name": "consult-ecg.webp",
+      "alt": "Three chest electrodes connected to a monitor showing a heartbeat wave",
+      "addedAt": "2026-10-10T19:30:00.000Z"
+    },
+    {
+      "id": "media_consult_echo_webp",
+      "url": "/uploads/articles/consult-echo.webp",
+      "name": "consult-echo.webp",
+      "alt": "An ultrasound probe on the chest beside a circular four-chamber drawing of the heart",
+      "addedAt": "2026-10-10T19:30:00.000Z"
+    },
+    {
+      "id": "media_consult_holter_webp",
+      "url": "/uploads/articles/consult-holter.webp",
+      "name": "consult-holter.webp",
+      "alt": "Chest electrodes and a small recorder worn on the shirt, beside a regular rhythm strip",
+      "addedAt": "2026-10-10T19:30:00.000Z"
+    },
+    {
+      "id": "media_consult_vs_angiogram_webp",
+      "url": "/uploads/articles/consult-vs-angiogram.webp",
+      "name": "consult-vs-angiogram.webp",
+      "alt": "A stethoscope examination beside a catheter from the arm to the heart",
+      "addedAt": "2026-10-10T19:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_cardiologist_consultation_fees_in_india",
+      "slug": "cardiologist-consultation-fees-in-india",
+      "title": "Cost of Cardiologist Consultation in India: Fees, Tests and What to Expect",
+      "excerpt": "Cardiologist consultation fees in India vary by doctor, hospital, city and type of appointment. Understand consultation charges, common cardiac tests, follow-up costs and how to request a transparent estimate before booking.",
+      "date": "10 October 2026",
+      "publishedAt": "2026-10-10T19:30:00.000Z",
+      "updatedAt": "2026-10-10T19:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "consultation",
+        "fees",
+        "cardiologist",
+        "India",
+        "travel"
+      ],
+      "image": "/uploads/articles/consult-ecg.webp",
+      "imageAlt": "Three chest electrodes connected to a monitor showing a heartbeat wave",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Cardiologist Consultation Fees in India: Cost & Tests",
+      "seoDescription": "Learn about cardiologist consultation fees in India, ECG and echo test costs, factors affecting prices, follow-up charges and tips for comparing hospitals.",
+      "canonical": "https://gaf.healthcare/blogs/cardiologist-consultation-fees-in-india",
+      "ogImage": "/uploads/articles/consult-ecg.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Cardiologist consultation fees in India",
+        "Cardiologist consultation cost in India",
+        "Heart specialist consultation fees",
+        "Cardiologist fees in Delhi",
+        "Cardiologist fees in Mumbai",
+        "Cardiologist fees in Chennai",
+        "Cardiologist fees in Bengaluru",
+        "ECG test cost in India",
+        "Echocardiogram cost in India",
+        "Heart check-up cost in India",
+        "Online cardiologist consultation fees",
+        "Cardiologist fees for international patients",
+        "Cardiology consultation and diagnostic tests"
+      ],
+      "blocks": [
+        {
+          "id": "p_001",
+          "type": "paragraph",
+          "text": "A cardiologist’s consultation fee in India is a hospital tariff, not a national price. The doctor, the hospital, the city, and the type of appointment all change it. An ECG, an echocardiogram, or a later procedure is usually a different bill."
+        },
+        {
+          "id": "html_002",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>The cost of consulting a cardiologist in India depends on the doctor, hospital, city, appointment type and whether additional investigations are needed.</p><p>A consultation fee is only one part of the total expense. The cardiologist may recommend an ECG, echocardiogram, blood tests, rhythm monitoring or other investigations depending on the symptoms and medical history.</p><p>For example, <a href=\"https://www.yashodahospitals.com/online-doctor-consultation/cardiology/\">Yashoda Hospitals</a> publicly lists online cardiology consultation fees for selected doctors at approximately ₹1,200–₹1,500, while <a href=\"https://khar.hindujahospital.com/out-patient/\">P. D. Hinduja Hospital</a>'s published outpatient information lists general first or repeat-after-30-days consultation charges of ₹2,700 or ₹3,800, depending on the applicable category. These are examples from specific providers, not a national average or a guarantee of current fees for every cardiologist.</p><p>Before booking, confirm the current fee directly with the hospital. Ask whether the charge covers only the consultation or includes any tests, report review or follow-up.</p><p><a href=\"/doctors/India/Cardiology\">Explore cardiologists in India</a>.</p></div></aside>"
+        },
+        {
+          "id": "toc_003",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-there-is-no-single-consultation-fee\">1. There Is No Single Consultation Fee</a></li><li><a href=\"#2-what-changes-the-fee\">2. What Changes the Fee</a></li><li><a href=\"#3-what-a-consultation-usually-includes\">3. What a Consultation Usually Includes</a></li><li><a href=\"#4-tests-that-can-sit-on-a-separate-bill\">4. Tests That Can Sit on a Separate Bill</a></li><li><a href=\"#5-published-planning-ranges-are-not-the-consultation-fee\">5. Published Planning Ranges Are Not the Consultation Fee</a></li><li><a href=\"#6-fees-by-city-are-not-city-averages\">6. Fees by City Are Not City Averages</a></li><li><a href=\"#7-government-hospitals-and-private-hospitals\">7. Government Hospitals and Private Hospitals</a></li><li><a href=\"#8-online-consultation-and-an-in-person-visit\">8. Online Consultation and an In-Person Visit</a></li><li><a href=\"#9-how-to-prepare-and-avoid-duplicate-tests\">9. How to Prepare and Avoid Duplicate Tests</a></li><li><a href=\"#10-what-international-patients-should-confirm\">10. What International Patients Should Confirm</a></li><li><a href=\"#11-how-to-compare-cardiologists-beyond-the-fee\">11. How to Compare Cardiologists Beyond the Fee</a></li><li><a href=\"#12-when-waiting-to-compare-fees-is-unsafe\">12. When Waiting to Compare Fees Is Unsafe</a></li><li><a href=\"#13-frequently-asked-questions-about-cardiologist-consultation-fees\">13. Frequently Asked Questions About Cardiologist Consultation Fees</a></li><li><a href=\"#conclusion-confirm-the-fee-before-you-book\">Conclusion: Confirm the Fee Before You Book</a></li><li><a href=\"#sources\">Sources</a></li></ol></nav>"
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "[Cardiologists in India](/doctors/India/Cardiology) is a directory, not a ranking and not a fee list. City lists include [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology), [Mumbai](/doctors/India/Mumbai/Cardiology), [Bengaluru](/doctors/India/Bengaluru/Cardiology), [Chennai](/doctors/India/Chennai/Cardiology), and [Hyderabad](/doctors/India/Hyderabad/Cardiology). [Cardiac surgeons in India](/doctors/India/Cardiac-Surgery) is a separate list."
+        },
+        {
+          "id": "btn_005",
+          "type": "button",
+          "label": "Ask for the current consultation fee before you book",
+          "href": "https://wa.me/919044346292?text=Please%20confirm%20the%20current%20consultation%20fee%20for%20a%20named%20cardiologist%20in%20India%2C%20whether%20it%20is%20a%20first%20visit%20or%20a%20follow-up%2C%20and%20whether%20an%20ECG%2C%20report%20review%2C%20and%20a%20later%20visit%20are%20included%20or%20charged%20separately."
+        },
+        {
+          "id": "h_006",
+          "type": "heading",
+          "level": 2,
+          "text": "1. There Is No Single Consultation Fee"
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "This site does not publish a single fee for a cardiologist consultation in India. Government hospitals, private hospitals, independent clinics, and online services each set their own tariff. A first visit and a follow-up are often different charges. Some hospitals also use different categories for different doctors."
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "The examples in the quick answer are provider listings, not a GAF Healthcare price and not a national average. Yashoda Hospitals publishes online cardiology consultation fees for selected doctors at approximately ₹1,200–₹1,500. P. D. Hinduja Hospital, Khar, publishes general outpatient categories of ₹2,700 or ₹3,800 for a first consultation and for a repeat consultation after 30 days. Those Hinduja figures are general outpatient categories. Confirm the cardiology fee that applies to the doctor you want to see. Recheck both listings before you book, because tariffs change."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "| Provider or setting | Published fee information | Important note |\n|---|---|---|\n| Selected online cardiology consultations at Yashoda Hospitals | Approximately ₹1,200–₹1,500 for listed doctors | Fees vary by doctor and by the appointment listing |\n| P. D. Hinduja Hospital, Khar | General outpatient categories of ₹2,700 or ₹3,800 for a first consultation and a repeat after 30 days | These are general outpatient categories; confirm the cardiology fee |\n| Government or public hospital | Set by that institution and by the patient category | Check the current official tariff |\n| Independent cardiology clinic | Set by the practice | Ask for the first-visit fee and the follow-up fee |\n| Private multispecialty hospital | Set by that doctor and that hospital | Ask whether tests and report review are separate |"
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "Sir H. N. Reliance Foundation Hospital publishes [billing and charges](https://www.rfhospital.org/patients-visitors/billing-charges) information for selected services. Tata Memorial Centre publishes a [schedule of charges](https://actrec.gov.in/sites/default/files/Schedule/New%20Schedule%20of%20Charges.pdf). Dr. Ram Manohar Lohia Hospital describes [packages and rates](https://rmlh.mohfw.gov.in/Contents.aspx?langid=1&lev=2&lid=3618&lsid=2565&pid=1234). The Ministry of Health and Family Welfare has published a [CGHS rate revision](https://www.pib.gov.in/PressReleasePage.aspx?PRID=1915950). None of those pages is a nationwide cardiologist fee, and this article does not turn them into one."
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "The National Health Systems Resource Centre charter of [patient rights](https://qps.nhsrcindia.org/sites/default/files/2022-01/charter_patient_rights_by_NHRC_2019.pdf) is a useful reminder that patients can ask for transparent rates and an itemised bill. Asking is not the same as having a single published number."
+        },
+        {
+          "id": "h_012",
+          "type": "heading",
+          "level": 2,
+          "text": "2. What Changes the Fee"
+        },
+        {
+          "id": "h_013",
+          "type": "heading",
+          "level": 3,
+          "text": "The doctor’s designation"
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "A senior consultant and another cardiologist at the same hospital may be on different fee categories. Designation, the kind of work that doctor does, and the hospital’s own tariff all play a part. A higher fee does not by itself show that a doctor is the right person for this problem. Relevant experience, a clear explanation, and registration you can check matter as well. The [National Medical Register](https://nmr.nmc.org.in/) is one place to check a recorded qualification."
+        },
+        {
+          "id": "h_015",
+          "type": "heading",
+          "level": 3,
+          "text": "The hospital or clinic"
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "A government hospital, a private clinic, and a large private hospital do not share one price. Location, appointment rules, and the fee policy all differ. Do not assume that every cardiologist in one building charges the same amount. Ask for the named doctor and the named appointment."
+        },
+        {
+          "id": "h_017",
+          "type": "heading",
+          "level": 3,
+          "text": "The city"
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "Delhi NCR, Mumbai, Chennai, Bengaluru, and Hyderabad each contain many different tariffs. Two cardiologists in the same city can charge different fees because the practice and the appointment are different. A city average is a poor substitute for the current tariff. The doctor lists above are directories. They are not city price lists."
+        },
+        {
+          "id": "h_019",
+          "type": "heading",
+          "level": 3,
+          "text": "A first visit and a follow-up"
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "A first consultation usually covers the history, the symptoms, old tests, and current medicines. A follow-up often reviews results or a change in treatment. Some hospitals charge a repeat visit differently inside a set number of days, and only with the same doctor. Ask how long that window lasts and whether it applies to the doctor you saw."
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 3,
+          "text": "Online and in person"
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "An online visit can be a practical way to discuss reports you already have, or to ask questions before you travel. The fee may differ from a clinic visit. A video call cannot replace an examination, and some symptoms need to be seen in person or treated as an emergency. Before you pay, ask whether the online fee includes a prescription, a reading of the reports, or a follow-up call."
+        },
+        {
+          "id": "h_023",
+          "type": "heading",
+          "level": 3,
+          "text": "How complex the problem is"
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "A short follow-up and a first review of several conditions, previous surgery, and a thick file from another hospital are not the same appointment. Ask whether the quoted fee covers the time and the amount of reading you expect."
+        },
+        {
+          "id": "btn_025",
+          "type": "button",
+          "label": "Check the follow-up window and the doctor’s own category",
+          "href": "https://wa.me/919044346292?text=Please%20tell%20me%20the%20first-visit%20fee%20and%20the%20follow-up%20fee%20for%20this%20cardiologist%2C%20how%20long%20the%20follow-up%20window%20lasts%2C%20and%20whether%20every%20doctor%20at%20the%20hospital%20uses%20the%20same%20category."
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 2,
+          "text": "3. What a Consultation Usually Includes"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "A visit commonly includes some of the following. The mix depends on the doctor and the appointment."
+        },
+        {
+          "id": "ul_028",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "A review of symptoms and medical history",
+            "A review of current medicines and earlier treatment",
+            "A look at cardiovascular risk factors",
+            "A physical examination when it is appropriate",
+            "A reading of previous reports",
+            "A preliminary assessment",
+            "Advice on further tests",
+            "A discussion of possible treatment options",
+            "A plan for follow-up"
+          ]
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "An ECG done during the visit is often billed separately. A long review of records from another hospital, or a formal second opinion, may also be a separate charge. The guide to [what to bring to a cardiologist appointment](/blogs/what-to-bring-to-a-cardiologist-appointment) is about the file, not the fee. If the question is a major recommendation you already have, see [when to get a second opinion from a cardiologist in India](/blogs/second-opinion-from-a-cardiologist-in-india)."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 2,
+          "text": "4. Tests That Can Sit on a Separate Bill"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "The cardiologist recommends tests from the symptoms and the history. Not every person needs every test. This site does not publish a price for an ECG, an echocardiogram, a Holter recording, a blood panel, or an exercise stress test. Ask the hospital whether each one is included in the visit or charged on its own, and whether the quote includes the report."
+        },
+        {
+          "id": "h_032",
+          "type": "heading",
+          "level": 3,
+          "text": "Electrocardiogram"
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "An ECG records the electrical activity of the heart. It can be relevant to chest discomfort, palpitations, and other symptoms. It is not required before every conversation can start. Ask whether it is inside the appointment or on a separate line."
+        },
+        {
+          "id": "img_034",
+          "type": "image",
+          "src": "/uploads/articles/consult-ecg.webp",
+          "alt": "Three chest electrodes connected to a monitor showing a heartbeat wave",
+          "caption": "An ECG visit is electrodes on the chest and a tracing on a monitor. The wave in this drawing is not a diagnosis."
+        },
+        {
+          "id": "h_035",
+          "type": "heading",
+          "level": 3,
+          "text": "Echocardiogram"
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "An echocardiogram uses ultrasound to look at the heart’s structure, valves, and pumping. It may be suggested for breathlessness, a murmur, or a suspected valve problem. The type of study changes the tariff. A specialised study can cost more than a standard one. Ask the diagnostic department for the current price and whether the quote includes the report and the interpretation."
+        },
+        {
+          "id": "img_037",
+          "type": "image",
+          "src": "/uploads/articles/consult-echo.webp",
+          "alt": "An ultrasound probe on the chest beside a circular four-chamber drawing of the heart",
+          "caption": "Left: a probe on the chest. Right: a circular teaching drawing of the four chambers and valve leaflets. It is not an echocardiogram still."
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 3,
+          "text": "Blood tests"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "Blood counts, kidney function, electrolytes, glucose, and other tests are ordered only when they help the question in front of the doctor. The bill follows which tests are requested and where they are done."
+        },
+        {
+          "id": "h_040",
+          "type": "heading",
+          "level": 3,
+          "text": "Rhythm monitoring"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "A Holter monitor records the rhythm for a longer stretch. Other devices are used when symptoms are infrequent. The charge depends on the device, how long it is worn, and who reads the report. This drawing is not a tracing from a patient."
+        },
+        {
+          "id": "img_042",
+          "type": "image",
+          "src": "/uploads/articles/consult-holter.webp",
+          "alt": "Chest electrodes and a small recorder worn on the shirt, beside a regular rhythm strip",
+          "caption": "A longer rhythm recording uses chest electrodes and a small recorder worn on the shirt. The strip in this drawing looks regular. It is not a diagnosis."
+        },
+        {
+          "id": "h_043",
+          "type": "heading",
+          "level": 3,
+          "text": "Exercise stress testing"
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "An exercise stress test looks at the heart’s response to exertion in selected people. It is not suitable for everyone. The cardiologist decides after the history and the examination."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 3,
+          "text": "Advanced imaging"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Cardiac CT, cardiac MRI, and other specialised imaging are not routine for every consultation. They are used when the doctor needs a specific answer about the heart or the blood vessels."
+        },
+        {
+          "id": "h_047",
+          "type": "heading",
+          "level": 3,
+          "text": "Angiography and procedures"
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "If the assessment points toward a procedure, that procedure is a different service from the outpatient visit. Coronary angiography takes pictures of the coronary arteries. Angioplasty, bypass surgery, valve surgery, a pacemaker, and ablation are further decisions. A recommendation should include the reason, the expected benefit, the risks, and the alternatives. The questions to take into that conversation are in [questions to ask before heart surgery](/blogs/questions-to-ask-before-heart-surgery)."
+        },
+        {
+          "id": "img_049",
+          "type": "image",
+          "src": "/uploads/articles/consult-vs-angiogram.webp",
+          "alt": "A stethoscope examination beside a catheter from the arm to the heart",
+          "caption": "Left: a clinic examination with a stethoscope. Right: a teaching drawing of a single catheter from the arm to the heart, with coronary vessels drawn on the heart. It is not an angiogram."
+        },
+        {
+          "id": "btn_050",
+          "type": "button",
+          "label": "Ask which tests are separate from the consultation",
+          "href": "https://wa.me/919044346292?text=Please%20list%20the%20current%20charges%20for%20an%20ECG%2C%20an%20echocardiogram%2C%20and%20any%20blood%20tests%20the%20cardiologist%20is%20likely%20to%20request%2C%20and%20say%20which%20of%20them%20are%20included%20in%20the%20consultation%20fee."
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 2,
+          "text": "5. Published Planning Ranges Are Not the Consultation Fee"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Budget for the visit and for anything the doctor may add. Do not treat the consultation fee as the whole cost, and do not treat a procedure range as the price of the visit."
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "| Expense | What to check |\n|---|---|\n| Initial consultation | The doctor’s current fee and how long the appointment is |\n| Follow-up | The repeat-visit rule and how long it stays valid |\n| ECG | Whether it is included or charged separately |\n| Echocardiogram | Whether one is expected, and which type |\n| Blood tests | Which tests, and the charge for each |\n| Rhythm monitoring | The device, the duration, and who reads the report |\n| Further imaging | Whether it is clinically needed |\n| Medicines | What is prescribed, and any monitoring |\n| Travel and accommodation | Relevant if you are coming from another city or country |"
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "**Consultation only.** You bring existing reports and no new service is added. The bill may be the consultation fee alone."
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "**Consultation plus basic tests.** The doctor may ask for an ECG, selected blood tests, or an echocardiogram. The total depends on which tests are indicated and on that hospital’s current charges. This site does not publish those test prices."
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "**Consultation followed by a procedure.** Rhythm monitoring, advanced imaging, or a procedure such as angiography is a further bill. The figures below are indicative planning ranges from the current cost pages. They are not a hospital quotation, and they are not the consultation fee."
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "| If the visit leads to this | India planning range | Typical stay on the cost page |\n|---|---|---|\n| [Coronary angiography](/costs/India/Cardiology/Coronary-Angiography) | US$400–US$1,200 | Day-care or overnight |\n| [Coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) | US$3,200–US$8,500 | 1–3 nights typical |\n| [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | US$5,500–US$14,000 | 7–14 nights, then nearby recovery |\n| [Heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) | US$7,000–US$18,000 | 8–16 nights |\n| [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) | US$18,000–US$42,000 | 3–7 nights typical |\n| [Pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) | US$3,500–US$9,000 | 1–3 nights |\n| [Atrial fibrillation ablation](/costs/India/Cardiology/Atrial-Fibrillation-Ablation) | US$6,500–US$16,000 | 1–3 nights |"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "The angioplasty page lists a US comparison of **US$25,000–US$70,000**. The CABG page lists **US$70,000–US$200,000**. The heart valve replacement page lists **US$80,000–US$220,000**. The TAVR page lists **US$50,000–US$150,000**. Each of those figures is not an India price. A city filter is the same listing, for example angioplasty in [Delhi NCR](/costs/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting) and [Mumbai](/costs/India/Mumbai/Cardiology/Coronary-Angioplasty-Stenting)."
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "Read the procedure guides separately from this visit: [angioplasty cost in India](/blogs/angioplasty-cost-in-india), [bypass surgery cost in India](/blogs/bypass-surgery-cost-in-india), [heart valve replacement cost in India](/blogs/heart-valve-replacement-cost-in-india), [pacemaker cost in India](/blogs/pacemaker-cost-in-india), and [cardiac ablation cost in India](/blogs/cardiac-ablation-cost-in-india). The treatment pages are [coronary angioplasty in India](/treatments/coronary-angioplasty-in-india), [CABG surgery in India](/treatments/cabg-surgery-in-india), [heart valve replacement in India](/treatments/heart-valve-replacement-in-india), and [TAVR in India](/treatments/tavr-in-india). How angioplasty and bypass differ is covered in [angioplasty vs bypass surgery in India](/blogs/angioplasty-vs-bypass-surgery-in-india). Hospital lists: [cardiology](/hospitals/India/Cardiology) and [cardiac surgery](/hospitals/India/Cardiac-Surgery)."
+        },
+        {
+          "id": "btn_060",
+          "type": "button",
+          "label": "Keep the visit fee and any procedure estimate on separate lines",
+          "href": "https://wa.me/919044346292?text=Please%20quote%20the%20cardiologist%20consultation%20on%20its%20own%20line.%20If%20a%20procedure%20is%20being%20considered%2C%20name%20it%20and%20list%20what%20the%20estimate%20includes%20and%20excludes.%20Do%20not%20fold%20the%20consultation%20into%20a%20procedure%20package."
+        },
+        {
+          "id": "h_061",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Fees by City Are Not City Averages"
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "People search for a cardiologist fee by city. Inside one city the spread is wide. A fee advertised for one doctor does not apply to the city."
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "**Delhi NCR.** Check that doctor’s current tariff, where the appointment is, and whether the tests can be done in the same place. If further treatment is possible, ask whether that hospital provides the service and the follow-up."
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "**Mumbai.** Ask whether the quote is a first visit, a repeat visit, or a particular doctor’s category. Independent clinics and hospital departments both exist. They do not share one Mumbai fee."
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "**Chennai.** Compare the individual fee and the cost of any test that may be added. Ask whether reading records you already have is included."
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "**Bengaluru.** Confirm the appointment type and whether the quoted amount includes an ECG or another service."
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "**Hyderabad.** Some hospitals publish online cardiology consultation fees. Use the listing to plan, then confirm the current fee for the selected doctor. The Yashoda example in the quick answer is one provider’s listing, not a Hyderabad average."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "**Other cities.** Add travel, access to the tests, and how follow-up will work if you are comparing cities. [Heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india) is about the stay after an operation, not about the consultation."
+        },
+        {
+          "id": "h_069",
+          "type": "heading",
+          "level": 2,
+          "text": "7. Government Hospitals and Private Hospitals"
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "Affordability depends on the institution, who is eligible, which services are needed, and the tariff that applies. There is no rule that every private hospital costs more than every public hospital, or the reverse."
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "Government hospitals may use an institutional schedule or a public scheme. Eligibility and charges differ. Demand can be high, so ask about the waiting time as well as the fee."
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Private hospitals may publish categories and online booking, or they may ask you to confirm the charge by phone. Compare the service, not the label on the building."
+        },
+        {
+          "id": "ul_073",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "The doctor’s consultation fee",
+            "How soon the appointment is",
+            "Tests that may be needed",
+            "Whether reports from another hospital can be reviewed",
+            "The follow-up charge",
+            "Registration or other administrative fees",
+            "Access to the right specialist if more care is needed"
+          ]
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "The lowest consultation fee is not the lowest total if the tests have to be done somewhere else. A higher fee does not by itself establish better care."
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Online Consultation and an In-Person Visit"
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "An online consultation can help when you want to discuss reports you already have, hear a preliminary view, review a treatment plan, ask questions before you travel, or arrange a follow-up after an in-person visit when the doctor says that is appropriate. The provider should say what information they need and whether the question can be answered remotely."
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "An in-person visit is needed when the doctor needs an examination, a new test, or an assessment for a procedure. Some symptoms need urgent in-person care rather than a video appointment."
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "**Do not use an online consultation as a substitute for emergency care.** Severe chest pain, serious difficulty breathing, fainting, or symptoms of a possible stroke need immediate medical attention."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 2,
+          "text": "9. How to Prepare and Avoid Duplicate Tests"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Bring the ECGs, echocardiograms, blood results, discharge summaries, and earlier cardiology notes you already have. If you have had angiography, surgery, ablation, or a device, bring those reports. A current medicine list, including supplements and medicines you take only when needed, saves time. Mention allergies. Do not stop a prescribed medicine before the visit unless the treating clinician tells you to."
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "Write down when symptoms started, how often they happen, how long they last, and what seems to trigger them. Mention breathlessness, dizziness, chest discomfort, or a drop in what you can do."
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "If a test is recent, ask whether it can be used before a new one is ordered. A repeat is sometimes necessary because the old report is out of date, incomplete, or the wrong test for the current question. Do not assume every repeat is unnecessary."
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "Before you attend, ask:"
+        },
+        {
+          "id": "ul_084",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "What is the consultation fee?",
+            "Is this a first visit or a follow-up?",
+            "How long does the appointment usually last?",
+            "Is report review included?",
+            "Is an ECG included or charged separately?",
+            "What is the follow-up fee?",
+            "Are there registration or other extra charges?"
+          ]
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 2,
+          "text": "10. What International Patients Should Confirm"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "Patients travelling from Africa, the Middle East, Central Asia, and elsewhere are budgeting for more than the consultation. The plan can include the appointment, tests, medicines, local transport, accommodation, and follow-up. If a procedure is recommended, the estimate changes. You can message +91 90443 46292 with the reports you already have. The fee still has to be confirmed by the hospital."
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "Send the cardiac reports, the medicine list, and discharge summaries before you travel. Ask whether the doctor can read them in advance and what is still missing."
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "Request the current fee for the specific cardiologist and the specific appointment. If you need an interpreter, ask whether language support is available and whether it is an extra charge."
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "The hospital can describe tests that are commonly considered for a question like yours. The treating doctor decides which tests you need. Ask for an estimate of those tests and whether any package includes them."
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "If a procedure or an admission is recommended, ask for a written plan and an itemised estimate. Ask what is included, what can be extra, and how the hospital handles a change in the plan."
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "Before you go home, ask how follow-up, results, and medicine reviews will work from your own country. Take copies of the notes, the reports, and the medicine instructions for your local doctor. [ICD implantation cost in India](/blogs/icd-implantation-cost-in-india) is one example of a device page that is separate from the consultation."
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "GAF Healthcare helps international patients explore cardiologists and hospitals in India, coordinate medical-record sharing, and arrange appointments and treatment-planning logistics. The treating clinician remains responsible for assessment, diagnosis, tests, and treatment. Consultation fees and treatment estimates are confirmed with the provider."
+        },
+        {
+          "id": "btn_093",
+          "type": "button",
+          "label": "Send the records before you travel for a cardiology visit",
+          "href": "https://wa.me/919044346292?text=I%20am%20planning%20a%20cardiology%20consultation%20in%20India.%20Please%20tell%20me%20which%20reports%20to%20send%20first%2C%20and%20ask%20the%20hospital%20for%20the%20current%20consultation%20fee%20and%20what%20it%20includes."
+        },
+        {
+          "id": "h_094",
+          "type": "heading",
+          "level": 2,
+          "text": "11. How to Compare Cardiologists Beyond the Fee"
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "Price matters. It is a weak way to choose a cardiologist on its own."
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "| Factor | What to evaluate |\n|---|---|\n| Relevant expertise | Does this doctor regularly manage the condition you have? |\n| Qualifications | Can the qualifications and registration be checked? |\n| Communication | Are the assessment and the options explained clearly? |\n| Diagnostic access | Can the necessary tests be arranged? |\n| Follow-up | Is there a clear way to review results and treatment? |\n| Cost transparency | Are the consultation and the extra charges explained before booking? |\n| Convenience | Does the place, or an online visit, actually fit? |\n| Coordination | Can notes be shared with your other doctors? |"
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "For a complex condition or a proposed procedure, relevant experience can matter more than the lowest consultation fee. The World Health Organization’s [cardiovascular disease fact sheet](https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds)) and the American Heart Association’s [heart-health topics](https://www.heart.org/en/health-topics) are general background. They are not a fee schedule and they are not a treatment plan for one person."
+        },
+        {
+          "id": "h_098",
+          "type": "heading",
+          "level": 2,
+          "text": "12. When Waiting to Compare Fees Is Unsafe"
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "A consultation fee is never a reason to delay emergency care."
+        },
+        {
+          "id": "ul_100",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Severe or persistent chest pain or pressure",
+            "Serious difficulty breathing",
+            "Fainting with concerning symptoms",
+            "Sudden weakness on one side of the body",
+            "Sudden difficulty speaking or facial drooping",
+            "Other symptoms that may be a heart attack, a stroke, or another serious cardiac problem"
+          ]
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "Do not wait for a routine appointment or an online visit if you may be having a medical emergency. For less urgent symptoms, such as recurring palpitations or a gradual drop in exercise tolerance, arrange a timely assessment. How soon that should be depends on the symptoms."
+        },
+        {
+          "id": "btn_102",
+          "type": "button",
+          "label": "Ask for a written fee before a routine visit, not during an emergency",
+          "href": "https://wa.me/919044346292?text=This%20is%20a%20routine%20cardiology%20appointment%2C%20not%20an%20emergency.%20Please%20obtain%20the%20hospital%E2%80%99s%20current%20consultation%20fee%20in%20writing%2C%20including%20what%20is%20excluded%2C%20before%20I%20book."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 2,
+          "text": "13. Frequently Asked Questions About Cardiologist Consultation Fees"
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does a cardiologist charge for one consultation in India?"
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "There is no fixed nationwide fee. The charge depends on the doctor, the hospital, the city, and whether the appointment is a first visit or a follow-up. This site does not publish a single fee for a cardiologist consultation. Check the current tariff with the hospital, and ask what the charge includes."
+        },
+        {
+          "id": "h_106",
+          "type": "heading",
+          "level": 3,
+          "text": "Are cardiologist consultation fees higher in private hospitals?"
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "Fees differ between private hospitals, public hospitals, and independent clinics. There is no rule that every private hospital charges more than every other provider. Compare the actual consultation fee and the services that come with it."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "Is the ECG included in the cardiologist consultation fee?"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Not always. Some appointments include a basic service and others bill the ECG separately. This site does not publish an ECG price. Confirm the inclusions before the appointment."
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the cost of an echocardiogram in India?"
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "It depends on the hospital, the type of study, and the current tariff. This site does not publish an echocardiogram price. Ask the diagnostic department for the current charge and whether the quote includes the report and the interpretation."
+        },
+        {
+          "id": "h_112",
+          "type": "heading",
+          "level": 3,
+          "text": "Are follow-up consultations cheaper than first consultations?"
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "Some hospitals have a separate follow-up fee, or a period during which a repeat visit is charged differently, often with the same doctor. Others do not. Check the policy for the doctor you are booking."
+        },
+        {
+          "id": "h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "Is an online cardiologist consultation cheaper?"
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "It can be, and it often is not. Online fees vary by doctor and by provider. Confirm the fee and whether the visit includes report review, a prescription, or a follow-up."
+        },
+        {
+          "id": "h_116",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I consult a cardiologist without an ECG?"
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "Yes. A consultation can start with the symptoms and the history. The doctor decides whether an ECG or another test is needed. An ECG is not automatic for every appointment."
+        },
+        {
+          "id": "h_118",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I bring my old reports to avoid repeating tests?"
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "Yes. Bring them and ask whether they are enough for this assessment. The doctor may still recommend a repeat if the earlier test is out of date, incomplete, or not the right test for the question."
+        },
+        {
+          "id": "h_120",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I ask before booking a cardiologist?"
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "Ask for the current consultation fee, whether it is a first visit or a follow-up, how long the follow-up window lasts, whether report review is included, and whether an ECG or any other charge is extra."
+        },
+        {
+          "id": "h_122",
+          "type": "heading",
+          "level": 3,
+          "text": "How much should international patients budget for a cardiology consultation in India?"
+        },
+        {
+          "id": "p_123",
+          "type": "paragraph",
+          "text": "The budget is the consultation fee plus any tests, medicines, travel, and accommodation. If further treatment is proposed, the figure changes. Obtain a provider-specific estimate. Do not use a general city average."
+        },
+        {
+          "id": "h_124",
+          "type": "heading",
+          "level": 3,
+          "text": "Does a more expensive cardiologist provide better treatment?"
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "Not necessarily. The fee does not establish clinical quality. Look at relevant qualifications, experience with your condition, how clearly the options are explained, access to the right tests, and how follow-up works."
+        },
+        {
+          "id": "h_126",
+          "type": "heading",
+          "level": 3,
+          "text": "Can GAF Healthcare help me find a cardiologist in India?"
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help international patients explore cardiologists and hospitals, share medical records, and arrange appointments. The consultation fee, the availability, and the clinical recommendations are confirmed with the provider. Message +91 90443 46292."
+        },
+        {
+          "id": "h_128",
+          "type": "heading",
+          "level": 3,
+          "text": "Are the Yashoda and Hinduja figures a national average?"
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "No. Yashoda Hospitals lists online cardiology consultations for selected doctors at approximately ₹1,200–₹1,500. P. D. Hinduja Hospital, Khar, lists general outpatient categories of ₹2,700 or ₹3,800 for a first visit and a repeat after 30 days. Those are examples from specific providers, not a national average, and the Hinduja categories are not a confirmed cardiology-only fee."
+        },
+        {
+          "id": "h_130",
+          "type": "heading",
+          "level": 3,
+          "text": "If the visit leads to angiography, angioplasty, or bypass, what ranges are published?"
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "Those are procedure ranges, not the consultation fee. The cost pages list coronary angiography at US$400–US$1,200, typically day-care or overnight; coronary angioplasty and stenting at US$3,200–US$8,500, with 1–3 nights typical; and CABG at US$5,500–US$14,000, with 7–14 nights, then nearby recovery. They are indicative planning ranges, not a quotation."
+        },
+        {
+          "id": "h_132",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a US comparison band an India price?"
+        },
+        {
+          "id": "p_133",
+          "type": "paragraph",
+          "text": "No. The angioplasty US comparison of US$25,000–US$70,000 and the CABG US comparison of US$70,000–US$200,000 are not an India price. Each of those figures is not an India price. Use the India planning range, then ask the hospital for a written estimate."
+        },
+        {
+          "id": "h_134",
+          "type": "heading",
+          "level": 3,
+          "text": "Does a city page on this site show a different consultation fee?"
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "No. This site does not publish a cardiologist consultation fee for Delhi, Mumbai, Chennai, Bengaluru, Hyderabad, or any other city. A city filter on a procedure cost page is the same procedure listing, not a local consultation tariff."
+        },
+        {
+          "id": "h_136",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion: Confirm the Fee Before You Book"
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "Cardiologist consultation fees in India vary by doctor, hospital, city, and appointment type. The visit is only one part of the expense when tests or a procedure are added. Confirm the current fee, ask what is included, check the follow-up rule, and bring the records you already have. If a procedure is recommended, ask for an itemised estimate and for the clinical reason."
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "[Explore cardiologists in India](/doctors/India/Cardiology)."
+        },
+        {
+          "id": "btn_139",
+          "type": "button",
+          "label": "Confirm the consultation fee with the hospital before you travel",
+          "href": "https://wa.me/919044346292?text=Please%20confirm%20the%20current%20cardiologist%20consultation%20fee%20in%20writing%2C%20what%20it%20includes%2C%20and%20the%20follow-up%20rule%2C%20before%20an%20appointment%20is%20booked%20in%20India."
+        },
+        {
+          "id": "h_140",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "ol_141",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Yashoda Hospitals — [Online cardiology consultation](https://www.yashodahospitals.com/online-doctor-consultation/cardiology/)",
+            "P. D. Hinduja Hospital, Khar — [Outpatient services](https://khar.hindujahospital.com/out-patient/)",
+            "Sir H. N. Reliance Foundation Hospital — [Billing and charges](https://www.rfhospital.org/patients-visitors/billing-charges)",
+            "Tata Memorial Centre — [Schedule of charges](https://actrec.gov.in/sites/default/files/Schedule/New%20Schedule%20of%20Charges.pdf)",
+            "National Health Systems Resource Centre — [Charter of patient rights](https://qps.nhsrcindia.org/sites/default/files/2022-01/charter_patient_rights_by_NHRC_2019.pdf)",
+            "Ministry of Health and Family Welfare — [CGHS rate revision](https://www.pib.gov.in/PressReleasePage.aspx?PRID=1915950)",
+            "Dr. Ram Manohar Lohia Hospital — [Packages and rates](https://rmlh.mohfw.gov.in/Contents.aspx?langid=1&lev=2&lid=3618&lsid=2565&pid=1234)",
+            "World Health Organization — [Cardiovascular diseases](https://www.who.int/news-room/fact-sheets/detail/cardiovascular-diseases-(cvds))",
+            "American Heart Association — [Heart-health topics](https://www.heart.org/en/health-topics)",
+            "National Medical Commission — [National Medical Register](https://nmr.nmc.org.in/)"
+          ]
+        },
+        {
+          "id": "p_142",
+          "type": "paragraph",
+          "text": "This article is for general education. It has not been signed by a named cardiologist. Consultation fees and hospital tariffs change and should be confirmed with the provider. The Yashoda and Hinduja examples are not a national average and are not a GAF Healthcare quotation. Investigations and treatment follow individual clinical needs. Seek emergency care for severe chest pain, serious difficulty breathing, fainting with concerning symptoms, or signs of a possible stroke. Do not delay urgent assessment to compare fees."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Cardiologists in India",
+          "href": "/doctors/India/Cardiology"
+        },
+        {
+          "label": "What to bring to a cardiologist appointment",
+          "href": "/blogs/what-to-bring-to-a-cardiologist-appointment"
+        },
+        {
+          "label": "Second opinion from a cardiologist in India",
+          "href": "/blogs/second-opinion-from-a-cardiologist-in-india"
+        },
+        {
+          "label": "Coronary angiography cost",
+          "href": "/costs/India/Cardiology/Coronary-Angiography"
+        },
+        {
+          "label": "Angioplasty cost in India",
+          "href": "/blogs/angioplasty-cost-in-india"
+        },
+        {
+          "label": "Cardiology hospitals in India",
+          "href": "/hospitals/India/Cardiology"
+        }
+      ]
+    },
     {
       "id": "art_second_opinion_from_a_cardiologist_in_india",
       "slug": "second-opinion-from-a-cardiologist-in-india",
