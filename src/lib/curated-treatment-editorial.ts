@@ -71,3 +71,115 @@ export function treatmentEditorialBodyForDisplay(
   }
   return body;
 }
+
+export type TreatmentQuickAnswerItem = {
+  question: string;
+  answer: string;
+};
+
+export type TreatmentQuickAnswer = {
+  heading: string;
+  items: TreatmentQuickAnswerItem[];
+};
+
+export function splitTreatmentQuickAnswer(body: string): {
+  before: string;
+  quickAnswer: TreatmentQuickAnswer | null;
+  after: string;
+} {
+  const match = body.match(
+    /(^|\n)##\s+(Quick Answer[^\n]*)\n+([\s\S]*?)(?=\n##\s+)/,
+  );
+  if (!match || match.index === undefined) {
+    return { before: body, quickAnswer: null, after: "" };
+  }
+  const heading = match[2].trim();
+  const section = match[3].trim();
+  const items: TreatmentQuickAnswerItem[] = [];
+  const itemRe = /\*\*([^*]+)\*\*\s*\n+([\s\S]*?)(?=\n\*\*|$)/g;
+  for (const itemMatch of section.matchAll(itemRe)) {
+    items.push({
+      question: itemMatch[1].trim(),
+      answer: itemMatch[2].trim(),
+    });
+  }
+  if (items.length === 0) {
+    return { before: body, quickAnswer: null, after: "" };
+  }
+  const before = body.slice(0, match.index).trim();
+  const after = body.slice(match.index + match[0].length).trim();
+  return { before, quickAnswer: { heading, items }, after };
+}
+
+export function treatmentBodyLocation(...parts: Array<string | undefined>) {
+  const text = parts.filter(Boolean).join(" ");
+  if (
+    /leukemia|leukaemia|thalassemia|thalassaemia|sickle cell|sickle-cell|myeloma|aplastic|fanconi|pancytopenia|bone marrow|hematopoietic|\bhsct\b|\bbmt\b/i.test(
+      text,
+    )
+  ) {
+    return "Bone Marrow";
+  }
+  if (/lymphoma|hodgkin|lymphatic|lymph node/i.test(text)) {
+    return "Lymphatic System";
+  }
+  if (/breast/i.test(text)) return "Breast";
+  if (/penile|penis|androlog/i.test(text)) return "Penis";
+  if (/nephrectomy|kidney cancer|renal cell|renal tumou?r|\brcc\b/i.test(text)) {
+    return "Kidney";
+  }
+  if (/prostate|greenlight|photoselective vapori|\bpvp\b|\bholep\b|\bturp\b|benign prostatic|\bbph\b|\bbpo\b/i.test(text)) {
+    return "Prostate";
+  }
+  if (/colon|colorectal/i.test(text)) return "Colon";
+  if (/bile duct|cholangiocarcinoma|klatskin|perihilar/i.test(text)) return "Bile Duct";
+  if (/pancreas|pancreatic|whipple/i.test(text)) return "Pancreas";
+  if (/hipec|periton/i.test(text)) return "Peritoneum";
+  if (/cervix|cervical/i.test(text)) return "Cervix";
+  if (/ovary|ovarian/i.test(text)) return "Ovary";
+  if (/acl|anterior cruciate/i.test(text)) return "Knee";
+  if (/knee/i.test(text)) return "Knee";
+  if (/hip/i.test(text)) return "Hip";
+  if (/shoulder|rotator cuff/i.test(text)) return "Shoulder";
+  if (/blepharoplasty|eyelid|oculoplastic/i.test(text)) {
+    return "Eyelid";
+  }
+  if (/mommy makeover|tummy tuck|abdominoplasty|diastasis recti/i.test(text)) {
+    return "Abdomen";
+  }
+  if (/liposuction|lipoplasty|lipectomy|body contour/i.test(text)) {
+    return "Subcutaneous Tissue";
+  }
+  if (/rhinoplasty|septorhinoplasty|septoplasty|\bnose\b|nasal/i.test(text)) {
+    return "Nose";
+  }
+  if (/limb lengthen|stature lengthen|distraction osteogenesis|leg.length discrepancy/i.test(text)) {
+    return "Lower Limb";
+  }
+  if (/tendon/i.test(text)) return "Tendon";
+  if (
+    /gastric bypass|bariatric|roux-en-y|sleeve gastrectomy|oagb|metabolic surgery|gastric balloon|endoscopic sleeve/i.test(
+      text,
+    )
+  ) {
+    return "Stomach";
+  }
+  if (
+    /coronary|percutaneous coronary|\bpci\b|\bcabg\b|bypass graft|heart bypass|bypass surgery|heart valve|valve replacement|mitral valve|tricuspid|pulmonary valve|pacemaker|bradycardia|heart block|\bicd\b|leadless pacing|resynchronization|tavr|tavi|aortic stenosis|aortic valve|valvuloplasty|\bbav\b|aortic dissection|\btevar\b|aortic aneurysm|aortic root|bentall|frozen elephant|ventricular septal|\bvsd\b|atrial septal|\basd\b|congenital heart|coarctation|\bcoa\b|\bpda\b|patent ductus|arterial switch|jatene|\bd-tga\b|transposition of the great|\bfontan\b|\bglenn\b|tetralogy|fallot|\btof\b|single.ventricle|cavopulmonary|\blvad\b|left ventricular assist|mechanical circulatory|destination therapy/i.test(
+      text,
+    )
+  ) {
+    return "Heart";
+  }
+  if (
+    /craniotomy|brain tumor|glioma|meningioma|aneurysm clipping|endoscopic brain|neuroendoscop|pituitary|hydrocephalus|ventriculostomy|vp shunt/i.test(
+      text,
+    )
+  ) {
+    return "Brain";
+  }
+  if (/spine tumor|spinal tumor|spinal cord tumor/i.test(text)) {
+    return "Spine";
+  }
+  return undefined;
+}

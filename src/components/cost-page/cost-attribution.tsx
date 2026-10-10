@@ -1,5 +1,7 @@
 "use client";
 
+import "@/styles/cost-page.css";
+
 import { useState } from "react";
 import { COST_ATTRIBUTION, type CostAttributionPerson } from "@/data/cost-attribution";
 

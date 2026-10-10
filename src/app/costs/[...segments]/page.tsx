@@ -1,3 +1,4 @@
+import "@/styles/cost-page.css";
 import { notFound } from "next/navigation";
 import { CostSheet, costSheetMetadata } from "@/app/costs/cost-sheet";
 import { CostsDirectory, costsDirectoryMetadata } from "@/app/costs/directory";

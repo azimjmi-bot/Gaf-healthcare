@@ -151,6 +151,10 @@ export const UI: TranslationFields = {
   "home.searchGoShort": "ابحث عن أخصائيين",
   "blogs.empty": "لا توجد مقالات منشورة بعد.",
   "blogs.all": "كل المقالات",
+  "blogs.searchLabel": "ابحث في المدونة",
+  "blogs.searchPlaceholder": "ابحث بعنوان المقال أو كلمة مفتاحية…",
+  "blogs.results": "مقال متاح",
+  "blogs.noResults": "لا توجد مقالات منشورة تطابق هذه الفلاتر.",
   "consult.eyebrow": "الاستقبال",
   "consult.title": "اثنتا عشرة دقيقة. ثم نتولى القراءة الثقيلة.",
   "consult.lede":
@@ -310,6 +314,11 @@ export const UI: TranslationFields = {
   "dir.hospitals.indiaLede":
     "{count} حرمًا شريكًا في {place}، مصنّفة حسب البلد والمدينة والتخصص والإجراء، فتصل إلى الحرم المناسب من أي من هذه المداخل. بطاقة واحدة لكل بيت — JCI وNABH على الملف، وفريق مسمّى حيث وُجد.",
   "hospital.campusIllustration": "{place} — رسم توضيحي للحرم",
+  "wa.floatTitle": "الدردشة على واتساب",
+  "wa.floatStatus": "متصل الآن",
+  "wa.floatSla": "الرد خلال نحو 15 دقيقة",
+  "wa.floatAria": "الدردشة مع GAF Healthcare على واتساب",
+  "wa.floatMessage": "مرحبًا — أرغب في المساعدة لتخطيط العلاج في الهند.",
   "a11y.home": "GAF Healthcare — الصفحة الرئيسية",
   "a11y.close": "إغلاق",
   "a11y.breadcrumb": "مسار التنقل",

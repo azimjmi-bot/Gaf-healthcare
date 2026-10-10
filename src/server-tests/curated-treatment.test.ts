@@ -1,20 +1,30 @@
 import assert from "node:assert/strict";
+import { readFileSync } from "node:fs";
 import test from "node:test";
 import {
+  applyCuratedTreatmentPatch,
   blankCuratedTreatment,
+  loadCuratedTreatments,
   normalizeCuratedTreatment,
   publishedCuratedTreatments,
   uniqueCuratedTreatmentSlug,
   validateTreatmentForSave,
 } from "@/lib/cms/curated-treatment-store";
-import { blankTreatmentTranslation } from "@/lib/cms/curated-treatment-types";
+import {
+  blankTreatmentTranslation,
+  type CuratedTreatmentStore,
+} from "@/lib/cms/curated-treatment-types";
 import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
 import { LOCALES } from "@/lib/i18n/languages";
+import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
 import {
+  splitTreatmentQuickAnswer,
+  treatmentBodyLocation,
   treatmentEditorialBody,
   treatmentEditorialBodyForDisplay,
 } from "@/lib/curated-treatment-editorial";
+import { getDoctor } from "@/lib/doctors";
 
 test("a curated Treatment stores shared relationships once", () => {
   const treatment = blankCuratedTreatment({ treatments: [] });
@@ -62,6 +72,8120 @@ test("publishing rejects incomplete core and language records", () => {
     editorialBody: "## Treatment overview\n\nA detailed overview for patients.",
   };
   assert.deepEqual(validateTreatmentForSave(treatment), []);
+});
+
+test("the published breast cancer page is complete and internally linked", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "breast-cancer-treatment-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Lumpectomy/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Mastectomy/);
+  assert.match(body, /\/uploads\/treatments\/breast-cancer-local-vs-systemic\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-cancer-surgery-options\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-cancer-treatment-sequence\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-cancer-international-pathway\.webp/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  assert.equal(publishedCuratedTreatments("ar").length, 0);
+});
+
+test("the published prostate cancer page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "prostate-cancer-treatment-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$1,000–\$6,000\+/);
+  assert.match(body, /\$6,500–\$14,500/);
+  assert.match(body, /\$1,000–\$4,500/);
+  assert.match(body, /\/blogs\/prostate-cancer-treatment-options-india/);
+  assert.match(body, /\/blogs\/prostate-cancer-treatment-without-surgery/);
+  assert.match(body, /\/blogs\/robotic-prostatectomy-in-india/);
+  assert.match(body, /\/blogs\/radiation-therapy-for-prostate-cancer/);
+  assert.match(body, /\/blogs\/brachytherapy-for-prostate-cancer/);
+  assert.match(body, /\/blogs\/prostate-cancer-diet/);
+  assert.match(body, /\/blogs\/prostate-cancer-recurrence-after-surgery/);
+  assert.match(body, /\/blogs\/active-surveillance-prostate-cancer/);
+  assert.match(body, /\/blogs\/prostate-cancer-diagnosis-psa-mri-biopsy-psma-pet/);
+  assert.match(body, /\/blogs\/prostate-cancer-symptoms/);
+  assert.match(body, /\/blogs\/gleason-score-grade-group-prostate-cancer/);
+  assert.match(body, /\/blogs\/prostate-cancer-stages-1-to-4/);
+  assert.match(body, /\/blogs\/lutetium-177-psma-therapy-in-india/);
+  assert.match(body, /\/blogs\/psma-pet-scan-for-prostate-cancer/);
+  assert.match(body, /\/blogs\/hormone-therapy-for-prostate-cancer/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Radical-Prostatectomy/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Radical-Prostatectomy/);
+  assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Radical-Prostatectomy/);
+  assert.match(body, /\/hospitals\/India\/Bengaluru\/Surgical-Oncology/);
+  assert.match(body, /\/uploads\/treatments\/prostate-anatomy-male-pelvis\.webp/);
+  assert.match(body, /\/uploads\/treatments\/prostate-cancer-staging-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/prostate-treatment-pathways-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/prostate-radiation-anatomy\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.equal(qa.quickAnswer?.items.length, 5);
+  assert.match(qa.quickAnswer?.items[3]?.answer ?? "", /\$7,000–\$18,000/);
+  assert.equal(
+    treatmentBodyLocation(treatment.category, treatment.subspecialty, treatment.translations.en!.name),
+    "Prostate",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/prostate-cancer-treatment-in-india"),
+  );
+});
+
+test("the published colon cancer page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "colon-cancer-treatment-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /\$15,000–\$45,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: Colon Cancer Treatment in India/);
+  assert.match(body, /Stage 0:/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Colectomy/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Colectomy/);
+  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Colorectal-Cancer-Surgery/);
+  assert.match(body, /\/costs\/India\/Gastroenterology\/Colonoscopy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Immunotherapy/);
+  assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Colectomy/);
+  assert.match(body, /\/hospitals\/India\/Bengaluru\/Surgical-Oncology/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Surgical-Oncology/Colectomy",
+    "/doctors/India/Mumbai/Surgical-Oncology/Colectomy",
+    "/hospitals/India/Bengaluru/Surgical-Oncology",
+    "/costs/India/Delhi-NCR/Surgical-Oncology/Colectomy",
+    "/costs/India/Surgical-Gastroenterology/Colorectal-Cancer-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-surgery-in-india/);
+  assert.match(body, /\/blogs\/stage-1-colon-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/stage-2-colon-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/stage-3-colon-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/stage-4-colon-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-chemotherapy-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-immunotherapy-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-targeted-therapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/colon-anatomy-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/colon-staging-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/colon-surgery-clinic\.webp/);
+  assert.match(body, /\/uploads\/treatments\/colon-liver-mets-body\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 1);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /stage and molecular/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /Stage 0:/);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /Stage IV:/);
+  assert.equal(
+    treatmentBodyLocation(treatment.category, treatment.subspecialty, treatment.translations.en!.name),
+    "Colon",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/colon-cancer-treatment-in-india"),
+  );
+});
+
+test("the published pancreatic cancer page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "pancreatic-cancer-treatment-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$14,000–\$32,000/);
+  assert.match(body, /\$9,000–\$22,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /\$15,000–\$45,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: Pancreatic Cancer Treatment in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Whipple-Procedure/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Whipple-Procedure/);
+  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Whipple-Procedure-\(Pancreaticoduodenectomy\)/);
+  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Distal-Pancreatectomy/);
+  assert.match(body, /\/costs\/India\/Gastroenterology\/Endoscopic-Ultrasound-\(EUS\)/);
+  assert.match(body, /\/costs\/India\/Gastroenterology\/ERCP/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
+  assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Whipple-Procedure/);
+  assert.match(body, /\/hospitals\/India\/Bengaluru\/Surgical-Oncology/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Surgical-Oncology/Whipple-Procedure",
+    "/doctors/India/Mumbai/Surgical-Oncology/Whipple-Procedure",
+    "/hospitals/India/Bengaluru/Surgical-Oncology",
+    "/costs/India/Delhi-NCR/Surgical-Oncology/Whipple-Procedure",
+    "/costs/India/Surgical-Gastroenterology/Whipple-Procedure-(Pancreaticoduodenectomy)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/whipple-surgery-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-immunotherapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/pancreas-anatomy-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pancreas-resectability-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pancreas-clinic\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pancreas-liver-mets-body\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.equal(qa.quickAnswer?.items.length, 5);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is pancreatic cancer treatment in India/i);
+  assert.match(qa.quickAnswer?.items[2]?.answer ?? "", /\$14,000–\$32,000/);
+  assert.equal(
+    treatmentBodyLocation(treatment.category, treatment.subspecialty, treatment.translations.en!.name),
+    "Pancreas",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/pancreatic-cancer-treatment-in-india"),
+  );
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/pancreatic-cancer-treatment-in-india/,
+  );
+});
+
+test("the published Whipple surgery page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "whipple-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$14,000–\$32,000/);
+  assert.match(body, /\$9,000–\$22,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /article-quick-answer|Quick Answer: Whipple Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Whipple-Procedure/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Whipple-Procedure/);
+  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Whipple-Procedure-\(Pancreaticoduodenectomy\)/);
+  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Distal-Pancreatectomy/);
+  assert.match(body, /\/costs\/India\/Gastroenterology\/Endoscopic-Ultrasound-\(EUS\)/);
+  assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Whipple-Procedure/);
+  assert.match(body, /\/hospitals\/India\/Bengaluru\/Surgical-Oncology/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Surgical-Oncology/Whipple-Procedure",
+    "/doctors/India/Mumbai/Surgical-Oncology/Whipple-Procedure",
+    "/hospitals/India/Bengaluru/Surgical-Oncology",
+    "/costs/India/Delhi-NCR/Surgical-Oncology/Whipple-Procedure",
+    "/costs/India/Surgical-Gastroenterology/Whipple-Procedure-(Pancreaticoduodenectomy)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.match(body, /\/treatments\/pancreatic-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/bile-duct-cancer-surgery-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-immunotherapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/whipple-anatomy-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/whipple-resection-organs\.webp/);
+  assert.match(body, /\/uploads\/treatments\/whipple-reconstruction\.webp/);
+  assert.match(body, /\/uploads\/treatments\/whipple-clinic\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.equal(qa.quickAnswer?.items.length, 4);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is Whipple surgery/i);
+  assert.match(qa.quickAnswer?.items[3]?.answer ?? "", /\$14,000–\$32,000/);
+  assert.equal(
+    treatmentBodyLocation(treatment.category, treatment.subspecialty, treatment.translations.en!.name),
+    "Pancreas",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/whipple-surgery-in-india"));
+});
+
+test("the published bile duct cancer surgery page uses GAF USD ranges and HPB GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "bile-duct-cancer-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$10,000–\$26,000/);
+  assert.match(body, /\$14,000–\$32,000/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$28,000–\$55,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /\$45,000–\$110,000/);
+  assert.match(body, /8–16 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Bile Duct Cancer Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Bile-Duct-Cancer-Surgery/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Whipple-Procedure/);
+  assert.match(body, /\/treatments\/whipple-surgery-in-india/);
+  assert.match(body, /\/treatments\/pancreatic-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/bile-duct-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bile-duct-operations\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bile-duct-resectability\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bile-duct-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Surgical-Oncology/Bile-Duct-Cancer-Surgery",
+    "/doctors/India/Mumbai/Surgical-Oncology/Bile-Duct-Cancer-Surgery",
+    "/doctors/India/Bengaluru/Surgical-Oncology/Bile-Duct-Cancer-Surgery",
+    "/doctors/India/Chennai/Surgical-Oncology/Bile-Duct-Cancer-Surgery",
+    "/doctors/India/Hyderabad/Surgical-Oncology/Bile-Duct-Cancer-Surgery",
+    "/hospitals/India/Delhi-NCR/Surgical-Oncology",
+    "/hospitals/India/Mumbai/Surgical-Oncology",
+    "/hospitals/India/Bengaluru/Surgical-Oncology",
+    "/costs/India/Delhi-NCR/Surgical-Gastroenterology/Bile-Duct-Cancer-Surgery",
+    "/costs/India/Mumbai/Surgical-Gastroenterology/Bile-Duct-Cancer-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 7);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /Bile duct cancer surgery in India/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /cholangiocarcinoma can potentially be removed completely/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Bile Duct",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/bile-duct-cancer-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/surgical/);
+  assert.doesNotMatch(body, /\/treatments\/gallbladder-cancer-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/liver-transplant-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/cholangiocarcinoma-surgery-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/bile-duct-cancer-surgery-in-india/);
+  const whipple = store.treatments.find((row) => row.slug === "whipple-surgery-in-india");
+  const pancreas = store.treatments.find((row) => row.slug === "pancreatic-cancer-treatment-in-india");
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  assert.match(whipple?.translations.en?.editorialBody ?? "", /\/treatments\/bile-duct-cancer-surgery-in-india/);
+  assert.match(pancreas?.translations.en?.editorialBody ?? "", /\/treatments\/bile-duct-cancer-surgery-in-india/);
+  assert.match(colon?.translations.en?.editorialBody ?? "", /\/treatments\/bile-duct-cancer-surgery-in-india/);
+});
+
+test("the published gastric bypass page uses GAF USD ranges and bariatric GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "gastric-bypass-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$6,000–\$11,000/);
+  assert.match(body, /\$4,500–\$8,500/);
+  assert.match(body, /\$5,500–\$10,000/);
+  assert.match(body, /\$6,000–\$12,000/);
+  assert.match(body, /\$2,000–\$4,500/);
+  assert.match(body, /\$4,500–\$9,000/);
+  assert.match(body, /\$20,000–\$38,000/);
+  assert.match(body, /3–6 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Gastric Bypass Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /This page is the named gastric-bypass product/);
+  assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Gastric-Bypass-\(Roux-en-Y\)/);
+  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Gastric-Bypass-Surgery/);
+  assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Sleeve-Gastrectomy/);
+  assert.match(body, /\/treatments\/liposuction-in-india/);
+  assert.match(body, /\/treatments\/mommy-makeover-in-india/);
+  assert.match(body, /\/uploads\/treatments\/gastric-bypass-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gastric-bypass-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gastric-bypass-diabetes\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gastric-bypass-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+    "/doctors/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+    "/doctors/India/Bengaluru/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+    "/doctors/India/Chennai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+    "/doctors/India/Hyderabad/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+    "/hospitals/India/Delhi-NCR/Bariatric-Surgery",
+    "/hospitals/India/Mumbai/Bariatric-Surgery",
+    "/hospitals/India/Bengaluru/Bariatric-Surgery",
+    "/costs/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+    "/costs/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 7);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is gastric bypass/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /small stomach pouch/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Stomach",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/gastric-bypass-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.match(body, /\/treatments\/sleeve-gastrectomy-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/bariatric-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/mini-gastric-bypass-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/gastric-bypass-surgery-in-india/);
+  const lipo = store.treatments.find((row) => row.slug === "liposuction-in-india");
+  const mommy = store.treatments.find((row) => row.slug === "mommy-makeover-in-india");
+  assert.match(lipo?.translations.en?.editorialBody ?? "", /\/treatments\/gastric-bypass-surgery-in-india/);
+  assert.match(mommy?.translations.en?.editorialBody ?? "", /\/treatments\/gastric-bypass-surgery-in-india/);
+  assert.ok(lipo?.relatedTreatmentSlugs?.includes("gastric-bypass-surgery-in-india"));
+  assert.ok(mommy?.relatedTreatmentSlugs?.includes("gastric-bypass-surgery-in-india"));
+});
+
+test("the published sleeve gastrectomy page uses GAF USD ranges and bariatric GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "sleeve-gastrectomy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$4,500–\$8,500/);
+  assert.match(body, /\$6,000–\$11,000/);
+  assert.match(body, /\$5,500–\$10,000/);
+  assert.match(body, /\$6,000–\$12,000/);
+  assert.match(body, /\$2,000–\$4,500/);
+  assert.match(body, /\$4,500–\$9,000/);
+  assert.match(body, /\$7,000–\$14,000/);
+  assert.match(body, /\$15,000–\$28,000/);
+  assert.match(body, /2–5 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Sleeve Gastrectomy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /This page is the named sleeve-gastrectomy product/);
+  assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Sleeve-Gastrectomy/);
+  assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Gastric-Bypass-\(Roux-en-Y\)/);
+  assert.match(body, /\/treatments\/gastric-bypass-surgery-in-india/);
+  assert.match(body, /\/treatments\/liposuction-in-india/);
+  assert.match(body, /\/treatments\/mommy-makeover-in-india/);
+  assert.match(body, /\/uploads\/treatments\/sleeve-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sleeve-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sleeve-reflux\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sleeve-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Bariatric-Surgery/Sleeve-Gastrectomy",
+    "/doctors/India/Mumbai/Bariatric-Surgery/Sleeve-Gastrectomy",
+    "/doctors/India/Bengaluru/Bariatric-Surgery/Sleeve-Gastrectomy",
+    "/doctors/India/Chennai/Bariatric-Surgery/Sleeve-Gastrectomy",
+    "/doctors/India/Hyderabad/Bariatric-Surgery/Sleeve-Gastrectomy",
+    "/hospitals/India/Delhi-NCR/Bariatric-Surgery",
+    "/hospitals/India/Mumbai/Bariatric-Surgery",
+    "/hospitals/India/Bengaluru/Bariatric-Surgery",
+    "/costs/India/Delhi-NCR/Bariatric-Surgery/Sleeve-Gastrectomy",
+    "/costs/India/Mumbai/Bariatric-Surgery/Sleeve-Gastrectomy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 7);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /Sleeve gastrectomy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /70–80%/);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Stomach",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/sleeve-gastrectomy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/bariatric-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/mini-gastric-bypass-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/gastric-balloon-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/endoscopic-sleeve-gastroplasty-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore|Jaipur)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore|Jaipur)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore|Jaipur)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/sleeve-gastrectomy-in-india/);
+  const bypass = store.treatments.find((row) => row.slug === "gastric-bypass-surgery-in-india");
+  const lipo = store.treatments.find((row) => row.slug === "liposuction-in-india");
+  const mommy = store.treatments.find((row) => row.slug === "mommy-makeover-in-india");
+  assert.match(bypass?.translations.en?.editorialBody ?? "", /\/treatments\/sleeve-gastrectomy-in-india/);
+  assert.match(lipo?.translations.en?.editorialBody ?? "", /\/treatments\/sleeve-gastrectomy-in-india/);
+  assert.match(mommy?.translations.en?.editorialBody ?? "", /\/treatments\/sleeve-gastrectomy-in-india/);
+  assert.ok(bypass?.relatedTreatmentSlugs?.includes("sleeve-gastrectomy-in-india"));
+  assert.ok(lipo?.relatedTreatmentSlugs?.includes("sleeve-gastrectomy-in-india"));
+  assert.ok(mommy?.relatedTreatmentSlugs?.includes("sleeve-gastrectomy-in-india"));
+  assert.doesNotMatch(bypass?.translations.en?.editorialBody ?? "", /no live GAF sleeve-gastrectomy treatment page/i);
+});
+
+test("the published radical prostatectomy page uses GAF USD ranges and uro-oncology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "radical-prostatectomy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$30,000–\$70,000/);
+  assert.match(body, /\$1,000–\$6,000\+/);
+  assert.match(body, /\$6,500–\$14,500/);
+  assert.match(body, /\$1,000–\$4,500/);
+  assert.match(body, /3–7 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Radical Prostatectomy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Radical-Prostatectomy/);
+  assert.match(body, /\/doctors\/India\/Urology\/Radical-Prostatectomy/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/robotic-prostatectomy-in-india/);
+  assert.match(body, /\/blogs\/active-surveillance-prostate-cancer/);
+  assert.match(body, /\/blogs\/radiation-therapy-for-prostate-cancer/);
+  assert.match(body, /\/uploads\/treatments\/rp-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/rp-approaches\.webp/);
+  assert.match(body, /\/uploads\/treatments\/rp-nerve\.webp/);
+  assert.match(body, /\/uploads\/treatments\/rp-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Surgical-Oncology/Radical-Prostatectomy",
+    "/doctors/India/Mumbai/Surgical-Oncology/Radical-Prostatectomy",
+    "/doctors/India/Bengaluru/Surgical-Oncology/Radical-Prostatectomy",
+    "/doctors/India/Chennai/Surgical-Oncology/Radical-Prostatectomy",
+    "/doctors/India/Hyderabad/Surgical-Oncology/Radical-Prostatectomy",
+    "/hospitals/India/Delhi-NCR/Surgical-Oncology",
+    "/hospitals/India/Mumbai/Surgical-Oncology",
+    "/hospitals/India/Bengaluru/Surgical-Oncology",
+    "/costs/India/Delhi-NCR/Surgical-Oncology/Radical-Prostatectomy",
+    "/costs/India/Mumbai/Surgical-Oncology/Radical-Prostatectomy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is radical prostatectomy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /entire prostate gland/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Prostate",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/radical-prostatectomy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.match(body, /\/treatments\/turp-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/urology\/turp/);
+  assert.match(body, /\/treatments\/holep-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/robotic-prostatectomy-in-india/);
+  assert.match(body, /\/treatments\/penile-implantation-in-india/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/radical-prostatectomy-in-india/);
+  const prostate = store.treatments.find((row) => row.slug === "prostate-cancer-treatment-in-india");
+  assert.match(
+    prostate?.translations.en?.editorialBody ?? "",
+    /\/treatments\/radical-prostatectomy-in-india/,
+  );
+  assert.ok(prostate?.relatedTreatmentSlugs?.includes("radical-prostatectomy-in-india"));
+  assert.ok(treatment.relatedTreatmentSlugs?.includes("penile-implantation-in-india"));
+});
+
+test("the published penile implantation page uses GAF USD ranges and urology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "penile-implantation-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$5,000–\$12,000/);
+  assert.match(body, /\$18,000–\$40,000/);
+  assert.match(body, /\$1,500–\$4,200/);
+  assert.match(body, /\$3,500–\$9,000/);
+  assert.match(body, /\$2,500–\$6,200/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Penile Implantation in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Urology\/Penile-Implant/);
+  assert.match(body, /\/doctors\/India\/Urology\/Penile-Implant/);
+  assert.match(body, /\/treatments\/radical-prostatectomy-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/robotic-prostatectomy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/pi-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pi-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pi-threepiece\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pi-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Urology/Penile-Implant",
+    "/doctors/India/Mumbai/Urology/Penile-Implant",
+    "/doctors/India/Bengaluru/Urology/Penile-Implant",
+    "/doctors/India/Chennai/Urology/Penile-Implant",
+    "/doctors/India/Hyderabad/Urology/Penile-Implant",
+    "/hospitals/India/Delhi-NCR/Urology",
+    "/hospitals/India/Mumbai/Urology",
+    "/hospitals/India/Bengaluru/Urology",
+    "/costs/India/Delhi-NCR/Urology/Penile-Implant",
+    "/costs/India/Mumbai/Urology/Penile-Implant",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is penile implantation/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /corporal chambers|prosthesis/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Penis",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/penile-implantation-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.match(body, /\/treatments\/turp-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/urology\/turp/);
+  assert.match(body, /\/treatments\/holep-surgery-in-india/);
+  assert.match(body, /\/treatments\/greenlight-laser-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/erectile-dysfunction/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/penile-implantation-in-india/);
+  const rp = store.treatments.find((row) => row.slug === "radical-prostatectomy-in-india");
+  assert.match(rp?.translations.en?.editorialBody ?? "", /\/treatments\/penile-implantation-in-india/);
+  assert.ok(rp?.relatedTreatmentSlugs?.includes("penile-implantation-in-india"));
+  assert.ok(treatment.relatedTreatmentSlugs?.includes("greenlight-laser-surgery-in-india"));
+});
+
+test("the published GreenLight laser surgery page uses GAF USD ranges and urology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "greenlight-laser-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,200–\$7,800/);
+  assert.match(body, /\$14,000–\$28,000/);
+  assert.match(body, /\$2,500–\$6,200/);
+  assert.match(body, /\$3,800–\$8,500/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: GreenLight Laser Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Urology\/GreenLight-Laser-Surgery/);
+  assert.match(body, /\/doctors\/India\/Urology\/GreenLight-Laser-Surgery/);
+  assert.match(body, /\/treatments\/radical-prostatectomy-in-india/);
+  assert.match(body, /\/treatments\/penile-implantation-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/gl-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gl-laser\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gl-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gl-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Urology/GreenLight-Laser-Surgery",
+    "/doctors/India/Mumbai/Urology/GreenLight-Laser-Surgery",
+    "/doctors/India/Bengaluru/Urology/GreenLight-Laser-Surgery",
+    "/doctors/India/Chennai/Urology/GreenLight-Laser-Surgery",
+    "/doctors/India/Hyderabad/Urology/GreenLight-Laser-Surgery",
+    "/hospitals/India/Delhi-NCR/Urology",
+    "/hospitals/India/Mumbai/Urology",
+    "/hospitals/India/Bengaluru/Urology",
+    "/costs/India/Delhi-NCR/Urology/GreenLight-Laser-Surgery",
+    "/costs/India/Mumbai/Urology/GreenLight-Laser-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is GreenLight laser surgery/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /532-nm|vaporize|transurethral/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Prostate",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/greenlight-laser-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.match(body, /\/treatments\/turp-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/urology\/turp/);
+  assert.match(body, /\/treatments\/holep-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/aquablation/);
+  assert.doesNotMatch(body, /\/treatments\/urolift/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/greenlight-laser-surgery-in-india/);
+  const rp = store.treatments.find((row) => row.slug === "radical-prostatectomy-in-india");
+  const penile = store.treatments.find((row) => row.slug === "penile-implantation-in-india");
+  assert.match(rp?.translations.en?.editorialBody ?? "", /\/treatments\/greenlight-laser-surgery-in-india/);
+  assert.match(penile?.translations.en?.editorialBody ?? "", /\/treatments\/greenlight-laser-surgery-in-india/);
+  assert.ok(rp?.relatedTreatmentSlugs?.includes("greenlight-laser-surgery-in-india"));
+  assert.ok(penile?.relatedTreatmentSlugs?.includes("greenlight-laser-surgery-in-india"));
+  assert.ok(treatment.relatedTreatmentSlugs?.includes("holep-surgery-in-india"));
+});
+
+test("the published HoLEP surgery page uses GAF USD ranges and urology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "holep-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,800–\$8,500/);
+  assert.match(body, /\$16,000–\$32,000/);
+  assert.match(body, /\$3,200–\$7,800/);
+  assert.match(body, /\$2,500–\$6,200/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /2–4 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: HoLEP Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Urology\/HoLEP-\(Holmium-Laser-Enucleation\)/);
+  assert.match(body, /\/doctors\/India\/Urology\/HoLEP-\(Holmium-Laser-Enucleation\)/);
+  assert.match(body, /\/treatments\/greenlight-laser-surgery-in-india/);
+  assert.match(body, /\/treatments\/radical-prostatectomy-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/hl-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hl-enucleate\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hl-morcellate\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hl-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Urology/HoLEP-(Holmium-Laser-Enucleation)",
+    "/doctors/India/Mumbai/Urology/HoLEP-(Holmium-Laser-Enucleation)",
+    "/doctors/India/Bengaluru/Urology/HoLEP-(Holmium-Laser-Enucleation)",
+    "/doctors/India/Chennai/Urology/HoLEP-(Holmium-Laser-Enucleation)",
+    "/doctors/India/Hyderabad/Urology/HoLEP-(Holmium-Laser-Enucleation)",
+    "/hospitals/India/Delhi-NCR/Urology",
+    "/hospitals/India/Mumbai/Urology",
+    "/hospitals/India/Bengaluru/Urology",
+    "/costs/India/Delhi-NCR/Urology/HoLEP-(Holmium-Laser-Enucleation)",
+    "/costs/India/Mumbai/Urology/HoLEP-(Holmium-Laser-Enucleation)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /full name of HoLEP|What is HoLEP/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /Holmium laser enucleation/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Prostate",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/holep-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.match(body, /\/treatments\/turp-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/urology\/turp/);
+  assert.doesNotMatch(body, /\/treatments\/aquablation/);
+  assert.doesNotMatch(body, /\/treatments\/urolift/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/holep-surgery-in-india/);
+  const rp = store.treatments.find((row) => row.slug === "radical-prostatectomy-in-india");
+  const penile = store.treatments.find((row) => row.slug === "penile-implantation-in-india");
+  const green = store.treatments.find((row) => row.slug === "greenlight-laser-surgery-in-india");
+  assert.match(rp?.translations.en?.editorialBody ?? "", /\/treatments\/holep-surgery-in-india/);
+  assert.match(penile?.translations.en?.editorialBody ?? "", /\/treatments\/holep-surgery-in-india/);
+  assert.match(green?.translations.en?.editorialBody ?? "", /\/treatments\/holep-surgery-in-india/);
+  assert.ok(rp?.relatedTreatmentSlugs?.includes("holep-surgery-in-india"));
+  assert.ok(penile?.relatedTreatmentSlugs?.includes("holep-surgery-in-india"));
+  assert.ok(green?.relatedTreatmentSlugs?.includes("holep-surgery-in-india"));
+});
+
+test("the published TURP surgery page uses GAF USD ranges and urology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "turp-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$2,500–\$6,200/);
+  assert.match(body, /\$12,000–\$25,000/);
+  assert.match(body, /\$3,800–\$8,500/);
+  assert.match(body, /\$3,200–\$7,800/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /2–4 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: TURP Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Urology\/TURP-\(Transurethral-Resection-of-the-Prostate\)/);
+  assert.match(body, /\/doctors\/India\/Urology\/TURP-\(Transurethral-Resection-of-the-Prostate\)/);
+  assert.match(body, /\/treatments\/holep-surgery-in-india/);
+  assert.match(body, /\/treatments\/greenlight-laser-surgery-in-india/);
+  assert.match(body, /\/treatments\/radical-prostatectomy-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/tp-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tp-resect\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tp-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tp-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Urology/TURP-(Transurethral-Resection-of-the-Prostate)",
+    "/doctors/India/Mumbai/Urology/TURP-(Transurethral-Resection-of-the-Prostate)",
+    "/doctors/India/Bengaluru/Urology/TURP-(Transurethral-Resection-of-the-Prostate)",
+    "/doctors/India/Chennai/Urology/TURP-(Transurethral-Resection-of-the-Prostate)",
+    "/doctors/India/Hyderabad/Urology/TURP-(Transurethral-Resection-of-the-Prostate)",
+    "/hospitals/India/Delhi-NCR/Urology",
+    "/hospitals/India/Mumbai/Urology",
+    "/hospitals/India/Bengaluru/Urology",
+    "/costs/India/Delhi-NCR/Urology/TURP-(Transurethral-Resection-of-the-Prostate)",
+    "/costs/India/Mumbai/Urology/TURP-(Transurethral-Resection-of-the-Prostate)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /full name of TURP|What is TURP/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /Transurethral Resection of the Prostate/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Prostate",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/turp-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/urology\/turp/);
+  assert.doesNotMatch(body, /\/treatments\/aquablation/);
+  assert.doesNotMatch(body, /\/treatments\/urolift/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/turp-surgery-in-india/);
+  const rp = store.treatments.find((row) => row.slug === "radical-prostatectomy-in-india");
+  const penile = store.treatments.find((row) => row.slug === "penile-implantation-in-india");
+  const green = store.treatments.find((row) => row.slug === "greenlight-laser-surgery-in-india");
+  const holep = store.treatments.find((row) => row.slug === "holep-surgery-in-india");
+  assert.match(rp?.translations.en?.editorialBody ?? "", /\/treatments\/turp-surgery-in-india/);
+  assert.match(penile?.translations.en?.editorialBody ?? "", /\/treatments\/turp-surgery-in-india/);
+  assert.match(green?.translations.en?.editorialBody ?? "", /\/treatments\/turp-surgery-in-india/);
+  assert.match(holep?.translations.en?.editorialBody ?? "", /\/treatments\/turp-surgery-in-india/);
+  assert.ok(rp?.relatedTreatmentSlugs?.includes("turp-surgery-in-india"));
+  assert.ok(penile?.relatedTreatmentSlugs?.includes("turp-surgery-in-india"));
+  assert.ok(green?.relatedTreatmentSlugs?.includes("turp-surgery-in-india"));
+  assert.ok(holep?.relatedTreatmentSlugs?.includes("turp-surgery-in-india"));
+});
+
+test("the published radical nephrectomy page uses GAF USD ranges and urology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "radical-nephrectomy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$7,500–\$18,000/);
+  assert.match(body, /\$30,000–\$70,000/);
+  assert.match(body, /\$7,000–\$16,000/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /4–8 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Radical Nephrectomy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Urology\/Radical-Nephrectomy/);
+  assert.match(body, /\/doctors\/India\/Urology\/Radical-Nephrectomy/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Partial-Nephrectomy/);
+  assert.match(body, /\/treatments\/radical-prostatectomy-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/rn-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/rn-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/rn-approaches\.webp/);
+  assert.match(body, /\/uploads\/treatments\/rn-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Urology/Radical-Nephrectomy",
+    "/doctors/India/Mumbai/Urology/Radical-Nephrectomy",
+    "/doctors/India/Bengaluru/Urology/Radical-Nephrectomy",
+    "/doctors/India/Chennai/Urology/Radical-Nephrectomy",
+    "/doctors/India/Hyderabad/Urology/Radical-Nephrectomy",
+    "/hospitals/India/Delhi-NCR/Urology",
+    "/hospitals/India/Mumbai/Urology",
+    "/hospitals/India/Bengaluru/Urology",
+    "/costs/India/Delhi-NCR/Urology/Radical-Nephrectomy",
+    "/costs/India/Mumbai/Urology/Radical-Nephrectomy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is radical nephrectomy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /entire kidney/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Kidney",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/radical-nephrectomy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/kidney-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/partial-nephrectomy/);
+  assert.doesNotMatch(body, /\/treatments\/urology\/radical-nephrectomy/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/radical-nephrectomy-in-india/);
+  const rp = store.treatments.find((row) => row.slug === "radical-prostatectomy-in-india");
+  assert.match(rp?.translations.en?.editorialBody ?? "", /\/treatments\/radical-nephrectomy-in-india/);
+  assert.ok(rp?.relatedTreatmentSlugs?.includes("radical-nephrectomy-in-india"));
+});
+
+test("the published EBRT page uses GAF USD ranges and radiation GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "external-beam-radiotherapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$1,000–\$6,000\+/);
+  assert.match(body, /\$12,000–\$25,000/);
+  assert.match(body, /\$6,500–\$14,500/);
+  assert.match(body, /\$7,200–\$16,000/);
+  assert.match(body, /\$8,000–\$17,500/);
+  assert.match(body, /\$28,000–\$55,000/);
+  assert.match(body, /15–35 sessions/);
+  assert.match(body, /article-quick-answer|Quick Answer: External Beam Radiotherapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/EBRT/);
+  assert.match(body, /\/doctors\/India\/Radiation-Oncology\/EBRT/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/cervical-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/radiation-therapy-for-prostate-cancer/);
+  assert.match(body, /\/blogs\/radiation-therapy-for-breast-cancer/);
+  assert.match(body, /\/uploads\/treatments\/eb-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/eb-plan\.webp/);
+  assert.match(body, /\/uploads\/treatments\/eb-techniques\.webp/);
+  assert.match(body, /\/uploads\/treatments\/eb-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/EBRT",
+    "/doctors/India/Mumbai/Radiation-Oncology/EBRT",
+    "/doctors/India/Bengaluru/Radiation-Oncology/EBRT",
+    "/doctors/India/Chennai/Radiation-Oncology/EBRT",
+    "/doctors/India/Hyderabad/Radiation-Oncology/EBRT",
+    "/hospitals/India/Delhi-NCR/Radiation-Oncology",
+    "/hospitals/India/Mumbai/Radiation-Oncology",
+    "/hospitals/India/Bengaluru/Radiation-Oncology",
+    "/costs/India/Delhi-NCR/Radiation-Oncology/EBRT",
+    "/costs/India/Mumbai/Radiation-Oncology/EBRT",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is external beam radiotherapy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /high-energy radiation/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/external-beam-radiotherapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.match(body, /\/treatments\/intensity-modulated-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/image-guided-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/stereotactic-radiosurgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/imrt(?:-in-india|\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/igrt(?:-in-india|\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/sbrt/);
+  assert.doesNotMatch(body, /\/treatments\/vmat/);
+  assert.doesNotMatch(body, /\/treatments\/proton(?:-in-india)?(?:\/|$)/);
+  assert.match(body, /\/treatments\/proton-beam-therapy-in-india/);
+  assert.match(body, /\/treatments\/brachytherapy-in-india/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/external-beam-radiotherapy-in-india/);
+  const prostate = store.treatments.find((row) => row.slug === "prostate-cancer-treatment-in-india");
+  const breast = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  const cervical = store.treatments.find((row) => row.slug === "cervical-cancer-treatment-in-india");
+  assert.match(prostate?.translations.en?.editorialBody ?? "", /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(breast?.translations.en?.editorialBody ?? "", /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(cervical?.translations.en?.editorialBody ?? "", /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.ok(prostate?.relatedTreatmentSlugs?.includes("external-beam-radiotherapy-in-india"));
+  assert.ok(breast?.relatedTreatmentSlugs?.includes("external-beam-radiotherapy-in-india"));
+  assert.ok(cervical?.relatedTreatmentSlugs?.includes("external-beam-radiotherapy-in-india"));
+});
+
+test("the published IMRT page uses GAF USD ranges and radiation GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "intensity-modulated-radiation-therapy-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$6,500–\$14,500/);
+  assert.match(body, /\$18,000–\$40,000/);
+  assert.match(body, /\$1,000–\$6,000\+/);
+  assert.match(body, /\$7,200–\$16,000/);
+  assert.match(body, /4–7 weeks/);
+  assert.match(body, /article-quick-answer|Quick Answer: IMRT in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/IMRT/);
+  assert.match(body, /\/doctors\/India\/Radiation-Oncology\/IMRT/);
+  assert.match(body, /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/cervical-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/im-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/im-sites\.webp/);
+  assert.match(body, /\/uploads\/treatments\/im-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/im-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/IMRT",
+    "/doctors/India/Mumbai/Radiation-Oncology/IMRT",
+    "/doctors/India/Bengaluru/Radiation-Oncology/IMRT",
+    "/doctors/India/Chennai/Radiation-Oncology/IMRT",
+    "/doctors/India/Hyderabad/Radiation-Oncology/IMRT",
+    "/hospitals/India/Delhi-NCR/Radiation-Oncology",
+    "/hospitals/India/Mumbai/Radiation-Oncology",
+    "/hospitals/India/Bengaluru/Radiation-Oncology",
+    "/costs/India/Delhi-NCR/Radiation-Oncology/IMRT",
+    "/costs/India/Mumbai/Radiation-Oncology/IMRT",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is IMRT/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /intensity|modulat|external beam/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/intensity-modulated-radiation-therapy-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.match(body, /\/treatments\/image-guided-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/stereotactic-radiosurgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/imrt(?:-in-india|\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/igrt(?:-in-india|\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/sbrt/);
+  assert.doesNotMatch(body, /\/treatments\/vmat/);
+  assert.doesNotMatch(body, /\/treatments\/proton(?:-in-india)?(?:\/|$)/);
+  assert.match(body, /\/treatments\/proton-beam-therapy-in-india/);
+  assert.match(body, /\/treatments\/brachytherapy-in-india/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/intensity-modulated-radiation-therapy-in-india/,
+  );
+  const ebrt = store.treatments.find((row) => row.slug === "external-beam-radiotherapy-in-india");
+  assert.match(
+    ebrt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/intensity-modulated-radiation-therapy-in-india/,
+  );
+  assert.ok(ebrt?.relatedTreatmentSlugs?.includes("intensity-modulated-radiation-therapy-in-india"));
+});
+
+test("the published IGRT page uses GAF USD ranges and radiation GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "image-guided-radiation-therapy-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$7,200–\$16,000/);
+  assert.match(body, /\$20,000–\$45,000/);
+  assert.match(body, /\$6,500–\$14,500/);
+  assert.match(body, /\$1,000–\$6,000\+/);
+  assert.match(body, /4–7 weeks/);
+  assert.match(body, /article-quick-answer|Quick Answer: What Is Image-Guided Radiation Therapy/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/IGRT/);
+  assert.match(body, /\/doctors\/India\/Radiation-Oncology\/IGRT/);
+  assert.match(body, /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(body, /\/treatments\/intensity-modulated-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/cervical-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/ig-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ig-motion\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ig-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ig-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/IGRT",
+    "/doctors/India/Mumbai/Radiation-Oncology/IGRT",
+    "/doctors/India/Bengaluru/Radiation-Oncology/IGRT",
+    "/doctors/India/Chennai/Radiation-Oncology/IGRT",
+    "/doctors/India/Hyderabad/Radiation-Oncology/IGRT",
+    "/hospitals/India/Delhi-NCR/Radiation-Oncology",
+    "/hospitals/India/Mumbai/Radiation-Oncology",
+    "/hospitals/India/Bengaluru/Radiation-Oncology",
+    "/costs/India/Delhi-NCR/Radiation-Oncology/IGRT",
+    "/costs/India/Mumbai/Radiation-Oncology/IGRT",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is IGRT/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /imaging|position|tumou?r/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/image-guided-radiation-therapy-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/igrt(?:-in-india|\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/sbrt/);
+  assert.doesNotMatch(body, /\/treatments\/vmat/);
+  assert.doesNotMatch(body, /\/treatments\/proton(?:-in-india)?(?:\/|$)/);
+  assert.match(body, /\/treatments\/proton-beam-therapy-in-india/);
+  assert.match(body, /\/treatments\/brachytherapy-in-india/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/image-guided-radiation-therapy-in-india/,
+  );
+  const ebrt = store.treatments.find((row) => row.slug === "external-beam-radiotherapy-in-india");
+  const imrt = store.treatments.find(
+    (row) => row.slug === "intensity-modulated-radiation-therapy-in-india",
+  );
+  assert.match(
+    ebrt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/image-guided-radiation-therapy-in-india/,
+  );
+  assert.match(
+    imrt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/image-guided-radiation-therapy-in-india/,
+  );
+  assert.ok(ebrt?.relatedTreatmentSlugs?.includes("image-guided-radiation-therapy-in-india"));
+  assert.ok(imrt?.relatedTreatmentSlugs?.includes("image-guided-radiation-therapy-in-india"));
+  assert.match(body, /\/treatments\/stereotactic-radiosurgery-in-india/);
+});
+
+test("the published SRS page uses GAF USD ranges and radiation GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "stereotactic-radiosurgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$8,500–\$18,000/);
+  assert.match(body, /\$25,000–\$55,000/);
+  assert.match(body, /\$10,500–\$22,000/);
+  assert.match(body, /\$11,000–\$24,000/);
+  assert.match(body, /1–5 sessions/);
+  assert.match(body, /article-quick-answer|Quick Answer: Stereotactic Radiosurgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/SRS/);
+  assert.match(body, /\/doctors\/India\/Radiation-Oncology\/SRS/);
+  assert.match(body, /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(body, /\/treatments\/intensity-modulated-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/image-guided-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/brain-tumor-surgery-in-india/);
+  assert.match(body, /\/treatments\/craniotomy-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/sr-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sr-indications\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sr-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sr-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/SRS",
+    "/doctors/India/Mumbai/Radiation-Oncology/SRS",
+    "/doctors/India/Bengaluru/Radiation-Oncology/SRS",
+    "/doctors/India/Chennai/Radiation-Oncology/SRS",
+    "/doctors/India/Hyderabad/Radiation-Oncology/SRS",
+    "/hospitals/India/Delhi-NCR/Radiation-Oncology",
+    "/hospitals/India/Mumbai/Radiation-Oncology",
+    "/hospitals/India/Bengaluru/Radiation-Oncology",
+    "/costs/India/Delhi-NCR/Radiation-Oncology/SRS",
+    "/costs/India/Mumbai/Radiation-Oncology/SRS",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is SRS/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /focused|target|surgery/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/stereotactic-radiosurgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/srs(?:-in-india|\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/sbrt/);
+  assert.doesNotMatch(body, /\/treatments\/vmat/);
+  assert.doesNotMatch(body, /\/treatments\/proton(?:-in-india)?(?:\/|$)/);
+  assert.match(body, /\/treatments\/proton-beam-therapy-in-india/);
+  assert.match(body, /\/treatments\/brachytherapy-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/gamma-knife(?:-in-india)?(?:\/|$)/);
+  assert.match(body, /\/treatments\/gamma-knife-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/cyberknife(?:-in-india)?(?:\/|$)/);
+  assert.match(body, /\/treatments\/cyberknife-robotic-radiosurgery-in-india/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/stereotactic-radiosurgery-in-india/);
+  const ebrt = store.treatments.find((row) => row.slug === "external-beam-radiotherapy-in-india");
+  const igrt = store.treatments.find(
+    (row) => row.slug === "image-guided-radiation-therapy-in-india",
+  );
+  assert.match(
+    ebrt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/stereotactic-radiosurgery-in-india/,
+  );
+  assert.match(
+    igrt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/stereotactic-radiosurgery-in-india/,
+  );
+  assert.ok(ebrt?.relatedTreatmentSlugs?.includes("stereotactic-radiosurgery-in-india"));
+  assert.ok(igrt?.relatedTreatmentSlugs?.includes("stereotactic-radiosurgery-in-india"));
+});
+
+test("the published SBRT page uses GAF USD ranges and radiation GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "stereotactic-body-radiation-therapy-sbrt-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$8,000–\$17,500/);
+  assert.match(body, /\$22,000–\$50,000/);
+  assert.match(body, /1–5 sessions/);
+  assert.match(body, /article-quick-answer|Quick Answer: Stereotactic Body Radiation Therapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/SBRT/);
+  assert.match(body, /\/doctors\/India\/Radiation-Oncology\/SBRT/);
+  assert.match(body, /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(body, /\/treatments\/intensity-modulated-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/image-guided-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/stereotactic-radiosurgery-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/radical-nephrectomy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/sb-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sb-indications\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sb-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sb-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/SBRT",
+    "/doctors/India/Mumbai/Radiation-Oncology/SBRT",
+    "/doctors/India/Bengaluru/Radiation-Oncology/SBRT",
+    "/doctors/India/Chennai/Radiation-Oncology/SBRT",
+    "/doctors/India/Hyderabad/Radiation-Oncology/SBRT",
+    "/hospitals/India/Delhi-NCR/Radiation-Oncology",
+    "/hospitals/India/Mumbai/Radiation-Oncology",
+    "/hospitals/India/Bengaluru/Radiation-Oncology",
+    "/costs/India/Delhi-NCR/Radiation-Oncology/SBRT",
+    "/costs/India/Mumbai/Radiation-Oncology/SBRT",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is SBRT/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /focused|target|sessions/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes(
+      "https://gaf.healthcare/treatments/stereotactic-body-radiation-therapy-sbrt-in-india",
+    ),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/sbrt(?:-in-india|\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/vmat/);
+  assert.doesNotMatch(body, /\/treatments\/proton(?:-in-india)?(?:\/|$)/);
+  assert.match(body, /\/treatments\/proton-beam-therapy-in-india/);
+  assert.match(body, /\/treatments\/brachytherapy-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/gamma-knife(?:-in-india)?(?:\/|$)/);
+  assert.match(body, /\/treatments\/gamma-knife-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/cyberknife(?:-in-india)?(?:\/|$)/);
+  assert.match(body, /\/treatments\/cyberknife-robotic-radiosurgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/liver-cancer/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/stereotactic-body-radiation-therapy-sbrt-in-india/,
+  );
+  const ebrt = store.treatments.find((row) => row.slug === "external-beam-radiotherapy-in-india");
+  const srs = store.treatments.find((row) => row.slug === "stereotactic-radiosurgery-in-india");
+  assert.match(
+    ebrt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/stereotactic-body-radiation-therapy-sbrt-in-india/,
+  );
+  assert.match(
+    srs?.translations.en?.editorialBody ?? "",
+    /\/treatments\/stereotactic-body-radiation-therapy-sbrt-in-india/,
+  );
+  assert.ok(ebrt?.relatedTreatmentSlugs?.includes("stereotactic-body-radiation-therapy-sbrt-in-india"));
+  assert.ok(srs?.relatedTreatmentSlugs?.includes("stereotactic-body-radiation-therapy-sbrt-in-india"));
+});
+
+test("the published CyberKnife page uses GAF USD ranges and radiation GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "cyberknife-robotic-radiosurgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$11,000–\$24,000/);
+  assert.match(body, /\$30,000–\$70,000/);
+  assert.match(body, /1–5 sessions/);
+  assert.match(body, /article-quick-answer|Quick Answer: CyberKnife Robotic Radiosurgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/CyberKnife/);
+  assert.match(body, /\/doctors\/India\/Radiation-Oncology\/CyberKnife/);
+  assert.match(body, /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(body, /\/treatments\/intensity-modulated-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/image-guided-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/stereotactic-radiosurgery-in-india/);
+  assert.match(body, /\/treatments\/stereotactic-body-radiation-therapy-sbrt-in-india/);
+  assert.match(body, /\/treatments\/brain-tumor-surgery-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/ck-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ck-indications\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ck-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ck-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/CyberKnife",
+    "/doctors/India/Mumbai/Radiation-Oncology/CyberKnife",
+    "/doctors/India/Bengaluru/Radiation-Oncology/CyberKnife",
+    "/doctors/India/Chennai/Radiation-Oncology/CyberKnife",
+    "/doctors/India/Hyderabad/Radiation-Oncology/CyberKnife",
+    "/hospitals/India/Delhi-NCR/Radiation-Oncology",
+    "/hospitals/India/Mumbai/Radiation-Oncology",
+    "/hospitals/India/Bengaluru/Radiation-Oncology",
+    "/costs/India/Delhi-NCR/Radiation-Oncology/CyberKnife",
+    "/costs/India/Mumbai/Radiation-Oncology/CyberKnife",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is CyberKnife/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /robotic|image-guided|stereotactic/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/cyberknife-robotic-radiosurgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/cyberknife(?:-in-india)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/sbrt(?:-in-india|\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/vmat/);
+  assert.doesNotMatch(body, /\/treatments\/proton(?:-in-india)?(?:\/|$)/);
+  assert.match(body, /\/treatments\/proton-beam-therapy-in-india/);
+  assert.match(body, /\/treatments\/brachytherapy-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/gamma-knife(?:-in-india)?(?:\/|$)/);
+  assert.match(body, /\/treatments\/gamma-knife-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/liver-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/head-and-neck/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/cyberknife-robotic-radiosurgery-in-india/,
+  );
+  const ebrt = store.treatments.find((row) => row.slug === "external-beam-radiotherapy-in-india");
+  const srs = store.treatments.find((row) => row.slug === "stereotactic-radiosurgery-in-india");
+  const sbrt = store.treatments.find(
+    (row) => row.slug === "stereotactic-body-radiation-therapy-sbrt-in-india",
+  );
+  assert.match(
+    ebrt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/cyberknife-robotic-radiosurgery-in-india/,
+  );
+  assert.match(
+    srs?.translations.en?.editorialBody ?? "",
+    /\/treatments\/cyberknife-robotic-radiosurgery-in-india/,
+  );
+  assert.match(
+    sbrt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/cyberknife-robotic-radiosurgery-in-india/,
+  );
+  assert.ok(ebrt?.relatedTreatmentSlugs?.includes("cyberknife-robotic-radiosurgery-in-india"));
+  assert.ok(srs?.relatedTreatmentSlugs?.includes("cyberknife-robotic-radiosurgery-in-india"));
+  assert.ok(sbrt?.relatedTreatmentSlugs?.includes("cyberknife-robotic-radiosurgery-in-india"));
+});
+
+test("the published Gamma Knife page uses GAF USD ranges and radiation GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "gamma-knife-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$10,500–\$22,000/);
+  assert.match(body, /\$28,000–\$65,000/);
+  assert.match(body, /1 session/);
+  assert.match(body, /article-quick-answer|Quick Answer: Gamma Knife Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/Gamma-Knife/);
+  assert.match(body, /\/doctors\/India\/Radiation-Oncology\/Gamma-Knife/);
+  assert.match(body, /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(body, /\/treatments\/intensity-modulated-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/image-guided-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/stereotactic-radiosurgery-in-india/);
+  assert.match(body, /\/treatments\/cyberknife-robotic-radiosurgery-in-india/);
+  assert.match(body, /\/treatments\/brain-tumor-surgery-in-india/);
+  assert.match(body, /\/treatments\/craniotomy-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/gk-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gk-indications\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gk-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/gk-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/Gamma-Knife",
+    "/doctors/India/Mumbai/Radiation-Oncology/Gamma-Knife",
+    "/doctors/India/Bengaluru/Radiation-Oncology/Gamma-Knife",
+    "/doctors/India/Chennai/Radiation-Oncology/Gamma-Knife",
+    "/doctors/India/Hyderabad/Radiation-Oncology/Gamma-Knife",
+    "/hospitals/India/Delhi-NCR/Radiation-Oncology",
+    "/hospitals/India/Mumbai/Radiation-Oncology",
+    "/hospitals/India/Bengaluru/Radiation-Oncology",
+    "/costs/India/Delhi-NCR/Radiation-Oncology/Gamma-Knife",
+    "/costs/India/Mumbai/Radiation-Oncology/Gamma-Knife",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is Gamma Knife/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /focused|brain|session/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/gamma-knife-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/gamma-knife(?:-in-india)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/sbrt(?:-in-india|\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/vmat/);
+  assert.doesNotMatch(body, /\/treatments\/proton(?:-in-india)?(?:\/|$)/);
+  assert.match(body, /\/treatments\/proton-beam-therapy-in-india/);
+  assert.match(body, /\/treatments\/brachytherapy-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/cyberknife(?:-in-india)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/liver-cancer/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/gamma-knife-surgery-in-india/);
+  const ebrt = store.treatments.find((row) => row.slug === "external-beam-radiotherapy-in-india");
+  const srs = store.treatments.find((row) => row.slug === "stereotactic-radiosurgery-in-india");
+  const cyberknife = store.treatments.find(
+    (row) => row.slug === "cyberknife-robotic-radiosurgery-in-india",
+  );
+  assert.match(
+    ebrt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/gamma-knife-surgery-in-india/,
+  );
+  assert.match(
+    srs?.translations.en?.editorialBody ?? "",
+    /\/treatments\/gamma-knife-surgery-in-india/,
+  );
+  assert.match(
+    cyberknife?.translations.en?.editorialBody ?? "",
+    /\/treatments\/gamma-knife-surgery-in-india/,
+  );
+  assert.ok(ebrt?.relatedTreatmentSlugs?.includes("gamma-knife-surgery-in-india"));
+  assert.ok(srs?.relatedTreatmentSlugs?.includes("gamma-knife-surgery-in-india"));
+  assert.ok(cyberknife?.relatedTreatmentSlugs?.includes("gamma-knife-surgery-in-india"));
+});
+
+test("the published Proton Beam Therapy page uses GAF USD ranges and radiation GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "proton-beam-therapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$28,000–\$55,000/);
+  assert.match(body, /\$90,000–\$180,000/);
+  assert.match(body, /4–8 weeks/);
+  assert.match(body, /article-quick-answer|Quick Answer: Proton Beam Therapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/Proton-Beam-Therapy/);
+  assert.match(body, /\/doctors\/India\/Radiation-Oncology\/Proton-Beam-Therapy/);
+  assert.match(body, /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(body, /\/treatments\/intensity-modulated-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/image-guided-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/stereotactic-radiosurgery-in-india/);
+  assert.match(body, /\/treatments\/cyberknife-robotic-radiosurgery-in-india/);
+  assert.match(body, /\/treatments\/gamma-knife-surgery-in-india/);
+  assert.match(body, /\/treatments\/brain-tumor-surgery-in-india/);
+  assert.match(body, /\/hospitals\/apollo-proton-cancer-centre/);
+  assert.match(body, /\/uploads\/treatments\/pb-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pb-sites\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pb-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pb-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/Proton-Beam-Therapy",
+    "/doctors/India/Mumbai/Radiation-Oncology/Proton-Beam-Therapy",
+    "/doctors/India/Bengaluru/Radiation-Oncology/Proton-Beam-Therapy",
+    "/doctors/India/Chennai/Radiation-Oncology/Proton-Beam-Therapy",
+    "/doctors/India/Hyderabad/Radiation-Oncology/Proton-Beam-Therapy",
+    "/hospitals/India/Delhi-NCR/Radiation-Oncology",
+    "/hospitals/India/Mumbai/Radiation-Oncology",
+    "/hospitals/India/Bengaluru/Radiation-Oncology",
+    "/costs/India/Delhi-NCR/Radiation-Oncology/Proton-Beam-Therapy",
+    "/costs/India/Mumbai/Radiation-Oncology/Proton-Beam-Therapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is proton beam therapy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /proton|X-rays|depth/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/proton-beam-therapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/proton(?:-in-india)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/vmat/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/liver-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/head-and-neck/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/proton-beam-therapy-in-india/);
+  const ebrt = store.treatments.find((row) => row.slug === "external-beam-radiotherapy-in-india");
+  const srs = store.treatments.find((row) => row.slug === "stereotactic-radiosurgery-in-india");
+  const cyberknife = store.treatments.find(
+    (row) => row.slug === "cyberknife-robotic-radiosurgery-in-india",
+  );
+  assert.match(
+    ebrt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/proton-beam-therapy-in-india/,
+  );
+  assert.match(
+    srs?.translations.en?.editorialBody ?? "",
+    /\/treatments\/proton-beam-therapy-in-india/,
+  );
+  assert.match(
+    cyberknife?.translations.en?.editorialBody ?? "",
+    /\/treatments\/proton-beam-therapy-in-india/,
+  );
+  assert.ok(ebrt?.relatedTreatmentSlugs?.includes("proton-beam-therapy-in-india"));
+  assert.ok(srs?.relatedTreatmentSlugs?.includes("proton-beam-therapy-in-india"));
+  assert.ok(cyberknife?.relatedTreatmentSlugs?.includes("proton-beam-therapy-in-india"));
+});
+
+test("the published Brachytherapy page uses GAF USD ranges and radiation GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "brachytherapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$5,500–\$13,000/);
+  assert.match(body, /\$15,000–\$35,000/);
+  assert.match(body, /1–7 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: What Is Brachytherapy/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/Brachytherapy/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/Intracavitary-Brachytherapy/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/Interstitial-Brachytherapy/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/Plaque-Brachytherapy/);
+  assert.match(body, /\/doctors\/India\/Radiation-Oncology\/Brachytherapy/);
+  assert.match(body, /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(body, /\/treatments\/intensity-modulated-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/image-guided-radiation-therapy-in-india/);
+  assert.match(body, /\/treatments\/proton-beam-therapy-in-india/);
+  assert.match(body, /\/treatments\/cervical-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/bt-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bt-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bt-sites\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bt-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/Brachytherapy",
+    "/doctors/India/Mumbai/Radiation-Oncology/Brachytherapy",
+    "/doctors/India/Bengaluru/Radiation-Oncology/Brachytherapy",
+    "/doctors/India/Chennai/Radiation-Oncology/Brachytherapy",
+    "/doctors/India/Hyderabad/Radiation-Oncology/Brachytherapy",
+    "/hospitals/India/Delhi-NCR/Radiation-Oncology",
+    "/hospitals/India/Mumbai/Radiation-Oncology",
+    "/hospitals/India/Bengaluru/Radiation-Oncology",
+    "/costs/India/Delhi-NCR/Radiation-Oncology/Brachytherapy",
+    "/costs/India/Mumbai/Radiation-Oncology/Brachytherapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is brachytherapy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /internal radiation|source|tumou?r/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/brachytherapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/brachytherapy(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/hdr/);
+  assert.doesNotMatch(body, /\/treatments\/ldr/);
+  assert.doesNotMatch(body, /\/treatments\/intracavitary/);
+  assert.doesNotMatch(body, /\/treatments\/interstitial/);
+  assert.doesNotMatch(body, /\/treatments\/plaque/);
+  assert.doesNotMatch(body, /\/treatments\/vmat/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/liver-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/head-and-neck/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/brachytherapy-in-india/);
+  const ebrt = store.treatments.find((row) => row.slug === "external-beam-radiotherapy-in-india");
+  const proton = store.treatments.find((row) => row.slug === "proton-beam-therapy-in-india");
+  const cervical = store.treatments.find((row) => row.slug === "cervical-cancer-treatment-in-india");
+  assert.match(
+    ebrt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/brachytherapy-in-india/,
+  );
+  assert.match(
+    proton?.translations.en?.editorialBody ?? "",
+    /\/treatments\/brachytherapy-in-india/,
+  );
+  assert.match(
+    cervical?.translations.en?.editorialBody ?? "",
+    /\/treatments\/brachytherapy-in-india/,
+  );
+  assert.ok(ebrt?.relatedTreatmentSlugs?.includes("brachytherapy-in-india"));
+  assert.ok(proton?.relatedTreatmentSlugs?.includes("brachytherapy-in-india"));
+  assert.ok(cervical?.relatedTreatmentSlugs?.includes("brachytherapy-in-india"));
+});
+
+test("the published Dendritic Cell Therapy page uses GAF USD ranges and medical-oncology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "dendritic-cell-therapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$8,000–\$22,000/);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /\$15,000–\$45,000/);
+  assert.match(body, /\$80,000–\$180,000/);
+  assert.match(body, /leukapheresis plus staged infusions/);
+  assert.match(body, /article-quick-answer|Quick Answer: Dendritic Cell Therapy Cost in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Dendritic-Cell-Therapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Immunotherapy/);
+  assert.match(body, /\/costs\/India\/Hematology\/CAR-T-Cell-Therapy/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Dendritic-Cell-Therapy/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/multiple-myeloma-treatment-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-immunotherapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/dct-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/dct-steps\.webp/);
+  assert.match(body, /\/uploads\/treatments\/dct-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/dct-sites\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Dendritic-Cell-Therapy",
+    "/doctors/India/Mumbai/Medical-Oncology/Dendritic-Cell-Therapy",
+    "/doctors/India/Bengaluru/Medical-Oncology/Dendritic-Cell-Therapy",
+    "/doctors/India/Chennai/Medical-Oncology/Dendritic-Cell-Therapy",
+    "/doctors/India/Hyderabad/Medical-Oncology/Dendritic-Cell-Therapy",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Dendritic-Cell-Therapy",
+    "/costs/India/Mumbai/Medical-Oncology/Dendritic-Cell-Therapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /cost of dendritic cell therapy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /\$8,000–\$22,000/);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/dendritic-cell-therapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/dendritic(?:-cell-therapy)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/sipuleucel/);
+  assert.doesNotMatch(body, /\/treatments\/melanoma/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/glioblastoma/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/dendritic-cell-therapy-in-india/);
+  const breast = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  const myeloma = store.treatments.find((row) => row.slug === "multiple-myeloma-treatment-in-india");
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/dendritic-cell-therapy-in-india/,
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/dendritic-cell-therapy-in-india/,
+  );
+  assert.match(
+    myeloma?.translations.en?.editorialBody ?? "",
+    /\/treatments\/dendritic-cell-therapy-in-india/,
+  );
+  assert.ok(breast?.relatedTreatmentSlugs?.includes("dendritic-cell-therapy-in-india"));
+  assert.ok(colon?.relatedTreatmentSlugs?.includes("dendritic-cell-therapy-in-india"));
+  assert.ok(myeloma?.relatedTreatmentSlugs?.includes("dendritic-cell-therapy-in-india"));
+});
+
+test("the published Stem Cell Transplantation page uses GAF USD ranges and haematology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "stem-cell-transplantation-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$22,000–\$65,000/);
+  assert.match(body, /\$140,000–\$380,000/);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$18,000–\$48,000/);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /\$35,000–\$85,000/);
+  assert.match(body, /\$40,000–\$95,000/);
+  assert.match(body, /\$28,000–\$75,000/);
+  assert.match(body, /3–8 weeks/);
+  assert.match(body, /article-quick-answer|Quick Answer: Stem Cell Transplantation in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Hematology\/Stem-Cell-Transplantation/);
+  assert.match(body, /\/costs\/India\/Hematology\/Bone-Marrow-Transplantation/);
+  assert.match(body, /\/costs\/India\/Hematology\/Autologous-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Hematology\/Allogeneic-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Pediatric-Hematology\/Pediatric-Bone-Marrow-Transplantation/);
+  assert.match(body, /\/doctors\/India\/Hematology\/Stem-Cell-Transplantation/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/autologous-bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/leukemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/multiple-myeloma-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/hsct-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hsct-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hsct-steps\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hsct-engraft\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Hematology/Stem-Cell-Transplantation",
+    "/doctors/India/Mumbai/Hematology/Stem-Cell-Transplantation",
+    "/doctors/India/Bengaluru/Hematology/Stem-Cell-Transplantation",
+    "/doctors/India/Chennai/Hematology/Stem-Cell-Transplantation",
+    "/doctors/India/Hyderabad/Hematology/Stem-Cell-Transplantation",
+    "/hospitals/India/Delhi-NCR/Hematology",
+    "/hospitals/India/Mumbai/Hematology",
+    "/hospitals/India/Bengaluru/Hematology",
+    "/costs/India/Delhi-NCR/Hematology/Stem-Cell-Transplantation",
+    "/costs/India/Mumbai/Hematology/Stem-Cell-Transplantation",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is stem cell transplantation/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /blood-forming stem cells/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Bone Marrow",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/stem-cell-transplantation-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/stem-cell-transplantation(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/allogeneic/);
+  assert.doesNotMatch(body, /\/treatments\/haploidentical/);
+  assert.doesNotMatch(body, /\/treatments\/aml/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/stem-cell-transplantation-in-india/);
+  const bmt = store.treatments.find((row) => row.slug === "bone-marrow-transplant-in-india");
+  const auto = store.treatments.find((row) => row.slug === "autologous-bone-marrow-transplant-in-india");
+  const leukemia = store.treatments.find((row) => row.slug === "leukemia-treatment-in-india");
+  assert.match(
+    bmt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/stem-cell-transplantation-in-india/,
+  );
+  assert.match(
+    auto?.translations.en?.editorialBody ?? "",
+    /\/treatments\/stem-cell-transplantation-in-india/,
+  );
+  assert.match(
+    leukemia?.translations.en?.editorialBody ?? "",
+    /\/treatments\/stem-cell-transplantation-in-india/,
+  );
+  assert.ok(bmt?.relatedTreatmentSlugs?.includes("stem-cell-transplantation-in-india"));
+  assert.ok(auto?.relatedTreatmentSlugs?.includes("stem-cell-transplantation-in-india"));
+  assert.ok(leukemia?.relatedTreatmentSlugs?.includes("stem-cell-transplantation-in-india"));
+});
+
+test("the published CAR-T Cell Therapy page uses GAF USD ranges and haematology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "car-t-cell-therapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$80,000–\$180,000/);
+  assert.match(body, /\$400,000–\$550,000/);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /apheresis plus 3–6 weeks nearby/);
+  assert.match(body, /article-quick-answer|Quick Answer: CAR-T Cell Therapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Hematology\/CAR-T-Cell-Therapy/);
+  assert.match(body, /\/costs\/India\/Hematology\/Bone-Marrow-Transplantation/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
+  assert.match(body, /\/doctors\/India\/Hematology\/CAR-T-Cell-Therapy/);
+  assert.match(body, /\/treatments\/leukemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/lymphoma-treatment-in-india/);
+  assert.match(body, /\/treatments\/multiple-myeloma-treatment-in-india/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/stem-cell-transplantation-in-india/);
+  assert.match(body, /\/uploads\/treatments\/cart-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cart-steps\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cart-monitor\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cart-compare\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Hematology/CAR-T-Cell-Therapy",
+    "/doctors/India/Mumbai/Hematology/CAR-T-Cell-Therapy",
+    "/doctors/India/Bengaluru/Hematology/CAR-T-Cell-Therapy",
+    "/doctors/India/Chennai/Hematology/CAR-T-Cell-Therapy",
+    "/doctors/India/Hyderabad/Hematology/CAR-T-Cell-Therapy",
+    "/hospitals/India/Delhi-NCR/Hematology",
+    "/hospitals/India/Mumbai/Hematology",
+    "/hospitals/India/Bengaluru/Hematology",
+    "/costs/India/Delhi-NCR/Hematology/CAR-T-Cell-Therapy",
+    "/costs/India/Mumbai/Hematology/CAR-T-Cell-Therapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is CAR-T therapy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /T cells/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/car-t-cell-therapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/car-t(?:-cell-therapy)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/nexcar/);
+  assert.doesNotMatch(body, /\/treatments\/bcma/);
+  assert.doesNotMatch(body, /\/treatments\/dlbcl/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/car-t-cell-therapy-in-india/);
+  const leukemia = store.treatments.find((row) => row.slug === "leukemia-treatment-in-india");
+  const lymphoma = store.treatments.find((row) => row.slug === "lymphoma-treatment-in-india");
+  const bmt = store.treatments.find((row) => row.slug === "bone-marrow-transplant-in-india");
+  assert.match(
+    leukemia?.translations.en?.editorialBody ?? "",
+    /\/treatments\/car-t-cell-therapy-in-india/,
+  );
+  assert.match(
+    lymphoma?.translations.en?.editorialBody ?? "",
+    /\/treatments\/car-t-cell-therapy-in-india/,
+  );
+  assert.match(bmt?.translations.en?.editorialBody ?? "", /\/treatments\/car-t-cell-therapy-in-india/);
+  assert.ok(leukemia?.relatedTreatmentSlugs?.includes("car-t-cell-therapy-in-india"));
+  assert.ok(lymphoma?.relatedTreatmentSlugs?.includes("car-t-cell-therapy-in-india"));
+  assert.ok(bmt?.relatedTreatmentSlugs?.includes("car-t-cell-therapy-in-india"));
+});
+
+test("the published Intrathecal Chemotherapy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "intrathecal-chemotherapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,000–\$10,000/);
+  assert.match(body, /\$15,000–\$40,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /Day-care LP or Ommaya access/);
+  assert.match(body, /article-quick-answer|Quick Answer: How Much Does Intrathecal Chemotherapy Cost in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Intrathecal-Chemotherapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Intrathecal-Chemotherapy/);
+  assert.match(body, /\/treatments\/leukemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/lymphoma-treatment-in-india/);
+  assert.match(body, /\/treatments\/car-t-cell-therapy-in-india/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/stem-cell-transplantation-in-india/);
+  assert.match(body, /\/treatments\/brain-tumor-surgery-in-india/);
+  assert.match(body, /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/itc-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/itc-lp\.webp/);
+  assert.match(body, /\/uploads\/treatments\/itc-ommaya\.webp/);
+  assert.match(body, /\/uploads\/treatments\/itc-compare\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Intrathecal-Chemotherapy",
+    "/doctors/India/Mumbai/Medical-Oncology/Intrathecal-Chemotherapy",
+    "/doctors/India/Bengaluru/Medical-Oncology/Intrathecal-Chemotherapy",
+    "/doctors/India/Chennai/Medical-Oncology/Intrathecal-Chemotherapy",
+    "/doctors/India/Hyderabad/Medical-Oncology/Intrathecal-Chemotherapy",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Intrathecal-Chemotherapy",
+    "/costs/India/Mumbai/Medical-Oncology/Intrathecal-Chemotherapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /How much does intrathecal chemotherapy cost in India/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /\$3,000–\$10,000/);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/intrathecal-chemotherapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/intrathecal(?:-chemotherapy)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/ommaya/);
+  assert.doesNotMatch(body, /\/treatments\/methotrexate/);
+  assert.doesNotMatch(body, /\/treatments\/pediatric-bone-marrow/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/intrathecal-chemotherapy-in-india/);
+  const leukemia = store.treatments.find((row) => row.slug === "leukemia-treatment-in-india");
+  const lymphoma = store.treatments.find((row) => row.slug === "lymphoma-treatment-in-india");
+  assert.match(
+    leukemia?.translations.en?.editorialBody ?? "",
+    /\/treatments\/intrathecal-chemotherapy-in-india/,
+  );
+  assert.match(
+    lymphoma?.translations.en?.editorialBody ?? "",
+    /\/treatments\/intrathecal-chemotherapy-in-india/,
+  );
+  assert.ok(leukemia?.relatedTreatmentSlugs?.includes("intrathecal-chemotherapy-in-india"));
+  assert.ok(lymphoma?.relatedTreatmentSlugs?.includes("intrathecal-chemotherapy-in-india"));
+});
+
+test("the published Intraperitoneal Chemotherapy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "intraperitoneal-chemotherapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$5,000–\$14,000/);
+  assert.match(body, /\$20,000–\$55,000/);
+  assert.match(body, /\$18,000–\$40,000/);
+  assert.match(body, /\$7,000–\$16,000/);
+  assert.match(body, /tied to cytoreduction or IP ports/);
+  assert.match(body, /article-quick-answer|Quick Answer: Intraperitoneal Chemotherapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Intraperitoneal-Chemotherapy/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Cytoreductive-Surgery-with-HIPEC/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/PIPAC/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Intraperitoneal-Chemotherapy/);
+  assert.match(body, /\/treatments\/hipec-surgery-in-india/);
+  assert.match(body, /\/treatments\/ovarian-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/pancreatic-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/stage-4-colon-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/ip-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ip-catheter\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ip-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ip-pci\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Intraperitoneal-Chemotherapy",
+    "/doctors/India/Mumbai/Medical-Oncology/Intraperitoneal-Chemotherapy",
+    "/doctors/India/Bengaluru/Medical-Oncology/Intraperitoneal-Chemotherapy",
+    "/doctors/India/Chennai/Medical-Oncology/Intraperitoneal-Chemotherapy",
+    "/doctors/India/Hyderabad/Medical-Oncology/Intraperitoneal-Chemotherapy",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Intraperitoneal-Chemotherapy",
+    "/costs/India/Mumbai/Medical-Oncology/Intraperitoneal-Chemotherapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is IP chemotherapy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /peritoneal cavity/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Peritoneum",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/intraperitoneal-chemotherapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/intraperitoneal(?:-chemotherapy)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/pipac/);
+  assert.doesNotMatch(body, /\/treatments\/hipec-treatment/);
+  assert.doesNotMatch(body, /\/treatments\/cytoreductive-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/peritoneal-cancer/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/intraperitoneal-chemotherapy-in-india/);
+  const ovarian = store.treatments.find((row) => row.slug === "ovarian-cancer-treatment-in-india");
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  const hipec = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");
+  assert.match(
+    ovarian?.translations.en?.editorialBody ?? "",
+    /\/treatments\/intraperitoneal-chemotherapy-in-india/,
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/intraperitoneal-chemotherapy-in-india/,
+  );
+  assert.match(
+    hipec?.translations.en?.editorialBody ?? "",
+    /\/treatments\/intraperitoneal-chemotherapy-in-india/,
+  );
+  assert.ok(ovarian?.relatedTreatmentSlugs?.includes("intraperitoneal-chemotherapy-in-india"));
+  assert.ok(colon?.relatedTreatmentSlugs?.includes("intraperitoneal-chemotherapy-in-india"));
+  assert.ok(hipec?.relatedTreatmentSlugs?.includes("intraperitoneal-chemotherapy-in-india"));
+});
+
+test("the published Adjuvant Chemotherapy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "adjuvant-chemotherapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$2,500–\$10,000/);
+  assert.match(body, /\$15,000–\$45,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /Cycles after surgery · 3–6 months/);
+  assert.match(body, /article-quick-answer|Quick Answer: What Is Adjuvant Chemotherapy/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Adjuvant-Chemotherapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Neoadjuvant-Chemotherapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Adjuvant-Chemotherapy/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/ovarian-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/pancreatic-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/bile-duct-cancer-surgery-in-india/);
+  assert.match(body, /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(body, /\/blogs\/chemotherapy-for-breast-cancer-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-chemotherapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/adj-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/adj-cycle\.webp/);
+  assert.match(body, /\/uploads\/treatments\/adj-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/adj-monitor\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Adjuvant-Chemotherapy",
+    "/doctors/India/Mumbai/Medical-Oncology/Adjuvant-Chemotherapy",
+    "/doctors/India/Bengaluru/Medical-Oncology/Adjuvant-Chemotherapy",
+    "/doctors/India/Chennai/Medical-Oncology/Adjuvant-Chemotherapy",
+    "/doctors/India/Hyderabad/Medical-Oncology/Adjuvant-Chemotherapy",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Adjuvant-Chemotherapy",
+    "/costs/India/Mumbai/Medical-Oncology/Adjuvant-Chemotherapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is adjuvant chemotherapy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /after the primary treatment/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/adjuvant-chemotherapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/adjuvant(?:-chemotherapy)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/gastric-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/endometrial/);
+  assert.match(body, /\/treatments\/neoadjuvant-chemotherapy-in-india/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/adjuvant-chemotherapy-in-india/);
+  const breast = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  const pancreas = store.treatments.find((row) => row.slug === "pancreatic-cancer-treatment-in-india");
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/adjuvant-chemotherapy-in-india/,
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/adjuvant-chemotherapy-in-india/,
+  );
+  assert.match(
+    pancreas?.translations.en?.editorialBody ?? "",
+    /\/treatments\/adjuvant-chemotherapy-in-india/,
+  );
+  assert.ok(breast?.relatedTreatmentSlugs?.includes("adjuvant-chemotherapy-in-india"));
+  assert.ok(colon?.relatedTreatmentSlugs?.includes("adjuvant-chemotherapy-in-india"));
+  assert.ok(pancreas?.relatedTreatmentSlugs?.includes("adjuvant-chemotherapy-in-india"));
+});
+
+test("the published Neoadjuvant Chemotherapy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "neoadjuvant-chemotherapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$2,500–\$10,000/);
+  assert.match(body, /\$15,000–\$45,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /Cycles before surgery · 2–4 months/);
+  assert.match(body, /article-quick-answer|Quick Answer: Neoadjuvant Chemotherapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Neoadjuvant-Chemotherapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Adjuvant-Chemotherapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Neoadjuvant-Chemotherapy/);
+  assert.match(body, /\/treatments\/adjuvant-chemotherapy-in-india/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/ovarian-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/pancreatic-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/whipple-surgery-in-india/);
+  assert.match(body, /\/treatments\/external-beam-radiotherapy-in-india/);
+  assert.match(body, /\/blogs\/chemotherapy-for-breast-cancer-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-chemotherapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/neo-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/neo-cycle\.webp/);
+  assert.match(body, /\/uploads\/treatments\/neo-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/neo-restage\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Neoadjuvant-Chemotherapy",
+    "/doctors/India/Mumbai/Medical-Oncology/Neoadjuvant-Chemotherapy",
+    "/doctors/India/Bengaluru/Medical-Oncology/Neoadjuvant-Chemotherapy",
+    "/doctors/India/Chennai/Medical-Oncology/Neoadjuvant-Chemotherapy",
+    "/doctors/India/Hyderabad/Medical-Oncology/Neoadjuvant-Chemotherapy",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Neoadjuvant-Chemotherapy",
+    "/costs/India/Mumbai/Medical-Oncology/Neoadjuvant-Chemotherapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is neoadjuvant chemotherapy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /before planned definitive treatment/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/neoadjuvant-chemotherapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/neoadjuvant(?:-chemotherapy)?(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/gastric-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/oesophageal/);
+  assert.doesNotMatch(body, /\/treatments\/bladder-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/osteosarcoma/);
+  assert.doesNotMatch(body, /\/treatments\/rectal-cancer-treatment/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/neoadjuvant-chemotherapy-in-india/);
+  const breast = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  const pancreas = store.treatments.find((row) => row.slug === "pancreatic-cancer-treatment-in-india");
+  const adjuvant = store.treatments.find((row) => row.slug === "adjuvant-chemotherapy-in-india");
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/neoadjuvant-chemotherapy-in-india/,
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/neoadjuvant-chemotherapy-in-india/,
+  );
+  assert.match(
+    pancreas?.translations.en?.editorialBody ?? "",
+    /\/treatments\/neoadjuvant-chemotherapy-in-india/,
+  );
+  assert.match(
+    adjuvant?.translations.en?.editorialBody ?? "",
+    /\/treatments\/neoadjuvant-chemotherapy-in-india/,
+  );
+  assert.ok(breast?.relatedTreatmentSlugs?.includes("neoadjuvant-chemotherapy-in-india"));
+  assert.ok(colon?.relatedTreatmentSlugs?.includes("neoadjuvant-chemotherapy-in-india"));
+  assert.ok(pancreas?.relatedTreatmentSlugs?.includes("neoadjuvant-chemotherapy-in-india"));
+  assert.ok(adjuvant?.relatedTreatmentSlugs?.includes("neoadjuvant-chemotherapy-in-india"));
+});
+
+test("the published Molecular Targeted Therapy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "molecular-targeted-therapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$10,000–\$32,000/);
+  assert.match(body, /\$90,000–\$180,000/);
+  assert.match(body, /\$8,000–\$30,000/);
+  assert.match(body, /\$2,000–\$7,000/);
+  assert.match(body, /Oral or infusion by mutation/);
+  assert.match(body, /article-quick-answer|Quick Answer: Molecular Targeted Therapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Molecular-Targeted-Therapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Targeted-Therapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Precision-Oncology/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Molecular-Targeted-Therapy/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/ovarian-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/leukemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/adjuvant-chemotherapy-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-targeted-therapy-in-india/);
+  assert.match(body, /\/blogs\/her2-positive-breast-cancer-treatment-india/);
+  assert.match(body, /\/uploads\/treatments\/mtt-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/mtt-panel\.webp/);
+  assert.match(body, /\/uploads\/treatments\/mtt-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/mtt-resist\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Molecular-Targeted-Therapy",
+    "/doctors/India/Mumbai/Medical-Oncology/Molecular-Targeted-Therapy",
+    "/doctors/India/Bengaluru/Medical-Oncology/Molecular-Targeted-Therapy",
+    "/doctors/India/Chennai/Medical-Oncology/Molecular-Targeted-Therapy",
+    "/doctors/India/Hyderabad/Medical-Oncology/Molecular-Targeted-Therapy",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Molecular-Targeted-Therapy",
+    "/costs/India/Mumbai/Medical-Oncology/Molecular-Targeted-Therapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is molecular targeted therapy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /specific molecular targets/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/molecular-targeted-therapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/molecular-targeted-therapy(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/gastric-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/kidney-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/liver-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/thyroid-cancer/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/molecular-targeted-therapy-in-india/);
+  const breast = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  const ovarian = store.treatments.find((row) => row.slug === "ovarian-cancer-treatment-in-india");
+  const prostate = store.treatments.find((row) => row.slug === "prostate-cancer-treatment-in-india");
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/molecular-targeted-therapy-in-india/,
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/molecular-targeted-therapy-in-india/,
+  );
+  assert.match(
+    ovarian?.translations.en?.editorialBody ?? "",
+    /\/treatments\/molecular-targeted-therapy-in-india/,
+  );
+  assert.match(
+    prostate?.translations.en?.editorialBody ?? "",
+    /\/treatments\/molecular-targeted-therapy-in-india/,
+  );
+  assert.ok(breast?.relatedTreatmentSlugs?.includes("molecular-targeted-therapy-in-india"));
+  assert.ok(colon?.relatedTreatmentSlugs?.includes("molecular-targeted-therapy-in-india"));
+  assert.ok(ovarian?.relatedTreatmentSlugs?.includes("molecular-targeted-therapy-in-india"));
+  assert.ok(prostate?.relatedTreatmentSlugs?.includes("molecular-targeted-therapy-in-india"));
+});
+
+test("the published Precision Oncology page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "precision-oncology-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$2,000–\$7,000/);
+  assert.match(body, /\$8,000–\$25,000/);
+  assert.match(body, /\$10,000–\$32,000/);
+  assert.match(body, /NGS panel \+ clinic visit/);
+  assert.match(body, /article-quick-answer|Quick Answer: Precision Oncology in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Precision-Oncology/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Molecular-Targeted-Therapy/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Precision-Oncology/);
+  assert.match(body, /\/treatments\/molecular-targeted-therapy-in-india/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/ovarian-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/brain-tumor-surgery-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-targeted-therapy-in-india/);
+  assert.match(body, /\/blogs\/her2-positive-breast-cancer-treatment-india/);
+  assert.match(body, /\/uploads\/treatments\/po-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/po-ngs\.webp/);
+  assert.match(body, /\/uploads\/treatments\/po-board\.webp/);
+  assert.match(body, /\/uploads\/treatments\/po-liquid\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Precision-Oncology",
+    "/doctors/India/Mumbai/Medical-Oncology/Precision-Oncology",
+    "/doctors/India/Bengaluru/Medical-Oncology/Precision-Oncology",
+    "/doctors/India/Chennai/Medical-Oncology/Precision-Oncology",
+    "/doctors/India/Hyderabad/Medical-Oncology/Precision-Oncology",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Precision-Oncology",
+    "/costs/India/Mumbai/Medical-Oncology/Precision-Oncology",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 15);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is precision oncology/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /molecular, genomic, biomarker/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/precision-oncology-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatment\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/precision-oncology(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/gastric-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/melanoma/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/precision-oncology-in-india/);
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  const ovarian = store.treatments.find((row) => row.slug === "ovarian-cancer-treatment-in-india");
+  const mtt = store.treatments.find((row) => row.slug === "molecular-targeted-therapy-in-india");
+  const adjuvant = store.treatments.find((row) => row.slug === "adjuvant-chemotherapy-in-india");
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/precision-oncology-in-india/,
+  );
+  assert.match(
+    ovarian?.translations.en?.editorialBody ?? "",
+    /\/treatments\/precision-oncology-in-india/,
+  );
+  assert.match(
+    mtt?.translations.en?.editorialBody ?? "",
+    /\/treatments\/precision-oncology-in-india/,
+  );
+  assert.match(
+    adjuvant?.translations.en?.editorialBody ?? "",
+    /\/treatments\/precision-oncology-in-india/,
+  );
+  assert.ok(colon?.relatedTreatmentSlugs?.includes("precision-oncology-in-india"));
+  assert.ok(ovarian?.relatedTreatmentSlugs?.includes("precision-oncology-in-india"));
+  assert.ok(mtt?.relatedTreatmentSlugs?.includes("precision-oncology-in-india"));
+  assert.ok(adjuvant?.relatedTreatmentSlugs?.includes("precision-oncology-in-india"));
+});
+
+test("the published Hormone Therapy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "hormone-therapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$1,000–\$4,500/);
+  assert.match(body, /\$5,000–\$25,000/);
+  assert.match(body, /\$8,000–\$30,000/);
+  assert.match(body, /Outpatient · often years of tablets/);
+  assert.match(body, /article-quick-answer|Quick Answer: Hormone Therapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Hormone-Therapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Molecular-Targeted-Therapy/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Hormone-Therapy/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/ovarian-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/molecular-targeted-therapy-in-india/);
+  assert.match(body, /\/treatments\/precision-oncology-in-india/);
+  assert.match(body, /\/treatments\/adjuvant-chemotherapy-in-india/);
+  assert.match(body, /\/blogs\/hormone-therapy-breast-cancer-india/);
+  assert.match(body, /\/blogs\/hormone-therapy-for-prostate-cancer/);
+  assert.match(body, /\/uploads\/treatments\/ht-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ht-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ht-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ht-side-effects\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Hormone-Therapy",
+    "/doctors/India/Mumbai/Medical-Oncology/Hormone-Therapy",
+    "/doctors/India/Bengaluru/Medical-Oncology/Hormone-Therapy",
+    "/doctors/India/Chennai/Medical-Oncology/Hormone-Therapy",
+    "/doctors/India/Hyderabad/Medical-Oncology/Hormone-Therapy",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Hormone-Therapy",
+    "/costs/India/Mumbai/Medical-Oncology/Hormone-Therapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 15);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is hormone therapy/i);
+  assert.match(
+    qa.quickAnswer?.items[0]?.answer ?? "",
+    /systemic cancer treatment that either reduces hormone production/i,
+  );
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/hormone-therapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatment\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/hormone-therapy(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/endometrial/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/hormone-therapy-in-india/);
+  const breast = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  const prostate = store.treatments.find((row) => row.slug === "prostate-cancer-treatment-in-india");
+  const ovarian = store.treatments.find((row) => row.slug === "ovarian-cancer-treatment-in-india");
+  const adjuvant = store.treatments.find((row) => row.slug === "adjuvant-chemotherapy-in-india");
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/hormone-therapy-in-india/,
+  );
+  assert.match(
+    prostate?.translations.en?.editorialBody ?? "",
+    /\/treatments\/hormone-therapy-in-india/,
+  );
+  assert.match(
+    ovarian?.translations.en?.editorialBody ?? "",
+    /\/treatments\/hormone-therapy-in-india/,
+  );
+  assert.match(
+    adjuvant?.translations.en?.editorialBody ?? "",
+    /\/treatments\/hormone-therapy-in-india/,
+  );
+  assert.ok(breast?.relatedTreatmentSlugs?.includes("hormone-therapy-in-india"));
+  assert.ok(prostate?.relatedTreatmentSlugs?.includes("hormone-therapy-in-india"));
+  assert.ok(ovarian?.relatedTreatmentSlugs?.includes("hormone-therapy-in-india"));
+  assert.ok(adjuvant?.relatedTreatmentSlugs?.includes("hormone-therapy-in-india"));
+});
+
+test("the published Targeted Therapy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "targeted-therapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$8,000–\$30,000/);
+  assert.match(body, /\$80,000–\$160,000/);
+  assert.match(body, /\$10,000–\$32,000/);
+  assert.match(body, /Oral or infusion · months of therapy/);
+  assert.match(body, /article-quick-answer|Quick Answer: Targeted Therapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Targeted-Therapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Molecular-Targeted-Therapy/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Targeted-Therapy/);
+  assert.match(body, /\/treatments\/molecular-targeted-therapy-in-india/);
+  assert.match(body, /\/treatments\/precision-oncology-in-india/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/ovarian-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/leukemia-treatment-in-india/);
+  assert.match(body, /\/blogs\/her2-positive-breast-cancer-treatment-india/);
+  assert.match(body, /\/blogs\/colon-cancer-targeted-therapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/tt-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tt-biomarker\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tt-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tt-compare\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Targeted-Therapy",
+    "/doctors/India/Mumbai/Medical-Oncology/Targeted-Therapy",
+    "/doctors/India/Bengaluru/Medical-Oncology/Targeted-Therapy",
+    "/doctors/India/Chennai/Medical-Oncology/Targeted-Therapy",
+    "/doctors/India/Hyderabad/Medical-Oncology/Targeted-Therapy",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Targeted-Therapy",
+    "/costs/India/Mumbai/Medical-Oncology/Targeted-Therapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 15);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is targeted therapy/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /specific molecular targets/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/targeted-therapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatment\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/targeted-therapy(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/gastric-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/melanoma/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/targeted-therapy-in-india/);
+  const breast = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  const mtt = store.treatments.find((row) => row.slug === "molecular-targeted-therapy-in-india");
+  const leukemia = store.treatments.find((row) => row.slug === "leukemia-treatment-in-india");
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/targeted-therapy-in-india/,
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/targeted-therapy-in-india/,
+  );
+  assert.match(mtt?.translations.en?.editorialBody ?? "", /\/treatments\/targeted-therapy-in-india/);
+  assert.match(
+    leukemia?.translations.en?.editorialBody ?? "",
+    /\/treatments\/targeted-therapy-in-india/,
+  );
+  assert.ok(breast?.relatedTreatmentSlugs?.includes("targeted-therapy-in-india"));
+  assert.ok(colon?.relatedTreatmentSlugs?.includes("targeted-therapy-in-india"));
+  assert.ok(mtt?.relatedTreatmentSlugs?.includes("targeted-therapy-in-india"));
+  assert.ok(leukemia?.relatedTreatmentSlugs?.includes("targeted-therapy-in-india"));
+});
+
+test("the published Immunotherapy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "immunotherapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$15,000–\$45,000/);
+  assert.match(body, /\$100,000–\$250,000/);
+  assert.match(body, /\$18,000–\$50,000/);
+  assert.match(body, /\$80,000–\$180,000/);
+  assert.match(body, /Outpatient q2–6 weeks/);
+  assert.match(body, /article-quick-answer|Quick Answer: Immunotherapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Immunotherapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Immune-Checkpoint-Inhibitor-Therapy/);
+  assert.match(body, /\/costs\/India\/Hematology\/CAR-T-Cell-Therapy/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Immunotherapy/);
+  assert.match(body, /\/treatments\/targeted-therapy-in-india/);
+  assert.match(body, /\/treatments\/car-t-cell-therapy-in-india/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/lymphoma-treatment-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-immunotherapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/io-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/io-checkpoint\.webp/);
+  assert.match(body, /\/uploads\/treatments\/io-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/io-monitor\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Immunotherapy",
+    "/doctors/India/Mumbai/Medical-Oncology/Immunotherapy",
+    "/doctors/India/Bengaluru/Medical-Oncology/Immunotherapy",
+    "/doctors/India/Chennai/Medical-Oncology/Immunotherapy",
+    "/doctors/India/Hyderabad/Medical-Oncology/Immunotherapy",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Immunotherapy",
+    "/costs/India/Mumbai/Medical-Oncology/Immunotherapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 15);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is immunotherapy/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/immunotherapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatment\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/immunotherapy(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/gastric-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/melanoma/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/immunotherapy-in-india/);
+  const breast = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  const lymphoma = store.treatments.find((row) => row.slug === "lymphoma-treatment-in-india");
+  const cart = store.treatments.find((row) => row.slug === "car-t-cell-therapy-in-india");
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/immunotherapy-in-india/,
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/immunotherapy-in-india/,
+  );
+  assert.match(
+    lymphoma?.translations.en?.editorialBody ?? "",
+    /\/treatments\/immunotherapy-in-india/,
+  );
+  assert.match(cart?.translations.en?.editorialBody ?? "", /\/treatments\/immunotherapy-in-india/);
+  assert.ok(breast?.relatedTreatmentSlugs?.includes("immunotherapy-in-india"));
+  assert.ok(colon?.relatedTreatmentSlugs?.includes("immunotherapy-in-india"));
+  assert.ok(lymphoma?.relatedTreatmentSlugs?.includes("immunotherapy-in-india"));
+  assert.ok(cart?.relatedTreatmentSlugs?.includes("immunotherapy-in-india"));
+});
+
+test("the published Chemotherapy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "chemotherapy-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /\$10,000–\$50,000/);
+  assert.match(body, /\$2,500–\$10,000/);
+  assert.match(body, /Outpatient cycles · 3–6 months typical/);
+  assert.match(body, /article-quick-answer|Quick Answer: Chemotherapy in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Adjuvant-Chemotherapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Neoadjuvant-Chemotherapy/);
+  assert.match(body, /\/doctors\/India\/Medical-Oncology\/Chemotherapy/);
+  assert.match(body, /\/treatments\/adjuvant-chemotherapy-in-india/);
+  assert.match(body, /\/treatments\/neoadjuvant-chemotherapy-in-india/);
+  assert.match(body, /\/treatments\/immunotherapy-in-india/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-chemotherapy-in-india/);
+  assert.match(body, /\/blogs\/chemotherapy-for-breast-cancer-in-india/);
+  assert.match(body, /\/uploads\/treatments\/chemo-hero\.webp/);
+  assert.match(body, /\/uploads\/treatments\/chemo-cycle\.webp/);
+  assert.match(body, /\/uploads\/treatments\/chemo-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/chemo-counts\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Chemotherapy",
+    "/doctors/India/Mumbai/Medical-Oncology/Chemotherapy",
+    "/doctors/India/Bengaluru/Medical-Oncology/Chemotherapy",
+    "/doctors/India/Chennai/Medical-Oncology/Chemotherapy",
+    "/doctors/India/Hyderabad/Medical-Oncology/Chemotherapy",
+    "/hospitals/India/Delhi-NCR/Medical-Oncology",
+    "/hospitals/India/Mumbai/Medical-Oncology",
+    "/hospitals/India/Bengaluru/Medical-Oncology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Chemotherapy",
+    "/costs/India/Mumbai/Medical-Oncology/Chemotherapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 15);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is chemotherapy/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    undefined,
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/chemotherapy-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\//);
+  assert.doesNotMatch(body, /\/treatment\/india\//);
+  assert.doesNotMatch(body, /\/treatments\/chemotherapy(?:\/|$)/);
+  assert.doesNotMatch(body, /\/treatments\/lung-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/gastric-cancer/);
+  assert.doesNotMatch(body, /\/treatments\/melanoma/);
+  assert.doesNotMatch(body, /Best hospitals/i);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/chemotherapy-in-india/);
+  const breast = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  const adjuvant = store.treatments.find((row) => row.slug === "adjuvant-chemotherapy-in-india");
+  const immuno = store.treatments.find((row) => row.slug === "immunotherapy-in-india");
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/chemotherapy-in-india/,
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/chemotherapy-in-india/,
+  );
+  assert.match(
+    adjuvant?.translations.en?.editorialBody ?? "",
+    /\/treatments\/chemotherapy-in-india/,
+  );
+  assert.match(
+    immuno?.translations.en?.editorialBody ?? "",
+    /\/treatments\/chemotherapy-in-india/,
+  );
+  assert.ok(breast?.relatedTreatmentSlugs?.includes("chemotherapy-in-india"));
+  assert.ok(colon?.relatedTreatmentSlugs?.includes("chemotherapy-in-india"));
+  assert.ok(adjuvant?.relatedTreatmentSlugs?.includes("chemotherapy-in-india"));
+  assert.ok(immuno?.relatedTreatmentSlugs?.includes("chemotherapy-in-india"));
+});
+
+test("the published HIPEC surgery page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$18,000–\$40,000/);
+  assert.match(body, /\$10,000–\$24,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /article-quick-answer|Quick Answer: What Is HIPEC Surgery/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /PRODIGE 7/);
+  assert.match(body, /Why Choose India for HIPEC Treatment/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Cytoreductive-Surgery-with-HIPEC/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Cytoreductive-Surgery-with-HIPEC/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Cytoreductive-Surgery/);
+  assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Cytoreductive-Surgery-with-HIPEC/);
+  assert.match(body, /\/hospitals\/India\/Bengaluru\/Surgical-Oncology/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC",
+    "/doctors/India/Mumbai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC",
+    "/hospitals/India/Bengaluru/Surgical-Oncology",
+    "/costs/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC",
+    "/costs/India/Surgical-Oncology/Cytoreductive-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/pancreatic-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/stage-4-colon-cancer-treatment-in-india/);
+  assert.match(body, /\/blogs\/colon-cancer-chemotherapy-in-india/);
+  assert.match(body, /\/uploads\/treatments\/hipec-peritoneum-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hipec-cytoreduction\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hipec-heated-chemo\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hipec-clinic\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 1);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /HIPEC surgery is a two-part cancer treatment/i);
+  assert.equal(
+    treatmentBodyLocation(treatment.category, treatment.subspecialty, treatment.translations.en!.name),
+    "Peritoneum",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/hipec-surgery-in-india"));
+  const colon = store.treatments.find((row) => row.slug === "colon-cancer-treatment-in-india");
+  assert.match(colon?.translations.en?.editorialBody ?? "", /\/treatments\/hipec-surgery-in-india/);
+});
+
+test("the published cervical cancer page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "cervical-cancer-treatment-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$5,000–\$12,000/);
+  assert.match(body, /\$6,000–\$14,000/);
+  assert.match(body, /\$1,000–\$6,000\+/);
+  assert.match(body, /\$5,500–\$13,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /\$15,000–\$45,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: What is the treatment for cervical cancer in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /KEYNOTE-A18/);
+  assert.match(body, /\/costs\/India\/Gynecology\/Gynecologic-Cancer-Surgery/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Gynecology\/Gynecologic-Cancer-Surgery/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Radical-Hysterectomy/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/Brachytherapy/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/IMRT/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/EBRT/);
+  assert.match(body, /\/doctors\/India\/Mumbai\/Gynecology\/Gynecologic-Cancer-Surgery/);
+  assert.match(body, /\/hospitals\/India\/Bengaluru\/Gynecology/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Gynecology/Gynecologic-Cancer-Surgery",
+    "/doctors/India/Mumbai/Gynecology/Gynecologic-Cancer-Surgery",
+    "/hospitals/India/Bengaluru/Gynecology",
+    "/costs/India/Delhi-NCR/Gynecology/Gynecologic-Cancer-Surgery",
+    "/costs/India/Surgical-Oncology/Radical-Hysterectomy",
+    "/costs/India/Radiation-Oncology/Intracavitary-Brachytherapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/hipec-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/cervical-anatomy-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cervical-figo-spread\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cervical-brachytherapy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cervical-clinic\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 1);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /What is the treatment for cervical cancer in India/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Cervix",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/cervical-cancer-treatment-in-india"));
+  const breast = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/cervical-cancer-treatment-in-india/,
+  );
+  const hipec = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");
+  assert.match(
+    hipec?.translations.en?.editorialBody ?? "",
+    /\/treatments\/cervical-cancer-treatment-in-india/,
+  );
+});
+
+test("the published ovarian cancer page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "ovarian-cancer-treatment-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$18,000–\$40,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /\$8,000–\$30,000/);
+  assert.match(body, /\$2,000–\$7,000/);
+  assert.match(
+    body,
+    /article-quick-answer|Quick Answer: Ovarian Cancer Treatment in India/,
+  );
+  assert.match(body, /local emergency department/);
+  assert.match(body, /OVHIPEC-1/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Ovarian-Cancer-Cytoreductive-Surgery/);
+  assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Ovarian-Cancer-Cytoreductive-Surgery/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Cytoreductive-Surgery-with-HIPEC/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/PIPAC/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Precision-Oncology/);
+  assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Ovarian-Cancer-Cytoreductive-Surgery/);
+  assert.match(body, /\/hospitals\/India\/Bengaluru\/Gynecology/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Surgical-Oncology/Ovarian-Cancer-Cytoreductive-Surgery",
+    "/doctors/India/Mumbai/Surgical-Oncology/Ovarian-Cancer-Cytoreductive-Surgery",
+    "/hospitals/India/Bengaluru/Gynecology",
+    "/costs/India/Delhi-NCR/Surgical-Oncology/Ovarian-Cancer-Cytoreductive-Surgery",
+    "/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC",
+    "/costs/India/Medical-Oncology/Precision-Oncology",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.match(body, /\/treatments\/cervical-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/hipec-surgery-in-india/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/ovarian-anatomy-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ovarian-peritoneal-spread\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ovarian-cytoreduction\.webp/);
+  assert.match(body, /\/uploads\/treatments\/ovarian-clinic\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 1);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Ovarian cancer treatment in India typically involves surgery and chemotherapy/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Ovary",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/ovarian-cancer-treatment-in-india"),
+  );
+  const cervical = store.treatments.find((row) => row.slug === "cervical-cancer-treatment-in-india");
+  assert.match(
+    cervical?.translations.en?.editorialBody ?? "",
+    /\/treatments\/ovarian-cancer-treatment-in-india/,
+  );
+  const hipec = store.treatments.find((row) => row.slug === "hipec-surgery-in-india");
+  assert.match(
+    hipec?.translations.en?.editorialBody ?? "",
+    /\/treatments\/ovarian-cancer-treatment-in-india/,
+  );
+});
+
+test("the published knee replacement page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "knee-replacement-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$5,500–\$12,000/);
+  assert.match(body, /\$7,000–\$15,000/);
+  assert.match(body, /\$4,500–\$10,000/);
+  assert.match(body, /\$9,000–\$18,000/);
+  assert.match(body, /\$6,000–\$13,000/);
+  assert.match(body, /4–7 nights/);
+  assert.match(
+    body,
+    /article-quick-answer|Quick Answer: Knee Replacement Surgery in India/,
+  );
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Total-Knee-Replacement/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Robotic-Knee-Replacement/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Partial-Knee-Replacement/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Revision-Knee-Replacement/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Total-Hip-Replacement/);
+  assert.match(body, /\/blogs\/knee-replacement-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/knee-oa-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/knee-tkr-implants\.webp/);
+  assert.match(body, /\/uploads\/treatments\/knee-robotic\.webp/);
+  assert.match(body, /\/uploads\/treatments\/knee-physio\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Orthopedics/Total-Knee-Replacement",
+    "/doctors/India/Mumbai/Orthopedics/Total-Knee-Replacement",
+    "/doctors/India/Bengaluru/Orthopedics/Total-Knee-Replacement",
+    "/doctors/India/Chennai/Orthopedics/Total-Knee-Replacement",
+    "/doctors/India/Hyderabad/Orthopedics/Total-Knee-Replacement",
+    "/hospitals/India/Delhi-NCR/Orthopedics",
+    "/hospitals/India/Mumbai/Orthopedics",
+    "/hospitals/India/Bengaluru/Orthopedics",
+    "/costs/India/Delhi-NCR/Orthopedics/Total-Knee-Replacement",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Knee replacement surgery in India is a procedure that replaces damaged knee joint surfaces/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Knee",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/knee-replacement-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.match(body, /\/treatments\/hip-replacement-surgery-in-india/);
+});
+
+test("the published hip replacement page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "hip-replacement-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$6,000–\$13,000/);
+  assert.match(body, /\$10,000–\$20,000/);
+  assert.match(body, /\$6,500–\$14,000/);
+  assert.match(body, /\$5,500–\$12,000/);
+  assert.match(body, /\$7,000–\$15,000/);
+  assert.match(body, /\$4,500–\$10,000/);
+  assert.match(body, /\$9,000–\$18,000/);
+  assert.match(body, /4–7 nights/);
+  assert.match(
+    body,
+    /article-quick-answer|Quick Answer: Hip Replacement Surgery in India/,
+  );
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Total-Hip-Replacement/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Revision-Hip-Replacement/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Hip-Resurfacing/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Total-Knee-Replacement/);
+  assert.match(body, /\/treatments\/knee-replacement-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/hip-oa-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hip-thr-implants\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hip-avn\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hip-physio\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Orthopedics/Total-Hip-Replacement",
+    "/doctors/India/Mumbai/Orthopedics/Total-Hip-Replacement",
+    "/doctors/India/Bengaluru/Orthopedics/Total-Hip-Replacement",
+    "/doctors/India/Chennai/Orthopedics/Total-Hip-Replacement",
+    "/doctors/India/Hyderabad/Orthopedics/Total-Hip-Replacement",
+    "/hospitals/India/Delhi-NCR/Orthopedics",
+    "/hospitals/India/Mumbai/Orthopedics",
+    "/hospitals/India/Bengaluru/Orthopedics",
+    "/costs/India/Delhi-NCR/Orthopedics/Total-Hip-Replacement",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(
+    /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
+  );
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Hip replacement surgery in India is a procedure that replaces damaged portions of the hip joint/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Hip",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/hip-replacement-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/hip-replacement-surgery/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/hip-replacement-surgery-in-india/);
+});
+
+test("the published ACL surgery page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "acl-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$2,500–\$6,500/);
+  assert.match(body, /\$1,800–\$4,500/);
+  assert.match(body, /\$3,000–\$7,500/);
+  assert.match(body, /\$2,000–\$5,500/);
+  assert.match(body, /\$5,500–\$12,000/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: ACL Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/ACL-Reconstruction-\(Anterior-Cruciate-Ligament\)/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Meniscus-Repair/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/PCL-Reconstruction-\(Posterior-Cruciate-Ligament\)/);
+  assert.match(body, /\/treatments\/knee-replacement-surgery-in-india/);
+  assert.match(body, /\/treatments\/hip-replacement-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/acl-tear-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/acl-graft-tunnels\.webp/);
+  assert.match(body, /\/uploads\/treatments\/acl-graft-options\.webp/);
+  assert.match(body, /\/uploads\/treatments\/acl-physio\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)",
+    "/doctors/India/Mumbai/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)",
+    "/doctors/India/Bengaluru/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)",
+    "/doctors/India/Chennai/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)",
+    "/doctors/India/Hyderabad/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)",
+    "/hospitals/India/Delhi-NCR/Orthopedics",
+    "/hospitals/India/Mumbai/Orthopedics",
+    "/hospitals/India/Bengaluru/Orthopedics",
+    "/costs/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /ACL surgery in India usually involves arthroscopic reconstruction/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Knee",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/acl-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/acl-surgery\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/acl-surgery-in-india/);
+  const knee = store.treatments.find((row) => row.slug === "knee-replacement-surgery-in-india");
+  assert.match(
+    knee?.translations.en?.editorialBody ?? "",
+    /\/treatments\/acl-surgery-in-india/,
+  );
+});
+
+test("the published knee arthroscopy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "knee-arthroscopy-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$2,000–\$5,500/);
+  assert.match(body, /\$1,800–\$4,500/);
+  assert.match(body, /\$2,500–\$6,500/);
+  assert.match(body, /\$3,000–\$7,500/);
+  assert.match(body, /\$5,500–\$12,000/);
+  assert.match(body, /outpatient or 1–2 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: What Is Knee Arthroscopy/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Arthroscopic-Surgery/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Meniscus-Repair/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/ACL-Reconstruction-\(Anterior-Cruciate-Ligament\)/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/PCL-Reconstruction-\(Posterior-Cruciate-Ligament\)/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Total-Knee-Replacement/);
+  assert.match(body, /\/treatments\/acl-surgery-in-india/);
+  assert.match(body, /\/treatments\/knee-replacement-surgery-in-india/);
+  assert.match(body, /\/treatments\/hip-replacement-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/arthro-meniscus-tear\.webp/);
+  assert.match(body, /\/uploads\/treatments\/arthro-portals\.webp/);
+  assert.match(body, /\/uploads\/treatments\/arthro-loose-body\.webp/);
+  assert.match(body, /\/uploads\/treatments\/arthro-physio\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Orthopedics/Arthroscopic-Surgery",
+    "/doctors/India/Mumbai/Orthopedics/Arthroscopic-Surgery",
+    "/doctors/India/Bengaluru/Orthopedics/Arthroscopic-Surgery",
+    "/doctors/India/Chennai/Orthopedics/Arthroscopic-Surgery",
+    "/doctors/India/Hyderabad/Orthopedics/Arthroscopic-Surgery",
+    "/hospitals/India/Delhi-NCR/Orthopedics",
+    "/hospitals/India/Mumbai/Orthopedics",
+    "/hospitals/India/Bengaluru/Orthopedics",
+    "/costs/India/Delhi-NCR/Orthopedics/Arthroscopic-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Knee arthroscopy is keyhole surgery of the knee/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Knee",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/knee-arthroscopy-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/knee-arthroscopy/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/knee-arthroscopy-surgery-in-india/,
+  );
+  const acl = store.treatments.find((row) => row.slug === "acl-surgery-in-india");
+  assert.match(
+    acl?.translations.en?.editorialBody ?? "",
+    /\/treatments\/knee-arthroscopy-surgery-in-india/,
+  );
+  const knee = store.treatments.find(
+    (row) => row.slug === "knee-replacement-surgery-in-india",
+  );
+  assert.match(
+    knee?.translations.en?.editorialBody ?? "",
+    /\/treatments\/knee-arthroscopy-surgery-in-india/,
+  );
+});
+
+test("the published hip arthroscopy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "hip-arthroscopy-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$2,000–\$5,500/);
+  assert.match(body, /\$6,000–\$13,000/);
+  assert.match(body, /\$6,500–\$14,000/);
+  assert.match(body, /\$10,000–\$30,000/);
+  assert.match(body, /outpatient or 1–2 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Hip Arthroscopy Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Arthroscopic-Surgery/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Total-Hip-Replacement/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Hip-Resurfacing/);
+  assert.match(body, /\/treatments\/hip-replacement-surgery-in-india/);
+  assert.match(body, /\/treatments\/knee-arthroscopy-surgery-in-india/);
+  assert.match(body, /\/treatments\/acl-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/hip-fai-cam\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hip-labral-tear\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hip-arthro-portals\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hip-arthro-physio\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Orthopedics/Arthroscopic-Surgery",
+    "/doctors/India/Mumbai/Orthopedics/Arthroscopic-Surgery",
+    "/doctors/India/Bengaluru/Orthopedics/Arthroscopic-Surgery",
+    "/doctors/India/Chennai/Orthopedics/Arthroscopic-Surgery",
+    "/doctors/India/Hyderabad/Orthopedics/Arthroscopic-Surgery",
+    "/hospitals/India/Delhi-NCR/Orthopedics",
+    "/hospitals/India/Mumbai/Orthopedics",
+    "/hospitals/India/Bengaluru/Orthopedics",
+    "/costs/India/Delhi-NCR/Orthopedics/Arthroscopic-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Hip arthroscopy surgery in India is a minimally invasive procedure/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Hip",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/hip-arthroscopy-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/hip-arthroscopy/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/hip-arthroscopy-surgery-in-india/,
+  );
+  const hip = store.treatments.find((row) => row.slug === "hip-replacement-surgery-in-india");
+  assert.match(
+    hip?.translations.en?.editorialBody ?? "",
+    /\/treatments\/hip-arthroscopy-surgery-in-india/,
+  );
+  const kneeArthro = store.treatments.find(
+    (row) => row.slug === "knee-arthroscopy-surgery-in-india",
+  );
+  assert.match(
+    kneeArthro?.translations.en?.editorialBody ?? "",
+    /\/treatments\/hip-arthroscopy-surgery-in-india/,
+  );
+});
+
+test("the published shoulder arthroscopy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "shoulder-arthroscopy-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$2,000–\$5,500/);
+  assert.match(body, /\$2,800–\$7,000/);
+  assert.match(body, /\$6,000–\$13,000/);
+  assert.match(body, /\$15,000–\$40,000/);
+  assert.match(body, /outpatient or 1–2 nights/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: What Is Shoulder Arthroscopy/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Arthroscopic-Surgery/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Rotator-Cuff-Repair/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Shoulder-Replacement/);
+  assert.match(body, /\/treatments\/knee-arthroscopy-surgery-in-india/);
+  assert.match(body, /\/treatments\/hip-arthroscopy-surgery-in-india/);
+  assert.match(body, /\/treatments\/acl-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/shoulder-cuff-tear\.webp/);
+  assert.match(body, /\/uploads\/treatments\/shoulder-labral-tear\.webp/);
+  assert.match(body, /\/uploads\/treatments\/shoulder-arthro-portals\.webp/);
+  assert.match(body, /\/uploads\/treatments\/shoulder-arthro-physio\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Orthopedics/Rotator-Cuff-Repair",
+    "/doctors/India/Mumbai/Orthopedics/Rotator-Cuff-Repair",
+    "/doctors/India/Bengaluru/Orthopedics/Rotator-Cuff-Repair",
+    "/doctors/India/Chennai/Orthopedics/Rotator-Cuff-Repair",
+    "/doctors/India/Hyderabad/Orthopedics/Rotator-Cuff-Repair",
+    "/doctors/India/Delhi-NCR/Orthopedics/Arthroscopic-Surgery",
+    "/hospitals/India/Delhi-NCR/Orthopedics",
+    "/hospitals/India/Mumbai/Orthopedics",
+    "/hospitals/India/Bengaluru/Orthopedics",
+    "/costs/India/Delhi-NCR/Orthopedics/Rotator-Cuff-Repair",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Shoulder arthroscopy is keyhole surgery of the shoulder joint/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Shoulder",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/shoulder-arthroscopy-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/shoulder-arthroscopy/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/shoulder-arthroscopy-surgery-in-india/,
+  );
+  const kneeArthro = store.treatments.find(
+    (row) => row.slug === "knee-arthroscopy-surgery-in-india",
+  );
+  assert.match(
+    kneeArthro?.translations.en?.editorialBody ?? "",
+    /\/treatments\/shoulder-arthroscopy-surgery-in-india/,
+  );
+  const hipArthro = store.treatments.find(
+    (row) => row.slug === "hip-arthroscopy-surgery-in-india",
+  );
+  assert.match(
+    hipArthro?.translations.en?.editorialBody ?? "",
+    /\/treatments\/shoulder-arthroscopy-surgery-in-india/,
+  );
+});
+
+test("the published limb lengthening page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "limb-lengthening-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$12,000–\$28,000/);
+  assert.match(body, /\$10,000–\$25,000/);
+  assert.match(body, /\$4,500–\$13,000/);
+  assert.match(body, /\$5,000–\$14,000/);
+  assert.match(body, /\$2,500–\$8,000/);
+  assert.match(body, /\$50,000–\$150,000/);
+  assert.match(body, /7–14 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Limb Lengthening Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Pediatric-Orthopaedic\/Limb-Lengthening-Surgery/);
+  assert.match(body, /\/costs\/India\/Pediatric-Orthopaedic\/Limb-Reconstruction-Surgery/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Non-Union-Repair/);
+  assert.match(body, /\/treatments\/knee-replacement-surgery-in-india/);
+  assert.match(body, /\/treatments\/hip-replacement-surgery-in-india/);
+  assert.match(body, /\/treatments\/acl-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/limb-lengthening-distraction\.webp/);
+  assert.match(body, /\/uploads\/treatments\/limb-lengthening-nail\.webp/);
+  assert.match(body, /\/uploads\/treatments\/limb-lengthening-frame\.webp/);
+  assert.match(body, /\/uploads\/treatments\/limb-lengthening-physio\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Pediatric-Orthopaedic/Limb-Lengthening-Surgery",
+    "/doctors/India/Mumbai/Pediatric-Orthopaedic/Limb-Lengthening-Surgery",
+    "/doctors/India/Bengaluru/Pediatric-Orthopaedic/Limb-Lengthening-Surgery",
+    "/doctors/India/Chennai/Pediatric-Orthopaedic/Limb-Lengthening-Surgery",
+    "/doctors/India/Hyderabad/Pediatric-Orthopaedic/Limb-Lengthening-Surgery",
+    "/doctors/India/Delhi-NCR/Orthopedics/Limb-Lengthening-Surgery",
+    "/hospitals/India/Delhi-NCR/Pediatric-Orthopaedic",
+    "/hospitals/India/Mumbai/Pediatric-Orthopaedic",
+    "/hospitals/India/Bengaluru/Pediatric-Orthopaedic",
+    "/costs/India/Delhi-NCR/Pediatric-Orthopaedic/Limb-Lengthening-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Limb lengthening surgery in India is an advanced orthopaedic procedure/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Lower Limb",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/limb-lengthening-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/limb-lengthening/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/limb-lengthening-surgery-in-india/,
+  );
+  const hip = store.treatments.find(
+    (row) => row.slug === "hip-replacement-surgery-in-india",
+  );
+  assert.match(
+    hip?.translations.en?.editorialBody ?? "",
+    /\/treatments\/limb-lengthening-surgery-in-india/,
+  );
+  const knee = store.treatments.find(
+    (row) => row.slug === "knee-replacement-surgery-in-india",
+  );
+  assert.match(
+    knee?.translations.en?.editorialBody ?? "",
+    /\/treatments\/limb-lengthening-surgery-in-india/,
+  );
+});
+
+test("the published tendon repair page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "tendon-repair-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$1,500–\$5,000/);
+  assert.match(body, /\$2,000–\$6,000/);
+  assert.match(body, /\$2,800–\$7,000/);
+  assert.match(body, /\$3,500–\$10,000/);
+  assert.match(body, /\$8,000–\$22,000/);
+  assert.match(body, /outpatient or 1–2 nights/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Tendon Repair Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Tendon-Repair/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Achilles-Repair/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/Rotator-Cuff-Repair/);
+  assert.match(body, /\/treatments\/shoulder-arthroscopy-surgery-in-india/);
+  assert.match(body, /\/treatments\/acl-surgery-in-india/);
+  assert.match(body, /\/treatments\/limb-lengthening-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/tendon-flexor-laceration\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tendon-achilles-rupture\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tendon-biceps-avulsion\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tendon-physio-splint\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Orthopedics/Tendon-Repair",
+    "/doctors/India/Mumbai/Orthopedics/Tendon-Repair",
+    "/doctors/India/Bengaluru/Orthopedics/Tendon-Repair",
+    "/doctors/India/Chennai/Orthopedics/Tendon-Repair",
+    "/doctors/India/Hyderabad/Orthopedics/Tendon-Repair",
+    "/doctors/India/Delhi-NCR/Orthopedics/Achilles-Repair",
+    "/hospitals/India/Delhi-NCR/Orthopedics",
+    "/hospitals/India/Mumbai/Orthopedics",
+    "/hospitals/India/Bengaluru/Orthopedics",
+    "/costs/India/Delhi-NCR/Orthopedics/Tendon-Repair",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Tendon repair surgery in India is a procedure used to reconnect/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Tendon",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/tendon-repair-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/tendon-repair/);
+  assert.doesNotMatch(body, /\/treatments\/tendon-repair-surgery\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/tendon-repair-surgery-in-india/,
+  );
+  const shoulder = store.treatments.find(
+    (row) => row.slug === "shoulder-arthroscopy-surgery-in-india",
+  );
+  assert.match(
+    shoulder?.translations.en?.editorialBody ?? "",
+    /\/treatments\/tendon-repair-surgery-in-india/,
+  );
+  const limb = store.treatments.find(
+    (row) => row.slug === "limb-lengthening-surgery-in-india",
+  );
+  assert.match(
+    limb?.translations.en?.editorialBody ?? "",
+    /\/treatments\/tendon-repair-surgery-in-india/,
+  );
+});
+
+test("the published craniotomy page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "craniotomy-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$6,000–\$15,000/);
+  assert.match(body, /\$7,000–\$16,000/);
+  assert.match(body, /\$6,500–\$15,000/);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$8,000–\$22,000/);
+  assert.match(body, /\$5,000–\$12,000/);
+  assert.match(body, /\$2,000–\$6,000/);
+  assert.match(body, /\$8,000–\$18,000/);
+  assert.match(body, /\$10,000–\$25,000/);
+  assert.match(body, /\$8,500–\$18,000/);
+  assert.match(body, /\$10,500–\$22,000/);
+  assert.match(body, /\$50,000–\$150,000/);
+  assert.match(body, /5–10 nights/);
+  assert.match(body, /5–12 nights/);
+  assert.match(body, /7–14 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Craniotomy Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Brain-Tumor-Surgery/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Glioma-Surgery/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Meningioma-Surgery/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Aneurysm-Clipping/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/AVM-Surgery/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/Gamma-Knife/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/craniotomy-bone-flap\.webp/);
+  assert.match(body, /\/uploads\/treatments\/craniotomy-meningioma\.webp/);
+  assert.match(body, /\/uploads\/treatments\/craniotomy-aneurysm\.webp/);
+  assert.match(body, /\/uploads\/treatments\/craniotomy-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Mumbai/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Bengaluru/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Chennai/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Hyderabad/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Delhi-NCR/Neurosurgery/Aneurysm-Clipping",
+    "/hospitals/India/Delhi-NCR/Neurosurgery",
+    "/hospitals/India/Mumbai/Neurosurgery",
+    "/hospitals/India/Bengaluru/Neurosurgery",
+    "/costs/India/Delhi-NCR/Neurosurgery/Brain-Tumor-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /Craniotomy surgery in India is a major neurosurgical procedure/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Brain",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/craniotomy-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/craniotomy/);
+  assert.doesNotMatch(body, /\/treatments\/craniotomy-surgery\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/craniotomy-surgery-in-india/,
+  );
+  const breast = store.treatments.find(
+    (row) => row.slug === "breast-cancer-treatment-in-india",
+  );
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/craniotomy-surgery-in-india/,
+  );
+  const colon = store.treatments.find(
+    (row) => row.slug === "colon-cancer-treatment-in-india",
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/craniotomy-surgery-in-india/,
+  );
+});
+
+test("the published brain tumor page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "brain-tumor-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$6,000–\$15,000/);
+  assert.match(body, /\$7,000–\$16,000/);
+  assert.match(body, /\$6,500–\$15,000/);
+  assert.match(body, /\$5,000–\$12,000/);
+  assert.match(body, /\$2,000–\$6,000/);
+  assert.match(body, /\$8,000–\$22,000/);
+  assert.match(body, /\$1,000–\$6,000\+/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /\$8,500–\$18,000/);
+  assert.match(body, /\$10,500–\$22,000/);
+  assert.match(body, /\$8,000–\$30,000/);
+  assert.match(body, /\$50,000–\$150,000/);
+  assert.match(body, /5–10 nights/);
+  assert.match(body, /5–12 nights/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Brain Tumor Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Brain-Tumor-Surgery/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Glioma-Surgery/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Meningioma-Surgery/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Pituitary-Tumor-Surgery/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Stereotactic-Brain-Biopsy/);
+  assert.match(body, /\/treatments\/craniotomy-surgery-in-india/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/brain-tumor-glioma\.webp/);
+  assert.match(body, /\/uploads\/treatments\/brain-tumor-meningioma\.webp/);
+  assert.match(body, /\/uploads\/treatments\/brain-tumor-awake-mapping\.webp/);
+  assert.match(body, /\/uploads\/treatments\/brain-tumor-biopsy\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Mumbai/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Bengaluru/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Chennai/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Hyderabad/Neurosurgery/Brain-Tumor-Surgery",
+    "/doctors/India/Delhi-NCR/Neurosurgery/Glioma-Surgery",
+    "/hospitals/India/Delhi-NCR/Neurosurgery",
+    "/hospitals/India/Mumbai/Neurosurgery",
+    "/hospitals/India/Bengaluru/Neurosurgery",
+    "/costs/India/Delhi-NCR/Neurosurgery/Brain-Tumor-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /What is brain tumor surgery\?/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Brain",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/brain-tumor-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/brain-tumor/);
+  assert.doesNotMatch(body, /\/treatments\/brain-tumor-surgery\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/brain-tumor-surgery-in-india/,
+  );
+  const craniotomy = store.treatments.find(
+    (row) => row.slug === "craniotomy-surgery-in-india",
+  );
+  assert.match(
+    craniotomy?.translations.en?.editorialBody ?? "",
+    /\/treatments\/brain-tumor-surgery-in-india/,
+  );
+  const breast = store.treatments.find(
+    (row) => row.slug === "breast-cancer-treatment-in-india",
+  );
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/brain-tumor-surgery-in-india/,
+  );
+  const colon = store.treatments.find(
+    (row) => row.slug === "colon-cancer-treatment-in-india",
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/brain-tumor-surgery-in-india/,
+  );
+});
+
+test("the published spine tumor page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "spine-tumor-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$10,000–\$24,000/);
+  assert.match(body, /\$4,000–\$9,500/);
+  assert.match(body, /\$8,000–\$18,000/);
+  assert.match(body, /\$2,500–\$6,500/);
+  assert.match(body, /\$3,000–\$7,500/);
+  assert.match(body, /\$8,000–\$17,500/);
+  assert.match(body, /\$50,000–\$150,000/);
+  assert.match(body, /5–12 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Spine Tumor Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Spine-Surgery\/Spinal-Tumor-Surgery/);
+  assert.match(body, /\/costs\/India\/Spine-Surgery\/Laminectomy/);
+  assert.match(body, /\/costs\/India\/Spine-Surgery\/Spinal-Fusion/);
+  assert.match(body, /\/treatments\/brain-tumor-surgery-in-india/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/colon-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/spine-tumor-vertebral-mets\.webp/);
+  assert.match(body, /\/uploads\/treatments\/spine-tumor-schwannoma\.webp/);
+  assert.match(body, /\/uploads\/treatments\/spine-tumor-instrumentation\.webp/);
+  assert.match(body, /\/uploads\/treatments\/spine-tumor-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Spine-Surgery/Spinal-Tumor-Surgery",
+    "/doctors/India/Mumbai/Spine-Surgery/Spinal-Tumor-Surgery",
+    "/doctors/India/Bengaluru/Spine-Surgery/Spinal-Tumor-Surgery",
+    "/doctors/India/Chennai/Spine-Surgery/Spinal-Tumor-Surgery",
+    "/doctors/India/Hyderabad/Spine-Surgery/Spinal-Tumor-Surgery",
+    "/doctors/India/Delhi-NCR/Neurosurgery/Spinal-Tumor-Surgery",
+    "/hospitals/India/Delhi-NCR/Spine-Surgery",
+    "/hospitals/India/Mumbai/Spine-Surgery",
+    "/hospitals/India/Bengaluru/Spine-Surgery",
+    "/costs/India/Delhi-NCR/Spine-Surgery/Spinal-Tumor-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /What is spine tumor surgery\?/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Spine",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/spine-tumor-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/spine-tumor/);
+  assert.doesNotMatch(body, /\/treatments\/spine-tumor-surgery\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/spine-tumor-surgery-in-india/,
+  );
+  const brain = store.treatments.find(
+    (row) => row.slug === "brain-tumor-surgery-in-india",
+  );
+  assert.match(
+    brain?.translations.en?.editorialBody ?? "",
+    /\/treatments\/spine-tumor-surgery-in-india/,
+  );
+  const breast = store.treatments.find(
+    (row) => row.slug === "breast-cancer-treatment-in-india",
+  );
+  assert.match(
+    breast?.translations.en?.editorialBody ?? "",
+    /\/treatments\/spine-tumor-surgery-in-india/,
+  );
+  const colon = store.treatments.find(
+    (row) => row.slug === "colon-cancer-treatment-in-india",
+  );
+  assert.match(
+    colon?.translations.en?.editorialBody ?? "",
+    /\/treatments\/spine-tumor-surgery-in-india/,
+  );
+  const prostate = store.treatments.find(
+    (row) => row.slug === "prostate-cancer-treatment-in-india",
+  );
+  assert.match(
+    prostate?.translations.en?.editorialBody ?? "",
+    /\/treatments\/spine-tumor-surgery-in-india/,
+  );
+});
+
+test("the published endoscopic brain page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "endoscopic-brain-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$5,000–\$12,000/);
+  assert.match(body, /\$6,000–\$15,000/);
+  assert.match(body, /\$3,000–\$8,000/);
+  assert.match(body, /\$8,000–\$22,000/);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /3–7 nights/);
+  assert.match(body, /4–8 nights/);
+  assert.match(body, /2–5 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: What is Endoscopic Brain Surgery/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Endoscopic-Brain-Surgery/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Endoscopic-Skull-Base-Surgery/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Pituitary-Tumor-Surgery/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Endoscopic-Third-Ventriculostomy-\(ETV\)/);
+  assert.match(body, /\/costs\/India\/ENT\/Skull-Base-Surgery/);
+  assert.match(body, /\/treatments\/brain-tumor-surgery-in-india/);
+  assert.match(body, /\/treatments\/craniotomy-surgery-in-india/);
+  assert.match(body, /\/treatments\/spine-tumor-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/endoscopic-brain-endonasal\.webp/);
+  assert.match(body, /\/uploads\/treatments\/endoscopic-brain-pituitary\.webp/);
+  assert.match(body, /\/uploads\/treatments\/endoscopic-brain-etv\.webp/);
+  assert.match(body, /\/uploads\/treatments\/endoscopic-brain-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Neurosurgery/Endoscopic-Brain-Surgery",
+    "/doctors/India/Mumbai/Neurosurgery/Endoscopic-Brain-Surgery",
+    "/doctors/India/Bengaluru/Neurosurgery/Endoscopic-Brain-Surgery",
+    "/doctors/India/Chennai/Neurosurgery/Endoscopic-Brain-Surgery",
+    "/doctors/India/Hyderabad/Neurosurgery/Endoscopic-Brain-Surgery",
+    "/doctors/India/Delhi-NCR/Neurosurgery/Pituitary-Tumor-Surgery",
+    "/hospitals/India/Delhi-NCR/Neurosurgery",
+    "/hospitals/India/Mumbai/Neurosurgery",
+    "/hospitals/India/Bengaluru/Neurosurgery",
+    "/costs/India/Delhi-NCR/Neurosurgery/Endoscopic-Brain-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /What is endoscopic brain surgery\?/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Brain",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/endoscopic-brain-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/endoscopic-brain/);
+  assert.doesNotMatch(body, /\/treatments\/endoscopic-brain-surgery-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/endoscopic-brain-surgery-in-india/,
+  );
+  const brain = store.treatments.find(
+    (row) => row.slug === "brain-tumor-surgery-in-india",
+  );
+  assert.match(
+    brain?.translations.en?.editorialBody ?? "",
+    /\/treatments\/endoscopic-brain-surgery-in-india/,
+  );
+  const craniotomy = store.treatments.find(
+    (row) => row.slug === "craniotomy-surgery-in-india",
+  );
+  assert.match(
+    craniotomy?.translations.en?.editorialBody ?? "",
+    /\/treatments\/endoscopic-brain-surgery-in-india/,
+  );
+});
+
+test("the published pituitary tumor page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "pituitary-tumor-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$5,000–\$12,000/);
+  assert.match(body, /\$6,000–\$15,000/);
+  assert.match(body, /\$8,000–\$22,000/);
+  assert.match(body, /\$10,500–\$22,000/);
+  assert.match(body, /\$8,500–\$18,000/);
+  assert.match(body, /\$40,000–\$100,000/);
+  assert.match(body, /3–7 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Pituitary Tumor Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Pituitary-Tumor-Surgery/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Endoscopic-Brain-Surgery/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/Gamma-Knife/);
+  assert.match(body, /\/treatments\/endoscopic-brain-surgery-in-india/);
+  assert.match(body, /\/treatments\/brain-tumor-surgery-in-india/);
+  assert.match(body, /\/treatments\/craniotomy-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/pituitary-tumor-macroadenoma\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pituitary-tumor-endonasal\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pituitary-tumor-visual-field\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pituitary-tumor-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Neurosurgery/Pituitary-Tumor-Surgery",
+    "/doctors/India/Mumbai/Neurosurgery/Pituitary-Tumor-Surgery",
+    "/doctors/India/Bengaluru/Neurosurgery/Pituitary-Tumor-Surgery",
+    "/doctors/India/Chennai/Neurosurgery/Pituitary-Tumor-Surgery",
+    "/doctors/India/Hyderabad/Neurosurgery/Pituitary-Tumor-Surgery",
+    "/doctors/India/Delhi-NCR/Neurosurgery/Endoscopic-Brain-Surgery",
+    "/hospitals/India/Delhi-NCR/Neurosurgery",
+    "/hospitals/India/Mumbai/Neurosurgery",
+    "/hospitals/India/Bengaluru/Neurosurgery",
+    "/costs/India/Delhi-NCR/Neurosurgery/Pituitary-Tumor-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /What is pituitary tumor surgery\?/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Brain",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/pituitary-tumor-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/pituitary/);
+  assert.doesNotMatch(body, /\/treatments\/pituitary-tumor-surgery\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/pituitary-tumor-surgery-in-india/,
+  );
+  const endoscopic = store.treatments.find(
+    (row) => row.slug === "endoscopic-brain-surgery-in-india",
+  );
+  assert.match(
+    endoscopic?.translations.en?.editorialBody ?? "",
+    /\/treatments\/pituitary-tumor-surgery-in-india/,
+  );
+  const brain = store.treatments.find(
+    (row) => row.slug === "brain-tumor-surgery-in-india",
+  );
+  assert.match(
+    brain?.translations.en?.editorialBody ?? "",
+    /\/treatments\/pituitary-tumor-surgery-in-india/,
+  );
+  const craniotomy = store.treatments.find(
+    (row) => row.slug === "craniotomy-surgery-in-india",
+  );
+  assert.match(
+    craniotomy?.translations.en?.editorialBody ?? "",
+    /\/treatments\/pituitary-tumor-surgery-in-india/,
+  );
+});
+
+test("the published hydrocephalus page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "hydrocephalus-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,000–\$8,000/);
+  assert.match(body, /\$5,000–\$12,000/);
+  assert.match(body, /\$6,000–\$15,000/);
+  assert.match(body, /\$20,000–\$50,000/);
+  assert.match(body, /3–7 nights/);
+  assert.match(body, /2–5 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Hydrocephalus Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Hydrocephalus-Surgery/);
+  assert.match(
+    body,
+    /\/costs\/India\/Neurosurgery\/Endoscopic-Third-Ventriculostomy-\(ETV\)/,
+  );
+  assert.match(body, /\/treatments\/endoscopic-brain-surgery-in-india/);
+  assert.match(body, /\/treatments\/brain-tumor-surgery-in-india/);
+  assert.match(body, /\/treatments\/craniotomy-surgery-in-india/);
+  assert.match(body, /\/treatments\/spine-tumor-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/hydrocephalus-ventricles\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hydrocephalus-vp-shunt\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hydrocephalus-etv\.webp/);
+  assert.match(body, /\/uploads\/treatments\/hydrocephalus-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Neurosurgery/Hydrocephalus-Surgery",
+    "/doctors/India/Mumbai/Neurosurgery/Hydrocephalus-Surgery",
+    "/doctors/India/Bengaluru/Neurosurgery/Hydrocephalus-Surgery",
+    "/doctors/India/Chennai/Neurosurgery/Hydrocephalus-Surgery",
+    "/doctors/India/Hyderabad/Neurosurgery/Hydrocephalus-Surgery",
+    "/doctors/India/Delhi-NCR/Neurosurgery/Endoscopic-Brain-Surgery",
+    "/hospitals/India/Delhi-NCR/Neurosurgery",
+    "/hospitals/India/Mumbai/Neurosurgery",
+    "/hospitals/India/Bengaluru/Neurosurgery",
+    "/costs/India/Delhi-NCR/Neurosurgery/Hydrocephalus-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /What is hydrocephalus surgery\?/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Brain",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/hydrocephalus-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/hydrocephalus/);
+  assert.doesNotMatch(body, /\/treatments\/hydrocephalus-surgery\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/hydrocephalus-surgery-in-india/,
+  );
+  const endoscopic = store.treatments.find(
+    (row) => row.slug === "endoscopic-brain-surgery-in-india",
+  );
+  assert.match(
+    endoscopic?.translations.en?.editorialBody ?? "",
+    /\/treatments\/hydrocephalus-surgery-in-india/,
+  );
+  const brain = store.treatments.find(
+    (row) => row.slug === "brain-tumor-surgery-in-india",
+  );
+  assert.match(
+    brain?.translations.en?.editorialBody ?? "",
+    /\/treatments\/hydrocephalus-surgery-in-india/,
+  );
+  const craniotomy = store.treatments.find(
+    (row) => row.slug === "craniotomy-surgery-in-india",
+  );
+  assert.match(
+    craniotomy?.translations.en?.editorialBody ?? "",
+    /\/treatments\/hydrocephalus-surgery-in-india/,
+  );
+  const spine = store.treatments.find(
+    (row) => row.slug === "spine-tumor-surgery-in-india",
+  );
+  assert.match(
+    spine?.translations.en?.editorialBody ?? "",
+    /\/treatments\/hydrocephalus-surgery-in-india/,
+  );
+});
+
+test("the published coronary angioplasty page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "coronary-angioplasty-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,200–\$8,500/);
+  assert.match(body, /\$400–\$1,200/);
+  assert.match(body, /\$5,500–\$14,000/);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Coronary Angioplasty in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cardiology\/Coronary-Angioplasty-Stenting/);
+  assert.match(body, /\/costs\/India\/Cardiology\/Coronary-Angiography/);
+  assert.match(
+    body,
+    /\/costs\/India\/Cardiology\/CTO-Angioplasty-\(Chronic-Total-Occlusion\)/,
+  );
+  assert.match(
+    body,
+    /\/costs\/India\/Cardiac-Surgery\/CABG-\(Coronary-Artery-Bypass-Grafting\)/,
+  );
+  assert.match(body, /\/uploads\/treatments\/coronary-angioplasty-plaque\.webp/);
+  assert.match(body, /\/uploads\/treatments\/coronary-angioplasty-balloon\.webp/);
+  assert.match(body, /\/uploads\/treatments\/coronary-angioplasty-stent\.webp/);
+  assert.match(body, /\/uploads\/treatments\/coronary-angioplasty-radial\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting",
+    "/doctors/India/Mumbai/Cardiology/Coronary-Angioplasty-Stenting",
+    "/doctors/India/Bengaluru/Cardiology/Coronary-Angioplasty-Stenting",
+    "/doctors/India/Chennai/Cardiology/Coronary-Angioplasty-Stenting",
+    "/doctors/India/Hyderabad/Cardiology/Coronary-Angioplasty-Stenting",
+    "/hospitals/India/Delhi-NCR/Cardiology",
+    "/hospitals/India/Mumbai/Cardiology",
+    "/hospitals/India/Bengaluru/Cardiology",
+    "/costs/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /What is coronary angioplasty\?/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/coronary-angioplasty-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/coronary/);
+  assert.doesNotMatch(body, /\/treatments\/coronary-angioplasty\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/coronary-angioplasty-in-india/,
+  );
+});
+
+test("the published pacemaker page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "pacemaker-implantation-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,500–\$9,000/);
+  assert.match(body, /\$12,000–\$25,000/);
+  assert.match(body, /\$10,000–\$22,000/);
+  assert.match(body, /\$8,000–\$18,000/);
+  assert.match(body, /\$20,000–\$50,000/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Pacemaker Implantation in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cardiology\/Pacemaker-Implantation/);
+  assert.match(body, /\/costs\/India\/Cardiology\/Leadless-Pacemaker-Implantation/);
+  assert.match(body, /\/costs\/India\/Cardiology\/CRT-CRT-D-Implantation/);
+  assert.match(
+    body,
+    /\/costs\/India\/Cardiology\/ICD-Implantation-\(Implantable-Cardioverter-Defibrillator\)/,
+  );
+  assert.match(body, /\/treatments\/coronary-angioplasty-in-india/);
+  assert.match(body, /\/uploads\/treatments\/pacemaker-conduction\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pacemaker-dual-chamber\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pacemaker-leadless\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pacemaker-followup\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiology/Pacemaker-Implantation",
+    "/doctors/India/Mumbai/Cardiology/Pacemaker-Implantation",
+    "/doctors/India/Bengaluru/Cardiology/Pacemaker-Implantation",
+    "/doctors/India/Chennai/Cardiology/Pacemaker-Implantation",
+    "/doctors/India/Hyderabad/Cardiology/Pacemaker-Implantation",
+    "/hospitals/India/Delhi-NCR/Cardiology",
+    "/hospitals/India/Mumbai/Cardiology",
+    "/hospitals/India/Bengaluru/Cardiology",
+    "/costs/India/Delhi-NCR/Cardiology/Pacemaker-Implantation",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(
+    qa.quickAnswer?.items[0]?.question ?? "",
+    /What is a pacemaker\?/i,
+  );
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/pacemaker-implantation-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/pacemaker/);
+  assert.doesNotMatch(body, /\/treatments\/pacemaker-implantation\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/pacemaker-implantation-in-india/,
+  );
+  const pci = store.treatments.find(
+    (row) => row.slug === "coronary-angioplasty-in-india",
+  );
+  assert.match(
+    pci?.translations.en?.editorialBody ?? "",
+    /\/treatments\/pacemaker-implantation-in-india/,
+  );
+});
+
+test("the published ICD page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "icd-device-implantation-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$8,000–\$18,000/);
+  assert.match(body, /\$3,500–\$9,000/);
+  assert.match(body, /\$12,000–\$25,000/);
+  assert.match(body, /\$10,000–\$22,000/);
+  assert.match(body, /\$3,200–\$8,500/);
+  assert.match(body, /\$40,000–\$100,000/);
+  assert.match(body, /1–4 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: ICD Implantation in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(
+    body,
+    /\/costs\/India\/Cardiology\/ICD-Implantation-\(Implantable-Cardioverter-Defibrillator\)/,
+  );
+  assert.match(body, /\/costs\/India\/Cardiology\/Pacemaker-Implantation/);
+  assert.match(body, /\/costs\/India\/Cardiology\/Leadless-Pacemaker-Implantation/);
+  assert.match(body, /\/costs\/India\/Cardiology\/CRT-CRT-D-Implantation/);
+  assert.match(body, /\/treatments\/pacemaker-implantation-in-india/);
+  assert.match(body, /\/treatments\/coronary-angioplasty-in-india/);
+  assert.match(body, /\/uploads\/treatments\/icd-ventricular-arrhythmia\.webp/);
+  assert.match(body, /\/uploads\/treatments\/icd-transvenous\.webp/);
+  assert.match(body, /\/uploads\/treatments\/icd-subcutaneous\.webp/);
+  assert.match(body, /\/uploads\/treatments\/icd-interrogation\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)",
+    "/doctors/India/Mumbai/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)",
+    "/doctors/India/Bengaluru/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)",
+    "/doctors/India/Chennai/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)",
+    "/doctors/India/Hyderabad/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)",
+    "/hospitals/India/Delhi-NCR/Cardiology",
+    "/hospitals/India/Mumbai/Cardiology",
+    "/hospitals/India/Bengaluru/Cardiology",
+    "/costs/India/Delhi-NCR/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is an ICD\?/i);
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/icd-device-implantation-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/icd/);
+  assert.doesNotMatch(body, /\/treatments\/icd-device-implantation\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/icd-device-implantation-in-india/,
+  );
+  const pacemaker = store.treatments.find(
+    (row) => row.slug === "pacemaker-implantation-in-india",
+  );
+  assert.match(
+    pacemaker?.translations.en?.editorialBody ?? "",
+    /\/treatments\/icd-device-implantation-in-india/,
+  );
+});
+
+test("the published TAVR page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "tavr-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$18,000–\$42,000/);
+  assert.match(body, /\$7,000–\$18,500/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$3,200–\$8,500/);
+  assert.match(body, /\$3,500–\$9,000/);
+  assert.match(body, /\$5,500–\$14,000/);
+  assert.match(body, /\$50,000–\$150,000/);
+  assert.match(body, /3–7 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: TAVR in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(
+    body,
+    /\/costs\/India\/Cardiac-Surgery\/TAVR-TAVI-\(Transcatheter-Aortic-Valve-Replacement\)/,
+  );
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Aortic-Valve-Replacement/);
+  assert.match(body, /\/treatments\/pacemaker-implantation-in-india/);
+  assert.match(body, /\/treatments\/coronary-angioplasty-in-india/);
+  assert.match(body, /\/treatments\/icd-device-implantation-in-india/);
+  assert.match(body, /\/uploads\/treatments\/tavr-aortic-stenosis\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tavr-transfemoral\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tavr-valve-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tavr-ct-planning\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/doctors/India/Mumbai/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/doctors/India/Bengaluru/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/doctors/India/Chennai/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/doctors/India/Hyderabad/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is TAVR\?/i);
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/tavr-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/tavr/);
+  assert.doesNotMatch(body, /\/treatments\/tavr\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/tavr-in-india/);
+  const pacemaker = store.treatments.find(
+    (row) => row.slug === "pacemaker-implantation-in-india",
+  );
+  assert.match(pacemaker?.translations.en?.editorialBody ?? "", /\/treatments\/tavr-in-india/);
+  const pci = store.treatments.find((row) => row.slug === "coronary-angioplasty-in-india");
+  assert.match(pci?.translations.en?.editorialBody ?? "", /\/treatments\/tavr-in-india/);
+});
+
+test("the published BAV page uses neighbouring USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "aortic-balloon-valvuloplasty-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /no separate GAF/);
+  assert.match(body, /\$18,000–\$42,000/);
+  assert.match(body, /\$7,000–\$18,500/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$4,000–\$10,000/);
+  assert.match(body, /\$3,200–\$8,500/);
+  assert.match(body, /\$3,500–\$9,000/);
+  assert.match(body, /\$50,000–\$150,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: Aortic Balloon Valvuloplasty in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/treatments\/tavr-in-india/);
+  assert.match(body, /\/treatments\/coronary-angioplasty-in-india/);
+  assert.match(
+    body,
+    /\/costs\/India\/Cardiac-Surgery\/TAVR-TAVI-\(Transcatheter-Aortic-Valve-Replacement\)/,
+  );
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Aortic-Valve-Replacement/);
+  assert.match(body, /\/costs\/India\/Cardiology\/Balloon-Mitral-Valvotomy/);
+  assert.match(body, /\/uploads\/treatments\/bav-aortic-stenosis\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bav-balloon-inflation\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bav-vs-tavr\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bav-bridge-pathway\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/doctors/India/Mumbai/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/doctors/India/Bengaluru/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/doctors/India/Chennai/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/doctors/India/Hyderabad/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /medical name/i);
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/aortic-balloon-valvuloplasty-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/aortic-balloon/);
+  assert.doesNotMatch(body, /\/treatments\/aortic-balloon-valvuloplasty\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/aortic-balloon-valvuloplasty-in-india/,
+  );
+  const tavr = store.treatments.find((row) => row.slug === "tavr-in-india");
+  assert.match(
+    tavr?.translations.en?.editorialBody ?? "",
+    /\/treatments\/aortic-balloon-valvuloplasty-in-india/,
+  );
+});
+
+test("the published rhinoplasty page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "rhinoplasty-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$2,500–\$5,500/);
+  assert.match(body, /\$8,000–\$18,000/);
+  assert.match(body, /\$1,500–\$3,800/);
+  assert.match(body, /\$4,000–\$9,500/);
+  assert.match(body, /\$3,500–\$7,800/);
+  assert.match(body, /\$2,000–\$5,200/);
+  assert.match(body, /\$2,000–\$5,000/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Rhinoplasty in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Rhinoplasty/);
+  assert.match(body, /\/costs\/India\/ENT\/Septoplasty/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Facelift/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Blepharoplasty/);
+  assert.match(body, /\/uploads\/treatments\/rhinoplasty-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/rhinoplasty-open-closed\.webp/);
+  assert.match(body, /\/uploads\/treatments\/rhinoplasty-hump-tip\.webp/);
+  assert.match(body, /\/uploads\/treatments\/rhinoplasty-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cosmetic-Surgery/Rhinoplasty",
+    "/doctors/India/Mumbai/Cosmetic-Surgery/Rhinoplasty",
+    "/doctors/India/Bengaluru/Cosmetic-Surgery/Rhinoplasty",
+    "/doctors/India/Chennai/Cosmetic-Surgery/Rhinoplasty",
+    "/doctors/India/Hyderabad/Cosmetic-Surgery/Rhinoplasty",
+    "/hospitals/India/Delhi-NCR/Cosmetic-Surgery",
+    "/hospitals/India/Mumbai/Cosmetic-Surgery",
+    "/hospitals/India/Bengaluru/Cosmetic-Surgery",
+    "/costs/India/Delhi-NCR/Cosmetic-Surgery/Rhinoplasty",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is rhinoplasty\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Nose",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/rhinoplasty-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/rhinoplasty/);
+  assert.doesNotMatch(body, /\/treatments\/rhinoplasty\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/rhinoplasty-in-india/);
+});
+
+test("the published blepharoplasty page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "blepharoplasty-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$1,500–\$3,800/);
+  assert.match(body, /\$4,000–\$9,000/);
+  assert.match(body, /\$2,500–\$5,500/);
+  assert.match(body, /\$4,000–\$9,500/);
+  assert.match(body, /\$1,200–\$4,000/);
+  assert.match(body, /\$1,500–\$5,000/);
+  assert.match(body, /\$2,000–\$5,500/);
+  assert.match(body, /day-care or overnight/);
+  assert.match(body, /article-quick-answer|Quick Answer: Blepharoplasty in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Blepharoplasty/);
+  assert.match(body, /\/costs\/India\/Ophthalmology\/Oculoplastic-Surgery/);
+  assert.match(body, /\/treatments\/rhinoplasty-in-india/);
+  assert.match(body, /\/uploads\/treatments\/blepharoplasty-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/blepharoplasty-incisions\.webp/);
+  assert.match(body, /\/uploads\/treatments\/blepharoplasty-vs-ptosis\.webp/);
+  assert.match(body, /\/uploads\/treatments\/blepharoplasty-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cosmetic-Surgery/Blepharoplasty",
+    "/doctors/India/Mumbai/Cosmetic-Surgery/Blepharoplasty",
+    "/doctors/India/Bengaluru/Cosmetic-Surgery/Blepharoplasty",
+    "/doctors/India/Chennai/Cosmetic-Surgery/Blepharoplasty",
+    "/doctors/India/Hyderabad/Cosmetic-Surgery/Blepharoplasty",
+    "/hospitals/India/Delhi-NCR/Cosmetic-Surgery",
+    "/hospitals/India/Mumbai/Cosmetic-Surgery",
+    "/hospitals/India/Bengaluru/Cosmetic-Surgery",
+    "/costs/India/Delhi-NCR/Cosmetic-Surgery/Blepharoplasty",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /medical name/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Eyelid",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/blepharoplasty-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/blepharoplasty/);
+  assert.doesNotMatch(body, /\/treatments\/blepharoplasty\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/blepharoplasty-in-india/);
+  const rhino = store.treatments.find((row) => row.slug === "rhinoplasty-in-india");
+  assert.match(
+    rhino?.translations.en?.editorialBody ?? "",
+    /\/treatments\/blepharoplasty-in-india/,
+  );
+});
+
+test("the published liposuction page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "liposuction-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$1,500–\$4,200/);
+  assert.match(body, /\$4,000–\$12,000/);
+  assert.match(body, /\$3,500–\$7,200/);
+  assert.match(body, /\$2,000–\$5,500/);
+  assert.match(body, /\$1,800–\$4,200/);
+  assert.match(body, /\$2,800–\$6,200/);
+  assert.match(body, /\$3,500–\$8,000/);
+  assert.match(body, /\$4,500–\$8,500/);
+  assert.match(body, /day-care to 2 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Liposuction in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Liposuction/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Tummy-Tuck/);
+  assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Sleeve-Gastrectomy/);
+  assert.match(body, /\/treatments\/rhinoplasty-in-india/);
+  assert.match(body, /\/treatments\/blepharoplasty-in-india/);
+  assert.match(body, /\/uploads\/treatments\/liposuction-fat-layers\.webp/);
+  assert.match(body, /\/uploads\/treatments\/liposuction-treatment-areas\.webp/);
+  assert.match(body, /\/uploads\/treatments\/liposuction-cannula\.webp/);
+  assert.match(body, /\/uploads\/treatments\/liposuction-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cosmetic-Surgery/Liposuction",
+    "/doctors/India/Mumbai/Cosmetic-Surgery/Liposuction",
+    "/doctors/India/Bengaluru/Cosmetic-Surgery/Liposuction",
+    "/doctors/India/Chennai/Cosmetic-Surgery/Liposuction",
+    "/doctors/India/Hyderabad/Cosmetic-Surgery/Liposuction",
+    "/hospitals/India/Delhi-NCR/Cosmetic-Surgery",
+    "/hospitals/India/Mumbai/Cosmetic-Surgery",
+    "/hospitals/India/Bengaluru/Cosmetic-Surgery",
+    "/costs/India/Delhi-NCR/Cosmetic-Surgery/Liposuction",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is liposuction\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Subcutaneous Tissue",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/liposuction-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/liposuction/);
+  assert.doesNotMatch(body, /\/treatments\/liposuction\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/liposuction-in-india/);
+  const rhino = store.treatments.find((row) => row.slug === "rhinoplasty-in-india");
+  assert.match(rhino?.translations.en?.editorialBody ?? "", /\/treatments\/liposuction-in-india/);
+  const bleph = store.treatments.find((row) => row.slug === "blepharoplasty-in-india");
+  assert.match(bleph?.translations.en?.editorialBody ?? "", /\/treatments\/liposuction-in-india/);
+});
+
+test("the published breast-lift page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "breast-lift-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,000–\$6,500/);
+  assert.match(body, /\$7,000–\$15,000/);
+  assert.match(body, /\$3,200–\$6,800/);
+  assert.match(body, /\$2,000–\$5,500/);
+  assert.match(body, /\$1,500–\$4,200/);
+  assert.match(body, /\$1,800–\$4,200/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Breast Lift in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Breast-Lift/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Breast-Augmentation/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Breast-Reduction/);
+  assert.match(body, /\/treatments\/liposuction-in-india/);
+  assert.match(body, /\/treatments\/rhinoplasty-in-india/);
+  assert.match(body, /\/treatments\/blepharoplasty-in-india/);
+  assert.match(body, /\/uploads\/treatments\/breast-lift-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-lift-incisions\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-lift-vs-augmentation\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-lift-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cosmetic-Surgery/Breast-Lift",
+    "/doctors/India/Mumbai/Cosmetic-Surgery/Breast-Lift",
+    "/doctors/India/Bengaluru/Cosmetic-Surgery/Breast-Lift",
+    "/doctors/India/Chennai/Cosmetic-Surgery/Breast-Lift",
+    "/doctors/India/Hyderabad/Cosmetic-Surgery/Breast-Lift",
+    "/hospitals/India/Delhi-NCR/Cosmetic-Surgery",
+    "/hospitals/India/Mumbai/Cosmetic-Surgery",
+    "/hospitals/India/Bengaluru/Cosmetic-Surgery",
+    "/costs/India/Delhi-NCR/Cosmetic-Surgery/Breast-Lift",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is breast lift surgery\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Breast",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/breast-lift-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/breast-lift/);
+  assert.doesNotMatch(body, /\/treatments\/breast-lift\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/breast-lift-in-india/);
+  const lipo = store.treatments.find((row) => row.slug === "liposuction-in-india");
+  assert.match(lipo?.translations.en?.editorialBody ?? "", /\/treatments\/breast-lift-in-india/);
+});
+
+test("the published breast-reconstruction page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "breast-reconstruction-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$6,000–\$18,000/);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$4,500–\$10,000/);
+  assert.match(body, /\$5,500–\$12,000/);
+  assert.match(body, /\$4,500–\$11,000/);
+  assert.match(body, /\$3,500–\$8,000/);
+  assert.match(body, /\$10,000–\$24,000/);
+  assert.match(body, /4–8 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Breast Reconstruction in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Breast-Reconstruction/);
+  assert.match(body, /\/costs\/India\/Surgical-Oncology\/Mastectomy/);
+  assert.match(body, /\/treatments\/breast-cancer-treatment-in-india/);
+  assert.match(body, /\/treatments\/breast-lift-in-india/);
+  assert.match(body, /\/blogs\/breast-reconstruction-after-mastectomy-india/);
+  assert.match(body, /\/uploads\/treatments\/breast-recon-implant-vs-flap\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-recon-diep\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-recon-timing\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-recon-expander\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Surgical-Oncology/Breast-Reconstruction",
+    "/doctors/India/Mumbai/Surgical-Oncology/Breast-Reconstruction",
+    "/doctors/India/Bengaluru/Surgical-Oncology/Breast-Reconstruction",
+    "/doctors/India/Chennai/Surgical-Oncology/Breast-Reconstruction",
+    "/doctors/India/Hyderabad/Surgical-Oncology/Breast-Reconstruction",
+    "/hospitals/India/Delhi-NCR/Surgical-Oncology",
+    "/hospitals/India/Mumbai/Surgical-Oncology",
+    "/hospitals/India/Bengaluru/Surgical-Oncology",
+    "/costs/India/Delhi-NCR/Surgical-Oncology/Breast-Reconstruction",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is breast reconstruction\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Breast",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/breast-reconstruction-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/breast-reconstruction/);
+  assert.doesNotMatch(body, /\/treatments\/breast-reconstruction\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/breast-reconstruction-in-india/);
+  const cancer = store.treatments.find((row) => row.slug === "breast-cancer-treatment-in-india");
+  assert.match(
+    cancer?.translations.en?.editorialBody ?? "",
+    /\/treatments\/breast-reconstruction-in-india/,
+  );
+  const lift = store.treatments.find((row) => row.slug === "breast-lift-in-india");
+  assert.match(lift?.translations.en?.editorialBody ?? "", /\/treatments\/breast-reconstruction-in-india/);
+});
+
+test("the published breast-augmentation page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "breast-augmentation-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,000–\$6,500/);
+  assert.match(body, /\$6,500–\$15,000/);
+  assert.match(body, /\$3,200–\$6,800/);
+  assert.match(body, /\$2,000–\$5,500/);
+  assert.match(body, /\$1,500–\$4,200/);
+  assert.match(body, /\$1,800–\$4,200/);
+  assert.match(body, /\$6,000–\$18,000/);
+  assert.match(body, /1–3 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Breast Augmentation in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Breast-Augmentation/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Breast-Lift/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Fat-Transfer/);
+  assert.match(body, /\/treatments\/breast-lift-in-india/);
+  assert.match(body, /\/treatments\/breast-reconstruction-in-india/);
+  assert.match(body, /\/treatments\/liposuction-in-india/);
+  assert.match(body, /\/uploads\/treatments\/breast-aug-implant-vs-fat\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-aug-placement\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-aug-incisions\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-aug-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cosmetic-Surgery/Breast-Augmentation",
+    "/doctors/India/Mumbai/Cosmetic-Surgery/Breast-Augmentation",
+    "/doctors/India/Bengaluru/Cosmetic-Surgery/Breast-Augmentation",
+    "/doctors/India/Chennai/Cosmetic-Surgery/Breast-Augmentation",
+    "/doctors/India/Hyderabad/Cosmetic-Surgery/Breast-Augmentation",
+    "/hospitals/India/Delhi-NCR/Cosmetic-Surgery",
+    "/hospitals/India/Mumbai/Cosmetic-Surgery",
+    "/hospitals/India/Bengaluru/Cosmetic-Surgery",
+    "/costs/India/Delhi-NCR/Cosmetic-Surgery/Breast-Augmentation",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 6);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is breast augmentation\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Breast",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/breast-augmentation-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/breast-augmentation/);
+  assert.doesNotMatch(body, /\/treatments\/india\/plastic-surgery/);
+  assert.doesNotMatch(body, /\/treatments\/breast-augmentation\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/breast-augmentation-in-india/);
+  const lift = store.treatments.find((row) => row.slug === "breast-lift-in-india");
+  assert.match(lift?.translations.en?.editorialBody ?? "", /\/treatments\/breast-augmentation-in-india/);
+  const recon = store.treatments.find((row) => row.slug === "breast-reconstruction-in-india");
+  assert.match(recon?.translations.en?.editorialBody ?? "", /\/treatments\/breast-augmentation-in-india/);
+  const lipo = store.treatments.find((row) => row.slug === "liposuction-in-india");
+  assert.match(lipo?.translations.en?.editorialBody ?? "", /\/treatments\/breast-augmentation-in-india/);
+});
+
+test("the published mommy-makeover page uses component USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "mommy-makeover-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,500–\$7,200/);
+  assert.match(body, /\$8,000–\$16,000/);
+  assert.match(body, /\$1,500–\$4,200/);
+  assert.match(body, /\$3,000–\$6,500/);
+  assert.match(body, /\$3,200–\$6,800/);
+  assert.match(body, /\$2,000–\$5,500/);
+  assert.match(body, /\$2,800–\$6,200/);
+  assert.match(body, /2–5 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Mommy Makeover in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Tummy-Tuck/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Liposuction/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Breast-Lift/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Breast-Augmentation/);
+  assert.match(body, /\/treatments\/liposuction-in-india/);
+  assert.match(body, /\/treatments\/breast-lift-in-india/);
+  assert.match(body, /\/treatments\/breast-augmentation-in-india/);
+  assert.match(body, /\/uploads\/treatments\/mommy-makeover-components\.webp/);
+  assert.match(body, /\/uploads\/treatments\/mommy-makeover-diastasis\.webp/);
+  assert.match(body, /\/uploads\/treatments\/mommy-makeover-combined-vs-staged\.webp/);
+  assert.match(body, /\/uploads\/treatments\/mommy-makeover-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cosmetic-Surgery/Tummy-Tuck",
+    "/doctors/India/Mumbai/Cosmetic-Surgery/Tummy-Tuck",
+    "/doctors/India/Bengaluru/Cosmetic-Surgery/Tummy-Tuck",
+    "/doctors/India/Chennai/Cosmetic-Surgery/Tummy-Tuck",
+    "/doctors/India/Hyderabad/Cosmetic-Surgery/Tummy-Tuck",
+    "/hospitals/India/Delhi-NCR/Cosmetic-Surgery",
+    "/hospitals/India/Mumbai/Cosmetic-Surgery",
+    "/hospitals/India/Bengaluru/Cosmetic-Surgery",
+    "/costs/India/Delhi-NCR/Cosmetic-Surgery/Tummy-Tuck",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /Treatment/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Abdomen",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/mommy-makeover-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/mommy-makeover\/india/);
+  assert.doesNotMatch(body, /\/treatments\/india\/mommy-makeover/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/mommy-makeover-in-india/);
+  const lift = store.treatments.find((row) => row.slug === "breast-lift-in-india");
+  assert.match(lift?.translations.en?.editorialBody ?? "", /\/treatments\/mommy-makeover-in-india/);
+  const aug = store.treatments.find((row) => row.slug === "breast-augmentation-in-india");
+  assert.match(aug?.translations.en?.editorialBody ?? "", /\/treatments\/mommy-makeover-in-india/);
+  const liposuction = store.treatments.find((row) => row.slug === "liposuction-in-india");
+  assert.match(
+    liposuction?.translations.en?.editorialBody ?? "",
+    /\/treatments\/mommy-makeover-in-india/,
+  );
+});
+
+test("the published breast-reduction page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "breast-reduction-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,200–\$6,800/);
+  assert.match(body, /\$8,000–\$16,000/);
+  assert.match(body, /\$3,000–\$6,500/);
+  assert.match(body, /\$1,500–\$4,200/);
+  assert.match(body, /\$1,800–\$4,200/);
+  assert.match(body, /\$6,000–\$18,000/);
+  assert.match(body, /1–4 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Breast Reduction Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Breast-Reduction/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Breast-Lift/);
+  assert.match(body, /\/costs\/India\/Cosmetic-Surgery\/Gynecomastia-Surgery/);
+  assert.match(body, /\/treatments\/breast-lift-in-india/);
+  assert.match(body, /\/treatments\/breast-augmentation-in-india/);
+  assert.match(body, /\/treatments\/liposuction-in-india/);
+  assert.match(body, /\/treatments\/mommy-makeover-in-india/);
+  assert.match(body, /\/uploads\/treatments\/breast-red-goals\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-red-incisions\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-red-nipple\.webp/);
+  assert.match(body, /\/uploads\/treatments\/breast-red-recovery\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cosmetic-Surgery/Breast-Reduction",
+    "/doctors/India/Mumbai/Cosmetic-Surgery/Breast-Reduction",
+    "/doctors/India/Bengaluru/Cosmetic-Surgery/Breast-Reduction",
+    "/doctors/India/Chennai/Cosmetic-Surgery/Breast-Reduction",
+    "/doctors/India/Hyderabad/Cosmetic-Surgery/Breast-Reduction",
+    "/hospitals/India/Delhi-NCR/Cosmetic-Surgery",
+    "/hospitals/India/Mumbai/Cosmetic-Surgery",
+    "/hospitals/India/Bengaluru/Cosmetic-Surgery",
+    "/costs/India/Delhi-NCR/Cosmetic-Surgery/Breast-Reduction",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is breast reduction surgery\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Breast",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/breast-reduction-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/breast-reduction/);
+  assert.doesNotMatch(body, /\/treatments\/india\/plastic-surgery/);
+  assert.doesNotMatch(body, /\/treatments\/breast-reduction\/india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/breast-reduction-in-india/);
+  const lift = store.treatments.find((row) => row.slug === "breast-lift-in-india");
+  assert.match(lift?.translations.en?.editorialBody ?? "", /\/treatments\/breast-reduction-in-india/);
+  const aug = store.treatments.find((row) => row.slug === "breast-augmentation-in-india");
+  assert.match(aug?.translations.en?.editorialBody ?? "", /\/treatments\/breast-reduction-in-india/);
+  const lipo = store.treatments.find((row) => row.slug === "liposuction-in-india");
+  assert.match(lipo?.translations.en?.editorialBody ?? "", /\/treatments\/breast-reduction-in-india/);
+  const mommy = store.treatments.find((row) => row.slug === "mommy-makeover-in-india");
+  assert.match(mommy?.translations.en?.editorialBody ?? "", /\/treatments\/breast-reduction-in-india/);
+});
+
+test("the published bone-marrow-transplant page uses site USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "bone-marrow-transplant-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$150,000–\$400,000/);
+  assert.match(body, /\$18,000–\$48,000/);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /\$35,000–\$85,000/);
+  assert.match(body, /\$40,000–\$95,000/);
+  assert.match(body, /\$28,000–\$75,000/);
+  assert.match(body, /\$80,000–\$180,000/);
+  assert.match(body, /4–8 weeks/);
+  assert.match(body, /article-quick-answer|Quick Answer: Bone Marrow Transplant in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Hematology\/Bone-Marrow-Transplantation/);
+  assert.match(body, /\/costs\/India\/Hematology\/Autologous-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Hematology\/Allogeneic-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Pediatric-Hematology\/Pediatric-Bone-Marrow-Transplantation/);
+  assert.match(body, /\/uploads\/treatments\/bmt-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bmt-sources\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bmt-pathway\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bmt-risks\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
+    "/doctors/India/Mumbai/Hematology/Bone-Marrow-Transplantation",
+    "/doctors/India/Bengaluru/Hematology/Bone-Marrow-Transplantation",
+    "/doctors/India/Chennai/Hematology/Bone-Marrow-Transplantation",
+    "/doctors/India/Hyderabad/Hematology/Bone-Marrow-Transplantation",
+    "/hospitals/India/Delhi-NCR/Hematology",
+    "/hospitals/India/Mumbai/Hematology",
+    "/hospitals/India/Bengaluru/Hematology",
+    "/costs/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is a bone marrow transplant\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Bone Marrow",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/bone-marrow-transplant-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/bone-marrow/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/bone-marrow-transplant-in-india/);
+});
+
+test("the published leukemia page uses modality USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "leukemia-treatment-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /\$8,000–\$30,000/);
+  assert.match(body, /\$15,000–\$45,000/);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /\$80,000–\$180,000/);
+  assert.match(body, /\$10,000–\$50,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: Leukemia Treatment in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Targeted-Therapy/);
+  assert.match(body, /\/costs\/India\/Hematology\/Bone-Marrow-Transplantation/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/uploads\/treatments\/leukemia-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/leukemia-diagnosis\.webp/);
+  assert.match(body, /\/uploads\/treatments\/leukemia-treatment\.webp/);
+  assert.match(body, /\/uploads\/treatments\/leukemia-mrd\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Hematology",
+    "/doctors/India/Mumbai/Hematology",
+    "/doctors/India/Bengaluru/Hematology",
+    "/doctors/India/Chennai/Hematology",
+    "/doctors/India/Hyderabad/Hematology",
+    "/doctors/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
+    "/hospitals/India/Delhi-NCR/Hematology",
+    "/hospitals/India/Mumbai/Hematology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Chemotherapy",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is leukemia\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Bone Marrow",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/leukemia-treatment-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/leukemia/);
+  assert.doesNotMatch(body, /\/treatments\/aml-treatment-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/leukemia-treatment-in-india/);
+  const bmt = store.treatments.find((row) => row.slug === "bone-marrow-transplant-in-india");
+  assert.match(bmt?.translations.en?.editorialBody ?? "", /\/treatments\/leukemia-treatment-in-india/);
+});
+
+test("the published lymphoma page uses modality USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "lymphoma-treatment-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /\$8,000–\$30,000/);
+  assert.match(body, /\$15,000–\$45,000/);
+  assert.match(body, /\$1,000–\$6,000\+/);
+  assert.match(body, /\$18,000–\$48,000/);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$80,000–\$180,000/);
+  assert.match(body, /\$10,000–\$50,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: Lymphoma Treatment in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/External-Beam-Radiotherapy-\(EBRT\)/);
+  assert.match(body, /\/costs\/India\/Hematology\/Autologous-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Hematology\/CAR-T-Cell-Therapy/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/leukemia-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/lymphoma-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/lymphoma-diagnosis\.webp/);
+  assert.match(body, /\/uploads\/treatments\/lymphoma-treatment\.webp/);
+  assert.match(body, /\/uploads\/treatments\/lymphoma-stages\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Hematology",
+    "/doctors/India/Mumbai/Hematology",
+    "/doctors/India/Bengaluru/Hematology",
+    "/doctors/India/Chennai/Hematology",
+    "/doctors/India/Hyderabad/Hematology",
+    "/doctors/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    "/hospitals/India/Delhi-NCR/Hematology",
+    "/hospitals/India/Mumbai/Hematology",
+    "/costs/India/Delhi-NCR/Medical-Oncology/Chemotherapy",
+    "/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /Lymphoma treatment in India/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Lymphatic System",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/lymphoma-treatment-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/lymphoma/);
+  assert.doesNotMatch(body, /\/treatments\/hodgkin-lymphoma-treatment-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/lymphoma-treatment-in-india/);
+  const bmt = store.treatments.find((row) => row.slug === "bone-marrow-transplant-in-india");
+  const leukemia = store.treatments.find((row) => row.slug === "leukemia-treatment-in-india");
+  assert.match(bmt?.translations.en?.editorialBody ?? "", /\/treatments\/lymphoma-treatment-in-india/);
+  assert.match(leukemia?.translations.en?.editorialBody ?? "", /\/treatments\/lymphoma-treatment-in-india/);
+});
+
+test("the published thalassemia page uses modality USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "thalassemia-treatment-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /\$28,000–\$75,000/);
+  assert.match(body, /\$28,000–\$70,000/);
+  assert.match(body, /\$40,000–\$95,000/);
+  assert.match(body, /\$150,000–\$400,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: Thalassemia Treatment in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Hematology\/Bone-Marrow-Transplantation/);
+  assert.match(body, /\/costs\/India\/Hematology\/Allogeneic-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Pediatric-Hematology\/Pediatric-Bone-Marrow-Transplantation/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/leukemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/lymphoma-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/thalassemia-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/thalassemia-care\.webp/);
+  assert.match(body, /\/uploads\/treatments\/thalassemia-iron\.webp/);
+  assert.match(body, /\/uploads\/treatments\/thalassemia-hsct\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Hematology",
+    "/doctors/India/Mumbai/Hematology",
+    "/doctors/India/Bengaluru/Hematology",
+    "/doctors/India/Chennai/Hematology",
+    "/doctors/India/Hyderabad/Hematology",
+    "/doctors/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
+    "/doctors/India/Delhi-NCR/Hematology/Allogeneic-Stem-Cell-Transplant",
+    "/hospitals/India/Delhi-NCR/Hematology",
+    "/hospitals/India/Mumbai/Hematology",
+    "/costs/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
+    "/costs/India/Delhi-NCR/Hematology/Allogeneic-Stem-Cell-Transplant",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is thalassemia\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Bone Marrow",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/thalassemia-treatment-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/hematology\/thalassemia/);
+  assert.doesNotMatch(body, /\/treatments\/alpha-thalassemia-treatment-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/thalassemia-treatment-in-india/);
+  const bmt = store.treatments.find((row) => row.slug === "bone-marrow-transplant-in-india");
+  const leukemia = store.treatments.find((row) => row.slug === "leukemia-treatment-in-india");
+  const lymphoma = store.treatments.find((row) => row.slug === "lymphoma-treatment-in-india");
+  assert.match(bmt?.translations.en?.editorialBody ?? "", /\/treatments\/thalassemia-treatment-in-india/);
+  assert.match(leukemia?.translations.en?.editorialBody ?? "", /\/treatments\/thalassemia-treatment-in-india/);
+  assert.match(lymphoma?.translations.en?.editorialBody ?? "", /\/treatments\/thalassemia-treatment-in-india/);
+});
+
+test("the published sickle-cell page uses modality USD ranges and GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "sickle-cell-anemia-treatment-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /\$28,000–\$75,000/);
+  assert.match(body, /\$28,000–\$70,000/);
+  assert.match(body, /\$40,000–\$95,000/);
+  assert.match(body, /\$150,000–\$400,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: Sickle Cell Anemia Treatment in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Hematology\/Bone-Marrow-Transplantation/);
+  assert.match(body, /\/costs\/India\/Hematology\/Allogeneic-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Pediatric-Hematology\/Pediatric-Bone-Marrow-Transplantation/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/thalassemia-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/sickle-cell-shape\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sickle-cell-care\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sickle-cell-organs\.webp/);
+  assert.match(body, /\/uploads\/treatments\/sickle-cell-hsct\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Hematology",
+    "/doctors/India/Mumbai/Hematology",
+    "/doctors/India/Bengaluru/Hematology",
+    "/doctors/India/Chennai/Hematology",
+    "/doctors/India/Hyderabad/Hematology",
+    "/doctors/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
+    "/doctors/India/Delhi-NCR/Hematology/Allogeneic-Stem-Cell-Transplant",
+    "/hospitals/India/Delhi-NCR/Hematology",
+    "/hospitals/India/Mumbai/Hematology",
+    "/costs/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
+    "/costs/India/Delhi-NCR/Hematology/Allogeneic-Stem-Cell-Transplant",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /Sickle cell anemia treatment in India/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Bone Marrow",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/sickle-cell-anemia-treatment-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/hematology\/sickle/);
+  assert.doesNotMatch(body, /\/treatments\/hydroxyurea-treatment-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/sickle-cell-anemia-treatment-in-india/);
+  const bmt = store.treatments.find((row) => row.slug === "bone-marrow-transplant-in-india");
+  const thalassemia = store.treatments.find((row) => row.slug === "thalassemia-treatment-in-india");
+  assert.match(bmt?.translations.en?.editorialBody ?? "", /\/treatments\/sickle-cell-anemia-treatment-in-india/);
+  assert.match(thalassemia?.translations.en?.editorialBody ?? "", /\/treatments\/sickle-cell-anemia-treatment-in-india/);
+});
+
+test("the published Multiple Myeloma treatment uses GAF USD ranges and haematology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "multiple-myeloma-treatment-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$18,000–\$48,000/);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /\$1,500–\$8,000\+/);
+  assert.match(body, /\$8,000–\$30,000/);
+  assert.match(body, /\$15,000–\$45,000/);
+  assert.match(body, /\$4,000–\$18,000/);
+  assert.match(body, /\$80,000–\$180,000/);
+  assert.match(body, /\$140,000–\$320,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: Multiple Myeloma Treatment in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Hematology\/Autologous-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Hematology\/Bone-Marrow-Transplantation/);
+  assert.match(body, /\/costs\/India\/Hematology\/Allogeneic-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Hematology\/CAR-T-Cell-Therapy/);
+  assert.match(body, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/leukemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/lymphoma-treatment-in-india/);
+  assert.match(body, /\/treatments\/thalassemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/sickle-cell-anemia-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/myeloma-crab\.webp/);
+  assert.match(body, /\/uploads\/treatments\/myeloma-diagnosis\.webp/);
+  assert.match(body, /\/uploads\/treatments\/myeloma-treatment\.webp/);
+  assert.match(body, /\/uploads\/treatments\/myeloma-asct\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Hematology",
+    "/doctors/India/Mumbai/Hematology",
+    "/doctors/India/Bengaluru/Hematology",
+    "/doctors/India/Chennai/Hematology",
+    "/doctors/India/Hyderabad/Hematology",
+    "/doctors/India/Delhi-NCR/Hematology/Autologous-Stem-Cell-Transplant",
+    "/doctors/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
+    "/doctors/India/Delhi-NCR/Medical-Oncology/Chemotherapy",
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    "/hospitals/India/Delhi-NCR/Hematology",
+    "/hospitals/India/Mumbai/Hematology",
+    "/costs/India/Delhi-NCR/Hematology/Autologous-Stem-Cell-Transplant",
+    "/costs/India/Mumbai/Hematology/Bone-Marrow-Transplantation",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /Multiple myeloma treatment in India/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Bone Marrow",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/multiple-myeloma-treatment-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/hematology\/myeloma/);
+  assert.doesNotMatch(body, /\/treatments\/daratumumab-treatment-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/multiple-myeloma-treatment-in-india/);
+  const bmt = store.treatments.find((row) => row.slug === "bone-marrow-transplant-in-india");
+  const sickle = store.treatments.find((row) => row.slug === "sickle-cell-anemia-treatment-in-india");
+  assert.match(bmt?.translations.en?.editorialBody ?? "", /\/treatments\/multiple-myeloma-treatment-in-india/);
+  assert.match(sickle?.translations.en?.editorialBody ?? "", /\/treatments\/multiple-myeloma-treatment-in-india/);
+});
+
+test("the published Aplastic Anemia treatment uses GAF USD ranges and haematology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "aplastic-anemia-treatment-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$35,000–\$85,000/);
+  assert.match(body, /\$40,000–\$95,000/);
+  assert.match(body, /\$28,000–\$75,000/);
+  assert.match(body, /\$28,000–\$70,000/);
+  assert.match(body, /\$24,000–\$70,000/);
+  assert.match(body, /\$200,000–\$420,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: Aplastic Anemia Treatment in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Hematology\/Allogeneic-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Hematology\/Bone-Marrow-Transplantation/);
+  assert.match(body, /\/costs\/India\/Hematology\/Haploidentical-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Pediatric-Hematology\/Pediatric-Bone-Marrow-Transplantation/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/leukemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/multiple-myeloma-treatment-in-india/);
+  assert.match(body, /\/treatments\/thalassemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/sickle-cell-anemia-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/aplastic-anemia-marrow\.webp/);
+  assert.match(body, /\/uploads\/treatments\/aplastic-anemia-severity\.webp/);
+  assert.match(body, /\/uploads\/treatments\/aplastic-anemia-treatment\.webp/);
+  assert.match(body, /\/uploads\/treatments\/aplastic-anemia-hsct\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Hematology",
+    "/doctors/India/Mumbai/Hematology",
+    "/doctors/India/Bengaluru/Hematology",
+    "/doctors/India/Chennai/Hematology",
+    "/doctors/India/Hyderabad/Hematology",
+    "/doctors/India/Delhi-NCR/Hematology/Allogeneic-Stem-Cell-Transplant",
+    "/doctors/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
+    "/doctors/India/Delhi-NCR/Pediatric-Hematology/Pediatric-Bone-Marrow-Transplantation",
+    "/hospitals/India/Delhi-NCR/Hematology",
+    "/hospitals/India/Mumbai/Hematology",
+    "/costs/India/Delhi-NCR/Hematology/Allogeneic-Stem-Cell-Transplant",
+    "/costs/India/Mumbai/Hematology/Bone-Marrow-Transplantation",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /Aplastic anemia treatment in India/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Bone Marrow",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/aplastic-anemia-treatment-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/hematology\/aplastic/);
+  assert.doesNotMatch(body, /\/treatments\/pnh-treatment-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/aplastic-anemia-treatment-in-india/);
+  const bmt = store.treatments.find((row) => row.slug === "bone-marrow-transplant-in-india");
+  const myeloma = store.treatments.find((row) => row.slug === "multiple-myeloma-treatment-in-india");
+  assert.match(bmt?.translations.en?.editorialBody ?? "", /\/treatments\/aplastic-anemia-treatment-in-india/);
+  assert.match(myeloma?.translations.en?.editorialBody ?? "", /\/treatments\/aplastic-anemia-treatment-in-india/);
+});
+
+test("the published Autologous BMT treatment uses GAF USD ranges and haematology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "autologous-bone-marrow-transplant-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$18,000–\$48,000/);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /\$140,000–\$320,000/);
+  assert.match(body, /\$80,000–\$180,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: Autologous Bone Marrow Transplant in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Hematology\/Autologous-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Hematology\/Bone-Marrow-Transplantation/);
+  assert.match(body, /\/costs\/India\/Hematology\/Allogeneic-Stem-Cell-Transplant/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/multiple-myeloma-treatment-in-india/);
+  assert.match(body, /\/treatments\/lymphoma-treatment-in-india/);
+  assert.match(body, /\/treatments\/aplastic-anemia-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/autologous-bmt-rescue\.webp/);
+  assert.match(body, /\/uploads\/treatments\/autologous-bmt-compare\.webp/);
+  assert.match(body, /\/uploads\/treatments\/autologous-bmt-steps\.webp/);
+  assert.match(body, /\/uploads\/treatments\/autologous-bmt-engraft\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Hematology",
+    "/doctors/India/Mumbai/Hematology",
+    "/doctors/India/Bengaluru/Hematology",
+    "/doctors/India/Chennai/Hematology",
+    "/doctors/India/Hyderabad/Hematology",
+    "/doctors/India/Delhi-NCR/Hematology/Autologous-Stem-Cell-Transplant",
+    "/doctors/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
+    "/hospitals/India/Delhi-NCR/Hematology",
+    "/hospitals/India/Mumbai/Hematology",
+    "/costs/India/Delhi-NCR/Hematology/Autologous-Stem-Cell-Transplant",
+    "/costs/India/Mumbai/Hematology/Bone-Marrow-Transplantation",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /Autologous bone marrow transplant in India/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Bone Marrow",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/autologous-bone-marrow-transplant-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/autologous/);
+  assert.doesNotMatch(body, /\/treatments\/hodgkin-lymphoma-treatment-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/autologous-bone-marrow-transplant-in-india/);
+  const bmt = store.treatments.find((row) => row.slug === "bone-marrow-transplant-in-india");
+  const aplastic = store.treatments.find((row) => row.slug === "aplastic-anemia-treatment-in-india");
+  assert.match(bmt?.translations.en?.editorialBody ?? "", /\/treatments\/autologous-bone-marrow-transplant-in-india/);
+  assert.match(aplastic?.translations.en?.editorialBody ?? "", /\/treatments\/autologous-bone-marrow-transplant-in-india/);
+});
+
+test("the published Fanconi Anemia treatment uses GAF USD ranges and haematology GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "fanconi-anemia-treatment-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /\$28,000–\$75,000/);
+  assert.match(body, /\$28,000–\$70,000/);
+  assert.match(body, /\$35,000–\$85,000/);
+  assert.match(body, /\$40,000–\$95,000/);
+  assert.match(body, /\$25,000–\$70,000/);
+  assert.match(body, /\$200,000–\$420,000/);
+  assert.match(body, /article-quick-answer|Quick Answer: Fanconi Anemia Treatment in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Hematology\/Allogeneic-Stem-Cell-Transplant/);
+  assert.match(body, /\/costs\/India\/Pediatric-Hematology\/Pediatric-Bone-Marrow-Transplantation/);
+  assert.match(body, /\/costs\/India\/Pediatric-Hematology\/Matched-Sibling-Donor-Transplant/);
+  assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
+  assert.match(body, /\/treatments\/aplastic-anemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/thalassemia-treatment-in-india/);
+  assert.match(body, /\/treatments\/leukemia-treatment-in-india/);
+  assert.match(body, /\/uploads\/treatments\/fanconi-anemia-pathway\.webp/);
+  assert.match(body, /\/uploads\/treatments\/fanconi-anemia-diagnosis\.webp/);
+  assert.match(body, /\/uploads\/treatments\/fanconi-anemia-treatment\.webp/);
+  assert.match(body, /\/uploads\/treatments\/fanconi-anemia-hsct\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Hematology",
+    "/doctors/India/Mumbai/Hematology",
+    "/doctors/India/Bengaluru/Hematology",
+    "/doctors/India/Chennai/Hematology",
+    "/doctors/India/Hyderabad/Hematology",
+    "/doctors/India/Delhi-NCR/Hematology/Allogeneic-Stem-Cell-Transplant",
+    "/doctors/India/Delhi-NCR/Pediatric-Hematology/Pediatric-Bone-Marrow-Transplantation",
+    "/hospitals/India/Delhi-NCR/Hematology",
+    "/hospitals/India/Mumbai/Hematology",
+    "/costs/India/Delhi-NCR/Hematology/Allogeneic-Stem-Cell-Transplant",
+    "/costs/India/Mumbai/Hematology/Bone-Marrow-Transplantation",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /Fanconi anemia treatment in India/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Bone Marrow",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/fanconi-anemia-treatment-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/hematology\/fanconi/);
+  assert.doesNotMatch(body, /\/treatments\/mds-treatment-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/fanconi-anemia-treatment-in-india/);
+  const bmt = store.treatments.find((row) => row.slug === "bone-marrow-transplant-in-india");
+  const aplastic = store.treatments.find((row) => row.slug === "aplastic-anemia-treatment-in-india");
+  assert.match(bmt?.translations.en?.editorialBody ?? "", /\/treatments\/fanconi-anemia-treatment-in-india/);
+  assert.match(aplastic?.translations.en?.editorialBody ?? "", /\/treatments\/fanconi-anemia-treatment-in-india/);
+  assert.doesNotMatch(aplastic?.translations.en?.editorialBody ?? "", /Fanconi-anemia, MDS/);
+});
+
+test("the published CABG surgery page uses GAF USD ranges and cardiac GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "cabg-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$5,500–\$14,000/);
+  assert.match(body, /\$8,500–\$20,000/);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$10,000–\$24,000/);
+  assert.match(body, /\$3,200–\$8,500/);
+  assert.match(body, /\$400–\$1,200/);
+  assert.match(body, /\$70,000–\$200,000/);
+  assert.match(body, /7–14 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: CABG Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/CABG-\(Coronary-Artery-Bypass-Grafting\)/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Redo-CABG/);
+  assert.match(body, /\/costs\/India\/Cardiology\/Coronary-Angioplasty-Stenting/);
+  assert.match(body, /\/treatments\/coronary-angioplasty-in-india/);
+  assert.match(body, /\/treatments\/tavr-in-india/);
+  assert.match(body, /\/uploads\/treatments\/cabg-bypass\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cabg-grafts\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cabg-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cabg-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/doctors/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/doctors/India/Chennai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/costs/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is CABG\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/cabg-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/cardiac/);
+  assert.doesNotMatch(body, /\/treatments\/heart-attack-treatment-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/cardiac-rehabilitation/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/cabg-surgery-in-india/);
+  const angioplasty = store.treatments.find((row) => row.slug === "coronary-angioplasty-in-india");
+  const tavr = store.treatments.find((row) => row.slug === "tavr-in-india");
+  assert.match(angioplasty?.translations.en?.editorialBody ?? "", /\/treatments\/cabg-surgery-in-india/);
+  assert.match(tavr?.translations.en?.editorialBody ?? "", /\/treatments\/cabg-surgery-in-india/);
+});
+
+test("the published heart valve replacement page uses GAF USD ranges and cardiac GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "heart-valve-replacement-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$7,000–\$18,500/);
+  assert.match(body, /\$6,500–\$16,500/);
+  assert.match(body, /\$7,500–\$18,000/);
+  assert.match(body, /\$12,000–\$28,000/);
+  assert.match(body, /\$18,000–\$42,000/);
+  assert.match(body, /\$80,000–\$220,000/);
+  assert.match(body, /8–16 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Heart Valve Replacement Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Heart-Valve-Replacement/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Aortic-Valve-Replacement/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/TAVR-TAVI-\(Transcatheter-Aortic-Valve-Replacement\)/);
+  assert.match(body, /\/treatments\/tavr-in-india/);
+  assert.match(body, /\/treatments\/cabg-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/heart-valve-disease\.webp/);
+  assert.match(body, /\/uploads\/treatments\/heart-valve-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/heart-valve-pathways\.webp/);
+  assert.match(body, /\/uploads\/treatments\/heart-valve-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Mumbai/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Chennai/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/costs/India/Mumbai/Cardiac-Surgery/Heart-Valve-Replacement",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is heart valve replacement\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/heart-valve-replacement-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/cardiology\/heart-valve/);
+  assert.doesNotMatch(body, /\/treatments\/aortic-valve-replacement-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/mitral-valve-replacement-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/heart-valve-replacement-in-india/);
+  const tavr = store.treatments.find((row) => row.slug === "tavr-in-india");
+  const cabg = store.treatments.find((row) => row.slug === "cabg-surgery-in-india");
+  const bav = store.treatments.find((row) => row.slug === "aortic-balloon-valvuloplasty-in-india");
+  assert.match(tavr?.translations.en?.editorialBody ?? "", /\/treatments\/heart-valve-replacement-in-india/);
+  assert.match(cabg?.translations.en?.editorialBody ?? "", /\/treatments\/heart-valve-replacement-in-india/);
+  assert.match(bav?.translations.en?.editorialBody ?? "", /\/treatments\/heart-valve-replacement-in-india/);
+});
+
+test("the published tricuspid valve replacement page uses GAF USD ranges and cardiac GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "tricuspid-valve-replacement-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$7,000–\$18,500/);
+  assert.match(body, /\$6,500–\$16,500/);
+  assert.match(body, /\$7,500–\$18,000/);
+  assert.match(body, /\$12,000–\$28,000/);
+  assert.match(body, /\$18,000–\$42,000/);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$8,000–\$28,000/);
+  assert.match(body, /\$80,000–\$220,000/);
+  assert.match(body, /8–16 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Tricuspid Valve Replacement in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Heart-Valve-Replacement/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Heart-Valve-Repair/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/TAVR-TAVI-\(Transcatheter-Aortic-Valve-Replacement\)/);
+  assert.match(body, /\/treatments\/heart-valve-replacement-in-india/);
+  assert.match(body, /\/treatments\/tavr-in-india/);
+  assert.match(body, /\/treatments\/cabg-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/tricuspid-valve-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tricuspid-valve-decision\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tricuspid-valve-pathways\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tricuspid-valve-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Mumbai/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Chennai/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/costs/India/Mumbai/Cardiac-Surgery/Heart-Valve-Replacement",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /Procedure/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /Tricuspid Valve Replacement/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/tricuspid-valve-replacement-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/cardiology\/tricuspid/);
+  assert.doesNotMatch(body, /\/treatments\/mitral-valve-replacement-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/aortic-valve-replacement-in-india/);
+  assert.match(body, /\/treatments\/tricuspid-valve-repair-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/minimally-invasive-heart-surgery-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/tricuspid-valve-replacement-in-india/);
+  const valve = store.treatments.find((row) => row.slug === "heart-valve-replacement-in-india");
+  const tavr = store.treatments.find((row) => row.slug === "tavr-in-india");
+  const cabg = store.treatments.find((row) => row.slug === "cabg-surgery-in-india");
+  assert.match(valve?.translations.en?.editorialBody ?? "", /\/treatments\/tricuspid-valve-replacement-in-india/);
+  assert.match(tavr?.translations.en?.editorialBody ?? "", /\/treatments\/tricuspid-valve-replacement-in-india/);
+  assert.match(cabg?.translations.en?.editorialBody ?? "", /\/treatments\/tricuspid-valve-replacement-in-india/);
+});
+
+test("the published aortic dissection repair page uses GAF USD ranges and cardiac GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "aortic-dissection-repair-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$9,000–\$22,000/);
+  assert.match(body, /\$10,000–\$24,000/);
+  assert.match(body, /\$7,000–\$18,500/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$18,000–\$42,000/);
+  assert.match(body, /\$90,000–\$260,000/);
+  assert.match(body, /8–16 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Aortic Dissection Repair Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Aortic-Aneurysm-Surgery/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Aortic-Root-Replacement/);
+  assert.match(body, /\/treatments\/heart-valve-replacement-in-india/);
+  assert.match(body, /\/treatments\/tavr-in-india/);
+  assert.match(body, /\/treatments\/cabg-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/aortic-dissection-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/aortic-dissection-lumen\.webp/);
+  assert.match(body, /\/uploads\/treatments\/aortic-dissection-pathways\.webp/);
+  assert.match(body, /\/uploads\/treatments\/aortic-dissection-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/Aortic-Aneurysm-Surgery",
+    "/doctors/India/Mumbai/Cardiac-Surgery/Aortic-Aneurysm-Surgery",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/Aortic-Aneurysm-Surgery",
+    "/doctors/India/Chennai/Cardiac-Surgery/Aortic-Aneurysm-Surgery",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/Aortic-Aneurysm-Surgery",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/Aortic-Aneurysm-Surgery",
+    "/costs/India/Mumbai/Cardiac-Surgery/Aortic-Aneurysm-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is aortic dissection\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/aortic-dissection-repair-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/cardiology\/aortic-dissection/);
+  assert.doesNotMatch(body, /\/treatments\/tevar-in-india/);
+  assert.match(body, /\/treatments\/bentall-procedure-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/aortic-root-replacement-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/aortic-aneurysm-repair-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/aortic-dissection-repair-in-india/);
+  const valve = store.treatments.find((row) => row.slug === "heart-valve-replacement-in-india");
+  const tavr = store.treatments.find((row) => row.slug === "tavr-in-india");
+  const cabg = store.treatments.find((row) => row.slug === "cabg-surgery-in-india");
+  assert.match(valve?.translations.en?.editorialBody ?? "", /\/treatments\/aortic-dissection-repair-in-india/);
+  assert.match(tavr?.translations.en?.editorialBody ?? "", /\/treatments\/aortic-dissection-repair-in-india/);
+  assert.match(cabg?.translations.en?.editorialBody ?? "", /\/treatments\/aortic-dissection-repair-in-india/);
+});
+
+test("the published VSD surgery page uses GAF USD ranges and cardiac GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "ventricular-septal-defect-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$4,500–\$11,000/);
+  assert.match(body, /\$8,000–\$28,000/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$7,000–\$18,500/);
+  assert.match(body, /\$3,500–\$9,000/);
+  assert.match(body, /\$35,000–\$90,000/);
+  assert.match(body, /\$80,000–\$250,000/);
+  assert.match(body, /6–12 nights/);
+  assert.match(body, /7–21 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: VSD Closure Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/VSD-Closure-\(Ventricular-Septal-Defect\)/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Congenital-Heart-Surgery/);
+  assert.match(body, /\/treatments\/heart-valve-replacement-in-india/);
+  assert.match(body, /\/treatments\/pacemaker-implantation-in-india/);
+  assert.match(body, /\/uploads\/treatments\/vsd-surgery-shunt\.webp/);
+  assert.match(body, /\/uploads\/treatments\/vsd-surgery-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/vsd-surgery-pathways\.webp/);
+  assert.match(body, /\/uploads\/treatments\/vsd-surgery-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery",
+    "/doctors/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/Congenital-Heart-Surgery",
+    "/doctors/India/Chennai/Cardiac-Surgery/Congenital-Heart-Surgery",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/Congenital-Heart-Surgery",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery",
+    "/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is VSD\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/ventricular-septal-defect-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/cardiology\/vsd/);
+  assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india/);
+  assert.match(body, /\/treatments\/asd-closure-surgery-in-india/);
+  assert.match(body, /\/treatments\/tof-repair-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/tetralogy-of-fallot-surgery-in-india/);
+  assert.match(body, /\/treatments\/pda-closure-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/pediatric-cardiac-surgery-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/ventricular-septal-defect-surgery-in-india/);
+  const valve = store.treatments.find((row) => row.slug === "heart-valve-replacement-in-india");
+  const adr = store.treatments.find((row) => row.slug === "aortic-dissection-repair-in-india");
+  const pacemaker = store.treatments.find((row) => row.slug === "pacemaker-implantation-in-india");
+  assert.match(valve?.translations.en?.editorialBody ?? "", /\/treatments\/ventricular-septal-defect-surgery-in-india/);
+  assert.match(adr?.translations.en?.editorialBody ?? "", /\/treatments\/ventricular-septal-defect-surgery-in-india/);
+  assert.match(pacemaker?.translations.en?.editorialBody ?? "", /\/treatments\/ventricular-septal-defect-surgery-in-india/);
+});
+
+test("the published LVAD implantation page uses GAF USD ranges and cardiac GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "lvad-implantation-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$70,000–\$140,000/);
+  assert.match(body, /\$45,000–\$95,000/);
+  assert.match(body, /\$8,000–\$18,000/);
+  assert.match(body, /\$10,000–\$22,000/);
+  assert.match(body, /\$3,500–\$9,000/);
+  assert.match(body, /\$250,000–\$600,000/);
+  assert.match(body, /3–8 weeks/);
+  assert.match(body, /article-quick-answer|Quick Answer: LVAD Procedure in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/LVAD-Implantation/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Heart-Transplant-Surgery/);
+  assert.match(body, /\/treatments\/pacemaker-implantation-in-india/);
+  assert.match(body, /\/treatments\/icd-device-implantation-in-india/);
+  assert.match(body, /\/uploads\/treatments\/lvad-circuit\.webp/);
+  assert.match(body, /\/uploads\/treatments\/lvad-goals\.webp/);
+  assert.match(body, /\/uploads\/treatments\/lvad-risks\.webp/);
+  assert.match(body, /\/uploads\/treatments\/lvad-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/LVAD-Implantation",
+    "/doctors/India/Mumbai/Cardiac-Surgery/LVAD-Implantation",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/LVAD-Implantation",
+    "/doctors/India/Chennai/Cardiac-Surgery/LVAD-Implantation",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/LVAD-Implantation",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/LVAD-Implantation",
+    "/costs/India/Mumbai/Cardiac-Surgery/LVAD-Implantation",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is an LVAD\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/lvad-implantation-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/cardiology\/lvad/);
+  assert.doesNotMatch(body, /\/treatments\/heart-transplant-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/ecmo-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/lvad-implantation-in-india/);
+  const valve = store.treatments.find((row) => row.slug === "heart-valve-replacement-in-india");
+  const vsd = store.treatments.find((row) => row.slug === "ventricular-septal-defect-surgery-in-india");
+  const icd = store.treatments.find((row) => row.slug === "icd-device-implantation-in-india");
+  assert.match(valve?.translations.en?.editorialBody ?? "", /\/treatments\/lvad-implantation-in-india/);
+  assert.match(vsd?.translations.en?.editorialBody ?? "", /\/treatments\/lvad-implantation-in-india/);
+  assert.match(icd?.translations.en?.editorialBody ?? "", /\/treatments\/lvad-implantation-in-india/);
+});
+
+test("the published heart bypass surgery cost page uses GAF USD ranges and cardiac GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "heart-bypass-surgery-cost-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$5,500–\$14,000/);
+  assert.match(body, /\$8,500–\$20,000/);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$10,000–\$24,000/);
+  assert.match(body, /\$3,200–\$8,500/);
+  assert.match(body, /\$400–\$1,200/);
+  assert.match(body, /\$70,000–\$200,000/);
+  assert.match(body, /7–14 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Heart Bypass Surgery Cost in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/CABG-\(Coronary-Artery-Bypass-Grafting\)/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Redo-CABG/);
+  assert.match(body, /\/costs\/India\/Cardiology\/Coronary-Angioplasty-Stenting/);
+  assert.match(body, /\/treatments\/cabg-surgery-in-india/);
+  assert.match(body, /\/treatments\/coronary-angioplasty-in-india/);
+  assert.match(body, /\/uploads\/treatments\/cabg-cost-circuit\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cabg-cost-grafts\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cabg-cost-drivers\.webp/);
+  assert.match(body, /\/uploads\/treatments\/cabg-cost-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/doctors/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/doctors/India/Chennai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/costs/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is a practical preliminary budget for CABG in India\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/heart-bypass-surgery-cost-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/cardiac/);
+  assert.doesNotMatch(body, /\/treatments\/heart-attack-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/redo-cabg-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/minimally-invasive-heart-surgery-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/heart-bypass-surgery-cost-in-india/);
+  const cabg = store.treatments.find((row) => row.slug === "cabg-surgery-in-india");
+  const angioplasty = store.treatments.find((row) => row.slug === "coronary-angioplasty-in-india");
+  const valve = store.treatments.find((row) => row.slug === "heart-valve-replacement-in-india");
+  assert.match(cabg?.translations.en?.editorialBody ?? "", /\/treatments\/heart-bypass-surgery-cost-in-india/);
+  assert.match(angioplasty?.translations.en?.editorialBody ?? "", /\/treatments\/heart-bypass-surgery-cost-in-india/);
+  assert.match(valve?.translations.en?.editorialBody ?? "", /\/treatments\/heart-bypass-surgery-cost-in-india/);
+});
+
+test("the published tricuspid valve repair page uses GAF USD ranges and cardiac GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "tricuspid-valve-repair-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$6,500–\$16,500/);
+  assert.match(body, /\$7,500–\$18,000/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$12,000–\$28,000/);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$10,000–\$24,000/);
+  assert.match(body, /\$5,500–\$14,000/);
+  assert.match(body, /\$8,000–\$28,000/);
+  assert.match(body, /\$3,500–\$9,000/);
+  assert.match(body, /\$75,000–\$200,000/);
+  assert.match(body, /7–14 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Tricuspid Valve Repair in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Heart-Valve-Repair/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Mitral-Valve-Repair/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Heart-Valve-Replacement/);
+  assert.match(body, /\/treatments\/tricuspid-valve-replacement-in-india/);
+  assert.match(body, /\/treatments\/heart-valve-replacement-in-india/);
+  assert.match(body, /\/uploads\/treatments\/tricuspid-repair-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tricuspid-repair-techniques\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tricuspid-repair-decision\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tricuspid-repair-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/Heart-Valve-Repair",
+    "/doctors/India/Mumbai/Cardiac-Surgery/Heart-Valve-Repair",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/Heart-Valve-Repair",
+    "/doctors/India/Chennai/Cardiac-Surgery/Heart-Valve-Repair",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/Heart-Valve-Repair",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/Heart-Valve-Repair",
+    "/costs/India/Mumbai/Cardiac-Surgery/Heart-Valve-Repair",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is tricuspid valve repair\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/tricuspid-valve-repair-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/cardiology\/tricuspid/);
+  assert.doesNotMatch(body, /\/treatments\/t-teer-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/mitral-valve-repair-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/transcatheter-tricuspid-repair-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/tricuspid-valve-repair-in-india/);
+  const tvr = store.treatments.find((row) => row.slug === "tricuspid-valve-replacement-in-india");
+  const valve = store.treatments.find((row) => row.slug === "heart-valve-replacement-in-india");
+  const cabg = store.treatments.find((row) => row.slug === "cabg-surgery-in-india");
+  assert.match(tvr?.translations.en?.editorialBody ?? "", /\/treatments\/tricuspid-valve-repair-in-india/);
+  assert.match(valve?.translations.en?.editorialBody ?? "", /\/treatments\/tricuspid-valve-repair-in-india/);
+  assert.match(cabg?.translations.en?.editorialBody ?? "", /\/treatments\/tricuspid-valve-repair-in-india/);
+});
+
+test("the published mitral valve replacement page uses GAF USD ranges and cardiac GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "mitral-valve-replacement-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$7,500–\$18,000/);
+  assert.match(body, /\$6,500–\$16,500/);
+  assert.match(body, /\$12,000–\$28,000/);
+  assert.match(body, /\$8,000–\$20,000/);
+  assert.match(body, /\$10,000–\$24,000/);
+  assert.match(body, /\$5,500–\$14,000/);
+  assert.match(body, /\$4,000–\$10,000/);
+  assert.match(body, /\$18,000–\$38,000/);
+  assert.match(body, /\$80,000–\$220,000/);
+  assert.match(body, /8–16 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Mitral Valve Replacement Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Heart-Valve-Replacement/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Mitral-Valve-Repair/);
+  assert.match(body, /\/costs\/India\/Cardiology\/Balloon-Mitral-Valvotomy/);
+  assert.match(body, /\/costs\/India\/Cardiology\/MitraClip/);
+  assert.match(body, /\/treatments\/heart-valve-replacement-in-india/);
+  assert.match(body, /\/treatments\/tricuspid-valve-repair-in-india/);
+  assert.match(body, /\/uploads\/treatments\/mitral-replacement-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/mitral-replacement-valves\.webp/);
+  assert.match(body, /\/uploads\/treatments\/mitral-replacement-decision\.webp/);
+  assert.match(body, /\/uploads\/treatments\/mitral-replacement-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Mumbai/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Chennai/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/Heart-Valve-Replacement",
+    "/costs/India/Mumbai/Cardiac-Surgery/Heart-Valve-Replacement",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /Procedure/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /Mitral Valve Replacement/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/mitral-valve-replacement-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/cardiology\/mitral/);
+  assert.doesNotMatch(body, /\/treatments\/mitral-valve-repair-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/tmvr-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/aortic-valve-replacement-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/mitral-valve-replacement-in-india(?!-surgery)/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(
+    llms,
+    /https:\/\/gaf\.healthcare\/treatments\/mitral-valve-replacement-surgery-in-india/,
+  );
+  const valve = store.treatments.find((row) => row.slug === "heart-valve-replacement-in-india");
+  const tvr = store.treatments.find((row) => row.slug === "tricuspid-valve-replacement-in-india");
+  const cabg = store.treatments.find((row) => row.slug === "cabg-surgery-in-india");
+  assert.match(valve?.translations.en?.editorialBody ?? "", /\/treatments\/mitral-valve-replacement-surgery-in-india/);
+  assert.match(tvr?.translations.en?.editorialBody ?? "", /\/treatments\/mitral-valve-replacement-surgery-in-india/);
+  assert.match(cabg?.translations.en?.editorialBody ?? "", /\/treatments\/mitral-valve-replacement-surgery-in-india/);
+});
+
+test("the published Bentall procedure page uses GAF USD ranges and cardiac GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "bentall-procedure-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$10,000–\$24,000/);
+  assert.match(body, /\$9,000–\$22,000/);
+  assert.match(body, /\$7,000–\$18,500/);
+  assert.match(body, /\$7,000–\$18,000/);
+  assert.match(body, /\$18,000–\$42,000/);
+  assert.match(body, /\$5,500–\$14,000/);
+  assert.match(body, /\$12,000–\$28,000/);
+  assert.match(body, /\$90,000–\$250,000/);
+  assert.match(body, /10–18 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Bentall Procedure in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Aortic-Root-Replacement/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Aortic-Aneurysm-Surgery/);
+  assert.match(body, /\/treatments\/aortic-dissection-repair-in-india/);
+  assert.match(body, /\/treatments\/heart-valve-replacement-in-india/);
+  assert.match(body, /\/treatments\/tavr-in-india/);
+  assert.match(body, /\/uploads\/treatments\/bentall-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bentall-decision\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bentall-conduit\.webp/);
+  assert.match(body, /\/uploads\/treatments\/bentall-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/Aortic-Root-Replacement",
+    "/doctors/India/Mumbai/Cardiac-Surgery/Aortic-Root-Replacement",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/Aortic-Root-Replacement",
+    "/doctors/India/Chennai/Cardiac-Surgery/Aortic-Root-Replacement",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/Aortic-Root-Replacement",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/Aortic-Root-Replacement",
+    "/costs/India/Mumbai/Cardiac-Surgery/Aortic-Root-Replacement",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is a Bentall procedure\?/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /composite valve-graft conduit/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/bentall-procedure-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/cardiology\/bentall/);
+  assert.doesNotMatch(body, /\/treatments\/tevar-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/aortic-root-replacement-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/aortic-valve-replacement-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/david-procedure-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/valve-sparing-aortic-root-replacement-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/bentall-procedure-in-india/);
+  const adr = store.treatments.find((row) => row.slug === "aortic-dissection-repair-in-india");
+  const valve = store.treatments.find((row) => row.slug === "heart-valve-replacement-in-india");
+  const cabg = store.treatments.find((row) => row.slug === "cabg-surgery-in-india");
+  assert.match(adr?.translations.en?.editorialBody ?? "", /\/treatments\/bentall-procedure-in-india/);
+  assert.match(valve?.translations.en?.editorialBody ?? "", /\/treatments\/bentall-procedure-in-india/);
+  assert.match(cabg?.translations.en?.editorialBody ?? "", /\/treatments\/bentall-procedure-in-india/);
+});
+
+test("the published coarctation repair page uses GAF USD ranges and pediatric GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "coarctation-repair-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$6,000–\$15,000/);
+  assert.match(body, /\$8,000–\$28,000/);
+  assert.match(body, /\$4,500–\$11,000/);
+  assert.match(body, /\$4,000–\$9,500/);
+  assert.match(body, /\$3,500–\$8,500/);
+  assert.match(body, /\$6,500–\$16,000/);
+  assert.match(body, /\$40,000–\$110,000/);
+  assert.match(body, /6–14 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Coarctation Repair Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/Coarctation-Repair/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Congenital-Heart-Surgery/);
+  assert.match(body, /\/treatments\/ventricular-septal-defect-surgery-in-india/);
+  assert.match(body, /\/treatments\/bentall-procedure-in-india/);
+  assert.match(body, /\/uploads\/treatments\/coarctation-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/coarctation-decision\.webp/);
+  assert.match(body, /\/uploads\/treatments\/coarctation-techniques\.webp/);
+  assert.match(body, /\/uploads\/treatments\/coarctation-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/Coarctation-Repair",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/Coarctation-Repair",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/Coarctation-Repair",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/Coarctation-Repair",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/Coarctation-Repair",
+    "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/Coarctation-Repair",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/Coarctation-Repair",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is coarctation\?/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /narrowing of part of the aorta/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/coarctation-repair-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/cardiology\/coarctation/);
+  assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india/);
+  assert.match(body, /\/treatments\/asd-closure-surgery-in-india/);
+  assert.match(body, /\/treatments\/pda-closure-surgery-in-india/);
+  assert.match(body, /\/treatments\/tof-repair-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/tetralogy-of-fallot-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/pediatric-cardiac-surgery-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/coarctation-repair-surgery-in-india/);
+  const vsd = store.treatments.find((row) => row.slug === "ventricular-septal-defect-surgery-in-india");
+  const adr = store.treatments.find((row) => row.slug === "aortic-dissection-repair-in-india");
+  const bentall = store.treatments.find((row) => row.slug === "bentall-procedure-in-india");
+  assert.match(vsd?.translations.en?.editorialBody ?? "", /\/treatments\/coarctation-repair-surgery-in-india/);
+  assert.match(adr?.translations.en?.editorialBody ?? "", /\/treatments\/coarctation-repair-surgery-in-india/);
+  assert.match(bentall?.translations.en?.editorialBody ?? "", /\/treatments\/coarctation-repair-surgery-in-india/);
+});
+
+test("the published PDA closure page uses GAF USD ranges and pediatric GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "pda-closure-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,500–\$8,500/);
+  assert.match(body, /\$8,000–\$28,000/);
+  assert.match(body, /\$4,500–\$11,000/);
+  assert.match(body, /\$4,000–\$9,500/);
+  assert.match(body, /\$6,000–\$15,000/);
+  assert.match(body, /\$6,500–\$16,000/);
+  assert.match(body, /\$20,000–\$60,000/);
+  assert.match(body, /3–8 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: PDA Closure Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/PDA-Closure-\(Patent-Ductus-Arteriosus\)/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Congenital-Heart-Surgery/);
+  assert.match(body, /\/treatments\/ventricular-septal-defect-surgery-in-india/);
+  assert.match(body, /\/treatments\/coarctation-repair-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/pda-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pda-decision\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pda-device\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pda-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is PDA\?/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /persistent connection between the aorta and pulmonary artery/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/pda-closure-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/pediatric/);
+  assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india/);
+  assert.match(body, /\/treatments\/asd-closure-surgery-in-india/);
+  assert.match(body, /\/treatments\/tof-repair-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/tetralogy-of-fallot-surgery-in-india/);
+  assert.match(body, /\/treatments\/glenn-procedure-surgery-in-india/);
+  assert.match(body, /\/treatments\/fontan-procedure-surgery-in-india/);
+  assert.match(body, /\/treatments\/arterial-switch-operation-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/pediatric-cardiac-surgery-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/pda-closure-surgery-in-india/);
+  const vsd = store.treatments.find((row) => row.slug === "ventricular-septal-defect-surgery-in-india");
+  const coa = store.treatments.find((row) => row.slug === "coarctation-repair-surgery-in-india");
+  const valve = store.treatments.find((row) => row.slug === "heart-valve-replacement-in-india");
+  assert.match(vsd?.translations.en?.editorialBody ?? "", /\/treatments\/pda-closure-surgery-in-india/);
+  assert.match(coa?.translations.en?.editorialBody ?? "", /\/treatments\/pda-closure-surgery-in-india/);
+  assert.match(valve?.translations.en?.editorialBody ?? "", /\/treatments\/pda-closure-surgery-in-india/);
+});
+
+test("the published arterial switch page uses GAF USD ranges and pediatric GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "arterial-switch-operation-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$12,000–\$26,000/);
+  assert.match(body, /\$8,000–\$28,000/);
+  assert.match(body, /\$4,500–\$11,000/);
+  assert.match(body, /\$3,500–\$8,500/);
+  assert.match(body, /\$4,000–\$9,500/);
+  assert.match(body, /\$80,000–\$200,000/);
+  assert.match(body, /10–21 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Arterial Switch Operation in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/Arterial-Switch-Operation/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Congenital-Heart-Surgery/);
+  assert.match(body, /\/treatments\/ventricular-septal-defect-surgery-in-india/);
+  assert.match(body, /\/treatments\/pda-closure-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/aso-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/aso-decision\.webp/);
+  assert.match(body, /\/uploads\/treatments\/aso-operation\.webp/);
+  assert.match(body, /\/uploads\/treatments\/aso-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation",
+    "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is an arterial switch operation\?/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /open-heart operation that restores the aorta and pulmonary artery/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/arterial-switch-operation-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/pediatric/);
+  assert.doesNotMatch(body, /\/treatments\/tga-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/mustard-procedure-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/senning-procedure-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/ecmo-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india/);
+  assert.match(body, /\/treatments\/asd-closure-surgery-in-india/);
+  assert.match(body, /\/treatments\/tof-repair-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/tetralogy-of-fallot-surgery-in-india/);
+  assert.match(body, /\/treatments\/glenn-procedure-surgery-in-india/);
+  assert.match(body, /\/treatments\/fontan-procedure-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/pediatric-cardiac-surgery-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/arterial-switch-operation-in-india/);
+  const vsd = store.treatments.find((row) => row.slug === "ventricular-septal-defect-surgery-in-india");
+  const pda = store.treatments.find((row) => row.slug === "pda-closure-surgery-in-india");
+  const coa = store.treatments.find((row) => row.slug === "coarctation-repair-surgery-in-india");
+  assert.match(vsd?.translations.en?.editorialBody ?? "", /\/treatments\/arterial-switch-operation-in-india/);
+  assert.match(pda?.translations.en?.editorialBody ?? "", /\/treatments\/arterial-switch-operation-in-india/);
+  assert.match(coa?.translations.en?.editorialBody ?? "", /\/treatments\/arterial-switch-operation-in-india/);
+});
+
+test("the published Fontan procedure page uses GAF USD ranges and pediatric GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "fontan-procedure-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$9,000–\$22,000/);
+  assert.match(body, /\$8,000–\$18,000/);
+  assert.match(body, /\$18,000–\$40,000/);
+  assert.match(body, /\$12,000–\$26,000/);
+  assert.match(body, /\$8,000–\$28,000/);
+  assert.match(body, /\$70,000–\$180,000/);
+  assert.match(body, /10–18 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Fontan Procedure in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/Fontan-Procedure/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/Glenn-Procedure/);
+  assert.match(body, /\/treatments\/arterial-switch-operation-in-india/);
+  assert.match(body, /\/treatments\/pda-closure-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/fontan-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/fontan-stages\.webp/);
+  assert.match(body, /\/uploads\/treatments\/fontan-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/fontan-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/Fontan-Procedure",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/Fontan-Procedure",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/Fontan-Procedure",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/Fontan-Procedure",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/Fontan-Procedure",
+    "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/Fontan-Procedure",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/Fontan-Procedure",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is Fontan surgery\?/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /directs systemic venous blood to the pulmonary arteries/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/fontan-procedure-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/pediatric/);
+  assert.match(body, /\/treatments\/glenn-procedure-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/glenn-procedure-in-india(?!-surgery)/);
+  assert.doesNotMatch(body, /\/treatments\/norwood-procedure-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/hlhs-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/heart-transplant-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/fontan-procedure-in-india(?!-surgery)/);
+  assert.doesNotMatch(body, /\/treatments\/pediatric-cardiac-surgery-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/fontan-procedure-surgery-in-india/);
+  const aso = store.treatments.find((row) => row.slug === "arterial-switch-operation-in-india");
+  const pda = store.treatments.find((row) => row.slug === "pda-closure-surgery-in-india");
+  const vsd = store.treatments.find((row) => row.slug === "ventricular-septal-defect-surgery-in-india");
+  assert.match(aso?.translations.en?.editorialBody ?? "", /\/treatments\/fontan-procedure-surgery-in-india/);
+  assert.match(pda?.translations.en?.editorialBody ?? "", /\/treatments\/fontan-procedure-surgery-in-india/);
+  assert.match(vsd?.translations.en?.editorialBody ?? "", /\/treatments\/fontan-procedure-surgery-in-india/);
+});
+
+test("the published Glenn procedure page uses GAF USD ranges and pediatric GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "glenn-procedure-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$8,000–\$18,000/);
+  assert.match(body, /\$9,000–\$22,000/);
+  assert.match(body, /\$18,000–\$40,000/);
+  assert.match(body, /\$12,000–\$26,000/);
+  assert.match(body, /\$8,000–\$28,000/);
+  assert.match(body, /\$60,000–\$160,000/);
+  assert.match(body, /8–16 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: Glenn Procedure in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/Glenn-Procedure/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/Fontan-Procedure/);
+  assert.match(body, /\/treatments\/fontan-procedure-surgery-in-india/);
+  assert.match(body, /\/treatments\/arterial-switch-operation-in-india/);
+  assert.match(body, /\/treatments\/pda-closure-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/glenn-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/glenn-stages\.webp/);
+  assert.match(body, /\/uploads\/treatments\/glenn-operation\.webp/);
+  assert.match(body, /\/uploads\/treatments\/glenn-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/Glenn-Procedure",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/Glenn-Procedure",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/Glenn-Procedure",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/Glenn-Procedure",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/Glenn-Procedure",
+    "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/Glenn-Procedure",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/Glenn-Procedure",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is a Glenn procedure\?/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /superior vena cava is connected to the pulmonary arteries/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/glenn-procedure-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/pediatric/);
+  assert.doesNotMatch(body, /\/treatments\/glenn-procedure-in-india(?!-surgery)/);
+  assert.doesNotMatch(body, /\/treatments\/norwood-procedure-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/hlhs-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/heart-transplant-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/blalock-taussig/);
+  assert.doesNotMatch(body, /\/treatments\/pediatric-cardiac-surgery-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/glenn-procedure-surgery-in-india/);
+  const fontan = store.treatments.find((row) => row.slug === "fontan-procedure-surgery-in-india");
+  const aso = store.treatments.find((row) => row.slug === "arterial-switch-operation-in-india");
+  const pda = store.treatments.find((row) => row.slug === "pda-closure-surgery-in-india");
+  assert.match(fontan?.translations.en?.editorialBody ?? "", /\/treatments\/glenn-procedure-surgery-in-india/);
+  assert.match(aso?.translations.en?.editorialBody ?? "", /\/treatments\/glenn-procedure-surgery-in-india/);
+  assert.match(pda?.translations.en?.editorialBody ?? "", /\/treatments\/glenn-procedure-surgery-in-india/);
+});
+
+test("the published TOF repair page uses GAF USD ranges and pediatric GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "tof-repair-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$6,500–\$16,000/);
+  assert.match(body, /\$4,500–\$11,000/);
+  assert.match(body, /\$3,500–\$8,500/);
+  assert.match(body, /\$4,000–\$9,500/);
+  assert.match(body, /\$8,000–\$28,000/);
+  assert.match(body, /\$50,000–\$140,000/);
+  assert.match(body, /8–16 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: TOF Repair Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/TOF-Repair-\(Tetralogy-of-Fallot\)/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/VSD-Closure-\(Ventricular-Septal-Defect\)/);
+  assert.match(body, /\/treatments\/ventricular-septal-defect-surgery-in-india/);
+  assert.match(body, /\/treatments\/glenn-procedure-surgery-in-india/);
+  assert.match(body, /\/treatments\/pda-closure-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/tof-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tof-repair\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tof-options\.webp/);
+  assert.match(body, /\/uploads\/treatments\/tof-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
+    "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is TOF\?/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /four anatomical abnormalities/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/tof-repair-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/pediatric/);
+  assert.doesNotMatch(body, /\/treatments\/tetralogy-of-fallot-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india/);
+  assert.match(body, /\/treatments\/asd-closure-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/pediatric-cardiac-surgery-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/tof-repair-surgery-in-india/);
+  const vsd = store.treatments.find((row) => row.slug === "ventricular-septal-defect-surgery-in-india");
+  const glenn = store.treatments.find((row) => row.slug === "glenn-procedure-surgery-in-india");
+  const pda = store.treatments.find((row) => row.slug === "pda-closure-surgery-in-india");
+  assert.match(vsd?.translations.en?.editorialBody ?? "", /\/treatments\/tof-repair-surgery-in-india/);
+  assert.match(glenn?.translations.en?.editorialBody ?? "", /\/treatments\/tof-repair-surgery-in-india/);
+  assert.match(pda?.translations.en?.editorialBody ?? "", /\/treatments\/tof-repair-surgery-in-india/);
+});
+
+test("the published ASD closure page uses GAF USD ranges and pediatric GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find((row) => row.slug === "asd-closure-surgery-in-india");
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$4,000–\$9,500/);
+  assert.match(body, /\$4,500–\$11,000/);
+  assert.match(body, /\$3,500–\$8,500/);
+  assert.match(body, /\$6,500–\$16,000/);
+  assert.match(body, /\$8,000–\$28,000/);
+  assert.match(body, /\$30,000–\$80,000/);
+  assert.match(body, /5–10 nights/);
+  assert.match(body, /article-quick-answer|Quick Answer: ASD Closure in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/ASD-Closure-\(Atrial-Septal-Defect\)/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/VSD-Closure-\(Ventricular-Septal-Defect\)/);
+  assert.match(body, /\/treatments\/ventricular-septal-defect-surgery-in-india/);
+  assert.match(body, /\/treatments\/pda-closure-surgery-in-india/);
+  assert.match(body, /\/treatments\/tof-repair-surgery-in-india/);
+  assert.match(body, /\/uploads\/treatments\/asd-anatomy\.webp/);
+  assert.match(body, /\/uploads\/treatments\/asd-types\.webp/);
+  assert.match(body, /\/uploads\/treatments\/asd-options\.webp/);
+  assert.match(body, /\/uploads\/treatments\/asd-steps\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 10);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What is ASD\?/i);
+  assert.match(qa.quickAnswer?.items[0]?.answer ?? "", /hole between the two upper chambers/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(english.includes("https://gaf.healthcare/treatments/asd-closure-surgery-in-india"));
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/india\/pediatric/);
+  assert.doesNotMatch(body, /\/treatments\/asd-closure-in-india(?!-surgery)/);
+  assert.doesNotMatch(body, /\/treatments\/pediatric-cardiac-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/avsd/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/asd-closure-surgery-in-india/);
+  const vsd = store.treatments.find((row) => row.slug === "ventricular-septal-defect-surgery-in-india");
+  const pda = store.treatments.find((row) => row.slug === "pda-closure-surgery-in-india");
+  const tof = store.treatments.find((row) => row.slug === "tof-repair-surgery-in-india");
+  assert.match(vsd?.translations.en?.editorialBody ?? "", /\/treatments\/asd-closure-surgery-in-india/);
+  assert.match(pda?.translations.en?.editorialBody ?? "", /\/treatments\/asd-closure-surgery-in-india/);
+  assert.match(tof?.translations.en?.editorialBody ?? "", /\/treatments\/asd-closure-surgery-in-india/);
+});
+
+test("pediatric cardiac surgery pages list Pediatric Cardiac Surgery doctors only", () => {
+  const store = loadCuratedTreatments();
+  const pages = store.treatments.filter(
+    (row) => row.specialtySlug === "pediatric-cardiac-surgery",
+  );
+  assert.ok(pages.length >= 8, `expected congenital pages, found ${pages.length}`);
+  for (const treatment of pages) {
+    assert.ok(treatment.doctorSlugs.length > 0, treatment.slug);
+    assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+    for (const slug of treatment.doctorSlugs) {
+      const doctor = getDoctor(slug);
+      assert.ok(doctor, `${treatment.slug} lists unknown doctor ${slug}`);
+      assert.equal(
+        doctor.specialtySlug,
+        "pediatric-cardiac-surgery",
+        `${treatment.slug} listed ${slug} (${doctor.specialty} / ${doctor.specialtySlug})`,
+      );
+      assert.notEqual(doctor.specialty, "Cardiac Surgery");
+    }
+  }
+});
+
+test("Save recreates a missing Treatment instead of 404ing", () => {
+  const store: CuratedTreatmentStore = { treatments: [] };
+  const id = "099c61a5-a4e5-4227-9711-500eb3636730";
+  const { treatment, created, errors } = applyCuratedTreatmentPatch(store, id, {
+    baseName: "Breast Cancer Treatment in India",
+    slug: "breast-cancer-treatment-in-india",
+    specialtySlug: "surgical-oncology",
+    status: "published",
+  });
+  assert.equal(created, true);
+  assert.equal(treatment.id, id);
+  assert.equal(treatment.status, "draft");
+  assert.equal(treatment.translations.en?.name, "Breast Cancer Treatment in India");
+  assert.equal(store.treatments[0]?.id, id);
+  assert.ok(
+    errors.some((error) => error.includes("Publish at least one language version")),
+  );
 });
 
 test("the unified editor preserves legacy structured editorial content", () => {

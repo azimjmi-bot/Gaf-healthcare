@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { CmsAiActions } from "@/components/cms/cms-ai-actions";
 import { CmsImageUpload } from "@/components/cms/cms-image-upload";
 import { CmsMarkdownField } from "@/components/cms/cms-markdown-field";
 import type { Doctor } from "@/lib/doctors";
@@ -53,6 +54,16 @@ export function CmsDoctorEditor({ initial }: { initial: Doctor & { deleted?: boo
         Experience
         <Input value={row.experience} onChange={(e) => setRow({ ...row, experience: e.target.value })} />
       </label>
+      <CmsAiActions
+        contentType="doctor"
+        recordId={row.slug}
+        doctorSlug={row.slug}
+        onApply={(fields) => {
+          if (fields.bio || fields.section_rewritten) {
+            setRow((current) => ({ ...current, bio: fields.bio || fields.section_rewritten }));
+          }
+        }}
+      />
       <CmsMarkdownField
         label="Bio"
         value={row.bio}

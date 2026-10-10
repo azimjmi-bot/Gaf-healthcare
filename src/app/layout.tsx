@@ -1,8 +1,11 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Geist, Noto_Sans, Noto_Sans_Arabic } from "next/font/google";
+import { DeferredAnalytics } from "@/components/deferred-analytics";
+import { LocaleFontLinks } from "@/components/locale-font-links";
 import { LocaleProvider } from "@/components/locale-provider";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { WhatsAppFloat } from "@/components/whatsapp-float";
+import { clientMessagesFor } from "@/lib/i18n/client-messages";
 import { LANGUAGE_OG, localeDir } from "@/lib/i18n/languages";
 import { localizeMessages } from "@/lib/i18n/localize";
 import { getRequestLocale, getRequestPath } from "@/lib/i18n/request";
@@ -12,35 +15,7 @@ import { SITE_URL } from "@/lib/seo";
 import { site } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-// Noto Sans / Noto Sans Arabic only take effect under html[lang="ru"] and
-// html[lang="ar"] (see globals.css). With preload on, next/font would add
-// <link rel="preload"> for every subset on every page, so English pages
-// downloaded Cyrillic and Arabic font files that were never painted. The
-// @font-face rules stay in place, so those locales still fetch them on use.
-const notoSans = Noto_Sans({
-  variable: "--font-noto",
-  subsets: ["latin", "latin-ext", "cyrillic"],
-  weight: ["400", "500", "600", "700"],
-  preload: false,
-});
-
-const notoArabic = Noto_Sans_Arabic({
-  variable: "--font-arabic",
-  subsets: ["arabic"],
-  weight: ["400", "500", "600", "700"],
-  preload: false,
-});
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-});
+const GA_MEASUREMENT_ID = "G-F12D7QK2B2";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -152,23 +127,37 @@ export async function generateMetadata(): Promise<Metadata> {
 export default async function RootLayout({ children }: LayoutProps<"/">) {
   const locale = await getRequestLocale();
   const messages = await localizeMessages(locale);
+  const pathname = await getRequestPath();
   const dir = localeDir(locale);
   return (
     <html
       lang={locale}
       dir={dir}
-      className={`${geistSans.variable} ${cormorant.variable} ${notoSans.variable} ${notoArabic.variable} h-full`}
+      className="h-full"
     >
+      <head>
+        <LocaleFontLinks locale={locale} />
+        {pathname === "/" ? (
+          <style
+            dangerouslySetInnerHTML={{
+              __html:
+                ".home-hero{min-height:100svh;background:#16324a;color:#f4f1e8}.home-hero h1{margin-top:.85rem;max-width:16ch;font-family:ui-serif,Georgia,serif;font-size:clamp(2.35rem,12vw,3.4rem);line-height:1.02;font-weight:500}",
+            }}
+          />
+        ) : null}
+      </head>
       <body className="flex min-h-full flex-col">
         <LocaleProvider
           locale={locale}
-          messages={messages}
+          messages={clientMessagesFor(locale, messages)}
           surfaces={availableSurfaces(locale)}
-          languageOptions={languageOptions(await getRequestPath())}
+          languageOptions={languageOptions(pathname)}
         >
           <SiteHeader />
           <main className="flex-1">{children}</main>
           <SiteFooter />
+          <WhatsAppFloat />
+          <DeferredAnalytics id={GA_MEASUREMENT_ID} />
         </LocaleProvider>
       </body>
     </html>

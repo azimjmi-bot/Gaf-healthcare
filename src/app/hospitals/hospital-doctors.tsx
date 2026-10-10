@@ -1,3 +1,4 @@
+import "@/styles/hospital-profile.css";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { DoctorCard } from "@/components/doctor-card";
 import { CtaBand } from "@/components/page-shell";

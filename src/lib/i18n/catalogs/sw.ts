@@ -82,6 +82,10 @@ export const UI: TranslationFields = {
   "home.searchGoShort": "Tafuta wataalamu",
   "blogs.empty": "Bado hakuna maelezo yaliyochapishwa.",
   "blogs.all": "Blogu zote",
+  "blogs.searchLabel": "Tafuta kwenye blogu",
+  "blogs.searchPlaceholder": "Kichwa cha makala au neno muhimu…",
+  "blogs.results": "makala yamepatikana",
+  "blogs.noResults": "Hakuna makala yaliyochapishwa yanayolingana na vichujio hivi.",
   "consult.eyebrow": "Usajili",
   "consult.title": "Dakika kumi na mbili. Kisha sisi tunasoma kwa kina.",
   "consult.lede":

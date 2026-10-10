@@ -1,5 +1,48 @@
+import { fileURLToPath } from "node:url";
+
+const modernPolyfills = fileURLToPath(
+  new URL("./src/lib/polyfills/modern-browsers.js", import.meta.url),
+);
+
 /** @type {import('next').NextConfig} */
+const sitemapHeaders = [
+  {
+    key: "Content-Type",
+    value: "application/xml; charset=utf-8",
+  },
+  {
+    key: "Cache-Control",
+    value: "public, max-age=300, s-maxage=3600, stale-while-revalidate=86400",
+  },
+  {
+    key: "X-Content-Type-Options",
+    value: "nosniff",
+  },
+];
+
 const nextConfig = {
+  experimental: {
+    // Production-only: emit <style> instead of render-blocking <link> CSS.
+    // That removes the homepage CSS waterfall PageSpeed times at ~1.7s on 4G.
+    inlineCss: true,
+  },
+  // Dev runs on Turbopack with no custom options; this key only tells Next the
+  // webpack hook below is intentional.
+  turbopack: {},
+  // Production builds run with --webpack (see package.json). Next always
+  // bundles its ES2019+ polyfill module into the client entry regardless of
+  // browserslist; swap it for the one shim our targets can still lack.
+  webpack(config, { isServer, webpack }) {
+    if (!isServer) {
+      config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(
+          /polyfills[\\/]polyfill-module(\.js)?$/,
+          modernPolyfills,
+        ),
+      );
+    }
+    return config;
+  },
   allowedDevOrigins: [
     "127.0.0.1",
     "localhost",
@@ -36,6 +79,136 @@ const nextConfig = {
       },
       { source: "/journey", destination: "/blogs", permanent: true },
       { source: "/stories", destination: "/blogs", permanent: true },
+      {
+        source: "/blog/breast-cancer-treatment-by-stage",
+        destination: "/blogs/breast-cancer-treatment-by-stage",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-treatment-cost-in-india",
+        destination: "/blogs/breast-cancer-treatment-cost-in-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-stages-0-1-2-3-4",
+        destination: "/blogs/breast-cancer-stages-0-1-2-3-4",
+        permanent: true,
+      },
+      {
+        source: "/blog/er-pr-her2-breast-cancer-treatment-india",
+        destination: "/blogs/er-pr-her2-breast-cancer-treatment-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-diagnosis-tests-biopsy-er-pr-her2",
+        destination: "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-treatment-india-international-patients",
+        destination: "/blogs/breast-cancer-treatment-india-international-patients",
+        permanent: true,
+      },
+      {
+        source: "/blog/her2-positive-breast-cancer-treatment-india",
+        destination: "/blogs/her2-positive-breast-cancer-treatment-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/hormone-therapy-breast-cancer-india",
+        destination: "/blogs/hormone-therapy-breast-cancer-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-reconstruction-after-mastectomy-india",
+        destination: "/blogs/breast-reconstruction-after-mastectomy-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/radiation-therapy-for-breast-cancer",
+        destination: "/blogs/radiation-therapy-for-breast-cancer",
+        permanent: true,
+      },
+      {
+        source: "/blog/chemotherapy-for-breast-cancer-in-india",
+        destination: "/blogs/chemotherapy-for-breast-cancer-in-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-surgery-in-india",
+        destination: "/blogs/breast-cancer-surgery-in-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/lumpectomy-vs-mastectomy",
+        destination: "/blogs/lumpectomy-vs-mastectomy",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-targeted-therapy-side-effects",
+        destination: "/blogs/breast-cancer-targeted-therapy-side-effects",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-hormone-therapy-side-effects",
+        destination: "/blogs/breast-cancer-hormone-therapy-side-effects",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-chemotherapy-side-effects",
+        destination: "/blogs/breast-cancer-chemotherapy-side-effects",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-radiation-side-effects",
+        destination: "/blogs/breast-cancer-radiation-side-effects",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-follow-up-tests",
+        destination: "/blogs/breast-cancer-follow-up-tests",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-neoadjuvant-therapy",
+        destination: "/blogs/breast-cancer-neoadjuvant-therapy",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-lymphedema",
+        destination: "/blogs/breast-cancer-lymphedema",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-pathology-report-explained",
+        destination: "/blogs/breast-cancer-pathology-report-explained",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-recurrence-treatment-india",
+        destination: "/blogs/breast-cancer-recurrence-treatment-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-in-young-women-treatment-india",
+        destination: "/blogs/breast-cancer-in-young-women-treatment-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/invasive-lobular-carcinoma-treatment-india",
+        destination: "/blogs/invasive-lobular-carcinoma-treatment-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/breast-cancer-during-pregnancy-treatment-india",
+        destination: "/blogs/breast-cancer-during-pregnancy-treatment-india",
+        permanent: true,
+      },
+      {
+        source: "/blog/ductal-carcinoma-in-situ-dcis-treatment-india",
+        destination: "/blogs/ductal-carcinoma-in-situ-dcis-treatment-india",
+        permanent: true,
+      },
       { source: "/about", destination: "/", permanent: true },
     ];
   },
@@ -46,7 +219,61 @@ const nextConfig = {
         headers: [
           {
             key: "Cache-Control",
-            value: "private, no-cache, no-store, max-age=0, must-revalidate",
+            value: "public, max-age=0, s-maxage=120, stale-while-revalidate=600",
+          },
+        ],
+      },
+      {
+        // Static crawl file. Long-lived so Hostinger CDN can answer PageSpeed
+        // and Googlebot from the edge; the CSP lets Lighthouse fetch it from
+        // the page origin (its robots-txt audit otherwise times out).
+        source: "/robots.txt",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=86400, stale-while-revalidate=604800",
+          },
+          {
+            key: "Content-Type",
+            value: "text/plain; charset=utf-8",
+          },
+          {
+            key: "Content-Security-Policy",
+            value: "connect-src 'self'; script-src 'none'; object-src 'none'; frame-src 'none'",
+          },
+          {
+            key: "X-Content-Type-Options",
+            value: "nosniff",
+          },
+        ],
+      },
+      {
+        source: "/sitemap.xml",
+        headers: sitemapHeaders,
+      },
+      {
+        source: "/sitemap_index.xml",
+        headers: sitemapHeaders,
+      },
+      {
+        source: "/sitemap-:name.xml",
+        headers: sitemapHeaders,
+      },
+      {
+        source: "/brand/:file*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
+          },
+        ],
+      },
+      {
+        source: "/images/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, max-age=31536000, immutable",
           },
         ],
       },
@@ -66,9 +293,13 @@ const nextConfig = {
     ];
   },
   images: {
-    // 60 is used for small photo tiles (destination cards) where the
-    // default 75 spends bytes that are invisible at ~200px.
-    qualities: [60, 75],
+    // Skip 2048/3840 defaults so mobile Lighthouse does not download
+    // desktop masters for hero, cards, or avatars.
+    deviceSizes: [640, 750, 828, 1080, 1200, 1600, 1920],
+    imageSizes: [64, 96, 128, 256, 384],
+    // 40 is for the destination tiles (photo under a text gradient, ~220px
+    // tall); 60 for the hero; 75 default elsewhere.
+    qualities: [40, 60, 75],
     remotePatterns: [
       {
         protocol: "https",

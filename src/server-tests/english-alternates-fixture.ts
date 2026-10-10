@@ -197,4 +197,189 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
   { label: "blogs index", path: "/blogs", published: ["en"] },
   { label: "blog post", path: "/blogs/imrt-vs-3d-crt", published: ["en"] },
   { label: "consult", path: "/consult", published: ["en"] },
+  {
+    label: "algeria treatment in India hub",
+    path: "/algeria/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "angola treatment in India hub",
+    path: "/angola/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "armenia treatment in India hub",
+    path: "/armenia/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "belarus treatment in India hub",
+    path: "/belarus/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "benin treatment in India hub",
+    path: "/benin/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "botswana treatment in India hub",
+    path: "/botswana/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "burkina faso treatment in India hub",
+    path: "/burkina-faso/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "chad treatment in India hub",
+    path: "/chad/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "cote divoire treatment in India hub",
+    path: "/cote-divoire/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "ethiopia treatment in India hub",
+    path: "/ethiopia/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "ghana treatment in India hub",
+    path: "/ghana/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "guinea treatment in India hub",
+    path: "/guinea/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "kazakhstan treatment in India hub",
+    path: "/kazakhstan/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "kenya treatment in India hub",
+    path: "/kenya/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "kyrgyzstan treatment in India hub",
+    path: "/kyrgyzstan/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "liberia treatment in India hub",
+    path: "/liberia/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "malawi treatment in India hub",
+    path: "/malawi/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "mauritius treatment in India hub",
+    path: "/mauritius/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "moldova treatment in India hub",
+    path: "/moldova/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "morocco treatment in India hub",
+    path: "/morocco/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "mozambique treatment in India hub",
+    path: "/mozambique/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "namibia treatment in India hub",
+    path: "/namibia/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "nigeria treatment in India hub",
+    path: "/nigeria/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "russia treatment in India hub",
+    path: "/russia/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "rwanda treatment in India hub",
+    path: "/rwanda/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "senegal treatment in India hub",
+    path: "/senegal/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "somalia treatment in India hub",
+    path: "/somalia/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "south africa treatment in India hub",
+    path: "/south-africa/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "south sudan treatment in India hub",
+    path: "/south-sudan/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "sudan treatment in India hub",
+    path: "/sudan/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "tanzania treatment in India hub",
+    path: "/tanzania/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "turkmenistan treatment in India hub",
+    path: "/turkmenistan/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "uganda treatment in India hub",
+    path: "/uganda/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "ukraine treatment in India hub",
+    path: "/ukraine/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "uzbekistan treatment in India hub",
+    path: "/uzbekistan/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "zambia treatment in India hub",
+    path: "/zambia/treatment-in-india",
+    published: ["en"],
+  },
+  {
+    label: "zimbabwe treatment in India hub",
+    path: "/zimbabwe/treatment-in-india",
+    published: ["en"],
+  },
 ];

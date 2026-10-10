@@ -1,5 +1,7 @@
 "use client";
 
+import "@/styles/directory-cards.css";
+
 import { DoctorPhoto } from "@/components/doctor-photo";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { useState, type ReactNode } from "react";
@@ -13,7 +15,7 @@ import {
   IdCard,
   Settings2,
 } from "lucide-react";
-import { useLocale, useSurfaceAvailable, useT } from "@/components/locale-provider";
+import { useLocale, useT } from "@/components/locale-provider";
 import {
   designationLabel,
   experienceBadge,
@@ -36,7 +38,6 @@ export function DoctorCard({
   const [open, setOpen] = useState(false);
   const locale = useLocale();
   const t = useT();
-  const surfaceAvailable = useSurfaceAvailable();
   const bio = listingBio(doctor);
   const procedures = keyProcedureLabels(doctor).map((item) => medicalPhrase(item, locale));
   const shown = open ? procedures : procedures.slice(0, PROC_PREVIEW);
@@ -96,11 +97,9 @@ export function DoctorCard({
             <Link href={`/doctors/${doctor.slug}`} className="dcard__btn dcard__btn--book">
               {t("card.viewProfile")}
             </Link>
-            {surfaceAvailable("consult") ? (
-              <Link href={`/consult?doctor=${doctor.slug}`} className="dcard__btn dcard__btn--consult">
+            <Link href={`/consult?doctor=${doctor.slug}`} className="dcard__btn dcard__btn--consult">
                 {t("card.requestConsult")}
               </Link>
-            ) : null}
             {compareSlot}
           </div>
         </div>

@@ -1,11 +1,8 @@
-import { buildLocaleSitemap, sitemapXml } from "@/lib/i18n/sitemap-entries";
+import { localeSitemapXml } from "@/lib/i18n/sitemap-entries";
+import { sitemapResponse } from "@/lib/i18n/sitemap-xml";
+
+export const revalidate = 300;
 
 export function GET() {
-  const xml = sitemapXml(buildLocaleSitemap("ar"));
-  return new Response(xml, {
-    headers: {
-      "Content-Type": "application/xml; charset=utf-8",
-      "Cache-Control": "public, max-age=3600",
-    },
-  });
+  return sitemapResponse(localeSitemapXml("ar"));
 }

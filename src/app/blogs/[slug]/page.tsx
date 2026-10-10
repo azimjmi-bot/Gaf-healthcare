@@ -1,17 +1,65 @@
+import "@/styles/article.css";
 import { cookies } from "next/headers";
 import { ArticleBlocks, ArticleRelated, CoverImage } from "@/components/article-body";
+import { JsonLd } from "@/components/json-ld";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { notFound } from "next/navigation";
-import { CtaBand } from "@/components/page-shell";
+import { PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
+import { blogCtaSubject, blogEstimateWhatsapp } from "@/lib/site";
 import { CMS_COOKIE, cmsToken } from "@/lib/cms/auth";
 import { getArticleBySlug } from "@/lib/cms/store";
-import { getPost, listPublishedPosts } from "@/lib/blogs";
+import { faqsFromArticleBlocks, getPost, listPublishedPosts } from "@/lib/blogs";
 import { blogPageMetadata } from "@/lib/i18n/page-meta";
 import { localizeBlog, localizeMessages } from "@/lib/i18n/localize";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { editionFromLocale } from "@/lib/cms/edition";
 import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
+import { breadcrumbJsonLd, faqJsonLd, medicalWebPageJsonLd } from "@/lib/seo";
+import type { Article } from "@/lib/cms/types";
+import type { AppLocale } from "@/lib/i18n/languages";
 import type { Metadata } from "next";
+
+const INDIA_COVERAGE = [
+  { "@type": "Country" as const, name: "India" },
+  { "@type": "City" as const, name: "Delhi NCR" },
+  { "@type": "City" as const, name: "Mumbai" },
+  { "@type": "City" as const, name: "Bengaluru" },
+  { "@type": "City" as const, name: "Chennai" },
+  { "@type": "City" as const, name: "Hyderabad" },
+];
+
+function blogStructuredData(post: Article, locale: AppLocale) {
+  if (!post.seoTitle) return [];
+  const path = `/blogs/${post.slug}`;
+  const lastReviewed = (post.updatedAt || post.publishedAt || "").slice(0, 10) || "2026-09-27";
+  const faqs = faqsFromArticleBlocks(post.blocks);
+  const india = /india/i.test(`${post.title} ${post.seoTitle} ${post.seoDescription} ${post.tags.join(" ")}`);
+  const blocks: unknown[] = [
+    medicalWebPageJsonLd({
+      name: post.seoTitle || post.title,
+      description: post.seoDescription || post.excerpt,
+      path,
+      lastReviewed,
+      procedureName: post.title,
+      specialty: post.category || "Oncology",
+      about: post.excerpt,
+      image: post.ogImage || post.image || undefined,
+      locale,
+      keywords: post.keywords?.length ? post.keywords : post.tags,
+      spatialCoverage: india ? INDIA_COVERAGE : undefined,
+    }),
+    breadcrumbJsonLd(
+      [
+        { name: "GAF Healthcare", path: "/" },
+        { name: "Blogs", path: "/blogs" },
+        { name: post.title, path },
+      ],
+      locale,
+    ),
+  ];
+  if (faqs.length) blocks.push(faqJsonLd(faqs, { path, locale }));
+  return blocks;
+}
 
 export const dynamic = "force-dynamic";
 
@@ -58,8 +106,16 @@ export default async function BlogPostPage({
       .map((p) => localizeBlog(p, locale)),
   );
 
+  const schema = blogStructuredData(post, locale);
+  const subject = blogCtaSubject(post.title);
+  const place = "India";
+  const wa = blogEstimateWhatsapp(subject, place);
+
   return (
     <>
+      {schema.map((block, index) => (
+        <JsonLd key={index} data={block} />
+      ))}
       <section className="relative h-[50vh] min-h-[22rem] bg-ink text-ivory">
         {post.image ? (
           <CoverImage src={post.image} alt={post.imageAlt || ""} className="absolute inset-0 h-full w-full object-cover" />
@@ -74,6 +130,13 @@ export default async function BlogPostPage({
           </h1>
         </div>
       </section>
+      <PseoEstimateCtaSection
+        subject={subject}
+        place={place}
+        consultHref={wa.primary}
+        secondaryHref={wa.secondary}
+        variant="records"
+      />
       <article className="mx-auto max-w-3xl px-4 py-10 sm:px-5 md:px-8 md:py-20">
         <p className="text-sm text-muted-foreground">{post.author}</p>
         {post.tags.length > 0 ? (
@@ -82,7 +145,13 @@ export default async function BlogPostPage({
           </p>
         ) : null}
         <div className="mt-8">
-          <ArticleBlocks blocks={post.blocks} title={post.title} />
+          <ArticleBlocks
+            blocks={post.blocks}
+            title={post.title}
+            whatsappCtas
+            ctaSubject={subject}
+            ctaPlace={place}
+          />
         </div>
         <ArticleRelated links={post.relatedLinks} />
         <Link
@@ -92,6 +161,13 @@ export default async function BlogPostPage({
           {messages["blogs.all"]}
         </Link>
       </article>
+      <PseoEstimateCtaSection
+        subject={subject}
+        place={place}
+        consultHref={wa.primary}
+        secondaryHref={wa.secondary}
+        variant="plan"
+      />
       {others.length > 0 ? (
         <section className="border-t border-border bg-secondary/40">
           <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-16">
@@ -109,7 +185,6 @@ export default async function BlogPostPage({
           </div>
         </section>
       ) : null}
-      <CtaBand />
     </>
   );
 }

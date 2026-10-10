@@ -1,5 +1,30 @@
-import type { ComponentProps } from "react";
-import { LocaleLink as Link } from "@/components/locale-link";
+import type { ComponentProps, ReactNode } from "react";
+import Link from "next/link";
+import { consultToWhatsappHref } from "@/lib/site";
+
+function EstimateCtaLink({
+  href,
+  className,
+  children,
+}: {
+  href: string;
+  className: string;
+  children: ReactNode;
+}) {
+  const external = /^(https?:|mailto:)/i.test(href);
+  if (external) {
+    return (
+      <a href={href} className={className} target="_blank" rel="noreferrer noopener">
+        {children}
+      </a>
+    );
+  }
+  return (
+    <Link href={href} className={className}>
+      {children}
+    </Link>
+  );
+}
 
 type EstimateCtaVariant = "records" | "options" | "hospital" | "travel" | "plan";
 
@@ -53,31 +78,43 @@ export function PseoEstimateCta({
   subject,
   place,
   consultHref,
+  secondaryHref,
   variant,
+  className,
 }: {
   subject: string;
   place: string;
   consultHref: string;
+  secondaryHref?: string;
   variant: EstimateCtaVariant;
+  className?: string;
 }) {
   const copy = COPY[variant];
+  const primaryHref = consultToWhatsappHref(
+    consultHref,
+    `Please review my medical records and share a case-specific estimate for ${subject} in ${place}.`,
+  );
+  const nextHref = consultToWhatsappHref(
+    secondaryHref || consultHref,
+    `I would like to speak with GAF Healthcare about ${subject} in ${place}.`,
+  );
 
   return (
-    <aside className="cost-panel mt-12" aria-label="Personalized treatment estimate">
+    <aside className={["cost-panel mt-12", className].filter(Boolean).join(" ")} aria-label="Personalized treatment estimate">
       <h2>{copy.heading(subject, place)}</h2>
       <p className="mt-3 max-w-3xl text-[1.02rem] leading-relaxed text-ivory/75">
         {copy.body(subject, place)}
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
-        <Link href={consultHref} className="cost-btn cost-btn--primary">
+        <EstimateCtaLink href={primaryHref} className="cost-btn cost-btn--primary">
           {copy.primary}
-        </Link>
-        <Link
-          href={consultHref}
+        </EstimateCtaLink>
+        <EstimateCtaLink
+          href={nextHref}
           className="cost-btn border border-ivory/25 text-ivory hover:bg-white/5"
         >
           {copy.secondary(subject, place)}
-        </Link>
+        </EstimateCtaLink>
       </div>
     </aside>
   );

@@ -25,7 +25,7 @@ import { listPublishedPosts } from "@/lib/blogs";
 import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
 import { facetCandidatePaths, publishedFacetPaths } from "@/lib/i18n/facet-candidates";
 import { translationStatus } from "@/lib/cms/catalog-types";
-import robots from "@/app/robots";
+import { robotsPolicy as robots } from "@/lib/robots-policy";
 
 const facetCandidates = facetCandidatePaths;
 
@@ -321,7 +321,7 @@ test("no hreflang block ever points at a page that is not published", () => {
 });
 
 test("noindex Arabic pages stay crawlable in robots.txt", () => {
-  const { rules, sitemap } = robots();
+  const { rules, sitemap, host } = robots();
   const disallow = (Array.isArray(rules) ? rules : [rules]).flatMap((rule) =>
     rule.disallow === undefined ? [] : [rule.disallow].flat(),
   );
@@ -334,9 +334,14 @@ test("noindex Arabic pages stay crawlable in robots.txt", () => {
   }
   // Only sitemaps with something in them get advertised.
   assert.deepEqual(sitemap, [
+    "https://gaf.healthcare/sitemap.xml",
+    "https://gaf.healthcare/sitemap_index.xml",
     "https://gaf.healthcare/sitemap-en.xml",
     "https://gaf.healthcare/sitemap-ar.xml",
+    "https://gaf.healthcare/sitemap-blogs.xml",
   ]);
+  // Yandex Host is a hostname. A scheme here fails Lighthouse's robots-txt audit.
+  assert.equal(host, "gaf.healthcare");
 });
 
 test("a page that is not published in its own locale is noindex and bare", () => {

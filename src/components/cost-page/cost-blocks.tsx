@@ -1,3 +1,4 @@
+import "@/styles/cost-page.css";
 import { LocaleLink as Link } from "@/components/locale-link";
 import {
   BedDouble,
@@ -476,11 +477,12 @@ export function ConversionPanel({
         <Link href={consultHref} className="cost-btn cost-btn--primary">
           {primary}
         </Link>
-        {secondary && secondaryHref ? (
-          <Link href={secondaryHref} className="cost-btn border border-ivory/25 text-ivory hover:bg-white/5">
-            {secondary}
-          </Link>
-        ) : null}
+        <Link
+          href={secondaryHref || consultHref}
+          className="cost-btn border border-ivory/25 text-ivory hover:bg-white/5"
+        >
+          {secondary || "Speak with GAF Healthcare"}
+        </Link>
       </div>
     </aside>
   );

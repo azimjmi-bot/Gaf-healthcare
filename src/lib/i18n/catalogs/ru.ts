@@ -82,6 +82,10 @@ export const UI: TranslationFields = {
   "home.searchGoShort": "Найти специалистов",
   "blogs.empty": "Опубликованных заметок пока нет.",
   "blogs.all": "Все статьи",
+  "blogs.searchLabel": "Поиск в блоге",
+  "blogs.searchPlaceholder": "Название статьи или ключевое слово…",
+  "blogs.results": "статей найдено",
+  "blogs.noResults": "Нет опубликованных статей, соответствующих фильтрам.",
   "consult.eyebrow": "Анкета",
   "consult.title": "Двенадцать минут. Дальше читаем мы.",
   "consult.lede":

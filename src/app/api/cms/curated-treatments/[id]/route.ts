@@ -1,11 +1,9 @@
 import { NextResponse } from "next/server";
 import { requireCmsSession } from "@/lib/cms/auth";
 import {
+  applyCuratedTreatmentPatch,
   loadCuratedTreatments,
-  normalizeCuratedTreatment,
   saveCuratedTreatments,
-  uniqueCuratedTreatmentSlug,
-  validateTreatmentForSave,
 } from "@/lib/cms/curated-treatment-store";
 import type { CuratedTreatment } from "@/lib/cms/curated-treatment-types";
 
@@ -41,37 +39,15 @@ export async function PUT(request: Request, context: Context) {
   const { id } = await context.params;
   try {
     const store = loadCuratedTreatments();
-    const index = store.treatments.findIndex((row) => row.id === id);
-    if (index < 0) {
-      return NextResponse.json({ error: "Not found" }, { status: 404 });
-    }
-    const current = store.treatments[index];
-    const requestedSlug = patch.slug ?? current.slug;
-    const slug = uniqueCuratedTreatmentSlug(store, requestedSlug, current.id);
-    const previousSlugs =
-      slug === current.slug
-        ? current.previousSlugs
-        : [...current.previousSlugs, current.slug];
-    const next = normalizeCuratedTreatment({
-      ...current,
-      ...patch,
-      id: current.id,
-      createdAt: current.createdAt,
-      slug,
-      previousSlugs,
-      translations: {
-        ...current.translations,
-        ...(patch.translations ?? {}),
-      },
-      updatedAt: new Date().toISOString(),
-    });
-    const errors = validateTreatmentForSave(next, store);
-    if (errors.length > 0) {
-      return NextResponse.json({ error: errors.join(" ") }, { status: 400 });
-    }
-    store.treatments[index] = next;
+    const { treatment, errors } = applyCuratedTreatmentPatch(store, id, patch);
     saveCuratedTreatments(store);
-    return NextResponse.json(next);
+    if (errors.length > 0) {
+      return NextResponse.json(
+        { error: errors.join(" "), treatment },
+        { status: 400 },
+      );
+    }
+    return NextResponse.json(treatment);
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "Could not save Treatment.";

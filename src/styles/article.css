@@ -1,0 +1,297 @@
+.article-body {
+  font-size: 1.125rem;
+  line-height: 1.75;
+  color: var(--muted-foreground);
+}
+.article-body p + p,
+.article-body h2,
+.article-body h3,
+.article-body h4,
+.article-body ul,
+.article-body ol,
+.article-body blockquote,
+.article-body figure,
+.article-body hr {
+  margin-top: 1.4rem;
+}
+.article-body h2,
+.article-body h3,
+.article-body h4 {
+  color: var(--foreground);
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
+}
+.article-body h2 { font-size: clamp(1.55rem, 5vw, 2rem); }
+.article-body h3 { font-size: clamp(1.25rem, 4vw, 1.5rem); }
+.article-body h4 { font-size: clamp(1.1rem, 3.6vw, 1.25rem); }
+.article-body ul { list-style: disc; padding-inline-start: 1.2rem; }
+.article-body ol { list-style: decimal; padding-inline-start: 1.2rem; }
+.article-body blockquote {
+  border-inline-start: 3px solid var(--gold);
+  padding-inline-start: 1rem;
+  font-style: italic;
+}
+.article-body figure img,
+.article-body img {
+  width: 100%;
+  border-radius: 0.75rem;
+}
+.article-body figcaption {
+  margin-top: 0.4rem;
+  font-size: 0.85rem;
+}
+.md-body {
+  display: grid;
+  gap: 0.85rem;
+}
+.md-body--profile {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--muted-foreground);
+}
+.md-body p,
+.md-body li {
+  line-height: 1.7;
+}
+.md-body strong {
+  font-weight: 650;
+  color: inherit;
+}
+.md-body em {
+  font-style: italic;
+}
+.md-body ul,
+.md-body ol {
+  padding-inline-start: 1.25rem;
+  display: grid;
+  gap: 0.35rem;
+}
+.md-body ul {
+  list-style: disc;
+}
+.md-body ol {
+  list-style: decimal;
+}
+.md-body h2,
+.md-body h3,
+.md-body h4 {
+  font-family: var(--font-heading), ui-serif, Georgia, serif;
+  color: var(--foreground);
+  line-height: 1.25;
+}
+.md-body h2 { font-size: 1.45rem; }
+.md-body h3 { font-size: 1.2rem; }
+.md-body a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.md-body blockquote {
+  border-inline-start: 3px solid var(--gold, #c4a35a);
+  padding-inline-start: 0.85rem;
+  color: var(--muted-foreground);
+}
+.md-body hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+}
+.md-body pre {
+  overflow-x: auto;
+  border-radius: 0.65rem;
+  background: var(--ink);
+  padding: 1rem;
+  color: var(--ivory);
+  font-size: 0.9rem;
+}
+.md-body :not(pre) > code {
+  border-radius: 0.3rem;
+  background: var(--secondary);
+  padding: 0.12rem 0.3rem;
+  font-size: 0.9em;
+}
+.md-body table {
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+}
+.md-body th,
+.md-body td {
+  border: 1px solid var(--border);
+  padding: 0.55rem 0.7rem;
+  text-align: start;
+}
+.md-body th {
+  background: var(--secondary);
+  color: var(--foreground);
+  font-weight: 650;
+}
+.md-body img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.75rem;
+}
+.article-quick-answer {
+  margin-block: 1.5rem 1.75rem;
+  padding: 1.1rem 1.15rem;
+  border: 1px solid color-mix(in oklab, var(--gold) 35%, var(--border));
+  border-radius: 0.85rem;
+  background: color-mix(in oklab, var(--secondary) 80%, white);
+}
+.article-quick-answer__label {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-weight: 750;
+}
+.article-quick-answer__body {
+  margin: 0.55rem 0 0;
+  color: var(--foreground);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+.article-quick-answer__list {
+  margin: 0.45rem 0 0;
+  padding-left: 1.2rem;
+  color: var(--foreground);
+  font-size: 1.02rem;
+  line-height: 1.55;
+}
+.article-quick-answer__list li + li {
+  margin-top: 0.25rem;
+}
+.article-quick-answer .md-body {
+  margin-top: 0.7rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.article-quick-answer table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.article-quick-answer th,
+.article-quick-answer td {
+  border: 1px solid var(--border);
+  padding: 0.5rem 0.65rem;
+  text-align: start;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+.article-quick-answer th {
+  background: color-mix(in oklab, var(--secondary) 70%, white);
+  font-weight: 700;
+}
+.article-quick-answer th:first-child,
+.article-quick-answer td:first-child {
+  font-weight: 650;
+  width: 36%;
+}
+
+@media (max-width: 640px) {
+  .article-quick-answer {
+    padding: 1rem;
+  }
+
+  .article-quick-answer table {
+    font-size: 0.88rem;
+  }
+
+  .article-quick-answer th,
+  .article-quick-answer td {
+    padding: 0.45rem 0.5rem;
+  }
+}
+.article-body > .md-body + .md-body {
+  margin-top: 1.4rem;
+}
+.article-body .md-body h2 {
+  margin-top: 1.4rem;
+  font-size: 2rem;
+}
+.article-body .md-body h3 {
+  margin-top: 1.2rem;
+  font-size: 1.5rem;
+}
+.article-body .md-body h4 {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+}
+
+/* Shared with treatment articles (treatments/[slug] imports this file too). */
+.article-body .cost-panel,
+.article-body .article-estimate-cta,
+.treatment-article .cost-panel,
+.treatment-article .article-estimate-cta {
+  margin-block: 1.75rem;
+}
+
+.article-body .cost-panel.mt-12,
+.article-body .article-estimate-cta,
+.treatment-article .cost-panel.mt-12,
+.treatment-article .article-estimate-cta {
+  margin-top: 1.75rem;
+}
+
+.article-body .cost-panel h2,
+.treatment-article .cost-panel h2 {
+  margin: 0;
+  color: inherit;
+  font-size: clamp(1.5rem, 4.2vw, 2.1rem);
+  line-height: 1.15;
+}
+
+.treatment-article .md-body,
+.article-body .md-body {
+  overflow-x: auto;
+}
+
+.treatment-article .md-body > p:has(> a.md-cta:only-child),
+.article-body > p:has(> a.md-cta:only-child),
+.article-body .md-body > p:has(> a.md-cta:only-child) {
+  margin-block: 1.5rem 1.75rem;
+}
+
+.treatment-article .md-body a.md-cta,
+.article-body a.md-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  min-height: 3rem;
+  padding: 0.85rem 1.15rem;
+  border-radius: 0.6rem;
+  background: var(--primary);
+  color: #fff !important;
+  font-weight: 800;
+  text-decoration: none !important;
+}
+
+.treatment-article .md-body a.md-cta[href^="https://wa.me"],
+.article-body a.md-cta[href^="https://wa.me"] {
+  background: #25d366;
+}
+
+@media (max-width: 640px) {
+  .article-body,
+  .treatment-article .md-body {
+    font-size: 1.05rem;
+    overflow-wrap: anywhere;
+  }
+
+  .article-body a.md-cta,
+  .treatment-article .md-body a.md-cta {
+    width: 100%;
+    text-align: center;
+  }
+
+  .md-body table,
+  .article-body table,
+  .treatment-article .md-body table {
+    font-size: 0.92rem;
+  }
+}

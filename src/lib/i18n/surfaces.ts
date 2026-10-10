@@ -19,8 +19,8 @@ const ALL_SURFACES: readonly LocaleSurface[] = [
 
 /**
  * Resolved once per request in the root layout and handed to the client through
- * LocaleProvider, because deciding which nav links exist needs the treatment
- * store and header, footer and CTA bands are all client components.
+ * LocaleProvider. The header also reads this on the server so the mobile sheet
+ * and unused radix UI stay out of the homepage JavaScript.
  */
 export function availableSurfaces(locale: AppLocale): LocaleSurface[] {
   const facts = { treatmentsPublished: publishedCuratedTreatments(locale).length > 0 };

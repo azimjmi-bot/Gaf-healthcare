@@ -1,5 +1,7 @@
 "use client";
 
+import "@/styles/cost-page.css";
+
 import { useEffect, useState } from "react";
 import { LocaleLink as Link } from "@/components/locale-link";
 

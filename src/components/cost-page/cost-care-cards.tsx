@@ -1,3 +1,5 @@
+import "@/styles/directory-cards.css";
+import "@/styles/cost-page.css";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { AccreditationSeals } from "@/components/accreditation-seals";
 import { DoctorPhoto } from "@/components/doctor-photo";

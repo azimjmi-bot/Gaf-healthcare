@@ -1,3 +1,6 @@
+import "@/styles/article.css";
+import "@/styles/cost-page.css";
+import "@/styles/treatments.css";
 import type { Metadata } from "next";
 import { costPath } from "@/lib/catalog-links";
 import { notFound, redirect } from "next/navigation";
@@ -5,7 +8,7 @@ import { ArrowRight, ChevronDown, MapPin } from "lucide-react";
 import { DoctorCard } from "@/components/doctor-card";
 import { HospitalCard } from "@/components/hospital-card";
 import { LocaleLink as Link } from "@/components/locale-link";
-import { MarkdownBody } from "@/components/markdown-body";
+import { MarkdownWithEstimateCtas } from "@/components/markdown-with-estimate-ctas";
 import {
   publishedCuratedTreatments,
   resolvePublishedCuratedTreatment,
@@ -21,10 +24,15 @@ import { localePath } from "@/lib/i18n/path";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { treatmentUi } from "@/lib/i18n/treatment-ui";
-import { whatsappHref } from "@/lib/site";
+import { WhatsAppIcon } from "@/components/whatsapp-icon";
+import { blogCtaSubject, blogEstimateWhatsapp } from "@/lib/site";
 import { getCountry, getSpecialty } from "@/lib/taxonomy";
 import { catalogTreatments } from "@/lib/treatments";
-import { treatmentEditorialBodyForDisplay } from "@/lib/curated-treatment-editorial";
+import {
+  splitTreatmentQuickAnswer,
+  treatmentBodyLocation,
+  treatmentEditorialBodyForDisplay,
+} from "@/lib/curated-treatment-editorial";
 
 type Params = Promise<{ slug: string }>;
 
@@ -46,6 +54,7 @@ export async function generateMetadata({
     {
       title,
       description,
+      keywords: copy.searchKeywords.length ? copy.searchKeywords : undefined,
       openGraph: {
         title,
         description,
@@ -66,8 +75,11 @@ function structuredData(
   copy: CuratedTreatmentTranslation,
   specialtyName: string,
   locale: AppLocale,
+  destinations: { name: string }[],
+  bodyLocation?: string,
 ) {
   const url = localizedAbsoluteUrl(`/treatments/${slug}`, locale);
+  const india = destinations.some((row) => row.name === "India");
   const graph: Record<string, unknown>[] = [
     {
       "@type": "MedicalProcedure",
@@ -76,9 +88,17 @@ function structuredData(
       description: copy.metaDescription || copy.shortDescription,
       url,
       procedureType: copy.treatmentType || undefined,
-      bodyLocation: undefined,
+      bodyLocation: bodyLocation || undefined,
       inLanguage: locale,
       relevantSpecialty: specialtyName || undefined,
+      areaServed: [
+        ...destinations.map((row) => ({ "@type": "Country", name: row.name })),
+        ...(india
+          ? ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"].map(
+              (name) => ({ "@type": "City", name }),
+            )
+          : []),
+      ],
     },
     {
       "@type": "BreadcrumbList",
@@ -172,6 +192,8 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
     copy,
     taxonomyLabel(specialty?.name, locale),
     locale,
+    destinations,
+    treatmentBodyLocation(treatment.category, treatment.subspecialty, copy.name),
   );
   const specialtyLabel = taxonomyLabel(specialty?.name, locale);
   const heroFactCount = [
@@ -233,11 +255,12 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
               <h1>{copy.name}</h1>
               <p className="treatment-profile__lede">{copy.shortDescription}</p>
               <a
-                href={whatsappHref(copy.name)}
+                href={blogEstimateWhatsapp(blogCtaSubject(copy.name)).primary}
                 target="_blank"
                 rel="noreferrer"
                 className="treatment-profile__primary"
               >
+                <WhatsAppIcon />
                 {ui.coordinator} <ArrowRight className="size-4 icon-forward" />
               </a>
             </div>
@@ -303,7 +326,36 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
           <article className="treatment-article" id="treatment-guide">
           <section className="treatment-article__section treatment-article__intro">
             <p className="eyebrow">{ui.overview}</p>
-            <MarkdownBody source={treatmentEditorialBodyForDisplay(copy, locale)} />
+            {(() => {
+              const display = treatmentEditorialBodyForDisplay(copy, locale);
+              const { before, quickAnswer, after } =
+                splitTreatmentQuickAnswer(display);
+              const subject = blogCtaSubject(copy.name);
+              return (
+                <>
+                  {before ? (
+                    <MarkdownWithEstimateCtas source={before} subject={subject} />
+                  ) : null}
+                  {quickAnswer ? (
+                    <aside className="article-quick-answer">
+                      <p className="article-quick-answer__label">Quick answer</p>
+                      <h2>{quickAnswer.heading}</h2>
+                      {quickAnswer.items.map((item) => (
+                        <p
+                          key={item.question}
+                          className="article-quick-answer__body"
+                        >
+                          <strong>{item.question}</strong> {item.answer}
+                        </p>
+                      ))}
+                    </aside>
+                  ) : null}
+                  {after ? (
+                    <MarkdownWithEstimateCtas source={after} subject={subject} />
+                  ) : null}
+                </>
+              );
+            })()}
           </section>
 
           {copy.process.length > 0 ? (
@@ -336,10 +388,11 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
                 ))}
               </dl>
               <a
-                href={whatsappHref(copy.name)}
+                href={blogEstimateWhatsapp(blogCtaSubject(copy.name)).primary}
                 target="_blank"
                 rel="noreferrer"
               >
+                <WhatsAppIcon />
                 {ui.coordinator} <ArrowRight className="size-4 icon-forward" />
               </a>
             </aside>

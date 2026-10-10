@@ -99,6 +99,58 @@ export function saveCuratedTreatments(store: CuratedTreatmentStore) {
   renameSync(next, STORE_FILE);
 }
 
+/**
+ * Write a Treatment by id. A draft can vanish from disk after a Hostinger
+ * git deploy (this file is empty in git), so Save must recreate the record
+ * instead of 404ing on the open editor.
+ */
+export function applyCuratedTreatmentPatch(
+  store: CuratedTreatmentStore,
+  id: string,
+  patch: Partial<CuratedTreatment>,
+) {
+  const index = store.treatments.findIndex((row) => row.id === id);
+  const created = index < 0;
+  const current = created
+    ? { ...blankCuratedTreatment(store), id }
+    : store.treatments[index];
+  const requestedSlug = patch.slug ?? current.slug;
+  const slug = uniqueCuratedTreatmentSlug(store, requestedSlug, current.id);
+  const previousSlugs =
+    slug === current.slug
+      ? current.previousSlugs
+      : [...current.previousSlugs, current.slug];
+  const translations = {
+    ...current.translations,
+    ...(patch.translations ?? {}),
+  };
+  const baseName = hasText(patch.baseName) ? patch.baseName : current.baseName;
+  if (!translations.en && hasText(baseName)) {
+    translations.en = {
+      ...blankTreatmentTranslation(),
+      name: baseName,
+    };
+  }
+  const requested = normalizeCuratedTreatment({
+    ...current,
+    ...patch,
+    id: current.id,
+    createdAt: current.createdAt,
+    slug,
+    previousSlugs,
+    translations,
+    updatedAt: new Date().toISOString(),
+  });
+  const errors = validateTreatmentForSave(requested, store);
+  const treatment =
+    errors.length > 0 && requested.status === "published"
+      ? { ...requested, status: "draft" as const }
+      : requested;
+  if (created) store.treatments.unshift(treatment);
+  else store.treatments[index] = treatment;
+  return { treatment, created, errors };
+}
+
 export function uniqueCuratedTreatmentSlug(
   store: CuratedTreatmentStore,
   value: string,

@@ -1,16 +1,14 @@
 import type { MetadataRoute } from "next";
 import { costArticles } from "@/data/cost-articles";
 import { getSpecialtyPage } from "@/data/specialty-pages";
-import { listPublishedPosts } from "@/lib/blogs";
 import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { catalogSpecialtyName } from "@/lib/catalog-links";
 import { doctorSpecialtySitemapPaths } from "@/lib/doctor-discovery";
 import { hospitalSpecialtySitemapPaths } from "@/lib/radiation-hospital-page";
 import { doctors, hospitals, treatments } from "@/lib/data";
-import { absoluteUrl, SITE_URL } from "@/lib/seo";
+import { SITE_URL } from "@/lib/seo-url";
 import type { AppLocale } from "@/lib/i18n/languages";
-import { LOCALES, isTargetLocale } from "@/lib/i18n/languages";
-import { localeIsPublished as targetLocaleIsPublished } from "@/lib/i18n/locale-gating";
+import { LOCALES } from "@/lib/i18n/languages";
 import { CITIES, getCountry, INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
 import { costCountryRecords } from "@/lib/cost-geo";
 import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
@@ -21,32 +19,29 @@ import {
 } from "@/lib/locale-catalog";
 import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
 import { publishedFacetPaths } from "@/lib/i18n/facet-candidates";
+import {
+  blogPostSitemapOpts,
+  dedupeSitemap,
+  isLocaleLive,
+  postTimestamp,
+  publishedIndexablePosts,
+  sitemapEntry,
+} from "@/lib/i18n/blog-sitemap";
+import { sitemapIndexXml, sitemapXml } from "@/lib/i18n/sitemap-xml";
+
+export { buildBlogSitemap, buildSitemapIndex } from "@/lib/i18n/blog-sitemap";
+export { sitemapIndexXml, sitemapXml };
 
 const SEARCH_CONSOLE_ORIGIN = SITE_URL;
+const LOCALE_SITEMAP_TTL_MS = 5 * 60 * 1000;
+const localeXmlCache = new Map<string, { xml: string; expires: number }>();
 
 export const LANGUAGE_SITEMAP_PATHS = Object.fromEntries(
   LOCALES.map((locale) => [locale, `/sitemap-${locale}.xml`]),
 ) as Record<AppLocale, `/sitemap-${AppLocale}.xml`>;
 
-function entry(
-  path: string,
-  locale: AppLocale,
-  opts: { lastModified?: Date | string; changeFrequency?: MetadataRoute.Sitemap[number]["changeFrequency"]; priority?: number } = {},
-): MetadataRoute.Sitemap[number] {
-  return {
-    url: absoluteUrl(path, locale),
-    lastModified: opts.lastModified ? new Date(opts.lastModified) : new Date(),
-    changeFrequency: opts.changeFrequency ?? "weekly",
-    priority: opts.priority ?? 0.6,
-  };
-}
-
 function cityName(slug: string) {
   return CITIES.find((city) => city.slug === slug)?.name ?? slug;
-}
-
-function localeIsPublished(locale: AppLocale) {
-  return !isTargetLocale(locale) || targetLocaleIsPublished(locale);
 }
 
 export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
@@ -59,10 +54,10 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     // A locale that is not live has nothing to advertise. Its pages still
     // render, but noindex means listing them would only invite a crawl of
     // pages we are asking not to be indexed.
-    if (!localeIsPublished(locale)) return [];
+    if (!isLocaleLive(locale)) return [];
 
     const localized: MetadataRoute.Sitemap = [
-      entry("/", locale, {
+      sitemapEntry("/", locale, {
         lastModified: now,
         changeFrequency: "weekly",
         priority: 0.8,
@@ -71,7 +66,7 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     const localeTreatments = publishedCuratedTreatments(locale);
     if (localeTreatments.length > 0) {
       localized.push(
-        entry("/treatments", locale, {
+        sitemapEntry("/treatments", locale, {
           lastModified: now,
           changeFrequency: "weekly",
           priority: 0.7,
@@ -80,7 +75,7 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     }
     for (const treatment of localeTreatments) {
       localized.push(
-        entry(`/treatments/${treatment.slug}`, locale, {
+        sitemapEntry(`/treatments/${treatment.slug}`, locale, {
           lastModified: treatment.updatedAt,
           changeFrequency: "monthly",
           priority: treatment.featured ? 0.7 : 0.6,
@@ -89,10 +84,10 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     }
     const localeDoctors = doctorsForLocale(locale);
     if (localeDoctors.length > 0) {
-      localized.push(entry("/doctors", locale, { priority: 0.7 }));
+      localized.push(sitemapEntry("/doctors", locale, { priority: 0.7 }));
       for (const doctor of localeDoctors) {
         localized.push(
-          entry(`/doctors/${doctor.slug}`, locale, {
+          sitemapEntry(`/doctors/${doctor.slug}`, locale, {
             changeFrequency: "monthly",
             priority: 0.6,
           }),
@@ -101,17 +96,17 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     }
     const localeHospitals = hospitalsForLocale(locale);
     if (localeHospitals.length > 0) {
-      localized.push(entry("/hospitals", locale, { priority: 0.7 }));
+      localized.push(sitemapEntry("/hospitals", locale, { priority: 0.7 }));
       for (const hospital of localeHospitals) {
         localized.push(
-          entry(`/hospitals/${hospital.slug}`, locale, {
+          sitemapEntry(`/hospitals/${hospital.slug}`, locale, {
             changeFrequency: "monthly",
             priority: 0.6,
           }),
         );
         if (doctorsForHospitalLocale(hospital.slug, locale).length > 0) {
           localized.push(
-            entry(`/hospitals/${hospital.slug}/doctors`, locale, {
+            sitemapEntry(`/hospitals/${hospital.slug}/doctors`, locale, {
               changeFrequency: "monthly",
               priority: 0.45,
             }),
@@ -123,19 +118,19 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     // they are the canonical address for their own result set.
     for (const path of publishedFacetPaths(locale)) {
       const depth = path.split("/").filter(Boolean).length;
-      localized.push(entry(path, locale, { changeFrequency: "weekly", priority: depth <= 3 ? 0.6 : 0.5 }));
+      localized.push(sitemapEntry(path, locale, { changeFrequency: "weekly", priority: depth <= 3 ? 0.6 : 0.5 }));
     }
-    const localePosts = listPublishedPosts(locale).filter((post) => post.allowIndex);
+    const localePosts = publishedIndexablePosts(locale);
     if (localePosts.length > 0) {
-      localized.push(entry("/blogs", locale, { priority: 0.6 }));
+      localized.push(
+        sitemapEntry("/blogs", locale, {
+          lastModified: postTimestamp(localePosts[0]),
+          changeFrequency: "weekly",
+          priority: 0.6,
+        }),
+      );
       for (const post of localePosts) {
-        localized.push(
-          entry(`/blogs/${post.slug}`, locale, {
-            lastModified: post.updatedAt || post.publishedAt || post.date,
-            changeFrequency: "monthly",
-            priority: 0.5,
-          }),
-        );
+        localized.push(sitemapEntry(`/blogs/${post.slug}`, locale, blogPostSitemapOpts(post)));
       }
     }
     return dedupeSitemap(localized);
@@ -144,21 +139,210 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
   const homePriority = locale === "en" ? 1 : 0.8;
   const sectionPriority = locale === "en" ? 0.8 : 0.7;
   const urls: MetadataRoute.Sitemap = [
-    entry("/", locale, { lastModified: now, changeFrequency: "weekly", priority: homePriority }),
-    entry("/doctors", locale, { lastModified: now, changeFrequency: "weekly", priority: sectionPriority }),
-    entry("/hospitals", locale, { lastModified: now, changeFrequency: "weekly", priority: sectionPriority }),
-    entry("/costs", locale, { lastModified: now, changeFrequency: "weekly", priority: sectionPriority }),
-    entry("/treatments", locale, { lastModified: now, changeFrequency: "weekly", priority: 0.8 }),
+    sitemapEntry("/", locale, { lastModified: now, changeFrequency: "weekly", priority: homePriority }),
+    sitemapEntry("/doctors", locale, { lastModified: now, changeFrequency: "weekly", priority: sectionPriority }),
+    sitemapEntry("/hospitals", locale, { lastModified: now, changeFrequency: "weekly", priority: sectionPriority }),
+    sitemapEntry("/costs", locale, { lastModified: now, changeFrequency: "weekly", priority: sectionPriority }),
+    sitemapEntry("/treatments", locale, { lastModified: now, changeFrequency: "weekly", priority: 0.8 }),
     ...(locale === "en"
-      ? [entry("/specialties", locale, { lastModified: now, changeFrequency: "weekly", priority: 0.8 })]
+      ? [sitemapEntry("/specialties", locale, { lastModified: now, changeFrequency: "weekly", priority: 0.8 })]
       : []),
-    entry("/blogs", locale, { lastModified: now, changeFrequency: "weekly", priority: locale === "en" ? 0.7 : 0.6 }),
-    entry("/consult", locale, { lastModified: now, changeFrequency: "monthly", priority: 0.5 }),
+    sitemapEntry("/blogs", locale, { lastModified: now, changeFrequency: "weekly", priority: locale === "en" ? 0.7 : 0.6 }),
+    sitemapEntry("/consult", locale, { lastModified: now, changeFrequency: "monthly", priority: 0.5 }),
+    ...(locale === "en"
+      ? [
+          sitemapEntry("/algeria/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/angola/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/armenia/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/belarus/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/benin/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/botswana/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/burkina-faso/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/chad/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/cote-divoire/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/ethiopia/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/ghana/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/guinea/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/kazakhstan/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/kenya/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/kyrgyzstan/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/liberia/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/malawi/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/mauritius/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/moldova/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/morocco/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/mozambique/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/namibia/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/nigeria/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/russia/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/rwanda/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/senegal/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/somalia/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/south-africa/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/south-sudan/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/sudan/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/tanzania/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/turkmenistan/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/uganda/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/ukraine/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/uzbekistan/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/zambia/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+          sitemapEntry("/zimbabwe/treatment-in-india", locale, {
+            lastModified: now,
+            changeFrequency: "monthly",
+            priority: 0.75,
+          }),
+        ]
+      : []),
   ];
 
   for (const treatment of publishedCuratedTreatments(locale)) {
     urls.push(
-      entry(`/treatments/${treatment.slug}`, locale, {
+      sitemapEntry(`/treatments/${treatment.slug}`, locale, {
         lastModified: treatment.updatedAt,
         changeFrequency: "monthly",
         priority: treatment.featured ? 0.8 : 0.7,
@@ -166,19 +350,19 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     );
   }
 
-  urls.push(entry(costsFilterPath({ destination: "India" }), locale, { priority: 0.7 }));
-  urls.push(entry(doctorsPath({ destination: "India" }), locale, { priority: 0.7 }));
-  urls.push(entry(hospitalsPath({ destination: "India" }), locale, { priority: 0.7 }));
+  urls.push(sitemapEntry(costsFilterPath({ destination: "India" }), locale, { priority: 0.7 }));
+  urls.push(sitemapEntry(doctorsPath({ destination: "India" }), locale, { priority: 0.7 }));
+  urls.push(sitemapEntry(hospitalsPath({ destination: "India" }), locale, { priority: 0.7 }));
 
   for (const city of INDIA_CITIES) {
-    urls.push(entry(doctorsPath({ destination: "India", city }), locale, { priority: 0.6 }));
-    urls.push(entry(hospitalsPath({ destination: "India", city }), locale, { priority: 0.6 }));
-    urls.push(entry(costsFilterPath({ destination: "India", city }), locale, { priority: 0.6 }));
+    urls.push(sitemapEntry(doctorsPath({ destination: "India", city }), locale, { priority: 0.6 }));
+    urls.push(sitemapEntry(hospitalsPath({ destination: "India", city }), locale, { priority: 0.6 }));
+    urls.push(sitemapEntry(costsFilterPath({ destination: "India", city }), locale, { priority: 0.6 }));
   }
 
   for (const specialty of SPECIALTIES) {
-    urls.push(entry(doctorsPath({ destination: "India", specialty: specialty.name }), locale, { priority: 0.55 }));
-    urls.push(entry(hospitalsPath({ destination: "India", specialty: specialty.name }), locale, { priority: 0.55 }));
+    urls.push(sitemapEntry(doctorsPath({ destination: "India", specialty: specialty.name }), locale, { priority: 0.55 }));
+    urls.push(sitemapEntry(hospitalsPath({ destination: "India", specialty: specialty.name }), locale, { priority: 0.55 }));
     const profile =
       locale === "en" ? getSpecialtyPage("india", specialty.slug) : undefined;
     const profileData = profile ? buildSpecialtyPageData(profile) : undefined;
@@ -189,7 +373,7 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
         specialtyPageMeetsQualityThreshold(profileData))
     ) {
       urls.push(
-        entry(
+        sitemapEntry(
           costsFilterPath({ destination: "India", specialty: specialty.name }),
           locale,
           {
@@ -209,7 +393,7 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
         const cityData = buildSpecialtyPageData(profile, city.slug);
         if (!cityData || !specialtyPageMeetsQualityThreshold(cityData)) continue;
         urls.push(
-          entry(
+          sitemapEntry(
             costsFilterPath({
               destination: "India",
               city: city.name,
@@ -228,30 +412,30 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
 
   for (const path of doctorSpecialtySitemapPaths(doctors)) {
     const depth = path.split("/").filter(Boolean).length;
-    urls.push(entry(path, locale, { priority: depth === 3 ? 0.75 : 0.65 }));
+    urls.push(sitemapEntry(path, locale, { priority: depth === 3 ? 0.75 : 0.65 }));
   }
 
   if (locale === "en") {
     for (const path of hospitalSpecialtySitemapPaths(hospitals, doctors)) {
       const depth = path.split("/").filter(Boolean).length;
-      urls.push(entry(path, locale, { priority: depth === 3 ? 0.8 : 0.7 }));
+      urls.push(sitemapEntry(path, locale, { priority: depth === 3 ? 0.8 : 0.7 }));
     }
   }
 
   for (const doctor of doctors) {
-    urls.push(entry(`/doctors/${doctor.slug}`, locale, { changeFrequency: "monthly", priority: 0.6 }));
+    urls.push(sitemapEntry(`/doctors/${doctor.slug}`, locale, { changeFrequency: "monthly", priority: 0.6 }));
   }
 
   for (const hospital of hospitals) {
-    urls.push(entry(`/hospitals/${hospital.slug}`, locale, { changeFrequency: "monthly", priority: 0.6 }));
-    urls.push(entry(`/hospitals/${hospital.slug}/doctors`, locale, { changeFrequency: "monthly", priority: 0.45 }));
-    urls.push(entry(`/hospitals/${hospital.slug}/procedures`, locale, { changeFrequency: "monthly", priority: 0.45 }));
+    urls.push(sitemapEntry(`/hospitals/${hospital.slug}`, locale, { changeFrequency: "monthly", priority: 0.6 }));
+    urls.push(sitemapEntry(`/hospitals/${hospital.slug}/doctors`, locale, { changeFrequency: "monthly", priority: 0.45 }));
+    urls.push(sitemapEntry(`/hospitals/${hospital.slug}/procedures`, locale, { changeFrequency: "monthly", priority: 0.45 }));
   }
 
   for (const treatment of treatments) {
     const article = costArticles[treatment.slug];
     urls.push(
-      entry(costsFilterPath({ specialty: catalogSpecialtyName(treatment), procedure: treatment.name }), locale, {
+      sitemapEntry(costsFilterPath({ specialty: catalogSpecialtyName(treatment), procedure: treatment.name }), locale, {
         lastModified: article?.lastUpdated,
         changeFrequency: "monthly",
         priority: 0.7,
@@ -267,7 +451,7 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     for (const record of costCountryRecords(article)) {
       if (record.isPrimary || !record.row.page) continue;
       urls.push(
-        entry(
+        sitemapEntry(
           costsFilterPath({
             destination: record.country.name,
             specialty,
@@ -290,7 +474,7 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
         procedure: treatment.name,
       });
       urls.push(
-        entry(path, locale, {
+        sitemapEntry(path, locale, {
           lastModified: article.lastUpdated,
           changeFrequency: "monthly",
           priority: 0.65,
@@ -299,43 +483,18 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     }
   }
 
-  for (const post of listPublishedPosts(locale).filter((p) => p.allowIndex)) {
-    urls.push(
-      entry(`/blogs/${post.slug}`, locale, {
-        lastModified: post.updatedAt || post.publishedAt || post.date,
-        changeFrequency: "monthly",
-        priority: 0.5,
-      }),
-    );
+  for (const post of publishedIndexablePosts(locale)) {
+    urls.push(sitemapEntry(`/blogs/${post.slug}`, locale, blogPostSitemapOpts(post)));
   }
 
   return dedupeSitemap(urls);
 }
 
-function dedupeSitemap(urls: MetadataRoute.Sitemap) {
-  const seen = new Set<string>();
-  return urls.filter((row) => {
-    if (seen.has(row.url)) return false;
-    seen.add(row.url);
-    return true;
-  });
-}
-
-export function sitemapXml(entries: MetadataRoute.Sitemap) {
-  const body = entries
-    .map((row) => {
-      const last = row.lastModified instanceof Date ? row.lastModified.toISOString() : row.lastModified;
-      const frequency = row.changeFrequency
-        ? `<changefreq>${row.changeFrequency}</changefreq>`
-        : "";
-      const priority =
-        row.priority !== undefined ? `<priority>${row.priority}</priority>` : "";
-      return `<url><loc>${escapeXml(row.url)}</loc>${last ? `<lastmod>${last}</lastmod>` : ""}${frequency}${priority}</url>`;
-    })
-    .join("");
-  return `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${body}</urlset>`;
-}
-
-function escapeXml(value: string) {
-  return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+/** Cached XML for the heavy locale catalogs so Googlebot is not waiting on a 10s rebuild. */
+export function localeSitemapXml(locale: AppLocale) {
+  const hit = localeXmlCache.get(locale);
+  if (hit && hit.expires > Date.now()) return hit.xml;
+  const xml = sitemapXml(buildLocaleSitemap(locale));
+  localeXmlCache.set(locale, { xml, expires: Date.now() + LOCALE_SITEMAP_TTL_MS });
+  return xml;
 }

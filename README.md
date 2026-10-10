@@ -46,7 +46,7 @@ The consult form posts to `/api/consult` and returns a reference number. There i
 A WordPress-style desk lives at [`/cms`](http://localhost:43127/cms). Sign-in password defaults to `gaf-local`. Set `CMS_PASSWORD` on the server.
 
 - **Articles** — create, edit, duplicate, trash and restore posts; body blocks, featured image, SEO, tags, related links. Public `/blogs` reads published articles from `content/cms.json`.
-- **Treatments** — one curated core record with shared specialty, destination, doctor, hospital, cost-page and related-Treatment relationships plus independent English, Russian, French, Arabic and Swahili editorial versions. Manage them at `/cms/treatments`; public records appear only at `/treatments` and `/treatments/{slug}`. Search and filters are noindex directory state, never pSEO routes. Records live in `content/curated-treatments.json`.
+- **Treatments** — one curated core record with shared specialty, destination, doctor, hospital, cost-page and related-Treatment relationships plus independent English, Russian, French, Arabic and Swahili editorial versions. Manage them at `/cms/treatments`; public records appear only at `/treatments` and `/treatments/{slug}`. Published English guides currently include [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india) and [prostate cancer treatment in India](/treatments/prostate-cancer-treatment-in-india). Search and filters are noindex directory state, never pSEO routes. Records live in `content/curated-treatments.json`.
 - **Doctors, hospitals, cost sheets** — bio, photo and sheet fields are stored in `content/catalog-cms.json`. Doctor and hospital bios accept Markdown (`**bold**`, lists, links, headings) with a Write/Preview desk. The public profile renders that Markdown; directory cards and meta descriptions stay plain text. Add a consultant to an existing hospital and specialty, add a campus using an India city already in taxonomy, or add a cost sheet for a procedure slug that already exists. Remove hides the record on the live site (a tombstone). Restore brings it back. The Ginger JSON catalog, `*-costs.ts` files, and pSEO matching helpers are not rewritten.
 - **Specialty pages** — one specialty × country × city engine is managed at `/cms/specialties`, with editorial overrides stored in `content/catalog-cms.json`. The CMS discovers candidate specialty-country pairs only when the live catalog has at least three treatments plus related doctors and hospitals. Procedures, prices, doctors, hospitals and city counts are not copied into editorial content: they are recalculated from explicit catalog relationships. All 23 India specialties now have complete specialty-specific profiles using the same country and city architecture as Radiation Oncology. Each specialty owns one profile module in `src/data/specialty-pages/` beside `radiation-oncology.ts`, and the shared clinical scaffolding lives in `india-specialty-profile.ts`. All 23 currently pass the long-form article and relationship gates and are published.
 
@@ -65,17 +65,21 @@ English stays at the root (`https://gaf.healthcare/...`). Localized sites use a 
 
 Existing English routes are unchanged. A Russian doctor page is `/ru/doctors/[slug]`. Slugs stay English.
 
+English-only origin-country hubs currently live at [`/algeria/treatment-in-india`](/algeria/treatment-in-india), [`/angola/treatment-in-india`](/angola/treatment-in-india), [`/armenia/treatment-in-india`](/armenia/treatment-in-india), [`/belarus/treatment-in-india`](/belarus/treatment-in-india), [`/benin/treatment-in-india`](/benin/treatment-in-india), [`/botswana/treatment-in-india`](/botswana/treatment-in-india), [`/burkina-faso/treatment-in-india`](/burkina-faso/treatment-in-india), [`/chad/treatment-in-india`](/chad/treatment-in-india), [`/cote-divoire/treatment-in-india`](/cote-divoire/treatment-in-india), [`/ethiopia/treatment-in-india`](/ethiopia/treatment-in-india), [`/ghana/treatment-in-india`](/ghana/treatment-in-india), [`/guinea/treatment-in-india`](/guinea/treatment-in-india), [`/kazakhstan/treatment-in-india`](/kazakhstan/treatment-in-india), [`/kenya/treatment-in-india`](/kenya/treatment-in-india), [`/kyrgyzstan/treatment-in-india`](/kyrgyzstan/treatment-in-india), [`/liberia/treatment-in-india`](/liberia/treatment-in-india), [`/malawi/treatment-in-india`](/malawi/treatment-in-india), [`/mauritius/treatment-in-india`](/mauritius/treatment-in-india), [`/moldova/treatment-in-india`](/moldova/treatment-in-india), [`/morocco/treatment-in-india`](/morocco/treatment-in-india), [`/mozambique/treatment-in-india`](/mozambique/treatment-in-india), [`/namibia/treatment-in-india`](/namibia/treatment-in-india), [`/nigeria/treatment-in-india`](/nigeria/treatment-in-india), [`/russia/treatment-in-india`](/russia/treatment-in-india), [`/rwanda/treatment-in-india`](/rwanda/treatment-in-india), [`/senegal/treatment-in-india`](/senegal/treatment-in-india), [`/somalia/treatment-in-india`](/somalia/treatment-in-india), [`/south-africa/treatment-in-india`](/south-africa/treatment-in-india), [`/south-sudan/treatment-in-india`](/south-sudan/treatment-in-india), [`/sudan/treatment-in-india`](/sudan/treatment-in-india), [`/tanzania/treatment-in-india`](/tanzania/treatment-in-india), [`/turkmenistan/treatment-in-india`](/turkmenistan/treatment-in-india), [`/uganda/treatment-in-india`](/uganda/treatment-in-india), [`/ukraine/treatment-in-india`](/ukraine/treatment-in-india), [`/uzbekistan/treatment-in-india`](/uzbekistan/treatment-in-india), [`/zambia/treatment-in-india`](/zambia/treatment-in-india) and [`/zimbabwe/treatment-in-india`](/zimbabwe/treatment-in-india). They are listed on the homepage origin-country section and on the English sitemap. Other locales 404 until a translated overlay is published.
+
 `src/proxy.ts` (Next.js 16) reads the language prefix, sets `x-gaf-locale`, and rewrites to the existing English route. English stays at the root. There is no `/en/` prefix.
 
 Navigation and homepage chrome use built-in Russian, French, Arabic and Swahili catalogs. Arabic radiation-oncology doctor profiles (names, titles, bios, procedure lists) and all 37 India hospital profiles (bios, summaries, ward languages, ICU notes) live in `content/ar/catalog-cms.json` and appear on `/ar/doctors` and `/ar/hospitals`. English identity keys — slug, city, country, specialty and procedure slugs — stay shared so relationships remain stable. Editorial copy never falls back across languages: an untranslated route is excluded from that locale’s sitemap and returns the localized 404 page. Google Cloud Translation is not used.
 
-Each language has its own sitemap. `/sitemap.xml` remains an English compatibility URL; robots advertises the explicit language files:
+Each language has its own sitemap. `/sitemap.xml` and `/sitemap_index.xml` are the same sitemap index (the underscore URL is what Google Search Console still has submitted from the previous CMS). `/robots.txt` is a static file that advertises the index and the published child sitemaps:
 
+- Index: `/sitemap.xml` (alias `/sitemap_index.xml`)
 - English: `/sitemap-en.xml`
-- Russian: `/sitemap-ru.xml`
-- French: `/sitemap-fr.xml`
+- Blogs: `/sitemap-blogs.xml`
 - Arabic: `/sitemap-ar.xml`
-- Swahili: `/sitemap-sw.xml`
+- Russian: `/sitemap-ru.xml` (empty until that locale is published)
+- French: `/sitemap-fr.xml` (empty until that locale is published)
+- Swahili: `/sitemap-sw.xml` (empty until that locale is published)
 
 Each language also has its own CMS files:
 
@@ -126,6 +130,10 @@ All 14 Cardiology-only procedures have long-form India planning guides and five 
 ### Replit / production secrets
 
 - `CMS_PASSWORD` — CMS desk password
+- `OPENAI_API_KEY` — server-only key for the CMS AI Content Studio. Never prefix it with `NEXT_PUBLIC_`.
+- `OPENAI_MODEL` — optional model override (default `gpt-4.1-mini`)
+
+The AI Content Studio lives at `/cms/studio`. It reads existing CMS records, returns structured draft copy, and writes only when an administrator clicks Save draft or Publish. It does not change URLs, slugs, canonicals, sitemaps or pSEO templates.
 
 ```bash
 npm test

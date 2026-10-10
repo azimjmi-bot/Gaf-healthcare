@@ -32,6 +32,7 @@ export type Article = {
   canonical: string;
   ogImage: string;
   allowIndex: boolean;
+  keywords?: string[];
   blocks: ArticleBlock[];
   relatedLinks: RelatedLink[];
 };

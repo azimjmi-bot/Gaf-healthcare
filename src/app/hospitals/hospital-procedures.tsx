@@ -1,3 +1,4 @@
+import "@/styles/hospital-profile.css";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { CtaBand } from "@/components/page-shell";
 import { PseoTrust } from "@/components/pseo-trust";

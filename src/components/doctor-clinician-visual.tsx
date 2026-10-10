@@ -1,3 +1,4 @@
+import "@/styles/directory-cards.css";
 import { doctorInitials } from "@/lib/hospital-profile";
 
 export function DoctorClinicianVisual({

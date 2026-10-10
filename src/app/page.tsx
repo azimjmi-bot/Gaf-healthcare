@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { LocaleLink as Link } from "@/components/locale-link";
+import Link from "next/link";
+import { localePath } from "@/lib/i18n/path";
 import { ArrowRight, Building2, Compass, HeartHandshake, ShieldCheck } from "lucide-react";
 import { DoctorPhoto } from "@/components/doctor-photo";
 import { HomeCover } from "@/components/home/home-cover";
@@ -8,12 +9,14 @@ import { HospitalCampusVisual, campusCaption } from "@/components/hospital-campu
 import { JsonLd } from "@/components/json-ld";
 import { PatientReviews } from "@/components/patient-reviews";
 import { PatientStories } from "@/components/patient-stories";
+import { PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
 import {
   GOOGLE_MAPS_URL,
   GOOGLE_PROFILE,
   HOME_COST_SLUGS,
   YOUTUBE_CHANNEL,
 } from "@/data/home";
+import { ORIGIN_COUNTRY_HUBS, ORIGIN_COUNTRY_SECTION, originCountryHubsByContinent } from "@/data/origin-countries";
 import { listPublishedPosts } from "@/lib/blogs";
 import { treatments } from "@/lib/data";
 import { doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
@@ -23,14 +26,12 @@ import { localizeBlog, localizeHomeExtras, localizeMessages } from "@/lib/i18n/l
 import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { getRequestLocale } from "@/lib/i18n/request";
-import { surfaceIsAvailable } from "@/lib/i18n/surfaces";
 import { ORGANISATION_ID } from "@/lib/jsonld";
 import { SITE_URL } from "@/lib/seo";
 import type { Treatment } from "@/lib/treatments";
 import type { Metadata } from "next";
 
-export const dynamic = "force-dynamic";
-export const revalidate = 0;
+export const revalidate = 120;
 
 export async function generateMetadata(): Promise<Metadata> {
   const locale = await getRequestLocale();
@@ -59,6 +60,7 @@ function startingPrice(range: string) {
 
 export default async function HomePage() {
   const locale = await getRequestLocale();
+  const href = (path: string) => localePath(path, locale);
   const t = await localizeMessages(locale);
   const extras = await localizeHomeExtras(locale);
   const published = listPublishedPosts(locale);
@@ -113,10 +115,12 @@ export default async function HomePage() {
 
       <section className="home-hero">
         <Image
-          src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=2400&q=80"
+          src="/images/home-hero.webp"
           alt=""
           fill
           priority
+          quality={60}
+          sizes="100vw"
           className="object-cover object-center"
         />
         <div className="home-hero__shade" />
@@ -124,7 +128,18 @@ export default async function HomePage() {
           <p className="eyebrow text-gold-bright">{t["home.heroEyebrow"]}</p>
           <h1>{t["home.heroTitle"]}</h1>
           <p className="home-hero__lede">{t["home.heroLede"]}</p>
-          {doctors.length > 0 || localizedHospitals.length > 0 ? <HomeSearch /> : null}
+          {doctors.length > 0 || localizedHospitals.length > 0 ? (
+            <HomeSearch
+              locale={locale}
+              labels={{
+                destination: t["home.searchDestination"],
+                specialty: t["home.searchSpecialty"],
+                procedure: t["home.searchProcedure"],
+                go: t["home.searchGo"],
+                goShort: t["home.searchGoShort"],
+              }}
+            />
+          ) : null}
         </div>
       </section>
 
@@ -156,7 +171,7 @@ export default async function HomePage() {
             <p className="eyebrow">{t["home.destinationsEyebrow"]}</p>
             <h2>{t["home.destinationsTitle"]}</h2>
           </div>
-          <Link href="/hospitals" className="home-more">
+          <Link href={href("/hospitals")} className="home-more">
             {t["home.viewAll"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
@@ -164,14 +179,14 @@ export default async function HomePage() {
           {extras.destinations.map((place) => (
             <Link
               key={place.name}
-              href={hospitalsPath({ destination: place.filter })}
+              href={href(hospitalsPath({ destination: place.filter }))}
               className="home-dest"
             >
               <Image
                 src={place.image}
                 alt={place.imageAlt}
                 fill
-                quality={60}
+                quality={40}
                 className="object-cover"
                 sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 100vw"
               />
@@ -185,6 +200,32 @@ export default async function HomePage() {
       </section>
       ) : null}
 
+      {locale === "en" && ORIGIN_COUNTRY_HUBS.length > 0 ? (
+      <section id="from-your-country" className="home-section home-origin scroll-mt-24">
+        <div className="home-origin__intro">
+          <p className="eyebrow">{ORIGIN_COUNTRY_SECTION.eyebrow}</p>
+          <h2>{ORIGIN_COUNTRY_SECTION.title}</h2>
+          <p>{ORIGIN_COUNTRY_SECTION.lede}</p>
+        </div>
+        {originCountryHubsByContinent().map((group) => (
+          <div key={group.continent} className="home-origin__region">
+            <h3>{group.continent}</h3>
+            <div className="home-origingrid">
+              {group.countries.map((country) => (
+                <Link key={country.href} href={href(country.href)} className="home-origin-card">
+                  <span className="home-origin-card__flag" role="img" aria-label={country.flagLabel}>
+                    {country.flag}
+                  </span>
+                  <strong>{country.name}</strong>
+                  <em>{ORIGIN_COUNTRY_SECTION.routeLabel(country.city, country.destination)}</em>
+                </Link>
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+      ) : null}
+
       {faculty.length > 0 ? (
       <section className="home-section home-section--tint">
         <div className="home-head">
@@ -192,13 +233,13 @@ export default async function HomePage() {
             <p className="eyebrow">{t["home.doctorsEyebrow"]}</p>
             <h2>{t["home.doctorsTitle"]}</h2>
           </div>
-          <Link href="/doctors" className="home-more">
+          <Link href={href("/doctors")} className="home-more">
             {t["home.viewDoctors"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
         <div className="home-docgrid">
           {faculty.map((doctor) => (
-            <Link key={doctor.slug} href={`/doctors/${doctor.slug}`} className="home-doc">
+            <Link key={doctor.slug} href={href(`/doctors/${doctor.slug}`)} className="home-doc">
               <span className="home-doc__photo">
                 <DoctorPhoto doctor={doctor} sizes="6.4rem" />
               </span>
@@ -220,13 +261,13 @@ export default async function HomePage() {
             <p className="eyebrow">{t["home.hospitalsEyebrow"]}</p>
             <h2>{t["home.hospitalsTitle"]}</h2>
           </div>
-          <Link href="/hospitals" className="home-more">
+          <Link href={href("/hospitals")} className="home-more">
             {t["home.viewHospitals"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
         <div className="home-hospgrid">
           {campuses.map((hospital) => (
-            <Link key={hospital.slug} href={`/hospitals/${hospital.slug}`} className="home-hosp">
+            <Link key={hospital.slug} href={href(`/hospitals/${hospital.slug}`)} className="home-hosp">
               <span className="home-hosp__visual">
                 <HospitalCampusVisual
                   hospital={hospital}
@@ -252,13 +293,13 @@ export default async function HomePage() {
             <h2>{t["home.costsTitle"]}</h2>
             <p>{t["home.costsLede"]}</p>
           </div>
-          <Link href="/costs" className="home-more">
+          <Link href={href("/costs")} className="home-more">
             {t["home.viewCosts"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
         <div className="home-costgrid">
           {sheets.map((row) => (
-            <Link key={row.slug} href={costPath(row.name)} className="home-cost">
+            <Link key={row.slug} href={href(costPath(row.name))} className="home-cost">
               <p>{taxonomyLabel(row.category, locale)}</p>
               <strong>{taxonomyLabel(row.name, locale)}</strong>
               <em>{startingPrice(row.partnerRange)}</em>
@@ -283,13 +324,13 @@ export default async function HomePage() {
             <p className="eyebrow">{t["home.deskEyebrow"]}</p>
             <h2>{t["home.deskTitle"]}</h2>
           </div>
-          <Link href="/blogs" className="home-more">
+          <Link href={href("/blogs")} className="home-more">
             {t["home.viewBlogs"]} <ArrowRight className="size-4 icon-forward" />
           </Link>
         </div>
         <div className="home-bloggrid">
           {posts.map((post) => (
-            <Link key={post.slug} href={`/blogs/${post.slug}`} className="home-blog">
+            <Link key={post.slug} href={href(`/blogs/${post.slug}`)} className="home-blog">
               <span className="home-blog__img">
                 <HomeCover src={post.image} alt={post.imageAlt || ""} sizes="(min-width: 640px) 33vw, 100vw" />
               </span>
@@ -313,17 +354,12 @@ export default async function HomePage() {
         label={t["a11y.patientReviews"]}
       />
 
-      {surfaceIsAvailable(locale, "consult") ? (
-      <section className="home-finale">
-        <div>
-          <h2>{t["home.finaleTitle"]}</h2>
-          <p>{t["home.finaleLede"]}</p>
-        </div>
-        <Link href="/consult" className="home-finale__btn">
-          {t["home.finaleButton"]}
-        </Link>
-      </section>
-      ) : null}
+      <PseoEstimateCtaSection
+        subject="treatment"
+        place="India"
+        consultHref="/consult"
+        variant="records"
+      />
     </>
   );
 }

@@ -143,6 +143,10 @@ export const UI_MESSAGE_FIELDS: Record<string, string> = {
   "home.finaleButton": "Request a Dossier",
   "blogs.empty": "No published notes yet.",
   "blogs.all": "All blogs",
+  "blogs.searchLabel": "Search blogs",
+  "blogs.searchPlaceholder": "Search by article title or keyword…",
+  "blogs.results": "articles found",
+  "blogs.noResults": "No published articles match these filters.",
   "consult.eyebrow": "Intake",
   "consult.title": "Twelve minutes. Then we do the heavy reading.",
   "consult.lede":
@@ -305,6 +309,11 @@ export const UI_MESSAGE_FIELDS: Record<string, string> = {
   "dir.hospitals.indiaLede":
     "{count} partner campuses in {place}, filed by country, city, specialty and procedure so you reach the right campus from whichever of those you start from. One card per house — JCI and NABH on the file, named faculty where listed.",
   "hospital.campusIllustration": "{place} — campus illustration",
+  "wa.floatTitle": "Chat on WhatsApp",
+  "wa.floatStatus": "Online now",
+  "wa.floatSla": "replies in ~15 min",
+  "wa.floatAria": "Chat with GAF Healthcare on WhatsApp",
+  "wa.floatMessage": "Hello — I would like help planning treatment in India.",
   "a11y.home": "GAF Healthcare — home",
   "a11y.close": "Close",
   "a11y.breadcrumb": "Breadcrumb",
