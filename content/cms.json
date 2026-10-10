@@ -1728,9 +1728,911 @@
       "name": "angioplasty-recovery.webp",
       "alt": "Four steps after angioplasty: a wrist dressing, walking, a pill box, and a discharge folder",
       "addedAt": "2026-10-10T14:30:00.000Z"
+    },
+    {
+      "id": "media_pci_vs_cabg_overview_webp",
+      "url": "/uploads/articles/pci-vs-cabg-overview.webp",
+      "name": "pci-vs-cabg-overview.webp",
+      "alt": "A catheter from the arm to a mesh stent on the heart, beside a heart with a graft tube arching over a blockage",
+      "addedAt": "2026-10-10T15:30:00.000Z"
+    },
+    {
+      "id": "media_cad_focal_multivessel_webp",
+      "url": "/uploads/articles/cad-focal-multivessel.webp",
+      "name": "cad-focal-multivessel.webp",
+      "alt": "One narrowed artery in cross-section beside a heart with yellow plaque in several coronary arteries",
+      "addedAt": "2026-10-10T15:30:00.000Z"
+    },
+    {
+      "id": "media_stent_vs_graft_close_webp",
+      "url": "/uploads/articles/stent-vs-graft-close.webp",
+      "name": "stent-vs-graft-close.webp",
+      "alt": "A mesh stent inside an artery beside a graft tube bridging over a yellow blockage",
+      "addedAt": "2026-10-10T15:30:00.000Z"
+    },
+    {
+      "id": "media_pci_cabg_recovery_webp",
+      "url": "/uploads/articles/pci-cabg-recovery.webp",
+      "name": "pci-cabg-recovery.webp",
+      "alt": "A wrist dressing and a walk, then a chest dressing and a person walking with a hand on the chest",
+      "addedAt": "2026-10-10T15:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_angioplasty_vs_bypass_surgery_in_india",
+      "slug": "angioplasty-vs-bypass-surgery-in-india",
+      "title": "Angioplasty vs Bypass Surgery in India: Differences, Benefits, Risks and Cost",
+      "excerpt": "Angioplasty and bypass surgery are two different treatments for coronary artery disease. This guide explains how they work, when each may be considered, their benefits and risks, recovery, cost factors in India and the questions to ask your cardiologist.",
+      "date": "10 October 2026",
+      "publishedAt": "2026-10-10T15:30:00.000Z",
+      "updatedAt": "2026-10-10T15:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "angioplasty",
+        "bypass",
+        "CABG",
+        "cost",
+        "India"
+      ],
+      "image": "/uploads/articles/pci-vs-cabg-overview.webp",
+      "imageAlt": "A catheter from the arm to a mesh stent on the heart, beside a heart with a graft tube arching over a blockage",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Angioplasty vs Bypass Surgery in India: Which Is Better?",
+      "seoDescription": "Compare angioplasty and bypass surgery in India. Understand differences, benefits, risks, recovery, costs and how doctors choose the right treatment.",
+      "canonical": "https://gaf.healthcare/blogs/angioplasty-vs-bypass-surgery-in-india",
+      "ogImage": "/uploads/articles/pci-vs-cabg-overview.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Angioplasty vs bypass surgery in India",
+        "Angioplasty vs bypass surgery",
+        "CABG vs angioplasty",
+        "Stent vs bypass surgery",
+        "Which is better, angioplasty or bypass surgery?",
+        "Angioplasty cost in India",
+        "Bypass surgery cost in India",
+        "Risks of angioplasty and bypass surgery",
+        "Recovery after angioplasty vs bypass surgery",
+        "Treatment for multiple blocked arteries",
+        "Heart treatment in India for international patients"
+      ],
+      "blocks": [
+        {
+          "id": "p_001",
+          "type": "paragraph",
+          "text": "Being told the coronary arteries are narrowed often leads to two names: angioplasty with a stent, or coronary artery bypass grafting (CABG). People ask which is safer, which lasts longer, whether surgery can be avoided, and whether medicines are enough."
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "There is no answer that fits every person."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "**Angioplasty is a minimally invasive procedure that uses a catheter to treat selected narrowed coronary arteries, often with a stent. Bypass surgery creates an alternative route for blood to flow around narrowed or blocked arteries using blood vessels from elsewhere in the body.**"
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "Both can help selected people. The choice depends on where the narrowings are, how complex they are, the symptoms, how well the heart pumps, other illnesses, how completely each option can treat the arteries that matter, and what the person wants once those facts are clear. Some people start with medicines and risk-factor care, without a procedure now. A heart attack is not the moment to compare hospitals online."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "**If someone has new or severe chest pain, severe breathlessness, fainting, or other symptoms that could be a heart attack, seek emergency care now.** Do not delay that care to compare hospitals, collect online opinions, or arrange travel."
+        },
+        {
+          "id": "html_006",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>Angioplasty treats selected narrowed coronary arteries from inside the blood vessel. Bypass surgery creates a new route around narrowed or blocked sections. Which is more appropriate depends on the patient's coronary anatomy, symptoms, overall health and clinical risk.</p></div></aside>"
+        },
+        {
+          "id": "toc_007",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-is-the-difference\">1. What Is the Difference?</a></li><li><a href=\"#2-what-is-coronary-artery-disease\">2. What Is Coronary Artery Disease?</a></li><li><a href=\"#3-what-is-angioplasty\">3. What Is Angioplasty?</a></li><li><a href=\"#4-what-is-bypass-surgery\">4. What Is Bypass Surgery?</a></li><li><a href=\"#5-how-do-doctors-decide\">5. How Do Doctors Decide?</a></li><li><a href=\"#6-when-is-each-operation-the-better-fit\">6. When Is Each Operation the Better Fit?</a></li><li><a href=\"#7-can-medicines-be-enough\">7. Can Medicines Be Enough?</a></li><li><a href=\"#8-risks-compared\">8. Risks Compared</a></li><li><a href=\"#9-recovery-after-each-procedure\">9. Recovery After Each Procedure</a></li><li><a href=\"#10-angioplasty-cost-and-bypass-cost-in-india\">10. Angioplasty Cost and Bypass Cost in India</a></li><li><a href=\"#11-diabetes-age-and-a-weaker-heart\">11. Diabetes, Age, and a Weaker Heart</a></li><li><a href=\"#12-a-heart-team-the-tests-and-a-second-look\">12. A Heart Team, the Tests, and a Second Look</a></li><li><a href=\"#13-travelling-to-india-for-either-procedure\">13. Travelling to India for Either Procedure</a></li><li><a href=\"#14-questions-to-ask-before-you-decide\">14. Questions to Ask Before You Decide</a></li><li><a href=\"#15-frequently-asked-questions-about-angioplasty-vs-bypass-surgery\">15. Frequently Asked Questions About Angioplasty vs Bypass Surgery</a></li><li><a href=\"#conclusion-choose-the-plan-that-fits-the-arteries\">Conclusion: Choose the Plan That Fits the Arteries</a></li><li><a href=\"#sources\">Sources</a></li></ol></nav>"
+        },
+        {
+          "id": "btn_008",
+          "type": "button",
+          "label": "Send the angiogram and ask which operation is being considered",
+          "href": "https://wa.me/919044346292?text=Please%20review%20my%20coronary%20angiogram%20and%20say%20whether%20angioplasty%20or%20bypass%20is%20being%20considered%2C%20and%20why.%20I%20want%20the%20arteries%20named%20before%20any%20quotation."
+        },
+        {
+          "id": "h_009",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Is the Difference?"
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "| Feature | Angioplasty with stenting | Bypass surgery (CABG) |\n|---|---|---|\n| Medical name | Percutaneous coronary intervention (PCI) | Coronary artery bypass grafting (CABG) |\n| How it works | A catheter opens selected narrowings. A stent is often placed | A graft carries blood around a narrowed or blocked section |\n| Access | Usually an artery in the wrist or the groin | Usually an incision on the chest. Other approaches exist for selected operations |\n| Anaesthesia | Often local anaesthesia with sedation. The case decides | Usually general anaesthesia |\n| Scale | Less invasive | Major surgery |\n| First hospital stay on this site | 1–3 nights typical for coronary angioplasty and stenting | 7–14 nights, then nearby recovery for CABG |\n| Early recovery | Often shorter after an uncomplicated procedure | Generally longer, because a surgical wound has to heal |\n| Points the team watches | Bleeding, injury to the artery, the kidneys in some people, problems related to the stent, and a later procedure | Bleeding, infection, stroke, the kidneys, rhythm problems, the wounds, and a longer recovery |\n| After either procedure | Medicines and risk-factor care still matter | Medicines and risk-factor care still matter |\n| Where it tends to fit | Selected narrowings that a catheter can treat appropriately | Selected complex disease, when surgery is expected to help more |"
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "These are general differences. They are not a personal recommendation. Both operations have variants, and two people with the same label can recover differently."
+        },
+        {
+          "id": "img_012",
+          "type": "image",
+          "src": "/uploads/articles/pci-vs-cabg-overview.webp",
+          "alt": "A catheter from the arm to a mesh stent on the heart, beside a heart with a graft tube arching over a blockage",
+          "caption": "Left: angioplasty, drawn as a line from the arm to a mesh stent on the heart. Right: bypass, drawn as a graft tube arching over a yellow blockage. This is a teaching drawing, not an angiogram or an operation photograph."
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "[Cardiologists in India](/doctors/India/Cardiology) and [cardiac surgeons in India](/doctors/India/Cardiac-Surgery) are directories, not rankings. The procedure pages are [coronary angioplasty in India](/treatments/coronary-angioplasty-in-india) and [CABG surgery in India](/treatments/cabg-surgery-in-india)."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 2,
+          "text": "2. What Is Coronary Artery Disease?"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "Coronary artery disease develops when plaque builds up in the arteries that feed the heart muscle. Plaque can narrow an artery and limit flow, especially when the heart needs more oxygen. A plaque can also rupture, a clot can form, and a heart attack can follow. The American Heart Association explains [coronary artery disease](https://www.heart.org/en/health-topics/consumer-healthcare/what-is-cardiovascular-disease/coronary-artery-disease). MedlinePlus has a plain overview of [coronary artery disease](https://medlineplus.gov/coronaryarterydisease.html)."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "Symptoms can include chest pressure or tightness, breathlessness on effort, discomfort spreading to the arm, shoulder, back, neck or jaw, and unusual fatigue. Some people have few symptoms until an emergency. Symptoms do not reliably show how many arteries are narrowed, or how complex the narrowings are."
+        },
+        {
+          "id": "img_017",
+          "type": "image",
+          "src": "/uploads/articles/cad-focal-multivessel.webp",
+          "alt": "One narrowed artery in cross-section beside a heart with yellow plaque in several coronary arteries",
+          "caption": "Left: one narrowing in a single artery. Right: plaque drawn in several arteries on a heart. The same count of narrowings can still need different treatment."
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "Two people can have three narrowed arteries and still need different plans. One may have a short, focal narrowing a catheter can treat. Another may have long, calcified, or branching disease, where bypass is the more complete option. Diabetes, kidney disease, a weak heart, frailty, bleeding risk, and whether this is an emergency all change the balance. Counting arteries is not the decision."
+        },
+        {
+          "id": "h_019",
+          "type": "heading",
+          "level": 2,
+          "text": "3. What Is Angioplasty?"
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "Angioplasty, also called PCI, widens a selected coronary narrowing through a catheter. The specialist usually enters at the wrist or the groin, guides the catheter to the artery, and may inflate a balloon. A stent, a small mesh tube, is often placed to help keep that segment open. The NHS explains [coronary angioplasty](https://www.nhs.uk/tests-and-treatments/coronary-angioplasty/)."
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "A straightforward focal narrowing is not the same procedure as several vessels, a heavily calcified segment, or a chronic total occlusion. Not every narrowing needs a stent. In a heart attack, PCI can be urgent. In stable disease, the choice among medicines, further tests, PCI, and CABG is individual. The European Society of Cardiology’s [2024 chronic coronary syndromes guideline](https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/chronic-coronary-syndromes/) and the American College of Cardiology’s [summary of that guideline](https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2024/09/01/15/01/2024-esc-guidelines-for-ccs-esc-2024) describe that kind of individual choice. They do not set a price."
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "For a suitable person, angioplasty can improve flow through the treated segment, ease angina that comes from that narrowing, avoid an open-chest operation, and shorten the first stay. It does not remove the tendency to form plaque elsewhere. The treated segment can cause trouble later, and another procedure is sometimes needed. Smoking, blood pressure, cholesterol, diabetes, and the prescribed medicines still matter. Do not stop an antiplatelet medicine on your own after a stent."
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "The cost guide on this site is [angioplasty cost in India](/blogs/angioplasty-cost-in-india). The planning page is [coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting)."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 2,
+          "text": "4. What Is Bypass Surgery?"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "CABG uses a blood vessel from the chest, arm, or leg to carry blood around a narrowed or blocked coronary artery. The graft does not rely only on the original channel through the narrowing. The NHS explains [coronary artery bypass grafting](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/). The National Heart, Lung, and Blood Institute describes [what CABG is for](https://www.nhlbi.nih.gov/health/coronary-artery-bypass-grafting)."
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "The team reviews the anatomy, heart function, and surgical risk. General anaesthesia is usual. The surgeon reaches the heart through an incision that fits the planned operation, places one or more grafts, and the person is watched closely afterwards, often in intensive care first. Some operations use a heart-lung machine. Selected operations do not. That choice belongs to the surgical team."
+        },
+        {
+          "id": "img_027",
+          "type": "image",
+          "src": "/uploads/articles/stent-vs-graft-close.webp",
+          "alt": "A mesh stent inside an artery beside a graft tube bridging over a yellow blockage",
+          "caption": "Left: a stent holds the artery open from the inside. Right: a graft bridges over the blockage so blood can flow around it. Real grafts are vessels from the chest, arm, or leg, not a plastic tube."
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "CABG may be considered when several arteries are involved, the disease is diffuse or complex, the left main artery is significantly narrowed and surgery fits the risk, diabetes accompanies multivessel disease that is suitable for surgery, or a catheter is unlikely to treat the important disease as completely. These are examples, not rules. Some complex anatomy is still treated with PCI. Some people face surgical risks that change the preferred plan."
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "For selected people, bypass can treat several arteries in one operation, ease angina, and mean fewer repeat procedures than PCI for certain patterns of complex disease. It is still major surgery. Bleeding, infection, stroke, kidney injury, rhythm problems, breathing problems, and trouble with wounds or grafts can occur. Age, frailty, diabetes, lung disease, and kidney function affect recovery. Bypass does not cure atherosclerosis."
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "The cost guide is [bypass surgery cost in India](/blogs/bypass-surgery-cost-in-india). The planning page is [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting))."
+        },
+        {
+          "id": "h_031",
+          "type": "heading",
+          "level": 2,
+          "text": "5. How Do Doctors Decide?"
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "Guidelines support an individual comparison of benefit, risk, and what each option leaves untreated. For some people both PCI and CABG are reasonable. For others the anatomy or the risk makes one of them the clearer plan. The 2023 chronic coronary disease guideline from the American College of Cardiology and the American Heart Association discusses that choice. [JACC: 2023 chronic coronary disease guideline](https://www.jacc.org/doi/10.1016/j.jacc.2023.04.003). The full ESC publication is here: [2024 ESC chronic coronary syndromes guideline](https://academic.oup.com/eurheartj/article/45/36/3415/7743115)."
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "**Number and place.** A single focal narrowing is assessed differently from disease in several arteries. Location, severity, how much heart muscle is at risk, and how difficult the narrowing is all matter more than a count."
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "**Left main disease.** The left main artery supplies a large share of the heart muscle through its branches. Significant narrowing needs a careful review. CABG is often favoured when the person is suitable and the anatomy is complex. PCI can be reasonable in selected anatomy when the expected result is comparable. A heart-team discussion is appropriate when the choice is not obvious."
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "**Several arteries.** The question is whether PCI can treat the important disease well enough, or whether CABG offers a real advantage. In complex multivessel disease, especially with diabetes, CABG may offer better long-term results when both options are anatomically and clinically suitable. That does not mean every person with several narrowings needs an operation."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "**Diabetes.** Diabetes can change the pattern of disease and the long-term comparison. For some people with diabetes, multivessel disease, and a suitable surgical target that includes the left anterior descending artery, CABG may have an advantage over PCI. Diabetes alone does not make surgery automatic. The team should say how it changes benefit, risk, and blood-glucose care before and after."
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "**Heart function.** The pumping function matters, but an ejection-fraction number is not a decision by itself. The team looks at the anatomy, how much muscle is still viable, and whether restoring flow is likely to help. In selected people with ischaemic disease and reduced function, surgical revascularisation may offer a long-term benefit."
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "**Other illnesses.** Kidney disease, lung disease, frailty, a previous stroke, and bleeding risk can make surgery less attractive if PCI can still treat the problem adequately. A less invasive procedure is not automatically safer overall if it leaves important disease untreated."
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "**What the person needs from recovery.** Work and family can make a shorter first recovery important. Others prefer the option with a lower chance of a repeat procedure, when that difference applies to their anatomy. Preferences count beside the evidence, not instead of it."
+        },
+        {
+          "id": "btn_040",
+          "type": "button",
+          "label": "Ask for a written reason for the recommended operation",
+          "href": "https://wa.me/919044346292?text=Please%20explain%20in%20writing%20why%20angioplasty%20or%20bypass%20is%20recommended%20for%20these%20arteries%2C%20whether%20the%20other%20operation%20is%20still%20reasonable%2C%20and%20what%20would%20make%20you%20change%20that%20view."
+        },
+        {
+          "id": "h_041",
+          "type": "heading",
+          "level": 2,
+          "text": "6. When Is Each Operation the Better Fit?"
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "Angioplasty may be the better fit for a suitable focal narrowing, for selected disease in one or two vessels, when a heart attack needs flow restored urgently, when surgery would be high risk, or when the heart team judges that PCI gives the right balance. This is not a complete list."
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "An uncomplicated angioplasty often means a shorter stay and a faster return to light activity than bypass. That is not guaranteed. Angioplasty during a heart attack can still mean a longer admission and a long recovery. The access site, complications, and other illnesses all count."
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "Bypass may be the better fit for complex multivessel disease, for selected significant left main disease, for multivessel disease with diabetes when surgery is suitable, for some people with reduced heart function and important coronary disease, and when PCI is unlikely to produce an adequate result. For some of those groups, CABG is associated with fewer repeat revascularisations than PCI. Durability is one factor. The operation is more invasive, and the immediate risks and the recovery are part of the same decision."
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "A lower first price, or a shorter first stay, is not proof of better value if the operation is unlikely to treat the disease that matters."
+        },
+        {
+          "id": "h_046",
+          "type": "heading",
+          "level": 2,
+          "text": "7. Can Medicines Be Enough?"
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "Yes, for some people. Medicines and lifestyle measures can be the plan when symptoms are controlled, the findings do not call for immediate revascularisation, the expected gain from a procedure is limited, the risks outweigh that gain, or the person chooses a non-procedure plan after understanding it."
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "Medicines may cover cholesterol, blood pressure, angina, and clot risk, plus diabetes and other conditions. Stopping smoking, an eating pattern the clinician supports, activity as advised, and follow-up are part of that plan. Medical management is still treatment. It is not a decision to ignore the arteries."
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "It cannot replace a procedure in every person. Some anatomy, some symptoms, and some emergencies are reasons to revascularise. Do not stop a prescribed medicine, and do not postpone a recommended procedure, without talking to the treating specialist."
+        },
+        {
+          "id": "h_050",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Risks Compared"
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "Both procedures can help, and their risks differ. The useful comparison is for a person of similar age, health, disease, and reason for treatment. A table cannot rank overall safety."
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "| Consideration | Angioplasty | Bypass surgery |\n|---|---|---|\n| Bleeding | At the wrist or groin, or elsewhere, especially with medicines that reduce clotting | During or after the operation |\n| Infection | At the puncture, uncommon | The wound or other sites |\n| The vessel | Injury during the catheter procedure | Problems with a graft or another vessel |\n| Kidneys | Contrast dye matters in susceptible people | Injury can follow major surgery, especially if the risk was already higher |\n| Stroke | Possible. The setting changes the risk | Possible. The person and the operation change the risk |\n| Rhythm | Can occur around PCI | Including atrial fibrillation after surgery |\n| Another procedure later | Repeat PCI, or surgery later, is sometimes needed | A graft problem or new disease can lead to more treatment |\n| Recovery | Usually shorter after uncomplicated PCI | Longer, because surgical healing takes time |"
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "There is no universal answer to which procedure has the lower risk of death. Urgency, anatomy, heart function, other illnesses, and the complexity of the procedure decide. In some people CABG offers better long-term results despite being the larger operation. In others PCI is the more appropriate plan because of the anatomy or the surgical risk. Ask for your own risks in plain numbers where the team can give them, and ask which factors move those numbers."
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "The American Heart Association’s page on [cardiac procedures and surgeries](https://www.heart.org/en/health-topics/heart-attack/treatment-of-a-heart-attack/cardiac-procedures-and-surgeries) is a patient overview. It is not a personal risk estimate."
+        },
+        {
+          "id": "h_055",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Recovery After Each Procedure"
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "Recovery is the difference people notice first. It is still individual. The discharge day is a clinical decision."
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "After angioplasty the team watches the puncture. You should leave with instructions for the wrist or groin, activity, driving, exercise, work, and medicines, including antiplatelet treatment when a stent was placed. Some people go home the same day or the next day after an uncomplicated procedure. Others stay longer because of an emergency, another illness, or a complication. GAF’s angioplasty page plans **1–3 nights typical**. That is a planning window, not a promise of discharge."
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "After CABG, people are usually watched in intensive care or a similar unit, then on a ward. Pain control, wound care, breathing exercises, walking, and medicines are part of that stay. The NHS describes full recovery after CABG as commonly taking around two to three months, and says the timeline varies. [NHS: recovery after CABG](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/recovery/). GAF’s CABG page plans **7–14 nights, then nearby recovery**. That is the planning window for the episode, not a discharge date. A redo is a different stay. The recovery guide on this site is [heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india)."
+        },
+        {
+          "id": "img_059",
+          "type": "image",
+          "src": "/uploads/articles/pci-cabg-recovery.webp",
+          "alt": "A wrist dressing and a walk, then a chest dressing and a person walking with a hand on the chest",
+          "caption": "The first two steps are the usual picture after angioplasty: a wrist dressing, then walking. The next two are after bypass: a chest dressing, then a more cautious walk. Your own team sets the pace."
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "Uncomplicated angioplasty often allows an earlier return to work than bypass. The job matters. A physical job needs clearance either way. A heart attack changes the timeline even if the treatment was a stent."
+        },
+        {
+          "id": "h_061",
+          "type": "heading",
+          "level": 2,
+          "text": "10. Angioplasty Cost and Bypass Cost in India"
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "These figures are indicative planning ranges from the current cost pages. They are not a hospital quotation, and they are not a regulated stent price. Extra stents, a chronic total occlusion, emergency treatment, shock, intensive care beyond the plan, or a change from angioplasty to surgery after the films are reviewed are quoted separately."
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "| Procedure | India planning range | Typical stay on the cost page |\n|---|---|---|\n| [Coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) | US$3,200–US$8,500 | 1–3 nights typical |\n| [Coronary angiography](/costs/India/Cardiology/Coronary-Angiography) | US$400–US$1,200 | Day-care or overnight |\n| [CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-(Chronic-Total-Occlusion)) | US$5,500–US$14,000 | 1–4 nights |\n| [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | US$5,500–US$14,000 | 7–14 nights, then nearby recovery |\n| [Redo CABG](/costs/India/Cardiac-Surgery/Redo-CABG) | US$8,500–US$20,000 | 10–18 nights |"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "The US comparison beside angioplasty is **US$25,000–US$70,000**. The US comparison beside CABG is **US$70,000–US$200,000**. Neither is an India price."
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "An uncomplicated angioplasty is often the smaller bill, because it is not the same operation and the first stay is shorter. That is not a rule. CTO angioplasty is listed at the same dollar band as CABG, with a typical planning stay of 1–4 nights. It is a catheter procedure for a complete blockage, not a discount on bypass, and not the ordinary angioplasty band of US$3,200–US$8,500. Angiography is the picture-taking procedure. It is not the treatment, and it is not assumed to include a stent."
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "A city filter is not a different tariff. The same angioplasty page can be opened for [Delhi NCR](/costs/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting) and [Mumbai](/costs/India/Mumbai/Cardiology/Coronary-Angioplasty-Stenting). The CABG page can be opened for [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) and [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting))."
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "What moves an angioplasty bill: the hospital and the room, how many arteries are treated, how many stents and which type, complexity, extra imaging or devices, tests, medicines, the stay, whether it was an emergency, and complications. Stent ceiling prices in India are regulated separately from the procedure. They are explained in [angioplasty cost in India](/blogs/angioplasty-cost-in-india). Do not multiply a stent ceiling and call that the operation."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "What moves a bypass bill: the disease, the extent of the operation, the surgeon and the hospital, anaesthesia and theatre, intensive care, the stay, medicines and tests, other illnesses, and complications. A second bypass is the redo listing, not the first CABG band. Read [bypass surgery cost in India](/blogs/bypass-surgery-cost-in-india). A valve replacement is a different operation and is not priced from the CABG band. See [heart valve replacement cost in India](/blogs/heart-valve-replacement-cost-in-india)."
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "Before you pay a deposit, ask the total, which specialist and hospital charges are inside it, whether tests and medicines are inside it, whether stents or the grafts’ related items are inside it, how many days and how much intensive care are included, how extra days and complications are billed, whether follow-up is included, and what happens if the plan changes from one operation to the other. Ask for an itemised final bill."
+        },
+        {
+          "id": "btn_070",
+          "type": "button",
+          "label": "Ask for a separate written estimate for each operation still being considered",
+          "href": "https://wa.me/919044346292?text=Please%20send%20a%20written%20estimate%20only%20for%20the%20operation%20the%20team%20recommends.%20If%20both%20angioplasty%20and%20bypass%20remain%20possible%2C%20send%20them%20separately%2C%20with%20stents%20or%20grafts%2C%20nights%2C%20intensive%20care%2C%20and%20exclusions%20listed."
+        },
+        {
+          "id": "h_071",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Diabetes, Age, and a Weaker Heart"
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Diabetes can mean more diffuse disease. In selected people with diabetes and multivessel disease, CABG may give better long-term results than PCI. It is not required of everyone with diabetes. Ask which arteries are involved, how complex they are, what the heart and kidneys are doing, what other complications of diabetes exist, what the surgical risk is, and whether PCI can still treat the important narrowings."
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Age is one fact among others. Some older adults are fit for major surgery. Others have frailty, kidney disease, or lung disease that raises the surgical risk. Ask what the individual risks are, how the treatment would affect independence, whether the expected benefit is meaningful, what support recovery would need, and what the alternatives are. A less invasive procedure is not automatically the right one."
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "Reduced pumping function needs a reason. Ask what the ejection fraction means in this case, whether coronary disease explains it, what benefit revascularisation is expected to give, whether CABG, PCI, or medicines fit better, and which tests are still required. One number should not choose the operation."
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "Some people need more than one treatment over time. An urgent stent can be followed later by treatment of disease elsewhere. A planned combination of surgery and a catheter procedure is sometimes the strategy. Ask why both may be needed, whether they can happen in one admission, which comes first, what delay costs clinically, and how the stay and the bill change."
+        },
+        {
+          "id": "h_076",
+          "type": "heading",
+          "level": 2,
+          "text": "12. A Heart Team, the Tests, and a Second Look"
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "When the choice is difficult, a heart team can include an interventional cardiologist, a cardiac surgeon, and a clinical cardiologist, plus others when needed. They look at the history, the films, heart function, other illnesses, the risks, and the person’s priorities. You can ask whether both PCI and CABG are feasible, which option they expect to balance benefit and risk, whether medicines remain appropriate, and whether more tests are needed."
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "The tests depend on the question. An ECG records the electrical rhythm. An echocardiogram looks at structure, valves, and pumping. Coronary angiography shows the arteries with contrast. A CT angiogram is used in selected people without a catheter. Blood tests can cover cholesterol, glucose, kidneys, and blood counts. A pressure wire, such as fractional flow reserve or instantaneous wave-free ratio, can help judge whether an intermediate narrowing is limiting flow. You do not need every test. Ask why each one would change the plan. Angiography, when it is only the pictures, is its own listing at **US$400–US$1,200**, **Day-care or overnight**."
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "A second opinion is useful before a major planned procedure when you do not understand why angioplasty was set aside, when several arteries are involved, when diabetes and multivessel disease sit together, when heart function is reduced, or when you want someone else to look at the same angiogram. It should not delay emergency care. If the team says the procedure is urgent, ask whether there is time. Bring the images, the reports, the medicine list, and the first recommendation. Check a doctor’s registration on the [National Medical Register](https://nmr.nmc.org.in/)."
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Hospitals should be compared on the experience of the person who will do this procedure, whether that procedure is available, cardiac intensive care, imaging, how complications are handled, other specialists, rehabilitation, a written estimate, and a clear discharge plan. A reputation is not a treatment plan. [Hospitals for cardiology in India](/hospitals/India/Cardiology) and [hospitals for cardiac surgery in India](/hospitals/India/Cardiac-Surgery) are the hospital lists. City starting points for cardiologists include [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology), [Mumbai](/doctors/India/Mumbai/Cardiology), [Bengaluru](/doctors/India/Bengaluru/Cardiology), [Chennai](/doctors/India/Chennai/Cardiology) and [Hyderabad](/doctors/India/Hyderabad/Cardiology). The same cities for cardiac surgeons are [Delhi NCR](/doctors/India/Delhi-NCR/Cardiac-Surgery), [Mumbai](/doctors/India/Mumbai/Cardiac-Surgery), [Bengaluru](/doctors/India/Bengaluru/Cardiac-Surgery), [Chennai](/doctors/India/Chennai/Cardiac-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Cardiac-Surgery)."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 2,
+          "text": "13. Travelling to India for Either Procedure"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "Start before you book flights. Send the angiogram images and report, the echo, the ECG, blood tests, and the medicine list. Ask for a preliminary view and a written estimate. Confirm the appointment. Use official Government of India guidance for the visa category that matches your nationality. Ask your own clinician about fitness to fly. Keep the return date movable. A remote review can change after you are examined."
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "Budget for more than the procedure. Flights, visa costs, lodging, local transport, food, a companion, discharge medicines, and follow-up visits are often outside the hospital estimate. Ask how long you may need to stay near the hospital, and whether the estimate assumes an uncomplicated recovery. Bypass generally means a longer stay near the hospital than an uncomplicated angioplasty. Message the coordination desk on WhatsApp at +91 90443 46292."
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "Before you fly home, take the discharge summary, the diagnosis, the angioplasty or operation report, the test results and images, the medicine list, activity instructions, the follow-up dates, and written advice on flying. Arrange a cardiologist at home before you leave when you can."
+        },
+        {
+          "id": "btn_085",
+          "type": "button",
+          "label": "Send the angiogram before any flights are booked",
+          "href": "https://wa.me/919044346292?text=I%20am%20considering%20travel%20to%20India.%20Please%20review%20the%20coronary%20angiogram%20and%20say%20whether%20angioplasty%20or%20bypass%20is%20the%20preliminary%20plan%2C%20and%20how%20long%20I%20should%20expect%20to%20remain%20near%20the%20hospital."
+        },
+        {
+          "id": "h_086",
+          "type": "heading",
+          "level": 2,
+          "text": "14. Questions to Ask Before You Decide"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "You do not need every question in one visit. Start with the ones that change your decision."
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "About the diagnosis:"
+        },
+        {
+          "id": "ol_089",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is the diagnosis, and which arteries are involved?",
+            "How severe and how complex is the disease on the angiogram?",
+            "Is this stable, or is it urgent?"
+          ]
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "About the options:"
+        },
+        {
+          "id": "ol_091",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Why this operation, and is the other one still reasonable?",
+            "Could medicines alone be appropriate?",
+            "What is the expected benefit, and what does this option leave untreated?",
+            "What could happen if treatment waits?"
+          ]
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "About risk, recovery, and the bill:"
+        },
+        {
+          "id": "ol_093",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What are my own risks, in plain terms?",
+            "How likely is another procedure later?",
+            "How do diabetes, the kidneys, or heart function change the plan?",
+            "How long might I stay, when could I work, and which medicines continue?",
+            "What is included in the written estimate, and what happens if the plan changes?",
+            "Has a heart team looked at the films, and would a second opinion delay anything urgent?"
+          ]
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "If you live abroad, also ask whether travel is reasonable, how long to remain nearby, when flying home is reasonable, which papers your doctor at home needs, and who that doctor should contact."
+        },
+        {
+          "id": "btn_095",
+          "type": "button",
+          "label": "Ask which tests could still change the choice",
+          "href": "https://wa.me/919044346292?text=Please%20list%20which%20tests%2C%20after%20I%20am%20seen%20in%20person%2C%20could%20still%20change%20the%20choice%20between%20angioplasty%20and%20bypass%2C%20and%20whether%20the%20quotation%20can%20change%20with%20them."
+        },
+        {
+          "id": "h_096",
+          "type": "heading",
+          "level": 2,
+          "text": "15. Frequently Asked Questions About Angioplasty vs Bypass Surgery"
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 3,
+          "text": "Which is better: angioplasty or bypass surgery?"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Neither is better for everyone. Angioplasty may suit selected narrowings. Bypass may offer advantages in some people with complex multivessel disease, left main disease, or diabetes with multivessel disease. The choice follows the anatomy, heart function, symptoms, other illnesses, and a clinical assessment. A lower price does not decide it."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "Is angioplasty safer than bypass surgery?"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Angioplasty is less invasive and the first recovery is often shorter. Overall safety depends on whether that procedure can treat the disease adequately. For some people, bypass offers better long-term results despite the larger operation. Ask for the risks in your own case."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "Is bypass surgery more effective than angioplasty?"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "For selected people with complex multivessel disease, bypass may offer better long-term results and fewer repeat procedures. For others, angioplasty treats the problem with a less invasive procedure. The anatomy decides. Effectiveness is not the same as the lower planning range."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "Can multiple blocked arteries be treated with angioplasty?"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "Sometimes. It depends on location, complexity, and whether PCI can treat the important narrowings well enough. Some people are better served by bypass. A cardiologist and a cardiac surgeon may need to review the films together."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I avoid bypass surgery if I have three blocked arteries?"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Not by counting to three. Anatomy, complexity, diabetes, heart function, and surgical risk all matter. Ask whether angioplasty, bypass, or medicines fit this angiogram. Do not treat “three arteries” as a rule for surgery or against it."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 3,
+          "text": "Can medication alone treat coronary artery disease?"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "It can be the right plan for some people, and it continues after either procedure for most people. Others need angioplasty or bypass because of symptoms, anatomy, risk, or an emergency. Do not stop medicines or delay a recommended procedure without the treating clinician."
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 3,
+          "text": "Which procedure has a shorter recovery?"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "Uncomplicated angioplasty generally has the shorter first recovery. GAF plans 1–3 nights typical for angioplasty and stenting, and 7–14 nights, then nearby recovery, for CABG. Bypass is major surgery. The NHS describes full recovery after CABG as commonly taking around two to three months, and the timeline varies. An emergency, another illness, or a complication can lengthen either stay."
+        },
+        {
+          "id": "h_111",
+          "type": "heading",
+          "level": 3,
+          "text": "Can coronary artery disease return after angioplasty or bypass surgery?"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "The process that forms plaque can continue. Disease can progress in untreated arteries, and stents or grafts can develop problems. Medicines, risk factors, follow-up, and the lifestyle measures you were given still matter after either procedure."
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 3,
+          "text": "Do I need medicines after angioplasty?"
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "Yes. Antiplatelet treatment is commonly prescribed after a stent, with other medicines for coronary disease and cardiovascular risk. The regimen depends on the case. Do not stop those medicines because the wrist puncture looks healed."
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 3,
+          "text": "Do I need medicines after bypass surgery?"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "Many people continue medicines for cholesterol, blood pressure, clotting risk, and other conditions. Follow the discharge prescription and the review dates. Healing of the wound is not a reason to stop them on your own."
+        },
+        {
+          "id": "h_117",
+          "type": "heading",
+          "level": 3,
+          "text": "Is bypass surgery better for patients with diabetes?"
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "CABG may offer advantages in selected people with diabetes and multivessel disease, especially when the anatomy is suitable for surgery. Diabetes alone does not settle it. The team should look at the pattern of disease and the surgical risk, including the kidneys."
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does angioplasty cost in India?"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "GAF Healthcare’s current cost page gives an indicative planning range of US$3,200–US$8,500 for coronary angioplasty and stenting, with a typical stay of 1–3 nights typical. The same page lists a US comparison of US$25,000–US$70,000, which is not an India price. Stents, complexity, tests, medicines, and the stay still move the bill. A chronic total occlusion is a different listing. Ask for a written estimate. See angioplasty cost in India."
+        },
+        {
+          "id": "h_121",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does bypass surgery cost in India?"
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "CABG is listed at US$5,500–US$14,000, with a typical stay of 7–14 nights, then nearby recovery. The US comparison of US$70,000–US$200,000 is not an India price. Intensive care, the operation, and a longer recovery can move the bill. A redo is listed separately, at US$8,500–US$20,000, typically 10–18 nights. Ask for an itemised estimate from the proposed operation. See bypass surgery cost in India."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I get a second opinion before bypass surgery?"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "It can help you understand why surgery is recommended and whether angioplasty or medicines remain reasonable. It is most useful when the decision is complex or the reason is unclear. It should not delay emergency treatment. Bring the angiogram images, not only the report."
+        },
+        {
+          "id": "h_125",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients travel to India for angioplasty or bypass surgery?"
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "People can seek an opinion and treatment in India when a clinician considers travel reasonable and the visa rules for their nationality are met. The hospital should review the records and explain the operation, the expected stay, and the costs. Uncomplicated angioplasty and bypass do not need the same amount of time near the hospital. Plan follow-up at home before you leave. A message to +91 90443 46292 is coordination, not a quotation."
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 3,
+          "text": "How do I choose the right cardiac specialist in India?"
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "Match the specialist to the operation being considered: an interventional cardiologist for angioplasty, a cardiac surgeon for bypass, and both when the choice is still open. Confirm the hospital can do that procedure and can look after complications, and ask for a written estimate. A general ranking is not a treatment plan. Registration can be checked on the National Medical Register."
+        },
+        {
+          "id": "h_129",
+          "type": "heading",
+          "level": 3,
+          "text": "Why is a chronic total occlusion not inside the US$3,200–US$8,500 band?"
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "A chronic total occlusion is a complete blockage treated by catheter, with different technique and time. GAF lists CTO angioplasty at US$5,500–US$14,000, typically 1–4 nights. That dollar band matches CABG on these pages. The stay and the operation do not. Do not budget a CTO from the ordinary angioplasty range, and do not treat it as bypass surgery."
+        },
+        {
+          "id": "h_131",
+          "type": "heading",
+          "level": 3,
+          "text": "Does the lower angioplasty range mean it is the better value?"
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "Only if angioplasty is the appropriate treatment. The ordinary angioplasty band is US$3,200–US$8,500. CABG is US$5,500–US$14,000, with a longer planning stay. A cheaper procedure that leaves important disease untreated is not the better value. Compare written estimates for the operation the team recommends."
+        },
+        {
+          "id": "btn_133",
+          "type": "button",
+          "label": "Ask who manages the medicines after you go home",
+          "href": "https://wa.me/919044346292?text=Please%20write%20the%20medicine%20plan%20and%20the%20first%20follow-up%20after%20angioplasty%20or%20bypass%2C%20and%20who%20my%20doctor%20at%20home%20should%20contact."
+        },
+        {
+          "id": "h_134",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion: Choose the Plan That Fits the Arteries"
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "Angioplasty and bypass surgery both treat coronary artery disease, and they do different jobs. Angioplasty can treat selected narrowings with a shorter first recovery. Bypass can offer important long-term advantages for some complex disease. Neither removes the need to manage the underlying disease."
+        },
+        {
+          "id": "p_136",
+          "type": "paragraph",
+          "text": "The useful next step is to understand the diagnosis, look at the films, and ask a cardiologist or a cardiac surgeon to explain the benefits, risks, and alternatives. When the choice is difficult, a heart-team discussion or a second opinion can help. If you are comparing hospitals in India, compare the service this operation needs, the person who will do it, the written costs, and the follow-up."
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "These pages are live:"
+        },
+        {
+          "id": "ul_138",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting)",
+            "[CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting))",
+            "[Angioplasty cost in India](/blogs/angioplasty-cost-in-india)",
+            "[Bypass surgery cost in India](/blogs/bypass-surgery-cost-in-india)",
+            "[Heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india)",
+            "[Cardiologists in India](/doctors/India/Cardiology)",
+            "[Cardiac surgeons in India](/doctors/India/Cardiac-Surgery)"
+          ]
+        },
+        {
+          "id": "h_139",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "ol_140",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "European Society of Cardiology — [2024 chronic coronary syndromes guideline](https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/chronic-coronary-syndromes/)",
+            "European Heart Journal — [2024 ESC guideline publication](https://academic.oup.com/eurheartj/article/45/36/3415/7743115)",
+            "American College of Cardiology — [key points from the 2024 ESC guideline](https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2024/09/01/15/01/2024-esc-guidelines-for-ccs-esc-2024)",
+            "American Heart Association — [cardiac procedures and surgeries](https://www.heart.org/en/health-topics/heart-attack/treatment-of-a-heart-attack/cardiac-procedures-and-surgeries)",
+            "JACC — [2023 chronic coronary disease guideline](https://www.jacc.org/doi/10.1016/j.jacc.2023.04.003)",
+            "American Heart Association — [coronary artery disease](https://www.heart.org/en/health-topics/consumer-healthcare/what-is-cardiovascular-disease/coronary-artery-disease)",
+            "NHS — [coronary angioplasty](https://www.nhs.uk/tests-and-treatments/coronary-angioplasty/)",
+            "NHS — [coronary artery bypass graft](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/) and [recovery](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/recovery/)",
+            "National Heart, Lung, and Blood Institute — [coronary artery bypass grafting](https://www.nhlbi.nih.gov/health/coronary-artery-bypass-grafting)",
+            "MedlinePlus — [coronary artery disease](https://medlineplus.gov/coronaryarterydisease.html)"
+          ]
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "This article is for general education. It has not been signed by a named cardiologist or cardiac surgeon. The choice among angioplasty, bypass surgery, and medicines depends on an individual assessment. Do not stop prescribed medicines, and do not postpone emergency care, because of something you read online."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Coronary angioplasty and stenting",
+          "href": "/costs/India/Cardiology/Coronary-Angioplasty-Stenting"
+        },
+        {
+          "label": "CABG cost",
+          "href": "/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)"
+        },
+        {
+          "label": "Angioplasty cost in India",
+          "href": "/blogs/angioplasty-cost-in-india"
+        },
+        {
+          "label": "Bypass surgery cost in India",
+          "href": "/blogs/bypass-surgery-cost-in-india"
+        },
+        {
+          "label": "Heart surgery recovery in India",
+          "href": "/blogs/heart-surgery-recovery-in-india"
+        },
+        {
+          "label": "Coronary angioplasty in India",
+          "href": "/treatments/coronary-angioplasty-in-india"
+        },
+        {
+          "label": "CABG surgery in India",
+          "href": "/treatments/cabg-surgery-in-india"
+        },
+        {
+          "label": "Cardiologists in India",
+          "href": "/doctors/India/Cardiology"
+        },
+        {
+          "label": "Cardiac surgeons in India",
+          "href": "/doctors/India/Cardiac-Surgery"
+        }
+      ]
+    },
     {
       "id": "art_angioplasty_cost_in_india",
       "slug": "angioplasty-cost-in-india",
