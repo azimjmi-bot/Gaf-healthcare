@@ -1644,9 +1644,1108 @@
       "name": "valve-recovery.webp",
       "alt": "Four steps after valve treatment: a monitored hospital bed, walking with a clinician, an echocardiogram, and a valve identification card",
       "addedAt": "2026-10-10T11:30:00.000Z"
+    },
+    {
+      "id": "media_heart_surgery_walking_webp",
+      "url": "/uploads/articles/heart-surgery-walking.webp",
+      "name": "heart-surgery-walking.webp",
+      "alt": "A patient with a small upper-chest dressing walking in a hospital corridor beside a clinician",
+      "addedAt": "2026-10-10T12:30:00.000Z"
+    },
+    {
+      "id": "media_recovery_by_procedure_webp",
+      "url": "/uploads/articles/recovery-by-procedure.webp",
+      "name": "recovery-by-procedure.webp",
+      "alt": "Three drawings: a person in bed with a chest dressing, a small wrist bandage, and a catheter from the groin to a mesh valve at the top of the heart",
+      "addedAt": "2026-10-10T12:30:00.000Z"
+    },
+    {
+      "id": "media_cardiac_rehab_walk_webp",
+      "url": "/uploads/articles/cardiac-rehab-walk.webp",
+      "name": "cardiac-rehab-walk.webp",
+      "alt": "A patient walking on a low step while a clinician watches a monitor that shows a heartbeat wave",
+      "addedAt": "2026-10-10T12:30:00.000Z"
+    },
+    {
+      "id": "media_recovery_follow_up_webp",
+      "url": "/uploads/articles/recovery-follow-up.webp",
+      "name": "recovery-follow-up.webp",
+      "alt": "Four steps: a clinician checking a limb dressing, a pill organizer, an echocardiogram, and a folder beside a suitcase",
+      "addedAt": "2026-10-10T12:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_heart_surgery_recovery_in_india",
+      "slug": "heart-surgery-recovery-in-india",
+      "title": "Heart Surgery Recovery in India: A Complete Guide for Patients and Families",
+      "excerpt": "Recovering from heart surgery takes time, patience and structured follow-up. This guide explains what patients can expect in hospital and at home, how cardiac rehabilitation helps, which warning signs require medical attention, and how international patients can plan a safer recovery after treatment in India.",
+      "date": "10 October 2026",
+      "publishedAt": "2026-10-10T12:30:00.000Z",
+      "updatedAt": "2026-10-10T12:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "recovery",
+        "heart surgery",
+        "rehabilitation",
+        "India",
+        "travel"
+      ],
+      "image": "/uploads/articles/heart-surgery-walking.webp",
+      "imageAlt": "A patient with a small upper-chest dressing walking in a hospital corridor beside a clinician",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Heart Surgery Recovery in India: Timeline, Tips & Follow-Up",
+      "seoDescription": "Learn what to expect after heart surgery in India, including recovery timelines, wound care, cardiac rehabilitation, warning signs, costs and follow-up for international patients.",
+      "canonical": "https://gaf.healthcare/blogs/heart-surgery-recovery-in-india",
+      "ogImage": "/uploads/articles/heart-surgery-walking.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Heart surgery recovery in India",
+        "Recovery time after heart surgery",
+        "Recovery after bypass surgery in India",
+        "Life after heart surgery",
+        "Cardiac rehabilitation in India",
+        "Heart surgery recovery timeline",
+        "Precautions after open-heart surgery",
+        "Recovery after valve replacement surgery",
+        "Follow-up after heart surgery",
+        "Heart surgery recovery for international patients"
+      ],
+      "blocks": [
+        {
+          "id": "p_001",
+          "type": "paragraph",
+          "text": "Heart surgery can improve symptoms or treat a serious condition. The operation is only one part of the journey. Medicines, wound care, rehabilitation and follow-up matter as much as the procedure itself."
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Patients ask how long recovery takes, when they can walk, climb stairs, return to work and travel home. The answers depend on the operation, general health, how severe the heart condition is, and whether a complication occurs."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "Recovery after coronary artery bypass grafting (CABG) is usually longer than recovery after an uncomplicated angioplasty. Recovery after open valve surgery usually differs from recovery after transcatheter aortic valve replacement (TAVR/TAVI). The NHS says many people need about two to three months for a substantial recovery after bypass surgery, and that individual timelines vary. [NHS: recovery after CABG](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/recovery/)."
+        },
+        {
+          "id": "html_004",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>Recovery after heart surgery depends on the procedure. Patients may spend several days to around a week or longer in hospital after major surgery, followed by weeks or months of recovery at home. Follow your own surgeon's instructions rather than using a general timeline as permission to resume activities.</p></div></aside>"
+        },
+        {
+          "id": "toc_005",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-how-long-does-it-take-to-recover-from-heart-surgery\">1. How Long Does It Take to Recover from Heart Surgery?</a></li><li><a href=\"#2-what-happens-immediately-after-heart-surgery\">2. What Happens Immediately After Heart Surgery?</a></li><li><a href=\"#3-heart-surgery-recovery-timeline-week-by-week\">3. Heart Surgery Recovery Timeline: Week by Week</a></li><li><a href=\"#4-recovery-after-different-types-of-heart-procedures\">4. Recovery After Different Types of Heart Procedures</a></li><li><a href=\"#5-wound-care-after-heart-surgery\">5. Wound Care After Heart Surgery</a></li><li><a href=\"#6-pain-fatigue-and-sleep\">6. Pain, Fatigue and Sleep</a></li><li><a href=\"#7-walking-exercise-and-everyday-activities\">7. Walking, Exercise and Everyday Activities</a></li><li><a href=\"#8-cardiac-rehabilitation-after-heart-surgery\">8. Cardiac Rehabilitation After Heart Surgery</a></li><li><a href=\"#9-medicines-after-heart-surgery\">9. Medicines After Heart Surgery</a></li><li><a href=\"#10-diet-during-recovery\">10. Diet During Recovery</a></li><li><a href=\"#11-emotional-recovery\">11. Emotional Recovery</a></li><li><a href=\"#12-warning-signs-when-to-seek-help\">12. Warning Signs: When to Seek Help</a></li><li><a href=\"#13-follow-up-after-heart-surgery\">13. Follow-Up After Heart Surgery</a></li><li><a href=\"#14-how-much-does-heart-surgery-recovery-cost-in-india\">14. How Much Does Heart Surgery Recovery Cost in India?</a></li><li><a href=\"#15-recovery-for-international-patients\">15. Recovery for International Patients</a></li><li><a href=\"#16-how-to-choose-a-hospital-for-surgery-and-recovery\">16. How to Choose a Hospital for Surgery and Recovery</a></li><li><a href=\"#17-mistakes-that-set-recovery-back\">17. Mistakes That Set Recovery Back</a></li><li><a href=\"#18-questions-to-ask-before-discharge\">18. Questions to Ask Before Discharge</a></li><li><a href=\"#19-frequently-asked-questions-about-heart-surgery-recovery-in-india\">19. Frequently Asked Questions About Heart Surgery Recovery in India</a></li><li><a href=\"#conclusion-recovery-is-part-of-the-treatment\">Conclusion: Recovery Is Part of the Treatment</a></li><li><a href=\"#sources\">Sources</a></li></ol></nav>"
+        },
+        {
+          "id": "btn_006",
+          "type": "button",
+          "label": "Ask for a recovery plan that names the operation",
+          "href": "https://wa.me/919044346292?text=Please%20review%20my%20records%20and%20tell%20me%20the%20usual%20hospital%20stay%2C%20activity%20limits%20and%20follow-up%20after%20the%20heart%20procedure%20being%20proposed.%20I%20do%20not%20want%20a%20generic%20timeline."
+        },
+        {
+          "id": "h_007",
+          "type": "heading",
+          "level": 2,
+          "text": "1. How Long Does It Take to Recover from Heart Surgery?"
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "There is no single timeline. The operation, the approach, heart function, age, other illnesses and complications all change it. The table below is orientation, not a prediction for one person."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "| Procedure | General recovery considerations |\n|---|---|\n| Coronary angioplasty and stenting | Often a shorter first recovery than open surgery. Limits depend on the access site, the condition, and whether the procedure was planned or an emergency |\n| Coronary artery bypass grafting (CABG) | Recovery commonly takes several weeks. Full recovery often takes around 2–3 months |\n| Open-heart valve repair or replacement | Usually weeks to months, depending on the operation and the person |\n| TAVR/TAVI | Often a shorter first recovery than surgical valve replacement. Monitoring and follow-up still matter |\n| Pacemaker or ICD implantation | Different from open-heart surgery. Wound care and temporary limits on arm movement may apply |\n| Complex or emergency cardiac surgery | May mean a longer hospital stay and a slower return to activity |"
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "Your own team should give you a plan for the operation you had."
+        },
+        {
+          "id": "h_011",
+          "type": "heading",
+          "level": 3,
+          "text": "What can make recovery longer"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Recovery may take longer with reduced pumping function, diabetes, kidney or lung disease, a recent heart attack, emergency surgery, infection, limited strength before the operation, more than one procedure in the same sitting, or difficulty with food, sleep or medicines. Age by itself does not decide recovery. Support at home matters."
+        },
+        {
+          "id": "h_013",
+          "type": "heading",
+          "level": 2,
+          "text": "2. What Happens Immediately After Heart Surgery?"
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "After major heart surgery, patients usually go to an intensive care unit or another closely watched area. The team watches rhythm, blood pressure, breathing, oxygen, urine, fluid balance and the wounds. Temporary tubes, drains, drips or breathing support may be needed."
+        },
+        {
+          "id": "h_015",
+          "type": "heading",
+          "level": 3,
+          "text": "The first 24–48 hours"
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "The team may watch the ECG, vital signs, pain and nausea, bleeding and drains, and blood tests. They help the patient sit up and move when it is safe, and they start breathing exercises. Emergency surgery or a complication can mean a longer stay in intensive care."
+        },
+        {
+          "id": "h_017",
+          "type": "heading",
+          "level": 3,
+          "text": "Moving to the ward"
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "Once the patient is stable enough, care moves to a ward. Short walks, sitting in a chair and ordinary tasks return under supervision. The aim is to avoid the problems of staying in bed, without ignoring the limits of the operation."
+        },
+        {
+          "id": "h_019",
+          "type": "heading",
+          "level": 3,
+          "text": "When can someone leave hospital?"
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "Discharge depends on stability, not a fixed number of days. Before leaving, pain, walking, the wound, medicines and basic tasks should be safe. Patients and caregivers should leave with written instructions on medicines, wound care, the next appointment, activity limits and symptoms that need urgent care."
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "The US National Heart, Lung, and Blood Institute describes recovery after [heart surgery](https://www.nhlbi.nih.gov/health/heart-surgery/recovery) and after [CABG](https://www.nhlbi.nih.gov/health/coronary-artery-bypass-grafting/recovery)."
+        },
+        {
+          "id": "img_022",
+          "type": "image",
+          "src": "/uploads/articles/heart-surgery-walking.webp",
+          "alt": "A patient with a small upper-chest dressing walking in a hospital corridor beside a clinician",
+          "caption": "Early walking is usually supervised. A chest dressing does not mean the person is ready for stairs, lifting or travel. The team sets the pace."
+        },
+        {
+          "id": "h_023",
+          "type": "heading",
+          "level": 2,
+          "text": "3. Heart Surgery Recovery Timeline: Week by Week"
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "This framework is for major surgery, especially open-heart surgery. It is not permission to drive, work, lift or fly."
+        },
+        {
+          "id": "h_025",
+          "type": "heading",
+          "level": 3,
+          "text": "Phase 1: First week"
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "**Main goal: become stable, and move early when it is safe.**"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "The first week may include intensive care, the ward and discharge planning. Some people stay longer. Tiredness, incision discomfort, a poor appetite, broken sleep and a change in mood are common. Short walks and breathing exercises are usual, at the intensity the team sets."
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "Before discharge, learn the medicine times, how to care for the wounds, who to call out of hours, and the date of the first review. Arrange transport and help at home."
+        },
+        {
+          "id": "h_029",
+          "type": "heading",
+          "level": 3,
+          "text": "Phase 2: Weeks 2–3"
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "**Main goal: rebuild ordinary tasks, slowly.**"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "Fatigue often continues. Energy can change from day to day. Help with bathing, meals, shopping and transport is common, especially after a sternotomy, when the breastbone was divided and closed. Feeling better does not end the restrictions."
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "Keep to the walking plan, check the wounds as instructed, take medicines as written, eat and drink within any fluid limit, and report symptoms that are getting worse. Do not wait for the next appointment if something is deteriorating."
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 3,
+          "text": "Phase 3: Weeks 4–6"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "**Main goal: more independence, still under guidance.**"
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "Some people manage more of the day. Others, after a complex operation or a complication, still need help. The review may cover the wound, symptoms, blood pressure, rhythm, medicines and what the person can do. Driving, lifting, work and sexual activity are individual decisions."
+        },
+        {
+          "id": "h_036",
+          "type": "heading",
+          "level": 3,
+          "text": "Phase 4: Weeks 6–12"
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "**Main goal: rehabilitation, and a gradual return toward usual activity.**"
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "For many people after uncomplicated CABG, this is continued recovery. The NHS says full recovery after CABG commonly takes two to three months, and that the timeline varies. Activity increases only as directed. Cardiac rehabilitation can help fitness and risk factors. The calendar alone does not clear someone for heavy lifting or a physical job."
+        },
+        {
+          "id": "h_039",
+          "type": "heading",
+          "level": 3,
+          "text": "After three months"
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "Some people feel substantially better. Others still tire easily. The condition that led to surgery still needs care: medicines, blood pressure, cholesterol, diabetes, tobacco, and cardiology visits. A successful operation does not end heart care."
+        },
+        {
+          "id": "btn_041",
+          "type": "button",
+          "label": "Ask which limits apply to this operation",
+          "href": "https://wa.me/919044346292?text=After%20my%20heart%20procedure%2C%20I%20need%20written%20limits%20for%20lifting%2C%20stairs%2C%20driving%20and%20flying%2C%20and%20the%20date%20of%20the%20first%20follow-up.%20Please%20do%20not%20use%20a%20general%20two-month%20rule."
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 2,
+          "text": "4. Recovery After Different Types of Heart Procedures"
+        },
+        {
+          "id": "h_043",
+          "type": "heading",
+          "level": 3,
+          "text": "Recovery after bypass surgery"
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "CABG uses a blood vessel to carry blood past a narrowed coronary artery. After conventional open CABG there is a chest incision and often another wound where the graft was taken. Chest, shoulder or back discomfort and fatigue are common. If the breastbone was divided, it needs time to heal. Follow the surgeon on lifting, pushing, pulling and arm movements."
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "GAF's cost page for [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) plans a typical stay of **7–14 nights, then nearby recovery**, and an indicative planning range of **US$5,500–US$14,000**. That is the hospital episode on the cost sheet, not a promise of discharge on a given day. Read [CABG surgery in India](/treatments/cabg-surgery-in-india) and [heart bypass surgery cost in India](/treatments/heart-bypass-surgery-cost-in-india). The NHS also explains [what a bypass graft is](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/what-it-is/) and [how it is done](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/how-its-done/)."
+        },
+        {
+          "id": "h_046",
+          "type": "heading",
+          "level": 3,
+          "text": "Recovery after angioplasty and stenting"
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "Angioplasty is usually done through the wrist or the groin. An uncomplicated case often has a shorter first recovery than open surgery. An emergency procedure or a heart attack can still need close watching. Follow the instructions for the access site. Take antiplatelet and other heart medicines as prescribed."
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "**Do not stop an antiplatelet medicine after a stent without the treating clinician.** Stopping it early can cause serious harm."
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "[Coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) is listed at an indicative planning range of **US$3,200–US$8,500**, with a typical stay of **1–3 nights**. The procedure page is [coronary angioplasty in India](/treatments/coronary-angioplasty-in-india)."
+        },
+        {
+          "id": "h_050",
+          "type": "heading",
+          "level": 3,
+          "text": "Recovery after heart valve surgery"
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "Recovery depends on the valve, the approach and the person's health. Some people need anticoagulation. The plan depends on the valve, the rhythm and other conditions. Leave with instructions on blood tests, follow-up imaging, dental care where it matters, and symptoms that need urgent review."
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "[Heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) is listed at **US$7,000–US$18,000**, typically **8–16 nights**. [Heart valve repair](/costs/India/Cardiac-Surgery/Heart-Valve-Repair) is **US$6,500–US$16,500**, typically **7–14 nights**. The guide [heart valve replacement cost in India](/blogs/heart-valve-replacement-cost-in-india) separates the valve device from the package. The procedure page is [heart valve replacement in India](/treatments/heart-valve-replacement-in-india)."
+        },
+        {
+          "id": "h_053",
+          "type": "heading",
+          "level": 3,
+          "text": "Recovery after TAVR/TAVI"
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "TAVR/TAVI treats selected aortic stenosis with a catheter, usually without the chest incision of open valve surgery. The first days may be shorter. Monitoring still matters, including the access vessel, heart rhythm and valve function. [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) is listed at **US$18,000–US$42,000**, typically **3–7 nights**. See [TAVR in India](/treatments/tavr-in-india)."
+        },
+        {
+          "id": "h_055",
+          "type": "heading",
+          "level": 3,
+          "text": "Recovery after a pacemaker or ICD"
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "A pacemaker or implantable cardioverter-defibrillator is not CABG. The pocket must heal, and certain arm movements may be limited for a time. Device checks confirm that it is working. Carry the device card. Know who to call for fainting or for repeated shocks from an ICD."
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "[Pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) is listed at **US$3,500–US$9,000**, typically **1–3 nights**. [ICD implantation](/costs/India/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)) is listed at **US$8,000–US$18,000**, typically **1–4 nights**. Read [pacemaker cost in India](/blogs/pacemaker-cost-in-india) and [ICD implantation cost in India](/blogs/icd-implantation-cost-in-india)."
+        },
+        {
+          "id": "img_058",
+          "type": "image",
+          "src": "/uploads/articles/recovery-by-procedure.webp",
+          "alt": "Three drawings: a person in bed with a chest dressing, a small wrist bandage, and a catheter from the groin to a mesh valve at the top of the heart",
+          "caption": "Left: rest after open surgery. Middle: a wrist dressing, a common angioplasty access site. Right: a catheter from the groin to a mesh valve at the top of the heart, a simplified picture of TAVR. These are not X-rays."
+        },
+        {
+          "id": "h_059",
+          "type": "heading",
+          "level": 2,
+          "text": "5. Wound Care After Heart Surgery"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "Discharge instructions should say how to clean the wound, when to shower, how to change dressings, and what not to put on the skin."
+        },
+        {
+          "id": "ul_061",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Wash your hands before touching a wound or a dressing.",
+            "Follow the hospital on bathing and dressing changes.",
+            "Do not use powders, creams, oils or home remedies unless the team approves them.",
+            "Do not soak the wound in a bath or a pool until you are told it is safe.",
+            "Wear clothes that do not rub the incision.",
+            "Follow separate instructions for a leg or arm wound where a graft was taken."
+          ]
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Mild tenderness or itching can be part of healing. Report increasing redness, warmth, swelling, a wound that is opening, pus, or fever. Do not wait for a routine visit if the wound is getting worse."
+        },
+        {
+          "id": "h_063",
+          "type": "heading",
+          "level": 3,
+          "text": "The breastbone"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "After many open operations the breastbone is closed and needs time to heal. Avoid heavy lifting and movements that strain the chest until the surgeon says they are safe. New clicking or a sense that the bone is moving, especially with increasing pain, should be reported. Do not copy a weight limit from the internet."
+        },
+        {
+          "id": "h_065",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Pain, Fatigue and Sleep"
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "Tiredness after major surgery is common. Pain, broken sleep, less activity, anaemia and medicines can all contribute. A stronger day can be followed by a tired one."
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Take pain relief as prescribed. Tell the team if pain is severe, increasing, or stopping you from breathing, sleeping or moving. Do not start a pharmacy painkiller, a herbal product or a supplement without checking it against your heart medicines and your kidneys."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "Break tasks up. Rest between them. Increase walking only as directed. Ask for help with anything that strains the chest. Fatigue that suddenly worsens, or that comes with chest discomfort, breathlessness or fainting, needs urgent care."
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "Sleep can be uncomfortable. Follow advice on position and pain relief. Tell the clinician about insomnia, severe anxiety or breathing trouble at night."
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 2,
+          "text": "7. Walking, Exercise and Everyday Activities"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "Walking is often part of recovery. Increase it with the clinician or physiotherapist, not from a fixed online schedule. Someone who had a planned uncomplicated operation may progress differently from someone who had an emergency."
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Ask how to use stairs, and whether someone should be with you. Stop and get advice for unusual breathlessness, dizziness, chest discomfort or palpitations."
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Lifting limits after open surgery often stay in place while the breastbone heals. Ask specifically about children, luggage, housework, gym equipment and a physical job. A smaller incision is not proof that there are no limits."
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "Do not drive until the clinician says you can control the car and react in an emergency, and until any local rule is met. Return to work depends on the job. A desk can still be too much if fatigue or pain persists. Ask when sexual activity is reasonable, and report chest pain, marked breathlessness or dizziness during it."
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Cardiac Rehabilitation After Heart Surgery"
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "Cardiac rehabilitation is a supervised programme for recovery and longer-term heart health. It can include exercise, education, food, risk factors and support for mood. It is not a gym class. The American Heart Association describes [what cardiac rehabilitation is](https://www.heart.org/en/health-topics/cardiac-rehab/what-is-cardiac-rehabilitation/) and [who may be eligible](https://www.heart.org/en/health-topics/cardiac-rehab/am-i-eligible-for-cardiac-rehab). A 2024 update lists the [core components](https://professional.heart.org/en/science-news/core-components-of-cardiac-rehabilitation-programs-2024-update/top-things-to-know)."
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "People who may be offered it include those who have had CABG, angioplasty and stenting, valve repair or replacement, a heart attack, or selected other heart treatments. The clinician confirms eligibility and timing."
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "A programme may review symptoms and medicines, build activity in a safe range, explain the condition, support food choices, address blood pressure, cholesterol, diabetes and tobacco, and help with anxiety or low mood. Plans are adjusted as recovery changes."
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "Some programmes are remote or hybrid. That depends on risk and on how much supervision the programme can give. Remote rehab does not replace an urgent in-person review if symptoms worsen. Ask whether a local, remote or hybrid programme is realistic after you go home."
+        },
+        {
+          "id": "img_080",
+          "type": "image",
+          "src": "/uploads/articles/cardiac-rehab-walk.webp",
+          "alt": "A patient walking on a low step while a clinician watches a monitor that shows a heartbeat wave",
+          "caption": "Cardiac rehabilitation is supervised activity plus education. The monitor in this drawing is only a teaching detail. The programme should match the operation and the person's condition."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Medicines After Heart Surgery"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "The list depends on the operation and the other conditions. It may include medicines that reduce clotting, control blood pressure, lower cholesterol, steady the rhythm, or remove fluid."
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "Use the discharge list. Know the dose, the time and the reason. Ask what to do if a dose is missed, which medicines are long term, and which new pharmacy products are unsafe. Do not stop an antiplatelet, an anticoagulant, or a medicine for rhythm or heart failure on your own."
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "If the list changes, ask what stopped, what is new, and which dose changed. International patients should have generic names as well as brand names, and should confirm what is available at home with a qualified professional. Do not substitute a medicine yourself."
+        },
+        {
+          "id": "btn_085",
+          "type": "button",
+          "label": "Ask for the discharge medicine list in writing",
+          "href": "https://wa.me/919044346292?text=Please%20prepare%20a%20discharge%20medicine%20list%20with%20generic%20names%2C%20doses%2C%20what%20to%20do%20if%20a%20dose%20is%20missed%2C%20and%20which%20medicines%20must%20not%20be%20stopped.%20I%20am%20travelling%20after%20treatment%20in%20India."
+        },
+        {
+          "id": "h_086",
+          "type": "heading",
+          "level": 2,
+          "text": "10. Diet During Recovery"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "Food supports healing and later heart health. Many people do well with vegetables, fruit, whole grains, suitable protein, and less excess salt, trans fat and added sugar. Kidney disease, heart failure or a fluid limit needs a specific plan. Ask for that plan. Do not copy a salt or fluid number from the internet."
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "Protein, as advised, helps healing. Tell the team about a poor appetite, nausea, constipation or an unexpected change in weight. Do not start a supplement or a herbal product without checking it against anticoagulants and antiplatelet medicines."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Emotional Recovery"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Relief and worry can sit together. Irritability, low mood, poor sleep and a loss of confidence are common. Set small daily goals. Ask the family for practical help. Tell the clinician about anxiety or low mood that is not settling. Do not judge your recovery by someone else's."
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "If you have thoughts of harming yourself, seek emergency care now and tell someone who is with you. Emotional distress after surgery is a reason to get help, not something to wait out alone."
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Warning Signs: When to Seek Help"
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 3,
+          "text": "Call local emergency services for:"
+        },
+        {
+          "id": "ul_094",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "New, severe or persistent chest pain or pressure.",
+            "Severe or sudden breathlessness.",
+            "Fainting, collapse or sudden severe weakness.",
+            "Signs of a stroke, such as a sudden droop of the face, weakness of an arm, or trouble speaking.",
+            "A very fast or irregular heartbeat with chest pain, breathlessness, faintness or severe dizziness.",
+            "Heavy bleeding or another emergency that is getting worse quickly."
+          ]
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "Do not drive yourself if this may be an emergency."
+        },
+        {
+          "id": "h_096",
+          "type": "heading",
+          "level": 3,
+          "text": "Contact the surgical or cardiac team promptly for:"
+        },
+        {
+          "id": "ul_097",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Fever or chills, using the temperature in your discharge sheet.",
+            "A wound that is more red, warm, swollen, leaking, or opening.",
+            "Breathlessness that is new or worse.",
+            "Increasing leg swelling or a sudden gain in weight.",
+            "Persistent palpitations or a new change in rhythm.",
+            "Pain that is worse or not controlled.",
+            "Trouble eating, drinking or taking medicines.",
+            "New calf pain or swelling, especially with breathlessness.",
+            "Any symptom your discharge sheet lists as urgent."
+          ]
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "If you cannot reach the team and the problem is severe, use emergency care. This list is not complete. The hospital should give procedure-specific warnings and a contact before discharge."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 2,
+          "text": "13. Follow-Up After Heart Surgery"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "The schedule depends on the operation, the hospital, symptoms and findings. A surgeon, a cardiologist or another clinician may review the wound, pain, blood pressure, heart rate, symptoms, medicines, rhythm, fluid, blood tests, an ECG or an echocardiogram, and rehabilitation. Not every visit needs every test."
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "Surgery treats a specific problem. Coronary disease, valve disease, rhythm problems, blood pressure and diabetes can still need long-term care. Keep the appointments even when you feel well. For people who have had CABG, the American Heart Association's 2026 update stresses clinician-led prevention, medicines, coordinated follow-up and cardiac rehabilitation. [Secondary prevention after CABG](https://professional.heart.org/en/science-news/secondary-prevention-after-coronary-artery-bypass-graft-surgery-2026-update)."
+        },
+        {
+          "id": "h_102",
+          "type": "heading",
+          "level": 2,
+          "text": "14. How Much Does Heart Surgery Recovery Cost in India?"
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "There is no single national price for “recovery.” People have different operations and need different support. Some items sit inside the hospital package. Others are billed later. GAF does not publish a separate fee for rehabilitation, wound checks or a longer stay. Those have to be asked for in writing."
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "What the cost pages do publish is an indicative planning range for the treatment episode, and a typical stay. These are planning bands from partner hospital cost sheets, not quotations, and not a price for the months at home."
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "| Procedure | India planning range | Typical stay on the cost page |\n|---|---|---|\n| [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | US$5,500–US$14,000 | 7–14 nights, then nearby recovery |\n| [Heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) | US$7,000–US$18,000 | 8–16 nights |\n| [Heart valve repair](/costs/India/Cardiac-Surgery/Heart-Valve-Repair) | US$6,500–US$16,500 | 7–14 nights |\n| [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) | US$18,000–US$42,000 | 3–7 nights typical |\n| [Angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) | US$3,200–US$8,500 | 1–3 nights typical |\n| [Pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) | US$3,500–US$9,000 | 1–3 nights |\n| [ICD implantation](/costs/India/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)) | US$8,000–US$18,000 | 1–4 nights |"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Ask the hospital to separate the procedure, the expected stay, medicines, tests, follow-up and exclusions. Ask whether the figure is an estimate or a package, and what raises it. Do not assume that a complication, extra ICU days or rehabilitation are included."
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "| Item | What to confirm |\n|---|---|\n| Hospital stay | Days included, and the charge for an extra day |\n| ICU | Days included, and what happens if intensive care is longer |\n| Medicines | Which inpatient and discharge medicines are included |\n| Tests | Whether later blood tests, ECGs or imaging are included |\n| Reviews | How many surgeon or cardiologist visits are included |\n| Wound care | Dressings, nursing, and treatment if the wound is a problem |\n| Cardiac rehabilitation | Whether a programme exists, what it costs, and whether it can continue at home |\n| Lodging and travel | Patient, caregiver, and room to delay the flight |\n| Unplanned care | How a readmission or a complication is billed |"
+        },
+        {
+          "id": "btn_108",
+          "type": "button",
+          "label": "Ask what extra nights and rehabilitation would cost",
+          "href": "https://wa.me/919044346292?text=Please%20tell%20me%20how%20many%20ICU%20and%20ward%20days%20are%20inside%20the%20quotation%2C%20what%20an%20extra%20day%20costs%2C%20and%20whether%20cardiac%20rehabilitation%20and%20the%20first%20follow-up%20visits%20are%20included."
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 2,
+          "text": "15. Recovery for International Patients"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "Plan for care, lodging, a caregiver, language and travel, not only the operation. Share records before booking flights. Travel should not rest on an online estimate alone. If the patient is unstable, use local emergency care. Do not wait in order to fly."
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "During the stay, know the planned procedure, why the stay might be longer, the medicine list, who arranges follow-up, and how to get the records. Before leaving the hospital, collect the discharge summary, the operation or procedure report, test results, the medicine list and the follow-up plan."
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "There is no universal number of days to remain in India. Do not buy a non-refundable ticket from a standard timeline. Fitness to fly depends on the procedure, symptoms, the length of the flight and the clinician's advice. Check the airline and the insurance. Do not fly against medical advice, or with severe chest pain, sudden breathlessness, fainting or signs of a stroke."
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "Before departure, the written handover for the doctor at home should include the diagnosis, the procedure, the discharge summary, recent tests, medicines with doses and duration, wound and activity instructions, the next tests, warning signs and who to contact."
+        },
+        {
+          "id": "img_114",
+          "type": "image",
+          "src": "/uploads/articles/recovery-follow-up.webp",
+          "alt": "Four steps: a clinician checking a limb dressing, a pill organizer, an echocardiogram, and a folder beside a suitcase",
+          "caption": "Before travel: a dressing check, medicines you can name, an echocardiogram if one is planned, and the papers for the doctor at home. The first drawing shows a limb dressing, as when a graft has been taken from the arm."
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help with hospital communication, records, appointments and practical travel on WhatsApp at +91 90443 46292. Fitness to fly and the treatment plan stay with the clinicians. A message to the desk is not medical clearance."
+        },
+        {
+          "id": "btn_116",
+          "type": "button",
+          "label": "Plan the flight only after the team clears it",
+          "href": "https://wa.me/919044346292?text=I%20need%20the%20treating%20team%20to%20say%20when%20flying%20is%20reasonable%20after%20heart%20surgery%20in%20India%2C%20and%20a%20written%20follow-up%20plan%20for%20my%20doctor%20at%20home%2C%20before%20I%20book%20the%20return%20ticket."
+        },
+        {
+          "id": "h_117",
+          "type": "heading",
+          "level": 2,
+          "text": "16. How to Choose a Hospital for Surgery and Recovery"
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "Compare more than the procedure price. Ask who operates and who looks after you afterwards. For major surgery, ask about the cardiac ICU, nursing, emergency tests and the specialists who can manage a complication. Ask whether physiotherapy, rehabilitation, a dietitian and support for mood are available. The discharge plan should cover wounds, medicines, activity, the next visit and warning signs."
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "Check registration on the [National Medical Register](https://nmr.nmc.org.in/). Accreditation is one fact. It is not a promise of an outcome. [Cardiac surgeons in India](/doctors/India/Cardiac-Surgery) and [cardiologists in India](/doctors/India/Cardiology) are directories, not rankings. City starting points include [Delhi NCR](/doctors/India/Delhi-NCR/Cardiac-Surgery), [Mumbai](/doctors/India/Mumbai/Cardiac-Surgery), [Bengaluru](/doctors/India/Bengaluru/Cardiac-Surgery), [Chennai](/doctors/India/Chennai/Cardiac-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Cardiac-Surgery). [Hospitals for cardiac surgery in India](/hospitals/India/Cardiac-Surgery) is the hospital directory."
+        },
+        {
+          "id": "h_120",
+          "type": "heading",
+          "level": 2,
+          "text": "17. Mistakes That Set Recovery Back"
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "Stopping medicines because you feel better. Increasing exercise too fast. Lifting before you are cleared. Ignoring a wound or a new symptom. Missing reviews. Taking an unapproved painkiller or supplement. Copying another person's timeline. Assuming a package includes every later cost. Booking an international flight without clearance. Going home with no help for the first days. If you are unsure, ask the team."
+        },
+        {
+          "id": "h_122",
+          "type": "heading",
+          "level": 2,
+          "text": "18. Questions to Ask Before Discharge"
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 3,
+          "text": "Medicines"
+        },
+        {
+          "id": "ul_124",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Which medicines, at what times, and which ones changed?",
+            "What if I miss a dose, and do I need blood tests?",
+            "Who do I call about a side effect?"
+          ]
+        },
+        {
+          "id": "h_125",
+          "type": "heading",
+          "level": 3,
+          "text": "Wound and activity"
+        },
+        {
+          "id": "ul_126",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "How do I protect the wounds, and what suggests infection?",
+            "How far should I walk now, and what must I not lift?",
+            "When can I drive, work and do other tasks?"
+          ]
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 3,
+          "text": "Follow-up"
+        },
+        {
+          "id": "ul_128",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "When is the next appointment, and who reviews me?",
+            "Do I need cardiac rehabilitation, and which tests are planned?",
+            "Who do I call outside clinic hours?"
+          ]
+        },
+        {
+          "id": "h_129",
+          "type": "heading",
+          "level": 3,
+          "text": "Travel"
+        },
+        {
+          "id": "ul_130",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Am I fit for the journey I have planned, and is there a wait before flying?",
+            "Which documents should I carry, and who should receive them at home?",
+            "What should I do if symptoms start after I return?"
+          ]
+        },
+        {
+          "id": "h_131",
+          "type": "heading",
+          "level": 2,
+          "text": "19. Frequently Asked Questions About Heart Surgery Recovery in India"
+        },
+        {
+          "id": "h_132",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does it take to recover from heart surgery?"
+        },
+        {
+          "id": "p_133",
+          "type": "paragraph",
+          "text": "It depends on the operation and the person. After CABG, the NHS describes full recovery as commonly taking around two to three months, and some people need longer. Angioplasty, TAVR, a pacemaker and open valve surgery have different timelines. Your team should give you a plan. Do not use a general month count as permission to resume an activity."
+        },
+        {
+          "id": "h_134",
+          "type": "heading",
+          "level": 3,
+          "text": "How many days does a patient stay in hospital after heart surgery?"
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "It depends on the operation, the condition and any complication. Major open surgery often includes intensive care and then several days on a ward. GAF's cost pages describe typical planning stays of 7–14 nights, then nearby recovery, for CABG; 8–16 nights for heart valve replacement; 3–7 nights for TAVR; and 1–3 nights for angioplasty. Those are planning windows, not a discharge date."
+        },
+        {
+          "id": "h_136",
+          "type": "heading",
+          "level": 3,
+          "text": "Is pain normal after open-heart surgery?"
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "Some pain around the incision, chest, back or shoulders is common. It should be manageable with the prescribed plan. Pain that is worsening or severe, especially with breathlessness or other worrying symptoms, needs a prompt review."
+        },
+        {
+          "id": "h_138",
+          "type": "heading",
+          "level": 3,
+          "text": "When can I walk after heart surgery?"
+        },
+        {
+          "id": "p_139",
+          "type": "paragraph",
+          "text": "Supervised movement often starts when the person is stable. The starting point depends on the operation. Follow the hospital or rehabilitation plan rather than a distance copied from another patient."
+        },
+        {
+          "id": "h_140",
+          "type": "heading",
+          "level": 3,
+          "text": "When can I return to normal activities?"
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "Ordinary tasks often return gradually. Lifting, driving, work and strenuous exercise can stay restricted. Ask the surgeon when each one is safe for you. A smaller incision does not cancel those questions."
+        },
+        {
+          "id": "h_142",
+          "type": "heading",
+          "level": 3,
+          "text": "Is cardiac rehabilitation necessary after heart surgery?"
+        },
+        {
+          "id": "p_143",
+          "type": "paragraph",
+          "text": "Many people are eligible after CABG, valve surgery, a heart attack and selected other treatments. The team confirms eligibility. A programme adds supervised activity, education and help with risk factors. It is not automatically included in a procedure package unless the hospital says so in writing."
+        },
+        {
+          "id": "h_144",
+          "type": "heading",
+          "level": 3,
+          "text": "What foods should I eat after heart surgery?"
+        },
+        {
+          "id": "p_145",
+          "type": "paragraph",
+          "text": "A pattern with suitable protein, vegetables, fruit and whole grains often supports healing. Salt, fluid and other limits depend on the person, especially with heart failure or kidney disease. Ask for a plan. Do not start supplements without checking them against your medicines."
+        },
+        {
+          "id": "h_146",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I travel back to my home country after heart surgery in India?"
+        },
+        {
+          "id": "p_147",
+          "type": "paragraph",
+          "text": "Some people can, after the treating team says the journey is reasonable. Timing varies with the operation, symptoms and the flight. Do not book from a general timeline, and do not fly with emergency symptoms."
+        },
+        {
+          "id": "h_148",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does recovery after heart surgery cost in India?"
+        },
+        {
+          "id": "p_149",
+          "type": "paragraph",
+          "text": "There is no single recovery price. GAF publishes indicative planning ranges for the treatment episode, such as US$5,500–US$14,000 for CABG and US$7,000–US$18,000 for heart valve replacement. Those ranges are not a fee for rehabilitation, extra nights, lodging or a delayed flight. Ask for an itemised estimate and a list of exclusions."
+        },
+        {
+          "id": "h_150",
+          "type": "heading",
+          "level": 3,
+          "text": "What warning signs should I watch for after heart surgery?"
+        },
+        {
+          "id": "p_151",
+          "type": "paragraph",
+          "text": "Severe chest pain, sudden breathlessness, fainting, signs of a stroke or heavy bleeding need emergency care. Fever, a wound that is getting worse, increasing swelling and new or worsening symptoms should be reported as the discharge sheet says. Do not drive yourself to hospital in an emergency."
+        },
+        {
+          "id": "h_152",
+          "type": "heading",
+          "level": 3,
+          "text": "Can heart surgery completely cure heart disease?"
+        },
+        {
+          "id": "p_153",
+          "type": "paragraph",
+          "text": "It may correct or improve a specific problem. It does not always remove the underlying disease or later risk. Many people still need medicines, changes in daily habits, rehabilitation and regular follow-up."
+        },
+        {
+          "id": "h_154",
+          "type": "heading",
+          "level": 3,
+          "text": "What documents should I carry when travelling home?"
+        },
+        {
+          "id": "p_155",
+          "type": "paragraph",
+          "text": "Carry the discharge summary, the operation or procedure report if there is one, recent tests, imaging reports, the medicine list with doses, wound and activity instructions, and the follow-up plan. Keep copies and give them to the clinician at home."
+        },
+        {
+          "id": "h_156",
+          "type": "heading",
+          "level": 3,
+          "text": "How can GAF Healthcare help international patients recovering in India?"
+        },
+        {
+          "id": "p_157",
+          "type": "paragraph",
+          "text": "GAF Healthcare can coordinate hospital communication, appointments, records and practical travel on WhatsApp at +91 90443 46292. Treatment decisions and fitness to travel stay with the clinical team. A message is not clearance to fly."
+        },
+        {
+          "id": "h_158",
+          "type": "heading",
+          "level": 3,
+          "text": "What hospital stay do the cost pages plan for CABG, valve surgery, TAVR and angioplasty?"
+        },
+        {
+          "id": "p_159",
+          "type": "paragraph",
+          "text": "The current cost pages list about 7–14 nights, then nearby recovery, for CABG; 8–16 nights for heart valve replacement; 7–14 nights for heart valve repair; 3–7 nights for TAVR/TAVI; 1–3 nights for coronary angioplasty and stenting; 1–3 nights for a pacemaker; and 1–4 nights for an ICD. These are typical planning stays for international patients on those pages. The treating team can keep someone longer."
+        },
+        {
+          "id": "h_160",
+          "type": "heading",
+          "level": 3,
+          "text": "Are rehabilitation and extra nights inside the published planning range?"
+        },
+        {
+          "id": "p_161",
+          "type": "paragraph",
+          "text": "Not as a promise. The ranges are indicative planning bands for the treatment episode. Ask whether ICU days, ward days, discharge medicines, the first reviews and any rehabilitation sessions are inside the quotation, and what an extra day costs. A complication or a readmission is usually discussed separately."
+        },
+        {
+          "id": "h_162",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I stop my stent medicine if the access site has healed?"
+        },
+        {
+          "id": "p_163",
+          "type": "paragraph",
+          "text": "No. Healing of the wrist or groin puncture does not mean an antiplatelet medicine can stop. The clinician who placed the stent decides the duration. Stopping early can cause a serious clot. Ask before any change, including a medicine bought without a prescription."
+        },
+        {
+          "id": "btn_164",
+          "type": "button",
+          "label": "Ask who reviews you after you return home",
+          "href": "https://wa.me/919044346292?text=I%20need%20a%20named%20follow-up%20plan%20after%20heart%20surgery%2C%20including%20who%20checks%20the%20wound%2C%20medicines%20and%20rehabilitation%20once%20I%20am%20back%20in%20my%20home%20country."
+        },
+        {
+          "id": "h_165",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion: Recovery Is Part of the Treatment"
+        },
+        {
+          "id": "p_166",
+          "type": "paragraph",
+          "text": "Recovery is more than waiting for an incision to close. It includes strength, the right medicines, follow-up, risk factors and knowing which symptoms cannot wait. Timelines differ. A written discharge plan, rehabilitation when it is offered, and a way to reach a clinician matter more than a date on a calendar."
+        },
+        {
+          "id": "p_167",
+          "type": "paragraph",
+          "text": "For people treated in India and then travelling home, the return flight should follow a medical assessment, not a brochure stay. Confirm the plan with the treating team before you commit to a ticket."
+        },
+        {
+          "id": "p_168",
+          "type": "paragraph",
+          "text": "These pages are live:"
+        },
+        {
+          "id": "ul_169",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[CABG surgery in India](/treatments/cabg-surgery-in-india)",
+            "[CABG cost](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting))",
+            "[Heart valve replacement cost in India](/blogs/heart-valve-replacement-cost-in-india)",
+            "[TAVR in India](/treatments/tavr-in-india)",
+            "[Coronary angioplasty in India](/treatments/coronary-angioplasty-in-india)",
+            "[Cardiologists in India](/doctors/India/Cardiology)",
+            "[Cardiac surgeons in India](/doctors/India/Cardiac-Surgery)"
+          ]
+        },
+        {
+          "id": "h_170",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "ol_171",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "NHS — [Recovery after coronary artery bypass grafting](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/recovery/)",
+            "National Heart, Lung, and Blood Institute — [Heart surgery recovery](https://www.nhlbi.nih.gov/health/heart-surgery/recovery)",
+            "National Heart, Lung, and Blood Institute — [Recovery after CABG](https://www.nhlbi.nih.gov/health/coronary-artery-bypass-grafting/recovery)",
+            "American Heart Association — [What is cardiac rehabilitation?](https://www.heart.org/en/health-topics/cardiac-rehab/what-is-cardiac-rehabilitation/)",
+            "American Heart Association — [Am I eligible for cardiac rehab?](https://www.heart.org/en/health-topics/cardiac-rehab/am-i-eligible-for-cardiac-rehab)",
+            "American Heart Association — [Core components of cardiac rehabilitation, 2024 update](https://professional.heart.org/en/science-news/core-components-of-cardiac-rehabilitation-programs-2024-update/top-things-to-know)",
+            "American Heart Association — [Secondary prevention after CABG, 2026 update](https://professional.heart.org/en/science-news/secondary-prevention-after-coronary-artery-bypass-graft-surgery-2026-update)",
+            "NHS — [What is a coronary artery bypass graft?](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/what-it-is/)",
+            "NHS — [How a coronary artery bypass graft is done](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/how-its-done/)",
+            "American Heart Association — [Heart surgery resources](https://www.heart.org/en/health-topics/consumer-healthcare/what-is-cardiovascular-disease/heart-surgery-resources)"
+          ]
+        },
+        {
+          "id": "p_172",
+          "type": "paragraph",
+          "text": "This article is for general education. It has not been signed by a named cardiologist or cardiac surgeon. Recovery instructions vary by procedure and by person. Follow the treating team, and use emergency care for emergency symptoms."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "CABG surgery in India",
+          "href": "/treatments/cabg-surgery-in-india"
+        },
+        {
+          "label": "CABG cost",
+          "href": "/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)"
+        },
+        {
+          "label": "Heart valve replacement cost in India",
+          "href": "/blogs/heart-valve-replacement-cost-in-india"
+        },
+        {
+          "label": "TAVR in India",
+          "href": "/treatments/tavr-in-india"
+        },
+        {
+          "label": "Coronary angioplasty in India",
+          "href": "/treatments/coronary-angioplasty-in-india"
+        },
+        {
+          "label": "Cardiologists in India",
+          "href": "/doctors/India/Cardiology"
+        },
+        {
+          "label": "Cardiac surgeons in India",
+          "href": "/doctors/India/Cardiac-Surgery"
+        }
+      ]
+    },
     {
       "id": "art_heart_valve_replacement_cost_in_india",
       "slug": "heart-valve-replacement-cost-in-india",
