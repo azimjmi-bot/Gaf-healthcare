@@ -1,6 +1,6 @@
 import "@/styles/article.css";
 import type { ReactNode } from "react";
-import type { Article, ArticleBlock } from "@/lib/cms/types";
+import { slugify, type Article, type ArticleBlock } from "@/lib/cms/types";
 import { MarkdownBody } from "@/components/markdown-body";
 import { PseoEstimateCta } from "@/components/pseo-estimate-cta";
 import { WhatsAppCtaLabel } from "@/components/whatsapp-icon";
@@ -70,9 +70,17 @@ function BlogEstimatePanel({
   );
 }
 
+function headingAnchor(text: string, used: Map<string, number>) {
+  const base = slugify(text) || "section";
+  const seen = used.get(base) ?? 0;
+  used.set(base, seen + 1);
+  return seen === 0 ? base : `${base}-${seen + 1}`;
+}
+
 function renderStandardBlock(
   block: ArticleBlock,
-  title?: string,
+  title: string | undefined,
+  used: Map<string, number>,
 ) {
   if (block.type === "paragraph") {
     const source = withoutDuplicateTitle(block.text, title);
@@ -81,9 +89,10 @@ function renderStandardBlock(
     ) : null;
   }
   if (block.type === "heading") {
-    if (block.level === 3) return <h3 key={block.id}>{block.text}</h3>;
-    if (block.level === 4) return <h4 key={block.id}>{block.text}</h4>;
-    return <h2 key={block.id}>{block.text}</h2>;
+    const id = headingAnchor(block.text, used);
+    if (block.level === 3) return <h3 id={id} key={block.id}>{block.text}</h3>;
+    if (block.level === 4) return <h4 id={id} key={block.id}>{block.text}</h4>;
+    return <h2 id={id} key={block.id}>{block.text}</h2>;
   }
   if (block.type === "quote") {
     return (
@@ -151,10 +160,12 @@ export function ArticleBlocks({
 }) {
   const subject = ctaSubject || title?.split(":")[0]?.trim() || "treatment";
 
+  const used = new Map<string, number>();
+
   if (!whatsappCtas) {
     return (
       <div className="article-body">
-        {blocks.map((block) => renderStandardBlock(block, title))}
+        {blocks.map((block) => renderStandardBlock(block, title, used))}
       </div>
     );
   }
@@ -211,7 +222,7 @@ export function ArticleBlocks({
       panel += 1;
       continue;
     }
-    rendered.push(renderStandardBlock(block, title));
+    rendered.push(renderStandardBlock(block, title, used));
     index += 1;
   }
 

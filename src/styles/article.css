@@ -19,6 +19,44 @@
 .article-body h4 {
   color: var(--foreground);
   font-family: var(--font-serif), ui-serif, Georgia, serif;
+  scroll-margin-top: 5.5rem;
+}
+.article-toc {
+  margin: 1.25rem 0 0.4rem;
+  padding: 0.95rem 1rem 1.05rem;
+  border: 1px solid var(--border);
+  border-radius: 0.85rem;
+  background: #fff;
+}
+.article-toc__label {
+  margin: 0;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 750;
+  color: var(--gold);
+}
+.article-toc ol {
+  margin: 0.55rem 0 0;
+  padding-inline-start: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.28rem;
+}
+.article-toc a {
+  color: var(--foreground);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+@media (max-width: 640px) {
+  .article-toc {
+    padding: 0.85rem 0.85rem 0.95rem;
+  }
+  .article-toc a {
+    font-size: 0.92rem;
+  }
 }
 .article-body h2 { font-size: clamp(1.55rem, 5vw, 2rem); }
 .article-body h3 { font-size: clamp(1.25rem, 4vw, 1.5rem); }
@@ -150,6 +188,12 @@
   color: var(--foreground);
   font-size: 1.02rem;
   line-height: 1.6;
+}
+.article-quick-answer__body p {
+  margin: 0.7rem 0 0;
+}
+.article-quick-answer__body p:first-child {
+  margin-top: 0;
 }
 .article-quick-answer__list {
   margin: 0.45rem 0 0;
