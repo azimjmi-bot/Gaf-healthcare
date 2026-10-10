@@ -1,3 +1,5 @@
+import "@/styles/article.css";
+import "@/styles/cost-page.css";
 import Image from "next/image";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { notFound } from "next/navigation";

@@ -1,3 +1,4 @@
+import "@/styles/article.css";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { notFound } from "next/navigation";
 import { AccreditationSeals } from "@/components/accreditation-seals";

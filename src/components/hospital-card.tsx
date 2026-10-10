@@ -1,3 +1,4 @@
+import "@/styles/directory-cards.css";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { BedDouble, CalendarDays, MapPin, Stethoscope } from "lucide-react";
 import { AccreditationSeals } from "@/components/accreditation-seals";

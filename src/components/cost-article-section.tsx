@@ -1,3 +1,5 @@
+import "@/styles/article.css";
+import "@/styles/cost-page.css";
 import type { ReactNode } from "react";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { ArticleBlocks } from "@/components/article-body";

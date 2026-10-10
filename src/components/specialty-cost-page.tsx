@@ -1,3 +1,4 @@
+import "@/styles/cost-page.css";
 import { Suspense } from "react";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { CatalogFilter } from "@/components/catalog-filter";

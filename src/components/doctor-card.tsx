@@ -1,5 +1,7 @@
 "use client";
 
+import "@/styles/directory-cards.css";
+
 import { DoctorPhoto } from "@/components/doctor-photo";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { useState, type ReactNode } from "react";

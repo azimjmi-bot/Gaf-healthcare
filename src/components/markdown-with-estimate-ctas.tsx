@@ -1,3 +1,4 @@
+import "@/styles/article.css";
 import { MarkdownBody } from "@/components/markdown-body";
 import { PseoEstimateCta } from "@/components/pseo-estimate-cta";
 import {

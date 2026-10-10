@@ -1,3 +1,4 @@
+import "@/styles/cost-page.css";
 /**
  * Country-level Treatment Cost page for every destination other than the primary one.
  *

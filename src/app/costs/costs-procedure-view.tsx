@@ -1,3 +1,5 @@
+import "@/styles/article.css";
+import "@/styles/cost-page.css";
 import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { CostArticleSection, costArticleData, costArticleFor } from "@/components/cost-article-section";

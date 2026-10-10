@@ -1,3 +1,4 @@
+import "@/styles/article.css";
 import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";

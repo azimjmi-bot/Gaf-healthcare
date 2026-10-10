@@ -1,3 +1,4 @@
+import "@/styles/cost-page.css";
 import type { ReactNode } from "react";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { Check, Clock, Stethoscope, BedDouble } from "lucide-react";

@@ -1,3 +1,4 @@
+import "@/styles/article.css";
 import { cookies } from "next/headers";
 import { ArticleBlocks, ArticleRelated, CoverImage } from "@/components/article-body";
 import { JsonLd } from "@/components/json-ld";

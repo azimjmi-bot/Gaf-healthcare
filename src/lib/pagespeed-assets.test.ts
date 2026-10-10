@@ -58,23 +58,46 @@ test("route-only stylesheets are no longer part of the global CSS", () => {
     "\n.hp-hero {",
     "\n.treatment-card {",
     "\n.treatment-filters {",
+    "\n.cost-hero {",
+    "\n.cost-sticky {",
+    "\n.dcard {",
+    "\n.dhero {",
+    "\n.hcard {",
+    "\n.article-body {",
+    "\n.md-body {",
   ]) {
     assert.ok(!globals.includes(prefix), `${prefix.trim()} should live in a route stylesheet`);
   }
+  // The homepage CTA still needs these, so they stay global.
+  assert.ok(globals.includes("\n.cost-panel {"));
+  assert.ok(globals.includes("\n.cost-btn {"));
   for (const file of [
     "src/app/cms/cms.css",
     "src/styles/origin-hub.css",
     "src/styles/treatments.css",
     "src/styles/hospital-profile.css",
+    "src/styles/cost-page.css",
+    "src/styles/directory-cards.css",
+    "src/styles/article.css",
   ]) {
     assert.ok(existsSync(join(process.cwd(), file)), file);
   }
   const cmsLayout = readFileSync(join(process.cwd(), "src/app/cms/layout.tsx"), "utf8");
   assert.match(cmsLayout, /import "\.\/cms\.css"/);
-  const card = readFileSync(join(process.cwd(), "src/components/treatment-card.tsx"), "utf8");
-  assert.match(card, /styles\/treatments\.css/);
-  const seals = readFileSync(join(process.cwd(), "src/components/accreditation-seals.tsx"), "utf8");
-  assert.match(seals, /styles\/hospital-profile\.css/);
+  const expectImport = (file: string, css: string) => {
+    const source = readFileSync(join(process.cwd(), file), "utf8");
+    assert.ok(source.includes(`@/styles/${css}.css`), `${file} should import ${css}.css`);
+  };
+  expectImport("src/components/treatment-card.tsx", "treatments");
+  expectImport("src/components/accreditation-seals.tsx", "hospital-profile");
+  expectImport("src/components/cost-page/cost-hero.tsx", "cost-page");
+  expectImport("src/app/costs/[...segments]/page.tsx", "cost-page");
+  expectImport("src/components/doctor-card.tsx", "directory-cards");
+  expectImport("src/components/hospital-card.tsx", "directory-cards");
+  expectImport("src/components/doctor-profile-hero.tsx", "directory-cards");
+  expectImport("src/components/markdown-body.tsx", "article");
+  expectImport("src/components/article-body.tsx", "article");
+  expectImport("src/app/treatments/[slug]/page.tsx", "article");
 });
 
 test("every origin-country hub imports the hub stylesheet", () => {

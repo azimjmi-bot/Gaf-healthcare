@@ -1,3 +1,4 @@
+import "@/styles/article.css";
 import type { ReactNode } from "react";
 import type { Article, ArticleBlock } from "@/lib/cms/types";
 import { MarkdownBody } from "@/components/markdown-body";

@@ -1,3 +1,5 @@
+import "@/styles/article.css";
+import "@/styles/cost-page.css";
 import "@/styles/treatments.css";
 import type { Metadata } from "next";
 import { costPath } from "@/lib/catalog-links";
