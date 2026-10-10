@@ -1560,9 +1560,1171 @@
       "name": "ablation-recovery-pathway.webp",
       "alt": "Four-step illustration from an electrophysiology laboratory to a follow-up ECG visit",
       "addedAt": "2026-10-10T08:00:00.000Z"
+    },
+    {
+      "id": "media_icd_generator_lead_webp",
+      "url": "/uploads/articles/icd-generator-lead.webp",
+      "name": "icd-generator-lead.webp",
+      "alt": "Simplified chest illustration of an ICD generator under the skin with one lead reaching the right ventricle",
+      "addedAt": "2026-10-10T09:30:00.000Z"
+    },
+    {
+      "id": "media_icd_vs_pacemaker_webp",
+      "url": "/uploads/articles/icd-vs-pacemaker.webp",
+      "name": "icd-vs-pacemaker.webp",
+      "alt": "Comparison of pacing pulses and a defibrillator shock",
+      "addedAt": "2026-10-10T09:30:00.000Z"
+    },
+    {
+      "id": "media_icd_device_types_webp",
+      "url": "/uploads/articles/icd-device-types.webp",
+      "name": "icd-device-types.webp",
+      "alt": "Four diagrams of single-lead, dual-lead, three-lead and subcutaneous ICD arrangements",
+      "addedAt": "2026-10-10T09:30:00.000Z"
+    },
+    {
+      "id": "media_icd_follow_up_webp",
+      "url": "/uploads/articles/icd-follow-up.webp",
+      "name": "icd-follow-up.webp",
+      "alt": "Follow-up pathway from wound care and a device check to an identification card and walking",
+      "addedAt": "2026-10-10T09:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_icd_implantation_cost_in_india",
+      "slug": "icd-implantation-cost-in-india",
+      "title": "ICD Implantation Cost in India: A Complete Patient Guide",
+      "excerpt": "An implantable cardioverter-defibrillator (ICD) can detect and treat certain dangerous heart rhythms. This guide explains ICD implantation cost in India, device types, hospital charges, recovery, ICD shocks, follow-up and practical planning for international patients.",
+      "date": "10 October 2026",
+      "publishedAt": "2026-10-10T09:30:00.000Z",
+      "updatedAt": "2026-10-10T09:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "ICD",
+        "defibrillator",
+        "cost",
+        "India",
+        "travel"
+      ],
+      "image": "/uploads/articles/icd-generator-lead.webp",
+      "imageAlt": "Simplified chest illustration of an ICD generator under the skin of the upper chest with one lead reaching the right ventricle",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "ICD Implantation Cost in India: Device Types & Recovery",
+      "seoDescription": "Learn ICD implantation cost in India, single- and dual-chamber devices, CRT-D, hospital charges, recovery, ICD shocks and follow-up for international patients.",
+      "canonical": "https://gaf.healthcare/blogs/icd-implantation-cost-in-india",
+      "ogImage": "/uploads/articles/icd-generator-lead.webp",
+      "allowIndex": true,
+      "keywords": [
+        "ICD implantation cost in India",
+        "Implantable cardioverter defibrillator cost in India",
+        "ICD surgery cost in India",
+        "AICD implantation cost in India",
+        "Single-chamber ICD cost",
+        "Dual-chamber ICD cost",
+        "CRT-D implantation cost in India",
+        "ICD procedure in India",
+        "ICD implantation recovery",
+        "ICD battery life",
+        "Best ICD specialist in India",
+        "ICD treatment for international patients"
+      ],
+      "blocks": [
+        {
+          "id": "p_001",
+          "type": "paragraph",
+          "text": "An implantable cardioverter-defibrillator (ICD) is a small electronic device designed to detect certain dangerous heart rhythms and treat them with electrical therapy when necessary. It may be recommended for selected patients at risk of life-threatening ventricular arrhythmias or sudden cardiac arrest."
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "The **ICD implantation cost in India** depends on the type of device, the number of leads, the hospital, the procedure, the patient's medical condition and the services included in the quotation."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "A conventional single-chamber ICD, a dual-chamber ICD and a cardiac resynchronisation therapy defibrillator (CRT-D) are different systems. They have different functions and may have different device and implantation costs."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "GAF Healthcare's existing cost page presents an indicative international-patient planning range of **US$8,000–US$18,000** for [ICD implantation in India](/costs/India/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator). This is a planning estimate, not a guaranteed hospital tariff or a universal price. The actual quotation depends on the selected device, clinical requirements, hospital and package inclusions."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "Before making a treatment decision, patients should understand why an ICD is recommended, how it differs from a pacemaker, what the procedure involves and how follow-up will be managed."
+        },
+        {
+          "id": "html_006",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>The cost of ICD implantation varies by device and hospital. GAF Healthcare's current India cost page gives an indicative planning range of <strong>US$8,000–US$18,000</strong> for international patients. This range should not be treated as a confirmed quotation for an individual patient.</p><p>The main cost factors include:</p><ul class=\"article-quick-answer__list\"><li>Single-chamber versus dual-chamber ICD.</li><li>Conventional ICD versus CRT-D.</li><li>Device and lead charges.</li><li>Specialist, procedure-room and anaesthesia fees.</li><li>Hospital and ICU stay.</li><li>Pre-procedure investigations.</li><li>Medicines and consumables.</li><li>Device checks and follow-up.</li><li>Additional procedures or treatment for complications.</li></ul><p><strong>Important:</strong> Ask the hospital to separate the device cost from the implantation package. Some published tariffs cover the procedure but exclude the device itself. For example, a government-linked CGHS rate document lists ICD procedure charges separately from the device cost. Such rates are administrative or reimbursement references and should not be treated as the final retail price for every patient.</p><p>The most useful estimate is a written, patient-specific quotation that identifies the device, procedure, expected hospital stay, inclusions, exclusions and possible additional charges.</p></div></aside>"
+        },
+        {
+          "id": "toc_007",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-is-an-implantable-cardioverter-defibrillator-icd\">1. What Is an Implantable Cardioverter-Defibrillator (ICD)?</a></li><li><a href=\"#2-icd-vs-pacemaker-what-is-the-difference\">2. ICD vs Pacemaker: What Is the Difference?</a></li><li><a href=\"#3-types-of-icd-devices-available-in-india\">3. Types of ICD Devices Available in India</a></li><li><a href=\"#4-icd-implantation-cost-in-india-what-determines-the-final-bill\">4. ICD Implantation Cost in India: What Determines the Final Bill?</a></li><li><a href=\"#5-what-does-an-icd-implantation-package-include\">5. What Does an ICD Implantation Package Include?</a></li><li><a href=\"#6-who-may-need-an-icd\">6. Who May Need an ICD?</a></li><li><a href=\"#7-how-is-icd-implantation-performed\">7. How Is ICD Implantation Performed?</a></li><li><a href=\"#8-risks-and-possible-complications-of-icd-implantation\">8. Risks and Possible Complications of ICD Implantation</a></li><li><a href=\"#9-recovery-after-icd-implantation\">9. Recovery After ICD Implantation</a></li><li><a href=\"#10-what-does-an-icd-shock-feel-like-and-what-should-you-do\">10. What Does an ICD Shock Feel Like, and What Should You Do?</a></li><li><a href=\"#11-icd-battery-life-device-checks-and-replacement\">11. ICD Battery Life, Device Checks and Replacement</a></li><li><a href=\"#12-living-with-an-icd\">12. Living With an ICD</a></li><li><a href=\"#13-icd-treatment-for-international-patients\">13. ICD Treatment for International Patients</a></li><li><a href=\"#14-how-to-choose-an-icd-specialist-and-hospital-in-india\">14. How to Choose an ICD Specialist and Hospital in India</a></li><li><a href=\"#15-questions-to-ask-before-icd-implantation\">15. Questions to Ask Before ICD Implantation</a></li><li><a href=\"#16-frequently-asked-questions-about-icd-implantation-cost-in-india\">16. Frequently Asked Questions About ICD Implantation Cost in India</a></li><li><a href=\"#conclusion-compare-the-device-the-clinical-plan-and-the-total-cost\">Conclusion: Compare the Device, the Clinical Plan and the Total Cost</a></li><li><a href=\"#sources\">Sources</a></li></ol></nav>"
+        },
+        {
+          "id": "btn_008",
+          "type": "button",
+          "label": "Request a written ICD quotation",
+          "href": "https://wa.me/919044346292?text=Please%20review%20my%20records%20and%20share%20a%20written%20quotation%20for%20ICD%20implantation%20in%20India.%20Please%20name%20the%20device%20type%20and%20say%20whether%20the%20generator%20and%20leads%20are%20included."
+        },
+        {
+          "id": "h_009",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Is an Implantable Cardioverter-Defibrillator (ICD)?"
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "An ICD is a battery-powered medical device implanted under the skin, usually in the chest. It continuously monitors the heart's electrical rhythm."
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "If it detects a dangerous rhythm that meets its programmed treatment criteria, it can deliver electrical therapy to help restore a safer rhythm. Depending on the device and the rhythm, treatment may involve antitachycardia pacing or an electrical shock."
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Many conventional ICD systems can also provide pacing for certain slow heart rhythms. An ICD's main purpose is different from that of a standard pacemaker: it is designed to detect and treat potentially life-threatening fast ventricular rhythms. The American Heart Association describes an [implantable cardioverter-defibrillator](https://www.heart.org/en/health-topics/arrhythmia/prevention--treatment-of-arrhythmia/implantable-cardioverter-defibrillator-icd)."
+        },
+        {
+          "id": "img_013",
+          "type": "image",
+          "src": "/uploads/articles/icd-generator-lead.webp",
+          "alt": "Simplified chest illustration of an ICD generator under the skin of the upper chest with one lead reaching the right ventricle",
+          "caption": "A conventional ICD sits under the skin of the upper chest. A lead runs through a vein to the heart. This is a teaching drawing, not a chest X-ray."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 3,
+          "text": "Why might a patient need an ICD?"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "A cardiologist may consider an ICD for selected patients with:"
+        },
+        {
+          "id": "ul_016",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "A history of cardiac arrest caused by a dangerous ventricular rhythm, when the cause is not fully reversible.",
+            "Certain sustained ventricular tachycardias.",
+            "Some patients with significantly reduced heart function who meet guideline-based criteria.",
+            "Certain inherited or structural heart conditions associated with a high risk of dangerous ventricular arrhythmias."
+          ]
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "Not every patient who has had a heart attack or has heart failure needs an ICD. The decision depends on the diagnosis, heart function, previous rhythm events, reversible causes, other illnesses and the likely benefits and risks of treatment. Catheter ablation is a different treatment for selected rhythms and is described in [cardiac ablation cost in India](/blogs/cardiac-ablation-cost-in-india). An ablation does not replace an ICD when an ICD is indicated."
+        },
+        {
+          "id": "h_018",
+          "type": "heading",
+          "level": 3,
+          "text": "What is sudden cardiac death?"
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "Sudden cardiac death is a death that occurs unexpectedly due to a cardiac cause, often associated with a dangerous heart rhythm. An ICD can reduce the risk of death from certain treatable ventricular arrhythmias in appropriately selected patients. It does not eliminate every cause of sudden death, prevent every abnormal rhythm or cure the underlying heart disease."
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "An ICD also does not directly prevent a heart attack caused by a blocked coronary artery. Patients may still need medication, coronary treatment and long-term risk-factor management."
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 2,
+          "text": "2. ICD vs Pacemaker: What Is the Difference?"
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "A pacemaker primarily supports the heart when the heartbeat is too slow or when electrical signals do not travel properly. An ICD monitors for dangerous fast ventricular rhythms and can deliver therapy to stop them. The devices are not interchangeable."
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "| Feature | Standard pacemaker | ICD |\n|---|---|---|\n| Main purpose | Support an excessively slow or otherwise inadequate heart rate | Detect and treat certain dangerous ventricular arrhythmias |\n| Electrical therapy | Usually delivers pacing impulses | May provide pacing, antitachycardia pacing and/or shocks, depending on the device |\n| Typical clinical reason | Selected conduction disorders or symptomatic bradycardia | Selected patients at risk of life-threatening ventricular arrhythmias |\n| Device design | Pulse generator and leads in conventional systems, or a leadless design for selected patients | Commonly a pulse generator and leads; some systems use a subcutaneous lead |\n| Can it provide pacing? | Yes | Many conventional ICDs can also provide pacing |\n| Follow-up | Device checks and monitoring | Device checks, rhythm-event review and monitoring of battery and leads |"
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "GAF's published India planning range for a [pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) is **US$3,500–US$9,000**. That figure is not an ICD price. Using a pacemaker quotation to budget for a defibrillator will understate the device."
+        },
+        {
+          "id": "img_025",
+          "type": "image",
+          "src": "/uploads/articles/icd-vs-pacemaker.webp",
+          "alt": "Two panels comparing a pacing lead with small regular pulses and a defibrillator lead with a shock at the heart",
+          "caption": "Left: pacing support for a slow rhythm. Right: a defibrillator can also deliver a shock for a dangerous fast ventricular rhythm. The drawing is a comparison of jobs, not a recommendation."
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 2,
+          "text": "3. Types of ICD Devices Available in India"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "The device selected is one of the most important factors affecting the total treatment cost."
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 3,
+          "text": "Single-chamber ICD"
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "A single-chamber ICD generally uses a lead connected to the right ventricle to sense cardiac activity and deliver treatment when required. It may be appropriate for selected patients whose clinical needs can be met by this configuration."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 3,
+          "text": "Dual-chamber ICD"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "A dual-chamber ICD typically uses leads associated with the right atrium and right ventricle. It may be considered when there is a specific clinical reason to monitor or pace both chambers. Having two leads is not automatically better for every patient."
+        },
+        {
+          "id": "h_032",
+          "type": "heading",
+          "level": 3,
+          "text": "CRT-D: cardiac resynchronisation therapy with a defibrillator"
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "CRT-D combines defibrillator capabilities with cardiac resynchronisation therapy. It may be recommended for selected patients with heart failure and specific electrical conduction abnormalities who meet criteria for both resynchronisation and a defibrillator."
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "A CRT-D system can be more complex than a conventional ICD. GAF's published India planning range for [CRT/CRT-D implantation](/costs/India/Cardiology/CRT-CRT-D-Implantation) is **US$10,000–US$22,000**, which is a different band from the US$8,000–US$18,000 ICD range. Do not accept an ICD quotation for a case that actually needs CRT-D."
+        },
+        {
+          "id": "h_035",
+          "type": "heading",
+          "level": 3,
+          "text": "Subcutaneous ICD (S-ICD)"
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "A subcutaneous ICD uses a lead positioned under the skin rather than a conventional lead placed inside the heart through a vein. It may be suitable for selected patients who need defibrillation but do not require the same ongoing pacing that a transvenous system can provide. It is not suitable for every patient."
+        },
+        {
+          "id": "h_037",
+          "type": "heading",
+          "level": 3,
+          "text": "Which ICD is best?"
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "There is no single ICD that is best for everyone. The decision depends on the rhythm disorder, heart function, pacing needs, medical history, anatomy and the expected benefits and risks. Do not select a device solely because it is cheaper or has more features."
+        },
+        {
+          "id": "img_039",
+          "type": "image",
+          "src": "/uploads/articles/icd-device-types.webp",
+          "alt": "Four simplified diagrams showing one ventricular lead, atrial and ventricular leads, a third lead along the left side of the heart, and a lead under the skin outside the heart",
+          "caption": "Teaching sketches, left to right and top to bottom: a single ventricular lead, two leads, a third lead used when resynchronisation is being considered, and a subcutaneous lead that stays outside the heart. Real anatomy and the chosen system can differ."
+        },
+        {
+          "id": "h_040",
+          "type": "heading",
+          "level": 3,
+          "text": "Planning ranges already published by GAF"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "These are indicative planning ranges for international patients, taken from the current cost pages. They are not hospital tariffs, and a quotation can sit outside them."
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "| System | GAF indicative planning range in India | Where it is published |\n|---|---|---|\n| ICD implantation | US$8,000–US$18,000 | [ICD cost page](/costs/India/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator) |\n| CRT/CRT-D implantation | US$10,000–US$22,000 | [CRT/CRT-D cost page](/costs/India/Cardiology/CRT-CRT-D-Implantation) |\n| Pacemaker implantation | US$3,500–US$9,000 | [Pacemaker cost page](/costs/India/Cardiology/Pacemaker-Implantation) |"
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "The same ICD procedure page can be opened for [Delhi NCR](/costs/India/Delhi-NCR/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator). A city page is not a different clinical price list. The hospital still has to name the device."
+        },
+        {
+          "id": "h_044",
+          "type": "heading",
+          "level": 2,
+          "text": "4. ICD Implantation Cost in India: What Determines the Final Bill?"
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "Two patients receiving ICDs may have different quotations because the devices and treatment requirements can differ substantially."
+        },
+        {
+          "id": "h_046",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Type of ICD"
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "Single-chamber, dual-chamber, subcutaneous ICD and CRT-D systems have different functions and device configurations."
+        },
+        {
+          "id": "h_048",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Device and lead charges"
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "The pulse generator and leads may be itemised separately or included in a package. The quotation should state the exact device model and what is included. The **implantable cardioverter defibrillator cost in India**, the **ICD surgery cost in India** and an **AICD implantation cost in India** are the same clinical question only when the device model matches. AICD is another name some hospitals use for an ICD."
+        },
+        {
+          "id": "h_050",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Hospital and room category"
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "Hospitals may charge different rates according to room type, ICU facilities and package structure. [Hospitals listed for cardiology in India](/hospitals/India/Cardiology) are a directory, not a tariff."
+        },
+        {
+          "id": "h_052",
+          "type": "heading",
+          "level": 3,
+          "text": "4. Specialist and procedure fees"
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "The estimate may include the electrophysiologist or cardiologist, anaesthesia or sedation, procedure-room charges and recovery monitoring. Confirm which professional fees are covered. A directory of [cardiologists in India](/doctors/India/Cardiology) does not rank who should implant the device."
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 3,
+          "text": "5. Pre-procedure tests"
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "Tests may include an ECG, blood investigations, echocardiography and other investigations depending on the patient's condition."
+        },
+        {
+          "id": "h_056",
+          "type": "heading",
+          "level": 3,
+          "text": "6. Hospital stay"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "Some packages include a defined number of ICU or ward days. The ICD cost page describes a typical stay of about 1–4 nights. Additional days may be billed separately."
+        },
+        {
+          "id": "h_058",
+          "type": "heading",
+          "level": 3,
+          "text": "7. Existing heart disease"
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "Patients with heart failure, coronary artery disease, kidney disease or other medical conditions may need additional investigations, monitoring or treatment. Bypass and valve surgery are different operations: [CABG surgery in India](/treatments/cabg-surgery-in-india) and [heart valve replacement in India](/treatments/heart-valve-replacement-in-india)."
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 3,
+          "text": "8. Previous devices or procedures"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "An initial ICD implantation differs from a generator replacement, a system upgrade or a lead-related procedure. Device extraction or treatment of an infection can involve a more complex pathway and should not be priced as a first implant."
+        },
+        {
+          "id": "h_062",
+          "type": "heading",
+          "level": 3,
+          "text": "9. Medicines and consumables"
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "The quotation should state whether medicines, dressings and consumables are included and whether any limits apply."
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 3,
+          "text": "10. Follow-up and remote monitoring"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "Ask whether the package includes the first device check and follow-up consultation. Remote monitoring equipment or services may be charged separately."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 3,
+          "text": "11. Complications or additional treatment"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Unplanned treatment, additional procedures or a prolonged hospital stay can increase the final bill. No hospital can guarantee that complications will never occur."
+        },
+        {
+          "id": "h_068",
+          "type": "heading",
+          "level": 2,
+          "text": "5. What Does an ICD Implantation Package Include?"
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "The term “ICD package” does not necessarily mean the complete device and every related expense are included."
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 3,
+          "text": "Possible inclusions"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "Depending on the hospital's terms, a package may cover specialist and procedure fees, procedure-room or electrophysiology-lab charges, anaesthesia or sedation, routine monitoring, a defined ICU or ward stay, investigations within specified limits, medicines and consumables within specified limits, and a standard postoperative assessment."
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 3,
+          "text": "Possible exclusions"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Charges that may be separate include the ICD generator and leads, a CRT-D or subcutaneous system, additional hospital days, investigations or medicines above the stated limits, extra consultations, device checks after the included period, treatment of complications, remote-monitoring equipment, and accommodation, transport and caregiver expenses."
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "A government-linked CGHS rate document lists procedure charges separately from device cost. That document is an administrative reference, not the retail price for a private international-patient package. [ESIC circular file](https://dmd.esic.gov.in/attachments/circularfile/03_10_2025_1764918064.pdf)."
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 3,
+          "text": "Questions to ask the billing team"
+        },
+        {
+          "id": "ol_076",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Is this the complete treatment cost or only the implantation procedure?",
+            "Which ICD type and model are proposed?",
+            "Are the generator and leads included?",
+            "Are specialist, anaesthesia and procedure-room fees included?",
+            "How many ICU and ward days are covered?",
+            "Which tests and medicines are included?",
+            "Are device interrogation and the first follow-up included?",
+            "What happens if the hospital stay is extended?",
+            "How are complications or additional procedures billed?",
+            "How long is the quotation valid?"
+          ]
+        },
+        {
+          "id": "btn_077",
+          "type": "button",
+          "label": "Ask whether the generator and leads are included",
+          "href": "https://wa.me/919044346292?text=I%20need%20an%20ICD%20quotation%20in%20India%20that%20states%20the%20device%20model%20and%20whether%20the%20generator%2C%20leads%2C%20hospital%20stay%20and%20first%20device%20check%20are%20included.%20The%20published%20planning%20range%20is%20not%20enough%20for%20my%20case."
+        },
+        {
+          "id": "h_078",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Who May Need an ICD?"
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 3,
+          "text": "Secondary prevention"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Secondary prevention generally refers to patients who have already experienced a serious ventricular arrhythmia or cardiac arrest and remain at risk of recurrence, after considering whether the cause was reversible."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 3,
+          "text": "Primary prevention"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "Primary prevention refers to selected patients who have not had a qualifying life-threatening rhythm event but are considered at elevated risk based on heart function, underlying disease and guideline-based criteria. Not every patient with a reduced ejection fraction qualifies. The cause of the heart dysfunction, response to medical therapy, and timing after a heart attack or procedure can affect eligibility."
+        },
+        {
+          "id": "h_083",
+          "type": "heading",
+          "level": 3,
+          "text": "What tests may be needed?"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "Assessment may include an ECG, echocardiography, ambulatory rhythm monitoring, blood tests, review of previous arrest or rhythm-event records, and an assessment of why heart function is reduced. The clinician should explain which findings support the recommendation and whether any reversible cause needs treatment first."
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 2,
+          "text": "7. How Is ICD Implantation Performed?"
+        },
+        {
+          "id": "h_086",
+          "type": "heading",
+          "level": 3,
+          "text": "Before implantation"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "The team reviews the diagnosis, previous rhythm events, medications, allergies and test results. Some medicines may need specific instructions. Do not stop anticoagulants or other prescribed medicines unless the treating team directs you to do so."
+        },
+        {
+          "id": "h_088",
+          "type": "heading",
+          "level": 3,
+          "text": "Conventional ICD implantation"
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "A conventional transvenous ICD is commonly implanted through an incision in the upper chest. The procedure generally involves preparing the area, making an incision for the device pocket, guiding the lead or leads through a vein, connecting them to the pulse generator, placing the generator under the skin, testing the system and closing the incision."
+        },
+        {
+          "id": "h_090",
+          "type": "heading",
+          "level": 3,
+          "text": "Subcutaneous ICD implantation"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "A subcutaneous ICD uses a different lead position. The specialist should explain suitability, testing and the pacing limits of that system."
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does the ICD procedure in India take?"
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "A routine implantation may take around one to two hours, but more complex procedures take longer. Preparation, recovery and observation add to the hospital visit. Ask for an estimate based on the proposed device."
+        },
+        {
+          "id": "h_094",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does the patient stay in hospital?"
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "Some patients leave after a short stay. Others need overnight observation or longer because of their condition or the procedure. Discharge depends on clinical status, the wound, the device check and the follow-up plan."
+        },
+        {
+          "id": "h_096",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Risks and Possible Complications of ICD Implantation"
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "ICD implantation is an established treatment, but it carries risks. Potential complications include bleeding or bruising around the device pocket, infection, blood-vessel injury, pneumothorax (air around the lung), lead displacement, device malfunction, inappropriate shocks, and a need for further procedures. The likelihood varies with the patient, the device and the procedure."
+        },
+        {
+          "id": "h_098",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Recovery After ICD Implantation"
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "**ICD implantation recovery** is often shorter than recovery after open-heart surgery, but patients still need wound care, activity limits and device follow-up."
+        },
+        {
+          "id": "img_100",
+          "type": "image",
+          "src": "/uploads/articles/icd-follow-up.webp",
+          "alt": "Four-step illustration of an upper-chest device, a clinic check with a programmer, an identification card with an ECG trace, and walking after recovery",
+          "caption": "After implantation: wound care, a device check, keeping the identification card, then a gradual return to activity. Timing is set by the treating team."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "First few days"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "Soreness, bruising or stiffness around the site is common. Follow instructions on dressings, showering and pain relief. Do not put unapproved creams on the incision."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "First few weeks"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "The team may limit heavy lifting and certain movements of the arm on the implantation side while the wound and leads settle."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "Returning to activities"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Driving, strenuous exercise and manual work need individual advice. The heart condition that led to the ICD may restrict activity even after the incision has healed."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 3,
+          "text": "When to seek care"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "Seek emergency care for severe chest pain, sudden breathlessness, fainting or collapse. Contact the treating team promptly for increasing redness, swelling, pain, wound discharge or fever. Patients should also have a written plan for what to do if the ICD delivers a shock."
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 2,
+          "text": "10. What Does an ICD Shock Feel Like, and What Should You Do?"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "A shock can feel sudden and startling. What to do depends on symptoms and whether the shock repeats."
+        },
+        {
+          "id": "ul_111",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "If you receive a shock and feel unwell, have chest pain, severe breathlessness, faintness or other serious symptoms, seek emergency medical care immediately.",
+            "If you receive repeated shocks, call emergency services even if you feel relatively well.",
+            "If you receive one shock and feel otherwise well, contact your ICD clinic or treating team immediately.",
+            "Do not drive yourself if you have serious symptoms or repeated shocks.",
+            "Follow the emergency instructions from your device clinic."
+          ]
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "The device stores the event so the team can see what the heart was doing. An ICD can also deliver an inappropriate shock. Do not try to change the settings yourself."
+        },
+        {
+          "id": "btn_113",
+          "type": "button",
+          "label": "Ask for a written shock plan",
+          "href": "https://wa.me/919044346292?text=I%20would%20like%20a%20written%20plan%20for%20what%20to%20do%20if%20an%20ICD%20delivers%20a%20shock%2C%20including%20who%20to%20contact%20after%20I%20leave%20India."
+        },
+        {
+          "id": "h_114",
+          "type": "heading",
+          "level": 2,
+          "text": "11. ICD Battery Life, Device Checks and Replacement"
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "**ICD battery life** depends on the model, how much pacing is required, how many therapies are delivered and other factors. The American Heart Association notes that ICD batteries often last around five to seven years, although actual longevity varies. The clinic monitors battery status. [Living with your ICD](https://www.heart.org/en/health-topics/arrhythmia/prevention--treatment-of-arrhythmia/living-with-your-icd)."
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "When the battery is low, the pulse generator may be replaced. Existing leads are sometimes kept if they work and the team agrees. Generator replacement is still a procedure and still carries risk. It is not automatically covered by the first-implant planning range."
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "Device checks may be in person or remote. A check can review battery status, lead function, stored rhythms, shocks, settings and whether programming should change. Keep the identification card."
+        },
+        {
+          "id": "h_118",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Living With an ICD"
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "Many patients return to ordinary activities after recovery. Restrictions depend on the heart condition and the device."
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "Follow the manufacturer's guidance on phones, headphones and magnets. Carry the ICD card at airport security and follow the screening advice you are given. Driving rules depend on why the ICD was implanted, any fainting or arrest, any therapies delivered, and the law in your own country. Commercial driving can be stricter."
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "Exercise is often encouraged when the team says it is appropriate. Contact sports that risk a direct blow to the device may need to change. Anxiety about shocks is common, especially after a cardiac arrest. Tell the clinic if fear, low mood or sleep trouble continues."
+        },
+        {
+          "id": "h_122",
+          "type": "heading",
+          "level": 2,
+          "text": "13. ICD Treatment for International Patients"
+        },
+        {
+          "id": "p_123",
+          "type": "paragraph",
+          "text": "Travel, accommodation, a caregiver, recovery time and follow-up sit on top of the procedure. Message the coordination desk on WhatsApp at +91 90443 46292. Clinical decisions, device choice and fitness to fly stay with the treating clinicians. If this is an emergency, do not delay local urgent care in order to travel."
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "| Expense | What to confirm |\n|---|---|\n| Specialist consultation | Whether a records review is included |\n| Investigations | Which tests are still required |\n| ICD device | Exact model, and whether it is inside the quotation |\n| Procedure | Professional fees, lab charges and monitoring |\n| Hospital stay | How many ICU or ward days are included |\n| Medicines | Inpatient and discharge medicines |\n| Device checks | Whether the first interrogation is included |\n| Accommodation and local transport | Patient and caregiver, including airport transfers |\n| Travel changes | Flexibility if discharge is delayed |\n| Home-country follow-up | A clinic that can interrogate that generator |"
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "Share ECGs, echocardiograms, rhythm recordings, discharge summaries and details of previous arrests before booking flights. Before leaving India, collect the discharge summary, ICD identification card, implantation report, medicine list, wound-care instructions, the device-check schedule and a contact for the device clinic."
+        },
+        {
+          "id": "btn_126",
+          "type": "button",
+          "label": "Plan travel around ICD implantation",
+          "href": "https://wa.me/919044346292?text=I%20am%20considering%20travel%20to%20India%20for%20an%20ICD.%20Please%20help%20coordinate%20a%20records%20review%20and%20a%20quotation%20that%20names%20the%20device%20before%20any%20flights%20are%20booked."
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 2,
+          "text": "14. How to Choose an ICD Specialist and Hospital in India"
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "ICD implantation is generally performed by a cardiologist with training in electrophysiology or device implantation. There is no published ranking of a single **best ICD specialist in India**. Check qualifications and registration on the [National Medical Register](https://nmr.nmc.org.in/), and ask who will do the implant, who will do the device checks, and whether that person has experience with the specific system (transvenous ICD, subcutaneous ICD or CRT-D)."
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "City directories are a place to start a conversation, not a quality score: [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology), [Mumbai](/doctors/India/Mumbai/Cardiology), [Bengaluru](/doctors/India/Bengaluru/Cardiology), [Chennai](/doctors/India/Chennai/Cardiology) and [Hyderabad](/doctors/India/Hyderabad/Cardiology)."
+        },
+        {
+          "id": "h_130",
+          "type": "heading",
+          "level": 2,
+          "text": "15. Questions to Ask Before ICD Implantation"
+        },
+        {
+          "id": "h_131",
+          "type": "heading",
+          "level": 3,
+          "text": "About the diagnosis"
+        },
+        {
+          "id": "ul_132",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "What rhythm problem or risk has been identified?",
+            "Why is an ICD recommended, and is this primary or secondary prevention?",
+            "Are there reversible causes that need treatment first?",
+            "What are the benefits and the limits of the device?"
+          ]
+        },
+        {
+          "id": "h_133",
+          "type": "heading",
+          "level": 3,
+          "text": "About the device"
+        },
+        {
+          "id": "ul_134",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Is the proposal a single-chamber ICD, a dual-chamber ICD, a subcutaneous ICD or a CRT-D?",
+            "What model is proposed, and will it also pace?",
+            "What battery life is expected for that model, not a general average?",
+            "How will it be monitored?"
+          ]
+        },
+        {
+          "id": "h_135",
+          "type": "heading",
+          "level": 3,
+          "text": "About the procedure and the bill"
+        },
+        {
+          "id": "ul_136",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Who performs the implantation, and what anaesthesia is planned?",
+            "How long might the admission last?",
+            "Is the generator included? Are the leads included?",
+            "Which tests, medicines and the first device check are covered?",
+            "How are complications or an extra night billed?"
+          ]
+        },
+        {
+          "id": "h_137",
+          "type": "heading",
+          "level": 3,
+          "text": "About life afterwards"
+        },
+        {
+          "id": "ul_138",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "When can I drive, work and exercise?",
+            "Which equipment should I keep away from the device?",
+            "What should I do if I receive a shock while travelling?",
+            "Who can check this device in my home country?"
+          ]
+        },
+        {
+          "id": "h_139",
+          "type": "heading",
+          "level": 2,
+          "text": "16. Frequently Asked Questions About ICD Implantation Cost in India"
+        },
+        {
+          "id": "h_140",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does ICD implantation cost in India?"
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "GAF Healthcare's current ICD cost page gives an indicative international-patient planning range of US$8,000–US$18,000. This is not a guaranteed quotation. The final cost depends on the device type, hospital, clinical complexity and what the package includes. Confirm a current, patient-specific estimate with the treating hospital. A single-chamber ICD and a CRT-D should not be given the same number without the device being named."
+        },
+        {
+          "id": "h_142",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the difference between an ICD and a pacemaker?"
+        },
+        {
+          "id": "p_143",
+          "type": "paragraph",
+          "text": "A pacemaker mainly supports the heart when it beats too slowly or when conduction is impaired. An ICD detects and treats certain dangerous ventricular rhythms and can deliver a shock. Many conventional ICDs can also pace, but the devices have different primary jobs and different published planning ranges: US$3,500–US$9,000 for a pacemaker and US$8,000–US$18,000 for an ICD."
+        },
+        {
+          "id": "h_144",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a single-chamber or dual-chamber ICD better?"
+        },
+        {
+          "id": "p_145",
+          "type": "paragraph",
+          "text": "Neither is universally better. A single-chamber **ICD** uses a ventricular lead. A dual-chamber system adds an atrial lead when there is a reason to sense or pace the atrium. The specialist should explain why that configuration is proposed. More leads are not automatically a better or safer choice."
+        },
+        {
+          "id": "h_146",
+          "type": "heading",
+          "level": 3,
+          "text": "What is CRT-D?"
+        },
+        {
+          "id": "p_147",
+          "type": "paragraph",
+          "text": "CRT-D combines cardiac resynchronisation therapy with a defibrillator. It may be recommended for selected patients with heart failure and a specific conduction pattern who meet criteria for both treatments. GAF lists CRT/CRT-D implantation at an indicative planning range of US$10,000–US$22,000, separate from the standard ICD range."
+        },
+        {
+          "id": "h_148",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does ICD implantation take?"
+        },
+        {
+          "id": "p_149",
+          "type": "paragraph",
+          "text": "A routine procedure may take around one to two hours. Complex venous anatomy, extra leads or CRT-D placement can take longer. Preparation, recovery and monitoring add to the hospital visit."
+        },
+        {
+          "id": "h_150",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does an ICD battery last?"
+        },
+        {
+          "id": "p_151",
+          "type": "paragraph",
+          "text": "The American Heart Association states that ICD batteries often last around five to seven years, but life varies by device and by how much therapy it delivers. Regular checks show when replacement should be planned. Generator replacement is a later procedure and is not assumed to be inside the first quotation."
+        },
+        {
+          "id": "h_152",
+          "type": "heading",
+          "level": 3,
+          "text": "Does an ICD prevent heart attacks?"
+        },
+        {
+          "id": "p_153",
+          "type": "paragraph",
+          "text": "No. An ICD treats certain dangerous heart rhythms. It does not open a blocked coronary artery. Medicines, and sometimes stents or bypass surgery, may still be needed for coronary disease."
+        },
+        {
+          "id": "h_154",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I do if my ICD shocks me?"
+        },
+        {
+          "id": "p_155",
+          "type": "paragraph",
+          "text": "If you have severe symptoms, chest pain, breathlessness, fainting or repeated shocks, seek emergency care. If you receive one shock and otherwise feel well, contact the ICD clinic immediately. Do not ignore a shock and do not drive yourself if you are unwell or have had several shocks."
+        },
+        {
+          "id": "h_156",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I travel by air after ICD implantation?"
+        },
+        {
+          "id": "p_157",
+          "type": "paragraph",
+          "text": "Many patients can fly after recovery, but the timing depends on the procedure, the heart condition and the clinician's assessment. There is no universal number of days. Ask before booking, and keep spare days in case the wound or the device check needs more time."
+        },
+        {
+          "id": "h_158",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I have an MRI with an ICD?"
+        },
+        {
+          "id": "p_159",
+          "type": "paragraph",
+          "text": "Some systems are MR Conditional under specified conditions. Eligibility depends on the exact generator, the leads and the scan protocol. Tell the radiology team you have a device and ask the device clinic before any MRI. Do not assume that “ICD” on its own means the scan is allowed."
+        },
+        {
+          "id": "h_160",
+          "type": "heading",
+          "level": 3,
+          "text": "Will I need medicines after ICD implantation?"
+        },
+        {
+          "id": "p_161",
+          "type": "paragraph",
+          "text": "Often, yes. An ICD does not replace heart-failure medicines, anticoagulants or other treatment for the underlying disease. Do not stop them because the device is in place."
+        },
+        {
+          "id": "h_162",
+          "type": "heading",
+          "level": 3,
+          "text": "Can an ICD be replaced?"
+        },
+        {
+          "id": "p_163",
+          "type": "paragraph",
+          "text": "The pulse generator is replaced when the battery is nearing depletion, if the team recommends it. Lead problems, infection or an upgrade to CRT-D can require a different operation. Those pathways are priced separately from a first implant."
+        },
+        {
+          "id": "h_164",
+          "type": "heading",
+          "level": 3,
+          "text": "How can GAF Healthcare help international patients?"
+        },
+        {
+          "id": "p_165",
+          "type": "paragraph",
+          "text": "GAF Healthcare can coordinate hospital communication, appointments, records, quotations and practical travel on WhatsApp at +91 90443 46292. Diagnosis, device selection and fitness to travel remain with the treating clinicians. A coordination message is not a quotation."
+        },
+        {
+          "id": "h_166",
+          "type": "heading",
+          "level": 3,
+          "text": "Does the US$8,000–US$18,000 range include the generator and the leads?"
+        },
+        {
+          "id": "p_167",
+          "type": "paragraph",
+          "text": "Not necessarily. That figure is an indicative planning range for an ICD episode, not a promise that every hospital folds the generator and leads into one number. Some tariffs bill the procedure and the device apart. Ask for both lines in writing, with the model name, before comparing two hospitals."
+        },
+        {
+          "id": "h_168",
+          "type": "heading",
+          "level": 3,
+          "text": "Why should I not use the ICD range for a CRT-D?"
+        },
+        {
+          "id": "p_169",
+          "type": "paragraph",
+          "text": "CRT-D adds resynchronisation leads and a different generator. GAF publishes a separate indicative range of US$10,000–US$22,000 for CRT/CRT-D implantation. If the specialist says resynchronisation is required, the quotation should be for that system, not for a single-chamber ICD."
+        },
+        {
+          "id": "h_170",
+          "type": "heading",
+          "level": 3,
+          "text": "What is a subcutaneous ICD, and is it the same price?"
+        },
+        {
+          "id": "p_171",
+          "type": "paragraph",
+          "text": "A subcutaneous ICD places the lead under the skin instead of through a vein into the heart. It can defibrillate, but it does not provide the same pacing as a transvenous system, so it is only suitable for selected patients. It is a different device plan. The US$8,000–US$18,000 band should not be assumed to include it unless the quotation names that system."
+        },
+        {
+          "id": "h_172",
+          "type": "heading",
+          "level": 3,
+          "text": "Which records should I send before asking for an ICD quotation?"
+        },
+        {
+          "id": "p_173",
+          "type": "paragraph",
+          "text": "Send ECGs, any recording of a cardiac arrest or ventricular tachycardia, echocardiography or cardiac MRI, the ejection fraction, a current medicine list, and notes on previous heart attacks, bypass, valve surgery or device implants. Say whether this would be a first ICD, a generator change or an upgrade. Without that, a hospital can only describe its usual package."
+        },
+        {
+          "id": "btn_174",
+          "type": "button",
+          "label": "Ask about device checks after you go home",
+          "href": "https://wa.me/919044346292?text=I%20need%20to%20know%20who%20can%20check%20an%20ICD%20after%20I%20return%20home%2C%20and%20whether%20the%20first%20interrogation%20is%20included%20in%20the%20India%20quotation."
+        },
+        {
+          "id": "h_175",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion: Compare the Device, the Clinical Plan and the Total Cost"
+        },
+        {
+          "id": "p_176",
+          "type": "paragraph",
+          "text": "An ICD can be an important treatment for selected patients at risk of life-threatening ventricular arrhythmias. The right device and the final bill depend on the individual case."
+        },
+        {
+          "id": "p_177",
+          "type": "paragraph",
+          "text": "Before proceeding, understand why an ICD is recommended, which system is proposed, whether the generator and leads are inside the quotation, and who will read the device after you go home. The US$8,000–US$18,000 figure is a planning range for ICD implantation. CRT-D and pacemaker pathways have their own published ranges. None of them is a confirmed hospital price."
+        },
+        {
+          "id": "p_178",
+          "type": "paragraph",
+          "text": "These live pages match this subject:"
+        },
+        {
+          "id": "ul_179",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[ICD implantation cost in India](/costs/India/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator)",
+            "[ICD implantation in Delhi NCR](/costs/India/Delhi-NCR/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator)",
+            "[CRT/CRT-D implantation](/costs/India/Cardiology/CRT-CRT-D-Implantation)",
+            "[Pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation)",
+            "[Cardiologists in India](/doctors/India/Cardiology)",
+            "[Cardiac ablation cost in India](/blogs/cardiac-ablation-cost-in-india)"
+          ]
+        },
+        {
+          "id": "h_180",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "p_181",
+          "type": "paragraph",
+          "text": "Clinical descriptions follow public patient information. They are not a treatment protocol."
+        },
+        {
+          "id": "ol_182",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "American Heart Association — [Implantable cardioverter defibrillator (ICD)](https://www.heart.org/en/health-topics/arrhythmia/prevention--treatment-of-arrhythmia/implantable-cardioverter-defibrillator-icd)",
+            "American Heart Association — [Living with your ICD](https://www.heart.org/en/health-topics/arrhythmia/prevention--treatment-of-arrhythmia/living-with-your-icd)",
+            "American Heart Association — [Questions to ask your doctor about an ICD](https://www.heart.org/en/health-topics/arrhythmia/prevention--treatment-of-arrhythmia/questions-to-ask-your-doctor--implantable-cardioverter-defibrillator-icd)",
+            "American Heart Association — [Implantable medical devices](https://www.heart.org/en/health-topics/heart-attack/treatment-of-a-heart-attack/implantable-medical-devices)",
+            "American Heart Association — [Devices and surgical procedures to treat heart failure](https://www.heart.org/en/health-topics/heart-failure/treatment-options-for-heart-failure/devices-and-surgical-procedures-to-treat-heart-failure)",
+            "Cambridge University Hospitals NHS Foundation Trust — [ICD post-implant information](https://www.cuh.nhs.uk/patient-information/implantable-cardioverter-defibrillator-post-implant-ward-k2/)",
+            "Government-linked ESIC — [published CGHS procedure-rate document](https://dmd.esic.gov.in/attachments/circularfile/03_10_2025_1764918064.pdf)",
+            "National Medical Commission — [National Medical Register](https://nmr.nmc.org.in/)"
+          ]
+        },
+        {
+          "id": "p_183",
+          "type": "paragraph",
+          "text": "This article is for general education. It has not been signed by a named cardiologist. The need for an ICD, the device type, procedural risks and follow-up depend on individual assessment. Hospital tariffs change, and a package may exclude the device. Confirm clinical and financial details with the treating hospital."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "ICD implantation cost in India",
+          "href": "/costs/India/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator"
+        },
+        {
+          "label": "CRT/CRT-D implantation",
+          "href": "/costs/India/Cardiology/CRT-CRT-D-Implantation"
+        },
+        {
+          "label": "Pacemaker implantation",
+          "href": "/costs/India/Cardiology/Pacemaker-Implantation"
+        },
+        {
+          "label": "Cardiologists in India",
+          "href": "/doctors/India/Cardiology"
+        },
+        {
+          "label": "Cardiac ablation cost in India",
+          "href": "/blogs/cardiac-ablation-cost-in-india"
+        }
+      ]
+    },
     {
       "id": "art_cardiac_ablation_cost_in_india",
       "slug": "cardiac-ablation-cost-in-india",
