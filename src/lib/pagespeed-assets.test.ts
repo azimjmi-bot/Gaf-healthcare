@@ -37,6 +37,18 @@ test("English root layout does not construct unused Noto families", () => {
   assert.match(layout, /clientMessagesFor/);
 });
 
+test("root layout ships no webfonts: system stacks avoid the font dependency chain and the preconnect to '/'", () => {
+  const layout = readFileSync(join(process.cwd(), "src/app/layout.tsx"), "utf8");
+  assert.doesNotMatch(layout, /next\/font/);
+  const globals = readFileSync(join(process.cwd(), "src/app/globals.css"), "utf8");
+  assert.match(globals, /--font-body:\s*ui-sans-serif, system-ui/);
+  assert.match(globals, /--font-serif:\s*ui-serif, Georgia/);
+  for (const file of ["src/app/globals.css", "src/styles/hospital-profile.css", "src/app/cms/cms.css"]) {
+    const css = readFileSync(join(process.cwd(), file), "utf8");
+    assert.doesNotMatch(css, /--font-geist-sans|--font-cormorant/, file);
+  }
+});
+
 test("route-only stylesheets are no longer part of the global CSS", () => {
   const globals = readFileSync(join(process.cwd(), "src/app/globals.css"), "utf8");
   for (const prefix of [

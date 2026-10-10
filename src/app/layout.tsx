@@ -1,5 +1,4 @@
 import type { Metadata, Viewport } from "next";
-import { Cormorant_Garamond, Geist } from "next/font/google";
 import { DeferredAnalytics } from "@/components/deferred-analytics";
 import { LocaleFontLinks } from "@/components/locale-font-links";
 import { LocaleProvider } from "@/components/locale-provider";
@@ -17,21 +16,6 @@ import { site } from "@/lib/site";
 import "./globals.css";
 
 const GA_MEASUREMENT_ID = "G-F12D7QK2B2";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "optional",
-  preload: false,
-});
-
-const cormorant = Cormorant_Garamond({
-  variable: "--font-cormorant",
-  subsets: ["latin"],
-  weight: ["500", "600", "700"],
-  preload: false,
-  display: "optional",
-});
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -149,7 +133,7 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
     <html
       lang={locale}
       dir={dir}
-      className={`${geistSans.variable} ${cormorant.variable} h-full`}
+      className="h-full"
     >
       <head>
         <LocaleFontLinks locale={locale} />

@@ -43,7 +43,7 @@
   }
 }
 .hp-hero__title {
-  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-size: clamp(2.1rem, 4vw, 3.4rem);
   line-height: 1.08;
 }
@@ -237,13 +237,13 @@
 }
 .hp-section h2,
 .hp-faculty h3 {
-  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-size: clamp(1.7rem, 2.6vw, 2.35rem);
 }
 .hp-subhead {
   margin-top: 2.5rem;
   margin-bottom: 1rem;
-  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-size: 1.7rem;
 }
 .hp-prose {
@@ -302,7 +302,7 @@
   padding: 1.1rem 1.2rem;
 }
 .hp-quote blockquote p {
-  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-size: 1.45rem;
   line-height: 1.25;
 }
@@ -629,7 +629,7 @@
   padding: 1.1rem 1.2rem;
 }
 .hp-nearby p {
-  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-size: 1.4rem;
 }
 .hp-nearby span {
@@ -643,7 +643,7 @@
   padding-block: 3.5rem;
 }
 .hp-journey h2 {
-  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-size: clamp(1.8rem, 3vw, 2.6rem);
 }
 .hp-journey p {

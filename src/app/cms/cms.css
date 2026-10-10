@@ -37,7 +37,7 @@
   flex-direction: column;
 }
 .cms-nav__brand {
-  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-size: 1.6rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
@@ -106,7 +106,7 @@
 .cms-page h1,
 .cms-editor__bar h1,
 .cms-login h1 {
-  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
   font-size: 2.2rem;
 }
 .cms-kicker {
@@ -229,7 +229,7 @@
 .cms-title-input {
   height: auto !important;
   font-size: 1.8rem !important;
-  font-family: var(--font-cormorant), ui-serif, Georgia, serif;
+  font-family: var(--font-serif), ui-serif, Georgia, serif;
   border: 0 !important;
   box-shadow: none !important;
   padding-inline-start: 0 !important;
