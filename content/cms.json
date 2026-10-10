@@ -1952,9 +1952,1686 @@
       "name": "tavr-vs-surgery.webp",
       "alt": "A mesh valve on a catheter beside a three-leaflet valve at the upper heart",
       "addedAt": "2026-10-10T22:30:00.000Z"
+    },
+    {
+      "id": "media_pci_plaque_webp",
+      "url": "/uploads/articles/pci-plaque.webp",
+      "name": "pci-plaque.webp",
+      "alt": "Yellow plaque among the coronary branches on the surface of the heart",
+      "addedAt": "2026-10-10T23:30:00.000Z"
+    },
+    {
+      "id": "media_pci_stent_webp",
+      "url": "/uploads/articles/pci-stent.webp",
+      "name": "pci-stent.webp",
+      "alt": "A thin catheter from the wrist to a mesh stent on the heart, with yellow plaque inside the mesh",
+      "addedAt": "2026-10-10T23:30:00.000Z"
+    },
+    {
+      "id": "media_pci_vs_graft_webp",
+      "url": "/uploads/articles/pci-vs-graft.webp",
+      "name": "pci-vs-graft.webp",
+      "alt": "A mesh stent in an artery on the heart beside a graft tube from the aorta past yellow plaque",
+      "addedAt": "2026-10-10T23:30:00.000Z"
+    },
+    {
+      "id": "media_pci_stent_count_webp",
+      "url": "/uploads/articles/pci-stent-count.webp",
+      "name": "pci-stent-count.webp",
+      "alt": "One mesh stent in a narrowed artery beside two mesh stents placed end to end",
+      "addedAt": "2026-10-10T23:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_how_to_choose_an_angioplasty_specialist_in_india",
+      "slug": "how-to-choose-an-angioplasty-specialist-in-india",
+      "title": "How to Choose an Angioplasty Specialist in India: A Complete Patient Guide",
+      "excerpt": "Learn how to choose an angioplasty specialist in India. Compare cardiologist qualifications, hospital facilities, treatment options, costs and questions to ask before angioplasty.",
+      "date": "10 October 2026",
+      "publishedAt": "2026-10-10T23:30:00.000Z",
+      "updatedAt": "2026-10-10T23:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "angioplasty",
+        "interventional cardiology",
+        "India",
+        "travel"
+      ],
+      "image": "/uploads/articles/pci-plaque.webp",
+      "imageAlt": "Yellow plaque among the coronary branches on the surface of the heart",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "How to Choose an Angioplasty Specialist in India",
+      "seoDescription": "Learn how to choose an angioplasty specialist in India. Compare cardiologist qualifications, hospital facilities, treatment options, costs and questions to ask before angioplasty.",
+      "canonical": "https://gaf.healthcare/blogs/how-to-choose-an-angioplasty-specialist-in-india",
+      "ogImage": "/uploads/articles/pci-plaque.webp",
+      "allowIndex": true,
+      "keywords": [
+        "How to choose an angioplasty specialist in India",
+        "Best angioplasty specialist in India",
+        "Interventional cardiologist in India",
+        "Cardiologist for angioplasty",
+        "Coronary angioplasty in India",
+        "Angioplasty doctor qualifications",
+        "Angioplasty hospital in India",
+        "Angioplasty cost in India",
+        "Angioplasty vs bypass surgery",
+        "Second opinion for angioplasty",
+        "Coronary angioplasty for international patients"
+      ],
+      "blocks": [
+        {
+          "id": "p_001",
+          "type": "paragraph",
+          "text": "Being told that you may need angioplasty can raise many questions. You may wonder whether the procedure is necessary, which doctor should perform it, how to choose a hospital and what the treatment will cost."
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "For many families, the decision becomes more difficult when they are comparing hospitals across different cities or considering treatment in another country."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "Choosing an angioplasty specialist involves more than searching for a doctor described as the best or selecting a hospital based on its reputation. You need to understand the doctor's relevant training, experience with your condition, the hospital's facilities and the treatment options available for your particular case."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "Coronary angioplasty is a catheter-based procedure used to improve blood flow through narrowed or blocked coronary arteries in selected patients. It is commonly performed by an appropriately trained interventional cardiologist. A stent may be placed during the procedure to help keep the treated artery open."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "Angioplasty is not necessary for every patient with coronary artery disease. Some patients can be managed with medication and lifestyle changes, while others may benefit more from coronary artery bypass surgery. The appropriate approach depends on the patient's symptoms, coronary anatomy, overall health and clinical circumstances."
+        },
+        {
+          "id": "p_006",
+          "type": "paragraph",
+          "text": "India has hospitals offering a wide range of cardiac services, from routine cardiology consultations to complex coronary interventions. The challenge is identifying a specialist and treatment setting that match your medical needs."
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "This guide explains how to choose an angioplasty specialist in India, which qualifications to verify, how to compare hospitals, what questions to ask before the procedure, how to understand treatment estimates and what international patients should consider when planning cardiac care."
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "**Important:** If you or someone else has new or severe chest pain, severe breathlessness, fainting with concerning symptoms or other signs of a possible heart attack, seek emergency medical care immediately. Do not delay treatment to compare doctors online."
+        },
+        {
+          "id": "html_009",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>To choose a suitable angioplasty specialist, look for an appropriately qualified interventional cardiologist with relevant expertise, a hospital equipped to perform the procedure and a medical team that clearly explains the expected benefits, risks and alternatives.</p><p>Use this checklist before making your decision:</p><ul class=\"article-quick-answer__list\"><li><strong>Verify qualifications:</strong> Check recognised medical qualifications, professional registration and relevant specialist training.</li><li><strong>Assess procedural expertise:</strong> Ask about experience with your particular condition and the type of intervention being considered.</li><li><strong>Review hospital capabilities:</strong> Confirm access to a cardiac catheterisation laboratory, appropriate monitoring and emergency support.</li><li><strong>Understand the recommendation:</strong> Ask why angioplasty is being proposed and whether medication, further assessment or bypass surgery may be appropriate alternatives.</li><li><strong>Discuss risks and benefits:</strong> Understand what the procedure is expected to achieve and which complications are relevant to your case.</li><li><strong>Request a written estimate:</strong> Clarify professional fees, hospital charges, stent costs, medicines and possible additional expenses.</li><li><strong>Plan follow-up:</strong> Confirm medication requirements, recovery guidance and arrangements for continuing care.</li><li><strong>Consider a second opinion:</strong> When the situation permits, seek another qualified opinion if the recommendation is unclear or the treatment decision is complex.</li></ul><p>No single factor establishes that a specialist is the best choice for every patient. The objective is to identify a qualified medical team whose expertise, facilities and proposed treatment are appropriate for your individual condition.</p></div></aside>"
+        },
+        {
+          "id": "toc_010",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-coronary-angioplasty-is\">1. What Coronary Angioplasty Is</a></li><li><a href=\"#2-who-performs-coronary-angioplasty\">2. Who Performs Coronary Angioplasty</a></li><li><a href=\"#3-how-to-check-an-angioplasty-specialists-qualifications\">3. How to Check an Angioplasty Specialist's Qualifications</a></li><li><a href=\"#4-how-much-experience-an-angioplasty-specialist-should-have\">4. How Much Experience an Angioplasty Specialist Should Have</a></li><li><a href=\"#5-how-to-choose-the-right-hospital-for-angioplasty\">5. How to Choose the Right Hospital for Angioplasty</a></li><li><a href=\"#6-whether-angioplasty-is-the-right-treatment\">6. Whether Angioplasty Is the Right Treatment</a></li><li><a href=\"#7-what-happens-during-coronary-angioplasty\">7. What Happens During Coronary Angioplasty</a></li><li><a href=\"#8-risks-to-discuss-before-angioplasty\">8. Risks to Discuss Before Angioplasty</a></li><li><a href=\"#9-published-planning-ranges-are-not-a-quotation\">9. Published Planning Ranges Are Not a Quotation</a></li><li><a href=\"#10-how-to-get-a-second-opinion-before-angioplasty\">10. How to Get a Second Opinion Before Angioplasty</a></li><li><a href=\"#11-choosing-a-specialist-as-an-international-patient\">11. Choosing a Specialist as an International Patient</a></li><li><a href=\"#12-how-to-compare-angioplasty-specialists\">12. How to Compare Angioplasty Specialists</a></li><li><a href=\"#13-questions-to-ask-before-treatment\">13. Questions to Ask Before Treatment</a></li><li><a href=\"#14-recovery-after-angioplasty\">14. Recovery After Angioplasty</a></li><li><a href=\"#15-red-flags-when-comparing-specialists\">15. Red Flags When Comparing Specialists</a></li><li><a href=\"#16-frequently-asked-questions-about-choosing-an-angioplasty-specialist-in-india\">16. Frequently Asked Questions About Choosing an Angioplasty Specialist in India</a></li><li><a href=\"#conclusion-match-the-specialist-to-your-case\">Conclusion: Match the Specialist to Your Case</a></li><li><a href=\"#sources\">Sources</a></li></ol></nav>"
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "[Cardiologists in India](/doctors/India/Cardiology) and [cardiac surgeons in India](/doctors/India/Cardiac-Surgery) are directories, not a ranking of angioplasty doctors. This site does not rank doctors. City cardiology lists include [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology), [Mumbai](/doctors/India/Mumbai/Cardiology), [Chennai](/doctors/India/Chennai/Cardiology), [Bengaluru](/doctors/India/Bengaluru/Cardiology), and [Hyderabad](/doctors/India/Hyderabad/Cardiology). Cardiac surgery lists for the same cities are [Delhi NCR](/doctors/India/Delhi-NCR/Cardiac-Surgery), [Mumbai](/doctors/India/Mumbai/Cardiac-Surgery), [Chennai](/doctors/India/Chennai/Cardiac-Surgery), [Bengaluru](/doctors/India/Bengaluru/Cardiac-Surgery), and [Hyderabad](/doctors/India/Hyderabad/Cardiac-Surgery). Hospital lists: [cardiology](/hospitals/India/Cardiology) and [cardiac surgery](/hospitals/India/Cardiac-Surgery). How to judge a campus is in [how to choose a hospital for heart treatment in India](/blogs/how-to-choose-a-hospital-for-heart-treatment-in-india)."
+        },
+        {
+          "id": "btn_012",
+          "type": "button",
+          "label": "Ask which kind of cardiologist should review these records",
+          "href": "https://wa.me/919044346292?text=Please%20look%20at%20the%20coronary%20reports%20I%20can%20send%20and%20say%20whether%20the%20next%20step%20is%20a%20consultation%20with%20an%20interventional%20cardiologist.%20Do%20not%20name%20a%20best%20doctor.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "h_013",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Coronary Angioplasty Is"
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "Coronary angioplasty, also known as percutaneous coronary intervention (PCI), is a minimally invasive procedure used to improve blood flow through a narrowed or blocked coronary artery."
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "Coronary arteries supply oxygen-rich blood to the heart muscle. When fatty deposits, cholesterol and other substances accumulate in their walls, the arteries can narrow. This condition is known as coronary artery disease."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "A narrowed artery may cause chest discomfort or breathlessness, particularly during physical activity. In some cases, a blood clot can suddenly obstruct blood flow and cause a heart attack."
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "During angioplasty, a cardiologist guides a thin catheter through a blood vessel to the affected coronary artery. A small balloon may be inflated to widen the narrowed area. A stent, usually a small expandable mesh tube, is commonly placed to help keep the artery open."
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "The procedure is performed in a specialised cardiac catheterisation laboratory using imaging to guide the catheter and treatment. The procedure page on this site is [coronary angioplasty in India](/treatments/coronary-angioplasty-in-india). The [NHS coronary angioplasty](https://www.nhs.uk/tests-and-treatments/coronary-angioplasty/) page and the [American Heart Association stent overview](https://www.heart.org/en/health-topics/heart-attack/treatment-of-a-heart-attack/stent) describe the same general idea for patients."
+        },
+        {
+          "id": "img_019",
+          "type": "image",
+          "src": "/uploads/articles/pci-plaque.webp",
+          "alt": "Yellow plaque among the coronary branches on the surface of the heart",
+          "caption": "Yellow deposits sit among the coronary branches on the heart, inside the rib cage. This is a teaching drawing of coronary narrowing, not an angiogram."
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 3,
+          "text": "Why Angioplasty Is Performed"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "Angioplasty may be recommended in different clinical situations."
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "**Acute heart attack.** In selected heart attacks, urgent angioplasty can restore blood flow to the affected area of the heart. The timing and treatment approach depend on the clinical circumstances and available emergency services."
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "**Angina.** Patients with coronary artery disease may experience chest discomfort because the heart muscle is not receiving enough blood during exertion or at other times. Angioplasty may help relieve symptoms in appropriately selected patients."
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "**Significant coronary artery narrowing.** Some patients have coronary narrowing that warrants intervention based on the location and severity of disease, symptoms, test findings and overall clinical risk."
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "**Previously treated coronary arteries.** Some patients develop recurrent narrowing or other problems after earlier treatment and require reassessment."
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "Angioplasty is not automatically necessary whenever a coronary artery is narrowed. A cardiologist must determine whether the expected benefits justify the risks and whether another treatment approach would be more appropriate. The [2021 ACC/AHA/SCAI revascularisation guideline summary](https://professional.heart.org/en/science-news/2021-acc-aha-scai-guideline-for-coronary-artery-revascularization) is one professional reference for that decision."
+        },
+        {
+          "id": "h_027",
+          "type": "heading",
+          "level": 2,
+          "text": "2. Who Performs Coronary Angioplasty"
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "Coronary angioplasty is generally performed by an appropriately trained **interventional cardiologist**."
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "An interventional cardiologist has specialised expertise in catheter-based procedures used to diagnose and treat certain cardiovascular conditions. These may include coronary angiography, angioplasty and stent placement."
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "The specialist's responsibilities may include reviewing your symptoms, medical history and previous investigations; assessing coronary angiography or other relevant imaging; determining whether an invasive procedure is appropriate; explaining the proposed intervention and obtaining informed consent; performing the procedure when indicated; monitoring the patient immediately after treatment; and coordinating medication, discharge planning and follow-up."
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "Complex cases may require collaboration between clinical cardiologists, interventional cardiologists, cardiac surgeons, anaesthesiologists and other specialists."
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "When the best treatment strategy is uncertain, a multidisciplinary Heart Team approach may help patients and doctors compare reasonable options."
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 3,
+          "text": "Interventional Cardiologist and Clinical Cardiologist"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "A clinical cardiologist focuses substantially on diagnosing and managing heart conditions through medication, investigations, risk-factor management and follow-up."
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "An interventional cardiologist has additional expertise in catheter-based procedures, including coronary angioplasty."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "Many interventional cardiologists also provide clinical consultations and long-term care. The important distinction is whether the doctor has the specific training and experience required for the procedure being considered. A doctor who is qualified to provide general cardiology consultations is not, on that basis alone, the doctor who should perform a complex coronary intervention."
+        },
+        {
+          "id": "btn_037",
+          "type": "button",
+          "label": "Check the doctor's current hospital",
+          "href": "https://wa.me/919044346292?text=Please%20help%20me%20confirm%20which%20hospital%20an%20interventional%20cardiologist%20currently%20uses%20before%20I%20travel%20for%20a%20coronary%20review.%20Do%20not%20rank%20doctors."
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 2,
+          "text": "3. How to Check an Angioplasty Specialist's Qualifications"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "A doctor's qualifications are an essential starting point. Consider them alongside relevant experience, professional registration and the hospital's capabilities."
+        },
+        {
+          "id": "h_040",
+          "type": "heading",
+          "level": 3,
+          "text": "Verify Medical Qualifications"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "Review the doctor's recognised medical degree, postgraduate training, cardiology qualifications and additional training relevant to interventional cardiology."
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "The appropriate training pathway can vary. The important question is whether the doctor has recognised qualifications and suitable training for the role they perform."
+        },
+        {
+          "id": "h_043",
+          "type": "heading",
+          "level": 3,
+          "text": "Check Professional Registration"
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "In India, you can consult official medical registration resources, including the [National Medical Commission's National Medical Register](https://nmr.nmc.org.in/), to verify available registration information. The Commission's own site is [nmc.org.in](https://www.nmc.org.in/)."
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "If details are missing or inconsistent, contact the relevant medical council or institution for clarification. Public records may not always contain every professional detail or reflect recent changes immediately."
+        },
+        {
+          "id": "h_046",
+          "type": "heading",
+          "level": 3,
+          "text": "Confirm Current Hospital Affiliation"
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "Check that the doctor currently practises at the hospital listed in their profile."
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "This is particularly important if you are travelling from another city or country. Confirm the consultation location, appointment availability and whether the hospital can arrange the procedure or specialist review you require."
+        },
+        {
+          "id": "h_049",
+          "type": "heading",
+          "level": 3,
+          "text": "Ask About Relevant Procedural Training"
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "If your case involves complex coronary disease, ask whether the specialist has relevant experience with the type of intervention being considered."
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "For example, the expertise needed for a routine coronary intervention may differ from that required for certain complex coronary lesions or patients with multiple medical conditions."
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "A doctor's general experience in cardiology does not automatically establish expertise in every type of intervention."
+        },
+        {
+          "id": "h_053",
+          "type": "heading",
+          "level": 2,
+          "text": "4. How Much Experience an Angioplasty Specialist Should Have"
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "There is no single number of years that makes a doctor suitable for every angioplasty case."
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "Experience should be evaluated in relation to the patient's diagnosis, the complexity of the proposed procedure and the doctor's training and current practice."
+        },
+        {
+          "id": "h_056",
+          "type": "heading",
+          "level": 3,
+          "text": "Ask About Experience With Similar Cases"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "Useful questions include how often the doctor manages patients with your type of coronary disease, whether they regularly perform the proposed intervention, whether your case has features that make the procedure more complex, what additional expertise or facilities might be required, and whether another specialist or a multidisciplinary review would be useful."
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "These questions can help you understand whether the doctor's experience is relevant to your particular case."
+        },
+        {
+          "id": "h_059",
+          "type": "heading",
+          "level": 3,
+          "text": "Procedure Volumes and Outcome Claims"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "Some hospitals publish the number of procedures performed by a doctor or department. These figures can provide context when they are reliable, current and clearly defined."
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "Procedure volume alone does not establish that a doctor has better outcomes. Patient characteristics, disease severity, procedural complexity, hospital facilities and follow-up also influence results."
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Be cautious about unverified claims of exceptionally high success rates or guaranteed outcomes."
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "If comparative outcome data are available, ask how the figures are calculated and whether they relate to patients with a similar level of risk."
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 3,
+          "text": "The Cardiac Team Around the Operator"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "The quality of care is not determined by the operator alone."
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "A hospital's catheterisation laboratory team, nursing staff, critical-care services, imaging facilities and arrangements for managing complications can all be relevant."
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "For complex cases, access to cardiac surgery and other specialist support may also be important."
+        },
+        {
+          "id": "h_068",
+          "type": "heading",
+          "level": 2,
+          "text": "5. How to Choose the Right Hospital for Angioplasty"
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "The hospital should have facilities appropriate for the planned procedure and the patient's clinical needs."
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "The requirements for a straightforward elective intervention may differ from those for a patient with an acute heart attack, severe heart failure or complex coronary disease. A hospital group may operate several campuses with different services. Confirm the exact campus. A well-known hospital name alone does not establish that every campus provides the same cardiac facilities. The longer hospital checklist is in [how to choose a hospital for heart treatment in India](/blogs/how-to-choose-a-hospital-for-heart-treatment-in-india)."
+        },
+        {
+          "id": "h_071",
+          "type": "heading",
+          "level": 3,
+          "text": "Cardiac Catheterisation Laboratory"
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Coronary angioplasty is performed in a specialised cardiac catheterisation laboratory, sometimes called a cath lab."
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "The facility should have appropriate imaging equipment and trained staff to perform the intervention safely."
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "Ask whether the proposed hospital performs the specific procedure your doctor has recommended and whether the relevant team is available."
+        },
+        {
+          "id": "img_075",
+          "type": "image",
+          "src": "/uploads/articles/pci-stent.webp",
+          "alt": "A thin catheter from the wrist to a mesh stent on the heart, with yellow plaque inside the mesh",
+          "caption": "A thin catheter runs from the wrist to a mesh stent drawn on the heart, with yellow plaque inside the treated segment. This is a teaching drawing, not an angiogram or a photo of a procedure."
+        },
+        {
+          "id": "h_076",
+          "type": "heading",
+          "level": 3,
+          "text": "Emergency Cardiac Support"
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "Ask how the hospital manages complications or sudden deterioration during and after a procedure."
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "Depending on the patient's condition, relevant facilities may include cardiac monitoring, intensive care, emergency services and access to additional specialist support."
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "For patients presenting with an acute heart attack, timely access to appropriate emergency treatment is particularly important."
+        },
+        {
+          "id": "h_080",
+          "type": "heading",
+          "level": 3,
+          "text": "Cardiac Surgery Support"
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "Some patients may need consideration of coronary artery bypass grafting rather than angioplasty. The surgery page is [CABG surgery in India](/treatments/cabg-surgery-in-india). How the two approaches are compared is in [angioplasty vs bypass surgery in India](/blogs/angioplasty-vs-bypass-surgery-in-india)."
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "In complex cases, access to cardiac surgery or a multidisciplinary Heart Team can be valuable when comparing treatment strategies."
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "A hospital without on-site cardiac surgery is not automatically unsuitable for every angioplasty case. The team should have appropriate arrangements for the patient's specific clinical risk and treatment needs."
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 3,
+          "text": "Diagnostic and Imaging Facilities"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "Before and during treatment, doctors may need to review previous angiograms, ECGs, echocardiograms, blood tests or other investigations."
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "Some cases require additional imaging or physiological assessment to determine whether a narrowing is significant or to guide treatment."
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "Ask which investigations are required and whether your existing reports and imaging can be reviewed before repeating tests."
+        },
+        {
+          "id": "h_088",
+          "type": "heading",
+          "level": 3,
+          "text": "Intensive Care and Post-Procedure Monitoring"
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "Patients need appropriate observation after angioplasty. The duration and level of monitoring depend on the clinical situation and whether complications occur."
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "For higher-risk patients, access to intensive care and other specialist services may be important."
+        },
+        {
+          "id": "btn_091",
+          "type": "button",
+          "label": "Ask what the proposed campus can do",
+          "href": "https://wa.me/919044346292?text=Please%20help%20me%20check%20whether%20the%20hospital%20campus%20proposed%20for%20angioplasty%20has%20a%20catheterisation%20laboratory%2C%20monitoring%20and%20emergency%20cardiac%20support.%20Do%20not%20rank%20hospitals."
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Whether Angioplasty Is the Right Treatment"
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "Choosing a specialist should include understanding why angioplasty has been recommended."
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "Angioplasty can be an important treatment for appropriately selected patients. It is not the correct approach for every person with coronary artery disease."
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 3,
+          "text": "Medical Management"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "Some patients can be managed with medication, lifestyle changes and monitoring."
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "Depending on the condition, treatment may include medicines to control cholesterol and blood pressure, reduce the risk of blood clots, manage angina or address other cardiovascular risk factors."
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Your cardiologist should explain whether medical management is appropriate and what benefits and limitations it has in your case."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "Angioplasty and Stenting"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Angioplasty may be considered when restoring blood flow through a narrowed artery is expected to provide meaningful benefit."
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "The potential benefits depend on the clinical situation. In selected patients, angioplasty may relieve symptoms, and in certain acute settings it can be a time-sensitive, life-saving treatment."
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "Angioplasty does not remove the underlying tendency to develop coronary artery disease. Medication, risk-factor management and follow-up remain important after the procedure."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "Coronary Artery Bypass Grafting"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "Coronary artery bypass grafting, or CABG, is a surgical procedure that creates an alternative route for blood to reach the heart muscle around narrowed or blocked arteries. [NHS bypass graft information](https://www.nhs.uk/tests-and-treatments/coronary-artery-bypass-graft/) describes the operation for patients."
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "Bypass surgery may be appropriate for certain patterns of coronary disease, depending on the anatomy, disease complexity, other medical conditions and expected outcomes."
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "The decision between angioplasty and bypass surgery should be based on clinical evidence and individual circumstances. One approach is not universally better. Read [angioplasty vs bypass surgery in India](/blogs/angioplasty-vs-bypass-surgery-in-india) beside the cost guides [angioplasty cost in India](/blogs/angioplasty-cost-in-india) and [bypass surgery cost in India](/blogs/bypass-surgery-cost-in-india)."
+        },
+        {
+          "id": "img_107",
+          "type": "image",
+          "src": "/uploads/articles/pci-vs-graft.webp",
+          "alt": "A mesh stent in an artery on the heart beside a graft tube from the aorta past yellow plaque",
+          "caption": "On the left, a mesh stent sits in an artery drawn across the heart, with yellow plaque beside it. On the right, a graft tube leaves the aorta and passes the yellow blockage. This is a teaching drawing, not an operation photo."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "When a Heart Team Review May Help"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "A multidisciplinary Heart Team may be helpful when the optimal treatment strategy is unclear, the coronary disease is complex or the patient has other conditions that affect procedural risk."
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "The team may include an interventional cardiologist, cardiac surgeon and clinical cardiologist, with other specialists involved as appropriate."
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "Ask whether such a review would be useful if you have been offered different treatment recommendations or do not understand why one approach has been preferred."
+        },
+        {
+          "id": "h_112",
+          "type": "heading",
+          "level": 2,
+          "text": "7. What Happens During Coronary Angioplasty"
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "Understanding the broad steps can help patients prepare for a discussion with their cardiologist."
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "The exact process varies depending on the patient's condition, the access route, the complexity of the procedure and hospital protocols. [Guy's and St Thomas' coronary angioplasty page](https://www.guysandstthomas.nhs.uk/health-information/coronary-angioplasty) is a patient-facing description of a typical pathway. Follow the instructions of the team treating you."
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 3,
+          "text": "Before the Procedure"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "The medical team reviews your medical history, medications, allergies, kidney function and relevant investigations."
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "You may be given instructions about fasting, medicines and preparation. Follow the instructions provided by your treating team. Tell the doctor about previous reactions to contrast material, kidney disease, bleeding problems and all medicines you take. What to gather beforehand is covered in [what to bring to a cardiologist appointment](/blogs/what-to-bring-to-a-cardiologist-appointment)."
+        },
+        {
+          "id": "h_118",
+          "type": "heading",
+          "level": 3,
+          "text": "During the Procedure"
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "The patient is taken to the catheterisation laboratory. The procedure is generally performed using local anaesthesia at the access site, with additional medication or sedation when appropriate."
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "A catheter is introduced through a blood vessel, commonly in the wrist or groin, and guided towards the coronary arteries."
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "Contrast material and X-ray imaging help the doctor visualise the arteries. If angioplasty is appropriate, a balloon may be used to widen the narrowed area, and a stent may be placed."
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "The length of the procedure varies. Complex interventions may take longer than routine cases."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 3,
+          "text": "Immediately After the Procedure"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "The medical team monitors the patient for bleeding, changes in symptoms, heart rhythm abnormalities and other complications."
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "Some patients can leave hospital relatively soon, while others need a longer stay because of the complexity of the procedure, an acute heart attack or other medical conditions."
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "The treating team determines when discharge is appropriate."
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 3,
+          "text": "Before Discharge"
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "Patients should receive instructions about medication, wound care, activity, follow-up and warning signs that require urgent attention."
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "Make sure you understand the prescribed medicines and know whom to contact if you have concerns after leaving hospital. [NHS consent to treatment](https://www.nhs.uk/tests-and-treatments/consent-to-treatment/) explains, in general terms, what informed consent is meant to cover."
+        },
+        {
+          "id": "h_130",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Risks to Discuss Before Angioplasty"
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "Angioplasty is commonly performed, and it carries risk."
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "The likelihood and severity of complications depend on factors such as the patient's overall health, kidney function, bleeding risk, the complexity of the coronary disease and whether the procedure is planned or performed during an emergency."
+        },
+        {
+          "id": "p_133",
+          "type": "paragraph",
+          "text": "Potential complications include bleeding or bruising at the catheter insertion site; injury to the blood vessel used for access; an allergic reaction to contrast material; kidney complications associated with contrast exposure, particularly in susceptible patients; abnormal heart rhythms; blood clots or re-narrowing affecting the treated artery; damage to a coronary artery; and heart attack, stroke or other serious complications in some cases."
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "The medical team should explain the risks relevant to your circumstances and the measures taken to reduce them."
+        },
+        {
+          "id": "h_135",
+          "type": "heading",
+          "level": 3,
+          "text": "How to Discuss Risk"
+        },
+        {
+          "id": "p_136",
+          "type": "paragraph",
+          "text": "Ask the doctor to explain your individual risk. Useful questions include which complications are most relevant to your medical history, how kidney function affects the procedure, what the bleeding risk is, whether features of the coronary disease make the intervention more complex, what monitoring will be required afterwards, and which symptoms should prompt urgent medical attention."
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "A clear discussion of risk should include both the potential harms of the procedure and the risks of leaving the recommended treatment undone."
+        },
+        {
+          "id": "h_138",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Published Planning Ranges Are Not a Quotation"
+        },
+        {
+          "id": "p_139",
+          "type": "paragraph",
+          "text": "The cost of coronary angioplasty varies by hospital, city, patient condition, procedure complexity, stent requirements and length of hospital stay."
+        },
+        {
+          "id": "p_140",
+          "type": "paragraph",
+          "text": "This site does not publish a single price for coronary angioplasty. A routine planned procedure and an emergency intervention involving additional treatment may have very different costs. Request a patient-specific written estimate from the treating hospital. The longer cost guide is [angioplasty cost in India](/blogs/angioplasty-cost-in-india)."
+        },
+        {
+          "id": "h_141",
+          "type": "heading",
+          "level": 3,
+          "text": "Factors That Change the Bill"
+        },
+        {
+          "id": "p_142",
+          "type": "paragraph",
+          "text": "Hospital and location, professional fees, the number and type of stents, procedure complexity, room category, monitoring, intensive care if it is required, medicines, investigations and unexpected clinical needs can all change the final bill. The appropriate stent should be selected according to clinical requirements."
+        },
+        {
+          "id": "h_143",
+          "type": "heading",
+          "level": 3,
+          "text": "What This Site Lists as a Planning Range"
+        },
+        {
+          "id": "p_144",
+          "type": "paragraph",
+          "text": "[Coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) is listed at an indicative planning range of **US$3,200–US$8,500**, with a stay of **1–3 nights typical**. That range is an indicative planning range, not a quotation. The same band is on the [Delhi NCR](/costs/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting) and [Mumbai](/costs/India/Mumbai/Cardiology/Coronary-Angioplasty-Stenting) pages."
+        },
+        {
+          "id": "p_145",
+          "type": "paragraph",
+          "text": "[Coronary angiography](/costs/India/Cardiology/Coronary-Angiography) is listed separately at **US$400–US$1,200**, stay **Day-care or overnight**. Angiography is the imaging procedure. It is a different line from the angioplasty bill."
+        },
+        {
+          "id": "p_146",
+          "type": "paragraph",
+          "text": "[CTO angioplasty (chronic total occlusion)](/costs/India/Cardiology/CTO-Angioplasty-(Chronic-Total-Occlusion)) is listed at **US$5,500–US$14,000**, stay **1–4 nights**. [CABG (coronary artery bypass grafting)](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) is also listed at **US$5,500–US$14,000**, with a stay of **7–14 nights, then nearby recovery**. Those two listings share a dollar band. They are different operations, with different stays. City CABG pages use the same band: [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) and [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)). Read [bypass surgery cost in India](/blogs/bypass-surgery-cost-in-india) before treating the shared band as a reason to choose one operation."
+        },
+        {
+          "id": "p_147",
+          "type": "paragraph",
+          "text": "A United States comparison band is **US$25,000–US$70,000** for angioplasty, **US$5,000–US$15,000** for angiography, **US$35,000–US$85,000** for CTO angioplasty, and **US$70,000–US$200,000** for CABG. Each of those figures is not an India price."
+        },
+        {
+          "id": "p_148",
+          "type": "paragraph",
+          "text": "This site does not publish a single fee for a cardiologist consultation. How published outpatient examples are handled is in [cardiologist consultation fees in India](/blogs/cardiologist-consultation-fees-in-india)."
+        },
+        {
+          "id": "h_149",
+          "type": "heading",
+          "level": 3,
+          "text": "Stent Ceiling Prices Are the Stent"
+        },
+        {
+          "id": "p_150",
+          "type": "paragraph",
+          "text": "The NPPA sets ceiling prices for scheduled coronary stents. In the Department of Pharmaceuticals statement dated 17 March 2026, the ceiling was ₹10,692.69 for a bare-metal stent and ₹38,933.14 for a drug-eluting stent, plus applicable GST. Check the [17 March 2026 statement](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2241169) and the [NPPA medical devices page](https://nppa.gov.in/en/medicaldevices-2) before you rely on these figures. They are the stent, not the angioplasty. Do not multiply a ceiling into a procedure price. The number of stents, when more than one is used, is a clinical decision."
+        },
+        {
+          "id": "img_151",
+          "type": "image",
+          "src": "/uploads/articles/pci-stent-count.webp",
+          "alt": "One mesh stent in a narrowed artery beside two mesh stents placed end to end",
+          "caption": "One mesh stent in a narrowed artery, beside two mesh stents placed end to end in the same kind of artery. The drawing shows isolated vessel segments. The number of stents follows the anatomy, not a price comparison."
+        },
+        {
+          "id": "h_152",
+          "type": "heading",
+          "level": 3,
+          "text": "What a Written Estimate Should Name"
+        },
+        {
+          "id": "p_153",
+          "type": "paragraph",
+          "text": "Ask for a written estimate that identifies the expected charges for the initial cardiology consultation and evaluation, diagnostic tests, coronary angiography if required, angioplasty and professional fees, stents and other devices or consumables, hospital accommodation and nursing care, intensive care if required, medication and post-procedure monitoring, and follow-up appointments."
+        },
+        {
+          "id": "p_154",
+          "type": "paragraph",
+          "text": "Ask which items are included, which may be billed separately and what circumstances could change the estimate."
+        },
+        {
+          "id": "p_155",
+          "type": "paragraph",
+          "text": "Compare what each estimate includes, the hospital facilities available, the clinical team's expertise and whether the proposed treatment plans are comparable. If the proposed number or type of stents differs between doctors, ask each team to explain the clinical reasoning."
+        },
+        {
+          "id": "p_156",
+          "type": "paragraph",
+          "text": "For international patients, also clarify the currency, payment arrangements, possible additional nights in hospital and costs associated with changes to travel plans."
+        },
+        {
+          "id": "btn_157",
+          "type": "button",
+          "label": "Ask what a written estimate should list",
+          "href": "https://wa.me/919044346292?text=Please%20tell%20me%20which%20items%20to%20ask%20a%20hospital%20to%20include%20in%20a%20written%20angioplasty%20estimate%2C%20including%20stents%2C%20stay%20and%20medicines.%20Do%20not%20send%20a%20single%20national%20price."
+        },
+        {
+          "id": "h_158",
+          "type": "heading",
+          "level": 2,
+          "text": "10. How to Get a Second Opinion Before Angioplasty"
+        },
+        {
+          "id": "p_159",
+          "type": "paragraph",
+          "text": "A second opinion can be useful when the proposed treatment is not clear, when different doctors recommend different approaches or when you want to understand the risks and benefits more fully."
+        },
+        {
+          "id": "p_160",
+          "type": "paragraph",
+          "text": "It should not be used to delay emergency treatment when immediate intervention is medically necessary. The practical steps are in [second opinion from a cardiologist in India](/blogs/second-opinion-from-a-cardiologist-in-india)."
+        },
+        {
+          "id": "h_161",
+          "type": "heading",
+          "level": 3,
+          "text": "When a Second Opinion Helps"
+        },
+        {
+          "id": "p_162",
+          "type": "paragraph",
+          "text": "You may wish to seek another opinion if you are unsure why angioplasty has been recommended, you want to understand whether medication alone is reasonable, you have been advised to undergo bypass surgery and want to understand the alternatives, your coronary disease is complex, different specialists have proposed different treatment plans, you want clarification about the expected benefits, risks or cost, or you feel that your questions have not been adequately answered."
+        },
+        {
+          "id": "h_163",
+          "type": "heading",
+          "level": 3,
+          "text": "Documents Worth Sharing"
+        },
+        {
+          "id": "p_164",
+          "type": "paragraph",
+          "text": "Provide the reviewing specialist with the treating cardiologist's assessment and proposed plan, coronary angiography images and not only the written report, ECG and echocardiogram reports where relevant, recent blood tests and kidney function results, details of previous heart attacks, procedures or surgeries, current medications and known allergies, and information about other medical conditions. What to pack for the visit is in [what to bring to a cardiologist appointment](/blogs/what-to-bring-to-a-cardiologist-appointment)."
+        },
+        {
+          "id": "p_165",
+          "type": "paragraph",
+          "text": "Original imaging files can be important because the reviewing cardiologist may need to assess the coronary anatomy directly."
+        },
+        {
+          "id": "h_166",
+          "type": "heading",
+          "level": 3,
+          "text": "What the Second Opinion Should Address"
+        },
+        {
+          "id": "p_167",
+          "type": "paragraph",
+          "text": "Ask the second specialist to explain whether they agree with the diagnosis and treatment recommendation, what alternatives are appropriate and whether any additional investigations are needed."
+        },
+        {
+          "id": "p_168",
+          "type": "paragraph",
+          "text": "If the opinions differ, ask both doctors to clarify the reasoning and the evidence relevant to your case."
+        },
+        {
+          "id": "p_169",
+          "type": "paragraph",
+          "text": "A second opinion is most useful when it adds meaningful clinical information."
+        },
+        {
+          "id": "btn_170",
+          "type": "button",
+          "label": "Ask how to arrange a second coronary opinion",
+          "href": "https://wa.me/919044346292?text=I%20would%20like%20a%20second%20opinion%20on%20a%20proposed%20angioplasty%20and%20I%20can%20share%20the%20angiogram%20images.%20This%20is%20not%20an%20emergency.%20Please%20say%20which%20records%20the%20reviewing%20cardiologist%20needs."
+        },
+        {
+          "id": "h_171",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Choosing a Specialist as an International Patient"
+        },
+        {
+          "id": "p_172",
+          "type": "paragraph",
+          "text": "International patients may consider India for cardiac evaluation or treatment because they want access to particular specialists, hospital services or coordinated treatment arrangements."
+        },
+        {
+          "id": "p_173",
+          "type": "paragraph",
+          "text": "Choosing a destination should begin with the clinical requirements of the case. Travel arrangements, accommodation and costs should be planned around the medical team's advice."
+        },
+        {
+          "id": "h_174",
+          "type": "heading",
+          "level": 3,
+          "text": "Arrange a Preliminary Medical Review"
+        },
+        {
+          "id": "p_175",
+          "type": "paragraph",
+          "text": "Where possible, share your medical records with the hospital or specialist before travelling."
+        },
+        {
+          "id": "p_176",
+          "type": "paragraph",
+          "text": "Provide the diagnosis, symptoms, previous procedures, current medication, relevant test reports and original imaging files."
+        },
+        {
+          "id": "p_177",
+          "type": "paragraph",
+          "text": "Ask whether the specialist can review the case remotely and what additional information is required."
+        },
+        {
+          "id": "p_178",
+          "type": "paragraph",
+          "text": "A preliminary review can help identify possible next steps. It may not establish a final diagnosis or confirm that angioplasty is necessary."
+        },
+        {
+          "id": "h_179",
+          "type": "heading",
+          "level": 3,
+          "text": "Confirm the Doctor and the Hospital"
+        },
+        {
+          "id": "p_180",
+          "type": "paragraph",
+          "text": "Verify the specialist's qualifications and current hospital affiliation."
+        },
+        {
+          "id": "p_181",
+          "type": "paragraph",
+          "text": "Ask whether the proposed hospital performs the required intervention and has the facilities appropriate to the patient's condition."
+        },
+        {
+          "id": "p_182",
+          "type": "paragraph",
+          "text": "If the case is complex, ask whether other specialists may need to participate in treatment planning."
+        },
+        {
+          "id": "h_183",
+          "type": "heading",
+          "level": 3,
+          "text": "Request a Written Treatment Estimate"
+        },
+        {
+          "id": "p_184",
+          "type": "paragraph",
+          "text": "Ask the hospital to provide an estimate based on the available medical information, using the planning ranges in [section 9](#9-published-planning-ranges-are-not-a-quotation) as context only. Confirm whether it includes consultation, investigations, the proposed intervention, devices, hospital accommodation, medication and follow-up."
+        },
+        {
+          "id": "p_185",
+          "type": "paragraph",
+          "text": "Ask what could cause the cost to change and whether additional treatment might require a revised estimate."
+        },
+        {
+          "id": "h_186",
+          "type": "heading",
+          "level": 3,
+          "text": "Plan the Hospital Stay and Recovery"
+        },
+        {
+          "id": "p_187",
+          "type": "paragraph",
+          "text": "The length of stay depends on the patient's clinical condition, whether the procedure is planned or urgent, the complexity of the intervention and recovery."
+        },
+        {
+          "id": "p_188",
+          "type": "paragraph",
+          "text": "The published angioplasty stay on this site is **1–3 nights typical**. That is a planning window, not a discharge time. Ask the treating team how long the patient may need to remain near the hospital and whether additional assessment is required before travel."
+        },
+        {
+          "id": "p_189",
+          "type": "paragraph",
+          "text": "Book a return journey only after the treating team has given an individual plan."
+        },
+        {
+          "id": "h_190",
+          "type": "heading",
+          "level": 3,
+          "text": "Arrange Follow-Up Before Returning Home"
+        },
+        {
+          "id": "p_191",
+          "type": "paragraph",
+          "text": "After angioplasty, patients usually require continued medication, risk-factor management and clinical follow-up."
+        },
+        {
+          "id": "p_192",
+          "type": "paragraph",
+          "text": "Before leaving India, obtain the discharge summary, procedure report, updated medication list and follow-up instructions."
+        },
+        {
+          "id": "p_193",
+          "type": "paragraph",
+          "text": "Confirm how your local doctor can coordinate care with the treating hospital if further review is needed."
+        },
+        {
+          "id": "h_194",
+          "type": "heading",
+          "level": 3,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_195",
+          "type": "paragraph",
+          "text": "GAF Healthcare supports international patients exploring treatment in India by helping them navigate doctor and hospital information and coordinate enquiries where those services are available. You can message the desk on WhatsApp at +91 90443 46292."
+        },
+        {
+          "id": "p_196",
+          "type": "paragraph",
+          "text": "Patients can begin with [cardiologists in India](/doctors/India/Cardiology). Review the available profiles and identify specialists whose stated expertise matches your needs. The treating medical team remains responsible for clinical assessment, diagnosis and treatment recommendations. This site does not rank angioplasty specialists."
+        },
+        {
+          "id": "btn_197",
+          "type": "button",
+          "label": "Share records before you book travel",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20angiography%20images%20and%20reports%20I%20can%20send%20before%20I%20plan%20travel%20to%20India%20for%20a%20coronary%20opinion.%20Say%20which%20hospital%20facilities%20the%20case%20may%20need.%20This%20is%20not%20an%20emergency%20service."
+        },
+        {
+          "id": "h_198",
+          "type": "heading",
+          "level": 2,
+          "text": "12. How to Compare Angioplasty Specialists"
+        },
+        {
+          "id": "p_199",
+          "type": "paragraph",
+          "text": "Use the following checklist when comparing two or more specialists. It is a discussion list, not a medical scoring system. Some factors matter more depending on the condition and the urgency of treatment. Access to emergency intervention may be crucial during a heart attack, while careful comparison of alternatives may be possible for a stable patient considering a planned procedure."
+        },
+        {
+          "id": "p_200",
+          "type": "paragraph",
+          "text": "| Factor | What to verify | Why it matters |\n|---|---|---|\n| Qualifications | Recognised medical and specialist training | Establishes the basis for professional practice |\n| Registration | Available official registration details | Helps verify professional credentials |\n| Relevant expertise | Experience with your diagnosis and procedure | Helps assess suitability for your case |\n| Hospital facilities | Cath lab, monitoring and appropriate emergency support | Supports the delivery of the planned care |\n| Treatment reasoning | Benefits, risks and alternatives explained clearly | Helps you make an informed decision |\n| Team support | Access to other specialists when required | Important for selected complex cases |\n| Cost transparency | Written estimate and itemised inclusions | Helps avoid unexpected expenses |\n| Follow-up | Medication, monitoring and continuity of care | Supports recovery and long-term management |\n| Communication | Clear answers and respect for patient concerns | Helps establish a constructive treatment relationship |"
+        },
+        {
+          "id": "h_201",
+          "type": "heading",
+          "level": 2,
+          "text": "13. Questions to Ask Before Treatment"
+        },
+        {
+          "id": "p_202",
+          "type": "paragraph",
+          "text": "Preparing questions can help you understand the treatment recommendation and identify any information that remains unclear. A broader set of prompts is in [questions to ask before heart surgery](/blogs/questions-to-ask-before-heart-surgery). You do not need to ask every question in a single appointment. Focus on the decisions that matter most to your case."
+        },
+        {
+          "id": "h_203",
+          "type": "heading",
+          "level": 3,
+          "text": "Questions About the Diagnosis"
+        },
+        {
+          "id": "ol_204",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is the diagnosis based on my symptoms and investigations?",
+            "Which coronary arteries are affected?",
+            "How severe and complex is the disease?",
+            "Do I need any additional investigations?",
+            "Is this an emergency, an urgent procedure or a planned treatment?"
+          ]
+        },
+        {
+          "id": "h_205",
+          "type": "heading",
+          "level": 3,
+          "text": "Questions About the Procedure"
+        },
+        {
+          "id": "ol_206",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Why are you recommending angioplasty?",
+            "What benefits do you expect in my particular case?",
+            "What are the relevant risks and complications?",
+            "How many stents may be required, and why?",
+            "Are medication or bypass surgery reasonable alternatives?",
+            "Would a multidisciplinary Heart Team review be useful?",
+            "What would happen if the procedure were delayed?"
+          ]
+        },
+        {
+          "id": "h_207",
+          "type": "heading",
+          "level": 3,
+          "text": "Questions About the Hospital"
+        },
+        {
+          "id": "ol_208",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Where will the procedure take place?",
+            "What facilities are available if a complication occurs?",
+            "Will other specialists be involved in my care?",
+            "How long might I need to remain in hospital?",
+            "What monitoring will be required afterwards?"
+          ]
+        },
+        {
+          "id": "h_209",
+          "type": "heading",
+          "level": 3,
+          "text": "Questions About Costs and Recovery"
+        },
+        {
+          "id": "ol_210",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Can I receive a written, itemised estimate?",
+            "Which charges are included and which are separate?",
+            "What additional costs could arise?",
+            "Which medicines will I need after the procedure?",
+            "When can I resume normal activities?",
+            "What follow-up appointments and tests will be required?",
+            "Which symptoms should prompt urgent medical attention?"
+          ]
+        },
+        {
+          "id": "h_211",
+          "type": "heading",
+          "level": 2,
+          "text": "14. Recovery After Angioplasty"
+        },
+        {
+          "id": "p_212",
+          "type": "paragraph",
+          "text": "Recovery varies from patient to patient. The appropriate timeline depends on the type of procedure, the access site, the patient's overall health, whether the intervention was planned or performed during a heart attack and whether complications occurred."
+        },
+        {
+          "id": "h_213",
+          "type": "heading",
+          "level": 3,
+          "text": "Immediately After the Procedure"
+        },
+        {
+          "id": "p_214",
+          "type": "paragraph",
+          "text": "The medical team monitors your condition and checks the catheter insertion site for bleeding or other problems."
+        },
+        {
+          "id": "p_215",
+          "type": "paragraph",
+          "text": "You may need to remain in hospital for observation. The duration depends on your clinical condition and the treating team's assessment. The published planning window of **1–3 nights typical** is not an instruction to leave on a set day."
+        },
+        {
+          "id": "h_216",
+          "type": "heading",
+          "level": 3,
+          "text": "Care at the Catheter Insertion Site"
+        },
+        {
+          "id": "p_217",
+          "type": "paragraph",
+          "text": "Follow the hospital's instructions for wound care, bathing, lifting and physical activity."
+        },
+        {
+          "id": "p_218",
+          "type": "paragraph",
+          "text": "Contact the treating team if you notice concerning swelling, persistent bleeding, increasing pain or other changes at the insertion site."
+        },
+        {
+          "id": "p_219",
+          "type": "paragraph",
+          "text": "Seek urgent care for significant bleeding or symptoms that suggest a serious complication."
+        },
+        {
+          "id": "h_220",
+          "type": "heading",
+          "level": 3,
+          "text": "Medication After Stent Placement"
+        },
+        {
+          "id": "p_221",
+          "type": "paragraph",
+          "text": "After coronary stenting, patients are commonly prescribed antiplatelet medication to reduce the risk of blood clots forming in the stent. The specific medicines and duration depend on the clinical situation."
+        },
+        {
+          "id": "p_222",
+          "type": "paragraph",
+          "text": "**Do not stop prescribed antiplatelet medication without speaking to your treating clinician.** Stopping medication prematurely can cause serious complications."
+        },
+        {
+          "id": "p_223",
+          "type": "paragraph",
+          "text": "Tell your cardiologist about other medicines, planned operations, bleeding problems or difficulty obtaining prescribed medication."
+        },
+        {
+          "id": "h_224",
+          "type": "heading",
+          "level": 3,
+          "text": "Return to Daily Activities"
+        },
+        {
+          "id": "p_225",
+          "type": "paragraph",
+          "text": "Your doctor should advise when it is appropriate to return to work, driving, exercise and other daily activities."
+        },
+        {
+          "id": "p_226",
+          "type": "paragraph",
+          "text": "Use the treating team's instructions for your own recovery, particularly after a heart attack or a complicated procedure. A generic online timeline is a poor substitute."
+        },
+        {
+          "id": "h_227",
+          "type": "heading",
+          "level": 3,
+          "text": "Long-Term Heart Health"
+        },
+        {
+          "id": "p_228",
+          "type": "paragraph",
+          "text": "Angioplasty treats a specific narrowed or blocked artery. It does not eliminate the underlying risk of coronary artery disease."
+        },
+        {
+          "id": "p_229",
+          "type": "paragraph",
+          "text": "Long-term care may involve medication, blood pressure and cholesterol management, diabetes control, smoking cessation, appropriate physical activity, dietary changes and cardiac rehabilitation where indicated."
+        },
+        {
+          "id": "p_230",
+          "type": "paragraph",
+          "text": "Your cardiologist can recommend a plan suited to your condition and recovery. The [World Health Organization cardiovascular disease topic](https://www.who.int/health-topics/cardiovascular-diseases) summarises the broader risk factors."
+        },
+        {
+          "id": "h_231",
+          "type": "heading",
+          "level": 2,
+          "text": "15. Red Flags When Comparing Specialists"
+        },
+        {
+          "id": "p_232",
+          "type": "paragraph",
+          "text": "A careful evaluation can help you identify information that needs further verification."
+        },
+        {
+          "id": "p_233",
+          "type": "paragraph",
+          "text": "Be cautious if you encounter unverifiable qualifications, claims of zero risk or certain success, pressure into a major commercial decision without an adequate clinical explanation, no discussion of alternatives, an estimate that will not name its main components, advertising labels such as “number one angioplasty doctor” without transparent evidence, or no plan for medication, monitoring and post-procedure care."
+        },
+        {
+          "id": "p_234",
+          "type": "paragraph",
+          "text": "Unexplained commercial urgency is different from a genuine medical emergency requiring immediate care. One incomplete website profile does not automatically mean that a doctor is unqualified. Ask for clarification and verify the information through appropriate sources, including the [National Medical Register](https://nmr.nmc.org.in/)."
+        },
+        {
+          "id": "h_235",
+          "type": "heading",
+          "level": 2,
+          "text": "16. Frequently Asked Questions About Choosing an Angioplasty Specialist in India"
+        },
+        {
+          "id": "p_236",
+          "type": "paragraph",
+          "text": "These answers are general education. They are not a personal treatment plan."
+        },
+        {
+          "id": "h_237",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Who is the right doctor for angioplasty?"
+        },
+        {
+          "id": "p_238",
+          "type": "paragraph",
+          "text": "Coronary angioplasty is generally performed by an appropriately trained interventional cardiologist. The specialist should have relevant expertise in your condition and work in a hospital with facilities appropriate for the procedure. A clinical cardiologist may still lead diagnosis, medicines and follow-up."
+        },
+        {
+          "id": "h_239",
+          "type": "heading",
+          "level": 3,
+          "text": "2. How do I choose the best angioplasty specialist in India?"
+        },
+        {
+          "id": "p_240",
+          "type": "paragraph",
+          "text": "Verify qualifications and registration, assess relevant procedural experience, review hospital capabilities and ask about treatment alternatives, risks, costs and follow-up. This site does not rank doctors. There is no single specialist who is best for every patient."
+        },
+        {
+          "id": "h_241",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Does every patient with a blocked artery need angioplasty?"
+        },
+        {
+          "id": "p_242",
+          "type": "paragraph",
+          "text": "No. Some patients are managed with medication and risk-factor control, while others may benefit from angioplasty or bypass surgery. The decision depends on the clinical situation and an individual assessment."
+        },
+        {
+          "id": "h_243",
+          "type": "heading",
+          "level": 3,
+          "text": "4. Is angioplasty better than bypass surgery?"
+        },
+        {
+          "id": "p_244",
+          "type": "paragraph",
+          "text": "Neither is universally better. The appropriate treatment depends on coronary anatomy, disease complexity, symptoms, other medical conditions, expected benefits and procedural risks. Some patients benefit from a multidisciplinary Heart Team review when the best approach is uncertain. Read [angioplasty vs bypass surgery in India](/blogs/angioplasty-vs-bypass-surgery-in-india) beside the individual assessment."
+        },
+        {
+          "id": "h_245",
+          "type": "heading",
+          "level": 3,
+          "text": "5. What qualifications should an angioplasty specialist have in India?"
+        },
+        {
+          "id": "p_246",
+          "type": "paragraph",
+          "text": "Check recognised medical and specialist qualifications, professional registration and training relevant to interventional cardiology. Confirm that the doctor performs the procedure being considered. The National Medical Register is one place to look up available registration information."
+        },
+        {
+          "id": "h_247",
+          "type": "heading",
+          "level": 3,
+          "text": "6. How many years of experience should an angioplasty doctor have?"
+        },
+        {
+          "id": "p_248",
+          "type": "paragraph",
+          "text": "There is no universal minimum number of years that determines suitability for every case. Relevant procedural experience, training, disease complexity and hospital support are important considerations."
+        },
+        {
+          "id": "h_249",
+          "type": "heading",
+          "level": 3,
+          "text": "7. How much does angioplasty cost in India?"
+        },
+        {
+          "id": "p_250",
+          "type": "paragraph",
+          "text": "This site does not publish a single price for coronary angioplasty. Costs vary by hospital, city, procedure complexity, devices, hospital stay and the patient's clinical condition. The indicative planning range for coronary angioplasty and stenting is US$3,200–US$8,500, with a stay of 1–3 nights typical. That range is not a quotation. Request a written, itemised estimate from the treating hospital."
+        },
+        {
+          "id": "h_251",
+          "type": "heading",
+          "level": 3,
+          "text": "8. Can I get a second opinion before angioplasty?"
+        },
+        {
+          "id": "p_252",
+          "type": "paragraph",
+          "text": "Yes, when the clinical situation allows. A second opinion may help clarify the diagnosis, treatment options, benefits and risks. Share your angiography images and other relevant records with the reviewing specialist. Do not delay emergency treatment when immediate intervention is necessary."
+        },
+        {
+          "id": "h_253",
+          "type": "heading",
+          "level": 3,
+          "text": "9. Is angioplasty a major surgery?"
+        },
+        {
+          "id": "p_254",
+          "type": "paragraph",
+          "text": "Angioplasty is generally considered a minimally invasive catheter-based procedure rather than open-heart surgery. It still carries risks, and patients require appropriate monitoring and follow-up."
+        },
+        {
+          "id": "h_255",
+          "type": "heading",
+          "level": 3,
+          "text": "10. How long does angioplasty take?"
+        },
+        {
+          "id": "p_256",
+          "type": "paragraph",
+          "text": "The duration varies according to the patient's condition and the complexity of the intervention. Your treating cardiologist can provide a more relevant estimate after reviewing the case."
+        },
+        {
+          "id": "h_257",
+          "type": "heading",
+          "level": 3,
+          "text": "11. How long does a patient stay in hospital after angioplasty?"
+        },
+        {
+          "id": "p_258",
+          "type": "paragraph",
+          "text": "The hospital stay depends on the reason for the procedure, recovery, other medical conditions and whether complications occur. This site lists a planning window of 1–3 nights typical for coronary angioplasty and stenting. Patients treated during a heart attack may require a different course of care from those undergoing a planned procedure. The treating team decides discharge."
+        },
+        {
+          "id": "h_259",
+          "type": "heading",
+          "level": 3,
+          "text": "12. Can international patients travel to India for angioplasty?"
+        },
+        {
+          "id": "p_260",
+          "type": "paragraph",
+          "text": "International patients may seek cardiac treatment in India. They should share their medical records for preliminary review, confirm the hospital's facilities, request a written estimate and plan follow-up before travelling. The treating team must assess the patient's suitability for treatment and fitness to travel."
+        },
+        {
+          "id": "h_261",
+          "type": "heading",
+          "level": 3,
+          "text": "13. What happens if I stop medication after receiving a stent?"
+        },
+        {
+          "id": "p_262",
+          "type": "paragraph",
+          "text": "Stopping prescribed antiplatelet medication without medical advice can increase the risk of serious complications, including clot formation in the stent. Contact your treating clinician before making any medication changes."
+        },
+        {
+          "id": "h_263",
+          "type": "heading",
+          "level": 3,
+          "text": "14. Can angioplasty cure coronary artery disease?"
+        },
+        {
+          "id": "p_264",
+          "type": "paragraph",
+          "text": "Angioplasty can improve blood flow through a treated artery, but it does not remove the underlying tendency to develop coronary artery disease. Continued medication, risk-factor management and follow-up remain important."
+        },
+        {
+          "id": "h_265",
+          "type": "heading",
+          "level": 3,
+          "text": "15. How can I find an angioplasty specialist in India through GAF Healthcare?"
+        },
+        {
+          "id": "p_266",
+          "type": "paragraph",
+          "text": "Start with [cardiologists in India](/doctors/India/Cardiology). Review available doctor profiles, qualifications, hospital affiliations and stated areas of expertise. The directory is not a ranking. Discuss suitable options with a qualified medical professional before making a treatment decision. For a record review, message +91 90443 46292."
+        },
+        {
+          "id": "h_267",
+          "type": "heading",
+          "level": 3,
+          "text": "16. Are the United States comparison figures an India price?"
+        },
+        {
+          "id": "p_268",
+          "type": "paragraph",
+          "text": "A United States comparison band for angioplasty is US$25,000–US$70,000, and a United States comparison band for CABG is US$70,000–US$200,000. Each of those figures is not an India price. Use them only as a comparison beside the India planning ranges, and ask the treating hospital for a written estimate."
+        },
+        {
+          "id": "h_269",
+          "type": "heading",
+          "level": 3,
+          "text": "17. Why do CTO angioplasty and bypass surgery share a dollar band?"
+        },
+        {
+          "id": "p_270",
+          "type": "paragraph",
+          "text": "CTO angioplasty is listed at US$5,500–US$14,000 with a stay of 1–4 nights. CABG is listed at US$5,500–US$14,000 with a stay of 7–14 nights, then nearby recovery. The shared band does not make the operations interchangeable. Angiography is a further separate listing, at US$400–US$1,200, with a stay of Day-care or overnight."
+        },
+        {
+          "id": "h_271",
+          "type": "heading",
+          "level": 3,
+          "text": "18. What is included in an official stent ceiling, and what is left out?"
+        },
+        {
+          "id": "p_272",
+          "type": "paragraph",
+          "text": "On 17 March 2026 the bare-metal stent ceiling was ₹10,692.69 and the drug-eluting stent ceiling was ₹38,933.14, plus GST. They are the stent, not the angioplasty. Professional fees, the hospital stay, medicines and other consumables sit outside that ceiling. Confirm the current notification before you rely on the figures."
+        },
+        {
+          "id": "h_273",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion: Match the Specialist to Your Case"
+        },
+        {
+          "id": "p_274",
+          "type": "paragraph",
+          "text": "Choosing an angioplasty specialist is an important step in managing coronary artery disease. The right decision involves the doctor's verified qualifications, relevant experience, the hospital's facilities, a clear explanation of treatment alternatives, and a practical plan for costs and follow-up."
+        },
+        {
+          "id": "p_275",
+          "type": "paragraph",
+          "text": "Angioplasty is not the correct treatment for every patient with coronary artery disease. Some patients may benefit from medication, while others may require angioplasty or bypass surgery. The decision should be based on individual clinical assessment and shared decision-making."
+        },
+        {
+          "id": "p_276",
+          "type": "paragraph",
+          "text": "If you are comparing specialists in India, start with [cardiologists in India](/doctors/India/Cardiology) and review the available information before discussing your options with a qualified medical team. This site does not rank doctors and does not publish a single price for the procedure."
+        },
+        {
+          "id": "p_277",
+          "type": "paragraph",
+          "text": "**Medical disclaimer:** This article is intended for general educational purposes and does not replace individual medical advice, diagnosis or treatment. No named clinician has signed it. A qualified healthcare professional must assess your medical history, symptoms and investigation results before making clinical decisions. Seek immediate emergency care for symptoms that may indicate a heart attack or another serious medical emergency."
+        },
+        {
+          "id": "h_278",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "p_279",
+          "type": "paragraph",
+          "text": "American Heart Association — What Is a Stent? [Stent overview](https://www.heart.org/en/health-topics/heart-attack/treatment-of-a-heart-attack/stent)."
+        },
+        {
+          "id": "p_280",
+          "type": "paragraph",
+          "text": "American Heart Association — Heart procedures and surgeries. [Cardiac procedures and surgeries](https://www.heart.org/en/health-topics/heart-attack/treatment-of-a-heart-attack/cardiac-procedures-and-surgeries)."
+        },
+        {
+          "id": "p_281",
+          "type": "paragraph",
+          "text": "American Heart Association — 2021 ACC/AHA/SCAI guideline for coronary artery revascularisation. [Science news summary](https://professional.heart.org/en/science-news/2021-acc-aha-scai-guideline-for-coronary-artery-revascularization)."
+        },
+        {
+          "id": "p_282",
+          "type": "paragraph",
+          "text": "American College of Cardiology — guidelines and clinical policy. [acc.org/guidelines](https://www.acc.org/guidelines)."
+        },
+        {
+          "id": "p_283",
+          "type": "paragraph",
+          "text": "Journal of the American College of Cardiology — coronary artery revascularisation guideline. [JACC revascularisation guideline](https://www.jacc.org/guidelines/revascularization)."
+        },
+        {
+          "id": "p_284",
+          "type": "paragraph",
+          "text": "National Medical Commission — National Medical Register. [nmr.nmc.org.in](https://nmr.nmc.org.in/)."
+        },
+        {
+          "id": "p_285",
+          "type": "paragraph",
+          "text": "National Medical Commission — official website. [nmc.org.in](https://www.nmc.org.in/)."
+        },
+        {
+          "id": "p_286",
+          "type": "paragraph",
+          "text": "Guy's and St Thomas' NHS Foundation Trust — coronary angioplasty. [Patient information](https://www.guysandstthomas.nhs.uk/health-information/coronary-angioplasty)."
+        },
+        {
+          "id": "p_287",
+          "type": "paragraph",
+          "text": "NHS — coronary angioplasty. [NHS coronary angioplasty](https://www.nhs.uk/tests-and-treatments/coronary-angioplasty/)."
+        },
+        {
+          "id": "p_288",
+          "type": "paragraph",
+          "text": "World Health Organization — cardiovascular diseases. [WHO topic page](https://www.who.int/health-topics/cardiovascular-diseases)."
+        },
+        {
+          "id": "p_289",
+          "type": "paragraph",
+          "text": "Department of Pharmaceuticals — stent ceiling statement, 17 March 2026. [PIB release](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2241169)."
+        },
+        {
+          "id": "p_290",
+          "type": "paragraph",
+          "text": "National Pharmaceutical Pricing Authority — medical devices. [NPPA medical devices](https://nppa.gov.in/en/medicaldevices-2)."
+        },
+        {
+          "id": "p_291",
+          "type": "paragraph",
+          "text": "Editorial practice for this page: confirm that source links remain active, and check clinical statements against current professional guidance, before treating the page as clinical instruction. No named clinician has signed this article."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Cardiologists in India",
+          "href": "/doctors/India/Cardiology"
+        },
+        {
+          "label": "Angioplasty cost in India",
+          "href": "/blogs/angioplasty-cost-in-india"
+        },
+        {
+          "label": "Angioplasty vs bypass surgery in India",
+          "href": "/blogs/angioplasty-vs-bypass-surgery-in-india"
+        },
+        {
+          "label": "How to choose a hospital for heart treatment",
+          "href": "/blogs/how-to-choose-a-hospital-for-heart-treatment-in-india"
+        },
+        {
+          "label": "CABG cost in India",
+          "href": "/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)"
+        },
+        {
+          "label": "Second opinion from a cardiologist in India",
+          "href": "/blogs/second-opinion-from-a-cardiologist-in-india"
+        }
+      ]
+    },
     {
       "id": "art_how_to_choose_a_tavr_tavi_specialist_in_india",
       "slug": "how-to-choose-a-tavr-tavi-specialist-in-india",
