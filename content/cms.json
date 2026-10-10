@@ -1588,9 +1588,1084 @@
       "name": "icd-follow-up.webp",
       "alt": "Follow-up pathway from wound care and a device check to an identification card and walking",
       "addedAt": "2026-10-10T09:30:00.000Z"
+    },
+    {
+      "id": "media_pacemaker_chest_lead_webp",
+      "url": "/uploads/articles/pacemaker-chest-lead.webp",
+      "name": "pacemaker-chest-lead.webp",
+      "alt": "Simplified chest illustration of a pacemaker generator under the skin below the collarbone with one lead ending in the lower chamber of the heart",
+      "addedAt": "2026-10-10T10:30:00.000Z"
+    },
+    {
+      "id": "media_pacemaker_single_dual_webp",
+      "url": "/uploads/articles/pacemaker-single-dual.webp",
+      "name": "pacemaker-single-dual.webp",
+      "alt": "Two heart diagrams, one with a single lead in the lower chamber and one with leads in both the upper and lower chambers",
+      "addedAt": "2026-10-10T10:30:00.000Z"
+    },
+    {
+      "id": "media_leadless_pacemaker_webp",
+      "url": "/uploads/articles/leadless-pacemaker.webp",
+      "name": "leadless-pacemaker.webp",
+      "alt": "Catheter from the groin vein delivering a small capsule-shaped pacemaker inside the heart, with no chest incision",
+      "addedAt": "2026-10-10T10:30:00.000Z"
+    },
+    {
+      "id": "media_pacemaker_follow_up_webp",
+      "url": "/uploads/articles/pacemaker-follow-up.webp",
+      "name": "pacemaker-follow-up.webp",
+      "alt": "Four-step illustration of an upper-chest dressing, a device check with a programmer, an identification card and walking after recovery",
+      "addedAt": "2026-10-10T10:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_pacemaker_cost_in_india",
+      "slug": "pacemaker-cost-in-india",
+      "title": "Pacemaker Cost in India: A Complete Patient Guide",
+      "excerpt": "Pacemaker cost in India depends on the device type, implantation procedure, hospital package, length of stay and the patient's medical condition. This guide explains single-chamber, dual-chamber and leadless pacemakers, package inclusions, recovery, follow-up and what international patients should confirm before travelling.",
+      "date": "10 October 2026",
+      "publishedAt": "2026-10-10T10:30:00.000Z",
+      "updatedAt": "2026-10-10T10:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "pacemaker",
+        "bradycardia",
+        "cost",
+        "India",
+        "travel"
+      ],
+      "image": "/uploads/articles/pacemaker-chest-lead.webp",
+      "imageAlt": "Simplified chest illustration of a pacemaker generator under the skin below the collarbone with one lead ending in the lower chamber of the heart",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Pacemaker Cost in India: Device Types, Surgery & Recovery",
+      "seoDescription": "Understand pacemaker cost in India, single- and dual-chamber devices, leadless pacemakers, hospital package charges, recovery and follow-up for international patients.",
+      "canonical": "https://gaf.healthcare/blogs/pacemaker-cost-in-india",
+      "ogImage": "/uploads/articles/pacemaker-chest-lead.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Pacemaker cost in India",
+        "Pacemaker implantation cost in India",
+        "Single-chamber pacemaker cost",
+        "Dual-chamber pacemaker cost in India",
+        "Leadless pacemaker cost in India",
+        "Permanent pacemaker implantation",
+        "Pacemaker surgery cost",
+        "Pacemaker battery life",
+        "Recovery after pacemaker implantation",
+        "Pacemaker hospitals in India",
+        "Pacemaker treatment for international patients"
+      ],
+      "blocks": [
+        {
+          "id": "p_001",
+          "type": "paragraph",
+          "text": "A pacemaker is a small electronic device that helps regulate the heartbeat when the heart beats too slowly or when its electrical conduction system does not work properly."
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Pacemaker implantation is an established treatment for selected heart rhythm disorders. The device recommended for one patient may be different from the device recommended for another."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "The **pacemaker cost in India** depends on whether the patient needs a single-chamber, dual-chamber, leadless or specialised pacing system. The total bill may also include the device, the implantation procedure, anaesthesia or sedation, the hospital stay, investigations, medicines and follow-up."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "A published Medanta–The Medicity tariff effective from 12 August 2025 lists pacemaker procedure package charges by device category and room type. That tariff states that pacemakers and other implants are charged separately on an actual-cost basis. The published procedure package is **not the same as the complete treatment cost**. Confirm the current tariff and the exact inclusions with the hospital. The document is the [Medanta pacemaker and ICD package tariff](https://cdnbbsr.s3waas.gov.in/s35679fb79d04e9ed91e292858c54df4e8/uploads/2026/01/202601081639734353.pdf)."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "GAF Healthcare's own cost pages publish a separate indicative planning range for international patients. For a conventional [pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) that range is **US$3,500–US$9,000**. It is a planning band, not a hospital quotation, and it is not the Medanta package."
+        },
+        {
+          "id": "html_006",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>There is no single standard price for every pacemaker implantation. The total cost depends on the device selected, the procedure, the hospital, the patient's condition and what the package includes.</p><p>A published Medanta tariff effective from 12 August 2025 provides the following <strong>procedure-package examples by room category</strong>:</p><table><thead><tr><th>Procedure package</th><th>Published package range across listed room categories</th></tr></thead><tbody><tr><td>Single-chamber pacemaker procedure</td><td>₹85,000–₹1,65,000</td></tr><tr><td>Dual-chamber pacemaker procedure</td><td>₹1,06,300–₹2,06,300</td></tr><tr><td>Leadless pacemaker implantation procedure</td><td>₹1,10,500–₹2,14,500</td></tr></tbody></table><p><strong>Important:</strong> These are historical, institution-specific procedure-package rates—not national averages and not complete all-inclusive patient prices. The tariff lists the pacemaker or implant as an additional charge on an actual-cost basis. Medicines, investigations and hospital days are subject to package limits and exclusions. The current quotation may differ.</p><p>For a meaningful estimate, ask the hospital to separate:</p><ul class=\"article-quick-answer__list\"><li>The pacemaker device and leads, if applicable.</li><li>The implantation procedure and professional fees.</li><li>ICU and ward charges.</li><li>Investigations, medicines and consumables.</li><li>Device checks and follow-up.</li><li>Any additional treatment or extended hospital stay.</li></ul></div></aside>"
+        },
+        {
+          "id": "toc_007",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-is-a-pacemaker\">1. What Is a Pacemaker?</a></li><li><a href=\"#2-types-of-pacemakers-available-in-india\">2. Types of Pacemakers Available in India</a></li><li><a href=\"#3-pacemaker-cost-in-india-what-determines-the-final-bill\">3. Pacemaker Cost in India: What Determines the Final Bill?</a></li><li><a href=\"#4-what-does-a-pacemaker-implantation-package-include\">4. What Does a Pacemaker Implantation Package Include?</a></li><li><a href=\"#5-how-is-a-pacemaker-implanted\">5. How Is a Pacemaker Implanted?</a></li><li><a href=\"#6-risks-and-possible-complications\">6. Risks and Possible Complications</a></li><li><a href=\"#7-recovery-after-pacemaker-implantation\">7. Recovery After Pacemaker Implantation</a></li><li><a href=\"#8-pacemaker-battery-life-and-replacement\">8. Pacemaker Battery Life and Replacement</a></li><li><a href=\"#9-can-a-person-with-a-pacemaker-have-an-mri\">9. Can a Person With a Pacemaker Have an MRI?</a></li><li><a href=\"#10-living-with-a-pacemaker\">10. Living With a Pacemaker</a></li><li><a href=\"#11-pacemaker-treatment-for-international-patients\">11. Pacemaker Treatment for International Patients</a></li><li><a href=\"#12-how-to-choose-a-pacemaker-specialist-in-india\">12. How to Choose a Pacemaker Specialist in India</a></li><li><a href=\"#13-questions-to-ask-before-pacemaker-implantation\">13. Questions to Ask Before Pacemaker Implantation</a></li><li><a href=\"#14-frequently-asked-questions-about-pacemaker-cost-in-india\">14. Frequently Asked Questions About Pacemaker Cost in India</a></li><li><a href=\"#conclusion-compare-the-complete-pacemaker-treatment-plan\">Conclusion: Compare the Complete Pacemaker Treatment Plan</a></li><li><a href=\"#sources\">Sources</a></li></ol></nav>"
+        },
+        {
+          "id": "btn_008",
+          "type": "button",
+          "label": "Request a pacemaker quotation that separates the device",
+          "href": "https://wa.me/919044346292?text=Please%20review%20my%20ECGs%20and%20share%20a%20written%20pacemaker%20quotation%20for%20India.%20Please%20separate%20the%20device%20and%20leads%20from%20the%20procedure%20package%2C%20and%20name%20whether%20it%20is%20single-chamber%2C%20dual-chamber%20or%20leadless."
+        },
+        {
+          "id": "h_009",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Is a Pacemaker?"
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "A pacemaker monitors the heart's electrical activity and gives electrical impulses when needed to help keep an appropriate heart rate."
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "The heart has its own conduction system. In some people that system is impaired, so the heartbeat becomes too slow or signals fail to travel normally between the chambers. A pacemaker may help with symptoms of an excessively slow heartbeat in selected patients. It does not treat every heart condition, and it is not a defibrillator."
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "A conventional pacemaker has a pulse generator, which holds the battery and circuitry, and one or more leads that carry signals between the device and the heart. A leadless system is a smaller device placed inside the heart through a catheter. It does not use a chest pocket or conventional leads. The NHS describes [pacemaker implantation](https://www.nhs.uk/tests-and-treatments/pacemaker-implantation/), and the American Heart Association describes [living with a pacemaker](https://www.heart.org/en/health-topics/arrhythmia/prevention--treatment-of-arrhythmia/living-with-your-pacemaker)."
+        },
+        {
+          "id": "img_013",
+          "type": "image",
+          "src": "/uploads/articles/pacemaker-chest-lead.webp",
+          "alt": "Simplified chest illustration of a pacemaker generator under the skin below the collarbone with one lead ending in the lower chamber of the heart",
+          "caption": "A conventional pacemaker sits under the skin near the collarbone. A lead runs through a vein to the heart. This is a teaching drawing, not an X-ray."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 3,
+          "text": "Why might someone need a pacemaker?"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "A cardiologist may recommend implantation for selected conditions, including certain forms of heart block, symptomatic bradycardia, some conduction disorders, pauses or an inadequate heart rate, and, for a different device, selected patients with heart failure who may benefit from cardiac resynchronisation therapy."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "Not every slow heartbeat needs a pacemaker. The clinician has to look at symptoms, the ECG, reversible causes and medicines before recommending an implant."
+        },
+        {
+          "id": "h_017",
+          "type": "heading",
+          "level": 3,
+          "text": "Symptoms that may prompt an assessment"
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "Possible symptoms include dizziness, fainting or near-fainting, unusual fatigue, reduced ability to exercise, breathlessness on activity, and weakness or confusion tied to a rhythm disturbance. These symptoms have many causes. They do not automatically mean a pacemaker is needed."
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "**Seek emergency medical care** for fainting with ongoing severe symptoms, chest pain, severe breathlessness or sudden confusion. Do not delay emergency care to compare device prices."
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 2,
+          "text": "2. Types of Pacemakers Available in India"
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 3,
+          "text": "Single-chamber pacemaker"
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "A single-chamber pacemaker generally uses one lead to pace and sense one chamber, commonly the right ventricle or, in selected cases, the right atrium. Fewer components do not make it the right choice. The rhythm decides."
+        },
+        {
+          "id": "h_023",
+          "type": "heading",
+          "level": 3,
+          "text": "Dual-chamber pacemaker"
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "A dual-chamber pacemaker typically uses two leads, one for the right atrium and one for the right ventricle, so pacing between those chambers can be coordinated when that is what the rhythm needs. It is not automatically better for every patient. Medtronic describes [pacemaker types for bradycardia](https://europe.medtronic.com/in-en/patients/treatments-therapies/pacemakers/options-types.html)."
+        },
+        {
+          "id": "img_025",
+          "type": "image",
+          "src": "/uploads/articles/pacemaker-single-dual.webp",
+          "alt": "Two heart diagrams, one with a single lead in the lower chamber and one with leads in both the upper and lower chambers",
+          "caption": "Left: one lead, the usual picture of a single-chamber system. Right: two leads, atrium and ventricle. The drawing is simplified."
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 3,
+          "text": "Leadless pacemaker"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "A leadless pacemaker is implanted inside the heart through a catheter, commonly from a vein in the groin. There is no chest pocket and no lead left in the vein. That can suit some patients. It does not suit every rhythm problem, and the device, delivery system and price differ from a conventional pacemaker."
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "GAF's published indicative planning range for [leadless pacemaker implantation](/costs/India/Cardiology/Leadless-Pacemaker-Implantation) is **US$12,000–US$25,000**. Do not budget a leadless system from the conventional pacemaker band of US$3,500–US$9,000."
+        },
+        {
+          "id": "img_029",
+          "type": "image",
+          "src": "/uploads/articles/leadless-pacemaker.webp",
+          "alt": "Catheter from the groin vein delivering a small capsule-shaped pacemaker inside the heart, with no chest incision",
+          "caption": "During leadless implantation a catheter carries a small capsule into the heart. The catheter is removed. The capsule stays. This shows the delivery, not a finished X-ray."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 3,
+          "text": "Cardiac resynchronisation therapy (CRT)"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "Some patients with heart failure and a specific conduction pattern may be offered cardiac resynchronisation therapy. CRT-P paces to coordinate the heartbeat. CRT-D also includes a defibrillator. These are not standard pacemakers. GAF lists [CRT/CRT-D implantation](/costs/India/Cardiology/CRT-CRT-D-Implantation) at an indicative planning range of **US$10,000–US$22,000**."
+        },
+        {
+          "id": "h_032",
+          "type": "heading",
+          "level": 3,
+          "text": "Pacemaker vs ICD"
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "A pacemaker supports a heartbeat that is too slow or a conduction problem. An ICD detects and treats certain dangerous fast ventricular rhythms. Some patients need an ICD instead of, or as well as, pacing. The devices are not interchangeable. The ICD planning range on this site is **US$8,000–US$18,000**, explained in [ICD implantation cost in India](/blogs/icd-implantation-cost-in-india). Selected fast rhythms are discussed in [cardiac ablation cost in India](/blogs/cardiac-ablation-cost-in-india). Ablation does not replace a pacemaker when pacing is what the rhythm needs."
+        },
+        {
+          "id": "h_034",
+          "type": "heading",
+          "level": 3,
+          "text": "Planning ranges already published by GAF"
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "These are indicative planning ranges for international patients on the current cost pages. They are not the Medanta rupee packages, and they are not a confirmed quotation. A hospital bill can sit outside them once the device model is named."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "| System | GAF indicative planning range in India | Cost page |\n|---|---|---|\n| Pacemaker implantation | US$3,500–US$9,000 | [Pacemaker](/costs/India/Cardiology/Pacemaker-Implantation) |\n| Leadless pacemaker implantation | US$12,000–US$25,000 | [Leadless pacemaker](/costs/India/Cardiology/Leadless-Pacemaker-Implantation) |\n| CRT/CRT-D implantation | US$10,000–US$22,000 | [CRT/CRT-D](/costs/India/Cardiology/CRT-CRT-D-Implantation) |\n| ICD implantation | US$8,000–US$18,000 | [ICD](/costs/India/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator) |"
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "The pacemaker page can also be opened for [Delhi NCR](/costs/India/Delhi-NCR/Cardiology/Pacemaker-Implantation). A city filter is not a different tariff."
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 2,
+          "text": "3. Pacemaker Cost in India: What Determines the Final Bill?"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "**Pacemaker implantation cost in India**, **single-chamber pacemaker cost**, **dual-chamber pacemaker cost in India** and **leadless pacemaker cost in India** are different questions. A **pacemaker surgery cost** that does not name the device cannot be compared with another hospital's figure."
+        },
+        {
+          "id": "h_040",
+          "type": "heading",
+          "level": 3,
+          "text": "1. Type of pacemaker"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "Single-chamber, dual-chamber, leadless and CRT systems have different devices and different procedure requirements."
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 3,
+          "text": "2. Device and lead charges"
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "For a conventional system the generator and leads may be itemised apart from the procedure. A leadless system has a different device and delivery catheter. Ask for the name, model, number of leads and the device line in writing. The Medanta packages above are procedure packages. The implant is extra."
+        },
+        {
+          "id": "h_044",
+          "type": "heading",
+          "level": 3,
+          "text": "3. Hospital and room category"
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "Tariffs may change between a general ward, a shared room and a single room. Ask whether the room changes only the bed charge or the whole package. [Hospitals listed for cardiology in India](/hospitals/India/Cardiology) are a directory, not a price list."
+        },
+        {
+          "id": "h_046",
+          "type": "heading",
+          "level": 3,
+          "text": "4. Implantation complexity"
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "A first implant is not the same job as a generator change, an infected system or a lead problem. Those should be quoted as the procedure they are."
+        },
+        {
+          "id": "h_048",
+          "type": "heading",
+          "level": 3,
+          "text": "5. Hospital stay"
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "GAF's pacemaker page describes a typical stay of about 1–3 nights. Extra days may be billed outside the package."
+        },
+        {
+          "id": "h_050",
+          "type": "heading",
+          "level": 3,
+          "text": "6. Investigations"
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "An ECG, blood tests, an echocardiogram or a chest X-ray may be needed. Not every patient needs every test."
+        },
+        {
+          "id": "h_052",
+          "type": "heading",
+          "level": 3,
+          "text": "7. Medicines and consumables"
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Packages often cap medicines and consumables. Anything above the cap is extra."
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 3,
+          "text": "8. Emergency versus planned implantation"
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "An urgent admission can add monitoring and treatment of the underlying problem before or after the implant."
+        },
+        {
+          "id": "h_056",
+          "type": "heading",
+          "level": 3,
+          "text": "9. Specialist and anaesthesia fees"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "Professional fees and sedation may sit inside the package or on their own lines. [Cardiologists in India](/doctors/India/Cardiology) is a directory, not a ranking of who should do the implant."
+        },
+        {
+          "id": "h_058",
+          "type": "heading",
+          "level": 3,
+          "text": "10. Follow-up and device checks"
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "Ask whether the first device check and the early review are included."
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 3,
+          "text": "11. Complications or additional procedures"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "Infection, lead displacement or bleeding can add cost. They do not happen to every patient. The hospital should say how unplanned care is billed."
+        },
+        {
+          "id": "btn_062",
+          "type": "button",
+          "label": "Ask for the device line and the procedure line",
+          "href": "https://wa.me/919044346292?text=I%20need%20a%20pacemaker%20quotation%20in%20India%20that%20lists%20the%20device%20model%20and%20price%20separately%20from%20the%20implantation%20package%2C%20room%20category%20and%20hospital%20days."
+        },
+        {
+          "id": "h_063",
+          "type": "heading",
+          "level": 2,
+          "text": "4. What Does a Pacemaker Implantation Package Include?"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "“Package” does not mean every expense is covered. The written estimate should split the procedure charge from the device."
+        },
+        {
+          "id": "h_065",
+          "type": "heading",
+          "level": 3,
+          "text": "Possible inclusions"
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "Depending on the hospital, a package may include the cardiologist or electrophysiologist, anaesthesia or sedation, theatre or catheter-laboratory charges, a defined stay, routine tests within a limit, medicines and consumables within a limit, and standard monitoring after the procedure."
+        },
+        {
+          "id": "h_067",
+          "type": "heading",
+          "level": 3,
+          "text": "Possible exclusions"
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "Often separate: the pulse generator or the leadless device, conventional leads, extra ICU or ward days, medicines and tests above the limit, extra consultations, treatment of complications, follow-up outside the package, and travel, accommodation and a caregiver."
+        },
+        {
+          "id": "h_069",
+          "type": "heading",
+          "level": 3,
+          "text": "Questions to ask the billing team"
+        },
+        {
+          "id": "ol_070",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Is the quoted amount the procedure only, or the complete treatment?",
+            "Is the pacemaker device included?",
+            "Are leads included, and how many are planned?",
+            "Which model is proposed?",
+            "How many hospital days are covered?",
+            "What are the medicine and investigation limits?",
+            "What happens if another hospital day is needed?",
+            "Are device interrogation and the first follow-up included?",
+            "What is billed if the plan changes?",
+            "How long is the quotation valid?"
+          ]
+        },
+        {
+          "id": "h_071",
+          "type": "heading",
+          "level": 2,
+          "text": "5. How Is a Pacemaker Implanted?"
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 3,
+          "text": "Assessment before implantation"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "The cardiologist reviews symptoms, history, medicines and rhythm recordings. Tests may include an ECG, ambulatory monitoring, blood tests, echocardiography and chest imaging. The reason for a pacemaker, the alternatives and the risks for that person should be explained before a date is set."
+        },
+        {
+          "id": "h_074",
+          "type": "heading",
+          "level": 3,
+          "text": "Conventional pacemaker implantation"
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "A conventional device is commonly implanted through a small incision near the collarbone. The patient usually has local anaesthesia and, where appropriate, sedation. One or more leads are guided through a vein, connected to the generator, and the generator is placed under the skin. The team tests the system and closes the incision."
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "The NHS notes that a standard implantation often takes about an hour, and that it can take longer if the case is complex or another procedure is done at the same time."
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 3,
+          "text": "Leadless pacemaker implantation"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "The capsule is delivered through a catheter, commonly from the groin, and fixed inside the heart. There is no chest pocket. Eligibility and risks are specific to that device. The clinician should say why it is or is not suitable."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does a patient stay?"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Many patients stay overnight or for a short period after an uncomplicated conventional implant. Some selected patients with a leadless device may go home the same day. The stay depends on the procedure, the patient's condition and the hospital's protocol. The NHS describes both the usual short stay and same-day discharge in selected leadless cases."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Risks and Possible Complications"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "Pacemaker implantation is commonly performed. It is not risk-free. Possible complications include bleeding or bruising, infection, blood-vessel injury, lead displacement in conventional systems, pneumothorax (air around the lung), device problems, and a need for another procedure. Ask which of these matter for your case."
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "Seek emergency care for severe chest pain, severe breathlessness, fainting or collapse. Contact the pacemaker clinic promptly if the wound becomes more red, swollen or painful, leaks fluid or pus, or if you develop a fever, or if the symptoms that led to the implant return. Follow the discharge sheet you are given."
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 2,
+          "text": "7. Recovery After Pacemaker Implantation"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "**Recovery after pacemaker implantation** is often shorter than recovery after open-heart surgery. Wound care, arm limits and device follow-up still apply."
+        },
+        {
+          "id": "img_086",
+          "type": "image",
+          "src": "/uploads/articles/pacemaker-follow-up.webp",
+          "alt": "Four-step illustration of an upper-chest dressing, a device check with a programmer, an identification card and walking after recovery",
+          "caption": "After a conventional implant: wound care, a device check, the identification card, then a gradual return to activity. The number of days comes from the treating team."
+        },
+        {
+          "id": "h_087",
+          "type": "heading",
+          "level": 3,
+          "text": "First few days"
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "Tiredness and soreness around the incision are common. Follow instructions on showering, dressings and pain relief. Do not put unapproved creams on the wound."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 3,
+          "text": "First few weeks"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "The team may limit heavy lifting and some movements of the arm on the implant side. Do not copy another patient's timeline."
+        },
+        {
+          "id": "h_091",
+          "type": "heading",
+          "level": 3,
+          "text": "Returning to activity"
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "Ask when it is reasonable to drive, lift, work, exercise and fly. The timing depends on healing, the rhythm problem, the device and the job."
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 3,
+          "text": "Device identification card"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "Carry the card. It identifies the device. Show it before procedures and before any MRI."
+        },
+        {
+          "id": "btn_095",
+          "type": "button",
+          "label": "Ask when driving, work and flying are reasonable",
+          "href": "https://wa.me/919044346292?text=After%20a%20pacemaker%20implant%2C%20I%20need%20the%20treating%20team%27s%20advice%20on%20driving%2C%20lifting%2C%20work%20and%20flying%2C%20and%20whether%20the%20first%20device%20check%20is%20included%20in%20the%20quotation."
+        },
+        {
+          "id": "h_096",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Pacemaker Battery Life and Replacement"
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "**Pacemaker battery life** depends on the model, how much pacing is required and the settings. The clinic reads battery status at follow-up. The device can usually flag replacement before the battery is exhausted. Generator replacement may be simpler than the first implant, but it is still a procedure and it is not assumed to be inside the first quotation."
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Do not skip checks because you feel well. Ask what battery life is expected for your model, how often it is checked, whether remote checks exist, and what to do if you miss an appointment."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Can a Person With a Pacemaker Have an MRI?"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Sometimes. Not every system is suitable for every scan."
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "Some devices are MR Conditional, which means an MRI is allowed only when that generator, those leads and the scan protocol all meet the manufacturer's conditions. A label on the generator alone is not enough. Medtronic publishes an [MRI-conditional search tool](https://www.medtronic.com/en-us/healthcare-professionals/mri-resources/mr-conditional-search-tool.html) for its own systems. Other manufacturers have their own lists."
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "Before an MRI, tell radiology you have a pacemaker, carry the device card, and ask the device clinic. Do not assume the scan is safe. If you already know you will need repeated MRI scans, say so before the device is chosen."
+        },
+        {
+          "id": "btn_103",
+          "type": "button",
+          "label": "Ask whether this pacemaker is MR Conditional",
+          "href": "https://wa.me/919044346292?text=Please%20confirm%20whether%20the%20proposed%20pacemaker%20generator%20and%20leads%20are%20MR%20Conditional%2C%20and%20which%20scan%20conditions%20apply%2C%20before%20I%20accept%20the%20device."
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 2,
+          "text": "10. Living With a Pacemaker"
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "Most people return to ordinary activity after recovery. Follow the manufacturer's advice on phones, headphones and magnets, and do not rest a phone on the generator. At airport security, show the device card and do not let a handheld detector dwell over the device longer than the protocol allows."
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Exercise is often encouraged once the team says it is safe. Ask about contact sports. Tell every clinician and dentist that you have a pacemaker before a procedure. Keep the check appointments even when you feel well. The American Heart Association's living-with-a-pacemaker page covers day-to-day points in the same spirit."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Pacemaker Treatment for International Patients"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "Budget for the journey as well as the procedure: consultation, tests, the device, the package, medicines, device checks, lodging, local transport, a possible delay, and a clinic at home that can read that generator. Message the coordination desk on WhatsApp at +91 90443 46292. Device choice and fitness to fly stay with the treating clinicians. If the patient is unstable, do not delay local emergency care in order to travel."
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "| Expense | What to confirm |\n|---|---|\n| Consultation | Whether a records review is included |\n| Tests | Which reports can be reused |\n| Device | Type, model and price, separate from the package |\n| Implantation package | Fees, procedure charges and stay |\n| Medicines | In hospital and at discharge |\n| Device checks | Whether the first interrogation is included |\n| Accommodation and transport | Patient, caregiver and airport transfers |\n| Travel changes | Room to delay the flight |\n| Home follow-up | A clinic that can check that generator |"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "Send ECGs, rhythm recordings, echocardiography, the medicine list and previous procedure notes before booking flights. Before leaving India, collect the discharge summary, pacemaker card, implant report, medicine list, wound-care instructions, the check schedule and a clinic contact."
+        },
+        {
+          "id": "btn_111",
+          "type": "button",
+          "label": "Plan travel only after the device is named",
+          "href": "https://wa.me/919044346292?text=I%20am%20considering%20travel%20to%20India%20for%20a%20pacemaker.%20Please%20help%20arrange%20a%20records%20review%20and%20a%20quotation%20that%20names%20the%20device%20before%20any%20flights%20are%20booked."
+        },
+        {
+          "id": "h_112",
+          "type": "heading",
+          "level": 2,
+          "text": "12. How to Choose a Pacemaker Specialist in India"
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "Implantation is managed by a cardiologist with training in rhythm disorders, often an electrophysiologist. Check registration on the [National Medical Register](https://nmr.nmc.org.in/). A conventional dual-chamber implant, a leadless implant and a CRT system are different skills. Ask who will do the procedure and who will do the checks."
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "City directories are a place to start, not a score: [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology), [Mumbai](/doctors/India/Mumbai/Cardiology), [Bengaluru](/doctors/India/Bengaluru/Cardiology), [Chennai](/doctors/India/Chennai/Cardiology) and [Hyderabad](/doctors/India/Hyderabad/Cardiology)."
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 2,
+          "text": "13. Questions to Ask Before Pacemaker Implantation"
+        },
+        {
+          "id": "h_116",
+          "type": "heading",
+          "level": 3,
+          "text": "About the diagnosis"
+        },
+        {
+          "id": "ul_117",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "What rhythm problem has been identified, and what does the ECG show?",
+            "Is the problem reversible?",
+            "Why a pacemaker, and what happens if implantation is delayed?"
+          ]
+        },
+        {
+          "id": "h_118",
+          "type": "heading",
+          "level": 3,
+          "text": "About the device"
+        },
+        {
+          "id": "ul_119",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Single-chamber, dual-chamber, leadless, CRT, or an ICD?",
+            "Which model, and is that system MR Conditional?",
+            "What battery life is expected for that model?",
+            "How many leads are planned?"
+          ]
+        },
+        {
+          "id": "h_120",
+          "type": "heading",
+          "level": 3,
+          "text": "About the bill"
+        },
+        {
+          "id": "ul_121",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Is the device inside the quotation?",
+            "Are the leads inside it?",
+            "Which days, tests and medicines are covered?",
+            "Is the first device check included?",
+            "How is an extra night or a complication billed?"
+          ]
+        },
+        {
+          "id": "h_122",
+          "type": "heading",
+          "level": 3,
+          "text": "About afterwards"
+        },
+        {
+          "id": "ul_123",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "When is the first check, and can it be remote?",
+            "When can I drive, work, exercise and fly?",
+            "Who checks this device in my home country?"
+          ]
+        },
+        {
+          "id": "h_124",
+          "type": "heading",
+          "level": 2,
+          "text": "14. Frequently Asked Questions About Pacemaker Cost in India"
+        },
+        {
+          "id": "h_125",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does a pacemaker cost in India?"
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "There is no single national price. GAF Healthcare's current cost page gives an indicative planning range of US$3,500–US$9,000 for pacemaker implantation. A published Medanta tariff effective from August 2025 listed procedure packages of ₹85,000–₹1,65,000 for a single-chamber procedure, ₹1,06,300–₹2,06,300 for a dual-chamber procedure and ₹1,10,500–₹2,14,500 for a leadless procedure, across room categories, with the device itself excluded and charged separately. Those rupee figures are historical, institution-specific package examples. They are not all-inclusive national prices and they are not the same thing as GAF's dollar planning range. Confirm a current quotation with the treating hospital."
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the difference between a single-chamber and dual-chamber pacemaker?"
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "A single-chamber system typically paces one chamber. A dual-chamber system can coordinate the right atrium and the right ventricle. The rhythm disorder decides which is appropriate. More leads are not automatically better."
+        },
+        {
+          "id": "h_129",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a leadless pacemaker better than a conventional pacemaker?"
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "Not for every patient. Leadless devices avoid a chest pocket and conventional leads, and they have their own indications and limits. GAF lists leadless pacemaker implantation at an indicative planning range of US$12,000–US$25,000, separate from the conventional pacemaker range."
+        },
+        {
+          "id": "h_131",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does pacemaker implantation take?"
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "A standard implantation often takes about an hour. It can take longer if the anatomy is difficult or another procedure is done at the same time. The NHS describes that range for a typical case. Ask the hospital for the device that is actually planned."
+        },
+        {
+          "id": "h_133",
+          "type": "heading",
+          "level": 3,
+          "text": "How many days does a patient stay in hospital?"
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "Many patients stay overnight or for a short period after a conventional implant. Some selected leadless cases may go home the same day. GAF's pacemaker page describes a typical stay of about 1–3 nights. The actual stay depends on clinical status and the hospital protocol."
+        },
+        {
+          "id": "h_135",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does a pacemaker battery last?"
+        },
+        {
+          "id": "p_136",
+          "type": "paragraph",
+          "text": "It varies by device and by how much pacing is delivered. The clinic estimates longevity for that generator and watches it at scheduled checks. Do not use a brochure average as the plan for your own device."
+        },
+        {
+          "id": "h_137",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I have an MRI with a pacemaker?"
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "Some systems are MR Conditional. An MRI is reasonable only when that generator, those leads and the scan protocol have all been checked. Tell radiology, carry the device card, and ask the device clinic first."
+        },
+        {
+          "id": "h_139",
+          "type": "heading",
+          "level": 3,
+          "text": "Will I need medicines after pacemaker implantation?"
+        },
+        {
+          "id": "p_140",
+          "type": "paragraph",
+          "text": "Possibly. A pacemaker treats a rhythm problem. It does not replace medicines for other heart disease. Do not stop them because the device is in place."
+        },
+        {
+          "id": "h_141",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I travel by air after pacemaker implantation?"
+        },
+        {
+          "id": "p_142",
+          "type": "paragraph",
+          "text": "Many patients can fly after recovery. The timing should be set by the treating clinician. Carry the device card and the medicine list, and know where the first check will happen."
+        },
+        {
+          "id": "h_143",
+          "type": "heading",
+          "level": 3,
+          "text": "Does a pacemaker cure heart disease?"
+        },
+        {
+          "id": "p_144",
+          "type": "paragraph",
+          "text": "No. It treats a specific electrical problem. The underlying heart condition, and the need for medicines and follow-up, can remain."
+        },
+        {
+          "id": "h_145",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a pacemaker be replaced?"
+        },
+        {
+          "id": "p_146",
+          "type": "paragraph",
+          "text": "When the battery is nearing depletion, the pulse generator may be replaced. Lead problems or infection need a different plan. Generator replacement is not assumed to be inside the first quotation."
+        },
+        {
+          "id": "h_147",
+          "type": "heading",
+          "level": 3,
+          "text": "How can GAF Healthcare help international patients?"
+        },
+        {
+          "id": "p_148",
+          "type": "paragraph",
+          "text": "GAF Healthcare can coordinate appointments, hospital communication, records, quotations and practical travel on WhatsApp at +91 90443 46292. Device selection and fitness to travel stay with the treating clinicians. A message to the desk is not a quotation."
+        },
+        {
+          "id": "h_149",
+          "type": "heading",
+          "level": 3,
+          "text": "Does the US$3,500–US$9,000 range include the generator and the leads?"
+        },
+        {
+          "id": "p_150",
+          "type": "paragraph",
+          "text": "Not as a promise. That figure is GAF's indicative planning range for a pacemaker episode. Hospitals often bill the device on actual cost, which is also what the Medanta tariff says about implants. Ask for the generator, the leads and the procedure as separate lines, with the model name, before you compare two quotations."
+        },
+        {
+          "id": "h_151",
+          "type": "heading",
+          "level": 3,
+          "text": "Why do the Medanta rupee packages and GAF's dollar range look so different?"
+        },
+        {
+          "id": "p_152",
+          "type": "paragraph",
+          "text": "They measure different things. The Medanta figures cited here are procedure-package examples for one hospital, effective 12 August 2025, and they exclude the implant. GAF's US$3,500–US$9,000 band is an indicative planning range for international patients for the pacemaker pathway as published on the cost page. Neither number is a confirmed bill. A written quotation after records review is the figure to compare."
+        },
+        {
+          "id": "h_153",
+          "type": "heading",
+          "level": 3,
+          "text": "Why is a leadless pacemaker not inside the US$3,500–US$9,000 band?"
+        },
+        {
+          "id": "p_154",
+          "type": "paragraph",
+          "text": "The device, the delivery system and the eligibility are different. GAF publishes US$12,000–US$25,000 as the indicative planning range for leadless pacemaker implantation. The Medanta leadless procedure package (₹1,10,500–₹2,14,500 across the listed rooms) is also a procedure package, not the device price. Use the leadless cost page and a quotation that names that system."
+        },
+        {
+          "id": "h_155",
+          "type": "heading",
+          "level": 3,
+          "text": "Is an ICD the same budget as a pacemaker?"
+        },
+        {
+          "id": "p_156",
+          "type": "paragraph",
+          "text": "No. An ICD treats certain dangerous fast ventricular rhythms and can shock. GAF's indicative planning range for ICD implantation is US$8,000–US$18,000. If the specialist is discussing sudden-death risk rather than a slow heartbeat, the quotation should be for an ICD or a CRT-D, not for a standard pacemaker."
+        },
+        {
+          "id": "h_157",
+          "type": "heading",
+          "level": 3,
+          "text": "Which records should I send before asking for a quotation?"
+        },
+        {
+          "id": "p_158",
+          "type": "paragraph",
+          "text": "Send ECGs, any Holter or other rhythm recording, echocardiography, the medicine list, and notes of previous heart procedures or device implants. Say whether the question is a first pacemaker, a generator change, a leadless system or an upgrade to CRT. Without that, a hospital can only describe its usual package."
+        },
+        {
+          "id": "btn_159",
+          "type": "button",
+          "label": "Ask who will check the pacemaker after you go home",
+          "href": "https://wa.me/919044346292?text=I%20need%20to%20know%20who%20can%20check%20a%20pacemaker%20after%20I%20return%20home%2C%20and%20whether%20the%20first%20device%20check%20is%20included%20in%20the%20India%20quotation."
+        },
+        {
+          "id": "h_160",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion: Compare the Complete Pacemaker Treatment Plan"
+        },
+        {
+          "id": "p_161",
+          "type": "paragraph",
+          "text": "Pacemaker cost in India depends on the device, the procedure, the hospital package and the medical need. Single-chamber, dual-chamber, leadless and CRT systems are not one price."
+        },
+        {
+          "id": "p_162",
+          "type": "paragraph",
+          "text": "Confirm whether the quotation includes the device, the leads, the stay, the tests, the medicines and the first check. The suitable device is the one that fits the rhythm and has a plan for monitoring, not automatically the cheapest package. For international patients, that means a records review before travel, a written estimate, discharge papers and a clinic at home that can read the generator."
+        },
+        {
+          "id": "p_163",
+          "type": "paragraph",
+          "text": "These pages are live:"
+        },
+        {
+          "id": "ul_164",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation)",
+            "[Leadless pacemaker implantation](/costs/India/Cardiology/Leadless-Pacemaker-Implantation)",
+            "[CRT/CRT-D implantation](/costs/India/Cardiology/CRT-CRT-D-Implantation)",
+            "[ICD implantation cost in India](/blogs/icd-implantation-cost-in-india)",
+            "[Cardiologists in India](/doctors/India/Cardiology)",
+            "[Cardiac ablation cost in India](/blogs/cardiac-ablation-cost-in-india)"
+          ]
+        },
+        {
+          "id": "h_165",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "ol_166",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "NHS — [Pacemaker implantation](https://www.nhs.uk/tests-and-treatments/pacemaker-implantation/)",
+            "American Heart Association — [Living with your pacemaker](https://www.heart.org/en/health-topics/arrhythmia/prevention--treatment-of-arrhythmia/living-with-your-pacemaker)",
+            "Medtronic — [Types of pacemakers for bradycardia](https://europe.medtronic.com/in-en/patients/treatments-therapies/pacemakers/options-types.html)",
+            "Medtronic — [Pacemaker options](https://europe.medtronic.com/in-en/patients/treatments-therapies/pacemakers/our.html)",
+            "Medtronic — [MRI conditional search tool](https://www.medtronic.com/en-us/healthcare-professionals/mri-resources/mr-conditional-search-tool.html)",
+            "Medanta–The Medicity — [published pacemaker and ICD package tariff](https://cdnbbsr.s3waas.gov.in/s35679fb79d04e9ed91e292858c54df4e8/uploads/2026/01/202601081639734353.pdf)",
+            "National Medical Commission — [National Medical Register](https://nmr.nmc.org.in/)",
+            "American Heart Association — [Arrhythmia](https://www.heart.org/en/health-topics/arrhythmia)",
+            "MedlinePlus — [Pacemaker](https://medlineplus.gov/ency/article/007370.htm)",
+            "National Heart, Lung, and Blood Institute — [Arrhythmia](https://www.nhlbi.nih.gov/health/arrhythmias)"
+          ]
+        },
+        {
+          "id": "p_167",
+          "type": "paragraph",
+          "text": "This article is for general education. It has not been signed by a named cardiologist. The need for a pacemaker, the device type, the risks and the follow-up depend on individual assessment. Hospital tariffs change, and a procedure package may exclude the device. Confirm clinical and financial details with the treating hospital."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Pacemaker implantation",
+          "href": "/costs/India/Cardiology/Pacemaker-Implantation"
+        },
+        {
+          "label": "Leadless pacemaker implantation",
+          "href": "/costs/India/Cardiology/Leadless-Pacemaker-Implantation"
+        },
+        {
+          "label": "CRT/CRT-D implantation",
+          "href": "/costs/India/Cardiology/CRT-CRT-D-Implantation"
+        },
+        {
+          "label": "ICD implantation",
+          "href": "/costs/India/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator"
+        },
+        {
+          "label": "ICD implantation cost in India",
+          "href": "/blogs/icd-implantation-cost-in-india"
+        },
+        {
+          "label": "Cardiac ablation cost in India",
+          "href": "/blogs/cardiac-ablation-cost-in-india"
+        },
+        {
+          "label": "Cardiologists in India",
+          "href": "/doctors/India/Cardiology"
+        },
+        {
+          "label": "Hospitals for cardiology in India",
+          "href": "/hospitals/India/Cardiology"
+        }
+      ]
+    },
     {
       "id": "art_icd_implantation_cost_in_india",
       "slug": "icd-implantation-cost-in-india",

@@ -36,7 +36,7 @@
   font-weight: 750;
   color: var(--gold);
 }
-.article-toc ol {
+.article-body .article-toc ol {
   margin: 0.55rem 0 0;
   padding-inline-start: 0;
   list-style: none;
