@@ -1700,9 +1700,769 @@
       "name": "cabg-recovery-path.webp",
       "alt": "Four steps after bypass surgery: a monitored hospital bed, a leg dressing check, walking in a corridor, and a discharge folder",
       "addedAt": "2026-10-10T13:30:00.000Z"
+    },
+    {
+      "id": "media_angioplasty_stent_webp",
+      "url": "/uploads/articles/angioplasty-stent.webp",
+      "name": "angioplasty-stent.webp",
+      "alt": "A catheter from the wrist to the heart, with a close view of a mesh stent inside a coronary artery",
+      "addedAt": "2026-10-10T14:30:00.000Z"
+    },
+    {
+      "id": "media_stent_bms_des_webp",
+      "url": "/uploads/articles/stent-bms-des.webp",
+      "name": "stent-bms-des.webp",
+      "alt": "A plain metal mesh stent beside a mesh stent with small dots suggesting a drug coating",
+      "addedAt": "2026-10-10T14:30:00.000Z"
+    },
+    {
+      "id": "media_single_multiple_stents_webp",
+      "url": "/uploads/articles/single-multiple-stents.webp",
+      "name": "single-multiple-stents.webp",
+      "alt": "One mesh stent in a single artery beside two mesh stents in separate arteries on a heart",
+      "addedAt": "2026-10-10T14:30:00.000Z"
+    },
+    {
+      "id": "media_angioplasty_recovery_webp",
+      "url": "/uploads/articles/angioplasty-recovery.webp",
+      "name": "angioplasty-recovery.webp",
+      "alt": "Four steps after angioplasty: a wrist dressing, walking, a pill box, and a discharge folder",
+      "addedAt": "2026-10-10T14:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_angioplasty_cost_in_india",
+      "slug": "angioplasty-cost-in-india",
+      "title": "Angioplasty Cost in India: Stent Types, Hospital Charges and What Affects the Final Bill",
+      "excerpt": "The cost of angioplasty in India depends on the number and complexity of blockages, stent requirements, hospital charges and length of stay. Learn how stent prices are regulated, what treatment packages may include and how to compare written estimates before choosing a hospital.",
+      "date": "10 October 2026",
+      "publishedAt": "2026-10-10T14:30:00.000Z",
+      "updatedAt": "2026-10-10T14:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "angioplasty",
+        "stent",
+        "cost",
+        "India",
+        "travel"
+      ],
+      "image": "/uploads/articles/angioplasty-stent.webp",
+      "imageAlt": "A catheter from the wrist to the heart, with a close view of a mesh stent inside a coronary artery",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Angioplasty Cost in India: Stent Prices, Hospital Charges & Packages",
+      "seoDescription": "Understand angioplasty cost in India, coronary stent prices, hospital packages, additional charges, recovery and how to compare treatment estimates.",
+      "canonical": "https://gaf.healthcare/blogs/angioplasty-cost-in-india",
+      "ogImage": "/uploads/articles/angioplasty-stent.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Angioplasty cost in India",
+        "Cost of angioplasty in India",
+        "Heart stent cost in India",
+        "Coronary angioplasty package cost",
+        "Angioplasty cost with stent",
+        "Drug-eluting stent price in India",
+        "Single stent angioplasty cost",
+        "Multiple stent angioplasty cost",
+        "Angioplasty cost in private hospitals",
+        "Angioplasty cost for international patients",
+        "Angioplasty recovery and hospital stay"
+      ],
+      "blocks": [
+        {
+          "id": "p_001",
+          "type": "paragraph",
+          "text": "If a coronary artery is narrowed, one of the first questions is what angioplasty will cost in India."
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "A straightforward case with one suitable narrowing is not the same bill as a complex case in several arteries, with specialised equipment, or with a longer stay. City, room, tests, medicines, stents and other illnesses can all change the total."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "A coronary stent is only one part of the treatment. The bill can also include the cardiologist, the catheterisation laboratory, consumables, tests, the admission and care afterwards."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "In India, the National Pharmaceutical Pricing Authority (NPPA) sets ceiling prices for scheduled coronary stents. Those ceilings are not an angioplasty package. The Department of Pharmaceuticals stated the figures below on 17 March 2026. [Official statement](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2241169)."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "**If someone has new or severe chest pain, severe breathlessness, fainting, or other symptoms that could be a heart attack, seek emergency care now.** Do not delay that care to compare prices or to arrange travel."
+        },
+        {
+          "id": "html_006",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>The total cost depends primarily on the clinical complexity of the procedure and the hospital's billing structure.</p><p>The most important factors are:</p><ul class=\"article-quick-answer__list\"><li>The number, location and complexity of the coronary blockages</li><li>Whether one or multiple stents are required</li><li>The type of stent and other devices used</li><li>The cardiologist's and hospital's charges</li><li>Diagnostic tests and catheterisation laboratory consumables</li><li>The patient's condition before and after the procedure</li><li>The duration of hospital admission</li><li>Whether the procedure is elective or performed during an emergency</li><li>Additional treatment or complications</li><li>The follow-up and medicines required after discharge</li></ul><p>For this reason, there is no single price that accurately represents every angioplasty performed in India.</p><p>The most reliable approach is to obtain a written estimate based on the patient's medical records and the proposed treatment plan.</p></div></aside>"
+        },
+        {
+          "id": "toc_007",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-is-angioplasty\">1. What Is Angioplasty?</a></li><li><a href=\"#2-angioplasty-cost-in-india-the-separate-lines\">2. Angioplasty Cost in India: The Separate Lines</a></li><li><a href=\"#3-coronary-stent-prices-in-india\">3. Coronary Stent Prices in India</a></li><li><a href=\"#4-types-of-coronary-stents\">4. Types of Coronary Stents</a></li><li><a href=\"#5-does-the-number-of-stents-change-the-cost\">5. Does the Number of Stents Change the Cost?</a></li><li><a href=\"#6-what-else-changes-the-bill\">6. What Else Changes the Bill?</a></li><li><a href=\"#7-what-a-package-may-include-and-what-it-may-not\">7. What a Package May Include, and What It May Not</a></li><li><a href=\"#8-government-hospitals-private-hospitals-and-insurance\">8. Government Hospitals, Private Hospitals and Insurance</a></li><li><a href=\"#9-angioplasty-cost-for-international-patients\">9. Angioplasty Cost for International Patients</a></li><li><a href=\"#10-angioplasty-and-bypass-are-different-bills\">10. Angioplasty and Bypass Are Different Bills</a></li><li><a href=\"#11-during-the-procedure-and-afterwards\">11. During the Procedure, and Afterwards</a></li><li><a href=\"#12-how-to-choose-a-specialist-and-what-to-ask-before-you-pay\">12. How to Choose a Specialist, and What to Ask Before You Pay</a></li><li><a href=\"#13-frequently-asked-questions-about-angioplasty-cost-in-india\">13. Frequently Asked Questions About Angioplasty Cost in India</a></li><li><a href=\"#conclusion-compare-the-plan-not-only-the-lowest-price\">Conclusion: Compare the Plan, Not Only the Lowest Price</a></li><li><a href=\"#sources\">Sources</a></li></ol></nav>"
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "GAF Healthcare's cost page for [coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) publishes an indicative planning range of **US$3,200–US$8,500**, with a typical stay of **1–3 nights typical**. The same page lists a US comparison of **US$25,000–US$70,000**. That US figure is a comparison, not an India price. Neither figure is a hospital quotation, and neither is the NPPA stent ceiling."
+        },
+        {
+          "id": "btn_009",
+          "type": "button",
+          "label": "Request a written angioplasty estimate from the angiogram",
+          "href": "https://wa.me/919044346292?text=Please%20review%20my%20coronary%20angiogram%20and%20share%20a%20written%20angioplasty%20quotation%20for%20India.%20Separate%20the%20stent%20from%20the%20procedure%2C%20and%20say%20how%20many%20stents%20the%20plan%20expects."
+        },
+        {
+          "id": "h_010",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Is Angioplasty?"
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "Coronary angioplasty, also called percutaneous coronary intervention or PCI, widens a selected narrowed coronary artery through a catheter. It is not open-heart surgery."
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Plaque narrows the arteries that feed the heart muscle. A plaque can also rupture and cause a clot and a heart attack. A specialist guides a thin catheter, usually from the wrist or the groin, to the artery. A balloon may widen the narrowing. In many cases a stent is placed to help keep it open. The work is done in a catheterisation laboratory. The NHS explains [coronary angioplasty](https://www.nhs.uk/tests-and-treatments/coronary-angioplasty/) and [what happens during it](https://www.nhs.uk/tests-and-treatments/coronary-angioplasty/what-happens/)."
+        },
+        {
+          "id": "img_013",
+          "type": "image",
+          "src": "/uploads/articles/angioplasty-stent.webp",
+          "alt": "A catheter from the wrist to the heart, with a close view of a mesh stent inside a coronary artery",
+          "caption": "Angioplasty usually starts at the wrist or the groin. The close view shows a mesh stent inside a coronary artery. This is a teaching drawing, not an angiogram."
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "Angioplasty may be used to restore flow in some heart attacks, to relieve symptoms from a significant narrowing, or when a catheter approach fits the anatomy. Not every narrowing needs a stent. Symptoms, the angiogram, urgency and the expected benefit decide. Medicine or bypass surgery may be the better plan. The cardiologist should say why angioplasty is the proposal, and what the alternatives are. The procedure page on this site is [coronary angioplasty in India](/treatments/coronary-angioplasty-in-india)."
+        },
+        {
+          "id": "h_015",
+          "type": "heading",
+          "level": 2,
+          "text": "2. Angioplasty Cost in India: The Separate Lines"
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "A hospital may quote one package or a preliminary estimate. Ask what that number covers before you compare hospitals."
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "| Component | What to verify |\n|---|---|\n| Cardiologist | Assessment and procedure fees, and whether they are inside the package |\n| Cath lab | Laboratory time and equipment |\n| Stent and devices | Which stents, balloons, wires and other devices, and whether each is listed |\n| Consumables | Catheters, sheaths, contrast and other supplies |\n| Tests | ECG, echo, blood tests and any other investigation, and the cap |\n| Admission | Room category, nursing and how many days |\n| Medicines | Drugs in hospital and, if included, at discharge |\n| Monitoring | Observation after the procedure |\n| Extra care | Extra days, intensive care, or treatment of a complication |\n| Follow-up | Which visits and tests after discharge are included |"
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "Some hospitals bundle several of these. Others itemise them. Ask for inclusions and exclusions in writing."
+        },
+        {
+          "id": "h_019",
+          "type": "heading",
+          "level": 3,
+          "text": "Planning ranges already on this site"
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "These are indicative planning ranges from the current cost pages. They are not NPPA stent prices, and they are not a confirmed bill. Extra stents, intravascular imaging, a pressure wire, rotablation, emergency primary PCI, shock, or angiography and angioplasty in one sitting are quoted after the films are reviewed."
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "| Procedure | India planning range | Typical stay on the cost page |\n|---|---|---|\n| [Coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) | US$3,200–US$8,500 | 1–3 nights typical |\n| [Coronary angiography](/costs/India/Cardiology/Coronary-Angiography) | US$400–US$1,200 | Day-care or overnight |\n| [CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-(Chronic-Total-Occlusion)) | US$5,500–US$14,000 | 1–4 nights |\n| [CABG, bypass surgery](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | US$5,500–US$14,000 | 7–14 nights, then nearby recovery |"
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "The US comparison published beside angioplasty is **US$25,000–US$70,000**. It is not an India price. The same angioplasty page can be opened for [Delhi NCR](/costs/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting) and [Mumbai](/costs/India/Mumbai/Cardiology/Coronary-Angioplasty-Stenting). A city filter is not a different tariff."
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "CTO angioplasty and CABG can share a similar dollar band on these pages. They are different operations. A chronic total occlusion is a complete blockage treated by catheter, with a typical planning stay of 1–4 nights. Bypass surgery is an open operation, with a typical planning stay of 7–14 nights, then nearby recovery. Do not treat one band as a discount on the other. The bypass guide is [bypass surgery cost in India](/blogs/bypass-surgery-cost-in-india)."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 2,
+          "text": "3. Coronary Stent Prices in India"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "A stent is a small mesh tube placed in the artery. People search for **heart stent cost in India** because it looks like the main line on the estimate. **Drug-eluting stent price in India** and the bare-metal ceiling are device limits. They are not **angioplasty cost with stent** and they are not a **coronary angioplasty package cost**."
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 3,
+          "text": "Ceiling prices stated on 17 March 2026"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "The Department of Pharmaceuticals' statement of 17 March 2026 gave these ceiling prices for scheduled coronary stents. They are the device ceilings, **plus applicable GST**. They are not a quotation for the procedure. Confirm the price that applies on the day of treatment in current NPPA notifications. [NPPA medical devices](https://nppa.gov.in/en/medicaldevices-2). An earlier government note explains the pricing framework. [NPPA stent regulation](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2227619)."
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "| Stent category | Official ceiling price per stent |\n|---|---|\n| Bare-metal stent (BMS) | ₹10,692.69 |\n| Drug-eluting stent (DES) | ₹38,933.14 |"
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "The ceiling is a regulatory limit for that scheduled category. A manufacturer's price may be lower, within the rules."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 3,
+          "text": "Why the bill is larger than the stent"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "The cardiologist, the cath lab, balloons, wires, other consumables, contrast, tests, medicines and the admission sit outside that ceiling. Several stents, or a complex case, add more. Do not multiply the ceiling by the number of stents and call that the procedure cost."
+        },
+        {
+          "id": "btn_032",
+          "type": "button",
+          "label": "Ask for the stent line and the procedure line separately",
+          "href": "https://wa.me/919044346292?text=Please%20list%20each%20planned%20stent%2C%20whether%20it%20is%20a%20bare-metal%20or%20drug-eluting%20stent%2C%20and%20the%20procedure%20charge%20apart%20from%20the%20device.%20I%20want%20to%20compare%20that%20with%20the%20current%20NPPA%20ceiling."
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 2,
+          "text": "4. Types of Coronary Stents"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "The cardiologist chooses the device. Price is not the indication."
+        },
+        {
+          "id": "img_035",
+          "type": "image",
+          "src": "/uploads/articles/stent-bms-des.webp",
+          "alt": "A plain metal mesh stent beside a mesh stent with small dots suggesting a drug coating",
+          "caption": "Left: a bare-metal stent, mesh without a drug coating. Right: a drug-eluting stent, drawn with dots to suggest medicine on the mesh. Real devices differ in metal, drug and design."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "Bare-metal stents are mesh without a drug coating. Drug-eluting stents release medicine that reduces excessive tissue growth inside the treated segment, which lowers the chance of the artery narrowing there again compared with bare-metal stents in many settings. They are widely used. Their regulated ceiling is higher. That does not make the dearest device the right one for every person."
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "Designs differ in metal, drug and coating. Those differences are clinical. They do not mean the highest price is best. Some devices are made to be absorbed over time. Do not assume a bioresorbable stent is available or suitable. Ask which stent is proposed, why it fits this artery, how many may be needed, whether the quoted device price sits within the current ceiling, which medicines follow, and what follow-up is planned. The American Heart Association explains [what a stent is](https://www.heart.org/en/health-topics/heart-attack/treatment-of-a-heart-attack/stent)."
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 2,
+          "text": "5. Does the Number of Stents Change the Cost?"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "It can. It does not do so by a fixed amount per stent."
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "**Single stent angioplasty cost** applies when one focal narrowing needs one stent. The hospital package, the complexity and the person's condition still move the total."
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "**Multiple stent angioplasty cost** can be higher because of extra devices and a longer procedure. Contrast, the stay and monitoring also count. Do not assume two stents means double the package."
+        },
+        {
+          "id": "img_042",
+          "type": "image",
+          "src": "/uploads/articles/single-multiple-stents.webp",
+          "alt": "One mesh stent in a single artery beside two mesh stents in separate arteries on a heart",
+          "caption": "Left: one stent in one artery. Right: two stents in different arteries. The number should follow the angiogram, not a budget."
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "Calcified narrowings, a chronic total occlusion, or a branch-point lesion may need extra technique or devices. That is why [CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-(Chronic-Total-Occlusion)) is a separate listing, at **US$5,500–US$14,000**, typically **1–4 nights**, not the ordinary angioplasty band. The cardiologist should say whether the estimate can change if the case is harder than expected. Do not choose a stent count to fit a price."
+        },
+        {
+          "id": "h_044",
+          "type": "heading",
+          "level": 2,
+          "text": "6. What Else Changes the Bill?"
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "**Cost of angioplasty in India** and **angioplasty cost in private hospitals** are not one number. **Angioplasty cost for international patients** also includes the journey. **Angioplasty recovery and hospital stay** can add days the package did not name."
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Hospitals differ by city, equipment and what the package includes. Compare the plan and the inclusions. A simple focal narrowing is not the same job as several arteries. Emergency angioplasty for a heart attack can add urgent admission, extra tests and closer monitoring. A planned procedure in a stable person follows a different path."
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "ECG, echo and blood tests may be inside a cap or billed alone. [Coronary angiography](/costs/India/Cardiology/Coronary-Angiography) is its own listing, at **US$400–US$1,200**, **Day-care or overnight**, when pictures are taken and angioplasty is not assumed in the same sitting. Diabetes, kidney disease, lung disease or a weak heart can add monitoring. An uncomplicated case may leave the same day or the next day. An emergency, another illness or a complication can mean a longer stay, and a larger bill. Ask whether discharge medicines are included, and for how many days. Ask how the hospital bills a change in plan."
+        },
+        {
+          "id": "btn_048",
+          "type": "button",
+          "label": "Ask whether this quotation is for a planned procedure or an emergency pathway",
+          "href": "https://wa.me/919044346292?text=Please%20say%20whether%20the%20angioplasty%20estimate%20assumes%20a%20planned%20admission%2C%20how%20many%20nights%20are%20included%2C%20and%20what%20an%20extra%20night%20or%20intensive%20care%20would%20cost."
+        },
+        {
+          "id": "h_049",
+          "type": "heading",
+          "level": 2,
+          "text": "7. What a Package May Include, and What It May Not"
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "There is no national definition of an angioplasty package. It may include the specialist, the cath lab, named stents, routine consumables, standard tests, a set number of days, nursing and selected medicines used in hospital."
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "Often separate: extra stents or specialised devices, extra days, intensive care beyond the limit, complications, extra consultations, non-routine tests, discharge medicines, a higher room category, rehabilitation, and travel, lodging and a companion. “All-inclusive” still needs a written definition, including what happens if the plan changes."
+        },
+        {
+          "id": "h_052",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Government Hospitals, Private Hospitals and Insurance"
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Some government hospitals provide cardiac care at subsidised rates or under a public scheme. What you pay depends on eligibility, the pathway and the scheme rules. Confirm availability, how devices are supplied, the wait, and what you still pay."
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "Private hospitals may package or itemise. The room, the devices and the complexity move the price. An international desk may coordinate records and a preliminary estimate."
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "Compare whether the procedure is available, how urgent it is, the cath lab and intensive care, the written estimate, insurance or scheme eligibility, and follow-up. The lowest quote is a weak reason to choose a hospital when the case is urgent or complex."
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "Coverage depends on the policy. Planned care and an emergency admission can be treated differently. Ask whether angioplasty is covered, whether pre-authorisation is required, whether this hospital is cashless, whether stents are covered, what the room limit is, whether a co-payment applies, what the waiting period and exclusions are, what happens if the bill exceeds the approval, and which papers a claim needs. A scheme may cover eligible patients at an empanelled hospital. Do not assume it covers every line of a private estimate."
+        },
+        {
+          "id": "h_057",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Angioplasty Cost for International Patients"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "Budget for the procedure and for travel. The hospital estimate often excludes flights, visa costs, lodging and a family member."
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "| Expense | What to confirm |\n|---|---|\n| Consultation | Whether the first opinion is included |\n| Tests | Which are still required, and how they are billed |\n| Angioplasty | What the package covers |\n| Stents | Number, category, and whether each is inside the estimate |\n| Stay | Days included, and the charge for more |\n| Medicines | In hospital and at discharge |\n| Lodging and travel | Before and after admission, and a ticket you can change |\n| A companion | Stay, meals and local transport |\n| Follow-up | Visits before you leave India |"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "Send the angiogram images and report, the echo, the ECG, blood tests and the medicine list before you book flights. The plan can change after you are examined. Do not lock a return date that leaves no room to recover. For the visa, use official Government of India guidance for your nationality. Message the coordination desk on WhatsApp at +91 90443 46292. Fitness to fly stays with the clinicians."
+        },
+        {
+          "id": "btn_061",
+          "type": "button",
+          "label": "Send the angiogram before any flights are booked",
+          "href": "https://wa.me/919044346292?text=I%20am%20considering%20travel%20to%20India%20for%20angioplasty.%20Please%20review%20the%20coronary%20angiogram%20and%20say%20whether%20a%20preliminary%20quotation%20is%20possible%20before%20flights%20are%20booked."
+        },
+        {
+          "id": "h_062",
+          "type": "heading",
+          "level": 2,
+          "text": "10. Angioplasty and Bypass Are Different Bills"
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "Angioplasty treats selected narrowings with a catheter, often with a stent. Bypass surgery uses grafts to carry blood around blockages. Angioplasty is usually less invasive and the first stay is often shorter. Bypass is a major operation with a longer recovery. For some people with complex multivessel disease, bypass can mean fewer repeat procedures. For others, angioplasty is the right treatment. A lower first price is not automatically better value."
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "On this site, angioplasty and stenting is **US$3,200–US$8,500**, typically **1–3 nights typical**. CABG is **US$5,500–US$14,000**, typically **7–14 nights, then nearby recovery**. Those bands can overlap a complex catheter case, such as CTO angioplasty at the same dollar band as CABG, with a different stay. Read [bypass surgery cost in India](/blogs/bypass-surgery-cost-in-india) and [CABG surgery in India](/treatments/cabg-surgery-in-india). Recovery after either procedure is discussed in [heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india). The European Society of Cardiology publishes [clinical practice guidelines](https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines) used when specialists choose between treatments. The American College of Cardiology publishes [guidelines](https://www.acc.org/Guidelines) in the same spirit. Neither sets a price."
+        },
+        {
+          "id": "btn_065",
+          "type": "button",
+          "label": "Ask whether the plan is angioplasty or bypass",
+          "href": "https://wa.me/919044346292?text=Please%20say%20whether%20angioplasty%20or%20bypass%20is%20being%20considered%20for%20these%20arteries%2C%20and%20send%20a%20quotation%20only%20for%20the%20procedure%20the%20team%20recommends."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 2,
+          "text": "11. During the Procedure, and Afterwards"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "The team reviews history, tests, medicines, allergies and kidney function. You will be told about fasting and which medicines to take. Do not stop a prescribed medicine unless they say so."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "In the cath lab, imaging guides the catheter. A balloon may open the narrowing and a stent may be placed. Time depends on the anatomy. Afterwards the access site is watched for bleeding. Some people go home the same day or the next day after an uncomplicated procedure. Others stay longer. The NHS describes that range for suitable cases. Discharge is a clinical decision."
+        },
+        {
+          "id": "img_069",
+          "type": "image",
+          "src": "/uploads/articles/angioplasty-recovery.webp",
+          "alt": "Four steps after angioplasty: a wrist dressing, walking, a pill box, and a discharge folder",
+          "caption": "After angioplasty: care of the wrist or groin puncture, walking, the prescribed medicines, and the discharge papers. Do not stop an antiplatelet medicine because the puncture has healed."
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "You should leave with instructions on the puncture, activity, medicines and the next visit, including driving, exercise and work. Antiplatelet medicines are commonly prescribed after a stent, with other heart medicines as needed. **Do not stop an antiplatelet medicine on your own.** Stopping it early can allow a clot in the stent. The American Heart Association's stent page and its page on [coronary artery disease](https://www.heart.org/en/health-topics/consumer-healthcare/what-is-cardiovascular-disease/coronary-artery-disease) make the same point. MedlinePlus has a plain overview of [coronary artery disease](https://medlineplus.gov/coronaryarterydisease.html)."
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "Seek emergency care for new or severe chest pain, severe breathlessness, fainting, signs of a stroke, or significant bleeding. Also follow the discharge sheet for swelling or bleeding at the puncture, or signs of infection."
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 2,
+          "text": "12. How to Choose a Specialist, and What to Ask Before You Pay"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Ask about training, whether this person regularly treats an anatomy like yours, who will do the procedure, whether the cath lab and emergency support are in the hospital, what intensive care exists if it is needed, how follow-up works, and whether you will get a written estimate and an itemised bill. Experience should be read against the complexity of the case. [Cardiologists in India](/doctors/India/Cardiology) is a directory, not a ranking. City starting points include [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology), [Mumbai](/doctors/India/Mumbai/Cardiology), [Bengaluru](/doctors/India/Bengaluru/Cardiology), [Chennai](/doctors/India/Chennai/Cardiology) and [Hyderabad](/doctors/India/Hyderabad/Cardiology). [Hospitals for cardiology in India](/hospitals/India/Cardiology) is the hospital list. Check registration on the [National Medical Register](https://nmr.nmc.org.in/)."
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "Before you pay a deposit, ask why angioplasty is recommended, whether it is planned or urgent, how many stents are expected and whether that can change, what the alternatives are, and who will do it. Ask the total, whether stents and other devices are inside it, whether the cardiologist and the cath lab are inside it, which tests, medicines and days are covered, what is excluded, how extra days and complications are billed, and whether follow-up is included. Ask how long you might stay, which medicines you will take home, when ordinary activity can resume, when the next visit is, and which symptoms cannot wait. If you live abroad, ask how long to remain in India, which documents to carry, when flying is reasonable, and who will write to your doctor at home."
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "You can ask for a written estimate from the records, confirm the stent category against the current ceiling, and list the exclusions. Compare equivalent plans, not headlines. Keep the angiogram files together so tests are not repeated without a reason. Do not skip follow-up or stop medicines to save money. Do not choose a cheaper stent, or a stent count, only to reduce the bill."
+        },
+        {
+          "id": "h_076",
+          "type": "heading",
+          "level": 2,
+          "text": "13. Frequently Asked Questions About Angioplasty Cost in India"
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the cost of angioplasty in India?"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "There is no single price. GAF Healthcare's current cost page gives an indicative planning range of US$3,200–US$8,500 for coronary angioplasty and stenting, with a typical stay of 1–3 nights typical. The same page lists a US comparison of US$25,000–US$70,000, which is not an India price. The bill still depends on the hospital, the blockages, the stents, the tests, the medicines and the stay. Ask for a written estimate from the records."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the price of one heart stent in India?"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "The NPPA sets ceiling prices for scheduled coronary stents. In the Department of Pharmaceuticals statement dated 17 March 2026, the ceiling was ₹10,692.69 for a bare-metal stent and ₹38,933.14 for a drug-eluting stent, plus applicable GST. Check current NPPA notifications before you rely on these figures. They are the stent, not the angioplasty."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 3,
+          "text": "Does the stent price include angioplasty?"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "No. The stent is one component. The bill may include the specialist, the cath lab, balloons, wires, other consumables, tests, medicines and the admission."
+        },
+        {
+          "id": "h_083",
+          "type": "heading",
+          "level": 3,
+          "text": "Does using two stents double the cost?"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "Not necessarily. Extra stents can raise the device cost. The total also depends on the complexity, the package and the other services. Ask for an itemised estimate. Do not multiply the ceiling by the number of stents."
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 3,
+          "text": "Are drug-eluting stents more expensive than bare-metal stents?"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "Their regulated ceilings are different. On 17 March 2026 the drug-eluting ceiling was ₹38,933.14 and the bare-metal ceiling was ₹10,692.69, plus GST. A drug-eluting stent releases medicine that helps limit tissue growth inside the treated segment. The cardiologist should choose on clinical grounds, not on the ceiling alone."
+        },
+        {
+          "id": "h_087",
+          "type": "heading",
+          "level": 3,
+          "text": "Is angioplasty cheaper than bypass surgery?"
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "Often the first bill is lower, and the first stay is shorter. It is not automatic. On this site, angioplasty and stenting is listed at US$3,200–US$8,500 and CABG at US$5,500–US$14,000. A chronic total occlusion is also listed at US$5,500–US$14,000, with a shorter planning stay than bypass. The right operation follows the anatomy, not the lower number."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I get an angioplasty estimate before travelling to India?"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Many hospitals can give a preliminary estimate after they see the angiogram. The plan and the bill can change after examination or further tests. Confirm inclusions, exclusions and the expected stay before you buy tickets."
+        },
+        {
+          "id": "h_091",
+          "type": "heading",
+          "level": 3,
+          "text": "Is angioplasty covered by health insurance?"
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "It depends on the policy, the hospital, and the exclusions and limits. Ask whether pre-authorisation is required and whether stents, the admission, medicines and follow-up are covered. A hospital quotation is not proof of cover."
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does angioplasty take?"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "It varies with the anatomy. A straightforward narrowing usually takes less time than several lesions or a technically hard one. Ask what is expected in this case."
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 3,
+          "text": "How long is the hospital stay after angioplasty?"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "Some people leave the same day or the next day after an uncomplicated procedure. Others stay longer because of an emergency, another illness or a complication. GAF's angioplasty page plans 1–3 nights typical. That is a planning window, not a discharge time."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I return to work after angioplasty?"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Many people return to ordinary activity relatively soon after an uncomplicated procedure. The timing depends on the heart condition, the job and the doctor's advice. Follow the discharge sheet."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "Do I need medicines after angioplasty?"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Most people do, to treat coronary disease and to reduce later risk. Antiplatelet treatment is commonly prescribed after a stent. Never stop those medicines without medical advice, including when the wrist puncture looks healed."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I choose a cheaper stent to reduce the bill?"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "The stent should fit the artery and the clinical situation. Discuss the options and the regulated ceiling with the cardiologist. Do not pick a device only because it is cheaper."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "Does the lowest angioplasty package offer the best value?"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "Not necessarily. Packages differ in devices, days, tests and follow-up. Compare the written estimates, the plan, the cath lab and the person who will do the procedure."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "How can GAF Healthcare help with angioplasty in India?"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help send records, request appointments, ask for preliminary estimates and arrange practical travel on WhatsApp at +91 90443 46292. The decision to treat stays with the cardiologist. A message is not a quotation."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 3,
+          "text": "Does the US$3,200–US$8,500 range include the stent?"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "Not as a promise. It is the indicative planning range for an angioplasty and stenting episode on the cost page. Hospitals often list the stent separately, and the NPPA ceiling is only the device limit. Ask for the stent model, the category, the device price and the procedure charge as separate lines."
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 3,
+          "text": "Why is a chronic total occlusion not inside the US$3,200–US$8,500 band?"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "A chronic total occlusion is a complete blockage. The technique, the devices and the time are different. GAF lists CTO angioplasty at US$5,500–US$14,000, typically 1–4 nights. Do not budget that case from the ordinary angioplasty band, and do not treat it as bypass surgery just because the dollar band matches CABG."
+        },
+        {
+          "id": "btn_111",
+          "type": "button",
+          "label": "Ask who checks the stent medicines after you go home",
+          "href": "https://wa.me/919044346292?text=I%20need%20a%20written%20plan%20for%20antiplatelet%20medicines%20and%20the%20first%20follow-up%20after%20angioplasty%2C%20including%20who%20to%20contact%20once%20I%20am%20back%20in%20my%20home%20country."
+        },
+        {
+          "id": "h_112",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion: Compare the Plan, Not Only the Lowest Price"
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "Angioplasty cost in India depends on the arteries, the devices, the hospital and the care before and after. The NPPA ceilings help you question a stent line. They are not the procedure. The useful estimate names what is included, what is excluded, and what would change the bill."
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "For people travelling to India, add lodging, local transport and a ticket you can change. [Cardiologists in India](/doctors/India/Cardiology) is a place to start the clinical conversation. The goal is to understand the treatment, its benefits and risks, and the full financial commitment, with the team who will do it."
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "These pages are live:"
+        },
+        {
+          "id": "ul_116",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting)",
+            "[Coronary angioplasty in India](/treatments/coronary-angioplasty-in-india)",
+            "[CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-(Chronic-Total-Occlusion))",
+            "[Bypass surgery cost in India](/blogs/bypass-surgery-cost-in-india)",
+            "[Heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india)",
+            "[Cardiologists in India](/doctors/India/Cardiology)"
+          ]
+        },
+        {
+          "id": "h_117",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "ol_118",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Department of Pharmaceuticals — [statement on coronary stent ceiling prices, 17 March 2026](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2241169)",
+            "National Pharmaceutical Pricing Authority — [medical devices and pricing](https://nppa.gov.in/en/medicaldevices-2)",
+            "Press Information Bureau — [coronary stent price regulation](https://www.pib.gov.in/PressReleasePage.aspx?PRID=2227619)",
+            "NHS — [Coronary angioplasty](https://www.nhs.uk/tests-and-treatments/coronary-angioplasty/)",
+            "NHS — [What happens during coronary angioplasty](https://www.nhs.uk/tests-and-treatments/coronary-angioplasty/what-happens/)",
+            "American Heart Association — [What is a stent?](https://www.heart.org/en/health-topics/heart-attack/treatment-of-a-heart-attack/stent)",
+            "American Heart Association — [Coronary artery disease](https://www.heart.org/en/health-topics/consumer-healthcare/what-is-cardiovascular-disease/coronary-artery-disease)",
+            "European Society of Cardiology — [Clinical practice guidelines](https://www.escardio.org/Guidelines/Clinical-Practice-Guidelines)",
+            "American College of Cardiology — [Guidelines](https://www.acc.org/Guidelines)",
+            "MedlinePlus — [Coronary artery disease](https://medlineplus.gov/coronaryarterydisease.html)"
+          ]
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "This article is for general education. It has not been signed by a named cardiologist. Angioplasty is not right for every narrowing. Device choice and the bill depend on an individual assessment. Confirm the current stent ceiling with the NPPA and the procedure price with the hospital. Do not delay emergency care to compare prices."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Coronary angioplasty and stenting",
+          "href": "/costs/India/Cardiology/Coronary-Angioplasty-Stenting"
+        },
+        {
+          "label": "Coronary angioplasty in India",
+          "href": "/treatments/coronary-angioplasty-in-india"
+        },
+        {
+          "label": "CTO angioplasty",
+          "href": "/costs/India/Cardiology/CTO-Angioplasty-(Chronic-Total-Occlusion)"
+        },
+        {
+          "label": "Bypass surgery cost in India",
+          "href": "/blogs/bypass-surgery-cost-in-india"
+        },
+        {
+          "label": "Heart surgery recovery in India",
+          "href": "/blogs/heart-surgery-recovery-in-india"
+        },
+        {
+          "label": "Cardiologists in India",
+          "href": "/doctors/India/Cardiology"
+        }
+      ]
+    },
     {
       "id": "art_bypass_surgery_cost_in_india",
       "slug": "bypass-surgery-cost-in-india",
