@@ -24,6 +24,19 @@ test("analytics is deferred off the first document", () => {
   assert.doesNotMatch(layout, /strategy="lazyOnload"/);
 });
 
+test("deferred gtag queues an Arguments object, which is the only shape gtag.js will run", () => {
+  const source = readFileSync(join(process.cwd(), "src/components/deferred-analytics.tsx"), "utf8");
+  assert.match(source, /dataLayer\?\.push\(arguments\)/);
+  assert.doesNotMatch(source, /function gtag\(\.\.\.args/);
+  const dataLayer: unknown[] = [];
+  function gtag(this: unknown) {
+    dataLayer.push(arguments);
+  }
+  gtag("config", "G-TEST");
+  assert.equal(Object.prototype.toString.call(dataLayer[0]), "[object Arguments]");
+  assert.equal((dataLayer[0] as { 0: string })[0], "config");
+});
+
 test("production config inlines CSS so the homepage has no blocking stylesheet request", () => {
   const config = readFileSync(join(process.cwd(), "next.config.mjs"), "utf8");
   assert.match(config, /inlineCss:\s*true/);

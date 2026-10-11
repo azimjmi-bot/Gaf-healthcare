@@ -21,8 +21,10 @@ export function DeferredAnalytics({ id }: { id: string }) {
       if (loaded) return;
       loaded = true;
       window.dataLayer = window.dataLayer || [];
-      window.gtag = function gtag(...args: unknown[]) {
-        window.dataLayer?.push(args);
+      // gtag.js ignores a rest-parameter array. It only runs commands queued
+      // as an Arguments object (or an object with a `callee` property).
+      window.gtag = function gtag() {
+        window.dataLayer?.push(arguments);
       };
       window.gtag("js", new Date());
       window.gtag("config", id);

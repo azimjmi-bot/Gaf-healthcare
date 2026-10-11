@@ -23,7 +23,7 @@ export function sitemapEntry(
 ): MetadataRoute.Sitemap[number] {
   return {
     url: absoluteUrl(path, locale),
-    lastModified: opts.lastModified ? new Date(opts.lastModified) : new Date(),
+    ...(opts.lastModified ? { lastModified: new Date(opts.lastModified) } : {}),
     changeFrequency: opts.changeFrequency ?? "weekly",
     priority: opts.priority ?? 0.6,
     ...(opts.images?.length ? { images: opts.images } : {}),

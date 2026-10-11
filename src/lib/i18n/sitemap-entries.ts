@@ -1,3 +1,5 @@
+import { existsSync, mkdirSync, readFileSync, statSync, writeFileSync } from "fs";
+import { join } from "path";
 import type { MetadataRoute } from "next";
 import { costArticles } from "@/data/cost-articles";
 import { getSpecialtyPage } from "@/data/specialty-pages";
@@ -34,7 +36,45 @@ export { sitemapIndexXml, sitemapXml };
 
 const SEARCH_CONSOLE_ORIGIN = SITE_URL;
 const LOCALE_SITEMAP_TTL_MS = 5 * 60 * 1000;
+const DISK_FRESH_MS = 60 * 60 * 1000;
+const DISK_MAX_AGE_MS = 24 * 60 * 60 * 1000;
 const localeXmlCache = new Map<string, { xml: string; expires: number }>();
+const refreshingLocales = new Set<string>();
+
+function sitemapCacheDir() {
+  return process.env.SITEMAP_CACHE_DIR || join(process.cwd(), ".cache", "sitemaps");
+}
+
+function sitemapCachePath(locale: string) {
+  return join(sitemapCacheDir(), `${locale}.xml`);
+}
+
+/** Test hook. Production cache lives in `.cache/sitemaps` and survives a process restart. */
+export function clearLocaleSitemapMemoryCache() {
+  localeXmlCache.clear();
+  refreshingLocales.clear();
+}
+
+function readDiskSitemap(locale: string) {
+  const path = sitemapCachePath(locale);
+  try {
+    if (!existsSync(path)) return null;
+    const xml = readFileSync(path, "utf8");
+    if (!xml.includes("<urlset") && !xml.includes("<sitemapindex")) return null;
+    return { xml, age: Date.now() - statSync(path).mtimeMs };
+  } catch {
+    return null;
+  }
+}
+
+function writeDiskSitemap(locale: string, xml: string) {
+  try {
+    mkdirSync(sitemapCacheDir(), { recursive: true });
+    writeFileSync(sitemapCachePath(locale), xml);
+  } catch {
+    // A read-only disk still has the in-memory copy for this process.
+  }
+}
 
 export const LANGUAGE_SITEMAP_PATHS = Object.fromEntries(
   LOCALES.map((locale) => [locale, `/sitemap-${locale}.xml`]),
@@ -490,11 +530,40 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
   return dedupeSitemap(urls);
 }
 
-/** Cached XML for the heavy locale catalogs so Googlebot is not waiting on a 10s rebuild. */
+function rememberLocaleSitemap(locale: AppLocale, xml: string) {
+  localeXmlCache.set(locale, { xml, expires: Date.now() + LOCALE_SITEMAP_TTL_MS });
+  writeDiskSitemap(locale, xml);
+  return xml;
+}
+
+function rebuildLocaleSitemap(locale: AppLocale) {
+  return rememberLocaleSitemap(locale, sitemapXml(buildLocaleSitemap(locale)));
+}
+
+/**
+ * Cached XML for the heavy locale catalogs so Googlebot is not waiting on a
+ * 10s rebuild. A warm file is returned immediately, including after a new
+ * Node process starts. A stale file is still served while a refresh runs.
+ */
 export function localeSitemapXml(locale: AppLocale) {
   const hit = localeXmlCache.get(locale);
   if (hit && hit.expires > Date.now()) return hit.xml;
-  const xml = sitemapXml(buildLocaleSitemap(locale));
-  localeXmlCache.set(locale, { xml, expires: Date.now() + LOCALE_SITEMAP_TTL_MS });
-  return xml;
+
+  const disk = readDiskSitemap(locale);
+  if (disk && disk.age < DISK_MAX_AGE_MS) {
+    localeXmlCache.set(locale, { xml: disk.xml, expires: Date.now() + LOCALE_SITEMAP_TTL_MS });
+    if (disk.age > DISK_FRESH_MS && !refreshingLocales.has(locale)) {
+      refreshingLocales.add(locale);
+      setImmediate(() => {
+        try {
+          rebuildLocaleSitemap(locale);
+        } finally {
+          refreshingLocales.delete(locale);
+        }
+      });
+    }
+    return disk.xml;
+  }
+
+  return rebuildLocaleSitemap(locale);
 }

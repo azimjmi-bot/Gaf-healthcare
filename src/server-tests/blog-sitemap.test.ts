@@ -1,8 +1,19 @@
 import assert from "node:assert/strict";
+import { mkdtempSync, writeFileSync } from "fs";
+import { tmpdir } from "os";
+import { join } from "path";
 import test from "node:test";
 import { listPublishedPosts } from "@/lib/blogs";
 import { sitemapIndexDocument } from "@/lib/i18n/blog-sitemap";
-import { buildBlogSitemap, buildLocaleSitemap, buildSitemapIndex, sitemapIndexXml, sitemapXml } from "@/lib/i18n/sitemap-entries";
+import {
+  buildBlogSitemap,
+  buildLocaleSitemap,
+  buildSitemapIndex,
+  clearLocaleSitemapMemoryCache,
+  localeSitemapXml,
+  sitemapIndexXml,
+  sitemapXml,
+} from "@/lib/i18n/sitemap-entries";
 
 const NEW_SLUGS = [
   "knee-replacement-surgery-in-india",
@@ -76,7 +87,7 @@ test("the blog sitemap lists every published English article, newest first", () 
     assert.equal(row.changeFrequency, "weekly");
     assert.equal(row.priority, 0.7);
   }
-  assert.equal(urls[1], "https://gaf.healthcare/blogs/knee-replacement-surgery-in-india");
+  assert.equal(urls[1], "https://gaf.healthcare/blogs/how-to-choose-the-right-cardiologist-in-india");
   assert.equal(buildBlogSitemap("ar").length, 0);
 });
 
@@ -103,8 +114,8 @@ test("the root sitemap is an index of the language and blog sitemaps", () => {
     "https://gaf.healthcare/sitemap-ar.xml",
     "https://gaf.healthcare/sitemap-blogs.xml",
   ]);
-  assert.equal(files[0].lastModified, "2026-10-02T17:00:00.000Z");
-  assert.equal(files[2].lastModified, "2026-10-02T17:00:00.000Z");
+  assert.equal(files[0].lastModified, "2026-10-11T01:30:00.000Z");
+  assert.equal(files[2].lastModified, "2026-10-11T01:30:00.000Z");
   const xml = sitemapIndexXml(files);
   assert.match(xml, /<sitemapindex /);
   assert.match(xml, /<loc>https:\/\/gaf\.healthcare\/sitemap-blogs\.xml<\/loc>/);
@@ -113,9 +124,27 @@ test("the root sitemap is an index of the language and blog sitemaps", () => {
 test("the Yoast sitemap_index.xml alias is the same document as /sitemap.xml", () => {
   const xml = sitemapIndexDocument();
   assert.equal(xml, sitemapIndexXml(buildSitemapIndex()));
-  assert.match(xml, /<lastmod>2026-10-02T17:00:00.000Z<\/lastmod>/);
+  assert.match(xml, /<lastmod>2026-10-11T01:30:00.000Z<\/lastmod>/);
   assert.match(xml, /<loc>https:\/\/gaf\.healthcare\/sitemap-blogs\.xml<\/loc>/);
   assert.doesNotMatch(xml, /sitemap_index\.xml/);
+});
+
+test("a warm locale sitemap file is served without rebuilding the catalog", () => {
+  const dir = mkdtempSync(join(tmpdir(), "gaf-sitemap-"));
+  const previous = process.env.SITEMAP_CACHE_DIR;
+  process.env.SITEMAP_CACHE_DIR = dir;
+  clearLocaleSitemapMemoryCache();
+  const marker = `<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://gaf.healthcare/warm-cache-marker</loc></url></urlset>`;
+  try {
+    writeFileSync(join(dir, "fr.xml"), marker);
+    const started = Date.now();
+    assert.equal(localeSitemapXml("fr"), marker);
+    assert.ok(Date.now() - started < 500, "warm sitemap should not rebuild the catalog");
+  } finally {
+    if (previous === undefined) delete process.env.SITEMAP_CACHE_DIR;
+    else process.env.SITEMAP_CACHE_DIR = previous;
+    clearLocaleSitemapMemoryCache();
+  }
 });
 
 test("building the index does not pull unpublished locale catalogs", () => {
