@@ -10,16 +10,22 @@ import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 
 export const dynamic = "force-dynamic";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  searchParams,
+}: {
+  searchParams: Promise<{ ids?: string | string[] }>;
+}): Promise<Metadata> {
   const locale = await getRequestLocale();
   if (!localePageIsRenderable(locale, "/doctors/compare")) {
     return { robots: { index: false, follow: false } };
   }
+  const ids = parseIds((await searchParams).ids);
   return {
     title: "Compare doctors in India",
     description:
       "Compare listed doctors on specialty, experience, qualifications, hospital, city and mapped procedures. This is not a clinical ranking.",
-    robots: { index: false, follow: false },
+    // Pair combinations are thin. The landing page itself can be indexed.
+    robots: ids.length > 0 ? { index: false, follow: true } : undefined,
   };
 }
 

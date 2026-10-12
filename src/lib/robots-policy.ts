@@ -12,9 +12,10 @@ import { SITE_URL, absoluteUrl } from "@/lib/seo-url";
 export function robotsPolicy(): MetadataRoute.Robots {
   return {
     rules: [
-      // Nothing that carries a noindex tag may be disallowed here: unpublished
-      // Arabic facets have to stay crawlable for the tag to ever be read.
-      { userAgent: "*", allow: "/", disallow: ["/cms", "/api/cms", "/doctors/compare"] },
+      // Do not Disallow URLs. Search Console then reports "Blocked by robots.txt"
+      // and never reads a noindex tag. The desk and parameterized compare URLs
+      // stay out of the index with noindex; the public site stays crawlable.
+      { userAgent: "*", allow: "/" },
     ],
     sitemap: [
       absoluteUrl("/sitemap.xml"),

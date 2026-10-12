@@ -7,6 +7,10 @@ import { robotsPolicy, robotsTxtBody } from "./robots-policy";
 describe("robots.txt policy", () => {
   it("advertises a hostname Host and the published language sitemaps", () => {
     const policy = robotsPolicy();
+    const disallow = [policy.rules].flat().flatMap((rule) =>
+      rule.disallow === undefined ? [] : [rule.disallow].flat(),
+    );
+    assert.deepEqual(disallow, []);
     assert.equal(policy.host, "gaf.healthcare");
     assert.ok(!String(policy.host).includes("://"));
     assert.deepEqual(policy.sitemap, [

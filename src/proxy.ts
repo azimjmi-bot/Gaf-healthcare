@@ -19,6 +19,11 @@ async function cmsToken(password: string) {
   return [...new Uint8Array(sig)].map((b) => b.toString(16).padStart(2, "0")).join("");
 }
 
+function noindex(response: NextResponse) {
+  response.headers.set("X-Robots-Tag", "noindex, nofollow");
+  return response;
+}
+
 function withLocale(request: NextRequest, locale: string, pathname?: string) {
   const headers = new Headers(request.headers);
   headers.set(LOCALE_HEADER, locale);
@@ -56,19 +61,19 @@ export async function proxy(request: NextRequest) {
   }
 
   if (pathname === "/cms/login" || pathname === "/api/cms/login") {
-    return NextResponse.next();
+    return noindex(NextResponse.next());
   }
   const expected = await cmsToken(cmsPassword());
   const token = request.cookies.get(CMS_COOKIE)?.value;
   if (token === expected) {
-    return NextResponse.next();
+    return noindex(NextResponse.next());
   }
   if (pathname.startsWith("/api/cms")) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    return noindex(NextResponse.json({ error: "Unauthorized" }, { status: 401 }));
   }
   const login = new URL("/cms/login", request.url);
   login.searchParams.set("next", pathname);
-  return NextResponse.redirect(login);
+  return noindex(NextResponse.redirect(login));
 }
 
 export const config = {
