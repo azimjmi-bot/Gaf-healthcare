@@ -2148,9 +2148,956 @@
       "name": "chd-signs-urgency.webp",
       "alt": "Two columns labeled Emergency and Prompt review: blue lips, gasping and collapse on one side, and fast breathing, slow weight gain and a heart murmur on the other",
       "addedAt": "2026-10-13T18:30:00.000Z"
+    },
+    {
+      "id": "media_tof_four_defects_webp",
+      "url": "/uploads/articles/tof-four-defects.webp",
+      "name": "tof-four-defects.webp",
+      "alt": "Cross-section of a heart labeled VSD, narrowing toward the lungs, an overriding aorta, and a thicker right lower chamber wall",
+      "addedAt": "2026-10-13T19:30:00.000Z"
+    },
+    {
+      "id": "media_tof_repair_webp",
+      "url": "/uploads/articles/tof-repair.webp",
+      "name": "tof-repair.webp",
+      "alt": "Two hearts labeled Before and Repair, with a patch closing the ventricular opening on the repaired heart",
+      "addedAt": "2026-10-13T19:30:00.000Z"
+    },
+    {
+      "id": "media_tof_timing_webp",
+      "url": "/uploads/articles/tof-timing.webp",
+      "name": "tof-timing.webp",
+      "alt": "Three cards labeled Stable at 6 to 12 months, Earlier for low oxygen, and Temporary shunt or stent",
+      "addedAt": "2026-10-13T19:30:00.000Z"
+    },
+    {
+      "id": "media_tof_recovery_webp",
+      "url": "/uploads/articles/tof-recovery.webp",
+      "name": "tof-recovery.webp",
+      "alt": "Four steps labeled Operation, ICU, Ward and Follow-up, with a patched heart, a monitor, medicine and a calendar",
+      "addedAt": "2026-10-13T19:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_tetralogy_of_fallot_surgery_india",
+      "slug": "tetralogy-of-fallot-surgery-india",
+      "title": "Tetralogy of Fallot Surgery in India: Treatment, Cost, Best Age for Surgery and Recovery",
+      "excerpt": "Learn about Tetralogy of Fallot surgery in India, including symptoms, timing of repair, treatment options, planning costs, recovery and follow-up.",
+      "date": "13 October 2026",
+      "publishedAt": "2026-10-13T19:30:00.000Z",
+      "updatedAt": "2026-10-13T19:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "TOF",
+        "congenital heart",
+        "pediatric",
+        "India"
+      ],
+      "image": "/uploads/articles/tof-four-defects.webp",
+      "imageAlt": "Cross-section of a heart labeled VSD, narrowing toward the lungs, an overriding aorta, and a thicker right lower chamber wall",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Tetralogy of Fallot Surgery in India: Cost, Timing & Recovery",
+      "seoDescription": "Learn about Tetralogy of Fallot surgery in India, symptoms, diagnosis, best age for repair, treatment options, estimated costs, recovery and follow-up.",
+      "canonical": "https://gaf.healthcare/blogs/tetralogy-of-fallot-surgery-india",
+      "ogImage": "/uploads/articles/tof-four-defects.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Tetralogy of Fallot surgery in India",
+        "Tetralogy of Fallot treatment in India",
+        "TOF surgery cost in India",
+        "Tetralogy of Fallot repair in babies",
+        "Congenital heart surgery in India",
+        "Best hospitals for Tetralogy of Fallot surgery in India",
+        "Tetralogy of Fallot symptoms in babies",
+        "TOF corrective surgery recovery",
+        "Pediatric cardiac surgeon in India",
+        "Cyanotic congenital heart disease treatment",
+        "Tetralogy of Fallot treatment cost"
+      ],
+      "blocks": [
+        {
+          "id": "tof_p_1",
+          "type": "paragraph",
+          "text": "**Tetralogy of Fallot surgery in India** is complete repair of a congenital heart defect that narrows the path to the lungs and lets oxygen-poor blood reach the body. Many children need that repair. The timing depends on anatomy, oxygen levels, symptoms and the child's overall health."
+        },
+        {
+          "id": "tof_p_2",
+          "type": "paragraph",
+          "text": "**Important:** A sudden increase in blue or grey colour, severe breathing difficulty, collapse or reduced responsiveness is an emergency. Seek local emergency care. Do not wait for a clinic visit, a records review or travel plans."
+        },
+        {
+          "id": "tof_x_3",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>Tetralogy of Fallot (TOF) is a congenital heart defect involving four abnormalities in the heart that affect blood flow to the lungs and the body's oxygen supply. Many children with TOF require corrective heart surgery, although the timing and surgical approach depend on the child's anatomy, oxygen levels, symptoms and overall health.</p><p>In India, stable babies are commonly considered for complete repair during infancy, often around 6–12 months of age under Indian consensus guidance. Babies with significant cyanosis, severe oxygen deficiency or hypercyanotic spells may need earlier intervention. The exact plan must be decided by a pediatric cardiologist and congenital heart surgeon.</p><p>A published hospital estimate places the cost of pediatric TOF surgery in India at approximately ₹2 lakh–₹5 lakh. This is an indicative estimate, not a guaranteed or universal price. Complex anatomy, intensive care, complications, hospital selection and the child's condition can substantially change the final bill.</p><p>Families considering treatment in India should obtain a written, case-specific treatment plan and cost estimate from the treating hospital before making travel arrangements.</p></div></aside>"
+        },
+        {
+          "id": "tof_p_4",
+          "type": "paragraph",
+          "text": "The named operation is [TOF repair surgery in India](/treatments/tof-repair-surgery-in-india). The wider programme is [Pediatric Heart Surgery in India](/treatments/pediatric-heart-surgery-in-india). The opening between the lower chambers is also discussed on [VSD surgery in India](/treatments/ventricular-septal-defect-surgery-in-india). How an operation compares with a catheter procedure is in [open-heart surgery vs catheter treatment for children](/blogs/open-heart-surgery-vs-catheter-treatment-children)."
+        },
+        {
+          "id": "tof_p_5",
+          "type": "paragraph",
+          "text": "Warning signs that are not specific to TOF are listed in [signs of congenital heart disease in babies](/blogs/signs-of-congenital-heart-disease-in-babies). Planning figures are on the [pediatric cardiac surgery cost directory](/costs/India/Pediatric-Cardiac-Surgery) and the [TOF repair cost row](/costs/India/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot))."
+        },
+        {
+          "id": "tof_p_6",
+          "type": "paragraph",
+          "text": "Families comparing [pediatric cardiac surgeons](/doctors/India/Pediatric-Cardiac-Surgery) can start with [Delhi NCR](/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/doctors/India/Mumbai/Pediatric-Cardiac-Surgery), [Bengaluru](/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery), [Chennai](/doctors/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery). Hospital lists use the same cities: [India](/hospitals/India/Pediatric-Cardiac-Surgery), [Delhi NCR](/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery), [Bengaluru](/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery), [Chennai](/hospitals/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Pediatric-Cardiac-Surgery)."
+        },
+        {
+          "id": "tof_i_7",
+          "type": "image",
+          "src": "/uploads/articles/tof-four-defects.webp",
+          "alt": "Cross-section of a heart labeled VSD, narrowing toward the lungs, an overriding aorta, and a thicker right lower chamber wall",
+          "caption": "Tetralogy of Fallot is four related findings: a large ventricular opening, a narrowed path to the lungs, an overriding aorta, and a thicker right ventricle."
+        },
+        {
+          "id": "tof_b_8",
+          "type": "button",
+          "label": "Share the TOF echo for a timing review",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20Tetralogy%20of%20Fallot%20echo%20I%20can%20send%20and%20say%20whether%20the%20question%20is%20complete%20repair%2C%20an%20earlier%20operation%2C%20or%20a%20temporary%20shunt%20or%20stent.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message.%20If%20the%20child%20is%20having%20a%20blue%20spell%2C%20gasping%2C%20collapsed%20or%20unresponsive%20I%20will%20seek%20emergency%20care%20locally."
+        },
+        {
+          "id": "tof_x_9",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-is-tetralogy-of-fallot\">1. What Is Tetralogy of Fallot?</a></li><li><a href=\"#2-what-are-the-four-heart-defects-in-tetralogy-of-fallot\">2. What Are the Four Heart Defects in Tetralogy of Fallot?</a></li><li><a href=\"#3-what-causes-tetralogy-of-fallot\">3. What Causes Tetralogy of Fallot?</a></li><li><a href=\"#4-what-are-the-symptoms-of-tetralogy-of-fallot-in-babies-and-children\">4. What Are the Symptoms of Tetralogy of Fallot in Babies and Children?</a></li><li><a href=\"#5-how-is-tetralogy-of-fallot-diagnosed\">5. How Is Tetralogy of Fallot Diagnosed?</a></li><li><a href=\"#6-when-should-tetralogy-of-fallot-surgery-be-performed\">6. When Should Tetralogy of Fallot Surgery Be Performed?</a></li><li><a href=\"#7-what-are-the-treatment-options-for-tetralogy-of-fallot\">7. What Are the Treatment Options for Tetralogy of Fallot?</a></li><li><a href=\"#8-what-happens-during-tetralogy-of-fallot-repair\">8. What Happens During Tetralogy of Fallot Repair?</a></li><li><a href=\"#9-how-much-does-tetralogy-of-fallot-surgery-cost-in-india\">9. How Much Does Tetralogy of Fallot Surgery Cost in India?</a></li><li><a href=\"#10-how-to-choose-a-hospital-for-tetralogy-of-fallot-surgery-in-india\">10. How to Choose a Hospital for Tetralogy of Fallot Surgery in India</a></li><li><a href=\"#11-what-is-recovery-like-after-tetralogy-of-fallot-surgery\">11. What Is Recovery Like After Tetralogy of Fallot Surgery?</a></li><li><a href=\"#12-what-are-the-risks-and-possible-complications-of-tof-surgery\">12. What Are the Risks and Possible Complications of TOF Surgery?</a></li><li><a href=\"#13-can-a-child-live-a-normal-life-after-tetralogy-of-fallot-repair\">13. Can a Child Live a Normal Life After Tetralogy of Fallot Repair?</a></li><li><a href=\"#14-follow-up-care-after-tetralogy-of-fallot-repair\">14. Follow-Up Care After Tetralogy of Fallot Repair</a></li><li><a href=\"#15-tetralogy-of-fallot-surgery-in-india-for-international-patients\">15. Tetralogy of Fallot Surgery in India for International Patients</a></li><li><a href=\"#16-questions-parents-should-ask-before-tof-surgery\">16. Questions Parents Should Ask Before TOF Surgery</a></li><li><a href=\"#17-frequently-asked-questions-about-tetralogy-of-fallot-surgery-in-india\">17. Frequently Asked Questions About Tetralogy of Fallot Surgery in India</a></li><li><a href=\"#18-conclusion-finding-the-right-treatment-plan-for-tetralogy-of-fallot\">18. Conclusion: Finding the Right Treatment Plan for Tetralogy of Fallot</a></li></ol></nav>"
+        },
+        {
+          "id": "tof_h_10",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Is Tetralogy of Fallot?"
+        },
+        {
+          "id": "tof_p_11",
+          "type": "paragraph",
+          "text": "Tetralogy of Fallot, usually called TOF, is a congenital heart condition present from birth. It changes the structure of the heart and the route blood takes to the lungs for oxygen."
+        },
+        {
+          "id": "tof_p_12",
+          "type": "paragraph",
+          "text": "Tetralogy means a group of four. In TOF, four related abnormalities occur together. Their combined effect can reduce the amount of oxygen-rich blood that reaches the body. Severity varies. Some babies have milder oxygen deficiency and stay stable for a time. Others develop marked cyanosis or sudden spells that need urgent care."
+        },
+        {
+          "id": "tof_p_13",
+          "type": "paragraph",
+          "text": "TOF is treatable. With assessment, timely intervention, experienced congenital heart care and long-term follow-up, many children grow, attend school and take part in everyday activities. The outlook still depends on anatomy, associated conditions, the repair and how the heart works afterwards."
+        },
+        {
+          "id": "tof_h_14",
+          "type": "heading",
+          "level": 3,
+          "text": "What happens inside the heart?"
+        },
+        {
+          "id": "tof_p_15",
+          "type": "paragraph",
+          "text": "In a usual circulation, blood goes to the lungs, picks up oxygen and then goes to the body. In TOF, the path from the right side of the heart to the lungs is narrowed to some degree, and a hole between the lower chambers lets blood cross. Oxygen-poor blood can enter the body's circulation. Lips, tongue or skin may look blue or grey. That is cyanosis. Not every child looks blue all the time. It depends on how tightly lung blood flow is restricted."
+        },
+        {
+          "id": "tof_h_16",
+          "type": "heading",
+          "level": 2,
+          "text": "2. What Are the Four Heart Defects in Tetralogy of Fallot?"
+        },
+        {
+          "id": "tof_h_17",
+          "type": "heading",
+          "level": 3,
+          "text": "Ventricular septal defect"
+        },
+        {
+          "id": "tof_p_18",
+          "type": "paragraph",
+          "text": "A ventricular septal defect is an opening in the wall between the two lower chambers. In TOF that opening is typically large. Blood can pass between the ventricles. A ventricular opening that is not part of tetralogy is a different condition, described on [VSD surgery in India](/treatments/ventricular-septal-defect-surgery-in-india)."
+        },
+        {
+          "id": "tof_h_19",
+          "type": "heading",
+          "level": 3,
+          "text": "Pulmonary stenosis or right ventricular outflow obstruction"
+        },
+        {
+          "id": "tof_p_20",
+          "type": "paragraph",
+          "text": "The path from the right ventricle toward the lungs is narrowed. The narrowing may sit below the pulmonary valve, at the valve, in the pulmonary artery, or in more than one of those places. How tight it is is a major reason oxygen falls, and a major reason the team chooses when to operate."
+        },
+        {
+          "id": "tof_h_21",
+          "type": "heading",
+          "level": 3,
+          "text": "Overriding aorta"
+        },
+        {
+          "id": "tof_p_22",
+          "type": "paragraph",
+          "text": "The aorta normally carries oxygen-rich blood from the left ventricle to the body. In TOF it sits over the ventricular opening and receives blood from both ventricles."
+        },
+        {
+          "id": "tof_h_23",
+          "type": "heading",
+          "level": 3,
+          "text": "Right ventricular hypertrophy"
+        },
+        {
+          "id": "tof_p_24",
+          "type": "paragraph",
+          "text": "The right ventricle works harder to push blood through the narrowed path. Its wall can become thicker. That thickening is right ventricular hypertrophy. Corrective surgery is designed to close the relevant opening and improve blood flow to the lungs. It does not promise that no further heart problem will ever appear."
+        },
+        {
+          "id": "tof_h_25",
+          "type": "heading",
+          "level": 2,
+          "text": "3. What Causes Tetralogy of Fallot?"
+        },
+        {
+          "id": "tof_p_26",
+          "type": "paragraph",
+          "text": "TOF develops while the heart is forming in pregnancy. In many children the exact cause is not known. It is not generally caused by something a parent did or did not do. Parents should not assume they are responsible."
+        },
+        {
+          "id": "tof_p_27",
+          "type": "paragraph",
+          "text": "Some cases are associated with genetic or chromosomal conditions, including 22q11.2 deletion syndrome. A clinician may recommend genetic assessment from the examination, the history and any associated findings. A family history of congenital heart disease can matter when discussing risk and whether relatives should be assessed."
+        },
+        {
+          "id": "tof_p_28",
+          "type": "paragraph",
+          "text": "If TOF is found during pregnancy, a fetal cardiology team can explain the findings, discuss delivery and coordinate care with a pediatric cardiac centre."
+        },
+        {
+          "id": "tof_h_29",
+          "type": "heading",
+          "level": 2,
+          "text": "4. What Are the Symptoms of Tetralogy of Fallot in Babies and Children?"
+        },
+        {
+          "id": "tof_p_30",
+          "type": "paragraph",
+          "text": "Symptoms depend on how much the path to the lungs is narrowed. Some children are obviously affected early. Others look relatively well until something changes."
+        },
+        {
+          "id": "tof_l_31",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Cyanosis.** Blue or grey lips, tongue, gums or skin.",
+            "**Breathing difficulty.** Rapid or laboured breathing, especially during feeding or activity.",
+            "**Feeding problems.** Stopping often, tiring, or taking an unusually long time.",
+            "**Poor weight gain.**",
+            "**Easy fatigue.** Older children may tire sooner during play.",
+            "**Spells of deeper cyanosis.** The child suddenly becomes much bluer or more distressed.",
+            "**Fainting or reduced responsiveness.** This can happen in a severe spell and needs urgent care."
+          ]
+        },
+        {
+          "id": "tof_p_32",
+          "type": "paragraph",
+          "text": "Some older children squat after activity. That posture can temporarily change circulation and is a recognised feature in some children with TOF. These signs are not exclusive to TOF. Other heart and lung conditions can look similar. [Signs of congenital heart disease in babies](/blogs/signs-of-congenital-heart-disease-in-babies) explains which changes need emergency care and which need a prompt clinic review."
+        },
+        {
+          "id": "tof_h_33",
+          "type": "heading",
+          "level": 3,
+          "text": "What is a hypercyanotic spell?"
+        },
+        {
+          "id": "tof_p_34",
+          "type": "paragraph",
+          "text": "A hypercyanotic spell, sometimes called a Tet spell, is a sudden fall in the oxygen reaching the body. The child may become more blue or grey, breathe fast or with difficulty, become very agitated, or, in a severe spell, become limp, faint or less responsive."
+        },
+        {
+          "id": "tof_p_35",
+          "type": "paragraph",
+          "text": "Spells can be dangerous. Sudden worsening cyanosis, significant breathing difficulty, collapse or reduced responsiveness needs emergency care now. Do not delay that care for a second opinion or for travel. A child known to have TOF should have an emergency plan from the treating team. Follow that plan while emergency help is arranged."
+        },
+        {
+          "id": "tof_h_36",
+          "type": "heading",
+          "level": 2,
+          "text": "5. How Is Tetralogy of Fallot Diagnosed?"
+        },
+        {
+          "id": "tof_p_37",
+          "type": "paragraph",
+          "text": "Diagnosis combines examination with imaging. The aim is to confirm TOF and to understand the exact anatomy before choosing an operation."
+        },
+        {
+          "id": "tof_h_38",
+          "type": "heading",
+          "level": 3,
+          "text": "Echocardiography"
+        },
+        {
+          "id": "tof_p_39",
+          "type": "paragraph",
+          "text": "An echocardiogram is the main ultrasound of the heart. It helps the team see the ventricular opening, where and how severe the obstruction is, the pulmonary valve and arteries, chamber size and function, and other structural findings. It often supplies the information needed to plan treatment. If you are sending records, the [second-opinion guide](/blogs/second-opinion-congenital-heart-surgery-india) lists which echo files to include."
+        },
+        {
+          "id": "tof_h_40",
+          "type": "heading",
+          "level": 3,
+          "text": "Pulse oximetry, ECG and chest X-ray"
+        },
+        {
+          "id": "tof_p_41",
+          "type": "paragraph",
+          "text": "Pulse oximetry estimates oxygen saturation. The number has to be read with the examination and the other tests. An ECG records electrical activity and can show patterns linked with a thicker right ventricle or certain rhythm problems. A chest X-ray may show heart size and the lung vessels. It does not replace the echocardiogram."
+        },
+        {
+          "id": "tof_h_42",
+          "type": "heading",
+          "level": 3,
+          "text": "CT, catheterisation and blood tests"
+        },
+        {
+          "id": "tof_p_43",
+          "type": "paragraph",
+          "text": "Some children need extra imaging of the pulmonary arteries, coronary arteries or other vessels. CT angiography or cardiac catheterisation is used when the result would change the surgical plan. They are not required for every child. Blood counts, kidney tests, infection screening and other checks may be requested before surgery, especially if there are other medical or genetic conditions."
+        },
+        {
+          "id": "tof_p_44",
+          "type": "paragraph",
+          "text": "Families travelling to India should share the original echo report and images, discharge summaries, oxygen records, the medicine list and growth history. The receiving team may still repeat tests before confirming the plan."
+        },
+        {
+          "id": "tof_b_45",
+          "type": "button",
+          "label": "Ask which TOF records are still missing",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20Tetralogy%20of%20Fallot%20reports%20I%20can%20send%20and%20say%20which%20echo%20images%2C%20oxygen%20records%20and%20operation%20notes%20are%20still%20needed.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "tof_h_46",
+          "type": "heading",
+          "level": 2,
+          "text": "6. When Should Tetralogy of Fallot Surgery Be Performed?"
+        },
+        {
+          "id": "tof_p_47",
+          "type": "paragraph",
+          "text": "Timing is one of the most important decisions. It depends on cyanosis, the degree of obstruction, age and weight, associated abnormalities and the centre. Indian consensus guidance recommends complete repair for stable, minimally cyanosed children at approximately 6–12 months of age, or earlier according to the institution's policy. Children who present later should be assessed for repair when the diagnosis is made."
+        },
+        {
+          "id": "tof_p_48",
+          "type": "paragraph",
+          "text": "Babies with significant cyanosis, or with hypercyanotic spells despite medical care, may need earlier intervention. Depending on anatomy, the team may recommend complete repair or a temporary procedure to increase lung blood flow before the definitive repair. There is no single age that is correct for every child."
+        },
+        {
+          "id": "tof_i_49",
+          "type": "image",
+          "src": "/uploads/articles/tof-timing.webp",
+          "alt": "Three cards labeled Stable at 6 to 12 months, Earlier for low oxygen, and Temporary shunt or stent",
+          "caption": "Stable infants are often repaired around 6–12 months. Low oxygen or spells can move the operation earlier. Some babies need a temporary shunt or stent first."
+        },
+        {
+          "id": "tof_p_50",
+          "type": "paragraph",
+          "text": "| Factor | Why it matters |\n| --- | --- |\n| Oxygen saturation and cyanosis | Persistent or severe low oxygen may need earlier treatment. |\n| Hypercyanotic spells | Recurrent or severe spells need urgent reassessment. |\n| Pulmonary artery anatomy | Size and branching change the surgical plan. |\n| Pulmonary valve and outflow tract | These decide how flow is restored and whether more reconstruction is needed. |\n| Coronary artery anatomy | An unusual coronary course can change the technique. |\n| Age, weight and health | Nutrition, infection and other conditions affect readiness. |\n| Associated heart defects | Extra abnormalities can change timing and complexity. |"
+        },
+        {
+          "id": "tof_p_51",
+          "type": "paragraph",
+          "text": "A child who looks stable should still attend scheduled cardiology visits. Waiting for obvious symptoms can be unsafe. Severity cannot be judged reliably from appearance alone."
+        },
+        {
+          "id": "tof_h_52",
+          "type": "heading",
+          "level": 2,
+          "text": "7. What Are the Treatment Options for Tetralogy of Fallot?"
+        },
+        {
+          "id": "tof_h_53",
+          "type": "heading",
+          "level": 3,
+          "text": "Complete corrective surgery"
+        },
+        {
+          "id": "tof_p_54",
+          "type": "paragraph",
+          "text": "Complete repair is the definitive operation for most children with TOF. It usually closes the ventricular septal defect with a patch, relieves the obstruction from the right ventricle to the lungs, and repairs or reconstructs the pulmonary valve or outflow tract when that is needed. Associated abnormalities are addressed as part of the same plan when that is appropriate."
+        },
+        {
+          "id": "tof_p_55",
+          "type": "paragraph",
+          "text": "Some children need a patch across the pulmonary valve area, called a transannular patch. Others need a different reconstruction. The repair is meant to improve lung blood flow and reduce mixing of oxygen-poor and oxygen-rich blood. It does not mean every child will be free of later heart problems or further procedures. The operation page is [TOF repair surgery in India](/treatments/tof-repair-surgery-in-india)."
+        },
+        {
+          "id": "tof_i_56",
+          "type": "image",
+          "src": "/uploads/articles/tof-repair.webp",
+          "alt": "Two hearts labeled Before and Repair, with a patch closing the ventricular opening on the repaired heart",
+          "caption": "Complete repair closes the ventricular opening with a patch and widens the path toward the lungs."
+        },
+        {
+          "id": "tof_h_57",
+          "type": "heading",
+          "level": 3,
+          "text": "Temporary palliative treatment"
+        },
+        {
+          "id": "tof_p_58",
+          "type": "paragraph",
+          "text": "In selected babies the team may improve lung blood flow before complete repair. Options include a surgical shunt, catheter stenting of a suitable vessel or outflow path, or balloon treatment of the pulmonary valve in carefully selected cases. The choice depends on anatomy, size, oxygen levels and the centre's experience. Palliation is often a bridge to a later operation, not a substitute for definitive repair. [Open-heart surgery vs catheter treatment](/blogs/open-heart-surgery-vs-catheter-treatment-children) explains why a catheter step does not replace surgery for every child with tetralogy."
+        },
+        {
+          "id": "tof_h_59",
+          "type": "heading",
+          "level": 3,
+          "text": "Medical stabilisation"
+        },
+        {
+          "id": "tof_p_60",
+          "type": "paragraph",
+          "text": "Medicines and supportive care may be used while the team prepares an intervention or manages a complication. Medicine can help selected symptoms. It does not correct the structural abnormalities of TOF. Do not start, stop or change medicines without the treating clinician."
+        },
+        {
+          "id": "tof_b_61",
+          "type": "button",
+          "label": "Ask whether complete repair or a temporary procedure is being considered",
+          "href": "https://wa.me/919044346292?text=Please%20review%20my%20child's%20TOF%20findings%20and%20say%20whether%20the%20clinical%20question%20is%20complete%20repair%20now%20or%20a%20temporary%20shunt%20or%20stent%20first.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "tof_h_62",
+          "type": "heading",
+          "level": 2,
+          "text": "8. What Happens During Tetralogy of Fallot Repair?"
+        },
+        {
+          "id": "tof_p_63",
+          "type": "paragraph",
+          "text": "Complete TOF repair is a major congenital heart operation. The exact steps differ. The usual sequence is:"
+        },
+        {
+          "id": "tof_l_64",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Anaesthesia and monitoring.** The child receives general anaesthesia. Heart rate, blood pressure, oxygen and other signs are monitored throughout.",
+            "**Access to the heart.** The surgeon reaches the heart through an appropriate incision. The operation commonly uses cardiopulmonary bypass, a machine that temporarily supports circulation and oxygenation.",
+            "**Closing the ventricular septal defect.** A patch closes the opening in most standard repairs and helps direct blood along the intended paths.",
+            "**Relieving the obstruction.** The surgeon enlarges or reconstructs the narrowed path from the right ventricle toward the pulmonary artery. The pulmonary valve may be preserved, repaired or reconstructed. Some children need a transannular patch.",
+            "**Checking the repair.** The team assesses flow through the repaired paths and heart function, often with echocardiography.",
+            "**Transfer to intensive care.** The child goes to a pediatric cardiac intensive care unit."
+          ]
+        },
+        {
+          "id": "tof_p_65",
+          "type": "paragraph",
+          "text": "Ask which parts were repaired, whether the pulmonary valve was preserved, and whether further procedures may be needed later. [Questions to ask before heart surgery](/blogs/questions-to-ask-before-heart-surgery) is a practical list for that conversation."
+        },
+        {
+          "id": "tof_h_66",
+          "type": "heading",
+          "level": 2,
+          "text": "9. How Much Does Tetralogy of Fallot Surgery Cost in India?"
+        },
+        {
+          "id": "tof_p_67",
+          "type": "paragraph",
+          "text": "GAF Healthcare does not publish a single fee for Tetralogy of Fallot surgery. The [TOF repair planning band](/costs/India/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)) is **US$6,500–US$16,000**, with an expected stay of **8–16 nights; parent stay expected**. The US comparison band on the same row is **US$50,000–US$140,000**. These figures are planning ranges from the pediatric cardiac directory. They are not a quotation and not a package price."
+        },
+        {
+          "id": "tof_p_68",
+          "type": "paragraph",
+          "text": "The quick answer also records a published hospital-page estimate of approximately ₹2 lakh–₹5 lakh for pediatric TOF surgery. That figure is an indicative hospital-page range. It is not the GAF directory band, and it is not a current price for every hospital. Complex pulmonary-artery reconstruction, a longer intensive-care stay, or another procedure can move the bill. The treating hospital should issue a written estimate from the child's reports and the proposed operation."
+        },
+        {
+          "id": "tof_p_69",
+          "type": "paragraph",
+          "text": "Neighbouring procedures on the same directory use different bands, because they are different operations:"
+        },
+        {
+          "id": "tof_p_70",
+          "type": "paragraph",
+          "text": "| Named procedure | India planning band | Expected stay | US comparison band |\n| --- | --- | --- | --- |\n| TOF repair | US$6,500–US$16,000 | 8–16 nights; parent stay expected | US$50,000–US$140,000 |\n| VSD closure | US$4,500–US$11,000 | 6–12 nights; parent stay expected | US$35,000–US$90,000 |\n| PDA closure | US$3,500–US$8,500 | 3–8 nights; parent stay expected | US$20,000–US$60,000 |\n| Arterial switch | US$12,000–US$26,000 | 10–21 nights; parent stay expected | US$80,000–US$200,000 |"
+        },
+        {
+          "id": "tof_p_71",
+          "type": "paragraph",
+          "text": "City pages for the broader congenital category, which is not a TOF-only tariff, include [India](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery), [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery) and [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery). Compare the scope of a written package, not only a headline number."
+        },
+        {
+          "id": "tof_p_72",
+          "type": "paragraph",
+          "text": "| Cost component | What to clarify |\n| --- | --- |\n| Preoperative assessment | Are consultations, echocardiography, imaging and laboratory tests included? |\n| Surgeon and anaesthesia | Are professional fees inside the estimate? |\n| Theatre and supplies | Does the estimate cover the planned repair and the consumables? |\n| Intensive care | How many ICU days are included, and what is charged if the stay is longer? |\n| Hospital room | Which room category is included? |\n| Medicines and blood products | Are routine medicines, blood products and disposables included? |\n| Postoperative tests | Are echocardiograms and ECGs covered? |\n| Complications | How is extra treatment or a longer admission billed? |\n| Follow-up | Are postoperative visits and tests included? |"
+        },
+        {
+          "id": "tof_p_73",
+          "type": "paragraph",
+          "text": "A lower headline price is not, by itself, the better choice. Ask about the pediatric cardiac team's experience with congenital repair, pediatric cardiac intensive care, pediatric cardiac anaesthesia, the plan if a complication occurs, and the follow-up schedule. A useful estimate states what is included, what can cost extra, and what happens if the child's condition changes."
+        },
+        {
+          "id": "tof_b_74",
+          "type": "button",
+          "label": "Request a written TOF repair estimate",
+          "href": "https://wa.me/919044346292?text=Please%20use%20the%20echo%20I%20can%20send%20to%20request%20a%20written%20Tetralogy%20of%20Fallot%20repair%20estimate%20in%20India.%20Say%20whether%20the%20plan%20is%20complete%20repair%20or%20a%20temporary%20procedure%2C%20and%20what%20is%20included.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "tof_h_75",
+          "type": "heading",
+          "level": 2,
+          "text": "10. How to Choose a Hospital for Tetralogy of Fallot Surgery in India"
+        },
+        {
+          "id": "tof_p_76",
+          "type": "paragraph",
+          "text": "Choosing a hospital is more than finding a well-known name. The centre needs to care for the child before, during and after the repair."
+        },
+        {
+          "id": "tof_l_77",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Ask who will examine the child, who will operate, and who will manage the recovery. Confirm that the team regularly repairs congenital heart defects in babies and children.",
+            "Ask whether a dedicated pediatric cardiac ICU is available and how unexpected complications are handled.",
+            "Ask the surgeon to explain the anatomy, the planned repair, whether the pulmonary valve may be preserved, and what extra reconstruction is anticipated. The final approach can change after detailed assessment or during the operation.",
+            "Ask for a written estimate: admission length, ICU, room category, medicines, tests, surgical fees and exclusions. If you are travelling, ask what happens financially if the stay is longer.",
+            "Ask for a discharge plan and how follow-up will work with a local pediatric cardiologist after you go home."
+          ]
+        },
+        {
+          "id": "tof_p_78",
+          "type": "paragraph",
+          "text": "No hospital should be chosen only from a promotional claim. Weigh the team, the facilities, the proposed plan and the child's needs. A city directory is a list, not a ranking of a best hospital."
+        },
+        {
+          "id": "tof_h_79",
+          "type": "heading",
+          "level": 2,
+          "text": "11. What Is Recovery Like After Tetralogy of Fallot Surgery?"
+        },
+        {
+          "id": "tof_p_80",
+          "type": "paragraph",
+          "text": "Recovery happens in stages. It depends on the child's condition before surgery, the complexity of the repair and whether complications occur. Broader expectations are in [heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india). The directory planning stay for TOF repair is 8–16 nights; parent stay expected. That is a planning range, not a promise for an individual child."
+        },
+        {
+          "id": "tof_i_81",
+          "type": "image",
+          "src": "/uploads/articles/tof-recovery.webp",
+          "alt": "Four steps labeled Operation, ICU, Ward and Follow-up, with a patched heart, a monitor, medicine and a calendar",
+          "caption": "After repair, care moves from the operation to intensive care, the ward, and planned follow-up."
+        },
+        {
+          "id": "tof_h_82",
+          "type": "heading",
+          "level": 3,
+          "text": "Intensive care, the ward and home"
+        },
+        {
+          "id": "tof_p_83",
+          "type": "paragraph",
+          "text": "In the pediatric cardiac ICU the team watches heart function, oxygen, breathing, blood pressure, fluid balance and rhythm. Some children need temporary breathing support. Pain, fluids and medicines are managed there. Ask for the day's progress in plain language."
+        },
+        {
+          "id": "tof_p_84",
+          "type": "paragraph",
+          "text": "On the ward, feeding and activity increase gradually. The team watches the wound, heart function and oxygen, and teaches care after discharge. Hospital length is not the same for every child."
+        },
+        {
+          "id": "tof_p_85",
+          "type": "paragraph",
+          "text": "Take written instructions for the wound, medicines, feeding, activity, warning signs and the next visit. Contact the team for fever, increasing wound redness, wound discharge, poor feeding, unusual sleepiness or worsening breathing. Severe breathing difficulty, blue or grey lips or tongue, collapse or reduced responsiveness needs emergency care."
+        },
+        {
+          "id": "tof_p_86",
+          "type": "paragraph",
+          "text": "Early wound healing may take several weeks. Some children need longer to regain strength or feeding. The surgeon should say when play, school or other activity can resume. Do not use a generic timeline in place of the child's own plan."
+        },
+        {
+          "id": "tof_h_87",
+          "type": "heading",
+          "level": 2,
+          "text": "12. What Are the Risks and Possible Complications of TOF Surgery?"
+        },
+        {
+          "id": "tof_p_88",
+          "type": "paragraph",
+          "text": "TOF repair is an established operation and remains major heart surgery. Risk depends on the child's condition, the anatomy and the operation performed. Possible problems include:"
+        },
+        {
+          "id": "tof_l_89",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Bleeding or infection.",
+            "Abnormal heart rhythms.",
+            "Breathing difficulty that is temporary or longer.",
+            "Residual obstruction to lung blood flow.",
+            "A residual opening or leak around the ventricular patch.",
+            "Pulmonary valve problems.",
+            "Reduced heart function or fluid-related complications.",
+            "The need for another catheter procedure or operation."
+          ]
+        },
+        {
+          "id": "tof_p_90",
+          "type": "paragraph",
+          "text": "Ask which of these matter for your child's anatomy, how they would be found, and what treatment would be available if they occurred. General averages are less useful than that explanation."
+        },
+        {
+          "id": "tof_h_91",
+          "type": "heading",
+          "level": 2,
+          "text": "13. Can a Child Live a Normal Life After Tetralogy of Fallot Repair?"
+        },
+        {
+          "id": "tof_p_92",
+          "type": "paragraph",
+          "text": "Many children who have a successful repair grow, attend school and take part in everyday activities. Outcomes vary. Surgery does not remove the need for cardiac follow-up. Some children have residual pulmonary valve leakage, narrowing, rhythm problems or other issues that need watching."
+        },
+        {
+          "id": "tof_p_93",
+          "type": "paragraph",
+          "text": "Activity should be discussed with the pediatric cardiologist. Some children join most activities. Others need limits or further treatment. A child who looks well after a successful operation is not automatically free of later heart care."
+        },
+        {
+          "id": "tof_p_94",
+          "type": "paragraph",
+          "text": "The original defect does not simply reappear. Residual or progressive problems can develop, including pulmonary valve regurgitation, obstruction, rhythm abnormalities, or changes in the size and function of the right ventricle. Some children later need a catheter procedure or another operation. Follow-up is how the team decides whether that treatment is required."
+        },
+        {
+          "id": "tof_h_95",
+          "type": "heading",
+          "level": 2,
+          "text": "14. Follow-Up Care After Tetralogy of Fallot Repair"
+        },
+        {
+          "id": "tof_p_96",
+          "type": "paragraph",
+          "text": "Long-term follow-up is part of care after TOF surgery, including when the child has no obvious symptoms. The schedule depends on the operation, heart function, residual findings and the cardiologist's advice."
+        },
+        {
+          "id": "tof_l_97",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Examination and a review of symptoms.",
+            "Echocardiography of structure and function.",
+            "An ECG for rhythm.",
+            "Further imaging or rhythm monitoring when indicated.",
+            "Growth, activity tolerance and development.",
+            "Medicines and any activity limits."
+          ]
+        },
+        {
+          "id": "tof_p_98",
+          "type": "paragraph",
+          "text": "The plan can change as the child grows. Some young people move from pediatric cardiology to an adult congenital heart service. Keep the original diagnosis, the operation report, the discharge summary, imaging and later clinic notes. Those records matter if you change hospitals or return to another country."
+        },
+        {
+          "id": "tof_h_99",
+          "type": "heading",
+          "level": 2,
+          "text": "15. Tetralogy of Fallot Surgery in India for International Patients"
+        },
+        {
+          "id": "tof_p_100",
+          "type": "paragraph",
+          "text": "Travel has to be planned with the cardiac team. The first question is whether the child is stable enough to travel and whether an intervention is urgent. Do not delay emergency treatment in order to arrange international travel or a routine second opinion."
+        },
+        {
+          "id": "tof_l_101",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Collect the records.** Echo report and images, ECG, oxygen readings, hospital notes, medicines and any earlier procedures. The receiving team may ask for more tests.",
+            "**Obtain a specialist review.** A pediatric cardiologist and congenital heart surgeon should explain whether complete repair is recommended, whether a temporary procedure may come first, and what could change the plan.",
+            "**Request a written estimate.** It should name the planned procedure, the expected admission and ICU time, inclusions, exclusions, currency, payment and any deposit.",
+            "**Travel only after medical advice.** Confirm whether travel is appropriate, when to arrive, and what must be arranged before admission. Keep plans flexible if the child's condition changes.",
+            "**Plan for a caregiver.** A parent or guardian usually needs to stay. Consider accommodation near the hospital and funds for a longer stay.",
+            "**Arrange follow-up before going home.** Take the operative report, discharge summary, medicine instructions, imaging and the follow-up plan. Ask how the hospital will write to the local cardiologist."
+          ]
+        },
+        {
+          "id": "tof_p_102",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates record sharing, consultations, treatment estimates and relevant travel logistics. Treatment decisions and surgical care remain with the treating clinicians and the hospital."
+        },
+        {
+          "id": "tof_b_103",
+          "type": "button",
+          "label": "Ask whether travel is safe for this child",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20TOF%20records%20I%20can%20send%20and%20say%20whether%20travel%20to%20India%20is%20a%20question%20the%20treating%20team%20should%20answer%20before%20any%20plan%20is%20made.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "tof_h_104",
+          "type": "heading",
+          "level": 2,
+          "text": "16. Questions Parents Should Ask Before TOF Surgery"
+        },
+        {
+          "id": "tof_l_105",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "How severe is my child's TOF, and what does the echocardiogram show?",
+            "Why is surgery recommended now?",
+            "Is complete repair possible, or might a temporary procedure be needed first?",
+            "What operation is planned for this anatomy?",
+            "Is the pulmonary valve likely to be preserved?",
+            "What are the most important risks in this case?",
+            "How long might intensive care and the hospital stay last?",
+            "What is included in the written estimate, and what extra costs can arise?",
+            "Which signs after discharge need urgent care?",
+            "How often will visits and echocardiograms be needed?",
+            "Might another operation or a pulmonary valve procedure be needed later?",
+            "If we live outside India, how will follow-up be coordinated with our local cardiologist?"
+          ]
+        },
+        {
+          "id": "tof_p_106",
+          "type": "paragraph",
+          "text": "Ask for medical terms in everyday language. Understanding the plan is part of preparing for a major operation."
+        },
+        {
+          "id": "tof_h_107",
+          "type": "heading",
+          "level": 2,
+          "text": "17. Frequently Asked Questions About Tetralogy of Fallot Surgery in India"
+        },
+        {
+          "id": "tof_h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "Is Tetralogy of Fallot curable?"
+        },
+        {
+          "id": "tof_p_109",
+          "type": "paragraph",
+          "text": "Corrective surgery usually improves the route of blood to the lungs and the oxygen supply to the body. It does not guarantee that every heart-related issue disappears permanently. Many children need lifelong cardiac follow-up."
+        },
+        {
+          "id": "tof_h_110",
+          "type": "heading",
+          "level": 3,
+          "text": "At what age is TOF surgery performed?"
+        },
+        {
+          "id": "tof_p_111",
+          "type": "paragraph",
+          "text": "For stable children with minimal cyanosis, Indian consensus guidance commonly recommends complete repair at around 6–12 months, or earlier depending on the centre and the anatomy. Babies with significant cyanosis or hypercyanotic spells may need earlier treatment. There is no single correct age for every child."
+        },
+        {
+          "id": "tof_h_112",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does Tetralogy of Fallot surgery cost in India?"
+        },
+        {
+          "id": "tof_p_113",
+          "type": "paragraph",
+          "text": "The GAF Healthcare planning band for TOF repair is US$6,500–US$16,000, with an expected stay of 8–16 nights; parent stay expected. The US comparison band on the same directory row is US$50,000–US$140,000. A published hospital page has also listed an indicative range of approximately ₹2 lakh–₹5 lakh. That hospital-page range is not the GAF band and is not a current quotation. Ask the treating hospital for a written estimate from the child's reports."
+        },
+        {
+          "id": "tof_h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "Is TOF surgery open-heart surgery?"
+        },
+        {
+          "id": "tof_p_115",
+          "type": "paragraph",
+          "text": "Complete TOF repair is commonly performed as open-heart surgery using cardiopulmonary bypass. The technique depends on the anatomy. Some children have a catheter-based or surgical palliative procedure before complete repair. That step does not replace the definitive operation for every child."
+        },
+        {
+          "id": "tof_h_116",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a baby with Tetralogy of Fallot survive without surgery?"
+        },
+        {
+          "id": "tof_p_117",
+          "type": "paragraph",
+          "text": "The course varies with severity, and untreated TOF can cause serious complications. Definitive intervention is generally recommended. Do not assume that a baby who looks stable can safely remain untreated. Follow the specialist's advice."
+        },
+        {
+          "id": "tof_h_118",
+          "type": "heading",
+          "level": 3,
+          "text": "Is TOF surgery safe for infants?"
+        },
+        {
+          "id": "tof_p_119",
+          "type": "paragraph",
+          "text": "TOF repair is an established operation in pediatric cardiac care, and every major operation carries risk. Anatomy, oxygen levels, overall health and the centre's capabilities change that risk. The surgeon should discuss the profile for this child, not a general slogan."
+        },
+        {
+          "id": "tof_h_120",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does a child stay in the hospital after TOF surgery?"
+        },
+        {
+          "id": "tof_p_121",
+          "type": "paragraph",
+          "text": "The directory planning stay for TOF repair is 8–16 nights; parent stay expected. The actual stay depends on the condition before surgery, the repair and the recovery. Complications can extend it. Ask the treating hospital for an estimate for this child."
+        },
+        {
+          "id": "tof_h_122",
+          "type": "heading",
+          "level": 3,
+          "text": "Can Tetralogy of Fallot be detected before birth?"
+        },
+        {
+          "id": "tof_p_123",
+          "type": "paragraph",
+          "text": "Yes. Prenatal ultrasound and fetal echocardiography can identify TOF during pregnancy. That finding helps the family and the team plan delivery and specialist care after birth. Not every case is seen before birth."
+        },
+        {
+          "id": "tof_h_124",
+          "type": "heading",
+          "level": 3,
+          "text": "Can Tetralogy of Fallot be treated without surgery?"
+        },
+        {
+          "id": "tof_p_125",
+          "type": "paragraph",
+          "text": "Medicines may ease selected symptoms or help stabilise a child. They do not correct the structural abnormalities. Some children have a catheter-based or surgical palliative procedure. Those steps are not necessarily the definitive repair."
+        },
+        {
+          "id": "tof_h_126",
+          "type": "heading",
+          "level": 3,
+          "text": "Will my child need another operation after TOF repair?"
+        },
+        {
+          "id": "tof_p_127",
+          "type": "paragraph",
+          "text": "Some children need a later procedure, particularly if pulmonary valve leakage, narrowing or other residual problems develop. Others may not need another operation for many years. Follow-up is how the team watches for those problems."
+        },
+        {
+          "id": "tof_h_128",
+          "type": "heading",
+          "level": 3,
+          "text": "Can children with repaired TOF play sports?"
+        },
+        {
+          "id": "tof_p_129",
+          "type": "paragraph",
+          "text": "Many children can be physically active. The right level depends on heart function, residual abnormalities and rhythm. The pediatric cardiologist should advise for that child. A general permission or a general ban is not a substitute for that advice."
+        },
+        {
+          "id": "tof_h_130",
+          "type": "heading",
+          "level": 3,
+          "text": "What should international families bring to India for TOF treatment?"
+        },
+        {
+          "id": "tof_p_131",
+          "type": "paragraph",
+          "text": "Bring the echocardiography report and images, ECGs, oxygen records, discharge summaries, any operation reports, the medicine list and relevant laboratory results. Confirm with the receiving hospital that travel is appropriate before you leave."
+        },
+        {
+          "id": "tof_h_132",
+          "type": "heading",
+          "level": 3,
+          "text": "When is Tetralogy of Fallot an emergency?"
+        },
+        {
+          "id": "tof_p_133",
+          "type": "paragraph",
+          "text": "Sudden worsening cyanosis, severe breathing difficulty, collapse, fainting with ongoing symptoms, or reduced responsiveness needs emergency assessment. Do not wait for a scheduled appointment when a child deteriorates."
+        },
+        {
+          "id": "tof_h_134",
+          "type": "heading",
+          "level": 3,
+          "text": "Does every child with TOF have blue lips?"
+        },
+        {
+          "id": "tof_p_135",
+          "type": "paragraph",
+          "text": "No. Cyanosis varies with how tightly blood flow to the lungs is obstructed. Some children look obviously blue. Others have quieter symptoms. A specialist assessment is still needed when cyanosis is not obvious."
+        },
+        {
+          "id": "tof_h_136",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a child with TOF grow normally after surgery?"
+        },
+        {
+          "id": "tof_p_137",
+          "type": "paragraph",
+          "text": "Many children grow and develop well after repair. Individual results vary. Growth, feeding, exercise tolerance and heart function should be checked at follow-up. Some children need extra nutritional or developmental support."
+        },
+        {
+          "id": "tof_h_138",
+          "type": "heading",
+          "level": 2,
+          "text": "18. Conclusion: Finding the Right Treatment Plan for Tetralogy of Fallot"
+        },
+        {
+          "id": "tof_p_139",
+          "type": "paragraph",
+          "text": "Tetralogy of Fallot is a serious congenital heart condition. Timely diagnosis and the right treatment can improve circulation and day-to-day life. The plan depends on oxygen levels, anatomy, symptoms and overall health. Some babies have a planned complete repair in infancy. Others need earlier treatment or a temporary procedure first."
+        },
+        {
+          "id": "tof_p_140",
+          "type": "paragraph",
+          "text": "India can be an option for pediatric cardiac care. Choosing a hospital means looking at the team's experience, intensive care, the proposed operation, a written estimate and follow-up, not only a price. For international families, records should be reviewed and travel suitability confirmed before arrangements are made. Emergency symptoms must be treated locally without delay."
+        },
+        {
+          "id": "tof_p_141",
+          "type": "paragraph",
+          "text": "**GAF Healthcare can help families coordinate medical consultations and treatment estimates in India, subject to case review and hospital availability.** The child's treating pediatric cardiologist and congenital heart surgeon should guide the clinical decisions."
+        },
+        {
+          "id": "tof_b_142",
+          "type": "button",
+          "label": "Speak to a coordinator about TOF surgery",
+          "href": "https://wa.me/919044346292?text=Please%20help%20coordinate%20a%20pediatric%20cardiac%20consultation%20and%20a%20case-specific%20Tetralogy%20of%20Fallot%20estimate%20in%20India.%20The%20treating%20hospital%20must%20confirm%20the%20operation%20and%20whether%20travel%20is%20appropriate.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "tof_h_143",
+          "type": "heading",
+          "level": 3,
+          "text": "Sources used for this guide"
+        },
+        {
+          "id": "tof_l_144",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Indian guidelines for indications and timing of intervention for common congenital heart diseases](https://pmc.ncbi.nlm.nih.gov/articles/PMC6716301/)",
+            "[Guidelines for the management of common congenital heart diseases in India](https://pmc.ncbi.nlm.nih.gov/articles/PMC6796629/)",
+            "[CDC — Congenital heart defects](https://www.cdc.gov/heart-defects/)",
+            "[American Heart Association — Congenital heart defects](https://www.heart.org/en/health-topics/congenital-heart-defects)",
+            "[Merck Manual — Tetralogy of Fallot](https://www.merckmanuals.com/professional/pediatrics/congenital-cardiovascular-anomalies/tetralogy-of-fallot)"
+          ]
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "TOF repair surgery in India",
+          "href": "/treatments/tof-repair-surgery-in-india"
+        },
+        {
+          "label": "Pediatric Heart Surgery in India",
+          "href": "/treatments/pediatric-heart-surgery-in-india"
+        },
+        {
+          "label": "TOF repair planning cost",
+          "href": "/costs/India/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)"
+        },
+        {
+          "label": "Signs of congenital heart disease in babies",
+          "href": "/blogs/signs-of-congenital-heart-disease-in-babies"
+        },
+        {
+          "label": "Open-heart surgery vs catheter treatment",
+          "href": "/blogs/open-heart-surgery-vs-catheter-treatment-children"
+        },
+        {
+          "label": "Heart surgery recovery in India",
+          "href": "/blogs/heart-surgery-recovery-in-india"
+        }
+      ]
+    },
     {
       "id": "art_signs_congenital_heart_disease_babies",
       "slug": "signs-of-congenital-heart-disease-in-babies",
