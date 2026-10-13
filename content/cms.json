@@ -2204,9 +2204,1066 @@
       "name": "vsd-babies-decision.webp",
       "alt": "Three cards labeled Watch, Review and Close, with an eye, a calendar and a heart",
       "addedAt": "2026-10-13T20:30:00.000Z"
+    },
+    {
+      "id": "media_asd_children_anatomy_webp",
+      "url": "/uploads/articles/asd-children-anatomy.webp",
+      "name": "asd-children-anatomy.webp",
+      "alt": "Diagram of the upper heart chambers with an opening labeled ASD and an arrow from the left atrium to the right atrium",
+      "addedAt": "2026-10-13T21:30:00.000Z"
+    },
+    {
+      "id": "media_asd_children_types_webp",
+      "url": "/uploads/articles/asd-children-types.webp",
+      "name": "asd-children-types.webp",
+      "alt": "Four heart diagrams labeled secundum, primum, sinus venosus and coronary sinus, each marking a different opening",
+      "addedAt": "2026-10-13T21:30:00.000Z"
+    },
+    {
+      "id": "media_asd_children_closure_webp",
+      "url": "/uploads/articles/asd-children-closure.webp",
+      "name": "asd-children-closure.webp",
+      "alt": "Two panels labeled Device and Surgery: a catheter with a double-disc closure device, and a stitched patch closing an opening",
+      "addedAt": "2026-10-13T21:30:00.000Z"
+    },
+    {
+      "id": "media_asd_children_timing_webp",
+      "url": "/uploads/articles/asd-children-timing.webp",
+      "name": "asd-children-timing.webp",
+      "alt": "Three cards labeled Watch, Elective 2 to 4 years, and Earlier symptoms",
+      "addedAt": "2026-10-13T21:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_asd_closure_in_children",
+      "slug": "asd-closure-in-children",
+      "title": "ASD Closure in Children: Surgery, Device Closure, Cost in India and Recovery",
+      "excerpt": "Learn about ASD in children, when device closure or surgery is considered, treatment timing, planning costs in India, recovery and follow-up.",
+      "date": "13 October 2026",
+      "publishedAt": "2026-10-13T21:30:00.000Z",
+      "updatedAt": "2026-10-13T21:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "ASD",
+        "congenital heart",
+        "pediatric",
+        "India"
+      ],
+      "image": "/uploads/articles/asd-children-anatomy.webp",
+      "imageAlt": "Diagram of the upper heart chambers with an opening labeled ASD and an arrow from the left atrium to the right atrium",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "ASD Closure in Children: Surgery, Cost & Recovery in India",
+      "seoDescription": "Learn about ASD in children, symptoms, device closure vs surgery, treatment timing, ASD closure cost in India, recovery and follow-up.",
+      "canonical": "https://gaf.healthcare/blogs/asd-closure-in-children",
+      "ogImage": "/uploads/articles/asd-children-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "ASD closure in children",
+        "Atrial septal defect treatment in children",
+        "ASD device closure in India",
+        "ASD surgery cost in India",
+        "ASD closure cost in India",
+        "Hole in heart treatment for children",
+        "ASD surgery in babies",
+        "Device closure vs open-heart surgery for ASD",
+        "ASD closure recovery time",
+        "Congenital heart defect treatment in India",
+        "Pediatric cardiology hospitals in India"
+      ],
+      "blocks": [
+        {
+          "id": "asd_p_1",
+          "type": "paragraph",
+          "text": "**ASD closure in children** closes an opening between the heart's two upper chambers when that opening is affecting the heart or the lungs. **Not every child with an ASD needs heart surgery.** A small atrial septal defect may only need monitoring, and some close on their own. Others need a catheter device or an operation."
+        },
+        {
+          "id": "asd_p_2",
+          "type": "paragraph",
+          "text": "**Urgent warning:** Severe breathing difficulty, sudden blue or grey lips or tongue, collapse, unresponsiveness or rapid deterioration needs emergency care now. Do not use WhatsApp, and do not wait to arrange travel."
+        },
+        {
+          "id": "asd_x_3",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>No. An atrial septal defect (ASD) is an opening in the wall separating the two upper chambers of the heart. Some small ASDs do not require treatment and may close naturally, while others need closure because they cause excessive blood flow through the lungs or enlargement of the right side of the heart.</p><p>There are two main approaches to closing an ASD:</p><ul><li><strong>Transcatheter device closure:</strong> A specialist guides a catheter through a blood vessel and places a closure device across a suitable defect. This avoids open-heart surgery but is appropriate only for selected ASDs.</li><li><strong>Surgical closure:</strong> A congenital heart surgeon closes the opening through an operation. Surgery is necessary for certain defect types, unsuitable anatomy or cases requiring correction of associated abnormalities.</li></ul><p>The decision depends on the ASD's location, size, surrounding tissue, effect on heart function, pulmonary pressure and the child's overall health.</p><p>In India, a 2024 study of pediatric cardiac centres reported historical patient-cost ranges of ₹80,000–₹1,75,000 for ASD device closure across participating government and charitable hospitals, and ₹1,30,000–₹3,05,000 in private hospitals. For surgical ASD closure, the corresponding ranges were ₹65,000–₹2,00,000, ₹80,000–₹1,50,000 and ₹2,20,000–₹4,50,000. These are research figures, not current hospital quotations.</p><p><strong>Important:</strong> Only a pediatric cardiologist and congenital heart team can determine whether a particular child needs monitoring, device closure or surgery.</p></div></aside>"
+        },
+        {
+          "id": "asd_p_4",
+          "type": "paragraph",
+          "text": "The named procedure page is [ASD closure surgery in India](/treatments/asd-closure-surgery-in-india). The wider programme is [Pediatric Heart Surgery in India](/treatments/pediatric-heart-surgery-in-india). An opening between the lower chambers is a different defect, covered in [VSD surgery in babies and children](/blogs/vsd-surgery-in-babies-and-children) and on the [VSD treatment page](/treatments/ventricular-septal-defect-surgery-in-india). How a catheter procedure compares with an operation is in [open-heart surgery vs catheter treatment for children](/blogs/open-heart-surgery-vs-catheter-treatment-children)."
+        },
+        {
+          "id": "asd_p_5",
+          "type": "paragraph",
+          "text": "A duct that stays open after birth is covered in [PDA closure in babies](/blogs/pda-closure-in-babies). Feeding and colour changes that are not specific to an ASD are in [signs of congenital heart disease in babies](/blogs/signs-of-congenital-heart-disease-in-babies). Planning figures are on the [pediatric cardiac surgery cost directory](/costs/India/Pediatric-Cardiac-Surgery) and the [ASD closure cost row](/costs/India/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect))."
+        },
+        {
+          "id": "asd_p_6",
+          "type": "paragraph",
+          "text": "Families comparing [pediatric cardiac surgeons](/doctors/India/Pediatric-Cardiac-Surgery) can start with [Delhi NCR](/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/doctors/India/Mumbai/Pediatric-Cardiac-Surgery), [Bengaluru](/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery), [Chennai](/doctors/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery). Hospital lists use the same cities: [India](/hospitals/India/Pediatric-Cardiac-Surgery), [Delhi NCR](/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery), [Bengaluru](/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery), [Chennai](/hospitals/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Pediatric-Cardiac-Surgery)."
+        },
+        {
+          "id": "asd_i_7",
+          "type": "image",
+          "src": "/uploads/articles/asd-children-anatomy.webp",
+          "alt": "Diagram of the upper heart chambers with an opening labeled ASD and an arrow from the left atrium to the right atrium",
+          "caption": "Blood often crosses an ASD from the left atrium to the right atrium, so more blood reaches the lungs."
+        },
+        {
+          "id": "asd_b_8",
+          "type": "button",
+          "label": "Request a medical opinion",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20ASD%20echo%20I%20can%20send%20for%20my%20child%20and%20say%20whether%20the%20question%20is%20monitoring%2C%20device%20closure%20or%20surgery.%20Do%20not%20name%20a%20best%20surgeon%20or%20a%20best%20doctor.%20This%20is%20not%20an%20emergency%20message.%20If%20the%20child%20is%20gasping%2C%20blue%2C%20collapsed%20or%20unresponsive%20I%20will%20seek%20emergency%20care%20locally."
+        },
+        {
+          "id": "asd_x_9",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-is-an-atrial-septal-defect-asd\">1. What Is an Atrial Septal Defect (ASD)?</a></li><li><a href=\"#2-types-of-asd-in-children\">2. Types of ASD in Children</a></li><li><a href=\"#3-what-causes-asd-in-children\">3. What Causes ASD in Children?</a></li><li><a href=\"#4-symptoms-of-asd-in-babies-and-children\">4. Symptoms of ASD in Babies and Children</a></li><li><a href=\"#5-how-is-asd-diagnosed-in-children\">5. How Is ASD Diagnosed in Children?</a></li><li><a href=\"#6-does-every-asd-need-closure\">6. Does Every ASD Need Closure?</a></li><li><a href=\"#7-at-what-age-should-an-asd-be-closed\">7. At What Age Should an ASD Be Closed?</a></li><li><a href=\"#8-asd-device-closure-vs-surgical-closure-what-is-the-difference\">8. ASD Device Closure vs Surgical Closure: What Is the Difference?</a></li><li><a href=\"#9-what-happens-during-asd-device-closure\">9. What Happens During ASD Device Closure?</a></li><li><a href=\"#10-what-happens-during-surgical-asd-closure\">10. What Happens During Surgical ASD Closure?</a></li><li><a href=\"#11-asd-closure-cost-in-india\">11. ASD Closure Cost in India</a></li><li><a href=\"#12-recovery-after-asd-device-closure\">12. Recovery After ASD Device Closure</a></li><li><a href=\"#13-recovery-after-surgical-asd-closure\">13. Recovery After Surgical ASD Closure</a></li><li><a href=\"#14-risks-and-possible-complications-of-asd-closure\">14. Risks and Possible Complications of ASD Closure</a></li><li><a href=\"#15-what-happens-if-an-asd-is-not-closed\">15. What Happens If an ASD Is Not Closed?</a></li><li><a href=\"#16-can-a-child-live-a-normal-life-after-asd-closure\">16. Can a Child Live a Normal Life After ASD Closure?</a></li><li><a href=\"#17-asd-closure-in-india-for-international-patients\">17. ASD Closure in India for International Patients</a></li><li><a href=\"#18-frequently-asked-questions-about-asd-closure-in-children\">18. Frequently Asked Questions About ASD Closure in Children</a></li><li><a href=\"#19-conclusion-choosing-the-right-asd-treatment-for-your-child\">19. Conclusion: Choosing the Right ASD Treatment for Your Child</a></li></ol></nav>"
+        },
+        {
+          "id": "asd_h_10",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Is an Atrial Septal Defect (ASD)?"
+        },
+        {
+          "id": "asd_p_11",
+          "type": "paragraph",
+          "text": "An atrial septal defect is a congenital heart defect. An opening in the septum lets blood pass between the right and left atria, the heart's two upper chambers."
+        },
+        {
+          "id": "asd_p_12",
+          "type": "paragraph",
+          "text": "Before birth, a normal opening between the atria helps blood circulate through the developing baby. That opening usually closes or becomes functionally sealed after birth. An ASD is a persistent abnormal opening in the atrial septum. It is not the same as a patent foramen ovale (PFO). A PFO is a flap-like opening that is normal before birth and stays unsealed in some people. Its significance and treatment differ from those of a true ASD."
+        },
+        {
+          "id": "asd_p_13",
+          "type": "paragraph",
+          "text": "What an ASD does depends on its size, its location and the pressures inside the heart. In many children, blood flows from the left atrium to the right atrium. That increases the amount of blood passing through the right side of the heart and into the lungs. A small ASD may have little effect. A larger opening can enlarge the right atrium and right ventricle and, over time, strain the heart and the pulmonary circulation."
+        },
+        {
+          "id": "asd_p_14",
+          "type": "paragraph",
+          "text": "Many children with a significant ASD can be treated effectively when the timing and the method of closure are chosen for that child."
+        },
+        {
+          "id": "asd_h_15",
+          "type": "heading",
+          "level": 2,
+          "text": "2. Types of ASD in Children"
+        },
+        {
+          "id": "asd_p_16",
+          "type": "paragraph",
+          "text": "Where the opening sits decides whether a catheter device can close it or whether surgery is required. Two children can both be described as having an ASD and still need different treatment. The echocardiogram report should name the location and any associated abnormalities."
+        },
+        {
+          "id": "asd_i_17",
+          "type": "image",
+          "src": "/uploads/articles/asd-children-types.webp",
+          "alt": "Four heart diagrams labeled secundum, primum, sinus venosus and coronary sinus, each marking a different opening",
+          "caption": "Secundum, primum, sinus venosus and coronary sinus defects sit in different parts of the atrial septum."
+        },
+        {
+          "id": "asd_h_18",
+          "type": "heading",
+          "level": 3,
+          "text": "Secundum ASD"
+        },
+        {
+          "id": "asd_p_19",
+          "type": "paragraph",
+          "text": "A secundum ASD is in the central portion of the atrial septum. It is the most common type. Many suitable secundum ASDs can be closed with a catheter device when the size and the surrounding tissue are appropriate. Some secundum defects are too large, have too little supporting tissue, or have other features that make a device unsuitable. Those may need surgery."
+        },
+        {
+          "id": "asd_h_20",
+          "type": "heading",
+          "level": 3,
+          "text": "Primum ASD"
+        },
+        {
+          "id": "asd_p_21",
+          "type": "paragraph",
+          "text": "A primum ASD is in the lower part of the atrial septum, near the atrioventricular valves. It may come with abnormalities of the mitral or tricuspid valve and is often considered part of the atrioventricular septal defect spectrum. Primum ASDs generally need surgical repair, because the problem may be more than simply closing an opening."
+        },
+        {
+          "id": "asd_h_22",
+          "type": "heading",
+          "level": 3,
+          "text": "Sinus venosus ASD"
+        },
+        {
+          "id": "asd_p_23",
+          "type": "paragraph",
+          "text": "A sinus venosus ASD is near where the major veins enter the atria. One or more pulmonary veins may connect abnormally. Treatment often requires surgical correction of the defect and of that abnormal venous drainage. Suitability for a specialised transcatheter approach depends on the anatomy and on the expertise of the treating centre."
+        },
+        {
+          "id": "asd_h_24",
+          "type": "heading",
+          "level": 3,
+          "text": "Coronary sinus defect"
+        },
+        {
+          "id": "asd_p_25",
+          "type": "paragraph",
+          "text": "A defect involving the coronary sinus is uncommon. It may be associated with abnormal venous connections and needs specialist assessment. The plan depends on the anatomy. It should not be assumed that a standard ASD closure device will fit."
+        },
+        {
+          "id": "asd_h_26",
+          "type": "heading",
+          "level": 2,
+          "text": "3. What Causes ASD in Children?"
+        },
+        {
+          "id": "asd_p_27",
+          "type": "paragraph",
+          "text": "Most congenital ASDs develop because the heart's structures do not form or fuse normally during pregnancy. In many children there is no single identifiable cause. Some congenital heart defects occur with genetic conditions or a family history of congenital heart disease."
+        },
+        {
+          "id": "asd_p_28",
+          "type": "paragraph",
+          "text": "An ASD is not caused by ordinary childhood activities, routine feeding, or something parents necessarily did or failed to do during pregnancy. Parents should not blame themselves. If a child has an ASD, the cardiologist may ask about family history, other medical conditions and associated congenital abnormalities. The priority is to understand the defect and to decide whether treatment or monitoring is appropriate."
+        },
+        {
+          "id": "asd_h_29",
+          "type": "heading",
+          "level": 2,
+          "text": "4. Symptoms of ASD in Babies and Children"
+        },
+        {
+          "id": "asd_p_30",
+          "type": "paragraph",
+          "text": "Many children with an ASD have no obvious symptoms in infancy or early childhood. The defect may be found at a routine examination when a doctor hears a heart murmur. When an ASD sends a significant extra amount of blood to the lungs, symptoms can appear."
+        },
+        {
+          "id": "asd_l_31",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Reduced exercise tolerance compared with other children.",
+            "Unusual tiredness during physical activity.",
+            "Breathlessness during exertion.",
+            "Poor growth in some children with a significant defect or associated problems.",
+            "Frequent respiratory symptoms in some cases.",
+            "Palpitations or abnormal heart rhythms, particularly in older patients."
+          ]
+        },
+        {
+          "id": "asd_p_32",
+          "type": "paragraph",
+          "text": "Severe symptoms are not typical of every isolated ASD. If a baby has marked breathing difficulty, poor feeding, poor weight gain or low oxygen levels, the team must look for other heart or lung problems as well. Symptoms alone cannot decide whether an ASD needs closure. Seek emergency medical care for severe breathing difficulty, sudden blue or grey lips or tongue, collapse, unresponsiveness or rapid deterioration."
+        },
+        {
+          "id": "asd_b_33",
+          "type": "button",
+          "label": "Ask whether these symptoms need an earlier review",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20symptoms%20and%20the%20ASD%20echo%20I%20can%20send%20and%20say%20whether%20an%20earlier%20pediatric%20cardiology%20review%20is%20the%20question.%20Do%20not%20name%20a%20best%20doctor.%20This%20is%20not%20an%20emergency%20message.%20If%20the%20child%20is%20gasping%2C%20blue%2C%20collapsed%20or%20deteriorating%20I%20will%20seek%20emergency%20care%20locally."
+        },
+        {
+          "id": "asd_h_34",
+          "type": "heading",
+          "level": 2,
+          "text": "5. How Is ASD Diagnosed in Children?"
+        },
+        {
+          "id": "asd_p_35",
+          "type": "paragraph",
+          "text": "Assessment confirms the diagnosis, identifies the type, shows how much the opening affects circulation, and establishes whether closure is appropriate."
+        },
+        {
+          "id": "asd_h_36",
+          "type": "heading",
+          "level": 3,
+          "text": "Clinical examination"
+        },
+        {
+          "id": "asd_p_37",
+          "type": "paragraph",
+          "text": "The pediatric cardiologist reviews the history, symptoms, growth and the physical examination. A murmur or a change in the heart sounds may suggest an ASD. Examination alone cannot reliably show the anatomy or how important the defect is."
+        },
+        {
+          "id": "asd_h_38",
+          "type": "heading",
+          "level": 3,
+          "text": "Echocardiography"
+        },
+        {
+          "id": "asd_p_39",
+          "type": "paragraph",
+          "text": "An echocardiogram uses ultrasound to image the heart. It is the principal test for an ASD. It helps the cardiologist judge the location and size of the opening, the direction of blood flow, enlargement of the right atrium and right ventricle, valve function, estimated pulmonary artery pressure, pulmonary venous connections, and the surrounding tissue that might support a closure device. Those findings point toward observation, catheter closure or surgery. If you are gathering files, the [second-opinion guide](/blogs/second-opinion-congenital-heart-surgery-india) lists which echo images to send."
+        },
+        {
+          "id": "asd_h_40",
+          "type": "heading",
+          "level": 3,
+          "text": "Electrocardiogram and chest X-ray"
+        },
+        {
+          "id": "asd_p_41",
+          "type": "paragraph",
+          "text": "An ECG records the electrical activity of the heart. It may show patterns linked with right-sided enlargement or an abnormal rhythm. It does not replace echocardiography. A chest X-ray may help assess heart size and pulmonary blood flow when that is clinically useful. It is an additional test, not a definitive map of the ASD."
+        },
+        {
+          "id": "asd_h_42",
+          "type": "heading",
+          "level": 3,
+          "text": "Transoesophageal echocardiography and cardiac catheterisation"
+        },
+        {
+          "id": "asd_p_43",
+          "type": "paragraph",
+          "text": "In selected cases a transoesophageal echocardiogram gives more detailed images from a probe in the oesophagus. It may be used when standard images are not enough, or when detailed anatomy is needed before or during device closure. Cardiac catheterisation may be required when pulmonary hypertension or pulmonary vascular disease is suspected, or when more haemodynamic information is needed. The same procedure can place a device when the child is a suitable candidate."
+        },
+        {
+          "id": "asd_h_44",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Does Every ASD Need Closure?"
+        },
+        {
+          "id": "asd_p_45",
+          "type": "paragraph",
+          "text": "No. Closure is considered when the opening has a meaningful effect on circulation and closure is expected to help. The need for closure is set by the haemodynamic effect and the child's condition, not by the diameter of the opening alone."
+        },
+        {
+          "id": "asd_h_46",
+          "type": "heading",
+          "level": 3,
+          "text": "Small ASDs"
+        },
+        {
+          "id": "asd_p_47",
+          "type": "paragraph",
+          "text": "Some small ASDs cause little or no enlargement of the right side of the heart. They may be monitored rather than closed at once. Some defects, particularly small secundum ASDs, become smaller or close during childhood. Spontaneous closure cannot be assumed for every type or every child."
+        },
+        {
+          "id": "asd_h_48",
+          "type": "heading",
+          "level": 3,
+          "text": "Moderate or large ASDs"
+        },
+        {
+          "id": "asd_p_49",
+          "type": "paragraph",
+          "text": "A moderate or large ASD may let enough blood pass from the left atrium to the right atrium to enlarge the right side of the heart. When there is significant right-heart volume overload and closure is safe, the cardiologist may recommend intervention to reduce the long-term effects of that circulation."
+        },
+        {
+          "id": "asd_h_50",
+          "type": "heading",
+          "level": 3,
+          "text": "Symptoms, associated problems and unsafe closure"
+        },
+        {
+          "id": "asd_p_51",
+          "type": "paragraph",
+          "text": "Some children need earlier assessment because of symptoms, other heart abnormalities or pulmonary pressure. Severe pulmonary arterial hypertension or irreversible pulmonary vascular disease can make ASD closure unsafe. Closing the opening in that situation may worsen the circulation. Children with suspected pulmonary vascular disease need specialist evaluation before any decision to close the defect."
+        },
+        {
+          "id": "asd_h_52",
+          "type": "heading",
+          "level": 2,
+          "text": "7. At What Age Should an ASD Be Closed?"
+        },
+        {
+          "id": "asd_p_53",
+          "type": "paragraph",
+          "text": "There is no single age for every child. Indian consensus guidance has traditionally recommended elective closure during early childhood for suitable asymptomatic children with a significant ASD. It identifies approximately 2–4 years as an appropriate window for many uncomplicated cases. Some defect types and some associated conditions need a different approach."
+        },
+        {
+          "id": "asd_i_54",
+          "type": "image",
+          "src": "/uploads/articles/asd-children-timing.webp",
+          "alt": "Three cards labeled Watch, Elective 2 to 4 years, and Earlier symptoms",
+          "caption": "A small ASD may be watched. Many uncomplicated significant ASDs are closed electively around 2 to 4 years. Symptoms can move the date earlier."
+        },
+        {
+          "id": "asd_p_55",
+          "type": "paragraph",
+          "text": "Children who develop significant symptoms or complications may need earlier intervention. Others may be monitored for longer if the defect is small and does not change heart function in an important way. The cardiologist considers the type and size, enlargement of the right side of the heart, pulmonary pressure and vascular resistance, age, weight, symptoms, associated congenital abnormalities, whether a device is suitable, and whether waiting creates a clinical risk."
+        },
+        {
+          "id": "asd_p_56",
+          "type": "paragraph",
+          "text": "Ask the specialist why treatment is recommended at a particular age, and what the risks are of intervening earlier or of waiting. Do not delay a recommended intervention because of a general age range published online. A cyanotic repair such as [tetralogy of Fallot surgery](/blogs/tetralogy-of-fallot-surgery-india) follows a different timetable."
+        },
+        {
+          "id": "asd_h_57",
+          "type": "heading",
+          "level": 2,
+          "text": "8. ASD Device Closure vs Surgical Closure: What Is the Difference?"
+        },
+        {
+          "id": "asd_p_58",
+          "type": "paragraph",
+          "text": "The two main ways to close an ASD are transcatheter device closure and surgical repair. Both can be appropriate. The correct choice depends on the anatomy and the child's condition."
+        },
+        {
+          "id": "asd_i_59",
+          "type": "image",
+          "src": "/uploads/articles/asd-children-closure.webp",
+          "alt": "Two panels labeled Device and Surgery: a catheter with a double-disc closure device, and a stitched patch closing an opening",
+          "caption": "A suitable secundum ASD may take a catheter device. Other anatomies are closed with stitches or a patch at surgery."
+        },
+        {
+          "id": "asd_h_60",
+          "type": "heading",
+          "level": 3,
+          "text": "Transcatheter device closure"
+        },
+        {
+          "id": "asd_p_61",
+          "type": "paragraph",
+          "text": "Device closure is done in a cardiac catheterisation laboratory. The doctor inserts a catheter, usually through a blood vessel in the groin, and guides it to the heart. A closure device is positioned across the defect and released when the team confirms that it sits correctly. Over time, the body's tissue grows over the device."
+        },
+        {
+          "id": "asd_l_62",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "No large chest incision.",
+            "Usually a shorter hospital stay for suitable patients.",
+            "No open-heart surgery and no cardiopulmonary bypass in a straightforward catheter closure.",
+            "Often less postoperative discomfort than surgical repair."
+          ]
+        },
+        {
+          "id": "asd_p_63",
+          "type": "paragraph",
+          "text": "A device is not suitable for every ASD type. It needs adequate surrounding tissue and appropriate anatomy. It may not fit a very large or unusually positioned defect, and it does not correct certain valve or pulmonary venous abnormalities. Risks include device displacement, residual shunting, arrhythmia and vascular complications. The cardiologist must confirm that the child is a candidate."
+        },
+        {
+          "id": "asd_h_64",
+          "type": "heading",
+          "level": 3,
+          "text": "Surgical ASD closure"
+        },
+        {
+          "id": "asd_p_65",
+          "type": "paragraph",
+          "text": "Surgical closure is performed by a congenital heart surgeon under general anaesthesia. The surgeon reaches the heart through an operative incision and closes the defect with stitches or with a patch. Many repairs use cardiopulmonary bypass, which supports circulation while the heart is repaired. Surgery can treat defect types that do not suit a standard device, and it can correct selected associated abnormalities during the same operation. It requires an incision, usually a longer recovery than uncomplicated device closure, and often intensive care. It carries risks of anaesthesia, surgery and cardiopulmonary bypass when bypass is used. Surgical repair remains an established treatment when catheter closure is not suitable."
+        },
+        {
+          "id": "asd_p_66",
+          "type": "paragraph",
+          "text": "| Factor | Device closure | Surgical closure |\n| --- | --- | --- |\n| Approach | Catheter through a blood vessel | Operative access to the heart |\n| Chest incision | No large surgical chest incision | Surgical incision required |\n| Heart-lung machine | Usually not required | Often used, depending on the operation |\n| Suitable defect types | Primarily suitable secundum ASDs | A wider range of ASD anatomies |\n| Associated abnormalities | Limited ability to correct other structural problems | Can address selected associated abnormalities |\n| Hospital stay | Often shorter for suitable uncomplicated cases | Often longer, depending on the operation |\n| Recovery | Usually quicker for uncomplicated cases | Requires surgical recovery |\n| Main considerations | Device suitability, position and device-related complications | Surgical risks, wound recovery and postoperative care |"
+        },
+        {
+          "id": "asd_p_67",
+          "type": "paragraph",
+          "text": "These are general comparisons. Outcomes and recovery depend on the individual child and the treating centre."
+        },
+        {
+          "id": "asd_b_68",
+          "type": "button",
+          "label": "Ask whether device closure or surgery fits",
+          "href": "https://wa.me/919044346292?text=Please%20review%20my%20child's%20ASD%20echo%20and%20say%20whether%20device%20closure%20or%20surgical%20closure%20is%20the%20question%2C%20or%20whether%20monitoring%20is%20still%20reasonable.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "asd_h_69",
+          "type": "heading",
+          "level": 2,
+          "text": "9. What Happens During ASD Device Closure?"
+        },
+        {
+          "id": "asd_p_70",
+          "type": "paragraph",
+          "text": "Parents often find the steps easier to follow before they arrive at the hospital."
+        },
+        {
+          "id": "asd_h_71",
+          "type": "heading",
+          "level": 3,
+          "text": "Before the procedure"
+        },
+        {
+          "id": "asd_p_72",
+          "type": "paragraph",
+          "text": "The team reviews the echocardiogram, the history and any required tests. The anaesthesiologist explains the anaesthesia plan. Parents receive fasting and medication instructions. The team confirms that the defect is suitable for a device and discusses the risks and the alternatives. [Questions to ask before heart surgery](/blogs/questions-to-ask-before-heart-surgery) is a useful list even when the plan is a catheter procedure."
+        },
+        {
+          "id": "asd_h_73",
+          "type": "heading",
+          "level": 3,
+          "text": "During the procedure"
+        },
+        {
+          "id": "asd_p_74",
+          "type": "paragraph",
+          "text": "The child receives anaesthesia or sedation according to the clinical plan. A catheter is guided through a blood vessel to the heart. Imaging helps the cardiologist assess the defect and position the device. Once the team confirms that the device is stable and correctly placed, it is released. Imaging checks the result. The catheter is removed and the access site is managed."
+        },
+        {
+          "id": "asd_h_75",
+          "type": "heading",
+          "level": 3,
+          "text": "Immediately afterwards"
+        },
+        {
+          "id": "asd_p_76",
+          "type": "paragraph",
+          "text": "The child is monitored for rhythm changes, bleeding at the access site and other complications. The team may repeat an echocardiogram to check device position and residual flow. How long monitoring lasts, and when discharge is appropriate, depend on the child and the hospital protocol."
+        },
+        {
+          "id": "asd_h_77",
+          "type": "heading",
+          "level": 2,
+          "text": "10. What Happens During Surgical ASD Closure?"
+        },
+        {
+          "id": "asd_p_78",
+          "type": "paragraph",
+          "text": "Surgical repair is used when the anatomy is unsuitable for a device, or when associated abnormalities need an operation."
+        },
+        {
+          "id": "asd_h_79",
+          "type": "heading",
+          "level": 3,
+          "text": "Before surgery"
+        },
+        {
+          "id": "asd_p_80",
+          "type": "paragraph",
+          "text": "The team reviews the echocardiogram and other tests. The surgeon and anaesthesiologist explain the proposed repair, the material risks, the expected stay and recovery. Ask whether direct closure or a patch is planned, and whether any additional abnormality needs correction at the same time."
+        },
+        {
+          "id": "asd_h_81",
+          "type": "heading",
+          "level": 3,
+          "text": "During surgery"
+        },
+        {
+          "id": "asd_p_82",
+          "type": "paragraph",
+          "text": "The child receives general anaesthesia and continuous monitoring. The surgeon reaches the heart through an appropriate incision. In many cases cardiopulmonary bypass is used while the ASD is closed. The repair may use stitches or a patch, depending on the defect."
+        },
+        {
+          "id": "asd_h_83",
+          "type": "heading",
+          "level": 3,
+          "text": "After surgery"
+        },
+        {
+          "id": "asd_p_84",
+          "type": "paragraph",
+          "text": "The child is monitored in a recovery area or a pediatric cardiac ICU. Some children need temporary breathing support, intravenous medicines or drainage tubes. The team assesses heart function, rhythm, bleeding, breathing and recovery before the child moves to a ward and, later, goes home. The exact course varies with the child and the technique. Broader expectations after an operation are in [heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india)."
+        },
+        {
+          "id": "asd_h_85",
+          "type": "heading",
+          "level": 2,
+          "text": "11. ASD Closure Cost in India"
+        },
+        {
+          "id": "asd_p_86",
+          "type": "paragraph",
+          "text": "GAF Healthcare does not publish a single fee for ASD closure. The [ASD closure planning band](/costs/India/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)) is **US$4,000–US$9,500**, with an expected stay of **5–10 nights; parent stay expected**. The US comparison band on the same row is **US$30,000–US$80,000**. These are planning ranges from the pediatric cardiac directory. They are not a quotation, and they are not a guaranteed price for an individual child."
+        },
+        {
+          "id": "asd_p_87",
+          "type": "paragraph",
+          "text": "The rupee figures in the quick answer come from a 2024 study, [Pediatric cardiac procedures in India: Who bears the cost?](https://pmc.ncbi.nlm.nih.gov/articles/PMC11198927/), which surveyed 24 pediatric cardiac centres. They are historical research ranges. They are not the GAF directory band and they are not a current 2026 hospital tariff."
+        },
+        {
+          "id": "asd_p_88",
+          "type": "paragraph",
+          "text": "**Historical cost of ASD device closure in that study**"
+        },
+        {
+          "id": "asd_p_89",
+          "type": "paragraph",
+          "text": "| Hospital category | Reported patient-cost range |\n| --- | ---: |\n| Government hospitals | ₹80,000–₹1,00,000 |\n| Charitable hospitals | ₹1,35,000–₹1,75,000 |\n| Private hospitals | ₹1,30,000–₹3,05,000 |"
+        },
+        {
+          "id": "asd_p_90",
+          "type": "paragraph",
+          "text": "**Historical cost of surgical ASD closure in that study**"
+        },
+        {
+          "id": "asd_p_91",
+          "type": "paragraph",
+          "text": "| Hospital category | Reported patient-cost range |\n| --- | ---: |\n| Government hospitals | ₹65,000–₹2,00,000 |\n| Charitable hospitals | ₹80,000–₹1,50,000 |\n| Private hospitals | ₹2,20,000–₹4,50,000 |"
+        },
+        {
+          "id": "asd_p_92",
+          "type": "paragraph",
+          "text": "Across government and charitable hospitals, the study's device-closure figures span ₹80,000–₹1,75,000, with private hospitals at ₹1,30,000–₹3,05,000. The surgical figures are ₹65,000–₹2,00,000, ₹80,000–₹1,50,000 and ₹2,20,000–₹4,50,000. These are research figures, not current hospital quotations. A longer admission, a different device, or an associated repair can change the bill. The treating hospital should issue a written estimate from the child's reports."
+        },
+        {
+          "id": "asd_p_93",
+          "type": "paragraph",
+          "text": "Neighbouring procedures on the same directory use different bands. An ASD is not priced as a VSD or a PDA:"
+        },
+        {
+          "id": "asd_p_94",
+          "type": "paragraph",
+          "text": "| Named procedure | India planning band | Expected stay | US comparison band |\n| --- | --- | --- | --- |\n| ASD closure | US$4,000–US$9,500 | 5–10 nights; parent stay expected | US$30,000–US$80,000 |\n| VSD closure | US$4,500–US$11,000 | 6–12 nights; parent stay expected | US$35,000–US$90,000 |\n| PDA closure | US$3,500–US$8,500 | 3–8 nights; parent stay expected | US$20,000–US$60,000 |"
+        },
+        {
+          "id": "asd_p_95",
+          "type": "paragraph",
+          "text": "The VSD row is [VSD closure](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)). The PDA row is [PDA closure](/costs/India/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)). The broader congenital category, which is not an ASD-only tariff, is on [India](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery), [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery) and [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery)."
+        },
+        {
+          "id": "asd_p_96",
+          "type": "paragraph",
+          "text": "Cost differs because the method differs. Device closure and surgical repair use different equipment, staffing and hospital resources. The type of closure device can change a catheter estimate. Catheter laboratories, operating theatres, intensive care and specialist staffing all affect the bill. Some hospitals include tests in a package. Others bill them separately. A longer ICU or ward stay, an unexpected complication, or an associated condition can increase what the family pays. Government funding, charitable support and private pricing change the amount as well."
+        },
+        {
+          "id": "asd_p_97",
+          "type": "paragraph",
+          "text": "| Ask the hospital | What to confirm |\n| --- | --- |\n| Method | Is the estimate for device closure or surgical repair? |\n| Specialists | Are the cardiologist or surgeon fees and anaesthesia included? |\n| Device or patch | Is the closure device or patch included? |\n| Facility | Are catheter-laboratory or operating-theatre charges included? |\n| Tests | Which preoperative investigations are included? |\n| ICU and ward | How many days are included, and what is charged for extra days? |\n| Medicines | Are medicines and consumables included? |\n| Complications | How is an extended admission or a further procedure billed? |\n| Follow-up | Are later consultations and echocardiography included? |"
+        },
+        {
+          "id": "asd_p_98",
+          "type": "paragraph",
+          "text": "A lower initial estimate may not be a lower final bill if major services are excluded. Compare the scope of the written estimate."
+        },
+        {
+          "id": "asd_b_99",
+          "type": "button",
+          "label": "Request an ASD closure cost estimate",
+          "href": "https://wa.me/919044346292?text=Please%20use%20the%20echo%20I%20can%20send%20to%20request%20a%20written%20ASD%20closure%20estimate%20in%20India.%20Say%20whether%20the%20question%20is%20device%20closure%20or%20surgical%20closure%2C%20and%20what%20is%20included.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "asd_h_100",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Recovery After ASD Device Closure"
+        },
+        {
+          "id": "asd_p_101",
+          "type": "paragraph",
+          "text": "Recovery after uncomplicated device closure is often quicker than recovery after open-heart surgery. The timing still varies by child and by hospital protocol. The directory planning stay for ASD closure is 5–10 nights; parent stay expected. That range covers the procedure as listed. It is not a promise that every device case leaves on the same day."
+        },
+        {
+          "id": "asd_h_102",
+          "type": "heading",
+          "level": 3,
+          "text": "First 24 hours and the first few days"
+        },
+        {
+          "id": "asd_p_103",
+          "type": "paragraph",
+          "text": "The child is monitored for heart rhythm changes, bleeding at the catheter insertion site and other early complications. The team may perform an echocardiogram before deciding on discharge. Parents then receive instructions on the insertion site, bathing, activity and prescribed medicines. The hospital explains how long to avoid strenuous activity and when usual routines can resume."
+        },
+        {
+          "id": "asd_h_104",
+          "type": "heading",
+          "level": 3,
+          "text": "Medicines and follow-up"
+        },
+        {
+          "id": "asd_p_105",
+          "type": "paragraph",
+          "text": "The cardiologist may prescribe an antiplatelet medicine for a specified period to reduce the risk of clot formation on the device. The medicine, the dose and the duration depend on the clinical plan. Do not start, stop or change a medicine without medical advice. Follow-up generally includes clinical review and echocardiography to assess device position, residual shunting and heart function. The hospital should provide a written follow-up schedule before discharge."
+        },
+        {
+          "id": "asd_h_106",
+          "type": "heading",
+          "level": 2,
+          "text": "13. Recovery After Surgical ASD Closure"
+        },
+        {
+          "id": "asd_p_107",
+          "type": "paragraph",
+          "text": "Surgical recovery takes longer than uncomplicated catheter closure because the child must recover from the operation itself."
+        },
+        {
+          "id": "asd_h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "In hospital"
+        },
+        {
+          "id": "asd_p_109",
+          "type": "paragraph",
+          "text": "The child may go to a pediatric cardiac ICU. Temporary ventilation, intravenous medicines and drainage tubes may be required. The team watches rhythm, circulation, breathing, the wound, and the child's ability to eat and move comfortably. As the child stabilises, intensive support is reduced and discharge is planned. Parents receive instructions on wound care, pain, medicines, activity and follow-up."
+        },
+        {
+          "id": "asd_h_110",
+          "type": "heading",
+          "level": 3,
+          "text": "At home and later"
+        },
+        {
+          "id": "asd_p_111",
+          "type": "paragraph",
+          "text": "Keep the wound clean and watch it as the hospital instructed. Activity restrictions depend on the incision, the surgical approach and how the child is recovering. Do not return the child to strenuous activity or contact sports before the treating team gives clearance. Follow-up confirms that the repair remains effective and looks for residual defects, rhythm problems and pulmonary pressure concerns. Many children do well after appropriate ASD closure. How often they are seen depends on the individual case."
+        },
+        {
+          "id": "asd_h_112",
+          "type": "heading",
+          "level": 2,
+          "text": "14. Risks and Possible Complications of ASD Closure"
+        },
+        {
+          "id": "asd_p_113",
+          "type": "paragraph",
+          "text": "Both device closure and surgical repair have risks. The risks differ with the procedure, the anatomy and the child's health."
+        },
+        {
+          "id": "asd_h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "Possible complications of device closure"
+        },
+        {
+          "id": "asd_l_115",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Bleeding or injury at the catheter insertion site.",
+            "Abnormal heart rhythms.",
+            "Device displacement or embolisation.",
+            "Residual blood flow through or around the device.",
+            "Blood clot formation.",
+            "Injury to nearby structures in uncommon cases.",
+            "Allergic or other reactions to materials or medicines.",
+            "Need for a further catheter procedure or for surgery."
+          ]
+        },
+        {
+          "id": "asd_h_116",
+          "type": "heading",
+          "level": 3,
+          "text": "Possible complications of surgical closure"
+        },
+        {
+          "id": "asd_l_117",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Bleeding or infection.",
+            "Abnormal heart rhythms.",
+            "Respiratory complications.",
+            "Reactions to anaesthesia.",
+            "Complications associated with cardiopulmonary bypass when it is used.",
+            "A residual defect or another structural problem.",
+            "Need for further treatment in uncommon cases."
+          ]
+        },
+        {
+          "id": "asd_p_118",
+          "type": "paragraph",
+          "text": "The risks of leaving a significant ASD untreated also matter. A substantial left-to-right shunt can enlarge the right heart and may contribute to pulmonary vascular complications over time. Ask the cardiologist to explain the risks of closure, the risks of waiting, and the expected benefit for this child's anatomy."
+        },
+        {
+          "id": "asd_h_119",
+          "type": "heading",
+          "level": 2,
+          "text": "15. What Happens If an ASD Is Not Closed?"
+        },
+        {
+          "id": "asd_p_120",
+          "type": "paragraph",
+          "text": "Not every ASD needs closure. A significant defect that causes right-heart volume overload may create problems if it is left untreated. Possible long-term concerns include enlargement of the right atrium and right ventricle, persistent extra blood flow through the lungs, pulmonary hypertension in some patients, abnormal heart rhythms later in life, reduced exercise tolerance, and other complications in selected patients."
+        },
+        {
+          "id": "asd_p_121",
+          "type": "paragraph",
+          "text": "How likely those problems are depends on the defect and the child's circulation. A small ASD without significant right-heart enlargement can have a very different outlook from a large, haemodynamically significant defect. The decision to monitor or to close should be made with a pediatric cardiologist, from the echocardiogram and the overall clinical assessment."
+        },
+        {
+          "id": "asd_h_122",
+          "type": "heading",
+          "level": 2,
+          "text": "16. Can a Child Live a Normal Life After ASD Closure?"
+        },
+        {
+          "id": "asd_p_123",
+          "type": "paragraph",
+          "text": "Many children who undergo appropriate ASD closure do very well and can take part in normal age-appropriate activities after recovery. The outlook depends on the defect, whether other heart abnormalities are present, the timing of treatment, and whether complications or residual problems occur. Children with an isolated ASD that is successfully closed often have an excellent long-term outlook. No individual outcome can be guaranteed, and follow-up remains important."
+        },
+        {
+          "id": "asd_p_124",
+          "type": "paragraph",
+          "text": "The cardiologist advises when the child can return to school, sports and other activities. Children with associated abnormalities or pulmonary hypertension may need a different follow-up plan."
+        },
+        {
+          "id": "asd_h_125",
+          "type": "heading",
+          "level": 2,
+          "text": "17. ASD Closure in India for International Patients"
+        },
+        {
+          "id": "asd_p_126",
+          "type": "paragraph",
+          "text": "Families travelling to India for pediatric cardiac treatment need to plan the clinical assessment and the practical arrangements. GAF Healthcare facilitates medical travel and can help coordinate communication with hospitals, medical-record review, appointment requests and preliminary treatment estimates. Clinical decisions remain with the treating pediatric cardiologist and congenital heart team. A remote opinion and a preliminary estimate do not guarantee the final procedure or the cost."
+        },
+        {
+          "id": "asd_l_127",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Share the reports.** Latest echocardiogram report and images, age, weight, current symptoms, medicines and any earlier treatment records.",
+            "**Request specialist review.** The receiving cardiologist says whether more tests or an in-person examination are needed.",
+            "**Confirm the proposed procedure.** Ask whether device closure is likely or whether surgical repair needs to be considered. The final decision may need more imaging.",
+            "**Request an itemised estimate.** Ask for the device or surgical package, the expected admission, investigations, ICU and ward costs, follow-up and exclusions.",
+            "**Confirm fitness to travel.** The treating team must say whether travel is safe and whether treatment can wait. A child with urgent symptoms or instability should receive timely local care rather than waiting for international travel.",
+            "**Plan accommodation and follow-up.** Confirm the expected admission, the recovery period, local accommodation and the follow-up schedule. Take discharge records and a clear plan for care after returning home."
+          ]
+        },
+        {
+          "id": "asd_b_128",
+          "type": "button",
+          "label": "Ask whether travel is safe for this child",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20ASD%20records%20I%20can%20send%20and%20say%20whether%20travel%20to%20India%20is%20a%20question%20the%20treating%20team%20should%20answer%20first.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message.%20If%20the%20child%20is%20unstable%20I%20will%20seek%20local%20emergency%20care."
+        },
+        {
+          "id": "asd_h_129",
+          "type": "heading",
+          "level": 2,
+          "text": "18. Frequently Asked Questions About ASD Closure in Children"
+        },
+        {
+          "id": "asd_h_130",
+          "type": "heading",
+          "level": 3,
+          "text": "What is ASD closure in children?"
+        },
+        {
+          "id": "asd_p_131",
+          "type": "paragraph",
+          "text": "ASD closure is a procedure used to close an atrial septal defect, an opening between the heart's two upper chambers. Depending on the anatomy, closure may use a catheter-based device or surgery. Some small ASDs only need monitoring. The echocardiogram, not the word hole, decides which of those applies."
+        },
+        {
+          "id": "asd_h_132",
+          "type": "heading",
+          "level": 3,
+          "text": "Does every child with ASD need surgery?"
+        },
+        {
+          "id": "asd_p_133",
+          "type": "paragraph",
+          "text": "No. Some children have small defects that do not significantly affect heart function and can be monitored. Children with a significant left-to-right shunt and right-heart volume overload may benefit from closure. A pediatric cardiologist and congenital heart team decide whether that child needs monitoring, a device or an operation."
+        },
+        {
+          "id": "asd_h_134",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the difference between ASD device closure and surgery?"
+        },
+        {
+          "id": "asd_p_135",
+          "type": "paragraph",
+          "text": "Device closure uses a catheter through a blood vessel to place a closure device across a suitable defect, usually a secundum ASD with enough surrounding tissue. Surgical closure is an operation that closes the opening with stitches or a patch and can address some associated abnormalities. Device closure avoids a large chest incision but is not appropriate for every ASD type."
+        },
+        {
+          "id": "asd_h_136",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the cost of ASD closure in India?"
+        },
+        {
+          "id": "asd_p_137",
+          "type": "paragraph",
+          "text": "The GAF Healthcare planning band for ASD closure is US$4,000–US$9,500, with an expected stay of 5–10 nights; parent stay expected. The US comparison band is US$30,000–US$80,000. GAF Healthcare does not publish a single fee. A 2024 study reported historical device-closure ranges of about ₹80,000–₹1,75,000 across participating government and charitable hospitals and ₹1,30,000–₹3,05,000 in private hospitals, and surgical ranges of ₹65,000–₹2,00,000, ₹80,000–₹1,50,000 and ₹2,20,000–₹4,50,000. Those research figures are not the GAF directory band and are not a current quotation. Ask the hospital for a written estimate."
+        },
+        {
+          "id": "asd_h_138",
+          "type": "heading",
+          "level": 3,
+          "text": "At what age should an ASD be closed?"
+        },
+        {
+          "id": "asd_p_139",
+          "type": "paragraph",
+          "text": "Timing depends on the defect's significance, symptoms, right-heart enlargement and pulmonary pressure. Indian consensus guidance identifies approximately 2–4 years as a typical window for elective closure in many asymptomatic children with a significant uncomplicated ASD. Symptomatic children, or children with associated problems, may need a different timeline. Do not use a published age range to delay a recommended procedure."
+        },
+        {
+          "id": "asd_h_140",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a small ASD close on its own?"
+        },
+        {
+          "id": "asd_p_141",
+          "type": "paragraph",
+          "text": "Some small secundum ASDs close spontaneously during childhood. Others stay open. The likelihood depends on size and type, so regular clinical assessment matters. Spontaneous closure should not be assumed for a primum, sinus venosus or coronary sinus defect, or for a large secundum ASD that is already enlarging the right heart."
+        },
+        {
+          "id": "asd_h_142",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does ASD device closure take?"
+        },
+        {
+          "id": "asd_p_143",
+          "type": "paragraph",
+          "text": "The duration varies with the anatomy, the imaging and the clinical circumstances. Ask the treating centre for its expected procedure time and recovery timeline. A general operating time is not a guarantee for an individual child. The planning stay on the directory is 5–10 nights; parent stay expected, which is a planning range for the admission, not a procedure stopwatch."
+        },
+        {
+          "id": "asd_h_144",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does a child stay in hospital after ASD closure?"
+        },
+        {
+          "id": "asd_p_145",
+          "type": "paragraph",
+          "text": "An uncomplicated device closure may need a relatively short admission. Surgical repair generally needs a longer stay for postoperative recovery, often including intensive care. The directory planning stay for ASD closure is 5–10 nights; parent stay expected. The actual duration depends on the child's condition and the hospital protocol."
+        },
+        {
+          "id": "asd_h_146",
+          "type": "heading",
+          "level": 3,
+          "text": "Is ASD device closure safe?"
+        },
+        {
+          "id": "asd_p_147",
+          "type": "paragraph",
+          "text": "Device closure is an established treatment for appropriately selected ASDs. It still carries risks, including arrhythmias, residual shunting, device displacement and vascular complications. The cardiologist must judge whether the expected benefit outweighs those risks for this child. Severe pulmonary vascular disease can make closure unsafe."
+        },
+        {
+          "id": "asd_h_148",
+          "type": "heading",
+          "level": 3,
+          "text": "Will my child need medicines after ASD closure?"
+        },
+        {
+          "id": "asd_p_149",
+          "type": "paragraph",
+          "text": "Some children receive antiplatelet medication after device closure for a specified period, to reduce clot formation on the device. Medicines after surgery depend on the child's condition and the treatment plan. Follow the treating team's instructions. Do not change a dose independently."
+        },
+        {
+          "id": "asd_h_150",
+          "type": "heading",
+          "level": 3,
+          "text": "Can children play sports after ASD closure?"
+        },
+        {
+          "id": "asd_p_151",
+          "type": "paragraph",
+          "text": "Many children return to normal activities after recovery. The timing depends on the procedure, healing and heart function. The treating cardiologist should clear strenuous exercise and contact sports. Do not use a general recovery article as that clearance."
+        },
+        {
+          "id": "asd_h_152",
+          "type": "heading",
+          "level": 3,
+          "text": "Can ASD return after closure?"
+        },
+        {
+          "id": "asd_p_153",
+          "type": "paragraph",
+          "text": "The defect is generally closed by the device or the surgical repair. Residual shunting or other complications can still occur, and a device can move in uncommon cases. Follow-up echocardiography checks the result and identifies problems that need attention."
+        },
+        {
+          "id": "asd_h_154",
+          "type": "heading",
+          "level": 3,
+          "text": "What happens if an ASD is left untreated?"
+        },
+        {
+          "id": "asd_p_155",
+          "type": "paragraph",
+          "text": "A small, insignificant defect may never cause important problems. A significant ASD can lead to right-heart enlargement, extra pulmonary blood flow, pulmonary hypertension in some patients, and rhythm problems later. The cardiologist should explain the risks of monitoring versus closure for the specific child."
+        },
+        {
+          "id": "asd_h_156",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients arrange ASD closure in India?"
+        },
+        {
+          "id": "asd_p_157",
+          "type": "paragraph",
+          "text": "International families can request a preliminary review of medical records and a treatment estimate from an Indian hospital. The final procedure depends on clinical assessment. Travel should happen only when the treating team considers it appropriate. An unstable child should receive local emergency care first."
+        },
+        {
+          "id": "asd_h_158",
+          "type": "heading",
+          "level": 3,
+          "text": "Can GAF Healthcare help arrange ASD treatment in India?"
+        },
+        {
+          "id": "asd_p_159",
+          "type": "paragraph",
+          "text": "GAF Healthcare can assist international families with medical-record coordination, hospital enquiries, appointment requests and preliminary cost estimates. The diagnosis, the treatment recommendation and the procedure are determined by the treating hospital's qualified medical team. A coordinator cannot name a best surgeon from a message."
+        },
+        {
+          "id": "asd_h_160",
+          "type": "heading",
+          "level": 2,
+          "text": "19. Conclusion: Choosing the Right ASD Treatment for Your Child"
+        },
+        {
+          "id": "asd_p_161",
+          "type": "paragraph",
+          "text": "Learning that a child has an opening in the heart is worrying. An ASD diagnosis does not automatically mean that surgery is necessary. Some children need only regular monitoring. Others benefit from device closure. Children with unsuitable anatomy or associated abnormalities may need surgical repair."
+        },
+        {
+          "id": "asd_p_162",
+          "type": "paragraph",
+          "text": "The useful step is to understand the type of ASD, how it affects the heart, and why the cardiologist recommends a particular treatment or follow-up schedule. Before a decision, ask about the benefits and risks of each suitable option, the timing, the total estimated cost and the follow-up after treatment."
+        },
+        {
+          "id": "asd_p_163",
+          "type": "paragraph",
+          "text": "This article is for educational purposes and does not replace an examination or an individual treatment recommendation. ASD closure should be considered only after assessment by a qualified pediatric cardiologist and congenital heart team."
+        },
+        {
+          "id": "asd_p_164",
+          "type": "paragraph",
+          "text": "**GAF Healthcare can help international families coordinate a medical-record review and request a treatment estimate from an appropriate hospital in India.** Prepare the child's latest echocardiogram report, the diagnosis, age, weight, current medicines and any previous cardiac treatment records."
+        },
+        {
+          "id": "asd_b_165",
+          "type": "button",
+          "label": "Speak to a patient coordinator",
+          "href": "https://wa.me/919044346292?text=Please%20help%20coordinate%20a%20pediatric%20cardiology%20review%20and%20a%20case-specific%20ASD%20closure%20estimate%20in%20India.%20The%20treating%20team%20must%20confirm%20whether%20monitoring%2C%20device%20closure%20or%20surgery%20is%20appropriate%2C%20and%20whether%20travel%20is%20safe.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "asd_h_166",
+          "type": "heading",
+          "level": 3,
+          "text": "Sources used for this guide"
+        },
+        {
+          "id": "asd_l_167",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Indian guidelines for indications and timing of intervention for common congenital heart diseases](https://pmc.ncbi.nlm.nih.gov/articles/PMC6716301/)",
+            "[Guidelines for the management of common congenital heart diseases in India](https://pmc.ncbi.nlm.nih.gov/articles/PMC6796629/)",
+            "[Pediatric cardiac procedures in India: Who bears the cost?](https://pmc.ncbi.nlm.nih.gov/articles/PMC11198927/)",
+            "[American Heart Association — Atrial septal defect (ASD)](https://www.heart.org/en/health-topics/congenital-heart-defects/about-congenital-heart-defects/atrial-septal-defect-asd)",
+            "[Merck Manual — Atrial septal defect (ASD)](https://www.merckmanuals.com/professional/pediatrics/congenital-cardiovascular-anomalies/atrial-septal-defect-asd)",
+            "[CDC — Congenital heart defects](https://www.cdc.gov/heart-defects/about/index.html)",
+            "[NHLBI — Congenital heart defects](https://www.nhlbi.nih.gov/health/congenital-heart-defects)",
+            "[Prospective comparison of costs of surgical versus device closure of atrial septal defect in children](https://pmc.ncbi.nlm.nih.gov/articles/PMC1767189/)",
+            "[Transcatheter versus surgical closure of atrial septal defects in children](https://pubmed.ncbi.nlm.nih.gov/26762915/)",
+            "[American Heart Association — Care and treatment for congenital heart defects](https://www.heart.org/en/health-topics/congenital-heart-defects/care-and-treatment-for-congenital-heart-defects)"
+          ]
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "ASD closure surgery in India",
+          "href": "/treatments/asd-closure-surgery-in-india"
+        },
+        {
+          "label": "Pediatric Heart Surgery in India",
+          "href": "/treatments/pediatric-heart-surgery-in-india"
+        },
+        {
+          "label": "ASD closure planning cost",
+          "href": "/costs/India/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)"
+        },
+        {
+          "label": "VSD surgery in babies and children",
+          "href": "/blogs/vsd-surgery-in-babies-and-children"
+        },
+        {
+          "label": "Open-heart surgery vs catheter treatment",
+          "href": "/blogs/open-heart-surgery-vs-catheter-treatment-children"
+        },
+        {
+          "label": "PDA closure in babies",
+          "href": "/blogs/pda-closure-in-babies"
+        }
+      ]
+    },
     {
       "id": "art_vsd_surgery_babies_children",
       "slug": "vsd-surgery-in-babies-and-children",
