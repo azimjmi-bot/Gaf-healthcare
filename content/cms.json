@@ -2176,9 +2176,891 @@
       "name": "tof-recovery.webp",
       "alt": "Four steps labeled Operation, ICU, Ward and Follow-up, with a patched heart, a monitor, medicine and a calendar",
       "addedAt": "2026-10-13T19:30:00.000Z"
+    },
+    {
+      "id": "media_vsd_babies_anatomy_webp",
+      "url": "/uploads/articles/vsd-babies-anatomy.webp",
+      "name": "vsd-babies-anatomy.webp",
+      "alt": "Heart diagram with an opening labeled VSD between the lower chambers and an arrow from the left ventricle toward the lungs",
+      "addedAt": "2026-10-13T20:30:00.000Z"
+    },
+    {
+      "id": "media_vsd_babies_types_webp",
+      "url": "/uploads/articles/vsd-babies-types.webp",
+      "name": "vsd-babies-types.webp",
+      "alt": "Four heart outlines labeled perimembranous, muscular, inlet and outlet, each with a mark in a different part of the wall between the lower chambers",
+      "addedAt": "2026-10-13T20:30:00.000Z"
+    },
+    {
+      "id": "media_vsd_babies_closure_webp",
+      "url": "/uploads/articles/vsd-babies-closure.webp",
+      "name": "vsd-babies-closure.webp",
+      "alt": "Two panels labeled Device and Surgery: a catheter umbrella in an opening, and a stitched patch over an opening",
+      "addedAt": "2026-10-13T20:30:00.000Z"
+    },
+    {
+      "id": "media_vsd_babies_decision_webp",
+      "url": "/uploads/articles/vsd-babies-decision.webp",
+      "name": "vsd-babies-decision.webp",
+      "alt": "Three cards labeled Watch, Review and Close, with an eye, a calendar and a heart",
+      "addedAt": "2026-10-13T20:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_vsd_surgery_babies_children",
+      "slug": "vsd-surgery-in-babies-and-children",
+      "title": "VSD Surgery in Babies and Children: When Is Heart Surgery Needed?",
+      "excerpt": "Learn when a VSD in babies needs surgery, how a hole in the heart is assessed, treatment options, planning costs in India, recovery and follow-up.",
+      "date": "13 October 2026",
+      "publishedAt": "2026-10-13T20:30:00.000Z",
+      "updatedAt": "2026-10-13T20:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "VSD",
+        "congenital heart",
+        "pediatric",
+        "India"
+      ],
+      "image": "/uploads/articles/vsd-babies-anatomy.webp",
+      "imageAlt": "Heart diagram with an opening labeled VSD between the lower chambers and an arrow from the left ventricle toward the lungs",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "VSD Surgery in Babies: Treatment, Cost & Recovery in India",
+      "seoDescription": "Learn when a VSD in babies needs surgery, symptoms of a hole in the heart, treatment options, VSD surgery cost in India, recovery and long-term outlook.",
+      "canonical": "https://gaf.healthcare/blogs/vsd-surgery-in-babies-and-children",
+      "ogImage": "/uploads/articles/vsd-babies-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "VSD surgery in babies",
+        "VSD surgery in children",
+        "Ventricular septal defect treatment in India",
+        "VSD closure cost in India",
+        "Hole in heart surgery for babies",
+        "VSD in newborns",
+        "Large VSD treatment",
+        "VSD device closure vs surgery",
+        "VSD symptoms in infants",
+        "Congenital heart surgery in India",
+        "Pediatric cardiac hospitals in India"
+      ],
+      "blocks": [
+        {
+          "id": "vsd_p_1",
+          "type": "paragraph",
+          "text": "**VSD surgery in babies** is closure of an opening between the heart's two lower chambers when that opening is affecting the heart or lungs. **Not every VSD requires surgery.** A small defect may close on its own or only need monitoring. A large one can send too much blood to the lungs."
+        },
+        {
+          "id": "vsd_p_2",
+          "type": "paragraph",
+          "text": "**Urgent warning:** Severe breathing difficulty, blue or grey lips or tongue, collapse or rapid deterioration needs emergency care now. Do not wait for an online consultation or for travel."
+        },
+        {
+          "id": "vsd_x_3",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>A ventricular septal defect (VSD) is an opening in the wall separating the heart's two lower chambers. It is one of the most common congenital heart defects.</p><p><strong>Not every VSD requires surgery.</strong> Small defects may close naturally or remain harmless and need only regular monitoring. Larger defects can allow excessive blood flow to the lungs, causing breathing difficulties, feeding problems, poor weight gain and heart failure symptoms.</p><p>Treatment depends on the defect's size and location, its effect on the heart and lungs, the child's growth, and whether complications are developing.</p><ul><li><strong>Small VSD:</strong> Often monitored by a pediatric cardiologist. Some close spontaneously.</li><li><strong>Moderate VSD:</strong> May require closure if it causes heart enlargement, symptoms or other significant effects.</li><li><strong>Large VSD:</strong> May require early surgery, particularly when heart failure symptoms or poor growth persist despite medical management.</li><li><strong>VSD with aortic valve involvement:</strong> May require surgery if the defect causes aortic valve prolapse with significant aortic regurgitation.</li><li><strong>Treatment options:</strong> Observation, medicines to manage symptoms, surgical closure and catheter-based closure in selected cases.</li></ul><p>A published Indian consensus guideline provides different timing recommendations according to VSD severity and symptoms. For example, it recommends earlier intervention for large defects with poorly controlled heart failure than for moderate defects in otherwise stable children. The precise timing must be determined by the child's cardiac team.</p><p><strong>Urgent warning:</strong> A baby with severe breathing difficulty, blue or grey lips or tongue, collapse or rapid deterioration needs emergency medical assessment. Do not wait for an online consultation or overseas treatment arrangement.</p></div></aside>"
+        },
+        {
+          "id": "vsd_p_4",
+          "type": "paragraph",
+          "text": "The named procedure page is [VSD closure surgery in India](/treatments/ventricular-septal-defect-surgery-in-india). The wider programme is [Pediatric Heart Surgery in India](/treatments/pediatric-heart-surgery-in-india). A ventricular opening that is part of tetralogy is a different operation, described in [Tetralogy of Fallot surgery in India](/blogs/tetralogy-of-fallot-surgery-india). Device closure compared with an operation is in [open-heart surgery vs catheter treatment for children](/blogs/open-heart-surgery-vs-catheter-treatment-children)."
+        },
+        {
+          "id": "vsd_p_5",
+          "type": "paragraph",
+          "text": "Feeding and colour changes that are not specific to a VSD are in [signs of congenital heart disease in babies](/blogs/signs-of-congenital-heart-disease-in-babies). Planning figures are on the [pediatric cardiac surgery cost directory](/costs/India/Pediatric-Cardiac-Surgery) and the [VSD closure cost row](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect))."
+        },
+        {
+          "id": "vsd_p_6",
+          "type": "paragraph",
+          "text": "Families comparing [pediatric cardiac surgeons](/doctors/India/Pediatric-Cardiac-Surgery) can start with [Delhi NCR](/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/doctors/India/Mumbai/Pediatric-Cardiac-Surgery), [Bengaluru](/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery), [Chennai](/doctors/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery). Hospital lists use the same cities: [India](/hospitals/India/Pediatric-Cardiac-Surgery), [Delhi NCR](/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery), [Bengaluru](/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery), [Chennai](/hospitals/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Pediatric-Cardiac-Surgery)."
+        },
+        {
+          "id": "vsd_i_7",
+          "type": "image",
+          "src": "/uploads/articles/vsd-babies-anatomy.webp",
+          "alt": "Heart diagram with an opening labeled VSD between the lower chambers and an arrow from the left ventricle toward the lungs",
+          "caption": "Blood usually crosses a VSD from the higher-pressure left ventricle toward the right side and the lungs."
+        },
+        {
+          "id": "vsd_b_8",
+          "type": "button",
+          "label": "Request a medical opinion on this VSD",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20VSD%20echo%20I%20can%20send%20for%20my%20child%20and%20say%20whether%20the%20question%20is%20observation%2C%20medicine%2C%20device%20closure%20or%20surgery.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message.%20If%20the%20baby%20is%20gasping%2C%20blue%2C%20collapsed%20or%20deteriorating%20I%20will%20seek%20emergency%20care%20locally."
+        },
+        {
+          "id": "vsd_x_9",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-is-a-ventricular-septal-defect-vsd\">1. What Is a Ventricular Septal Defect (VSD)?</a></li><li><a href=\"#2-types-of-vsd-in-babies-and-children\">2. Types of VSD in Babies and Children</a></li><li><a href=\"#3-what-causes-vsd-in-babies\">3. What Causes VSD in Babies?</a></li><li><a href=\"#4-symptoms-of-vsd-in-babies\">4. Symptoms of VSD in Babies</a></li><li><a href=\"#5-how-is-vsd-diagnosed\">5. How Is VSD Diagnosed?</a></li><li><a href=\"#6-can-a-vsd-close-on-its-own\">6. Can a VSD Close on Its Own?</a></li><li><a href=\"#7-when-does-a-baby-with-vsd-need-surgery\">7. When Does a Baby With VSD Need Surgery?</a></li><li><a href=\"#8-vsd-treatment-options-monitoring-medicines-device-closure-and-surgery\">8. VSD Treatment Options: Monitoring, Medicines, Device Closure and Surgery</a></li><li><a href=\"#9-what-happens-during-vsd-surgery\">9. What Happens During VSD Surgery?</a></li><li><a href=\"#10-vsd-surgery-cost-in-india\">10. VSD Surgery Cost in India</a></li><li><a href=\"#11-recovery-after-vsd-surgery\">11. Recovery After VSD Surgery</a></li><li><a href=\"#12-risks-and-possible-complications-of-vsd-surgery\">12. Risks and Possible Complications of VSD Surgery</a></li><li><a href=\"#13-what-happens-if-a-significant-vsd-is-left-untreated\">13. What Happens If a Significant VSD Is Left Untreated?</a></li><li><a href=\"#14-can-a-child-live-a-normal-life-after-vsd-surgery\">14. Can a Child Live a Normal Life After VSD Surgery?</a></li><li><a href=\"#15-how-to-choose-a-hospital-for-vsd-surgery-in-india\">15. How to Choose a Hospital for VSD Surgery in India</a></li><li><a href=\"#16-vsd-surgery-in-india-for-international-patients\">16. VSD Surgery in India for International Patients</a></li><li><a href=\"#17-frequently-asked-questions-about-vsd-surgery-in-babies-and-children\">17. Frequently Asked Questions About VSD Surgery in Babies and Children</a></li><li><a href=\"#18-conclusion-understanding-the-right-time-for-vsd-treatment\">18. Conclusion: Understanding the Right Time for VSD Treatment</a></li></ol></nav>"
+        },
+        {
+          "id": "vsd_h_10",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Is a Ventricular Septal Defect (VSD)?"
+        },
+        {
+          "id": "vsd_p_11",
+          "type": "paragraph",
+          "text": "The heart has two upper chambers, the atria, and two lower chambers, the ventricles. The right ventricle sends blood toward the lungs. The left ventricle sends oxygen-rich blood around the body."
+        },
+        {
+          "id": "vsd_p_12",
+          "type": "paragraph",
+          "text": "A ventricular septal defect is an opening in the wall between the ventricles. Pressure is usually higher on the left, so blood commonly crosses from left to right. That extra flow can increase blood reaching the lungs and add work for the heart. The effect depends on size, location, lung pressure and the rest of the circulation."
+        },
+        {
+          "id": "vsd_p_13",
+          "type": "paragraph",
+          "text": "A small VSD may cause no symptoms and may close naturally. A large VSD can make the heart and lungs work harder, sometimes with heart-failure symptoms, poor growth, and, if it is not managed, pulmonary vascular disease. The word hole does not say how serious the opening is. The cardiologist has to judge the effect on that child."
+        },
+        {
+          "id": "vsd_h_14",
+          "type": "heading",
+          "level": 2,
+          "text": "2. Types of VSD in Babies and Children"
+        },
+        {
+          "id": "vsd_p_15",
+          "type": "paragraph",
+          "text": "The location in the septum helps predict whether the opening may close and which treatment fits."
+        },
+        {
+          "id": "vsd_i_16",
+          "type": "image",
+          "src": "/uploads/articles/vsd-babies-types.webp",
+          "alt": "Four heart outlines labeled perimembranous, muscular, inlet and outlet, each with a mark in a different part of the wall between the lower chambers",
+          "caption": "Perimembranous, muscular, inlet and outlet defects sit in different parts of the wall. Location changes the plan."
+        },
+        {
+          "id": "vsd_h_17",
+          "type": "heading",
+          "level": 3,
+          "text": "Perimembranous VSD"
+        },
+        {
+          "id": "vsd_p_18",
+          "type": "paragraph",
+          "text": "A perimembranous VSD sits near the membranous part of the septum, close to the valves. Size and effect vary. Some become smaller or close. Others send a large amount of blood between the ventricles. The cardiologist also looks at the aortic valve and nearby structures."
+        },
+        {
+          "id": "vsd_h_19",
+          "type": "heading",
+          "level": 3,
+          "text": "Muscular VSD"
+        },
+        {
+          "id": "vsd_p_20",
+          "type": "paragraph",
+          "text": "A muscular VSD sits in the muscular part of the septum. Small muscular defects are more likely to close than some other types. If the opening is small and heart function is normal, observation may be enough. Several muscular defects, or one large defect, may need a different plan."
+        },
+        {
+          "id": "vsd_h_21",
+          "type": "heading",
+          "level": 3,
+          "text": "Inlet VSD"
+        },
+        {
+          "id": "vsd_p_22",
+          "type": "paragraph",
+          "text": "An inlet VSD sits near the valves between the atria and the ventricles. It may come with an atrioventricular septal defect or valve abnormalities, and those findings change the operation. Inlet defects are less likely to close on their own."
+        },
+        {
+          "id": "vsd_h_23",
+          "type": "heading",
+          "level": 3,
+          "text": "Outlet VSD"
+        },
+        {
+          "id": "vsd_p_24",
+          "type": "paragraph",
+          "text": "An outlet VSD sits near the paths that leave the ventricles. Some affect the aortic valve, which can prolapse or leak backward into the left ventricle. If there is aortic valve prolapse with significant regurgitation, surgery may be recommended even when symptoms are few."
+        },
+        {
+          "id": "vsd_p_25",
+          "type": "paragraph",
+          "text": "Two babies with openings of a similar size can still need different treatment, because location, flow, chamber size and valve function are not the same."
+        },
+        {
+          "id": "vsd_h_26",
+          "type": "heading",
+          "level": 2,
+          "text": "3. What Causes VSD in Babies?"
+        },
+        {
+          "id": "vsd_p_27",
+          "type": "paragraph",
+          "text": "A VSD forms when the ventricular septum does not finish forming in pregnancy. In many children there is no single identifiable cause. Some congenital heart defects are linked with genetic conditions, chromosomal differences or a family history. A VSD is not caused by ordinary feeding or by normal activity after birth. Parents should not assume they caused it."
+        },
+        {
+          "id": "vsd_p_28",
+          "type": "paragraph",
+          "text": "If the child has other congenital findings or a relevant family history, the team may discuss further assessment. The immediate task is to judge how important the opening is and to set a follow-up plan."
+        },
+        {
+          "id": "vsd_h_29",
+          "type": "heading",
+          "level": 2,
+          "text": "4. Symptoms of VSD in Babies"
+        },
+        {
+          "id": "vsd_p_30",
+          "type": "paragraph",
+          "text": "Some babies with a small VSD look completely well. The opening may be found when a doctor hears a murmur at a routine visit. Symptoms are more likely when a lot of extra blood reaches the lungs or the heart is under substantial strain."
+        },
+        {
+          "id": "vsd_l_31",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Rapid breathing or breathing difficulty.",
+            "Sweating during feeding.",
+            "Tiring before a feed is finished.",
+            "Taking an unusually long time to feed.",
+            "Poor weight gain or growth.",
+            "Repeated respiratory symptoms in some children.",
+            "Less energy or less exercise tolerance in older children.",
+            "Signs of heart strain in more severe cases."
+          ]
+        },
+        {
+          "id": "vsd_p_32",
+          "type": "paragraph",
+          "text": "These signs are not specific to a VSD. Other heart, lung and feeding problems can look the same. Seek emergency care for severe breathing difficulty, blue or grey lips or tongue, collapse, unresponsiveness or rapid deterioration. Contact the treating clinician promptly for poor feeding, faster breathing, heavy sweating during feeds, or weight that is not increasing. Do not wait for the next routine visit if symptoms are worsening."
+        },
+        {
+          "id": "vsd_b_33",
+          "type": "button",
+          "label": "Ask whether these symptoms need an earlier review",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20feeding%2C%20breathing%20and%20weight%20notes%20I%20can%20send%20with%20my%20child's%20VSD%20echo%20and%20say%20whether%20an%20earlier%20pediatric%20cardiology%20review%20is%20the%20question.%20Do%20not%20name%20a%20best%20doctor.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "vsd_h_34",
+          "type": "heading",
+          "level": 2,
+          "text": "5. How Is VSD Diagnosed?"
+        },
+        {
+          "id": "vsd_h_35",
+          "type": "heading",
+          "level": 3,
+          "text": "Clinical examination"
+        },
+        {
+          "id": "vsd_p_36",
+          "type": "paragraph",
+          "text": "The doctor reviews symptoms, feeding, growth and history. A murmur may suggest a VSD. Loudness does not reliably show how serious it is. A small VSD can be loud. A large defect can sound different."
+        },
+        {
+          "id": "vsd_h_37",
+          "type": "heading",
+          "level": 3,
+          "text": "Echocardiography"
+        },
+        {
+          "id": "vsd_p_38",
+          "type": "paragraph",
+          "text": "An echocardiogram is the main test. It helps show location and approximate size, the direction of flow, chamber size, pumping function, an estimate of pulmonary artery pressure, whether the aortic valve is affected, and whether other defects are present. Those findings decide monitoring, medicine or closure. If you are gathering files, the [second-opinion guide](/blogs/second-opinion-congenital-heart-surgery-india) lists which echo images to send."
+        },
+        {
+          "id": "vsd_h_39",
+          "type": "heading",
+          "level": 3,
+          "text": "ECG, chest X-ray and further tests"
+        },
+        {
+          "id": "vsd_p_40",
+          "type": "paragraph",
+          "text": "An ECG records electrical activity. It may show chamber enlargement or an abnormal rhythm. It does not replace the echocardiogram. A chest X-ray may show heart size and the lungs when that is useful. Cardiac catheterisation or further imaging is used in selected cases, especially if pulmonary hypertension is suspected, the anatomy is complex, or the team needs more information before treatment. Not every child needs every test."
+        },
+        {
+          "id": "vsd_h_41",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Can a VSD Close on Its Own?"
+        },
+        {
+          "id": "vsd_p_42",
+          "type": "paragraph",
+          "text": "Yes. Some VSDs close on their own, particularly small muscular defects. Others become smaller. Closure is not guaranteed. It depends on size, location, age, whether follow-up imaging shows the opening getting smaller, and whether other heart abnormalities are present."
+        },
+        {
+          "id": "vsd_p_43",
+          "type": "paragraph",
+          "text": "Indian consensus guidance notes that small VSDs have a substantial chance of closing during childhood, especially muscular defects. Large VSDs and certain inlet or malaligned defects are less likely to close. Do not assume a large or symptomatic VSD will close if you wait. If observation is the plan, ask how often the child is reviewed and which changes would reopen the question of treatment."
+        },
+        {
+          "id": "vsd_h_44",
+          "type": "heading",
+          "level": 2,
+          "text": "7. When Does a Baby With VSD Need Surgery?"
+        },
+        {
+          "id": "vsd_p_45",
+          "type": "paragraph",
+          "text": "The decision uses the effect on the heart and lungs, not only a measured diameter."
+        },
+        {
+          "id": "vsd_i_46",
+          "type": "image",
+          "src": "/uploads/articles/vsd-babies-decision.webp",
+          "alt": "Three cards labeled Watch, Review and Close, with an eye, a calendar and a heart",
+          "caption": "A small VSD is often watched. A moderate defect is reviewed for effect on the heart. A large defect with uncontrolled symptoms may need closure."
+        },
+        {
+          "id": "vsd_h_47",
+          "type": "heading",
+          "level": 3,
+          "text": "Small VSD"
+        },
+        {
+          "id": "vsd_p_48",
+          "type": "paragraph",
+          "text": "A small VSD may cause no symptoms, no important rise in lung pressure, and no enlargement of the left heart. These children often need monitoring rather than immediate closure. Surgery can become appropriate if a complication appears, such as aortic valve prolapse with significant regurgitation."
+        },
+        {
+          "id": "vsd_h_49",
+          "type": "heading",
+          "level": 3,
+          "text": "Moderate VSD"
+        },
+        {
+          "id": "vsd_p_50",
+          "type": "paragraph",
+          "text": "A moderate VSD may increase lung blood flow and enlarge the left heart even when the child looks relatively well. Timing depends on symptoms, chamber size, pulmonary pressure and whether medicine is needed. Indian consensus guidance recommends closure by approximately 2–5 years for certain asymptomatic moderate VSDs with left-heart dilatation and normal pulmonary artery pressure. For symptomatic children whose symptoms are controlled with medicine, it recommends closure by approximately 1–2 years. Those are recommendations for defined situations, not a deadline for every child."
+        },
+        {
+          "id": "vsd_h_51",
+          "type": "heading",
+          "level": 3,
+          "text": "Large VSD"
+        },
+        {
+          "id": "vsd_p_52",
+          "type": "paragraph",
+          "text": "A large VSD can cause a large extra flow to the lungs and heart-failure symptoms in infancy: fast breathing, sweating during feeds, poor weight gain, or a need for medicine. If heart failure is not controlled, or growth stays poor, early surgical closure may be necessary. The same guidance recommends closure as soon as possible for large VSDs with poorly controlled heart failure, and by around six months for certain large defects in which heart failure is controlled. The cardiologist and surgeon set the date from the child's condition and the pulmonary circulation."
+        },
+        {
+          "id": "vsd_h_53",
+          "type": "heading",
+          "level": 3,
+          "text": "Aortic valve complications and pulmonary hypertension"
+        },
+        {
+          "id": "vsd_p_54",
+          "type": "paragraph",
+          "text": "Some VSDs, especially certain outlet defects, affect the aortic valve. If the valve prolapses and significant regurgitation develops, surgery may be recommended to protect the valve. A significant VSD can also expose the lung vessels to extra flow and pressure. Over time that can cause pulmonary vascular disease. In advanced cases, higher resistance can make closure unsafe. Suspected pulmonary hypertension needs a careful decision about whether closure is safe and likely to help."
+        },
+        {
+          "id": "vsd_p_55",
+          "type": "paragraph",
+          "text": "If surgery is recommended, ask which findings make closure necessary now and what the risks of delay are. Do not postpone a recommended operation because a different child was told to wait."
+        },
+        {
+          "id": "vsd_h_56",
+          "type": "heading",
+          "level": 2,
+          "text": "8. VSD Treatment Options: Monitoring, Medicines, Device Closure and Surgery"
+        },
+        {
+          "id": "vsd_h_57",
+          "type": "heading",
+          "level": 3,
+          "text": "Observation"
+        },
+        {
+          "id": "vsd_p_58",
+          "type": "paragraph",
+          "text": "Observation can fit a small VSD that is not affecting heart function. Visits check whether the opening is smaller, whether the chambers stay a normal size, and whether complications appear. Attend the appointments even when the child looks well."
+        },
+        {
+          "id": "vsd_h_59",
+          "type": "heading",
+          "level": 3,
+          "text": "Medicines"
+        },
+        {
+          "id": "vsd_p_60",
+          "type": "paragraph",
+          "text": "Medicines may manage heart-failure symptoms or fluid overload while the child grows or waits for closure. They may help the heart work more efficiently or remove extra fluid. They do not close a VSD. They are not a substitute for closure when closure is needed."
+        },
+        {
+          "id": "vsd_h_61",
+          "type": "heading",
+          "level": 3,
+          "text": "Catheter device closure and surgical closure"
+        },
+        {
+          "id": "vsd_p_62",
+          "type": "paragraph",
+          "text": "Some VSDs can be closed with a device delivered through a catheter, when location, size and the relationship to valves allow it. Device closure can avoid an open-chest operation. It is not suitable for every VSD. Risks can include heart block, valve injury, residual flow and device problems. The cardiologist has to say whether it fits."
+        },
+        {
+          "id": "vsd_i_63",
+          "type": "image",
+          "src": "/uploads/articles/vsd-babies-closure.webp",
+          "alt": "Two panels labeled Device and Surgery: a catheter umbrella in an opening, and a stitched patch over an opening",
+          "caption": "Selected defects can take a catheter device. Many others are closed with stitches or a patch at surgery."
+        },
+        {
+          "id": "vsd_p_64",
+          "type": "paragraph",
+          "text": "Surgical repair closes the opening with stitches or a patch, depending on size and location. Surgery is often preferred when the defect is large, the anatomy does not suit a device, or other structures need repair at the same time. In selected complex cases the team may use a temporary step, such as pulmonary artery banding, before the definitive repair. That is not routine for every VSD."
+        },
+        {
+          "id": "vsd_b_65",
+          "type": "button",
+          "label": "Ask whether a device or surgery is suitable",
+          "href": "https://wa.me/919044346292?text=Please%20review%20my%20child's%20VSD%20echo%20and%20say%20whether%20device%20closure%20or%20surgical%20closure%20is%20the%20question%2C%20or%20whether%20observation%20is%20still%20reasonable.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "vsd_h_66",
+          "type": "heading",
+          "level": 2,
+          "text": "9. What Happens During VSD Surgery?"
+        },
+        {
+          "id": "vsd_p_67",
+          "type": "paragraph",
+          "text": "Before surgery the team reviews the echocardiogram, symptoms, growth, medicines and other health problems. The surgeon and anaesthesiologist explain the operation, the risks, the alternatives and the likely stay. Parents receive instructions about fasting, medicines and admission. [Questions to ask before heart surgery](/blogs/questions-to-ask-before-heart-surgery) is a useful list for that conversation."
+        },
+        {
+          "id": "vsd_p_68",
+          "type": "paragraph",
+          "text": "The child receives general anaesthesia and continuous monitoring. For many VSD repairs the surgeon uses cardiopulmonary bypass while the heart is repaired. The opening is closed directly or with a patch. The team checks the repair and heart function before the child goes to postoperative care."
+        },
+        {
+          "id": "vsd_p_69",
+          "type": "paragraph",
+          "text": "Afterwards the child may go to a pediatric cardiac intensive care unit. Temporary breathing support, intravenous medicines and drainage tubes may be needed. The team watches rhythm, circulation, breathing, bleeding and signs of infection. As the child stabilises, that support is reduced and discharge planning starts. The exact course depends on the child and the centre."
+        },
+        {
+          "id": "vsd_h_70",
+          "type": "heading",
+          "level": 2,
+          "text": "10. VSD Surgery Cost in India"
+        },
+        {
+          "id": "vsd_p_71",
+          "type": "paragraph",
+          "text": "GAF Healthcare does not publish a single fee for VSD surgery. The [VSD closure planning band](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)) is **US$4,500–US$11,000**, with an expected stay of **6–12 nights; parent stay expected**. The US comparison band on the same row is **US$35,000–US$90,000**. These are planning ranges from the pediatric cardiac directory. They are not a quotation."
+        },
+        {
+          "id": "vsd_p_72",
+          "type": "paragraph",
+          "text": "A 2024 study, [Pediatric cardiac procedures in India: Who bears the cost?](https://pmc.ncbi.nlm.nih.gov/articles/PMC11198927/), reported historical patient-cost ranges across 24 centres: about ₹65,000–₹2,00,000 in government hospitals, ₹85,000–₹1,80,000 in charitable hospitals, and ₹2,00,000–₹3,50,000 in private hospitals for surgical VSD closure. Those are study ranges from the participating centres and their methods. They are not the GAF directory band and they are not a 2026 hospital tariff. A complex repair or a long intensive-care stay can cost more. The treating hospital should issue a written estimate from the child's reports."
+        },
+        {
+          "id": "vsd_p_73",
+          "type": "paragraph",
+          "text": "Neighbouring procedures on the same directory use different bands:"
+        },
+        {
+          "id": "vsd_p_74",
+          "type": "paragraph",
+          "text": "| Named procedure | India planning band | Expected stay | US comparison band |\n| --- | --- | --- | --- |\n| VSD closure | US$4,500–US$11,000 | 6–12 nights; parent stay expected | US$35,000–US$90,000 |\n| ASD closure | US$4,000–US$9,500 | 5–10 nights; parent stay expected | US$30,000–US$80,000 |\n| TOF repair | US$6,500–US$16,000 | 8–16 nights; parent stay expected | US$50,000–US$140,000 |"
+        },
+        {
+          "id": "vsd_p_75",
+          "type": "paragraph",
+          "text": "The broader congenital category, which is not a VSD-only tariff, is on [India](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery), [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery) and [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery). An [ASD](/treatments/asd-closure-surgery-in-india) is an opening between the upper chambers and is planned separately."
+        },
+        {
+          "id": "vsd_p_76",
+          "type": "paragraph",
+          "text": "What changes the bill: size and location, age and weight, whether a newborn needs intensive care, the hospital, which tests are inside the estimate, how long intensive care lasts, other heart defects, and complications."
+        },
+        {
+          "id": "vsd_p_77",
+          "type": "paragraph",
+          "text": "| Ask the hospital | What to confirm |\n| --- | --- |\n| Surgeon and anaesthesia | Are the professional fees inside the estimate? |\n| Theatre and bypass | Are operating-theatre, bypass and perfusion charges included? |\n| Patch and supplies | Are the patch and standard consumables included? |\n| Tests | Which preoperative investigations are included? |\n| ICU and ward | How many days are included, and what is charged for extra days? |\n| Medicines | Are medicines and postoperative echocardiograms included? |\n| Complications | How is extra treatment billed? |\n| Follow-up | Are later visits included? |"
+        },
+        {
+          "id": "vsd_p_78",
+          "type": "paragraph",
+          "text": "Do not treat an advertised package as the full cost. Compare the scope of the written estimate."
+        },
+        {
+          "id": "vsd_b_79",
+          "type": "button",
+          "label": "Request a VSD surgery cost estimate",
+          "href": "https://wa.me/919044346292?text=Please%20use%20the%20echo%20I%20can%20send%20to%20request%20a%20written%20VSD%20closure%20estimate%20in%20India.%20Say%20whether%20the%20question%20is%20surgical%20closure%20or%20device%20closure%2C%20and%20what%20is%20included.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "vsd_h_80",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Recovery After VSD Surgery"
+        },
+        {
+          "id": "vsd_p_81",
+          "type": "paragraph",
+          "text": "Recovery depends on age, the repair, health before surgery and whether complications occur. The directory planning stay for VSD closure is 6–12 nights; parent stay expected. That is a planning range, not a promise. Broader expectations are in [heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india)."
+        },
+        {
+          "id": "vsd_p_82",
+          "type": "paragraph",
+          "text": "In the first days the team watches rhythm, breathing, bleeding and other problems. Some children need temporary ventilation or intravenous medicines. Others stabilise sooner. Before discharge the team reviews feeding, pain, the wound, medicines and general recovery. Parents should leave with instructions on activity, bathing, medicines and when to seek help."
+        },
+        {
+          "id": "vsd_p_83",
+          "type": "paragraph",
+          "text": "At home, watch the incision, temperature, feeding, breathing and activity. Return to usual routines only as the surgeon advises. Avoid strenuous play and contact sport until the team says they are appropriate. Babies who fed poorly before closure should have feeding and growth checked again afterwards. Follow-up looks at the repair, heart function, rhythm and any residual flow. Many children do well after a successful closure. Some still need more treatment or longer monitoring."
+        },
+        {
+          "id": "vsd_h_84",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Risks and Possible Complications of VSD Surgery"
+        },
+        {
+          "id": "vsd_l_85",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Bleeding or infection.",
+            "Abnormal heart rhythms.",
+            "Heart block, which may need a pacemaker in some children.",
+            "Residual flow through or around the repair.",
+            "Valve injury or another structural problem.",
+            "Breathing complications.",
+            "Kidney or other organ complications.",
+            "Neurological complications in some circumstances.",
+            "A further procedure or a repeat operation.",
+            "In severe cases, serious disability or death."
+          ]
+        },
+        {
+          "id": "vsd_p_86",
+          "type": "paragraph",
+          "text": "Risk depends on the child's condition, the anatomy, associated heart problems and the operation. Ask which complications matter most for this child and how the hospital would treat them."
+        },
+        {
+          "id": "vsd_h_87",
+          "type": "heading",
+          "level": 2,
+          "text": "13. What Happens If a Significant VSD Is Left Untreated?"
+        },
+        {
+          "id": "vsd_p_88",
+          "type": "paragraph",
+          "text": "A small VSD that does not enlarge the heart or raise lung pressure may stay stable and only need monitoring. A significant VSD can keep sending extra blood to the lungs, with heart-failure symptoms, poor growth and progressive pulmonary vascular disease. In some children, delay allows changes in the lung vessels that make later closure harder or unsafe. That is why follow-up still matters when symptoms look mild. The cardiologist judges whether the timing should change."
+        },
+        {
+          "id": "vsd_h_89",
+          "type": "heading",
+          "level": 2,
+          "text": "14. Can a Child Live a Normal Life After VSD Surgery?"
+        },
+        {
+          "id": "vsd_p_90",
+          "type": "paragraph",
+          "text": "Many children recover well after a successful repair and go on to school, play and age-appropriate activity. The outlook depends on the original defect, how complete the repair is, heart function, associated conditions and complications. An isolated VSD that is successfully closed often has a favourable outlook. Some children still need follow-up or further treatment. Ask when school and sport can resume, and whether cardiology review continues."
+        },
+        {
+          "id": "vsd_h_91",
+          "type": "heading",
+          "level": 2,
+          "text": "15. How to Choose a Hospital for VSD Surgery in India"
+        },
+        {
+          "id": "vsd_l_92",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Ask whether the centre regularly closes VSDs in children of a similar age and complexity.",
+            "Confirm pediatric cardiac intensive care, and neonatal support if the child is very small.",
+            "The team may include pediatric cardiologists, congenital heart surgeons, cardiac anaesthesiologists, intensivists and specialist nurses.",
+            "Ask for outcome information for a comparable group, not a single advertised success rate.",
+            "Obtain an itemised estimate with inclusions, exclusions and extra intensive-care charges.",
+            "Confirm how echocardiography, medicines and later follow-up will be arranged."
+          ]
+        },
+        {
+          "id": "vsd_p_93",
+          "type": "paragraph",
+          "text": "Do not choose a hospital only from a claimed success rate, online reviews or the lowest price. A city list is not a ranking."
+        },
+        {
+          "id": "vsd_h_94",
+          "type": "heading",
+          "level": 2,
+          "text": "16. VSD Surgery in India for International Patients"
+        },
+        {
+          "id": "vsd_p_95",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates communication with hospitals, record review, appointment requests and preliminary estimates. Clinical decisions stay with the treating team. A remote opinion is preliminary. It does not fix the final procedure or the bill."
+        },
+        {
+          "id": "vsd_l_96",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Prepare the records.** Latest echocardiogram report and images, the diagnosis, age, weight, medicines and earlier treatment notes.",
+            "**Request a specialist review.** The receiving team says whether more tests or an examination are needed.",
+            "**Confirm the plan.** Ask whether the child needs observation, medicine, device closure or surgical repair, and how urgent that is.",
+            "**Request an itemised estimate.** Clarify the operation, intensive care, ward charges, exclusions and possible extras.",
+            "**Confirm fitness to travel.** Do not delay urgent care, and do not travel with an unstable baby.",
+            "**Plan follow-up.** Take the discharge summary, operation report, medicine instructions, warning signs and the follow-up plan before you go home."
+          ]
+        },
+        {
+          "id": "vsd_b_97",
+          "type": "button",
+          "label": "Ask whether travel is safe for this child",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20VSD%20records%20I%20can%20send%20and%20say%20whether%20travel%20to%20India%20is%20a%20question%20the%20treating%20team%20should%20answer%20first.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "vsd_h_98",
+          "type": "heading",
+          "level": 2,
+          "text": "17. Frequently Asked Questions About VSD Surgery in Babies and Children"
+        },
+        {
+          "id": "vsd_h_99",
+          "type": "heading",
+          "level": 3,
+          "text": "Is VSD surgery necessary for every baby?"
+        },
+        {
+          "id": "vsd_p_100",
+          "type": "paragraph",
+          "text": "No. Small VSDs may close naturally or stay stable without an operation. Surgery is considered when the defect causes important symptoms, heart enlargement, valve problems, lung-pressure problems, or other findings that make closure useful."
+        },
+        {
+          "id": "vsd_h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a VSD close naturally?"
+        },
+        {
+          "id": "vsd_p_102",
+          "type": "paragraph",
+          "text": "Yes. Some small VSDs, particularly muscular defects, close during childhood. Large defects and certain inlet or malaligned openings are less likely to close. Repeat echocardiograms show whether the opening is changing."
+        },
+        {
+          "id": "vsd_h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "At what age should a baby undergo VSD surgery?"
+        },
+        {
+          "id": "vsd_p_104",
+          "type": "paragraph",
+          "text": "There is no single age. Large VSDs with poorly controlled heart failure may need early surgery. Indian consensus guidance discusses closure by around six months for certain controlled large defects, by about 1–2 years for some symptomatic moderate defects, and by about 2–5 years for certain asymptomatic moderate defects with left-heart dilatation. The cardiologist sets the time for this child."
+        },
+        {
+          "id": "vsd_h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the cost of VSD surgery in India?"
+        },
+        {
+          "id": "vsd_p_106",
+          "type": "paragraph",
+          "text": "The GAF Healthcare planning band for VSD closure is US$4,500–US$11,000, with an expected stay of 6–12 nights; parent stay expected. The US comparison band is US$35,000–US$90,000. A 2024 study reported historical surgical ranges of about ₹65,000–₹2,00,000 in government hospitals, ₹85,000–₹1,80,000 in charitable hospitals and ₹2,00,000–₹3,50,000 in private hospitals. Those study ranges are not the GAF band and are not a current quotation. Ask the hospital for a written estimate."
+        },
+        {
+          "id": "vsd_h_107",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a VSD be closed without open-heart surgery?"
+        },
+        {
+          "id": "vsd_p_108",
+          "type": "paragraph",
+          "text": "Some VSDs can be closed with a catheter device, depending on location, size and nearby structures. Many cannot. The cardiologist decides whether a device or an operation is appropriate."
+        },
+        {
+          "id": "vsd_h_109",
+          "type": "heading",
+          "level": 3,
+          "text": "Do medicines close a VSD?"
+        },
+        {
+          "id": "vsd_p_110",
+          "type": "paragraph",
+          "text": "No. Medicines may control heart-failure symptoms or extra fluid. They do not close the opening. If closure is needed, the team will discuss the procedure."
+        },
+        {
+          "id": "vsd_h_111",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does a child stay in hospital after VSD surgery?"
+        },
+        {
+          "id": "vsd_p_112",
+          "type": "paragraph",
+          "text": "The directory planning stay for VSD closure is 6–12 nights; parent stay expected. Some children recover in a shorter admission. Complex cases and complications can take longer. Ask the treating hospital for an estimate for this child."
+        },
+        {
+          "id": "vsd_h_113",
+          "type": "heading",
+          "level": 3,
+          "text": "Is VSD surgery safe?"
+        },
+        {
+          "id": "vsd_p_114",
+          "type": "paragraph",
+          "text": "VSD repair is an established operation, and no operation is free of risk. Risk depends on the child's condition, anatomy and associated problems. The surgeon should explain the risks and the expected benefit for this child."
+        },
+        {
+          "id": "vsd_h_115",
+          "type": "heading",
+          "level": 3,
+          "text": "Will my baby need medicines after VSD surgery?"
+        },
+        {
+          "id": "vsd_p_116",
+          "type": "paragraph",
+          "text": "Some children need medicine for a time, depending on heart function, rhythm and other findings. Follow the discharge prescription. Do not change a dose without medical advice."
+        },
+        {
+          "id": "vsd_h_117",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a child live normally after VSD repair?"
+        },
+        {
+          "id": "vsd_p_118",
+          "type": "paragraph",
+          "text": "Many children do well and return to age-appropriate activity. The outlook depends on the original defect, the result of the repair and any associated conditions. Follow-up still matters."
+        },
+        {
+          "id": "vsd_h_119",
+          "type": "heading",
+          "level": 3,
+          "text": "What are the warning signs of a large VSD in a baby?"
+        },
+        {
+          "id": "vsd_p_120",
+          "type": "paragraph",
+          "text": "Fast breathing, sweating during feeds, poor feeding and poor weight gain can occur with a significant VSD. Severe breathing difficulty, sudden blue or grey lips or tongue, collapse or rapid deterioration needs emergency care."
+        },
+        {
+          "id": "vsd_h_121",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients arrange VSD surgery in India?"
+        },
+        {
+          "id": "vsd_p_122",
+          "type": "paragraph",
+          "text": "Families can request a preliminary review of records and an estimate. The final plan depends on clinical assessment. Travel should happen only when the treating team considers it safe."
+        },
+        {
+          "id": "vsd_h_123",
+          "type": "heading",
+          "level": 3,
+          "text": "Can GAF Healthcare help arrange VSD treatment in India?"
+        },
+        {
+          "id": "vsd_p_124",
+          "type": "paragraph",
+          "text": "GAF Healthcare can coordinate record reviews, hospital enquiries, appointment requests and preliminary estimates. Diagnosis, the treatment recommendation and the operation come from the hospital's clinical team."
+        },
+        {
+          "id": "vsd_h_125",
+          "type": "heading",
+          "level": 3,
+          "text": "When does aortic valve leakage change the plan for a VSD?"
+        },
+        {
+          "id": "vsd_p_126",
+          "type": "paragraph",
+          "text": "If an outlet or other VSD causes the aortic valve to prolapse and significant regurgitation develops, surgery may be recommended to protect the valve even when the child has few symptoms. The echocardiogram is what shows that change."
+        },
+        {
+          "id": "vsd_h_127",
+          "type": "heading",
+          "level": 3,
+          "text": "What is pulmonary artery banding?"
+        },
+        {
+          "id": "vsd_p_128",
+          "type": "paragraph",
+          "text": "In selected complex cases the surgeon may place a band on the pulmonary artery to limit extra blood flow to the lungs before a later definitive repair. It is not the usual treatment for an isolated VSD that can be closed in one operation."
+        },
+        {
+          "id": "vsd_h_129",
+          "type": "heading",
+          "level": 2,
+          "text": "18. Conclusion: Understanding the Right Time for VSD Treatment"
+        },
+        {
+          "id": "vsd_p_130",
+          "type": "paragraph",
+          "text": "A VSD diagnosis is worrying, especially when the child is very young. Not every opening needs an operation. Some small defects close or only need monitoring. Others send too much blood to the lungs, limit growth, or cause heart-failure symptoms, and they need closure at the right time."
+        },
+        {
+          "id": "vsd_p_131",
+          "type": "paragraph",
+          "text": "The useful questions are the size and location, the effect on the heart and lungs, and why the cardiologist recommends the plan they recommend. If surgery is advised, ask about the procedure, the risks, the expected stay, the written cost and the follow-up. Do not delay a recommended operation because of general information online."
+        },
+        {
+          "id": "vsd_p_132",
+          "type": "paragraph",
+          "text": "This article is for education. It does not replace an assessment. The need and timing for VSD closure must be decided by a qualified pediatric cardiologist and congenital heart surgeon."
+        },
+        {
+          "id": "vsd_p_133",
+          "type": "paragraph",
+          "text": "**GAF Healthcare can help international families coordinate a record review and a preliminary treatment estimate in India, subject to clinical review and hospital availability.** Prepare the diagnosis, the latest echocardiogram, age, weight, medicines and earlier treatment notes."
+        },
+        {
+          "id": "vsd_b_134",
+          "type": "button",
+          "label": "Speak to a patient coordinator about VSD closure",
+          "href": "https://wa.me/919044346292?text=Please%20help%20coordinate%20a%20pediatric%20cardiology%20review%20and%20a%20case-specific%20VSD%20estimate%20in%20India.%20The%20treating%20team%20must%20confirm%20whether%20observation%2C%20a%20device%20or%20surgery%20is%20appropriate%2C%20and%20whether%20travel%20is%20safe.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "vsd_h_135",
+          "type": "heading",
+          "level": 3,
+          "text": "Sources used for this guide"
+        },
+        {
+          "id": "vsd_l_136",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Indian guidelines for indications and timing of intervention for common congenital heart diseases](https://pmc.ncbi.nlm.nih.gov/articles/PMC6716301/)",
+            "[Guidelines for the management of common congenital heart diseases in India](https://pmc.ncbi.nlm.nih.gov/articles/PMC6796629/)",
+            "[American Heart Association — Ventricular septal defect](https://www.heart.org/en/health-topics/congenital-heart-defects/about-congenital-heart-defects/ventricular-septal-defect-vsd)",
+            "[CDC — Ventricular septal defect](https://www.cdc.gov/heart-defects/about/ventricular-septal-defect.html)",
+            "[Pediatric cardiac procedures in India: Who bears the cost?](https://pmc.ncbi.nlm.nih.gov/articles/PMC11198927/)"
+          ]
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "VSD closure surgery in India",
+          "href": "/treatments/ventricular-septal-defect-surgery-in-india"
+        },
+        {
+          "label": "Pediatric Heart Surgery in India",
+          "href": "/treatments/pediatric-heart-surgery-in-india"
+        },
+        {
+          "label": "VSD closure planning cost",
+          "href": "/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)"
+        },
+        {
+          "label": "Tetralogy of Fallot surgery in India",
+          "href": "/blogs/tetralogy-of-fallot-surgery-india"
+        },
+        {
+          "label": "Open-heart surgery vs catheter treatment",
+          "href": "/blogs/open-heart-surgery-vs-catheter-treatment-children"
+        },
+        {
+          "label": "Signs of congenital heart disease in babies",
+          "href": "/blogs/signs-of-congenital-heart-disease-in-babies"
+        }
+      ]
+    },
     {
       "id": "art_tetralogy_of_fallot_surgery_india",
       "slug": "tetralogy-of-fallot-surgery-india",
