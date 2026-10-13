@@ -7124,6 +7124,127 @@ test("the published VSD surgery page uses GAF USD ranges and cardiac GEO links",
   assert.match(pacemaker?.translations.en?.editorialBody ?? "", /\/treatments\/ventricular-septal-defect-surgery-in-india/);
 });
 
+test("the published pediatric heart surgery page uses GAF USD ranges and cardiac GEO links", () => {
+  const store = loadCuratedTreatments();
+  const treatment = store.treatments.find(
+    (row) => row.slug === "pediatric-heart-surgery-in-india",
+  );
+  assert.ok(treatment);
+  assert.equal(treatment.status, "published");
+  assert.equal(treatment.translations.en?.status, "published");
+  assert.equal(
+    treatment.translations.en?.seoTitle,
+    "Pediatric Heart Surgery in India: Cost, Hospitals & Treatment Guide",
+  );
+  assert.deepEqual(validateTreatmentForSave(treatment, store), []);
+  const body = treatment.translations.en!.editorialBody;
+  assert.doesNotMatch(body, /₹|lakh/i);
+  assert.match(body, /\$3,500–\$8,500/);
+  assert.match(body, /\$4,000–\$9,500/);
+  assert.match(body, /\$4,500–\$11,000/);
+  assert.match(body, /\$6,500–\$16,000/);
+  assert.match(body, /\$12,000–\$26,000/);
+  assert.match(body, /\$18,000–\$40,000/);
+  assert.match(body, /\$8,000–\$28,000/);
+  assert.match(body, /\$80,000–\$250,000/);
+  assert.match(body, /\$50,000–\$120,000/);
+  assert.match(body, /10–21 nights/);
+  assert.match(body, /3–8 weeks/);
+  assert.match(body, /article-quick-answer|Quick Answer: Pediatric Heart Surgery in India/);
+  assert.match(body, /local emergency department/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/ASD-Closure-\(Atrial-Septal-Defect\)/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/Arterial-Switch-Operation/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/Norwood-Procedure/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Congenital-Heart-Surgery/);
+  assert.match(body, /\/treatments\/asd-closure-surgery-in-india/);
+  assert.match(body, /\/treatments\/ventricular-septal-defect-surgery-in-india/);
+  assert.match(body, /\/treatments\/tof-repair-surgery-in-india/);
+  assert.match(body, /\/treatments\/arterial-switch-operation-in-india/);
+  assert.match(body, /\/uploads\/treatments\/pediatric-heart-defects\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pediatric-heart-pathways\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pediatric-heart-switch\.webp/);
+  assert.match(body, /\/uploads\/treatments\/pediatric-heart-stages\.webp/);
+  assert.match(body, /https:\/\/wa\.me\/919044346292/);
+  assert.ok((body.match(/https:\/\/wa\.me\/919044346292/g) ?? []).length >= 5);
+  for (const path of [
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Chennai/Pediatric-Cardiac-Surgery",
+    "/hospitals/India/Hyderabad/Pediatric-Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery",
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery",
+    "/doctors/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/Congenital-Heart-Surgery",
+    "/doctors/India/Chennai/Cardiac-Surgery/Congenital-Heart-Surgery",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/Congenital-Heart-Surgery",
+    "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
+    "/hospitals/India/Mumbai/Cardiac-Surgery",
+    "/hospitals/India/Bengaluru/Cardiac-Surgery",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery",
+    "/costs/India/Hyderabad/Cardiac-Surgery/Congenital-Heart-Surgery",
+    "/costs/India/Pediatric-Cardiac-Surgery",
+  ]) {
+    assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
+    assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
+  }
+  assert.ok(treatment.translations.en!.faqs.length >= 15);
+  const ctas = body.match(/^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm);
+  assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
+  const qa = splitTreatmentQuickAnswer(body);
+  assert.ok(qa.quickAnswer);
+  assert.ok((qa.quickAnswer?.items.length ?? 0) >= 8);
+  assert.match(qa.quickAnswer?.items[0]?.question ?? "", /What treatment is available\?/i);
+  for (const item of qa.quickAnswer!.items) {
+    assert.doesNotMatch(item.answer, /\[[^\]]+\]\([^)]+\)/);
+  }
+  assert.match(qa.quickAnswer?.items.map((item) => item.answer).join(" ") ?? "", /\$3,500–\$8,500/);
+  assert.equal(
+    treatmentBodyLocation(
+      treatment.category,
+      treatment.subspecialty,
+      treatment.translations.en!.name,
+    ),
+    "Heart",
+  );
+  const english = buildLocaleSitemap("en").map((row) => row.url);
+  assert.ok(
+    english.includes("https://gaf.healthcare/treatments/pediatric-heart-surgery-in-india"),
+  );
+  assert.equal(treatment.translations.ar, undefined);
+  assert.doesNotMatch(body, /\/treatments\/pediatric-cardiac-surgery-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/avsd-repair-in-india/);
+  assert.doesNotMatch(body, /\/treatments\/norwood-procedure-in-india/);
+  assert.doesNotMatch(body, /\/doctors\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/hospitals\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  assert.doesNotMatch(body, /\/costs\/India\/(?:Kolkata|Ahmedabad|Pune|Vellore)\//);
+  const llms = readFileSync("public/llms.txt", "utf8");
+  assert.match(llms, /https:\/\/gaf\.healthcare\/treatments\/pediatric-heart-surgery-in-india/);
+  for (const slug of [
+    "asd-closure-surgery-in-india",
+    "ventricular-septal-defect-surgery-in-india",
+    "pda-closure-surgery-in-india",
+    "tof-repair-surgery-in-india",
+    "arterial-switch-operation-in-india",
+    "coarctation-repair-surgery-in-india",
+    "glenn-procedure-surgery-in-india",
+    "fontan-procedure-surgery-in-india",
+  ]) {
+    const sibling = store.treatments.find((row) => row.slug === slug);
+    assert.match(
+      sibling?.translations.en?.editorialBody ?? "",
+      /\/treatments\/pediatric-heart-surgery-in-india/,
+      slug,
+    );
+  }
+});
+
 test("the published LVAD implantation page uses GAF USD ranges and cardiac GEO links", () => {
   const store = loadCuratedTreatments();
   const treatment = store.treatments.find((row) => row.slug === "lvad-implantation-in-india");
