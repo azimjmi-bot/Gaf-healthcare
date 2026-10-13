@@ -2232,9 +2232,764 @@
       "name": "asd-children-timing.webp",
       "alt": "Three cards labeled Watch, Elective 2 to 4 years, and Earlier symptoms",
       "addedAt": "2026-10-13T21:30:00.000Z"
+    },
+    {
+      "id": "media_pediatric_cost_defects_webp",
+      "url": "/uploads/articles/pediatric-cost-defects.webp",
+      "name": "pediatric-cost-defects.webp",
+      "alt": "Four heart diagrams labeled ASD, VSD, PDA and coarctation, each marking a different defect",
+      "addedAt": "2026-10-13T22:30:00.000Z"
+    },
+    {
+      "id": "media_pediatric_cost_complex_webp",
+      "url": "/uploads/articles/pediatric-cost-complex.webp",
+      "name": "pediatric-cost-complex.webp",
+      "alt": "Three diagrams labeled arterial switch, Glenn and Fontan, showing the great arteries and the venous connections",
+      "addedAt": "2026-10-13T22:30:00.000Z"
+    },
+    {
+      "id": "media_pediatric_cost_drivers_webp",
+      "url": "/uploads/articles/pediatric-cost-drivers.webp",
+      "name": "pediatric-cost-drivers.webp",
+      "alt": "Four cards labeled Defect, ICU nights, Device and Hospital",
+      "addedAt": "2026-10-13T22:30:00.000Z"
+    },
+    {
+      "id": "media_pediatric_cost_repair_webp",
+      "url": "/uploads/articles/pediatric-cost-repair.webp",
+      "name": "pediatric-cost-repair.webp",
+      "alt": "Two panels labeled Device and Surgery: a double-disc closure device in the upper chambers, and a fabric patch between the lower chambers",
+      "addedAt": "2026-10-13T22:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_pediatric_heart_surgery_cost_india",
+      "slug": "pediatric-heart-surgery-cost-in-india",
+      "title": "Pediatric Heart Surgery Cost in India: Procedure-Wise Prices, Hospital Expenses and Financial Assistance",
+      "excerpt": "Planning bands for pediatric heart surgery in India, what a package usually includes, historical study ranges, and how to request a written estimate.",
+      "date": "13 October 2026",
+      "publishedAt": "2026-10-13T22:30:00.000Z",
+      "updatedAt": "2026-10-13T22:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "pediatric",
+        "cost",
+        "congenital heart",
+        "India"
+      ],
+      "image": "/uploads/articles/pediatric-cost-defects.webp",
+      "imageAlt": "Four heart diagrams labeled ASD, VSD, PDA and coarctation, each marking a different defect",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Pediatric Heart Surgery Cost in India: Complete Price Guide",
+      "seoDescription": "Discover pediatric heart surgery costs in India, including ASD, VSD, TOF and complex heart operations. Compare hospital expenses, ICU charges and financial assistance options.",
+      "canonical": "https://gaf.healthcare/blogs/pediatric-heart-surgery-cost-in-india",
+      "ogImage": "/uploads/articles/pediatric-cost-defects.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Pediatric heart surgery cost in India",
+        "Congenital heart surgery cost in India",
+        "Child heart operation cost in India",
+        "Pediatric cardiac surgery price",
+        "ASD closure cost in India",
+        "VSD surgery cost in India",
+        "Tetralogy of Fallot surgery cost",
+        "Heart surgery cost for babies in India",
+        "Pediatric heart surgery hospitals in India",
+        "Cost of congenital heart defect treatment",
+        "Financial assistance for child heart surgery in India"
+      ],
+      "blocks": [
+        {
+          "id": "phs_p_1",
+          "type": "paragraph",
+          "text": "**Pediatric heart surgery cost in India** depends on the defect, the operation, the hospital and how long intensive care lasts. There is no single price for every child. A straightforward closure of a hole in the heart uses different resources from a complex operation in a newborn."
+        },
+        {
+          "id": "phs_p_2",
+          "type": "paragraph",
+          "text": "**Urgent warning:** Severe breathing difficulty, sudden blue or grey lips or tongue, collapse or rapid deterioration needs emergency care now. Do not use WhatsApp, and do not delay local treatment to compare prices."
+        },
+        {
+          "id": "phs_x_3",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>The cost of pediatric heart surgery in India depends on the child's heart condition, the procedure required, the hospital, the length of intensive care and whether additional treatment is needed.</p><p>A published 2024 study, <em>Pediatric cardiac procedures in India: Who bears the cost?</em>, surveyed 24 pediatric cardiac centres across government, charitable and private sectors. It reported the following patient-cost ranges for selected surgical procedures:</p><ul><li><strong>ASD closure:</strong> ₹65,000–₹2,00,000 in government hospitals, ₹80,000–₹1,50,000 in charitable hospitals and ₹2,20,000–₹4,50,000 in private hospitals.</li><li><strong>VSD closure:</strong> ₹65,000–₹2,00,000 in government hospitals, ₹85,000–₹1,80,000 in charitable hospitals and ₹2,00,000–₹3,50,000 in private hospitals.</li><li><strong>PDA ligation:</strong> ₹10,000–₹1,00,000 in government hospitals, ₹40,000–₹1,00,000 in charitable hospitals and ₹1,00,000–₹2,00,000 in private hospitals.</li><li><strong>Arterial switch operation:</strong> ₹80,000–₹3,00,000 in government hospitals, ₹1,50,000–₹2,50,000 in charitable hospitals and ₹2,75,000–₹4,50,000 in private hospitals.</li><li><strong>Fontan procedure:</strong> ₹65,000–₹3,00,000 in government hospitals, ₹1,50,000–₹2,50,000 in charitable hospitals and ₹2,50,000–₹5,00,000 in private hospitals.</li></ul><p><strong>Important:</strong> These are historical research figures, not guaranteed prices for October 2026. They represent the participating centres and the study's costing methods. Current hospital quotations may differ, and some complex cases may incur substantially higher costs. Always request a current, itemised estimate.</p><p>Source: <a href=\"https://pmc.ncbi.nlm.nih.gov/articles/PMC11198927/\">Faisal N, Handa A, Ramakrishnan S. Pediatric cardiac procedures in India: Who bears the cost? Annals of Pediatric Cardiology, 2024.</a></p></div></aside>"
+        },
+        {
+          "id": "phs_p_4",
+          "type": "paragraph",
+          "text": "The programme page is [Pediatric Heart Surgery in India](/treatments/pediatric-heart-surgery-in-india). Named procedure pages include [ASD closure](/treatments/asd-closure-surgery-in-india), [VSD closure](/treatments/ventricular-septal-defect-surgery-in-india), [PDA closure](/treatments/pda-closure-surgery-in-india), [tetralogy of Fallot repair](/treatments/tof-repair-surgery-in-india), [coarctation repair](/treatments/coarctation-repair-surgery-in-india) and the [arterial switch operation](/treatments/arterial-switch-operation-in-india)."
+        },
+        {
+          "id": "phs_p_5",
+          "type": "paragraph",
+          "text": "Guides that explain the operations, rather than only the bill, are [ASD closure in children](/blogs/asd-closure-in-children), [VSD surgery in babies and children](/blogs/vsd-surgery-in-babies-and-children), [PDA closure in babies](/blogs/pda-closure-in-babies), [tetralogy of Fallot surgery in India](/blogs/tetralogy-of-fallot-surgery-india) and [open-heart surgery vs catheter treatment for children](/blogs/open-heart-surgery-vs-catheter-treatment-children). Warning signs are in [signs of congenital heart disease in babies](/blogs/signs-of-congenital-heart-disease-in-babies)."
+        },
+        {
+          "id": "phs_p_6",
+          "type": "paragraph",
+          "text": "The full list of planning bands is the [pediatric cardiac surgery cost directory](/costs/India/Pediatric-Cardiac-Surgery). The broader congenital category, which is not a single-procedure tariff, is on [India](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery), [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery) and [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery)."
+        },
+        {
+          "id": "phs_p_7",
+          "type": "paragraph",
+          "text": "Families comparing [pediatric cardiac surgeons](/doctors/India/Pediatric-Cardiac-Surgery) can start with [Delhi NCR](/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/doctors/India/Mumbai/Pediatric-Cardiac-Surgery), [Bengaluru](/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery), [Chennai](/doctors/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery). Hospital lists use the same cities: [India](/hospitals/India/Pediatric-Cardiac-Surgery), [Delhi NCR](/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery), [Bengaluru](/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery), [Chennai](/hospitals/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Pediatric-Cardiac-Surgery)."
+        },
+        {
+          "id": "phs_i_8",
+          "type": "image",
+          "src": "/uploads/articles/pediatric-cost-defects.webp",
+          "alt": "Four heart diagrams labeled ASD, VSD, PDA and coarctation, each marking a different defect",
+          "caption": "ASD, VSD, PDA and coarctation are different repairs. Each has its own planning band."
+        },
+        {
+          "id": "phs_b_9",
+          "type": "button",
+          "label": "Request a treatment cost estimate",
+          "href": "https://wa.me/919044346292?text=Please%20use%20the%20echo%20and%20diagnosis%20I%20can%20send%20to%20request%20a%20written%20pediatric%20heart%20surgery%20estimate%20in%20India.%20Name%20the%20proposed%20procedure%20if%20it%20is%20already%20known.%20Do%20not%20name%20a%20best%20surgeon%20or%20a%20best%20hospital.%20This%20is%20not%20an%20emergency%20message.%20If%20the%20child%20is%20gasping%2C%20blue%2C%20collapsed%20or%20deteriorating%20I%20will%20seek%20emergency%20care%20locally."
+        },
+        {
+          "id": "phs_x_10",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-understanding-the-cost-of-pediatric-heart-surgery-in-india\">1. Understanding the Cost of Pediatric Heart Surgery in India</a></li><li><a href=\"#2-pediatric-heart-surgery-cost-in-india-procedure-wise-comparison\">2. Pediatric Heart Surgery Cost in India: Procedure-Wise Comparison</a></li><li><a href=\"#3-what-determines-the-cost-of-pediatric-heart-surgery\">3. What Determines the Cost of Pediatric Heart Surgery?</a></li><li><a href=\"#4-what-is-usually-included-in-a-pediatric-heart-surgery-package\">4. What Is Usually Included in a Pediatric Heart Surgery Package?</a></li><li><a href=\"#5-how-much-should-parents-budget-beyond-the-surgery-cost\">5. How Much Should Parents Budget Beyond the Surgery Cost?</a></li><li><a href=\"#6-cost-of-pediatric-heart-surgery-in-india-vs-other-countries\">6. Cost of Pediatric Heart Surgery in India vs Other Countries</a></li><li><a href=\"#7-how-to-find-affordable-pediatric-heart-surgery-in-india\">7. How to Find Affordable Pediatric Heart Surgery in India</a></li><li><a href=\"#8-how-to-compare-pediatric-cardiac-hospitals-in-india\">8. How to Compare Pediatric Cardiac Hospitals in India</a></li><li><a href=\"#9-medical-records-needed-for-a-pediatric-heart-surgery-cost-estimate\">9. Medical Records Needed for a Pediatric Heart Surgery Cost Estimate</a></li><li><a href=\"#10-pediatric-heart-surgery-cost-in-india-for-international-patients\">10. Pediatric Heart Surgery Cost in India for International Patients</a></li><li><a href=\"#11-frequently-asked-questions-about-pediatric-heart-surgery-cost-in-india\">11. Frequently Asked Questions About Pediatric Heart Surgery Cost in India</a></li><li><a href=\"#12-conclusion-plan-the-cost-with-clarity\">12. Conclusion: Plan the Cost With Clarity</a></li></ol></nav>"
+        },
+        {
+          "id": "phs_h_11",
+          "type": "heading",
+          "level": 2,
+          "text": "1. Understanding the Cost of Pediatric Heart Surgery in India"
+        },
+        {
+          "id": "phs_p_12",
+          "type": "paragraph",
+          "text": "When parents hear that a child needs heart surgery, the bill is often one of the first practical questions. Families also have to plan medicines, travel, accommodation and time away from work."
+        },
+        {
+          "id": "phs_p_13",
+          "type": "paragraph",
+          "text": "There is no single price for pediatric heart surgery. A relatively straightforward repair of a hole in the heart uses different staff, equipment and intensive care from a complex operation on a newborn with a critical defect. An estimate may include the surgeon, anaesthesia, the operating theatre, tests, consumables, intensive care and the room. Some hospitals combine those into a package. Others bill each service separately."
+        },
+        {
+          "id": "phs_p_14",
+          "type": "paragraph",
+          "text": "The useful order is to understand the proposed procedure, then compare written estimates from suitable hospitals. A city list is not a ranking, and a lower first quote is not proof that the centre can do the operation."
+        },
+        {
+          "id": "phs_h_15",
+          "type": "heading",
+          "level": 2,
+          "text": "2. Pediatric Heart Surgery Cost in India: Procedure-Wise Comparison"
+        },
+        {
+          "id": "phs_p_16",
+          "type": "paragraph",
+          "text": "GAF Healthcare does not publish a single fee for pediatric heart surgery. The [pediatric cardiac surgery cost directory](/costs/India/Pediatric-Cardiac-Surgery) lists a planning band for each named procedure. These are planning ranges. They are not a quotation, and they are not a guaranteed price for an individual child."
+        },
+        {
+          "id": "phs_p_17",
+          "type": "paragraph",
+          "text": "| Named procedure | India planning band | Expected stay | US comparison band |\n| --- | --- | --- | --- |\n| ASD closure | US$4,000–US$9,500 | 5–10 nights; parent stay expected | US$30,000–US$80,000 |\n| VSD closure | US$4,500–US$11,000 | 6–12 nights; parent stay expected | US$35,000–US$90,000 |\n| PDA closure | US$3,500–US$8,500 | 3–8 nights; parent stay expected | US$20,000–US$60,000 |\n| TOF repair | US$6,500–US$16,000 | 8–16 nights; parent stay expected | US$50,000–US$140,000 |\n| Coarctation repair | US$6,000–US$15,000 | 6–14 nights; parent stay expected | US$40,000–US$110,000 |\n| Arterial switch | US$12,000–US$26,000 | 10–21 nights; parent stay expected | US$80,000–US$200,000 |\n| Glenn procedure | US$8,000–US$18,000 | 8–16 nights; parent stay expected | US$60,000–US$160,000 |\n| Fontan procedure | US$9,000–US$22,000 | 10–18 nights; parent stay expected | US$70,000–US$180,000 |\n| TAPVC repair | US$10,000–US$24,000 | 10–21 nights; parent stay expected | US$70,000–US$180,000 |\n| AVSD repair | US$8,000–US$18,500 | 8–16 nights; parent stay expected | US$55,000–US$150,000 |\n| Norwood procedure | US$18,000–US$40,000 | 3–8 weeks in a paediatric cardiac ICU | US$120,000–US$280,000 |"
+        },
+        {
+          "id": "phs_p_18",
+          "type": "paragraph",
+          "text": "Open the row that matches the proposed operation: [ASD closure](/costs/India/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)), [VSD closure](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)), [PDA closure](/costs/India/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)), [TOF repair](/costs/India/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)), [coarctation repair](/costs/India/Pediatric-Cardiac-Surgery/Coarctation-Repair), [arterial switch](/costs/India/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation), [Glenn](/costs/India/Pediatric-Cardiac-Surgery/Glenn-Procedure), [Fontan](/costs/India/Pediatric-Cardiac-Surgery/Fontan-Procedure), [TAPVC repair](/costs/India/Pediatric-Cardiac-Surgery/TAPVC-Repair-(Total-Anomalous-Pulmonary-Venous-Connection)), [AVSD repair](/costs/India/Pediatric-Cardiac-Surgery/AVSD-Repair-(Atrioventricular-Septal-Defect)) and the [Norwood procedure](/costs/India/Pediatric-Cardiac-Surgery/Norwood-Procedure)."
+        },
+        {
+          "id": "phs_p_19",
+          "type": "paragraph",
+          "text": "The rupee tables below come from a 2024 study, [Pediatric cardiac procedures in India: Who bears the cost?](https://pmc.ncbi.nlm.nih.gov/articles/PMC11198927/), which surveyed 24 pediatric cardiac centres. They are historical research ranges. They are not the GAF directory band and they are not a current 2026 hospital tariff. A longer admission, a different device, or an associated repair can change the bill."
+        },
+        {
+          "id": "phs_i_20",
+          "type": "image",
+          "src": "/uploads/articles/pediatric-cost-complex.webp",
+          "alt": "Three diagrams labeled arterial switch, Glenn and Fontan, showing the great arteries and the venous connections",
+          "caption": "An arterial switch, a Glenn procedure and a Fontan procedure are planned on different bands from a simple hole closure."
+        },
+        {
+          "id": "phs_h_21",
+          "type": "heading",
+          "level": 3,
+          "text": "Historical cost of common pediatric heart surgeries"
+        },
+        {
+          "id": "phs_p_22",
+          "type": "paragraph",
+          "text": "All amounts below are in INR. They are historical study ranges, not current hospital tariffs and not a promise of the total bill. The participating centres, the case mix and what each centre included affect how comparable the ranges are."
+        },
+        {
+          "id": "phs_p_23",
+          "type": "paragraph",
+          "text": "| Procedure | Government hospitals | Charitable hospitals | Private hospitals |\n| --- | ---: | ---: | ---: |\n| ASD closure | ₹65,000–₹2,00,000 | ₹80,000–₹1,50,000 | ₹2,20,000–₹4,50,000 |\n| VSD closure | ₹65,000–₹2,00,000 | ₹85,000–₹1,80,000 | ₹2,00,000–₹3,50,000 |\n| PDA ligation | ₹10,000–₹1,00,000 | ₹40,000–₹1,00,000 | ₹1,00,000–₹2,00,000 |\n| Arterial switch operation | ₹80,000–₹3,00,000 | ₹1,50,000–₹2,50,000 | ₹2,75,000–₹4,50,000 |\n| TAPVC repair | ₹65,000–₹3,00,000 | ₹1,30,000–₹2,50,000 | ₹2,00,000–₹4,00,000 |\n| BT shunt | ₹30,000–₹2,00,000 | ₹50,000–₹2,50,000 | ₹1,20,000–₹3,50,000 |\n| Bidirectional Glenn procedure | ₹65,000–₹3,00,000 | ₹50,000–₹2,25,000 | ₹1,60,000–₹3,50,000 |\n| Fontan procedure | ₹65,000–₹3,00,000 | ₹1,50,000–₹2,50,000 | ₹2,50,000–₹5,00,000 |\n| Single valve replacement | ₹1,20,000–₹4,00,000 | ₹1,25,000–₹3,00,000 | ₹2,50,000–₹5,00,000 |\n| Coarctation repair | ₹30,000–₹2,00,000 | ₹75,000–₹2,50,000 | ₹1,50,000–₹3,00,000 |"
+        },
+        {
+          "id": "phs_p_24",
+          "type": "paragraph",
+          "text": "The directory does not publish a separate planning band for a BT shunt or for single valve replacement. Those two rows are study figures only. For coarctation, TAPVC, Glenn, Fontan and the arterial switch, use the US$ planning band in the table above. The study ranges are not a substitute for that band."
+        },
+        {
+          "id": "phs_h_25",
+          "type": "heading",
+          "level": 3,
+          "text": "Historical cost of catheter-based pediatric heart procedures"
+        },
+        {
+          "id": "phs_p_26",
+          "type": "paragraph",
+          "text": "Not every child needs open-heart surgery. Some defects can be treated with a catheter. The same study reported these historical patient-cost ranges. A catheter procedure is not automatically cheaper than surgery in every hospital. Devices, imaging, anatomy and the hospital's billing all change the estimate. Catheter treatment fits only selected defects."
+        },
+        {
+          "id": "phs_i_27",
+          "type": "image",
+          "src": "/uploads/articles/pediatric-cost-repair.webp",
+          "alt": "Two panels labeled Device and Surgery: a double-disc closure device in the upper chambers, and a fabric patch between the lower chambers",
+          "caption": "A device and a surgical patch are different procedures. The estimate should say which one is proposed."
+        },
+        {
+          "id": "phs_p_28",
+          "type": "paragraph",
+          "text": "| Catheter-based procedure | Government hospitals | Charitable hospitals | Private hospitals |\n| --- | ---: | ---: | ---: |\n| ASD device closure | ₹80,000–₹1,00,000 | ₹1,35,000–₹1,75,000 | ₹1,30,000–₹3,05,000 |\n| PDA device closure | ₹45,000–₹1,00,000 | ₹72,000–₹85,000 | ₹1,00,000–₹2,00,000 |\n| PDA Piccolo device closure | ₹70,000–₹1,00,000 | ₹80,000–₹1,25,000 | ₹1,30,000–₹2,50,000 |\n| Aortic valve balloon dilatation | ₹45,000–₹75,000 | ₹50,000–₹65,000 | ₹90,000–₹2,00,000 |\n| Pulmonary valve balloon dilatation | ₹45,000–₹75,000 | ₹50,000–₹65,000 | ₹75,000–₹2,00,000 |\n| Coarctation stenting | ₹80,000–₹3,50,000 | ₹90,000–₹1,75,000 | ₹2,00,000–₹3,80,000 |"
+        },
+        {
+          "id": "phs_p_29",
+          "type": "paragraph",
+          "text": "The directory planning band for PDA closure is **US$3,500–US$8,500**, with an expected stay of **3–8 nights; parent stay expected**. The study splits PDA ligation, PDA device closure and a Piccolo device into separate historical ranges. Those splits are research figures, not the GAF directory band. Balloon dilatation and coarctation stenting are also study rows only. The directory band for coarctation is the surgical repair band, **US$6,000–US$15,000**, stay **6–14 nights; parent stay expected**."
+        },
+        {
+          "id": "phs_b_30",
+          "type": "button",
+          "label": "Request a medical opinion",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20pediatric%20echo%20I%20can%20send%20and%20say%20which%20procedure%20the%20estimate%20should%20be%20built%20around.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "phs_h_31",
+          "type": "heading",
+          "level": 2,
+          "text": "3. What Determines the Cost of Pediatric Heart Surgery?"
+        },
+        {
+          "id": "phs_p_32",
+          "type": "paragraph",
+          "text": "Two children with the same diagnosis can still receive different estimates. The diagnosis alone does not set the total."
+        },
+        {
+          "id": "phs_i_33",
+          "type": "image",
+          "src": "/uploads/articles/pediatric-cost-drivers.webp",
+          "alt": "Four cards labeled Defect, ICU nights, Device and Hospital",
+          "caption": "The defect, intensive-care time, any device and the hospital category are the main reasons two estimates differ."
+        },
+        {
+          "id": "phs_h_34",
+          "type": "heading",
+          "level": 3,
+          "text": "Type and complexity of the heart defect"
+        },
+        {
+          "id": "phs_p_35",
+          "type": "paragraph",
+          "text": "A simple defect may need a relatively straightforward repair. More complex conditions can need reconstruction of blood vessels, valve repair, specialised implants or several planned procedures. Repairing an uncomplicated VSD is a different operation from an arterial switch for transposition, or from staged treatment of a single-ventricle circulation. The surgical plan and the child's condition decide the resources."
+        },
+        {
+          "id": "phs_h_36",
+          "type": "heading",
+          "level": 3,
+          "text": "Age, weight and the hospital category"
+        },
+        {
+          "id": "phs_p_37",
+          "type": "paragraph",
+          "text": "Newborns and very small infants may need specialised equipment, neonatal intensive care and closer monitoring. An unstable baby, or a child with other health problems, can need more resources than an older child having an uncomplicated operation. Government hospitals may receive public funding that subsidises treatment. Charitable hospitals may offer subsidised care to eligible families. Private hospitals use their own packages. A lower quoted price does not by itself show that a hospital is suitable. Compare the expertise, the facilities, the waiting time, any financial support and the clinical needs."
+        },
+        {
+          "id": "phs_h_38",
+          "type": "heading",
+          "level": 3,
+          "text": "Intensive care, devices and associated conditions"
+        },
+        {
+          "id": "phs_p_39",
+          "type": "paragraph",
+          "text": "After surgery a child may need a pediatric cardiac intensive care unit, temporary breathing support or intravenous medicines. If the stay runs past the days in the package, further charges can apply. Catheter procedures may need closure devices, stents or other equipment. Surgery may involve valves, conduits, patches or other materials. Ask whether the quote includes the device or implant, whether that price can change, and whether consumables are billed separately. Infection, poor nutrition, lung or kidney problems, and other conditions can add tests or treatment and can change when surgery can safely proceed."
+        },
+        {
+          "id": "phs_h_40",
+          "type": "heading",
+          "level": 3,
+          "text": "Previous heart surgery"
+        },
+        {
+          "id": "phs_p_41",
+          "type": "paragraph",
+          "text": "A repeat operation can be more complex because of scar tissue, altered anatomy or a problem from an earlier repair. The surgeon may need the previous operation notes, imaging and discharge summaries before anyone can estimate the requirements. [Questions to ask before heart surgery](/blogs/questions-to-ask-before-heart-surgery) is a useful list for that conversation."
+        },
+        {
+          "id": "phs_h_42",
+          "type": "heading",
+          "level": 2,
+          "text": "4. What Is Usually Included in a Pediatric Heart Surgery Package?"
+        },
+        {
+          "id": "phs_p_43",
+          "type": "paragraph",
+          "text": "Do not assume that every hospital package covers the same services. A written estimate may include some or all of the following: the initial consultation and preoperative assessment, routine blood tests and specified imaging, surgeon and anaesthesia fees, operating theatre charges, cardiopulmonary bypass and perfusion when required, standard surgical consumables, specified implants or devices, a defined period in the pediatric cardiac ICU, a defined period in a ward or room, routine postoperative investigations, and standard inpatient medicines and nursing care."
+        },
+        {
+          "id": "phs_p_44",
+          "type": "paragraph",
+          "text": "The same package may exclude additional diagnostic tests, blood products or special medicines, expensive devices that were not named, ICU or ward days beyond the limit, treatment of unexpected complications, an emergency reoperation or a further catheter procedure, discharge medicines and outpatient follow-up, and travel, accommodation, meals and caregiver expenses."
+        },
+        {
+          "id": "phs_p_45",
+          "type": "paragraph",
+          "text": "| Ask the hospital | What to confirm |\n| --- | --- |\n| Procedure | Is the estimate for the named operation, a device, or both? |\n| Professional fees | Are the surgeon or cardiologist and anaesthesia included? |\n| Theatre or catheter lab | Are facility and bypass charges included when used? |\n| Device or implant | Is the named device, valve, conduit or patch included? |\n| ICU and ward | How many days are included, and what do extra days cost? |\n| Tests and medicines | Which investigations and inpatient medicines are included? |\n| Complications | How is a longer stay, a reoperation or another catheter procedure billed? |\n| Follow-up | Are discharge medicines and later echocardiograms included? |"
+        },
+        {
+          "id": "phs_p_46",
+          "type": "paragraph",
+          "text": "If the estimate is a package, ask for the number of ICU and ward days included and the charge for each extra day. A lower initial estimate may not be a lower final bill if major services are excluded."
+        },
+        {
+          "id": "phs_b_47",
+          "type": "button",
+          "label": "Ask what this package includes",
+          "href": "https://wa.me/919044346292?text=Please%20help%20me%20ask%20the%20hospital%20for%20an%20itemised%20pediatric%20cardiac%20estimate%2C%20including%20ICU%20days%2C%20the%20device%20or%20implant%2C%20and%20what%20is%20excluded.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "phs_h_48",
+          "type": "heading",
+          "level": 2,
+          "text": "5. How Much Should Parents Budget Beyond the Surgery Cost?"
+        },
+        {
+          "id": "phs_p_49",
+          "type": "paragraph",
+          "text": "The hospital bill is only one part of the money a family may need. Families travelling from another city or country also plan transport, accommodation and the chance of a longer stay."
+        },
+        {
+          "id": "phs_l_50",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Hospital-related expenses.** Consultations, tests, medicines, extra ICU days, additional procedures and follow-up visits.",
+            "**Travel and accommodation.** Flights or road transport, local travel, a place to stay near the hospital, meals and costs for the caregivers who must remain with the child.",
+            "**A longer admission.** Recovery does not follow a fixed schedule. Complications or extra medical needs can extend the stay past the planning range.",
+            "**Follow-up after discharge.** Repeat echocardiography, medicines, specialist visits or further procedures. Some children with complex congenital heart disease need follow-up for years. Broader recovery expectations are in [heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india)."
+          ]
+        },
+        {
+          "id": "phs_p_51",
+          "type": "paragraph",
+          "text": "Ask the hospital for the current estimated package, the cost of preoperative tests that are not included, the daily ICU and ward charges beyond the package, possible extra charges for devices, blood products or complications, and the expected outpatient costs. Add a separate figure for accommodation and travel if you need it. Do not add an arbitrary percentage to the surgery price and treat that as a universal contingency. Ask which expenses are most likely to change for this child."
+        },
+        {
+          "id": "phs_h_52",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Cost of Pediatric Heart Surgery in India vs Other Countries"
+        },
+        {
+          "id": "phs_p_53",
+          "type": "paragraph",
+          "text": "India is an important destination for pediatric cardiac care. A meaningful comparison with another country needs more than two advertised starting prices. Costs in different countries may include different services, lengths of stay, implant charges and follow-up. Currency, insurance, travel and accommodation change the amount the family actually spends. Compare written estimates for the same proposed procedure and a similar level of care."
+        },
+        {
+          "id": "phs_p_54",
+          "type": "paragraph",
+          "text": "| Comparison factor | What to check |\n| --- | --- |\n| Procedure | Is the recommended operation the same? |\n| Hospital stay | Are ICU and ward days included? |\n| Devices | Are implants and consumables included? |\n| Complications | What happens if the child needs extra treatment? |\n| Follow-up | Are postoperative consultations and investigations included? |\n| Travel | Are flights, accommodation and local transport additional? |\n| Continuity of care | Can follow-up be coordinated with a cardiologist at home? |"
+        },
+        {
+          "id": "phs_p_55",
+          "type": "paragraph",
+          "text": "For international families, the lowest initial quote may not be the lowest total. A clear treatment plan and a realistic estimate are more useful than an advertised starting price. On the directory, the US comparison band sits beside each India planning band. For example, ASD closure is **US$4,000–US$9,500** in the India band and **US$30,000–US$80,000** in the US comparison band. VSD closure is **US$4,500–US$11,000** and **US$35,000–US$90,000**. TOF repair is **US$6,500–US$16,000** and **US$50,000–US$140,000**. Those pairs are planning comparisons, not quotations."
+        },
+        {
+          "id": "phs_h_56",
+          "type": "heading",
+          "level": 2,
+          "text": "7. How to Find Affordable Pediatric Heart Surgery in India"
+        },
+        {
+          "id": "phs_p_57",
+          "type": "paragraph",
+          "text": "Families who cannot pay a private-hospital bill may have options to explore. Eligibility and availability depend on the child's circumstances, the scheme's rules and whether the hospital participates."
+        },
+        {
+          "id": "phs_h_58",
+          "type": "heading",
+          "level": 3,
+          "text": "Government and charitable hospitals"
+        },
+        {
+          "id": "phs_p_59",
+          "type": "paragraph",
+          "text": "Some government hospitals provide pediatric cardiac surgery at subsidised rates. Ask about eligibility, waiting periods, which procedures are available and whether the hospital has the resources this child needs. Waiting time matters when a specialist has recommended urgent treatment. Discuss the clinical effect of any delay with the treating team. Some charitable hospitals provide subsidised or supported treatment for eligible children. Assistance may depend on household income, the diagnosis, funding and the hospital's own rules. The social-work or financial-counselling department can explain the application."
+        },
+        {
+          "id": "phs_h_60",
+          "type": "heading",
+          "level": 3,
+          "text": "Ayushman Bharat and other government schemes"
+        },
+        {
+          "id": "phs_p_61",
+          "type": "paragraph",
+          "text": "Eligible Indian beneficiaries may be able to obtain support through Ayushman Bharat–Pradhan Mantri Jan Arogya Yojana (AB-PMJAY) or a state healthcare programme. Coverage, eligibility, empanelled hospitals and procedure packages must be checked through official scheme channels. A scheme's existence does not mean that a particular hospital or treatment is covered for an individual patient. Starting points are the [National Health Authority](https://nha.gov.in/), [Ayushman Bharat PM-JAY](https://pmjay.gov.in/) and the [National Health Mission](https://nhm.gov.in/)."
+        },
+        {
+          "id": "phs_h_62",
+          "type": "heading",
+          "level": 3,
+          "text": "Other assistance and a written estimate"
+        },
+        {
+          "id": "phs_p_63",
+          "type": "paragraph",
+          "text": "Some organisations support children with congenital heart disease through funding, referrals or treatment programmes. Confirm eligibility, deadlines and what the funding actually covers. Do not assume that assistance will pay the entire bill. Funding organisations often ask for a diagnosis, a treatment plan, a hospital estimate, income documents and identity records. A written estimate from the treating hospital makes the funding request more specific."
+        },
+        {
+          "id": "phs_h_64",
+          "type": "heading",
+          "level": 2,
+          "text": "8. How to Compare Pediatric Cardiac Hospitals in India"
+        },
+        {
+          "id": "phs_p_65",
+          "type": "paragraph",
+          "text": "Choosing a hospital is more than comparing the price of surgery. The centre needs the expertise and the facilities that fit the child's diagnosis and age."
+        },
+        {
+          "id": "phs_l_66",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Does the hospital routinely perform this procedure?** Ask about experience with the specific operation and with children of a similar age, weight and complexity.",
+            "**Is pediatric cardiac intensive care available?** Confirm postoperative monitoring, and neonatal services when the child is very small.",
+            "**What is included in the estimate?** Ask for a written breakdown of professional fees, devices, ICU, accommodation and exclusions.",
+            "**How are complications managed?** Ask about further charges if the child needs prolonged ventilation, another operation or an emergency intervention.",
+            "**What follow-up is required?** Ask whether the child will need repeat imaging, medicines or further procedures after discharge.",
+            "**Can the hospital provide outcome information?** Where it exists, ask for outcomes for the same procedure in a comparable group. Be cautious about a broad success rate that is not defined."
+          ]
+        },
+        {
+          "id": "phs_p_67",
+          "type": "paragraph",
+          "text": "Select a hospital on clinical suitability, a transparent estimate and a plan for follow-up. Price alone does not decide it. If you are gathering records for a second look, the [second-opinion guide](/blogs/second-opinion-congenital-heart-surgery-india) lists which echo images to send."
+        },
+        {
+          "id": "phs_h_68",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Medical Records Needed for a Pediatric Heart Surgery Cost Estimate"
+        },
+        {
+          "id": "phs_p_69",
+          "type": "paragraph",
+          "text": "A hospital can often give a more useful preliminary estimate when the records are recent and complete. Prepare the child's age, current weight and diagnosis, the latest echocardiogram report and images, oxygen saturation results if they are relevant, the ECG and other reports, previous catheterisation reports, previous operation notes and discharge summaries, the current medicine list, associated medical conditions, and the treating doctor's recommendation if one already exists."
+        },
+        {
+          "id": "phs_p_70",
+          "type": "paragraph",
+          "text": "The specialist may still ask for more tests or an examination. A remote review is preliminary. It cannot guarantee the final operation or the cost. Share records through a secure channel, and only with consent from the parent or legal guardian."
+        },
+        {
+          "id": "phs_b_71",
+          "type": "button",
+          "label": "Send records for a preliminary estimate",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20pediatric%20cardiac%20records%20I%20can%20send%20and%20request%20a%20preliminary%20written%20estimate.%20The%20treating%20team%20must%20confirm%20the%20procedure.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "phs_h_72",
+          "type": "heading",
+          "level": 2,
+          "text": "10. Pediatric Heart Surgery Cost in India for International Patients"
+        },
+        {
+          "id": "phs_p_73",
+          "type": "paragraph",
+          "text": "International families need the treatment cost and the cost of travel and follow-up. GAF Healthcare facilitates medical travel and can help coordinate medical-record review, hospital communication, treatment estimates and travel arrangements. Clinical decisions remain with the treating hospital and its qualified medical team. A preliminary quotation is not a guarantee of the final bill. The plan may change after examination or further tests."
+        },
+        {
+          "id": "phs_l_74",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Share the child's reports.** Diagnosis, echocardiogram, previous operation records and the medicine list.",
+            "**Request a specialist opinion.** The receiving team says which extra tests or which examination are needed.",
+            "**Obtain a written estimate.** Ask the hospital to confirm the proposed procedure, what the package includes, the expected ICU stay and possible extra charges.",
+            "**Confirm how urgent treatment is.** The treating team must say whether the child is fit to travel and whether treatment can wait. Do not delay emergency care, and do not travel with an unstable child, in order to chase a lower quote.",
+            "**Plan the whole trip.** Visas, flights, accommodation, meals, local transport, caregiver costs and the possibility of a longer stay.",
+            "**Plan discharge and follow-up.** Take the discharge summary, operation report, medicine instructions, follow-up plan and the contact to use if the child's condition changes."
+          ]
+        },
+        {
+          "id": "phs_b_75",
+          "type": "button",
+          "label": "Ask whether travel is safe for this child",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20pediatric%20cardiac%20records%20I%20can%20send%20and%20say%20whether%20travel%20to%20India%20is%20a%20question%20the%20treating%20team%20should%20answer%20before%20any%20cost%20comparison.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message.%20If%20the%20child%20is%20unstable%20I%20will%20seek%20local%20emergency%20care."
+        },
+        {
+          "id": "phs_h_76",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Frequently Asked Questions About Pediatric Heart Surgery Cost in India"
+        },
+        {
+          "id": "phs_h_77",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the average cost of pediatric heart surgery in India?"
+        },
+        {
+          "id": "phs_p_78",
+          "type": "paragraph",
+          "text": "There is no single reliable average, and GAF Healthcare does not publish a single fee for pediatric heart surgery. The directory lists a separate planning band for each named procedure. ASD closure is US$4,000–US$9,500, VSD closure is US$4,500–US$11,000 and PDA closure is US$3,500–US$8,500. A 2024 Indian study reported private-hospital ranges of about ₹2 lakh–₹4.5 lakh for selected ASD and VSD surgical closures. Those are historical research figures, not the GAF directory band and not a current quotation. Request a written estimate for the child's procedure."
+        },
+        {
+          "id": "phs_h_79",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does heart surgery for a baby cost in India?"
+        },
+        {
+          "id": "phs_p_80",
+          "type": "paragraph",
+          "text": "The cost depends on the baby's diagnosis, weight, urgency, the procedure and neonatal intensive care. The directory planning band for an arterial switch is US$12,000–US$26,000, with an expected stay of 10–21 nights; parent stay expected. The Norwood procedure, used in selected single-ventricle pathways, is US$18,000–US$40,000, with an expected stay of 3–8 weeks in a paediatric cardiac ICU. Complex newborn surgery can need more resources than an uncomplicated repair in an older child. Only the treating centre can estimate an individual baby after reviewing the records."
+        },
+        {
+          "id": "phs_h_81",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the cost of ASD closure in India?"
+        },
+        {
+          "id": "phs_p_82",
+          "type": "paragraph",
+          "text": "The GAF Healthcare planning band for ASD closure is US$4,000–US$9,500, with an expected stay of 5–10 nights; parent stay expected. The US comparison band is US$30,000–US$80,000. The 2024 study reported historical surgical ranges of ₹65,000–₹2,00,000 in government hospitals, ₹80,000–₹1,50,000 in charitable hospitals and ₹2,20,000–₹4,50,000 in private hospitals. Device closure in the same study was a separate historical range, about ₹80,000–₹1,00,000, ₹1,35,000–₹1,75,000 and ₹1,30,000–₹3,05,000. Those research figures are not the GAF directory band. Confirm the current price with the hospital. The clinical guide is [ASD closure in children](/blogs/asd-closure-in-children)."
+        },
+        {
+          "id": "phs_h_83",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the cost of VSD surgery in India?"
+        },
+        {
+          "id": "phs_p_84",
+          "type": "paragraph",
+          "text": "The planning band for VSD closure is US$4,500–US$11,000, with an expected stay of 6–12 nights; parent stay expected. The US comparison band is US$35,000–US$90,000. Historical ranges in the 2024 study were ₹65,000–₹2,00,000 in government hospitals, ₹85,000–₹1,80,000 in charitable hospitals and ₹2,00,000–₹3,50,000 in private hospitals. Those figures are not the GAF directory band. The actual estimate depends on the defect, the complexity, the hospital and what the package includes. See [VSD surgery in babies and children](/blogs/vsd-surgery-in-babies-and-children)."
+        },
+        {
+          "id": "phs_h_85",
+          "type": "heading",
+          "level": 3,
+          "text": "Is catheter-based treatment cheaper than open-heart surgery?"
+        },
+        {
+          "id": "phs_p_86",
+          "type": "paragraph",
+          "text": "Not always. A catheter procedure may avoid a large chest incision, but the device, the imaging and the catheterisation laboratory can cost as much as, or more than, an operation in some hospitals. The 2024 study ranges show that pattern. More importantly, a catheter fits only selected defects. The cardiologist decides the safest suitable option. A general comparison is in [open-heart surgery vs catheter treatment for children](/blogs/open-heart-surgery-vs-catheter-treatment-children)."
+        },
+        {
+          "id": "phs_h_87",
+          "type": "heading",
+          "level": 3,
+          "text": "Do government hospitals provide free pediatric heart surgery?"
+        },
+        {
+          "id": "phs_p_88",
+          "type": "paragraph",
+          "text": "Some government programmes and hospitals provide fully subsidised or partly subsidised treatment to eligible patients. Availability, eligibility, waiting periods and covered procedures vary. Confirm the current rules with the hospital and with the relevant scheme. A subsidised price still has to be paired with a centre that can do the operation the child needs."
+        },
+        {
+          "id": "phs_h_89",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients receive government-funded treatment?"
+        },
+        {
+          "id": "phs_p_90",
+          "type": "paragraph",
+          "text": "Eligibility depends on the programme. Many Indian public healthcare schemes are designed for eligible Indian beneficiaries and should not be assumed to cover international patients. Overseas families should ask the receiving hospital about charitable or other assistance that actually applies to them."
+        },
+        {
+          "id": "phs_h_91",
+          "type": "heading",
+          "level": 3,
+          "text": "Does the surgery package include ICU charges?"
+        },
+        {
+          "id": "phs_p_92",
+          "type": "paragraph",
+          "text": "Some packages include a defined ICU period. Others bill intensive care separately. Ask how many days are included and what each extra day costs. The directory stay is a planning range for the admission, not a promise that every day is inside a hospital package."
+        },
+        {
+          "id": "phs_h_93",
+          "type": "heading",
+          "level": 3,
+          "text": "How much should I budget for complications?"
+        },
+        {
+          "id": "phs_p_94",
+          "type": "paragraph",
+          "text": "There is no universal contingency amount. Extra cost depends on the child's condition and the treatment that becomes necessary. Ask the hospital which complications could increase the bill, and request its current charges for extended ICU care, another operation and other relevant services."
+        },
+        {
+          "id": "phs_h_95",
+          "type": "heading",
+          "level": 3,
+          "text": "How can I obtain a cost estimate before travelling to India?"
+        },
+        {
+          "id": "phs_p_96",
+          "type": "paragraph",
+          "text": "Send the recent echocardiogram report, the diagnosis, age, weight, previous treatment records and the medicine list. Ask for a preliminary specialist opinion and a written estimate. The final plan and the bill can change after an in-person assessment. Travel only when the treating team considers it appropriate."
+        },
+        {
+          "id": "phs_h_97",
+          "type": "heading",
+          "level": 3,
+          "text": "Can my child need more than one heart operation?"
+        },
+        {
+          "id": "phs_p_98",
+          "type": "paragraph",
+          "text": "Yes. Some defects are repaired in one operation. Complex conditions may need staged procedures or further treatment as the child grows. A Glenn procedure is planned at US$8,000–US$18,000 and a later Fontan at US$9,000–US$22,000. Those are separate planning bands, not a combined package. Ask the surgeon to explain the expected pathway and the likely later costs."
+        },
+        {
+          "id": "phs_h_99",
+          "type": "heading",
+          "level": 3,
+          "text": "Is the cheapest hospital always the best option?"
+        },
+        {
+          "id": "phs_p_100",
+          "type": "paragraph",
+          "text": "A low price is useful only when the centre is clinically suitable and can provide the care this child needs. Compare relevant experience, pediatric cardiac intensive care, a transparent estimate, follow-up and outcome information alongside the price."
+        },
+        {
+          "id": "phs_h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "Can GAF Healthcare help compare pediatric cardiac treatment estimates?"
+        },
+        {
+          "id": "phs_p_102",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help families coordinate record reviews, hospital communication, preliminary estimates and medical-travel arrangements. The treating hospital determines the diagnosis, the procedure and clinical suitability. Compare current written estimates before deciding. A coordinator cannot name a best surgeon from a message."
+        },
+        {
+          "id": "phs_h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the planning cost of TOF repair, an arterial switch and a Fontan procedure?"
+        },
+        {
+          "id": "phs_p_104",
+          "type": "paragraph",
+          "text": "TOF repair is US$6,500–US$16,000, with an expected stay of 8–16 nights; parent stay expected, and a US comparison band of US$50,000–US$140,000. An arterial switch is US$12,000–US$26,000, stay 10–21 nights; parent stay expected, US comparison US$80,000–US$200,000. A Fontan procedure is US$9,000–US$22,000, stay 10–18 nights; parent stay expected, US comparison US$70,000–US$180,000. The 2024 study's private-hospital ranges for an arterial switch and a Fontan were about ₹2,75,000–₹4,50,000 and ₹2,50,000–₹5,00,000. Those research figures are not the GAF directory band. The TOF clinical guide is [tetralogy of Fallot surgery in India](/blogs/tetralogy-of-fallot-surgery-india)."
+        },
+        {
+          "id": "phs_h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "How long do children stay in hospital after these operations?"
+        },
+        {
+          "id": "phs_p_106",
+          "type": "paragraph",
+          "text": "The directory planning stays are 3–8 nights; parent stay expected for PDA closure, 5–10 nights; parent stay expected for ASD closure, 6–12 nights; parent stay expected for VSD closure, 8–16 nights; parent stay expected for TOF repair, 10–21 nights; parent stay expected for an arterial switch and 10–18 nights; parent stay expected for a Fontan procedure. These are planning ranges, not a discharge date. An uncomplicated device closure may be shorter. A complex newborn recovery may be longer. Ask the treating hospital for an estimate for this child."
+        },
+        {
+          "id": "phs_h_107",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Conclusion: Plan the Cost With Clarity"
+        },
+        {
+          "id": "phs_p_108",
+          "type": "paragraph",
+          "text": "Finding out that a child needs heart surgery is difficult enough without uncertainty about the money. Understanding the proposed procedure, the hospital package and the expenses that can sit outside it helps parents plan."
+        },
+        {
+          "id": "phs_p_109",
+          "type": "paragraph",
+          "text": "India has government, charitable and private centres that provide pediatric cardiac treatment. The cost and the availability of a particular operation vary. Historical research can show the range of published figures. It cannot replace a current estimate from a hospital, and it is not the GAF directory band."
+        },
+        {
+          "id": "phs_p_110",
+          "type": "paragraph",
+          "text": "Before committing to treatment, request a specialist review, obtain an itemised quotation, ask about financial assistance that actually applies, and clarify the follow-up after treatment."
+        },
+        {
+          "id": "phs_p_111",
+          "type": "paragraph",
+          "text": "This article provides general educational and financial-planning information. It is not a diagnosis, a treatment recommendation or a guaranteed hospital quotation. The child's treating pediatric cardiologist and congenital heart surgeon must determine the appropriate treatment."
+        },
+        {
+          "id": "phs_p_112",
+          "type": "paragraph",
+          "text": "**GAF Healthcare can help international families coordinate a medical-record review and request a treatment estimate from an appropriate hospital in India.** Prepare the child's diagnosis, the latest echocardiogram, age, weight, previous operation records if any, and the current medicine list."
+        },
+        {
+          "id": "phs_b_113",
+          "type": "button",
+          "label": "Speak to a patient coordinator",
+          "href": "https://wa.me/919044346292?text=Please%20help%20coordinate%20a%20pediatric%20cardiology%20review%20and%20a%20case-specific%20cost%20estimate%20in%20India.%20The%20treating%20team%20must%20confirm%20the%20procedure%20and%20whether%20travel%20is%20safe.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "phs_h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "Sources used for this guide"
+        },
+        {
+          "id": "phs_l_115",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Pediatric cardiac procedures in India: Who bears the cost?](https://pmc.ncbi.nlm.nih.gov/articles/PMC11198927/)",
+            "[Guidelines for the management of common congenital heart diseases in India](https://pmc.ncbi.nlm.nih.gov/articles/PMC6796629/)",
+            "[Indian guidelines for indications and timing of intervention](https://pubmed.ncbi.nlm.nih.gov/31516283/)",
+            "[American Heart Association — Care and treatment for congenital heart defects](https://www.heart.org/en/health-topics/congenital-heart-defects/care-and-treatment-for-congenital-heart-defects)",
+            "[American Heart Association — Cardiac catheterizations for heart defects](https://www.heart.org/en/health-topics/congenital-heart-defects/care-and-treatment-for-congenital-heart-defects/cardiac-catheterizations-for-heart-defects)",
+            "[National Health Authority](https://nha.gov.in/)",
+            "[Ayushman Bharat PM-JAY](https://pmjay.gov.in/)",
+            "[National Health Mission](https://nhm.gov.in/)",
+            "[CDC — Congenital heart defects](https://www.cdc.gov/heart-defects/about/index.html)",
+            "[NHLBI — Congenital heart defects](https://www.nhlbi.nih.gov/health/congenital-heart-defects)"
+          ]
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Pediatric Heart Surgery in India",
+          "href": "/treatments/pediatric-heart-surgery-in-india"
+        },
+        {
+          "label": "Pediatric cardiac surgery cost directory",
+          "href": "/costs/India/Pediatric-Cardiac-Surgery"
+        },
+        {
+          "label": "ASD closure planning cost",
+          "href": "/costs/India/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)"
+        },
+        {
+          "label": "VSD closure planning cost",
+          "href": "/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)"
+        },
+        {
+          "label": "ASD closure in children",
+          "href": "/blogs/asd-closure-in-children"
+        },
+        {
+          "label": "Tetralogy of Fallot surgery in India",
+          "href": "/blogs/tetralogy-of-fallot-surgery-india"
+        }
+      ]
+    },
     {
       "id": "art_asd_closure_in_children",
       "slug": "asd-closure-in-children",
