@@ -49,13 +49,10 @@ test("the pediatric heart surgery cost guide keeps the quick answer and the dire
 
   assert.match(texts, /article-quick-answer/);
   assert.match(texts, /The cost of pediatric heart surgery in India depends on the child's heart condition/);
-  assert.match(texts, /₹65,000–₹2,00,000/);
-  assert.match(texts, /₹2,20,000–₹4,50,000/);
-  assert.match(texts, /₹2,50,000–₹5,00,000/);
-  assert.match(texts, /These are historical research figures, not guaranteed prices for October 2026/);
+  assert.match(texts, /planning bands in US dollars/);
   assert.match(texts, /does not publish a single fee for pediatric heart surgery/);
-  assert.match(texts, /not the GAF directory band/);
   assert.match(texts, /blue or grey lips or tongue/);
+  assert.doesNotMatch(texts, /₹|lakh|\bINR\b/);
   assert.doesNotMatch(texts, /\/blog\//);
 
   for (const name of [
