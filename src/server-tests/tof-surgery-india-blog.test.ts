@@ -23,7 +23,7 @@ test("the Tetralogy of Fallot guide keeps the quick answer and the directory pla
   assert.ok(post);
   assert.equal(post.status, "published");
   assert.equal(post.allowIndex, true);
-  assert.equal(post.category, "Cardiology");
+  assert.equal(post.category, "Pediatric Cardiac Surgery");
   assert.equal(
     post.title,
     "Tetralogy of Fallot Surgery in India: Treatment, Cost, Best Age for Surgery and Recovery",

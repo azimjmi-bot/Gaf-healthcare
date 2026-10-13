@@ -23,7 +23,7 @@ test("the PDA closure in babies guide keeps the quick answer and the pediatric p
   assert.ok(post);
   assert.equal(post.status, "published");
   assert.equal(post.allowIndex, true);
-  assert.equal(post.category, "Cardiology");
+  assert.equal(post.category, "Pediatric Cardiac Surgery");
   assert.equal(post.title, "PDA Closure in Babies: Treatment Options, Procedure, Cost and Recovery in India");
   assert.equal(post.seoTitle, "PDA Closure in Babies: Procedure, Cost and Recovery in India");
   assert.equal(

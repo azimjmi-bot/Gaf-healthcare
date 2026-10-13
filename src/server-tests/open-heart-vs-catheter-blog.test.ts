@@ -23,7 +23,7 @@ test("the open-heart versus catheter guide keeps the quick answer and named pedi
   assert.ok(post);
   assert.equal(post.status, "published");
   assert.equal(post.allowIndex, true);
-  assert.equal(post.category, "Cardiology");
+  assert.equal(post.category, "Pediatric Cardiac Surgery");
   assert.equal(
     post.title,
     "Open-Heart Surgery vs Catheter Treatment for Children: Differences, Risks, Recovery and Cost in India",

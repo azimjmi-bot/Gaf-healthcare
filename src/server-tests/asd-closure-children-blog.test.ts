@@ -23,7 +23,7 @@ test("the ASD closure guide keeps the quick answer and the directory planning ba
   assert.ok(post);
   assert.equal(post.status, "published");
   assert.equal(post.allowIndex, true);
-  assert.equal(post.category, "Cardiology");
+  assert.equal(post.category, "Pediatric Cardiac Surgery");
   assert.equal(post.title, "ASD Closure in Children: Surgery, Device Closure, Cost in India and Recovery");
   assert.equal(post.seoTitle, "ASD Closure in Children: Surgery, Cost & Recovery in India");
   assert.equal(

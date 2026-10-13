@@ -24,7 +24,7 @@ test("the congenital heart second-opinion guide keeps the quick answer and quote
   assert.ok(post);
   assert.equal(post.status, "published");
   assert.equal(post.allowIndex, true);
-  assert.equal(post.category, "Cardiology");
+  assert.equal(post.category, "Pediatric Cardiac Surgery");
   assert.equal(post.seoTitle, "Second Opinion for Congenital Heart Surgery in India");
   assert.match(post.seoDescription, /which medical reports to share, questions to ask doctors/);
   assert.ok((post.keywords?.length ?? 0) >= 11);

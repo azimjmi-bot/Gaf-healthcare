@@ -23,7 +23,7 @@ test("the pediatric hospital guide keeps the quick answer and the directory plan
   assert.ok(post);
   assert.equal(post.status, "published");
   assert.equal(post.allowIndex, true);
-  assert.equal(post.category, "Cardiology");
+  assert.equal(post.category, "Pediatric Cardiac Surgery");
   assert.equal(
     post.title,
     "Best Hospitals for Pediatric Heart Surgery in India: How to Choose the Right Cardiac Centre for Your Child",

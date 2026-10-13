@@ -23,7 +23,7 @@ test("the congenital heart warning-signs guide keeps the quick answer and named 
   assert.ok(post);
   assert.equal(post.status, "published");
   assert.equal(post.allowIndex, true);
-  assert.equal(post.category, "Cardiology");
+  assert.equal(post.category, "Pediatric Cardiac Surgery");
   assert.equal(
     post.title,
     "Signs of Congenital Heart Disease in Babies: Warning Signs, Symptoms and When to See a Doctor",

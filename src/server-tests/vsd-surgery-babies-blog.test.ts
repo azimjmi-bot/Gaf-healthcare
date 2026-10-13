@@ -23,7 +23,7 @@ test("the VSD surgery guide keeps the quick answer and the directory planning ba
   assert.ok(post);
   assert.equal(post.status, "published");
   assert.equal(post.allowIndex, true);
-  assert.equal(post.category, "Cardiology");
+  assert.equal(post.category, "Pediatric Cardiac Surgery");
   assert.equal(post.title, "VSD Surgery in Babies and Children: When Is Heart Surgery Needed?");
   assert.equal(post.seoTitle, "VSD Surgery in Babies: Treatment, Cost & Recovery in India");
   assert.equal(

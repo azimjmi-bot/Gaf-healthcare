@@ -23,7 +23,7 @@ test("the pediatric heart surgery cost guide keeps the quick answer and the dire
   assert.ok(post);
   assert.equal(post.status, "published");
   assert.equal(post.allowIndex, true);
-  assert.equal(post.category, "Cardiology");
+  assert.equal(post.category, "Pediatric Cardiac Surgery");
   assert.equal(
     post.title,
     "Pediatric Heart Surgery Cost in India: Procedure-Wise Prices, Hospital Expenses and Financial Assistance",
