@@ -2260,9 +2260,1016 @@
       "name": "pediatric-cost-repair.webp",
       "alt": "Two panels labeled Device and Surgery: a double-disc closure device in the upper chambers, and a fabric patch between the lower chambers",
       "addedAt": "2026-10-13T22:30:00.000Z"
+    },
+    {
+      "id": "media_pediatric_hosp_checklist_webp",
+      "url": "/uploads/articles/pediatric-hosp-checklist.webp",
+      "name": "pediatric-hosp-checklist.webp",
+      "alt": "Five cards labeled Experience, ICU, Newborn support, Outcomes and Follow-up",
+      "addedAt": "2026-10-13T23:30:00.000Z"
+    },
+    {
+      "id": "media_pediatric_hosp_defects_webp",
+      "url": "/uploads/articles/pediatric-hosp-defects.webp",
+      "name": "pediatric-hosp-defects.webp",
+      "alt": "Four heart diagrams labeled ASD, TOF, arterial switch and Fontan",
+      "addedAt": "2026-10-13T23:30:00.000Z"
+    },
+    {
+      "id": "media_pediatric_hosp_closure_webp",
+      "url": "/uploads/articles/pediatric-hosp-closure.webp",
+      "name": "pediatric-hosp-closure.webp",
+      "alt": "Two panels labeled Device and Surgery: a double-disc device between the upper chambers and a stitched patch between the lower chambers",
+      "addedAt": "2026-10-13T23:30:00.000Z"
+    },
+    {
+      "id": "media_pediatric_hosp_stages_webp",
+      "url": "/uploads/articles/pediatric-hosp-stages.webp",
+      "name": "pediatric-hosp-stages.webp",
+      "alt": "Three diagrams labeled Shunt, Glenn and Fontan in a staged single-ventricle pathway",
+      "addedAt": "2026-10-13T23:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_best_pediatric_hospitals_india",
+      "slug": "best-hospitals-pediatric-heart-surgery-india",
+      "title": "Best Hospitals for Pediatric Heart Surgery in India: How to Choose the Right Cardiac Centre for Your Child",
+      "excerpt": "How to compare pediatric heart surgery hospitals in India by the operation, intensive care, outcomes, follow-up and a written estimate.",
+      "date": "13 October 2026",
+      "publishedAt": "2026-10-13T23:30:00.000Z",
+      "updatedAt": "2026-10-13T23:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "pediatric",
+        "hospitals",
+        "congenital heart",
+        "India"
+      ],
+      "image": "/uploads/articles/pediatric-hosp-checklist.webp",
+      "imageAlt": "Five cards labeled Experience, ICU, Newborn support, Outcomes and Follow-up",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Best Hospitals for Pediatric Heart Surgery in India | Parent's Guide",
+      "seoDescription": "Compare hospitals for pediatric heart surgery in India. Learn how to evaluate congenital heart specialists, pediatric cardiac ICUs, treatment costs and hospital facilities.",
+      "canonical": "https://gaf.healthcare/blogs/best-hospitals-pediatric-heart-surgery-india",
+      "ogImage": "/uploads/articles/pediatric-hosp-checklist.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Best hospitals for pediatric heart surgery in India",
+        "Best pediatric cardiac hospitals in India",
+        "Best children's heart hospitals in India",
+        "Pediatric heart surgery hospitals in India",
+        "Congenital heart surgery centres in India",
+        "Best pediatric cardiac surgeons in India",
+        "Pediatric cardiology hospitals in India",
+        "Child heart operation hospitals in India",
+        "Neonatal heart surgery in India",
+        "Pediatric cardiac surgery cost in India",
+        "Congenital heart defect treatment in India"
+      ],
+      "blocks": [
+        {
+          "id": "phh_p_1",
+          "type": "paragraph",
+          "text": "The **best hospital for pediatric heart surgery in India** is the centre that can do the operation this child needs, with the right intensive care and a clear follow-up plan. A well-known name, or a centre that closes uncomplicated holes, is a starting point for enquiry. It is not, by itself, proof that the same unit should operate on a newborn who needs a complex reconstruction."
+        },
+        {
+          "id": "phh_p_2",
+          "type": "paragraph",
+          "text": "**Urgent warning:** Severe breathing difficulty, sudden blue or grey lips or tongue, collapse or rapid deterioration needs emergency care now. Do not use WhatsApp, and do not delay local treatment in order to compare hospitals or arrange travel."
+        },
+        {
+          "id": "phh_x_3",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>The best hospital for a child with congenital heart disease is the one with the appropriate expertise, facilities and treatment experience for that child's specific condition. A hospital that routinely repairs uncomplicated heart defects may not necessarily be the right choice for a newborn who needs complex reconstructive surgery.</p><p>India has several centres offering pediatric cardiology and congenital cardiac surgery. Examples include:</p><ul><li><strong>AIIMS, New Delhi:</strong> Its Cardiothoracic Sciences Centre describes services for congenital cardiac malformations in newborns, infants and children, including complex congenital conditions.</li><li><strong>Apollo Children's Hospitals, Chennai:</strong> The hospital describes dedicated pediatric cardiac surgical services, including complex congenital heart operations and neonatal emergency cardiac care.</li><li><strong>Apollo Hospitals, Hyderabad:</strong> Its pediatric cardiac surgery service lists treatment for congenital heart defects and other pediatric cardiac conditions.</li><li><strong>Apollo Hospitals, Delhi:</strong> The Apollo Institute of Pediatrics describes pediatric cardiothoracic surgery, neonatal cardiac surgery and multidisciplinary pediatric care.</li><li><strong>Fortis Hospital, Mohali:</strong> Fortis has documented pediatric cardiac care through its Pediatric Cardiac Sciences department and its Rotary Heartline charitable initiative.</li></ul><p>These are examples of centres with publicly documented relevant services, not a definitive ranking of the best hospitals in India. The suitability of any hospital, its current services, surgeon availability and treatment outcomes must be confirmed directly.</p><p><strong>Before choosing a hospital, evaluate five things:</strong> experience with the proposed operation, pediatric cardiac intensive care, neonatal support when needed, transparency about clinical outcomes, and a clear treatment and follow-up plan.</p></div></aside>"
+        },
+        {
+          "id": "phh_p_4",
+          "type": "paragraph",
+          "text": "The programme page is [Pediatric Heart Surgery in India](/treatments/pediatric-heart-surgery-in-india). Procedure pages include [ASD closure](/treatments/asd-closure-surgery-in-india), [VSD closure](/treatments/ventricular-septal-defect-surgery-in-india), [PDA closure](/treatments/pda-closure-surgery-in-india), [tetralogy of Fallot repair](/treatments/tof-repair-surgery-in-india), [coarctation repair](/treatments/coarctation-repair-surgery-in-india) and the [arterial switch operation](/treatments/arterial-switch-operation-in-india)."
+        },
+        {
+          "id": "phh_p_5",
+          "type": "paragraph",
+          "text": "Planning bands for each named operation are in [pediatric heart surgery cost in India](/blogs/pediatric-heart-surgery-cost-in-india) and on the [pediatric cardiac surgery cost directory](/costs/India/Pediatric-Cardiac-Surgery). Clinical guides include [ASD closure in children](/blogs/asd-closure-in-children), [VSD surgery in babies and children](/blogs/vsd-surgery-in-babies-and-children), [PDA closure in babies](/blogs/pda-closure-in-babies), [tetralogy of Fallot surgery in India](/blogs/tetralogy-of-fallot-surgery-india) and [open-heart surgery vs catheter treatment for children](/blogs/open-heart-surgery-vs-catheter-treatment-children)."
+        },
+        {
+          "id": "phh_p_6",
+          "type": "paragraph",
+          "text": "Families comparing [pediatric cardiac surgeons](/doctors/India/Pediatric-Cardiac-Surgery) can start with [Delhi NCR](/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/doctors/India/Mumbai/Pediatric-Cardiac-Surgery), [Bengaluru](/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery), [Chennai](/doctors/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery). Hospital lists use the same cities: [India](/hospitals/India/Pediatric-Cardiac-Surgery), [Delhi NCR](/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery), [Bengaluru](/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery), [Chennai](/hospitals/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Pediatric-Cardiac-Surgery). A city list is not a ranking."
+        },
+        {
+          "id": "phh_i_7",
+          "type": "image",
+          "src": "/uploads/articles/pediatric-hosp-checklist.webp",
+          "alt": "Five cards labeled Experience, ICU, Newborn support, Outcomes and Follow-up",
+          "caption": "Experience with the operation, pediatric cardiac intensive care, newborn support, clear outcomes and a follow-up plan are the checks that matter."
+        },
+        {
+          "id": "phh_b_8",
+          "type": "button",
+          "label": "Request a medical opinion",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20pediatric%20echo%20I%20can%20send%20and%20say%20which%20kind%20of%20congenital%20heart%20centre%20should%20review%20this%20child.%20Do%20not%20name%20a%20best%20surgeon%20or%20a%20best%20hospital.%20This%20is%20not%20an%20emergency%20message.%20If%20the%20child%20is%20gasping%2C%20blue%2C%20collapsed%20or%20deteriorating%20I%20will%20seek%20emergency%20care%20locally."
+        },
+        {
+          "id": "phh_x_9",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-why-choosing-the-right-pediatric-heart-surgery-hospital-matters\">1. Why Choosing the Right Pediatric Heart Surgery Hospital Matters</a></li><li><a href=\"#2-what-makes-a-hospital-suitable-for-pediatric-heart-surgery\">2. What Makes a Hospital Suitable for Pediatric Heart Surgery?</a></li><li><a href=\"#3-hospitals-for-pediatric-heart-surgery-in-india-centres-to-evaluate\">3. Hospitals for Pediatric Heart Surgery in India: Centres to Evaluate</a></li><li><a href=\"#4-how-to-compare-pediatric-heart-surgery-hospitals\">4. How to Compare Pediatric Heart Surgery Hospitals</a></li><li><a href=\"#5-which-hospital-is-best-for-different-types-of-congenital-heart-defects\">5. Which Hospital Is Best for Different Types of Congenital Heart Defects?</a></li><li><a href=\"#6-what-questions-should-parents-ask-a-pediatric-cardiac-surgeon\">6. What Questions Should Parents Ask a Pediatric Cardiac Surgeon?</a></li><li><a href=\"#7-how-much-does-pediatric-heart-surgery-cost-at-different-hospitals-in-india\">7. How Much Does Pediatric Heart Surgery Cost at Different Hospitals in India?</a></li><li><a href=\"#8-are-government-or-charitable-hospitals-better-than-private-hospitals\">8. Are Government or Charitable Hospitals Better Than Private Hospitals?</a></li><li><a href=\"#9-what-medical-reports-should-you-prepare-before-contacting-a-hospital\">9. What Medical Reports Should You Prepare Before Contacting a Hospital?</a></li><li><a href=\"#10-choosing-a-pediatric-heart-surgery-hospital-in-india-from-abroad\">10. Choosing a Pediatric Heart Surgery Hospital in India From Abroad</a></li><li><a href=\"#11-frequently-asked-questions-about-the-best-pediatric-heart-surgery-hospitals-i\">11. Frequently Asked Questions About the Best Pediatric Heart Surgery Hospitals in India</a></li><li><a href=\"#12-conclusion-choose-the-hospital-that-fits-your-childs-needs\">12. Conclusion: Choose the Hospital That Fits Your Child's Needs</a></li></ol></nav>"
+        },
+        {
+          "id": "phh_h_10",
+          "type": "heading",
+          "level": 2,
+          "text": "1. Why Choosing the Right Pediatric Heart Surgery Hospital Matters"
+        },
+        {
+          "id": "phh_p_11",
+          "type": "paragraph",
+          "text": "A congenital heart diagnosis can change a family's plans in a day. Parents may be reading reports, speaking with specialists, arranging money and trying to understand what treatment involves."
+        },
+        {
+          "id": "phh_p_12",
+          "type": "paragraph",
+          "text": "Choosing a hospital means finding a team that understands this child's defect and can look after the child before, during and after treatment. Some children need a relatively straightforward repair. Others need complex surgery soon after birth, staged procedures over several years, or long-term care of a condition that one operation cannot fully correct."
+        },
+        {
+          "id": "phh_p_13",
+          "type": "paragraph",
+          "text": "The hospital has to cover accurate diagnosis, surgical planning, anaesthesia, intensive care, complications and follow-up after discharge. Families travelling from another city or country also need answers on cost, accommodation, appointment timing and who continues care at home. Warning signs that need urgent local care are described in [signs of congenital heart disease in babies](/blogs/signs-of-congenital-heart-disease-in-babies)."
+        },
+        {
+          "id": "phh_h_14",
+          "type": "heading",
+          "level": 2,
+          "text": "2. What Makes a Hospital Suitable for Pediatric Heart Surgery?"
+        },
+        {
+          "id": "phh_p_15",
+          "type": "paragraph",
+          "text": "Compare the features that change safety and follow-up before comparing brand names."
+        },
+        {
+          "id": "phh_h_16",
+          "type": "heading",
+          "level": 3,
+          "text": "Experience with the specific heart condition"
+        },
+        {
+          "id": "phh_p_17",
+          "type": "paragraph",
+          "text": "A hospital's overall cardiac surgery volume does not show its experience with every pediatric operation. Ask whether the centre regularly treats children with the same diagnosis, and children of a similar age, weight and complexity. The experience needed for an uncomplicated atrial septal defect repair is different from the experience needed for transposition of the great arteries, total anomalous pulmonary venous connection, or single-ventricle heart disease."
+        },
+        {
+          "id": "phh_i_18",
+          "type": "image",
+          "src": "/uploads/articles/pediatric-hosp-defects.webp",
+          "alt": "Four heart diagrams labeled ASD, TOF, arterial switch and Fontan",
+          "caption": "An ASD, tetralogy of Fallot, an arterial switch and a Fontan pathway are different operations. The centre should have experience with the one this child needs."
+        },
+        {
+          "id": "phh_h_19",
+          "type": "heading",
+          "level": 3,
+          "text": "A dedicated pediatric cardiac team"
+        },
+        {
+          "id": "phh_p_20",
+          "type": "paragraph",
+          "text": "Pediatric cardiac surgery depends on several specialists working together."
+        },
+        {
+          "id": "phh_l_21",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Pediatric cardiologists.",
+            "Congenital heart surgeons.",
+            "Pediatric cardiac anaesthesiologists.",
+            "Pediatric cardiac intensivists.",
+            "Perfusionists, when a heart-lung machine is used.",
+            "Specialist cardiac nurses.",
+            "Neonatologists, when a newborn has other medical needs.",
+            "Rehabilitation and nutrition support when that is part of the plan."
+          ]
+        },
+        {
+          "id": "phh_p_22",
+          "type": "paragraph",
+          "text": "Ask how these people coordinate the child's care, and who explains the plan to the family."
+        },
+        {
+          "id": "phh_h_23",
+          "type": "heading",
+          "level": 3,
+          "text": "Pediatric cardiac intensive care and complications"
+        },
+        {
+          "id": "phh_p_24",
+          "type": "paragraph",
+          "text": "After surgery a child may need specialised monitoring, breathing support, medicines and careful management of the circulation. The centre should have pediatric cardiac intensive care that matches the operation. For newborns and very small infants, neonatal intensive care and neonatal cardiac support can matter as well. The exact need depends on the diagnosis and the procedure."
+        },
+        {
+          "id": "phh_p_25",
+          "type": "paragraph",
+          "text": "Ask how the hospital manages abnormal heart rhythms, bleeding, infection, breathing difficulty, kidney injury or a residual defect. For complex cases, ask whether the centre can provide a further catheter procedure, a repeat operation, or the other specialist care that may be required."
+        },
+        {
+          "id": "phh_h_26",
+          "type": "heading",
+          "level": 3,
+          "text": "Outcomes and long-term follow-up"
+        },
+        {
+          "id": "phh_p_27",
+          "type": "paragraph",
+          "text": "A high success rate is useful only when its meaning is clear. Ask whether the figures refer to the same procedure, the same age group and a similar level of complexity. Ask whether the number is survival to discharge, survival at a later time, freedom from complications, or another measure. A hospital's overall cardiac success rate is not a prediction for an individual child."
+        },
+        {
+          "id": "phh_p_28",
+          "type": "paragraph",
+          "text": "Treatment does not always finish at discharge. Some children need periodic echocardiograms, medicines, rhythm checks, valve assessment or further procedures as they grow. Complex congenital conditions may need specialist follow-up for life. Choose a centre that explains how follow-up will be organised and how the family can get advice after discharge. Recovery expectations are outlined in [heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india)."
+        },
+        {
+          "id": "phh_h_29",
+          "type": "heading",
+          "level": 2,
+          "text": "3. Hospitals for Pediatric Heart Surgery in India: Centres to Evaluate"
+        },
+        {
+          "id": "phh_p_30",
+          "type": "paragraph",
+          "text": "The hospitals below are examples of Indian centres with publicly documented pediatric cardiac or congenital cardiac services. The order is not a ranking of clinical quality or surgical outcomes. Confirm current services, the surgeon's experience, appointment availability, the written estimate and any financial eligibility before deciding. GAF Healthcare does not rank these hospitals."
+        },
+        {
+          "id": "phh_h_31",
+          "type": "heading",
+          "level": 3,
+          "text": "All India Institute of Medical Sciences (AIIMS), New Delhi"
+        },
+        {
+          "id": "phh_p_32",
+          "type": "paragraph",
+          "text": "**Location:** Ansari Nagar, New Delhi."
+        },
+        {
+          "id": "phh_p_33",
+          "type": "paragraph",
+          "text": "AIIMS has a Cardiothoracic Sciences Centre with cardiothoracic and vascular surgery, cardiac anaesthesia and critical care, and cardiology. Its published service information describes congenital cardiac surgery for newborns, infants and children, including complex congenital malformations. Families looking at an established public-sector tertiary centre can include AIIMS in their enquiries."
+        },
+        {
+          "id": "phh_l_34",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Whether the required operation is offered for this diagnosis.",
+            "Current referral and appointment requirements.",
+            "Waiting time, and how urgent treatment is.",
+            "Pediatric cardiac intensive care for the proposed procedure.",
+            "Expected charges, applicable subsidies and financial assistance.",
+            "How to obtain a second opinion."
+          ]
+        },
+        {
+          "id": "phh_p_35",
+          "type": "paragraph",
+          "text": "Official pages: [AIIMS Cardiothoracic Sciences Centre](https://aiims.edu/index.php/en/centre_home) and the [AIIMS Department of Cardiology](https://www.aiims.edu/index.php/en/departments-and-centers/departments?id=642). The [Delhi NCR pediatric cardiac hospital list](/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery) is a directory, not a ranking of AIIMS against other units."
+        },
+        {
+          "id": "phh_h_36",
+          "type": "heading",
+          "level": 3,
+          "text": "Apollo Children's Hospitals, Chennai"
+        },
+        {
+          "id": "phh_p_37",
+          "type": "paragraph",
+          "text": "**Location:** Greams Road, Chennai, Tamil Nadu."
+        },
+        {
+          "id": "phh_p_38",
+          "type": "paragraph",
+          "text": "Apollo Children's Hospitals describes dedicated pediatric cardiac surgical services, pediatric cardiac operating rooms and cardiac intensive care. Published service information includes arterial switch operations, total anomalous pulmonary venous connection repair, and operations for complex congenital heart conditions. Families can evaluate the centre for specialist congenital assessment, including selected complex conditions."
+        },
+        {
+          "id": "phh_l_39",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Experience with the exact operation proposed.",
+            "Neonatal cardiac care, when the child needs it.",
+            "The treating surgeon's current role and relevant experience.",
+            "Whether the plan is a complete repair or one stage of a pathway.",
+            "Current costs and package exclusions.",
+            "Follow-up after discharge."
+          ]
+        },
+        {
+          "id": "phh_p_40",
+          "type": "paragraph",
+          "text": "Official page: [Apollo Children's Hospitals, Chennai](https://www.apollohospitals.com/hospitals/apollo-childrens-hospitals-chennai). The [Chennai pediatric cardiac hospital list](/hospitals/India/Chennai/Pediatric-Cardiac-Surgery) is a directory of the city, not a score for this hospital."
+        },
+        {
+          "id": "phh_h_41",
+          "type": "heading",
+          "level": 3,
+          "text": "Apollo Hospitals, Hyderabad"
+        },
+        {
+          "id": "phh_p_42",
+          "type": "paragraph",
+          "text": "**Location:** Jubilee Hills, Hyderabad, Telangana."
+        },
+        {
+          "id": "phh_p_43",
+          "type": "paragraph",
+          "text": "Apollo Hospitals, Hyderabad, lists pediatric cardiac surgery among its services. Published information describes treatment for conditions such as ASD, VSD, PDA, valve disorders and other pediatric cardiac problems. A pediatric cardiology service at a hospital does not, by itself, show that every complex congenital operation is performed at that unit. Ask whether this unit and this surgical team have experience with the child's condition."
+        },
+        {
+          "id": "phh_l_44",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Whether the required operation is performed at the selected unit.",
+            "The experience of the congenital cardiac surgeon who would operate.",
+            "Access to pediatric cardiac intensive care.",
+            "Current pricing and what the package includes.",
+            "Whether further tests or procedures are likely."
+          ]
+        },
+        {
+          "id": "phh_p_45",
+          "type": "paragraph",
+          "text": "Official page: [Apollo Hospitals, Hyderabad — pediatric cardiac surgery](https://www.apollohospitals.com/region/hyderabad/hospitals/jubilee-hills/specialities/cardiology/paediatric-cardiac-surgery/). See also the [Hyderabad pediatric cardiac hospital list](/hospitals/India/Hyderabad/Pediatric-Cardiac-Surgery)."
+        },
+        {
+          "id": "phh_h_46",
+          "type": "heading",
+          "level": 3,
+          "text": "Apollo Hospitals, Delhi"
+        },
+        {
+          "id": "phh_p_47",
+          "type": "paragraph",
+          "text": "**Location:** Delhi. Confirm the exact unit when you book."
+        },
+        {
+          "id": "phh_p_48",
+          "type": "paragraph",
+          "text": "The Apollo Institute of Pediatrics describes pediatric cardiothoracic surgery for congenital and acquired heart and lung conditions. Published information includes neonatal cardiac surgery, treatment for congenital heart defects, valve procedures and aortic arch reconstruction. Confirm the precise Delhi location and the team responsible for the proposed operation. Services are not identical across every Apollo facility."
+        },
+        {
+          "id": "phh_l_49",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Which Delhi unit would provide treatment.",
+            "Whether neonatal or complex congenital surgery is available at that unit.",
+            "The surgeon's experience with this condition.",
+            "ICU facilities and emergency support.",
+            "The estimated admission and the total cost."
+          ]
+        },
+        {
+          "id": "phh_p_50",
+          "type": "paragraph",
+          "text": "Official page: [Apollo Hospitals, Delhi — pediatrics](https://www.apollohospitals.com/delhi/departments/pediatrics)."
+        },
+        {
+          "id": "phh_h_51",
+          "type": "heading",
+          "level": 3,
+          "text": "Fortis Hospital, Mohali"
+        },
+        {
+          "id": "phh_p_52",
+          "type": "paragraph",
+          "text": "**Location:** Mohali, Punjab."
+        },
+        {
+          "id": "phh_p_53",
+          "type": "paragraph",
+          "text": "Fortis Hospital, Mohali, has publicly documented pediatric cardiac services. In May 2026, Fortis reported an 800th life-saving heart surgery under its Rotary Heartline Project, a charitable initiative for children with heart conditions. That milestone is relevant for families exploring pediatric cardiac treatment and possible charitable support. A programme milestone does not establish the hospital's outcomes for every operation, and it does not guarantee that financial assistance will be available to every family."
+        },
+        {
+          "id": "phh_l_54",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Whether the required procedure is performed at the centre.",
+            "The pediatric cardiologist and congenital heart surgeon who would be involved.",
+            "Current capabilities for this diagnosis.",
+            "Eligibility and availability of charitable assistance.",
+            "Waiting time, the total estimated cost and follow-up."
+          ]
+        },
+        {
+          "id": "phh_p_55",
+          "type": "paragraph",
+          "text": "Official note: [Rotary Heartline milestone at Fortis Hospital, Mohali](https://www.fortishealthcare.com/media-centre/press-release/rotary-club-chandigarh-and-fortis-hospital-mohali-mark-800th-life-saving)."
+        },
+        {
+          "id": "phh_p_56",
+          "type": "paragraph",
+          "text": "This list is a starting point for enquiries. It is not a complete directory of pediatric cardiac centres in India. Other institutions may be suitable for the child's condition, location and finances. Appearing on this list is not a reason to choose a centre. The decision follows specialist review and a check of current services."
+        },
+        {
+          "id": "phh_b_57",
+          "type": "button",
+          "label": "Compare treatment estimates",
+          "href": "https://wa.me/919044346292?text=Please%20help%20request%20written%20pediatric%20cardiac%20estimates%20for%20the%20procedure%20shown%20on%20the%20echo%20I%20can%20send.%20Do%20not%20rank%20hospitals%20and%20do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "phh_h_58",
+          "type": "heading",
+          "level": 2,
+          "text": "4. How to Compare Pediatric Heart Surgery Hospitals"
+        },
+        {
+          "id": "phh_p_59",
+          "type": "paragraph",
+          "text": "Reputation, cost and online reviews can start a search. They do not show whether a centre can do this operation safely. Use the same questions at each hospital."
+        },
+        {
+          "id": "phh_p_60",
+          "type": "paragraph",
+          "text": "| Evaluation factor | Questions to ask |\n| --- | --- |\n| Relevant surgical experience | Does the centre routinely perform the proposed operation? |\n| Age and complexity | Does it treat newborns, infants or children with similar needs? |\n| Pediatric cardiac ICU | Is specialised postoperative intensive care available? |\n| Neonatal services | Is newborn support available if this child needs it? |\n| Team | Are cardiology, surgery, anaesthesia and intensive care coordinated? |\n| Outcomes | Are procedure-specific results available and clearly explained? |\n| Emergencies | Can the centre manage complications and further procedures? |\n| Cost | Is there a written estimate with inclusions and exclusions? |\n| Follow-up | Is there a clear plan for monitoring after discharge? |\n| Family support | Are counselling, accommodation guidance and financial help explained where they apply? |"
+        },
+        {
+          "id": "phh_p_61",
+          "type": "paragraph",
+          "text": "Compare two or three centres with these questions. An unverified national ranking is not a clinical decision. [Questions to ask before heart surgery](/blogs/questions-to-ask-before-heart-surgery) expands the list for the consultation itself."
+        },
+        {
+          "id": "phh_h_62",
+          "type": "heading",
+          "level": 2,
+          "text": "5. Which Hospital Is Best for Different Types of Congenital Heart Defects?"
+        },
+        {
+          "id": "phh_p_63",
+          "type": "paragraph",
+          "text": "The appropriate centre depends on the condition and the procedure."
+        },
+        {
+          "id": "phh_i_64",
+          "type": "image",
+          "src": "/uploads/articles/pediatric-hosp-closure.webp",
+          "alt": "Two panels labeled Device and Surgery: a double-disc device between the upper chambers and a stitched patch between the lower chambers",
+          "caption": "Some ASD and VSD cases are discussed as device closure. Others need a surgical patch. The centre should be able to explain which applies."
+        },
+        {
+          "id": "phh_h_65",
+          "type": "heading",
+          "level": 3,
+          "text": "ASD and VSD"
+        },
+        {
+          "id": "phh_p_66",
+          "type": "paragraph",
+          "text": "Some children with an atrial septal defect or a ventricular septal defect need only monitoring. Others need catheter closure or surgical closure. Ask about experience with that defect, pediatric echocardiography, device closure when it fits, and surgical repair when it does not. The clinical guides are [ASD closure in children](/blogs/asd-closure-in-children) and [VSD surgery in babies and children](/blogs/vsd-surgery-in-babies-and-children)."
+        },
+        {
+          "id": "phh_h_67",
+          "type": "heading",
+          "level": 3,
+          "text": "Tetralogy of Fallot"
+        },
+        {
+          "id": "phh_p_68",
+          "type": "paragraph",
+          "text": "Tetralogy of Fallot may need a complete repair or a staged approach, depending on the anatomy and the child's condition. The centre should explain the planned operation, its timing, the expected recovery and whether later procedures are likely. See [tetralogy of Fallot surgery in India](/blogs/tetralogy-of-fallot-surgery-india)."
+        },
+        {
+          "id": "phh_h_69",
+          "type": "heading",
+          "level": 3,
+          "text": "Transposition of the great arteries"
+        },
+        {
+          "id": "phh_p_70",
+          "type": "paragraph",
+          "text": "Transposition of the great arteries can be time-sensitive in newborns. Many infants with the common form need specialist stabilisation and an arterial switch operation. The priority is an appropriately equipped congenital cardiac team, without an unnecessary delay. Do not postpone urgent care in order to compare elective appointments or travel. The procedure page is the [arterial switch operation in India](/treatments/arterial-switch-operation-in-india)."
+        },
+        {
+          "id": "phh_h_71",
+          "type": "heading",
+          "level": 3,
+          "text": "Total anomalous pulmonary venous connection"
+        },
+        {
+          "id": "phh_p_72",
+          "type": "paragraph",
+          "text": "This condition can need urgent surgery, particularly when the pulmonary venous drainage is obstructed. Confirm that the centre can manage the repair and the complications that can follow it."
+        },
+        {
+          "id": "phh_h_73",
+          "type": "heading",
+          "level": 3,
+          "text": "Single-ventricle conditions"
+        },
+        {
+          "id": "phh_p_74",
+          "type": "paragraph",
+          "text": "Some children follow a staged pathway, which may include a shunt, a Glenn procedure and a Fontan procedure. The family should understand the whole pathway, including later operations and long-term follow-up. A quote for the first operation is not the total future cost of care."
+        },
+        {
+          "id": "phh_i_75",
+          "type": "image",
+          "src": "/uploads/articles/pediatric-hosp-stages.webp",
+          "alt": "Three diagrams labeled Shunt, Glenn and Fontan in a staged single-ventricle pathway",
+          "caption": "A shunt, a Glenn procedure and a Fontan procedure are separate stages. Ask about the pathway, not only the first admission."
+        },
+        {
+          "id": "phh_p_76",
+          "type": "paragraph",
+          "text": "The appropriate treatment and its timing are decided by the child's pediatric cardiologist and congenital heart surgeon. The examples above are not individual recommendations."
+        },
+        {
+          "id": "phh_h_77",
+          "type": "heading",
+          "level": 2,
+          "text": "6. What Questions Should Parents Ask a Pediatric Cardiac Surgeon?"
+        },
+        {
+          "id": "phh_p_78",
+          "type": "paragraph",
+          "text": "A consultation is the time to understand the diagnosis, the proposed procedure and why that approach was chosen. Parents should receive clear explanations and time to discuss concerns before consent, except when an emergency requires immediate action."
+        },
+        {
+          "id": "phh_h_79",
+          "type": "heading",
+          "level": 3,
+          "text": "About the diagnosis"
+        },
+        {
+          "id": "phh_l_80",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is my child's exact heart defect?",
+            "How does it affect blood flow, oxygen levels and heart function?",
+            "Is treatment required now, or can the condition be monitored?",
+            "Are more tests needed before a decision on surgery?"
+          ]
+        },
+        {
+          "id": "phh_h_81",
+          "type": "heading",
+          "level": 3,
+          "text": "About the proposed procedure"
+        },
+        {
+          "id": "phh_l_82",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What operation or catheter procedure do you recommend, and why?",
+            "Is the aim a complete repair, or a staged improvement in circulation?",
+            "What alternatives fit this child?",
+            "What are the most important risks in this case?",
+            "How likely is another procedure later?"
+          ]
+        },
+        {
+          "id": "phh_h_83",
+          "type": "heading",
+          "level": 3,
+          "text": "About the hospital, the cost and recovery"
+        },
+        {
+          "id": "phh_l_84",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "How often does the centre perform this operation in children of a similar age?",
+            "Is pediatric cardiac intensive care available?",
+            "How are complications managed?",
+            "What outcome information is available for comparable patients?",
+            "What is the total estimated cost, and does it include the surgeon, anaesthesia, devices, ICU and ward stay?",
+            "What is charged if intensive care runs longer, and is charitable assistance available?",
+            "How long might the stay be, which warning signs matter after discharge, and can follow-up be coordinated with a local cardiologist?"
+          ]
+        },
+        {
+          "id": "phh_p_85",
+          "type": "paragraph",
+          "text": "If you are sending files for another look, the [second-opinion guide](/blogs/second-opinion-congenital-heart-surgery-india) lists which echo images to include."
+        },
+        {
+          "id": "phh_h_86",
+          "type": "heading",
+          "level": 2,
+          "text": "7. How Much Does Pediatric Heart Surgery Cost at Different Hospitals in India?"
+        },
+        {
+          "id": "phh_p_87",
+          "type": "paragraph",
+          "text": "GAF Healthcare does not publish a single fee for pediatric heart surgery, and it does not publish a price for any hospital named in this article. The [pediatric cardiac surgery cost directory](/costs/India/Pediatric-Cardiac-Surgery) lists a planning band for each named procedure. These are planning ranges. They are not a quotation for AIIMS, Apollo, Fortis or any other centre."
+        },
+        {
+          "id": "phh_p_88",
+          "type": "paragraph",
+          "text": "| Named procedure | India planning band | Expected stay | US comparison band |\n| --- | --- | --- | --- |\n| ASD closure | US$4,000–US$9,500 | 5–10 nights; parent stay expected | US$30,000–US$80,000 |\n| VSD closure | US$4,500–US$11,000 | 6–12 nights; parent stay expected | US$35,000–US$90,000 |\n| PDA closure | US$3,500–US$8,500 | 3–8 nights; parent stay expected | US$20,000–US$60,000 |\n| TOF repair | US$6,500–US$16,000 | 8–16 nights; parent stay expected | US$50,000–US$140,000 |\n| Coarctation repair | US$6,000–US$15,000 | 6–14 nights; parent stay expected | US$40,000–US$110,000 |\n| Arterial switch | US$12,000–US$26,000 | 10–21 nights; parent stay expected | US$80,000–US$200,000 |\n| TAPVC repair | US$10,000–US$24,000 | 10–21 nights; parent stay expected | US$70,000–US$180,000 |\n| Glenn procedure | US$8,000–US$18,000 | 8–16 nights; parent stay expected | US$60,000–US$160,000 |\n| Fontan procedure | US$9,000–US$22,000 | 10–18 nights; parent stay expected | US$70,000–US$180,000 |\n| Norwood procedure | US$18,000–US$40,000 | 3–8 weeks in a paediatric cardiac ICU | US$120,000–US$280,000 |"
+        },
+        {
+          "id": "phh_p_89",
+          "type": "paragraph",
+          "text": "Open the matching row: [ASD closure](/costs/India/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)), [VSD closure](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)), [TOF repair](/costs/India/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)), [arterial switch](/costs/India/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation), [TAPVC repair](/costs/India/Pediatric-Cardiac-Surgery/TAPVC-Repair-(Total-Anomalous-Pulmonary-Venous-Connection)), [Glenn](/costs/India/Pediatric-Cardiac-Surgery/Glenn-Procedure), [Fontan](/costs/India/Pediatric-Cardiac-Surgery/Fontan-Procedure) and the [Norwood procedure](/costs/India/Pediatric-Cardiac-Surgery/Norwood-Procedure). The wider explanation is [pediatric heart surgery cost in India](/blogs/pediatric-heart-surgery-cost-in-india). City congenital pages, which are not a single-operation tariff, are on [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery) and [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery)."
+        },
+        {
+          "id": "phh_p_90",
+          "type": "paragraph",
+          "text": "A 2024 study, [Pediatric cardiac procedures in India: Who bears the cost?](https://pmc.ncbi.nlm.nih.gov/articles/PMC11198927/), documented differences between government, charitable and private centres. Its historical figures for surgical ASD closure were about ₹65,000–₹2 lakh in government hospitals, ₹80,000–₹1.5 lakh in charitable hospitals and ₹2.2 lakh–₹4.5 lakh in private hospitals. For surgical VSD closure, the reported ranges were about ₹65,000–₹2 lakh, ₹85,000–₹1.8 lakh and ₹2 lakh–₹3.5 lakh. These are research benchmarks. They are not the GAF directory band, they are not current tariffs, and they are not the price at any hospital named above."
+        },
+        {
+          "id": "phh_p_91",
+          "type": "paragraph",
+          "text": "Quotes differ because of the complexity of the operation, professional fees, devices or implants, how many ICU and ward days are included, whether tests and medicines are included, extra procedures, complications, and the hospital's funding. The directory does not publish a separate band for a BT shunt. Ask the hospital for that figure if a shunt is the proposed first stage."
+        },
+        {
+          "id": "phh_p_92",
+          "type": "paragraph",
+          "text": "Send recent records and ask for a written, itemised quotation. It should name the procedure, the expected admission, included services, exclusions and the charge for extra ICU days."
+        },
+        {
+          "id": "phh_b_93",
+          "type": "button",
+          "label": "Ask for an itemised hospital estimate",
+          "href": "https://wa.me/919044346292?text=Please%20use%20the%20records%20I%20can%20send%20to%20request%20an%20itemised%20pediatric%20cardiac%20estimate%2C%20including%20ICU%20days%2C%20devices%20and%20exclusions.%20Do%20not%20name%20a%20best%20hospital.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "phh_h_94",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Are Government or Charitable Hospitals Better Than Private Hospitals?"
+        },
+        {
+          "id": "phh_p_95",
+          "type": "paragraph",
+          "text": "Each hospital has to be judged against this child's condition, the available expertise, the waiting time and the family's finances. There is no category that is automatically the right one."
+        },
+        {
+          "id": "phh_h_96",
+          "type": "heading",
+          "level": 3,
+          "text": "Government hospitals"
+        },
+        {
+          "id": "phh_p_97",
+          "type": "paragraph",
+          "text": "Government institutions may offer subsidised treatment and access to specialised tertiary care. Appointment processes, waiting times and funding differ. If a doctor has recommended urgent treatment, discuss the clinical effect of waiting before choosing a lower quoted price."
+        },
+        {
+          "id": "phh_h_98",
+          "type": "heading",
+          "level": 3,
+          "text": "Charitable hospitals"
+        },
+        {
+          "id": "phh_p_99",
+          "type": "paragraph",
+          "text": "Some charitable hospitals and programmes provide subsidised cardiac care for eligible children. Support can depend on funding, the diagnosis, the family's circumstances and the hospital's rules. Ask about the application and whether financial approval is required before admission. Eligible Indian beneficiaries may also need to check [Ayushman Bharat PM-JAY](https://pmjay.gov.in/) or the [National Health Authority](https://nha.gov.in/). A scheme's existence does not mean this child and this operation are covered."
+        },
+        {
+          "id": "phh_h_100",
+          "type": "heading",
+          "level": 3,
+          "text": "Private hospitals"
+        },
+        {
+          "id": "phh_p_101",
+          "type": "paragraph",
+          "text": "Private centres may offer specialist services and structured packages. Charges and inclusions differ. Ask for a complete estimate and confirm the relevant clinical experience before deciding."
+        },
+        {
+          "id": "phh_p_102",
+          "type": "paragraph",
+          "text": "Compare clinical suitability and urgency first, and put the total cost and any support beside those facts. The lowest opening price is not, by itself, the appropriate choice."
+        },
+        {
+          "id": "phh_h_103",
+          "type": "heading",
+          "level": 2,
+          "text": "9. What Medical Reports Should You Prepare Before Contacting a Hospital?"
+        },
+        {
+          "id": "phh_p_104",
+          "type": "paragraph",
+          "text": "Complete records help the receiving team understand the diagnosis and see which extra assessment is needed."
+        },
+        {
+          "id": "phh_l_105",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "The child's age and current weight.",
+            "The diagnosis or referral letter.",
+            "The latest echocardiogram report and images.",
+            "The ECG and other relevant reports.",
+            "Oxygen saturation results, when they are relevant.",
+            "Previous cardiac catheterisation reports.",
+            "Previous operation notes and discharge summaries.",
+            "The current medicine list.",
+            "Other medical conditions.",
+            "The treating doctor's recommendation and any stated urgency."
+          ]
+        },
+        {
+          "id": "phh_p_106",
+          "type": "paragraph",
+          "text": "For a second opinion, ask whether the centre needs the original imaging files or whether the written reports are enough for a first review. A preliminary opinion can change after an examination or more tests. Do not delay emergency assessment in order to collect documents. Share records on a secure channel, and only with a parent or legal guardian's consent."
+        },
+        {
+          "id": "phh_h_107",
+          "type": "heading",
+          "level": 2,
+          "text": "10. Choosing a Pediatric Heart Surgery Hospital in India From Abroad"
+        },
+        {
+          "id": "phh_p_108",
+          "type": "paragraph",
+          "text": "For international families, hospital choice is clinical and practical. GAF Healthcare helps coordinate medical travel and communication with hospitals. Diagnosis, the treatment recommendation and the operation remain with the treating medical team."
+        },
+        {
+          "id": "phh_l_109",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Request an initial review.** Share the diagnosis, current reports and any previous procedures. Ask whether the hospital can review the case remotely.",
+            "**Confirm the proposed treatment.** Ask the specialist to explain the procedure, its urgency, the alternatives and whether more tests are required.",
+            "**Compare written estimates.** Ask appropriate centres for itemised quotations. Compare the operation, the stay, devices, exclusions and what happens if there is a complication.",
+            "**Confirm fitness to travel.** The treating team must say whether the child is stable enough to travel and whether waiting for an appointment abroad is appropriate. Do not travel with an unstable child, and do not postpone urgent local treatment.",
+            "**Plan accommodation and a caregiver.** Confirm the expected admission, the time likely to be needed near the hospital after discharge, and who will stay with the child. Avoid a fixed return ticket until the team has discussed recovery.",
+            "**Arrange follow-up before going home.** Take the discharge summary, the operation report, medicine instructions and a written follow-up plan. Identify the local pediatric cardiologist and how to contact the treating hospital if concerns arise."
+          ]
+        },
+        {
+          "id": "phh_b_110",
+          "type": "button",
+          "label": "Ask whether travel is safe for this child",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20pediatric%20cardiac%20records%20I%20can%20send%20and%20say%20whether%20travel%20to%20India%20is%20a%20question%20the%20treating%20team%20should%20answer%20before%20any%20hospital%20comparison.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message.%20If%20the%20child%20is%20unstable%20I%20will%20seek%20local%20emergency%20care."
+        },
+        {
+          "id": "phh_h_111",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Frequently Asked Questions About the Best Pediatric Heart Surgery Hospitals in India"
+        },
+        {
+          "id": "phh_h_112",
+          "type": "heading",
+          "level": 3,
+          "text": "Which is the best hospital for pediatric heart surgery in India?"
+        },
+        {
+          "id": "phh_p_113",
+          "type": "paragraph",
+          "text": "There is no single best hospital for every child. The appropriate centre depends on the diagnosis, age, complexity, the surgeon's experience with that operation, pediatric cardiac intensive care and follow-up. Compare centres on those points and confirm current services directly. The examples in this article are not a ranking."
+        },
+        {
+          "id": "phh_h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "Which hospitals in India perform complex congenital heart surgery?"
+        },
+        {
+          "id": "phh_p_115",
+          "type": "paragraph",
+          "text": "AIIMS New Delhi and Apollo Children's Hospitals, Chennai, publicly describe services that include complex congenital cardiac conditions. Apollo Hospitals in Delhi and Hyderabad, and Fortis Hospital, Mohali, also publish pediatric cardiac service information. Other centres may be appropriate too. Confirm the exact operation, the treating team and current availability before choosing."
+        },
+        {
+          "id": "phh_h_116",
+          "type": "heading",
+          "level": 3,
+          "text": "Is AIIMS Delhi a good option for pediatric heart surgery?"
+        },
+        {
+          "id": "phh_p_117",
+          "type": "paragraph",
+          "text": "AIIMS has a Cardiothoracic Sciences Centre that describes congenital cardiac surgery for newborns, infants and children, including complex malformations. Whether it fits an individual child depends on the required procedure, current availability, waiting time and a clinical assessment. A public description of services is a reason to enquire, not a personal recommendation."
+        },
+        {
+          "id": "phh_h_118",
+          "type": "heading",
+          "level": 3,
+          "text": "Does Apollo Children's Hospital Chennai perform neonatal heart surgery?"
+        },
+        {
+          "id": "phh_p_119",
+          "type": "paragraph",
+          "text": "Apollo Children's Hospitals, Chennai, publicly lists neonatal emergency cardiac care and complex pediatric cardiac surgical services, including arterial switch operations. Contact the hospital to confirm that the required procedure is available and suitable for this child, and which surgeon would be involved."
+        },
+        {
+          "id": "phh_h_120",
+          "type": "heading",
+          "level": 3,
+          "text": "How do I choose a pediatric cardiac surgeon?"
+        },
+        {
+          "id": "phh_p_121",
+          "type": "paragraph",
+          "text": "Ask about qualifications, the current hospital, experience with this specific operation, and work with children of a similar age and complexity. Also look at the wider team, intensive care and follow-up. A coordinator cannot name a best surgeon from a message."
+        },
+        {
+          "id": "phh_h_122",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does pediatric heart surgery cost in India?"
+        },
+        {
+          "id": "phh_p_123",
+          "type": "paragraph",
+          "text": "GAF Healthcare does not publish a single fee. The directory planning band depends on the operation: ASD closure is US$4,000–US$9,500, VSD closure is US$4,500–US$11,000, TOF repair is US$6,500–US$16,000 and an arterial switch is US$12,000–US$26,000. A 2024 study reported historical private-hospital ranges of about ₹2.2 lakh–₹4.5 lakh for selected surgical ASD closures and about ₹2 lakh–₹3.5 lakh for selected surgical VSD closures. Those research figures are not the GAF directory band and are not a price for a named hospital. Ask for a current written estimate. The full bands are in [pediatric heart surgery cost in India](/blogs/pediatric-heart-surgery-cost-in-india)."
+        },
+        {
+          "id": "phh_h_124",
+          "type": "heading",
+          "level": 3,
+          "text": "Are charitable heart surgery programmes available for children?"
+        },
+        {
+          "id": "phh_p_125",
+          "type": "paragraph",
+          "text": "Some charitable hospitals and initiatives, including the Rotary Heartline project described by Fortis Hospital, Mohali, support eligible children. Availability and eligibility vary, and assistance is not guaranteed. Ask the hospital's financial-counselling team or the programme itself. A reported milestone does not mean every family qualifies."
+        },
+        {
+          "id": "phh_h_126",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients arrange a second opinion before travelling?"
+        },
+        {
+          "id": "phh_p_127",
+          "type": "paragraph",
+          "text": "Some hospitals can review records remotely and give a preliminary opinion. The final diagnosis and the treatment plan may need an examination and more tests. Confirm that the child can travel safely before booking. Do not delay emergency care in order to collect a remote opinion."
+        },
+        {
+          "id": "phh_h_128",
+          "type": "heading",
+          "level": 3,
+          "text": "How can I compare the success rates of different hospitals?"
+        },
+        {
+          "id": "phh_p_129",
+          "type": "paragraph",
+          "text": "Ask for outcomes for the proposed operation in a comparable group of children. Check how success is defined, the time period, and whether complications or reoperations are included. A hospital-wide success claim does not predict an individual child's result."
+        },
+        {
+          "id": "phh_h_130",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I choose a hospital based on online reviews?"
+        },
+        {
+          "id": "phh_p_131",
+          "type": "paragraph",
+          "text": "Reviews can describe communication and a family's experience of the stay. They cannot reliably show surgical expertise or clinical outcomes. Use the records, a specialist opinion and a direct conversation with the hospital."
+        },
+        {
+          "id": "phh_h_132",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I do if my child needs urgent heart surgery?"
+        },
+        {
+          "id": "phh_p_133",
+          "type": "paragraph",
+          "text": "Contact the treating pediatric cardiologist or congenital cardiac team immediately. Severe breathing difficulty, sudden blue or grey lips or tongue, collapse or rapid deterioration needs emergency care. Do not delay urgent treatment to compare hospitals or to organise international travel."
+        },
+        {
+          "id": "phh_h_134",
+          "type": "heading",
+          "level": 3,
+          "text": "Can GAF Healthcare help me find a suitable pediatric cardiac hospital in India?"
+        },
+        {
+          "id": "phh_p_135",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help international families coordinate a record review, hospital enquiries, treatment estimates and travel arrangements. The receiving hospital's medical team decides whether it is appropriate for the diagnosis and provides the care. GAF Healthcare does not publish a ranked list of best hospitals."
+        },
+        {
+          "id": "phh_h_136",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I compare if the operation is an arterial switch rather than an ASD closure?"
+        },
+        {
+          "id": "phh_p_137",
+          "type": "paragraph",
+          "text": "An uncomplicated ASD closure and a neonatal arterial switch need different experience, different intensive care and different timing. The planning band for ASD closure is US$4,000–US$9,500, with an expected stay of 5–10 nights; parent stay expected. An arterial switch is US$12,000–US$26,000, with an expected stay of 10–21 nights; parent stay expected. Ask whether the unit regularly does the proposed operation in children of a similar age, and whether neonatal cardiac intensive care is available when the child is a newborn. Do not use an ASD package as a guide to the switch."
+        },
+        {
+          "id": "phh_h_138",
+          "type": "heading",
+          "level": 3,
+          "text": "Does the price of the first operation include a later Glenn or Fontan?"
+        },
+        {
+          "id": "phh_p_139",
+          "type": "paragraph",
+          "text": "No. A Glenn procedure is planned at US$8,000–US$18,000 and a Fontan procedure at US$9,000–US$22,000. Those are separate directory bands, not one combined package. A Norwood procedure, when that is the proposed first stage, is US$18,000–US$40,000, with an expected stay of 3–8 weeks in a paediatric cardiac ICU. Ask the surgeon to explain the whole pathway and which admissions are still ahead. The directory does not publish a separate band for a BT shunt."
+        },
+        {
+          "id": "phh_h_140",
+          "type": "heading",
+          "level": 3,
+          "text": "How should I use planning bands when two hospitals quote different prices?"
+        },
+        {
+          "id": "phh_p_141",
+          "type": "paragraph",
+          "text": "Use the directory band to see which operation is being priced, then compare written estimates for that same operation. Check ICU days, devices, exclusions and extra-day charges. A lower quote that leaves out the implant or the intensive care is not a lower total. The bands are planning ranges. They are not the bill at a named hospital."
+        },
+        {
+          "id": "phh_h_142",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Conclusion: Choose the Hospital That Fits Your Child's Needs"
+        },
+        {
+          "id": "phh_p_143",
+          "type": "paragraph",
+          "text": "Choosing a hospital for a child with congenital heart disease is a major decision. Parents need a clear account of the diagnosis, the proposed operation, the people who will provide care, and the money involved."
+        },
+        {
+          "id": "phh_p_144",
+          "type": "paragraph",
+          "text": "India has several centres that offer pediatric cardiac services. No single hospital is the right choice for every child. Experience with the specific procedure, pediatric cardiac intensive care, a clear account of outcomes, and a follow-up plan are more useful than an unsupported ranking."
+        },
+        {
+          "id": "phh_p_145",
+          "type": "paragraph",
+          "text": "Before committing to treatment, seek a specialist opinion, verify the hospital's current services and request an itemised estimate. If the condition is urgent, timely medical care comes before a long comparison or travel planning."
+        },
+        {
+          "id": "phh_p_146",
+          "type": "paragraph",
+          "text": "This article is for education. It is not a ranking, an endorsement or a guarantee of hospital quality. Services and availability can change. Confirm the current team, whether the procedure is available, and the treatment estimate directly with the hospital. Clinical decisions belong with qualified pediatric cardiac specialists."
+        },
+        {
+          "id": "phh_p_147",
+          "type": "paragraph",
+          "text": "**GAF Healthcare can help international families organise medical records, coordinate enquiries with relevant hospitals and request preliminary treatment estimates.** Prepare the diagnosis, the latest echocardiogram, age, weight, previous treatment records and the current medicine list."
+        },
+        {
+          "id": "phh_b_148",
+          "type": "button",
+          "label": "Speak to a patient coordinator",
+          "href": "https://wa.me/919044346292?text=Please%20help%20coordinate%20a%20pediatric%20cardiology%20review%20and%20enquiries%20with%20suitable%20hospitals%20in%20India.%20The%20treating%20team%20must%20confirm%20the%20procedure%20and%20whether%20travel%20is%20safe.%20Do%20not%20name%20a%20best%20surgeon%20or%20a%20best%20hospital.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "phh_h_149",
+          "type": "heading",
+          "level": 3,
+          "text": "Sources used for this guide"
+        },
+        {
+          "id": "phh_l_150",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[AIIMS Cardiothoracic Sciences Centre](https://aiims.edu/index.php/en/centre_home)",
+            "[AIIMS Department of Cardiology](https://www.aiims.edu/index.php/en/departments-and-centers/departments?id=642)",
+            "[Apollo Children's Hospitals, Chennai](https://www.apollohospitals.com/hospitals/apollo-childrens-hospitals-chennai)",
+            "[Apollo Hospitals, Hyderabad — pediatric cardiac surgery](https://www.apollohospitals.com/region/hyderabad/hospitals/jubilee-hills/specialities/cardiology/paediatric-cardiac-surgery/)",
+            "[Apollo Hospitals, Delhi — pediatrics](https://www.apollohospitals.com/delhi/departments/pediatrics)",
+            "[Fortis Hospital, Mohali — Rotary Heartline milestone, May 2026](https://www.fortishealthcare.com/media-centre/press-release/rotary-club-chandigarh-and-fortis-hospital-mohali-mark-800th-life-saving)",
+            "[Indian guidelines for indications and timing of intervention for common congenital heart diseases](https://pmc.ncbi.nlm.nih.gov/articles/PMC6716301/)",
+            "[Guidelines for the management of common congenital heart diseases in India](https://pmc.ncbi.nlm.nih.gov/articles/PMC6796629/)",
+            "[Pediatric cardiac procedures in India: Who bears the cost?](https://pmc.ncbi.nlm.nih.gov/articles/PMC11198927/)",
+            "[CDC — Congenital heart defects](https://www.cdc.gov/heart-defects/about/index.html)"
+          ]
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Pediatric Heart Surgery in India",
+          "href": "/treatments/pediatric-heart-surgery-in-india"
+        },
+        {
+          "label": "Pediatric heart surgery cost in India",
+          "href": "/blogs/pediatric-heart-surgery-cost-in-india"
+        },
+        {
+          "label": "Pediatric cardiac surgeons in India",
+          "href": "/doctors/India/Pediatric-Cardiac-Surgery"
+        },
+        {
+          "label": "Pediatric cardiac hospitals in India",
+          "href": "/hospitals/India/Pediatric-Cardiac-Surgery"
+        },
+        {
+          "label": "ASD closure in children",
+          "href": "/blogs/asd-closure-in-children"
+        },
+        {
+          "label": "Tetralogy of Fallot surgery in India",
+          "href": "/blogs/tetralogy-of-fallot-surgery-india"
+        }
+      ]
+    },
     {
       "id": "art_pediatric_heart_surgery_cost_india",
       "slug": "pediatric-heart-surgery-cost-in-india",
