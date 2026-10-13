@@ -88,6 +88,8 @@ test("the ASD closure guide keeps the quick answer and the directory planning ba
     "/blogs/signs-of-congenital-heart-disease-in-babies",
     "/blogs/tetralogy-of-fallot-surgery-india",
     "/blogs/pda-closure-in-babies",
+    "/blogs/pediatric-heart-surgery-cost-in-india",
+    "/blogs/best-hospitals-pediatric-heart-surgery-india",
     "/blogs/second-opinion-congenital-heart-surgery-india",
     "/blogs/heart-surgery-recovery-in-india",
     "/blogs/questions-to-ask-before-heart-surgery",
