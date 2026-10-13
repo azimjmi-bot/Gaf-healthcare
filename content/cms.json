@@ -2092,9 +2092,1052 @@
       "name": "pda-babies-followup.webp",
       "alt": "Four-step diagram labeled Echo, Closure, Observation and Follow-up, with a probe, a device in a vessel, a heart monitor and a calendar",
       "addedAt": "2026-10-13T16:00:00.000Z"
+    },
+    {
+      "id": "media_ohs_vs_cath_webp",
+      "url": "/uploads/articles/ohs-vs-cath.webp",
+      "name": "ohs-vs-cath.webp",
+      "alt": "Two panels comparing surgical access through the chest with a catheter from a groin vessel to a device in the heart",
+      "addedAt": "2026-10-13T17:30:00.000Z"
+    },
+    {
+      "id": "media_cath_defects_webp",
+      "url": "/uploads/articles/cath-defects.webp",
+      "name": "cath-defects.webp",
+      "alt": "Three heart diagrams labeled ASD, PDA and Balloon, showing a device between the upper chambers, a plug in a short vessel, and a balloon widening a valve",
+      "addedAt": "2026-10-13T17:30:00.000Z"
+    },
+    {
+      "id": "media_surgery_defects_webp",
+      "url": "/uploads/articles/surgery-defects.webp",
+      "name": "surgery-defects.webp",
+      "alt": "Diagrams of tetralogy of Fallot and a complex ventricular septal defect, each with a surgical patch",
+      "addedAt": "2026-10-13T17:30:00.000Z"
+    },
+    {
+      "id": "media_recovery_compare_webp",
+      "url": "/uploads/articles/recovery-compare.webp",
+      "name": "recovery-compare.webp",
+      "alt": "Two timelines: catheter steps labeled Access, Device and Home, and surgery steps labeled Operation, ICU and Follow-up",
+      "addedAt": "2026-10-13T17:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_open_heart_vs_catheter_children",
+      "slug": "open-heart-surgery-vs-catheter-treatment-children",
+      "title": "Open-Heart Surgery vs Catheter Treatment for Children: Differences, Risks, Recovery and Cost in India",
+      "excerpt": "Compare open-heart surgery and catheter treatment for children with congenital heart defects, including suitability, risks, recovery and planning costs in India.",
+      "date": "13 October 2026",
+      "publishedAt": "2026-10-13T17:30:00.000Z",
+      "updatedAt": "2026-10-13T17:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "congenital heart",
+        "catheter",
+        "pediatric",
+        "India"
+      ],
+      "image": "/uploads/articles/ohs-vs-cath.webp",
+      "imageAlt": "Two panels comparing surgical access through the chest with a catheter from a groin vessel to a device in the heart",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Open-Heart Surgery vs Catheter Treatment for Children",
+      "seoDescription": "Compare open-heart surgery and catheter treatment for children with congenital heart defects. Learn about procedures, suitability, risks, recovery, costs and treatment in India.",
+      "canonical": "https://gaf.healthcare/blogs/open-heart-surgery-vs-catheter-treatment-children",
+      "ogImage": "/uploads/articles/ohs-vs-cath.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Open-heart surgery vs catheter treatment for children",
+        "Catheter treatment for congenital heart defects",
+        "Pediatric heart surgery in India",
+        "Open-heart surgery for babies",
+        "Non-surgical treatment for heart defects in children",
+        "ASD device closure in children",
+        "VSD surgery vs device closure",
+        "Cardiac catheterization in children",
+        "Congenital heart defect treatment options",
+        "Pediatric cardiac surgery cost in India",
+        "Recovery after pediatric heart surgery",
+        "Minimally invasive heart treatment for children",
+        "Pediatric interventional cardiology in India"
+      ],
+      "blocks": [
+        {
+          "id": "ohc_p_1",
+          "type": "paragraph",
+          "text": "**Open-heart surgery vs catheter treatment for children** is a comparison parents meet after a congenital heart defect is diagnosed. Neither approach is automatically better. The right choice depends on the defect, its size and location, the child's age and weight, and what the treating team can repair safely."
+        },
+        {
+          "id": "ohc_p_2",
+          "type": "paragraph",
+          "text": "Catheter treatment reaches the heart through a blood vessel. Open-heart surgery reaches it through an incision so the surgeon can repair the heart directly. A smaller access site is an advantage only when that approach can actually correct the problem."
+        },
+        {
+          "id": "ohc_p_3",
+          "type": "paragraph",
+          "text": "**Important:** Severe breathing difficulty, gasping, blue or grey lips or tongue, collapse, unresponsiveness or sudden deterioration needs emergency care now. Do not delay treatment to compare hospitals or arrange travel."
+        },
+        {
+          "id": "ohc_x_4",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>Neither treatment is automatically better for every child. The right choice depends on the type of heart defect, its size and location, the child's age and weight, the surrounding heart structures, and the experience of the treating team.</p><p><strong>Catheter treatment</strong> uses a thin, flexible tube inserted through a blood vessel to reach the heart. In selected children, doctors can use a device, balloon or stent to close an opening or improve blood flow without opening the chest.</p><p><strong>Open-heart surgery</strong> involves operating directly on the heart through a surgical incision. It may be necessary when a defect is too complex for catheter treatment, when several structures need repair, or when a surgical approach is expected to provide the most appropriate result.</p><p>A catheter procedure usually involves a smaller access site and may allow a shorter hospital stay, but it still carries risks and is not suitable for every defect. Open-heart surgery is a major operation, but it can repair complex abnormalities that a catheter procedure cannot adequately correct.</p><p>The safest approach is to ask a pediatric cardiologist and congenital heart surgeon to explain which options are suitable for your child's specific anatomy, why one is preferred, and what the expected benefits, risks, costs and follow-up requirements are.</p></div></aside>"
+        },
+        {
+          "id": "ohc_p_5",
+          "type": "paragraph",
+          "text": "The programme overview is [Pediatric Heart Surgery in India](/treatments/pediatric-heart-surgery-in-india). Named procedures include [ASD closure](/treatments/asd-closure-surgery-in-india), [VSD surgery](/treatments/ventricular-septal-defect-surgery-in-india), [PDA closure](/treatments/pda-closure-surgery-in-india), [TOF repair](/treatments/tof-repair-surgery-in-india), [coarctation repair](/treatments/coarctation-repair-surgery-in-india) and the [arterial switch operation](/treatments/arterial-switch-operation-in-india)."
+        },
+        {
+          "id": "ohc_p_6",
+          "type": "paragraph",
+          "text": "Planning figures live on the [pediatric cardiac surgery cost directory](/costs/India/Pediatric-Cardiac-Surgery). Families comparing [pediatric cardiac surgeons](/doctors/India/Pediatric-Cardiac-Surgery) can start with [Delhi NCR](/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/doctors/India/Mumbai/Pediatric-Cardiac-Surgery), [Bengaluru](/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery), [Chennai](/doctors/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery). Hospital lists use the same cities: [India](/hospitals/India/Pediatric-Cardiac-Surgery), [Delhi NCR](/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery), [Bengaluru](/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery), [Chennai](/hospitals/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Pediatric-Cardiac-Surgery)."
+        },
+        {
+          "id": "ohc_i_7",
+          "type": "image",
+          "src": "/uploads/articles/ohs-vs-cath.webp",
+          "alt": "Two panels comparing surgical access through the chest with a catheter from a groin vessel to a device in the heart",
+          "caption": "Surgery reaches the heart through an incision. A catheter reaches it through a blood vessel."
+        },
+        {
+          "id": "ohc_b_8",
+          "type": "button",
+          "label": "Share the echo and ask which approach fits",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20congenital%20heart%20echo%20I%20can%20send%20for%20my%20child%20and%20say%20whether%20the%20question%20is%20catheter%20treatment%2C%20open-heart%20surgery%2C%20or%20both.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "ohc_x_9",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-understanding-congenital-heart-defects-in-children\">1. Understanding Congenital Heart Defects in Children</a></li><li><a href=\"#2-what-is-open-heart-surgery-in-children\">2. What Is Open-Heart Surgery in Children?</a></li><li><a href=\"#3-what-is-catheter-treatment-for-children\">3. What Is Catheter Treatment for Children?</a></li><li><a href=\"#4-open-heart-surgery-vs-catheter-treatment-key-differences\">4. Open-Heart Surgery vs Catheter Treatment: Key Differences</a></li><li><a href=\"#5-which-heart-defects-can-be-treated-with-a-catheter\">5. Which Heart Defects Can Be Treated With a Catheter?</a></li><li><a href=\"#6-which-heart-defects-usually-require-surgery\">6. Which Heart Defects Usually Require Surgery?</a></li><li><a href=\"#7-how-do-doctors-decide-between-open-heart-surgery-and-catheter-treatment\">7. How Do Doctors Decide Between Open-Heart Surgery and Catheter Treatment?</a></li><li><a href=\"#8-is-catheter-treatment-safer-than-open-heart-surgery\">8. Is Catheter Treatment Safer Than Open-Heart Surgery?</a></li><li><a href=\"#9-recovery-catheter-treatment-vs-open-heart-surgery\">9. Recovery: Catheter Treatment vs Open-Heart Surgery</a></li><li><a href=\"#10-what-are-the-costs-of-catheter-treatment-and-open-heart-surgery-in-india\">10. What Are the Costs of Catheter Treatment and Open-Heart Surgery in India?</a></li><li><a href=\"#11-questions-to-ask-before-choosing-a-procedure\">11. Questions to Ask Before Choosing a Procedure</a></li><li><a href=\"#12-is-a-second-opinion-helpful\">12. Is a Second Opinion Helpful?</a></li><li><a href=\"#13-what-should-international-families-consider-when-seeking-treatment-in-india\">13. What Should International Families Consider When Seeking Treatment in India?</a></li><li><a href=\"#14-frequently-asked-questions\">14. Frequently Asked Questions</a></li><li><a href=\"#15-conclusion-choose-the-right-treatment-for-your-child-not-just-the-less-invasi\">15. Conclusion: Choose the Right Treatment for Your Child, Not Just the Less Invasive One</a></li></ol></nav>"
+        },
+        {
+          "id": "ohc_h_10",
+          "type": "heading",
+          "level": 2,
+          "text": "1. Understanding Congenital Heart Defects in Children"
+        },
+        {
+          "id": "ohc_p_11",
+          "type": "paragraph",
+          "text": "Congenital heart defects are structural problems of the heart or major blood vessels that develop before birth. They range from small openings that may need only monitoring to complex conditions that need urgent treatment."
+        },
+        {
+          "id": "ohc_p_12",
+          "type": "paragraph",
+          "text": "The heart has four chambers, valves that direct blood flow, and major vessels that carry blood to the lungs and the rest of the body. A defect in one or more of these structures can change how blood circulates."
+        },
+        {
+          "id": "ohc_p_13",
+          "type": "paragraph",
+          "text": "Some children have symptoms soon after birth, such as blue or grey lips or tongue, rapid breathing or difficulty feeding. Others have few symptoms and are diagnosed during a routine examination or after an echocardiogram."
+        },
+        {
+          "id": "ohc_p_14",
+          "type": "paragraph",
+          "text": "Treatment depends on the defect and its effects. Some children need no immediate intervention. Others need medication, catheter-based treatment, surgery, or a combination over time."
+        },
+        {
+          "id": "ohc_h_15",
+          "type": "heading",
+          "level": 3,
+          "text": "Why are there two main treatment approaches?"
+        },
+        {
+          "id": "ohc_p_16",
+          "type": "paragraph",
+          "text": "Pediatric cardiology can now treat selected defects through blood vessels rather than through open surgery. Those catheter procedures can be very effective when the anatomy is suitable."
+        },
+        {
+          "id": "ohc_p_17",
+          "type": "paragraph",
+          "text": "Catheter treatment cannot replace surgery in every case. Some defects involve several structures, need extensive reconstruction, or need a repair that cannot be done safely with a catheter. The goal is the repair that fits the child's anatomy and long-term health, not the procedure with the smallest incision."
+        },
+        {
+          "id": "ohc_h_18",
+          "type": "heading",
+          "level": 2,
+          "text": "2. What Is Open-Heart Surgery in Children?"
+        },
+        {
+          "id": "ohc_p_19",
+          "type": "paragraph",
+          "text": "Open-heart surgery is an operation in which the surgeon works on the heart directly to repair a structural defect. The phrase does not mean the heart is removed. It means the surgical team operates on the heart itself. Many congenital operations use a heart-lung machine, called cardiopulmonary bypass, while the surgeon works."
+        },
+        {
+          "id": "ohc_p_20",
+          "type": "paragraph",
+          "text": "Not every heart operation uses the same technique. The approach depends on the condition, the child's anatomy and the planned repair. [Pediatric Heart Surgery in India](/treatments/pediatric-heart-surgery-in-india) is the overview of how those operations are planned."
+        },
+        {
+          "id": "ohc_h_21",
+          "type": "heading",
+          "level": 3,
+          "text": "How is open-heart surgery performed?"
+        },
+        {
+          "id": "ohc_l_22",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Anaesthesia and monitoring.** The child receives general anaesthesia. The team monitors breathing, heart rate, blood pressure, oxygen and other vital signs.",
+            "**Surgical access.** The surgeon makes an incision to reach the heart. Many congenital operations use an incision through the breastbone. Selected procedures use a different approach.",
+            "**Cardiopulmonary bypass, when required.** A heart-lung machine may temporarily support circulation and oxygenation. Not every cardiac operation needs bypass.",
+            "**Repairing the defect.** The surgeon may close an opening with a patch, repair a valve, widen a narrowed pathway, or correct a more complex abnormality.",
+            "**Checking the result.** The team assesses the repair before the operation is completed.",
+            "**Recovery in intensive care.** The child is monitored in a pediatric or cardiac intensive care unit. The length of that stay depends on the procedure and the recovery."
+          ]
+        },
+        {
+          "id": "ohc_h_23",
+          "type": "heading",
+          "level": 3,
+          "text": "What conditions may require open-heart surgery?"
+        },
+        {
+          "id": "ohc_l_24",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Complex ventricular septal defects that are not suitable for device closure.",
+            "Tetralogy of Fallot and other complex congenital conditions.",
+            "Certain atrioventricular septal defects.",
+            "Some defects that involve several heart structures.",
+            "Valve abnormalities that need surgical repair or replacement.",
+            "Conditions that need reconstruction of major blood vessels.",
+            "Cases where catheter treatment is unsuitable, unsuccessful, or unlikely to give the required result."
+          ]
+        },
+        {
+          "id": "ohc_p_25",
+          "type": "paragraph",
+          "text": "These are examples, not a rule for every child with that diagnosis. Some children with a condition on this list can still be candidates for catheter-based or hybrid treatment, depending on anatomy."
+        },
+        {
+          "id": "ohc_h_26",
+          "type": "heading",
+          "level": 2,
+          "text": "3. What Is Catheter Treatment for Children?"
+        },
+        {
+          "id": "ohc_p_27",
+          "type": "paragraph",
+          "text": "Cardiac catheter treatment passes a thin, flexible tube through a blood vessel and guides it toward the heart with imaging. The catheter is often introduced through a vessel in the groin. A different access site is used in selected cases."
+        },
+        {
+          "id": "ohc_p_28",
+          "type": "paragraph",
+          "text": "The cardiologist can pass tools through the catheter without a surgical opening in the chest. The procedure takes place in a cardiac catheterisation laboratory. It may close selected openings, widen narrowed valves or vessels, place stents, or improve circulation in specific congenital conditions."
+        },
+        {
+          "id": "ohc_h_29",
+          "type": "heading",
+          "level": 3,
+          "text": "How does a catheter procedure work?"
+        },
+        {
+          "id": "ohc_l_30",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Preparation.** The team reviews the diagnosis, imaging, history and suitability. The child is monitored and receives anaesthesia or sedation according to age and the intervention.",
+            "**Access through a blood vessel.** A small puncture introduces the catheter.",
+            "**Guidance to the heart.** Imaging, often X-ray fluoroscopy and echocardiography when needed, guides the catheter.",
+            "**Treatment.** The doctor may deploy a closure device, inflate a balloon, or place a stent.",
+            "**Assessment and recovery.** The team checks the result and watches for bleeding, circulation problems, rhythm changes and other complications."
+          ]
+        },
+        {
+          "id": "ohc_p_31",
+          "type": "paragraph",
+          "text": "Some children go home the same day or after one night. Others need longer observation. A parent guide to one common catheter closure is [PDA closure in babies](/blogs/pda-closure-in-babies)."
+        },
+        {
+          "id": "ohc_h_32",
+          "type": "heading",
+          "level": 3,
+          "text": "Does catheter treatment mean there is no surgery?"
+        },
+        {
+          "id": "ohc_p_33",
+          "type": "paragraph",
+          "text": "Not necessarily. Catheter treatment avoids a conventional open-chest operation for that intervention, but it is still an invasive procedure. It may involve anaesthesia, specialised equipment, imaging, a hospital stay and a recovery period. Some children later need another catheter procedure or surgery."
+        },
+        {
+          "id": "ohc_p_34",
+          "type": "paragraph",
+          "text": "Ask whether the proposed catheter procedure is meant to be definitive treatment, a temporary measure, or one stage in a longer plan."
+        },
+        {
+          "id": "ohc_h_35",
+          "type": "heading",
+          "level": 2,
+          "text": "4. Open-Heart Surgery vs Catheter Treatment: Key Differences"
+        },
+        {
+          "id": "ohc_p_36",
+          "type": "paragraph",
+          "text": "The main difference is how the defect is reached and repaired. The best option is the one that can treat the child's anatomy appropriately."
+        },
+        {
+          "id": "ohc_i_37",
+          "type": "image",
+          "src": "/uploads/articles/cath-defects.webp",
+          "alt": "Three heart diagrams labeled ASD, PDA and Balloon, showing a device between the upper chambers, a plug in a short vessel, and a balloon widening a valve",
+          "caption": "Selected ASDs, PDAs and narrowed valves are examples of problems a catheter can treat when the anatomy fits."
+        },
+        {
+          "id": "ohc_p_38",
+          "type": "paragraph",
+          "text": "| Feature | Open-heart surgery | Catheter treatment |\n| --- | --- | --- |\n| Access | Surgical incision to reach the heart | Catheter through a blood vessel |\n| Chest incision | Usually required | Usually not required |\n| Heart-lung machine | Used in many operations, not all | Generally not used for a standard catheter procedure |\n| Type of repair | Complex defects and reconstruction of several structures | Selected defects and specific structural problems |\n| Typical recovery | Often a longer hospital stay | Often a shorter stay when the procedure is straightforward |\n| Wound | Surgical incision and wound care | Small access-site wound |\n| Team | Pediatric cardiac surgery, anaesthesia and intensive care | Pediatric interventional cardiology and a catheter laboratory |\n| Later treatment | Some children need another procedure | Some children need a repeat catheter procedure or later surgery |"
+        },
+        {
+          "id": "ohc_p_39",
+          "type": "paragraph",
+          "text": "**Important:** These are general differences, not guarantees. A catheter procedure can be complex, and recovery after surgery varies. The treating team should explain what is likely for your child."
+        },
+        {
+          "id": "ohc_b_40",
+          "type": "button",
+          "label": "Ask whether this defect can be treated by catheter",
+          "href": "https://wa.me/919044346292?text=Please%20review%20my%20child's%20echo%20and%20say%20whether%20catheter%20treatment%20is%20anatomically%20suitable%2C%20or%20whether%20surgery%20is%20the%20question.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "ohc_h_41",
+          "type": "heading",
+          "level": 2,
+          "text": "5. Which Heart Defects Can Be Treated With a Catheter?"
+        },
+        {
+          "id": "ohc_p_42",
+          "type": "paragraph",
+          "text": "Suitability depends on the exact defect, its location and size, the surrounding structures, and the child's age and weight."
+        },
+        {
+          "id": "ohc_h_43",
+          "type": "heading",
+          "level": 3,
+          "text": "Atrial septal defect (ASD)"
+        },
+        {
+          "id": "ohc_p_44",
+          "type": "paragraph",
+          "text": "An atrial septal defect is an opening between the two upper chambers. Selected secundum ASDs with enough surrounding tissue can be closed with a device delivered through a catheter. Not every ASD suits a device. Some need surgery, and some small defects only need monitoring. The procedure page is [ASD closure in India](/treatments/asd-closure-surgery-in-india)."
+        },
+        {
+          "id": "ohc_h_45",
+          "type": "heading",
+          "level": 3,
+          "text": "Ventricular septal defect (VSD)"
+        },
+        {
+          "id": "ohc_p_46",
+          "type": "paragraph",
+          "text": "A ventricular septal defect is an opening between the two lower chambers. Some can be closed with a catheter device. Suitability depends on location, the relationship to valves and the electrical conduction tissue, and the child's anatomy. Many VSDs do not qualify for a device. Others close naturally or need surgical repair. See [VSD surgery in India](/treatments/ventricular-septal-defect-surgery-in-india)."
+        },
+        {
+          "id": "ohc_h_47",
+          "type": "heading",
+          "level": 3,
+          "text": "Patent ductus arteriosus (PDA)"
+        },
+        {
+          "id": "ohc_p_48",
+          "type": "paragraph",
+          "text": "The ductus arteriosus helps circulation before birth and usually closes afterwards. If it stays open, many suitable ducts can be closed with a catheter device or coil. The baby's size, the vessel's shape and the clinical situation decide. Some premature or very small infants need a different approach. Details are on [PDA closure surgery in India](/treatments/pda-closure-surgery-in-india) and in [PDA closure in babies](/blogs/pda-closure-in-babies)."
+        },
+        {
+          "id": "ohc_h_49",
+          "type": "heading",
+          "level": 3,
+          "text": "Pulmonary valve stenosis"
+        },
+        {
+          "id": "ohc_p_50",
+          "type": "paragraph",
+          "text": "Pulmonary valve stenosis is a narrowing of the valve that sends blood from the right ventricle toward the lungs. In selected cases a balloon catheter widens the valve. This is balloon valvuloplasty. Some children need surgery instead, particularly when the anatomy is complex or other defects need repair at the same time."
+        },
+        {
+          "id": "ohc_h_51",
+          "type": "heading",
+          "level": 3,
+          "text": "Coarctation of the aorta"
+        },
+        {
+          "id": "ohc_p_52",
+          "type": "paragraph",
+          "text": "Coarctation is a narrowing of the aorta. Balloon angioplasty or a stent may be appropriate in selected patients. Others need surgery. Age, the location and length of the narrowing, and whether the narrowing is new or has come back all matter. The surgical page is [coarctation repair in India](/treatments/coarctation-repair-surgery-in-india)."
+        },
+        {
+          "id": "ohc_h_53",
+          "type": "heading",
+          "level": 3,
+          "text": "Other selected conditions"
+        },
+        {
+          "id": "ohc_p_54",
+          "type": "paragraph",
+          "text": "Catheter techniques are also used for certain narrowed vessels, abnormal vessels, residual defects after surgery, and selected valve or outflow problems. Some children need staged treatment. Some need both a catheter procedure and an operation."
+        },
+        {
+          "id": "ohc_h_55",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Which Heart Defects Usually Require Surgery?"
+        },
+        {
+          "id": "ohc_p_56",
+          "type": "paragraph",
+          "text": "Some congenital conditions need direct surgical repair because the defect is complex, involves several structures, or cannot be corrected adequately through a catheter. The name of the diagnosis is not enough. The same condition can have different anatomical forms."
+        },
+        {
+          "id": "ohc_i_57",
+          "type": "image",
+          "src": "/uploads/articles/surgery-defects.webp",
+          "alt": "Diagrams of tetralogy of Fallot and a complex ventricular septal defect, each with a surgical patch",
+          "caption": "Complete repair of tetralogy, and many complex ventricular openings, is planned as surgery."
+        },
+        {
+          "id": "ohc_h_58",
+          "type": "heading",
+          "level": 3,
+          "text": "Tetralogy of Fallot"
+        },
+        {
+          "id": "ohc_p_59",
+          "type": "paragraph",
+          "text": "Tetralogy of Fallot includes four structural abnormalities that affect blood flow to the lungs and oxygen delivery to the body. Complete repair commonly requires surgery to close the ventricular septal defect and relieve the obstruction to lung blood flow. Selected catheter procedures can have a role in particular circumstances. They do not replace definitive surgery for every child. The operation is described on [TOF repair in India](/treatments/tof-repair-surgery-in-india)."
+        },
+        {
+          "id": "ohc_h_60",
+          "type": "heading",
+          "level": 3,
+          "text": "Complex ventricular septal defects"
+        },
+        {
+          "id": "ohc_p_61",
+          "type": "paragraph",
+          "text": "Some VSDs sit close to important valves or the electrical conduction tissue. A device may be unsafe because it could interfere with those structures. The surgeon may recommend patch closure."
+        },
+        {
+          "id": "ohc_h_62",
+          "type": "heading",
+          "level": 3,
+          "text": "Conditions involving several structures"
+        },
+        {
+          "id": "ohc_p_63",
+          "type": "paragraph",
+          "text": "When several related abnormalities are present, one operation may correct more than one problem. In other cases a staged plan is safer. Transposition treated by an [arterial switch operation](/treatments/arterial-switch-operation-in-india) is an example of a repair that is planned as surgery, not as a catheter closure. Ask whether the proposed treatment is meant to correct the whole problem or only one part of it."
+        },
+        {
+          "id": "ohc_h_64",
+          "type": "heading",
+          "level": 2,
+          "text": "7. How Do Doctors Decide Between Open-Heart Surgery and Catheter Treatment?"
+        },
+        {
+          "id": "ohc_p_65",
+          "type": "paragraph",
+          "text": "The decision comes from clinical assessment, imaging and the team's experience. It is not decided by which procedure is newer or less invasive."
+        },
+        {
+          "id": "ohc_h_66",
+          "type": "heading",
+          "level": 3,
+          "text": "The exact anatomy"
+        },
+        {
+          "id": "ohc_p_67",
+          "type": "paragraph",
+          "text": "Location, size and shape matter. Some ASDs have rims of tissue that can hold a device. Others do not. A VSD near a valve has different risks from a defect in another location."
+        },
+        {
+          "id": "ohc_h_68",
+          "type": "heading",
+          "level": 3,
+          "text": "Age and weight"
+        },
+        {
+          "id": "ohc_p_69",
+          "type": "paragraph",
+          "text": "A procedure that suits an older child may not suit a very small baby. Vessel size, the devices available and the child's overall condition affect whether a catheter approach is possible."
+        },
+        {
+          "id": "ohc_h_70",
+          "type": "heading",
+          "level": 3,
+          "text": "Symptoms and urgency"
+        },
+        {
+          "id": "ohc_p_71",
+          "type": "paragraph",
+          "text": "The team looks at whether the child is stable, has low oxygen, is struggling to feed or grow, or has other signs that need timely treatment. Emergency symptoms need immediate assessment. Do not delay necessary treatment while comparing hospitals or arranging international travel."
+        },
+        {
+          "id": "ohc_h_72",
+          "type": "heading",
+          "level": 3,
+          "text": "The expected quality of the repair"
+        },
+        {
+          "id": "ohc_p_73",
+          "type": "paragraph",
+          "text": "The team asks which approach is most likely to correct the defect adequately and safely. A less invasive procedure is not preferable if it leaves an important problem untreated or creates a higher risk."
+        },
+        {
+          "id": "ohc_h_74",
+          "type": "heading",
+          "level": 3,
+          "text": "Risks, later procedures, and the hospital"
+        },
+        {
+          "id": "ohc_p_75",
+          "type": "paragraph",
+          "text": "A catheter approach can avoid a chest incision and still cause device movement, vessel injury or rhythm problems. Surgery has its own risks, including bleeding, infection, rhythm abnormalities and issues related to the repair. Some catheter procedures are definitive. Others need to be repeated. Some surgical repairs also need later treatment as the child grows."
+        },
+        {
+          "id": "ohc_p_76",
+          "type": "paragraph",
+          "text": "A suitable centre needs pediatric cardiology, interventional cardiology, cardiac surgery, anaesthesia and intensive care for the treatment being proposed. For complex cases, a discussion between the pediatric cardiologist, the interventional cardiologist and the congenital heart surgeon clarifies the options. [Questions to ask before heart surgery](/blogs/questions-to-ask-before-heart-surgery) is a practical list for that conversation."
+        },
+        {
+          "id": "ohc_h_77",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Is Catheter Treatment Safer Than Open-Heart Surgery?"
+        },
+        {
+          "id": "ohc_p_78",
+          "type": "paragraph",
+          "text": "Catheter treatment is less invasive in how the heart is reached. That does not automatically make it safer for every child. Risk depends on the condition, age, health, anatomy, the planned intervention and the team's experience."
+        },
+        {
+          "id": "ohc_h_79",
+          "type": "heading",
+          "level": 3,
+          "text": "Potential advantages of catheter treatment"
+        },
+        {
+          "id": "ohc_l_80",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "No conventional open-chest operation for that intervention.",
+            "A smaller access-site wound.",
+            "Less disruption of the chest tissues.",
+            "A shorter hospital stay in many suitable cases.",
+            "A faster return to routine activities for some children."
+          ]
+        },
+        {
+          "id": "ohc_p_81",
+          "type": "paragraph",
+          "text": "These are possible advantages, not guaranteed outcomes. A complex catheter procedure can still need substantial monitoring."
+        },
+        {
+          "id": "ohc_h_82",
+          "type": "heading",
+          "level": 3,
+          "text": "Potential limitations of catheter treatment"
+        },
+        {
+          "id": "ohc_l_83",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Not every defect can be treated through a catheter.",
+            "Some devices are unsafe because of the child's anatomy.",
+            "Device movement, residual leak, or interference with nearby structures can occur.",
+            "Blood vessel injury, bleeding or rhythm problems can occur.",
+            "A later catheter procedure or surgery may still be required."
+          ]
+        },
+        {
+          "id": "ohc_h_84",
+          "type": "heading",
+          "level": 3,
+          "text": "Potential advantages and risks of surgery"
+        },
+        {
+          "id": "ohc_p_85",
+          "type": "paragraph",
+          "text": "Surgery gives direct access and can repair complex defects, reconstruct structures, and address several abnormalities together when that is appropriate. For some conditions it is the established approach because a catheter cannot provide the required repair."
+        },
+        {
+          "id": "ohc_p_86",
+          "type": "paragraph",
+          "text": "Open-heart surgery is a major operation. Depending on the procedure, risks can include bleeding, infection, heart rhythm disturbances, complications related to cardiopulmonary bypass, residual defects, or the need for another intervention. The risk of a relatively straightforward repair is not the same as the risk of a complex operation in a medically fragile baby."
+        },
+        {
+          "id": "ohc_p_87",
+          "type": "paragraph",
+          "text": "**The most useful question is not “Which procedure is safest in general?” but “Which option has the best risk-benefit balance for my child?”**"
+        },
+        {
+          "id": "ohc_h_88",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Recovery: Catheter Treatment vs Open-Heart Surgery"
+        },
+        {
+          "id": "ohc_p_89",
+          "type": "paragraph",
+          "text": "Recovery depends on the procedure and on the child's condition before treatment. The hospital should give an individual estimate rather than a fixed recovery time. Broader expectations after an operation are covered in [heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india)."
+        },
+        {
+          "id": "ohc_i_90",
+          "type": "image",
+          "src": "/uploads/articles/recovery-compare.webp",
+          "alt": "Two timelines: catheter steps labeled Access, Device and Home, and surgery steps labeled Operation, ICU and Follow-up",
+          "caption": "A straightforward catheter procedure often means a shorter stay. Open-heart surgery usually includes intensive care and a longer recovery."
+        },
+        {
+          "id": "ohc_h_91",
+          "type": "heading",
+          "level": 3,
+          "text": "Recovery after catheter treatment"
+        },
+        {
+          "id": "ohc_p_92",
+          "type": "paragraph",
+          "text": "Many children recover from a catheter procedure more quickly than from open-heart surgery. The team watches the access site, circulation and heart rhythm. The child may need to lie still for a period to reduce bleeding from the puncture site. Some children go home the same day. Others stay overnight or longer."
+        },
+        {
+          "id": "ohc_p_93",
+          "type": "paragraph",
+          "text": "After discharge, follow the instructions for the access site, activity, medicines and follow-up. Contact the team if the access site develops increasing swelling, redness or pain, or if bleeding occurs. Uncontrolled bleeding, severe breathing difficulty, collapse or other major deterioration needs emergency care."
+        },
+        {
+          "id": "ohc_h_94",
+          "type": "heading",
+          "level": 3,
+          "text": "Recovery after open-heart surgery"
+        },
+        {
+          "id": "ohc_p_95",
+          "type": "paragraph",
+          "text": "Children who have open-heart surgery generally need more intensive monitoring and a longer recovery than children who have a straightforward catheter procedure. Early recovery may include pediatric cardiac intensive care, temporary breathing support when needed, pain management, monitoring of heart function and rhythm, a gradual return to feeding, and wound care."
+        },
+        {
+          "id": "ohc_p_96",
+          "type": "paragraph",
+          "text": "At home, follow instructions about the wound, bathing, medicines, activity and follow-up. The surgical team should say when the child can resume play, school or other activities. There is no universal date for returning to school. Follow the treating team's advice."
+        },
+        {
+          "id": "ohc_h_97",
+          "type": "heading",
+          "level": 2,
+          "text": "10. What Are the Costs of Catheter Treatment and Open-Heart Surgery in India?"
+        },
+        {
+          "id": "ohc_p_98",
+          "type": "paragraph",
+          "text": "GAF Healthcare does not publish one price for every catheter procedure or every open-heart operation. A device closure and a complex congenital repair are different treatments. The [pediatric cardiac surgery cost directory](/costs/India/Pediatric-Cardiac-Surgery) lists planning bands for named procedures. It does not split each row into a separate catheter price and a separate surgical price."
+        },
+        {
+          "id": "ohc_p_99",
+          "type": "paragraph",
+          "text": "Use the band for the procedure the cardiologist is actually considering, then ask the hospital for a written estimate. These ranges are for planning. They are not a quotation."
+        },
+        {
+          "id": "ohc_p_100",
+          "type": "paragraph",
+          "text": "| Named procedure | India planning band | Expected stay | US comparison band |\n| --- | --- | --- | --- |\n| PDA closure | US$3,500–US$8,500 | 3–8 nights; parent stay expected | US$20,000–US$60,000 |\n| ASD closure | US$4,000–US$9,500 | 5–10 nights; parent stay expected | US$30,000–US$80,000 |\n| VSD closure | US$4,500–US$11,000 | 6–12 nights; parent stay expected | US$35,000–US$90,000 |\n| Coarctation repair | US$6,000–US$15,000 | 6–14 nights; parent stay expected | US$40,000–US$110,000 |\n| TOF repair | US$6,500–US$16,000 | 8–16 nights; parent stay expected | US$50,000–US$140,000 |\n| AVSD repair | US$8,000–US$18,500 | 8–16 nights; parent stay expected | US$55,000–US$150,000 |\n| Arterial switch | US$12,000–US$26,000 | 10–21 nights; parent stay expected | US$80,000–US$200,000 |"
+        },
+        {
+          "id": "ohc_p_101",
+          "type": "paragraph",
+          "text": "Named rows include [PDA closure](/costs/India/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)), [ASD closure](/costs/India/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)), [VSD closure](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)), [coarctation repair](/costs/India/Pediatric-Cardiac-Surgery/Coarctation-Repair), [TOF repair](/costs/India/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)) and the [arterial switch operation](/costs/India/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation). The broader congenital category, which is not a PDA-only or ASD-only tariff, is on [India](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery), [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery) and [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery)."
+        },
+        {
+          "id": "ohc_h_102",
+          "type": "heading",
+          "level": 3,
+          "text": "What changes the estimate?"
+        },
+        {
+          "id": "ohc_l_103",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "The diagnosis and the exact procedure.",
+            "Whether a closure device, balloon, stent, patch or heart-lung machine is required.",
+            "The child's age, weight and other medical problems.",
+            "Catheter-laboratory or operating-theatre charges, anaesthesia and the surgical or interventional team.",
+            "Pediatric cardiac intensive care and the length of admission.",
+            "Medicines, tests, and any further procedure if the first result is incomplete."
+          ]
+        },
+        {
+          "id": "ohc_p_104",
+          "type": "paragraph",
+          "text": "A device can be a large part of a catheter estimate. Surgery can involve more intensive care and a longer admission. **Do not compare only the first package price.** Ask whether the procedure is expected to be definitive and whether later treatment may be needed. An extended ICU stay or a complication can change the final bill."
+        },
+        {
+          "id": "ohc_b_105",
+          "type": "button",
+          "label": "Request written estimates for the suitable options",
+          "href": "https://wa.me/919044346292?text=Please%20use%20the%20echo%20I%20can%20send%20to%20request%20written%20estimates%20for%20the%20catheter%20and%20surgical%20options%20that%20are%20actually%20suitable%20for%20my%20child.%20Say%20what%20is%20included.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "ohc_h_106",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Questions to Ask Before Choosing a Procedure"
+        },
+        {
+          "id": "ohc_p_107",
+          "type": "paragraph",
+          "text": "Parents should hear why a procedure is recommended and what the alternatives are. Useful questions:"
+        },
+        {
+          "id": "ohc_l_108",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is the exact defect, and what does the echocardiogram show?",
+            "Is the condition suitable for catheter treatment, surgery, or both?",
+            "Why do you recommend this approach for my child?",
+            "What are the main risks of each suitable option?",
+            "Is the procedure expected to provide a complete repair?",
+            "Could another procedure be needed later?",
+            "How much experience does this team have with this specific intervention?",
+            "What ICU stay and hospital stay are expected?",
+            "What is included in the written cost estimate, and what extra costs can arise?",
+            "When can my child return to feeding, school and usual activity?",
+            "What follow-up tests are required, and how will follow-up work if we live outside India?"
+          ]
+        },
+        {
+          "id": "ohc_p_109",
+          "type": "paragraph",
+          "text": "Ask for medical terms in everyday language. The discussion should help you understand the options."
+        },
+        {
+          "id": "ohc_h_110",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Is a Second Opinion Helpful?"
+        },
+        {
+          "id": "ohc_p_111",
+          "type": "paragraph",
+          "text": "A second opinion can help when the diagnosis is complex, the proposed treatment is major, or you have been told that only one approach is possible and you want to understand why. The purpose is to clarify the options, not to delay urgent care. The practical record list is in the [second-opinion guide for congenital heart surgery](/blogs/second-opinion-congenital-heart-surgery-india)."
+        },
+        {
+          "id": "ohc_l_112",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Whether the defect has been fully described.",
+            "Whether catheter treatment is anatomically possible.",
+            "Why surgery is recommended instead of a catheter procedure, or the reverse.",
+            "Whether a staged plan is needed.",
+            "The expected benefits, risks and follow-up.",
+            "Whether the cost estimate matches the recommended procedure."
+          ]
+        },
+        {
+          "id": "ohc_p_113",
+          "type": "paragraph",
+          "text": "Share the echocardiography images and report, ECG, previous records, the medication list and the written recommendation when you have them. If the child has severe breathing difficulty, blue or grey lips or tongue, collapse, unresponsiveness or sudden deterioration, seek emergency care rather than waiting for a second opinion."
+        },
+        {
+          "id": "ohc_b_114",
+          "type": "button",
+          "label": "Send the current recommendation for review",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20congenital%20heart%20recommendation%20I%20can%20send%20and%20say%20which%20records%20are%20still%20needed%20to%20compare%20catheter%20treatment%20and%20surgery.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "ohc_h_115",
+          "type": "heading",
+          "level": 2,
+          "text": "13. What Should International Families Consider When Seeking Treatment in India?"
+        },
+        {
+          "id": "ohc_p_116",
+          "type": "paragraph",
+          "text": "Families travelling to India need clinical suitability, timing, cost and follow-up settled alongside travel. First confirm that the child is stable and whether treatment is urgent. Do not travel with an unstable child unless the treating clinicians have said that travel is appropriate."
+        },
+        {
+          "id": "ohc_l_117",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Before travel.** Collect echocardiography images and reports, discharge summaries, medicines and relevant tests. Ask whether a records review is possible and which extra tests will be needed.",
+            "**Confirm the plan.** The team should explain the procedure, its purpose, the alternatives and how urgent it is. A records opinion may change after examination and repeat imaging.",
+            "**Obtain a written estimate.** Ask for the planned procedure, device or surgical costs, the expected admission and ICU time, currency, payment terms, and what happens if the stay is longer.",
+            "**Plan for a caregiver.** A child generally needs a parent or guardian. Plan accommodation near the hospital and the possibility of a longer stay.",
+            "**Arrange follow-up before going home.** Take the procedure report, discharge summary, medicine instructions and follow-up plan. Ask which symptoms need urgent assessment after you return."
+          ]
+        },
+        {
+          "id": "ohc_p_118",
+          "type": "paragraph",
+          "text": "GAF Healthcare coordinates record sharing, consultations, treatment estimates and relevant travel logistics. The treating team remains responsible for the diagnosis, the choice of procedure, the explanation of risk, and the decision about whether the child is fit to travel."
+        },
+        {
+          "id": "ohc_b_119",
+          "type": "button",
+          "label": "Ask whether travel is safe for this child",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20congenital%20heart%20records%20I%20can%20send%20and%20say%20whether%20travel%20to%20India%20is%20a%20question%20the%20treating%20team%20should%20answer%20before%20any%20plan%20is%20made.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "ohc_h_120",
+          "type": "heading",
+          "level": 2,
+          "text": "14. Frequently Asked Questions"
+        },
+        {
+          "id": "ohc_h_121",
+          "type": "heading",
+          "level": 3,
+          "text": "Is catheter treatment better than open-heart surgery for children?"
+        },
+        {
+          "id": "ohc_p_122",
+          "type": "paragraph",
+          "text": "Neither is universally better. Catheter treatment suits selected defects. Surgery is necessary for many complex abnormalities. The right approach depends on anatomy, age, condition and the quality of repair the team expects."
+        },
+        {
+          "id": "ohc_h_123",
+          "type": "heading",
+          "level": 3,
+          "text": "Is catheter treatment safer for babies?"
+        },
+        {
+          "id": "ohc_p_124",
+          "type": "paragraph",
+          "text": "Not automatically. A catheter procedure avoids a conventional open-chest operation and still carries risks. Very small babies can have extra anatomical and technical limits. The team should explain the risks of the specific procedure for that baby."
+        },
+        {
+          "id": "ohc_h_125",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a hole in a child's heart be closed without surgery?"
+        },
+        {
+          "id": "ohc_p_126",
+          "type": "paragraph",
+          "text": "Some atrial septal defects, selected ventricular septal defects and many suitable patent ductus arteriosus cases can be closed with a catheter device. Other defects need surgery or only observation. Suitability depends on the precise anatomy."
+        },
+        {
+          "id": "ohc_h_127",
+          "type": "heading",
+          "level": 3,
+          "text": "Does catheter treatment require general anaesthesia?"
+        },
+        {
+          "id": "ohc_p_128",
+          "type": "paragraph",
+          "text": "Many pediatric catheter procedures use general anaesthesia. The approach depends on the child's age, the procedure and the centre. The anaesthesia team should explain what will be used and how the child will be monitored."
+        },
+        {
+          "id": "ohc_h_129",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does a child stay in hospital after catheter treatment?"
+        },
+        {
+          "id": "ohc_p_130",
+          "type": "paragraph",
+          "text": "Some children go home the same day. Others stay overnight or longer. The directory planning stays for related named procedures start at 3–8 nights; parent stay expected for PDA closure and are longer for more complex repairs. The treating team estimates the stay for the individual child."
+        },
+        {
+          "id": "ohc_h_131",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does a child stay in hospital after open-heart surgery?"
+        },
+        {
+          "id": "ohc_p_132",
+          "type": "paragraph",
+          "text": "The stay follows the operation. On the pediatric directory, planning stays include 6–12 nights; parent stay expected for VSD closure, 8–16 nights; parent stay expected for TOF repair and 10–21 nights; parent stay expected for an arterial switch. Major surgery usually includes intensive care. The team estimates the likely duration for that child."
+        },
+        {
+          "id": "ohc_h_133",
+          "type": "heading",
+          "level": 3,
+          "text": "Can catheter treatment fail?"
+        },
+        {
+          "id": "ohc_p_134",
+          "type": "paragraph",
+          "text": "A catheter procedure may not achieve the intended result, or it may show that another approach is needed. Some children need another catheter intervention or surgery. The team should explain that likelihood from the anatomy and the procedure, not from a general success slogan."
+        },
+        {
+          "id": "ohc_h_135",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a child still need surgery after catheter treatment?"
+        },
+        {
+          "id": "ohc_p_136",
+          "type": "paragraph",
+          "text": "Yes. A catheter procedure may be definitive, temporary, or one stage of a longer plan. Some children later need surgery because of the original condition, a residual problem, or changes as they grow."
+        },
+        {
+          "id": "ohc_h_137",
+          "type": "heading",
+          "level": 3,
+          "text": "Does open-heart surgery permanently cure congenital heart disease?"
+        },
+        {
+          "id": "ohc_p_138",
+          "type": "paragraph",
+          "text": "Some defects are repaired very successfully. Surgery does not remove the need for follow-up. Residual abnormalities, rhythm problems or other issues can develop, and some conditions need lifelong cardiac monitoring."
+        },
+        {
+          "id": "ohc_h_139",
+          "type": "heading",
+          "level": 3,
+          "text": "Is catheter treatment cheaper than open-heart surgery?"
+        },
+        {
+          "id": "ohc_p_140",
+          "type": "paragraph",
+          "text": "Not always. The directory does not publish a separate catheter price and a separate surgical price for the same defect. PDA closure is planned at US$3,500–US$8,500, ASD closure at US$4,000–US$9,500, and an arterial switch at US$12,000–US$26,000. A device can be a large cost. Surgery can mean more intensive care. Compare written estimates for the options that are clinically suitable."
+        },
+        {
+          "id": "ohc_h_141",
+          "type": "heading",
+          "level": 3,
+          "text": "Can parents choose catheter treatment simply to avoid a scar?"
+        },
+        {
+          "id": "ohc_p_142",
+          "type": "paragraph",
+          "text": "A smaller wound is understandable to want. It should not decide the treatment by itself. The priority is the approach that repairs the defect with an acceptable risk for that child."
+        },
+        {
+          "id": "ohc_h_143",
+          "type": "heading",
+          "level": 3,
+          "text": "Can every VSD be closed using a device?"
+        },
+        {
+          "id": "ohc_p_144",
+          "type": "paragraph",
+          "text": "No. Suitability depends on location, size, the relationship to valves and other structures, and the child's anatomy. Some VSDs close naturally, some are observed, and others need surgery."
+        },
+        {
+          "id": "ohc_h_145",
+          "type": "heading",
+          "level": 3,
+          "text": "Is open-heart surgery always required for Tetralogy of Fallot?"
+        },
+        {
+          "id": "ohc_p_146",
+          "type": "paragraph",
+          "text": "Complete repair of tetralogy commonly requires surgery. The planning band for TOF repair is US$6,500–US$16,000, with an expected stay of 8–16 nights; parent stay expected. Selected catheter interventions can have a role in particular situations. They do not replace definitive surgical repair for every child."
+        },
+        {
+          "id": "ohc_h_147",
+          "type": "heading",
+          "level": 3,
+          "text": "How do I choose a pediatric cardiac hospital in India?"
+        },
+        {
+          "id": "ohc_p_148",
+          "type": "paragraph",
+          "text": "Look for an experienced pediatric cardiac team, a catheter laboratory or surgical theatre that matches the proposed treatment, pediatric cardiac intensive care, a written plan and a written estimate. The hospital should explain follow-up and what happens if a complication occurs. A city list is not a ranking of the best hospital."
+        },
+        {
+          "id": "ohc_h_149",
+          "type": "heading",
+          "level": 3,
+          "text": "Should I travel to India for a second opinion?"
+        },
+        {
+          "id": "ohc_p_150",
+          "type": "paragraph",
+          "text": "A second opinion can help a stable child when the family needs the diagnosis or the choice between catheter treatment and surgery explained. The treating clinicians must first say whether travel is medically appropriate. Emergency symptoms need immediate local care."
+        },
+        {
+          "id": "ohc_h_151",
+          "type": "heading",
+          "level": 2,
+          "text": "15. Conclusion: Choose the Right Treatment for Your Child, Not Just the Less Invasive One"
+        },
+        {
+          "id": "ohc_p_152",
+          "type": "paragraph",
+          "text": "Open-heart surgery and catheter treatment are both part of modern pediatric cardiac care. Each has a role. Neither is the best choice for every child."
+        },
+        {
+          "id": "ohc_p_153",
+          "type": "paragraph",
+          "text": "Catheter treatment can treat selected defects through a blood vessel, often with a smaller access wound and a shorter recovery. Open-heart surgery can repair complex abnormalities that a catheter cannot treat adequately."
+        },
+        {
+          "id": "ohc_p_154",
+          "type": "paragraph",
+          "text": "The decision should rest on anatomy, age, symptoms, overall health, the expected long-term result and the team's experience. Parents should understand why one approach is recommended, what the alternatives are, and whether more treatment may be needed later."
+        },
+        {
+          "id": "ohc_p_155",
+          "type": "paragraph",
+          "text": "For families considering treatment in India, ask for a specialist assessment and a written, case-specific estimate before making plans. If the child is medically unstable, seek emergency care immediately."
+        },
+        {
+          "id": "ohc_p_156",
+          "type": "paragraph",
+          "text": "**GAF Healthcare can help international families coordinate specialist consultations and explore treatment arrangements in India, subject to clinical review and hospital availability.** The treating pediatric cardiologist and congenital heart surgeon should guide the clinical decisions."
+        },
+        {
+          "id": "ohc_b_157",
+          "type": "button",
+          "label": "Speak to a coordinator about the heart procedure",
+          "href": "https://wa.me/919044346292?text=Has%20my%20child%20been%20advised%20to%20undergo%20a%20heart%20procedure%3F%20Please%20help%20coordinate%20a%20specialist%20consultation%20and%20a%20case-specific%20estimate%20in%20India.%20The%20treating%20team%20must%20confirm%20whether%20catheter%20treatment%20or%20surgery%20is%20appropriate%2C%20and%20whether%20travel%20is%20safe.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "ohc_h_158",
+          "type": "heading",
+          "level": 3,
+          "text": "Sources used for this guide"
+        },
+        {
+          "id": "ohc_l_159",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[American Heart Association — Cardiac catheterizations for heart defects](https://www.heart.org/en/health-topics/congenital-heart-defects/care-and-treatment-for-congenital-heart-defects/cardiac-catheterizations-for-heart-defects)",
+            "[American Heart Association — Care and treatment for congenital heart defects](https://www.heart.org/en/health-topics/congenital-heart-defects/care-and-treatment-for-congenital-heart-defects)",
+            "[CDC — About congenital heart defects](https://www.cdc.gov/heart-defects/about/index.html)",
+            "[CDC — Coarctation of the aorta](https://www.cdc.gov/heart-defects/about/coarctation-of-the-aorta.html)",
+            "[Mayo Clinic — Congenital heart defects in children](https://www.mayoclinic.org/diseases-conditions/congenital-heart-defects-children/diagnosis-treatment/drc-20350080)"
+          ]
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Pediatric Heart Surgery in India",
+          "href": "/treatments/pediatric-heart-surgery-in-india"
+        },
+        {
+          "label": "Pediatric cardiac surgery cost",
+          "href": "/costs/India/Pediatric-Cardiac-Surgery"
+        },
+        {
+          "label": "ASD closure in India",
+          "href": "/treatments/asd-closure-surgery-in-india"
+        },
+        {
+          "label": "PDA closure in babies",
+          "href": "/blogs/pda-closure-in-babies"
+        },
+        {
+          "label": "Second opinion for congenital heart surgery",
+          "href": "/blogs/second-opinion-congenital-heart-surgery-india"
+        },
+        {
+          "label": "Heart surgery recovery in India",
+          "href": "/blogs/heart-surgery-recovery-in-india"
+        }
+      ]
+    },
     {
       "id": "art_pda_closure_in_babies",
       "slug": "pda-closure-in-babies",
