@@ -127,6 +127,34 @@
   ],
   "media": [
     {
+      "id": "media_second_opinion_chd_1",
+      "url": "/uploads/articles/second-opinion-chd-records.webp",
+      "name": "second-opinion-chd-records.webp",
+      "alt": "Educational illustration of an echo report, ECG, discharge summary, medicine list and a heart diagram",
+      "addedAt": "2026-10-13T14:30:00.000Z"
+    },
+    {
+      "id": "media_second_opinion_chd_2",
+      "url": "/uploads/articles/second-opinion-chd-questions.webp",
+      "name": "second-opinion-chd-questions.webp",
+      "alt": "Educational illustration of diagnosis, timing and recovery questions for a congenital heart review",
+      "addedAt": "2026-10-13T14:30:00.000Z"
+    },
+    {
+      "id": "media_second_opinion_chd_3",
+      "url": "/uploads/articles/second-opinion-chd-compare.webp",
+      "name": "second-opinion-chd-compare.webp",
+      "alt": "Educational illustration comparing a matching surgical plan with two different repair approaches",
+      "addedAt": "2026-10-13T14:30:00.000Z"
+    },
+    {
+      "id": "media_second_opinion_chd_4",
+      "url": "/uploads/articles/second-opinion-chd-remote.webp",
+      "name": "second-opinion-chd-remote.webp",
+      "alt": "Educational illustration of a records review on a laptop leading to an in-person hospital assessment",
+      "addedAt": "2026-10-13T14:30:00.000Z"
+    },
+    {
       "id": "media_l8oi7ao6ys99",
       "url": "/uploads/articles/1788972381836-velora-test.png",
       "name": "gaf-test.png",
@@ -2039,6 +2067,952 @@
     }
   ],
   "articles": [
+    {
+      "id": "art_second_opinion_congenital_heart_surgery_india",
+      "slug": "second-opinion-congenital-heart-surgery-india",
+      "title": "Second Opinion for Congenital Heart Surgery in India: Reports to Share and Questions to Ask",
+      "excerpt": "Learn when to seek a second opinion for congenital heart surgery in India, which reports to share, questions to ask, and how GAF planning bands differ by procedure.",
+      "date": "13 October 2026",
+      "publishedAt": "2026-10-13T14:30:00.000Z",
+      "updatedAt": "2026-10-13T14:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Cardiology",
+      "tags": [
+        "congenital heart",
+        "second opinion",
+        "pediatric",
+        "India"
+      ],
+      "image": "/uploads/articles/second-opinion-chd-records.webp",
+      "imageAlt": "Educational illustration of an echo report, ECG, discharge summary, medicine list and a heart diagram",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Second Opinion for Congenital Heart Surgery in India",
+      "seoDescription": "Learn when to seek a second opinion for congenital heart surgery in India, which medical reports to share, questions to ask doctors, and how to prepare your child’s treatment journey.",
+      "canonical": "https://gaf.healthcare/blogs/second-opinion-congenital-heart-surgery-india",
+      "ogImage": "/uploads/articles/second-opinion-chd-records.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Second opinion for congenital heart surgery in India",
+        "Pediatric cardiac surgery second opinion",
+        "Congenital heart disease treatment in India",
+        "Best pediatric heart surgeon in India",
+        "Child heart surgery consultation",
+        "Pediatric cardiologist consultation in India",
+        "Congenital heart defect surgery options",
+        "Pediatric heart surgery medical records",
+        "Second opinion for heart surgery cost",
+        "Pediatric cardiac hospitals in India",
+        "Online second opinion for child heart surgery"
+      ],
+      "blocks": [
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "A second opinion for congenital heart surgery is an independent review of your child’s diagnosis and the treatment plan already recommended. It can clarify why surgery was advised, whether monitoring or a catheter procedure is reasonable, and what recovery may involve."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "It is not a sign that the first doctor made a mistake. Complex congenital heart defects sometimes need interpretation of detailed imaging. Two specialists can look at the same echocardiogram and still need to explain timing, risk and the limits of what imaging can predict."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "**Important:** If your child has severe breathing difficulty, blue or grey lips or tongue, collapse, unresponsiveness or sudden deterioration, seek emergency medical care immediately. Do not delay emergency care to arrange an overseas consultation. WhatsApp at +91 90443 46292 is for planned record review, not an acute emergency."
+        },
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>A second opinion for congenital heart surgery can help parents understand their child’s diagnosis, confirm the recommended treatment plan, explore suitable alternatives and make an informed decision about care.</p><p>It may be particularly useful when a child has a complex congenital heart defect, when major surgery has been recommended, when different treatment options are available, or when parents need clarification about the timing, risks and expected recovery.</p><p>A pediatric cardiologist and a congenital heart surgeon may review the child’s echocardiogram, medical history, symptoms, previous treatments and other investigations before offering an independent assessment.</p><p><strong>The most important point:</strong> A second opinion should improve understanding, not delay necessary treatment. If your child has been advised to undergo urgent surgery, or is experiencing severe breathing difficulty, blue or grey lips or tongue, collapse, unresponsiveness or sudden deterioration, seek emergency medical care immediately.</p></div></aside>"
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "The treatment overview sits on [Pediatric Heart Surgery in India](/treatments/pediatric-heart-surgery-in-india). Named repairs sit on [ASD closure](/treatments/asd-closure-surgery-in-india), [VSD surgery](/treatments/ventricular-septal-defect-surgery-in-india), [PDA closure](/treatments/pda-closure-surgery-in-india), [TOF repair](/treatments/tof-repair-surgery-in-india), [arterial switch](/treatments/arterial-switch-operation-in-india), [coarctation repair](/treatments/coarctation-repair-surgery-in-india), [Glenn procedure](/treatments/glenn-procedure-surgery-in-india) and [Fontan procedure](/treatments/fontan-procedure-surgery-in-india). An adult cardiology second opinion is a different page: [second opinion from a cardiologist in India](/blogs/second-opinion-from-a-cardiologist-in-india). What to carry to a visit is in [what to bring to a cardiologist appointment](/blogs/what-to-bring-to-a-cardiologist-appointment). Questions before an operation are in [questions to ask before heart surgery](/blogs/questions-to-ask-before-heart-surgery). Recovery after an operation is in [heart surgery recovery in India](/blogs/heart-surgery-recovery-in-india)."
+        },
+        {
+          "id": "p_006",
+          "type": "paragraph",
+          "text": "Families comparing [pediatric cardiac surgeons](/doctors/India/Pediatric-Cardiac-Surgery) can start with [Delhi NCR](/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/doctors/India/Mumbai/Pediatric-Cardiac-Surgery), [Bengaluru](/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery), [Chennai](/doctors/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery). Partner [pediatric cardiac surgery hospitals](/hospitals/India/Pediatric-Cardiac-Surgery) include lists for [Delhi NCR](/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery), [Bengaluru](/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery), [Chennai](/hospitals/India/Chennai/Pediatric-Cardiac-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Pediatric-Cardiac-Surgery). These directories are not a ranking, and this page does not name a best surgeon."
+        },
+        {
+          "id": "img_007",
+          "type": "image",
+          "src": "/uploads/articles/second-opinion-chd-records.webp",
+          "alt": "Educational illustration of an echo report, ECG, discharge summary, medicine list and a heart diagram",
+          "caption": "An echo report, ECG, discharge summary and medicine list sit beside a teaching diagram of a heart. This is not a child’s echocardiogram and not a diagnosis."
+        },
+        {
+          "id": "btn_008",
+          "type": "button",
+          "label": "Share the echo for a pediatric cardiac review",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20congenital%20heart%20reports%20I%20can%20send%20for%20my%20child%20and%20say%20which%20records%20are%20still%20needed%20for%20a%20second%20opinion%20in%20India.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "toc_second_opinion_chd",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-is-a-second-opinion-for-congenital-heart-surgery\">1. What Is a Second Opinion for Congenital Heart Surgery?</a></li><li><a href=\"#2-when-should-parents-consider-a-second-opinion\">2. When Should Parents Consider a Second Opinion?</a></li><li><a href=\"#3-which-specialist-should-review-your-childs-case\">3. Which Specialist Should Review Your Child's Case?</a></li><li><a href=\"#4-medical-reports-required-for-a-second-opinion\">4. Medical Reports Required for a Second Opinion</a></li><li><a href=\"#5-how-to-organise-medical-reports-before-sending-them\">5. How to Organise Medical Reports Before Sending Them</a></li><li><a href=\"#6-the-most-important-questions-to-ask\">6. The Most Important Questions to Ask</a></li><li><a href=\"#7-how-to-compare-two-medical-opinions\">7. How to Compare Two Medical Opinions</a></li><li><a href=\"#8-can-you-get-an-online-second-opinion\">8. Can You Get an Online Second Opinion?</a></li><li><a href=\"#9-considering-congenital-heart-surgery-in-india\">9. Considering Congenital Heart Surgery in India</a></li><li><a href=\"#10-cost-of-a-second-opinion-and-of-the-operation\">10. Cost of a Second Opinion and of the Operation</a></li><li><a href=\"#11-how-gaf-healthcare-can-help\">11. How GAF Healthcare Can Help</a></li><li><a href=\"#12-how-to-prepare-for-the-consultation\">12. How to Prepare for the Consultation</a></li><li><a href=\"#13-what-happens-after-a-second-opinion\">13. What Happens After a Second Opinion?</a></li><li><a href=\"#14-common-mistakes-to-avoid\">14. Common Mistakes to Avoid</a></li><li><a href=\"#15-frequently-asked-questions\">15. Frequently Asked Questions</a></li><li><a href=\"#16-make-an-informed-decision-about-your-childs-heart-care\">16. Make an Informed Decision About Your Child's Heart Care</a></li><li><a href=\"#sources\">Sources</a></li></ol></nav>"
+        },
+        {
+          "id": "h_009",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Is a Second Opinion for Congenital Heart Surgery?"
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "A second opinion is an independent assessment from another appropriately qualified specialist who reviews your child’s condition and the plan recommended by the first team."
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "Congenital heart disease means structural differences in the heart or major blood vessels that develop before birth. Some defects only need monitoring. Others affect circulation, oxygen levels, growth, or the function of the heart and lungs."
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Treatment depends on the specific defect, its severity, the child’s age and weight, symptoms, associated conditions and the cardiac investigations. A second opinion can help establish whether the diagnosis is supported by the available studies, whether surgery is necessary, whether treatment is urgent, which approach may suit the anatomy, whether more tests are needed, and what recovery and follow-up may involve."
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "The second specialist may agree with the original recommendation, suggest a modification, or ask for further evaluation. A difference of opinion does not automatically mean one doctor is wrong."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 2,
+          "text": "2. When Should Parents Consider a Second Opinion?"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "Not every child with a congenital heart defect needs several consultations. An independent review is most useful when a major decision is unclear."
+        },
+        {
+          "id": "h_016",
+          "type": "heading",
+          "level": 3,
+          "text": "When heart surgery has been recommended"
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "If a surgeon recommends open-heart surgery, a staged operation or another major cardiac procedure, parents may want another specialist to review the diagnosis, timing and proposed approach. The purpose is to understand why that procedure was chosen and whether another clinically appropriate option exists."
+        },
+        {
+          "id": "h_018",
+          "type": "heading",
+          "level": 3,
+          "text": "When the diagnosis or the plan is unclear"
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "Some defects have complex anatomy or sit alongside other cardiac abnormalities. Another review helps when the family does not yet understand how the imaging supports the proposed treatment."
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 3,
+          "text": "When doctors recommend different approaches"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "One team may recommend surgery while another suggests a catheter procedure or continued monitoring. Ask each team which findings support its recommendation, which alternatives fit this child, and what risks come from waiting."
+        },
+        {
+          "id": "h_022",
+          "type": "heading",
+          "level": 3,
+          "text": "When the condition is complex"
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "Transposition of the great arteries, tetralogy of Fallot, single-ventricle heart disease, and complex valve or outflow-tract abnormalities need specialised assessment. A team experienced with that condition can explain the pathway. The arterial switch, TOF, Glenn and Fontan pages linked above are the named products. There is no live Norwood-only treatment page."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 3,
+          "text": "When parents need risks and recovery explained"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "Intensive care, ventilation, feeding, hospital stay, later procedures and long-term follow-up are valid reasons to ask for a clearer explanation."
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 3,
+          "text": "When treatment in another city or country is being considered"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "Families travelling from countries such as Tanzania, Kenya, Uganda, Iraq or elsewhere may want a specialist assessment in India before deciding whether to travel. A remote review can show whether an in-person visit is worthwhile and which records are missing. It cannot replace examination, updated imaging or emergency care."
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 3,
+          "text": "When a routine second opinion should not come first"
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "If the treating team says immediate intervention is required to protect the child, do not postpone care for a routine consultation. Ask whether a rapid review can happen inside the safe timeframe. The treating team should explain the consequences of delay."
+        },
+        {
+          "id": "btn_030",
+          "type": "button",
+          "label": "Ask which reports are still missing",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20congenital%20heart%20reports%20I%20can%20send%20for%20my%20child%20and%20say%20which%20records%20are%20still%20needed%20for%20a%20second%20opinion%20in%20India.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "h_031",
+          "type": "heading",
+          "level": 2,
+          "text": "3. Which Specialist Should Review Your Child's Case?"
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "The right specialist depends on the defect and the decision in front of you."
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "| Specialist | Main role |\n| --- | --- |\n| Pediatric cardiologist | Diagnosis, heart function, symptoms, and non-surgical or catheter options |\n| Congenital heart surgeon | Surgical indication, operative approach, timing and surgical risk |\n| Pediatric cardiac interventional specialist | Whether a catheter procedure fits the anatomy |\n| Pediatric cardiac anesthesiologist | Anaesthesia planning for surgery and recovery |\n| Pediatric cardiac intensive care team | Postoperative monitoring for complex conditions |"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "For a major surgical decision, the most useful review usually includes a pediatric cardiologist and a surgeon experienced in congenital heart disease. Ask whether the hospital has pediatric cardiac intensive care and emergency support for this specific condition."
+        },
+        {
+          "id": "img_035",
+          "type": "image",
+          "src": "/uploads/articles/second-opinion-chd-questions.webp",
+          "alt": "Educational illustration of diagnosis, timing and recovery questions for a congenital heart review",
+          "caption": "Diagnosis, timing and recovery are three separate questions. A second opinion should answer each one for this child, not from a general brochure."
+        },
+        {
+          "id": "h_036",
+          "type": "heading",
+          "level": 2,
+          "text": "4. Medical Reports Required for a Second Opinion"
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "A specialist cannot reliably assess the case if essential imaging or treatment details are missing. Send what you already have, then ask which additional records are necessary. You do not need every item below before the first enquiry. Message +91 90443 46292 only after local emergency care is in place if the child is unstable."
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 3,
+          "text": "Diagnosis and treatment records"
+        },
+        {
+          "id": "ul_039",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Written diagnosis or referral letter",
+            "Latest consultation notes from the pediatric cardiologist",
+            "Previous surgical opinions and proposed treatment plans",
+            "Discharge summaries from earlier admissions",
+            "Details of any previous heart surgery or catheter procedure",
+            "Current medication list, including doses if available"
+          ]
+        },
+        {
+          "id": "h_040",
+          "type": "heading",
+          "level": 3,
+          "text": "Cardiac investigations"
+        },
+        {
+          "id": "ul_041",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Latest echocardiogram report",
+            "Echocardiogram images or video files, where available",
+            "Electrocardiogram (ECG) report",
+            "Chest X-ray report and images, if performed",
+            "Cardiac CT or MRI reports and original image files, if available",
+            "Cardiac catheterisation and angiography reports, if performed",
+            "Oxygen saturation readings documented by the treating team"
+          ]
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 3,
+          "text": "General medical information"
+        },
+        {
+          "id": "ul_043",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Date of birth and current weight",
+            "Growth and feeding history, particularly for infants",
+            "Breathing difficulty, cyanosis, fainting or other symptoms",
+            "Previous intensive care or respiratory support",
+            "Known allergies and associated medical conditions",
+            "Relevant blood tests, including kidney or liver results if requested"
+          ]
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "An echocardiogram uses ultrasound to show structure and function: defect location and size, blood-flow patterns, valve function and chamber size. For many congenital conditions the written report is not enough. The receiving specialist may need the original images or video. An older study may also need to be repeated if the child’s condition has changed."
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "Tests should be repeated only when the specialist considers them necessary, for example when images are missing, incomplete, outdated or unable to answer the question that would change the plan. Ask what the extra test is expected to show before repeating an expensive or invasive study."
+        },
+        {
+          "id": "h_046",
+          "type": "heading",
+          "level": 2,
+          "text": "5. How to Organise Medical Reports Before Sending Them"
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "Put the reports in one folder, in date order. Clear file names help the receiving team: `01_Referral_Letter.pdf`, `02_Latest_Echocardiogram_Report.pdf`, `03_Echocardiogram_Images`, `04_Previous_Discharge_Summary.pdf`, `05_Current_Medications.pdf`, `06_Previous_Surgical_Opinion.pdf`."
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "If images are on a disc, a USB drive or a hospital portal, ask the receiving hospital how they should be transferred. Add a short note with the child’s age and current weight, the diagnosed condition, current symptoms and when they began, the treatment the current team recommends, any proposed surgery date or urgency, and your three to five most important questions."
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "Send sensitive records only through a secure channel the provider specifies. A parent or legal guardian should consent. Do not post images in an open social-media message."
+        },
+        {
+          "id": "btn_050",
+          "type": "button",
+          "label": "Request a treatment estimate after the records review",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20congenital%20heart%20reports%20I%20can%20send%20for%20my%20child%20and%20say%20which%20records%20are%20still%20needed%20for%20a%20second%20opinion%20in%20India.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 2,
+          "text": "6. The Most Important Questions to Ask"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Write the questions down before the consultation. It is reasonable to ask the doctor to explain a point again, and to explain the defect with a diagram."
+        },
+        {
+          "id": "h_053",
+          "type": "heading",
+          "level": 3,
+          "text": "Questions about the diagnosis"
+        },
+        {
+          "id": "ul_054",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "What exactly is my child’s congenital heart defect?",
+            "Can you explain the abnormality using the echocardiogram or a diagram?",
+            "Is the diagnosis confirmed, or is any part of it uncertain?",
+            "Are there other heart or blood vessel abnormalities?",
+            "Is the heart functioning as expected for this condition?",
+            "Are additional tests needed before a treatment decision?"
+          ]
+        },
+        {
+          "id": "h_055",
+          "type": "heading",
+          "level": 3,
+          "text": "Questions about whether surgery is necessary"
+        },
+        {
+          "id": "ul_056",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Why is surgery being recommended for my child?",
+            "What could happen if treatment is delayed?",
+            "Is observation or medication a medically appropriate option?",
+            "Could a catheter-based procedure be considered?",
+            "If several options exist, why do you recommend one?",
+            "Is this an emergency, an urgent procedure, or a planned operation?",
+            "How soon should the decision be made?"
+          ]
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "The answer depends on the specific diagnosis. A small ventricular septal defect may be monitored. Some critical defects need intervention soon after birth. A plan written for one child should not be copied onto another child with a similar-sounding name of defect."
+        },
+        {
+          "id": "h_058",
+          "type": "heading",
+          "level": 3,
+          "text": "Questions about the proposed procedure"
+        },
+        {
+          "id": "ul_059",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "What is the name of the operation or intervention?",
+            "What part of the heart will be repaired?",
+            "Is this expected to be a complete repair or one stage of treatment?",
+            "What are the principal risks for my child?",
+            "What complications could require another procedure or a longer stay?",
+            "How might the procedure affect future health?",
+            "How likely is further surgery or catheter treatment later?"
+          ]
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "Ask the specialist to separate general risks from risks that matter for this child’s anatomy, age, weight and overall condition."
+        },
+        {
+          "id": "h_061",
+          "type": "heading",
+          "level": 3,
+          "text": "Questions about the team and the hospital"
+        },
+        {
+          "id": "ul_062",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "How often does this team treat this particular defect in children of similar age and weight?",
+            "Who will perform the surgery?",
+            "Which specialists are involved before, during and after the operation?",
+            "Is there a dedicated pediatric cardiac intensive care unit?",
+            "How are complications managed?",
+            "Who explains the outcome and the next steps to the family?"
+          ]
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "Relevant experience, team coordination, facilities and how the team talks to parents matter more than a hospital’s general reputation. This site does not publish surgeon volume or survival claims."
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 3,
+          "text": "Questions about recovery and follow-up"
+        },
+        {
+          "id": "ul_065",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "What may the hospital stay involve?",
+            "Will the child need intensive care or breathing support?",
+            "What feeding, wound-care or medicine support is needed after discharge?",
+            "When can the child return to age-appropriate activity?",
+            "Which symptoms after discharge need urgent care?",
+            "How often are follow-up visits and echocardiograms needed?",
+            "Will the child need lifelong cardiology follow-up?"
+          ]
+        },
+        {
+          "id": "btn_066",
+          "type": "button",
+          "label": "Ask whether travel is safe to plan",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20congenital%20heart%20reports%20I%20can%20send%20for%20my%20child%20and%20say%20which%20records%20are%20still%20needed%20for%20a%20second%20opinion%20in%20India.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "h_067",
+          "type": "heading",
+          "level": 2,
+          "text": "7. How to Compare Two Medical Opinions"
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "When two specialists disagree, compare the reasoning. Do not choose the opinion that sounds most reassuring, the most expensive hospital, the most famous name, or the largest operation."
+        },
+        {
+          "id": "img_069",
+          "type": "image",
+          "src": "/uploads/articles/second-opinion-chd-compare.webp",
+          "alt": "Educational illustration comparing a matching surgical plan with two different repair approaches",
+          "caption": "One column shows two specialists agreeing on the same plan. The other shows a surgical repair and a catheter approach that still need to be explained against the same imaging."
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "| Point to compare | What to clarify |\n| --- | --- |\n| Diagnosis | Do both doctors agree on the defect and its anatomy? |\n| Indication | Why does each recommend surgery, monitoring or a catheter procedure? |\n| Timing | If the timing differs, what is the medical reason? |\n| Procedure | How do the techniques differ, and what are the limits of each? |\n| Risk | Which risks are specific to this child? |\n| Extra testing | Would another investigation change the decision? |\n| Recovery | What postoperative support and follow-up are expected? |\n| Uncertainty | What cannot be predicted with confidence? |"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "If the opinions differ substantially, ask whether both specialists can review the same imaging and, with your permission, discuss the disagreement. A multidisciplinary review can bring cardiology, surgery, imaging and intensive care together."
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Ask for the evidence behind a disagreement. It may concern diagnosis, timing, procedure choice, imaging interpretation or risk. Do not keep collecting opinions past the point the treating team says delay becomes unsafe."
+        },
+        {
+          "id": "h_073",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Can You Get an Online Second Opinion?"
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "Sometimes, yes. A hospital may review records or hold a remote consultation before an in-person visit. That can help families who live far from a congenital heart programme."
+        },
+        {
+          "id": "img_075",
+          "type": "image",
+          "src": "/uploads/articles/second-opinion-chd-remote.webp",
+          "alt": "Educational illustration of a records review on a laptop leading to an in-person hospital assessment",
+          "caption": "A records review can use an echocardiogram and a heart diagram. The illustration’s oxygen figure is a teaching icon, not a measurement from a child. An in-person assessment can still change the plan."
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "A remote review may explain the diagnosis and the proposed treatment, identify missing records, and say whether travel for an examination is recommended. It may not be enough for a final surgical decision. The specialist may need to examine the child, see original images, check oxygen levels or repeat investigations. The final plan and timing can change after arrival."
+        },
+        {
+          "id": "q_077",
+          "type": "quote",
+          "text": "A remote consultation is not an emergency service. If the child is deteriorating, seek immediate local medical care rather than waiting for a video call."
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "Before booking, ask whether the original echocardiogram images will be reviewed, whether you will receive a written note, which records are required, whether the review is records-only or a live conversation, and which charges apply if more tests are needed."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Considering Congenital Heart Surgery in India"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "India is one place families consider for specialist evaluation. The right decision depends on the child’s condition, the team’s experience with that defect, the facilities, the timeline and practical circumstances. Do not assume every hospital offers the same pediatric cardiac intensive care."
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "Ask whether the team routinely manages this defect and this procedure. Confirm pediatric cardiac surgery, anaesthesia, intensive care, imaging, blood-bank support and emergency services. Confirm who manages the child before surgery, during admission and after discharge. Confirm that consent, risks and recovery instructions can be explained in a language the family understands. Ask how follow-up will be coordinated with a pediatric cardiologist at home."
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "Live catalog cities on this site are Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Other cities may have congenital programmes. They are not linked here because they are not live catalog cities on this site."
+        },
+        {
+          "id": "h_083",
+          "type": "heading",
+          "level": 2,
+          "text": "10. Cost of a Second Opinion and of the Operation"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "This site does not publish a single fee for a congenital heart surgery second opinion. The consultation charge depends on the hospital, the specialist, whether the review is remote or in person, and whether imaging is formally reviewed. Confirm the consultation fee, and any charge for a further visit or a repeat echocardiogram, before booking. That fee is not the cost of surgery."
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "If the review leads to an operation, use the GAF Healthcare planning bands below. They come from partner-hospital cost sheets. They are not a quotation and they are not a government tariff. A written, itemised estimate from the treating hospital is required before travel or payment. Neonatal surgery, devices, prolonged intensive care, complications and reoperations can exceed the band."
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "| Procedure | GAF India planning | US comparison | Typical stay |\n| --- | --- | --- | --- |\n| [PDA closure](/costs/India/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)) | US$3,500–US$8,500 | US$20,000–US$60,000 | 3–8 nights; parent stay expected |\n| [ASD closure](/costs/India/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)) | US$4,000–US$9,500 | US$30,000–US$80,000 | 5–10 nights; parent stay expected |\n| [VSD closure](/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)) | US$4,500–US$11,000 | US$35,000–US$90,000 | 6–12 nights; parent stay expected |\n| [Coarctation repair](/costs/India/Pediatric-Cardiac-Surgery/Coarctation-Repair) | US$6,000–US$15,000 | US$40,000–US$110,000 | 6–14 nights; parent stay expected |\n| [TOF repair](/costs/India/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)) | US$6,500–US$16,000 | US$50,000–US$140,000 | 8–16 nights; parent stay expected |\n| [AVSD repair](/costs/India/Pediatric-Cardiac-Surgery/AVSD-Repair-(Atrioventricular-Septal-Defect)) | US$8,000–US$18,500 | US$55,000–US$150,000 | 8–16 nights; parent stay expected |\n| [Glenn procedure](/costs/India/Pediatric-Cardiac-Surgery/Glenn-Procedure) | US$8,000–US$18,000 | US$60,000–US$160,000 | 8–16 nights; parent stay expected |\n| [Fontan procedure](/costs/India/Pediatric-Cardiac-Surgery/Fontan-Procedure) | US$9,000–US$22,000 | US$70,000–US$180,000 | 10–18 nights; parent stay expected |\n| [TAPVC repair](/costs/India/Pediatric-Cardiac-Surgery/TAPVC-Repair-(Total-Anomalous-Pulmonary-Venous-Connection)) | US$10,000–US$24,000 | US$70,000–US$180,000 | 10–21 nights; parent stay expected |\n| [Arterial switch](/costs/India/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation) | US$12,000–US$26,000 | US$80,000–US$200,000 | 10–21 nights; parent stay expected |\n| [Norwood procedure](/costs/India/Pediatric-Cardiac-Surgery/Norwood-Procedure) | US$18,000–US$40,000 | US$120,000–US$280,000 | 3–8 weeks in a paediatric cardiac ICU |\n| [Pediatric heart transplantation](/costs/India/Pediatric-Cardiac-Surgery/Pediatric-Heart-Transplantation) | US$50,000–US$120,000 | US$800,000–US$1,800,000 | 6–12 weeks nearby after listing; parent stay required |"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "The India directory for these sheets is [pediatric cardiac surgery cost](/costs/India/Pediatric-Cardiac-Surgery). City congenital sheets include [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery), [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery), [Bengaluru](/costs/India/Bengaluru/Cardiac-Surgery/Congenital-Heart-Surgery), [Chennai](/costs/India/Chennai/Cardiac-Surgery/Congenital-Heart-Surgery) and [Hyderabad](/costs/India/Hyderabad/Cardiac-Surgery/Congenital-Heart-Surgery). A named city example for ASD is [Delhi NCR ASD closure](/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)). The broader [congenital heart surgery](/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery) sheet is **US$8,000–US$28,000**, typically **7–21 nights; parent stay expected**. US comparison for that broader sheet is **US$80,000–US$250,000**."
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "Ask the hospital to state, in writing, what the estimate includes: consultation and preoperative assessment, echocardiography and other investigations, surgeon, anaesthesiologist and operating-room charges, intensive care and room charges, medicines, blood products and consumables, the expected stay and the charge if it is extended, treatment of complications, follow-up visits, and any exclusions, deposits or refund conditions. A quotation is an estimate. The bill can change with the procedure, the child’s condition, extra tests, complications and length of admission. Flights, visas, lodging and food are outside the hospital band."
+        },
+        {
+          "id": "btn_089",
+          "type": "button",
+          "label": "Speak to a coordinator about the second opinion",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20congenital%20heart%20reports%20I%20can%20send%20for%20my%20child%20and%20say%20which%20records%20are%20still%20needed%20for%20a%20second%20opinion%20in%20India.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "h_090",
+          "type": "heading",
+          "level": 2,
+          "text": "11. How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help organise records, share them with a prospective hospital after consent, coordinate a consultation, explain which investigations are being requested, request a hospital estimate, and assist with travel and accommodation when the treating team says travel is appropriate."
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "Medical decisions stay with the treating clinicians. GAF Healthcare does not independently diagnose a child, decide that surgery is necessary, or guarantee an outcome."
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "A useful first enquiry includes the child’s age and current weight, country of residence, the diagnosis if known, the latest echocardiogram report, current symptoms and any urgency the treating team has already stated, the recommended operation if one has been named, previous surgery or major admissions, and the family’s main questions. Do not delay emergency treatment to assemble a perfect file."
+        },
+        {
+          "id": "h_094",
+          "type": "heading",
+          "level": 2,
+          "text": "12. How to Prepare for the Consultation"
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "Write down symptoms and when they began. Put records in date order. Identify the exact recommendation that needs clarification. Keep the question list short. Ask for a diagram. Bring another trusted caregiver so two adults can listen. Ask for written instructions and for unfamiliar words to be explained."
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "Parents should understand the purpose of the proposed treatment, its timing and the main risks before consent, except where emergency circumstances require immediate action. After the visit, summarise the recommendation in your own words and check that summary with the team."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 2,
+          "text": "13. What Happens After a Second Opinion?"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "If the second opinion confirms the original plan, use the remaining time to clarify timing, preparation, risks and recovery."
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "If it recommends a different approach, ask why that alternative fits this child and how it compares with the first plan. The two teams may need to review the same imaging before you decide."
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "If more investigations are required, ask which test is needed, what question it answers, and whether it changes the timing of treatment."
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "If the opinions remain different, a further review by a congenital heart team may help. Balance that against clinical urgency. Do not postpone a time-sensitive decision in pursuit of complete certainty. The team should say what is known, what is uncertain, and what risk sits with each reasonable option."
+        },
+        {
+          "id": "h_102",
+          "type": "heading",
+          "level": 2,
+          "text": "14. Common Mistakes to Avoid"
+        },
+        {
+          "id": "ul_103",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Sending only a written echo report when the specialist needs the images",
+            "Ignoring urgency and booking a routine review after the safe window has closed",
+            "Comparing doctors only by reputation or marketing claims",
+            "Assuming every defect needs open-heart surgery",
+            "Assuming a catheter procedure is always safer",
+            "Repeating tests before asking whether the existing studies are adequate",
+            "Choosing a hospital only because the quotation is lower, without reading exclusions",
+            "Expecting a guaranteed outcome",
+            "Booking international travel before the team says the child is fit to fly"
+          ]
+        },
+        {
+          "id": "btn_104",
+          "type": "button",
+          "label": "Send the current recommendation and your questions",
+          "href": "https://wa.me/919044346292?text=Please%20review%20the%20congenital%20heart%20reports%20I%20can%20send%20for%20my%20child%20and%20say%20which%20records%20are%20still%20needed%20for%20a%20second%20opinion%20in%20India.%20Do%20not%20name%20a%20best%20surgeon.%20This%20is%20not%20an%20emergency%20message."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 2,
+          "text": "15. Frequently Asked Questions"
+        },
+        {
+          "id": "h_106",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a second opinion necessary before congenital heart surgery?"
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "Not in every case. It is useful before major or complex surgery, when the diagnosis is unclear, when more than one treatment is reasonable, or when parents still cannot explain the plan in their own words. In an emergency, necessary care should not wait for a routine second opinion. Ask the current team whether there is a safe window for another review."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a second opinion change my child’s surgery plan?"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Yes. The reviewer may confirm the original plan, recommend a different operation or catheter procedure, or ask for more imaging. Any change should rest on this child’s findings, not on a general preference for surgery or for avoiding surgery. Ask what would be different about timing, risk and recovery."
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 3,
+          "text": "Which reports are needed for a pediatric cardiac second opinion?"
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "Start with the latest echocardiogram report and the image or video files, the written diagnosis, the treating cardiologist’s notes and the proposed plan. Add discharge summaries, operation notes, catheter reports, current medicines, weight and oxygen saturation readings when you have them. The receiving team should say what is still missing rather than asking you to repeat every test on the first day."
+        },
+        {
+          "id": "h_112",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I obtain a second opinion without travelling to India?"
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "Some hospitals review records or offer a remote consultation before travel. Availability varies. A records review can explain the likely pathway and the gaps in the file. An examination, updated echo or catheter study in person may still be required before a final decision. Do not fly an unstable child in order to obtain that review."
+        },
+        {
+          "id": "h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "Does a second opinion mean the first doctor is wrong?"
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "No. Asking for another opinion is a normal way to understand a major decision. The second specialist may agree completely. If the opinions differ, the difference may be about timing or technique rather than about the name of the defect. Ask both sides to point to the same images."
+        },
+        {
+          "id": "h_116",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does a second opinion take?"
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "It depends on the specialist’s schedule, whether the echo images arrive with the report, how complex the anatomy is, and whether a new test is required. Ask the receiving team for an expected timeline, then ask the current treating team whether that wait is medically safe. A date on a calendar is not a clinical clearance to delay."
+        },
+        {
+          "id": "h_118",
+          "type": "heading",
+          "level": 3,
+          "text": "Will my child need another echocardiogram?"
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "Not always. Existing images are often enough for a first review. A new echocardiogram is reasonable when the previous study is incomplete, too old for the current symptoms, or unable to show a structure the surgeon must see. Ask what question the repeat study is meant to answer."
+        },
+        {
+          "id": "h_120",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a pediatric cardiologist or a cardiac surgeon better for a second opinion?"
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "They do different work. A pediatric cardiologist evaluates the defect, heart function and whether monitoring or a catheter procedure is appropriate. A congenital heart surgeon evaluates operative indication, technique and surgical risk. For a decision about major surgery, input from both is more useful than choosing only one title."
+        },
+        {
+          "id": "h_122",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does a second opinion for congenital heart surgery in India cost?"
+        },
+        {
+          "id": "p_123",
+          "type": "paragraph",
+          "text": "This site does not publish a single fee for that consultation. Hospitals set their own charge for a remote review, an in-person visit and a formal imaging review. Confirm the fee before booking. If an operation is later recommended, GAF planning bands for the procedure itself run from US$3,500–US$8,500 for PDA closure to US$12,000–US$26,000 for an arterial switch, with higher bands for a Norwood procedure or transplant. Those bands are not a consultation fee and not a quotation."
+        },
+        {
+          "id": "h_124",
+          "type": "heading",
+          "level": 3,
+          "text": "Can GAF Healthcare help arrange a second opinion in India?"
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "GAF Healthcare can coordinate records and enquiries with hospitals that accept the case, and can request a written estimate. The pediatric cardiologist and congenital heart surgeon decide the diagnosis and the plan. Coordination does not replace emergency care at home. Planned questions can go to +91 90443 46292."
+        },
+        {
+          "id": "h_126",
+          "type": "heading",
+          "level": 3,
+          "text": "Should we get a second opinion if the surgery is scheduled soon?"
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "Call the current treating team the same day and say you want clarification or another review. Ask whether the schedule still leaves a safe interval. Do not cancel an urgent operation on the basis of a brochure or a message thread. If the team says delay is unsafe, follow that advice and ask whether a rapid review can happen in parallel."
+        },
+        {
+          "id": "h_128",
+          "type": "heading",
+          "level": 3,
+          "text": "What if the second specialist recommends waiting instead of surgery?"
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "Ask why observation is appropriate for this anatomy, which symptoms or measurements would change that advice, how often the child should be seen, and which findings would trigger an operation. Confirm that the advice used the full record, including images, weight, oxygen levels and any earlier procedures."
+        },
+        {
+          "id": "h_130",
+          "type": "heading",
+          "level": 3,
+          "text": "Can parents request a second opinion without offending their child’s doctor?"
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "Yes. You can say you want to understand the options before consenting to major surgery. Ask the current doctor for the echo images, the written plan and a copy of the notes. A clear file makes the second review faster and makes it easier for the first team to see exactly what was reviewed."
+        },
+        {
+          "id": "h_132",
+          "type": "heading",
+          "level": 3,
+          "text": "Does a successful heart operation mean my child will never need further care?"
+        },
+        {
+          "id": "p_133",
+          "type": "paragraph",
+          "text": "Not necessarily. Some children need only periodic reviews. Others need lifelong congenital cardiology follow-up, more imaging, or another procedure as they grow. The follow-up plan depends on the original defect, how complete the repair was, and heart function afterwards. Ask for that plan in writing before you travel home."
+        },
+        {
+          "id": "h_134",
+          "type": "heading",
+          "level": 3,
+          "text": "Which procedure costs should we compare while the opinion is pending?"
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "Compare the named operation, not a single heart-surgery package. PDA closure planning is US$3,500–US$8,500, typically 3–8 nights. ASD closure is US$4,000–US$9,500, typically 5–10 nights. VSD closure is US$4,500–US$11,000, typically 6–12 nights. TOF repair is US$6,500–US$16,000, typically 8–16 nights. An arterial switch is US$12,000–US$26,000, typically 10–21 nights. Parent stay is expected. The hospital must still issue its own itemised estimate after seeing the child."
+        },
+        {
+          "id": "h_136",
+          "type": "heading",
+          "level": 3,
+          "text": "Which cities in India can we use to start a pediatric cardiac enquiry?"
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "There is no single best city. On this site the live pediatric cardiac directories cover Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Choose by the team’s experience with your child’s defect, pediatric cardiac intensive care, a written estimate and a follow-up plan you can use after returning home. Do not treat a directory listing as a promise that a named surgeon will operate."
+        },
+        {
+          "id": "h_138",
+          "type": "heading",
+          "level": 2,
+          "text": "16. Make an Informed Decision About Your Child's Heart Care"
+        },
+        {
+          "id": "p_139",
+          "type": "paragraph",
+          "text": "A second opinion is useful when it clarifies the diagnosis, explains why surgery was recommended, compares appropriate options, and prepares the family for recovery. It starts with a complete file, a short question list, and an honest discussion of urgency."
+        },
+        {
+          "id": "p_140",
+          "type": "paragraph",
+          "text": "If you are considering a pediatric cardiac consultation in India, organise the latest echocardiogram and the current recommendation, and ask a qualified specialist to review them. If treatment is urgent, the child’s immediate medical needs come first."
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help with record coordination and treatment enquiries. Share the reports you already have and the recommendation from the current team. The treating clinicians decide whether surgery, a catheter procedure, monitoring or more tests are appropriate."
+        },
+        {
+          "id": "p_142",
+          "type": "paragraph",
+          "text": "You can also message +91 90443 46292 for planned coordination. Emergency symptoms still belong in a local emergency department."
+        },
+        {
+          "id": "h_143",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources"
+        },
+        {
+          "id": "ul_144",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "American Heart Association — questions to ask after a child’s congenital heart disease diagnosis",
+            "American Heart Association — what congenital heart disease is, how it is diagnosed, and how it is treated",
+            "Children’s Hospital of Philadelphia — pediatric cardiology and cardiothoracic surgery second opinions",
+            "Children’s National Hospital — questions to ask a pediatric cardiologist and a pediatric surgeon",
+            "MedlinePlus — congenital heart defects",
+            "GAF Healthcare pediatric cardiac surgery cost sheets for the procedures named in this article"
+          ]
+        },
+        {
+          "id": "p_145",
+          "type": "paragraph",
+          "text": "This article is for education. It does not replace an examination, diagnosis or treatment recommendation. Timing and the type of treatment must be decided for the individual child by the treating pediatric cardiology and cardiac surgery team. Seek emergency care for severe breathing difficulty, blue or grey lips or tongue, collapse, unresponsiveness or sudden deterioration."
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "Pediatric Heart Surgery in India",
+          "href": "/treatments/pediatric-heart-surgery-in-india"
+        },
+        {
+          "label": "Pediatric cardiac surgery cost",
+          "href": "/costs/India/Pediatric-Cardiac-Surgery"
+        },
+        {
+          "label": "Pediatric cardiac surgeons in India",
+          "href": "/doctors/India/Pediatric-Cardiac-Surgery"
+        },
+        {
+          "label": "Pediatric cardiac hospitals in India",
+          "href": "/hospitals/India/Pediatric-Cardiac-Surgery"
+        },
+        {
+          "label": "Questions to ask before heart surgery",
+          "href": "/blogs/questions-to-ask-before-heart-surgery"
+        },
+        {
+          "label": "Heart surgery recovery in India",
+          "href": "/blogs/heart-surgery-recovery-in-india"
+        }
+      ]
+    },
     {
       "id": "art_how_to_choose_the_right_cardiologist_in_india",
       "slug": "how-to-choose-the-right-cardiologist-in-india",
