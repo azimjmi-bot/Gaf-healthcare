@@ -9,7 +9,7 @@ import { PSEO_LOCKED_KEYS, pickDoctorPatch, translationStatus } from "@/lib/cms/
 import { catalogDoctors } from "@/lib/doctors";
 import { localePageState, localePathIsPublished } from "@/lib/i18n/locale-publication";
 import { doctorsForLocale } from "@/lib/locale-catalog";
-import { doctorMetadata } from "@/lib/seo";
+import { doctorMetadata, doctorProfilePageJsonLd } from "@/lib/seo";
 
 const cms = JSON.parse(
   readFileSync(join(process.cwd(), "content/ar/catalog-cms.json"), "utf8"),
@@ -157,6 +157,21 @@ test("Arabic medical-oncology metadata uses specialty-specific search terms", ()
   assert.ok(metadata.keywords?.includes("علاج الأورام الطبي الهند"));
   assert.ok(metadata.keywords?.includes("علاج الأورام الطبي في الهند"));
   assert.equal(metadata.keywords?.includes("علاج الأورام بالإشعاع في الهند"), false);
+});
+
+test("Arabic medical-oncology JSON-LD keeps one stable English entity identity", () => {
+  const arabic = localized[0];
+  const english = source.find((doctor) => doctor.slug === arabic?.slug);
+  assert.ok(arabic);
+  assert.ok(english);
+  const graph = doctorProfilePageJsonLd(arabic, "ar", { english });
+  const physician = graph.mainEntity as Record<string, unknown>;
+  assert.equal(physician["@id"], `https://gaf.healthcare/doctors/${english.slug}#person`);
+  assert.equal(physician.name, arabic.name);
+  assert.equal(physician.alternateName, english.name);
+  assert.equal(physician.medicalSpecialty, "علاج الأورام الطبي");
+  assert.equal(graph.inLanguage, "ar");
+  assert.equal(graph.url, `https://gaf.healthcare/ar/doctors/${english.slug}`);
 });
 
 test("Arabic medical-oncology bios are unique and avoid ranking claims", () => {
