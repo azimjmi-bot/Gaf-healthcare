@@ -25,6 +25,11 @@ const cms = JSON.parse(
       experience: string;
       proceduresExpertise: string[];
       specializations: string[];
+      education: string[];
+      affiliations: string[];
+      memberships: string[];
+      awards: string[];
+      research: string[];
     }
   >;
 };
@@ -64,6 +69,16 @@ test("Arabic overlays cover every surgical oncologist with substantive SEO and G
     assert.ok(patch.proceduresExpertise.length > 0, `${doctor.slug} missing procedures`);
     assert.ok(patch.proceduresExpertise.every((value) => /[\u0600-\u06FF]/.test(value)), doctor.slug);
     assert.ok(patch.specializations.every((value) => /[\u0600-\u06FF]/.test(value)), doctor.slug);
+    for (const value of [
+      ...patch.education,
+      ...patch.affiliations,
+      ...patch.memberships,
+      ...patch.awards,
+      ...patch.research,
+    ]) {
+      assert.match(value, /[\u0600-\u06FF]/, doctor.slug);
+      assert.doesNotMatch(value, /[A-Za-z]{2,}/, `${doctor.slug}: ${value}`);
+    }
   }
 });
 

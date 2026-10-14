@@ -84,57 +84,6 @@ function translateProcedure(name: string) {
   return translated;
 }
 
-const COMMON_LINE_TRANSLATIONS: [RegExp, string][] = [
-  [/\bSurgical Oncology\b/gi, "جراحة الأورام"],
-  [/\bGeneral Surgery\b/gi, "الجراحة العامة"],
-  [/\bMedical Oncology\b/gi, "علاج الأورام الطبي"],
-  [/\bRadiation Oncology\b/gi, "علاج الأورام بالإشعاع"],
-  [/\bGynecologic(?:al)? Oncology\b/gi, "أورام النساء"],
-  [/\bHead and Neck\b/gi, "الرأس والعنق"],
-  [/\bHead & Neck\b/gi, "الرأس والعنق"],
-  [/\bBreast Surgery\b/gi, "جراحة الثدي"],
-  [/\bRobotic Surgery\b/gi, "الجراحة الروبوتية"],
-  [/\bMinimal(?:ly)? Invasive Surgery\b/gi, "الجراحة طفيفة التوغل"],
-  [/\bLaparoscopic Surgery\b/gi, "جراحة المناظير"],
-  [/\bFellowship\b/gi, "زمالة"],
-  [/\bSenior Residency\b/gi, "إقامة تخصصية عليا"],
-  [/\bResidency\b/gi, "إقامة تخصصية"],
-  [/\bTraining\b/gi, "تدريب"],
-  [/\bProfessor\b/gi, "أستاذ"],
-  [/\bConsultant\b/gi, "استشاري"],
-  [/\bDepartment\b/gi, "قسم"],
-  [/\bUniversity\b/gi, "جامعة"],
-  [/\bMedical College\b/gi, "كلية الطب"],
-  [/\bCancer Institute\b/gi, "معهد السرطان"],
-  [/\bCancer Centre\b/gi, "مركز السرطان"],
-  [/\bCancer Center\b/gi, "مركز السرطان"],
-  [/\bHospital\b/gi, "مستشفى"],
-  [/\bMember of\b/gi, "عضو في"],
-  [/\bMember\b/gi, "عضو"],
-  [/\bCurrent\b/gi, "حاليًا"],
-  [/\bFormerly\b/gi, "سابقًا"],
-  [/\bFormer\b/gi, "سابقًا"],
-  [/\bIndia\b/gi, "الهند"],
-  [/\bNew Delhi\b/gi, "نيودلهي"],
-  [/\bDelhi\b/gi, "دلهي"],
-  [/\bMumbai\b/gi, "مومباي"],
-  [/\bBangalore\b/gi, "بنغالور"],
-  [/\bBengaluru\b/gi, "بنغالور"],
-  [/\bChennai\b/gi, "تشيناي"],
-  [/\bHyderabad\b/gi, "حيدر آباد"],
-  [/\bGurgaon\b/gi, "غورغرام"],
-  [/\bGurugram\b/gi, "غوروغرام"],
-  [/\bFaridabad\b/gi, "فريد آباد"],
-];
-
-function translateLine(value: string) {
-  let translated = value;
-  for (const [pattern, replacement] of COMMON_LINE_TRANSLATIONS) {
-    translated = translated.replace(pattern, replacement);
-  }
-  return translated.replace(/\s+/g, " ").trim();
-}
-
 function arabicQualifications(value: string) {
   const qualifications: string[] = [];
   const has = (pattern: RegExp) => pattern.test(value);
@@ -224,11 +173,20 @@ for (const doctor of surgicalOncologists) {
     imageAlt: `${name}، ${title} في ${hospital}، ${city} — دليل GAF Healthcare لجراحة الأورام في الهند حسب البلد والمدينة والتخصص والإجراء`,
     specializations: arabicSpecializations(doctor, procedures),
     proceduresExpertise: procedures,
-    education: doctor.education.map(translateLine),
-    affiliations: doctor.affiliations.map(translateLine),
-    memberships: doctor.memberships.map(translateLine),
-    awards: doctor.awards.map(translateLine),
-    research: doctor.research.map(translateLine),
+    // The English source keeps full institution, award and publication names.
+    // Arabic pages use concise verified facts instead of leaking untranslated
+    // paragraphs or pretending that a proper-name translation is official.
+    education: [`المؤهلات المنشورة: ${arabicQualifications(doctor.qualifications)}`],
+    affiliations: [`يمارس عمله في ${hospital}، ${city}، الهند`],
+    memberships: doctor.memberships.length
+      ? [`لديه ${doctor.memberships.length} عضويات مهنية منشورة في السجل الإنجليزي المرجعي`]
+      : [],
+    awards: doctor.awards.length
+      ? [`يتضمن السجل الإنجليزي المرجعي ${doctor.awards.length} جوائز أو تكريمات منشورة`]
+      : [],
+    research: doctor.research.length
+      ? [`يتضمن السجل الإنجليزي المرجعي ${doctor.research.length} مساهمات بحثية منشورة`]
+      : [],
     bio,
   };
 }
