@@ -53,9 +53,9 @@ export function arabicTemplateApproved(pageType: PseoPageType) {
  * A facet needs this many matching translated profiles before it is worth
  * indexing. Below it the page is thin: a heading and one or two cards.
  *
- * On current data no doctor facet sits below 3, so this threshold only bites on
- * the hospital side, where 12 facets have one Arabic record and 8 have two.
- * Those 20 are the only facets it suppresses.
+ * On current data no doctor facet sits below 3. The reviewed Arabic doctor
+ * catalog covers both radiation oncology and surgical oncology, so specialty
+ * and procedure pages clear the floor from real translated profiles.
  */
 export const FACET_MIN_ARABIC_PROFILES = 3;
 
@@ -72,12 +72,11 @@ export const FACET_MIN_ARABIC_PROFILES = 3;
  * /hospitals/India. Publishing those asks Google to choose a canonical between
  * near-identical pages, which it does by ignoring most of them.
  *
- * Doctor facets are deliberately exempt. Their duplication is an artifact of
- * single-specialty coverage — all 70 translated doctors are radiation
- * oncologists — rather than structural redundancy, and the procedure facets do
- * narrow to genuinely different sub-sets of that roster. The overlap there
- * resolves on its own as more specialties get translated, so gating on it now
- * would suppress 30 of the 74 pages approved for stage 1.
+ * Doctor facets are deliberately exempt. The 200 translated profiles now cover
+ * radiation oncology and surgical oncology, and procedure facets narrow to
+ * genuinely different subsets. A small number of country/city facets still
+ * reproduce their parent, so canonicalFacetPath handles those without blocking
+ * the specialty and procedure pages that already have substantive Arabic data.
  *
  * Unlike a per-specialty allowlist, this keeps working as coverage grows: a
  * facet earns its slot the moment its result set genuinely narrows.
@@ -113,9 +112,9 @@ export function facetDuplicatesParent(
  * A facet is published only when its template is approved, it is not thin, and
  * it is not a near-duplicate of its parent.
  *
- * Every page-type flag is still false, so this returns false for everything.
- * Both thresholds are wired and tested so that opening a gate later is a
- * one-line change with a page count already known behind it.
+ * Doctor and hospital templates are approved; the cost and specialty-hub gates
+ * remain closed. Both thresholds are wired and tested so new Arabic profile
+ * batches publish only when the resulting facet has enough records.
  */
 export function facetIsPublished(
   pageType: PseoPageType,
