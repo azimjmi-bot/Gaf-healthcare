@@ -35,14 +35,24 @@ test("the switcher never offers a link to a page that is not published", () => {
 });
 
 test("a locale with no equivalent page falls back to its own home", () => {
-  // Arabic has no cost pages, so from an English cost page it offers its home.
-  const fromCosts = languageOptions("/costs/India/Radiation-Oncology");
+  // A city-procedure page has no reviewed city-specific Arabic price yet, so
+  // the switcher does not claim it is equivalent.
+  const cityProcedure =
+    "/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)";
+  const fromCosts = languageOptions(cityProcedure);
   const arabic = fromCosts.find((option) => option.locale === "ar");
   assert.ok(arabic, "Arabic should still be reachable from an English-only page");
   assert.equal(arabic.equivalent, false);
   assert.equal(arabic.href, "/ar");
 
-  // Where the page does exist in Arabic, it links to the page itself.
+  // Reviewed national cost pages link to their Arabic equivalent.
+  const nationalCost = "/costs/India/Radiation-Oncology";
+  const arabicCost = languageOptions(nationalCost).find((option) => option.locale === "ar");
+  assert.ok(arabicCost);
+  assert.equal(arabicCost.equivalent, true);
+  assert.equal(arabicCost.href, `/ar${nationalCost}`);
+
+  // Doctor profiles retain the same behavior.
   const fromProfile = languageOptions("/doctors/dr-anil-kumar-anand");
   const arabicProfile = fromProfile.find((option) => option.locale === "ar");
   assert.ok(arabicProfile);
