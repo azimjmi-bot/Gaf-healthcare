@@ -61,7 +61,7 @@ const STAGE_FACETS: Record<PseoPageType, number> = {
 };
 
 /** Every facet URL that renders in Arabic, published or not. */
-const FACET_CANDIDATES = 2388;
+const FACET_CANDIDATES = 1399;
 
 function expectedPublishedFacets() {
   return (Object.keys(STAGE_FACETS) as PseoPageType[])
