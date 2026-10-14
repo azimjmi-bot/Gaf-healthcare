@@ -54,7 +54,7 @@ export function doctorMetadata(d: Doctor, locale: AppLocale = "en"): Metadata {
         ...(officialCampus && officialCampus !== d.hospitalName ? [officialCampus] : []),
         `${specialty} ${city}`,
         `${specialty} الهند`,
-        "علاج الأورام بالإشعاع في الهند",
+        `${specialty} في الهند`,
         "سياحة علاجية الهند",
         ...d.procedures.slice(0, 6).map((name) => taxonomyLabel(name, "ar")),
       ],

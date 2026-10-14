@@ -52,14 +52,19 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     path: "/doctors/dr-anil-kumar-anand",
     published: ["en", "ar"],
   },
+  {
+    label: "medical oncologist profile",
+    path: "/doctors/dr-ankur-bahl",
+    published: ["en", "ar"],
+  },
   { label: "doctor facet: country", path: "/doctors/India", published: ["en", "ar"] },
   {
     label: "doctor facet: country/city",
     path: "/doctors/India/Delhi-NCR",
     published: ["en", "ar"],
   },
-  // Arabic now has two reviewed specialties. Radiation Oncology genuinely
-  // narrows the 200-profile Arabic roster, so these facets are self-canonical
+  // Arabic now has three reviewed specialties. Radiation Oncology genuinely
+  // narrows the 286-profile Arabic roster, so these facets are self-canonical
   // and participate in reciprocal hreflang.
   {
     label: "doctor facet: country/specialty",
@@ -77,12 +82,22 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en", "ar"],
   },
   {
+    label: "medical oncology facet",
+    path: "/doctors/India/Medical-Oncology",
+    published: ["en", "ar"],
+  },
+  {
+    label: "medical oncology procedure facet",
+    path: "/doctors/India/Delhi-NCR/Medical-Oncology/Chemotherapy",
+    published: ["en", "ar"],
+  },
+  {
     label: "doctor facet with no Arabic profiles",
     path: "/doctors/India/Nephrology",
     published: ["en"],
   },
   // This reviewed facet clears FACET_MIN_ARABIC_PROFILES and now narrows
-  // Mumbai's combined radiation and surgical-oncology roster.
+  // Mumbai's combined radiation, surgical and medical-oncology roster.
   {
     label: "doctor facet at the 3-profile floor",
     path: "/doctors/India/Mumbai/Radiation-Oncology",

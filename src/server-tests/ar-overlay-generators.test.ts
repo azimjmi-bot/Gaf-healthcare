@@ -8,6 +8,7 @@ const CMS_FILE = join(process.cwd(), "content/ar/catalog-cms.json");
 const GENERATORS: { command: string; args: string[] }[] = [
   { command: "node", args: ["scripts/generate-ar-ro-overlays.mjs"] },
   { command: "npx", args: ["tsx", "scripts/generate-ar-surgical-oncology-overlays.ts"] },
+  { command: "npx", args: ["tsx", "scripts/generate-ar-medical-oncology-overlays.ts"] },
   { command: "node", args: ["scripts/generate-ar-hospital-overlays.mjs"] },
 ];
 
@@ -25,7 +26,7 @@ type Cms = {
 /**
  * These generators rebuild each patch from scratch, so anything they forget to
  * carry over is silently dropped. Losing status would send every reviewed
- * translation back to draft, which means a 404 on 237 live entity pages, and nothing
+ * translation back to draft, which means a 404 on 323 live entity pages, and nothing
  * else in the suite would notice.
  *
  * Both tests restore the file in a finally block, so a failure cannot leave
@@ -60,7 +61,7 @@ test("regenerating preserves the review status of every existing record", () => 
     const untouched = Object.entries(after.doctorOverrides).filter(
       ([slug]) => slug !== doctorSlug,
     );
-    assert.equal(untouched.length, 199);
+    assert.equal(untouched.length, 285);
     for (const [slug, patch] of untouched) {
       assert.equal(patch.status, "published", slug);
     }

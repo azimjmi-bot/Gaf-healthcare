@@ -54,7 +54,7 @@ export function arabicTemplateApproved(pageType: PseoPageType) {
  * indexing. Below it the page is thin: a heading and one or two cards.
  *
  * On current data no doctor facet sits below 3. The reviewed Arabic doctor
- * catalog covers both radiation oncology and surgical oncology, so specialty
+ * catalog covers radiation, surgical and medical oncology, so specialty
  * and procedure pages clear the floor from real translated profiles.
  */
 export const FACET_MIN_ARABIC_PROFILES = 3;
@@ -72,8 +72,8 @@ export const FACET_MIN_ARABIC_PROFILES = 3;
  * /hospitals/India. Publishing those asks Google to choose a canonical between
  * near-identical pages, which it does by ignoring most of them.
  *
- * Doctor facets are deliberately exempt. The 200 translated profiles now cover
- * radiation oncology and surgical oncology, and procedure facets narrow to
+ * Doctor facets are deliberately exempt. The 286 translated profiles now cover
+ * radiation, surgical and medical oncology, and procedure facets narrow to
  * genuinely different subsets. A small number of country/city facets still
  * reproduce their parent, so canonicalFacetPath handles those without blocking
  * the specialty and procedure pages that already have substantive Arabic data.
