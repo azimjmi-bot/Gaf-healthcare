@@ -3,12 +3,14 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
 import { pickHospitalPatch, PSEO_LOCKED_KEYS } from "../cms/catalog-types";
+import { HOSPITAL_NAMES_AR, HOSPITAL_NAMES_EN } from "./hospital-names-ar";
 import { taxonomyLabel } from "./taxonomy-labels";
 
 const cms = JSON.parse(readFileSync(join(process.cwd(), "content/ar/catalog-cms.json"), "utf8")) as {
   hospitalOverrides: Record<
     string,
     {
+      name: string;
       bio: string;
       summary: string;
       languages: string;
@@ -38,7 +40,12 @@ test("Arabic overlays cover all 37 partner hospitals", () => {
     assert.ok(patch.summary.length > 80);
     assert.ok(patch.languages.includes("الإنجليزية"));
     assert.ok(patch.imageAlt.includes("GAF Healthcare"));
-    assert.ok(patch.imageAlt.includes(hospital.name));
+    assert.equal(patch.name, HOSPITAL_NAMES_AR[hospital.slug]);
+    assert.match(patch.name, /[\u0600-\u06FF]/);
+    assert.ok(patch.bio.includes(patch.name));
+    assert.ok(patch.imageAlt.includes(patch.name));
+    assert.equal(patch.bio.includes(hospital.name), false);
+    assert.equal(patch.imageAlt.includes(hospital.name), false);
   }
 });
 
@@ -86,6 +93,15 @@ test("eye campuses overlay ophthalmology-only focus", () => {
   assert.equal(cms.hospitalOverrides["the-sight-avenue-eye-hospital"].focus, "طب العيون");
   assert.match(cms.hospitalOverrides["dr-agarwals-eye-hospital"].icu, /عيون/);
   assert.match(cms.hospitalOverrides["fortis-gurgaon"].focus, /علاج الأورام بالإشعاع/);
+});
+
+test("Arabic hospital display names do not replace English catalog identity", () => {
+  assert.equal(Object.keys(HOSPITAL_NAMES_AR).length, ginger.hospitals.length);
+  assert.equal(new Set(Object.values(HOSPITAL_NAMES_AR)).size, ginger.hospitals.length);
+  for (const hospital of ginger.hospitals) {
+    assert.equal(HOSPITAL_NAMES_EN[hospital.slug], hospital.name);
+    assert.notEqual(HOSPITAL_NAMES_AR[hospital.slug], hospital.name);
+  }
 });
 
 test("hospital taxonomy labels stay English as routing keys", () => {

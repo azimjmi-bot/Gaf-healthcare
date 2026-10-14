@@ -188,7 +188,7 @@ export function aboutParagraphs(hospital: Hospital) {
 export function pullQuote(hospital: Hospital) {
   if (isEyeCampus(hospital)) return "Sight restored with a plan you can actually read.";
   if (hospital.slug.includes("proton")) return "Protons when the Bragg peak is the argument — photons when it is not.";
-  if (hospital.slug.includes("athenaa") || hospital.name.toLowerCase().includes("women")) {
+  if (hospital.slug.includes("athenaa") || hospital.slug.includes("women")) {
     return "Women’s cancer on a floor built for that list alone.";
   }
   return "Advanced care that still leaves room for a quieter recovery.";

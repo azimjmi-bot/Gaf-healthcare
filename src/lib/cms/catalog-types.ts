@@ -39,6 +39,8 @@ export type DoctorPatch = {
 
 export type HospitalPatch = {
   status?: TranslationStatus;
+  /** Arabic (or other locale) display name. Slug, city and specialty keys stay English. */
+  name?: string;
   bio?: string;
   summary?: string;
   image?: string;
@@ -86,6 +88,7 @@ export const DOCTOR_OVERLAY_KEYS = [
 ] as const satisfies readonly (keyof DoctorPatch)[];
 
 export const HOSPITAL_OVERLAY_KEYS = [
+  "name",
   "bio",
   "summary",
   "image",

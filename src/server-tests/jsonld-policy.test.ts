@@ -237,11 +237,35 @@ test("Arabic entities carry the Arabic name with the Latin name alongside", () =
   assert.equal(AR.physician.alternateName, en.name);
   assert.equal(AR.physician.medicalSpecialty, taxonomyLabel(en.specialty, "ar"));
   assert.notEqual(AR.physician.medicalSpecialty, en.specialty);
+
+  const arHospital = hospitalIn("ar");
+  const enHospital = hospitalIn(SOURCE_LOCALE);
+  assert.notEqual(arHospital.name, enHospital.name);
+  assert.match(arHospital.name, /[\u0600-\u06FF]/);
+  assert.equal(arHospital.slug, enHospital.slug);
+  assert.equal(arHospital.city, enHospital.city);
+  assert.equal(AR.hospital.name, arHospital.name);
+  assert.equal(AR.hospital.alternateName, enHospital.name);
+  assert.equal(AR.hospital["@id"], EN.hospital["@id"]);
+  const listed = (AR.hospitalList.itemListElement[0] as { item: { name: string; alternateName: string; "@id": string } }).item;
+  assert.equal(listed.name, arHospital.name);
+  assert.equal(listed.alternateName, enHospital.name);
+  assert.equal(listed["@id"], EN.hospital["@id"]);
+  const worksFor = AR.physician.worksFor as { name: string; alternateName: string; "@id": string };
+  assert.equal(worksFor.name, ar.hospitalName);
+  assert.equal(worksFor.alternateName, en.hospitalName);
+  assert.notEqual(ar.hospitalName, en.hospitalName);
+  assert.equal(worksFor["@id"], (EN.physician.worksFor as { "@id": string })["@id"]);
 });
 
 test("English entities carry no alternateName", () => {
   assert.equal(EN.physician.alternateName, undefined);
   assert.ok(!("alternateName" in EN.physician));
+  assert.equal(EN.hospital.alternateName, undefined);
+  assert.ok(!("alternateName" in EN.hospital));
+  assert.ok(!("alternateName" in (EN.physician.worksFor as object)));
+  const listed = (EN.hospitalList.itemListElement[0] as { item: object }).item;
+  assert.ok(!("alternateName" in listed));
 });
 
 test("alternateName never repeats the name it sits beside", () => {

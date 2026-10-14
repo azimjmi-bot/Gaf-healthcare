@@ -21,6 +21,18 @@ import {
 } from "./ar-overlay-tables.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const HOSPITAL_NAMES = JSON.parse(readFileSync(join(root, "src/data/hospital-names-ar.json"), "utf8"));
+const ENGLISH_HOSPITAL_NAMES = Object.values(HOSPITAL_NAMES).sort((a, b) => b.en.length - a.en.length);
+
+function arabicCampus(slug, fallback) {
+  return HOSPITAL_NAMES[slug]?.ar || fallback;
+}
+
+function translateCampusNames(text) {
+  let out = text;
+  for (const row of ENGLISH_HOSPITAL_NAMES) out = out.split(row.en).join(row.ar);
+  return out;
+}
 const catalog = JSON.parse(readFileSync(join(root, "src/data/ginger-catalog.json"), "utf8"));
 const cmsPath = join(root, "content/ar/catalog-cms.json");
 const cms = JSON.parse(readFileSync(cmsPath, "utf8"));
@@ -145,7 +157,7 @@ function arAffiliations(items) {
   return (items || []).map((line) => {
     let out = line;
     for (const rule of AFFILIATION_RULES) out = out.replace(rule.match, rule.ar);
-    return out;
+    return translateCampusNames(out);
   });
 }
 
@@ -172,7 +184,7 @@ function bioFor(doc, nameAr, titleAr, cityAr, years, proc1, proc2) {
   const female = FEMALE.has(doc.slug);
   const head = isHead(doc.designation);
   const role = roleWord(female, head);
-  const hospital = doc.hospitalName || doc.hospitalCaption || "الحرم الشريك";
+  const hospital = arabicCampus(doc.hospitalSlug, doc.hospitalName || doc.hospitalCaption || "الحرم الشريك");
   const airport = AIRPORT[doc.city] || "المطار الدولي";
   const city = cityAr;
   const n = String(years);
@@ -218,7 +230,10 @@ function bioFor(doc, nameAr, titleAr, cityAr, years, proc1, proc2) {
 }
 
 function hospitalLabel(doc) {
-  return (doc.hospitalName || doc.hospitalCaption || "").split(",")[0].trim() || "الحرم الشريك";
+  return arabicCampus(
+    doc.hospitalSlug,
+    (doc.hospitalName || doc.hospitalCaption || "").split(",")[0].trim() || "الحرم الشريك",
+  );
 }
 
 const doctors = catalog.doctors.filter((d) => d.specialty === "Radiation Oncology");

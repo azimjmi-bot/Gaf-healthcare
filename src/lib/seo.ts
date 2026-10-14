@@ -9,6 +9,7 @@ import { stripMarkdown } from "@/lib/markdown";
 import { prettyCatalogPath } from "@/lib/pretty-catalog-path";
 import { site } from "@/lib/site";
 import type { AppLocale } from "@/lib/i18n/languages";
+import { englishHospitalName } from "@/lib/i18n/hospital-names-ar";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { SITE_URL, absoluteUrl } from "@/lib/seo-url";
 import {
@@ -22,6 +23,11 @@ import {
 
 export { SITE_URL, absoluteUrl };
 
+function hospitalAlternateName(slug: string, displayName: string) {
+  const official = englishHospitalName(slug);
+  return official ? alternateName(displayName, official) : undefined;
+}
+
 function clip(text: string, max = 158) {
   const compact = text.replace(/\s+/g, " ").trim();
   if (compact.length <= max) return compact;
@@ -34,6 +40,7 @@ export function doctorMetadata(d: Doctor, locale: AppLocale = "en"): Metadata {
     const city = taxonomyLabel(d.city, "ar");
     const country = taxonomyLabel(d.country, "ar");
     const procs = d.procedures.slice(0, 3).map((name) => taxonomyLabel(name, "ar")).join("، ");
+    const officialCampus = englishHospitalName(d.hospitalSlug);
     const title = `${d.name} — ${specialty} في ${city}، ${country}`;
     const description = clip(
       `${d.name} ${specialty} في ${d.hospitalName}، ${city}، ${country}. ${procs}. مراجعة السجلات ثم مكالمة فيديو عبر GAF Healthcare قبل تحديد السفر. ${stripMarkdown(d.bio)}`,
@@ -44,6 +51,7 @@ export function doctorMetadata(d: Doctor, locale: AppLocale = "en"): Metadata {
       description,
       keywords: [
         d.name,
+        ...(officialCampus && officialCampus !== d.hospitalName ? [officialCampus] : []),
         `${specialty} ${city}`,
         `${specialty} الهند`,
         "علاج الأورام بالإشعاع في الهند",
@@ -138,6 +146,7 @@ export function hospitalMetadata(h: Hospital, locale: AppLocale = "en"): Metadat
     const country = taxonomyLabel(h.country, "ar");
     const specs = h.specialties.slice(0, 5).map((name) => taxonomyLabel(name, "ar")).join("، ");
     const eye = h.specialtySlug === "ophthalmology" && h.specialtySlugs.length === 1;
+    const official = englishHospitalName(h.slug);
     const title = eye
       ? `${h.name} — مستشفى عيون في ${city}، ${country}`
       : `${h.name} — مستشفى معتمد في ${city}، ${country}`;
@@ -150,6 +159,7 @@ export function hospitalMetadata(h: Hospital, locale: AppLocale = "en"): Metadat
       description,
       keywords: [
         h.name,
+        ...(official && official !== h.name ? [official] : []),
         `مستشفيات ${city}`,
         "مستشفيات الهند",
         "سياحة علاجية الهند",
@@ -318,17 +328,18 @@ export function physicianJsonLd(d: Doctor, locale: AppLocale = "en", english?: D
       name: taxonomyLabel(d.city, locale),
       containedInPlace: { "@type": "Country", name: taxonomyLabel(d.country, locale) },
     },
-    worksFor: {
+    worksFor: compact({
       "@type": "Hospital",
       "@id": entityId(hospitalPath, "hospital"),
       name: d.hospitalName,
+      alternateName: hospitalAlternateName(d.hospitalSlug, d.hospitalName),
       url: crawlableUrl(hospitalPath, locale),
       address: {
         "@type": "PostalAddress",
         addressLocality: taxonomyLabel(d.city, locale),
         addressCountry: "IN",
       },
-    },
+    }),
   });
 }
 
@@ -365,6 +376,7 @@ export function hospitalJsonLd(h: Hospital, locale: AppLocale = "en") {
     "@type": "Hospital",
     "@id": entityId(path, "hospital"),
     name: h.name,
+    alternateName: hospitalAlternateName(h.slug, h.name),
     url: crawlableUrl(path, locale),
     description: clip(displayBio(h.bio), 240),
     medicalSpecialty: h.specialties.map((name) => taxonomyLabel(name, locale)),
@@ -466,6 +478,9 @@ export function hospitalItemListJsonLd(rows: Hospital[], opts: { name: string; p
         "@type": "Hospital",
         "@id": entityId(`/hospitals/${hospital.slug}`, "hospital"),
         name: hospital.name,
+        ...(hospitalAlternateName(hospital.slug, hospital.name)
+          ? { alternateName: hospitalAlternateName(hospital.slug, hospital.name) }
+          : {}),
         url: crawlableUrl(`/hospitals/${hospital.slug}`, locale),
         medicalSpecialty: hospital.specialties.map((name) => taxonomyLabel(name, locale)),
         address: {
@@ -501,11 +516,12 @@ export function doctorItemListJsonLd(rows: Doctor[], opts: { name: string; path:
         name: doctor.name,
         url: crawlableUrl(`/doctors/${doctor.slug}`, locale),
         medicalSpecialty: taxonomyLabel(doctor.specialty, locale),
-        worksFor: {
+        worksFor: compact({
           "@type": "Hospital",
           "@id": entityId(`/hospitals/${doctor.hospitalSlug}`, "hospital"),
           name: doctor.hospitalName,
-        },
+          alternateName: hospitalAlternateName(doctor.hospitalSlug, doctor.hospitalName),
+        }),
         address: {
           "@type": "PostalAddress",
           addressLocality: taxonomyLabel(doctor.city, locale),

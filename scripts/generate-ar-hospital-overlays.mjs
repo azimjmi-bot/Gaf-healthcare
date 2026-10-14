@@ -9,8 +9,15 @@ import { fileURLToPath } from "url";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const catalog = JSON.parse(readFileSync(join(root, "src/data/ginger-catalog.json"), "utf8"));
+const HOSPITAL_NAMES = JSON.parse(readFileSync(join(root, "src/data/hospital-names-ar.json"), "utf8"));
 const cmsPath = join(root, "content/ar/catalog-cms.json");
 const cms = JSON.parse(readFileSync(cmsPath, "utf8"));
+
+function displayName(hospital) {
+  const arabic = HOSPITAL_NAMES[hospital.slug]?.ar;
+  if (!arabic) throw new Error(`Missing Arabic name for ${hospital.slug}`);
+  return arabic;
+}
 
 
 const CITY_AR = {
@@ -143,12 +150,15 @@ function bioFor(h) {
   const opened = year ? ` افتُتح عام ${year}.` : "";
   const kind = eye ? "مستشفى عيون" : "حرم متعدد التخصصات";
 
+  const plural = h.name.startsWith("مستشفيات");
+  const listed = plural ? "تُدرَج" : "يُدرَج";
+  const appears = plural ? "تظهر" : "يظهر";
   const openings = [
-    `يُدرَج ${h.name} في دليل GAF Healthcare كـ${kind} في ${cityAr}، الهند${size}.${opened} الاعتماد الحالي: ${acc}.`,
+    `${listed} ${h.name} في دليل GAF Healthcare كـ${kind} في ${cityAr}، الهند${size}.${opened} الاعتماد الحالي: ${acc}.`,
     `GAF Healthcare تصنّف ${h.name} تحت بلد الهند، مدينة ${cityAr}، ثم التخصص ثم الإجراء، فتصل إليه من أي من هذه المداخل.${opened}${size ? ` ${size}.` : ""} ${acc} على الملف.`,
     `${h.name} — ${kind} في ${cityAr}${size ? `، ${size}` : ""}.${opened} ${acc}. نراجع السجلات قبل أي تاريخ عبر ${airport}.`,
     `الملف العربي لـ${h.name} يُفتح من باب ${cityAr} لا من كتيّب.${opened}${size ? ` ${size}.` : ""} ${acc} يُتحقق منه سنويًا لا يُنسخ من الإعلان.`,
-    `في ${cityAr} يظهر ${h.name} مرة واحدة في دليل المستشفيات.${opened}${size ? ` ${size}.` : ""} ${acc}. المنسّق باسمك يرتّب الفيديو قبل التذكرة.`,
+    `في ${cityAr} ${appears} ${h.name} مرة واحدة في دليل المستشفيات.${opened}${size ? ` ${size}.` : ""} ${acc}. المنسّق باسمك يرتّب الفيديو قبل التذكرة.`,
     `${h.name} حرم شريك في ${cityAr}، الهند.${opened}${size ? ` ${size}.` : ""} ${acc}. لا عربون قبل مكالمة الاستشاري على الكاميرا.`,
   ];
 
@@ -175,15 +185,17 @@ const statusOf = (slug) => overlays[slug]?.status ?? "draft";
 for (const h of catalog.hospitals) {
   const cityAr = CITY_AR[h.city];
   const eye = EYE_SLUGS.has(h.slug);
-  const bio = bioFor(h);
+  const name = displayName(h);
+  const bio = bioFor({ ...h, name });
   overlays[h.slug] = {
     status: statusOf(h.slug),
+    name,
     bio,
     summary: bio,
     languages: LANG[h.city],
     focus: eye ? "طب العيون" : FOCUS_MULTI,
     icu: eye ? "غرفة عمليات عيون" : "وحدة عناية مركزة للأورام",
-    imageAlt: `${h.name} في ${cityAr}، الهند — حرم GAF Healthcare المعتمد (${h.accreditation}) مصنّف حسب البلد والمدينة والتخصص والإجراء`,
+    imageAlt: `${name} في ${cityAr}، الهند — حرم GAF Healthcare المعتمد (${h.accreditation}) مصنّف حسب البلد والمدينة والتخصص والإجراء`,
   };
 }
 

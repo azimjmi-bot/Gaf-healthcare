@@ -1,4 +1,5 @@
 import type { Doctor } from "@/lib/doctors";
+import { englishHospitalName } from "@/lib/i18n/hospital-names-ar";
 import type { Hospital } from "@/lib/hospitals";
 import {
   bedsLabel,
@@ -109,7 +110,7 @@ export function pullQuoteLocalized(hospital: Hospital, locale: AppLocale) {
   if (locale !== "ar") return pullQuote(hospital);
   if (isEyeCampus(hospital)) return "بصر يُستعاد بخطة يمكن قراءتها فعلًا.";
   if (hospital.slug.includes("proton")) return "بروتون عندما يكون ذروة براغ هي الحجة — وفوتون عندما لا تكون.";
-  if (hospital.slug.includes("athenaa") || hospital.name.toLowerCase().includes("women")) {
+  if (hospital.slug.includes("athenaa") || hospital.slug.includes("women")) {
     return "أورام النساء على طابق بُني لهذه القائمة وحدها.";
   }
   return "رعاية متقدمة ما زالت تترك مكانًا لتعافٍ أهدأ.";
@@ -241,7 +242,8 @@ export function internationalServicesLocalized(locale: AppLocale) {
 export function cityTravelLocalized(hospital: Hospital, locale: AppLocale) {
   const travel = cityTravel(hospital);
   if (locale !== "ar") return travel;
-  const mapsQuery = `${hospital.name}, ${hospital.city}, India`;
+  // Maps still searches the English campus name. The Arabic label is for the page.
+  const mapsQuery = `${englishHospitalName(hospital.slug) ?? hospital.name}, ${hospital.city}, India`;
   if (hospital.citySlug === "mumbai") {
     return {
       airport: "مطار شاتراباتي شيفاجي مهراج الدولي",

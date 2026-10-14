@@ -59,7 +59,7 @@ export function doctorsForLocale(locale: AppLocale): Doctor[] {
       cms.doctorOverrides[row.slug] as Record<string, unknown> | undefined,
     ),
   );
-  return applyCatalogLayer(
+  const layered = applyCatalogLayer(
     authored,
     cms.doctorsDeleted,
     cms.doctorOverrides,
@@ -68,6 +68,14 @@ export function doctorsForLocale(locale: AppLocale): Doctor[] {
     ),
     DOCTOR_OVERLAY_KEYS,
   );
+  // hospitalName stays locked in the overlay so matching cannot be rewritten.
+  // The Arabic page still shows the campus under its Arabic display name.
+  const campusName = new Map(hospitalsForLocale(locale).map((hospital) => [hospital.slug, hospital.name]));
+  return layered.map((doctor) => {
+    const name = campusName.get(doctor.hospitalSlug);
+    if (!name || name === doctor.hospitalName) return doctor;
+    return { ...doctor, hospitalName: name };
+  });
 }
 
 export function getDoctorForLocale(slug: string, locale: AppLocale) {
