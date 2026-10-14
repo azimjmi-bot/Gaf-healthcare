@@ -5,14 +5,15 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
 const CMS_FILE = join(process.cwd(), "content/ar/catalog-cms.json");
-const GENERATORS = [
-  "scripts/generate-ar-ro-overlays.mjs",
-  "scripts/generate-ar-hospital-overlays.mjs",
+const GENERATORS: { command: string; args: string[] }[] = [
+  { command: "node", args: ["scripts/generate-ar-ro-overlays.mjs"] },
+  { command: "npx", args: ["tsx", "scripts/generate-ar-surgical-oncology-overlays.ts"] },
+  { command: "node", args: ["scripts/generate-ar-hospital-overlays.mjs"] },
 ];
 
 function runGenerators() {
-  for (const script of GENERATORS) {
-    execFileSync("node", [script], { cwd: process.cwd(), stdio: "pipe" });
+  for (const generator of GENERATORS) {
+    execFileSync(generator.command, generator.args, { cwd: process.cwd(), stdio: "pipe" });
   }
 }
 
@@ -24,7 +25,7 @@ type Cms = {
 /**
  * These generators rebuild each patch from scratch, so anything they forget to
  * carry over is silently dropped. Losing status would send every reviewed
- * translation back to draft, which means a 404 on 107 live pages, and nothing
+ * translation back to draft, which means a 404 on 237 live entity pages, and nothing
  * else in the suite would notice.
  *
  * Both tests restore the file in a finally block, so a failure cannot leave
@@ -59,7 +60,7 @@ test("regenerating preserves the review status of every existing record", () => 
     const untouched = Object.entries(after.doctorOverrides).filter(
       ([slug]) => slug !== doctorSlug,
     );
-    assert.equal(untouched.length, 69);
+    assert.equal(untouched.length, 199);
     for (const [slug, patch] of untouched) {
       assert.equal(patch.status, "published", slug);
     }
