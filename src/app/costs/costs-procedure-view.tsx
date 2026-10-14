@@ -34,7 +34,7 @@ function treatmentForQuery(sheet: Treatment, query: CatalogQuery): Treatment {
 export async function costsProcedureMetadata(query: CatalogQuery): Promise<Metadata> {
   const locale = await getRequestLocale();
   if (locale === "ar") {
-    const { arabicCostProcedureMetadata } = await import("./arabic-cost-procedure-view");
+    const { arabicCostProcedureMetadata } = await import("@/lib/i18n/ar-cost-content");
     return arabicCostProcedureMetadata(query);
   }
   const base = catalogMetadata("treatments", query);

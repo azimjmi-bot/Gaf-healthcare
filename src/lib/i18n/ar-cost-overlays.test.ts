@@ -2,7 +2,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
-import { arabicCostProcedureMetadata } from "@/app/costs/arabic-cost-procedure-view";
+import { arabicCostProcedureMetadata } from "@/lib/i18n/ar-cost-content";
 import {
   PSEO_LOCKED_KEYS,
   pickTreatmentPatch,

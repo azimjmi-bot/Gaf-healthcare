@@ -1,5 +1,6 @@
 import "server-only";
 import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
+import { treatmentsForLocale } from "@/lib/locale-catalog";
 import type { AppLocale } from "@/lib/i18n/languages";
 import {
   localeSurfaceIsAvailable,
@@ -23,7 +24,10 @@ const ALL_SURFACES: readonly LocaleSurface[] = [
  * and unused radix UI stay out of the homepage JavaScript.
  */
 export function availableSurfaces(locale: AppLocale): LocaleSurface[] {
-  const facts = { treatmentsPublished: publishedCuratedTreatments(locale).length > 0 };
+  const facts = {
+    treatmentsPublished: publishedCuratedTreatments(locale).length > 0,
+    costsPublished: treatmentsForLocale(locale).length > 0,
+  };
   return ALL_SURFACES.filter((surface) => localeSurfaceIsAvailable(locale, surface, facts));
 }
 

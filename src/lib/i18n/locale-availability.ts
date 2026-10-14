@@ -13,6 +13,8 @@ export type LocaleSurface =
 export type SurfaceFacts = {
   /** Whether this locale has at least one published curated treatment. */
   treatmentsPublished: boolean;
+  /** Whether this locale has at least one reviewed treatment-cost overlay. */
+  costsPublished: boolean;
 };
 
 /**
@@ -29,6 +31,9 @@ export function localeSurfaceIsAvailable(
 ) {
   if (surface === "treatments") {
     return locale === "en" || facts.treatmentsPublished;
+  }
+  if (surface === "costs") {
+    return locale === "en" || facts.costsPublished;
   }
   if (locale === "en" || surface === "home") return true;
   if (locale === "ar") {

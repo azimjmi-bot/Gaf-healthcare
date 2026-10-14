@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import type { Metadata } from "next";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { JsonLd } from "@/components/json-ld";
 import { LocaleLink as Link } from "@/components/locale-link";
@@ -10,50 +9,11 @@ import { costsFilterPath } from "@/lib/catalog-links";
 import { doctorsForLocale, hospitalsForLocale, treatmentsForLocale } from "@/lib/locale-catalog";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { localizeMessages } from "@/lib/i18n/localize";
-import { withLocaleMetadata } from "@/lib/i18n/metadata";
+import { arabicCostCopy } from "@/lib/i18n/ar-cost-content";
 import { breadcrumbJsonLd, faqJsonLd, medicalWebPageJsonLd } from "@/lib/seo";
 
-function copyFor(query: CatalogQuery) {
-  const procedure = taxonomyLabel(query.procedure ?? "", "ar");
-  const specialty = taxonomyLabel(query.specialty ?? "", "ar");
-  const country = taxonomyLabel(query.destination ?? "India", "ar");
-  const city = query.city ? taxonomyLabel(query.city, "ar") : undefined;
-  const place = city ? `${city}، ${country}` : country;
-  const path = costsFilterPath(query);
-  const title = `تكلفة ${procedure} في ${place}`;
-  const description = `قارن النطاق التخطيطي لتكلفة ${procedure} في ${place} ضمن ${specialty}، وراجع مدة الإقامة وما قد يشمله العرض قبل السفر. الأرقام إرشادية وليست عرض سعر؛ وتُثبَّت الخطة بعد مراجعة السجلات.`;
-  return { procedure, specialty, country, city, place, path, title, description };
-}
-
-export function arabicCostProcedureMetadata(query: CatalogQuery): Metadata {
-  const copy = copyFor(query);
-  return withLocaleMetadata(
-    {
-      title: copy.title,
-      description: copy.description,
-      keywords: [
-        copy.title,
-        `تكلفة ${copy.procedure} في الهند`,
-        `${copy.specialty} في الهند`,
-        `سعر ${copy.procedure}`,
-        "تكلفة العلاج في الهند",
-        "السياحة العلاجية في الهند",
-      ],
-      openGraph: {
-        title: copy.title,
-        description: copy.description,
-        type: "article",
-      },
-      twitter: { card: "summary_large_image", title: copy.title, description: copy.description },
-    },
-    copy.path,
-    "ar",
-    ["en", "ar"],
-  );
-}
-
 export async function ArabicCostProcedureView({ query }: { query: CatalogQuery }) {
-  const copy = copyFor(query);
+  const copy = arabicCostCopy(query);
   const treatments = treatmentsForLocale("ar");
   const matches = filterTreatments(query, treatments);
   const treatment = matches[0];

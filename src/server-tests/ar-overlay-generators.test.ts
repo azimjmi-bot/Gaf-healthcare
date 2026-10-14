@@ -1,7 +1,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { readFileSync, writeFileSync } from "node:fs";
+import { mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { tmpdir } from "node:os";
 import { join } from "node:path";
 
 const CMS_FILE = join(process.cwd(), "content/ar/catalog-cms.json");
@@ -51,10 +52,8 @@ test("regenerating preserves the review status of every existing record", () => 
     const cms = JSON.parse(before) as Cms;
     const doctorSlug = Object.keys(cms.doctorOverrides)[0];
     const hospitalSlug = Object.keys(cms.hospitalOverrides)[0];
-    const treatmentSlug = Object.keys(cms.treatmentOverrides)[0];
     cms.doctorOverrides[doctorSlug].status = "draft";
     cms.hospitalOverrides[hospitalSlug].status = "reviewed";
-    cms.treatmentOverrides[treatmentSlug].status = "draft";
     writeFileSync(CMS_FILE, `${JSON.stringify(cms, null, 2)}\n`);
 
     runGenerators();
@@ -62,7 +61,6 @@ test("regenerating preserves the review status of every existing record", () => 
     const after = JSON.parse(readFileSync(CMS_FILE, "utf8")) as Cms;
     assert.equal(after.doctorOverrides[doctorSlug].status, "draft");
     assert.equal(after.hospitalOverrides[hospitalSlug].status, "reviewed");
-    assert.equal(after.treatmentOverrides[treatmentSlug].status, "draft");
 
     const untouched = Object.entries(after.doctorOverrides).filter(
       ([slug]) => slug !== doctorSlug,
@@ -75,11 +73,34 @@ test("regenerating preserves the review status of every existing record", () => 
       if (slug === hospitalSlug) continue;
       assert.equal(patch.status, "published", slug);
     }
+  } finally {
+    writeFileSync(CMS_FILE, before);
+  }
+});
+
+test("cost regeneration preserves review status without mutating the live catalog", () => {
+  const directory = mkdtempSync(join(tmpdir(), "gaf-ar-cost-generator-"));
+  const isolated = join(directory, "catalog-cms.json");
+  try {
+    const cms = JSON.parse(readFileSync(CMS_FILE, "utf8")) as Cms;
+    const treatmentSlug = Object.keys(cms.treatmentOverrides)[0];
+    cms.treatmentOverrides[treatmentSlug].status = "reviewed";
+    writeFileSync(isolated, `${JSON.stringify(cms, null, 2)}\n`);
+
+    execFileSync("npx", ["tsx", "scripts/generate-ar-cost-overlays.ts"], {
+      cwd: process.cwd(),
+      env: { ...process.env, CATALOG_CMS_PATH: isolated },
+      stdio: "pipe",
+    });
+
+    const after = JSON.parse(readFileSync(isolated, "utf8")) as Cms;
+    assert.equal(after.treatmentOverrides[treatmentSlug].status, "reviewed");
+    assert.equal(Object.keys(after.treatmentOverrides).length, 380);
     for (const [slug, patch] of Object.entries(after.treatmentOverrides)) {
       if (slug === treatmentSlug) continue;
       assert.equal(patch.status, "published", slug);
     }
   } finally {
-    writeFileSync(CMS_FILE, before);
+    rmSync(directory, { recursive: true, force: true });
   }
 });
