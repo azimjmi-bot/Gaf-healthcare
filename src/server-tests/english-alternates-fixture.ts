@@ -58,19 +58,18 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     path: "/doctors/India/Delhi-NCR",
     published: ["en", "ar"],
   },
-  // Published in Arabic but not advertised: all 70 translated doctors are
-  // radiation oncologists, so this facet returns exactly what /doctors/India
-  // returns and names it as canonical. A page that defers to another URL is
-  // not the address of a language version, so English does not claim it is.
+  // Arabic now has two reviewed specialties. Radiation Oncology genuinely
+  // narrows the 200-profile Arabic roster, so these facets are self-canonical
+  // and participate in reciprocal hreflang.
   {
     label: "doctor facet: country/specialty",
     path: "/doctors/India/Radiation-Oncology",
-    published: ["en"],
+    published: ["en", "ar"],
   },
   {
     label: "doctor facet: country/city/specialty",
     path: "/doctors/India/Delhi-NCR/Radiation-Oncology",
-    published: ["en"],
+    published: ["en", "ar"],
   },
   {
     label: "doctor facet: country/city/specialty/procedure",
@@ -82,14 +81,12 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     path: "/doctors/India/Nephrology",
     published: ["en"],
   },
-  // Thinnest Arabic doctor facet in the catalog: exactly 3 matching profiles,
-  // so it clears FACET_MIN_ARABIC_PROFILES. It is still not advertised, for the
-  // same reason as the two rows above — Mumbai's radiation roster is Mumbai's
-  // whole roster — which is the floor being irrelevant here rather than broken.
+  // This reviewed facet clears FACET_MIN_ARABIC_PROFILES and now narrows
+  // Mumbai's combined radiation and surgical-oncology roster.
   {
     label: "doctor facet at the 3-profile floor",
     path: "/doctors/India/Mumbai/Radiation-Oncology",
-    published: ["en"],
+    published: ["en", "ar"],
   },
   {
     label: "doctor compare",
