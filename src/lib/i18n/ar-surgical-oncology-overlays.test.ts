@@ -21,6 +21,7 @@ const cms = JSON.parse(
       title: string;
       bio: string;
       imageAlt: string;
+      qualifications: string;
       experience: string;
       proceduresExpertise: string[];
       specializations: string[];
@@ -46,6 +47,8 @@ test("Arabic overlays cover every surgical oncologist with substantive SEO and G
     assert.equal(patch.name, nameMap[doctor.slug], doctor.slug);
     assert.match(patch.name, /[\u0600-\u06FF]/, `${doctor.slug} name`);
     assert.match(patch.title, /[\u0600-\u06FF]/, `${doctor.slug} title`);
+    assert.match(patch.qualifications, /[\u0600-\u06FF]/, `${doctor.slug} qualifications`);
+    assert.doesNotMatch(patch.qualifications, /\b(?:MBBS|MS|MCh|DNB|FRCS|MRCS)\b/i, doctor.slug);
     assert.match(patch.bio, /[\u0600-\u06FF]/, `${doctor.slug} bio`);
     assert.ok(patch.bio.length >= 420, `${doctor.slug} bio is too short`);
     assert.ok(patch.bio.includes("GAF Healthcare"), `${doctor.slug} missing brand`);

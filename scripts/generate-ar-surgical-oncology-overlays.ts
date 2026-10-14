@@ -135,6 +135,23 @@ function translateLine(value: string) {
   return translated.replace(/\s+/g, " ").trim();
 }
 
+function arabicQualifications(value: string) {
+  const qualifications: string[] = [];
+  const has = (pattern: RegExp) => pattern.test(value);
+  if (has(/\bMBBS\b|\bMBChB\b/i)) qualifications.push("بكالوريوس الطب والجراحة");
+  if (has(/\bMS\b|Master of Surgery/i)) qualifications.push("ماجستير الجراحة");
+  if (has(/\bMCh\b/i)) qualifications.push("تخصص دقيق في جراحة الأورام");
+  if (has(/\bDNB\b/i)) qualifications.push("دبلوم البورد الوطني");
+  if (has(/\bMD\b/i)) qualifications.push("دكتوراه في الطب");
+  if (has(/\bFRCS\b|\bFRCSEd\b/i)) qualifications.push("زمالة الكلية الملكية للجراحين");
+  if (has(/\bMRCS\b/i)) qualifications.push("عضوية الكلية الملكية للجراحين");
+  if (has(/\bFACS\b/i)) qualifications.push("زمالة الكلية الأمريكية للجراحين");
+  if (has(/\bFMAS\b|\bFIAGES\b|\bFALS\b/i)) qualifications.push("زمالة في جراحة المناظير");
+  if (has(/Fellowship/i)) qualifications.push("زمالة تخصصية");
+  if (has(/Diploma/i)) qualifications.push("دبلوم تخصصي");
+  return [...new Set(qualifications)].join("، ") || "تدريب تخصصي في جراحة الأورام";
+}
+
 function arabicSpecializations(doctor: Doctor, procedures: string[]) {
   const values = ["جراحة الأورام"];
   const titleFocus = roleFocus(doctor.title);
@@ -201,7 +218,7 @@ for (const doctor of surgicalOncologists) {
     status: overlays[doctor.slug]?.status ?? "published",
     name,
     title,
-    qualifications: doctor.qualifications,
+    qualifications: arabicQualifications(doctor.qualifications),
     experience: `${experienceYears(doctor.experience)}+ سنة خبرة`,
     languages: LANGUAGES_AR[doctor.city] ?? "الإنجليزية، الهندية",
     imageAlt: `${name}، ${title} في ${hospital}، ${city} — دليل GAF Healthcare لجراحة الأورام في الهند حسب البلد والمدينة والتخصص والإجراء`,
