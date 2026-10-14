@@ -9,9 +9,9 @@ import { CtaBand, PageIntro } from "@/components/page-shell";
 import { PseoTrust } from "@/components/pseo-trust";
 import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, listCostSpecialtyGroups, type CatalogQuery } from "@/lib/catalog";
-import { costPath, costsFilterPath } from "@/lib/catalog-links";
+import { costsFilterPath } from "@/lib/catalog-links";
 import { getSpecialtyPage } from "@/data/specialty-pages";
-import { hospitals, treatments } from "@/lib/data";
+import { hospitals } from "@/lib/data";
 import { faqJsonLd } from "@/lib/seo";
 import { catalogPageMetadata } from "@/lib/i18n/page-meta";
 import { LOCALES } from "@/lib/i18n/languages";
@@ -20,6 +20,7 @@ import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { getRequestLocale } from "@/lib/i18n/request";
+import { treatmentsForLocale } from "@/lib/locale-catalog";
 import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { getCity, getSpecialty, isPrimaryCountry, toSlug } from "@/lib/taxonomy";
 import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
@@ -33,6 +34,7 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
   if (query.procedure) {
     const { costsProcedureMetadata } = await import("./costs-procedure-view");
     const meta = await costsProcedureMetadata(query);
+    if (locale === "ar") return meta;
     // Country views already carry their own canonical and country-specific copy.
     if (!isPrimaryCountry(query.destination)) return meta;
     // Country-level procedure pages chose their own canonical but emitted no
@@ -124,7 +126,8 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
   }
   const messages = await localizeMessages(locale);
   const faqs = await localizeFaqs("costs", locale);
-  const specialtyPages = listCostSpecialtyGroups(query, treatments, hospitals);
+  const localeTreatments = treatmentsForLocale(locale);
+  const specialtyPages = listCostSpecialtyGroups(query, localeTreatments, hospitals);
   const selectedIndex = query.specialty
     ? specialtyPages.findIndex((group) => group.name === query.specialty)
     : 0;
@@ -196,7 +199,12 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
                               <td className="px-6 py-5 text-muted-foreground">{t.stay}</td>
                               <td className="px-6 py-5 text-end">
                                 <Link
-                                  href={costPath(t.name)}
+                                  href={costsFilterPath({
+                                    destination: query.destination || "India",
+                                    city: query.city,
+                                    specialty: group.name,
+                                    procedure: t.name,
+                                  })}
                                   className="text-sm underline-offset-4 hover:underline"
                                 >
                                   {messages["dir.costs.detail"]}
@@ -211,7 +219,12 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
                       {visibleItems.map((t) => (
                         <Link
                           key={t.slug}
-                          href={costPath(t.name)}
+                          href={costsFilterPath({
+                            destination: query.destination || "India",
+                            city: query.city,
+                            specialty: group.name,
+                            procedure: t.name,
+                          })}
                           className="rounded-2xl border border-border bg-card p-5"
                         >
                           <p className="text-xs tracking-[0.18em] uppercase text-muted-foreground">

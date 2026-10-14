@@ -1,6 +1,6 @@
 import "server-only";
 import { listPublishedPosts } from "@/lib/blogs";
-import { filterDoctors, filterHospitals } from "@/lib/catalog";
+import { filterDoctors, filterHospitals, filterTreatments } from "@/lib/catalog";
 import { parentCatalogQuery } from "@/lib/catalog-options";
 import {
   doctorsForHospitalLocale,
@@ -8,6 +8,7 @@ import {
   getDoctorForLocale,
   getHospitalForLocale,
   hospitalsForLocale,
+  treatmentsForLocale,
 } from "@/lib/locale-catalog";
 import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
 import {
@@ -101,6 +102,26 @@ function targetLocaleState(locale: AppLocale, segments: string[]): LocalePageSta
     return "missing";
   }
 
+  if (segments[0] === "costs") {
+    const rows = treatmentsForLocale(locale);
+    if (segments.length === 1) return rows.length > 0 ? "published" : "missing";
+    const query = parsePrettyCatalogSegments(segments.slice(1));
+    if (!query) return "missing";
+    const matches = filterTreatments(query, rows).length;
+    const parent = parentCatalogQuery(query);
+    const parentMatches = parent ? filterTreatments(parent, rows).length : undefined;
+    // City-procedure combinations are routable for filtering, but the shared
+    // national price band is not city-specific evidence. Keep those pages
+    // noindex until an authored city quote or editorial exists; country, city,
+    // specialty and national procedure facets remain indexable.
+    const hasUnreviewedCityPrice = Boolean(query.city && query.procedure);
+    return facetState(
+      matches,
+      !hasUnreviewedCityPrice &&
+        facetIsPublished("costFacet", matches, parentMatches),
+    );
+  }
+
   if (segments[0] === "blogs") {
     const posts = listPublishedPosts(locale);
     if (segments.length === 1) return posts.length > 0 ? "published" : "missing";
@@ -109,8 +130,8 @@ function targetLocaleState(locale: AppLocale, segments: string[]): LocalePageSta
       : "missing";
   }
 
-  // Cost guides and specialty editorials remain unpublished until their
-  // locale-specific CMS records exist and have dedicated renderers.
+  // Specialty editorials remain unpublished until their locale-specific CMS
+  // records exist and have dedicated renderers.
   return "missing";
 }
 

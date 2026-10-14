@@ -7,6 +7,7 @@ import {
   ARABIC_TEMPLATE_APPROVED,
   FACET_MAX_PARENT_OVERLAP,
   FACET_MIN_ARABIC_PROFILES,
+  FACET_MIN_ARABIC_ROWS,
   facetDuplicatesParent,
   facetIsPublished,
   localeIsPublished,
@@ -20,7 +21,7 @@ import {
 } from "@/lib/i18n/locale-publication";
 import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
 import { localizedAbsoluteUrl, withLocaleMetadata } from "@/lib/i18n/metadata";
-import { doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
+import { doctorsForLocale, hospitalsForLocale, treatmentsForLocale } from "@/lib/locale-catalog";
 import { listPublishedPosts } from "@/lib/blogs";
 import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
 import { facetCandidatePaths, publishedFacetPaths } from "@/lib/i18n/facet-candidates";
@@ -56,12 +57,12 @@ function everyArabicCandidate() {
 const STAGE_FACETS: Record<PseoPageType, number> = {
   doctorFacet: 205,
   hospitalFacet: 56,
-  costFacet: 0,
+  costFacet: 524,
   specialtyHub: 0,
 };
 
 /** Every facet URL that renders in Arabic, published or not. */
-const FACET_CANDIDATES = 1399;
+const FACET_CANDIDATES = 3817;
 
 function expectedPublishedFacets() {
   return (Object.keys(STAGE_FACETS) as PseoPageType[])
@@ -70,7 +71,7 @@ function expectedPublishedFacets() {
 }
 
 test("the open gates publish exactly the reviewed facets and nothing else", () => {
-  assert.equal(ARABIC_TEMPLATE_APPROVED.costFacet, false, "no Arabic cost content exists");
+  assert.equal(ARABIC_TEMPLATE_APPROVED.costFacet, true, "reviewed Arabic cost content is live");
   assert.equal(ARABIC_TEMPLATE_APPROVED.specialtyHub, false, "specialty hubs are English long-form");
 
   const states = { published: 0, noindex: 0, missing: 0 };
@@ -108,10 +109,12 @@ test("a published facet that duplicates its parent stays out of the sitemap", ()
 
 test("the facet gate needs both an approved template and enough profiles", () => {
   assert.equal(FACET_MIN_ARABIC_PROFILES, 3);
+  assert.equal(FACET_MIN_ARABIC_ROWS.costFacet, 1);
 
-  // Unapproved: no profile count is enough. costFacet is the page type still
+  // Unapproved: no profile count is enough. specialtyHub is the page type still
   // waiting on content, so it is the honest stand-in for a closed gate.
-  assert.equal(facetIsPublished("costFacet", 99), false);
+  assert.equal(facetIsPublished("specialtyHub", 99), false);
+  assert.equal(facetIsPublished("costFacet", 1), true, "one authored cost pathway is substantive");
 
   const original = ARABIC_TEMPLATE_APPROVED.hospitalFacet;
   try {
@@ -121,7 +124,7 @@ test("the facet gate needs both an approved template and enough profiles", () =>
     assert.equal(facetIsPublished("hospitalFacet", 2), false, "2 records is below the floor");
     assert.equal(facetIsPublished("hospitalFacet", 3), true, "3 records clears the floor");
     // Approving one page type must not approve another.
-    assert.equal(facetIsPublished("costFacet", 3), false);
+    assert.equal(facetIsPublished("specialtyHub", 3), false);
   } finally {
     ARABIC_TEMPLATE_APPROVED.hospitalFacet = original;
   }
@@ -130,6 +133,7 @@ test("the facet gate needs both an approved template and enough profiles", () =>
 test("the overlap gate suppresses a facet that reproduces its parent", () => {
   assert.equal(FACET_MAX_PARENT_OVERLAP.hospitalFacet, 0.9);
   assert.equal(FACET_MAX_PARENT_OVERLAP.doctorFacet, null, "doctor facets have no overlap gate");
+  assert.equal(FACET_MAX_PARENT_OVERLAP.costFacet, null, "cost pathways carry distinct editorial");
 
   // A facet with no parent, or an empty one, is never a duplicate.
   assert.equal(facetDuplicatesParent("hospitalFacet", 37, undefined), false);
@@ -166,9 +170,11 @@ test("each staging stage publishes the reviewed number of facets", () => {
 
   const doctorFlag = ARABIC_TEMPLATE_APPROVED.doctorFacet;
   const hospitalFlag = ARABIC_TEMPLATE_APPROVED.hospitalFacet;
+  const costFlag = ARABIC_TEMPLATE_APPROVED.costFacet;
   try {
     ARABIC_TEMPLATE_APPROVED.doctorFacet = false;
     ARABIC_TEMPLATE_APPROVED.hospitalFacet = false;
+    ARABIC_TEMPLATE_APPROVED.costFacet = false;
     assert.equal(publishedCount(), 0, "a closed gate publishes nothing");
 
     ARABIC_TEMPLATE_APPROVED.doctorFacet = true;
@@ -190,16 +196,26 @@ test("each staging stage publishes the reviewed number of facets", () => {
       "stages 2+3: 6 at country/city depth, 50 deeper",
     );
 
+    ARABIC_TEMPLATE_APPROVED.hospitalFacet = false;
+    ARABIC_TEMPLATE_APPROVED.costFacet = true;
+    assert.equal(
+      publishedCount(),
+      STAGE_FACETS.costFacet,
+      "stage 4: reviewed country, city, specialty and national procedure cost facets",
+    );
+
     // The stages are independent: opening both publishes the sum, so no facet
     // is counted twice and none is suppressed by the other gate.
     ARABIC_TEMPLATE_APPROVED.doctorFacet = true;
+    ARABIC_TEMPLATE_APPROVED.hospitalFacet = true;
     assert.equal(
       publishedCount(),
-      STAGE_FACETS.doctorFacet + STAGE_FACETS.hospitalFacet,
+      STAGE_FACETS.doctorFacet + STAGE_FACETS.hospitalFacet + STAGE_FACETS.costFacet,
     );
   } finally {
     ARABIC_TEMPLATE_APPROVED.doctorFacet = doctorFlag;
     ARABIC_TEMPLATE_APPROVED.hospitalFacet = hospitalFlag;
+    ARABIC_TEMPLATE_APPROVED.costFacet = costFlag;
   }
 });
 
@@ -215,21 +231,30 @@ test("the live Arabic overlays stay published", () => {
   const cms = JSON.parse(readFileSync(file, "utf8")) as {
     doctorOverrides: Record<string, { status?: string }>;
     hospitalOverrides: Record<string, { status?: string }>;
+    treatmentOverrides: Record<string, { status?: string }>;
   };
   const doctorRows = Object.values(cms.doctorOverrides);
   const hospitalRows = Object.values(cms.hospitalOverrides);
+  const treatmentRows = Object.values(cms.treatmentOverrides);
   assert.equal(doctorRows.length, 286);
   assert.equal(hospitalRows.length, 37);
-  for (const patch of [...doctorRows, ...hospitalRows]) {
+  assert.equal(treatmentRows.length, 380);
+  for (const patch of [...doctorRows, ...hospitalRows, ...treatmentRows]) {
     assert.equal(translationStatus(patch), "published");
   }
 
   assert.equal(doctorsForLocale("ar").length, 286);
   assert.equal(hospitalsForLocale("ar").length, 37);
+  assert.equal(treatmentsForLocale("ar").length, 380);
   assert.equal(localePathIsPublished("ar", "/doctors/dr-anil-kumar-anand"), true);
   assert.equal(localePathIsPublished("ar", "/doctors/dr-anil-k-d-cruz"), true);
   assert.equal(localePathIsPublished("ar", "/doctors/dr-ankur-bahl"), true);
   assert.equal(localePathIsPublished("ar", "/hospitals/apollo-delhi"), true);
+  assert.equal(localePathIsPublished("ar", "/costs/India"), true);
+  assert.equal(
+    localePathIsPublished("ar", "/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)"),
+    true,
+  );
 });
 
 test("a missing or unreviewed status keeps a translation out of the catalog", () => {
@@ -330,7 +355,7 @@ test("noindex Arabic pages stay crawlable in robots.txt", () => {
     rule.disallow === undefined ? [] : [rule.disallow].flat(),
   );
   // A Disallow would stop the noindex tag from ever being fetched and read.
-  for (const path of ["/ar", "/ar/doctors", "/ar/hospitals"]) {
+  for (const path of ["/ar", "/ar/doctors", "/ar/hospitals", "/ar/costs"]) {
     assert.ok(
       !disallow.some((rule) => path.startsWith(rule)),
       `${path} must not be disallowed`,
@@ -389,7 +414,7 @@ test("published pages declare the other published locales as og:locale:alternate
   assert.equal(arabicHome.openGraph?.locale, "ar");
   assert.deepEqual(arabicHome.openGraph?.alternateLocale, ["en_IN"]);
 
-  // A page published only in English has no alternates to declare.
+  // The reviewed Arabic cost facet participates reciprocally.
   const costs = withLocaleMetadata({}, "/costs/India/Radiation-Oncology", "en", LOCALES);
-  assert.deepEqual(costs.openGraph?.alternateLocale, []);
+  assert.deepEqual(costs.openGraph?.alternateLocale, ["ar"]);
 });

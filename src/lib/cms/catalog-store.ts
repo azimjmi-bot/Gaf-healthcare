@@ -6,11 +6,13 @@ import {
   emptyCatalogCms,
   pickDoctorPatch,
   pickHospitalPatch,
+  pickTreatmentPatch,
   pickOverlay,
   PSEO_LOCKED_KEYS,
   type CatalogCms,
   type DoctorPatch,
   type HospitalPatch,
+  type TreatmentPatch,
 } from "@/lib/cms/catalog-types";
 
 function catalogFile(edition: CmsEdition = "en") {
@@ -35,6 +37,14 @@ function mapDoctorOverrides(map: Record<string, DoctorPatch> | undefined) {
   return next;
 }
 
+function mapTreatmentOverrides(map: Record<string, TreatmentPatch> | undefined) {
+  const next: Record<string, TreatmentPatch> = {};
+  for (const [slug, patch] of Object.entries(map || {})) {
+    next[slug] = pickTreatmentPatch(patch);
+  }
+  return next;
+}
+
 const cmsCache = new Map<CmsEdition, { at: number; data: CatalogCms }>();
 let catalogGeneration = 0;
 
@@ -47,6 +57,7 @@ export function loadCatalogCms(edition: CmsEdition = "en"): CatalogCms {
     const cms = { ...emptyCatalogCms(), ...data };
     cms.hospitalOverrides = mapHospitalOverrides(cms.hospitalOverrides);
     cms.doctorOverrides = mapDoctorOverrides(cms.doctorOverrides);
+    cms.treatmentOverrides = mapTreatmentOverrides(cms.treatmentOverrides);
     cmsCache.set(edition, { at: now, data: cms });
     return cms;
   } catch {

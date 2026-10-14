@@ -98,6 +98,15 @@ export const HOSPITAL_OVERLAY_KEYS = [
   "icu",
 ] as const satisfies readonly (keyof HospitalPatch)[];
 
+/** Reader-facing treatment fields. Names and every routing relationship stay on the English base. */
+export const TREATMENT_OVERLAY_KEYS = [
+  "summary",
+  "notes",
+  "includes",
+  "stay",
+  "conditions",
+] as const satisfies readonly (keyof TreatmentPatch)[];
+
 export function pickOverlay(patch: object | undefined, allowedKeys: readonly string[]): Record<string, unknown> {
   if (!patch) return {};
   const src = patch as Record<string, unknown>;
@@ -120,6 +129,7 @@ export function pickOverlay(patch: object | undefined, allowedKeys: readonly str
  */
 export const DOCTOR_PATCH_KEYS = ["status", ...DOCTOR_OVERLAY_KEYS] as const;
 export const HOSPITAL_PATCH_KEYS = ["status", ...HOSPITAL_OVERLAY_KEYS] as const;
+export const TREATMENT_PATCH_KEYS = ["status", ...TREATMENT_OVERLAY_KEYS] as const;
 
 export function pickHospitalPatch(patch: object | undefined): HospitalPatch {
   return pickOverlay(patch, HOSPITAL_PATCH_KEYS) as HospitalPatch;
@@ -130,6 +140,7 @@ export function pickDoctorPatch(patch: object | undefined): DoctorPatch {
 }
 
 export type TreatmentPatch = {
+  status?: TranslationStatus;
   name?: string;
   summary?: string;
   notes?: string;
@@ -143,6 +154,10 @@ export type TreatmentPatch = {
   blocks?: ArticleBlock[];
   replaceGuide?: boolean;
 };
+
+export function pickTreatmentPatch(patch: object | undefined): TreatmentPatch {
+  return pickOverlay(patch, TREATMENT_PATCH_KEYS) as TreatmentPatch;
+}
 
 export type CatalogRow = {
   slug: string;

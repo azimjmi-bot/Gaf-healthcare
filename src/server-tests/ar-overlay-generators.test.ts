@@ -9,6 +9,7 @@ const GENERATORS: { command: string; args: string[] }[] = [
   { command: "node", args: ["scripts/generate-ar-ro-overlays.mjs"] },
   { command: "npx", args: ["tsx", "scripts/generate-ar-surgical-oncology-overlays.ts"] },
   { command: "npx", args: ["tsx", "scripts/generate-ar-medical-oncology-overlays.ts"] },
+  { command: "npx", args: ["tsx", "scripts/generate-ar-cost-overlays.ts"] },
   { command: "node", args: ["scripts/generate-ar-hospital-overlays.mjs"] },
 ];
 
@@ -21,13 +22,15 @@ function runGenerators() {
 type Cms = {
   doctorOverrides: Record<string, { status?: string }>;
   hospitalOverrides: Record<string, { status?: string }>;
+  treatmentOverrides: Record<string, { status?: string }>;
 };
 
 /**
  * These generators rebuild each patch from scratch, so anything they forget to
  * carry over is silently dropped. Losing status would send every reviewed
- * translation back to draft, which means a 404 on 323 live entity pages, and nothing
- * else in the suite would notice.
+ * translation back to draft, which means a 404 on 323 live entity pages or
+ * removal of 380 reviewed cost pathways, and nothing else in the suite would
+ * notice.
  *
  * Both tests restore the file in a finally block, so a failure cannot leave
  * the working tree dirty.
@@ -48,8 +51,10 @@ test("regenerating preserves the review status of every existing record", () => 
     const cms = JSON.parse(before) as Cms;
     const doctorSlug = Object.keys(cms.doctorOverrides)[0];
     const hospitalSlug = Object.keys(cms.hospitalOverrides)[0];
+    const treatmentSlug = Object.keys(cms.treatmentOverrides)[0];
     cms.doctorOverrides[doctorSlug].status = "draft";
     cms.hospitalOverrides[hospitalSlug].status = "reviewed";
+    cms.treatmentOverrides[treatmentSlug].status = "draft";
     writeFileSync(CMS_FILE, `${JSON.stringify(cms, null, 2)}\n`);
 
     runGenerators();
@@ -57,6 +62,7 @@ test("regenerating preserves the review status of every existing record", () => 
     const after = JSON.parse(readFileSync(CMS_FILE, "utf8")) as Cms;
     assert.equal(after.doctorOverrides[doctorSlug].status, "draft");
     assert.equal(after.hospitalOverrides[hospitalSlug].status, "reviewed");
+    assert.equal(after.treatmentOverrides[treatmentSlug].status, "draft");
 
     const untouched = Object.entries(after.doctorOverrides).filter(
       ([slug]) => slug !== doctorSlug,
@@ -67,6 +73,10 @@ test("regenerating preserves the review status of every existing record", () => 
     }
     for (const [slug, patch] of Object.entries(after.hospitalOverrides)) {
       if (slug === hospitalSlug) continue;
+      assert.equal(patch.status, "published", slug);
+    }
+    for (const [slug, patch] of Object.entries(after.treatmentOverrides)) {
+      if (slug === treatmentSlug) continue;
       assert.equal(patch.status, "published", slug);
     }
   } finally {

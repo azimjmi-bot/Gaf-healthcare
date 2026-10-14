@@ -1,6 +1,7 @@
 import "server-only";
-import { doctors, hospitals } from "@/lib/data";
-import { doctorsPath, hospitalsPath } from "@/lib/catalog-links";
+import { doctors, hospitals, treatments } from "@/lib/data";
+import { filterTreatments } from "@/lib/catalog";
+import { catalogSpecialtyName, costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { doctorSpecialtySitemapPaths } from "@/lib/doctor-discovery";
 import { hospitalSpecialtySitemapPaths } from "@/lib/radiation-hospital-page";
 import { INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
@@ -22,13 +23,55 @@ export function facetCandidatePaths(): string[] {
   for (const path of hospitalSpecialtySitemapPaths(hospitals, doctors)) paths.add(path);
   paths.add(doctorsPath({ destination: "India" }));
   paths.add(hospitalsPath({ destination: "India" }));
+  paths.add(costsFilterPath({ destination: "India" }));
   for (const city of INDIA_CITIES) {
     paths.add(doctorsPath({ destination: "India", city }));
     paths.add(hospitalsPath({ destination: "India", city }));
+    paths.add(costsFilterPath({ destination: "India", city }));
   }
   for (const specialty of SPECIALTIES) {
     paths.add(doctorsPath({ destination: "India", specialty: specialty.name }));
     paths.add(hospitalsPath({ destination: "India", specialty: specialty.name }));
+    if (filterTreatments({ destination: "India", specialty: specialty.name }, treatments).length > 0) {
+      paths.add(costsFilterPath({ destination: "India", specialty: specialty.name }));
+    }
+    for (const city of INDIA_CITIES) {
+      if (
+        filterTreatments(
+          { destination: "India", city, specialty: specialty.name },
+          treatments,
+        ).length > 0
+      ) {
+        paths.add(costsFilterPath({ destination: "India", city, specialty: specialty.name }));
+      }
+    }
+  }
+  for (const treatment of treatments) {
+    const specialty = catalogSpecialtyName(treatment);
+    paths.add(
+      costsFilterPath({
+        destination: "India",
+        specialty,
+        procedure: treatment.name,
+      }),
+    );
+    for (const city of INDIA_CITIES) {
+      if (
+        filterTreatments(
+          { destination: "India", city, specialty, procedure: treatment.name },
+          treatments,
+        ).length > 0
+      ) {
+        paths.add(
+          costsFilterPath({
+            destination: "India",
+            city,
+            specialty,
+            procedure: treatment.name,
+          }),
+        );
+      }
+    }
   }
   return [...paths];
 }

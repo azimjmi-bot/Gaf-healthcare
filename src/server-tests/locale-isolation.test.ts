@@ -27,6 +27,7 @@ import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 import {
   doctorsForLocale,
   hospitalsForLocale,
+  treatmentsForLocale,
 } from "@/lib/locale-catalog";
 
 test("every language has an independent CMS edition", () => {
@@ -44,9 +45,11 @@ test("every language has an independent CMS edition", () => {
 test("target-locale catalogs contain only authored overlays", () => {
   assert.equal(doctorsForLocale("ar").length, 286);
   assert.equal(hospitalsForLocale("ar").length, 37);
+  assert.equal(treatmentsForLocale("ar").length, 380);
   for (const locale of ["ru", "fr", "sw"] as const) {
     assert.equal(doctorsForLocale(locale).length, 0);
     assert.equal(hospitalsForLocale(locale).length, 0);
+    assert.equal(treatmentsForLocale(locale).length, 0);
   }
   assert.ok(doctorsForLocale("en").length > doctorsForLocale("ar").length);
   assert.ok(hospitalsForLocale("en").length >= hospitalsForLocale("ar").length);
@@ -70,7 +73,8 @@ test("untranslated routes stay unpublished", () => {
   );
   assert.equal(localePathIsPublished("ru", "/doctors"), false);
   assert.equal(localePathIsPublished("ar", "/consult"), false);
-  assert.equal(localePathIsPublished("ar", "/costs"), false);
+  assert.equal(localePathIsPublished("ar", "/costs"), true);
+  assert.equal(localePathIsPublished("ar", "/costs/India"), true);
   assert.equal(localePathIsPublished("ar", "/specialties"), false);
   assert.deepEqual(
     publishedLocalesForPath(`/doctors/${englishOnlyDoctor.slug}`),
@@ -86,7 +90,8 @@ test("localized sitemaps contain only published locale records", () => {
   const arabicUrls = buildLocaleSitemap("ar").map((row) => row.url);
   assert.ok(arabicUrls.includes("https://gaf.healthcare/ar/doctors"));
   assert.ok(arabicUrls.includes("https://gaf.healthcare/ar/hospitals"));
-  assert.equal(arabicUrls.some((url) => url.includes("/ar/costs")), false);
+  assert.ok(arabicUrls.includes("https://gaf.healthcare/ar/costs"));
+  assert.ok(arabicUrls.includes("https://gaf.healthcare/ar/costs/India"));
   assert.equal(
     arabicUrls.some((url) => url.includes("/ar/specialties")),
     false,
@@ -147,6 +152,7 @@ test("UI dictionaries do not fill missing translations with English", () => {
 
 test("navigation hides routes without authored locale content", () => {
   assert.equal(surfaceIsAvailable("ar", "doctors"), true);
+  assert.equal(surfaceIsAvailable("ar", "costs"), true);
   assert.equal(surfaceIsAvailable("ar", "consult"), false);
   assert.equal(surfaceIsAvailable("fr", "hospitals"), false);
   assert.equal(surfaceIsAvailable("en", "costs"), true);

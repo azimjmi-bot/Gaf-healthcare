@@ -2,6 +2,7 @@ import "server-only";
 import {
   DOCTOR_OVERLAY_KEYS,
   HOSPITAL_OVERLAY_KEYS,
+  TREATMENT_OVERLAY_KEYS,
   translationStatus,
 } from "@/lib/cms/catalog-types";
 import { applyCatalogLayer, loadCatalogCms } from "@/lib/cms/catalog-store";
@@ -13,9 +14,11 @@ import {
   getHospital as getEnglishHospital,
   hospitals as englishHospitals,
   hospitalsInCity as englishHospitalsInCity,
+  treatments as englishTreatments,
 } from "@/lib/server-catalog";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
+import type { Treatment } from "@/lib/treatments";
 import type { AppLocale } from "@/lib/i18n/languages";
 
 function materialize<T extends { slug: string }>(rows: T[]): T[] {
@@ -47,6 +50,18 @@ function hospitalPatchIsPublished(patch: Record<string, unknown> | undefined) {
     patch &&
       translationStatus(patch) === "published" &&
       (hasText(patch.bio) || hasText(patch.summary)),
+  );
+}
+
+function treatmentPatchIsPublished(patch: Record<string, unknown> | undefined) {
+  return Boolean(
+    patch &&
+      translationStatus(patch) === "published" &&
+      hasText(patch.summary) &&
+      hasText(patch.notes) &&
+      hasText(patch.stay) &&
+      Array.isArray(patch.includes) &&
+      patch.includes.length > 0,
   );
 }
 
@@ -123,4 +138,28 @@ export function getHospitalForLocale(slug: string, locale: AppLocale) {
 export function hospitalsInCityLocale(citySlug: string, locale: AppLocale) {
   if (locale === "en") return englishHospitalsInCity(citySlug);
   return hospitalsForLocale(locale).filter((row) => row.citySlug === citySlug);
+}
+
+export function treatmentsForLocale(locale: AppLocale): Treatment[] {
+  const base = materialize(englishTreatments);
+  if (locale === "en") return base;
+  const cms = loadCatalogCms(locale);
+  const authored = base.filter((row) =>
+    treatmentPatchIsPublished(
+      cms.treatmentOverrides[row.slug] as Record<string, unknown> | undefined,
+    ),
+  );
+  return applyCatalogLayer(
+    authored,
+    cms.treatmentsDeleted,
+    cms.treatmentOverrides,
+    (cms.treatmentsAdded as Treatment[]).filter((row) =>
+      treatmentPatchIsPublished(row as unknown as Record<string, unknown>),
+    ),
+    TREATMENT_OVERLAY_KEYS,
+  );
+}
+
+export function getTreatmentForLocale(slug: string, locale: AppLocale) {
+  return treatmentsForLocale(locale).find((row) => row.slug === slug);
 }

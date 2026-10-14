@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 import { PseoEstimateCta } from "@/components/pseo-estimate-cta";
 import { blogEstimateWhatsapp } from "@/lib/site";
+import { getRequestLocale } from "@/lib/i18n/request";
 
 export function PageIntro({
   eyebrow,
@@ -29,22 +30,26 @@ export function PageIntro({
   );
 }
 
-export function CtaBand({
+export async function CtaBand({
   subject = "treatment",
   place = "India",
 }: {
   subject?: string;
   place?: string;
 } = {}) {
+  const locale = await getRequestLocale();
+  const displaySubject = locale === "ar" && subject === "treatment" ? "العلاج" : subject;
+  const displayPlace = locale === "ar" && place === "India" ? "الهند" : place;
   const wa = blogEstimateWhatsapp(subject, place);
   return (
     <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
       <PseoEstimateCta
-        subject={subject}
-        place={place}
+        subject={displaySubject}
+        place={displayPlace}
         consultHref={wa.primary}
         secondaryHref={wa.secondary}
         variant="records"
+        locale={locale}
       />
     </section>
   );

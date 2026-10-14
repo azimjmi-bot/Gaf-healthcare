@@ -32,6 +32,11 @@ function treatmentForQuery(sheet: Treatment, query: CatalogQuery): Treatment {
 }
 
 export async function costsProcedureMetadata(query: CatalogQuery): Promise<Metadata> {
+  const locale = await getRequestLocale();
+  if (locale === "ar") {
+    const { arabicCostProcedureMetadata } = await import("./arabic-cost-procedure-view");
+    return arabicCostProcedureMetadata(query);
+  }
   const base = catalogMetadata("treatments", query);
   const country = costCountryMetadata(query);
   if (country) return country;
@@ -80,6 +85,10 @@ export async function costsProcedureMetadata(query: CatalogQuery): Promise<Metad
 
 export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
   const locale = await getRequestLocale();
+  if (locale === "ar") {
+    const { ArabicCostProcedureView } = await import("./arabic-cost-procedure-view");
+    return <ArabicCostProcedureView query={query} />;
+  }
   // Destinations other than the primary one are described by a CMS destination row, not
   // by the long-form India article, so they render their own country/city view.
   if (!isPrimaryCountry(query.destination)) return <CostsCountryView query={query} locale={locale} />;

@@ -18,6 +18,7 @@ import {
   doctorsForHospitalLocale,
   doctorsForLocale,
   hospitalsForLocale,
+  treatmentsForLocale,
 } from "@/lib/locale-catalog";
 import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
 import { publishedFacetPaths } from "@/lib/i18n/facet-candidates";
@@ -119,6 +120,15 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
           lastModified: treatment.updatedAt,
           changeFrequency: "monthly",
           priority: treatment.featured ? 0.7 : 0.6,
+        }),
+      );
+    }
+    if (treatmentsForLocale(locale).length > 0) {
+      localized.push(
+        sitemapEntry("/costs", locale, {
+          lastModified: now,
+          changeFrequency: "weekly",
+          priority: 0.7,
         }),
       );
     }

@@ -1,6 +1,7 @@
 import type { ComponentProps, ReactNode } from "react";
 import Link from "next/link";
 import { consultToWhatsappHref } from "@/lib/site";
+import type { AppLocale } from "@/lib/i18n/languages";
 
 function EstimateCtaLink({
   href,
@@ -74,6 +75,44 @@ const COPY: Record<
   },
 };
 
+const COPY_AR: typeof COPY = {
+  records: {
+    heading: (subject) => `هل تحتاج إلى تقدير مخصص لحالتك بشأن ${subject}؟`,
+    body: (subject) =>
+      `شارك سجلاتك الطبية لمراجعة الحالة. بعد ذلك يمكن لاختصاصي مناسب مناقشة مسار ${subject} ومتطلبات المستشفى المحتملة والتقدير الكتابي؛ وهذه الخطوة ليست عرض سعر أو قرار علاج.`,
+    primary: "اطلب تقديرًا مخصصًا للعلاج",
+    secondary: (subject, place) => `تحدث مع GAF Healthcare عن ${subject} في ${place}`,
+  },
+  options: {
+    heading: () => "لست متأكدًا من الخيار العلاجي المناسب لحالتك؟",
+    body: (subject) =>
+      `أرسل التشخيص والتقارير الحديثة وتفاصيل العلاج السابق للمراجعة. تساعدك GAF Healthcare في تحديد الاختصاصيين والمستشفيات المرتبطة بـ${subject} قبل اتخاذ قرار السفر أو الحجز.`,
+    primary: "اطلب مراجعة الحالة",
+    secondary: (subject, place) => `ناقش خيارات ${subject} في ${place}`,
+  },
+  hospital: {
+    heading: () => "هل تريد مقارنة المستشفيات المناسبة لعلاجك؟",
+    body: (subject, place) =>
+      `يعتمد اختيار المستشفى على مسار ${subject} وتوفر الاختصاصي والتجهيزات التي تحتاجها الحالة. شارك السجلات لطلب خيارات قابلة للمقارنة في ${place}.`,
+    primary: "قارن خيارات المستشفيات",
+    secondary: (subject, place) => `اطلب مساعدة لاختيار رعاية ${subject} في ${place}`,
+  },
+  travel: {
+    heading: () => "هل تخطط للعلاج والسفر معًا؟",
+    body: (subject, place) =>
+      `توضح مراجعة السجلات أولًا مسار ${subject} والإقامة المتوقعة وتقدير المستشفى قبل السفر إلى ${place}. يبقى القرار النهائي للطبيب المعالج بعد التقييم.`,
+    primary: "خطط لرحلة العلاج",
+    secondary: (subject, place) => `اسأل عن السفر من أجل ${subject} إلى ${place}`,
+  },
+  plan: {
+    heading: () => "هل أنت مستعد لطلب خطة علاج مخصصة؟",
+    body: (subject) =>
+      `شارك التقارير المتاحة بأمان. تنسق GAF Healthcare مراجعة اختصاصي لـ${subject} وتعيد إليك الخطوات التالية مع تقدير إرشادي من المستشفى.`,
+    primary: "ابدأ طلب العلاج",
+    secondary: (subject, place) => `تحدث مع منسق عن ${subject} في ${place}`,
+  },
+};
+
 export function PseoEstimateCta({
   subject,
   place,
@@ -81,6 +120,7 @@ export function PseoEstimateCta({
   secondaryHref,
   variant,
   className,
+  locale = "en",
 }: {
   subject: string;
   place: string;
@@ -88,8 +128,9 @@ export function PseoEstimateCta({
   secondaryHref?: string;
   variant: EstimateCtaVariant;
   className?: string;
+  locale?: AppLocale;
 }) {
-  const copy = COPY[variant];
+  const copy = (locale === "ar" ? COPY_AR : COPY)[variant];
   const primaryHref = consultToWhatsappHref(
     consultHref,
     `Please review my medical records and share a case-specific estimate for ${subject} in ${place}.`,
@@ -100,7 +141,10 @@ export function PseoEstimateCta({
   );
 
   return (
-    <aside className={["cost-panel mt-12", className].filter(Boolean).join(" ")} aria-label="Personalized treatment estimate">
+    <aside
+      className={["cost-panel mt-12", className].filter(Boolean).join(" ")}
+      aria-label={locale === "ar" ? "تقدير علاجي مخصص" : "Personalized treatment estimate"}
+    >
       <h2>{copy.heading(subject, place)}</h2>
       <p className="mt-3 max-w-3xl text-[1.02rem] leading-relaxed text-ivory/75">
         {copy.body(subject, place)}

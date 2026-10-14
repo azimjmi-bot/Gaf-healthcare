@@ -39,9 +39,10 @@ export const ARABIC_TEMPLATE_APPROVED: Record<PseoPageType, boolean> = {
   // the deeper ones that survive the 0.9 overlap gate. Nothing else is needed
   // to separate the two stages, because the overlap gate already does.
   hospitalFacet: true,
-  // No Arabic cost content exists yet, and the specialty hubs are English
-  // long-form with no target-locale store. Both stay shut.
-  costFacet: false,
+  // Stage 4. Every cost pathway has a reviewed Arabic overlay and a dedicated
+  // Arabic renderer; country, city, specialty and procedure facets are live.
+  costFacet: true,
+  // Specialty hubs are English long-form with no target-locale store.
   specialtyHub: false,
 };
 
@@ -58,6 +59,15 @@ export function arabicTemplateApproved(pageType: PseoPageType) {
  * and procedure pages clear the floor from real translated profiles.
  */
 export const FACET_MIN_ARABIC_PROFILES = 3;
+
+export const FACET_MIN_ARABIC_ROWS: Record<PseoPageType, number> = {
+  doctorFacet: FACET_MIN_ARABIC_PROFILES,
+  hospitalFacet: FACET_MIN_ARABIC_PROFILES,
+  // One cost pathway is substantive: it carries a reviewed price comparison,
+  // duration, inclusions, records-first caveat, FAQs and procedure metadata.
+  costFacet: 1,
+  specialtyHub: 1,
+};
 
 /**
  * The second lever: how much of its parent facet a page may reproduce before it
@@ -84,9 +94,9 @@ export const FACET_MIN_ARABIC_PROFILES = 3;
 export const FACET_MAX_PARENT_OVERLAP: Record<PseoPageType, number | null> = {
   doctorFacet: null,
   hospitalFacet: 0.9,
-  // Cost facets slice the same multi-specialty catalog, so they inherit the
-  // hospital rule. Specialty hubs are roots with no parent facet to compare to.
-  costFacet: 0.9,
+  // A procedure cost page can be the only row in its specialty while still
+  // carrying distinct price and clinical-planning content.
+  costFacet: null,
   specialtyHub: null,
 };
 
@@ -112,9 +122,9 @@ export function facetDuplicatesParent(
  * A facet is published only when its template is approved, it is not thin, and
  * it is not a near-duplicate of its parent.
  *
- * Doctor and hospital templates are approved; the cost and specialty-hub gates
- * remain closed. Both thresholds are wired and tested so new Arabic profile
- * batches publish only when the resulting facet has enough records.
+ * Doctor, hospital and cost templates are approved; the specialty-hub gate
+ * remains closed. Both thresholds are wired and tested so new Arabic content
+ * publishes only when the resulting facet has enough reviewed records.
  */
 export function facetIsPublished(
   pageType: PseoPageType,
@@ -122,6 +132,6 @@ export function facetIsPublished(
   parentCount?: number,
 ) {
   if (!arabicTemplateApproved(pageType)) return false;
-  if (matchCount < FACET_MIN_ARABIC_PROFILES) return false;
+  if (matchCount < FACET_MIN_ARABIC_ROWS[pageType]) return false;
   return !facetDuplicatesParent(pageType, matchCount, parentCount);
 }

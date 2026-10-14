@@ -11,12 +11,10 @@ import type { AppLocale } from "@/lib/i18n/languages";
  * not: the only edits this table has taken are locales being removed from a
  * hreflang block, never an English URL moving.
  *
- * Last updated by Phase 3, which opened the doctor and hospital facet gates
- * and added `ar` to the seven facet rows whose Arabic page is published and
- * self-canonical. The rest stay English-only for one of three reasons, each
- * noted at the row: the Arabic facet returns exactly its parent's records and
- * names the parent as canonical, it is below the three-record floor, or it
- * reproduces 90% or more of its parent.
+ * Last updated by Phase 4, which opened reviewed Arabic cost directories and
+ * national procedure pages. City-procedure URLs remain English-only in
+ * hreflang until a city-specific price or editorial exists; in Arabic they
+ * render for filtering but stay noindex.
  *
  * Before that, the Arabic publication gate removed:
  *   - `ar` from all 13 facet rows, since no pSEO template was approved
@@ -167,14 +165,19 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en"],
   },
 
-  { label: "costs index", path: "/costs", published: ["en"] },
-  { label: "cost facet: country", path: "/costs/India", published: ["en"] },
+  { label: "costs index", path: "/costs", published: ["en", "ar"] },
+  { label: "cost facet: country", path: "/costs/India", published: ["en", "ar"] },
+  {
+    label: "cost facet: country/city",
+    path: "/costs/India/Delhi-NCR",
+    published: ["en", "ar"],
+  },
   // This branch used to overwrite alternates wholesale, dropping the block
   // catalogPageMetadata had just built. It now goes through the wrapper.
   {
     label: "cost facet: country/specialty",
     path: "/costs/India/Radiation-Oncology",
-    published: ["en"],
+    published: ["en", "ar"],
   },
   // Same cause, different branch: a procedure with no city used to return
   // costsProcedureMetadata directly. Adding a city always reached the wrapper,
@@ -182,8 +185,10 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
   {
     label: "cost facet: country/specialty/procedure",
     path: "/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
-    published: ["en"],
+    published: ["en", "ar"],
   },
+  // Routable in Arabic for filtering, but noindex until a city-specific price
+  // or editorial exists; the national band must not masquerade as local data.
   {
     label: "cost facet: country/city/specialty/procedure",
     path: "/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
