@@ -12,6 +12,7 @@ const PATHS = [
   "/doctors/dr-anil-kumar-anand",
   "/doctors/India/Delhi-NCR/Radiation-Oncology",
   "/doctors/India/Nephrology",
+  "/doctors/India/Orthopedics",
   "/hospitals",
   "/hospitals/apollo-delhi",
   "/hospitals/apollo-delhi/doctors",

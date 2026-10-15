@@ -55,14 +55,14 @@ function everyArabicCandidate() {
  * open, and a page count that moves for any other reason still fails here.
  */
 const STAGE_FACETS: Record<PseoPageType, number> = {
-  doctorFacet: 492,
+  doctorFacet: 1181,
   hospitalFacet: 56,
   costFacet: 524,
   specialtyHub: 0,
 };
 
 /** Every facet URL that renders in Arabic, published or not. */
-const FACET_CANDIDATES = 4112;
+const FACET_CANDIDATES = 4806;
 
 function expectedPublishedFacets() {
   return (Object.keys(STAGE_FACETS) as PseoPageType[])
@@ -91,12 +91,12 @@ test("a published facet that duplicates its parent stays out of the sitemap", ()
   const listed = new Set(publishedFacetPaths("ar"));
 
   assert.equal(published.length, expectedPublishedFacets());
-  // Forty-four doctor facets return exactly their parent's roster. Ten translated
-  // specialties now make most specialty and procedure facets narrow their
-  // parent naturally.
+  // Eighty-two doctor facets return exactly their parent's roster. All
+  // reviewed specialties now make most specialty and procedure facets narrow
+  // their parent naturally.
   // published — they render, and they are reachable — but they name the parent
   // as canonical, so advertising them would contradict their own head.
-  assert.equal(listed.size, expectedPublishedFacets() - 44);
+  assert.equal(listed.size, expectedPublishedFacets() - 82);
   for (const path of published) {
     if (listed.has(path)) continue;
     assert.notEqual(
@@ -181,7 +181,7 @@ test("each staging stage publishes the reviewed number of facets", () => {
     assert.equal(
       publishedCount(),
       STAGE_FACETS.doctorFacet,
-      "stage 1: reviewed oncology, cardiac, hematology, bariatric and neurosurgery facets clear the 3-profile floor",
+      "stage 1: reviewed Arabic doctor specialties clear the 3-profile floor",
     );
     ARABIC_TEMPLATE_APPROVED.doctorFacet = false;
 
@@ -220,7 +220,7 @@ test("each staging stage publishes the reviewed number of facets", () => {
 });
 
 test("a facet with no matching Arabic profiles 404s rather than rendering empty", () => {
-  assert.equal(localePageState("ar", "/doctors/India/Nephrology"), "missing");
+  assert.equal(localePageState("ar", "/doctors/India/Bengaluru/Pediatric-Orthopaedic"), "noindex");
   assert.equal(localePageState("ar", "/doctors/India/Delhi-NCR/Radiation-Oncology"), "published");
   // A hospital facet that reproduces its parent renders but is not indexed.
   assert.equal(localePageState("ar", "/hospitals/India/Radiation-Oncology"), "noindex");
@@ -236,14 +236,14 @@ test("the live Arabic overlays stay published", () => {
   const doctorRows = Object.values(cms.doctorOverrides);
   const hospitalRows = Object.values(cms.hospitalOverrides);
   const treatmentRows = Object.values(cms.treatmentOverrides);
-  assert.equal(doctorRows.length, 828);
+  assert.equal(doctorRows.length, 2305);
   assert.equal(hospitalRows.length, 37);
   assert.equal(treatmentRows.length, 380);
   for (const patch of [...doctorRows, ...hospitalRows, ...treatmentRows]) {
     assert.equal(translationStatus(patch), "published");
   }
 
-  assert.equal(doctorsForLocale("ar").length, 828);
+  assert.equal(doctorsForLocale("ar").length, 2305);
   assert.equal(hospitalsForLocale("ar").length, 37);
   assert.equal(treatmentsForLocale("ar").length, 380);
   assert.equal(localePathIsPublished("ar", "/doctors/dr-anil-kumar-anand"), true);

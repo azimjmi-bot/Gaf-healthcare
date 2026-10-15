@@ -14,6 +14,10 @@ const GENERATORS: { command: string; args: string[] }[] = [
     command: "npx",
     args: ["tsx", "scripts/generate-ar-cardiac-hematology-neurosurgery-overlays.ts"],
   },
+  {
+    command: "npx",
+    args: ["tsx", "scripts/generate-ar-remaining-specialty-overlays.ts"],
+  },
   { command: "npx", args: ["tsx", "scripts/generate-ar-cost-overlays.ts"] },
   { command: "node", args: ["scripts/generate-ar-hospital-overlays.mjs"] },
 ];
@@ -69,7 +73,7 @@ test("regenerating preserves the review status of every existing record", () => 
     const untouched = Object.entries(after.doctorOverrides).filter(
       ([slug]) => slug !== doctorSlug,
     );
-    assert.equal(untouched.length, 827);
+    assert.equal(untouched.length, 2304);
     for (const [slug, patch] of untouched) {
       assert.equal(patch.status, "published", slug);
     }

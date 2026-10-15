@@ -61,8 +61,8 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     path: "/doctors/India/Delhi-NCR",
     published: ["en", "ar"],
   },
-  // Arabic now has ten reviewed specialties. Radiation Oncology genuinely
-  // narrows the 828-profile Arabic roster, so these facets are self-canonical
+  // Arabic now has every reviewed specialty. Radiation Oncology genuinely
+  // narrows the 2305-profile Arabic roster, so these facets are self-canonical
   // and participate in reciprocal hreflang.
   {
     label: "doctor facet: country/specialty",
@@ -110,9 +110,19 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en", "ar"],
   },
   {
-    label: "doctor facet with no Arabic profiles",
+    label: "nephrology specialty facet",
     path: "/doctors/India/Nephrology",
-    published: ["en"],
+    published: ["en", "ar"],
+  },
+  {
+    label: "orthopedics procedure facet",
+    path: "/doctors/India/Delhi-NCR/Orthopedics/Total-Knee-Replacement",
+    published: ["en", "ar"],
+  },
+  {
+    label: "gynecology specialty facet",
+    path: "/doctors/India/Gynecology",
+    published: ["en", "ar"],
   },
   // This reviewed facet clears FACET_MIN_ARABIC_PROFILES and now narrows
   // Mumbai's combined radiation, surgical and medical-oncology roster.

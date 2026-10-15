@@ -43,7 +43,7 @@ test("every language has an independent CMS edition", () => {
 });
 
 test("target-locale catalogs contain only authored overlays", () => {
-  assert.equal(doctorsForLocale("ar").length, 828);
+  assert.equal(doctorsForLocale("ar").length, 2305);
   assert.equal(hospitalsForLocale("ar").length, 37);
   assert.equal(treatmentsForLocale("ar").length, 380);
   for (const locale of ["ru", "fr", "sw"] as const) {

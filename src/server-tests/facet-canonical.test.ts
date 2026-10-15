@@ -56,7 +56,7 @@ const arabicSlugs = (path: string) => {
 test("a doctor facet identical to its parent names the parent as canonical", () => {
   withGateOpen("doctorFacet", () => {
     const published = doctorFacets().filter((path) => localePageState("ar", path) === "published");
-    assert.equal(published.length, 492, "stage 1 is the population under test");
+    assert.equal(published.length, 1181, "stage 1 is the population under test");
 
     const redirected: string[] = [];
     for (const path of published) {
@@ -76,8 +76,8 @@ test("a doctor facet identical to its parent names the parent as canonical", () 
 
     assert.equal(
       redirected.length,
-      44,
-      "the 44 doctor facets whose Arabic result set equals their parent's",
+      82,
+      "the 82 doctor facets whose Arabic result set equals their parent's",
     );
   });
 });
