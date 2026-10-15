@@ -22,6 +22,7 @@
     "validate:jsonld": "tsx scripts/validate-jsonld.ts",
     "check:latin-leakage": "NODE_OPTIONS='--conditions react-server' tsx scripts/check-latin-leakage.ts",
     "check:logical-properties": "tsx scripts/check-logical-properties.ts",
+    "check:ssr": "node scripts/check-ssr-html.mjs",
     "analyze:ar-facets": "NODE_OPTIONS='--conditions react-server' tsx scripts/analyze-arabic-facets.ts",
     "qa:i18n": "tsx scripts/qa-i18n.ts",
     "test": "npm run test:unit && npm run test:specialty-engine && npm run qa:i18n",

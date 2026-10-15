@@ -31,6 +31,17 @@ npm run dev
 
 Open [http://localhost:43127](http://localhost:43127).
 
+### Crawler HTML check
+
+Every public page delivers its written content (H1, Quick Answer, FAQs, listings) in the server HTML. `npm run check:ssr` fetches a representative set of English and Arabic URLs without JavaScript, strips scripts, and fails if a page lacks an H1, visible prose, expected FAQ markup, Arabic/RTL on `/ar`, or the requested pagination page. Point it at any host with `--base`:
+
+```bash
+npm run check:ssr                              # local dev server
+npm run check:ssr -- --base https://gaf.healthcare --json /tmp/ssr.json
+```
+
+Arabic India doctor directories (`/ar/doctors/India/...`) are served as cached static HTML documents by `src/app/ar/doctors/[...segments]/route.ts`; paginated or filtered requests (`?page=`, `?hospital=`, `?experience=`) render through the App Router so the requested page is returned.
+
 ## Hostinger Node
 
 Use Node **20**. Build with `npm run build` (`next build --webpack`). Start with `npm start`. Config is `next.config.mjs` so the builder does not need SWC to load TypeScript config. If the log still shows `GLIBC_2.29 not found`, the Hostinger image cannot run this Next.js version — use Vercel instead.
