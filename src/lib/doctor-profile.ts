@@ -1,6 +1,8 @@
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import { displayBio } from "@/lib/hospital-profile";
+import type { AppLocale } from "@/lib/i18n/languages";
+import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 
 function clip(text: string, max = 46) {
   const t = text.replace(/\s+/g, " ").trim();
@@ -8,18 +10,29 @@ function clip(text: string, max = 46) {
   return `${t.slice(0, max - 1).trimEnd()}…`;
 }
 
-export function campusLine(doctor: Doctor, hospital: Hospital | undefined) {
+export function campusLine(
+  doctor: Doctor,
+  hospital: Hospital | undefined,
+  locale: AppLocale = "en",
+) {
   const name = hospital?.name || doctor.hospitalName;
-  if (!name) return `${doctor.city}, ${doctor.country}`;
-  if (name.toLowerCase().includes(doctor.city.toLowerCase())) return name;
-  return `${name}, ${doctor.city}`;
+  const city = taxonomyLabel(doctor.city, locale);
+  const country = taxonomyLabel(doctor.country, locale);
+  if (!name) return `${city}, ${country}`;
+  if (name.toLowerCase().includes(city.toLowerCase())) return name;
+  return `${name}, ${city}`;
 }
 
-export function campusChip(doctor: Doctor, hospital: Hospital | undefined) {
+export function campusChip(
+  doctor: Doctor,
+  hospital: Hospital | undefined,
+  locale: AppLocale = "en",
+) {
   const name = hospital?.name || doctor.hospitalName || "Partner campus";
   const short = name.split(",")[0]?.trim() || name;
-  if (short.toLowerCase().includes(doctor.city.toLowerCase())) return short;
-  return `${short}, ${doctor.city}`;
+  const city = taxonomyLabel(doctor.city, locale);
+  if (short.toLowerCase().includes(city.toLowerCase())) return short;
+  return `${short}, ${city}`;
 }
 
 export function experienceBadge(doctor: Doctor) {

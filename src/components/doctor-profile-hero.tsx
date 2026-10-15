@@ -53,8 +53,8 @@ export function DoctorProfileHero({
   );
   const years = yearsLabelLocalized(doctor, locale);
   const experience = experienceBadge(doctor);
-  const campus = campusLine(doctor, hospital);
-  const chipCampus = campusChip(doctor, hospital);
+  const campus = campusLine(doctor, hospital, locale);
+  const chipCampus = campusChip(doctor, hospital, locale);
   const wa = whatsappHref(
     locale === "ar"
       ? `مرحبا — أرغب في ترتيب استشارة مع ${doctor.name} في ${campus}.`
