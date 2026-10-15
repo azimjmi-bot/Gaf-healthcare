@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { CatalogPager } from "@/components/catalog-pager";
 import { DoctorCard } from "@/components/doctor-card";
+import { ArabicRadiationDirectory } from "@/components/arabic-radiation-directory";
 import { DoctorSpecialtyHub } from "@/components/doctor-specialty-hub";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { PseoTrust } from "@/components/pseo-trust";
@@ -24,6 +25,7 @@ import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { arabicDoctorHub } from "@/lib/i18n/arabic-hub";
+import { buildArabicRadiationDirectory } from "@/lib/i18n/ar-radiation-directory";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { doctorsPath } from "@/lib/catalog-links";
@@ -37,6 +39,33 @@ export async function doctorsDirectoryMetadata(
   const locale = await getRequestLocale();
   if (!localePageIsRenderable(locale, doctorsPath(query))) {
     return { robots: { index: false, follow: false } };
+  }
+  if (locale === "ar") {
+    const radiation = buildArabicRadiationDirectory(query, extras, page);
+    if (radiation) {
+      const indexable = doctorListingIsIndexable(extras, page);
+      return withLocaleMetadata(
+        {
+          title: radiation.title,
+          description: radiation.description,
+          robots: indexable ? undefined : { index: false, follow: true },
+          openGraph: {
+            title: radiation.title,
+            description: radiation.description,
+            url: absoluteUrl(radiation.path, locale),
+            type: "website",
+          },
+          twitter: {
+            card: "summary_large_image",
+            title: radiation.title,
+            description: radiation.description,
+          },
+        },
+        radiation.path,
+        locale,
+        LOCALES,
+      );
+    }
   }
   if (locale === "en" && isDoctorSpecialtyDiscovery(query)) {
     const hub = buildDoctorSpecialtyHub(query, {}, 1, doctorsForLocale(locale));
@@ -105,6 +134,10 @@ export async function DoctorsDirectory({
   if (locale === "en") {
     const hub = buildDoctorSpecialtyHub(query, extras, page, doctorsForLocale(locale));
     if (hub) return <DoctorSpecialtyHub data={hub} query={query} locale={locale} />;
+  }
+  if (locale === "ar") {
+    const radiation = buildArabicRadiationDirectory(query, extras, page);
+    if (radiation) return <ArabicRadiationDirectory data={radiation} query={query} />;
   }
 
   const messages = await localizeMessages(locale);

@@ -116,6 +116,13 @@ export const COUNTED_NOUNS = {
     many: "سجلًا",
     none: "لا سجلات",
   },
+  publishedDoctor: {
+    one: "طبيب منشور واحد",
+    two: "طبيبان منشوران",
+    few: "أطباء منشورين",
+    many: "طبيبًا منشورًا",
+    none: "لا أطباء منشورين",
+  },
 } satisfies Record<string, CountedNoun>;
 
 export type CountedNounKey = keyof typeof COUNTED_NOUNS;
