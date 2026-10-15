@@ -2,6 +2,11 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { createElement, Fragment, type ReactNode } from "react";
 import { ArabicRadiationSsrDocument } from "@/components/arabic-radiation-ssr";
+import {
+  isArabicRadiationHtmlPath,
+  renderArabicRadiationHtml,
+  wrapArabicRadiationDocument,
+} from "@/lib/i18n/arabic-radiation-html";
 import { loadCatalogCms } from "@/lib/cms/catalog-store";
 import { radiationOncologyIndiaFaqsAr } from "../data/doctor-pages/radiation-oncology-ar";
 import { filterDoctors } from "../lib/catalog";
@@ -280,6 +285,33 @@ test("Arabic city RO HTML keeps unique city copy in the document", () => {
   assert.ok(city.logistics && html.includes(city.logistics));
   assert.match(html, /\/ar\/doctors\/India\/Radiation-Oncology/);
   assert.match(html, /\/ar\/hospitals\//);
+});
+
+test("Arabic RO HTML routes keep /ar and ignore procedure pages", () => {
+  assert.equal(isArabicRadiationHtmlPath("/ar/doctors/India/Radiation-Oncology"), true);
+  assert.equal(isArabicRadiationHtmlPath("/ar/doctors/India/Delhi-NCR/Radiation-Oncology"), true);
+  assert.equal(isArabicRadiationHtmlPath("/ar/doctors/India/Radiation-Oncology/IMRT"), false);
+  assert.equal(isArabicRadiationHtmlPath("/doctors/India/Radiation-Oncology"), false);
+});
+
+test("Arabic RO HTML document has canonical, hreflang, H1, Quick Answer and 18 FAQs", () => {
+  const hub = buildArabicRadiationDirectory(INDIA_QUERY);
+  assert.ok(hub);
+  const body = hostMarkup(createElement(ArabicRadiationSsrDocument, { data: hub }));
+  const html = wrapArabicRadiationDocument(hub, body);
+  assert.match(html, /<html lang="ar" dir="rtl">/);
+  assert.match(html, /rel="canonical" href="https:\/\/gaf.healthcare\/ar\/doctors\/India\/Radiation-Oncology"/);
+  assert.match(html, /hreflang="en" href="https:\/\/gaf.healthcare\/doctors\/India\/Radiation-Oncology"/);
+  assert.match(html, /<h1[^>]*>أفضل أطباء علاج الأورام بالإشعاع في الهند<\/h1>/);
+  assert.match(html, /إجابة سريعة/);
+  assert.equal(hub.faqs.length, 18);
+  assert.ok(html.includes(hub.faqs[0].q));
+  assert.ok(html.includes(hub.faqs[17].q));
+  assert.doesNotMatch(html, /BDS|home-videogrid/);
+  const served = renderArabicRadiationHtml(INDIA_QUERY);
+  assert.ok(served);
+  assert.match(served, /<html lang="ar" dir="rtl">/);
+  assert.ok(served.includes(hub.faqs[0].a.slice(0, 40)));
 });
 
 test("Arabic catalog CMS is reused in-process so crawls do not reparse the overlay file", () => {

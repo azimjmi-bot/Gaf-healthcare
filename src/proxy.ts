@@ -26,6 +26,14 @@ function noindex(response: NextResponse) {
 
 const PUBLIC_HTML_CACHE = "public, s-maxage=300, stale-while-revalidate=86400";
 
+function isArabicRadiationHtmlPath(pathname: string) {
+  const parts = pathname.split("/").filter(Boolean);
+  if (parts[0] !== "ar" || parts[1] !== "doctors" || parts[2] !== "India") return false;
+  if (parts.length === 4 && parts[3] === "Radiation-Oncology") return true;
+  if (parts.length === 5 && parts[4] === "Radiation-Oncology") return true;
+  return false;
+}
+
 function withPublicHtmlCache(request: NextRequest, response: NextResponse) {
   if (request.method !== "GET" && request.method !== "HEAD") return response;
   if (request.cookies.get(CMS_COOKIE)) return response;
@@ -63,6 +71,11 @@ export async function proxy(request: NextRequest) {
       const url = request.nextUrl.clone();
       url.pathname = rest;
       return NextResponse.redirect(url);
+    }
+    // Arabic Radiation Oncology directories keep their /ar URL so a static
+    // HTML route can answer crawlers without the locale-rewrite App Router cost.
+    if (head === "ar" && isArabicRadiationHtmlPath(pathname)) {
+      return withLocale(request, "ar");
     }
     return withLocale(request, head, rest);
   }

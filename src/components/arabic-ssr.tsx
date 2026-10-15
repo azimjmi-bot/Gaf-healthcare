@@ -1,5 +1,3 @@
-import "@/styles/directory-cards.css";
-
 import type { CatalogQuery } from "@/lib/catalog";
 import {
   designationLabel,

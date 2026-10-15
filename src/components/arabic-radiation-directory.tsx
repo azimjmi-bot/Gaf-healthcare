@@ -1,3 +1,5 @@
+import "@/styles/directory-cards.css";
+
 import { ArabicRadiationSsrDocument } from "@/components/arabic-radiation-ssr";
 import type { CatalogQuery } from "@/lib/catalog";
 import type { ArabicRadiationDirectoryData } from "@/lib/i18n/ar-radiation-directory";
