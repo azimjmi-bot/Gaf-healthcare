@@ -26,12 +26,12 @@ function noindex(response: NextResponse) {
 
 const PUBLIC_HTML_CACHE = "public, s-maxage=300, stale-while-revalidate=86400";
 
-function isArabicRadiationHtmlPath(pathname: string) {
+// Mirror of isArabicDoctorHtmlPath in src/lib/i18n/arabic-radiation-html.ts;
+// the proxy cannot import server-only modules.
+function isArabicDoctorHtmlPath(pathname: string) {
   const parts = pathname.split("/").filter(Boolean);
   if (parts[0] !== "ar" || parts[1] !== "doctors" || parts[2] !== "India") return false;
-  if (parts.length === 4 && parts[3] === "Radiation-Oncology") return true;
-  if (parts.length === 5 && parts[4] === "Radiation-Oncology") return true;
-  return false;
+  return parts.length >= 3 && parts.length <= 6;
 }
 
 function withPublicHtmlCache(request: NextRequest, response: NextResponse) {
@@ -72,9 +72,12 @@ export async function proxy(request: NextRequest) {
       url.pathname = rest;
       return NextResponse.redirect(url);
     }
-    // Arabic Radiation Oncology directories keep their /ar URL so a static
-    // HTML route can answer crawlers without the locale-rewrite App Router cost.
-    if (head === "ar" && isArabicRadiationHtmlPath(pathname)) {
+    // Arabic India doctor directories keep their /ar URL so a static HTML
+    // route can answer crawlers without the locale-rewrite App Router cost.
+    // That route is force-static and cannot see search params, so anything
+    // paginated or filtered (?page=, ?hospital=, ?experience=) takes the
+    // rewrite and renders the requested page through the App Router.
+    if (head === "ar" && isArabicDoctorHtmlPath(pathname) && !request.nextUrl.search) {
       return withLocale(request, "ar");
     }
     return withLocale(request, head, rest);

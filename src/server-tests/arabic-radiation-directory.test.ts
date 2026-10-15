@@ -3,10 +3,15 @@ import test from "node:test";
 import { createElement, Fragment, type ReactNode } from "react";
 import { ArabicRadiationSsrDocument } from "@/components/arabic-radiation-ssr";
 import {
-  isArabicRadiationHtmlPath,
+  isArabicDoctorHtmlPath,
+  renderArabicDoctorDirectoryHtml,
   renderArabicRadiationHtml,
   wrapArabicRadiationDocument,
 } from "@/lib/i18n/arabic-radiation-html";
+import { buildArabicDoctorDirectory } from "@/lib/i18n/arabic-doctor-directory";
+import { DOCTOR_FAQS_AR } from "@/lib/i18n/faqs-ar";
+import { canonicalFacetPath } from "@/lib/i18n/facet-canonical";
+import { INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
 import { loadCatalogCms } from "@/lib/cms/catalog-store";
 import { radiationOncologyIndiaFaqsAr } from "../data/doctor-pages/radiation-oncology-ar";
 import { filterDoctors } from "../lib/catalog";
@@ -287,11 +292,107 @@ test("Arabic city RO HTML keeps unique city copy in the document", () => {
   assert.match(html, /\/ar\/hospitals\//);
 });
 
-test("Arabic RO HTML routes keep /ar and ignore procedure pages", () => {
-  assert.equal(isArabicRadiationHtmlPath("/ar/doctors/India/Radiation-Oncology"), true);
-  assert.equal(isArabicRadiationHtmlPath("/ar/doctors/India/Delhi-NCR/Radiation-Oncology"), true);
-  assert.equal(isArabicRadiationHtmlPath("/ar/doctors/India/Radiation-Oncology/IMRT"), false);
-  assert.equal(isArabicRadiationHtmlPath("/doctors/India/Radiation-Oncology"), false);
+test("Arabic doctor HTML route claims every India directory facet and nothing else", () => {
+  assert.equal(isArabicDoctorHtmlPath("/ar/doctors/India"), true);
+  assert.equal(isArabicDoctorHtmlPath("/ar/doctors/India/Radiation-Oncology"), true);
+  assert.equal(isArabicDoctorHtmlPath("/ar/doctors/India/Delhi-NCR/Radiation-Oncology"), true);
+  assert.equal(isArabicDoctorHtmlPath("/ar/doctors/India/Radiation-Oncology/IMRT"), true);
+  assert.equal(isArabicDoctorHtmlPath("/ar/doctors/India/Medical-Oncology"), true);
+  assert.equal(isArabicDoctorHtmlPath("/ar/doctors/India/Delhi-NCR/Neurosurgery/Brain-Tumor-Surgery"), true);
+  assert.equal(isArabicDoctorHtmlPath("/ar/doctors"), false);
+  assert.equal(isArabicDoctorHtmlPath("/ar/doctors/compare"), false);
+  assert.equal(isArabicDoctorHtmlPath("/ar/doctors/dr-some-profile-slug"), false);
+  assert.equal(isArabicDoctorHtmlPath("/doctors/India/Radiation-Oncology"), false);
+  assert.equal(isArabicDoctorHtmlPath("/ar/hospitals/India"), false);
+});
+
+test("generic Arabic doctor directories render as full HTML documents with H1, cards, pager and FAQs", () => {
+  const query = { destination: "India", specialty: "Medical Oncology" };
+  const data = buildArabicDoctorDirectory(query);
+  assert.ok(data);
+  assert.equal(data.meta.path, "/doctors/India/Medical-Oncology");
+  assert.equal(data.meta.state, "published");
+  const hub = arabicDoctorHub(query, "ar");
+  assert.ok(hub);
+  assert.equal(data.heading, hub.heading);
+  assert.equal(data.title, hub.title);
+  assert.equal(data.paging.total, filterDoctors(query, doctorsForLocale("ar")).length);
+  assert.equal(data.faqs.length, DOCTOR_FAQS_AR.length);
+
+  const html = renderArabicDoctorDirectoryHtml(query);
+  assert.ok(html);
+  assert.match(html, /<html lang="ar" dir="rtl">/);
+  assert.match(html, /rel="canonical" href="https:\/\/gaf.healthcare\/ar\/doctors\/India\/Medical-Oncology"/);
+  assert.match(html, /hreflang="en" href="https:\/\/gaf.healthcare\/doctors\/India\/Medical-Oncology"/);
+  assert.match(html, /hreflang="ar" href="https:\/\/gaf.healthcare\/ar\/doctors\/India\/Medical-Oncology"/);
+  assert.doesNotMatch(html, /name="robots"/);
+  assert.ok(html.includes(`<h1 class="mt-3 max-w-4xl font-heading text-[2rem] leading-[1.15] sm:text-4xl md:mt-4 md:text-6xl">${hub.heading}</h1>`));
+  assert.ok(html.includes(hub.intro[0]));
+  assert.ok(html.includes(data.paging.items[0].name));
+  assert.match(html, new RegExp(`/ar/doctors/${data.paging.items[0].slug}`));
+  assert.match(html, /\/ar\/doctors\/India\/Delhi-NCR\/Medical-Oncology/);
+  for (const faq of DOCTOR_FAQS_AR) {
+    assert.ok(html.includes(faq.q), faq.q);
+    assert.ok(html.includes(faq.a.slice(0, 48)), faq.q);
+  }
+  assert.match(html, /FAQPage/);
+  assert.match(html, /CollectionPage/);
+  assert.match(html, /ItemList/);
+  assert.match(html, /BreadcrumbList/);
+  assert.match(html, /wa\.me\/919044346292/);
+  assert.equal(html.indexOf("self.__next_f"), -1);
+  assert.doesNotMatch(html, /useSearchParams|filter\.destinations/);
+  if (data.paging.totalPages > 1) {
+    assert.match(html, /href="\/ar\/doctors\/India\/Medical-Oncology\?page=2"/);
+  }
+});
+
+test("Arabic doctor HTML renders the requested page rather than page 1", () => {
+  const first = renderArabicDoctorDirectoryHtml(INDIA_QUERY, 1);
+  const second = renderArabicDoctorDirectoryHtml(INDIA_QUERY, 2);
+  assert.ok(first && second);
+  assert.notEqual(first, second);
+  assert.match(second, /aria-current="page">2</);
+  const page2 = buildArabicRadiationDirectory(INDIA_QUERY, {}, 2);
+  assert.ok(page2);
+  assert.ok(second.includes(page2.paging.items[0].name));
+  assert.ok(!first.includes(`/ar/doctors/${page2.paging.items[0].slug}"`));
+});
+
+test("Arabic doctor HTML follows the publication gate: missing facets 404, noindex facets carry robots", () => {
+  assert.equal(
+    renderArabicDoctorDirectoryHtml({ destination: "India", specialty: "Radiation Oncology", procedure: "Nonexistent" }),
+    undefined,
+  );
+  assert.equal(buildArabicDoctorDirectory({ city: "Delhi NCR" }), undefined);
+  const rows = doctorsForLocale("ar");
+  const noindexQuery = SPECIALTIES.map((s) => s.name)
+    .flatMap((specialty) => [
+      { destination: "India", specialty },
+      ...INDIA_CITIES.map((city) => ({ destination: "India", city, specialty })),
+    ])
+    .find((q) => localePageState("ar", doctorsPath(q)) === "noindex" && filterDoctors(q, rows).length > 0);
+  if (noindexQuery) {
+    const html = renderArabicDoctorDirectoryHtml(noindexQuery);
+    assert.ok(html, doctorsPath(noindexQuery));
+    assert.match(html, /<meta name="robots" content="noindex, follow"\/>/);
+    assert.doesNotMatch(html, /hreflang=/);
+    assert.doesNotMatch(html, /FAQPage/);
+    assert.match(html, /<h1[^>]*>[^<]+<\/h1>/);
+  }
+  const duplicate = SPECIALTIES.map((s) => s.name)
+    .flatMap((specialty) => INDIA_CITIES.map((city) => ({ destination: "India", city, specialty })))
+    .find((q) => {
+      const path = doctorsPath(q);
+      return localePageState("ar", path) === "published" && canonicalFacetPath(path, "ar") !== path;
+    });
+  if (duplicate) {
+    const html = renderArabicDoctorDirectoryHtml(duplicate);
+    assert.ok(html);
+    const canonical = canonicalFacetPath(doctorsPath(duplicate), "ar");
+    assert.ok(html.includes(`rel="canonical" href="https://gaf.healthcare/ar${canonical}"`));
+    assert.doesNotMatch(html, /hreflang=/);
+  }
 });
 
 test("Arabic RO HTML document has canonical, hreflang, H1, Quick Answer and 18 FAQs", () => {

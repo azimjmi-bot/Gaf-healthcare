@@ -1,24 +1,40 @@
 import { createElement, Fragment, type ReactNode } from "react";
+import { ArabicDoctorDirectorySsrDocument } from "@/components/arabic-doctor-directory-ssr";
 import { ArabicRadiationSsrDocument } from "@/components/arabic-radiation-ssr";
 import {
   buildArabicRadiationDirectory,
+  isArabicRadiationDirectory,
   type ArabicRadiationDirectoryData,
 } from "@/lib/i18n/ar-radiation-directory";
+import {
+  arabicDocumentMeta,
+  buildArabicDoctorDirectory,
+  type ArabicDocumentMeta,
+} from "@/lib/i18n/arabic-doctor-directory";
 import type { CatalogQuery } from "@/lib/catalog";
 import { localePath } from "@/lib/i18n/path";
 import { SITE_ORIGIN } from "@/lib/i18n/metadata";
 import { consultToWhatsappHref } from "@/lib/site";
+import { toSlug } from "@/lib/taxonomy";
 
 const HTML_CACHE_MS = 5 * 60 * 1000;
 const htmlCache = new Map<string, { html: string; expires: number }>();
 
-export function isArabicRadiationHtmlPath(pathname: string) {
+/**
+ * Every Arabic India doctor directory — country, city, specialty, procedure —
+ * is answered by the static HTML route. Profile slugs (`/ar/doctors/<slug>`)
+ * and `/ar/doctors/compare` are not under `India`, so they fall through to the
+ * App Router rewrite as before. The proxy keeps an identical copy of this
+ * check because it cannot import server-only modules.
+ */
+export function isArabicDoctorHtmlPath(pathname: string) {
   const parts = pathname.split("/").filter(Boolean);
   if (parts[0] !== "ar" || parts[1] !== "doctors" || parts[2] !== "India") return false;
-  if (parts.length === 4 && parts[3] === "Radiation-Oncology") return true;
-  if (parts.length === 5 && parts[4] === "Radiation-Oncology") return true;
-  return false;
+  return parts.length >= 3 && parts.length <= 6;
 }
+
+/** @deprecated kept for callers that predate the general matcher. */
+export const isArabicRadiationHtmlPath = isArabicDoctorHtmlPath;
 
 function escapeHtml(value: string) {
   return value
@@ -28,25 +44,49 @@ function escapeHtml(value: string) {
     .replace(/"/g, "&quot;");
 }
 
-export function wrapArabicRadiationDocument(data: ArabicRadiationDirectoryData, bodyHtml: string) {
-  const canonical = `${SITE_ORIGIN}${localePath(data.path, "ar")}`;
-  const english = `${SITE_ORIGIN}${data.path}`;
-  const consult = consultToWhatsappHref("/consult?specialty=radiation-oncology");
+export type ArabicHtmlDocument = {
+  title: string;
+  description: string;
+  meta: ArabicDocumentMeta;
+  consultHref: string;
+};
+
+function headLinks(meta: ArabicDocumentMeta) {
+  const canonical = `${SITE_ORIGIN}${localePath(meta.canonicalPath, "ar")}`;
+  const lines = [`<link rel="canonical" href="${canonical}"/>`];
+  // A noindex page or a duplicate that defers to its parent makes no language
+  // claim, so it carries canonical and robots only — the same rule
+  // withLocaleMetadata applies to App Router pages.
+  if (meta.state !== "published") {
+    lines.push('<meta name="robots" content="noindex, follow"/>');
+  }
+  if (meta.inLanguageSet) {
+    for (const locale of meta.hreflangLocales) {
+      const href = `${SITE_ORIGIN}${localePath(meta.path, locale as "ar" | "en")}`;
+      lines.push(`<link rel="alternate" hreflang="${locale}" href="${href}"/>`);
+    }
+    if (meta.hreflangLocales.includes("en")) {
+      lines.push(`<link rel="alternate" hreflang="x-default" href="${SITE_ORIGIN}${meta.path}"/>`);
+    }
+  }
+  return { canonical, lines: lines.join("\n") };
+}
+
+export function wrapArabicDocument(doc: ArabicHtmlDocument, bodyHtml: string) {
+  const english = `${SITE_ORIGIN}${doc.meta.path}`;
+  const head = headLinks(doc.meta);
   return `<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>${escapeHtml(data.title)} — GAF Healthcare</title>
-<meta name="description" content="${escapeHtml(data.description)}"/>
-<link rel="canonical" href="${canonical}"/>
-<link rel="alternate" hreflang="ar" href="${canonical}"/>
-<link rel="alternate" hreflang="en" href="${english}"/>
-<link rel="alternate" hreflang="x-default" href="${english}"/>
+<title>${escapeHtml(doc.title)} — GAF Healthcare</title>
+<meta name="description" content="${escapeHtml(doc.description)}"/>
+${head.lines}
 <meta property="og:locale" content="ar_AR"/>
-<meta property="og:title" content="${escapeHtml(data.title)}"/>
-<meta property="og:description" content="${escapeHtml(data.description)}"/>
-<meta property="og:url" content="${canonical}"/>
+<meta property="og:title" content="${escapeHtml(doc.title)}"/>
+<meta property="og:description" content="${escapeHtml(doc.description)}"/>
+<meta property="og:url" content="${head.canonical}"/>
 <link rel="stylesheet" href="/ar-ro-directory.css"/>
 </head>
 <body class="site-shell">
@@ -57,7 +97,7 @@ export function wrapArabicRadiationDocument(data: ArabicRadiationDirectoryData, 
     <a href="/ar/hospitals">المستشفيات</a>
     <a href="/ar/costs">تكلفة العلاج</a>
     <a href="${english}">English</a>
-    <a href="${consult}" rel="noreferrer noopener">اطلب استشارة</a>
+    <a href="${doc.consultHref}" rel="noreferrer noopener">اطلب استشارة</a>
   </nav>
 </header>
 <main>${bodyHtml}</main>
@@ -66,6 +106,26 @@ export function wrapArabicRadiationDocument(data: ArabicRadiationDirectoryData, 
 </footer>
 </body>
 </html>`;
+}
+
+function consultHrefFor(query: CatalogQuery) {
+  const params = new URLSearchParams();
+  if (query.procedure) params.set("treatment", toSlug(query.procedure));
+  else if (query.specialty) params.set("specialty", toSlug(query.specialty));
+  const qs = params.toString();
+  return consultToWhatsappHref(qs ? `/consult?${qs}` : "/consult");
+}
+
+export function wrapArabicRadiationDocument(data: ArabicRadiationDirectoryData, bodyHtml: string) {
+  return wrapArabicDocument(
+    {
+      title: data.title,
+      description: data.description,
+      meta: arabicDocumentMeta(data.path),
+      consultHref: consultToWhatsappHref("/consult?specialty=radiation-oncology"),
+    },
+    bodyHtml,
+  );
 }
 
 export function cacheArabicRadiationHtml(path: string, html: string) {
@@ -115,13 +175,42 @@ function hostMarkup(node: ReactNode): string {
   return `<${tag}${attrs}>${inner}</${tag}>`;
 }
 
+function cacheKeyFor(path: string, page: number) {
+  return page > 1 ? `/ar${path}?page=${page}` : `/ar${path}`;
+}
+
 export function renderArabicRadiationHtml(query: CatalogQuery, page = 1) {
   const data = buildArabicRadiationDirectory(query, {}, page);
   if (!data) return undefined;
-  const cacheKey = `/ar${data.path}`;
+  const cacheKey = cacheKeyFor(data.path, data.paging.page);
   const cached = readCachedArabicRadiationHtml(cacheKey);
   if (cached) return cached;
   const body = hostMarkup(createElement(ArabicRadiationSsrDocument, { data }));
   return cacheArabicRadiationHtml(cacheKey, wrapArabicRadiationDocument(data, body));
+}
+
+/**
+ * Static HTML for any Arabic India doctor directory. Radiation Oncology keeps
+ * its editorial layer; every other facet gets the generic directory document.
+ * Returns undefined when the locale does not publish the path at all.
+ */
+export function renderArabicDoctorDirectoryHtml(query: CatalogQuery, page = 1) {
+  if (isArabicRadiationDirectory(query)) return renderArabicRadiationHtml(query, page);
+  const data = buildArabicDoctorDirectory(query, page);
+  if (!data) return undefined;
+  const cacheKey = cacheKeyFor(data.meta.path, data.paging.page);
+  const cached = readCachedArabicRadiationHtml(cacheKey);
+  if (cached) return cached;
+  const body = hostMarkup(createElement(ArabicDoctorDirectorySsrDocument, { data }));
+  const html = wrapArabicDocument(
+    {
+      title: data.title,
+      description: data.description,
+      meta: data.meta,
+      consultHref: consultHrefFor(query),
+    },
+    body,
+  );
+  return cacheArabicRadiationHtml(cacheKey, html);
 }
 
