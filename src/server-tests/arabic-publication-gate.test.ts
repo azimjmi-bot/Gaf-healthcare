@@ -62,7 +62,7 @@ const STAGE_FACETS: Record<PseoPageType, number> = {
 };
 
 /** Every facet URL that renders in Arabic, published or not. */
-const FACET_CANDIDATES = 3817;
+const FACET_CANDIDATES = 4112;
 
 function expectedPublishedFacets() {
   return (Object.keys(STAGE_FACETS) as PseoPageType[])
@@ -91,12 +91,12 @@ test("a published facet that duplicates its parent stays out of the sitemap", ()
   const listed = new Set(publishedFacetPaths("ar"));
 
   assert.equal(published.length, expectedPublishedFacets());
-  // Twenty doctor facets return exactly their parent's roster. Ten translated
+  // Forty-four doctor facets return exactly their parent's roster. Ten translated
   // specialties now make most specialty and procedure facets narrow their
   // parent naturally.
   // published — they render, and they are reachable — but they name the parent
   // as canonical, so advertising them would contradict their own head.
-  assert.equal(listed.size, expectedPublishedFacets() - 20);
+  assert.equal(listed.size, expectedPublishedFacets() - 44);
   for (const path of published) {
     if (listed.has(path)) continue;
     assert.notEqual(

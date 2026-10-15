@@ -206,7 +206,7 @@ function arabicTitle(doctor: Doctor, specialty: Specialty) {
     /interventional/i.test(doctor.title) && specialty === "Cardiology"
       ? "أمراض القلب التداخلية"
       : /electrophysi/i.test(doctor.title) && specialty === "Cardiology"
-        ? "كهرباء القلب"
+        ? "كهرباء القلب وأمراض القلب"
         : SPECIALTIES[specialty].label;
   return `${rolePrefix(doctor.title)} في ${focus}`;
 }

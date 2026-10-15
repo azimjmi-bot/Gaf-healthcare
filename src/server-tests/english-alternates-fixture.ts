@@ -96,7 +96,7 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
   },
   {
     label: "cardiology procedure facet",
-    path: "/doctors/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-&-Stenting",
+    path: "/doctors/India/Delhi-NCR/Cardiology/Coronary-Angiography",
     published: ["en", "ar"],
   },
   {

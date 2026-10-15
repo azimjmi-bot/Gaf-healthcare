@@ -76,8 +76,8 @@ test("a doctor facet identical to its parent names the parent as canonical", () 
 
     assert.equal(
       redirected.length,
-      20,
-      "the 20 doctor facets whose Arabic result set equals their parent's",
+      44,
+      "the 44 doctor facets whose Arabic result set equals their parent's",
     );
   });
 });
