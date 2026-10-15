@@ -61,8 +61,8 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     path: "/doctors/India/Delhi-NCR",
     published: ["en", "ar"],
   },
-  // Arabic now has three reviewed specialties. Radiation Oncology genuinely
-  // narrows the 286-profile Arabic roster, so these facets are self-canonical
+  // Arabic now has ten reviewed specialties. Radiation Oncology genuinely
+  // narrows the 828-profile Arabic roster, so these facets are self-canonical
   // and participate in reciprocal hreflang.
   {
     label: "doctor facet: country/specialty",
@@ -87,6 +87,26 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
   {
     label: "medical oncology procedure facet",
     path: "/doctors/India/Delhi-NCR/Medical-Oncology/Chemotherapy",
+    published: ["en", "ar"],
+  },
+  {
+    label: "cardiology profile",
+    path: "/doctors/dr-ashok-seth",
+    published: ["en", "ar"],
+  },
+  {
+    label: "cardiology procedure facet",
+    path: "/doctors/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-&-Stenting",
+    published: ["en", "ar"],
+  },
+  {
+    label: "neurosurgery profile",
+    path: "/doctors/dr-aditya-gupta",
+    published: ["en", "ar"],
+  },
+  {
+    label: "neurosurgery procedure facet",
+    path: "/doctors/India/Delhi-NCR/Neurosurgery/Brain-Tumor-Surgery",
     published: ["en", "ar"],
   },
   {
