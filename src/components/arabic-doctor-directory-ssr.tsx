@@ -7,7 +7,7 @@ import {
 import type { ArabicDoctorDirectoryData } from "@/lib/i18n/arabic-doctor-directory";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { documentId } from "@/lib/jsonld";
-import { absoluteUrl, breadcrumbJsonLd, doctorItemListJsonLd, faqJsonLd } from "@/lib/seo";
+import { absoluteUrl, breadcrumbJsonLd, faqJsonLd } from "@/lib/seo";
 import { blogEstimateWhatsapp } from "@/lib/site";
 
 function chipClass(active: boolean) {
@@ -58,17 +58,12 @@ export function ArabicDoctorDirectorySsrDocument({ data }: { data: ArabicDoctorD
     <>
       {meta.state === "published" ? (
         <>
+          {/* Document nodes only. The Arabic roster is a translated subset of
+              the English one, so a per-page Person ItemList would name
+              entities the English facet does not; check-jsonld-policy forbids
+              that, and the generic Arabic App Router branch never emitted one. */}
           <SsrJsonLd data={collectionLd} />
           <SsrJsonLd data={breadcrumbJsonLd(data.crumbs, "ar")} />
-          {paging.items.length > 0 ? (
-            <SsrJsonLd
-              data={doctorItemListJsonLd(paging.items, {
-                name: data.heading,
-                path: meta.path,
-                locale: "ar",
-              })}
-            />
-          ) : null}
           <SsrJsonLd data={faqJsonLd(data.faqs, { path: meta.path, locale: "ar" })} />
         </>
       ) : null}

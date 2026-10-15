@@ -337,8 +337,11 @@ test("generic Arabic doctor directories render as full HTML documents with H1, c
   }
   assert.match(html, /FAQPage/);
   assert.match(html, /CollectionPage/);
-  assert.match(html, /ItemList/);
   assert.match(html, /BreadcrumbList/);
+  // Entity nodes stay off generic Arabic facets: the Arabic roster is a subset
+  // of the English one, so a Person ItemList would break locale entity parity.
+  assert.doesNotMatch(html, /"@type":"ItemList"/);
+  assert.doesNotMatch(html, /#person/);
   assert.match(html, /wa\.me\/919044346292/);
   assert.equal(html.indexOf("self.__next_f"), -1);
   assert.doesNotMatch(html, /useSearchParams|filter\.destinations/);
