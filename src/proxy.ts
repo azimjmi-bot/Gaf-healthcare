@@ -24,6 +24,18 @@ function noindex(response: NextResponse) {
   return response;
 }
 
+const PUBLIC_HTML_CACHE = "public, s-maxage=300, stale-while-revalidate=86400";
+
+function withPublicHtmlCache(request: NextRequest, response: NextResponse) {
+  if (request.method !== "GET" && request.method !== "HEAD") return response;
+  if (request.cookies.get(CMS_COOKIE)) return response;
+  const path = request.nextUrl.pathname;
+  if (path.startsWith("/cms") || path.startsWith("/api")) return response;
+  response.headers.set("Cache-Control", PUBLIC_HTML_CACHE);
+  response.headers.set("CDN-Cache-Control", PUBLIC_HTML_CACHE);
+  return response;
+}
+
 function withLocale(request: NextRequest, locale: string, pathname?: string) {
   const headers = new Headers(request.headers);
   headers.set(LOCALE_HEADER, locale);
@@ -31,13 +43,13 @@ function withLocale(request: NextRequest, locale: string, pathname?: string) {
   if (!pathname || pathname === request.nextUrl.pathname) {
     const response = NextResponse.next({ request: { headers } });
     response.headers.set("x-gaf-locale", locale);
-    return response;
+    return withPublicHtmlCache(request, response);
   }
   const url = request.nextUrl.clone();
   url.pathname = pathname;
   const response = NextResponse.rewrite(url, { request: { headers } });
   response.headers.set("x-gaf-locale", locale);
-  return response;
+  return withPublicHtmlCache(request, response);
 }
 
 export async function proxy(request: NextRequest) {

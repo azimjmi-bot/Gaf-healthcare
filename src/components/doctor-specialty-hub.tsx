@@ -513,7 +513,7 @@ export function DoctorSpecialtyHub({
         </Link>
       </div>
 
-      <PseoTrust />
+      <PseoTrust attribution={false} />
       <DoctorCompareTray />
       <CtaBand />
     </DoctorCompareProvider>

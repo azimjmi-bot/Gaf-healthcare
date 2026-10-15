@@ -224,6 +224,32 @@ const nextConfig = {
         ],
       },
       {
+        source: "/doctors/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, s-maxage=300, stale-while-revalidate=86400",
+          },
+          {
+            key: "CDN-Cache-Control",
+            value: "public, s-maxage=300, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
+        source: "/ar/doctors/:path*",
+        headers: [
+          {
+            key: "Cache-Control",
+            value: "public, s-maxage=300, stale-while-revalidate=86400",
+          },
+          {
+            key: "CDN-Cache-Control",
+            value: "public, s-maxage=300, stale-while-revalidate=86400",
+          },
+        ],
+      },
+      {
         // Static crawl file. Long-lived so Hostinger CDN can answer PageSpeed
         // and Googlebot from the edge; the CSP lets Lighthouse fetch it from
         // the page origin (its robots-txt audit otherwise times out).

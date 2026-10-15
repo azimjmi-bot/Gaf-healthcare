@@ -35,6 +35,8 @@ export function ArabicDoctorSsrCard({ doctor }: { doctor: Doctor }) {
   const consultHref = consultToWhatsappHref(`/consult?doctor=${doctor.slug}`);
   const bio = listingBio(doctor);
   const procedures = keyProcedureLabels(doctor).map((item) => medicalPhrase(item, "ar"));
+  const shown = procedures.slice(0, 6);
+  const extra = procedures.length - shown.length;
   const experience = experienceBadge(doctor);
   const designation = designationLabel(doctor);
 
@@ -111,10 +113,11 @@ export function ArabicDoctorSsrCard({ doctor }: { doctor: Doctor }) {
           <div className="dcard__procs">
             <p>الإجراءات الرئيسية</p>
             <ul>
-              {procedures.map((item) => (
+              {shown.map((item) => (
                 <li key={item}>{item}</li>
               ))}
             </ul>
+            {extra > 0 ? <p>و{extra} إجراءات أخرى على الملف</p> : null}
           </div>
         ) : null}
       </div>

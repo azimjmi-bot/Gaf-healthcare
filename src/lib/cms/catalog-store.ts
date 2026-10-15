@@ -45,24 +45,27 @@ function mapTreatmentOverrides(map: Record<string, TreatmentPatch> | undefined) 
   return next;
 }
 
-const cmsCache = new Map<CmsEdition, { at: number; data: CatalogCms }>();
+const cmsCache = new Map<CmsEdition, { generation: number; data: CatalogCms }>();
 let catalogGeneration = 0;
 
+export function getCatalogGeneration() {
+  return catalogGeneration;
+}
+
 export function loadCatalogCms(edition: CmsEdition = "en"): CatalogCms {
-  const now = Date.now();
   const cached = cmsCache.get(edition);
-  if (cached && now - cached.at < 1000) return cached.data;
+  if (cached && cached.generation === catalogGeneration) return cached.data;
   try {
     const data = JSON.parse(readFileSync(catalogFile(edition), "utf8")) as CatalogCms;
     const cms = { ...emptyCatalogCms(), ...data };
     cms.hospitalOverrides = mapHospitalOverrides(cms.hospitalOverrides);
     cms.doctorOverrides = mapDoctorOverrides(cms.doctorOverrides);
     cms.treatmentOverrides = mapTreatmentOverrides(cms.treatmentOverrides);
-    cmsCache.set(edition, { at: now, data: cms });
+    cmsCache.set(edition, { generation: catalogGeneration, data: cms });
     return cms;
   } catch {
     const empty = emptyCatalogCms();
-    cmsCache.set(edition, { at: now, data: empty });
+    cmsCache.set(edition, { generation: catalogGeneration, data: empty });
     return empty;
   }
 }
@@ -73,8 +76,8 @@ export function saveCatalogCms(store: CatalogCms, edition: CmsEdition = "en") {
   const tmp = `${file}.tmp`;
   writeFileSync(tmp, `${JSON.stringify(store, null, 2)}\n`);
   renameSync(tmp, file);
-  cmsCache.set(edition, { at: Date.now(), data: store });
   catalogGeneration += 1;
+  cmsCache.set(edition, { generation: catalogGeneration, data: store });
   return store;
 }
 

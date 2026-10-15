@@ -5,7 +5,7 @@ import {
   TREATMENT_OVERLAY_KEYS,
   translationStatus,
 } from "@/lib/cms/catalog-types";
-import { applyCatalogLayer, loadCatalogCms } from "@/lib/cms/catalog-store";
+import { applyCatalogLayer, getCatalogGeneration, loadCatalogCms } from "@/lib/cms/catalog-store";
 import {
   doctors as englishDoctors,
   doctorsForHospital as englishDoctorsForHospital,
@@ -65,9 +65,15 @@ function treatmentPatchIsPublished(patch: Record<string, unknown> | undefined) {
   );
 }
 
+const doctorLists = new Map<AppLocale, { generation: number; rows: Doctor[] }>();
+const hospitalLists = new Map<AppLocale, { generation: number; rows: Hospital[] }>();
+
 export function doctorsForLocale(locale: AppLocale): Doctor[] {
   const base = materialize(englishDoctors);
   if (locale === "en") return base;
+  const generation = getCatalogGeneration();
+  const cached = doctorLists.get(locale);
+  if (cached && cached.generation === generation) return cached.rows;
   const cms = loadCatalogCms(locale);
   const authored = base.filter((row) =>
     doctorPatchIsPublished(
@@ -86,11 +92,13 @@ export function doctorsForLocale(locale: AppLocale): Doctor[] {
   // hospitalName stays locked in the overlay so matching cannot be rewritten.
   // The Arabic page still shows the campus under its Arabic display name.
   const campusName = new Map(hospitalsForLocale(locale).map((hospital) => [hospital.slug, hospital.name]));
-  return layered.map((doctor) => {
+  const rows = layered.map((doctor) => {
     const name = campusName.get(doctor.hospitalSlug);
     if (!name || name === doctor.hospitalName) return doctor;
     return { ...doctor, hospitalName: name };
   });
+  doctorLists.set(locale, { generation, rows });
+  return rows;
 }
 
 export function getDoctorForLocale(slug: string, locale: AppLocale) {
@@ -113,13 +121,16 @@ export function doctorsForTreatmentLocale(procedureSlug: string, locale: AppLoca
 export function hospitalsForLocale(locale: AppLocale): Hospital[] {
   const base = materialize(englishHospitals);
   if (locale === "en") return base;
+  const generation = getCatalogGeneration();
+  const cached = hospitalLists.get(locale);
+  if (cached && cached.generation === generation) return cached.rows;
   const cms = loadCatalogCms(locale);
   const authored = base.filter((row) =>
     hospitalPatchIsPublished(
       cms.hospitalOverrides[row.slug] as Record<string, unknown> | undefined,
     ),
   );
-  return applyCatalogLayer(
+  const rows = applyCatalogLayer(
     authored,
     cms.hospitalsDeleted,
     cms.hospitalOverrides,
@@ -128,6 +139,8 @@ export function hospitalsForLocale(locale: AppLocale): Hospital[] {
     ),
     HOSPITAL_OVERLAY_KEYS,
   );
+  hospitalLists.set(locale, { generation, rows });
+  return rows;
 }
 
 export function getHospitalForLocale(slug: string, locale: AppLocale) {

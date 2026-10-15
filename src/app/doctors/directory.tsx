@@ -248,7 +248,7 @@ export async function DoctorsDirectory({
           ))}
         </div>
       </section>
-      <PseoTrust />
+      {locale === "en" ? <PseoTrust /> : null}
       <CtaBand />
     </>
   );

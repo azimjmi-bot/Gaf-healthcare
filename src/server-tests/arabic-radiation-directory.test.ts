@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import { createElement, Fragment, type ReactNode } from "react";
 import { ArabicRadiationSsrDocument } from "@/components/arabic-radiation-ssr";
+import { loadCatalogCms } from "@/lib/cms/catalog-store";
 import { radiationOncologyIndiaFaqsAr } from "../data/doctor-pages/radiation-oncology-ar";
 import { filterDoctors } from "../lib/catalog";
 import { doctorsPath } from "../lib/catalog-links";
@@ -250,6 +251,8 @@ test("Arabic RO directory HTML is server-rendered for crawlers", () => {
   assert.match(html, /ItemList/);
   assert.ok(html.includes(hub.paging.items[0].name));
   assert.match(html, new RegExp(`/ar/doctors/${hub.paging.items[0].slug}`));
+  assert.doesNotMatch(html, /BDS|Shabnam Choudhary|Saffiyyah Chaudhary|home-videogrid/);
+  assert.doesNotMatch(html, /filter\.destinations|useSearchParams/);
   assert.match(html, /\/ar\/doctors\/India\/Delhi-NCR\/Radiation-Oncology/);
   assert.match(html, /wa\.me\/919044346292/);
   for (const faq of hub.faqs) {
@@ -277,6 +280,12 @@ test("Arabic city RO HTML keeps unique city copy in the document", () => {
   assert.ok(city.logistics && html.includes(city.logistics));
   assert.match(html, /\/ar\/doctors\/India\/Radiation-Oncology/);
   assert.match(html, /\/ar\/hospitals\//);
+});
+
+test("Arabic catalog CMS is reused in-process so crawls do not reparse the overlay file", () => {
+  const first = loadCatalogCms("ar");
+  const second = loadCatalogCms("ar");
+  assert.equal(first, second);
 });
 
 test("counted doctor phrases stay grammatical", () => {
