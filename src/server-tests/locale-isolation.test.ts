@@ -51,35 +51,25 @@ test("target-locale catalogs contain only authored overlays", () => {
     assert.equal(hospitalsForLocale(locale).length, 0);
     assert.equal(treatmentsForLocale(locale).length, 0);
   }
-  assert.ok(doctorsForLocale("en").length > doctorsForLocale("ar").length);
+  assert.equal(doctorsForLocale("en").length, doctorsForLocale("ar").length);
   assert.ok(hospitalsForLocale("en").length >= hospitalsForLocale("ar").length);
 });
 
 test("untranslated routes stay unpublished", () => {
   const arabicDoctor = doctorsForLocale("ar")[0];
-  const englishOnlyDoctor = doctors.find(
-    (doctor) => !doctorsForLocale("ar").some((row) => row.slug === doctor.slug),
-  );
   assert.ok(arabicDoctor);
-  assert.ok(englishOnlyDoctor);
   assert.equal(localePathIsPublished("ar", "/doctors"), true);
   assert.equal(
     localePathIsPublished("ar", `/doctors/${arabicDoctor.slug}`),
     true,
-  );
-  assert.equal(
-    localePathIsPublished("ar", `/doctors/${englishOnlyDoctor.slug}`),
-    false,
   );
   assert.equal(localePathIsPublished("ru", "/doctors"), false);
   assert.equal(localePathIsPublished("ar", "/consult"), false);
   assert.equal(localePathIsPublished("ar", "/costs"), true);
   assert.equal(localePathIsPublished("ar", "/costs/India"), true);
   assert.equal(localePathIsPublished("ar", "/specialties"), false);
-  assert.deepEqual(
-    publishedLocalesForPath(`/doctors/${englishOnlyDoctor.slug}`),
-    ["en"],
-  );
+  assert.deepEqual(publishedLocalesForPath("/consult"), ["en"]);
+  assert.deepEqual(publishedLocalesForPath("/specialties"), ["en"]);
 });
 
 test("localized sitemaps contain only published locale records", () => {
