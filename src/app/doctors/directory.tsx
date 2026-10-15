@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { CatalogPager } from "@/components/catalog-pager";
 import { DoctorCard } from "@/components/doctor-card";
+import { ArabicDoctorSsrCard, ArabicSsrPager, SsrJsonLd } from "@/components/arabic-ssr";
 import { ArabicRadiationDirectory } from "@/components/arabic-radiation-directory";
 import { DoctorSpecialtyHub } from "@/components/doctor-specialty-hub";
 import { CtaBand, PageIntro } from "@/components/page-shell";
@@ -156,7 +157,11 @@ export async function DoctorsDirectory({
 
   return (
     <>
-      <JsonLd data={faqJsonLd(faqs, { path: doctorsPath(query), locale })} />
+      {locale === "ar" ? (
+        <SsrJsonLd data={faqJsonLd(faqs, { path: doctorsPath(query), locale })} />
+      ) : (
+        <JsonLd data={faqJsonLd(faqs, { path: doctorsPath(query), locale })} />
+      )}
       <PageIntro
         eyebrow={copy.eyebrow}
         title={copy.heading}
@@ -196,17 +201,29 @@ export async function DoctorsDirectory({
             <ul className="hosp-list mt-6">
               {paging.items.map((d) => (
                 <li key={d.slug}>
-                  <DoctorCard doctor={d} />
+                  {locale === "ar" ? <ArabicDoctorSsrCard doctor={d} /> : <DoctorCard doctor={d} />}
                 </li>
               ))}
             </ul>
-            <CatalogPager
-              page={paging.page}
-              totalPages={paging.totalPages}
-              query={query}
-              basePath="/doctors"
-              label={messages["dir.doctors.pagerLabel"]}
-            />
+            {locale === "ar" ? (
+              <ArabicSsrPager
+                page={paging.page}
+                totalPages={paging.totalPages}
+                query={query}
+                basePath="/doctors"
+                label={messages["dir.doctors.pagerLabel"]}
+                previousLabel={messages["pager.previous"]}
+                nextLabel={messages["pager.next"]}
+              />
+            ) : (
+              <CatalogPager
+                page={paging.page}
+                totalPages={paging.totalPages}
+                query={query}
+                basePath="/doctors"
+                label={messages["dir.doctors.pagerLabel"]}
+              />
+            )}
           </>
         )}
       </section>

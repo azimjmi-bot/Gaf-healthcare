@@ -1,5 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
+import { createElement, Fragment, type ReactNode } from "react";
+import { ArabicRadiationSsrDocument } from "@/components/arabic-radiation-ssr";
 import { radiationOncologyIndiaFaqsAr } from "../data/doctor-pages/radiation-oncology-ar";
 import { filterDoctors } from "../lib/catalog";
 import { doctorsPath } from "../lib/catalog-links";
@@ -39,6 +41,43 @@ const REQUIRED_FAQ_QUESTIONS = [
   "كم يحتاج المريض الدولي إلى البقاء في الهند لتلقي العلاج الإشعاعي؟",
   "كيف تساعد GAF Healthcare المرضى الدوليين في الوصول إلى العلاج الإشعاعي في الهند؟",
 ];
+
+function hostMarkup(node: ReactNode): string {
+  if (node == null || typeof node === "boolean") return "";
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(hostMarkup).join("");
+  if (typeof node !== "object") return "";
+  const el = node as {
+    type?: unknown;
+    props?: Record<string, unknown> & { children?: ReactNode; dangerouslySetInnerHTML?: { __html: string } };
+  };
+  if (el.type === Fragment) return hostMarkup(el.props?.children);
+  if (typeof el.type === "function") {
+    const props = el.props ?? {};
+    const rendered = (el.type as (props: unknown) => ReactNode)(props);
+    return hostMarkup(rendered);
+  }
+  const tag = typeof el.type === "string" ? el.type : "";
+  const props = el.props ?? {};
+  const attrEntries = Object.entries(props).flatMap(([key, value]) => {
+    if (key === "children" || key === "dangerouslySetInnerHTML" || value == null || value === false) {
+      return [];
+    }
+    if (key === "className") return [`class="${String(value)}"`];
+    if (typeof value === "boolean") return value ? [key] : [];
+    if (typeof value === "object") return [];
+    return [`${key}="${String(value).replace(/"/g, "&quot;")}"`];
+  });
+  const attrs = attrEntries.length ? ` ${attrEntries.join(" ")}` : "";
+  const inner = props.dangerouslySetInnerHTML
+    ? props.dangerouslySetInnerHTML.__html
+    : hostMarkup(props.children);
+  if (!tag) return inner;
+  if (tag === "img" || tag === "input" || tag === "br" || tag === "hr" || tag === "meta") {
+    return `<${tag}${attrs}/>`;
+  }
+  return `<${tag}${attrs}>${inner}</${tag}>`;
+}
 
 function answerWordCount(text: string) {
   return text
@@ -196,6 +235,48 @@ test("Arabic city RO facets that have enough profiles stay on the existing publi
   assert.equal(languages?.en, "https://gaf.healthcare/doctors/India/Radiation-Oncology");
   assert.equal(languages?.ar, "https://gaf.healthcare/ar/doctors/India/Radiation-Oncology");
   assert.equal(languages?.["x-default"], "https://gaf.healthcare/doctors/India/Radiation-Oncology");
+});
+
+test("Arabic RO directory HTML is server-rendered for crawlers", () => {
+  const hub = buildArabicRadiationDirectory(INDIA_QUERY);
+  assert.ok(hub);
+  const html = hostMarkup(createElement(ArabicRadiationSsrDocument, { data: hub }));
+  assert.match(html, /<h1[^>]*>أفضل أطباء علاج الأورام بالإشعاع في الهند<\/h1>/);
+  assert.match(html, /إجابة سريعة/);
+  assert.ok(html.includes(hub.quickAnswer.answer.slice(0, 40)));
+  assert.match(html, /application\/ld\+json/);
+  assert.match(html, /FAQPage/);
+  assert.match(html, /CollectionPage/);
+  assert.match(html, /ItemList/);
+  assert.ok(html.includes(hub.paging.items[0].name));
+  assert.match(html, new RegExp(`/ar/doctors/${hub.paging.items[0].slug}`));
+  assert.match(html, /\/ar\/doctors\/India\/Delhi-NCR\/Radiation-Oncology/);
+  assert.match(html, /wa\.me\/919044346292/);
+  for (const faq of hub.faqs) {
+    assert.ok(html.includes(faq.q), faq.q);
+    assert.ok(html.includes(faq.a.slice(0, 48)), faq.q);
+  }
+  const h1At = html.indexOf("<h1");
+  const flightAt = html.indexOf("self.__next_f");
+  assert.ok(h1At >= 0);
+  assert.equal(flightAt, -1);
+  const jsonLdAt = html.indexOf("application/ld+json");
+  assert.ok(jsonLdAt >= 0 && jsonLdAt < h1At);
+});
+
+test("Arabic city RO HTML keeps unique city copy in the document", () => {
+  const city = buildArabicRadiationDirectory({
+    destination: "India",
+    city: "Delhi NCR",
+    specialty: "Radiation Oncology",
+  });
+  assert.ok(city);
+  const html = hostMarkup(createElement(ArabicRadiationSsrDocument, { data: city }));
+  assert.match(html, /<h1[^>]*>أفضل أطباء علاج الأورام بالإشعاع في دلهي إن سي آر، الهند<\/h1>/);
+  assert.ok(html.includes(city.lede));
+  assert.ok(city.logistics && html.includes(city.logistics));
+  assert.match(html, /\/ar\/doctors\/India\/Radiation-Oncology/);
+  assert.match(html, /\/ar\/hospitals\//);
 });
 
 test("counted doctor phrases stay grammatical", () => {

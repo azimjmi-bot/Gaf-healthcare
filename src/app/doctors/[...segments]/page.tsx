@@ -9,6 +9,9 @@ import { getRequestLocale } from "@/lib/i18n/request";
 import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import type { Metadata } from "next";
 
+// Locale HTML is chosen from the x-gaf-locale request header (see src/proxy.ts).
+// Static generation would bake English HTML into the same /doctors/... path
+// that /ar rewrites share, so this route stays request-time SSR.
 export const dynamic = "force-dynamic";
 export const dynamicParams = true;
 
