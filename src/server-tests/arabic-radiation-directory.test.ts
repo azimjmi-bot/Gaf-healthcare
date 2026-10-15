@@ -323,8 +323,8 @@ test("generic Arabic doctor directories render as full HTML documents with H1, c
   assert.ok(html);
   assert.match(html, /<html lang="ar" dir="rtl">/);
   assert.match(html, /rel="canonical" href="https:\/\/gaf.healthcare\/ar\/doctors\/India\/Medical-Oncology"/);
-  assert.match(html, /hreflang="en" href="https:\/\/gaf.healthcare\/doctors\/India\/Medical-Oncology"/);
-  assert.match(html, /hreflang="ar" href="https:\/\/gaf.healthcare\/ar\/doctors\/India\/Medical-Oncology"/);
+  assert.match(html, /hrefLang="en" href="https:\/\/gaf.healthcare\/doctors\/India\/Medical-Oncology"/);
+  assert.match(html, /hrefLang="ar" href="https:\/\/gaf.healthcare\/ar\/doctors\/India\/Medical-Oncology"/);
   assert.doesNotMatch(html, /name="robots"/);
   assert.ok(html.includes(`<h1 class="mt-3 max-w-4xl font-heading text-[2rem] leading-[1.15] sm:text-4xl md:mt-4 md:text-6xl">${hub.heading}</h1>`));
   assert.ok(html.includes(hub.intro[0]));
@@ -379,7 +379,7 @@ test("Arabic doctor HTML follows the publication gate: missing facets 404, noind
     const html = renderArabicDoctorDirectoryHtml(noindexQuery);
     assert.ok(html, doctorsPath(noindexQuery));
     assert.match(html, /<meta name="robots" content="noindex, follow"\/>/);
-    assert.doesNotMatch(html, /hreflang=/);
+    assert.doesNotMatch(html, /hreflang=/i);
     assert.doesNotMatch(html, /FAQPage/);
     assert.match(html, /<h1[^>]*>[^<]+<\/h1>/);
   }
@@ -394,7 +394,7 @@ test("Arabic doctor HTML follows the publication gate: missing facets 404, noind
     assert.ok(html);
     const canonical = canonicalFacetPath(doctorsPath(duplicate), "ar");
     assert.ok(html.includes(`rel="canonical" href="https://gaf.healthcare/ar${canonical}"`));
-    assert.doesNotMatch(html, /hreflang=/);
+    assert.doesNotMatch(html, /hreflang=/i);
   }
 });
 
@@ -405,7 +405,7 @@ test("Arabic RO HTML document has canonical, hreflang, H1, Quick Answer and 18 F
   const html = wrapArabicRadiationDocument(hub, body);
   assert.match(html, /<html lang="ar" dir="rtl">/);
   assert.match(html, /rel="canonical" href="https:\/\/gaf.healthcare\/ar\/doctors\/India\/Radiation-Oncology"/);
-  assert.match(html, /hreflang="en" href="https:\/\/gaf.healthcare\/doctors\/India\/Radiation-Oncology"/);
+  assert.match(html, /hrefLang="en" href="https:\/\/gaf.healthcare\/doctors\/India\/Radiation-Oncology"/);
   assert.match(html, /<h1[^>]*>أفضل أطباء علاج الأورام بالإشعاع في الهند<\/h1>/);
   assert.match(html, /إجابة سريعة/);
   assert.equal(hub.faqs.length, 18);

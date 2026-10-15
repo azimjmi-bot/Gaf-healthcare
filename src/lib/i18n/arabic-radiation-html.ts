@@ -60,13 +60,17 @@ function headLinks(meta: ArabicDocumentMeta) {
   if (meta.state !== "published") {
     lines.push('<meta name="robots" content="noindex, follow"/>');
   }
+  // Attribute casing follows what Next's metadata renderer emits (`hrefLang`),
+  // so the alternates sweep and any other tooling tuned to App Router output
+  // read these documents the same way. HTML attribute names are
+  // case-insensitive, so browsers and crawlers are unaffected either way.
   if (meta.inLanguageSet) {
+    if (meta.hreflangLocales.includes("en")) {
+      lines.push(`<link rel="alternate" hrefLang="x-default" href="${SITE_ORIGIN}${meta.path}"/>`);
+    }
     for (const locale of meta.hreflangLocales) {
       const href = `${SITE_ORIGIN}${localePath(meta.path, locale as "ar" | "en")}`;
-      lines.push(`<link rel="alternate" hreflang="${locale}" href="${href}"/>`);
-    }
-    if (meta.hreflangLocales.includes("en")) {
-      lines.push(`<link rel="alternate" hreflang="x-default" href="${SITE_ORIGIN}${meta.path}"/>`);
+      lines.push(`<link rel="alternate" hrefLang="${locale}" href="${href}"/>`);
     }
   }
   return { canonical, lines: lines.join("\n") };
