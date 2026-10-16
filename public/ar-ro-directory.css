@@ -822,15 +822,72 @@ a { color:#1d4f6f; }
 }
 .page-anchors a:hover { border-color: var(--hp); }
 
-.site-shell main dl.grid { align-items: stretch; }
+.site-shell main dl.grid { align-items: stretch; gap: 0.75rem; }
+.site-shell main dl.grid > div { padding: 0.9rem 1.1rem; }
 .site-shell main dl.grid > div dt { font-size: 0.78rem; }
-.site-shell main dl.grid > div dd { margin: 0.35rem 0 0; font-size: 1.35rem; line-height: 1.35; color: var(--ink); }
-.site-shell main ul.grid > li > a,
+.site-shell main dl.grid > div dd { margin: 0.25rem 0 0; font-size: 1.35rem; line-height: 1.35; color: var(--ink); }
+/* Only a link that *is* the card (`a.block`) fills its grid cell. Cards that
+   hold several links (hospital rows) lay their own content out. */
 .site-shell main ul.grid > li { height: 100%; }
-.site-shell main ul.grid > li > a { display: block; text-decoration: none; color: inherit; }
-.site-shell main ul.grid > li > a:hover { border-color: var(--hp); }
-.site-shell main #doctor-faqs article h3,
-.site-shell main #radiation-faqs article h3 { font-size: 1.02rem; }
+.site-shell main ul.grid > li > a.block { display: block; height: 100%; text-decoration: none; color: inherit; }
+.site-shell main ul.grid > li > a.block:hover { border-color: var(--hp); }
+
+/* Section rhythm: one heading block, then its content, with no dead band
+   between them or before the next section. */
+.site-shell main .py-10 { padding-block: 2rem; }
+.site-shell main .hub-head + * { margin-top: 1.25rem; }
+.site-shell main .hub-head h2 { margin-top: 0.25rem; }
+.site-shell main .hub-head p { margin-top: 0.4rem; font-size: 0.95rem; color: #4a5c62; }
+.site-shell main .sub-title { margin-top: 1.5rem; font-size: 1.12rem; }
+.site-shell main ul.grid,
+.site-shell main div.grid { gap: 0.75rem; }
+.site-shell main .after-grid { margin-top: 0.9rem; font-size: 0.9rem; }
+
+.step-list,
+.prep-list { font-size: 0.95rem; line-height: 1.7; color: #3d5158; }
+.step-list > * + *,
+.prep-list > * + * { margin-top: 0.45rem; }
+.step-list li::marker { color: var(--gold); font-weight: 600; }
+
+.hosp-card { display: flex; flex-direction: column; gap: 0.2rem; padding: 0.9rem 1.1rem; }
+.hosp-card__name { font-size: 1.02rem; font-weight: 600; line-height: 1.45; color: var(--ink); text-decoration: none; }
+.hosp-card__name:hover { color: var(--hp); text-decoration: underline; }
+.hosp-card__meta { margin: 0; font-size: 0.86rem; color: #5a6d73; }
+.hosp-card__link { margin-top: 0.3rem; font-size: 0.86rem; color: var(--hp); text-decoration: none; }
+.hosp-card__link:hover { text-decoration: underline; }
+
+.proc-grid { align-items: start; }
+.proc-card { padding: 0.9rem 1.1rem; }
+.proc-card__name { margin: 0; font-size: 1.02rem; font-weight: 600; line-height: 1.45; }
+.proc-card__note { margin: 0.3rem 0 0; font-size: 0.88rem; line-height: 1.65; color: #5a6d73; }
+.proc-card__links { margin: 0.55rem 0 0; align-items: baseline; gap: 0.25rem 0.9rem; font-size: 0.88rem; }
+.proc-card__links a { color: var(--hp); }
+.proc-card__count { font-size: 0.78rem; color: #6b7c82; }
+
+.link-card { display: flex; flex-direction: column; gap: 0.15rem; padding: 0.85rem 1.05rem; }
+.link-card__title { margin: 0; font-size: 1rem; font-weight: 600; line-height: 1.45; color: var(--ink); }
+.link-card__meta { margin: 0; font-size: 0.82rem; color: #5a6d73; }
+.link-card:hover .link-card__title { color: var(--hp); }
+
+.concept-list { max-width: 56rem; }
+.concept-list > * + * { margin-top: 1rem; padding-top: 1rem; border-top: 1px solid #e3ddd0; }
+.concept__title { font-size: 1.05rem; }
+.concept p { margin: 0.35rem 0 0; font-size: 0.95rem; line-height: 1.75; color: #3d5158; }
+
+.faq-grid { margin-top: 1.25rem; }
+.faq-card { padding: 0.9rem 1.1rem; }
+.faq-card h3 { margin: 0; font-size: 1.02rem; line-height: 1.5; }
+.faq-card p { margin: 0.45rem 0 0; font-size: 0.9rem; line-height: 1.7; color: #4a5c62; }
+
+.cta-card { padding: 1.35rem 1.35rem 1.5rem; }
+.cta-card h2 { margin: 0; }
+.cta-card p { margin: 0.6rem 0 0; }
+.cta-card p:last-child { margin-top: 1rem; }
+
+.editorial-note { padding-bottom: 2.5rem; }
+.editorial-note p { font-size: 0.86rem; color: #5a6d73; }
+.source-list { margin-top: 0.6rem; font-size: 0.86rem; }
+.source-list > * + * { margin-top: 0.3rem; }
 
 .catalog-chips { margin-top: 0.25rem; }
 .catalog-chips a.bg-ink { background: var(--ink); color: var(--ivory); border-color: var(--ink); }
@@ -875,7 +932,8 @@ a { color:#1d4f6f; }
   .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .md\:px-8 { padding-inline: 2rem; }
   .md\:py-12 { padding-block: 3rem; }
-  .md\:py-14 { padding-block: 3.5rem; }
+  .md\:py-14 { padding-block: 2.75rem; }
+  .site-shell main .cta-card { padding: 1.6rem 1.75rem 1.75rem; }
   .md\:pt-12 { padding-top: 3rem; }
   .md\:pt-24 { padding-top: 3.25rem; }
   .md\:pb-16 { padding-bottom: 4rem; }

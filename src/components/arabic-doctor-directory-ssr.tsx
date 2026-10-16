@@ -146,11 +146,14 @@ export function ArabicDoctorDirectorySsrDocument({ data }: { data: ArabicDoctorD
 
       <section id="doctor-faqs" className="border-y border-border bg-secondary/30">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
-          <h2 className="font-heading text-3xl">{messages["dir.doctors.faqTitle"] || "أسئلة شائعة عن إيجاد طبيب"}</h2>
-          <p className="prose-gaf mt-3">{messages["dir.doctors.faqLede"]}</p>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="hub-head">
+            <p className="eyebrow">أسئلة شائعة</p>
+            <h2 className="font-heading text-3xl">{messages["dir.doctors.faqTitle"] || "أسئلة شائعة عن إيجاد طبيب"}</h2>
+            {messages["dir.doctors.faqLede"] ? <p className="prose-gaf mt-3">{messages["dir.doctors.faqLede"]}</p> : null}
+          </div>
+          <div className="faq-grid mt-8 grid gap-4 md:grid-cols-2">
             {data.faqs.map((row) => (
-              <article key={row.q} className="rounded-2xl border border-border bg-card px-5 py-4">
+              <article key={row.q} className="faq-card rounded-2xl border border-border bg-card px-5 py-4">
                 <h3 className="font-medium leading-snug">{row.q}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{row.a}</p>
               </article>
@@ -160,7 +163,7 @@ export function ArabicDoctorDirectorySsrDocument({ data }: { data: ArabicDoctorD
       </section>
 
       <section id="doctor-cta" className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
-        <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+        <div className="cta-card rounded-2xl border border-border bg-card p-6 md:p-8">
           <h2 className="font-heading text-3xl">اطلب المساعدة في مراجعة حالتك الطبية</h2>
           <p className="prose-gaf mt-3 max-w-3xl">
             يمكنك مشاركة التقارير الطبية المتاحة لطلب المساعدة في استكشاف الأطباء والمستشفيات المناسبة. يعتمد قبول الحالة والخطة العلاجية على مراجعة الفريق الطبي المختص.

@@ -1,3 +1,5 @@
+import { readFileSync } from "fs";
+import { join } from "path";
 import { createElement, Fragment, type ReactNode } from "react";
 import { ArabicDoctorDirectorySsrDocument } from "@/components/arabic-doctor-directory-ssr";
 import { ArabicRadiationSsrDocument } from "@/components/arabic-radiation-ssr";
@@ -19,6 +21,29 @@ import { toSlug } from "@/lib/taxonomy";
 
 const HTML_CACHE_MS = 5 * 60 * 1000;
 const htmlCache = new Map<string, { html: string; expires: number }>();
+
+const DIRECTORY_CSS_FILE = "ar-ro-directory.css";
+let directoryCss: string | null | undefined;
+
+/**
+ * The whole directory stylesheet travels inside the document. A browser or
+ * CDN that still holds an older copy of `/ar-ro-directory.css` then cannot
+ * style a newer document with it — the two previous layout fixes reached the
+ * origin but not every reader because of exactly that skew. The file lives in
+ * `public/` and is read the way the CMS store reads `content/` at runtime; if
+ * that read ever fails the document falls back to the external link.
+ */
+function directoryStyleTag() {
+  if (directoryCss === undefined) {
+    try {
+      directoryCss = readFileSync(join(process.cwd(), "public", DIRECTORY_CSS_FILE), "utf8");
+    } catch {
+      directoryCss = null;
+    }
+  }
+  if (directoryCss === null) return `<link rel="stylesheet" href="/${DIRECTORY_CSS_FILE}?v=4"/>`;
+  return `<style>${directoryCss.replace(/<\/style/gi, "<\\/style")}</style>`;
+}
 
 /**
  * Every Arabic India doctor directory — country, city, specialty, procedure —
@@ -94,32 +119,7 @@ ${head.lines}
 <meta property="og:title" content="${escapeHtml(doc.title)}"/>
 <meta property="og:description" content="${escapeHtml(doc.description)}"/>
 <meta property="og:url" content="${head.canonical}"/>
-<link rel="stylesheet" href="/ar-ro-directory.css?v=3"/>
-<style>
-  /* Wins over a cached copy of the stylesheet. Section titles are not the site bar. */
-  body.site-shell > header { position: sticky; top: 0; z-index: 30; background: #fff; }
-  body.site-shell main .hub-head { display: block; position: static; max-width: 46rem; background: transparent; border: 0; }
-  body.site-shell main .hub-head .eyebrow { display: block; color: #9a7b4f; font-size: .82rem; font-weight: 600; letter-spacing: 0; }
-  body.site-shell main .hub-head h2 { display: block; margin: .3rem 0 0; font-size: clamp(1.4rem, 2.4vw, 1.85rem); line-height: 1.4; }
-  body.site-shell main .hub-head p { display: block; max-width: 46rem; margin: .6rem 0 0; color: #4a5c62; }
-  body.site-shell main nav[aria-label="مسار التنقل"] ol { display: flex; flex-wrap: wrap; gap: .35rem .55rem; list-style: none; padding: 0; margin: 0; }
-  body.site-shell main ul.grid,
-  body.site-shell main dl.grid,
-  body.site-shell main div.grid { display: grid; gap: .75rem; }
-  body.site-shell main ul.grid { list-style: none; padding: 0; }
-  @media (min-width: 720px) {
-    body.site-shell main ul.grid,
-    body.site-shell main dl.grid,
-    body.site-shell main div.grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  }
-  @media (min-width: 1024px) {
-    body.site-shell main ul.lg\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    body.site-shell main dl.lg\\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
-    body.site-shell main ul.lg\\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
-  }
-  body.site-shell .hosp-pager { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin-top: 1.5rem; }
-  body.site-shell .hosp-pager ol { display: flex; flex-wrap: wrap; gap: .35rem; list-style: none; padding: 0; margin: 0; }
-</style>
+${directoryStyleTag()}
 </head>
 <body class="site-shell">
 <header>

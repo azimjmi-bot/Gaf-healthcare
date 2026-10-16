@@ -24,8 +24,8 @@ function HubHeading({
   return (
     <div className="hub-head">
       <p className="eyebrow">{eyebrow}</p>
-      <h2>{title}</h2>
-      {intro ? <p>{intro}</p> : null}
+      <h2 className="font-heading text-3xl">{title}</h2>
+      {intro ? <p className="prose-gaf mt-3">{intro}</p> : null}
     </div>
   );
 }
@@ -237,13 +237,13 @@ export function ArabicRadiationSsrDocument({
           title={`كيف تختار طبيب علاج أورام بالإشعاع في ${data.place}`}
           intro="هذه أسئلة تخطيط، وليست نظام تقييم. التقنية والحرم والمتابعة تُؤكد كتابة."
         />
-        <ol className="mt-6 max-w-3xl list-decimal space-y-3 ps-5 text-sm leading-relaxed text-muted-foreground">
+        <ol className="step-list mt-6 max-w-3xl list-decimal space-y-3 ps-5 text-sm leading-relaxed text-muted-foreground">
           {data.howToChoose.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ol>
-        <h3 className="mt-8 font-heading text-2xl">ما الذي تجهّزه للمراجعة؟</h3>
-        <ul className="mt-4 max-w-3xl list-disc space-y-2 ps-5 text-sm leading-relaxed text-muted-foreground">
+        <h3 className="sub-title mt-8 font-heading text-2xl">ما الذي تجهّزه للمراجعة؟</h3>
+        <ul className="prep-list mt-4 max-w-3xl list-disc space-y-2 ps-5 text-sm leading-relaxed text-muted-foreground">
           {data.consultPrep.map((item) => (
             <li key={item}>{item}</li>
           ))}
@@ -256,16 +256,16 @@ export function ArabicRadiationSsrDocument({
           title="أحرام مرتبطة بأطباء علاج الأورام بالإشعاع"
           intro="الأعداد هي علاقات الأطباء الحالية في كل حرم. يبقى ملف المستشفى الصفحة القانونية للحرم."
         />
-        <ul className="mt-6 grid gap-3 md:grid-cols-2">
+        <ul className="card-grid mt-6 grid gap-3 md:grid-cols-2">
           {data.hospitals.map(({ hospital, count }) => (
-            <li key={hospital.slug} className="rounded-2xl border border-border bg-white p-5">
+            <li key={hospital.slug} className="hosp-card rounded-2xl border border-border bg-white p-5">
               <a
                 href={arHref(`/hospitals/${hospital.slug}`)}
-                className="font-heading text-2xl text-gold underline underline-offset-4"
+                className="hosp-card__name font-heading text-2xl text-gold underline underline-offset-4"
               >
                 {hospital.name}
               </a>
-              <p className="mt-1 text-sm text-muted-foreground">
+              <p className="hosp-card__meta mt-1 text-sm text-muted-foreground">
                 {taxonomyLabel(hospital.city, "ar")} · {count} ملفًا مدرجًا
               </p>
               <a
@@ -276,14 +276,14 @@ export function ArabicRadiationSsrDocument({
                     specialty: "Radiation Oncology",
                   }),
                 )}
-                className="mt-3 inline-block text-sm underline-offset-4 hover:underline"
+                className="hosp-card__link mt-3 inline-block text-sm underline-offset-4 hover:underline"
               >
                 مستشفيات علاج الأورام بالإشعاع في {taxonomyLabel(hospital.city, "ar")}
               </a>
             </li>
           ))}
         </ul>
-        <p className="mt-4 text-sm">
+        <p className="after-grid mt-4 text-sm">
           <a href={arHref(data.hospitalDirectoryHref)} className="underline-offset-4 hover:underline">
             دليل مستشفيات علاج الأورام بالإشعاع
           </a>
@@ -298,21 +298,23 @@ export function ArabicRadiationSsrDocument({
               title="إجراءات العلاج الإشعاعي المرتبطة بالملفات"
               intro="كل إجراء يحتفظ بدليل تكلفته القانوني. قوائم الأطباء لا تتضمن إلا علاقات الإجراءات الدقيقة."
             />
-            <ul className="mt-6 grid gap-4 md:grid-cols-2">
+            <ul className="card-grid proc-grid mt-6 grid gap-4 md:grid-cols-2">
               {data.procedures.map((row) => (
-                <li key={row.href} className="rounded-2xl border border-border bg-white p-5">
-                  <p className="font-heading text-2xl">{row.name}</p>
-                  {row.note ? <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{row.note}</p> : null}
-                  <p className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
+                <li key={row.href} className="proc-card rounded-2xl border border-border bg-white p-5">
+                  <p className="proc-card__name font-heading text-2xl">{row.name}</p>
+                  {row.note ? (
+                    <p className="proc-card__note mt-2 text-sm leading-relaxed text-muted-foreground">{row.note}</p>
+                  ) : null}
+                  <p className="proc-card__links mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
                     <a href={arHref(row.href)} className="underline-offset-4 hover:underline">
                       أطباء مرتبطون بـ{row.name}
                     </a>
+                    {row.count != null ? (
+                      <span className="proc-card__count text-xs text-muted-foreground">
+                        {row.count} اختصاصيًا مرتبطًا
+                      </span>
+                    ) : null}
                   </p>
-                  {row.count != null ? (
-                    <p className="mt-2 text-xs tracking-[0.14em] text-muted-foreground">
-                      {row.count} اختصاصيًا مرتبطًا
-                    </p>
-                  ) : null}
                 </li>
               ))}
             </ul>
@@ -327,10 +329,10 @@ export function ArabicRadiationSsrDocument({
             title="مفاهيم يحتاجها المريض الدولي"
             intro="هذه شروح عامة تساعد على قراءة الدليل، وليست خطة علاج."
           />
-          <div className="mt-6 max-w-4xl space-y-8">
+          <div className="concept-list mt-6 max-w-4xl space-y-8">
             {data.educational.map((item) => (
-              <article key={item.title}>
-                <h3 className="font-heading text-2xl">{item.title}</h3>
+              <article key={item.title} className="concept">
+                <h3 className="concept__title font-heading text-2xl">{item.title}</h3>
                 <p className="prose-gaf mt-3 max-w-none">{item.body}</p>
               </article>
             ))}
@@ -346,12 +348,17 @@ export function ArabicRadiationSsrDocument({
               title="أنواع أورام لها سياق في دليل التخصص"
               intro="هذه الروابط تأتي من دليل التخصص. ليست استنتاجًا من قائمة إجراءات الطبيب ولا ادعاءً بخبرة فردية."
             />
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {/* The per-row note is one sentence repeated for every condition;
+                the section intro above already says it once. */}
+            <ul className="card-grid mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {data.conditions.map((row) => (
                 <li key={row.name}>
-                  <a href={arHref(row.href)} className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30">
-                    <p className="font-heading text-2xl">{row.name}</p>
-                    <p className="mt-2 text-sm text-muted-foreground">{row.note}</p>
+                  <a
+                    href={arHref(row.href)}
+                    className="link-card block rounded-2xl border border-border bg-white p-5 hover:border-primary/30"
+                  >
+                    <p className="link-card__title font-heading text-xl">{row.name}</p>
+                    <p className="link-card__meta mt-1 text-sm text-muted-foreground">دليل علاج الأورام بالإشعاع</p>
                   </a>
                 </li>
               ))}
@@ -366,12 +373,15 @@ export function ArabicRadiationSsrDocument({
           title={`تكاليف علاج الأورام بالإشعاع في ${data.place}`}
           intro="هذه أدلة التكلفة الحالية في GAF. ليست أسعارًا خاصة بكل طبيب."
         />
-        <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <ul className="card-grid mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
           {data.costs.map((row) => (
             <li key={row.href}>
-              <a href={arHref(row.href)} className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30">
-                <p className="font-heading text-xl">{row.name}</p>
-                <p className="mt-2 text-sm text-muted-foreground">عرض دليل التكلفة</p>
+              <a
+                href={arHref(row.href)}
+                className="link-card block rounded-2xl border border-border bg-white p-5 hover:border-primary/30"
+              >
+                <p className="link-card__title font-heading text-xl">{row.name}</p>
+                <p className="link-card__meta mt-1 text-sm text-muted-foreground">عرض دليل التكلفة</p>
               </a>
             </li>
           ))}
@@ -386,15 +396,15 @@ export function ArabicRadiationSsrDocument({
               title="أطباء علاج الأورام بالإشعاع حسب المدينة"
               intro="صفحات المدينة تستخدم أعداد الكتالوج الحيّة. التوليفات الفارغة لا تُنشر كعناوين ضعيفة."
             />
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            <ul className="card-grid mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
               {data.cities.map((city) => (
                 <li key={city.href}>
                   <a
                     href={arHref(city.href)}
-                    className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30"
+                    className="link-card block rounded-2xl border border-border bg-white p-5 hover:border-primary/30"
                   >
-                    <p className="font-heading text-2xl">{city.name}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">{city.count} ملفًا مدرجًا</p>
+                    <p className="link-card__title font-heading text-xl">{city.name}</p>
+                    <p className="link-card__meta mt-1 text-sm text-muted-foreground">{city.count} ملفًا مدرجًا</p>
                   </a>
                 </li>
               ))}
@@ -411,17 +421,17 @@ export function ArabicRadiationSsrDocument({
               title="أدلة علاج الأورام بالإشعاع في مدن هندية أخرى"
               intro="بعد دليل هذه المدينة: انتقل إلى مدينة أخرى فقط إذا كانت الملفات المنشورة هناك ذات صلة بحالتك."
             />
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+            <ul className="card-grid mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
               {data.cities
                 .filter((city) => city.href !== data.path)
                 .map((city) => (
                   <li key={city.href}>
                     <a
                       href={arHref(city.href)}
-                      className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30"
+                      className="link-card block rounded-2xl border border-border bg-white p-5 hover:border-primary/30"
                     >
-                      <p className="font-heading text-2xl">{city.name}</p>
-                      <p className="mt-1 text-sm text-muted-foreground">{city.count} ملفًا مدرجًا</p>
+                      <p className="link-card__title font-heading text-xl">{city.name}</p>
+                      <p className="link-card__meta mt-1 text-sm text-muted-foreground">{city.count} ملفًا مدرجًا</p>
                     </a>
                   </li>
                 ))}
@@ -432,13 +442,14 @@ export function ArabicRadiationSsrDocument({
 
       <section id="radiation-faqs" className="border-y border-border bg-secondary/30">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
-          <h2 className="font-heading text-3xl">أسئلة شائعة عن علاج الأورام بالإشعاع في {data.place}</h2>
-          <p className="prose-gaf mt-3">
-            إجابات للمرضى الدوليين الناطقين بالعربية. ليست تشخيصًا فرديًا ولا تغني عن تقييم الفريق المعالج.
-          </p>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
+          <div className="hub-head">
+            <p className="eyebrow">أسئلة شائعة</p>
+            <h2 className="font-heading text-3xl">أسئلة شائعة عن علاج الأورام بالإشعاع في {data.place}</h2>
+            <p className="prose-gaf mt-3">إجابات للمرضى الدوليين الناطقين بالعربية. ليست تشخيصًا فرديًا ولا تغني عن تقييم الفريق المعالج.</p>
+          </div>
+          <div className="faq-grid mt-8 grid gap-4 md:grid-cols-2">
             {data.faqs.map((row) => (
-              <article key={row.q} className="rounded-2xl border border-border bg-card px-5 py-4">
+              <article key={row.q} className="faq-card rounded-2xl border border-border bg-card px-5 py-4">
                 <h3 className="font-medium leading-snug">{row.q}</h3>
                 <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{row.a}</p>
               </article>
@@ -448,7 +459,7 @@ export function ArabicRadiationSsrDocument({
       </section>
 
       <section id="radiation-ro-cta" className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
-        <div className="rounded-2xl border border-border bg-card p-6 md:p-8">
+        <div className="cta-card rounded-2xl border border-border bg-card p-6 md:p-8">
           <h2 className="font-heading text-3xl">اطلب المساعدة في مراجعة حالتك الطبية</h2>
           <p className="prose-gaf mt-3 max-w-3xl">
             يمكنك مشاركة التقارير الطبية المتاحة لطلب المساعدة في استكشاف الأطباء والمستشفيات المناسبة. يعتمد قبول الحالة والخطة العلاجية على مراجعة الفريق الطبي المختص.
@@ -467,11 +478,11 @@ export function ArabicRadiationSsrDocument({
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 pb-12 sm:px-5 md:px-8">
+      <section className="editorial-note mx-auto max-w-7xl px-4 pb-12 sm:px-5 md:px-8">
         <p className="text-sm leading-relaxed text-muted-foreground">
           {data.editorial.attribution} · آخر تحرير {data.editorial.updated}. {data.editorial.note}
         </p>
-        <ul className="mt-4 space-y-2 text-sm">
+        <ul className="source-list mt-4 space-y-2 text-sm">
           {data.sources.map((source) => (
             <li key={source.href}>
               <a href={source.href} className="underline-offset-4 hover:underline" rel="noreferrer noopener" target="_blank">
