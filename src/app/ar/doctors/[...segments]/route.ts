@@ -28,8 +28,11 @@ export function generateStaticParams() {
 
 const HTML_HEADERS = {
   "Content-Type": "text/html; charset=utf-8",
-  "Cache-Control": "public, s-maxage=300, stale-while-revalidate=86400",
-  "CDN-Cache-Control": "public, s-maxage=300, stale-while-revalidate=86400",
+  // Browsers must not reuse a previous document. A shared cache may keep a
+  // copy for five minutes; stale-while-revalidate stays off this header so a
+  // refresh cannot keep showing yesterday's page for a day.
+  "Cache-Control": "public, max-age=0, must-revalidate",
+  "CDN-Cache-Control": "public, s-maxage=300",
   "x-gaf-locale": "ar",
 };
 

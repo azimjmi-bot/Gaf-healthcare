@@ -22,11 +22,11 @@ function HubHeading({
   intro?: string;
 }) {
   return (
-    <header className="max-w-3xl">
-      <p className="text-xs font-medium uppercase tracking-[0.18em] text-gold">{eyebrow}</p>
-      <h2 className="mt-2 font-heading text-3xl md:text-4xl">{title}</h2>
-      {intro ? <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{intro}</p> : null}
-    </header>
+    <div className="hub-head">
+      <p className="eyebrow">{eyebrow}</p>
+      <h2>{title}</h2>
+      {intro ? <p>{intro}</p> : null}
+    </div>
   );
 }
 

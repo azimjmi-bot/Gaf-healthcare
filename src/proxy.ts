@@ -78,7 +78,10 @@ export async function proxy(request: NextRequest) {
     // paginated or filtered (?page=, ?hospital=, ?experience=) takes the
     // rewrite and renders the requested page through the App Router.
     if (head === "ar" && isArabicDoctorHtmlPath(pathname) && !request.nextUrl.search) {
-      return withLocale(request, "ar");
+      const response = withLocale(request, "ar");
+      response.headers.set("Cache-Control", "public, max-age=0, must-revalidate");
+      response.headers.set("CDN-Cache-Control", "public, s-maxage=300");
+      return response;
     }
     return withLocale(request, head, rest);
   }

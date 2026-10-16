@@ -788,8 +788,9 @@ a { color:#1d4f6f; }
 }
 .site-shell main h2 { line-height: 1.4; margin: 0.25rem 0 0; }
 .site-shell main h3 { font-size: 1.12rem; line-height: 1.45; margin: 0; }
-.site-shell main header { display: block; max-width: 46rem; }
-.site-shell main header p { max-width: 46rem; }
+.site-shell main .hub-head { display: block; max-width: 46rem; }
+.site-shell main .hub-head p { max-width: 46rem; margin: 0.6rem 0 0; }
+.site-shell main .hub-head h2 { margin-top: 0.3rem; }
 .site-shell main p { overflow-wrap: anywhere; }
 .site-shell main ul { list-style: none; padding: 0; margin: 0; }
 .site-shell main ul.list-disc { list-style: disc; padding-inline-start: 1.35rem; }

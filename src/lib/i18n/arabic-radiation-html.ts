@@ -94,7 +94,32 @@ ${head.lines}
 <meta property="og:title" content="${escapeHtml(doc.title)}"/>
 <meta property="og:description" content="${escapeHtml(doc.description)}"/>
 <meta property="og:url" content="${head.canonical}"/>
-<link rel="stylesheet" href="/ar-ro-directory.css"/>
+<link rel="stylesheet" href="/ar-ro-directory.css?v=3"/>
+<style>
+  /* Wins over a cached copy of the stylesheet. Section titles are not the site bar. */
+  body.site-shell > header { position: sticky; top: 0; z-index: 30; background: #fff; }
+  body.site-shell main .hub-head { display: block; position: static; max-width: 46rem; background: transparent; border: 0; }
+  body.site-shell main .hub-head .eyebrow { display: block; color: #9a7b4f; font-size: .82rem; font-weight: 600; letter-spacing: 0; }
+  body.site-shell main .hub-head h2 { display: block; margin: .3rem 0 0; font-size: clamp(1.4rem, 2.4vw, 1.85rem); line-height: 1.4; }
+  body.site-shell main .hub-head p { display: block; max-width: 46rem; margin: .6rem 0 0; color: #4a5c62; }
+  body.site-shell main nav[aria-label="مسار التنقل"] ol { display: flex; flex-wrap: wrap; gap: .35rem .55rem; list-style: none; padding: 0; margin: 0; }
+  body.site-shell main ul.grid,
+  body.site-shell main dl.grid,
+  body.site-shell main div.grid { display: grid; gap: .75rem; }
+  body.site-shell main ul.grid { list-style: none; padding: 0; }
+  @media (min-width: 720px) {
+    body.site-shell main ul.grid,
+    body.site-shell main dl.grid,
+    body.site-shell main div.grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (min-width: 1024px) {
+    body.site-shell main ul.lg\\:grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    body.site-shell main dl.lg\\:grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    body.site-shell main ul.lg\\:grid-cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+  }
+  body.site-shell .hosp-pager { display: flex; flex-wrap: wrap; align-items: center; gap: .6rem; margin-top: 1.5rem; }
+  body.site-shell .hosp-pager ol { display: flex; flex-wrap: wrap; gap: .35rem; list-style: none; padding: 0; margin: 0; }
+</style>
 </head>
 <body class="site-shell">
 <header>
@@ -183,7 +208,8 @@ function hostMarkup(node: ReactNode): string {
 }
 
 function cacheKeyFor(path: string, page: number) {
-  return page > 1 ? `/ar${path}?page=${page}` : `/ar${path}`;
+  const url = page > 1 ? `/ar${path}?page=${page}` : `/ar${path}`;
+  return `v3:${url}`;
 }
 
 export function renderArabicRadiationHtml(query: CatalogQuery, page = 1) {
