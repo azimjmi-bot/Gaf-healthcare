@@ -127,13 +127,21 @@ export function ArabicRadiationSsrDocument({
             {data.heading}
           </h1>
           <p className="prose-gaf mt-4 md:mt-6">{data.lede}</p>
+          <nav className="page-anchors" aria-label="في هذه الصفحة">
+            <a href="#radiation-doctors">الأطباء</a>
+            <a href="#radiation-choose">كيف تختار</a>
+            <a href="#radiation-hospitals">المستشفيات</a>
+            {data.procedures.length > 0 ? <a href="#radiation-procedures">التقنيات</a> : null}
+            <a href="#radiation-costs">التكلفة</a>
+            <a href="#radiation-cities">المدن</a>
+            <a href="#radiation-faqs">أسئلة شائعة</a>
+          </nav>
         </div>
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:px-8 md:py-12" aria-labelledby="radiation-quick-answer">
         <article className="rounded-2xl border border-border bg-card p-5 shadow-[0_16px_40px_-32px_rgba(20,24,28,0.45)] md:p-8">
-          <p className="text-xs font-medium tracking-[0.18em] text-gold">{data.quickAnswer.title}</p>
-          <h2 id="radiation-quick-answer" className="mt-2 font-heading text-3xl md:text-4xl">
+          <h2 id="radiation-quick-answer" className="font-heading text-3xl md:text-4xl">
             {data.quickAnswer.title}
           </h2>
           <p className="prose-gaf mt-4 max-w-none">{data.quickAnswer.answer}</p>
@@ -223,7 +231,7 @@ export function ArabicRadiationSsrDocument({
         )}
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+      <section id="radiation-choose" className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
         <HubHeading
           eyebrow="قرار سريري"
           title={`كيف تختار طبيب علاج أورام بالإشعاع في ${data.place}`}
@@ -242,59 +250,7 @@ export function ArabicRadiationSsrDocument({
         </ul>
       </section>
 
-      {!data.cityName && data.cities.length > 0 ? (
-        <section className="border-y border-border bg-secondary/30">
-          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
-            <HubHeading
-              eyebrow="المدن"
-              title="أطباء علاج الأورام بالإشعاع حسب المدينة"
-              intro="صفحات المدينة تستخدم أعداد الكتالوج الحيّة. التوليفات الفارغة لا تُنشر كعناوين ضعيفة."
-            />
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-              {data.cities.map((city) => (
-                <li key={city.href}>
-                  <a
-                    href={arHref(city.href)}
-                    className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30"
-                  >
-                    <p className="font-heading text-2xl">{city.name}</p>
-                    <p className="mt-1 text-sm text-muted-foreground">{city.count} ملفًا مدرجًا</p>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </section>
-      ) : null}
-
-      {data.cityName && data.cities.length > 1 ? (
-        <section className="border-y border-border bg-secondary/30">
-          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
-            <HubHeading
-              eyebrow="مدن أخرى"
-              title="أدلة علاج الأورام بالإشعاع في مدن هندية أخرى"
-              intro="انتقل إلى مدينة أخرى فقط إذا كانت الملفات المنشورة هناك ذات صلة بحالتك."
-            />
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
-              {data.cities
-                .filter((city) => city.href !== data.path)
-                .map((city) => (
-                  <li key={city.href}>
-                    <a
-                      href={arHref(city.href)}
-                      className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30"
-                    >
-                      <p className="font-heading text-2xl">{city.name}</p>
-                      <p className="mt-1 text-sm text-muted-foreground">{city.count} ملفًا مدرجًا</p>
-                    </a>
-                  </li>
-                ))}
-            </ul>
-          </div>
-        </section>
-      ) : null}
-
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+      <section id="radiation-hospitals" className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
         <HubHeading
           eyebrow="المستشفيات"
           title="أحرام مرتبطة بأطباء علاج الأورام بالإشعاع"
@@ -335,7 +291,7 @@ export function ArabicRadiationSsrDocument({
       </section>
 
       {data.procedures.length > 0 ? (
-        <section className="border-y border-border bg-secondary/30">
+        <section id="radiation-procedures" className="border-y border-border bg-secondary/30">
           <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
             <HubHeading
               eyebrow="التقنيات"
@@ -404,7 +360,7 @@ export function ArabicRadiationSsrDocument({
         </section>
       ) : null}
 
-      <section className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+      <section id="radiation-costs" className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
         <HubHeading
           eyebrow="التكلفة"
           title={`تكاليف علاج الأورام بالإشعاع في ${data.place}`}
@@ -421,6 +377,58 @@ export function ArabicRadiationSsrDocument({
           ))}
         </ul>
       </section>
+
+      {!data.cityName && data.cities.length > 0 ? (
+        <section id="radiation-cities" className="border-y border-border bg-secondary/30">
+          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+            <HubHeading
+              eyebrow="المدن"
+              title="أطباء علاج الأورام بالإشعاع حسب المدينة"
+              intro="صفحات المدينة تستخدم أعداد الكتالوج الحيّة. التوليفات الفارغة لا تُنشر كعناوين ضعيفة."
+            />
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+              {data.cities.map((city) => (
+                <li key={city.href}>
+                  <a
+                    href={arHref(city.href)}
+                    className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30"
+                  >
+                    <p className="font-heading text-2xl">{city.name}</p>
+                    <p className="mt-1 text-sm text-muted-foreground">{city.count} ملفًا مدرجًا</p>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
+
+      {data.cityName && data.cities.length > 1 ? (
+        <section id="radiation-cities" className="border-y border-border bg-secondary/30">
+          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+            <HubHeading
+              eyebrow="مدن أخرى"
+              title="أدلة علاج الأورام بالإشعاع في مدن هندية أخرى"
+              intro="بعد دليل هذه المدينة: انتقل إلى مدينة أخرى فقط إذا كانت الملفات المنشورة هناك ذات صلة بحالتك."
+            />
+            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-5">
+              {data.cities
+                .filter((city) => city.href !== data.path)
+                .map((city) => (
+                  <li key={city.href}>
+                    <a
+                      href={arHref(city.href)}
+                      className="block rounded-2xl border border-border bg-white p-5 hover:border-primary/30"
+                    >
+                      <p className="font-heading text-2xl">{city.name}</p>
+                      <p className="mt-1 text-sm text-muted-foreground">{city.count} ملفًا مدرجًا</p>
+                    </a>
+                  </li>
+                ))}
+            </ul>
+          </div>
+        </section>
+      ) : null}
 
       <section id="radiation-faqs" className="border-y border-border bg-secondary/30">
         <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
