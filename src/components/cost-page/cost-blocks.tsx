@@ -293,11 +293,15 @@ export function CityCostGrid({
                   </Link>
                 </td>
                 <td>
-                  <Link href={row.hospitalsPath}>
-                    {row.hospitalCount > 0
-                      ? `${row.hospitalCount} listed ${row.hospitalCount === 1 ? "hospital" : "hospitals"}`
-                      : "No procedure-confirmed campus"}
-                  </Link>
+                  {row.hospitalsPath ? (
+                    <Link href={row.hospitalsPath}>
+                      {row.hospitalCount > 0
+                        ? `${row.hospitalCount} listed ${row.hospitalCount === 1 ? "hospital" : "hospitals"}`
+                        : "No procedure-confirmed campus"}
+                    </Link>
+                  ) : (
+                    <span className="text-muted-foreground">No procedure-confirmed campus</span>
+                  )}
                 </td>
               </tr>
             ))}

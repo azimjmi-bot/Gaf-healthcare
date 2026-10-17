@@ -1,6 +1,7 @@
 import "server-only";
 import type { CityEditorial, CostArticle, DestinationRow } from "@/data/cost-articles/types";
 import { catalogSpecialtyName, costPath, costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
+import { hospitalFacetExists } from "@/lib/radiation-hospital-page";
 import { doctorsForTreatment, getHospital, getTreatment } from "@/lib/data";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
@@ -146,7 +147,8 @@ export type CostCityRow = {
   logistics: string;
   costPath: string;
   doctorsPath: string;
-  hospitalsPath: string;
+  /** Absent when the hospital facet would 404 (no indexable campus match). */
+  hospitalsPath?: string;
   doctorCount: number;
   hospitalCount: number;
 };
@@ -198,7 +200,7 @@ export function costCityRows(
         procedure: treatment.name,
       }),
       doctorsPath: doctorsPath(params),
-      hospitalsPath: hospitalsPath(params),
+      hospitalsPath: hospitalFacetExists(params) ? hospitalsPath(params) : undefined,
       doctorCount: faculty.filter((d) => d.citySlug === city.citySlug).length,
       hospitalCount: campuses.filter((h) => h.citySlug === city.citySlug).length,
     };

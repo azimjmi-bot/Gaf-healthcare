@@ -221,6 +221,23 @@ function hospitalSpecialtyCombinationEligible(
   );
 }
 
+/**
+ * Whether the English /hospitals facet for this query renders at all.
+ *
+ * Specialty-scoped India facets are hubs that only exist once the
+ * city/specialty/procedure combination clears the indexability floor; the
+ * directory 404s otherwise. Pages that link into those facets must check here
+ * first, or crawlers follow the link into a Not Found.
+ */
+export function hospitalFacetExists(
+  query: CatalogQuery,
+  hospitalRows: Hospital[] = hospitals,
+  doctorRows: Doctor[] = doctors,
+) {
+  if (!isHospitalSpecialtyScope(query)) return true;
+  return hospitalSpecialtyCombinationIndexable(query, hospitalRows, doctorRows);
+}
+
 export function hospitalSpecialtyCombinationIndexable(
   query: CatalogQuery,
   hospitalRows: Hospital[] = hospitals,

@@ -310,6 +310,7 @@
   margin-top: 0.85rem;
 }
 .hcard__chips a,
+.hcard__chips span,
 .hcard__morechip {
   display: inline-flex;
   border-radius: 999px;

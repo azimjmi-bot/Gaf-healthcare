@@ -78,6 +78,7 @@ import {
   specialtyBlurbLocalized,
   whyChooseLocalized,
 } from "@/lib/i18n/hospital-copy";
+import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { interpolate } from "@/lib/i18n/messages";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
@@ -155,6 +156,10 @@ export function HospitalProfileView({
   const eye = isEyeCampus(hospital);
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(travel.mapsQuery)}`;
   const t = uiCatalogFor(locale);
+  // Procedure editorial has no target-locale store yet, so the sub-page 404s
+  // outside English; the profile keeps its procedure list without the link.
+  const proceduresHref = `/hospitals/${hospital.slug}/procedures`;
+  const proceduresLinked = localePageIsRenderable(locale, proceduresHref);
   const cityLabel = taxonomyLabel(hospital.city, locale);
   const countryLabel = taxonomyLabel(hospital.country, locale);
   const specialtyRelationships =
@@ -466,10 +471,12 @@ export function HospitalProfileView({
                 <p className="eyebrow">{t["hp.planningRanges"]}</p>
                 <h2>{t["hp.popular"]}</h2>
               </div>
-              <Link href={`/hospitals/${hospital.slug}/procedures`} className="hp-viewall">
-                {t["hp.viewAllProcedures"]}
-                <ChevronRight className="size-4 icon-forward" />
-              </Link>
+              {proceduresLinked ? (
+                <Link href={proceduresHref} className="hp-viewall">
+                  {t["hp.viewAllProcedures"]}
+                  <ChevronRight className="size-4 icon-forward" />
+                </Link>
+              ) : null}
             </div>
             <p className="hp-note">{t["hp.procNote"]}</p>
             {popular.length === 0 ? (
@@ -506,8 +513,14 @@ export function HospitalProfileView({
                 {interpolate(t["hp.moreProcs"], {
                   count: moreProcedures,
                   noun: moreProcedures === 1 ? t["hp.procedureOne"] : t["hp.procedureMany"],
-                })}{" "}
-                <Link href={`/hospitals/${hospital.slug}/procedures`}>{t["hp.viewAllProcedures"]}</Link>.
+                })}
+                {proceduresLinked ? (
+                  <>
+                    {" "}
+                    <Link href={proceduresHref}>{t["hp.viewAllProcedures"]}</Link>
+                  </>
+                ) : null}
+                .
               </p>
             ) : null}
           </div>

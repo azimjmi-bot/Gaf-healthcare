@@ -13,6 +13,7 @@ import {
 import { PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
 import { PseoTrust } from "@/components/pseo-trust";
 import { costPath, costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
+import { hospitalFacetExists } from "@/lib/radiation-hospital-page";
 import type { CatalogQuery } from "@/lib/catalog";
 import {
   breadcrumbJsonLd,
@@ -539,16 +540,22 @@ function CareDirectories({ data }: { data: SpecialtyPageData }) {
                 title={`${data.specialty.name} hospitals in ${place}`}
                 intro={`${data.hospitals.length} hospitals currently meet the ${place} and ${data.specialty.name} relationship filters. Cards show stored CMS information, not a ranking or universal capability claim.`}
               />
-              <Link
-                href={hospitalsPath({
-                  destination: data.country.name,
-                  city: data.city?.name,
-                  specialty: data.specialty.name,
-                })}
-                className="text-sm underline-offset-4 hover:underline"
-              >
-                View all {data.hospitals.length} hospitals
-              </Link>
+              {hospitalFacetExists({
+                destination: data.country.name,
+                city: data.city?.name,
+                specialty: data.specialty.name,
+              }) ? (
+                <Link
+                  href={hospitalsPath({
+                    destination: data.country.name,
+                    city: data.city?.name,
+                    specialty: data.specialty.name,
+                  })}
+                  className="text-sm underline-offset-4 hover:underline"
+                >
+                  View all {data.hospitals.length} hospitals
+                </Link>
+              ) : null}
             </div>
             <div className="mt-8 grid gap-5 lg:grid-cols-2">
               {data.featuredHospitals.map((hospital) => (

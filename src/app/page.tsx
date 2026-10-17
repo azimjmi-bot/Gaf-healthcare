@@ -25,6 +25,7 @@ import { costPath, hospitalsPath } from "@/lib/catalog-links";
 import { localizeBlog, localizeHomeExtras, localizeMessages } from "@/lib/i18n/localize";
 import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
+import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { ORGANISATION_ID } from "@/lib/jsonld";
 import { SITE_URL } from "@/lib/seo";
@@ -176,26 +177,36 @@ export default async function HomePage() {
           </Link>
         </div>
         <div className="home-destgrid">
-          {extras.destinations.map((place) => (
-            <Link
-              key={place.name}
-              href={href(hospitalsPath({ destination: place.filter }))}
-              className="home-dest"
-            >
-              <Image
-                src={place.image}
-                alt={place.imageAlt}
-                fill
-                quality={40}
-                className="object-cover"
-                sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 100vw"
-              />
-              <span>
-                <strong>{place.name}</strong>
-                <em>{place.blurb}</em>
-              </span>
-            </Link>
-          ))}
+          {extras.destinations.map((place) => {
+            const directory = hospitalsPath({ destination: place.filter });
+            const tile = (
+              <>
+                <Image
+                  src={place.image}
+                  alt={place.imageAlt}
+                  fill
+                  quality={40}
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 16vw, (min-width: 640px) 33vw, 100vw"
+                />
+                <span>
+                  <strong>{place.name}</strong>
+                  <em>{place.blurb}</em>
+                </span>
+              </>
+            );
+            // A destination whose hospital directory has no content in this
+            // locale stays on the page as a card, not as a link to a 404.
+            return localePageIsRenderable(locale, directory) ? (
+              <Link key={place.name} href={href(directory)} className="home-dest">
+                {tile}
+              </Link>
+            ) : (
+              <div key={place.name} className="home-dest">
+                {tile}
+              </div>
+            );
+          })}
         </div>
       </section>
       ) : null}

@@ -17,6 +17,7 @@ import { QuickAnswer } from "@/components/quick-answer";
 import type { CatalogQuery } from "@/lib/catalog";
 import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import type { DoctorSpecialtyHubData } from "@/lib/doctor-specialty-page";
+import { hospitalFacetExists } from "@/lib/radiation-hospital-page";
 import { absoluteUrl, breadcrumbJsonLd, doctorItemListJsonLd, faqJsonLd } from "@/lib/seo";
 import { documentId } from "@/lib/jsonld";
 import type { AppLocale } from "@/lib/i18n/languages";
@@ -377,16 +378,22 @@ export function DoctorSpecialtyHub({
               <p className="mt-1 text-sm text-muted-foreground">
                 {hospital.city} · {count} listed {count === 1 ? data.practitioner : data.practitioners}
               </p>
-              <Link
-                href={hospitalsPath({
-                  destination: "India",
-                  city: hospital.city,
-                  specialty: data.specialtyName,
-                })}
-                className="mt-3 inline-block text-sm underline-offset-4 hover:underline"
-              >
-                {data.specialtyName} hospitals in {hospital.city}
-              </Link>
+              {hospitalFacetExists({
+                destination: "India",
+                city: hospital.city,
+                specialty: data.specialtyName,
+              }) ? (
+                <Link
+                  href={hospitalsPath({
+                    destination: "India",
+                    city: hospital.city,
+                    specialty: data.specialtyName,
+                  })}
+                  className="mt-3 inline-block text-sm underline-offset-4 hover:underline"
+                >
+                  {data.specialtyName} hospitals in {hospital.city}
+                </Link>
+              ) : null}
             </li>
           ))}
         </ul>

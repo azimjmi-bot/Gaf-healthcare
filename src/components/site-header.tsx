@@ -12,6 +12,7 @@ import { UI_MESSAGE_FIELDS } from "@/lib/i18n/messages";
 import { localePath } from "@/lib/i18n/path";
 import { getRequestLocale, getRequestPath } from "@/lib/i18n/request";
 import { surfaceIsAvailable } from "@/lib/i18n/surfaces";
+import { consultToWhatsappHref } from "@/lib/site";
 
 export async function SiteHeader() {
   const locale = await getRequestLocale();
@@ -24,6 +25,12 @@ export async function SiteHeader() {
       ? messages[key] || UI_MESSAGE_FIELDS[key] || key
       : messages[key] || "";
   const href = (path: string) => localePath(path, locale);
+  // Only English has a consult form page. Other locales send the header CTA
+  // straight to the WhatsApp desk, like every other consult link, instead of
+  // into a localised /consult path that does not exist.
+  const consult = surfaceIsAvailable(locale, "consult")
+    ? { href: href("/consult") }
+    : { href: consultToWhatsappHref("/consult"), target: "_blank", rel: "noreferrer noopener" };
   const links = (
     [
       { href: "/#destinations", label: t("nav.destinations"), surface: "hospitals" },
@@ -80,7 +87,7 @@ export async function SiteHeader() {
             label={t("lang.label")}
           />
           <Link
-            href={href("/consult")}
+            {...consult}
             className="inline-flex h-10 items-center justify-center rounded-full bg-primary px-3 text-sm font-medium text-primary-foreground hover:bg-primary/90 sm:px-5"
           >
             <span className="md:hidden">{t("nav.consultShort")}</span>
@@ -107,7 +114,7 @@ export async function SiteHeader() {
                     {l.label}
                   </Link>
                 ))}
-                <Link href={href("/consult")} className="site-menu__consult">
+                <Link {...consult} className="site-menu__consult">
                   {t("nav.dossier")}
                 </Link>
               </nav>

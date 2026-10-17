@@ -677,8 +677,12 @@ export function CostArticleView({
                 <Link href={row.doctorsPath}>
                   {article.procedure} specialists in {row.city}
                 </Link>
-                {" · "}
-                <Link href={row.hospitalsPath}>Hospitals in {row.city}</Link>
+                {row.hospitalsPath ? (
+                  <>
+                    {" · "}
+                    <Link href={row.hospitalsPath}>Hospitals in {row.city}</Link>
+                  </>
+                ) : null}
                 {" · "}
                 <Link href={row.costPath}>Cost in {row.city}</Link>
               </p>

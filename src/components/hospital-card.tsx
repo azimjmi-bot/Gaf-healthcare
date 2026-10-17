@@ -9,11 +9,13 @@ import type { Hospital } from "@/lib/hospitals";
 import { displayBio, isEyeCampus } from "@/lib/hospital-profile";
 import { whatsappHref } from "@/lib/site";
 import { hospitalsPath } from "@/lib/catalog-links";
+import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { interpolate } from "@/lib/i18n/messages";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 import { doctorsForHospitalLocale } from "@/lib/locale-catalog";
+import { hospitalFacetExists } from "@/lib/radiation-hospital-page";
 import { compareSpecialties } from "@/lib/taxonomy";
 
 const CHIP_LIMIT = 6;
@@ -69,19 +71,21 @@ export async function HospitalCard({ hospital }: { hospital: Hospital }) {
         </Link>
         {shown.length > 0 ? (
           <ul className="hcard__chips">
-            {shown.map((spec) => (
-              <li key={spec.slug}>
-                <Link
-                  href={hospitalsPath({
-                    destination: hospital.country,
-                    city: hospital.city,
-                    specialty: spec.name,
-                  })}
-                >
-                  {taxonomyLabel(spec.name, locale)}
-                </Link>
-              </li>
-            ))}
+            {shown.map((spec) => {
+              const query = { destination: hospital.country, city: hospital.city, specialty: spec.name };
+              const href = hospitalsPath(query);
+              const linked =
+                locale === "en" ? hospitalFacetExists(query) : localePageIsRenderable(locale, href);
+              return (
+                <li key={spec.slug}>
+                  {linked ? (
+                    <Link href={href}>{taxonomyLabel(spec.name, locale)}</Link>
+                  ) : (
+                    <span>{taxonomyLabel(spec.name, locale)}</span>
+                  )}
+                </li>
+              );
+            })}
             {extra > 0 ? (
               <li className="hcard__morechip">{interpolate(t["hp.moreChip"], { count: extra })}</li>
             ) : null}

@@ -3,7 +3,10 @@ import { AccreditationSeals } from "@/components/accreditation-seals";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { doctorHasProcedure } from "@/lib/catalog";
 import { hospitalSpecialtyCardDescription } from "@/lib/hospital-specialty-copy";
-import type { RadiationHospitalRelationship } from "@/lib/radiation-hospital-page";
+import {
+  hospitalFacetExists,
+  type RadiationHospitalRelationship,
+} from "@/lib/radiation-hospital-page";
 import { hospitalsPath } from "@/lib/catalog-links";
 
 export function HospitalSpecialtyCard({
@@ -20,7 +23,17 @@ export function HospitalSpecialtyCard({
   selectedProcedure?: string;
 }) {
   const { hospital, doctors, procedures } = relationship;
-  const shownProcedures = procedures.slice(0, 5);
+  // Only chip the procedure facets that render; the rest would be 404 links.
+  const shownProcedures = procedures
+    .filter((procedure) =>
+      hospitalFacetExists({
+        destination: "India",
+        city: hospital.city,
+        specialty: specialtyName,
+        procedure: procedure.name,
+      }),
+    )
+    .slice(0, 5);
   const shownDoctors = (
     selectedProcedure
       ? doctors.filter((doctor) => doctorHasProcedure(doctor, selectedProcedure))
