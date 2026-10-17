@@ -18,9 +18,16 @@ import { localePath } from "@/lib/i18n/path";
 import { SITE_ORIGIN } from "@/lib/i18n/metadata";
 import { consultToWhatsappHref } from "@/lib/site";
 import { toSlug } from "@/lib/taxonomy";
+import { TtlLru } from "@/lib/ttl-lru";
 
+// Next's ISR layer already keeps each static route document for the same five
+// minutes (memory + .next/cache), so this only short-circuits re-renders that
+// land inside one revalidation window. Keep it small: a Googlebot crawl of
+// every Arabic facet once left ~1,200 expired documents (~120 MB) in an
+// unbounded Map here.
 const HTML_CACHE_MS = 5 * 60 * 1000;
-const htmlCache = new Map<string, { html: string; expires: number }>();
+const HTML_CACHE_MAX_ENTRIES = 48;
+const htmlCache = new TtlLru<string>(HTML_CACHE_MAX_ENTRIES, HTML_CACHE_MS);
 
 const DIRECTORY_CSS_FILE = "ar-ro-directory.css";
 let directoryCss: string | null | undefined;
@@ -161,14 +168,11 @@ export function wrapArabicRadiationDocument(data: ArabicRadiationDirectoryData, 
 }
 
 export function cacheArabicRadiationHtml(path: string, html: string) {
-  htmlCache.set(path, { html, expires: Date.now() + HTML_CACHE_MS });
-  return html;
+  return htmlCache.set(path, html);
 }
 
 export function readCachedArabicRadiationHtml(path: string) {
-  const hit = htmlCache.get(path);
-  if (!hit || hit.expires <= Date.now()) return undefined;
-  return hit.html;
+  return htmlCache.get(path);
 }
 
 function hostMarkup(node: ReactNode): string {
