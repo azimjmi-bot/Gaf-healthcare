@@ -3,6 +3,7 @@ import "server-only";
 import { mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { randomUUID } from "node:crypto";
+import { invalidateCachedJsonFile, readCachedJsonFile } from "@/lib/cms/json-file-cache";
 import { getCountry, getSpecialty, toSlug } from "@/lib/taxonomy";
 import { LOCALES, type AppLocale } from "@/lib/i18n/languages";
 import {
@@ -92,11 +93,20 @@ export function loadCuratedTreatments(): CuratedTreatmentStore {
   }
 }
 
+/**
+ * Shared, read-only view for rendering and publication gating. Writers keep
+ * using `loadCuratedTreatments`, which they mutate in place before saving.
+ */
+export function readCuratedTreatments(): CuratedTreatmentStore {
+  return readCachedJsonFile(STORE_FILE, loadCuratedTreatments);
+}
+
 export function saveCuratedTreatments(store: CuratedTreatmentStore) {
   mkdirSync(dirname(STORE_FILE), { recursive: true });
   const next = `${STORE_FILE}.${process.pid}.${Date.now()}.tmp`;
   writeFileSync(next, `${JSON.stringify(store, null, 2)}\n`, "utf8");
   renameSync(next, STORE_FILE);
+  invalidateCachedJsonFile(STORE_FILE);
 }
 
 /**
@@ -279,7 +289,7 @@ export function validateTreatmentForSave(
 }
 
 export function publishedCuratedTreatments(locale: AppLocale) {
-  return loadCuratedTreatments()
+  return readCuratedTreatments()
     .treatments.filter(
       (row) =>
         row.status === "published" &&

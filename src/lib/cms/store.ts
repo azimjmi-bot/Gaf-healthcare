@@ -1,6 +1,7 @@
 import { mkdirSync, readFileSync, renameSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import type { CmsEdition } from "@/lib/cms/edition";
+import { invalidateCachedJsonFile, readCachedJsonFile } from "@/lib/cms/json-file-cache";
 import type { Article, CmsStore } from "@/lib/cms/types";
 import { newId, slugify } from "@/lib/cms/types";
 
@@ -49,23 +50,32 @@ export function loadCms(edition: CmsEdition = "en"): CmsStore {
   }
 }
 
+/**
+ * Shared, read-only view of the store for rendering. `loadCms` stays the
+ * loader for CMS write paths, which mutate the returned object before saving.
+ */
+export function readCms(edition: CmsEdition = "en"): CmsStore {
+  return readCachedJsonFile(cmsFile(edition), () => loadCms(edition));
+}
+
 export function saveCms(store: CmsStore, edition: CmsEdition = "en") {
   const file = cmsFile(edition);
   mkdirSync(dirname(file), { recursive: true });
   const tmp = `${file}.tmp`;
   writeFileSync(tmp, `${JSON.stringify(store, null, 2)}\n`);
   renameSync(tmp, file);
+  invalidateCachedJsonFile(file);
   return store;
 }
 
 export function publishedArticles(edition: CmsEdition = "en") {
-  return loadCms(edition)
+  return readCms(edition)
     .articles.filter((a) => a.status === "published")
     .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 }
 
 export function getArticleBySlug(slug: string, edition: CmsEdition = "en") {
-  return loadCms(edition).articles.find((a) => a.slug === slug && a.status !== "trash");
+  return readCms(edition).articles.find((a) => a.slug === slug && a.status !== "trash");
 }
 
 export function getPublishedBySlug(slug: string, edition: CmsEdition = "en") {

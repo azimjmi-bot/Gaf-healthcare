@@ -1,5 +1,5 @@
 import { editionFromLocale } from "@/lib/cms/edition";
-import { getPublishedBySlug, loadCms, publishedArticles } from "@/lib/cms/store";
+import { getPublishedBySlug, publishedArticles, readCms } from "@/lib/cms/store";
 import type { Article, ArticleBlock } from "@/lib/cms/types";
 import type { AppLocale } from "@/lib/i18n/languages";
 import { stripMarkdown } from "@/lib/markdown";
@@ -97,7 +97,7 @@ export function getPost(slug: string, locale: AppLocale = "en") {
 }
 
 export function blogSettings(locale: AppLocale = "en") {
-  return loadCms(editionFromLocale(locale)).settings;
+  return readCms(editionFromLocale(locale)).settings;
 }
 
 export function faqsFromArticleBlocks(blocks: ArticleBlock[]) {
