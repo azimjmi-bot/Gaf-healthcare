@@ -7,7 +7,13 @@ process.env.NODE_ENV ||= "production";
 
 import { createServer } from "node:http";
 import { pathToFileURL } from "node:url";
-import { installResponseHooks, keepAliveTimeoutMs, publicVary, tuneHttpServer } from "./server-tuning.mjs";
+import {
+  installHeapGuard,
+  installResponseHooks,
+  keepAliveTimeoutMs,
+  publicVary,
+  tuneHttpServer,
+} from "./server-tuning.mjs";
 
 export { publicVary };
 
@@ -23,9 +29,12 @@ async function main() {
     handle(req, res);
   });
   tuneHttpServer(server);
+  // Normally off here: the npm start script passes --max-old-space-size.
+  const guard = installHeapGuard();
   server.listen(port, hostname, () => {
     console.log(
-      `▲ GAF Healthcare ready on http://${hostname}:${port} (public Vary, keep-alive ${keepAliveTimeoutMs()} ms)`,
+      `▲ GAF Healthcare ready on http://${hostname}:${port} (public Vary, keep-alive ${keepAliveTimeoutMs()} ms, ` +
+        `heap guard ${guard ? "on" : "off"})`,
     );
   });
 }

@@ -3,12 +3,19 @@ import { createServer, request as httpRequest, ServerResponse } from "node:http"
 import { test } from "node:test";
 import { publicVary as publicVaryFromEntry } from "./server.mjs";
 import {
+  DEFAULT_HEAP_SOFT_LIMIT_MB,
   DEFAULT_KEEP_ALIVE_TIMEOUT_MS,
+  exposeGc,
+  heapGuardConfig,
+  heapGuardTick,
+  installHeapGuard,
   installResponseHooks,
   keepAliveTimeoutMs,
   publicVary,
   tuneHttpServer,
 } from "./server-tuning.mjs";
+
+const MB = 1024 * 1024;
 
 test("publicVary drops the App Router request headers Hostinger CDN cannot key on", () => {
   assert.deepEqual(
@@ -81,4 +88,65 @@ test("response hooks sanitize Vary and tune the live server, installed once", as
   } finally {
     await new Promise((resolve) => server.close(resolve));
   }
+});
+
+test("heap guard is only needed when the process has no realistic heap limit", () => {
+  const unlimited = heapGuardConfig({}, 4144 * MB);
+  assert.equal(unlimited.enabled, true);
+  assert.equal(unlimited.softLimitBytes, DEFAULT_HEAP_SOFT_LIMIT_MB * MB);
+  // `npm start` passes --max-old-space-size=512: V8 already collects early.
+  assert.equal(heapGuardConfig({}, 512 * MB).enabled, false);
+  assert.equal(heapGuardConfig({ GAF_HEAP_SOFT_LIMIT_MB: "200" }, 4144 * MB).softLimitBytes, 200 * MB);
+  assert.equal(heapGuardConfig({ GAF_HEAP_GUARD: "off" }, 4144 * MB).enabled, false);
+  assert.equal(installHeapGuard({ enabled: false }), null);
+});
+
+test("heap guard collects above the soft limit and throttles its log line", () => {
+  let heapUsed = 100 * MB;
+  const gcCalls = [];
+  const logs = [];
+  const state = {
+    softLimitBytes: 300 * MB,
+    gc: () => {
+      gcCalls.push(heapUsed);
+      heapUsed = 150 * MB;
+    },
+    collections: 0,
+    lastLogAt: -Infinity,
+  };
+  const hooks = { memoryUsage: () => ({ heapUsed }), now: () => clock, log: (line) => logs.push(line) };
+  let clock = 0;
+  assert.equal(heapGuardTick(state, hooks), false);
+  heapUsed = 400 * MB;
+  assert.equal(heapGuardTick(state, hooks), true);
+  assert.deepEqual(gcCalls, [400 * MB]);
+  assert.equal(logs.length, 1);
+  assert.match(logs[0], /heap 400 MB exceeded the 300 MB soft limit; collected to 150 MB/);
+  heapUsed = 500 * MB;
+  clock = 60_000;
+  assert.equal(heapGuardTick(state, hooks), true);
+  assert.equal(logs.length, 1, "second collection within ten minutes stays quiet");
+  clock = 11 * 60_000;
+  heapUsed = 500 * MB;
+  heapGuardTick(state, hooks);
+  assert.equal(logs.length, 2);
+  assert.match(logs[1], /3 collections so far/);
+});
+
+test("exposeGc returns a working collector without --expose-gc at launch", () => {
+  const gc = exposeGc();
+  assert.equal(typeof gc, "function");
+  let junk = [];
+  for (let i = 0; i < 50; i += 1) junk.push("x".repeat(MB));
+  junk = null;
+  gc();
+  assert.ok(process.memoryUsage().heapUsed < 400 * MB);
+});
+
+test("installHeapGuard runs on an unref'd timer and can be stopped", () => {
+  const guard = installHeapGuard({ enabled: true, softLimitBytes: 1, intervalMs: 60_000 }, { gc: () => {} });
+  assert.ok(guard);
+  assert.equal(guard.timer.hasRef(), false);
+  guard.stop();
+  assert.equal(guard.timer, null);
 });

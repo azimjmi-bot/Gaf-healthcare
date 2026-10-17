@@ -51,7 +51,12 @@ Two pieces of HTTP tuning live in `server-tuning.mjs` and are applied inside the
 - `Vary` is trimmed to standard values (`Accept-Encoding`). Next appends `Vary: rsc, next-router-state-tree, …` to every response and Hostinger CDN refuses to cache anything that varies on custom headers (`x-hcdn-cache-status: DYNAMIC`), so public HTML never reached the edge despite its `s-maxage`. Next keys RSC variants on the `_rsc` search param, so the trimmed header is safe.
 - `keepAliveTimeout` is 65 s (`KEEP_ALIVE_TIMEOUT_MS` to override) with `headersTimeout` just above it. Node's 5 s default is shorter than most reverse-proxy idle timeouts; the proxy reuses a connection Node has just closed, gets a reset, and Search Console records a "server connectivity" failure.
 
-Memory: the process holds ~150 MB of live heap after a full crawl (CMS stores, catalog, Next's 50 MB ISR memory cache). V8 assumes a multi-GB heap and collects lazily, so on a plan with a hard memory cap set `NODE_OPTIONS=--max-old-space-size=<about 60% of the cap in MB>` in the host's environment variables; that makes V8 collect before the host kills the process. Avoid module-level `Map` caches without a size bound (`src/lib/ttl-lru.ts` exists for that).
+Memory: the process holds ~150 MB of live heap after a full crawl (CMS stores, catalog, Next's 50 MB ISR memory cache). Left alone, V8 assumes a multi-GB heap and collects lazily, which on a plan with a hard memory cap gets the process killed mid-crawl. Two layers handle this without touching the hosting panel:
+
+- `npm start` and `npm run start:next` pass `--max-old-space-size` (512 MB; `GAF_MAX_OLD_SPACE_MB` to change it), so V8 collects early on its own.
+- If the host starts `next start` without that flag, `src/instrumentation.ts` turns on a heap guard: every 15 s it checks live heap and forces a collection above a soft limit (384 MB; `GAF_HEAP_SOFT_LIMIT_MB` to change, `GAF_HEAP_GUARD=off` to disable). It logs `[gaf] heap guard on` at start and one throttled line per collection, so the host log shows which mode is running.
+
+Avoid module-level `Map` caches without a size bound (`src/lib/ttl-lru.ts` exists for that).
 
 Crawl health: after a deploy, `curl -sI https://gaf.healthcare/doctors | grep -i x-hcdn-cache-status` should turn to `HIT` on the second request, and `x-hcdn-upstream-rt` on a cold page should sit well under a second. Content stores (`content/cms.json`, `content/curated-treatments.json`) are parsed once and re-read only when the file changes.
 

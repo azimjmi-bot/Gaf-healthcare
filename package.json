@@ -14,8 +14,8 @@
   "scripts": {
     "dev": "next dev --hostname 0.0.0.0 --port 43127",
     "build": "NODE_OPTIONS='--max-old-space-size=4096' next build --webpack",
-    "start": "node server.mjs",
-    "start:next": "next start --hostname 0.0.0.0",
+    "start": "node --max-old-space-size=${GAF_MAX_OLD_SPACE_MB:-512} server.mjs",
+    "start:next": "NODE_OPTIONS=\"--max-old-space-size=${GAF_MAX_OLD_SPACE_MB:-512}\" next start --hostname 0.0.0.0",
     "check:alternates": "tsx scripts/check-english-alternates.ts",
     "check:jsonld": "tsx scripts/jsonld-snapshot.ts",
     "check:jsonld-policy": "tsx scripts/check-jsonld-policy.ts",

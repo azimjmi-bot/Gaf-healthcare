@@ -16,7 +16,16 @@
 //    reports the request as failed (502 / "server connectivity" in Search
 //    Console). 65 s is the value AWS and Google Cloud recommend for the same
 //    reason; `headersTimeout` must stay above it.
+//
+// 3. A heap guard for hosts that start Next without `--max-old-space-size`.
+//    V8 then assumes a multi-GB heap and collects lazily; on a plan with a
+//    hard memory cap the container is killed before V8 feels any pressure,
+//    which Googlebot sees as a dead origin. The guard forces a collection
+//    when live heap passes a soft limit. `npm start` passes the flag itself,
+//    in which case V8 already collects early and the guard stays off.
 import { Server, ServerResponse } from "node:http";
+import v8 from "node:v8";
+import vm from "node:vm";
 
 const ROUTER_VARY = new Set([
   "rsc",
@@ -116,6 +125,79 @@ export function installResponseHooks(proto = ServerResponse.prototype) {
     return writeHead.call(this, statusCode, reasonOrHeaders);
   };
   return true;
+}
+
+export const DEFAULT_HEAP_SOFT_LIMIT_MB = 384;
+export const HEAP_GUARD_INTERVAL_MS = 15_000;
+const HEAP_GUARD_LOG_EVERY_MS = 10 * 60_000;
+const MB = 1024 * 1024;
+
+/**
+ * Decide whether the guard is needed. When Node already runs with a heap
+ * limit close to the soft limit (e.g. `--max-old-space-size=512` from
+ * `npm start`), V8 collects on its own and the guard is redundant.
+ */
+export function heapGuardConfig(env = process.env, heapLimitBytes = v8.getHeapStatistics().heap_size_limit) {
+  const parsed = Number.parseInt(env.GAF_HEAP_SOFT_LIMIT_MB || "", 10);
+  const softLimitMb = Number.isFinite(parsed) && parsed > 0 ? parsed : DEFAULT_HEAP_SOFT_LIMIT_MB;
+  const softLimitBytes = softLimitMb * MB;
+  return {
+    enabled: env.GAF_HEAP_GUARD !== "off" && heapLimitBytes > softLimitBytes * 2,
+    softLimitBytes,
+    intervalMs: HEAP_GUARD_INTERVAL_MS,
+  };
+}
+
+/** Expose V8's gc() without restarting the process with --expose-gc. */
+export function exposeGc() {
+  if (typeof globalThis.gc === "function") return globalThis.gc;
+  v8.setFlagsFromString("--expose-gc");
+  return vm.runInNewContext("gc");
+}
+
+/**
+ * One guard check. Collects when live heap is above the soft limit; logs at
+ * most once per ten minutes so a sustained crawl does not flood the host log.
+ * Returns true when a collection ran.
+ */
+export function heapGuardTick(state, { memoryUsage = process.memoryUsage, now = Date.now, log = console.warn } = {}) {
+  const used = memoryUsage().heapUsed;
+  if (used <= state.softLimitBytes) return false;
+  state.gc();
+  state.collections += 1;
+  const after = memoryUsage().heapUsed;
+  const at = now();
+  if (at - state.lastLogAt >= HEAP_GUARD_LOG_EVERY_MS) {
+    state.lastLogAt = at;
+    log(
+      `[gaf] heap ${Math.round(used / MB)} MB exceeded the ${Math.round(state.softLimitBytes / MB)} MB soft limit; ` +
+        `collected to ${Math.round(after / MB)} MB (${state.collections} collections so far)`,
+    );
+  }
+  return true;
+}
+
+/**
+ * Start the periodic guard. Returns the state (with `stop()`) or null when
+ * the configuration says it is not needed. The timer is unref'd so it never
+ * keeps the process alive.
+ */
+export function installHeapGuard(config = heapGuardConfig(), hooks = {}) {
+  if (!config.enabled) return null;
+  const state = {
+    softLimitBytes: config.softLimitBytes,
+    gc: hooks.gc || exposeGc(),
+    collections: 0,
+    lastLogAt: -Infinity,
+    timer: null,
+    stop() {
+      if (state.timer) clearInterval(state.timer);
+      state.timer = null;
+    },
+  };
+  state.timer = setInterval(() => heapGuardTick(state, hooks), config.intervalMs);
+  state.timer.unref();
+  return state;
 }
 
 /**
