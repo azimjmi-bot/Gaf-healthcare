@@ -7,6 +7,7 @@ import {
 } from "@/components/arabic-ssr";
 import { hospitalsPath } from "@/lib/catalog-links";
 import type { ArabicRadiationDirectoryData } from "@/lib/i18n/ar-radiation-directory";
+import { containsPlace } from "@/lib/i18n/place-labels";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { documentId } from "@/lib/jsonld";
 import { absoluteUrl, breadcrumbJsonLd, doctorItemListJsonLd, faqJsonLd } from "@/lib/seo";
@@ -266,7 +267,9 @@ export function ArabicRadiationSsrDocument({
                 {hospital.name}
               </a>
               <p className="hosp-card__meta mt-1 text-sm text-muted-foreground">
-                {taxonomyLabel(hospital.city, "ar")} · {count} ملفًا مدرجًا
+                {containsPlace(hospital.name, taxonomyLabel(hospital.city, "ar"))
+                  ? `${count} ملفًا مدرجًا`
+                  : `${taxonomyLabel(hospital.city, "ar")} · ${count} ملفًا مدرجًا`}
               </p>
               <a
                 href={arHref(

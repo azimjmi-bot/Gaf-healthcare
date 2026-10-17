@@ -20,9 +20,9 @@ import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 
 
 export const PEOPLE_AR: Record<string, { one: string; many: string }> = {
-  "radiation-oncology": { one: "أخصائي علاج الأورام بالإشعاع", many: "أخصائيو علاج الأورام بالإشعاع" },
+  "radiation-oncology": { one: "اختصاصي علاج الأورام بالإشعاع", many: "اختصاصيو علاج الأورام بالإشعاع" },
   "surgical-oncology": { one: "جرّاح أورام", many: "جرّاحو الأورام" },
-  "medical-oncology": { one: "طبيب علاج الأورام الطبي", many: "أطباء علاج الأورام الطبي" },
+  "medical-oncology": { one: "طبيب طب الأورام", many: "أطباء طب الأورام" },
   hematology: { one: "طبيب أمراض دم", many: "أطباء أمراض الدم" },
   "pediatric-hematology": { one: "طبيب أمراض دم الأطفال", many: "أطباء أمراض دم الأطفال" },
   "cardiac-surgery": { one: "جرّاح قلب", many: "جرّاحو القلب" },

@@ -678,8 +678,8 @@ This file is generated from the tables the site ships (`npm run glossary:build`)
 | Principal Director & HOD | المدير الرئيسي ورئيس قسم | masculine: المدير الرئيسي ورئيس قسم<br>feminine: المديرة الرئيسية ورئيسة قسم |
 | Principal Director and Head of Department of | المدير الرئيسي ورئيس قسم | masculine: المدير الرئيسي ورئيس قسم<br>feminine: المديرة الرئيسية ورئيسة قسم |
 | Principal Director of | المدير الرئيسي لـ | masculine: المدير الرئيسي لـ<br>feminine: المديرة الرئيسية لـ |
-| Radiation Oncologist | أخصائي علاج الأورام بالإشعاع | masculine: أخصائي علاج الأورام بالإشعاع<br>feminine: أخصائية علاج الأورام بالإشعاع |
-| Radiation Specialist Oncologist | أخصائي علاج الأورام بالإشعاع | masculine: أخصائي علاج الأورام بالإشعاع<br>feminine: أخصائية علاج الأورام بالإشعاع |
+| Radiation Oncologist | اختصاصي علاج الأورام بالإشعاع | masculine: اختصاصي علاج الأورام بالإشعاع<br>feminine: اختصاصية علاج الأورام بالإشعاع |
+| Radiation Specialist Oncologist | اختصاصي علاج الأورام بالإشعاع | masculine: اختصاصي علاج الأورام بالإشعاع<br>feminine: اختصاصية علاج الأورام بالإشعاع |
 | Senior Consultant | استشاري أول | masculine: استشاري أول<br>feminine: استشارية أولى |
 | Senior Consultant & Clinical Advisor | استشاري أول ومستشار سريري | masculine: استشاري أول ومستشار سريري<br>feminine: استشارية أولى ومستشارة سريرية |
 | Senior Consultant & Visiting Radiation Oncologist | استشاري أول واستشاري زائر لعلاج الأورام بالإشعاع | masculine: استشاري أول واستشاري زائر لعلاج الأورام بالإشعاع<br>feminine: استشارية أولى واستشارية زائرة لعلاج الأورام بالإشعاع |
@@ -705,7 +705,7 @@ This file is generated from the tables the site ships (`npm run glossary:build`)
 | Gastroenterology | أمراض الجهاز الهضمي |
 | Gynecology | أمراض النساء |
 | Hematology | أمراض الدم |
-| Medical Oncology | علاج الأورام الطبي |
+| Medical Oncology | طب الأورام |
 | Nephrology | أمراض الكلى |
 | Neurology | طب الأعصاب |
 | Neurosurgery | جراحة المخ والأعصاب |
@@ -761,7 +761,7 @@ This file is generated from the tables the site ships (`npm run glossary:build`)
 | gastroenterologist | طبيب جهاز هضمي | singular: طبيب جهاز هضمي<br>plural: أطباء الجهاز الهضمي |
 | gynecologist | طبيب نساء | singular: طبيب نساء<br>plural: أطباء النساء |
 | hematologist | طبيب أمراض دم | singular: طبيب أمراض دم<br>plural: أطباء أمراض الدم |
-| medical oncologist | طبيب علاج الأورام الطبي | singular: طبيب علاج الأورام الطبي<br>plural: أطباء علاج الأورام الطبي |
+| medical oncologist | طبيب طب الأورام | singular: طبيب طب الأورام<br>plural: أطباء طب الأورام |
 | nephrologist | طبيب كلى | singular: طبيب كلى<br>plural: أطباء الكلى |
 | neurologist | طبيب أعصاب | singular: طبيب أعصاب<br>plural: أطباء الأعصاب |
 | neurosurgeon | جرّاح مخ وأعصاب | singular: جرّاح مخ وأعصاب<br>plural: جرّاحو المخ والأعصاب |
@@ -771,7 +771,7 @@ This file is generated from the tables the site ships (`npm run glossary:build`)
 | pediatric hematologist | طبيب أمراض دم الأطفال | singular: طبيب أمراض دم الأطفال<br>plural: أطباء أمراض دم الأطفال |
 | pediatric orthopaedic surgeon | جرّاح عظام أطفال | singular: جرّاح عظام أطفال<br>plural: جرّاحو عظام الأطفال |
 | pulmonologist | طبيب رئة | singular: طبيب رئة<br>plural: أطباء الرئة |
-| radiation oncologist | أخصائي علاج الأورام بالإشعاع | singular: أخصائي علاج الأورام بالإشعاع<br>plural: أخصائيو علاج الأورام بالإشعاع |
+| radiation oncologist | اختصاصي علاج الأورام بالإشعاع | singular: اختصاصي علاج الأورام بالإشعاع<br>plural: اختصاصيو علاج الأورام بالإشعاع |
 | spine surgeon | جرّاح عمود فقري | singular: جرّاح عمود فقري<br>plural: جرّاحو العمود الفقري |
 | surgical gastroenterologist | جرّاح جهاز هضمي | singular: جرّاح جهاز هضمي<br>plural: جرّاحو الجهاز الهضمي |
 | surgical oncologist | جرّاح أورام | singular: جرّاح أورام<br>plural: جرّاحو الأورام |

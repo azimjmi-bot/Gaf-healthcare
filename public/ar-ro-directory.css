@@ -923,6 +923,10 @@ a { color:#1d4f6f; }
 .hosp-pager__btn.is-disabled { opacity: 0.4; }
 .hosp-pager__ellipsis { color: #6b7c82; }
 .dcard__facts { list-style: none; padding: 0; }
+.dcard__facts [dir="ltr"] {
+  unicode-bidi: isolate;
+  direction: ltr;
+}
 
 @media (min-width: 640px) {
   .sm\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }

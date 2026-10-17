@@ -154,8 +154,8 @@ test("Arabic medical-oncology metadata uses specialty-specific search terms", ()
   const doctor = localized[0];
   assert.ok(doctor);
   const metadata = doctorMetadata(doctor, "ar");
-  assert.ok(metadata.keywords?.includes("علاج الأورام الطبي الهند"));
-  assert.ok(metadata.keywords?.includes("علاج الأورام الطبي في الهند"));
+  assert.ok(metadata.keywords?.includes("طب الأورام الهند"));
+  assert.ok(metadata.keywords?.includes("طب الأورام في الهند"));
   assert.equal(metadata.keywords?.includes("علاج الأورام بالإشعاع في الهند"), false);
 });
 
@@ -169,7 +169,7 @@ test("Arabic medical-oncology JSON-LD keeps one stable English entity identity",
   assert.equal(physician["@id"], `https://gaf.healthcare/doctors/${english.slug}#person`);
   assert.equal(physician.name, arabic.name);
   assert.equal(physician.alternateName, english.name);
-  assert.equal(physician.medicalSpecialty, "علاج الأورام الطبي");
+  assert.equal(physician.medicalSpecialty, "طب الأورام");
   assert.equal(graph.inLanguage, "ar");
   assert.equal(graph.url, `https://gaf.healthcare/ar/doctors/${english.slug}`);
 });

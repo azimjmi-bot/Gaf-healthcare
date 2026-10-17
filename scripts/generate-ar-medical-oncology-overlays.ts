@@ -11,6 +11,7 @@ import { join } from "node:path";
 import names from "../src/data/medical-oncologist-names-ar.json";
 import { catalogDoctors, type Doctor } from "../src/lib/doctors";
 import { HOSPITAL_NAMES_AR } from "../src/lib/i18n/hospital-names-ar";
+import { collapseRepeatedPlaces, withCampus } from "../src/lib/i18n/place-labels";
 import { TAXONOMY_AR } from "../src/lib/i18n/taxonomy-ar";
 import type { CatalogCms, DoctorPatch } from "../src/lib/cms/catalog-types";
 
@@ -134,7 +135,7 @@ function arabicBio(
     `${name} مدرج كـ${title} في ${hospital}، ${city}، الهند، ${yearsCopy}. تساعد الصفحة في الوصول من التخصص إلى العلاج، بما في ذلك ${first} و${second}، من دون تحويل الدليل إلى تصنيف للأطباء. ${route} ${review}`,
     `لرأي طبي بشأن ${first} أو ${second}، يقدم هذا الملف ${name} بصفته ${title} في ${hospital} بمدينة ${city}، الهند، ${yearsCopy}. تُراجع المؤشرات الحيوية ووظائف الأعضاء قبل مناقشة العلاج. ${route} ${review}`,
   ];
-  return templates[hash(doctor.slug) % templates.length];
+  return collapseRepeatedPlaces(templates[hash(doctor.slug) % templates.length]);
 }
 
 const medicalOncologists = catalogDoctors.filter((doctor) => doctor.specialty === "Medical Oncology");
@@ -169,11 +170,11 @@ for (const doctor of medicalOncologists) {
     qualifications,
     experience: `${experienceYears(doctor.experience)}+ سنة خبرة`,
     languages: LANGUAGES_AR[doctor.city] ?? "الإنجليزية، الهندية",
-    imageAlt: `${name}، ${title} في ${hospital}، ${city} — دليل GAF Healthcare لعلاج الأورام الطبي في الهند حسب البلد والمدينة والتخصص والإجراء`,
+    imageAlt: `${name}، ${title} في ${withCampus(hospital, city)} — دليل GAF Healthcare لعلاج الأورام الطبي في الهند حسب البلد والمدينة والتخصص والإجراء`,
     specializations: arabicSpecializations(doctor, procedures),
     proceduresExpertise: procedures,
     education: [`المؤهلات المنشورة: ${qualifications}`],
-    affiliations: [`يمارس عمله في ${hospital}، ${city}، الهند`],
+    affiliations: [`يمارس عمله في ${withCampus(hospital, city, "الهند")}`],
     memberships: doctor.memberships.length
       ? [`لديه ${doctor.memberships.length} عضويات مهنية منشورة في السجل الإنجليزي المرجعي`]
       : [],

@@ -24,7 +24,7 @@ export const TAXONOMY_AR: Record<string, string> = {
 
   "Radiation Oncology": "علاج الأورام بالإشعاع",
   "Surgical Oncology": "جراحة الأورام",
-  "Medical Oncology": "علاج الأورام الطبي",
+  "Medical Oncology": "طب الأورام",
   Hematology: "أمراض الدم",
   "Pediatric Hematology": "أمراض دم الأطفال",
   "Cardiac Surgery": "جراحة القلب",

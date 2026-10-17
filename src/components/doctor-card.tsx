@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import { useLocale, useT } from "@/components/locale-provider";
 import {
+  campusLocation,
   designationLabel,
   experienceBadge,
   keyProcedureLabels,
@@ -44,6 +45,7 @@ export function DoctorCard({
   const extra = procedures.length - PROC_PREVIEW;
   const experience = experienceBadge(doctor);
   const designation = designationLabel(doctor);
+  const location = campusLocation(doctor, undefined, locale);
 
   return (
     <article className="dcard">
@@ -88,9 +90,7 @@ export function DoctorCard({
             <Building2 className="size-4 shrink-0" />
             <span>
               <strong>{doctor.hospitalName}</strong>
-              <span>
-                {taxonomyLabel(doctor.city, locale)}, {taxonomyLabel(doctor.country, locale)}
-              </span>
+              {location ? <span>{location}</span> : null}
             </span>
           </Link>
           <div className="dcard__cta">

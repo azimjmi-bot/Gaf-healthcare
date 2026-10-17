@@ -33,7 +33,7 @@ test("Arabic overlays cover all 70 radiation oncologists", () => {
     const patch = cms.doctorOverrides[doctor.slug];
     assert.ok(patch, `missing overlay for ${doctor.slug}`);
     assert.match(patch.name, /^د\./);
-    assert.match(patch.title, /علاج الأورام بالإشعاع|أخصائي|استشار/);
+    assert.match(patch.title, /علاج الأورام بالإشعاع|اختصاصي|أخصائي|استشار/);
     assert.match(patch.experience, /سنة/);
     assert.match(patch.bio, /GAF Healthcare/);
     assert.match(patch.bio, /علاج الأورام بالإشعاع|إشعاع/);
@@ -83,4 +83,23 @@ test("Arabic radiation procedure aliases resolve for directory cards", () => {
 test("Arabic overlays keep unique bios per doctor", () => {
   const bios = Object.values(cms.doctorOverrides).map((row) => row.bio);
   assert.equal(new Set(bios).size, bios.length);
+});
+
+test("radiation-oncology bios are factual and do not describe the CMS", () => {
+  const banned = [
+    /نفتح ملف/,
+    /قائمة تسويقية/,
+    /مكتب التنسيق/,
+    /كعرض فندقي/,
+    /الأشهر عالميًا/,
+    /كتيّب/,
+    /اسم لا كقسم/,
+  ];
+  const ro = new Set(ginger.doctors.filter((d) => d.specialty === "Radiation Oncology").map((d) => d.slug));
+  for (const [slug, patch] of Object.entries(cms.doctorOverrides)) {
+    if (!ro.has(slug)) continue;
+    for (const re of banned) {
+      assert.equal(re.test(patch.bio), false, `${slug} still has ${re}`);
+    }
+  }
 });

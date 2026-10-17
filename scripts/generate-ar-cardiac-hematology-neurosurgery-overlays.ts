@@ -8,6 +8,7 @@ import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 import { catalogDoctors, type Doctor } from "../src/lib/doctors";
 import { HOSPITAL_NAMES_AR } from "../src/lib/i18n/hospital-names-ar";
+import { collapseRepeatedPlaces, withCampus } from "../src/lib/i18n/place-labels";
 import { TAXONOMY_AR } from "../src/lib/i18n/taxonomy-ar";
 import type { CatalogCms, DoctorPatch } from "../src/lib/cms/catalog-types";
 
@@ -276,7 +277,7 @@ function arabicBio(
     `عند البحث عن ${SPECIALTIES[specialty].label} في الهند، يعرض GAF Healthcare ملف ${name} في ${hospital} بمدينة ${city}. وهو ${title} ${yearsCopy}، وتشمل الإجراءات المطابقة ${first} و${second} و${third}. تركز الصفحة على الأدلة والسجلات المطلوبة قبل السفر. ${hierarchy} ${safety}`,
     `يربط ملف ${name} بين ${hospital} ومدينة ${city} وتخصص ${SPECIALTIES[specialty].label} في الهند. وهو ${title} ${yearsCopy}، مع خبرة مرتبطة بـ${first} و${second} و${third}. يمكن استخدام الملف لمقارنة الاختصاص والإجراءات والموقع قبل طلب رأي طبي. ${hierarchy} ${safety}`,
   ];
-  return templates[hash(doctor.slug) % templates.length];
+  return collapseRepeatedPlaces(templates[hash(doctor.slug) % templates.length]);
 }
 
 const targetDoctors = catalogDoctors.filter((doctor) =>
@@ -310,7 +311,7 @@ for (const doctor of targetDoctors) {
     qualifications,
     experience: `${experienceYears(doctor.experience)}+ سنة خبرة`,
     languages: LANGUAGES_AR[doctor.city] ?? "الإنجليزية، الهندية",
-    imageAlt: `${name}، ${title} في ${hospital}، ${city} — دليل GAF Healthcare لـ${SPECIALTIES[specialty].label} في الهند حسب البلد والمدينة والتخصص والإجراء`,
+    imageAlt: `${name}، ${title} في ${withCampus(hospital, city)} — دليل GAF Healthcare لـ${SPECIALTIES[specialty].label} في الهند حسب البلد والمدينة والتخصص والإجراء`,
     specializations: [
       SPECIALTIES[specialty].label,
       `تقييم وعلاج ${SPECIALTIES[specialty].patient}`,
@@ -318,7 +319,7 @@ for (const doctor of targetDoctors) {
     ],
     proceduresExpertise: procedures,
     education: [`المؤهلات المنشورة: ${qualifications}`],
-    affiliations: [`يمارس عمله في ${hospital}، ${city}، الهند`],
+    affiliations: [`يمارس عمله في ${withCampus(hospital, city, "الهند")}`],
     memberships: doctor.memberships.length
       ? [`يتضمن السجل الإنجليزي المرجعي ${doctor.memberships.length} عضويات مهنية منشورة`]
       : [],

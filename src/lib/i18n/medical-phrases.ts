@@ -8,7 +8,7 @@ export const MEDICAL_PHRASE_AR: Record<string, string> = {
   "GI (Gastrointestinal) Radiation Oncology": "علاج أورام الجهاز الهضمي بالإشعاع",
   "Gynaecological Oncology": "أورام النساء",
   "Head and Neck Oncology": "أورام الرأس والعنق",
-  "Medical Oncology": "علاج الأورام الطبي",
+  "Medical Oncology": "طب الأورام",
   "Medical Oncology (multidisciplinary cancer care)": "علاج الأورام الطبي ضمن فريق متعدد التخصصات",
   "Medical Oncology (supportive role in multidisciplinary cancer care)":
     "دور داعم في علاج الأورام الطبي ضمن الفريق المتعدد التخصصات",

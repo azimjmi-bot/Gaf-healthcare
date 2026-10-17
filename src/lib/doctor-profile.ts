@@ -2,6 +2,7 @@ import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import { displayBio } from "@/lib/hospital-profile";
 import type { AppLocale } from "@/lib/i18n/languages";
+import { containsPlace, joinPlaceParts } from "@/lib/i18n/place-labels";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 
 function clip(text: string, max = 46) {
@@ -18,9 +19,26 @@ export function campusLine(
   const name = hospital?.name || doctor.hospitalName;
   const city = taxonomyLabel(doctor.city, locale);
   const country = taxonomyLabel(doctor.country, locale);
-  if (!name) return `${city}, ${country}`;
-  if (name.toLowerCase().includes(city.toLowerCase())) return name;
-  return `${name}, ${city}`;
+  const sep = locale === "ar" ? "، " : ", ";
+  if (!name) return joinPlaceParts([city, country], sep);
+  if (containsPlace(name, city)) return name;
+  return joinPlaceParts([name, city], sep);
+}
+
+/** Second line on a doctor card: city and country, omitting either already in the hospital name. English keeps the historical "City, Country" pair. */
+export function campusLocation(
+  doctor: Doctor,
+  hospital: Hospital | undefined,
+  locale: AppLocale = "en",
+) {
+  const name = hospital?.name || doctor.hospitalName || "";
+  const city = taxonomyLabel(doctor.city, locale);
+  const country = taxonomyLabel(doctor.country, locale);
+  if (locale !== "ar") return `${city}, ${country}`;
+  return joinPlaceParts([
+    containsPlace(name, city) ? undefined : city,
+    containsPlace(name, country) ? undefined : country,
+  ]);
 }
 
 export function campusChip(
@@ -29,10 +47,11 @@ export function campusChip(
   locale: AppLocale = "en",
 ) {
   const name = hospital?.name || doctor.hospitalName || "Partner campus";
-  const short = name.split(",")[0]?.trim() || name;
+  const short = name.split(/[,،]/)[0]?.trim() || name;
   const city = taxonomyLabel(doctor.city, locale);
-  if (short.toLowerCase().includes(city.toLowerCase())) return short;
-  return `${short}, ${city}`;
+  const sep = locale === "ar" ? "، " : ", ";
+  if (containsPlace(short, city)) return short;
+  return joinPlaceParts([short, city], sep);
 }
 
 export function experienceBadge(doctor: Doctor) {

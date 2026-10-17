@@ -29,6 +29,7 @@ import { yearsLabelLocalized } from "@/lib/hospital-profile";
 import { doctorsPath } from "@/lib/catalog-links";
 import type { AppLocale } from "@/lib/i18n/languages";
 import { interpolate } from "@/lib/i18n/messages";
+import { joinPlaceParts } from "@/lib/i18n/place-labels";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 import { whatsappHref } from "@/lib/site";
@@ -132,7 +133,7 @@ export function DoctorProfileHero({
               <Link className="dhero__book" href={`/consult?doctor=${doctor.slug}`}>
                 <CalendarDays className="size-4" />
                 {t["profile.requestConsult"] ?? "Request a Consultation"}
-                <span aria-hidden="true">→</span>
+                {locale === "ar" ? null : <span aria-hidden="true">→</span>}
               </Link>
               <Link className="dhero__contact" href="/consult">
                 {t["profile.medicalOpinion"] ?? "Get a Medical Opinion"}
@@ -181,7 +182,10 @@ export function DoctorProfileHero({
             <div>
               <p className="dhero__stat-k">{t["profile.statHospital"]}</p>
               <p>
-                {chipCampus}, {taxonomyLabel(doctor.country, locale)}
+                {joinPlaceParts(
+                  [chipCampus, taxonomyLabel(doctor.country, locale)],
+                  locale === "ar" ? "، " : ", ",
+                )}
               </p>
             </div>
           </li>

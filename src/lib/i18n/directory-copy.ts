@@ -7,9 +7,9 @@ import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 export type DirectoryKind = "doctors" | "hospitals" | "costs";
 
 export const DOCTOR_ROLES: Record<string, string> = {
-  "Radiation Oncology": "أخصائيو علاج الأورام بالإشعاع",
+  "Radiation Oncology": "اختصاصيو علاج الأورام بالإشعاع",
   "Surgical Oncology": "جرّاحو الأورام",
-  "Medical Oncology": "أطباء علاج الأورام الطبي",
+  "Medical Oncology": "أطباء طب الأورام",
   "Pediatric Hematology": "أطباء أمراض دم الأطفال",
   Hematology: "أطباء أمراض الدم",
   "Cardiac Surgery": "جرّاحو القلب",

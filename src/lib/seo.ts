@@ -10,6 +10,7 @@ import { prettyCatalogPath } from "@/lib/pretty-catalog-path";
 import { site } from "@/lib/site";
 import type { AppLocale } from "@/lib/i18n/languages";
 import { englishHospitalName } from "@/lib/i18n/hospital-names-ar";
+import { joinPlaceParts } from "@/lib/i18n/place-labels";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { SITE_URL, absoluteUrl } from "@/lib/seo-url";
 import {
@@ -42,8 +43,9 @@ export function doctorMetadata(d: Doctor, locale: AppLocale = "en"): Metadata {
     const procs = d.procedures.slice(0, 3).map((name) => taxonomyLabel(name, "ar")).join("، ");
     const officialCampus = englishHospitalName(d.hospitalSlug);
     const title = `${d.name} — ${specialty} في ${city}، ${country}`;
+    const campus = joinPlaceParts([d.hospitalName, city, country]);
     const description = clip(
-      `${d.name} ${specialty} في ${d.hospitalName}، ${city}، ${country}. ${procs}. مراجعة السجلات ثم مكالمة فيديو عبر GAF Healthcare قبل تحديد السفر. ${stripMarkdown(d.bio)}`,
+      `${d.name} ${specialty} في ${campus}. ${procs}. مراجعة السجلات ثم مكالمة فيديو عبر GAF Healthcare قبل تحديد السفر. ${stripMarkdown(d.bio)}`,
     );
     const url = absoluteUrl(`/doctors/${d.slug}`, "ar");
     return {

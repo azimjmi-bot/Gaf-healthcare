@@ -11,6 +11,10 @@ import { DOCTOR_ROLES } from "@/lib/i18n/directory-copy";
 
 test("a sound masculine plural takes its genitive after أفضل and من", () => {
   assert.equal(
+    genitivePlural("اختصاصيو علاج الأورام بالإشعاع"),
+    "اختصاصيي علاج الأورام بالإشعاع",
+  );
+  assert.equal(
     genitivePlural("أخصائيو علاج الأورام بالإشعاع"),
     "أخصائيي علاج الأورام بالإشعاع",
   );

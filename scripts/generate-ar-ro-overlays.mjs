@@ -19,6 +19,7 @@ import {
   ROLE_WORDS,
   TITLE_RULES,
 } from "./ar-overlay-tables.mjs";
+import { collapseRepeatedPlaces, hospitalInCity, withCampus } from "./place-labels.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const HOSPITAL_NAMES = JSON.parse(readFileSync(join(root, "src/data/hospital-names-ar.json"), "utf8"));
@@ -122,9 +123,9 @@ function arTitle(raw, female) {
     .trim();
 
   if (!t || /^(of|and|&|-)+$/i.test(t)) {
-    return female ? "أخصائية علاج الأورام بالإشعاع" : "أخصائي علاج الأورام بالإشعاع";
+    return female ? "اختصاصية علاج الأورام بالإشعاع" : "اختصاصي علاج الأورام بالإشعاع";
   }
-  if (!/علاج الأورام بالإشعاع|أخصائي|استشار/.test(t)) {
+  if (!/علاج الأورام بالإشعاع/.test(t)) {
     t = `${t} — علاج الأورام بالإشعاع`;
   }
   return t;
@@ -157,7 +158,7 @@ function arAffiliations(items) {
   return (items || []).map((line) => {
     let out = line;
     for (const rule of AFFILIATION_RULES) out = out.replace(rule.match, rule.ar);
-    return translateCampusNames(out);
+    return collapseRepeatedPlaces(translateCampusNames(out));
   });
 }
 
@@ -185,48 +186,39 @@ function bioFor(doc, nameAr, titleAr, cityAr, years, proc1, proc2) {
   const head = isHead(doc.designation);
   const role = roleWord(female, head);
   const hospital = arabicCampus(doc.hospitalSlug, doc.hospitalName || doc.hospitalCaption || "الحرم الشريك");
-  const airport = AIRPORT[doc.city] || "المطار الدولي";
+  const campus = withCampus(hospital, cityAr);
+  const campusCountry = withCampus(hospital, cityAr, "الهند");
   const city = cityAr;
   const n = String(years);
-  const pronoun = female ? "ها" : "ه";
-  const verbReview = female ? "تراجع" : "يراجع";
-  const verbHold = female ? "تمسك" : "يمسك";
-  const verbRead = female ? "تقرأ" : "يقرأ";
+  const quals = String(doc.qualifications || "").replace(/\s+/g, " ").trim();
+  const qualsLine = quals ? ` المؤهلات المسجّلة في الملف: ${quals}.` : "";
+  const exp = `الخبرة السريرية المسجّلة تبلغ ${n}+ سنة.`;
+  const techs = proc1 === proc2
+    ? `من تقنيات العلاج الموثقة في الملف: ${proc1}.`
+    : `من تقنيات العلاج الموثقة في الملف: ${proc1} و${proc2}.`;
+  const gaf = `يُدرج الملف في دليل GAF Healthcare لاختصاصيي علاج الأورام بالإشعاع في ${city}، الهند.`;
   const i = hash(doc.slug) % 10;
 
-  const closings = [
-    `منسّق GAF Healthcare باسمك يرتّب مكالمة الفيديو قبل أي تذكرة عبر ${airport}.`,
-    `لا يُثبَّت تاريخ السفر قبل أن يصمد الملف أمام مراجعة النظراء ومكالمة الكاميرا.`,
-    `العربون بعد الاتفاق على الخطة، لا قبل أن ترى الاستشاري${female ? "ة" : ""} على الشاشة.`,
-    `نكتب الأسئلة التي نريدك أن تطرح${female ? "يها" : "ها"} على الكاميرا، ثم نحدد إن كان الوصول إلى ${city} هو الخطوة الصادقة.`,
-    `المنسّق يبقى على الخط بعد الهبوط؛ الملف لا يُغلق عند باب المطار.`,
-  ];
-  const close = closings[hash(doc.slug) % closings.length];
-
   const templates = [
-    `يصل ملف ${nameAr} إلى مكتب GAF Healthcare كـ${role} في ${hospital} بـ${city}. بعد ${n}+ سنة في تخطيط الجرعات، نبدأ بالسجلات لا بالكتيّب: إن صمدت الصور كان المسار التالي ${proc1} أو ${proc2}. ${close}`,
-    `نفتح ملف ${nameAr} من باب ${city} لا من قائمة تسويقية. ${titleAr} في ${hospital}، و${n}+ سنة تُقاس بعدد الخطط التي رُسمت على الهدف لا بعدد الشرائح. الإجراءات المرتبطة: ${proc1} و${proc2}. ${close}`,
-    `${nameAr} — ${role} في ${hospital}، ${city}. GAF Healthcare لا تحجز مقعد إشعاع قبل أن ${verbRead} التصوير وتقارير الجراحة. ${proc1} يبقى على الطاولة عندما يكون الهامش ضيقًا؛ ${proc2} عندما يناسب الحجم. ${close}`,
-    `في ${city} يُحفظ ملف ${nameAr} تحت بلد الهند، مدينة ${city}، تخصص علاج الأورام بالإشعاع، ثم الإجراء. ${n}+ سنة خبرة في ${hospital}. نطابق الحالة بـ${proc1} و${proc2} بعد قراءة الأشعة، لا بعد مكالمة المبيعات. ${close}`,
-    `GAF Healthcare تضع ${nameAr} أمامك كاسم لا كقسم. ${titleAr}، ${hospital}، ${city}. بعد ${n}+ سنة ما زال${female ? "ت" : ""} ${verbHold} الخطة حتى تصمد أمام مراجعة الزملاء. ${proc1} و${proc2} من الأدوات اليومية. ${close}`,
-    `المسار إلى ${nameAr} يمر بمكتب التنسيق لا بالاستمارة العامة. ${role} في ${hospital} بـ${city} منذ ما يزيد على ${n} سنة. نسأل أولًا: هل الإجراء الصادق ${proc1} أم ${proc2}؟ الجواب بعد الملف. ${close}`,
-    `${nameAr} يُدرَج في دليل الأطباء العربي تحت الهند / ${city} / علاج الأورام بالإشعاع حتى يمكن لاحقًا بناء صفحات الإجراء دون تغيير المفاتيح الإنجليزية. ${hospital}. ${n}+ سنة. ${proc1}، ${proc2}. ${close}`,
-    `لا نكتب عن ${nameAr} بلغة «الأشهر عالميًا». نكتب الوقائع: ${titleAr} في ${hospital}، ${city}، ${n}+ سنة، وملف يُراجع قبل السفر. إن لزم ${proc1} رُسمت الخطة؛ إن لزم ${proc2} كذلك. ${close}`,
-    `من ${airport} إلى ${hospital} رحلة تُخطَّط بعد المكالمة لا قبلها. ${nameAr} ${role} بخبرة ${n}+ سنة. GAF Healthcare تطلب التصوير أولًا ثم تحدد إن كان ${proc1} أو ${proc2} هو الخطوة التالية. ${close}`,
-    `ملف ${nameAr} يُفتح كخطة علاج لا كعرض فندقي. ${hospital} في ${city}. ${n}+ سنة في علاج الأورام بالإشعاع. ${verbReview} الهامش على ${proc1} و${proc2} قبل أن يُقترح أسبوع في الهند. ${close}`,
+    `${nameAr} ${titleAr} في ${campus}. ${exp}${qualsLine} ${techs} ${gaf}`,
+    `${nameAr} ${role} في ${campusCountry}. ${exp}${qualsLine} ${techs} ${gaf}`,
+    `${nameAr} — ${titleAr}. يمارس في ${campus}. ${exp}${qualsLine} ${techs} ${gaf}`,
+    `${nameAr} اختصاصي${female ? "ة" : ""} علاج الأورام بالإشعاع في ${campus}. ${exp}${qualsLine} ${techs} ${gaf}`,
+    `${nameAr} ${titleAr}. مقر الممارسة المسجّل: ${campusCountry}. ${exp}${qualsLine} ${techs} ${gaf}`,
+    `${nameAr} يعمل ${titleAr} في ${hospitalInCity(hospital, city)}. ${exp}${qualsLine} ${techs} ${gaf}`,
+    `الملف المنشور لـ${nameAr}: ${titleAr}، ${campusCountry}. ${exp}${qualsLine} ${techs} ${gaf}`,
+    `${nameAr} ${titleAr}، والخبرة السريرية المسجّلة ${n}+ سنة في ${campus}. ${qualsLine} ${techs} ${gaf}`,
+    `${nameAr} مدرج في الدليل بصفته ${role} في ${campus}. ${exp}${qualsLine} ${techs} ${gaf}`,
+    `${nameAr} ${titleAr} في ${campusCountry}. ${techs} ${exp}${qualsLine} ${gaf}`,
   ];
 
   let text = templates[i];
-  if (!text.includes("GAF Healthcare")) {
-    text += ` تنظّم GAF Healthcare الملف حسب بلد الهند ومدينة ${city} وتخصص علاج الأورام بالإشعاع ثم الإجراء قبل أي سفر.`;
-  }
-  if (doc.featured) {
-    text += ` يظهر هذا الملف ضمن الخبراء المميزين لأن القسم يُحيل إليه الحالات التي تحتاج اسمًا لا مناوبة.`;
-  }
   if (head) {
-    text += ` لأن${pronoun} ${female ? "تحمل" : "يحمل"} مسؤولية القسم، تُعرض الخطة على مجلس الأورام قبل تثبيت السفر.`;
+    text += female
+      ? " تحمل مسؤولية القسم وفق المسمى المنشور في الملف."
+      : " يحمل مسؤولية القسم وفق المسمى المنشور في الملف.";
   }
-  return text.replace(/\s+/g, " ").trim();
+  return collapseRepeatedPlaces(text.replace(/\s+/g, " ").trim());
 }
 
 function hospitalLabel(doc) {
@@ -270,9 +262,11 @@ for (const doc of doctors) {
     name: nameAr,
     title: titleAr,
     qualifications: doc.qualifications,
-    experience: `${String(years)}+ سنة خبرة`,
+    experience: `${String(years)}+ سنة خبرة سريرية`,
     languages: LANG_CITY[city] || "الإنجليزية، الهندية",
-    imageAlt: `${nameAr}، ${titleAr} في ${hospital}، ${cityAr} — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند`,
+    imageAlt: collapseRepeatedPlaces(
+      `${nameAr}، ${titleAr} في ${withCampus(hospital, cityAr)} — دليل GAF Healthcare لعلاج الأورام بالإشعاع في الهند`,
+    ),
     specializations: specs,
     proceduresExpertise: procs,
     education: arEducation(doc.education),

@@ -137,7 +137,7 @@ test("every language has a dedicated, complete sitemap document", () => {
 test("UI dictionaries do not fill missing translations with English", () => {
   assert.equal(uiCatalogFor("ru")["dir.showing"], "");
   assert.notEqual(uiCatalogFor("ru")["dir.showing"], uiCatalogFor("en")["dir.showing"]);
-  assert.equal(uiCatalogFor("ar")["card.requestConsult"], "طلب استشارة");
+  assert.equal(uiCatalogFor("ar")["card.requestConsult"], "طلب استشارة طبية");
 });
 
 test("navigation hides routes without authored locale content", () => {

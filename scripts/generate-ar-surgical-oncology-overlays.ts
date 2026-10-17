@@ -12,6 +12,7 @@ import { join } from "node:path";
 import names from "../src/data/surgical-oncologist-names-ar.json";
 import { catalogDoctors, type Doctor } from "../src/lib/doctors";
 import { HOSPITAL_NAMES_AR } from "../src/lib/i18n/hospital-names-ar";
+import { collapseRepeatedPlaces, withCampus } from "../src/lib/i18n/place-labels";
 import { TAXONOMY_AR } from "../src/lib/i18n/taxonomy-ar";
 import type { CatalogCms, DoctorPatch } from "../src/lib/cms/catalog-types";
 
@@ -135,7 +136,7 @@ function arabicBio(
     `${name} مدرج كـ${title} في ${hospital}، ${city}، الهند، ${yearsCopy}. تساعد الصفحة في الوصول من التخصص إلى الإجراء، بما في ذلك ${first} و${second}، من دون تحويل الدليل إلى تصنيف للأطباء. ${route} ${review}`,
     `للرأي الجراحي في ${first} أو ${second}، يقدم هذا الملف ${name} بصفته ${title} في ${hospital} بمدينة ${city}، الهند، ${yearsCopy}. ${route} ${review}`,
   ];
-  return templates[hash(doctor.slug) % templates.length];
+  return collapseRepeatedPlaces(templates[hash(doctor.slug) % templates.length]);
 }
 
 const surgicalOncologists = catalogDoctors.filter((doctor) => doctor.specialty === "Surgical Oncology");
@@ -170,14 +171,14 @@ for (const doctor of surgicalOncologists) {
     qualifications: arabicQualifications(doctor.qualifications),
     experience: `${experienceYears(doctor.experience)}+ سنة خبرة`,
     languages: LANGUAGES_AR[doctor.city] ?? "الإنجليزية، الهندية",
-    imageAlt: `${name}، ${title} في ${hospital}، ${city} — دليل GAF Healthcare لجراحة الأورام في الهند حسب البلد والمدينة والتخصص والإجراء`,
+    imageAlt: `${name}، ${title} في ${withCampus(hospital, city)} — دليل GAF Healthcare لجراحة الأورام في الهند حسب البلد والمدينة والتخصص والإجراء`,
     specializations: arabicSpecializations(doctor, procedures),
     proceduresExpertise: procedures,
     // The English source keeps full institution, award and publication names.
     // Arabic pages use concise verified facts instead of leaking untranslated
     // paragraphs or pretending that a proper-name translation is official.
     education: [`المؤهلات المنشورة: ${arabicQualifications(doctor.qualifications)}`],
-    affiliations: [`يمارس عمله في ${hospital}، ${city}، الهند`],
+    affiliations: [`يمارس عمله في ${withCampus(hospital, city, "الهند")}`],
     memberships: doctor.memberships.length
       ? [`لديه ${doctor.memberships.length} عضويات مهنية منشورة في السجل الإنجليزي المرجعي`]
       : [],

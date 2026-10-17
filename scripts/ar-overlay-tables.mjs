@@ -113,7 +113,7 @@ export const PHRASE = {
   "GI (Gastrointestinal) Radiation Oncology": "علاج أورام الجهاز الهضمي بالإشعاع",
   "Gynaecological Oncology": "أورام النساء",
   "Head and Neck Oncology": "أورام الرأس والعنق",
-  "Medical Oncology": "علاج الأورام الطبي",
+  "Medical Oncology": "طب الأورام",
   "Medical Oncology (multidisciplinary cancer care)": "علاج الأورام الطبي ضمن فريق متعدد التخصصات",
   "Medical Oncology (supportive role in multidisciplinary cancer care)":
     "دور داعم في علاج الأورام الطبي ضمن الفريق المتعدد التخصصات",
@@ -233,8 +233,8 @@ export const TITLE_RULES = [
   { en: "Consultant Radiation Oncology", match: /Consultant Radiation Oncology/i, male: "استشاري علاج الأورام بالإشعاع", female: "استشارية علاج الأورام بالإشعاع" },
   { en: "Consultant -", match: /Consultant -/i, male: "استشاري —", female: "استشارية —" },
   { en: "Consultant,", match: /Consultant,/i, male: "استشاري", female: "استشارية" },
-  { en: "Radiation Specialist Oncologist", match: /Radiation Specialist Oncologist/i, male: "أخصائي علاج الأورام بالإشعاع", female: "أخصائية علاج الأورام بالإشعاع" },
-  { en: "Radiation Oncologist", match: /Radiation Oncologist/i, male: "أخصائي علاج الأورام بالإشعاع", female: "أخصائية علاج الأورام بالإشعاع" },
+  { en: "Radiation Specialist Oncologist", match: /Radiation Specialist Oncologist/i, male: "اختصاصي علاج الأورام بالإشعاع", female: "اختصاصية علاج الأورام بالإشعاع" },
+  { en: "Radiation Oncologist", match: /Radiation Oncologist/i, male: "اختصاصي علاج الأورام بالإشعاع", female: "اختصاصية علاج الأورام بالإشعاع" },
   { en: "Senior Consultant", match: /Senior Consultant/i, male: "استشاري أول", female: "استشارية أولى" },
   // Bare ranks, reached once the specialty suffix has been dropped. This
   // generator only handles radiation oncology, so the specialty goes back in

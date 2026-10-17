@@ -1,10 +1,12 @@
 import type { CatalogQuery } from "@/lib/catalog";
 import {
+  campusLocation,
   designationLabel,
   experienceBadge,
   keyProcedureLabels,
   listingBio,
 } from "@/lib/doctor-profile";
+import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 import type { Doctor } from "@/lib/doctors";
 import type { AppLocale } from "@/lib/i18n/languages";
 import { medicalPhrase } from "@/lib/i18n/medical-phrases";
@@ -28,6 +30,7 @@ export function SsrJsonLd({ data }: { data: unknown }) {
 }
 
 export function ArabicDoctorSsrCard({ doctor }: { doctor: Doctor }) {
+  const messages = uiCatalogFor("ar");
   const profileHref = arHref(`/doctors/${doctor.slug}`);
   const hospitalHref = arHref(`/hospitals/${doctor.hospitalSlug}`);
   const consultHref = consultToWhatsappHref(`/consult?doctor=${doctor.slug}`);
@@ -37,6 +40,7 @@ export function ArabicDoctorSsrCard({ doctor }: { doctor: Doctor }) {
   const extra = procedures.length - shown.length;
   const experience = experienceBadge(doctor);
   const designation = designationLabel(doctor);
+  const location = campusLocation(doctor, undefined, "ar");
 
   return (
     <article className="dcard">
@@ -59,7 +63,7 @@ export function ArabicDoctorSsrCard({ doctor }: { doctor: Doctor }) {
             <h2 className="dcard__name">
               <a href={profileHref}>{doctor.name}</a>
               {doctor.featured ? (
-                <span className="dcard__chip" aria-label="أخصائي مميز">
+                <span className="dcard__chip" aria-label={messages["card.featured"]}>
                   مميز
                 </span>
               ) : null}
@@ -69,8 +73,12 @@ export function ArabicDoctorSsrCard({ doctor }: { doctor: Doctor }) {
           <p className="dcard__role">{doctor.title}</p>
           <ul className="dcard__facts">
             {experience ? <li>{experience}</li> : null}
-            <li>المسمى: {designation}</li>
-            {doctor.qualifications ? <li>{doctor.qualifications}</li> : null}
+            <li>{messages["card.designation"].replace("{title}", designation)}</li>
+            {doctor.qualifications ? (
+              <li>
+                <span dir="ltr">{doctor.qualifications}</span>
+              </li>
+            ) : null}
           </ul>
         </div>
 
@@ -78,14 +86,12 @@ export function ArabicDoctorSsrCard({ doctor }: { doctor: Doctor }) {
           <a href={hospitalHref} className="dcard__hosp">
             <span>
               <strong>{doctor.hospitalName}</strong>
-              <span>
-                {taxonomyLabel(doctor.city, "ar")}, {taxonomyLabel(doctor.country, "ar")}
-              </span>
+              {location ? <span>{location}</span> : null}
             </span>
           </a>
           <div className="dcard__cta">
             <a href={profileHref} className="dcard__btn dcard__btn--book">
-              عرض الملف ←
+              {messages["card.viewProfile"]}
             </a>
             <a
               href={consultHref}
@@ -93,7 +99,7 @@ export function ArabicDoctorSsrCard({ doctor }: { doctor: Doctor }) {
               target="_blank"
               rel="noreferrer noopener"
             >
-              طلب استشارة
+              {messages["card.requestConsult"]}
             </a>
           </div>
         </div>
@@ -103,13 +109,13 @@ export function ArabicDoctorSsrCard({ doctor }: { doctor: Doctor }) {
         <div className="dcard__about">
           {bio ? <p className="dcard__bio">{bio}</p> : null}
           <a href={profileHref} className="dcard__more">
-            عرض الملف ←
+            {messages["card.viewProfile"]}
           </a>
         </div>
 
         {procedures.length > 0 ? (
           <div className="dcard__procs">
-            <p>الإجراءات الرئيسية</p>
+            <p>{messages["card.keyProcedures"]}</p>
             <ul>
               {shown.map((item) => (
                 <li key={item}>{item}</li>

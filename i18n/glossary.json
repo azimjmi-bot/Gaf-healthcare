@@ -1264,11 +1264,11 @@
     },
     {
       "en": "Radiation Oncologist",
-      "ar": "أخصائي علاج الأورام بالإشعاع",
+      "ar": "اختصاصي علاج الأورام بالإشعاع",
       "category": "job-title",
       "forms": {
-        "masculine": "أخصائي علاج الأورام بالإشعاع",
-        "feminine": "أخصائية علاج الأورام بالإشعاع"
+        "masculine": "اختصاصي علاج الأورام بالإشعاع",
+        "feminine": "اختصاصية علاج الأورام بالإشعاع"
       },
       "sources": [
         "scripts/ar-overlay-tables.mjs"
@@ -1276,11 +1276,11 @@
     },
     {
       "en": "Radiation Specialist Oncologist",
-      "ar": "أخصائي علاج الأورام بالإشعاع",
+      "ar": "اختصاصي علاج الأورام بالإشعاع",
       "category": "job-title",
       "forms": {
-        "masculine": "أخصائي علاج الأورام بالإشعاع",
-        "feminine": "أخصائية علاج الأورام بالإشعاع"
+        "masculine": "اختصاصي علاج الأورام بالإشعاع",
+        "feminine": "اختصاصية علاج الأورام بالإشعاع"
       },
       "sources": [
         "scripts/ar-overlay-tables.mjs"
@@ -2310,11 +2310,11 @@
     },
     {
       "en": "medical oncologist",
-      "ar": "طبيب علاج الأورام الطبي",
+      "ar": "طبيب طب الأورام",
       "category": "practitioner-noun",
       "forms": {
-        "singular": "طبيب علاج الأورام الطبي",
-        "plural": "أطباء علاج الأورام الطبي"
+        "singular": "طبيب طب الأورام",
+        "plural": "أطباء طب الأورام"
       },
       "note": "Plural in English: medical oncologists",
       "sources": [
@@ -2440,11 +2440,11 @@
     },
     {
       "en": "radiation oncologist",
-      "ar": "أخصائي علاج الأورام بالإشعاع",
+      "ar": "اختصاصي علاج الأورام بالإشعاع",
       "category": "practitioner-noun",
       "forms": {
-        "singular": "أخصائي علاج الأورام بالإشعاع",
-        "plural": "أخصائيو علاج الأورام بالإشعاع"
+        "singular": "اختصاصي علاج الأورام بالإشعاع",
+        "plural": "اختصاصيو علاج الأورام بالإشعاع"
       },
       "note": "Plural in English: radiation oncologists",
       "sources": [
@@ -5630,7 +5630,7 @@
     },
     {
       "en": "Medical Oncology",
-      "ar": "علاج الأورام الطبي",
+      "ar": "طب الأورام",
       "category": "specialty",
       "sources": [
         "scripts/ar-overlay-tables.mjs",
