@@ -46,6 +46,10 @@ Arabic India doctor directories (`/ar/doctors/India/...`) are served as cached s
 
 Use Node **20**. Build with `npm run build` (`next build --webpack`). Start with `npm start`. Config is `next.config.mjs` so the builder does not need SWC to load TypeScript config. If the log still shows `GLIBC_2.29 not found`, the Hostinger image cannot run this Next.js version — use Vercel instead.
 
+`npm start` runs `server.mjs`, the stock Next.js production server behind a tiny wrapper that trims the `Vary` header to standard values (`Accept-Encoding`). Next appends `Vary: rsc, next-router-state-tree, …` to every response and Hostinger CDN refuses to cache anything that varies on custom headers (`x-hcdn-cache-status: DYNAMIC`), so public HTML never reached the edge despite its `s-maxage`. Next keys RSC variants on the `_rsc` search param, so the trimmed header is safe. `npm run start:next` is the plain `next start` if the wrapper ever needs to be bypassed. It honours `PORT` and `HOST`.
+
+Crawl health: after a deploy, `curl -sI https://gaf.healthcare/doctors | grep -i x-hcdn-cache-status` should turn to `HIT` on the second request, and `x-hcdn-upstream-rt` on a cold page should sit well under a second. Content stores (`content/cms.json`, `content/curated-treatments.json`) are parsed once and re-read only when the file changes.
+
 ## Stack
 
 Next.js (App Router), TypeScript, Tailwind CSS, shadcn/ui.
