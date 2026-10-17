@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { LOCALE_HEADER, PATH_HEADER, isTargetLocale } from "@/lib/i18n/languages";
+import { LEGACY_GONE_HTML, isLegacyGonePath } from "@/lib/legacy-urls";
 
 const CMS_COOKIE = "gaf_cms";
 
@@ -25,6 +26,20 @@ function noindex(response: NextResponse) {
 }
 
 const PUBLIC_HTML_CACHE = "public, s-maxage=300, stale-while-revalidate=86400";
+
+// Old WordPress/theme-demo URLs: a cacheable 410 straight from the proxy so
+// neither the App Router nor the CMS stores are touched for crawl leftovers.
+function legacyGone() {
+  return new NextResponse(LEGACY_GONE_HTML, {
+    status: 410,
+    headers: {
+      "Content-Type": "text/html; charset=utf-8",
+      "Cache-Control": "public, max-age=3600, s-maxage=86400",
+      "CDN-Cache-Control": "public, s-maxage=86400",
+      "X-Robots-Tag": "noindex",
+    },
+  });
+}
 
 // Mirror of isArabicDoctorHtmlPath in src/lib/i18n/arabic-radiation-html.ts;
 // the proxy cannot import server-only modules.
@@ -65,8 +80,11 @@ export async function proxy(request: NextRequest) {
   const parts = pathname.split("/").filter(Boolean);
   const head = parts[0];
 
+  if (isLegacyGonePath(pathname)) return legacyGone();
+
   if (head && isTargetLocale(head)) {
     const rest = parts.length > 1 ? `/${parts.slice(1).join("/")}` : "/";
+    if (isLegacyGonePath(rest)) return legacyGone();
     if (rest.startsWith("/cms") || rest.startsWith("/api")) {
       const url = request.nextUrl.clone();
       url.pathname = rest;
@@ -110,5 +128,9 @@ export async function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     "/((?!_next/static|_next/image|favicon.ico|robots.txt|sitemap\\.xml|sitemap_index\\.xml|sitemap-[\\w-]+\\.xml|uploads/|.*\\..*).*)",
+    // Dotted WordPress leftovers the pattern above skips (wp-login.php,
+    // xmlrpc.php, wp-content/*.css); answered 410 by isLegacyGonePath.
+    "/(wp-.*)",
+    "/(.*\\.php)",
   ],
 };

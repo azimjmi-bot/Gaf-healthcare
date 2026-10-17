@@ -1,4 +1,5 @@
 import { fileURLToPath } from "node:url";
+import { legacyRedirects } from "./legacy-redirects.mjs";
 
 const modernPolyfills = fileURLToPath(
   new URL("./src/lib/polyfills/modern-browsers.js", import.meta.url),
@@ -210,6 +211,7 @@ const nextConfig = {
         permanent: true,
       },
       { source: "/about", destination: "/", permanent: true },
+      ...legacyRedirects,
     ];
   },
   async headers() {

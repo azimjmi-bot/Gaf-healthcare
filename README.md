@@ -96,6 +96,8 @@ Each language has its own sitemap. `/sitemap.xml` and `/sitemap_index.xml` are t
 - French: `/sitemap-fr.xml` (empty until that locale is published)
 - Swahili: `/sitemap-sw.xml` (empty until that locale is published)
 
+Two earlier sites lived on this domain (a WordPress install, and `gafhealthcare.in`, which now 301s every path here), so crawlers still request their URLs. `legacy-redirects.mjs` 301s the ones with a successor — WordPress sitemap names (`wp-sitemap*.xml`, `post-sitemap.xml`, …) to `/sitemap.xml`, `/doctor/*`, `/hospital/*`, `/specialities/*`, `/blog/*` to the matching section — and `src/lib/legacy-urls.ts` lists the WordPress system paths and theme-demo sections (`/wp-*`, `*.php`, `/feed`, `/product/*`, `/portfolio/*`, `/pages/*`, `/category/*`, …) that `src/proxy.ts` answers with a cacheable 410 instead of rendering the 404 page. Only `/sitemap.xml` should stay submitted in Search Console; remove any old `*-sitemap.xml` entries there.
+
 Each language also has its own CMS files:
 
 - English: `content/cms.json`, `content/catalog-cms.json`
