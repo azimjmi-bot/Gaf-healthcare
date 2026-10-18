@@ -114,7 +114,7 @@ test("EBRT Arabic HTML is extractable and does not invent ratings or prices", ()
   assert.ok(html);
   assert.match(html, /lang="ar"/);
   assert.match(html, /dir="rtl"/);
-  assert.match(html, /rel="canonical" href="https:\/\/gaf\.healthcare\/ar\/doctors\/India\/Radiation-Oncology\/External-Beam-Radiotherapy-EBRT"/);
+  assert.match(html, /rel="canonical" href="https:\/\/gaf\.healthcare\/ar\/doctors\/india\/radiation-oncology\/external-beam-radiotherapy-ebrt"/);
   assert.equal(html.includes("External-Beam-Radiotherapy-(EBRT)"), false);
   assert.match(html, /hrefLang="ar"/);
   assert.match(html, /hrefLang="en"/);
@@ -126,7 +126,12 @@ test("EBRT Arabic HTML is extractable and does not invent ratings or prices", ()
   assert.match(html, /لم تُراجع هذه الصفحة طبيًا بشكل مستقل/);
   assert.equal(html.includes("AggregateRating"), false);
   assert.equal(html.includes("نسبة نجاح"), false);
-  assert.equal(/SAR|ريال سعودي/.test(html), false);
+  assert.match(html, /\$1,000–\$6,000\+/);
+  assert.match(html, /\$12,000–\$25,000/);
+  assert.match(html, /10–20 دقيقة/);
+  assert.match(html, /15–35 جلسة/);
+  assert.match(html, /لا تحوّلها إلى الريال/);
+  assert.equal(html.includes("SAR"), false);
   const page = buildArabicRadiationProcedure(
     { destination: "India", specialty: "Radiation Oncology", procedure: EBRT },
     1,
@@ -139,7 +144,9 @@ test("EBRT Arabic HTML is extractable and does not invent ratings or prices", ()
   assert.match(markup, /MedicalProcedure/);
   assert.match(markup, /howPerformed/);
   assert.match(markup, /bodyLocation/);
-  assert.match(markup, /NoninvasiveProcedure/);
+  assert.match(markup, /procedureType.{0,12}Radiation/);
+  assert.match(markup, /hospitalAffiliation/);
+  assert.match(markup, /alumniOf/);
   assert.match(markup, /FAQPage/);
   assert.match(markup, /BreadcrumbList/);
   assert.match(markup, /EducationalOccupationalCredential|jobTitle/);

@@ -81,7 +81,7 @@ test("localized sitemaps contain only published locale records", () => {
   assert.ok(arabicUrls.includes("https://gaf.healthcare/ar/doctors"));
   assert.ok(arabicUrls.includes("https://gaf.healthcare/ar/hospitals"));
   assert.ok(arabicUrls.includes("https://gaf.healthcare/ar/costs"));
-  assert.ok(arabicUrls.includes("https://gaf.healthcare/ar/costs/India"));
+  assert.ok(arabicUrls.includes("https://gaf.healthcare/ar/costs/india"));
   assert.equal(
     arabicUrls.some((url) => url.includes("/ar/specialties")),
     false,

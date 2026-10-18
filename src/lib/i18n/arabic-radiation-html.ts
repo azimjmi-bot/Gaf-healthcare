@@ -50,7 +50,7 @@ function directoryStyleTag() {
       directoryCss = null;
     }
   }
-  if (directoryCss === null) return `<link rel="stylesheet" href="/${DIRECTORY_CSS_FILE}?v=7"/>`;
+  if (directoryCss === null) return `<link rel="stylesheet" href="/${DIRECTORY_CSS_FILE}?v=8"/>`;
   return `<style>${directoryCss.replace(/<\/style/gi, "<\\/style")}</style>`;
 }
 
@@ -63,7 +63,7 @@ function directoryStyleTag() {
  */
 export function isArabicDoctorHtmlPath(pathname: string) {
   const parts = pathname.split("/").filter(Boolean);
-  if (parts[0] !== "ar" || parts[1] !== "doctors" || parts[2] !== "India") return false;
+  if (parts[0] !== "ar" || parts[1] !== "doctors" || parts[2]?.toLowerCase() !== "india") return false;
   return parts.length >= 3 && parts.length <= 6;
 }
 
@@ -221,7 +221,7 @@ function hostMarkup(node: ReactNode): string {
 
 function cacheKeyFor(path: string, page: number) {
   const url = page > 1 ? `/ar${path}?page=${page}` : `/ar${path}`;
-  return `v7:${url}`;
+  return `v8:${url}`;
 }
 
 export function renderArabicRadiationHtml(query: CatalogQuery, page = 1) {

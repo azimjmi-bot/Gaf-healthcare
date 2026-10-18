@@ -18,26 +18,13 @@ const KIND_AR: Record<RadiationProcedureCopy["kind"], string> = {
 };
 
 /** External-beam family only. Brachytherapy and IORT are not labeled noninvasive. */
-const NONINVASIVE = new Set([
-  "External Beam Radiotherapy (EBRT)",
-  "3D Conformal Radiotherapy (3D-CRT)",
-  "Intensity-Modulated Radiotherapy (IMRT)",
-  "Image-Guided Radiotherapy (IGRT)",
-  "Stereotactic Radiosurgery (SRS)",
-  "Stereotactic Body Radiotherapy (SBRT)",
-  "CyberKnife",
-  "Gamma Knife",
-  "Proton Beam Therapy",
-  "Total Body Irradiation (TBI)",
-]);
-
 function procedureAbout(copy: RadiationProcedureCopy) {
   return {
     "@type": "MedicalProcedure",
     name: taxonomyLabel(copy.procedure, "ar"),
     alternateName: copy.procedure,
     description: copy.quickAnswer,
-    ...(NONINVASIVE.has(copy.procedure) ? { procedureType: "NoninvasiveProcedure" } : {}),
+    procedureType: "Radiation",
     bodyLocation: BODY_LOCATION_AR,
     howPerformed: copy.steps.map((step) => `${step.title}. ${step.body}`).join(" "),
   };
@@ -58,6 +45,14 @@ function listedDoctors(
           "@type": "EducationalOccupationalCredential",
           name: doctor.qualifications,
         };
+      }
+      if (item.worksFor) item.hospitalAffiliation = item.worksFor;
+      const schools = (doctor?.education ?? []).map((line) => line.trim()).filter(Boolean).slice(0, 3);
+      if (schools.length > 0) {
+        item.alumniOf = schools.map((line) => ({
+          "@type": "EducationalOrganization",
+          name: line.split("—").pop()?.trim() || line,
+        }));
       }
       return { ...entry, item };
     }),
@@ -215,25 +210,64 @@ export function ArabicRadiationProcedureSsrDocument({ data }: { data: ArabicRadi
                 <td>{data.hospitalCountLabel}</td>
               </tr>
               <tr>
-                <th scope="row">نطاق التكلفة التقديرية</th>
+                <th scope="row">تكلفة الهند (دولار أمريكي)</th>
                 <td>
-                  {data.costHref ? (
+                  {data.benchmarks ? (
                     <>
-                      <a href={arHref(data.costHref)}>دليل التكلفة المخزّن</a>
-                      <span> يعرض نطاقًا تخطيطيًا بالدولار الأمريكي مع مصدره وتاريخه. ليس عرض سعر لهذه الحالة، ولا يُعاد حسابه هنا بالريال.</span>
+                      <span dir="ltr">{data.benchmarks.indiaUsd}</span>
+                      <span> نطاق تخطيطي مخزّن، ليس عرض سعر لهذه الحالة.</span>
                     </>
                   ) : (
-                    "لا يوجد دليل تكلفة منشور لهذا الإجراء في النسخة العربية."
+                    "لا يوجد نطاق مخزّن."
+                  )}
+                  {data.costHref ? (
+                    <>
+                      {" "}
+                      <a href={arHref(data.costHref)}>دليل التكلفة</a>
+                    </>
+                  ) : null}
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">تكلفة الولايات المتحدة (دولار أمريكي)</th>
+                <td>
+                  {data.benchmarks ? (
+                    <>
+                      <span dir="ltr">{data.benchmarks.usUsd}</span>
+                      <span> مقارنة دفع ذاتي مخزّنة، وليست فاتورة واحدة.</span>
+                    </>
+                  ) : (
+                    "لا يوجد نطاق مخزّن."
                   )}
                 </td>
               </tr>
               <tr>
-                <th scope="row">مدة الإقامة</th>
-                <td>تُحدد بعد المحاكاة وجدول الجلسات. هذه الصفحة لا تنشر عدد ليالٍ ثابتًا.</td>
+                <th scope="row">الإمارات</th>
+                <td>
+                  {data.benchmarks
+                    ? `مستوى نسبي مخزّن ${data.benchmarks.uaeLevel} نقطة منتصف نطاق الهند. ليس مبلغًا مصدريًا ولا عرض سعر.`
+                    : "لا يوجد نطاق مخزّن."}
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">السعودية</th>
+                <td>لا يوجد نطاق مخزّن لهذا الإجراء.</td>
+              </tr>
+              <tr>
+                <th scope="row">الريال السعودي</th>
+                <td>الأرقام المخزّنة بالدولار الأمريكي. هذه الصفحة لا تحوّلها إلى الريال.</td>
+              </tr>
+              <tr>
+                <th scope="row">زمن الجلسة</th>
+                <td>{data.benchmarks?.session ?? "يكتبه الفريق بعد التخطيط. لا يُستنتج من اسم الإجراء."}</td>
               </tr>
               <tr>
                 <th scope="row">عدد الجلسات</th>
-                <td>يكتبه الفريق المعالج بعد التخطيط. لا يُستنتج من اسم الإجراء.</td>
+                <td>{data.benchmarks?.fractions ?? "يكتبه الفريق المعالج بعد التخطيط. لا يُستنتج من اسم الإجراء."}</td>
+              </tr>
+              <tr>
+                <th scope="row">مدة الدورة والإقامة</th>
+                <td>{data.benchmarks?.course ?? "تُحدد بعد المحاكاة. هذه الصفحة لا تنشر عدد ليالٍ ثابتًا."}</td>
               </tr>
               <tr>
                 <th scope="row">موضع العلاج</th>
@@ -258,7 +292,7 @@ export function ArabicRadiationProcedureSsrDocument({ data }: { data: ArabicRadi
       </section>
 
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:px-8">
-        <HubHeading eyebrow="المسار" title="كيف يُخطَّط العلاج ويُسلَّم" intro="الخطوات التي تنطبق على هذا الإجراء. عدد الجلسات لا يُثبَّت هنا." />
+        <HubHeading eyebrow="المسار" title="كيف يُخطَّط العلاج ويُسلَّم" intro={data.benchmarks?.fractions ? "الخطوات التي تنطبق على هذا الإجراء. الرقم في جدول النظرة العامة نطاق مخزّن، والخطة الفردية تُكتب بعد المحاكاة." : "الخطوات التي تنطبق على هذا الإجراء. عدد الجلسات لا يُثبَّت هنا."} />
         <ol className="step-list mt-6 max-w-3xl list-decimal space-y-3 ps-5">
           {copy.steps.map((step) => (
             <li key={step.title}>

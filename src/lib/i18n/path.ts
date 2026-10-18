@@ -23,6 +23,18 @@ function normalizePathname(path: string) {
   return withSlash.replace(/\/{2,}/g, "/");
 }
 
+const ARABIC_CATALOG_ROOTS = new Set(["doctors", "hospitals", "costs"]);
+
+/**
+ * Arabic catalog addresses are lowercase. English keeps Title Case because
+ * those URLs are already the indexed canonicals.
+ */
+export function lowercaseArabicCatalogPath(pathname: string) {
+  const parts = pathname.split("/").filter(Boolean);
+  if (!ARABIC_CATALOG_ROOTS.has(parts[0] ?? "")) return pathname;
+  return `/${parts.map((part) => part.toLowerCase()).join("/")}`;
+}
+
 export function stripLocalePrefix(input: string): SplitPath {
   const { path, search, hash } = splitInput(input || "/");
   const pathname = normalizePathname(path);
@@ -38,7 +50,12 @@ export function stripLocalePrefix(input: string): SplitPath {
 /** Prefix an English site path with a language subdirectory. English stays unprefixed. */
 export function localePath(input: string, locale: AppLocale): string {
   const stripped = stripLocalePrefix(input);
-  const pathname = stripped.pathname === "/" ? "/" : stripped.pathname;
+  const pathname =
+    locale === "ar" && stripped.pathname !== "/"
+      ? lowercaseArabicCatalogPath(stripped.pathname)
+      : stripped.pathname === "/"
+        ? "/"
+        : stripped.pathname;
   if (locale === SOURCE_LOCALE) {
     return `${pathname}${stripped.search}${stripped.hash}`;
   }

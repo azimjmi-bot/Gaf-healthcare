@@ -5,6 +5,7 @@ import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { publishedLocalesForPath } from "@/lib/i18n/locale-publication";
 import { ENGLISH_ALTERNATES_BASELINE } from "@/server-tests/english-alternates-fixture";
+import { lowercaseArabicCatalogPath } from "@/lib/i18n/path";
 
 /**
  * English pages are already ranking, so their canonical and hreflang block is
@@ -33,7 +34,8 @@ function alternatesFor(path: string) {
  */
 function expectedUrl(path: string, locale: AppLocale) {
   if (locale === SOURCE_LOCALE) return `${EN}${path}`;
-  return path === "/" ? `${EN}/${locale}` : `${EN}/${locale}${path}`;
+  const body = locale === "ar" && path !== "/" ? lowercaseArabicCatalogPath(path) : path;
+  return path === "/" ? `${EN}/${locale}` : `${EN}/${locale}${body}`;
 }
 
 test("publishedLocalesForPath returns the recorded set for every page type", () => {

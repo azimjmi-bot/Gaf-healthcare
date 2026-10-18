@@ -17,11 +17,12 @@ export const dynamic = "force-static";
 export const revalidate = 300;
 
 export function generateStaticParams() {
+  const lower = (segments: string[]) => segments.map((segment) => segment.toLowerCase());
   return [
-    { segments: ["India"] },
-    { segments: ["India", "Radiation-Oncology"] },
+    { segments: lower(["India"]) },
+    { segments: lower(["India", "Radiation-Oncology"]) },
     ...arabicRadiationCityUniquenessReport().map((row) => ({
-      segments: ["India", toPrettySegment(row.city), "Radiation-Oncology"],
+      segments: lower(["India", toPrettySegment(row.city), "Radiation-Oncology"]),
     })),
   ];
 }
@@ -46,11 +47,11 @@ export async function GET(
 
   // Aliases (lower-case, slug spellings) resolve to one Title-Case address,
   // exactly as canonicalizePrettyPath does for the App Router.
-  const pretty = prettyCatalogPath("/doctors", query);
-  if (pretty !== `/doctors/${segments.join("/")}`) {
-    const legacyParens = segments.some((segment) => segment.includes("(") || segment.includes(")"));
+  const pretty = prettyCatalogPath("/doctors", query).toLowerCase();
+  const requested = `/doctors/${segments.join("/")}`;
+  if (requested !== pretty) {
     return new NextResponse(null, {
-      status: legacyParens ? 301 : 308,
+      status: 301,
       headers: { Location: localePath(pretty, "ar"), "x-gaf-locale": "ar" },
     });
   }

@@ -206,7 +206,7 @@ test("crawlableUrl falls back to English for an unpublished Arabic page", () => 
   // And a published facet keeps the Arabic address, now that stage 1 is open.
   assert.equal(
     crawlableUrl("/doctors/India", "ar"),
-    `${SITE}/ar/doctors/India`,
+    `${SITE}/ar/doctors/india`,
   );
 });
 

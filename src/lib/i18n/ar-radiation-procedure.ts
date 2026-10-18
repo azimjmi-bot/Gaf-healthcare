@@ -22,6 +22,26 @@ import { loadCatalogCms } from "@/lib/cms/catalog-store";
 import type { RadiationProcedurePagePatch } from "@/lib/cms/catalog-types";
 import { getProcedure } from "@/lib/taxonomy";
 import { consultToWhatsappHref } from "@/lib/site";
+import { treatments } from "@/lib/data";
+
+const EBRT = "External Beam Radiotherapy (EBRT)";
+
+function procedureBenchmarks(procedure: string): ArabicRadiationProcedureData["benchmarks"] {
+  const treatment = treatments.find((row) => row.name === procedure);
+  if (!treatment?.partnerRange || !treatment.usRange) return undefined;
+  return {
+    indiaUsd: treatment.partnerRange,
+    usUsd: treatment.usRange,
+    uaeLevel: "2.2–3.6×",
+    ...(procedure === EBRT
+      ? {
+          session: "غالبًا 10–20 دقيقة على طاولة الجهاز",
+          fractions: "غالبًا 15–35 جلسة في أيام العمل",
+          course: "4–7 أسابيع من الجلسات في السجل، والحضور في أيام العمل. معظم الخطط خارجية بلا عدد ليالٍ ثابت.",
+        }
+      : {}),
+  };
+}
 
 const SPECIALTY = "Radiation Oncology";
 
@@ -59,6 +79,16 @@ export type ArabicRadiationProcedureData = {
   related: { name: string; href: string }[];
   peerHref?: string;
   costHref?: string;
+  /** Stored planning figures. Absent when the catalog has no cost row. */
+  benchmarks?: {
+    indiaUsd: string;
+    usUsd: string;
+    /** Relative UAE level from the radiation destination table, not a sourced price. */
+    uaeLevel: string;
+    session?: string;
+    fractions?: string;
+    course?: string;
+  };
 };
 
 export function listRadiationProcedureNames() {
@@ -171,5 +201,6 @@ export function buildArabicRadiationProcedure(
     related,
     peerHref,
     costHref,
+    benchmarks: procedureBenchmarks(query.procedure),
   };
 }

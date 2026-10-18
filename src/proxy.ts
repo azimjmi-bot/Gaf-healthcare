@@ -45,7 +45,7 @@ function legacyGone() {
 // the proxy cannot import server-only modules.
 function isArabicDoctorHtmlPath(pathname: string) {
   const parts = pathname.split("/").filter(Boolean);
-  if (parts[0] !== "ar" || parts[1] !== "doctors" || parts[2] !== "India") return false;
+  if (parts[0] !== "ar" || parts[1] !== "doctors" || parts[2]?.toLowerCase() !== "india") return false;
   return parts.length >= 3 && parts.length <= 6;
 }
 
@@ -75,12 +75,19 @@ function withLocale(request: NextRequest, locale: string, pathname?: string) {
   return withPublicHtmlCache(request, response);
 }
 
-/** 301 a parenthesized procedure segment to the canonical hyphenated form. */
-function catalogParenRedirect(request: NextRequest) {
-  const next = request.nextUrl.pathname.replace(
-    /\/([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)-\(([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)\)/g,
-    "/$1-$2",
-  );
+const CATALOG_PAREN = /\/([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)-\(([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)\)/g;
+
+/**
+ * One 301 to the canonical catalog address: drop parentheses everywhere, and
+ * lowercase Arabic doctors, hospitals and costs. English Title Case stays.
+ */
+function catalogCanonicalRedirect(request: NextRequest) {
+  const stripped = request.nextUrl.pathname.replace(CATALOG_PAREN, "/$1-$2");
+  const parts = stripped.split("/").filter(Boolean);
+  const next =
+    parts[0] === "ar" && ["doctors", "hospitals", "costs"].includes(parts[1] ?? "")
+      ? `/${parts.map((part, index) => (index === 0 ? part : part.toLowerCase())).join("/")}`
+      : stripped;
   if (next === request.nextUrl.pathname) return null;
   const url = request.nextUrl.clone();
   url.pathname = next;
@@ -93,7 +100,7 @@ export async function proxy(request: NextRequest) {
   const head = parts[0];
 
   if (isLegacyGonePath(pathname)) return legacyGone();
-  const parenRedirect = catalogParenRedirect(request);
+  const parenRedirect = catalogCanonicalRedirect(request);
   if (parenRedirect) return parenRedirect;
 
   if (head && isTargetLocale(head)) {

@@ -79,6 +79,11 @@ export function ArabicDoctorSsrCard({ doctor }: { doctor: Doctor }) {
                 <span dir="ltr">{doctor.qualifications}</span>
               </li>
             ) : null}
+            {doctor.education.filter(Boolean).slice(0, 3).map((line, index) => (
+              <li key={`${line}-${index}`}>
+                <span dir="ltr">{line}</span>
+              </li>
+            ))}
           </ul>
         </div>
 
