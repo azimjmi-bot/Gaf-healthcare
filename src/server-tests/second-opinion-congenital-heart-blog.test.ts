@@ -77,7 +77,7 @@ test("the congenital heart second-opinion guide keeps the quick answer and quote
     "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
     "/costs/India/Pediatric-Cardiac-Surgery",
-    "/costs/India/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/costs/India/Pediatric-Cardiac-Surgery/ASD-Closure-Atrial-Septal-Defect",
     "/costs/India/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation",
     "/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery",
     "/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery",

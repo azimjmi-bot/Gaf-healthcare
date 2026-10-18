@@ -181,7 +181,7 @@ test("TAVR/TAVI pretty routes keep the procedure in one URL segment", () => {
   });
   assert.equal(
     path,
-    "/costs/India/Mumbai/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/costs/India/Mumbai/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
   );
 });
 

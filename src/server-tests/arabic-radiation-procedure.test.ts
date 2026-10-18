@@ -9,6 +9,7 @@ import {
 import { renderArabicDoctorDirectoryHtml } from "@/lib/i18n/arabic-radiation-html";
 import { doctorsForLocale } from "@/lib/locale-catalog";
 import { filterDoctors } from "@/lib/catalog";
+import { parsePrettyCatalogSegments, prettyCatalogPath, toPrettySegment } from "@/lib/pretty-catalog-path";
 
 const IMRT = "Intensity-Modulated Radiotherapy (IMRT)";
 const PUBLISHED = { status: "published" as const };
@@ -85,4 +86,63 @@ test("public India procedure HTML renders the long form, and a city URL does not
   const markup = JSON.stringify(ArabicRadiationProcedureSsrDocument({ data: page }));
   for (const question of page.copy.faqs) assert.ok(markup.includes(question.q));
   assert.ok(markup.includes(page.copy.h1));
+});
+
+const EBRT = "External Beam Radiotherapy (EBRT)";
+
+test("EBRT pretty URL drops parentheses and the old segment still resolves", () => {
+  assert.equal(toPrettySegment(EBRT), "External-Beam-Radiotherapy-EBRT");
+  assert.equal(
+    prettyCatalogPath("/doctors", { destination: "India", specialty: "Radiation Oncology", procedure: EBRT }),
+    "/doctors/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
+  );
+  for (const segment of ["External-Beam-Radiotherapy-(EBRT)", "External-Beam-Radiotherapy-EBRT"]) {
+    assert.equal(
+      parsePrettyCatalogSegments(["India", "Radiation-Oncology", segment])?.procedure,
+      EBRT,
+      segment,
+    );
+  }
+});
+
+test("EBRT Arabic HTML is extractable and does not invent ratings or prices", () => {
+  const html = renderArabicDoctorDirectoryHtml({
+    destination: "India",
+    specialty: "Radiation Oncology",
+    procedure: EBRT,
+  });
+  assert.ok(html);
+  assert.match(html, /lang="ar"/);
+  assert.match(html, /dir="rtl"/);
+  assert.match(html, /rel="canonical" href="https:\/\/gaf\.healthcare\/ar\/doctors\/India\/Radiation-Oncology\/External-Beam-Radiotherapy-EBRT"/);
+  assert.equal(html.includes("External-Beam-Radiotherapy-(EBRT)"), false);
+  assert.match(html, /hrefLang="ar"/);
+  assert.match(html, /hrefLang="en"/);
+  assert.match(html, /hrefLang="x-default"/);
+  assert.match(html, /property="og:title"/);
+  assert.match(html, /name="twitter:card"/);
+  assert.match(html, /نظرة عامة/);
+  assert.match(html, /EBRT وIMRT وسايبر نايف/);
+  assert.match(html, /لم تُراجع هذه الصفحة طبيًا بشكل مستقل/);
+  assert.equal(html.includes("AggregateRating"), false);
+  assert.equal(html.includes("نسبة نجاح"), false);
+  assert.equal(/SAR|ريال سعودي/.test(html), false);
+  const page = buildArabicRadiationProcedure(
+    { destination: "India", specialty: "Radiation Oncology", procedure: EBRT },
+    1,
+    doctorsForLocale("ar"),
+    undefined,
+    PUBLISHED,
+  );
+  assert.ok(page);
+  const markup = JSON.stringify(ArabicRadiationProcedureSsrDocument({ data: page }));
+  assert.match(markup, /MedicalProcedure/);
+  assert.match(markup, /howPerformed/);
+  assert.match(markup, /bodyLocation/);
+  assert.match(markup, /NoninvasiveProcedure/);
+  assert.match(markup, /FAQPage/);
+  assert.match(markup, /BreadcrumbList/);
+  assert.match(markup, /EducationalOccupationalCredential|jobTitle/);
+  assert.equal(markup.includes("AggregateRating"), false);
+  assert.equal(markup.includes('"code"'), false);
 });

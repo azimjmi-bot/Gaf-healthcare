@@ -202,7 +202,7 @@ Some small, slow-growing and asymptomatic meningiomas may be monitored with regu
 
 When treatment is required, surgery may be considered depending on the tumour's size, location, growth, symptoms, and relationship with important structures. Named [meningioma surgery](/costs/India/Neurosurgery/Meningioma-Surgery) is **$6,500–$15,000** (typically **5–10 nights**). Meningioma lists sit on [Delhi NCR](/doctors/India/Delhi-NCR/Neurosurgery/Meningioma-Surgery), [Mumbai](/doctors/India/Mumbai/Neurosurgery/Meningioma-Surgery), [Bengaluru](/doctors/India/Bengaluru/Neurosurgery/Meningioma-Surgery), [Chennai](/doctors/India/Chennai/Neurosurgery/Meningioma-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Neurosurgery/Meningioma-Surgery).
 
-For selected meningiomas, [stereotactic radiosurgery](/costs/India/Radiation-Oncology/Stereotactic-Radiosurgery-(SRS)) (**$8,500–$18,000**, typically **1–5 sessions**) or [Gamma Knife](/costs/India/Radiation-Oncology/Gamma-Knife) (**$10,500–$22,000**, typically **1 session**) may also be considered, particularly when complete surgical removal is not appropriate or residual disease remains.
+For selected meningiomas, [stereotactic radiosurgery](/costs/India/Radiation-Oncology/Stereotactic-Radiosurgery-SRS) (**$8,500–$18,000**, typically **1–5 sessions**) or [Gamma Knife](/costs/India/Radiation-Oncology/Gamma-Knife) (**$10,500–$22,000**, typically **1 session**) may also be considered, particularly when complete surgical removal is not appropriate or residual disease remains.
 
 ![Extra-axial convexity meningioma on the brain surface after a bone flap has been lifted](/uploads/treatments/brain-tumor-meningioma.webp)
 
@@ -396,7 +396,7 @@ Not being able to remove the entire tumour does not mean treatment has failed.
 
 A surgeon may intentionally leave tumour tissue behind if further removal would create an unacceptable risk to neurological function.
 
-Depending on the pathology, the remaining tumour may then be treated with [radiation therapy](/costs/India/Radiation-Oncology/EBRT), [stereotactic radiosurgery](/costs/India/Radiation-Oncology/Stereotactic-Radiosurgery-(SRS)), [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy), [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy), tumour-specific systemic treatment, observation in selected cases, or clinical trials.
+Depending on the pathology, the remaining tumour may then be treated with [radiation therapy](/costs/India/Radiation-Oncology/EBRT), [stereotactic radiosurgery](/costs/India/Radiation-Oncology/Stereotactic-Radiosurgery-SRS), [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy), [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy), tumour-specific systemic treatment, observation in selected cases, or clinical trials.
 
 The treatment after surgery is determined by the tumour's pathology and molecular profile.
 
@@ -442,7 +442,7 @@ There is no medically responsible single price for "brain tumor surgery" because
 | [Stereotactic brain biopsy](/costs/India/Neurosurgery/Stereotactic-Brain-Biopsy) | $2,000–$6,000 | 1–3 nights |
 | [Skull base surgery](/costs/India/ENT/Skull-Base-Surgery) | $8,000–$22,000 | 5–12 nights |
 | [EBRT](/costs/India/Radiation-Oncology/EBRT) after surgery | $1,000–$6,000+ | 15–35 sessions |
-| [Stereotactic radiosurgery](/costs/India/Radiation-Oncology/Stereotactic-Radiosurgery-(SRS)) | $8,500–$18,000 | 1–5 sessions |
+| [Stereotactic radiosurgery](/costs/India/Radiation-Oncology/Stereotactic-Radiosurgery-SRS) | $8,500–$18,000 | 1–5 sessions |
 | [Gamma Knife](/costs/India/Radiation-Oncology/Gamma-Knife) | $10,500–$22,000 | 1 session typical |
 | [Chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) | $1,500–$8,000+ | Outpatient cycles |
 | [Targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) | $8,000–$30,000 | Months of therapy |
@@ -689,7 +689,7 @@ Share your medical reports and brain imaging before making travel arrangements. 
 7. [Johns Hopkins Medicine — Brain tumor](https://www.hopkinsmedicine.org/health/conditions-and-diseases/brain-tumor) — treatment pathways including surgery and adjuvant care.
 8. [GAF Healthcare brain tumor surgery](/costs/India/Neurosurgery/Brain-Tumor-Surgery) — partner USD planning range for tumour resection lists.
 9. [GAF Healthcare glioma surgery](/costs/India/Neurosurgery/Glioma-Surgery) and [meningioma surgery](/costs/India/Neurosurgery/Meningioma-Surgery) — named tumour sheets.
-10. [GAF Healthcare stereotactic radiosurgery](/costs/India/Radiation-Oncology/Stereotactic-Radiosurgery-(SRS)) and [Gamma Knife](/costs/India/Radiation-Oncology/Gamma-Knife) — non-open alternatives for selected lesions.
+10. [GAF Healthcare stereotactic radiosurgery](/costs/India/Radiation-Oncology/Stereotactic-Radiosurgery-SRS) and [Gamma Knife](/costs/India/Radiation-Oncology/Gamma-Knife) — non-open alternatives for selected lesions.
 
 **Last reviewed against the cited sources: September 2026.**
 

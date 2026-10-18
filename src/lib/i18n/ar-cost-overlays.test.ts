@@ -96,7 +96,7 @@ test("Arabic costs publish the reviewed hierarchy without inventing city prices"
   assert.equal(
     localePageState(
       "ar",
-      "/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+      "/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
     ),
     "noindex",
   );
@@ -104,7 +104,7 @@ test("Arabic costs publish the reviewed hierarchy without inventing city prices"
 
 test("Arabic procedure metadata is localized, canonical and search-specific", () => {
   const path =
-    "/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)";
+    "/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting";
   const metadata = arabicCostProcedureMetadata({
     destination: "India",
     specialty: "Cardiac Surgery",

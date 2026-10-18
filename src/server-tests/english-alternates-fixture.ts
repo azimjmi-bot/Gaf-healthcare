@@ -76,7 +76,7 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
   },
   {
     label: "doctor facet: country/city/specialty/procedure",
-    path: "/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    path: "/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
     published: ["en", "ar"],
   },
   {
@@ -170,7 +170,7 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
   },
   {
     label: "hospital facet: country/city/specialty/procedure",
-    path: "/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    path: "/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
     published: ["en", "ar"],
   },
   // These three bracket the profile-count floor: one Arabic record, two, and
@@ -181,12 +181,12 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
   // stopped working.
   {
     label: "hospital facet with 1 Arabic record",
-    path: "/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    path: "/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
     published: ["en"],
   },
   {
     label: "hospital facet with 2 Arabic records",
-    path: "/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    path: "/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
     published: ["en"],
   },
   {
@@ -214,14 +214,14 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
   // which is why the row after this one never lost its block.
   {
     label: "cost facet: country/specialty/procedure",
-    path: "/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    path: "/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
     published: ["en", "ar"],
   },
   // Routable in Arabic for filtering, but noindex until a city-specific price
   // or editorial exists; the national band must not masquerade as local data.
   {
     label: "cost facet: country/city/specialty/procedure",
-    path: "/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    path: "/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
     published: ["en"],
   },
   // Serves 200 and points its canonical at the hierarchical country path

@@ -137,7 +137,7 @@ test("Neurology routes consolidate nationally and retain city context", () => {
     specialty: "Neurology",
     procedure: "Electromyography (EMG)",
   });
-  assert.equal(emg, "/costs/India/Neurology/Electromyography-(EMG)");
+  assert.equal(emg, "/costs/India/Neurology/Electromyography-EMG");
   assert.deepEqual(parsePrettyCatalogSegments([
     "India",
     "Neurology",
@@ -153,7 +153,7 @@ test("Neurology routes consolidate nationally and retain city context", () => {
     specialty: "Neurology",
     procedure: "Sleep Study (Polysomnography)",
   });
-  assert.equal(sleep, "/costs/India/Mumbai/Neurology/Sleep-Study-(Polysomnography)");
+  assert.equal(sleep, "/costs/India/Mumbai/Neurology/Sleep-Study-Polysomnography");
   assert.deepEqual(parsePrettyCatalogSegments(sleep.split("/").slice(2)), {
     destination: "India",
     city: "Mumbai",

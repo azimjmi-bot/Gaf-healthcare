@@ -81,7 +81,7 @@ test("the appointment checklist keeps the records list and quotes published proc
     "/costs/India/Cardiology/Coronary-Angioplasty-Stenting",
     "/costs/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting",
     "/costs/India/Mumbai/Cardiology/Coronary-Angioplasty-Stenting",
-    "/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
     "/costs/India/Cardiac-Surgery/Heart-Valve-Replacement",
     "/costs/India/Cardiology/Pacemaker-Implantation",
     "/costs/India/Cardiology/Atrial-Fibrillation-Ablation",

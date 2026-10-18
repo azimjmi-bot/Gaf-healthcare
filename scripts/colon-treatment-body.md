@@ -1,6 +1,6 @@
 **Colon cancer treatment in India** combines advanced colorectal surgery, chemotherapy, targeted therapy, immunotherapy, molecular testing, minimally invasive procedures, and multidisciplinary cancer care. Named dendritic-cell lists sit on [Dendritic Cell Therapy in India](/treatments/dendritic-cell-therapy-in-india). The appropriate treatment depends primarily on the stage of cancer, tumour location, pathology, molecular profile, whether the cancer can be completely removed, and the patient's overall health.
 
-For localized colon cancer, [surgery](/costs/India/Surgical-Oncology/Colectomy) is usually the main treatment. Depending on the stage and risk of recurrence, [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) may be given after surgery. For advanced or metastatic colon cancer, treatment may involve systemic chemotherapy, [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy), [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy), and, in selected patients, surgery or local treatment of metastases in the [liver](/costs/India/Surgical-Oncology/Liver-Resection-(Hepatectomy)) or lungs.
+For localized colon cancer, [surgery](/costs/India/Surgical-Oncology/Colectomy) is usually the main treatment. Depending on the stage and risk of recurrence, [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) may be given after surgery. For advanced or metastatic colon cancer, treatment may involve systemic chemotherapy, [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy), [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy), and, in selected patients, surgery or local treatment of metastases in the [liver](/costs/India/Surgical-Oncology/Liver-Resection-Hepatectomy) or lungs.
 
 India has established cancer centres with colorectal surgeons, gastrointestinal oncologists, medical oncologists, radiation oncologists, interventional radiologists, pathologists, genetic specialists, nutrition teams and critical-care services working together for complex cases.
 
@@ -396,7 +396,7 @@ Some patients with limited liver disease may be considered for liver resection, 
 
 The decision depends on the number of metastases, size, location, relationship to major blood vessels, remaining functional liver, presence of disease elsewhere, response to systemic treatment and patient fitness.
 
-A multidisciplinary team involving colorectal surgeons, hepatobiliary surgeons, medical oncologists and radiologists may be required. GAF planning ranges for [liver resection (hepatectomy)](/costs/India/Surgical-Oncology/Liver-Resection-(Hepatectomy)) are **$10,000–$26,000**.
+A multidisciplinary team involving colorectal surgeons, hepatobiliary surgeons, medical oncologists and radiologists may be required. GAF planning ranges for [liver resection (hepatectomy)](/costs/India/Surgical-Oncology/Liver-Resection-Hepatectomy) are **$10,000–$26,000**.
 
 [Ask about liver-metastasis surgery](/consult?treatment=Liver%20Resection%20(Hepatectomy))
 
@@ -480,7 +480,7 @@ For international patients, a useful planning estimate should therefore be based
 | [Chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) | $1,500–$8,000+ |
 | [Targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) | $8,000–$30,000 |
 | [Immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) | $15,000–$45,000 |
-| [Liver resection](/costs/India/Surgical-Oncology/Liver-Resection-(Hepatectomy)) | $10,000–$26,000 |
+| [Liver resection](/costs/India/Surgical-Oncology/Liver-Resection-Hepatectomy) | $10,000–$26,000 |
 | [CRS with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) | $18,000–$40,000 |
 | [EBRT](/costs/India/Radiation-Oncology/EBRT) when indicated | $1,000–$6,000+ |
 | [Precision oncology / molecular testing](/costs/India/Medical-Oncology/Precision-Oncology) | $2,000–$7,000 |

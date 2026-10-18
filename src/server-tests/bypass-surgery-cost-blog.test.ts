@@ -66,9 +66,9 @@ test("the bypass cost guide quotes published CABG ranges and the institutional p
   );
 
   for (const path of [
-    "/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
-    "/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
-    "/costs/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
+    "/costs/India/Mumbai/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
     "/costs/India/Cardiac-Surgery/Redo-CABG",
     "/costs/India/Cardiac-Surgery/Minimally-Invasive-Cardiac-Surgery",
     "/costs/India/Cardiac-Surgery/Robotic-Cardiac-Surgery",

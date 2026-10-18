@@ -71,7 +71,7 @@ test("the VSD surgery guide keeps the quick answer and the directory planning ba
     "/hospitals/India/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Chennai/Pediatric-Cardiac-Surgery",
     "/costs/India/Pediatric-Cardiac-Surgery",
-    "/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/costs/India/Pediatric-Cardiac-Surgery/VSD-Closure-Ventricular-Septal-Defect",
     "/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery",
     "/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery",
     "/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery",

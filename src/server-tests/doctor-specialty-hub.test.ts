@@ -23,7 +23,7 @@ test("Radiation Oncology India hub uses the Best H1 and existing cost URLs", () 
   assert.equal(hub.heading, "Best Radiation Oncologists in India");
   assert.ok(hub.paging.total >= 60);
   assert.ok(hub.costs.every((row) => row.href.startsWith("/costs/")));
-  assert.ok(hub.costs.some((row) => row.href.includes("Intensity-Modulated-Radiotherapy-(IMRT)")));
+  assert.ok(hub.costs.some((row) => row.href.includes("Intensity-Modulated-Radiotherapy-IMRT")));
   assert.ok(hub.conditions.every((row) => row.href === "/costs/India/Radiation-Oncology"));
   assert.ok(hub.cities.some((row) => row.href === "/doctors/India/Delhi-NCR/Radiation-Oncology"));
   assert.deepEqual(
@@ -122,7 +122,7 @@ test("IMRT doctor list reuses the existing cost guide and explicit condition tax
   assert.equal(hub.heading, "Best Radiation Oncologists for IMRT in India");
   assert.ok(
     hub.costs.some(
-      (row) => row.href === "/costs/India/Radiation-Oncology/Intensity-Modulated-Radiotherapy-(IMRT)",
+      (row) => row.href === "/costs/India/Radiation-Oncology/Intensity-Modulated-Radiotherapy-IMRT",
     ),
   );
   assert.ok(hub.conditions.some((row) => row.name === "Prostate cancer"));

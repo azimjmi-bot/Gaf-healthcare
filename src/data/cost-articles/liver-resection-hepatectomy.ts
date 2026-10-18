@@ -674,8 +674,8 @@ export const liverResection: CostArticle = {
     { href: "/costs/rectal-cancer-surgery", label: "rectal cancer surgery cost in India" },
     { href: "/costs/gastrectomy", label: "gastrectomy cost in India" },
     { href: "/costs/esophagectomy", label: "esophagectomy cost in India" },
-    { href: "/doctors/India/Liver-Resection-(Hepatectomy)", label: "liver resection surgeons in India" },
-    { href: "/hospitals/India/Liver-Resection-(Hepatectomy)", label: "liver resection hospitals in India" },
+    { href: "/doctors/India/Liver-Resection-Hepatectomy", label: "liver resection surgeons in India" },
+    { href: "/hospitals/India/Liver-Resection-Hepatectomy", label: "liver resection hospitals in India" },
   ],
 
   figures: [

@@ -39,7 +39,7 @@ test("a locale with no equivalent page falls back to its own home", () => {
   // A city-procedure page has no reviewed city-specific Arabic price yet, so
   // the switcher does not claim it is equivalent.
   const cityProcedure =
-    "/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)";
+    "/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT";
   const fromCosts = languageOptions(cityProcedure);
   const arabic = fromCosts.find((option) => option.locale === "ar");
   assert.ok(arabic, "Arabic should still be reachable from an English-only page");

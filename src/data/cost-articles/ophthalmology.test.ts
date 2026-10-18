@@ -240,7 +240,7 @@ test("uses canonical national sheets and keeps differentiated city routes", () =
       specialty: "Ophthalmology",
       procedure: "ICL (Implantable Collamer Lens)",
     }),
-    "/costs/India/Ophthalmology/ICL-(Implantable-Collamer-Lens)",
+    "/costs/India/Ophthalmology/ICL-Implantable-Collamer-Lens",
   );
   assert.equal(
     costsFilterPath({

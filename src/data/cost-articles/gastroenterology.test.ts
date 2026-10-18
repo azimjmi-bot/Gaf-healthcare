@@ -149,7 +149,7 @@ test("GI routes consolidate nationally and retain city context", () => {
     specialty: "Gastroenterology",
     procedure: "PTBD (Percutaneous Transhepatic Biliary Drainage)",
   });
-  assert.equal(ptbd, "/costs/India/Chennai/Gastroenterology/PTBD-(Percutaneous-Transhepatic-Biliary-Drainage)");
+  assert.equal(ptbd, "/costs/India/Chennai/Gastroenterology/PTBD-Percutaneous-Transhepatic-Biliary-Drainage");
 });
 
 test("each procedure declares three unique, descriptive WebP figures", () => {

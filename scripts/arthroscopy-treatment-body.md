@@ -1,10 +1,10 @@
 **Knee arthroscopy surgery in India** is a minimally invasive procedure used to examine and, when appropriate, treat problems inside the knee joint. Instead of a large incision, an orthopaedic surgeon inserts a small camera called an arthroscope through a tiny opening. Additional small portals allow specialised instruments to repair or remove damaged tissue.
 
-Knee arthroscopy can be used for selected [meniscus tears](/costs/India/Orthopedics/Meniscus-Repair), [ACL](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) and [PCL](/costs/India/Orthopedics/PCL-Reconstruction-(Posterior-Cruciate-Ligament)) injuries, loose bodies, cartilage problems, synovial disorders and other intra-articular conditions. It is **not automatically recommended for every patient with knee pain or arthritis**. The underlying diagnosis, age, activity level, symptoms, imaging findings and response to non-surgical treatment all matter.
+Knee arthroscopy can be used for selected [meniscus tears](/costs/India/Orthopedics/Meniscus-Repair), [ACL](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) and [PCL](/costs/India/Orthopedics/PCL-Reconstruction-Posterior-Cruciate-Ligament) injuries, loose bodies, cartilage problems, synovial disorders and other intra-articular conditions. It is **not automatically recommended for every patient with knee pain or arthritis**. The underlying diagnosis, age, activity level, symptoms, imaging findings and response to non-surgical treatment all matter.
 
 India has established orthopaedic and sports-medicine centres where knee arthroscopy is performed using modern arthroscopic equipment. Patients travelling to India may combine pre-operative evaluation, surgery, rehabilitation and follow-up under one coordinated care pathway.
 
-GAF Healthcare planning for [arthroscopic surgery](/costs/India/Orthopedics/Arthroscopic-Surgery) is **$2,000–$5,500** (typically **outpatient or 1–2 nights**). Neighbouring [meniscus repair](/costs/India/Orthopedics/Meniscus-Repair) is **$1,800–$4,500** (outpatient or 1 night). Named [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) is a different sheet: **$2,500–$6,500** (1–3 nights). These are planning ranges from partner hospital cost sheets, not hospital quotations.
+GAF Healthcare planning for [arthroscopic surgery](/costs/India/Orthopedics/Arthroscopic-Surgery) is **$2,000–$5,500** (typically **outpatient or 1–2 nights**). Neighbouring [meniscus repair](/costs/India/Orthopedics/Meniscus-Repair) is **$1,800–$4,500** (outpatient or 1 night). Named [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) is a different sheet: **$2,500–$6,500** (1–3 nights). These are planning ranges from partner hospital cost sheets, not hospital quotations.
 
 International patients comparing [orthopaedic surgeons](/doctors/India/Orthopedics) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Orthopedics/Arthroscopic-Surgery), [Mumbai](/doctors/India/Mumbai/Orthopedics/Arthroscopic-Surgery), [Bengaluru](/doctors/India/Bengaluru/Orthopedics/Arthroscopic-Surgery), [Chennai](/doctors/India/Chennai/Orthopedics/Arthroscopic-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Orthopedics/Arthroscopic-Surgery). Partner [orthopaedic hospitals](/hospitals/India/Orthopedics) in [Delhi NCR](/hospitals/India/Delhi-NCR/Orthopedics), [Mumbai](/hospitals/India/Mumbai/Orthopedics) and [Bengaluru](/hospitals/India/Bengaluru/Orthopedics) are a typical first filter. City cost sheets include [Delhi NCR](/costs/India/Delhi-NCR/Orthopedics/Arthroscopic-Surgery), [Mumbai](/costs/India/Mumbai/Orthopedics/Arthroscopic-Surgery), [Bengaluru](/costs/India/Bengaluru/Orthopedics/Arthroscopic-Surgery), [Chennai](/costs/India/Chennai/Orthopedics/Arthroscopic-Surgery) and [Hyderabad](/costs/India/Hyderabad/Orthopedics/Arthroscopic-Surgery).
 
@@ -34,7 +34,7 @@ General, regional/spinal or local depending on procedure and patient
 Usually several small portals
 
 **Hospital stay**
-GAF planning: outpatient or 1–2 nights for [arthroscopic surgery](/costs/India/Orthopedics/Arthroscopic-Surgery); 1–3 nights when the episode is [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament))
+GAF planning: outpatient or 1–2 nights for [arthroscopic surgery](/costs/India/Orthopedics/Arthroscopic-Surgery); 1–3 nights when the episode is [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament)
 
 **Surgery duration**
 Often less than 1 hour for straightforward procedures; longer for complex reconstruction
@@ -79,7 +79,7 @@ The decision between repair and removal depends on tear pattern, location, blood
 
 ### 2. ACL tear and ACL reconstruction
 
-An ACL injury commonly occurs during sports involving sudden stopping, pivoting or changing direction. For patients who require surgical reconstruction, [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) is generally performed using arthroscopic techniques.
+An ACL injury commonly occurs during sports involving sudden stopping, pivoting or changing direction. For patients who require surgical reconstruction, [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) is generally performed using arthroscopic techniques.
 
 The named GAF sheet is **$2,500–$6,500** (typically **1–3 nights**), not the generic arthroscopy range. The coordinated pathway is [ACL Surgery in India](/treatments/acl-surgery-in-india).
 
@@ -89,7 +89,7 @@ ACL reconstruction may be considered when the knee remains unstable, the patient
 
 ### 3. PCL and other ligament procedures
 
-Selected [PCL reconstruction](/costs/India/Orthopedics/PCL-Reconstruction-(Posterior-Cruciate-Ligament)) and complex ligament injuries can also be treated using arthroscopic techniques. GAF planning is **$3,000–$7,500** (1–3 nights). Combined multi-ligament work is quoted after case review.
+Selected [PCL reconstruction](/costs/India/Orthopedics/PCL-Reconstruction-Posterior-Cruciate-Ligament) and complex ligament injuries can also be treated using arthroscopic techniques. GAF planning is **$3,000–$7,500** (1–3 nights). Combined multi-ligament work is quoted after case review.
 
 ### 4. Loose bodies in the knee
 
@@ -264,8 +264,8 @@ The cost of knee arthroscopy in India varies considerably according to the exact
 | --- | --- | --- |
 | [Arthroscopic surgery](/costs/India/Orthopedics/Arthroscopic-Surgery) (diagnostic, loose body, selected meniscectomy/chondroplasty) | $2,000–$5,500 | Outpatient or 1–2 nights |
 | [Meniscus repair](/costs/India/Orthopedics/Meniscus-Repair) | $1,800–$4,500 | Outpatient or 1 night |
-| [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) | $2,500–$6,500 | 1–3 nights |
-| [PCL reconstruction](/costs/India/Orthopedics/PCL-Reconstruction-(Posterior-Cruciate-Ligament)) | $3,000–$7,500 | 1–3 nights |
+| [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) | $2,500–$6,500 | 1–3 nights |
+| [PCL reconstruction](/costs/India/Orthopedics/PCL-Reconstruction-Posterior-Cruciate-Ligament) | $3,000–$7,500 | 1–3 nights |
 | Combined ACL + meniscus | Quoted after case review from the ACL sheet | Depends on the meniscus protocol |
 | Cartilage restoration / microfracture | Quoted after case review from the arthroscopy sheet | Depends on the protocol |
 | [Total knee replacement](/costs/India/Orthopedics/Total-Knee-Replacement) (if the problem is arthritis, not a scope target) | $5,500–$12,000 | 4–7 nights |

@@ -2,9 +2,9 @@
 
 A surgical aortic valve is a different product. Named surgical lists sit on [aortic valve replacement](/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement). Neighbouring [heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) covers broader surgical valve work. Heart valve replacement lists sit on [Heart Valve Replacement Surgery in India](/treatments/heart-valve-replacement-in-india). Tricuspid replacement lists sit on [Tricuspid Valve Replacement Surgery in India](/treatments/tricuspid-valve-replacement-in-india). A coronary stent is a different product again. Named PCI sits on [Coronary Angioplasty in India](/treatments/coronary-angioplasty-in-india). Pacing after TAVR sits on [Pacemaker Implantation in India](/treatments/pacemaker-implantation-in-india). This page is the named TAVR/TAVI product. Coarctation lists sit on [Coarctation Repair Surgery in India](/treatments/coarctation-repair-surgery-in-india). Bentall lists sit on [Bentall Procedure in India](/treatments/bentall-procedure-in-india). VSD lists sit on [Ventricular Septal Defect (VSD) Surgery in India](/treatments/ventricular-septal-defect-surgery-in-india). Aortic dissection lists sit on [Aortic Dissection Repair Surgery in India](/treatments/aortic-dissection-repair-in-india).
 
-GAF Healthcare planning for [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) is **$18,000–$42,000** (typically **3–7 nights**). US comparison is **$50,000–$150,000**. Named [aortic valve replacement](/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement) is **$7,000–$18,500** (typically **8–16 nights**) when surgery is the honest product. Neighbouring [heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) is **$7,000–$18,000** (typically **8–16 nights**). Neighbouring [coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) is **$3,200–$8,500** (typically **1–3 nights**) when coronary disease needs treatment in the same pathway. Neighbouring [pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) is **$3,500–$9,000** (typically **1–3 nights**) if conduction injury requires pacing. Neighbouring [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) is **$5,500–$14,000** (typically **7–14 nights**) when bypass rather than a catheter valve is the product. These are planning ranges from partner hospital cost sheets, not hospital quotations. Valve-in-valve TAVR, alternative-access TAVR, bicuspid anatomy, combined PCI, pacemaker implantation and paediatric cases are quoted after Heart Team review.
+GAF Healthcare planning for [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement) is **$18,000–$42,000** (typically **3–7 nights**). US comparison is **$50,000–$150,000**. Named [aortic valve replacement](/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement) is **$7,000–$18,500** (typically **8–16 nights**) when surgery is the honest product. Neighbouring [heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) is **$7,000–$18,000** (typically **8–16 nights**). Neighbouring [coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) is **$3,200–$8,500** (typically **1–3 nights**) when coronary disease needs treatment in the same pathway. Neighbouring [pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) is **$3,500–$9,000** (typically **1–3 nights**) if conduction injury requires pacing. Neighbouring [CABG](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) is **$5,500–$14,000** (typically **7–14 nights**) when bypass rather than a catheter valve is the product. These are planning ranges from partner hospital cost sheets, not hospital quotations. Valve-in-valve TAVR, alternative-access TAVR, bicuspid anatomy, combined PCI, pacemaker implantation and paediatric cases are quoted after Heart Team review.
 
-International patients comparing [cardiologists](/doctors/India/Cardiology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)), [Mumbai](/doctors/India/Mumbai/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)), [Bengaluru](/doctors/India/Bengaluru/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)), [Chennai](/doctors/India/Chennai/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) and [Hyderabad](/doctors/India/Hyderabad/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)). Partner [cardiac surgery hospitals](/hospitals/India/Cardiac-Surgery) in [Delhi NCR](/hospitals/India/Delhi-NCR/Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Cardiac-Surgery) and [Bengaluru](/hospitals/India/Bengaluru/Cardiac-Surgery), and in [Chennai](/hospitals/India/Chennai/Cardiac-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Cardiac-Surgery), are a typical first filter because TAVR needs on-site surgical backup. City cost sheets include [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)), [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)), [Bengaluru](/costs/India/Bengaluru/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)), [Chennai](/costs/India/Chennai/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) and [Hyderabad](/costs/India/Hyderabad/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)). Kolkata, Pune, Ahmedabad, Chandigarh and Kochi may have structural-heart services, but they are not live GAF catalog cities on this site.
+International patients comparing [cardiologists](/doctors/India/Cardiology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement), [Mumbai](/doctors/India/Mumbai/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement), [Bengaluru](/doctors/India/Bengaluru/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement), [Chennai](/doctors/India/Chennai/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement) and [Hyderabad](/doctors/India/Hyderabad/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement). Partner [cardiac surgery hospitals](/hospitals/India/Cardiac-Surgery) in [Delhi NCR](/hospitals/India/Delhi-NCR/Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Cardiac-Surgery) and [Bengaluru](/hospitals/India/Bengaluru/Cardiac-Surgery), and in [Chennai](/hospitals/India/Chennai/Cardiac-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Cardiac-Surgery), are a typical first filter because TAVR needs on-site surgical backup. City cost sheets include [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement), [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement), [Bengaluru](/costs/India/Bengaluru/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement), [Chennai](/costs/India/Chennai/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement) and [Hyderabad](/costs/India/Hyderabad/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement). Kolkata, Pune, Ahmedabad, Chandigarh and Kochi may have structural-heart services, but they are not live GAF catalog cities on this site.
 
 > Important: TAVR is not suitable for everyone with aortic stenosis. A Heart Team must determine whether TAVR, surgical AVR or another approach is appropriate after echocardiography, CT planning and overall fitness. New or worsening chest pain, fainting or severe breathlessness belongs in a **local emergency department**, not in a WhatsApp message.
 
@@ -142,7 +142,7 @@ TAVR planning is considerably more detailed than a routine cardiac procedure.
 
 ![Educational illustration of CT TAVR planning for annulus size, coronary height and vascular access](/uploads/treatments/tavr-ct-planning.webp)
 
-**Coronary evaluation.** Some patients require coronary angiography or CT coronary assessment. If significant coronary artery disease is present, the treatment strategy may need to incorporate coronary intervention or surgical treatment. Named PCI sits on [Coronary Angioplasty in India](/treatments/coronary-angioplasty-in-india). Named [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) is a neighbouring surgical product. CABG lists sit on [CABG Surgery in India](/treatments/cabg-surgery-in-india).
+**Coronary evaluation.** Some patients require coronary angiography or CT coronary assessment. If significant coronary artery disease is present, the treatment strategy may need to incorporate coronary intervention or surgical treatment. Named PCI sits on [Coronary Angioplasty in India](/treatments/coronary-angioplasty-in-india). Named [CABG](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) is a neighbouring surgical product. CABG lists sit on [CABG Surgery in India](/treatments/cabg-surgery-in-india).
 
 **ECG** establishes the patient's baseline rhythm and conduction status. This is important because conduction abnormalities can occur after TAVR and some patients may require permanent pacing.
 
@@ -246,7 +246,7 @@ The Heart Team considers patient age, expected lifespan, valve anatomy, prosthes
 
 Recovery is generally faster than after conventional open-heart valve surgery.
 
-GAF planning for [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) is typically **3–7 nights**. Some hospital pages quote same-day or next-day discharge after uncomplicated transfemoral TAVR. International patients should not plan travel from the shortest published stay.
+GAF planning for [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement) is typically **3–7 nights**. Some hospital pages quote same-day or next-day discharge after uncomplicated transfemoral TAVR. International patients should not plan travel from the shortest published stay.
 
 In the first hours, the patient is monitored for heart rhythm, blood pressure, bleeding, vascular complications, neurological symptoms and valve function. In the first days, light walking is usually encouraged once it is safe. The access site should be observed for bleeding, swelling or increasing pain. Over the following weeks, activity is gradually increased according to instructions on exercise, driving, lifting, medication, wound care and cardiac rehabilitation.
 
@@ -268,12 +268,12 @@ The cost of TAVR in India varies considerably because the valve itself represent
 
 | Type / complexity | GAF planning | Typical stay |
 | --- | --- | --- |
-| [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) | $18,000–$42,000 | 3–7 nights |
+| [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement) | $18,000–$42,000 | 3–7 nights |
 | [Aortic valve replacement](/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement) | $7,000–$18,500 | 8–16 nights |
 | [Heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) | $7,000–$18,000 | 8–16 nights |
 | [Coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) | $3,200–$8,500 | 1–3 nights |
 | [Pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) | $3,500–$9,000 | 1–3 nights |
-| [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | $5,500–$14,000 | 7–14 nights |
+| [CABG](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) | $5,500–$14,000 | 7–14 nights |
 | Valve-in-valve, alternative access, bicuspid anatomy, combined procedures | Quoted after case review | Depends on the case |
 
 US comparison for TAVR/TAVI is **$50,000–$150,000**.
@@ -282,11 +282,11 @@ Major cost drivers include valve type, size and manufacturer, hospital and city,
 
 City starting points:
 
-- [Delhi NCR TAVR cost](/costs/India/Delhi-NCR/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement))
-- [Mumbai TAVR cost](/costs/India/Mumbai/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement))
-- [Bengaluru TAVR cost](/costs/India/Bengaluru/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement))
-- [Chennai TAVR cost](/costs/India/Chennai/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement))
-- [Hyderabad TAVR cost](/costs/India/Hyderabad/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement))
+- [Delhi NCR TAVR cost](/costs/India/Delhi-NCR/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement)
+- [Mumbai TAVR cost](/costs/India/Mumbai/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement)
+- [Bengaluru TAVR cost](/costs/India/Bengaluru/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement)
+- [Chennai TAVR cost](/costs/India/Chennai/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement)
+- [Hyderabad TAVR cost](/costs/India/Hyderabad/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement)
 
 [Plan an international TAVR stay](/consult?treatment=TAVR)
 
@@ -342,7 +342,7 @@ TAVR can be performed in selected patients with bicuspid anatomy, but CT-based a
 
 ## TAVR and Coronary Artery Disease
 
-Aortic stenosis and coronary artery disease can coexist. The Heart Team may need to determine whether coronary arteries require medical treatment, [coronary angioplasty](/treatments/coronary-angioplasty-in-india), [surgical bypass](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)), or no immediate intervention. This is another reason why TAVR should be planned as part of a comprehensive cardiac assessment rather than as an isolated valve procedure.
+Aortic stenosis and coronary artery disease can coexist. The Heart Team may need to determine whether coronary arteries require medical treatment, [coronary angioplasty](/treatments/coronary-angioplasty-in-india), [surgical bypass](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting), or no immediate intervention. This is another reason why TAVR should be planned as part of a comprehensive cardiac assessment rather than as an isolated valve procedure.
 
 ## TAVR and Pacemaker
 
@@ -396,7 +396,7 @@ GAF planning is typically **3–7 nights**. Some hospital pages quote one or two
 
 ### How much does TAVR cost in India?
 
-GAF [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) planning is **$18,000–$42,000**. Named surgical AVR and pacemaker sheets differ. A written estimate after CT and echo review is required.
+GAF [TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement) planning is **$18,000–$42,000**. Named surgical AVR and pacemaker sheets differ. A written estimate after CT and echo review is required.
 
 ### Does the TAVR cost include the valve?
 
@@ -461,7 +461,7 @@ Share echocardiography, CT TAVR planning and coronary records before making trav
 7. [Guy's and St Thomas' NHS Foundation Trust — TAVI for aortic stenosis](https://www.guysandstthomas.nhs.uk/) — patient-facing TAVI information.
 8. [American Heart Association — Heart valve disease diagnosis and testing](https://www.heart.org/) — echocardiography and severity assessment.
 9. [Current Status of Transcatheter Aortic Valve Replacement in India](https://www.ncbi.nlm.nih.gov/pmc/) — peer-reviewed Indian TAVR context.
-10. [GAF Healthcare TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)) — partner USD planning range for the named transcatheter aortic valve product.
+10. [GAF Healthcare TAVR/TAVI](/costs/India/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement) — partner USD planning range for the named transcatheter aortic valve product.
 
 **Last reviewed against the cited sources: October 2026.**
 

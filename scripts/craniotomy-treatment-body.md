@@ -361,7 +361,7 @@ Named clinicians currently tagged to brain-tumour or related lists include Dr. S
 
 A craniotomy is not automatically the best approach for every intracranial condition.
 
-**Stereotactic radiosurgery.** Stereotactic radiosurgery uses precisely targeted radiation without conventional surgical opening of the skull. It may be appropriate for selected small tumours or vascular conditions. Named radiation-oncology sheets include [stereotactic radiosurgery (SRS)](/costs/India/Radiation-Oncology/Stereotactic-Radiosurgery-(SRS)) at **$8,500–$18,000** (typically **1–5 sessions**) and [Gamma Knife](/costs/India/Radiation-Oncology/Gamma-Knife) at **$10,500–$22,000** (typically **1 session**).
+**Stereotactic radiosurgery.** Stereotactic radiosurgery uses precisely targeted radiation without conventional surgical opening of the skull. It may be appropriate for selected small tumours or vascular conditions. Named radiation-oncology sheets include [stereotactic radiosurgery (SRS)](/costs/India/Radiation-Oncology/Stereotactic-Radiosurgery-SRS) at **$8,500–$18,000** (typically **1–5 sessions**) and [Gamma Knife](/costs/India/Radiation-Oncology/Gamma-Knife) at **$10,500–$22,000** (typically **1 session**).
 
 **Endovascular treatment.** Certain aneurysms and vascular abnormalities can be treated through blood vessels rather than open brain surgery. See [aneurysm coiling](/costs/India/Neurosurgery/Aneurysm-Coiling) and [AVM embolization](/costs/India/Neurosurgery/AVM-Embolization).
 
@@ -522,7 +522,7 @@ Share your medical reports and brain imaging before making travel arrangements. 
 7. [NCBI / StatPearls — Awake Craniotomy](https://www.ncbi.nlm.nih.gov/books/NBK572153/) — indications and functional brain mapping considerations.
 8. [GAF Healthcare brain tumor surgery](/costs/India/Neurosurgery/Brain-Tumor-Surgery) — partner USD planning range for tumour craniotomy lists.
 9. [GAF Healthcare aneurysm clipping](/costs/India/Neurosurgery/Aneurysm-Clipping) — open vascular craniotomy planning range.
-10. [GAF Healthcare skull base surgery](/costs/India/ENT/Skull-Base-Surgery) and [stereotactic radiosurgery](/costs/India/Radiation-Oncology/Stereotactic-Radiosurgery-(SRS)) — neighbouring corridor and non-open alternatives.
+10. [GAF Healthcare skull base surgery](/costs/India/ENT/Skull-Base-Surgery) and [stereotactic radiosurgery](/costs/India/Radiation-Oncology/Stereotactic-Radiosurgery-SRS) — neighbouring corridor and non-open alternatives.
 
 **Last reviewed against the cited sources: September 2026.**
 

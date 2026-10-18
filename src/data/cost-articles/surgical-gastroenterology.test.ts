@@ -170,7 +170,7 @@ test("Surgical Gastro routes consolidate nationally and retain city context", ()
   });
   assert.equal(
     whipple,
-    "/costs/India/Mumbai/Surgical-Gastroenterology/Whipple-Procedure-(Pancreaticoduodenectomy)",
+    "/costs/India/Mumbai/Surgical-Gastroenterology/Whipple-Procedure-Pancreaticoduodenectomy",
   );
 });
 

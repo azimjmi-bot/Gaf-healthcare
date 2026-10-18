@@ -29,6 +29,13 @@ export type RadiationProcedureCopy = {
   comparisonPeer?: string;
   comparisonPeerLabel: string;
   comparison: { aspect: string; ours: string; theirs: string }[];
+  /** Optional three-way table. Only when the procedures are clinically comparable. */
+  board?: {
+    title: string;
+    intro: string;
+    headers: [string, string, string];
+    rows: { aspect: string; cells: [string, string, string] }[];
+  };
   costFactors: string[];
   records: string[];
   international: string;
@@ -166,6 +173,9 @@ export function procedureClaimIssues(copy: RadiationProcedureCopy): string[] {
     ...copy.eligibility,
     copy.comparisonIntro,
     ...copy.comparison.flatMap((row) => [row.aspect, row.ours, row.theirs]),
+    ...(copy.board
+      ? [copy.board.title, copy.board.intro, ...copy.board.headers, ...copy.board.rows.flatMap((row) => [row.aspect, ...row.cells])]
+      : []),
     ...copy.costFactors,
     ...copy.faqs.flatMap((row) => [row.q, row.a]),
   ].join("\n");

@@ -2,13 +2,13 @@
 
 **Heart bypass surgery cost in India** is planned from the named first-time CABG product, not from a single advertised headline package. Heart bypass surgery is also called **Coronary Artery Bypass Grafting (CABG)**. It creates a new route for blood to reach the heart muscle when one or more coronary arteries are significantly narrowed or blocked.
 
-GAF Healthcare planning for [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) is **$5,500–$14,000** (typically **7–14 nights**, then nearby recovery). US comparison is **$70,000–$200,000**. Some straightforward first-time cases sit toward the lower end of this sheet. Complex anatomy, premium theatre time, prolonged ICU or extra products sit higher or move onto a neighbouring sheet.
+GAF Healthcare planning for [CABG](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) is **$5,500–$14,000** (typically **7–14 nights**, then nearby recovery). US comparison is **$70,000–$200,000**. Some straightforward first-time cases sit toward the lower end of this sheet. Complex anatomy, premium theatre time, prolonged ICU or extra products sit higher or move onto a neighbouring sheet.
 
 The procedure page for how grafts are sewn sits on [CABG Surgery in India](/treatments/cabg-surgery-in-india). A catheter that opens the artery from inside is a different product. Named PCI sits on [Coronary Angioplasty in India](/treatments/coronary-angioplasty-in-india). Diagnostic pictures sit on [coronary angiography](/costs/India/Cardiology/Coronary-Angiography). Combined valve work sits on [Heart Valve Replacement Surgery in India](/treatments/heart-valve-replacement-in-india). There is no live GAF city-CABG-cost, heart-attack, cardiac-rehabilitation or redo-CABG-only treatment page. This page is the named heart-bypass-surgery-cost product. Mitral replacement lists sit on [Mitral Valve Replacement Surgery in India](/treatments/mitral-valve-replacement-surgery-in-india). Tricuspid repair lists sit on [Tricuspid Valve Repair in India](/treatments/tricuspid-valve-repair-in-india).
 
 Neighbouring [redo CABG](/costs/India/Cardiac-Surgery/Redo-CABG) is **$8,500–$20,000** (typically **10–18 nights**) when adhesions and conduit scarcity make a second bypass the honest product. Neighbouring [minimally invasive cardiac surgery](/costs/India/Cardiac-Surgery/Minimally-Invasive-Cardiac-Surgery) is **$8,000–$20,000** (typically **5–12 nights**) when a mini approach can actually complete the grafts. Neighbouring [robotic cardiac surgery](/costs/India/Cardiac-Surgery/Robotic-Cardiac-Surgery) is **$10,000–$24,000** (typically **5–12 nights**) on a console the hospital already runs. Neighbouring [coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) is **$3,200–$8,500** (typically **1–3 nights**) when PCI rather than a graft is the product. Neighbouring [coronary angiography](/costs/India/Cardiology/Coronary-Angiography) is **$400–$1,200** (typically **day-care or overnight**). Neighbouring [heart valve replacement](/costs/India/Cardiac-Surgery/Heart-Valve-Replacement) is **$7,000–$18,000** (typically **8–16 nights**) when a valve is replaced in the same pathway. These are planning ranges from partner hospital cost sheets, not hospital quotations.
 
-International patients comparing [cardiac surgeons](/doctors/India/Cardiac-Surgery) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)), [Mumbai](/doctors/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)), [Bengaluru](/doctors/India/Bengaluru/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)), [Chennai](/doctors/India/Chennai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) and [Hyderabad](/doctors/India/Hyderabad/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)). Partner [cardiac surgery hospitals](/hospitals/India/Cardiac-Surgery) in [Delhi NCR](/hospitals/India/Delhi-NCR/Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Cardiac-Surgery) and [Bengaluru](/hospitals/India/Bengaluru/Cardiac-Surgery), and in [Chennai](/hospitals/India/Chennai/Cardiac-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Cardiac-Surgery), are a typical first filter because CABG needs a cardiac ICU, blood bank and emergency backup. City cost sheets include [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)), [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)), [Bengaluru](/costs/India/Bengaluru/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)), [Chennai](/costs/India/Chennai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) and [Hyderabad](/costs/India/Hyderabad/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)). Kolkata, Pune, Ahmedabad, Chandigarh and Kochi may have cardiac theatres. They are not live GAF catalog cities on this site.
+International patients comparing [cardiac surgeons](/doctors/India/Cardiac-Surgery) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting), [Mumbai](/doctors/India/Mumbai/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting), [Bengaluru](/doctors/India/Bengaluru/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting), [Chennai](/doctors/India/Chennai/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) and [Hyderabad](/doctors/India/Hyderabad/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting). Partner [cardiac surgery hospitals](/hospitals/India/Cardiac-Surgery) in [Delhi NCR](/hospitals/India/Delhi-NCR/Cardiac-Surgery), [Mumbai](/hospitals/India/Mumbai/Cardiac-Surgery) and [Bengaluru](/hospitals/India/Bengaluru/Cardiac-Surgery), and in [Chennai](/hospitals/India/Chennai/Cardiac-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Cardiac-Surgery), are a typical first filter because CABG needs a cardiac ICU, blood bank and emergency backup. City cost sheets include [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting), [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting), [Bengaluru](/costs/India/Bengaluru/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting), [Chennai](/costs/India/Chennai/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) and [Hyderabad](/costs/India/Hyderabad/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting). Kolkata, Pune, Ahmedabad, Chandigarh and Kochi may have cardiac theatres. They are not live GAF catalog cities on this site.
 
 > Important: Severe or persistent chest pain, chest pressure, sudden breathlessness, cold sweating, fainting, sudden weakness or pain spreading to the arm, jaw, back or neck belongs in a **local emergency department** first. WhatsApp at +91 90443 46292 is for planned record review, not a heart-attack emergency.
 
@@ -86,7 +86,7 @@ The decision is individualised. Having a blocked artery does not automatically m
 
 There is no single fixed CABG price in India because hospitals calculate treatment costs differently.
 
-The live GAF first-time [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) sheet is **$5,500–$14,000**, typically **7–14 nights**, then nearby recovery. Comparable US planning is **$70,000–$200,000**.
+The live GAF first-time [CABG](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) sheet is **$5,500–$14,000**, typically **7–14 nights**, then nearby recovery. Comparable US planning is **$70,000–$200,000**.
 
 Published consumer-health figures in other currencies vary because “CABG cost” may refer to:
 
@@ -101,7 +101,7 @@ A government-linked tariff is not the retail price charged by every private hosp
 
 | Product | GAF planning | Typical stay |
 |---|---|---|
-| [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | $5,500–$14,000 | 7–14 nights, then nearby recovery |
+| [CABG](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) | $5,500–$14,000 | 7–14 nights, then nearby recovery |
 | [Redo CABG](/costs/India/Cardiac-Surgery/Redo-CABG) | $8,500–$20,000 | 10–18 nights |
 | [Minimally invasive cardiac surgery](/costs/India/Cardiac-Surgery/Minimally-Invasive-Cardiac-Surgery) | $8,000–$20,000 | 5–12 nights |
 | [Robotic cardiac surgery](/costs/India/Cardiac-Surgery/Robotic-Cardiac-Surgery) | $10,000–$24,000 | 5–12 nights |
@@ -156,11 +156,11 @@ Live GAF city sheets use the same first-time CABG planning range of **$5,500–$
 
 | City | Live GAF planning range | Typical stay |
 |---|---|---|
-| [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | $5,500–$14,000 | 7–14 nights, then nearby recovery |
-| [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | $5,500–$14,000 | 7–14 nights, then nearby recovery |
-| [Bengaluru](/costs/India/Bengaluru/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | $5,500–$14,000 | 7–14 nights, then nearby recovery |
-| [Chennai](/costs/India/Chennai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | $5,500–$14,000 | 7–14 nights, then nearby recovery |
-| [Hyderabad](/costs/India/Hyderabad/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | $5,500–$14,000 | 7–14 nights, then nearby recovery |
+| [Delhi NCR](/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) | $5,500–$14,000 | 7–14 nights, then nearby recovery |
+| [Mumbai](/costs/India/Mumbai/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) | $5,500–$14,000 | 7–14 nights, then nearby recovery |
+| [Bengaluru](/costs/India/Bengaluru/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) | $5,500–$14,000 | 7–14 nights, then nearby recovery |
+| [Chennai](/costs/India/Chennai/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) | $5,500–$14,000 | 7–14 nights, then nearby recovery |
+| [Hyderabad](/costs/India/Hyderabad/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) | $5,500–$14,000 | 7–14 nights, then nearby recovery |
 
 Pune, Ahmedabad, Kolkata and Kochi may have cardiac theatres. They are not live GAF catalog cities on this site. There is no live city-CABG-cost treatment page for those cities.
 
@@ -311,7 +311,7 @@ A catheter is introduced through a blood vessel and used to treat a narrowed cor
 
 ### CABG
 
-A surgeon creates a new route around the blocked coronary artery using a graft. First-time [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) is **$5,500–$14,000**.
+A surgeon creates a new route around the blocked coronary artery using a graft. First-time [CABG](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) is **$5,500–$14,000**.
 
 The cheaper option is not necessarily the clinically appropriate option.
 
@@ -389,7 +389,7 @@ For international patients, sending a **recent coronary angiography, echocardiog
 
 The surgery itself commonly takes around **3–6 hours**.
 
-The hospital stay is generally around **5–8 days**, although this varies according to recovery and complications. GAF [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) planning is typically **7–14 nights**, then nearby recovery. The NHS states that patients usually spend about a week in hospital, while Cleveland Clinic reports an average stay of approximately five to seven days.
+The hospital stay is generally around **5–8 days**, although this varies according to recovery and complications. GAF [CABG](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) planning is typically **7–14 nights**, then nearby recovery. The NHS states that patients usually spend about a week in hospital, while Cleveland Clinic reports an average stay of approximately five to seven days.
 
 Emergency surgery or complicated cases may require a longer stay.
 
@@ -827,7 +827,7 @@ For international patients, a treatment coordinator can help arrange:
 - [Left Ventricular Assist Device (LVAD) Procedure in India](/treatments/lvad-implantation-in-india)
 - [Pacemaker Implantation in India](/treatments/pacemaker-implantation-in-india)
 - [ICD Device Implantation in India](/treatments/icd-device-implantation-in-india)
-- [CABG cost](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting))
+- [CABG cost](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting)
 - [Redo CABG cost](/costs/India/Cardiac-Surgery/Redo-CABG)
 - [Coronary angioplasty and stenting cost](/costs/India/Cardiology/Coronary-Angioplasty-Stenting)
 - [Cardiac surgeons in India](/doctors/India/Cardiac-Surgery)
@@ -844,7 +844,7 @@ Heart-attack, cardiac-rehabilitation, angiography-treatment, redo-CABG-only and 
 5. **NHS — Coronary Artery Bypass Graft.** Procedure, hospitalisation and recovery information.
 6. **Mayo Clinic — Coronary Artery Bypass Graft.** Indications, risks and factors affecting CABG decisions.
 7. **Cleveland Clinic — CABG.** Hospital stay and recovery information.
-8. **GAF Healthcare CABG cost sheet** — [CABG (Coronary Artery Bypass Grafting)](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)).
+8. **GAF Healthcare CABG cost sheet** — [CABG (Coronary Artery Bypass Grafting)](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting).
 9. **GAF Healthcare redo CABG cost sheet** — [Redo CABG](/costs/India/Cardiac-Surgery/Redo-CABG).
 10. **GAF Healthcare coronary angioplasty and stenting cost sheet** — [Coronary Angioplasty-Stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting).
 

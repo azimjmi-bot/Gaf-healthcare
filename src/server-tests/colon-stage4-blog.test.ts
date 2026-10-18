@@ -54,7 +54,7 @@ test("the published Stage 4 colon blog is complete, interlinked and indexed only
   assert.match(texts, /\/blogs\/stage-2-colon-cancer-treatment-in-india/);
   assert.match(texts, /\/blogs\/stage-1-colon-cancer-treatment-in-india/);
   assert.match(texts, /\/costs\/India\/Surgical-Oncology\/Colectomy/);
-  assert.match(texts, /\/costs\/India\/Surgical-Oncology\/Liver-Resection-\(Hepatectomy\)/);
+  assert.match(texts, /\/costs\/India\/Surgical-Oncology\/Liver-Resection-Hepatectomy/);
   assert.match(texts, /\/costs\/India\/Surgical-Oncology\/Cytoreductive-Surgery-with-HIPEC/);
   assert.match(texts, /\/costs\/India\/Medical-Oncology\/Immunotherapy/);
   assert.match(texts, /\/costs\/India\/Radiation-Oncology\/SBRT/);

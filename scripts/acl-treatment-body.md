@@ -1,12 +1,12 @@
-**ACL surgery in India** is commonly performed as minimally invasive arthroscopic [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) to restore stability after a torn anterior cruciate ligament. India has established orthopaedic and sports-medicine centres that treat isolated ACL tears as well as complex injuries involving the meniscus, cartilage, MCL, PCL and other knee structures.
+**ACL surgery in India** is commonly performed as minimally invasive arthroscopic [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) to restore stability after a torn anterior cruciate ligament. India has established orthopaedic and sports-medicine centres that treat isolated ACL tears as well as complex injuries involving the meniscus, cartilage, MCL, PCL and other knee structures.
 
 For patients considering treatment in India, the decision involves more than the operation itself. The type of ACL tear, knee stability, activity level, associated injuries, graft choice, surgeon experience and rehabilitation programme all influence the treatment plan.
 
 ACL reconstruction is also not a treatment where surgery alone determines the outcome. Structured rehabilitation, restoration of knee movement and strength, neuromuscular training and objective testing before returning to demanding sports are important parts of recovery.
 
-GAF Healthcare planning for [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) is **$2,500–$6,500** (typically **1–3 nights**). Neighbouring [meniscus repair](/costs/India/Orthopedics/Meniscus-Repair) is **$1,800–$4,500** (outpatient or 1 night). [PCL reconstruction](/costs/India/Orthopedics/PCL-Reconstruction-(Posterior-Cruciate-Ligament)) is **$3,000–$7,500** (1–3 nights). These are planning ranges from partner hospital cost sheets, not hospital quotations.
+GAF Healthcare planning for [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) is **$2,500–$6,500** (typically **1–3 nights**). Neighbouring [meniscus repair](/costs/India/Orthopedics/Meniscus-Repair) is **$1,800–$4,500** (outpatient or 1 night). [PCL reconstruction](/costs/India/Orthopedics/PCL-Reconstruction-Posterior-Cruciate-Ligament) is **$3,000–$7,500** (1–3 nights). These are planning ranges from partner hospital cost sheets, not hospital quotations.
 
-International patients comparing [orthopaedic surgeons](/doctors/India/Orthopedics) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)), [Mumbai](/doctors/India/Mumbai/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)), [Bengaluru](/doctors/India/Bengaluru/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)), [Chennai](/doctors/India/Chennai/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) and [Hyderabad](/doctors/India/Hyderabad/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)). Partner [orthopaedic hospitals](/hospitals/India/Orthopedics) in [Delhi NCR](/hospitals/India/Delhi-NCR/Orthopedics), [Mumbai](/hospitals/India/Mumbai/Orthopedics) and [Bengaluru](/hospitals/India/Bengaluru/Orthopedics) are a typical first filter. City cost sheets for the same procedure include [Delhi NCR](/costs/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)), [Mumbai](/costs/India/Mumbai/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)), [Bengaluru](/costs/India/Bengaluru/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)), [Chennai](/costs/India/Chennai/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) and [Hyderabad](/costs/India/Hyderabad/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)).
+International patients comparing [orthopaedic surgeons](/doctors/India/Orthopedics) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament), [Mumbai](/doctors/India/Mumbai/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament), [Bengaluru](/doctors/India/Bengaluru/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament), [Chennai](/doctors/India/Chennai/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) and [Hyderabad](/doctors/India/Hyderabad/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament). Partner [orthopaedic hospitals](/hospitals/India/Orthopedics) in [Delhi NCR](/hospitals/India/Delhi-NCR/Orthopedics), [Mumbai](/hospitals/India/Mumbai/Orthopedics) and [Bengaluru](/hospitals/India/Bengaluru/Orthopedics) are a typical first filter. City cost sheets for the same procedure include [Delhi NCR](/costs/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament), [Mumbai](/costs/India/Mumbai/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament), [Bengaluru](/costs/India/Bengaluru/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament), [Chennai](/costs/India/Chennai/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) and [Hyderabad](/costs/India/Hyderabad/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament).
 
 When the problem is end-stage arthritis rather than a sports injury, the honest pathway is [Knee Replacement Surgery in India](/treatments/knee-replacement-surgery-in-india), not ACL reconstruction. Diagnostic and therapeutic keyhole work that is not a named ACL graft sits on [Knee Arthroscopy Surgery in India](/treatments/knee-arthroscopy-surgery-in-india). Neighbouring hip arthroplasty sits on [Hip Replacement Surgery in India](/treatments/hip-replacement-surgery-in-india). Limb reconstruction and stature lengthening sit on [Limb Lengthening Surgery in India](/treatments/limb-lengthening-surgery-in-india). Named tendon laceration, Achilles or cuff repair sits on [Tendon Repair Surgery in India](/treatments/tendon-repair-surgery-in-india).
 
@@ -37,7 +37,7 @@ The operation commonly takes around 1–3 hours, depending on the procedure and 
 Recovery is individual. Return to unrestricted sport is generally based on rehabilitation milestones and functional testing rather than a fixed date.
 
 **What is the ACL surgery cost in India?**
-GAF planning range approximately **$2,500–$6,500** for [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)); actual quotations vary by hospital, surgeon, graft, implants and associated treatment.
+GAF planning range approximately **$2,500–$6,500** for [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament); actual quotations vary by hospital, surgeon, graft, implants and associated treatment.
 
 **Can international patients undergo ACL surgery in India?**
 Yes. International patients can arrange orthopaedic consultation, investigations, surgery, hospitalisation and rehabilitation in India through hospitals and medical-travel coordination.
@@ -136,7 +136,7 @@ International consensus also recognises structured non-operative treatment as an
 
 ## Who May Need ACL Reconstruction?
 
-[ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) may be considered when the patient has persistent knee instability, recurrent giving-way episodes, a complete ACL rupture with functional instability, a desire to return to pivoting or cutting sports, high physical or occupational demands, associated meniscus or cartilage injury, multiple ligament injuries, or failed structured non-operative treatment.
+[ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) may be considered when the patient has persistent knee instability, recurrent giving-way episodes, a complete ACL rupture with functional instability, a desire to return to pivoting or cutting sports, high physical or occupational demands, associated meniscus or cartilage injury, multiple ligament injuries, or failed structured non-operative treatment.
 
 Young and highly active patients often require careful discussion because their activity demands can place substantial stress on an ACL-deficient knee. The decision should be individualised rather than based on age alone.
 
@@ -200,7 +200,7 @@ Graft choice is particularly important in younger and highly active patients. Th
 
 **Double-bundle reconstruction.** Two graft bundles are used to more closely reproduce the functional anatomy of the ACL.
 
-The choice depends on knee anatomy, injury pattern, surgeon expertise and clinical circumstances. AAOS reports that both single-bundle and double-bundle techniques can be safe and effective, with the surgeon selecting the technique based on the clinical situation and experience. There is no separate GAF double-bundle sheet: planning starts from the [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) range of **$2,500–$6,500**.
+The choice depends on knee anatomy, injury pattern, surgeon expertise and clinical circumstances. AAOS reports that both single-bundle and double-bundle techniques can be safe and effective, with the surgeon selecting the technique based on the clinical situation and experience. There is no separate GAF double-bundle sheet: planning starts from the [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) range of **$2,500–$6,500**.
 
 ## What Is Arthroscopic ACL Surgery?
 
@@ -229,7 +229,7 @@ Although the exact technique varies, the procedure generally involves the follow
 9. **Stability assessment** — the surgeon checks the knee's stability and range of motion.
 10. **Closure** — the arthroscopic portals are closed and the knee is dressed.
 
-The procedure itself commonly takes approximately **1–3 hours**, although the total time depends on the complexity of surgery and whether additional procedures are required. GAF partner-hospital planning for [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) notes typically **1–3 nights**. Some uncomplicated reconstructions are day-case or a single night.
+The procedure itself commonly takes approximately **1–3 hours**, although the total time depends on the complexity of surgery and whether additional procedures are required. GAF partner-hospital planning for [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) notes typically **1–3 nights**. Some uncomplicated reconstructions are day-case or a single night.
 
 ## ACL Surgery and Meniscus Repair
 
@@ -239,7 +239,7 @@ If the meniscus is injured, the surgeon may perform [meniscus repair](/costs/Ind
 
 GAF planning for meniscus repair is **$1,800–$4,500** (outpatient or 1 night). Combined ACL-plus-meniscus surgery is quoted after case review from the ACL sheet; two procedures are not automatically the sum of two packages.
 
-When other ligament, meniscus or cartilage injuries are present, they may be treated during the same surgical episode when clinically appropriate. Neighbouring [PCL reconstruction](/costs/India/Orthopedics/PCL-Reconstruction-(Posterior-Cruciate-Ligament)) is a different graft and a different sheet (**$3,000–$7,500**).
+When other ligament, meniscus or cartilage injuries are present, they may be treated during the same surgical episode when clinically appropriate. Neighbouring [PCL reconstruction](/costs/India/Orthopedics/PCL-Reconstruction-Posterior-Cruciate-Ligament) is a different graft and a different sheet (**$3,000–$7,500**).
 
 ## ACL Surgery Cost in India
 
@@ -247,9 +247,9 @@ The cost of ACL surgery in India varies considerably depending on the hospital, 
 
 | Treatment | GAF planning range in India | Typical stay |
 | --- | --- | --- |
-| [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) | $2,500–$6,500 | 1–3 nights |
+| [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) | $2,500–$6,500 | 1–3 nights |
 | [Meniscus repair](/costs/India/Orthopedics/Meniscus-Repair) (often combined) | $1,800–$4,500 | Outpatient or 1 night |
-| [PCL reconstruction](/costs/India/Orthopedics/PCL-Reconstruction-(Posterior-Cruciate-Ligament)) | $3,000–$7,500 | 1–3 nights |
+| [PCL reconstruction](/costs/India/Orthopedics/PCL-Reconstruction-Posterior-Cruciate-Ligament) | $3,000–$7,500 | 1–3 nights |
 | [Arthroscopic surgery](/costs/India/Orthopedics/Arthroscopic-Surgery) (limited/diagnostic) | $2,000–$5,500 | Outpatient or 1–2 nights |
 | Combined ACL + meniscus | Quoted after case review from the ACL sheet | Depends on the meniscus protocol |
 | Revision ACL reconstruction | Quoted after case review from the ACL sheet | Often longer than a primary |
@@ -257,9 +257,9 @@ The cost of ACL surgery in India varies considerably depending on the hospital, 
 | Additional rehabilitation | Depends on duration and facility | — |
 | International travel, visa, hotel | Not normally included in the surgical sheet | — |
 
-**These figures are indicative planning ranges, not fixed package prices.** City sheets for the same ACL procedure include [Delhi NCR](/costs/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)), [Mumbai](/costs/India/Mumbai/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)), [Bengaluru](/costs/India/Bengaluru/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)), [Chennai](/costs/India/Chennai/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) and [Hyderabad](/costs/India/Hyderabad/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)).
+**These figures are indicative planning ranges, not fixed package prices.** City sheets for the same ACL procedure include [Delhi NCR](/costs/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament), [Mumbai](/costs/India/Mumbai/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament), [Bengaluru](/costs/India/Bengaluru/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament), [Chennai](/costs/India/Chennai/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) and [Hyderabad](/costs/India/Hyderabad/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament).
 
-GAF partner-hospital comparison for [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) lists a typical US range of **$15,000–$40,000** against the India planning range of **$2,500–$6,500**. International patients should not compare prices alone.
+GAF partner-hospital comparison for [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) lists a typical US range of **$15,000–$40,000** against the India planning range of **$2,500–$6,500**. International patients should not compare prices alone.
 
 [Request an ACL reconstruction cost estimate](/consult?treatment=ACL%20Reconstruction)
 
@@ -304,11 +304,11 @@ International patients considering ACL surgery in India generally need to plan s
 
 Patients commonly consider the five GAF catalog cities:
 
-* **[Delhi NCR](/doctors/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament))** — a large concentration of tertiary hospitals and sports-orthopaedic specialists. Filter [Delhi NCR hospitals](/hospitals/India/Delhi-NCR/Orthopedics).
-* **[Mumbai](/doctors/India/Mumbai/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament))** — multiple joint and sports-medicine centres.
-* **[Bengaluru](/doctors/India/Bengaluru/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament))** — tertiary hospitals with arthroscopy programmes.
-* **[Chennai](/doctors/India/Chennai/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament))** — established international-patient infrastructure.
-* **[Hyderabad](/doctors/India/Hyderabad/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament))** — advanced orthopaedic and sports-medicine centres.
+* **[Delhi NCR](/doctors/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament)** — a large concentration of tertiary hospitals and sports-orthopaedic specialists. Filter [Delhi NCR hospitals](/hospitals/India/Delhi-NCR/Orthopedics).
+* **[Mumbai](/doctors/India/Mumbai/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament)** — multiple joint and sports-medicine centres.
+* **[Bengaluru](/doctors/India/Bengaluru/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament)** — tertiary hospitals with arthroscopy programmes.
+* **[Chennai](/doctors/India/Chennai/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament)** — established international-patient infrastructure.
+* **[Hyderabad](/doctors/India/Hyderabad/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament)** — advanced orthopaedic and sports-medicine centres.
 
 Other Indian cities also run ACL programmes. The right city should be selected based on the surgeon, hospital, injury pattern and complete rehabilitation plan rather than city name alone. GAF catalog pages cover Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad.
 
@@ -451,7 +451,7 @@ Revision ACL reconstruction is surgery performed after a previous ACL reconstruc
 
 The surgeon may need to evaluate previous tunnel position, bone loss, graft choice, meniscus, cartilage, limb alignment, other ligament injuries and rotational instability. Some revision cases require staged surgery.
 
-There is no separate GAF revision-ACL sheet: planning starts from the [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) range of **$2,500–$6,500** and the hospital quotes after case review.
+There is no separate GAF revision-ACL sheet: planning starts from the [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) range of **$2,500–$6,500** and the hospital quotes after case review.
 
 Patients considering revision ACL surgery should seek assessment from a surgeon experienced in complex knee reconstruction.
 
@@ -475,7 +475,7 @@ Important elements include proper warm-up, strength training, neuromuscular trai
 
 ## ACL Surgery: Hospital Stay
 
-GAF planning for [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) is typically **1–3 nights**. Many uncomplicated reconstructions can be performed with a short stay, and some centres may manage selected patients as day-care or a single night.
+GAF planning for [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) is typically **1–3 nights**. Many uncomplicated reconstructions can be performed with a short stay, and some centres may manage selected patients as day-care or a single night.
 
 The length of stay can increase when additional procedures are performed, multiple ligaments are reconstructed, pain requires closer monitoring, medical conditions require observation, or complications occur.
 
@@ -502,7 +502,7 @@ MRI images are particularly useful because the surgeon may want to personally re
 | Recovery | Surgical recovery plus rehabilitation | Rehabilitation-focused |
 | Meniscus injury | Can be addressed surgically | May require separate assessment |
 | Recurrent giving way | Often a reason to consider reconstruction | May indicate failure of non-operative approach |
-| GAF planning | [$2,500–$6,500](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) | Physiotherapy quoted separately |
+| GAF planning | [$2,500–$6,500](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) | Physiotherapy quoted separately |
 
 The decision should be made after clinical assessment rather than based solely on MRI findings.
 
@@ -576,7 +576,7 @@ A specialist assessment can determine whether the problem involves the ACL, meni
 
 ## How GAF Healthcare Can Help International Patients
 
-GAF Healthcare coordinates international patients who need an ACL reconstruction, combined meniscus or revision plan in India. Share MRI images and reports, injury date, sport or work goals, previous physiotherapy and whether the knee gives way. A coordinator can introduce an [orthopaedic surgeon](/doctors/India/Orthopedics) in [Delhi NCR](/doctors/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) or [Mumbai](/doctors/India/Mumbai/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)), then help collect an itemised quotation covering the graft, fixation, stay, physiotherapy and planned duration.
+GAF Healthcare coordinates international patients who need an ACL reconstruction, combined meniscus or revision plan in India. Share MRI images and reports, injury date, sport or work goals, previous physiotherapy and whether the knee gives way. A coordinator can introduce an [orthopaedic surgeon](/doctors/India/Orthopedics) in [Delhi NCR](/doctors/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) or [Mumbai](/doctors/India/Mumbai/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament), then help collect an itemised quotation covering the graft, fixation, stay, physiotherapy and planned duration.
 
 A complete ACL treatment plan should answer six questions: is surgery actually required; what else is injured; which graft is appropriate; what technique is appropriate; what is the rehabilitation plan; and how will return to activity be assessed.
 
@@ -605,6 +605,6 @@ This page is intended for educational and medical-tourism information purposes o
 7. [BJSM — Panther Symposium ACL treatment consensus](https://bjsm.bmj.com/content/55/1/14) — operative versus non-operative treatment consensus.
 8. [NHS — ACL surgery: what it is](https://www.nhs.uk/tests-and-treatments/acl-anterior-cruciate-ligament-surgery/what-it-is/) — arthroscopic reconstruction and patient-facing procedure information.
 9. [CDC — Surgical Site Infection Basics](https://www.cdc.gov/surgical-site-infections/about/index.html) — surgical-site infections and infection prevention.
-10. [GAF Healthcare ACL reconstruction cost sheet](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) — indicative USD planning ranges; costs vary by hospital, city and surgical plan.
+10. [GAF Healthcare ACL reconstruction cost sheet](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) — indicative USD planning ranges; costs vary by hospital, city and surgical plan.
 
 **Last reviewed against the cited sources: September 2026.**

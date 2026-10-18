@@ -79,7 +79,7 @@ test("the Tetralogy of Fallot guide keeps the quick answer and the directory pla
     "/hospitals/India/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
     "/costs/India/Pediatric-Cardiac-Surgery",
-    "/costs/India/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
+    "/costs/India/Pediatric-Cardiac-Surgery/TOF-Repair-Tetralogy-of-Fallot",
     "/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery",
     "/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery",
     "/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery",

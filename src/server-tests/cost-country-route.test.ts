@@ -21,27 +21,27 @@ function parse(path: string) {
 }
 
 test("both cost levels resolve from their URL to the right CMS record", () => {
-  assert.deepEqual(parse("/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"), {
+  assert.deepEqual(parse("/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"), {
     destination: "India",
     specialty: RADONC,
     procedure: EBRT,
   });
   assert.deepEqual(
-    parse("/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"),
+    parse("/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"),
     { destination: "India", city: "Delhi NCR", specialty: RADONC, procedure: EBRT },
   );
-  assert.deepEqual(parse("/costs/Turkiye/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"), {
+  assert.deepEqual(parse("/costs/Turkiye/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"), {
     destination: "Türkiye",
     specialty: RADONC,
     procedure: EBRT,
   });
   // Short and English country forms resolve so they can redirect to the canonical path.
-  assert.deepEqual(parse("/costs/Turkey/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"), {
+  assert.deepEqual(parse("/costs/Turkey/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"), {
     destination: "Türkiye",
     specialty: RADONC,
     procedure: EBRT,
   });
-  assert.deepEqual(parse("/costs/UAE/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"), {
+  assert.deepEqual(parse("/costs/UAE/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"), {
     destination: "United Arab Emirates",
     specialty: RADONC,
     procedure: EBRT,
@@ -55,7 +55,7 @@ test("the default destination keeps its own article and never renders the countr
   );
   assert.equal(
     costsFilterPath({ destination: "India", specialty: RADONC, procedure: EBRT }),
-    "/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    "/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
   );
 });
 
@@ -63,7 +63,7 @@ test("a country with a CMS destination row resolves to its own page and canonica
   const turkey = resolveCostCountryPage({ destination: "Türkiye", specialty: RADONC, procedure: EBRT });
   assert.ok(turkey);
   assert.equal(turkey.heading, "EBRT Cost in Turkey");
-  assert.equal(turkey.path, "/costs/Turkiye/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)");
+  assert.equal(turkey.path, "/costs/Turkiye/Radiation-Oncology/External-Beam-Radiotherapy-EBRT");
   assert.ok(turkey.modelled, "no sourced figure exists yet, so the band is modelled");
 
   const singapore = resolveCostCountryPage({
@@ -117,14 +117,14 @@ test("country pages stay out of the index until the CMS carries country copy", (
 test("the sitemap lists one canonical URL per published country and city combination", () => {
   const urls = new Set(buildLocaleSitemap("en").map((row) => row.url));
   const base = "https://gaf.healthcare";
-  assert.ok(urls.has(`${base}/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)`));
+  assert.ok(urls.has(`${base}/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT`));
   assert.ok(
-    urls.has(`${base}/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)`),
+    urls.has(`${base}/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT`),
   );
   // The flat sheet still serves but canonicalises to the country path, so it is not listed.
   assert.ok(!urls.has(`${base}/costs/external-beam-radiotherapy-ebrt`));
   // Unwritten country pages resolve but are not advertised.
-  assert.ok(!urls.has(`${base}/costs/Turkiye/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)`));
+  assert.ok(!urls.has(`${base}/costs/Turkiye/Radiation-Oncology/External-Beam-Radiotherapy-EBRT`));
   assert.equal(urls.size, buildLocaleSitemap("en").length, "sitemap contains no duplicate URLs");
 });
 

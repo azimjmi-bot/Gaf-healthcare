@@ -79,7 +79,7 @@ test("the PDA closure in babies guide keeps the quick answer and the pediatric p
     "/hospitals/India/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
     "/costs/India/Pediatric-Cardiac-Surgery",
-    "/costs/India/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/costs/India/Pediatric-Cardiac-Surgery/PDA-Closure-Patent-Ductus-Arteriosus",
     "/costs/India/Cardiac-Surgery/Congenital-Heart-Surgery",
     "/costs/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery",
     "/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery",

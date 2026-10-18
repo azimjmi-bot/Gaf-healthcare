@@ -121,7 +121,7 @@ Doctors may combine:
 * CT scan
 * MRI
 * MRCP
-* [Endoscopic ultrasound](/costs/India/Gastroenterology/Endoscopic-Ultrasound-(EUS))
+* [Endoscopic ultrasound](/costs/India/Gastroenterology/Endoscopic-Ultrasound-EUS)
 * Biopsy
 * Pathology
 * Tumor markers
@@ -157,7 +157,7 @@ MRI/MRCP may be particularly useful when CT findings are unclear or when additio
 
 ## Endoscopic Ultrasound
 
-[Endoscopic ultrasound (EUS)](/costs/India/Gastroenterology/Endoscopic-Ultrasound-(EUS)) combines endoscopy with ultrasound imaging.
+[Endoscopic ultrasound (EUS)](/costs/India/Gastroenterology/Endoscopic-Ultrasound-EUS) combines endoscopy with ultrasound imaging.
 
 It can provide detailed images of:
 
@@ -166,7 +166,7 @@ It can provide detailed images of:
 * Bile ducts
 * Surrounding structures
 
-EUS can also be used to obtain tissue samples when a biopsy is required. GAF planning ranges for EUS in India are **$400–$1,400** (day-care). City pages such as [Delhi NCR EUS](/costs/India/Delhi-NCR/Gastroenterology/Endoscopic-Ultrasound-(EUS)) use the same national range unless a hospital issues a verified quotation.
+EUS can also be used to obtain tissue samples when a biopsy is required. GAF planning ranges for EUS in India are **$400–$1,400** (day-care). City pages such as [Delhi NCR EUS](/costs/India/Delhi-NCR/Gastroenterology/Endoscopic-Ultrasound-EUS) use the same national range unless a hospital issues a verified quotation.
 
 ## Biopsy for Pancreatic Cancer
 
@@ -369,7 +369,7 @@ The digestive system is then reconstructed.
 
 The Whipple procedure is a major operation and requires careful preoperative assessment, experienced surgical expertise and appropriate postoperative support.
 
-GAF Healthcare currently publishes a planning range of **$14,000–$32,000** for [Whipple procedure](/costs/India/Surgical-Oncology/Whipple-Procedure) in India (typically 10–18 nights). The HPB sheet for [Whipple procedure (pancreaticoduodenectomy)](/costs/India/Surgical-Gastroenterology/Whipple-Procedure-(Pancreaticoduodenectomy)) uses the same national range. This is a procedure-specific planning range, not the total cost of pancreatic cancer treatment.
+GAF Healthcare currently publishes a planning range of **$14,000–$32,000** for [Whipple procedure](/costs/India/Surgical-Oncology/Whipple-Procedure) in India (typically 10–18 nights). The HPB sheet for [Whipple procedure (pancreaticoduodenectomy)](/costs/India/Surgical-Gastroenterology/Whipple-Procedure-Pancreaticoduodenectomy) uses the same national range. This is a procedure-specific planning range, not the total cost of pancreatic cancer treatment.
 
 [Ask whether Whipple surgery is appropriate](/consult?treatment=Whipple%20Procedure)
 
@@ -598,7 +598,7 @@ Treatment decisions depend on:
 
 Surgery on the pancreas alone is generally not sufficient for metastatic disease.
 
-In highly selected situations, additional local treatment of [liver lesions](/costs/India/Surgical-Oncology/Liver-Resection-(Hepatectomy)) may be discussed, but such decisions require specialist multidisciplinary assessment. GAF planning ranges for liver resection are **$10,000–$26,000**.
+In highly selected situations, additional local treatment of [liver lesions](/costs/India/Surgical-Oncology/Liver-Resection-Hepatectomy) may be discussed, but such decisions require specialist multidisciplinary assessment. GAF planning ranges for liver resection are **$10,000–$26,000**.
 
 ## Supportive and Palliative Care
 
@@ -709,7 +709,7 @@ The total cost depends on the treatment pathway.
 
 | Treatment component | GAF planning range in India |
 | --- | --- |
-| [EUS](/costs/India/Gastroenterology/Endoscopic-Ultrasound-(EUS)) | $400–$1,400 |
+| [EUS](/costs/India/Gastroenterology/Endoscopic-Ultrasound-EUS) | $400–$1,400 |
 | [ERCP](/costs/India/Gastroenterology/ERCP) | $1,500–$4,200 |
 | [Biliary stenting](/costs/India/Gastroenterology/Biliary-Stenting) | $2,000–$5,500 |
 | [Whipple procedure](/costs/India/Surgical-Oncology/Whipple-Procedure) | $14,000–$32,000 |
@@ -722,7 +722,7 @@ The total cost depends on the treatment pathway.
 | [IMRT](/costs/India/Radiation-Oncology/IMRT) | $6,500–$14,500 |
 | [SBRT](/costs/India/Radiation-Oncology/SBRT) | $8,000–$17,500 |
 | [Precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) | $2,000–$7,000 |
-| [Liver resection](/costs/India/Surgical-Oncology/Liver-Resection-(Hepatectomy)) | $10,000–$26,000 |
+| [Liver resection](/costs/India/Surgical-Oncology/Liver-Resection-Hepatectomy) | $10,000–$26,000 |
 
 These are **planning ranges, not prescriptions and not hospital quotations**. Do not add every line together. A patient who undergoes a Whipple procedure followed by several cycles of chemotherapy will have a substantially different treatment budget from someone undergoing chemotherapy alone.
 

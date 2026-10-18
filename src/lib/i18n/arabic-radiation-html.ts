@@ -50,7 +50,7 @@ function directoryStyleTag() {
       directoryCss = null;
     }
   }
-  if (directoryCss === null) return `<link rel="stylesheet" href="/${DIRECTORY_CSS_FILE}?v=6"/>`;
+  if (directoryCss === null) return `<link rel="stylesheet" href="/${DIRECTORY_CSS_FILE}?v=7"/>`;
   return `<style>${directoryCss.replace(/<\/style/gi, "<\\/style")}</style>`;
 }
 
@@ -124,10 +124,16 @@ export function wrapArabicDocument(doc: ArabicHtmlDocument, bodyHtml: string) {
 <title>${escapeHtml(doc.title)} — GAF Healthcare</title>
 <meta name="description" content="${escapeHtml(doc.description)}"/>
 ${head.lines}
+<meta property="og:type" content="website"/>
 <meta property="og:locale" content="ar_AR"/>
+<meta property="og:site_name" content="GAF Healthcare"/>
 <meta property="og:title" content="${escapeHtml(doc.title)}"/>
 <meta property="og:description" content="${escapeHtml(doc.description)}"/>
 <meta property="og:url" content="${head.canonical}"/>
+<meta property="og:image" content="${SITE_ORIGIN}/brand/gaf-healthcare.png"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="${escapeHtml(doc.title)}"/>
+<meta name="twitter:description" content="${escapeHtml(doc.description)}"/>
 ${directoryStyleTag()}
 </head>
 <body class="site-shell">
@@ -215,7 +221,7 @@ function hostMarkup(node: ReactNode): string {
 
 function cacheKeyFor(path: string, page: number) {
   const url = page > 1 ? `/ar${path}?page=${page}` : `/ar${path}`;
-  return `v5:${url}`;
+  return `v7:${url}`;
 }
 
 export function renderArabicRadiationHtml(query: CatalogQuery, page = 1) {

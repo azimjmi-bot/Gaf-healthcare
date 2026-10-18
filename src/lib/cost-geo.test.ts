@@ -80,7 +80,7 @@ test("every country addresses a procedure through the same country path", () => 
       specialty: "Radiation Oncology",
       procedure: "External Beam Radiotherapy (EBRT)",
     }),
-    "/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    "/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
   );
   assert.equal(
     costsFilterPath({
@@ -88,7 +88,7 @@ test("every country addresses a procedure through the same country path", () => 
       specialty: "Radiation Oncology",
       procedure: "External Beam Radiotherapy (EBRT)",
     }),
-    "/costs/Turkiye/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    "/costs/Turkiye/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
   );
 });
 
@@ -105,12 +105,12 @@ test("every country and city combination gets a distinct canonical path", () => 
   ];
   assert.equal(new Set(paths).size, paths.length);
   assert.deepEqual(paths, [
-    "/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
-    "/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
-    "/costs/India/Mumbai/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
-    "/costs/Turkiye/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
-    "/costs/Turkiye/Istanbul/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
-    "/costs/United-Arab-Emirates/Dubai/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    "/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
+    "/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
+    "/costs/India/Mumbai/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
+    "/costs/Turkiye/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
+    "/costs/Turkiye/Istanbul/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
+    "/costs/United-Arab-Emirates/Dubai/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
   ]);
 });
 

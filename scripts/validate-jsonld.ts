@@ -24,7 +24,7 @@ const SAMPLES: { emitter: string; urls: string[] }[] = [
   { emitter: "physicianJsonLd + doctorProfilePageJsonLd", urls: ["/doctors/dr-anil-kumar-anand", "/ar/doctors/dr-anil-kumar-anand"] },
   { emitter: "hospitalJsonLd", urls: ["/hospitals/apollo-delhi", "/ar/hospitals/apollo-delhi"] },
   { emitter: "breadcrumbJsonLd", urls: ["/costs/India/Radiation-Oncology"] },
-  { emitter: "medicalWebPageJsonLd", urls: ["/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"] },
+  { emitter: "medicalWebPageJsonLd", urls: ["/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"] },
   { emitter: "hospitalItemListJsonLd", urls: ["/hospitals/India/Delhi-NCR/Radiation-Oncology"] },
   { emitter: "doctorItemListJsonLd", urls: ["/doctors/India/Radiation-Oncology"] },
   { emitter: "faqJsonLd", urls: ["/doctors/India", "/ar/doctors"] },

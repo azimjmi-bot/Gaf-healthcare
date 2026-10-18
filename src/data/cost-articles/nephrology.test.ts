@@ -142,7 +142,7 @@ test("Nephrology routes consolidate nationally and retain city context", () => {
     specialty: "Nephrology",
     procedure: "Continuous Renal Replacement Therapy (CRRT)",
   });
-  assert.equal(crrt, "/costs/India/Nephrology/Continuous-Renal-Replacement-Therapy-(CRRT)");
+  assert.equal(crrt, "/costs/India/Nephrology/Continuous-Renal-Replacement-Therapy-CRRT");
   assert.deepEqual(parsePrettyCatalogSegments([
     "India",
     "Nephrology",
@@ -160,7 +160,7 @@ test("Nephrology routes consolidate nationally and retain city context", () => {
   });
   assert.equal(
     swap,
-    "/costs/India/Mumbai/Nephrology/Paired-Kidney-Exchange-(Swap-Transplant)",
+    "/costs/India/Mumbai/Nephrology/Paired-Kidney-Exchange-Swap-Transplant",
   );
 });
 

@@ -10,7 +10,7 @@ India has developed a substantial bariatric and metabolic surgery ecosystem, wit
 
 Roux-en-Y lists sit on [Gastric Bypass Surgery in India](/treatments/gastric-bypass-surgery-in-india). Body-contouring lists sit on [Liposuction in India](/treatments/liposuction-in-india). Combined contour lists sit on [Mommy Makeover in India](/treatments/mommy-makeover-in-india). There is no live GAF mini-gastric-bypass, gastric-balloon, ESG or bariatric-surgery-only treatment page. This page is the named sleeve-gastrectomy product.
 
-GAF Healthcare planning for [sleeve gastrectomy](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy) is **$4,500–$8,500** (typically **2–5 nights**). US comparison is **$15,000–$28,000**. Neighbouring [Gastric Bypass (Roux-en-Y)](/costs/India/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)) is **$6,000–$11,000** (typically **3–6 nights**). Neighbouring [mini gastric bypass (OAGB/MGB)](/costs/India/Bariatric-Surgery/Mini-Gastric-Bypass-(OAGB-MGB)) is **$5,500–$10,000** (typically **3–6 nights**). Neighbouring [metabolic surgery for type 2 diabetes](/costs/India/Bariatric-Surgery/Metabolic-Surgery-for-Type-2-Diabetes) is **$6,000–$12,000** (typically **3–7 nights**) when glycaemic effect, not only kilograms, is the brief. Neighbouring [gastric balloon](/costs/India/Bariatric-Surgery/Gastric-Balloon) is **$2,000–$4,500** (day-care or overnight). Neighbouring [endoscopic sleeve gastroplasty](/costs/India/Bariatric-Surgery/Endoscopic-Sleeve-Gastroplasty-(ESG)) is **$4,500–$9,000** (typically **1–3 nights**). Neighbouring [gastric sleeve revision](/costs/India/Bariatric-Surgery/Gastric-Sleeve-Revision-Surgery) is **$7,000–$14,000** (typically **3–7 nights**) when a prior sleeve is being revised. Neighbouring [gastric banding](/costs/India/Bariatric-Surgery/Gastric-Banding-(Lap-Band)) is **$3,500–$7,500** (typically **1–3 nights**). These are planning ranges from partner hospital cost sheets, not hospital quotations.
+GAF Healthcare planning for [sleeve gastrectomy](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy) is **$4,500–$8,500** (typically **2–5 nights**). US comparison is **$15,000–$28,000**. Neighbouring [Gastric Bypass (Roux-en-Y)](/costs/India/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y) is **$6,000–$11,000** (typically **3–6 nights**). Neighbouring [mini gastric bypass (OAGB/MGB)](/costs/India/Bariatric-Surgery/Mini-Gastric-Bypass-OAGB-MGB) is **$5,500–$10,000** (typically **3–6 nights**). Neighbouring [metabolic surgery for type 2 diabetes](/costs/India/Bariatric-Surgery/Metabolic-Surgery-for-Type-2-Diabetes) is **$6,000–$12,000** (typically **3–7 nights**) when glycaemic effect, not only kilograms, is the brief. Neighbouring [gastric balloon](/costs/India/Bariatric-Surgery/Gastric-Balloon) is **$2,000–$4,500** (day-care or overnight). Neighbouring [endoscopic sleeve gastroplasty](/costs/India/Bariatric-Surgery/Endoscopic-Sleeve-Gastroplasty-ESG) is **$4,500–$9,000** (typically **1–3 nights**). Neighbouring [gastric sleeve revision](/costs/India/Bariatric-Surgery/Gastric-Sleeve-Revision-Surgery) is **$7,000–$14,000** (typically **3–7 nights**) when a prior sleeve is being revised. Neighbouring [gastric banding](/costs/India/Bariatric-Surgery/Gastric-Banding-Lap-Band) is **$3,500–$7,500** (typically **1–3 nights**). These are planning ranges from partner hospital cost sheets, not hospital quotations.
 
 International patients comparing [bariatric surgeons](/doctors/India/Bariatric-Surgery) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Bariatric-Surgery/Sleeve-Gastrectomy), [Mumbai](/doctors/India/Mumbai/Bariatric-Surgery/Sleeve-Gastrectomy), [Bengaluru](/doctors/India/Bengaluru/Bariatric-Surgery/Sleeve-Gastrectomy), [Chennai](/doctors/India/Chennai/Bariatric-Surgery/Sleeve-Gastrectomy) and [Hyderabad](/doctors/India/Hyderabad/Bariatric-Surgery/Sleeve-Gastrectomy). Partner [bariatric hospitals](/hospitals/India/Bariatric-Surgery) in [Delhi NCR](/hospitals/India/Delhi-NCR/Bariatric-Surgery), [Mumbai](/hospitals/India/Mumbai/Bariatric-Surgery) and [Bengaluru](/hospitals/India/Bengaluru/Bariatric-Surgery), and in [Chennai](/hospitals/India/Chennai/Bariatric-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Bariatric-Surgery), are a typical first filter because this work needs a named bariatric list, dietetics and a leak-aware ICU. City sleeve sheets include [Delhi NCR](/costs/India/Delhi-NCR/Bariatric-Surgery/Sleeve-Gastrectomy), [Mumbai](/costs/India/Mumbai/Bariatric-Surgery/Sleeve-Gastrectomy), [Bengaluru](/costs/India/Bengaluru/Bariatric-Surgery/Sleeve-Gastrectomy), [Chennai](/costs/India/Chennai/Bariatric-Surgery/Sleeve-Gastrectomy) and [Hyderabad](/costs/India/Hyderabad/Bariatric-Surgery/Sleeve-Gastrectomy). Pune, Kolkata, Ahmedabad and Jaipur may have bariatric theatres. They are not live GAF catalog cities on this site.
 
@@ -78,7 +78,7 @@ First, the smaller stomach limits how much food can be eaten at one time. Second
 
 ![Educational illustration of the stomach before resection, the removed greater curve and the remaining sleeve](/uploads/treatments/sleeve-anatomy.webp)
 
-Sleeve gastrectomy should not be confused with endoscopic sleeve gastroplasty. Endoscopic sleeve gastroplasty uses an endoscope and internal sutures to reshape the stomach without surgically removing part of it. There is no live GAF ESG treatment page. Neighbouring [endoscopic sleeve gastroplasty](/costs/India/Bariatric-Surgery/Endoscopic-Sleeve-Gastroplasty-(ESG)) is **$4,500–$9,000** when that sitting is named.
+Sleeve gastrectomy should not be confused with endoscopic sleeve gastroplasty. Endoscopic sleeve gastroplasty uses an endoscope and internal sutures to reshape the stomach without surgically removing part of it. There is no live GAF ESG treatment page. Neighbouring [endoscopic sleeve gastroplasty](/costs/India/Bariatric-Surgery/Endoscopic-Sleeve-Gastroplasty-ESG) is **$4,500–$9,000** when that sitting is named.
 
 [Ask whether a sleeve, Roux-en-Y or ESG is the honest product](/consult?treatment=sleeve-gastrectomy-in-india)
 
@@ -544,7 +544,7 @@ Adjustable gastric band surgery uses an implanted device around the upper stomac
 
 Sleeve gastrectomy removes part of the stomach and does not require an implanted band.
 
-Sleeve surgery generally produces greater weight loss than gastric banding, but it is permanent and has its own surgical and nutritional risks. There is no live GAF gastric-band treatment page. Neighbouring [gastric banding](/costs/India/Bariatric-Surgery/Gastric-Banding-(Lap-Band)) is **$3,500–$7,500** when a named surgeon still holds that indication.
+Sleeve surgery generally produces greater weight loss than gastric banding, but it is permanent and has its own surgical and nutritional risks. There is no live GAF gastric-band treatment page. Neighbouring [gastric banding](/costs/India/Bariatric-Surgery/Gastric-Banding-Lap-Band) is **$3,500–$7,500** when a named surgeon still holds that indication.
 
 ## Sleeve Gastrectomy vs Endoscopic Sleeve Gastroplasty
 
@@ -759,10 +759,10 @@ Planned questions can also go to WhatsApp at [+91 90443 46292](https://wa.me/919
 - [Liposuction in India](/treatments/liposuction-in-india)
 - [Mommy Makeover in India](/treatments/mommy-makeover-in-india)
 - [Sleeve gastrectomy cost](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy)
-- [Gastric Bypass (Roux-en-Y) cost](/costs/India/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y))
-- [Mini gastric bypass cost](/costs/India/Bariatric-Surgery/Mini-Gastric-Bypass-(OAGB-MGB))
+- [Gastric Bypass (Roux-en-Y) cost](/costs/India/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y)
+- [Mini gastric bypass cost](/costs/India/Bariatric-Surgery/Mini-Gastric-Bypass-OAGB-MGB)
 - [Metabolic surgery for type 2 diabetes cost](/costs/India/Bariatric-Surgery/Metabolic-Surgery-for-Type-2-Diabetes)
-- [Endoscopic sleeve gastroplasty cost](/costs/India/Bariatric-Surgery/Endoscopic-Sleeve-Gastroplasty-(ESG))
+- [Endoscopic sleeve gastroplasty cost](/costs/India/Bariatric-Surgery/Endoscopic-Sleeve-Gastroplasty-ESG)
 - [Bariatric surgeons in India](/doctors/India/Bariatric-Surgery)
 - [Bariatric hospitals in India](/hospitals/India/Bariatric-Surgery)
 

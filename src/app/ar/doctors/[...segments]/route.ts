@@ -48,8 +48,9 @@ export async function GET(
   // exactly as canonicalizePrettyPath does for the App Router.
   const pretty = prettyCatalogPath("/doctors", query);
   if (pretty !== `/doctors/${segments.join("/")}`) {
+    const legacyParens = segments.some((segment) => segment.includes("(") || segment.includes(")"));
     return new NextResponse(null, {
-      status: 308,
+      status: legacyParens ? 301 : 308,
       headers: { Location: localePath(pretty, "ar"), "x-gaf-locale": "ar" },
     });
   }

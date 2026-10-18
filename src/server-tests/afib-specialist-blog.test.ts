@@ -75,7 +75,7 @@ test("the AFib specialist guide keeps the quick answer and quotes published abla
     "/costs/India/Cardiology/Atrial-Fibrillation-Ablation",
     "/costs/India/Cardiology/Radiofrequency-Ablation",
     "/costs/India/Cardiology/Pacemaker-Implantation",
-    "/costs/India/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)",
+    "/costs/India/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator",
     "/blogs/cardiac-ablation-cost-in-india",
     "/blogs/how-to-choose-a-hospital-for-heart-treatment-in-india",
     "/blogs/cardiologist-consultation-fees-in-india",

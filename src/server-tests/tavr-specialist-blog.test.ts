@@ -78,7 +78,7 @@ test("the TAVR specialist guide keeps the checklist and quotes published valve r
     "/doctors/India/Hyderabad/Cardiology",
     "/hospitals/India/Cardiology",
     "/hospitals/India/Cardiac-Surgery",
-    "/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/costs/India/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
     "/costs/India/Cardiac-Surgery/Aortic-Valve-Replacement",
     "/costs/India/Cardiac-Surgery/Heart-Valve-Replacement",
     "/costs/India/Cardiology/Pacemaker-Implantation",

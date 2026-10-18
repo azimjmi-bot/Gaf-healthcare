@@ -245,9 +245,9 @@ test("the published pancreatic cancer page uses site USD ranges and GEO links", 
   assert.match(body, /local emergency department/);
   assert.match(body, /\/costs\/India\/Surgical-Oncology\/Whipple-Procedure/);
   assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Whipple-Procedure/);
-  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Whipple-Procedure-\(Pancreaticoduodenectomy\)/);
+  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Whipple-Procedure-Pancreaticoduodenectomy/);
   assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Distal-Pancreatectomy/);
-  assert.match(body, /\/costs\/India\/Gastroenterology\/Endoscopic-Ultrasound-\(EUS\)/);
+  assert.match(body, /\/costs\/India\/Gastroenterology\/Endoscopic-Ultrasound-EUS/);
   assert.match(body, /\/costs\/India\/Gastroenterology\/ERCP/);
   assert.match(body, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
   assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Whipple-Procedure/);
@@ -257,7 +257,7 @@ test("the published pancreatic cancer page uses site USD ranges and GEO links", 
     "/doctors/India/Mumbai/Surgical-Oncology/Whipple-Procedure",
     "/hospitals/India/Bengaluru/Surgical-Oncology",
     "/costs/India/Delhi-NCR/Surgical-Oncology/Whipple-Procedure",
-    "/costs/India/Surgical-Gastroenterology/Whipple-Procedure-(Pancreaticoduodenectomy)",
+    "/costs/India/Surgical-Gastroenterology/Whipple-Procedure-Pancreaticoduodenectomy",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
@@ -313,9 +313,9 @@ test("the published Whipple surgery page uses site USD ranges and GEO links", ()
   assert.match(body, /local emergency department/);
   assert.match(body, /\/costs\/India\/Surgical-Oncology\/Whipple-Procedure/);
   assert.match(body, /\/costs\/India\/Delhi-NCR\/Surgical-Oncology\/Whipple-Procedure/);
-  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Whipple-Procedure-\(Pancreaticoduodenectomy\)/);
+  assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Whipple-Procedure-Pancreaticoduodenectomy/);
   assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Distal-Pancreatectomy/);
-  assert.match(body, /\/costs\/India\/Gastroenterology\/Endoscopic-Ultrasound-\(EUS\)/);
+  assert.match(body, /\/costs\/India\/Gastroenterology\/Endoscopic-Ultrasound-EUS/);
   assert.match(body, /\/doctors\/India\/Mumbai\/Surgical-Oncology\/Whipple-Procedure/);
   assert.match(body, /\/hospitals\/India\/Bengaluru\/Surgical-Oncology/);
   for (const path of [
@@ -323,7 +323,7 @@ test("the published Whipple surgery page uses site USD ranges and GEO links", ()
     "/doctors/India/Mumbai/Surgical-Oncology/Whipple-Procedure",
     "/hospitals/India/Bengaluru/Surgical-Oncology",
     "/costs/India/Delhi-NCR/Surgical-Oncology/Whipple-Procedure",
-    "/costs/India/Surgical-Gastroenterology/Whipple-Procedure-(Pancreaticoduodenectomy)",
+    "/costs/India/Surgical-Gastroenterology/Whipple-Procedure-Pancreaticoduodenectomy",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
@@ -457,7 +457,7 @@ test("the published gastric bypass page uses GAF USD ranges and bariatric GEO li
   assert.match(body, /article-quick-answer|Quick Answer: Gastric Bypass Surgery in India/);
   assert.match(body, /local emergency department/);
   assert.match(body, /This page is the named gastric-bypass product/);
-  assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Gastric-Bypass-\(Roux-en-Y\)/);
+  assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Gastric-Bypass-Roux-en-Y/);
   assert.match(body, /\/costs\/India\/Surgical-Gastroenterology\/Gastric-Bypass-Surgery/);
   assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Sleeve-Gastrectomy/);
   assert.match(body, /\/treatments\/liposuction-in-india/);
@@ -468,16 +468,16 @@ test("the published gastric bypass page uses GAF USD ranges and bariatric GEO li
   assert.match(body, /\/uploads\/treatments\/gastric-bypass-steps\.webp/);
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   for (const path of [
-    "/doctors/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
-    "/doctors/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
-    "/doctors/India/Bengaluru/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
-    "/doctors/India/Chennai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
-    "/doctors/India/Hyderabad/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+    "/doctors/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y",
+    "/doctors/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y",
+    "/doctors/India/Bengaluru/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y",
+    "/doctors/India/Chennai/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y",
+    "/doctors/India/Hyderabad/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y",
     "/hospitals/India/Delhi-NCR/Bariatric-Surgery",
     "/hospitals/India/Mumbai/Bariatric-Surgery",
     "/hospitals/India/Bengaluru/Bariatric-Surgery",
-    "/costs/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
-    "/costs/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)",
+    "/costs/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y",
+    "/costs/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
@@ -543,7 +543,7 @@ test("the published sleeve gastrectomy page uses GAF USD ranges and bariatric GE
   assert.match(body, /local emergency department/);
   assert.match(body, /This page is the named sleeve-gastrectomy product/);
   assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Sleeve-Gastrectomy/);
-  assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Gastric-Bypass-\(Roux-en-Y\)/);
+  assert.match(body, /\/costs\/India\/Bariatric-Surgery\/Gastric-Bypass-Roux-en-Y/);
   assert.match(body, /\/treatments\/gastric-bypass-surgery-in-india/);
   assert.match(body, /\/treatments\/liposuction-in-india/);
   assert.match(body, /\/treatments\/mommy-makeover-in-india/);
@@ -882,8 +882,8 @@ test("the published HoLEP surgery page uses GAF USD ranges and urology GEO links
   assert.match(body, /2–4 nights/);
   assert.match(body, /article-quick-answer|Quick Answer: HoLEP Surgery in India/);
   assert.match(body, /local emergency department/);
-  assert.match(body, /\/costs\/India\/Urology\/HoLEP-\(Holmium-Laser-Enucleation\)/);
-  assert.match(body, /\/doctors\/India\/Urology\/HoLEP-\(Holmium-Laser-Enucleation\)/);
+  assert.match(body, /\/costs\/India\/Urology\/HoLEP-Holmium-Laser-Enucleation/);
+  assert.match(body, /\/doctors\/India\/Urology\/HoLEP-Holmium-Laser-Enucleation/);
   assert.match(body, /\/treatments\/greenlight-laser-surgery-in-india/);
   assert.match(body, /\/treatments\/radical-prostatectomy-in-india/);
   assert.match(body, /\/treatments\/prostate-cancer-treatment-in-india/);
@@ -893,16 +893,16 @@ test("the published HoLEP surgery page uses GAF USD ranges and urology GEO links
   assert.match(body, /\/uploads\/treatments\/hl-steps\.webp/);
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   for (const path of [
-    "/doctors/India/Delhi-NCR/Urology/HoLEP-(Holmium-Laser-Enucleation)",
-    "/doctors/India/Mumbai/Urology/HoLEP-(Holmium-Laser-Enucleation)",
-    "/doctors/India/Bengaluru/Urology/HoLEP-(Holmium-Laser-Enucleation)",
-    "/doctors/India/Chennai/Urology/HoLEP-(Holmium-Laser-Enucleation)",
-    "/doctors/India/Hyderabad/Urology/HoLEP-(Holmium-Laser-Enucleation)",
+    "/doctors/India/Delhi-NCR/Urology/HoLEP-Holmium-Laser-Enucleation",
+    "/doctors/India/Mumbai/Urology/HoLEP-Holmium-Laser-Enucleation",
+    "/doctors/India/Bengaluru/Urology/HoLEP-Holmium-Laser-Enucleation",
+    "/doctors/India/Chennai/Urology/HoLEP-Holmium-Laser-Enucleation",
+    "/doctors/India/Hyderabad/Urology/HoLEP-Holmium-Laser-Enucleation",
     "/hospitals/India/Delhi-NCR/Urology",
     "/hospitals/India/Mumbai/Urology",
     "/hospitals/India/Bengaluru/Urology",
-    "/costs/India/Delhi-NCR/Urology/HoLEP-(Holmium-Laser-Enucleation)",
-    "/costs/India/Mumbai/Urology/HoLEP-(Holmium-Laser-Enucleation)",
+    "/costs/India/Delhi-NCR/Urology/HoLEP-Holmium-Laser-Enucleation",
+    "/costs/India/Mumbai/Urology/HoLEP-Holmium-Laser-Enucleation",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
@@ -968,8 +968,8 @@ test("the published TURP surgery page uses GAF USD ranges and urology GEO links"
   assert.match(body, /2–4 nights/);
   assert.match(body, /article-quick-answer|Quick Answer: TURP Surgery in India/);
   assert.match(body, /local emergency department/);
-  assert.match(body, /\/costs\/India\/Urology\/TURP-\(Transurethral-Resection-of-the-Prostate\)/);
-  assert.match(body, /\/doctors\/India\/Urology\/TURP-\(Transurethral-Resection-of-the-Prostate\)/);
+  assert.match(body, /\/costs\/India\/Urology\/TURP-Transurethral-Resection-of-the-Prostate/);
+  assert.match(body, /\/doctors\/India\/Urology\/TURP-Transurethral-Resection-of-the-Prostate/);
   assert.match(body, /\/treatments\/holep-surgery-in-india/);
   assert.match(body, /\/treatments\/greenlight-laser-surgery-in-india/);
   assert.match(body, /\/treatments\/radical-prostatectomy-in-india/);
@@ -980,16 +980,16 @@ test("the published TURP surgery page uses GAF USD ranges and urology GEO links"
   assert.match(body, /\/uploads\/treatments\/tp-steps\.webp/);
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   for (const path of [
-    "/doctors/India/Delhi-NCR/Urology/TURP-(Transurethral-Resection-of-the-Prostate)",
-    "/doctors/India/Mumbai/Urology/TURP-(Transurethral-Resection-of-the-Prostate)",
-    "/doctors/India/Bengaluru/Urology/TURP-(Transurethral-Resection-of-the-Prostate)",
-    "/doctors/India/Chennai/Urology/TURP-(Transurethral-Resection-of-the-Prostate)",
-    "/doctors/India/Hyderabad/Urology/TURP-(Transurethral-Resection-of-the-Prostate)",
+    "/doctors/India/Delhi-NCR/Urology/TURP-Transurethral-Resection-of-the-Prostate",
+    "/doctors/India/Mumbai/Urology/TURP-Transurethral-Resection-of-the-Prostate",
+    "/doctors/India/Bengaluru/Urology/TURP-Transurethral-Resection-of-the-Prostate",
+    "/doctors/India/Chennai/Urology/TURP-Transurethral-Resection-of-the-Prostate",
+    "/doctors/India/Hyderabad/Urology/TURP-Transurethral-Resection-of-the-Prostate",
     "/hospitals/India/Delhi-NCR/Urology",
     "/hospitals/India/Mumbai/Urology",
     "/hospitals/India/Bengaluru/Urology",
-    "/costs/India/Delhi-NCR/Urology/TURP-(Transurethral-Resection-of-the-Prostate)",
-    "/costs/India/Mumbai/Urology/TURP-(Transurethral-Resection-of-the-Prostate)",
+    "/costs/India/Delhi-NCR/Urology/TURP-Transurethral-Resection-of-the-Prostate",
+    "/costs/India/Mumbai/Urology/TURP-Transurethral-Resection-of-the-Prostate",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
@@ -3762,9 +3762,9 @@ test("the published ACL surgery page uses site USD ranges and GEO links", () => 
   assert.match(body, /1–3 nights/);
   assert.match(body, /article-quick-answer|Quick Answer: ACL Surgery in India/);
   assert.match(body, /local emergency department/);
-  assert.match(body, /\/costs\/India\/Orthopedics\/ACL-Reconstruction-\(Anterior-Cruciate-Ligament\)/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/ACL-Reconstruction-Anterior-Cruciate-Ligament/);
   assert.match(body, /\/costs\/India\/Orthopedics\/Meniscus-Repair/);
-  assert.match(body, /\/costs\/India\/Orthopedics\/PCL-Reconstruction-\(Posterior-Cruciate-Ligament\)/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/PCL-Reconstruction-Posterior-Cruciate-Ligament/);
   assert.match(body, /\/treatments\/knee-replacement-surgery-in-india/);
   assert.match(body, /\/treatments\/hip-replacement-surgery-in-india/);
   assert.match(body, /\/uploads\/treatments\/acl-tear-anatomy\.webp/);
@@ -3773,15 +3773,15 @@ test("the published ACL surgery page uses site USD ranges and GEO links", () => 
   assert.match(body, /\/uploads\/treatments\/acl-physio\.webp/);
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   for (const path of [
-    "/doctors/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)",
-    "/doctors/India/Mumbai/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)",
-    "/doctors/India/Bengaluru/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)",
-    "/doctors/India/Chennai/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)",
-    "/doctors/India/Hyderabad/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)",
+    "/doctors/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament",
+    "/doctors/India/Mumbai/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament",
+    "/doctors/India/Bengaluru/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament",
+    "/doctors/India/Chennai/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament",
+    "/doctors/India/Hyderabad/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament",
     "/hospitals/India/Delhi-NCR/Orthopedics",
     "/hospitals/India/Mumbai/Orthopedics",
     "/hospitals/India/Bengaluru/Orthopedics",
-    "/costs/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)",
+    "/costs/India/Delhi-NCR/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
@@ -3841,8 +3841,8 @@ test("the published knee arthroscopy page uses site USD ranges and GEO links", (
   assert.match(body, /local emergency department/);
   assert.match(body, /\/costs\/India\/Orthopedics\/Arthroscopic-Surgery/);
   assert.match(body, /\/costs\/India\/Orthopedics\/Meniscus-Repair/);
-  assert.match(body, /\/costs\/India\/Orthopedics\/ACL-Reconstruction-\(Anterior-Cruciate-Ligament\)/);
-  assert.match(body, /\/costs\/India\/Orthopedics\/PCL-Reconstruction-\(Posterior-Cruciate-Ligament\)/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/ACL-Reconstruction-Anterior-Cruciate-Ligament/);
+  assert.match(body, /\/costs\/India\/Orthopedics\/PCL-Reconstruction-Posterior-Cruciate-Ligament/);
   assert.match(body, /\/costs\/India\/Orthopedics\/Total-Knee-Replacement/);
   assert.match(body, /\/treatments\/acl-surgery-in-india/);
   assert.match(body, /\/treatments\/knee-replacement-surgery-in-india/);
@@ -4635,7 +4635,7 @@ test("the published endoscopic brain page uses site USD ranges and GEO links", (
   assert.match(body, /\/costs\/India\/Neurosurgery\/Endoscopic-Brain-Surgery/);
   assert.match(body, /\/costs\/India\/Neurosurgery\/Endoscopic-Skull-Base-Surgery/);
   assert.match(body, /\/costs\/India\/Neurosurgery\/Pituitary-Tumor-Surgery/);
-  assert.match(body, /\/costs\/India\/Neurosurgery\/Endoscopic-Third-Ventriculostomy-\(ETV\)/);
+  assert.match(body, /\/costs\/India\/Neurosurgery\/Endoscopic-Third-Ventriculostomy-ETV/);
   assert.match(body, /\/costs\/India\/ENT\/Skull-Base-Surgery/);
   assert.match(body, /\/treatments\/brain-tumor-surgery-in-india/);
   assert.match(body, /\/treatments\/craniotomy-surgery-in-india/);
@@ -4833,7 +4833,7 @@ test("the published hydrocephalus page uses site USD ranges and GEO links", () =
   assert.match(body, /\/costs\/India\/Neurosurgery\/Hydrocephalus-Surgery/);
   assert.match(
     body,
-    /\/costs\/India\/Neurosurgery\/Endoscopic-Third-Ventriculostomy-\(ETV\)/,
+    /\/costs\/India\/Neurosurgery\/Endoscopic-Third-Ventriculostomy-ETV/,
   );
   assert.match(body, /\/treatments\/endoscopic-brain-surgery-in-india/);
   assert.match(body, /\/treatments\/brain-tumor-surgery-in-india/);
@@ -4944,11 +4944,11 @@ test("the published coronary angioplasty page uses site USD ranges and GEO links
   assert.match(body, /\/costs\/India\/Cardiology\/Coronary-Angiography/);
   assert.match(
     body,
-    /\/costs\/India\/Cardiology\/CTO-Angioplasty-\(Chronic-Total-Occlusion\)/,
+    /\/costs\/India\/Cardiology\/CTO-Angioplasty-Chronic-Total-Occlusion/,
   );
   assert.match(
     body,
-    /\/costs\/India\/Cardiac-Surgery\/CABG-\(Coronary-Artery-Bypass-Grafting\)/,
+    /\/costs\/India\/Cardiac-Surgery\/CABG-Coronary-Artery-Bypass-Grafting/,
   );
   assert.match(body, /\/uploads\/treatments\/coronary-angioplasty-plaque\.webp/);
   assert.match(body, /\/uploads\/treatments\/coronary-angioplasty-balloon\.webp/);
@@ -5028,7 +5028,7 @@ test("the published pacemaker page uses site USD ranges and GEO links", () => {
   assert.match(body, /\/costs\/India\/Cardiology\/CRT-CRT-D-Implantation/);
   assert.match(
     body,
-    /\/costs\/India\/Cardiology\/ICD-Implantation-\(Implantable-Cardioverter-Defibrillator\)/,
+    /\/costs\/India\/Cardiology\/ICD-Implantation-Implantable-Cardioverter-Defibrillator/,
   );
   assert.match(body, /\/treatments\/coronary-angioplasty-in-india/);
   assert.match(body, /\/uploads\/treatments\/pacemaker-conduction\.webp/);
@@ -5114,7 +5114,7 @@ test("the published ICD page uses site USD ranges and GEO links", () => {
   assert.match(body, /local emergency department/);
   assert.match(
     body,
-    /\/costs\/India\/Cardiology\/ICD-Implantation-\(Implantable-Cardioverter-Defibrillator\)/,
+    /\/costs\/India\/Cardiology\/ICD-Implantation-Implantable-Cardioverter-Defibrillator/,
   );
   assert.match(body, /\/costs\/India\/Cardiology\/Pacemaker-Implantation/);
   assert.match(body, /\/costs\/India\/Cardiology\/Leadless-Pacemaker-Implantation/);
@@ -5127,15 +5127,15 @@ test("the published ICD page uses site USD ranges and GEO links", () => {
   assert.match(body, /\/uploads\/treatments\/icd-interrogation\.webp/);
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   for (const path of [
-    "/doctors/India/Delhi-NCR/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)",
-    "/doctors/India/Mumbai/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)",
-    "/doctors/India/Bengaluru/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)",
-    "/doctors/India/Chennai/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)",
-    "/doctors/India/Hyderabad/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)",
+    "/doctors/India/Delhi-NCR/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator",
+    "/doctors/India/Mumbai/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator",
+    "/doctors/India/Bengaluru/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator",
+    "/doctors/India/Chennai/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator",
+    "/doctors/India/Hyderabad/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator",
     "/hospitals/India/Delhi-NCR/Cardiology",
     "/hospitals/India/Mumbai/Cardiology",
     "/hospitals/India/Bengaluru/Cardiology",
-    "/costs/India/Delhi-NCR/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)",
+    "/costs/India/Delhi-NCR/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
@@ -5200,7 +5200,7 @@ test("the published TAVR page uses site USD ranges and GEO links", () => {
   assert.match(body, /local emergency department/);
   assert.match(
     body,
-    /\/costs\/India\/Cardiac-Surgery\/TAVR-TAVI-\(Transcatheter-Aortic-Valve-Replacement\)/,
+    /\/costs\/India\/Cardiac-Surgery\/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement/,
   );
   assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Aortic-Valve-Replacement/);
   assert.match(body, /\/treatments\/pacemaker-implantation-in-india/);
@@ -5212,15 +5212,15 @@ test("the published TAVR page uses site USD ranges and GEO links", () => {
   assert.match(body, /\/uploads\/treatments\/tavr-ct-planning\.webp/);
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   for (const path of [
-    "/doctors/India/Delhi-NCR/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
-    "/doctors/India/Mumbai/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
-    "/doctors/India/Bengaluru/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
-    "/doctors/India/Chennai/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
-    "/doctors/India/Hyderabad/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/doctors/India/Delhi-NCR/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
+    "/doctors/India/Mumbai/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
+    "/doctors/India/Bengaluru/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
+    "/doctors/India/Chennai/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
+    "/doctors/India/Hyderabad/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
     "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
     "/hospitals/India/Mumbai/Cardiac-Surgery",
     "/hospitals/India/Bengaluru/Cardiac-Surgery",
-    "/costs/India/Delhi-NCR/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
@@ -5283,7 +5283,7 @@ test("the published BAV page uses neighbouring USD ranges and GEO links", () => 
   assert.match(body, /\/treatments\/coronary-angioplasty-in-india/);
   assert.match(
     body,
-    /\/costs\/India\/Cardiac-Surgery\/TAVR-TAVI-\(Transcatheter-Aortic-Valve-Replacement\)/,
+    /\/costs\/India\/Cardiac-Surgery\/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement/,
   );
   assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Aortic-Valve-Replacement/);
   assert.match(body, /\/costs\/India\/Cardiology\/Balloon-Mitral-Valvotomy/);
@@ -5293,15 +5293,15 @@ test("the published BAV page uses neighbouring USD ranges and GEO links", () => 
   assert.match(body, /\/uploads\/treatments\/bav-bridge-pathway\.webp/);
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   for (const path of [
-    "/doctors/India/Delhi-NCR/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
-    "/doctors/India/Mumbai/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
-    "/doctors/India/Bengaluru/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
-    "/doctors/India/Chennai/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
-    "/doctors/India/Hyderabad/Cardiology/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/doctors/India/Delhi-NCR/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
+    "/doctors/India/Mumbai/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
+    "/doctors/India/Bengaluru/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
+    "/doctors/India/Chennai/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
+    "/doctors/India/Hyderabad/Cardiology/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
     "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
     "/hospitals/India/Mumbai/Cardiac-Surgery",
     "/hospitals/India/Bengaluru/Cardiac-Surgery",
-    "/costs/India/Delhi-NCR/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
@@ -6137,7 +6137,7 @@ test("the published lymphoma page uses modality USD ranges and GEO links", () =>
   assert.match(body, /article-quick-answer|Quick Answer: Lymphoma Treatment in India/);
   assert.match(body, /local emergency department/);
   assert.match(body, /\/costs\/India\/Medical-Oncology\/Chemotherapy/);
-  assert.match(body, /\/costs\/India\/Radiation-Oncology\/External-Beam-Radiotherapy-\(EBRT\)/);
+  assert.match(body, /\/costs\/India\/Radiation-Oncology\/External-Beam-Radiotherapy-EBRT/);
   assert.match(body, /\/costs\/India\/Hematology\/Autologous-Stem-Cell-Transplant/);
   assert.match(body, /\/costs\/India\/Hematology\/CAR-T-Cell-Therapy/);
   assert.match(body, /\/treatments\/bone-marrow-transplant-in-india/);
@@ -6154,11 +6154,11 @@ test("the published lymphoma page uses modality USD ranges and GEO links", () =>
     "/doctors/India/Chennai/Hematology",
     "/doctors/India/Hyderabad/Hematology",
     "/doctors/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
-    "/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
     "/hospitals/India/Delhi-NCR/Hematology",
     "/hospitals/India/Mumbai/Hematology",
     "/costs/India/Delhi-NCR/Medical-Oncology/Chemotherapy",
-    "/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    "/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
@@ -6398,7 +6398,7 @@ test("the published Multiple Myeloma treatment uses GAF USD ranges and haematolo
     "/doctors/India/Delhi-NCR/Hematology/Autologous-Stem-Cell-Transplant",
     "/doctors/India/Delhi-NCR/Hematology/Bone-Marrow-Transplantation",
     "/doctors/India/Delhi-NCR/Medical-Oncology/Chemotherapy",
-    "/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+    "/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
     "/hospitals/India/Delhi-NCR/Hematology",
     "/hospitals/India/Mumbai/Hematology",
     "/costs/India/Delhi-NCR/Hematology/Autologous-Stem-Cell-Transplant",
@@ -6703,7 +6703,7 @@ test("the published CABG surgery page uses GAF USD ranges and cardiac GEO links"
   assert.match(body, /7–14 nights/);
   assert.match(body, /article-quick-answer|Quick Answer: CABG Surgery in India/);
   assert.match(body, /local emergency department/);
-  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/CABG-\(Coronary-Artery-Bypass-Grafting\)/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/CABG-Coronary-Artery-Bypass-Grafting/);
   assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Redo-CABG/);
   assert.match(body, /\/costs\/India\/Cardiology\/Coronary-Angioplasty-Stenting/);
   assert.match(body, /\/treatments\/coronary-angioplasty-in-india/);
@@ -6714,16 +6714,16 @@ test("the published CABG surgery page uses GAF USD ranges and cardiac GEO links"
   assert.match(body, /\/uploads\/treatments\/cabg-steps\.webp/);
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   for (const path of [
-    "/doctors/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
-    "/doctors/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
-    "/doctors/India/Bengaluru/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
-    "/doctors/India/Chennai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
-    "/doctors/India/Hyderabad/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
+    "/doctors/India/Mumbai/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
+    "/doctors/India/Chennai/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
     "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
     "/hospitals/India/Mumbai/Cardiac-Surgery",
     "/hospitals/India/Bengaluru/Cardiac-Surgery",
-    "/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
-    "/costs/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
+    "/costs/India/Mumbai/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
@@ -6786,7 +6786,7 @@ test("the published heart valve replacement page uses GAF USD ranges and cardiac
   assert.match(body, /local emergency department/);
   assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Heart-Valve-Replacement/);
   assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Aortic-Valve-Replacement/);
-  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/TAVR-TAVI-\(Transcatheter-Aortic-Valve-Replacement\)/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement/);
   assert.match(body, /\/treatments\/tavr-in-india/);
   assert.match(body, /\/treatments\/cabg-surgery-in-india/);
   assert.match(body, /\/uploads\/treatments\/heart-valve-disease\.webp/);
@@ -6873,7 +6873,7 @@ test("the published tricuspid valve replacement page uses GAF USD ranges and car
   assert.match(body, /local emergency department/);
   assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Heart-Valve-Replacement/);
   assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Heart-Valve-Repair/);
-  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/TAVR-TAVI-\(Transcatheter-Aortic-Valve-Replacement\)/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement/);
   assert.match(body, /\/treatments\/heart-valve-replacement-in-india/);
   assert.match(body, /\/treatments\/tavr-in-india/);
   assert.match(body, /\/treatments\/cabg-surgery-in-india/);
@@ -7047,7 +7047,7 @@ test("the published VSD surgery page uses GAF USD ranges and cardiac GEO links",
   assert.match(body, /7–21 nights/);
   assert.match(body, /article-quick-answer|Quick Answer: VSD Closure Surgery in India/);
   assert.match(body, /local emergency department/);
-  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/VSD-Closure-\(Ventricular-Septal-Defect\)/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/VSD-Closure-Ventricular-Septal-Defect/);
   assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Congenital-Heart-Surgery/);
   assert.match(body, /\/treatments\/heart-valve-replacement-in-india/);
   assert.match(body, /\/treatments\/pacemaker-implantation-in-india/);
@@ -7057,16 +7057,16 @@ test("the published VSD surgery page uses GAF USD ranges and cardiac GEO links",
   assert.match(body, /\/uploads\/treatments\/vsd-surgery-steps\.webp/);
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   for (const path of [
-    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
-    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
-    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
-    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
-    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/VSD-Closure-Ventricular-Septal-Defect",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/VSD-Closure-Ventricular-Septal-Defect",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/VSD-Closure-Ventricular-Septal-Defect",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/VSD-Closure-Ventricular-Septal-Defect",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/VSD-Closure-Ventricular-Septal-Defect",
     "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
-    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
-    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/VSD-Closure-Ventricular-Septal-Defect",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/VSD-Closure-Ventricular-Septal-Defect",
     "/doctors/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery",
     "/doctors/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery",
     "/doctors/India/Bengaluru/Cardiac-Surgery/Congenital-Heart-Surgery",
@@ -7152,7 +7152,7 @@ test("the published pediatric heart surgery page uses GAF USD ranges and cardiac
   assert.match(body, /3–8 weeks/);
   assert.match(body, /article-quick-answer|Quick Answer: Pediatric Heart Surgery in India/);
   assert.match(body, /local emergency department/);
-  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/ASD-Closure-\(Atrial-Septal-Defect\)/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/ASD-Closure-Atrial-Septal-Defect/);
   assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/Arterial-Switch-Operation/);
   assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/Norwood-Procedure/);
   assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Congenital-Heart-Surgery/);
@@ -7167,17 +7167,17 @@ test("the published pediatric heart surgery page uses GAF USD ranges and cardiac
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   assert.ok((body.match(/https:\/\/wa\.me\/919044346292/g) ?? []).length >= 5);
   for (const path of [
-    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
-    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/VSD-Closure-(Ventricular-Septal-Defect)",
-    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-Atrial-Septal-Defect",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/VSD-Closure-Ventricular-Septal-Defect",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/TOF-Repair-Tetralogy-of-Fallot",
     "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/Arterial-Switch-Operation",
-    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/PDA-Closure-Patent-Ductus-Arteriosus",
     "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Chennai/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Hyderabad/Pediatric-Cardiac-Surgery",
-    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-Atrial-Septal-Defect",
     "/costs/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery",
     "/doctors/India/Delhi-NCR/Cardiac-Surgery/Congenital-Heart-Surgery",
     "/doctors/India/Mumbai/Cardiac-Surgery/Congenital-Heart-Surgery",
@@ -7343,7 +7343,7 @@ test("the published heart bypass surgery cost page uses GAF USD ranges and cardi
   assert.match(body, /7–14 nights/);
   assert.match(body, /article-quick-answer|Quick Answer: Heart Bypass Surgery Cost in India/);
   assert.match(body, /local emergency department/);
-  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/CABG-\(Coronary-Artery-Bypass-Grafting\)/);
+  assert.match(body, /\/costs\/India\/Cardiac-Surgery\/CABG-Coronary-Artery-Bypass-Grafting/);
   assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Redo-CABG/);
   assert.match(body, /\/costs\/India\/Cardiology\/Coronary-Angioplasty-Stenting/);
   assert.match(body, /\/treatments\/cabg-surgery-in-india/);
@@ -7354,16 +7354,16 @@ test("the published heart bypass surgery cost page uses GAF USD ranges and cardi
   assert.match(body, /\/uploads\/treatments\/cabg-cost-steps\.webp/);
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   for (const path of [
-    "/doctors/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
-    "/doctors/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
-    "/doctors/India/Bengaluru/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
-    "/doctors/India/Chennai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
-    "/doctors/India/Hyderabad/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/doctors/India/Delhi-NCR/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
+    "/doctors/India/Mumbai/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
+    "/doctors/India/Bengaluru/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
+    "/doctors/India/Chennai/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
+    "/doctors/India/Hyderabad/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
     "/hospitals/India/Delhi-NCR/Cardiac-Surgery",
     "/hospitals/India/Mumbai/Cardiac-Surgery",
     "/hospitals/India/Bengaluru/Cardiac-Surgery",
-    "/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
-    "/costs/India/Mumbai/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/costs/India/Delhi-NCR/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
+    "/costs/India/Mumbai/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
@@ -7776,7 +7776,7 @@ test("the published PDA closure page uses GAF USD ranges and pediatric GEO links
   assert.match(body, /3–8 nights/);
   assert.match(body, /article-quick-answer|Quick Answer: PDA Closure Surgery in India/);
   assert.match(body, /local emergency department/);
-  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/PDA-Closure-\(Patent-Ductus-Arteriosus\)/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/PDA-Closure-Patent-Ductus-Arteriosus/);
   assert.match(body, /\/costs\/India\/Cardiac-Surgery\/Congenital-Heart-Surgery/);
   assert.match(body, /\/treatments\/ventricular-septal-defect-surgery-in-india/);
   assert.match(body, /\/treatments\/coarctation-repair-surgery-in-india/);
@@ -7786,16 +7786,16 @@ test("the published PDA closure page uses GAF USD ranges and pediatric GEO links
   assert.match(body, /\/uploads\/treatments\/pda-steps\.webp/);
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   for (const path of [
-    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
-    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
-    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
-    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
-    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/PDA-Closure-Patent-Ductus-Arteriosus",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/PDA-Closure-Patent-Ductus-Arteriosus",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/PDA-Closure-Patent-Ductus-Arteriosus",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/PDA-Closure-Patent-Ductus-Arteriosus",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/PDA-Closure-Patent-Ductus-Arteriosus",
     "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
-    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
-    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/PDA-Closure-(Patent-Ductus-Arteriosus)",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/PDA-Closure-Patent-Ductus-Arteriosus",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/PDA-Closure-Patent-Ductus-Arteriosus",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
@@ -8121,8 +8121,8 @@ test("the published TOF repair page uses GAF USD ranges and pediatric GEO links"
   assert.match(body, /8–16 nights/);
   assert.match(body, /article-quick-answer|Quick Answer: TOF Repair Surgery in India/);
   assert.match(body, /local emergency department/);
-  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/TOF-Repair-\(Tetralogy-of-Fallot\)/);
-  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/VSD-Closure-\(Ventricular-Septal-Defect\)/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/TOF-Repair-Tetralogy-of-Fallot/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/VSD-Closure-Ventricular-Septal-Defect/);
   assert.match(body, /\/treatments\/ventricular-septal-defect-surgery-in-india/);
   assert.match(body, /\/treatments\/glenn-procedure-surgery-in-india/);
   assert.match(body, /\/treatments\/pda-closure-surgery-in-india/);
@@ -8132,16 +8132,16 @@ test("the published TOF repair page uses GAF USD ranges and pediatric GEO links"
   assert.match(body, /\/uploads\/treatments\/tof-steps\.webp/);
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   for (const path of [
-    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
-    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
-    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
-    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
-    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/TOF-Repair-Tetralogy-of-Fallot",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/TOF-Repair-Tetralogy-of-Fallot",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/TOF-Repair-Tetralogy-of-Fallot",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/TOF-Repair-Tetralogy-of-Fallot",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/TOF-Repair-Tetralogy-of-Fallot",
     "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
-    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
-    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/TOF-Repair-(Tetralogy-of-Fallot)",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/TOF-Repair-Tetralogy-of-Fallot",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/TOF-Repair-Tetralogy-of-Fallot",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);
@@ -8204,8 +8204,8 @@ test("the published ASD closure page uses GAF USD ranges and pediatric GEO links
   assert.match(body, /5–10 nights/);
   assert.match(body, /article-quick-answer|Quick Answer: ASD Closure in India/);
   assert.match(body, /local emergency department/);
-  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/ASD-Closure-\(Atrial-Septal-Defect\)/);
-  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/VSD-Closure-\(Ventricular-Septal-Defect\)/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/ASD-Closure-Atrial-Septal-Defect/);
+  assert.match(body, /\/costs\/India\/Pediatric-Cardiac-Surgery\/VSD-Closure-Ventricular-Septal-Defect/);
   assert.match(body, /\/treatments\/ventricular-septal-defect-surgery-in-india/);
   assert.match(body, /\/treatments\/pda-closure-surgery-in-india/);
   assert.match(body, /\/treatments\/tof-repair-surgery-in-india/);
@@ -8215,16 +8215,16 @@ test("the published ASD closure page uses GAF USD ranges and pediatric GEO links
   assert.match(body, /\/uploads\/treatments\/asd-steps\.webp/);
   assert.match(body, /https:\/\/wa\.me\/919044346292/);
   for (const path of [
-    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
-    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
-    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
-    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
-    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/doctors/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-Atrial-Septal-Defect",
+    "/doctors/India/Mumbai/Pediatric-Cardiac-Surgery/ASD-Closure-Atrial-Septal-Defect",
+    "/doctors/India/Bengaluru/Pediatric-Cardiac-Surgery/ASD-Closure-Atrial-Septal-Defect",
+    "/doctors/India/Chennai/Pediatric-Cardiac-Surgery/ASD-Closure-Atrial-Septal-Defect",
+    "/doctors/India/Hyderabad/Pediatric-Cardiac-Surgery/ASD-Closure-Atrial-Septal-Defect",
     "/hospitals/India/Delhi-NCR/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Mumbai/Pediatric-Cardiac-Surgery",
     "/hospitals/India/Bengaluru/Pediatric-Cardiac-Surgery",
-    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
-    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/ASD-Closure-(Atrial-Septal-Defect)",
+    "/costs/India/Delhi-NCR/Pediatric-Cardiac-Surgery/ASD-Closure-Atrial-Septal-Defect",
+    "/costs/India/Mumbai/Pediatric-Cardiac-Surgery/ASD-Closure-Atrial-Septal-Defect",
   ]) {
     assert.match(body, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
     assert.ok(parsePrettyCatalogSegments(path.split("/").slice(2)), path);

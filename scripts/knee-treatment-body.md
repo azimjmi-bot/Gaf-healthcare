@@ -104,7 +104,7 @@ Inflammatory diseases can progressively damage cartilage and bone and may eventu
 
 ### 3. Post-traumatic arthritis
 
-A previous fracture, ligament injury or significant knee trauma can contribute to long-term joint degeneration. A remote [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) or [meniscus repair](/costs/India/Orthopedics/Meniscus-Repair) does not by itself mean a later replacement will be needed, but post-traumatic arthritis can still develop years after injury.
+A previous fracture, ligament injury or significant knee trauma can contribute to long-term joint degeneration. A remote [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) or [meniscus repair](/costs/India/Orthopedics/Meniscus-Repair) does not by itself mean a later replacement will be needed, but post-traumatic arthritis can still develop years after injury.
 
 ### 4. Severe knee deformity
 
@@ -390,7 +390,7 @@ Deep squatting and prolonged kneeling may be difficult after knee replacement. P
 
 Knee replacement is not the first treatment for every person with knee pain. Depending on the diagnosis, alternatives may include weight management, exercise therapy, physiotherapy, strengthening exercises, activity modification, walking aids, bracing, medicines, selected injections and other joint-preserving procedures.
 
-When the problem is a sports injury rather than end-stage arthritis, [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-(Anterior-Cruciate-Ligament)) (**$2,500–$6,500**) or [meniscus repair](/costs/India/Orthopedics/Meniscus-Repair) (**$1,800–$4,500**) may be the honest sheet — not arthroplasty.
+When the problem is a sports injury rather than end-stage arthritis, [ACL reconstruction](/costs/India/Orthopedics/ACL-Reconstruction-Anterior-Cruciate-Ligament) (**$2,500–$6,500**) or [meniscus repair](/costs/India/Orthopedics/Meniscus-Repair) (**$1,800–$4,500**) may be the honest sheet — not arthroplasty.
 
 ICMR's Standard Treatment Workflow for knee osteoarthritis recommends conservative measures such as exercise, weight loss and appropriate medications and emphasises a high threshold for invasive procedures.
 

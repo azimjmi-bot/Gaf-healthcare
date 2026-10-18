@@ -1153,7 +1153,7 @@
     "blocks": [
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#breadcrumb",
+        "@id": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#breadcrumb",
         "@type": "BreadcrumbList",
         "inLanguage": "en",
         "itemListElement": [
@@ -1183,7 +1183,7 @@
           },
           {
             "@type": "ListItem",
-            "item": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+            "item": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
             "name": "External Beam Radiotherapy (EBRT)",
             "position": 5
           }
@@ -1191,7 +1191,7 @@
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#collection",
+        "@id": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#collection",
         "@type": "CollectionPage",
         "about": {
           "@type": "MedicalProcedure",
@@ -1200,11 +1200,11 @@
         "description": "Review 23 listed radiation oncologists associated with External Beam Radiotherapy (EBRT) in Delhi NCR, India. Inclusion uses specialty, hospital affiliation and exact procedure relationships in the GAF catalog, not a clinical ranking.",
         "inLanguage": "en",
         "name": "Best Radiation Oncologists for EBRT in Delhi NCR, India",
-        "url": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#doctor-list",
+        "@id": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#doctor-list",
         "@type": "ItemList",
         "inLanguage": "en",
         "itemListElement": [
@@ -1452,11 +1452,11 @@
         "itemListOrder": "https://schema.org/ItemListUnordered",
         "name": "Best Radiation Oncologists for EBRT in Delhi NCR, India",
         "numberOfItems": 10,
-        "url": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#faq",
+        "@id": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#faq",
         "@type": "FAQPage",
         "inLanguage": "en",
         "mainEntity": [
@@ -1533,7 +1533,7 @@
             "name": "When should I choose lodging in Delhi NCR?"
           }
         ],
-        "url": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/doctors/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       }
     ]
   },
@@ -3789,7 +3789,7 @@
     "blocks": [
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#breadcrumb",
+        "@id": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#breadcrumb",
         "@type": "BreadcrumbList",
         "inLanguage": "en",
         "itemListElement": [
@@ -3825,7 +3825,7 @@
           },
           {
             "@type": "ListItem",
-            "item": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+            "item": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
             "name": "External Beam Radiotherapy (EBRT)",
             "position": 6
           }
@@ -3833,7 +3833,7 @@
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#collection",
+        "@id": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#collection",
         "@type": "CollectionPage",
         "about": {
           "@type": "MedicalProcedure",
@@ -3842,11 +3842,11 @@
         "description": "Review 7 validated hospitals and 23 associated radiation oncologists for External Beam Radiotherapy (EBRT) in Delhi NCR, India. Relationships require matching hospital and doctor procedure data.",
         "inLanguage": "en",
         "name": "Best Hospitals for External Beam Radiotherapy (EBRT) in Delhi NCR, India",
-        "url": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#doctor-list",
+        "@id": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#doctor-list",
         "@type": "ItemList",
         "inLanguage": "en",
         "itemListElement": [
@@ -4406,11 +4406,11 @@
         "itemListOrder": "https://schema.org/ItemListUnordered",
         "name": "radiation oncologists associated with External Beam Radiotherapy (EBRT) in Delhi NCR, India",
         "numberOfItems": 23,
-        "url": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#faq",
+        "@id": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#faq",
         "@type": "FAQPage",
         "inLanguage": "en",
         "mainEntity": [
@@ -4455,11 +4455,11 @@
             "name": "What is the cost of External Beam Radiotherapy (EBRT) in Delhi NCR?"
           }
         ],
-        "url": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#hospital-list",
+        "@id": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#hospital-list",
         "@type": "ItemList",
         "inLanguage": "en",
         "itemListElement": [
@@ -4747,7 +4747,7 @@
         "itemListOrder": "https://schema.org/ItemListUnordered",
         "name": "Best Hospitals for External Beam Radiotherapy (EBRT) in Delhi NCR, India",
         "numberOfItems": 7,
-        "url": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/hospitals/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       }
     ]
   },
@@ -4756,7 +4756,7 @@
     "blocks": [
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#breadcrumb",
+        "@id": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#breadcrumb",
         "@type": "BreadcrumbList",
         "inLanguage": "en",
         "itemListElement": [
@@ -4792,7 +4792,7 @@
           },
           {
             "@type": "ListItem",
-            "item": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+            "item": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
             "name": "External Beam Radiotherapy (EBRT)",
             "position": 6
           }
@@ -4800,7 +4800,7 @@
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#collection",
+        "@id": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#collection",
         "@type": "CollectionPage",
         "about": {
           "@type": "MedicalProcedure",
@@ -4809,11 +4809,11 @@
         "description": "Review 1 validated hospitals and 7 associated radiation oncologists for External Beam Radiotherapy (EBRT) in Bengaluru, India. Relationships require matching hospital and doctor procedure data.",
         "inLanguage": "en",
         "name": "Best Hospitals for External Beam Radiotherapy (EBRT) in Bengaluru, India",
-        "url": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#doctor-list",
+        "@id": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#doctor-list",
         "@type": "ItemList",
         "inLanguage": "en",
         "itemListElement": [
@@ -4989,11 +4989,11 @@
         "itemListOrder": "https://schema.org/ItemListUnordered",
         "name": "radiation oncologists associated with External Beam Radiotherapy (EBRT) in Bengaluru, India",
         "numberOfItems": 7,
-        "url": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#faq",
+        "@id": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#faq",
         "@type": "FAQPage",
         "inLanguage": "en",
         "mainEntity": [
@@ -5038,11 +5038,11 @@
             "name": "What is the cost of External Beam Radiotherapy (EBRT) in Bengaluru?"
           }
         ],
-        "url": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#hospital-list",
+        "@id": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#hospital-list",
         "@type": "ItemList",
         "inLanguage": "en",
         "itemListElement": [
@@ -5090,7 +5090,7 @@
         "itemListOrder": "https://schema.org/ItemListUnordered",
         "name": "Best Hospitals for External Beam Radiotherapy (EBRT) in Bengaluru, India",
         "numberOfItems": 1,
-        "url": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/hospitals/India/Bengaluru/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       }
     ]
   },
@@ -5099,7 +5099,7 @@
     "blocks": [
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#breadcrumb",
+        "@id": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#breadcrumb",
         "@type": "BreadcrumbList",
         "inLanguage": "en",
         "itemListElement": [
@@ -5135,7 +5135,7 @@
           },
           {
             "@type": "ListItem",
-            "item": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+            "item": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
             "name": "External Beam Radiotherapy (EBRT)",
             "position": 6
           }
@@ -5143,7 +5143,7 @@
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#collection",
+        "@id": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#collection",
         "@type": "CollectionPage",
         "about": {
           "@type": "MedicalProcedure",
@@ -5152,11 +5152,11 @@
         "description": "Review 1 validated hospitals and 3 associated radiation oncologists for External Beam Radiotherapy (EBRT) in Chennai, India. Relationships require matching hospital and doctor procedure data.",
         "inLanguage": "en",
         "name": "Best Hospitals for External Beam Radiotherapy (EBRT) in Chennai, India",
-        "url": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#doctor-list",
+        "@id": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#doctor-list",
         "@type": "ItemList",
         "inLanguage": "en",
         "itemListElement": [
@@ -5236,11 +5236,11 @@
         "itemListOrder": "https://schema.org/ItemListUnordered",
         "name": "radiation oncologists associated with External Beam Radiotherapy (EBRT) in Chennai, India",
         "numberOfItems": 3,
-        "url": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#faq",
+        "@id": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#faq",
         "@type": "FAQPage",
         "inLanguage": "en",
         "mainEntity": [
@@ -5285,11 +5285,11 @@
             "name": "What is the cost of External Beam Radiotherapy (EBRT) in Chennai?"
           }
         ],
-        "url": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#hospital-list",
+        "@id": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#hospital-list",
         "@type": "ItemList",
         "inLanguage": "en",
         "itemListElement": [
@@ -5337,7 +5337,7 @@
         "itemListOrder": "https://schema.org/ItemListUnordered",
         "name": "Best Hospitals for External Beam Radiotherapy (EBRT) in Chennai, India",
         "numberOfItems": 1,
-        "url": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/hospitals/India/Chennai/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       }
     ]
   },
@@ -6618,7 +6618,7 @@
     "blocks": [
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#breadcrumb",
+        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#breadcrumb",
         "@type": "BreadcrumbList",
         "inLanguage": "en",
         "itemListElement": [
@@ -6636,7 +6636,7 @@
           },
           {
             "@type": "ListItem",
-            "item": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+            "item": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
             "name": "External Beam Radiotherapy (EBRT)",
             "position": 3
           }
@@ -6644,7 +6644,7 @@
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#doctor-list",
+        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#doctor-list",
         "@type": "ItemList",
         "inLanguage": "en",
         "itemListElement": [
@@ -6844,11 +6844,11 @@
         "itemListOrder": "https://schema.org/ItemListUnordered",
         "name": "Doctors to consider for EBRT in India",
         "numberOfItems": 8,
-        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#faq",
+        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#faq",
         "@type": "FAQPage",
         "inLanguage": "en",
         "mainEntity": [
@@ -6965,11 +6965,11 @@
             "name": "What follow-up is required?"
           }
         ],
-        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#hospital-list",
+        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#hospital-list",
         "@type": "ItemList",
         "inLanguage": "en",
         "itemListElement": [
@@ -7297,11 +7297,11 @@
         "itemListOrder": "https://schema.org/ItemListUnordered",
         "name": "Hospitals to consider for EBRT in India",
         "numberOfItems": 8,
-        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#webpage",
+        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#webpage",
         "@type": [
           "MedicalWebPage",
           "WebPage"
@@ -7339,7 +7339,7 @@
           "url": "https://gaf.healthcare/"
         },
         "specialty": "Radiation Oncology",
-        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       }
     ]
   },
@@ -7348,7 +7348,7 @@
     "blocks": [
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#breadcrumb",
+        "@id": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#breadcrumb",
         "@type": "BreadcrumbList",
         "inLanguage": "en",
         "itemListElement": [
@@ -7366,13 +7366,13 @@
           },
           {
             "@type": "ListItem",
-            "item": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+            "item": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
             "name": "External Beam Radiotherapy (EBRT)",
             "position": 3
           },
           {
             "@type": "ListItem",
-            "item": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+            "item": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
             "name": "Delhi NCR",
             "position": 4
           }
@@ -7380,7 +7380,7 @@
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#doctor-list",
+        "@id": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#doctor-list",
         "@type": "ItemList",
         "inLanguage": "en",
         "itemListElement": [
@@ -7580,11 +7580,11 @@
         "itemListOrder": "https://schema.org/ItemListUnordered",
         "name": "EBRT radiation oncologists in Delhi NCR",
         "numberOfItems": 8,
-        "url": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#faq",
+        "@id": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#faq",
         "@type": "FAQPage",
         "inLanguage": "en",
         "mainEntity": [
@@ -7733,11 +7733,11 @@
             "name": "What follow-up is required?"
           }
         ],
-        "url": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#hospital-list",
+        "@id": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#hospital-list",
         "@type": "ItemList",
         "inLanguage": "en",
         "itemListElement": [
@@ -8025,11 +8025,11 @@
         "itemListOrder": "https://schema.org/ItemListUnordered",
         "name": "Hospitals for EBRT in Delhi NCR",
         "numberOfItems": 7,
-        "url": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#webpage",
+        "@id": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#webpage",
         "@type": [
           "MedicalWebPage",
           "WebPage"
@@ -8067,7 +8067,7 @@
           "url": "https://gaf.healthcare/"
         },
         "specialty": "Radiation Oncology",
-        "url": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/costs/India/Delhi-NCR/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       }
     ]
   },
@@ -8076,7 +8076,7 @@
     "blocks": [
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#breadcrumb",
+        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#breadcrumb",
         "@type": "BreadcrumbList",
         "inLanguage": "en",
         "itemListElement": [
@@ -8094,7 +8094,7 @@
           },
           {
             "@type": "ListItem",
-            "item": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)",
+            "item": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT",
             "name": "External Beam Radiotherapy (EBRT)",
             "position": 3
           }
@@ -8102,7 +8102,7 @@
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#doctor-list",
+        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#doctor-list",
         "@type": "ItemList",
         "inLanguage": "en",
         "itemListElement": [
@@ -8302,11 +8302,11 @@
         "itemListOrder": "https://schema.org/ItemListUnordered",
         "name": "Radiation oncologists to consider for EBRT in India",
         "numberOfItems": 8,
-        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#faq",
+        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#faq",
         "@type": "FAQPage",
         "inLanguage": "en",
         "mainEntity": [
@@ -8423,11 +8423,11 @@
             "name": "What follow-up is required?"
           }
         ],
-        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#hospital-list",
+        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#hospital-list",
         "@type": "ItemList",
         "inLanguage": "en",
         "itemListElement": [
@@ -8755,11 +8755,11 @@
         "itemListOrder": "https://schema.org/ItemListUnordered",
         "name": "Hospitals to consider for EBRT in India",
         "numberOfItems": 8,
-        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       },
       {
         "@context": "https://schema.org",
-        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)#webpage",
+        "@id": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT#webpage",
         "@type": [
           "MedicalWebPage",
           "WebPage"
@@ -8797,7 +8797,7 @@
           "url": "https://gaf.healthcare/"
         },
         "specialty": "Radiation Oncology",
-        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-(EBRT)"
+        "url": "https://gaf.healthcare/costs/India/Radiation-Oncology/External-Beam-Radiotherapy-EBRT"
       }
     ]
   },

@@ -18,6 +18,7 @@ export function toPrettySegment(name: string) {
     .trim()
     .normalize("NFKD")
     .replace(/\p{M}/gu, "")
+    .replace(/[()]/g, "")
     .replace(/&/g, "-")
     .replace(/\/+/g, "-")
     .replace(/\s+/g, "-")

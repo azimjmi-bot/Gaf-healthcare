@@ -92,7 +92,7 @@ The remaining pancreas, bile duct and digestive tract are then reconstructed.
 
 In a pylorus-preserving Whipple procedure, the surgeon attempts to preserve the pylorus and most of the stomach when medically appropriate.
 
-The choice between procedures depends on tumor location, anatomy and the surgeon's judgment. The HPB sheet for [Whipple procedure (pancreaticoduodenectomy)](/costs/India/Surgical-Gastroenterology/Whipple-Procedure-(Pancreaticoduodenectomy)) uses the same national planning range.
+The choice between procedures depends on tumor location, anatomy and the surgeon's judgment. The HPB sheet for [Whipple procedure (pancreaticoduodenectomy)](/costs/India/Surgical-Gastroenterology/Whipple-Procedure-Pancreaticoduodenectomy) uses the same national planning range.
 
 ## Why Is Whipple Surgery Needed?
 
@@ -210,7 +210,7 @@ Common investigations include:
 * MRI
 * MRCP
 * PET/CT in selected situations
-* [Endoscopic ultrasound](/costs/India/Gastroenterology/Endoscopic-Ultrasound-(EUS))
+* [Endoscopic ultrasound](/costs/India/Gastroenterology/Endoscopic-Ultrasound-EUS)
 * CT chest and abdomen for staging
 
 The purpose is not simply to locate the tumor.
@@ -225,7 +225,7 @@ The team needs to understand:
 * Pancreatic duct obstruction
 * Possible metastatic disease
 
-GAF planning ranges for EUS in India are **$400–$1,400** (day-care). City pages such as [Delhi NCR EUS](/costs/India/Delhi-NCR/Gastroenterology/Endoscopic-Ultrasound-(EUS)) use the same national range unless a hospital issues a verified quotation.
+GAF planning ranges for EUS in India are **$400–$1,400** (day-care). City pages such as [Delhi NCR EUS](/costs/India/Delhi-NCR/Gastroenterology/Endoscopic-Ultrasound-EUS) use the same national range unless a hospital issues a verified quotation.
 
 ### Blood tests
 
@@ -815,11 +815,11 @@ This should be treated as a planning range rather than a guaranteed package pric
 | Treatment component | GAF planning range in India |
 | --- | --- |
 | [Whipple procedure](/costs/India/Surgical-Oncology/Whipple-Procedure) | $14,000–$32,000 |
-| [Whipple (pancreaticoduodenectomy)](/costs/India/Surgical-Gastroenterology/Whipple-Procedure-(Pancreaticoduodenectomy)) | $14,000–$32,000 |
+| [Whipple (pancreaticoduodenectomy)](/costs/India/Surgical-Gastroenterology/Whipple-Procedure-Pancreaticoduodenectomy) | $14,000–$32,000 |
 | [Distal pancreatectomy](/costs/India/Surgical-Gastroenterology/Distal-Pancreatectomy) | $9,000–$22,000 |
 | [Pancreatic surgery](/costs/India/Surgical-Oncology/Pancreatic-Surgery) / [pancreatectomy](/costs/India/Surgical-Gastroenterology/Pancreatectomy) | $12,000–$30,000 |
 | [Chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) | $1,500–$8,000+ |
-| [EUS](/costs/India/Gastroenterology/Endoscopic-Ultrasound-(EUS)) | $400–$1,400 |
+| [EUS](/costs/India/Gastroenterology/Endoscopic-Ultrasound-EUS) | $400–$1,400 |
 | [ERCP](/costs/India/Gastroenterology/ERCP) | $1,500–$4,200 |
 | [Biliary stenting](/costs/India/Gastroenterology/Biliary-Stenting) | $2,000–$5,500 |
 | [Precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) | $2,000–$7,000 |

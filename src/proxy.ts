@@ -75,12 +75,26 @@ function withLocale(request: NextRequest, locale: string, pathname?: string) {
   return withPublicHtmlCache(request, response);
 }
 
+/** 301 a parenthesized procedure segment to the canonical hyphenated form. */
+function catalogParenRedirect(request: NextRequest) {
+  const next = request.nextUrl.pathname.replace(
+    /\/([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)-\(([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)\)/g,
+    "/$1-$2",
+  );
+  if (next === request.nextUrl.pathname) return null;
+  const url = request.nextUrl.clone();
+  url.pathname = next;
+  return NextResponse.redirect(url, 301);
+}
+
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
   const parts = pathname.split("/").filter(Boolean);
   const head = parts[0];
 
   if (isLegacyGonePath(pathname)) return legacyGone();
+  const parenRedirect = catalogParenRedirect(request);
+  if (parenRedirect) return parenRedirect;
 
   if (head && isTargetLocale(head)) {
     const rest = parts.length > 1 ? `/${parts.slice(1).join("/")}` : "/";

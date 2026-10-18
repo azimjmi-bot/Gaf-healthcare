@@ -4,9 +4,9 @@ India has specialist cardiac electrophysiology and device-implantation services,
 
 A conventional pacemaker is a different product. Named pacing lists sit on [Pacemaker Implantation in India](/treatments/pacemaker-implantation-in-india). Neighbouring leadless capsules sit on [leadless pacemaker implantation](/costs/India/Cardiology/Leadless-Pacemaker-Implantation). Resynchronization sits on [CRT/CRT-D implantation](/costs/India/Cardiology/CRT-CRT-D-Implantation). A coronary stent is a different product again. Named PCI sits on [Coronary Angioplasty in India](/treatments/coronary-angioplasty-in-india). This page is the named ICD product. Tricuspid repair lists sit on [Tricuspid Valve Repair in India](/treatments/tricuspid-valve-repair-in-india). LVAD lists sit on [Left Ventricular Assist Device (LVAD) Procedure in India](/treatments/lvad-implantation-in-india). Tricuspid replacement lists sit on [Tricuspid Valve Replacement Surgery in India](/treatments/tricuspid-valve-replacement-in-india).
 
-GAF Healthcare planning for [ICD implantation](/costs/India/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)) is **$8,000–$18,000** (typically **1–4 nights**). US comparison is **$40,000–$100,000**. Named [pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) is **$3,500–$9,000** (typically **1–3 nights**). [Leadless pacemaker implantation](/costs/India/Cardiology/Leadless-Pacemaker-Implantation) is **$12,000–$25,000** (typically **1–3 nights**). [CRT/CRT-D implantation](/costs/India/Cardiology/CRT-CRT-D-Implantation) is **$10,000–$22,000** (typically **2–5 nights**). Neighbouring [atrial fibrillation ablation](/costs/India/Cardiology/Atrial-Fibrillation-Ablation) is **$6,500–$16,000** (typically **1–3 nights**) when a rhythm-ablation list is the product. Neighbouring [coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) is **$3,200–$8,500** (typically **1–3 nights**) when a blockage, not sudden-death risk, is the product. These are planning ranges from partner hospital cost sheets, not hospital quotations. Subcutaneous ICD (S-ICD) systems, generator replacement, lead extraction, infection, paediatric cases and combined procedures are quoted after case review.
+GAF Healthcare planning for [ICD implantation](/costs/India/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator) is **$8,000–$18,000** (typically **1–4 nights**). US comparison is **$40,000–$100,000**. Named [pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) is **$3,500–$9,000** (typically **1–3 nights**). [Leadless pacemaker implantation](/costs/India/Cardiology/Leadless-Pacemaker-Implantation) is **$12,000–$25,000** (typically **1–3 nights**). [CRT/CRT-D implantation](/costs/India/Cardiology/CRT-CRT-D-Implantation) is **$10,000–$22,000** (typically **2–5 nights**). Neighbouring [atrial fibrillation ablation](/costs/India/Cardiology/Atrial-Fibrillation-Ablation) is **$6,500–$16,000** (typically **1–3 nights**) when a rhythm-ablation list is the product. Neighbouring [coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) is **$3,200–$8,500** (typically **1–3 nights**) when a blockage, not sudden-death risk, is the product. These are planning ranges from partner hospital cost sheets, not hospital quotations. Subcutaneous ICD (S-ICD) systems, generator replacement, lead extraction, infection, paediatric cases and combined procedures are quoted after case review.
 
-International patients comparing [cardiologists](/doctors/India/Cardiology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)), [Mumbai](/doctors/India/Mumbai/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)), [Bengaluru](/doctors/India/Bengaluru/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)), [Chennai](/doctors/India/Chennai/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)) and [Hyderabad](/doctors/India/Hyderabad/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)). Partner [cardiology hospitals](/hospitals/India/Cardiology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Cardiology), [Mumbai](/hospitals/India/Mumbai/Cardiology) and [Bengaluru](/hospitals/India/Bengaluru/Cardiology), and in [Chennai](/hospitals/India/Chennai/Cardiology) and [Hyderabad](/hospitals/India/Hyderabad/Cardiology), are a typical first filter. City cost sheets include [Delhi NCR](/costs/India/Delhi-NCR/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)), [Mumbai](/costs/India/Mumbai/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)), [Bengaluru](/costs/India/Bengaluru/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)), [Chennai](/costs/India/Chennai/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)) and [Hyderabad](/costs/India/Hyderabad/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)). Kolkata, Pune, Ahmedabad, Chandigarh and Kochi may have device services, but they are not live GAF catalog cities on this site.
+International patients comparing [cardiologists](/doctors/India/Cardiology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator), [Mumbai](/doctors/India/Mumbai/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator), [Bengaluru](/doctors/India/Bengaluru/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator), [Chennai](/doctors/India/Chennai/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator) and [Hyderabad](/doctors/India/Hyderabad/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator). Partner [cardiology hospitals](/hospitals/India/Cardiology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Cardiology), [Mumbai](/hospitals/India/Mumbai/Cardiology) and [Bengaluru](/hospitals/India/Bengaluru/Cardiology), and in [Chennai](/hospitals/India/Chennai/Cardiology) and [Hyderabad](/hospitals/India/Hyderabad/Cardiology), are a typical first filter. City cost sheets include [Delhi NCR](/costs/India/Delhi-NCR/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator), [Mumbai](/costs/India/Mumbai/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator), [Bengaluru](/costs/India/Bengaluru/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator), [Chennai](/costs/India/Chennai/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator) and [Hyderabad](/costs/India/Hyderabad/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator). Kolkata, Pune, Ahmedabad, Chandigarh and Kochi may have device services, but they are not live GAF catalog cities on this site.
 
 > Important: Not everyone with a low ejection fraction, heart failure or an abnormal ECG automatically needs an ICD. The decision depends on the complete clinical picture, including previous arrhythmias, heart function, reversible causes and overall sudden-death risk. Collapse, severe chest pain, severe breathlessness or repeated ICD shocks belongs in a **local emergency department**, not in a WhatsApp message.
 
@@ -237,7 +237,7 @@ The exact restrictions vary by procedure and physician. For example, some centre
 
 Recovery differs from one person to another. For an uncomplicated procedure, many patients can return gradually to normal daily activities after the initial recovery period. Strenuous exercise, heavy lifting and activities involving significant shoulder movement may need to be restricted temporarily. The patient should follow the specific instructions given by the implanting team rather than relying on a generic timeline.
 
-GAF planning for [ICD implantation](/costs/India/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)) is typically **1–4 nights**. Some patients remain longer for rhythm monitoring, device testing, wound observation or other medical conditions.
+GAF planning for [ICD implantation](/costs/India/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator) is typically **1–4 nights**. Some patients remain longer for rhythm monitoring, device testing, wound observation or other medical conditions.
 
 During the first days, patients may experience mild pain, bruising, swelling, tiredness and tenderness around the incision. During the following weeks, the wound generally continues to heal. The doctor may review device function, incision healing, lead parameters, medication, activity and symptoms.
 
@@ -317,7 +317,7 @@ The cost of ICD implantation in India varies considerably because the device its
 
 | Type / complexity | GAF planning | Typical stay |
 | --- | --- | --- |
-| [ICD implantation](/costs/India/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)) | $8,000–$18,000 | 1–4 nights |
+| [ICD implantation](/costs/India/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator) | $8,000–$18,000 | 1–4 nights |
 | [Pacemaker implantation](/costs/India/Cardiology/Pacemaker-Implantation) | $3,500–$9,000 | 1–3 nights |
 | [Leadless pacemaker implantation](/costs/India/Cardiology/Leadless-Pacemaker-Implantation) | $12,000–$25,000 | 1–3 nights |
 | [CRT/CRT-D implantation](/costs/India/Cardiology/CRT-CRT-D-Implantation) | $10,000–$22,000 | 2–5 nights |
@@ -333,11 +333,11 @@ Always ask whether the quoted device is included. The device model and manufactu
 
 City starting points:
 
-- [Delhi NCR ICD implantation cost](/costs/India/Delhi-NCR/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator))
-- [Mumbai ICD implantation cost](/costs/India/Mumbai/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator))
-- [Bengaluru ICD implantation cost](/costs/India/Bengaluru/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator))
-- [Chennai ICD implantation cost](/costs/India/Chennai/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator))
-- [Hyderabad ICD implantation cost](/costs/India/Hyderabad/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator))
+- [Delhi NCR ICD implantation cost](/costs/India/Delhi-NCR/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator)
+- [Mumbai ICD implantation cost](/costs/India/Mumbai/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator)
+- [Bengaluru ICD implantation cost](/costs/India/Bengaluru/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator)
+- [Chennai ICD implantation cost](/costs/India/Chennai/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator)
+- [Hyderabad ICD implantation cost](/costs/India/Hyderabad/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator)
 
 [Plan an ICD quotation review](/consult?treatment=ICD%20Implantation)
 
@@ -451,7 +451,7 @@ Usually, no. A conventional ICD is generally implanted through a relatively smal
 
 ### How much does ICD implantation cost in India?
 
-GAF [ICD implantation](/costs/India/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)) planning is **$8,000–$18,000**. Named pacemaker, CRT-D and leadless sheets differ. A written estimate after records review is required.
+GAF [ICD implantation](/costs/India/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator) planning is **$8,000–$18,000**. Named pacemaker, CRT-D and leadless sheets differ. A written estimate after records review is required.
 
 ### How long do you stay in the hospital after ICD implantation?
 
@@ -521,7 +521,7 @@ Share ECG, Holter, echocardiography and arrhythmia records before making travel 
 7. [American Heart Association — Living With Your Implantable Cardioverter Defibrillator](https://www.heart.org/) — daily life and electromagnetic interference.
 8. [American Heart Association — Questions to Ask Your Doctor About an ICD](https://www.heart.org/) — shared decision-making questions.
 9. [Indian Heart Rhythm Society — Consensus Statement for Implantation and Follow-up of Cardiac Implantable Electronic Devices in India](https://indianhrs.org/) — Indian device-implantation and follow-up consensus.
-10. [GAF Healthcare ICD implantation](/costs/India/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)) — partner USD planning range for the named ICD product.
+10. [GAF Healthcare ICD implantation](/costs/India/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator) — partner USD planning range for the named ICD product.
 
 **Last reviewed against the cited sources: October 2026.**
 

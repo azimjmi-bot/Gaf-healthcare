@@ -4,7 +4,7 @@ Hydrocephalus can affect newborns, children, young adults and older adults. It m
 
 The named endoscopic corridor sits on [Endoscopic Brain Surgery in India](/treatments/endoscopic-brain-surgery-in-india). Tumour-related blockage often sits on [Brain Tumor Surgery in India](/treatments/brain-tumor-surgery-in-india). A skull opening, when required for tumour or other intracranial work, sits on [Craniotomy Surgery in India](/treatments/craniotomy-surgery-in-india). Spinal tumours that coexist with CSF problems sit on [Spine Tumor Surgery in India](/treatments/spine-tumor-surgery-in-india). Selected sellar masses sit on [Pituitary Tumor Surgery in India](/treatments/pituitary-tumor-surgery-in-india).
 
-GAF Healthcare planning for [hydrocephalus surgery](/costs/India/Neurosurgery/Hydrocephalus-Surgery) is **$3,000–$8,000** (typically **3–7 nights**). US comparison is **$20,000–$50,000**. Named [ETV](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-(ETV)) is **$3,000–$8,000** (typically **2–5 nights**). Neighbouring [endoscopic brain surgery](/costs/India/Neurosurgery/Endoscopic-Brain-Surgery) is **$5,000–$12,000** (typically **3–7 nights**) when a broader neuroendoscopy list is the product. [Brain tumor surgery](/costs/India/Neurosurgery/Brain-Tumor-Surgery) is **$6,000–$15,000** (typically **5–10 nights**) when tumour removal is required to restore CSF flow. Neighbouring [Chiari surgery](/costs/India/Neurosurgery/Chiari-Surgery) is **$5,000–$12,000** (typically **4–8 nights**) when foramen-magnum decompression already belongs on the same dossier. These are planning ranges from partner hospital cost sheets, not hospital quotations. Programmable-valve upgrades, shunt infection, paediatric ICU, ETV with choroid-plexus cauterization, external ventricular drains and combined tumour-plus-shunt lists are quoted after case review.
+GAF Healthcare planning for [hydrocephalus surgery](/costs/India/Neurosurgery/Hydrocephalus-Surgery) is **$3,000–$8,000** (typically **3–7 nights**). US comparison is **$20,000–$50,000**. Named [ETV](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-ETV) is **$3,000–$8,000** (typically **2–5 nights**). Neighbouring [endoscopic brain surgery](/costs/India/Neurosurgery/Endoscopic-Brain-Surgery) is **$5,000–$12,000** (typically **3–7 nights**) when a broader neuroendoscopy list is the product. [Brain tumor surgery](/costs/India/Neurosurgery/Brain-Tumor-Surgery) is **$6,000–$15,000** (typically **5–10 nights**) when tumour removal is required to restore CSF flow. Neighbouring [Chiari surgery](/costs/India/Neurosurgery/Chiari-Surgery) is **$5,000–$12,000** (typically **4–8 nights**) when foramen-magnum decompression already belongs on the same dossier. These are planning ranges from partner hospital cost sheets, not hospital quotations. Programmable-valve upgrades, shunt infection, paediatric ICU, ETV with choroid-plexus cauterization, external ventricular drains and combined tumour-plus-shunt lists are quoted after case review.
 
 International patients comparing [neurosurgeons](/doctors/India/Neurosurgery) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Neurosurgery/Hydrocephalus-Surgery), [Mumbai](/doctors/India/Mumbai/Neurosurgery/Hydrocephalus-Surgery), [Bengaluru](/doctors/India/Bengaluru/Neurosurgery/Hydrocephalus-Surgery), [Chennai](/doctors/India/Chennai/Neurosurgery/Hydrocephalus-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Neurosurgery/Hydrocephalus-Surgery). Endoscopic lists sit on [Delhi NCR](/doctors/India/Delhi-NCR/Neurosurgery/Endoscopic-Brain-Surgery), [Mumbai](/doctors/India/Mumbai/Neurosurgery/Endoscopic-Brain-Surgery), [Bengaluru](/doctors/India/Bengaluru/Neurosurgery/Endoscopic-Brain-Surgery), [Chennai](/doctors/India/Chennai/Neurosurgery/Endoscopic-Brain-Surgery) and [Hyderabad](/doctors/India/Hyderabad/Neurosurgery/Endoscopic-Brain-Surgery). Partner [neurosurgery hospitals](/hospitals/India/Neurosurgery) in [Delhi NCR](/hospitals/India/Delhi-NCR/Neurosurgery), [Mumbai](/hospitals/India/Mumbai/Neurosurgery) and [Bengaluru](/hospitals/India/Bengaluru/Neurosurgery), and in [Chennai](/hospitals/India/Chennai/Neurosurgery) and [Hyderabad](/hospitals/India/Hyderabad/Neurosurgery), are a typical first filter. City cost sheets include [Delhi NCR](/costs/India/Delhi-NCR/Neurosurgery/Hydrocephalus-Surgery), [Mumbai](/costs/India/Mumbai/Neurosurgery/Hydrocephalus-Surgery), [Bengaluru](/costs/India/Bengaluru/Neurosurgery/Hydrocephalus-Surgery), [Chennai](/costs/India/Chennai/Neurosurgery/Hydrocephalus-Surgery) and [Hyderabad](/costs/India/Hyderabad/Neurosurgery/Hydrocephalus-Surgery). Kolkata, Pune, Ahmedabad, Chandigarh and Kochi may have hydrocephalus services, but they are not live GAF catalog cities on this site.
 
@@ -35,7 +35,7 @@ An EVD temporarily drains CSF outside the body. It is used for emergency or temp
 No. Some people without progressive symptoms may be monitored. Surgery is considered when hydrocephalus is clinically significant, progressive or causing dangerous pressure.
 
 **How long is hospital stay?**
-GAF planning for [hydrocephalus surgery](/costs/India/Neurosurgery/Hydrocephalus-Surgery) is typically **3–7 nights**. Named [ETV](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-(ETV)) is typically **2–5 nights**. Complex, infected or paediatric ICU cases may take longer.
+GAF planning for [hydrocephalus surgery](/costs/India/Neurosurgery/Hydrocephalus-Surgery) is typically **3–7 nights**. Named [ETV](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-ETV) is typically **2–5 nights**. Complex, infected or paediatric ICU cases may take longer.
 
 **What does surgery cost in India?**
 GAF [hydrocephalus surgery](/costs/India/Neurosurgery/Hydrocephalus-Surgery) planning is **$3,000–$8,000**. Named ETV is **$3,000–$8,000**. A patient-specific quotation is necessary.
@@ -143,7 +143,7 @@ ETV is a minimally invasive procedure that creates an opening in the floor of th
 
 During ETV the patient is under anaesthesia, a small opening is made in the skull, an endoscope is introduced into the ventricular system, the third ventricle is identified, a small opening is created in its floor, and the incision is closed. Unlike a conventional VP shunt, ETV does not require permanent tubing from the brain to the abdomen. It is not suitable for every patient.
 
-The named ETV product sits on [endoscopic third ventriculostomy](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-(ETV)). The broader corridor product sits on [Endoscopic Brain Surgery in India](/treatments/endoscopic-brain-surgery-in-india).
+The named ETV product sits on [endoscopic third ventriculostomy](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-ETV). The broader corridor product sits on [Endoscopic Brain Surgery in India](/treatments/endoscopic-brain-surgery-in-india).
 
 ![Neuroendoscope introduced through a small cranial opening during ETV](/uploads/treatments/hydrocephalus-etv.webp)
 
@@ -207,7 +207,7 @@ A straightforward VP shunt procedure may take approximately one to two hours, al
 
 ## Hospital Stay and Recovery
 
-GAF planning for [hydrocephalus surgery](/costs/India/Neurosurgery/Hydrocephalus-Surgery) is typically **3–7 nights**. Named [ETV](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-(ETV)) is typically **2–5 nights**. Age, infection, ICU needs, whether the procedure was elective or emergency, and whether additional surgery was performed can lengthen the stay.
+GAF planning for [hydrocephalus surgery](/costs/India/Neurosurgery/Hydrocephalus-Surgery) is typically **3–7 nights**. Named [ETV](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-ETV) is typically **2–5 nights**. Age, infection, ICU needs, whether the procedure was elective or emergency, and whether additional surgery was performed can lengthen the stay.
 
 ![Physiotherapy gait assessment after hydrocephalus or NPH shunt surgery](/uploads/treatments/hydrocephalus-recovery.webp)
 
@@ -238,7 +238,7 @@ There is no medically responsible single price because treatment may range from 
 | Type / complexity | GAF planning | Typical stay |
 | --- | --- | --- |
 | [Hydrocephalus surgery](/costs/India/Neurosurgery/Hydrocephalus-Surgery) | $3,000–$8,000 | 3–7 nights |
-| [ETV](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-(ETV)) | $3,000–$8,000 | 2–5 nights |
+| [ETV](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-ETV) | $3,000–$8,000 | 2–5 nights |
 | [Endoscopic brain surgery](/costs/India/Neurosurgery/Endoscopic-Brain-Surgery) | $5,000–$12,000 | 3–7 nights |
 | [Brain tumor surgery](/costs/India/Neurosurgery/Brain-Tumor-Surgery) | $6,000–$15,000 | 5–10 nights |
 | [Chiari surgery](/costs/India/Neurosurgery/Chiari-Surgery) | $5,000–$12,000 | 4–8 nights |
@@ -318,7 +318,7 @@ Neither procedure is universally better. ETV can be particularly useful when CSF
 
 ### How much does hydrocephalus surgery cost in India?
 
-GAF [hydrocephalus surgery](/costs/India/Neurosurgery/Hydrocephalus-Surgery) planning is **$3,000–$8,000**. Named [ETV](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-(ETV)) is **$3,000–$8,000**. A written estimate after records review is required.
+GAF [hydrocephalus surgery](/costs/India/Neurosurgery/Hydrocephalus-Surgery) planning is **$3,000–$8,000**. Named [ETV](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-ETV) is **$3,000–$8,000**. A written estimate after records review is required.
 
 ### How long does hydrocephalus surgery take?
 
@@ -390,7 +390,7 @@ Share imaging and previous shunt details before making travel arrangements. A ca
 7. [Yadav et al. — Endoscopic third ventriculostomy](https://pubmed.ncbi.nlm.nih.gov/) — indications, technique and complications.
 8. [Sohail et al. — ETV for normal-pressure hydrocephalus](https://pubmed.ncbi.nlm.nih.gov/) — limited evidence against routine ETV for NPH.
 9. [GAF Healthcare hydrocephalus surgery](/costs/India/Neurosurgery/Hydrocephalus-Surgery) — partner USD planning range for shunt lists.
-10. [GAF Healthcare ETV](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-(ETV)) — neighbouring endoscopic CSF-diversion sheet.
+10. [GAF Healthcare ETV](/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-ETV) — neighbouring endoscopic CSF-diversion sheet.
 
 **Last reviewed against the cited sources: September 2026.**
 

@@ -252,7 +252,7 @@ test("the live Arabic overlays stay published", () => {
   assert.equal(localePathIsPublished("ar", "/hospitals/apollo-delhi"), true);
   assert.equal(localePathIsPublished("ar", "/costs/India"), true);
   assert.equal(
-    localePathIsPublished("ar", "/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)"),
+    localePathIsPublished("ar", "/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting"),
     true,
   );
 });

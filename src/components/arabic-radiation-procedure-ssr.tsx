@@ -1,8 +1,82 @@
 import { ArabicDoctorSsrCard, ArabicSsrPager, SsrJsonLd, arHref } from "@/components/arabic-ssr";
 import type { ArabicRadiationProcedureData } from "@/lib/i18n/ar-radiation-procedure";
+import type { RadiationProcedureCopy } from "@/lib/i18n/radiation-procedure-page";
 import { documentId } from "@/lib/jsonld";
-import { absoluteUrl, breadcrumbJsonLd, doctorItemListJsonLd, faqJsonLd } from "@/lib/seo";
+import { absoluteUrl, breadcrumbJsonLd, doctorItemListJsonLd, faqJsonLd, hospitalItemListJsonLd } from "@/lib/seo";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
+import type { Doctor } from "@/lib/doctors";
+import type { Hospital } from "@/lib/hospitals";
+
+/** Visible on the glance table and repeated in MedicalProcedure.bodyLocation. */
+const BODY_LOCATION_AR = "موضع الورم الذي يحدده التخطيط، لا اسم الإجراء وحده.";
+
+const KIND_AR: Record<RadiationProcedureCopy["kind"], string> = {
+  modality: "طريقة علاج",
+  technique: "تقنية تخطيط وتسليم",
+  platform: "منصة جهاز",
+  subtype: "نمط فرعي",
+};
+
+/** External-beam family only. Brachytherapy and IORT are not labeled noninvasive. */
+const NONINVASIVE = new Set([
+  "External Beam Radiotherapy (EBRT)",
+  "3D Conformal Radiotherapy (3D-CRT)",
+  "Intensity-Modulated Radiotherapy (IMRT)",
+  "Image-Guided Radiotherapy (IGRT)",
+  "Stereotactic Radiosurgery (SRS)",
+  "Stereotactic Body Radiotherapy (SBRT)",
+  "CyberKnife",
+  "Gamma Knife",
+  "Proton Beam Therapy",
+  "Total Body Irradiation (TBI)",
+]);
+
+function procedureAbout(copy: RadiationProcedureCopy) {
+  return {
+    "@type": "MedicalProcedure",
+    name: taxonomyLabel(copy.procedure, "ar"),
+    alternateName: copy.procedure,
+    description: copy.quickAnswer,
+    ...(NONINVASIVE.has(copy.procedure) ? { procedureType: "NoninvasiveProcedure" } : {}),
+    bodyLocation: BODY_LOCATION_AR,
+    howPerformed: copy.steps.map((step) => `${step.title}. ${step.body}`).join(" "),
+  };
+}
+
+function listedDoctors(
+  list: ReturnType<typeof doctorItemListJsonLd>,
+  doctors: Doctor[],
+) {
+  return {
+    ...list,
+    itemListElement: list.itemListElement.map((entry, index) => {
+      const doctor = doctors[index];
+      const item: Record<string, unknown> = { ...entry.item };
+      if (doctor?.title) item.jobTitle = doctor.title;
+      if (doctor?.qualifications) {
+        item.hasCredential = {
+          "@type": "EducationalOccupationalCredential",
+          name: doctor.qualifications,
+        };
+      }
+      return { ...entry, item };
+    }),
+  };
+}
+
+function listedHospitals(
+  list: ReturnType<typeof hospitalItemListJsonLd>,
+  hospitals: Hospital[],
+) {
+  return {
+    ...list,
+    itemListElement: list.itemListElement.map((entry, index) => {
+      const accreditation = hospitals[index]?.accreditation?.trim();
+      if (!accreditation) return entry;
+      return { ...entry, item: { ...entry.item, award: accreditation } };
+    }),
+  };
+}
 
 function HubHeading({ eyebrow, title, intro }: { eyebrow: string; title: string; intro?: string }) {
   return (
@@ -29,12 +103,23 @@ export function ArabicRadiationProcedureSsrDocument({ data }: { data: ArabicRadi
     description: copy.description,
     inLanguage: "ar",
     url: absoluteUrl(data.path, "ar"),
-    about: {
-      "@type": "MedicalProcedure",
-      name: taxonomyLabel(copy.procedure, "ar"),
-      alternateName: copy.procedure,
-    },
+    dateModified: data.review.updated,
+    about: procedureAbout(copy),
   };
+  const doctorLd = listedDoctors(
+    doctorItemListJsonLd(data.doctors, { name: copy.h1, path: data.path, locale: "ar" }),
+    data.doctors,
+  );
+  const hospitalLd =
+    data.hospitals.length > 0
+      ? listedHospitals(
+          hospitalItemListJsonLd(
+            data.hospitals.map((row) => row.hospital),
+            { name: `مستشفيات مرتبطة بـ ${taxonomyLabel(copy.procedure, "ar")}`, path: data.path, locale: "ar" },
+          ),
+          data.hospitals.map((row) => row.hospital),
+        )
+      : null;
 
   return (
     <>
@@ -42,9 +127,8 @@ export function ArabicRadiationProcedureSsrDocument({ data }: { data: ArabicRadi
         <>
           <SsrJsonLd data={collectionLd} />
           <SsrJsonLd data={breadcrumbJsonLd(data.crumbs, "ar")} />
-          <SsrJsonLd
-            data={doctorItemListJsonLd(data.doctors, { name: copy.h1, path: data.path, locale: "ar" })}
-          />
+          <SsrJsonLd data={doctorLd} />
+          {hospitalLd ? <SsrJsonLd data={hospitalLd} /> : null}
           <SsrJsonLd data={faqJsonLd(copy.faqs, { path: data.path, locale: "ar" })} />
         </>
       ) : null}
@@ -73,6 +157,11 @@ export function ArabicRadiationProcedureSsrDocument({ data }: { data: ArabicRadi
           <p className="mt-4 text-sm text-muted-foreground">
             {data.doctorCountLabel} في {data.hospitalCountLabel}. العدد من الملفات التي تذكر هذا الإجراء، لا ترتيب نتائج ولا جرد أجهزة.
           </p>
+          <aside className="trust-strip" aria-label="بيانات التحرير">
+            <p>التحرير: {data.review.attribution}</p>
+            <p>آخر تحديث: <time dateTime={data.review.updated}>{data.review.updated}</time></p>
+            <p>لم تُراجع هذه الصفحة طبيًا بشكل مستقل.</p>
+          </aside>
           <div className="mt-6 flex flex-wrap gap-3">
             <a href="#procedure-doctors" className="inline-flex min-h-11 items-center rounded-full bg-ink px-5 text-sm text-ivory">
               اعثر على طبيب
@@ -94,6 +183,68 @@ export function ArabicRadiationProcedureSsrDocument({ data }: { data: ArabicRadi
               <span className="text-muted-foreground"> — نطاق تخطيطي مخزّن، ليس عرض سعر شخصيًا.</span>
             </p>
           ) : null}
+        </div>
+      </section>
+
+      <section id="procedure-glance" className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:px-8">
+        <HubHeading
+          eyebrow="لمحة"
+          title="نظرة عامة"
+          intro="الجدول يعرض ما يستطيع الدليل إثباته. مدة الإقامة وعدد الجلسات يكتبهما الفريق بعد التخطيط، ولا يُحوَّل نطاق التكلفة إلى الريال هنا."
+        />
+        <div className="compare-wrap mt-6 max-w-4xl overflow-x-auto">
+          <table className="compare-table glance-table w-full border-collapse text-sm">
+            <caption className="sr-only">نظرة عامة على {taxonomyLabel(copy.procedure, "ar")} في الهند</caption>
+            <thead>
+              <tr>
+                <th scope="col">البند</th>
+                <th scope="col">ما ينطبق على هذه الصفحة</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">تصنيف الإجراء</th>
+                <td>{KIND_AR[copy.kind]}</td>
+              </tr>
+              <tr>
+                <th scope="row">أطباء مرتبطون في الدليل</th>
+                <td>{data.doctorCountLabel}</td>
+              </tr>
+              <tr>
+                <th scope="row">مستشفيات يظهر فيها طبيب مرتبط</th>
+                <td>{data.hospitalCountLabel}</td>
+              </tr>
+              <tr>
+                <th scope="row">نطاق التكلفة التقديرية</th>
+                <td>
+                  {data.costHref ? (
+                    <>
+                      <a href={arHref(data.costHref)}>دليل التكلفة المخزّن</a>
+                      <span> يعرض نطاقًا تخطيطيًا بالدولار الأمريكي مع مصدره وتاريخه. ليس عرض سعر لهذه الحالة، ولا يُعاد حسابه هنا بالريال.</span>
+                    </>
+                  ) : (
+                    "لا يوجد دليل تكلفة منشور لهذا الإجراء في النسخة العربية."
+                  )}
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">مدة الإقامة</th>
+                <td>تُحدد بعد المحاكاة وجدول الجلسات. هذه الصفحة لا تنشر عدد ليالٍ ثابتًا.</td>
+              </tr>
+              <tr>
+                <th scope="row">عدد الجلسات</th>
+                <td>يكتبه الفريق المعالج بعد التخطيط. لا يُستنتج من اسم الإجراء.</td>
+              </tr>
+              <tr>
+                <th scope="row">موضع العلاج</th>
+                <td>{BODY_LOCATION_AR}</td>
+              </tr>
+              <tr>
+                <th scope="row">نتائج العلاج</th>
+                <td>غير منشورة في هذا الدليل. لا تُعرض نسبة ولا مقارنة بين الأطباء.</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -184,6 +335,34 @@ export function ArabicRadiationProcedureSsrDocument({ data }: { data: ArabicRadi
               <a href={arHref(data.peerHref)}>صفحة {copy.comparisonPeerLabel}</a>
             </p>
           ) : null}
+          {copy.board ? (
+            <div className="mt-10 max-w-4xl">
+              <h3 className="font-heading text-2xl">{copy.board.title}</h3>
+              <p className="prose-gaf mt-3">{copy.board.intro}</p>
+              <div className="compare-wrap mt-6 overflow-x-auto">
+                <table className="compare-table w-full border-collapse text-sm">
+                  <thead>
+                    <tr>
+                      <th scope="col">الجانب</th>
+                      {copy.board.headers.map((header) => (
+                        <th key={header} scope="col">{header}</th>
+                      ))}
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {copy.board.rows.map((row) => (
+                      <tr key={row.aspect}>
+                        <th scope="row">{row.aspect}</th>
+                        {row.cells.map((cell, index) => (
+                          <td key={`${row.aspect}-${index}`}>{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          ) : null}
         </div>
       </section>
 
@@ -225,6 +404,9 @@ export function ArabicRadiationProcedureSsrDocument({ data }: { data: ArabicRadi
                     <p className="link-card__meta mt-1 text-sm text-muted-foreground">
                       {taxonomyLabel(row.hospital.city, "ar")} · {row.count} {row.count === 1 ? "طبيب" : "أطباء"} مرتبطون بالإجراء
                     </p>
+                    {row.hospital.accreditation?.trim() ? (
+                      <p className="link-card__meta mt-1 text-sm text-muted-foreground">الاعتماد على الملف: {row.hospital.accreditation.trim()}</p>
+                    ) : null}
                   </a>
                 </li>
               ))}

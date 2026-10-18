@@ -117,7 +117,7 @@ test("sitemap keeps city-specialty, procedure, and qualifying city-procedure pat
   const paths = radiationOncologyDoctorSitemapPaths();
   assert.ok(paths.includes("/doctors/India/Radiation-Oncology"));
   assert.ok(paths.includes("/doctors/India/Delhi-NCR/Radiation-Oncology"));
-  assert.ok(paths.includes("/doctors/India/Radiation-Oncology/Intensity-Modulated-Radiotherapy-(IMRT)"));
+  assert.ok(paths.includes("/doctors/India/Radiation-Oncology/Intensity-Modulated-Radiotherapy-IMRT"));
   assert.ok(paths.includes("/doctors/India/Radiation-Oncology/CyberKnife"));
   assert.equal(
     paths.some((path) => /Prostate-Cancer|Breast-Cancer/i.test(path)),
@@ -128,7 +128,7 @@ test("sitemap keeps city-specialty, procedure, and qualifying city-procedure pat
     procedure: "Intensity-Modulated Radiotherapy (IMRT)",
   });
   assert.equal(
-    paths.includes("/doctors/India/Delhi-NCR/Radiation-Oncology/Intensity-Modulated-Radiotherapy-(IMRT)"),
+    paths.includes("/doctors/India/Delhi-NCR/Radiation-Oncology/Intensity-Modulated-Radiotherapy-IMRT"),
     imrtDelhi >= 3,
   );
 });

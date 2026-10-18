@@ -6,9 +6,9 @@ India has established bariatric surgery programs across major cities, with exper
 
 Sleeve lists sit on [Sleeve Gastrectomy in India](/treatments/sleeve-gastrectomy-in-india). There is no live GAF mini-gastric-bypass, gastric-balloon, ESG or bariatric-surgery-only treatment page. Body-contouring lists sit on [Liposuction in India](/treatments/liposuction-in-india). Combined contour lists sit on [Mommy Makeover in India](/treatments/mommy-makeover-in-india). This page is the named gastric-bypass product.
 
-GAF Healthcare planning for [Gastric Bypass (Roux-en-Y)](/costs/India/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)) is **$6,000–$11,000** (typically **3–6 nights**). US comparison is **$20,000–$38,000**. The same sitting also has a [surgical-gastroenterology gastric bypass sheet](/costs/India/Surgical-Gastroenterology/Gastric-Bypass-Surgery) at the same **$6,000–$11,000** range when a surgical-gastro list holds the case. Neighbouring [sleeve gastrectomy](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy) is **$4,500–$8,500** (typically **2–5 nights**). Neighbouring [mini gastric bypass (OAGB/MGB)](/costs/India/Bariatric-Surgery/Mini-Gastric-Bypass-(OAGB-MGB)) is **$5,500–$10,000** (typically **3–6 nights**). Neighbouring [metabolic surgery for type 2 diabetes](/costs/India/Bariatric-Surgery/Metabolic-Surgery-for-Type-2-Diabetes) is **$6,000–$12,000** (typically **3–7 nights**) when glycaemic effect, not only kilograms, is the brief. Neighbouring [gastric balloon](/costs/India/Bariatric-Surgery/Gastric-Balloon) is **$2,000–$4,500** (day-care or overnight). Neighbouring [endoscopic sleeve gastroplasty](/costs/India/Bariatric-Surgery/Endoscopic-Sleeve-Gastroplasty-(ESG)) is **$4,500–$9,000** (typically **1–3 nights**). These are planning ranges from partner hospital cost sheets, not hospital quotations.
+GAF Healthcare planning for [Gastric Bypass (Roux-en-Y)](/costs/India/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y) is **$6,000–$11,000** (typically **3–6 nights**). US comparison is **$20,000–$38,000**. The same sitting also has a [surgical-gastroenterology gastric bypass sheet](/costs/India/Surgical-Gastroenterology/Gastric-Bypass-Surgery) at the same **$6,000–$11,000** range when a surgical-gastro list holds the case. Neighbouring [sleeve gastrectomy](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy) is **$4,500–$8,500** (typically **2–5 nights**). Neighbouring [mini gastric bypass (OAGB/MGB)](/costs/India/Bariatric-Surgery/Mini-Gastric-Bypass-OAGB-MGB) is **$5,500–$10,000** (typically **3–6 nights**). Neighbouring [metabolic surgery for type 2 diabetes](/costs/India/Bariatric-Surgery/Metabolic-Surgery-for-Type-2-Diabetes) is **$6,000–$12,000** (typically **3–7 nights**) when glycaemic effect, not only kilograms, is the brief. Neighbouring [gastric balloon](/costs/India/Bariatric-Surgery/Gastric-Balloon) is **$2,000–$4,500** (day-care or overnight). Neighbouring [endoscopic sleeve gastroplasty](/costs/India/Bariatric-Surgery/Endoscopic-Sleeve-Gastroplasty-ESG) is **$4,500–$9,000** (typically **1–3 nights**). These are planning ranges from partner hospital cost sheets, not hospital quotations.
 
-International patients comparing [bariatric surgeons](/doctors/India/Bariatric-Surgery) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)), [Mumbai](/doctors/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)), [Bengaluru](/doctors/India/Bengaluru/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)), [Chennai](/doctors/India/Chennai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)) and [Hyderabad](/doctors/India/Hyderabad/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)). Partner [bariatric hospitals](/hospitals/India/Bariatric-Surgery) in [Delhi NCR](/hospitals/India/Delhi-NCR/Bariatric-Surgery), [Mumbai](/hospitals/India/Mumbai/Bariatric-Surgery) and [Bengaluru](/hospitals/India/Bengaluru/Bariatric-Surgery), and in [Chennai](/hospitals/India/Chennai/Bariatric-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Bariatric-Surgery), are a typical first filter because this work needs a named bariatric list, dietetics and a leak-aware ICU. City Roux-en-Y sheets include [Delhi NCR](/costs/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)), [Mumbai](/costs/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)), [Bengaluru](/costs/India/Bengaluru/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)), [Chennai](/costs/India/Chennai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)) and [Hyderabad](/costs/India/Hyderabad/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)). Kolkata, Pune, Ahmedabad, Chandigarh and Kochi may have bariatric theatres. They are not live GAF catalog cities on this site.
+International patients comparing [bariatric surgeons](/doctors/India/Bariatric-Surgery) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y), [Mumbai](/doctors/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y), [Bengaluru](/doctors/India/Bengaluru/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y), [Chennai](/doctors/India/Chennai/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y) and [Hyderabad](/doctors/India/Hyderabad/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y). Partner [bariatric hospitals](/hospitals/India/Bariatric-Surgery) in [Delhi NCR](/hospitals/India/Delhi-NCR/Bariatric-Surgery), [Mumbai](/hospitals/India/Mumbai/Bariatric-Surgery) and [Bengaluru](/hospitals/India/Bengaluru/Bariatric-Surgery), and in [Chennai](/hospitals/India/Chennai/Bariatric-Surgery) and [Hyderabad](/hospitals/India/Hyderabad/Bariatric-Surgery), are a typical first filter because this work needs a named bariatric list, dietetics and a leak-aware ICU. City Roux-en-Y sheets include [Delhi NCR](/costs/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y), [Mumbai](/costs/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y), [Bengaluru](/costs/India/Bengaluru/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y), [Chennai](/costs/India/Chennai/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y) and [Hyderabad](/costs/India/Hyderabad/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y). Kolkata, Pune, Ahmedabad, Chandigarh and Kochi may have bariatric theatres. They are not live GAF catalog cities on this site.
 
 > Medical note: Gastric bypass is major surgery and is not suitable for everyone. The information below is educational and should not replace an assessment by a qualified bariatric surgeon. Severe abdominal pain, persistent vomiting, fever, inability to keep fluids, chest pain, shortness of breath or fainting after surgery belongs in a **local emergency department** first. WhatsApp at +91 90443 46292 is for planned record review, not an acute leak or bleed.
 
@@ -236,7 +236,7 @@ Both procedures involve bypassing part of the small intestine, but their surgica
 - Requires one principal gastrojejunal connection
 - Has its own benefits and potential nutritional or bile-reflux considerations
 
-There is no live GAF mini-gastric-bypass treatment page. Neighbouring [mini gastric bypass (OAGB/MGB)](/costs/India/Bariatric-Surgery/Mini-Gastric-Bypass-(OAGB-MGB)) is **$5,500–$10,000** when that anatomy is named. The choice should be made by a bariatric surgeon after assessing the patient's individual clinical profile.
+There is no live GAF mini-gastric-bypass treatment page. Neighbouring [mini gastric bypass (OAGB/MGB)](/costs/India/Bariatric-Surgery/Mini-Gastric-Bypass-OAGB-MGB) is **$5,500–$10,000** when that anatomy is named. The choice should be made by a bariatric surgeon after assessing the patient's individual clinical profile.
 
 ## Benefits of Gastric Bypass Surgery
 
@@ -289,7 +289,7 @@ It is therefore better to discuss expected percentage of total body weight loss 
 
 The cost of gastric bypass surgery in India varies considerably.
 
-GAF Healthcare planning for [Gastric Bypass (Roux-en-Y)](/costs/India/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)) is **$6,000–$11,000**, typically **3–6 nights**. US comparison is **$20,000–$38,000**. This should be treated as an indicative range rather than a universal price.
+GAF Healthcare planning for [Gastric Bypass (Roux-en-Y)](/costs/India/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y) is **$6,000–$11,000**, typically **3–6 nights**. US comparison is **$20,000–$38,000**. This should be treated as an indicative range rather than a universal price.
 
 A patient's final quotation can be different depending on:
 
@@ -322,7 +322,7 @@ A patient's final quotation can be different depending on:
 
 For international patients, it is important to request a written treatment package that clearly states what is included and what may be charged separately.
 
-City sheets sit at [Delhi NCR](/costs/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)), [Mumbai](/costs/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)), [Bengaluru](/costs/India/Bengaluru/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)), [Chennai](/costs/India/Chennai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)) and [Hyderabad](/costs/India/Hyderabad/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)).
+City sheets sit at [Delhi NCR](/costs/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y), [Mumbai](/costs/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y), [Bengaluru](/costs/India/Bengaluru/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y), [Chennai](/costs/India/Chennai/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y) and [Hyderabad](/costs/India/Hyderabad/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y).
 
 [Request an itemised Roux-en-Y estimate](/consult?treatment=gastric-bypass-surgery-in-india)
 
@@ -617,7 +617,7 @@ Consider asking:
 
 The surgeon's experience should be considered together with the hospital's ability to provide complete perioperative and long-term care.
 
-Start with named [bariatric surgeons](/doctors/India/Bariatric-Surgery) in [Delhi NCR](/doctors/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)), [Mumbai](/doctors/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)), [Bengaluru](/doctors/India/Bengaluru/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)), [Chennai](/doctors/India/Chennai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)) and [Hyderabad](/doctors/India/Hyderabad/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)).
+Start with named [bariatric surgeons](/doctors/India/Bariatric-Surgery) in [Delhi NCR](/doctors/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y), [Mumbai](/doctors/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y), [Bengaluru](/doctors/India/Bengaluru/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y), [Chennai](/doctors/India/Chennai/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y) and [Hyderabad](/doctors/India/Hyderabad/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y).
 
 [Ask which named Roux-en-Y list matches the records](/consult?treatment=gastric-bypass-surgery-in-india)
 
@@ -625,11 +625,11 @@ Start with named [bariatric surgeons](/doctors/India/Bariatric-Surgery) in [Delh
 
 International patients commonly explore bariatric programs in live GAF catalog cities:
 
-- [Delhi NCR](/doctors/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y))
-- [Mumbai](/doctors/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y))
-- [Bengaluru](/doctors/India/Bengaluru/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y))
-- [Chennai](/doctors/India/Chennai/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y))
-- [Hyderabad](/doctors/India/Hyderabad/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y))
+- [Delhi NCR](/doctors/India/Delhi-NCR/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y)
+- [Mumbai](/doctors/India/Mumbai/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y)
+- [Bengaluru](/doctors/India/Bengaluru/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y)
+- [Chennai](/doctors/India/Chennai/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y)
+- [Hyderabad](/doctors/India/Hyderabad/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y)
 
 The best location depends on the surgeon, hospital, availability of multidisciplinary care, total cost, travel convenience and the patient's medical requirements.
 
@@ -783,7 +783,7 @@ The most important points are:
 - India has established bariatric surgery programs in live GAF catalog cities.
 - The quoted treatment cost should always be evaluated alongside surgeon experience, hospital infrastructure and long-term follow-up.
 
-GAF Healthcare planning for [Gastric Bypass (Roux-en-Y)](/costs/India/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)) is **$6,000–$11,000**. Neighbouring sleeve is $4,500–$8,500 when that sitting is named.
+GAF Healthcare planning for [Gastric Bypass (Roux-en-Y)](/costs/India/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y) is **$6,000–$11,000**. Neighbouring sleeve is $4,500–$8,500 when that sitting is named.
 
 ## Medical tourism support for gastric bypass surgery in India
 
@@ -799,11 +799,11 @@ Planned questions can also go to WhatsApp at [+91 90443 46292](https://wa.me/919
 
 - [Liposuction in India](/treatments/liposuction-in-india)
 - [Mommy Makeover in India](/treatments/mommy-makeover-in-india)
-- [Gastric Bypass (Roux-en-Y) cost](/costs/India/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y))
+- [Gastric Bypass (Roux-en-Y) cost](/costs/India/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y)
 - [Surgical-gastroenterology gastric bypass cost](/costs/India/Surgical-Gastroenterology/Gastric-Bypass-Surgery)
 - [Sleeve Gastrectomy in India](/treatments/sleeve-gastrectomy-in-india)
 - [Sleeve gastrectomy cost](/costs/India/Bariatric-Surgery/Sleeve-Gastrectomy)
-- [Mini gastric bypass cost](/costs/India/Bariatric-Surgery/Mini-Gastric-Bypass-(OAGB-MGB))
+- [Mini gastric bypass cost](/costs/India/Bariatric-Surgery/Mini-Gastric-Bypass-OAGB-MGB)
 - [Metabolic surgery for type 2 diabetes cost](/costs/India/Bariatric-Surgery/Metabolic-Surgery-for-Type-2-Diabetes)
 - [Bariatric surgeons in India](/doctors/India/Bariatric-Surgery)
 - [Bariatric hospitals in India](/hospitals/India/Bariatric-Surgery)
@@ -822,7 +822,7 @@ Mini-gastric-bypass, gastric-balloon, ESG and bariatric-surgery-only treatment p
 8. **PubMed – Ten-year outcomes after Roux-en-Y gastric bypass** — long-term weight and comorbidity outcomes.
 9. **PubMed – Long-term outcomes after Roux-en-Y gastric bypass** — long-term weight loss, diabetes outcomes and nutritional complications.
 10. **Systematic review of anemia and nutritional deficiencies after RYGB** — evidence regarding iron, ferritin, B12 and anemia.
-11. **GAF Healthcare Roux-en-Y cost sheet** — [Gastric Bypass (Roux-en-Y)](/costs/India/Bariatric-Surgery/Gastric-Bypass-(Roux-en-Y)).
+11. **GAF Healthcare Roux-en-Y cost sheet** — [Gastric Bypass (Roux-en-Y)](/costs/India/Bariatric-Surgery/Gastric-Bypass-Roux-en-Y).
 
 ## Medical disclaimer
 

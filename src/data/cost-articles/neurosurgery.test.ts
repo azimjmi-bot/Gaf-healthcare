@@ -153,7 +153,7 @@ test("Neurosurgery routes consolidate nationally and retain city context", () =>
     specialty: "Neurosurgery",
     procedure: "Endoscopic Third Ventriculostomy (ETV)",
   });
-  assert.equal(etv, "/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-(ETV)");
+  assert.equal(etv, "/costs/India/Neurosurgery/Endoscopic-Third-Ventriculostomy-ETV");
   assert.deepEqual(parsePrettyCatalogSegments([
     "India",
     "Neurosurgery",
@@ -171,7 +171,7 @@ test("Neurosurgery routes consolidate nationally and retain city context", () =>
   });
   assert.equal(
     city,
-    "/costs/India/Mumbai/Neurosurgery/Endoscopic-Third-Ventriculostomy-(ETV)",
+    "/costs/India/Mumbai/Neurosurgery/Endoscopic-Third-Ventriculostomy-ETV",
   );
 });
 

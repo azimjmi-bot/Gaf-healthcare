@@ -2,9 +2,9 @@
 
 Angioplasty is commonly used to treat significant coronary artery disease and can be performed electively for troublesome angina or urgently during a heart attack. The appropriate treatment depends on the location and severity of the blockage, the number of affected arteries, heart function, other medical conditions and the overall clinical situation.
 
-Diagnostic pictures sit on [coronary angiography](/costs/India/Cardiology/Coronary-Angiography). Named chronic total occlusion work sits on [CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-(Chronic-Total-Occlusion)). Surgical bypass sits on [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)). This page is the named PCI and stenting product. Itemized bypass-cost lists sit on [Heart Bypass Surgery Cost in India](/treatments/heart-bypass-surgery-cost-in-india). CABG lists sit on [CABG Surgery in India](/treatments/cabg-surgery-in-india).
+Diagnostic pictures sit on [coronary angiography](/costs/India/Cardiology/Coronary-Angiography). Named chronic total occlusion work sits on [CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-Chronic-Total-Occlusion). Surgical bypass sits on [CABG](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting). This page is the named PCI and stenting product. Itemized bypass-cost lists sit on [Heart Bypass Surgery Cost in India](/treatments/heart-bypass-surgery-cost-in-india). CABG lists sit on [CABG Surgery in India](/treatments/cabg-surgery-in-india).
 
-GAF Healthcare planning for [coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) is **$3,200–$8,500** (typically **1–3 nights**). US comparison is **$25,000–$70,000**. Named [coronary angiography](/costs/India/Cardiology/Coronary-Angiography) is **$400–$1,200** (typically **day-care or overnight**). [CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-(Chronic-Total-Occlusion)) is **$5,500–$14,000** (typically **1–4 nights**). Neighbouring [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) is **$5,500–$14,000** (typically **7–14 nights**, then nearby recovery). These are planning ranges from partner hospital cost sheets, not hospital quotations. Extra stents, IVUS, OCT, FFR or iFR, rotablation, emergency primary PCI, cardiogenic shock and combined angiography-plus-PCI sittings are quoted after angiogram review.
+GAF Healthcare planning for [coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) is **$3,200–$8,500** (typically **1–3 nights**). US comparison is **$25,000–$70,000**. Named [coronary angiography](/costs/India/Cardiology/Coronary-Angiography) is **$400–$1,200** (typically **day-care or overnight**). [CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-Chronic-Total-Occlusion) is **$5,500–$14,000** (typically **1–4 nights**). Neighbouring [CABG](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) is **$5,500–$14,000** (typically **7–14 nights**, then nearby recovery). These are planning ranges from partner hospital cost sheets, not hospital quotations. Extra stents, IVUS, OCT, FFR or iFR, rotablation, emergency primary PCI, cardiogenic shock and combined angiography-plus-PCI sittings are quoted after angiogram review.
 
 International patients comparing [cardiologists](/doctors/India/Cardiology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting), [Mumbai](/doctors/India/Mumbai/Cardiology/Coronary-Angioplasty-Stenting), [Bengaluru](/doctors/India/Bengaluru/Cardiology/Coronary-Angioplasty-Stenting), [Chennai](/doctors/India/Chennai/Cardiology/Coronary-Angioplasty-Stenting) and [Hyderabad](/doctors/India/Hyderabad/Cardiology/Coronary-Angioplasty-Stenting). Partner [cardiology hospitals](/hospitals/India/Cardiology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Cardiology), [Mumbai](/hospitals/India/Mumbai/Cardiology) and [Bengaluru](/hospitals/India/Bengaluru/Cardiology), and in [Chennai](/hospitals/India/Chennai/Cardiology) and [Hyderabad](/hospitals/India/Hyderabad/Cardiology), are a typical first filter. City cost sheets include [Delhi NCR](/costs/India/Delhi-NCR/Cardiology/Coronary-Angioplasty-Stenting), [Mumbai](/costs/India/Mumbai/Cardiology/Coronary-Angioplasty-Stenting), [Bengaluru](/costs/India/Bengaluru/Cardiology/Coronary-Angioplasty-Stenting), [Chennai](/costs/India/Chennai/Cardiology/Coronary-Angioplasty-Stenting) and [Hyderabad](/costs/India/Hyderabad/Cardiology/Coronary-Angioplasty-Stenting). Kolkata, Pune, Ahmedabad, Chandigarh and Kochi may have cath-lab services, but they are not live GAF catalog cities on this site.
 
@@ -44,7 +44,7 @@ Yes. Coronary stents are subject to government ceiling prices notified by NPPA. 
 Many uncomplicated planned cases return to light activities within days. Recovery after emergency angioplasty for a heart attack can take considerably longer.
 
 **Is angioplasty the same as bypass surgery?**
-No. Angioplasty opens the artery from inside using a catheter. [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) creates a new route around blocked arteries.
+No. Angioplasty opens the artery from inside using a catheter. [CABG](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) creates a new route around blocked arteries.
 
 ## Coronary Angioplasty in India at a Glance
 
@@ -135,7 +135,7 @@ In some cases, angiography and angioplasty happen in the same sitting if the ana
 
 **Drug-eluting stent PCI** places a stent that releases medication locally to reduce restenosis.
 
-**Complex PCI** may be required for heavily calcified lesions, chronic total occlusions, left main disease, bifurcation lesions, long or diffuse lesions, multiple blockages, restenosis or vein-graft disease. Named [CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-(Chronic-Total-Occlusion)) is **$5,500–$14,000** (typically **1–4 nights**) when that is the product. Rotablation and other lesion-modification techniques are quoted after records review.
+**Complex PCI** may be required for heavily calcified lesions, chronic total occlusions, left main disease, bifurcation lesions, long or diffuse lesions, multiple blockages, restenosis or vein-graft disease. Named [CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-Chronic-Total-Occlusion) is **$5,500–$14,000** (typically **1–4 nights**) when that is the product. Rotablation and other lesion-modification techniques are quoted after records review.
 
 ## What Is a Coronary Stent?
 
@@ -153,8 +153,8 @@ There is no medically responsible single price because treatment may range from 
 | --- | --- | --- |
 | [Coronary angiography](/costs/India/Cardiology/Coronary-Angiography) | $400–$1,200 | Day-care or overnight |
 | [Coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) | $3,200–$8,500 | 1–3 nights |
-| [CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-(Chronic-Total-Occlusion)) | $5,500–$14,000 | 1–4 nights |
-| [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) | $5,500–$14,000 | 7–14 nights |
+| [CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-Chronic-Total-Occlusion) | $5,500–$14,000 | 1–4 nights |
+| [CABG](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) | $5,500–$14,000 | 7–14 nights |
 | Extra stents, IVUS, OCT, FFR, rotablation, emergency primary PCI, shock | Quoted after angiogram review | Depends on the case |
 
 US comparison for coronary angioplasty and stenting is **$25,000–$70,000**.
@@ -197,13 +197,13 @@ Angioplasty treats a blockage. It does not eliminate the underlying tendency to 
 
 ## Coronary Angioplasty vs Bypass Surgery
 
-PCI opens the artery from inside. CABG creates a new route around blocked arteries and is major cardiac surgery with a longer recovery. GAF planning for [CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) is **$5,500–$14,000** (typically **7–14 nights**).
+PCI opens the artery from inside. CABG creates a new route around blocked arteries and is major cardiac surgery with a longer recovery. GAF planning for [CABG](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) is **$5,500–$14,000** (typically **7–14 nights**).
 
 There is no universal rule that angioplasty is better than bypass surgery or vice versa. For some patients PCI is appropriate. For others, especially extensive or complex multivessel disease and some patients with diabetes, CABG may be the more suitable revascularization strategy. The 2025 ACC/AHA ACS guideline emphasizes complete revascularization in appropriate ACS patients while recognizing that PCI versus surgery depends on coronary complexity.
 
 ## Advanced Coronary Angioplasty in India
 
-Major cardiac centres may offer IVUS, OCT, FFR, iFR, rotational atherectomy for selected calcified lesions, and specialized CTO techniques. These are not necessary for every patient. Their use depends on anatomy and the interventional cardiologist's assessment. Named CTO lists sit on [CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-(Chronic-Total-Occlusion)).
+Major cardiac centres may offer IVUS, OCT, FFR, iFR, rotational atherectomy for selected calcified lesions, and specialized CTO techniques. These are not necessary for every patient. Their use depends on anatomy and the interventional cardiologist's assessment. Named CTO lists sit on [CTO angioplasty](/costs/India/Cardiology/CTO-Angioplasty-Chronic-Total-Occlusion).
 
 ## Tests Before Coronary Angioplasty
 
@@ -325,7 +325,7 @@ Share angiogram images, ECG and echocardiography before making travel arrangemen
 7. [Mayo Clinic — Coronary angioplasty and stents](https://www.mayoclinic.org/tests-procedures/coronary-angioplasty/about/pac-20384761) — indications, risks and recovery.
 8. [GAF Healthcare coronary angioplasty and stenting](/costs/India/Cardiology/Coronary-Angioplasty-Stenting) — partner USD planning range for PCI.
 9. [GAF Healthcare coronary angiography](/costs/India/Cardiology/Coronary-Angiography) — neighbouring diagnostic sheet.
-10. [GAF Healthcare CABG](/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)) — neighbouring surgical revascularization sheet.
+10. [GAF Healthcare CABG](/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting) — neighbouring surgical revascularization sheet.
 
 **Last reviewed against the cited sources: September 2026.**
 

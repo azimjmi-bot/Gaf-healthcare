@@ -66,13 +66,13 @@ test("the heart surgery recovery guide uses published stays and does not invent 
   );
 
   for (const path of [
-    "/costs/India/Cardiac-Surgery/CABG-(Coronary-Artery-Bypass-Grafting)",
+    "/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting",
     "/costs/India/Cardiac-Surgery/Heart-Valve-Replacement",
     "/costs/India/Cardiac-Surgery/Heart-Valve-Repair",
-    "/costs/India/Cardiac-Surgery/TAVR-TAVI-(Transcatheter-Aortic-Valve-Replacement)",
+    "/costs/India/Cardiac-Surgery/TAVR-TAVI-Transcatheter-Aortic-Valve-Replacement",
     "/costs/India/Cardiology/Coronary-Angioplasty-Stenting",
     "/costs/India/Cardiology/Pacemaker-Implantation",
-    "/costs/India/Cardiology/ICD-Implantation-(Implantable-Cardioverter-Defibrillator)",
+    "/costs/India/Cardiology/ICD-Implantation-Implantable-Cardioverter-Defibrillator",
     "/doctors/India/Cardiology",
     "/doctors/India/Cardiac-Surgery",
     "/doctors/India/Delhi-NCR/Cardiac-Surgery",

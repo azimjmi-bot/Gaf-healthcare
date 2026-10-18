@@ -247,7 +247,7 @@ test("sitemap emits only validated, unique hospital graph URLs", () => {
     false,
   );
   assert.equal(
-    paths.includes("/hospitals/India/Mumbai/Radiation-Oncology/Intensity-Modulated-Radiotherapy-(IMRT)"),
+    paths.includes("/hospitals/India/Mumbai/Radiation-Oncology/Intensity-Modulated-Radiotherapy-IMRT"),
     false,
   );
 });
