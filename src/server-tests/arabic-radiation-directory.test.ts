@@ -258,7 +258,32 @@ test("Arabic RO directory HTML is server-rendered for crawlers", () => {
   assert.match(html, /application\/ld\+json/);
   assert.match(html, /FAQPage/);
   assert.match(html, /CollectionPage/);
+  assert.match(html, /MedicalSpecialty/);
   assert.match(html, /ItemList/);
+  assert.match(html, /EducationalOccupationalCredential/);
+  assert.match(html, /id="radiation-glance"/);
+  assert.match(html, /نظرة عامة/);
+  assert.match(html, /\$1,000–\$6,000\+/);
+  assert.match(html, /\$700–\$2,500\+/);
+  assert.match(html, /عادة 15–35 جلسة · 4–7 أسابيع/);
+  assert.match(html, /آخر تحرير: 2026-10-15/);
+  assert.match(html, /لم تخضع بعد لمراجعة طبية بشرية مستقلة/);
+  assert.match(html, /اطلب المساعدة في مراجعة حالتك الطبية عبر واتساب/);
+  assert.doesNotMatch(html, /AggregateRating/);
+  assert.doesNotMatch(html, /نسبة نجاح|Excellent local control|2,500–\$7,000|1,500–\$3,000/);
+  assert.equal(hub.glance.length, 10);
+  assert.equal(hub.glance[0]?.procedure, "External Beam Radiotherapy (EBRT)");
+  assert.equal(hub.glance[0]?.indiaUsd, "$1,000–$6,000+");
+  const accredited = hub.hospitals.find((row) => row.hospital.accreditation.trim());
+  assert.ok(accredited, "expected at least one hospital accreditation already on file");
+  assert.ok(html.includes(`الاعتماد على الملف: ${accredited.hospital.accreditation.trim()}`));
+  assert.ok(html.includes(`"award":${JSON.stringify(accredited.hospital.accreditation.trim())}`));
+  for (const row of hub.hospitals.filter((item) => !item.hospital.accreditation.trim())) {
+    const at = html.indexOf(`>${row.hospital.name}</a>`);
+    const end = html.indexOf("</li>", at);
+    assert.ok(at >= 0 && end > at, row.hospital.name);
+    assert.doesNotMatch(html.slice(at, end), /الاعتماد على الملف/);
+  }
   assert.ok(html.includes(hub.paging.items[0].name));
   assert.match(html, new RegExp(`/ar/doctors/${hub.paging.items[0].slug}`));
   assert.doesNotMatch(html, /BDS|Shabnam Choudhary|Saffiyyah Chaudhary|home-videogrid/);
@@ -323,6 +348,10 @@ test("Arabic city RO HTML keeps unique city copy in the document", () => {
   assert.ok(city.logistics && html.includes(city.logistics));
   assert.match(html, /\/ar\/doctors\/india\/radiation-oncology/);
   assert.match(html, /\/ar\/hospitals\//);
+  assert.equal(city.glance.length, 0);
+  assert.doesNotMatch(html, /id="radiation-glance"|\$1,000–\$6,000\+/);
+  assert.match(html, /جدول نظرة عامة في دليل الهند/);
+  assert.match(html, /لم تخضع بعد لمراجعة طبية بشرية مستقلة/);
 });
 
 test("Arabic doctor HTML route claims every India directory facet and nothing else", () => {
@@ -442,6 +471,10 @@ test("Arabic RO HTML document has canonical, hreflang, H1, Quick Answer and 18 F
   assert.match(html, /<html lang="ar" dir="rtl">/);
   assert.match(html, /rel="canonical" href="https:\/\/gaf.healthcare\/ar\/doctors\/india\/radiation-oncology"/);
   assert.match(html, /hrefLang="en" href="https:\/\/gaf.healthcare\/doctors\/india\/radiation-oncology"/);
+  assert.match(html, /hrefLang="ar" href="https:\/\/gaf.healthcare\/ar\/doctors\/india\/radiation-oncology"/);
+  assert.match(html, /hrefLang="x-default" href="https:\/\/gaf.healthcare\/doctors\/india\/radiation-oncology"/);
+  assert.doesNotMatch(html, /hrefLang="(?:fr|sw|ru)"/);
+  assert.match(html, /<html lang="ar" dir="rtl">/);
   assert.match(html, /<h1[^>]*>أفضل أطباء علاج الأورام بالإشعاع في الهند<\/h1>/);
   assert.match(html, /إجابة سريعة/);
   assert.equal(hub.faqs.length, 18);

@@ -50,7 +50,7 @@ function directoryStyleTag() {
       directoryCss = null;
     }
   }
-  if (directoryCss === null) return `<link rel="stylesheet" href="/${DIRECTORY_CSS_FILE}?v=9"/>`;
+  if (directoryCss === null) return `<link rel="stylesheet" href="/${DIRECTORY_CSS_FILE}?v=10"/>`;
   return `<style>${directoryCss.replace(/<\/style/gi, "<\\/style")}</style>`;
 }
 
@@ -232,7 +232,7 @@ function hostMarkup(node: ReactNode, selectedValue?: string): string {
 
 function cacheKeyFor(path: string, page: number) {
   const url = page > 1 ? `/ar${path}?page=${page}` : `/ar${path}`;
-  return `v9:${url}`;
+  return `v10:${url}`;
 }
 
 export function renderArabicRadiationHtml(query: CatalogQuery, page = 1) {

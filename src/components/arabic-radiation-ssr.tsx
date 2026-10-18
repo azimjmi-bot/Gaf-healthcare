@@ -11,8 +11,10 @@ import { hospitalsPath } from "@/lib/catalog-links";
 import type { ArabicRadiationDirectoryData } from "@/lib/i18n/ar-radiation-directory";
 import { containsPlace } from "@/lib/i18n/place-labels";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
+import type { RadiationGlanceRow } from "@/lib/i18n/radiation-glance";
+import type { Hospital } from "@/lib/hospitals";
 import { documentId } from "@/lib/jsonld";
-import { absoluteUrl, breadcrumbJsonLd, doctorItemListJsonLd, faqJsonLd } from "@/lib/seo";
+import { absoluteUrl, breadcrumbJsonLd, doctorItemListJsonLd, faqJsonLd, hospitalItemListJsonLd } from "@/lib/seo";
 import { blogEstimateWhatsapp } from "@/lib/site";
 
 function HubHeading({
@@ -31,6 +33,44 @@ function HubHeading({
       {intro ? <p className="prose-gaf mt-3">{intro}</p> : null}
     </div>
   );
+}
+
+function listedHospitals(
+  list: ReturnType<typeof hospitalItemListJsonLd>,
+  hospitals: Hospital[],
+) {
+  return {
+    ...list,
+    itemListElement: list.itemListElement.map((entry, index) => {
+      const accreditation = hospitals[index]?.accreditation?.trim();
+      if (!accreditation) return entry;
+      return { ...entry, item: { ...entry.item, award: accreditation } };
+    }),
+  };
+}
+
+function planningRangesJsonLd(rows: RadiationGlanceRow[], path: string) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": documentId(path, "ar", "planning-ranges"),
+    name: "نطاقات التخطيط المخزّنة لعلاج الأورام بالإشعاع في الهند",
+    inLanguage: "ar",
+    url: absoluteUrl(path, "ar"),
+    numberOfItems: rows.length,
+    itemListElement: rows.map((row, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      item: {
+        "@type": "MedicalProcedure",
+        name: row.name,
+        alternateName: row.procedure,
+        procedureType: "Radiation",
+        estimatedCost: row.indiaUsd,
+        description: `نطاق التخطيط في الهند ${row.indiaUsd}. نطاق التخطيط في الولايات المتحدة ${row.usUsd}. المدة في السجل: ${row.durationAr}.`,
+      },
+    })),
+  };
 }
 
 function chipClass(active: boolean) {
@@ -91,8 +131,27 @@ export function ArabicRadiationSsrDocument({
     description: data.description,
     inLanguage: "ar",
     url: absoluteUrl(data.path, "ar"),
-    about: { "@type": "MedicalSpecialty", name: taxonomyLabel("Radiation Oncology", "ar") },
+    dateModified: data.editorial.updated,
+    about: {
+      "@type": "MedicalSpecialty",
+      name: taxonomyLabel("Radiation Oncology", "ar"),
+      alternateName: "Radiation Oncology",
+    },
   };
+  const hospitalLd =
+    data.hospitals.length > 0
+      ? listedHospitals(
+          hospitalItemListJsonLd(
+            data.hospitals.map((row) => row.hospital),
+            {
+              name: "مستشفيات مرتبطة بأطباء علاج الأورام بالإشعاع",
+              path: data.path,
+              locale: "ar",
+            },
+          ),
+          data.hospitals.map((row) => row.hospital),
+        )
+      : null;
 
   return (
     <>
@@ -105,6 +164,8 @@ export function ArabicRadiationSsrDocument({
           locale: "ar",
         })}
       />
+      {hospitalLd ? <SsrJsonLd data={hospitalLd} /> : null}
+      {data.glance.length > 0 ? <SsrJsonLd data={planningRangesJsonLd(data.glance, data.path)} /> : null}
       <SsrJsonLd data={faqJsonLd(data.faqs, { path: data.path, locale: "ar" })} />
 
       <section className="border-b border-border bg-secondary/40">
@@ -146,7 +207,13 @@ export function ArabicRadiationSsrDocument({
       <section className="border-b border-border bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 pb-10 sm:px-5 md:px-8 md:pb-16">
           <p className="prose-gaf mt-4 md:mt-6">{data.lede}</p>
+          <div className="trust-strip">
+            <p>التحرير: {data.editorial.attribution}</p>
+            <p>آخر تحرير: {data.editorial.updated}</p>
+            <p>{data.editorial.note}</p>
+          </div>
           <nav className="page-anchors" aria-label="في هذه الصفحة">
+            {data.glance.length > 0 ? <a href="#radiation-glance">نظرة عامة</a> : null}
             <a href="#radiation-doctors">الأطباء</a>
             <a href="#radiation-choose">كيف تختار</a>
             <a href="#radiation-hospitals">المستشفيات</a>
@@ -190,6 +257,67 @@ export function ArabicRadiationSsrDocument({
           </p>
         </article>
       </section>
+
+      {data.glance.length > 0 ? (
+        <section id="radiation-glance" className="mx-auto max-w-7xl px-4 py-8 sm:px-5 md:px-8 md:py-12">
+          <HubHeading
+            eyebrow="نظرة عامة"
+            title="نطاقات التخطيط المخزّنة لعلاج الأورام بالإشعاع في الهند"
+            intro="كل صف مأخوذ من دليل التكلفة. الأرقام بالدولار الأمريكي للتخطيط، وليست عرض سعر شخصيًا ولا تحويلًا إلى الريال. المدة هي ما يسجّله الكتالوج لتلك التقنية، لا جدولًا لحالة بعينها. النتائج السريرية غير منشورة في هذه الصفحة."
+          />
+          <div className="glance-wrap mt-6">
+            <table className="compare-table glance-table">
+              <caption>نطاقات التخطيط المخزّنة بالدولار الأمريكي. ليست عروض أسعار.</caption>
+              <thead>
+                <tr>
+                  <th scope="col">التقنية</th>
+                  <th scope="col">نطاق الهند</th>
+                  <th scope="col">نطاق الولايات المتحدة</th>
+                  <th scope="col">المدة في السجل</th>
+                </tr>
+              </thead>
+              <tbody>
+                {data.glance.map((row) => (
+                  <tr key={row.procedure}>
+                    <th scope="row">
+                      {row.href ? (
+                        <a href={arHref(row.href)} className="underline-offset-4 hover:underline">
+                          {row.name}
+                        </a>
+                      ) : (
+                        row.name
+                      )}
+                    </th>
+                    <td>
+                      <span className="num" dir="ltr">
+                        {row.indiaUsd}
+                      </span>
+                    </td>
+                    <td>
+                      <span className="num" dir="ltr">
+                        {row.usUsd}
+                      </span>
+                    </td>
+                    <td>{row.durationAr}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 text-sm">
+            <a href="#radiation-ro-cta" className="underline-offset-4 hover:underline">
+              اطلب المساعدة في مراجعة حالتك الطبية عبر واتساب
+            </a>
+          </p>
+        </section>
+      ) : data.cityName ? (
+        <p className="mx-auto max-w-7xl px-4 pb-2 text-sm sm:px-5 md:px-8">
+          <a href={arHref(`${data.indiaHref}#radiation-glance`)} className="underline-offset-4 hover:underline">
+            جدول نظرة عامة في دليل الهند
+          </a>{" "}
+          يعرض نطاقات التخطيط المخزّنة. صفحة المدينة لا تعيد نشرها.
+        </p>
+      ) : null}
 
       <section className="mx-auto max-w-7xl px-4 pb-8 sm:px-5 md:px-8">
         {filterSlot ?? <ArabicRadiationCityLinks data={data} />}
@@ -289,6 +417,9 @@ export function ArabicRadiationSsrDocument({
                   ? `${count} ملفًا مدرجًا`
                   : `${taxonomyLabel(hospital.city, "ar")} · ${count} ملفًا مدرجًا`}
               </p>
+              {hospital.accreditation?.trim() ? (
+                <p className="accred-badge">الاعتماد على الملف: {hospital.accreditation.trim()}</p>
+              ) : null}
               <a
                 href={arHref(
                   hospitalsPath({

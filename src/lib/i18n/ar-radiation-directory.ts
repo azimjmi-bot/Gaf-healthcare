@@ -33,6 +33,7 @@ import type { Hospital } from "@/lib/hospitals";
 import { countedNoun } from "@/lib/i18n/arabic-grammar";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
+import { radiationPlanningGlance, type RadiationGlanceRow } from "@/lib/i18n/radiation-glance";
 import { getCity, proceduresForSpecialty } from "@/lib/taxonomy";
 
 const SPECIALTY = "Radiation Oncology";
@@ -96,6 +97,8 @@ export type ArabicRadiationDirectoryData = {
   procedures: ArabicRadiationLink[];
   conditions: ArabicRadiationLink[];
   costs: ArabicRadiationLink[];
+  /** Stored planning ranges. India root only, so city pages do not repeat the table. */
+  glance: RadiationGlanceRow[];
   doctors: Doctor[];
   paging: ReturnType<typeof paginateDoctors>;
   cityChipStats: { total: number; counts: Record<string, number> };
@@ -227,9 +230,20 @@ export function buildArabicRadiationDirectory(
     ...RADIATION_ONCOLOGY_EDUCATIONAL_AR.map((row) => `${row.title} ${row.body}`),
   ];
 
+  const glance = query.city ? [] : radiationPlanningGlance(procedures);
   const faqs = cityNote
     ? [...cityNote.localFaq, ...radiationOncologySharedCityFaqsAr(faqFacts)]
     : radiationOncologyIndiaFaqsAr(faqFacts);
+  if (!query.city && glance.length > 0) {
+    const cost = faqs.find((row) => row.q === "ما تكلفة العلاج الإشعاعي في الهند؟");
+    if (cost) {
+      const sample = glance
+        .slice(0, 3)
+        .map((row) => `${row.name}: ${row.indiaUsd}، والمدة في السجل ${row.durationAr}`)
+        .join("؛ ");
+      cost.a = `${cost.a} جدول «نظرة عامة» في هذه الصفحة يعرض النطاقات المخزّنة بالدولار الأمريكي لكل تقنية، ومنها ${sample}. هذه أرقام تخطيط وليست عرض سعر شخصيًا، ولا تُحوَّل هنا إلى الريال، ولا تتضمن نتيجة سريرية.`;
+    }
+  }
 
   if (cityNote) {
     uniqueSections.push(
@@ -251,7 +265,7 @@ export function buildArabicRadiationDirectory(
     );
     if (hospitalList) uniqueSections.push(hospitalList);
     if (techniqueList) uniqueSections.push(techniqueList);
-    sharedSections.push(...radiationOncologyIndiaFaqsAr(faqFacts).map((row) => `${row.q} ${row.a}`));
+    sharedSections.push(...faqs.map((row) => `${row.q} ${row.a}`));
   }
 
   const lede = cityNote
@@ -354,6 +368,7 @@ export function buildArabicRadiationDirectory(
       note: "سياق المسار على دليل علاج الأورام بالإشعاع، لا ربط تلقائي بين كل طبيب وكل ورم.",
     })),
     costs,
+    glance,
     doctors: paging.items,
     paging,
     cityChipStats: {
