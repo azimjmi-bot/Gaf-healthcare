@@ -1,6 +1,6 @@
 import "server-only";
 
-import { mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
 import { dirname, join } from "node:path";
 import { randomUUID } from "node:crypto";
 import { invalidateCachedJsonFile, readCachedJsonFile } from "@/lib/cms/json-file-cache";
@@ -288,9 +288,44 @@ export function validateTreatmentForSave(
   return errors;
 }
 
+const ARABIC_TREATMENT_DIR = join(process.cwd(), "content/ar/treatments");
+
+/**
+ * One file per slug: `{ slug, translation }`. Applied only for Arabic reads so
+ * the English store stays the source record.
+ */
+function arabicTreatmentTranslations() {
+  const overlays = new Map<string, CuratedTreatmentTranslation>();
+  if (!existsSync(ARABIC_TREATMENT_DIR)) return overlays;
+  for (const name of readdirSync(ARABIC_TREATMENT_DIR)) {
+    if (!name.endsWith(".json")) continue;
+    try {
+      const parsed = JSON.parse(readFileSync(join(ARABIC_TREATMENT_DIR, name), "utf8")) as {
+        slug?: string;
+        translation?: CuratedTreatmentTranslation;
+      };
+      if (parsed.slug && parsed.translation) {
+        overlays.set(parsed.slug, normalizeTranslation(parsed.translation));
+      }
+    } catch {
+      // A half-written translation must not hide the rest of the directory.
+    }
+  }
+  return overlays;
+}
+
+function withArabicTranslation(row: CuratedTreatment, locale: AppLocale, overlays: Map<string, CuratedTreatmentTranslation>) {
+  if (locale !== "ar") return row;
+  const translation = overlays.get(row.slug);
+  if (!translation) return row;
+  return { ...row, translations: { ...row.translations, ar: translation } };
+}
+
 export function publishedCuratedTreatments(locale: AppLocale) {
+  const overlays = locale === "ar" ? arabicTreatmentTranslations() : new Map<string, CuratedTreatmentTranslation>();
   return readCuratedTreatments()
-    .treatments.filter(
+    .treatments.map((row) => withArabicTranslation(row, locale, overlays))
+    .filter(
       (row) =>
         row.status === "published" &&
         row.translations[locale]?.status === "published",

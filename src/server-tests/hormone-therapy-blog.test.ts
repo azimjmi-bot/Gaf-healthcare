@@ -66,7 +66,8 @@ test("the published hormone-therapy blog is complete, interlinked and indexed on
   const whatsapp = (texts.match(/wa\.me\/919044346292/g) ?? []).length;
   assert.ok(whatsapp >= 3, `expected WhatsApp CTAs, found ${whatsapp}`);
   assert.ok(faqsFromArticleBlocks(post.blocks).length >= 10);
-  assert.equal(listPublishedPosts("ar").some((row) => row.slug === SLUG), false);
+  const arabicPost = listPublishedPosts("ar").find((row) => row.slug === SLUG);
+  if (arabicPost) assert.match(arabicPost.title, /[\u0600-\u06FF]/);
 
   const sitemap = buildLocaleSitemap("en").map((row) => row.url);
   assert.ok(sitemap.some((url) => url.endsWith(`/blogs/${SLUG}`)));

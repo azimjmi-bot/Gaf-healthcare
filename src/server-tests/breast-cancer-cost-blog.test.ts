@@ -66,7 +66,8 @@ test("the published cost blog is complete, interlinked and indexed only in Engli
 
   assert.ok(articleCtaCount(post.blocks) >= 7, `expected 7 CTAs, found ${articleCtaCount(post.blocks)}`);
   assert.ok(faqsFromArticleBlocks(post.blocks).length >= 8);
-  assert.equal(listPublishedPosts("ar").some((row) => row.slug === SLUG), false);
+  const arabicPost = listPublishedPosts("ar").find((row) => row.slug === SLUG);
+  if (arabicPost) assert.match(arabicPost.title, /[\u0600-\u06FF]/);
 
   const sitemap = buildLocaleSitemap("en").map((row) => row.url);
   assert.ok(sitemap.some((url) => url.endsWith(`/blogs/${SLUG}`)));

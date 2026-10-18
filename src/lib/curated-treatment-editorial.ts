@@ -88,7 +88,7 @@ export function splitTreatmentQuickAnswer(body: string): {
   after: string;
 } {
   const match = body.match(
-    /(^|\n)##\s+(Quick Answer[^\n]*)\n+([\s\S]*?)(?=\n##\s+)/,
+    /(^|\n)##\s+((?:Quick Answer|إجابة سريعة)[^\n]*)\n+([\s\S]*?)(?=\n##\s+)/,
   );
   if (!match || match.index === undefined) {
     return { before: body, quickAnswer: null, after: "" };

@@ -338,7 +338,7 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
                   ) : null}
                   {quickAnswer ? (
                     <aside className="article-quick-answer">
-                      <p className="article-quick-answer__label">Quick answer</p>
+                      <p className="article-quick-answer__label">{locale === "ar" ? "إجابة سريعة" : "Quick answer"}</p>
                       <h2>{quickAnswer.heading}</h2>
                       {quickAnswer.items.map((item) => (
                         <p

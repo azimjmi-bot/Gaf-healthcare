@@ -5,7 +5,7 @@ import { PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
 import { Search, SlidersHorizontal } from "lucide-react";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { blogDirectoryFacets, blogSettings, filterPublishedPosts } from "@/lib/blogs";
+import { blogCategoryLabel, blogDirectoryFacets, blogSettings, filterPublishedPosts } from "@/lib/blogs";
 import { LOCALES } from "@/lib/i18n/languages";
 import { localizeBlog, localizeMessages } from "@/lib/i18n/localize";
 import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
@@ -140,7 +140,7 @@ export default async function BlogsPage({
                     <option value="">{ui.allSubspecialties}</option>
                     {subspecialties.map((value) => (
                       <option key={value} value={value}>
-                        {value}
+                        {blogCategoryLabel(value, locale)}
                       </option>
                     ))}
                   </select>
@@ -174,7 +174,7 @@ export default async function BlogsPage({
                     </div>
                     <div className="p-6">
                       <p className="text-xs tracking-[0.18em] uppercase text-gold">
-                        {post.category} · {post.date}
+                        {blogCategoryLabel(post.category, locale)} · {post.date}
                       </p>
                       <h2 className="mt-2 font-heading text-3xl leading-snug">{post.title}</h2>
                       <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{post.excerpt}</p>
@@ -205,6 +205,7 @@ export default async function BlogsPage({
         place="India"
         consultHref={listingWa.primary}
         secondaryHref={listingWa.secondary}
+        locale={locale}
         variant="records"
       />
     </>

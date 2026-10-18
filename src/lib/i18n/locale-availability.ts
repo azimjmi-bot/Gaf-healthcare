@@ -15,6 +15,8 @@ export type SurfaceFacts = {
   treatmentsPublished: boolean;
   /** Whether this locale has at least one reviewed treatment-cost overlay. */
   costsPublished: boolean;
+  /** Whether this locale has at least one published blog article. */
+  blogsPublished: boolean;
 };
 
 /**
@@ -34,6 +36,9 @@ export function localeSurfaceIsAvailable(
   }
   if (surface === "costs") {
     return locale === "en" || facts.costsPublished;
+  }
+  if (surface === "blogs") {
+    return locale === "en" || facts.blogsPublished;
   }
   if (locale === "en" || surface === "home") return true;
   if (locale === "ar") {

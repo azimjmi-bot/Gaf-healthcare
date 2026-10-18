@@ -11,6 +11,7 @@ import {
   isCtaOnlyBlock,
   stripCtaMarkdown,
 } from "@/lib/article-ctas";
+import type { AppLocale } from "@/lib/i18n/languages";
 import { blogEstimateWhatsapp, consultToWhatsappHref } from "@/lib/site";
 
 export function CoverImage({
@@ -48,11 +49,13 @@ function BlogEstimatePanel({
   index,
   subject,
   place,
+  locale,
 }: {
   blocks: ArticleBlock[];
   index: number;
   subject: string;
   place: string;
+  locale: AppLocale;
 }) {
   const found = blocks.flatMap(ctaLinksFromBlock);
   const fallback = blogEstimateWhatsapp(subject, place);
@@ -65,6 +68,7 @@ function BlogEstimatePanel({
       consultHref={primary}
       secondaryHref={secondary}
       variant={BLOG_CTA_VARIANTS[index % BLOG_CTA_VARIANTS.length]}
+      locale={locale}
       className="article-estimate-cta"
     />
   );
@@ -151,12 +155,14 @@ export function ArticleBlocks({
   whatsappCtas = true,
   ctaSubject,
   ctaPlace = "India",
+  locale = "en",
 }: {
   blocks: ArticleBlock[];
   title?: string;
   whatsappCtas?: boolean;
   ctaSubject?: string;
   ctaPlace?: string;
+  locale?: AppLocale;
 }) {
   const subject = ctaSubject || title?.split(":")[0]?.trim() || "treatment";
 
@@ -196,6 +202,7 @@ export function ArticleBlocks({
             index={panel}
             subject={subject}
             place={ctaPlace}
+            locale={locale}
           />,
         );
         panel += 1;
@@ -217,6 +224,7 @@ export function ArticleBlocks({
           index={panel}
           subject={subject}
           place={ctaPlace}
+          locale={locale}
         />,
       );
       panel += 1;

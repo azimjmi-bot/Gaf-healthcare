@@ -2,6 +2,7 @@ import { editionFromLocale } from "@/lib/cms/edition";
 import { getPublishedBySlug, publishedArticles, readCms } from "@/lib/cms/store";
 import type { Article, ArticleBlock } from "@/lib/cms/types";
 import type { AppLocale } from "@/lib/i18n/languages";
+import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { stripMarkdown } from "@/lib/markdown";
 import { getSpecialty } from "@/lib/taxonomy";
 
@@ -45,6 +46,29 @@ export function blogSearchableText(post: Article, locale: AppLocale = "en") {
   return [post.title, post.excerpt, post.category, ...post.tags, ...(post.keywords ?? [])]
     .join(" ")
     .toLocaleLowerCase(locale);
+}
+
+const CATEGORY_AR: Record<string, string> = {
+  "Proton therapy": "علاج بالبروتون",
+  Stereotactic: "العلاج التجسيمي",
+  Brachytherapy: "المعالجة الكثبية",
+  Planning: "التخطيط",
+  "Breast Cancer": "سرطان الثدي",
+  "Prostate Cancer": "سرطان البروستاتا",
+  "Colon Cancer": "سرطان القولون",
+  "Knee Replacement": "استبدال الركبة",
+  DCIS: "السرطان القنوي الموضعي",
+};
+
+/** Filter values stay in the source language. This is only the visible label. */
+export function blogCategoryLabel(category: string, locale: AppLocale) {
+  if (locale !== "ar") return category;
+  const specialty = getSpecialty(category);
+  if (specialty) {
+    const labelled = taxonomyLabel(specialty.name, "ar");
+    if (labelled && labelled !== specialty.name) return labelled;
+  }
+  return CATEGORY_AR[category] || taxonomyLabel(category, "ar");
 }
 
 export function blogSpecialtySlug(post: Article) {
@@ -105,7 +129,7 @@ export function faqsFromArticleBlocks(blocks: ArticleBlock[]) {
   let inFaq = false;
   let question = "";
   for (const block of blocks) {
-    if (block.type === "heading" && /frequently asked questions/i.test(block.text)) {
+    if (block.type === "heading" && /frequently asked questions|أسئلة شائعة/i.test(block.text)) {
       inFaq = true;
       continue;
     }

@@ -20,6 +20,7 @@ import type { AppLocale } from "@/lib/i18n/languages";
  *   - `ar` from all 13 facet rows, since no pSEO template was approved
  *   - `ru`, `fr`, `sw` everywhere, since those locales are not live
  *   - `ar` from /treatments, since no curated treatment is published
+ *   - `ar` returns on /blogs once an Arabic article file is published
  */
 /**
  * What the running server is currently expected to put in <head>, which is not
@@ -241,8 +242,8 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
   },
 
   { label: "specialties index", path: "/specialties", published: ["en"] },
-  { label: "blogs index", path: "/blogs", published: ["en"] },
-  { label: "blog post", path: "/blogs/imrt-vs-3d-crt", published: ["en"] },
+  { label: "blogs index", path: "/blogs", published: ["en", "ar"] },
+  { label: "blog post", path: "/blogs/imrt-vs-3d-crt", published: ["en", "ar"] },
   { label: "consult", path: "/consult", published: ["en"] },
   {
     label: "algeria treatment in India hub",

@@ -71,6 +71,7 @@ test("the published prostate diet blog is complete, interlinked and indexed only
   assert.ok(articleCtaCount(post.blocks) >= 7, `expected 7 CTAs, found ${articleCtaCount(post.blocks)}`);
   assert.ok((texts.match(/wa\.me\/919044346292/g) ?? []).length >= 3);
   assert.ok(faqsFromArticleBlocks(post.blocks).length >= 8);
-  assert.equal(listPublishedPosts("ar").some((row) => row.slug === SLUG), false);
+  const arabicPost = listPublishedPosts("ar").find((row) => row.slug === SLUG);
+  if (arabicPost) assert.match(arabicPost.title, /[\u0600-\u06FF]/);
   assert.ok(buildLocaleSitemap("en").some((row) => row.url.endsWith(`/blogs/${SLUG}`)));
 });

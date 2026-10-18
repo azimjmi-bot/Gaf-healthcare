@@ -1,4 +1,5 @@
 import "server-only";
+import { listPublishedPosts } from "@/lib/blogs";
 import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
 import { treatmentsForLocale } from "@/lib/locale-catalog";
 import type { AppLocale } from "@/lib/i18n/languages";
@@ -27,6 +28,7 @@ export function availableSurfaces(locale: AppLocale): LocaleSurface[] {
   const facts = {
     treatmentsPublished: publishedCuratedTreatments(locale).length > 0,
     costsPublished: treatmentsForLocale(locale).length > 0,
+    blogsPublished: listPublishedPosts(locale).length > 0,
   };
   return ALL_SURFACES.filter((surface) => localeSurfaceIsAvailable(locale, surface, facts));
 }

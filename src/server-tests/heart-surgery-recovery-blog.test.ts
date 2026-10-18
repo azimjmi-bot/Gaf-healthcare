@@ -128,7 +128,8 @@ test("the heart surgery recovery guide uses published stays and does not invent 
     assert.match(toc.html, new RegExp(`href="#${id}"`));
   }
 
-  assert.equal(listPublishedPosts("ar").some((row) => row.slug === SLUG), false);
+  const arabicPost = listPublishedPosts("ar").find((row) => row.slug === SLUG);
+  if (arabicPost) assert.match(arabicPost.title, /[\u0600-\u06FF]/);
   const sitemap = buildLocaleSitemap("en").map((row) => row.url);
   assert.ok(sitemap.some((url) => url.endsWith(`/blogs/${SLUG}`)));
 });

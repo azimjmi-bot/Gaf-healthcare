@@ -1,4 +1,4 @@
-import { mkdirSync, readFileSync, renameSync, writeFileSync } from "fs";
+import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, writeFileSync } from "fs";
 import { dirname, join } from "path";
 import type { CmsEdition } from "@/lib/cms/edition";
 import { invalidateCachedJsonFile, readCachedJsonFile } from "@/lib/cms/json-file-cache";
@@ -68,14 +68,47 @@ export function saveCms(store: CmsStore, edition: CmsEdition = "en") {
   return store;
 }
 
+function editionArticleDir(edition: CmsEdition) {
+  return join(process.cwd(), "content", edition, "articles");
+}
+
+/**
+ * Arabic (and other locale) articles can live as one JSON file per slug under
+ * `content/<edition>/articles/`. That keeps a long translation from rewriting
+ * the settings file, and a file wins over a same-slug row in cms.json.
+ */
+function articlesFromDirectory(edition: CmsEdition): Article[] {
+  if (edition === "en") return [];
+  const dir = editionArticleDir(edition);
+  if (!existsSync(dir)) return [];
+  const rows: Article[] = [];
+  for (const name of readdirSync(dir)) {
+    if (!name.endsWith(".json")) continue;
+    try {
+      const parsed = JSON.parse(readFileSync(join(dir, name), "utf8")) as Article;
+      if (parsed && typeof parsed.slug === "string") rows.push(parsed);
+    } catch {
+      // A half-written translation must not take the edition down.
+    }
+  }
+  return rows;
+}
+
+export function editionArticles(edition: CmsEdition = "en"): Article[] {
+  const merged = new Map<string, Article>();
+  for (const article of readCms(edition).articles) merged.set(article.slug, article);
+  for (const article of articlesFromDirectory(edition)) merged.set(article.slug, article);
+  return [...merged.values()];
+}
+
 export function publishedArticles(edition: CmsEdition = "en") {
-  return readCms(edition)
-    .articles.filter((a) => a.status === "published")
+  return editionArticles(edition)
+    .filter((a) => a.status === "published")
     .sort((a, b) => (a.publishedAt < b.publishedAt ? 1 : -1));
 }
 
 export function getArticleBySlug(slug: string, edition: CmsEdition = "en") {
-  return readCms(edition).articles.find((a) => a.slug === slug && a.status !== "trash");
+  return editionArticles(edition).find((a) => a.slug === slug && a.status !== "trash");
 }
 
 export function getPublishedBySlug(slug: string, edition: CmsEdition = "en") {

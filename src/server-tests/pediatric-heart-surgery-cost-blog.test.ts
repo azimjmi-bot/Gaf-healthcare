@@ -147,6 +147,7 @@ test("the pediatric heart surgery cost guide keeps the quick answer and the dire
     assert.match(toc.html, new RegExp(`href="#${anchor}"`));
   }
 
-  assert.equal(listPublishedPosts("ar").some((row) => row.slug === SLUG), false);
+  const arabicPost = listPublishedPosts("ar").find((row) => row.slug === SLUG);
+  if (arabicPost) assert.match(arabicPost.title, /[\u0600-\u06FF]/);
   assert.ok(buildLocaleSitemap("en").some((row) => row.url.endsWith(`/blogs/${SLUG}`)));
 });

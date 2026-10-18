@@ -88,7 +88,8 @@ test("queued breast-cancer blogs are published, interlinked and indexed only in 
     assert.ok(existsSync(join(process.cwd(), "public/uploads/articles", item.image)), item.image);
     assert.ok(articleCtaCount(post.blocks) >= 7, `${item.slug} ctas ${articleCtaCount(post.blocks)}`);
     assert.ok(faqsFromArticleBlocks(post.blocks).length >= 8, item.slug);
-    assert.equal(listPublishedPosts("ar").some((row) => row.slug === item.slug), false);
+    const arabicPost = listPublishedPosts("ar").find((row) => row.slug === item.slug);
+    if (arabicPost) assert.match(arabicPost.title, /[\u0600-\u06FF]/, item.slug);
     assert.ok(buildLocaleSitemap("en").some((row) => row.url.endsWith(`/blogs/${item.slug}`)));
   }
 });

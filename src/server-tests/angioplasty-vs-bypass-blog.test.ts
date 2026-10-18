@@ -134,6 +134,7 @@ test("the angioplasty versus bypass guide quotes published ranges and keeps the 
     assert.match(toc.html, new RegExp(`href="#${id}"`));
   }
 
-  assert.equal(listPublishedPosts("ar").some((row) => row.slug === SLUG), false);
+  const arabicPost = listPublishedPosts("ar").find((row) => row.slug === SLUG);
+  if (arabicPost) assert.match(arabicPost.title, /[\u0600-\u06FF]/);
   assert.ok(buildLocaleSitemap("en").some((row) => row.url.endsWith(`/blogs/${SLUG}`)));
 });

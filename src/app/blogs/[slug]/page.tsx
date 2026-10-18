@@ -8,7 +8,7 @@ import { PseoEstimateCtaSection } from "@/components/pseo-estimate-cta";
 import { blogCtaSubject, blogEstimateWhatsapp } from "@/lib/site";
 import { CMS_COOKIE, cmsToken } from "@/lib/cms/auth";
 import { getArticleBySlug } from "@/lib/cms/store";
-import { faqsFromArticleBlocks, getPost, listPublishedPosts } from "@/lib/blogs";
+import { blogCategoryLabel, faqsFromArticleBlocks, getPost, listPublishedPosts } from "@/lib/blogs";
 import { blogPageMetadata } from "@/lib/i18n/page-meta";
 import { localizeBlog, localizeMessages } from "@/lib/i18n/localize";
 import { getRequestLocale } from "@/lib/i18n/request";
@@ -51,7 +51,7 @@ function blogStructuredData(post: Article, locale: AppLocale) {
     breadcrumbJsonLd(
       [
         { name: "GAF Healthcare", path: "/" },
-        { name: "Blogs", path: "/blogs" },
+        { name: locale === "ar" ? "المدونة" : "Blogs", path: "/blogs" },
         { name: post.title, path },
       ],
       locale,
@@ -123,7 +123,7 @@ export default async function BlogPostPage({
         <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/55 to-ink/25" />
         <div className="relative mx-auto flex h-full max-w-7xl flex-col justify-end px-5 pb-12 md:px-8">
           <p className="eyebrow text-gold-bright">
-            {messages["seo.blogsTitle"]} · {post.category} · {post.date}
+            {messages["seo.blogsTitle"]} · {blogCategoryLabel(post.category, locale)} · {post.date}
           </p>
           <h1 className="mt-3 max-w-4xl font-heading text-4xl leading-[1.05] md:text-6xl">
             {post.title}
@@ -135,6 +135,7 @@ export default async function BlogPostPage({
         place={place}
         consultHref={wa.primary}
         secondaryHref={wa.secondary}
+        locale={locale}
         variant="records"
       />
       <article className="mx-auto max-w-3xl px-4 py-10 sm:px-5 md:px-8 md:py-20">
@@ -151,6 +152,7 @@ export default async function BlogPostPage({
             whatsappCtas
             ctaSubject={subject}
             ctaPlace={place}
+            locale={locale}
           />
         </div>
         <ArticleRelated links={post.relatedLinks} />
@@ -166,6 +168,7 @@ export default async function BlogPostPage({
         place={place}
         consultHref={wa.primary}
         secondaryHref={wa.secondary}
+        locale={locale}
         variant="plan"
       />
       {others.length > 0 ? (
@@ -176,7 +179,7 @@ export default async function BlogPostPage({
               {others.map((p) => (
                 <li key={p.slug}>
                   <Link href={`/blogs/${p.slug}`} className="group block">
-                    <p className="text-xs tracking-[0.18em] uppercase text-gold">{p.category}</p>
+                    <p className="text-xs tracking-[0.18em] uppercase text-gold">{blogCategoryLabel(p.category, locale)}</p>
                     <h2 className="mt-2 font-heading text-2xl group-hover:text-gold">{p.title}</h2>
                   </Link>
                 </li>
