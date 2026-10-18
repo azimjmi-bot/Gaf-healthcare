@@ -874,6 +874,15 @@ a { color:#1d4f6f; }
 .concept__title { font-size: 1.05rem; }
 .concept p { margin: 0.35rem 0 0; font-size: 0.95rem; line-height: 1.75; color: #3d5158; }
 
+.guide { max-width: 48rem; }
+.guide p { margin: 0.75rem 0 0; font-size: 0.97rem; line-height: 1.8; color: #3d5158; }
+.guide__section { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid #e3ddd0; }
+.guide__section .sub-title { margin-top: 0; }
+.guide__list { margin: 0.75rem 0 0; padding-inline-start: 1.25rem; list-style: disc; }
+.guide__list li strong { color: var(--ink); font-weight: 600; }
+.guide__disclaimer { margin-top: 1.5rem; padding: 0.85rem 1.05rem; border: 1px solid #e3ddd0; border-radius: 0.75rem; background: #fff; font-size: 0.9rem; }
+.guide__disclaimer strong { color: var(--ink); }
+
 .faq-grid { margin-top: 1.25rem; }
 .faq-card { padding: 0.9rem 1.1rem; }
 .faq-card h3 { margin: 0; font-size: 1.02rem; line-height: 1.5; }

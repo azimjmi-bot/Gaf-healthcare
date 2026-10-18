@@ -5,6 +5,7 @@ import {
   RADIATION_ONCOLOGY_CONSULT_PREP_AR,
   RADIATION_ONCOLOGY_EDUCATIONAL_AR,
   RADIATION_ONCOLOGY_EDITORIAL_AR,
+  RADIATION_ONCOLOGY_GUIDE_AR,
   RADIATION_ONCOLOGY_HOW_TO_CHOOSE_AR,
   RADIATION_ONCOLOGY_SELECTION_NOTE_AR,
   RADIATION_ONCOLOGY_SOURCES_AR,
@@ -82,6 +83,8 @@ export type ArabicRadiationDirectoryData = {
   howToChoose: string[];
   consultPrep: string[];
   educational: { title: string; body: string }[];
+  /** Long-form patient guide; India root page only. */
+  guide?: typeof RADIATION_ONCOLOGY_GUIDE_AR;
   editorial: typeof RADIATION_ONCOLOGY_EDITORIAL_AR;
   sources: typeof RADIATION_ONCOLOGY_SOURCES_AR;
   uniqueSections: string[];
@@ -332,6 +335,7 @@ export function buildArabicRadiationDirectory(
     howToChoose: RADIATION_ONCOLOGY_HOW_TO_CHOOSE_AR,
     consultPrep: RADIATION_ONCOLOGY_CONSULT_PREP_AR,
     educational: RADIATION_ONCOLOGY_EDUCATIONAL_AR,
+    guide: query.city ? undefined : RADIATION_ONCOLOGY_GUIDE_AR,
     editorial: RADIATION_ONCOLOGY_EDITORIAL_AR,
     sources: RADIATION_ONCOLOGY_SOURCES_AR,
     uniqueSections,

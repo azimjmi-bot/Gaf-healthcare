@@ -277,6 +277,32 @@ test("Arabic RO directory HTML is server-rendered for crawlers", () => {
   assert.ok(jsonLdAt >= 0 && jsonLdAt < h1At);
 });
 
+test("India RO page carries the long-form patient guide; city pages do not", () => {
+  const hub = buildArabicRadiationDirectory(INDIA_QUERY);
+  assert.ok(hub?.guide);
+  const html = hostMarkup(createElement(ArabicRadiationSsrDocument, { data: hub }));
+  assert.match(html, /<h2[^>]*>ملاحظة حول تخصص علاج الأورام بالإشعاع في الهند<\/h2>/);
+  assert.equal(hub.guide.sections.length, 7);
+  for (const section of hub.guide.sections) {
+    assert.ok(html.includes(`>${section.heading}</h3>`), section.heading);
+    for (const block of section.blocks) {
+      if (typeof block === "string") assert.ok(html.includes(block), block.slice(0, 40));
+      else for (const item of block.items) assert.ok(html.includes(item.text), item.text.slice(0, 40));
+    }
+  }
+  assert.match(html, /<li><strong>المعالجة الكثبية \(Brachytherapy\):<\/strong> تعتمد على وضع مصدر إشعاعي/);
+  assert.match(html, /<strong>تنبيه طبي:<\/strong> هذه المعلومات مخصصة للتثقيف العام/);
+  // The guide sits after the concept list and before the FAQs.
+  assert.ok(html.indexOf("مفاهيم يحتاجها المريض الدولي") < html.indexOf('id="radiation-guide"'));
+  assert.ok(html.indexOf('id="radiation-guide"') < html.indexOf('id="radiation-faqs"'));
+
+  const city = buildArabicRadiationDirectory({ destination: "India", city: "Delhi NCR", specialty: "Radiation Oncology" });
+  assert.ok(city);
+  assert.equal(city.guide, undefined);
+  const cityHtml = hostMarkup(createElement(ArabicRadiationSsrDocument, { data: city }));
+  assert.doesNotMatch(cityHtml, /radiation-guide|ملاحظة حول تخصص/);
+});
+
 test("Arabic city RO HTML keeps unique city copy in the document", () => {
   const city = buildArabicRadiationDirectory({
     destination: "India",

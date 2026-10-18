@@ -48,7 +48,7 @@ function directoryStyleTag() {
       directoryCss = null;
     }
   }
-  if (directoryCss === null) return `<link rel="stylesheet" href="/${DIRECTORY_CSS_FILE}?v=4"/>`;
+  if (directoryCss === null) return `<link rel="stylesheet" href="/${DIRECTORY_CSS_FILE}?v=5"/>`;
   return `<style>${directoryCss.replace(/<\/style/gi, "<\\/style")}</style>`;
 }
 

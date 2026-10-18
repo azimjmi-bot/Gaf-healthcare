@@ -343,6 +343,46 @@ export function ArabicRadiationSsrDocument({
         </section>
       ) : null}
 
+      {data.guide ? (
+        <section id="radiation-guide" className="border-y border-border bg-secondary/20">
+          <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
+            <HubHeading eyebrow="دليل المريض" title={data.guide.title} />
+            <div className="guide mt-6 max-w-4xl">
+              {data.guide.intro.map((paragraph) => (
+                <p key={paragraph} className="prose-gaf">
+                  {paragraph}
+                </p>
+              ))}
+              {data.guide.sections.map((section) => (
+                <article key={section.heading} className="guide__section">
+                  <h3 className="sub-title font-heading text-2xl">{section.heading}</h3>
+                  {section.blocks.map((block, index) =>
+                    typeof block === "string" ? (
+                      <p key={block} className="prose-gaf">
+                        {block}
+                      </p>
+                    ) : (
+                      <ul key={`${section.heading}-${index}`} className="guide__list prep-list list-disc ps-5">
+                        {block.items.map((item) => (
+                          <li key={item.text}>
+                            {item.lead ? <strong>{item.lead}</strong> : null}
+                            {item.lead ? " " : ""}
+                            {item.text}
+                          </li>
+                        ))}
+                      </ul>
+                    ),
+                  )}
+                </article>
+              ))}
+              <p className="guide__disclaimer">
+                <strong>{data.guide.disclaimer.lead}</strong> {data.guide.disclaimer.text}
+              </p>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       {data.conditions.length > 0 ? (
         <section className="border-y border-border bg-secondary/20">
           <div className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-14">
