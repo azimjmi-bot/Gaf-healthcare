@@ -882,6 +882,28 @@ a { color:#1d4f6f; }
 .glance-wrap { overflow-x: auto; max-width: 100%; }
 .glance-table { width: 100%; border-collapse: collapse; font-size: 0.92rem; background: #fff; }
 .glance-table .num { direction: ltr; unicode-bidi: isolate; white-space: nowrap; }
+#radiation-glance,
+#radiation-doctors,
+#radiation-choose,
+#radiation-hospitals,
+#radiation-procedures,
+#radiation-guide,
+#radiation-costs,
+#radiation-cities,
+#radiation-faqs,
+#radiation-ro-cta { scroll-margin-top: 12rem; }
+@media (max-width: 760px) {
+  .glance-wrap { overflow: visible; }
+  .glance-table, .glance-table tbody, .glance-table tr, .glance-table th, .glance-table td { display: block; width: auto; }
+  .glance-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0, 0, 0, 0); }
+  .glance-table tr { margin-bottom: 0.75rem; border: 1px solid #e3ddd0; border-radius: 0.85rem; background: #fff; padding: 0.35rem 0.85rem 0.55rem; }
+  .glance-table tbody th, .glance-table td { border: 0; border-bottom: 1px solid #efeae0; padding: 0.45rem 0; white-space: normal; }
+  .glance-table tbody th { font-size: 1rem; }
+  .glance-table td { display: flex; justify-content: space-between; align-items: baseline; gap: 0.75rem; }
+  .glance-table td::before { content: attr(data-label); color: #6b7c82; font-weight: 600; }
+  .glance-table tr td:last-child { border-bottom: 0; }
+  .glance-table caption { display: block; width: 100%; height: auto; overflow: visible; clip: auto; position: static; margin-top: 0.35rem; white-space: normal; }
+}
 .accred-badge { display: inline-flex; margin-top: 0.65rem; border: 1px solid #d7c7a4; background: #f7f4ee; color: #6d5732; border-radius: 999px; padding: 0.15rem 0.7rem; font-size: 0.78rem; line-height: 1.5; }
 .trust-strip { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; max-width: 48rem; margin-top: 1rem; font-size: 0.82rem; line-height: 1.6; color: #5a6d73; }
 .trust-strip p { margin: 0; }

@@ -288,17 +288,17 @@ export function ArabicRadiationSsrDocument({
                         row.name
                       )}
                     </th>
-                    <td>
+                    <td data-label="نطاق الهند">
                       <span className="num" dir="ltr">
                         {row.indiaUsd}
                       </span>
                     </td>
-                    <td>
+                    <td data-label="نطاق الولايات المتحدة">
                       <span className="num" dir="ltr">
                         {row.usUsd}
                       </span>
                     </td>
-                    <td>{row.durationAr}</td>
+                    <td data-label="المدة في السجل">{row.durationAr}</td>
                   </tr>
                 ))}
               </tbody>
