@@ -34,9 +34,10 @@ const ALLOWED = [
   "td",
 ];
 
-function markdownComponents(): Components {
+function markdownComponents(inline = false): Components {
   return {
   h1: ({ children }) => <h2>{children}</h2>,
+  ...(inline ? { p: ({ children }) => <>{children}</> } : {}),
   a: ({ href, children }) => {
     const raw = typeof href === "string" && /^(https?:|mailto:|\/|#)/i.test(href) ? href : undefined;
     const safe = raw ? consultToWhatsappHref(raw) : raw;
@@ -66,18 +67,21 @@ function markdownComponents(): Components {
 export function MarkdownBody({
   source,
   className,
+  inline = false,
 }: {
   source: string;
   className?: string;
+  /** Render without a paragraph wrapper, for links inside a list item or caption. */
+  inline?: boolean;
 }) {
   const text = source.trim();
   if (!text) return null;
   return (
-    <div className={cn("md-body", className)}>
+    <div className={cn("md-body", inline && "md-body--inline", className)}>
       <ReactMarkdown
         allowedElements={ALLOWED}
         unwrapDisallowed
-        components={markdownComponents()}
+        components={markdownComponents(inline)}
         remarkPlugins={[remarkGfm]}
       >
         {text}

@@ -20,7 +20,7 @@ import {
   localizedAbsoluteUrl,
   withLocaleMetadata,
 } from "@/lib/i18n/metadata";
-import { localePath } from "@/lib/i18n/path";
+import { localePath, localizeProseLinks } from "@/lib/i18n/path";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { treatmentUi } from "@/lib/i18n/treatment-ui";
@@ -327,7 +327,10 @@ export default async function TreatmentProfilePage({ params }: { params: Params 
           <section className="treatment-article__section treatment-article__intro">
             <p className="eyebrow">{ui.overview}</p>
             {(() => {
-              const display = treatmentEditorialBodyForDisplay(copy, locale);
+              const display = localizeProseLinks(
+                treatmentEditorialBodyForDisplay(copy, locale),
+                locale,
+              );
               const { before, quickAnswer, after } =
                 splitTreatmentQuickAnswer(display);
               const subject = blogCtaSubject(copy.name);

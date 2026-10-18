@@ -1,6 +1,6 @@
 import "server-only";
 import { HOME_DESTINATIONS, HOME_REVIEWS, HOME_VIDEOS } from "@/data/home";
-import { localizeInternalHref } from "@/lib/i18n/path";
+import { localizeInternalHref, localizeProseLinks } from "@/lib/i18n/path";
 import { homeExtraCatalogFor, uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 import type { AppLocale } from "@/lib/i18n/languages";
 import { COST_FAQS, DOCTOR_FAQS, HOSPITAL_FAQS } from "@/lib/seo";
@@ -45,9 +45,20 @@ export async function localizeBlog(post: Article, locale: AppLocale) {
       ...link,
       href: localizeInternalHref(link.href, locale),
     })),
-    blocks: post.blocks.map((block) =>
-      block.type === "button" ? { ...block, href: localizeInternalHref(block.href, locale) } : block,
-    ),
+    blocks: post.blocks.map((block) => {
+      if (block.type === "button") return { ...block, href: localizeInternalHref(block.href, locale) };
+      if (block.type === "paragraph" || block.type === "quote") {
+        return { ...block, text: localizeProseLinks(block.text, locale) };
+      }
+      if (block.type === "list") {
+        return { ...block, items: block.items.map((item) => localizeProseLinks(item, locale)) };
+      }
+      if (block.type === "image") {
+        return { ...block, caption: block.caption ? localizeProseLinks(block.caption, locale) : block.caption };
+      }
+      if (block.type === "html") return { ...block, html: localizeProseLinks(block.html, locale) };
+      return block;
+    }),
   };
 }
 

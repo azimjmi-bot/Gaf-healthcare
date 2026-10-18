@@ -101,7 +101,7 @@ function renderStandardBlock(
   if (block.type === "quote") {
     return (
       <blockquote key={block.id}>
-        <p>{block.text}</p>
+        {block.text.includes("](") ? <MarkdownBody source={block.text} /> : <p>{block.text}</p>}
         {block.cite ? <cite>{block.cite}</cite> : null}
       </blockquote>
     );
@@ -111,7 +111,9 @@ function renderStandardBlock(
     return (
       <Tag key={block.id}>
         {block.items.filter(Boolean).map((item, i) => (
-          <li key={`${block.id}-${i}`}>{item}</li>
+          <li key={`${block.id}-${i}`}>
+            {item.includes("](") ? <MarkdownBody source={item} inline /> : item}
+          </li>
         ))}
       </Tag>
     );
@@ -120,7 +122,11 @@ function renderStandardBlock(
     return (
       <figure key={block.id}>
         <CoverImage src={block.src} alt={block.alt} />
-        {block.caption ? <figcaption>{block.caption}</figcaption> : null}
+        {block.caption ? (
+          <figcaption>
+            {block.caption.includes("](") ? <MarkdownBody source={block.caption} inline /> : block.caption}
+          </figcaption>
+        ) : null}
       </figure>
     );
   }

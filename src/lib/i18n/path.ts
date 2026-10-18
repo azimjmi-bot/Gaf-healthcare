@@ -77,3 +77,48 @@ export function localizeInternalHref(href: string, locale: AppLocale) {
   if (!isInternalHref(href)) return href;
   return localePath(href, locale);
 }
+
+const SITE_CONTENT_ROOTS = new Set([
+  "blogs",
+  "treatments",
+  "doctors",
+  "hospitals",
+  "costs",
+  "specialties",
+]);
+
+const SITE_ORIGIN = /^https?:\/\/(?:www\.)?gaf\.healthcare(?=\/|$)/i;
+
+/**
+ * Point an in-article link at the same page in the current language.
+ *
+ * Consult links stay unprefixed so the estimate button can still recognise
+ * them. Uploads, anchors, and other sites stay as written.
+ */
+export function localizeContentHref(href: string, locale: AppLocale) {
+  if (!href || locale === SOURCE_LOCALE) return href;
+  const trimmed = href.trim();
+  const origin = trimmed.match(SITE_ORIGIN)?.[0] ?? "";
+  const path = origin ? trimmed.slice(origin.length) || "/" : trimmed;
+  if (!path.startsWith("/")) return href;
+  const stripped = stripLocalePrefix(path);
+  const head = stripped.pathname.split("/").filter(Boolean)[0];
+  if (!head || !SITE_CONTENT_ROOTS.has(head)) return href;
+  return localePath(path, locale);
+}
+
+/** Rewrite Markdown and HTML links inside article prose. */
+export function localizeProseLinks(text: string, locale: AppLocale) {
+  if (!text || locale === SOURCE_LOCALE) return text;
+  const markdownLink = /\[([^\]]*)\]\(([^)\s]+)(\s+(?:"[^"]*"|'[^']*'))?\)/g;
+  const htmlHref = /\shref=(["'])([^"']+)\1/gi;
+  return text
+    .replace(markdownLink, (full, label: string, href: string, title: string = "") => {
+      const next = localizeContentHref(href, locale);
+      return next === href ? full : `[${label}](${next}${title})`;
+    })
+    .replace(htmlHref, (full, quote: string, href: string) => {
+      const next = localizeContentHref(href, locale);
+      return next === href ? full : ` href=${quote}${next}${quote}`;
+    });
+}

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { localePath, stripLocalePrefix } from "./path";
+import { localePath, localizeProseLinks, stripLocalePrefix } from "./path";
 
 test("English stays unprefixed", () => {
   assert.equal(localePath("/doctors/example", "en"), "/doctors/example");
@@ -55,6 +55,28 @@ test("Arabic taxonomy labels cover every filter option and keep English values",
   assert.equal(taxonomyLabel("India", "ar"), "الهند");
   assert.equal(taxonomyLabel("Mastectomy", "ar"), "استئصال الثدي");
   assert.equal(taxonomyLabel("Surgical Oncology", "ar"), "جراحة الأورام");
+});
+
+test("Arabic article prose points internal links at the Arabic pages", () => {
+  const source = [
+    "انظر [المرحلة](/blogs/breast-cancer-stages-0-1-2-3-4) و[التكلفة](/costs/India/Surgical-Oncology/Lumpectomy).",
+    "[اسألي](/consult?treatment=Breast%20Cancer) و[واتساب](https://wa.me/919044346292).",
+    "الموقع [هنا](https://gaf.healthcare/treatments/breast-cancer-treatment-in-india).",
+    '<a href="/doctors/India/Delhi-NCR">دلهي</a> <a href="#section">قسم</a>',
+    "صورة ![خطة](/uploads/treatments/example.webp)",
+  ].join("\n");
+  const arabic = localizeProseLinks(source, "ar");
+  assert.match(arabic, /\]\(\/ar\/blogs\/breast-cancer-stages-0-1-2-3-4\)/);
+  assert.match(arabic, /\]\(\/ar\/costs\/india\/surgical-oncology\/lumpectomy\)/);
+  assert.match(arabic, /\]\(\/ar\/treatments\/breast-cancer-treatment-in-india\)/);
+  assert.match(arabic, /href="\/ar\/doctors\/india\/delhi-ncr"/);
+  assert.match(arabic, /href="#section"/);
+  assert.match(arabic, /\]\(\/consult\?treatment=Breast%20Cancer\)/);
+  assert.match(arabic, /https:\/\/wa\.me\/919044346292/);
+  assert.match(arabic, /\]\(\/uploads\/treatments\/example\.webp\)/);
+  assert.doesNotMatch(arabic, /\]\(\/blogs\//);
+  assert.doesNotMatch(arabic, /\]\(\/costs\/India/);
+  assert.equal(localizeProseLinks(source, "en"), source);
 });
 
 test("Arabic sitemap URLs stay on /ar and English sitemap stays unprefixed", async () => {
