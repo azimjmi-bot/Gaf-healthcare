@@ -36,7 +36,7 @@ export function radiationProcedureAdminRows(): RadiationProcedureAdminRow[] {
       kind: copy?.kind ?? "",
       faqCount: merged?.faqs.length ?? 0,
       overlayStatus,
-      live: overlayStatus === "published" && issues.length === 0,
+      live: overlayStatus !== "draft" && issues.length === 0,
       issues,
       publicPath: doctorsPath({ destination: "India", specialty: SPECIALTY, procedure }),
     };

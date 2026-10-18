@@ -215,7 +215,7 @@ function hostMarkup(node: ReactNode): string {
 
 function cacheKeyFor(path: string, page: number) {
   const url = page > 1 ? `/ar${path}?page=${page}` : `/ar${path}`;
-  return `v4:${url}`;
+  return `v5:${url}`;
 }
 
 export function renderArabicRadiationHtml(query: CatalogQuery, page = 1) {

@@ -13,8 +13,8 @@ import { filterDoctors } from "@/lib/catalog";
 const IMRT = "Intensity-Modulated Radiotherapy (IMRT)";
 const PUBLISHED = { status: "published" as const };
 
-test("long form stays withheld until an Arabic overlay is published", () => {
-  assert.equal(resolveRadiationProcedureCopy(IMRT, undefined), undefined);
+test("baseline long form is public, and a draft or a short FAQ list hides it", () => {
+  assert.ok((resolveRadiationProcedureCopy(IMRT, undefined)?.faqs.length ?? 0) >= 18);
   assert.equal(resolveRadiationProcedureCopy(IMRT, { status: "draft" }), undefined);
   assert.equal(
     resolveRadiationProcedureCopy(IMRT, { status: "published", faqs: [{ q: "سؤال", a: "جواب" }] }),
@@ -54,14 +54,23 @@ test("IMRT India page lists only doctors linked to IMRT", () => {
   );
 });
 
-test("public HTML keeps the directory until publish, and the template matches FAQ schema", () => {
+test("public India procedure HTML renders the long form, and a city URL does not", () => {
   const html = renderArabicDoctorDirectoryHtml({
     destination: "India",
     specialty: "Radiation Oncology",
     procedure: IMRT,
   });
   assert.ok(html);
-  assert.equal(html.includes("procedure-quick-answer"), false);
+  assert.equal(html.includes("procedure-quick-answer"), true);
+  assert.equal(html.includes("ملاحظة حول العلاج الإشعاعي المعدل الشدة"), true);
+  const cityHtml = renderArabicDoctorDirectoryHtml({
+    destination: "India",
+    city: "Delhi NCR",
+    specialty: "Radiation Oncology",
+    procedure: IMRT,
+  });
+  assert.ok(cityHtml);
+  assert.equal(cityHtml.includes("procedure-quick-answer"), false);
   const page = buildArabicRadiationProcedure(
     { destination: "India", specialty: "Radiation Oncology", procedure: IMRT },
     1,

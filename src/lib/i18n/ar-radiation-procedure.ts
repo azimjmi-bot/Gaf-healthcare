@@ -72,9 +72,9 @@ export function radiationProcedurePatch(procedureName: string): RadiationProcedu
 }
 
 /**
- * Baseline plus an Arabic CMS overlay.
- * The long form stays withheld until an editor marks that overlay published
- * and the merged copy passes the FAQ completeness checks.
+ * The reviewed baseline is what the public India page renders.
+ * A draft overlay hides the long form. A published overlay replaces the
+ * editable fields only when the merged copy still passes the FAQ checks.
  */
 export function resolveRadiationProcedureCopy(
   procedureName: string,
@@ -82,8 +82,8 @@ export function resolveRadiationProcedureCopy(
 ): RadiationProcedureCopy | undefined {
   const base = RADIATION_PROCEDURE_PAGES_AR[procedureName];
   if (!base) return undefined;
-  if (patch?.status !== "published") return undefined;
-  const merged = applyRadiationProcedurePatch(base, patch);
+  if (patch?.status === "draft") return undefined;
+  const merged = patch?.status === "published" ? applyRadiationProcedurePatch(base, patch) : base;
   if (procedureCopyIssues(merged).length > 0) return undefined;
   return merged;
 }

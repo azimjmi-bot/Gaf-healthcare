@@ -28,9 +28,8 @@ export default async function CmsRadiationProcedureEditPage({
           <p className="cms-kicker">{model.kind}</p>
           <h1>{model.procedure}</h1>
           <p>
-            Saves go to the Arabic catalog only. Regenerating a section fills the form and does not
-            overwrite a published page until you save. Baseline clinical sections outside this form
-            stay in code.
+            The reviewed baseline is already on the public Arabic URL. A draft hides it. Regenerating
+            a section only fills this form until you save. Clinical sections outside this form stay in code.
           </p>
         </div>
       </header>

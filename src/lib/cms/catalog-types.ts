@@ -185,8 +185,8 @@ export type CatalogCms = {
   specialtyPageOverrides: Record<string, SpecialtyPagePatch>;
   /**
    * Arabic radiation-procedure landing pages, keyed by procedure slug.
-   * A draft overlay withholds the long-form template; it does not delete the
-   * existing doctor-directory URL.
+   * No overlay uses the reviewed baseline. A draft overlay withholds the long
+   * form and leaves the doctor-directory URL in place.
    */
   radiationProcedurePageOverrides: Record<string, RadiationProcedurePagePatch>;
 };

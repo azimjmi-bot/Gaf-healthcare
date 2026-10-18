@@ -35,7 +35,7 @@ export function CmsRadiationProcedureEditor({
   initialStatus: "draft" | "published" | "none";
   initial: EditorBaseline;
 }) {
-  const [status, setStatus] = useState<"draft" | "published">(initialStatus === "published" ? "published" : "draft");
+  const [status, setStatus] = useState<"draft" | "published">(initialStatus === "draft" ? "draft" : "published");
   const [h1, setH1] = useState(initial.h1);
   const [description, setDescription] = useState(initial.description);
   const [quickAnswer, setQuickAnswer] = useState(initial.quickAnswer);
@@ -127,8 +127,8 @@ export function CmsRadiationProcedureEditor({
       }
       setMessage(
         status === "published"
-          ? "Published on the Arabic catalog. The public page can now use this long form."
-          : "Draft saved. The public URL stays the existing doctor directory until you publish.",
+          ? "Published on the Arabic catalog. The public page uses this long form."
+          : "Draft saved. The public URL shows the doctor directory until you publish again.",
       );
     } catch (error) {
       setMessage(error instanceof Error ? error.message : "Save failed.");
@@ -175,8 +175,8 @@ export function CmsRadiationProcedureEditor({
           <label>
             Publication status
             <select className="cms-plain" value={status} onChange={(event) => setStatus(event.target.value as "draft" | "published")}>
-              <option value="draft">Draft — public page keeps the existing directory</option>
-              <option value="published">Published — long form goes on the Arabic URL</option>
+              <option value="published">Published — long form stays on the Arabic URL</option>
+              <option value="draft">Draft — hide the long form and show the doctor directory</option>
             </select>
           </label>
           <p className="text-sm text-muted-foreground self-end">

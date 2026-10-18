@@ -13,9 +13,9 @@ export default function CmsRadiationProceduresPage() {
           <p className="cms-kicker">Radiation oncology</p>
           <h1>Procedure pages</h1>
           <p>
-            Arabic long-form pages for the India radiation-oncology directory. Nothing here is public
-            until you save it as published. A draft leaves the existing doctor-directory URL in place.
-            Doctor and hospital links stay on catalog relationships.
+            Arabic long-form pages for the India radiation-oncology directory. The reviewed baseline
+            is already on the public URL. Saving a draft hides that article and leaves the doctor
+            directory in place. Doctor and hospital links stay on catalog relationships.
           </p>
         </div>
       </header>
