@@ -183,6 +183,21 @@ export type CatalogCms = {
   treatmentsDeleted: string[];
   /** Editorial specialty-country content keyed as `{countrySlug}/{specialtySlug}`. */
   specialtyPageOverrides: Record<string, SpecialtyPagePatch>;
+  /**
+   * Arabic radiation-procedure landing pages, keyed by procedure slug.
+   * A draft overlay withholds the long-form template; it does not delete the
+   * existing doctor-directory URL.
+   */
+  radiationProcedurePageOverrides: Record<string, RadiationProcedurePagePatch>;
+};
+
+export type RadiationProcedurePagePatch = {
+  status?: "draft" | "published";
+  h1?: string;
+  description?: string;
+  quickAnswer?: string;
+  note?: string[];
+  faqs?: { q: string; a: string }[];
 };
 
 export function emptyCatalogCms(): CatalogCms {
@@ -197,5 +212,6 @@ export function emptyCatalogCms(): CatalogCms {
     treatmentsAdded: [],
     treatmentsDeleted: [],
     specialtyPageOverrides: {},
+    radiationProcedurePageOverrides: {},
   };
 }

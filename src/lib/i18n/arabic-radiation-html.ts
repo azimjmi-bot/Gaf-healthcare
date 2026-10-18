@@ -2,12 +2,14 @@ import { readFileSync } from "fs";
 import { join } from "path";
 import { createElement, Fragment, type ReactNode } from "react";
 import { ArabicDoctorDirectorySsrDocument } from "@/components/arabic-doctor-directory-ssr";
+import { ArabicRadiationProcedureSsrDocument } from "@/components/arabic-radiation-procedure-ssr";
 import { ArabicRadiationSsrDocument } from "@/components/arabic-radiation-ssr";
 import {
   buildArabicRadiationDirectory,
   isArabicRadiationDirectory,
   type ArabicRadiationDirectoryData,
 } from "@/lib/i18n/ar-radiation-directory";
+import { buildArabicRadiationProcedure } from "@/lib/i18n/ar-radiation-procedure";
 import {
   arabicDocumentMeta,
   buildArabicDoctorDirectory,
@@ -48,7 +50,7 @@ function directoryStyleTag() {
       directoryCss = null;
     }
   }
-  if (directoryCss === null) return `<link rel="stylesheet" href="/${DIRECTORY_CSS_FILE}?v=5"/>`;
+  if (directoryCss === null) return `<link rel="stylesheet" href="/${DIRECTORY_CSS_FILE}?v=6"/>`;
   return `<style>${directoryCss.replace(/<\/style/gi, "<\\/style")}</style>`;
 }
 
@@ -213,7 +215,7 @@ function hostMarkup(node: ReactNode): string {
 
 function cacheKeyFor(path: string, page: number) {
   const url = page > 1 ? `/ar${path}?page=${page}` : `/ar${path}`;
-  return `v3:${url}`;
+  return `v4:${url}`;
 }
 
 export function renderArabicRadiationHtml(query: CatalogQuery, page = 1) {
@@ -231,8 +233,31 @@ export function renderArabicRadiationHtml(query: CatalogQuery, page = 1) {
  * its editorial layer; every other facet gets the generic directory document.
  * Returns undefined when the locale does not publish the path at all.
  */
+export function renderArabicRadiationProcedureHtml(query: CatalogQuery, page = 1) {
+  const data = buildArabicRadiationProcedure(query, page);
+  if (!data) return undefined;
+  const cacheKey = cacheKeyFor(data.path, page);
+  const cached = readCachedArabicRadiationHtml(cacheKey);
+  if (cached) return cached;
+  const body = hostMarkup(createElement(ArabicRadiationProcedureSsrDocument, { data }));
+  return cacheArabicRadiationHtml(
+    cacheKey,
+    wrapArabicDocument(
+      {
+        title: data.copy.title,
+        description: data.copy.description,
+        meta: data.meta,
+        consultHref: data.consultHref,
+      },
+      body,
+    ),
+  );
+}
+
 export function renderArabicDoctorDirectoryHtml(query: CatalogQuery, page = 1) {
   if (isArabicRadiationDirectory(query)) return renderArabicRadiationHtml(query, page);
+  const procedurePage = renderArabicRadiationProcedureHtml(query, page);
+  if (procedurePage) return procedurePage;
   const data = buildArabicDoctorDirectory(query, page);
   if (!data) return undefined;
   const cacheKey = cacheKeyFor(data.meta.path, data.paging.page);

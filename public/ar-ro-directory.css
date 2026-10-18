@@ -874,6 +874,11 @@ a { color:#1d4f6f; }
 .concept__title { font-size: 1.05rem; }
 .concept p { margin: 0.35rem 0 0; font-size: 0.95rem; line-height: 1.75; color: #3d5158; }
 
+.compare-table th,
+.compare-table td { border: 1px solid #e3ddd0; padding: 0.55rem 0.7rem; text-align: start; vertical-align: top; line-height: 1.6; }
+.compare-table thead th { background: #f7f4ee; font-weight: 600; }
+.compare-table tbody th { font-weight: 600; white-space: nowrap; }
+
 .guide { max-width: 48rem; }
 .guide p { margin: 0.75rem 0 0; font-size: 0.97rem; line-height: 1.8; color: #3d5158; }
 .guide__section { margin-top: 1.5rem; padding-top: 1.25rem; border-top: 1px solid #e3ddd0; }
