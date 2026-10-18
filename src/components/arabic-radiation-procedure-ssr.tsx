@@ -1,4 +1,6 @@
+import { CatalogFilterForm } from "@/components/catalog-filter-form";
 import { ArabicDoctorSsrCard, ArabicSsrPager, SsrJsonLd, arHref } from "@/components/arabic-ssr";
+import { resultLabel } from "@/lib/i18n/directory-copy";
 import type { ArabicRadiationProcedureData } from "@/lib/i18n/ar-radiation-procedure";
 import type { RadiationProcedureCopy } from "@/lib/i18n/radiation-procedure-page";
 import { documentId } from "@/lib/jsonld";
@@ -129,7 +131,7 @@ export function ArabicRadiationProcedureSsrDocument({ data }: { data: ArabicRadi
       ) : null}
 
       <section className="border-b border-border bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-5 md:px-8 md:pt-24 pb-10 md:pb-16">
+        <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-5 md:px-8 md:pt-24 pb-4 md:pb-6">
           <nav aria-label="مسار التنقل" className="mb-6 text-sm text-muted-foreground">
             <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
               {data.crumbs.map((crumb, index) => (
@@ -148,6 +150,18 @@ export function ArabicRadiationProcedureSsrDocument({ data }: { data: ArabicRadi
           </nav>
           <p className="eyebrow">دليل الأطباء · علاج الأورام بالإشعاع</p>
           <h1 className="font-heading mt-3 max-w-4xl text-4xl md:text-5xl">{copy.h1}</h1>
+        </div>
+      </section>
+      <CatalogFilterForm
+        sticky
+        basePath="/doctors"
+        locale="ar"
+        query={{ destination: "India", specialty: "Radiation Oncology", procedure: copy.procedure }}
+        resultCount={data.paging.total}
+        resultLabel={resultLabel("doctors", data.paging.total, "ar")}
+      />
+      <section className="border-b border-border bg-secondary/40">
+        <div className="mx-auto max-w-7xl px-4 pb-10 sm:px-5 md:px-8 md:pb-16">
           <p className="prose-gaf mt-4 max-w-3xl text-base leading-relaxed">{copy.intro}</p>
           <p className="mt-4 text-sm text-muted-foreground">
             {data.doctorCountLabel} في {data.hospitalCountLabel}. العدد من الملفات التي تذكر هذا الإجراء، لا ترتيب نتائج ولا جرد أجهزة.

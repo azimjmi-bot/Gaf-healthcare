@@ -1,9 +1,11 @@
+import { CatalogFilterForm } from "@/components/catalog-filter-form";
 import {
   ArabicDoctorSsrCard,
   ArabicSsrPager,
   SsrJsonLd,
   arHref,
 } from "@/components/arabic-ssr";
+import { resultLabel } from "@/lib/i18n/directory-copy";
 import type { ArabicDoctorDirectoryData } from "@/lib/i18n/arabic-doctor-directory";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { documentId } from "@/lib/jsonld";
@@ -69,7 +71,7 @@ export function ArabicDoctorDirectorySsrDocument({ data }: { data: ArabicDoctorD
       ) : null}
 
       <section className="border-b border-border bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-5 md:px-8 md:pt-24 pb-10 md:pb-16">
+        <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-5 md:px-8 md:pt-24 pb-4 md:pb-6">
           <nav aria-label="مسار التنقل" className="mb-6 text-sm text-muted-foreground">
             <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
               {data.crumbs.map((crumb, index) => (
@@ -90,6 +92,18 @@ export function ArabicDoctorDirectorySsrDocument({ data }: { data: ArabicDoctorD
           <h1 className="mt-3 max-w-4xl font-heading text-[2rem] leading-[1.15] sm:text-4xl md:mt-4 md:text-6xl">
             {data.heading}
           </h1>
+        </div>
+      </section>
+      <CatalogFilterForm
+        sticky
+        basePath="/doctors"
+        locale="ar"
+        query={query}
+        resultCount={paging.total}
+        resultLabel={resultLabel("doctors", paging.total, "ar")}
+      />
+      <section className="border-b border-border bg-secondary/40">
+        <div className="mx-auto max-w-7xl px-4 pb-10 sm:px-5 md:px-8 md:pb-16">
           <p className="prose-gaf mt-4 md:mt-6">{data.lede}</p>
         </div>
         {data.cityChips.length > 0 ? (

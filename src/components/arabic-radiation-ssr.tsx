@@ -1,10 +1,12 @@
 import type { ReactNode } from "react";
+import { CatalogFilterForm } from "@/components/catalog-filter-form";
 import {
   ArabicDoctorSsrCard,
   ArabicSsrPager,
   SsrJsonLd,
   arHref,
 } from "@/components/arabic-ssr";
+import { resultLabel } from "@/lib/i18n/directory-copy";
 import { hospitalsPath } from "@/lib/catalog-links";
 import type { ArabicRadiationDirectoryData } from "@/lib/i18n/ar-radiation-directory";
 import { containsPlace } from "@/lib/i18n/place-labels";
@@ -106,7 +108,7 @@ export function ArabicRadiationSsrDocument({
       <SsrJsonLd data={faqJsonLd(data.faqs, { path: data.path, locale: "ar" })} />
 
       <section className="border-b border-border bg-secondary/40">
-        <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-5 md:px-8 md:pt-24 pb-10 md:pb-16">
+        <div className="mx-auto max-w-7xl px-4 pt-10 sm:px-5 md:px-8 md:pt-24 pb-4 md:pb-6">
           <nav aria-label="مسار التنقل" className="mb-6 text-sm text-muted-foreground">
             <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
               {crumbs.map((crumb, index) => (
@@ -127,6 +129,22 @@ export function ArabicRadiationSsrDocument({
           <h1 className="mt-3 max-w-4xl font-heading text-[2rem] leading-[1.15] sm:text-4xl md:mt-4 md:text-6xl">
             {data.heading}
           </h1>
+        </div>
+      </section>
+      <CatalogFilterForm
+        sticky
+        basePath="/doctors"
+        locale="ar"
+        query={{
+          destination: "India",
+          city: data.citySlug,
+          specialty: "Radiation Oncology",
+        }}
+        resultCount={data.paging.total}
+        resultLabel={resultLabel("doctors", data.paging.total, "ar")}
+      />
+      <section className="border-b border-border bg-secondary/40">
+        <div className="mx-auto max-w-7xl px-4 pb-10 sm:px-5 md:px-8 md:pb-16">
           <p className="prose-gaf mt-4 md:mt-6">{data.lede}</p>
           <nav className="page-anchors" aria-label="في هذه الصفحة">
             <a href="#radiation-doctors">الأطباء</a>

@@ -50,7 +50,7 @@ function directoryStyleTag() {
       directoryCss = null;
     }
   }
-  if (directoryCss === null) return `<link rel="stylesheet" href="/${DIRECTORY_CSS_FILE}?v=8"/>`;
+  if (directoryCss === null) return `<link rel="stylesheet" href="/${DIRECTORY_CSS_FILE}?v=9"/>`;
   return `<style>${directoryCss.replace(/<\/style/gi, "<\\/style")}</style>`;
 }
 
@@ -183,24 +183,32 @@ export function readCachedArabicRadiationHtml(path: string) {
   return htmlCache.get(path);
 }
 
-function hostMarkup(node: ReactNode): string {
+function hostMarkup(node: ReactNode, selectedValue?: string): string {
   if (node == null || typeof node === "boolean") return "";
   if (typeof node === "string" || typeof node === "number") return String(node);
-  if (Array.isArray(node)) return node.map(hostMarkup).join("");
+  if (Array.isArray(node)) return node.map((child) => hostMarkup(child, selectedValue)).join("");
   if (typeof node !== "object") return "";
   const el = node as {
     type?: unknown;
     props?: Record<string, unknown> & { children?: ReactNode; dangerouslySetInnerHTML?: { __html: string } };
   };
-  if (el.type === Fragment) return hostMarkup(el.props?.children);
+  if (el.type === Fragment) return hostMarkup(el.props?.children, selectedValue);
   if (typeof el.type === "function") {
     const rendered = (el.type as (props: unknown) => ReactNode)(el.props ?? {});
-    return hostMarkup(rendered);
+    return hostMarkup(rendered, selectedValue);
   }
   const tag = typeof el.type === "string" ? el.type : "";
   const props = el.props ?? {};
+  const selectValue =
+    tag === "select" && props.defaultValue != null ? String(props.defaultValue) : undefined;
   const attrEntries = Object.entries(props).flatMap(([key, value]) => {
-    if (key === "children" || key === "dangerouslySetInnerHTML" || value == null || value === false) {
+    if (
+      key === "children" ||
+      key === "dangerouslySetInnerHTML" ||
+      key === "defaultValue" ||
+      value == null ||
+      value === false
+    ) {
       return [];
     }
     if (key === "className") return [`class="${String(value)}"`];
@@ -208,10 +216,13 @@ function hostMarkup(node: ReactNode): string {
     if (typeof value === "object") return [];
     return [`${key}="${String(value).replace(/"/g, "&quot;")}"`];
   });
+  if (tag === "option" && selectedValue != null && String(props.value ?? "") === selectedValue) {
+    attrEntries.push("selected");
+  }
   const attrs = attrEntries.length ? ` ${attrEntries.join(" ")}` : "";
   const inner = props.dangerouslySetInnerHTML
     ? props.dangerouslySetInnerHTML.__html
-    : hostMarkup(props.children);
+    : hostMarkup(props.children, selectValue ?? selectedValue);
   if (!tag) return inner;
   if (tag === "img" || tag === "input" || tag === "br" || tag === "hr" || tag === "meta") {
     return `<${tag}${attrs}/>`;
@@ -221,7 +232,7 @@ function hostMarkup(node: ReactNode): string {
 
 function cacheKeyFor(path: string, page: number) {
   const url = page > 1 ? `/ar${path}?page=${page}` : `/ar${path}`;
-  return `v8:${url}`;
+  return `v9:${url}`;
 }
 
 export function renderArabicRadiationHtml(query: CatalogQuery, page = 1) {

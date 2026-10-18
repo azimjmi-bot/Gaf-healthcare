@@ -6,8 +6,8 @@ import type { ArabicRadiationDirectoryData } from "@/lib/i18n/ar-radiation-direc
 
 /**
  * Arabic Radiation Oncology HTML is a synchronous server document.
- * Client filters, YouTube stories and cost-page attribution stay off this
- * route so crawlers receive the H1, Quick Answer and FAQs before timeout.
+ * The directory filter is plain HTML in this document, so it is present
+ * before any script runs. YouTube stories stay off this route.
  */
 export function ArabicRadiationDirectory({
   data,

@@ -262,6 +262,13 @@ test("Arabic RO directory HTML is server-rendered for crawlers", () => {
   assert.ok(html.includes(hub.paging.items[0].name));
   assert.match(html, new RegExp(`/ar/doctors/${hub.paging.items[0].slug}`));
   assert.doesNotMatch(html, /BDS|Shabnam Choudhary|Saffiyyah Chaudhary|home-videogrid/);
+  assert.match(html, /<form class="catalog-filter catalog-filter--sticky"/);
+  assert.match(html, /name="destination"/);
+  assert.match(html, /name="specialty"/);
+  assert.match(html, /كل التخصصات/);
+  assert.match(html, /data-href="\/ar\/doctors\/india\/radiation-oncology"/);
+  assert.ok(html.indexOf("<h1") < html.indexOf("catalog-filter"));
+  assert.ok(html.indexOf("catalog-filter") < html.indexOf("radiation-quick-answer"));
   assert.doesNotMatch(html, /filter\.destinations|useSearchParams/);
   assert.match(html, /\/ar\/doctors\/india\/delhi-ncr\/radiation-oncology/);
   assert.match(html, /wa\.me\/919044346292/);
@@ -370,6 +377,9 @@ test("generic Arabic doctor directories render as full HTML documents with H1, c
   assert.doesNotMatch(html, /#person/);
   assert.match(html, /wa\.me\/919044346292/);
   assert.equal(html.indexOf("self.__next_f"), -1);
+  assert.match(html, /<form class="catalog-filter catalog-filter--sticky"/);
+  assert.match(html, /data-href="\/ar\/doctors\/india\/medical-oncology"/);
+  assert.ok(html.indexOf("<h1") < html.indexOf("catalog-filter"));
   assert.doesNotMatch(html, /useSearchParams|filter\.destinations/);
   if (data.paging.totalPages > 1) {
     assert.match(html, /href="\/ar\/doctors\/india\/medical-oncology\?page=2"/);
