@@ -82,6 +82,12 @@ export function DoctorCard({
                 {doctor.qualifications}
               </li>
             ) : null}
+            {doctor.education.filter(Boolean).slice(0, 3).map((line, index) => (
+              <li key={`${line}-${index}`}>
+                <GraduationCap className="size-4" />
+                <span dir="ltr">{line}</span>
+              </li>
+            ))}
           </ul>
         </div>
 

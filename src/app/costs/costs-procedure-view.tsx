@@ -2,6 +2,8 @@ import "@/styles/article.css";
 import "@/styles/cost-page.css";
 import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
+import { ProcedureBenchmarkTable } from "@/components/procedure-benchmark-table";
+import { medicalProcedureAbout } from "@/lib/procedure-benchmarks";
 import { CostArticleSection, costArticleData, costArticleFor } from "@/components/cost-article-section";
 import { JsonLd } from "@/components/json-ld";
 import { cityResultCounts, filterTreatments, type CatalogQuery } from "@/lib/catalog";
@@ -151,6 +153,9 @@ export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
         ], locale)}
       />
       <JsonLd data={faqJsonLd(faqs, { path: pagePath, locale })} />
+      {locale === "en" ? (
+        <JsonLd data={{ "@context": "https://schema.org", ...medicalProcedureAbout(sheet.name, "en") }} />
+      ) : null}
       {data && data.faculty.length > 0 ? (
         <JsonLd
           data={doctorItemListJsonLd(data.faculty, {
@@ -174,6 +179,7 @@ export async function CostsProcedureView({ query }: { query: CatalogQuery }) {
         lede={cityPage?.subtitle ?? cityPage?.intro[0] ?? sheetArticle.heroSubtitle ?? sheetArticle.heroLede ?? sheet.summary}
         filters={
           <div className="pt-4 pb-8">
+            {locale === "en" ? <ProcedureBenchmarkTable procedure={sheet.name} locale="en" /> : null}
             <Suspense fallback={<div className="h-24 rounded-2xl bg-white shadow-sm" />}>
               <CatalogFilter
                 basePath="/costs"

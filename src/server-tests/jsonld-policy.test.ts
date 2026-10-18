@@ -1,6 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { SOURCE_LOCALE, TARGET_LOCALES, type AppLocale } from "@/lib/i18n/languages";
+import { lowercaseCatalogPath } from "@/lib/i18n/path";
 import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import {
@@ -201,7 +202,7 @@ const UNPUBLISHED_AR_FACET = "/hospitals/India/Radiation-Oncology";
 
 test("crawlableUrl falls back to English for an unpublished Arabic page", () => {
   assert.equal(localePathIsPublished("ar", UNPUBLISHED_AR_FACET), false);
-  assert.equal(crawlableUrl(UNPUBLISHED_AR_FACET, "ar"), `${SITE}${UNPUBLISHED_AR_FACET}`);
+  assert.equal(crawlableUrl(UNPUBLISHED_AR_FACET, "ar"), `${SITE}${lowercaseCatalogPath(UNPUBLISHED_AR_FACET)}`);
   assert.equal(crawlableUrl("/doctors", "ar"), `${SITE}/ar/doctors`);
   // And a published facet keeps the Arabic address, now that stage 1 is open.
   assert.equal(
@@ -223,7 +224,7 @@ test("breadcrumb trails route around unpublished Arabic facets", () => {
   assert.equal(items[0], `${SITE}/ar/hospitals`);
   assert.equal(
     items[1],
-    `${SITE}${UNPUBLISHED_AR_FACET}`,
+    `${SITE}${lowercaseCatalogPath(UNPUBLISHED_AR_FACET)}`,
     "unpublished facet crumb must stay English",
   );
   assert.equal(items[2], `${SITE}/ar/doctors/${SAMPLE_DOCTOR.slug}`);

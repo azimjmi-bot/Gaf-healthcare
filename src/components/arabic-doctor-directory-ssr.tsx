@@ -5,6 +5,8 @@ import {
   SsrJsonLd,
   arHref,
 } from "@/components/arabic-ssr";
+import { ProcedureBenchmarkTable } from "@/components/procedure-benchmark-table";
+import { medicalProcedureAbout } from "@/lib/procedure-benchmarks";
 import { resultLabel } from "@/lib/i18n/directory-copy";
 import type { ArabicDoctorDirectoryData } from "@/lib/i18n/arabic-doctor-directory";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
@@ -51,9 +53,11 @@ export function ArabicDoctorDirectorySsrDocument({ data }: { data: ArabicDoctorD
     description: data.description,
     inLanguage: "ar",
     url: absoluteUrl(meta.path, "ar"),
-    ...(query.specialty
-      ? { about: { "@type": "MedicalSpecialty", name: taxonomyLabel(query.specialty, "ar") } }
-      : {}),
+    ...(query.procedure
+      ? { about: medicalProcedureAbout(query.procedure, "ar") }
+      : query.specialty
+        ? { about: { "@type": "MedicalSpecialty", name: taxonomyLabel(query.specialty, "ar") } }
+        : {}),
   };
 
   return (
@@ -102,6 +106,7 @@ export function ArabicDoctorDirectorySsrDocument({ data }: { data: ArabicDoctorD
         resultCount={paging.total}
         resultLabel={resultLabel("doctors", paging.total, "ar")}
       />
+      {query.procedure ? <ProcedureBenchmarkTable procedure={query.procedure} locale="ar" /> : null}
       <section className="border-b border-border bg-secondary/40">
         <div className="mx-auto max-w-7xl px-4 pb-10 sm:px-5 md:px-8 md:pb-16">
           <p className="prose-gaf mt-4 md:mt-6">{data.lede}</p>

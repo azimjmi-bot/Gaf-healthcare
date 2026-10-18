@@ -100,7 +100,7 @@ function headLinks(meta: ArabicDocumentMeta) {
   // case-insensitive, so browsers and crawlers are unaffected either way.
   if (meta.inLanguageSet) {
     if (meta.hreflangLocales.includes("en")) {
-      lines.push(`<link rel="alternate" hrefLang="x-default" href="${SITE_ORIGIN}${meta.path}"/>`);
+      lines.push(`<link rel="alternate" hrefLang="x-default" href="${SITE_ORIGIN}${localePath(meta.path, "en")}"/>`);
     }
     for (const locale of meta.hreflangLocales) {
       const href = `${SITE_ORIGIN}${localePath(meta.path, locale as "ar" | "en")}`;
@@ -111,7 +111,7 @@ function headLinks(meta: ArabicDocumentMeta) {
 }
 
 export function wrapArabicDocument(doc: ArabicHtmlDocument, bodyHtml: string) {
-  const english = `${SITE_ORIGIN}${doc.meta.path}`;
+  const english = `${SITE_ORIGIN}${localePath(doc.meta.path, "en")}`;
   const head = headLinks(doc.meta);
   return `<!DOCTYPE html>
 <html lang="ar" dir="rtl">

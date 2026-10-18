@@ -302,6 +302,15 @@ export function catalogMetadata(
   };
 }
 
+function alumniOf(doctor: Doctor) {
+  const schools = (doctor.education ?? []).map((line) => line.trim()).filter(Boolean).slice(0, 3);
+  if (schools.length === 0) return undefined;
+  return schools.map((line) => ({
+    "@type": "EducationalOrganization",
+    name: line.split("—").pop()?.trim() || line,
+  }));
+}
+
 export function physicianJsonLd(d: Doctor, locale: AppLocale = "en", english?: Doctor) {
   const path = `/doctors/${d.slug}`;
   const hospitalPath = `/hospitals/${d.hospitalSlug}`;
@@ -342,6 +351,17 @@ export function physicianJsonLd(d: Doctor, locale: AppLocale = "en", english?: D
         addressCountry: "IN",
       },
     }),
+    hospitalAffiliation: compact({
+      "@type": "Hospital",
+      "@id": entityId(hospitalPath, "hospital"),
+      name: d.hospitalName,
+      alternateName: hospitalAlternateName(d.hospitalSlug, d.hospitalName),
+      url: crawlableUrl(hospitalPath, locale),
+    }),
+    hasCredential: d.qualifications
+      ? { "@type": "EducationalOccupationalCredential", name: d.qualifications }
+      : undefined,
+    alumniOf: alumniOf(d),
   });
 }
 
@@ -518,12 +538,23 @@ export function doctorItemListJsonLd(rows: Doctor[], opts: { name: string; path:
         name: doctor.name,
         url: crawlableUrl(`/doctors/${doctor.slug}`, locale),
         medicalSpecialty: taxonomyLabel(doctor.specialty, locale),
+        jobTitle: doctor.title || undefined,
+        hasCredential: doctor.qualifications
+          ? { "@type": "EducationalOccupationalCredential", name: doctor.qualifications }
+          : undefined,
         worksFor: compact({
           "@type": "Hospital",
           "@id": entityId(`/hospitals/${doctor.hospitalSlug}`, "hospital"),
           name: doctor.hospitalName,
           alternateName: hospitalAlternateName(doctor.hospitalSlug, doctor.hospitalName),
         }),
+        hospitalAffiliation: compact({
+          "@type": "Hospital",
+          "@id": entityId(`/hospitals/${doctor.hospitalSlug}`, "hospital"),
+          name: doctor.hospitalName,
+          alternateName: hospitalAlternateName(doctor.hospitalSlug, doctor.hospitalName),
+        }),
+        alumniOf: alumniOf(doctor),
         address: {
           "@type": "PostalAddress",
           addressLocality: taxonomyLabel(doctor.city, locale),

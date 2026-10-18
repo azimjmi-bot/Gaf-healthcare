@@ -19,7 +19,7 @@ export function prettyCatalogHref(base: CatalogBasePath, query: CatalogQuery, pa
   return localePath(href, locale);
 }
 
-/** Send leftover ?destination= catalog URLs to the Title-Case path. */
+/** Send leftover ?destination= catalog URLs to the lowercase public path. */
 export function redirectPrettyCatalog(base: CatalogBasePath, query: CatalogQuery, page = 1, locale: AppLocale = "en") {
   if (!query.destination) return;
   const pretty = prettyCatalogPath(base, query);
@@ -36,6 +36,8 @@ export function canonicalizePrettyPath(
 ) {
   const current = [base, ...segments].join("/");
   const pretty = prettyCatalogPath(base, query);
-  if (pretty.includes("?") || current === pretty) return;
+  if (pretty.includes("?")) return;
+  // The public path is lowercase. Title Case is only the internal facet key.
+  if (current === localePath(pretty, "en")) return;
   permanentRedirect(prettyCatalogHref(base, query, page, locale));
 }

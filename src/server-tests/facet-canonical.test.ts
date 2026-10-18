@@ -5,7 +5,7 @@ import { parentCatalogQuery } from "@/lib/catalog-options";
 import { doctorsForLocale } from "@/lib/locale-catalog";
 import { canonicalFacetPath } from "@/lib/i18n/facet-canonical";
 import { ARABIC_TEMPLATE_APPROVED } from "@/lib/i18n/locale-gating";
-import { withLocaleMetadata } from "@/lib/i18n/metadata";
+import { localizedAbsoluteUrl, withLocaleMetadata } from "@/lib/i18n/metadata";
 import { localePageState } from "@/lib/i18n/locale-publication";
 import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
 import { doctorSpecialtySitemapPaths } from "@/lib/doctor-discovery";
@@ -119,10 +119,10 @@ test("withLocaleMetadata emits the parent URL and drops hreflang on a duplicate"
     const parent = canonicalFacetPath(duplicate, "ar");
 
     const meta = withLocaleMetadata({}, duplicate, "ar", ["en", "ar"]);
-    assert.equal(meta.alternates?.canonical, `https://gaf.healthcare/ar${parent}`);
+    assert.equal(meta.alternates?.canonical, localizedAbsoluteUrl(parent, "ar"));
     // A page deferring to another URL is not the canonical of a language set.
     assert.deepEqual(meta.alternates?.languages, {});
-    assert.equal(meta.openGraph?.url, `https://gaf.healthcare/ar${parent}`);
+    assert.equal(meta.openGraph?.url, localizedAbsoluteUrl(parent, "ar"));
   });
 });
 
@@ -135,7 +135,7 @@ test("English facets keep self-canonical regardless of overlap", () => {
   const meta = withLocaleMetadata({}, "/doctors/India/Radiation-Oncology", "en", ["en", "ar"]);
   assert.equal(
     meta.alternates?.canonical,
-    "https://gaf.healthcare/doctors/India/Radiation-Oncology",
+    "https://gaf.healthcare/doctors/india/radiation-oncology",
   );
 });
 

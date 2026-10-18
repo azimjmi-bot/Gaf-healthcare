@@ -7,6 +7,7 @@ import { ArabicDoctorSsrCard, ArabicSsrPager, SsrJsonLd } from "@/components/ara
 import { ArabicRadiationDirectory } from "@/components/arabic-radiation-directory";
 import { ArabicRadiationProcedureSsrDocument } from "@/components/arabic-radiation-procedure-ssr";
 import { DoctorSpecialtyHub } from "@/components/doctor-specialty-hub";
+import { ProcedureBenchmarkTable } from "@/components/procedure-benchmark-table";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { PseoTrust } from "@/components/pseo-trust";
 import { JsonLd } from "@/components/json-ld";
@@ -207,6 +208,9 @@ export async function DoctorsDirectory({
           />
         </Suspense>
       </PageIntro>
+      {query.procedure && (locale === "en" || locale === "ar") ? (
+        <ProcedureBenchmarkTable procedure={query.procedure} locale={locale} />
+      ) : null}
       {hub ? (
         <section className="mx-auto max-w-7xl px-4 pt-8 sm:px-5 md:px-8 md:pt-12">
           {hub.intro.slice(1).map((paragraph) => (

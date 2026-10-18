@@ -23,17 +23,20 @@ function normalizePathname(path: string) {
   return withSlash.replace(/\/{2,}/g, "/");
 }
 
-const ARABIC_CATALOG_ROOTS = new Set(["doctors", "hospitals", "costs"]);
+const CATALOG_ROOTS = new Set(["doctors", "hospitals", "costs"]);
 
 /**
- * Arabic catalog addresses are lowercase. English keeps Title Case because
- * those URLs are already the indexed canonicals.
+ * Public catalog addresses are lowercase in every language. Internal facet
+ * keys stay Title Case; this only changes the path that is emitted or redirected.
  */
-export function lowercaseArabicCatalogPath(pathname: string) {
+export function lowercaseCatalogPath(pathname: string) {
   const parts = pathname.split("/").filter(Boolean);
-  if (!ARABIC_CATALOG_ROOTS.has(parts[0] ?? "")) return pathname;
+  if (!CATALOG_ROOTS.has(parts[0] ?? "")) return pathname;
   return `/${parts.map((part) => part.toLowerCase()).join("/")}`;
 }
+
+/** @deprecated Use lowercaseCatalogPath. Kept so older imports keep working. */
+export const lowercaseArabicCatalogPath = lowercaseCatalogPath;
 
 export function stripLocalePrefix(input: string): SplitPath {
   const { path, search, hash } = splitInput(input || "/");
@@ -50,12 +53,7 @@ export function stripLocalePrefix(input: string): SplitPath {
 /** Prefix an English site path with a language subdirectory. English stays unprefixed. */
 export function localePath(input: string, locale: AppLocale): string {
   const stripped = stripLocalePrefix(input);
-  const pathname =
-    locale === "ar" && stripped.pathname !== "/"
-      ? lowercaseArabicCatalogPath(stripped.pathname)
-      : stripped.pathname === "/"
-        ? "/"
-        : stripped.pathname;
+  const pathname = stripped.pathname === "/" ? "/" : lowercaseCatalogPath(stripped.pathname);
   if (locale === SOURCE_LOCALE) {
     return `${pathname}${stripped.search}${stripped.hash}`;
   }
@@ -65,7 +63,7 @@ export function localePath(input: string, locale: AppLocale): string {
 
 export function englishPath(input: string) {
   const stripped = stripLocalePrefix(input);
-  return `${stripped.pathname}${stripped.search}${stripped.hash}`;
+  return `${lowercaseCatalogPath(stripped.pathname)}${stripped.search}${stripped.hash}`;
 }
 
 export function isInternalHref(href: string) {

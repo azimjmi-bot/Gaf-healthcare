@@ -18,6 +18,8 @@ import type { CatalogQuery } from "@/lib/catalog";
 import { costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import type { DoctorSpecialtyHubData } from "@/lib/doctor-specialty-page";
 import { hospitalFacetExists } from "@/lib/radiation-hospital-page";
+import { ProcedureBenchmarkTable } from "@/components/procedure-benchmark-table";
+import { medicalProcedureAbout } from "@/lib/procedure-benchmarks";
 import { absoluteUrl, breadcrumbJsonLd, doctorItemListJsonLd, faqJsonLd } from "@/lib/seo";
 import { documentId } from "@/lib/jsonld";
 import type { AppLocale } from "@/lib/i18n/languages";
@@ -89,7 +91,7 @@ export function DoctorSpecialtyHub({
           inLanguage: locale,
           url: absoluteUrl(data.path, locale),
           about: data.procedure
-            ? { "@type": "MedicalProcedure", name: data.procedure }
+            ? medicalProcedureAbout(data.procedure, locale === "ar" ? "ar" : "en")
             : { "@type": "MedicalSpecialty", name: data.specialtyName },
         }}
       />
@@ -190,6 +192,10 @@ export function DoctorSpecialtyHub({
             ))}
           </div>
         </section>
+      ) : null}
+
+      {data.procedure ? (
+        <ProcedureBenchmarkTable procedure={data.procedure} locale={locale === "ar" ? "ar" : "en"} />
       ) : null}
 
       {data.aboutProcedure?.definition ? (

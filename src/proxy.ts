@@ -77,17 +77,19 @@ function withLocale(request: NextRequest, locale: string, pathname?: string) {
 
 const CATALOG_PAREN = /\/([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)-\(([A-Za-z0-9]+(?:-[A-Za-z0-9]+)*)\)/g;
 
+const CATALOG_ROOTS = new Set(["doctors", "hospitals", "costs"]);
+
 /**
- * One 301 to the canonical catalog address: drop parentheses everywhere, and
- * lowercase Arabic doctors, hospitals and costs. English Title Case stays.
+ * One 301 to the canonical catalog address: drop parentheses, then lowercase
+ * doctors, hospitals and costs in every language.
  */
 function catalogCanonicalRedirect(request: NextRequest) {
   const stripped = request.nextUrl.pathname.replace(CATALOG_PAREN, "/$1-$2");
   const parts = stripped.split("/").filter(Boolean);
-  const next =
-    parts[0] === "ar" && ["doctors", "hospitals", "costs"].includes(parts[1] ?? "")
-      ? `/${parts.map((part, index) => (index === 0 ? part : part.toLowerCase())).join("/")}`
-      : stripped;
+  const rootAt = parts[0] === "ar" || parts[0] === "fr" || parts[0] === "ru" || parts[0] === "sw" ? 1 : 0;
+  const next = CATALOG_ROOTS.has(parts[rootAt] ?? "")
+    ? `/${parts.map((part) => part.toLowerCase()).join("/")}`
+    : stripped;
   if (next === request.nextUrl.pathname) return null;
   const url = request.nextUrl.clone();
   url.pathname = next;

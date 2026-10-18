@@ -5,14 +5,14 @@ import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { publishedLocalesForPath } from "@/lib/i18n/locale-publication";
 import { ENGLISH_ALTERNATES_BASELINE } from "@/server-tests/english-alternates-fixture";
-import { lowercaseArabicCatalogPath } from "@/lib/i18n/path";
+import { lowercaseCatalogPath } from "@/lib/i18n/path";
 
 /**
- * English pages are already ranking, so their canonical and hreflang block is
- * the one output no Arabic change is allowed to move. `publishedLocalesForPath`
- * feeds the hreflang of every English page, which means editing Arabic
- * publication rules silently rewrites the alternates on all 7,000-odd English
- * URLs. These expectations are the pin taken before that logic is touched.
+ * Catalog URLs are lowercase in every language. The fixture paths stay the
+ * Title Case facet keys; emitted canonicals and hreflang are lowercase.
+ * `publishedLocalesForPath` feeds the hreflang of every English page, which
+ * means editing Arabic publication rules silently rewrites the alternates on
+ * all 7,000-odd English URLs. These expectations are the pin for that logic.
  *
  * When a later phase intentionally changes which Arabic pages are published,
  * the first and third tests here are expected to fail. Update the fixture and
@@ -33,8 +33,8 @@ function alternatesFor(path: string) {
  * asserts the served form.
  */
 function expectedUrl(path: string, locale: AppLocale) {
-  if (locale === SOURCE_LOCALE) return `${EN}${path}`;
-  const body = locale === "ar" && path !== "/" ? lowercaseArabicCatalogPath(path) : path;
+  const body = path === "/" ? "/" : lowercaseCatalogPath(path);
+  if (locale === SOURCE_LOCALE) return `${EN}${body}`;
   return path === "/" ? `${EN}/${locale}` : `${EN}/${locale}${body}`;
 }
 

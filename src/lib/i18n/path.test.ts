@@ -60,5 +60,5 @@ test("Arabic taxonomy labels cover every filter option and keep English values",
 test("Arabic sitemap URLs stay on /ar and English sitemap stays unprefixed", async () => {
   const { localePath } = await import("./path");
   assert.equal(localePath("/doctors/India/Delhi-NCR", "ar"), "/ar/doctors/india/delhi-ncr");
-  assert.equal(localePath("/costs/India/Surgical-Oncology/Mastectomy", "en"), "/costs/India/Surgical-Oncology/Mastectomy");
+  assert.equal(localePath("/costs/India/Surgical-Oncology/Mastectomy", "en"), "/costs/india/surgical-oncology/mastectomy");
 });

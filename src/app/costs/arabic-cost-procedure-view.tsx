@@ -1,5 +1,7 @@
 import { Suspense } from "react";
 import { CatalogFilter } from "@/components/catalog-filter";
+import { ProcedureBenchmarkTable } from "@/components/procedure-benchmark-table";
+import { medicalProcedureAbout } from "@/lib/procedure-benchmarks";
 import { JsonLd } from "@/components/json-ld";
 import { LocaleLink as Link } from "@/components/locale-link";
 import { CtaBand, PageIntro } from "@/components/page-shell";
@@ -85,6 +87,7 @@ export async function ArabicCostProcedureView({ query }: { query: CatalogQuery }
         )}
       />
       <JsonLd data={faqJsonLd(faqs, { path: copy.path, locale: "ar" })} />
+      <JsonLd data={{ "@context": "https://schema.org", ...medicalProcedureAbout(treatment.name, "ar") }} />
 
       <PageIntro
         eyebrow={`${copy.country} · ${copy.specialty} · نطاق تخطيطي`}
@@ -102,6 +105,8 @@ export async function ArabicCostProcedureView({ query }: { query: CatalogQuery }
           />
         </Suspense>
       </PageIntro>
+
+      <ProcedureBenchmarkTable procedure={treatment.name} locale="ar" />
 
       <main className="mx-auto max-w-7xl px-4 py-10 sm:px-5 md:px-8 md:py-16">
         <section className="grid gap-4 md:grid-cols-3">
