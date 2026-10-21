@@ -494,24 +494,50 @@ export class R2ContentStorage implements ContentStorage {
   private async publishVersion() {
     const groups = [...this.dirtyGroups];
     this.dirtyGroups.clear();
+    // One stamp for this flush. A retry keeps it, so a lost race does not
+    // invent a second generation for the same write.
     const stamp = `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
-    const next: VersionDocument = {
-      groups: { ...this.versionDocument.groups },
-      updatedAt: new Date().toISOString(),
-    };
-    for (const group of groups) next.groups[group] = stamp;
     try {
-      const result = await this.content.put(VERSION_KEY, encoder.encode(JSON.stringify(next)), {
-        httpMetadata: { contentType: contentTypeFor(VERSION_KEY) },
-      });
-      this.versionDocument = next;
-      if (result) this.versionEtag = result.etag;
+      for (let attempt = 0; attempt < 4; attempt++) {
+        const next: VersionDocument = {
+          groups: { ...this.versionDocument.groups },
+          updatedAt: new Date().toISOString(),
+        };
+        for (const group of groups) next.groups[group] = stamp;
+        const result = await this.content.put(VERSION_KEY, encoder.encode(JSON.stringify(next)), {
+          // Unconditional put let a later isolate replace the whole document
+          // and drop the other isolate's group stamp, so that group stayed
+          // stale everywhere else. Match the etag we last read, or create the
+          // object only when it is still absent.
+          onlyIf: this.versionEtag ? { etagMatches: this.versionEtag } : { etagDoesNotExist: true },
+          httpMetadata: { contentType: contentTypeFor(VERSION_KEY) },
+        });
+        if (result === null) {
+          await this.reloadVersionForMerge();
+          continue;
+        }
+        this.versionDocument = next;
+        this.versionEtag = result.etag;
+        return;
+      }
+      throw new Error("version document changed repeatedly");
     } catch (error) {
       // The content write itself succeeded and was acknowledged; only the
       // staleness broadcast failed. Keep the groups dirty so the next flush retries.
       for (const group of groups) this.dirtyGroups.add(group);
       this.log(`could not publish ${VERSION_KEY}: ${error instanceof Error ? error.message : String(error)}`);
     }
+  }
+
+  /** Pick up a version document another isolate wrote, so our stamp merges onto it. */
+  private async reloadVersionForMerge() {
+    const object = await this.content.get(VERSION_KEY);
+    if (!hasBody(object)) {
+      this.versionEtag = null;
+      return;
+    }
+    this.versionDocument = JSON.parse(decoder.decode(new Uint8Array(await object.arrayBuffer()))) as VersionDocument;
+    this.versionEtag = object.etag;
   }
 
   private async checkVersion() {

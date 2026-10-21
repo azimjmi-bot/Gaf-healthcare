@@ -309,6 +309,47 @@ test("another isolate's flush is picked up by refreshIfStale, re-parsed once, an
   }
 });
 
+test("concurrent version stamps merge so neither isolate's group is dropped", async () => {
+  const bucket = seededBucket();
+  const writerEn = isolate(bucket);
+  const writerAr = isolate(bucket);
+  const watcher = isolate(bucket);
+  await writerEn.ensureHydrated("en");
+  await writerAr.ensureHydrated("ar");
+  await watcher.ensureHydrated("en");
+  await watcher.ensureHydrated("ar");
+
+  // Hold the version puts until both isolates have issued one, then let the
+  // compare-and-swap resolve. The loser reloads and merges its group.
+  let release!: () => void;
+  const gate = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  let versionPuts = 0;
+  bucket.beforePut = async (key) => {
+    if (key !== VERSION_KEY) return;
+    versionPuts += 1;
+    if (versionPuts === 2) {
+      bucket.beforePut = null;
+      release();
+    }
+    await gate;
+  };
+
+  const enBody = '{"articles":[{"slug":"from-en"}]}';
+  const arBody = '{"articles":[{"slug":"from-ar"}]}';
+  writerEn.write("content/cms.json", enBody);
+  writerAr.write("content/ar/cms.json", arBody);
+  await Promise.all([writerEn.flush(), writerAr.flush()]);
+
+  const published = JSON.parse(bucket.text(VERSION_KEY)!) as { groups: Record<string, string> };
+  assert.ok(published.groups.en, "the English group stamp is in the version document");
+  assert.ok(published.groups.ar, "the Arabic group stamp is in the version document");
+  await watcher.refreshIfStale();
+  assert.equal(watcher.read("content/cms.json"), enBody);
+  assert.equal(watcher.read("content/ar/cms.json"), arBody);
+});
+
 test("a failed version broadcast does not fail the save and is retried on the next flush", async () => {
   const bucket = seededBucket();
   const storage = isolate(bucket);

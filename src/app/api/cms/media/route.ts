@@ -3,6 +3,7 @@ import { requireCmsSession } from "@/lib/cms/auth";
 import { editionFromRequest } from "@/lib/cms/edition";
 import { loadCms, saveCms } from "@/lib/cms/store";
 import { newId } from "@/lib/cms/types";
+import { deleteCmsMediaRecord } from "@/lib/cms/media-removal";
 import { contentStorage, flushContentWrites, storageErrorStatus } from "@/lib/storage";
 
 /** Public URL prefix of uploads; the storage key is `public` + this prefix + file. */
@@ -74,18 +75,8 @@ export async function DELETE(request: Request) {
   const { id } = (await request.json().catch(() => ({}))) as { id?: string };
   try {
     const edition = editionFromRequest(request);
-    const store = loadCms(edition);
-    const item = store.media.find((m) => m.id === id);
-    if (!item) return NextResponse.json({ error: "Not found" }, { status: 404 });
-    store.media = store.media.filter((m) => m.id !== id);
-    saveCms(store, edition);
-    if (item.url.startsWith(UPLOADS_URL_PREFIX)) {
-      try {
-        contentStorage().remove(`public${item.url}`);
-      } catch {
-        /* already gone, or a URL that is not a storage key */
-      }
-    }
+    const removed = await deleteCmsMediaRecord(edition, id);
+    if (!removed.ok) return NextResponse.json({ error: "Not found" }, { status: 404 });
     await flushContentWrites();
     return NextResponse.json({ ok: true });
   } catch (err) {
