@@ -26,6 +26,7 @@ export default function CmsRadiationProceduresPage() {
               <th>Procedure</th>
               <th>Kind</th>
               <th>FAQs</th>
+              <th>Linked doctors</th>
               <th>Overlay</th>
               <th>Public long form</th>
               <th />
@@ -40,6 +41,7 @@ export default function CmsRadiationProceduresPage() {
                 </td>
                 <td>{row.kind}</td>
                 <td>{row.faqCount}</td>
+                <td>{row.doctorCount}</td>
                 <td>{row.overlayStatus}</td>
                 <td>{row.live ? "Showing" : "Withheld"}</td>
                 <td>

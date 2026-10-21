@@ -1,5 +1,19 @@
+import { execSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
 import { legacyRedirects } from "./legacy-redirects.mjs";
+
+const externalCostRegistry = fileURLToPath(
+  new URL("./src/data/cost-articles/external-registry.ts", import.meta.url),
+);
+
+/** The commit being built, so `.next/BUILD_ID` (and `x-gaf-build`) name a deploy. */
+function commitBuildId() {
+  try {
+    return execSync("git rev-parse --short=12 HEAD", { stdio: ["ignore", "pipe", "ignore"] }).toString().trim() || null;
+  } catch {
+    return null;
+  }
+}
 
 const modernPolyfills = fileURLToPath(
   new URL("./src/lib/polyfills/modern-browsers.js", import.meta.url),
@@ -22,11 +36,19 @@ const sitemapHeaders = [
 ];
 
 const nextConfig = {
-  experimental: {
-    // Production-only: emit <style> instead of render-blocking <link> CSS.
-    // That removes the homepage CSS waterfall PageSpeed times at ~1.7s on 4G.
-    inlineCss: true,
+  generateBuildId: commitBuildId,
+  // Only affects the `.nft.json` trace files, which `next start` ignores. The
+  // Cloudflare build (`npm run cf:build`) re-bundles the compiled proxy from
+  // its trace, and Next traces `@opentelemetry/api` without the `build/esm`
+  // entry its package.json points at, so the bundle fails to resolve it.
+  outputFileTracingIncludes: {
+    "{middleware,proxy}": ["./node_modules/@opentelemetry/api/build/**/*"],
   },
+  // `experimental.inlineCss` is deliberately off. It saved one render-blocking
+  // request on the homepage, but Next inlines the ~100 KB stylesheet twice per
+  // document (a <style> tag plus a copy inside the RSC payload), which added
+  // ~250 KB to every one of ~12,000 crawlable pages. A <link> to the
+  // content-hashed bundle is fetched once and cached for a year instead.
   // Dev runs on Turbopack with no custom options; this key only tells Next the
   // webpack hook below is intentional.
   turbopack: {},
@@ -34,6 +56,16 @@ const nextConfig = {
   // bundles its ES2019+ polyfill module into the client entry regardless of
   // browserslist; swap it for the one shim our targets can still lack.
   webpack(config, { isServer, webpack }) {
+    // The Worker isolate cannot keep every cost-article module resident.
+    // Hostinger's `next build` does not set this, so it still bundles them.
+    if (isServer && process.env.GAF_CF_BUILD === "1") {
+      config.plugins.push(
+        new webpack.NormalModuleReplacementPlugin(
+          /(^|[/\\])static-registry(\.ts)?$/,
+          externalCostRegistry,
+        ),
+      );
+    }
     if (!isServer) {
       config.plugins.push(
         new webpack.NormalModuleReplacementPlugin(

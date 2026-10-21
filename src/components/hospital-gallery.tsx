@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { HospitalCampusVisual, campusCaption } from "@/components/hospital-campus-visual";
+import { HospitalCampusVisual, type CampusVisualHospital } from "@/components/hospital-campus-visual";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -11,25 +11,34 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-import type { Hospital } from "@/lib/hospitals";
-import { infrastructureLocalized } from "@/lib/i18n/hospital-copy";
 import type { AppLocale } from "@/lib/i18n/languages";
 import { uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 
+export type GalleryTile = { title: string; body: string };
+
+/**
+ * Client dialog. Receives only what it draws: the slim campus visual, its
+ * caption, and the already-localized infrastructure tiles. Callers compute
+ * these on the server (`campusVisualProps`, `campusCaption`,
+ * `infrastructureLocalized`) so no full `Hospital` crosses into the payload.
+ */
 export function HospitalGalleryButton({
-  hospital,
+  campus,
+  caption,
+  tiles,
   label,
   className,
   locale = "en",
 }: {
-  hospital: Hospital;
+  campus: CampusVisualHospital;
+  caption: string;
+  tiles: GalleryTile[];
   label?: string;
   className?: string;
   locale?: AppLocale;
 }) {
   const [open, setOpen] = useState(false);
   const t = uiCatalogFor(locale);
-  const tiles = infrastructureLocalized(hospital, locale);
 
   return (
     <Dialog open={open} onOpenChange={setOpen}>
@@ -40,12 +49,12 @@ export function HospitalGalleryButton({
       </DialogTrigger>
       <DialogContent className="max-h-[85vh] overflow-y-auto sm:max-w-3xl">
         <DialogHeader>
-          <DialogTitle className="font-heading text-3xl">{hospital.name}</DialogTitle>
+          <DialogTitle className="font-heading text-3xl">{campus.name}</DialogTitle>
           <DialogDescription>{t["hp.galleryDesc"]}</DialogDescription>
         </DialogHeader>
         <HospitalCampusVisual
-          hospital={hospital}
-          caption={campusCaption(hospital, locale)}
+          hospital={campus}
+          caption={caption}
           className="mt-2 h-48 overflow-hidden rounded-xl"
         />
         <ul className="mt-4 grid gap-3 sm:grid-cols-2">

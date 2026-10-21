@@ -37,7 +37,7 @@ import {
 import { AccreditationSeals } from "@/components/accreditation-seals";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
-import { HospitalCampusVisual, campusCaption } from "@/components/hospital-campus-visual";
+import { HospitalCampusVisual, campusCaption, campusVisualProps } from "@/components/hospital-campus-visual";
 import { HospitalGalleryButton } from "@/components/hospital-gallery";
 import { HospitalSectionNav } from "@/components/hospital-section-nav";
 import { MarkdownBody } from "@/components/markdown-body";
@@ -276,7 +276,13 @@ export function HospitalProfileView({
                 caption={campusCaption(hospital, locale)}
                 className="hp-hero__art"
               />
-              <HospitalGalleryButton hospital={hospital} locale={locale} label={t["hp.photos"]} />
+              <HospitalGalleryButton
+                campus={campusVisualProps(hospital)}
+                caption={campusCaption(hospital, locale)}
+                tiles={infra}
+                locale={locale}
+                label={t["hp.photos"]}
+              />
             </div>
           </div>
         </div>

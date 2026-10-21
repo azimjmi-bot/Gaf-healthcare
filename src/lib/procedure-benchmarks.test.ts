@@ -29,6 +29,18 @@ test("English EBRT facts use stored dollars and do not invent a riyal price", ()
   assert.equal(html.includes("AggregateRating"), false);
 });
 
+test("Arabic radiation stay rows use the stored catalog sentence", () => {
+  const imrt = visibleProcedureFacts("Intensity-Modulated Radiotherapy (IMRT)", "ar");
+  const gamma = visibleProcedureFacts("Gamma Knife", "ar");
+  const iort = visibleProcedureFacts("Intraoperative Radiotherapy (IORT)", "ar");
+  assert.ok(imrt && gamma && iort);
+  assert.equal(imrt.rows.find((row) => row.label === "الإقامة")?.value, "4–7 أسابيع من الجلسات");
+  assert.equal(gamma.rows.find((row) => row.label === "الإقامة")?.value, "جلسة واحدة في العادة");
+  assert.equal(iort.rows.find((row) => row.label === "الإقامة")?.value, "مرتبطة بمدة الإقامة الجراحية");
+  assert.equal(imrt.rows.some((row) => row.value.includes("10–20")), false);
+  assert.equal(imrt.rows.some((row) => /SAR\s*\d/.test(row.value)), false);
+});
+
 test("a non-radiation procedure keeps its own classification", () => {
   const facts = visibleProcedureFacts("Mastectomy", "en");
   assert.ok(facts);

@@ -40,13 +40,27 @@ npm run check:ssr                              # local dev server
 npm run check:ssr -- --base https://gaf.healthcare --json /tmp/ssr.json
 ```
 
+### Crawler HTML snapshot diff
+
+`npm run check:ssr-snapshot` records what a crawler receives for 50 public URLs (status, headers, title, canonical, hreflang, JSON-LD, H1, visible text and the normalised markup) and diffs a later capture against it. It is the gate for framework upgrades and hosting changes: the output must be identical once build ids, chunk hashes and the React flight payload are normalised. Start the server with a hostname that matches `--base` (for example `next start -H localhost`), otherwise Next treats the proxy's locale rewrite as external and `/ar` pages render in English.
+
+```bash
+npm run check:ssr-snapshot -- --base http://localhost:43129 --out /tmp/before.json
+# upgrade, rebuild, restart, then:
+npm run check:ssr-snapshot -- --base http://localhost:43129 --compare /tmp/before.json
+```
+
+Sitemaps are compared element by element rather than hashed (`scripts/check/sitemap-parity.mjs`): URL set and order, namespaces, `changefreq`, `priority` and images must match, a `<lastmod>` may not appear, disappear, become invalid or lie in the future, and a `<lastmod>` value may only move to a time inside the window between the two captures, which is what render-time timestamps do. `npm run check:sitemap-parity -- --before <file|url> --after <file|url>` runs the same comparison on two documents directly, and `src/server-tests/sitemap-parity.test.ts` applies it to two in-process builds of the English and Arabic sitemaps plus canonical-form and publication-gate checks on every listed URL.
+
+Next.js is pinned to an exact version. The floor is 16.3.8: earlier 16.2–16.3 releases carry the `next/og` advisory (CVE-2026-94545), and the Cloudflare OpenNext adapter evaluated for the hosting migration requires 16.3.8 or later.
+
 Arabic India doctor directories (`/ar/doctors/India/...`) are served as cached static HTML documents by `src/app/ar/doctors/[...segments]/route.ts`; paginated or filtered requests (`?page=`, `?hospital=`, `?experience=`) render through the App Router so the requested page is returned.
 
 ## Hostinger Node
 
 Use Node **20**. Build with `npm run build` (`next build --webpack`). Start with `npm start`. Config is `next.config.mjs` so the builder does not need SWC to load TypeScript config. If the log still shows `GLIBC_2.29 not found`, the Hostinger image cannot run this Next.js version — use Vercel instead.
 
-Two pieces of HTTP tuning live in `server-tuning.mjs` and are applied inside the serving process by `src/instrumentation.ts`, so they hold whether the host runs `npm start` (`server.mjs`, which also applies them explicitly) or plain `next start` (`npm run start:next`):
+Two pieces of HTTP tuning live in `server-tuning.mjs` and are applied inside the serving process by `src/instrumentation.ts`, so they hold whether the host runs `npm start` (`server.mjs`, which also applies them explicitly) or plain `next start` (`npm run start:next`, or a hosting preset that starts Next itself):
 
 - `Vary` is trimmed to standard values (`Accept-Encoding`). Next appends `Vary: rsc, next-router-state-tree, …` to every response and Hostinger CDN refuses to cache anything that varies on custom headers (`x-hcdn-cache-status: DYNAMIC`), so public HTML never reached the edge despite its `s-maxage`. Next keys RSC variants on the `_rsc` search param, so the trimmed header is safe.
 - `keepAliveTimeout` is 65 s (`KEEP_ALIVE_TIMEOUT_MS` to override) with `headersTimeout` just above it. Node's 5 s default is shorter than most reverse-proxy idle timeouts; the proxy reuses a connection Node has just closed, gets a reset, and Search Console records a "server connectivity" failure.
@@ -58,7 +72,31 @@ Memory: the process holds ~150 MB of live heap after a full crawl (CMS stores, c
 
 Avoid module-level `Map` caches without a size bound (`src/lib/ttl-lru.ts` exists for that).
 
-Crawl health: after a deploy, `curl -sI https://gaf.healthcare/doctors | grep -i x-hcdn-cache-status` should turn to `HIT` on the second request, and `x-hcdn-upstream-rt` on a cold page should sit well under a second. Content stores (`content/cms.json`, `content/curated-treatments.json`) are parsed once and re-read only when the file changes.
+### Origin HTML cache
+
+Every public page is rendered on demand (`force-dynamic`; the locale comes from a header the proxy sets), and Hostinger CDN still answers HTML as `DYNAMIC`, so before this layer each crawler hit was a full React render in one Node process. A treatment page is ~1 MB of HTML; a dozen parallel Googlebot fetches queued behind each other pushed time-to-first-byte past 10 s and the proxy returned 502s, which Search Console reports as "server connectivity" failures.
+
+`server-cache.mjs` sits in front of Next on both start paths: `server.mjs` (`npm start`) attaches it to the server it creates, and `src/instrumentation.ts` attaches it to the listener `next start` opened (hosting presets that run `next start` directly, such as Hostinger's Next.js preset), retrying for 15 s if the listener appears later. The boot log always says what happened: `[gaf] build <commit>` then one of `html cache on: fresh 60 min, stale 168 h, 2 concurrent renders`, `html cache off (GAF_HTML_CACHE=off)`, or `no listening http server found within 15 s` with the process's active handle types.
+
+Every response carries `x-gaf-build` (the `.next/BUILD_ID`, which `generateBuildId` in `next.config.mjs` sets to the commit hash when git is available at build time), so `curl -I` shows which deploy answered; `x-gaf-build` present without `x-gaf-cache` on a public page means that build is serving with the cache detached.
+
+- Anonymous `GET`/`HEAD` responses for public paths are cached by path + query (tracking parameters such as `utm_*`, `gclid`, `fbclid` are ignored). Entries are fresh for 1 h (`GAF_HTML_FRESH_S`), then served stale for up to 7 days (`GAF_HTML_STALE_S`) while a background render refreshes them. 404 pages are cached for 1 h (`GAF_HTML_404_FRESH_S`) because crawlers hit old URLs constantly.
+- Entries live in a 64 MB memory tier (`GAF_HTML_MEMORY_MB`) and on disk under `.next/cache/gaf-html` (768 MB cap, `GAF_HTML_DISK_MB`), so a restart or redeploy starts warm. Stored bodies are gzip; clients that do not accept gzip get them inflated.
+- A miss is rendered on the client's own request: the response Next streams out is recorded as it goes (compression and headers unchanged) and stored once it finishes, so a miss never depends on the process reaching its own port. Other clients asking for the same URL meanwhile wait for that one render. A HEAD miss is rendered as a GET internally (Node sends headers only either way), so `curl -I` and uptime monitors warm the cache too. At most 2 renders run at a time (`GAF_RENDER_CONCURRENCY`); the rest wait in order and renders whose client already disconnected are skipped.
+- Background refreshes of stale entries and boot-time warming go through a loopback request marked `x-gaf-render: 1`. At start the cache probes `127.0.0.1:PORT/robots.txt` with a 5 s budget; when the host does not allow self-connections (Hostinger's Node runtime does not) the log says `loopback ... unavailable` and stale pages are instead re-rendered on the request that finds them stale, except while the render limiter is saturated, when the stale copy is served immediately. `GAF_HTML_LOOPBACK=off` skips the probe on such hosts.
+- Every key includes the build id and a fingerprint of `content/` (checked each minute), so a deploy or a CMS edit invalidates everything at once. Requests with a `gaf_*` cookie (CMS session, preview edition), an `Authorization` header, or under `/cms`, `/api`, `/_next`, `/uploads` or any static file extension go straight to Next. Redirects, errors and anything with `Set-Cookie`, `private` or `no-store` are relayed but never stored. `GAF_HTML_CACHE=off` disables the layer.
+
+Cacheable responses carry `x-gaf-cache: HIT | STALE | MISS` and `Age`; bypassed requests (CMS, API, cookies) carry no `x-gaf-cache` header. Tests: `server-cache.test.mjs`.
+
+### Payload size
+
+Only client components (`"use client"`) serialize their props into the RSC payload, so keep full catalog records (`Doctor`, `Hospital`, `Article`) on the server side of that boundary. `DoctorCard` (server) reduces a `Doctor` to `DoctorCardData` before rendering `DoctorCardView` (client); `HospitalGalleryButton` takes `campusVisualProps(hospital)` plus pre-localized tiles instead of the hospital. Those two changes and turning off `experimental.inlineCss` (which shipped the ~100 KB stylesheet twice per document) halved treatment and directory pages: `/treatments/acl-surgery-in-india` 1.07 MB → 537 KB, `/doctors` 471 KB → 216 KB.
+
+### Static assets across deploys
+
+Cached HTML (CDN, browsers, Googlebot re-fetches) references content-hashed `/_next/static/` files from the build that produced it. `npm run build` wraps `next build` with `scripts/keep-previous-static.mjs`: it stashes the current `.next/static` under `.next/cache/previous-static/<timestamp>/` before the build and merges stashes from the last 48 h (`GAF_STATIC_RETENTION_HOURS`) back in afterwards, new files winning. Without it every deploy produced a day of chunk 404s in Crawl Stats.
+
+Crawl health: after a deploy, `curl -sI https://gaf.healthcare/doctors | grep -i 'x-gaf-cache\|x-hcdn'` should show `x-gaf-cache: HIT` on the second request with `x-hcdn-upstream-rt` in the low milliseconds; a `MISS` on a cold treatment page is the only request that should take seconds. Content stores (`content/cms.json`, `content/curated-treatments.json`) are parsed once and re-read only when the file changes.
 
 ## Stack
 
@@ -78,6 +116,8 @@ A WordPress-style desk lives at [`/cms`](http://localhost:43127/cms). Sign-in pa
 Published specialty profiles can expose data-qualified city authority pages at `/costs/{Country}/{City}/{Specialty}` without a second page system. A city page is rendered and added to the sitemap only when live relationships provide treatments, doctors and hospitals and its information-based uniqueness assessment finds enough city editorial, ecosystem, logistics, FAQ and entity-link evidence. Pricing is grouped by compatible billing basis. A city table uses a verified city range only when the underlying article stores one; otherwise it displays “Personalized estimate” and never presents the national range as a city tariff.
 
 Draft articles stay off the public `/blogs` list. On the article desk you can upload a featured image directly, drop several files in at once with **Upload images**, or use the markdown image button to insert photos at the cursor. Uploads land in `public/uploads/articles` (WebP, JPG, PNG, GIF or SVG, under 8 MB each).
+
+All of these files are read and written through `src/lib/storage` (`contentStorage()`), never through `fs` directly. The file-system backend is the default and the only one active in production; `docs/content-storage.md` has the inventory of every content touchpoint, the backend contract, and the design of the object-store backend planned for the Workers deployment.
 
 ## Languages
 

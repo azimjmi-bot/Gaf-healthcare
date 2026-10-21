@@ -8,6 +8,7 @@ import { catalogHospitals, type Hospital } from "@/lib/hospitals";
 import { catalogTreatments, type Treatment } from "@/lib/treatments";
 import { getHospital } from "@/lib/server-catalog";
 import { getCity, getCountry, getProcedure, getSpecialty, PROCEDURES } from "@/lib/taxonomy";
+import { flushContentWrites, storageErrorStatus } from "@/lib/storage";
 
 type Entity = "doctors" | "hospitals" | "treatments";
 
@@ -173,6 +174,7 @@ export async function POST(request: Request, ctx: { params: Promise<{ entity: st
       };
       cms.doctorsAdded.unshift(doctor);
       saveCatalogCms(cms, edition);
+      await flushContentWrites();
       return NextResponse.json(doctor);
     }
     if (entity === "hospitals") {
@@ -217,6 +219,7 @@ export async function POST(request: Request, ctx: { params: Promise<{ entity: st
       };
       cms.hospitalsAdded.unshift(hospital);
       saveCatalogCms(cms, edition);
+      await flushContentWrites();
       return NextResponse.json(hospital);
     }
     const procedure = getProcedure(body.procedure || body.name || "");
@@ -247,9 +250,10 @@ export async function POST(request: Request, ctx: { params: Promise<{ entity: st
     };
     cms.treatmentsAdded.unshift(treatment);
     saveCatalogCms(cms, edition);
+    await flushContentWrites();
     return NextResponse.json(treatment);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not add.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(err) });
   }
 }

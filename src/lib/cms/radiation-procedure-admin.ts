@@ -1,12 +1,16 @@
 import "server-only";
 
+import { filterDoctors } from "@/lib/catalog";
 import { doctorsPath } from "@/lib/catalog-links";
 import type { RadiationProcedurePagePatch } from "@/lib/cms/catalog-types";
+import { DOCTOR_PROCEDURE_INDEX_MIN } from "@/lib/doctor-discovery";
+import { uniqueDoctorsSorted } from "@/lib/doctors";
 import {
   RADIATION_PROCEDURE_PAGES_AR,
   radiationProcedurePatch,
 } from "@/lib/i18n/ar-radiation-procedure";
 import { applyRadiationProcedurePatch, procedureCopyIssues } from "@/lib/i18n/radiation-procedure-page";
+import { doctorsForLocale } from "@/lib/locale-catalog";
 import { getProcedure, RADIATION_PROCEDURES } from "@/lib/taxonomy";
 
 const SPECIALTY = "Radiation Oncology";
@@ -16,6 +20,7 @@ export type RadiationProcedureAdminRow = {
   procedure: string;
   kind: string;
   faqCount: number;
+  doctorCount: number;
   overlayStatus: "none" | "draft" | "published";
   live: boolean;
   issues: string[];
@@ -23,6 +28,7 @@ export type RadiationProcedureAdminRow = {
 };
 
 export function radiationProcedureAdminRows(): RadiationProcedureAdminRow[] {
+  const doctors = doctorsForLocale("ar");
   return RADIATION_PROCEDURES.map((procedure) => {
     const copy = RADIATION_PROCEDURE_PAGES_AR[procedure];
     const slug = getProcedure(procedure)?.slug ?? "";
@@ -30,11 +36,18 @@ export function radiationProcedureAdminRows(): RadiationProcedureAdminRow[] {
     const merged = copy ? applyRadiationProcedurePatch(copy, patch) : undefined;
     const issues = merged ? procedureCopyIssues(merged) : ["missing baseline"];
     const overlayStatus = patch?.status === "published" || patch?.status === "draft" ? patch.status : "none";
+    const doctorCount = uniqueDoctorsSorted(
+      filterDoctors({ destination: "India", specialty: SPECIALTY, procedure }, doctors),
+    ).length;
+    if (doctorCount < DOCTOR_PROCEDURE_INDEX_MIN) {
+      issues.push(`doctors ${doctorCount} < ${DOCTOR_PROCEDURE_INDEX_MIN}`);
+    }
     return {
       slug,
       procedure,
       kind: copy?.kind ?? "",
       faqCount: merged?.faqs.length ?? 0,
+      doctorCount,
       overlayStatus,
       live: overlayStatus !== "draft" && issues.length === 0,
       issues,

@@ -5,7 +5,6 @@ import { parentCatalogQuery } from "@/lib/catalog-options";
 import {
   doctorsForHospitalLocale,
   doctorsForLocale,
-  getDoctorForLocale,
   getHospitalForLocale,
   hospitalsForLocale,
   treatmentsForLocale,
@@ -73,7 +72,9 @@ function targetLocaleState(locale: AppLocale, segments: string[]): LocalePageSta
       const parentMatches = parent ? filterDoctors(parent, rows).length : undefined;
       return facetState(matches, facetIsPublished("doctorFacet", matches, parentMatches));
     }
-    return segments.length === 2 && getDoctorForLocale(segments[1], locale)
+    // Membership in the published index, not a full-profile load. A sitemap
+    // or hreflang check must not inflate every biography.
+    return segments.length === 2 && rows.some((doctor) => doctor.slug === segments[1])
       ? "published"
       : "missing";
   }

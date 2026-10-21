@@ -129,6 +129,22 @@ export async function proxy(request: NextRequest) {
 
   const isCms = pathname.startsWith("/cms") || pathname.startsWith("/api/cms");
   if (!isCms) {
+    // OpenNext carries a rewrite out as a second fetch into this worker. That
+    // request's URL is the unprefixed path, so a second pass would mark it
+    // English and serve that document at the Arabic URL. The first pass already
+    // stored the locale on x-gaf-locale / x-gaf-path. A browser request does
+    // not send those headers, and Hostinger runs this proxy once.
+    const rewrittenLocale = request.headers.get(LOCALE_HEADER);
+    const rewrittenPath = request.headers.get(PATH_HEADER);
+    // CF-Worker is set by Cloudflare on the rewrite's second fetch and is
+    // not a header a visitor can keep. Honouring x-gaf-locale without it
+    // would let a client render Arabic at an English URL and skip nothing
+    // the Worker gate can see. Hostinger never sends this header; it runs
+    // the proxy once.
+    const fromWorker = Boolean(request.headers.get("cf-worker")?.trim());
+    if (fromWorker && rewrittenPath && rewrittenLocale && isTargetLocale(rewrittenLocale)) {
+      return withLocale(request, rewrittenLocale);
+    }
     return withLocale(request, "en");
   }
 

@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,17 +13,21 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useT } from "@/components/locale-provider";
-import { hospitals } from "@/lib/hospitals";
-import { treatments } from "@/lib/treatments";
+import type { ConsultOption } from "@/lib/consult-options";
 import type { ConsultErrorCode } from "@/app/api/consult/route";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 export function ConsultForm({
+  treatmentOptions,
+  hospitalOptions,
   defaultTreatment,
   defaultHospital,
   defaultDoctor,
 }: {
+  /** From `consultTreatmentOptions()` / `consultHospitalOptions()` on the server. */
+  treatmentOptions: readonly ConsultOption[];
+  hospitalOptions: readonly ConsultOption[];
   defaultTreatment?: string;
   defaultHospital?: string;
   defaultDoctor?: string;
@@ -35,9 +39,6 @@ export function ConsultForm({
   const [treatment, setTreatment] = useState(defaultTreatment ?? "");
   const [hospital, setHospital] = useState(defaultHospital ?? "");
   const [timeline, setTimeline] = useState("");
-
-  const treatmentOptions = useMemo(() => treatments, []);
-  const hospitalOptions = useMemo(() => hospitals, []);
 
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
