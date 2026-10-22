@@ -40,7 +40,39 @@ export interface WorkerEnv {
   CONTENT: R2BucketLike;
   STATIC: R2BucketLike;
   ASSETS: AssetFetcherLike;
+  /**
+   * Staging Worker only. Exactly `"off"` marks every response this runtime
+   * returns with `X-Robots-Tag: noindex, nofollow`. Any other value, including
+   * unset, leaves indexing headers untouched so Hostinger and a future
+   * production Worker keep their existing behavior.
+   */
+  GAF_INDEXING?: string;
   [binding: string]: unknown;
+}
+
+/** Response header added only when `GAF_INDEXING` is exactly `"off"`. */
+export const STAGING_ROBOTS_TAG = "noindex, nofollow";
+
+/** Statuses that must not carry a body. */
+const NULL_BODY_STATUS = new Set([101, 204, 205, 304]);
+
+/**
+ * Copy the response and set the staging robots header.
+ *
+ * The copy is made at the Worker boundary, after Next and the upload cache
+ * have stored their own response. Headers are copied into a new `Headers`
+ * object so an immutable or already-cached header list is left unchanged,
+ * and the HTML or object body is not rewritten.
+ */
+export function withStagingRobots(response: Response, env: WorkerEnv): Response {
+  if (env.GAF_INDEXING !== "off") return response;
+  const headers = new Headers(response.headers);
+  headers.set("X-Robots-Tag", STAGING_ROBOTS_TAG);
+  return new Response(NULL_BODY_STATUS.has(response.status) ? null : response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
 }
 
 export type FetchHandler<Env = WorkerEnv> = (
@@ -350,9 +382,12 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       const { storage, envForNext } = install(env);
       const url = new URL(request.url);
 
-      if (isUploadPath(url.pathname)) return serveUpload(request, env, ctx, url);
+      if (isUploadPath(url.pathname)) return withStagingRobots(await serveUpload(request, env, ctx, url), env);
       if (isPrivateAssetPath(url.pathname)) {
-        return new Response("Not Found", { status: 404, headers: { "cache-control": "no-store" } });
+        return withStagingRobots(
+          new Response("Not Found", { status: 404, headers: { "cache-control": "no-store" } }),
+          env,
+        );
       }
 
       // Uploads and the private asset 404 are answered above and do not take a
@@ -364,7 +399,7 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
         request.method === "HEAD" || subrequest
           ? await renderDocument(request, storage, envForNext, ctx)
           : await withRenderSlot(() => renderDocument(request, storage, envForNext, ctx));
-      return restoreLocaleHomeCache(url.pathname, response);
+      return withStagingRobots(restoreLocaleHomeCache(url.pathname, response), env);
     },
     /** For tests and diagnostics. */
     storage: () => storage,

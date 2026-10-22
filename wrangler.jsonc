@@ -43,6 +43,10 @@
 		// Makes a content read that somehow precedes the Worker's storage install an
 		// error rather than a silent file-system fallback (src/lib/storage/index.ts).
 		"GAF_STORAGE": "r2",
-		"NEXT_INC_CACHE_R2_PREFIX": "incremental-cache"
+		"NEXT_INC_CACHE_R2_PREFIX": "incremental-cache",
+		// Staging only. The Worker adds `X-Robots-Tag: noindex, nofollow` when this
+		// is exactly "off" (src/worker/runtime.ts). Hostinger does not read this
+		// file. A production Worker must omit the variable.
+		"GAF_INDEXING": "off"
 	}
 }

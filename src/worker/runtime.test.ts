@@ -12,6 +12,7 @@ import {
   createWorker,
   groupsForRequest,
   isPrivateAssetPath,
+  STAGING_ROBOTS_TAG,
   uploadKeyFor,
   type CacheLike,
   type ExecutionContextLike,
@@ -458,4 +459,227 @@ test("a document GET waits once eight renders are in flight, and HEAD does not t
     Array.from({ length: MAX_INFLIGHT_RENDERS + 4 }, (_, index) => `body:GET:/costs/page-${index}`),
   );
   assert.equal(inflight, 0);
+});
+
+// ------------------------------------------------ staging indexing header
+
+const ROBOTS_TXT = [
+  "User-Agent: *",
+  "Allow: /",
+  "",
+  "Host: gaf.healthcare",
+  "Sitemap: https://gaf.healthcare/sitemap.xml",
+  "Sitemap: https://gaf.healthcare/sitemap-ar.xml",
+  "",
+].join("\n");
+
+const SITEMAP_XML = [
+  '<?xml version="1.0" encoding="UTF-8"?>',
+  '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+  "<url><loc>https://gaf.healthcare/costs/cabg</loc></url>",
+  "<url><loc>https://gaf.healthcare/ar/costs/cabg</loc></url>",
+  "</urlset>",
+].join("");
+
+const ENGLISH_HTML =
+  '<html><head><link rel="canonical" href="https://gaf.healthcare/costs/cabg"/></head><body>English</body></html>';
+const ARABIC_HTML =
+  '<html><head><link rel="canonical" href="https://gaf.healthcare/ar/costs/cabg"/></head><body>Arabic</body></html>';
+
+function stagingDocuments(request: Request) {
+  const path = new URL(request.url).pathname;
+  if (path === "/robots.txt") {
+    return new Response(ROBOTS_TXT, {
+      status: 200,
+      headers: { "content-type": "text/plain; charset=utf-8", "cache-control": "public, max-age=3600" },
+    });
+  }
+  if (path === "/sitemap.xml") {
+    return new Response(SITEMAP_XML, {
+      status: 200,
+      headers: { "content-type": "application/xml; charset=utf-8", "cache-control": "public, s-maxage=300" },
+    });
+  }
+  if (path === "/ar/costs/cabg") {
+    return new Response(ARABIC_HTML, {
+      status: 200,
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, s-maxage=300, stale-while-revalidate=86400",
+        "x-gaf-locale": "ar",
+      },
+    });
+  }
+  if (path === "/costs/old") {
+    return new Response(null, {
+      status: 301,
+      headers: { location: "https://gaf.healthcare/costs/cabg", "cache-control": "public, max-age=3600" },
+    });
+  }
+  return new Response(ENGLISH_HTML, {
+    status: 200,
+    headers: {
+      "content-type": "text/html; charset=utf-8",
+      "cache-control": "public, s-maxage=300, stale-while-revalidate=86400",
+      "x-gaf-locale": "en",
+    },
+  });
+}
+
+test("GAF_INDEXING=off adds noindex at the response boundary and leaves bodies, canonicals, and stored objects unchanged", async () => {
+  const env = makeEnv({ GAF_INDEXING: "off" });
+  const png = new Uint8Array([0x89, 0x50, 0x4e, 0x47]);
+  await env.STATIC.put("uploads/articles/1-cover.png", png, { httpMetadata: { contentType: "image/png" } });
+  const contentBefore = env.CONTENT.text("content/cms.json");
+  const cache = new FakeCache();
+  const held: Response[] = [];
+  const worker = createWorker(
+    async (request) => {
+      const response = stagingDocuments(request);
+      held.push(response);
+      return response;
+    },
+    { ...quiet, cache: () => cache },
+  );
+  const context = ctx();
+
+  const english = await worker.fetch(new Request("https://staging.example/costs/cabg"), env, ctx());
+  assert.equal(english.status, 200);
+  assert.equal(english.headers.get("x-robots-tag"), STAGING_ROBOTS_TAG);
+  assert.equal(english.headers.get("content-type"), "text/html; charset=utf-8");
+  assert.equal(english.headers.get("cache-control"), "public, s-maxage=300, stale-while-revalidate=86400");
+  assert.equal(english.headers.get("x-gaf-locale"), "en");
+  assert.equal(await english.text(), ENGLISH_HTML);
+  assert.equal(held[0].headers.get("x-robots-tag"), null, "the response Next cached has no staging header");
+  assert.equal(ENGLISH_HTML.includes("https://gaf.healthcare/costs/cabg"), true);
+
+  const arabic = await worker.fetch(new Request("https://staging.example/ar/costs/cabg"), env, ctx());
+  assert.equal(arabic.headers.get("x-robots-tag"), STAGING_ROBOTS_TAG);
+  assert.equal(arabic.headers.get("x-gaf-locale"), "ar");
+  const arabicBody = await arabic.text();
+  assert.equal(arabicBody, ARABIC_HTML);
+  assert.equal(arabicBody.includes("https://gaf.healthcare/ar/costs/cabg"), true);
+  assert.equal(held[1].headers.get("x-robots-tag"), null);
+
+  const robots = await worker.fetch(new Request("https://staging.example/robots.txt"), env, ctx());
+  assert.equal(robots.status, 200);
+  assert.equal(robots.headers.get("x-robots-tag"), STAGING_ROBOTS_TAG);
+  assert.equal(robots.headers.get("content-type"), "text/plain; charset=utf-8");
+  assert.equal(await robots.text(), ROBOTS_TXT);
+
+  const sitemap = await worker.fetch(new Request("https://staging.example/sitemap.xml"), env, ctx());
+  assert.equal(sitemap.status, 200);
+  assert.equal(sitemap.headers.get("x-robots-tag"), STAGING_ROBOTS_TAG);
+  assert.equal(sitemap.headers.get("content-type"), "application/xml; charset=utf-8");
+  const sitemapBody = await sitemap.text();
+  assert.equal(sitemapBody, SITEMAP_XML);
+  assert.equal(sitemapBody.includes("https://gaf.healthcare/costs/cabg"), true);
+  assert.equal(sitemapBody.includes("https://gaf.healthcare/ar/costs/cabg"), true);
+
+  const redirect = await worker.fetch(new Request("https://staging.example/costs/old"), env, ctx());
+  assert.equal(redirect.status, 301);
+  assert.equal(redirect.headers.get("location"), "https://gaf.healthcare/costs/cabg");
+  assert.equal(redirect.headers.get("cache-control"), "public, max-age=3600");
+  assert.equal(redirect.headers.get("x-robots-tag"), STAGING_ROBOTS_TAG);
+  assert.equal(await redirect.text(), "");
+
+  const unavailable = await createWorker(async () => new Response("should not run"), quiet).fetch(
+    new Request("https://staging.example/"),
+    makeEnv({ GAF_INDEXING: "off", CONTENT: new FakeR2Bucket() }),
+    ctx(),
+  );
+  assert.equal(unavailable.status, 503);
+  assert.equal(unavailable.headers.get("x-robots-tag"), STAGING_ROBOTS_TAG);
+  assert.equal(unavailable.headers.get("retry-after"), "10");
+  assert.equal(unavailable.headers.get("cache-control"), "no-store");
+  assert.equal(unavailable.headers.get("content-type"), "text/plain; charset=utf-8");
+  assert.equal(await unavailable.text(), "Content storage is unavailable. Please retry shortly.");
+
+  const hidden = await worker.fetch(new Request("https://staging.example/_gaf/secret.json"), env, ctx());
+  assert.equal(hidden.status, 404);
+  assert.equal(hidden.headers.get("x-robots-tag"), STAGING_ROBOTS_TAG);
+  assert.equal(hidden.headers.get("cache-control"), "no-store");
+  assert.equal(await hidden.text(), "Not Found");
+
+  const upload = await worker.fetch(new Request("https://staging.example/uploads/articles/1-cover.png"), env, context);
+  assert.equal(upload.status, 200);
+  assert.equal(upload.headers.get("x-robots-tag"), STAGING_ROBOTS_TAG);
+  assert.equal(upload.headers.get("content-type"), "image/png");
+  assert.equal(upload.headers.get("cache-control"), "public, max-age=31536000, immutable");
+  const etag = upload.headers.get("etag");
+  assert.ok(etag);
+  assert.deepEqual([...new Uint8Array(await upload.arrayBuffer())], [...png]);
+  const notModified = await worker.fetch(
+    new Request("https://staging.example/uploads/articles/1-cover.png", { headers: { "if-none-match": etag } }),
+    env,
+    ctx(),
+  );
+  assert.equal(notModified.status, 304);
+  assert.equal(notModified.headers.get("x-robots-tag"), STAGING_ROBOTS_TAG);
+  assert.equal(notModified.headers.get("etag"), etag);
+  assert.equal(await notModified.text(), "");
+  const rejected = await worker.fetch(
+    new Request("https://staging.example/uploads/articles/1-cover.png", { method: "POST" }),
+    env,
+    ctx(),
+  );
+  assert.equal(rejected.status, 405);
+  assert.equal(rejected.headers.get("x-robots-tag"), STAGING_ROBOTS_TAG);
+  assert.equal(rejected.headers.get("allow"), "GET, HEAD");
+  assert.equal(await rejected.text(), "Method Not Allowed");
+  await context.settle();
+  const cached = cache.store.get("https://staging.example/uploads/articles/1-cover.png");
+  assert.ok(cached);
+  assert.equal(cached.headers.get("x-robots-tag"), null, "the edge cache stores the upload without the staging header");
+  assert.equal(cached.headers.get("content-type"), "image/png");
+  assert.deepEqual([...new Uint8Array(await cached.arrayBuffer())], [...png]);
+  const stored = await env.STATIC.get("uploads/articles/1-cover.png");
+  assert.ok(stored && "arrayBuffer" in stored);
+  assert.deepEqual([...new Uint8Array(await stored.arrayBuffer())], [...png]);
+  assert.equal(env.CONTENT.text("content/cms.json"), contentBefore);
+  assert.equal(contentBefore?.includes("X-Robots-Tag"), false);
+});
+
+test("without GAF_INDEXING=off the runtime leaves indexing headers, status, and bodies as Next returned them", async () => {
+  for (const indexing of [undefined, "on"] as const) {
+    const env = makeEnv(indexing === undefined ? {} : { GAF_INDEXING: indexing });
+    const held: Response[] = [];
+    const worker = createWorker(
+      async (request) => {
+        const response = stagingDocuments(request);
+        held.push(response);
+        return response;
+      },
+      quiet,
+    );
+    const english = await worker.fetch(new Request("https://staging.example/costs/cabg"), env, ctx());
+    assert.equal(english.headers.get("x-robots-tag"), null, indexing ?? "absent");
+    assert.equal(english.status, 200);
+    assert.equal(english.headers.get("content-type"), "text/html; charset=utf-8");
+    assert.equal(english.headers.get("x-gaf-locale"), "en");
+    assert.equal(await english.text(), ENGLISH_HTML);
+    assert.equal(held[0].headers.get("x-robots-tag"), null);
+
+    const arabic = await worker.fetch(new Request("https://staging.example/ar/costs/cabg"), env, ctx());
+    assert.equal(arabic.headers.get("x-robots-tag"), null);
+    assert.equal(await arabic.text(), ARABIC_HTML);
+
+    const robots = await worker.fetch(new Request("https://staging.example/robots.txt"), env, ctx());
+    assert.equal(robots.headers.get("x-robots-tag"), null);
+    assert.equal(await robots.text(), ROBOTS_TXT);
+
+    const sitemap = await worker.fetch(new Request("https://staging.example/sitemap.xml"), env, ctx());
+    assert.equal(sitemap.headers.get("x-robots-tag"), null);
+    assert.equal(await sitemap.text(), SITEMAP_XML);
+
+    const redirect = await worker.fetch(new Request("https://staging.example/costs/old"), env, ctx());
+    assert.equal(redirect.status, 301);
+    assert.equal(redirect.headers.get("location"), "https://gaf.healthcare/costs/cabg");
+    assert.equal(redirect.headers.get("x-robots-tag"), null);
+
+    const hidden = await worker.fetch(new Request("https://staging.example/_gaf/secret.json"), env, ctx());
+    assert.equal(hidden.status, 404);
+    assert.equal(hidden.headers.get("x-robots-tag"), null);
+    assert.equal(hidden.headers.get("cache-control"), "no-store");
+  }
 });
