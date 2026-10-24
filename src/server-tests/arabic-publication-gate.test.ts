@@ -14,6 +14,7 @@ import {
   type PseoPageType,
 } from "@/lib/i18n/locale-gating";
 import { canonicalFacetPath } from "@/lib/i18n/facet-canonical";
+import { localePath } from "@/lib/i18n/path";
 import {
   localePageState,
   localePathIsPublished,
@@ -265,9 +266,9 @@ test("a missing or unreviewed status keeps a translation out of the catalog", ()
   assert.equal(translationStatus({ status: "nonsense" }), "draft");
 });
 
-test("/treatments 404s in a locale with nothing published, and stays live in English", () => {
-  assert.equal(publishedCuratedTreatments("ar").length, 0);
-  assert.equal(localePageState("ar", "/treatments"), "missing");
+test("/treatments stays live in English and publishes in Arabic once a reviewed translation exists", () => {
+  assert.ok(publishedCuratedTreatments("ar").length > 0);
+  assert.equal(localePageState("ar", "/treatments"), "published");
   assert.equal(localePageState("en", "/treatments"), "published");
 });
 
@@ -291,12 +292,16 @@ test("sitemap-ar.xml and the published Arabic set agree in both directions", () 
 
   // A published facet that names its parent as canonical is the one thing that
   // is published and still absent on purpose; everything else must be listed.
+  // Candidates are internal Title Case facet keys. The sitemap lists the
+  // public address, which lowercaseCatalogPath / localePath already emit.
+  // Comparing those two forms without localePath reported a false miss for
+  // /ar/doctors/india/radiation-oncology.
   const published = everyArabicCandidate()
     .filter(
       (path) =>
         localePathIsPublished("ar", path) && canonicalFacetPath(path, "ar") === path,
     )
-    .map((path) => (path === "/" ? "/ar" : `/ar${path}`));
+    .map((path) => localePath(path, "ar"));
 
   for (const path of published) {
     assert.ok(listed.has(path), `published but missing from sitemap-ar.xml: ${path}`);
@@ -308,9 +313,12 @@ test("sitemap-ar.xml and the published Arabic set agree in both directions", () 
       "published",
       `listed in sitemap-ar.xml but not published: ${path}`,
     );
+    // canonicalFacetPath returns the Title Case internal key. The public
+    // sitemap path is the lowercased localePath of that key, including when
+    // the listed page is self-canonical.
     assert.equal(
-      canonicalFacetPath(english, "ar"),
-      english,
+      localePath(canonicalFacetPath(english, "ar"), "ar"),
+      path,
       `listed in sitemap-ar.xml but canonicalised elsewhere: ${path}`,
     );
   }

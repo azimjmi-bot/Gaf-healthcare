@@ -1,18 +1,20 @@
 import "server-only";
 
-import { mkdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
 import { newId } from "@/lib/cms/types";
 import type { AiGenerationRecord } from "@/lib/ai/types";
+import { contentStorage } from "@/lib/storage";
 
-const FILE = join(process.cwd(), "content/ai-generations.json");
+/** Storage key of the AI generation history. */
+export const AI_GENERATIONS_KEY = "content/ai-generations.json";
 const MAX = 200;
 
 type Store = { generations: AiGenerationRecord[] };
 
 function load(): Store {
   try {
-    const parsed = JSON.parse(readFileSync(FILE, "utf8")) as Store;
+    const raw = contentStorage().read(AI_GENERATIONS_KEY);
+    if (raw === null) return { generations: [] };
+    const parsed = JSON.parse(raw) as Store;
     return { generations: Array.isArray(parsed.generations) ? parsed.generations : [] };
   } catch {
     return { generations: [] };
@@ -20,10 +22,10 @@ function load(): Store {
 }
 
 function save(store: Store) {
-  mkdirSync(dirname(FILE), { recursive: true });
-  const tmp = `${FILE}.${process.pid}.tmp`;
-  writeFileSync(tmp, `${JSON.stringify({ generations: store.generations.slice(0, MAX) }, null, 2)}\n`);
-  renameSync(tmp, FILE);
+  contentStorage().write(
+    AI_GENERATIONS_KEY,
+    `${JSON.stringify({ generations: store.generations.slice(0, MAX) }, null, 2)}\n`,
+  );
 }
 
 export function listGenerations(recordId?: string) {

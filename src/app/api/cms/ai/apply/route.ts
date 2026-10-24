@@ -4,6 +4,7 @@ import { editionFromRequest } from "@/lib/cms/edition";
 import { applyGeneration } from "@/lib/ai/apply";
 import { getGeneration, updateGeneration } from "@/lib/ai/history";
 import { emptyStudioFields, type StudioFields } from "@/lib/ai/types";
+import { flushContentWrites } from "@/lib/storage";
 
 export async function POST(request: Request) {
   try {
@@ -25,6 +26,7 @@ export async function POST(request: Request) {
   const edition = editionFromRequest(request);
   if (body.mode === "approve") {
     const next = updateGeneration(current.id, { output, status: "approved" });
+    await flushContentWrites();
     return NextResponse.json(next);
   }
   const result = applyGeneration({ ...current, output }, body.mode, edition);
@@ -35,5 +37,6 @@ export async function POST(request: Request) {
     output,
     status: body.mode === "publish" ? "published" : "saved_draft",
   });
+  await flushContentWrites();
   return NextResponse.json({ ...next, appliedUrl: result.url });
 }

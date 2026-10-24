@@ -4,7 +4,7 @@ import { tmpdir } from "os";
 import { join } from "path";
 import test from "node:test";
 import { listPublishedPosts } from "@/lib/blogs";
-import { sitemapIndexDocument } from "@/lib/i18n/blog-sitemap";
+import { blogSitemapDocument, sitemapIndexDocument } from "@/lib/i18n/blog-sitemap";
 import {
   buildBlogSitemap,
   buildLocaleSitemap,
@@ -96,7 +96,39 @@ test("the blog sitemap lists every published English article, newest first", () 
     assert.equal(row.priority, 0.7);
   }
   assert.equal(urls[1], "https://gaf.healthcare/blogs/best-hospitals-pediatric-heart-surgery-india");
-  assert.equal(buildBlogSitemap("ar").length, 0);
+});
+
+test("the Arabic blog sitemap lists the published translations and the English blogs file stays English", () => {
+  const posts = listPublishedPosts("ar").filter((post) => post.allowIndex);
+  const arabic = buildBlogSitemap("ar");
+  const urls = arabic.map((row) => row.url);
+
+  assert.equal(posts.length, 73);
+  assert.equal(arabic.length, 74);
+  assert.equal(arabic.length, posts.length + 1);
+  assert.equal(urls[0], "https://gaf.healthcare/ar/blogs");
+  for (const post of posts) {
+    assert.ok(urls.includes(`https://gaf.healthcare/ar/blogs/${post.slug}`), post.slug);
+  }
+  for (const url of urls) {
+    assert.equal(new URL(url).hostname, "gaf.healthcare", url);
+    assert.equal(url.startsWith("https://gaf.healthcare/ar/blogs"), true, url);
+  }
+
+  const localeBlogUrls = buildLocaleSitemap("ar")
+    .map((row) => row.url)
+    .filter((url) => url.includes("/blogs"))
+    .sort();
+  assert.deepEqual([...urls].sort(), localeBlogUrls);
+
+  const englishDocument = blogSitemapDocument();
+  assert.equal(englishDocument, sitemapXml(buildBlogSitemap("en")));
+  assert.equal(englishDocument.includes("gaf.healthcare/ar/blogs"), false);
+  assert.match(englishDocument, /<loc>https:\/\/gaf\.healthcare\/blogs<\/loc>/);
+
+  assert.equal(buildBlogSitemap("fr").length, 0);
+  assert.equal(buildBlogSitemap("ru").length, 0);
+  assert.equal(buildBlogSitemap("sw").length, 0);
 });
 
 test("the English language sitemap also carries the new articles", () => {

@@ -17,29 +17,31 @@ import { arabicDocumentMeta, type ArabicDocumentMeta } from "@/lib/i18n/arabic-d
 import { countedNoun } from "@/lib/i18n/arabic-grammar";
 import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
-import { doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
-import { loadCatalogCms } from "@/lib/cms/catalog-store";
+import { arabicRadiationProcedureOverride, doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
 import type { RadiationProcedurePagePatch } from "@/lib/cms/catalog-types";
 import { getProcedure } from "@/lib/taxonomy";
 import { consultToWhatsappHref } from "@/lib/site";
 import { treatments } from "@/lib/data";
+import { arabicStoredStayParts } from "@/lib/i18n/radiation-glance";
 
 const EBRT = "External Beam Radiotherapy (EBRT)";
 
 function procedureBenchmarks(procedure: string): ArabicRadiationProcedureData["benchmarks"] {
   const treatment = treatments.find((row) => row.name === procedure);
   if (!treatment?.partnerRange || !treatment.usRange) return undefined;
-  return {
-    indiaUsd: treatment.partnerRange,
-    usUsd: treatment.usRange,
-    uaeLevel: "2.2–3.6×",
-    ...(procedure === EBRT
+  const schedule =
+    procedure === EBRT
       ? {
           session: "غالبًا 10–20 دقيقة على طاولة الجهاز",
           fractions: "غالبًا 15–35 جلسة في أيام العمل",
           course: "4–7 أسابيع من الجلسات في السجل، والحضور في أيام العمل. معظم الخطط خارجية بلا عدد ليالٍ ثابت.",
         }
-      : {}),
+      : arabicStoredStayParts(treatment.stay);
+  return {
+    indiaUsd: treatment.partnerRange,
+    usUsd: treatment.usRange,
+    uaeLevel: "2.2–3.6×",
+    ...schedule,
   };
 }
 
@@ -98,7 +100,7 @@ export function listRadiationProcedureNames() {
 export function radiationProcedurePatch(procedureName: string): RadiationProcedurePagePatch | undefined {
   const slug = getProcedure(procedureName)?.slug;
   if (!slug) return undefined;
-  return loadCatalogCms("ar").radiationProcedurePageOverrides?.[slug];
+  return arabicRadiationProcedureOverride(slug);
 }
 
 /**

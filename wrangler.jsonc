@@ -1,0 +1,53 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	// Staging only. There is deliberately no `routes`, `custom_domain` or
+	// production environment in this file: attaching the Worker to
+	// gaf.healthcare is a separate, approved step (docs/cloudflare-stage-3.md §0).
+	"name": "gaf-healthcare-staging",
+	"main": "src/worker.ts",
+	"compatibility_date": "2026-10-01",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	// Not published on the shared workers.dev host. Version Preview URLs are
+	// on for staging checks; they are not a route on gaf.healthcare.
+	"workers_dev": false,
+	"preview_urls": true,
+	"observability": { "enabled": true },
+	// V8 keeps the whole script source in the isolate heap; minifying the
+	// ~31 MB bundle roughly halves that fixed cost (docs/cloudflare-stage-3.md §4).
+	// wrangler keeps function names (`keep_names` defaults to true).
+	"minify": true,
+	// The generated OpenNext worker, imported by src/worker.ts under a name the
+	// type checker does not try to resolve (see src/worker/open-next.d.ts).
+	"alias": { "gaf-open-next-worker": "./.open-next/worker.js" },
+	"assets": {
+		// Next's static output plus public/ minus uploads/ (scripts/cloudflare/post-build.mjs);
+		// media is served from the STATIC bucket so uploads and deletions need no deploy.
+		"directory": ".open-next/assets",
+		"binding": "ASSETS",
+		// `/_gaf/**` holds files the Worker reads through the binding (the static
+		// doctor/hospital catalog, copied there by post-build.mjs) and must not
+		// serve: those requests reach the Worker, which answers 404.
+		"run_worker_first": ["/_gaf/*"]
+	},
+	"services": [
+		// Self-reference used by the ISR memory queue; the service name must equal `name`.
+		{ "binding": "WORKER_SELF_REFERENCE", "service": "gaf-healthcare-staging" }
+	],
+	"r2_buckets": [
+		// content/** (CMS stores, Arabic per-slug files, .manifest.json, .version.json)
+		{ "binding": "CONTENT", "bucket_name": "gaf-content-staging" },
+		// uploads/** (CMS media) and incremental-cache/** (Next ISR entries)
+		{ "binding": "STATIC", "bucket_name": "gaf-static-staging" },
+		{ "binding": "NEXT_INC_CACHE_R2_BUCKET", "bucket_name": "gaf-static-staging" }
+	],
+	"vars": {
+		// Makes a content read that somehow precedes the Worker's storage install an
+		// error rather than a silent file-system fallback (src/lib/storage/index.ts).
+		"GAF_STORAGE": "r2",
+		"NEXT_INC_CACHE_R2_PREFIX": "incremental-cache",
+		// Staging only. The Worker adds `X-Robots-Tag: noindex, nofollow` when this
+		// is exactly "off" (src/worker/runtime.ts). Hostinger does not read this
+		// file. A production Worker must omit the variable.
+		"GAF_INDEXING": "off"
+	}
+}

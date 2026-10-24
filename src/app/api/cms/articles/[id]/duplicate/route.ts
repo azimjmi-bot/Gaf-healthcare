@@ -3,6 +3,7 @@ import { requireCmsSession } from "@/lib/cms/auth";
 import { editionFromRequest } from "@/lib/cms/edition";
 import { loadCms, saveCms, uniqueSlug } from "@/lib/cms/store";
 import { newId } from "@/lib/cms/types";
+import { flushContentWrites, storageErrorStatus } from "@/lib/storage";
 
 export async function POST(request: Request, ctx: { params: Promise<{ id: string }> }) {
   try {
@@ -27,9 +28,10 @@ export async function POST(request: Request, ctx: { params: Promise<{ id: string
     };
     store.articles.unshift(copy);
     saveCms(store, edition);
+    await flushContentWrites();
     return NextResponse.json(copy);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not duplicate.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(err) });
   }
 }

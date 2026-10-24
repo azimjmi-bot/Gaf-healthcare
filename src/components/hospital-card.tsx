@@ -3,12 +3,13 @@ import { LocaleLink as Link } from "@/components/locale-link";
 import { BedDouble, CalendarDays, MapPin, Stethoscope } from "lucide-react";
 import { AccreditationSeals } from "@/components/accreditation-seals";
 import { WhatsAppIcon } from "@/components/whatsapp-icon";
-import { HospitalCampusVisual, campusCaption } from "@/components/hospital-campus-visual";
+import { HospitalCampusVisual, campusCaption, campusVisualProps } from "@/components/hospital-campus-visual";
 import { HospitalGalleryButton } from "@/components/hospital-gallery";
 import type { Hospital } from "@/lib/hospitals";
 import { displayBio, isEyeCampus } from "@/lib/hospital-profile";
 import { whatsappHref } from "@/lib/site";
 import { hospitalsPath } from "@/lib/catalog-links";
+import { infrastructureLocalized } from "@/lib/i18n/hospital-copy";
 import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { interpolate } from "@/lib/i18n/messages";
@@ -43,17 +44,16 @@ export async function HospitalCard({ hospital }: { hospital: Hospital }) {
   const blurb = displayBio(hospital.bio);
   const cityLabel = taxonomyLabel(hospital.city, locale);
   const countryLabel = taxonomyLabel(hospital.country, locale);
+  const caption = campusCaption(hospital, locale);
 
   return (
     <article className="hcard">
       <div className="hcard__visual">
-        <HospitalCampusVisual
-          hospital={hospital}
-          caption={campusCaption(hospital, locale)}
-          className="hcard__art"
-        />
+        <HospitalCampusVisual hospital={hospital} caption={caption} className="hcard__art" />
         <HospitalGalleryButton
-          hospital={hospital}
+          campus={campusVisualProps(hospital)}
+          caption={caption}
+          tiles={infrastructureLocalized(hospital, locale)}
           locale={locale}
           label={t["hp.photos"]}
           className="hcard__photos"

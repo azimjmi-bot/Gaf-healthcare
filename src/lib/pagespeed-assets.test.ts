@@ -37,9 +37,9 @@ test("deferred gtag queues an Arguments object, which is the only shape gtag.js 
   assert.equal((dataLayer[0] as { 0: string })[0], "config");
 });
 
-test("production config inlines CSS so the homepage has no blocking stylesheet request", () => {
+test("production config links the stylesheet instead of inlining it twice per document", () => {
   const config = readFileSync(join(process.cwd(), "next.config.mjs"), "utf8");
-  assert.match(config, /inlineCss:\s*true/);
+  assert.doesNotMatch(config, /inlineCss:\s*true/);
 });
 
 test("English root layout does not construct unused Noto families", () => {
@@ -105,7 +105,7 @@ test("route-only stylesheets are no longer part of the global CSS", () => {
   expectImport("src/components/accreditation-seals.tsx", "hospital-profile");
   expectImport("src/components/cost-page/cost-hero.tsx", "cost-page");
   expectImport("src/app/costs/[...segments]/page.tsx", "cost-page");
-  expectImport("src/components/doctor-card.tsx", "directory-cards");
+  expectImport("src/components/doctor-card-view.tsx", "directory-cards");
   expectImport("src/components/hospital-card.tsx", "directory-cards");
   expectImport("src/components/doctor-profile-hero.tsx", "directory-cards");
   expectImport("src/components/markdown-body.tsx", "article");

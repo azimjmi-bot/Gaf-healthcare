@@ -3,6 +3,7 @@ import { requireCmsSession } from "@/lib/cms/auth";
 import { editionFromRequest } from "@/lib/cms/edition";
 import { loadCms, saveCms, uniqueSlug } from "@/lib/cms/store";
 import type { Article } from "@/lib/cms/types";
+import { flushContentWrites, storageErrorStatus } from "@/lib/storage";
 
 type Ctx = { params: Promise<{ id: string }> };
 
@@ -51,10 +52,11 @@ export async function PUT(request: Request, ctx: Ctx) {
       if (tag && !store.tags.includes(tag)) store.tags.push(tag);
     }
     saveCms(store, edition);
+    await flushContentWrites();
     return NextResponse.json(next);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not save.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(err) });
   }
 }
 
@@ -77,9 +79,10 @@ export async function DELETE(request: Request, ctx: Ctx) {
       article.updatedAt = new Date().toISOString();
     }
     saveCms(store, edition);
+    await flushContentWrites();
     return NextResponse.json({ ok: true });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not delete.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(err) });
   }
 }

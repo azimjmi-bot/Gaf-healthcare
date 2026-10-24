@@ -1,4 +1,5 @@
-import catalog from "@/data/ginger-catalog.json";
+import { lazyArray } from "@/lib/array-view";
+import { withCatalogSeed, type CatalogSeed, type HospitalSeed } from "@/lib/catalog-seed";
 import { mapCatalogProcedures } from "@/lib/procedure-map";
 import {
   ATHENAA_SURGICAL_PROCEDURES,
@@ -135,7 +136,8 @@ function isEyeCampus(slug: string) {
   return slug === "dr-agarwals-eye-hospital" || slug === "the-sight-avenue-eye-hospital";
 }
 
-export const catalogHospitals: Hospital[] = catalog.hospitals.map((seed) => {
+// Arrow functions, not declarations, so the specialty guard above narrows inside them.
+const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
   const cityName = seed.city || "Delhi NCR";
   const city = getCity(cityName);
   const country = getCountry("India");
@@ -268,7 +270,17 @@ export const catalogHospitals: Hospital[] = catalog.hospitals.map((seed) => {
     image: "",
     imageAlt: "",
   };
-});
+};
+
+const buildHospitals = (catalog: CatalogSeed): Hospital[] =>
+  catalog.hospitals.map((seed: HospitalSeed) => buildHospital(seed, catalog));
+
+/**
+ * Built from the catalog seed on first access (see `catalog-seed.ts`); the
+ * seed itself is not retained afterwards. Throws `CatalogUnavailableError`
+ * through the first access when the seed cannot be read.
+ */
+export const catalogHospitals: Hospital[] = lazyArray(() => withCatalogSeed(buildHospitals));
 
 export const hospitals: Hospital[] = catalogHospitals;
 
