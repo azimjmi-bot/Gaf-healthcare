@@ -255,7 +255,7 @@ test("/_gaf/* (the Worker's own deploy-time files) is 404 from the web without t
   assert.ok(isPrivateAssetPath("/_gaf/x") && !isPrivateAssetPath("/_gafx") && !isPrivateAssetPath("/doctors"));
 });
 
-test("/uploads/* is served from the static bucket with immutable caching, ETag, HEAD and 304", async () => {
+test("/uploads/* is served from the static bucket with a 60 second cache, ETag, HEAD and 304", async () => {
   const env = makeEnv();
   const png = new Uint8Array([0x89, 0x50, 0x4e, 0x47]);
   await env.STATIC.put("uploads/articles/1-cover.png", png, { httpMetadata: { contentType: "image/png" } });
@@ -267,7 +267,8 @@ test("/uploads/* is served from the static bucket with immutable caching, ETag, 
   const response = await worker.fetch(new Request("https://staging.example/uploads/articles/1-cover.png"), env, context);
   assert.equal(response.status, 200);
   assert.equal(response.headers.get("content-type"), "image/png");
-  assert.equal(response.headers.get("cache-control"), "public, max-age=31536000, immutable");
+  assert.equal(response.headers.get("cache-control"), "public, max-age=60");
+  assert.equal(response.headers.get("cache-control")?.includes("immutable"), false);
   assert.equal(response.headers.get("content-length"), "4");
   const etag = response.headers.get("etag");
   assert.ok(etag && etag.startsWith('"') && etag.endsWith('"'));
@@ -296,6 +297,41 @@ test("/uploads/* is served from the static bucket with immutable caching, ETag, 
 
   const post = await worker.fetch(new Request("https://staging.example/uploads/articles/1-cover.png", { method: "POST" }), env, ctx());
   assert.equal(post.status, 405);
+});
+
+test("a successful upload is stored for 60 seconds, and a miss or rejected key is not stored", async () => {
+  const env = makeEnv({ GAF_INDEXING: "off" });
+  const png = new Uint8Array([0x89, 0x50, 0x4e, 0x47]);
+  await env.STATIC.put("uploads/articles/1-cover.png", png, { httpMetadata: { contentType: "image/png" } });
+  const cache = new FakeCache();
+  const worker = createWorker(nextStub().handler, { ...quiet, cache: () => cache });
+  const context = ctx();
+
+  const response = await worker.fetch(new Request("https://staging.example/uploads/articles/1-cover.png"), env, context);
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("content-type"), "image/png");
+  assert.equal(response.headers.get("x-robots-tag"), STAGING_ROBOTS_TAG);
+  assert.equal(response.headers.get("cache-control"), "public, max-age=60");
+  assert.equal(response.headers.get("cache-control")?.includes("immutable"), false);
+  assert.deepEqual([...new Uint8Array(await response.arrayBuffer())], [...png]);
+  await context.settle();
+  const stored = cache.store.get("https://staging.example/uploads/articles/1-cover.png");
+  assert.ok(stored);
+  assert.equal(stored.headers.get("cache-control"), "public, max-age=60");
+  assert.equal(stored.headers.get("cache-control")?.includes("immutable"), false);
+
+  const missing = await worker.fetch(new Request("https://staging.example/uploads/articles/missing.png"), env, ctx());
+  assert.equal(missing.status, 404);
+  assert.equal(missing.headers.get("cache-control"), "no-store");
+  assert.equal(missing.headers.get("x-robots-tag"), STAGING_ROBOTS_TAG);
+
+  for (const path of ["/uploads/%zz", "/uploads/articles//x.webp"]) {
+    const rejected = await worker.fetch(new Request(`https://staging.example${path}`), env, ctx());
+    assert.equal(rejected.status, 404, path);
+    assert.equal(rejected.headers.get("cache-control"), "no-store", path);
+    assert.equal(rejected.headers.get("x-robots-tag"), STAGING_ROBOTS_TAG, path);
+  }
+  assert.equal(cache.store.size, 1);
 });
 
 test("an upload written through storage is served on the next request, and a deletion purges the cache", async () => {
@@ -605,7 +641,8 @@ test("GAF_INDEXING=off adds noindex at the response boundary and leaves bodies, 
   assert.equal(upload.status, 200);
   assert.equal(upload.headers.get("x-robots-tag"), STAGING_ROBOTS_TAG);
   assert.equal(upload.headers.get("content-type"), "image/png");
-  assert.equal(upload.headers.get("cache-control"), "public, max-age=31536000, immutable");
+  assert.equal(upload.headers.get("cache-control"), "public, max-age=60");
+  assert.equal(upload.headers.get("cache-control")?.includes("immutable"), false);
   const etag = upload.headers.get("etag");
   assert.ok(etag);
   assert.deepEqual([...new Uint8Array(await upload.arrayBuffer())], [...png]);

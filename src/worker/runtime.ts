@@ -103,7 +103,7 @@ export const ASSET_KEYS: Record<string, string> = {
 const PRIVATE_ASSETS_PATH = "/_gaf/";
 
 const UPLOADS_PATH = "/uploads/";
-const UPLOAD_CACHE_CONTROL = "public, max-age=31536000, immutable";
+const UPLOAD_CACHE_CONTROL = "public, max-age=60";
 
 /**
  * How many document renders one isolate may run at once.

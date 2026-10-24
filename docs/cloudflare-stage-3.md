@@ -1189,13 +1189,29 @@ a staging deploy is explicitly approved.
   through storage; on Workers that key lands in `gaf-static-staging` as
   `uploads/articles/<file>`. The write is awaited by `flushContentWrites()`
   before the 200, so the object exists when the editor gets the URL.
-* Serving: the Worker entry handles `/uploads/*` itself: `env.ASSETS.fetch`
-  first (files that shipped in `public/` at build time), then `STATIC.get`;
-  streams the body with `Content-Type` from the object's `httpMetadata`,
-  `Cache-Control: public, max-age=31536000, immutable` (file names are
-  timestamped), and `ETag`. Nothing depends on Next's startup enumeration of
-  `public/`, so a file uploaded a second ago is served on the next request.
-* `DELETE` removes the R2 object and calls `caches.default.delete(url)`.
+* Serving: `createWorker()` answers `/uploads/*` before Next.js.
+  `serveUpload()` reads `env.STATIC` through `uploadResponse()`. The key is
+  the decoded path without the leading slash. A successful response uses the
+  object's content type and ETag, and
+  `Cache-Control: public, max-age=60`. That response is stored in
+  `caches.default`. A missing object or a rejected key is HTTP 404 with
+  `Cache-Control: no-store` and is not stored. Shipped files under
+  `/brand/`, `/images/`, and `/_next/static/` keep their own cache headers.
+* Deleting the R2 object does not by itself expire a cached response.
+  `DELETE /api/cms/media` removes the CMS row and the R2 object. The same
+  isolate may then call `caches.default.delete` for an origin it has already
+  served, without `waitUntil`. That call does not clear other data centers.
+  A cached 200 stays fresh until its own lifetime ends. Responses stored
+  after this change stay fresh for 60 seconds. This lifetime does not make
+  deletion immediate and does not invalidate every Cloudflare cache.
+  Responses stored under the previous
+  `public, max-age=31536000, immutable` policy, including the Batch 1 and
+  Batch 3 staging probes, were not purged by this change. They can remain
+  available until that original lifetime ends, or until a separately verified
+  invalidation removes them.
+* Staging has to show that an image uploaded after this change stops being
+  served from its original URL once the 60-second lifetime has passed,
+  before any production migration.
 * `readBytes()` for an uploads key is a direct `get` (never hydrated).
 * Hostinger keeps writing to `public/uploads/articles` on disk, unchanged.
   The pre-existing Node behaviour (a new file is 404 from `next start` until
