@@ -199,7 +199,7 @@ export function ArabicRadiationProcedureSsrDocument({ data }: { data: ArabicRadi
         <HubHeading
           eyebrow="لمحة"
           title="نظرة عامة"
-          intro="الجدول يعرض ما يستطيع الدليل إثباته. مدة الإقامة وعدد الجلسات يكتبهما الفريق بعد التخطيط، ولا يُحوَّل نطاق التكلفة إلى الريال هنا."
+          intro="الجدول يعرض ما يستطيع الدليل إثباته. مدة الدورة ترجمة لنص الإقامة المخزّن في دليل التكلفة عندما يوجد. الخطة الفردية تُكتب بعد التخطيط، ولا يُحوَّل نطاق التكلفة إلى الريال هنا."
         />
         <div className="compare-wrap mt-6 max-w-4xl overflow-x-auto">
           <table className="compare-table glance-table w-full border-collapse text-sm">
@@ -281,7 +281,12 @@ export function ArabicRadiationProcedureSsrDocument({ data }: { data: ArabicRadi
               </tr>
               <tr>
                 <th scope="row">مدة الدورة والإقامة</th>
-                <td>{data.benchmarks?.course ?? "تُحدد بعد المحاكاة. هذه الصفحة لا تنشر عدد ليالٍ ثابتًا."}</td>
+                <td>
+                  {data.benchmarks?.course ??
+                    (data.benchmarks?.fractions
+                      ? "عدد الليالي غير مخزّن لهذا الإجراء. عدد الجلسات في الصف السابق مأخوذ من دليل التكلفة."
+                      : "تُحدد بعد المحاكاة. هذه الصفحة لا تنشر عدد ليالٍ ثابتًا.")}
+                </td>
               </tr>
               <tr>
                 <th scope="row">موضع العلاج</th>

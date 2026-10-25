@@ -1,5 +1,6 @@
 import { ConsultForm } from "@/components/consult-form";
 import { PageIntro } from "@/components/page-shell";
+import { consultHospitalOptions, consultTreatmentOptions } from "@/lib/consult-options";
 import { localizeMessages } from "@/lib/i18n/localize";
 import { LOCALES } from "@/lib/i18n/languages";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
@@ -33,6 +34,8 @@ export default async function ConsultPage({
       <section className="mx-auto grid max-w-7xl gap-8 px-4 py-8 sm:px-5 md:grid-cols-12 md:gap-12 md:px-8 md:py-16">
         <div className="md:col-span-7">
           <ConsultForm
+            treatmentOptions={consultTreatmentOptions()}
+            hospitalOptions={consultHospitalOptions()}
             defaultTreatment={q.treatment}
             defaultHospital={q.hospital}
             defaultDoctor={q.doctor}

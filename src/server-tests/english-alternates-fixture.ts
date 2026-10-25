@@ -19,7 +19,7 @@ import type { AppLocale } from "@/lib/i18n/languages";
  * Before that, the Arabic publication gate removed:
  *   - `ar` from all 13 facet rows, since no pSEO template was approved
  *   - `ru`, `fr`, `sw` everywhere, since those locales are not live
- *   - `ar` from /treatments, since no curated treatment is published
+ *   - `ar` returns on /treatments once a reviewed Arabic treatment is published
  *   - `ar` returns on /blogs once an Arabic article file is published
  */
 /**
@@ -233,7 +233,7 @@ export const ENGLISH_ALTERNATES_BASELINE: AlternatesBaseline[] = [
     published: ["en"],
   },
 
-  { label: "treatments index", path: "/treatments", published: ["en"] },
+  { label: "treatments index", path: "/treatments", published: ["en", "ar"] },
   {
     label: "curated treatment with no published record",
     path: "/treatments/does-not-exist",

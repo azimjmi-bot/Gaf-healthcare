@@ -42,6 +42,28 @@ const STAY_AR: Record<string, string> = {
   "By transplant protocol": "حسب بروتوكول الزراعة",
 };
 
+/**
+ * Split a stored stay string into the Arabic sentences a procedure page can show.
+ * Session counts go on the fractions row. Weeks, nights and protocol notes go on
+ * the course row. An unmapped stay is omitted rather than paraphrased.
+ */
+export function arabicStoredStayParts(stay: string | undefined): { fractions?: string; course?: string } {
+  if (!stay) return {};
+  const translated = STAY_AR[stay];
+  if (!translated) return {};
+  if (/\bsessions?\b/i.test(stay)) {
+    const [fractions, course] = translated.split(" · ");
+    return { fractions, ...(course ? { course } : {}) };
+  }
+  return { course: translated };
+}
+
+/** The full stored stay in Arabic, when the catalog string has a translation. */
+export function arabicStoredStayLabel(stay: string | undefined) {
+  if (!stay) return undefined;
+  return STAY_AR[stay];
+}
+
 export function radiationPlanningGlance(
   procedures: { sourceName: string; href: string }[],
 ): RadiationGlanceRow[] {

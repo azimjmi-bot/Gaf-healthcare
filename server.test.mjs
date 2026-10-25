@@ -3,6 +3,7 @@ import { createServer, request as httpRequest, ServerResponse } from "node:http"
 import { test } from "node:test";
 import { publicVary as publicVaryFromEntry } from "./server.mjs";
 import {
+  buildLabel,
   DEFAULT_HEAP_SOFT_LIMIT_MB,
   DEFAULT_KEEP_ALIVE_TIMEOUT_MS,
   exposeGc,
@@ -81,7 +82,10 @@ test("response hooks sanitize Vary and tune the live server, installed once", as
         .end();
     });
   try {
-    assert.equal((await fetchHeaders("/implicit")).vary, "Accept-Encoding");
+    const implicit = await fetchHeaders("/implicit");
+    assert.equal(implicit.vary, "Accept-Encoding");
+    assert.equal(implicit["x-gaf-build"], buildLabel());
+    assert.ok(buildLabel().length > 0);
     assert.equal((await fetchHeaders("/explicit")).vary, undefined);
     assert.equal(server.keepAliveTimeout, keepAliveTimeoutMs());
     assert.equal(server.headersTimeout, keepAliveTimeoutMs() + 1_000);

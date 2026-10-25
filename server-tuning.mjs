@@ -23,7 +23,9 @@
 //    which Googlebot sees as a dead origin. The guard forces a collection
 //    when live heap passes a soft limit. `npm start` passes the flag itself,
 //    in which case V8 already collects early and the guard stays off.
+import { readFileSync } from "node:fs";
 import { Server, ServerResponse } from "node:http";
+import path from "node:path";
 import v8 from "node:v8";
 import vm from "node:vm";
 
@@ -103,11 +105,33 @@ export function tuneHttpServer(server, keepAliveMs = keepAliveTimeoutMs()) {
 }
 
 const HOOKED = Symbol.for("gaf.server-tuning.hooked");
+const BUILD_HEADER = "x-gaf-build";
+let cachedBuildLabel;
+
+/**
+ * Identifies the running build from outside: `GAF_BUILD_LABEL`, else
+ * `.next/BUILD_ID` (the commit hash, see `generateBuildId` in next.config).
+ * Lets `curl -I` confirm which deploy answered a request.
+ */
+export function buildLabel(env = process.env, root = process.cwd()) {
+  if (cachedBuildLabel !== undefined) return cachedBuildLabel;
+  let label = env.GAF_BUILD_LABEL || "";
+  if (!label) {
+    try {
+      label = readFileSync(path.join(root, ".next", "BUILD_ID"), "utf8").trim();
+    } catch {
+      label = "unknown";
+    }
+  }
+  cachedBuildLabel = label;
+  return label;
+}
 
 /**
  * Patch `writeHead` on a ServerResponse prototype so every response, however
- * the server was created, gets the public Vary header and tunes its server on
- * first use. Idempotent; returns true the first time it installs.
+ * the server was created, gets the public Vary header, the build label, and
+ * tunes its server on first use. Idempotent; returns true the first time it
+ * installs.
  */
 export function installResponseHooks(proto = ServerResponse.prototype) {
   if (proto[HOOKED]) return false;
@@ -116,6 +140,7 @@ export function installResponseHooks(proto = ServerResponse.prototype) {
   proto.writeHead = function tunedWriteHead(statusCode, reasonOrHeaders, maybeHeaders) {
     tuneHttpServer(this.socket?.server);
     sanitizeVary(this);
+    if (!this.hasHeader(BUILD_HEADER)) this.setHeader(BUILD_HEADER, buildLabel());
     if (maybeHeaders !== undefined) {
       return writeHead.call(this, statusCode, reasonOrHeaders, sanitizeHeaderBag(maybeHeaders));
     }

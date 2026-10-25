@@ -53,12 +53,40 @@ export function campusCaption(hospital: Hospital, locale: AppLocale) {
   return interpolate(t["hospital.campusIllustration"], { place });
 }
 
+/**
+ * The handful of fields the placeholder actually draws. Client components
+ * (the photo gallery dialog) receive this instead of a full `Hospital`, which
+ * otherwise serializes bio, infrastructure and specialty copy into the RSC
+ * payload once per card.
+ */
+export type CampusVisualHospital = Pick<
+  Hospital,
+  "slug" | "name" | "city" | "country" | "citySlug" | "image" | "imageAlt"
+> & { eye: boolean };
+
+export function campusVisualProps(hospital: Hospital): CampusVisualHospital {
+  return {
+    slug: hospital.slug,
+    name: hospital.name,
+    city: hospital.city,
+    country: hospital.country,
+    citySlug: hospital.citySlug,
+    image: hospital.image,
+    imageAlt: hospital.imageAlt,
+    eye: isEyeCampus(hospital),
+  };
+}
+
+function isSlim(hospital: Hospital | CampusVisualHospital): hospital is CampusVisualHospital {
+  return "eye" in hospital;
+}
+
 export function HospitalCampusVisual({
   hospital,
   className,
   caption,
 }: {
-  hospital: Hospital;
+  hospital: Hospital | CampusVisualHospital;
   className?: string;
   /**
    * The watermark drawn into the placeholder, naming the campus and saying
@@ -77,7 +105,7 @@ export function HospitalCampusVisual({
     );
   }
   const tone = CITY_TONE[hospital.citySlug] ?? CITY_TONE["delhi-ncr"];
-  const eye = isEyeCampus(hospital);
+  const eye = isSlim(hospital) ? hospital.eye : isEyeCampus(hospital);
   return (
     <div className={className} aria-hidden="true">
       {/* No role or <title>: the wrapper is aria-hidden, so the title was

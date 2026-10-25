@@ -6,6 +6,7 @@ import { pickDoctorPatch, pickHospitalPatch, type DoctorPatch, type HospitalPatc
 import { catalogDoctors, type Doctor } from "@/lib/doctors";
 import { catalogHospitals, type Hospital } from "@/lib/hospitals";
 import { catalogTreatments, type Treatment } from "@/lib/treatments";
+import { flushContentWrites, storageErrorStatus } from "@/lib/storage";
 
 type Entity = "doctors" | "hospitals" | "treatments";
 
@@ -93,6 +94,7 @@ export async function PUT(request: Request, ctx: { params: Promise<{ entity: str
         cms.doctorsAdded[addedIndex] = { ...existing, ...next, slug: existing.slug };
       }
       saveCatalogCms(cms, edition);
+      await flushContentWrites();
       return NextResponse.json({ ok: true, slug, ...next });
     }
     if (entity === "hospitals") {
@@ -112,6 +114,7 @@ export async function PUT(request: Request, ctx: { params: Promise<{ entity: str
         cms.hospitalsAdded[addedIndex] = { ...existing, ...next, slug: existing.slug };
       }
       saveCatalogCms(cms, edition);
+      await flushContentWrites();
       return NextResponse.json({ ok: true, slug, ...next });
     }
     const includes = Array.isArray(patch.includes)
@@ -146,10 +149,11 @@ export async function PUT(request: Request, ctx: { params: Promise<{ entity: str
       cms.treatmentsAdded[addedIndex] = { ...(cms.treatmentsAdded[addedIndex] as object), ...next };
     }
     saveCatalogCms(cms, edition);
+    await flushContentWrites();
     return NextResponse.json({ ok: true, slug, ...next });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not save.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(err) });
   }
 }
 
@@ -180,10 +184,11 @@ export async function DELETE(request: Request, ctx: { params: Promise<{ entity: 
       cms[key].push(slug);
     }
     saveCatalogCms(cms, edition);
+    await flushContentWrites();
     return NextResponse.json({ ok: true });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not delete.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(err) });
   }
 }
 

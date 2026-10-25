@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { requireCmsSession } from "@/lib/cms/auth";
 import { editionFromRequest } from "@/lib/cms/edition";
 import { loadCms, saveCms } from "@/lib/cms/store";
+import { flushContentWrites, storageErrorStatus } from "@/lib/storage";
 
 export async function POST(request: Request, ctx: { params: Promise<{ id: string }> }) {
   try {
@@ -18,9 +19,10 @@ export async function POST(request: Request, ctx: { params: Promise<{ id: string
     article.status = "draft";
     article.updatedAt = new Date().toISOString();
     saveCms(store, edition);
+    await flushContentWrites();
     return NextResponse.json(article);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not restore.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(err) });
   }
 }

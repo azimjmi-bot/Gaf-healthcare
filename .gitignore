@@ -41,3 +41,8 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# cloudflare (npm run cf:build / cf:dev)
+/.open-next/
+/.wrangler/
+.dev.vars*

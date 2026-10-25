@@ -6,6 +6,7 @@ import {
   saveCuratedTreatments,
 } from "@/lib/cms/curated-treatment-store";
 import type { CuratedTreatment } from "@/lib/cms/curated-treatment-types";
+import { flushContentWrites, storageErrorStatus } from "@/lib/storage";
 
 type Context = { params: Promise<{ id: string }> };
 
@@ -41,6 +42,7 @@ export async function PUT(request: Request, context: Context) {
     const store = loadCuratedTreatments();
     const { treatment, errors } = applyCuratedTreatmentPatch(store, id, patch);
     saveCuratedTreatments(store);
+    await flushContentWrites();
     if (errors.length > 0) {
       return NextResponse.json(
         { error: errors.join(" "), treatment },
@@ -51,7 +53,7 @@ export async function PUT(request: Request, context: Context) {
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "Could not save Treatment.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(error) });
   }
 }
 
@@ -70,5 +72,6 @@ export async function DELETE(_request: Request, context: Context) {
   treatment.status = "archived";
   treatment.updatedAt = new Date().toISOString();
   saveCuratedTreatments(store);
+  await flushContentWrites();
   return NextResponse.json({ ok: true });
 }
