@@ -105,6 +105,13 @@ const PRIVATE_ASSETS_PATH = "/_gaf/";
 const UPLOADS_PATH = "/uploads/";
 const UPLOAD_CACHE_CONTROL = "public, max-age=60";
 
+/** True when Cookie contains a gaf_cms pair, wherever it sits in the header. */
+function hasCmsCookie(request: Request): boolean {
+  const header = request.headers.get("cookie");
+  if (!header) return false;
+  return header.split(";").some((part) => part.trim().startsWith("gaf_cms="));
+}
+
 /**
  * How many document renders one isolate may run at once.
  *
@@ -363,7 +370,7 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       return new Response("Method Not Allowed", { status: 405, headers: { allow: "GET, HEAD" } });
     }
     origins.add(url.origin);
-    const cache = request.method === "GET" ? cacheFor() : undefined;
+    const cache = request.method === "GET" && !hasCmsCookie(request) ? cacheFor() : undefined;
     let response = cache ? await cache.match(request) : undefined;
     if (!response) {
       response = await uploadResponse(env.STATIC, url.pathname);

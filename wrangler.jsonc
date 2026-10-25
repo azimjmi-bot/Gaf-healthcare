@@ -7,10 +7,10 @@
 	"main": "src/worker.ts",
 	"compatibility_date": "2026-10-01",
 	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
-	// Not published on the shared workers.dev host. Version Preview URLs are
-	// on for staging checks; they are not a route on gaf.healthcare.
+	// Shared workers.dev routing and version-preview URLs are disabled for
+	// staging. Neither is a route on gaf.healthcare.
 	"workers_dev": false,
-	"preview_urls": true,
+	"preview_urls": false,
 	"observability": { "enabled": true },
 	// V8 keeps the whole script source in the isolate heap; minifying the
 	// ~31 MB bundle roughly halves that fixed cost (docs/cloudflare-stage-3.md §4).

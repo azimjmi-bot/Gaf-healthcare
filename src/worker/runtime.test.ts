@@ -334,6 +334,52 @@ test("a successful upload is stored for 60 seconds, and a miss or rejected key i
   assert.equal(cache.store.size, 1);
 });
 
+test("a gaf_cms cookie does not read or write the shared upload cache", async () => {
+  const env = makeEnv();
+  const png = new Uint8Array([0x89, 0x50, 0x4e, 0x47]);
+  const stale = new Uint8Array([0x00]);
+  await env.STATIC.put("uploads/articles/1-cover.png", png, { httpMetadata: { contentType: "image/png" } });
+  const url = "https://staging.example/uploads/articles/1-cover.png";
+  let matches = 0;
+  let puts = 0;
+  const cache: CacheLike = {
+    async match() {
+      matches += 1;
+      return new Response(stale, { status: 200, headers: { etag: '"stale"', "cache-control": "public, max-age=60" } });
+    },
+    async put() {
+      puts += 1;
+    },
+    async delete() {
+      return false;
+    },
+  };
+  const worker = createWorker(nextStub().handler, { ...quiet, cache: () => cache });
+  const context = ctx();
+
+  const response = await worker.fetch(
+    new Request(url, { headers: { cookie: "theme=light; gaf_cms=editor-token; gaf_cms_edition=ar" } }),
+    env,
+    context,
+  );
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("content-type"), "image/png");
+  assert.equal(response.headers.get("cache-control"), "public, max-age=60");
+  assert.deepEqual([...new Uint8Array(await response.arrayBuffer())], [...png]);
+  await context.settle();
+  assert.equal(matches, 0, "the CMS request did not read the shared cache");
+  assert.equal(puts, 0, "the CMS request did not write the shared cache");
+
+  const editionOnly = await worker.fetch(
+    new Request(url, { headers: { cookie: "gaf_cms_edition=ar" } }),
+    env,
+    ctx(),
+  );
+  assert.deepEqual([...new Uint8Array(await editionOnly.arrayBuffer())], [...stale]);
+  assert.equal(matches, 1, "the edition cookie is not a CMS session");
+  assert.equal(puts, 0, "the edition request was served from the seeded cache");
+});
+
 test("an upload written through storage is served on the next request, and a deletion purges the cache", async () => {
   const env = makeEnv();
   const cache = new FakeCache();
