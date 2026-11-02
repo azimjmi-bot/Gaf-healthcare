@@ -14,30 +14,26 @@
  *
  *   --local (default)  Writes to the local state `wrangler dev` reads
  *                      (.wrangler/state/v3/r2). Nothing leaves this machine.
- *   --remote           Writes to the real buckets named in wrangler.jsonc via
- *                      `wrangler r2 object put --remote`. This is the live
- *                      seeding step that needs explicit approval; the script
- *                      refuses unless GAF_SEED_CONFIRM equals the content
- *                      bucket name, and never touches DNS, routes or deploys.
- *
+ *                      Uses wrangler.jsonc unless --config is set.
+ *   --remote           Writes to the buckets named by --config. Refuses
+ *                      wrangler.jsonc, staging bucket names, and any config
+ *                      that sets GAF_INDEXING. Requires GAF_SEED_CONFIRM to
+ *                      equal the content bucket. Puts only keys that are
+ *                      absent (onlyIf etagDoesNotExist) and aborts when a
+ *                      bucket holds a key that is not in this plan. Never
+ *                      deletes.
  *   --dry-run          List what would be written and stop.
+ *   --config <path>    Wrangler config. Required for --remote.
  */
-import { execFileSync } from "node:child_process";
 import { existsSync, readdirSync, readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..", "..");
-const args = new Set(process.argv.slice(2));
-const remote = args.has("--remote");
-const dryRun = args.has("--dry-run");
 
-const wrangler = JSON.parse(stripJsonComments(readFileSync(path.join(root, "wrangler.jsonc"), "utf8")));
-const buckets = Object.fromEntries(wrangler.r2_buckets.map((b) => [b.binding, b.bucket_name]));
-if (!buckets.CONTENT || !buckets.STATIC) {
-  console.error("wrangler.jsonc must bind CONTENT and STATIC buckets");
-  process.exit(1);
-}
+export const STAGING_BUCKETS = new Set(["gaf-content-staging", "gaf-static-staging"]);
+export const PRODUCTION_CONTENT_BUCKET = "gaf-content-production";
+export const PRODUCTION_STATIC_BUCKET = "gaf-static-production";
 
 /*
  * Mirrors GROUP_LAYOUT in src/lib/storage/r2.ts. Kept as data here (rather
@@ -77,6 +73,83 @@ function contentTypeFor(key) {
   return CONTENT_TYPES[key.slice(key.lastIndexOf(".") + 1).toLowerCase()] ?? "application/octet-stream";
 }
 
+export function stripJsonComments(text) {
+  return text.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:"'])\/\/.*$/gm, "$1");
+}
+
+export function parseArgs(argv) {
+  const flags = new Set();
+  let configPath = null;
+  for (let i = 0; i < argv.length; i++) {
+    const arg = argv[i];
+    if (arg === "--config") {
+      configPath = argv[i + 1];
+      if (!configPath || configPath.startsWith("--")) throw new Error("--config requires a path");
+      i += 1;
+    } else if (arg.startsWith("--config=")) {
+      configPath = arg.slice("--config=".length);
+      if (!configPath) throw new Error("--config requires a path");
+    } else {
+      flags.add(arg);
+    }
+  }
+  return {
+    remote: flags.has("--remote"),
+    dryRun: flags.has("--dry-run"),
+    configPath: configPath ? path.resolve(configPath) : path.join(root, "wrangler.jsonc"),
+  };
+}
+
+export function loadWranglerConfig(configPath) {
+  const wrangler = JSON.parse(stripJsonComments(readFileSync(configPath, "utf8")));
+  const buckets = Object.fromEntries((wrangler.r2_buckets ?? []).map((bucket) => [bucket.binding, bucket.bucket_name]));
+  if (!buckets.CONTENT || !buckets.STATIC || !buckets.NEXT_INC_CACHE_R2_BUCKET) {
+    throw new Error(`${configPath} must bind CONTENT, STATIC and NEXT_INC_CACHE_R2_BUCKET`);
+  }
+  return {
+    path: configPath,
+    name: wrangler.name,
+    buckets,
+    indexing: wrangler.vars?.GAF_INDEXING,
+    hasRoutes: Array.isArray(wrangler.routes) && wrangler.routes.length > 0,
+    hasCustomDomain: wrangler.workers_dev === undefined ? false : false,
+    rawRoutes: wrangler.routes,
+    rawCustomDomain: wrangler.custom_domain ?? wrangler.route,
+  };
+}
+
+/** Remote seeds may only target the production config. */
+export function assertRemoteConfig(config) {
+  const errors = [];
+  const base = path.basename(config.path);
+  if (base === "wrangler.jsonc") errors.push("refusing wrangler.jsonc; pass --config wrangler.production.jsonc");
+  if (config.indexing !== undefined) errors.push("refusing a config that sets GAF_INDEXING");
+  if (config.name !== "gaf-healthcare-production") errors.push(`refusing worker name ${config.name}`);
+  for (const name of [config.buckets.CONTENT, config.buckets.STATIC, config.buckets.NEXT_INC_CACHE_R2_BUCKET]) {
+    if (STAGING_BUCKETS.has(name) || name.toLowerCase().includes("staging")) errors.push(`refusing staging bucket ${name}`);
+  }
+  if (config.buckets.CONTENT !== PRODUCTION_CONTENT_BUCKET) errors.push(`CONTENT must be ${PRODUCTION_CONTENT_BUCKET}`);
+  if (config.buckets.STATIC !== PRODUCTION_STATIC_BUCKET || config.buckets.NEXT_INC_CACHE_R2_BUCKET !== PRODUCTION_STATIC_BUCKET) {
+    errors.push(`STATIC and NEXT_INC_CACHE_R2_BUCKET must be ${PRODUCTION_STATIC_BUCKET}`);
+  }
+  if (config.rawRoutes || config.rawCustomDomain) errors.push("refusing a config that sets routes or a custom domain");
+  if (errors.length > 0) throw new Error(errors.join("\n"));
+}
+
+/**
+ * Compare one bucket. Unexpected keys abort the seed. Keys already in the
+ * plan are left untouched. Missing keys are what a later put may create.
+ */
+export function classifyKeys(planned, existing) {
+  const plannedSet = new Set(planned);
+  const existingSet = new Set(existing);
+  return {
+    unexpected: [...existingSet].filter((key) => !plannedSet.has(key)).sort(),
+    missing: [...plannedSet].filter((key) => !existingSet.has(key)).sort(),
+    present: [...plannedSet].filter((key) => existingSet.has(key)).sort(),
+  };
+}
+
 function walk(dir, base = dir) {
   const out = [];
   for (const entry of readdirSync(dir, { withFileTypes: true }).sort((a, b) => a.name.localeCompare(b.name))) {
@@ -114,11 +187,7 @@ export function plan() {
   return { items, manifest, skipped };
 }
 
-function stripJsonComments(text) {
-  return text.replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:"'])\/\/.*$/gm, "$1");
-}
-
-function summarise(items) {
+function summarise(items, buckets) {
   const byBucket = {};
   for (const item of items) {
     const stat = byBucket[item.bucket] ?? (byBucket[item.bucket] = { count: 0, bytes: 0 });
@@ -126,26 +195,50 @@ function summarise(items) {
     stat.bytes += item.file ? statSync(item.file).size : Buffer.byteLength(item.body);
   }
   return Object.entries(byBucket)
-    .map(([bucket, s]) => `${bucket} (${buckets[bucket]}): ${s.count} objects, ${(s.bytes / 1048576).toFixed(1)} MB`)
+    .map(([bucket, stat]) => `${bucket} (${buckets[bucket]}): ${stat.count} objects, ${(stat.bytes / 1048576).toFixed(1)} MB`)
     .join("\n  ");
 }
 
-async function seedLocal(items) {
-  // Wrangler's own local bindings, persisted where `wrangler dev` reads them
-  // (.wrangler/state/v3). `remoteBindings: false` guarantees nothing leaves this
-  // machine even if a binding were ever marked remote in the config.
+async function listRemoteBucket(bucketName) {
+  const account = process.env.CLOUDFLARE_ACCOUNT_ID;
+  const token = process.env.CLOUDFLARE_API_TOKEN;
+  if (!account || !token) throw new Error("CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN are required to list remote buckets");
+  const keys = [];
+  let cursor = "";
+  for (let page = 0; page < 50; page++) {
+    const params = new URLSearchParams({ per_page: "1000" });
+    if (cursor) params.set("cursor", cursor);
+    const response = await fetch(
+      `https://api.cloudflare.com/client/v4/accounts/${account}/r2/buckets/${bucketName}/objects?${params}`,
+      { headers: { Authorization: `Bearer ${token}` } },
+    );
+    const payload = await response.json();
+    if (!response.ok || !payload.success) {
+      const message = (payload.errors ?? []).map((error) => `${error.code} ${error.message}`).join("; ");
+      throw new Error(`listing ${bucketName} failed: ${message || response.status}`);
+    }
+    const objects = Array.isArray(payload.result) ? payload.result : [];
+    for (const object of objects) keys.push(object.key);
+    const info = payload.result_info ?? {};
+    if (!info.is_truncated || !info.cursor || info.cursor === cursor) break;
+    cursor = info.cursor;
+  }
+  return keys;
+}
+
+async function seedLocal(items, configPath) {
   const { getPlatformProxy } = await import("wrangler");
   const proxy = await getPlatformProxy({
-    configPath: path.join(root, "wrangler.jsonc"),
+    configPath,
     persist: { path: path.join(root, ".wrangler", "state", "v3") },
     remoteBindings: false,
   });
   try {
     for (const binding of ["CONTENT", "STATIC"]) {
       const bucket = proxy.env[binding];
-      if (!bucket) throw new Error(`binding ${binding} is not in wrangler.jsonc`);
+      if (!bucket) throw new Error(`binding ${binding} is not in ${configPath}`);
       let n = 0;
-      for (const item of items.filter((i) => i.bucket === binding)) {
+      for (const item of items.filter((candidate) => candidate.bucket === binding)) {
         const body = item.file ? readFileSync(item.file) : item.body;
         await bucket.put(item.key, body, { httpMetadata: { contentType: item.contentType } });
         n += 1;
@@ -157,30 +250,84 @@ async function seedLocal(items) {
   }
 }
 
-function seedRemote(items) {
-  if (process.env.GAF_SEED_CONFIRM !== buckets.CONTENT) {
+async function seedRemote(items, config) {
+  if (process.env.GAF_SEED_CONFIRM !== config.buckets.CONTENT) {
     console.error(
-      `Refusing to write to live buckets. Re-run with GAF_SEED_CONFIRM=${buckets.CONTENT} once the seed has been approved.`,
+      `Refusing to write. Re-run with GAF_SEED_CONFIRM=${config.buckets.CONTENT} once this production seed has been approved.`,
     );
     process.exit(2);
   }
-  for (const item of items) {
-    const target = `${buckets[item.bucket]}/${item.key}`;
-    const argv = ["wrangler", "r2", "object", "put", target, "--remote", "--content-type", item.contentType];
-    if (item.file) argv.push("--file", item.file);
-    else argv.push("--pipe");
-    execFileSync("npx", argv, { stdio: ["pipe", "inherit", "inherit"], input: item.file ? undefined : item.body });
+  const existing = {
+    CONTENT: await listRemoteBucket(config.buckets.CONTENT),
+    STATIC: await listRemoteBucket(config.buckets.STATIC),
+  };
+  const classified = {};
+  for (const binding of ["CONTENT", "STATIC"]) {
+    const planned = items.filter((item) => item.bucket === binding).map((item) => item.key);
+    classified[binding] = classifyKeys(planned, existing[binding]);
+    const report = classified[binding];
+    console.log(
+      `  ${binding}: existing ${existing[binding].length}, already present ${report.present.length}, missing ${report.missing.length}, unexpected ${report.unexpected.length}`,
+    );
+    if (report.unexpected.length > 0) {
+      console.error(`Refusing to seed ${binding}. Unexpected keys:\n${report.unexpected.join("\n")}`);
+      process.exit(3);
+    }
   }
+  const missing = new Set([...classified.CONTENT.missing, ...classified.STATIC.missing]);
+  const toWrite = items.filter((item) => missing.has(item.key));
+  if (toWrite.length === 0) {
+    console.log("  nothing missing");
+    return classified;
+  }
+  const { getPlatformProxy } = await import("wrangler");
+  const proxy = await getPlatformProxy({ configPath: config.path, remoteBindings: true });
+  try {
+    let written = 0;
+    for (const item of toWrite) {
+      const bucket = proxy.env[item.bucket];
+      if (!bucket) throw new Error(`binding ${item.bucket} is missing from the remote proxy`);
+      const body = item.file ? readFileSync(item.file) : item.body;
+      const created = await bucket.put(item.key, body, {
+        httpMetadata: { contentType: item.contentType },
+        onlyIf: { etagDoesNotExist: true },
+      });
+      if (!created) {
+        throw new Error(`refusing to overwrite ${item.bucket} ${item.key}`);
+      }
+      written += 1;
+      if (written % 100 === 0) console.log(`  created ${written} of ${toWrite.length}`);
+    }
+    console.log(`  created ${written} objects`);
+  } finally {
+    await proxy.dispose();
+  }
+  for (const binding of ["CONTENT", "STATIC"]) {
+    const planned = items.filter((item) => item.bucket === binding).map((item) => item.key);
+    const after = classifyKeys(planned, await listRemoteBucket(config.buckets[binding]));
+    console.log(
+      `  ${binding} after: present ${after.present.length}, missing ${after.missing.length}, unexpected ${after.unexpected.length}`,
+    );
+    if (after.missing.length > 0 || after.unexpected.length > 0) {
+      if (after.missing.length > 0) console.error(`missing ${binding}:\n${after.missing.join("\n")}`);
+      if (after.unexpected.length > 0) console.error(`unexpected ${binding}:\n${after.unexpected.join("\n")}`);
+      process.exit(4);
+    }
+  }
+  return classified;
 }
 
 const isMain = process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url);
 if (isMain) {
+  const args = parseArgs(process.argv.slice(2));
+  const config = loadWranglerConfig(args.configPath);
   const { items, manifest, skipped } = plan();
-  console.log(`Seed plan (${remote ? "REMOTE: live buckets" : "local wrangler state"}):\n  ${summarise(items)}`);
+  console.log(`Seed plan (${args.remote ? "REMOTE" : "local"} ${path.basename(config.path)}):\n  ${summarise(items, config.buckets)}`);
   console.log(`  manifest: ${manifest.keys.length} content keys`);
   if (skipped.length > 0) console.log(`  not in any edition group, skipped: ${skipped.join(", ")}`);
-  if (dryRun) process.exit(0);
-  if (remote) seedRemote(items);
-  else await seedLocal(items);
+  if (args.remote) assertRemoteConfig(config);
+  if (args.dryRun) process.exit(0);
+  if (args.remote) await seedRemote(items, config);
+  else await seedLocal(items, config.path);
   console.log("done");
 }
