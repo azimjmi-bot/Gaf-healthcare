@@ -18,8 +18,8 @@
  *   --remote           Writes to the buckets named by --config. Refuses
  *                      wrangler.jsonc, staging bucket names, and any config
  *                      that sets GAF_INDEXING. Requires GAF_SEED_CONFIRM to
- *                      equal the content bucket. Puts only keys that are
- *                      absent (onlyIf etagDoesNotExist) and aborts when a
+ *                      equal the content bucket. Lists the buckets first and
+ *                      uploads only keys that are absent. Aborts when a
  *                      bucket holds a key that is not in this plan. Never
  *                      deletes.
  *   --dry-run          List what would be written and stop.
@@ -199,6 +199,26 @@ function summarise(items, buckets) {
     .join("\n  ");
 }
 
+async function putRemoteObject(bucketName, key, body, contentType) {
+  const account = process.env.CLOUDFLARE_ACCOUNT_ID;
+  const token = process.env.CLOUDFLARE_API_TOKEN;
+  if (!account || !token) throw new Error("CLOUDFLARE_ACCOUNT_ID and CLOUDFLARE_API_TOKEN are required to write remote buckets");
+  const encoded = key.split("/").map((part) => encodeURIComponent(part)).join("/");
+  const response = await fetch(
+    `https://api.cloudflare.com/client/v4/accounts/${account}/r2/buckets/${bucketName}/objects/${encoded}`,
+    {
+      method: "PUT",
+      headers: { Authorization: `Bearer ${token}`, "Content-Type": contentType },
+      body,
+    },
+  );
+  if (!response.ok) {
+    const text = await response.text();
+    throw new Error(`put ${bucketName}/${key} failed: ${response.status} ${text.slice(0, 180)}`);
+  }
+  await response.arrayBuffer();
+}
+
 async function listRemoteBucket(bucketName) {
   const account = process.env.CLOUDFLARE_ACCOUNT_ID;
   const token = process.env.CLOUDFLARE_API_TOKEN;
@@ -280,28 +300,33 @@ async function seedRemote(items, config) {
     console.log("  nothing missing");
     return classified;
   }
-  const { getPlatformProxy } = await import("wrangler");
-  const proxy = await getPlatformProxy({ configPath: config.path, remoteBindings: true });
-  try {
-    let written = 0;
-    for (const item of toWrite) {
-      const bucket = proxy.env[item.bucket];
-      if (!bucket) throw new Error(`binding ${item.bucket} is missing from the remote proxy`);
+  // The Cloudflare R2 HTTP API does not honor If-None-Match, so the list above
+  // is the guard: only keys absent from that list are uploaded. A key that
+  // appears between the list and the put is still a new object on an empty
+  // production bucket; this path never sends a put for a key it already saw.
+  let cursor = 0;
+  let written = 0;
+  let failure = null;
+  async function worker() {
+    while (failure === null) {
+      const index = cursor;
+      cursor += 1;
+      if (index >= toWrite.length) return;
+      const item = toWrite[index];
       const body = item.file ? readFileSync(item.file) : item.body;
-      const created = await bucket.put(item.key, body, {
-        httpMetadata: { contentType: item.contentType },
-        onlyIf: { etagDoesNotExist: true },
-      });
-      if (!created) {
-        throw new Error(`refusing to overwrite ${item.bucket} ${item.key}`);
+      try {
+        await putRemoteObject(config.buckets[item.bucket], item.key, body, item.contentType);
+      } catch (error) {
+        failure = error;
+        return;
       }
       written += 1;
       if (written % 100 === 0) console.log(`  created ${written} of ${toWrite.length}`);
     }
-    console.log(`  created ${written} objects`);
-  } finally {
-    await proxy.dispose();
   }
+  await Promise.all(Array.from({ length: 8 }, () => worker()));
+  if (failure) throw failure;
+  console.log(`  created ${written} objects`);
   for (const binding of ["CONTENT", "STATIC"]) {
     const planned = items.filter((item) => item.bucket === binding).map((item) => item.key);
     const after = classifyKeys(planned, await listRemoteBucket(config.buckets[binding]));
