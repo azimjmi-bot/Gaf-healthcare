@@ -9,6 +9,7 @@ import {
   ASSET_KEYS,
   assetsWithUploads,
   MAX_INFLIGHT_RENDERS,
+  bakedSitemapAssetPath,
   createWorker,
   groupsForRequest,
   isPrivateAssetPath,
@@ -125,6 +126,72 @@ test("public requests hydrate every edition but not the CMS-only group; CMS requ
   assert.deepEqual([...groupsForRequest("/cms/articles/1")], ["en", "ar", "fr", "ru", "sw", "cms"]);
   assert.deepEqual([...groupsForRequest("/api/cms/ai/generate")], ["en", "ar", "fr", "ru", "sw", "cms"]);
   assert.deepEqual([...groupsForRequest("/cmsx")], ["en", "ar", "fr", "ru", "sw"], "prefix match is on path segments");
+});
+
+test("baked sitemap paths stay under the private asset prefix", () => {
+  assert.equal(bakedSitemapAssetPath("/sitemap-en.xml"), "/_gaf/sitemaps/en.xml");
+  assert.equal(bakedSitemapAssetPath("/sitemap-ar.xml"), "/_gaf/sitemaps/ar.xml");
+  assert.equal(bakedSitemapAssetPath("/sitemap-fr.xml"), "/_gaf/sitemaps/fr.xml");
+  assert.equal(bakedSitemapAssetPath("/sitemap.xml"), null);
+  assert.equal(bakedSitemapAssetPath("/sitemap_index.xml"), null);
+  assert.equal(bakedSitemapAssetPath("/sitemap-en.xml/extra"), null);
+});
+
+test("a packed locale sitemap is served from the private asset and is not rebuilt by Next", async () => {
+  const xml =
+    '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://gaf.healthcare/doctors</loc></url></urlset>';
+  const empty =
+    '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"></urlset>';
+  const assets = fakeAssets({
+    ...DEPLOY_ASSETS,
+    "/_gaf/sitemaps/en.xml": xml,
+    "/_gaf/sitemaps/fr.xml": empty,
+  });
+  const next = nextStub();
+  const worker = createWorker(next.handler, quiet);
+  const env = makeEnv({ ASSETS: assets });
+  const response = await worker.fetch(new Request("https://gaf.healthcare/sitemap-en.xml"), env, ctx());
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("content-type"), "application/xml; charset=utf-8");
+  assert.match(response.headers.get("cache-control") ?? "", /s-maxage=3600/);
+  assert.equal(response.headers.get("x-robots-tag"), null);
+  assert.equal(await response.text(), xml);
+  assert.equal(next.seen.length, 0, "Next is not asked to rebuild the English sitemap");
+  assert.equal(
+    (await worker.fetch(new Request("https://gaf.healthcare/_gaf/sitemaps/en.xml"), env, ctx())).status,
+    404,
+  );
+
+  const head = await worker.fetch(
+    new Request("https://gaf.healthcare/sitemap-en.xml", { method: "HEAD" }),
+    env,
+    ctx(),
+  );
+  assert.equal(head.status, 200);
+  assert.equal(await head.text(), "");
+  assert.equal(head.headers.get("content-type"), "application/xml; charset=utf-8");
+
+  const french = await worker.fetch(new Request("https://gaf.healthcare/sitemap-fr.xml"), env, ctx());
+  assert.equal(french.status, 200);
+  assert.equal(await french.text(), empty);
+
+  const staging = await worker.fetch(
+    new Request("https://staging.example/sitemap-en.xml"),
+    makeEnv({ ASSETS: assets, GAF_INDEXING: "off" }),
+    ctx(),
+  );
+  assert.equal(staging.headers.get("x-robots-tag"), "noindex, nofollow");
+  assert.equal(await staging.text(), xml);
+
+  const missing = nextStub();
+  const fallback = createWorker(missing.handler, quiet);
+  const through = await fallback.fetch(
+    new Request("https://gaf.healthcare/sitemap-en.xml"),
+    makeEnv(),
+    ctx(),
+  );
+  assert.equal(await through.text(), "next:/sitemap-en.xml");
+  assert.equal(missing.seen.length, 1);
 });
 
 test("upload keys are the decoded path without the leading slash and never escape the prefix", () => {

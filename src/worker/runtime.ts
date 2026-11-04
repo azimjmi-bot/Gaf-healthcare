@@ -11,12 +11,17 @@
  * 2. Serve `/uploads/*` from the static bucket. Media is never part of the
  *    deployed assets, so an upload or deletion is visible on the next
  *    request without a deploy and without Next enumerating `public/`.
- * 3. Hydrate every content group the request can read, answering 503 when
+ * 3. Serve `/sitemap-{locale}.xml` from the build-time file under `/_gaf/`
+ *    when that asset shipped. Building the English catalog inside a request
+ *    exceeds the Worker CPU limit (Cloudflare error 1102). The file is not a
+ *    public asset; `/_gaf/*` stays 404.
+ * 4. Hydrate every content group the request can read, answering 503 when
  *    that is not possible, then check whether another isolate has published
  *    newer content. Only then is the request handed to Next.
  */
 import { COST_ARTICLES_KEY } from "@/data/cost-articles/asset";
 import { CATALOG_SEED_KEY } from "@/lib/catalog-seed";
+import { SITEMAP_HEADERS } from "@/lib/i18n/sitemap-xml";
 import { setContentStorage } from "@/lib/storage";
 import {
   contentTypeFor,
@@ -101,6 +106,19 @@ export const ASSET_KEYS: Record<string, string> = {
 };
 
 const PRIVATE_ASSETS_PATH = "/_gaf/";
+
+/**
+ * Locale sitemaps packed by `scripts/cloudflare/pack-sitemaps.ts` into the
+ * private asset tree. Absent on a build that skipped the packer, in which
+ * case the request falls through to the Next route.
+ */
+const BAKED_SITEMAP = /^\/sitemap-(en|ar|fr|ru|sw)\.xml$/;
+
+export function bakedSitemapAssetPath(pathname: string): string | null {
+  const match = BAKED_SITEMAP.exec(pathname);
+  if (!match) return null;
+  return `/_gaf/sitemaps/${match[1]}.xml`;
+}
 
 const UPLOADS_PATH = "/uploads/";
 const UPLOAD_CACHE_CONTROL = "public, max-age=60";
@@ -266,6 +284,26 @@ export function uploadKeyFor(pathname: string): string | null {
   return decoded;
 }
 
+async function serveBakedSitemap(
+  assets: AssetFetcherLike,
+  request: Request,
+  assetPath: string,
+): Promise<Response | null> {
+  if (request.method !== "GET" && request.method !== "HEAD") return null;
+  let asset: Response;
+  try {
+    asset = await assets.fetch(new URL(assetPath, "https://assets.local"));
+  } catch {
+    return null;
+  }
+  if (!asset.ok) return null;
+  const xml = await asset.text();
+  if (!xml.includes("<urlset") && !xml.includes("<sitemapindex")) return null;
+  const headers = new Headers(SITEMAP_HEADERS);
+  if (request.method === "HEAD") return new Response(null, { status: 200, headers });
+  return new Response(xml, { status: 200, headers });
+}
+
 function hasBody(object: R2ObjectBodyLike | R2ObjectLike | null): object is R2ObjectBodyLike {
   return object !== null && "arrayBuffer" in object;
 }
@@ -395,6 +433,12 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
           new Response("Not Found", { status: 404, headers: { "cache-control": "no-store" } }),
           env,
         );
+      }
+
+      const bakedPath = bakedSitemapAssetPath(url.pathname);
+      if (bakedPath) {
+        const baked = await serveBakedSitemap(env.ASSETS, request, bakedPath);
+        if (baked) return withStagingRobots(baked, env);
       }
 
       // Uploads and the private asset 404 are answered above and do not take a

@@ -15,7 +15,9 @@
  *    routes `/_gaf/*` to the Worker, which answers 404, so the file is part of
  *    the deploy without being a public URL. Also checks the catalog did not
  *    get bundled into the server script after all.
- * 4. Rewrites every non-ASCII character left in the generated JavaScript as a
+ * 4. Packs each locale sitemap under `/_gaf/sitemaps/`. The English file is too
+ *    large to build inside a Worker request (Cloudflare error 1102).
+ * 5. Rewrites every non-ASCII character left in the generated JavaScript as a
  *    `\uXXXX` escape. esbuild already escapes strings and identifiers, but it
  *    copies regular-expression literals verbatim, and a handful of Arabic
  *    regexes (`/[,،]/`, `/أسئلة شائعة/`, ...) were enough to make V8 store the
@@ -92,6 +94,23 @@ if (readFileSync(handler, "utf8").includes(marker)) {
   process.exit(1);
 }
 console.log(`[cf:build] ${COST_KEY} is a Worker asset (${statSync(costAsset).size} bytes) and is not in the server bundle`);
+
+const sitemapDir = path.join(assets, "_gaf", "sitemaps");
+const packedSitemaps = spawnSync(tsx, ["scripts/cloudflare/pack-sitemaps.ts", sitemapDir], {
+  cwd: root,
+  stdio: "inherit",
+  env: { ...process.env, NODE_OPTIONS: "--max-old-space-size=4096 --conditions=react-server" },
+});
+if (packedSitemaps.status !== 0) {
+  console.error("[cf:build] sitemap pack failed");
+  process.exit(packedSitemaps.status ?? 1);
+}
+const englishSitemap = path.join(sitemapDir, "en.xml");
+if (!existsSync(englishSitemap) || statSync(englishSitemap).size === 0) {
+  console.error("[cf:build] english sitemap asset was not written");
+  process.exit(1);
+}
+console.log(`[cf:build] locale sitemaps are Worker assets under /_gaf/sitemaps/ (${statSync(englishSitemap).size} bytes for en)`);
 
 const NON_ASCII = /[^\x00-\x7f]/g;
 const toEscape = (ch) => `\\u${ch.charCodeAt(0).toString(16).padStart(4, "0")}`;
