@@ -6,6 +6,7 @@ import {
   parentKey,
   StorageConflictError,
   StorageKeyError,
+  StorageVersionError,
   type ContentStorage,
 } from "@/lib/storage/types";
 
@@ -556,10 +557,13 @@ export class R2ContentStorage implements ContentStorage {
       }
       throw new Error("version document changed repeatedly");
     } catch (error) {
-      // The content write itself succeeded and was acknowledged; only the
-      // staleness broadcast failed. Keep the groups dirty so the next flush retries.
+      // The content object is already durable. Keep the groups dirty so the
+      // next flush retries the stamp, and fail this flush so the CMS cannot
+      // report success while cached HTML still matches the old generation.
       for (const group of groups) this.dirtyGroups.add(group);
-      this.log(`could not publish ${VERSION_KEY}: ${error instanceof Error ? error.message : String(error)}`);
+      const message = error instanceof Error ? error.message : String(error);
+      this.log(`could not publish ${VERSION_KEY}: ${message}`);
+      throw new StorageVersionError(message, { cause: error });
     }
   }
 

@@ -87,6 +87,21 @@ export class StorageConflictError extends Error {
 }
 
 /**
+ * The content object was written, but `content/.version.json` was not.
+ * Cached public HTML stays on the previous generation until a retry publishes
+ * the stamp. Callers must surface this instead of reporting a successful publish.
+ */
+export class StorageVersionError extends Error {
+  constructor(message: string, options?: { cause?: unknown }) {
+    super(
+      `content version was not published: ${message}. The content write is saved; retry the save so cached pages update.`,
+      options,
+    );
+    this.name = "StorageVersionError";
+  }
+}
+
+/**
  * Validate and normalise a key. Rejects anything that could escape the
  * content root so a URL or file name taken from stored JSON can never be
  * turned into an arbitrary path on the host.

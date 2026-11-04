@@ -18,8 +18,11 @@
  * 4. Serve a cached public HTML document when this isolate already knows the
  *    content generation and the edge cache has that document. Tracking
  *    parameters share one entry. CMS, API, enquiry, and authenticated
- *    responses are never stored.
- * 5. Hydrate every content group the request can read, answering 503 when
+ *    responses are never stored. A request that had to wait for a render
+ *    slot checks the cache again before rendering.
+ * 5. Serve `/_next/image` outside the document render slots, with its own
+ *    small concurrency limit and a cache of successful image bytes.
+ * 6. Hydrate every content group a document can read, answering 503 when
  *    that is not possible, then check whether another isolate has published
  *    newer content. Only then is the request handed to Next. A document that
  *    cannot obtain a render slot within the queue bound answers 503 instead
@@ -244,7 +247,14 @@ function isUncacheablePath(pathname: string): boolean {
   return isEnquiryPath(path);
 }
 
-/** A full document navigation. RSC payloads, prefetches, and subrequests are not HTML cache entries. */
+/** Next's image optimizer. It is not an HTML document and must not take a document slot. */
+export const IMAGE_OPTIMIZER_PATH = "/_next/image";
+
+export function isImageOptimizerPath(pathname: string): boolean {
+  return pathname === IMAGE_OPTIMIZER_PATH;
+}
+
+/** A full document navigation. RSC payloads, prefetches, images, and subrequests are not HTML cache entries. */
 export function isCacheableDocumentRequest(request: Request): boolean {
   if (request.method !== "GET") return false;
   if (isRenderSubrequest(request)) return false;
@@ -255,7 +265,36 @@ export function isCacheableDocumentRequest(request: Request): boolean {
     if (headers.has(name)) return false;
   }
   const url = new URL(request.url);
+  if (isImageOptimizerPath(url.pathname)) return false;
   return !isUncacheablePath(url.pathname);
+}
+
+/**
+ * Cache key for one optimized image. Parameter order does not create a second
+ * entry. The source, width, and quality stay in the query, so different sizes
+ * stay distinct. Hostname stays distinct too.
+ */
+export function imageOptimizerCacheRequest(input: URL): Request {
+  const next = new URL(input.href);
+  const entries = [...next.searchParams.entries()];
+  entries.sort((a, b) => (a[0] === b[0] ? (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0) : a[0] < b[0] ? -1 : 1));
+  next.search = "";
+  for (const [key, value] of entries) next.searchParams.append(key, value);
+  next.hash = "";
+  return new Request(next.toString(), { method: "GET" });
+}
+
+/** Path of the source image, when the optimizer query carries a site path. */
+export function optimizedImageSource(input: URL): string | null {
+  const raw = input.searchParams.get("url");
+  if (!raw || !raw.startsWith("/") || raw.startsWith("//") || raw.includes("\\")) return null;
+  try {
+    const decoded = decodeURIComponent(raw);
+    if (!decoded.startsWith("/") || decoded.startsWith("//") || decoded.includes("..")) return null;
+    return decoded;
+  } catch {
+    return null;
+  }
 }
 
 function isCacheableHtmlResponse(response: Response): boolean {
@@ -356,6 +395,43 @@ function renderBusyResponse(): Response {
   });
 }
 
+function imageBusyResponse(): Response {
+  return new Response("The image is busy. Please retry shortly.", {
+    status: 503,
+    headers: {
+      "content-type": "text/plain; charset=utf-8",
+      "cache-control": "no-store",
+      "retry-after": RENDER_QUEUE_RETRY_AFTER,
+    },
+  });
+}
+
+function imageCacheTtlSeconds(source: string | null): number {
+  if (source?.startsWith("/uploads/")) return UPLOAD_IMAGE_CACHE_TTL_SECONDS;
+  return PUBLIC_IMAGE_CACHE_TTL_SECONDS;
+}
+
+function isCacheableImageResponse(response: Response): boolean {
+  if (response.status !== 200) return false;
+  if (response.headers.has("set-cookie")) return false;
+  const type = response.headers.get("content-type") ?? "";
+  return type.toLowerCase().startsWith("image/");
+}
+
+function presentCachedImage(cached: Response): Response {
+  return copyResponse(cached, (headers) => {
+    const original = headers.get("x-gaf-stored-cache-control");
+    headers.delete("x-gaf-stored-cache-control");
+    if (original) headers.set("cache-control", original);
+    else headers.delete("cache-control");
+    headers.set("x-gaf-image-cache", "hit");
+  });
+}
+
+function withoutBody(response: Response): Response {
+  return new Response(null, { status: response.status, statusText: response.statusText, headers: response.headers });
+}
+
 /**
  * How many document renders one isolate may run at once.
  *
@@ -385,9 +461,32 @@ function renderBusyResponse(): Response {
 export const MAX_INFLIGHT_RENDERS = 8;
 
 /**
+ * How many image optimizations one isolate may run at once.
+ *
+ * This is separate from {@link MAX_INFLIGHT_RENDERS}. An optimized image holds
+ * the source bytes and the encoded output, and a page asks for several sizes.
+ * Two keeps that work off the document gate: eight documents already approached
+ * the 120 MiB heap, so images must not take those slots or add an unbounded
+ * ninth decode. Further image requests wait only until the same queue timeout,
+ * then receive a 503 that is not cached.
+ */
+export const MAX_INFLIGHT_IMAGE_RENDERS = 2;
+
+/**
+ * How long a cached optimized image is kept. Static sources follow the public
+ * HTML lifetime. Upload sources follow the upload cache so a replaced file
+ * cannot linger as a derivative for longer than the original bytes.
+ */
+export const PUBLIC_IMAGE_CACHE_TTL_SECONDS = PUBLIC_HTML_SHARED_TTL_SECONDS;
+export const UPLOAD_IMAGE_CACHE_TTL_SECONDS = 60;
+/** Matches the CMS upload limit. Larger optimizer output is served and not stored. */
+const MAX_CACHED_IMAGE_BYTES = 8 * 1024 * 1024;
+
+/**
  * How long a visitor document waits for a render slot before a 503.
  * The render itself is not cancelled; only the silent queue is bounded.
  * `GAF_RENDER_QUEUE_MS` overrides this, capped at {@link MAX_RENDER_QUEUE_TIMEOUT_MS}.
+ * Image optimization uses the same wait so a saturated image gate cannot hang.
  */
 export const DEFAULT_RENDER_QUEUE_TIMEOUT_MS = 2000;
 export const MAX_RENDER_QUEUE_TIMEOUT_MS = 10_000;
@@ -602,6 +701,8 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
   const origins = new Set<string>();
   /** Public HTML cache keys this isolate has stored. A publish deletes them. */
   const htmlCacheKeys = new Set<string>();
+  /** Optimizer cache keys for each `/uploads/...` source this isolate has stored. */
+  const imageCacheKeys = new Map<string, Set<string>>();
   let renderQueueTimeoutMs = boundedQueueTimeout(options.renderQueueTimeoutMs);
 
   function purgeHtmlCache() {
@@ -619,11 +720,23 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
   function purgeUpload(bucketKey: string) {
     const cache = cacheFor();
     if (!cache) return;
-    for (const origin of origins) {
-      void cache.delete(`${origin}/${bucketKey}`).catch((error: unknown) => {
-        log(`cache purge failed for /${bucketKey}: ${error instanceof Error ? error.message : String(error)}`);
+    const forget = (key: string) => {
+      void cache.delete(key).catch((error: unknown) => {
+        log(`cache purge failed for ${key}: ${error instanceof Error ? error.message : String(error)}`);
       });
-    }
+    };
+    for (const origin of origins) forget(`${origin}/${bucketKey}`);
+    const derived = imageCacheKeys.get(`/${bucketKey}`);
+    if (!derived) return;
+    imageCacheKeys.delete(`/${bucketKey}`);
+    for (const key of derived) forget(key);
+  }
+
+  function rememberOptimizedImage(source: string | null, cacheUrl: string) {
+    if (!source?.startsWith("/uploads/")) return;
+    const keys = imageCacheKeys.get(source) ?? new Set<string>();
+    keys.add(cacheUrl);
+    imageCacheKeys.set(source, keys);
   }
 
   function install(env: WorkerEnv) {
@@ -636,8 +749,10 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       versionCheckIntervalMs: options.versionCheckIntervalMs,
       log,
       onContentPublished: () => purgeHtmlCache(),
-      onStaticChange: (bucketKey, kind) => {
-        if (kind === "delete") purgeUpload(bucketKey);
+      onStaticChange: (bucketKey) => {
+        // A replacement at the same key must drop the previous bytes. A delete
+        // does too. Remembered optimizer entries for that upload are included.
+        purgeUpload(bucketKey);
       },
     });
     setContentStorage(storage);
@@ -652,6 +767,13 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
     () => renderQueueTimeoutMs,
     (peak) => {
       log(`render gate in-flight peak ${peak}/${MAX_INFLIGHT_RENDERS}`);
+    },
+  );
+  const withImageSlot = createRenderGate(
+    MAX_INFLIGHT_IMAGE_RENDERS,
+    () => renderQueueTimeoutMs,
+    (peak) => {
+      log(`image gate in-flight peak ${peak}/${MAX_INFLIGHT_IMAGE_RENDERS}`);
     },
   );
 
@@ -691,6 +813,122 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
     return response;
   }
 
+  async function readHtmlCache(normalized: URL): Promise<Response | undefined> {
+    const cache = cacheFor();
+    if (!cache || !storage) return undefined;
+    try {
+      await storage.refreshIfStale();
+      const generation = await storage.ensureContentGeneration();
+      const hit = await cache.match(publicHtmlCacheRequest(normalized, generation));
+      return hit ? presentCachedHtml(hit) : undefined;
+    } catch (error) {
+      if (error instanceof StorageHydrationError) throw error;
+      log(`html cache read failed: ${error instanceof Error ? error.message : String(error)}`);
+      return undefined;
+    }
+  }
+
+  async function readImageCache(page: URL): Promise<Response | undefined> {
+    const cache = cacheFor();
+    if (!cache) return undefined;
+    try {
+      const hit = await cache.match(imageOptimizerCacheRequest(page));
+      return hit ? presentCachedImage(hit) : undefined;
+    } catch (error) {
+      log(`image cache read failed: ${error instanceof Error ? error.message : String(error)}`);
+      return undefined;
+    }
+  }
+
+  async function storeOptimizedImage(page: URL, response: Response): Promise<Response> {
+    const bytes = new Uint8Array(await response.arrayBuffer());
+    const headers = new Headers(response.headers);
+    headers.delete("set-cookie");
+    headers.set("content-length", String(bytes.byteLength));
+    headers.set("x-gaf-image-cache", "miss");
+    const live = new Response(bytes, { status: response.status, statusText: response.statusText, headers });
+    const cache = cacheFor();
+    const source = optimizedImageSource(page);
+    if (!cache || bytes.byteLength === 0 || bytes.byteLength > MAX_CACHED_IMAGE_BYTES) return live;
+    const key = imageOptimizerCacheRequest(page);
+    try {
+      const storedHeaders = new Headers(headers);
+      storedHeaders.set("x-gaf-stored-cache-control", response.headers.get("cache-control") ?? "");
+      storedHeaders.set("cache-control", `public, max-age=${imageCacheTtlSeconds(source)}`);
+      storedHeaders.set("x-gaf-image-cache", "hit");
+      await cache.put(key, new Response(bytes, { status: 200, headers: storedHeaders }));
+      rememberOptimizedImage(source, key.url);
+    } catch (error) {
+      log(`image cache write failed: ${error instanceof Error ? error.message : String(error)}`);
+    }
+    return live;
+  }
+
+  /**
+   * Image optimization never takes a document slot and never reads the HTML
+   * cache. The optimizer still receives the visitor's URL unchanged.
+   */
+  async function serveOptimizedImage(
+    request: Request,
+    nextEnv: WorkerEnv,
+    ctx: ExecutionContextLike,
+    page: URL,
+  ): Promise<Response> {
+    if (request.method !== "GET" && request.method !== "HEAD") {
+      return new Response("Method Not Allowed", { status: 405, headers: { allow: "GET, HEAD", "cache-control": "no-store" } });
+    }
+    const privateRequest = request.headers.has("authorization");
+    if (!privateRequest) {
+      const cached = await readImageCache(page);
+      if (cached) return request.method === "HEAD" ? withoutBody(cached) : cached;
+    }
+    return withImageSlot(
+      async () => {
+        if (!privateRequest) {
+          const again = await readImageCache(page);
+          if (again) return request.method === "HEAD" ? withoutBody(again) : again;
+        }
+        const rendered = await next(request, nextEnv, ctx);
+        if (request.method === "HEAD") return withoutBody(rendered);
+        if (privateRequest || !isCacheableImageResponse(rendered)) {
+          return copyResponse(rendered, (headers) => headers.set("x-gaf-image-cache", "miss"));
+        }
+        return storeOptimizedImage(page, rendered);
+      },
+      () => {
+        log(`image queue timed out after ${renderQueueTimeoutMs}ms`);
+        return imageBusyResponse();
+      },
+    );
+  }
+
+  async function renderCacheableDocument(
+    request: Request,
+    active: R2ContentStorage,
+    nextEnv: WorkerEnv,
+    ctx: ExecutionContextLike,
+    normalized: URL,
+  ): Promise<Response> {
+    const reused = await readHtmlCache(normalized);
+    if (reused) return reused;
+    const generation = active.contentGeneration();
+    const rendered = await renderDocument(withNormalizedUrl(request, normalized), active, nextEnv, ctx);
+    const restored = restoreLocaleHomeCache(normalized.pathname, rendered);
+    const marked = copyResponse(restored, (headers) => headers.set("x-gaf-html-cache", "miss"));
+    const cache = cacheFor();
+    if (cache && generation && active.contentGeneration() === generation && isCacheableHtmlResponse(marked)) {
+      await storePublicHtml(
+        cache,
+        publicHtmlCacheRequest(normalized, generation),
+        marked.clone(),
+        log,
+        () => active.contentGeneration() === generation,
+        (stored) => htmlCacheKeys.add(stored),
+      );
+    }
+    return marked;
+  }
+
   return {
     async fetch(request: Request, env: WorkerEnv, ctx: ExecutionContextLike): Promise<Response> {
       const redirect = sameHostHttpsRedirect(request);
@@ -712,67 +950,52 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
         if (baked) return withStagingRobots(baked, env);
       }
 
-      // Uploads and the private asset 404 are answered above and do not take a
-      // render slot. HEAD stays outside the gate; see MAX_INFLIGHT_RENDERS.
-      // A Worker subrequest that continues a render already holds a slot.
-      // Waiting for another slot deadlocks the parent.
       if (typeof env.GAF_RENDER_QUEUE_MS === "string") {
         renderQueueTimeoutMs = parseRenderQueueTimeout(env.GAF_RENDER_QUEUE_MS, renderQueueTimeoutMs);
       }
+      if (isImageOptimizerPath(url.pathname)) {
+        return withStagingRobots(await serveOptimizedImage(request, envForNext, ctx, url), env);
+      }
+
+      // Uploads, images, and the private asset 404 are answered above and do
+      // not take a document slot. HEAD stays outside the gate; see
+      // MAX_INFLIGHT_RENDERS. A Worker subrequest that continues a render
+      // already holds a slot. Waiting for another slot deadlocks the parent.
       const cacheable = isCacheableDocumentRequest(request);
       const normalized = cacheable ? normalizedPublicUrl(url) : url;
-      let generation: string | null = null;
       if (cacheable) {
         try {
-          await storage.refreshIfStale();
-          generation = await storage.ensureContentGeneration();
+          const hit = await readHtmlCache(normalized);
+          if (hit) return withStagingRobots(hit, env);
         } catch (error) {
           if (error instanceof StorageHydrationError) return withStagingRobots(hydrationUnavailable(error, log), env);
           throw error;
         }
-        const cache = cacheFor();
-        if (cache) {
-          try {
-            const hit = await cache.match(publicHtmlCacheRequest(normalized, generation));
-            if (hit) return withStagingRobots(presentCachedHtml(hit), env);
-          } catch (error) {
-            log(`html cache read failed: ${error instanceof Error ? error.message : String(error)}`);
-          }
-        }
       }
 
-      const renderRequest = cacheable ? withNormalizedUrl(request, normalized) : request;
       const subrequest = isRenderSubrequest(request);
-      const rendered =
-        request.method === "HEAD" || subrequest
-          ? await renderDocument(renderRequest, storage, envForNext, ctx)
-          : await withRenderSlot(
-              () => renderDocument(renderRequest, storage, envForNext, ctx),
-              () => {
-                log(`render queue timed out after ${renderQueueTimeoutMs}ms`);
-                return renderBusyResponse();
-              },
-            );
-      const restored = restoreLocaleHomeCache(url.pathname, rendered);
-      if (!cacheable) return withStagingRobots(restored, env);
-      const marked = copyResponse(restored, (headers) => headers.set("x-gaf-html-cache", "miss"));
-      const cache = cacheFor();
-      const generationNow = storage.contentGeneration();
-      if (cache && generation && generationNow === generation && isCacheableHtmlResponse(marked)) {
-        const key = publicHtmlCacheRequest(normalized, generation);
-        const stored = marked.clone();
-        ctx.waitUntil(
-          storePublicHtml(
-            cache,
-            key,
-            stored,
-            log,
-            () => storage.contentGeneration() === generation,
-            (url) => htmlCacheKeys.add(url),
-          ),
+      if (request.method === "HEAD" || subrequest) {
+        const rendered = await renderDocument(
+          cacheable ? withNormalizedUrl(request, normalized) : request,
+          storage,
+          envForNext,
+          ctx,
         );
+        return withStagingRobots(restoreLocaleHomeCache(url.pathname, rendered), env);
       }
-      return withStagingRobots(marked, env);
+      const rendered = await withRenderSlot(
+        () =>
+          cacheable
+            ? renderCacheableDocument(request, storage, envForNext, ctx, normalized)
+            : renderDocument(request, storage, envForNext, ctx).then((response) =>
+                restoreLocaleHomeCache(url.pathname, response),
+              ),
+        () => {
+          log(`render queue timed out after ${renderQueueTimeoutMs}ms`);
+          return renderBusyResponse();
+        },
+      );
+      return withStagingRobots(rendered, env);
     },
     /** For tests and diagnostics. */
     storage: () => storage,

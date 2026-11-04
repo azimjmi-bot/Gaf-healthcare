@@ -1,13 +1,14 @@
 import assert from "node:assert/strict";
 import { afterEach, test } from "node:test";
-import { contentStorage, flushContentWrites, setContentStorage } from "@/lib/storage";
+import { contentStorage, flushContentWrites, setContentStorage, StorageVersionError } from "@/lib/storage";
 import { FakeR2Bucket } from "@/lib/storage/fake-r2-bucket";
-import { GROUP_LAYOUT, MANIFEST_KEY, type ContentManifest } from "@/lib/storage/r2";
+import { GROUP_LAYOUT, MANIFEST_KEY, VERSION_KEY, type ContentManifest } from "@/lib/storage/r2";
 import { COST_ARTICLES_KEY } from "@/data/cost-articles/asset";
 import { CATALOG_SEED_KEY } from "@/lib/catalog-seed";
 import {
   ASSET_KEYS,
   assetsWithUploads,
+  MAX_INFLIGHT_IMAGE_RENDERS,
   MAX_INFLIGHT_RENDERS,
   bakedSitemapAssetPath,
   createWorker,
@@ -1172,4 +1173,357 @@ test("a cache read or write failure still renders the page", async () => {
   assert.equal(next.seen.length, 2, "nothing was stored, so the page rendered again");
   assert.match(logged.join("\n"), /html cache read failed/);
   assert.match(logged.join("\n"), /html cache write failed/);
+});
+
+const HERO = new Uint8Array([1, 2, 3, 4, 5, 6, 7, 8]);
+
+function imageResponse(bytes: Uint8Array = HERO, headers: Record<string, string> = {}) {
+  return new Response(bytes, {
+    status: 200,
+    headers: {
+      "content-type": "image/webp",
+      "content-disposition": "attachment",
+      vary: "Accept",
+      "content-security-policy": "script-src 'none'; frame-src 'none'; sandbox;",
+      ...headers,
+    },
+  });
+}
+
+test("optimized images skip the HTML cache and the document render slots", async () => {
+  const env = makeEnv({ GAF_RENDER_QUEUE_MS: "40" });
+  const cache = new FakeCache();
+  let documents = 0;
+  let images = 0;
+  let releaseDocuments: () => void = () => {};
+  const holdDocuments = new Promise<void>((resolve) => {
+    releaseDocuments = resolve;
+  });
+  const worker = createWorker(
+    async (request: Request) => {
+      const path = new URL(request.url).pathname;
+      if (path === "/_next/image") {
+        images += 1;
+        return imageResponse();
+      }
+      documents += 1;
+      await holdDocuments;
+      return new Response(pageDocument(path), {
+        status: 200,
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": PUBLIC_HTML_CACHE },
+      });
+    },
+    { ...quiet, cache: () => cache },
+  );
+  const held = Array.from({ length: MAX_INFLIGHT_RENDERS }, (_, index) =>
+    worker.fetch(new Request(`https://gaf.healthcare/costs/hold-${index}`), env, ctx()),
+  );
+  await new Promise<void>((resolve) => {
+    const check = () => {
+      if (documents >= MAX_INFLIGHT_RENDERS) resolve();
+      else setTimeout(check, 5);
+    };
+    check();
+  });
+  const contentGetsBefore = env.CONTENT.calls.filter((call) => call.op === "get").length;
+  const imageContext = ctx();
+  const image = await worker.fetch(
+    new Request("https://gaf.healthcare/_next/image?url=%2Fimages%2Fhome-hero.webp&w=640&q=60"),
+    env,
+    imageContext,
+  );
+  assert.equal(image.status, 200);
+  assert.equal(image.headers.get("content-type"), "image/webp");
+  assert.equal(image.headers.get("content-disposition"), "attachment");
+  assert.equal(image.headers.get("vary"), "Accept");
+  assert.equal(image.headers.get("x-gaf-html-cache"), null);
+  assert.equal(image.headers.get("x-gaf-image-cache"), "miss");
+  assert.equal(image.headers.get("content-length"), String(HERO.byteLength));
+  assert.deepEqual([...new Uint8Array(await image.arrayBuffer())], [...HERO]);
+  assert.equal(images, 1);
+  assert.equal(
+    env.CONTENT.calls.filter((call) => call.op === "get").length,
+    contentGetsBefore,
+    "image optimization does not hydrate content",
+  );
+  await imageContext.settle();
+
+  const again = await worker.fetch(
+    new Request("https://gaf.healthcare/_next/image?q=60&w=640&url=%2Fimages%2Fhome-hero.webp"),
+    env,
+    ctx(),
+  );
+  assert.equal(again.headers.get("x-gaf-image-cache"), "hit");
+  assert.equal(again.headers.get("x-gaf-html-cache"), null);
+  assert.equal(again.headers.get("content-type"), "image/webp");
+  assert.equal(again.headers.get("cache-control"), null);
+  assert.deepEqual([...new Uint8Array(await again.arrayBuffer())], [...HERO]);
+  assert.equal(images, 1, "the second size reused the cached bytes");
+
+  const widerContext = ctx();
+  const wider = await worker.fetch(
+    new Request("https://www.gaf.healthcare/_next/image?url=%2Fimages%2Fhome-hero.webp&w=1080&q=60"),
+    env,
+    widerContext,
+  );
+  assert.equal(wider.headers.get("x-gaf-image-cache"), "miss");
+  await widerContext.settle();
+  assert.equal(images, 2, "a different width is a different image");
+  assert.equal(cachedPaths(cache).includes("/"), false);
+  releaseDocuments();
+  await Promise.all(held);
+});
+
+test("image optimization has its own limit and does not block document renders", async () => {
+  const env = makeEnv({ GAF_RENDER_QUEUE_MS: "40" });
+  const cache = new FakeCache();
+  let images = 0;
+  let documents = 0;
+  let releaseImages: () => void = () => {};
+  const holdImages = new Promise<void>((resolve) => {
+    releaseImages = resolve;
+  });
+  const worker = createWorker(
+    async (request: Request) => {
+      const path = new URL(request.url).pathname;
+      if (path === "/_next/image") {
+        images += 1;
+        await holdImages;
+        return imageResponse();
+      }
+      documents += 1;
+      return new Response(pageDocument(path), {
+        status: 200,
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": PUBLIC_HTML_CACHE },
+      });
+    },
+    { ...quiet, cache: () => cache },
+  );
+  const held = Array.from({ length: MAX_INFLIGHT_IMAGE_RENDERS }, (_, index) =>
+    worker.fetch(new Request(`https://gaf.healthcare/_next/image?url=%2Fimages%2Fa.webp&w=${index}&q=60`), env, ctx()),
+  );
+  await new Promise<void>((resolve) => {
+    const check = () => {
+      if (images >= MAX_INFLIGHT_IMAGE_RENDERS) resolve();
+      else setTimeout(check, 5);
+    };
+    check();
+  });
+  const pageContext = ctx();
+  const page = await worker.fetch(new Request("https://gaf.healthcare/doctors"), env, pageContext);
+  assert.equal(page.status, 200);
+  assert.equal(page.headers.get("x-gaf-html-cache"), "miss");
+  assert.equal(documents, 1, "a full image gate still left a document slot free");
+  await pageContext.settle();
+
+  const busy = await worker.fetch(
+    new Request("https://gaf.healthcare/_next/image?url=%2Fimages%2Fa.webp&w=9&q=60"),
+    env,
+    ctx(),
+  );
+  assert.equal(busy.status, 503);
+  assert.equal(busy.headers.get("retry-after"), "2");
+  assert.equal(busy.headers.get("cache-control"), "no-store");
+  assert.equal(busy.headers.get("x-gaf-image-cache"), null);
+  assert.equal(await busy.text(), "The image is busy. Please retry shortly.");
+  assert.equal(images, MAX_INFLIGHT_IMAGE_RENDERS);
+  releaseImages();
+  await Promise.all(held);
+  const stored = [...cache.store.keys()].filter((key) => key.includes("/_next/image"));
+  assert.equal(stored.length, MAX_INFLIGHT_IMAGE_RENDERS, "the 503 image was not cached");
+});
+
+test("failed, empty, and cookied optimizer responses are not cached", async () => {
+  const env = makeEnv();
+  const cache = new FakeCache();
+  let calls = 0;
+  const worker = createWorker(
+    async () => {
+      calls += 1;
+      if (calls === 1) return new Response("nope", { status: 500, headers: { "content-type": "text/plain" } });
+      if (calls === 2) return new Response(new Uint8Array(), { status: 200, headers: { "content-type": "image/webp" } });
+      return imageResponse(HERO, { "set-cookie": "gaf_cms=nope" });
+    },
+    { ...quiet, cache: () => cache },
+  );
+  const url = "https://gaf.healthcare/_next/image?url=%2Fimages%2Fhome-hero.webp&w=64&q=60";
+  assert.equal((await worker.fetch(new Request(url), env, ctx())).status, 500);
+  assert.equal((await worker.fetch(new Request(url), env, ctx())).headers.get("content-length"), "0");
+  const cookied = await worker.fetch(new Request(url), env, ctx());
+  assert.equal(cookied.headers.get("set-cookie"), "gaf_cms=nope");
+  assert.equal(cache.store.size, 0);
+  assert.equal(calls, 3);
+});
+
+test("a request that waited for a render slot reuses the document stored while it waited", async () => {
+  const env = makeEnv({ GAF_RENDER_QUEUE_MS: "2000" });
+  const cache = new FakeCache();
+  let releaseLeader: () => void = () => {};
+  const leaderHold = new Promise<void>((resolve) => {
+    releaseLeader = resolve;
+  });
+  let started = 0;
+  const seen: string[] = [];
+  const worker = createWorker(
+    async (request: Request) => {
+      const path = new URL(request.url).pathname;
+      started += 1;
+      seen.push(path);
+      if (path === "/doctors") await leaderHold;
+      else await new Promise(() => {});
+      return new Response(pageDocument(path), {
+        status: 200,
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": PUBLIC_HTML_CACHE },
+      });
+    },
+    { ...quiet, cache: () => cache },
+  );
+  const fillers = Array.from({ length: MAX_INFLIGHT_RENDERS - 1 }, (_, index) =>
+    worker.fetch(new Request(`https://gaf.healthcare/costs/hold-${index}`), env, ctx()),
+  );
+  const leader = worker.fetch(new Request("https://gaf.healthcare/doctors"), env, ctx());
+  await new Promise<void>((resolve) => {
+    const check = () => {
+      if (started >= MAX_INFLIGHT_RENDERS) resolve();
+      else setTimeout(check, 5);
+    };
+    check();
+  });
+  const waiter = worker.fetch(new Request("https://gaf.healthcare/doctors?utm_source=chatgpt.com"), env, ctx());
+  releaseLeader();
+  const leaderResponse = await leader;
+  const waiterResponse = await waiter;
+  assert.equal(leaderResponse.headers.get("x-gaf-html-cache"), "miss");
+  assert.equal(waiterResponse.headers.get("x-gaf-html-cache"), "hit");
+  assert.equal(await waiterResponse.text(), pageDocument("/doctors"));
+  assert.equal(seen.filter((path) => path === "/doctors").length, 1, "the waiter did not render again");
+  fillers.splice(0, fillers.length);
+});
+
+test("two requests that both obtain a slot still render; the recheck does not share an in-flight render", async () => {
+  const env = makeEnv();
+  const cache = new FakeCache();
+  let release: () => void = () => {};
+  const hold = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  let started = 0;
+  const worker = createWorker(
+    async (request: Request) => {
+      started += 1;
+      await hold;
+      return new Response(pageDocument(new URL(request.url).pathname), {
+        status: 200,
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": PUBLIC_HTML_CACHE },
+      });
+    },
+    { ...quiet, cache: () => cache },
+  );
+  const first = worker.fetch(new Request("https://gaf.healthcare/hospitals"), env, ctx());
+  const second = worker.fetch(new Request("https://gaf.healthcare/hospitals"), env, ctx());
+  await new Promise<void>((resolve) => {
+    const check = () => {
+      if (started >= 2) resolve();
+      else setTimeout(check, 5);
+    };
+    check();
+  });
+  release();
+  const responses = await Promise.all([first, second]);
+  assert.equal(responses[0].headers.get("x-gaf-html-cache"), "miss");
+  assert.equal(responses[1].headers.get("x-gaf-html-cache"), "miss");
+  assert.equal(started, 2);
+});
+
+test("a failed version write keeps the cached HTML and the retry publishes it", async () => {
+  const env = makeEnv();
+  const cache = new FakeCache();
+  const next = htmlDocuments();
+  const worker = createWorker(next.handler, { ...quiet, cache: () => cache });
+  const firstContext = ctx();
+  await worker.fetch(new Request("https://gaf.healthcare/blogs/alpha"), env, firstContext);
+  await firstContext.settle();
+  const before = [...cache.store.keys()][0];
+  assert.ok(before);
+
+  const originalPut = env.CONTENT.put.bind(env.CONTENT);
+  let versionPuts = 0;
+  env.CONTENT.put = async (key, value, options) => {
+    if (key === VERSION_KEY && versionPuts++ === 0) throw new Error("version put failed");
+    return originalPut(key, value, options);
+  };
+  setContentStorage(worker.storage());
+  contentStorage().write("content/cms.json", '{"articles":[{"slug":"alpha","title":"Updated"}]}');
+  await assert.rejects(flushContentWrites(), StorageVersionError);
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(cache.store.has(before), true, "the old generation is still being served");
+  const during = await worker.fetch(new Request("https://gaf.healthcare/blogs/alpha"), env, ctx());
+  assert.equal(during.headers.get("x-gaf-html-cache"), "hit");
+  assert.equal(next.seen.length, 1);
+
+  await flushContentWrites();
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(cache.store.has(before), false);
+  const fresh = await worker.fetch(new Request("https://gaf.healthcare/blogs/alpha"), env, ctx());
+  assert.equal(fresh.headers.get("x-gaf-html-cache"), "miss");
+  assert.equal(next.seen.length, 2);
+});
+
+test("replacing an upload purges the cached file and its optimized derivatives", async () => {
+  const env = makeEnv();
+  const cache = new FakeCache();
+  let optimized = 0;
+  const worker = createWorker(
+    async (request: Request) => {
+      if (new URL(request.url).pathname !== "/_next/image") {
+        return new Response(pageDocument("cms"), {
+          status: 200,
+          headers: { "content-type": "text/html; charset=utf-8", "cache-control": "private, no-store" },
+        });
+      }
+      optimized += 1;
+      return imageResponse(new Uint8Array([optimized]));
+    },
+    { ...quiet, cache: () => cache },
+  );
+  await worker.fetch(new Request("https://gaf.healthcare/cms/media"), env, ctx());
+  setContentStorage(worker.storage());
+  const key = "public/uploads/articles/1700000000-hero.webp";
+  contentStorage().write(key, new Uint8Array([9]));
+  await flushContentWrites();
+
+  const uploadContext = ctx();
+  const upload = await worker.fetch(
+    new Request("https://gaf.healthcare/uploads/articles/1700000000-hero.webp"),
+    env,
+    uploadContext,
+  );
+  assert.deepEqual([...new Uint8Array(await upload.arrayBuffer())], [9]);
+  await uploadContext.settle();
+
+  const imageContext = ctx();
+  const imageUrl = "https://gaf.healthcare/_next/image?url=%2Fuploads%2Farticles%2F1700000000-hero.webp&w=64&q=60";
+  const image = await worker.fetch(new Request(imageUrl), env, imageContext);
+  assert.equal(image.headers.get("x-gaf-image-cache"), "miss");
+  await imageContext.settle();
+  const cachedImage = await worker.fetch(new Request(imageUrl), env, ctx());
+  assert.equal(cachedImage.headers.get("x-gaf-image-cache"), "hit");
+  assert.equal(optimized, 1);
+
+  contentStorage().write(key, new Uint8Array([8, 8]));
+  await flushContentWrites();
+  await new Promise((resolve) => setImmediate(resolve));
+
+  const replaced = await worker.fetch(
+    new Request("https://gaf.healthcare/uploads/articles/1700000000-hero.webp"),
+    env,
+    ctx(),
+  );
+  assert.deepEqual([...new Uint8Array(await replaced.arrayBuffer())], [8, 8]);
+  const reoptimizedContext = ctx();
+  const reoptimized = await worker.fetch(new Request(imageUrl), env, reoptimizedContext);
+  assert.equal(reoptimized.headers.get("x-gaf-image-cache"), "miss");
+  assert.deepEqual([...new Uint8Array(await reoptimized.arrayBuffer())], [2]);
+  assert.equal(optimized, 2, "the derivative of the replaced upload was rendered again");
+  await reoptimizedContext.settle();
 });

@@ -5,7 +5,7 @@ import { loadCatalogCms, saveCatalogCms } from "@/lib/cms/catalog-store";
 import type { RadiationProcedurePagePatch } from "@/lib/cms/catalog-types";
 import { publishableRadiationPatch } from "@/lib/cms/radiation-procedure-admin";
 import { getProcedure, RADIATION_PROCEDURES } from "@/lib/taxonomy";
-import { flushContentWrites } from "@/lib/storage";
+import { flushContentWrites, storageErrorStatus } from "@/lib/storage";
 
 function cleanPatch(body: RadiationProcedurePagePatch): RadiationProcedurePagePatch | null {
   if (body.status !== "draft" && body.status !== "published") return null;
@@ -66,6 +66,11 @@ export async function PUT(
     faqs: patch.faqs?.length ? patch.faqs : previous?.faqs,
   };
   saveCatalogCms(store, "ar");
-  await flushContentWrites();
+  try {
+    await flushContentWrites();
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Could not save this procedure.";
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(error) });
+  }
   return NextResponse.json({ ok: true, slug: taxon.slug, status: patch.status, issues: gate.issues });
 }

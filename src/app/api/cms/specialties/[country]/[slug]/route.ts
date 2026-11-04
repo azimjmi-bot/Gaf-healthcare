@@ -8,7 +8,7 @@ import type { SpecialtyPagePatch } from "@/data/specialty-pages/types";
 import { requireCmsSession } from "@/lib/cms/auth";
 import { editionFromRequest } from "@/lib/cms/edition";
 import { loadCatalogCms, saveCatalogCms } from "@/lib/cms/catalog-store";
-import { flushContentWrites } from "@/lib/storage";
+import { flushContentWrites, storageErrorStatus } from "@/lib/storage";
 
 export async function PUT(
   request: Request,
@@ -35,6 +35,11 @@ export async function PUT(
   const key = specialtyPageKey(country, slug);
   store.specialtyPageOverrides[key] = saveableSpecialtyPageFields(body);
   saveCatalogCms(store, edition);
-  await flushContentWrites();
+  try {
+    await flushContentWrites();
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Could not save this specialty page.";
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(error) });
+  }
   return NextResponse.json({ ok: true, key });
 }

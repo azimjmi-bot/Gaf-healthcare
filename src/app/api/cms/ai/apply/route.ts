@@ -4,7 +4,7 @@ import { editionFromRequest } from "@/lib/cms/edition";
 import { applyGeneration } from "@/lib/ai/apply";
 import { getGeneration, updateGeneration } from "@/lib/ai/history";
 import { emptyStudioFields, type StudioFields } from "@/lib/ai/types";
-import { flushContentWrites } from "@/lib/storage";
+import { flushContentWrites, storageErrorStatus } from "@/lib/storage";
 
 export async function POST(request: Request) {
   try {
@@ -24,19 +24,24 @@ export async function POST(request: Request) {
   if (!current) return NextResponse.json({ error: "Generation not found." }, { status: 404 });
   const output = body.output ? { ...emptyStudioFields(), ...body.output } : current.output;
   const edition = editionFromRequest(request);
-  if (body.mode === "approve") {
-    const next = updateGeneration(current.id, { output, status: "approved" });
+  try {
+    if (body.mode === "approve") {
+      const next = updateGeneration(current.id, { output, status: "approved" });
+      await flushContentWrites();
+      return NextResponse.json(next);
+    }
+    const result = applyGeneration({ ...current, output }, body.mode, edition);
+    if ("error" in result && result.error) {
+      return NextResponse.json({ error: result.error }, { status: 400 });
+    }
+    const next = updateGeneration(current.id, {
+      output,
+      status: body.mode === "publish" ? "published" : "saved_draft",
+    });
     await flushContentWrites();
-    return NextResponse.json(next);
+    return NextResponse.json({ ...next, appliedUrl: result.url });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Could not apply this generation.";
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(error) });
   }
-  const result = applyGeneration({ ...current, output }, body.mode, edition);
-  if ("error" in result && result.error) {
-    return NextResponse.json({ error: result.error }, { status: 400 });
-  }
-  const next = updateGeneration(current.id, {
-    output,
-    status: body.mode === "publish" ? "published" : "saved_draft",
-  });
-  await flushContentWrites();
-  return NextResponse.json({ ...next, appliedUrl: result.url });
 }

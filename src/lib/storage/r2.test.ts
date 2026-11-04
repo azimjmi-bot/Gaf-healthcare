@@ -350,7 +350,7 @@ test("concurrent version stamps merge so neither isolate's group is dropped", as
   assert.equal(watcher.read("content/ar/cms.json"), arBody);
 });
 
-test("a failed version broadcast does not fail the save and is retried on the next flush", async () => {
+test("a failed version broadcast fails the flush, keeps the content, and is retried", async () => {
   const bucket = seededBucket();
   const storage = isolate(bucket);
   await storage.ensureHydrated("en");
@@ -362,13 +362,12 @@ test("a failed version broadcast does not fail the save and is retried on the ne
     if (key === VERSION_KEY && versionPuts++ === 0) throw new Error("version put failed");
     return originalPut(key, value, options);
   };
-  await storage.flush();
-  assert.equal(bucket.text("content/cms.json"), "x", "the save itself is durable and acknowledged");
-  assert.equal(bucket.text(VERSION_KEY), null);
-  storage.write("content/catalog-cms.json", "y");
+  await assert.rejects(storage.flush(), /content version was not published: version put failed/);
+  assert.equal(bucket.text("content/cms.json"), "x", "the content object is durable even though the stamp was not");
+  assert.equal(bucket.text(VERSION_KEY), null, "cached HTML would still match the previous generation");
   await storage.flush();
   const published = JSON.parse(bucket.text(VERSION_KEY)!) as { groups: Record<string, string> };
-  assert.ok(published.groups.en, "the dirty group was republished");
+  assert.ok(published.groups.en, "the dirty group was republished on retry");
 });
 
 // ------------------------------------------------------------ keys outside content/

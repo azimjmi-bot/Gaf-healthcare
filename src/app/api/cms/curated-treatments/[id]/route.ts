@@ -72,6 +72,11 @@ export async function DELETE(_request: Request, context: Context) {
   treatment.status = "archived";
   treatment.updatedAt = new Date().toISOString();
   saveCuratedTreatments(store);
-  await flushContentWrites();
+  try {
+    await flushContentWrites();
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "Could not archive this treatment.";
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(error) });
+  }
   return NextResponse.json({ ok: true });
 }

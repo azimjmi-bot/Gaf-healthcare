@@ -3,7 +3,7 @@ import { MemoryContentStorage } from "@/lib/storage/memory";
 import { StorageConflictError, type ContentStorage } from "@/lib/storage/types";
 
 export type { ContentStorage } from "@/lib/storage/types";
-export { StorageConflictError, StorageKeyError } from "@/lib/storage/types";
+export { StorageConflictError, StorageKeyError, StorageVersionError } from "@/lib/storage/types";
 
 type ChangeListener = (key: string) => void;
 type Registry = { active: ContentStorage | undefined; listeners: Set<ChangeListener> };
