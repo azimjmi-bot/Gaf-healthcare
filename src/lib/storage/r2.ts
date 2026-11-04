@@ -97,6 +97,13 @@ export type ContentManifest = {
 
 type VersionDocument = { groups: Partial<Record<EditionGroup, string>>; updatedAt: string };
 
+const PUBLIC_EDITIONS = ["en", "ar", "fr", "ru", "sw"] as const;
+
+/** Stable id of the public edition stamps. A publish changes it, so cached HTML misses. */
+export function formatPublicContentGeneration(document: VersionDocument): string {
+  return PUBLIC_EDITIONS.map((group) => `${group}=${document.groups[group] ?? ""}`).join("&");
+}
+
 /** Thrown when a group cannot be brought into memory; the Worker answers 503. */
 export class StorageHydrationError extends Error {
   readonly group: EditionGroup;
@@ -158,6 +165,11 @@ export type R2ContentStorageOptions = {
   log?: (message: string) => void;
   /** Called after a media object was durably written or deleted (cache purges). */
   onStaticChange?: (bucketKey: string, kind: "put" | "delete") => void;
+  /**
+   * Called when a public edition stamp changes (this isolate published, or it
+   * noticed another isolate's publish). Used to drop cached public HTML.
+   */
+  onContentPublished?: (groups: readonly EditionGroup[]) => void;
 };
 
 const UPLOADS_PREFIX = "public/uploads/";
@@ -219,6 +231,7 @@ export class R2ContentStorage implements ContentStorage {
   private readonly concurrency: number;
   private readonly log: (message: string) => void;
   private readonly onStaticChange?: (bucketKey: string, kind: "put" | "delete") => void;
+  private readonly onContentPublished?: (groups: readonly EditionGroup[]) => void;
 
   /** What readers see: committed objects plus optimistic local writes. */
   private readonly entries = new Map<string, Entry>();
@@ -253,6 +266,7 @@ export class R2ContentStorage implements ContentStorage {
     this.concurrency = options.concurrency ?? 16;
     this.log = options.log ?? ((message) => console.warn(`[gaf] ${message}`));
     this.onStaticChange = options.onStaticChange;
+    this.onContentPublished = options.onContentPublished;
   }
 
   // ---------------------------------------------------------------- reads
@@ -351,6 +365,25 @@ export class R2ContentStorage implements ContentStorage {
    * this one last looked, at most once per `versionCheckIntervalMs`. Cheap:
    * one conditional GET that usually returns "not modified".
    */
+  /**
+   * Public edition stamps, or null before the version document has been read.
+   * Cached HTML is keyed by this so a publish stops matching the old entry.
+   */
+  contentGeneration(): string | null {
+    if (!this.versionBaselined) return null;
+    return formatPublicContentGeneration(this.versionDocument);
+  }
+
+  /** Read the version document once, then return {@link contentGeneration}. */
+  async ensureContentGeneration(): Promise<string> {
+    try {
+      await this.baselineVersion();
+    } catch (error) {
+      throw new StorageHydrationError("en", "bucket unreachable", { cause: error });
+    }
+    return formatPublicContentGeneration(this.versionDocument);
+  }
+
   refreshIfStale(): Promise<void> {
     if (this.hydrated.size === 0) return Promise.resolve();
     if (this.versionCheck) return this.versionCheck;
@@ -518,6 +551,7 @@ export class R2ContentStorage implements ContentStorage {
         }
         this.versionDocument = next;
         this.versionEtag = result.etag;
+        this.onContentPublished?.(groups);
         return;
       }
       throw new Error("version document changed repeatedly");
@@ -557,6 +591,7 @@ export class R2ContentStorage implements ContentStorage {
       this.versionEtag = object.etag;
       this.versionDocument = next;
       for (const group of stale) await this.rehydrate(group);
+      if (stale.length > 0) this.onContentPublished?.(stale);
     } catch (error) {
       // A failed check leaves the current copy in place; the next request tries again.
       this.log(`version check failed: ${error instanceof Error ? error.message : String(error)}`);

@@ -15,9 +15,15 @@
  *    when that asset shipped. Building the English catalog inside a request
  *    exceeds the Worker CPU limit (Cloudflare error 1102). The file is not a
  *    public asset; `/_gaf/*` stays 404.
- * 4. Hydrate every content group the request can read, answering 503 when
+ * 4. Serve a cached public HTML document when this isolate already knows the
+ *    content generation and the edge cache has that document. Tracking
+ *    parameters share one entry. CMS, API, enquiry, and authenticated
+ *    responses are never stored.
+ * 5. Hydrate every content group the request can read, answering 503 when
  *    that is not possible, then check whether another isolate has published
- *    newer content. Only then is the request handed to Next.
+ *    newer content. Only then is the request handed to Next. A document that
+ *    cannot obtain a render slot within the queue bound answers 503 instead
+ *    of waiting with no bytes.
  */
 import { COST_ARTICLES_KEY } from "@/data/cost-articles/asset";
 import { CATALOG_SEED_KEY } from "@/lib/catalog-seed";
@@ -52,6 +58,11 @@ export interface WorkerEnv {
    * production Worker keep their existing behavior.
    */
   GAF_INDEXING?: string;
+  /**
+   * How long a document may wait for a render slot, in milliseconds.
+   * Unset uses {@link DEFAULT_RENDER_QUEUE_TIMEOUT_MS}. Invalid values do too.
+   */
+  GAF_RENDER_QUEUE_MS?: string;
   [binding: string]: unknown;
 }
 
@@ -148,6 +159,203 @@ function hasCmsCookie(request: Request): boolean {
   return header.split(";").some((part) => part.trim().startsWith("gaf_cms="));
 }
 
+/** CMS edition selection changes the editor, so it must not share a public cache entry. */
+function hasCmsEditionCookie(request: Request): boolean {
+  const header = request.headers.get("cookie");
+  if (!header) return false;
+  return header.split(";").some((part) => part.trim().startsWith("gaf_cms_edition="));
+}
+
+/**
+ * Shared-cache lifetime for public HTML. Matches `PUBLIC_HTML_CACHE` in
+ * `src/proxy.ts` (`s-maxage=300`). The Cache API ignores `s-maxage` and
+ * refuses `max-age=0`, so the stored copy uses `max-age` of this many
+ * seconds. The visitor still receives the Cache-Control Next set.
+ */
+export const PUBLIC_HTML_SHARED_TTL_SECONDS = 300;
+
+const HTML_CACHE_KEY_ORIGIN = "https://gaf-html-cache.internal/";
+
+/**
+ * Parameters that identify a campaign or click and do not change the document.
+ * Anything else, including `page`, `hospital`, `treatment`, and `doctor`,
+ * stays in the cache key and in the URL Next renders.
+ */
+const TRACKING_PARAMS = new Set([
+  "_ga",
+  "_gl",
+  "dclid",
+  "epik",
+  "fbclid",
+  "gad_campaignid",
+  "gad_source",
+  "gbraid",
+  "gclid",
+  "gclsrc",
+  "igshid",
+  "li_fat_id",
+  "mc_cid",
+  "mc_eid",
+  "msclkid",
+  "ncid",
+  "pk_campaign",
+  "pk_cid",
+  "pk_content",
+  "pk_kwd",
+  "pk_medium",
+  "pk_source",
+  "rb_clickid",
+  "sccid",
+  "srsltid",
+  "ttclid",
+  "twclid",
+  "wbraid",
+  "yclid",
+]);
+
+export function isTrackingParam(name: string): boolean {
+  const key = name.toLowerCase();
+  if (key.startsWith("utm_") || key.startsWith("hsa_") || key.startsWith("mtm_")) return true;
+  return TRACKING_PARAMS.has(key);
+}
+
+/** Same origin, path, and content parameters. Tracking parameters are removed. */
+export function normalizedPublicUrl(input: URL): URL {
+  const next = new URL(input.href);
+  const kept: [string, string][] = [];
+  for (const [key, value] of next.searchParams) {
+    if (!isTrackingParam(key)) kept.push([key, value]);
+  }
+  kept.sort((a, b) => (a[0] === b[0] ? (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0) : a[0] < b[0] ? -1 : 1));
+  next.search = "";
+  for (const [key, value] of kept) next.searchParams.append(key, value);
+  next.hash = "";
+  return next;
+}
+
+function isEnquiryPath(pathname: string): boolean {
+  return pathname === "/consult" || pathname.endsWith("/consult");
+}
+
+function isUncacheablePath(pathname: string): boolean {
+  const path = pathname.length > 1 && pathname.endsWith("/") ? pathname.slice(0, -1) : pathname;
+  if (path === "/cms" || path.startsWith("/cms/")) return true;
+  if (path === "/api" || path.startsWith("/api/")) return true;
+  return isEnquiryPath(path);
+}
+
+/** A full document navigation. RSC payloads, prefetches, and subrequests are not HTML cache entries. */
+export function isCacheableDocumentRequest(request: Request): boolean {
+  if (request.method !== "GET") return false;
+  if (isRenderSubrequest(request)) return false;
+  const headers = request.headers;
+  if (headers.has("authorization")) return false;
+  if (hasCmsCookie(request) || hasCmsEditionCookie(request)) return false;
+  for (const name of ["rsc", "next-router-prefetch", "next-router-segment-prefetch", "next-router-state-tree", "next-url"]) {
+    if (headers.has(name)) return false;
+  }
+  const url = new URL(request.url);
+  return !isUncacheablePath(url.pathname);
+}
+
+function isCacheableHtmlResponse(response: Response): boolean {
+  if (response.status !== 200) return false;
+  if (response.headers.has("set-cookie")) return false;
+  const type = response.headers.get("content-type") ?? "";
+  if (!type.toLowerCase().includes("text/html")) return false;
+  const cacheControl = response.headers.get("cache-control") ?? "";
+  if (!/\bpublic\b/i.test(cacheControl)) return false;
+  if (/\b(?:private|no-store|no-cache)\b/i.test(cacheControl)) return false;
+  return true;
+}
+
+export function isCompleteHtmlDocument(body: string): boolean {
+  const trimmed = body.trim();
+  if (trimmed.length < 15) return false;
+  const start = trimmed.slice(0, 64).toLowerCase();
+  const opens = start.startsWith("<!doctype html") || start.startsWith("<html");
+  return opens && trimmed.toLowerCase().endsWith("</html>");
+}
+
+/** Cache key. Hostname, path, content query, and content generation each stay distinct. */
+export function publicHtmlCacheRequest(page: URL, generation: string): Request {
+  const key = new URL(HTML_CACHE_KEY_ORIGIN);
+  key.searchParams.set("origin", page.origin);
+  key.searchParams.set("path", page.pathname);
+  key.searchParams.set("query", page.search.startsWith("?") ? page.search.slice(1) : page.search);
+  key.searchParams.set("generation", generation);
+  return new Request(key.toString(), { method: "GET" });
+}
+
+function withNormalizedUrl(request: Request, url: URL): Request {
+  if (url.href === request.url) return request;
+  return new Request(url, request);
+}
+
+function copyResponse(response: Response, mutate: (headers: Headers) => void): Response {
+  const headers = new Headers(response.headers);
+  mutate(headers);
+  return new Response(NULL_BODY_STATUS.has(response.status) ? null : response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
+
+function presentCachedHtml(cached: Response): Response {
+  return copyResponse(cached, (headers) => {
+    const original = headers.get("x-gaf-stored-cache-control");
+    headers.delete("x-gaf-stored-cache-control");
+    if (original) headers.set("cache-control", original);
+    headers.set("x-gaf-html-cache", "hit");
+  });
+}
+
+function boundedQueueTimeout(configured: number | undefined): number {
+  if (configured === undefined) return DEFAULT_RENDER_QUEUE_TIMEOUT_MS;
+  if (!Number.isFinite(configured) || configured < 0) return DEFAULT_RENDER_QUEUE_TIMEOUT_MS;
+  return Math.min(MAX_RENDER_QUEUE_TIMEOUT_MS, Math.floor(configured));
+}
+
+async function storePublicHtml(
+  cache: CacheLike,
+  key: Request,
+  response: Response,
+  log: (message: string) => void,
+  stillCurrent: () => boolean,
+  remember: (url: string) => void,
+): Promise<void> {
+  try {
+    const bytes = new Uint8Array(await response.arrayBuffer());
+    if (!isCompleteHtmlDocument(new TextDecoder().decode(bytes))) return;
+    if (!stillCurrent()) return;
+    const headers = new Headers(response.headers);
+    headers.set("x-gaf-stored-cache-control", headers.get("cache-control") ?? "");
+    headers.set("cache-control", `public, max-age=${PUBLIC_HTML_SHARED_TTL_SECONDS}`);
+    headers.set("x-gaf-html-cache", "hit");
+    headers.delete("set-cookie");
+    await cache.put(key, new Response(bytes, { status: 200, headers }));
+    if (!stillCurrent()) {
+      await cache.delete(key);
+      return;
+    }
+    remember(key.url);
+  } catch (error) {
+    log(`html cache write failed: ${error instanceof Error ? error.message : String(error)}`);
+  }
+}
+
+function renderBusyResponse(): Response {
+  return new Response("The page is busy. Please retry shortly.", {
+    status: 503,
+    headers: {
+      "content-type": "text/plain; charset=utf-8",
+      "cache-control": "no-store",
+      "retry-after": RENDER_QUEUE_RETRY_AFTER,
+    },
+  });
+}
+
 /**
  * How many document renders one isolate may run at once.
  *
@@ -158,9 +366,10 @@ function hasCmsCookie(request: Request): boolean {
  * documents together — 24 renders — and a fresh 120 MiB isolate then dies in
  * the cost pages with a mark-compact that frees nothing (about 108 → 106).
  * Eight is the largest concurrency that workload already survived. Further
- * requests wait; their response bytes are unchanged. HEAD is exempt because
- * OpenNext revalidation calls this worker again while a render still holds
- * its slot, and counting that call would deadlock.
+ * requests wait, but only until the render-queue timeout. After that they
+ * receive a 503 with Retry-After instead of hanging with no bytes. HEAD is
+ * exempt because OpenNext revalidation calls this worker again while a render
+ * still holds its slot, and counting that call would deadlock.
  *
  * Waiting is a same-request timer, not a shared waiter queue. workerd cancels
  * a promise that one request resolves from inside another request, which
@@ -174,6 +383,21 @@ function hasCmsCookie(request: Request): boolean {
  * visitor can send them, so they do not open the gate on their own.
  */
 export const MAX_INFLIGHT_RENDERS = 8;
+
+/**
+ * How long a visitor document waits for a render slot before a 503.
+ * The render itself is not cancelled; only the silent queue is bounded.
+ * `GAF_RENDER_QUEUE_MS` overrides this, capped at {@link MAX_RENDER_QUEUE_TIMEOUT_MS}.
+ */
+export const DEFAULT_RENDER_QUEUE_TIMEOUT_MS = 2000;
+export const MAX_RENDER_QUEUE_TIMEOUT_MS = 10_000;
+export const RENDER_QUEUE_RETRY_AFTER = "2";
+
+export function parseRenderQueueTimeout(value: string, fallback: number): number {
+  const parsed = Number(value);
+  if (!Number.isFinite(parsed) || parsed < 0) return fallback;
+  return Math.min(MAX_RENDER_QUEUE_TIMEOUT_MS, Math.floor(parsed));
+}
 
 /**
  * Cloudflare adds this on a Worker `fetch()` subrequest and overwrites a
@@ -245,11 +469,16 @@ function restoreLocaleHomeCache(pathname: string, response: Response) {
   });
 }
 
-function createRenderGate(limit: number, onPeak?: (peak: number) => void) {
+function createRenderGate(limit: number, timeoutMs: () => number, onPeak?: (peak: number) => void) {
   let inflight = 0;
   let peak = 0;
-  return async function withRenderSlot<T>(run: () => Promise<T>): Promise<T> {
-    while (inflight >= limit) await waitForSlot(15);
+  return async function withRenderSlot<T>(run: () => Promise<T>, onBusy: () => T | Promise<T>): Promise<T> {
+    const deadline = Date.now() + timeoutMs();
+    while (inflight >= limit) {
+      const remaining = deadline - Date.now();
+      if (remaining <= 0) return onBusy();
+      await waitForSlot(Math.min(15, remaining));
+    }
     inflight += 1;
     if (inflight > peak) {
       peak = inflight;
@@ -345,6 +574,8 @@ export type WorkerRuntimeOptions = {
   cache?: () => CacheLike | undefined;
   log?: (message: string) => void;
   versionCheckIntervalMs?: number;
+  /** Overrides {@link DEFAULT_RENDER_QUEUE_TIMEOUT_MS} when the env binding is unset. */
+  renderQueueTimeoutMs?: number;
 };
 
 export interface CacheLike {
@@ -369,6 +600,21 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
   let envForNext: WorkerEnv | undefined;
   /** Hosts this isolate has served `/uploads/*` on; a deletion purges each. */
   const origins = new Set<string>();
+  /** Public HTML cache keys this isolate has stored. A publish deletes them. */
+  const htmlCacheKeys = new Set<string>();
+  let renderQueueTimeoutMs = boundedQueueTimeout(options.renderQueueTimeoutMs);
+
+  function purgeHtmlCache() {
+    const cache = cacheFor();
+    const keys = [...htmlCacheKeys];
+    htmlCacheKeys.clear();
+    if (!cache) return;
+    for (const key of keys) {
+      void cache.delete(key).catch((error: unknown) => {
+        log(`html cache purge failed: ${error instanceof Error ? error.message : String(error)}`);
+      });
+    }
+  }
 
   function purgeUpload(bucketKey: string) {
     const cache = cacheFor();
@@ -389,6 +635,7 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       assetKeys: ASSET_KEYS,
       versionCheckIntervalMs: options.versionCheckIntervalMs,
       log,
+      onContentPublished: () => purgeHtmlCache(),
       onStaticChange: (bucketKey, kind) => {
         if (kind === "delete") purgeUpload(bucketKey);
       },
@@ -400,9 +647,13 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
     return { storage, envForNext };
   }
 
-  const withRenderSlot = createRenderGate(MAX_INFLIGHT_RENDERS, (peak) => {
-    log(`render gate in-flight peak ${peak}/${MAX_INFLIGHT_RENDERS}`);
-  });
+  const withRenderSlot = createRenderGate(
+    MAX_INFLIGHT_RENDERS,
+    () => renderQueueTimeoutMs,
+    (peak) => {
+      log(`render gate in-flight peak ${peak}/${MAX_INFLIGHT_RENDERS}`);
+    },
+  );
 
   async function renderDocument(
     request: Request,
@@ -465,12 +716,63 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       // render slot. HEAD stays outside the gate; see MAX_INFLIGHT_RENDERS.
       // A Worker subrequest that continues a render already holds a slot.
       // Waiting for another slot deadlocks the parent.
+      if (typeof env.GAF_RENDER_QUEUE_MS === "string") {
+        renderQueueTimeoutMs = parseRenderQueueTimeout(env.GAF_RENDER_QUEUE_MS, renderQueueTimeoutMs);
+      }
+      const cacheable = isCacheableDocumentRequest(request);
+      const normalized = cacheable ? normalizedPublicUrl(url) : url;
+      let generation: string | null = null;
+      if (cacheable) {
+        try {
+          await storage.refreshIfStale();
+          generation = await storage.ensureContentGeneration();
+        } catch (error) {
+          if (error instanceof StorageHydrationError) return withStagingRobots(hydrationUnavailable(error, log), env);
+          throw error;
+        }
+        const cache = cacheFor();
+        if (cache) {
+          try {
+            const hit = await cache.match(publicHtmlCacheRequest(normalized, generation));
+            if (hit) return withStagingRobots(presentCachedHtml(hit), env);
+          } catch (error) {
+            log(`html cache read failed: ${error instanceof Error ? error.message : String(error)}`);
+          }
+        }
+      }
+
+      const renderRequest = cacheable ? withNormalizedUrl(request, normalized) : request;
       const subrequest = isRenderSubrequest(request);
-      const response =
+      const rendered =
         request.method === "HEAD" || subrequest
-          ? await renderDocument(request, storage, envForNext, ctx)
-          : await withRenderSlot(() => renderDocument(request, storage, envForNext, ctx));
-      return withStagingRobots(restoreLocaleHomeCache(url.pathname, response), env);
+          ? await renderDocument(renderRequest, storage, envForNext, ctx)
+          : await withRenderSlot(
+              () => renderDocument(renderRequest, storage, envForNext, ctx),
+              () => {
+                log(`render queue timed out after ${renderQueueTimeoutMs}ms`);
+                return renderBusyResponse();
+              },
+            );
+      const restored = restoreLocaleHomeCache(url.pathname, rendered);
+      if (!cacheable) return withStagingRobots(restored, env);
+      const marked = copyResponse(restored, (headers) => headers.set("x-gaf-html-cache", "miss"));
+      const cache = cacheFor();
+      const generationNow = storage.contentGeneration();
+      if (cache && generation && generationNow === generation && isCacheableHtmlResponse(marked)) {
+        const key = publicHtmlCacheRequest(normalized, generation);
+        const stored = marked.clone();
+        ctx.waitUntil(
+          storePublicHtml(
+            cache,
+            key,
+            stored,
+            log,
+            () => storage.contentGeneration() === generation,
+            (url) => htmlCacheKeys.add(url),
+          ),
+        );
+      }
+      return withStagingRobots(marked, env);
     },
     /** For tests and diagnostics. */
     storage: () => storage,

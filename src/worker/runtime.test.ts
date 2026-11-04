@@ -856,3 +856,320 @@ test("without GAF_INDEXING=off the runtime leaves indexing headers, status, and 
     assert.equal(hidden.headers.get("cache-control"), "no-store");
   }
 });
+
+// --------------------------------------------------------------- html cache
+
+const PUBLIC_HTML_CACHE = "public, s-maxage=300, stale-while-revalidate=86400";
+
+function pageDocument(label: string) {
+  return `<!DOCTYPE html><html><body>${label}</body></html>`;
+}
+
+function cachedPaths(cache: FakeCache) {
+  return [...cache.store.keys()].map((key) => new URL(key).searchParams.get("path"));
+}
+
+function htmlDocuments() {
+  const seen: string[] = [];
+  const handler = async (request: Request) => {
+    seen.push(request.url);
+    const url = new URL(request.url);
+    const authed = (request.headers.get("cookie") ?? "").includes("gaf_cms=");
+    return new Response(pageDocument(authed ? "private" : `${url.origin}${url.pathname}${url.search}`), {
+      status: 200,
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": PUBLIC_HTML_CACHE,
+      },
+    });
+  };
+  return { seen, handler };
+}
+
+test("the first public HTML request renders and the second reuses the cached document", async () => {
+  const env = makeEnv();
+  const cache = new FakeCache();
+  const next = htmlDocuments();
+  const worker = createWorker(next.handler, { ...quiet, cache: () => cache });
+  const firstContext = ctx();
+  const first = await worker.fetch(new Request("https://gaf.healthcare/"), env, firstContext);
+  assert.equal(first.status, 200);
+  assert.equal(first.headers.get("x-gaf-html-cache"), "miss");
+  assert.equal(first.headers.get("cache-control"), PUBLIC_HTML_CACHE);
+  assert.equal(await first.text(), pageDocument("https://gaf.healthcare/"));
+  assert.equal(next.seen.length, 1);
+  await firstContext.settle();
+  assert.equal(cache.store.size, 1);
+  const stored = [...cache.store.values()][0];
+  assert.equal(stored.headers.get("cache-control"), `public, max-age=${300}`);
+  assert.equal(stored.headers.get("x-gaf-stored-cache-control"), PUBLIC_HTML_CACHE);
+
+  const second = await worker.fetch(new Request("https://gaf.healthcare/"), env, ctx());
+  assert.equal(second.status, 200);
+  assert.equal(second.headers.get("x-gaf-html-cache"), "hit");
+  assert.equal(second.headers.get("cache-control"), PUBLIC_HTML_CACHE);
+  assert.equal(await second.text(), pageDocument("https://gaf.healthcare/"));
+  assert.equal(next.seen.length, 1, "the cached document did not render again");
+
+  const flight = await worker.fetch(new Request("https://gaf.healthcare/", { headers: { rsc: "1" } }), env, ctx());
+  assert.equal(flight.headers.get("x-gaf-html-cache"), null);
+  assert.equal(await flight.text(), pageDocument("https://gaf.healthcare/"));
+  assert.equal(next.seen.length, 2, "an RSC payload is not served from the HTML cache");
+});
+
+test("tracking parameters share one cache entry and do not change the rendered URL", async () => {
+  const env = makeEnv();
+  const cache = new FakeCache();
+  const next = htmlDocuments();
+  const worker = createWorker(next.handler, { ...quiet, cache: () => cache });
+  const firstContext = ctx();
+  const tracked = await worker.fetch(
+    new Request("https://gaf.healthcare/?utm_source=chatgpt.com&utm_medium=referral&gclid=abc"),
+    env,
+    firstContext,
+  );
+  assert.equal(await tracked.text(), pageDocument("https://gaf.healthcare/"));
+  assert.equal(next.seen[0], "https://gaf.healthcare/");
+  await firstContext.settle();
+
+  const campaign = await worker.fetch(
+    new Request("https://gaf.healthcare/?utm_campaign=spring&fbclid=xyz"),
+    env,
+    ctx(),
+  );
+  assert.equal(campaign.headers.get("x-gaf-html-cache"), "hit");
+  assert.equal(await campaign.text(), pageDocument("https://gaf.healthcare/"));
+  assert.equal(next.seen.length, 1);
+
+  const www = await worker.fetch(new Request("https://www.gaf.healthcare/?utm_source=chatgpt.com"), env, ctx());
+  assert.equal(www.headers.get("x-gaf-html-cache"), "miss");
+  assert.equal(next.seen[1], "https://www.gaf.healthcare/");
+  const arabic = await worker.fetch(new Request("https://gaf.healthcare/ar?utm_source=chatgpt.com"), env, ctx());
+  assert.equal(arabic.headers.get("x-gaf-html-cache"), "miss");
+  assert.equal(next.seen[2], "https://gaf.healthcare/ar");
+  assert.equal(next.seen.length, 3, "hostname and locale stay distinct");
+});
+
+test("content query parameters stay distinct while tracking parameters reuse that entry", async () => {
+  const env = makeEnv();
+  const cache = new FakeCache();
+  const next = htmlDocuments();
+  const worker = createWorker(next.handler, { ...quiet, cache: () => cache });
+  const firstContext = ctx();
+  const pageTwo = await worker.fetch(
+    new Request("https://gaf.healthcare/doctors?page=2&hospital=apollo"),
+    env,
+    firstContext,
+  );
+  assert.equal(pageTwo.status, 200);
+  assert.equal(next.seen[0], "https://gaf.healthcare/doctors?hospital=apollo&page=2");
+  await firstContext.settle();
+
+  const reordered = await worker.fetch(
+    new Request("https://gaf.healthcare/doctors?utm_source=chatgpt.com&page=2&hospital=apollo"),
+    env,
+    ctx(),
+  );
+  assert.equal(reordered.headers.get("x-gaf-html-cache"), "hit");
+  assert.equal(await reordered.text(), pageDocument("https://gaf.healthcare/doctors?hospital=apollo&page=2"));
+  assert.equal(next.seen.length, 1);
+
+  const pageThree = await worker.fetch(new Request("https://gaf.healthcare/doctors?page=3&hospital=apollo"), env, ctx());
+  assert.equal(pageThree.headers.get("x-gaf-html-cache"), "miss");
+  assert.equal(next.seen.length, 2);
+  assert.equal(next.seen[1], "https://gaf.healthcare/doctors?hospital=apollo&page=3");
+});
+
+test("CMS, enquiry, API, and authenticated responses are never cached", async () => {
+  const env = makeEnv();
+  const cache = new FakeCache();
+  const next = htmlDocuments();
+  const worker = createWorker(next.handler, { ...quiet, cache: () => cache });
+
+  const login = await worker.fetch(new Request("https://gaf.healthcare/cms/login"), env, ctx());
+  assert.equal(login.headers.get("x-gaf-html-cache"), null);
+  const loginAgain = await worker.fetch(new Request("https://gaf.healthcare/cms/login"), env, ctx());
+  assert.equal(await loginAgain.text(), pageDocument("https://gaf.healthcare/cms/login"));
+  const consult = await worker.fetch(new Request("https://gaf.healthcare/consult?doctor=dr-a"), env, ctx());
+  const consultAgain = await worker.fetch(new Request("https://gaf.healthcare/ar/consult?doctor=dr-a"), env, ctx());
+  const api = await worker.fetch(new Request("https://gaf.healthcare/api/consult"), env, ctx());
+  const apiAgain = await worker.fetch(new Request("https://gaf.healthcare/api/consult"), env, ctx());
+  assert.equal(await consult.text(), pageDocument("https://gaf.healthcare/consult?doctor=dr-a"));
+  assert.equal(await consultAgain.text(), pageDocument("https://gaf.healthcare/ar/consult?doctor=dr-a"));
+  assert.equal(await api.text(), pageDocument("https://gaf.healthcare/api/consult"));
+  assert.equal(await apiAgain.text(), pageDocument("https://gaf.healthcare/api/consult"));
+
+  const context = ctx();
+  const publicPage = await worker.fetch(new Request("https://gaf.healthcare/doctors"), env, context);
+  await context.settle();
+  const authed = await worker.fetch(
+    new Request("https://gaf.healthcare/doctors", { headers: { cookie: "gaf_cms=editor-token" } }),
+    env,
+    ctx(),
+  );
+  assert.equal(authed.headers.get("x-gaf-html-cache"), null);
+  assert.equal(await authed.text(), pageDocument("private"));
+  const edition = await worker.fetch(
+    new Request("https://gaf.healthcare/doctors", { headers: { cookie: "gaf_cms_edition=ar" } }),
+    env,
+    ctx(),
+  );
+  assert.equal(edition.headers.get("x-gaf-html-cache"), null);
+  const again = await worker.fetch(new Request("https://gaf.healthcare/doctors"), env, ctx());
+  assert.equal(again.headers.get("x-gaf-html-cache"), "hit");
+  assert.equal(await again.text(), pageDocument("https://gaf.healthcare/doctors"));
+  assert.equal(await publicPage.text(), pageDocument("https://gaf.healthcare/doctors"));
+
+  assert.equal(next.seen.length, 9);
+  assert.deepEqual(cachedPaths(cache), ["/doctors"]);
+});
+
+test("publishing content drops the cached page and the next request renders again", async () => {
+  const env = makeEnv();
+  const cache = new FakeCache();
+  const next = htmlDocuments();
+  const worker = createWorker(next.handler, { ...quiet, cache: () => cache });
+  const firstContext = ctx();
+  await worker.fetch(new Request("https://gaf.healthcare/blogs/alpha"), env, firstContext);
+  await firstContext.settle();
+  assert.equal(cache.store.size, 1);
+  const before = [...cache.store.keys()][0];
+
+  contentStorage().write("content/cms.json", '{"articles":[{"slug":"alpha","title":"Updated"}]}');
+  await flushContentWrites();
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(cache.store.has(before), false, "the published generation no longer has the old entry");
+
+  const secondContext = ctx();
+  const fresh = await worker.fetch(new Request("https://gaf.healthcare/blogs/alpha"), env, secondContext);
+  assert.equal(fresh.headers.get("x-gaf-html-cache"), "miss");
+  assert.equal(next.seen.length, 2);
+  await secondContext.settle();
+  assert.equal(cache.store.size, 1);
+  assert.notEqual([...cache.store.keys()][0], before);
+});
+
+test("a full render queue returns 503 with Retry-After and that response is not cached", async () => {
+  const env = makeEnv({ GAF_RENDER_QUEUE_MS: "40" });
+  const cache = new FakeCache();
+  let started = 0;
+  let release: () => void = () => {};
+  const hold = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  const worker = createWorker(
+    async (request: Request) => {
+      started += 1;
+      await hold;
+      return new Response(pageDocument(new URL(request.url).pathname), {
+        status: 200,
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": PUBLIC_HTML_CACHE },
+      });
+    },
+    { ...quiet, cache: () => cache, renderQueueTimeoutMs: 10_000 },
+  );
+  const held = Array.from({ length: MAX_INFLIGHT_RENDERS }, (_, index) =>
+    worker.fetch(new Request(`https://gaf.healthcare/costs/hold-${index}`), env, ctx()),
+  );
+  await new Promise<void>((resolve) => {
+    const check = () => {
+      if (started >= MAX_INFLIGHT_RENDERS) resolve();
+      else setTimeout(check, 5);
+    };
+    check();
+  });
+  const busy = await worker.fetch(new Request("https://gaf.healthcare/costs/overflow"), env, ctx());
+  assert.equal(busy.status, 503);
+  assert.equal(busy.headers.get("retry-after"), "2");
+  assert.equal(busy.headers.get("cache-control"), "no-store");
+  assert.equal(await busy.text(), "The page is busy. Please retry shortly.");
+  assert.equal(started, MAX_INFLIGHT_RENDERS, "the timed-out request did not take a render slot");
+  release();
+  await Promise.all(held);
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(cachedPaths(cache).includes("/costs/overflow"), false);
+});
+
+test("failed and incomplete renders are not cached", async () => {
+  const env = makeEnv();
+  const cache = new FakeCache();
+  let calls = 0;
+  const worker = createWorker(
+    async () => {
+      calls += 1;
+      if (calls === 1) {
+        return new Response(pageDocument("broken"), {
+          status: 500,
+          headers: { "content-type": "text/html; charset=utf-8", "cache-control": PUBLIC_HTML_CACHE },
+        });
+      }
+      if (calls === 2) {
+        return new Response("not a document", {
+          status: 200,
+          headers: { "content-type": "text/html; charset=utf-8", "cache-control": PUBLIC_HTML_CACHE },
+        });
+      }
+      return new Response(pageDocument("ok"), {
+        status: 200,
+        headers: {
+          "content-type": "text/html; charset=utf-8",
+          "cache-control": PUBLIC_HTML_CACHE,
+          "set-cookie": "gaf_cms=nope",
+        },
+      });
+    },
+    { ...quiet, cache: () => cache },
+  );
+  const context = ctx();
+  assert.equal((await worker.fetch(new Request("https://gaf.healthcare/hospitals"), env, context)).status, 500);
+  assert.equal(await (await worker.fetch(new Request("https://gaf.healthcare/hospitals"), env, context)).text(), "not a document");
+  const cookied = await worker.fetch(new Request("https://gaf.healthcare/hospitals"), env, context);
+  assert.equal(cookied.headers.get("set-cookie"), "gaf_cms=nope");
+  await context.settle();
+  assert.equal(cache.store.size, 0);
+  assert.equal(calls, 3);
+
+  let thrown = 0;
+  const flaky = createWorker(
+    async () => {
+      thrown += 1;
+      if (thrown === 1) throw new Error("render failed");
+      return new Response(pageDocument("recovered"), {
+        status: 200,
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": PUBLIC_HTML_CACHE },
+      });
+    },
+    { ...quiet, cache: () => cache },
+  );
+  await assert.rejects(flaky.fetch(new Request("https://gaf.healthcare/treatments"), env, ctx()), /render failed/);
+  const recoveredContext = ctx();
+  const recovered = await flaky.fetch(new Request("https://gaf.healthcare/treatments"), env, recoveredContext);
+  assert.equal(await recovered.text(), pageDocument("recovered"));
+  await recoveredContext.settle();
+  assert.deepEqual(cachedPaths(cache), ["/treatments"]);
+});
+
+test("a cache read or write failure still renders the page", async () => {
+  const env = makeEnv();
+  const cache = new FakeCache();
+  cache.match = async () => {
+    throw new Error("cache match failed");
+  };
+  cache.put = async () => {
+    throw new Error("cache put failed");
+  };
+  const next = htmlDocuments();
+  const logged: string[] = [];
+  const worker = createWorker(next.handler, { ...quiet, cache: () => cache, log: (message) => logged.push(message) });
+  const firstContext = ctx();
+  const first = await worker.fetch(new Request("https://gaf.healthcare/"), env, firstContext);
+  assert.equal(first.status, 200);
+  assert.equal(await first.text(), pageDocument("https://gaf.healthcare/"));
+  await firstContext.settle();
+  const second = await worker.fetch(new Request("https://gaf.healthcare/"), env, ctx());
+  assert.equal(second.status, 200);
+  assert.equal(await second.text(), pageDocument("https://gaf.healthcare/"));
+  assert.equal(next.seen.length, 2, "nothing was stored, so the page rendered again");
+  assert.match(logged.join("\n"), /html cache read failed/);
+  assert.match(logged.join("\n"), /html cache write failed/);
+});
