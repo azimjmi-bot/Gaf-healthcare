@@ -20,8 +20,9 @@
  *                      that sets GAF_INDEXING. Requires GAF_SEED_CONFIRM to
  *                      equal the content bucket. Lists the buckets first and
  *                      uploads only keys that are absent. Aborts when a
- *                      bucket holds a key that is not in this plan. Never
- *                      deletes.
+ *                      bucket holds a key that is not in this plan, except
+ *                      incremental-cache/ and cms-auth/, which are left as
+ *                      they are. Never deletes.
  *   --dry-run          List what would be written and stop.
  *   --config <path>    Wrangler config. Required for --remote.
  */
@@ -137,14 +138,33 @@ export function assertRemoteConfig(config) {
 }
 
 /**
+ * Objects the Worker writes for itself. They are not part of the seed, and a
+ * later seed must neither copy, overwrite, nor delete them. Any other key
+ * that is not in the plan still aborts the seed.
+ */
+const RUNTIME_KEY_PREFIXES = ["incremental-cache/", "cms-auth/"];
+
+export function isRuntimeKey(key) {
+  return RUNTIME_KEY_PREFIXES.some((prefix) => key.startsWith(prefix));
+}
+
+/**
  * Compare one bucket. Unexpected keys abort the seed. Keys already in the
  * plan are left untouched. Missing keys are what a later put may create.
  */
 export function classifyKeys(planned, existing) {
   const plannedSet = new Set(planned);
   const existingSet = new Set(existing);
+  const ignored = [];
+  const unexpected = [];
+  for (const key of existingSet) {
+    if (plannedSet.has(key)) continue;
+    if (isRuntimeKey(key)) ignored.push(key);
+    else unexpected.push(key);
+  }
   return {
-    unexpected: [...existingSet].filter((key) => !plannedSet.has(key)).sort(),
+    unexpected: unexpected.sort(),
+    ignored: ignored.sort(),
     missing: [...plannedSet].filter((key) => !existingSet.has(key)).sort(),
     present: [...plannedSet].filter((key) => existingSet.has(key)).sort(),
   };
@@ -287,7 +307,7 @@ async function seedRemote(items, config) {
     classified[binding] = classifyKeys(planned, existing[binding]);
     const report = classified[binding];
     console.log(
-      `  ${binding}: existing ${existing[binding].length}, already present ${report.present.length}, missing ${report.missing.length}, unexpected ${report.unexpected.length}`,
+      `  ${binding}: existing ${existing[binding].length}, already present ${report.present.length}, missing ${report.missing.length}, unexpected ${report.unexpected.length}, runtime left untouched ${report.ignored.length}`,
     );
     if (report.unexpected.length > 0) {
       console.error(`Refusing to seed ${binding}. Unexpected keys:\n${report.unexpected.join("\n")}`);

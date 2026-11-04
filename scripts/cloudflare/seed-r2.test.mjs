@@ -61,6 +61,15 @@ test("classifyKeys reports missing keys and refuses unexpected ones", () => {
   assert.deepEqual(diff.present, ["content/cms.json"]);
   assert.deepEqual(diff.missing, ["content/.manifest.json"]);
   assert.deepEqual(diff.unexpected, ["content/.version.json"]);
+  assert.deepEqual(diff.ignored, []);
+
+  const runtime = classifyKeys(
+    ["uploads/articles/a.webp"],
+    ["uploads/articles/a.webp", "incremental-cache/x", "cms-auth/session", "uploads/extra.webp"],
+  );
+  assert.deepEqual(runtime.present, ["uploads/articles/a.webp"]);
+  assert.deepEqual(runtime.ignored, ["cms-auth/session", "incremental-cache/x"]);
+  assert.deepEqual(runtime.unexpected, ["uploads/extra.webp"]);
 });
 
 test("the working tree plans 143 content keys and 719 uploads, skipping the markdown source", () => {
