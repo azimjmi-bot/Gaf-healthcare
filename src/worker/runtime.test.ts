@@ -11,6 +11,7 @@ import {
   MAX_INFLIGHT_RENDERS,
   bakedSitemapAssetPath,
   createWorker,
+  sameHostHttpsRedirect,
   groupsForRequest,
   isPrivateAssetPath,
   STAGING_ROBOTS_TAG,
@@ -126,6 +127,28 @@ test("public requests hydrate every edition but not the CMS-only group; CMS requ
   assert.deepEqual([...groupsForRequest("/cms/articles/1")], ["en", "ar", "fr", "ru", "sw", "cms"]);
   assert.deepEqual([...groupsForRequest("/api/cms/ai/generate")], ["en", "ar", "fr", "ru", "sw", "cms"]);
   assert.deepEqual([...groupsForRequest("/cmsx")], ["en", "ar", "fr", "ru", "sw"], "prefix match is on path segments");
+});
+
+test("plain HTTP redirects to HTTPS on the same host and does not reach Next", async () => {
+  assert.equal(sameHostHttpsRedirect(new Request("https://gaf.healthcare/doctors")), null);
+  const direct = sameHostHttpsRedirect(new Request("http://www.gaf.healthcare/ar?page=2"));
+  assert.equal(direct?.status, 301);
+  assert.equal(direct?.headers.get("location"), "https://www.gaf.healthcare/ar?page=2");
+
+  const next = nextStub();
+  const worker = createWorker(next.handler, quiet);
+  const apex = await worker.fetch(new Request("http://gaf.healthcare/"), makeEnv(), ctx());
+  assert.equal(apex.status, 301);
+  assert.equal(apex.headers.get("location"), "https://gaf.healthcare/");
+  assert.equal(next.seen.length, 0);
+  const staging = await worker.fetch(
+    new Request("http://staging.gaf.healthcare/doctors"),
+    makeEnv({ GAF_INDEXING: "off" }),
+    ctx(),
+  );
+  assert.equal(staging.status, 301);
+  assert.equal(staging.headers.get("location"), "https://staging.gaf.healthcare/doctors");
+  assert.equal(staging.headers.get("x-robots-tag"), "noindex, nofollow");
 });
 
 test("baked sitemap paths stay under the private asset prefix", () => {

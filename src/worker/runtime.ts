@@ -69,6 +69,24 @@ const NULL_BODY_STATUS = new Set([101, 204, 205, 304]);
  * object so an immutable or already-cached header list is left unchanged,
  * and the HTML or object body is not rewritten.
  */
+/**
+ * The Worker answers the request itself, so the origin's HTTP-to-HTTPS
+ * redirect no longer runs. Send each plain-HTTP request to the same host
+ * and path on HTTPS. www stays on www.
+ */
+export function sameHostHttpsRedirect(request: Request): Response | null {
+  const url = new URL(request.url);
+  if (url.protocol !== "http:") return null;
+  url.protocol = "https:";
+  return new Response(null, {
+    status: 301,
+    headers: {
+      location: url.toString(),
+      "cache-control": "public, max-age=300",
+    },
+  });
+}
+
 export function withStagingRobots(response: Response, env: WorkerEnv): Response {
   if (env.GAF_INDEXING !== "off") return response;
   const headers = new Headers(response.headers);
@@ -424,6 +442,8 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
 
   return {
     async fetch(request: Request, env: WorkerEnv, ctx: ExecutionContextLike): Promise<Response> {
+      const redirect = sameHostHttpsRedirect(request);
+      if (redirect) return withStagingRobots(redirect, env);
       const { storage, envForNext } = install(env);
       const url = new URL(request.url);
 
