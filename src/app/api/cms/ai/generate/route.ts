@@ -10,6 +10,7 @@ import { beginGeneration, endGeneration } from "@/lib/ai/rate-limit";
 import { AI_ACTIONS, AI_CONTENT_TYPES, type AiGenerateRequest } from "@/lib/ai/types";
 import { studioHasContent, validateStudioOutput } from "@/lib/ai/validate";
 import { isAppLocale } from "@/lib/i18n/languages";
+import { flushContentWrites } from "@/lib/storage";
 
 export async function POST(request: Request) {
   try {
@@ -62,6 +63,7 @@ export async function POST(request: Request) {
       currentUrl: context.currentUrl,
       flags,
     });
+    await flushContentWrites();
     return NextResponse.json(saved);
   } catch (error) {
     const message = error instanceof Error ? error.message : "AI generation failed. Please try again.";

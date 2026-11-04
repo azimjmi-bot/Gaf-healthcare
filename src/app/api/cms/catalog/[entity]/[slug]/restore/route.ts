@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { requireCmsSession } from "@/lib/cms/auth";
 import { editionFromRequest } from "@/lib/cms/edition";
 import { loadCatalogCms, saveCatalogCms } from "@/lib/cms/catalog-store";
+import { flushContentWrites, storageErrorStatus } from "@/lib/storage";
 
 export async function POST(request: Request, ctx: { params: Promise<{ entity: string; slug: string }> }) {
   try {
@@ -18,9 +19,10 @@ export async function POST(request: Request, ctx: { params: Promise<{ entity: st
     else if (entity === "treatments") cms.treatmentsDeleted = cms.treatmentsDeleted.filter((s) => s !== slug);
     else return NextResponse.json({ error: "Unknown catalog." }, { status: 400 });
     saveCatalogCms(cms, edition);
+    await flushContentWrites();
     return NextResponse.json({ ok: true });
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not restore.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(err) });
   }
 }

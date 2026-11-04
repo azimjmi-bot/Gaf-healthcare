@@ -95,7 +95,10 @@ test("the published breast cancer page is complete and internally linked", () =>
     /^\[[^\]]+\]\(\/(?:consult\?|https:\/\/wa\.me\/)/gm,
   );
   assert.ok((ctas?.length ?? 0) >= 7, `expected 7 in-article CTAs, found ${ctas?.length ?? 0}`);
-  assert.equal(publishedCuratedTreatments("ar").length, 0);
+  const arabicBreast = publishedCuratedTreatments("ar").find(
+    (row) => row.slug === "breast-cancer-treatment-in-india",
+  );
+  assert.match(arabicBreast?.translations.ar?.name ?? "", /[\u0600-\u06FF]/);
 });
 
 test("the published prostate cancer page uses site USD ranges and GEO links", () => {

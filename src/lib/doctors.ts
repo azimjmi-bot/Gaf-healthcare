@@ -1,4 +1,5 @@
-import catalog from "@/data/ginger-catalog.json";
+import { lazyArray } from "@/lib/array-view";
+import { withCatalogSeed, type CatalogSeed, type DoctorSeed } from "@/lib/catalog-seed";
 import { getHospital } from "@/lib/hospitals";
 import { mapDoctorProcedures } from "@/lib/procedure-map";
 import { compareSpecialties, getCity, getCountry, getProcedure, getSpecialty } from "@/lib/taxonomy";
@@ -104,7 +105,8 @@ function languagesFor(city: string) {
 const radiationSpecialty = getSpecialty("Radiation Oncology");
 if (!radiationSpecialty) throw new Error("Missing Radiation Oncology specialty");
 
-export const catalogDoctors: Doctor[] = catalog.doctors.map((seed) => {
+// An arrow function, not a declaration, so the radiationSpecialty guard above narrows inside it.
+const buildDoctor = (seed: DoctorSeed): Doctor => {
   const hospital = getHospital(seed.hospitalSlug);
   const cityName = seed.city || hospital?.city || "Delhi NCR";
   const city = getCity(cityName);
@@ -161,13 +163,24 @@ export const catalogDoctors: Doctor[] = catalog.doctors.map((seed) => {
     image: "",
     imageAlt: "",
   };
-});
+};
 
-const slugs = new Set<string>();
-for (const doctor of catalogDoctors) {
-  if (slugs.has(doctor.slug)) throw new Error(`Duplicate doctor slug ${doctor.slug}`);
-  slugs.add(doctor.slug);
-}
+const buildDoctors = (catalog: CatalogSeed): Doctor[] => {
+  const rows = catalog.doctors.map(buildDoctor);
+  const slugs = new Set<string>();
+  for (const doctor of rows) {
+    if (slugs.has(doctor.slug)) throw new Error(`Duplicate doctor slug ${doctor.slug}`);
+    slugs.add(doctor.slug);
+  }
+  return rows;
+};
+
+/**
+ * Built from the catalog seed on first access (see `catalog-seed.ts`). The
+ * hospitals are built inside the same seed scope (through `getHospital`), so
+ * the file is parsed once and released when both arrays exist.
+ */
+export const catalogDoctors: Doctor[] = lazyArray(() => withCatalogSeed(buildDoctors));
 
 export const doctors: Doctor[] = catalogDoctors;
 

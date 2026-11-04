@@ -10,6 +10,8 @@ import {
 } from "@/lib/cms/catalog-types";
 import { catalogSpecialtyName, costsFilterPath } from "@/lib/catalog-links";
 import { localePageState, localePathIsPublished } from "@/lib/i18n/locale-publication";
+import { SITE_ORIGIN } from "@/lib/i18n/metadata";
+import { localePath } from "@/lib/i18n/path";
 import { treatmentsForLocale } from "@/lib/locale-catalog";
 import { catalogTreatments } from "@/lib/treatments";
 
@@ -103,6 +105,8 @@ test("Arabic costs publish the reviewed hierarchy without inventing city prices"
 });
 
 test("Arabic procedure metadata is localized, canonical and search-specific", () => {
+  // Internal facet keys stay Title Case. The public canonical is the lowercase
+  // catalog path localePath emits for every language.
   const path =
     "/costs/India/Cardiac-Surgery/CABG-Coronary-Artery-Bypass-Grafting";
   const metadata = arabicCostProcedureMetadata({
@@ -112,7 +116,11 @@ test("Arabic procedure metadata is localized, canonical and search-specific", ()
   });
   assert.match(String(metadata.title), /تكلفة طعم مجازة الشريان التاجي/);
   assert.match(String(metadata.description), /السجلات/);
-  assert.equal(metadata.alternates?.canonical, `https://gaf.healthcare/ar${path}`);
+  assert.equal(metadata.alternates?.canonical, new URL(localePath(path, "ar"), SITE_ORIGIN).toString());
+  assert.equal(
+    metadata.alternates?.canonical,
+    "https://gaf.healthcare/ar/costs/india/cardiac-surgery/cabg-coronary-artery-bypass-grafting",
+  );
   assert.deepEqual(
     Object.keys((metadata.alternates as { languages: object }).languages).sort(),
     ["ar", "en", "x-default"],

@@ -5,6 +5,7 @@ import {
   loadCuratedTreatments,
   saveCuratedTreatments,
 } from "@/lib/cms/curated-treatment-store";
+import { flushContentWrites, storageErrorStatus } from "@/lib/storage";
 
 export async function GET() {
   try {
@@ -26,10 +27,11 @@ export async function POST() {
     const treatment = blankCuratedTreatment(store);
     store.treatments.unshift(treatment);
     saveCuratedTreatments(store);
+    await flushContentWrites();
     return NextResponse.json(treatment);
   } catch (error) {
     const message =
       error instanceof Error ? error.message : "Could not create Treatment.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(error) });
   }
 }

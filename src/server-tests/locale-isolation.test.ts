@@ -11,7 +11,9 @@ import {
   localePathIsPublished,
   publishedLocalesForPath,
 } from "@/lib/i18n/locale-publication";
+import { localeSurfaceIsAvailable } from "@/lib/i18n/locale-availability";
 import { surfaceIsAvailable } from "@/lib/i18n/surfaces";
+import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
 import { isTargetLocale } from "@/lib/i18n/languages";
 import { localeIsPublished as targetLocaleIsPublished } from "@/lib/i18n/locale-gating";
 
@@ -146,10 +148,22 @@ test("navigation hides routes without authored locale content", () => {
   assert.equal(surfaceIsAvailable("ar", "consult"), false);
   assert.equal(surfaceIsAvailable("fr", "hospitals"), false);
   assert.equal(surfaceIsAvailable("en", "costs"), true);
-  // No curated treatment is published, so the nav must not offer the
-  // directory in any target locale even though English keeps its index.
-  assert.equal(surfaceIsAvailable("ar", "treatments"), false);
+  // Arabic treatments are authored published translations, so the nav follows
+  // the catalog. A locale with none stays hidden, and a false fact still
+  // closes the Arabic surface — availability is not hardcoded on.
+  assert.ok(publishedCuratedTreatments("ar").length > 0);
+  assert.equal(surfaceIsAvailable("ar", "treatments"), true);
+  assert.equal(publishedCuratedTreatments("fr").length, 0);
+  assert.equal(surfaceIsAvailable("fr", "treatments"), false);
   assert.equal(surfaceIsAvailable("en", "treatments"), true);
+  assert.equal(
+    localeSurfaceIsAvailable("ar", "treatments", {
+      treatmentsPublished: false,
+      costsPublished: true,
+      blogsPublished: true,
+    }),
+    false,
+  );
 });
 
 test("specialty editorials do not inherit the English edition", () => {

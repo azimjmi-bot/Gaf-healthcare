@@ -1,21 +1,5 @@
-"use client";
-
-import "@/styles/directory-cards.css";
-
-import { DoctorPhoto } from "@/components/doctor-photo";
-import { LocaleLink as Link } from "@/components/locale-link";
-import { useState, type ReactNode } from "react";
-import {
-  BadgeCheck,
-  Building2,
-  CalendarDays,
-  ChevronDown,
-  ChevronUp,
-  GraduationCap,
-  IdCard,
-  Settings2,
-} from "lucide-react";
-import { useLocale, useT } from "@/components/locale-provider";
+import type { ReactNode } from "react";
+import { DoctorCardView, type DoctorCardData } from "@/components/doctor-card-view";
 import {
   campusLocation,
   designationLabel,
@@ -24,128 +8,38 @@ import {
   listingBio,
 } from "@/lib/doctor-profile";
 import type { Doctor } from "@/lib/doctors";
+import type { AppLocale } from "@/lib/i18n/languages";
 import { medicalPhrase } from "@/lib/i18n/medical-phrases";
+import { getRequestLocale } from "@/lib/i18n/request";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 
-const PROC_PREVIEW = 6;
+/** The slim, localized view of a doctor that the client card renders. */
+export function doctorCardData(doctor: Doctor, locale: AppLocale): DoctorCardData {
+  return {
+    slug: doctor.slug,
+    name: doctor.name,
+    title: doctor.title,
+    featured: Boolean(doctor.featured),
+    specialty: taxonomyLabel(doctor.specialty, locale),
+    experience: experienceBadge(doctor),
+    designation: designationLabel(doctor),
+    qualifications: doctor.qualifications,
+    education: doctor.education.filter(Boolean).slice(0, 3),
+    hospitalSlug: doctor.hospitalSlug,
+    hospitalName: doctor.hospitalName,
+    location: campusLocation(doctor, undefined, locale),
+    bio: listingBio(doctor),
+    procedures: keyProcedureLabels(doctor).map((item) => medicalPhrase(item, locale)),
+    image: doctor.image,
+    imageAlt: doctor.imageAlt,
+  };
+}
 
-export function DoctorCard({
-  doctor,
-  compareSlot,
-}: {
-  doctor: Doctor;
-  compareSlot?: ReactNode;
-}) {
-  const [open, setOpen] = useState(false);
-  const locale = useLocale();
-  const t = useT();
-  const bio = listingBio(doctor);
-  const procedures = keyProcedureLabels(doctor).map((item) => medicalPhrase(item, locale));
-  const shown = open ? procedures : procedures.slice(0, PROC_PREVIEW);
-  const extra = procedures.length - PROC_PREVIEW;
-  const experience = experienceBadge(doctor);
-  const designation = designationLabel(doctor);
-  const location = campusLocation(doctor, undefined, locale);
-
-  return (
-    <article className="dcard">
-      <div className="dcard__top">
-        <div className="dcard__avatar">
-          <DoctorPhoto doctor={doctor} sizes="6.75rem" />
-        </div>
-
-        <div className="dcard__id">
-          <div className="dcard__name-row">
-            <h2 className="dcard__name">
-              <Link href={`/doctors/${doctor.slug}`}>{doctor.name}</Link>
-              {doctor.featured ? (
-                <BadgeCheck className="dcard__check" aria-label={t("card.featured")} />
-              ) : null}
-            </h2>
-            <span className="dcard__chip">{taxonomyLabel(doctor.specialty, locale)}</span>
-          </div>
-          <p className="dcard__role">{doctor.title}</p>
-          <ul className="dcard__facts">
-            {experience ? (
-              <li>
-                <CalendarDays className="size-4" />
-                {experience}
-              </li>
-            ) : null}
-            <li>
-              <IdCard className="size-4" />
-              {t("card.designation", { title: designation })}
-            </li>
-            {doctor.qualifications ? (
-              <li>
-                <GraduationCap className="size-4" />
-                {doctor.qualifications}
-              </li>
-            ) : null}
-            {doctor.education.filter(Boolean).slice(0, 3).map((line, index) => (
-              <li key={`${line}-${index}`}>
-                <GraduationCap className="size-4" />
-                <span dir="ltr">{line}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
-        <div className="dcard__aside">
-          <Link href={`/hospitals/${doctor.hospitalSlug}`} className="dcard__hosp">
-            <Building2 className="size-4 shrink-0" />
-            <span>
-              <strong>{doctor.hospitalName}</strong>
-              {location ? <span>{location}</span> : null}
-            </span>
-          </Link>
-          <div className="dcard__cta">
-            <Link href={`/doctors/${doctor.slug}`} className="dcard__btn dcard__btn--book">
-              {t("card.viewProfile")}
-            </Link>
-            <Link href={`/consult?doctor=${doctor.slug}`} className="dcard__btn dcard__btn--consult">
-                {t("card.requestConsult")}
-              </Link>
-            {compareSlot}
-          </div>
-        </div>
-      </div>
-
-      <div className="dcard__bottom">
-        <div className="dcard__about">
-          {bio ? <p className="dcard__bio">{bio}</p> : null}
-          <Link href={`/doctors/${doctor.slug}`} className="dcard__more">
-            {t("card.viewProfile")}
-          </Link>
-        </div>
-
-        {procedures.length > 0 ? (
-          <div className="dcard__procs">
-            <p>
-              <Settings2 className="size-4" />
-              {t("card.keyProcedures")}
-            </p>
-            <ul>
-              {shown.map((item) => (
-                <li key={item}>{item}</li>
-              ))}
-            </ul>
-            {extra > 0 ? (
-              <button type="button" className="dcard__toggle" onClick={() => setOpen((v) => !v)}>
-                {open ? (
-                  <>
-                    {t("card.showLess")} <ChevronUp className="size-4" />
-                  </>
-                ) : (
-                  <>
-                    {t("card.showMore")} <ChevronDown className="size-4" />
-                  </>
-                )}
-              </button>
-            ) : null}
-          </div>
-        ) : null}
-      </div>
-    </article>
-  );
+/**
+ * Server half of the directory card: reads the request locale, reduces the
+ * `Doctor` to the fields the card shows, and hands that to the client view.
+ */
+export async function DoctorCard({ doctor, compareSlot }: { doctor: Doctor; compareSlot?: ReactNode }) {
+  const locale = await getRequestLocale();
+  return <DoctorCardView card={doctorCardData(doctor, locale)} compareSlot={compareSlot} />;
 }

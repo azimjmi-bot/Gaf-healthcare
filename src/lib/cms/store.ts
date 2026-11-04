@@ -1,14 +1,12 @@
-import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, writeFileSync } from "fs";
-import { dirname, join } from "path";
 import type { CmsEdition } from "@/lib/cms/edition";
-import { invalidateCachedJsonFile, readCachedJsonFile } from "@/lib/cms/json-file-cache";
+import { invalidateCachedJsonFile, readCachedJsonDirectory, readCachedJsonFile } from "@/lib/cms/json-file-cache";
 import type { Article, CmsStore } from "@/lib/cms/types";
 import { newId, slugify } from "@/lib/cms/types";
+import { contentStorage } from "@/lib/storage";
 
-function cmsFile(edition: CmsEdition = "en") {
-  return edition === "en"
-    ? join(process.cwd(), "content/cms.json")
-    : join(process.cwd(), `content/${edition}/cms.json`);
+/** Storage key of an edition's settings-and-articles store. */
+export function cmsKey(edition: CmsEdition = "en") {
+  return edition === "en" ? "content/cms.json" : `content/${edition}/cms.json`;
 }
 
 function fallbackStore(edition: CmsEdition = "en"): CmsStore {
@@ -33,7 +31,8 @@ function fallbackStore(edition: CmsEdition = "en"): CmsStore {
 
 export function loadCms(edition: CmsEdition = "en"): CmsStore {
   try {
-    const raw = readFileSync(cmsFile(edition), "utf8");
+    const raw = contentStorage().read(cmsKey(edition));
+    if (raw === null) return fallbackStore(edition);
     const data = JSON.parse(raw) as CmsStore;
     if (!Array.isArray(data.articles)) return fallbackStore(edition);
     return {
@@ -55,21 +54,24 @@ export function loadCms(edition: CmsEdition = "en"): CmsStore {
  * loader for CMS write paths, which mutate the returned object before saving.
  */
 export function readCms(edition: CmsEdition = "en"): CmsStore {
-  return readCachedJsonFile(cmsFile(edition), () => loadCms(edition));
+  return readCachedJsonFile(cmsKey(edition), () => loadCms(edition));
 }
 
+/**
+ * Persist the store. Synchronous and atomic on the file-system backend; a
+ * route that calls this awaits `flushContentWrites()` before responding so a
+ * backend with asynchronous persistence can still fail the request.
+ */
 export function saveCms(store: CmsStore, edition: CmsEdition = "en") {
-  const file = cmsFile(edition);
-  mkdirSync(dirname(file), { recursive: true });
-  const tmp = `${file}.tmp`;
-  writeFileSync(tmp, `${JSON.stringify(store, null, 2)}\n`);
-  renameSync(tmp, file);
-  invalidateCachedJsonFile(file);
+  const key = cmsKey(edition);
+  contentStorage().write(key, `${JSON.stringify(store, null, 2)}\n`);
+  invalidateCachedJsonFile(key);
   return store;
 }
 
-function editionArticleDir(edition: CmsEdition) {
-  return join(process.cwd(), "content", edition, "articles");
+/** Storage prefix of an edition's one-file-per-slug articles. */
+export function editionArticlesKey(edition: CmsEdition) {
+  return `content/${edition}/articles`;
 }
 
 /**
@@ -79,13 +81,18 @@ function editionArticleDir(edition: CmsEdition) {
  */
 function articlesFromDirectory(edition: CmsEdition): Article[] {
   if (edition === "en") return [];
-  const dir = editionArticleDir(edition);
-  if (!existsSync(dir)) return [];
+  return readCachedJsonDirectory(editionArticlesKey(edition), () => loadArticlesFromDirectory(edition));
+}
+
+function loadArticlesFromDirectory(edition: CmsEdition): Article[] {
+  const storage = contentStorage();
   const rows: Article[] = [];
-  for (const name of readdirSync(dir)) {
-    if (!name.endsWith(".json")) continue;
+  for (const key of storage.list(editionArticlesKey(edition))) {
+    if (!key.endsWith(".json")) continue;
     try {
-      const parsed = JSON.parse(readFileSync(join(dir, name), "utf8")) as Article;
+      const raw = storage.read(key);
+      if (raw === null) continue;
+      const parsed = JSON.parse(raw) as Article;
       if (parsed && typeof parsed.slug === "string") rows.push(parsed);
     } catch {
       // A half-written translation must not take the edition down.

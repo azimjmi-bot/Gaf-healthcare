@@ -3,6 +3,7 @@ import { requireCmsSession } from "@/lib/cms/auth";
 import { editionFromRequest } from "@/lib/cms/edition";
 import { loadCms, saveCms } from "@/lib/cms/store";
 import type { CmsSettings } from "@/lib/cms/types";
+import { flushContentWrites, storageErrorStatus } from "@/lib/storage";
 
 export async function PUT(request: Request) {
   try {
@@ -17,9 +18,10 @@ export async function PUT(request: Request) {
     const store = loadCms(edition);
     store.settings = { ...store.settings, ...patch };
     saveCms(store, edition);
+    await flushContentWrites();
     return NextResponse.json(store.settings);
   } catch (err) {
     const message = err instanceof Error ? err.message : "Could not save settings.";
-    return NextResponse.json({ error: message }, { status: 500 });
+    return NextResponse.json({ error: message }, { status: storageErrorStatus(err) });
   }
 }
