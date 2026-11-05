@@ -914,8 +914,248 @@ test("the first public HTML request renders and the second reuses the cached doc
 
   const flight = await worker.fetch(new Request("https://gaf.healthcare/", { headers: { rsc: "1" } }), env, ctx());
   assert.equal(flight.headers.get("x-gaf-html-cache"), null);
+  assert.equal(flight.headers.get("x-gaf-rsc-cache"), "miss");
   assert.equal(await flight.text(), pageDocument("https://gaf.healthcare/"));
   assert.equal(next.seen.length, 2, "an RSC payload is not served from the HTML cache");
+  assert.deepEqual(cachedPaths(cache), ["/"], "a non-flight body is not stored on the RSC key");
+});
+
+test("HTML and RSC requests for the same URL keep two cache entries", async () => {
+  const env = makeEnv();
+  const cache = new FakeCache();
+  const seen: { url: string; rsc: string | null; prefetch: string | null; segment: string | null }[] = [];
+  const worker = createWorker(
+    async (request: Request) => {
+      const url = new URL(request.url);
+      seen.push({
+        url: request.url,
+        rsc: request.headers.get("rsc"),
+        prefetch: request.headers.get("next-router-prefetch"),
+        segment: request.headers.get("next-router-segment-prefetch"),
+      });
+      const rsc = request.headers.get("rsc") === "1";
+      const prefetch = request.headers.has("next-router-prefetch") || request.headers.has("next-router-segment-prefetch");
+      const body = rsc
+        ? prefetch
+          ? `prefetch:${request.headers.get("next-router-segment-prefetch") ?? request.headers.get("next-router-prefetch")}`
+          : "flight:navigation"
+        : pageDocument(`${url.origin}${url.pathname}${url.search}`);
+      return new Response(body, {
+        status: 200,
+        headers: {
+          "content-type": rsc ? "text/x-component" : "text/html; charset=utf-8",
+          "cache-control": PUBLIC_HTML_CACHE,
+        },
+      });
+    },
+    { ...quiet, cache: () => cache },
+  );
+
+  const html = await worker.fetch(new Request("https://gaf.healthcare/costs/cabg"), env, ctx());
+  assert.equal(html.status, 200);
+  assert.equal(html.headers.get("x-gaf-html-cache"), "miss");
+  assert.equal(html.headers.get("cache-control"), PUBLIC_HTML_CACHE);
+  assert.equal(await html.text(), pageDocument("https://gaf.healthcare/costs/cabg"));
+
+  const flight = await worker.fetch(
+    new Request("https://gaf.healthcare/costs/cabg?_rsc=token-a", {
+      headers: { rsc: "1", "next-router-state-tree": "%5B%22%22%5D" },
+    }),
+    env,
+    ctx(),
+  );
+  assert.equal(flight.status, 200);
+  assert.equal(flight.headers.get("x-gaf-html-cache"), null);
+  assert.equal(flight.headers.get("x-gaf-rsc-cache"), "miss");
+  assert.equal(flight.headers.get("cache-control"), PUBLIC_HTML_CACHE);
+  assert.equal(await flight.text(), "flight:navigation");
+  assert.equal(seen[1]?.url, "https://gaf.healthcare/costs/cabg");
+  assert.deepEqual(cachedPaths(cache).sort(), ["/costs/cabg", "/costs/cabg.rsc"]);
+  const stored = [...cache.store.values()];
+  assert.ok(stored.every((response) => response.headers.get("cache-control") === "public, max-age=300"));
+
+  const htmlHit = await worker.fetch(new Request("https://gaf.healthcare/costs/cabg?utm_source=chatgpt.com"), env, ctx());
+  assert.equal(htmlHit.status, 200);
+  assert.equal(htmlHit.headers.get("x-gaf-html-cache"), "hit");
+  assert.equal(await htmlHit.text(), pageDocument("https://gaf.healthcare/costs/cabg"));
+
+  const flightHit = await worker.fetch(
+    new Request("https://gaf.healthcare/costs/cabg?_rsc=token-b", { headers: { RSC: "1" } }),
+    env,
+    ctx(),
+  );
+  assert.equal(flightHit.status, 200);
+  assert.equal(flightHit.headers.get("x-gaf-rsc-cache"), "hit");
+  assert.equal(flightHit.headers.get("x-gaf-html-cache"), null);
+  assert.equal(await flightHit.text(), "flight:navigation");
+  assert.equal(seen.length, 2, "the second HTML and RSC requests were cache hits");
+
+  const prefetch = await worker.fetch(
+    new Request("https://gaf.healthcare/costs/cabg", {
+      headers: { rsc: "1", "next-router-prefetch": "1", "next-router-segment-prefetch": "/costs/cabg" },
+    }),
+    env,
+    ctx(),
+  );
+  assert.equal(prefetch.headers.get("x-gaf-rsc-cache"), "miss");
+  assert.equal(await prefetch.text(), "prefetch:/costs/cabg");
+  assert.ok(cachedPaths(cache).includes("/costs/cabg.rsc-prefetch"));
+  const navigationAgain = await worker.fetch(
+    new Request("https://gaf.healthcare/costs/cabg", { headers: { rsc: "1" } }),
+    env,
+    ctx(),
+  );
+  assert.equal(navigationAgain.headers.get("x-gaf-rsc-cache"), "hit");
+  assert.equal(await navigationAgain.text(), "flight:navigation");
+  assert.equal(seen.length, 3, "a prefetch did not replace the navigation flight");
+
+  const remembered = [...cache.store.keys()];
+  contentStorage().write("content/cms.json", '{"articles":[{"slug":"cabg","title":"Updated"}]}');
+  await flushContentWrites();
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(
+    remembered.every((key) => !cache.store.has(key)),
+    true,
+    "publishing drops the HTML, navigation, and prefetch entries together",
+  );
+});
+
+test("server actions and CMS requests bypass the HTML and RSC caches", async () => {
+  const env = makeEnv();
+  const cache = new FakeCache();
+  let renders = 0;
+  const worker = createWorker(
+    async (request: Request) => {
+      renders += 1;
+      return new Response(request.headers.has("next-action") ? "action-result" : pageDocument(request.url), {
+        status: 200,
+        headers: {
+          "content-type": request.headers.has("rsc") ? "text/x-component" : "text/html; charset=utf-8",
+          "cache-control": PUBLIC_HTML_CACHE,
+        },
+      });
+    },
+    { ...quiet, cache: () => cache },
+  );
+
+  const action = await worker.fetch(
+    new Request("https://gaf.healthcare/costs/cabg", {
+      method: "POST",
+      headers: { "next-action": "abc123", rsc: "1" },
+      body: "[]",
+    }),
+    env,
+    ctx(),
+  );
+  const actionAgain = await worker.fetch(
+    new Request("https://gaf.healthcare/costs/cabg", {
+      method: "POST",
+      headers: { "next-action": "abc123", rsc: "1" },
+      body: "[]",
+    }),
+    env,
+    ctx(),
+  );
+  assert.equal(action.status, 200);
+  assert.equal(action.headers.get("x-gaf-rsc-cache"), null);
+  assert.equal(action.headers.get("x-gaf-html-cache"), null);
+  assert.equal(await action.text(), "action-result");
+  assert.equal(await actionAgain.text(), "action-result");
+
+  const getAction = await worker.fetch(
+    new Request("https://gaf.healthcare/costs/cabg", { headers: { "next-action": "abc123", rsc: "1" } }),
+    env,
+    ctx(),
+  );
+  const getActionAgain = await worker.fetch(
+    new Request("https://gaf.healthcare/costs/cabg", { headers: { "next-action": "abc123", rsc: "1" } }),
+    env,
+    ctx(),
+  );
+  assert.equal(getAction.headers.get("x-gaf-rsc-cache"), null);
+  assert.equal(await getActionAgain.text(), "action-result");
+
+  const cms = await worker.fetch(new Request("https://gaf.healthcare/cms", { headers: { rsc: "1" } }), env, ctx());
+  const cmsAgain = await worker.fetch(new Request("https://gaf.healthcare/cms", { headers: { rsc: "1" } }), env, ctx());
+  assert.equal(cms.headers.get("x-gaf-rsc-cache"), null);
+  assert.equal(cms.headers.get("x-gaf-html-cache"), null);
+  assert.equal(await cmsAgain.text(), pageDocument("https://gaf.healthcare/cms"));
+  assert.equal(renders, 6);
+  assert.equal(cache.store.size, 0);
+});
+
+test("a missed RSC request uses the document render gate and a hit does not", async () => {
+  const env = makeEnv({ GAF_RENDER_QUEUE_MS: "40" });
+  const cache = new FakeCache();
+  let started = 0;
+  let release: () => void = () => {};
+  const hold = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  const worker = createWorker(
+    async (request: Request) => {
+      started += 1;
+      const url = new URL(request.url);
+      if (url.pathname === "/costs/cached-flight") {
+        return new Response("flight:cached", {
+          status: 200,
+          headers: { "content-type": "text/x-component", "cache-control": PUBLIC_HTML_CACHE },
+        });
+      }
+      await hold;
+      return new Response(pageDocument(url.pathname), {
+        status: 200,
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": PUBLIC_HTML_CACHE },
+      });
+    },
+    { ...quiet, cache: () => cache, renderQueueTimeoutMs: 10_000 },
+  );
+
+  const warm = await worker.fetch(
+    new Request("https://gaf.healthcare/costs/cached-flight", { headers: { rsc: "1" } }),
+    env,
+    ctx(),
+  );
+  assert.equal(warm.headers.get("x-gaf-rsc-cache"), "miss");
+  assert.equal(await warm.text(), "flight:cached");
+  assert.equal(started, 1);
+
+  const held = Array.from({ length: MAX_INFLIGHT_RENDERS }, (_, index) =>
+    worker.fetch(new Request(`https://gaf.healthcare/costs/hold-${index}`), env, ctx()),
+  );
+  await new Promise<void>((resolve) => {
+    const check = () => {
+      if (started >= MAX_INFLIGHT_RENDERS + 1) resolve();
+      else setTimeout(check, 5);
+    };
+    check();
+  });
+
+  const hitDuringLoad = await worker.fetch(
+    new Request("https://gaf.healthcare/costs/cached-flight", { headers: { rsc: "1" } }),
+    env,
+    ctx(),
+  );
+  assert.equal(hitDuringLoad.status, 200);
+  assert.equal(hitDuringLoad.headers.get("x-gaf-rsc-cache"), "hit");
+  assert.equal(await hitDuringLoad.text(), "flight:cached");
+  assert.equal(started, MAX_INFLIGHT_RENDERS + 1, "a cached RSC flight did not take a render slot");
+
+  const busy = await worker.fetch(
+    new Request("https://gaf.healthcare/costs/cold-flight", { headers: { rsc: "1" } }),
+    env,
+    ctx(),
+  );
+  assert.equal(busy.status, 503);
+  assert.equal(busy.headers.get("retry-after"), "2");
+  assert.equal(busy.headers.get("cache-control"), "no-store");
+  assert.equal(await busy.text(), "The page is busy. Please retry shortly.");
+  assert.equal(started, MAX_INFLIGHT_RENDERS + 1, "the timed-out RSC request did not take a render slot");
+  release();
+  await Promise.all(held);
+  await new Promise((resolve) => setImmediate(resolve));
+  assert.equal(cachedPaths(cache).includes("/costs/cold-flight.rsc"), false);
+  assert.ok(cachedPaths(cache).includes("/costs/cached-flight.rsc"));
 });
 
 test("tracking parameters share one cache entry and do not change the rendered URL", async () => {
