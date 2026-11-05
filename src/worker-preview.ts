@@ -7,14 +7,23 @@
  */
 import openNext from "gaf-open-next-worker";
 import { PackedPreviewStorage } from "@/lib/storage/packed-preview-storage";
+import {
+  emptyPreviewHydrationSample,
+  previewDiagnosticLogLine,
+  previewDiagnosticValue,
+  previewHtmlCache,
+  withPreviewDiagnostic,
+  type PreviewHydrationSample,
+} from "@/lib/storage/packed-preview-diagnostics";
 import { assertPreviewRuntime, type PreviewPackError } from "@/lib/storage/packed-edition";
-import type { R2BucketLike } from "@/lib/storage/r2";
 import { ASSET_KEYS, createWorker, type ExecutionContextLike, type WorkerEnv } from "@/worker/runtime";
+
+let active: PackedPreviewStorage | null = null;
 
 const worker = createWorker(openNext.fetch, {
   createContent(env, hooks) {
     assertPreviewRuntime(env);
-    return new PackedPreviewStorage({
+    const storage = new PackedPreviewStorage({
       bucket: env.CONTENT,
       staticBucket: env.STATIC,
       assets: env.ASSETS,
@@ -25,8 +34,25 @@ const worker = createWorker(openNext.fetch, {
       onStaticChange: hooks.onStaticChange,
       sharedPackCache: true,
     });
+    active = storage;
+    return storage;
   },
 });
+
+function hydrationSample(storage: PackedPreviewStorage | null): PreviewHydrationSample {
+  return storage ? storage.hydrationSample() : emptyPreviewHydrationSample();
+}
+
+function diagnose(response: Response, before: PreviewHydrationSample, isolateHydrated: boolean): Response {
+  const value = previewDiagnosticValue({
+    isolateHydrated,
+    before,
+    after: hydrationSample(active),
+    htmlCache: previewHtmlCache(response.headers.get("x-gaf-html-cache")),
+  });
+  console.error(`[gaf] ${previewDiagnosticLogLine(value)}`);
+  return withPreviewDiagnostic(response, value);
+}
 
 export { BucketCachePurge, DOQueueHandler, DOShardedTagCache } from "gaf-open-next-worker";
 
@@ -43,9 +69,12 @@ const preview = {
     try {
       assertPreviewRuntime(env);
     } catch (error) {
-      return previewError(error as PreviewPackError);
+      return diagnose(previewError(error as PreviewPackError), emptyPreviewHydrationSample(), false);
     }
-    return worker.fetch(request, env, ctx);
+    const before = hydrationSample(active);
+    const isolateHydrated = active?.isHydrated("en") ?? false;
+    const response = await worker.fetch(request, env, ctx);
+    return diagnose(response, before, isolateHydrated);
   },
 };
 

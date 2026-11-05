@@ -30,6 +30,7 @@ import {
   writeCachedPack,
   type PackCache,
 } from "@/lib/storage/packed-preview-cache";
+import { type PreviewHydrationSample } from "@/lib/storage/packed-preview-diagnostics";
 
 /**
  * In-memory content snapshot filled from preview packs before Next.js routes.
@@ -94,6 +95,14 @@ export type PackedPreviewStats = {
   /** Cached bytes whose hash or etag did not match the R2 manifest. */
   cacheRejected: number;
   cacheErrors: number;
+  /** R2 reads of the version document, including a conditional match with no body. */
+  versionReads: number;
+  manifestReads: number;
+  /** Pack objects fetched from R2. Version and manifest reads are not included. */
+  packReads: number;
+  packBytes: number;
+  /** Time in the version recheck outside a full layout reload. */
+  versionCheckMs: number;
 };
 
 export type PackedPreviewStorageOptions = {
@@ -139,6 +148,11 @@ export class PackedPreviewStorage implements ContentStorage {
     cachePuts: 0,
     cacheRejected: 0,
     cacheErrors: 0,
+    versionReads: 0,
+    manifestReads: 0,
+    packReads: 0,
+    packBytes: 0,
+    versionCheckMs: 0,
   };
   private readonly bucket: R2BucketLike;
   private readonly staticBucket?: R2BucketLike;
@@ -277,15 +291,31 @@ export class PackedPreviewStorage implements ContentStorage {
     return this.hydrated.has(group);
   }
 
+  /** Counters for the preview diagnostic. Cumulative for this isolate. */
+  hydrationSample(): PreviewHydrationSample {
+    return {
+      versionReads: this.stats.versionReads,
+      manifestReads: this.stats.manifestReads,
+      packHits: this.stats.cacheHits,
+      packMisses: this.stats.cacheMisses,
+      packRejected: this.stats.cacheRejected,
+      packErrors: this.stats.cacheErrors,
+      packReads: this.stats.packReads,
+      packBytes: this.stats.packBytes,
+      inflateMs: this.stats.inflateMs,
+      snapshotMs: this.stats.snapshotPackMs,
+      hydrateMs: this.stats.hydrateMs,
+      versionCheckMs: this.stats.versionCheckMs,
+    };
+  }
+
   ensureHydrated(group: EditionGroup): Promise<void> {
     if (this.closed) {
       return Promise.reject(new StorageHydrationError(group, "preview pack: snapshot was rejected and will not fall back to loose objects"));
     }
     if (this.hydrated.has(group) && this.hydrated.size > 0 && this.manifest) return Promise.resolve();
     if (!this.loading) {
-      const started = performance.now();
       this.loading = this.loadLayout(group).finally(() => {
-        this.stats.hydrateMs += performance.now() - started;
         this.loading = null;
       });
     }
@@ -578,6 +608,8 @@ export class PackedPreviewStorage implements ContentStorage {
   }
 
   private async checkVersion() {
+    const started = performance.now();
+    const hydrateBefore = this.stats.hydrateMs;
     try {
       const object = await this.readObject(
         PREVIEW_VERSION_KEY,
@@ -599,6 +631,8 @@ export class PackedPreviewStorage implements ContentStorage {
       this.log(`preview version check failed: ${error instanceof Error ? error.message : String(error)}`);
       throw new StorageHydrationError("en", "preview pack: version check failed", { cause: error });
     } finally {
+      const layoutMs = this.stats.hydrateMs - hydrateBefore;
+      this.stats.versionCheckMs += Math.max(0, performance.now() - started - layoutMs);
       this.lastVersionCheck = Date.now();
     }
   }
@@ -624,6 +658,8 @@ export class PackedPreviewStorage implements ContentStorage {
   }
 
   private async loadLayout(group: EditionGroup) {
+    const started = performance.now();
+    try {
     let manifestObject;
     let versionObject;
     try {
@@ -708,6 +744,9 @@ export class PackedPreviewStorage implements ContentStorage {
       }
     }
     this.closed = false;
+    } finally {
+      this.stats.hydrateMs += performance.now() - started;
+    }
   }
 
   private async loadAssets(group: EditionGroup) {
@@ -773,11 +812,15 @@ export class PackedPreviewStorage implements ContentStorage {
       throw new PreviewPackError(`preview pack hydration refused a loose read of ${key}`);
     }
     this.stats.r2Gets += 1;
+    if (key === PREVIEW_VERSION_KEY) this.stats.versionReads += 1;
+    else if (key === PREVIEW_MANIFEST_KEY) this.stats.manifestReads += 1;
+    else if (key.startsWith("content/.packs/")) this.stats.packReads += 1;
     const object = await this.bucket.get(key, options);
     if (!object) return null;
     if (!hasBody(object)) return null;
     const bytes = new Uint8Array(await object.arrayBuffer());
     this.stats.r2Bytes += bytes.byteLength;
+    if (key.startsWith("content/.packs/")) this.stats.packBytes += bytes.byteLength;
     return { bytes, etag: object.etag };
   }
 }
