@@ -93,3 +93,8 @@ export const costArticles: Record<string, CostArticle> = {
 export function getCostArticle(slug: string): CostArticle | undefined {
   return costArticles[slug];
 }
+
+/** Hostinger articles are already parsed. Presence is the same map the renderer reads. */
+export function hasCostArticle(slug: string): boolean {
+  return getCostArticle(slug) !== undefined;
+}

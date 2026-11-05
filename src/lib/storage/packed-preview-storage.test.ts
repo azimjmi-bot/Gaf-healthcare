@@ -246,6 +246,50 @@ function StorageConflictErrorName(error: unknown) {
   return error instanceof Error && error.name === "StorageConflictError";
 }
 
+function versionCheckedAt(storage: PackedPreviewStorage) {
+  return (storage as unknown as { lastVersionCheck: number }).lastVersionCheck;
+}
+
+test("a successful layout stamps the version clock and a failed layout does not", async () => {
+  const { bucket } = fixturePacks();
+  const storage = new PackedPreviewStorage({ bucket, versionCheckIntervalMs: 60_000, log() {} });
+  assert.equal(versionCheckedAt(storage), 0);
+  const before = Date.now();
+  await storage.ensureHydrated("en");
+  const stamped = versionCheckedAt(storage);
+  assert.ok(stamped >= before);
+  const reads = storage.stats.versionReads;
+  await storage.refreshIfStale();
+  assert.equal(storage.stats.versionReads, reads);
+
+  const soon = new PackedPreviewStorage({
+    bucket: fixturePacks().bucket,
+    versionCheckIntervalMs: 5,
+    log() {},
+  });
+  await soon.ensureHydrated("en");
+  const afterLayout = soon.stats.versionReads;
+  await new Promise((resolve) => setTimeout(resolve, 20));
+  await soon.refreshIfStale();
+  assert.equal(soon.stats.versionReads, afterLayout + 1);
+
+  const empty = new PackedPreviewStorage({ bucket: new FakeR2Bucket(), versionCheckIntervalMs: 60_000, log() {} });
+  await assert.rejects(empty.ensureHydrated("en"), /preview pack: content\/\.version\.json is missing/);
+  assert.equal(versionCheckedAt(empty), 0);
+
+  const { bucket: brokenBucket, built } = fixturePacks();
+  const flipped = new Uint8Array(built.objects.get("content/.packs/en.pack")!);
+  flipped[flipped.length - 1] ^= 0xff;
+  brokenBucket.seed("content/.packs/en.pack", flipped);
+  const broken = new PackedPreviewStorage({ bucket: brokenBucket, versionCheckIntervalMs: 60_000, log() {} });
+  await assert.rejects(broken.ensureHydrated("en"), /checksum mismatch|corrupt/);
+  assert.equal(versionCheckedAt(broken), 0);
+  const failedReads = broken.stats.versionReads;
+  await broken.refreshIfStale();
+  assert.equal(broken.stats.versionReads, failedReads);
+  assert.throws(() => broken.read("content/cms.json"), /will not fall back/);
+});
+
 test("missing and corrupt packs fail closed without reading loose objects", async () => {
   const empty = storageFor(new FakeR2Bucket());
   await assert.rejects(empty.ensureHydrated("en"), /preview pack: content\/\.version\.json is missing/);

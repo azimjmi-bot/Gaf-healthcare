@@ -4,20 +4,13 @@ import { ArrowRight, Building2, MapPin, Stethoscope } from "lucide-react";
 import { JsonLd } from "@/components/json-ld";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { PseoTrust } from "@/components/pseo-trust";
-import {
-  getSpecialtyPage,
-  listBaseSpecialtyPages,
-} from "@/data/specialty-pages";
 import { costsFilterPath } from "@/lib/catalog-links";
 import { getRequestLocale } from "@/lib/i18n/request";
 import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import { crawlableUrl, documentId } from "@/lib/jsonld";
 import { absoluteUrl } from "@/lib/seo";
-import {
-  buildSpecialtyPageData,
-  specialtyPageMeetsQualityThreshold,
-} from "@/lib/specialty-page";
+import { listPublishedSpecialtyPages } from "@/lib/specialty-page";
 import type { Metadata } from "next";
 
 export const dynamic = "force-dynamic";
@@ -41,21 +34,10 @@ export async function generateMetadata(): Promise<Metadata> {
   );
 }
 
-function publishedSpecialties() {
-  return listBaseSpecialtyPages()
-    .map((base) => getSpecialtyPage(base.countrySlug, base.specialtySlug))
-    .filter((profile) => Boolean(profile?.allowIndex && profile.status === "published"))
-    .map((profile) => (profile ? buildSpecialtyPageData(profile) : undefined))
-    .filter(
-      (data): data is NonNullable<typeof data> =>
-        Boolean(data && specialtyPageMeetsQualityThreshold(data)),
-    );
-}
-
 export default async function SpecialtiesPage() {
   const locale = await getRequestLocale();
   if (!localePageIsRenderable(locale, "/specialties")) notFound();
-  const specialties = publishedSpecialties();
+  const specialties = listPublishedSpecialtyPages();
   const itemList = {
     "@context": "https://schema.org",
     "@type": "ItemList",

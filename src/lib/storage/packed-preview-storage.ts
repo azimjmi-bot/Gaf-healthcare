@@ -744,6 +744,9 @@ export class PackedPreviewStorage implements ContentStorage {
       }
     }
     this.closed = false;
+    // The layout just read the version document. A check in the same interval
+    // would repeat that GET. Failures throw before this line and leave the clock at 0.
+    this.lastVersionCheck = Date.now();
     } finally {
       this.stats.hydrateMs += performance.now() - started;
     }

@@ -9,4 +9,4 @@ export type { CostArticle } from "./types";
  * `external-registry.ts`, which reads one packed JSON asset and keeps only a
  * few parsed articles.
  */
-export { costArticles, getCostArticle } from "./static-registry";
+export { costArticles, getCostArticle, hasCostArticle } from "./static-registry";

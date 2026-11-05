@@ -7,6 +7,7 @@ import {
   costArticleCacheSize,
   costArticles,
   getCostArticle,
+  hasCostArticle,
 } from "./external-registry";
 import { setContentStorage } from "@/lib/storage";
 import { MemoryContentStorage } from "@/lib/storage/memory";
@@ -65,6 +66,23 @@ describe("worker cost-article registry", { concurrency: 1 }, () => {
     clearCostArticleCache();
     setContentStorage(new MemoryContentStorage());
     assert.equal(getCostArticle("knee-scope"), undefined);
+  });
+
+  test("presence uses the pack index and does not inflate articles", () => {
+    const articles: Record<string, { slug: string; heroLede: string }> = {};
+    for (let i = 0; i < 20; i += 1) {
+      articles[`procedure-${i}`] = { slug: `procedure-${i}`, heroLede: `paragraph ${i} `.repeat(30) };
+    }
+    install(encodeCostArticlePack(articles));
+    for (const slug of Object.keys(articles)) {
+      assert.equal(hasCostArticle(slug), true);
+    }
+    assert.equal(hasCostArticle("missing"), false);
+    assert.equal(hasCostArticle(""), false);
+    assert.equal(costArticleCacheSize(), 0);
+    assert.equal(COST_ARTICLE_CACHE_MAX, 8);
+    assert.equal(getCostArticle("procedure-0")?.slug, "procedure-0");
+    assert.equal(costArticleCacheSize(), 1);
   });
 
   test("the parsed-article cache stays at its bound", () => {

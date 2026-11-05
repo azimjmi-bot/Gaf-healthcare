@@ -1,6 +1,11 @@
 import "server-only";
-import { getCostArticle } from "@/data/cost-articles";
-import type { SpecialtyCityEditorial, SpecialtyPageProfile } from "@/data/specialty-pages";
+import { getCostArticle, hasCostArticle } from "@/data/cost-articles";
+import {
+  getSpecialtyPage,
+  listBaseSpecialtyPages,
+  type SpecialtyCityEditorial,
+  type SpecialtyPageProfile,
+} from "@/data/specialty-pages";
 import {
   filterDoctors,
   filterHospitalsForDoctors,
@@ -190,7 +195,7 @@ export function buildSpecialtyPageData(
     matchedHospitals,
   );
   const longFormArticleCount = matchedProcedures.filter((procedure) =>
-    Boolean(getCostArticle(procedure.slug)),
+    hasCostArticle(procedure.slug),
   ).length;
   const longFormArticleCoverage =
     matchedProcedures.length > 0
@@ -222,7 +227,7 @@ export function buildSpecialtyPageData(
         cityHospitals,
       );
       const cityLongFormCount = cityProcedures.filter((procedure) =>
-        Boolean(getCostArticle(procedure.slug)),
+        hasCostArticle(procedure.slug),
       ).length;
       return {
         name: city.name,
@@ -266,9 +271,10 @@ export function buildSpecialtyPageData(
       ...group,
       rows: mapProcedures(group.procedureSlugs, procedureIndex).map(
         (procedure) => {
-          const article = getCostArticle(procedure.slug);
+          // A national page has no city quote to read, so it must not inflate
+          // the article. A city page still reads that one article for its range.
           const cityRange = city
-            ? article?.cities.find((item) => item.citySlug === city.slug)
+            ? getCostArticle(procedure.slug)?.cities.find((item) => item.citySlug === city.slug)
                 ?.costRange
             : undefined;
           return {
@@ -402,4 +408,17 @@ export function specialtyPageMeetsQualityThreshold(data: SpecialtyPageData) {
     data.procedures.every((procedure) => pricedProcedures.has(procedure.slug)) &&
     (!data.city || Boolean(data.cityUniqueness?.meetsThreshold))
   );
+}
+
+/** Published national specialty cards. Article presence is a span check, not an inflate. */
+export function listPublishedSpecialtyPages(): SpecialtyPageData[] {
+  return listBaseSpecialtyPages()
+    .map((base) => getSpecialtyPage(base.countrySlug, base.specialtySlug))
+    .filter((profile): profile is SpecialtyPageProfile =>
+      Boolean(profile?.allowIndex && profile.status === "published"),
+    )
+    .map((profile) => buildSpecialtyPageData(profile))
+    .filter((data): data is SpecialtyPageData =>
+      Boolean(data && specialtyPageMeetsQualityThreshold(data)),
+    );
 }
