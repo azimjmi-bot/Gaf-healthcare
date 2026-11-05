@@ -969,7 +969,7 @@ test("HTML and RSC requests for the same URL keep two cache entries", async () =
   assert.equal(flight.headers.get("x-gaf-rsc-cache"), "miss");
   assert.equal(flight.headers.get("cache-control"), PUBLIC_HTML_CACHE);
   assert.equal(await flight.text(), "flight:navigation");
-  assert.equal(seen[1]?.url, "https://gaf.healthcare/costs/cabg");
+  assert.equal(seen[1]?.url, "https://gaf.healthcare/costs/cabg?_rsc=token-a");
   assert.deepEqual(cachedPaths(cache).sort(), ["/costs/cabg", "/costs/cabg.rsc"]);
   const stored = [...cache.store.values()];
   assert.ok(stored.every((response) => response.headers.get("cache-control") === "public, max-age=300"));

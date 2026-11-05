@@ -225,16 +225,19 @@ export function isTrackingParam(name: string): boolean {
 
 /**
  * Next adds `_rsc` to flight URLs as a cache buster. The value does not
- * change the payload; the `rsc` header does. Leaving it in the key would
- * make every token a miss.
+ * change the payload, but Next redirects when a flight URL arrives without
+ * it. It is removed only from the cache key, never from the request Next renders.
  */
-const NON_CONTENT_PARAMS = new Set(["_rsc"]);
+const CACHE_ONLY_PARAMS = new Set(["_rsc"]);
 
 export function isNonContentParam(name: string): boolean {
-  return isTrackingParam(name) || NON_CONTENT_PARAMS.has(name.toLowerCase());
+  return isTrackingParam(name) || CACHE_ONLY_PARAMS.has(name.toLowerCase());
 }
 
-/** Same origin, path, and content parameters. Tracking parameters and `_rsc` are removed. */
+/**
+ * Page identity for the cache key. Tracking parameters and `_rsc` are removed.
+ * This URL is not the request passed to Next.
+ */
 export function normalizedPublicUrl(input: URL): URL {
   const next = new URL(input.href);
   const kept: [string, string][] = [];
@@ -408,6 +411,16 @@ export function publicHtmlCacheRequest(
 function withNormalizedUrl(request: Request, url: URL): Request {
   if (url.href === request.url) return request;
   return new Request(url, request);
+}
+
+/**
+ * The request Next renders. HTML drops tracking parameters. An RSC flight
+ * keeps the visitor URL, including `_rsc`, so Next does not redirect to put
+ * that parameter back. The cache key is a different Request.
+ */
+function requestForRender(request: Request, variant: DocumentCacheVariant, normalized: URL): Request {
+  if (variant.kind !== "html") return request;
+  return withNormalizedUrl(request, normalized);
 }
 
 function copyResponse(response: Response, mutate: (headers: Headers) => void): Response {
@@ -1041,7 +1054,7 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
     const reused = await readDocumentCache(normalized, variant);
     if (reused) return reused;
     const generation = active.contentGeneration();
-    const rendered = await renderDocument(withNormalizedUrl(request, normalized), active, nextEnv, ctx);
+    const rendered = await renderDocument(requestForRender(request, variant, normalized), active, nextEnv, ctx);
     const restored = restoreLocaleHomeCache(normalized.pathname, rendered);
     const marked = copyResponse(restored, (headers) => headers.set(cacheStatusHeader(variant), "miss"));
     const cache = cacheFor();
@@ -1108,7 +1121,7 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       const subrequest = isRenderSubrequest(request);
       if (request.method === "HEAD" || subrequest) {
         const rendered = await renderDocument(
-          variant ? withNormalizedUrl(request, normalized) : request,
+          variant ? requestForRender(request, variant, normalized) : request,
           storage,
           envForNext,
           ctx,
