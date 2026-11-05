@@ -31,7 +31,7 @@
 import { COST_ARTICLES_KEY } from "@/data/cost-articles/asset";
 import { CATALOG_SEED_KEY } from "@/lib/catalog-seed";
 import { SITEMAP_HEADERS } from "@/lib/i18n/sitemap-xml";
-import { setContentStorage } from "@/lib/storage";
+import { setContentStorage, type ContentStorage } from "@/lib/storage";
 import {
   contentTypeFor,
   EDITION_GROUPS,
@@ -668,6 +668,19 @@ function hydrationUnavailable(error: unknown, log: (message: string) => void) {
   });
 }
 
+/**
+ * What the request path needs from whichever backend `install` built.
+ * Production and staging use `R2ContentStorage`. The preview entry can
+ * supply a packed snapshot instead. The loose hydrate method is not replaced.
+ */
+export interface WorkerContent extends ContentStorage {
+  ensureHydrated(group: EditionGroup): Promise<void>;
+  refreshIfStale(): Promise<void>;
+  contentGeneration(): string | null;
+  ensureContentGeneration(): Promise<string>;
+  isHydrated(group: EditionGroup): boolean;
+}
+
 export type WorkerRuntimeOptions = {
   /** Replaces `caches.default`; tests pass their own, production uses the platform's. */
   cache?: () => CacheLike | undefined;
@@ -675,6 +688,19 @@ export type WorkerRuntimeOptions = {
   versionCheckIntervalMs?: number;
   /** Overrides {@link DEFAULT_RENDER_QUEUE_TIMEOUT_MS} when the env binding is unset. */
   renderQueueTimeoutMs?: number;
+  /**
+   * Preview entry only. When omitted, the Worker installs `R2ContentStorage`
+   * exactly as production and staging do.
+   */
+  createContent?: (
+    env: WorkerEnv,
+    hooks: {
+      log: (message: string) => void;
+      versionCheckIntervalMs?: number;
+      onContentPublished?: (groups: readonly EditionGroup[]) => void;
+      onStaticChange?: (bucketKey: string, kind: "put" | "delete") => void;
+    },
+  ) => WorkerContent;
 };
 
 export interface CacheLike {
@@ -695,7 +721,7 @@ function platformCache(): CacheLike | undefined {
 export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions = {}) {
   const log = options.log ?? ((message: string) => console.error(`[gaf] ${message}`));
   const cacheFor = options.cache ?? platformCache;
-  let storage: R2ContentStorage | undefined;
+  let storage: WorkerContent | undefined;
   let envForNext: WorkerEnv | undefined;
   /** Hosts this isolate has served `/uploads/*` on; a deletion purges each. */
   const origins = new Set<string>();
@@ -741,20 +767,28 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
 
   function install(env: WorkerEnv) {
     if (storage && envForNext) return { storage, envForNext };
-    storage = new R2ContentStorage({
-      content: env.CONTENT,
-      static: env.STATIC,
-      assets: env.ASSETS,
-      assetKeys: ASSET_KEYS,
-      versionCheckIntervalMs: options.versionCheckIntervalMs,
+    const hooks = {
       log,
+      versionCheckIntervalMs: options.versionCheckIntervalMs,
       onContentPublished: () => purgeHtmlCache(),
-      onStaticChange: (bucketKey) => {
+      onStaticChange: (bucketKey: string) => {
         // A replacement at the same key must drop the previous bytes. A delete
         // does too. Remembered optimizer entries for that upload are included.
         purgeUpload(bucketKey);
       },
-    });
+    };
+    storage = options.createContent
+      ? options.createContent(env, hooks)
+      : new R2ContentStorage({
+          content: env.CONTENT,
+          static: env.STATIC,
+          assets: env.ASSETS,
+          assetKeys: ASSET_KEYS,
+          versionCheckIntervalMs: options.versionCheckIntervalMs,
+          log,
+          onContentPublished: hooks.onContentPublished,
+          onStaticChange: hooks.onStaticChange,
+        });
     setContentStorage(storage);
     // Next's image optimizer resolves `/`-rooted sources through ASSETS; make
     // it see media that lives only in the static bucket.
@@ -779,7 +813,7 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
 
   async function renderDocument(
     request: Request,
-    active: R2ContentStorage,
+    active: WorkerContent,
     nextEnv: WorkerEnv,
     ctx: ExecutionContextLike,
   ) {
@@ -790,7 +824,12 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       if (error instanceof StorageHydrationError) return hydrationUnavailable(error, log);
       throw error;
     }
-    await active.refreshIfStale();
+    try {
+      await active.refreshIfStale();
+    } catch (error) {
+      if (error instanceof StorageHydrationError) return hydrationUnavailable(error, log);
+      throw error;
+    }
     return next(request, nextEnv, ctx);
   }
 
@@ -802,6 +841,9 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
     const cache = request.method === "GET" && !hasCmsCookie(request) ? cacheFor() : undefined;
     let response = cache ? await cache.match(request) : undefined;
     if (!response) {
+      if (!env.STATIC) {
+        return new Response("Not Found", { status: 404, headers: { "cache-control": "no-store" } });
+      }
       response = await uploadResponse(env.STATIC, url.pathname);
       if (response.ok && cache) ctx.waitUntil(cache.put(request, response.clone()));
     }
@@ -904,7 +946,7 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
 
   async function renderCacheableDocument(
     request: Request,
-    active: R2ContentStorage,
+    active: WorkerContent,
     nextEnv: WorkerEnv,
     ctx: ExecutionContextLike,
     normalized: URL,
@@ -1027,7 +1069,10 @@ export function assetsWithUploads(env: WorkerEnv): AssetFetcherLike {
   return {
     async fetch(input: string | URL | Request) {
       const url = new URL(input instanceof Request ? input.url : String(input));
-      if (isUploadPath(url.pathname)) return uploadResponse(env.STATIC, url.pathname);
+      if (isUploadPath(url.pathname)) {
+        if (!env.STATIC) return new Response("Not Found", { status: 404, headers: { "cache-control": "no-store" } });
+        return uploadResponse(env.STATIC, url.pathname);
+      }
       return env.ASSETS.fetch(input);
     },
   };

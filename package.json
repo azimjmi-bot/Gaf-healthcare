@@ -18,6 +18,7 @@
     "start:next": "NODE_OPTIONS=\"--max-old-space-size=${GAF_MAX_OLD_SPACE_MB:-512}\" next start --hostname 0.0.0.0",
     "cf:build": "GAF_CF_BUILD=1 opennextjs-cloudflare build && node scripts/cloudflare/post-build.mjs",
     "cf:seed-local": "node scripts/cloudflare/seed-r2.mjs --local",
+    "cf:pack-preview": "tsx scripts/cloudflare/pack-preview.ts",
     "cf:dev": "wrangler dev --port 43130",
     "cf:typegen": "wrangler types",
     "check:alternates": "tsx scripts/check-english-alternates.ts",

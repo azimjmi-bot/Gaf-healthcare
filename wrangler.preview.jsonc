@@ -1,0 +1,32 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	// Isolated Stage 4 preview. Do not deploy this file until the preview
+	// bucket exists and the pack upload has been approved. It must not gain
+	// routes, custom domains, or any bucket besides gaf-content-preview.
+	"name": "gaf-healthcare-preview",
+	"main": "src/worker-preview.ts",
+	"compatibility_date": "2026-10-01",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"workers_dev": false,
+	"preview_urls": false,
+	"observability": { "enabled": true },
+	"minify": true,
+	"alias": { "gaf-open-next-worker": "./.open-next/worker.js" },
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS",
+		"run_worker_first": ["/_gaf/*"]
+	},
+	"services": [
+		{ "binding": "WORKER_SELF_REFERENCE", "service": "gaf-healthcare-preview" }
+	],
+	"r2_buckets": [
+		{ "binding": "gaf-content-preview", "bucket_name": "gaf-content-preview" }
+	],
+	"vars": {
+		"GAF_STORAGE": "r2",
+		"GAF_CONTENT_PACK": "preview",
+		"GAF_PREVIEW_BUCKET": "gaf-content-preview",
+		"GAF_INDEXING": "off"
+	}
+}
