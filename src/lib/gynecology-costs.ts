@@ -1,81 +1,4 @@
-export const GYNECOLOGY_COST: Record<string, { us: string; partner: string; stay: string }> = {
-  "Laparoscopic Hysterectomy": {
-    us: "$15,000–$35,000",
-    partner: "$3,000–$7,000",
-    stay: "1–3 nights",
-  },
-  "Robotic Hysterectomy": {
-    us: "$20,000–$45,000",
-    partner: "$5,000–$10,000",
-    stay: "1–3 nights",
-  },
-  "Vaginal Hysterectomy": {
-    us: "$12,000–$28,000",
-    partner: "$2,500–$6,000",
-    stay: "1–3 nights",
-  },
-  "Abdominal Hysterectomy": {
-    us: "$15,000–$35,000",
-    partner: "$3,000–$7,500",
-    stay: "2–5 nights",
-  },
-  "Laparoscopic Myomectomy": {
-    us: "$12,000–$30,000",
-    partner: "$2,800–$7,000",
-    stay: "1–3 nights",
-  },
-  "Robotic Myomectomy": {
-    us: "$18,000–$40,000",
-    partner: "$4,500–$9,000",
-    stay: "1–3 nights",
-  },
-  "Hysteroscopic Myomectomy": {
-    us: "$6,000–$15,000",
-    partner: "$1,200–$3,500",
-    stay: "Outpatient or 1 night",
-  },
-  "Endometriosis Surgery": {
-    us: "$15,000–$40,000",
-    partner: "$3,000–$8,000",
-    stay: "1–3 nights",
-  },
-  "Hysteroscopic Polypectomy": {
-    us: "$4,000–$10,000",
-    partner: "$800–$2,500",
-    stay: "Outpatient",
-  },
-  "Ovarian Cyst Surgery": {
-    us: "$8,000–$20,000",
-    partner: "$1,800–$4,500",
-    stay: "1–2 nights",
-  },
-  Oophorectomy: {
-    us: "$10,000–$25,000",
-    partner: "$2,000–$5,500",
-    stay: "1–3 nights",
-  },
-  "Salpingo-Oophorectomy": {
-    us: "$12,000–$28,000",
-    partner: "$2,500–$6,500",
-    stay: "1–3 nights",
-  },
-  "Pelvic Organ Prolapse Surgery": {
-    us: "$15,000–$35,000",
-    partner: "$3,000–$7,500",
-    stay: "2–4 nights",
-  },
-  "Pelvic Floor Repair": {
-    us: "$12,000–$30,000",
-    partner: "$2,500–$6,500",
-    stay: "1–3 nights",
-  },
-  "Gynecologic Cancer Surgery": {
-    us: "$20,000–$50,000",
-    partner: "$5,000–$12,000",
-    stay: "3–7 nights",
-  },
-};
-
+export { GYNECOLOGY_COST, GYNECOLOGY_CLUSTER_BY_PROCEDURE } from "./treatment-cost-ranges";
 export const GYNECOLOGY_SUMMARIES: Record<string, string> = {
   "Laparoscopic Hysterectomy":
     "Remove a uterus by laparoscopy when fibroids, adenomyosis or bleeding already write hysterectomy and not a myomectomy. Robotic, vaginal and abdominal hysterectomy sit on neighbouring Gynecology slugs. Radical hysterectomy remains the shared surgical-oncology product.",
@@ -107,24 +30,6 @@ export const GYNECOLOGY_SUMMARIES: Record<string, string> = {
     "Repair a pelvic floor when cystocele, rectocele or incontinence already writes reconstruction. Prolapse surgery is the neighbouring vault slug.",
   "Gynecologic Cancer Surgery":
     "Operate when cervical, ovarian or endometrial cancer already belongs on a named gyn-onc list in Delhi NCR, Mumbai, Bengaluru, Chennai or Hyderabad. Radical hysterectomy keeps the shared surgical-oncology slug; ovarian cytoreduction stays on that neighbouring product.",
-};
-
-export const GYNECOLOGY_CLUSTER_BY_PROCEDURE: Record<string, string> = {
-  "Laparoscopic Hysterectomy": "Hysterectomy",
-  "Robotic Hysterectomy": "Hysterectomy",
-  "Vaginal Hysterectomy": "Hysterectomy",
-  "Abdominal Hysterectomy": "Hysterectomy",
-  "Laparoscopic Myomectomy": "Myomectomy",
-  "Robotic Myomectomy": "Myomectomy",
-  "Hysteroscopic Myomectomy": "Myomectomy",
-  "Endometriosis Surgery": "Benign Gynecology",
-  "Hysteroscopic Polypectomy": "Benign Gynecology",
-  "Ovarian Cyst Surgery": "Benign Gynecology",
-  Oophorectomy: "Benign Gynecology",
-  "Salpingo-Oophorectomy": "Benign Gynecology",
-  "Pelvic Organ Prolapse Surgery": "Pelvic Floor",
-  "Pelvic Floor Repair": "Pelvic Floor",
-  "Gynecologic Cancer Surgery": "Gynecologic Oncology",
 };
 
 export const GYNECOLOGY_CONDITIONS = [

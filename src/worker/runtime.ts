@@ -15,11 +15,12 @@
  *    when that asset shipped. Building the English catalog inside a request
  *    exceeds the Worker CPU limit (Cloudflare error 1102). The file is not a
  *    public asset; `/_gaf/*` stays 404.
- * 4. Serve a cached public HTML document when this isolate already knows the
- *    content generation and the edge cache has that document. Tracking
- *    parameters share one entry. CMS, API, enquiry, and authenticated
- *    responses are never stored. A request that had to wait for a render
- *    slot checks the cache again before rendering.
+ * 4. Serve a cached public HTML document, or a cached RSC flight for the
+ *    same URL, when this isolate already knows the content generation and
+ *    the edge cache has that response. The two never share a key. Tracking
+ *    parameters share one entry. Server Actions, CMS, API, enquiry, and
+ *    authenticated responses are never stored. A request that had to wait
+ *    for a render slot checks the cache again before rendering.
  * 5. Serve `/_next/image` outside the document render slots, with its own
  *    small concurrency limit and a cache of successful image bytes.
  * 6. Hydrate every content group a document can read, answering 503 when
@@ -31,7 +32,7 @@
 import { COST_ARTICLES_KEY } from "@/data/cost-articles/asset";
 import { CATALOG_SEED_KEY } from "@/lib/catalog-seed";
 import { SITEMAP_HEADERS } from "@/lib/i18n/sitemap-xml";
-import { setContentStorage } from "@/lib/storage";
+import { setContentStorage, type ContentStorage } from "@/lib/storage";
 import {
   contentTypeFor,
   EDITION_GROUPS,
@@ -222,12 +223,26 @@ export function isTrackingParam(name: string): boolean {
   return TRACKING_PARAMS.has(key);
 }
 
-/** Same origin, path, and content parameters. Tracking parameters are removed. */
+/**
+ * Next adds `_rsc` to flight URLs as a cache buster. The value does not
+ * change the payload, but Next redirects when a flight URL arrives without
+ * it. It is removed only from the cache key, never from the request Next renders.
+ */
+const CACHE_ONLY_PARAMS = new Set(["_rsc"]);
+
+export function isNonContentParam(name: string): boolean {
+  return isTrackingParam(name) || CACHE_ONLY_PARAMS.has(name.toLowerCase());
+}
+
+/**
+ * Page identity for the cache key. Tracking parameters and `_rsc` are removed.
+ * This URL is not the request passed to Next.
+ */
 export function normalizedPublicUrl(input: URL): URL {
   const next = new URL(input.href);
   const kept: [string, string][] = [];
   for (const [key, value] of next.searchParams) {
-    if (!isTrackingParam(key)) kept.push([key, value]);
+    if (!isNonContentParam(key)) kept.push([key, value]);
   }
   kept.sort((a, b) => (a[0] === b[0] ? (a[1] < b[1] ? -1 : a[1] > b[1] ? 1 : 0) : a[0] < b[0] ? -1 : 1));
   next.search = "";
@@ -254,19 +269,66 @@ export function isImageOptimizerPath(pathname: string): boolean {
   return pathname === IMAGE_OPTIMIZER_PATH;
 }
 
-/** A full document navigation. RSC payloads, prefetches, images, and subrequests are not HTML cache entries. */
-export function isCacheableDocumentRequest(request: Request): boolean {
-  if (request.method !== "GET") return false;
-  if (isRenderSubrequest(request)) return false;
+/**
+ * Appended to the cache-key path for a navigation flight (`RSC: 1` without
+ * a prefetch header). Prefetches use {@link RSC_PREFETCH_CACHE_SUFFIX} so a
+ * partial flight cannot replace the navigation payload or the HTML document.
+ */
+export const RSC_CACHE_SUFFIX = ".rsc";
+export const RSC_PREFETCH_CACHE_SUFFIX = ".rsc-prefetch";
+
+/** A Next.js Server Action. The result depends on the POST body and must not be stored. */
+export function isServerActionRequest(request: Request): boolean {
+  return request.headers.has("next-action");
+}
+
+/**
+ * Which public cache entry a GET may use.
+ *
+ * `html` is the document. `rsc` is the navigation flight for that same URL.
+ * `rsc-prefetch` is a prefetch or per-segment flight: same 300-second
+ * lifetime, different key. `null` is not stored (Server Actions, CMS, API,
+ * enquiry, authenticated calls, and in-worker continuations).
+ */
+export type DocumentCacheVariant =
+  | { kind: "html" }
+  | { kind: "rsc" }
+  | { kind: "rsc-prefetch"; prefetch: string; segment: string };
+
+export function documentCacheVariant(request: Request): DocumentCacheVariant | null {
+  if (request.method !== "GET") return null;
+  if (isRenderSubrequest(request)) return null;
   const headers = request.headers;
-  if (headers.has("authorization")) return false;
-  if (hasCmsCookie(request) || hasCmsEditionCookie(request)) return false;
-  for (const name of ["rsc", "next-router-prefetch", "next-router-segment-prefetch", "next-router-state-tree", "next-url"]) {
-    if (headers.has(name)) return false;
-  }
+  if (headers.has("authorization")) return null;
+  if (hasCmsCookie(request) || hasCmsEditionCookie(request)) return null;
+  if (isServerActionRequest(request)) return null;
   const url = new URL(request.url);
-  if (isImageOptimizerPath(url.pathname)) return false;
-  return !isUncacheablePath(url.pathname);
+  if (isImageOptimizerPath(url.pathname)) return null;
+  if (isUncacheablePath(url.pathname)) return null;
+  if (headers.has("rsc")) {
+    const prefetch = headers.get("next-router-prefetch");
+    const segment = headers.get("next-router-segment-prefetch");
+    if (prefetch !== null || segment !== null) {
+      return { kind: "rsc-prefetch", prefetch: prefetch ?? "", segment: segment ?? "" };
+    }
+    return { kind: "rsc" };
+  }
+  // These headers alone are not a document. A visitor can send them, and
+  // storing the result under the HTML key would publish the wrong body.
+  if (
+    headers.has("next-router-state-tree") ||
+    headers.has("next-url") ||
+    headers.has("next-router-prefetch") ||
+    headers.has("next-router-segment-prefetch")
+  ) {
+    return null;
+  }
+  return { kind: "html" };
+}
+
+/** A public HTML or RSC response this Worker is allowed to store. */
+export function isCacheableDocumentRequest(request: Request): boolean {
+  return documentCacheVariant(request) !== null;
 }
 
 /**
@@ -297,15 +359,25 @@ export function optimizedImageSource(input: URL): string | null {
   }
 }
 
-function isCacheableHtmlResponse(response: Response): boolean {
+function allowsPublicCache(response: Response): boolean {
   if (response.status !== 200) return false;
   if (response.headers.has("set-cookie")) return false;
-  const type = response.headers.get("content-type") ?? "";
-  if (!type.toLowerCase().includes("text/html")) return false;
   const cacheControl = response.headers.get("cache-control") ?? "";
   if (!/\bpublic\b/i.test(cacheControl)) return false;
   if (/\b(?:private|no-store|no-cache)\b/i.test(cacheControl)) return false;
   return true;
+}
+
+function isCacheableHtmlResponse(response: Response): boolean {
+  if (!allowsPublicCache(response)) return false;
+  const type = response.headers.get("content-type") ?? "";
+  return type.toLowerCase().includes("text/html");
+}
+
+function isCacheableRscResponse(response: Response): boolean {
+  if (!allowsPublicCache(response)) return false;
+  const type = response.headers.get("content-type") ?? "";
+  return type.toLowerCase().startsWith("text/x-component");
 }
 
 export function isCompleteHtmlDocument(body: string): boolean {
@@ -316,19 +388,39 @@ export function isCompleteHtmlDocument(body: string): boolean {
   return opens && trimmed.toLowerCase().endsWith("</html>");
 }
 
-/** Cache key. Hostname, path, content query, and content generation each stay distinct. */
-export function publicHtmlCacheRequest(page: URL, generation: string): Request {
+/** Cache key. Hostname, path, content query, generation, and HTML versus RSC each stay distinct. */
+export function publicHtmlCacheRequest(
+  page: URL,
+  generation: string,
+  variant: DocumentCacheVariant = { kind: "html" },
+): Request {
   const key = new URL(HTML_CACHE_KEY_ORIGIN);
   key.searchParams.set("origin", page.origin);
-  key.searchParams.set("path", page.pathname);
+  const suffix =
+    variant.kind === "rsc" ? RSC_CACHE_SUFFIX : variant.kind === "rsc-prefetch" ? RSC_PREFETCH_CACHE_SUFFIX : "";
+  key.searchParams.set("path", `${page.pathname}${suffix}`);
   key.searchParams.set("query", page.search.startsWith("?") ? page.search.slice(1) : page.search);
   key.searchParams.set("generation", generation);
+  if (variant.kind === "rsc-prefetch") {
+    key.searchParams.set("prefetch", variant.prefetch);
+    key.searchParams.set("segment", variant.segment);
+  }
   return new Request(key.toString(), { method: "GET" });
 }
 
 function withNormalizedUrl(request: Request, url: URL): Request {
   if (url.href === request.url) return request;
   return new Request(url, request);
+}
+
+/**
+ * The request Next renders. HTML drops tracking parameters. An RSC flight
+ * keeps the visitor URL, including `_rsc`, so Next does not redirect to put
+ * that parameter back. The cache key is a different Request.
+ */
+function requestForRender(request: Request, variant: DocumentCacheVariant, normalized: URL): Request {
+  if (variant.kind !== "html") return request;
+  return withNormalizedUrl(request, normalized);
 }
 
 function copyResponse(response: Response, mutate: (headers: Headers) => void): Response {
@@ -341,12 +433,16 @@ function copyResponse(response: Response, mutate: (headers: Headers) => void): R
   });
 }
 
-function presentCachedHtml(cached: Response): Response {
+function cacheStatusHeader(variant: DocumentCacheVariant): "x-gaf-html-cache" | "x-gaf-rsc-cache" {
+  return variant.kind === "html" ? "x-gaf-html-cache" : "x-gaf-rsc-cache";
+}
+
+function presentCachedDocument(cached: Response, header: "x-gaf-html-cache" | "x-gaf-rsc-cache"): Response {
   return copyResponse(cached, (headers) => {
     const original = headers.get("x-gaf-stored-cache-control");
     headers.delete("x-gaf-stored-cache-control");
     if (original) headers.set("cache-control", original);
-    headers.set("x-gaf-html-cache", "hit");
+    headers.set(header, "hit");
   });
 }
 
@@ -356,22 +452,25 @@ function boundedQueueTimeout(configured: number | undefined): number {
   return Math.min(MAX_RENDER_QUEUE_TIMEOUT_MS, Math.floor(configured));
 }
 
-async function storePublicHtml(
+async function storePublicDocument(
   cache: CacheLike,
   key: Request,
   response: Response,
+  variant: DocumentCacheVariant,
   log: (message: string) => void,
   stillCurrent: () => boolean,
   remember: (url: string) => void,
 ): Promise<void> {
   try {
     const bytes = new Uint8Array(await response.arrayBuffer());
-    if (!isCompleteHtmlDocument(new TextDecoder().decode(bytes))) return;
+    const body = new TextDecoder().decode(bytes);
+    const acceptable = variant.kind === "html" ? isCompleteHtmlDocument(body) : body.length > 0;
+    if (!acceptable) return;
     if (!stillCurrent()) return;
     const headers = new Headers(response.headers);
     headers.set("x-gaf-stored-cache-control", headers.get("cache-control") ?? "");
     headers.set("cache-control", `public, max-age=${PUBLIC_HTML_SHARED_TTL_SECONDS}`);
-    headers.set("x-gaf-html-cache", "hit");
+    headers.set(cacheStatusHeader(variant), "hit");
     headers.delete("set-cookie");
     await cache.put(key, new Response(bytes, { status: 200, headers }));
     if (!stillCurrent()) {
@@ -668,6 +767,19 @@ function hydrationUnavailable(error: unknown, log: (message: string) => void) {
   });
 }
 
+/**
+ * What the request path needs from whichever backend `install` built.
+ * Production and staging use `R2ContentStorage`. The preview entry can
+ * supply a packed snapshot instead. The loose hydrate method is not replaced.
+ */
+export interface WorkerContent extends ContentStorage {
+  ensureHydrated(group: EditionGroup): Promise<void>;
+  refreshIfStale(): Promise<void>;
+  contentGeneration(): string | null;
+  ensureContentGeneration(): Promise<string>;
+  isHydrated(group: EditionGroup): boolean;
+}
+
 export type WorkerRuntimeOptions = {
   /** Replaces `caches.default`; tests pass their own, production uses the platform's. */
   cache?: () => CacheLike | undefined;
@@ -675,6 +787,19 @@ export type WorkerRuntimeOptions = {
   versionCheckIntervalMs?: number;
   /** Overrides {@link DEFAULT_RENDER_QUEUE_TIMEOUT_MS} when the env binding is unset. */
   renderQueueTimeoutMs?: number;
+  /**
+   * Preview entry only. When omitted, the Worker installs `R2ContentStorage`
+   * exactly as production and staging do.
+   */
+  createContent?: (
+    env: WorkerEnv,
+    hooks: {
+      log: (message: string) => void;
+      versionCheckIntervalMs?: number;
+      onContentPublished?: (groups: readonly EditionGroup[]) => void;
+      onStaticChange?: (bucketKey: string, kind: "put" | "delete") => void;
+    },
+  ) => WorkerContent;
 };
 
 export interface CacheLike {
@@ -695,7 +820,7 @@ function platformCache(): CacheLike | undefined {
 export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions = {}) {
   const log = options.log ?? ((message: string) => console.error(`[gaf] ${message}`));
   const cacheFor = options.cache ?? platformCache;
-  let storage: R2ContentStorage | undefined;
+  let storage: WorkerContent | undefined;
   let envForNext: WorkerEnv | undefined;
   /** Hosts this isolate has served `/uploads/*` on; a deletion purges each. */
   const origins = new Set<string>();
@@ -741,20 +866,28 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
 
   function install(env: WorkerEnv) {
     if (storage && envForNext) return { storage, envForNext };
-    storage = new R2ContentStorage({
-      content: env.CONTENT,
-      static: env.STATIC,
-      assets: env.ASSETS,
-      assetKeys: ASSET_KEYS,
-      versionCheckIntervalMs: options.versionCheckIntervalMs,
+    const hooks = {
       log,
+      versionCheckIntervalMs: options.versionCheckIntervalMs,
       onContentPublished: () => purgeHtmlCache(),
-      onStaticChange: (bucketKey) => {
+      onStaticChange: (bucketKey: string) => {
         // A replacement at the same key must drop the previous bytes. A delete
         // does too. Remembered optimizer entries for that upload are included.
         purgeUpload(bucketKey);
       },
-    });
+    };
+    storage = options.createContent
+      ? options.createContent(env, hooks)
+      : new R2ContentStorage({
+          content: env.CONTENT,
+          static: env.STATIC,
+          assets: env.ASSETS,
+          assetKeys: ASSET_KEYS,
+          versionCheckIntervalMs: options.versionCheckIntervalMs,
+          log,
+          onContentPublished: hooks.onContentPublished,
+          onStaticChange: hooks.onStaticChange,
+        });
     setContentStorage(storage);
     // Next's image optimizer resolves `/`-rooted sources through ASSETS; make
     // it see media that lives only in the static bucket.
@@ -779,7 +912,7 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
 
   async function renderDocument(
     request: Request,
-    active: R2ContentStorage,
+    active: WorkerContent,
     nextEnv: WorkerEnv,
     ctx: ExecutionContextLike,
   ) {
@@ -790,7 +923,12 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       if (error instanceof StorageHydrationError) return hydrationUnavailable(error, log);
       throw error;
     }
-    await active.refreshIfStale();
+    try {
+      await active.refreshIfStale();
+    } catch (error) {
+      if (error instanceof StorageHydrationError) return hydrationUnavailable(error, log);
+      throw error;
+    }
     return next(request, nextEnv, ctx);
   }
 
@@ -802,6 +940,9 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
     const cache = request.method === "GET" && !hasCmsCookie(request) ? cacheFor() : undefined;
     let response = cache ? await cache.match(request) : undefined;
     if (!response) {
+      if (!env.STATIC) {
+        return new Response("Not Found", { status: 404, headers: { "cache-control": "no-store" } });
+      }
       response = await uploadResponse(env.STATIC, url.pathname);
       if (response.ok && cache) ctx.waitUntil(cache.put(request, response.clone()));
     }
@@ -813,14 +954,14 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
     return response;
   }
 
-  async function readHtmlCache(normalized: URL): Promise<Response | undefined> {
+  async function readDocumentCache(normalized: URL, variant: DocumentCacheVariant): Promise<Response | undefined> {
     const cache = cacheFor();
     if (!cache || !storage) return undefined;
     try {
       await storage.refreshIfStale();
       const generation = await storage.ensureContentGeneration();
-      const hit = await cache.match(publicHtmlCacheRequest(normalized, generation));
-      return hit ? presentCachedHtml(hit) : undefined;
+      const hit = await cache.match(publicHtmlCacheRequest(normalized, generation, variant));
+      return hit ? presentCachedDocument(hit, cacheStatusHeader(variant)) : undefined;
     } catch (error) {
       if (error instanceof StorageHydrationError) throw error;
       log(`html cache read failed: ${error instanceof Error ? error.message : String(error)}`);
@@ -904,23 +1045,26 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
 
   async function renderCacheableDocument(
     request: Request,
-    active: R2ContentStorage,
+    active: WorkerContent,
     nextEnv: WorkerEnv,
     ctx: ExecutionContextLike,
     normalized: URL,
+    variant: DocumentCacheVariant,
   ): Promise<Response> {
-    const reused = await readHtmlCache(normalized);
+    const reused = await readDocumentCache(normalized, variant);
     if (reused) return reused;
     const generation = active.contentGeneration();
-    const rendered = await renderDocument(withNormalizedUrl(request, normalized), active, nextEnv, ctx);
+    const rendered = await renderDocument(requestForRender(request, variant, normalized), active, nextEnv, ctx);
     const restored = restoreLocaleHomeCache(normalized.pathname, rendered);
-    const marked = copyResponse(restored, (headers) => headers.set("x-gaf-html-cache", "miss"));
+    const marked = copyResponse(restored, (headers) => headers.set(cacheStatusHeader(variant), "miss"));
     const cache = cacheFor();
-    if (cache && generation && active.contentGeneration() === generation && isCacheableHtmlResponse(marked)) {
-      await storePublicHtml(
+    const cacheable = variant.kind === "html" ? isCacheableHtmlResponse(marked) : isCacheableRscResponse(marked);
+    if (cache && generation && active.contentGeneration() === generation && cacheable) {
+      await storePublicDocument(
         cache,
-        publicHtmlCacheRequest(normalized, generation),
+        publicHtmlCacheRequest(normalized, generation, variant),
         marked.clone(),
+        variant,
         log,
         () => active.contentGeneration() === generation,
         (stored) => htmlCacheKeys.add(stored),
@@ -961,11 +1105,12 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       // not take a document slot. HEAD stays outside the gate; see
       // MAX_INFLIGHT_RENDERS. A Worker subrequest that continues a render
       // already holds a slot. Waiting for another slot deadlocks the parent.
-      const cacheable = isCacheableDocumentRequest(request);
-      const normalized = cacheable ? normalizedPublicUrl(url) : url;
-      if (cacheable) {
+      // HTML and RSC misses share that gate. A hit returns before taking a slot.
+      const variant = documentCacheVariant(request);
+      const normalized = variant ? normalizedPublicUrl(url) : url;
+      if (variant) {
         try {
-          const hit = await readHtmlCache(normalized);
+          const hit = await readDocumentCache(normalized, variant);
           if (hit) return withStagingRobots(hit, env);
         } catch (error) {
           if (error instanceof StorageHydrationError) return withStagingRobots(hydrationUnavailable(error, log), env);
@@ -976,7 +1121,7 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       const subrequest = isRenderSubrequest(request);
       if (request.method === "HEAD" || subrequest) {
         const rendered = await renderDocument(
-          cacheable ? withNormalizedUrl(request, normalized) : request,
+          variant ? requestForRender(request, variant, normalized) : request,
           storage,
           envForNext,
           ctx,
@@ -985,8 +1130,8 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
       }
       const rendered = await withRenderSlot(
         () =>
-          cacheable
-            ? renderCacheableDocument(request, storage, envForNext, ctx, normalized)
+          variant
+            ? renderCacheableDocument(request, storage, envForNext, ctx, normalized, variant)
             : renderDocument(request, storage, envForNext, ctx).then((response) =>
                 restoreLocaleHomeCache(url.pathname, response),
               ),
@@ -1027,7 +1172,10 @@ export function assetsWithUploads(env: WorkerEnv): AssetFetcherLike {
   return {
     async fetch(input: string | URL | Request) {
       const url = new URL(input instanceof Request ? input.url : String(input));
-      if (isUploadPath(url.pathname)) return uploadResponse(env.STATIC, url.pathname);
+      if (isUploadPath(url.pathname)) {
+        if (!env.STATIC) return new Response("Not Found", { status: 404, headers: { "cache-control": "no-store" } });
+        return uploadResponse(env.STATIC, url.pathname);
+      }
       return env.ASSETS.fetch(input);
     },
   };

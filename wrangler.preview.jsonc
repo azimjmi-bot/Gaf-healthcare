@@ -1,0 +1,34 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	// Isolated Stage 4 preview. CONTENT and STATIC use the same binding names
+	// as the app, but only the preview buckets. workers.dev is the only
+	// address. No incremental cache, routes, or custom domains.
+	"name": "gaf-healthcare-preview",
+	"main": "src/worker-preview.ts",
+	"compatibility_date": "2026-10-01",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"workers_dev": true,
+	"preview_urls": false,
+	"observability": { "enabled": true },
+	"minify": true,
+	"alias": { "gaf-open-next-worker": "./.open-next/worker.js" },
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS",
+		"run_worker_first": ["/_gaf/*"]
+	},
+	"services": [
+		{ "binding": "WORKER_SELF_REFERENCE", "service": "gaf-healthcare-preview" }
+	],
+	"r2_buckets": [
+		{ "binding": "CONTENT", "bucket_name": "gaf-content-preview" },
+		{ "binding": "STATIC", "bucket_name": "gaf-static-preview" }
+	],
+	"vars": {
+		"GAF_STORAGE": "r2",
+		"GAF_CONTENT_PACK": "preview",
+		"GAF_PREVIEW_BUCKET": "gaf-content-preview",
+		"GAF_PREVIEW_STATIC_BUCKET": "gaf-static-preview",
+		"GAF_INDEXING": "off"
+	}
+}

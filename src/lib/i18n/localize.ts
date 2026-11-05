@@ -3,12 +3,10 @@ import { HOME_DESTINATIONS, HOME_REVIEWS, HOME_VIDEOS } from "@/data/home";
 import { localizeInternalHref, localizeProseLinks } from "@/lib/i18n/path";
 import { homeExtraCatalogFor, uiCatalogFor } from "@/lib/i18n/ui-catalogs";
 import type { AppLocale } from "@/lib/i18n/languages";
-import { COST_FAQS, DOCTOR_FAQS, HOSPITAL_FAQS } from "@/lib/seo";
+import { COST_FAQS, DOCTOR_FAQS, HOSPITAL_FAQS } from "@/lib/i18n/directory-faqs";
 import type { Article } from "@/lib/cms/types";
 import type { CostArticle } from "@/data/cost-articles/types";
-import { getCostArticle } from "@/data/cost-articles";
 import { COST_FAQS_AR, DOCTOR_FAQS_AR, HOSPITAL_FAQS_AR } from "@/lib/i18n/faqs-ar";
-import { getDoctorForLocale, getHospitalForLocale } from "@/lib/locale-catalog";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
@@ -19,11 +17,13 @@ export async function localizeMessages(locale: AppLocale) {
 
 export async function localizeDoctor(doctor: Doctor, locale: AppLocale) {
   if (locale === "en") return doctor;
+  const { getDoctorForLocale } = await import("@/lib/locale-catalog");
   return getDoctorForLocale(doctor.slug, locale);
 }
 
 export async function localizeHospital(hospital: Hospital, locale: AppLocale) {
   if (locale === "en") return hospital;
+  const { getHospitalForLocale } = await import("@/lib/locale-catalog");
   return getHospitalForLocale(hospital.slug, locale);
 }
 
@@ -31,6 +31,7 @@ export async function localizeCost(
   treatment: Treatment,
   _locale: AppLocale,
 ): Promise<{ treatment: Treatment; article?: CostArticle; fields: Record<string, string> }> {
+  const { getCostArticle } = await import("@/data/cost-articles");
   return {
     treatment,
     article: getCostArticle(treatment.slug),

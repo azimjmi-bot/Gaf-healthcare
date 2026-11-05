@@ -18,7 +18,7 @@ export function SpecialtyPager({
   currentIndex,
 }: {
   query: CatalogQuery;
-  specialties: { name: string }[];
+  specialties: { name: string; slug: string }[];
   currentIndex: number;
 }) {
   const t = useT();

@@ -83,6 +83,12 @@ export function getCostArticle(slug: string): CostArticle | undefined {
   return loadArticle(slug);
 }
 
+/** True when the packed corpus names this slug. Does not inflate or parse the article. */
+export function hasCostArticle(slug: string): boolean {
+  if (!slug) return false;
+  return ensurePacked().spans.has(slug);
+}
+
 export function costArticleCacheSize() {
   return cache.size;
 }

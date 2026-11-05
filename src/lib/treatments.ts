@@ -23,6 +23,7 @@ import { MEDICAL_COST, MEDICAL_SUMMARIES } from "@/lib/medical-costs";
 import { hospitals } from "@/lib/hospitals";
 import { pediatricHematologyImage } from "@/lib/treatment-images";
 import { SURGICAL_COST, SURGICAL_SUMMARIES } from "@/lib/surgical-costs";
+import { RADIATION_COST } from "@/lib/treatment-cost-ranges";
 import {
   SURGICAL_GASTROENTEROLOGY_PROCEDURES,
   UROLOGY_PROCEDURES,
@@ -92,84 +93,6 @@ function hospitalSlugsForProcedure(name: string) {
     .map((h) => h.slug);
   return matched.length ? matched : hospitals.map((h) => h.slug);
 }
-
-const RADIATION_COST: Record<string, { us: string; partner: string; stay: string }> = {
-  "External Beam Radiotherapy (EBRT)": {
-    us: "$12,000–$25,000",
-    partner: "$1,000–$6,000+",
-    stay: "15–35 sessions typical · 4–7 weeks",
-  },
-  "3D Conformal Radiotherapy (3D-CRT)": {
-    us: "$14,000–$28,000",
-    partner: "$700–$2,500+",
-    stay: "15–35 sessions typical · usually outpatient",
-  },
-  "Intensity-Modulated Radiotherapy (IMRT)": {
-    us: "$18,000–$40,000",
-    partner: "$6,500–$14,500",
-    stay: "4–7 weeks of fractions",
-  },
-  "Image-Guided Radiotherapy (IGRT)": {
-    us: "$20,000–$45,000",
-    partner: "$7,200–$16,000",
-    stay: "4–7 weeks of fractions",
-  },
-  "Stereotactic Radiosurgery (SRS)": {
-    us: "$25,000–$55,000",
-    partner: "$8,500–$18,000",
-    stay: "1–5 sessions",
-  },
-  "Stereotactic Body Radiotherapy (SBRT)": {
-    us: "$22,000–$50,000",
-    partner: "$8,000–$17,500",
-    stay: "1–5 sessions",
-  },
-  CyberKnife: {
-    us: "$30,000–$70,000",
-    partner: "$11,000–$24,000",
-    stay: "1–5 sessions",
-  },
-  "Gamma Knife": {
-    us: "$28,000–$65,000",
-    partner: "$10,500–$22,000",
-    stay: "1 session typical",
-  },
-  "Proton Beam Therapy": {
-    us: "$90,000–$180,000",
-    partner: "$28,000–$55,000",
-    stay: "4–8 weeks of fractions",
-  },
-  Brachytherapy: {
-    us: "$15,000–$35,000",
-    partner: "$5,500–$13,000",
-    stay: "1–7 nights",
-  },
-  "Intracavitary Brachytherapy": {
-    us: "$16,000–$38,000",
-    partner: "$6,000–$14,000",
-    stay: "1–7 nights",
-  },
-  "Interstitial Brachytherapy": {
-    us: "$18,000–$42,000",
-    partner: "$6,800–$15,500",
-    stay: "2–8 nights",
-  },
-  "Plaque Brachytherapy": {
-    us: "$20,000–$45,000",
-    partner: "$7,500–$16,000",
-    stay: "3–7 nights",
-  },
-  "Intraoperative Radiotherapy (IORT)": {
-    us: "$22,000–$48,000",
-    partner: "$8,200–$17,000",
-    stay: "Tied to theatre stay",
-  },
-  "Total Body Irradiation (TBI)": {
-    us: "$35,000–$80,000",
-    partner: "$12,000–$28,000",
-    stay: "By transplant protocol",
-  },
-};
 
 const EBRT_COPY = {
   summary:

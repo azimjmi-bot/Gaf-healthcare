@@ -4,35 +4,55 @@ import { Suspense } from "react";
 import { notFound } from "next/navigation";
 import { CatalogFilter } from "@/components/catalog-filter";
 import { SpecialtyPager } from "@/components/specialty-pager";
-import { SpecialtyCostPage } from "@/components/specialty-cost-page";
 import { CtaBand, PageIntro } from "@/components/page-shell";
 import { PseoTrust } from "@/components/pseo-trust";
 import { JsonLd } from "@/components/json-ld";
-import { cityResultCounts, listCostSpecialtyGroups, type CatalogQuery } from "@/lib/catalog";
+import type { CatalogQuery, CityChipStats } from "@/lib/catalog-options";
 import { costsFilterPath } from "@/lib/catalog-links";
-import { getSpecialtyPage } from "@/data/specialty-pages";
-import { hospitals } from "@/lib/data";
-import { faqJsonLd } from "@/lib/seo";
-import { catalogPageMetadata } from "@/lib/i18n/page-meta";
-import { LOCALES } from "@/lib/i18n/languages";
-import { withLocaleMetadata } from "@/lib/i18n/metadata";
+import {
+  directoryCostRows,
+  listDirectoryCostGroups,
+  overlayDirectoryRows,
+  type DirectoryCostGroup,
+} from "@/lib/cost-directory-index";
+import { catalogMetadata } from "@/lib/catalog-metadata";
+import { faqJsonLd } from "@/lib/faq-jsonld";
+import { LOCALES, SOURCE_LOCALE, type AppLocale } from "@/lib/i18n/languages";
+import { withLightLocaleMetadata } from "@/lib/i18n/locale-metadata-light";
 import { localizeFaqs, localizeMessages } from "@/lib/i18n/localize";
 import { directoryEmpty, directoryIntro, resultLabel } from "@/lib/i18n/directory-copy";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { getRequestLocale } from "@/lib/i18n/request";
-import { treatmentsForLocale } from "@/lib/locale-catalog";
-import { localePageIsRenderable } from "@/lib/i18n/locale-publication";
+import { prettyCatalogPath } from "@/lib/pretty-catalog-path";
 import { getCity, getSpecialty, isPrimaryCountry, toSlug } from "@/lib/taxonomy";
-import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
 import type { Metadata } from "next";
+
+async function costsPageIsRenderable(locale: AppLocale, path: string) {
+  // English catalog pages are published before any treatment catalog is read.
+  if (locale === SOURCE_LOCALE) return true;
+  const { localePageIsRenderable } = await import("@/lib/i18n/locale-publication");
+  return localePageIsRenderable(locale, path);
+}
+
+async function directoryCatalogMetadata(query: CatalogQuery) {
+  const locale = await getRequestLocale();
+  const englishPath = prettyCatalogPath("/costs", query);
+  if (englishPath === "/costs") {
+    const light = withLightLocaleMetadata(catalogMetadata("treatments", query), englishPath, locale, LOCALES);
+    if (light) return light;
+  }
+  const { catalogPageMetadata } = await import("@/lib/i18n/page-meta");
+  return catalogPageMetadata("treatments", query);
+}
 
 export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metadata> {
   const locale = await getRequestLocale();
-  if (!localePageIsRenderable(locale, costsFilterPath(query))) {
+  if (!(await costsPageIsRenderable(locale, costsFilterPath(query)))) {
     return { robots: { index: false, follow: false } };
   }
   if (query.procedure) {
     const { costsProcedureMetadata } = await import("./costs-procedure-view");
+    const { withLocaleMetadata } = await import("@/lib/i18n/metadata");
     const meta = await costsProcedureMetadata(query);
     if (locale === "ar") return meta;
     // Country views already carry their own canonical and country-specific copy.
@@ -40,18 +60,19 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
     // Country-level procedure pages chose their own canonical but emitted no
     // hreflang. The path they canonicalise to is the one this query builds.
     if (!query.city) return withLocaleMetadata(meta, costsFilterPath(query), locale, LOCALES);
-    const wrapped = await catalogPageMetadata("treatments", query);
+    const wrapped = await directoryCatalogMetadata(query);
     return { ...meta, alternates: wrapped.alternates, openGraph: { ...meta.openGraph, ...wrapped.openGraph } };
   }
-  const wrapped = await catalogPageMetadata("treatments", query);
+  const wrapped = await directoryCatalogMetadata(query);
   const specialty = query.specialty ? getSpecialty(query.specialty) : undefined;
   const city = query.city ? getCity(query.city) : undefined;
   const countrySlug = query.destination ? toSlug(query.destination) : undefined;
   const profile =
     locale === "en" && specialty && countrySlug && (!query.city || city)
-      ? getSpecialtyPage(countrySlug, specialty.slug)
+      ? (await import("@/data/specialty-pages")).getSpecialtyPage(countrySlug, specialty.slug)
       : undefined;
   if (profile) {
+    const { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } = await import("@/lib/specialty-page");
     const data = buildSpecialtyPageData(profile, city?.slug);
     const indexable =
       Boolean(data && specialtyPageMeetsQualityThreshold(data)) &&
@@ -73,6 +94,7 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
     // Overwriting alternates wholesale used to drop the hreflang block that
     // catalogPageMetadata had just built, so this branch shipped a canonical
     // and nothing else.
+    const { withLocaleMetadata } = await import("@/lib/i18n/metadata");
     return withLocaleMetadata(
       {
         ...wrapped,
@@ -105,7 +127,7 @@ export async function costsDirectoryMetadata(query: CatalogQuery): Promise<Metad
 
 export async function CostsDirectory({ query }: { query: CatalogQuery }) {
   const locale = await getRequestLocale();
-  if (!localePageIsRenderable(locale, costsFilterPath(query))) notFound();
+  if (!(await costsPageIsRenderable(locale, costsFilterPath(query)))) notFound();
   if (query.procedure) {
     const { CostsProcedureView } = await import("./costs-procedure-view");
     return <CostsProcedureView query={query} />;
@@ -116,27 +138,47 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
   const countrySlug = query.destination ? toSlug(query.destination) : undefined;
   const profile =
     locale === "en" && specialty && countrySlug && (!query.city || city)
-      ? getSpecialtyPage(countrySlug, specialty.slug)
+      ? (await import("@/data/specialty-pages")).getSpecialtyPage(countrySlug, specialty.slug)
       : undefined;
-  const specialtyData = profile
-    ? buildSpecialtyPageData(profile, city?.slug)
-    : undefined;
-  if (specialtyData && specialtyPageMeetsQualityThreshold(specialtyData)) {
-    return <SpecialtyCostPage data={specialtyData} query={query} locale={locale} />;
+  if (profile) {
+    const { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } = await import("@/lib/specialty-page");
+    const specialtyData = buildSpecialtyPageData(profile, city?.slug);
+    if (specialtyData && specialtyPageMeetsQualityThreshold(specialtyData)) {
+      const { SpecialtyCostPage } = await import("@/components/specialty-cost-page");
+      return <SpecialtyCostPage data={specialtyData} query={query} locale={locale} />;
+    }
   }
   const messages = await localizeMessages(locale);
   const faqs = await localizeFaqs("costs", locale);
-  const localeTreatments = treatmentsForLocale(locale);
-  const specialtyPages = listCostSpecialtyGroups(query, localeTreatments, hospitals);
+  const bareDirectory = locale === "en" && !query.destination && !query.city;
+  let specialtyPages: DirectoryCostGroup[];
+  let chipStats: CityChipStats | null = null;
+  if (bareDirectory) {
+    const { loadCatalogCms } = await import("@/lib/cms/catalog-store");
+    const cms = loadCatalogCms("en");
+    specialtyPages = listDirectoryCostGroups(
+      overlayDirectoryRows(directoryCostRows, {
+        treatmentsDeleted: cms.treatmentsDeleted,
+        treatmentOverrides: cms.treatmentOverrides,
+        treatmentsAdded: cms.treatmentsAdded,
+      }),
+    );
+  } else {
+    const { cityResultCounts, listCostSpecialtyGroups } = await import("@/lib/catalog");
+    const { treatmentsForLocale } = await import("@/lib/locale-catalog");
+    const { hospitals } = await import("@/lib/data");
+    specialtyPages = listCostSpecialtyGroups(query, treatmentsForLocale(locale), hospitals);
+    chipStats =
+      query.destination === "India" ? cityResultCounts("treatments", { ...query, procedure: undefined }) : null;
+  }
   const selectedIndex = query.specialty
     ? specialtyPages.findIndex((group) => group.name === query.specialty)
     : 0;
   const currentIndex = selectedIndex >= 0 ? selectedIndex : 0;
   const group = specialtyPages[currentIndex];
+  const pagerSpecialties = specialtyPages.map(({ name, slug }) => ({ name, slug }));
   const visibleItems = query.specialty && selectedIndex < 0 ? [] : (group?.items ?? []);
   const copy = directoryIntro("costs", query, locale);
-  const chipStats =
-    query.destination === "India" ? cityResultCounts("treatments", { ...query, procedure: undefined }) : null;
 
   return (
     <>
@@ -171,7 +213,7 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
                     .replace("{current}", String(currentIndex + 1))
                     .replace("{total}", String(specialtyPages.length))}
                 </p>
-                <SpecialtyPager query={query} specialties={specialtyPages} currentIndex={currentIndex} />
+                <SpecialtyPager query={query} specialties={pagerSpecialties} currentIndex={currentIndex} />
                 {visibleItems.length === 0 ? (
                   <p className="mt-6 text-muted-foreground">{directoryEmpty("costs", query, locale)}</p>
                 ) : (
@@ -249,7 +291,7 @@ export async function CostsDirectory({ query }: { query: CatalogQuery }) {
                     </div>
                   </>
                 )}
-                <SpecialtyPager query={query} specialties={specialtyPages} currentIndex={currentIndex} />
+                <SpecialtyPager query={query} specialties={pagerSpecialties} currentIndex={currentIndex} />
               </div>
             ) : (
               <p className="text-muted-foreground">{directoryEmpty("costs", query, locale)}</p>
