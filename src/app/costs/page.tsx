@@ -3,7 +3,6 @@ import { parseCatalogQuery } from "@/lib/catalog-options";
 import { costsFilterPath } from "@/lib/catalog-links";
 import { redirectPrettyCatalog } from "@/lib/catalog-route";
 import { CostsDirectory, costsDirectoryMetadata } from "@/app/costs/directory";
-import { treatments } from "@/lib/data";
 import { localePath } from "@/lib/i18n/path";
 import { getRequestLocale } from "@/lib/i18n/request";
 import type { Metadata } from "next";
@@ -28,6 +27,7 @@ export default async function CostsPage({
   // A ?procedure= query has no destination of its own, so send it to that
   // procedure's canonical country path rather than rendering it here.
   if (query.procedure && !query.city && !query.destination) {
+    const { treatments } = await import("@/lib/data");
     const treatment = treatments.find((row) => row.name === query.procedure);
     if (treatment) {
       permanentRedirect(

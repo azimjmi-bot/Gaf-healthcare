@@ -1,91 +1,4 @@
-export const NEUROLOGY_COST: Record<string, { us: string; partner: string; stay: string }> = {
-  EEG: {
-    us: "$400–$1,500",
-    partner: "$80–$250",
-    stay: "Outpatient",
-  },
-  "Video EEG": {
-    us: "$3,000–$15,000",
-    partner: "$800–$2,500",
-    stay: "1–5 nights of monitoring",
-  },
-  "Electromyography (EMG)": {
-    us: "$400–$1,500",
-    partner: "$80–$280",
-    stay: "Outpatient",
-  },
-  "Nerve Conduction Study": {
-    us: "$350–$1,200",
-    partner: "$70–$220",
-    stay: "Outpatient",
-  },
-  "Evoked Potentials": {
-    us: "$300–$1,200",
-    partner: "$70–$220",
-    stay: "Outpatient",
-  },
-  "Lumbar Puncture": {
-    us: "$1,500–$4,000",
-    partner: "$200–$600",
-    stay: "Outpatient or 1 night",
-  },
-  "IV Thrombolysis": {
-    us: "$10,000–$30,000",
-    partner: "$1,500–$4,500",
-    stay: "3–7 nights (stroke ICU)",
-  },
-  "Transcranial Doppler (TCD)": {
-    us: "$400–$1,200",
-    partner: "$80–$250",
-    stay: "Outpatient",
-  },
-  "Carotid Doppler": {
-    us: "$300–$900",
-    partner: "$50–$180",
-    stay: "Outpatient",
-  },
-  "MRI-Guided Focused Ultrasound (MRgFUS)": {
-    us: "$40,000–$80,000",
-    partner: "$12,000–$25,000",
-    stay: "1–3 nights",
-  },
-  "Botulinum Toxin Therapy": {
-    us: "$1,500–$4,000",
-    partner: "$250–$800",
-    stay: "Outpatient",
-  },
-  Plasmapheresis: {
-    us: "$8,000–$25,000",
-    partner: "$1,500–$4,500",
-    stay: "5–10 sessions typical",
-  },
-  "IVIG (Intravenous Immunoglobulin)": {
-    us: "$10,000–$40,000",
-    partner: "$2,000–$8,000",
-    stay: "2–5 infusion days",
-  },
-  "Nerve and Muscle Biopsy": {
-    us: "$4,000–$12,000",
-    partner: "$800–$2,500",
-    stay: "Outpatient or 1 night",
-  },
-  "Vagus Nerve Stimulation (VNS)": {
-    us: "$30,000–$60,000",
-    partner: "$8,000–$18,000",
-    stay: "1–3 nights",
-  },
-  "Sleep Study (Polysomnography)": {
-    us: "$1,500–$5,000",
-    partner: "$250–$700",
-    stay: "1 night in the sleep lab",
-  },
-  "Migraine Nerve Block": {
-    us: "$800–$2,500",
-    partner: "$150–$500",
-    stay: "Outpatient",
-  },
-};
-
+export { NEUROLOGY_COST, NEUROLOGY_CLUSTER_BY_PROCEDURE, NEUROLOGY_SHARED } from "./treatment-cost-ranges";
 export const NEUROLOGY_SUMMARIES: Record<string, string> = {
   EEG: "Record cortical rhythms when seizures, encephalopathy or a first unprovoked event already write an EEG list in Delhi NCR, Mumbai, Bengaluru, Chennai or Hyderabad. Video EEG keeps a neighbouring Neurology slug when a captured event is the question. This is a planning range, not a quote.",
   "Video EEG":
@@ -122,28 +35,6 @@ export const NEUROLOGY_SUMMARIES: Record<string, string> = {
     "Occipital or pericranial block when chronic migraine already writes a block clinic. Botulinum toxin therapy is a neighbouring movement and headache slug.",
 };
 
-export const NEUROLOGY_CLUSTER_BY_PROCEDURE: Record<string, string> = {
-  EEG: "Neurodiagnostics",
-  "Video EEG": "Neurodiagnostics",
-  "Electromyography (EMG)": "Neurodiagnostics",
-  "Nerve Conduction Study": "Neurodiagnostics",
-  "Evoked Potentials": "Neurodiagnostics",
-  "Lumbar Puncture": "Neurodiagnostics",
-  "IV Thrombolysis": "Stroke & Neurovascular",
-  "Stroke Thrombectomy": "Stroke & Neurovascular",
-  "Transcranial Doppler (TCD)": "Stroke & Neurovascular",
-  "Carotid Doppler": "Stroke & Neurovascular",
-  "Deep Brain Stimulation": "Movement Disorders",
-  "MRI-Guided Focused Ultrasound (MRgFUS)": "Movement Disorders",
-  "Botulinum Toxin Therapy": "Movement Disorders",
-  Plasmapheresis: "Neuromuscular",
-  "IVIG (Intravenous Immunoglobulin)": "Neuromuscular",
-  "Nerve and Muscle Biopsy": "Neuromuscular",
-  "Vagus Nerve Stimulation (VNS)": "Epilepsy",
-  "Sleep Study (Polysomnography)": "Sleep / Headache",
-  "Migraine Nerve Block": "Sleep / Headache",
-};
-
 export const NEUROLOGY_CONDITIONS = [
   "Epilepsy and first seizure",
   "Ischaemic stroke and TIA",
@@ -157,4 +48,3 @@ export const NEUROLOGY_CONDITIONS = [
   "Obstructive sleep apnoea work-up",
 ];
 
-export const NEUROLOGY_SHARED = ["Deep Brain Stimulation", "Stroke Thrombectomy"] as const;

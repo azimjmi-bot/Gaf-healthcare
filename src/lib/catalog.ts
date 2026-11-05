@@ -1,6 +1,13 @@
+import { createRequire } from "node:module";
 import { doctors, type Doctor } from "@/lib/doctors";
 import { hospitals, type Hospital } from "@/lib/hospitals";
-import { treatments, type Treatment } from "@/lib/treatments";
+import type { Treatment } from "@/lib/treatments";
+
+const require = createRequire(import.meta.url);
+
+function loadCatalogTreatments(): Treatment[] {
+  return (require("@/lib/treatments") as typeof import("@/lib/treatments")).treatments;
+}
 import { INDIA_CITIES, SPECIALTIES, getProcedure, getSpecialty, toSlug } from "@/lib/taxonomy";
 import { citiesForDestination, type CatalogEntity, type CatalogQuery } from "@/lib/catalog-options";
 
@@ -91,7 +98,7 @@ export function filterHospitalsForDoctors(
 /** Specialties that still have cost rows after destination/city filters. */
 export function listCostSpecialtyGroups(
   q: CatalogQuery,
-  rows: Treatment[] = treatments,
+  rows: Treatment[] = loadCatalogTreatments(),
   campuses: Hospital[] = hospitals,
 ) {
   const pool = filterTreatments({ destination: q.destination, city: q.city }, rows, campuses);
@@ -103,7 +110,7 @@ export function listCostSpecialtyGroups(
 
 export function filterTreatments(
   q: CatalogQuery,
-  rows: Treatment[] = treatments,
+  rows: Treatment[] = loadCatalogTreatments(),
   campuses: Hospital[] = hospitals,
 ): Treatment[] {
   const list = snapshot(rows);

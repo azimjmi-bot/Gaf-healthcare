@@ -1,5 +1,6 @@
+import { SOURCE_LOCALE } from "@/lib/i18n/languages";
+import { stripLocalePrefix } from "@/lib/i18n/path";
 import { getRequestLocale, getRequestPath } from "@/lib/i18n/request";
-import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 
 /**
  * Structured data is a set of claims about a page a crawler is meant to index.
@@ -11,7 +12,12 @@ import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 export async function JsonLd({ data }: { data: unknown }) {
   const locale = await getRequestLocale();
   const path = await getRequestPath();
-  if (!localePathIsPublished(locale, path)) return null;
+  const segments = stripLocalePrefix(path).pathname.split("/").filter(Boolean);
+  const english = locale === SOURCE_LOCALE && segments[0] !== "treatments";
+  const published = english
+    ? true
+    : (await import("@/lib/i18n/locale-publication")).localePathIsPublished(locale, path);
+  if (!published) return null;
   return (
     <script
       type="application/ld+json"
