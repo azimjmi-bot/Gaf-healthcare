@@ -2,6 +2,8 @@
  * Preview Worker entry. Production and staging keep `src/worker.ts`.
  * CONTENT is the preview pack bucket `gaf-content-preview`.
  * STATIC is `gaf-static-preview` and serves `/uploads` the same way production does.
+ * Pack bodies are reused from the colo-local Cache API (`gaf-preview-packs`).
+ * The version document and manifest stay on R2.
  */
 import openNext from "gaf-open-next-worker";
 import { PackedPreviewStorage } from "@/lib/storage/packed-preview-storage";
@@ -21,6 +23,7 @@ const worker = createWorker(openNext.fetch, {
       log: hooks.log,
       onContentPublished: hooks.onContentPublished,
       onStaticChange: hooks.onStaticChange,
+      sharedPackCache: true,
     });
   },
 });

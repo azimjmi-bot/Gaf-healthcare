@@ -21,8 +21,15 @@ import {
   sha256Hex,
   validatePreviewPack,
   type PreviewPackManifest,
+  type PreviewPackRecord,
   type PreviewVersionDocument,
 } from "@/lib/storage/packed-edition";
+import {
+  openPreviewPackCache,
+  readCachedPack,
+  writeCachedPack,
+  type PackCache,
+} from "@/lib/storage/packed-preview-cache";
 
 /**
  * In-memory content snapshot filled from preview packs before Next.js routes.
@@ -32,6 +39,10 @@ import {
  *
  * A failed validation throws. This class never reads loose content keys and
  * never opens any bucket other than the one it was given.
+ *
+ * When a pack cache is configured, only validated pack bodies are stored,
+ * under their manifest SHA-256. The version document and manifest are always
+ * read from R2, and a cache miss or cache error falls through to R2.
  */
 
 const encoder = new TextEncoder();
@@ -76,6 +87,13 @@ export type PackedPreviewStats = {
   /** Time spent deflating individual files into the in-memory snapshot. */
   snapshotPackMs: number;
   hydrateMs: number;
+  /** Pack bodies reused from the colo cache. Version and manifest reads stay on R2. */
+  cacheHits: number;
+  cacheMisses: number;
+  cachePuts: number;
+  /** Cached bytes whose hash or etag did not match the R2 manifest. */
+  cacheRejected: number;
+  cacheErrors: number;
 };
 
 export type PackedPreviewStorageOptions = {
@@ -88,6 +106,14 @@ export type PackedPreviewStorageOptions = {
   log?: (message: string) => void;
   onContentPublished?: (groups: readonly EditionGroup[]) => void;
   onStaticChange?: (bucketKey: string, kind: "put" | "delete") => void;
+  /**
+   * Preview only. When set, pack bodies are reused from this colo-local cache.
+   * Tests pass a shared fake. The preview Worker sets {@link sharedPackCache}
+   * instead and opens the named Cache API cache on first hydration.
+   */
+  packCache?: PackCache | null;
+  /** Open `gaf-preview-packs` on first hydration. Ignored when `packCache` is set. */
+  sharedPackCache?: boolean;
 };
 
 function hasBody(object: R2ObjectBodyLike | R2ObjectLike | null): object is R2ObjectBodyLike {
@@ -100,7 +126,20 @@ function jsonBytes(value: unknown): Uint8Array {
 
 export class PackedPreviewStorage implements ContentStorage {
   readonly kind = "packed-preview";
-  readonly stats: PackedPreviewStats = { r2Gets: 0, r2Puts: 0, r2Lists: 0, r2Bytes: 0, inflateMs: 0, snapshotPackMs: 0, hydrateMs: 0 };
+  readonly stats: PackedPreviewStats = {
+    r2Gets: 0,
+    r2Puts: 0,
+    r2Lists: 0,
+    r2Bytes: 0,
+    inflateMs: 0,
+    snapshotPackMs: 0,
+    hydrateMs: 0,
+    cacheHits: 0,
+    cacheMisses: 0,
+    cachePuts: 0,
+    cacheRejected: 0,
+    cacheErrors: 0,
+  };
   private readonly bucket: R2BucketLike;
   private readonly staticBucket?: R2BucketLike;
   private readonly assets?: AssetFetcherLike;
@@ -109,6 +148,9 @@ export class PackedPreviewStorage implements ContentStorage {
   private readonly log: (message: string) => void;
   private readonly onContentPublished?: (groups: readonly EditionGroup[]) => void;
   private readonly onStaticChange?: (bucketKey: string, kind: "put" | "delete") => void;
+  private readonly injectedPackCache: PackCache | null;
+  private readonly sharedPackCache: boolean;
+  private packCachePromise: Promise<PackCache | null> | null = null;
   private staticTail: Promise<void> = Promise.resolve();
 
   private readonly entries = new Map<string, SnapshotEntry>();
@@ -141,6 +183,8 @@ export class PackedPreviewStorage implements ContentStorage {
     this.log = options.log ?? ((message) => console.warn(`[gaf] ${message}`));
     this.onContentPublished = options.onContentPublished;
     this.onStaticChange = options.onStaticChange;
+    this.injectedPackCache = options.packCache ?? null;
+    this.sharedPackCache = options.sharedPackCache === true;
   }
 
   read(key: string): string | null {
@@ -415,6 +459,7 @@ export class PackedPreviewStorage implements ContentStorage {
       throw new StorageConflictError(state.objectKey);
     }
     state.etag = result.etag;
+    await this.rememberValidatedPack({ sha256: sha256Hex(packed), objectKey: state.objectKey }, packed, result.etag);
     this.rememberPack(id, files.map((file) => file.key));
     const group = asEdition(id);
     if (group) this.dirtyGroups.add(group);
@@ -582,15 +627,15 @@ export class PackedPreviewStorage implements ContentStorage {
     let manifestObject;
     let versionObject;
     try {
-      manifestObject = await this.readObject(PREVIEW_MANIFEST_KEY);
       versionObject = await this.readObject(PREVIEW_VERSION_KEY);
+      manifestObject = await this.readObject(PREVIEW_MANIFEST_KEY);
       await this.loadAssets(group);
     } catch (error) {
       if (error instanceof StorageHydrationError) throw error;
       throw new StorageHydrationError(group, "preview pack: bucket unreachable", { cause: error });
     }
-    if (!manifestObject) throw new StorageHydrationError(group, `preview pack: ${PREVIEW_MANIFEST_KEY} is missing`);
     if (!versionObject) throw new StorageHydrationError(group, `preview pack: ${PREVIEW_VERSION_KEY} is missing`);
+    if (!manifestObject) throw new StorageHydrationError(group, `preview pack: ${PREVIEW_MANIFEST_KEY} is missing`);
     const packBytes = new Map<string, Uint8Array>();
     packBytes.set(PREVIEW_MANIFEST_KEY, manifestObject.bytes);
     packBytes.set(PREVIEW_VERSION_KEY, versionObject.bytes);
@@ -602,11 +647,19 @@ export class PackedPreviewStorage implements ContentStorage {
     }
     if (!parsed.packs) throw new StorageHydrationError(group, "preview pack: manifest has no pack layout");
     this.packs.clear();
+    const cacheable: PreviewPackRecord[] = [];
     for (const pack of parsed.packs) {
+      const cached = await this.takeCachedPack(pack);
+      if (cached) {
+        packBytes.set(pack.objectKey, cached.bytes);
+        this.packs.set(pack.id, { id: pack.id, objectKey: pack.objectKey, etag: cached.etag });
+        continue;
+      }
       const object = await this.readObject(pack.objectKey);
       if (!object) throw new StorageHydrationError(group, `preview pack: ${pack.objectKey} is missing`);
       packBytes.set(pack.objectKey, object.bytes);
       this.packs.set(pack.id, { id: pack.id, objectKey: pack.objectKey, etag: object.etag });
+      if (sha256Hex(object.bytes) === pack.sha256) cacheable.push(pack);
     }
     let validated;
     try {
@@ -619,6 +672,11 @@ export class PackedPreviewStorage implements ContentStorage {
       this.failClosed();
       const message = error instanceof Error ? error.message : String(error);
       throw new StorageHydrationError(group, `preview pack: ${message}`, { cause: error });
+    }
+    for (const pack of cacheable) {
+      const bytes = packBytes.get(pack.objectKey);
+      const state = this.packs.get(pack.id);
+      if (bytes && state) await this.rememberValidatedPack(pack, bytes, state.etag);
     }
     this.stats.inflateMs += validated.inflateMs;
     const packStarted = performance.now();
@@ -668,6 +726,45 @@ export class PackedPreviewStorage implements ContentStorage {
     for (const [key, entry] of this.assetEntries) {
       this.entries.set(key, { body: copyBody(entry.body), etag: entry.etag });
       this.committed.set(key, { body: copyBody(entry.body), etag: entry.etag });
+    }
+  }
+
+  private async packCache(): Promise<PackCache | null> {
+    if (this.injectedPackCache) return this.injectedPackCache;
+    if (!this.sharedPackCache) return null;
+    if (!this.packCachePromise) this.packCachePromise = openPreviewPackCache();
+    return this.packCachePromise;
+  }
+
+  /** A hash-matching cached pack, or null when the cache is off, empty, or unusable. */
+  private async takeCachedPack(pack: PreviewPackRecord): Promise<{ bytes: Uint8Array; etag: string } | null> {
+    const cache = await this.packCache();
+    if (!cache) return null;
+    try {
+      const hit = await readCachedPack(cache, pack);
+      if (hit.status === "hit") {
+        this.stats.cacheHits += 1;
+        return { bytes: hit.bytes, etag: hit.etag };
+      }
+      if (hit.status === "rejected") this.stats.cacheRejected += 1;
+      else this.stats.cacheMisses += 1;
+      return null;
+    } catch (error) {
+      this.stats.cacheErrors += 1;
+      this.log(`preview pack cache read failed for ${pack.objectKey}: ${error instanceof Error ? error.message : String(error)}`);
+      return null;
+    }
+  }
+
+  private async rememberValidatedPack(pack: Pick<PreviewPackRecord, "sha256" | "objectKey">, bytes: Uint8Array, etag: string) {
+    const cache = await this.packCache();
+    if (!cache) return;
+    try {
+      await writeCachedPack(cache, pack, bytes, etag);
+      this.stats.cachePuts += 1;
+    } catch (error) {
+      this.stats.cacheErrors += 1;
+      this.log(`preview pack cache write failed for ${pack.objectKey}: ${error instanceof Error ? error.message : String(error)}`);
     }
   }
 

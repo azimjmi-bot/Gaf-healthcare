@@ -70,6 +70,11 @@ test("render limits and production hydration source stay unchanged", () => {
   assert.doesNotMatch(staging, /gaf-content-preview|gaf-healthcare-preview/);
   assert.equal(loadCms.length, 0);
   assert.equal(saveCms.length, 1);
+  const previewWorker = readFileSync(path.join(process.cwd(), "src/worker-preview.ts"), "utf8");
+  assert.match(previewWorker, /sharedPackCache: true/);
+  assert.doesNotMatch(previewWorker, /singleflight/);
+  assert.doesNotMatch(runtime, /sharedPackCache|gaf-preview-packs|packed-preview-cache|singleflight/);
+  assert.doesNotMatch(worker, /sharedPackCache|gaf-preview-packs|packed-preview-cache|singleflight/);
 });
 
 function previewRuntimeEnv(content: FakeR2Bucket, staticBucket: FakeR2Bucket) {
@@ -243,7 +248,7 @@ function StorageConflictErrorName(error: unknown) {
 
 test("missing and corrupt packs fail closed without reading loose objects", async () => {
   const empty = storageFor(new FakeR2Bucket());
-  await assert.rejects(empty.ensureHydrated("en"), /preview pack: content\/\.manifest\.json is missing/);
+  await assert.rejects(empty.ensureHydrated("en"), /preview pack: content\/\.version\.json is missing/);
   assert.equal(empty.stats.r2Lists, 0);
 
   const { bucket, built } = fixturePacks();
