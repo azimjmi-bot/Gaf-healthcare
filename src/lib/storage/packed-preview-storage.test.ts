@@ -9,12 +9,14 @@ import { loadCms, saveCms } from "@/lib/cms/store";
 import { contentStorage, setContentStorage } from "@/lib/storage";
 import { FakeR2Bucket } from "@/lib/storage/fake-r2-bucket";
 import { planPreviewPacks, runPackPreview } from "@/lib/storage/pack-preview-cli";
+import { planPreviewStatic, runPreviewStaticSeed } from "@/lib/storage/preview-static-cli";
 import {
   assertPreviewRuntime,
   assertPreviewTarget,
   buildPreviewPacks,
   PREVIEW_BUCKET_NAME,
   PREVIEW_MANIFEST_KEY,
+  PREVIEW_STATIC_BUCKET_NAME,
   PREVIEW_VERSION_KEY,
   PreviewPackError,
   sha256Hex,
@@ -70,15 +72,31 @@ test("render limits and production hydration source stay unchanged", () => {
   assert.equal(saveCms.length, 1);
 });
 
-test("preview config accepts only the preview bucket and worker", () => {
+function previewRuntimeEnv(content: FakeR2Bucket, staticBucket: FakeR2Bucket) {
+  return {
+    CONTENT: content,
+    STATIC: staticBucket,
+    GAF_STORAGE: "r2",
+    GAF_CONTENT_PACK: "preview",
+    GAF_PREVIEW_BUCKET: PREVIEW_BUCKET_NAME,
+    GAF_PREVIEW_STATIC_BUCKET: PREVIEW_STATIC_BUCKET_NAME,
+  };
+}
+
+test("preview config binds CONTENT and STATIC only to the preview buckets", () => {
   const preview = JSON.parse(
     readFileSync(path.join(process.cwd(), "wrangler.preview.jsonc"), "utf8").replace(/\/\*[\s\S]*?\*\//g, "").replace(/(^|[^:"'])\/\/.*$/gm, "$1"),
   );
   assertPreviewTarget(preview);
   assert.deepEqual(
-    preview.r2_buckets.map((bucket: { bucket_name: string }) => bucket.bucket_name),
-    [PREVIEW_BUCKET_NAME],
+    preview.r2_buckets.map((bucket: { binding: string; bucket_name: string }) => [bucket.binding, bucket.bucket_name]),
+    [
+      ["CONTENT", PREVIEW_BUCKET_NAME],
+      ["STATIC", PREVIEW_STATIC_BUCKET_NAME],
+    ],
   );
+  assert.equal(preview.routes, undefined);
+  assert.equal(preview.custom_domain, undefined);
   assert.throws(
     () => assertPreviewTarget({ ...preview, name: "gaf-healthcare-production" }),
     /gaf-healthcare-preview/,
@@ -89,21 +107,41 @@ test("preview config accepts only the preview bucket and worker", () => {
         ...preview,
         r2_buckets: [{ binding: "CONTENT", bucket_name: "gaf-content-production" }],
       }),
-    /gaf-content-production|exactly one/,
+    /gaf-content-production|exactly CONTENT and STATIC/,
   );
   assert.throws(
     () =>
       assertPreviewTarget({
         ...preview,
         r2_buckets: [
-          { binding: "gaf-content-preview", bucket_name: "gaf-content-preview" },
+          { binding: "CONTENT", bucket_name: "gaf-content-preview" },
           { binding: "STATIC", bucket_name: "gaf-static-staging" },
         ],
       }),
-    /gaf-static-staging|exactly one/,
+    /gaf-static-staging|gaf-static-preview/,
   );
-  assert.throws(() => assertPreviewRuntime({ GAF_CONTENT_PACK: "preview", GAF_PREVIEW_BUCKET: PREVIEW_BUCKET_NAME, CONTENT: {} }), /CONTENT/);
+  assert.throws(
+    () =>
+      assertPreviewTarget({
+        ...preview,
+        r2_buckets: [
+          ...preview.r2_buckets,
+          { binding: "NEXT_INC_CACHE_R2_BUCKET", bucket_name: "gaf-static-preview" },
+        ],
+      }),
+    /exactly CONTENT and STATIC/,
+  );
+  const bucket = { get() {} };
+  assert.throws(
+    () =>
+      assertPreviewRuntime({
+        ...previewRuntimeEnv(bucket as FakeR2Bucket, bucket as FakeR2Bucket),
+        NEXT_INC_CACHE_R2_BUCKET: bucket,
+      }),
+    /NEXT_INC_CACHE/,
+  );
   assert.throws(() => assertPreviewRuntime({ GAF_CONTENT_PACK: "r2", GAF_PREVIEW_BUCKET: PREVIEW_BUCKET_NAME }), /GAF_CONTENT_PACK/);
+  assert.doesNotThrow(() => assertPreviewRuntime(previewRuntimeEnv(bucket as FakeR2Bucket, bucket as FakeR2Bucket)));
 });
 
 test("packs round-trip source bytes and reject a broken layout", () => {
@@ -321,16 +359,18 @@ test("the default worker still hydrates loose objects and the preview hook does 
     {
       createContent(env) {
         assertPreviewRuntime(env);
-        return new PackedPreviewStorage({ bucket: env["gaf-content-preview"] as FakeR2Bucket, log() {} });
+        return new PackedPreviewStorage({
+          bucket: env.CONTENT,
+          staticBucket: env.STATIC,
+          log() {},
+        });
       },
     },
   );
+  const staticBucket = new FakeR2Bucket();
   const previewEnv = {
+    ...previewRuntimeEnv(bucket, staticBucket),
     ASSETS: assets,
-    GAF_STORAGE: "r2",
-    GAF_CONTENT_PACK: "preview",
-    GAF_PREVIEW_BUCKET: PREVIEW_BUCKET_NAME,
-    "gaf-content-preview": bucket,
   };
   setContentStorage(undefined);
   const previewResponse = await preview.fetch(new Request("https://preview.example/"), previewEnv, { waitUntil() {} });
@@ -338,6 +378,97 @@ test("the default worker still hydrates loose objects and the preview hook does 
   assert.match(seen, /Original title/);
   assert.equal(bucket.calls.some((call) => call.key === "content/cms.json"), false);
   assert.equal(bucket.calls.filter((call) => call.op === "list").length, 0);
+});
+
+test("preview uploads use STATIC object keys and leave unrelated objects in place", async () => {
+  const { bucket } = fixturePacks();
+  const staticBucket = new FakeR2Bucket();
+  staticBucket.seed("uploads/articles/existing.webp", new Uint8Array([9]));
+  const storage = new PackedPreviewStorage({ bucket, staticBucket, log() {} });
+  await storage.ensureHydrated("en");
+  const bytes = new Uint8Array([1, 2, 3]);
+  storage.write("public/uploads/articles/1-x.webp", bytes);
+  assert.equal(storage.write.length, 2);
+  assert.deepEqual([...(storage.readBytes("public/uploads/articles/1-x.webp") ?? [])], [...bytes]);
+  await storage.flush();
+  assert.deepEqual(staticBucket.keys(), ["uploads/articles/1-x.webp", "uploads/articles/existing.webp"]);
+  const stored = await staticBucket.get("uploads/articles/1-x.webp");
+  assert.equal(stored && "arrayBuffer" in stored ? stored.httpMetadata?.contentType : "", "image/webp");
+  assert.equal(bucket.calls.some((call) => call.key?.startsWith("uploads/")), false);
+  assert.equal(bucket.calls.some((call) => call.op === "put"), false);
+  assert.equal(staticBucket.calls.some((call) => call.op === "delete"), false);
+
+  const png = new Uint8Array([137, 80, 78, 71]);
+  await staticBucket.put("uploads/articles/cover.png", png, { httpMetadata: { contentType: "image/png" } });
+  const assets = { async fetch() { return new Response("asset", { status: 200 }); } };
+  const preview = createWorker(async () => new Response("next"), {
+    createContent(env) {
+      assertPreviewRuntime(env);
+      return new PackedPreviewStorage({ bucket: env.CONTENT, staticBucket: env.STATIC, log() {} });
+    },
+  });
+  const response = await preview.fetch(
+    new Request("https://preview.example/uploads/articles/cover.png"),
+    { ...previewRuntimeEnv(bucket, staticBucket), ASSETS: assets },
+    { waitUntil() {} },
+  );
+  assert.equal(response.status, 200);
+  assert.equal(response.headers.get("content-type"), "image/png");
+  assert.equal(response.headers.get("cache-control"), "public, max-age=60");
+  assert.deepEqual([...(new Uint8Array(await response.arrayBuffer()))], [...png]);
+});
+
+test("the static seed dry-runs unless the preview static bucket is confirmed", async () => {
+  await assert.rejects(runPreviewStaticSeed([]), /pass --config/);
+  const root = mkdtempSync(path.join(tmpdir(), "gaf-static-"));
+  const uploads = path.join(root, "uploads", "articles");
+  const configPath = path.join(root, "wrangler.preview.jsonc");
+  try {
+    const { mkdirSync } = await import("node:fs");
+    mkdirSync(uploads, { recursive: true });
+    writeFileSync(path.join(uploads, "one.webp"), "webp");
+    writeFileSync(configPath, readFileSync(path.join(process.cwd(), "wrangler.preview.jsonc")));
+    const puts: string[] = [];
+    const plan = await runPreviewStaticSeed(["--config", configPath, "--uploads", path.join(root, "uploads"), "--dry-run"], {
+      uploadsRoot: path.join(root, "uploads"),
+      uploader: async (bucket, key) => {
+        puts.push(`${bucket}/${key}`);
+      },
+    });
+    assert.equal(puts.length, 0);
+    assert.equal(plan.bucket, PREVIEW_STATIC_BUCKET_NAME);
+    assert.equal(plan.fileCount, 1);
+    assert.equal(plan.objects[0]?.key, "uploads/articles/one.webp");
+    assert.equal(plan.objects[0]?.contentType, "image/webp");
+    await assert.rejects(
+      runPreviewStaticSeed(["--config", configPath, "--uploads", path.join(root, "uploads"), "--upload"], {
+        uploader: async () => {
+          puts.push("uploaded");
+        },
+        env: {},
+      }),
+      /GAF_PREVIEW_STATIC_CONFIRM/,
+    );
+    assert.equal(puts.length, 0);
+    const kept = new Map<string, Uint8Array>([["uploads/articles/keep.webp", new Uint8Array([7])]]);
+    await runPreviewStaticSeed(["--config", configPath, "--uploads", path.join(root, "uploads"), "--upload"], {
+      uploader: async (bucket, key, body) => {
+        if (bucket !== PREVIEW_STATIC_BUCKET_NAME) throw new Error(`wrong bucket ${bucket}`);
+        kept.set(key, body);
+      },
+      env: { GAF_PREVIEW_STATIC_CONFIRM: PREVIEW_STATIC_BUCKET_NAME },
+    });
+    assert.deepEqual([...kept.keys()].sort(), ["uploads/articles/keep.webp", "uploads/articles/one.webp"]);
+    const bad = path.join(root, "wrangler.production.jsonc");
+    writeFileSync(bad, readFileSync(path.join(process.cwd(), "wrangler.production.jsonc")));
+    await assert.rejects(runPreviewStaticSeed(["--config", bad, "--dry-run"]), PreviewPackError);
+    const live = planPreviewStatic(path.join(process.cwd(), "public", "uploads"));
+    assert.ok(live.fileCount > 0);
+    assert.ok(live.directories.every((directory) => directory.startsWith("public/uploads/")));
+    assert.ok(live.objects.every((object) => object.key.startsWith("uploads/")));
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
 });
 
 test("cold packed hydration fetches fewer bytes than loose object hydration", async () => {

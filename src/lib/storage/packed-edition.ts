@@ -79,8 +79,11 @@ export function unpackEdition(packed: Uint8Array): EditionFile[] {
 export const PREVIEW_PACK_FORMAT = "gaf-content-packs-v1";
 /** The only R2 bucket a preview pack may name. */
 export const PREVIEW_BUCKET_NAME = "gaf-content-preview";
-/** Wrangler binding for that bucket. Preview config binds nothing else. */
-export const PREVIEW_BUCKET_BINDING = "gaf-content-preview";
+/** Wrangler binding for the preview content bucket. The bucket name, not a second binding, keeps it off production. */
+export const PREVIEW_BUCKET_BINDING = "CONTENT";
+/** The only static bucket the preview Worker may bind, under the existing STATIC name. */
+export const PREVIEW_STATIC_BUCKET_NAME = "gaf-static-preview";
+export const PREVIEW_STATIC_BINDING = "STATIC";
 export const PREVIEW_WORKER_NAME = "gaf-healthcare-preview";
 /** Env value that arms packed hydration. Any other value keeps the loose path. */
 export const PREVIEW_CONTENT_MODE = "preview";
@@ -149,8 +152,8 @@ export type PreviewWranglerConfig = {
 };
 
 /**
- * Refuse every target that is not the isolated preview Worker and its one bucket.
- * There is no default config and no default bucket.
+ * Refuse every target that is not the isolated preview Worker, its content
+ * pack bucket, and its static bucket. There is no default config.
  */
 export function assertPreviewTarget(config: PreviewWranglerConfig): void {
   const errors: string[] = [];
@@ -159,12 +162,21 @@ export function assertPreviewTarget(config: PreviewWranglerConfig): void {
   const vars = config.vars ?? {};
   if (vars.GAF_CONTENT_PACK !== PREVIEW_CONTENT_MODE) errors.push('GAF_CONTENT_PACK must be "preview"');
   if (vars.GAF_PREVIEW_BUCKET !== PREVIEW_BUCKET_NAME) errors.push(`GAF_PREVIEW_BUCKET must be ${PREVIEW_BUCKET_NAME}`);
+  if (vars.GAF_PREVIEW_STATIC_BUCKET !== PREVIEW_STATIC_BUCKET_NAME) {
+    errors.push(`GAF_PREVIEW_STATIC_BUCKET must be ${PREVIEW_STATIC_BUCKET_NAME}`);
+  }
   if (vars.GAF_STORAGE !== "r2") errors.push('GAF_STORAGE must be "r2"');
   const buckets = config.r2_buckets ?? [];
-  if (buckets.length !== 1) errors.push("preview config must bind exactly one R2 bucket");
-  const only = buckets[0];
-  if (!only || only.binding !== PREVIEW_BUCKET_BINDING || only.bucket_name !== PREVIEW_BUCKET_NAME) {
-    errors.push(`the only binding must be ${PREVIEW_BUCKET_BINDING} -> ${PREVIEW_BUCKET_NAME}`);
+  const content = buckets.filter((bucket) => bucket.binding === PREVIEW_BUCKET_BINDING);
+  const staticBuckets = buckets.filter((bucket) => bucket.binding === PREVIEW_STATIC_BINDING);
+  if (buckets.length !== 2 || content.length !== 1 || staticBuckets.length !== 1) {
+    errors.push("preview config must bind exactly CONTENT and STATIC");
+  }
+  if (content[0]?.bucket_name !== PREVIEW_BUCKET_NAME) {
+    errors.push(`CONTENT binding must be ${PREVIEW_BUCKET_NAME}`);
+  }
+  if (staticBuckets[0]?.bucket_name !== PREVIEW_STATIC_BUCKET_NAME) {
+    errors.push(`STATIC binding must be ${PREVIEW_STATIC_BUCKET_NAME}`);
   }
   const mentioned = JSON.stringify(config);
   for (const name of FORBIDDEN_BUCKET_NAMES) {
@@ -176,9 +188,14 @@ export function assertPreviewTarget(config: PreviewWranglerConfig): void {
   if (errors.length > 0) throw new PreviewPackError(errors.join("; "));
 }
 
+function isBucket(value: unknown): boolean {
+  return Boolean(value) && typeof value === "object" && typeof (value as { get?: unknown }).get === "function";
+}
+
 export function assertPreviewRuntime(env: {
   GAF_CONTENT_PACK?: unknown;
   GAF_PREVIEW_BUCKET?: unknown;
+  GAF_PREVIEW_STATIC_BUCKET?: unknown;
   CONTENT?: unknown;
   STATIC?: unknown;
   NEXT_INC_CACHE_R2_BUCKET?: unknown;
@@ -187,12 +204,11 @@ export function assertPreviewRuntime(env: {
   const errors: string[] = [];
   if (env.GAF_CONTENT_PACK !== PREVIEW_CONTENT_MODE) errors.push('GAF_CONTENT_PACK must be "preview"');
   if (env.GAF_PREVIEW_BUCKET !== PREVIEW_BUCKET_NAME) errors.push(`GAF_PREVIEW_BUCKET must be ${PREVIEW_BUCKET_NAME}`);
-  const bucket = env[PREVIEW_BUCKET_BINDING];
-  if (!bucket || typeof bucket !== "object" || typeof (bucket as { get?: unknown }).get !== "function") {
-    errors.push(`binding ${PREVIEW_BUCKET_BINDING} is missing`);
+  if (env.GAF_PREVIEW_STATIC_BUCKET !== PREVIEW_STATIC_BUCKET_NAME) {
+    errors.push(`GAF_PREVIEW_STATIC_BUCKET must be ${PREVIEW_STATIC_BUCKET_NAME}`);
   }
-  if (env.CONTENT) errors.push("refusing inherited CONTENT binding");
-  if (env.STATIC) errors.push("refusing inherited STATIC binding");
+  if (!isBucket(env.CONTENT)) errors.push("binding CONTENT is missing");
+  if (!isBucket(env.STATIC)) errors.push("binding STATIC is missing");
   if (env.NEXT_INC_CACHE_R2_BUCKET) errors.push("refusing inherited NEXT_INC_CACHE_R2_BUCKET binding");
   if (errors.length > 0) throw new PreviewPackError(`preview pack environment: ${errors.join("; ")}`);
 }

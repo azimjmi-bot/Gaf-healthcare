@@ -1,6 +1,7 @@
 import { deflateRawSync, inflateRawSync } from "node:zlib";
 import { notifyContentReplaced } from "@/lib/storage/index";
 import {
+  contentTypeFor,
   formatPublicContentGeneration,
   groupForKey,
   StorageHydrationError,
@@ -35,6 +36,7 @@ import {
 
 const encoder = new TextEncoder();
 const decoder = new TextDecoder();
+const UPLOADS_PREFIX = "public/uploads/";
 const EDITION_IDS = new Set<EditionGroup>(["en", "ar", "fr", "ru", "sw", "cms"]);
 /** Same threshold as the loose snapshot: bodies at or above this size are deflated in memory. */
 const PACK_THRESHOLD = 1024;
@@ -78,11 +80,14 @@ export type PackedPreviewStats = {
 
 export type PackedPreviewStorageOptions = {
   bucket: R2BucketLike;
+  /** CMS media. Keys `public/uploads/**` map here as `uploads/**`. */
+  staticBucket?: R2BucketLike;
   assets?: AssetFetcherLike;
   assetKeys?: Record<string, string>;
   versionCheckIntervalMs?: number;
   log?: (message: string) => void;
   onContentPublished?: (groups: readonly EditionGroup[]) => void;
+  onStaticChange?: (bucketKey: string, kind: "put" | "delete") => void;
 };
 
 function hasBody(object: R2ObjectBodyLike | R2ObjectLike | null): object is R2ObjectBodyLike {
@@ -97,11 +102,14 @@ export class PackedPreviewStorage implements ContentStorage {
   readonly kind = "packed-preview";
   readonly stats: PackedPreviewStats = { r2Gets: 0, r2Puts: 0, r2Lists: 0, r2Bytes: 0, inflateMs: 0, snapshotPackMs: 0, hydrateMs: 0 };
   private readonly bucket: R2BucketLike;
+  private readonly staticBucket?: R2BucketLike;
   private readonly assets?: AssetFetcherLike;
   private readonly assetKeys: Map<string, string>;
   private readonly versionCheckIntervalMs: number;
   private readonly log: (message: string) => void;
   private readonly onContentPublished?: (groups: readonly EditionGroup[]) => void;
+  private readonly onStaticChange?: (bucketKey: string, kind: "put" | "delete") => void;
+  private staticTail: Promise<void> = Promise.resolve();
 
   private readonly entries = new Map<string, SnapshotEntry>();
   private readonly committed = new Map<string, SnapshotEntry>();
@@ -126,11 +134,13 @@ export class PackedPreviewStorage implements ContentStorage {
 
   constructor(options: PackedPreviewStorageOptions) {
     this.bucket = options.bucket;
+    this.staticBucket = options.staticBucket;
     this.assets = options.assets;
     this.assetKeys = new Map(Object.entries(options.assetKeys ?? {}));
     this.versionCheckIntervalMs = options.versionCheckIntervalMs ?? 1000;
     this.log = options.log ?? ((message) => console.warn(`[gaf] ${message}`));
     this.onContentPublished = options.onContentPublished;
+    this.onStaticChange = options.onStaticChange;
   }
 
   read(key: string): string | null {
@@ -160,8 +170,16 @@ export class PackedPreviewStorage implements ContentStorage {
   write(key: string, data: string | Uint8Array): void {
     const normalised = normaliseKey(key);
     if (this.assetKeys.has(normalised)) throw new StorageKeyError(`${key} (a Worker asset is read-only)`);
-    if (normalised.startsWith("public/uploads/")) {
-      throw new PreviewPackError("preview packed storage has no upload bucket; refusing to store media in a content pack");
+    if (normalised.startsWith(UPLOADS_PREFIX)) {
+      this.assertReady(normalised);
+      this.uploadObjectKey(normalised);
+      if (!this.staticBucket) {
+        throw new PreviewPackError("preview static bucket is missing; refusing to store media in a content pack");
+      }
+      const bytes = typeof data === "string" ? encoder.encode(data) : copyBytes(data);
+      this.entries.set(normalised, { body: packBody(bytes), etag: sha256Hex(bytes) });
+      this.enqueueStatic(normalised, "put", bytes);
+      return;
     }
     this.assertReady(normalised);
     const packId = this.packFor(normalised);
@@ -175,6 +193,16 @@ export class PackedPreviewStorage implements ContentStorage {
   remove(key: string): void {
     const normalised = normaliseKey(key);
     if (this.assetKeys.has(normalised)) throw new StorageKeyError(`${key} (a Worker asset is read-only)`);
+    if (normalised.startsWith(UPLOADS_PREFIX)) {
+      this.assertReady(normalised);
+      this.uploadObjectKey(normalised);
+      if (!this.staticBucket) {
+        throw new PreviewPackError("preview static bucket is missing; refusing to store media in a content pack");
+      }
+      this.entries.delete(normalised);
+      this.enqueueStatic(normalised, "delete");
+      return;
+    }
     this.assertReady(normalised);
     const packId = this.keyPack.get(normalised) ?? this.packFor(normalised);
     this.entries.delete(normalised);
@@ -187,6 +215,11 @@ export class PackedPreviewStorage implements ContentStorage {
     while (this.running || this.dirtyPacks.size > 0) {
       if (!this.running) this.schedule();
       if (this.running) await this.running;
+    }
+    for (;;) {
+      const tail = this.staticTail;
+      await tail;
+      if (this.staticTail === tail) break;
     }
     if (this.failures.length > 0) {
       const first = this.failures[0];
@@ -277,6 +310,58 @@ export class PackedPreviewStorage implements ContentStorage {
     if (group && !this.hydrated.has(group)) {
       throw new StorageHydrationError(group, `preview pack: ${key} was read before the packed snapshot was hydrated`);
     }
+  }
+
+  private uploadObjectKey(storageKey: string): string {
+    const objectKey = storageKey.slice("public/".length);
+    const parts = objectKey.split("/");
+    if (!objectKey.startsWith("uploads/") || parts.some((part) => part === "" || part === "." || part === "..")) {
+      throw new StorageKeyError(storageKey);
+    }
+    return objectKey;
+  }
+
+  private restoreStatic(storageKey: string) {
+    const committed = this.committed.get(storageKey);
+    if (committed) this.entries.set(storageKey, { body: copyBody(committed.body), etag: committed.etag });
+    else this.entries.delete(storageKey);
+  }
+
+  private enqueueStatic(storageKey: string, kind: "put" | "delete", bytes?: Uint8Array) {
+    const objectKey = this.uploadObjectKey(storageKey);
+    const bucket = this.staticBucket;
+    if (!bucket) {
+      throw new PreviewPackError("preview static bucket is missing; refusing to store media in a content pack");
+    }
+    const contentType = contentTypeFor(storageKey);
+    this.staticTail = this.staticTail.then(async () => {
+      try {
+        if (kind === "delete") {
+          await bucket.delete(objectKey);
+          this.committed.delete(storageKey);
+          this.onStaticChange?.(objectKey, "delete");
+          return;
+        }
+        const known = this.committed.get(storageKey);
+        const result = await bucket.put(objectKey, bytes ?? new Uint8Array(), {
+          onlyIf: known ? { etagMatches: known.etag } : { etagDoesNotExist: true },
+          httpMetadata: { contentType },
+        });
+        if (result === null) {
+          this.restoreStatic(storageKey);
+          throw new StorageConflictError(storageKey);
+        }
+        const current = this.entries.get(storageKey);
+        if (current) {
+          const stored = { body: copyBody(current.body), etag: result.etag };
+          this.entries.set(storageKey, stored);
+          this.committed.set(storageKey, { body: copyBody(stored.body), etag: result.etag });
+        }
+        this.onStaticChange?.(objectKey, "put");
+      } catch (error) {
+        this.failures.push(error instanceof Error ? error : new Error(String(error)));
+      }
+    });
   }
 
   private schedule() {

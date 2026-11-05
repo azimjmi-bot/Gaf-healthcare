@@ -1,7 +1,7 @@
 /**
  * Preview Worker entry. Production and staging keep `src/worker.ts`.
- * Packed hydration runs only after the preview env asserts that the sole
- * content bucket is `gaf-content-preview`.
+ * CONTENT is the preview pack bucket `gaf-content-preview`.
+ * STATIC is `gaf-static-preview` and serves `/uploads` the same way production does.
  */
 import openNext from "gaf-open-next-worker";
 import { PackedPreviewStorage } from "@/lib/storage/packed-preview-storage";
@@ -13,12 +13,14 @@ const worker = createWorker(openNext.fetch, {
   createContent(env, hooks) {
     assertPreviewRuntime(env);
     return new PackedPreviewStorage({
-      bucket: env["gaf-content-preview"] as R2BucketLike,
+      bucket: env.CONTENT,
+      staticBucket: env.STATIC,
       assets: env.ASSETS,
       assetKeys: ASSET_KEYS,
       versionCheckIntervalMs: hooks.versionCheckIntervalMs,
       log: hooks.log,
       onContentPublished: hooks.onContentPublished,
+      onStaticChange: hooks.onStaticChange,
     });
   },
 });
