@@ -829,6 +829,42 @@ body:has(.cost-dock) .wa-float {
   font-size: 0.82rem;
   color: var(--muted-foreground);
 }
+
+/* Featured five-country teaser row */
+.home-origin-featured {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2.25rem;
+}
+
+@media (min-width: 640px) {
+  .home-origin-featured { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 1024px) {
+  .home-origin-featured { grid-template-columns: repeat(5, 1fr); }
+}
+
+/* Featured cards stretch to fill their grid cell */
+.home-origin-featured .home-origin-card {
+  width: 100%;
+}
+
+/* "See all countries" CTA */
+.home-origin__seeall {
+  margin-top: 1.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+/* Full continental grid, separated from the featured row */
+.home-origin__all {
+  margin-top: 1rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid var(--border);
+}
+
 .origin-visa-cta {
   display: flex;
   flex-wrap: wrap;

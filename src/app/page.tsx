@@ -16,7 +16,7 @@ import {
   HOME_COST_SLUGS,
   YOUTUBE_CHANNEL,
 } from "@/data/home";
-import { ORIGIN_COUNTRY_HUBS, ORIGIN_COUNTRY_SECTION, originCountryHubsByContinent } from "@/data/origin-countries";
+import { ORIGIN_COUNTRY_HUBS, ORIGIN_COUNTRY_SECTION, featuredOriginCountries, originCountryHubsByContinent } from "@/data/origin-countries";
 import { listPublishedPosts } from "@/lib/blogs";
 import { treatments } from "@/lib/data";
 import { doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
@@ -213,27 +213,66 @@ export default async function HomePage() {
 
       {locale === "en" && ORIGIN_COUNTRY_HUBS.length > 0 ? (
       <section id="from-your-country" className="home-section home-origin scroll-mt-24">
+        {/* Section intro */}
         <div className="home-origin__intro">
           <p className="eyebrow">{ORIGIN_COUNTRY_SECTION.eyebrow}</p>
-          <h2>{ORIGIN_COUNTRY_SECTION.title}</h2>
+          <h2>
+            Travelling from{" "}
+            <span style={{ color: "var(--gold)" }}>your country</span>
+          </h2>
           <p>{ORIGIN_COUNTRY_SECTION.lede}</p>
         </div>
-        {originCountryHubsByContinent().map((group) => (
-          <div key={group.continent} className="home-origin__region">
-            <h3>{group.continent}</h3>
-            <div className="home-origingrid">
-              {group.countries.map((country) => (
-                <Link key={country.href} href={href(country.href)} className="home-origin-card">
-                  <span className="home-origin-card__flag" role="img" aria-label={country.flagLabel}>
-                    {country.flag}
-                  </span>
-                  <strong>{country.name}</strong>
-                  <em>{ORIGIN_COUNTRY_SECTION.routeLabel(country.city, country.destination)}</em>
-                </Link>
-              ))}
+
+        {/* Featured five priority country cards */}
+        <div className="home-origin-featured" aria-label="Featured origin countries">
+          {featuredOriginCountries().map((country) => (
+            <Link
+              key={country.href}
+              href={href(country.href)}
+              className="home-origin-card"
+              aria-label={`Medical travel from ${country.name} to India`}
+            >
+              <span className="home-origin-card__flag" role="img" aria-label={country.flagLabel}>
+                {country.flag}
+              </span>
+              <strong>{country.name}</strong>
+              <em>{ORIGIN_COUNTRY_SECTION.routeLabel(country.city, country.destination)}</em>
+            </Link>
+          ))}
+        </div>
+
+        {/* See all countries link */}
+        <div className="home-origin__seeall">
+          <Link href="#all-countries" className="home-more">
+            {ORIGIN_COUNTRY_SECTION.seeAllLabel}{" "}
+            <ArrowRight className="size-4 icon-forward" aria-hidden="true" />
+          </Link>
+        </div>
+
+        {/* Full country listing grouped by continent */}
+        <div id="all-countries" className="home-origin__all">
+          {originCountryHubsByContinent().map((group) => (
+            <div key={group.continent} className="home-origin__region">
+              <h3>{group.continent}</h3>
+              <div className="home-origingrid">
+                {group.countries.map((country) => (
+                  <Link
+                    key={country.href}
+                    href={href(country.href)}
+                    className="home-origin-card"
+                    aria-label={`Medical travel from ${country.name} to India`}
+                  >
+                    <span className="home-origin-card__flag" role="img" aria-label={country.flagLabel}>
+                      {country.flag}
+                    </span>
+                    <strong>{country.name}</strong>
+                    <em>{ORIGIN_COUNTRY_SECTION.routeLabel(country.city, country.destination)}</em>
+                  </Link>
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </section>
       ) : null}
 

@@ -438,10 +438,30 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
   },
 ];
 
+/**
+ * Priority countries shown in the homepage featured teaser row.
+ * Order matches the display order. Only add hrefs that exist in ORIGIN_COUNTRY_HUBS.
+ */
+export const FEATURED_ORIGIN_COUNTRY_HREFS: string[] = [
+  "/tanzania/treatment-in-india",
+  "/ethiopia/treatment-in-india",
+  "/kenya/treatment-in-india",
+  "/nigeria/treatment-in-india",
+  "/zimbabwe/treatment-in-india",
+];
+
+/** Returns the five featured countries in display order. */
+export function featuredOriginCountries(): OriginCountryHub[] {
+  return FEATURED_ORIGIN_COUNTRY_HREFS.map((h) =>
+    ORIGIN_COUNTRY_HUBS.find((c) => c.href === h),
+  ).filter((c): c is OriginCountryHub => c !== undefined);
+}
+
 export const ORIGIN_COUNTRY_SECTION = {
-  eyebrow: "Written for your country",
+  eyebrow: "Medical travel from your country",
   title: "Travelling from your country",
-  lede: "Medical visa guidance, what to budget and how the journey works — written for patients from each country we publish a guide for.",
+  lede: "Medical visa, flights, treatment planning and how the journey works — guidance tailored for patients travelling to India from each country we serve.",
+  seeAllLabel: "See all countries we serve",
   routeLabel: (city: string, destination: string) => `${city} → ${destination}`,
   visaTitle: (name: string) => `Medical visa to India from ${name}`,
   ctaLabel: "Get a medical opinion",
