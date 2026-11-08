@@ -16,7 +16,13 @@ import {
   HOME_COST_SLUGS,
   YOUTUBE_CHANNEL,
 } from "@/data/home";
-import { ORIGIN_COUNTRY_HUBS, ORIGIN_COUNTRY_SECTION, originCountryHubsByContinent } from "@/data/origin-countries";
+import {
+  ORIGIN_COUNTRY_HUBS,
+  ORIGIN_COUNTRY_SECTION,
+  featuredOriginCountryHubs,
+  originCountryHubsByContinent,
+  type OriginCountryHub,
+} from "@/data/origin-countries";
 import { listPublishedPosts } from "@/lib/blogs";
 import { treatments } from "@/lib/data";
 import { doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
@@ -215,25 +221,34 @@ export default async function HomePage() {
       <section id="from-your-country" className="home-section home-origin scroll-mt-24">
         <div className="home-origin__intro">
           <p className="eyebrow">{ORIGIN_COUNTRY_SECTION.eyebrow}</p>
-          <h2>{ORIGIN_COUNTRY_SECTION.title}</h2>
+          <h2>
+            {ORIGIN_COUNTRY_SECTION.titleLead}{" "}
+            <span className="home-origin__accent">{ORIGIN_COUNTRY_SECTION.titleAccent}</span>
+          </h2>
           <p>{ORIGIN_COUNTRY_SECTION.lede}</p>
         </div>
-        {originCountryHubsByContinent().map((group) => (
-          <div key={group.continent} className="home-origin__region">
-            <h3>{group.continent}</h3>
-            <div className="home-origingrid">
-              {group.countries.map((country) => (
-                <Link key={country.href} href={href(country.href)} className="home-origin-card">
-                  <span className="home-origin-card__flag" role="img" aria-label={country.flagLabel}>
-                    {country.flag}
-                  </span>
-                  <strong>{country.name}</strong>
-                  <em>{ORIGIN_COUNTRY_SECTION.routeLabel(country.city, country.destination)}</em>
-                </Link>
-              ))}
+        <div className="home-origingrid home-origingrid--featured">
+          {featuredOriginCountryHubs().map((country) => (
+            <OriginCountryCard key={country.href} country={country} href={href(country.href)} />
+          ))}
+        </div>
+        <details className="home-origin__more">
+          <summary>
+            <span className="home-origin__more-closed">{ORIGIN_COUNTRY_SECTION.seeAll}</span>
+            <span className="home-origin__more-open">{ORIGIN_COUNTRY_SECTION.seeFewer}</span>
+            <ArrowRight className="size-4 icon-forward" aria-hidden />
+          </summary>
+          {originCountryHubsByContinent().map((group) => (
+            <div key={group.continent} className="home-origin__region">
+              <h3>{group.continent}</h3>
+              <div className="home-origingrid">
+                {group.countries.map((country) => (
+                  <OriginCountryCard key={country.href} country={country} href={href(country.href)} />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </details>
       </section>
       ) : null}
 
@@ -372,5 +387,17 @@ export default async function HomePage() {
         variant="records"
       />
     </>
+  );
+}
+
+function OriginCountryCard({ country, href }: { country: OriginCountryHub; href: string }) {
+  return (
+    <Link href={href} className="home-origin-card">
+      <span className="home-origin-card__flag" role="img" aria-label={country.flagLabel}>
+        {country.flag}
+      </span>
+      <strong>{country.name}</strong>
+      <em>{ORIGIN_COUNTRY_SECTION.routeLabel(country.city, country.destination)}</em>
+    </Link>
   );
 }

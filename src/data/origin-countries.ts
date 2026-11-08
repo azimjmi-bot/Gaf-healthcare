@@ -28,6 +28,22 @@ export function originCountryHubsByContinent() {
   })).filter((group) => group.countries.length > 0);
 }
 
+/** The homepage row, in display order. Every name must exist in ORIGIN_COUNTRY_HUBS. */
+export const FEATURED_ORIGIN_COUNTRY_NAMES = [
+  "Zimbabwe",
+  "Nigeria",
+  "Kenya",
+  "Ethiopia",
+  "Tanzania",
+] as const;
+
+export function featuredOriginCountryHubs() {
+  return FEATURED_ORIGIN_COUNTRY_NAMES.flatMap((name) => {
+    const hub = ORIGIN_COUNTRY_HUBS.find((row) => row.name === name);
+    return hub ? [hub] : [];
+  });
+}
+
 export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
   {
     name: "Algeria",
@@ -441,7 +457,11 @@ export const ORIGIN_COUNTRY_HUBS: OriginCountryHub[] = [
 export const ORIGIN_COUNTRY_SECTION = {
   eyebrow: "Written for your country",
   title: "Travelling from your country",
+  titleLead: "Travelling from",
+  titleAccent: "your country",
   lede: "Medical visa guidance, what to budget and how the journey works — written for patients from each country we publish a guide for.",
+  seeAll: "See all countries we serve",
+  seeFewer: "Show fewer countries",
   routeLabel: (city: string, destination: string) => `${city} → ${destination}`,
   visaTitle: (name: string) => `Medical visa to India from ${name}`,
   ctaLabel: "Get a medical opinion",
