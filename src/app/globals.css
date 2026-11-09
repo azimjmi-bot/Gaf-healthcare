@@ -856,6 +856,17 @@ body:has(.cost-dock) .wa-float {
   margin-top: 1.75rem;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.home-origin__seeall summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.home-origin__seeall summary::-webkit-details-marker {
+  display: none;
 }
 
 /* Full continental grid, separated from the featured row */

@@ -241,15 +241,13 @@ export default async function HomePage() {
           ))}
         </div>
 
-        {/* See all countries link */}
-        <div className="home-origin__seeall">
-          <Link href="#all-countries" className="home-more">
+        {/* Collapsible full country listing */}
+        <details className="home-origin__seeall">
+          <summary className="home-more">
             {ORIGIN_COUNTRY_SECTION.seeAllLabel}{" "}
             <ArrowRight className="size-4 icon-forward" aria-hidden="true" />
-          </Link>
-        </div>
+          </summary>
 
-        {/* Full country listing grouped by continent */}
         <div id="all-countries" className="home-origin__all">
           {originCountryHubsByContinent().map((group) => (
             <div key={group.continent} className="home-origin__region">
@@ -273,6 +271,7 @@ export default async function HomePage() {
             </div>
           ))}
         </div>
+        </details>
       </section>
       ) : null}
 
