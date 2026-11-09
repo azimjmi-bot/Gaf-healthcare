@@ -22,7 +22,7 @@
     "cf:seed-static-preview": "tsx scripts/cloudflare/seed-static-preview.ts",
     "cf:dev": "wrangler dev --port 43130",
     "cf:typegen": "wrangler types",
-    "cf:deploy:prod": "git rev-parse --short HEAD | awk '{print \"{\\\"deploy\\\":\\\"\"$1\"\\\"}\"}' > .version.json && wrangler r2 object put gaf-content-production/content/.version.json --file=.version.json && wrangler deploy --env production",
+    "cf:deploy:prod": "git rev-parse --short HEAD | awk '{sha=$1; print \"{\\\"groups\\\":{\\\"en\\\":\\\"\" sha \"\\\",\\\"ar\\\":\\\"\" sha \"\\\"},\\\"updatedAt\\\":\\\"\" sha \"\\\"}\"}' > .version.json && wrangler r2 object put gaf-content-production/content/.version.json --file=.version.json --remote && wrangler deploy --config wrangler.production.jsonc",
     "check:alternates": "tsx scripts/check-english-alternates.ts",
     "check:jsonld": "tsx scripts/jsonld-snapshot.ts",
     "check:jsonld-policy": "tsx scripts/check-jsonld-policy.ts",
