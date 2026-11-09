@@ -15,7 +15,9 @@
 	"assets": {
 		"directory": ".open-next/assets",
 		"binding": "ASSETS",
-		"run_worker_first": ["/_gaf/*"]
+		"run_worker_first": ["/_gaf/*"],
+		"html_handling": "none",
+		"not_found_handling": "none"
 	},
 	"services": [
 		{ "binding": "WORKER_SELF_REFERENCE", "service": "gaf-healthcare-preview" }

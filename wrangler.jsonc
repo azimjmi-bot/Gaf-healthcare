@@ -27,7 +27,9 @@
 		// `/_gaf/**` holds files the Worker reads through the binding (the static
 		// doctor/hospital catalog, copied there by post-build.mjs) and must not
 		// serve: those requests reach the Worker, which answers 404.
-		"run_worker_first": ["/_gaf/*"]
+		"run_worker_first": ["/_gaf/*"],
+		"html_handling": "none",
+		"not_found_handling": "none"
 	},
 	"services": [
 		// Self-reference used by the ISR memory queue; the service name must equal `name`.
