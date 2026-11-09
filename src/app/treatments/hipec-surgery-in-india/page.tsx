@@ -22,7 +22,7 @@ const WHATSAPP_COORDINATOR = whatsappHref(
   "I would like to speak with GAF Healthcare about HIPEC surgery in India.",
 );
 
-const PAGE_URL = "/treatments/india/hipec-surgery";
+const PAGE_URL = "/treatments/hipec-surgery-in-india";
 
 export const metadata: Metadata = {
   title: "HIPEC Surgery in India: Cost, Procedure, Recovery & Treatment",
