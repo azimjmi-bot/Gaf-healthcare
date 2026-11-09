@@ -110598,6 +110598,660 @@
           "text": "Once records are in, the named radiation oncologist meets you on camera. Fractions, energy, and whether you should stay home are decided there — then travel is built around the first simulation slot. City-level planning ranges and technique notes sit on the External Beam Radiation Therapy cost page."
         }
       ]
+    },
+    {
+      "id": "art_what_is_hipec_surgery",
+      "slug": "what-is-hipec-surgery",
+      "title": "What Is HIPEC Surgery? A Complete Guide to Heated Chemotherapy and Treatment in India",
+      "excerpt": "HIPEC surgery combines cytoreductive surgery with heated chemotherapy delivered directly into the abdominal cavity. India offers specialist surgical oncology evaluation and CRS-HIPEC treatment for carefully selected patients with peritoneal malignancies. Discover how the procedure works, which cancers may benefit, eligibility criteria, treatment costs, recovery and how international patients can access treatment in India.",
+      "date": "2026-11-09",
+      "publishedAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "HIPEC",
+        "Peritoneal Cancer",
+        "Cancer Treatment India",
+        "CRS-HIPEC",
+        "Heated Chemotherapy"
+      ],
+      "image": "/treatments/hipec-procedure-illustration.webp",
+      "imageAlt": "HIPEC procedure illustration showing heated chemotherapy circulating inside the abdominal cavity",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "What Is HIPEC Surgery? Procedure, Benefits & Treatment in India",
+      "seoDescription": "Learn what HIPEC surgery is, how heated chemotherapy works, eligible cancers, risks, recovery and access to specialist HIPEC treatment in India.",
+      "canonical": "https://gaf.healthcare/blogs/what-is-hipec-surgery",
+      "ogImage": "/treatments/hipec-procedure-illustration.webp",
+      "allowIndex": true,
+      "keywords": [
+        "What is HIPEC surgery",
+        "HIPEC surgery in India",
+        "HIPEC treatment in India",
+        "Hyperthermic intraperitoneal chemotherapy",
+        "CRS HIPEC treatment",
+        "HIPEC procedure",
+        "heated chemotherapy for cancer",
+        "HIPEC surgery cost in India",
+        "peritoneal carcinomatosis treatment",
+        "HIPEC eligibility criteria",
+        "HIPEC for ovarian cancer",
+        "HIPEC for colon cancer",
+        "HIPEC recovery time"
+      ],
+      "relatedLinks": [
+        {
+          "label": "HIPEC Surgery in India – Full Treatment Guide",
+          "href": "/treatments/hipec-surgery-in-india"
+        },
+        {
+          "label": "More Cancer Treatment Articles",
+          "href": "/blogs"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "hipec_b_qa0",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>HIPEC (Hyperthermic Intraperitoneal Chemotherapy) is a specialised cancer treatment in which heated chemotherapy is circulated directly inside the abdominal cavity after surgeons remove visible cancer deposits through cytoreductive surgery (CRS). It is used for selected cancers affecting the peritoneum — the lining of the abdominal cavity — including pseudomyxoma peritonei, ovarian cancer, colorectal peritoneal metastases and peritoneal mesothelioma.</p></div></aside>"
+        },
+        {
+          "id": "hipec_b_btn0",
+          "type": "button",
+          "label": "Share medical records for a HIPEC specialist opinion",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20share%20my%20medical%20records%20for%20a%20specialist%20HIPEC%20treatment%20opinion%20in%20India."
+        },
+        {
+          "id": "hipec_b_toc",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-is-hipec-surgery\">1. What Is HIPEC Surgery?</a></li><li><a href=\"#2-what-does-hipec-stand-for\">2. What Does HIPEC Stand For?</a></li><li><a href=\"#3-understanding-the-peritoneum\">3. Understanding the Peritoneum</a></li><li><a href=\"#4-how-does-hipec-surgery-work\">4. How Does HIPEC Work?</a></li><li><a href=\"#5-why-is-chemotherapy-heated\">5. Why Is Chemotherapy Heated?</a></li><li><a href=\"#6-which-cancers-can-be-treated-with-hipec\">6. Which Cancers Can Be Treated With HIPEC?</a></li><li><a href=\"#7-who-is-eligible-for-hipec\">7. Who Is Eligible for HIPEC?</a></li><li><a href=\"#8-what-is-the-pci\">8. What Is the Peritoneal Cancer Index?</a></li><li><a href=\"#9-the-procedure-step-by-step\">9. The Procedure Step by Step</a></li><li><a href=\"#10-hipec-vs-conventional-chemotherapy\">10. HIPEC vs Conventional Chemotherapy</a></li><li><a href=\"#11-hipec-vs-pipac\">11. HIPEC vs PIPAC</a></li><li><a href=\"#12-chemotherapy-drugs-used-in-hipec\">12. Chemotherapy Drugs Used in HIPEC</a></li><li><a href=\"#13-what-does-clinical-research-say\">13. What Does Clinical Research Say?</a></li><li><a href=\"#14-recovery-after-hipec\">14. Recovery After HIPEC</a></li><li><a href=\"#15-cost-of-hipec-surgery-in-india\">15. Cost of HIPEC Surgery in India</a></li><li><a href=\"#16-international-patients\">16. International Patients</a></li><li><a href=\"#17-how-gaf-healthcare-assists\">17. How GAF Healthcare Assists Patients</a></li><li><a href=\"#18-faqs\">18. Frequently Asked Questions</a></li></ol></nav>"
+        },
+        {
+          "id": "hipec_h_1",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Is HIPEC Surgery?"
+        },
+        {
+          "id": "hipec_h_1a",
+          "type": "html",
+          "html": "<span id=\"1-what-is-hipec-surgery\"></span>"
+        },
+        {
+          "id": "hipec_p_1a",
+          "type": "paragraph",
+          "text": "HIPEC surgery is an advanced cancer treatment in which heated chemotherapy is circulated directly inside the abdominal cavity to target microscopic cancer cells that may remain after visible tumours have been surgically removed."
+        },
+        {
+          "id": "hipec_p_1b",
+          "type": "paragraph",
+          "text": "HIPEC stands for **Hyperthermic Intraperitoneal Chemotherapy**. It is performed alongside a major operation called cytoreductive surgery (CRS), which removes visible cancer deposits from the abdominal cavity. The treatment is primarily used for selected cancers affecting the peritoneum — the thin membrane lining the abdominal cavity."
+        },
+        {
+          "id": "hipec_p_1c",
+          "type": "paragraph",
+          "text": "Unlike conventional chemotherapy, which travels through the bloodstream, HIPEC delivers chemotherapy directly into the abdominal cavity. The solution is heated to approximately 41–43 °C and circulated for a prescribed period after the surgeon has removed visible cancer deposits."
+        },
+        {
+          "id": "hipec_b_qa1",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">In simple terms</p><div class=\"article-quick-answer__body\"><p>HIPEC is a specialised form of heated chemotherapy delivered inside the abdomen, usually after surgeons remove visible cancer through cytoreductive surgery (CRS). It aims to treat microscopic cancer cells that may remain on abdominal surfaces after visible tumour removal.</p></div></aside>"
+        },
+        {
+          "id": "hipec_img_1",
+          "type": "image",
+          "src": "/treatments/hipec-procedure-illustration.webp",
+          "alt": "HIPEC procedure illustration showing heated chemotherapy circulating inside the abdominal cavity",
+          "caption": "Heated chemotherapy is circulated inside the abdominal cavity after cytoreductive surgery removes visible cancer deposits."
+        },
+        {
+          "id": "hipec_h_2",
+          "type": "heading",
+          "level": 2,
+          "text": "2. What Does HIPEC Stand For?"
+        },
+        {
+          "id": "hipec_h_2a",
+          "type": "html",
+          "html": "<span id=\"2-what-does-hipec-stand-for\"></span>"
+        },
+        {
+          "id": "hipec_p_2a",
+          "type": "paragraph",
+          "text": "HIPEC is the abbreviation for Hyperthermic Intraperitoneal Chemotherapy. Each word describes an important part of the treatment: **Hyperthermic** means heated to a controlled temperature; **Intraperitoneal** means administered inside the abdominal cavity; **Chemotherapy** refers to medicines used to destroy or control cancer cells."
+        },
+        {
+          "id": "hipec_h_3",
+          "type": "heading",
+          "level": 2,
+          "text": "3. Understanding the Peritoneum"
+        },
+        {
+          "id": "hipec_h_3a",
+          "type": "html",
+          "html": "<span id=\"3-understanding-the-peritoneum\"></span>"
+        },
+        {
+          "id": "hipec_p_3a",
+          "type": "paragraph",
+          "text": "The peritoneum is a thin membrane lining the abdominal cavity and covering many organs within it. When cancer cells detach from a primary tumour and attach to these surfaces, the condition is known as peritoneal metastasis or peritoneal carcinomatosis."
+        },
+        {
+          "id": "hipec_h_3b",
+          "type": "heading",
+          "level": 3,
+          "text": "Which Cancers Can Spread to the Peritoneum?"
+        },
+        {
+          "id": "hipec_l_3a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Ovarian cancer",
+            "Colorectal cancer",
+            "Gastric or stomach cancer",
+            "Appendiceal cancer",
+            "Certain pancreatic cancers",
+            "Primary peritoneal cancer",
+            "Peritoneal mesothelioma (originates in the peritoneal lining)"
+          ]
+        },
+        {
+          "id": "hipec_h_4",
+          "type": "heading",
+          "level": 2,
+          "text": "4. How Does HIPEC Surgery Work?"
+        },
+        {
+          "id": "hipec_h_4a",
+          "type": "html",
+          "html": "<span id=\"4-how-does-hipec-surgery-work\"></span>"
+        },
+        {
+          "id": "hipec_h_4b",
+          "type": "heading",
+          "level": 3,
+          "text": "Stage 1: Cytoreductive Surgery (CRS)"
+        },
+        {
+          "id": "hipec_p_4a",
+          "type": "paragraph",
+          "text": "The surgeon removes visible cancer deposits from the abdominal cavity, which may include affected sections of the peritoneum, omentum, bowel or other organs. The goal is complete macroscopic cytoreduction — no visible tumour remaining."
+        },
+        {
+          "id": "hipec_h_4c",
+          "type": "heading",
+          "level": 3,
+          "text": "Stage 2: Hyperthermic Intraperitoneal Chemotherapy (HIPEC)"
+        },
+        {
+          "id": "hipec_p_4b",
+          "type": "paragraph",
+          "text": "Once CRS is completed, heated chemotherapy is circulated throughout the abdominal cavity using a specialised perfusion machine. The solution is heated to approximately 41–43 °C and circulated for 30–120 minutes, then drained before the surgical team completes the operation."
+        },
+        {
+          "id": "hipec_img_2",
+          "type": "image",
+          "src": "/treatments/crs-hipec-combined-treatment.webp",
+          "alt": "CRS-HIPEC combined treatment diagram showing the two-stage procedure",
+          "caption": "CRS-HIPEC combines tumour-removal surgery with intraperitoneal heated chemotherapy perfusion."
+        },
+        {
+          "id": "hipec_h_5",
+          "type": "heading",
+          "level": 2,
+          "text": "5. Why Is Chemotherapy Heated During HIPEC?"
+        },
+        {
+          "id": "hipec_h_5a",
+          "type": "html",
+          "html": "<span id=\"5-why-is-chemotherapy-heated\"></span>"
+        },
+        {
+          "id": "hipec_p_5a",
+          "type": "paragraph",
+          "text": "Laboratory and clinical research suggests that heat can increase the activity of certain chemotherapy agents against cancer cells. Direct delivery into the abdominal cavity allows the treatment solution to contact peritoneal surfaces where microscopic cancer cells may remain after tumour removal. The specialised equipment controls temperature, circulation and exposure duration throughout the procedure."
+        },
+        {
+          "id": "hipec_p_5b",
+          "type": "paragraph",
+          "text": "**Important:** Heating chemotherapy does not guarantee destruction of all cancer cells or that it is automatically more effective than conventional chemotherapy. Its clinical value must be evaluated separately for each cancer type and patient."
+        },
+        {
+          "id": "hipec_h_6",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Which Cancers Can Be Treated With HIPEC?"
+        },
+        {
+          "id": "hipec_h_6a",
+          "type": "html",
+          "html": "<span id=\"6-which-cancers-can-be-treated-with-hipec\"></span>"
+        },
+        {
+          "id": "hipec_h_6b",
+          "type": "heading",
+          "level": 3,
+          "text": "Pseudomyxoma Peritonei"
+        },
+        {
+          "id": "hipec_p_6a",
+          "type": "paragraph",
+          "text": "CRS-HIPEC is an established specialist treatment approach for patients with resectable pseudomyxoma peritonei. International consensus recommendations support combining cytoreductive surgery with HIPEC in appropriately selected patients."
+        },
+        {
+          "id": "hipec_h_6c",
+          "type": "heading",
+          "level": 3,
+          "text": "Ovarian Cancer"
+        },
+        {
+          "id": "hipec_p_6b",
+          "type": "paragraph",
+          "text": "Selected patients with stage III ovarian cancer who have received neoadjuvant chemotherapy and are undergoing interval cytoreductive surgery may be considered for HIPEC. The OVHIPEC-1 clinical trial demonstrated improved survival outcomes in its selected patient population."
+        },
+        {
+          "id": "hipec_h_6d",
+          "type": "heading",
+          "level": 3,
+          "text": "Colorectal Cancer"
+        },
+        {
+          "id": "hipec_p_6c",
+          "type": "paragraph",
+          "text": "Selected patients with isolated colorectal peritoneal metastases may be considered for cytoreductive surgery. However, the ASCO guideline recommends against adding oxaliplatin-based HIPEC to CRS for colorectal peritoneal metastases. Indian specialists should also consider INDEPSO–ISPSM consensus recommendations."
+        },
+        {
+          "id": "hipec_h_6e",
+          "type": "heading",
+          "level": 3,
+          "text": "Gastric Cancer, Peritoneal Mesothelioma and Appendiceal Cancer"
+        },
+        {
+          "id": "hipec_p_6d",
+          "type": "paragraph",
+          "text": "CRS-HIPEC may be considered in highly selected patients with limited gastric peritoneal disease, carefully selected patients with diffuse malignant peritoneal mesothelioma, and certain appendiceal malignancies depending on histological type. Treatment planning is particularly important as different tumour types behave very differently."
+        },
+        {
+          "id": "hipec_b_btn1",
+          "type": "button",
+          "label": "Ask if HIPEC is suitable for your diagnosis",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20know%20if%20I%20am%20eligible%20for%20HIPEC%20surgery%20in%20India."
+        },
+        {
+          "id": "hipec_h_7",
+          "type": "heading",
+          "level": 2,
+          "text": "7. Who Is Eligible for HIPEC Surgery?"
+        },
+        {
+          "id": "hipec_h_7a",
+          "type": "html",
+          "html": "<span id=\"7-who-is-eligible-for-hipec\"></span>"
+        },
+        {
+          "id": "hipec_p_7a",
+          "type": "paragraph",
+          "text": "HIPEC is a major operation. Patient selection is one of the most important aspects of treatment. The specialist team generally considers the cancer type and histopathology, the distribution of tumour deposits, the Peritoneal Cancer Index (PCI), the possibility of complete tumour removal, general health and organ function, and previous cancer treatment history."
+        },
+        {
+          "id": "hipec_h_7b",
+          "type": "heading",
+          "level": 3,
+          "text": "Who May Not Be Suitable?"
+        },
+        {
+          "id": "hipec_l_7a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Cancer extensively spread outside the abdominal cavity",
+            "Complete cytoreduction unlikely to be achievable",
+            "Extensive small bowel or mesenteric involvement",
+            "Severe uncontrolled medical conditions",
+            "Disease progressing rapidly despite systemic treatment",
+            "Risks of surgery outweigh the expected benefits"
+          ]
+        },
+        {
+          "id": "hipec_h_8",
+          "type": "heading",
+          "level": 2,
+          "text": "8. What Is the Peritoneal Cancer Index (PCI)?"
+        },
+        {
+          "id": "hipec_h_8a",
+          "type": "html",
+          "html": "<span id=\"8-what-is-the-pci\"></span>"
+        },
+        {
+          "id": "hipec_p_8a",
+          "type": "paragraph",
+          "text": "The PCI is a scoring system used to assess the extent of cancer within the abdominal cavity. The abdomen is divided into 13 regions, each assigned a lesion-size score. The combined score ranges from 0 to 39. A higher PCI generally indicates a greater tumour burden, though there is no universal threshold for every cancer type."
+        },
+        {
+          "id": "hipec_img_3",
+          "type": "image",
+          "src": "/treatments/peritoneal-cancer-index-diagram.webp",
+          "alt": "Peritoneal Cancer Index PCI diagram showing 13 abdominal regions scored 0–3",
+          "caption": "PCI scores cancer deposits across 13 abdominal regions (0–39 total). Location of deposits, particularly small bowel involvement, is also important."
+        },
+        {
+          "id": "hipec_b_qa2",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">PCI score guide</p><div class=\"article-quick-answer__body\"><ul><li><strong>LS-0:</strong> No visible tumour.</li><li><strong>LS-1:</strong> Deposits up to 0.5 cm.</li><li><strong>LS-2:</strong> Deposits 0.5–5 cm.</li><li><strong>LS-3:</strong> Deposits &gt;5 cm or confluent disease.</li></ul><p>PCI is only one part of the assessment. Histopathology, tumour biology, patient fitness and the possibility of complete cytoreduction must also be considered.</p></div></aside>"
+        },
+        {
+          "id": "hipec_h_9",
+          "type": "heading",
+          "level": 2,
+          "text": "9. The HIPEC Procedure Step by Step"
+        },
+        {
+          "id": "hipec_h_9a",
+          "type": "html",
+          "html": "<span id=\"9-the-procedure-step-by-step\"></span>"
+        },
+        {
+          "id": "hipec_l_9a",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**General anaesthesia** — Vital signs, breathing, circulation and urine output monitored continuously.",
+            "**Abdominal examination** — Surgeon examines the cavity, assesses PCI and determines whether complete cytoreduction is feasible.",
+            "**Cytoreductive surgery** — Visible tumour deposits removed. May include peritonectomy, omentectomy, bowel resection and removal of affected organs.",
+            "**HIPEC tube placement** — Specialised inflow/outflow tubes positioned inside the abdominal cavity with temperature monitoring.",
+            "**Heated chemotherapy circulation** — Chemotherapy heated to 41–43 °C and circulated for 30–120 minutes using a specialised perfusion machine.",
+            "**Drainage and closure** — Chemotherapy drained; surgical team completes remaining steps and closes the abdomen.",
+            "**ICU monitoring** — Patient transferred to intensive care for close observation of kidney function, blood counts and fluid balance."
+          ]
+        },
+        {
+          "id": "hipec_h_10",
+          "type": "heading",
+          "level": 2,
+          "text": "10. HIPEC vs Conventional Chemotherapy"
+        },
+        {
+          "id": "hipec_h_10a",
+          "type": "html",
+          "html": "<span id=\"10-hipec-vs-conventional-chemotherapy\"></span>"
+        },
+        {
+          "id": "hipec_p_10a",
+          "type": "paragraph",
+          "text": "Although both treatments use anticancer medicines, their delivery methods and treatment objectives differ. Conventional chemotherapy is usually given intravenously to treat cancer throughout the body. HIPEC delivers heated chemotherapy directly into the abdominal cavity during surgery to target microscopic disease on abdominal surfaces. Some patients may require both. The appropriate approach depends on cancer type and clinical evidence."
+        },
+        {
+          "id": "hipec_h_11",
+          "type": "heading",
+          "level": 2,
+          "text": "11. HIPEC vs PIPAC"
+        },
+        {
+          "id": "hipec_h_11a",
+          "type": "html",
+          "html": "<span id=\"11-hipec-vs-pipac\"></span>"
+        },
+        {
+          "id": "hipec_p_11a",
+          "type": "paragraph",
+          "text": "PIPAC (Pressurised Intraperitoneal Aerosol Chemotherapy) delivers chemotherapy as a pressurised aerosol via laparoscopy and does not itself remove visible tumours through cytoreductive surgery. HIPEC delivers heated liquid chemotherapy into the abdominal cavity during CRS. They have different clinical applications and should not be considered interchangeable."
+        },
+        {
+          "id": "hipec_b_btn2",
+          "type": "button",
+          "label": "Arrange a specialist consultation in India",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20arrange%20a%20specialist%20consultation%20for%20HIPEC%20treatment%20in%20India."
+        },
+        {
+          "id": "hipec_h_12",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Chemotherapy Drugs Used in HIPEC"
+        },
+        {
+          "id": "hipec_h_12a",
+          "type": "html",
+          "html": "<span id=\"12-chemotherapy-drugs-used-in-hipec\"></span>"
+        },
+        {
+          "id": "hipec_p_12a",
+          "type": "paragraph",
+          "text": "The chemotherapy drug used during HIPEC depends on the cancer type, treatment protocol and patient-specific considerations. Common agents include **Mitomycin C** (selected appendiceal and colorectal protocols), **Cisplatin** (selected ovarian protocols), **Oxaliplatin** (certain colorectal protocols — ASCO recommends against in colorectal CRS setting), and **Doxorubicin** (selected specialised protocols). These drugs are not interchangeable; selection depends on tumour type, evidence, kidney function and institutional protocol."
+        },
+        {
+          "id": "hipec_h_13",
+          "type": "heading",
+          "level": 2,
+          "text": "13. What Does Clinical Research Say About HIPEC?"
+        },
+        {
+          "id": "hipec_h_13a",
+          "type": "html",
+          "html": "<span id=\"13-what-does-clinical-research-say\"></span>"
+        },
+        {
+          "id": "hipec_h_13b",
+          "type": "heading",
+          "level": 3,
+          "text": "Pseudomyxoma Peritonei"
+        },
+        {
+          "id": "hipec_p_13a",
+          "type": "paragraph",
+          "text": "CRS-HIPEC is an established specialist treatment supported by international consensus recommendations for resectable pseudomyxoma peritonei."
+        },
+        {
+          "id": "hipec_h_13c",
+          "type": "heading",
+          "level": 3,
+          "text": "Ovarian Cancer — OVHIPEC-1 Trial"
+        },
+        {
+          "id": "hipec_p_13b",
+          "type": "paragraph",
+          "text": "The OVHIPEC-1 randomised clinical trial demonstrated improved recurrence-free and overall survival in selected stage III ovarian cancer patients undergoing interval cytoreductive surgery after neoadjuvant chemotherapy. These findings apply to the selected trial population and should not be generalised to all ovarian cancer patients."
+        },
+        {
+          "id": "hipec_h_13d",
+          "type": "heading",
+          "level": 3,
+          "text": "Colorectal Cancer — PRODIGE 7 Trial"
+        },
+        {
+          "id": "hipec_p_13c",
+          "type": "paragraph",
+          "text": "The PRODIGE 7 trial did not demonstrate an overall survival benefit from adding oxaliplatin-based HIPEC to CRS for colorectal peritoneal metastases. The ASCO guideline consequently recommends against adding oxaliplatin-based HIPEC to CRS in this setting. The guideline supports consideration of complete CRS combined with systemic chemotherapy in carefully selected patients."
+        },
+        {
+          "id": "hipec_h_14",
+          "type": "heading",
+          "level": 2,
+          "text": "14. Recovery After HIPEC Surgery"
+        },
+        {
+          "id": "hipec_h_14a",
+          "type": "html",
+          "html": "<span id=\"14-recovery-after-hipec\"></span>"
+        },
+        {
+          "id": "hipec_img_4",
+          "type": "image",
+          "src": "/treatments/hipec-recovery-timeline.webp",
+          "alt": "HIPEC surgery recovery timeline from ICU through hospital discharge to full recovery",
+          "caption": "Typical HIPEC recovery: ICU monitoring → hospital ward → discharge → full recovery over several months."
+        },
+        {
+          "id": "hipec_p_14a",
+          "type": "paragraph",
+          "text": "Recovery after CRS-HIPEC is generally longer than routine abdominal surgery. Patients may require several weeks of hospital-based care followed by a gradual recovery period at home."
+        },
+        {
+          "id": "hipec_l_14a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Days 1–3:** Intensive monitoring of blood pressure, kidney function, urine output, blood counts and drain output.",
+            "**Week 1:** Gradual mobilisation, breathing exercises and nutritional rehabilitation. Oral intake introduced depending on bowel recovery.",
+            "**Week 2+:** Patients begin tolerating more food and increasing physical activity. Discharge depends on bowel function and recovery.",
+            "**Weeks 4–8:** Strenuous activities restricted. Follow-up imaging and blood investigations continue.",
+            "**Months 2–6:** Complete recovery may take several months. Nutritional support and additional systemic cancer treatment may be required."
+          ]
+        },
+        {
+          "id": "hipec_b_qa3",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Hospital stay in India</p><div class=\"article-quick-answer__body\"><p>Hospitalisation commonly lasts around one to three weeks, although some patients require shorter or longer stays. International patients should avoid booking fixed return travel dates before surgery. The treating surgeon must determine when the patient is medically fit to travel.</p></div></aside>"
+        },
+        {
+          "id": "hipec_h_15",
+          "type": "heading",
+          "level": 2,
+          "text": "15. Cost of HIPEC Surgery in India"
+        },
+        {
+          "id": "hipec_h_15a",
+          "type": "html",
+          "html": "<span id=\"15-cost-of-hipec-surgery-in-india\"></span>"
+        },
+        {
+          "id": "hipec_p_15a",
+          "type": "paragraph",
+          "text": "The cost of HIPEC surgery in India varies according to the cancer type, extent of disease, complexity of cytoreductive surgery, chemotherapy protocol and postoperative requirements. **There is no single fixed price applicable to every patient.**"
+        },
+        {
+          "id": "hipec_p_15b",
+          "type": "paragraph",
+          "text": "Major cost components include: specialist consultation, diagnostic investigations (CT, MRI, PET-CT, laboratory testing), cytoreductive surgery (surgeon, theatre and materials), HIPEC treatment (perfusion equipment, chemotherapy and consumables), anaesthesia, ICU admission, hospitalisation, medicines and any additional procedures required."
+        },
+        {
+          "id": "hipec_b_qa4",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">How to get a cost estimate</p><div class=\"article-quick-answer__body\"><p>Share your histopathology report, recent CT or MRI imaging, previous surgical records, chemotherapy history and current blood investigations. The hospital can then review the case and prepare an initial itemised estimate. For international patients, the budget should also include accommodation, local transport and the possibility of a longer stay.</p></div></aside>"
+        },
+        {
+          "id": "hipec_b_btn3",
+          "type": "button",
+          "label": "Request a HIPEC treatment cost estimate",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20a%20treatment%20cost%20estimate%20for%20HIPEC%20surgery%20in%20India."
+        },
+        {
+          "id": "hipec_h_16",
+          "type": "heading",
+          "level": 2,
+          "text": "16. How Can International Patients Access HIPEC Treatment in India?"
+        },
+        {
+          "id": "hipec_h_16a",
+          "type": "html",
+          "html": "<span id=\"16-international-patients\"></span>"
+        },
+        {
+          "id": "hipec_l_16a",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Submit medical records** — histopathology, CT/MRI, previous surgery and chemotherapy history, discharge summaries.",
+            "**Obtain a specialist opinion** — records reviewed; further imaging or pathology review may be requested.",
+            "**Understand treatment options** — CRS-HIPEC, systemic chemotherapy or another approach recommended based on evidence.",
+            "**Obtain a treatment estimate** — itemised quote based on proposed treatment and expected hospital stay.",
+            "**Medical visa and travel** — finalise travel only after the treating team confirms medical fitness.",
+            "**Hospital admission** — clinical reassessment and preoperative investigations on arrival.",
+            "**Recovery and return travel** — the treating surgeon provides written fitness-to-travel advice before discharge."
+          ]
+        },
+        {
+          "id": "hipec_h_17",
+          "type": "heading",
+          "level": 2,
+          "text": "17. How GAF Healthcare Assists Patients Seeking HIPEC Treatment"
+        },
+        {
+          "id": "hipec_h_17a",
+          "type": "html",
+          "html": "<span id=\"17-how-gaf-healthcare-assists\"></span>"
+        },
+        {
+          "id": "hipec_p_17a",
+          "type": "paragraph",
+          "text": "GAF Healthcare facilitates international patients seeking specialised cancer treatment in India. Our priority is to help patients access an appropriate specialist opinion rather than encouraging surgery without proper medical assessment. Patients may be advised to undergo systemic chemotherapy, another surgical approach or supportive treatment instead of HIPEC."
+        },
+        {
+          "id": "hipec_l_17a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Medical report collection and organisation",
+            "Specialist surgical oncology consultation coordination",
+            "Hospital treatment opinion assistance",
+            "Treatment estimate coordination",
+            "Hospital appointment scheduling",
+            "Medical visa documentation support",
+            "Airport transfers and accommodation",
+            "Interpreter assistance where required",
+            "Hospital admission coordination",
+            "Post-treatment follow-up arrangements"
+          ]
+        },
+        {
+          "id": "hipec_p_17b",
+          "type": "paragraph",
+          "text": "Patients from **Tanzania, Kenya, Ethiopia, Uganda, Zambia, Nigeria, Iraq** and other countries can approach GAF Healthcare for assistance coordinating their medical evaluation and treatment journey in India."
+        },
+        {
+          "id": "hipec_b_btn4",
+          "type": "button",
+          "label": "Speak with a patient coordinator",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20a%20patient%20coordinator%20about%20HIPEC%20surgery%20in%20India."
+        },
+        {
+          "id": "hipec_h_18",
+          "type": "heading",
+          "level": 2,
+          "text": "18. Frequently Asked Questions About HIPEC Surgery"
+        },
+        {
+          "id": "hipec_h_18a",
+          "type": "html",
+          "html": "<span id=\"18-faqs\"></span>"
+        },
+        {
+          "id": "hipec_b_faqs",
+          "type": "html",
+          "html": "<div class=\"treatment-faqs\"><details><summary>What is HIPEC surgery in simple words?</summary><div><p>HIPEC surgery is a specialised cancer treatment in which heated chemotherapy is circulated inside the abdominal cavity after surgeons remove visible cancer deposits. It is used for selected cancers affecting the peritoneum.</p></div></details><details><summary>What does HIPEC stand for?</summary><div><p>HIPEC stands for Hyperthermic Intraperitoneal Chemotherapy. Hyperthermic means heated, intraperitoneal means inside the abdominal cavity, and chemotherapy refers to medicines used to destroy or control cancer cells.</p></div></details><details><summary>Is HIPEC surgery a major operation?</summary><div><p>Yes. CRS-HIPEC is a major operation that may involve removal of the peritoneum, tumour deposits and affected portions of abdominal organs. Patients require general anaesthesia, postoperative monitoring and an extended recovery period.</p></div></details><details><summary>Why is chemotherapy heated during HIPEC?</summary><div><p>Heat may enhance the activity of certain chemotherapy drugs. Delivering the solution directly into the abdominal cavity allows it to contact peritoneal surfaces where microscopic cancer cells may remain after tumour removal.</p></div></details><details><summary>Which cancers are treated with HIPEC?</summary><div><p>HIPEC may be considered for selected patients with pseudomyxoma peritonei, peritoneal mesothelioma, ovarian cancer, colorectal peritoneal metastases, gastric peritoneal metastases and certain appendiceal malignancies. Evidence differs between these conditions.</p></div></details><details><summary>Can HIPEC cure cancer?</summary><div><p>In selected patients with certain peritoneal malignancies, complete cytoreductive surgery combined with HIPEC may offer long-term remission or potentially curative treatment. Cancer recurrence remains possible even after complete surgery.</p></div></details><details><summary>What is the difference between CRS and HIPEC?</summary><div><p>CRS removes visible cancer deposits through surgery. HIPEC circulates heated chemotherapy inside the abdomen after tumour removal to target microscopic residual disease. The two are commonly combined for selected peritoneal malignancies.</p></div></details><details><summary>What is the difference between HIPEC and PIPAC?</summary><div><p>HIPEC delivers heated liquid chemotherapy into the abdominal cavity during cytoreductive surgery. PIPAC delivers pressurised aerosolised chemotherapy through laparoscopy and does not itself remove visible tumours. They have different indications and cannot be substituted for each other.</p></div></details><details><summary>What is the Peritoneal Cancer Index (PCI)?</summary><div><p>PCI measures the distribution and extent of tumour deposits across 13 abdominal regions. The score ranges from 0 to 39 and helps surgeons assess disease burden and surgical feasibility.</p></div></details><details><summary>What chemotherapy drugs are used in HIPEC?</summary><div><p>Common agents include mitomycin C, cisplatin, oxaliplatin and doxorubicin. Drug selection depends on the primary cancer, available evidence, kidney function and the treating centre's protocol.</p></div></details><details><summary>How long does HIPEC surgery take?</summary><div><p>The operation may take approximately 6–12 hours or longer. Duration depends on tumour distribution, organs requiring removal, reconstruction needed and the chemotherapy protocol.</p></div></details><details><summary>Is HIPEC suitable for stage 4 cancer?</summary><div><p>Some patients with stage IV cancer may be considered if the disease is predominantly confined to the peritoneum and complete cytoreduction is achievable. Widespread distant metastases may make surgery unsuitable. Eligibility depends on individual clinical assessment.</p></div></details><details><summary>What are the risks of HIPEC surgery?</summary><div><p>Potential risks include infection, bleeding, bowel leakage, intestinal obstruction, kidney injury, blood clots, respiratory complications, electrolyte disturbances and chemotherapy-related toxicity.</p></div></details><details><summary>How long does recovery after HIPEC take?</summary><div><p>Initial hospital recovery commonly lasts one to three weeks. Complete recovery may take several months. Duration depends on surgical complexity, bowel recovery, complications and general health.</p></div></details><details><summary>Is HIPEC surgery available in India?</summary><div><p>Yes. Specialist surgical oncology teams in India are involved in CRS-HIPEC and peritoneal surface malignancy management. Patients should verify the specific hospital and surgeon have experience with their cancer type.</p></div></details><details><summary>How much does HIPEC surgery cost in India?</summary><div><p>The cost depends on cancer type, extent of surgery, chemotherapy drugs, ICU requirements and hospitalisation. There is no single fixed price. Share medical records and imaging to obtain an individualised estimate from the treating hospital.</p></div></details><details><summary>Can international patients travel to India for HIPEC treatment?</summary><div><p>Yes. International patients can seek specialist evaluation in India by sharing medical records for preliminary assessment before travel. The treating team determines suitability and when the patient is fit to travel home.</p></div></details><details><summary>Does every patient with peritoneal cancer need HIPEC?</summary><div><p>No. Some patients may benefit from systemic chemotherapy, surgery without HIPEC, targeted therapy, immunotherapy or supportive care. HIPEC is reserved for carefully selected patients based on cancer type and treatment suitability.</p></div></details></div>"
+        },
+        {
+          "id": "hipec_h_ref",
+          "type": "heading",
+          "level": 2,
+          "text": "Scientific References"
+        },
+        {
+          "id": "hipec_l_ref",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Multi-Society Clinical Practice Guideline on CRS-HIPEC (2024). pmc.ncbi.nlm.nih.gov/articles/PMC11826033/",
+            "ASCO Guideline: Treatment of Metastatic Colorectal Cancer. pmc.ncbi.nlm.nih.gov/articles/PMC10506310/",
+            "INDEPSO–ISPSM Indian Consensus on Enhanced Recovery After CRS With or Without HIPEC (2025). pmc.ncbi.nlm.nih.gov/articles/PMC11732209/",
+            "INDEPSO–ISPSM Consensus on Colorectal Peritoneal Metastases. pubmed.ncbi.nlm.nih.gov/39637347/",
+            "OVHIPEC-1 Clinical Trial: Long-Term Survival Outcomes. pubmed.ncbi.nlm.nih.gov/37708912/"
+          ]
+        },
+        {
+          "id": "hipec_b_btn5",
+          "type": "button",
+          "label": "Contact GAF Healthcare about HIPEC treatment in India",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20share%20my%20medical%20records%20for%20a%20specialist%20HIPEC%20treatment%20opinion%20in%20India."
+        },
+        {
+          "id": "hipec_p_disc",
+          "type": "paragraph",
+          "text": "**Medical Disclaimer:** This article is intended for educational and informational purposes only. It does not replace consultation with a qualified oncologist or surgical oncologist. CRS-HIPEC is a complex procedure with significant risks. Treatment suitability, expected outcomes and alternative treatment options must be assessed individually by an experienced multidisciplinary medical team."
+        }
+      ]
     }
   ]
 }
