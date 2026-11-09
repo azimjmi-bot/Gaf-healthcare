@@ -22,6 +22,7 @@
     "cf:seed-static-preview": "tsx scripts/cloudflare/seed-static-preview.ts",
     "cf:dev": "wrangler dev --port 43130",
     "cf:typegen": "wrangler types",
+    "cf:deploy:prod": "git rev-parse --short HEAD | awk '{print \"{\\\"deploy\\\":\\\"\"$1\"\\\"}\"}' > .version.json && wrangler r2 object put gaf-content-production/content/.version.json --file=.version.json && wrangler deploy --env production",
     "check:alternates": "tsx scripts/check-english-alternates.ts",
     "check:jsonld": "tsx scripts/jsonld-snapshot.ts",
     "check:jsonld-policy": "tsx scripts/check-jsonld-policy.ts",
