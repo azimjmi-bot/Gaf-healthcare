@@ -1,0 +1,34 @@
+name: Deploy to Production
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: SSH deploy to Hostinger VPS
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.2.0
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT || 22 }}
+          script: |
+            set -e
+            cd ${{ secrets.APP_DIR }}
+            git pull origin main
+            npm ci --omit=dev
+            npm run build
+            # Restart — use whichever process manager is running the app
+            if command -v pm2 &>/dev/null; then
+              pm2 restart all
+            elif systemctl is-active --quiet gaf-healthcare; then
+              sudo systemctl restart gaf-healthcare
+            else
+              echo "WARNING: could not detect process manager. Restart the app manually."
+            fi
+            echo "Deploy complete."
