@@ -1,3 +1,4 @@
+import { arabicStoredStayLabel } from "@/lib/i18n/radiation-glance";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { treatments, type Treatment } from "@/lib/treatments";
 
@@ -124,7 +125,13 @@ export function visibleProcedureFacts(
   if (fractions) rows.push({ label: ar ? "الجلسات" : "Fractions", value: fractions });
   if (course) rows.push({ label: ar ? "مدة المساق" : "Course", value: course });
   if (!ar && benchmark.stay) rows.push({ label: "Stay noted in the catalog", value: benchmark.stay });
-  if (ar) rows.push({ label: "الإقامة", value: STAY_UNTRANSLATED.ar });
+  if (ar) {
+    const stayAr = arabicStoredStayLabel(benchmark.stay);
+    rows.push({
+      label: "الإقامة",
+      value: stayAr ?? STAY_UNTRANSLATED.ar,
+    });
+  }
   rows.push(
     { label: ar ? "موضع العلاج" : "Body site", value: bodyLocation },
     { label: ar ? "النتائج" : "Outcomes", value: OUTCOMES[locale] },

@@ -1,9 +1,8 @@
 import "server-only";
 
-import { existsSync, mkdirSync, readdirSync, readFileSync, renameSync, writeFileSync } from "node:fs";
-import { dirname, join } from "node:path";
 import { randomUUID } from "node:crypto";
-import { invalidateCachedJsonFile, readCachedJsonFile } from "@/lib/cms/json-file-cache";
+import { invalidateCachedJsonFile, readCachedJsonDirectory, readCachedJsonFile } from "@/lib/cms/json-file-cache";
+import { contentStorage } from "@/lib/storage";
 import { getCountry, getSpecialty, toSlug } from "@/lib/taxonomy";
 import { LOCALES, type AppLocale } from "@/lib/i18n/languages";
 import {
@@ -15,7 +14,10 @@ import {
 import { doctorsForLocale, hospitalsForLocale } from "@/lib/locale-catalog";
 import { catalogTreatments } from "@/lib/treatments";
 
-const STORE_FILE = join(process.cwd(), "content/curated-treatments.json");
+/** Storage key of the curated Treatment records (English source of record). */
+export const CURATED_TREATMENTS_KEY = "content/curated-treatments.json";
+/** Storage prefix of the one-file-per-slug Arabic treatment translations. */
+export const ARABIC_TREATMENTS_KEY = "content/ar/treatments";
 
 function hasText(value: unknown): value is string {
   return typeof value === "string" && value.trim().length > 0;
@@ -80,9 +82,9 @@ export function normalizeCuratedTreatment(
 
 export function loadCuratedTreatments(): CuratedTreatmentStore {
   try {
-    const parsed = JSON.parse(
-      readFileSync(STORE_FILE, "utf8"),
-    ) as CuratedTreatmentStore;
+    const raw = contentStorage().read(CURATED_TREATMENTS_KEY);
+    if (raw === null) return { treatments: [] };
+    const parsed = JSON.parse(raw) as CuratedTreatmentStore;
     return {
       treatments: Array.isArray(parsed.treatments)
         ? parsed.treatments.map(normalizeCuratedTreatment)
@@ -98,15 +100,12 @@ export function loadCuratedTreatments(): CuratedTreatmentStore {
  * using `loadCuratedTreatments`, which they mutate in place before saving.
  */
 export function readCuratedTreatments(): CuratedTreatmentStore {
-  return readCachedJsonFile(STORE_FILE, loadCuratedTreatments);
+  return readCachedJsonFile(CURATED_TREATMENTS_KEY, loadCuratedTreatments);
 }
 
 export function saveCuratedTreatments(store: CuratedTreatmentStore) {
-  mkdirSync(dirname(STORE_FILE), { recursive: true });
-  const next = `${STORE_FILE}.${process.pid}.${Date.now()}.tmp`;
-  writeFileSync(next, `${JSON.stringify(store, null, 2)}\n`, "utf8");
-  renameSync(next, STORE_FILE);
-  invalidateCachedJsonFile(STORE_FILE);
+  contentStorage().write(CURATED_TREATMENTS_KEY, `${JSON.stringify(store, null, 2)}\n`);
+  invalidateCachedJsonFile(CURATED_TREATMENTS_KEY);
 }
 
 /**
@@ -288,19 +287,23 @@ export function validateTreatmentForSave(
   return errors;
 }
 
-const ARABIC_TREATMENT_DIR = join(process.cwd(), "content/ar/treatments");
-
 /**
  * One file per slug: `{ slug, translation }`. Applied only for Arabic reads so
  * the English store stays the source record.
  */
 function arabicTreatmentTranslations() {
+  return readCachedJsonDirectory(ARABIC_TREATMENTS_KEY, loadArabicTreatmentTranslations);
+}
+
+function loadArabicTreatmentTranslations() {
   const overlays = new Map<string, CuratedTreatmentTranslation>();
-  if (!existsSync(ARABIC_TREATMENT_DIR)) return overlays;
-  for (const name of readdirSync(ARABIC_TREATMENT_DIR)) {
-    if (!name.endsWith(".json")) continue;
+  const storage = contentStorage();
+  for (const key of storage.list(ARABIC_TREATMENTS_KEY)) {
+    if (!key.endsWith(".json")) continue;
     try {
-      const parsed = JSON.parse(readFileSync(join(ARABIC_TREATMENT_DIR, name), "utf8")) as {
+      const raw = storage.read(key);
+      if (raw === null) continue;
+      const parsed = JSON.parse(raw) as {
         slug?: string;
         translation?: CuratedTreatmentTranslation;
       };

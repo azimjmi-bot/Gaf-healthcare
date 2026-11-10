@@ -1,5 +1,3 @@
-import { readFileSync } from "fs";
-import { join } from "path";
 import { createElement, Fragment, type ReactNode } from "react";
 import { ArabicDoctorDirectorySsrDocument } from "@/components/arabic-doctor-directory-ssr";
 import { ArabicRadiationProcedureSsrDocument } from "@/components/arabic-radiation-procedure-ssr";
@@ -10,6 +8,7 @@ import {
   type ArabicRadiationDirectoryData,
 } from "@/lib/i18n/ar-radiation-directory";
 import { buildArabicRadiationProcedure } from "@/lib/i18n/ar-radiation-procedure";
+import { contentStorage } from "@/lib/storage";
 import {
   arabicDocumentMeta,
   buildArabicDoctorDirectory,
@@ -26,9 +25,12 @@ import { TtlLru } from "@/lib/ttl-lru";
 // minutes (memory + .next/cache), so this only short-circuits re-renders that
 // land inside one revalidation window. Keep it small: a Googlebot crawl of
 // every Arabic facet once left ~1,200 expired documents (~120 MB) in an
-// unbounded Map here.
+// unbounded Map here. A later heap snapshot showed the 48-entry cap itself
+// retaining 7.1 MiB of full documents, which is what pushed directory renders
+// through the Worker heap cap. Eight entries still cover the repeated URLs
+// in the memory workload; a crawl evicts.
 const HTML_CACHE_MS = 5 * 60 * 1000;
-const HTML_CACHE_MAX_ENTRIES = 48;
+const HTML_CACHE_MAX_ENTRIES = 8;
 const htmlCache = new TtlLru<string>(HTML_CACHE_MAX_ENTRIES, HTML_CACHE_MS);
 
 const DIRECTORY_CSS_FILE = "ar-ro-directory.css";
@@ -45,7 +47,7 @@ let directoryCss: string | null | undefined;
 function directoryStyleTag() {
   if (directoryCss === undefined) {
     try {
-      directoryCss = readFileSync(join(process.cwd(), "public", DIRECTORY_CSS_FILE), "utf8");
+      directoryCss = contentStorage().read(`public/${DIRECTORY_CSS_FILE}`);
     } catch {
       directoryCss = null;
     }
@@ -232,7 +234,7 @@ function hostMarkup(node: ReactNode, selectedValue?: string): string {
 
 function cacheKeyFor(path: string, page: number) {
   const url = page > 1 ? `/ar${path}?page=${page}` : `/ar${path}`;
-  return `v10:${url}`;
+  return `v11:${url}`;
 }
 
 export function renderArabicRadiationHtml(query: CatalogQuery, page = 1) {

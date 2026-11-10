@@ -2,7 +2,7 @@ import { stripMarkdown } from "@/lib/markdown";
 import type { Doctor } from "@/lib/doctors";
 import type { Hospital } from "@/lib/hospitals";
 import type { Treatment } from "@/lib/treatments";
-import { treatmentMatchesSpecialty } from "@/lib/treatments";
+import { treatmentMatchesSpecialty } from "@/lib/treatment-specialty";
 import { SPECIALTIES, compareSpecialties } from "@/lib/taxonomy";
 
 export const SPECIALTY_BLURB: Record<string, string> = {

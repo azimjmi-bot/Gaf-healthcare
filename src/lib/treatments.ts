@@ -73,9 +73,7 @@ export type Treatment = {
   replaceGuide?: boolean;
 };
 
-export function treatmentMatchesSpecialty(t: Treatment, specialtySlug: string) {
-  return t.specialtySlugs.includes(specialtySlug);
-}
+export { treatmentMatchesSpecialty } from "@/lib/treatment-specialty";
 
 function slugsForProcedureName(name: string) {
   const row = getProcedure(name);

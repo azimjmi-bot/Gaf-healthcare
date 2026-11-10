@@ -9,6 +9,11 @@ import {
 import { renderArabicDoctorDirectoryHtml } from "@/lib/i18n/arabic-radiation-html";
 import { doctorsForLocale } from "@/lib/locale-catalog";
 import { filterDoctors } from "@/lib/catalog";
+import { DOCTOR_PROCEDURE_INDEX_MIN } from "@/lib/doctor-discovery";
+import { publishedFacetPaths } from "@/lib/i18n/facet-candidates";
+import { absoluteUrl } from "@/lib/seo-url";
+import { RADIATION_PROCEDURES } from "@/lib/taxonomy";
+import { uniqueDoctorsSorted } from "@/lib/doctors";
 import { parsePrettyCatalogSegments, prettyCatalogPath, toPrettySegment } from "@/lib/pretty-catalog-path";
 
 const IMRT = "Intensity-Modulated Radiotherapy (IMRT)";
@@ -169,4 +174,75 @@ test("EBRT Arabic HTML is extractable and does not invent ratings or prices", ()
   assert.match(markup, /EducationalOccupationalCredential|jobTitle/);
   assert.equal(markup.includes("AggregateRating"), false);
   assert.equal(markup.includes('"code"'), false);
+});
+
+test("every radiation procedure with enough linked doctors publishes one Arabic India page", () => {
+  const doctors = doctorsForLocale("ar");
+  const sitemap = new Set(publishedFacetPaths("ar").map((path) => absoluteUrl(path, "ar")));
+  const eligible: string[] = [];
+  const withheld: string[] = [];
+  for (const procedure of RADIATION_PROCEDURES) {
+    const count = uniqueDoctorsSorted(
+      filterDoctors({ destination: "India", specialty: "Radiation Oncology", procedure }, doctors),
+    ).length;
+    const page = buildArabicRadiationProcedure(
+      { destination: "India", specialty: "Radiation Oncology", procedure },
+      1,
+      doctors,
+      undefined,
+      PUBLISHED,
+    );
+    if (count < DOCTOR_PROCEDURE_INDEX_MIN) {
+      assert.equal(page, undefined, procedure);
+      withheld.push(`${procedure} (${count} doctors)`);
+      continue;
+    }
+    assert.ok(page, procedure);
+    assert.ok(page.copy.faqs.length >= 18, procedure);
+    assert.equal(page.doctorCount, count);
+    const html = renderArabicDoctorDirectoryHtml({
+      destination: "India",
+      specialty: "Radiation Oncology",
+      procedure,
+    });
+    assert.ok(html, procedure);
+    assert.match(html, /procedure-quick-answer/);
+    assert.match(html, /dir="rtl"/);
+    assert.equal(html.includes("AggregateRating"), false);
+    assert.equal(html.includes("نسبة نجاح"), false);
+    assert.equal(html.includes("SAR"), false);
+    const canonical = absoluteUrl(page.path, "ar");
+    assert.match(html, new RegExp(`rel="canonical" href="${canonical.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"`));
+    assert.match(canonical, /^https:\/\/gaf\.healthcare\/ar\/doctors\/india\/radiation-oncology\//);
+    assert.ok(sitemap.has(canonical), `${procedure} missing from Arabic sitemap: ${canonical}`);
+    eligible.push(`${procedure} (${page.copy.faqs.length} FAQs, ${count} doctors)`);
+  }
+  assert.ok(eligible.length > 0, withheld.join("; "));
+  assert.equal(eligible.length + withheld.length, RADIATION_PROCEDURES.length);
+});
+
+test("stored stay is shown for non-EBRT procedures and couch time stays on EBRT", () => {
+  const imrt = renderArabicDoctorDirectoryHtml({
+    destination: "India",
+    specialty: "Radiation Oncology",
+    procedure: IMRT,
+  });
+  assert.ok(imrt);
+  assert.match(imrt, /4–7 أسابيع من الجلسات/);
+  assert.equal(imrt.includes("10–20 دقيقة"), false);
+  const gamma = renderArabicDoctorDirectoryHtml({
+    destination: "India",
+    specialty: "Radiation Oncology",
+    procedure: "Gamma Knife",
+  });
+  assert.ok(gamma);
+  assert.match(gamma, /جلسة واحدة في العادة/);
+  assert.match(gamma, /عدد الليالي غير مخزّن/);
+  const iort = renderArabicDoctorDirectoryHtml({
+    destination: "India",
+    specialty: "Radiation Oncology",
+    procedure: "Intraoperative Radiotherapy (IORT)",
+  });
+  assert.ok(iort);
+  assert.match(iort, /مرتبطة بمدة الإقامة الجراحية/);
 });
