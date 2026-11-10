@@ -124,7 +124,13 @@
     "knee replacement",
     "total knee replacement",
     "robotic knee replacement",
-    "orthopedics"
+    "orthopedics",
+    "ovarian cancer",
+    "HIPEC",
+    "cytoreductive surgery",
+    "peritoneal metastases",
+    "gynaecologic oncology",
+    "CRS-HIPEC"
   ],
   "media": [
     {
@@ -2292,6 +2298,914 @@
     }
   ],
   "articles": [
+    {
+      "id": "art_hipec_ovarian_cancer",
+      "slug": "hipec-surgery-for-ovarian-cancer",
+      "title": "HIPEC Surgery for Ovarian Cancer: Eligibility, Procedure, Benefits, Risks and Treatment in India",
+      "excerpt": "HIPEC may be considered for selected patients with advanced epithelial ovarian cancer undergoing interval cytoreductive surgery after neoadjuvant chemotherapy. This guide explains how CRS-HIPEC works, who may be eligible, what clinical evidence shows, potential benefits and risks, recovery, and how international patients can seek specialist ovarian cancer treatment in India.",
+      "date": "10 November 2026",
+      "publishedAt": "2026-11-10T07:00:00.000Z",
+      "updatedAt": "2026-11-10T07:00:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "ovarian cancer",
+        "HIPEC",
+        "cytoreductive surgery",
+        "India",
+        "peritoneal metastases",
+        "chemotherapy",
+        "surgery"
+      ],
+      "image": "/uploads/articles/hipec-ovarian-cancer-peritoneal-spread.webp",
+      "imageAlt": "Medical illustration showing ovarian cancer spreading to the peritoneal lining inside the abdominal cavity",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "HIPEC Surgery for Ovarian Cancer in India: Eligibility & Cost",
+      "seoDescription": "Explore HIPEC for ovarian cancer, including eligibility, CRS-HIPEC procedure, clinical evidence, risks, recovery and specialist treatment options in India.",
+      "canonical": "https://gaf.healthcare/blogs/hipec-surgery-for-ovarian-cancer",
+      "ogImage": "/uploads/articles/hipec-ovarian-cancer-peritoneal-spread.webp",
+      "allowIndex": true,
+      "keywords": [
+        "HIPEC surgery for ovarian cancer",
+        "Ovarian cancer HIPEC treatment",
+        "HIPEC for ovarian cancer in India",
+        "Ovarian cancer treatment in India",
+        "CRS-HIPEC for ovarian cancer",
+        "Heated chemotherapy for ovarian cancer",
+        "Cytoreductive surgery for ovarian cancer",
+        "Advanced ovarian cancer treatment",
+        "Stage 3 ovarian cancer HIPEC",
+        "Interval debulking surgery",
+        "Ovarian cancer peritoneal metastases",
+        "HIPEC eligibility for ovarian cancer",
+        "Ovarian cancer surgery in India",
+        "HIPEC surgery cost in India",
+        "Ovarian cancer chemotherapy"
+      ],
+      "blocks": [
+        {
+          "id": "hoc_qa_1",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p><strong>HIPEC (Hyperthermic Intraperitoneal Chemotherapy)</strong> may be offered during interval cytoreductive surgery (CRS) for selected patients with <strong>FIGO stage III epithelial ovarian cancer</strong> who have received neoadjuvant chemotherapy, have good performance status and adequate kidney function.</p><p>The OVHIPEC-1 randomised phase III trial reported improved survival outcomes with CRS-HIPEC compared with surgery alone in this selected group:<br><strong>Median overall survival: 44.9 months (CRS-HIPEC) vs 33.3 months (surgery alone).</strong></p><p><strong>HIPEC is not suitable for every patient with ovarian cancer.</strong> Eligibility depends on cancer stage, tumour type, chemotherapy response, surgical feasibility, kidney function and overall fitness. A gynaecologic oncologist and multidisciplinary team should assess each patient individually.</p><p>India is an option for international patients seeking specialist ovarian cancer assessment and CRS-HIPEC evaluation.</p></div></aside>"
+        },
+        {
+          "id": "hoc_p_2",
+          "type": "paragraph",
+          "text": "Ovarian cancer can be challenging to diagnose in its early stages. In many patients, the disease has already spread beyond the ovaries by the time it is identified. The cancer may involve the fallopian tubes, pelvic tissues, omentum and the peritoneal lining of the abdominal cavity.\n\nTreatment often requires a combination of surgery and chemotherapy. For selected patients with advanced ovarian cancer, doctors may also consider a specialised procedure known as **Hyperthermic Intraperitoneal Chemotherapy (HIPEC)**."
+        },
+        {
+          "id": "hoc_p_3",
+          "type": "paragraph",
+          "text": "HIPEC involves circulating heated chemotherapy inside the abdominal cavity, usually after surgeons have removed visible cancer deposits through cytoreductive surgery (CRS). The combined procedure is known as **CRS-HIPEC**.\n\nThe 2025 ASCO guideline update states that HIPEC may be offered during interval cytoreductive surgery to selected patients with FIGO stage III epithelial ovarian cancer who have good performance status, adequate renal function and have received neoadjuvant chemotherapy.\n\nThis guide explains the procedure, clinical evidence, eligibility criteria, risks, recovery and treatment pathway in India."
+        },
+        {
+          "id": "hoc_btn_4",
+          "type": "button",
+          "label": "Share medical records for a specialist opinion",
+          "href": "https://wa.me/919044346292?text=Please%20review%20my%20ovarian%20cancer%20medical%20records%20and%20advise%20whether%20I%20may%20be%20a%20candidate%20for%20HIPEC%20surgery%20in%20India.%20I%20will%20share%20my%20pathology%2C%20CT%20scan%20and%20chemotherapy%20history."
+        },
+        {
+          "id": "hoc_toc_5",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-is-hipec-surgery-for-ovarian-cancer\">1. What Is HIPEC Surgery for Ovarian Cancer?</a></li><li><a href=\"#2-how-does-ovarian-cancer-spread-inside-the-abdomen\">2. How Does Ovarian Cancer Spread Inside the Abdomen?</a></li><li><a href=\"#3-which-types-of-ovarian-cancer-may-be-considered-for-hipec\">3. Which Types of Ovarian Cancer May Be Considered for HIPEC?</a></li><li><a href=\"#4-primary-debulking-vs-interval-debulking-surgery\">4. Primary Debulking vs Interval Debulking Surgery</a></li><li><a href=\"#5-who-may-be-eligible-for-hipec-surgery-for-ovarian-cancer\">5. Who May Be Eligible for HIPEC?</a></li><li><a href=\"#6-what-tests-are-required-before-hipec-for-ovarian-cancer\">6. Tests Required Before HIPEC</a></li><li><a href=\"#7-what-happens-during-hipec-surgery-for-ovarian-cancer\">7. What Happens During HIPEC Surgery?</a></li><li><a href=\"#8-chemotherapy-drug-used-for-hipec-in-ovarian-cancer\">8. Chemotherapy Drug Used for HIPEC</a></li><li><a href=\"#9-clinical-evidence-for-hipec-in-ovarian-cancer\">9. Clinical Evidence: OVHIPEC-1 Trial</a></li><li><a href=\"#10-what-do-current-guidelines-say-about-hipec-for-ovarian-cancer\">10. Current Guidelines on HIPEC</a></li><li><a href=\"#11-potential-benefits-of-hipec-for-ovarian-cancer\">11. Potential Benefits</a></li><li><a href=\"#12-risks-and-side-effects-of-hipec\">12. Risks and Side Effects</a></li><li><a href=\"#13-recovery-after-hipec-surgery-for-ovarian-cancer\">13. Recovery After HIPEC</a></li><li><a href=\"#14-treatment-after-hipec-maintenance-therapy\">14. Treatment After HIPEC</a></li><li><a href=\"#15-hipec-surgery-for-ovarian-cancer-in-india\">15. HIPEC Surgery for Ovarian Cancer in India</a></li><li><a href=\"#16-cost-of-hipec-surgery-for-ovarian-cancer-in-india\">16. Cost in India</a></li><li><a href=\"#17-how-international-patients-can-seek-hipec-treatment-in-india\">17. For International Patients</a></li><li><a href=\"#18-frequently-asked-questions-about-hipec-surgery-for-ovarian-cancer\">18. Frequently Asked Questions</a></li></ol></nav>"
+        },
+        {
+          "id": "hoc_h2_6",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Is HIPEC Surgery for Ovarian Cancer?"
+        },
+        {
+          "id": "hoc_p_7",
+          "type": "paragraph",
+          "text": "**HIPEC** stands for Hyperthermic Intraperitoneal Chemotherapy. It is a specialised treatment in which heated chemotherapy is circulated inside the abdominal cavity during surgery.\n\nIn ovarian cancer, HIPEC may be considered after cytoreductive surgery in selected patients whose cancer has spread to the peritoneal surfaces."
+        },
+        {
+          "id": "hoc_p_8",
+          "type": "paragraph",
+          "text": "The treatment has two main components:\n\n**Cytoreductive surgery (CRS):** The surgeon removes visible cancer deposits from the abdominal and pelvic surfaces. Depending on disease involvement, this may require removal of the ovaries, uterus, fallopian tubes, omentum, peritoneal tissue and other affected structures.\n\n**HIPEC:** After visible tumour deposits have been removed, heated chemotherapy is circulated within the abdominal cavity for a defined period. The objective is to expose the peritoneal surfaces to chemotherapy and treat microscopic cancer cells that may remain."
+        },
+        {
+          "id": "hoc_h3_9",
+          "type": "heading",
+          "level": 3,
+          "text": "Why is HIPEC considered in ovarian cancer?"
+        },
+        {
+          "id": "hoc_p_10",
+          "type": "paragraph",
+          "text": "Ovarian cancer often spreads within the abdominal cavity. Even after extensive surgery, microscopic cancer cells may remain on the peritoneal surfaces. HIPEC is intended to target some of these residual cells by delivering chemotherapy directly into the abdominal cavity. However, it does not replace surgery, systemic chemotherapy or appropriate maintenance treatment. It is considered only as part of a carefully selected treatment plan."
+        },
+        {
+          "id": "hoc_img_11",
+          "type": "image",
+          "src": "/uploads/articles/hipec-ovarian-cancer-peritoneal-spread.webp",
+          "alt": "Medical illustration showing ovarian cancer spreading to the peritoneal lining inside the abdominal cavity",
+          "caption": "Ovarian cancer frequently spreads to the peritoneal surfaces, omentum and surrounding abdominal structures. HIPEC targets microscopic residual cancer cells in this region after cytoreductive surgery."
+        },
+        {
+          "id": "hoc_h2_12",
+          "type": "heading",
+          "level": 2,
+          "text": "2. How Does Ovarian Cancer Spread Inside the Abdomen?"
+        },
+        {
+          "id": "hoc_p_13",
+          "type": "paragraph",
+          "text": "Ovarian cancer can spread through several routes. One common pattern is the movement of cancer cells within the abdominal cavity. Cells may detach from the original tumour and settle on the peritoneum or the surfaces of nearby organs.\n\nThe disease may involve the pelvic peritoneum, the omentum, the abdominal lining, the surfaces of the bowel, the diaphragm and other abdominal structures. This pattern of spread — called **peritoneal metastasis** — is one reason that advanced ovarian cancer treatment may involve surgery and chemotherapy directed at disease throughout the abdomen."
+        },
+        {
+          "id": "hoc_h3_14",
+          "type": "heading",
+          "level": 3,
+          "text": "What is peritoneal metastasis in ovarian cancer?"
+        },
+        {
+          "id": "hoc_p_15",
+          "type": "paragraph",
+          "text": "Peritoneal metastasis means that cancer has spread to the peritoneal lining. It may cause abdominal swelling, ascites (fluid accumulation), bloating, abdominal discomfort, reduced appetite, early fullness after meals and bowel-related symptoms.\n\nThe presence of peritoneal disease does not automatically make surgery impossible. The distribution and extent of disease must be assessed by an experienced gynaecologic oncology team."
+        },
+        {
+          "id": "hoc_h2_16",
+          "type": "heading",
+          "level": 2,
+          "text": "3. Which Types of Ovarian Cancer May Be Considered for HIPEC?"
+        },
+        {
+          "id": "hoc_p_17",
+          "type": "paragraph",
+          "text": "The strongest evidence for HIPEC in ovarian cancer relates to selected patients with **advanced epithelial ovarian cancer** undergoing interval cytoreductive surgery after neoadjuvant chemotherapy.\n\nEpithelial ovarian cancer is the most common broad category of ovarian cancer. Subtypes include high-grade serous carcinoma, low-grade serous carcinoma, endometrioid carcinoma, clear cell carcinoma and mucinous ovarian carcinoma.\n\nFallopian tube cancer and primary peritoneal carcinoma share clinical and biological similarities with epithelial ovarian cancer and may be managed using related treatment pathways, subject to individual specialist assessment.\n\nThe evidence supporting HIPEC should not be assumed to apply equally to every ovarian tumour subtype. A specialist should confirm the histological diagnosis before recommending treatment."
+        },
+        {
+          "id": "hoc_h2_18",
+          "type": "heading",
+          "level": 2,
+          "text": "4. Primary Debulking vs Interval Debulking Surgery"
+        },
+        {
+          "id": "hoc_p_19",
+          "type": "paragraph",
+          "text": "This distinction is particularly important when discussing HIPEC for ovarian cancer."
+        },
+        {
+          "id": "hoc_h3_20",
+          "type": "heading",
+          "level": 3,
+          "text": "Primary cytoreductive surgery"
+        },
+        {
+          "id": "hoc_p_21",
+          "type": "paragraph",
+          "text": "Primary cytoreductive surgery is performed before chemotherapy. It may be recommended when the patient is fit enough for surgery and the gynaecologic oncologist believes that complete or near-complete removal of visible cancer is likely to be achievable with acceptable surgical risk. The operation may be followed by systemic chemotherapy."
+        },
+        {
+          "id": "hoc_h3_22",
+          "type": "heading",
+          "level": 3,
+          "text": "Neoadjuvant chemotherapy followed by interval surgery"
+        },
+        {
+          "id": "hoc_p_23",
+          "type": "paragraph",
+          "text": "Neoadjuvant chemotherapy is chemotherapy given before surgery. It may be recommended when the disease is too extensive for safe complete primary surgery, complete cytoreduction is unlikely at initial assessment, or the patient has significant surgical risk.\n\nAfter a response or stable disease, the patient may be reassessed for **interval cytoreductive surgery**. In selected patients with stage III disease, HIPEC may be discussed during this operation. The most established randomised evidence for HIPEC in advanced ovarian cancer comes specifically from patients who received neoadjuvant chemotherapy and then underwent interval cytoreductive surgery."
+        },
+        {
+          "id": "hoc_btn_24",
+          "type": "button",
+          "label": "Get a specialist opinion on HIPEC eligibility",
+          "href": "https://wa.me/919044346292?text=I%20would%20like%20a%20specialist%20gynaecologic%20oncology%20opinion%20about%20HIPEC%20surgery%20for%20ovarian%20cancer%20in%20India.%20Please%20advise%20how%20to%20share%20my%20medical%20documents."
+        },
+        {
+          "id": "hoc_h2_25",
+          "type": "heading",
+          "level": 2,
+          "text": "5. Who May Be Eligible for HIPEC Surgery for Ovarian Cancer?"
+        },
+        {
+          "id": "hoc_p_26",
+          "type": "paragraph",
+          "text": "Eligibility is determined individually by a gynaecologic oncologist and multidisciplinary oncology team. The **2025 ASCO guideline update** states that HIPEC may be offered during interval cytoreductive surgery to selected patients with FIGO stage III epithelial ovarian cancer who have good performance status, adequate renal function and have received neoadjuvant chemotherapy.\n\nThis is a conditional recommendation and should involve shared decision-making."
+        },
+        {
+          "id": "hoc_h3_27",
+          "type": "heading",
+          "level": 3,
+          "text": "Common factors considered during eligibility assessment"
+        },
+        {
+          "id": "hoc_list_28",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Cancer stage** — The guideline recommendation specifically addresses FIGO stage III disease undergoing interval surgery.",
+            "**Histological diagnosis** — The team confirms the type of ovarian, fallopian tube or primary peritoneal cancer.",
+            "**Response to chemotherapy** — Patients whose cancer responds to neoadjuvant chemotherapy or remains stable may be reassessed for interval surgery.",
+            "**Surgical feasibility** — The surgeon evaluates whether complete or near-complete cytoreduction can be achieved safely.",
+            "**Kidney function** — Renal function is particularly important because cisplatin used in HIPEC can cause kidney toxicity.",
+            "**General fitness** — The team assesses physical condition, nutritional status, other medical conditions and ability to tolerate a major operation.",
+            "**Patient preferences** — The patient should understand possible benefits, limitations, additional risks and recovery requirements before deciding."
+          ]
+        },
+        {
+          "id": "hoc_img_29",
+          "type": "image",
+          "src": "/uploads/articles/hipec-eligibility-criteria-ovarian-cancer.webp",
+          "alt": "Infographic showing the six key eligibility criteria for HIPEC surgery in ovarian cancer patients",
+          "caption": "HIPEC eligibility for ovarian cancer requires the treating team to assess stage, histology, chemotherapy response, surgical feasibility, kidney function and performance status."
+        },
+        {
+          "id": "hoc_p_30",
+          "type": "paragraph",
+          "text": "**Stage III disease alone is not enough** to establish eligibility. The patient must also meet the relevant clinical and surgical requirements. The treating team should explain why HIPEC is being recommended in that specific situation."
+        },
+        {
+          "id": "hoc_h2_31",
+          "type": "heading",
+          "level": 2,
+          "text": "6. What Tests Are Required Before HIPEC for Ovarian Cancer?"
+        },
+        {
+          "id": "hoc_p_32",
+          "type": "paragraph",
+          "text": "A detailed assessment is essential before major ovarian cancer surgery. Investigations commonly include:"
+        },
+        {
+          "id": "hoc_list_33",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Clinical examination** — Review of symptoms, previous cancer diagnosis, surgery, chemotherapy history, general physical condition and nutritional status.",
+            "**CA-125 blood test** — A tumour marker used in assessment and monitoring of epithelial ovarian cancer. It is not a standalone eligibility test.",
+            "**CT scan of the chest, abdomen and pelvis** — Contrast-enhanced CT assesses tumour distribution, peritoneal involvement, omental disease, ascites, lymph nodes and feasibility of surgical removal.",
+            "**MRI or PET-CT** — Additional imaging may be recommended when the specialist needs further information about disease distribution.",
+            "**Biopsy and histopathology** — Tissue confirmation is important, especially when chemotherapy is planned before surgery.",
+            "**Genetic and molecular testing** — BRCA1, BRCA2 and HRD testing are relevant for maintenance therapy planning and genetic counselling.",
+            "**Kidney function and blood tests** — Serum creatinine, eGFR, electrolytes, complete blood count and liver function tests assess fitness for cisplatin-based HIPEC."
+          ]
+        },
+        {
+          "id": "hoc_h2_34",
+          "type": "heading",
+          "level": 2,
+          "text": "7. What Happens During HIPEC Surgery for Ovarian Cancer?"
+        },
+        {
+          "id": "hoc_p_35",
+          "type": "paragraph",
+          "text": "CRS-HIPEC is a major operation performed under general anaesthesia. The exact surgical steps vary according to the distribution of cancer and the organs involved."
+        },
+        {
+          "id": "hoc_img_36",
+          "type": "image",
+          "src": "/uploads/articles/hipec-crs-procedure-steps.webp",
+          "alt": "Medical diagram showing the two steps of CRS-HIPEC: cytoreductive surgery followed by heated chemotherapy circulation",
+          "caption": "In CRS-HIPEC, cytoreductive surgery removes visible tumour deposits first. Heated chemotherapy is then circulated inside the abdominal cavity to target remaining microscopic cancer cells."
+        },
+        {
+          "id": "hoc_list_37",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Anaesthesia and preparation** — General anaesthesia and monitoring of vital signs, fluid balance and other parameters.",
+            "**Abdominal exploration** — The surgeon examines the abdominal cavity to assess the distribution of tumour deposits.",
+            "**Cytoreductive surgery** — Removal of visible cancer deposits and affected tissues. Depending on disease involvement, this may include the ovaries, fallopian tubes, uterus, omentum, peritoneum and affected bowel sections.",
+            "**Assessment of surgical completeness** — The surgeon evaluates the remaining visible disease and records the completeness of cytoreduction. The aim is to remove all visible tumour deposits where safely achievable.",
+            "**HIPEC administration** — Heated chemotherapy is circulated inside the abdominal cavity. The cisplatin regimen used in OVHIPEC-1 was 100 mg/m² for 90 minutes at approximately 40–42°C.",
+            "**Completion and postoperative monitoring** — Transfer to intensive care or high-dependency unit for close monitoring."
+          ]
+        },
+        {
+          "id": "hoc_h2_38",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Chemotherapy Drug Used for HIPEC in Ovarian Cancer"
+        },
+        {
+          "id": "hoc_p_39",
+          "type": "paragraph",
+          "text": "**Cisplatin** was the chemotherapy drug used in the OVHIPEC-1 trial, at 100 mg/m² for 90 minutes at approximately 40–42°C. This is a trial-specific protocol, not a universal recommendation. The treating specialist determines the appropriate protocol based on the clinical indication, patient fitness, renal function and centre-specific practice.\n\nCisplatin can cause kidney toxicity. The medical team may use preventive measures such as careful intravenous fluid management, renal function monitoring, electrolyte monitoring and sodium thiosulfate where indicated by the protocol."
+        },
+        {
+          "id": "hoc_btn_40",
+          "type": "button",
+          "label": "Request written hospital estimates for CRS-HIPEC",
+          "href": "https://wa.me/919044346292?text=Please%20request%20written%20treatment%20estimates%20for%20CRS-HIPEC%20for%20ovarian%20cancer%20in%20India%2C%20based%20on%20the%20medical%20records%20I%20can%20send."
+        },
+        {
+          "id": "hoc_h2_41",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Clinical Evidence for HIPEC in Ovarian Cancer"
+        },
+        {
+          "id": "hoc_h3_42",
+          "type": "heading",
+          "level": 3,
+          "text": "The OVHIPEC-1 randomised phase III trial"
+        },
+        {
+          "id": "hoc_p_43",
+          "type": "paragraph",
+          "text": "OVHIPEC-1 studied selected patients with stage III epithelial ovarian cancer who were not suitable for primary cytoreductive surgery. Patients received neoadjuvant chemotherapy and were assessed for interval cytoreductive surgery. Those who met the trial's criteria were assigned to interval cytoreductive surgery alone or interval cytoreductive surgery combined with HIPEC.\n\nThe final analysis, published in 2023 after approximately 10 years of follow-up, reported:"
+        },
+        {
+          "id": "hoc_img_44",
+          "type": "image",
+          "src": "/uploads/articles/hipec-ovhipec1-trial-results.webp",
+          "alt": "Chart comparing OVHIPEC-1 trial outcomes: overall survival 44.9 months with HIPEC versus 33.3 months without",
+          "caption": "OVHIPEC-1 final analysis (2023): median overall survival improved from 33.3 to 44.9 months with the addition of HIPEC in selected patients with stage III ovarian cancer undergoing interval cytoreductive surgery."
+        },
+        {
+          "id": "hoc_tbl_45",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Outcome</th><th>Surgery alone</th><th>Surgery + HIPEC</th></tr></thead><tbody><tr><td>Median progression-free survival</td><td>10.7 months</td><td>14.3 months</td></tr><tr><td>Median overall survival</td><td>33.3 months</td><td>44.9 months</td></tr><tr><td>Hazard ratio (PFS)</td><td colspan=\"2\">0.63</td></tr><tr><td>Hazard ratio (OS)</td><td colspan=\"2\">0.70</td></tr></tbody></table><p><small>Source: OVHIPEC-1 randomised phase III trial, 2023 final analysis. <a href=\"https://pubmed.ncbi.nlm.nih.gov/37708912/\" rel=\"noopener noreferrer\" target=\"_blank\">PubMed 37708912</a></small></p></div>"
+        },
+        {
+          "id": "hoc_p_46",
+          "type": "paragraph",
+          "text": "These results do not guarantee benefit for every individual patient. The study population had specific eligibility criteria. The findings should not automatically be applied to every stage of ovarian cancer, every histological subtype, patients undergoing primary cytoreductive surgery, all patients with recurrent ovarian cancer, patients with significant kidney impairment or patients whose disease progresses during neoadjuvant chemotherapy."
+        },
+        {
+          "id": "hoc_h2_47",
+          "type": "heading",
+          "level": 2,
+          "text": "10. What Do Current Guidelines Say About HIPEC for Ovarian Cancer?"
+        },
+        {
+          "id": "hoc_p_48",
+          "type": "paragraph",
+          "text": "The **2025 ASCO guideline update** on neoadjuvant chemotherapy for advanced ovarian cancer provides guidance on selecting patients for surgery and HIPEC. It recommends evaluation by a gynaecologic oncologist for suspected stage III or IV epithelial ovarian cancer.\n\nFor HIPEC, the guideline states that it may be offered during interval cytoreductive surgery for selected patients with:\n- FIGO stage III disease\n- Good performance status\n- Adequate renal function\n- Treatment with neoadjuvant chemotherapy\n\nThe recommendation is **conditional** and calls for shared decision-making, including discussion of patient preferences, quality of life and availability. The guideline also recommends continuing postoperative chemotherapy after interval surgery as part of the overall treatment plan.\n\n**The practical message is that HIPEC may be a useful option for selected patients, but it is not a universal component of ovarian cancer surgery.**"
+        },
+        {
+          "id": "hoc_h2_49",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Potential Benefits of HIPEC for Ovarian Cancer"
+        },
+        {
+          "id": "hoc_p_50",
+          "type": "paragraph",
+          "text": "For appropriately selected patients, HIPEC may offer additional disease control when combined with interval cytoreductive surgery."
+        },
+        {
+          "id": "hoc_list_51",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Direct treatment of the abdominal cavity** — Chemotherapy is circulated inside the area where ovarian cancer commonly spreads.",
+            "**Treatment of microscopic residual disease** — Intended to target cancer cells that may remain after visible tumour deposits have been removed.",
+            "**Evidence of improved outcomes in a selected group** — OVHIPEC-1 reported improvements in median progression-free and overall survival.",
+            "**Integration with a wider treatment plan** — HIPEC can be considered alongside systemic chemotherapy and appropriate maintenance treatment."
+          ]
+        },
+        {
+          "id": "hoc_p_52",
+          "type": "paragraph",
+          "text": "**HIPEC does not guarantee cure.** Recurrence remains possible even after extensive cytoreductive surgery and chemotherapy. The objective may be to improve disease control and survival in selected patients."
+        },
+        {
+          "id": "hoc_h2_53",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Risks and Side Effects of HIPEC"
+        },
+        {
+          "id": "hoc_p_54",
+          "type": "paragraph",
+          "text": "CRS-HIPEC is a complex treatment with potential risks from both the major operation and the chemotherapy. The overall risk depends on the patient's health, the extent of surgery, organs involved and the treatment protocol."
+        },
+        {
+          "id": "hoc_h3_55",
+          "type": "heading",
+          "level": 3,
+          "text": "Surgical complications"
+        },
+        {
+          "id": "hoc_list_56",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Bleeding",
+            "Infection",
+            "Wound complications",
+            "Blood clots (deep vein thrombosis and pulmonary embolism)",
+            "Bowel injury or anastomotic leak after bowel surgery",
+            "Bowel obstruction",
+            "Prolonged hospitalisation",
+            "Need for further surgery"
+          ]
+        },
+        {
+          "id": "hoc_h3_57",
+          "type": "heading",
+          "level": 3,
+          "text": "Chemotherapy-related side effects"
+        },
+        {
+          "id": "hoc_list_58",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Kidney injury (cisplatin nephrotoxicity)",
+            "Reduced blood cell counts (myelosuppression)",
+            "Nausea and vomiting",
+            "Electrolyte disturbances",
+            "Fatigue",
+            "Hearing changes (ototoxicity) in some cases",
+            "Peripheral neuropathy"
+          ]
+        },
+        {
+          "id": "hoc_p_59",
+          "type": "paragraph",
+          "text": "Patients should ask the treating surgeon to explain the centre's experience and its arrangements for managing complications. Specialist teams use careful preoperative assessment, renal function monitoring, fluid and electrolyte management, blood count monitoring, infection prevention, nutritional support and early mobilisation to manage these risks."
+        },
+        {
+          "id": "hoc_h2_60",
+          "type": "heading",
+          "level": 2,
+          "text": "13. Recovery After HIPEC Surgery for Ovarian Cancer"
+        },
+        {
+          "id": "hoc_p_61",
+          "type": "paragraph",
+          "text": "Recovery after CRS-HIPEC can take longer than recovery after many routine gynaecological operations. The procedure may involve extensive abdominal surgery, bowel-related procedures and intraperitoneal chemotherapy."
+        },
+        {
+          "id": "hoc_h3_62",
+          "type": "heading",
+          "level": 3,
+          "text": "Immediately after surgery"
+        },
+        {
+          "id": "hoc_p_63",
+          "type": "paragraph",
+          "text": "The patient may be monitored in an intensive care or high-dependency unit. The team monitors blood pressure and circulation, kidney function, blood counts, electrolytes, urine output, pain, bowel function and signs of infection or complications."
+        },
+        {
+          "id": "hoc_h3_64",
+          "type": "heading",
+          "level": 3,
+          "text": "After discharge"
+        },
+        {
+          "id": "hoc_p_65",
+          "type": "paragraph",
+          "text": "Patients may need several weeks or longer to regain strength. Follow-up may include clinical review, blood tests, CA-125 monitoring where appropriate, imaging when indicated, further systemic chemotherapy and maintenance treatment.\n\n**Patients should not assume that discharge means they are ready for international travel.** The treating surgeon must confirm when travel is appropriate. For international patients, this is a critical planning consideration."
+        },
+        {
+          "id": "hoc_h2_66",
+          "type": "heading",
+          "level": 2,
+          "text": "14. Treatment After HIPEC: Maintenance Therapy"
+        },
+        {
+          "id": "hoc_p_67",
+          "type": "paragraph",
+          "text": "HIPEC is generally not the end of the ovarian cancer treatment pathway. Following interval cytoreductive surgery, patients commonly continue systemic chemotherapy according to the planned treatment regimen.\n\nAfter primary treatment, some patients may be candidates for **maintenance therapy**, which may include PARP inhibitors, bevacizumab or other appropriate maintenance strategies. BRCA and HRD testing results are relevant when discussing maintenance treatment. The treating oncologist should explain whether maintenance treatment is appropriate and how it fits into the overall treatment plan."
+        },
+        {
+          "id": "hoc_btn_68",
+          "type": "button",
+          "label": "Contact GAF Healthcare for ovarian cancer treatment coordination",
+          "href": "https://wa.me/919044346292?text=I%20have%20ovarian%20cancer%20records%20to%20share.%20Please%20help%20me%20get%20a%20specialist%20opinion%20on%20whether%20HIPEC%20is%20appropriate%20for%20my%20situation%20in%20India."
+        },
+        {
+          "id": "hoc_h2_cmp",
+          "type": "heading",
+          "level": 2,
+          "text": "HIPEC for Ovarian Cancer vs Conventional Chemotherapy"
+        },
+        {
+          "id": "hoc_p_cmp",
+          "type": "paragraph",
+          "text": "HIPEC and systemic chemotherapy are different treatments. They are not interchangeable. Systemic chemotherapy remains an important part of ovarian cancer treatment even when HIPEC is used."
+        },
+        {
+          "id": "hoc_tbl_cmp",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>HIPEC</th><th>Systemic chemotherapy</th></tr></thead><tbody><tr><td>Delivery route</td><td>Inside the abdominal cavity</td><td>Through the bloodstream (intravenous)</td></tr><tr><td>Main setting</td><td>During cytoreductive surgery</td><td>Before or after surgery, or for advanced disease</td></tr><tr><td>Treatment focus</td><td>Peritoneal surfaces</td><td>Cancer cells throughout the body</td></tr><tr><td>Patient selection</td><td>Highly selective criteria</td><td>Depends on cancer type and clinical situation</td></tr><tr><td>Role in treatment</td><td>Additional local treatment in selected cases</td><td>Major component of ovarian cancer management</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "hoc_h2_69",
+          "type": "heading",
+          "level": 2,
+          "text": "15. HIPEC Surgery for Ovarian Cancer in India"
+        },
+        {
+          "id": "hoc_p_70",
+          "type": "paragraph",
+          "text": "India is an option for international patients seeking specialist ovarian cancer assessment and treatment. Patients may consider India for gynaecologic oncology consultations, medical oncology assessment, surgical planning, advanced imaging and pathology review, cytoreductive surgery assessment and HIPEC evaluation where appropriate.\n\nHowever, the availability of CRS-HIPEC at a particular hospital should always be verified. Not every cancer centre offers this procedure, and not every centre has the same experience or resources."
+        },
+        {
+          "id": "hoc_h3_71",
+          "type": "heading",
+          "level": 3,
+          "text": "Why specialist assessment matters"
+        },
+        {
+          "id": "hoc_p_72",
+          "type": "paragraph",
+          "text": "HIPEC requires coordination between several clinical teams. The treating centre should have appropriate expertise in gynaecologic oncology, complex abdominal surgery, medical oncology, anaesthesia, intensive care, intraoperative chemotherapy protocols, renal protection, postoperative monitoring, nutrition and rehabilitation.\n\nPatients should ask who will lead the operation and how the full treatment pathway will be managed."
+        },
+        {
+          "id": "hoc_h3_73",
+          "type": "heading",
+          "level": 3,
+          "text": "How treatment planning works in India"
+        },
+        {
+          "id": "hoc_list_74",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Medical record review** — The team reviews the pathology, imaging, CA-125 results, previous surgery and chemotherapy history.",
+            "**Gynaecologic oncology consultation** — A specialist assesses the cancer stage, surgical feasibility and overall treatment strategy.",
+            "**Medical oncology consultation** — The oncologist reviews chemotherapy options, response to previous treatment and maintenance therapy considerations.",
+            "**Assessment for interval surgery** — If the patient has received neoadjuvant chemotherapy, the team evaluates whether interval cytoreductive surgery is appropriate.",
+            "**HIPEC eligibility discussion** — The team considers whether HIPEC is supported for the patient's stage, treatment history, renal function and overall condition.",
+            "**Individual treatment plan and estimate** — The patient receives a proposed treatment plan and a hospital estimate based on the clinical assessment."
+          ]
+        },
+        {
+          "id": "hoc_h2_75",
+          "type": "heading",
+          "level": 2,
+          "text": "16. Cost of HIPEC Surgery for Ovarian Cancer in India"
+        },
+        {
+          "id": "hoc_p_76",
+          "type": "paragraph",
+          "text": "There is no single fixed cost for HIPEC surgery for ovarian cancer. The total expense depends on the extent of surgery, hospital facilities, medicines, length of admission and the patient's condition. GAF Healthcare publishes planning cost ranges on the [Cytoreductive Surgery with HIPEC cost directory](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC)."
+        },
+        {
+          "id": "hoc_tbl_76b",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Component</th><th>GAF planning range (India)</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Cytoreductive surgery with HIPEC</a></td><td><strong>$18,000–$40,000</strong></td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery\">Cytoreductive surgery alone</a></td><td><strong>$10,000–$24,000</strong></td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Neoadjuvant / adjuvant chemotherapy</a> (per cycle, varies by regimen)</td><td><strong>$600–$3,500 per cycle</strong></td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Precision-Oncology\">BRCA / HRD molecular testing</a></td><td><strong>$1,500–$4,000</strong></td></tr><tr><td>ICU stay (per day, hospital-dependent)</td><td><strong>$300–$700</strong></td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Targeted-Therapy\">PARP inhibitor maintenance</a> (monthly, drug-dependent)</td><td><strong>$1,500–$5,000</strong></td></tr></tbody></table><p><small>Planning ranges are indicative only. Actual costs depend on disease extent, surgical complexity, hospital, length of stay, medicines and postoperative care. Request a written patient-specific estimate before making travel or financial commitments. See the <a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">HIPEC cost directory</a> for further detail.</small></p></div>"
+        },
+        {
+          "id": "hoc_h3_77",
+          "type": "heading",
+          "level": 3,
+          "text": "What to request from hospitals before travelling"
+        },
+        {
+          "id": "hoc_list_78",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Whether the proposed plan includes cytoreductive surgery and HIPEC.",
+            "Which surgical procedures may be required.",
+            "Whether chemotherapy medicines and HIPEC consumables are included.",
+            "Expected hospital and ICU stay duration.",
+            "Whether additional tests or pathology review are included.",
+            "What happens if the surgical findings differ from the scans.",
+            "Whether complications or prolonged admission may increase costs.",
+            "Whether postoperative chemotherapy is included.",
+            "What follow-up is required after discharge and when international travel may be possible."
+          ]
+        },
+        {
+          "id": "hoc_h2_79",
+          "type": "heading",
+          "level": 2,
+          "text": "17. How International Patients Can Seek HIPEC Treatment in India"
+        },
+        {
+          "id": "hoc_p_80",
+          "type": "paragraph",
+          "text": "Patients from Tanzania, Kenya, Ethiopia, Uganda, Zambia, Iraq and other countries may consider India for specialist ovarian cancer care. For a procedure as complex as CRS-HIPEC, it is particularly important to arrange a medical review before travel."
+        },
+        {
+          "id": "hoc_h3_81",
+          "type": "heading",
+          "level": 3,
+          "text": "Medical documents to prepare"
+        },
+        {
+          "id": "hoc_list_82",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Biopsy and histopathology reports",
+            "Immunohistochemistry results",
+            "CT scan reports and original DICOM images",
+            "MRI or PET-CT reports, if available",
+            "CA-125 results (baseline and monitoring values)",
+            "Previous operation notes",
+            "Chemotherapy regimen and treatment dates",
+            "Chemotherapy response scans",
+            "Recent kidney function tests (creatinine, eGFR)",
+            "Complete blood count",
+            "BRCA1/BRCA2 and HRD results, if available",
+            "Current medication list",
+            "Discharge summaries"
+          ]
+        },
+        {
+          "id": "hoc_h3_83",
+          "type": "heading",
+          "level": 3,
+          "text": "How GAF Healthcare can assist"
+        },
+        {
+          "id": "hoc_p_84",
+          "type": "paragraph",
+          "text": "GAF Healthcare supports international patients seeking medical treatment in India by coordinating the non-clinical aspects of their journey. Assistance may include collection and organisation of medical records, coordination of gynaecologic oncology consultations, requests for specialist hospital opinions, coordination of treatment estimates, appointment arrangements, medical visa documentation support, airport transfers and accommodation coordination, interpreter arrangements where required, and follow-up communication support.\n\nClinical decisions, treatment eligibility and the choice of chemotherapy or surgery remain with the treating medical team. Patients should obtain a clear specialist opinion before making travel or financial commitments."
+        },
+        {
+          "id": "hoc_btn_85",
+          "type": "button",
+          "label": "Contact GAF Healthcare to coordinate your ovarian cancer treatment in India",
+          "href": "https://wa.me/919044346292?text=Please%20help%20me%20understand%20the%20full%20treatment%20plan%20and%20cost%20estimate%20for%20ovarian%20cancer%20surgery%20including%20possible%20HIPEC%20in%20India."
+        },
+        {
+          "id": "hoc_h2_faq",
+          "type": "heading",
+          "level": 2,
+          "text": "18. Frequently Asked Questions About HIPEC Surgery for Ovarian Cancer"
+        },
+        {
+          "id": "hoc_faq_q1",
+          "type": "heading",
+          "level": 3,
+          "text": "What is HIPEC surgery for ovarian cancer?"
+        },
+        {
+          "id": "hoc_faq_a1",
+          "type": "paragraph",
+          "text": "HIPEC (Hyperthermic Intraperitoneal Chemotherapy) is a specialised treatment in which heated chemotherapy is circulated inside the abdominal cavity, usually after cytoreductive surgery has removed visible cancer deposits. It may be considered for selected patients with advanced epithelial ovarian cancer undergoing interval surgery after neoadjuvant chemotherapy."
+        },
+        {
+          "id": "hoc_faq_q2",
+          "type": "heading",
+          "level": 3,
+          "text": "Is HIPEC effective for ovarian cancer?"
+        },
+        {
+          "id": "hoc_faq_a2",
+          "type": "paragraph",
+          "text": "The OVHIPEC-1 randomised phase III trial demonstrated improved progression-free and overall survival in a selected group of patients with stage III epithelial ovarian cancer undergoing interval cytoreductive surgery after neoadjuvant chemotherapy. Median overall survival was 44.9 months with HIPEC versus 33.3 months without. The results do not establish benefit for every ovarian cancer patient."
+        },
+        {
+          "id": "hoc_faq_q3",
+          "type": "heading",
+          "level": 3,
+          "text": "Which stage of ovarian cancer is HIPEC used for?"
+        },
+        {
+          "id": "hoc_faq_a3",
+          "type": "paragraph",
+          "text": "The strongest evidence and the 2025 ASCO conditional recommendation relate to selected patients with FIGO stage III epithelial ovarian cancer undergoing interval cytoreductive surgery after neoadjuvant chemotherapy. Other stages require individual specialist assessment."
+        },
+        {
+          "id": "hoc_faq_q4",
+          "type": "heading",
+          "level": 3,
+          "text": "Is HIPEC suitable for every patient with stage III ovarian cancer?"
+        },
+        {
+          "id": "hoc_faq_a4",
+          "type": "paragraph",
+          "text": "No. Patients must meet additional clinical and surgical criteria, including appropriate performance status, adequate renal function and suitability for interval cytoreductive surgery. Stage III disease alone is not sufficient to establish eligibility."
+        },
+        {
+          "id": "hoc_faq_q5",
+          "type": "heading",
+          "level": 3,
+          "text": "Can stage IV ovarian cancer be treated with HIPEC?"
+        },
+        {
+          "id": "hoc_faq_a5",
+          "type": "paragraph",
+          "text": "Stage IV disease requires individual specialist assessment. The OVHIPEC-1 evidence and the ASCO recommendation described in this guide concern selected stage III patients. HIPEC should not be assumed to be appropriate for all stage IV cases. The treating team should explain the evidence relevant to the patient's specific diagnosis."
+        },
+        {
+          "id": "hoc_faq_q6",
+          "type": "heading",
+          "level": 3,
+          "text": "What was the OVHIPEC-1 trial?"
+        },
+        {
+          "id": "hoc_faq_a6",
+          "type": "paragraph",
+          "text": "OVHIPEC-1 was a randomised phase III trial comparing interval cytoreductive surgery alone with surgery plus HIPEC in selected patients with stage III epithelial ovarian cancer who had received neoadjuvant chemotherapy. Its final survival analysis was published in 2023 after approximately 10 years of follow-up."
+        },
+        {
+          "id": "hoc_faq_q7",
+          "type": "heading",
+          "level": 3,
+          "text": "Does HIPEC replace conventional chemotherapy for ovarian cancer?"
+        },
+        {
+          "id": "hoc_faq_a7",
+          "type": "paragraph",
+          "text": "No. HIPEC does not replace systemic chemotherapy. Patients commonly receive neoadjuvant chemotherapy before interval surgery and continue systemic chemotherapy afterwards. HIPEC is an addition to, not a replacement for, the standard chemotherapy regimen."
+        },
+        {
+          "id": "hoc_faq_q8",
+          "type": "heading",
+          "level": 3,
+          "text": "Why is kidney function important before HIPEC?"
+        },
+        {
+          "id": "hoc_faq_a8",
+          "type": "paragraph",
+          "text": "Cisplatin, the chemotherapy drug used in HIPEC for ovarian cancer, can cause kidney toxicity. The medical team assesses renal function before treatment and may use preventive measures including careful fluid management, electrolyte monitoring and close postoperative kidney function surveillance."
+        },
+        {
+          "id": "hoc_faq_q9",
+          "type": "heading",
+          "level": 3,
+          "text": "What are the risks of HIPEC for ovarian cancer?"
+        },
+        {
+          "id": "hoc_faq_a9",
+          "type": "paragraph",
+          "text": "Risks may include bleeding, infection, bowel complications, blood clots, kidney injury from cisplatin, reduced blood cell counts, nausea, electrolyte disturbances and prolonged recovery. The overall risk depends on the extent of surgery, the patient's health and the treatment protocol."
+        },
+        {
+          "id": "hoc_faq_q10",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does recovery take after CRS-HIPEC?"
+        },
+        {
+          "id": "hoc_faq_a10",
+          "type": "paragraph",
+          "text": "Recovery varies and can be prolonged. Patients may require intensive care monitoring immediately after surgery, an extended hospital stay and several weeks or more to regain strength after discharge. The treating surgeon must assess when the patient is fit to travel or resume normal activities."
+        },
+        {
+          "id": "hoc_faq_q11",
+          "type": "heading",
+          "level": 3,
+          "text": "Can ovarian cancer return after HIPEC?"
+        },
+        {
+          "id": "hoc_faq_a11",
+          "type": "paragraph",
+          "text": "Yes. Recurrence remains possible after CRS-HIPEC and systemic chemotherapy. Regular follow-up, appropriate maintenance treatment discussions and monitoring are important after completing the treatment plan."
+        },
+        {
+          "id": "hoc_faq_q12",
+          "type": "heading",
+          "level": 3,
+          "text": "Is HIPEC used for recurrent ovarian cancer?"
+        },
+        {
+          "id": "hoc_faq_a12",
+          "type": "paragraph",
+          "text": "Its role in recurrent ovarian cancer is different from the evidence for selected patients undergoing interval surgery for newly diagnosed stage III disease. The treating team must assess the recurrence pattern, previous treatment, surgical feasibility and available evidence before recommending any approach."
+        },
+        {
+          "id": "hoc_faq_q13",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the difference between primary and interval debulking surgery?"
+        },
+        {
+          "id": "hoc_faq_a13",
+          "type": "paragraph",
+          "text": "Primary debulking surgery is performed before chemotherapy when complete or near-complete removal is feasible. Interval debulking surgery is performed after a course of neoadjuvant chemotherapy, when the disease has responded or remained stable and surgery is considered feasible. HIPEC evidence in ovarian cancer comes from the interval surgery setting."
+        },
+        {
+          "id": "hoc_faq_q14",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does HIPEC surgery for ovarian cancer cost in India?"
+        },
+        {
+          "id": "hoc_faq_a14",
+          "type": "paragraph",
+          "text": "The cost varies according to disease extent, surgical complexity, medicines, hospital stay and postoperative care. GAF Healthcare's planning range for cytoreductive surgery with HIPEC in India is $18,000–$40,000. A personalised written estimate should be requested after medical record review. See the [HIPEC cost directory](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) for further planning information."
+        },
+        {
+          "id": "hoc_faq_q15",
+          "type": "heading",
+          "level": 3,
+          "text": "What medical reports are needed for a HIPEC opinion in India?"
+        },
+        {
+          "id": "hoc_faq_a15",
+          "type": "paragraph",
+          "text": "Useful documents include biopsy and histopathology reports, CT or MRI images, CA-125 results, chemotherapy records, response scans, kidney function tests, previous operation notes and BRCA or HRD results where available. GAF Healthcare can help organise these records and coordinate specialist opinions."
+        },
+        {
+          "id": "hoc_faq_q16",
+          "type": "heading",
+          "level": 3,
+          "text": "Will patients need chemotherapy after HIPEC for ovarian cancer?"
+        },
+        {
+          "id": "hoc_faq_a16",
+          "type": "paragraph",
+          "text": "Many patients continue systemic chemotherapy after interval cytoreductive surgery according to the overall treatment plan. The number of cycles and regimen depend on previous treatment, response and individual clinical circumstances. The treating oncologist will determine the appropriate postoperative chemotherapy plan."
+        },
+        {
+          "id": "hoc_faq_q17",
+          "type": "heading",
+          "level": 3,
+          "text": "Does every patient need PARP inhibitor maintenance after HIPEC?"
+        },
+        {
+          "id": "hoc_faq_a17",
+          "type": "paragraph",
+          "text": "No. Maintenance treatment depends on the cancer type, response to treatment, BRCA and HRD status, previous medicines, clinical eligibility and current guidelines. It should be discussed with the medical oncologist after completing the primary treatment course."
+        },
+        {
+          "id": "hoc_faq_q18",
+          "type": "heading",
+          "level": 3,
+          "text": "Can patients with ovarian cancer and ascites undergo HIPEC?"
+        },
+        {
+          "id": "hoc_faq_a18",
+          "type": "paragraph",
+          "text": "Ascites alone does not determine eligibility or ineligibility. The cause and extent of fluid accumulation, disease distribution, patient fitness and surgical feasibility must all be assessed. The gynaecologic oncology team will evaluate whether the patient meets the criteria for cytoreductive surgery and HIPEC."
+        },
+        {
+          "id": "hoc_h2_kt",
+          "type": "heading",
+          "level": 2,
+          "text": "Key Takeaways"
+        },
+        {
+          "id": "hoc_list_kt",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "HIPEC may be considered for selected patients with advanced epithelial ovarian cancer.",
+            "The strongest evidence relates to selected FIGO stage III patients undergoing interval cytoreductive surgery after neoadjuvant chemotherapy.",
+            "CRS removes visible cancer deposits; HIPEC aims to treat microscopic residual disease on the peritoneal surfaces.",
+            "OVHIPEC-1 reported improved progression-free and overall survival in its study population.",
+            "HIPEC is not suitable for every patient with ovarian cancer.",
+            "Kidney function, performance status, chemotherapy response and surgical feasibility are important eligibility considerations.",
+            "HIPEC does not replace systemic chemotherapy or appropriate maintenance treatment.",
+            "Recovery after CRS-HIPEC can be prolonged and requires coordinated postoperative care.",
+            "Patients considering treatment in India should obtain a specialist opinion and a patient-specific treatment estimate before travelling."
+          ]
+        },
+        {
+          "id": "hoc_h2_src",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Sources and Further Reading"
+        },
+        {
+          "id": "hoc_list_src",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**OVHIPEC-1 Final Survival Analysis (2023)** — The long-term analysis reported progression-free and overall survival outcomes for selected patients with stage III epithelial ovarian cancer undergoing interval cytoreductive surgery with or without HIPEC. [PubMed 37708912](https://pubmed.ncbi.nlm.nih.gov/37708912/)",
+            "**ASCO Guideline Update: Neoadjuvant Chemotherapy for Newly Diagnosed Advanced Ovarian Cancer (2025)** — Discusses primary cytoreductive surgery, neoadjuvant chemotherapy, interval surgery and the conditional role of HIPEC. [PMC Article](https://pmc.ncbi.nlm.nih.gov/articles/PMC11934100/)",
+            "**National Cancer Institute: Ovarian Epithelial, Fallopian Tube and Primary Peritoneal Cancer Treatment (PDQ)** — Evidence-based overview of treatment approaches. [cancer.gov](https://www.cancer.gov/types/ovarian/hp/ovarian-epithelial-treatment-pdq)",
+            "**ASCO Clinical Insights: Neoadjuvant Chemotherapy for Advanced Ovarian Cancer (2025)** — Clinical discussion of patient selection, timing of interval surgery and the role of HIPEC. [ASCO](https://ascopubs.org/doi/10.1200/OP-24-00999)"
+          ]
+        },
+        {
+          "id": "hoc_btn_fin",
+          "type": "button",
+          "label": "Contact GAF Healthcare — explore ovarian cancer treatment in India",
+          "href": "https://wa.me/919044346292?text=Please%20review%20my%20ovarian%20cancer%20medical%20records%20and%20advise%20whether%20I%20may%20be%20a%20candidate%20for%20HIPEC%20surgery%20in%20India.%20I%20will%20share%20my%20pathology%2C%20CT%20scan%20and%20chemotherapy%20history."
+        },
+        {
+          "id": "hoc_p_disclaimer",
+          "type": "paragraph",
+          "text": "*Medical disclaimer: This article is for educational purposes only and does not replace consultation with a qualified gynaecologic oncologist or medical oncologist. HIPEC eligibility, treatment recommendations, prognosis and costs must be assessed individually by the treating medical team.*"
+        }
+      ],
+      "relatedLinks": [
+        {
+          "label": "HIPEC Surgery in India: Procedure, Eligibility, Cost and Recovery",
+          "href": "/treatments/hipec-surgery-in-india"
+        },
+        {
+          "label": "Cytoreductive Surgery with HIPEC: Cost Planning",
+          "href": "/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC"
+        },
+        {
+          "label": "Cytoreductive Surgery Cost in India",
+          "href": "/costs/India/Surgical-Oncology/Cytoreductive-Surgery"
+        },
+        {
+          "label": "Ovarian Cancer Treatment in India",
+          "href": "/treatments/ovarian-cancer-treatment-in-india"
+        },
+        {
+          "label": "Intraperitoneal Chemotherapy in India",
+          "href": "/treatments/intraperitoneal-chemotherapy-in-india"
+        },
+        {
+          "label": "Gynaecologic Oncology Surgeons in India",
+          "href": "/doctors/India/Surgical-Oncology"
+        },
+        {
+          "label": "Surgical Oncology Costs in India",
+          "href": "/costs/India/Surgical-Oncology"
+        }
+      ]
+    },
     {
       "id": "art_best_pediatric_hospitals_india",
       "slug": "best-hospitals-pediatric-heart-surgery-india",
