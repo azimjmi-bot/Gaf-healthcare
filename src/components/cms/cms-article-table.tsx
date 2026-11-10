@@ -11,6 +11,7 @@ export function CmsArticleTable({ articles }: { articles: Article[] }) {
   const router = useRouter();
   const [q, setQ] = useState("");
   const [status, setStatus] = useState<ArticleStatus | "all">("all");
+  const [busy, setBusy] = useState(false);
 
   const rows = useMemo(() => {
     return articles
@@ -20,6 +21,22 @@ export function CmsArticleTable({ articles }: { articles: Article[] }) {
         return hay.includes(q.toLowerCase());
       });
   }, [articles, q, status]);
+
+  async function newArticle() {
+    setBusy(true);
+    try {
+      const res = await fetch("/api/cms/articles", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: "{}",
+      });
+      const data = await res.json();
+      if (res.ok && data.id) router.push(`/cms/articles/${data.id}`);
+      else router.refresh();
+    } finally {
+      setBusy(false);
+    }
+  }
 
   async function duplicate(id: string) {
     const res = await fetch(`/api/cms/articles/${id}/duplicate`, { method: "POST" });
@@ -49,6 +66,9 @@ export function CmsArticleTable({ articles }: { articles: Article[] }) {
           <option value="scheduled">Scheduled</option>
           <option value="trash">Trash</option>
         </select>
+        <Button disabled={busy} onClick={newArticle}>
+          {busy ? "Creating…" : "New article"}
+        </Button>
       </div>
       <table className="cms-table">
         <thead>
