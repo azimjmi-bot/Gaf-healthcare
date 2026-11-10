@@ -2,6 +2,7 @@ import "@/styles/article.css";
 import type { Components } from "react-markdown";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
 import { cn } from "cn";
 import { WhatsAppCtaLabel } from "@/components/whatsapp-icon";
 import { consultToWhatsappHref } from "@/lib/site";
@@ -32,6 +33,18 @@ const ALLOWED = [
   "tr",
   "th",
   "td",
+  // HTML passthrough for CMS-authored blocks (asides, divs, navs, spans, figures)
+  "aside",
+  "div",
+  "nav",
+  "span",
+  "figure",
+  "figcaption",
+  "section",
+  "small",
+  "sup",
+  "sub",
+  "ol",
 ];
 
 function markdownComponents(inline = false): Components {
@@ -83,6 +96,7 @@ export function MarkdownBody({
         unwrapDisallowed
         components={markdownComponents(inline)}
         remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
       >
         {text}
       </ReactMarkdown>
