@@ -16,7 +16,7 @@ describe("bare /costs publication", () => {
       assert.deepEqual(light, full);
     }
     assert.equal(costIndexHasRows("ar"), treatmentsForLocale("ar").length > 0);
-    assert.equal(treatmentsForLocale("ar").length, 380);
+    assert.equal(treatmentsForLocale("ar").length, 419);
     assert.equal(costIndexHasRows("en"), true);
   });
 });

@@ -56,14 +56,14 @@ function everyArabicCandidate() {
  * open, and a page count that moves for any other reason still fails here.
  */
 const STAGE_FACETS: Record<PseoPageType, number> = {
-  doctorFacet: 1181,
-  hospitalFacet: 56,
-  costFacet: 524,
+  doctorFacet: 1308,
+  hospitalFacet: 106,
+  costFacet: 575,
   specialtyHub: 0,
 };
 
 /** Every facet URL that renders in Arabic, published or not. */
-const FACET_CANDIDATES = 4806;
+const FACET_CANDIDATES = 5308;
 
 function expectedPublishedFacets() {
   return (Object.keys(STAGE_FACETS) as PseoPageType[])
@@ -92,12 +92,12 @@ test("a published facet that duplicates its parent stays out of the sitemap", ()
   const listed = new Set(publishedFacetPaths("ar"));
 
   assert.equal(published.length, expectedPublishedFacets());
-  // Eighty-two doctor facets return exactly their parent's roster. All
+  // One hundred fifteen doctor facets return exactly their parent's roster. All
   // reviewed specialties now make most specialty and procedure facets narrow
   // their parent naturally.
   // published — they render, and they are reachable — but they name the parent
   // as canonical, so advertising them would contradict their own head.
-  assert.equal(listed.size, expectedPublishedFacets() - 82);
+  assert.equal(listed.size, expectedPublishedFacets() - 115);
   for (const path of published) {
     if (listed.has(path)) continue;
     assert.notEqual(
@@ -224,7 +224,7 @@ test("a facet with no matching Arabic profiles 404s rather than rendering empty"
   assert.equal(localePageState("ar", "/doctors/India/Bengaluru/Pediatric-Orthopaedic"), "noindex");
   assert.equal(localePageState("ar", "/doctors/India/Delhi-NCR/Radiation-Oncology"), "published");
   // A hospital facet that reproduces its parent renders but is not indexed.
-  assert.equal(localePageState("ar", "/hospitals/India/Radiation-Oncology"), "noindex");
+  assert.equal(localePageState("ar", "/hospitals/India/Infertility-IVF"), "noindex");
 });
 
 test("the live Arabic overlays stay published", () => {
@@ -237,16 +237,16 @@ test("the live Arabic overlays stay published", () => {
   const doctorRows = Object.values(cms.doctorOverrides);
   const hospitalRows = Object.values(cms.hospitalOverrides);
   const treatmentRows = Object.values(cms.treatmentOverrides);
-  assert.equal(doctorRows.length, 2305);
-  assert.equal(hospitalRows.length, 37);
-  assert.equal(treatmentRows.length, 380);
+  assert.equal(doctorRows.length, 2400);
+  assert.equal(hospitalRows.length, 42);
+  assert.equal(treatmentRows.length, 419);
   for (const patch of [...doctorRows, ...hospitalRows, ...treatmentRows]) {
     assert.equal(translationStatus(patch), "published");
   }
 
-  assert.equal(doctorsForLocale("ar").length, 2305);
-  assert.equal(hospitalsForLocale("ar").length, 37);
-  assert.equal(treatmentsForLocale("ar").length, 380);
+  assert.equal(doctorsForLocale("ar").length, 2400);
+  assert.equal(hospitalsForLocale("ar").length, 42);
+  assert.equal(treatmentsForLocale("ar").length, 419);
   assert.equal(localePathIsPublished("ar", "/doctors/dr-anil-kumar-anand"), true);
   assert.equal(localePathIsPublished("ar", "/doctors/dr-anil-k-d-cruz"), true);
   assert.equal(localePathIsPublished("ar", "/doctors/dr-ankur-bahl"), true);
@@ -384,7 +384,7 @@ test("noindex Arabic pages stay crawlable in robots.txt", () => {
 test("a page that is not published in its own locale is noindex and bare", () => {
   // A hospital facet that returns the whole country's campuses: it renders in
   // Arabic, but the overlap gate keeps it out of the index.
-  const facet = "/hospitals/India/Radiation-Oncology";
+  const facet = "/hospitals/India/Infertility-IVF";
 
   for (const [label, path, locale] of [
     ["Arabic facet", facet, "ar"],

@@ -115,10 +115,10 @@ describe("arabic doctor catalogue index", { concurrency: 1 }, () => {
     assert.equal(contentStorage().kind, "fs");
     const slugs = doctorsForLocale("ar").map((doctor) => doctor.slug);
     assert.deepEqual(slugs, baselineSlugs());
-    assert.equal(slugs.length, 2305);
+    assert.equal(slugs.length, 2400);
     assert.equal(new Set(slugs).size, slugs.length);
-    assert.equal(hospitalsForLocale("ar").length, 37);
-    assert.equal(treatmentsForLocale("ar").length, 380);
+    assert.equal(hospitalsForLocale("ar").length, 42);
+    assert.equal(treatmentsForLocale("ar").length, 419);
     for (const locale of ["fr", "ru", "sw"] as const) {
       assert.equal(doctorsForLocale(locale).length, 0);
     }

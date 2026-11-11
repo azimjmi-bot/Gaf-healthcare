@@ -33,9 +33,9 @@ const cms = JSON.parse(
 
 test("Arabic cost overlays cover every pathway with reviewed planning copy", () => {
   const localized = treatmentsForLocale("ar");
-  assert.equal(catalogTreatments.length, 380);
-  assert.equal(Object.keys(cms.treatmentOverrides).length, 380);
-  assert.equal(localized.length, 380);
+  assert.equal(catalogTreatments.length, 419);
+  assert.equal(Object.keys(cms.treatmentOverrides).length, 419);
+  assert.equal(localized.length, 419);
 
   for (const treatment of catalogTreatments) {
     const patch = cms.treatmentOverrides[treatment.slug];
