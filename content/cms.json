@@ -131,7 +131,10 @@
     "HIPEC",
     "appendiceal mucinous neoplasm",
     "LAMN",
-    "peritoneal cancer"
+    "peritoneal cancer",
+    "appendix cancer",
+    "appendiceal cancer",
+    "peritoneal metastases"
   ],
   "media": [
     {
@@ -2324,9 +2327,985 @@
       "name": "pmp-pci-regions.webp",
       "alt": "Unlabeled diagram of abdominal regions used to estimate peritoneal disease burden for the PCI score",
       "addedAt": "2026-11-11T09:50:00.000Z"
+    },
+    {
+      "id": "media_appendix_cancer_anatomy_webp",
+      "url": "/uploads/articles/appendix-cancer-anatomy.webp",
+      "name": "appendix-cancer-anatomy.webp",
+      "alt": "Unlabeled diagram of the appendix attached to the caecum within the abdominal cavity",
+      "addedAt": "2026-11-11T10:30:00.000Z"
+    },
+    {
+      "id": "media_appendix_peritoneal_spread_webp",
+      "url": "/uploads/articles/appendix-peritoneal-spread.webp",
+      "name": "appendix-peritoneal-spread.webp",
+      "alt": "Unlabeled diagram of mucin and tumour deposits spreading from the appendix across the peritoneal cavity",
+      "addedAt": "2026-11-11T10:30:00.000Z"
+    },
+    {
+      "id": "media_appendix_crs_hipec_webp",
+      "url": "/uploads/articles/appendix-crs-hipec.webp",
+      "name": "appendix-crs-hipec.webp",
+      "alt": "Two-panel unlabeled diagram of cytoreductive tumour removal and heated intraperitoneal chemotherapy perfusion",
+      "addedAt": "2026-11-11T10:30:00.000Z"
+    },
+    {
+      "id": "media_appendix_pci_assessment_webp",
+      "url": "/uploads/articles/appendix-pci-assessment.webp",
+      "name": "appendix-pci-assessment.webp",
+      "alt": "Unlabeled diagram of abdominal regions used to estimate peritoneal disease burden",
+      "addedAt": "2026-11-11T10:30:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_appendix_cancer_treatment_hipec_india",
+      "slug": "appendix-cancer-treatment-hipec-india",
+      "title": "Appendix Cancer That Has Spread Inside the Abdomen: Symptoms, Treatment, HIPEC Surgery and Cost in India",
+      "excerpt": "Appendix cancer is rare, but some types can spread inside the abdomen and affect the lining around abdominal organs. Treatment may include surgery, chemotherapy or a specialised procedure called CRS-HIPEC. Learn about symptoms, diagnosis, treatment choices, recovery and how patients can explore specialist care in India.",
+      "date": "11 November 2026",
+      "publishedAt": "2026-11-11T10:30:00.000Z",
+      "updatedAt": "2026-11-11T10:30:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "appendix cancer",
+        "appendiceal cancer",
+        "CRS-HIPEC",
+        "HIPEC",
+        "pseudomyxoma peritonei",
+        "peritoneal metastases",
+        "India"
+      ],
+      "image": "/uploads/articles/appendix-cancer-anatomy.webp",
+      "imageAlt": "Unlabeled diagram of the appendix attached to the caecum within the abdominal cavity",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Appendix Cancer Treatment in India: Symptoms, HIPEC Surgery and Cost",
+      "seoDescription": "Learn about appendix cancer that has spread inside the abdomen, its symptoms, diagnosis, treatment options, HIPEC surgery, recovery and treatment cost in India.",
+      "canonical": "https://gaf.healthcare/blogs/appendix-cancer-treatment-hipec-india",
+      "ogImage": "/uploads/articles/appendix-cancer-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Appendix cancer treatment in India",
+        "Appendix cancer symptoms",
+        "Appendix cancer treatment",
+        "Appendix cancer that has spread",
+        "Appendix cancer with peritoneal metastases",
+        "HIPEC surgery for appendix cancer",
+        "CRS-HIPEC treatment in India",
+        "Appendiceal cancer treatment",
+        "Appendix tumour treatment",
+        "Pseudomyxoma peritonei",
+        "Appendix cancer surgery cost in India",
+        "Peritoneal cancer treatment",
+        "Cytoreductive surgery",
+        "Appendix cancer chemotherapy"
+      ],
+      "relatedLinks": [
+        {
+          "label": "HIPEC Surgery in India",
+          "href": "/treatments/hipec-surgery-in-india"
+        },
+        {
+          "label": "What Is HIPEC Surgery?",
+          "href": "/blogs/what-is-hipec-surgery"
+        },
+        {
+          "label": "Pseudomyxoma Peritonei Treatment in India",
+          "href": "/blogs/pseudomyxoma-peritonei-treatment"
+        },
+        {
+          "label": "Peritoneal Carcinomatosis",
+          "href": "/blogs/peritoneal-carcinomatosis"
+        },
+        {
+          "label": "Peritoneal Metastases Treatment",
+          "href": "/blogs/peritoneal-metastases-treatment"
+        },
+        {
+          "label": "Peritoneal Cancer Index (PCI)",
+          "href": "/blogs/peritoneal-cancer-index-pci"
+        },
+        {
+          "label": "HIPEC Surgery for Stomach Cancer",
+          "href": "/blogs/hipec-surgery-for-stomach-cancer"
+        },
+        {
+          "label": "Intraperitoneal Chemotherapy in India",
+          "href": "/treatments/intraperitoneal-chemotherapy-in-india"
+        },
+        {
+          "label": "Colon Cancer Treatment in India",
+          "href": "/treatments/colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "Stage 4 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-4-colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "CRS with HIPEC — cost sheet",
+          "href": "/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"md-body\"><table><thead><tr><th>Question</th><th>Quick Answer</th></tr></thead><tbody><tr><td><strong>What is appendix cancer?</strong></td><td>A rare group of tumours arising in the appendix; behaviour depends on type and grade.</td></tr><tr><td><strong>Can it spread inside the abdomen?</strong></td><td>Yes. Some tumours release cells or mucin onto the peritoneum (peritoneal metastases / PMP).</td></tr><tr><td><strong>Main specialist option for peritoneal spread</strong></td><td>CRS-HIPEC for selected operable patients — see <a href=\"/treatments/hipec-surgery-in-india\">HIPEC surgery in India</a></td></tr><tr><td><strong>Related condition</strong></td><td><a href=\"/blogs/pseudomyxoma-peritonei-treatment\">Pseudomyxoma peritonei (PMP)</a> from mucin-producing appendiceal tumours</td></tr><tr><td><strong>Key documents</strong></td><td>Full pathology report, CT/MRI (DICOM), prior operative notes</td></tr><tr><td><strong>GAF CRS + HIPEC planning range</strong></td><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">$18,000–$40,000</a>, typically <strong>10–21 nights</strong></td></tr><tr><td><strong>Cytoreductive surgery alone</strong></td><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery\">$10,000–$24,000</a>, typically <strong>7–14 nights</strong></td></tr><tr><td><strong>Systemic chemotherapy</strong></td><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">$1,500–$8,000+</a> (outpatient cycles · 3–6 months typical)</td></tr><tr><td><strong>International patients</strong></td><td>Obtain specialist review before travelling; do not assume HIPEC will be performed</td></tr></tbody></table></div><p class=\"article-quick-answer__body\"><strong>Appendix cancer treatment in India</strong> depends on tumour type, grade and whether disease has spread across the peritoneum. For suitable patients with resectable peritoneal disease, <strong>CRS-HIPEC</strong> is a specialist option. GAF planning for <a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">CRS with HIPEC</a> is <strong>$18,000–$40,000</strong> (typically <strong>10–21 nights</strong>). These are partner planning ranges, not hospital quotations.</p><p class=\"article-quick-answer__body\"><strong>Important:</strong> GAF Healthcare does not diagnose appendix cancer or decide CRS-HIPEC eligibility. Treatment decisions remain with the multidisciplinary hospital team.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "The appendix is a small, finger-shaped pouch attached to the large intestine, usually in the lower-right abdomen. Most people know it because of appendicitis, but the appendix can also develop tumours, including cancer."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "Appendix cancer is rare. Some types grow slowly; others behave more aggressively. Certain tumours produce mucin. If tumour cells or mucin escape from the appendix, they may spread across the peritoneal lining — **peritoneal spread**."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "When this happens, patients may develop abdominal swelling, discomfort, loss of appetite, digestive problems or fluid accumulation. For selected patients, **CRS-HIPEC** may be considered: cytoreductive surgery to remove visible deposits, then heated intraperitoneal chemotherapy. The coordinated pathway is [HIPEC surgery in India](/treatments/hipec-surgery-in-india)."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "GAF Healthcare planning for [cytoreductive surgery with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) is **$18,000–$40,000**, typically **10–21 nights**. Neighbouring [cytoreductive surgery](/costs/India/Surgical-Oncology/Cytoreductive-Surgery) is **$10,000–$24,000** (7–14 nights). Neighbouring [PIPAC](/costs/India/Surgical-Oncology/PIPAC) is **$7,000–$16,000**. Mucin-producing peritoneal disease is covered in depth on [pseudomyxoma peritonei treatment](/blogs/pseudomyxoma-peritonei-treatment)."
+        },
+        {
+          "id": "p_006",
+          "type": "paragraph",
+          "text": "International patients comparing [surgical oncologists listing CRS with HIPEC](/doctors/India/Surgical-Oncology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Mumbai](/doctors/India/Mumbai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Bengaluru](/doctors/India/Bengaluru/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Chennai](/doctors/India/Chennai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) and [Hyderabad](/doctors/India/Hyderabad/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC). Partner [surgical-oncology hospitals](/hospitals/India/Surgical-Oncology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Surgical-Oncology), [Mumbai](/hospitals/India/Mumbai/Surgical-Oncology) and [Bengaluru](/hospitals/India/Bengaluru/Surgical-Oncology) are a typical first filter."
+        },
+        {
+          "id": "btn_007",
+          "type": "button",
+          "label": "Ask about appendix cancer treatment in India",
+          "href": "/consult?treatment=Appendix%20Cancer%20%2F%20CRS-HIPEC"
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with pathology, CT and operative notes](https://wa.me/919044346292?text=Please%20review%20my%20appendix%20cancer%20pathology%2C%20CT%2FMRI%20and%20previous%20surgery%20notes%20and%20advise%20whether%20CRS-HIPEC%20in%20India%20may%20be%20appropriate.)"
+        },
+        {
+          "id": "img_009",
+          "type": "image",
+          "src": "/uploads/articles/appendix-cancer-anatomy.webp",
+          "alt": "Unlabeled diagram of the appendix attached to the caecum within the abdominal cavity",
+          "caption": "Appendix tumours are uncommon; behaviour and treatment depend on the exact pathological type."
+        },
+        {
+          "id": "h_010",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Appendix Cancer?"
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "Appendix cancer develops when abnormal cells grow inside the appendix. Tumours are uncommon and include several types with very different behaviour."
+        },
+        {
+          "id": "h_012",
+          "type": "heading",
+          "level": 3,
+          "text": "What are the main types of appendix cancer?"
+        },
+        {
+          "id": "ul_013",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Mucinous tumours:** Produce jelly-like mucin; some cause [pseudomyxoma peritonei](/blogs/pseudomyxoma-peritonei-treatment) when mucin and cells spread inside the abdomen.",
+            "**Appendiceal adenocarcinoma:** Cancer from lining cells; some produce mucin and some do not.",
+            "**Goblet cell adenocarcinoma:** A distinct type with different biology that should not automatically follow the LAMN/PMP pathway.",
+            "**Appendiceal neuroendocrine tumours:** Often found after appendectomy; treatment depends on size, grade and spread."
+          ]
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "These types should not be treated as if they are all the same. A correct pathology report is essential before deciding on surgery or chemotherapy."
+        },
+        {
+          "id": "h_015",
+          "type": "heading",
+          "level": 2,
+          "text": "How Does Appendix Cancer Spread Inside the Abdomen?"
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "Some tumours grow through the appendix wall. If the appendix is damaged or ruptures, cells and mucin may escape, attach to peritoneal surfaces and grow on the abdominal wall lining, omentum, bowel surfaces, pelvis, liver surface, diaphragm and other peritoneal areas. This is **peritoneal metastasis** — also explained on [peritoneal metastases treatment](/blogs/peritoneal-metastases-treatment) and [peritoneal carcinomatosis](/blogs/peritoneal-carcinomatosis)."
+        },
+        {
+          "id": "img_017",
+          "type": "image",
+          "src": "/uploads/articles/appendix-peritoneal-spread.webp",
+          "alt": "Unlabeled diagram of mucin and tumour deposits spreading from the appendix across the peritoneal cavity",
+          "caption": "Peritoneal spread can cause progressive abdominal enlargement and digestive symptoms."
+        },
+        {
+          "id": "h_018",
+          "type": "heading",
+          "level": 3,
+          "text": "What is pseudomyxoma peritonei?"
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "PMP is accumulation of mucin-producing tumour cells and jelly-like material inside the abdomen, most commonly from an appendiceal mucinous tumour. Not every appendix cancer causes PMP. Read the dedicated guide: [Pseudomyxoma Peritonei Treatment in India](/blogs/pseudomyxoma-peritonei-treatment)."
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 3,
+          "text": "Does appendix cancer always spread?"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "No. Risk depends on tumour type, grade, size, rupture and other pathology features."
+        },
+        {
+          "id": "h_022",
+          "type": "heading",
+          "level": 2,
+          "text": "Symptoms of Appendix Cancer"
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "Symptoms may resemble common digestive problems, and some patients have none. Tumours may be found during appendectomy or incidental imaging."
+        },
+        {
+          "id": "ul_024",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Lower-right abdominal pain",
+            "Persistent discomfort, swelling or bloating",
+            "Loss of appetite or early fullness",
+            "Unexplained weight loss",
+            "Nausea, vomiting, constipation or bowel-habit changes",
+            "Fluid accumulation (ascites) inside the abdomen"
+          ]
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "Severe abdominal pain, repeated vomiting, inability to pass stool or gas, or sudden swelling require **urgent local emergency care** — not WhatsApp."
+        },
+        {
+          "id": "btn_026",
+          "type": "button",
+          "label": "Share symptom history and imaging for review",
+          "href": "/consult?treatment=Appendix%20Cancer%20Symptoms%20Review"
+        },
+        {
+          "id": "h_027",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is Appendix Cancer Diagnosed?"
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "Doctors combine CT, selected MRI, colonoscopy, biopsy/pathology, tumour markers (CEA, CA 19-9, sometimes CA-125) and, in selected cases, diagnostic laparoscopy to assess resectability."
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "Colonoscopy may exclude synchronous colorectal lesions — relevant when colorectal pathways are also considered on [colon cancer treatment in India](/treatments/colon-cancer-treatment-in-india) or [stage 4 colon cancer treatment](/blogs/stage-4-colon-cancer-treatment-in-india)."
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "Diagnostic laparoscopy can clarify small-bowel involvement, mucin distribution and whether complete cytoreduction is realistic before committing to CRS-HIPEC."
+        },
+        {
+          "id": "h_031",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Is the Pathology Report So Important?"
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "Low-grade mucinous disease, high-grade adenocarcinoma, goblet cell adenocarcinoma and neuroendocrine tumours need different plans. Signet-ring cells may indicate more aggressive behaviour. International patients should share the full report and, when requested, slides or tissue blocks before travelling."
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with the full pathology PDF](https://wa.me/919044346292?text=I%20can%20share%20my%20full%20appendix%20tumour%20pathology%20report%20for%20a%20specialist%20review%20in%20India%20regarding%20surgery%2C%20chemotherapy%20or%20CRS-HIPEC.)"
+        },
+        {
+          "id": "h_034",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is CRS-HIPEC for Appendix Cancer?"
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "CRS removes visible peritoneal deposits; HIPEC then circulates heated chemotherapy inside the abdomen to target microscopic residual cells. See [What Is HIPEC Surgery?](/blogs/what-is-hipec-surgery) and [HIPEC surgery in India](/treatments/hipec-surgery-in-india). HIPEC cannot replace effective cytoreduction."
+        },
+        {
+          "id": "img_036",
+          "type": "image",
+          "src": "/uploads/articles/appendix-crs-hipec.webp",
+          "alt": "Two-panel unlabeled diagram of cytoreductive tumour removal and heated intraperitoneal chemotherapy perfusion",
+          "caption": "CRS removes visible disease; HIPEC targets microscopic residual cells on peritoneal surfaces."
+        },
+        {
+          "id": "btn_037",
+          "type": "button",
+          "label": "Ask whether CRS-HIPEC fits my appendix cancer",
+          "href": "/consult?treatment=CRS-HIPEC%20for%20Appendix%20Cancer"
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 2,
+          "text": "How Does HIPEC Surgery Work?"
+        },
+        {
+          "id": "ol_039",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Review pathology, CT/MRI, prior operative notes, markers and fitness.",
+            "Inspect the abdomen (laparoscopy or at the start of surgery).",
+            "Remove visible deposits — omentum, peritoneum, selected bowel, and right colectomy when appropriate for adenocarcinoma.",
+            "Assess completeness of cytoreduction.",
+            "Circulate heated chemotherapy per institutional protocol.",
+            "Complete surgery and transfer to recovery or intensive care."
+          ]
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "Not every patient needs every resection. Neighbouring [colectomy](/costs/India/Surgical-Oncology/Colectomy) planning is **$7,000–$18,000** when that sheet is the named pathway."
+        },
+        {
+          "id": "h_041",
+          "type": "heading",
+          "level": 2,
+          "text": "Who May Be Suitable for CRS-HIPEC?"
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "Doctors may consider CRS-HIPEC when peritoneal spread is present, the tumour type fits this approach, complete or meaningful cytoreduction is realistic, the patient is fit, critical structures allow safe surgery, and expected benefit justifies risk."
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "It may be unsuitable with extensive distant metastases, unresectable deposits, prohibitive small-bowel involvement, medical unfitness or rapidly progressive disease. Low-grade disease confined to the appendix may need only local surgery or surveillance. High-grade disease may need [systemic chemotherapy](/treatments/chemotherapy-in-india) (**$1,500–$8,000+** planning) before or instead of surgery."
+        },
+        {
+          "id": "h_044",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is the PCI Score and Why Does It Matter?"
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "PCI estimates peritoneal burden across 13 regions (score 0–39). Location matters as much as the total — especially small-bowel surface and mesentery. Read [Peritoneal Cancer Index (PCI)](/blogs/peritoneal-cancer-index-pci)."
+        },
+        {
+          "id": "html_046",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>PCI score</th><th>What it indicates</th></tr></thead><tbody><tr><td>0</td><td>No visible peritoneal tumour</td></tr><tr><td>Higher score</td><td>Greater amount of disease</td></tr><tr><td>Maximum 39</td><td>Extensive tumour involvement across the assessed regions</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "img_047",
+          "type": "image",
+          "src": "/uploads/articles/appendix-pci-assessment.webp",
+          "alt": "Unlabeled diagram of abdominal regions used to estimate peritoneal disease burden",
+          "caption": "PCI helps structure the discussion of resectability; it is not a single yes/no cut-off."
+        },
+        {
+          "id": "h_048",
+          "type": "heading",
+          "level": 2,
+          "text": "What Are the Other Treatment Options?"
+        },
+        {
+          "id": "ul_049",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Surgery without HIPEC** for tumours confined to the appendix or limited local disease.",
+            "**Systemic chemotherapy** for selected high-grade or unresectable disease — [chemotherapy in India](/treatments/chemotherapy-in-india).",
+            "**Targeted treatment or immunotherapy** only when tumour testing and clinical circumstances support them.",
+            "**Supportive care** for symptoms, nutrition and quality of life alongside active treatment.",
+            "**Catheter-based IP chemotherapy** in selected settings — [intraperitoneal chemotherapy in India](/treatments/intraperitoneal-chemotherapy-in-india)."
+          ]
+        },
+        {
+          "id": "h_050",
+          "type": "heading",
+          "level": 2,
+          "text": "What Are the Risks of CRS-HIPEC?"
+        },
+        {
+          "id": "ul_051",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Bleeding, infection, wound problems",
+            "Bowel leakage, obstruction, delayed bowel recovery",
+            "Blood clots, kidney injury, blood-count changes",
+            "Nausea, breathing complications, further surgery, prolonged stay"
+          ]
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "A stoma is not required for every patient. Risks vary with extent of surgery, health and team experience."
+        },
+        {
+          "id": "h_053",
+          "type": "heading",
+          "level": 2,
+          "text": "Recovery After HIPEC Surgery"
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "Recovery differs from routine appendectomy. Patients may need intensive monitoring. GAF planning for [CRS with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) typically quotes **10–21 nights**. Nutrition progresses gradually; early walking is encouraged when safe. Long-term follow-up with examination, imaging and markers is essential."
+        },
+        {
+          "id": "h_055",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Appendix Cancer Come Back After HIPEC?"
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "Yes. Recurrence risk depends on type, grade, burden, completeness of cytoreduction and nodal status. Options if disease returns may include further surgery, selected repeat CRS-HIPEC, systemic therapy or supportive care."
+        },
+        {
+          "id": "h_057",
+          "type": "heading",
+          "level": 2,
+          "text": "Appendix Cancer Treatment in India"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "Patients from East Africa, the Middle East and other regions may explore India for appendiceal and peritoneal surface oncology. Experience with general cancer surgery is not the same as experience with CRS-HIPEC for appendiceal disease."
+        },
+        {
+          "id": "ol_059",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Does the team regularly treat appendiceal peritoneal disease?",
+            "Who leads CRS-HIPEC, and how is pathology reviewed?",
+            "How are PCI and resectability assessed?",
+            "What if complete cytoreduction is not possible?",
+            "What ICU, nutrition and follow-up support is available?"
+          ]
+        },
+        {
+          "id": "btn_060",
+          "type": "button",
+          "label": "Request a specialist appendix-cancer review before travel",
+          "href": "/consult?treatment=Appendix%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with DICOM links and pathology](https://wa.me/919044346292?text=I%20am%20an%20international%20patient%20with%20appendix%20cancer%20%2F%20peritoneal%20spread.%20I%20can%20share%20DICOM%20imaging%20and%20pathology%20for%20a%20preliminary%20CRS-HIPEC%20opinion%20in%20India.)"
+        },
+        {
+          "id": "h_062",
+          "type": "heading",
+          "level": 2,
+          "text": "Appendix Cancer Treatment Cost in India"
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "Cost depends on tumour type and whether treatment is limited surgery, systemic therapy or extensive CRS-HIPEC. GAF publishes partner planning ranges — not quotations."
+        },
+        {
+          "id": "html_064",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Named pathway</th><th>GAF planning range in India</th><th>Typical stay</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Cytoreductive surgery with HIPEC</a></td><td>$18,000–$40,000</td><td>10–21 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery\">Cytoreductive surgery</a></td><td>$10,000–$24,000</td><td>7–14 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Colectomy\">Colectomy</a> (when right colectomy is planned separately)</td><td>$7,000–$18,000</td><td>—</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/PIPAC\">PIPAC</a></td><td>$7,000–$16,000</td><td>2–5 nights</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Intraperitoneal-Chemotherapy\">Intraperitoneal chemotherapy</a> (catheter/port pathway)</td><td>$5,000–$14,000</td><td>Tied to cytoreduction or IP ports</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Systemic chemotherapy</a></td><td>$1,500–$8,000+</td><td>Outpatient cycles · 3–6 months typical</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "City CRS-HIPEC sheets: [Delhi NCR](/costs/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Mumbai](/costs/India/Mumbai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Bengaluru](/costs/India/Bengaluru/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Chennai](/costs/India/Chennai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Hyderabad](/costs/India/Hyderabad/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC). The national band remains **$18,000–$40,000**."
+        },
+        {
+          "id": "html_066",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>City</th><th>CRS-HIPEC doctor list</th><th>GAF planning range</th></tr></thead><tbody><tr><td>Delhi NCR</td><td><a href=\"/doctors/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr><tr><td>Mumbai</td><td><a href=\"/doctors/India/Mumbai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr><tr><td>Bengaluru</td><td><a href=\"/doctors/India/Bengaluru/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr><tr><td>Chennai</td><td><a href=\"/doctors/India/Chennai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr><tr><td>Hyderabad</td><td><a href=\"/doctors/India/Hyderabad/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "html_067",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Cost component</th><th>What to check</th></tr></thead><tbody><tr><td>Initial consultation</td><td>Surgical and medical oncology opinions</td></tr><tr><td>Investigations</td><td>Scans, blood tests and pathology</td></tr><tr><td>Surgery</td><td>Planned removal of tumour and affected tissue</td></tr><tr><td>HIPEC</td><td>Chemotherapy and perfusion charges</td></tr><tr><td>Anaesthesia</td><td>Operating theatre and anaesthesia</td></tr><tr><td>Intensive care</td><td>Expected ICU monitoring</td></tr><tr><td>Hospital stay</td><td>Room category and estimated duration</td></tr><tr><td>Additional treatment</td><td>Chemotherapy or complication management</td></tr><tr><td>Follow-up</td><td>Reviews and investigations</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "**Important:** Do not choose a hospital on price alone. Experience, complication management and postoperative care matter more."
+        },
+        {
+          "id": "btn_069",
+          "type": "button",
+          "label": "Request an itemised CRS-HIPEC cost estimate",
+          "href": "/consult?treatment=Appendix%20Cancer%20CRS-HIPEC%20Cost%20Estimate"
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help Patients Explore Appendix Cancer Treatment in India"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help organise reports, share records with hospitals, coordinate consultations and estimates, and support travel, admission and follow-up logistics. GAF does not diagnose cancer, decide HIPEC eligibility or guarantee outcomes."
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions About Appendix Cancer and HIPEC"
+        },
+        {
+          "id": "h_073",
+          "type": "heading",
+          "level": 3,
+          "text": "What is appendix cancer?"
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "Appendix cancer develops when abnormal cells grow in the appendix, a small pouch attached to the large intestine. It is rare and includes several tumour types. Some remain limited to the appendix, while others can spread inside the abdomen."
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 3,
+          "text": "Is appendix cancer the same as colon cancer?"
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "No. The appendix is attached to the large intestine, but appendix cancer is a separate diagnosis. Some types behave similarly to colorectal cancers, while mucin-producing tumours often need a different pathway. See colon cancer treatment in India for colorectal peritoneal disease."
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 3,
+          "text": "What are the symptoms of appendix cancer?"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "Symptoms may include lower-right abdominal pain, bloating, swelling, loss of appetite, unexplained weight loss, nausea, vomiting and bowel changes. Some patients have no symptoms until an appendectomy or incidental imaging."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 3,
+          "text": "Can appendix cancer be found during appendicitis surgery?"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Yes. Some tumours are discovered when the appendix is removed for suspected appendicitis. The removed tissue should be examined by a pathologist."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 3,
+          "text": "Does appendix cancer always spread?"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "No. Some tumours stay confined to the appendix. Others spread to the peritoneum or distant organs. Tumour type, grade, rupture and pathology findings guide risk."
+        },
+        {
+          "id": "h_083",
+          "type": "heading",
+          "level": 3,
+          "text": "What is mucinous appendix cancer?"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "A tumour that produces mucin, a thick jelly-like substance. If mucin and tumour cells escape into the abdomen, they may cause pseudomyxoma peritonei."
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 3,
+          "text": "What is pseudomyxoma peritonei?"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "PMP is accumulation of mucin and tumour cells inside the abdomen, most often from a mucin-producing appendiceal tumour. See the PMP treatment guide for a dedicated pathway."
+        },
+        {
+          "id": "h_087",
+          "type": "heading",
+          "level": 3,
+          "text": "Is pseudomyxoma peritonei the same as appendix cancer?"
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "No. PMP is a peritoneal condition that can develop from certain mucin-producing appendix tumours. The terms are related but not interchangeable."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 3,
+          "text": "How is appendix cancer diagnosed?"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Diagnosis may involve CT, MRI, colonoscopy, biopsy, pathology review and tumour markers. Diagnostic laparoscopy may help assess peritoneal extent and resectability."
+        },
+        {
+          "id": "h_091",
+          "type": "heading",
+          "level": 3,
+          "text": "Why is the pathology report so important?"
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "It identifies tumour type and grade — LAMN, HAMN, adenocarcinoma, goblet cell adenocarcinoma or neuroendocrine tumour — which drives whether surgery, chemotherapy or CRS-HIPEC is appropriate."
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 3,
+          "text": "What is CRS-HIPEC?"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "CRS removes visible peritoneal deposits; HIPEC circulates heated chemotherapy inside the abdomen afterwards. See HIPEC surgery in India for the coordinated pathway."
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 3,
+          "text": "Is HIPEC a cure for appendix cancer?"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "No treatment is a guaranteed cure. Selected patients may achieve long-term control after CRS-HIPEC, but recurrence is possible and depends on histology, extent and completeness of cytoreduction."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 3,
+          "text": "Who may need HIPEC for appendix cancer?"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Selected patients with peritoneal spread when complete or meaningful cytoreduction is achievable and the patient is fit for major surgery."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a patient with low-grade appendix cancer need HIPEC?"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Yes, if low-grade disease has spread widely inside the abdomen. Tumours confined to the appendix may need only local surgery or surveillance."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "Does high-grade appendix cancer need chemotherapy?"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "Often systemic chemotherapy is considered. Neoadjuvant chemotherapy may be used before surgery in selected cases. Named systemic lists sit on chemotherapy in India."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the PCI score?"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "The Peritoneal Cancer Index estimates disease burden across 13 abdominal regions (0–39). See the PCI guide for how surgeons use it."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "Does a high PCI score mean HIPEC is impossible?"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Not automatically. Distribution — especially small-bowel involvement — can matter more than the total number."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does HIPEC surgery take?"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "Several hours, depending on disease extent, bowel resections and reconstruction. GAF CRS-HIPEC planning typically quotes 10–21 nights in hospital."
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 3,
+          "text": "Will the patient need their colon removed?"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "Not always. Selected appendiceal adenocarcinomas may need right colectomy; others need more limited surgery. Pathology and operative findings decide."
+        },
+        {
+          "id": "h_111",
+          "type": "heading",
+          "level": 3,
+          "text": "Will the patient need a stoma after HIPEC?"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "Not everyone. A stoma may be needed after certain bowel resections or to protect an anastomosis. Discuss this before surgery."
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 3,
+          "text": "What are the risks of HIPEC surgery?"
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "Bleeding, infection, bowel leakage, obstruction, kidney injury, blood-count changes, clots and prolonged stay. Sudden severe pain, fever, collapse or inability to pass stool/gas need a local emergency department."
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 3,
+          "text": "Can appendix cancer come back after HIPEC?"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "Yes. Recurrence risk depends on type, grade, disease burden and completeness of cytoreduction. Long-term surveillance is essential."
+        },
+        {
+          "id": "h_117",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the cost of appendix cancer treatment in India?"
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "GAF planning for CRS with HIPEC is $18,000–$40,000 (10–21 nights). Cytoreductive surgery alone is $10,000–$24,000. Limited colectomy and systemic chemotherapy have separate sheets. Final quotations follow case review."
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients travel to India for appendix cancer treatment?"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "Yes. Share pathology, DICOM imaging, operative notes and tumour markers before travelling so a peritoneal oncology team can advise."
+        },
+        {
+          "id": "h_121",
+          "type": "heading",
+          "level": 3,
+          "text": "Should patients travel to India only for HIPEC?"
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "No. Obtain a specialist opinion first. Some patients need chemotherapy, limited surgery, surveillance or supportive care instead."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 3,
+          "text": "How can GAF Healthcare help?"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "GAF can organise reports, coordinate consultations, communicate estimates and help with travel and admission logistics. Diagnosis and eligibility remain with treating doctors."
+        },
+        {
+          "id": "h_125",
+          "type": "heading",
+          "level": 2,
+          "text": "Key Takeaways"
+        },
+        {
+          "id": "ul_126",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Appendix cancer is rare and includes several tumour types.",
+            "Some tumours spread across the peritoneum; mucinous disease may cause PMP.",
+            "Pathology grade and type drive treatment choice.",
+            "CRS-HIPEC is for selected patients with resectable peritoneal disease.",
+            "GAF CRS-HIPEC planning is $18,000–$40,000 (typically 10–21 nights).",
+            "Obtain a specialist review before travelling for HIPEC."
+          ]
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 2,
+          "text": "Top Medical Sources and References"
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "1. [National Cancer Institute — Appendix Cancer](https://www.cancer.gov/pediatric-adult-rare-tumor/rare-tumors/rare-digestive-system-tumors/appendiceal-cancer)."
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "2. [Consensus Guideline for Appendiceal Tumors with Peritoneal Involvement (2025)](https://pubmed.ncbi.nlm.nih.gov/40558065/)."
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "3. [ASCRS — Management of Appendiceal Neoplasms (2025)](https://www.ascrsu.com/ascrs/view/ASCRS-Evidence-Based-Guidelines-and-Expert-Consensus/3982016/all/Management_of_Appendiceal_Neoplasms__2025_)."
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "4. [INDEPSO-ISPSM Consensus on Mucinous Appendiceal Neoplasms and PMP (2025)](https://pubmed.ncbi.nlm.nih.gov/41415773/)."
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "5. [Consensus Guideline for Appendiceal Tumors Without Peritoneal Involvement (2025)](https://pubmed.ncbi.nlm.nih.gov/40558064/)."
+        },
+        {
+          "id": "p_133",
+          "type": "paragraph",
+          "text": "6. [GAF Healthcare CRS with HIPEC cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) — $18,000–$40,000; typically 10–21 nights."
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "**Last reviewed against the cited sources: November 2026.**"
+        },
+        {
+          "id": "h_135",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Reading on GAF Healthcare"
+        },
+        {
+          "id": "ul_136",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[HIPEC Surgery in India](/treatments/hipec-surgery-in-india)",
+            "[What Is HIPEC Surgery?](/blogs/what-is-hipec-surgery)",
+            "[Pseudomyxoma Peritonei Treatment in India](/blogs/pseudomyxoma-peritonei-treatment)",
+            "[Peritoneal Carcinomatosis](/blogs/peritoneal-carcinomatosis)",
+            "[Peritoneal Metastases Treatment](/blogs/peritoneal-metastases-treatment)",
+            "[Peritoneal Cancer Index (PCI)](/blogs/peritoneal-cancer-index-pci)",
+            "[HIPEC Surgery for Stomach Cancer](/blogs/hipec-surgery-for-stomach-cancer)",
+            "[Intraperitoneal Chemotherapy in India](/treatments/intraperitoneal-chemotherapy-in-india)",
+            "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india)",
+            "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india)",
+            "[CRS with HIPEC — cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC)"
+          ]
+        },
+        {
+          "id": "h_137",
+          "type": "heading",
+          "level": 2,
+          "text": "Explore Appendix Cancer Treatment in India"
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "Understanding the exact tumour type and whether peritoneal spread is resectable is the first step. GAF Healthcare coordinates specialist consultations and treatment planning for international patients."
+        },
+        {
+          "id": "btn_139",
+          "type": "button",
+          "label": "Contact GAF Healthcare for a specialist consultation",
+          "href": "/consult?treatment=Appendix%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_140",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 to start a record review](https://wa.me/919044346292?text=I%20would%20like%20GAF%20Healthcare%20to%20coordinate%20a%20specialist%20consultation%20for%20appendix%20cancer%20%2F%20CRS-HIPEC%20in%20India.)"
+        },
+        {
+          "id": "h_141",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_142",
+          "type": "paragraph",
+          "text": "Share pathology, DICOM imaging, operative notes and a preferred travel window. A coordinator can introduce a [surgical oncology](/doctors/India/Surgical-Oncology) team in [Delhi NCR](/doctors/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) or [Mumbai](/doctors/India/Mumbai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) and help collect an itemised quotation."
+        },
+        {
+          "id": "btn_143",
+          "type": "button",
+          "label": "Share records for a peritoneal oncology review",
+          "href": "/consult?treatment=CRS-HIPEC%20for%20Appendix%20Cancer"
+        },
+        {
+          "id": "h_144",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_145",
+          "type": "paragraph",
+          "text": "This article is for educational purposes only and does not replace medical consultation, diagnosis or individualised advice. CRS-HIPEC is a complex operation with significant risks. Suitability must be determined by a qualified multidisciplinary team. Cost figures are indicative planning ranges. Emergency symptoms belong in a local emergency department."
+        }
+      ]
+    },
     {
       "id": "art_pseudomyxoma_peritonei_treatment",
       "slug": "pseudomyxoma-peritonei-treatment",
@@ -2417,6 +3396,10 @@
         {
           "label": "Cytoreductive surgery with HIPEC — cost sheet",
           "href": "/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC"
+        },
+        {
+          "label": "Appendix cancer treatment and HIPEC in India",
+          "href": "/blogs/appendix-cancer-treatment-hipec-india"
         }
       ],
       "blocks": [
@@ -3597,7 +4580,8 @@
             "The 2025 multisocietal consensus recommends CRS-HIPEC over debulking surgery for suitable patients.",
             "GAF planning for CRS with HIPEC is $18,000–$40,000 (typically 10–21 nights).",
             "PMP can recur, making long-term surveillance essential.",
-            "International patients exploring treatment in India should obtain a specialist review before travelling or committing to surgery."
+            "International patients exploring treatment in India should obtain a specialist review before travelling or committing to surgery.",
+            "[Appendix Cancer Treatment and HIPEC in India](/blogs/appendix-cancer-treatment-hipec-india)"
           ]
         },
         {
@@ -3672,7 +4656,8 @@
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india)",
             "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india)",
             "[Ovarian Cancer Treatment in India](/treatments/ovarian-cancer-treatment-in-india)",
-            "[Cytoreductive surgery with HIPEC — cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC)"
+            "[Cytoreductive surgery with HIPEC — cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC)",
+            "[Appendix Cancer Treatment and HIPEC in India](/blogs/appendix-cancer-treatment-hipec-india)"
           ]
         },
         {
