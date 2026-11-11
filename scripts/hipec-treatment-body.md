@@ -133,6 +133,8 @@ For appropriately selected operable and resectable patients, **CRS + HIPEC is an
 
 Recent international consensus recommendations strongly support CRS and HIPEC over simple debulking surgery for resectable pseudomyxoma peritonei.
 
+A dedicated patient guide covering symptoms, diagnosis, PCI, recovery and India planning ranges is published as [Pseudomyxoma Peritonei Treatment in India](/blogs/pseudomyxoma-peritonei-treatment).
+
 ### 2. Peritoneal Mesothelioma
 
 Peritoneal mesothelioma is a rare cancer arising from the peritoneum.

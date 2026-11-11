@@ -124,7 +124,14 @@
     "knee replacement",
     "total knee replacement",
     "robotic knee replacement",
-    "orthopedics"
+    "orthopedics",
+    "pseudomyxoma peritonei",
+    "PMP",
+    "CRS-HIPEC",
+    "HIPEC",
+    "appendiceal mucinous neoplasm",
+    "LAMN",
+    "peritoneal cancer"
   ],
   "media": [
     {
@@ -2289,9 +2296,1437 @@
       "name": "pediatric-hosp-stages.webp",
       "alt": "Three diagrams labeled Shunt, Glenn and Fontan in a staged single-ventricle pathway",
       "addedAt": "2026-10-13T23:30:00.000Z"
+    },
+    {
+      "id": "media_pmp_mucin_abdomen_webp",
+      "url": "/uploads/articles/pmp-mucin-abdomen.webp",
+      "name": "pmp-mucin-abdomen.webp",
+      "alt": "Unlabeled medical diagram of mucin accumulating inside the abdominal cavity around organ silhouettes",
+      "addedAt": "2026-11-11T09:50:00.000Z"
+    },
+    {
+      "id": "media_pmp_appendix_spread_webp",
+      "url": "/uploads/articles/pmp-appendix-spread.webp",
+      "name": "pmp-appendix-spread.webp",
+      "alt": "Unlabeled diagram of an appendiceal mucinous tumour releasing mucin droplets into the peritoneal cavity",
+      "addedAt": "2026-11-11T09:50:00.000Z"
+    },
+    {
+      "id": "media_pmp_crs_hipec_webp",
+      "url": "/uploads/articles/pmp-crs-hipec.webp",
+      "name": "pmp-crs-hipec.webp",
+      "alt": "Two-panel unlabeled diagram showing cytoreductive tumour removal on the left and heated intraperitoneal chemotherapy perfusion on the right",
+      "addedAt": "2026-11-11T09:50:00.000Z"
+    },
+    {
+      "id": "media_pmp_pci_regions_webp",
+      "url": "/uploads/articles/pmp-pci-regions.webp",
+      "name": "pmp-pci-regions.webp",
+      "alt": "Unlabeled diagram of abdominal regions used to estimate peritoneal disease burden for the PCI score",
+      "addedAt": "2026-11-11T09:50:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_pseudomyxoma_peritonei_treatment",
+      "slug": "pseudomyxoma-peritonei-treatment",
+      "title": "Pseudomyxoma Peritonei: Symptoms, Diagnosis, CRS-HIPEC Surgery and Treatment in India",
+      "excerpt": "Pseudomyxoma peritonei (PMP) is a rare condition in which mucin-producing tumour cells accumulate inside the abdominal cavity, most commonly following an appendiceal tumour. Treatment may involve cytoreductive surgery (CRS) and heated intraperitoneal chemotherapy (HIPEC) for suitable patients. Explore its symptoms, diagnosis, tumour grades, treatment options, recovery, costs and specialist care in India.",
+      "date": "11 November 2026",
+      "publishedAt": "2026-11-11T09:50:00.000Z",
+      "updatedAt": "2026-11-11T09:50:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "pseudomyxoma peritonei",
+        "PMP",
+        "CRS-HIPEC",
+        "HIPEC",
+        "appendiceal mucinous neoplasm",
+        "LAMN",
+        "peritoneal cancer",
+        "India"
+      ],
+      "image": "/uploads/articles/pmp-mucin-abdomen.webp",
+      "imageAlt": "Unlabeled medical diagram of mucin accumulating inside the abdominal cavity around organ silhouettes",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Pseudomyxoma Peritonei Treatment in India: CRS-HIPEC, Symptoms and Cost",
+      "seoDescription": "Learn about pseudomyxoma peritonei (PMP), its appendix-related causes, symptoms, diagnosis, PCI score, CRS-HIPEC surgery, recovery and treatment options in India.",
+      "canonical": "https://gaf.healthcare/blogs/pseudomyxoma-peritonei-treatment",
+      "ogImage": "/uploads/articles/pmp-mucin-abdomen.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Pseudomyxoma peritonei treatment",
+        "Pseudomyxoma peritonei treatment in India",
+        "PMP surgery",
+        "CRS-HIPEC for pseudomyxoma peritonei",
+        "Pseudomyxoma peritonei symptoms",
+        "Pseudomyxoma peritonei causes",
+        "Appendix cancer treatment",
+        "Appendiceal mucinous neoplasm",
+        "Low-grade appendiceal mucinous neoplasm",
+        "LAMN treatment",
+        "Mucinous ascites",
+        "Peritoneal cancer treatment in India",
+        "HIPEC surgery cost in India",
+        "Cytoreductive surgery for PMP",
+        "Peritoneal Cancer Index"
+      ],
+      "relatedLinks": [
+        {
+          "label": "HIPEC surgery in India",
+          "href": "/treatments/hipec-surgery-in-india"
+        },
+        {
+          "label": "Intraperitoneal chemotherapy in India",
+          "href": "/treatments/intraperitoneal-chemotherapy-in-india"
+        },
+        {
+          "label": "Colon cancer treatment in India",
+          "href": "/treatments/colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "Ovarian cancer treatment in India",
+          "href": "/treatments/ovarian-cancer-treatment-in-india"
+        },
+        {
+          "label": "Stage 4 colon cancer treatment in India",
+          "href": "/blogs/stage-4-colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "CRS with HIPEC cost in India",
+          "href": "/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC"
+        },
+        {
+          "label": "Cytoreductive surgery cost in India",
+          "href": "/costs/India/Surgical-Oncology/Cytoreductive-Surgery"
+        },
+        {
+          "label": "PIPAC cost in India",
+          "href": "/costs/India/Surgical-Oncology/PIPAC"
+        },
+        {
+          "label": "Surgical oncologists in India",
+          "href": "/doctors/India/Surgical-Oncology"
+        },
+        {
+          "label": "Surgical oncology hospitals in India",
+          "href": "/hospitals/India/Surgical-Oncology"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"md-body\"><table><thead><tr><th>Question</th><th>Quick Answer</th></tr></thead><tbody><tr><td><strong>What is pseudomyxoma peritonei?</strong></td><td>A rare peritoneal condition in which mucin and mucin-producing tumour cells accumulate in the abdomen, usually after an appendiceal mucinous tumour.</td></tr><tr><td><strong>Main specialist treatment</strong></td><td>CRS-HIPEC for operable, resectable disease — see <a href=\"/treatments/hipec-surgery-in-india\">HIPEC surgery in India</a></td></tr><tr><td><strong>Common origin</strong></td><td>Appendiceal mucinous neoplasm (LAMN, HAMN, mucinous adenocarcinoma)</td></tr><tr><td><strong>Key investigations</strong></td><td>Contrast CT, pathology review, tumour markers (CEA, CA 19-9, sometimes CA-125), selected MRI or laparoscopy</td></tr><tr><td><strong>PCI score</strong></td><td>0–39 estimate of peritoneal disease burden; distribution matters more than a single cut-off</td></tr><tr><td><strong>GAF CRS + HIPEC planning range</strong></td><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">$18,000–$40,000</a>, typically <strong>10–21 nights</strong></td></tr><tr><td><strong>GAF cytoreductive surgery alone</strong></td><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery\">$10,000–$24,000</a>, typically <strong>7–14 nights</strong></td></tr><tr><td><strong>Neighbouring PIPAC</strong></td><td><a href=\"/costs/India/Surgical-Oncology/PIPAC\">$7,000–$16,000</a>, typically <strong>2–5 nights</strong></td></tr><tr><td><strong>International patients</strong></td><td>Share pathology, DICOM imaging and operative notes before travelling; do not assume HIPEC will be performed</td></tr></tbody></table></div><p class=\"article-quick-answer__body\"><strong>Pseudomyxoma peritonei treatment</strong> centres on specialist assessment of tumour grade, disease distribution and resectability. For suitable patients, <strong>cytoreductive surgery (CRS) with HIPEC</strong> is the established approach supported by the 2025 multisocietal consensus over debulking alone. GAF Healthcare planning for <a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">CRS with HIPEC</a> is <strong>$18,000–$40,000</strong> (typically <strong>10–21 nights</strong>). These are partner planning ranges, not hospital quotations.</p><p class=\"article-quick-answer__body\"><strong>Important:</strong> GAF Healthcare does not diagnose PMP or decide CRS-HIPEC eligibility. Treatment decisions remain with the multidisciplinary hospital team after full record review.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "**Pseudomyxoma peritonei (PMP)** is a rare condition in which mucin, a thick jelly-like substance, accumulates inside the abdominal cavity. It usually develops when a mucin-producing tumour — most commonly originating in the appendix — releases tumour cells and mucin into the peritoneal cavity."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "Over time, mucin and tumour deposits may spread across the surfaces of abdominal organs. This can cause progressive abdominal swelling, digestive difficulties, discomfort and, in advanced cases, bowel obstruction. PMP is sometimes described as *jelly belly* because of the thick mucin inside the abdomen."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "Although uncommon, PMP requires specialised assessment. Behaviour varies with tumour grade, cellular characteristics, distribution and extent of peritoneal involvement. For suitable patients with operable and resectable disease, the principal specialist approach is **cytoreductive surgery (CRS) combined with hyperthermic intraperitoneal chemotherapy (HIPEC)**. The coordinated pathway is published as [HIPEC surgery in India](/treatments/hipec-surgery-in-india)."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "CRS aims to remove visible tumour deposits and affected peritoneal tissue. HIPEC circulates heated chemotherapy inside the abdomen after cytoreduction to treat microscopic residual disease. The 2025 multisocietal consensus supports CRS-HIPEC over debulking surgery for resectable and operable PMP. The operation is extensive and not suitable for everyone — careful selection at an experienced peritoneal surface malignancy centre is essential."
+        },
+        {
+          "id": "p_006",
+          "type": "paragraph",
+          "text": "GAF Healthcare planning for [cytoreductive surgery with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) is **$18,000–$40,000**, typically **10–21 nights**. Neighbouring [cytoreductive surgery](/costs/India/Surgical-Oncology/Cytoreductive-Surgery) alone is **$10,000–$24,000** (7–14 nights). Neighbouring [PIPAC](/costs/India/Surgical-Oncology/PIPAC) is **$7,000–$16,000** (2–5 nights). Named catheter-based IP lists sit on [intraperitoneal chemotherapy in India](/treatments/intraperitoneal-chemotherapy-in-india). These are partner planning ranges, not hospital quotations."
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "International patients comparing [surgical oncologists listing CRS with HIPEC](/doctors/India/Surgical-Oncology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Mumbai](/doctors/India/Mumbai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Bengaluru](/doctors/India/Bengaluru/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Chennai](/doctors/India/Chennai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) and [Hyderabad](/doctors/India/Hyderabad/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC). Partner [surgical-oncology hospitals](/hospitals/India/Surgical-Oncology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Surgical-Oncology), [Mumbai](/hospitals/India/Mumbai/Surgical-Oncology) and [Bengaluru](/hospitals/India/Bengaluru/Surgical-Oncology) are a typical first filter."
+        },
+        {
+          "id": "btn_008",
+          "type": "button",
+          "label": "Ask about pseudomyxoma peritonei treatment in India",
+          "href": "/consult?treatment=Pseudomyxoma%20Peritonei%20%2F%20CRS-HIPEC"
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with pathology, CT reports and operative notes](https://wa.me/919044346292?text=Please%20review%20my%20pathology%2C%20CT%2FMRI%20and%20previous%20surgery%20notes%20for%20pseudomyxoma%20peritonei%20and%20advise%20whether%20CRS-HIPEC%20in%20India%20may%20be%20appropriate.)"
+        },
+        {
+          "id": "img_010",
+          "type": "image",
+          "src": "/uploads/articles/pmp-mucin-abdomen.webp",
+          "alt": "Unlabeled medical diagram of mucin accumulating inside the abdominal cavity around organ silhouettes",
+          "caption": "PMP is sometimes called jelly belly because thick mucin can occupy abdominal space and interfere with organ function."
+        },
+        {
+          "id": "h_011",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Pseudomyxoma Peritonei?"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Pseudomyxoma peritonei is a rare peritoneal disease characterised by the accumulation of mucin and mucin-producing tumour cells within the abdominal cavity. It most commonly originates from a mucin-producing tumour of the appendix."
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "The condition may involve:"
+        },
+        {
+          "id": "ul_014",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "The peritoneal lining of the abdominal wall",
+            "The omentum",
+            "The pelvis",
+            "The surface of the liver",
+            "The diaphragm",
+            "The bowel surfaces",
+            "Other abdominal structures"
+          ]
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "Unlike many other metastatic cancers, PMP may produce large amounts of mucin that gradually occupy abdominal space and interfere with normal organ function."
+        },
+        {
+          "id": "h_016",
+          "type": "heading",
+          "level": 3,
+          "text": "Is pseudomyxoma peritonei a type of cancer?"
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "PMP is a clinical condition associated with mucin-producing neoplasms, most often arising from the appendix. Some cases are low-grade and progress relatively slowly; others contain high-grade or more aggressive tumour cells. The pathology report is particularly important — the term PMP alone does not determine treatment."
+        },
+        {
+          "id": "h_018",
+          "type": "heading",
+          "level": 3,
+          "text": "Why is PMP sometimes called jelly belly?"
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "The term refers to thick, gelatinous mucin inside the abdominal cavity. This mucin may collect around abdominal organs and contribute to progressive abdominal enlargement. The appearance differs from ordinary fluid accumulation, although both can cause swelling."
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 2,
+          "text": "What Causes Pseudomyxoma Peritonei?"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "PMP most commonly develops from a mucin-producing tumour of the appendix. If the tumour grows and the appendix ruptures or perforates, mucin and tumour cells may escape into the abdominal cavity, implant on peritoneal surfaces and continue producing mucin."
+        },
+        {
+          "id": "img_022",
+          "type": "image",
+          "src": "/uploads/articles/pmp-appendix-spread.webp",
+          "alt": "Unlabeled diagram of an appendiceal mucinous tumour releasing mucin droplets into the peritoneal cavity",
+          "caption": "Appendiceal rupture or perforation can allow mucin and tumour cells to implant across peritoneal surfaces."
+        },
+        {
+          "id": "h_023",
+          "type": "heading",
+          "level": 3,
+          "text": "What is an appendiceal mucinous neoplasm?"
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "Important categories include:"
+        },
+        {
+          "id": "ul_025",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Low-grade appendiceal mucinous neoplasm (LAMN):** Low-grade cellular features; can still cause PMP when the appendix ruptures and mucin or tumour cells escape.",
+            "**High-grade appendiceal mucinous neoplasm (HAMN):** High-grade cellular features with different behaviour and treatment considerations.",
+            "**Mucinous adenocarcinoma:** An invasive malignant tumour that produces mucin; course depends on grade and other pathological characteristics.",
+            "**Goblet cell adenocarcinoma:** A distinct appendiceal tumour type that should not automatically follow the same pathway as conventional LAMN-associated PMP."
+          ]
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "Pathology classification should be reviewed by a pathologist experienced in gastrointestinal and peritoneal malignancies."
+        },
+        {
+          "id": "h_027",
+          "type": "heading",
+          "level": 3,
+          "text": "Can PMP develop from an appendix tumour that was previously removed?"
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "Yes. Some patients are diagnosed with an appendiceal mucinous tumour after appendectomy, and later investigations identify mucin or tumour deposits within the abdomen. Risk depends on tumour type and grade, rupture, mucin outside the appendix, whether mucin contained tumour cells, surgical margins and extent of peritoneal involvement. Not every patient with an appendiceal mucinous tumour develops PMP, and not every patient after appendectomy requires CRS-HIPEC."
+        },
+        {
+          "id": "btn_029",
+          "type": "button",
+          "label": "Share appendectomy pathology for a PMP review",
+          "href": "/consult?treatment=Appendiceal%20Mucinous%20Neoplasm%20%2F%20PMP"
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with appendectomy histopathology](https://wa.me/919044346292?text=I%20had%20an%20appendiceal%20mucinous%20tumour%20removed.%20Please%20review%20my%20pathology%20and%20advise%20whether%20further%20assessment%20for%20pseudomyxoma%20peritonei%20or%20CRS-HIPEC%20in%20India%20is%20needed.)"
+        },
+        {
+          "id": "h_031",
+          "type": "heading",
+          "level": 2,
+          "text": "Symptoms of Pseudomyxoma Peritonei"
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "PMP can develop gradually. Some patients have no obvious early symptoms, and the condition may be discovered during investigations or surgery for another reason. As mucin and tumour deposits accumulate, symptoms may become more noticeable."
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "Common symptoms include:"
+        },
+        {
+          "id": "ul_034",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Gradually increasing abdominal size",
+            "Persistent abdominal bloating",
+            "Abdominal discomfort or pain",
+            "Feeling full after eating small quantities",
+            "Loss of appetite",
+            "Unexplained weight changes",
+            "Constipation or changes in bowel habits",
+            "Nausea and vomiting",
+            "Abdominal pressure",
+            "Reduced mobility in advanced disease"
+          ]
+        },
+        {
+          "id": "h_035",
+          "type": "heading",
+          "level": 3,
+          "text": "Abdominal swelling"
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "Progressive abdominal enlargement is a common feature. Some patients notice that their abdomen becomes larger even when overall body weight has not increased significantly."
+        },
+        {
+          "id": "h_037",
+          "type": "heading",
+          "level": 3,
+          "text": "Digestive difficulties and early fullness"
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "Mucin and peritoneal deposits can affect intestinal movement and compress the stomach and surrounding organs, contributing to bloating, constipation, early fullness and nutritional difficulties."
+        },
+        {
+          "id": "h_039",
+          "type": "heading",
+          "level": 3,
+          "text": "Bowel obstruction"
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "Advanced PMP can cause intestinal obstruction when tumour deposits, adhesions or pressure interfere with the passage of intestinal contents. Severe abdominal pain, persistent vomiting, abdominal distension or inability to pass stool or gas require **urgent medical assessment**. These are local emergency-department problems, not WhatsApp questions."
+        },
+        {
+          "id": "h_041",
+          "type": "heading",
+          "level": 3,
+          "text": "When should a patient seek medical attention?"
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "Persistent abdominal swelling, unexplained digestive problems, increasing abdominal discomfort or a previous diagnosis of an appendiceal mucinous tumour should be evaluated by a doctor. Severe pain, repeated vomiting, inability to pass stool or gas, dehydration or sudden deterioration require urgent care."
+        },
+        {
+          "id": "h_043",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is Pseudomyxoma Peritonei Diagnosed?"
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "Diagnosis requires clinical assessment, imaging, pathology and, in selected cases, surgical evaluation. The purpose is not only to confirm the condition but also to determine origin, histological type and grade, whether mucin contains tumour cells, peritoneal extent, whether complete cytoreduction may be possible and whether other organs are affected."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 3,
+          "text": "Medical history and physical examination"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "The doctor reviews symptoms, previous abdominal operations, appendectomy history, biopsy reports and any previous diagnosis of appendiceal tumours. Examination may identify abdominal enlargement, tenderness or a palpable mass."
+        },
+        {
+          "id": "h_047",
+          "type": "heading",
+          "level": 3,
+          "text": "Contrast-enhanced CT scan"
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "A contrast-enhanced CT of the abdomen and pelvis may help identify mucin accumulation, peritoneal deposits, omental involvement, appendix-related abnormalities, bowel displacement, organ involvement and disease on the liver surface or diaphragm. It also helps estimate disease distribution for surgical planning."
+        },
+        {
+          "id": "h_049",
+          "type": "heading",
+          "level": 3,
+          "text": "MRI"
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "MRI may be useful in selected patients when additional assessment of mucin distribution or specific abdominal structures is required."
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 3,
+          "text": "Tumour marker tests"
+        },
+        {
+          "id": "html_052",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Tumour marker</th><th>Why it may be assessed</th></tr></thead><tbody><tr><td>CEA</td><td>Baseline assessment and follow-up in appropriate patients</td></tr><tr><td>CA 19-9</td><td>May help assess disease burden and monitor selected patients</td></tr><tr><td>CA-125</td><td>May be considered as part of the baseline evaluation</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Tumour markers do not independently diagnose PMP. Normal results do not exclude the condition, and elevated levels do not establish the diagnosis without other evidence."
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 3,
+          "text": "Colonoscopy, biopsy and diagnostic laparoscopy"
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "Colonoscopy may be recommended to examine the large intestine and exclude synchronous colorectal lesions — relevant when colorectal peritoneal disease is also under consideration; see [colon cancer treatment in India](/treatments/colon-cancer-treatment-in-india) and [stage 4 colon cancer treatment](/blogs/stage-4-colon-cancer-treatment-in-india). Biopsy and expert histopathology identify mucinous tumour cells, grade, invasive adenocarcinoma and other features that influence treatment. In selected patients, diagnostic laparoscopy helps inspect disease distribution, small bowel involvement, mucin deposits, tissue sampling and estimated resectability."
+        },
+        {
+          "id": "h_056",
+          "type": "heading",
+          "level": 2,
+          "text": "Types and Grades of Pseudomyxoma Peritonei"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "Histological grade and cellular characteristics influence likely behaviour and treatment planning."
+        },
+        {
+          "id": "ul_058",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Low-grade mucinous carcinoma peritonei:** Less aggressive microscopic features; may progress slowly but can still cause substantial abdominal complications and may require major surgery when widespread and resectable.",
+            "**High-grade mucinous carcinoma peritonei:** More aggressive features; may progress more rapidly and carry greater recurrence risk; treatment may balance surgery and systemic therapy differently.",
+            "**High-grade disease with signet-ring cells:** An important pathological feature that can indicate more aggressive behaviour and may affect prognosis and surgical selection."
+          ]
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "Tumour grade influences expected behaviour, recurrence risk, suitability for extensive surgery, need for systemic treatment, follow-up and prognosis discussion. Pathology should be interpreted with PCI, disease distribution and patient fitness."
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is CRS-HIPEC for Pseudomyxoma Peritonei?"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "CRS-HIPEC combines cytoreductive surgery with heated intraperitoneal chemotherapy. For suitable patients with operable and resectable PMP, this combination is the established specialist treatment approach described on [HIPEC surgery in India](/treatments/hipec-surgery-in-india)."
+        },
+        {
+          "id": "ul_062",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Cytoreductive surgery (CRS):** Removal of visible tumour deposits, mucin and affected peritoneal tissue; selected abdominal organs or parts of organs may also need removal.",
+            "**Hyperthermic intraperitoneal chemotherapy (HIPEC):** Circulation of heated chemotherapy within the abdominal cavity after cytoreduction to treat microscopic tumour cells on peritoneal surfaces."
+          ]
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "Surgery removes visible disease; HIPEC exposes remaining microscopic cells to chemotherapy delivered directly inside the abdomen. Mucinous appendiceal tumours and PMP may respond poorly to conventional systemic chemotherapy, especially in low-grade disease — see neighbouring [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) planning (**$1,500–$8,000+**) and [chemotherapy in India](/treatments/chemotherapy-in-india). HIPEC cannot replace effective cytoreduction."
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "For operable and resectable PMP, CRS-HIPEC is supported as the standard specialist approach by the 2025 multisocietal consensus, which favours it over debulking. This does not mean every patient should undergo the procedure."
+        },
+        {
+          "id": "img_065",
+          "type": "image",
+          "src": "/uploads/articles/pmp-crs-hipec.webp",
+          "alt": "Two-panel unlabeled diagram showing cytoreductive tumour removal on the left and heated intraperitoneal chemotherapy perfusion on the right",
+          "caption": "CRS removes visible disease; HIPEC then circulates heated chemotherapy inside the abdomen."
+        },
+        {
+          "id": "btn_066",
+          "type": "button",
+          "label": "Ask whether CRS-HIPEC is appropriate for my PMP",
+          "href": "/consult?treatment=CRS-HIPEC%20for%20Pseudomyxoma%20Peritonei"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with CT files and pathology grade](https://wa.me/919044346292?text=I%20have%20pseudomyxoma%20peritonei.%20Please%20review%20my%20CT%2FMRI%20and%20pathology%20grade%20and%20advise%20whether%20CRS-HIPEC%20may%20be%20appropriate%20in%20India.)"
+        },
+        {
+          "id": "h_068",
+          "type": "heading",
+          "level": 2,
+          "text": "How Does CRS-HIPEC Surgery Work?"
+        },
+        {
+          "id": "h_069",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 1: Preoperative assessment"
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "The team reviews pathology, CT or MRI, tumour markers, previous surgical records, PCI assessment, kidney and liver function, nutritional status, heart and lung fitness, previous treatment and performance status, and discusses possible organ resections."
+        },
+        {
+          "id": "h_071",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 2: Surgical exploration"
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "The surgeon examines the abdominal cavity to assess disease extent and whether planned cytoreduction can be completed safely. If disease is more extensive than expected, the surgeon may modify or stop the operation."
+        },
+        {
+          "id": "h_073",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 3: Removal of visible tumour deposits"
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "Depending on disease distribution, cytoreduction may include:"
+        },
+        {
+          "id": "ul_075",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Greater or lesser omentum removal",
+            "Removal of affected peritoneal surfaces",
+            "Pelvic or diaphragmatic peritonectomy",
+            "Selected bowel resections",
+            "Gallbladder removal or splenectomy when required",
+            "Other organ or tissue resections when necessary"
+          ]
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "Not every patient needs all these procedures. The objective is complete cytoreduction while preserving as much normal organ function as possible."
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 4: Completeness of cytoreduction (CC score)"
+        },
+        {
+          "id": "ul_078",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**CC-0:** No visible residual disease",
+            "**CC-1:** Only very small residual deposits remain, generally up to 2.5 mm",
+            "**CC-2:** Residual deposits larger than 2.5 mm and up to 2.5 cm",
+            "**CC-3:** Residual deposits exceed 2.5 cm or there is a sheet-like layer of tumour"
+          ]
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 3,
+          "text": "Step 5: HIPEC delivery"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Heated chemotherapy is circulated inside the abdomen using a specialised perfusion system. Drug, dose, temperature and duration vary by institutional protocol. After HIPEC, the team completes the operation and the patient is transferred to postoperative monitoring or intensive care."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 2,
+          "text": "Which Chemotherapy Drugs Are Used During HIPEC for PMP?"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "HIPEC protocols differ between institutions. Drugs discussed in international consensus recommendations for PMP include mitomycin C, oxaliplatin and cisplatin in selected combinations. The 2022 PSOGI international consensus discussed mitomycin-based and cisplatin-based approaches among other protocols. There is no single regimen that applies to every patient or centre."
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "The treating team should explain which drug is proposed, why it is selected, intended duration, temperature and delivery method, potential side effects and kidney and blood-count monitoring requirements."
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 2,
+          "text": "Who Is Eligible for CRS-HIPEC for Pseudomyxoma Peritonei?"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "A patient may be considered when:"
+        },
+        {
+          "id": "ul_086",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "PMP has been confirmed through appropriate investigations",
+            "Disease is considered operable and resectable",
+            "Complete or near-complete cytoreduction is technically achievable",
+            "The patient is medically fit for major abdominal surgery",
+            "There is no prohibitive involvement of critical structures",
+            "Expected benefit justifies the risks",
+            "The patient understands treatment and recovery requirements"
+          ]
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "Factors that may make surgery difficult include extensive small bowel surface involvement, significant mesenteric involvement or retraction, extensive disease around critical structures, disease that cannot be removed safely and significant medical conditions that make major surgery unsafe. Age alone does not automatically rule out CRS-HIPEC; functional status and frailty matter more."
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "A high PCI indicates greater disease burden but there is no single PCI threshold for every PMP patient. Distribution — especially small bowel involvement — can be more concerning than the total number alone."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 2,
+          "text": "Understanding the Peritoneal Cancer Index (PCI) in PMP"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "The Peritoneal Cancer Index estimates tumour involvement inside the abdomen across 13 regions (nine abdominopelvic regions and four small-bowel regions). Each region receives a lesion-size score from 0 to 3. Scores add to a total PCI from 0 to 39."
+        },
+        {
+          "id": "html_091",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Lesion score</th><th>Meaning</th></tr></thead><tbody><tr><td>LS-0</td><td>No visible tumour</td></tr><tr><td>LS-1</td><td>Tumour deposits up to 0.5 cm</td></tr><tr><td>LS-2</td><td>Deposits greater than 0.5 cm and up to 5 cm</td></tr><tr><td>LS-3</td><td>Deposits greater than 5 cm or confluent disease</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "img_092",
+          "type": "image",
+          "src": "/uploads/articles/pmp-pci-regions.webp",
+          "alt": "Unlabeled diagram of abdominal regions used to estimate peritoneal disease burden for the PCI score",
+          "caption": "PCI helps describe disease burden; small-bowel and mesenteric involvement often weigh heavily in resectability decisions."
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "Small bowel involvement is particularly important because extensive deposits on the bowel surface or mesentery may prevent complete cytoreduction, and removing too much small bowel can create serious functional consequences. PCI should always be interpreted by an experienced peritoneal malignancy team — also discussed on [intraperitoneal chemotherapy in India](/treatments/intraperitoneal-chemotherapy-in-india)."
+        },
+        {
+          "id": "h_094",
+          "type": "heading",
+          "level": 2,
+          "text": "CRS-HIPEC vs Debulking Surgery for PMP"
+        },
+        {
+          "id": "html_095",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>CRS-HIPEC</th><th>Debulking surgery</th></tr></thead><tbody><tr><td>Main objective</td><td>Remove visible disease as completely as possible and deliver HIPEC</td><td>Reduce tumour or mucin burden</td></tr><tr><td>Extent of surgery</td><td>Often extensive and carefully planned</td><td>Depends on symptoms and disease</td></tr><tr><td>HIPEC</td><td>Usually included in the specialist CRS-HIPEC approach</td><td>Not necessarily included</td></tr><tr><td>Treatment intent</td><td>Long-term disease control in suitable patients</td><td>Often symptom relief or selected disease reduction</td></tr><tr><td>Patient selection</td><td>Requires detailed assessment of resectability and fitness</td><td>May be considered when complete cytoreduction is not feasible</td></tr><tr><td>Follow-up</td><td>Structured long-term surveillance</td><td>Follow-up depends on disease and treatment goals</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "The 2025 multisocietal consensus recommends CRS-HIPEC over debulking for operable and resectable PMP. Debulking may still have a role when the main objective is symptom relief or addressing a specific complication."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 2,
+          "text": "Risks and Complications of CRS-HIPEC"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Possible complications include:"
+        },
+        {
+          "id": "ul_099",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Bleeding, wound infection, intra-abdominal infection",
+            "Bowel leakage, anastomotic leakage, intestinal obstruction",
+            "Delayed return of bowel function; need for further surgery; blood clots",
+            "Kidney injury, reduced blood counts, electrolyte disturbances",
+            "Nausea, liver-related complications, bone marrow suppression",
+            "Pneumonia, cardiac complications, malnutrition, prolonged intensive care",
+            "Rarely, life-threatening complications"
+          ]
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Some HIPEC drugs may affect the kidneys. Bowel resection may be required if tumour deposits affect the intestine. A stoma is not required in every case but may be necessary depending on resections and reconstruction. Sudden severe pain, fever, collapse, inability to pass urine, or rapidly worsening vomiting after discharge require a **local emergency department**."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 2,
+          "text": "Recovery After CRS-HIPEC for PMP"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "Recovery depends on the extent of cytoreduction, organs removed, HIPEC protocol and general health. Immediate monitoring covers vital signs, kidney function, urine output, blood counts, fluid and electrolyte balance, pain, bowel function, respiratory status and infection. Some patients need intensive care."
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "GAF planning for [CRS with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) typically quotes **10–21 nights**. Discharge depends on stable vitals, pain control, bowel recovery, nutrition, safe mobility and absence of uncontrolled complications."
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "Nutrition often progresses from fluids or nutritional support to oral food as bowel function returns. Early mobilisation is usually encouraged when medically safe. Long-term follow-up may include examination, tumour markers, CT or MRI, nutritional assessment, pathology review, recurrence monitoring and further treatment planning. PMP can recur even after extensive surgery."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Pseudomyxoma Peritonei Come Back After HIPEC?"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Yes. Recurrence risk depends on tumour grade, histological subtype, completeness of cytoreduction, initial disease burden, distribution of deposits, aggressive cellular features and individual tumour biology."
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "If PMP recurs, options may include repeat specialist surgical assessment, repeat CRS-HIPEC in carefully selected patients, systemic treatment in selected high-grade or unresectable cases, symptom-directed surgery, supportive and nutritional care, or surveillance. Repeat CRS-HIPEC is not suitable for everyone."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is the Role of Chemotherapy in PMP?"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Many low-grade mucinous appendiceal tumours and PMP cases respond poorly to conventional systemic chemotherapy. For suitable resectable disease, CRS-HIPEC is generally the principal approach. Systemic chemotherapy may be considered for high-grade, unresectable or recurrent disease — see [chemotherapy in India](/treatments/chemotherapy-in-india) (**$1,500–$8,000+** planning). How colon-cancer systemic pathways are planned is covered in [colon cancer chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india)."
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "Preoperative systemic treatment may be considered in selected high-grade cases; it is not routinely required for every PMP patient. HIPEC is not the same as systemic chemotherapy — one is delivered into the abdomen during surgery; the other circulates through the bloodstream."
+        },
+        {
+          "id": "h_111",
+          "type": "heading",
+          "level": 2,
+          "text": "Pseudomyxoma Peritonei Treatment in India"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "India is considered by international patients seeking specialist cancer diagnosis, complex abdominal surgery and peritoneal surface malignancy treatment — including patients from Tanzania, Kenya, Ethiopia, Uganda, Zambia, Iraq and other countries. The most important consideration is access to a team experienced in appendiceal mucinous tumours and peritoneal surface malignancies. A hospital offering general cancer surgery may not have the experience or infrastructure required for complex CRS-HIPEC."
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "Ideal assessment involves a multidisciplinary team: surgical oncologist experienced in peritoneal surface malignancies, medical oncologist, radiologist, gastrointestinal pathologist, anaesthesiologist, critical care specialist, clinical nutritionist and other specialists when required. Selected ovarian peritoneal pathways are covered on [ovarian cancer treatment in India](/treatments/ovarian-cancer-treatment-in-india); colorectal peritoneal pathways on [colon cancer treatment in India](/treatments/colon-cancer-treatment-in-india)."
+        },
+        {
+          "id": "h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "Questions to ask an Indian hospital before choosing CRS-HIPEC"
+        },
+        {
+          "id": "ol_115",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Does the hospital have a dedicated peritoneal surface malignancy programme?",
+            "How frequently does the team perform CRS-HIPEC for PMP?",
+            "Who will lead the cytoreductive surgery?",
+            "Is the pathology reviewed by a specialist?",
+            "How will the team assess PCI and resectability?",
+            "What is the plan if complete cytoreduction is not possible?",
+            "What intensive care support is available?",
+            "What is the expected hospital stay?",
+            "What complications may require additional treatment?",
+            "What follow-up will be required after returning home?"
+          ]
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "Before travelling, share original pathology, appendectomy or surgical histopathology, operation notes, CT or MRI reports, DICOM imaging files, tumour markers (CEA, CA 19-9, CA-125 if tested), previous chemotherapy records, recent blood tests, kidney and liver function, current medications and discharge summaries. Patients should not travel assuming CRS-HIPEC will definitely be performed."
+        },
+        {
+          "id": "btn_117",
+          "type": "button",
+          "label": "Request a specialist PMP review before travel",
+          "href": "/consult?treatment=Pseudomyxoma%20Peritonei%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with DICOM links and pathology PDF](https://wa.me/919044346292?text=I%20am%20an%20international%20patient%20exploring%20PMP%20%2F%20CRS-HIPEC%20treatment%20in%20India.%20I%20can%20share%20DICOM%20imaging%2C%20pathology%20and%20previous%20operative%20notes%20for%20a%20preliminary%20specialist%20review.)"
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 2,
+          "text": "Pseudomyxoma Peritonei Surgery Cost in India"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "There is no single price for every patient because the operation can range from a complex but relatively limited cytoreduction to extensive multi-organ surgery. GAF Healthcare publishes partner planning ranges from the named cost sheets — not hospital quotations."
+        },
+        {
+          "id": "html_121",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Named pathway</th><th>GAF planning range in India</th><th>Typical stay</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Cytoreductive surgery with HIPEC</a></td><td>$18,000–$40,000</td><td>10–21 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery\">Cytoreductive surgery</a></td><td>$10,000–$24,000</td><td>7–14 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/PIPAC\">PIPAC</a></td><td>$7,000–$16,000</td><td>2–5 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Ovarian-Cancer-Cytoreductive-Surgery\">Ovarian cancer cytoreductive surgery</a></td><td>$8,000–$20,000</td><td>6–12 nights</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Intraperitoneal-Chemotherapy\">Intraperitoneal chemotherapy</a> (catheter/port pathway)</td><td>$5,000–$14,000</td><td>Tied to cytoreduction or IP ports</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Systemic chemotherapy</a></td><td>$1,500–$8,000+</td><td>Outpatient cycles · 3–6 months typical</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "City sheets for the same CRS-HIPEC pathway include [Delhi NCR](/costs/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Mumbai](/costs/India/Mumbai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Bengaluru](/costs/India/Bengaluru/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Chennai](/costs/India/Chennai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) and [Hyderabad](/costs/India/Hyderabad/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC). The national planning band remains **$18,000–$40,000**; city pages help compare teams rather than invent different tariffs."
+        },
+        {
+          "id": "html_123",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>City</th><th>CRS-HIPEC doctor list</th><th>GAF planning range</th></tr></thead><tbody><tr><td>Delhi NCR</td><td><a href=\"/doctors/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr><tr><td>Mumbai</td><td><a href=\"/doctors/India/Mumbai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr><tr><td>Bengaluru</td><td><a href=\"/doctors/India/Bengaluru/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr><tr><td>Chennai</td><td><a href=\"/doctors/India/Chennai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr><tr><td>Hyderabad</td><td><a href=\"/doctors/India/Hyderabad/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "Final estimates may depend on:"
+        },
+        {
+          "id": "ul_125",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Hospital and room category; surgeon and specialist team fees",
+            "Preoperative investigations, pathology review and imaging",
+            "Extent of peritoneal disease, PCI and disease distribution",
+            "Number of organs or tissues requiring removal; bowel resection and reconstruction",
+            "HIPEC drugs and perfusion equipment; anaesthesia; intensive care",
+            "Length of hospital stay; blood products; complication management; nutritional support; follow-up investigations"
+          ]
+        },
+        {
+          "id": "html_126",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Cost component</th><th>What to clarify</th></tr></thead><tbody><tr><td>Specialist consultation</td><td>Surgical oncology and medical oncology opinions</td></tr><tr><td>Diagnostic investigations</td><td>CT, MRI, blood tests and other staging</td></tr><tr><td>Pathology review</td><td>Confirmation of tumour type and grade</td></tr><tr><td>Surgery</td><td>Cytoreduction and any planned organ resections</td></tr><tr><td>HIPEC</td><td>Chemotherapy drugs and perfusion charges</td></tr><tr><td>Anaesthesia</td><td>Operating theatre and anaesthesia services</td></tr><tr><td>Intensive care</td><td>Expected monitoring and ICU charges</td></tr><tr><td>Hospital stay</td><td>Room category and estimated duration</td></tr><tr><td>Complication management</td><td>Whether additional treatment is excluded</td></tr><tr><td>Follow-up</td><td>Post-discharge review and investigations</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "A preliminary estimate may be possible after medical-record review, but the final cost may change after imaging review, pathology confirmation and assessment of disease distribution. **Important:** The decision to undergo CRS-HIPEC should not be based on cost alone. Experience of the treating team, likelihood of complete cytoreduction, quality of postoperative care and individual clinical suitability matter more."
+        },
+        {
+          "id": "btn_128",
+          "type": "button",
+          "label": "Request an itemised CRS-HIPEC cost estimate",
+          "href": "/consult?treatment=CRS-HIPEC%20Cost%20Estimate"
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a written planning estimate](https://wa.me/919044346292?text=Please%20help%20me%20request%20an%20itemised%20CRS-HIPEC%20cost%20estimate%20in%20India%20after%20reviewing%20my%20PMP%20pathology%20and%20scans.%20I%20understand%20GAF%20ranges%20are%20planning%20figures%2C%20not%20quotations.)"
+        },
+        {
+          "id": "h_130",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help International Patients Explore PMP Treatment in India"
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "GAF Healthcare assists international patients exploring medical treatment in India. For suspected or confirmed pseudomyxoma peritonei, the first step is to organise medical information for review by an appropriate specialist or hospital team."
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "Depending on requirements, coordination may include:"
+        },
+        {
+          "id": "ul_133",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Collection and organisation of medical reports",
+            "Sharing available records with the selected hospital",
+            "Coordination of specialist consultation requests",
+            "Assistance with treatment-plan and cost-estimate communication",
+            "Coordination of appointments, travel and accommodation planning",
+            "Assistance with hospital admission coordination",
+            "Communication support during the treatment journey",
+            "Coordination of follow-up arrangements"
+          ]
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "GAF Healthcare does not independently diagnose PMP, determine CRS-HIPEC eligibility, prescribe treatment or guarantee clinical outcomes. These decisions remain with the treating doctors and hospital team."
+        },
+        {
+          "id": "h_135",
+          "type": "heading",
+          "level": 2,
+          "text": "Questions to Ask Before CRS-HIPEC for PMP"
+        },
+        {
+          "id": "ol_136",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is the exact appendiceal tumour diagnosis?",
+            "Is the PMP low-grade or high-grade? Are there signet-ring cells?",
+            "Has the pathology been reviewed by a specialist?",
+            "What is the estimated PCI score and which structures are involved?",
+            "Is complete cytoreduction likely to be achievable?",
+            "Will bowel resection be required? Could a stoma be necessary?",
+            "Which HIPEC drug regimen is proposed and why?",
+            "What are the major risks in this patient's case?",
+            "How long might the operation take, and how long may ICU be required?",
+            "What is the expected hospital stay and nutritional support?",
+            "What is the possibility of recurrence and what follow-up is needed?",
+            "What are the alternatives if surgery is not possible? Is a second opinion advisable?"
+          ]
+        },
+        {
+          "id": "h_137",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions About Pseudomyxoma Peritonei"
+        },
+        {
+          "id": "h_138",
+          "type": "heading",
+          "level": 3,
+          "text": "What is pseudomyxoma peritonei?"
+        },
+        {
+          "id": "p_139",
+          "type": "paragraph",
+          "text": "Pseudomyxoma peritonei is a rare condition in which mucin and mucin-producing tumour cells accumulate inside the abdominal cavity. It most commonly originates from an appendiceal mucinous neoplasm and can spread across peritoneal surfaces, causing progressive abdominal swelling and digestive difficulties."
+        },
+        {
+          "id": "h_140",
+          "type": "heading",
+          "level": 3,
+          "text": "Is pseudomyxoma peritonei a type of cancer?"
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "PMP is associated with mucin-producing tumours, most often arising from the appendix. Behaviour varies from low-grade disease to more aggressive high-grade forms. The pathology report is essential for classification and treatment planning."
+        },
+        {
+          "id": "h_142",
+          "type": "heading",
+          "level": 3,
+          "text": "What causes pseudomyxoma peritonei?"
+        },
+        {
+          "id": "p_143",
+          "type": "paragraph",
+          "text": "The most common cause is a mucin-producing tumour of the appendix. If the appendix ruptures or perforates, mucin and tumour cells may escape into the abdominal cavity, implant on peritoneal surfaces and continue producing mucin."
+        },
+        {
+          "id": "h_144",
+          "type": "heading",
+          "level": 3,
+          "text": "What are the early symptoms of PMP?"
+        },
+        {
+          "id": "p_145",
+          "type": "paragraph",
+          "text": "Early symptoms may include abdominal bloating, increasing abdominal size, discomfort, changes in bowel habits, constipation, loss of appetite and early fullness after meals. Some patients have few symptoms and the condition may be discovered incidentally."
+        },
+        {
+          "id": "h_146",
+          "type": "heading",
+          "level": 3,
+          "text": "Why is PMP called jelly belly?"
+        },
+        {
+          "id": "p_147",
+          "type": "paragraph",
+          "text": "The term refers to the thick, jelly-like mucin that accumulates inside the abdominal cavity. This mucin can occupy space around abdominal organs and cause progressive abdominal enlargement."
+        },
+        {
+          "id": "h_148",
+          "type": "heading",
+          "level": 3,
+          "text": "Is pseudomyxoma peritonei the same as peritoneal carcinomatosis?"
+        },
+        {
+          "id": "p_149",
+          "type": "paragraph",
+          "text": "They are related but not identical. Peritoneal carcinomatosis describes cancer spread across peritoneal surfaces. PMP is a specific mucin-producing peritoneal condition, most commonly originating from an appendiceal mucinous neoplasm."
+        },
+        {
+          "id": "h_150",
+          "type": "heading",
+          "level": 3,
+          "text": "What is LAMN?"
+        },
+        {
+          "id": "p_151",
+          "type": "paragraph",
+          "text": "LAMN stands for low-grade appendiceal mucinous neoplasm. It is a mucin-producing tumour of the appendix with low-grade cellular features. If it ruptures or spreads outside the appendix, it can cause peritoneal mucin accumulation and PMP."
+        },
+        {
+          "id": "h_152",
+          "type": "heading",
+          "level": 3,
+          "text": "Is LAMN always treated with HIPEC?"
+        },
+        {
+          "id": "p_153",
+          "type": "paragraph",
+          "text": "No. Management depends on whether the tumour is confined to the appendix, whether the appendix ruptured, whether mucin is present outside the appendix, whether the mucin contains tumour cells and how widely the disease has spread. Some patients need surveillance or further local surgery rather than CRS-HIPEC."
+        },
+        {
+          "id": "h_154",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the difference between LAMN and HAMN?"
+        },
+        {
+          "id": "p_155",
+          "type": "paragraph",
+          "text": "LAMN is a low-grade appendiceal mucinous neoplasm, while HAMN is a high-grade appendiceal mucinous neoplasm. Their microscopic features and potential behaviour differ. Pathology classification helps determine treatment and follow-up."
+        },
+        {
+          "id": "h_156",
+          "type": "heading",
+          "level": 3,
+          "text": "How is pseudomyxoma peritonei diagnosed?"
+        },
+        {
+          "id": "p_157",
+          "type": "paragraph",
+          "text": "Diagnosis may involve clinical assessment, contrast-enhanced CT, selected MRI, tumour marker tests, colonoscopy, biopsy and pathology review. Diagnostic laparoscopy may be used in selected patients to assess disease extent and resectability."
+        },
+        {
+          "id": "h_158",
+          "type": "heading",
+          "level": 3,
+          "text": "Which tumour markers are used in PMP?"
+        },
+        {
+          "id": "p_159",
+          "type": "paragraph",
+          "text": "CEA and CA 19-9 are commonly assessed as baseline markers. CA-125 may also be considered. These tests help with assessment and follow-up but cannot independently confirm or exclude PMP."
+        },
+        {
+          "id": "h_160",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the PCI score in pseudomyxoma peritonei?"
+        },
+        {
+          "id": "p_161",
+          "type": "paragraph",
+          "text": "The Peritoneal Cancer Index measures disease distribution across 13 abdominal regions. Each region receives a lesion-size score, producing a total between 0 and 39. It helps surgeons assess disease burden and the feasibility of complete cytoreduction."
+        },
+        {
+          "id": "h_162",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a high PCI score a reason not to undergo HIPEC?"
+        },
+        {
+          "id": "p_163",
+          "type": "paragraph",
+          "text": "A high PCI can make complete cytoreduction more difficult, but there is no universal cut-off for every PMP patient. Disease distribution — especially small bowel and mesenteric involvement — matters. The decision must be made by an experienced peritoneal malignancy team."
+        },
+        {
+          "id": "h_164",
+          "type": "heading",
+          "level": 3,
+          "text": "What is CRS-HIPEC for pseudomyxoma peritonei?"
+        },
+        {
+          "id": "p_165",
+          "type": "paragraph",
+          "text": "CRS-HIPEC combines cytoreductive surgery with heated intraperitoneal chemotherapy. CRS removes visible tumour deposits and affected peritoneal tissue. HIPEC circulates heated chemotherapy inside the abdomen to target microscopic residual tumour cells. See HIPEC surgery in India for the coordinated pathway."
+        },
+        {
+          "id": "h_166",
+          "type": "heading",
+          "level": 3,
+          "text": "Is CRS-HIPEC the standard treatment for PMP?"
+        },
+        {
+          "id": "p_167",
+          "type": "paragraph",
+          "text": "For operable and resectable PMP, CRS-HIPEC is the established specialist approach. The 2025 multisocietal consensus strongly recommends it over debulking surgery in suitable patients. It is not appropriate for everyone, and careful assessment is essential."
+        },
+        {
+          "id": "h_168",
+          "type": "heading",
+          "level": 3,
+          "text": "Can PMP be treated without surgery?"
+        },
+        {
+          "id": "p_169",
+          "type": "paragraph",
+          "text": "Some patients may be managed with surveillance, systemic treatment, symptom-directed procedures or supportive care depending on disease and fitness. For suitable patients with resectable PMP, CRS-HIPEC remains the principal specialist approach."
+        },
+        {
+          "id": "h_170",
+          "type": "heading",
+          "level": 3,
+          "text": "Which chemotherapy drugs are used in HIPEC for PMP?"
+        },
+        {
+          "id": "p_171",
+          "type": "paragraph",
+          "text": "Protocols may use mitomycin C, oxaliplatin or selected cisplatin-based combinations. Drug, dose, temperature and duration depend on institutional protocol and patient factors. The treating surgeon should explain the proposed regimen."
+        },
+        {
+          "id": "h_172",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does CRS-HIPEC surgery take?"
+        },
+        {
+          "id": "p_173",
+          "type": "paragraph",
+          "text": "The operation may take several hours depending on disease extent and structures requiring removal. Extensive peritonectomy, bowel surgery and reconstruction increase duration. The surgeon can estimate after reviewing scans and clinical information."
+        },
+        {
+          "id": "h_174",
+          "type": "heading",
+          "level": 3,
+          "text": "Will every PMP patient need a stoma after surgery?"
+        },
+        {
+          "id": "p_175",
+          "type": "paragraph",
+          "text": "No. A stoma is not required in every CRS-HIPEC operation. It may be considered when bowel resection or reconstruction creates a specific clinical need. The possibility should be discussed before surgery."
+        },
+        {
+          "id": "h_176",
+          "type": "heading",
+          "level": 3,
+          "text": "Can pseudomyxoma peritonei come back after HIPEC?"
+        },
+        {
+          "id": "p_177",
+          "type": "paragraph",
+          "text": "Yes. Recurrence is possible even after complete cytoreduction and HIPEC. Risk depends on tumour grade, histology, disease burden, completeness of cytoreduction and tumour biology. Long-term follow-up is important."
+        },
+        {
+          "id": "h_178",
+          "type": "heading",
+          "level": 3,
+          "text": "Can CRS-HIPEC be repeated if PMP returns?"
+        },
+        {
+          "id": "p_179",
+          "type": "paragraph",
+          "text": "Repeat CRS-HIPEC may be considered in carefully selected patients. The decision depends on location and extent of recurrence, previous surgery, remaining organ function, overall health and the likelihood of meaningful cytoreduction again."
+        },
+        {
+          "id": "h_180",
+          "type": "heading",
+          "level": 3,
+          "text": "Is chemotherapy effective for pseudomyxoma peritonei?"
+        },
+        {
+          "id": "p_181",
+          "type": "paragraph",
+          "text": "Response to conventional systemic chemotherapy can be limited, particularly in low-grade PMP. Systemic treatment may be considered in selected high-grade, unresectable or recurrent cases. The plan depends on pathology and clinical situation. Named systemic lists sit on chemotherapy in India."
+        },
+        {
+          "id": "h_182",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the cost of CRS-HIPEC for PMP in India?"
+        },
+        {
+          "id": "p_183",
+          "type": "paragraph",
+          "text": "GAF Healthcare planning for cytoreductive surgery with HIPEC is $18,000–$40,000, typically 10–21 nights. Cytoreductive surgery alone is $10,000–$24,000 (7–14 nights). Final hospital quotations depend on disease extent, organ resections, ICU stay and complications."
+        },
+        {
+          "id": "h_184",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients travel to India for PMP treatment?"
+        },
+        {
+          "id": "p_185",
+          "type": "paragraph",
+          "text": "Yes. International patients may seek specialist assessment in India. Share pathology reports, scans (preferably DICOM), previous surgical records and tumour marker results before travelling so the receiving team can advise on next steps."
+        },
+        {
+          "id": "h_186",
+          "type": "heading",
+          "level": 3,
+          "text": "Should patients travel to India specifically for HIPEC?"
+        },
+        {
+          "id": "p_187",
+          "type": "paragraph",
+          "text": "Patients should first obtain a specialist opinion rather than assuming HIPEC will be performed. The treating team must confirm diagnosis, disease extent, operability and expected benefits. Further investigations or a different approach may be recommended."
+        },
+        {
+          "id": "h_188",
+          "type": "heading",
+          "level": 3,
+          "text": "How can GAF Healthcare help patients seeking PMP treatment in India?"
+        },
+        {
+          "id": "p_189",
+          "type": "paragraph",
+          "text": "GAF Healthcare can assist with organising medical reports, coordinating specialist consultations, communicating treatment estimates and planning travel and hospital arrangements. Diagnosis, treatment selection and CRS-HIPEC eligibility are determined by the treating medical team."
+        },
+        {
+          "id": "h_190",
+          "type": "heading",
+          "level": 3,
+          "text": "Does age alone rule out CRS-HIPEC?"
+        },
+        {
+          "id": "p_191",
+          "type": "paragraph",
+          "text": "Age alone does not automatically rule out CRS-HIPEC. Functional status, frailty, heart and lung health, kidney function and nutritional condition matter more than chronological age."
+        },
+        {
+          "id": "h_192",
+          "type": "heading",
+          "level": 3,
+          "text": "Can CRS-HIPEC affect kidney function?"
+        },
+        {
+          "id": "p_193",
+          "type": "paragraph",
+          "text": "Yes. Some HIPEC drugs may affect the kidneys. Risk depends on the drug, dose, baseline kidney health, hydration and other medical factors. Kidney function is assessed before surgery and monitored afterwards."
+        },
+        {
+          "id": "h_194",
+          "type": "heading",
+          "level": 2,
+          "text": "Key Takeaways"
+        },
+        {
+          "id": "ul_195",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Pseudomyxoma peritonei is a rare mucin-producing peritoneal condition that most commonly originates from an appendiceal tumour.",
+            "It can cause progressive abdominal swelling, digestive difficulties and bowel obstruction.",
+            "Tumour grade and histological classification are essential for treatment planning.",
+            "CT imaging, pathology review and selected laparoscopic assessment help establish disease extent.",
+            "PCI helps surgeons assess peritoneal disease distribution, but no single score determines eligibility for every patient.",
+            "CRS-HIPEC is the established specialist treatment for suitable patients with operable and resectable PMP.",
+            "The 2025 multisocietal consensus recommends CRS-HIPEC over debulking surgery for suitable patients.",
+            "GAF planning for CRS with HIPEC is $18,000–$40,000 (typically 10–21 nights).",
+            "PMP can recur, making long-term surveillance essential.",
+            "International patients exploring treatment in India should obtain a specialist review before travelling or committing to surgery."
+          ]
+        },
+        {
+          "id": "h_196",
+          "type": "heading",
+          "level": 2,
+          "text": "Top Medical Sources and References"
+        },
+        {
+          "id": "p_197",
+          "type": "paragraph",
+          "text": "1. [Multisocietal Consensus on CRS and HIPEC for Pseudomyxoma Peritonei (2025)](https://pubmed.ncbi.nlm.nih.gov/40817850/) — CRS-HIPEC over debulking for resectable PMP."
+        },
+        {
+          "id": "p_198",
+          "type": "paragraph",
+          "text": "2. [INDEPSO-ISPSM Consensus on Mucinous Appendiceal Neoplasms and Pseudomyxoma Peritonei (2025)](https://pubmed.ncbi.nlm.nih.gov/41415773/) — Indian guidance on appendiceal mucinous disease and PMP."
+        },
+        {
+          "id": "p_199",
+          "type": "paragraph",
+          "text": "3. [PSOGI/EURACAN Clinical Practice Guidelines — Appendiceal Tumours and Pseudomyxoma Peritonei (2021)](https://doi.org/10.1016/j.ejso.2020.02.012) — European practice guidance."
+        },
+        {
+          "id": "p_200",
+          "type": "paragraph",
+          "text": "4. [Consensus Guideline for the Management of Appendiceal Tumors, Part 2: Appendiceal Tumors with Peritoneal Involvement](https://acsjournals.onlinelibrary.wiley.com/doi/full/10.1002/cncr.35874) — peritoneal involvement guidance."
+        },
+        {
+          "id": "p_201",
+          "type": "paragraph",
+          "text": "5. [The 2022 PSOGI International Consensus on HIPEC Regimens for Pseudomyxoma Peritonei](https://pubmed.ncbi.nlm.nih.gov/39008204/) — HIPEC regimen consensus."
+        },
+        {
+          "id": "p_202",
+          "type": "paragraph",
+          "text": "6. [German S2k Guideline on Low-Grade Appendiceal Mucinous Neoplasms (2025)](https://pubmed.ncbi.nlm.nih.gov/40267588/) — LAMN diagnostics, treatment and surveillance."
+        },
+        {
+          "id": "p_203",
+          "type": "paragraph",
+          "text": "7. [GAF Healthcare CRS with HIPEC cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) — indicative USD planning range $18,000–$40,000; typically 10–21 nights."
+        },
+        {
+          "id": "p_204",
+          "type": "paragraph",
+          "text": "**Last reviewed against the cited sources: November 2026.**"
+        },
+        {
+          "id": "h_205",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Reading on GAF Healthcare"
+        },
+        {
+          "id": "p_206",
+          "type": "paragraph",
+          "text": "Explore related published pages for peritoneal disease, HIPEC and neighbouring pathways:"
+        },
+        {
+          "id": "ul_207",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[HIPEC Surgery in India](/treatments/hipec-surgery-in-india)",
+            "[Intraperitoneal Chemotherapy in India](/treatments/intraperitoneal-chemotherapy-in-india)",
+            "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india)",
+            "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india)",
+            "[Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india)",
+            "[Ovarian Cancer Treatment in India](/treatments/ovarian-cancer-treatment-in-india)",
+            "[Chemotherapy in India](/treatments/chemotherapy-in-india)",
+            "[Cytoreductive surgery with HIPEC — cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC)",
+            "[Cytoreductive surgery — cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery)",
+            "[PIPAC — cost sheet](/costs/India/Surgical-Oncology/PIPAC)"
+          ]
+        },
+        {
+          "id": "h_208",
+          "type": "heading",
+          "level": 2,
+          "text": "Explore Specialist PMP Treatment in India"
+        },
+        {
+          "id": "p_209",
+          "type": "paragraph",
+          "text": "Pseudomyxoma peritonei requires careful diagnosis and specialist treatment planning. For suitable patients, CRS-HIPEC can offer an important option, but the decision depends on tumour grade, disease distribution, resectability and overall health."
+        },
+        {
+          "id": "p_210",
+          "type": "paragraph",
+          "text": "GAF Healthcare assists international patients exploring specialist cancer treatment in India by coordinating medical records, hospital consultations and treatment-related arrangements."
+        },
+        {
+          "id": "btn_211",
+          "type": "button",
+          "label": "Contact GAF Healthcare for a specialist consultation",
+          "href": "/consult?treatment=Pseudomyxoma%20Peritonei%20Treatment%20in%20India"
+        },
+        {
+          "id": "p_212",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 to start a PMP record review](https://wa.me/919044346292?text=I%20would%20like%20GAF%20Healthcare%20to%20coordinate%20a%20specialist%20consultation%20for%20pseudomyxoma%20peritonei%20%2F%20CRS-HIPEC%20in%20India.%20I%20can%20share%20my%20medical%20records.)"
+        },
+        {
+          "id": "h_213",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_214",
+          "type": "paragraph",
+          "text": "Share pathology, DICOM imaging, previous operative notes, tumour markers and a preferred travel window. A coordinator can introduce a [surgical oncology](/doctors/India/Surgical-Oncology) team experienced with CRS-HIPEC in [Delhi NCR](/doctors/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) or [Mumbai](/doctors/India/Mumbai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), then help collect an itemised quotation covering surgery, HIPEC drugs, ICU and planned stay."
+        },
+        {
+          "id": "btn_215",
+          "type": "button",
+          "label": "Share records for a peritoneal oncology review",
+          "href": "/consult?treatment=CRS-HIPEC%20for%20Pseudomyxoma%20Peritonei"
+        },
+        {
+          "id": "h_216",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_217",
+          "type": "paragraph",
+          "text": "This article is for educational purposes only and does not replace a medical consultation, diagnosis or individualised treatment advice. CRS-HIPEC is a complex operation with significant risks. Its suitability must be determined by a qualified multidisciplinary team after reviewing the patient's complete medical information. Cost figures are indicative planning ranges and can change without notice. Emergency symptoms belong in a local emergency department."
+        }
+      ]
+    },
     {
       "id": "art_best_pediatric_hospitals_india",
       "slug": "best-hospitals-pediatric-heart-surgery-india",
