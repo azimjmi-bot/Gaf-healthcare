@@ -134,7 +134,8 @@
     "peritoneal cancer",
     "appendix cancer",
     "appendiceal cancer",
-    "peritoneal metastases"
+    "peritoneal metastases",
+    "systemic chemotherapy"
   ],
   "media": [
     {
@@ -2355,9 +2356,1219 @@
       "name": "appendix-pci-assessment.webp",
       "alt": "Unlabeled diagram of abdominal regions used to estimate peritoneal disease burden",
       "addedAt": "2026-11-11T10:30:00.000Z"
+    },
+    {
+      "id": "media_hipec_vs_chemo_compare_webp",
+      "url": "/uploads/articles/hipec-vs-chemo-compare.webp",
+      "name": "hipec-vs-chemo-compare.webp",
+      "alt": "Canva-style unlabeled illustration of a patient considering treatment options beside an abdominal diagram with delivery icons",
+      "addedAt": "2026-11-11T13:15:00.000Z"
+    },
+    {
+      "id": "media_hipec_vs_chemo_systemic_webp",
+      "url": "/uploads/articles/hipec-vs-chemo-systemic.webp",
+      "name": "hipec-vs-chemo-systemic.webp",
+      "alt": "Canva-style unlabeled illustration of systemic chemotherapy circulating through the body from an intravenous source",
+      "addedAt": "2026-11-11T13:15:00.000Z"
+    },
+    {
+      "id": "media_hipec_vs_chemo_hipec_webp",
+      "url": "/uploads/articles/hipec-vs-chemo-hipec.webp",
+      "name": "hipec-vs-chemo-hipec.webp",
+      "alt": "Two-panel unlabeled Canva-style diagram of cytoreductive tumour removal and heated intraperitoneal chemotherapy perfusion",
+      "addedAt": "2026-11-11T13:15:00.000Z"
+    },
+    {
+      "id": "media_hipec_vs_chemo_decision_webp",
+      "url": "/uploads/articles/hipec-vs-chemo-decision.webp",
+      "name": "hipec-vs-chemo-decision.webp",
+      "alt": "Canva-style unlabeled illustration of peritoneal disease scoring regions with decision icons for scans, fitness and treatment choice",
+      "addedAt": "2026-11-11T13:15:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_hipec_vs_conventional_chemotherapy",
+      "slug": "hipec-vs-conventional-chemotherapy",
+      "title": "HIPEC vs Conventional Chemotherapy: What Is the Difference, Which Treatment Is Better and When Is Each Used in India?",
+      "excerpt": "HIPEC and conventional chemotherapy both use cancer-killing medicines, but they work differently. Conventional chemotherapy travels through the bloodstream to treat cancer throughout the body. HIPEC delivers heated chemotherapy directly into the abdomen during surgery, mainly for selected cancers that have spread to the lining of the abdomen. This guide explains the differences, when each treatment may be considered, and what international patients should know about receiving treatment in India.",
+      "date": "11 November 2026",
+      "publishedAt": "2026-11-11T13:15:00.000Z",
+      "updatedAt": "2026-11-11T13:15:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "HIPEC",
+        "chemotherapy",
+        "CRS-HIPEC",
+        "peritoneal metastases",
+        "systemic chemotherapy",
+        "India"
+      ],
+      "image": "/uploads/articles/hipec-vs-chemo-compare.webp",
+      "imageAlt": "Canva-style unlabeled illustration of a patient considering treatment options beside an abdominal diagram with delivery icons",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "HIPEC vs Chemotherapy: Differences, Benefits, Risks and Treatment in India",
+      "seoDescription": "Understand the difference between HIPEC and conventional chemotherapy, how each treatment works, when doctors recommend them, their risks, recovery and treatment costs in India.",
+      "canonical": "https://gaf.healthcare/blogs/hipec-vs-conventional-chemotherapy",
+      "ogImage": "/uploads/articles/hipec-vs-chemo-compare.webp",
+      "allowIndex": true,
+      "keywords": [
+        "HIPEC vs chemotherapy",
+        "HIPEC vs conventional chemotherapy",
+        "Difference between HIPEC and chemotherapy",
+        "Heated chemotherapy vs regular chemotherapy",
+        "HIPEC surgery in India",
+        "Chemotherapy for peritoneal cancer",
+        "CRS HIPEC treatment",
+        "Systemic chemotherapy for peritoneal metastases",
+        "HIPEC procedure and recovery",
+        "HIPEC cost in India",
+        "Peritoneal cancer treatment in India"
+      ],
+      "relatedLinks": [
+        {
+          "label": "HIPEC Surgery in India",
+          "href": "/treatments/hipec-surgery-in-india"
+        },
+        {
+          "label": "What Is HIPEC Surgery?",
+          "href": "/blogs/what-is-hipec-surgery"
+        },
+        {
+          "label": "Chemotherapy in India",
+          "href": "/treatments/chemotherapy-in-india"
+        },
+        {
+          "label": "Intraperitoneal Chemotherapy in India",
+          "href": "/treatments/intraperitoneal-chemotherapy-in-india"
+        },
+        {
+          "label": "Peritoneal Carcinomatosis",
+          "href": "/blogs/peritoneal-carcinomatosis"
+        },
+        {
+          "label": "Peritoneal Metastases Treatment",
+          "href": "/blogs/peritoneal-metastases-treatment"
+        },
+        {
+          "label": "Peritoneal Cancer Index (PCI)",
+          "href": "/blogs/peritoneal-cancer-index-pci"
+        },
+        {
+          "label": "Pseudomyxoma Peritonei Treatment in India",
+          "href": "/blogs/pseudomyxoma-peritonei-treatment"
+        },
+        {
+          "label": "Appendix Cancer Treatment and HIPEC in India",
+          "href": "/blogs/appendix-cancer-treatment-hipec-india"
+        },
+        {
+          "label": "HIPEC Surgery for Stomach Cancer",
+          "href": "/blogs/hipec-surgery-for-stomach-cancer"
+        },
+        {
+          "label": "Colon Cancer Treatment in India",
+          "href": "/treatments/colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "Ovarian Cancer Treatment in India",
+          "href": "/treatments/ovarian-cancer-treatment-in-india"
+        },
+        {
+          "label": "Stage 4 Colon Cancer Treatment in India",
+          "href": "/blogs/stage-4-colon-cancer-treatment-in-india"
+        },
+        {
+          "label": "CRS with HIPEC — cost sheet",
+          "href": "/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"md-body\"><table><thead><tr><th>Question</th><th>Quick Answer</th></tr></thead><tbody><tr><td><strong>Main difference</strong></td><td>Conventional chemotherapy travels through the bloodstream; HIPEC delivers heated chemotherapy directly into the abdomen during surgery</td></tr><tr><td><strong>Does HIPEC replace chemo?</strong></td><td>No. Many patients need systemic chemotherapy before, after, or instead of CRS-HIPEC</td></tr><tr><td><strong>When HIPEC may be considered</strong></td><td>Selected cancers with peritoneal spread when visible disease can be removed — see <a href=\"/treatments/hipec-surgery-in-india\">HIPEC surgery in India</a></td></tr><tr><td><strong>When systemic chemo is preferred</strong></td><td>Multi-organ spread, unresectable disease, unfit for major surgery, or cancer types that need whole-body treatment — <a href=\"/treatments/chemotherapy-in-india\">chemotherapy in India</a></td></tr><tr><td><strong>GAF CRS + HIPEC planning</strong></td><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">$18,000–$40,000</a>, typically <strong>10–21 nights</strong></td></tr><tr><td><strong>GAF systemic chemotherapy</strong></td><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">$1,500–$8,000+</a> (outpatient cycles · 3–6 months typical)</td></tr><tr><td><strong>Cytoreductive surgery alone</strong></td><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery\">$10,000–$24,000</a>, typically <strong>7–14 nights</strong></td></tr><tr><td><strong>Evidence note</strong></td><td>ASCO does not recommend oxaliplatin-based HIPEC added to CRS for colorectal peritoneal metastases; ovarian and PMP evidence differs</td></tr><tr><td><strong>International patients</strong></td><td>Obtain specialist review before travelling; do not stop prescribed chemotherapy without an oncologist</td></tr></tbody></table></div><p class=\"article-quick-answer__body\"><strong>HIPEC vs conventional chemotherapy</strong> is not a contest with one winner. Systemic chemotherapy treats cancer throughout the body. HIPEC is a local intraperitoneal treatment used with cytoreductive surgery for selected peritoneal disease. GAF planning for <a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">CRS with HIPEC</a> is <strong>$18,000–$40,000</strong> (typically <strong>10–21 nights</strong>). Named systemic lists sit on <a href=\"/costs/India/Medical-Oncology/Chemotherapy\">chemotherapy</a> at <strong>$1,500–$8,000+</strong>. These are partner planning ranges, not hospital quotations.</p><p class=\"article-quick-answer__body\"><strong>Important:</strong> GAF Healthcare does not diagnose cancer or decide whether HIPEC or chemotherapy is appropriate. Treatment decisions remain with the multidisciplinary hospital team.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Both HIPEC and conventional chemotherapy use medicines to destroy cancer cells. The way those medicines reach the cancer is very different."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "**Conventional chemotherapy** usually enters the bloodstream through a drip or tablets and can reach cancer cells in different organs. **HIPEC** is given during an operation: after the surgeon removes as much visible abdominal cancer as possible, heated chemotherapy is circulated directly inside the abdominal cavity."
+        },
+        {
+          "id": "ul_004",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Conventional chemotherapy travels through the bloodstream.",
+            "HIPEC is delivered directly into the abdominal cavity.",
+            "Conventional chemotherapy can treat cancer in different parts of the body.",
+            "HIPEC is designed to target cancer cells on surfaces inside the abdomen."
+          ]
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "HIPEC is not suitable for every cancer patient. It is mainly considered for selected cancers that have spread to the **peritoneum**. The coordinated pathway is [HIPEC surgery in India](/treatments/hipec-surgery-in-india). Named systemic pathways sit on [chemotherapy in India](/treatments/chemotherapy-in-india)."
+        },
+        {
+          "id": "p_006",
+          "type": "paragraph",
+          "text": "GAF Healthcare planning for [cytoreductive surgery with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) is **$18,000–$40,000**, typically **10–21 nights**. Neighbouring [cytoreductive surgery](/costs/India/Surgical-Oncology/Cytoreductive-Surgery) is **$10,000–$24,000** (7–14 nights). Named [systemic chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) planning is **$1,500–$8,000+** (outpatient cycles · 3–6 months typical). Neighbouring [PIPAC](/costs/India/Surgical-Oncology/PIPAC) is **$7,000–$16,000**."
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "International patients comparing [surgical oncologists listing CRS with HIPEC](/doctors/India/Surgical-Oncology) commonly start with [Delhi NCR](/doctors/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Mumbai](/doctors/India/Mumbai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Bengaluru](/doctors/India/Bengaluru/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Chennai](/doctors/India/Chennai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) and [Hyderabad](/doctors/India/Hyderabad/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC). [Medical oncology](/doctors/India/Medical-Oncology) teams coordinate systemic therapy. Partner [surgical-oncology hospitals](/hospitals/India/Surgical-Oncology) in [Delhi NCR](/hospitals/India/Delhi-NCR/Surgical-Oncology), [Mumbai](/hospitals/India/Mumbai/Surgical-Oncology) and [Bengaluru](/hospitals/India/Bengaluru/Surgical-Oncology) are a typical first filter."
+        },
+        {
+          "id": "btn_008",
+          "type": "button",
+          "label": "Ask whether HIPEC or chemotherapy fits my case",
+          "href": "/consult?treatment=HIPEC%20vs%20Chemotherapy"
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with pathology, CT and chemotherapy history](https://wa.me/919044346292?text=Please%20review%20my%20cancer%20pathology%2C%20CT%2FMRI%20and%20chemotherapy%20records%20and%20advise%20whether%20CRS-HIPEC%20or%20systemic%20chemotherapy%20in%20India%20may%20be%20appropriate.)"
+        },
+        {
+          "id": "img_010",
+          "type": "image",
+          "src": "/uploads/articles/hipec-vs-chemo-compare.webp",
+          "alt": "Canva-style unlabeled illustration of a patient considering treatment options beside an abdominal diagram with delivery icons",
+          "caption": "HIPEC and conventional chemotherapy both use cancer medicines, but they reach the disease in different ways."
+        },
+        {
+          "id": "h_011",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Conventional Chemotherapy?"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Conventional chemotherapy uses medicines to kill cancer cells or slow their growth. Most regimens are given through a vein; some medicines are tablets. Because the drug travels in the bloodstream, doctors call it **systemic chemotherapy**."
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "Treatment usually follows cycles — medicine days followed by rest — so the body can recover. The number of cycles depends on cancer type, stage, response and fitness."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 3,
+          "text": "When do doctors recommend conventional chemotherapy?"
+        },
+        {
+          "id": "ul_015",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Before surgery to shrink a tumour (neoadjuvant).",
+            "After surgery to reduce recurrence risk (adjuvant).",
+            "When cancer has spread to other organs.",
+            "When surgery is not possible.",
+            "To slow growth and control symptoms.",
+            "Alongside targeted therapy or immunotherapy when appropriate."
+          ]
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "Medicines and schedules differ by cancer. See [chemotherapy in India](/treatments/chemotherapy-in-india) for the coordinated systemic pathway."
+        },
+        {
+          "id": "img_017",
+          "type": "image",
+          "src": "/uploads/articles/hipec-vs-chemo-systemic.webp",
+          "alt": "Canva-style unlabeled illustration of systemic chemotherapy circulating through the body from an intravenous source",
+          "caption": "Systemic chemotherapy travels through the bloodstream and can reach cancer cells in multiple organs."
+        },
+        {
+          "id": "h_018",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is HIPEC?"
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "HIPEC stands for **Hyperthermic Intraperitoneal Chemotherapy** — heated chemotherapy given directly inside the abdomen during surgery, usually as part of **cytoreductive surgery (CRS) with HIPEC**."
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "During CRS, the surgeon removes visible deposits from the abdominal lining and, where needed, affected tissues or organs. Heated chemotherapy is then circulated so it contacts surfaces where microscopic cells may remain."
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 3,
+          "text": "Why is the chemotherapy heated?"
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "The solution is warmed to a controlled temperature, commonly around **40–42°C**, depending on protocol. Heat may help drug action and tissue penetration. Heating alone does not make HIPEC automatically more effective than systemic chemotherapy."
+        },
+        {
+          "id": "h_023",
+          "type": "heading",
+          "level": 3,
+          "text": "What happens during HIPEC?"
+        },
+        {
+          "id": "ol_024",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "The patient receives general anaesthesia.",
+            "The surgeon examines the extent of abdominal disease.",
+            "Visible deposits are removed when complete or near-complete cytoreduction is realistic.",
+            "Heated chemotherapy is circulated through specialised tubing for a planned period.",
+            "The solution is drained, the abdomen is managed as required, and the operation is completed."
+          ]
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "Exact medicines, temperature and duration vary by cancer and centre. Read [What is HIPEC surgery?](/blogs/what-is-hipec-surgery) and the flagship [HIPEC surgery in India](/treatments/hipec-surgery-in-india) guide."
+        },
+        {
+          "id": "img_026",
+          "type": "image",
+          "src": "/uploads/articles/hipec-vs-chemo-hipec.webp",
+          "alt": "Two-panel unlabeled Canva-style diagram of cytoreductive tumour removal and heated intraperitoneal chemotherapy perfusion",
+          "caption": "CRS removes visible peritoneal deposits; HIPEC circulates heated medicine inside the abdomen afterwards."
+        },
+        {
+          "id": "btn_027",
+          "type": "button",
+          "label": "Ask about CRS-HIPEC in India",
+          "href": "/consult?treatment=CRS-HIPEC%20Assessment"
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 2,
+          "text": "HIPEC vs Conventional Chemotherapy: Key Differences"
+        },
+        {
+          "id": "html_029",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Comparison</th><th>Conventional chemotherapy</th><th>HIPEC</th></tr></thead><tbody><tr><td>Main purpose</td><td>Treats cancer throughout the body</td><td>Targets cancer cells inside the abdomen</td></tr><tr><td>How medicine is delivered</td><td>Usually through a vein or as tablets</td><td>Directly into the abdominal cavity</td></tr><tr><td>Temperature</td><td>Not heated for this purpose</td><td>Heated to a controlled temperature</td></tr><tr><td>Surgery required</td><td>Not always</td><td>Usually part of a major operation</td></tr><tr><td>Treatment duration</td><td>Given in cycles over weeks or months</td><td>Given during the operation</td></tr><tr><td>Main treatment area</td><td>Whole body</td><td>Abdominal cavity</td></tr><tr><td>Cancer location</td><td>Many cancer types and locations</td><td>Selected cancers involving the peritoneum</td></tr><tr><td>Recovery</td><td>Depends on the drugs and cycles</td><td>Recovery from major surgery and chemotherapy exposure</td></tr><tr><td>Side effects</td><td>Can affect the whole body</td><td>Surgical risks plus possible chemotherapy-related effects</td></tr><tr><td>Suitability</td><td>Depends on cancer type and patient condition</td><td>Depends on cancer type, disease spread and whether surgery is possible</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "The treatments are different, but doctors may use them in the same plan. Catheter-based [intraperitoneal chemotherapy](/treatments/intraperitoneal-chemotherapy-in-india) and [PIPAC](/costs/India/Surgical-Oncology/PIPAC) are related but distinct pathways."
+        },
+        {
+          "id": "h_031",
+          "type": "heading",
+          "level": 2,
+          "text": "Does HIPEC Replace Conventional Chemotherapy?"
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "**No.** HIPEC is a local treatment focused on the abdominal cavity. Systemic chemotherapy can reach cancer throughout the body."
+        },
+        {
+          "id": "ul_033",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Some patients receive chemotherapy before surgery to assess response.",
+            "Some undergo surgery first and receive chemotherapy afterwards.",
+            "Some may not need further chemotherapy after surgery.",
+            "Patients with disease outside the abdomen may still need systemic treatment even if HIPEC is discussed for peritoneal disease."
+          ]
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "Do not assume HIPEC is always stronger or better than regular chemotherapy."
+        },
+        {
+          "id": "h_035",
+          "type": "heading",
+          "level": 2,
+          "text": "Can a Patient Receive Both HIPEC and Conventional Chemotherapy?"
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "Yes, in selected multimodal plans. For example, a patient with colorectal cancer and peritoneal metastases may receive systemic chemotherapy first; if disease responds and is resectable, CRS (with or without HIPEC, depending on evidence and protocol) may be assessed. Further systemic therapy may follow."
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "This approach is not suitable for everyone. Decisions depend on tumour behaviour, disease location, resectability and fitness. For colorectal peritoneal disease, also see [colon cancer treatment in India](/treatments/colon-cancer-treatment-in-india) and [stage 4 colon cancer treatment](/blogs/stage-4-colon-cancer-treatment-in-india)."
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 to share a multimodal treatment history](https://wa.me/919044346292?text=I%20have%20received%20systemic%20chemotherapy%20and%20my%20team%20mentioned%20HIPEC.%20Can%20you%20coordinate%20a%20specialist%20review%20in%20India%3F)"
+        },
+        {
+          "id": "h_039",
+          "type": "heading",
+          "level": 2,
+          "text": "Which Cancers Are Treated With HIPEC?"
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "CRS-HIPEC may be considered for selected peritoneal surface malignancies:"
+        },
+        {
+          "id": "h_041",
+          "type": "heading",
+          "level": 3,
+          "text": "Pseudomyxoma peritonei"
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "Usually linked to an appendiceal mucinous tumour. For operable disease, CRS-HIPEC is an established specialist approach — see [pseudomyxoma peritonei treatment](/blogs/pseudomyxoma-peritonei-treatment)."
+        },
+        {
+          "id": "h_043",
+          "type": "heading",
+          "level": 3,
+          "text": "Appendix cancer"
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "Selected patients with peritoneal spread may be considered for CRS-HIPEC depending on type, grade and extent — see [appendix cancer treatment and HIPEC](/blogs/appendix-cancer-treatment-hipec-india)."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 3,
+          "text": "Ovarian cancer"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "HIPEC may be considered for selected women with advanced epithelial ovarian cancer during interval surgery after chemotherapy. Stage, response, kidney function and fitness matter — see [ovarian cancer treatment in India](/treatments/ovarian-cancer-treatment-in-india)."
+        },
+        {
+          "id": "h_047",
+          "type": "heading",
+          "level": 3,
+          "text": "Colorectal cancer"
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "Some patients with disease limited to the peritoneum may be considered for cytoreductive surgery. The **additional** role of HIPEC is more controversial. **ASCO does not recommend adding oxaliplatin-based HIPEC to CRS for colorectal peritoneal metastases.** CRS plus systemic chemotherapy may still be considered when complete cytoreduction is feasible and there is no extra-peritoneal disease."
+        },
+        {
+          "id": "h_049",
+          "type": "heading",
+          "level": 3,
+          "text": "Stomach cancer"
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "Systemic treatment is generally central. CRS-HIPEC is not routine for all patients with peritoneal spread and may be discussed only in carefully selected settings — see [HIPEC surgery for stomach cancer](/blogs/hipec-surgery-for-stomach-cancer)."
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 3,
+          "text": "Peritoneal mesothelioma"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "For selected patients with resectable disease, CRS-HIPEC may be considered at an experienced centre."
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "**Important:** Appearing on this list does not mean every patient with that cancer is eligible for HIPEC."
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 2,
+          "text": "When Is Conventional Chemotherapy Preferred?"
+        },
+        {
+          "id": "ul_055",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Cancer is growing in several organs.",
+            "The patient is not fit for major surgery.",
+            "Disease is too extensive to remove safely.",
+            "Treatment is needed before a surgical decision.",
+            "The cancer type is known to respond to systemic medicines.",
+            "Expected CRS-HIPEC risks outweigh likely benefits."
+          ]
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "A patient with colorectal cancer involving liver, lungs and peritoneum may need a systemic plan rather than an abdomen-only operation. See [peritoneal metastases treatment](/blogs/peritoneal-metastases-treatment) and [peritoneal carcinomatosis](/blogs/peritoneal-carcinomatosis)."
+        },
+        {
+          "id": "btn_057",
+          "type": "button",
+          "label": "Ask about systemic chemotherapy in India",
+          "href": "/consult?treatment=Systemic%20Chemotherapy"
+        },
+        {
+          "id": "h_058",
+          "type": "heading",
+          "level": 2,
+          "text": "When May Doctors Consider HIPEC?"
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "HIPEC may be considered when cancer is mainly on peritoneal surfaces and removing visible deposits appears beneficial. Teams assess cancer type, extent, resectability, **PCI score**, fitness, extra-abdominal disease and prior treatment response."
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "There is no single PCI cut-off that applies to every cancer. Distribution — especially small-bowel involvement — matters. See [Peritoneal Cancer Index (PCI)](/blogs/peritoneal-cancer-index-pci)."
+        },
+        {
+          "id": "img_061",
+          "type": "image",
+          "src": "/uploads/articles/hipec-vs-chemo-decision.webp",
+          "alt": "Canva-style unlabeled illustration of peritoneal disease scoring regions with decision icons for scans, fitness and treatment choice",
+          "caption": "Eligibility depends on cancer type, disease distribution, resectability and patient fitness — not a single score."
+        },
+        {
+          "id": "h_062",
+          "type": "heading",
+          "level": 2,
+          "text": "HIPEC vs Chemotherapy: Which Is More Effective?"
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "There is no single answer. Effectiveness depends on cancer type, stage, location and patient condition."
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 3,
+          "text": "Colorectal cancer evidence"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "The **PRODIGE 7** trial did not show an overall survival benefit from adding the oxaliplatin-based HIPEC regimen studied to cytoreductive surgery. Based on this evidence, ASCO recommends against adding oxaliplatin-based HIPEC to CRS for colorectal peritoneal metastases. The benefit of removing visible disease and the additional benefit of HIPEC are separate questions."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 3,
+          "text": "Ovarian cancer evidence"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "**OVHIPEC-1** supports considering HIPEC during interval cytoreductive surgery for selected women with stage III epithelial ovarian cancer after neoadjuvant chemotherapy who meet fitness requirements. This should not be applied to every ovarian cancer patient or stage."
+        },
+        {
+          "id": "h_068",
+          "type": "heading",
+          "level": 3,
+          "text": "Pseudomyxoma peritonei"
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "For suitable operable PMP, CRS-HIPEC remains an established specialist approach. Extent, grade, completeness of cytoreduction and health still decide outcomes."
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 2,
+          "text": "Side Effects of Conventional Chemotherapy"
+        },
+        {
+          "id": "ul_071",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Nausea and vomiting",
+            "Tiredness and weakness",
+            "Hair loss with certain medicines",
+            "Mouth ulcers and appetite loss",
+            "Diarrhoea or constipation",
+            "Low blood counts and infection risk",
+            "Numbness or tingling with certain drugs"
+          ]
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Side effects depend on medicines, dose, cycles and general health. Fever with low counts, uncontrolled vomiting, chest pain or severe bleeding needs urgent local care."
+        },
+        {
+          "id": "h_073",
+          "type": "heading",
+          "level": 2,
+          "text": "Side Effects and Risks of HIPEC"
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "CRS-HIPEC combines major surgery with chemotherapy exposure. Risks may include infection, bleeding, clots, bowel leakage, temporary or prolonged bowel problems, kidney injury with certain drugs, low blood counts, fluid and electrolyte imbalance, slow wound healing, ICU care and longer stay."
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "Ask about expected benefits, major risks, stoma possibility, hospital stay and the centre's experience before agreeing to surgery. Sudden severe pain, fever, collapse or inability to pass stool or gas belongs in a **local emergency department**."
+        },
+        {
+          "id": "h_076",
+          "type": "heading",
+          "level": 2,
+          "text": "Recovery: HIPEC vs Conventional Chemotherapy"
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 3,
+          "text": "After conventional chemotherapy"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "Many regimens are outpatient. Patients may feel tired or nauseated for a few days. Blood tests guide the next cycle. Treatment may continue for months."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 3,
+          "text": "After CRS-HIPEC"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Recovery is usually longer: ICU or high-dependency monitoring, pain control, fluids, gradual nutrition, kidney and blood-count checks, wound care and staged return to walking. GAF planning for [CRS with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) typically quotes **10–21 nights**. Full recovery may take several weeks or longer."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 2,
+          "text": "Can HIPEC Cure Cancer?"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "HIPEC should not be described as a guaranteed cure. Selected patients may achieve long-term control; others experience recurrence. Goals may be cure, long-term control, slowing disease or symptom relief — the team should state which applies."
+        },
+        {
+          "id": "h_083",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Chemotherapy Be Given Before or After HIPEC?"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "**Before (neoadjuvant):** to treat whole-body disease, reduce burden, assess response and identify progressing disease. Example: interval cytoreduction with possible HIPEC after chemotherapy in selected ovarian cancer."
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "**After (adjuvant):** based on final pathology, residual disease risk, prior drugs and recovery. Some patients are observed without immediate further chemotherapy."
+        },
+        {
+          "id": "btn_086",
+          "type": "button",
+          "label": "Share records for a multimodal review",
+          "href": "/consult?treatment=HIPEC%20and%20Chemotherapy%20Plan"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with drug names and cycle dates](https://wa.me/919044346292?text=I%20can%20share%20my%20chemotherapy%20drug%20names%2C%20cycle%20dates%2C%20pathology%20and%20scans%20for%20a%20HIPEC%20versus%20systemic%20therapy%20opinion%20in%20India.)"
+        },
+        {
+          "id": "h_088",
+          "type": "heading",
+          "level": 2,
+          "text": "How Do Doctors Decide Between HIPEC and Conventional Chemotherapy?"
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "A multidisciplinary team — medical oncologist, surgical oncologist experienced in peritoneal disease, radiologist, pathologist, anaesthesia/critical care and nutrition — reviews diagnosis, scans, pathology, prior therapy and fitness."
+        },
+        {
+          "id": "ol_090",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "CT of chest, abdomen and pelvis (MRI or PET-CT when appropriate).",
+            "Biopsy and pathology review.",
+            "Blood tests and organ-function tests.",
+            "Tumour markers where useful.",
+            "Nutrition and fitness assessment.",
+            "Review of previous chemotherapy response.",
+            "Diagnostic laparoscopy in selected cases."
+          ]
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "PCI helps describe burden (0–39) but is not a universal eligibility rule. See the [PCI guide](/blogs/peritoneal-cancer-index-pci)."
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 2,
+          "text": "HIPEC Treatment in India for International Patients"
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "India offers specialist evaluation including CRS-HIPEC assessment. Do not travel assuming HIPEC will definitely be recommended. Start with record review."
+        },
+        {
+          "id": "ul_094",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Recent CT, MRI or PET-CT reports plus DICOM images",
+            "Biopsy, histopathology and immunohistochemistry",
+            "Previous operation notes and discharge summaries",
+            "Chemotherapy drug names, doses and cycles",
+            "Recent blood tests, tumour markers, medication list"
+          ]
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "Ask whether diagnosis is pathology-confirmed, whether disease is abdomen-limited, whether CRS-HIPEC or systemic therapy is being considered, treatment goals, resectability, HIPEC drug if planned, major risks, stay length and follow-up after return home."
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 before booking travel](https://wa.me/919044346292?text=I%20am%20an%20international%20patient%20comparing%20HIPEC%20and%20chemotherapy.%20I%20can%20share%20DICOM%20imaging%20and%20pathology%20for%20a%20preliminary%20opinion%20in%20India.)"
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 2,
+          "text": "HIPEC Cost vs Conventional Chemotherapy Cost in India"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Costs differ because the pathways differ. CRS-HIPEC includes major surgery, specialist teams, theatre, anaesthesia, ICU, admission and perfusion drugs. Systemic chemotherapy costs depend on medicines, cycles, day-care charges, labs, scans and supportive drugs."
+        },
+        {
+          "id": "html_099",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Named pathway</th><th>GAF planning range in India</th><th>Typical stay</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Cytoreductive surgery with HIPEC</a></td><td>$18,000–$40,000</td><td>10–21 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Cytoreductive-Surgery\">Cytoreductive surgery</a></td><td>$10,000–$24,000</td><td>7–14 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/PIPAC\">PIPAC</a></td><td>$7,000–$16,000</td><td>2–5 nights</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Intraperitoneal-Chemotherapy\">Intraperitoneal chemotherapy</a> (catheter/port pathway)</td><td>$5,000–$14,000</td><td>Tied to cytoreduction or IP ports</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Systemic chemotherapy</a></td><td>$1,500–$8,000+</td><td>Outpatient cycles · 3–6 months typical</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "City CRS-HIPEC sheets: [Delhi NCR](/costs/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Mumbai](/costs/India/Mumbai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Bengaluru](/costs/India/Bengaluru/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Chennai](/costs/India/Chennai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC), [Hyderabad](/costs/India/Hyderabad/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC). The national CRS-HIPEC band remains **$18,000–$40,000**."
+        },
+        {
+          "id": "html_101",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>City</th><th>CRS-HIPEC doctor list</th><th>GAF planning range</th></tr></thead><tbody><tr><td>Delhi NCR</td><td><a href=\"/doctors/India/Delhi-NCR/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr><tr><td>Mumbai</td><td><a href=\"/doctors/India/Mumbai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr><tr><td>Bengaluru</td><td><a href=\"/doctors/India/Bengaluru/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr><tr><td>Chennai</td><td><a href=\"/doctors/India/Chennai/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr><tr><td>Hyderabad</td><td><a href=\"/doctors/India/Hyderabad/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC\">Surgical oncology · CRS with HIPEC</a></td><td>$18,000–$40,000</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "html_102",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Cost component</th><th>What to check</th></tr></thead><tbody><tr><td>Initial consultation</td><td>Surgical and medical oncology opinions</td></tr><tr><td>Investigations</td><td>Scans, blood tests and pathology</td></tr><tr><td>Surgery / HIPEC</td><td>Extent of cytoreduction, perfusion drugs and theatre time</td></tr><tr><td>Systemic chemotherapy</td><td>Drug names, number of cycles and day-care charges</td></tr><tr><td>Intensive care</td><td>Expected ICU monitoring after CRS-HIPEC</td></tr><tr><td>Hospital stay</td><td>Room category and estimated duration</td></tr><tr><td>Supportive care</td><td>Growth factors, anti-emetics, nutrition</td></tr><tr><td>Follow-up</td><td>Reviews, markers and imaging</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "Comparing one HIPEC operation with a single chemotherapy cycle is not meaningful. Request an itemised estimate after medical review. The cheapest quote should not outweigh surgical experience and complication management."
+        },
+        {
+          "id": "btn_104",
+          "type": "button",
+          "label": "Request a case-specific cost estimate",
+          "href": "/consult?treatment=HIPEC%20vs%20Chemo%20Cost%20Estimate"
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Helps"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "GAF Healthcare helps international patients organise records, arrange specialist consultations, share DICOM and pathology, request treatment-plan discussions and estimates, coordinate appointments, and assist with travel and follow-up communication."
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "GAF does not diagnose cancer or independently decide HIPEC eligibility. Those decisions belong to the treating team."
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 to start coordination](https://wa.me/919044346292?text=I%20would%20like%20GAF%20Healthcare%20to%20coordinate%20a%20specialist%20consultation%20comparing%20HIPEC%20and%20conventional%20chemotherapy%20in%20India.)"
+        },
+        {
+          "id": "btn_109",
+          "type": "button",
+          "label": "Start a specialist consultation request",
+          "href": "/consult?treatment=HIPEC%20vs%20Chemotherapy"
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 2,
+          "text": "Which Treatment Should You Choose?"
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "There is no universal answer. Multi-organ disease often needs systemic chemotherapy. Selected peritoneal disease may be assessed for cytoreductive surgery with or without HIPEC. Some patients receive both at different stages; others never need HIPEC."
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "**Do not stop, delay or replace prescribed chemotherapy with HIPEC without discussing the decision with the treating oncologist.**"
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions: HIPEC vs Conventional Chemotherapy"
+        },
+        {
+          "id": "h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the main difference between HIPEC and chemotherapy?"
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "Conventional chemotherapy usually travels through the bloodstream to treat cancer throughout the body. HIPEC delivers heated chemotherapy directly into the abdominal cavity during surgery, mainly to target cancer cells on the abdominal lining."
+        },
+        {
+          "id": "h_116",
+          "type": "heading",
+          "level": 3,
+          "text": "Is HIPEC better than regular chemotherapy?"
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "Not in every situation. HIPEC may help selected patients with peritoneal disease. Systemic chemotherapy remains essential for cancer throughout the body. The right choice depends on cancer type and spread."
+        },
+        {
+          "id": "h_118",
+          "type": "heading",
+          "level": 3,
+          "text": "Does HIPEC replace chemotherapy?"
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "No. HIPEC does not automatically replace conventional chemotherapy. Some patients receive both; others need only one approach or a different plan."
+        },
+        {
+          "id": "h_120",
+          "type": "heading",
+          "level": 3,
+          "text": "Can HIPEC and chemotherapy be given together?"
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "Yes. Some patients receive systemic chemotherapy before or after CRS-HIPEC. Timing depends on tumour type, response and fitness."
+        },
+        {
+          "id": "h_122",
+          "type": "heading",
+          "level": 3,
+          "text": "Is HIPEC a type of chemotherapy?"
+        },
+        {
+          "id": "p_123",
+          "type": "paragraph",
+          "text": "Yes. HIPEC is chemotherapy delivered differently: heated and circulated inside the abdomen during an operation, usually after cytoreductive surgery."
+        },
+        {
+          "id": "h_124",
+          "type": "heading",
+          "level": 3,
+          "text": "Why is chemotherapy heated during HIPEC?"
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "The solution is warmed to a controlled temperature (often around 40–42°C) because heat may aid drug action and tissue penetration. Benefit depends on cancer type and protocol."
+        },
+        {
+          "id": "h_126",
+          "type": "heading",
+          "level": 3,
+          "text": "Does HIPEC treat cancer outside the abdomen?"
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "No. HIPEC targets surfaces inside the abdominal cavity. Disease outside the abdomen usually needs systemic treatment or another modality."
+        },
+        {
+          "id": "h_128",
+          "type": "heading",
+          "level": 3,
+          "text": "Which cancers can be treated with HIPEC?"
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "Selected patients with pseudomyxoma peritonei, appendix cancer, peritoneal mesothelioma, ovarian cancer and certain colorectal or stomach cancers may be considered. Evidence differs by disease — see HIPEC surgery in India."
+        },
+        {
+          "id": "h_130",
+          "type": "heading",
+          "level": 3,
+          "text": "Is HIPEC suitable for all stage 4 cancer patients?"
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "No. Stage 4 can mean different patterns of spread. HIPEC is mainly considered when disease involves the peritoneum and surgery may remove visible deposits."
+        },
+        {
+          "id": "h_132",
+          "type": "heading",
+          "level": 3,
+          "text": "Can HIPEC cure peritoneal cancer?"
+        },
+        {
+          "id": "p_133",
+          "type": "paragraph",
+          "text": "Some carefully selected patients may achieve long-term control and, in certain situations, a possible chance of cure. HIPEC is not a guaranteed cure and recurrence is possible."
+        },
+        {
+          "id": "h_134",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a patient receive chemotherapy before HIPEC?"
+        },
+        {
+          "id": "p_135",
+          "type": "paragraph",
+          "text": "Yes. Neoadjuvant systemic chemotherapy may shrink disease, treat micrometastases and help decide whether surgery is useful."
+        },
+        {
+          "id": "h_136",
+          "type": "heading",
+          "level": 3,
+          "text": "Is chemotherapy necessary after HIPEC?"
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "Not for everyone. Further systemic therapy depends on pathology, prior treatment, operative findings and recovery."
+        },
+        {
+          "id": "h_138",
+          "type": "heading",
+          "level": 3,
+          "text": "Which treatment has more side effects?"
+        },
+        {
+          "id": "p_139",
+          "type": "paragraph",
+          "text": "They differ. Systemic chemotherapy can cause whole-body effects such as fatigue, nausea and low blood counts. CRS-HIPEC adds major surgical risks to chemotherapy-related effects."
+        },
+        {
+          "id": "h_140",
+          "type": "heading",
+          "level": 3,
+          "text": "Is HIPEC a major operation?"
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "Yes. CRS-HIPEC usually involves a major abdominal operation that may remove deposits and sometimes organs or bowel segments."
+        },
+        {
+          "id": "h_142",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does HIPEC surgery take?"
+        },
+        {
+          "id": "p_143",
+          "type": "paragraph",
+          "text": "Often many hours, depending on disease extent and reconstructions. GAF CRS-HIPEC planning typically quotes 10–21 nights in hospital."
+        },
+        {
+          "id": "h_144",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does recovery after HIPEC take?"
+        },
+        {
+          "id": "p_145",
+          "type": "paragraph",
+          "text": "Hospital stay varies; full recovery often takes several weeks or longer. Systemic chemotherapy recovery is measured in days between cycles rather than weeks after major surgery."
+        },
+        {
+          "id": "h_146",
+          "type": "heading",
+          "level": 3,
+          "text": "Can HIPEC be done without surgery?"
+        },
+        {
+          "id": "p_147",
+          "type": "paragraph",
+          "text": "Standard HIPEC is usually delivered during cytoreductive surgery. Other intraperitoneal approaches such as catheter IP chemotherapy or PIPAC are different pathways."
+        },
+        {
+          "id": "h_148",
+          "type": "heading",
+          "level": 3,
+          "text": "Is HIPEC used for colon cancer?"
+        },
+        {
+          "id": "p_149",
+          "type": "paragraph",
+          "text": "It may be discussed for selected colorectal peritoneal metastases. ASCO does not recommend adding oxaliplatin-based HIPEC to CRS for colorectal peritoneal metastases; CRS plus systemic chemotherapy may still be considered when complete cytoreduction is feasible."
+        },
+        {
+          "id": "h_150",
+          "type": "heading",
+          "level": 3,
+          "text": "Is HIPEC used for ovarian cancer?"
+        },
+        {
+          "id": "p_151",
+          "type": "paragraph",
+          "text": "It may be considered for selected women with stage III epithelial ovarian cancer during interval cytoreductive surgery after chemotherapy. It is not suitable for every ovarian cancer patient — see ovarian cancer treatment in India."
+        },
+        {
+          "id": "h_152",
+          "type": "heading",
+          "level": 3,
+          "text": "Is HIPEC used for stomach cancer?"
+        },
+        {
+          "id": "p_153",
+          "type": "paragraph",
+          "text": "Not routinely for every patient with peritoneal spread. Systemic treatment remains central; CRS-HIPEC is considered only in selected specialist settings — see HIPEC surgery for stomach cancer."
+        },
+        {
+          "id": "h_154",
+          "type": "heading",
+          "level": 3,
+          "text": "What tests are needed before HIPEC?"
+        },
+        {
+          "id": "p_155",
+          "type": "paragraph",
+          "text": "CT or MRI, pathology review, blood and organ-function tests, tumour markers where relevant, and sometimes diagnostic laparoscopy."
+        },
+        {
+          "id": "h_156",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the PCI score in HIPEC?"
+        },
+        {
+          "id": "p_157",
+          "type": "paragraph",
+          "text": "The Peritoneal Cancer Index describes disease burden across 13 abdominal regions (0–39). It helps planning but is not a universal pass/fail rule — see the PCI guide."
+        },
+        {
+          "id": "h_158",
+          "type": "heading",
+          "level": 3,
+          "text": "Is HIPEC available in India?"
+        },
+        {
+          "id": "p_159",
+          "type": "paragraph",
+          "text": "Yes, at selected specialist centres with peritoneal oncology experience, ICU support and HIPEC equipment. Confirm centre experience for the specific cancer."
+        },
+        {
+          "id": "h_160",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does HIPEC cost in India?"
+        },
+        {
+          "id": "p_161",
+          "type": "paragraph",
+          "text": "GAF planning for CRS with HIPEC is $18,000–$40,000 (10–21 nights). Systemic chemotherapy planning is $1,500–$8,000+ for typical outpatient cycles. Final quotations follow case review."
+        },
+        {
+          "id": "h_162",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients get a HIPEC opinion before travelling to India?"
+        },
+        {
+          "id": "p_163",
+          "type": "paragraph",
+          "text": "Often yes. Share pathology, DICOM imaging, prior treatment details and recent blood tests for an initial review. Final eligibility may still need in-person assessment."
+        },
+        {
+          "id": "h_164",
+          "type": "heading",
+          "level": 3,
+          "text": "Should a patient stop conventional chemotherapy if HIPEC is being considered?"
+        },
+        {
+          "id": "p_165",
+          "type": "paragraph",
+          "text": "No. Do not stop or change prescribed chemotherapy without the treating oncologist. Timing of systemic therapy and any surgery must be coordinated."
+        },
+        {
+          "id": "h_166",
+          "type": "heading",
+          "level": 3,
+          "text": "Can HIPEC be repeated if cancer returns?"
+        },
+        {
+          "id": "p_167",
+          "type": "paragraph",
+          "text": "Repeat CRS-HIPEC is considered only in a small number of carefully selected cases, depending on recurrence pattern, prior surgery and fitness."
+        },
+        {
+          "id": "h_168",
+          "type": "heading",
+          "level": 3,
+          "text": "How do I know whether HIPEC or conventional chemotherapy is right for me?"
+        },
+        {
+          "id": "p_169",
+          "type": "paragraph",
+          "text": "A multidisciplinary team must review pathology, scans, prior therapy and fitness. They can explain whether systemic chemotherapy, surgery, HIPEC or a combination fits the case."
+        },
+        {
+          "id": "h_170",
+          "type": "heading",
+          "level": 2,
+          "text": "Key Takeaways"
+        },
+        {
+          "id": "ul_171",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Systemic chemotherapy treats cancer throughout the body; HIPEC targets peritoneal surfaces during surgery.",
+            "HIPEC does not automatically replace conventional chemotherapy.",
+            "Evidence and recommendations differ by cancer type — especially colorectal versus ovarian versus PMP.",
+            "Eligibility depends on resectability, PCI distribution, fitness and extra-abdominal disease.",
+            "GAF CRS-HIPEC planning is $18,000–$40,000 (10–21 nights); systemic chemotherapy planning is $1,500–$8,000+.",
+            "International patients should obtain specialist review before travelling."
+          ]
+        },
+        {
+          "id": "h_172",
+          "type": "heading",
+          "level": 2,
+          "text": "Top Medical Sources and References"
+        },
+        {
+          "id": "ol_173",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "[National Cancer Institute — Chemotherapy to Treat Cancer](https://www.cancer.gov/about-cancer/treatment/types/chemotherapy)",
+            "[National Cancer Institute — Definition of HIPEC](https://www.cancer.gov/publications/dictionaries/cancer-terms/def/hipec)",
+            "[ASCO — Treatment of Metastatic Colorectal Cancer guideline](https://pmc.ncbi.nlm.nih.gov/articles/PMC10506310/)",
+            "[PRODIGE 7 — CRS plus HIPEC versus CRS alone for colorectal peritoneal metastases](https://pubmed.ncbi.nlm.nih.gov/33476595/)",
+            "[2025 Consensus Guideline — Management of Colorectal Cancer with Peritoneal Metastases](https://acsjournals.onlinelibrary.wiley.com/doi/10.1002/cncr.35869)",
+            "[ASO Practice Guideline Series — Management of Colorectal Peritoneal Metastases (2025)](https://pubmed.ncbi.nlm.nih.gov/40587073/)",
+            "[ASCO clinical guideline publication](https://ascopubs.org/doi/10.1200/JCO.22.01690)",
+            "[GAF Healthcare CRS with HIPEC cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) — $18,000–$40,000; typically 10–21 nights"
+          ]
+        },
+        {
+          "id": "h_174",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Reading on GAF Healthcare"
+        },
+        {
+          "id": "ul_175",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[HIPEC Surgery in India](/treatments/hipec-surgery-in-india)",
+            "[What Is HIPEC Surgery?](/blogs/what-is-hipec-surgery)",
+            "[Chemotherapy in India](/treatments/chemotherapy-in-india)",
+            "[Intraperitoneal Chemotherapy in India](/treatments/intraperitoneal-chemotherapy-in-india)",
+            "[Peritoneal Carcinomatosis](/blogs/peritoneal-carcinomatosis)",
+            "[Peritoneal Metastases Treatment](/blogs/peritoneal-metastases-treatment)",
+            "[Peritoneal Cancer Index (PCI)](/blogs/peritoneal-cancer-index-pci)",
+            "[Pseudomyxoma Peritonei Treatment in India](/blogs/pseudomyxoma-peritonei-treatment)",
+            "[Appendix Cancer Treatment and HIPEC in India](/blogs/appendix-cancer-treatment-hipec-india)",
+            "[HIPEC Surgery for Stomach Cancer](/blogs/hipec-surgery-for-stomach-cancer)",
+            "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india)",
+            "[Ovarian Cancer Treatment in India](/treatments/ovarian-cancer-treatment-in-india)",
+            "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india)",
+            "[CRS with HIPEC — cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC)"
+          ]
+        },
+        {
+          "id": "h_176",
+          "type": "heading",
+          "level": 2,
+          "text": "Explore HIPEC and Chemotherapy Options in India"
+        },
+        {
+          "id": "p_177",
+          "type": "paragraph",
+          "text": "Understanding whether peritoneal disease needs systemic chemotherapy, cytoreductive surgery, HIPEC or a combination starts with pathology and imaging review."
+        },
+        {
+          "id": "p_178",
+          "type": "paragraph",
+          "text": "GAF Healthcare assists international patients exploring cancer treatment in India by coordinating medical records, specialist consultations and treatment-related arrangements. Website: [https://gaf.healthcare/](https://gaf.healthcare/)."
+        },
+        {
+          "id": "btn_179",
+          "type": "button",
+          "label": "Contact GAF Healthcare about HIPEC vs chemotherapy",
+          "href": "/consult?treatment=HIPEC%20vs%20Chemotherapy"
+        },
+        {
+          "id": "h_180",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Disclaimer"
+        },
+        {
+          "id": "p_181",
+          "type": "paragraph",
+          "text": "This article is for educational purposes only and does not replace medical consultation, diagnosis or individualised advice. CRS-HIPEC is a complex operation with significant risks. Suitability must be determined by a qualified multidisciplinary team. Cost figures are indicative planning ranges. Emergency symptoms belong in a local emergency department."
+        }
+      ]
+    },
     {
       "id": "art_appendix_cancer_treatment_hipec_india",
       "slug": "appendix-cancer-treatment-hipec-india",
@@ -2446,6 +3657,10 @@
         {
           "label": "CRS with HIPEC — cost sheet",
           "href": "/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC"
+        },
+        {
+          "label": "HIPEC vs Conventional Chemotherapy",
+          "href": "/blogs/hipec-vs-conventional-chemotherapy"
         }
       ],
       "blocks": [
@@ -3251,7 +4466,8 @@
             "[Intraperitoneal Chemotherapy in India](/treatments/intraperitoneal-chemotherapy-in-india)",
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india)",
             "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india)",
-            "[CRS with HIPEC — cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC)"
+            "[CRS with HIPEC — cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC)",
+            "[HIPEC vs Conventional Chemotherapy](/blogs/hipec-vs-conventional-chemotherapy)"
           ]
         },
         {
@@ -3400,6 +4616,10 @@
         {
           "label": "Appendix cancer treatment and HIPEC in India",
           "href": "/blogs/appendix-cancer-treatment-hipec-india"
+        },
+        {
+          "label": "HIPEC vs Conventional Chemotherapy",
+          "href": "/blogs/hipec-vs-conventional-chemotherapy"
         }
       ],
       "blocks": [
@@ -4657,7 +5877,8 @@
             "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india)",
             "[Ovarian Cancer Treatment in India](/treatments/ovarian-cancer-treatment-in-india)",
             "[Cytoreductive surgery with HIPEC — cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC)",
-            "[Appendix Cancer Treatment and HIPEC in India](/blogs/appendix-cancer-treatment-hipec-india)"
+            "[Appendix Cancer Treatment and HIPEC in India](/blogs/appendix-cancer-treatment-hipec-india)",
+            "[HIPEC vs Conventional Chemotherapy](/blogs/hipec-vs-conventional-chemotherapy)"
           ]
         },
         {
