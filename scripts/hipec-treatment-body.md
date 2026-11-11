@@ -133,7 +133,7 @@ For appropriately selected operable and resectable patients, **CRS + HIPEC is an
 
 Recent international consensus recommendations strongly support CRS and HIPEC over simple debulking surgery for resectable pseudomyxoma peritonei.
 
-A dedicated patient guide covering symptoms, diagnosis, PCI, recovery and India planning ranges is published as [Pseudomyxoma Peritonei Treatment in India](/blogs/pseudomyxoma-peritonei-treatment).
+A dedicated patient guide covering symptoms, diagnosis, PCI, recovery and India planning ranges is published as [Pseudomyxoma Peritonei Treatment in India](/blogs/pseudomyxoma-peritonei-treatment). Appendiceal tumours with peritoneal spread are also covered in [Appendix Cancer Treatment and HIPEC in India](/blogs/appendix-cancer-treatment-hipec-india).
 
 ### 2. Peritoneal Mesothelioma
 

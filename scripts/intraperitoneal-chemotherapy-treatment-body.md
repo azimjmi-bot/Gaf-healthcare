@@ -132,7 +132,7 @@ Peritoneal metastases from colorectal cancer are a different clinical scenario. 
 
 ### Appendiceal cancer and pseudomyxoma peritonei
 
-Appendiceal cancers and pseudomyxoma peritonei frequently involve the peritoneal surfaces. In carefully selected patients, treatment can involve cytoreductive surgery with intraperitoneal chemotherapy, particularly HIPEC, depending on the histology and extent of disease. There is no live GAF appendiceal-only treatment page; the patient guide is [Pseudomyxoma Peritonei Treatment in India](/blogs/pseudomyxoma-peritonei-treatment).
+Appendiceal cancers and pseudomyxoma peritonei frequently involve the peritoneal surfaces. In carefully selected patients, treatment can involve cytoreductive surgery with intraperitoneal chemotherapy, particularly HIPEC, depending on the histology and extent of disease. There is no live GAF appendiceal-only treatment page; patient guides are [Pseudomyxoma Peritonei Treatment in India](/blogs/pseudomyxoma-peritonei-treatment) and [Appendix Cancer Treatment and HIPEC in India](/blogs/appendix-cancer-treatment-hipec-india).
 
 ### Peritoneal mesothelioma
 
