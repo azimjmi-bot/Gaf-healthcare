@@ -602,6 +602,109 @@ export const GYNECOLOGY_CLUSTER_BY_PROCEDURE: Record<string, string> = {
 };
 
 
+export const DENTISTRY_COST: Record<string, { us: string; partner: string; stay: string }> = {
+  "Dental Implants": {
+    us: "$3,000–$6,500",
+    partner: "$350–$900",
+    stay: "Outpatient or 1 night",
+  },
+  "Full Mouth Dental Implants": {
+    us: "$25,000–$60,000",
+    partner: "$4,500–$15,000",
+    stay: "3–7 nights",
+  },
+  "Dental Crowns and Bridges": {
+    us: "$2,500–$8,000",
+    partner: "$800–$3,500",
+    stay: "Outpatient",
+  },
+  Dentures: {
+    us: "$1,500–$5,000",
+    partner: "$300–$1,200",
+    stay: "Outpatient",
+  },
+  "Full Mouth Rehabilitation": {
+    us: "$20,000–$50,000",
+    partner: "$3,500–$12,000",
+    stay: "5–14 nights",
+  },
+  "Braces and Orthodontic Treatment": {
+    us: "$5,000–$10,000",
+    partner: "$800–$2,500",
+    stay: "Outpatient",
+  },
+  "Clear Aligners": {
+    us: "$3,500–$8,000",
+    partner: "$1,200–$3,500",
+    stay: "Outpatient",
+  },
+  "Wisdom Tooth Removal": {
+    us: "$800–$3,000",
+    partner: "$100–$500",
+    stay: "Outpatient or 1 night",
+  },
+  "Jaw Surgery": {
+    us: "$20,000–$50,000",
+    partner: "$4,000–$12,000",
+    stay: "2–5 nights",
+  },
+  "Root Canal Treatment": {
+    us: "$1,000–$2,500",
+    partner: "$80–$350",
+    stay: "Outpatient",
+  },
+  "Gum Surgery": {
+    us: "$2,000–$6,000",
+    partner: "$400–$1,500",
+    stay: "Outpatient or 1 night",
+  },
+  "Smile Makeover": {
+    us: "$8,000–$25,000",
+    partner: "$1,500–$6,000",
+    stay: "Outpatient",
+  },
+  "Dental Veneers": {
+    us: "$8,000–$20,000",
+    partner: "$1,200–$4,500",
+    stay: "Outpatient",
+  },
+  "Teeth Whitening": {
+    us: "$400–$1,200",
+    partner: "$80–$350",
+    stay: "Outpatient",
+  },
+  "Dental Fillings": {
+    us: "$200–$600",
+    partner: "$25–$120",
+    stay: "Outpatient",
+  },
+  "Tooth Extraction": {
+    us: "$200–$800",
+    partner: "$30–$150",
+    stay: "Outpatient",
+  },
+};
+
+export const DENTISTRY_CLUSTER_BY_PROCEDURE: Record<string, string> = {
+  "Dental Implants": "Implants",
+  "Full Mouth Dental Implants": "Implants",
+  "Dental Crowns and Bridges": "Restorative",
+  Dentures: "Restorative",
+  "Dental Fillings": "Restorative",
+  "Full Mouth Rehabilitation": "Rehabilitation",
+  "Smile Makeover": "Rehabilitation",
+  "Braces and Orthodontic Treatment": "Orthodontics",
+  "Clear Aligners": "Orthodontics",
+  "Wisdom Tooth Removal": "Oral Surgery",
+  "Jaw Surgery": "Oral Surgery",
+  "Tooth Extraction": "Oral Surgery",
+  "Root Canal Treatment": "Endodontics",
+  "Gum Surgery": "Periodontics",
+  "Dental Veneers": "Cosmetic Dentistry",
+  "Teeth Whitening": "Cosmetic Dentistry",
+};
+
+
 export const HEMATOLOGY_COST: Record<string, { us: string; partner: string; stay: string }> = {
   "Autologous Stem Cell Transplant": {
     us: "$140,000–$320,000",

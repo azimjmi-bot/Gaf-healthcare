@@ -7,6 +7,7 @@ import { PEDIATRIC_ORTHOPAEDIC_COST, PEDIATRIC_ORTHOPAEDIC_SUMMARIES } from "@/l
 import { ORTHOPEDICS_CLUSTER_BY_PROCEDURE, ORTHOPEDICS_COST, ORTHOPEDICS_SUMMARIES } from "@/lib/orthopedics-costs";
 import { OPHTHALMOLOGY_CLUSTER_BY_PROCEDURE, OPHTHALMOLOGY_COST, OPHTHALMOLOGY_SUMMARIES } from "@/lib/ophthalmology-costs";
 import { GYNECOLOGY_CLUSTER_BY_PROCEDURE, GYNECOLOGY_CONDITIONS, GYNECOLOGY_COST, GYNECOLOGY_SUMMARIES } from "@/lib/gynecology-costs";
+import { DENTISTRY_CLUSTER_BY_PROCEDURE, DENTISTRY_CONDITIONS, DENTISTRY_COST, DENTISTRY_SUMMARIES } from "@/lib/dentistry-costs";
 import { NEUROSURGERY_CLUSTER_BY_PROCEDURE, NEUROSURGERY_CONDITIONS, NEUROSURGERY_COST, NEUROSURGERY_SHARED, NEUROSURGERY_SUMMARIES } from "@/lib/neurosurgery-costs";
 import { NEUROLOGY_CLUSTER_BY_PROCEDURE, NEUROLOGY_CONDITIONS, NEUROLOGY_COST, NEUROLOGY_SHARED, NEUROLOGY_SUMMARIES } from "@/lib/neurology-costs";
 import { NEPHROLOGY_CLUSTER_BY_PROCEDURE, NEPHROLOGY_CONDITIONS, NEPHROLOGY_COST, NEPHROLOGY_SHARED, NEPHROLOGY_SUMMARIES } from "@/lib/nephrology-costs";
@@ -33,6 +34,7 @@ import {
   ORTHOPEDICS_PROCEDURES,
   OPHTHALMOLOGY_PROCEDURES,
   GYNECOLOGY_PROCEDURES,
+  DENTISTRY_PROCEDURES,
   NEUROSURGERY_PROCEDURES,
   NEUROLOGY_PROCEDURES,
   NEPHROLOGY_PROCEDURES,
@@ -905,6 +907,45 @@ const gynecologyTreatments: Treatment[] = GYNECOLOGY_PROCEDURES.filter(
   };
 });
 
+const DENTISTRY_IMAGE =
+  "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=1600&q=80";
+
+const DENTISTRY_INCLUDES = [
+  "Dentistry consultation and records review",
+  "Named dentist on camera before travel",
+  "Imaging, models or digital scans as indicated",
+  "Materials, lab work and staged visits as quoted",
+  "Discharge summary to your home dentist",
+];
+
+const dentistryTreatments: Treatment[] = DENTISTRY_PROCEDURES.map((name) => {
+  const cost = DENTISTRY_COST[name];
+  if (!cost) throw new Error(`Missing dentistry cost for ${name}`);
+  const slug = toSlug(name);
+  const cluster = DENTISTRY_CLUSTER_BY_PROCEDURE[name] ?? "Dentistry";
+  return {
+    slug,
+    name,
+    category: cluster,
+    specialtySlug: "dentistry",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      DENTISTRY_SUMMARIES[name] ??
+      `Dentistry — ${name} at partner campuses with a named dentist before you travel.`,
+    image: DENTISTRY_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: DENTISTRY_CONDITIONS,
+    procedures: [name],
+    includes: DENTISTRY_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named dentist confirms imaging, materials and an itemized hospital or clinic price after records review.",
+  };
+});
+
 const NEUROSURGERY_IMAGE =
   "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1600&q=80";
 
@@ -1055,6 +1096,7 @@ export const catalogTreatments: Treatment[] = [
   ...orthopedicsTreatments,
   ...ophthalmologyTreatments,
   ...gynecologyTreatments,
+  ...dentistryTreatments,
   ...neurosurgeryTreatments,
   ...neurologyTreatments,
   ...nephrologyTreatments,

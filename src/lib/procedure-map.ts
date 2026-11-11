@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, GYNECOLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, INFERTILITY_IVF_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, NEPHROLOGY_PROCEDURES, NEUROLOGY_PROCEDURES, NEUROSURGERY_PROCEDURES, OPHTHALMOLOGY_PROCEDURES, ORTHOPEDICS_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, DENTISTRY_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, GYNECOLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, INFERTILITY_IVF_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, NEPHROLOGY_PROCEDURES, NEUROLOGY_PROCEDURES, NEUROSURGERY_PROCEDURES, OPHTHALMOLOGY_PROCEDURES, ORTHOPEDICS_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -648,6 +648,35 @@ export function mapInfertilityIvfProcedures(texts: string[], fallback = false) {
   return ["IVF Treatment", "ICSI Treatment", "IUI Treatment"];
 }
 
+const DENTISTRY_RULES: { test: RegExp; name: (typeof DENTISTRY_PROCEDURES)[number] }[] = [
+  { test: /all[\s-]*on[\s-]*[46]|full[\s-]*mouth[\s-]*implant|full[\s-]*arch[\s-]*implant/i, name: "Full Mouth Dental Implants" },
+  { test: /dental[\s-]*implant|tooth[\s-]*implant|implantolog/i, name: "Dental Implants" },
+  { test: /crown|bridge|fixed[\s-]*partial/i, name: "Dental Crowns and Bridges" },
+  { test: /denture|complete[\s-]*denture|partial[\s-]*denture|prosthodont/i, name: "Dentures" },
+  { test: /full[\s-]*mouth[\s-]*rehab|full[\s-]*mouth[\s-]*reconstruct|oral[\s-]*rehab/i, name: "Full Mouth Rehabilitation" },
+  { test: /clear[\s-]*aligner|invisalign|aligner/i, name: "Clear Aligners" },
+  { test: /braces|orthodont|malocclusion|fixed[\s-]*appliance/i, name: "Braces and Orthodontic Treatment" },
+  { test: /wisdom[\s-]*tooth|third[\s-]*molar|impacted[\s-]*molar/i, name: "Wisdom Tooth Removal" },
+  { test: /jaw[\s-]*surg|orthognathic|maxillofacial|le[\s-]*fort|bssro/i, name: "Jaw Surgery" },
+  { test: /root[\s-]*canal|\brct\b|endodont/i, name: "Root Canal Treatment" },
+  { test: /gum[\s-]*surg|periodont|flap[\s-]*surg|gingivect|gum[\s-]*graft/i, name: "Gum Surgery" },
+  { test: /smile[\s-]*makeover|smile[\s-]*design/i, name: "Smile Makeover" },
+  { test: /veneer|laminate/i, name: "Dental Veneers" },
+  { test: /whiten|bleach|zoom[\s-]*whit/i, name: "Teeth Whitening" },
+  { test: /filling|composite[\s-]*restor|amalgam|dental[\s-]*restor/i, name: "Dental Fillings" },
+  { test: /extract|tooth[\s-]*remov|exodont/i, name: "Tooth Extraction" },
+];
+
+/**
+ * Maps Dentistry expertise text to catalog procedures.
+ * Default fallback is false — sparse profiles must not invent a procedure trio.
+ */
+export function mapDentistryProcedures(texts: string[], fallback = false) {
+  const found = applyRules(texts, DENTISTRY_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["Dental Implants", "Root Canal Treatment", "Tooth Extraction"];
+}
+
 const NEUROSURGERY_RULES: { test: RegExp; name: (typeof NEUROSURGERY_PROCEDURES)[number] }[] = [
   { test: /glioma/i, name: "Glioma Surgery" },
   { test: /meningioma/i, name: "Meningioma Surgery" },
@@ -789,6 +818,7 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Ophthalmology") return mapOphthalmologyProcedures(texts);
   if (specialty === "Gynecology") return mapGynecologyProcedures(texts);
   if (specialty === "Infertility & IVF") return mapInfertilityIvfProcedures(texts, false);
+  if (specialty === "Dentistry") return mapDentistryProcedures(texts, false);
   if (specialty === "Neurosurgery") return mapNeurosurgeryProcedures(texts);
   if (specialty === "Neurology") return mapNeurologyProcedures(texts);
   if (specialty === "Nephrology") return mapNephrologyProcedures(texts);

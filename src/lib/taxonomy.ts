@@ -98,6 +98,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Ophthalmology"),
   taxon("Gynecology"),
   taxon("Infertility & IVF"),
+  taxon("Dentistry"),
   taxon("Neurosurgery"),
   taxon("Neurology"),
   taxon("Nephrology"),
@@ -550,6 +551,25 @@ export const INFERTILITY_IVF_PROCEDURES = [
   "Ovarian Cyst Removal",
 ] as const;
 
+export const DENTISTRY_PROCEDURES = [
+  "Dental Implants",
+  "Full Mouth Dental Implants",
+  "Dental Crowns and Bridges",
+  "Dentures",
+  "Full Mouth Rehabilitation",
+  "Braces and Orthodontic Treatment",
+  "Clear Aligners",
+  "Wisdom Tooth Removal",
+  "Jaw Surgery",
+  "Root Canal Treatment",
+  "Gum Surgery",
+  "Smile Makeover",
+  "Dental Veneers",
+  "Teeth Whitening",
+  "Dental Fillings",
+  "Tooth Extraction",
+] as const;
+
 export const NEUROSURGERY_PROCEDURES = [
   "Brain Tumor Surgery",
   "Glioma Surgery",
@@ -756,6 +776,7 @@ export const PROCEDURES: ProcedureTaxon[] = [
   ).map((name) =>
     procedureTaxon(name, withGynecology(name, withUrology(name, ["infertility-ivf"]))),
   ),
+  ...DENTISTRY_PROCEDURES.map((name) => procedureTaxon(name, ["dentistry"])),
   ...NEUROSURGERY_PROCEDURES.filter(
     (name) => !RADIATION_NAMES.has(name) && !SPINE_NAMES.has(name) && !ENT_NAMES.has(name),
   ).map((name) => procedureTaxon(name, withNeurology(name, ["neurosurgery"]))),

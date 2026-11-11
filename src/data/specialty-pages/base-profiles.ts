@@ -4,6 +4,7 @@ import { cardiologyIndiaProfile } from "./cardiology";
 import { cosmeticSurgeryIndiaProfile } from "./cosmetic-surgery";
 import { entIndiaProfile } from "./ent";
 import { gastroenterologyIndiaProfile } from "./gastroenterology";
+import { dentistryIndiaProfile } from "./dentistry";
 import { gynecologyIndiaProfile } from "./gynecology";
 import { hematologyIndiaProfile } from "./hematology";
 import { medicalOncologyIndiaProfile } from "./medical-oncology";
@@ -44,6 +45,7 @@ export const BASE_SPECIALTY_PROFILES: readonly SpecialtyPageProfile[] = [
   orthopedicsIndiaProfile,
   ophthalmologyIndiaProfile,
   gynecologyIndiaProfile,
+  dentistryIndiaProfile,
   neurosurgeryIndiaProfile,
   neurologyIndiaProfile,
   nephrologyIndiaProfile,

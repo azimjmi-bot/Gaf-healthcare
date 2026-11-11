@@ -16,6 +16,7 @@ import {
   ORTHOPEDICS_PROCEDURES,
   OPHTHALMOLOGY_PROCEDURES,
   GYNECOLOGY_PROCEDURES,
+  DENTISTRY_PROCEDURES,
   NEUROSURGERY_PROCEDURES,
   NEUROLOGY_PROCEDURES,
   NEPHROLOGY_PROCEDURES,
@@ -86,6 +87,7 @@ const pediatricOrthopaedic = getSpecialty("Pediatric Orthopaedic");
 const orthopedics = getSpecialty("Orthopedics");
 const ophthalmology = getSpecialty("Ophthalmology");
 const gynecology = getSpecialty("Gynecology");
+const dentistry = getSpecialty("Dentistry");
 const neurosurgery = getSpecialty("Neurosurgery");
 const neurology = getSpecialty("Neurology");
 const nephrology = getSpecialty("Nephrology");
@@ -110,6 +112,7 @@ if (
   !orthopedics ||
   !ophthalmology ||
   !gynecology ||
+  !dentistry ||
   !neurosurgery ||
   !neurology ||
   !nephrology
@@ -180,6 +183,7 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
           ...ORTHOPEDICS_PROCEDURES,
           ...OPHTHALMOLOGY_PROCEDURES,
           ...GYNECOLOGY_PROCEDURES,
+          ...DENTISTRY_PROCEDURES,
           ...NEUROSURGERY_PROCEDURES,
           ...NEUROLOGY_PROCEDURES,
           ...NEPHROLOGY_PROCEDURES,
@@ -202,7 +206,7 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
     accreditation: seed.accreditation,
     focus: eyeCampus
       ? ophthalmology.name
-      : `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name} · ${cardiacSurgery.name} · ${pediatricCardiacSurgery.name} · ${cardiology.name} · ${bariatric.name} · ${cosmetic.name} · ${ent.name} · ${gastroenterology.name} · ${surgicalGastroenterology.name} · ${urology.name} · ${spineSurgery.name} · ${pulmonology.name} · ${pediatricOrthopaedic.name} · ${orthopedics.name} · ${ophthalmology.name} · ${gynecology.name} · ${neurosurgery.name} · ${neurology.name} · ${nephrology.name}`,
+      : `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name} · ${cardiacSurgery.name} · ${pediatricCardiacSurgery.name} · ${cardiology.name} · ${bariatric.name} · ${cosmetic.name} · ${ent.name} · ${gastroenterology.name} · ${surgicalGastroenterology.name} · ${urology.name} · ${spineSurgery.name} · ${pulmonology.name} · ${pediatricOrthopaedic.name} · ${orthopedics.name} · ${ophthalmology.name} · ${gynecology.name} · ${dentistry.name} · ${neurosurgery.name} · ${neurology.name} · ${nephrology.name}`,
     specialty: eyeCampus ? ophthalmology.name : radiation.name,
     specialtySlug: eyeCampus ? ophthalmology.slug : radiation.slug,
     specialties: eyeCampus
@@ -228,6 +232,7 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
           orthopedics.name,
           ophthalmology.name,
           gynecology.name,
+          dentistry.name,
           neurosurgery.name,
           neurology.name,
           nephrology.name,
@@ -255,6 +260,7 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
           orthopedics.slug,
           ophthalmology.slug,
           gynecology.slug,
+          dentistry.slug,
           neurosurgery.slug,
           neurology.slug,
           nephrology.slug,
