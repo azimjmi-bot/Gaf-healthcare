@@ -1,6 +1,6 @@
 import { lazyArray } from "@/lib/array-view";
 import { withCatalogSeed, type CatalogSeed, type HospitalSeed } from "@/lib/catalog-seed";
-import { mapCatalogProcedures, mapInfertilityIvfProcedures } from "@/lib/procedure-map";
+import { mapCatalogProcedures } from "@/lib/procedure-map";
 import {
   ATHENAA_SURGICAL_PROCEDURES,
   CARDIOLOGY_PROCEDURES,
@@ -86,7 +86,6 @@ const pediatricOrthopaedic = getSpecialty("Pediatric Orthopaedic");
 const orthopedics = getSpecialty("Orthopedics");
 const ophthalmology = getSpecialty("Ophthalmology");
 const gynecology = getSpecialty("Gynecology");
-const infertilityIvf = getSpecialty("Infertility & IVF");
 const neurosurgery = getSpecialty("Neurosurgery");
 const neurology = getSpecialty("Neurology");
 const nephrology = getSpecialty("Nephrology");
@@ -111,7 +110,6 @@ if (
   !orthopedics ||
   !ophthalmology ||
   !gynecology ||
-  !infertilityIvf ||
   !neurosurgery ||
   !neurology ||
   !nephrology
@@ -157,20 +155,6 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
     ],
     radiationFaculty.length > 0,
   );
-  const infertilityFaculty = faculty.filter((d) => d.specialty === "Infertility & IVF");
-  // Faculty-linked only (like radiation). No silent fallback; skip bio-only matches
-  // until Infertility & IVF doctors are attached (laparoscopy/hysteroscopy are too generic).
-  const infertilityNames =
-    infertilityFaculty.length > 0
-      ? mapInfertilityIvfProcedures(
-          [
-            ...infertilityFaculty.flatMap((d) => d.proceduresExpertise),
-            ...infertilityFaculty.flatMap((d) => d.specializations),
-            seed.bio,
-          ],
-          false,
-        )
-      : [];
   const eyeCampus = isEyeCampus(seed.slug);
   const procedures = resolveProcedures(
     eyeCampus
@@ -196,7 +180,6 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
           ...ORTHOPEDICS_PROCEDURES,
           ...OPHTHALMOLOGY_PROCEDURES,
           ...GYNECOLOGY_PROCEDURES,
-          ...infertilityNames,
           ...NEUROSURGERY_PROCEDURES,
           ...NEUROLOGY_PROCEDURES,
           ...NEPHROLOGY_PROCEDURES,
@@ -219,7 +202,7 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
     accreditation: seed.accreditation,
     focus: eyeCampus
       ? ophthalmology.name
-      : `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name} · ${cardiacSurgery.name} · ${pediatricCardiacSurgery.name} · ${cardiology.name} · ${bariatric.name} · ${cosmetic.name} · ${ent.name} · ${gastroenterology.name} · ${surgicalGastroenterology.name} · ${urology.name} · ${spineSurgery.name} · ${pulmonology.name} · ${pediatricOrthopaedic.name} · ${orthopedics.name} · ${ophthalmology.name} · ${gynecology.name} · ${infertilityIvf.name} · ${neurosurgery.name} · ${neurology.name} · ${nephrology.name}`,
+      : `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name} · ${cardiacSurgery.name} · ${pediatricCardiacSurgery.name} · ${cardiology.name} · ${bariatric.name} · ${cosmetic.name} · ${ent.name} · ${gastroenterology.name} · ${surgicalGastroenterology.name} · ${urology.name} · ${spineSurgery.name} · ${pulmonology.name} · ${pediatricOrthopaedic.name} · ${orthopedics.name} · ${ophthalmology.name} · ${gynecology.name} · ${neurosurgery.name} · ${neurology.name} · ${nephrology.name}`,
     specialty: eyeCampus ? ophthalmology.name : radiation.name,
     specialtySlug: eyeCampus ? ophthalmology.slug : radiation.slug,
     specialties: eyeCampus
@@ -245,7 +228,6 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
           orthopedics.name,
           ophthalmology.name,
           gynecology.name,
-          infertilityIvf.name,
           neurosurgery.name,
           neurology.name,
           nephrology.name,
@@ -273,7 +255,6 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
           orthopedics.slug,
           ophthalmology.slug,
           gynecology.slug,
-          infertilityIvf.slug,
           neurosurgery.slug,
           neurology.slug,
           nephrology.slug,

@@ -84,14 +84,12 @@ function cleanTitle(raw: string, specialty: string) {
                                         ? "Ophthalmologist"
                                         : specialty === "Gynecology"
                                           ? "Gynecologist"
-                                          : specialty === "Infertility & IVF"
-                                            ? "Fertility Specialist"
-                                            : specialty === "Neurosurgery"
-                                              ? "Neurosurgeon"
-                                              : specialty === "Neurology"
-                                                ? "Neurologist"
-                                                : specialty === "Nephrology"
-                                                  ? "Nephrologist"
+                                          : specialty === "Neurosurgery"
+                                            ? "Neurosurgeon"
+                                            : specialty === "Neurology"
+                                              ? "Neurologist"
+                                              : specialty === "Nephrology"
+                                                ? "Nephrologist"
           : "Radiation Oncologist")
   );
 }
