@@ -1,4 +1,4 @@
-import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, GYNECOLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, NEPHROLOGY_PROCEDURES, NEUROLOGY_PROCEDURES, NEUROSURGERY_PROCEDURES, OPHTHALMOLOGY_PROCEDURES, ORTHOPEDICS_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
+import { BARIATRIC_PROCEDURES, CARDIOLOGY_PROCEDURES, CARDIAC_SURGERY_PROCEDURES, COSMETIC_PROCEDURES, ENT_PROCEDURES, GASTROENTEROLOGY_PROCEDURES, GYNECOLOGY_PROCEDURES, HEMATOLOGY_PROCEDURES, INFERTILITY_IVF_PROCEDURES, MEDICAL_ONCOLOGY_PROCEDURES, NEPHROLOGY_PROCEDURES, NEUROLOGY_PROCEDURES, NEUROSURGERY_PROCEDURES, OPHTHALMOLOGY_PROCEDURES, ORTHOPEDICS_PROCEDURES, PEDIATRIC_CARDIAC_SURGERY_PROCEDURES, PEDIATRIC_HEMATOLOGY_PROCEDURES, PEDIATRIC_ORTHOPAEDIC_PROCEDURES, PULMONOLOGY_PROCEDURES, RADIATION_PROCEDURES, SPINE_SURGERY_PROCEDURES, SURGICAL_GASTROENTEROLOGY_PROCEDURES, SURGICAL_ONCOLOGY_PROCEDURES, UROLOGY_PROCEDURES } from "@/lib/taxonomy";
 
 const RADIATION_RULES: { test: RegExp; name: (typeof RADIATION_PROCEDURES)[number] }[] = [
   { test: /cyber\s*knife/i, name: "CyberKnife" },
@@ -610,6 +610,44 @@ export function mapGynecologyProcedures(texts: string[], fallback = true) {
   return ["Laparoscopic Hysterectomy", "Laparoscopic Myomectomy", "Endometriosis Surgery"];
 }
 
+const INFERTILITY_IVF_RULES: { test: RegExp; name: (typeof INFERTILITY_IVF_PROCEDURES)[number] }[] = [
+  { test: /\bimsi\b|intracytoplasmic morphologically/i, name: "IMSI Treatment" },
+  { test: /\bicsi\b|intracytoplasmic sperm injection/i, name: "ICSI Treatment" },
+  { test: /\biui\b|intrauterine insemination/i, name: "IUI Treatment" },
+  { test: /frozen embryo|\bfet\b|cryopreserved embryo transfer/i, name: "Frozen Embryo Transfer (FET)" },
+  { test: /blastocyst/i, name: "Blastocyst Transfer" },
+  { test: /donor egg|egg donor|oocyte donor/i, name: "Donor Egg IVF" },
+  { test: /donor sperm|sperm donor/i, name: "Donor Sperm IVF" },
+  { test: /\bpgt[\s-]*a\b|pgs\b|aneuploidy screening|preimplantation genetic testing for aneuploid/i, name: "PGT-A Testing" },
+  { test: /\bpgt[\s-]*m\b|\bpgd\b|preimplantation genetic diagnos|preimplantation genetic testing for monogenic/i, name: "PGT-M / PGD Testing" },
+  { test: /embryo biops/i, name: "Embryo Biopsy" },
+  { test: /micro[\s-]*tese|microtese/i, name: "Micro-TESE" },
+  { test: /(?<!micro[\s-]*)\btese\b|\btesa\b|testicular sperm extraction|testicular sperm aspiration/i, name: "TESE / TESA" },
+  { test: /\bpesa\b|\bmesa\b|percutaneous epididymal|microsurgical epididymal/i, name: "PESA / MESA" },
+  { test: /egg freez|oocyte cryopreserv|oocyte freez/i, name: "Egg Freezing" },
+  { test: /embryo freez|embryo cryopreserv/i, name: "Embryo Freezing" },
+  { test: /fertility preserv|oncofertility/i, name: "Fertility Preservation" },
+  { test: /ovulation induction|clomiphene|letrozole.{0,20}ovulat/i, name: "Ovulation Induction" },
+  { test: /ovarian stimulat|controlled ovarian|cos\b/i, name: "Ovarian Stimulation" },
+  { test: /varicocele/i, name: "Varicocele Surgery" },
+  { test: /endometriosis/i, name: "Endometriosis Surgery" },
+  { test: /fibroid removal|myomect/i, name: "Fibroid Removal (Myomectomy)" },
+  { test: /ovarian cyst removal|ovarian cystectom|cystectomy.{0,12}ovarian/i, name: "Ovarian Cyst Removal" },
+  { test: /hysteroscop/i, name: "Hysteroscopy" },
+  { test: /laparoscop/i, name: "Laparoscopy" },
+  { test: /\bivf\b|in[\s-]*vitro fertil/i, name: "IVF Treatment" },
+];
+
+/**
+ * Maps Infertility & IVF expertise text to catalog procedures.
+ * Default fallback is false — sparse profiles must not invent a procedure trio.
+ */
+export function mapInfertilityIvfProcedures(texts: string[], fallback = false) {
+  const found = applyRules(texts, INFERTILITY_IVF_RULES);
+  if (found.length > 0 || !fallback) return found;
+  return ["IVF Treatment", "ICSI Treatment", "IUI Treatment"];
+}
+
 const NEUROSURGERY_RULES: { test: RegExp; name: (typeof NEUROSURGERY_PROCEDURES)[number] }[] = [
   { test: /glioma/i, name: "Glioma Surgery" },
   { test: /meningioma/i, name: "Meningioma Surgery" },
@@ -750,6 +788,7 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
   if (specialty === "Orthopedics") return mapOrthopedicsProcedures(texts);
   if (specialty === "Ophthalmology") return mapOphthalmologyProcedures(texts);
   if (specialty === "Gynecology") return mapGynecologyProcedures(texts);
+  if (specialty === "Infertility & IVF") return mapInfertilityIvfProcedures(texts, false);
   if (specialty === "Neurosurgery") return mapNeurosurgeryProcedures(texts);
   if (specialty === "Neurology") return mapNeurologyProcedures(texts);
   if (specialty === "Nephrology") return mapNephrologyProcedures(texts);
