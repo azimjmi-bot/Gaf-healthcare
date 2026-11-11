@@ -13,9 +13,9 @@ import {
   specialtyPageMeetsQualityThreshold,
 } from "../lib/specialty-page";
 
-// Infertility & IVF remains taxonomy-only for now; Dentistry is wired for costs
-// and specialty hubs but has no ginger-catalog doctor seeds yet.
-const TAXONOMY_ONLY_SPECIALTY_SLUGS = new Set(["infertility-ivf"]);
+// Infertility & IVF and Dentistry are wired for costs and specialty hubs but
+// have no ginger-catalog doctor seeds yet.
+const TAXONOMY_ONLY_SPECIALTY_SLUGS = new Set<string>();
 const SPECIALTIES_WITHOUT_DOCTOR_SEED = new Set(["infertility-ivf", "dentistry"]);
 
 test("discovers relationship-qualified specialty-country CMS candidates", () => {
@@ -40,27 +40,35 @@ test("publishes every article-qualified country profile through one builder", ()
   );
   assert.equal(profiles.length, expectedProfiles.length);
   assert.ok(profiles.some((profile) => profile.specialtySlug === "dentistry"));
+  assert.ok(profiles.some((profile) => profile.specialtySlug === "infertility-ivf"));
   assert.equal(
     profiles.filter((profile) => profile.status === "published").length,
-    24,
+    25,
   );
   for (const profile of profiles) {
     const data = buildSpecialtyPageData(profile);
     assert.ok(data, profile.specialtySlug);
+    const doctorBacked = !SPECIALTIES_WITHOUT_DOCTOR_SEED.has(profile.specialtySlug);
     assert.equal(
       specialtyPageMeetsQualityThreshold(data),
-      profile.status === "published",
+      profile.status === "published" && doctorBacked,
       profile.specialtySlug,
     );
     assert.equal(
       data.pricingGroups.flatMap((group) => group.rows).length,
       data.procedures.length,
     );
-    assert.ok(data.pricingGroups.length > 0);
-    assert.equal(
-      data.longFormArticleCoverage >= 0.9,
-      profile.status === "published",
-    );
+    if (doctorBacked) {
+      assert.ok(data.pricingGroups.length > 0);
+      assert.equal(
+        data.longFormArticleCoverage >= 0.9,
+        profile.status === "published",
+      );
+    } else {
+      assert.equal(profile.status, "published", profile.specialtySlug);
+      assert.ok(profile.pricingGroups.length > 0, profile.specialtySlug);
+      assert.equal(data.doctors.length, 0, profile.specialtySlug);
+    }
   }
 });
 
