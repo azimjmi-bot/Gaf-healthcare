@@ -27,6 +27,8 @@ export const SPECIALTY_BLURB: Record<string, string> = {
   ophthalmology: "Cataract, cornea, retina and refractive work on a floor that only does eyes.",
   gynecology: "Womb, ovaries and endometriosis — laparoscopic when the pelvis allows it.",
   dentistry: "Implants, orthodontics and oral surgery on a named dental list — not a walk-in whitening mill.",
+  "infertility-ivf":
+    "IVF, ICSI and related laboratory pathways with a named fertility specialist — not a package brochure.",
   neurosurgery: "Brain, spine and radiosurgery with a named neurosurgeon on the consent form.",
   neurology: "Stroke, epilepsy and movement lists — medicine and devices before a craniotomy whenever that is honest.",
   nephrology: "Dialysis, biopsy and transplant medicine, shared with urology when a kidney is changing hands.",
@@ -54,6 +56,7 @@ export const SPECIALTY_PEOPLE: Record<string, { one: string; many: string }> = {
   ophthalmology: { one: "ophthalmologist", many: "ophthalmologists" },
   gynecology: { one: "gynecologist", many: "gynecologists" },
   dentistry: { one: "dentist", many: "dentists" },
+  "infertility-ivf": { one: "fertility specialist", many: "fertility specialists" },
   neurosurgery: { one: "neurosurgeon", many: "neurosurgeons" },
   neurology: { one: "neurologist", many: "neurologists" },
   nephrology: { one: "nephrologist", many: "nephrologists" },
