@@ -84,7 +84,7 @@ This distinction is particularly important for patients searching for intraperit
 
 **Conventional IP chemotherapy** is administered directly into the abdominal cavity, commonly through an implanted catheter and port. It can be delivered as part of a planned series of treatments.
 
-**HIPEC** stands for hyperthermic intraperitoneal chemotherapy. It is generally performed after surgeons remove visible peritoneal tumour during cytoreductive surgery. A heated chemotherapy solution is then circulated through the abdominal cavity. See [HIPEC surgery in India](/treatments/hipec-surgery-in-india). Neighbouring [CRS with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) is **$18,000–$40,000**, typically **10–21 nights**.
+**HIPEC** stands for hyperthermic intraperitoneal chemotherapy. It is generally performed after surgeons remove visible peritoneal tumour during cytoreductive surgery. A heated chemotherapy solution is then circulated through the abdominal cavity. See [HIPEC surgery in India](/treatments/hipec-surgery-in-india). Neighbouring [CRS with HIPEC](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC) is **$18,000–$40,000**, typically **10–21 nights**. For how HIPEC differs from bloodstream chemotherapy, see [HIPEC vs Conventional Chemotherapy](/blogs/hipec-vs-conventional-chemotherapy).
 
 | Feature | IP chemotherapy | HIPEC |
 |---|---|---|

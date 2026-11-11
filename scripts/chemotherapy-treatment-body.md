@@ -179,7 +179,7 @@ Some medicines can be administered into the cerebrospinal fluid when treatment o
 
 ### Intraperitoneal or other regional administration
 
-Selected treatments may be delivered directly into a body cavity. Named lists sit on [intraperitoneal chemotherapy in India](/treatments/intraperitoneal-chemotherapy-in-india). Heated intraoperative lists sit on [HIPEC surgery in India](/treatments/hipec-surgery-in-india).
+Selected treatments may be delivered directly into a body cavity. Named lists sit on [intraperitoneal chemotherapy in India](/treatments/intraperitoneal-chemotherapy-in-india). Heated intraoperative lists sit on [HIPEC surgery in India](/treatments/hipec-surgery-in-india). A patient-facing comparison of heated intraperitoneal therapy versus systemic treatment is published as [HIPEC vs Conventional Chemotherapy](/blogs/hipec-vs-conventional-chemotherapy).
 
 [Ask which route is planned for your regimen](/consult?treatment=chemotherapy-in-india)
 
