@@ -13,11 +13,19 @@ import {
   specialtyPageMeetsQualityThreshold,
 } from "../lib/specialty-page";
 
+// Infertility & IVF remains taxonomy-only for now; Dentistry is wired for costs
+// and specialty hubs but has no ginger-catalog doctor seeds yet.
+const TAXONOMY_ONLY_SPECIALTY_SLUGS = new Set(["infertility-ivf"]);
+const SPECIALTIES_WITHOUT_DOCTOR_SEED = new Set(["infertility-ivf", "dentistry"]);
+
 test("discovers relationship-qualified specialty-country CMS candidates", () => {
   const candidates = listSpecialtyPageCandidates();
-  assert.equal(candidates.length, SPECIALTIES.length);
+  const expected = SPECIALTIES.filter(
+    (specialty) => !SPECIALTIES_WITHOUT_DOCTOR_SEED.has(specialty.slug),
+  );
+  assert.equal(candidates.length, expected.length);
   assert.ok(candidates.every((profile) => profile.countrySlug === "india"));
-  for (const slug of SPECIALTIES.map((specialty) => specialty.slug)) {
+  for (const slug of expected.map((specialty) => specialty.slug)) {
     assert.ok(
       candidates.some((profile) => profile.specialtySlug === slug),
       slug,
@@ -27,10 +35,14 @@ test("discovers relationship-qualified specialty-country CMS candidates", () => 
 
 test("publishes every article-qualified country profile through one builder", () => {
   const profiles = listBaseSpecialtyPages();
-  assert.equal(profiles.length, SPECIALTIES.length);
+  const expectedProfiles = SPECIALTIES.filter(
+    (specialty) => !TAXONOMY_ONLY_SPECIALTY_SLUGS.has(specialty.slug),
+  );
+  assert.equal(profiles.length, expectedProfiles.length);
+  assert.ok(profiles.some((profile) => profile.specialtySlug === "dentistry"));
   assert.equal(
     profiles.filter((profile) => profile.status === "published").length,
-    23,
+    24,
   );
   for (const profile of profiles) {
     const data = buildSpecialtyPageData(profile);
@@ -55,7 +67,9 @@ test("publishes every article-qualified country profile through one builder", ()
 test("only doctor-backed, data-sufficient cities pass the authority-page gate", () => {
   const indiaCities = CITIES.filter((city) => city.countrySlug === "india");
   for (const profile of listBaseSpecialtyPages().filter(
-    (candidate) => candidate.status === "published",
+    (candidate) =>
+      candidate.status === "published" &&
+      !SPECIALTIES_WITHOUT_DOCTOR_SEED.has(candidate.specialtySlug),
   )) {
     const country = buildSpecialtyPageData(profile);
     assert.ok(country, profile.specialtySlug);
