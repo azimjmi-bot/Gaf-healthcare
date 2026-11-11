@@ -97,6 +97,7 @@ export const SPECIALTIES: Taxon[] = [
   taxon("Orthopedics"),
   taxon("Ophthalmology"),
   taxon("Gynecology"),
+  taxon("Infertility & IVF"),
   taxon("Neurosurgery"),
   taxon("Neurology"),
   taxon("Nephrology"),
@@ -521,6 +522,34 @@ export const GYNECOLOGY_PROCEDURES = [
   "Gynecologic Cancer Surgery",
 ] as const;
 
+export const INFERTILITY_IVF_PROCEDURES = [
+  "IVF Treatment",
+  "ICSI Treatment",
+  "IUI Treatment",
+  "IMSI Treatment",
+  "Frozen Embryo Transfer (FET)",
+  "Blastocyst Transfer",
+  "Donor Egg IVF",
+  "Donor Sperm IVF",
+  "Ovulation Induction",
+  "Ovarian Stimulation",
+  "Egg Freezing",
+  "Embryo Freezing",
+  "Fertility Preservation",
+  "PGT-A Testing",
+  "PGT-M / PGD Testing",
+  "Embryo Biopsy",
+  "Hysteroscopy",
+  "Laparoscopy",
+  "Micro-TESE",
+  "TESE / TESA",
+  "PESA / MESA",
+  "Varicocele Surgery",
+  "Endometriosis Surgery",
+  "Fibroid Removal (Myomectomy)",
+  "Ovarian Cyst Removal",
+] as const;
+
 export const NEUROSURGERY_PROCEDURES = [
   "Brain Tumor Surgery",
   "Glioma Surgery",
@@ -615,6 +644,7 @@ function procedureTaxon(name: string, specialtySlugs: string[]): ProcedureTaxon 
 const HEMATOLOGY_NAMES = new Set<string>(HEMATOLOGY_PROCEDURES);
 const OPHTHALMOLOGY_NAMES = new Set<string>(OPHTHALMOLOGY_PROCEDURES);
 const GYNECOLOGY_NAMES = new Set<string>(GYNECOLOGY_PROCEDURES);
+const INFERTILITY_IVF_NAMES = new Set<string>(INFERTILITY_IVF_PROCEDURES);
 const NEUROSURGERY_NAMES = new Set<string>(NEUROSURGERY_PROCEDURES);
 const NEUROLOGY_NAMES = new Set<string>(NEUROLOGY_PROCEDURES);
 const NEPHROLOGY_NAMES = new Set<string>(NEPHROLOGY_PROCEDURES);
@@ -655,6 +685,10 @@ function withOphthalmology(name: string, specs: string[]) {
 
 function withGynecology(name: string, specs: string[]) {
   return GYNECOLOGY_NAMES.has(name) ? [...specs, "gynecology"] : specs;
+}
+
+function withInfertilityIvf(name: string, specs: string[]) {
+  return INFERTILITY_IVF_NAMES.has(name) ? [...specs, "infertility-ivf"] : specs;
 }
 
 function withNeurosurgery(name: string, specs: string[]) {
@@ -705,7 +739,7 @@ export const PROCEDURES: ProcedureTaxon[] = [
     (name) => !SURGICAL_ONCOLOGY_NAMES.has(name) && !BARIATRIC_NAMES.has(name),
   ).map((name) => procedureTaxon(name, ["surgical-gastroenterology"])),
   ...UROLOGY_PROCEDURES.filter((name) => !SURGICAL_ONCOLOGY_NAMES.has(name)).map((name) =>
-    procedureTaxon(name, withNephrology(name, ["urology"])),
+    procedureTaxon(name, withInfertilityIvf(name, withNephrology(name, ["urology"]))),
   ),
   ...SPINE_SURGERY_PROCEDURES.map((name) => procedureTaxon(name, withNeurosurgery(name, ["spine-surgery"]))),
   ...PULMONOLOGY_PROCEDURES.map((name) => procedureTaxon(name, ["pulmonology"])),
@@ -715,7 +749,12 @@ export const PROCEDURES: ProcedureTaxon[] = [
     procedureTaxon(name, ["ophthalmology"]),
   ),
   ...GYNECOLOGY_PROCEDURES.filter((name) => !SURGICAL_ONCOLOGY_NAMES.has(name)).map((name) =>
-    procedureTaxon(name, ["gynecology"]),
+    procedureTaxon(name, withInfertilityIvf(name, ["gynecology"])),
+  ),
+  ...INFERTILITY_IVF_PROCEDURES.filter(
+    (name) => !GYNECOLOGY_NAMES.has(name) && !UROLOGY_NAMES.has(name),
+  ).map((name) =>
+    procedureTaxon(name, withGynecology(name, withUrology(name, ["infertility-ivf"]))),
   ),
   ...NEUROSURGERY_PROCEDURES.filter(
     (name) => !RADIATION_NAMES.has(name) && !SPINE_NAMES.has(name) && !ENT_NAMES.has(name),
