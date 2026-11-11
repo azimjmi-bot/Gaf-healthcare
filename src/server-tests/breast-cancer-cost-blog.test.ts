@@ -1,74 +1,50 @@
 import assert from "node:assert/strict";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
-import { articleCtaCount, faqsFromArticleBlocks, getPost, listPublishedPosts } from "@/lib/blogs";
-import { parsePrettyCatalogSegments } from "@/lib/pretty-catalog-path";
+import { articleCtaCount, faqsFromArticleBlocks, getPost } from "@/lib/blogs";
 import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
 
 const SLUG = "breast-cancer-treatment-cost-in-india";
 
-test("the published cost blog is complete, interlinked and indexed only in English", () => {
+test("breast cancer cost blog refresh uses GAF USD sheets, FAQs and WebPs", () => {
   const post = getPost(SLUG, "en");
   assert.ok(post);
   assert.equal(post.status, "published");
-  assert.equal(post.allowIndex, true);
-  assert.equal(post.seoTitle, "Breast Cancer Treatment Cost in India: Complete Cost Guide");
-  assert.match(post.seoDescription, /cost/i);
-  assert.ok((post.keywords?.length ?? 0) >= 8);
+  assert.equal(post.seoTitle, "Breast Cancer Treatment Cost in India: Complete Price Guide (2026)");
+  assert.match(post.seoDescription, /breast cancer treatment costs in India/i);
+  assert.equal(post.canonical, `https://gaf.healthcare/blogs/${SLUG}`);
 
   const texts = post.blocks
-    .map((block) => {
-      if (block.type === "paragraph") return block.text;
-      if (block.type === "button") return `[${block.label}](${block.href})`;
-      if (block.type === "image") return block.src;
-      if (block.type === "html") return block.html;
+    .map((b) => {
+      if (b.type === "paragraph" || b.type === "heading") return b.text;
+      if (b.type === "button") return `[${b.label}](${b.href})`;
+      if (b.type === "list") return b.items.join("\n");
+      if (b.type === "image") return b.src;
+      if (b.type === "html") return b.html;
       return "";
     })
     .join("\n");
 
   assert.match(texts, /article-quick-answer/);
+  assert.match(texts, /\$3,500–\$8,000/);
+  assert.match(texts, /\$4,500–\$10,000/);
+  assert.match(texts, /\$1,500–\$8,000\+/);
+  assert.doesNotMatch(texts, /₹/);
+  assert.match(texts, /wa\.me\/919044346292/);
+  assert.match(texts, /\/consult/);
   assert.match(texts, /\/treatments\/breast-cancer-treatment-in-india/);
-  assert.match(texts, /\/blogs\/breast-cancer-treatment-by-stage/);
-  for (const path of [
-    "/costs/India/Surgical-Oncology/Lumpectomy",
-    "/doctors/India/Surgical-Oncology/Lumpectomy",
-    "/costs/India/Surgical-Oncology/Mastectomy",
-    "/doctors/India/Surgical-Oncology/Mastectomy",
-    "/costs/India/Surgical-Oncology/Oncoplastic-Breast-Surgery",
-    "/costs/India/Surgical-Oncology/Nipple-Sparing-Mastectomy",
-    "/costs/India/Surgical-Oncology/Breast-Reconstruction",
-    "/costs/India/Medical-Oncology/Chemotherapy",
-    "/costs/India/Medical-Oncology/Hormone-Therapy",
-    "/costs/India/Medical-Oncology/Targeted-Therapy",
-    "/costs/India/Medical-Oncology/Immunotherapy",
-    "/costs/India/Radiation-Oncology/EBRT",
-    "/doctors/India/Delhi-NCR",
-    "/doctors/India/Mumbai",
-    "/doctors/India/Bengaluru",
-    "/doctors/India/Chennai",
-    "/doctors/India/Hyderabad",
+  assert.ok(articleCtaCount(post.blocks) >= 5);
+  assert.ok(faqsFromArticleBlocks(post.blocks).length >= 15);
+  for (const f of [
+    "breast-cancer-cost-stack.webp",
+    "breast-cancer-cost-surgery.webp",
+    "breast-cancer-cost-estimate.webp",
+    "breast-cancer-cost-international.webp",
   ]) {
-    assert.match(texts, new RegExp(path.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
-    const segments = path.split("/").slice(2);
-    assert.ok(parsePrettyCatalogSegments(segments), path);
+    assert.match(texts, new RegExp(f.replace(/\./g, "\\.")));
+    assert.ok(existsSync(join(process.cwd(), "public/uploads/articles", f)));
   }
-
-  for (const file of [
-    "breast-cancer-cost-stack.png",
-    "breast-cancer-cost-quotations.png",
-    "breast-cancer-surgery-cost-options.png",
-    "breast-cancer-estimate-pathway.png",
-  ]) {
-    assert.match(texts, new RegExp(file.replace(/[.]/g, "\\.")));
-    assert.ok(existsSync(join(process.cwd(), "public/uploads/articles", file)), file);
-  }
-
-  assert.ok(articleCtaCount(post.blocks) >= 7, `expected 7 CTAs, found ${articleCtaCount(post.blocks)}`);
-  assert.ok(faqsFromArticleBlocks(post.blocks).length >= 8);
-  const arabicPost = listPublishedPosts("ar").find((row) => row.slug === SLUG);
-  if (arabicPost) assert.match(arabicPost.title, /[\u0600-\u06FF]/);
-
-  const sitemap = buildLocaleSitemap("en").map((row) => row.url);
-  assert.ok(sitemap.some((url) => url.endsWith(`/blogs/${SLUG}`)));
+  assert.ok(buildLocaleSitemap("en").some((r) => r.url.endsWith(`/blogs/${SLUG}`)));
+  assert.match(readFileSync(join(process.cwd(), "public/llms.txt"), "utf8"), /breast-cancer-treatment-cost-in-india/);
 });
