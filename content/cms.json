@@ -2375,44 +2375,48 @@
       ],
       "relatedLinks": [
         {
-          "label": "HIPEC surgery in India",
+          "label": "HIPEC Surgery in India",
           "href": "/treatments/hipec-surgery-in-india"
         },
         {
-          "label": "Intraperitoneal chemotherapy in India",
+          "label": "What Is HIPEC Surgery?",
+          "href": "/blogs/what-is-hipec-surgery"
+        },
+        {
+          "label": "Peritoneal Carcinomatosis: Causes, Symptoms, Diagnosis and Treatment Options in India",
+          "href": "/blogs/peritoneal-carcinomatosis"
+        },
+        {
+          "label": "Peritoneal Metastases: Can Cancer Spread Inside the Abdominal Cavity Be Treated?",
+          "href": "/blogs/peritoneal-metastases-treatment"
+        },
+        {
+          "label": "Peritoneal Cancer Index (PCI): How Doctors Determine Eligibility for HIPEC and Surgery",
+          "href": "/blogs/peritoneal-cancer-index-pci"
+        },
+        {
+          "label": "HIPEC Surgery for Stomach Cancer",
+          "href": "/blogs/hipec-surgery-for-stomach-cancer"
+        },
+        {
+          "label": "Intraperitoneal Chemotherapy in India",
           "href": "/treatments/intraperitoneal-chemotherapy-in-india"
         },
         {
-          "label": "Colon cancer treatment in India",
+          "label": "Colon Cancer Treatment in India",
           "href": "/treatments/colon-cancer-treatment-in-india"
         },
         {
-          "label": "Ovarian cancer treatment in India",
-          "href": "/treatments/ovarian-cancer-treatment-in-india"
-        },
-        {
-          "label": "Stage 4 colon cancer treatment in India",
+          "label": "Stage 4 Colon Cancer Treatment in India",
           "href": "/blogs/stage-4-colon-cancer-treatment-in-india"
         },
         {
-          "label": "CRS with HIPEC cost in India",
+          "label": "Ovarian Cancer Treatment in India",
+          "href": "/treatments/ovarian-cancer-treatment-in-india"
+        },
+        {
+          "label": "Cytoreductive surgery with HIPEC — cost sheet",
           "href": "/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC"
-        },
-        {
-          "label": "Cytoreductive surgery cost in India",
-          "href": "/costs/India/Surgical-Oncology/Cytoreductive-Surgery"
-        },
-        {
-          "label": "PIPAC cost in India",
-          "href": "/costs/India/Surgical-Oncology/PIPAC"
-        },
-        {
-          "label": "Surgical oncologists in India",
-          "href": "/doctors/India/Surgical-Oncology"
-        },
-        {
-          "label": "Surgical oncology hospitals in India",
-          "href": "/hospitals/India/Surgical-Oncology"
         }
       ],
       "blocks": [
@@ -3659,15 +3663,16 @@
           "style": "ul",
           "items": [
             "[HIPEC Surgery in India](/treatments/hipec-surgery-in-india)",
+            "[What Is HIPEC Surgery?](/blogs/what-is-hipec-surgery)",
+            "[Peritoneal Carcinomatosis: Causes, Symptoms, Diagnosis and Treatment Options in India](/blogs/peritoneal-carcinomatosis)",
+            "[Peritoneal Metastases: Can Cancer Spread Inside the Abdominal Cavity Be Treated?](/blogs/peritoneal-metastases-treatment)",
+            "[Peritoneal Cancer Index (PCI): How Doctors Determine Eligibility for HIPEC and Surgery](/blogs/peritoneal-cancer-index-pci)",
+            "[HIPEC Surgery for Stomach Cancer](/blogs/hipec-surgery-for-stomach-cancer)",
             "[Intraperitoneal Chemotherapy in India](/treatments/intraperitoneal-chemotherapy-in-india)",
             "[Colon Cancer Treatment in India](/treatments/colon-cancer-treatment-in-india)",
             "[Stage 4 Colon Cancer Treatment in India](/blogs/stage-4-colon-cancer-treatment-in-india)",
-            "[Colon Cancer Chemotherapy in India](/blogs/colon-cancer-chemotherapy-in-india)",
             "[Ovarian Cancer Treatment in India](/treatments/ovarian-cancer-treatment-in-india)",
-            "[Chemotherapy in India](/treatments/chemotherapy-in-india)",
-            "[Cytoreductive surgery with HIPEC — cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC)",
-            "[Cytoreductive surgery — cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery)",
-            "[PIPAC — cost sheet](/costs/India/Surgical-Oncology/PIPAC)"
+            "[Cytoreductive surgery with HIPEC — cost sheet](/costs/India/Surgical-Oncology/Cytoreductive-Surgery-with-HIPEC)"
           ]
         },
         {
