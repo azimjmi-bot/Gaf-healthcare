@@ -160,7 +160,9 @@
     "HER2-positive",
     "pertuzumab",
     "fertility preservation",
-    "BRCA"
+    "BRCA",
+    "breastfeeding",
+    "PABC"
   ],
   "media": [
     {
@@ -2773,9 +2775,1061 @@
       "name": "young-women-brca-genetic-counseling.webp",
       "alt": "Young woman in genetic counselling beside a circular DNA helix representing BRCA hereditary risk assessment",
       "addedAt": "2026-11-12T18:15:00.000Z"
+    },
+    {
+      "id": "media_pregnancy_breast_cancer_overview_webp",
+      "url": "/uploads/articles/pregnancy-breast-cancer-overview.webp",
+      "name": "pregnancy-breast-cancer-overview.webp",
+      "alt": "Pregnant woman in clinic consultation beside a circular breast anatomy diagram suggesting pregnancy-associated breast cancer evaluation",
+      "addedAt": "2026-11-12T18:40:00.000Z"
+    },
+    {
+      "id": "media_pregnancy_breast_cancer_ultrasound_webp",
+      "url": "/uploads/articles/pregnancy-breast-cancer-ultrasound.webp",
+      "name": "pregnancy-breast-cancer-ultrasound.webp",
+      "alt": "Pregnant woman undergoing breast ultrasound beside a circular diagram of ultrasound assessment of breast tissue",
+      "addedAt": "2026-11-12T18:40:00.000Z"
+    },
+    {
+      "id": "media_pregnancy_breast_cancer_treatment_timing_webp",
+      "url": "/uploads/articles/pregnancy-breast-cancer-treatment-timing.webp",
+      "name": "pregnancy-breast-cancer-treatment-timing.webp",
+      "alt": "Pregnant woman discussing multidisciplinary treatment timing beside a circular conceptual diagram of surgery and chemotherapy planning in pregnancy",
+      "addedAt": "2026-11-12T18:40:00.000Z"
+    },
+    {
+      "id": "media_pregnancy_breast_cancer_breastfeeding_care_webp",
+      "url": "/uploads/articles/pregnancy-breast-cancer-breastfeeding-care.webp",
+      "name": "pregnancy-breast-cancer-breastfeeding-care.webp",
+      "alt": "Woman in postpartum clinic counselling beside a circular diagram of lactating breast tissue and medicine-safety considerations",
+      "addedAt": "2026-11-12T18:40:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_breast_cancer_during_pregnancy_breastfeeding_treatment_india",
+      "slug": "breast-cancer-during-pregnancy-breastfeeding-treatment-india",
+      "title": "Breast Cancer During Pregnancy and Breastfeeding: Symptoms, Diagnosis, Treatment and Care in India",
+      "excerpt": "Breast cancer can develop during pregnancy or while a woman is breastfeeding. Breast enlargement, tenderness and milk-related changes can make a suspicious lump harder to recognise, but diagnosis and treatment should not be delayed. This guide explains warning signs, diagnostic tests, treatment options, pregnancy-related precautions, breastfeeding considerations and specialist care available in India.",
+      "date": "12 Nov 2026",
+      "publishedAt": "2026-11-12T18:40:00.000Z",
+      "updatedAt": "2026-11-12T18:40:00.000Z",
+      "author": "GAF Healthcare Editorial",
+      "category": "Medical Oncology",
+      "tags": [
+        "breast cancer",
+        "pregnancy",
+        "breastfeeding",
+        "PABC",
+        "India",
+        "cost"
+      ],
+      "image": "/uploads/articles/pregnancy-breast-cancer-overview.webp",
+      "imageAlt": "Pregnant woman in clinic consultation beside a circular breast anatomy diagram suggesting pregnancy-associated breast cancer evaluation",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Breast Cancer During Pregnancy and Breastfeeding: Treatment in India",
+      "seoDescription": "Can breast cancer be treated during pregnancy or breastfeeding? Learn about symptoms, diagnosis, safe imaging, surgery, chemotherapy, treatment timing and care options in India.",
+      "canonical": "https://gaf.healthcare/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india",
+      "ogImage": "/uploads/articles/pregnancy-breast-cancer-overview.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Breast cancer during pregnancy",
+        "Breast cancer during breastfeeding",
+        "Pregnancy-associated breast cancer",
+        "Breast cancer symptoms during pregnancy",
+        "Breast cancer while breastfeeding",
+        "Breast cancer diagnosis during pregnancy",
+        "Breast cancer treatment during pregnancy",
+        "Chemotherapy during pregnancy",
+        "Breast surgery during pregnancy",
+        "Breast cancer and pregnancy in India",
+        "Breast cancer during lactation",
+        "Breast cancer while nursing",
+        "Pregnancy after breast cancer"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Breast cancer treatment in India",
+          "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Breast cancer during pregnancy (related guide)",
+          "href": "/blogs/breast-cancer-during-pregnancy-treatment-india"
+        },
+        {
+          "label": "Breast cancer in young women",
+          "href": "/blogs/breast-cancer-in-young-women-treatment-india"
+        },
+        {
+          "label": "Breast cancer symptoms",
+          "href": "/blogs/breast-cancer-symptoms"
+        },
+        {
+          "label": "Breast cancer diagnosis",
+          "href": "/blogs/breast-cancer-diagnosis"
+        },
+        {
+          "label": "Breast cancer diagnosis tests (ER/PR/HER2)",
+          "href": "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2"
+        },
+        {
+          "label": "Breast cancer stages",
+          "href": "/blogs/breast-cancer-stages"
+        },
+        {
+          "label": "Breast cancer treatment options",
+          "href": "/blogs/breast-cancer-treatment-options"
+        },
+        {
+          "label": "Breast cancer surgery in India",
+          "href": "/blogs/breast-cancer-surgery-in-india"
+        },
+        {
+          "label": "Lumpectomy vs mastectomy",
+          "href": "/blogs/lumpectomy-vs-mastectomy"
+        },
+        {
+          "label": "Breast reconstruction after mastectomy",
+          "href": "/blogs/breast-reconstruction-after-mastectomy-india"
+        },
+        {
+          "label": "Chemotherapy for breast cancer",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Breast cancer chemotherapy in India",
+          "href": "/blogs/breast-cancer-chemotherapy-in-india"
+        },
+        {
+          "label": "Radiation therapy for breast cancer",
+          "href": "/blogs/breast-cancer-radiation-therapy-in-india"
+        },
+        {
+          "label": "Hormone therapy for breast cancer",
+          "href": "/blogs/hormone-therapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Targeted therapy for breast cancer",
+          "href": "/blogs/targeted-therapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "HER2-positive breast cancer",
+          "href": "/blogs/her2-positive-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Triple-negative breast cancer",
+          "href": "/blogs/triple-negative-breast-cancer-treatment-india"
+        },
+        {
+          "label": "ER/PR/HER2 results explained",
+          "href": "/blogs/er-pr-her2-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Breast cancer treatment cost in India",
+          "href": "/blogs/breast-cancer-treatment-cost-in-india"
+        },
+        {
+          "label": "International patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "Medical oncology doctors",
+          "href": "/doctors/India/Medical-Oncology"
+        },
+        {
+          "label": "Medical oncology hospitals",
+          "href": "/hospitals/India/Medical-Oncology"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"md-body\"><table><thead><tr><th>Question</th><th>Quick Answer</th></tr></thead><tbody><tr><td><strong>Can breast cancer develop in pregnancy?</strong></td><td>Yes — also during lactation or the first year after delivery (pregnancy-associated breast cancer).</td></tr><tr><td><strong>First imaging test</strong></td><td>Breast ultrasound — no ionising radiation; mammography/biopsy when clinically needed</td></tr><tr><td><strong>Surgery</strong></td><td>Can be performed during pregnancy when indicated — <a href=\"/blogs/breast-cancer-surgery-in-india\">surgery guide</a></td></tr><tr><td><strong>Chemotherapy</strong></td><td>Selected regimens may be considered after the first trimester — <a href=\"/blogs/breast-cancer-chemotherapy-in-india\">chemo guide</a></td></tr><tr><td><strong>Usually postponed</strong></td><td>Radiation, hormone therapy, HER2-targeted drugs and immunotherapy until after delivery</td></tr><tr><td><strong>Breastfeeding on chemo</strong></td><td>Generally not safe — many medicines pass into breast milk</td></tr><tr><td><strong>Terminate pregnancy?</strong></td><td>Not automatically — many patients receive selected treatment while continuing pregnancy</td></tr><tr><td><strong>India planning ranges</strong></td><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemo</a> $1,500–$8,000+ · <a href=\"/costs/India/Surgical-Oncology/Lumpectomy\">lumpectomy</a> $3,500–$8,000 · <a href=\"/costs/India/Surgical-Oncology/Mastectomy\">mastectomy</a> $4,500–$10,000</td></tr></tbody></table></div><p class=\"article-quick-answer__body\"><strong>Breast cancer during pregnancy or breastfeeding</strong> needs coordinated oncology and obstetric care. Pregnancy or lactation should not delay evaluation of a suspicious lump. GAF figures are partner planning ranges, not hospital quotations.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Breast cancer can develop during pregnancy or while a woman is breastfeeding. Breast enlargement, tenderness and milk-related changes can make a suspicious lump harder to recognise, but diagnosis and treatment should not be delayed. This guide explains warning signs, diagnostic tests, treatment options, pregnancy-related precautions, breastfeeding considerations and specialist care available for [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india)."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "Related reading: [symptoms](/blogs/breast-cancer-symptoms), [diagnosis](/blogs/breast-cancer-diagnosis), [young women and fertility](/blogs/breast-cancer-in-young-women-treatment-india), [surgery](/blogs/breast-cancer-surgery-in-india), [chemotherapy](/blogs/breast-cancer-chemotherapy-in-india), [HER2-positive disease](/blogs/her2-positive-breast-cancer-treatment-india), [triple-negative disease](/blogs/triple-negative-breast-cancer-treatment-india) and [treatment cost](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "btn_004",
+          "type": "button",
+          "label": "Ask GAF to review pregnancy breast cancer records",
+          "href": "/consult?treatment=Breast%20Cancer%20During%20Pregnancy"
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with oncology and antenatal reports](https://wa.me/919044346292?text=Please%20review%20my%20breast%20cancer%20reports%20during%20pregnancy%2Fbreastfeeding%20and%20advise%20on%20treatment%20options%20in%20India.)"
+        },
+        {
+          "id": "img_006",
+          "type": "image",
+          "src": "/uploads/articles/pregnancy-breast-cancer-overview.webp",
+          "alt": "Pregnant woman in clinic consultation beside a circular breast anatomy diagram suggesting pregnancy-associated breast cancer evaluation",
+          "caption": "Pregnancy or breastfeeding should not delay assessment of a suspicious breast lump."
+        },
+        {
+          "id": "h_007",
+          "type": "heading",
+          "level": 2,
+          "text": "Can breast cancer develop during pregnancy or breastfeeding?"
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "Yes. Breast cancer can develop during pregnancy, shortly after childbirth or while breastfeeding. This is often discussed as **pregnancy-associated breast cancer (PABC)** — commonly including diagnosis during pregnancy, within the first year after delivery or during lactation (definitions vary between studies)."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "It is uncommon but important because pregnancy and breastfeeding naturally change the breasts — enlargement, tenderness, milk-filled ducts, lumps, nipple changes and inflammation are frequent. Most of these changes are not cancer. A persistent or suspicious lump, however, should never be ignored."
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "**Most important message:** Pregnancy or breastfeeding should not be a reason to postpone evaluation of a suspicious breast lump."
+        },
+        {
+          "id": "h_011",
+          "type": "heading",
+          "level": 2,
+          "text": "Why can breast cancer be difficult to detect during pregnancy?"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Hormonal changes prepare the breasts for breastfeeding. Oestrogen, progesterone and other hormones stimulate growth, so breasts may become larger, heavier, more sensitive and denser — making abnormalities harder to recognise."
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "A woman may assume a lump is milk accumulation, a blocked duct, engorgement, mastitis, a fibroadenoma or normal hormonal change. Those explanations may be correct, but they should not be assumed without assessment when a lump persists or looks suspicious."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 3,
+          "text": "Why diagnosis may be delayed"
+        },
+        {
+          "id": "ul_015",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Belief that breast lumps are normal in pregnancy",
+            "Tenderness attributed only to hormones",
+            "Initial treatment as a breastfeeding-related problem",
+            "Avoiding imaging due to radiation concerns",
+            "Delaying biopsy due to breastfeeding fears",
+            "Advice to wait until after delivery"
+          ]
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "Delaying diagnosis can allow cancer to progress. Doctors can select appropriate investigations while considering pregnancy and fetal safety."
+        },
+        {
+          "id": "h_017",
+          "type": "heading",
+          "level": 2,
+          "text": "Symptoms of breast cancer during pregnancy and breastfeeding"
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "Symptoms are broadly similar to breast cancer outside pregnancy, but pregnancy and lactation can make some changes less obvious. Overview: [breast cancer symptoms](/blogs/breast-cancer-symptoms)."
+        },
+        {
+          "id": "html_019",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Warning sign</th><th>What to look for</th></tr></thead><tbody><tr><td>Persistent breast lump</td><td>A lump that does not disappear or continues to grow</td></tr><tr><td>Unusual swelling</td><td>One breast becomes noticeably larger or changes shape</td></tr><tr><td>Skin dimpling</td><td>Skin appears pulled inward</td></tr><tr><td>Nipple inversion</td><td>A nipple newly turns inward</td></tr><tr><td>Bloody nipple discharge</td><td>Spontaneous discharge, particularly from one breast</td></tr><tr><td>Underarm lump</td><td>A new swelling in the armpit</td></tr><tr><td>Persistent redness</td><td>Redness that does not improve as expected</td></tr><tr><td>Skin thickening</td><td>Unusual orange-peel appearance</td></tr><tr><td>Non-healing changes</td><td>Persistent abnormal area despite appropriate treatment</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a breast lump during breastfeeding usually cancer?"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "No. Common benign causes include galactoceles, plugged ducts, mastitis, abscesses, fibroadenomas and other benign changes. A lump that persists, enlarges or does not respond to appropriate treatment needs medical evaluation."
+        },
+        {
+          "id": "h_022",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast cancer look like mastitis?"
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "Yes. Inflammatory breast cancer and some other presentations can cause redness, swelling, warmth and skin thickening that resemble infection. If symptoms do not improve as expected with appropriate treatment, the patient should be reassessed."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 2,
+          "text": "What is pregnancy-associated breast cancer?"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "PABC is breast cancer diagnosed during pregnancy or in the period around childbirth and breastfeeding. It is not one biological subtype — patients may have hormone receptor-positive, [HER2-positive](/blogs/her2-positive-breast-cancer-treatment-india), [triple-negative](/blogs/triple-negative-breast-cancer-treatment-india) or other invasive subtypes. Biology determines which treatments may help — see [ER/PR/HER2 explained](/blogs/er-pr-her2-breast-cancer-treatment-india)."
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "Pregnancy itself should not be described as a direct cause of breast cancer. Hormonal and reproductive factors influence lifetime risk, but an individual diagnosis cannot usually be attributed to one pregnancy or breastfeeding experience."
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "Some PABC cases are diagnosed later because normal breast changes delay recognition. Outlook depends on stage, size, nodes, ER/PR/HER2, grade, treatment response and access to care — not pregnancy alone."
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 2,
+          "text": "How is breast cancer diagnosed during pregnancy?"
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "A pregnant woman with a suspicious lump should undergo appropriate diagnostic assessment selected by symptoms, age, pregnancy stage and clinical findings. Detail: [diagnosis guide](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)."
+        },
+        {
+          "id": "ol_030",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Clinical breast examination** — both breasts, nipple/skin, underarm nodes, lump duration/growth, pain/redness, prior breast disease, family history, gestational age",
+            "**Breast ultrasound** — usual first imaging test; no ionising radiation; helps distinguish solid vs fluid lesions and guide biopsy",
+            "**Mammography when indicated** — can be performed when clinically necessary; do not refuse a medically needed test solely because of pregnancy",
+            "**Breast MRI** — contrast-enhanced MRI with gadolinium is generally avoided unless compelling clinical reason",
+            "**Core needle biopsy** — confirms cancer; can be done in pregnancy/lactation; discuss bleeding, infection and milk-leakage/fistula risk in lactation",
+            "**Pathology and biomarkers** — type, grade, ER, PR, HER2 and other markers that guide treatment"
+          ]
+        },
+        {
+          "id": "img_031",
+          "type": "image",
+          "src": "/uploads/articles/pregnancy-breast-cancer-ultrasound.webp",
+          "alt": "Pregnant woman undergoing breast ultrasound beside a circular diagram of ultrasound assessment of breast tissue",
+          "caption": "Ultrasound is generally the first imaging investigation for a pregnant woman with a breast lump."
+        },
+        {
+          "id": "btn_032",
+          "type": "button",
+          "label": "Request a second opinion on pregnancy breast imaging and biopsy",
+          "href": "/consult?treatment=Breast%20Cancer%20Pregnancy%20Diagnosis"
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 2,
+          "text": "Is breast imaging safe during pregnancy?"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "Select the investigation that provides necessary information while minimising avoidable exposure. A necessary test should not automatically wait until after delivery if delay could harm staging or diagnosis."
+        },
+        {
+          "id": "html_035",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Imaging test</th><th>General role during pregnancy</th></tr></thead><tbody><tr><td>Breast ultrasound</td><td>Common first-line investigation; no ionising radiation</td></tr><tr><td>Mammography</td><td>Can be used when clinically necessary</td></tr><tr><td>MRI without gadolinium</td><td>May be considered in selected cases</td></tr><tr><td>MRI with gadolinium</td><td>Generally avoided unless essential</td></tr><tr><td>CT scan</td><td>Only when clinically justified after risk-benefit assessment</td></tr><tr><td>PET-CT</td><td>Generally avoided unless exceptional circumstances</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "h_036",
+          "type": "heading",
+          "level": 2,
+          "text": "Is a breast biopsy safe during pregnancy and breastfeeding?"
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "Yes, when medically necessary. Core needle biopsy provides tissue for diagnosis and biomarkers. It is a local procedure and does not directly expose the baby to radiation. During lactation there is a small risk of bleeding, infection, milk leakage or milk fistula — not a reason to avoid a necessary biopsy."
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 2,
+          "text": "How is breast cancer staged during pregnancy?"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "Staging assesses tumour size, nearby nodes and distant spread. Pregnancy influences imaging choices — ultrasound and MRI without contrast are often considered when suitable; other tests when clinically necessary. Accurate staging still matters because it drives treatment. Context: [breast cancer stages](/blogs/breast-cancer-stages)."
+        },
+        {
+          "id": "h_040",
+          "type": "heading",
+          "level": 2,
+          "text": "How is breast cancer treated during pregnancy?"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "Breast cancer can be treated during pregnancy. The plan must consider maternal health and the developing baby, based on stage, subtype, trimester, desire to continue pregnancy, urgency and available options. Multidisciplinary care is essential — breast surgery, medical and radiation oncology, obstetrics/maternal-fetal medicine, radiology, pathology, neonatology and fertility when appropriate."
+        },
+        {
+          "id": "html_042",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Treatment</th><th>General approach during pregnancy</th></tr></thead><tbody><tr><td>Surgery</td><td>Can be performed when clinically indicated</td></tr><tr><td>Chemotherapy</td><td>Certain regimens may be considered after the first trimester</td></tr><tr><td>Radiation therapy</td><td>Generally postponed until after delivery</td></tr><tr><td>Hormone therapy</td><td>Postponed until after delivery</td></tr><tr><td>HER2-targeted therapy</td><td>Generally avoided during pregnancy</td></tr><tr><td>Immunotherapy</td><td>Generally avoided during pregnancy</td></tr><tr><td>Antibody-drug conjugates</td><td>Generally avoided during pregnancy</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "These are general principles — not a prescription. Broader options: [treatment options](/blogs/breast-cancer-treatment-options) and [treatment in India](/treatments/breast-cancer-treatment-in-india)."
+        },
+        {
+          "id": "img_044",
+          "type": "image",
+          "src": "/uploads/articles/pregnancy-breast-cancer-treatment-timing.webp",
+          "alt": "Pregnant woman discussing multidisciplinary treatment timing beside a circular conceptual diagram of surgery and chemotherapy planning in pregnancy",
+          "caption": "Surgery and selected chemotherapy may be possible in pregnancy; radiation and many targeted medicines are usually deferred."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast cancer surgery during pregnancy"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Surgery is important for many pregnant patients. Choice depends on tumour size, extent, pregnancy stage and whether radiation will be needed. Guide: [breast cancer surgery in India](/blogs/breast-cancer-surgery-in-india); comparison: [lumpectomy vs mastectomy](/blogs/lumpectomy-vs-mastectomy)."
+        },
+        {
+          "id": "ul_047",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Breast-conserving surgery** — removes tumour with a margin; radiation is usually required afterwards and is ordinarily given after delivery, so timing must be planned carefully",
+            "**Mastectomy** — may be preferred when conservation is unsuitable or radiation cannot be scheduled safely within the needed timeline",
+            "**Sentinel node biopsy** — may be considered in selected patients; tracer choice needs specialist planning in pregnancy",
+            "**Reconstruction** — often secondary when cancer treatment is urgent; many patients discuss reconstruction after delivery"
+          ]
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "GAF planning: [lumpectomy](/costs/India/Surgical-Oncology/Lumpectomy) **$3,500–$8,000**; [mastectomy](/costs/India/Surgical-Oncology/Mastectomy) **$4,500–$10,000**; [sentinel node biopsy](/costs/India/Surgical-Oncology/Sentinel-Lymph-Node-Biopsy) as indicated; [reconstruction](/costs/India/Surgical-Oncology/Breast-Reconstruction) **$6,000–$18,000** (often deferred)."
+        },
+        {
+          "id": "h_049",
+          "type": "heading",
+          "level": 2,
+          "text": "Chemotherapy during pregnancy: when is it possible?"
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "Chemotherapy is important for several subtypes, but timing matters. Detail: [chemotherapy for breast cancer](/blogs/chemotherapy-for-breast-cancer-in-india) and [chemotherapy in India](/blogs/breast-cancer-chemotherapy-in-india)."
+        },
+        {
+          "id": "ul_051",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**First trimester** — generally avoided due to miscarriage and congenital abnormality risk; urgent need requires oncology–obstetric discussion",
+            "**Second trimester** — selected anthracycline-based regimens (e.g. doxorubicin with cyclophosphamide) and selected taxanes may be considered under specialist supervision",
+            "**Third trimester** — some chemotherapy may still be possible; stop sufficiently before delivery to allow blood-count recovery"
+          ]
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Possible fetal concerns include premature birth, low birth weight, growth restriction, temporary fetal blood-count effects and delivery too soon after chemotherapy. Obstetric teams often add growth assessments and monitoring. **Never start chemotherapy from a general online list.**"
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "GAF [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) planning is **$1,500–$8,000+**; neoadjuvant/adjuvant sheets **$2,500–$10,000** each."
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "[WhatsApp GAF to coordinate oncology and obstetric timing before travel](https://wa.me/919044346292?text=I%20need%20help%20coordinating%20breast%20cancer%20treatment%20timing%20during%20pregnancy%20with%20specialists%20in%20India.)"
+        },
+        {
+          "id": "h_055",
+          "type": "heading",
+          "level": 2,
+          "text": "Which treatments are generally avoided during pregnancy?"
+        },
+        {
+          "id": "ul_056",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Hormone therapy** — tamoxifen, letrozole, anastrozole, exemestane generally postponed until after delivery ([hormone therapy guide](/blogs/hormone-therapy-for-breast-cancer-in-india))",
+            "**HER2-targeted therapy** — trastuzumab, pertuzumab, lapatinib, neratinib, T-DM1, trastuzumab deruxtecan generally avoided; trastuzumab linked to reduced amniotic fluid ([HER2 guide](/blogs/her2-positive-breast-cancer-treatment-india))",
+            "**Immunotherapy** — checkpoint inhibitors such as pembrolizumab generally avoided",
+            "**PARP inhibitors and many targeted medicines** — generally not used in pregnancy ([targeted therapy guide](/blogs/targeted-therapy-for-breast-cancer-in-india))"
+          ]
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "A treatment that works outside pregnancy may not be appropriate during pregnancy. Timing must be planned carefully."
+        },
+        {
+          "id": "h_058",
+          "type": "heading",
+          "level": 2,
+          "text": "Can treatment be delayed until after delivery?"
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "Sometimes selected treatments can wait — but not for every patient. The decision depends on stage, biology, progression rate, gestational age, whether surgery or pregnancy-compatible chemotherapy can start now, and expected time to delivery. Delaying necessary treatment without specialist advice can be dangerous."
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 2,
+          "text": "Does a woman need to terminate her pregnancy after diagnosis?"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "Not automatically. Many patients can receive appropriately selected treatment during pregnancy. Decisions depend on stage, subtype, urgency, gestational age and the patient's values. In some aggressive situations requiring treatment that cannot safely be given in pregnancy, difficult discussions may be needed with oncology, obstetrics, maternal-fetal medicine and counselling support — without pressure or judgement."
+        },
+        {
+          "id": "btn_062",
+          "type": "button",
+          "label": "Discuss pregnancy-compatible treatment pathways with GAF",
+          "href": "/consult?treatment=Pregnancy%20Associated%20Breast%20Cancer%20Treatment"
+        },
+        {
+          "id": "h_063",
+          "type": "heading",
+          "level": 2,
+          "text": "Can breast cancer be treated while breastfeeding?"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "Yes — diagnostic evaluation and certain procedures can proceed during lactation. Once cancer treatment begins, breastfeeding may need to stop or pause depending on medicines and procedures."
+        },
+        {
+          "id": "ul_065",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Mammography** — possible when indicated; feeding or expressing milk beforehand may improve image quality",
+            "**MRI** — may be used when indicated; for many gadolinium agents, interruption of breastfeeding is not routinely required — confirm with the radiologist",
+            "**Biopsy** — core needle biopsy can be performed; discuss milk-leakage risk",
+            "**Surgery** — possible when indicated; temporary breastfeeding changes may be needed"
+          ]
+        },
+        {
+          "id": "img_066",
+          "type": "image",
+          "src": "/uploads/articles/pregnancy-breast-cancer-breastfeeding-care.webp",
+          "alt": "Woman in postpartum clinic counselling beside a circular diagram of lactating breast tissue and medicine-safety considerations",
+          "caption": "Breastfeeding decisions during cancer treatment depend on the specific medicines and procedures involved."
+        },
+        {
+          "id": "h_067",
+          "type": "heading",
+          "level": 2,
+          "text": "Can a woman continue breastfeeding during chemotherapy?"
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "Generally, no. Many chemotherapy medicines pass into breast milk and may harm the baby. Even if only one breast has cancer, systemic medicines can reach both breasts. Milk expressed during unsafe systemic treatment should not be assumed safe for later use. Oncology advice is required for pumping, discarding milk and whether maintaining supply is practical."
+        },
+        {
+          "id": "h_069",
+          "type": "heading",
+          "level": 2,
+          "text": "Can a woman breastfeed after breast cancer treatment?"
+        },
+        {
+          "id": "ul_070",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**After mastectomy** — the removed breast cannot produce milk; the other breast may still allow breastfeeding if medically appropriate",
+            "**After lumpectomy** — some women can breastfeed; milk volume may be reduced, especially after radiation",
+            "**After radiation** — treated breast may produce less or no milk; unaffected breast may still support feeding",
+            "**During hormone therapy** — tamoxifen and aromatase inhibitors are generally incompatible with breastfeeding"
+          ]
+        },
+        {
+          "id": "h_071",
+          "type": "heading",
+          "level": 2,
+          "text": "Can a woman become pregnant after breast cancer treatment?"
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Yes. Timing and safety depend on subtype, treatment history and recurrence risk. Some patients need years of hormone therapy before attempting pregnancy; selected temporary interruption of endocrine therapy may be discussed — never independently. Also see [breast cancer in young women](/blogs/breast-cancer-in-young-women-treatment-india)."
+        },
+        {
+          "id": "h_073",
+          "type": "heading",
+          "level": 2,
+          "text": "Fertility preservation before breast cancer treatment"
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "Women diagnosed during pregnancy or breastfeeding may still want future children. Discuss fertility early if chemotherapy or other treatments may affect ovarian function. Pregnancy itself can limit available options — a reproductive specialist should advise."
+        },
+        {
+          "id": "html_075",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Method</th><th>Description</th></tr></thead><tbody><tr><td>Egg freezing</td><td>Mature eggs are collected and frozen</td></tr><tr><td>Embryo freezing</td><td>Eggs are fertilised and resulting embryos are frozen</td></tr><tr><td>Ovarian tissue freezing</td><td>Ovarian tissue is removed and stored for possible future use</td></tr><tr><td>Ovarian suppression</td><td>GnRH agonists during chemotherapy as an added protective measure</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "h_076",
+          "type": "heading",
+          "level": 2,
+          "text": "How is breast cancer managed after delivery?"
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "Postpartum care may include surgery, radiation, hormone therapy, HER2-targeted therapy, immunotherapy, additional chemotherapy, genetic counselling and fertility support. Delivery does not always need to be early, and caesarean section is not automatically required — timing and mode of delivery follow obstetric indications plus maternal treatment needs."
+        },
+        {
+          "id": "h_078",
+          "type": "heading",
+          "level": 2,
+          "text": "What are the risks to the baby?"
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "Risks depend on trimester at diagnosis, treatments received, chemotherapy timing, maternal health, gestational age at delivery and other obstetric factors. Maternal breast cancer does not mean the baby will develop cancer. Monitoring may include antenatal visits, growth ultrasound, amniotic fluid assessment, planning around chemo schedules and neonatal assessment after birth."
+        },
+        {
+          "id": "h_080",
+          "type": "heading",
+          "level": 2,
+          "text": "Emotional and psychological support"
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "A cancer diagnosis during pregnancy or breastfeeding can be overwhelming — concerns about survival, the baby's health, breastfeeding, future fertility, family responsibilities and finances are common. Support may include psycho-oncology, obstetric and fertility counselling, social work, family counselling, support groups and palliative care when needed. Psychological care should be part of the plan, not an afterthought."
+        },
+        {
+          "id": "h_082",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast cancer during pregnancy: treatment in India"
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "Hospital selection should prioritise coordinated oncology and obstetric services. Filter specialists by city: [Delhi NCR](/doctors/India/Delhi-NCR/Medical-Oncology), [Mumbai](/doctors/India/Mumbai/Medical-Oncology), [Bengaluru](/doctors/India/Bengaluru/Medical-Oncology), [Chennai](/doctors/India/Chennai/Medical-Oncology), [Hyderabad](/doctors/India/Hyderabad/Medical-Oncology). Also see [medical](/doctors/India/Medical-Oncology), [surgical](/doctors/India/Surgical-Oncology) and [radiation](/doctors/India/Radiation-Oncology) oncology directories and [medical oncology hospitals](/hospitals/India/Medical-Oncology)."
+        },
+        {
+          "id": "html_084",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Specialist or facility</th><th>Why it matters</th></tr></thead><tbody><tr><td>Breast surgical oncologist</td><td>Surgery and local treatment planning</td></tr><tr><td>Medical oncologist</td><td>Chemotherapy and systemic treatment</td></tr><tr><td>Obstetrician / maternal-fetal medicine</td><td>Pregnancy care, monitoring and delivery planning</td></tr><tr><td>Breast radiologist / pathologist</td><td>Pregnancy-appropriate imaging and biomarkers</td></tr><tr><td>Radiation oncologist</td><td>Planning treatment after delivery when indicated</td></tr><tr><td>Neonatologist</td><td>Newborn assessment and care</td></tr><tr><td>Fertility specialist</td><td>Future reproductive planning</td></tr><tr><td>Psycho-oncology support</td><td>Emotional and psychological care</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "ol_085",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Breast biopsy/histopathology and ER/PR/HER2 (ISH/FISH if done)",
+            "Breast ultrasound/mammography/MRI reports and imaging copies",
+            "Pregnancy confirmation, gestational age and antenatal records",
+            "Previous treatment records, current medicines and allergies",
+            "Family history and genetic reports if available"
+          ]
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "Travel for pregnant patients should be discussed with obstetric and oncology teams before arrangements. Practical sequencing: [international patient guide](/blogs/breast-cancer-treatment-india-international-patients). GAF helps organise reports, consultations and hospital coordination; treating hospitals remain responsible for clinical care. Request a written plan and itemised estimate before travel."
+        },
+        {
+          "id": "btn_087",
+          "type": "button",
+          "label": "Start an international pregnancy breast cancer records review",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "h_088",
+          "type": "heading",
+          "level": 2,
+          "text": "What is the cost of breast cancer treatment during pregnancy in India?"
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "There is no single fixed cost. Totals may include cancer treatment plus specialist pregnancy monitoring. Use named GAF planning ranges for oncology components:"
+        },
+        {
+          "id": "html_090",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Named pathway</th><th>GAF planning range in India</th><th>Typical notes</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemotherapy</a></td><td>$1,500–$8,000+</td><td>Selected regimens after first trimester when indicated</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy\">Neoadjuvant chemotherapy</a></td><td>$2,500–$10,000</td><td>Before surgery when planned</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Adjuvant-Chemotherapy\">Adjuvant chemotherapy</a></td><td>$2,500–$10,000</td><td>After surgery · timing individualised</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Lumpectomy\">Lumpectomy</a></td><td>$3,500–$8,000</td><td>Radiation usually after delivery</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Mastectomy\">Mastectomy</a></td><td>$4,500–$10,000</td><td>About 3–6 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Breast-Reconstruction\">Breast reconstruction</a></td><td>$6,000–$18,000</td><td>Often deferred until after pregnancy/treatment</td></tr><tr><td><a href=\"/costs/India/Radiation-Oncology/EBRT\">EBRT</a></td><td>$1,000–$6,000+</td><td>Generally after delivery</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Hormone-Therapy\">Hormone therapy</a></td><td>$1,000–$4,500</td><td>Postponed until after delivery</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Targeted-Therapy\">Targeted therapy</a></td><td>$8,000–$30,000</td><td>HER2 / other drugs generally after delivery</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Immunotherapy\">Immunotherapy</a></td><td>$15,000–$45,000</td><td>Generally avoided during pregnancy</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Precision-Oncology\">Precision oncology</a></td><td>$2,000–$7,000</td><td>Genomic / testing pathway planning</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "Obstetric antenatal monitoring, delivery and newborn care costs vary by hospital and clinical need — ask for itemised obstetric figures separately rather than assuming a package price. Wider oncology context: [breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "Request an estimate covering diagnosis/staging, surgery, chemotherapy, postpartum radiation, targeted/hormone medicines after delivery, antenatal monitoring, delivery/hospitalisation, newborn care if required, and follow-up — and which figures are confirmed versus plan-dependent."
+        },
+        {
+          "id": "btn_093",
+          "type": "button",
+          "label": "Request a written pregnancy breast cancer treatment estimate",
+          "href": "/consult?treatment=Pregnancy%20Breast%20Cancer%20Cost%20Estimate"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a personalised estimate](https://wa.me/919044346292?text=Please%20provide%20a%20personalised%20estimate%20for%20breast%20cancer%20treatment%20during%20pregnancy%20or%20breastfeeding%20in%20India.)"
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 2,
+          "text": "When should a pregnant or breastfeeding woman see a doctor?"
+        },
+        {
+          "id": "ul_096",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "A breast lump that persists or continues to grow",
+            "New nipple inversion or bloody nipple discharge",
+            "Persistent redness, swelling or skin dimpling",
+            "An underarm lump",
+            "Breast changes that do not improve with appropriate treatment"
+          ]
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "Do not wait until delivery or the end of breastfeeding to examine a suspicious lump. Most pregnancy and lactation breast changes are benign — only appropriate assessment can establish the cause."
+        },
+        {
+          "id": "h_098",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently asked questions"
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast cancer develop during pregnancy?"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Yes. Breast cancer can develop during pregnancy. A suspicious lump should be assessed promptly rather than being attributed automatically to hormonal changes."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast cancer develop while breastfeeding?"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "Yes. Breast cancer can develop during lactation. A persistent lump, bloody discharge or unusual skin change requires medical evaluation."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "Is ultrasound safe during pregnancy?"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "Yes. Breast ultrasound does not use ionising radiation and is commonly the first imaging investigation for a pregnant woman with a breast lump."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "Can mammography be performed during pregnancy?"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Yes, when clinically necessary. The radiologist and treating team should assess the expected benefit and use appropriate imaging protocols."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a breast biopsy safe during pregnancy?"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "A core needle biopsy can be performed during pregnancy when required. It is an important method of confirming the diagnosis."
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 3,
+          "text": "Can chemotherapy be given during pregnancy?"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "Certain chemotherapy medicines may be considered after the first trimester. Chemotherapy is generally avoided during the first trimester and stopped sufficiently before delivery."
+        },
+        {
+          "id": "h_111",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a pregnant woman undergo breast cancer surgery?"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "Yes. Surgery can be performed during pregnancy when clinically indicated, with appropriate anaesthetic and obstetric planning."
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 3,
+          "text": "Can radiation therapy be given during pregnancy?"
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "Breast radiation therapy is generally postponed until after delivery because of potential risks to the developing baby."
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 3,
+          "text": "Can trastuzumab be given during pregnancy?"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "Trastuzumab is generally contraindicated during pregnancy because of potential fetal complications, including reduced amniotic fluid."
+        },
+        {
+          "id": "h_117",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a woman continue breastfeeding during chemotherapy?"
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "Generally, no. Many chemotherapy medicines can pass into breast milk and may harm the baby. Discuss the specific medicine and schedule with the oncologist."
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a woman breastfeed after mastectomy?"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "The removed breast cannot produce milk. Breastfeeding from the unaffected breast may be possible if medicines and other medical factors allow it."
+        },
+        {
+          "id": "h_121",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a woman breastfeed after lumpectomy?"
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "Some women can breastfeed after lumpectomy, although radiation may reduce milk production in the treated breast."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 3,
+          "text": "Does a breast biopsy mean breastfeeding must stop?"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "Not necessarily. Breastfeeding can often continue after a core needle biopsy, subject to the doctor's advice and the patient's recovery."
+        },
+        {
+          "id": "h_125",
+          "type": "heading",
+          "level": 3,
+          "text": "Does breast cancer during pregnancy mean the baby will develop cancer?"
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "No. Breast cancer in the mother does not mean the baby will develop breast cancer. The main concern is the potential effect of certain treatments on fetal development."
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 3,
+          "text": "Does a woman have to terminate her pregnancy after a breast cancer diagnosis?"
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "No. Pregnancy termination is not automatically required. Many patients can receive selected treatments during pregnancy. The decision must be individualised with oncology and obstetric teams."
+        },
+        {
+          "id": "h_129",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a woman become pregnant after breast cancer treatment?"
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "Yes. Pregnancy may be possible after treatment. Timing depends on subtype, treatment history, recurrence risk and reproductive health."
+        },
+        {
+          "id": "h_131",
+          "type": "heading",
+          "level": 3,
+          "text": "Is breast cancer during pregnancy curable?"
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "Some patients with early-stage disease can be treated with the intention of cure. Outcome depends on stage, tumour biology and the ability to deliver appropriate treatment."
+        },
+        {
+          "id": "h_133",
+          "type": "heading",
+          "level": 3,
+          "text": "Is treatment available in India for international patients?"
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "Yes. India may offer diagnosis, surgery, chemotherapy and coordinated obstetric care. Select the hospital based on the patient's medical requirements."
+        },
+        {
+          "id": "h_135",
+          "type": "heading",
+          "level": 2,
+          "text": "Key takeaways"
+        },
+        {
+          "id": "ul_136",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Breast cancer can develop during pregnancy and breastfeeding",
+            "Most lumps are benign, but persistent lumps need assessment",
+            "Ultrasound is generally the first imaging test in pregnancy",
+            "Mammography and biopsy may be performed when clinically indicated",
+            "Surgery can be performed during pregnancy when required",
+            "Selected chemotherapy may be considered after the first trimester",
+            "Radiation, hormone therapy and HER2-targeted medicines are generally postponed until after delivery",
+            "Breastfeeding is generally not compatible with chemotherapy and many systemic medicines",
+            "Pregnancy termination is not automatically required",
+            "Coordinated oncology and obstetric care is essential"
+          ]
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "A breast cancer diagnosis during pregnancy or breastfeeding is difficult, but treatment is often possible. Early diagnosis, careful planning and coordinated specialist care help protect maternal health while considering the baby's wellbeing."
+        },
+        {
+          "id": "btn_138",
+          "type": "button",
+          "label": "Discuss the next treatment step with GAF Healthcare",
+          "href": "/consult?treatment=Breast%20Cancer%20During%20Pregnancy"
+        },
+        {
+          "id": "h_139",
+          "type": "heading",
+          "level": 2,
+          "text": "Recommended further reading"
+        },
+        {
+          "id": "ul_140",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india)",
+            "[Breast cancer during pregnancy (related guide)](/blogs/breast-cancer-during-pregnancy-treatment-india)",
+            "[Breast cancer in young women](/blogs/breast-cancer-in-young-women-treatment-india)",
+            "[Breast cancer symptoms](/blogs/breast-cancer-symptoms)",
+            "[Breast cancer diagnosis](/blogs/breast-cancer-diagnosis)",
+            "[Breast cancer diagnosis tests (ER/PR/HER2)](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)",
+            "[Breast cancer stages](/blogs/breast-cancer-stages)",
+            "[Breast cancer treatment options](/blogs/breast-cancer-treatment-options)",
+            "[Breast cancer surgery in India](/blogs/breast-cancer-surgery-in-india)",
+            "[Lumpectomy vs mastectomy](/blogs/lumpectomy-vs-mastectomy)",
+            "[Breast reconstruction after mastectomy](/blogs/breast-reconstruction-after-mastectomy-india)",
+            "[Chemotherapy for breast cancer](/blogs/chemotherapy-for-breast-cancer-in-india)",
+            "[Breast cancer chemotherapy in India](/blogs/breast-cancer-chemotherapy-in-india)",
+            "[Radiation therapy for breast cancer](/blogs/breast-cancer-radiation-therapy-in-india)",
+            "[Hormone therapy for breast cancer](/blogs/hormone-therapy-for-breast-cancer-in-india)",
+            "[Targeted therapy for breast cancer](/blogs/targeted-therapy-for-breast-cancer-in-india)",
+            "[HER2-positive breast cancer](/blogs/her2-positive-breast-cancer-treatment-india)",
+            "[Triple-negative breast cancer](/blogs/triple-negative-breast-cancer-treatment-india)",
+            "[ER/PR/HER2 results explained](/blogs/er-pr-her2-breast-cancer-treatment-india)",
+            "[Breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)",
+            "[International patients](/blogs/breast-cancer-treatment-india-international-patients)",
+            "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
+            "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)"
+          ]
+        },
+        {
+          "id": "h_141",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical sources and references"
+        },
+        {
+          "id": "ol_142",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "[ASCO — Management of Cancer During Pregnancy: Clinical Practice Guideline, 2025](https://doi.org/10.1200/JCO-25-02115)",
+            "[NCI — Breast Cancer Treatment During Pregnancy](https://www.cancer.gov/types/breast/hp/pregnancy-breast-treatment-pdq)",
+            "[NCI — Breast Cancer During Pregnancy](https://www.cancer.gov/types/breast/breast-cancer-during-pregnancy)",
+            "[ACS — Treating Breast Cancer During Pregnancy](https://www.cancer.org/cancer/types/breast-cancer/treatment/treating-breast-cancer-during-pregnancy.html)",
+            "[Society for Maternal-Fetal Medicine — Cancer in Pregnancy](https://pmc.ncbi.nlm.nih.gov/articles/PMC13344446/)",
+            "[ICMR — Standard Treatment Workflows](https://www.icmr.gov.in/standard-treatment-workflows-stws)",
+            "[ACR Appropriateness Criteria](https://www.acr.org/Clinical-Resources/Clinical-Tools-and-Reference/Appropriateness-Criteria)",
+            "[NCI — Breast Cancer Treatment](https://www.cancer.gov/types/breast/treatment)"
+          ]
+        },
+        {
+          "id": "p_143",
+          "type": "paragraph",
+          "text": "*This article is for general educational purposes and does not replace medical advice, diagnosis or an individualised treatment plan. Treatment during pregnancy or breastfeeding must be planned by a qualified oncology and obstetric team. GAF cost figures are partner planning ranges, not fixed hospital quotations.*"
+        }
+      ]
+    },
     {
       "id": "art_triple_negative_breast_cancer_treatment_india",
       "slug": "triple-negative-breast-cancer-treatment-india",
@@ -2898,6 +3952,10 @@
         {
           "label": "Breast cancer in young women — treatment in India",
           "href": "/blogs/breast-cancer-in-young-women-treatment-india"
+        },
+        {
+          "label": "Breast cancer during pregnancy and breastfeeding",
+          "href": "/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india"
         }
       ],
       "blocks": [
@@ -3612,7 +4670,8 @@
             "[Targeted therapy in India](/treatments/targeted-therapy-in-india)",
             "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
             "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
-            "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)"
+            "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)",
+            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)"
           ]
         }
       ]
@@ -3744,6 +4803,10 @@
         {
           "label": "Breast cancer in young women — treatment in India",
           "href": "/blogs/breast-cancer-in-young-women-treatment-india"
+        },
+        {
+          "label": "Breast cancer during pregnancy and breastfeeding",
+          "href": "/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india"
         }
       ],
       "blocks": [
@@ -4450,7 +5513,8 @@
             "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
             "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
             "[Triple-Negative Breast Cancer Treatment in India](/blogs/triple-negative-breast-cancer-treatment-india)",
-            "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)"
+            "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)",
+            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)"
           ]
         }
       ]
@@ -85872,6 +86936,10 @@
         {
           "label": "Cost guide",
           "href": "/blogs/breast-cancer-treatment-cost-in-india"
+        },
+        {
+          "label": "Breast cancer during pregnancy and breastfeeding",
+          "href": "/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india"
         }
       ],
       "blocks": [
@@ -87474,6 +88542,10 @@
         {
           "label": "Medical oncology hospitals",
           "href": "/hospitals/India/Medical-Oncology"
+        },
+        {
+          "label": "Breast cancer during pregnancy and breastfeeding",
+          "href": "/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india"
         }
       ],
       "blocks": [
@@ -88387,7 +89459,8 @@
             "[Breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)",
             "[International patients](/blogs/breast-cancer-treatment-india-international-patients)",
             "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
-            "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)"
+            "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
+            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)"
           ]
         },
         {
@@ -88409,7 +89482,8 @@
             "[NCI — Reproductive History and Cancer Risk](https://www.cancer.gov/about-cancer/causes-prevention/risk/hormones/reproductive-history-fact-sheet)",
             "[NICPR, India — Breast Cancer](https://cancerindia.org.in/breast-cancer/)",
             "[Obstetrics & Gynecology — Breast Cancer in Young Women (2026)](https://doi.org/10.1097/aog.0000000000006187)",
-            "[Therapeutic Advances in Medical Oncology — Pregnancy After Breast Cancer (2025)](https://journals.sagepub.com/doi/full/10.1177/17588359251346648)"
+            "[Therapeutic Advances in Medical Oncology — Pregnancy After Breast Cancer (2025)](https://journals.sagepub.com/doi/full/10.1177/17588359251346648)",
+            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)"
           ]
         },
         {
@@ -95054,6 +96128,10 @@
         {
           "label": "Breast cancer in young women — treatment in India",
           "href": "/blogs/breast-cancer-in-young-women-treatment-india"
+        },
+        {
+          "label": "Breast cancer during pregnancy and breastfeeding",
+          "href": "/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india"
         }
       ],
       "blocks": [
@@ -95816,7 +96894,8 @@
             "[Surgical oncologists in India](/doctors/India/Surgical-Oncology)",
             "[Surgical oncology hospitals in India](/hospitals/India/Surgical-Oncology)",
             "[Triple-Negative Breast Cancer Treatment in India](/blogs/triple-negative-breast-cancer-treatment-india)",
-            "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)"
+            "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)",
+            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)"
           ]
         }
       ]
@@ -99711,6 +100790,10 @@
         {
           "label": "Breast cancer in young women — treatment in India",
           "href": "/blogs/breast-cancer-in-young-women-treatment-india"
+        },
+        {
+          "label": "Breast cancer during pregnancy and breastfeeding",
+          "href": "/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india"
         }
       ],
       "blocks": [
@@ -100447,7 +101530,8 @@
             "[International patients](/blogs/breast-cancer-treatment-india-international-patients)",
             "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
             "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
-            "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)"
+            "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)",
+            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)"
           ]
         }
       ]
@@ -105237,6 +106321,10 @@
         {
           "label": "Breast cancer in young women — treatment in India",
           "href": "/blogs/breast-cancer-in-young-women-treatment-india"
+        },
+        {
+          "label": "Breast cancer during pregnancy and breastfeeding",
+          "href": "/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india"
         }
       ],
       "blocks": [
@@ -105871,7 +106959,8 @@
             "[Breast Cancer Radiation Therapy in India](/blogs/breast-cancer-radiation-therapy-in-india)",
             "[Breast Cancer Chemotherapy in India](/blogs/breast-cancer-chemotherapy-in-india)",
             "[Triple-Negative Breast Cancer Treatment in India](/blogs/triple-negative-breast-cancer-treatment-india)",
-            "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)"
+            "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)",
+            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)"
           ]
         },
         {
