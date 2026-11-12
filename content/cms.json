@@ -162,7 +162,9 @@
     "fertility preservation",
     "BRCA",
     "breastfeeding",
-    "PABC"
+    "PABC",
+    "inflammatory breast cancer",
+    "IBC"
   ],
   "media": [
     {
@@ -2803,9 +2805,983 @@
       "name": "pregnancy-breast-cancer-breastfeeding-care.webp",
       "alt": "Woman in postpartum clinic counselling beside a circular diagram of lactating breast tissue and medicine-safety considerations",
       "addedAt": "2026-11-12T18:40:00.000Z"
+    },
+    {
+      "id": "media_ibc_overview_consultation_webp",
+      "url": "/uploads/articles/ibc-overview-consultation.webp",
+      "name": "ibc-overview-consultation.webp",
+      "alt": "Woman in oncology clinic consultation beside a circular breast anatomy diagram representing inflammatory breast cancer evaluation",
+      "addedAt": "2026-11-12T18:50:00.000Z"
+    },
+    {
+      "id": "media_ibc_lymphatic_blockage_anatomy_webp",
+      "url": "/uploads/articles/ibc-lymphatic-blockage-anatomy.webp",
+      "name": "ibc-lymphatic-blockage-anatomy.webp",
+      "alt": "Woman discussing diagnosis beside a circular diagram of breast skin lymphatic vessels blocked by cancer cells",
+      "addedAt": "2026-11-12T18:50:00.000Z"
+    },
+    {
+      "id": "media_ibc_biopsy_diagnosis_webp",
+      "url": "/uploads/articles/ibc-biopsy-diagnosis.webp",
+      "name": "ibc-biopsy-diagnosis.webp",
+      "alt": "Woman in breast imaging consultation beside a circular diagram representing core needle and skin punch biopsy for inflammatory breast cancer",
+      "addedAt": "2026-11-12T18:50:00.000Z"
+    },
+    {
+      "id": "media_ibc_trimodality_treatment_webp",
+      "url": "/uploads/articles/ibc-trimodality-treatment.webp",
+      "name": "ibc-trimodality-treatment.webp",
+      "alt": "Woman receiving outpatient systemic therapy beside a circular trimodality diagram of chemotherapy, mastectomy and radiation for inflammatory breast cancer",
+      "addedAt": "2026-11-12T18:50:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_inflammatory_breast_cancer_treatment_india",
+      "slug": "inflammatory-breast-cancer-treatment-india",
+      "title": "Inflammatory Breast Cancer: Symptoms, Diagnosis, Stages, Treatment and Options in India",
+      "excerpt": "Inflammatory breast cancer (IBC) is a rare and fast-growing form of breast cancer that can cause rapid breast swelling, redness, warmth and skin changes. It may resemble mastitis or a breast infection and often develops without a noticeable lump. This guide explains its symptoms, diagnosis, stages, chemotherapy, surgery, radiation, targeted treatment and options for patients seeking treatment in India.",
+      "date": "12 Nov 2026",
+      "publishedAt": "2026-11-12T18:50:00.000Z",
+      "updatedAt": "2026-11-12T18:50:00.000Z",
+      "author": "GAF Healthcare Editorial",
+      "category": "Medical Oncology",
+      "tags": [
+        "breast cancer",
+        "inflammatory breast cancer",
+        "IBC",
+        "mastectomy",
+        "India",
+        "cost"
+      ],
+      "image": "/uploads/articles/ibc-overview-consultation.webp",
+      "imageAlt": "Woman in oncology clinic consultation beside a circular breast anatomy diagram representing inflammatory breast cancer evaluation",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Inflammatory Breast Cancer Treatment in India: Symptoms, Stages and Cost",
+      "seoDescription": "Learn about inflammatory breast cancer (IBC), its symptoms, diagnosis, staging, chemotherapy, mastectomy, radiation, targeted therapy and treatment options in India.",
+      "canonical": "https://gaf.healthcare/blogs/inflammatory-breast-cancer-treatment-india",
+      "ogImage": "/uploads/articles/ibc-overview-consultation.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Inflammatory breast cancer treatment in India",
+        "Inflammatory breast cancer symptoms",
+        "Inflammatory breast cancer diagnosis",
+        "Inflammatory breast cancer stages",
+        "Inflammatory breast cancer treatment",
+        "Redness and swelling of breast cancer",
+        "Breast cancer that looks like mastitis",
+        "Inflammatory breast cancer chemotherapy",
+        "Inflammatory breast cancer surgery",
+        "Inflammatory breast cancer survival",
+        "Stage 3 inflammatory breast cancer treatment",
+        "Stage 4 inflammatory breast cancer treatment",
+        "Inflammatory breast cancer treatment cost in India",
+        "Breast cancer treatment in India"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Breast cancer treatment in India",
+          "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Breast cancer symptoms",
+          "href": "/blogs/breast-cancer-symptoms"
+        },
+        {
+          "label": "Breast cancer diagnosis",
+          "href": "/blogs/breast-cancer-diagnosis"
+        },
+        {
+          "label": "Breast cancer diagnosis tests (ER/PR/HER2)",
+          "href": "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2"
+        },
+        {
+          "label": "Breast cancer stages",
+          "href": "/blogs/breast-cancer-stages"
+        },
+        {
+          "label": "Breast cancer treatment options",
+          "href": "/blogs/breast-cancer-treatment-options"
+        },
+        {
+          "label": "Breast cancer surgery in India",
+          "href": "/blogs/breast-cancer-surgery-in-india"
+        },
+        {
+          "label": "Lumpectomy vs mastectomy",
+          "href": "/blogs/lumpectomy-vs-mastectomy"
+        },
+        {
+          "label": "Breast reconstruction after mastectomy",
+          "href": "/blogs/breast-reconstruction-after-mastectomy-india"
+        },
+        {
+          "label": "Chemotherapy for breast cancer",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Breast cancer chemotherapy in India",
+          "href": "/blogs/breast-cancer-chemotherapy-in-india"
+        },
+        {
+          "label": "Neoadjuvant chemotherapy in India",
+          "href": "/treatments/neoadjuvant-chemotherapy-in-india"
+        },
+        {
+          "label": "Radiation therapy for breast cancer",
+          "href": "/blogs/breast-cancer-radiation-therapy-in-india"
+        },
+        {
+          "label": "Hormone therapy for breast cancer",
+          "href": "/blogs/hormone-therapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Targeted therapy for breast cancer",
+          "href": "/blogs/targeted-therapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "HER2-positive breast cancer",
+          "href": "/blogs/her2-positive-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Triple-negative breast cancer",
+          "href": "/blogs/triple-negative-breast-cancer-treatment-india"
+        },
+        {
+          "label": "ER/PR/HER2 results explained",
+          "href": "/blogs/er-pr-her2-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Breast cancer in young women",
+          "href": "/blogs/breast-cancer-in-young-women-treatment-india"
+        },
+        {
+          "label": "Breast cancer during pregnancy and breastfeeding",
+          "href": "/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india"
+        },
+        {
+          "label": "Breast cancer treatment cost in India",
+          "href": "/blogs/breast-cancer-treatment-cost-in-india"
+        },
+        {
+          "label": "International patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "Medical oncology doctors",
+          "href": "/doctors/India/Medical-Oncology"
+        },
+        {
+          "label": "Medical oncology hospitals",
+          "href": "/hospitals/India/Medical-Oncology"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"md-body\"><table><thead><tr><th>Question</th><th>Quick Answer</th></tr></thead><tbody><tr><td><strong>What is IBC?</strong></td><td>A rare, aggressive invasive breast cancer where cancer cells block skin lymphatic vessels — redness, swelling, warmth, peau d’orange</td></tr><tr><td><strong>Lump?</strong></td><td>Often no distinct lump — skin changes may be the main clue</td></tr><tr><td><strong>Vs mastitis</strong></td><td>Can look similar; persistent symptoms need biopsy — not repeated antibiotics alone</td></tr><tr><td><strong>Stage at diagnosis</strong></td><td>Stage III or Stage IV — not Stage I/II</td></tr><tr><td><strong>Stage III sequence</strong></td><td>Neoadjuvant systemic therapy → mastectomy → radiation (+ biomarker-directed medicines)</td></tr><tr><td><strong>Surgery</strong></td><td>Modified radical mastectomy is usual; lumpectomy/skin-sparing generally not standard</td></tr><tr><td><strong>Planning ranges</strong></td><td><a href=\"/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy\">Neoadjuvant chemo</a> $2,500–$10,000 · <a href=\"/costs/India/Surgical-Oncology/Mastectomy\">mastectomy</a> $4,500–$10,000 · <a href=\"/costs/India/Radiation-Oncology/EBRT\">EBRT</a> $1,000–$6,000+</td></tr><tr><td><strong>India planning</strong></td><td>Multidisciplinary care — <a href=\"/treatments/breast-cancer-treatment-in-india\">breast cancer treatment in India</a></td></tr></tbody></table></div><p class=\"article-quick-answer__body\"><strong>Inflammatory breast cancer treatment in India</strong> centres on prompt diagnosis and trimodality care for Stage III disease. GAF figures are partner planning ranges, not hospital quotations.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "**Inflammatory breast cancer (IBC)** is a rare and fast-growing form of breast cancer that can cause rapid breast swelling, redness, warmth and skin changes. It may resemble mastitis or a breast infection and often develops without a noticeable lump. This guide explains symptoms, diagnosis, stages, chemotherapy, surgery, radiation, targeted treatment and options for patients seeking [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india)."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "Related reading: [symptoms](/blogs/breast-cancer-symptoms), [diagnosis](/blogs/breast-cancer-diagnosis), [stages](/blogs/breast-cancer-stages), [HER2-positive disease](/blogs/her2-positive-breast-cancer-treatment-india), [triple-negative disease](/blogs/triple-negative-breast-cancer-treatment-india), [chemotherapy](/blogs/breast-cancer-chemotherapy-in-india), [surgery](/blogs/breast-cancer-surgery-in-india) and [treatment cost](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "btn_004",
+          "type": "button",
+          "label": "Ask GAF to review inflammatory breast cancer reports",
+          "href": "/consult?treatment=Inflammatory%20Breast%20Cancer%20Treatment"
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with biopsy, imaging and staging](https://wa.me/919044346292?text=Please%20review%20my%20inflammatory%20breast%20cancer%20reports%20and%20advise%20on%20treatment%20options%20and%20cost%20in%20India.)"
+        },
+        {
+          "id": "img_006",
+          "type": "image",
+          "src": "/uploads/articles/ibc-overview-consultation.webp",
+          "alt": "Woman in oncology clinic consultation beside a circular breast anatomy diagram representing inflammatory breast cancer evaluation",
+          "caption": "Rapid breast redness, swelling or skin thickening needs prompt assessment — do not assume it is only infection."
+        },
+        {
+          "id": "h_007",
+          "type": "heading",
+          "level": 2,
+          "text": "What is inflammatory breast cancer?"
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "IBC is a rare and aggressive form of invasive breast cancer. Cancer cells block lymphatic vessels in the breast skin. When drainage is blocked, fluid accumulates and the breast may become red or pink, swollen, warm, tender, heavy and dimpled (peau d’orange)."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "Unlike many breast cancers, IBC often does **not** produce a clearly noticeable lump — one reason recognition can be delayed. It accounts for roughly 1–5% of breast cancers in US data; proportions may differ elsewhere."
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "**Most important point:** Rapid breast redness, swelling and skin thickening should not automatically be treated as ordinary infection. If symptoms persist or do not respond as expected, urgent specialist assessment is needed."
+        },
+        {
+          "id": "h_011",
+          "type": "heading",
+          "level": 2,
+          "text": "Why is it called inflammatory breast cancer?"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "The name reflects appearance — redness, warmth and swelling that look like inflammation. The changes are caused by cancer cells blocking skin lymphatic channels, producing *peau d’orange* (orange-peel) thickening and pitting. The nipple may flatten or invert. Antibiotics alone cannot treat the underlying cancer."
+        },
+        {
+          "id": "img_013",
+          "type": "image",
+          "src": "/uploads/articles/ibc-lymphatic-blockage-anatomy.webp",
+          "alt": "Woman discussing diagnosis beside a circular diagram of breast skin lymphatic vessels blocked by cancer cells",
+          "caption": "IBC develops when cancer cells obstruct lymphatic drainage in the breast skin."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 2,
+          "text": "How common is inflammatory breast cancer?"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "IBC is rare compared with other breast cancer types. It is often diagnosed younger than many other breast cancers, can occur in older women, and is possible (though much less common) in men. Because it can progress rapidly, it is frequently found at an advanced local stage."
+        },
+        {
+          "id": "h_016",
+          "type": "heading",
+          "level": 2,
+          "text": "Symptoms of inflammatory breast cancer"
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "Symptoms often appear over weeks or a few months. See also [breast cancer symptoms](/blogs/breast-cancer-symptoms)."
+        },
+        {
+          "id": "html_018",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Symptom</th><th>What it may look or feel like</th></tr></thead><tbody><tr><td>Breast redness</td><td>Pink, red, reddish-purple or bruised-looking skin</td></tr><tr><td>Swelling</td><td>One breast becomes noticeably larger</td></tr><tr><td>Skin thickening</td><td>Breast skin becomes thicker or firmer</td></tr><tr><td>Peau d’orange</td><td>Orange-peel dimpling of the skin</td></tr><tr><td>Breast warmth</td><td>Affected breast feels warmer than usual</td></tr><tr><td>Pain or tenderness</td><td>Persistent discomfort, burning or heaviness</td></tr><tr><td>Nipple changes</td><td>Flattened, inverted or unusually positioned nipple</td></tr><tr><td>Underarm / collarbone swelling</td><td>Enlarged regional lymph nodes</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "h_019",
+          "type": "heading",
+          "level": 3,
+          "text": "Does inflammatory breast cancer cause a lump?"
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "Often, it does not. A normal lump examination does not rule out IBC."
+        },
+        {
+          "id": "h_021",
+          "type": "heading",
+          "level": 3,
+          "text": "Does it affect the whole breast?"
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "It can involve a substantial area. One clinical feature used in diagnosis is redness and swelling involving at least one-third of the breast skin, alongside clinical history and biopsy confirmation."
+        },
+        {
+          "id": "h_023",
+          "type": "heading",
+          "level": 3,
+          "text": "Can IBC occur without obvious redness?"
+        },
+        {
+          "id": "p_024",
+          "type": "paragraph",
+          "text": "Yes. In darker skin tones, redness may be less obvious; swelling, warmth, thickening, a bruised look or size change may be clearer. Do not rely on redness alone."
+        },
+        {
+          "id": "h_025",
+          "type": "heading",
+          "level": 2,
+          "text": "Is inflammatory breast cancer the same as mastitis?"
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "No. Mastitis is infection/inflammation — common in breastfeeding. IBC is invasive cancer. They can look similar."
+        },
+        {
+          "id": "html_027",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Mastitis</th><th>Inflammatory breast cancer</th></tr></thead><tbody><tr><td>Main cause</td><td>Infection or inflammation</td><td>Cancer cells blocking skin lymphatic vessels</td></tr><tr><td>Redness / swelling / warmth</td><td>Common</td><td>Common</td></tr><tr><td>Fever</td><td>May occur</td><td>Not a defining feature</td></tr><tr><td>Distinct lump</td><td>May be present</td><td>Often no distinct lump</td></tr><tr><td>Antibiotics</td><td>Often help bacterial infection</td><td>Do not treat the underlying cancer</td></tr><tr><td>Diagnosis</td><td>Clinical ± imaging/culture</td><td>Imaging and tissue biopsy</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_028",
+          "type": "paragraph",
+          "text": "If redness and swelling persist, worsen or fail to improve as expected, the diagnosis should be reconsidered. Repeated antibiotics without reassessment are not a substitute for investigating suspicious changes."
+        },
+        {
+          "id": "ul_029",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "One breast becomes red and swollen rapidly",
+            "Orange-peel skin appearance",
+            "Noticeable short-term breast size change",
+            "New nipple inversion",
+            "Symptoms persist despite appropriate infection treatment",
+            "New lump or underarm swelling"
+          ]
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 2,
+          "text": "What causes inflammatory breast cancer?"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "The exact cause is not fully understood. Like other breast cancers, abnormal cell changes disrupt growth controls; cells then spread into dermal lymphatics. Associated factors can include obesity, younger age relative to some other breast cancer groups, certain population patterns and general breast cancer risks — but many patients have no recognised risk factor. Most cases are not directly inherited; strong family history may still justify genetic counselling."
+        },
+        {
+          "id": "h_032",
+          "type": "heading",
+          "level": 2,
+          "text": "How is inflammatory breast cancer diagnosed?"
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "Diagnosis needs prompt clinical assessment and tissue confirmation. Detail: [diagnosis guide](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)."
+        },
+        {
+          "id": "ol_034",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Clinical breast examination** — both breasts, skin, nipple/areola, underarm and collarbone nodes; symptom onset and speed",
+            "**Mammography** — skin thickening, density, masses, calcifications; a normal/inconclusive mammogram does not rule out IBC",
+            "**Breast ultrasound** — tissue changes, nodes, possible biopsy targets; helps distinguish abscess from other findings",
+            "**Breast MRI** — selected cases for extent of disease",
+            "**Core needle biopsy** — confirms invasive breast cancer",
+            "**Skin punch biopsy** — may show dermal lymphatic invasion; absence of this finding does not automatically exclude IBC",
+            "**Biomarker testing** — ER, PR, HER2 and other markers"
+          ]
+        },
+        {
+          "id": "html_035",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Test</th><th>Why it matters</th></tr></thead><tbody><tr><td>ER</td><td>Whether hormone therapy may help</td></tr><tr><td>PR</td><td>Additional hormone-sensitivity information</td></tr><tr><td>HER2</td><td>Eligibility for HER2-targeted treatment</td></tr><tr><td>Tumour grade</td><td>Cancer cell appearance and behaviour</td></tr><tr><td>Other biomarkers</td><td>May guide selected decisions (e.g. PD-L1, genetics)</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "img_036",
+          "type": "image",
+          "src": "/uploads/articles/ibc-biopsy-diagnosis.webp",
+          "alt": "Woman in breast imaging consultation beside a circular diagram representing core needle and skin punch biopsy for inflammatory breast cancer",
+          "caption": "Tissue confirmation with biomarker testing is essential — IBC is not diagnosed by appearance alone."
+        },
+        {
+          "id": "btn_037",
+          "type": "button",
+          "label": "Request a second opinion on IBC imaging and biopsy",
+          "href": "/consult?treatment=Inflammatory%20Breast%20Cancer%20Second%20Opinion"
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 2,
+          "text": "Why is HER2 and hormone receptor testing important?"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "IBC is not one biological subtype. Plans differ by biomarkers — see [ER/PR/HER2 explained](/blogs/er-pr-her2-breast-cancer-treatment-india)."
+        },
+        {
+          "id": "ul_040",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Hormone receptor-positive** — hormone therapy may follow the chemo–surgery–radiation sequence ([hormone therapy](/blogs/hormone-therapy-for-breast-cancer-in-india))",
+            "**HER2-positive** — trastuzumab ± pertuzumab with chemotherapy in eligible settings ([HER2 guide](/blogs/her2-positive-breast-cancer-treatment-india))",
+            "**Triple-negative** — chemotherapy ± immunotherapy for selected patients ([TNBC guide](/blogs/triple-negative-breast-cancer-treatment-india))"
+          ]
+        },
+        {
+          "id": "h_041",
+          "type": "heading",
+          "level": 2,
+          "text": "What are the stages of inflammatory breast cancer?"
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "IBC is classified as Stage III or Stage IV at diagnosis — not Stage I or II. Broader staging context: [breast cancer stages](/blogs/breast-cancer-stages)."
+        },
+        {
+          "id": "html_043",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Stage III IBC</th><th>Stage IV IBC</th></tr></thead><tbody><tr><td>Breast involvement</td><td>Present</td><td>Present</td></tr><tr><td>Nearby lymph nodes</td><td>May be involved</td><td>May be involved</td></tr><tr><td>Distant organ spread</td><td>Not present</td><td>Present</td></tr><tr><td>Main approach</td><td>Systemic treatment, surgery and radiation</td><td>Systemic treatment; local therapy when appropriate</td></tr><tr><td>Objective</td><td>Often curative intent</td><td>Usually disease control and symptom management</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "Stage III is locally advanced disease treated with systemic therapy before surgery, then surgery and radiation. Stage IV means distant spread (bones, lungs, liver, brain or other sites) and focuses on control and quality of life."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 2,
+          "text": "Treatment options for inflammatory breast cancer"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Stage III care generally follows trimodality sequencing: systemic treatment before surgery → mastectomy with axillary surgery → radiation → additional medicines by biology and response. A multidisciplinary team should plan from the start. Overview: [treatment options](/blogs/breast-cancer-treatment-options)."
+        },
+        {
+          "id": "img_047",
+          "type": "image",
+          "src": "/uploads/articles/ibc-trimodality-treatment.webp",
+          "alt": "Woman receiving outpatient systemic therapy beside a circular trimodality diagram of chemotherapy, mastectomy and radiation for inflammatory breast cancer",
+          "caption": "Stage III IBC is usually treated with neoadjuvant systemic therapy, then mastectomy, then radiation."
+        },
+        {
+          "id": "h_048",
+          "type": "heading",
+          "level": 2,
+          "text": "Chemotherapy before surgery (neoadjuvant chemotherapy)"
+        },
+        {
+          "id": "p_049",
+          "type": "paragraph",
+          "text": "For Stage III IBC, chemotherapy is usually first. Neoadjuvant therapy can reduce swelling/redness, shrink disease, treat micrometastases, improve operability and show treatment response. Pathway: [neoadjuvant chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india)."
+        },
+        {
+          "id": "html_050",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Medicine</th><th>Role</th></tr></thead><tbody><tr><td>Doxorubicin / Epirubicin</td><td>Anthracycline chemotherapy</td></tr><tr><td>Cyclophosphamide</td><td>Often combined with other medicines</td></tr><tr><td>Paclitaxel / Docetaxel</td><td>Taxane chemotherapy</td></tr><tr><td>Carboplatin</td><td>Platinum chemotherapy in selected cases</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "A common approach is anthracycline-based therapy followed by a taxane; cycle count spans months and depends on subtype, stage, response, side effects and whether targeted therapy or immunotherapy is included. Guides: [chemotherapy for breast cancer](/blogs/chemotherapy-for-breast-cancer-in-india) and [chemotherapy in India](/blogs/breast-cancer-chemotherapy-in-india)."
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "GAF planning: [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) **$1,500–$8,000+**; [neoadjuvant](/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy)/[adjuvant](/costs/India/Medical-Oncology/Adjuvant-Chemotherapy) **$2,500–$10,000** each."
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "[WhatsApp GAF if you need help clarifying a neoadjuvant plan before travel](https://wa.me/919044346292?text=I%20need%20guidance%20on%20neoadjuvant%20chemotherapy%20planning%20for%20inflammatory%20breast%20cancer%20in%20India.)"
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 2,
+          "text": "Targeted therapy for HER2-positive inflammatory breast cancer"
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "HER2-positive IBC may use trastuzumab, pertuzumab, T-DM1 in selected postoperative settings, and other HER2-directed medicines when appropriate. Dual HER2 blockade (trastuzumab + pertuzumab) with chemotherapy — for example selected TCHP regimens — may be considered. Cardiac monitoring (echocardiography / LVEF) is important. Detail: [targeted therapy for breast cancer](/blogs/targeted-therapy-for-breast-cancer-in-india) and [targeted therapy in India](/treatments/targeted-therapy-in-india)."
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "GAF [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) planning is **$8,000–$30,000**."
+        },
+        {
+          "id": "btn_057",
+          "type": "button",
+          "label": "Ask about HER2-targeted planning for IBC",
+          "href": "/consult?treatment=HER2%20Inflammatory%20Breast%20Cancer"
+        },
+        {
+          "id": "h_058",
+          "type": "heading",
+          "level": 2,
+          "text": "Immunotherapy for inflammatory breast cancer"
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "Pembrolizumab and related checkpoint inhibitors may be considered for selected patients, especially triple-negative disease. Use depends on subtype, stage, indication and eligibility — not every IBC patient qualifies. Immune-related side effects can affect skin, bowel, thyroid, liver or lungs. Guide: [immunotherapy in India](/treatments/immunotherapy-in-india). GAF [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) planning is **$15,000–$45,000**."
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 2,
+          "text": "Surgery for inflammatory breast cancer"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "After preoperative treatment, Stage III IBC usually proceeds to **modified radical mastectomy** (entire breast plus axillary nodes). Lumpectomy is generally not standard because disease often involves extensive skin and lymphatics. Skin-sparing and nipple-sparing mastectomy are generally inappropriate. Guide: [breast cancer surgery in India](/blogs/breast-cancer-surgery-in-india); comparison context: [lumpectomy vs mastectomy](/blogs/lumpectomy-vs-mastectomy)."
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Immediate reconstruction is generally not preferred because extensive post-mastectomy radiation is usual. Delayed reconstruction may be discussed later with surgery, radiation and reconstructive teams ([reconstruction guide](/blogs/breast-reconstruction-after-mastectomy-india))."
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "GAF planning: [mastectomy](/costs/India/Surgical-Oncology/Mastectomy) **$4,500–$10,000**; [reconstruction](/costs/India/Surgical-Oncology/Breast-Reconstruction) **$6,000–$18,000** (usually delayed). Lumpectomy sheets exist for other pathways ([lumpectomy](/costs/India/Surgical-Oncology/Lumpectomy)) but are not the usual IBC operation."
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 2,
+          "text": "Radiation therapy after surgery"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "Radiation is essential for many Stage III patients after mastectomy to reduce chest-wall and regional-node recurrence. Fields may include chest wall, regional nodes and at-risk lymphatic areas. Techniques may include 3D-CRT, IMRT, IGRT and VMAT. Guide: [radiation therapy](/blogs/breast-cancer-radiation-therapy-in-india). GAF [EBRT](/costs/India/Radiation-Oncology/EBRT) planning is **$1,000–$6,000+**."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 2,
+          "text": "What happens if cancer remains after chemotherapy?"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Pathology after neoadjuvant therapy checks for residual disease. Pathological complete response (pCR) means no residual invasive cancer in breast and sampled nodes — favourable in several subtypes, but not a guarantee against recurrence. Residual disease may lead to T-DM1 for selected HER2-positive patients, hormone therapy for HR-positive disease, further chemotherapy, or other strategies based on genetics and risk."
+        },
+        {
+          "id": "h_068",
+          "type": "heading",
+          "level": 2,
+          "text": "Treatment of Stage IV inflammatory breast cancer"
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "Systemic therapy is the main focus: chemotherapy, hormone therapy, HER2-targeted treatment, immunotherapy, antibody-drug conjugates and other biomarker-directed medicines as eligible. Surgery is not routine primary therapy for all metastatic IBC but may help selected local complications. Radiation can help chest-wall symptoms, painful bone metastases, selected brain metastases, bleeding/ulcerating tumours and other local problems."
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 2,
+          "text": "Can inflammatory breast cancer come back?"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "Yes — locally (chest wall/skin), regionally (nodes) or distantly (bones, lungs, liver, brain). Report new chest-wall redness/swelling, a new lump near the surgical area, persistent bone pain, unexplained weight loss, cough/breathlessness, severe headaches, unusual abdominal symptoms or new neurological changes."
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 2,
+          "text": "What is the prognosis of inflammatory breast cancer?"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "IBC generally has a less favourable group prognosis than many breast cancers because it spreads rapidly and is diagnosed advanced. Individual outlook still varies widely with stage, metastases, HER2/HR status, grade, neoadjuvant response, ability to complete surgery/radiation/systemic therapy."
+        },
+        {
+          "id": "ul_074",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Stage III** — some patients can be treated with curative intent using trimodality care",
+            "**Stage IV** — generally not considered curable; treatment can control disease and improve quality of life",
+            "Avoid applying a single survival percentage to an individual case"
+          ]
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 2,
+          "text": "Supportive care during treatment"
+        },
+        {
+          "id": "ul_076",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Balanced nutrition with adequate protein, calories and fluids — no diet cures IBC",
+            "Gentle activity and physiotherapy for shoulder mobility after surgery",
+            "Lymphoedema awareness after axillary surgery and radiation — early specialist assessment helps",
+            "Psycho-oncology, support groups and family involvement for emotional stress"
+          ]
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 2,
+          "text": "Inflammatory breast cancer treatment in India"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "Hospital selection should prioritise coordinated trimodality capability — not brand name alone. City filters: [Delhi NCR](/doctors/India/Delhi-NCR/Medical-Oncology), [Mumbai](/doctors/India/Mumbai/Medical-Oncology), [Bengaluru](/doctors/India/Bengaluru/Medical-Oncology), [Chennai](/doctors/India/Chennai/Medical-Oncology), [Hyderabad](/doctors/India/Hyderabad/Medical-Oncology). Also [medical](/doctors/India/Medical-Oncology), [surgical](/doctors/India/Surgical-Oncology) and [radiation](/doctors/India/Radiation-Oncology) oncology directories and [medical oncology hospitals](/hospitals/India/Medical-Oncology)."
+        },
+        {
+          "id": "html_079",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Specialist or facility</th><th>Why it matters</th></tr></thead><tbody><tr><td>Breast surgical oncologist</td><td>Mastectomy and lymph node surgery</td></tr><tr><td>Medical oncologist</td><td>Chemotherapy and systemic treatment</td></tr><tr><td>Radiation oncologist</td><td>Post-mastectomy radiation</td></tr><tr><td>Breast radiologist / pathologist</td><td>Imaging, tissue diagnosis and biomarkers</td></tr><tr><td>Multidisciplinary tumour board</td><td>Coordinated treatment planning</td></tr><tr><td>Reconstructive surgeon</td><td>Delayed reconstruction discussions</td></tr><tr><td>Physiotherapist</td><td>Shoulder mobility and lymphoedema care</td></tr><tr><td>International patient support</td><td>Coordination and travel assistance</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "ol_080",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Core biopsy/histopathology and skin punch biopsy if performed",
+            "ER/PR and HER2 IHC ± ISH/FISH",
+            "Mammography, ultrasound, MRI and staging CT/PET-CT reports with imaging copies",
+            "Previous chemotherapy, surgery and discharge summaries",
+            "Current medicines and relevant medical history"
+          ]
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "A second opinion may help when infection treatment failed, clinical–pathology mismatch exists, biomarkers are unclear, surgery was advised without preoperative systemic therapy, operability is uncertain, distant spread is present or disease has recurred — without unnecessarily delaying urgent care."
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "Practical sequencing: [international patient guide](/blogs/breast-cancer-treatment-india-international-patients). GAF helps organise reports, consultations and hospital coordination; treating hospitals remain responsible for clinical care. Request a written plan and itemised estimate before travel."
+        },
+        {
+          "id": "btn_083",
+          "type": "button",
+          "label": "Start an international IBC records review",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 2,
+          "text": "What is the cost of inflammatory breast cancer treatment in India?"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "There is no single fixed cost. Stage III care often spans months of systemic therapy, mastectomy, radiation and additional medicines; Stage IV pathways differ. Use named GAF planning ranges:"
+        },
+        {
+          "id": "html_086",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Named pathway</th><th>GAF planning range in India</th><th>Typical notes</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemotherapy</a></td><td>$1,500–$8,000+</td><td>Outpatient cycles</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy\">Neoadjuvant chemotherapy</a></td><td>$2,500–$10,000</td><td>Usual first step in Stage III · 2–4 months</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Adjuvant-Chemotherapy\">Adjuvant chemotherapy</a></td><td>$2,500–$10,000</td><td>Selected postoperative settings</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Targeted-Therapy\">Targeted therapy</a></td><td>$8,000–$30,000</td><td>HER2-directed / other eligible drugs</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Immunotherapy\">Immunotherapy</a></td><td>$15,000–$45,000</td><td>Selected TNBC / eligible settings</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Hormone-Therapy\">Hormone therapy</a></td><td>$1,000–$4,500</td><td>HR-positive disease after local therapy</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Precision-Oncology\">Precision oncology</a></td><td>$2,000–$7,000</td><td>Genomic / testing pathway planning</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Mastectomy\">Mastectomy</a></td><td>$4,500–$10,000</td><td>Usual surgical approach for Stage III IBC</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Breast-Reconstruction\">Breast reconstruction</a></td><td>$6,000–$18,000</td><td>Usually delayed after radiation</td></tr><tr><td><a href=\"/costs/India/Radiation-Oncology/EBRT\">EBRT</a></td><td>$1,000–$6,000+</td><td>Post-mastectomy chest wall ± nodes</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "Request an itemised estimate separating diagnosis/staging, chemotherapy, surgery, radiation, targeted/immunotherapy medicines, hospitalisation, follow-up and possible extras — based on the proposed plan, not a generic package. Wider context: [breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "btn_088",
+          "type": "button",
+          "label": "Request a written IBC treatment estimate",
+          "href": "/consult?treatment=Inflammatory%20Breast%20Cancer%20Cost%20Estimate"
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a personalised estimate](https://wa.me/919044346292?text=Please%20provide%20a%20personalised%20inflammatory%20breast%20cancer%20treatment%20estimate%20in%20India.)"
+        },
+        {
+          "id": "h_090",
+          "type": "heading",
+          "level": 2,
+          "text": "Can inflammatory breast cancer be prevented?"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "There is no proven specific prevention method. Healthy weight, activity, avoiding tobacco, limiting alcohol, discussing family history, following risk-appropriate screening and seeking assessment for unusual breast changes remain important. Because IBC can arise between screening visits, awareness of sudden breast changes matters."
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently asked questions about inflammatory breast cancer"
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 3,
+          "text": "Is inflammatory breast cancer a rare disease?"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "Yes. It is a rare form of breast cancer, accounting for approximately 1–5% of breast cancer cases in the United States. Proportions may differ in other populations."
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 3,
+          "text": "Is inflammatory breast cancer aggressive?"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "Yes. IBC is considered an aggressive, fast-growing invasive breast cancer. Prompt diagnosis and treatment are important."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 3,
+          "text": "Does inflammatory breast cancer always cause a lump?"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "No. Many patients do not have a clearly noticeable breast lump. Redness, swelling and skin changes may be the main symptoms."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "Can inflammatory breast cancer look like mastitis?"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Yes. Both can cause redness, warmth and swelling. Persistent symptoms or failure to improve with appropriate infection treatment should prompt further assessment."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "Is inflammatory breast cancer always Stage 3?"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "No. It is diagnosed as Stage III or Stage IV. If cancer has spread to distant organs, it is Stage IV."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "Can inflammatory breast cancer be cured?"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "Some patients with Stage III IBC can be treated with curative intent. Stage IV disease is generally not considered curable, although treatment can help control it."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the first treatment for inflammatory breast cancer?"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "For most patients with Stage III disease, treatment begins with systemic therapy — usually chemotherapy, with HER2-targeted medicines or immunotherapy when indicated — before surgery."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 3,
+          "text": "Is mastectomy necessary for inflammatory breast cancer?"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "Mastectomy is generally the standard surgical approach for Stage III IBC. Breast-conserving surgery and skin-sparing mastectomy are generally not recommended."
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 3,
+          "text": "Is radiation necessary after mastectomy?"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "Radiation therapy is generally an important part of Stage III IBC care. It helps reduce recurrence risk in the chest wall and regional lymph nodes."
+        },
+        {
+          "id": "h_111",
+          "type": "heading",
+          "level": 3,
+          "text": "Can HER2-positive inflammatory breast cancer be treated?"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "Yes. HER2-targeted medicines such as trastuzumab and pertuzumab may be used with chemotherapy in eligible patients."
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 3,
+          "text": "Can triple-negative inflammatory breast cancer receive immunotherapy?"
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "Selected patients may be eligible for immunotherapy, depending on stage, treatment setting, biomarkers and clinical indications."
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 3,
+          "text": "Can inflammatory breast cancer spread to the lungs or liver?"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "Yes. Stage IV IBC may spread to the lungs, liver, bones, brain or other distant organs."
+        },
+        {
+          "id": "h_117",
+          "type": "heading",
+          "level": 3,
+          "text": "Can inflammatory breast cancer occur in younger women?"
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "Yes. It is often diagnosed at a younger age than many other breast cancer types, although it can occur at any age."
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 3,
+          "text": "Is inflammatory breast cancer hereditary?"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "Most cases are not directly inherited. Genetic counselling may still be appropriate with a strong family history or other testing criteria."
+        },
+        {
+          "id": "h_121",
+          "type": "heading",
+          "level": 3,
+          "text": "Is treatment available in India for international patients?"
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "Yes. India may offer diagnosis, chemotherapy, surgery, radiation and biomarker-directed treatment. Select hospitals by required expertise and facilities."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 2,
+          "text": "Key takeaways"
+        },
+        {
+          "id": "ul_124",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "IBC is a rare, aggressive invasive breast cancer",
+            "Rapid redness, swelling, warmth and skin thickening are key clues",
+            "A distinct lump may be absent",
+            "It can resemble mastitis — persistent symptoms need proper evaluation",
+            "Diagnosis needs clinical assessment, imaging and tissue biopsy",
+            "IBC is Stage III or Stage IV at diagnosis",
+            "Stage III care usually uses neoadjuvant therapy, mastectomy and radiation",
+            "Hormone therapy, HER2-targeted treatment or immunotherapy may be added by biomarkers",
+            "India care should be planned by a multidisciplinary breast cancer team"
+          ]
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "Do not ignore rapid breast redness, swelling or skin changes. Although infection can cause similar symptoms, persistent or unusual changes need prompt evaluation. Early recognition and coordinated treatment are essential."
+        },
+        {
+          "id": "btn_126",
+          "type": "button",
+          "label": "Discuss the next IBC treatment step with GAF Healthcare",
+          "href": "/consult?treatment=Inflammatory%20Breast%20Cancer%20Treatment"
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 2,
+          "text": "Recommended further reading"
+        },
+        {
+          "id": "ul_128",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india)",
+            "[Breast cancer symptoms](/blogs/breast-cancer-symptoms)",
+            "[Breast cancer diagnosis](/blogs/breast-cancer-diagnosis)",
+            "[Breast cancer diagnosis tests (ER/PR/HER2)](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)",
+            "[Breast cancer stages](/blogs/breast-cancer-stages)",
+            "[Breast cancer treatment options](/blogs/breast-cancer-treatment-options)",
+            "[Breast cancer surgery in India](/blogs/breast-cancer-surgery-in-india)",
+            "[Lumpectomy vs mastectomy](/blogs/lumpectomy-vs-mastectomy)",
+            "[Breast reconstruction after mastectomy](/blogs/breast-reconstruction-after-mastectomy-india)",
+            "[Chemotherapy for breast cancer](/blogs/chemotherapy-for-breast-cancer-in-india)",
+            "[Breast cancer chemotherapy in India](/blogs/breast-cancer-chemotherapy-in-india)",
+            "[Neoadjuvant chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india)",
+            "[Radiation therapy for breast cancer](/blogs/breast-cancer-radiation-therapy-in-india)",
+            "[Hormone therapy for breast cancer](/blogs/hormone-therapy-for-breast-cancer-in-india)",
+            "[Targeted therapy for breast cancer](/blogs/targeted-therapy-for-breast-cancer-in-india)",
+            "[HER2-positive breast cancer](/blogs/her2-positive-breast-cancer-treatment-india)",
+            "[Triple-negative breast cancer](/blogs/triple-negative-breast-cancer-treatment-india)",
+            "[ER/PR/HER2 results explained](/blogs/er-pr-her2-breast-cancer-treatment-india)",
+            "[Breast cancer in young women](/blogs/breast-cancer-in-young-women-treatment-india)",
+            "[Breast cancer during pregnancy and breastfeeding](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)",
+            "[Breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)",
+            "[International patients](/blogs/breast-cancer-treatment-india-international-patients)",
+            "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
+            "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)"
+          ]
+        },
+        {
+          "id": "h_129",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical sources and references"
+        },
+        {
+          "id": "ol_130",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "[NCCN Guidelines for Patients — Inflammatory Breast Cancer, 2026](https://vicc.org/sites/default/files/2026-09/inflammatory-breast-patient.pdf)",
+            "[NCI — Inflammatory Breast Cancer](https://www.cancer.gov/types/breast/breast-cancer-types/inflammatory)",
+            "[NCI — Treatment for Inflammatory Breast Cancer](https://www.cancer.gov/types/breast/treatment/inflammatory-breast-cancer)",
+            "[ACS — Treating Inflammatory Breast Cancer](https://www.cancer.org/cancer/types/breast-cancer/treatment/treatment-of-inflammatory-breast-cancer.html)",
+            "[ASCO — Neoadjuvant Therapy for Breast Cancer Guideline](https://ascopubs.org/doi/10.1200/JCO.20.03399)",
+            "[Susan G. Komen — Inflammatory Breast Cancer](https://www.komen.org/breast-cancer/treatment/by-diagnosis/inflammatory-breast-cancer/)",
+            "[ICMR — Standard Treatment Workflows](https://www.icmr.gov.in/standard-treatment-workflows-stws)",
+            "[ACS — Breast Cancer Stages](https://www.cancer.org/cancer/types/breast-cancer/understanding-a-breast-cancer-diagnosis/stages-of-breast-cancer.html)",
+            "[NCI — Breast Cancer Treatment](https://www.cancer.gov/types/breast/treatment)"
+          ]
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "*This article is intended for general educational purposes and does not replace medical advice, diagnosis or an individualised treatment plan from a qualified oncology team. GAF cost figures are partner planning ranges, not fixed hospital quotations.*"
+        }
+      ]
+    },
     {
       "id": "art_breast_cancer_during_pregnancy_breastfeeding_treatment_india",
       "slug": "breast-cancer-during-pregnancy-breastfeeding-treatment-india",
@@ -2940,6 +3916,10 @@
         {
           "label": "Medical oncology hospitals",
           "href": "/hospitals/India/Medical-Oncology"
+        },
+        {
+          "label": "Inflammatory breast cancer treatment in India",
+          "href": "/blogs/inflammatory-breast-cancer-treatment-india"
         }
       ],
       "blocks": [
@@ -3799,7 +4779,8 @@
             "[Breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)",
             "[International patients](/blogs/breast-cancer-treatment-india-international-patients)",
             "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
-            "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)"
+            "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
+            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)"
           ]
         },
         {
@@ -3820,7 +4801,8 @@
             "[Society for Maternal-Fetal Medicine — Cancer in Pregnancy](https://pmc.ncbi.nlm.nih.gov/articles/PMC13344446/)",
             "[ICMR — Standard Treatment Workflows](https://www.icmr.gov.in/standard-treatment-workflows-stws)",
             "[ACR Appropriateness Criteria](https://www.acr.org/Clinical-Resources/Clinical-Tools-and-Reference/Appropriateness-Criteria)",
-            "[NCI — Breast Cancer Treatment](https://www.cancer.gov/types/breast/treatment)"
+            "[NCI — Breast Cancer Treatment](https://www.cancer.gov/types/breast/treatment)",
+            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)"
           ]
         },
         {
@@ -3956,6 +4938,10 @@
         {
           "label": "Breast cancer during pregnancy and breastfeeding",
           "href": "/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india"
+        },
+        {
+          "label": "Inflammatory breast cancer treatment in India",
+          "href": "/blogs/inflammatory-breast-cancer-treatment-india"
         }
       ],
       "blocks": [
@@ -4671,7 +5657,8 @@
             "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
             "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
             "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)",
-            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)"
+            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)",
+            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)"
           ]
         }
       ]
@@ -4807,6 +5794,10 @@
         {
           "label": "Breast cancer during pregnancy and breastfeeding",
           "href": "/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india"
+        },
+        {
+          "label": "Inflammatory breast cancer treatment in India",
+          "href": "/blogs/inflammatory-breast-cancer-treatment-india"
         }
       ],
       "blocks": [
@@ -5514,7 +6505,8 @@
             "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
             "[Triple-Negative Breast Cancer Treatment in India](/blogs/triple-negative-breast-cancer-treatment-india)",
             "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)",
-            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)"
+            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)",
+            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)"
           ]
         }
       ]
@@ -88546,6 +89538,10 @@
         {
           "label": "Breast cancer during pregnancy and breastfeeding",
           "href": "/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india"
+        },
+        {
+          "label": "Inflammatory breast cancer treatment in India",
+          "href": "/blogs/inflammatory-breast-cancer-treatment-india"
         }
       ],
       "blocks": [
@@ -89460,7 +90456,8 @@
             "[International patients](/blogs/breast-cancer-treatment-india-international-patients)",
             "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
             "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
-            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)"
+            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)",
+            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)"
           ]
         },
         {
@@ -89483,7 +90480,8 @@
             "[NICPR, India — Breast Cancer](https://cancerindia.org.in/breast-cancer/)",
             "[Obstetrics & Gynecology — Breast Cancer in Young Women (2026)](https://doi.org/10.1097/aog.0000000000006187)",
             "[Therapeutic Advances in Medical Oncology — Pregnancy After Breast Cancer (2025)](https://journals.sagepub.com/doi/full/10.1177/17588359251346648)",
-            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)"
+            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)",
+            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)"
           ]
         },
         {
@@ -96132,6 +97130,10 @@
         {
           "label": "Breast cancer during pregnancy and breastfeeding",
           "href": "/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india"
+        },
+        {
+          "label": "Inflammatory breast cancer treatment in India",
+          "href": "/blogs/inflammatory-breast-cancer-treatment-india"
         }
       ],
       "blocks": [
@@ -96895,7 +97897,8 @@
             "[Surgical oncology hospitals in India](/hospitals/India/Surgical-Oncology)",
             "[Triple-Negative Breast Cancer Treatment in India](/blogs/triple-negative-breast-cancer-treatment-india)",
             "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)",
-            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)"
+            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)",
+            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)"
           ]
         }
       ]
@@ -100794,6 +101797,10 @@
         {
           "label": "Breast cancer during pregnancy and breastfeeding",
           "href": "/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india"
+        },
+        {
+          "label": "Inflammatory breast cancer treatment in India",
+          "href": "/blogs/inflammatory-breast-cancer-treatment-india"
         }
       ],
       "blocks": [
@@ -101531,7 +102538,8 @@
             "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
             "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
             "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)",
-            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)"
+            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)",
+            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)"
           ]
         }
       ]
@@ -106325,6 +107333,10 @@
         {
           "label": "Breast cancer during pregnancy and breastfeeding",
           "href": "/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india"
+        },
+        {
+          "label": "Inflammatory breast cancer treatment in India",
+          "href": "/blogs/inflammatory-breast-cancer-treatment-india"
         }
       ],
       "blocks": [
@@ -106960,7 +107972,8 @@
             "[Breast Cancer Chemotherapy in India](/blogs/breast-cancer-chemotherapy-in-india)",
             "[Triple-Negative Breast Cancer Treatment in India](/blogs/triple-negative-breast-cancer-treatment-india)",
             "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)",
-            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)"
+            "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)",
+            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)"
           ]
         },
         {
