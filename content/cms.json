@@ -2833,9 +2833,1035 @@
       "name": "ibc-trimodality-treatment.webp",
       "alt": "Woman receiving outpatient systemic therapy beside a circular trimodality diagram of chemotherapy, mastectomy and radiation for inflammatory breast cancer",
       "addedAt": "2026-11-12T18:50:00.000Z"
+    },
+    {
+      "id": "media_metastatic_breast_cancer_overview_webp",
+      "url": "/uploads/articles/metastatic-breast-cancer-overview.webp",
+      "name": "metastatic-breast-cancer-overview.webp",
+      "alt": "Woman in oncology consultation beside a circular body diagram showing breast cancer with distant spread pathways to organs",
+      "addedAt": "2026-11-12T19:00:00.000Z"
+    },
+    {
+      "id": "media_metastatic_breast_cancer_bone_mets_webp",
+      "url": "/uploads/articles/metastatic-breast-cancer-bone-mets.webp",
+      "name": "metastatic-breast-cancer-bone-mets.webp",
+      "alt": "Woman discussing bone symptoms with a clinician beside a circular skeleton diagram highlighting metastatic deposits in spine and pelvis",
+      "addedAt": "2026-11-12T19:00:00.000Z"
+    },
+    {
+      "id": "media_metastatic_breast_cancer_staging_imaging_webp",
+      "url": "/uploads/articles/metastatic-breast-cancer-staging-imaging.webp",
+      "name": "metastatic-breast-cancer-staging-imaging.webp",
+      "alt": "Woman reviewing staging scan results with an oncologist beside a circular PET-style body diagram with soft activity markers",
+      "addedAt": "2026-11-12T19:00:00.000Z"
+    },
+    {
+      "id": "media_metastatic_breast_cancer_systemic_therapy_webp",
+      "url": "/uploads/articles/metastatic-breast-cancer-systemic-therapy.webp",
+      "name": "metastatic-breast-cancer-systemic-therapy.webp",
+      "alt": "Woman receiving outpatient systemic therapy counselling beside a circular diagram of hormone, HER2-targeted, chemotherapy and immunotherapy pathways",
+      "addedAt": "2026-11-12T19:00:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_metastatic_breast_cancer_stage_4",
+      "slug": "metastatic-breast-cancer-stage-4",
+      "title": "Metastatic Breast Cancer (Stage 4): Symptoms, Treatment, Life Expectancy and Care in India",
+      "excerpt": "Metastatic breast cancer, also called Stage 4 breast cancer, occurs when cancer cells spread from the breast to distant parts of the body. Although it is generally not considered curable, modern treatments can often control the disease, reduce symptoms and help patients live longer. This guide explains its symptoms, diagnosis, treatment options, life expectancy and care available in India.",
+      "date": "12 Nov 2026",
+      "publishedAt": "2026-11-12T19:00:00.000Z",
+      "updatedAt": "2026-11-12T19:00:00.000Z",
+      "author": "GAF Healthcare Editorial",
+      "category": "Medical Oncology",
+      "tags": [
+        "breast cancer",
+        "metastatic breast cancer",
+        "Stage 4",
+        "targeted therapy",
+        "India",
+        "cost"
+      ],
+      "image": "/uploads/articles/metastatic-breast-cancer-overview.webp",
+      "imageAlt": "Woman in oncology consultation beside a circular body diagram showing breast cancer with distant spread pathways to organs",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Metastatic Breast Cancer (Stage 4): Symptoms, Treatment and Life Expectancy in India",
+      "seoDescription": "Understand Stage 4 breast cancer, its symptoms, diagnosis, treatment options, survival outlook and the cost of metastatic breast cancer treatment in India.",
+      "canonical": "https://gaf.healthcare/blogs/metastatic-breast-cancer-stage-4",
+      "ogImage": "/uploads/articles/metastatic-breast-cancer-overview.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Metastatic breast cancer treatment in India",
+        "Stage 4 breast cancer treatment",
+        "Metastatic breast cancer symptoms",
+        "Stage 4 breast cancer life expectancy",
+        "Breast cancer spread to bones",
+        "Breast cancer spread to liver",
+        "Breast cancer spread to lungs",
+        "Breast cancer spread to brain",
+        "HER2-positive metastatic breast cancer",
+        "Triple-negative metastatic breast cancer",
+        "Hormone receptor-positive metastatic breast cancer",
+        "Stage 4 breast cancer cost in India",
+        "Advanced breast cancer treatment in India"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Breast cancer treatment in India",
+          "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Breast cancer recurrence treatment",
+          "href": "/blogs/breast-cancer-recurrence-treatment-india"
+        },
+        {
+          "label": "Breast cancer stages",
+          "href": "/blogs/breast-cancer-stages"
+        },
+        {
+          "label": "Breast cancer treatment options",
+          "href": "/blogs/breast-cancer-treatment-options"
+        },
+        {
+          "label": "Breast cancer symptoms",
+          "href": "/blogs/breast-cancer-symptoms"
+        },
+        {
+          "label": "Breast cancer diagnosis",
+          "href": "/blogs/breast-cancer-diagnosis"
+        },
+        {
+          "label": "Breast cancer diagnosis tests (ER/PR/HER2)",
+          "href": "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2"
+        },
+        {
+          "label": "ER/PR/HER2 results explained",
+          "href": "/blogs/er-pr-her2-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Hormone therapy for breast cancer",
+          "href": "/blogs/hormone-therapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Targeted therapy for breast cancer",
+          "href": "/blogs/targeted-therapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "HER2-positive breast cancer",
+          "href": "/blogs/her2-positive-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Triple-negative breast cancer",
+          "href": "/blogs/triple-negative-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Inflammatory breast cancer",
+          "href": "/blogs/inflammatory-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Chemotherapy for breast cancer",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Breast cancer chemotherapy in India",
+          "href": "/blogs/breast-cancer-chemotherapy-in-india"
+        },
+        {
+          "label": "Radiation therapy for breast cancer",
+          "href": "/blogs/breast-cancer-radiation-therapy-in-india"
+        },
+        {
+          "label": "Breast cancer surgery in India",
+          "href": "/blogs/breast-cancer-surgery-in-india"
+        },
+        {
+          "label": "Breast cancer in young women",
+          "href": "/blogs/breast-cancer-in-young-women-treatment-india"
+        },
+        {
+          "label": "Breast cancer treatment cost in India",
+          "href": "/blogs/breast-cancer-treatment-cost-in-india"
+        },
+        {
+          "label": "International patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "Chemotherapy in India",
+          "href": "/treatments/chemotherapy-in-india"
+        },
+        {
+          "label": "Immunotherapy in India",
+          "href": "/treatments/immunotherapy-in-india"
+        },
+        {
+          "label": "Targeted therapy in India",
+          "href": "/treatments/targeted-therapy-in-india"
+        },
+        {
+          "label": "Medical oncology doctors",
+          "href": "/doctors/India/Medical-Oncology"
+        },
+        {
+          "label": "Medical oncology hospitals",
+          "href": "/hospitals/India/Medical-Oncology"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"md-body\"><table><thead><tr><th>Question</th><th>Quick Answer</th></tr></thead><tbody><tr><td><strong>What is metastatic / Stage 4 breast cancer?</strong></td><td>Breast cancer that has spread to distant organs such as bones, liver, lungs or brain</td></tr><tr><td><strong>Curable?</strong></td><td>Generally not considered curable — modern systemic treatment can often control disease and relieve symptoms</td></tr><tr><td><strong>Main treatment</strong></td><td>Systemic therapy by subtype: hormone ± CDK4/6, HER2-targeted, chemotherapy, immunotherapy when eligible</td></tr><tr><td><strong>Surgery / radiation</strong></td><td>Surgery selective; radiation often for bone pain, brain mets or local symptoms</td></tr><tr><td><strong>Life expectancy</strong></td><td>Highly variable — US SEER distant disease 5-year relative survival ~33.8% (2016–2022); not an individual prediction</td></tr><tr><td><strong>Planning ranges</strong></td><td><a href=\"/costs/India/Medical-Oncology/Hormone-Therapy\">Hormone therapy</a> $1,000–$4,500 · <a href=\"/costs/India/Medical-Oncology/Targeted-Therapy\">targeted</a> $8,000–$30,000 · <a href=\"/costs/India/Medical-Oncology/Chemotherapy\">chemo</a> $1,500–$8,000+ · <a href=\"/costs/India/Medical-Oncology/Immunotherapy\">immuno</a> $15,000–$45,000</td></tr><tr><td><strong>India planning</strong></td><td><a href=\"/treatments/breast-cancer-treatment-in-india\">Breast cancer treatment in India</a> · filter <a href=\"/doctors/India/Medical-Oncology\">medical oncologists</a> by city</td></tr></tbody></table></div><p class=\"article-quick-answer__body\"><strong>Metastatic breast cancer treatment in India</strong> is planned around ER/PR/HER2 status, metastatic sites and prior therapy. GAF figures are partner planning ranges, not hospital quotations.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "**Metastatic breast cancer**, also called **Stage 4 breast cancer**, occurs when cancer cells spread from the breast to distant parts of the body. Although it is generally not considered curable, modern treatments can often control the disease, reduce symptoms and help patients live longer. This guide explains symptoms, diagnosis, treatment options, life expectancy and care available for [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india)."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "Related reading: [stages](/blogs/breast-cancer-stages), [recurrence](/blogs/breast-cancer-recurrence-treatment-india), [ER/PR/HER2](/blogs/er-pr-her2-breast-cancer-treatment-india), [HER2-positive disease](/blogs/her2-positive-breast-cancer-treatment-india), [triple-negative disease](/blogs/triple-negative-breast-cancer-treatment-india), [hormone therapy](/blogs/hormone-therapy-for-breast-cancer-in-india), [targeted therapy](/blogs/targeted-therapy-for-breast-cancer-in-india) and [treatment cost](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "btn_004",
+          "type": "button",
+          "label": "Ask GAF to review Stage 4 breast cancer reports",
+          "href": "/consult?treatment=Metastatic%20Breast%20Cancer%20Treatment"
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with pathology, staging scans and prior treatment](https://wa.me/919044346292?text=Please%20review%20my%20Stage%204%20%2F%20metastatic%20breast%20cancer%20reports%20and%20advise%20on%20treatment%20options%20and%20cost%20in%20India.)"
+        },
+        {
+          "id": "img_006",
+          "type": "image",
+          "src": "/uploads/articles/metastatic-breast-cancer-overview.webp",
+          "alt": "Woman in oncology consultation beside a circular body diagram showing breast cancer with distant spread pathways to organs",
+          "caption": "Stage 4 breast cancer means distant spread — systemic medicines are usually the mainstay of treatment."
+        },
+        {
+          "id": "h_007",
+          "type": "heading",
+          "level": 2,
+          "text": "What is metastatic breast cancer?"
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "Metastatic breast cancer has spread beyond the breast and nearby lymph nodes to distant sites. It is also called Stage 4 or distant breast cancer. Cells travel through blood or lymph and form deposits in other organs — most commonly bones, liver, lungs, brain and distant lymph nodes."
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "If breast cancer spreads to bone, it is still metastatic breast cancer — not a new primary bone cancer. Some patients present with *de novo* Stage 4 disease; others develop distant recurrence months or years after earlier-stage treatment."
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "Treatment differs from early-stage care: the focus is usually medicines that work throughout the body rather than only removing the breast tumour."
+        },
+        {
+          "id": "h_011",
+          "type": "heading",
+          "level": 2,
+          "text": "What is the difference between Stage 3 and Stage 4 breast cancer?"
+        },
+        {
+          "id": "html_012",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Stage 3 breast cancer</th><th>Stage 4 breast cancer</th></tr></thead><tbody><tr><td>Cancer spread</td><td>Locally advanced — nearby tissues or nodes</td><td>Distant organs or sites</td></tr><tr><td>Distant metastasis</td><td>No</td><td>Yes</td></tr><tr><td>Treatment objective</td><td>Often curative intent</td><td>Usually long-term control and symptom relief</td></tr><tr><td>Surgery</td><td>Often important</td><td>Used selectively</td></tr><tr><td>Main treatment</td><td>Systemic therapy, surgery and radiation</td><td>Primarily systemic therapy; local treatment when needed</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "Stage 3 may involve extensive local/regional disease without distant metastasis. Stage 4 means distant spread is present. Broader context: [breast cancer stages](/blogs/breast-cancer-stages)."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 2,
+          "text": "How does breast cancer spread to other parts of the body?"
+        },
+        {
+          "id": "ul_015",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Bloodstream** — cells travel to organs such as liver, lungs, bones and brain",
+            "**Lymphatic system** — cells move through lymphatic vessels and nodes, then potentially further"
+          ]
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "Not every patient develops metastases in the same organs. Pattern of spread, number of organs involved and subtype all influence decisions."
+        },
+        {
+          "id": "h_017",
+          "type": "heading",
+          "level": 2,
+          "text": "Symptoms of metastatic breast cancer"
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "Symptoms depend on where cancer has spread. These symptoms do not automatically mean metastasis — doctors use assessment and investigations to find the cause. Symptom overview: [breast cancer symptoms](/blogs/breast-cancer-symptoms)."
+        },
+        {
+          "id": "h_019",
+          "type": "heading",
+          "level": 3,
+          "text": "Breast cancer that has spread to the bones"
+        },
+        {
+          "id": "p_020",
+          "type": "paragraph",
+          "text": "Bones are among the most common metastatic sites."
+        },
+        {
+          "id": "ul_021",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Persistent pain in the back, hips, ribs or other bones",
+            "Pain worse at night or with movement",
+            "Tenderness over an affected bone; difficulty walking",
+            "Fractures after minor injuries",
+            "High blood calcium — nausea, constipation, thirst, confusion or weakness"
+          ]
+        },
+        {
+          "id": "p_022",
+          "type": "paragraph",
+          "text": "Spinal involvement with new severe back pain, leg weakness, numbness, walking difficulty or loss of bladder/bowel control needs **emergency** assessment."
+        },
+        {
+          "id": "img_023",
+          "type": "image",
+          "src": "/uploads/articles/metastatic-breast-cancer-bone-mets.webp",
+          "alt": "Woman discussing bone symptoms with a clinician beside a circular skeleton diagram highlighting metastatic deposits in spine and pelvis",
+          "caption": "Bone metastases are common and may cause pain, fracture risk or high calcium levels."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 3,
+          "text": "Breast cancer that has spread to the liver"
+        },
+        {
+          "id": "ul_025",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Upper-right abdominal pain or discomfort",
+            "Loss of appetite, unexplained weight loss, nausea, fatigue",
+            "Abdominal swelling; yellowing of skin or eyes; dark urine"
+          ]
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "Some liver metastases are found on imaging or blood tests without noticeable symptoms."
+        },
+        {
+          "id": "h_027",
+          "type": "heading",
+          "level": 3,
+          "text": "Breast cancer that has spread to the lungs"
+        },
+        {
+          "id": "ul_028",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Persistent cough, breathlessness, chest discomfort",
+            "Pain while breathing; coughing up blood in some cases",
+            "Repeated respiratory symptoms"
+          ]
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "New or worsening breathlessness should be assessed promptly — infection, clots or fluid around the lungs can also cause it."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 3,
+          "text": "Breast cancer that has spread to the brain"
+        },
+        {
+          "id": "ul_031",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Persistent or worsening headaches; seizures",
+            "Blurred or double vision; arm or leg weakness",
+            "Speech difficulty, balance loss, confusion or behaviour change",
+            "Nausea and vomiting with other neurological symptoms"
+          ]
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "A new seizure, sudden weakness, confusion or severe headache needs urgent evaluation."
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 3,
+          "text": "Breast cancer that has spread to distant lymph nodes"
+        },
+        {
+          "id": "ul_034",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Swelling in the neck or above the collarbone",
+            "Enlarged distant node regions; local discomfort or pressure"
+          ]
+        },
+        {
+          "id": "h_035",
+          "type": "heading",
+          "level": 2,
+          "text": "When should a patient seek emergency medical attention?"
+        },
+        {
+          "id": "html_036",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Symptom</th><th>Why it matters</th></tr></thead><tbody><tr><td>New severe back pain with leg weakness or numbness</td><td>Possible spinal cord compression</td></tr><tr><td>Loss of bladder or bowel control</td><td>Possible spinal cord or nerve compression</td></tr><tr><td>Seizure or sudden confusion</td><td>Possible brain involvement or neurological emergency</td></tr><tr><td>Sudden or severe breathlessness</td><td>Possible lung complication, infection or blood clot</td></tr><tr><td>Severe chest pain</td><td>Requires urgent assessment</td></tr><tr><td>Yellowing of eyes with worsening illness</td><td>Possible significant liver dysfunction</td></tr><tr><td>Sudden severe bone pain or inability to bear weight</td><td>Possible fracture</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "If any of these occur, seek emergency care rather than waiting for a routine oncology appointment."
+        },
+        {
+          "id": "h_038",
+          "type": "heading",
+          "level": 2,
+          "text": "Can breast cancer spread years after treatment?"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "Yes. Distant recurrence can occur months, years or sometimes decades later — particularly relevant for some hormone receptor-positive cancers. See also [breast cancer recurrence](/blogs/breast-cancer-recurrence-treatment-india). When distant sites are involved, doctors generally reassess with imaging and, where feasible, a new biopsy because receptor status can change."
+        },
+        {
+          "id": "h_040",
+          "type": "heading",
+          "level": 2,
+          "text": "Types of metastatic breast cancer"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "Treatment depends heavily on ER, PR and HER2. Detail: [ER/PR/HER2 explained](/blogs/er-pr-her2-breast-cancer-treatment-india)."
+        },
+        {
+          "id": "html_042",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Subtype</th><th>Key characteristics</th><th>General treatment approach</th></tr></thead><tbody><tr><td>HR-positive, HER2-negative</td><td>ER and/or PR positive, HER2 negative</td><td>Hormone therapy, often with CDK4/6 inhibitors</td></tr><tr><td>HER2-positive</td><td>HER2 overexpression or amplification</td><td>HER2-targeted therapy, often with chemotherapy</td></tr><tr><td>Triple-negative</td><td>ER, PR and HER2 negative</td><td>Chemotherapy; immunotherapy in eligible patients; other options</td></tr><tr><td>HER2-low</td><td>Lower HER2 expression without conventional HER2-positive status</td><td>Certain antibody-drug conjugates in eligible patients</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "Two patients with Stage 4 disease may need completely different medicines even if metastases involve the same organ."
+        },
+        {
+          "id": "h_044",
+          "type": "heading",
+          "level": 2,
+          "text": "How is metastatic breast cancer diagnosed?"
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "Doctors confirm spread, map extent and identify treatment-guiding markers. Diagnostic pathway context: [diagnosis guide](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)."
+        },
+        {
+          "id": "ol_046",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**History and examination** — prior diagnosis/treatment, symptoms, receptor reports, medicines, general health",
+            "**Biopsy of a metastatic site when feasible** — confirm breast cancer origin and reassess ER/PR/HER2",
+            "**Imaging selected by clinical need** — CT, PET-CT, bone scan, brain/spine MRI, ultrasound",
+            "**Blood tests** — blood counts, liver/kidney function, calcium, electrolytes; tumour markers only as adjuncts",
+            "**Molecular/genetic testing when indicated** — germline BRCA, PIK3CA, ESR1, AKT1/PTEN, PD-L1 and others"
+          ]
+        },
+        {
+          "id": "html_047",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Investigation</th><th>Why it may be recommended</th></tr></thead><tbody><tr><td>CT chest/abdomen/pelvis</td><td>Assess organs and lymph nodes</td></tr><tr><td>PET-CT</td><td>Evaluate suspected active disease throughout the body</td></tr><tr><td>Bone scan</td><td>Assess possible bone involvement</td></tr><tr><td>Brain MRI</td><td>Neurological symptoms or suspected brain metastases</td></tr><tr><td>Spine MRI</td><td>Spinal involvement or cord compression concern</td></tr><tr><td>Abdominal ultrasound</td><td>Examine liver and other abdominal organs</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "img_048",
+          "type": "image",
+          "src": "/uploads/articles/metastatic-breast-cancer-staging-imaging.webp",
+          "alt": "Woman reviewing staging scan results with an oncologist beside a circular PET-style body diagram with soft activity markers",
+          "caption": "Staging imaging and, when feasible, metastatic-site biopsy guide Stage 4 treatment choices."
+        },
+        {
+          "id": "btn_049",
+          "type": "button",
+          "label": "Request a second opinion on metastatic staging and biomarkers",
+          "href": "/consult?treatment=Metastatic%20Breast%20Cancer%20Second%20Opinion"
+        },
+        {
+          "id": "h_050",
+          "type": "heading",
+          "level": 2,
+          "text": "Treatment of metastatic breast cancer in India"
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "Systemic therapy is usually primary. Plans depend on ER/PR/HER2, other biomarkers, organs involved, prior response, pace of progression, organ function and preferences. Overview: [treatment options](/blogs/breast-cancer-treatment-options)."
+        },
+        {
+          "id": "img_052",
+          "type": "image",
+          "src": "/uploads/articles/metastatic-breast-cancer-systemic-therapy.webp",
+          "alt": "Woman receiving outpatient systemic therapy counselling beside a circular diagram of hormone, HER2-targeted, chemotherapy and immunotherapy pathways",
+          "caption": "Subtype-directed systemic therapy is the core of most Stage 4 breast cancer plans."
+        },
+        {
+          "id": "h_053",
+          "type": "heading",
+          "level": 2,
+          "text": "Hormone therapy for HR-positive, HER2-negative metastatic disease"
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "Endocrine therapy ± a CDK4/6 inhibitor (ribociclib, palbociclib or abemaciclib) is a common initial approach. Options include aromatase inhibitors, fulvestrant, tamoxifen in selected cases and ovarian suppression for premenopausal patients. Guide: [hormone therapy for breast cancer](/blogs/hormone-therapy-for-breast-cancer-in-india). GAF [hormone therapy](/costs/India/Medical-Oncology/Hormone-Therapy) planning is **$1,000–$4,500**."
+        },
+        {
+          "id": "h_055",
+          "type": "heading",
+          "level": 2,
+          "text": "Targeted therapy for HR-positive, HER2-negative disease"
+        },
+        {
+          "id": "p_056",
+          "type": "paragraph",
+          "text": "Depending on molecular results and prior therapy, selected patients may be considered for alpelisib (PIK3CA), capivasertib (PIK3CA/AKT1/PTEN), everolimus combinations, elacestrant or other oral endocrine agents for certain ESR1-mutated disease — subject to eligibility, approval and availability. Guide: [targeted therapy](/blogs/targeted-therapy-for-breast-cancer-in-india). GAF [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) **$8,000–$30,000**; [precision oncology](/costs/India/Medical-Oncology/Precision-Oncology) testing pathways **$2,000–$7,000**."
+        },
+        {
+          "id": "h_057",
+          "type": "heading",
+          "level": 2,
+          "text": "HER2-targeted therapy for HER2-positive metastatic breast cancer"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "Options may include trastuzumab, pertuzumab, trastuzumab deruxtecan (T-DXd), T-DM1, tucatinib combinations and other HER2-directed medicines. First-line dual HER2 blockade with a taxane is common in many settings; sequencing changes with evidence and availability. Brain metastases may need CNS-active regimens and/or stereotactic radiation. Guides: [HER2-positive breast cancer](/blogs/her2-positive-breast-cancer-treatment-india) and [targeted therapy in India](/treatments/targeted-therapy-in-india)."
+        },
+        {
+          "id": "btn_059",
+          "type": "button",
+          "label": "Ask about HER2-positive Stage 4 treatment sequencing",
+          "href": "/consult?treatment=HER2%20Metastatic%20Breast%20Cancer"
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 2,
+          "text": "Treatment for triple-negative metastatic breast cancer"
+        },
+        {
+          "id": "ul_061",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Chemotherapy** — paclitaxel, docetaxel, carboplatin, cisplatin, capecitabine, eribulin and other regimens as selected",
+            "**Immunotherapy** — pembrolizumab with chemotherapy for eligible PD-L1-positive metastatic TNBC",
+            "**PARP inhibitors** — olaparib or talazoparib for selected germline BRCA1/2 carriers",
+            "**Antibody-drug conjugates** — sacituzumab govitecan and other ADCs in eligible previously treated settings"
+          ]
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Detail: [TNBC guide](/blogs/triple-negative-breast-cancer-treatment-india), [chemotherapy](/blogs/breast-cancer-chemotherapy-in-india), [immunotherapy in India](/treatments/immunotherapy-in-india). GAF [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) **$1,500–$8,000+**; [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) **$15,000–$45,000**."
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "[WhatsApp GAF if you need help clarifying PD-L1, BRCA or ADC eligibility](https://wa.me/919044346292?text=I%20need%20guidance%20on%20metastatic%20triple-negative%20breast%20cancer%20treatment%20options%20and%20eligibility%20in%20India.)"
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 2,
+          "text": "Treatment for HER2-low metastatic breast cancer"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "HER2-low is not the same as conventional HER2-positive disease. Some patients may be eligible for trastuzumab deruxtecan depending on hormone receptor status, prior treatment and indication. A detailed pathology report matters — not all HER2-negative cancers are biologically identical."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 2,
+          "text": "Can surgery be performed for Stage 4 breast cancer?"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Surgery is not usually the main treatment because disease is already systemic. It may be considered for bleeding, ulcerating/infected wounds, significant local discomfort, selected complications or carefully chosen cases after multidisciplinary review. Removing the breast tumour does not remove distant deposits. Guide: [breast cancer surgery in India](/blogs/breast-cancer-surgery-in-india)."
+        },
+        {
+          "id": "h_068",
+          "type": "heading",
+          "level": 2,
+          "text": "Role of radiation therapy in Stage 4 breast cancer"
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "Radiation can control symptoms and treat selected metastatic sites — painful bone mets, spinal cord threat, brain metastases, bleeding/painful breast tumours and pressure on nearby structures. Guide: [radiation therapy](/blogs/breast-cancer-radiation-therapy-in-india)."
+        },
+        {
+          "id": "ul_070",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Bone metastases** — pain relief; sessions may be single or multiple",
+            "**Brain metastases** — stereotactic radiosurgery, whole-brain radiation or other approaches by lesion number/size/location",
+            "**Spinal cord compression** — emergency pathway with imaging, steroids when indicated, radiation and/or surgery"
+          ]
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "GAF [EBRT](/costs/India/Radiation-Oncology/EBRT) planning **$1,000–$6,000+**; selected focused plans may use [SBRT](/costs/India/Radiation-Oncology/SBRT) **$8,000–$17,500**."
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 2,
+          "text": "Treatment of bone metastases"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Alongside anticancer therapy, bone-modifying medicines such as zoledronic acid or denosumab may reduce certain skeletal complications. Dental assessment, kidney function (especially for zoledronic acid), calcium/vitamin D review and oral hygiene advice are often needed."
+        },
+        {
+          "id": "h_074",
+          "type": "heading",
+          "level": 2,
+          "text": "What is palliative care in metastatic breast cancer?"
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "Palliative care focuses on symptoms, comfort and quality of life — and can run **alongside** active cancer treatment. It may help with pain, nausea, breathlessness, fatigue, appetite, sleep, anxiety and caregiver concerns. It should not be delayed until all anticancer options are exhausted."
+        },
+        {
+          "id": "h_076",
+          "type": "heading",
+          "level": 2,
+          "text": "What is the life expectancy of someone with Stage 4 breast cancer?"
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "There is no single figure for everyone. Outlook depends on subtype, organs involved, vital-organ function, treatment response, prior therapy, general health and medicine access."
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "The US NCI SEER database reports a **33.8% five-year relative survival** for distant breast cancer among women diagnosed 2016–2022. This is a population estimate — not an individual India prediction."
+        },
+        {
+          "id": "html_079",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Breast cancer subtype (distant disease)</th><th>Five-year relative survival (SEER)</th></tr></thead><tbody><tr><td>All distant breast cancer (women, 2016–2022)</td><td>33.8%</td></tr><tr><td>HR-positive, HER2-negative</td><td>38.1%</td></tr><tr><td>HR-positive, HER2-positive</td><td>48.7%</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Some patients live for many years with metastatic disease when treatments work well. Care often involves successive treatment lines to maintain control while protecting independence and comfort."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 2,
+          "text": "What is the cost of metastatic breast cancer treatment in India?"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "Costs vary widely because treatment often continues over time. There is no reliable single package price. Use named GAF planning ranges for oncology components:"
+        },
+        {
+          "id": "html_083",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Named pathway</th><th>GAF planning range in India</th><th>Typical notes</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Medical-Oncology/Hormone-Therapy\">Hormone therapy</a></td><td>$1,000–$4,500</td><td>Common first-line backbone for HR+/HER2− disease</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Targeted-Therapy\">Targeted therapy</a></td><td>$8,000–$30,000</td><td>HER2-directed, CDK4/6 partners, PI3K/AKT and other eligible drugs</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemotherapy</a></td><td>$1,500–$8,000+</td><td>TNBC, rapid progression or selected other settings</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Immunotherapy\">Immunotherapy</a></td><td>$15,000–$45,000</td><td>Selected PD-L1+ metastatic TNBC</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Precision-Oncology\">Precision oncology</a></td><td>$2,000–$7,000</td><td>BRCA / PIK3CA / ESR1 / PD-L1 and related testing pathways</td></tr><tr><td><a href=\"/costs/India/Radiation-Oncology/EBRT\">EBRT</a></td><td>$1,000–$6,000+</td><td>Bone pain, local control, selected CNS plans</td></tr><tr><td><a href=\"/costs/India/Radiation-Oncology/SBRT\">SBRT</a></td><td>$8,000–$17,500</td><td>Selected focused metastatic-site radiation</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Mastectomy\">Mastectomy</a></td><td>$4,500–$10,000</td><td>Selected local complications only — not routine Stage 4 care</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "Oral endocrine therapy budgets differ sharply from regular targeted/immunotherapy infusions. Brand vs biosimilar options, cycle count, admissions, complications and radiation/surgery add further variation. Request an itemised estimate based on the actual plan. Wider context: [breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "btn_085",
+          "type": "button",
+          "label": "Request a written Stage 4 treatment estimate",
+          "href": "/consult?treatment=Metastatic%20Breast%20Cancer%20Cost%20Estimate"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a personalised estimate](https://wa.me/919044346292?text=Please%20provide%20a%20personalised%20Stage%204%20metastatic%20breast%20cancer%20treatment%20estimate%20in%20India.)"
+        },
+        {
+          "id": "h_087",
+          "type": "heading",
+          "level": 2,
+          "text": "Why do international patients consider treatment in India?"
+        },
+        {
+          "id": "ul_088",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Multidisciplinary oncology input — medical, surgical and radiation oncology, radiology, pathology and palliative care",
+            "Access to chemotherapy, hormone therapy, targeted therapy, immunotherapy and radiation/SBRT when available",
+            "Pathology and scan review of overseas records before finalising plans",
+            "Need for clear continuity after returning home — medicine access and follow-up"
+          ]
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "City filters: [Delhi NCR](/doctors/India/Delhi-NCR/Medical-Oncology), [Mumbai](/doctors/India/Mumbai/Medical-Oncology), [Bengaluru](/doctors/India/Bengaluru/Medical-Oncology), [Chennai](/doctors/India/Chennai/Medical-Oncology), [Hyderabad](/doctors/India/Hyderabad/Medical-Oncology). Also [medical](/doctors/India/Medical-Oncology), [surgical](/doctors/India/Surgical-Oncology) and [radiation](/doctors/India/Radiation-Oncology) directories and [medical oncology hospitals](/hospitals/India/Medical-Oncology). Practical sequencing: [international patient guide](/blogs/breast-cancer-treatment-india-international-patients)."
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Do not travel or delay urgent care solely for an overseas consultation. Emergency symptoms need immediate local attention."
+        },
+        {
+          "id": "h_091",
+          "type": "heading",
+          "level": 2,
+          "text": "How can GAF Healthcare help international patients?"
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "GAF helps connect patients with oncology specialists and hospitals, organise records for review, coordinate consultations/second opinions, clarify proposed investigations and schedules, and support travel-related coordination. Final diagnosis and treatment decisions remain with the treating clinical team."
+        },
+        {
+          "id": "btn_093",
+          "type": "button",
+          "label": "Start an international Stage 4 records review",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "h_094",
+          "type": "heading",
+          "level": 2,
+          "text": "Documents to carry when travelling to India"
+        },
+        {
+          "id": "ol_095",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Original breast biopsy; ER/PR/HER2 (± ISH/FISH); any metastatic-site biopsy",
+            "Surgery, chemotherapy, hormone/targeted therapy and radiation summaries",
+            "CT/MRI/PET-CT/bone scan reports plus imaging discs or digital files",
+            "Genetic/molecular results and recent blood tests",
+            "Current medicine list, allergies, prior side effects and symptom summary"
+          ]
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "If available, bring pathology slides or paraffin blocks — the receiving hospital will advise whether review is needed."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 2,
+          "text": "Living with metastatic breast cancer: practical advice"
+        },
+        {
+          "id": "ul_098",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Report new or worsening symptoms promptly; keep a simple symptom diary",
+            "Do not stop or change cancer medicines without discussing with the oncologist",
+            "Use balanced nutrition — avoid unverified cancer diets and risky supplements",
+            "Stay active within safe limits, especially with bone metastases",
+            "Seek counselling, support groups and palliative-care help for patients and caregivers"
+          ]
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently asked questions about metastatic breast cancer"
+        },
+        {
+          "id": "h_100",
+          "type": "heading",
+          "level": 3,
+          "text": "Is Stage 4 breast cancer curable?"
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "Stage 4 breast cancer is generally not considered curable with standard treatment. However, it can often be treated and controlled. Some patients live for several years with appropriate treatment, although outcomes vary widely."
+        },
+        {
+          "id": "h_102",
+          "type": "heading",
+          "level": 3,
+          "text": "Where does breast cancer spread first?"
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "There is no fixed order. Breast cancer commonly spreads to the bones, liver, lungs and brain. The pattern depends on biology and individual factors."
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast cancer spread to the bones?"
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "Yes. Bone metastases are common and may cause persistent pain, fractures or high calcium levels. Treatment may include systemic medicines, radiation and bone-modifying agents."
+        },
+        {
+          "id": "h_106",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast cancer spread to the brain?"
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "Yes. Brain metastases may cause headaches, seizures, weakness, balance problems, vision changes or confusion. MRI is commonly used when brain involvement is suspected."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "Can Stage 4 breast cancer be treated with chemotherapy?"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Yes. Chemotherapy is important particularly for triple-negative disease, rapidly progressing cancer or situations where hormone-based treatment is not suitable."
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 3,
+          "text": "Is immunotherapy used for Stage 4 breast cancer?"
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "Immunotherapy may be used for selected patients, particularly certain PD-L1-positive metastatic triple-negative breast cancers. Eligibility depends on indication and test results."
+        },
+        {
+          "id": "h_112",
+          "type": "heading",
+          "level": 3,
+          "text": "Does every patient with metastatic breast cancer need surgery?"
+        },
+        {
+          "id": "p_113",
+          "type": "paragraph",
+          "text": "No. Systemic therapy is usually the main treatment. Surgery may be considered for local symptoms or selected clinical situations."
+        },
+        {
+          "id": "h_114",
+          "type": "heading",
+          "level": 3,
+          "text": "Can Stage 4 breast cancer return after treatment?"
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "Metastatic breast cancer may respond and later progress again. Doctors may then recommend another line of treatment based on current disease characteristics and health."
+        },
+        {
+          "id": "h_116",
+          "type": "heading",
+          "level": 3,
+          "text": "Can hormone receptor-positive breast cancer spread years later?"
+        },
+        {
+          "id": "p_117",
+          "type": "paragraph",
+          "text": "Yes. Hormone receptor-positive breast cancer can recur many years after the original diagnosis. Long-term follow-up and attention to new symptoms remain important."
+        },
+        {
+          "id": "h_118",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the life expectancy of someone with Stage 4 breast cancer?"
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "There is no universal life expectancy. It depends on subtype, affected organs, treatment response, general health and available options. Population statistics cannot predict an individual outcome."
+        },
+        {
+          "id": "h_120",
+          "type": "heading",
+          "level": 3,
+          "text": "Is Stage 4 breast cancer treatment available in India?"
+        },
+        {
+          "id": "p_121",
+          "type": "paragraph",
+          "text": "Yes. Oncology centres in India provide chemotherapy, hormone therapy, targeted therapy, immunotherapy and radiation. Confirm specific medicine and technology availability with the proposed hospital."
+        },
+        {
+          "id": "h_122",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does Stage 4 breast cancer treatment cost in India?"
+        },
+        {
+          "id": "p_123",
+          "type": "paragraph",
+          "text": "Costs depend on subtype, medicines, duration, investigations and hospital. A personalised itemised estimate is more useful than a general price because metastatic treatment often continues over time."
+        },
+        {
+          "id": "h_124",
+          "type": "heading",
+          "level": 3,
+          "text": "Should a patient get a second opinion after being diagnosed with metastatic breast cancer?"
+        },
+        {
+          "id": "p_125",
+          "type": "paragraph",
+          "text": "A second opinion can help review pathology, imaging, biomarkers and alternatives. It should not delay urgent treatment."
+        },
+        {
+          "id": "h_126",
+          "type": "heading",
+          "level": 3,
+          "text": "Can patients with metastatic breast cancer continue normal activities?"
+        },
+        {
+          "id": "p_127",
+          "type": "paragraph",
+          "text": "Many patients continue some usual activities while receiving treatment, depending on symptoms, side effects and overall health. The treating team can advise on work, travel and exercise."
+        },
+        {
+          "id": "h_128",
+          "type": "heading",
+          "level": 3,
+          "text": "When should a patient seek emergency care?"
+        },
+        {
+          "id": "p_129",
+          "type": "paragraph",
+          "text": "New seizures, sudden weakness, severe headache, loss of bladder or bowel control, severe back pain with neurological symptoms, sudden breathlessness or severe chest pain require urgent assessment."
+        },
+        {
+          "id": "h_130",
+          "type": "heading",
+          "level": 2,
+          "text": "Final thoughts"
+        },
+        {
+          "id": "p_131",
+          "type": "paragraph",
+          "text": "A Stage 4 diagnosis is serious, but treatment options have expanded. Hormone therapy, targeted medicines, chemotherapy, selected immunotherapy, radiation and supportive care can control disease and protect quality of life when matched to subtype, biomarkers, prior therapy and health. For care in India, start with a careful review of pathology, receptors, scans and prior records — then decide with a multidisciplinary team."
+        },
+        {
+          "id": "btn_132",
+          "type": "button",
+          "label": "Discuss the next metastatic breast cancer treatment step with GAF",
+          "href": "/consult?treatment=Metastatic%20Breast%20Cancer%20Treatment"
+        },
+        {
+          "id": "h_133",
+          "type": "heading",
+          "level": 2,
+          "text": "Recommended further reading"
+        },
+        {
+          "id": "ul_134",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india)",
+            "[Breast cancer recurrence treatment](/blogs/breast-cancer-recurrence-treatment-india)",
+            "[Breast cancer stages](/blogs/breast-cancer-stages)",
+            "[Breast cancer treatment options](/blogs/breast-cancer-treatment-options)",
+            "[Breast cancer symptoms](/blogs/breast-cancer-symptoms)",
+            "[Breast cancer diagnosis](/blogs/breast-cancer-diagnosis)",
+            "[Breast cancer diagnosis tests (ER/PR/HER2)](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)",
+            "[ER/PR/HER2 results explained](/blogs/er-pr-her2-breast-cancer-treatment-india)",
+            "[Hormone therapy for breast cancer](/blogs/hormone-therapy-for-breast-cancer-in-india)",
+            "[Targeted therapy for breast cancer](/blogs/targeted-therapy-for-breast-cancer-in-india)",
+            "[HER2-positive breast cancer](/blogs/her2-positive-breast-cancer-treatment-india)",
+            "[Triple-negative breast cancer](/blogs/triple-negative-breast-cancer-treatment-india)",
+            "[Inflammatory breast cancer](/blogs/inflammatory-breast-cancer-treatment-india)",
+            "[Chemotherapy for breast cancer](/blogs/chemotherapy-for-breast-cancer-in-india)",
+            "[Breast cancer chemotherapy in India](/blogs/breast-cancer-chemotherapy-in-india)",
+            "[Radiation therapy for breast cancer](/blogs/breast-cancer-radiation-therapy-in-india)",
+            "[Breast cancer surgery in India](/blogs/breast-cancer-surgery-in-india)",
+            "[Breast cancer in young women](/blogs/breast-cancer-in-young-women-treatment-india)",
+            "[Breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)",
+            "[International patients](/blogs/breast-cancer-treatment-india-international-patients)",
+            "[Chemotherapy in India](/treatments/chemotherapy-in-india)",
+            "[Immunotherapy in India](/treatments/immunotherapy-in-india)",
+            "[Targeted therapy in India](/treatments/targeted-therapy-in-india)",
+            "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
+            "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)"
+          ]
+        },
+        {
+          "id": "h_135",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical sources and references"
+        },
+        {
+          "id": "ol_136",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "[NCI — Metastatic Breast Cancer](https://www.cancer.gov/types/breast/stages/metastatic-breast-cancer)",
+            "[NCCN Guidelines for Patients — Metastatic Breast Cancer, 2026](https://vicc.org/sites/default/files/2026-09/stage_iv_breast-patient.pdf)",
+            "[NCI — Breast Cancer Survival Rates](https://www.cancer.gov/types/breast/survival)",
+            "[ICMR — Standard Treatment Workflows](https://www.icmr.gov.in/standard-treatment-workflows-stws)",
+            "[American Cancer Society — Breast Cancer](https://www.cancer.org/cancer/types/breast-cancer.html)",
+            "[NCI — Targeted Cancer Therapies](https://www.cancer.gov/about-cancer/treatment/types/targeted-therapies)"
+          ]
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "*This article is for patient education and does not replace an individual medical consultation. Treatment decisions should be made by a qualified oncology team after reviewing history, pathology, imaging and biomarkers. Drug approvals, availability and guidelines may change. GAF cost figures are partner planning ranges, not fixed hospital quotations.*"
+        }
+      ]
+    },
     {
       "id": "art_inflammatory_breast_cancer_treatment_india",
       "slug": "inflammatory-breast-cancer-treatment-india",
@@ -2975,6 +4001,10 @@
         {
           "label": "Medical oncology hospitals",
           "href": "/hospitals/India/Medical-Oncology"
+        },
+        {
+          "label": "Metastatic breast cancer (Stage 4)",
+          "href": "/blogs/metastatic-breast-cancer-stage-4"
         }
       ],
       "blocks": [
@@ -3750,7 +4780,8 @@
             "[Breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)",
             "[International patients](/blogs/breast-cancer-treatment-india-international-patients)",
             "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
-            "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)"
+            "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
+            "[Metastatic Breast Cancer (Stage 4) Treatment in India](/blogs/metastatic-breast-cancer-stage-4)"
           ]
         },
         {
@@ -3772,7 +4803,8 @@
             "[Susan G. Komen — Inflammatory Breast Cancer](https://www.komen.org/breast-cancer/treatment/by-diagnosis/inflammatory-breast-cancer/)",
             "[ICMR — Standard Treatment Workflows](https://www.icmr.gov.in/standard-treatment-workflows-stws)",
             "[ACS — Breast Cancer Stages](https://www.cancer.org/cancer/types/breast-cancer/understanding-a-breast-cancer-diagnosis/stages-of-breast-cancer.html)",
-            "[NCI — Breast Cancer Treatment](https://www.cancer.gov/types/breast/treatment)"
+            "[NCI — Breast Cancer Treatment](https://www.cancer.gov/types/breast/treatment)",
+            "[Metastatic Breast Cancer (Stage 4) Treatment in India](/blogs/metastatic-breast-cancer-stage-4)"
           ]
         },
         {
@@ -4942,6 +5974,10 @@
         {
           "label": "Inflammatory breast cancer treatment in India",
           "href": "/blogs/inflammatory-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Metastatic breast cancer (Stage 4)",
+          "href": "/blogs/metastatic-breast-cancer-stage-4"
         }
       ],
       "blocks": [
@@ -5658,7 +6694,8 @@
             "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
             "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)",
             "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)",
-            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)"
+            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)",
+            "[Metastatic Breast Cancer (Stage 4) Treatment in India](/blogs/metastatic-breast-cancer-stage-4)"
           ]
         }
       ]
@@ -5798,6 +6835,10 @@
         {
           "label": "Inflammatory breast cancer treatment in India",
           "href": "/blogs/inflammatory-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Metastatic breast cancer (Stage 4)",
+          "href": "/blogs/metastatic-breast-cancer-stage-4"
         }
       ],
       "blocks": [
@@ -6506,7 +7547,8 @@
             "[Triple-Negative Breast Cancer Treatment in India](/blogs/triple-negative-breast-cancer-treatment-india)",
             "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)",
             "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)",
-            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)"
+            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)",
+            "[Metastatic Breast Cancer (Stage 4) Treatment in India](/blogs/metastatic-breast-cancer-stage-4)"
           ]
         }
       ]
@@ -7521,6 +8563,10 @@
         {
           "label": "Breast cancer chemotherapy in India",
           "href": "/blogs/breast-cancer-chemotherapy-in-india"
+        },
+        {
+          "label": "Metastatic breast cancer (Stage 4)",
+          "href": "/blogs/metastatic-breast-cancer-stage-4"
         }
       ],
       "blocks": [
@@ -8343,7 +9389,8 @@
             "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
             "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
             "[Breast Cancer Radiation Therapy in India](/blogs/breast-cancer-radiation-therapy-in-india)",
-            "[Breast Cancer Chemotherapy in India](/blogs/breast-cancer-chemotherapy-in-india)"
+            "[Breast Cancer Chemotherapy in India](/blogs/breast-cancer-chemotherapy-in-india)",
+            "[Metastatic Breast Cancer (Stage 4) Treatment in India](/blogs/metastatic-breast-cancer-stage-4)"
           ]
         }
       ]
@@ -8477,6 +9524,10 @@
         {
           "label": "Triple-negative breast cancer treatment in India",
           "href": "/blogs/triple-negative-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Metastatic breast cancer (Stage 4)",
+          "href": "/blogs/metastatic-breast-cancer-stage-4"
         }
       ],
       "blocks": [
@@ -9381,7 +10432,8 @@
             "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
             "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
             "[Hormone Therapy for Breast Cancer in India](/blogs/hormone-therapy-for-breast-cancer-in-india)",
-            "[Triple-Negative Breast Cancer Treatment in India](/blogs/triple-negative-breast-cancer-treatment-india)"
+            "[Triple-Negative Breast Cancer Treatment in India](/blogs/triple-negative-breast-cancer-treatment-india)",
+            "[Metastatic Breast Cancer (Stage 4) Treatment in India](/blogs/metastatic-breast-cancer-stage-4)"
           ]
         }
       ]
@@ -90556,6 +91608,10 @@
         {
           "label": "International patients",
           "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "Metastatic breast cancer (Stage 4)",
+          "href": "/blogs/metastatic-breast-cancer-stage-4"
         }
       ],
       "blocks": [
@@ -101801,6 +102857,10 @@
         {
           "label": "Inflammatory breast cancer treatment in India",
           "href": "/blogs/inflammatory-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Metastatic breast cancer (Stage 4)",
+          "href": "/blogs/metastatic-breast-cancer-stage-4"
         }
       ],
       "blocks": [
@@ -102539,7 +103599,8 @@
             "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
             "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)",
             "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)",
-            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)"
+            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)",
+            "[Metastatic Breast Cancer (Stage 4) Treatment in India](/blogs/metastatic-breast-cancer-stage-4)"
           ]
         }
       ]
@@ -107337,6 +108398,10 @@
         {
           "label": "Inflammatory breast cancer treatment in India",
           "href": "/blogs/inflammatory-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Metastatic breast cancer (Stage 4)",
+          "href": "/blogs/metastatic-breast-cancer-stage-4"
         }
       ],
       "blocks": [
@@ -107973,7 +109038,8 @@
             "[Triple-Negative Breast Cancer Treatment in India](/blogs/triple-negative-breast-cancer-treatment-india)",
             "[Breast Cancer in Young Women — Treatment in India](/blogs/breast-cancer-in-young-women-treatment-india)",
             "[Breast Cancer During Pregnancy and Breastfeeding — Treatment in India](/blogs/breast-cancer-during-pregnancy-breastfeeding-treatment-india)",
-            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)"
+            "[Inflammatory Breast Cancer Treatment in India](/blogs/inflammatory-breast-cancer-treatment-india)",
+            "[Metastatic Breast Cancer (Stage 4) Treatment in India](/blogs/metastatic-breast-cancer-stage-4)"
           ]
         },
         {
