@@ -152,7 +152,9 @@
     "CDK4/6",
     "PARP",
     "DIBH",
-    "adjuvant"
+    "adjuvant",
+    "breast cancer surgery",
+    "reconstruction"
   ],
   "media": [
     {
@@ -2653,6 +2655,34 @@
       "name": "breast-cancer-chemo-side-effects-support.webp",
       "alt": "Woman resting after chemotherapy with supportive care items beside a circular diagram representing recovery from treatment side effects",
       "addedAt": "2026-11-12T14:40:00.000Z"
+    },
+    {
+      "id": "media_breast_cancer_surgery_lumpectomy_overview_webp",
+      "url": "/uploads/articles/breast-cancer-surgery-lumpectomy-overview.webp",
+      "name": "breast-cancer-surgery-lumpectomy-overview.webp",
+      "alt": "Woman consulting a surgeon beside a circular diagram of breast-conserving removal of a tumour with a surrounding tissue margin",
+      "addedAt": "2026-11-12T17:50:00.000Z"
+    },
+    {
+      "id": "media_breast_cancer_surgery_sentinel_node_webp",
+      "url": "/uploads/articles/breast-cancer-surgery-sentinel-node.webp",
+      "name": "breast-cancer-surgery-sentinel-node.webp",
+      "alt": "Woman in surgical consultation beside a circular diagram of sentinel lymph node mapping from the breast to axillary nodes",
+      "addedAt": "2026-11-12T17:50:00.000Z"
+    },
+    {
+      "id": "media_breast_cancer_surgery_reconstruction_webp",
+      "url": "/uploads/articles/breast-cancer-surgery-reconstruction.webp",
+      "name": "breast-cancer-surgery-reconstruction.webp",
+      "alt": "Woman discussing breast reconstruction options beside a circular diagram of implant and autologous tissue reconstruction concepts",
+      "addedAt": "2026-11-12T17:50:00.000Z"
+    },
+    {
+      "id": "media_breast_cancer_surgery_recovery_webp",
+      "url": "/uploads/articles/breast-cancer-surgery-recovery.webp",
+      "name": "breast-cancer-surgery-recovery.webp",
+      "alt": "Woman performing gentle guided arm and shoulder exercises during recovery after breast cancer surgery",
+      "addedAt": "2026-11-12T17:50:00.000Z"
     }
   ],
   "articles": [
@@ -93620,643 +93650,874 @@
     {
       "id": "art_breast_cancer_surgery_in_india",
       "slug": "breast-cancer-surgery-in-india",
-      "title": "Breast Cancer Surgery in India: Procedures, Recovery and Cost",
-      "excerpt": "Lumpectomy, mastectomy, lymph-node surgery, nipple-sparing and oncoplastic options, reconstruction timing, recovery and why India surgical quotes must be itemized.",
-      "date": "27 September 2026",
-      "publishedAt": "2026-09-27T20:00:00.000Z",
-      "updatedAt": "2026-09-27T20:00:00.000Z",
-      "author": "GAF Healthcare clinical desk",
+      "title": "Breast Cancer Surgery in India: Types of Surgery, Recovery, Risks and What Patients Should Know",
+      "excerpt": "Breast cancer surgery is an important part of treatment for many patients. This guide explains the different surgical options available in India, including lumpectomy, mastectomy, lymph node procedures and breast reconstruction. It also covers recovery, possible complications, treatment costs and what international patients should know before travelling.",
+      "date": "12 Nov 2026",
+      "publishedAt": "2026-11-12T17:50:00.000Z",
+      "updatedAt": "2026-11-12T17:50:00.000Z",
+      "author": "GAF Healthcare Editorial",
       "category": "Surgical Oncology",
       "tags": [
         "breast cancer",
-        "surgery",
+        "breast cancer surgery",
         "lumpectomy",
         "mastectomy",
+        "reconstruction",
         "India",
-        "travel"
+        "cost"
       ],
-      "image": "/uploads/articles/surgery-breast-lumpectomy-visual.webp",
-      "imageAlt": "Breast cancer surgery in India including lumpectomy, mastectomy and breast reconstruction",
+      "image": "/uploads/articles/breast-cancer-surgery-lumpectomy-overview.webp",
+      "imageAlt": "Woman consulting a surgeon beside a circular diagram of breast-conserving removal of a tumour with a surrounding tissue margin",
       "status": "published",
-      "featured": true,
-      "seoTitle": "Breast Cancer Surgery in India | Procedures, Recovery & Cost",
-      "seoDescription": "Learn about breast cancer surgery in India, including lumpectomy, mastectomy, lymph-node surgery, reconstruction, recovery and treatment costs.",
+      "featured": false,
+      "seoTitle": "Breast Cancer Surgery in India: Types, Cost, Recovery and Best Options",
+      "seoDescription": "Learn about breast cancer surgery in India, including lumpectomy, mastectomy, lymph node surgery and reconstruction. Understand recovery, risks and treatment planning.",
       "canonical": "https://gaf.healthcare/blogs/breast-cancer-surgery-in-india",
-      "ogImage": "/uploads/articles/surgery-breast-lumpectomy-visual.webp",
+      "ogImage": "/uploads/articles/breast-cancer-surgery-lumpectomy-overview.webp",
       "allowIndex": true,
       "keywords": [
         "Breast cancer surgery in India",
-        "breast cancer surgery",
-        "breast cancer surgery cost in India",
-        "breast cancer operation in India",
-        "lumpectomy in India",
-        "mastectomy in India",
-        "breast-conserving surgery",
-        "breast cancer surgery recovery",
-        "mastectomy recovery",
-        "lumpectomy recovery",
-        "nipple-sparing mastectomy",
-        "oncoplastic breast surgery",
-        "breast reconstruction after mastectomy",
-        "breast cancer surgery hospitals in India",
-        "breast cancer surgeons in India"
+        "Breast cancer operation in India",
+        "Breast cancer surgery cost in India",
+        "Lumpectomy in India",
+        "Mastectomy in India",
+        "Breast-conserving surgery",
+        "Modified radical mastectomy",
+        "Sentinel lymph node biopsy",
+        "Breast reconstruction surgery",
+        "Recovery after breast cancer surgery",
+        "Breast cancer surgeon in India"
       ],
       "relatedLinks": [
         {
-          "label": "Breast Cancer Treatment in India",
+          "label": "Breast cancer treatment in India",
           "href": "/treatments/breast-cancer-treatment-in-india"
         },
         {
-          "label": "Recurrence treatment",
-          "href": "/blogs/breast-cancer-recurrence-treatment-india"
+          "label": "Breast reconstruction in India",
+          "href": "/treatments/breast-reconstruction-in-india"
         },
         {
-          "label": "DCIS treatment",
-          "href": "/blogs/ductal-carcinoma-in-situ-dcis-treatment-india"
+          "label": "Breast cancer chemotherapy in India",
+          "href": "/blogs/breast-cancer-chemotherapy-in-india"
         },
         {
-          "label": "Invasive Lobular Carcinoma",
-          "href": "/blogs/invasive-lobular-carcinoma-treatment-india"
+          "label": "Chemotherapy for breast cancer (existing guide)",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
         },
         {
-          "label": "Breast Cancer and Lymphedema",
+          "label": "Breast cancer radiation therapy in India",
+          "href": "/blogs/breast-cancer-radiation-therapy-in-india"
+        },
+        {
+          "label": "Hormone therapy for breast cancer",
+          "href": "/blogs/hormone-therapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Targeted therapy for breast cancer",
+          "href": "/blogs/targeted-therapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Breast cancer treatment options",
+          "href": "/blogs/breast-cancer-treatment-options"
+        },
+        {
+          "label": "Breast cancer stages",
+          "href": "/blogs/breast-cancer-stages"
+        },
+        {
+          "label": "Breast cancer diagnosis tests",
+          "href": "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2"
+        },
+        {
+          "label": "Breast cancer lymphedema",
           "href": "/blogs/breast-cancer-lymphedema"
         },
         {
-          "label": "Breast Cancer Neoadjuvant Therapy",
-          "href": "/blogs/breast-cancer-neoadjuvant-therapy"
-        },
-        {
-          "label": "Breast Cancer Radiation Side Effects",
-          "href": "/blogs/breast-cancer-radiation-side-effects"
-        },
-        {
-          "label": "Lumpectomy vs Mastectomy",
-          "href": "/blogs/lumpectomy-vs-mastectomy"
-        },
-        {
-          "label": "Lumpectomy cost",
-          "href": "/costs/India/Surgical-Oncology/Lumpectomy"
-        },
-        {
-          "label": "Mastectomy cost",
-          "href": "/costs/India/Surgical-Oncology/Mastectomy"
-        },
-        {
-          "label": "Breast Reconstruction",
-          "href": "/blogs/breast-reconstruction-after-mastectomy-india"
-        },
-        {
-          "label": "Radiation Therapy",
-          "href": "/blogs/radiation-therapy-for-breast-cancer"
-        },
-        {
-          "label": "Chemotherapy",
-          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+          "label": "Breast cancer treatment cost in India",
+          "href": "/blogs/breast-cancer-treatment-cost-in-india"
         },
         {
           "label": "International patients",
           "href": "/blogs/breast-cancer-treatment-india-international-patients"
         },
         {
-          "label": "Breast Cancer Symptoms",
-          "href": "/blogs/breast-cancer-symptoms"
+          "label": "Lumpectomy cost sheet",
+          "href": "/costs/India/Surgical-Oncology/Lumpectomy"
         },
         {
-          "label": "Breast Cancer Treatment Options",
-          "href": "/blogs/breast-cancer-treatment-options"
+          "label": "Mastectomy cost sheet",
+          "href": "/costs/India/Surgical-Oncology/Mastectomy"
         },
         {
-          "label": "Breast Cancer Diagnosis",
-          "href": "/blogs/breast-cancer-diagnosis"
+          "label": "Surgical oncologists in India",
+          "href": "/doctors/India/Surgical-Oncology"
         },
         {
-          "label": "Breast cancer radiation therapy in India",
-          "href": "/blogs/breast-cancer-radiation-therapy-in-india"
+          "label": "Surgical oncology hospitals in India",
+          "href": "/hospitals/India/Surgical-Oncology"
         }
       ],
       "blocks": [
         {
           "id": "html_001",
           "type": "html",
-          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><p class=\"article-quick-answer__body\">Breast cancer surgery in India may include lumpectomy, mastectomy, lymph-node surgery, nipple-sparing mastectomy, oncoplastic breast surgery and breast reconstruction.</p><p class=\"article-quick-answer__body\">Lumpectomy removes the tumour while preserving most of the breast and is commonly followed by radiation therapy.</p><p class=\"article-quick-answer__body\">Mastectomy removes the entire breast and may be recommended when breast-conserving surgery is not suitable or when the patient chooses mastectomy after discussing the available options.</p><p class=\"article-quick-answer__body\">Lymph-node surgery may be performed to determine whether cancer has spread to nearby lymph nodes.</p><p class=\"article-quick-answer__body\">Breast reconstruction may be performed immediately during mastectomy or at a later time.</p><p class=\"article-quick-answer__body\">The cost depends on the procedure, hospital, city, surgeon, reconstruction, pathology, hospital stay and additional cancer treatment. There is no single fixed price for breast cancer surgery in India.</p></aside>"
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"md-body\"><table><thead><tr><th>Question</th><th>Quick Answer</th></tr></thead><tbody><tr><td><strong>Main options</strong></td><td><a href=\"/costs/India/Surgical-Oncology/Lumpectomy\">Lumpectomy / BCS</a> or <a href=\"/costs/India/Surgical-Oncology/Mastectomy\">mastectomy</a>, with node assessment as needed</td></tr><tr><td><strong>Lumpectomy planning</strong></td><td><a href=\"/costs/India/Surgical-Oncology/Lumpectomy\">$3,500–$8,000</a> · typically 1–3 nights · radiation usually follows</td></tr><tr><td><strong>Mastectomy planning</strong></td><td><a href=\"/costs/India/Surgical-Oncology/Mastectomy\">$4,500–$10,000</a> · typically 3–6 nights</td></tr><tr><td><strong>Sentinel node biopsy</strong></td><td><a href=\"/costs/India/Surgical-Oncology/Sentinel-Lymph-Node-Biopsy\">$2,000–$5,500</a> · typically 1–2 nights</td></tr><tr><td><strong>Oncoplastic / NSM</strong></td><td><a href=\"/costs/India/Surgical-Oncology/Oncoplastic-Breast-Surgery\">Oncoplastic $4,500–$11,000</a> · <a href=\"/costs/India/Surgical-Oncology/Nipple-Sparing-Mastectomy\">nipple-sparing $5,500–$12,000</a></td></tr><tr><td><strong>Reconstruction</strong></td><td><a href=\"/costs/India/Surgical-Oncology/Breast-Reconstruction\">$6,000–$18,000</a> · free-flap pathway <a href=\"/costs/India/Surgical-Oncology/Microvascular-Free-Flap-Reconstruction\">$10,000–$24,000</a> when that product is named</td></tr><tr><td><strong>Before surgery medicines</strong></td><td><a href=\"/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy\">Neoadjuvant chemotherapy</a> $2,500–$10,000 when indicated</td></tr><tr><td><strong>After surgery radiation</strong></td><td>Common after conservation — see <a href=\"/blogs/breast-cancer-radiation-therapy-in-india\">radiation guide</a> · <a href=\"/costs/India/Radiation-Oncology/EBRT\">EBRT $1,000–$6,000+</a></td></tr></tbody></table></div><p class=\"article-quick-answer__body\"><strong>Breast cancer surgery in India</strong> ranges from breast-conserving operations to mastectomy, lymph-node procedures and optional reconstruction. GAF figures are partner planning ranges from named cost sheets — not hospital quotations.</p><p class=\"article-quick-answer__body\"><strong>Important:</strong> The best operation is the one that offers appropriate cancer control for the patient's tumour and goals — not automatically the largest operation. GAF Healthcare does not perform surgery.</p></aside>"
         },
         {
           "id": "p_002",
           "type": "paragraph",
-          "text": "Breast cancer surgery is an important part of treatment for many patients. Depending on the type and [stage](/blogs/breast-cancer-stages-0-1-2-3-4), surgery may involve breast-conserving surgery (lumpectomy), mastectomy, lymph-node surgery, nipple-sparing mastectomy, oncoplastic surgery or [breast reconstruction](/blogs/breast-reconstruction-after-mastectomy-india). This guide supports the [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india) pathway."
+          "text": "Hearing that **breast cancer surgery** may be necessary can be frightening. Many patients wonder whether the entire breast must be removed, how painful the operation will be and how quickly they can return to daily life."
         },
         {
-          "id": "btn_003",
-          "type": "button",
-          "label": "Ask GAF which operation applies",
-          "href": "/consult?treatment=Breast%20Cancer%20Surgery"
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "Breast cancer surgery has evolved considerably. Depending on tumour size, location and biology, some patients can have breast-conserving surgery. Others need mastectomy, with or without reconstruction."
         },
         {
           "id": "p_004",
           "type": "paragraph",
-          "text": "[WhatsApp +91 90443 46292 with your imaging and biopsy](https://wa.me/919044346292?text=Please%20review%20my%20records%20for%20breast%20cancer%20surgery%20in%20India.)"
+          "text": "In India, care is usually coordinated across surgical oncology, medical oncology, radiation oncology, radiology, pathology and, when needed, plastic surgery. Related reading includes [breast cancer treatment options](/blogs/breast-cancer-treatment-options), [chemotherapy](/blogs/breast-cancer-chemotherapy-in-india), [radiation](/blogs/breast-cancer-radiation-therapy-in-india) and [treatment cost](/blogs/breast-cancer-treatment-cost-in-india)."
         },
         {
-          "id": "img_005",
-          "type": "image",
-          "src": "/uploads/articles/surgery-breast-lumpectomy-visual.webp",
-          "alt": "Breast cancer surgery in India including lumpectomy, mastectomy and breast reconstruction",
-          "caption": "Surgery is not always first. Some patients receive systemic treatment before the operation. Compare [lumpectomy versus mastectomy](/blogs/lumpectomy-vs-mastectomy)."
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "GAF planning for [lumpectomy](/costs/India/Surgical-Oncology/Lumpectomy) is **$3,500–$8,000** (about 1–3 nights) and for [mastectomy](/costs/India/Surgical-Oncology/Mastectomy) **$4,500–$10,000** (about 3–6 nights). Filter [surgical oncologists](/doctors/India/Surgical-Oncology) and [hospitals](/hospitals/India/Surgical-Oncology) by city before travel."
         },
         {
-          "id": "h_006",
-          "type": "heading",
-          "level": 2,
-          "text": "What Is Breast Cancer Surgery?"
+          "id": "btn_006",
+          "type": "button",
+          "label": "Ask GAF to review imaging and biopsy for surgery planning",
+          "href": "/consult?treatment=Breast%20Cancer%20Surgery"
         },
         {
           "id": "p_007",
           "type": "paragraph",
-          "text": "Breast cancer surgery involves removing the cancer from the breast and, when appropriate, evaluating nearby lymph nodes. The type of surgery depends on tumour size and location, number of tumours, breast size, [stage](/blogs/breast-cancer-treatment-by-stage), lymph-node involvement, [ER, PR and HER2 status](/blogs/er-pr-her2-breast-cancer-treatment-india), response to treatment before surgery, previous radiation, genetic or familial risk, patient preference and reconstruction plans."
+          "text": "[WhatsApp +91 90443 46292 with biopsy, imaging and receptor reports](https://wa.me/919044346292?text=Please%20review%20my%20breast%20cancer%20reports%20and%20advise%20on%20lumpectomy%20versus%20mastectomy%20options%20and%20cost%20in%20India.)"
         },
         {
-          "id": "p_008",
-          "type": "paragraph",
-          "text": "The two main breast operations are lumpectomy and mastectomy. Lymph-node surgery may be performed with either procedure when indicated. Surgical oncology teams in [Delhi NCR](/doctors/India/Delhi-NCR), [Mumbai](/doctors/India/Mumbai), [Bengaluru](/doctors/India/Bengaluru), [Chennai](/doctors/India/Chennai) and [Hyderabad](/doctors/India/Hyderabad) plan this with medical and radiation oncology."
+          "id": "img_008",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-surgery-lumpectomy-overview.webp",
+          "alt": "Woman consulting a surgeon beside a circular diagram of breast-conserving removal of a tumour with a surrounding tissue margin",
+          "caption": "Lumpectomy removes the tumour with a margin while preserving most of the breast when clinically suitable."
         },
         {
           "id": "h_009",
           "type": "heading",
           "level": 2,
-          "text": "Types of Breast Cancer Surgery in India"
+          "text": "When is surgery required for breast cancer?"
         },
         {
-          "id": "h_010",
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "Surgery removes cancer from the breast and, when necessary, assesses or treats nearby lymph nodes. It is common for early-stage and operable locally advanced disease, but it is not always the first step."
+        },
+        {
+          "id": "ul_011",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Surgery followed by chemotherapy, radiation or other treatments",
+            "Neoadjuvant medicines before surgery, then an operation",
+            "Breast surgery with simultaneous node assessment",
+            "Mastectomy with or without reconstruction",
+            "Selected palliative surgery for local symptoms in advanced disease"
+          ]
+        },
+        {
+          "id": "h_012",
           "type": "heading",
           "level": 3,
-          "text": "1. Breast-Conserving Surgery (Lumpectomy)"
-        },
-        {
-          "id": "p_011",
-          "type": "paragraph",
-          "text": "Breast-conserving surgery, commonly called a lumpectomy, removes the cancer along with a margin of surrounding tissue while leaving most of the breast intact. It may also be called partial mastectomy, wide local excision or segmental mastectomy."
-        },
-        {
-          "id": "p_012",
-          "type": "paragraph",
-          "text": "For appropriately selected patients, lumpectomy followed by [radiation](/blogs/radiation-therapy-for-breast-cancer) can provide survival outcomes comparable to mastectomy. The surgeon locates the tumour, removes it with surrounding tissue, sends the specimen for pathology, may perform sentinel lymph-node surgery, and closes and reshapes the surgical area."
+          "text": "Surgery before or after chemotherapy?"
         },
         {
           "id": "p_013",
           "type": "paragraph",
-          "text": "- [Breast-Conserving Surgery Doctors in India](/doctors/India/Surgical-Oncology/Lumpectomy)\n- [Breast-Conserving Surgery Cost in India](/costs/India/Surgical-Oncology/Lumpectomy)"
+          "text": "[Neoadjuvant chemotherapy](/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy) may be used when the tumour is large relative to the breast, nodes are involved, response assessment is useful, conservation may become possible, or the subtype benefits from preoperative systemic therapy. After treatment, the surgeon reassesses before operating."
         },
         {
           "id": "h_014",
           "type": "heading",
-          "level": 3,
-          "text": "2. Mastectomy"
+          "level": 2,
+          "text": "What are the main types of breast cancer surgery?"
         },
         {
-          "id": "img_015",
-          "type": "image",
-          "src": "/uploads/articles/surgery-breast-mastectomy-visual.webp",
-          "alt": "Surgeon discussing mastectomy and reconstruction options with a patient",
-          "caption": "Mastectomy may be simple, skin-sparing, nipple-sparing or modified radical. These procedures are not interchangeable."
+          "id": "h_015",
+          "type": "heading",
+          "level": 3,
+          "text": "Lumpectomy or breast-conserving surgery"
         },
         {
           "id": "p_016",
           "type": "paragraph",
-          "text": "A mastectomy involves removing the entire breast containing the cancer. It may be recommended when the tumour is large relative to breast size, there are multiple areas of cancer, breast conservation would not provide an appropriate surgical result, previous radiation limits further irradiation, a previous breast-conserving operation did not achieve satisfactory margins, or the patient chooses mastectomy after discussing the alternatives."
+          "text": "A [lumpectomy](/costs/India/Surgical-Oncology/Lumpectomy) removes the cancer with a surrounding margin. It may also be called breast-conserving surgery, wide local excision, partial mastectomy or segmental mastectomy."
         },
         {
           "id": "p_017",
           "type": "paragraph",
-          "text": "- [Mastectomy Doctors in India](/doctors/India/Surgical-Oncology/Mastectomy)\n- [Mastectomy Cost in India](/costs/India/Surgical-Oncology/Mastectomy)"
+          "text": "Suitability depends on tumour size relative to the breast, unifocal vs multifocal disease, location, ability to achieve clear margins, access to postoperative radiation and overall clinical circumstances. For appropriately selected patients, conservation plus radiation is an established approach with survival outcomes comparable to mastectomy."
         },
         {
           "id": "h_018",
           "type": "heading",
           "level": 3,
-          "text": "3. Nipple-Sparing Mastectomy"
+          "text": "Mastectomy"
         },
         {
           "id": "p_019",
           "type": "paragraph",
-          "text": "Nipple-sparing mastectomy removes the breast tissue while preserving the nipple-areola complex in appropriately selected patients. It is generally considered as part of a mastectomy and reconstruction strategy. Suitability depends on tumour location, distance between tumour and nipple, nipple involvement, imaging, cancer characteristics and breast anatomy."
+          "text": "[Mastectomy](/costs/India/Surgical-Oncology/Mastectomy) removes breast tissue containing cancer. Reasons may include a large tumour relative to breast size, multicentric disease, inflammatory breast cancer, inability to clear margins, prior chest radiation in some settings, genetic or risk factors, or inability to receive radiation when conservation requires it."
         },
         {
-          "id": "p_020",
-          "type": "paragraph",
-          "text": "- [Nipple-Sparing Mastectomy Doctors in India](/doctors/India/Surgical-Oncology/Nipple-Sparing-Mastectomy)\n- [Nipple-Sparing Mastectomy Cost](/costs/India/Surgical-Oncology/Nipple-Sparing-Mastectomy)"
-        },
-        {
-          "id": "h_021",
+          "id": "h_020",
           "type": "heading",
           "level": 3,
-          "text": "4. Oncoplastic Breast Surgery"
+          "text": "Modified radical mastectomy"
         },
         {
-          "id": "p_022",
+          "id": "p_021",
           "type": "paragraph",
-          "text": "Oncoplastic breast surgery combines cancer removal with techniques used to maintain or restore breast shape. It can be particularly useful when removing the tumour would otherwise create a significant change in breast appearance. Oncoplastic surgery is still cancer surgery first: the priority is appropriate removal of the cancer."
+          "text": "This removes breast tissue and includes axillary lymph node surgery when clinically indicated. Modern care aims to avoid unnecessary extensive node removal because of lymphoedema and arm morbidity risk."
+        },
+        {
+          "id": "h_022",
+          "type": "heading",
+          "level": 3,
+          "text": "Skin-sparing and nipple-sparing mastectomy"
         },
         {
           "id": "p_023",
           "type": "paragraph",
-          "text": "- [Oncoplastic Breast Surgery Doctors in India](/doctors/India/Surgical-Oncology/Oncoplastic-Breast-Surgery)\n- [Oncoplastic Breast Surgery Cost](/costs/India/Surgical-Oncology/Oncoplastic-Breast-Surgery)"
+          "text": "Skin-sparing approaches preserve much of the breast skin when immediate reconstruction is planned. [Nipple-sparing mastectomy](/costs/India/Surgical-Oncology/Nipple-Sparing-Mastectomy) may be considered when tumour location and other factors allow — it is not suitable for every patient. GAF planning for NSM is **$5,500–$12,000** (about 3–6 nights)."
         },
         {
-          "id": "h_024",
+          "id": "btn_024",
+          "type": "button",
+          "label": "Request a second opinion on lumpectomy vs mastectomy",
+          "href": "/consult?treatment=Breast%20Cancer%20Surgery%20Second%20Opinion"
+        },
+        {
+          "id": "h_025",
           "type": "heading",
-          "level": 3,
-          "text": "5. Breast Reconstruction"
-        },
-        {
-          "id": "p_025",
-          "type": "paragraph",
-          "text": "Breast reconstruction restores breast shape after mastectomy or, in selected cases, after significant breast tissue removal. Reconstruction can be immediate (during the same operation) or delayed. Depending on the patient, reconstruction can involve implants, tissue from another part of the body, or a combination. The possibility of [radiation](/blogs/radiation-therapy-for-breast-cancer) is an important consideration."
+          "level": 2,
+          "text": "Lumpectomy vs mastectomy: which is better?"
         },
         {
           "id": "p_026",
           "type": "paragraph",
-          "text": "- [Breast Reconstruction After Mastectomy](/blogs/breast-reconstruction-after-mastectomy-india)\n- [Breast Reconstruction Doctors in India](/doctors/India/Surgical-Oncology/Breast-Reconstruction)\n- [Breast Reconstruction Cost](/costs/India/Surgical-Oncology/Breast-Reconstruction)"
+          "text": "Removing the entire breast is not automatically safer. For eligible patients, conservation plus radiation can match mastectomy survival outcomes. Cancer can still recur after either operation."
         },
         {
-          "id": "p_027",
-          "type": "paragraph",
-          "text": "[Ask which surgical pathway fits](/consult?treatment=Breast%20Cancer%20Surgery) · [WhatsApp +91 90443 46292](https://wa.me/919044346292?text=Should%20I%20have%20lumpectomy%2C%20mastectomy%20or%20reconstruction%20in%20India%3F)"
+          "id": "html_027",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Factor</th><th>Lumpectomy</th><th>Mastectomy</th></tr></thead><tbody><tr><td>Breast tissue</td><td>Part of the breast is preserved</td><td>Most or all breast tissue is removed</td></tr><tr><td>Main purpose</td><td>Remove the tumour with surrounding tissue</td><td>Remove the breast tissue containing cancer</td></tr><tr><td>Radiation</td><td>Commonly required afterwards</td><td>Required in selected cases</td></tr><tr><td>Reconstruction</td><td>Oncoplastic techniques may be used</td><td>Reconstruction may be immediate or delayed</td></tr><tr><td>GAF planning range</td><td><a href=\"/costs/India/Surgical-Oncology/Lumpectomy\">$3,500–$8,000</a></td><td><a href=\"/costs/India/Surgical-Oncology/Mastectomy\">$4,500–$10,000</a></td></tr><tr><td>Typical stay</td><td>About 1–3 nights</td><td>About 3–6 nights</td></tr></tbody></table></div>"
         },
         {
           "id": "h_028",
           "type": "heading",
-          "level": 3,
-          "text": "6. Sentinel Lymph Node Biopsy"
+          "level": 2,
+          "text": "What is sentinel lymph node biopsy?"
         },
         {
-          "id": "img_029",
-          "type": "image",
-          "src": "/uploads/articles/surgery-breast-lymph-visual.webp",
-          "alt": "Surgeon explaining sentinel lymph-node assessment at the underarm",
-          "caption": "Sentinel nodes are the first nodes most likely to receive drainage from the tumour area. The findings affect staging, radiation and systemic treatment."
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "[Sentinel lymph node biopsy](/costs/India/Surgical-Oncology/Sentinel-Lymph-Node-Biopsy) identifies the first nodes most likely to receive drainage from the breast. Mapping may use a tracer, dye or another approved method. If sentinel nodes are negative, further axillary clearance is often unnecessary."
         },
         {
           "id": "p_030",
           "type": "paragraph",
-          "text": "A sentinel lymph node biopsy identifies the first lymph nodes that are most likely to receive drainage from the tumour area. These nodes are removed and examined by a pathologist. The results can provide information about cancer stage, need for additional lymph-node surgery, radiation planning and further systemic treatment."
+          "text": "Avoiding unnecessary node clearance reduces risk of [lymphoedema](/blogs/breast-cancer-lymphedema), arm swelling, shoulder stiffness and numbness. GAF planning for SLNB is **$2,000–$5,500** (about 1–2 nights)."
         },
         {
-          "id": "h_031",
-          "type": "heading",
-          "level": 3,
-          "text": "7. Axillary Lymph Node Dissection"
-        },
-        {
-          "id": "p_032",
-          "type": "paragraph",
-          "text": "An axillary lymph node dissection (ALND) involves removing a larger number of lymph nodes from the armpit. It is not necessary for every breast cancer patient. Whether it is recommended depends on sentinel lymph-node findings, extent of lymph-node disease, type of breast surgery, previous treatment and overall cancer characteristics."
-        },
-        {
-          "id": "h_033",
-          "type": "heading",
-          "level": 2,
-          "text": "Does Every Breast Cancer Patient Need Surgery?"
-        },
-        {
-          "id": "p_034",
-          "type": "paragraph",
-          "text": "No. Surgery is an important part of treatment for many patients with non-metastatic breast cancer, but the sequence of treatment varies. Some patients with locally advanced breast cancer may receive neoadjuvant [chemotherapy](/blogs/chemotherapy-for-breast-cancer-in-india), [HER2-targeted therapy](/blogs/her2-positive-breast-cancer-treatment-india) or [immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) before surgery."
-        },
-        {
-          "id": "h_035",
-          "type": "heading",
-          "level": 2,
-          "text": "Breast Cancer Surgery Before or After Chemotherapy?"
-        },
-        {
-          "id": "p_036",
-          "type": "paragraph",
-          "text": "Both approaches are possible. A patient may undergo diagnosis → surgery → pathology → additional treatment. Another patient may undergo diagnosis → systemic treatment → surgery → additional treatment (neoadjuvant therapy). This can be particularly relevant for some HER2-positive cancers, triple-negative breast cancers, larger tumours and locally advanced breast cancers."
-        },
-        {
-          "id": "h_037",
-          "type": "heading",
-          "level": 2,
-          "text": "What Tests Are Done Before Breast Cancer Surgery?"
-        },
-        {
-          "id": "p_038",
-          "type": "paragraph",
-          "text": "Before surgery, evaluation may include [breast imaging and biopsy](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2) (mammography, ultrasound, MRI when indicated, core needle biopsy, histopathology), biomarker testing for ER, PR and HER2, additional staging investigations when clinically indicated, blood tests, anaesthesia assessment and cardiac evaluation when indicated. Not every patient needs every test."
-        },
-        {
-          "id": "h_039",
-          "type": "heading",
-          "level": 2,
-          "text": "What Happens During Breast Cancer Surgery?"
-        },
-        {
-          "id": "p_040",
-          "type": "paragraph",
-          "text": "A typical pathway includes preoperative planning, anaesthesia, tumour or breast removal, lymph-node assessment when indicated, reconstruction or reshaping when planned, pathology of the removed tissue, and recovery with postoperative instructions."
-        },
-        {
-          "id": "h_041",
-          "type": "heading",
-          "level": 2,
-          "text": "What Is the Recovery Time After Breast Cancer Surgery?"
-        },
-        {
-          "id": "img_042",
+          "id": "img_031",
           "type": "image",
-          "src": "/uploads/articles/surgery-breast-recovery-visual.webp",
-          "alt": "Nurse checking a postoperative dressing for an international surgery patient",
-          "caption": "Recovery after lumpectomy differs from mastectomy with reconstruction. Ask about drains, driving, work and travel clearance before booking flights."
+          "src": "/uploads/articles/breast-cancer-surgery-sentinel-node.webp",
+          "alt": "Woman in surgical consultation beside a circular diagram of sentinel lymph node mapping from the breast to axillary nodes",
+          "caption": "Sentinel node biopsy helps determine whether cancer has reached the first draining lymph nodes."
         },
         {
-          "id": "p_043",
+          "id": "h_032",
+          "type": "heading",
+          "level": 2,
+          "text": "What is axillary lymph node dissection?"
+        },
+        {
+          "id": "p_033",
           "type": "paragraph",
-          "text": "Recovery varies substantially depending on the procedure. A straightforward lumpectomy may have a different recovery from mastectomy with reconstruction. Common postoperative symptoms may include pain, swelling, bruising, fatigue, tightness, numbness around the surgical site and reduced shoulder movement."
+          "text": "Axillary clearance removes a group of armpit nodes when surgical treatment of involved nodes is required and less extensive approaches are not appropriate. Not every patient with a positive node needs complete clearance — radiation or systemic therapy may be alternatives in selected settings."
+        },
+        {
+          "id": "h_034",
+          "type": "heading",
+          "level": 2,
+          "text": "What is oncoplastic breast surgery?"
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "[Oncoplastic surgery](/costs/India/Surgical-Oncology/Oncoplastic-Breast-Surgery) combines cancer removal with reshaping to reduce deformity when more tissue must be removed. Techniques include tissue rearrangement, volume displacement or replacement, reduction and reshaping. GAF planning is **$4,500–$11,000** (about 2–5 nights)."
+        },
+        {
+          "id": "h_036",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast reconstruction after mastectomy"
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "Reconstruction restores breast shape and may be immediate or delayed. It is optional — some patients prefer flat closure or an external prosthesis. See [breast reconstruction in India](/treatments/breast-reconstruction-in-india)."
+        },
+        {
+          "id": "ul_038",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Implant-based:** direct-to-implant or expander-to-implant pathways",
+            "**Autologous:** DIEP, TRAM, latissimus or other flaps using the patient's tissue",
+            "**Timing:** immediate vs delayed — post-mastectomy radiation plans strongly influence the sequence"
+          ]
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "GAF planning for [breast reconstruction](/costs/India/Surgical-Oncology/Breast-Reconstruction) is **$6,000–$18,000** (about 4–8 nights). Named [microvascular free-flap](/costs/India/Surgical-Oncology/Microvascular-Free-Flap-Reconstruction) products are **$10,000–$24,000** (about 8–14 nights) and must not be used as a DIEP quotation unless that sheet is the one named."
+        },
+        {
+          "id": "img_040",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-surgery-reconstruction.webp",
+          "alt": "Woman discussing breast reconstruction options beside a circular diagram of implant and autologous tissue reconstruction concepts",
+          "caption": "Reconstruction may use implants or the patient's own tissue and can be immediate or delayed."
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "[WhatsApp GAF if you need help coordinating reconstruction timing with radiation plans](https://wa.me/919044346292?text=I%20need%20guidance%20on%20mastectomy%20with%20immediate%20versus%20delayed%20breast%20reconstruction%20and%20cost%20in%20India.)"
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 2,
+          "text": "How should a patient prepare for breast cancer surgery?"
+        },
+        {
+          "id": "ul_043",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Clinical exam, mammography/ultrasound, MRI when indicated",
+            "Core biopsy with ER/PR/HER2 review",
+            "Blood tests and anaesthesia assessment",
+            "Staging imaging when clinically needed"
+          ]
         },
         {
           "id": "p_044",
           "type": "paragraph",
-          "text": "**After lumpectomy** patients may have breast tenderness, swelling, bruising, scar formation, temporary changes in breast shape and numbness. If lymph-node surgery is performed at the same time, there may also be discomfort or restricted arm movement."
+          "text": "Share medical conditions, prior surgery, allergies, medicines (including blood thinners), prior radiation or chemo, smoking history and anaesthesia issues. International patients should bring original reports, imaging files and pathology slides/blocks when available so India-based teams avoid unnecessary duplication."
         },
         {
-          "id": "p_045",
-          "type": "paragraph",
-          "text": "**After mastectomy** recovery can involve chest discomfort, incision pain, tightness, swelling, numbness, drain care and arm and shoulder exercises. If reconstruction is performed, recovery can be longer."
-        },
-        {
-          "id": "h_046",
+          "id": "h_045",
           "type": "heading",
           "level": 2,
-          "text": "How Surgery Fits With Other Treatments"
+          "text": "What happens on the day of breast cancer surgery?"
         },
         {
-          "id": "p_047",
-          "type": "paragraph",
-          "text": "After lumpectomy, [radiation](/blogs/radiation-therapy-for-breast-cancer) is commonly part of the plan. After mastectomy, radiation may still be required depending on tumour size, lymph-node involvement, surgical margins and other pathological findings. [Chemotherapy](/blogs/chemotherapy-for-breast-cancer-in-india) can be given before or after surgery. [Hormone therapy](/blogs/hormone-therapy-breast-cancer-india) is used for hormone-receptor-positive cancers. [Targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) may be used when a molecular target such as HER2 is present. [Immunotherapy](/costs/India/Medical-Oncology/Immunotherapy) may be considered in selected triple-negative settings."
+          "id": "ol_046",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Preoperative assessment and consent",
+            "General anaesthesia for most operations",
+            "Planned breast and/or node procedure",
+            "Pathology examination of removed tissue",
+            "Recovery-room monitoring",
+            "Hospital stay based on procedure, drains and recovery"
+          ]
         },
         {
-          "id": "h_048",
+          "id": "h_047",
           "type": "heading",
           "level": 2,
-          "text": "How Much Does Breast Cancer Surgery Cost in India?"
+          "text": "How long does breast cancer surgery take?"
         },
         {
-          "id": "p_049",
+          "id": "p_048",
           "type": "paragraph",
-          "text": "There is no single cost for breast cancer surgery in India. A published Apollo Hospitals estimate currently places breast cancer surgery at approximately ₹1 lakh to ₹2.5 lakh, while noting that hospital, location, room category and complications can affect the final amount. This is a hospital-specific published estimate, not a universal India-wide price. See the [cost guide](/blogs/breast-cancer-treatment-cost-in-india), [lumpectomy cost](/costs/India/Surgical-Oncology/Lumpectomy) and [mastectomy cost](/costs/India/Surgical-Oncology/Mastectomy)."
+          "text": "Operating time rises with tumour complexity, prior surgery, node procedures, oncoplastic techniques and reconstruction. Ask for estimated duration and length of stay as planning figures, not guarantees."
         },
         {
-          "id": "p_050",
+          "id": "h_049",
+          "type": "heading",
+          "level": 2,
+          "text": "Recovery after breast cancer surgery"
+        },
+        {
+          "id": "ul_050",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**First days:** soreness, tiredness, bruising, mild swelling, tightness, reduced shoulder movement",
+            "**One to two weeks:** gradual return to light activities; wound and drain review",
+            "**Three to six weeks:** progressive activity for many patients; reconstruction may take longer"
+          ]
+        },
+        {
+          "id": "p_051",
           "type": "paragraph",
-          "text": "The actual cost can depend on lumpectomy or mastectomy, surgeon, hospital, city, anaesthesia, operating-room charges, pathology, lymph-node surgery, hospital stay, reconstruction, complications and additional procedures."
+          "text": "Return-to-work timing depends on job demands. Follow the surgeon's advice rather than a fixed calendar for heavy lifting."
         },
         {
-          "id": "btn_051",
+          "id": "img_052",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-surgery-recovery.webp",
+          "alt": "Woman performing gentle guided arm and shoulder exercises during recovery after breast cancer surgery",
+          "caption": "Guided mobility exercises help reduce shoulder stiffness after breast and axillary surgery."
+        },
+        {
+          "id": "btn_053",
           "type": "button",
-          "label": "Request a surgery quotation",
-          "href": "/consult?treatment=Breast%20Cancer%20Surgery"
+          "label": "Ask about recovery and physiotherapy planning",
+          "href": "/consult?treatment=Breast%20Cancer%20Surgery%20Recovery"
         },
         {
-          "id": "p_052",
-          "type": "paragraph",
-          "text": "[WhatsApp +91 90443 46292 for a case-specific quote](https://wa.me/919044346292?text=Please%20send%20a%20case-specific%20quotation%20for%20breast%20cancer%20surgery%20in%20India.)"
-        },
-        {
-          "id": "h_053",
+          "id": "h_054",
           "type": "heading",
           "level": 2,
-          "text": "What Is Included in Breast Cancer Surgery Cost?"
-        },
-        {
-          "id": "p_054",
-          "type": "paragraph",
-          "text": "| Cost component | May be included |\n| --- | --- |\n| Surgeon fee | Yes, depending on quotation |\n| Anaesthesia | Depends on quotation |\n| Operating-room charges | Depends on quotation |\n| Hospital room | Depends on package |\n| Nursing | Depends on package |\n| Pathology | May be separate |\n| Lymph-node surgery | May be separate |\n| Medicines | May be separate |\n| Reconstruction | Usually separate or procedure-specific |\n| Follow-up | Depends on hospital |"
+          "text": "Drains after breast cancer surgery"
         },
         {
           "id": "p_055",
           "type": "paragraph",
-          "text": "A lumpectomy may be followed by surgery → [radiation](/costs/India/Radiation-Oncology/EBRT) → systemic treatment. A mastectomy may involve reconstruction and radiation may still be needed. Compare the complete pathway, not just the surgical bill."
+          "text": "Drains may be placed after mastectomy or reconstruction to remove fluid. Patients may be taught to empty, measure, record output and watch for infection or blockage. Removal timing varies."
         },
         {
           "id": "h_056",
           "type": "heading",
           "level": 2,
-          "text": "How International Patients Can Prepare"
+          "text": "Possible risks and complications"
         },
         {
-          "id": "p_057",
-          "type": "paragraph",
-          "text": "Useful documents include the [biopsy and histopathology](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2), ER/PR and HER2 results, mammography, ultrasound, MRI if performed, CT/PET-CT where applicable, previous treatment records, medication list, previous surgical reports and discharge summaries. See the [international-patient guide](/blogs/breast-cancer-treatment-india-international-patients). Hospitals in [Delhi NCR](/hospitals/India/Delhi-NCR), [Mumbai](/hospitals/India/Mumbai), [Bengaluru](/hospitals/India/Bengaluru), [Chennai](/hospitals/India/Chennai) and [Hyderabad](/hospitals/India/Hyderabad) can confirm what to send."
+          "id": "ul_057",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Infection, bleeding or haematoma",
+            "Seroma (fluid collection)",
+            "Pain, numbness or altered sensation",
+            "Shoulder stiffness",
+            "Lymphoedema — see [breast cancer lymphedema](/blogs/breast-cancer-lymphedema)",
+            "Wound-healing problems (higher with smoking, diabetes, poor nutrition)",
+            "Reconstruction-related complications including further surgery"
+          ]
         },
         {
-          "id": "p_058",
-          "type": "paragraph",
-          "text": "[WhatsApp +91 90443 46292 your records before travel](https://wa.me/919044346292?text=I%20would%20like%20to%20send%20my%20records%20for%20a%20breast%20cancer%20surgery%20opinion%20before%20travelling%20to%20India.)"
-        },
-        {
-          "id": "h_059",
+          "id": "h_058",
           "type": "heading",
           "level": 2,
-          "text": "Choosing a Hospital and When to Seek a Second Opinion"
+          "text": "Warning signs after breast cancer surgery"
         },
         {
-          "id": "p_060",
-          "type": "paragraph",
-          "text": "Ask whether the hospital has a dedicated oncology department, whether breast cancer surgery is performed regularly, whether surgical, medical and radiation oncology are available, whether pathology and reconstruction are onsite, and what is included in the quotation. See [Surgical Oncology Doctors in India](/doctors/India/Surgical-Oncology) and [Surgical Oncology Hospitals](/hospitals/India/Surgical-Oncology)."
+          "id": "ul_059",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Fever or chills; increasing redness, warmth, pus or unusual discharge",
+            "Worsening pain, sudden swelling or bleeding",
+            "Drain that stops working or becomes displaced",
+            "New or worsening arm swelling",
+            "Sudden breathlessness or chest pain — seek urgent care"
+          ]
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 2,
+          "text": "Exercises after breast cancer surgery"
         },
         {
           "id": "p_061",
           "type": "paragraph",
-          "text": "A second opinion can be particularly useful when there are multiple treatment options, major surgery has been recommended, mastectomy versus lumpectomy is unclear, reconstruction is being considered, neoadjuvant therapy has been recommended, or the pathology is complex."
+          "text": "Gentle hand, elbow and shoulder movements, posture work and breathing exercises may be prescribed. Do not start strenuous exercise or heavy lifting without clearance."
         },
         {
           "id": "h_062",
           "type": "heading",
           "level": 2,
-          "text": "Questions to Ask Before Breast Cancer Surgery"
+          "text": "Will chemotherapy or radiation be needed after surgery?"
         },
         {
-          "id": "ul_063",
-          "type": "list",
-          "style": "ul",
-          "items": [
-            "What type of breast cancer do I have, and what is the stage?",
-            "What are my ER, PR and HER2 results?",
-            "Am I a candidate for lumpectomy?",
-            "Why are you recommending lumpectomy or mastectomy?",
-            "Will lymph-node surgery be required?",
-            "Is nipple-sparing or oncoplastic surgery appropriate?",
-            "Can reconstruction be performed immediately?",
-            "Will radiation affect the reconstruction plan?",
-            "How long will I stay in hospital, and when can I travel home?",
-            "What is included and excluded in the quotation?"
-          ]
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "Final pathology guides next steps. [Radiation](/blogs/breast-cancer-radiation-therapy-in-india) is commonly recommended after conservation ([EBRT](/costs/India/Radiation-Oncology/EBRT) **$1,000–$6,000+**). Selected post-mastectomy patients also need radiation based on size, nodes, margins and other risk factors."
         },
         {
-          "id": "h_064",
-          "type": "heading",
-          "level": 2,
-          "text": "Frequently Asked Questions"
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "[Chemotherapy](/blogs/breast-cancer-chemotherapy-in-india), [hormone therapy](/blogs/hormone-therapy-for-breast-cancer-in-india) and [targeted therapy](/blogs/targeted-therapy-for-breast-cancer-in-india) may follow depending on subtype and risk. Named adjuvant chemo planning is **$2,500–$10,000** on the [adjuvant chemotherapy](/costs/India/Medical-Oncology/Adjuvant-Chemotherapy) sheet."
         },
         {
           "id": "h_065",
           "type": "heading",
-          "level": 3,
-          "text": "What is the most common type of breast cancer surgery?"
+          "level": 2,
+          "text": "Breast cancer surgery cost in India"
         },
         {
           "id": "p_066",
           "type": "paragraph",
-          "text": "The main surgical approaches are breast-conserving surgery (lumpectomy) and mastectomy. The appropriate procedure depends on the individual cancer and treatment plan."
+          "text": "Costs vary by operation, hospital, stay length, pathology and add-on procedures. Use named GAF planning ranges — do not treat lumpectomy, mastectomy and reconstruction as identical packages:"
         },
         {
-          "id": "h_067",
+          "id": "html_067",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Named pathway</th><th>GAF planning range in India</th><th>Typical stay / schedule</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Surgical-Oncology/Lumpectomy\">Lumpectomy / breast-conserving surgery</a></td><td>$3,500–$8,000</td><td>About 1–3 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Mastectomy\">Mastectomy</a></td><td>$4,500–$10,000</td><td>About 3–6 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Nipple-Sparing-Mastectomy\">Nipple-sparing mastectomy</a></td><td>$5,500–$12,000</td><td>About 3–6 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Oncoplastic-Breast-Surgery\">Oncoplastic breast surgery</a></td><td>$4,500–$11,000</td><td>About 2–5 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Sentinel-Lymph-Node-Biopsy\">Sentinel lymph node biopsy</a></td><td>$2,000–$5,500</td><td>About 1–2 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Breast-Reconstruction\">Breast reconstruction</a></td><td>$6,000–$18,000</td><td>About 4–8 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Microvascular-Free-Flap-Reconstruction\">Microvascular free-flap reconstruction</a></td><td>$10,000–$24,000</td><td>About 8–14 nights</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy\">Neoadjuvant chemotherapy</a></td><td>$2,500–$10,000</td><td>Cycles before surgery</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Adjuvant-Chemotherapy\">Adjuvant chemotherapy</a></td><td>$2,500–$10,000</td><td>Cycles after surgery</td></tr><tr><td><a href=\"/costs/India/Radiation-Oncology/EBRT\">EBRT</a></td><td>$1,000–$6,000+</td><td>Often 15–35 sessions</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "Request a written estimate covering consultation, investigations, surgeon and anaesthesia fees, theatre, room, medicines, pathology, node procedures, reconstruction and postoperative care. Wider context: [breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "btn_069",
+          "type": "button",
+          "label": "Request a written breast-surgery estimate",
+          "href": "/consult?treatment=Breast%20Cancer%20Surgery%20Cost%20Estimate"
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast cancer surgery in India for international patients"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "Patients from Tanzania, Kenya, Uganda, Ethiopia, Zambia, Iraq, Oman and other countries may travel for second opinion, diagnostic review, surgery or a full plan. Bring biopsy/histopathology, ER/PR/HER2, imaging, prior operation or systemic-therapy records, medicines and medical history."
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Stay length depends on the procedure — do not book return flights too close to planned discharge. City filters for [Delhi NCR](/doctors/India/Delhi-NCR/Surgical-Oncology), [Mumbai](/doctors/India/Mumbai/Surgical-Oncology), [Bengaluru](/doctors/India/Bengaluru/Surgical-Oncology), [Chennai](/doctors/India/Chennai/Surgical-Oncology) and [Hyderabad](/doctors/India/Hyderabad/Surgical-Oncology) surgical oncologists help shortlist campuses. Practical sequencing: [international patient guide](/blogs/breast-cancer-treatment-india-international-patients)."
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Before leaving India, obtain discharge summary, final pathology, operation notes, medicines, wound/drain instructions, rehab guidance, follow-up schedule and any next-step chemo/radiation/targeted plan."
+        },
+        {
+          "id": "btn_074",
+          "type": "button",
+          "label": "Start an international surgery records review",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 2,
+          "text": "How to choose a breast cancer surgeon and hospital in India"
+        },
+        {
+          "id": "ul_076",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Surgeon experience with the proposed breast cancer operation",
+            "Multidisciplinary medical and radiation oncology access",
+            "Reconstruction expertise when that option is being considered",
+            "Reliable pathology and receptor testing",
+            "Radiation access if conservation is planned",
+            "Physiotherapy, wound care and lymphoedema support",
+            "Transparent written cost estimates"
+          ]
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 2,
+          "text": "Questions to ask your breast cancer surgeon"
+        },
+        {
+          "id": "ol_078",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is the exact stage and subtype of my breast cancer?",
+            "Am I suitable for breast-conserving surgery?",
+            "Why are you recommending lumpectomy or mastectomy?",
+            "Will I need sentinel lymph node biopsy?",
+            "Is axillary lymph node dissection necessary?",
+            "Will chemotherapy be required before surgery?",
+            "Is immediate breast reconstruction possible?",
+            "Will I need radiation after surgery?",
+            "What are the likely risks and complications?",
+            "How long will I remain in hospital?",
+            "How long should I plan for recovery?",
+            "When will the final pathology report be available?",
+            "What additional treatment may be required?",
+            "What is included in the hospital estimate?"
+          ]
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently asked questions about breast cancer surgery in India"
+        },
+        {
+          "id": "h_080",
+          "type": "heading",
+          "level": 3,
+          "text": "Is breast cancer surgery available in India?"
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "Yes. It is performed at specialist cancer centres and multidisciplinary hospitals. The appropriate hospital and surgeon depend on diagnosis, treatment needs and preferences."
+        },
+        {
+          "id": "h_082",
           "type": "heading",
           "level": 3,
           "text": "Is lumpectomy better than mastectomy?"
         },
         {
-          "id": "p_068",
+          "id": "p_083",
           "type": "paragraph",
-          "text": "Neither operation is universally better. For appropriately selected early-stage patients, lumpectomy followed by radiation and mastectomy have comparable survival outcomes. The choice depends on medical suitability and patient preferences."
+          "text": "Neither is automatically better. For eligible patients, lumpectomy followed by radiation can provide survival outcomes comparable to mastectomy. The choice depends on the tumour and clinical circumstances."
         },
         {
-          "id": "h_069",
+          "id": "h_084",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast cancer be cured by surgery alone?"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "Some patients may not need chemotherapy or other systemic treatment, but many require additional treatment after surgery based on pathology, stage and tumour biology."
+        },
+        {
+          "id": "h_086",
           "type": "heading",
           "level": 3,
           "text": "How long does breast cancer surgery take?"
         },
         {
-          "id": "p_070",
+          "id": "p_087",
           "type": "paragraph",
-          "text": "The duration varies according to the procedure. A straightforward lumpectomy can differ considerably from a mastectomy combined with lymph-node surgery and reconstruction."
+          "text": "Duration varies. A straightforward lumpectomy may take less time than mastectomy with node surgery or reconstruction. The surgical team can estimate after reviewing the case."
         },
         {
-          "id": "h_071",
+          "id": "h_088",
           "type": "heading",
           "level": 3,
-          "text": "How long do I stay in the hospital after breast cancer surgery?"
+          "text": "How many days does a patient stay in hospital after breast cancer surgery?"
         },
         {
-          "id": "p_072",
+          "id": "p_089",
           "type": "paragraph",
-          "text": "Hospital stay varies according to the operation, reconstruction, recovery and individual hospital protocol. Patients should obtain an expected stay from their treating hospital."
+          "text": "Stay depends on the operation, recovery and whether reconstruction is performed. Lumpectomy stays are often shorter than mastectomy with reconstruction."
         },
         {
-          "id": "h_073",
+          "id": "h_090",
           "type": "heading",
           "level": 3,
-          "text": "Can breast cancer surgery be done after chemotherapy?"
+          "text": "Is breast reconstruction possible after mastectomy?"
         },
         {
-          "id": "p_074",
+          "id": "p_091",
           "type": "paragraph",
-          "text": "Yes. Chemotherapy or other systemic treatment may be given before surgery in selected patients. This is known as neoadjuvant treatment."
+          "text": "Yes. Reconstruction may use implants or the patient's own tissue, immediately or later, depending on the treatment plan and preference."
         },
         {
-          "id": "h_075",
+          "id": "h_092",
           "type": "heading",
           "level": 3,
-          "text": "Can I have reconstruction during mastectomy?"
+          "text": "Will the patient need chemotherapy after breast cancer surgery?"
         },
         {
-          "id": "p_076",
+          "id": "p_093",
           "type": "paragraph",
-          "text": "Yes. Immediate reconstruction can be performed during the same surgical episode in appropriately selected patients."
+          "text": "Not everyone needs chemotherapy. The decision depends on subtype, stage, nodes and recurrence risk."
         },
         {
-          "id": "h_077",
+          "id": "h_094",
           "type": "heading",
           "level": 3,
-          "text": "Is nipple-sparing mastectomy suitable for everyone?"
+          "text": "Is radiation necessary after lumpectomy?"
         },
         {
-          "id": "p_078",
+          "id": "p_095",
           "type": "paragraph",
-          "text": "No. It depends on tumour location, nipple involvement, imaging and other clinical factors."
+          "text": "Radiation is commonly recommended after breast-conserving surgery. Selected patients may be considered for omission only after specialist assessment."
         },
         {
-          "id": "h_079",
+          "id": "h_096",
           "type": "heading",
           "level": 3,
-          "text": "Is radiation required after mastectomy?"
+          "text": "What is sentinel lymph node biopsy?"
         },
         {
-          "id": "p_080",
+          "id": "p_097",
           "type": "paragraph",
-          "text": "Not for every patient. Radiation depends on tumour characteristics, lymph-node findings and other pathological factors."
+          "text": "It identifies and removes the first lymph nodes likely to receive drainage from the breast so pathology can check for spread."
         },
         {
-          "id": "h_081",
+          "id": "h_098",
           "type": "heading",
           "level": 3,
-          "text": "Is chemotherapy required after breast cancer surgery?"
+          "text": "Can breast cancer return after mastectomy?"
         },
         {
-          "id": "p_082",
+          "id": "p_099",
           "type": "paragraph",
-          "text": "Not necessarily. The decision depends on the cancer's stage, biology and other clinical factors."
+          "text": "Yes. Mastectomy removes most breast tissue but does not eliminate every possibility of local or distant recurrence."
         },
         {
-          "id": "h_083",
+          "id": "h_100",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients travel to India for breast cancer surgery?"
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "Yes, subject to hospital acceptance, fitness to travel and visa requirements. Send medical reports for review before booking travel."
+        },
+        {
+          "id": "h_102",
           "type": "heading",
           "level": 3,
           "text": "How much does breast cancer surgery cost in India?"
         },
         {
-          "id": "p_084",
+          "id": "p_103",
           "type": "paragraph",
-          "text": "There is no single nationwide price. Published hospital estimates vary, and the final amount depends on the surgical procedure and additional services. Apollo Hospitals currently publishes an illustrative ₹1 lakh–₹2.5 lakh range for breast cancer surgery."
+          "text": "GAF planning ranges include lumpectomy $3,500–$8,000 and mastectomy $4,500–$10,000. Reconstruction and free-flap pathways have separate named ranges. Request a written hospital estimate."
         },
         {
-          "id": "h_085",
+          "id": "h_104",
           "type": "heading",
           "level": 3,
-          "text": "Can international patients have breast cancer surgery in India?"
+          "text": "What is oncoplastic breast surgery?"
         },
         {
-          "id": "p_086",
+          "id": "p_105",
           "type": "paragraph",
-          "text": "Yes. International patients can seek breast cancer treatment in India. Medical records can generally be reviewed before travel so that the hospital can assess the diagnosis and proposed treatment."
+          "text": "It combines cancer removal with reshaping techniques to reduce deformity when more tissue must be removed."
         },
         {
-          "id": "h_087",
+          "id": "h_106",
+          "type": "heading",
+          "level": 3,
+          "text": "Why are drains used after surgery?"
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "Drains remove fluid that may collect after mastectomy or reconstruction. They are removed when the team considers drainage low enough."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "When can patients return to work?"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Desk-based work may resume sooner than physically demanding jobs. Clearance depends on the operation and wound healing."
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 3,
+          "text": "Does mastectomy always mean the cancer is more advanced?"
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "No. Some relatively early cases choose or require mastectomy for clinical or personal reasons."
+        },
+        {
+          "id": "h_112",
           "type": "heading",
           "level": 2,
-          "text": "Breast Cancer Surgery in India: Key Takeaways"
+          "text": "Conclusion"
         },
         {
-          "id": "p_088",
+          "id": "p_113",
           "type": "paragraph",
-          "text": "Breast cancer surgery in India can involve considerably more than removing a tumour. The surgical plan may include lumpectomy, mastectomy, sentinel lymph-node biopsy, axillary lymph-node surgery, nipple-sparing mastectomy, oncoplastic breast surgery and breast reconstruction."
+          "text": "Breast cancer surgery includes conservation, mastectomy, node procedures and optional reconstruction. The right choice depends on tumour characteristics, stage, health and multidisciplinary goals — not simply choosing the largest operation."
         },
         {
-          "id": "p_089",
+          "id": "p_114",
           "type": "paragraph",
-          "text": "The most useful question is not simply \"Which breast cancer surgery is best?\" It is: \"Which surgical approach is appropriate for my cancer, and what will my complete treatment pathway look like after surgery?\" See [lumpectomy versus mastectomy](/blogs/lumpectomy-vs-mastectomy)."
+          "text": "Patients considering surgery in India should seek a specialist opinion, understand why a procedure is recommended and obtain a clear estimate of the complete treatment journey."
         },
         {
-          "id": "btn_090",
+          "id": "btn_115",
           "type": "button",
-          "label": "Start the Breast Cancer Treatment in India pathway",
-          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+          "label": "Discuss the next surgical step with GAF Healthcare",
+          "href": "/consult?treatment=Breast%20Cancer%20Surgery"
         },
         {
-          "id": "p_091",
-          "type": "paragraph",
-          "text": "[WhatsApp +91 90443 46292 to plan the next step](https://wa.me/919044346292?text=Please%20help%20me%20plan%20breast%20cancer%20surgery%20in%20India.)"
-        },
-        {
-          "id": "h_092",
+          "id": "h_116",
           "type": "heading",
           "level": 2,
-          "text": "GAF Healthcare Resources"
+          "text": "Sources and references"
         },
         {
-          "id": "p_093",
+          "id": "ol_117",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "[National Cancer Institute — Breast Cancer Surgery](https://www.cancer.gov/types/breast/treatment/surgery)",
+            "[American Cancer Society — Surgery for Breast Cancer](https://www.cancer.org/cancer/types/breast-cancer/treatment/surgery-for-breast-cancer.html)",
+            "[NCI — Lumpectomy](https://www.cancer.gov/types/breast/treatment/surgery/lumpectomy)",
+            "[NCI — Mastectomy](https://www.cancer.gov/types/breast/treatment/surgery/mastectomy)",
+            "[NCI — Lumpectomy vs Mastectomy](https://www.cancer.gov/types/breast/treatment/surgery/choosing-lumpectomy-mastectomy)",
+            "[ICMR Standard Treatment Workflows](https://www.icmr.gov.in/standard-treatment-workflows-stws)",
+            "[NHS — Mastectomy](https://www.nhs.uk/tests-and-treatments/mastectomy/)",
+            "[NCCN Guidelines for Patients — Invasive Breast Cancer](https://vicc.org/sites/default/files/2026-09/breast-invasive-patient.pdf)"
+          ]
+        },
+        {
+          "id": "p_118",
           "type": "paragraph",
-          "text": "- [Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)\n- [Lumpectomy vs Mastectomy](/blogs/lumpectomy-vs-mastectomy)\n- [Lumpectomy doctors](/doctors/India/Surgical-Oncology/Lumpectomy) · [cost](/costs/India/Surgical-Oncology/Lumpectomy)\n- [Mastectomy doctors](/doctors/India/Surgical-Oncology/Mastectomy) · [cost](/costs/India/Surgical-Oncology/Mastectomy)\n- [Nipple-sparing mastectomy](/costs/India/Surgical-Oncology/Nipple-Sparing-Mastectomy)\n- [Oncoplastic breast surgery](/costs/India/Surgical-Oncology/Oncoplastic-Breast-Surgery)\n- [Breast reconstruction](/blogs/breast-reconstruction-after-mastectomy-india)\n- [Radiation therapy](/blogs/radiation-therapy-for-breast-cancer)\n- [Chemotherapy](/blogs/chemotherapy-for-breast-cancer-in-india)\n- [Hormone therapy](/blogs/hormone-therapy-breast-cancer-india)\n- [Treatment for international patients](/blogs/breast-cancer-treatment-india-international-patients)"
+          "text": "*Medical disclaimer: This article is for educational purposes and does not replace an individual consultation with a qualified breast cancer specialist. Surgical decisions must be based on clinical examination, imaging, biopsy, pathology and multidisciplinary assessment. GAF cost figures are partner planning ranges, not fixed hospital quotations.*"
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Reading on GAF Healthcare"
+        },
+        {
+          "id": "ul_120",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india)",
+            "[Breast reconstruction in India](/treatments/breast-reconstruction-in-india)",
+            "[Breast cancer chemotherapy in India](/blogs/breast-cancer-chemotherapy-in-india)",
+            "[Chemotherapy for breast cancer (existing guide)](/blogs/chemotherapy-for-breast-cancer-in-india)",
+            "[Breast cancer radiation therapy in India](/blogs/breast-cancer-radiation-therapy-in-india)",
+            "[Hormone therapy for breast cancer](/blogs/hormone-therapy-for-breast-cancer-in-india)",
+            "[Targeted therapy for breast cancer](/blogs/targeted-therapy-for-breast-cancer-in-india)",
+            "[Breast cancer treatment options](/blogs/breast-cancer-treatment-options)",
+            "[Breast cancer stages](/blogs/breast-cancer-stages)",
+            "[Breast cancer diagnosis tests](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)",
+            "[Breast cancer lymphedema](/blogs/breast-cancer-lymphedema)",
+            "[Breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)",
+            "[International patients](/blogs/breast-cancer-treatment-india-international-patients)",
+            "[Lumpectomy cost sheet](/costs/India/Surgical-Oncology/Lumpectomy)",
+            "[Mastectomy cost sheet](/costs/India/Surgical-Oncology/Mastectomy)",
+            "[Surgical oncologists in India](/doctors/India/Surgical-Oncology)",
+            "[Surgical oncology hospitals in India](/hospitals/India/Surgical-Oncology)"
+          ]
         }
       ]
     },
