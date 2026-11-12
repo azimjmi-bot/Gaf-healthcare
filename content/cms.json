@@ -148,7 +148,9 @@
     "mammography",
     "breast biopsy",
     "BI-RADS",
-    "ER PR HER2"
+    "ER PR HER2",
+    "CDK4/6",
+    "PARP"
   ],
   "media": [
     {
@@ -2537,9 +2539,1065 @@
       "name": "breast-cancer-diagnosis-staging.webp",
       "alt": "Canva-style unlabeled illustration of a patient beside a breast diagram with tumour, node and metastasis icons",
       "addedAt": "2026-11-11T14:09:19.330Z"
+    },
+    {
+      "id": "media_targeted_therapy_breast_her2_binding_webp",
+      "url": "/uploads/articles/targeted-therapy-breast-her2-binding.webp",
+      "name": "targeted-therapy-breast-her2-binding.webp",
+      "alt": "Woman beside a circular molecular diagram of HER2 receptors on a cell membrane with a monoclonal antibody binding",
+      "addedAt": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": "media_targeted_therapy_breast_biomarker_testing_webp",
+      "url": "/uploads/articles/targeted-therapy-breast-biomarker-testing.webp",
+      "name": "targeted-therapy-breast-biomarker-testing.webp",
+      "alt": "Pathology review of a breast cancer slide beside a circular diagram of receptor biomarker testing on tumour cells",
+      "addedAt": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": "media_targeted_therapy_breast_infusion_suite_webp",
+      "url": "/uploads/articles/targeted-therapy-breast-infusion-suite.webp",
+      "name": "targeted-therapy-breast-infusion-suite.webp",
+      "alt": "Woman receiving an oncology infusion beside a circular diagram of an antibody-drug conjugate approaching target receptors",
+      "addedAt": "2026-11-12T14:00:00.000Z"
+    },
+    {
+      "id": "media_targeted_therapy_breast_cdk46_monitoring_webp",
+      "url": "/uploads/articles/targeted-therapy-breast-cdk46-monitoring.webp",
+      "name": "targeted-therapy-breast-cdk46-monitoring.webp",
+      "alt": "Woman with oral breast cancer tablets beside a circular diagram of CDK4/6 cell-cycle inhibition and monitoring motif",
+      "addedAt": "2026-11-12T14:00:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_targeted_therapy_for_breast_cancer_in_india",
+      "slug": "targeted-therapy-for-breast-cancer-in-india",
+      "title": "Targeted Therapy for Breast Cancer in India: HER2 Treatment, CDK4/6 Inhibitors, Medicines and Cost",
+      "excerpt": "Targeted therapy uses medicines designed to act on specific proteins, receptors or molecular pathways involved in breast cancer growth. This guide explains HER2-targeted treatment, CDK4/6 inhibitors, PARP inhibitors and antibody-drug conjugates, including who may benefit, common medicines, side effects and the cost of treatment in India.",
+      "date": "12 Nov 2026",
+      "publishedAt": "2026-11-12T14:00:00.000Z",
+      "updatedAt": "2026-11-12T14:00:00.000Z",
+      "author": "GAF Healthcare Editorial",
+      "category": "Medical Oncology",
+      "tags": [
+        "breast cancer",
+        "targeted therapy",
+        "HER2",
+        "trastuzumab",
+        "CDK4/6",
+        "PARP",
+        "India",
+        "cost"
+      ],
+      "image": "/uploads/articles/targeted-therapy-breast-her2-binding.webp",
+      "imageAlt": "Woman beside a circular molecular diagram of HER2 receptors on a cell membrane with a monoclonal antibody binding",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Targeted Therapy for Breast Cancer in India: Drugs, Cost & Treatment",
+      "seoDescription": "Explore targeted therapy for breast cancer in India, including trastuzumab, pertuzumab, T-DM1, CDK4/6 inhibitors and PARP inhibitors. Understand eligibility, side effects and costs.",
+      "canonical": "https://gaf.healthcare/blogs/targeted-therapy-for-breast-cancer-in-india",
+      "ogImage": "/uploads/articles/targeted-therapy-breast-her2-binding.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Targeted therapy for breast cancer in India",
+        "Targeted treatment for breast cancer",
+        "HER2-positive breast cancer treatment",
+        "Trastuzumab treatment in India",
+        "Pertuzumab for breast cancer",
+        "T-DM1 breast cancer treatment",
+        "CDK4/6 inhibitors for breast cancer",
+        "Palbociclib for breast cancer",
+        "Ribociclib for breast cancer",
+        "Abemaciclib for breast cancer",
+        "PARP inhibitors for breast cancer",
+        "Targeted therapy cost in India",
+        "HER2-targeted therapy cost",
+        "Breast cancer targeted medicines"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Targeted therapy in India",
+          "href": "/treatments/targeted-therapy-in-india"
+        },
+        {
+          "label": "Molecular targeted therapy in India",
+          "href": "/treatments/molecular-targeted-therapy-in-india"
+        },
+        {
+          "label": "Breast cancer treatment in India",
+          "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "HER2-positive breast cancer treatment",
+          "href": "/blogs/her2-positive-breast-cancer-treatment-india"
+        },
+        {
+          "label": "ER, PR and HER2 results",
+          "href": "/blogs/er-pr-her2-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Targeted therapy side effects",
+          "href": "/blogs/breast-cancer-targeted-therapy-side-effects"
+        },
+        {
+          "label": "Chemotherapy for breast cancer",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Hormone therapy for breast cancer",
+          "href": "/blogs/hormone-therapy-breast-cancer-india"
+        },
+        {
+          "label": "Neoadjuvant therapy",
+          "href": "/blogs/breast-cancer-neoadjuvant-therapy"
+        },
+        {
+          "label": "Breast cancer surgery in India",
+          "href": "/blogs/breast-cancer-surgery-in-india"
+        },
+        {
+          "label": "Radiation therapy for breast cancer",
+          "href": "/blogs/radiation-therapy-for-breast-cancer"
+        },
+        {
+          "label": "Breast cancer diagnosis tests",
+          "href": "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2"
+        },
+        {
+          "label": "Breast cancer stages",
+          "href": "/blogs/breast-cancer-stages"
+        },
+        {
+          "label": "Breast cancer treatment options",
+          "href": "/blogs/breast-cancer-treatment-options"
+        },
+        {
+          "label": "Breast cancer treatment cost in India",
+          "href": "/blogs/breast-cancer-treatment-cost-in-india"
+        },
+        {
+          "label": "International patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "Targeted therapy cost sheet",
+          "href": "/costs/India/Medical-Oncology/Targeted-Therapy"
+        },
+        {
+          "label": "Medical oncology doctors",
+          "href": "/doctors/India/Medical-Oncology"
+        },
+        {
+          "label": "Medical oncology hospitals",
+          "href": "/hospitals/India/Medical-Oncology"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"md-body\"><table><thead><tr><th>Question</th><th>Quick Answer</th></tr></thead><tbody><tr><td><strong>What is targeted therapy?</strong></td><td>Medicines that act on specific proteins, receptors or pathways that drive breast cancer growth.</td></tr><tr><td><strong>Main HER2 medicines</strong></td><td>Trastuzumab, pertuzumab, T-DM1 and trastuzumab deruxtecan in selected settings — see <a href=\"/blogs/her2-positive-breast-cancer-treatment-india\">HER2-positive treatment</a></td></tr><tr><td><strong>HR+/HER2− options</strong></td><td>Selected patients may receive CDK4/6 inhibitors with endocrine therapy</td></tr><tr><td><strong>BRCA-linked options</strong></td><td>PARP inhibitors such as olaparib or talazoparib when genetic findings qualify</td></tr><tr><td><strong>Key tests</strong></td><td>ER/PR, HER2 IHC ± ISH, and germline BRCA testing when indicated — see <a href=\"/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2\">diagnosis guide</a></td></tr><tr><td><strong>GAF targeted therapy planning range</strong></td><td><a href=\"/costs/India/Medical-Oncology/Targeted-Therapy\">$8,000–$30,000</a> · oral or infusion · months of therapy</td></tr><tr><td><strong>Molecular targeted pathway</strong></td><td><a href=\"/costs/India/Medical-Oncology/Molecular-Targeted-Therapy\">$10,000–$32,000</a> · oral or infusion by mutation</td></tr><tr><td><strong>Chemotherapy (when combined)</strong></td><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">$1,500–$8,000+</a> · outpatient cycles</td></tr><tr><td><strong>International patients</strong></td><td>Share pathology and biomarker reports before travel; medicine choice follows validated results</td></tr></tbody></table></div><p class=\"article-quick-answer__body\"><strong>Targeted therapy for breast cancer in India</strong> is selected by biomarker results — not by tumour size alone. HER2-directed antibodies and antibody-drug conjugates, CDK4/6 inhibitors and PARP inhibitors each apply to different subtypes. GAF planning for <a href=\"/costs/India/Medical-Oncology/Targeted-Therapy\">targeted therapy</a> is <strong>$8,000–$30,000</strong> (oral or infusion · months of therapy). Neighbouring <a href=\"/costs/India/Medical-Oncology/Molecular-Targeted-Therapy\">molecular targeted therapy</a> is <strong>$10,000–$32,000</strong>. These are partner planning ranges, not hospital quotations.</p><p class=\"article-quick-answer__body\"><strong>Important:</strong> GAF Healthcare does not prescribe targeted medicines or interpret pathology. Treatment decisions remain with a qualified medical oncologist after review of validated biomarker reports.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Breast cancer is not one single disease. Two patients may have tumours in the same breast but require very different medicines because their cancer cells have different biological characteristics."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "This is why doctors examine more than the size of a tumour or its stage. They also study specific proteins and biomarkers that influence how cancer cells grow. **Targeted therapy** uses medicines designed to act on these specific features."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "For example, some breast cancers produce excessive amounts of a protein called HER2 and may respond to HER2-targeted medicines such as trastuzumab and pertuzumab. Other cancers are hormone receptor-positive and HER2-negative; selected patients may benefit from CDK4/6 inhibitors with hormone therapy. Patients with certain inherited genetic mutations may also be eligible for PARP inhibitors."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "India offers access to several targeted cancer medicines through specialist oncology hospitals. These treatments can involve substantial expenses, and not every medicine is suitable for every patient. GAF planning for [targeted therapy](/costs/India/Medical-Oncology/Targeted-Therapy) is **$8,000–$30,000** (oral or infusion · months of therapy). Neighbouring [molecular targeted therapy](/costs/India/Medical-Oncology/Molecular-Targeted-Therapy) is **$10,000–$32,000**."
+        },
+        {
+          "id": "p_006",
+          "type": "paragraph",
+          "text": "Related GAF guides include [HER2-positive breast cancer treatment](/blogs/her2-positive-breast-cancer-treatment-india), [ER, PR and HER2 results](/blogs/er-pr-her2-breast-cancer-treatment-india), [targeted therapy side effects](/blogs/breast-cancer-targeted-therapy-side-effects) and the curated pathway [targeted therapy in India](/treatments/targeted-therapy-in-india). Named [medical oncologists](/doctors/India/Medical-Oncology) and [medical oncology hospitals](/hospitals/India/Medical-Oncology) can be filtered by city before travel."
+        },
+        {
+          "id": "btn_007",
+          "type": "button",
+          "label": "Ask GAF to review biomarker reports for targeted therapy",
+          "href": "/consult?treatment=Targeted%20Therapy%20for%20Breast%20Cancer"
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with HER2, ER/PR and previous treatment records](https://wa.me/919044346292?text=Please%20review%20my%20breast%20cancer%20pathology%2C%20HER2%2FER%2FPR%20reports%20and%20previous%20treatment%20and%20advise%20on%20targeted%20therapy%20options%20in%20India.)"
+        },
+        {
+          "id": "img_009",
+          "type": "image",
+          "src": "/uploads/articles/targeted-therapy-breast-her2-binding.webp",
+          "alt": "Woman beside a circular molecular diagram of HER2 receptors on a cell membrane with a monoclonal antibody binding",
+          "caption": "HER2-targeted medicines attach to specific growth receptors on cancer cells."
+        },
+        {
+          "id": "h_010",
+          "type": "heading",
+          "level": 2,
+          "text": "What is targeted therapy for breast cancer?"
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "Targeted therapy is a type of cancer treatment that acts on specific molecules involved in the growth, division or survival of cancer cells. These molecules may include proteins on cancer cell surfaces, receptors that receive growth signals, enzymes involved in cell division, proteins responsible for DNA repair, and molecular pathways that help cancer cells survive."
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Unlike conventional [chemotherapy](/blogs/chemotherapy-for-breast-cancer-in-india), which affects many rapidly dividing cells, targeted medicines are designed to interfere with particular biological processes. Targeted therapy is not completely free of side effects — some medicines can affect healthy cells or normal body functions."
+        },
+        {
+          "id": "h_013",
+          "type": "heading",
+          "level": 3,
+          "text": "How does targeted therapy work?"
+        },
+        {
+          "id": "ol_014",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Block a growth signal that cancer cells use.",
+            "Attach to a protein on the cancer cell surface.",
+            "Deliver a cancer-killing medicine towards cells carrying a particular target.",
+            "Block proteins involved in cell division.",
+            "Interfere with the ability of cancer cells to repair damaged DNA."
+          ]
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "The choice of medicine depends on the cancer's subtype, stage, biomarker results and previous treatment."
+        },
+        {
+          "id": "h_016",
+          "type": "heading",
+          "level": 2,
+          "text": "Who is eligible for targeted therapy?"
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "Targeted therapy is recommended only when the patient's cancer has the biological characteristics that make the treatment appropriate. The oncologist may review HER2 status, ER and PR status, tumour grade, cancer stage, lymph node involvement, previous treatment, genetic testing results and other molecular biomarkers when relevant."
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "Some targeted treatments are used in early-stage disease to reduce recurrence risk. Others are mainly used when cancer has spread or returned. A targeted medicine should not be prescribed simply because it is newer or more expensive. See [breast cancer stages](/blogs/breast-cancer-stages) and [treatment options](/blogs/breast-cancer-treatment-options) for how sequencing fits the wider plan."
+        },
+        {
+          "id": "btn_019",
+          "type": "button",
+          "label": "Request a second-opinion review of eligibility",
+          "href": "/consult?treatment=Breast%20Cancer%20Targeted%20Therapy%20Second%20Opinion"
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 2,
+          "text": "Understanding HER2-positive breast cancer"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "HER2 stands for human epidermal growth factor receptor 2. It is a protein involved in cell growth and division. Some breast cancer cells produce excessive amounts of HER2 or have an increased number of copies of the HER2 gene. These cancers are called HER2-positive breast cancers and may respond to medicines that specifically target this protein."
+        },
+        {
+          "id": "h_022",
+          "type": "heading",
+          "level": 3,
+          "text": "How is HER2 status tested?"
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "HER2 testing is usually performed on a breast cancer tissue sample obtained through biopsy or surgery. Common tests include immunohistochemistry (IHC), which measures HER2 protein, and in situ hybridisation (ISH), which examines HER2 gene copies. Full testing pathways are covered in the [breast cancer diagnosis guide](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2) and [ER, PR and HER2 guide](/blogs/er-pr-her2-breast-cancer-treatment-india)."
+        },
+        {
+          "id": "html_024",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>HER2 test result</th><th>General interpretation</th></tr></thead><tbody><tr><td>IHC 0</td><td>HER2-negative</td></tr><tr><td>IHC 1+</td><td>HER2-negative</td></tr><tr><td>IHC 2+</td><td>Equivocal; additional ISH testing is generally required</td></tr><tr><td>IHC 3+</td><td>HER2-positive</td></tr><tr><td>IHC 2+ with HER2 gene amplification on ISH</td><td>HER2-positive</td></tr><tr><td>IHC 2+ without gene amplification on ISH</td><td>Generally HER2-negative</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "h_025",
+          "type": "heading",
+          "level": 3,
+          "text": "What is HER2-low breast cancer?"
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "Some cancers that are not classified as HER2-positive may show low levels of HER2 protein — often IHC 1+ or IHC 2+ without gene amplification. HER2-low is not the same as conventional HER2-positive disease. Certain antibody-drug conjugates may be considered in specific HER2-low advanced settings, even though standard trastuzumab alone is not appropriate simply because a tumour is HER2-low."
+        },
+        {
+          "id": "img_027",
+          "type": "image",
+          "src": "/uploads/articles/targeted-therapy-breast-biomarker-testing.webp",
+          "alt": "Pathology review of a breast cancer slide beside a circular diagram of receptor biomarker testing on tumour cells",
+          "caption": "Accurate HER2, ER and PR reporting is the foundation of targeted treatment selection."
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 2,
+          "text": "Trastuzumab for HER2-positive breast cancer"
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "Trastuzumab is one of the most widely used HER2-targeted medicines. It is a monoclonal antibody that attaches to the HER2 protein on cancer cells, interferes with HER2-related signalling and helps the immune system recognise cancer cells."
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "It may be recommended in early-stage, locally advanced or selected metastatic HER2-positive treatment plans, often with chemotherapy. A typical adjuvant plan aims for about one year of HER2-targeted treatment, although schedules vary. Administration is usually intravenous or, where an approved formulation is appropriate, subcutaneous."
+        },
+        {
+          "id": "ul_031",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Fever or chills during infusion",
+            "Fatigue, nausea, diarrhoea or headache",
+            "Infusion-related reactions",
+            "Reduced heart function in some patients — cardiac monitoring is important"
+          ]
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "Dedicated pathway detail sits on [HER2-positive breast cancer treatment in India](/blogs/her2-positive-breast-cancer-treatment-india)."
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 2,
+          "text": "Pertuzumab for HER2-positive breast cancer"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "Pertuzumab is another monoclonal antibody that targets HER2 at a different binding site from trastuzumab. Used together, the two medicines block HER2 signalling more comprehensively than either alone."
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "Pertuzumab may be included for selected patients with locally advanced, higher-risk early-stage or metastatic HER2-positive disease, often with chemotherapy and trastuzumab. Side effects can include diarrhoea, nausea, fatigue, infusion reactions and potential cardiac effects; accompanying chemotherapy may cause hair loss and low blood counts."
+        },
+        {
+          "id": "h_036",
+          "type": "heading",
+          "level": 2,
+          "text": "What is TCHP chemotherapy and targeted therapy?"
+        },
+        {
+          "id": "p_037",
+          "type": "paragraph",
+          "text": "TCHP is a commonly recognised combination for selected patients with HER2-positive breast cancer:"
+        },
+        {
+          "id": "html_038",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Letter</th><th>Medicine</th><th>Role</th></tr></thead><tbody><tr><td>T</td><td>Docetaxel</td><td>Chemotherapy</td></tr><tr><td>C</td><td>Carboplatin</td><td>Chemotherapy</td></tr><tr><td>H</td><td>Trastuzumab</td><td>HER2-targeted therapy</td></tr><tr><td>P</td><td>Pertuzumab</td><td>HER2-targeted therapy</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "The combination may be used before surgery. Not every HER2-positive patient needs TCHP — stage, tumour characteristics, lymph node status and fitness decide. Neighbouring planning ranges for [neoadjuvant chemotherapy](/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy) and [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) sit on the cost sheets when systemic treatment is part of the plan."
+        },
+        {
+          "id": "h_040",
+          "type": "heading",
+          "level": 2,
+          "text": "What happens after surgery if cancer remains following preoperative HER2 treatment?"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "After surgery, the pathologist examines whether residual invasive cancer remains. If residual invasive disease is found after appropriate neoadjuvant HER2-targeted treatment and chemotherapy, the oncologist may recommend a different medicine rather than simply continuing the same plan."
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 3,
+          "text": "What is T-DM1?"
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "T-DM1 (ado-trastuzumab emtansine) is an antibody-drug conjugate that combines trastuzumab with a chemotherapy-related drug called DM1. It may be recommended after surgery for selected patients with residual invasive HER2-positive disease. Side effects can include fatigue, nausea, low platelets, liver enzyme changes, neuropathy and cardiac effects in selected patients."
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "Preoperative sequencing is also discussed in the [neoadjuvant therapy guide](/blogs/breast-cancer-neoadjuvant-therapy)."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 2,
+          "text": "What is trastuzumab deruxtecan (T-DXd)?"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Trastuzumab deruxtecan is another antibody-drug conjugate that combines a HER2-targeting antibody with a potent chemotherapy-related drug. It has an important role in selected advanced breast cancer settings, including certain HER2-positive and HER2-low cancers."
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "Unlike trastuzumab alone, T-DXd also carries a cytotoxic payload into target cells. Possible side effects include nausea, fatigue, hair loss, reduced blood counts, liver enzyme abnormalities and **interstitial lung disease or pneumonitis**. New cough, breathlessness or fever during treatment needs immediate medical assessment."
+        },
+        {
+          "id": "img_048",
+          "type": "image",
+          "src": "/uploads/articles/targeted-therapy-breast-infusion-suite.webp",
+          "alt": "Woman receiving an oncology infusion beside a circular diagram of an antibody-drug conjugate approaching target receptors",
+          "caption": "Antibody-drug conjugates deliver a cytotoxic payload towards cells expressing the selected target."
+        },
+        {
+          "id": "btn_049",
+          "type": "button",
+          "label": "Ask about HER2-directed infusion planning in India",
+          "href": "/consult?treatment=HER2-Targeted%20Therapy"
+        },
+        {
+          "id": "h_050",
+          "type": "heading",
+          "level": 2,
+          "text": "What are CDK4/6 inhibitors for breast cancer?"
+        },
+        {
+          "id": "p_051",
+          "type": "paragraph",
+          "text": "Not all targeted therapy is designed for HER2-positive disease. Selected patients with hormone receptor-positive, HER2-negative breast cancer may receive CDK4/6 inhibitors with endocrine therapy. CDK4 and CDK6 help regulate the cell cycle; inhibitors slow cancer cell multiplication."
+        },
+        {
+          "id": "html_052",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Medicine</th><th>General treatment role</th></tr></thead><tbody><tr><td>Palbociclib</td><td>Used with endocrine therapy in selected advanced or metastatic disease</td></tr><tr><td>Ribociclib</td><td>Used in selected early-stage high-risk and advanced hormone receptor-positive, HER2-negative disease</td></tr><tr><td>Abemaciclib</td><td>Used in selected high-risk early-stage disease and advanced or metastatic disease</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "They should not be treated as interchangeable — approved indications and evidence differ. Endocrine foundations are covered on [hormone therapy for breast cancer](/blogs/hormone-therapy-breast-cancer-india) and the [hormone therapy cost sheet](/costs/India/Medical-Oncology/Hormone-Therapy)."
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 3,
+          "text": "Palbociclib, ribociclib and abemaciclib"
+        },
+        {
+          "id": "ul_055",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Palbociclib:** Oral CDK4/6 inhibitor commonly used with endocrine treatment in selected advanced or metastatic disease; blood-count monitoring is important.",
+            "**Ribociclib:** Used with endocrine therapy in selected advanced disease and certain higher-risk early-stage cases; monitoring may include blood counts, liver tests, electrolytes and ECG.",
+            "**Abemaciclib:** Used in selected high-risk early-stage and advanced settings; diarrhoea management instructions are essential, and blood clots are a recognised risk in some patients."
+          ]
+        },
+        {
+          "id": "img_056",
+          "type": "image",
+          "src": "/uploads/articles/targeted-therapy-breast-cdk46-monitoring.webp",
+          "alt": "Woman with oral breast cancer tablets beside a circular diagram of CDK4/6 cell-cycle inhibition and monitoring motif",
+          "caption": "CDK4/6 inhibitors are oral targeted medicines usually combined with endocrine therapy."
+        },
+        {
+          "id": "h_057",
+          "type": "heading",
+          "level": 2,
+          "text": "Can CDK4/6 inhibitors be used after breast cancer surgery?"
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "Yes. Selected patients with higher-risk hormone receptor-positive, HER2-negative early breast cancer may be considered for adjuvant CDK4/6 inhibitor treatment alongside endocrine therapy. Eligibility depends on tumour size, nodes, grade, other high-risk features, estimated recurrence risk, prior treatment and tolerance."
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "Abemaciclib and ribociclib have evidence and indications in selected early-stage settings with different criteria. Palbociclib should not automatically be substituted in the adjuvant setting."
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 2,
+          "text": "What are PARP inhibitors for breast cancer?"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "PARP inhibitors interfere with proteins involved in DNA repair. Cancer cells with certain inherited BRCA1 or BRCA2 mutations may already have DNA-repair defects; PARP inhibitors can push those cells further towards cell death."
+        },
+        {
+          "id": "ul_062",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Common medicines:** Olaparib and talazoparib.",
+            "**Who may benefit:** Selected patients with qualifying BRCA mutations in certain early high-risk or advanced HER2-negative settings.",
+            "**Why genetic counselling matters:** Results can affect treatment choice and family risk assessment."
+          ]
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "Side effects may include nausea, fatigue, anaemia, low white cells or platelets and reduced appetite. Rare bone marrow disorders require monitoring."
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 2,
+          "text": "What are antibody-drug conjugates?"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "Antibody-drug conjugates (ADCs) combine an antibody with a cancer-killing drug so treatment can be directed more selectively — though healthy tissue can still be affected. Breast cancer examples include T-DM1, trastuzumab deruxtecan and sacituzumab govitecan."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 3,
+          "text": "What is sacituzumab govitecan?"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Sacituzumab govitecan targets Trop-2 and carries SN-38. It may be used in selected advanced breast cancers, including certain triple-negative and hormone receptor-positive, HER2-negative settings after prior treatment. Side effects can include diarrhoea, nausea, low white cells, fatigue, hair loss and reduced appetite."
+        },
+        {
+          "id": "h_068",
+          "type": "heading",
+          "level": 2,
+          "text": "Which targeted therapy is used for each type of breast cancer?"
+        },
+        {
+          "id": "html_069",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Breast cancer subtype</th><th>Targeted treatment options that may be considered</th></tr></thead><tbody><tr><td>HER2-positive</td><td>Trastuzumab, pertuzumab, T-DM1, trastuzumab deruxtecan and other HER2-directed medicines</td></tr><tr><td>Hormone receptor-positive, HER2-negative</td><td>CDK4/6 inhibitors with endocrine therapy in selected patients</td></tr><tr><td>BRCA1/BRCA2-mutated, HER2-negative</td><td>PARP inhibitors in eligible treatment settings</td></tr><tr><td>HER2-low advanced breast cancer</td><td>Selected antibody-drug conjugates, depending on previous treatment and eligibility</td></tr><tr><td>Triple-negative breast cancer</td><td>Selected antibody-drug conjugates and other biomarker-directed treatments in appropriate settings</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "This is a simplified overview, not a prescription. Compare options against [breast cancer treatment options](/blogs/breast-cancer-treatment-options) and the [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india) pathway."
+        },
+        {
+          "id": "h_071",
+          "type": "heading",
+          "level": 2,
+          "text": "Targeted therapy for early-stage vs metastatic breast cancer"
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 3,
+          "text": "Early-stage disease"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "The aim is generally to reduce recurrence risk after surgery and other indicated treatment. Examples include trastuzumab-based treatment, pertuzumab for selected higher-risk HER2-positive cases, T-DM1 after residual invasive disease, selected adjuvant CDK4/6 inhibitors with endocrine therapy, and olaparib for selected high-risk germline BRCA carriers."
+        },
+        {
+          "id": "h_074",
+          "type": "heading",
+          "level": 3,
+          "text": "Metastatic disease"
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "When cancer has spread, treatment aims to control disease, relieve symptoms and maintain quality of life. Options may include HER2 antibodies, HER2-directed ADCs, CDK4/6 inhibitors, PARP inhibitors and other medicines selected by molecular testing and prior therapy."
+        },
+        {
+          "id": "h_076",
+          "type": "heading",
+          "level": 2,
+          "text": "What tests are needed before targeted therapy?"
+        },
+        {
+          "id": "html_077",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Test</th><th>Why it may be required</th></tr></thead><tbody><tr><td>HER2 IHC</td><td>Identifies HER2 protein expression</td></tr><tr><td>HER2 ISH/FISH</td><td>Confirms HER2 gene amplification in selected cases</td></tr><tr><td>ER and PR testing</td><td>Identifies hormone receptor status</td></tr><tr><td>Histopathology review</td><td>Confirms tumour characteristics</td></tr><tr><td>Germline BRCA1/BRCA2 testing</td><td>Identifies inherited mutations relevant to PARP inhibitors and risk assessment</td></tr><tr><td>Blood counts</td><td>Monitors bone marrow function</td></tr><tr><td>Liver function tests</td><td>Checks liver health and treatment tolerance</td></tr><tr><td>Echocardiogram</td><td>May be required for HER2-directed treatment</td></tr><tr><td>ECG</td><td>May be needed with certain CDK4/6 inhibitors</td></tr><tr><td>CT or other imaging</td><td>Assesses disease extent and treatment response</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "Not every patient requires every test. The oncologist selects investigations based on the proposed medicine. See also the [diagnosis tests guide](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 2,
+          "text": "How is response to targeted therapy monitored?"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Monitoring may include symptoms, examination, blood tests, imaging, selected tumour markers, heart function where relevant and treatment-related side effects. In metastatic disease, imaging helps assess response, stability or progression. A medicine may be continued, changed or stopped depending on effectiveness and tolerability."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 2,
+          "text": "Side effects of targeted therapy for breast cancer"
+        },
+        {
+          "id": "ul_082",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**HER2-targeted medicines:** Infusion reactions, fatigue, diarrhoea, nausea and cardiac function changes.",
+            "**CDK4/6 inhibitors:** Low blood counts, diarrhoea, fatigue, liver enzyme changes, infection risk, heart-rhythm changes with certain medicines and blood clots with selected medicines.",
+            "**PARP inhibitors:** Anaemia, nausea, fatigue, low blood counts and reduced appetite.",
+            "**Antibody-drug conjugates:** Nausea, hair loss, diarrhoea, low blood counts, liver abnormalities and lung inflammation with certain medicines."
+          ]
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "More detail is collected on [targeted therapy side effects](/blogs/breast-cancer-targeted-therapy-side-effects). Patients should report new or worsening symptoms promptly."
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "[WhatsApp the oncology desk if you need help coordinating side-effect monitoring abroad](https://wa.me/919044346292?text=I%20am%20on%20breast%20cancer%20targeted%20therapy%20and%20need%20guidance%20on%20monitoring%20and%20follow-up%20coordination%20with%20an%20Indian%20oncology%20team.)"
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 2,
+          "text": "How much does targeted therapy cost in India?"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "There is no single cost for targeted breast cancer treatment. Expense depends on the exact medicine, brand or approved biosimilar, dose, number of cycles or months, whether chemotherapy is combined, hospital administration charges, laboratory monitoring, imaging, cardiac assessments and side-effect management."
+        },
+        {
+          "id": "html_087",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Named pathway</th><th>GAF planning range in India</th><th>Typical stay / schedule</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Medical-Oncology/Targeted-Therapy\">Targeted therapy</a></td><td>$8,000–$30,000</td><td>Oral or infusion · months of therapy</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Molecular-Targeted-Therapy\">Molecular targeted therapy</a></td><td>$10,000–$32,000</td><td>Oral or infusion by mutation</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemotherapy</a></td><td>$1,500–$8,000+</td><td>Outpatient cycles · 3–6 months typical</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy\">Neoadjuvant chemotherapy</a></td><td>$2,500–$10,000</td><td>Cycles before surgery · 2–4 months</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Adjuvant-Chemotherapy\">Adjuvant chemotherapy</a></td><td>$2,500–$10,000</td><td>Cycles after surgery · 3–6 months</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Hormone-Therapy\">Hormone therapy</a></td><td>$1,000–$4,500</td><td>Outpatient · often years of tablets</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Immunotherapy\">Immunotherapy</a></td><td>$15,000–$45,000</td><td>Outpatient q2–6 weeks</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "These GAF figures are partner planning ranges from the live cost sheets — not hospital quotations and not a promise that every medicine falls inside the band. Read the full [breast cancer treatment cost guide](/blogs/breast-cancer-treatment-cost-in-india) for wider pathway context."
+        },
+        {
+          "id": "html_089",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Treatment</th><th>Main cost considerations</th></tr></thead><tbody><tr><td>Trastuzumab</td><td>Dose, formulation, brand or biosimilar and treatment duration</td></tr><tr><td>Pertuzumab</td><td>Dose, number of administrations and whether combined with trastuzumab</td></tr><tr><td>T-DM1</td><td>Weight-based dosing, number of cycles and monitoring</td></tr><tr><td>Trastuzumab deruxtecan</td><td>Dose, treatment duration and monitoring for lung toxicity</td></tr><tr><td>Palbociclib / Ribociclib / Abemaciclib</td><td>Monthly oral medicine cost, blood tests and medicine-specific monitoring</td></tr><tr><td>Olaparib / Talazoparib</td><td>Daily tablet supply, duration and blood monitoring</td></tr><tr><td>Sacituzumab govitecan</td><td>Infusion schedule, medicine dose and supportive care</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "h_090",
+          "type": "heading",
+          "level": 3,
+          "text": "Are biosimilars available in India?"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "For certain biological medicines, approved biosimilar formulations may be available. A biosimilar is highly similar to an approved reference medicine with no clinically meaningful differences in safety, purity and potency. Patients should not switch brands without consulting their oncologist."
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 3,
+          "text": "What should the hospital estimate include?"
+        },
+        {
+          "id": "ol_093",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Exact medicine name and formulation",
+            "Dose and frequency",
+            "Number of planned cycles or months",
+            "Cost per administration or monthly supply",
+            "Administration charges and supportive medicines",
+            "Blood tests, cardiac assessment and imaging",
+            "Possible additional expenses if the plan changes"
+          ]
+        },
+        {
+          "id": "btn_094",
+          "type": "button",
+          "label": "Request a written targeted-therapy estimate",
+          "href": "/consult?treatment=Targeted%20Therapy%20Cost%20Estimate"
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 2,
+          "text": "Targeted therapy in India for international patients"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "Patients from Tanzania, Kenya, Uganda, Ethiopia, Zambia, Iraq, Oman and other regions may seek consultations for biomarker-defined breast cancers. Reviewing records before travel is especially important because targeted therapy depends on accurate pathology."
+        },
+        {
+          "id": "ul_097",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Breast biopsy and complete histopathology reports",
+            "ER, PR, HER2 IHC and HER2 ISH/FISH when performed",
+            "Surgery, chemotherapy and previous targeted treatment records",
+            "Recent blood tests, imaging and genetic testing reports if available",
+            "Current medicines and relevant medical history"
+          ]
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Practical travel sequencing is covered in [breast cancer treatment in India for international patients](/blogs/breast-cancer-treatment-india-international-patients). City filters for [Delhi NCR](/doctors/India/Delhi-NCR/Medical-Oncology), [Mumbai](/doctors/India/Mumbai/Medical-Oncology), [Bengaluru](/doctors/India/Bengaluru/Medical-Oncology), [Chennai](/doctors/India/Chennai/Medical-Oncology) and [Hyderabad](/doctors/India/Hyderabad/Medical-Oncology) medical oncologists help shortlist campuses."
+        },
+        {
+          "id": "btn_099",
+          "type": "button",
+          "label": "Start an international records review",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "h_100",
+          "type": "heading",
+          "level": 2,
+          "text": "How to choose a hospital for targeted breast cancer treatment in India"
+        },
+        {
+          "id": "ul_101",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Medical oncology expertise** for the patient's subtype",
+            "**Reliable pathology** for HER2 and other biomarker reporting",
+            "**Availability of the required medicine** and approved alternatives",
+            "**Infusion facilities** with emergency support for injectable medicines",
+            "**Monitoring facilities** for blood tests, ECG, echocardiography and imaging",
+            "**Multidisciplinary care** across oncology, breast surgery, radiation, pathology and radiology — see also [breast cancer surgery](/blogs/breast-cancer-surgery-in-india) and [radiation therapy](/blogs/radiation-therapy-for-breast-cancer)",
+            "**Cost transparency** covering medicine, administration and monitoring"
+          ]
+        },
+        {
+          "id": "h_102",
+          "type": "heading",
+          "level": 2,
+          "text": "Questions to ask your oncologist before starting targeted therapy"
+        },
+        {
+          "id": "ol_103",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "What is the exact biological subtype of my breast cancer?",
+            "Is my cancer HER2-positive, HER2-low or HER2-negative?",
+            "Which test confirms my HER2 status?",
+            "Why is this particular targeted medicine recommended?",
+            "Is the treatment intended to reduce recurrence risk or control advanced disease?",
+            "Will I need chemotherapy or hormone therapy alongside it?",
+            "How long will treatment continue?",
+            "What tests are required before and during treatment?",
+            "What side effects should I watch for?",
+            "Do I need heart monitoring?",
+            "Is an approved biosimilar available?",
+            "What is the estimated cost of the complete treatment course?",
+            "Can treatment be continued in my home country?",
+            "What happens if the cancer does not respond?"
+          ]
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently asked questions about targeted therapy for breast cancer in India"
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "What is targeted therapy for breast cancer?"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Targeted therapy uses medicines that act on specific proteins, receptors or molecular pathways involved in cancer growth. The medicine is selected according to the tumour's biological characteristics."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 3,
+          "text": "Does every breast cancer patient need targeted therapy?"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "No. Targeted treatment is appropriate only for selected patients whose cancer has the relevant biomarker or molecular feature."
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the most common targeted therapy for HER2-positive breast cancer?"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "Trastuzumab is one of the main HER2-targeted medicines. Pertuzumab, T-DM1 and trastuzumab deruxtecan may also be used in specific treatment settings."
+        },
+        {
+          "id": "h_111",
+          "type": "heading",
+          "level": 3,
+          "text": "Is trastuzumab chemotherapy?"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "No. Trastuzumab is a monoclonal antibody and a HER2-targeted medicine. It may be administered alongside chemotherapy, but it is not a conventional chemotherapy drug."
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the difference between trastuzumab and pertuzumab?"
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "Both medicines target HER2, but they attach to different regions of the protein and interfere with its activity in different ways. They may be combined in selected treatment plans."
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 3,
+          "text": "What is T-DM1?"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "T-DM1 is an antibody-drug conjugate combining trastuzumab with a chemotherapy-related drug. It may be used for selected HER2-positive patients, including those with residual invasive disease after preoperative treatment."
+        },
+        {
+          "id": "h_117",
+          "type": "heading",
+          "level": 3,
+          "text": "What is trastuzumab deruxtecan?"
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "Trastuzumab deruxtecan is an antibody-drug conjugate used in selected advanced HER2-positive and HER2-low breast cancer settings. Lung inflammation is an important risk that needs prompt medical review."
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 3,
+          "text": "What are CDK4/6 inhibitors?"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "They are targeted medicines that interfere with proteins involved in cell division. Palbociclib, ribociclib and abemaciclib are examples used in selected hormone receptor-positive, HER2-negative breast cancer settings."
+        },
+        {
+          "id": "h_121",
+          "type": "heading",
+          "level": 3,
+          "text": "Are CDK4/6 inhibitors used for HER2-positive breast cancer?"
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "They are primarily used in hormone receptor-positive, HER2-negative breast cancer treatment. They are not standard substitutes for HER2-targeted medicines."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 3,
+          "text": "What are PARP inhibitors?"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "PARP inhibitors interfere with DNA repair pathways. Olaparib and talazoparib may be used in selected patients with qualifying BRCA1 or BRCA2 mutations."
+        },
+        {
+          "id": "h_125",
+          "type": "heading",
+          "level": 3,
+          "text": "Is targeted therapy better than chemotherapy?"
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "They are different treatments and are often used together. Targeted therapy is not automatically better than chemotherapy. The choice depends on the cancer subtype and treatment goal."
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does targeted therapy continue?"
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "Duration varies. Some HER2-targeted adjuvant treatment plans aim for approximately one year. CDK4/6 inhibitors and other targeted medicines have different schedules, depending on the clinical setting."
+        },
+        {
+          "id": "h_129",
+          "type": "heading",
+          "level": 3,
+          "text": "How much does targeted therapy cost in India?"
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "GAF planning for targeted therapy is $8,000–$30,000 and for molecular targeted therapy $10,000–$32,000. Final cost depends on the exact medicine, dose, duration, monitoring and whether chemotherapy is combined."
+        },
+        {
+          "id": "h_131",
+          "type": "heading",
+          "level": 3,
+          "text": "Are biosimilar medicines available in India?"
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "Approved biosimilars are available for certain biological cancer medicines. The treating oncologist should confirm whether a particular biosimilar is appropriate."
+        },
+        {
+          "id": "h_133",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients receive targeted therapy in India?"
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "Yes, subject to hospital acceptance, medical assessment and applicable travel requirements. Patients should share pathology, biomarker and previous treatment reports before travelling."
+        },
+        {
+          "id": "h_135",
+          "type": "heading",
+          "level": 3,
+          "text": "What is HER2-low breast cancer?"
+        },
+        {
+          "id": "p_136",
+          "type": "paragraph",
+          "text": "HER2-low usually describes IHC 1+ or IHC 2+ without gene amplification. It is not the same as conventional HER2-positive disease, but selected antibody-drug conjugates may apply in specific advanced settings."
+        },
+        {
+          "id": "h_137",
+          "type": "heading",
+          "level": 3,
+          "text": "Which tests are needed before starting targeted therapy?"
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "Common tests include ER/PR, HER2 IHC with ISH when needed, blood counts, liver tests and, for some medicines, echocardiogram, ECG or germline BRCA testing."
+        },
+        {
+          "id": "h_139",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion"
+        },
+        {
+          "id": "p_140",
+          "type": "paragraph",
+          "text": "Targeted therapy has expanded treatment options for different types of breast cancer. HER2-targeted medicines such as trastuzumab and pertuzumab are important for HER2-positive disease. CDK4/6 inhibitors may benefit selected hormone receptor-positive, HER2-negative patients. PARP inhibitors may be appropriate when inherited mutations qualify. Antibody-drug conjugates add further options in selected advanced settings."
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "Usefulness depends on accurate biomarker testing, stage, previous treatment and overall health. Patients considering treatment in India should ask why a medicine is recommended, how long it may be needed, what monitoring is required and what the complete cost is likely to be. The right treatment is not necessarily the newest or most expensive medicine — it is the one supported by the diagnosis and clinical evidence."
+        },
+        {
+          "id": "btn_142",
+          "type": "button",
+          "label": "Discuss the next step with GAF Healthcare",
+          "href": "/consult?treatment=Targeted%20Therapy%20for%20Breast%20Cancer"
+        },
+        {
+          "id": "h_143",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources and references"
+        },
+        {
+          "id": "ol_144",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "[National Cancer Institute — Targeted Therapy to Treat Cancer](https://www.cancer.gov/about-cancer/treatment/types/targeted-therapies)",
+            "[NCCN Guidelines for Patients — Invasive Breast Cancer](https://vicc.org/sites/default/files/2026-09/breast-invasive-patient.pdf)",
+            "[NCCN Guidelines for Patients — Metastatic Breast Cancer](https://vicc.org/sites/default/files/2026-09/stage_iv_breast-patient.pdf)",
+            "[ICMR Standard Treatment Workflows — Breast Cancer](https://www.icmr.gov.in/standard-treatment-workflows-stws)",
+            "[American Cancer Society — Targeted Drug Therapy for Breast Cancer](https://www.cancer.org/cancer/types/breast-cancer/treatment/targeted-therapy-for-breast-cancer.html)",
+            "[ASCO living guideline — Hormone Receptor-Positive, HER2-Negative Stage I–III Breast Cancer](https://ascopubs.org/doi/10.1200/JCO-26-02034)",
+            "[ESMO Metastatic Breast Cancer Clinical Practice Guideline](https://www.annalsofoncology.org/article/S0923-7534%2826%2900902-6/fulltext)",
+            "[National Cancer Institute — Breast Cancer Treatment](https://www.cancer.gov/types/breast/treatment)"
+          ]
+        },
+        {
+          "id": "p_145",
+          "type": "paragraph",
+          "text": "*Medical disclaimer: This article is for educational purposes and does not replace an individual consultation with a qualified medical oncologist. Targeted medicines, treatment combinations and duration must be selected according to validated biomarker results, cancer stage, previous treatment and applicable clinical guidelines. Availability and regulatory approval may differ between countries. Cost estimates must be obtained directly from the treating hospital or pharmacy.*"
+        },
+        {
+          "id": "h_146",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Reading on GAF Healthcare"
+        },
+        {
+          "id": "ul_147",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Targeted therapy in India](/treatments/targeted-therapy-in-india)",
+            "[Molecular targeted therapy in India](/treatments/molecular-targeted-therapy-in-india)",
+            "[Breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india)",
+            "[HER2-positive breast cancer treatment](/blogs/her2-positive-breast-cancer-treatment-india)",
+            "[ER, PR and HER2 results](/blogs/er-pr-her2-breast-cancer-treatment-india)",
+            "[Targeted therapy side effects](/blogs/breast-cancer-targeted-therapy-side-effects)",
+            "[Chemotherapy for breast cancer](/blogs/chemotherapy-for-breast-cancer-in-india)",
+            "[Hormone therapy for breast cancer](/blogs/hormone-therapy-breast-cancer-india)",
+            "[Neoadjuvant therapy](/blogs/breast-cancer-neoadjuvant-therapy)",
+            "[Breast cancer surgery in India](/blogs/breast-cancer-surgery-in-india)",
+            "[Radiation therapy for breast cancer](/blogs/radiation-therapy-for-breast-cancer)",
+            "[Breast cancer diagnosis tests](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)",
+            "[Breast cancer stages](/blogs/breast-cancer-stages)",
+            "[Breast cancer treatment options](/blogs/breast-cancer-treatment-options)",
+            "[Breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)",
+            "[International patients](/blogs/breast-cancer-treatment-india-international-patients)",
+            "[Targeted therapy cost sheet](/costs/India/Medical-Oncology/Targeted-Therapy)",
+            "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
+            "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)"
+          ]
+        }
+      ]
+    },
     {
       "id": "art_breast_cancer_diagnosis",
       "slug": "breast-cancer-diagnosis",
@@ -88555,6 +89613,10 @@
         {
           "label": "International patients",
           "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "Targeted therapy for breast cancer in India",
+          "href": "/blogs/targeted-therapy-for-breast-cancer-in-india"
         }
       ],
       "blocks": [
@@ -94293,6 +95355,10 @@
         {
           "label": "Chemotherapy cost in India",
           "href": "/costs/India/Medical-Oncology/Chemotherapy"
+        },
+        {
+          "label": "Targeted therapy for breast cancer in India",
+          "href": "/blogs/targeted-therapy-for-breast-cancer-in-india"
         }
       ],
       "blocks": [
@@ -97414,6 +98480,10 @@
         {
           "label": "Immunotherapy cost in India",
           "href": "/costs/India/Medical-Oncology/Immunotherapy"
+        },
+        {
+          "label": "Targeted therapy for breast cancer in India",
+          "href": "/blogs/targeted-therapy-for-breast-cancer-in-india"
         }
       ],
       "blocks": [
