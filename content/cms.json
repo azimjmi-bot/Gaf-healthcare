@@ -150,7 +150,8 @@
     "BI-RADS",
     "ER PR HER2",
     "CDK4/6",
-    "PARP"
+    "PARP",
+    "DIBH"
   ],
   "media": [
     {
@@ -2595,9 +2596,916 @@
       "name": "hormone-therapy-breast-bone-monitoring.webp",
       "alt": "Woman walking outdoors beside a circular diagram representing bone density structure and monitoring",
       "addedAt": "2026-11-12T14:30:00.000Z"
+    },
+    {
+      "id": "media_breast_cancer_radiation_planning_overview_webp",
+      "url": "/uploads/articles/breast-cancer-radiation-planning-overview.webp",
+      "name": "breast-cancer-radiation-planning-overview.webp",
+      "alt": "Woman on a CT simulation couch beside a circular diagram of conformal radiation beams targeting breast tissue while sparing nearby organs",
+      "addedAt": "2026-11-12T14:20:00.000Z"
+    },
+    {
+      "id": "media_breast_cancer_radiation_dibh_heart_webp",
+      "url": "/uploads/articles/breast-cancer-radiation-dibh-heart.webp",
+      "name": "breast-cancer-radiation-dibh-heart.webp",
+      "alt": "Woman practicing deep inspiration breath hold beside a circular diagram of heart and expanded lungs for left-sided breast radiation protection",
+      "addedAt": "2026-11-12T14:20:00.000Z"
+    },
+    {
+      "id": "media_breast_cancer_radiation_linac_session_webp",
+      "url": "/uploads/articles/breast-cancer-radiation-linac-session.webp",
+      "name": "breast-cancer-radiation-linac-session.webp",
+      "alt": "Woman lying on a linear accelerator treatment couch during a breast cancer external beam radiation session",
+      "addedAt": "2026-11-12T14:20:00.000Z"
+    },
+    {
+      "id": "media_breast_cancer_radiation_skin_recovery_webp",
+      "url": "/uploads/articles/breast-cancer-radiation-skin-recovery.webp",
+      "name": "breast-cancer-radiation-skin-recovery.webp",
+      "alt": "Woman resting during recovery beside a circular diagram representing gentle healing of radiation-treated breast skin",
+      "addedAt": "2026-11-12T14:20:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_breast_cancer_radiation_therapy_in_india",
+      "slug": "breast-cancer-radiation-therapy-in-india",
+      "title": "Breast Cancer Radiation Therapy in India: Types, Number of Sessions, Side Effects and Cost",
+      "excerpt": "Radiation therapy uses carefully planned radiation to destroy cancer cells in the breast, chest wall or nearby lymph nodes. This guide explains when it is recommended, different radiation techniques, treatment duration, side effects, cost and what international patients should know before travelling to India.",
+      "date": "12 Nov 2026",
+      "publishedAt": "2026-11-12T14:20:00.000Z",
+      "updatedAt": "2026-11-12T14:20:00.000Z",
+      "author": "GAF Healthcare Editorial",
+      "category": "Radiation Oncology",
+      "tags": [
+        "breast cancer",
+        "radiation therapy",
+        "radiotherapy",
+        "IMRT",
+        "DIBH",
+        "India",
+        "cost"
+      ],
+      "image": "/uploads/articles/breast-cancer-radiation-planning-overview.webp",
+      "imageAlt": "Woman on a CT simulation couch beside a circular diagram of conformal radiation beams targeting breast tissue while sparing nearby organs",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Breast Cancer Radiation Therapy in India: Cost, Sessions and Side Effects",
+      "seoDescription": "Learn about breast cancer radiation therapy in India, including IMRT, IGRT, DIBH, treatment sessions, side effects, recovery and cost.",
+      "canonical": "https://gaf.healthcare/blogs/breast-cancer-radiation-therapy-in-india",
+      "ogImage": "/uploads/articles/breast-cancer-radiation-planning-overview.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Breast cancer radiation therapy in India",
+        "Radiation therapy for breast cancer",
+        "Breast cancer radiotherapy cost in India",
+        "Breast cancer radiation treatment",
+        "How many radiation sessions are needed for breast cancer",
+        "Radiation after lumpectomy",
+        "Radiation after mastectomy",
+        "IMRT for breast cancer",
+        "DIBH radiation therapy",
+        "Side effects of breast cancer radiation",
+        "Radiation oncology hospitals in India"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Radiation therapy for breast cancer (existing guide)",
+          "href": "/blogs/radiation-therapy-for-breast-cancer"
+        },
+        {
+          "label": "Breast cancer radiation side effects",
+          "href": "/blogs/breast-cancer-radiation-side-effects"
+        },
+        {
+          "label": "External beam radiotherapy in India",
+          "href": "/treatments/external-beam-radiotherapy-in-india"
+        },
+        {
+          "label": "Brachytherapy in India",
+          "href": "/treatments/brachytherapy-in-india"
+        },
+        {
+          "label": "Breast cancer treatment in India",
+          "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Breast cancer surgery in India",
+          "href": "/blogs/breast-cancer-surgery-in-india"
+        },
+        {
+          "label": "Chemotherapy for breast cancer",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Hormone therapy for breast cancer",
+          "href": "/blogs/hormone-therapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Targeted therapy for breast cancer",
+          "href": "/blogs/targeted-therapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Breast cancer treatment options",
+          "href": "/blogs/breast-cancer-treatment-options"
+        },
+        {
+          "label": "Breast cancer stages",
+          "href": "/blogs/breast-cancer-stages"
+        },
+        {
+          "label": "Breast cancer diagnosis tests",
+          "href": "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2"
+        },
+        {
+          "label": "Lymphedema after breast cancer treatment",
+          "href": "/blogs/breast-cancer-lymphedema"
+        },
+        {
+          "label": "Breast cancer treatment cost in India",
+          "href": "/blogs/breast-cancer-treatment-cost-in-india"
+        },
+        {
+          "label": "International patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "EBRT cost sheet",
+          "href": "/costs/India/Radiation-Oncology/EBRT"
+        },
+        {
+          "label": "IMRT cost sheet",
+          "href": "/costs/India/Radiation-Oncology/IMRT"
+        },
+        {
+          "label": "Radiation oncologists in India",
+          "href": "/doctors/India/Radiation-Oncology"
+        },
+        {
+          "label": "Radiation oncology hospitals in India",
+          "href": "/hospitals/India/Radiation-Oncology"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"md-body\"><table><thead><tr><th>Question</th><th>Quick Answer</th></tr></thead><tbody><tr><td><strong>When is radiation used?</strong></td><td>Commonly after <a href=\"/costs/India/Surgical-Oncology/Lumpectomy\">lumpectomy</a>; after <a href=\"/costs/India/Surgical-Oncology/Mastectomy\">mastectomy</a> when recurrence risk is higher; also for selected nodes or symptom control</td></tr><tr><td><strong>Main technique</strong></td><td><a href=\"/costs/India/Radiation-Oncology/EBRT\">External beam radiotherapy (EBRT)</a>; selected patients may receive partial-breast approaches or <a href=\"/costs/India/Radiation-Oncology/Brachytherapy\">brachytherapy</a></td></tr><tr><td><strong>Sessions</strong></td><td>Often ~15–16 fractions (≈3 weeks); some plans ~25 fractions; selected patients may receive 5 fractions in 1 week</td></tr><tr><td><strong>Advanced delivery</strong></td><td><a href=\"/costs/India/Radiation-Oncology/IMRT\">IMRT</a>, <a href=\"/costs/India/Radiation-Oncology/IGRT\">IGRT</a>, VMAT and DIBH may be used when anatomy and dose goals require them</td></tr><tr><td><strong>GAF EBRT planning range</strong></td><td><a href=\"/costs/India/Radiation-Oncology/EBRT\">$1,000–$6,000+</a> · often 15–35 sessions</td></tr><tr><td><strong>IMRT / IGRT planning</strong></td><td><a href=\"/costs/India/Radiation-Oncology/IMRT\">IMRT $6,500–$14,500</a> · <a href=\"/costs/India/Radiation-Oncology/IGRT\">IGRT $7,200–$16,000</a></td></tr><tr><td><strong>Related side-effect guide</strong></td><td><a href=\"/blogs/breast-cancer-radiation-side-effects\">Breast cancer radiation side effects</a></td></tr><tr><td><strong>International stay</strong></td><td>Driven by fraction count — short-course plans need less time than longer courses</td></tr></tbody></table></div><p class=\"article-quick-answer__body\"><strong>Breast cancer radiation therapy in India</strong> is a local treatment that targets remaining breast tissue, the chest wall or selected lymph nodes after surgery, or specific sites of advanced disease. GAF planning for <a href=\"/costs/India/Radiation-Oncology/EBRT\">EBRT</a> is <strong>$1,000–$6,000+</strong> (often 15–35 sessions). These are partner planning ranges, not hospital quotations.</p><p class=\"article-quick-answer__body\"><strong>Important:</strong> Technique, dose and fraction number must be set by a radiation oncologist from the full pathology and surgical record. GAF Healthcare does not prescribe radiation.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "After breast cancer surgery, many patients are advised to undergo **radiation therapy**. For some it is an essential part of treatment. Others may not need it, depending on diagnosis and recurrence risk."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "Radiation therapy, also called radiotherapy, uses high-energy radiation to destroy cancer cells or stop them growing. It is a local treatment aimed at a specific area — remaining breast tissue, the chest wall or nearby lymph nodes — rather than circulating through the whole body like [chemotherapy](/blogs/chemotherapy-for-breast-cancer-in-india)."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "India has radiation oncology departments with linear accelerators and advanced planning systems. Technique choice depends on clinical need and hospital facilities. Related reading includes the existing [radiation therapy for breast cancer](/blogs/radiation-therapy-for-breast-cancer) guide, [radiation side effects](/blogs/breast-cancer-radiation-side-effects), [breast cancer surgery](/blogs/breast-cancer-surgery-in-india) and [treatment cost](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "GAF planning for [EBRT](/costs/India/Radiation-Oncology/EBRT) is **$1,000–$6,000+** (often 15–35 sessions). Named [radiation oncologists](/doctors/India/Radiation-Oncology) and [radiation oncology hospitals](/hospitals/India/Radiation-Oncology) can be filtered by city before travel."
+        },
+        {
+          "id": "btn_006",
+          "type": "button",
+          "label": "Ask GAF to review records for radiation planning",
+          "href": "/consult?treatment=Breast%20Cancer%20Radiation%20Therapy"
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with surgery notes and pathology](https://wa.me/919044346292?text=Please%20review%20my%20breast%20cancer%20surgery%20and%20pathology%20reports%20and%20advise%20on%20radiation%20therapy%20options%2C%20sessions%20and%20cost%20in%20India.)"
+        },
+        {
+          "id": "img_008",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-radiation-planning-overview.webp",
+          "alt": "Woman on a CT simulation couch beside a circular diagram of conformal radiation beams targeting breast tissue while sparing nearby organs",
+          "caption": "CT simulation and computer planning define the breast or chest-wall target before the first radiation session."
+        },
+        {
+          "id": "h_009",
+          "type": "heading",
+          "level": 2,
+          "text": "What is radiation therapy for breast cancer?"
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "Radiation damages the DNA of cancer cells so they cannot grow and divide. Planning aims to deliver the prescribed dose to the intended area while limiting exposure to nearby healthy organs."
+        },
+        {
+          "id": "ul_011",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Reduce recurrence risk in the breast after lumpectomy",
+            "Treat the chest wall after mastectomy in selected patients",
+            "Treat nearby lymph node regions when indicated",
+            "Treat a specific area where cancer has spread",
+            "Relieve pain or other symptoms in selected situations"
+          ]
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Radiation is often combined with surgery, chemotherapy, [hormone therapy](/blogs/hormone-therapy-for-breast-cancer-in-india) or [targeted treatment](/blogs/targeted-therapy-for-breast-cancer-in-india). It does not replace chemotherapy when systemic treatment is needed."
+        },
+        {
+          "id": "h_013",
+          "type": "heading",
+          "level": 2,
+          "text": "When is radiation therapy required for breast cancer?"
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 3,
+          "text": "Radiation after lumpectomy"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "Radiation is commonly recommended after breast-conserving surgery. [Lumpectomy](/costs/India/Surgical-Oncology/Lumpectomy) removes the tumour with a rim of tissue; radiation treats remaining breast tissue to lower the chance of cancer returning in the same breast."
+        },
+        {
+          "id": "h_016",
+          "type": "heading",
+          "level": 3,
+          "text": "Radiation after mastectomy"
+        },
+        {
+          "id": "p_017",
+          "type": "paragraph",
+          "text": "Not every patient needs radiation after [mastectomy](/costs/India/Surgical-Oncology/Mastectomy). Post-mastectomy radiation may be advised when recurrence risk in the chest wall or nodes is higher — for example larger tumours, multiple involved nodes, skin or chest-wall involvement, close or positive margins, or selected responses after neoadjuvant treatment."
+        },
+        {
+          "id": "h_018",
+          "type": "heading",
+          "level": 3,
+          "text": "Radiation for lymph node involvement"
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "When nodes are involved, radiation may cover axillary, supraclavicular or internal mammary regions as determined by the radiation oncologist."
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 3,
+          "text": "Radiation for metastatic breast cancer"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "For metastatic disease, radiation may control symptoms such as bone pain or treat selected brain or spine sites alongside systemic therapy."
+        },
+        {
+          "id": "btn_022",
+          "type": "button",
+          "label": "Request a second opinion on whether radiation is indicated",
+          "href": "/consult?treatment=Breast%20Cancer%20Radiation%20Second%20Opinion"
+        },
+        {
+          "id": "h_023",
+          "type": "heading",
+          "level": 2,
+          "text": "What are the different types of breast cancer radiation therapy?"
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 3,
+          "text": "External beam radiation therapy (EBRT)"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "EBRT is the most common approach. A linear accelerator directs shaped beams at the breast, chest wall, tumour bed or nodes. Patients do not become radioactive after standard EBRT. See [external beam radiotherapy in India](/treatments/external-beam-radiotherapy-in-india)."
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 3,
+          "text": "Whole-breast radiation therapy"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "Whole-breast radiation treats remaining breast tissue after conservation. Some patients also receive a boost dose to the tumour bed."
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 3,
+          "text": "Partial breast irradiation"
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "Selected patients with favourable features may receive radiation only around the tumour bed. Eligibility depends on size, margins, nodes, age and biology."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 3,
+          "text": "Chest wall radiation"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "After mastectomy, chest-wall radiation targets the surgical area and may include nodes when risk justifies treatment."
+        },
+        {
+          "id": "h_032",
+          "type": "heading",
+          "level": 3,
+          "text": "Brachytherapy"
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "[Brachytherapy](/treatments/brachytherapy-in-india) places a radiation source temporarily close to the tumour bed for selected partial-breast plans. It needs specialist equipment and expertise."
+        },
+        {
+          "id": "h_034",
+          "type": "heading",
+          "level": 2,
+          "text": "What are IMRT, IGRT, VMAT and 3D-CRT?"
+        },
+        {
+          "id": "ul_035",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**3D-CRT:** Shapes beams around the target using imaging and computer planning.",
+            "**IMRT:** Varies beam intensity to sculpt dose and reduce nearby-organ exposure when appropriate — GAF planning **$6,500–$14,500** on the [IMRT](/costs/India/Radiation-Oncology/IMRT) sheet.",
+            "**IGRT:** Uses imaging during treatment to verify position — GAF planning **$7,200–$16,000** on the [IGRT](/costs/India/Radiation-Oncology/IGRT) sheet.",
+            "**VMAT:** Delivers radiation while the machine rotates, changing shape and intensity during the arc."
+          ]
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "A more advanced machine name is not automatically better. Ask why a technique is recommended for your anatomy and dose goals."
+        },
+        {
+          "id": "h_037",
+          "type": "heading",
+          "level": 2,
+          "text": "What is DIBH radiation therapy for breast cancer?"
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "Deep inspiration breath hold (DIBH) may be used for selected left-sided breast plans. Holding a deep breath can move the heart farther from the chest wall and help reduce cardiac dose."
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "It is not required for everyone. Suitability depends on anatomy, the plan and the patient's ability to perform the breathing technique."
+        },
+        {
+          "id": "img_040",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-radiation-dibh-heart.webp",
+          "alt": "Woman practicing deep inspiration breath hold beside a circular diagram of heart and expanded lungs for left-sided breast radiation protection",
+          "caption": "DIBH can help reduce heart exposure during selected left-sided breast radiation plans."
+        },
+        {
+          "id": "h_041",
+          "type": "heading",
+          "level": 2,
+          "text": "How many radiation sessions are required for breast cancer?"
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "Radiation is delivered in fractions. Common schedules include:"
+        },
+        {
+          "id": "html_043",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Radiation approach</th><th>Typical treatment schedule</th></tr></thead><tbody><tr><td>Conventional whole-breast radiation</td><td>Often around 25 fractions over approximately 5 weeks</td></tr><tr><td>Moderate hypofractionation</td><td>Commonly around 15–16 fractions over approximately 3 weeks</td></tr><tr><td>Selected shorter whole-breast schedules</td><td>May involve 5 fractions over approximately 1 week</td></tr><tr><td>Partial breast irradiation</td><td>May involve a short course, depending on technique and eligibility</td></tr><tr><td>Regional lymph node radiation</td><td>Often delivered alongside breast or chest wall treatment</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "These are examples, not universal prescriptions. Hypofractionation uses a larger dose per visit with fewer sessions. Some carefully selected patients may complete whole-breast treatment in five fractions, but lymph-node or complex fields often need longer courses."
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "[WhatsApp GAF if you need help comparing fraction schedules before travel](https://wa.me/919044346292?text=I%20need%20guidance%20on%20breast%20cancer%20radiation%20session%20numbers%20and%20hypofractionation%20options%20in%20India.)"
+        },
+        {
+          "id": "h_046",
+          "type": "heading",
+          "level": 2,
+          "text": "What happens during radiation therapy planning?"
+        },
+        {
+          "id": "ol_047",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Consultation:** The radiation oncologist reviews diagnosis, surgery, pathology, prior treatment and imaging.",
+            "**CT simulation:** A CT scan in the treatment position maps the target and organs at risk.",
+            "**Positioning:** Supports and small skin marks help reproduce the same setup each day.",
+            "**Planning:** Dose, fractions, technique and organ constraints are calculated.",
+            "**Verification:** The plan is checked before the first treatment session."
+          ]
+        },
+        {
+          "id": "img_048",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-radiation-linac-session.webp",
+          "alt": "Woman lying on a linear accelerator treatment couch during a breast cancer external beam radiation session",
+          "caption": "Daily external beam sessions are usually outpatient and take only a few minutes of beam time."
+        },
+        {
+          "id": "h_049",
+          "type": "heading",
+          "level": 2,
+          "text": "What happens during a daily radiation session?"
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "Most EBRT is outpatient. The team positions the patient, verifies alignment, delivers the beam and the patient can usually leave afterwards. Beam-on time is often only a few minutes; positioning takes longer. The delivery itself is generally painless."
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 2,
+          "text": "Does radiation therapy hurt?"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Patients do not feel the radiation during delivery. Side effects such as skin redness, dryness, itching, breast tenderness, swelling and fatigue may build gradually over the course."
+        },
+        {
+          "id": "h_053",
+          "type": "heading",
+          "level": 2,
+          "text": "What are the side effects of breast cancer radiation therapy?"
+        },
+        {
+          "id": "ul_054",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Skin:** Redness, dryness, itching, darkening; sometimes peeling or soreness near the end of treatment.",
+            "**Breast changes:** Swelling, tenderness, later firmness or fibrosis in some patients.",
+            "**Fatigue:** Often increases toward the end of the course.",
+            "**Hair:** Usually not whole-scalp loss; may thin in a small field such as near the axilla.",
+            "**Lymphoedema:** Risk rises when nodes are irradiated after node surgery — see [lymphedema after breast cancer treatment](/blogs/breast-cancer-lymphedema).",
+            "**Lung / heart:** Occasional pneumonitis; left-sided plans need careful cardiac sparing, including DIBH when appropriate."
+          ]
+        },
+        {
+          "id": "p_055",
+          "type": "paragraph",
+          "text": "More detail sits on [breast cancer radiation side effects](/blogs/breast-cancer-radiation-side-effects)."
+        },
+        {
+          "id": "img_056",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-radiation-skin-recovery.webp",
+          "alt": "Woman resting during recovery beside a circular diagram representing gentle healing of radiation-treated breast skin",
+          "caption": "Skin reactions often peak near the end of treatment and settle over following weeks with guided care."
+        },
+        {
+          "id": "btn_057",
+          "type": "button",
+          "label": "Ask about side-effect support during radiation",
+          "href": "/consult?treatment=Breast%20Cancer%20Radiation%20Side%20Effects"
+        },
+        {
+          "id": "h_058",
+          "type": "heading",
+          "level": 2,
+          "text": "How should patients care for their skin during radiation therapy?"
+        },
+        {
+          "id": "ul_059",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Wash gently with lukewarm water; avoid scrubbing",
+            "Use only creams approved by the radiation team",
+            "Wear loose clothing; avoid tight bras that rub",
+            "Protect treated skin from direct sun",
+            "Avoid perfumes, harsh products, hot packs on the field",
+            "Report painful, wet, blistered or broken skin promptly"
+          ]
+        },
+        {
+          "id": "h_060",
+          "type": "heading",
+          "level": 2,
+          "text": "Can patients continue normal activities during radiation therapy?"
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "Many patients continue usual activities between outpatient sessions. Fatigue and skin irritation may increase later in the course. Rest, hydration, gentle activity and attending every scheduled fraction matter."
+        },
+        {
+          "id": "h_062",
+          "type": "heading",
+          "level": 2,
+          "text": "When does radiation therapy start after breast cancer surgery?"
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "Radiation usually starts after adequate wound healing. When chemotherapy is planned, radiation often follows chemotherapy. Hormone therapy and some targeted medicines may continue during radiation under specialist guidance. Do not change the sequence without the oncology team."
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 2,
+          "text": "Can radiation therapy be given after mastectomy and breast reconstruction?"
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "Yes, when indicated — but radiation can affect reconstructed tissue (firmness, skin changes, implant complications, shape change, healing issues). Surgeons, plastic surgeons and radiation oncologists should discuss likely radiation need before reconstruction whenever possible."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast cancer radiation therapy cost in India"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Cost varies with technique, fraction number, treatment area and hospital. Use GAF partner planning ranges — not invented rupee estimates — when comparing pathways:"
+        },
+        {
+          "id": "html_068",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Named pathway</th><th>GAF planning range in India</th><th>Typical schedule / stay</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Radiation-Oncology/EBRT\">External beam radiotherapy (EBRT)</a></td><td>$1,000–$6,000+</td><td>Often 15–35 sessions</td></tr><tr><td><a href=\"/costs/India/Radiation-Oncology/IMRT\">IMRT</a></td><td>$6,500–$14,500</td><td>About 4–7 weeks of fractions</td></tr><tr><td><a href=\"/costs/India/Radiation-Oncology/IGRT\">IGRT</a></td><td>$7,200–$16,000</td><td>About 4–7 weeks of fractions</td></tr><tr><td><a href=\"/costs/India/Radiation-Oncology/SBRT\">SBRT</a> (selected sites)</td><td>$8,000–$17,500</td><td>About 1–5 sessions</td></tr><tr><td><a href=\"/costs/India/Radiation-Oncology/Brachytherapy\">Brachytherapy</a></td><td>$5,500–$13,000</td><td>About 1–7 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Lumpectomy\">Lumpectomy</a></td><td>$3,500–$8,000</td><td>Typically 1–3 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Mastectomy\">Mastectomy</a></td><td>$4,500–$10,000</td><td>Typically 3–6 nights</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemotherapy</a></td><td>$1,500–$8,000+</td><td>Outpatient cycles</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "Ask for a written estimate covering consultation, CT simulation, planning, dosimetry and QA, delivery, image guidance, boost or nodal fields, follow-up and skin-care visits if billed separately. Wider context sits on [breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "btn_070",
+          "type": "button",
+          "label": "Request a written radiation-course estimate",
+          "href": "/consult?treatment=Breast%20Cancer%20Radiation%20Cost%20Estimate"
+        },
+        {
+          "id": "h_071",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast cancer radiation therapy in India for international patients"
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Patients from Tanzania, Kenya, Uganda, Ethiopia, Zambia, Iraq, Oman and other countries often combine India-based radiation with broader breast cancer care. Share biopsy and histopathology, ER/PR/HER2, operation notes, final pathology, prior chemo, imaging and any previous radiation records."
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Stay length follows the fraction schedule — short-course plans need less time than longer courses. City filters for [Delhi NCR](/doctors/India/Delhi-NCR/Radiation-Oncology), [Mumbai](/doctors/India/Mumbai/Radiation-Oncology), [Bengaluru](/doctors/India/Bengaluru/Radiation-Oncology), [Chennai](/doctors/India/Chennai/Radiation-Oncology) and [Hyderabad](/doctors/India/Hyderabad/Radiation-Oncology) radiation oncologists help shortlist campuses. Practical sequencing is covered in [international patient guidance](/blogs/breast-cancer-treatment-india-international-patients)."
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "If care continues abroad, obtain complete dose, field and remaining-fraction records before leaving. Transferring mid-course needs formal coordination between radiation oncologists."
+        },
+        {
+          "id": "btn_075",
+          "type": "button",
+          "label": "Start an international radiation records review",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "h_076",
+          "type": "heading",
+          "level": 2,
+          "text": "How to choose a radiation oncology hospital in India"
+        },
+        {
+          "id": "ul_077",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Radiation oncologist experience with breast cancer cases",
+            "Suitable linear accelerator and planning systems",
+            "CT simulation, image guidance and quality assurance",
+            "Heart and lung protection strategies for left-sided disease",
+            "DIBH availability when appropriate",
+            "Coordination with breast surgery and medical oncology",
+            "Transparent full-course cost estimates"
+          ]
+        },
+        {
+          "id": "h_078",
+          "type": "heading",
+          "level": 2,
+          "text": "Questions to ask your radiation oncologist"
+        },
+        {
+          "id": "ol_079",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Why is radiation recommended in my case?",
+            "Which area will receive radiation?",
+            "Will the whole breast or only part of it be treated?",
+            "Do I need radiation to the chest wall after mastectomy?",
+            "Will nearby lymph nodes be included?",
+            "How many sessions are planned?",
+            "Am I suitable for a shorter radiation schedule?",
+            "Is IMRT, VMAT or another technique appropriate?",
+            "Would DIBH help protect my heart?",
+            "What side effects should I expect?",
+            "How should I care for my skin?",
+            "Can I continue working during treatment?",
+            "What is the total estimated cost?",
+            "How will my treatment records be provided after completion?"
+          ]
+        },
+        {
+          "id": "h_080",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently asked questions about breast cancer radiation therapy in India"
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 3,
+          "text": "Is radiation therapy necessary after every breast cancer surgery?"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "No. Radiation is commonly recommended after lumpectomy and may be advised after mastectomy for selected patients. The decision depends on the stage, pathology, lymph node involvement and risk of recurrence."
+        },
+        {
+          "id": "h_083",
+          "type": "heading",
+          "level": 3,
+          "text": "How many radiation sessions are required for breast cancer?"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "The number varies. Some patients receive approximately 15–16 sessions, while selected patients may be suitable for five sessions. Others need a longer schedule depending on the treatment area and clinical requirements."
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 3,
+          "text": "Is radiation therapy painful?"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "External beam radiation is generally painless during delivery. Some patients develop skin irritation, breast tenderness or fatigue during treatment."
+        },
+        {
+          "id": "h_087",
+          "type": "heading",
+          "level": 3,
+          "text": "Does breast cancer radiation cause hair loss?"
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "Radiation usually does not cause hair loss across the scalp. Hair loss may occur in a small area directly exposed to radiation, depending on the treatment field."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 3,
+          "text": "Can radiation be given after mastectomy?"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Yes. Post-mastectomy radiation may be recommended for patients with certain high-risk features, including selected cases with lymph node involvement or larger tumours."
+        },
+        {
+          "id": "h_091",
+          "type": "heading",
+          "level": 3,
+          "text": "Can radiation therapy be given with chemotherapy?"
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "Radiation is often scheduled after chemotherapy when both treatments are required. The exact sequence depends on the patient's treatment plan. Selected hormone or targeted treatments may continue during radiation."
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 3,
+          "text": "What is DIBH radiation therapy?"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "Deep inspiration breath hold is a technique in which the patient holds a deep breath during radiation delivery. It may help move the heart away from the treatment area during left-sided breast radiation."
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the difference between IMRT and IGRT?"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "IMRT changes the intensity of radiation beams to shape the dose distribution. IGRT uses imaging to verify patient positioning and improve treatment accuracy. They serve different purposes and may be used together."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a patient travel during radiation therapy?"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Repeated travel during a radiation course may be difficult because treatment is usually delivered on scheduled days. Patients should discuss the practical implications with their radiation oncologist before making travel plans."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the cost of breast cancer radiation therapy in India?"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "GAF planning for EBRT is $1,000–$6,000+. IMRT planning is $6,500–$14,500 and IGRT is $7,200–$16,000. Exact expense depends on technique, treatment area, fraction number and hospital."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast cancer return after radiation therapy?"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "Yes. Radiation reduces the risk of local recurrence but cannot eliminate it completely. Regular follow-up remains important."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "Does radiation therapy make a patient radioactive?"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "No. Patients receiving standard external beam radiation do not become radioactive and can generally be around family members after treatment. Internal radiation procedures have different precautions, which the treating team explains."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "Can radiation therapy be completed in India within one week?"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "Some selected patients may be eligible for a five-fraction schedule. Many patients require a longer course. The radiation oncologist determines the appropriate schedule."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 3,
+          "text": "When does radiation start after surgery?"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "Radiation usually begins after the surgical wound has healed. If chemotherapy is required, radiation is often scheduled after chemotherapy finishes."
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 3,
+          "text": "What is hypofractionated radiation?"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "Hypofractionation delivers a larger dose per session with fewer total sessions. For selected breast cancer patients it can provide effective treatment in a shorter overall course."
+        },
+        {
+          "id": "h_111",
+          "type": "heading",
+          "level": 3,
+          "text": "How should skin be cared for during radiation?"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "Wash gently with lukewarm water, use only team-approved creams, wear loose clothing, protect the area from sun and report painful, blistered or broken skin promptly."
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion"
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "Radiation therapy is an important part of breast cancer treatment for many patients, especially after breast-conserving surgery. It may also follow mastectomy or help control symptoms when cancer has spread."
+        },
+        {
+          "id": "p_115",
+          "type": "paragraph",
+          "text": "Modern planning targets the breast, chest wall and selected nodes while limiting exposure to nearby organs. Session numbers vary from short hypofractionated courses to longer schedules. A personalised radiation-oncology assessment is essential."
+        },
+        {
+          "id": "btn_116",
+          "type": "button",
+          "label": "Discuss the next radiation step with GAF Healthcare",
+          "href": "/consult?treatment=Breast%20Cancer%20Radiation%20Therapy"
+        },
+        {
+          "id": "h_117",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources and references"
+        },
+        {
+          "id": "ol_118",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "[National Cancer Institute — Radiation for Breast Cancer](https://www.cancer.gov/types/breast/treatment/radiation)",
+            "[American Cancer Society — Radiation for Breast Cancer](https://www.cancer.org/cancer/types/breast-cancer/treatment/radiation-for-breast-cancer.html)",
+            "[ICMR Standard Treatment Workflow for Breast Cancer](https://www.icmr.gov.in/icmrobject/custom_data/pdf/downloadable-books/STW_Vol_3_2022.pdf)",
+            "[NCCN Guidelines for Patients — Invasive Breast Cancer](https://vicc.org/sites/default/files/2026-09/breast-invasive-patient.pdf)",
+            "[National Cancer Institute — Breast Cancer Treatment (PDQ)](https://www.cancer.gov/types/breast/hp/breast-treatment-pdq)",
+            "[American College of Surgeons — Radiation Therapy After Breast Cancer Surgery](https://www.facs.org/for-patients/the-day-of-your-surgery/breast-cancer-surgery/self-care-and-therapy/radiation-therapy/)",
+            "[National Breast Cancer Foundation — Breast Cancer Radiation Therapy](https://www.nationalbreastcancer.org/breast-cancer-radiation-therapy/)"
+          ]
+        },
+        {
+          "id": "p_119",
+          "type": "paragraph",
+          "text": "*Medical disclaimer: This article is for educational purposes and does not replace an individual consultation with a radiation oncologist. The need for radiation, treatment area, dose, technique and number of sessions must be determined from the patient's diagnosis, surgery, pathology and overall treatment plan. GAF cost figures are partner planning ranges, not fixed hospital quotations.*"
+        },
+        {
+          "id": "h_120",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Reading on GAF Healthcare"
+        },
+        {
+          "id": "ul_121",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Radiation therapy for breast cancer (existing guide)](/blogs/radiation-therapy-for-breast-cancer)",
+            "[Breast cancer radiation side effects](/blogs/breast-cancer-radiation-side-effects)",
+            "[External beam radiotherapy in India](/treatments/external-beam-radiotherapy-in-india)",
+            "[Brachytherapy in India](/treatments/brachytherapy-in-india)",
+            "[Breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india)",
+            "[Breast cancer surgery in India](/blogs/breast-cancer-surgery-in-india)",
+            "[Chemotherapy for breast cancer](/blogs/chemotherapy-for-breast-cancer-in-india)",
+            "[Hormone therapy for breast cancer](/blogs/hormone-therapy-for-breast-cancer-in-india)",
+            "[Targeted therapy for breast cancer](/blogs/targeted-therapy-for-breast-cancer-in-india)",
+            "[Breast cancer treatment options](/blogs/breast-cancer-treatment-options)",
+            "[Breast cancer stages](/blogs/breast-cancer-stages)",
+            "[Breast cancer diagnosis tests](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)",
+            "[Lymphedema after breast cancer treatment](/blogs/breast-cancer-lymphedema)",
+            "[Breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)",
+            "[International patients](/blogs/breast-cancer-treatment-india-international-patients)",
+            "[EBRT cost sheet](/costs/India/Radiation-Oncology/EBRT)",
+            "[IMRT cost sheet](/costs/India/Radiation-Oncology/IMRT)",
+            "[Radiation oncologists in India](/doctors/India/Radiation-Oncology)",
+            "[Radiation oncology hospitals in India](/hospitals/India/Radiation-Oncology)"
+          ]
+        }
+      ]
+    },
     {
       "id": "art_hormone_therapy_for_breast_cancer_in_india",
       "slug": "hormone-therapy-for-breast-cancer-in-india",
@@ -2716,6 +3624,10 @@
         {
           "label": "Medical oncology hospitals",
           "href": "/hospitals/India/Medical-Oncology"
+        },
+        {
+          "label": "Breast cancer radiation therapy in India",
+          "href": "/blogs/breast-cancer-radiation-therapy-in-india"
         }
       ],
       "blocks": [
@@ -3536,7 +4448,8 @@
             "[Targeted therapy in India](/treatments/targeted-therapy-in-india)",
             "[Hormone therapy cost sheet](/costs/India/Medical-Oncology/Hormone-Therapy)",
             "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
-            "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)"
+            "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
+            "[Breast Cancer Radiation Therapy in India](/blogs/breast-cancer-radiation-therapy-in-india)"
           ]
         }
       ]
@@ -88538,6 +89451,10 @@
         {
           "label": "International patients",
           "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "Breast cancer radiation therapy in India",
+          "href": "/blogs/breast-cancer-radiation-therapy-in-india"
         }
       ],
       "blocks": [
@@ -91941,6 +92858,10 @@
         {
           "label": "Breast Cancer Diagnosis",
           "href": "/blogs/breast-cancer-diagnosis"
+        },
+        {
+          "label": "Breast cancer radiation therapy in India",
+          "href": "/blogs/breast-cancer-radiation-therapy-in-india"
         }
       ],
       "blocks": [
@@ -93509,6 +94430,10 @@
         {
           "label": "International patients",
           "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "Breast cancer radiation therapy in India",
+          "href": "/blogs/breast-cancer-radiation-therapy-in-india"
         }
       ],
       "blocks": [
@@ -101917,6 +102842,10 @@
         {
           "label": "Breast Cancer Diagnosis",
           "href": "/blogs/breast-cancer-diagnosis"
+        },
+        {
+          "label": "Breast cancer radiation therapy in India",
+          "href": "/blogs/breast-cancer-radiation-therapy-in-india"
         }
       ],
       "blocks": [
@@ -102547,7 +103476,8 @@
             "[Chemotherapy in India](/treatments/chemotherapy-in-india)",
             "[Breast Reconstruction Treatment](/treatments/breast-reconstruction-in-india)",
             "[Breast Cancer Symptoms](/blogs/breast-cancer-symptoms)",
-            "[Breast Cancer Treatment Options](/blogs/breast-cancer-treatment-options)"
+            "[Breast Cancer Treatment Options](/blogs/breast-cancer-treatment-options)",
+            "[Breast Cancer Radiation Therapy in India](/blogs/breast-cancer-radiation-therapy-in-india)"
           ]
         },
         {
