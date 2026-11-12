@@ -151,7 +151,8 @@
     "ER PR HER2",
     "CDK4/6",
     "PARP",
-    "DIBH"
+    "DIBH",
+    "adjuvant"
   ],
   "media": [
     {
@@ -2624,9 +2625,865 @@
       "name": "breast-cancer-radiation-skin-recovery.webp",
       "alt": "Woman resting during recovery beside a circular diagram representing gentle healing of radiation-treated breast skin",
       "addedAt": "2026-11-12T14:20:00.000Z"
+    },
+    {
+      "id": "media_breast_cancer_chemo_infusion_overview_webp",
+      "url": "/uploads/articles/breast-cancer-chemo-infusion-overview.webp",
+      "name": "breast-cancer-chemo-infusion-overview.webp",
+      "alt": "Woman receiving outpatient breast cancer chemotherapy infusion beside a circular diagram of systemic medicine reaching cancer cells",
+      "addedAt": "2026-11-12T14:40:00.000Z"
+    },
+    {
+      "id": "media_breast_cancer_chemo_neoadjuvant_surgery_webp",
+      "url": "/uploads/articles/breast-cancer-chemo-neoadjuvant-surgery.webp",
+      "name": "breast-cancer-chemo-neoadjuvant-surgery.webp",
+      "alt": "Woman in clinic consultation beside a circular diagram illustrating breast tumour shrinkage before surgery after neoadjuvant chemotherapy",
+      "addedAt": "2026-11-12T14:40:00.000Z"
+    },
+    {
+      "id": "media_breast_cancer_chemo_blood_monitoring_webp",
+      "url": "/uploads/articles/breast-cancer-chemo-blood-monitoring.webp",
+      "name": "breast-cancer-chemo-blood-monitoring.webp",
+      "alt": "Woman having blood tests reviewed before a breast cancer chemotherapy cycle beside a circular blood-cell monitoring diagram",
+      "addedAt": "2026-11-12T14:40:00.000Z"
+    },
+    {
+      "id": "media_breast_cancer_chemo_side_effects_support_webp",
+      "url": "/uploads/articles/breast-cancer-chemo-side-effects-support.webp",
+      "name": "breast-cancer-chemo-side-effects-support.webp",
+      "alt": "Woman resting after chemotherapy with supportive care items beside a circular diagram representing recovery from treatment side effects",
+      "addedAt": "2026-11-12T14:40:00.000Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_breast_cancer_chemotherapy_in_india",
+      "slug": "breast-cancer-chemotherapy-in-india",
+      "title": "Breast Cancer Chemotherapy in India: Types of Drugs, Number of Cycles, Side Effects and Cost",
+      "excerpt": "Chemotherapy is an important treatment for certain types and stages of breast cancer. This guide explains when it is recommended, commonly used medicines, treatment cycles, side effects, recovery and the cost of breast cancer chemotherapy in India.",
+      "date": "12 Nov 2026",
+      "publishedAt": "2026-11-12T14:40:00.000Z",
+      "updatedAt": "2026-11-12T14:40:00.000Z",
+      "author": "GAF Healthcare Editorial",
+      "category": "Medical Oncology",
+      "tags": [
+        "breast cancer",
+        "chemotherapy",
+        "neoadjuvant",
+        "adjuvant",
+        "India",
+        "cost"
+      ],
+      "image": "/uploads/articles/breast-cancer-chemo-infusion-overview.webp",
+      "imageAlt": "Woman receiving outpatient breast cancer chemotherapy infusion beside a circular diagram of systemic medicine reaching cancer cells",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Breast Cancer Chemotherapy in India: Cycles, Drugs, Side Effects & Cost",
+      "seoDescription": "Understand breast cancer chemotherapy in India, including common drug combinations, number of cycles, treatment duration, side effects, cost and recovery.",
+      "canonical": "https://gaf.healthcare/blogs/breast-cancer-chemotherapy-in-india",
+      "ogImage": "/uploads/articles/breast-cancer-chemo-infusion-overview.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Breast cancer chemotherapy in India",
+        "Chemotherapy for breast cancer",
+        "Breast cancer chemotherapy cost in India",
+        "Breast cancer chemotherapy drugs",
+        "How many chemotherapy cycles are needed for breast cancer",
+        "Chemotherapy before breast cancer surgery",
+        "Chemotherapy after breast cancer surgery",
+        "Side effects of breast cancer chemotherapy",
+        "Chemotherapy hospitals in India",
+        "Breast cancer treatment for international patients"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Chemotherapy for breast cancer (existing guide)",
+          "href": "/blogs/chemotherapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Breast cancer chemotherapy side effects",
+          "href": "/blogs/breast-cancer-chemotherapy-side-effects"
+        },
+        {
+          "label": "Chemotherapy in India",
+          "href": "/treatments/chemotherapy-in-india"
+        },
+        {
+          "label": "Neoadjuvant chemotherapy in India",
+          "href": "/treatments/neoadjuvant-chemotherapy-in-india"
+        },
+        {
+          "label": "Adjuvant chemotherapy in India",
+          "href": "/treatments/adjuvant-chemotherapy-in-india"
+        },
+        {
+          "label": "Breast cancer treatment in India",
+          "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Breast cancer surgery in India",
+          "href": "/blogs/breast-cancer-surgery-in-india"
+        },
+        {
+          "label": "Breast cancer radiation therapy in India",
+          "href": "/blogs/breast-cancer-radiation-therapy-in-india"
+        },
+        {
+          "label": "Hormone therapy for breast cancer",
+          "href": "/blogs/hormone-therapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Targeted therapy for breast cancer",
+          "href": "/blogs/targeted-therapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "HER2-positive breast cancer treatment",
+          "href": "/blogs/her2-positive-breast-cancer-treatment-india"
+        },
+        {
+          "label": "ER, PR and HER2 results",
+          "href": "/blogs/er-pr-her2-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Breast cancer treatment options",
+          "href": "/blogs/breast-cancer-treatment-options"
+        },
+        {
+          "label": "Breast cancer stages",
+          "href": "/blogs/breast-cancer-stages"
+        },
+        {
+          "label": "Breast cancer diagnosis tests",
+          "href": "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2"
+        },
+        {
+          "label": "Breast cancer treatment cost in India",
+          "href": "/blogs/breast-cancer-treatment-cost-in-india"
+        },
+        {
+          "label": "International patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "Chemotherapy cost sheet",
+          "href": "/costs/India/Medical-Oncology/Chemotherapy"
+        },
+        {
+          "label": "Medical oncology doctors",
+          "href": "/doctors/India/Medical-Oncology"
+        },
+        {
+          "label": "Medical oncology hospitals",
+          "href": "/hospitals/India/Medical-Oncology"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"md-body\"><table><thead><tr><th>Question</th><th>Quick Answer</th></tr></thead><tbody><tr><td><strong>Who may need chemotherapy?</strong></td><td>Selected higher-risk, HER2-positive, triple-negative or node-positive cases — not every patient; see <a href=\"/blogs/er-pr-her2-breast-cancer-treatment-india\">ER/PR/HER2 results</a></td></tr><tr><td><strong>Before surgery</strong></td><td><a href=\"/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy\">Neoadjuvant chemotherapy</a> — $2,500–$10,000 · cycles before surgery · 2–4 months</td></tr><tr><td><strong>After surgery</strong></td><td><a href=\"/costs/India/Medical-Oncology/Adjuvant-Chemotherapy\">Adjuvant chemotherapy</a> — $2,500–$10,000 · cycles after surgery · 3–6 months</td></tr><tr><td><strong>Overall chemo planning</strong></td><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemotherapy</a> — $1,500–$8,000+ · outpatient cycles</td></tr><tr><td><strong>Typical early-stage cycles</strong></td><td>Often about 4–8 cycles over roughly 3–6 months; some regimens are weekly</td></tr><tr><td><strong>If HER2-targeted drugs are added</strong></td><td><a href=\"/costs/India/Medical-Oncology/Targeted-Therapy\">Targeted therapy</a> $8,000–$30,000 · see <a href=\"/blogs/her2-positive-breast-cancer-treatment-india\">HER2-positive guide</a></td></tr><tr><td><strong>If immunotherapy is added (selected TNBC)</strong></td><td><a href=\"/costs/India/Medical-Oncology/Immunotherapy\">Immunotherapy</a> $15,000–$45,000</td></tr><tr><td><strong>International patients</strong></td><td>Share full regimen records before travel; next cycle needs fresh clinical clearance</td></tr></tbody></table></div><p class=\"article-quick-answer__body\"><strong>Breast cancer chemotherapy in India</strong> is systemic treatment that travels through the bloodstream. GAF planning for <a href=\"/costs/India/Medical-Oncology/Chemotherapy\">chemotherapy</a> is <strong>$1,500–$8,000+</strong> (outpatient cycles). Named neoadjuvant and adjuvant pathways are each <strong>$2,500–$10,000</strong>. These are partner planning ranges, not hospital quotations.</p><p class=\"article-quick-answer__body\"><strong>Important:</strong> Regimens, doses and cycle counts must be prescribed by a medical oncologist. GAF Healthcare does not prescribe chemotherapy.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "A breast cancer diagnosis often raises an important question: will **chemotherapy** be necessary? For some patients it is essential. For others it may offer little additional benefit and can sometimes be avoided."
+        },
+        {
+          "id": "p_003",
+          "type": "paragraph",
+          "text": "The decision depends on stage, tumour size, lymph node involvement, hormone receptor status, HER2 status and overall health. Chemotherapy may be given before surgery to shrink a tumour, after surgery to reduce recurrence risk, or to control cancer that has spread."
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "India offers chemotherapy through specialist cancer centres and multidisciplinary hospitals. Related reading includes the existing [chemotherapy for breast cancer](/blogs/chemotherapy-for-breast-cancer-in-india) guide, [chemotherapy side effects](/blogs/breast-cancer-chemotherapy-side-effects), [ER/PR/HER2 results](/blogs/er-pr-her2-breast-cancer-treatment-india) and [breast cancer treatment cost](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "p_005",
+          "type": "paragraph",
+          "text": "GAF planning for [chemotherapy](/costs/India/Medical-Oncology/Chemotherapy) is **$1,500–$8,000+** (outpatient cycles). Named [neoadjuvant](/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy) and [adjuvant](/costs/India/Medical-Oncology/Adjuvant-Chemotherapy) pathways are each **$2,500–$10,000**. Filter [medical oncologists](/doctors/India/Medical-Oncology) and [hospitals](/hospitals/India/Medical-Oncology) by city before travel."
+        },
+        {
+          "id": "btn_006",
+          "type": "button",
+          "label": "Ask GAF to review pathology for chemotherapy planning",
+          "href": "/consult?treatment=Breast%20Cancer%20Chemotherapy"
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with biopsy, receptor and prior cycle records](https://wa.me/919044346292?text=Please%20review%20my%20breast%20cancer%20reports%20and%20advise%20on%20chemotherapy%20regimen%2C%20cycles%20and%20cost%20in%20India.)"
+        },
+        {
+          "id": "img_008",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-chemo-infusion-overview.webp",
+          "alt": "Woman receiving outpatient breast cancer chemotherapy infusion beside a circular diagram of systemic medicine reaching cancer cells",
+          "caption": "Most breast cancer chemotherapy is systemic treatment delivered as outpatient infusion cycles."
+        },
+        {
+          "id": "h_009",
+          "type": "heading",
+          "level": 2,
+          "text": "What is chemotherapy for breast cancer?"
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "Chemotherapy uses medicines to destroy cancer cells or stop them growing. Unlike surgery or [radiation](/blogs/breast-cancer-radiation-therapy-in-india), it travels through the bloodstream and can reach cancer cells in different parts of the body."
+        },
+        {
+          "id": "ul_011",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Destroy cells that may remain after surgery",
+            "Shrink a tumour before an operation",
+            "Improve chances of breast-conserving surgery in selected patients",
+            "Treat cancer involving nodes or distant sites",
+            "Control advanced or recurrent disease and reduce symptoms"
+          ]
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "It is not the same as [targeted therapy](/blogs/targeted-therapy-for-breast-cancer-in-india) or [hormone therapy](/blogs/hormone-therapy-for-breast-cancer-in-india), which may be used alongside chemotherapy in selected patients. See also [chemotherapy in India](/treatments/chemotherapy-in-india)."
+        },
+        {
+          "id": "h_013",
+          "type": "heading",
+          "level": 2,
+          "text": "Does every breast cancer patient need chemotherapy?"
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "No. Some early-stage, hormone receptor-positive, HER2-negative patients may be treated with surgery, radiation and hormone therapy without chemotherapy. Others benefit significantly when recurrence risk is higher."
+        },
+        {
+          "id": "ul_015",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Stage and nodes:** Larger tumours or node involvement raise the chance chemotherapy is considered, but stage alone does not decide it.",
+            "**Grade:** Higher-grade cancers may have greater recurrence risk.",
+            "**Hormone receptors:** ER/PR-positive disease may respond to endocrine therapy; some patients still need chemotherapy.",
+            "**HER2:** HER2-positive disease often combines chemotherapy with HER2-targeted medicines — see [HER2-positive treatment](/blogs/her2-positive-breast-cancer-treatment-india).",
+            "**Triple-negative:** Chemotherapy is central for many TNBC plans; selected cases also use immunotherapy.",
+            "**Genomic testing:** Selected HR-positive, HER2-negative patients may use genomic assays to estimate chemotherapy benefit."
+          ]
+        },
+        {
+          "id": "btn_016",
+          "type": "button",
+          "label": "Request a second opinion on chemotherapy eligibility",
+          "href": "/consult?treatment=Breast%20Cancer%20Chemotherapy%20Second%20Opinion"
+        },
+        {
+          "id": "h_017",
+          "type": "heading",
+          "level": 2,
+          "text": "When is chemotherapy given: before or after breast cancer surgery?"
+        },
+        {
+          "id": "h_018",
+          "type": "heading",
+          "level": 3,
+          "text": "Neoadjuvant chemotherapy (before surgery)"
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "[Neoadjuvant chemotherapy](/treatments/neoadjuvant-chemotherapy-in-india) may shrink the tumour, treat disease beyond the breast and improve surgical options. It is often considered for larger tumours, node-positive disease, selected HER2-positive or triple-negative cancers, or when conservation may become possible after response."
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 3,
+          "text": "Adjuvant chemotherapy (after surgery)"
+        },
+        {
+          "id": "p_021",
+          "type": "paragraph",
+          "text": "[Adjuvant chemotherapy](/treatments/adjuvant-chemotherapy-in-india) aims to destroy microscopic residual disease after [lumpectomy](/costs/India/Surgical-Oncology/Lumpectomy) or [mastectomy](/costs/India/Surgical-Oncology/Mastectomy) when pathology shows higher-risk features."
+        },
+        {
+          "id": "html_022",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Neoadjuvant chemotherapy</th><th>Adjuvant chemotherapy</th></tr></thead><tbody><tr><td>Timing</td><td>Before surgery</td><td>After surgery</td></tr><tr><td>Main purpose</td><td>Shrink tumour and treat disease before operation</td><td>Reduce recurrence risk after operation</td></tr><tr><td>Tumour response</td><td>Can be assessed before surgery</td><td>Assessed through pathology and follow-up</td></tr><tr><td>Surgical impact</td><td>May make breast conservation possible in selected cases</td><td>Does not reduce the original tumour before surgery</td></tr><tr><td>GAF planning range</td><td><a href=\"/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy\">$2,500–$10,000</a></td><td><a href=\"/costs/India/Medical-Oncology/Adjuvant-Chemotherapy\">$2,500–$10,000</a></td></tr></tbody></table></div>"
+        },
+        {
+          "id": "img_023",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-chemo-neoadjuvant-surgery.webp",
+          "alt": "Woman in clinic consultation beside a circular diagram illustrating breast tumour shrinkage before surgery after neoadjuvant chemotherapy",
+          "caption": "Neoadjuvant chemotherapy can shrink selected tumours before breast cancer surgery."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 2,
+          "text": "What chemotherapy drugs are used for breast cancer?"
+        },
+        {
+          "id": "ul_025",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Anthracyclines:** doxorubicin, epirubicin",
+            "**Taxanes:** paclitaxel, docetaxel, albumin-bound paclitaxel",
+            "**Alkylating agents:** cyclophosphamide",
+            "**Platinum agents:** carboplatin, cisplatin in selected plans including some TNBC settings",
+            "**Antimetabolites:** capecitabine, fluorouracil (5-FU), gemcitabine"
+          ]
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "These are examples, not a self-selection list. The oncologist sets medicine and dose."
+        },
+        {
+          "id": "h_027",
+          "type": "heading",
+          "level": 2,
+          "text": "Common chemotherapy combinations for breast cancer"
+        },
+        {
+          "id": "ul_028",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**AC:** doxorubicin + cyclophosphamide, sometimes followed by a taxane",
+            "**AC-T:** doxorubicin, cyclophosphamide and a taxane (paclitaxel or docetaxel)",
+            "**TC:** docetaxel + cyclophosphamide in selected patients",
+            "**TCHP:** docetaxel, carboplatin, trastuzumab and pertuzumab in selected HER2-positive plans — trastuzumab/pertuzumab are targeted medicines, not conventional chemo",
+            "**Selected early TNBC:** chemotherapy plus pembrolizumab immunotherapy when eligible"
+          ]
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "Patients should not choose a regimen from a list. Ask for a written calendar of medicines, doses and cycle dates."
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 2,
+          "text": "How many chemotherapy cycles are needed for breast cancer?"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "There is no fixed number for every patient. Many early-stage plans use about four to eight cycles over roughly three to six months. Some schedules are weekly or every two to three weeks."
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "A cycle includes treatment plus a rest period for healthy-cell recovery. Cycle count depends on the combination, subtype, neoadjuvant vs adjuvant setting, response, blood counts, organ function and side effects."
+        },
+        {
+          "id": "p_033",
+          "type": "paragraph",
+          "text": "[WhatsApp GAF if you need help comparing cycle schedules before travel](https://wa.me/919044346292?text=I%20need%20guidance%20on%20breast%20cancer%20chemotherapy%20cycle%20numbers%20and%20neoadjuvant%20versus%20adjuvant%20timing%20in%20India.)"
+        },
+        {
+          "id": "h_034",
+          "type": "heading",
+          "level": 2,
+          "text": "What happens during a chemotherapy session?"
+        },
+        {
+          "id": "ol_035",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Medical assessment of symptoms and prior side effects",
+            "Blood tests for haemoglobin, white cells, neutrophils, platelets, kidney and liver function",
+            "Pre-medication for nausea or infusion reactions when indicated",
+            "IV, port or oral administration of prescribed medicines",
+            "Observation and same-day discharge when clinically appropriate"
+          ]
+        },
+        {
+          "id": "img_036",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-chemo-blood-monitoring.webp",
+          "alt": "Woman having blood tests reviewed before a breast cancer chemotherapy cycle beside a circular blood-cell monitoring diagram",
+          "caption": "Blood counts are commonly checked before each cycle so treatment can proceed safely."
+        },
+        {
+          "id": "h_037",
+          "type": "heading",
+          "level": 2,
+          "text": "Does chemotherapy require hospital admission?"
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "Often no — many regimens are daycare infusions. Admission may be needed for prolonged monitoring, significant toxicity, infection or regimen-specific requirements. International patients should ask whether their plan is daycare and how long to stay near the hospital."
+        },
+        {
+          "id": "h_039",
+          "type": "heading",
+          "level": 2,
+          "text": "What are the side effects of breast cancer chemotherapy?"
+        },
+        {
+          "id": "ul_040",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Hair loss or thinning",
+            "Nausea and vomiting — anti-emetics are commonly prescribed",
+            "Fatigue",
+            "Low white-cell counts and infection risk; G-CSF may be used in selected cases",
+            "Mouth ulcers",
+            "Diarrhoea or constipation",
+            "Peripheral neuropathy (especially taxanes)",
+            "Nail and skin changes",
+            "Cardiac effects with selected anthracyclines; HER2 medicines also need heart monitoring",
+            "Fertility impact and early menopause risk — discuss preservation before starting"
+          ]
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "More detail sits on [breast cancer chemotherapy side effects](/blogs/breast-cancer-chemotherapy-side-effects)."
+        },
+        {
+          "id": "img_042",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-chemo-side-effects-support.webp",
+          "alt": "Woman resting after chemotherapy with supportive care items beside a circular diagram representing recovery from treatment side effects",
+          "caption": "Supportive medicines and early reporting of symptoms help keep chemotherapy on track."
+        },
+        {
+          "id": "btn_043",
+          "type": "button",
+          "label": "Ask about supportive care during chemotherapy",
+          "href": "/consult?treatment=Breast%20Cancer%20Chemotherapy%20Side%20Effects"
+        },
+        {
+          "id": "h_044",
+          "type": "heading",
+          "level": 2,
+          "text": "When should a patient contact the doctor during chemotherapy?"
+        },
+        {
+          "id": "ul_045",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Fever at or above the hospital threshold (often 38°C)",
+            "Chills, new cough or breathing difficulty",
+            "Persistent vomiting or severe diarrhoea",
+            "Unusual bleeding or bruising",
+            "Painful mouth ulcers preventing eating or drinking",
+            "Burning on urination, sudden weakness or confusion"
+          ]
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Fever during neutropenia can be an emergency — do not wait for the next appointment. Severe breathlessness, chest pain, fainting or confusion need urgent care."
+        },
+        {
+          "id": "h_047",
+          "type": "heading",
+          "level": 2,
+          "text": "How can patients manage chemotherapy side effects?"
+        },
+        {
+          "id": "ul_048",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Take anti-nausea and supportive medicines as prescribed",
+            "Maintain hydration and small regular meals when appetite falls",
+            "Follow the team's mouth-care routine",
+            "Monitor temperature as instructed",
+            "Balance rest with gentle activity when advised",
+            "Report new symptoms early — do not wait until the next cycle",
+            "Avoid herbal products or supplements without oncologist clearance"
+          ]
+        },
+        {
+          "id": "h_049",
+          "type": "heading",
+          "level": 2,
+          "text": "What happens after chemotherapy is completed?"
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "After neoadjuvant therapy, surgery timing and type depend on response and imaging. After adjuvant therapy, next steps may include [radiation](/blogs/breast-cancer-radiation-therapy-in-india), [hormone therapy](/blogs/hormone-therapy-for-breast-cancer-in-india), HER2-targeted treatment or other medicines. Follow-up covers exams, indicated blood tests, imaging and late-effect monitoring."
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast cancer chemotherapy cost in India"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Cost depends on medicines, cycles, hospital charges and supportive care. Use GAF partner planning ranges — not unsupported per-cycle rupee estimates:"
+        },
+        {
+          "id": "html_053",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Named pathway</th><th>GAF planning range in India</th><th>Typical schedule</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemotherapy</a></td><td>$1,500–$8,000+</td><td>Outpatient cycles · often 3–6 months</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Neoadjuvant-Chemotherapy\">Neoadjuvant chemotherapy</a></td><td>$2,500–$10,000</td><td>Cycles before surgery · 2–4 months</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Adjuvant-Chemotherapy\">Adjuvant chemotherapy</a></td><td>$2,500–$10,000</td><td>Cycles after surgery · 3–6 months</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Targeted-Therapy\">Targeted therapy</a></td><td>$8,000–$30,000</td><td>Medicine and duration dependent</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Immunotherapy\">Immunotherapy</a></td><td>$15,000–$45,000</td><td>Repeated outpatient treatment</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Hormone-Therapy\">Hormone therapy</a></td><td>$1,000–$4,500</td><td>Often years of tablets</td></tr><tr><td><a href=\"/costs/India/Radiation-Oncology/EBRT\">EBRT</a></td><td>$1,000–$6,000+</td><td>Often 15–35 sessions</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Lumpectomy\">Lumpectomy</a></td><td>$3,500–$8,000</td><td>Typically 1–3 nights</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Mastectomy\">Mastectomy</a></td><td>$4,500–$10,000</td><td>Typically 3–6 nights</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "Targeted therapy and immunotherapy are often billed separately and can change totals substantially. Request a written estimate covering regimen, doses, cycle count, supportive medicines, labs, daycare fees and what happens financially if the plan changes. Wider context: [breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "btn_055",
+          "type": "button",
+          "label": "Request a written chemotherapy-course estimate",
+          "href": "/consult?treatment=Breast%20Cancer%20Chemotherapy%20Cost%20Estimate"
+        },
+        {
+          "id": "h_056",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast cancer chemotherapy in India for international patients"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "Patients from Tanzania, Kenya, Uganda, Ethiopia, Zambia, Iraq, Oman and other countries may travel for oncology care. Share biopsy/histopathology, ER/PR/HER2, imaging, surgery records, prior medicines and doses, cycle dates, recent labs, current medicines and complication history before travel."
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "Continuation of an existing plan still needs fresh clinical review in India. City filters for [Delhi NCR](/doctors/India/Delhi-NCR/Medical-Oncology), [Mumbai](/doctors/India/Mumbai/Medical-Oncology), [Bengaluru](/doctors/India/Bengaluru/Medical-Oncology), [Chennai](/doctors/India/Chennai/Medical-Oncology) and [Hyderabad](/doctors/India/Hyderabad/Medical-Oncology) medical oncologists help shortlist campuses. Practical sequencing: [international patient guide](/blogs/breast-cancer-treatment-india-international-patients)."
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "Ask for consultation dates, chemo dates, blood-test schedule, observation needs and advice on travel between cycles. Shared care with a home-country oncologist needs a clear protocol and monitoring plan."
+        },
+        {
+          "id": "btn_060",
+          "type": "button",
+          "label": "Start an international chemotherapy records review",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment%20in%20India"
+        },
+        {
+          "id": "h_061",
+          "type": "heading",
+          "level": 2,
+          "text": "How to choose a hospital for breast cancer chemotherapy in India"
+        },
+        {
+          "id": "ul_062",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Medical oncology expertise in breast cancer",
+            "Dedicated daycare infusion facilities",
+            "Emergency support for infection and infusion reactions",
+            "Reliable pathology and biomarker testing",
+            "Multidisciplinary coordination with surgery and radiation",
+            "Supportive care for nutrition, pain and rehabilitation",
+            "Transparent written estimates for the full planned course"
+          ]
+        },
+        {
+          "id": "h_063",
+          "type": "heading",
+          "level": 2,
+          "text": "Questions to ask your medical oncologist before chemotherapy"
+        },
+        {
+          "id": "ol_064",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Why is chemotherapy recommended in my case?",
+            "What is my breast cancer subtype?",
+            "Is chemotherapy being given before or after surgery?",
+            "Which medicines will be used?",
+            "How many cycles are planned?",
+            "How frequently will I receive treatment?",
+            "What tests are needed before each cycle?",
+            "Which side effects are most likely with my medicines?",
+            "What should I do if I develop a fever?",
+            "Will I need injections to support my white blood cell count?",
+            "Could chemotherapy affect my fertility?",
+            "Will I need targeted therapy or immunotherapy?",
+            "What is the estimated cost of the complete treatment course?",
+            "What treatment is expected after chemotherapy?"
+          ]
+        },
+        {
+          "id": "h_065",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently asked questions about breast cancer chemotherapy in India"
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 3,
+          "text": "Is chemotherapy necessary for every breast cancer patient?"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "No. Some patients can be treated without chemotherapy. The decision depends on cancer stage, tumour biology, lymph node involvement and the estimated benefit of chemotherapy."
+        },
+        {
+          "id": "h_068",
+          "type": "heading",
+          "level": 3,
+          "text": "How many chemotherapy cycles are required for breast cancer?"
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "Many early-stage treatment plans involve approximately four to eight cycles, but the number varies according to the regimen and clinical situation. Some patients receive weekly treatment schedules."
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does breast cancer chemotherapy take?"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "Many neoadjuvant or adjuvant chemotherapy courses take approximately three to six months. Treatment for advanced breast cancer may continue for a different duration depending on response and side effects."
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 3,
+          "text": "Does chemotherapy cause hair loss?"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Some chemotherapy medicines cause substantial hair loss, while others cause thinning. Hair usually begins to grow back after treatment, although recovery varies."
+        },
+        {
+          "id": "h_074",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a patient work during chemotherapy?"
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "Some patients continue working, particularly if their work is flexible or desk-based. Others need time away because of fatigue, schedules or side effects."
+        },
+        {
+          "id": "h_076",
+          "type": "heading",
+          "level": 3,
+          "text": "Is chemotherapy painful?"
+        },
+        {
+          "id": "p_077",
+          "type": "paragraph",
+          "text": "Administration is not usually painful, although inserting an IV line can cause brief discomfort. Report pain, burning or swelling around an infusion site immediately."
+        },
+        {
+          "id": "h_078",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast cancer chemotherapy be given at home?"
+        },
+        {
+          "id": "p_079",
+          "type": "paragraph",
+          "text": "Some oral cancer medicines may be taken at home under medical supervision. Most intravenous chemotherapy requires administration in an appropriate healthcare facility."
+        },
+        {
+          "id": "h_080",
+          "type": "heading",
+          "level": 3,
+          "text": "Can chemotherapy be given after mastectomy?"
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "Yes. Adjuvant chemotherapy may be recommended after mastectomy if tumour characteristics indicate a meaningful benefit."
+        },
+        {
+          "id": "h_082",
+          "type": "heading",
+          "level": 3,
+          "text": "Can chemotherapy shrink a breast tumour?"
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "Yes. Neoadjuvant chemotherapy can reduce tumour size in some patients and may make breast-conserving surgery possible. Response varies between individuals."
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the cost of breast cancer chemotherapy in India?"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "GAF planning for chemotherapy is $1,500–$8,000+. Named neoadjuvant and adjuvant pathways are each $2,500–$10,000. Exact expense depends on regimen, cycles, hospital and any targeted or immunotherapy medicines."
+        },
+        {
+          "id": "h_086",
+          "type": "heading",
+          "level": 3,
+          "text": "Can international patients receive chemotherapy in India?"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "Yes, subject to medical assessment and hospital acceptance. Share biopsy, biomarker and previous treatment records before travelling."
+        },
+        {
+          "id": "h_088",
+          "type": "heading",
+          "level": 3,
+          "text": "What happens if chemotherapy is delayed?"
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "A delay may be needed for low blood counts, infection or other concerns. Never skip or reschedule a cycle without discussing it with the treatment team."
+        },
+        {
+          "id": "h_090",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the difference between neoadjuvant and adjuvant chemotherapy?"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "Neoadjuvant is given before surgery to shrink disease; adjuvant is given after surgery to reduce recurrence risk."
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 3,
+          "text": "Does chemotherapy include HER2-targeted medicines?"
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "Not always. HER2-targeted drugs such as trastuzumab or pertuzumab may be added for HER2-positive disease and are often billed separately from conventional chemotherapy."
+        },
+        {
+          "id": "h_094",
+          "type": "heading",
+          "level": 3,
+          "text": "When should I call the doctor during chemotherapy?"
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "Call promptly for fever at or above the hospital threshold, chills, breathing difficulty, persistent vomiting, severe diarrhoea, unusual bleeding, or inability to eat or drink because of mouth sores."
+        },
+        {
+          "id": "h_096",
+          "type": "heading",
+          "level": 3,
+          "text": "Will I need blood tests before each cycle?"
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "Blood counts and organ-function tests are commonly reviewed before each cycle so the oncologist can decide whether treatment can proceed safely."
+        },
+        {
+          "id": "h_098",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion"
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "Chemotherapy remains important for many breast cancer patients, but it is not required in every case. Timing may be neoadjuvant or adjuvant, and advanced disease may use chemotherapy for control."
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Patients planning treatment in India should understand the proposed medicines, cycle count, duration, side effects and complete cost — and receive an individualised plan from a qualified medical oncologist."
+        },
+        {
+          "id": "btn_101",
+          "type": "button",
+          "label": "Discuss the next chemotherapy step with GAF Healthcare",
+          "href": "/consult?treatment=Breast%20Cancer%20Chemotherapy"
+        },
+        {
+          "id": "h_102",
+          "type": "heading",
+          "level": 2,
+          "text": "Sources and references"
+        },
+        {
+          "id": "ol_103",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "[National Cancer Institute — Chemotherapy for Breast Cancer](https://www.cancer.gov/types/breast/treatment/chemotherapy)",
+            "[American Cancer Society — Chemotherapy for Breast Cancer](https://www.cancer.org/cancer/types/breast-cancer/treatment/chemotherapy-for-breast-cancer.html)",
+            "[ICMR Standard Treatment Workflows](https://www.icmr.gov.in/standard-treatment-workflows-stws)",
+            "[National Cancer Institute — Chemotherapy to Treat Cancer](https://www.cancer.gov/about-cancer/treatment/types/chemotherapy)",
+            "[NCCN Guidelines for Patients — Invasive Breast Cancer](https://vicc.org/sites/default/files/2026-09/breast-invasive-patient.pdf)",
+            "[American Cancer Society — Targeted Drug Therapy for Breast Cancer](https://www.cancer.org/cancer/types/breast-cancer/treatment/targeted-therapy-for-breast-cancer.html)",
+            "[National Cancer Institute — Breast Cancer Treatment](https://www.cancer.gov/types/breast/treatment)",
+            "[ASCO living guideline — Hormone Receptor-Positive, HER2-Negative Breast Cancer](https://ascopubs.org/doi/10.1200/JCO-26-02034)"
+          ]
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "*Medical disclaimer: This article is for educational purposes. Chemotherapy medicines, doses and schedules must be prescribed by a qualified medical oncologist after reviewing the patient's diagnosis, pathology, health and treatment history. GAF cost figures are partner planning ranges, not fixed hospital quotations.*"
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Reading on GAF Healthcare"
+        },
+        {
+          "id": "ul_106",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Chemotherapy for breast cancer (existing guide)](/blogs/chemotherapy-for-breast-cancer-in-india)",
+            "[Breast cancer chemotherapy side effects](/blogs/breast-cancer-chemotherapy-side-effects)",
+            "[Chemotherapy in India](/treatments/chemotherapy-in-india)",
+            "[Neoadjuvant chemotherapy in India](/treatments/neoadjuvant-chemotherapy-in-india)",
+            "[Adjuvant chemotherapy in India](/treatments/adjuvant-chemotherapy-in-india)",
+            "[Breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india)",
+            "[Breast cancer surgery in India](/blogs/breast-cancer-surgery-in-india)",
+            "[Breast cancer radiation therapy in India](/blogs/breast-cancer-radiation-therapy-in-india)",
+            "[Hormone therapy for breast cancer](/blogs/hormone-therapy-for-breast-cancer-in-india)",
+            "[Targeted therapy for breast cancer](/blogs/targeted-therapy-for-breast-cancer-in-india)",
+            "[HER2-positive breast cancer treatment](/blogs/her2-positive-breast-cancer-treatment-india)",
+            "[ER, PR and HER2 results](/blogs/er-pr-her2-breast-cancer-treatment-india)",
+            "[Breast cancer treatment options](/blogs/breast-cancer-treatment-options)",
+            "[Breast cancer stages](/blogs/breast-cancer-stages)",
+            "[Breast cancer diagnosis tests](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)",
+            "[Breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)",
+            "[International patients](/blogs/breast-cancer-treatment-india-international-patients)",
+            "[Chemotherapy cost sheet](/costs/India/Medical-Oncology/Chemotherapy)",
+            "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
+            "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)"
+          ]
+        }
+      ]
+    },
     {
       "id": "art_breast_cancer_radiation_therapy_in_india",
       "slug": "breast-cancer-radiation-therapy-in-india",
@@ -2744,6 +3601,10 @@
         {
           "label": "Radiation oncology hospitals in India",
           "href": "/hospitals/India/Radiation-Oncology"
+        },
+        {
+          "label": "Breast cancer chemotherapy in India",
+          "href": "/blogs/breast-cancer-chemotherapy-in-india"
         }
       ],
       "blocks": [
@@ -3501,7 +4362,8 @@
             "[EBRT cost sheet](/costs/India/Radiation-Oncology/EBRT)",
             "[IMRT cost sheet](/costs/India/Radiation-Oncology/IMRT)",
             "[Radiation oncologists in India](/doctors/India/Radiation-Oncology)",
-            "[Radiation oncology hospitals in India](/hospitals/India/Radiation-Oncology)"
+            "[Radiation oncology hospitals in India](/hospitals/India/Radiation-Oncology)",
+            "[Breast Cancer Chemotherapy in India](/blogs/breast-cancer-chemotherapy-in-india)"
           ]
         }
       ]
@@ -3628,6 +4490,10 @@
         {
           "label": "Breast cancer radiation therapy in India",
           "href": "/blogs/breast-cancer-radiation-therapy-in-india"
+        },
+        {
+          "label": "Breast cancer chemotherapy in India",
+          "href": "/blogs/breast-cancer-chemotherapy-in-india"
         }
       ],
       "blocks": [
@@ -4449,7 +5315,8 @@
             "[Hormone therapy cost sheet](/costs/India/Medical-Oncology/Hormone-Therapy)",
             "[Medical oncology doctors](/doctors/India/Medical-Oncology)",
             "[Medical oncology hospitals](/hospitals/India/Medical-Oncology)",
-            "[Breast Cancer Radiation Therapy in India](/blogs/breast-cancer-radiation-therapy-in-india)"
+            "[Breast Cancer Radiation Therapy in India](/blogs/breast-cancer-radiation-therapy-in-india)",
+            "[Breast Cancer Chemotherapy in India](/blogs/breast-cancer-chemotherapy-in-india)"
           ]
         }
       ]
@@ -90111,6 +90978,10 @@
         {
           "label": "Diagnosis",
           "href": "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2"
+        },
+        {
+          "label": "Breast cancer chemotherapy in India",
+          "href": "/blogs/breast-cancer-chemotherapy-in-india"
         }
       ],
       "blocks": [
@@ -93490,6 +94361,10 @@
         {
           "label": "International patients",
           "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "Breast cancer chemotherapy in India",
+          "href": "/blogs/breast-cancer-chemotherapy-in-india"
         }
       ],
       "blocks": [
@@ -102846,6 +103721,10 @@
         {
           "label": "Breast cancer radiation therapy in India",
           "href": "/blogs/breast-cancer-radiation-therapy-in-india"
+        },
+        {
+          "label": "Breast cancer chemotherapy in India",
+          "href": "/blogs/breast-cancer-chemotherapy-in-india"
         }
       ],
       "blocks": [
@@ -103477,7 +104356,8 @@
             "[Breast Reconstruction Treatment](/treatments/breast-reconstruction-in-india)",
             "[Breast Cancer Symptoms](/blogs/breast-cancer-symptoms)",
             "[Breast Cancer Treatment Options](/blogs/breast-cancer-treatment-options)",
-            "[Breast Cancer Radiation Therapy in India](/blogs/breast-cancer-radiation-therapy-in-india)"
+            "[Breast Cancer Radiation Therapy in India](/blogs/breast-cancer-radiation-therapy-in-india)",
+            "[Breast Cancer Chemotherapy in India](/blogs/breast-cancer-chemotherapy-in-india)"
           ]
         },
         {
