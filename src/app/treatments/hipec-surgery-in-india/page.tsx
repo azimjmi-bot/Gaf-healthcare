@@ -1129,6 +1129,25 @@ export default function HipecSurgeryPage() {
             </div>
           </section>
 
+          {/* Related reading — canonical CMS blog URLs */}
+          <section id="related-reading" className="hipec-section">
+            <h2>Related Reading</h2>
+            <p>
+              Patient guides that expand on peritoneal disease and the CRS-HIPEC pathway:
+            </p>
+            <ul className="hipec-related-list">
+              <li>
+                <a href="/blogs/what-is-hipec-surgery">What Is HIPEC Surgery?</a>
+              </li>
+              <li>
+                <a href="/blogs/peritoneal-metastases-treatment">Peritoneal Metastases Treatment</a>
+              </li>
+              <li>
+                <a href="/blogs/peritoneal-carcinomatosis">Peritoneal Carcinomatosis</a>
+              </li>
+            </ul>
+          </section>
+
           {/* 17. REFERENCES */}
           <section id="references" className="hipec-section hipec-section--muted">
             <h2>Medical and Scientific References</h2>
@@ -1208,6 +1227,9 @@ export default function HipecSurgeryPage() {
                 ["#cost", "Cost in India"],
                 ["#international", "For international patients"],
                 ["#faqs", "30 FAQs"],
+                ["/blogs/what-is-hipec-surgery", "What Is HIPEC Surgery?"],
+                ["/blogs/peritoneal-metastases-treatment", "Peritoneal metastases"],
+                ["/blogs/peritoneal-carcinomatosis", "Peritoneal carcinomatosis"],
               ].map(([href, label]) => (
                 <li key={href}>
                   <a href={href}>

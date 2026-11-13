@@ -5,7 +5,8 @@ import { whatsappHref } from "@/lib/site";
 
 export const dynamic = "force-static";
 
-const PAGE_URL = "/blog/what-is-hipec-surgery";
+// Canonical lives under /blogs/; next.config redirects /blog/... → /blogs/...
+const PAGE_URL = "/blogs/what-is-hipec-surgery";
 const SITE_URL = "https://gaf.healthcare";
 
 const WA_RECORDS = whatsappHref(

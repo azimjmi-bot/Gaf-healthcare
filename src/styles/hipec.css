@@ -777,6 +777,19 @@
   overflow-wrap: anywhere;
 }
 
+.hipec-related-list {
+  padding-left: 1.4rem;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin: 0.75rem 0 0;
+}
+
+.hipec-related-list a {
+  color: var(--gold);
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 /* ── FAQs (inherits treatment-faqs) ───────────────────────────── */
 .hipec-section .treatment-faqs details {
   border-bottom: 1px solid var(--border);
