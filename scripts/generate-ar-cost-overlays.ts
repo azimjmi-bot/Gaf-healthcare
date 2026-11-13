@@ -8,6 +8,7 @@
  */
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
+import { catalogSpecialtyName } from "../src/lib/catalog-links";
 import { catalogTreatments } from "../src/lib/treatments";
 import { TAXONOMY_AR } from "../src/lib/i18n/taxonomy-ar";
 import type { CatalogCms, TreatmentPatch } from "../src/lib/cms/catalog-types";
@@ -46,6 +47,8 @@ const PHRASES: Array<[RegExp, string]> = [
   [/nearby after listing/gi, "بالقرب من المستشفى بعد الإدراج بالقائمة"],
   [/then nearby recovery/gi, "ثم تعافٍ بالقرب من المستشفى"],
   [/outpatient lengthening in-city/gi, "مع متابعة التطويل خارج المستشفى داخل المدينة"],
+  // Infertility & IVF laboratory pathways (PGT, embryo freezing, biopsy).
+  [/Laboratory episode/gi, "حسب بروتوكول التحفيز ونقل الأجنة"],
   [/nearby/gi, "بالقرب من المستشفى"],
   [/of fractions/gi, "من الجلسات المجزأة"],
   [/sessions typical/gi, "جلسات عادةً"],
@@ -130,22 +133,26 @@ function includesFor(specialty: string, procedure: string) {
 const overlays: Record<string, TreatmentPatch> = { ...cms.treatmentOverrides };
 for (const treatment of catalogTreatments) {
   const procedure = label(treatment.name);
-  const specialty = label(
-    TAXONOMY_AR[treatment.category] ? treatment.category : treatment.specialtySlug
-      .split("-")
-      .map((part) => part[0]?.toUpperCase() + part.slice(1))
-      .join(" "),
-  );
+  // Use the catalog specialty name ("Infertility & IVF"), not a naive
+  // title-case of the slug ("Infertility Ivf"), so TAXONOMY_AR resolves.
+  const specialty = label(catalogSpecialtyName(treatment));
+  const previous = overlays[treatment.slug];
+  // Keep reviewed reader-facing copy stable across regenerations (hand-authored
+  // Infertility & IVF pathways). Only fill gaps for newly added treatments.
   overlays[treatment.slug] = {
-    status: overlays[treatment.slug]?.status ?? "published",
-    summary: `يعرض دليل GAF Healthcare نطاقًا تخطيطيًا لتكلفة ${procedure} في الهند ضمن ${specialty}، مع إمكانية التصفية حسب البلد والمدينة والتخصص والإجراء. تُستخدم الأرقام للمقارنة الأولية فقط؛ ويُحدَّد المسار المناسب بعد مراجعة التشخيص والتقارير والتصوير والحالة العامة.`,
-    stay: arabicStay(treatment.stay),
-    includes: includesFor(specialty, procedure),
-    conditions: [
+    status: previous?.status ?? "published",
+    summary:
+      previous?.summary ??
+      `يعرض دليل GAF Healthcare نطاقًا تخطيطيًا لتكلفة ${procedure} في الهند ضمن ${specialty}، مع إمكانية التصفية حسب البلد والمدينة والتخصص والإجراء. تُستخدم الأرقام للمقارنة الأولية فقط؛ ويُحدَّد المسار المناسب بعد مراجعة التشخيص والتقارير والتصوير والحالة العامة.`,
+    stay: previous?.stay ?? arabicStay(treatment.stay),
+    includes: previous?.includes ?? includesFor(specialty, procedure),
+    conditions: previous?.conditions ?? [
       `تقييم ملاءمة ${procedure} بعد مراجعة السجلات`,
       `تخطيط العلاج ضمن ${specialty}`,
     ],
-    notes: `النطاقات المنشورة لـ${procedure} مؤشرات تخطيط وليست عرض سعر أو ضمانًا للنتيجة. يؤكد اختصاصي مرخّص الخطة، ويصدر المستشفى عرضًا مفصلًا بعد مراجعة السجلات؛ ولا ينبغي حجز السفر اعتمادًا على السعر وحده.`,
+    notes:
+      previous?.notes ??
+      `النطاقات المنشورة لـ${procedure} مؤشرات تخطيط وليست عرض سعر أو ضمانًا للنتيجة. يؤكد اختصاصي مرخّص الخطة، ويصدر المستشفى عرضًا مفصلًا بعد مراجعة السجلات؛ ولا ينبغي حجز السفر اعتمادًا على السعر وحده.`,
   };
 }
 

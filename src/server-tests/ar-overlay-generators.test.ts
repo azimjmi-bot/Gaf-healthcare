@@ -22,9 +22,13 @@ const GENERATORS: { command: string; args: string[] }[] = [
   { command: "node", args: ["scripts/generate-ar-hospital-overlays.mjs"] },
 ];
 
-function runGenerators() {
+function runGenerators(cmsPath: string) {
   for (const generator of GENERATORS) {
-    execFileSync(generator.command, generator.args, { cwd: process.cwd(), stdio: "pipe" });
+    execFileSync(generator.command, generator.args, {
+      cwd: process.cwd(),
+      stdio: "pipe",
+      env: { ...process.env, CATALOG_CMS_PATH: cmsPath },
+    });
   }
 }
 
@@ -37,43 +41,51 @@ type Cms = {
 /**
  * These generators rebuild each patch from scratch, so anything they forget to
  * carry over is silently dropped. Losing status would send every reviewed
- * translation back to draft, which means a 404 on 323 live entity pages or
- * removal of 380 reviewed cost pathways, and nothing else in the suite would
+ * translation back to draft, which means a 404 on live entity pages or
+ * removal of reviewed cost pathways, and nothing else in the suite would
  * notice.
  *
- * Both tests restore the file in a finally block, so a failure cannot leave
- * the working tree dirty.
+ * Work on a temp copy via CATALOG_CMS_PATH so parallel suite members that
+ * read content/ar/catalog-cms.json never see a half-rewritten live file.
  */
 test("regenerating the Arabic overlays changes nothing when the source has not", () => {
-  const before = readFileSync(CMS_FILE, "utf8");
+  const directory = mkdtempSync(join(tmpdir(), "gaf-ar-overlay-idempotent-"));
+  const isolated = join(directory, "catalog-cms.json");
   try {
-    runGenerators();
-    assert.equal(readFileSync(CMS_FILE, "utf8"), before, "regeneration is not idempotent");
+    const before = readFileSync(CMS_FILE, "utf8");
+    writeFileSync(isolated, before);
+    runGenerators(isolated);
+    assert.equal(readFileSync(isolated, "utf8"), before, "regeneration is not idempotent");
   } finally {
-    writeFileSync(CMS_FILE, before);
+    rmSync(directory, { recursive: true, force: true });
   }
 });
 
 test("regenerating preserves the review status of every existing record", () => {
-  const before = readFileSync(CMS_FILE, "utf8");
+  const directory = mkdtempSync(join(tmpdir(), "gaf-ar-overlay-status-"));
+  const isolated = join(directory, "catalog-cms.json");
   try {
-    const cms = JSON.parse(before) as Cms;
+    const cms = JSON.parse(readFileSync(CMS_FILE, "utf8")) as Cms;
     const doctorSlug = Object.keys(cms.doctorOverrides)[0];
     const hospitalSlug = Object.keys(cms.hospitalOverrides)[0];
+    const doctorCount = Object.keys(cms.doctorOverrides).length;
     cms.doctorOverrides[doctorSlug].status = "draft";
     cms.hospitalOverrides[hospitalSlug].status = "reviewed";
-    writeFileSync(CMS_FILE, `${JSON.stringify(cms, null, 2)}\n`);
+    writeFileSync(isolated, `${JSON.stringify(cms, null, 2)}\n`);
 
-    runGenerators();
+    runGenerators(isolated);
 
-    const after = JSON.parse(readFileSync(CMS_FILE, "utf8")) as Cms;
+    const after = JSON.parse(readFileSync(isolated, "utf8")) as Cms;
     assert.equal(after.doctorOverrides[doctorSlug].status, "draft");
     assert.equal(after.hospitalOverrides[hospitalSlug].status, "reviewed");
 
     const untouched = Object.entries(after.doctorOverrides).filter(
       ([slug]) => slug !== doctorSlug,
     );
-    assert.equal(untouched.length, 2304);
+    // Pin to the live catalog size (currently 2400 after dentistry/fertility),
+    // not a stale absolute from before those overlays shipped.
+    assert.equal(untouched.length, doctorCount - 1);
+    assert.equal(Object.keys(after.doctorOverrides).length, doctorCount);
     for (const [slug, patch] of untouched) {
       assert.equal(patch.status, "published", slug);
     }
@@ -82,7 +94,7 @@ test("regenerating preserves the review status of every existing record", () => 
       assert.equal(patch.status, "published", slug);
     }
   } finally {
-    writeFileSync(CMS_FILE, before);
+    rmSync(directory, { recursive: true, force: true });
   }
 });
 
