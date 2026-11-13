@@ -88,10 +88,31 @@ const NULL_BODY_STATUS = new Set([101, 204, 205, 304]);
  * object so an immutable or already-cached header list is left unchanged,
  * and the HTML or object body is not rewritten.
  */
+const APEX_HOST = "gaf.healthcare";
+const WWW_HOST = `www.${APEX_HOST}`;
+
+/**
+ * Collapse www onto the apex host while keeping path and query. Runs before
+ * plain-HTTP upgrades so `http://www…` becomes one hop to `https://gaf…`.
+ */
+export function wwwToApexRedirect(request: Request): Response | null {
+  const url = new URL(request.url);
+  if (url.hostname.toLowerCase() !== WWW_HOST) return null;
+  url.hostname = APEX_HOST;
+  url.protocol = "https:";
+  return new Response(null, {
+    status: 301,
+    headers: {
+      location: url.toString(),
+      "cache-control": "public, max-age=300",
+    },
+  });
+}
+
 /**
  * The Worker answers the request itself, so the origin's HTTP-to-HTTPS
  * redirect no longer runs. Send each plain-HTTP request to the same host
- * and path on HTTPS. www stays on www.
+ * and path on HTTPS (www is handled by `wwwToApexRedirect` first).
  */
 export function sameHostHttpsRedirect(request: Request): Response | null {
   const url = new URL(request.url);
@@ -1114,6 +1135,8 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
 
   return {
     async fetch(request: Request, env: WorkerEnv, ctx: ExecutionContextLike): Promise<Response> {
+      const wwwRedirect = wwwToApexRedirect(request);
+      if (wwwRedirect) return withStagingRobots(wwwRedirect, env);
       const redirect = sameHostHttpsRedirect(request);
       if (redirect) return withStagingRobots(redirect, env);
       const { storage, envForNext } = install(env);

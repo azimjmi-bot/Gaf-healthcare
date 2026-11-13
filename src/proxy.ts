@@ -1,6 +1,10 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { LOCALE_HEADER, PATH_HEADER, isTargetLocale } from "@/lib/i18n/languages";
-import { LEGACY_GONE_HTML, isLegacyGonePath } from "@/lib/legacy-urls";
+import { resolveLegacyEntityPath } from "@/lib/legacy-entity";
+import { LEGACY_GONE_HTML, isLegacyGonePath, isLegacyWordpressQuery } from "@/lib/legacy-urls";
+
+const APEX_HOST = "gaf.healthcare";
+const WWW_HOST = `www.${APEX_HOST}`;
 
 const CMS_COOKIE = "gaf_cms";
 
@@ -96,18 +100,45 @@ function catalogCanonicalRedirect(request: NextRequest) {
   return NextResponse.redirect(url, 301);
 }
 
+function wwwToApexRedirect(request: NextRequest) {
+  const host = request.headers.get("host")?.split(":")[0]?.toLowerCase();
+  if (host !== WWW_HOST) return null;
+  const url = new URL(request.url);
+  url.hostname = APEX_HOST;
+  url.protocol = "https:";
+  return NextResponse.redirect(url, 301);
+}
+
 export async function proxy(request: NextRequest) {
+  const wwwRedirect = wwwToApexRedirect(request);
+  if (wwwRedirect) return wwwRedirect;
+
   const { pathname } = request.nextUrl;
   const parts = pathname.split("/").filter(Boolean);
   const head = parts[0];
 
+  if (isLegacyWordpressQuery(request.nextUrl.searchParams)) return legacyGone();
   if (isLegacyGonePath(pathname)) return legacyGone();
+  const entityDecision = resolveLegacyEntityPath(pathname);
+  if (entityDecision?.kind === "gone") return legacyGone();
+  if (entityDecision?.kind === "redirect") {
+    const url = request.nextUrl.clone();
+    url.pathname = entityDecision.destination;
+    return NextResponse.redirect(url, 301);
+  }
   const parenRedirect = catalogCanonicalRedirect(request);
   if (parenRedirect) return parenRedirect;
 
   if (head && isTargetLocale(head)) {
     const rest = parts.length > 1 ? `/${parts.slice(1).join("/")}` : "/";
     if (isLegacyGonePath(rest)) return legacyGone();
+    const localeEntity = resolveLegacyEntityPath(rest);
+    if (localeEntity?.kind === "gone") return legacyGone();
+    if (localeEntity?.kind === "redirect") {
+      const url = request.nextUrl.clone();
+      url.pathname = `/${head}${localeEntity.destination}`;
+      return NextResponse.redirect(url, 301);
+    }
     if (rest.startsWith("/cms") || rest.startsWith("/api")) {
       const url = request.nextUrl.clone();
       url.pathname = rest;

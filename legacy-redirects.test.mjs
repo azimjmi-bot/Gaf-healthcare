@@ -40,6 +40,7 @@ test("old WordPress sitemap names fold into the current sitemap", () => {
     "/page-sitemap.xml",
     "/category-sitemap.xml",
     "/post_tag-sitemap.xml",
+    "/sitemap-index.xml",
   ]) {
     assert.deepEqual(resolve(path), { destination: "/sitemap.xml", permanent: true }, path);
   }
@@ -48,19 +49,23 @@ test("old WordPress sitemap names fold into the current sitemap", () => {
   }
 });
 
-test("old content sections land on their successor", () => {
-  assert.equal(resolve("/doctor/dr-naresh-trehan").destination, "/doctors/dr-naresh-trehan");
-  assert.equal(resolve("/doctor/dr-inderjit-singh-parmar-2").destination, "/doctors");
-  assert.equal(resolve("/doctor/doctor-3").destination, "/doctors");
+test("old content section hubs still redirect; entity slugs are left for the proxy", () => {
+  assert.equal(resolve("/doctor").destination, "/doctors");
   assert.equal(resolve("/doctors2").destination, "/doctors");
-  assert.equal(resolve("/hospital/apollo-hospital").destination, "/hospitals");
-  assert.equal(resolve("/hospital/rgcirc-hospital").destination, "/hospitals");
+  assert.equal(resolve("/hospital").destination, "/hospitals");
   assert.equal(resolve("/hospital_country/india").destination, "/hospitals/India");
   assert.equal(resolve("/specialities/cancer/blood-cancer").destination, "/specialties");
   assert.equal(resolve("/specialities/ayurveda/abhyangam").destination, "/specialties");
   assert.equal(resolve("/treatments_detail").destination, "/treatments");
   assert.equal(resolve("/blog").destination, "/blogs");
-  assert.equal(resolve("/blog/some-old-post").destination, "/blogs");
+  // Single-segment entity paths are resolved in src/lib/legacy-entity.ts so
+  // unknown slugs can 410 without an intermediate plural hop.
+  assert.equal(resolve("/doctor/dr-naresh-trehan"), null);
+  assert.equal(resolve("/hospital/fortis-gurgaon"), null);
+  assert.equal(resolve("/blog/breast-cancer-surgery-in-india"), null);
+  assert.equal(resolve("/doctor/a/b"), null);
+  assert.equal(resolve("/hospital/a/b"), null);
+  assert.equal(resolve("/blog/2020/01/post"), null);
 });
 
 test("live routes are not caught by legacy redirects", () => {

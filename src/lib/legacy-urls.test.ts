@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { test } from "node:test";
-import { LEGACY_GONE_HTML, isLegacyGonePath } from "./legacy-urls";
+import { LEGACY_GONE_HTML, isLegacyGonePath, isLegacyWordpressQuery } from "./legacy-urls";
 
 test("old WordPress sitemap entries without a successor are gone", () => {
   for (const path of [
@@ -82,4 +82,20 @@ test("the 410 body is small, noindex and links back into the site", () => {
   assert.ok(LEGACY_GONE_HTML.length < 1024);
   assert.match(LEGACY_GONE_HTML, /name="robots" content="noindex"/);
   assert.match(LEGACY_GONE_HTML, /href="\/"/);
+});
+
+test("multi-segment singular section leftovers are gone", () => {
+  for (const path of ["/doctor/a/b", "/hospital/city/slug", "/blog/2020/01/old-post"]) {
+    assert.equal(isLegacyGonePath(path), true, path);
+  }
+  for (const path of ["/doctor/dr-naresh-trehan", "/hospital/apollo-delhi", "/blog/some-post"]) {
+    assert.equal(isLegacyGonePath(path), false, path);
+  }
+});
+
+test("WordPress p and page_id queries are treated as gone", () => {
+  assert.equal(isLegacyWordpressQuery(new URLSearchParams("p=123")), true);
+  assert.equal(isLegacyWordpressQuery(new URLSearchParams("page_id=5")), true);
+  assert.equal(isLegacyWordpressQuery(new URLSearchParams("page=2")), false);
+  assert.equal(isLegacyWordpressQuery(new URLSearchParams("hospital=apollo")), false);
 });

@@ -4,7 +4,10 @@
  * path-to-regexp syntax. Old URLs without a successor are answered 410 by
  * src/proxy.ts (see src/lib/legacy-urls.ts).
  *
- * Order matters: Next applies the first matching redirect.
+ * Order matters: Next applies the first matching redirect. next.config
+ * redirects run before the proxy, so singular `/doctor|/hospital|/blog/:slug`
+ * entity checks live in `src/lib/legacy-entity.ts` (proxy) — not here — so
+ * unknown slugs can 410 without bouncing through the plural route.
  */
 export const legacyRedirects = [
   // WordPress (core and Yoast) sitemap names still submitted or remembered by
@@ -16,15 +19,15 @@ export const legacyRedirects = [
     destination: "/sitemap.xml",
     permanent: true,
   },
-  // Old WordPress content sections
-  { source: "/doctor/dr-naresh-trehan", destination: "/doctors/dr-naresh-trehan", permanent: true },
-  { source: "/doctor/:path*", destination: "/doctors", permanent: true },
+  // Common hyphenated guess for the sitemap index (robots advertises underscore).
+  { source: "/sitemap-index.xml", destination: "/sitemap.xml", permanent: true },
+  // Old WordPress section hubs (entity slugs are resolved in the proxy).
+  { source: "/doctor", destination: "/doctors", permanent: true },
   { source: "/doctors2", destination: "/doctors", permanent: true },
-  { source: "/hospital/:path*", destination: "/hospitals", permanent: true },
+  { source: "/hospital", destination: "/hospitals", permanent: true },
   { source: "/hospital_country/india", destination: "/hospitals/India", permanent: true },
   { source: "/hospital_country/:path*", destination: "/hospitals", permanent: true },
   { source: "/specialities/:path+", destination: "/specialties", permanent: true },
   { source: "/treatments_detail", destination: "/treatments", permanent: true },
   { source: "/blog", destination: "/blogs", permanent: true },
-  { source: "/blog/:path*", destination: "/blogs", permanent: true },
 ];

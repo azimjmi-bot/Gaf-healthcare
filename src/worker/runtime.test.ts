@@ -13,6 +13,7 @@ import {
   bakedSitemapAssetPath,
   createWorker,
   sameHostHttpsRedirect,
+  wwwToApexRedirect,
   groupsForRequest,
   isPrivateAssetPath,
   STAGING_ROBOTS_TAG,
@@ -138,9 +139,9 @@ test("public requests hydrate only the editions the path can read; CMS requests 
 
 test("plain HTTP redirects to HTTPS on the same host and does not reach Next", async () => {
   assert.equal(sameHostHttpsRedirect(new Request("https://gaf.healthcare/doctors")), null);
-  const direct = sameHostHttpsRedirect(new Request("http://www.gaf.healthcare/ar?page=2"));
+  const direct = sameHostHttpsRedirect(new Request("http://gaf.healthcare/ar?page=2"));
   assert.equal(direct?.status, 301);
-  assert.equal(direct?.headers.get("location"), "https://www.gaf.healthcare/ar?page=2");
+  assert.equal(direct?.headers.get("location"), "https://gaf.healthcare/ar?page=2");
 
   const next = nextStub();
   const worker = createWorker(next.handler, quiet);
@@ -156,6 +157,32 @@ test("plain HTTP redirects to HTTPS on the same host and does not reach Next", a
   assert.equal(staging.status, 301);
   assert.equal(staging.headers.get("location"), "https://staging.gaf.healthcare/doctors");
   assert.equal(staging.headers.get("x-robots-tag"), "noindex, nofollow");
+});
+
+test("www collapses to the apex host and preserves path and query", async () => {
+  const httpsWww = wwwToApexRedirect(
+    new Request("https://www.gaf.healthcare/doctors/dr-anil-kumar-anand?utm=1"),
+  );
+  assert.equal(httpsWww?.status, 301);
+  assert.equal(
+    httpsWww?.headers.get("location"),
+    "https://gaf.healthcare/doctors/dr-anil-kumar-anand?utm=1",
+  );
+  const httpWww = wwwToApexRedirect(new Request("http://www.gaf.healthcare/ar?page=2"));
+  assert.equal(httpWww?.status, 301);
+  assert.equal(httpWww?.headers.get("location"), "https://gaf.healthcare/ar?page=2");
+  assert.equal(wwwToApexRedirect(new Request("https://gaf.healthcare/")), null);
+
+  const next = nextStub();
+  const worker = createWorker(next.handler, quiet);
+  const response = await worker.fetch(
+    new Request("https://www.gaf.healthcare/hospitals/apollo-delhi?ref=old"),
+    makeEnv(),
+    ctx(),
+  );
+  assert.equal(response.status, 301);
+  assert.equal(response.headers.get("location"), "https://gaf.healthcare/hospitals/apollo-delhi?ref=old");
+  assert.equal(next.seen.length, 0);
 });
 
 test("baked sitemap paths stay under the private asset prefix", () => {
@@ -1203,12 +1230,13 @@ test("tracking parameters share one cache entry and do not change the rendered U
   assert.equal(next.seen.length, 1);
 
   const www = await worker.fetch(new Request("https://www.gaf.healthcare/?utm_source=chatgpt.com"), env, ctx());
-  assert.equal(www.headers.get("x-gaf-html-cache"), "miss");
-  assert.equal(next.seen[1], "https://www.gaf.healthcare/");
+  assert.equal(www.status, 301);
+  assert.equal(www.headers.get("location"), "https://gaf.healthcare/?utm_source=chatgpt.com");
+  assert.equal(next.seen.length, 1, "www never reaches Next");
   const arabic = await worker.fetch(new Request("https://gaf.healthcare/ar?utm_source=chatgpt.com"), env, ctx());
   assert.equal(arabic.headers.get("x-gaf-html-cache"), "miss");
-  assert.equal(next.seen[2], "https://gaf.healthcare/ar");
-  assert.equal(next.seen.length, 3, "hostname and locale stay distinct");
+  assert.equal(next.seen[1], "https://gaf.healthcare/ar");
+  assert.equal(next.seen.length, 2, "apex locale stays distinct from tracking-stripped home");
 });
 
 test("content query parameters stay distinct while tracking parameters reuse that entry", async () => {
@@ -1522,7 +1550,7 @@ test("optimized images skip the HTML cache and the document render slots", async
 
   const widerContext = ctx();
   const wider = await worker.fetch(
-    new Request("https://www.gaf.healthcare/_next/image?url=%2Fimages%2Fhome-hero.webp&w=1080&q=60"),
+    new Request("https://gaf.healthcare/_next/image?url=%2Fimages%2Fhome-hero.webp&w=1080&q=60"),
     env,
     widerContext,
   );

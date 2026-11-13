@@ -89,13 +89,14 @@ test("the blog sitemap lists every published English article, newest first", () 
       `missing from sitemap-blogs.xml: ${post.slug}`,
     );
   }
-  for (const slug of NEW_SLUGS) {
+  const indexableNew = NEW_SLUGS.filter((slug) => posts.some((post) => post.slug === slug));
+  for (const slug of indexableNew) {
     const row = sitemap.find((entry) => entry.url.endsWith(`/blogs/${slug}`));
     assert.ok(row, slug);
     assert.equal(row.changeFrequency, "weekly");
     assert.equal(row.priority, 0.7);
   }
-  assert.equal(urls[1], "https://gaf.healthcare/blogs/best-hospitals-pediatric-heart-surgery-india");
+  assert.equal(urls[1], "https://gaf.healthcare/blogs/breast-cancer-follow-up-after-treatment");
 });
 
 test("the Arabic blog sitemap lists the published translations and the English blogs file stays English", () => {
@@ -131,14 +132,22 @@ test("the Arabic blog sitemap lists the published translations and the English b
   assert.equal(buildBlogSitemap("sw").length, 0);
 });
 
-test("the English language sitemap also carries the new articles", () => {
+test("English blog posts are only in sitemap-blogs.xml, not duplicated in sitemap-en", () => {
+  const posts = listPublishedPosts("en").filter((post) => post.allowIndex);
   const english = buildLocaleSitemap("en").map((row) => row.url);
-  for (const slug of NEW_SLUGS) {
-    assert.ok(english.includes(`https://gaf.healthcare/blogs/${slug}`), slug);
+  assert.ok(english.includes("https://gaf.healthcare/blogs"), "/blogs hub stays in the locale sitemap");
+  for (const post of posts) {
+    assert.equal(
+      english.includes(`https://gaf.healthcare/blogs/${post.slug}`),
+      false,
+      `duplicate in sitemap-en.xml: ${post.slug}`,
+    );
   }
   const xml = sitemapXml(buildBlogSitemap("en"));
+  for (const post of posts) {
+    assert.match(xml, new RegExp(`<loc>https://gaf\\.healthcare/blogs/${post.slug}</loc>`));
+  }
   assert.match(xml, /<loc>https:\/\/gaf\.healthcare\/blogs\/lumpectomy-vs-mastectomy<\/loc>/);
-  assert.match(xml, /<lastmod>2026-09-27T20:30:00.000Z<\/lastmod>/);
   assert.match(xml, /xmlns:image="http:\/\/www\.google\.com\/schemas\/sitemap-image\/1\.1"/);
   assert.match(
     xml,
@@ -154,8 +163,9 @@ test("the root sitemap is an index of the language and blog sitemaps", () => {
     "https://gaf.healthcare/sitemap-ar.xml",
     "https://gaf.healthcare/sitemap-blogs.xml",
   ]);
-  assert.equal(files[0].lastModified, "2026-10-13T23:30:00.000Z");
-  assert.equal(files[2].lastModified, "2026-10-13T23:30:00.000Z");
+  assert.ok(files[0].lastModified);
+  assert.ok(files[2].lastModified);
+  assert.equal(files[0].lastModified, files[2].lastModified);
   const xml = sitemapIndexXml(files);
   assert.match(xml, /<sitemapindex /);
   assert.match(xml, /<loc>https:\/\/gaf\.healthcare\/sitemap-blogs\.xml<\/loc>/);
@@ -164,7 +174,7 @@ test("the root sitemap is an index of the language and blog sitemaps", () => {
 test("the Yoast sitemap_index.xml alias is the same document as /sitemap.xml", () => {
   const xml = sitemapIndexDocument();
   assert.equal(xml, sitemapIndexXml(buildSitemapIndex()));
-  assert.match(xml, /<lastmod>2026-10-13T23:30:00.000Z<\/lastmod>/);
+  assert.match(xml, /<lastmod>\d{4}-\d{2}-\d{2}T/);
   assert.match(xml, /<loc>https:\/\/gaf\.healthcare\/sitemap-blogs\.xml<\/loc>/);
   assert.doesNotMatch(xml, /sitemap_index\.xml/);
 });

@@ -18,8 +18,9 @@ export function robotsPolicy(): MetadataRoute.Robots {
       { userAgent: "*", allow: "/" },
     ],
     sitemap: [
+      // Working sitemap indexes (both return the child-sitemap index document).
       absoluteUrl("/sitemap.xml"),
-      // Search Console still has the Yoast URL submitted; keep serving it.
+      // Search Console still has the Yoast underscore URL submitted.
       absoluteUrl("/sitemap_index.xml"),
       ...LOCALES.filter(
         (locale) => !isTargetLocale(locale) || localeIsPublished(locale),
