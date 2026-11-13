@@ -60,8 +60,8 @@ export function isLegacyGonePath(pathname: string): boolean {
   if (/\.php$/i.test(pathname)) return true;
   // WordPress exposes an RSS feed under every post, page and archive.
   if (parts[parts.length - 1] === "feed") return true;
-  // Singular section leftovers with no 1:1 slug mapping (entity redirects cover
-  // `/doctor|:hospital|:blog/:slug` only).
+  // Multi-segment singular leftovers. Single-segment entity slugs are resolved
+  // in `legacy-entity.ts` (301 when known, 410 when unknown).
   if ((first === "doctor" || first === "hospital" || first === "blog") && parts.length > 2) {
     return true;
   }

@@ -1,5 +1,6 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { LOCALE_HEADER, PATH_HEADER, isTargetLocale } from "@/lib/i18n/languages";
+import { resolveLegacyEntityPath } from "@/lib/legacy-entity";
 import { LEGACY_GONE_HTML, isLegacyGonePath, isLegacyWordpressQuery } from "@/lib/legacy-urls";
 
 const APEX_HOST = "gaf.healthcare";
@@ -118,12 +119,26 @@ export async function proxy(request: NextRequest) {
 
   if (isLegacyWordpressQuery(request.nextUrl.searchParams)) return legacyGone();
   if (isLegacyGonePath(pathname)) return legacyGone();
+  const entityDecision = resolveLegacyEntityPath(pathname);
+  if (entityDecision?.kind === "gone") return legacyGone();
+  if (entityDecision?.kind === "redirect") {
+    const url = request.nextUrl.clone();
+    url.pathname = entityDecision.destination;
+    return NextResponse.redirect(url, 301);
+  }
   const parenRedirect = catalogCanonicalRedirect(request);
   if (parenRedirect) return parenRedirect;
 
   if (head && isTargetLocale(head)) {
     const rest = parts.length > 1 ? `/${parts.slice(1).join("/")}` : "/";
     if (isLegacyGonePath(rest)) return legacyGone();
+    const localeEntity = resolveLegacyEntityPath(rest);
+    if (localeEntity?.kind === "gone") return legacyGone();
+    if (localeEntity?.kind === "redirect") {
+      const url = request.nextUrl.clone();
+      url.pathname = `/${head}${localeEntity.destination}`;
+      return NextResponse.redirect(url, 301);
+    }
     if (rest.startsWith("/cms") || rest.startsWith("/api")) {
       const url = request.nextUrl.clone();
       url.pathname = rest;

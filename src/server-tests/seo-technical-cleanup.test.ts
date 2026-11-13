@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
 import { robotsPolicy, robotsTxtBody } from "@/lib/robots-policy";
+import { resolveLegacyEntityPath } from "@/lib/legacy-entity";
 import { isLegacyGonePath, isLegacyWordpressQuery } from "@/lib/legacy-urls";
 import {
   buildBlogSitemap,
@@ -46,4 +47,24 @@ test("legacy WordPress queries and multi-segment singular paths are gone", () =>
   assert.equal(isLegacyGonePath("/blog/2020/old"), true);
   assert.equal(isLegacyGonePath("/doctor/dr-naresh-trehan"), false);
   assert.equal(isLegacyGonePath("/doctors/dr-naresh-trehan"), false);
+});
+
+test("known singular entity slugs 301; unknown slugs are gone without a hub bounce", () => {
+  assert.deepEqual(resolveLegacyEntityPath("/doctor/dr-naresh-trehan"), {
+    kind: "redirect",
+    destination: "/doctors/dr-naresh-trehan",
+  });
+  assert.deepEqual(resolveLegacyEntityPath("/hospital/fortis-gurgaon"), {
+    kind: "redirect",
+    destination: "/hospitals/fortis-gurgaon",
+  });
+  assert.deepEqual(resolveLegacyEntityPath("/blog/breast-cancer-surgery-in-india"), {
+    kind: "redirect",
+    destination: "/blogs/breast-cancer-surgery-in-india",
+  });
+  assert.equal(resolveLegacyEntityPath("/doctor/no-such-doctor-slug").kind, "gone");
+  assert.equal(resolveLegacyEntityPath("/hospital/no-such-hospital-slug").kind, "gone");
+  assert.equal(resolveLegacyEntityPath("/blog/no-such-blog-slug").kind, "gone");
+  assert.equal(resolveLegacyEntityPath("/doctor"), null);
+  assert.equal(resolveLegacyEntityPath("/doctors/dr-naresh-trehan"), null);
 });
