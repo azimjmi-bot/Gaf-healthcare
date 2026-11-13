@@ -110598,6 +110598,1846 @@
           "text": "Once records are in, the named radiation oncologist meets you on camera. Fractions, energy, and whether you should stay home are decided there — then travel is built around the first simulation slot. City-level planning ranges and technique notes sit on the External Beam Radiation Therapy cost page."
         }
       ]
+    },
+    {
+      "id": "art_what_is_hipec_surgery",
+      "slug": "what-is-hipec-surgery",
+      "title": "What Is HIPEC Surgery? A Complete Guide to Heated Chemotherapy and Treatment in India",
+      "excerpt": "HIPEC surgery combines cytoreductive surgery with heated chemotherapy delivered directly into the abdominal cavity. India offers specialist surgical oncology evaluation and CRS-HIPEC treatment for carefully selected patients with peritoneal malignancies. Discover how the procedure works, which cancers may benefit, eligibility criteria, treatment costs, recovery and how international patients can access treatment in India.",
+      "date": "2026-11-09",
+      "publishedAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "HIPEC",
+        "Peritoneal Cancer",
+        "Cancer Treatment India",
+        "CRS-HIPEC",
+        "Heated Chemotherapy"
+      ],
+      "image": "/treatments/hipec-procedure-illustration.webp",
+      "imageAlt": "HIPEC procedure illustration showing heated chemotherapy circulating inside the abdominal cavity",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "What Is HIPEC Surgery? Procedure, Benefits & Treatment in India",
+      "seoDescription": "Learn what HIPEC surgery is, how heated chemotherapy works, eligible cancers, risks, recovery and access to specialist HIPEC treatment in India.",
+      "canonical": "https://gaf.healthcare/blogs/what-is-hipec-surgery",
+      "ogImage": "/treatments/hipec-procedure-illustration.webp",
+      "allowIndex": true,
+      "keywords": [
+        "What is HIPEC surgery",
+        "HIPEC surgery in India",
+        "HIPEC treatment in India",
+        "Hyperthermic intraperitoneal chemotherapy",
+        "CRS HIPEC treatment",
+        "HIPEC procedure",
+        "heated chemotherapy for cancer",
+        "HIPEC surgery cost in India",
+        "peritoneal carcinomatosis treatment",
+        "HIPEC eligibility criteria",
+        "HIPEC for ovarian cancer",
+        "HIPEC for colon cancer",
+        "HIPEC recovery time"
+      ],
+      "relatedLinks": [
+        {
+          "label": "HIPEC Surgery in India – Full Treatment Guide",
+          "href": "/treatments/hipec-surgery-in-india"
+        },
+        {
+          "label": "More Cancer Treatment Articles",
+          "href": "/blogs"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "hipec_b_qa0",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>HIPEC (Hyperthermic Intraperitoneal Chemotherapy) is a specialised cancer treatment in which heated chemotherapy is circulated directly inside the abdominal cavity after surgeons remove visible cancer deposits through cytoreductive surgery (CRS). It is used for selected cancers affecting the peritoneum — the lining of the abdominal cavity — including pseudomyxoma peritonei, ovarian cancer, colorectal peritoneal metastases and peritoneal mesothelioma.</p></div></aside>"
+        },
+        {
+          "id": "hipec_b_btn0",
+          "type": "button",
+          "label": "Share medical records for a HIPEC specialist opinion",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20share%20my%20medical%20records%20for%20a%20specialist%20HIPEC%20treatment%20opinion%20in%20India."
+        },
+        {
+          "id": "hipec_b_toc",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-is-hipec-surgery\">1. What Is HIPEC Surgery?</a></li><li><a href=\"#2-what-does-hipec-stand-for\">2. What Does HIPEC Stand For?</a></li><li><a href=\"#3-understanding-the-peritoneum\">3. Understanding the Peritoneum</a></li><li><a href=\"#4-how-does-hipec-surgery-work\">4. How Does HIPEC Work?</a></li><li><a href=\"#5-why-is-chemotherapy-heated\">5. Why Is Chemotherapy Heated?</a></li><li><a href=\"#6-which-cancers-can-be-treated-with-hipec\">6. Which Cancers Can Be Treated With HIPEC?</a></li><li><a href=\"#7-who-is-eligible-for-hipec\">7. Who Is Eligible for HIPEC?</a></li><li><a href=\"#8-what-is-the-pci\">8. What Is the Peritoneal Cancer Index?</a></li><li><a href=\"#9-the-procedure-step-by-step\">9. The Procedure Step by Step</a></li><li><a href=\"#10-hipec-vs-conventional-chemotherapy\">10. HIPEC vs Conventional Chemotherapy</a></li><li><a href=\"#11-hipec-vs-pipac\">11. HIPEC vs PIPAC</a></li><li><a href=\"#12-chemotherapy-drugs-used-in-hipec\">12. Chemotherapy Drugs Used in HIPEC</a></li><li><a href=\"#13-what-does-clinical-research-say\">13. What Does Clinical Research Say?</a></li><li><a href=\"#14-recovery-after-hipec\">14. Recovery After HIPEC</a></li><li><a href=\"#15-cost-of-hipec-surgery-in-india\">15. Cost of HIPEC Surgery in India</a></li><li><a href=\"#16-international-patients\">16. International Patients</a></li><li><a href=\"#17-how-gaf-healthcare-assists\">17. How GAF Healthcare Assists Patients</a></li><li><a href=\"#18-faqs\">18. Frequently Asked Questions</a></li></ol></nav>"
+        },
+        {
+          "id": "hipec_h_1",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Is HIPEC Surgery?"
+        },
+        {
+          "id": "hipec_h_1a",
+          "type": "html",
+          "html": "<span id=\"1-what-is-hipec-surgery\"></span>"
+        },
+        {
+          "id": "hipec_p_1a",
+          "type": "paragraph",
+          "text": "HIPEC surgery is an advanced cancer treatment in which heated chemotherapy is circulated directly inside the abdominal cavity to target microscopic cancer cells that may remain after visible tumours have been surgically removed."
+        },
+        {
+          "id": "hipec_p_1b",
+          "type": "paragraph",
+          "text": "HIPEC stands for **Hyperthermic Intraperitoneal Chemotherapy**. It is performed alongside a major operation called cytoreductive surgery (CRS), which removes visible cancer deposits from the abdominal cavity. The treatment is primarily used for selected cancers affecting the peritoneum — the thin membrane lining the abdominal cavity."
+        },
+        {
+          "id": "hipec_p_1c",
+          "type": "paragraph",
+          "text": "Unlike conventional chemotherapy, which travels through the bloodstream, HIPEC delivers chemotherapy directly into the abdominal cavity. The solution is heated to approximately 41–43 °C and circulated for a prescribed period after the surgeon has removed visible cancer deposits."
+        },
+        {
+          "id": "hipec_b_qa1",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">In simple terms</p><div class=\"article-quick-answer__body\"><p>HIPEC is a specialised form of heated chemotherapy delivered inside the abdomen, usually after surgeons remove visible cancer through cytoreductive surgery (CRS). It aims to treat microscopic cancer cells that may remain on abdominal surfaces after visible tumour removal.</p></div></aside>"
+        },
+        {
+          "id": "hipec_img_1",
+          "type": "image",
+          "src": "/treatments/hipec-procedure-illustration.webp",
+          "alt": "HIPEC procedure illustration showing heated chemotherapy circulating inside the abdominal cavity",
+          "caption": "Heated chemotherapy is circulated inside the abdominal cavity after cytoreductive surgery removes visible cancer deposits."
+        },
+        {
+          "id": "hipec_h_2",
+          "type": "heading",
+          "level": 2,
+          "text": "2. What Does HIPEC Stand For?"
+        },
+        {
+          "id": "hipec_h_2a",
+          "type": "html",
+          "html": "<span id=\"2-what-does-hipec-stand-for\"></span>"
+        },
+        {
+          "id": "hipec_p_2a",
+          "type": "paragraph",
+          "text": "HIPEC is the abbreviation for Hyperthermic Intraperitoneal Chemotherapy. Each word describes an important part of the treatment: **Hyperthermic** means heated to a controlled temperature; **Intraperitoneal** means administered inside the abdominal cavity; **Chemotherapy** refers to medicines used to destroy or control cancer cells."
+        },
+        {
+          "id": "hipec_h_3",
+          "type": "heading",
+          "level": 2,
+          "text": "3. Understanding the Peritoneum"
+        },
+        {
+          "id": "hipec_h_3a",
+          "type": "html",
+          "html": "<span id=\"3-understanding-the-peritoneum\"></span>"
+        },
+        {
+          "id": "hipec_p_3a",
+          "type": "paragraph",
+          "text": "The peritoneum is a thin membrane lining the abdominal cavity and covering many organs within it. When cancer cells detach from a primary tumour and attach to these surfaces, the condition is known as peritoneal metastasis or peritoneal carcinomatosis."
+        },
+        {
+          "id": "hipec_h_3b",
+          "type": "heading",
+          "level": 3,
+          "text": "Which Cancers Can Spread to the Peritoneum?"
+        },
+        {
+          "id": "hipec_l_3a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Ovarian cancer",
+            "Colorectal cancer",
+            "Gastric or stomach cancer",
+            "Appendiceal cancer",
+            "Certain pancreatic cancers",
+            "Primary peritoneal cancer",
+            "Peritoneal mesothelioma (originates in the peritoneal lining)"
+          ]
+        },
+        {
+          "id": "hipec_h_4",
+          "type": "heading",
+          "level": 2,
+          "text": "4. How Does HIPEC Surgery Work?"
+        },
+        {
+          "id": "hipec_h_4a",
+          "type": "html",
+          "html": "<span id=\"4-how-does-hipec-surgery-work\"></span>"
+        },
+        {
+          "id": "hipec_h_4b",
+          "type": "heading",
+          "level": 3,
+          "text": "Stage 1: Cytoreductive Surgery (CRS)"
+        },
+        {
+          "id": "hipec_p_4a",
+          "type": "paragraph",
+          "text": "The surgeon removes visible cancer deposits from the abdominal cavity, which may include affected sections of the peritoneum, omentum, bowel or other organs. The goal is complete macroscopic cytoreduction — no visible tumour remaining."
+        },
+        {
+          "id": "hipec_h_4c",
+          "type": "heading",
+          "level": 3,
+          "text": "Stage 2: Hyperthermic Intraperitoneal Chemotherapy (HIPEC)"
+        },
+        {
+          "id": "hipec_p_4b",
+          "type": "paragraph",
+          "text": "Once CRS is completed, heated chemotherapy is circulated throughout the abdominal cavity using a specialised perfusion machine. The solution is heated to approximately 41–43 °C and circulated for 30–120 minutes, then drained before the surgical team completes the operation."
+        },
+        {
+          "id": "hipec_img_2",
+          "type": "image",
+          "src": "/treatments/crs-hipec-combined-treatment.webp",
+          "alt": "CRS-HIPEC combined treatment diagram showing the two-stage procedure",
+          "caption": "CRS-HIPEC combines tumour-removal surgery with intraperitoneal heated chemotherapy perfusion."
+        },
+        {
+          "id": "hipec_h_5",
+          "type": "heading",
+          "level": 2,
+          "text": "5. Why Is Chemotherapy Heated During HIPEC?"
+        },
+        {
+          "id": "hipec_h_5a",
+          "type": "html",
+          "html": "<span id=\"5-why-is-chemotherapy-heated\"></span>"
+        },
+        {
+          "id": "hipec_p_5a",
+          "type": "paragraph",
+          "text": "Laboratory and clinical research suggests that heat can increase the activity of certain chemotherapy agents against cancer cells. Direct delivery into the abdominal cavity allows the treatment solution to contact peritoneal surfaces where microscopic cancer cells may remain after tumour removal. The specialised equipment controls temperature, circulation and exposure duration throughout the procedure."
+        },
+        {
+          "id": "hipec_p_5b",
+          "type": "paragraph",
+          "text": "**Important:** Heating chemotherapy does not guarantee destruction of all cancer cells or that it is automatically more effective than conventional chemotherapy. Its clinical value must be evaluated separately for each cancer type and patient."
+        },
+        {
+          "id": "hipec_h_6",
+          "type": "heading",
+          "level": 2,
+          "text": "6. Which Cancers Can Be Treated With HIPEC?"
+        },
+        {
+          "id": "hipec_h_6a",
+          "type": "html",
+          "html": "<span id=\"6-which-cancers-can-be-treated-with-hipec\"></span>"
+        },
+        {
+          "id": "hipec_h_6b",
+          "type": "heading",
+          "level": 3,
+          "text": "Pseudomyxoma Peritonei"
+        },
+        {
+          "id": "hipec_p_6a",
+          "type": "paragraph",
+          "text": "CRS-HIPEC is an established specialist treatment approach for patients with resectable pseudomyxoma peritonei. International consensus recommendations support combining cytoreductive surgery with HIPEC in appropriately selected patients."
+        },
+        {
+          "id": "hipec_h_6c",
+          "type": "heading",
+          "level": 3,
+          "text": "Ovarian Cancer"
+        },
+        {
+          "id": "hipec_p_6b",
+          "type": "paragraph",
+          "text": "Selected patients with stage III ovarian cancer who have received neoadjuvant chemotherapy and are undergoing interval cytoreductive surgery may be considered for HIPEC. The OVHIPEC-1 clinical trial demonstrated improved survival outcomes in its selected patient population."
+        },
+        {
+          "id": "hipec_h_6d",
+          "type": "heading",
+          "level": 3,
+          "text": "Colorectal Cancer"
+        },
+        {
+          "id": "hipec_p_6c",
+          "type": "paragraph",
+          "text": "Selected patients with isolated colorectal peritoneal metastases may be considered for cytoreductive surgery. However, the ASCO guideline recommends against adding oxaliplatin-based HIPEC to CRS for colorectal peritoneal metastases. Indian specialists should also consider INDEPSO–ISPSM consensus recommendations."
+        },
+        {
+          "id": "hipec_h_6e",
+          "type": "heading",
+          "level": 3,
+          "text": "Gastric Cancer, Peritoneal Mesothelioma and Appendiceal Cancer"
+        },
+        {
+          "id": "hipec_p_6d",
+          "type": "paragraph",
+          "text": "CRS-HIPEC may be considered in highly selected patients with limited gastric peritoneal disease, carefully selected patients with diffuse malignant peritoneal mesothelioma, and certain appendiceal malignancies depending on histological type. Treatment planning is particularly important as different tumour types behave very differently."
+        },
+        {
+          "id": "hipec_b_btn1",
+          "type": "button",
+          "label": "Ask if HIPEC is suitable for your diagnosis",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20know%20if%20I%20am%20eligible%20for%20HIPEC%20surgery%20in%20India."
+        },
+        {
+          "id": "hipec_h_7",
+          "type": "heading",
+          "level": 2,
+          "text": "7. Who Is Eligible for HIPEC Surgery?"
+        },
+        {
+          "id": "hipec_h_7a",
+          "type": "html",
+          "html": "<span id=\"7-who-is-eligible-for-hipec\"></span>"
+        },
+        {
+          "id": "hipec_p_7a",
+          "type": "paragraph",
+          "text": "HIPEC is a major operation. Patient selection is one of the most important aspects of treatment. The specialist team generally considers the cancer type and histopathology, the distribution of tumour deposits, the Peritoneal Cancer Index (PCI), the possibility of complete tumour removal, general health and organ function, and previous cancer treatment history."
+        },
+        {
+          "id": "hipec_h_7b",
+          "type": "heading",
+          "level": 3,
+          "text": "Who May Not Be Suitable?"
+        },
+        {
+          "id": "hipec_l_7a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Cancer extensively spread outside the abdominal cavity",
+            "Complete cytoreduction unlikely to be achievable",
+            "Extensive small bowel or mesenteric involvement",
+            "Severe uncontrolled medical conditions",
+            "Disease progressing rapidly despite systemic treatment",
+            "Risks of surgery outweigh the expected benefits"
+          ]
+        },
+        {
+          "id": "hipec_h_8",
+          "type": "heading",
+          "level": 2,
+          "text": "8. What Is the Peritoneal Cancer Index (PCI)?"
+        },
+        {
+          "id": "hipec_h_8a",
+          "type": "html",
+          "html": "<span id=\"8-what-is-the-pci\"></span>"
+        },
+        {
+          "id": "hipec_p_8a",
+          "type": "paragraph",
+          "text": "The PCI is a scoring system used to assess the extent of cancer within the abdominal cavity. The abdomen is divided into 13 regions, each assigned a lesion-size score. The combined score ranges from 0 to 39. A higher PCI generally indicates a greater tumour burden, though there is no universal threshold for every cancer type."
+        },
+        {
+          "id": "hipec_img_3",
+          "type": "image",
+          "src": "/treatments/peritoneal-cancer-index-diagram.webp",
+          "alt": "Peritoneal Cancer Index PCI diagram showing 13 abdominal regions scored 0–3",
+          "caption": "PCI scores cancer deposits across 13 abdominal regions (0–39 total). Location of deposits, particularly small bowel involvement, is also important."
+        },
+        {
+          "id": "hipec_b_qa2",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">PCI score guide</p><div class=\"article-quick-answer__body\"><ul><li><strong>LS-0:</strong> No visible tumour.</li><li><strong>LS-1:</strong> Deposits up to 0.5 cm.</li><li><strong>LS-2:</strong> Deposits 0.5–5 cm.</li><li><strong>LS-3:</strong> Deposits &gt;5 cm or confluent disease.</li></ul><p>PCI is only one part of the assessment. Histopathology, tumour biology, patient fitness and the possibility of complete cytoreduction must also be considered.</p></div></aside>"
+        },
+        {
+          "id": "hipec_h_9",
+          "type": "heading",
+          "level": 2,
+          "text": "9. The HIPEC Procedure Step by Step"
+        },
+        {
+          "id": "hipec_h_9a",
+          "type": "html",
+          "html": "<span id=\"9-the-procedure-step-by-step\"></span>"
+        },
+        {
+          "id": "hipec_l_9a",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**General anaesthesia** — Vital signs, breathing, circulation and urine output monitored continuously.",
+            "**Abdominal examination** — Surgeon examines the cavity, assesses PCI and determines whether complete cytoreduction is feasible.",
+            "**Cytoreductive surgery** — Visible tumour deposits removed. May include peritonectomy, omentectomy, bowel resection and removal of affected organs.",
+            "**HIPEC tube placement** — Specialised inflow/outflow tubes positioned inside the abdominal cavity with temperature monitoring.",
+            "**Heated chemotherapy circulation** — Chemotherapy heated to 41–43 °C and circulated for 30–120 minutes using a specialised perfusion machine.",
+            "**Drainage and closure** — Chemotherapy drained; surgical team completes remaining steps and closes the abdomen.",
+            "**ICU monitoring** — Patient transferred to intensive care for close observation of kidney function, blood counts and fluid balance."
+          ]
+        },
+        {
+          "id": "hipec_h_10",
+          "type": "heading",
+          "level": 2,
+          "text": "10. HIPEC vs Conventional Chemotherapy"
+        },
+        {
+          "id": "hipec_h_10a",
+          "type": "html",
+          "html": "<span id=\"10-hipec-vs-conventional-chemotherapy\"></span>"
+        },
+        {
+          "id": "hipec_p_10a",
+          "type": "paragraph",
+          "text": "Although both treatments use anticancer medicines, their delivery methods and treatment objectives differ. Conventional chemotherapy is usually given intravenously to treat cancer throughout the body. HIPEC delivers heated chemotherapy directly into the abdominal cavity during surgery to target microscopic disease on abdominal surfaces. Some patients may require both. The appropriate approach depends on cancer type and clinical evidence."
+        },
+        {
+          "id": "hipec_h_11",
+          "type": "heading",
+          "level": 2,
+          "text": "11. HIPEC vs PIPAC"
+        },
+        {
+          "id": "hipec_h_11a",
+          "type": "html",
+          "html": "<span id=\"11-hipec-vs-pipac\"></span>"
+        },
+        {
+          "id": "hipec_p_11a",
+          "type": "paragraph",
+          "text": "PIPAC (Pressurised Intraperitoneal Aerosol Chemotherapy) delivers chemotherapy as a pressurised aerosol via laparoscopy and does not itself remove visible tumours through cytoreductive surgery. HIPEC delivers heated liquid chemotherapy into the abdominal cavity during CRS. They have different clinical applications and should not be considered interchangeable."
+        },
+        {
+          "id": "hipec_b_btn2",
+          "type": "button",
+          "label": "Arrange a specialist consultation in India",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20arrange%20a%20specialist%20consultation%20for%20HIPEC%20treatment%20in%20India."
+        },
+        {
+          "id": "hipec_h_12",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Chemotherapy Drugs Used in HIPEC"
+        },
+        {
+          "id": "hipec_h_12a",
+          "type": "html",
+          "html": "<span id=\"12-chemotherapy-drugs-used-in-hipec\"></span>"
+        },
+        {
+          "id": "hipec_p_12a",
+          "type": "paragraph",
+          "text": "The chemotherapy drug used during HIPEC depends on the cancer type, treatment protocol and patient-specific considerations. Common agents include **Mitomycin C** (selected appendiceal and colorectal protocols), **Cisplatin** (selected ovarian protocols), **Oxaliplatin** (certain colorectal protocols — ASCO recommends against in colorectal CRS setting), and **Doxorubicin** (selected specialised protocols). These drugs are not interchangeable; selection depends on tumour type, evidence, kidney function and institutional protocol."
+        },
+        {
+          "id": "hipec_h_13",
+          "type": "heading",
+          "level": 2,
+          "text": "13. What Does Clinical Research Say About HIPEC?"
+        },
+        {
+          "id": "hipec_h_13a",
+          "type": "html",
+          "html": "<span id=\"13-what-does-clinical-research-say\"></span>"
+        },
+        {
+          "id": "hipec_h_13b",
+          "type": "heading",
+          "level": 3,
+          "text": "Pseudomyxoma Peritonei"
+        },
+        {
+          "id": "hipec_p_13a",
+          "type": "paragraph",
+          "text": "CRS-HIPEC is an established specialist treatment supported by international consensus recommendations for resectable pseudomyxoma peritonei."
+        },
+        {
+          "id": "hipec_h_13c",
+          "type": "heading",
+          "level": 3,
+          "text": "Ovarian Cancer — OVHIPEC-1 Trial"
+        },
+        {
+          "id": "hipec_p_13b",
+          "type": "paragraph",
+          "text": "The OVHIPEC-1 randomised clinical trial demonstrated improved recurrence-free and overall survival in selected stage III ovarian cancer patients undergoing interval cytoreductive surgery after neoadjuvant chemotherapy. These findings apply to the selected trial population and should not be generalised to all ovarian cancer patients."
+        },
+        {
+          "id": "hipec_h_13d",
+          "type": "heading",
+          "level": 3,
+          "text": "Colorectal Cancer — PRODIGE 7 Trial"
+        },
+        {
+          "id": "hipec_p_13c",
+          "type": "paragraph",
+          "text": "The PRODIGE 7 trial did not demonstrate an overall survival benefit from adding oxaliplatin-based HIPEC to CRS for colorectal peritoneal metastases. The ASCO guideline consequently recommends against adding oxaliplatin-based HIPEC to CRS in this setting. The guideline supports consideration of complete CRS combined with systemic chemotherapy in carefully selected patients."
+        },
+        {
+          "id": "hipec_h_14",
+          "type": "heading",
+          "level": 2,
+          "text": "14. Recovery After HIPEC Surgery"
+        },
+        {
+          "id": "hipec_h_14a",
+          "type": "html",
+          "html": "<span id=\"14-recovery-after-hipec\"></span>"
+        },
+        {
+          "id": "hipec_img_4",
+          "type": "image",
+          "src": "/treatments/hipec-recovery-timeline.webp",
+          "alt": "HIPEC surgery recovery timeline from ICU through hospital discharge to full recovery",
+          "caption": "Typical HIPEC recovery: ICU monitoring → hospital ward → discharge → full recovery over several months."
+        },
+        {
+          "id": "hipec_p_14a",
+          "type": "paragraph",
+          "text": "Recovery after CRS-HIPEC is generally longer than routine abdominal surgery. Patients may require several weeks of hospital-based care followed by a gradual recovery period at home."
+        },
+        {
+          "id": "hipec_l_14a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Days 1–3:** Intensive monitoring of blood pressure, kidney function, urine output, blood counts and drain output.",
+            "**Week 1:** Gradual mobilisation, breathing exercises and nutritional rehabilitation. Oral intake introduced depending on bowel recovery.",
+            "**Week 2+:** Patients begin tolerating more food and increasing physical activity. Discharge depends on bowel function and recovery.",
+            "**Weeks 4–8:** Strenuous activities restricted. Follow-up imaging and blood investigations continue.",
+            "**Months 2–6:** Complete recovery may take several months. Nutritional support and additional systemic cancer treatment may be required."
+          ]
+        },
+        {
+          "id": "hipec_b_qa3",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Hospital stay in India</p><div class=\"article-quick-answer__body\"><p>Hospitalisation commonly lasts around one to three weeks, although some patients require shorter or longer stays. International patients should avoid booking fixed return travel dates before surgery. The treating surgeon must determine when the patient is medically fit to travel.</p></div></aside>"
+        },
+        {
+          "id": "hipec_h_15",
+          "type": "heading",
+          "level": 2,
+          "text": "15. Cost of HIPEC Surgery in India"
+        },
+        {
+          "id": "hipec_h_15a",
+          "type": "html",
+          "html": "<span id=\"15-cost-of-hipec-surgery-in-india\"></span>"
+        },
+        {
+          "id": "hipec_p_15a",
+          "type": "paragraph",
+          "text": "The cost of HIPEC surgery in India varies according to the cancer type, extent of disease, complexity of cytoreductive surgery, chemotherapy protocol and postoperative requirements. **There is no single fixed price applicable to every patient.**"
+        },
+        {
+          "id": "hipec_p_15b",
+          "type": "paragraph",
+          "text": "Major cost components include: specialist consultation, diagnostic investigations (CT, MRI, PET-CT, laboratory testing), cytoreductive surgery (surgeon, theatre and materials), HIPEC treatment (perfusion equipment, chemotherapy and consumables), anaesthesia, ICU admission, hospitalisation, medicines and any additional procedures required."
+        },
+        {
+          "id": "hipec_b_qa4",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">How to get a cost estimate</p><div class=\"article-quick-answer__body\"><p>Share your histopathology report, recent CT or MRI imaging, previous surgical records, chemotherapy history and current blood investigations. The hospital can then review the case and prepare an initial itemised estimate. For international patients, the budget should also include accommodation, local transport and the possibility of a longer stay.</p></div></aside>"
+        },
+        {
+          "id": "hipec_b_btn3",
+          "type": "button",
+          "label": "Request a HIPEC treatment cost estimate",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20a%20treatment%20cost%20estimate%20for%20HIPEC%20surgery%20in%20India."
+        },
+        {
+          "id": "hipec_h_16",
+          "type": "heading",
+          "level": 2,
+          "text": "16. How Can International Patients Access HIPEC Treatment in India?"
+        },
+        {
+          "id": "hipec_h_16a",
+          "type": "html",
+          "html": "<span id=\"16-international-patients\"></span>"
+        },
+        {
+          "id": "hipec_l_16a",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Submit medical records** — histopathology, CT/MRI, previous surgery and chemotherapy history, discharge summaries.",
+            "**Obtain a specialist opinion** — records reviewed; further imaging or pathology review may be requested.",
+            "**Understand treatment options** — CRS-HIPEC, systemic chemotherapy or another approach recommended based on evidence.",
+            "**Obtain a treatment estimate** — itemised quote based on proposed treatment and expected hospital stay.",
+            "**Medical visa and travel** — finalise travel only after the treating team confirms medical fitness.",
+            "**Hospital admission** — clinical reassessment and preoperative investigations on arrival.",
+            "**Recovery and return travel** — the treating surgeon provides written fitness-to-travel advice before discharge."
+          ]
+        },
+        {
+          "id": "hipec_h_17",
+          "type": "heading",
+          "level": 2,
+          "text": "17. How GAF Healthcare Assists Patients Seeking HIPEC Treatment"
+        },
+        {
+          "id": "hipec_h_17a",
+          "type": "html",
+          "html": "<span id=\"17-how-gaf-healthcare-assists\"></span>"
+        },
+        {
+          "id": "hipec_p_17a",
+          "type": "paragraph",
+          "text": "GAF Healthcare facilitates international patients seeking specialised cancer treatment in India. Our priority is to help patients access an appropriate specialist opinion rather than encouraging surgery without proper medical assessment. Patients may be advised to undergo systemic chemotherapy, another surgical approach or supportive treatment instead of HIPEC."
+        },
+        {
+          "id": "hipec_l_17a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Medical report collection and organisation",
+            "Specialist surgical oncology consultation coordination",
+            "Hospital treatment opinion assistance",
+            "Treatment estimate coordination",
+            "Hospital appointment scheduling",
+            "Medical visa documentation support",
+            "Airport transfers and accommodation",
+            "Interpreter assistance where required",
+            "Hospital admission coordination",
+            "Post-treatment follow-up arrangements"
+          ]
+        },
+        {
+          "id": "hipec_p_17b",
+          "type": "paragraph",
+          "text": "Patients from **Tanzania, Kenya, Ethiopia, Uganda, Zambia, Nigeria, Iraq** and other countries can approach GAF Healthcare for assistance coordinating their medical evaluation and treatment journey in India."
+        },
+        {
+          "id": "hipec_b_btn4",
+          "type": "button",
+          "label": "Speak with a patient coordinator",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20a%20patient%20coordinator%20about%20HIPEC%20surgery%20in%20India."
+        },
+        {
+          "id": "hipec_h_18",
+          "type": "heading",
+          "level": 2,
+          "text": "18. Frequently Asked Questions About HIPEC Surgery"
+        },
+        {
+          "id": "hipec_h_18a",
+          "type": "html",
+          "html": "<span id=\"18-faqs\"></span>"
+        },
+        {
+          "id": "hipec_b_faqs",
+          "type": "html",
+          "html": "<div class=\"treatment-faqs\"><details><summary>What is HIPEC surgery in simple words?</summary><div><p>HIPEC surgery is a specialised cancer treatment in which heated chemotherapy is circulated inside the abdominal cavity after surgeons remove visible cancer deposits. It is used for selected cancers affecting the peritoneum.</p></div></details><details><summary>What does HIPEC stand for?</summary><div><p>HIPEC stands for Hyperthermic Intraperitoneal Chemotherapy. Hyperthermic means heated, intraperitoneal means inside the abdominal cavity, and chemotherapy refers to medicines used to destroy or control cancer cells.</p></div></details><details><summary>Is HIPEC surgery a major operation?</summary><div><p>Yes. CRS-HIPEC is a major operation that may involve removal of the peritoneum, tumour deposits and affected portions of abdominal organs. Patients require general anaesthesia, postoperative monitoring and an extended recovery period.</p></div></details><details><summary>Why is chemotherapy heated during HIPEC?</summary><div><p>Heat may enhance the activity of certain chemotherapy drugs. Delivering the solution directly into the abdominal cavity allows it to contact peritoneal surfaces where microscopic cancer cells may remain after tumour removal.</p></div></details><details><summary>Which cancers are treated with HIPEC?</summary><div><p>HIPEC may be considered for selected patients with pseudomyxoma peritonei, peritoneal mesothelioma, ovarian cancer, colorectal peritoneal metastases, gastric peritoneal metastases and certain appendiceal malignancies. Evidence differs between these conditions.</p></div></details><details><summary>Can HIPEC cure cancer?</summary><div><p>In selected patients with certain peritoneal malignancies, complete cytoreductive surgery combined with HIPEC may offer long-term remission or potentially curative treatment. Cancer recurrence remains possible even after complete surgery.</p></div></details><details><summary>What is the difference between CRS and HIPEC?</summary><div><p>CRS removes visible cancer deposits through surgery. HIPEC circulates heated chemotherapy inside the abdomen after tumour removal to target microscopic residual disease. The two are commonly combined for selected peritoneal malignancies.</p></div></details><details><summary>What is the difference between HIPEC and PIPAC?</summary><div><p>HIPEC delivers heated liquid chemotherapy into the abdominal cavity during cytoreductive surgery. PIPAC delivers pressurised aerosolised chemotherapy through laparoscopy and does not itself remove visible tumours. They have different indications and cannot be substituted for each other.</p></div></details><details><summary>What is the Peritoneal Cancer Index (PCI)?</summary><div><p>PCI measures the distribution and extent of tumour deposits across 13 abdominal regions. The score ranges from 0 to 39 and helps surgeons assess disease burden and surgical feasibility.</p></div></details><details><summary>What chemotherapy drugs are used in HIPEC?</summary><div><p>Common agents include mitomycin C, cisplatin, oxaliplatin and doxorubicin. Drug selection depends on the primary cancer, available evidence, kidney function and the treating centre's protocol.</p></div></details><details><summary>How long does HIPEC surgery take?</summary><div><p>The operation may take approximately 6–12 hours or longer. Duration depends on tumour distribution, organs requiring removal, reconstruction needed and the chemotherapy protocol.</p></div></details><details><summary>Is HIPEC suitable for stage 4 cancer?</summary><div><p>Some patients with stage IV cancer may be considered if the disease is predominantly confined to the peritoneum and complete cytoreduction is achievable. Widespread distant metastases may make surgery unsuitable. Eligibility depends on individual clinical assessment.</p></div></details><details><summary>What are the risks of HIPEC surgery?</summary><div><p>Potential risks include infection, bleeding, bowel leakage, intestinal obstruction, kidney injury, blood clots, respiratory complications, electrolyte disturbances and chemotherapy-related toxicity.</p></div></details><details><summary>How long does recovery after HIPEC take?</summary><div><p>Initial hospital recovery commonly lasts one to three weeks. Complete recovery may take several months. Duration depends on surgical complexity, bowel recovery, complications and general health.</p></div></details><details><summary>Is HIPEC surgery available in India?</summary><div><p>Yes. Specialist surgical oncology teams in India are involved in CRS-HIPEC and peritoneal surface malignancy management. Patients should verify the specific hospital and surgeon have experience with their cancer type.</p></div></details><details><summary>How much does HIPEC surgery cost in India?</summary><div><p>The cost depends on cancer type, extent of surgery, chemotherapy drugs, ICU requirements and hospitalisation. There is no single fixed price. Share medical records and imaging to obtain an individualised estimate from the treating hospital.</p></div></details><details><summary>Can international patients travel to India for HIPEC treatment?</summary><div><p>Yes. International patients can seek specialist evaluation in India by sharing medical records for preliminary assessment before travel. The treating team determines suitability and when the patient is fit to travel home.</p></div></details><details><summary>Does every patient with peritoneal cancer need HIPEC?</summary><div><p>No. Some patients may benefit from systemic chemotherapy, surgery without HIPEC, targeted therapy, immunotherapy or supportive care. HIPEC is reserved for carefully selected patients based on cancer type and treatment suitability.</p></div></details></div>"
+        },
+        {
+          "id": "hipec_h_ref",
+          "type": "heading",
+          "level": 2,
+          "text": "Scientific References"
+        },
+        {
+          "id": "hipec_l_ref",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Multi-Society Clinical Practice Guideline on CRS-HIPEC (2024). pmc.ncbi.nlm.nih.gov/articles/PMC11826033/",
+            "ASCO Guideline: Treatment of Metastatic Colorectal Cancer. pmc.ncbi.nlm.nih.gov/articles/PMC10506310/",
+            "INDEPSO–ISPSM Indian Consensus on Enhanced Recovery After CRS With or Without HIPEC (2025). pmc.ncbi.nlm.nih.gov/articles/PMC11732209/",
+            "INDEPSO–ISPSM Consensus on Colorectal Peritoneal Metastases. pubmed.ncbi.nlm.nih.gov/39637347/",
+            "OVHIPEC-1 Clinical Trial: Long-Term Survival Outcomes. pubmed.ncbi.nlm.nih.gov/37708912/"
+          ]
+        },
+        {
+          "id": "hipec_b_btn5",
+          "type": "button",
+          "label": "Contact GAF Healthcare about HIPEC treatment in India",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20share%20my%20medical%20records%20for%20a%20specialist%20HIPEC%20treatment%20opinion%20in%20India."
+        },
+        {
+          "id": "hipec_p_disc",
+          "type": "paragraph",
+          "text": "**Medical Disclaimer:** This article is intended for educational and informational purposes only. It does not replace consultation with a qualified oncologist or surgical oncologist. CRS-HIPEC is a complex procedure with significant risks. Treatment suitability, expected outcomes and alternative treatment options must be assessed individually by an experienced multidisciplinary medical team."
+        }
+      ]
+    },
+    {
+      "id": "art_peritoneal_carcinomatosis",
+      "slug": "peritoneal-carcinomatosis",
+      "title": "Peritoneal Carcinomatosis: Causes, Symptoms, Diagnosis and Treatment Options in India",
+      "excerpt": "Peritoneal carcinomatosis occurs when cancer cells spread to the peritoneum, the thin membrane lining the abdominal cavity. It can develop from ovarian, colorectal, stomach, appendix and other cancers. This guide explains causes, symptoms, diagnosis and treatment options including systemic chemotherapy, targeted treatment and cytoreductive surgery with HIPEC, along with how patients can access specialist assessment and treatment in India.",
+      "date": "2026-11-09",
+      "publishedAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "Peritoneal Carcinomatosis",
+        "Peritoneal Cancer",
+        "CRS-HIPEC",
+        "Cancer Treatment India",
+        "Cytoreductive Surgery"
+      ],
+      "image": "/treatments/peritoneal-carcinomatosis-anatomy.webp",
+      "imageAlt": "Peritoneal carcinomatosis showing cancer deposits scattered across the abdominal lining",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Peritoneal Carcinomatosis: Symptoms, Causes & Treatment in India",
+      "seoDescription": "Understand peritoneal carcinomatosis, its symptoms, causes, diagnosis and treatment options, including chemotherapy and CRS-HIPEC in India.",
+      "canonical": "https://gaf.healthcare/blogs/peritoneal-carcinomatosis",
+      "ogImage": "/treatments/peritoneal-carcinomatosis-anatomy.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Peritoneal carcinomatosis",
+        "Peritoneal carcinomatosis treatment",
+        "Peritoneal cancer symptoms",
+        "Peritoneal metastases",
+        "Peritoneal carcinomatosis treatment in India",
+        "CRS-HIPEC surgery in India",
+        "Cytoreductive surgery",
+        "Peritoneal Cancer Index",
+        "Cancer spread to the abdominal lining"
+      ],
+      "relatedLinks": [
+        {
+          "label": "HIPEC Surgery in India – Full Treatment Guide",
+          "href": "/treatments/hipec-surgery-in-india"
+        },
+        {
+          "label": "What Is HIPEC Surgery?",
+          "href": "/blogs/what-is-hipec-surgery"
+        },
+        {
+          "label": "Peritoneal Metastases: Can They Be Treated?",
+          "href": "/blogs/peritoneal-metastases-treatment"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "pc_qa0",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>Peritoneal carcinomatosis is the spread of cancer cells to the peritoneum — the thin membrane lining the abdominal cavity. It is most commonly associated with colorectal, ovarian, stomach and appendix cancers. The appropriate treatment depends on the original cancer, disease extent, tumour biology, previous treatment and patient health. Options include systemic chemotherapy, targeted therapy, immunotherapy, cytoreductive surgery and HIPEC for selected patients.</p></div></aside>"
+        },
+        {
+          "id": "pc_btn0",
+          "type": "button",
+          "label": "Share medical records for a specialist peritoneal cancer opinion",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20share%20my%20medical%20records%20for%20a%20specialist%20peritoneal%20cancer%20treatment%20opinion%20in%20India."
+        },
+        {
+          "id": "pc_toc",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-is-pc\">1. What Is Peritoneal Carcinomatosis?</a></li><li><a href=\"#2-vs-primary\">2. Peritoneal Cancer vs Peritoneal Carcinomatosis</a></li><li><a href=\"#3-cancers\">3. Which Cancers Can Cause It?</a></li><li><a href=\"#4-spread\">4. How Does Cancer Spread to the Peritoneum?</a></li><li><a href=\"#5-symptoms\">5. Symptoms</a></li><li><a href=\"#6-diagnosis\">6. Diagnosis</a></li><li><a href=\"#7-pci\">7. Peritoneal Cancer Index</a></li><li><a href=\"#8-treatment\">8. Treatment Options</a></li><li><a href=\"#9-crs-hipec\">9. Is CRS-HIPEC Suitable for Everyone?</a></li><li><a href=\"#10-treatable\">10. Is It Treatable?</a></li><li><a href=\"#11-india\">11. Treatment in India</a></li><li><a href=\"#12-cost\">12. Treatment Cost in India</a></li><li><a href=\"#13-recovery\">13. Recovery After CRS-HIPEC</a></li><li><a href=\"#14-risks\">14. Risks and Complications</a></li><li><a href=\"#15-nutrition\">15. Role of Nutrition</a></li><li><a href=\"#16-recurrence\">16. Can It Come Back?</a></li><li><a href=\"#17-international\">17. International Patients</a></li><li><a href=\"#18-faqs\">18. Frequently Asked Questions</a></li></ol></nav>"
+        },
+        {
+          "id": "pc_h1",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Is Peritoneal Carcinomatosis?"
+        },
+        {
+          "id": "pc_a1",
+          "type": "html",
+          "html": "<span id=\"1-what-is-pc\"></span>"
+        },
+        {
+          "id": "pc_p1a",
+          "type": "paragraph",
+          "text": "Peritoneal carcinomatosis is the spread of cancer cells to the peritoneum — the thin, delicate membrane that lines the inside of the abdominal cavity and covers many abdominal organs including parts of the stomach, intestines and liver."
+        },
+        {
+          "id": "pc_p1b",
+          "type": "paragraph",
+          "text": "When cancer cells reach this membrane, they may attach to its surface and develop into small or large tumour deposits. These deposits can appear in different parts of the abdomen and may affect the normal movement of intestines or circulation of fluid inside the cavity. The term is often used when cancer from another organ has spread to the peritoneum."
+        },
+        {
+          "id": "pc_img1",
+          "type": "image",
+          "src": "/treatments/peritoneal-carcinomatosis-anatomy.webp",
+          "alt": "Peritoneal carcinomatosis showing cancer cell deposits scattered across the peritoneal membrane",
+          "caption": "In peritoneal carcinomatosis, cancer cells spread to and form deposits on the peritoneal membrane that lines the abdominal cavity and covers many abdominal organs."
+        },
+        {
+          "id": "pc_h2",
+          "type": "heading",
+          "level": 2,
+          "text": "2. What Is the Difference Between Peritoneal Cancer and Peritoneal Carcinomatosis?"
+        },
+        {
+          "id": "pc_a2",
+          "type": "html",
+          "html": "<span id=\"2-vs-primary\"></span>"
+        },
+        {
+          "id": "pc_p2a",
+          "type": "paragraph",
+          "text": "**Peritoneal carcinomatosis** generally refers to cancer that has spread to the peritoneum from another primary site such as the colon, stomach, ovary or appendix. **Primary peritoneal cancer** begins in the cells of the peritoneum itself and is a distinct diagnosis with similarities to epithelial ovarian and fallopian tube cancers."
+        },
+        {
+          "id": "pc_p2b",
+          "type": "paragraph",
+          "text": "The distinction matters because the original site and tumour biology influence treatment selection. A specialist team will normally review the original pathology report, imaging and biopsy findings before recommending treatment."
+        },
+        {
+          "id": "pc_h3",
+          "type": "heading",
+          "level": 2,
+          "text": "3. Which Cancers Can Cause Peritoneal Carcinomatosis?"
+        },
+        {
+          "id": "pc_a3",
+          "type": "html",
+          "html": "<span id=\"3-cancers\"></span>"
+        },
+        {
+          "id": "pc_h3a",
+          "type": "heading",
+          "level": 3,
+          "text": "Colorectal cancer"
+        },
+        {
+          "id": "pc_p3a",
+          "type": "paragraph",
+          "text": "Colorectal cancer may spread to the peritoneum through direct extension, lymphatic spread or by releasing cells into the abdominal cavity. Peritoneal metastases may develop at the time of original diagnosis or after treatment. Selected patients may be assessed for cytoreductive surgery."
+        },
+        {
+          "id": "pc_h3b",
+          "type": "heading",
+          "level": 3,
+          "text": "Ovarian cancer"
+        },
+        {
+          "id": "pc_p3b",
+          "type": "paragraph",
+          "text": "Ovarian cancer frequently spreads within the abdominal cavity. The peritoneum, omentum and organ surfaces may become involved. In selected patients, cytoreductive surgery and HIPEC may form part of treatment planning under specific clinical circumstances."
+        },
+        {
+          "id": "pc_h3c",
+          "type": "heading",
+          "level": 3,
+          "text": "Stomach, appendix and other cancers"
+        },
+        {
+          "id": "pc_p3c",
+          "type": "paragraph",
+          "text": "Gastric cancer can spread to the peritoneum. Some appendiceal tumours produce mucus that accumulates in the abdomen — a condition known as pseudomyxoma peritonei. Selected patients with appendiceal malignancies may be assessed for cytoreductive surgery combined with HIPEC. Peritoneal involvement may also occur in endometrial, gallbladder, bile duct, pancreatic, small bowel and other abdominal cancers."
+        },
+        {
+          "id": "pc_h4",
+          "type": "heading",
+          "level": 2,
+          "text": "4. How Does Cancer Spread to the Peritoneum?"
+        },
+        {
+          "id": "pc_a4",
+          "type": "html",
+          "html": "<span id=\"4-spread\"></span>"
+        },
+        {
+          "id": "pc_img2",
+          "type": "image",
+          "src": "/treatments/peritoneal-carcinomatosis-spread-routes.webp",
+          "alt": "Diagram showing cancer spread routes to the peritoneum: direct extension, transcoelomic, lymphatic and bloodstream",
+          "caption": "Cancer cells can reach the peritoneum through direct extension from a nearby tumour, transcoelomic spread through abdominal fluid, lymphatic channels or the bloodstream."
+        },
+        {
+          "id": "pc_l4a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Direct extension:** A tumour growing in an abdominal organ may extend into nearby tissues and reach the peritoneal surface.",
+            "**Transcoelomic spread:** Cancer cells detach from the primary tumour, move through fluid in the abdominal cavity and settle on the peritoneum.",
+            "**Lymphatic spread:** Cancer cells travel through lymphatic channels and reach different parts of the abdomen.",
+            "**Bloodstream spread:** In some cancers, cells travel through blood and establish deposits in distant tissues including the peritoneum."
+          ]
+        },
+        {
+          "id": "pc_h5",
+          "type": "heading",
+          "level": 2,
+          "text": "5. What Are the Symptoms of Peritoneal Carcinomatosis?"
+        },
+        {
+          "id": "pc_a5",
+          "type": "html",
+          "html": "<span id=\"5-symptoms\"></span>"
+        },
+        {
+          "id": "pc_p5a",
+          "type": "paragraph",
+          "text": "Symptoms can vary considerably. Some patients have very few symptoms in early stages, while others develop noticeable abdominal problems."
+        },
+        {
+          "id": "pc_l5a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Persistent abdominal swelling or bloating",
+            "Increasing abdominal girth",
+            "Abdominal discomfort or pain",
+            "Feeling full after eating small quantities",
+            "Loss of appetite and unexplained weight loss",
+            "Nausea or vomiting",
+            "Changes in bowel habits or constipation",
+            "Persistent indigestion",
+            "Fluid accumulation in the abdomen (ascites)",
+            "Fatigue and weakness"
+          ]
+        },
+        {
+          "id": "pc_qa5",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">What is ascites?</p><div class=\"article-quick-answer__body\"><p>Ascites is the accumulation of excess fluid inside the abdominal cavity. It can develop when cancer affects the peritoneum and disrupts normal fluid balance. The abdomen may become visibly enlarged. Doctors may recommend ultrasound-guided drainage and fluid examination to identify its cause. Ascites can also occur for reasons unrelated to cancer.</p></div></aside>"
+        },
+        {
+          "id": "pc_h6",
+          "type": "heading",
+          "level": 2,
+          "text": "6. How Is Peritoneal Carcinomatosis Diagnosed?"
+        },
+        {
+          "id": "pc_a6",
+          "type": "html",
+          "html": "<span id=\"6-diagnosis\"></span>"
+        },
+        {
+          "id": "pc_p6a",
+          "type": "paragraph",
+          "text": "Diagnosis requires confirming the presence of cancer, understanding its origin, determining extent and assessing whether treatment can be directed at the peritoneal deposits. Patients seeking a specialist opinion in India should arrange a review of their previous scans and pathology before travelling."
+        },
+        {
+          "id": "pc_l6a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**CT scan** — evaluates the abdomen and pelvis. Very small peritoneal deposits may not always be visible.",
+            "**MRI** — may provide additional soft tissue information. Diffusion-weighted MRI can be useful in selected cases.",
+            "**PET-CT** — assesses metabolic activity and looks for disease elsewhere. Not all peritoneal tumours show significant uptake.",
+            "**Ultrasound** — can identify ascites, assess organs and guide procedures.",
+            "**Diagnostic laparoscopy** — minimally invasive direct inspection of the abdominal cavity. Useful when imaging does not provide enough information.",
+            "**Biopsy and histopathology** — confirms cancer presence, type, origin and grade.",
+            "**Immunohistochemistry and molecular testing** — clarifies tumour origin; may include MSI/MMR, RAS, BRAF, HER2 and other biomarkers depending on primary cancer."
+          ]
+        },
+        {
+          "id": "pc_h7",
+          "type": "heading",
+          "level": 2,
+          "text": "7. What Is the Peritoneal Cancer Index (PCI)?"
+        },
+        {
+          "id": "pc_a7",
+          "type": "html",
+          "html": "<span id=\"7-pci\"></span>"
+        },
+        {
+          "id": "pc_p7a",
+          "type": "paragraph",
+          "text": "The PCI is a scoring system that describes the extent of tumour deposits inside the abdominal cavity. The abdomen and pelvis are divided into 13 regions, each receiving a score based on the largest tumour deposit found. The combined score ranges from 0 to 39. A higher score generally indicates greater disease burden."
+        },
+        {
+          "id": "pc_p7b",
+          "type": "paragraph",
+          "text": "PCI helps the specialist team assess disease distribution, whether complete cytoreductive surgery may be achievable, and the potential complexity of surgery. However, PCI should not be interpreted in isolation. Location of deposits, small bowel involvement, tumour biology and overall health all matter. There is no single PCI cut-off for every cancer. Indian expert consensus also emphasises considering both the total PCI and the score for each of the 13 regions."
+        },
+        {
+          "id": "pc_h8",
+          "type": "heading",
+          "level": 2,
+          "text": "8. What Are the Treatment Options for Peritoneal Carcinomatosis?"
+        },
+        {
+          "id": "pc_a8",
+          "type": "html",
+          "html": "<span id=\"8-treatment\"></span>"
+        },
+        {
+          "id": "pc_img3",
+          "type": "image",
+          "src": "/treatments/peritoneal-carcinomatosis-treatment-pathway.webp",
+          "alt": "Peritoneal carcinomatosis treatment pathway showing diagnosis, staging, treatment options and recovery",
+          "caption": "Treatment planning for peritoneal carcinomatosis follows a structured pathway: diagnosis and staging, multidisciplinary assessment, treatment selection and postoperative recovery."
+        },
+        {
+          "id": "pc_h8a",
+          "type": "heading",
+          "level": 3,
+          "text": "A. Systemic chemotherapy"
+        },
+        {
+          "id": "pc_p8a",
+          "type": "paragraph",
+          "text": "Systemic chemotherapy uses medicines that travel through the bloodstream. It may be used before surgery (to assess tumour response), after surgery, when surgery is not appropriate, or to control disease and symptoms. The regimen depends on the primary cancer and molecular characteristics."
+        },
+        {
+          "id": "pc_h8b",
+          "type": "heading",
+          "level": 3,
+          "text": "B. Targeted therapy and immunotherapy"
+        },
+        {
+          "id": "pc_p8b",
+          "type": "paragraph",
+          "text": "Targeted therapy acts on specific molecular features involved in cancer growth. For colorectal cancer, relevant biomarkers include RAS, BRAF and HER2 status. Some patients with mismatch repair-deficient or microsatellite instability-high colorectal cancer may benefit from immune checkpoint inhibitors. Testing and specialist assessment are essential — these are not universal treatments."
+        },
+        {
+          "id": "pc_h8c",
+          "type": "heading",
+          "level": 3,
+          "text": "C. Cytoreductive surgery (CRS)"
+        },
+        {
+          "id": "pc_p8c",
+          "type": "paragraph",
+          "text": "Cytoreductive surgery aims to remove visible tumour deposits from the peritoneal surfaces. It may involve peritonectomy, omentectomy, bowel resection and removal of other involved structures. The objective is complete or near-complete removal of visible disease. CRS is a major operation requiring careful patient selection and an experienced surgical team."
+        },
+        {
+          "id": "pc_h8d",
+          "type": "heading",
+          "level": 3,
+          "text": "D. HIPEC"
+        },
+        {
+          "id": "pc_p8d",
+          "type": "paragraph",
+          "text": "HIPEC (Hyperthermic Intraperitoneal Chemotherapy) may be delivered during cytoreductive surgery in selected patients. After visible deposits are removed, heated chemotherapy is circulated inside the abdominal cavity for a defined period to treat microscopic residual cancer cells. CRS-HIPEC is not appropriate for every type of peritoneal carcinomatosis. Its role differs according to the original cancer, available evidence and patient circumstances."
+        },
+        {
+          "id": "pc_h8e",
+          "type": "heading",
+          "level": 3,
+          "text": "E. PIPAC and palliative care"
+        },
+        {
+          "id": "pc_p8e",
+          "type": "paragraph",
+          "text": "PIPAC (Pressurised Intraperitoneal Aerosol Chemotherapy) is a minimally invasive technique under investigation for selected specialist settings. When cancer cannot be removed safely, palliative and supportive care manages abdominal pain, ascites, nausea, bowel symptoms, nutrition, fatigue and emotional distress — focusing on quality of life alongside active treatment."
+        },
+        {
+          "id": "pc_btn1",
+          "type": "button",
+          "label": "Ask if CRS-HIPEC is suitable for your diagnosis",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20know%20if%20I%20am%20eligible%20for%20CRS-HIPEC%20surgery%20in%20India."
+        },
+        {
+          "id": "pc_h9",
+          "type": "heading",
+          "level": 2,
+          "text": "9. Is CRS-HIPEC Suitable for Every Patient With Peritoneal Carcinomatosis?"
+        },
+        {
+          "id": "pc_a9",
+          "type": "html",
+          "html": "<span id=\"9-crs-hipec\"></span>"
+        },
+        {
+          "id": "pc_p9a",
+          "type": "paragraph",
+          "text": "No. CRS-HIPEC is a major treatment option for carefully selected patients. The treating team considers: primary cancer type (evidence differs for ovarian, colorectal, appendiceal, gastric and other cancers); extent of peritoneal disease; small bowel involvement; disease outside the peritoneum; response to previous treatment; general fitness; and likelihood of complete cytoreduction. The final recommendation should come from a specialist team that regularly manages peritoneal surface malignancies."
+        },
+        {
+          "id": "pc_h10",
+          "type": "heading",
+          "level": 2,
+          "text": "10. Is Peritoneal Carcinomatosis Treatable?"
+        },
+        {
+          "id": "pc_a10",
+          "type": "html",
+          "html": "<span id=\"10-treatable\"></span>"
+        },
+        {
+          "id": "pc_p10a",
+          "type": "paragraph",
+          "text": "In some patients, yes. Some patients with limited peritoneal disease may be considered for cytoreductive surgery, with or without HIPEC, as part of a strategy intended to achieve long-term disease control. Others may benefit more from systemic treatment, targeted therapy or immunotherapy. For patients with extensive disease, treatment may focus on controlling cancer growth, relieving symptoms and maintaining quality of life. It would be misleading to suggest that HIPEC or surgery can cure every patient — an individual assessment is essential."
+        },
+        {
+          "id": "pc_h11",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Peritoneal Carcinomatosis Treatment in India"
+        },
+        {
+          "id": "pc_a11",
+          "type": "html",
+          "html": "<span id=\"11-india\"></span>"
+        },
+        {
+          "id": "pc_p11a",
+          "type": "paragraph",
+          "text": "India is an option for patients seeking specialist evaluation and cancer treatment. Indian surgical oncology groups have published consensus recommendations through INDEPSO-ISPSM, addressing patient selection, preoperative work-up, cytoreductive surgery, systemic chemotherapy and intraperitoneal treatment for peritoneal malignancies."
+        },
+        {
+          "id": "pc_p11b",
+          "type": "paragraph",
+          "text": "**For patients travelling to India, the first objective should be to establish whether the proposed treatment is medically appropriate — not simply to arrange a surgical appointment.**"
+        },
+        {
+          "id": "pc_l11a",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Medical record review** — specialist team reviews diagnosis, pathology, previous operations, chemotherapy history and imaging.",
+            "**Specialist consultation** — surgical oncologist and medical oncologist assess the patient's condition and discuss treatment options.",
+            "**Additional investigations** — updated imaging, pathology review, biopsy, molecular testing or diagnostic laparoscopy may be recommended.",
+            "**Multidisciplinary discussion** — the case is reviewed by a multidisciplinary tumour board.",
+            "**Individual treatment plan** — proposed treatment, objective, alternatives, risks and expected recovery are explained clearly.",
+            "**Cost estimate and admission planning** — patient-specific estimate based on planned procedure and expected admission."
+          ]
+        },
+        {
+          "id": "pc_h12",
+          "type": "heading",
+          "level": 2,
+          "text": "12. What Is the Cost of Peritoneal Carcinomatosis Treatment in India?"
+        },
+        {
+          "id": "pc_a12",
+          "type": "html",
+          "html": "<span id=\"12-cost\"></span>"
+        },
+        {
+          "id": "pc_p12a",
+          "type": "paragraph",
+          "text": "There is no single price for treating peritoneal carcinomatosis. Costs depend on the primary cancer, disease extent, treatment approach and the hospital's facilities. A patient receiving systemic chemotherapy may have a very different budget from someone undergoing extensive cytoreductive surgery with HIPEC."
+        },
+        {
+          "id": "pc_qa12",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">How to get a treatment estimate</p><div class=\"article-quick-answer__body\"><p>Share your latest CT/MRI/PET-CT reports, original scan images, biopsy and histopathology reports, molecular testing results, previous operation notes, chemotherapy records and current blood investigations. The hospital can then prepare a written itemised estimate covering the proposed treatment, expected hospital and ICU stay, chemotherapy medicines (if applicable), and what may increase the cost if complications arise. For international patients, the budget should include accommodation, transport and the possibility of an extended stay in India.</p></div></aside>"
+        },
+        {
+          "id": "pc_btn2",
+          "type": "button",
+          "label": "Request a peritoneal cancer treatment cost estimate",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20a%20treatment%20cost%20estimate%20for%20peritoneal%20cancer%20treatment%20in%20India."
+        },
+        {
+          "id": "pc_h13",
+          "type": "heading",
+          "level": 2,
+          "text": "13. What Is Recovery Like After CRS-HIPEC?"
+        },
+        {
+          "id": "pc_a13",
+          "type": "html",
+          "html": "<span id=\"13-recovery\"></span>"
+        },
+        {
+          "id": "pc_img4",
+          "type": "image",
+          "src": "/treatments/peritoneal-carcinomatosis-ascites.webp",
+          "alt": "Ascites management and abdominal fluid drainage in peritoneal carcinomatosis",
+          "caption": "Ascites management — including ultrasound-guided drainage and fluid examination — is an important aspect of care for patients with peritoneal carcinomatosis."
+        },
+        {
+          "id": "pc_p13a",
+          "type": "paragraph",
+          "text": "Recovery varies depending on the extent of surgery, general health and whether complications occur. After CRS-HIPEC, patients may require intensive care or high-dependency monitoring, pain management, intravenous fluids, nutritional support, monitoring of kidney function and blood counts, physiotherapy, wound care and gradual return to oral food. Some patients need several weeks to regain strength; complete recovery may take months."
+        },
+        {
+          "id": "pc_p13b",
+          "type": "paragraph",
+          "text": "Indian expert consensus has specifically addressed enhanced recovery after CRS with or without HIPEC, emphasising structured postoperative care and multidisciplinary support. International patients should not book a fixed return journey before the treating surgeon confirms fitness to travel."
+        },
+        {
+          "id": "pc_h14",
+          "type": "heading",
+          "level": 2,
+          "text": "14. What Are the Risks and Complications of CRS-HIPEC?"
+        },
+        {
+          "id": "pc_a14",
+          "type": "html",
+          "html": "<span id=\"14-risks\"></span>"
+        },
+        {
+          "id": "pc_l14a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Bleeding and wound complications",
+            "Infection",
+            "Anastomotic leak after bowel surgery",
+            "Bowel obstruction",
+            "Blood clots",
+            "Kidney injury",
+            "Changes in blood counts",
+            "Nutritional difficulties",
+            "Prolonged recovery",
+            "Need for further procedures or surgery"
+          ]
+        },
+        {
+          "id": "pc_p14a",
+          "type": "paragraph",
+          "text": "Patients should ask the surgeon about the centre's experience, expected complications, ICU arrangements and the plan for managing emergencies. The potential benefits must be weighed against significant surgical and treatment-related risks."
+        },
+        {
+          "id": "pc_h15",
+          "type": "heading",
+          "level": 2,
+          "text": "15. What Is the Role of Nutrition in Peritoneal Carcinomatosis?"
+        },
+        {
+          "id": "pc_a15",
+          "type": "html",
+          "html": "<span id=\"15-nutrition\"></span>"
+        },
+        {
+          "id": "pc_p15a",
+          "type": "paragraph",
+          "text": "Patients with peritoneal disease may experience reduced appetite, abdominal swelling, nausea, early fullness and weight loss. Major surgery and chemotherapy increase nutritional demands. A clinical dietitian can help assess nutritional status, plan adequate protein and calorie intake, manage nausea and appetite changes, adapt food texture after abdominal surgery and monitor hydration. There is no single diet that treats peritoneal carcinomatosis — dietary changes should be discussed with the treating oncology team."
+        },
+        {
+          "id": "pc_h16",
+          "type": "heading",
+          "level": 2,
+          "text": "16. Can Peritoneal Carcinomatosis Come Back After Treatment?"
+        },
+        {
+          "id": "pc_a16",
+          "type": "html",
+          "html": "<span id=\"16-recurrence\"></span>"
+        },
+        {
+          "id": "pc_p16a",
+          "type": "paragraph",
+          "text": "Yes. Recurrence is possible even after extensive treatment. Likelihood depends on primary cancer type, tumour biology, extent of disease at diagnosis, completeness of cytoreduction and response to systemic treatment. The treating team will establish a surveillance plan. Patients returning home should receive a written follow-up plan and copies of operative, pathology and treatment records."
+        },
+        {
+          "id": "pc_h17",
+          "type": "heading",
+          "level": 2,
+          "text": "17. How Can International Patients Seek Peritoneal Carcinomatosis Treatment in India?"
+        },
+        {
+          "id": "pc_a17",
+          "type": "html",
+          "html": "<span id=\"17-international\"></span>"
+        },
+        {
+          "id": "pc_p17a",
+          "type": "paragraph",
+          "text": "Patients from Tanzania, Kenya, Ethiopia, Uganda, Zambia, Nigeria, Iraq and other countries may consider India for specialist cancer assessment. It is particularly important to share medical records with the specialist team before making travel arrangements."
+        },
+        {
+          "id": "pc_p17b",
+          "type": "paragraph",
+          "text": "GAF Healthcare supports international patients coordinating medical treatment in India — including collecting and organising medical records, coordinating specialist consultations, requesting hospital opinions and estimates, appointment coordination, medical visa support, airport transfers, accommodation and interpreter arrangements. Clinical decisions remain with the treating doctors."
+        },
+        {
+          "id": "pc_btn3",
+          "type": "button",
+          "label": "Arrange a specialist consultation for peritoneal cancer in India",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20arrange%20a%20specialist%20consultation%20for%20peritoneal%20cancer%20treatment%20in%20India."
+        },
+        {
+          "id": "pc_h18",
+          "type": "heading",
+          "level": 2,
+          "text": "18. Frequently Asked Questions About Peritoneal Carcinomatosis"
+        },
+        {
+          "id": "pc_a18",
+          "type": "html",
+          "html": "<span id=\"18-faqs\"></span>"
+        },
+        {
+          "id": "pc_faqs",
+          "type": "html",
+          "html": "<div class=\"treatment-faqs\"><details><summary>What is peritoneal carcinomatosis in simple terms?</summary><div><p>Peritoneal carcinomatosis means that cancer cells have spread to the thin membrane lining the abdominal cavity. The cancer often originates in another organ such as the colon, stomach, ovary or appendix.</p></div></details><details><summary>Is peritoneal carcinomatosis the same as peritoneal cancer?</summary><div><p>Not exactly. Peritoneal carcinomatosis generally describes cancer that has spread to the peritoneum from another site. Primary peritoneal cancer begins in the peritoneal lining itself. The distinction affects treatment planning.</p></div></details><details><summary>Does peritoneal carcinomatosis mean stage 4 cancer?</summary><div><p>It often represents metastatic disease, but staging depends on the original cancer. A specialist should confirm the formal stage and explain the treatment implications.</p></div></details><details><summary>Which cancers commonly cause peritoneal carcinomatosis?</summary><div><p>Common primary cancers include colorectal, ovarian, stomach and appendix cancer. Other abdominal and pelvic cancers including pancreatic, gallbladder and endometrial cancers can also involve the peritoneum.</p></div></details><details><summary>What are the first symptoms of peritoneal carcinomatosis?</summary><div><p>Early symptoms may include persistent bloating, abdominal discomfort, reduced appetite, feeling full quickly and changes in bowel habits. Some patients have no obvious symptoms initially.</p></div></details><details><summary>Can peritoneal carcinomatosis cause abdominal fluid?</summary><div><p>Yes. It can cause ascites — an abnormal accumulation of fluid inside the abdominal cavity. Ascites can also have non-cancer causes, so investigation is necessary to determine its cause.</p></div></details><details><summary>How is peritoneal carcinomatosis confirmed?</summary><div><p>Doctors may use CT, MRI, PET-CT, ultrasound, biopsy and histopathology. Diagnostic laparoscopy may be recommended when the extent of disease needs direct assessment.</p></div></details><details><summary>What is the Peritoneal Cancer Index?</summary><div><p>PCI is a scoring system measuring distribution and extent of tumour deposits across 13 abdominal and pelvic regions. It ranges from 0 to 39 and helps specialists assess surgical feasibility and disease burden.</p></div></details><details><summary>Is peritoneal carcinomatosis curable?</summary><div><p>Some carefully selected patients may receive treatment with curative intent, particularly when disease is limited and complete surgical removal is feasible. However, cure cannot be guaranteed and depends on the original cancer and individual clinical factors.</p></div></details><details><summary>Is chemotherapy effective for peritoneal carcinomatosis?</summary><div><p>Systemic chemotherapy is an important treatment for many patients. Its effectiveness depends on the original cancer, tumour biology, previous treatment and response. It may be used alone or alongside surgery and other therapies.</p></div></details><details><summary>What is CRS-HIPEC?</summary><div><p>CRS-HIPEC combines cytoreductive surgery — which removes visible tumour deposits — with heated chemotherapy circulated inside the abdominal cavity. It is considered only for selected patients after specialist evaluation.</p></div></details><details><summary>Is HIPEC suitable for all patients with peritoneal carcinomatosis?</summary><div><p>No. Its role differs by cancer type and clinical situation. Disease extent, tumour biology, previous treatment, patient fitness and likelihood of complete cytoreduction all influence the decision.</p></div></details><details><summary>Can colorectal peritoneal carcinomatosis be treated with surgery?</summary><div><p>Selected patients may be considered for cytoreductive surgery depending on disease distribution and the possibility of complete removal. The role of HIPEC is more selective and evidence-based. It should not be presented as routine for every colorectal patient.</p></div></details><details><summary>Is CRS-HIPEC available in India?</summary><div><p>Specialist teams in India are involved in the management of selected peritoneal surface malignancies including CRS-HIPEC. However, not every cancer hospital offers this treatment. Patients should verify the treating surgeon's experience and the centre's resources.</p></div></details><details><summary>How much does peritoneal carcinomatosis treatment cost in India?</summary><div><p>There is no fixed cost. Treatment expenses vary depending on the primary cancer, investigations, medicines, surgery, HIPEC requirements, hospital stay and postoperative care. A personalised estimate should be obtained from the treating hospital after medical review.</p></div></details><details><summary>How long does recovery take after CRS-HIPEC?</summary><div><p>Recovery varies substantially. Patients may require a prolonged hospital admission and several weeks or longer to regain strength. The actual timeline depends on the extent of surgery, complications and general health.</p></div></details><details><summary>Can peritoneal carcinomatosis return after HIPEC?</summary><div><p>Yes. Recurrence can occur after CRS-HIPEC. The risk depends on tumour type, disease burden, completeness of surgery and other clinical factors. Regular follow-up is important.</p></div></details><details><summary>Is PIPAC an alternative to HIPEC?</summary><div><p>PIPAC is a different technique that delivers chemotherapy into the abdominal cavity as a pressurised aerosol during laparoscopy. It is being investigated and used in selected specialist settings. It is not a universally established replacement for CRS-HIPEC.</p></div></details><details><summary>Can patients with ascites undergo CRS-HIPEC?</summary><div><p>Ascites does not automatically determine eligibility. Its cause, severity, relationship to the cancer and the patient's overall condition must be assessed. Extensive disease or poor general fitness may affect surgical suitability.</p></div></details><details><summary>What medical reports are needed for a peritoneal cancer assessment in India?</summary><div><p>Useful documents include recent CT or MRI images, PET-CT where available, biopsy and histopathology reports, previous operation notes, chemotherapy records, blood tests and current medication details. The specialist may request additional investigations.</p></div></details></div>"
+        },
+        {
+          "id": "pc_h_ref",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Sources and Further Reading"
+        },
+        {
+          "id": "pc_l_ref",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "INDEPSO-ISPSM Consensus on Colorectal Peritoneal Metastases (2024). pubmed.ncbi.nlm.nih.gov/39637347/",
+            "American Radium Society Appropriate Use Criteria for Peritoneal Carcinomatosis (2025). pmc.ncbi.nlm.nih.gov/articles/PMC12281213/",
+            "ASO Practice Guideline: Management of Colorectal Peritoneal Metastases (2025). pubmed.ncbi.nlm.nih.gov/40587073/",
+            "INDEPSO-ISPSM Consensus on Enhanced Recovery After CRS With or Without HIPEC (2025). pmc.ncbi.nlm.nih.gov/articles/PMC11732209/",
+            "ASCO Guideline: Treatment of Metastatic Colorectal Cancer (2023). pmc.ncbi.nlm.nih.gov/articles/PMC10506310/"
+          ]
+        },
+        {
+          "id": "pc_btn4",
+          "type": "button",
+          "label": "Speak with a GAF Healthcare patient coordinator",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20a%20patient%20coordinator%20about%20peritoneal%20cancer%20treatment%20in%20India."
+        },
+        {
+          "id": "pc_disc",
+          "type": "paragraph",
+          "text": "**Medical Disclaimer:** This article is intended for educational purposes only. It does not replace a consultation with a qualified oncologist or surgical oncologist. Treatment eligibility, prognosis and costs must be determined individually by the treating medical team."
+        }
+      ]
+    },
+    {
+      "id": "art_peritoneal_metastases_treatment",
+      "slug": "peritoneal-metastases-treatment",
+      "title": "Peritoneal Metastases: Can Cancer Spread Inside the Abdominal Cavity Be Treated?",
+      "excerpt": "Peritoneal metastases occur when cancer spreads to the lining of the abdominal cavity. They can develop from colorectal, ovarian, stomach, appendix and other cancers. Although this diagnosis often indicates advanced disease, treatment may still be possible for selected patients. Explore the role of systemic therapy, targeted treatment, cytoreductive surgery and HIPEC, along with specialist assessment and treatment pathways in India.",
+      "date": "2026-11-09",
+      "publishedAt": "2026-11-09T00:00:00.000Z",
+      "updatedAt": "2026-11-09T00:00:00.000Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Surgical Oncology",
+      "tags": [
+        "Peritoneal Metastases",
+        "Peritoneal Cancer",
+        "CRS-HIPEC",
+        "Cancer Treatment India",
+        "Cytoreductive Surgery"
+      ],
+      "image": "/treatments/peritoneal-metastases-spread-diagram.webp",
+      "imageAlt": "Peritoneal metastases diagram showing cancer spreading to the abdominal lining",
+      "status": "published",
+      "featured": false,
+      "seoTitle": "Peritoneal Metastases: Treatment Options, Surgery & India Guide",
+      "seoDescription": "Learn what peritoneal metastases mean, which cancers cause them, how they are diagnosed and treated, and when CRS-HIPEC may be considered in India.",
+      "canonical": "https://gaf.healthcare/blogs/peritoneal-metastases-treatment",
+      "ogImage": "/treatments/peritoneal-metastases-spread-diagram.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Peritoneal metastases",
+        "Peritoneal metastases treatment",
+        "Cancer spread to abdominal lining",
+        "Peritoneal metastasis treatment in India",
+        "Peritoneal surface malignancy",
+        "Cytoreductive surgery",
+        "CRS-HIPEC",
+        "HIPEC treatment in India",
+        "Peritoneal Cancer Index",
+        "Colorectal peritoneal metastases",
+        "Ovarian cancer peritoneal metastases"
+      ],
+      "relatedLinks": [
+        {
+          "label": "HIPEC Surgery in India – Full Treatment Guide",
+          "href": "/treatments/hipec-surgery-in-india"
+        },
+        {
+          "label": "What Is HIPEC Surgery?",
+          "href": "/blogs/what-is-hipec-surgery"
+        },
+        {
+          "label": "Peritoneal Carcinomatosis",
+          "href": "/blogs/peritoneal-carcinomatosis"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "pm_qa0",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"article-quick-answer__body\"><p>Peritoneal metastases describe cancer that has spread to the peritoneum — the thin membrane lining the abdominal cavity. They can develop from colorectal, ovarian, stomach, appendix and other cancers. Although often indicating advanced disease, treatment is possible for many patients through systemic chemotherapy, targeted therapy, immunotherapy or, for carefully selected patients, cytoreductive surgery with or without HIPEC.</p></div></aside>"
+        },
+        {
+          "id": "pm_btn0",
+          "type": "button",
+          "label": "Share medical records for a specialist peritoneal cancer opinion",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20share%20my%20medical%20records%20for%20a%20specialist%20peritoneal%20cancer%20treatment%20opinion%20in%20India."
+        },
+        {
+          "id": "pm_toc",
+          "type": "html",
+          "html": "<nav class=\"article-toc\" aria-label=\"On this page\"><p class=\"article-toc__label\">On this page</p><ol><li><a href=\"#1-what-are-peritoneal-metastases\">1. What Are Peritoneal Metastases?</a></li><li><a href=\"#2-which-cancers-spread-to-peritoneum\">2. Which Cancers Can Spread to the Peritoneum?</a></li><li><a href=\"#3-how-does-cancer-spread\">3. How Does Cancer Spread to the Abdominal Lining?</a></li><li><a href=\"#4-stage-4-cancer\">4. Are Peritoneal Metastases Stage 4 Cancer?</a></li><li><a href=\"#5-symptoms\">5. Symptoms of Peritoneal Metastases</a></li><li><a href=\"#6-diagnosis\">6. How Are They Diagnosed?</a></li><li><a href=\"#7-pci\">7. What Is the Peritoneal Cancer Index?</a></li><li><a href=\"#8-treatment-options\">8. Can Peritoneal Metastases Be Treated?</a></li><li><a href=\"#9-surgery\">9. When Can Surgery Be Considered?</a></li><li><a href=\"#10-hipec\">10. Does Every Patient Need HIPEC After Surgery?</a></li><li><a href=\"#11-treatment-india\">11. Treatment Planning in India</a></li><li><a href=\"#12-cost\">12. Treatment Cost in India</a></li><li><a href=\"#13-recovery\">13. Recovery After Surgery</a></li><li><a href=\"#14-recurrence\">14. Can Peritoneal Metastases Come Back?</a></li><li><a href=\"#15-international-patients\">15. International Patients</a></li><li><a href=\"#16-faqs\">16. Frequently Asked Questions</a></li></ol></nav>"
+        },
+        {
+          "id": "pm_h1",
+          "type": "heading",
+          "level": 2,
+          "text": "1. What Are Peritoneal Metastases?"
+        },
+        {
+          "id": "pm_a1",
+          "type": "html",
+          "html": "<span id=\"1-what-are-peritoneal-metastases\"></span>"
+        },
+        {
+          "id": "pm_p1a",
+          "type": "paragraph",
+          "text": "Peritoneal metastases occur when cancer cells spread from their original location to the peritoneum — a thin membrane inside the abdomen that lines the abdominal wall and covers many abdominal organs. Cancer cells may form tumour deposits across different areas of the abdomen."
+        },
+        {
+          "id": "pm_p1b",
+          "type": "paragraph",
+          "text": "The condition is sometimes called peritoneal carcinomatosis, particularly when multiple tumour deposits are present. The term *peritoneal metastases* is preferred in modern clinical discussions because it describes the spread without implying a particular number or pattern of deposits."
+        },
+        {
+          "id": "pm_qa1",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Is this a separate cancer?</p><div class=\"article-quick-answer__body\"><p>Usually not. Peritoneal metastases represent the spread of an existing cancer. Colon cancer that spreads to the peritoneum remains colorectal cancer. Ovarian cancer involving the peritoneum remains ovarian cancer. This distinction matters because the original tumour type determines which medicines and treatment strategies are relevant.</p></div></aside>"
+        },
+        {
+          "id": "pm_img1",
+          "type": "image",
+          "src": "/treatments/peritoneal-metastases-spread-diagram.webp",
+          "alt": "Peritoneal metastases diagram showing colorectal cancer spreading to the peritoneal lining",
+          "caption": "Peritoneal metastases develop when cancer cells from the original tumour spread to and form deposits on the peritoneal membrane lining the abdominal cavity."
+        },
+        {
+          "id": "pm_h2",
+          "type": "heading",
+          "level": 2,
+          "text": "2. Which Cancers Can Spread to the Peritoneum?"
+        },
+        {
+          "id": "pm_a2",
+          "type": "html",
+          "html": "<span id=\"2-which-cancers-spread-to-peritoneum\"></span>"
+        },
+        {
+          "id": "pm_p2a",
+          "type": "paragraph",
+          "text": "Several cancers can spread to the abdominal lining. The treatment approach differs according to the primary site."
+        },
+        {
+          "id": "pm_h2a",
+          "type": "heading",
+          "level": 3,
+          "text": "Colorectal cancer"
+        },
+        {
+          "id": "pm_p2b",
+          "type": "paragraph",
+          "text": "Colorectal cancer may spread to the peritoneum through direct extension, lymphatic or blood circulation, or by detaching from the original tumour. Peritoneal metastases may be detected at the time of first diagnosis or appear later. Selected patients may be assessed for cytoreductive surgery."
+        },
+        {
+          "id": "pm_h2b",
+          "type": "heading",
+          "level": 3,
+          "text": "Ovarian cancer"
+        },
+        {
+          "id": "pm_p2c",
+          "type": "paragraph",
+          "text": "Ovarian cancer commonly involves the peritoneal surfaces. Treatment may include surgery and systemic chemotherapy. In selected circumstances, HIPEC may be considered as part of a specialist treatment strategy for carefully selected patients."
+        },
+        {
+          "id": "pm_h2c",
+          "type": "heading",
+          "level": 3,
+          "text": "Stomach, appendix and other cancers"
+        },
+        {
+          "id": "pm_p2d",
+          "type": "paragraph",
+          "text": "Gastric cancer can spread to the peritoneum. Some appendiceal tumours produce mucus that accumulates inside the abdomen (pseudomyxoma peritonei). Selected patients with appendiceal malignancies may be considered for cytoreductive surgery combined with HIPEC. Peritoneal metastases can also develop from pancreatic, gallbladder, bile duct, small bowel, endometrial and other cancers."
+        },
+        {
+          "id": "pm_h3",
+          "type": "heading",
+          "level": 2,
+          "text": "3. How Does Cancer Spread to the Abdominal Lining?"
+        },
+        {
+          "id": "pm_a3",
+          "type": "html",
+          "html": "<span id=\"3-how-does-cancer-spread\"></span>"
+        },
+        {
+          "id": "pm_l3a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Direct extension:** A tumour may grow through the wall of an abdominal organ and reach nearby peritoneal surfaces.",
+            "**Transcoelomic spread:** Cancer cells detach from the original tumour, move through fluid in the abdominal cavity and attach to the peritoneum.",
+            "**Lymphatic spread:** Cancer cells travel through lymphatic channels and reach other areas.",
+            "**Bloodstream spread:** In some cases, cancer cells travel through the blood and establish deposits in distant tissues including the peritoneum."
+          ]
+        },
+        {
+          "id": "pm_h4",
+          "type": "heading",
+          "level": 2,
+          "text": "4. Are Peritoneal Metastases the Same as Stage 4 Cancer?"
+        },
+        {
+          "id": "pm_a4",
+          "type": "html",
+          "html": "<span id=\"4-stage-4-cancer\"></span>"
+        },
+        {
+          "id": "pm_p4a",
+          "type": "paragraph",
+          "text": "Peritoneal metastases often indicate metastatic disease. For many cancers, this corresponds to stage IV, but staging depends on the original tumour's classification system. A stage IV diagnosis does not automatically mean that no active treatment is possible. Some patients may be considered for treatment intended to achieve prolonged disease control or even curative intent in selected situations."
+        },
+        {
+          "id": "pm_h5",
+          "type": "heading",
+          "level": 2,
+          "text": "5. What Are the Symptoms of Peritoneal Metastases?"
+        },
+        {
+          "id": "pm_a5",
+          "type": "html",
+          "html": "<span id=\"5-symptoms\"></span>"
+        },
+        {
+          "id": "pm_p5a",
+          "type": "paragraph",
+          "text": "Some patients have no obvious symptoms during the early stages. Others develop abdominal or digestive problems."
+        },
+        {
+          "id": "pm_l5a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Persistent abdominal bloating or increasing abdominal size",
+            "Abdominal discomfort or pain",
+            "Reduced appetite and early fullness after small meals",
+            "Unexplained weight loss",
+            "Nausea or vomiting",
+            "Constipation or changes in bowel habits",
+            "Fluid accumulation in the abdomen (ascites)",
+            "Fatigue and weakness"
+          ]
+        },
+        {
+          "id": "pm_qa5",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">What is malignant ascites?</p><div class=\"article-quick-answer__body\"><p>Ascites is the accumulation of fluid inside the abdominal cavity. When associated with cancer, it is called malignant ascites. It can cause abdominal swelling, pressure, reduced appetite and early fullness. Doctors may recommend ultrasound-guided drainage and fluid examination to establish its cause.</p></div></aside>"
+        },
+        {
+          "id": "pm_h6",
+          "type": "heading",
+          "level": 2,
+          "text": "6. How Are Peritoneal Metastases Diagnosed?"
+        },
+        {
+          "id": "pm_a6",
+          "type": "html",
+          "html": "<span id=\"6-diagnosis\"></span>"
+        },
+        {
+          "id": "pm_img2",
+          "type": "image",
+          "src": "/treatments/peritoneal-cancer-index-pci-scoring.webp",
+          "alt": "Peritoneal Cancer Index PCI scoring diagram showing 13 abdominal regions",
+          "caption": "The Peritoneal Cancer Index (PCI) scores cancer deposits across 13 abdominal and pelvic regions, helping specialists assess disease burden and surgical feasibility."
+        },
+        {
+          "id": "pm_p6a",
+          "type": "paragraph",
+          "text": "Diagnosis involves confirming the presence of cancer, identifying its origin and determining how extensively it has spread. For international patients considering treatment in India, sharing previous reports and original imaging files before travel can help specialists assess what further investigations may be required."
+        },
+        {
+          "id": "pm_l6a",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Contrast-enhanced CT scan** — commonly used to evaluate disease extent. Very small deposits may not always be visible.",
+            "**MRI** — may provide additional information about soft tissue involvement and disease distribution.",
+            "**PET-CT** — helps identify metabolically active deposits. Not all peritoneal tumours show significant uptake.",
+            "**Diagnostic laparoscopy** — minimally invasive camera examination of the abdominal cavity. Useful when imaging alone does not provide enough information.",
+            "**Biopsy and histopathology** — confirms cancer type, origin and tumour characteristics.",
+            "**Molecular testing** — depending on cancer type, may include RAS/BRAF, HER2, MSI/MMR and other biomarkers."
+          ]
+        },
+        {
+          "id": "pm_h7",
+          "type": "heading",
+          "level": 2,
+          "text": "7. What Is the Peritoneal Cancer Index (PCI)?"
+        },
+        {
+          "id": "pm_a7",
+          "type": "html",
+          "html": "<span id=\"7-pci\"></span>"
+        },
+        {
+          "id": "pm_p7a",
+          "type": "paragraph",
+          "text": "The PCI is a scoring system used to assess the extent of tumour deposits within the abdominal cavity. The abdomen and pelvis are divided into 13 regions, each scored on the size of the largest deposit. Total scores range from 0 to 39. A higher score generally indicates greater disease burden."
+        },
+        {
+          "id": "pm_qa7",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">PCI score guide</p><div class=\"article-quick-answer__body\"><ul><li><strong>LS-0:</strong> No visible tumour.</li><li><strong>LS-1:</strong> Deposits up to 0.5 cm.</li><li><strong>LS-2:</strong> Deposits 0.5–5 cm.</li><li><strong>LS-3:</strong> Deposits &gt;5 cm or confluent disease.</li></ul><p>PCI is only one part of the assessment. Location of deposits, small bowel involvement, tumour biology and patient fitness all also matter. There is no universal PCI cut-off for every cancer type.</p></div></aside>"
+        },
+        {
+          "id": "pm_h8",
+          "type": "heading",
+          "level": 2,
+          "text": "8. Can Peritoneal Metastases Be Treated?"
+        },
+        {
+          "id": "pm_a8",
+          "type": "html",
+          "html": "<span id=\"8-treatment-options\"></span>"
+        },
+        {
+          "id": "pm_img3",
+          "type": "image",
+          "src": "/treatments/peritoneal-metastases-treatment-options.webp",
+          "alt": "Peritoneal metastases treatment options flowchart showing chemotherapy, surgery, HIPEC and immunotherapy pathways",
+          "caption": "Treatment options for peritoneal metastases include systemic chemotherapy, targeted therapy, immunotherapy, cytoreductive surgery and HIPEC — the right approach depends on cancer type and individual factors."
+        },
+        {
+          "id": "pm_p8a",
+          "type": "paragraph",
+          "text": "Yes, treatment is possible for many patients. However, the appropriate treatment and its objectives vary significantly depending on the original cancer, disease extent and patient health."
+        },
+        {
+          "id": "pm_h8a",
+          "type": "heading",
+          "level": 3,
+          "text": "A. Systemic chemotherapy"
+        },
+        {
+          "id": "pm_p8b",
+          "type": "paragraph",
+          "text": "Systemic chemotherapy uses medicines that circulate through the bloodstream. It may be used before surgery, after surgery, when surgery is not appropriate, or to control metastatic disease. The drug combination depends on the primary cancer and its molecular characteristics."
+        },
+        {
+          "id": "pm_h8b",
+          "type": "heading",
+          "level": 3,
+          "text": "B. Targeted therapy and immunotherapy"
+        },
+        {
+          "id": "pm_p8c",
+          "type": "paragraph",
+          "text": "Targeted therapy works on specific molecular features of cancer. For example, colorectal cancer treatment may be guided by RAS, BRAF and HER2 status. Immunotherapy may benefit patients whose tumours are mismatch repair-deficient or microsatellite instability-high. Testing is necessary to establish whether these treatments are relevant."
+        },
+        {
+          "id": "pm_h8c",
+          "type": "heading",
+          "level": 3,
+          "text": "C. Cytoreductive surgery (CRS)"
+        },
+        {
+          "id": "pm_p8d",
+          "type": "paragraph",
+          "text": "Cytoreductive surgery aims to remove visible tumour deposits from the peritoneal surfaces. It may involve peritonectomy, omentectomy, bowel resection and removal of other involved structures. The aim is to achieve complete or near-complete removal of visible disease."
+        },
+        {
+          "id": "pm_h8d",
+          "type": "heading",
+          "level": 3,
+          "text": "D. HIPEC"
+        },
+        {
+          "id": "pm_p8e",
+          "type": "paragraph",
+          "text": "HIPEC stands for Hyperthermic Intraperitoneal Chemotherapy. It involves circulating heated chemotherapy inside the abdominal cavity, usually after cytoreductive surgery, to treat microscopic residual cancer cells. **HIPEC is not suitable for every patient with peritoneal metastases.** Its role varies by primary cancer, evidence base, disease burden and treatment protocol."
+        },
+        {
+          "id": "pm_h8e",
+          "type": "heading",
+          "level": 3,
+          "text": "E. PIPAC and supportive care"
+        },
+        {
+          "id": "pm_p8f",
+          "type": "paragraph",
+          "text": "PIPAC (Pressurised Intraperitoneal Aerosol Chemotherapy) is a laparoscopic technique still under investigation for several cancer types. When surgery or other disease-directed treatments are unlikely to provide meaningful benefit, supportive and palliative care can help manage pain, ascites, nausea, bowel symptoms, nutrition, fatigue and emotional distress."
+        },
+        {
+          "id": "pm_btn1",
+          "type": "button",
+          "label": "Ask if CRS-HIPEC is suitable for your diagnosis",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20know%20if%20I%20am%20eligible%20for%20CRS-HIPEC%20surgery%20in%20India."
+        },
+        {
+          "id": "pm_h9",
+          "type": "heading",
+          "level": 2,
+          "text": "9. When Can Surgery Be Considered for Peritoneal Metastases?"
+        },
+        {
+          "id": "pm_a9",
+          "type": "html",
+          "html": "<span id=\"9-surgery\"></span>"
+        },
+        {
+          "id": "pm_p9a",
+          "type": "paragraph",
+          "text": "Cytoreductive surgery may be considered for carefully selected patients. The decision is based on the primary cancer type, disease distribution and location of deposits (not just total PCI), response to systemic therapy, small bowel involvement, disease outside the abdomen, and patient fitness. The 2025 consensus guideline emphasises early referral to a peritoneal surface malignancy centre and a selective approach to surgery."
+        },
+        {
+          "id": "pm_h10",
+          "type": "heading",
+          "level": 2,
+          "text": "10. Does Every Patient Need HIPEC After Cytoreductive Surgery?"
+        },
+        {
+          "id": "pm_a10",
+          "type": "html",
+          "html": "<span id=\"10-hipec\"></span>"
+        },
+        {
+          "id": "pm_p10a",
+          "type": "paragraph",
+          "text": "No. CRS and HIPEC are related but distinct treatment components. CRS does not automatically require HIPEC. The evidence varies by cancer type. Selected patients with pseudomyxoma peritonei and advanced ovarian cancer may be assessed for CRS-HIPEC. Colorectal peritoneal metastases require careful consideration — the ASCO guideline recommends against adding oxaliplatin-based HIPEC to CRS in this setting. A specialist should explain the evidence for the patient's particular diagnosis."
+        },
+        {
+          "id": "pm_h11",
+          "type": "heading",
+          "level": 2,
+          "text": "11. Treatment Planning in India"
+        },
+        {
+          "id": "pm_a11",
+          "type": "html",
+          "html": "<span id=\"11-treatment-india\"></span>"
+        },
+        {
+          "id": "pm_p11a",
+          "type": "paragraph",
+          "text": "India has specialist oncology services and teams involved in the management of selected peritoneal surface malignancies. The INDEPSO-ISPSM consensus recommendations address patient selection, diagnostic work-up, systemic treatment, surgery and follow-up for peritoneal malignancies."
+        },
+        {
+          "id": "pm_l11a",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**Medical record review** — specialist team reviews original diagnosis, pathology, imaging, surgery and chemotherapy history.",
+            "**Specialist consultation** — surgical oncologist and medical oncologist assess the patient's condition and options.",
+            "**Additional diagnostic evaluation** — updated imaging, biopsy, pathology review, molecular testing or diagnostic laparoscopy.",
+            "**Multidisciplinary discussion** — the case is reviewed by a multidisciplinary tumour board.",
+            "**Individual treatment recommendation** — clear explanation of proposed treatment, objective, benefits, risks and alternatives.",
+            "**Cost estimate and admission planning** — patient-specific estimate based on planned treatment and expected stay."
+          ]
+        },
+        {
+          "id": "pm_h12",
+          "type": "heading",
+          "level": 2,
+          "text": "12. Peritoneal Metastases Treatment Cost in India"
+        },
+        {
+          "id": "pm_a12",
+          "type": "html",
+          "html": "<span id=\"12-cost\"></span>"
+        },
+        {
+          "id": "pm_p12a",
+          "type": "paragraph",
+          "text": "There is no single cost for treating peritoneal metastases. The total expense depends on the original cancer, the treatment required and the patient's clinical condition. A patient receiving systemic chemotherapy may have a very different cost profile from someone undergoing extensive cytoreductive surgery with HIPEC."
+        },
+        {
+          "id": "pm_qa12",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">How to get a treatment estimate</p><div class=\"article-quick-answer__body\"><p>Share your recent CT/MRI/PET-CT reports, original scan images, biopsy and histopathology reports, molecular testing results, previous operation notes, chemotherapy records and current blood investigations. The hospital can then prepare an individual itemised estimate covering the proposed treatment, expected hospital stay, ICU requirements and what may increase the cost if complications occur. For international patients, the budget should also include accommodation, transport and the possibility of an extended stay.</p></div></aside>"
+        },
+        {
+          "id": "pm_btn2",
+          "type": "button",
+          "label": "Request a treatment cost estimate",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20a%20treatment%20cost%20estimate%20for%20peritoneal%20cancer%20treatment%20in%20India."
+        },
+        {
+          "id": "pm_h13",
+          "type": "heading",
+          "level": 2,
+          "text": "13. Recovery After Peritoneal Metastases Surgery"
+        },
+        {
+          "id": "pm_a13",
+          "type": "html",
+          "html": "<span id=\"13-recovery\"></span>"
+        },
+        {
+          "id": "pm_img4",
+          "type": "image",
+          "src": "/treatments/cytoreductive-surgery-peritoneal-removal.webp",
+          "alt": "Cytoreductive surgery showing removal of peritoneal tumour deposits",
+          "caption": "Cytoreductive surgery removes visible tumour deposits from the peritoneal surfaces and may include peritonectomy, omentectomy and bowel resection depending on disease distribution."
+        },
+        {
+          "id": "pm_p13a",
+          "type": "paragraph",
+          "text": "Recovery depends on the treatment performed. After CRS-HIPEC, patients may require intensive care or high-dependency monitoring, pain management, intravenous fluids, nutritional support, monitoring of kidney function and blood counts, wound care, physiotherapy and gradual mobilisation. Some patients need several weeks to regain strength. Full recovery can take months. International patients should not plan their return journey around a fixed number of days."
+        },
+        {
+          "id": "pm_h14",
+          "type": "heading",
+          "level": 2,
+          "text": "14. Can Peritoneal Metastases Come Back After Treatment?"
+        },
+        {
+          "id": "pm_a14",
+          "type": "html",
+          "html": "<span id=\"14-recurrence\"></span>"
+        },
+        {
+          "id": "pm_p14a",
+          "type": "paragraph",
+          "text": "Yes. Recurrence is possible after treatment, including after CRS-HIPEC. The risk depends on original cancer type, tumour biology, initial disease burden, completeness of surgery and response to systemic treatment. The treating team should provide a written follow-up plan — particularly important for patients returning to another country after treatment in India."
+        },
+        {
+          "id": "pm_h15",
+          "type": "heading",
+          "level": 2,
+          "text": "15. How Can International Patients Seek Treatment in India?"
+        },
+        {
+          "id": "pm_a15",
+          "type": "html",
+          "html": "<span id=\"15-international-patients\"></span>"
+        },
+        {
+          "id": "pm_p15a",
+          "type": "paragraph",
+          "text": "Patients from Tanzania, Kenya, Ethiopia, Uganda, Zambia, Nigeria, Iraq and other countries may consider India for specialist cancer assessment. For peritoneal metastases, it is particularly important to obtain a medical opinion **before** travelling because some treatment options involve complex surgery and prolonged recovery."
+        },
+        {
+          "id": "pm_p15b",
+          "type": "paragraph",
+          "text": "GAF Healthcare assists international patients with the coordination of medical treatment in India — including collection and organisation of medical reports, coordination of specialist consultations, hospital opinions and estimates, appointment coordination, medical visa documentation support, airport transfers, accommodation and interpreter arrangements. Clinical decisions remain with the treating doctors."
+        },
+        {
+          "id": "pm_btn3",
+          "type": "button",
+          "label": "Arrange a specialist consultation in India",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20arrange%20a%20specialist%20consultation%20for%20peritoneal%20cancer%20treatment%20in%20India."
+        },
+        {
+          "id": "pm_h16",
+          "type": "heading",
+          "level": 2,
+          "text": "16. Frequently Asked Questions About Peritoneal Metastases"
+        },
+        {
+          "id": "pm_a16",
+          "type": "html",
+          "html": "<span id=\"16-faqs\"></span>"
+        },
+        {
+          "id": "pm_faqs",
+          "type": "html",
+          "html": "<div class=\"treatment-faqs\"><details><summary>What are peritoneal metastases?</summary><div><p>Peritoneal metastases occur when cancer spreads to the peritoneum, the thin membrane lining the abdominal cavity. They often originate from cancers of the colon, rectum, stomach, ovary or appendix.</p></div></details><details><summary>Are peritoneal metastases the same as peritoneal carcinomatosis?</summary><div><p>The terms are closely related. Peritoneal carcinomatosis is commonly used to describe cancer deposits across the peritoneal surfaces. Peritoneal metastases is a broader term for cancer that has spread to the peritoneum.</p></div></details><details><summary>Do peritoneal metastases mean stage 4 cancer?</summary><div><p>For many primary cancers, peritoneal spread represents metastatic or stage IV disease. The formal stage depends on the original cancer and its staging system. A specialist should confirm the stage.</p></div></details><details><summary>Can peritoneal metastases be treated?</summary><div><p>Yes. Treatment may include systemic chemotherapy, targeted therapy, immunotherapy, surgery, HIPEC in selected circumstances and supportive care. The right approach depends on the original cancer and extent of disease.</p></div></details><details><summary>Can peritoneal metastases be cured?</summary><div><p>Some carefully selected patients may receive treatment with curative intent, particularly when complete surgical removal of visible disease is possible. However, cure cannot be guaranteed and depends on tumour type and individual clinical factors.</p></div></details><details><summary>Which cancers commonly spread to the peritoneum?</summary><div><p>Colorectal, ovarian, stomach and appendix cancers are the most common causes. Pancreatic, gallbladder, bile duct and other abdominal or pelvic cancers can also spread to the peritoneum.</p></div></details><details><summary>What are the symptoms of peritoneal metastases?</summary><div><p>Symptoms may include abdominal swelling, bloating, pain, ascites, reduced appetite, early fullness, weight loss, nausea and changes in bowel habits. Some patients have few symptoms initially.</p></div></details><details><summary>What is malignant ascites?</summary><div><p>Malignant ascites is fluid accumulation in the abdominal cavity associated with cancer. It may cause abdominal swelling, discomfort, early fullness and breathlessness. Fluid examination can help establish its cause.</p></div></details><details><summary>How are peritoneal metastases diagnosed?</summary><div><p>Doctors may use CT, MRI, PET-CT, ultrasound, biopsy and histopathology. Diagnostic laparoscopy may be recommended to examine the abdominal cavity and assess disease distribution directly.</p></div></details><details><summary>What is the Peritoneal Cancer Index?</summary><div><p>PCI is a scoring system that measures the extent and distribution of tumour deposits in 13 abdominal and pelvic regions. The total score ranges from 0 to 39 and helps specialists assess disease burden and surgical feasibility.</p></div></details><details><summary>What is cytoreductive surgery?</summary><div><p>Cytoreductive surgery is an operation intended to remove visible tumour deposits from the peritoneal surfaces. It may involve removing affected peritoneal tissue and, when necessary, parts of involved organs.</p></div></details><details><summary>Does every patient undergoing CRS need HIPEC?</summary><div><p>No. The decision to add HIPEC depends on the primary cancer, clinical evidence, disease distribution and the patient's circumstances. CRS does not automatically require HIPEC.</p></div></details><details><summary>Is HIPEC suitable for colorectal peritoneal metastases?</summary><div><p>HIPEC has a selective and debated role. The ASCO guideline recommends against adding oxaliplatin-based HIPEC to CRS in this setting. Patient selection and the specific protocol matter. It should not be presented as routine.</p></div></details><details><summary>Can ovarian cancer spread to the peritoneum?</summary><div><p>Yes. Ovarian cancer commonly involves the peritoneal surfaces. Treatment may include surgery and systemic chemotherapy, with HIPEC considered in selected clinical circumstances.</p></div></details><details><summary>Is HIPEC surgery available in India?</summary><div><p>Yes. Specialist surgical oncology teams in India are involved in CRS-HIPEC and peritoneal surface malignancy management. Patients should verify that the specific hospital and surgeon have experience with their cancer type.</p></div></details><details><summary>How much does peritoneal metastases treatment cost in India?</summary><div><p>Costs vary according to the primary cancer, investigations, medicines, surgery, HIPEC requirements, hospital stay and postoperative care. A written estimate should be requested after the hospital reviews the patient's medical records. There is no single fixed price.</p></div></details><details><summary>Can peritoneal metastases return after surgery?</summary><div><p>Yes. Recurrence is possible after surgery, including after CRS-HIPEC. Follow-up with the treating oncology team is essential.</p></div></details><details><summary>Can international patients travel to India for a specialist opinion?</summary><div><p>Yes. Patients can arrange specialist consultations in India. Sharing scan images, pathology reports, chemotherapy records and operation notes before travel helps the team assess the case more effectively.</p></div></details></div>"
+        },
+        {
+          "id": "pm_h_ref",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Sources and Further Reading"
+        },
+        {
+          "id": "pm_l_ref",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Consensus Guideline for the Management of Colorectal Cancer With Peritoneal Metastases (2025). pubmed.ncbi.nlm.nih.gov/40558054/",
+            "INDEPSO-ISPSM Consensus on Colorectal Peritoneal Metastases (2024). pubmed.ncbi.nlm.nih.gov/39637347/",
+            "Consensus Guideline for Gastric Cancer With Synchronous Peritoneal Metastases (2024). acsjournals.onlinelibrary.wiley.com/doi/10.1002/cncr.35870",
+            "Multi-Society Guideline on CRS and HIPEC (2024). doi.org/10.1002/jso.27991",
+            "ASCO Guideline: Treatment of Metastatic Colorectal Cancer (2023). pmc.ncbi.nlm.nih.gov/articles/PMC10506310/"
+          ]
+        },
+        {
+          "id": "pm_btn4",
+          "type": "button",
+          "label": "Speak with a GAF Healthcare patient coordinator",
+          "href": "https://wa.me/919044346292?text=Hello%2C%20I%20would%20like%20to%20speak%20with%20a%20patient%20coordinator%20about%20peritoneal%20cancer%20treatment%20in%20India."
+        },
+        {
+          "id": "pm_disc",
+          "type": "paragraph",
+          "text": "**Medical Disclaimer:** This article is for educational purposes only and does not replace medical consultation. It should not be used to make treatment decisions without advice from a qualified oncologist or surgical oncologist. Eligibility, prognosis and treatment costs must be assessed individually."
+        }
+      ]
     }
   ]
 }
