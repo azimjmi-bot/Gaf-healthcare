@@ -2861,9 +2861,768 @@
       "name": "metastatic-breast-cancer-systemic-therapy.webp",
       "alt": "Woman receiving outpatient systemic therapy counselling beside a circular diagram of hormone, HER2-targeted, chemotherapy and immunotherapy pathways",
       "addedAt": "2026-11-12T19:00:00.000Z"
+    },
+    {
+      "id": "media_breast_cancer_screening_overview_webp",
+      "url": "/uploads/articles/breast-cancer-screening-overview.webp",
+      "name": "breast-cancer-screening-overview.webp",
+      "alt": "Woman discussing a breast cancer screening plan with a clinician",
+      "addedAt": "2026-11-13T09:26:07.332Z"
+    },
+    {
+      "id": "media_breast_cancer_screening_mammography_webp",
+      "url": "/uploads/articles/breast-cancer-screening-mammography.webp",
+      "name": "breast-cancer-screening-mammography.webp",
+      "alt": "Woman undergoing digital mammography with a technologist in a calm clinic",
+      "addedAt": "2026-11-13T09:26:07.332Z"
+    },
+    {
+      "id": "media_breast_cancer_screening_ultrasound_mri_webp",
+      "url": "/uploads/articles/breast-cancer-screening-ultrasound-mri.webp",
+      "name": "breast-cancer-screening-ultrasound-mri.webp",
+      "alt": "Clinician explaining breast ultrasound and MRI options",
+      "addedAt": "2026-11-13T09:26:07.332Z"
+    },
+    {
+      "id": "media_breast_cancer_screening_high_risk_webp",
+      "url": "/uploads/articles/breast-cancer-screening-high-risk.webp",
+      "name": "breast-cancer-screening-high-risk.webp",
+      "alt": "Genetic counsellor reviewing family history for high-risk breast screening",
+      "addedAt": "2026-11-13T09:26:07.332Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_breast_cancer_screening_india",
+      "slug": "breast-cancer-screening-india",
+      "title": "Breast Cancer Screening in India: Mammography, Ultrasound, MRI, Screening Age and Cost Explained",
+      "excerpt": "Breast cancer screening can help detect cancer before symptoms appear. This guide explains when women in India should consider screening, how mammography, ultrasound and MRI differ, who may need additional tests, what happens after an abnormal result and how to understand screening costs.",
+      "date": "13 November 2026",
+      "publishedAt": "2026-11-13T10:00:00.000Z",
+      "updatedAt": "2026-11-13T09:26:07.332Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Medical Oncology",
+      "tags": [
+        "breast cancer",
+        "screening",
+        "mammography",
+        "India",
+        "early detection"
+      ],
+      "image": "/uploads/articles/breast-cancer-screening-overview.webp",
+      "imageAlt": "Woman discussing a breast cancer screening plan with a clinician",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Breast Cancer Screening in India: Age, Mammography, Tests and Cost",
+      "seoDescription": "Understand breast cancer screening in India, including the recommended age, mammography, ultrasound, MRI, high-risk screening, costs and what to expect.",
+      "canonical": "https://gaf.healthcare/blogs/breast-cancer-screening-india",
+      "ogImage": "/uploads/articles/breast-cancer-screening-overview.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Breast cancer screening in India",
+        "Breast cancer screening age in India",
+        "Mammography test in India",
+        "Breast cancer screening cost in India",
+        "Mammogram vs ultrasound",
+        "Breast MRI for cancer screening",
+        "Breast cancer screening guidelines",
+        "Breast screening for women above 40",
+        "Breast cancer early detection",
+        "Breast cancer screening for high-risk women",
+        "Digital mammography in India"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Breast Cancer Treatment in India",
+          "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Breast cancer symptoms",
+          "href": "/blogs/breast-cancer-symptoms"
+        },
+        {
+          "label": "Breast cancer diagnosis",
+          "href": "/blogs/breast-cancer-diagnosis"
+        },
+        {
+          "label": "Diagnosis tests",
+          "href": "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2"
+        },
+        {
+          "label": "Follow-up tests",
+          "href": "/blogs/breast-cancer-follow-up-tests"
+        },
+        {
+          "label": "Cost guide",
+          "href": "/blogs/breast-cancer-treatment-cost-in-india"
+        },
+        {
+          "label": "International patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"md-body\"><table><thead><tr><th>Question</th><th>Quick Answer</th></tr></thead><tbody><tr><td><strong>What is screening?</strong></td><td>Checking for possible breast cancer before symptoms appear</td></tr><tr><td><strong>Average-risk start (BISI)</strong></td><td>Consider annual mammography-based screening from age 40</td></tr><tr><td><strong>Public programme</strong></td><td>Clinical breast examination for eligible women (e.g. ages 30–65 in programme settings)</td></tr><tr><td><strong>Main imaging</strong></td><td>Mammography; ultrasound and MRI when clinically indicated or high risk</td></tr><tr><td><strong>Symptoms?</strong></td><td>Do not wait for screening — seek diagnostic assessment promptly</td></tr><tr><td><strong>Planning</strong></td><td><a href=\"/treatments/breast-cancer-treatment-in-india\">Breast cancer treatment in India</a> · <a href=\"/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2\">diagnosis tests</a> · <a href=\"/blogs/breast-cancer-treatment-cost-in-india\">cost guide</a></td></tr></tbody></table></div><p class=\"article-quick-answer__body\"><strong>Breast cancer screening in India</strong> should match age, risk and symptoms — not every woman needs every test.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Breast cancer screening can help detect cancer before symptoms appear. This guide explains when women in India should consider screening, how mammography, ultrasound and MRI differ, who may need additional tests, what happens after an abnormal result and how to understand screening costs. Related care: [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india), [symptoms](/blogs/breast-cancer-symptoms), [diagnosis](/blogs/breast-cancer-diagnosis) and [cost](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "btn_003",
+          "type": "button",
+          "label": "Ask GAF to arrange a breast screening consultation",
+          "href": "/consult?treatment=Breast%20Cancer%20Screening"
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with age, family history and prior imaging](https://wa.me/919044346292?text=Please%20advise%20on%20breast%20cancer%20screening%20options%20and%20cost%20for%20my%20age%20and%20risk%20profile%20in%20India.)"
+        },
+        {
+          "id": "img_005",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-screening-overview.webp",
+          "alt": "Woman discussing a breast cancer screening plan with a clinician beside a soft circular age-based screening concept",
+          "caption": "Screening looks for possible cancer before symptoms — the right test depends on age and risk."
+        },
+        {
+          "id": "h_006",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Is Breast Cancer Screening Important?"
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "Early breast cancer may not cause pain or a lump. Screening examines women without symptoms to find suspicious changes when treatment may be more manageable. In India, many women are diagnosed only after noticing symptoms — awareness and timely imaging can reduce delay."
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "Screening does not mean every woman needs every test. Method depends on age, family history, personal risk, breast density and medical history. See [stages](/blogs/breast-cancer-stages-0-1-2-3-4) and [young women](/blogs/breast-cancer-in-young-women-treatment-india)."
+        },
+        {
+          "id": "h_009",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Breast Cancer Screening?"
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "Screening checks for possible signs of breast cancer before symptoms develop. It differs from diagnostic testing:"
+        },
+        {
+          "id": "html_011",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Breast cancer screening</th><th>Diagnostic breast testing</th></tr></thead><tbody><tr><td>For women without breast symptoms</td><td>For women with a lump, discharge, skin changes or other symptoms</td></tr><tr><td>Looks for possible cancer before symptoms appear</td><td>Investigates a specific concern</td></tr><tr><td>May involve screening mammography</td><td>May involve diagnostic mammography, ultrasound, MRI or biopsy</td></tr><tr><td>Usually follows an age- and risk-based plan</td><td>Depends on the symptom, age and clinical findings</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "**Important:** If you notice a breast lump, nipple discharge, skin dimpling or a change in breast shape, do not wait for the next screening appointment — seek assessment promptly, even after a recent normal mammogram. More on [symptoms](/blogs/breast-cancer-symptoms)."
+        },
+        {
+          "id": "h_013",
+          "type": "heading",
+          "level": 2,
+          "text": "At What Age Should Women Start Breast Cancer Screening in India?"
+        },
+        {
+          "id": "p_014",
+          "type": "paragraph",
+          "text": "There is no single nationwide mammography schedule for every woman. Government programmes, specialist imaging guidance and high-risk pathways differ."
+        },
+        {
+          "id": "html_015",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Group</th><th>Screening approach</th></tr></thead><tbody><tr><td>Average-risk women below 40</td><td>Routine mammography generally not recommended by BISI; assess symptoms promptly</td></tr><tr><td>Average-risk women aged 40–70</td><td>BISI recommends considering annual mammography-based screening</td></tr><tr><td>Women above 70</td><td>Individualise based on health, life expectancy and preferences</td></tr><tr><td>Women at high risk</td><td>Earlier/more intensive screening — often MRI with mammography</td></tr><tr><td>Breast symptoms at any age</td><td>Diagnostic assessment without waiting for screening age</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "The Breast Imaging Society, India (BISI) recommends considering annual mammography-based screening from age 40 until about 70 for women choosing opportunistic screening, then individualising. This is not the same as a universal government-funded annual mammography programme."
+        },
+        {
+          "id": "h_017",
+          "type": "heading",
+          "level": 3,
+          "text": "What does the Indian government screening programme recommend?"
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "India’s population-based framework has used clinical breast examination (CBE) for women aged roughly 30–65, often at longer intervals (e.g. five years when findings are normal). Suspicious findings are referred for further assessment, which may include ultrasound and biopsy."
+        },
+        {
+          "id": "btn_019",
+          "type": "button",
+          "label": "Request a personalised screening age review",
+          "href": "/consult?treatment=Breast%20Cancer%20Screening"
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 2,
+          "text": "What Are the Different Breast Cancer Screening Tests?"
+        },
+        {
+          "id": "img_021",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-screening-mammography.webp",
+          "alt": "Woman undergoing digital mammography with a technologist in a calm clinic beside a soft circular breast imaging concept",
+          "caption": "Mammography remains the main imaging method for routine breast screening."
+        },
+        {
+          "id": "h_022",
+          "type": "heading",
+          "level": 3,
+          "text": "A. Mammography"
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "Mammography is an X-ray of the breasts and the main imaging method for routine screening. Images can show small masses, microcalcifications, architectural distortion and other changes that may not be felt."
+        },
+        {
+          "id": "ul_024",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Digital mammography** — stores images digitally for review and comparison.",
+            "**3D mammography (tomosynthesis)** — images from multiple angles; may help in selected dense-breast settings; availability and cost vary."
+          ]
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "Advantages include detecting some abnormalities before they are palpable and establishing a baseline. Limitations include temporary compression discomfort, dense tissue obscuring findings, and false positives or false negatives."
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 3,
+          "text": "B. Breast Ultrasound"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "Ultrasound uses sound waves without ionising radiation. It helps distinguish cysts from solid lumps and is often used for younger women with lumps, pregnancy/breastfeeding symptoms, dense tissue as a supplement, or to guide biopsy. It is **not** generally a standalone substitute for mammography-based screening in average-risk women."
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 3,
+          "text": "C. Breast MRI"
+        },
+        {
+          "id": "img_029",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-screening-ultrasound-mri.webp",
+          "alt": "Clinician explaining breast ultrasound and MRI options beside soft circular diagrams of ultrasound and MRI concepts",
+          "caption": "Ultrasound and MRI complement mammography when symptoms or high risk justify them."
+        },
+        {
+          "id": "p_030",
+          "type": "paragraph",
+          "text": "MRI provides detailed images without X-ray radiation and usually uses intravenous contrast for screening. It is mainly for significantly increased risk (e.g. BRCA-related risk, strong family history, prior chest radiation at a young age). It can detect additional cancers but also false positives, extra biopsies and higher cost."
+        },
+        {
+          "id": "h_031",
+          "type": "heading",
+          "level": 3,
+          "text": "D. Clinical Breast Examination and Breast Awareness"
+        },
+        {
+          "id": "p_032",
+          "type": "paragraph",
+          "text": "A trained clinician examines the breasts and armpits. CBE is used in India’s public screening framework but cannot detect every mammographic abnormality. Women should know what is normal for their breasts and report persistent changes — formal monthly self-exam is not a substitute for evidence-based screening."
+        },
+        {
+          "id": "h_033",
+          "type": "heading",
+          "level": 2,
+          "text": "Mammography vs Ultrasound vs MRI"
+        },
+        {
+          "id": "html_034",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Mammography</th><th>Ultrasound</th><th>MRI</th></tr></thead><tbody><tr><td>Technology</td><td>X-rays</td><td>Sound waves</td><td>Magnetic field and radio waves</td></tr><tr><td>Ionising radiation</td><td>Yes, low dose</td><td>No</td><td>No</td></tr><tr><td>Routine screening</td><td>Main established imaging method</td><td>Not usually used alone</td><td>Mainly selected high-risk women</td></tr><tr><td>Microcalcifications</td><td>Yes</td><td>Limited</td><td>Not its main strength</td></tr><tr><td>Cyst vs solid</td><td>Sometimes</td><td>Yes</td><td>Sometimes</td></tr><tr><td>Pregnancy</td><td>When clinically indicated</td><td>Often initial imaging</td><td>Selected situations</td></tr><tr><td>Cost</td><td>Usually lower than MRI</td><td>Varies</td><td>Usually higher</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "Choose the test recommended for your age, risk and findings — not simply the most expensive option."
+        },
+        {
+          "id": "h_036",
+          "type": "heading",
+          "level": 2,
+          "text": "Who Is at High Risk of Breast Cancer?"
+        },
+        {
+          "id": "img_037",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-screening-high-risk.webp",
+          "alt": "Genetic counsellor reviewing family history with a woman beside soft circular DNA and family silhouette concepts",
+          "caption": "High-risk women may need earlier screening and MRI alongside mammography."
+        },
+        {
+          "id": "ul_038",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Close relatives with breast cancer (especially young-onset), ovarian cancer, bilateral breast cancer, male breast cancer or related hereditary patterns.",
+            "Inherited variants such as BRCA1, BRCA2, PALB2, TP53, PTEN and other syndromes.",
+            "Chest radiation at a young age.",
+            "Certain prior biopsy findings (e.g. atypical hyperplasia, LCIS)."
+          ]
+        },
+        {
+          "id": "p_039",
+          "type": "paragraph",
+          "text": "High-risk plans may include earlier start, annual MRI with mammography, genetic counselling and testing. See [diagnosis / biomarker testing](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2) and [precision oncology planning](/costs/India/Medical-Oncology/Precision-Oncology)."
+        },
+        {
+          "id": "p_040",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for high-risk screening coordination](https://wa.me/919044346292?text=I%20have%20a%20family%20history%20of%20breast%20cancer.%20Please%20help%20arrange%20risk%20assessment%20and%20screening%20options%20in%20India.)"
+        },
+        {
+          "id": "h_041",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast Cancer Screening for Women With Dense Breasts"
+        },
+        {
+          "id": "p_042",
+          "type": "paragraph",
+          "text": "Dense breasts are common and not a disease, but density raises risk slightly and can hide cancers on mammography (both appear white)."
+        },
+        {
+          "id": "html_043",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Category</th><th>Description</th></tr></thead><tbody><tr><td>A</td><td>Almost entirely fatty</td></tr><tr><td>B</td><td>Scattered areas of fibroglandular density</td></tr><tr><td>C</td><td>Heterogeneously dense</td></tr><tr><td>D</td><td>Extremely dense</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "Categories C and D are generally “dense.” Extra ultrasound or MRI is not automatic for every average-risk woman with dense breasts — benefits and harms of supplemental screening vary. Discuss overall risk with your clinician."
+        },
+        {
+          "id": "h_045",
+          "type": "heading",
+          "level": 2,
+          "text": "Screening During Pregnancy and Breastfeeding"
+        },
+        {
+          "id": "p_046",
+          "type": "paragraph",
+          "text": "Do not ignore a new lump in pregnancy or breastfeeding. Ultrasound is often first; diagnostic mammography may be used when clinically necessary. The plan should be set by the treating clinician and radiologist."
+        },
+        {
+          "id": "h_047",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens If Your Mammogram Is Abnormal?"
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "Abnormal does not automatically mean cancer. Next steps may include additional mammographic views, ultrasound, selected MRI, core needle biopsy and pathology review. See [diagnosis pathway](/blogs/breast-cancer-diagnosis)."
+        },
+        {
+          "id": "html_049",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>BI-RADS</th><th>Meaning</th><th>Typical next step</th></tr></thead><tbody><tr><td>0</td><td>Incomplete</td><td>Additional imaging or prior images</td></tr><tr><td>1</td><td>Negative</td><td>Routine screening based on risk</td></tr><tr><td>2</td><td>Benign</td><td>Routine screening based on risk</td></tr><tr><td>3</td><td>Probably benign</td><td>Usually short-interval imaging follow-up</td></tr><tr><td>4</td><td>Suspicious</td><td>Biopsy generally recommended</td></tr><tr><td>5</td><td>Highly suggestive of malignancy</td><td>Biopsy and specialist assessment</td></tr><tr><td>6</td><td>Cancer already confirmed</td><td>Treatment planning</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "btn_050",
+          "type": "button",
+          "label": "Get help interpreting a BI-RADS report",
+          "href": "/consult?treatment=Breast%20Cancer%20Screening"
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 2,
+          "text": "How Should You Prepare for a Mammography Test?"
+        },
+        {
+          "id": "ul_052",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Tell the centre if you are pregnant or breastfeeding.",
+            "Mention implants, prior surgery or biopsies.",
+            "Bring previous mammograms and reports.",
+            "Describe any lump, discharge, pain or skin change.",
+            "Avoid deodorant, talc or lotion on breasts/underarms on the day of imaging."
+          ]
+        },
+        {
+          "id": "p_053",
+          "type": "paragraph",
+          "text": "Compression is brief. The imaging itself takes only a few minutes."
+        },
+        {
+          "id": "h_054",
+          "type": "heading",
+          "level": 2,
+          "text": "Possible Risks and Limitations of Screening"
+        },
+        {
+          "id": "ul_055",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**False positives** — extra imaging, biopsy, anxiety and cost.",
+            "**False negatives** — especially with dense tissue; new symptoms still need assessment.",
+            "**Overdiagnosis** — some detected cancers may never have caused harm.",
+            "**Low-dose radiation** — small per examination; weigh in an appropriate plan."
+          ]
+        },
+        {
+          "id": "h_056",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast Cancer Screening Cost in India"
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "There is no single nationwide price. Charges depend on city, facility, equipment (2D vs 3D), whether both breasts are included, radiologist report and whether ultrasound or MRI is separate. Ask for a written estimate."
+        },
+        {
+          "id": "p_058",
+          "type": "paragraph",
+          "text": "If screening leads to confirmed cancer, related treatment pathway planning ranges (not imaging package prices) include:"
+        },
+        {
+          "id": "html_059",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Named pathway</th><th>GAF planning range in India</th><th>How it relates to screening</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Medical-Oncology/Precision-Oncology\">Precision oncology</a></td><td>$2,000–$7,000</td><td>Selected genetic / tumour testing pathways after high-risk assessment</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Lumpectomy\">Lumpectomy</a></td><td>$3,000–$7,500</td><td>If screening leads to early operable disease</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Mastectomy\">Mastectomy</a></td><td>$4,500–$10,000</td><td>Selected surgical pathways after confirmed cancer</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemotherapy</a></td><td>$1,500–$8,000+</td><td>Only when systemic therapy is indicated after diagnosis</td></tr></tbody></table></div><p class=\"article-quick-answer__body\">GAF figures are partner planning ranges for named treatment pathways — not mammography package prices. Ask centres for a written imaging estimate (2D/3D, both breasts, report included).</p>"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "Broader context: [breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india). GAF can help request case-specific imaging and consultation estimates — we do not invent fixed mammography package prices."
+        },
+        {
+          "id": "p_061",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a screening cost estimate](https://wa.me/919044346292?text=Please%20share%20a%20case-specific%20estimate%20for%20mammography%20and%20related%20breast%20imaging%20consultation%20in%20India.)"
+        },
+        {
+          "id": "btn_062",
+          "type": "button",
+          "label": "Request a screening and imaging estimate",
+          "href": "/consult?treatment=Breast%20Cancer%20Screening"
+        },
+        {
+          "id": "h_063",
+          "type": "heading",
+          "level": 2,
+          "text": "Screening for International Patients"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "For patients from Tanzania, Kenya, Uganda, Ethiopia, Zambia, Iraq, Oman and other countries, share age, symptoms, family history and prior imaging before travel. A sensible pathway: history review → specialist consult → recommended imaging/biopsy → discussion of findings. See [international patients](/blogs/breast-cancer-treatment-india-international-patients)."
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "Specialists: [medical oncology](/doctors/India/Medical-Oncology), [surgical oncology](/doctors/India/Surgical-Oncology), [radiation oncology](/doctors/India/Radiation-Oncology), [Delhi NCR](/doctors/India/Delhi-NCR/Medical-Oncology), [Mumbai](/doctors/India/Mumbai/Medical-Oncology)."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 2,
+          "text": "When Should You See a Breast Specialist?"
+        },
+        {
+          "id": "ul_067",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "A new lump in the breast or armpit.",
+            "A lump that is growing or changing.",
+            "Blood-stained nipple discharge.",
+            "New nipple inversion.",
+            "Skin dimpling, thickening, persistent redness or swelling.",
+            "A change in breast shape or size.",
+            "A persistent localised symptom that concerns you."
+          ]
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "Most lumps are not cancer, but evaluation matters. Related: [surgery](/blogs/breast-cancer-surgery-in-india), [follow-up after treatment](/blogs/breast-cancer-follow-up-tests), [recurrence](/blogs/breast-cancer-recurrence-treatment-india)."
+        },
+        {
+          "id": "h_069",
+          "type": "heading",
+          "level": 2,
+          "text": "How GAF Healthcare Can Help"
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "GAF Healthcare assists international patients coordinating breast specialist consultations, imaging and record review in India. Screening eligibility, diagnosis and treatment decisions remain with the treating clinicians."
+        },
+        {
+          "id": "btn_071",
+          "type": "button",
+          "label": "Talk to GAF about breast screening in India",
+          "href": "/consult?treatment=Breast%20Cancer%20Screening"
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_073",
+          "type": "heading",
+          "level": 3,
+          "text": "At what age should a woman start breast cancer screening in India?"
+        },
+        {
+          "id": "p_074",
+          "type": "paragraph",
+          "text": "The Breast Imaging Society, India recommends considering annual mammography-based screening from age 40 for women who choose opportunistic screening. Public programmes have also used clinical breast examination for eligible women aged 30–65 at longer intervals. Higher-risk women may need a different plan."
+        },
+        {
+          "id": "h_075",
+          "type": "heading",
+          "level": 3,
+          "text": "Is mammography painful?"
+        },
+        {
+          "id": "p_076",
+          "type": "paragraph",
+          "text": "Mammography involves brief compression of the breasts. Some women experience discomfort or pressure, but it generally lasts only a few seconds for each image."
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast cancer be detected through ultrasound alone?"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "Ultrasound can identify many breast abnormalities and is useful for evaluating lumps. It is not generally recommended as the only screening test for average-risk women."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 3,
+          "text": "Is mammography safe?"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Mammography uses a low dose of X-ray radiation. For appropriately selected women, potential benefits are generally considered to outweigh the small radiation risk."
+        },
+        {
+          "id": "h_081",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a woman below 40 develop breast cancer?"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "Yes. A woman with a breast lump, nipple discharge or other suspicious change should seek evaluation regardless of age."
+        },
+        {
+          "id": "h_083",
+          "type": "heading",
+          "level": 3,
+          "text": "Should women with a family history start screening earlier?"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "Possibly. Timing depends on relatives’ ages at diagnosis, number of affected relatives, genetic findings and overall risk. A breast specialist or genetic counsellor can help."
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 3,
+          "text": "Is breast MRI better than mammography?"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "MRI is more sensitive in some high-risk situations, but it is not a universal replacement for mammography. The tests can be complementary."
+        },
+        {
+          "id": "h_087",
+          "type": "heading",
+          "level": 3,
+          "text": "Can mammography detect cancer before a lump develops?"
+        },
+        {
+          "id": "p_088",
+          "type": "paragraph",
+          "text": "Yes. Mammography can identify certain abnormalities, including small clusters of calcifications, before a lump can be felt."
+        },
+        {
+          "id": "h_089",
+          "type": "heading",
+          "level": 3,
+          "text": "Should breastfeeding women undergo breast screening?"
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "Breast symptoms should not be ignored during breastfeeding. Ultrasound is often first for symptoms; other imaging may be used when clinically necessary."
+        },
+        {
+          "id": "h_091",
+          "type": "heading",
+          "level": 3,
+          "text": "If my mammogram is normal, can I still develop breast cancer?"
+        },
+        {
+          "id": "p_092",
+          "type": "paragraph",
+          "text": "Yes. No screening test detects every cancer. A new lump or suspicious symptom should be evaluated even after a recent normal mammogram."
+        },
+        {
+          "id": "h_093",
+          "type": "heading",
+          "level": 3,
+          "text": "Does every abnormal mammogram mean cancer?"
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "No. Many abnormal findings are benign. Additional imaging or biopsy may be recommended to establish the diagnosis."
+        },
+        {
+          "id": "h_095",
+          "type": "heading",
+          "level": 3,
+          "text": "How often should a woman have a mammogram?"
+        },
+        {
+          "id": "p_096",
+          "type": "paragraph",
+          "text": "The interval depends on age, risk and guidance. BISI recommends annual screening from 40 to 70 for women choosing mammography-based screening. Confirm with a clinician."
+        },
+        {
+          "id": "h_097",
+          "type": "heading",
+          "level": 3,
+          "text": "Is breast cancer screening available free in India?"
+        },
+        {
+          "id": "p_098",
+          "type": "paragraph",
+          "text": "Some government facilities provide clinical breast examination through population-based programmes. Access to mammography and other imaging varies by location."
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "Do men need routine breast cancer screening?"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Routine population screening is not generally recommended for men. A man with a breast lump, nipple discharge or swelling should seek assessment."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "What should I do if my mammogram report says BI-RADS 4?"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "BI-RADS 4 indicates a suspicious abnormality. Biopsy is generally recommended, but it does not confirm cancer. Discuss the report with a breast specialist."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 2,
+          "text": "Final Thoughts"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "Breast cancer screening is important, but the right approach is not identical for everyone. In India, BISI supports considering annual mammography from age 40 for opportunistic screening, while public programmes use clinical breast examination for eligible women. High-risk women may need earlier, more intensive pathways."
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "Most importantly: **do not wait for a screening appointment if you notice a breast lump, nipple discharge, skin changes or another unusual symptom.**"
+        },
+        {
+          "id": "h_106",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Sources and References"
+        },
+        {
+          "id": "ol_107",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "[Breast Imaging Society, India – Best Practice Guidelines for Breast Imaging, Part 1](https://nams-annals.in/best-practice-guidelines-for-breast-imaging-breast-imaging-society-india-part-1/)",
+            "[Breast Imaging Society, India – Best Practice Guidelines, Part 2](https://nams-annals.in/best-practice-guidelines-for-breast-imaging-breast-imaging-society-india-part-2/)",
+            "[MoHFW – Operational Framework for Management of Common Cancers](https://aam.mohfw.gov.in/download/document/b09f1edf31a9165aebf486a55bbe54f5.pdf)",
+            "[NCI – Screening for Breast Cancer](https://www.cancer.gov/types/breast/screening)",
+            "[NCI – Breast Cancer Screening PDQ](https://www.cancer.gov/types/breast/hp/breast-screening-pdq)",
+            "[American Cancer Society – Breast Cancer Screening Recommendations](https://www.cancer.org/cancer/types/breast-cancer/screening-tests-and-early-detection/american-cancer-society-recommendations-for-the-early-detection-of-breast-cancer.html)",
+            "[NCCN Guidelines for Patients – Breast Cancer Screening and Diagnosis, 2026](https://vicc.org/sites/default/files/2026-10/breastcancerscreening-patient.pdf)",
+            "[NCI – Dense Breasts: Commonly Asked Questions](https://www.cancer.gov/types/breast/screening/dense-breasts)",
+            "[ACR Appropriateness Criteria – Female Breast Cancer Screening, 2025 Update](https://pubmed.ncbi.nlm.nih.gov/41193041/)",
+            "[USPSTF Breast Cancer Screening Recommendation, 2024](https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/breast-cancer-screening)"
+          ]
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "*Medical disclaimer: Screening recommendations differ between programmes and organisations. US sources are additional reading, not Indian national policy. Individual plans should follow personal risk and clinical assessment. A new breast symptom needs diagnostic evaluation, not only a routine screening slot.*"
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Reading"
+        },
+        {
+          "id": "ul_110",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)",
+            "[Breast Cancer Symptoms](/blogs/breast-cancer-symptoms)",
+            "[Breast Cancer Diagnosis](/blogs/breast-cancer-diagnosis)",
+            "[Diagnosis tests (ER/PR/HER2)](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)",
+            "[Breast Cancer Stages](/blogs/breast-cancer-stages-0-1-2-3-4)",
+            "[Breast Cancer Follow-Up Tests](/blogs/breast-cancer-follow-up-tests)",
+            "[Breast Cancer Recurrence](/blogs/breast-cancer-recurrence-treatment-india)",
+            "[Breast Cancer Surgery](/blogs/breast-cancer-surgery-in-india)",
+            "[Young Women](/blogs/breast-cancer-in-young-women-treatment-india)",
+            "[Treatment Cost](/blogs/breast-cancer-treatment-cost-in-india)",
+            "[International Patients](/blogs/breast-cancer-treatment-india-international-patients)"
+          ]
+        }
+      ]
+    },
     {
       "id": "art_metastatic_breast_cancer_stage_4",
       "slug": "metastatic-breast-cancer-stage-4",
@@ -10553,6 +11312,10 @@
         {
           "label": "Breast Cancer in Young Women",
           "href": "/blogs/breast-cancer-in-young-women-treatment-india"
+        },
+        {
+          "label": "Breast cancer screening in India",
+          "href": "/blogs/breast-cancer-screening-india"
         }
       ],
       "blocks": [
@@ -13439,6 +14202,10 @@
         {
           "label": "Breast Cancer Treatment Options",
           "href": "/blogs/breast-cancer-treatment-options"
+        },
+        {
+          "label": "Breast cancer screening in India",
+          "href": "/blogs/breast-cancer-screening-india"
         }
       ],
       "blocks": [
@@ -90594,6 +91361,10 @@
         {
           "label": "Inflammatory breast cancer treatment in India",
           "href": "/blogs/inflammatory-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Breast cancer screening in India",
+          "href": "/blogs/breast-cancer-screening-india"
         }
       ],
       "blocks": [
@@ -91612,6 +92383,10 @@
         {
           "label": "Metastatic breast cancer (Stage 4)",
           "href": "/blogs/metastatic-breast-cancer-stage-4"
+        },
+        {
+          "label": "Breast cancer screening in India",
+          "href": "/blogs/breast-cancer-screening-india"
         }
       ],
       "blocks": [
@@ -94235,6 +95010,10 @@
         {
           "label": "International patients",
           "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "Breast cancer screening in India",
+          "href": "/blogs/breast-cancer-screening-india"
         }
       ],
       "blocks": [
@@ -103731,6 +104510,10 @@
         {
           "label": "Breast Cancer Diagnosis",
           "href": "/blogs/breast-cancer-diagnosis"
+        },
+        {
+          "label": "Breast cancer screening in India",
+          "href": "/blogs/breast-cancer-screening-india"
         }
       ],
       "blocks": [
@@ -104808,6 +105591,10 @@
         {
           "label": "Breast Cancer Diagnosis",
           "href": "/blogs/breast-cancer-diagnosis"
+        },
+        {
+          "label": "Breast cancer screening in India",
+          "href": "/blogs/breast-cancer-screening-india"
         }
       ],
       "blocks": [
@@ -108402,6 +109189,10 @@
         {
           "label": "Metastatic breast cancer (Stage 4)",
           "href": "/blogs/metastatic-breast-cancer-stage-4"
+        },
+        {
+          "label": "Breast cancer screening in India",
+          "href": "/blogs/breast-cancer-screening-india"
         }
       ],
       "blocks": [
