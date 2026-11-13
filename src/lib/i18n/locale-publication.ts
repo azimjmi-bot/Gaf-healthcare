@@ -179,8 +179,10 @@ export function localePageIsRenderable(locale: AppLocale, path: string) {
  * the block's credibility with it.
  */
 export function publishedLocalesForPath(path: string) {
-  return LOCALES.filter(
-    (locale) =>
-      localePathIsPublished(locale, path) && canonicalFacetPath(path, locale) === path,
-  );
+  // Unpublished target locales can never be "published", and probing them
+  // would force the Worker to hydrate editions that hreflang will discard.
+  return LOCALES.filter((locale) => {
+    if (isTargetLocale(locale) && !localeIsPublished(locale)) return false;
+    return localePathIsPublished(locale, path) && canonicalFacetPath(path, locale) === path;
+  });
 }
