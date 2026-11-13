@@ -35,7 +35,7 @@ function translateCampusNames(text) {
   return out;
 }
 const catalog = JSON.parse(readFileSync(join(root, "src/data/ginger-catalog.json"), "utf8"));
-const cmsPath = join(root, "content/ar/catalog-cms.json");
+const cmsPath = process.env.CATALOG_CMS_PATH ?? join(root, "content/ar/catalog-cms.json");
 const cms = JSON.parse(readFileSync(cmsPath, "utf8"));
 
 

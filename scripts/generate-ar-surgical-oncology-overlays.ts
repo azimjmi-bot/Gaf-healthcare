@@ -17,7 +17,7 @@ import { TAXONOMY_AR } from "../src/lib/i18n/taxonomy-ar";
 import type { CatalogCms, DoctorPatch } from "../src/lib/cms/catalog-types";
 
 const root = join(import.meta.dirname, "..");
-const cmsPath = join(root, "content/ar/catalog-cms.json");
+const cmsPath = process.env.CATALOG_CMS_PATH ?? join(root, "content/ar/catalog-cms.json");
 const cms = JSON.parse(readFileSync(cmsPath, "utf8")) as CatalogCms;
 
 const NAME_AR = names as Record<string, string>;

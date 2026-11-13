@@ -10,7 +10,7 @@ import { fileURLToPath } from "url";
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const catalog = JSON.parse(readFileSync(join(root, "src/data/ginger-catalog.json"), "utf8"));
 const HOSPITAL_NAMES = JSON.parse(readFileSync(join(root, "src/data/hospital-names-ar.json"), "utf8"));
-const cmsPath = join(root, "content/ar/catalog-cms.json");
+const cmsPath = process.env.CATALOG_CMS_PATH ?? join(root, "content/ar/catalog-cms.json");
 const cms = JSON.parse(readFileSync(cmsPath, "utf8"));
 
 function displayName(hospital) {
@@ -48,6 +48,15 @@ const FOCUS_MULTI =
   "علاج الأورام بالإشعاع · جراحة الأورام · علاج الأورام الطبي · أمراض الدم · أمراض دم الأطفال · جراحة القلب · جراحة قلب الأطفال · أمراض القلب · جراحة السمنة · الجراحة التجميلية · أنف وأذن وحنجرة · أمراض الجهاز الهضمي · جراحة الجهاز الهضمي · المسالك البولية · جراحة العمود الفقري · أمراض الرئة · عظام الأطفال · جراحة العظام · طب العيون · أمراض النساء · جراحة المخ والأعصاب · طب الأعصاب · أمراض الكلى";
 
 const EYE_SLUGS = new Set(["dr-agarwals-eye-hospital", "the-sight-avenue-eye-hospital"]);
+
+/** IVF-only campuses ship hand-authored Arabic overlays; do not overwrite them. */
+const FERTILITY_SLUGS = new Set([
+  "bloom-ivf",
+  "neelkanth-infertility-ivf-hospital",
+  "nova-ivf-fertility-center",
+  "nova-ivf-fertility-center-banjara-hills-hyderabad",
+  "nova-ivf-fertility-center-gurugram",
+]);
 
 const HOOK = {
   "apollo-athenaa-women-s-cancer-centre":
@@ -183,6 +192,14 @@ const statusOf = (slug) => overlays[slug]?.status ?? "draft";
 
 
 for (const h of catalog.hospitals) {
+  if (FERTILITY_SLUGS.has(h.slug)) {
+    const previous = overlays[h.slug];
+    if (!previous?.name || !previous?.bio) {
+      throw new Error(`Fertility campus ${h.slug} needs a hand-authored Arabic overlay before regeneration`);
+    }
+    overlays[h.slug] = { ...previous, status: statusOf(h.slug) };
+    continue;
+  }
   const cityAr = CITY_AR[h.city];
   const eye = EYE_SLUGS.has(h.slug);
   const name = displayName(h);
