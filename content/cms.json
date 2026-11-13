@@ -2889,9 +2889,822 @@
       "name": "breast-cancer-screening-high-risk.webp",
       "alt": "Genetic counsellor reviewing family history for high-risk breast screening",
       "addedAt": "2026-11-13T09:26:07.332Z"
+    },
+    {
+      "id": "media_breast_biopsy_overview_webp",
+      "url": "/uploads/articles/breast-biopsy-overview.webp",
+      "name": "breast-biopsy-overview.webp",
+      "alt": "Woman discussing a recommended breast biopsy plan with a breast specialist",
+      "addedAt": "2026-11-13T09:32:07.617Z"
+    },
+    {
+      "id": "media_breast_biopsy_core_needle_webp",
+      "url": "/uploads/articles/breast-biopsy-core-needle.webp",
+      "name": "breast-biopsy-core-needle.webp",
+      "alt": "Clinician performing an ultrasound-guided core needle breast biopsy",
+      "addedAt": "2026-11-13T09:32:07.617Z"
+    },
+    {
+      "id": "media_breast_biopsy_pathology_biomarkers_webp",
+      "url": "/uploads/articles/breast-biopsy-pathology-biomarkers.webp",
+      "name": "breast-biopsy-pathology-biomarkers.webp",
+      "alt": "Pathologist examining breast biopsy tissue under a microscope",
+      "addedAt": "2026-11-13T09:32:07.617Z"
+    },
+    {
+      "id": "media_breast_biopsy_recovery_results_webp",
+      "url": "/uploads/articles/breast-biopsy-recovery-results.webp",
+      "name": "breast-biopsy-recovery-results.webp",
+      "alt": "Woman resting after an outpatient breast biopsy with clinician support",
+      "addedAt": "2026-11-13T09:32:07.617Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_breast_biopsy_breast_cancer_india",
+      "slug": "breast-biopsy-breast-cancer-india",
+      "title": "Breast Biopsy for Breast Cancer: Types, Procedure, Pain, Risks, Results and Cost in India",
+      "excerpt": "A breast biopsy is a procedure in which a small sample of breast tissue or cells is collected and examined under a microscope. It is often recommended when an examination or imaging test identifies a suspicious lump or abnormality. This guide explains the different types of breast biopsy, how the procedure is performed, whether it hurts, how to understand the pathology report and what patients should know about getting a breast biopsy in India.",
+      "date": "13 November 2026",
+      "publishedAt": "2026-11-13T12:00:00.000Z",
+      "updatedAt": "2026-11-13T09:32:07.617Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Medical Oncology",
+      "tags": [
+        "breast cancer",
+        "biopsy",
+        "core needle biopsy",
+        "FNAC",
+        "India"
+      ],
+      "image": "/uploads/articles/breast-biopsy-overview.webp",
+      "imageAlt": "Woman discussing a recommended breast biopsy plan with a breast specialist",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Breast Biopsy in India: Types, Procedure, Cost, Pain and Results",
+      "seoDescription": "Learn about breast biopsy in India, including core needle biopsy, FNAC, vacuum-assisted and surgical biopsy, procedure, pain, risks, pathology reports and cost.",
+      "canonical": "https://gaf.healthcare/blogs/breast-biopsy-breast-cancer-india",
+      "ogImage": "/uploads/articles/breast-biopsy-overview.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Breast biopsy in India",
+        "Breast biopsy procedure",
+        "Breast biopsy cost in India",
+        "Core needle biopsy breast",
+        "FNAC breast test",
+        "Breast lump biopsy",
+        "Ultrasound-guided breast biopsy",
+        "Stereotactic breast biopsy",
+        "Vacuum-assisted breast biopsy",
+        "Breast biopsy pain and recovery",
+        "ER PR HER2 testing",
+        "Breast cancer biopsy report",
+        "BI-RADS 4 biopsy"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Breast Cancer Treatment in India",
+          "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Diagnosis tests (ER/PR/HER2)",
+          "href": "/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2"
+        },
+        {
+          "label": "Breast cancer diagnosis",
+          "href": "/blogs/breast-cancer-diagnosis"
+        },
+        {
+          "label": "Breast cancer screening in India",
+          "href": "/blogs/breast-cancer-screening-india"
+        },
+        {
+          "label": "Breast cancer surgery",
+          "href": "/blogs/breast-cancer-surgery-in-india"
+        },
+        {
+          "label": "Cost guide",
+          "href": "/blogs/breast-cancer-treatment-cost-in-india"
+        },
+        {
+          "label": "International patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"md-body\"><table><thead><tr><th>Question</th><th>Quick Answer</th></tr></thead><tbody><tr><td><strong>What is a breast biopsy?</strong></td><td>A procedure that collects breast cells or tissue for pathology examination</td></tr><tr><td><strong>Does biopsy mean cancer?</strong></td><td>No — many biopsies show benign findings</td></tr><tr><td><strong>Preferred for suspected cancer</strong></td><td>Core needle biopsy when feasible (tissue for type, grade, biomarkers)</td></tr><tr><td><strong>Pain</strong></td><td>Usually local anaesthesia; brief sting, pressure, mild post-procedure soreness</td></tr><tr><td><strong>Key biomarkers</strong></td><td>ER, PR, HER2 (± Ki-67) when cancer is confirmed</td></tr><tr><td><strong>Planning</strong></td><td><a href=\"/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2\">Diagnosis tests guide</a> · <a href=\"/treatments/breast-cancer-treatment-in-india\">treatment in India</a> · <a href=\"/blogs/breast-cancer-treatment-cost-in-india\">cost guide</a></td></tr></tbody></table></div><p class=\"article-quick-answer__body\"><strong>Breast biopsy in India</strong> confirms or rules out cancer and guides treatment planning — imaging alone is often not enough.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "A breast biopsy collects a small sample of breast tissue or cells for microscopic examination. It is often recommended when examination or imaging identifies a suspicious lump or abnormality. This guide explains biopsy types, procedure, pain, pathology reports, biomarkers and what patients should know about getting a breast biopsy in India. Related care: [diagnosis tests](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2), [screening](/blogs/breast-cancer-screening-india), [treatment in India](/treatments/breast-cancer-treatment-in-india) and [cost](/blogs/breast-cancer-treatment-cost-in-india)."
+        },
+        {
+          "id": "btn_003",
+          "type": "button",
+          "label": "Ask GAF to arrange a breast biopsy consultation",
+          "href": "/consult?treatment=Breast%20Biopsy"
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with imaging reports for biopsy pathway advice](https://wa.me/919044346292?text=Please%20advise%20on%20breast%20biopsy%20options%2C%20pathology%20tests%20and%20estimated%20cost%20in%20India.%20I%20can%20share%20mammogram%2Fultrasound%20reports.)"
+        },
+        {
+          "id": "img_005",
+          "type": "image",
+          "src": "/uploads/articles/breast-biopsy-overview.webp",
+          "alt": "Woman discussing a recommended breast biopsy plan with a breast specialist in a calm clinic",
+          "caption": "A biopsy investigates a suspicious finding — it does not by itself confirm cancer."
+        },
+        {
+          "id": "h_006",
+          "type": "heading",
+          "level": 2,
+          "text": "Why Might You Need a Breast Biopsy?"
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "Being told you need a breast biopsy can be frightening, but it does not mean cancer has been confirmed. Doctors remove a small sample so a pathologist can determine whether the abnormality is cancerous, non-cancerous or needs further investigation."
+        },
+        {
+          "id": "ul_008",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "A breast lump feels suspicious on examination.",
+            "Mammography, ultrasound or MRI shows a suspicious area or microcalcifications.",
+            "A lump changes in size or appearance.",
+            "A previous test produced an uncertain result."
+          ]
+        },
+        {
+          "id": "p_009",
+          "type": "paragraph",
+          "text": "Imaging can identify an abnormality but cannot always establish what it is. For suspected breast cancer in India, core needle biopsy is generally preferred because tissue can be examined for tumour type, grade and biomarkers. See [breast cancer diagnosis](/blogs/breast-cancer-diagnosis)."
+        },
+        {
+          "id": "h_010",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is a Breast Biopsy?"
+        },
+        {
+          "id": "p_011",
+          "type": "paragraph",
+          "text": "A breast biopsy removes cells or tissue for laboratory examination. The report helps determine whether findings are benign or malignant, the cancer type if present, invasive versus non-invasive disease, tumour grade and whether hormone-receptor and HER2 testing are required."
+        },
+        {
+          "id": "h_012",
+          "type": "heading",
+          "level": 3,
+          "text": "Does every breast lump need a biopsy?"
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "No. Many lumps are benign (for example fibroadenomas, simple cysts, fibrocystic changes or fat necrosis). Some can be assessed with examination and imaging alone. Others need biopsy when appearance is suspicious or findings are inconclusive. Decisions follow combined clinical, imaging and pathology assessment."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 2,
+          "text": "When Is a Breast Biopsy Recommended?"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "Recommendations often follow **triple assessment** — clinical examination, imaging and pathology considered together:"
+        },
+        {
+          "id": "html_016",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Assessment</th><th>What it involves</th></tr></thead><tbody><tr><td>Clinical examination</td><td>Doctor examines breasts and nearby lymph nodes</td></tr><tr><td>Imaging</td><td>Mammography, ultrasound or MRI as clinically indicated</td></tr><tr><td>Pathology</td><td>Cells or tissue examined when indicated</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "ul_017",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Suspicious breast lump or BI-RADS 4 / BI-RADS 5 imaging.",
+            "Suspicious microcalcifications or architectural distortion.",
+            "MRI-only abnormality needing sampling.",
+            "Suspicious axillary lymph node.",
+            "Persistent clinical concern or inadequate prior sampling."
+          ]
+        },
+        {
+          "id": "p_018",
+          "type": "paragraph",
+          "text": "**Important:** BI-RADS 4 or 5 does not confirm cancer — it indicates further investigation, generally including tissue sampling. More on [screening and BI-RADS](/blogs/breast-cancer-screening-india)."
+        },
+        {
+          "id": "btn_019",
+          "type": "button",
+          "label": "Request a second opinion on your imaging report",
+          "href": "/consult?treatment=Breast%20Cancer%20Diagnosis"
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 2,
+          "text": "What Are the Different Types of Breast Biopsy?"
+        },
+        {
+          "id": "img_021",
+          "type": "image",
+          "src": "/uploads/articles/breast-biopsy-core-needle.webp",
+          "alt": "Clinician performing an ultrasound-guided core needle breast biopsy in a calm outpatient setting",
+          "caption": "Image-guided core needle biopsy is commonly used when a solid lesion is visible on ultrasound."
+        },
+        {
+          "id": "h_022",
+          "type": "heading",
+          "level": 3,
+          "text": "A. Fine Needle Aspiration Cytology (FNAC)"
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "FNAC uses a very thin needle to collect cells or fluid. It is usually quick with minimal discomfort and no stitches. It can assess selected lumps, drain cysts or sample selected lymph nodes. Limitations: it collects cells rather than intact tissue architecture and may not support full biomarker assessment. Core needle biopsy is generally preferred when definitive tissue diagnosis and biomarkers are needed."
+        },
+        {
+          "id": "h_024",
+          "type": "heading",
+          "level": 3,
+          "text": "B. Core Needle Biopsy (CNB)"
+        },
+        {
+          "id": "p_025",
+          "type": "paragraph",
+          "text": "A hollow needle removes small cylindrical tissue cores, usually under local anaesthesia and often with ultrasound guidance. Tissue structure is preserved so pathologists can assess histological type, grade, invasive versus in-situ disease, ER, PR, HER2 and Ki-67 when appropriate — findings that guide treatment."
+        },
+        {
+          "id": "h_026",
+          "type": "heading",
+          "level": 3,
+          "text": "C. Vacuum-Assisted Breast Biopsy (VAB)"
+        },
+        {
+          "id": "p_027",
+          "type": "paragraph",
+          "text": "A specialised vacuum-assisted needle collects multiple samples through a small skin opening. It may be used for small abnormalities, suspicious microcalcifications or lesions needing more extensive sampling, and can reduce the need for surgical biopsy in selected cases."
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 3,
+          "text": "D. Ultrasound-Guided, Stereotactic and MRI-Guided Biopsy"
+        },
+        {
+          "id": "ul_029",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Ultrasound-guided** — common for lesions visible on ultrasound.",
+            "**Stereotactic** — mammography guidance for calcifications or abnormalities not seen well on ultrasound; a marker clip may be placed.",
+            "**MRI-guided** — for MRI-only lesions or selected high-risk MRI findings; specialised and not available everywhere."
+          ]
+        },
+        {
+          "id": "h_030",
+          "type": "heading",
+          "level": 3,
+          "text": "E. Surgical Breast Biopsy"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "Incisional biopsy removes part of an abnormality; excisional biopsy removes the whole area, sometimes with a margin. Surgical biopsy may follow inconclusive needle sampling, radiology–pathology discordance or lesions that cannot be adequately sampled with a needle. Needle biopsy is preferred when it can provide a reliable diagnosis before treatment planning."
+        },
+        {
+          "id": "h_032",
+          "type": "heading",
+          "level": 2,
+          "text": "Which Type of Breast Biopsy Is Best?"
+        },
+        {
+          "id": "html_033",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Type of biopsy</th><th>Common use</th><th>Main feature</th></tr></thead><tbody><tr><td>FNAC</td><td>Cysts, selected lumps and lymph nodes</td><td>Collects cells or fluid</td></tr><tr><td>Core needle biopsy</td><td>Suspicious solid breast lumps</td><td>Collects tissue samples</td></tr><tr><td>Vacuum-assisted biopsy</td><td>Selected small lesions and calcifications</td><td>Collects multiple tissue samples</td></tr><tr><td>Ultrasound-guided biopsy</td><td>Lesions visible on ultrasound</td><td>Needle guided by ultrasound</td></tr><tr><td>Stereotactic biopsy</td><td>Mammography-only abnormalities</td><td>Needle guided by mammography</td></tr><tr><td>MRI-guided biopsy</td><td>MRI-only abnormalities</td><td>Needle guided by MRI</td></tr><tr><td>Surgical biopsy</td><td>Selected unresolved abnormalities</td><td>Removes part or all of the lesion</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "There is no single best method for every patient. For suspected breast cancer, core needle biopsy is generally preferred when feasible. Choose the technique that answers the clinical question — not simply the newest or most expensive option. Discuss with [surgical oncology specialists](/doctors/India/Surgical-Oncology) or your breast team."
+        },
+        {
+          "id": "h_035",
+          "type": "heading",
+          "level": 2,
+          "text": "Is a Breast Biopsy Painful?"
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "Most image-guided needle biopsies use local anaesthesia. You may feel a brief sting from the anaesthetic, pressure when the needle is positioned, clicking from the device, and mild soreness, bruising or swelling afterwards. Sharp pain during sampling should be uncommon once the area is numb — tell the doctor if pain is significant."
+        },
+        {
+          "id": "html_037",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Procedure</th><th>General expectation</th></tr></thead><tbody><tr><td>FNAC</td><td>Usually a short outpatient procedure</td></tr><tr><td>Ultrasound-guided core biopsy</td><td>Often about 30–60 minutes including preparation</td></tr><tr><td>Stereotactic biopsy</td><td>May take longer due to positioning and imaging</td></tr><tr><td>MRI-guided biopsy</td><td>Often longer than ultrasound-guided biopsy</td></tr><tr><td>Surgical biopsy</td><td>Depends on the operation and anaesthesia</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "btn_038",
+          "type": "button",
+          "label": "Ask about outpatient biopsy logistics in India",
+          "href": "/consult?treatment=Breast%20Biopsy"
+        },
+        {
+          "id": "h_039",
+          "type": "heading",
+          "level": 2,
+          "text": "How Should You Prepare for a Breast Biopsy?"
+        },
+        {
+          "id": "ul_040",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Bring mammography, ultrasound, MRI and prior pathology reports.",
+            "Tell the team about allergies, bleeding disorders and blood-thinning medicines.",
+            "Mention pregnancy or breastfeeding.",
+            "Do not stop prescribed anticoagulants on your own — ask the doctor first.",
+            "Wear comfortable clothing; follow fasting instructions if sedation or general anaesthesia is planned."
+          ]
+        },
+        {
+          "id": "h_041",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens During a Core Needle Breast Biopsy?"
+        },
+        {
+          "id": "ol_042",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Positioning so the abnormality can be imaged clearly.",
+            "Locating the area with ultrasound or another modality.",
+            "Skin cleaning and local anaesthesia.",
+            "Small skin opening and guided needle placement.",
+            "Collection of several tissue cores (clicking sounds are normal).",
+            "Optional marker clip at the biopsy site.",
+            "Pressure and a small dressing; most patients go home the same day."
+          ]
+        },
+        {
+          "id": "h_043",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens After a Breast Biopsy?"
+        },
+        {
+          "id": "img_044",
+          "type": "image",
+          "src": "/uploads/articles/breast-biopsy-recovery-results.webp",
+          "alt": "Woman resting after an outpatient breast biopsy while a clinician explains recovery and next steps",
+          "caption": "Mild tenderness and bruising are common; seek care for heavy bleeding, fever or worsening pain."
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "Mild tenderness, swelling or bruising is usually temporary. Doctors may advise a cold pack, a supportive bra, avoiding strenuous activity for about 24 hours and keeping the site clean. Contact the team for uncontrolled bleeding, rapidly increasing swelling, severe pain, fever, spreading redness or unusual discharge."
+        },
+        {
+          "id": "h_046",
+          "type": "heading",
+          "level": 2,
+          "text": "How Long Does It Take to Get Breast Biopsy Results?"
+        },
+        {
+          "id": "p_047",
+          "type": "paragraph",
+          "text": "A straightforward report may be ready within a few working days. Extra sections, immunohistochemistry, HER2 confirmation or second-pathologist review can take longer. Ask when and how results will be shared."
+        },
+        {
+          "id": "h_048",
+          "type": "heading",
+          "level": 2,
+          "text": "How to Understand a Breast Biopsy Report"
+        },
+        {
+          "id": "h_049",
+          "type": "heading",
+          "level": 3,
+          "text": "Benign findings"
+        },
+        {
+          "id": "p_050",
+          "type": "paragraph",
+          "text": "Cancer was not identified in the sampled tissue (for example fibroadenoma, fibrocystic change, cyst-related change or fat necrosis). Results must still match imaging. Radiology–pathology discordance may lead to repeat or surgical biopsy."
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 3,
+          "text": "Atypical or high-risk lesions"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Findings such as ADH, ALH, LCIS, selected papillary lesions or radial scar are not invasive cancer but may need excision or surveillance based on sampling, imaging and risk factors."
+        },
+        {
+          "id": "h_053",
+          "type": "heading",
+          "level": 3,
+          "text": "Malignant findings"
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "Cancer cells are present (for example invasive ductal or lobular carcinoma, or DCIS). Further biomarker testing guides biology and treatment. See [stages](/blogs/breast-cancer-stages-0-1-2-3-4)."
+        },
+        {
+          "id": "h_055",
+          "type": "heading",
+          "level": 2,
+          "text": "What Are ER, PR, HER2 and Ki-67 Tests?"
+        },
+        {
+          "id": "img_056",
+          "type": "image",
+          "src": "/uploads/articles/breast-biopsy-pathology-biomarkers.webp",
+          "alt": "Pathologist examining breast biopsy tissue under a microscope with abstract biomarker testing concepts",
+          "caption": "Biomarkers help classify hormone receptor-positive, HER2-positive and triple-negative disease."
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "When cancer is confirmed, biomarkers help choose therapy:"
+        },
+        {
+          "id": "html_058",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Biomarker</th><th>What it tells doctors</th><th>Why it matters</th></tr></thead><tbody><tr><td>ER</td><td>Whether oestrogen receptors are present</td><td>Helps assess endocrine therapy</td></tr><tr><td>PR</td><td>Whether progesterone receptors are present</td><td>Adds hormone-receptor information</td></tr><tr><td>HER2</td><td>Whether HER2 is overexpressed or amplified</td><td>May guide HER2-targeted therapy</td></tr><tr><td>Ki-67</td><td>Estimates tumour cell proliferation</td><td>May contribute to tumour biology assessment</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_059",
+          "type": "paragraph",
+          "text": "Equivocal HER2 IHC (often 2+) may need ISH confirmation. These tests support classification into hormone receptor-positive, HER2-positive and triple-negative groups but do not replace the full pathology report. Details: [ER/PR/HER2 diagnosis guide](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)."
+        },
+        {
+          "id": "btn_060",
+          "type": "button",
+          "label": "Plan biomarker-informed treatment with GAF",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment"
+        },
+        {
+          "id": "h_061",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is the Difference Between a Breast Biopsy and Breast Cancer Surgery?"
+        },
+        {
+          "id": "html_062",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Breast biopsy</th><th>Breast cancer surgery</th></tr></thead><tbody><tr><td>Primarily diagnostic</td><td>Primarily therapeutic</td></tr><tr><td>Collects a sample or removes a selected abnormality</td><td>Removes cancer according to the treatment plan</td></tr><tr><td>Often needle-based under local anaesthesia</td><td>Usually an operation; may need general anaesthesia</td></tr><tr><td>Shorter recovery for most needle biopsies</td><td>Recovery depends on the operation</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_063",
+          "type": "paragraph",
+          "text": "An excisional biopsy can remove a small abnormality but is not necessarily definitive cancer surgery. Confirmed cancer may still need further surgery or systemic therapy. See [breast cancer surgery in India](/blogs/breast-cancer-surgery-in-india)."
+        },
+        {
+          "id": "h_064",
+          "type": "heading",
+          "level": 2,
+          "text": "What If the Breast Biopsy Is Inconclusive?"
+        },
+        {
+          "id": "ol_065",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Review imaging and pathology together.",
+            "Repeat core needle biopsy or use vacuum-assisted sampling.",
+            "Obtain a second pathology opinion.",
+            "Consider surgical biopsy in selected cases."
+          ]
+        },
+        {
+          "id": "p_066",
+          "type": "paragraph",
+          "text": "A benign or inconclusive report should not end investigation if clinical and imaging findings remain suspicious."
+        },
+        {
+          "id": "h_067",
+          "type": "heading",
+          "level": 2,
+          "text": "Breast Biopsy Cost in India"
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "Cost varies by method, hospital, city, imaging guidance and pathology tests. FNAC differs from image-guided core, vacuum-assisted or surgical biopsy. Factors include:"
+        },
+        {
+          "id": "html_069",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Cost component</th><th>What affects the price?</th></tr></thead><tbody><tr><td>Specialist consultation</td><td>Breast surgeon, radiologist or oncologist</td></tr><tr><td>Imaging guidance</td><td>Ultrasound, mammography or MRI</td></tr><tr><td>Biopsy procedure</td><td>FNAC, core needle, vacuum-assisted or surgical</td></tr><tr><td>Pathology</td><td>Routine histopathology</td></tr><tr><td>Immunohistochemistry</td><td>ER, PR and HER2 testing</td></tr><tr><td>Additional HER2 testing</td><td>ISH/FISH when indicated</td></tr><tr><td>Follow-up consultation</td><td>Result review and treatment planning</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_070",
+          "type": "paragraph",
+          "text": "There is no single nationwide price. Ask for an itemised estimate covering the procedure, guidance, anaesthesia/consumables, histopathology, ER/PR/HER2 (± ISH) and follow-up. Do not compare quotations unless inclusions match."
+        },
+        {
+          "id": "html_071",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Named pathway</th><th>GAF planning range in India</th><th>How it relates after biopsy</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Medical-Oncology/Precision-Oncology\">Precision oncology</a></td><td>$2,000–$7,000</td><td>Selected molecular / precision pathways when indicated after diagnosis</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Lumpectomy\">Lumpectomy</a></td><td>$3,000–$7,500</td><td>Breast-conserving surgery pathway when operable disease is confirmed</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Mastectomy\">Mastectomy</a></td><td>$4,500–$10,000</td><td>Selected surgical pathways after confirmed cancer</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemotherapy</a></td><td>$1,500–$8,000+</td><td>When systemic therapy is indicated by stage and biology</td></tr></tbody></table></div><p class=\"article-quick-answer__body\">GAF figures are partner planning ranges for named treatment pathways — not FNAC or core-biopsy package prices. Ask centres for an itemised estimate covering procedure, guidance, histopathology and biomarker tests.</p>"
+        },
+        {
+          "id": "p_072",
+          "type": "paragraph",
+          "text": "Related GAF cost reading: [breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india). Specialists: [medical oncology](/doctors/India/Medical-Oncology), [Delhi NCR](/doctors/India/Delhi-NCR/Medical-Oncology), [Mumbai](/doctors/India/Mumbai/Medical-Oncology)."
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "[WhatsApp for an itemised biopsy and pathology estimate](https://wa.me/919044346292?text=I%20need%20an%20itemised%20estimate%20for%20image-guided%20breast%20biopsy%20with%20histopathology%20and%20ER%2FPR%2FHER2%20testing%20in%20India.)"
+        },
+        {
+          "id": "h_074",
+          "type": "heading",
+          "level": 2,
+          "text": "Getting a Breast Biopsy in India: International Patients"
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "Patients from Tanzania, Kenya, Uganda, Ethiopia, Zambia, Iraq, Oman and other countries should share prior mammograms, ultrasound/MRI reports (DICOM when possible), pathology slides or blocks if already biopsied, medicines list and family history before travel. A typical pathway: specialist consultation → review of records → additional imaging if needed → image-guided biopsy → pathology ± biomarkers → multidisciplinary discussion. GAF Healthcare can coordinate appointments; clinical decisions remain with the treating team. See [international patients guide](/blogs/breast-cancer-treatment-india-international-patients)."
+        },
+        {
+          "id": "btn_076",
+          "type": "button",
+          "label": "Coordinate biopsy and treatment travel with GAF",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment"
+        },
+        {
+          "id": "h_077",
+          "type": "heading",
+          "level": 2,
+          "text": "What Happens After Breast Cancer Is Confirmed by Biopsy?"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "Confirmation starts treatment planning: review type and grade, biomarkers, breast and axillary imaging, staging needs and multidisciplinary options. Treatment may include breast-conserving surgery or mastectomy, sentinel node assessment, chemotherapy, radiation, hormone therapy, HER2-targeted therapy or immunotherapy in selected cases. Neoadjuvant therapy before surgery makes an adequate pre-treatment core biopsy and biomarkers especially important. Continue with [follow-up testing](/blogs/breast-cancer-follow-up-tests) after treatment."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions About Breast Biopsy"
+        },
+        {
+          "id": "h_080",
+          "type": "heading",
+          "level": 3,
+          "text": "Does a breast biopsy mean I have cancer?"
+        },
+        {
+          "id": "p_081",
+          "type": "paragraph",
+          "text": "No. A biopsy determines whether an abnormality is cancerous. Many breast biopsies show benign conditions."
+        },
+        {
+          "id": "h_082",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a breast biopsy painful?"
+        },
+        {
+          "id": "p_083",
+          "type": "paragraph",
+          "text": "Most needle biopsies use local anaesthesia. You may feel a brief sting from the injection and pressure during sampling. Mild soreness or bruising can occur afterwards."
+        },
+        {
+          "id": "h_084",
+          "type": "heading",
+          "level": 3,
+          "text": "Which biopsy is best for suspected breast cancer?"
+        },
+        {
+          "id": "p_085",
+          "type": "paragraph",
+          "text": "Core needle biopsy is generally preferred because it provides tissue for histology and biomarker testing. The method still depends on the abnormality and imaging findings."
+        },
+        {
+          "id": "h_086",
+          "type": "heading",
+          "level": 3,
+          "text": "Is FNAC enough to diagnose breast cancer?"
+        },
+        {
+          "id": "p_087",
+          "type": "paragraph",
+          "text": "FNAC can identify suspicious or malignant cells in selected cases, but it does not preserve tissue architecture and may not support full biomarker planning. Core needle biopsy is generally preferred when feasible."
+        },
+        {
+          "id": "h_088",
+          "type": "heading",
+          "level": 3,
+          "text": "How long does a breast biopsy take?"
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "Many needle biopsies are completed within about an hour including preparation. Duration varies with technique and imaging guidance."
+        },
+        {
+          "id": "h_090",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I go home after a breast biopsy?"
+        },
+        {
+          "id": "p_091",
+          "type": "paragraph",
+          "text": "Most patients having a needle biopsy return home the same day. Surgical biopsy may involve a different recovery plan."
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 3,
+          "text": "How many days does a breast biopsy report take?"
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "Timing varies by laboratory and tests required. A straightforward report may arrive within a few working days; immunohistochemistry or HER2 confirmation can take longer."
+        },
+        {
+          "id": "h_094",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the difference between a benign and malignant breast biopsy?"
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "Benign means cancer was not identified in the sampled tissue. Malignant means cancer cells were found. Both must be interpreted with imaging and clinical findings."
+        },
+        {
+          "id": "h_096",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a biopsy spread breast cancer?"
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "There is no good evidence that a properly performed breast needle biopsy causes clinically meaningful spread. Accurate tissue diagnosis remains important."
+        },
+        {
+          "id": "h_098",
+          "type": "heading",
+          "level": 3,
+          "text": "What is a marker clip placed during breast biopsy?"
+        },
+        {
+          "id": "p_099",
+          "type": "paragraph",
+          "text": "A very small device placed at the biopsy site in selected cases so doctors can locate the area later during imaging, surgery or treatment."
+        },
+        {
+          "id": "h_100",
+          "type": "heading",
+          "level": 3,
+          "text": "What happens if the biopsy is benign but the mammogram is suspicious?"
+        },
+        {
+          "id": "p_101",
+          "type": "paragraph",
+          "text": "The team checks radiology–pathology concordance. If findings do not match, repeat biopsy or surgical biopsy may be recommended."
+        },
+        {
+          "id": "h_102",
+          "type": "heading",
+          "level": 3,
+          "text": "Do all breast cancer biopsies require ER, PR and HER2 testing?"
+        },
+        {
+          "id": "p_103",
+          "type": "paragraph",
+          "text": "For newly diagnosed invasive breast cancer these biomarkers are important for treatment planning. Exact tests depend on the pathology and clinical situation."
+        },
+        {
+          "id": "h_104",
+          "type": "heading",
+          "level": 3,
+          "text": "Can I have a breast biopsy during pregnancy?"
+        },
+        {
+          "id": "p_105",
+          "type": "paragraph",
+          "text": "A clinically necessary biopsy can be performed in pregnancy. The clinician chooses an appropriate procedure and imaging approach for the patient."
+        },
+        {
+          "id": "h_106",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a breast biopsy performed under general anaesthesia?"
+        },
+        {
+          "id": "p_107",
+          "type": "paragraph",
+          "text": "Most needle biopsies use local anaesthesia. Surgical biopsies may use local anaesthesia with sedation or general anaesthesia depending on the procedure."
+        },
+        {
+          "id": "h_108",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a breast biopsy remove the entire lump?"
+        },
+        {
+          "id": "p_109",
+          "type": "paragraph",
+          "text": "Some vacuum-assisted or surgical biopsies can remove a substantial part or all of a selected abnormality, but a diagnostic biopsy is not automatically definitive cancer surgery."
+        },
+        {
+          "id": "h_110",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion: Accurate Diagnosis Guides the Right Treatment"
+        },
+        {
+          "id": "p_111",
+          "type": "paragraph",
+          "text": "An abnormal lump or mammogram does not automatically mean cancer. A breast biopsy moves care from suspicion to accurate diagnosis. Core needle biopsy is generally preferred for suspected breast cancer because it supports type, grade and biomarker assessment. Choose the method that fits the imaging target, and ask why that method — and which laboratory tests — are planned."
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "**An accurate diagnosis is the foundation of an appropriate breast cancer treatment plan.** Next steps: [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india) · [symptoms](/blogs/breast-cancer-symptoms) · [screening](/blogs/breast-cancer-screening-india)."
+        },
+        {
+          "id": "btn_113",
+          "type": "button",
+          "label": "Start a GAF breast care consultation",
+          "href": "/consult?treatment=Breast%20Cancer%20Treatment"
+        },
+        {
+          "id": "h_114",
+          "type": "heading",
+          "level": 2,
+          "text": "References and Further Reading"
+        },
+        {
+          "id": "ol_115",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "[National Cancer Institute – How Is Breast Cancer Diagnosed?](https://www.cancer.gov/types/breast/diagnosis)",
+            "[ICMR – Consensus Document for Management of Breast Cancer](https://www.icmr.gov.in/icmrobject/custom_data/pdf/resource-guidelines/Breast_Cancer.pdf)",
+            "[MoHFW – Standard Treatment Guidelines](https://clinicalestablishments.mohfw.gov.in/sites/default/files/standard-treatment-guidelines/2611.pdf)",
+            "[ICMR – Standard Treatment Workflows, Volume 3](https://www.icmr.gov.in/icmrobject/custom_data/pdf/downloadable-books/STW_Vol_3_2022.pdf)",
+            "[National Guidelines in Histopathology – Carcinoma of the Breast](https://collegeofpathologists.com/images/NATIONAL%20GUIDELINES%20IN%20HISTOPATHOLOGY-HANDLING%20AND%20REPORTING%20OF%20CARCINOMA%20OF%20THE%20BREAST.pdf)",
+            "[American College of Surgeons – Breast Biopsy](https://www.facs.org/for-patients/the-day-of-your-surgery/breast-cancer-surgery/preoperative-tests-and-imaging/biopsy/)",
+            "[MedlinePlus – Breast Biopsy](https://medlineplus.gov/lab-tests/breast-biopsy/)",
+            "[RadiologyInfo – Ultrasound-Guided Breast Biopsy](https://www.radiologyinfo.org/en/info/breastbius)",
+            "[RadiologyInfo – Stereotactic Breast Biopsy](https://www.radiologyinfo.org/en/info/breastbixr)",
+            "[National Cancer Institute – Tumour Marker Tests](https://www.cancer.gov/about-cancer/diagnosis-staging/diagnosis/tumor-markers-fact-sheet)"
+          ]
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "*Medical disclaimer: This article is for general educational purposes. It does not replace examination, imaging review, pathology interpretation or advice from a qualified healthcare professional.*"
+        },
+        {
+          "id": "h_117",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Reading"
+        },
+        {
+          "id": "ul_118",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)",
+            "[Breast Cancer Diagnosis Tests (Biopsy, ER/PR/HER2)](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)",
+            "[Breast Cancer Diagnosis](/blogs/breast-cancer-diagnosis)",
+            "[Breast Cancer Screening in India](/blogs/breast-cancer-screening-india)",
+            "[Breast Cancer Symptoms](/blogs/breast-cancer-symptoms)",
+            "[Breast Cancer Surgery](/blogs/breast-cancer-surgery-in-india)",
+            "[Treatment Cost](/blogs/breast-cancer-treatment-cost-in-india)",
+            "[International Patients](/blogs/breast-cancer-treatment-india-international-patients)"
+          ]
+        }
+      ]
+    },
     {
       "id": "art_breast_cancer_screening_india",
       "slug": "breast-cancer-screening-india",
@@ -2959,6 +3772,10 @@
         {
           "label": "International patients",
           "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "Breast biopsy in India",
+          "href": "/blogs/breast-biopsy-breast-cancer-india"
         }
       ],
       "blocks": [
@@ -11316,6 +12133,10 @@
         {
           "label": "Breast cancer screening in India",
           "href": "/blogs/breast-cancer-screening-india"
+        },
+        {
+          "label": "Breast biopsy in India",
+          "href": "/blogs/breast-biopsy-breast-cancer-india"
         }
       ],
       "blocks": [
@@ -14206,6 +15027,10 @@
         {
           "label": "Breast cancer screening in India",
           "href": "/blogs/breast-cancer-screening-india"
+        },
+        {
+          "label": "Breast biopsy in India",
+          "href": "/blogs/breast-biopsy-breast-cancer-india"
         }
       ],
       "blocks": [
@@ -95014,6 +95839,10 @@
         {
           "label": "Breast cancer screening in India",
           "href": "/blogs/breast-cancer-screening-india"
+        },
+        {
+          "label": "Breast biopsy in India",
+          "href": "/blogs/breast-biopsy-breast-cancer-india"
         }
       ],
       "blocks": [
@@ -98969,6 +99798,10 @@
         {
           "label": "Inflammatory breast cancer treatment in India",
           "href": "/blogs/inflammatory-breast-cancer-treatment-india"
+        },
+        {
+          "label": "Breast biopsy in India",
+          "href": "/blogs/breast-biopsy-breast-cancer-india"
         }
       ],
       "blocks": [
@@ -104514,6 +105347,10 @@
         {
           "label": "Breast cancer screening in India",
           "href": "/blogs/breast-cancer-screening-india"
+        },
+        {
+          "label": "Breast biopsy in India",
+          "href": "/blogs/breast-biopsy-breast-cancer-india"
         }
       ],
       "blocks": [
@@ -105595,6 +106432,10 @@
         {
           "label": "Breast cancer screening in India",
           "href": "/blogs/breast-cancer-screening-india"
+        },
+        {
+          "label": "Breast biopsy in India",
+          "href": "/blogs/breast-biopsy-breast-cancer-india"
         }
       ],
       "blocks": [
@@ -109193,6 +110034,10 @@
         {
           "label": "Breast cancer screening in India",
           "href": "/blogs/breast-cancer-screening-india"
+        },
+        {
+          "label": "Breast biopsy in India",
+          "href": "/blogs/breast-biopsy-breast-cancer-india"
         }
       ],
       "blocks": [
