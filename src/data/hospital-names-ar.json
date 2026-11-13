@@ -146,5 +146,25 @@
   "the-sight-avenue-eye-hospital": {
     "en": "The Sight Avenue Eye Hospital",
     "ar": "مستشفى ذا سايت أفينيو للعيون"
+  },
+  "bloom-ivf": {
+    "en": "Bloom IVF",
+    "ar": "بلوم لأطفال الأنابيب"
+  },
+  "neelkanth-infertility-ivf-hospital": {
+    "en": "Neelkanth Infertility & IVF Hospital",
+    "ar": "مستشفى نيلكانث للعقم وأطفال الأنابيب"
+  },
+  "nova-ivf-fertility-center": {
+    "en": "Nova IVF Fertility Center",
+    "ar": "مركز نوفا لأطفال الأنابيب"
+  },
+  "nova-ivf-fertility-center-banjara-hills-hyderabad": {
+    "en": "Nova IVF Fertility Center Banjara Hills Hyderabad",
+    "ar": "مركز نوفا لأطفال الأنابيب، بانجارا هيلز، حيدر آباد"
+  },
+  "nova-ivf-fertility-center-gurugram": {
+    "en": "Nova IVF Fertility Center Gurugram",
+    "ar": "مركز نوفا لأطفال الأنابيب، غورغرام"
   }
 }

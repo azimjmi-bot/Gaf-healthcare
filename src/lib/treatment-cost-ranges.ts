@@ -704,6 +704,150 @@ export const DENTISTRY_CLUSTER_BY_PROCEDURE: Record<string, string> = {
   "Teeth Whitening": "Cosmetic Dentistry",
 };
 
+export const INFERTILITY_IVF_COST: Record<string, { us: string; partner: string; stay: string }> = {
+  "IVF Treatment": {
+    us: "$12,000–$25,000",
+    partner: "$2,500–$5,500",
+    stay: "14–21 days",
+  },
+  "ICSI Treatment": {
+    us: "$13,000–$28,000",
+    partner: "$2,800–$6,000",
+    stay: "14–21 days",
+  },
+  "IUI Treatment": {
+    us: "$500–$4,000",
+    partner: "$150–$700",
+    stay: "Outpatient",
+  },
+  "IMSI Treatment": {
+    us: "$14,000–$30,000",
+    partner: "$3,200–$6,500",
+    stay: "14–21 days",
+  },
+  "Frozen Embryo Transfer (FET)": {
+    us: "$3,000–$7,000",
+    partner: "$700–$1,800",
+    stay: "7–14 days",
+  },
+  "Blastocyst Transfer": {
+    us: "$3,500–$8,000",
+    partner: "$800–$2,000",
+    stay: "7–14 days",
+  },
+  "Donor Egg IVF": {
+    us: "$20,000–$40,000",
+    partner: "$4,500–$9,000",
+    stay: "14–28 days",
+  },
+  "Donor Sperm IVF": {
+    us: "$14,000–$30,000",
+    partner: "$3,000–$6,500",
+    stay: "14–21 days",
+  },
+  "Ovulation Induction": {
+    us: "$500–$3,000",
+    partner: "$100–$600",
+    stay: "Outpatient",
+  },
+  "Ovarian Stimulation": {
+    us: "$2,000–$8,000",
+    partner: "$400–$1,800",
+    stay: "8–14 days",
+  },
+  "Egg Freezing": {
+    us: "$8,000–$18,000",
+    partner: "$1,800–$4,000",
+    stay: "10–16 days",
+  },
+  "Embryo Freezing": {
+    us: "$1,000–$4,000",
+    partner: "$250–$800",
+    stay: "Laboratory episode",
+  },
+  "Fertility Preservation": {
+    us: "$8,000–$20,000",
+    partner: "$2,000–$5,000",
+    stay: "7–16 days",
+  },
+  "PGT-A Testing": {
+    us: "$3,000–$8,000",
+    partner: "$800–$2,500",
+    stay: "Laboratory episode",
+  },
+  "PGT-M / PGD Testing": {
+    us: "$5,000–$12,000",
+    partner: "$1,500–$4,000",
+    stay: "Laboratory episode",
+  },
+  "Embryo Biopsy": {
+    us: "$1,500–$4,000",
+    partner: "$400–$1,200",
+    stay: "Laboratory episode",
+  },
+  Hysteroscopy: {
+    us: "$3,000–$10,000",
+    partner: "$700–$2,500",
+    stay: "Outpatient or 1 night",
+  },
+  Laparoscopy: {
+    us: "$6,000–$18,000",
+    partner: "$1,500–$4,500",
+    stay: "0–2 nights",
+  },
+  "Micro-TESE": {
+    us: "$8,000–$20,000",
+    partner: "$1,800–$4,500",
+    stay: "0–2 nights",
+  },
+  "TESE / TESA": {
+    us: "$4,000–$12,000",
+    partner: "$800–$2,500",
+    stay: "Outpatient or 1 night",
+  },
+  "PESA / MESA": {
+    us: "$4,000–$12,000",
+    partner: "$800–$2,800",
+    stay: "Outpatient or 1 night",
+  },
+  "Fibroid Removal (Myomectomy)": {
+    us: "$10,000–$30,000",
+    partner: "$2,500–$7,000",
+    stay: "1–3 nights",
+  },
+  "Ovarian Cyst Removal": {
+    us: "$8,000–$20,000",
+    partner: "$1,800–$4,500",
+    stay: "0–2 nights",
+  },
+};
+
+export const INFERTILITY_IVF_CLUSTER_BY_PROCEDURE: Record<string, string> = {
+  "IVF Treatment": "IVF and ICSI",
+  "ICSI Treatment": "IVF and ICSI",
+  "IMSI Treatment": "IVF and ICSI",
+  "Donor Egg IVF": "IVF and ICSI",
+  "Donor Sperm IVF": "IVF and ICSI",
+  "IUI Treatment": "IUI and Induction",
+  "Ovulation Induction": "IUI and Induction",
+  "Ovarian Stimulation": "IUI and Induction",
+  "Frozen Embryo Transfer (FET)": "Embryo Transfer and Freezing",
+  "Blastocyst Transfer": "Embryo Transfer and Freezing",
+  "Egg Freezing": "Embryo Transfer and Freezing",
+  "Embryo Freezing": "Embryo Transfer and Freezing",
+  "Fertility Preservation": "Embryo Transfer and Freezing",
+  "PGT-A Testing": "Genetic Testing",
+  "PGT-M / PGD Testing": "Genetic Testing",
+  "Embryo Biopsy": "Genetic Testing",
+  Hysteroscopy: "Fertility Surgery",
+  Laparoscopy: "Fertility Surgery",
+  "Micro-TESE": "Male Fertility Surgery",
+  "TESE / TESA": "Male Fertility Surgery",
+  "PESA / MESA": "Male Fertility Surgery",
+  "Fibroid Removal (Myomectomy)": "Fertility Surgery",
+  "Ovarian Cyst Removal": "Fertility Surgery",
+};
+
 
 export const HEMATOLOGY_COST: Record<string, { us: string; partner: string; stay: string }> = {
   "Autologous Stem Cell Transplant": {

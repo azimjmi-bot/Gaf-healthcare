@@ -103,7 +103,7 @@ test("cost regeneration preserves review status without mutating the live catalo
 
     const after = JSON.parse(readFileSync(isolated, "utf8")) as Cms;
     assert.equal(after.treatmentOverrides[treatmentSlug].status, "reviewed");
-    assert.equal(Object.keys(after.treatmentOverrides).length, 380);
+    assert.equal(Object.keys(after.treatmentOverrides).length, 419);
     for (const [slug, patch] of Object.entries(after.treatmentOverrides)) {
       if (slug === treatmentSlug) continue;
       assert.equal(patch.status, "published", slug);

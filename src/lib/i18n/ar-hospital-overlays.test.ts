@@ -29,8 +29,8 @@ const ginger = JSON.parse(readFileSync(join(process.cwd(), "src/data/ginger-cata
   hospitals: { slug: string; name: string; city: string; bio: string }[];
 };
 
-test("Arabic overlays cover all 37 partner hospitals", () => {
-  assert.equal(ginger.hospitals.length, 37);
+test("Arabic overlays cover all 42 partner hospitals", () => {
+  assert.equal(ginger.hospitals.length, 42);
   for (const hospital of ginger.hospitals) {
     const patch = cms.hospitalOverrides[hospital.slug];
     assert.ok(patch, `missing overlay for ${hospital.slug}`);

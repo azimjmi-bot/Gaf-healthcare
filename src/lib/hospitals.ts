@@ -17,6 +17,7 @@ import {
   OPHTHALMOLOGY_PROCEDURES,
   GYNECOLOGY_PROCEDURES,
   DENTISTRY_PROCEDURES,
+  INFERTILITY_IVF_PROCEDURES,
   NEUROSURGERY_PROCEDURES,
   NEUROLOGY_PROCEDURES,
   NEPHROLOGY_PROCEDURES,
@@ -88,6 +89,7 @@ const orthopedics = getSpecialty("Orthopedics");
 const ophthalmology = getSpecialty("Ophthalmology");
 const gynecology = getSpecialty("Gynecology");
 const dentistry = getSpecialty("Dentistry");
+const infertilityIvf = getSpecialty("Infertility & IVF");
 const neurosurgery = getSpecialty("Neurosurgery");
 const neurology = getSpecialty("Neurology");
 const nephrology = getSpecialty("Nephrology");
@@ -113,6 +115,7 @@ if (
   !ophthalmology ||
   !gynecology ||
   !dentistry ||
+  !infertilityIvf ||
   !neurosurgery ||
   !neurology ||
   !nephrology
@@ -139,6 +142,16 @@ function isEyeCampus(slug: string) {
   return slug === "dr-agarwals-eye-hospital" || slug === "the-sight-avenue-eye-hospital";
 }
 
+function isFertilityCampus(slug: string) {
+  return (
+    slug === "bloom-ivf" ||
+    slug === "neelkanth-infertility-ivf-hospital" ||
+    slug === "nova-ivf-fertility-center" ||
+    slug === "nova-ivf-fertility-center-banjara-hills-hyderabad" ||
+    slug === "nova-ivf-fertility-center-gurugram"
+  );
+}
+
 // Arrow functions, not declarations, so the specialty guard above narrows inside them.
 const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
   const cityName = seed.city || "Delhi NCR";
@@ -159,35 +172,39 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
     radiationFaculty.length > 0,
   );
   const eyeCampus = isEyeCampus(seed.slug);
+  const fertilityCampus = isFertilityCampus(seed.slug);
   const procedures = resolveProcedures(
     eyeCampus
       ? [...OPHTHALMOLOGY_PROCEDURES]
-      : [
-          ...radiationNames,
-          ...surgicalNamesForCampus(seed.slug),
-          ...MEDICAL_ONCOLOGY_PROCEDURES,
-          ...HEMATOLOGY_PROCEDURES,
-          ...PEDIATRIC_HEMATOLOGY_PROCEDURES,
-          ...CARDIAC_SURGERY_PROCEDURES,
-          ...PEDIATRIC_CARDIAC_SURGERY_PROCEDURES,
-          ...CARDIOLOGY_PROCEDURES,
-          ...BARIATRIC_PROCEDURES,
-          ...COSMETIC_PROCEDURES,
-          ...ENT_PROCEDURES,
-          ...GASTROENTEROLOGY_PROCEDURES,
-          ...SURGICAL_GASTROENTEROLOGY_PROCEDURES,
-          ...UROLOGY_PROCEDURES,
-          ...SPINE_SURGERY_PROCEDURES,
-          ...PULMONOLOGY_PROCEDURES,
-          ...PEDIATRIC_ORTHOPAEDIC_PROCEDURES,
-          ...ORTHOPEDICS_PROCEDURES,
-          ...OPHTHALMOLOGY_PROCEDURES,
-          ...GYNECOLOGY_PROCEDURES,
-          ...DENTISTRY_PROCEDURES,
-          ...NEUROSURGERY_PROCEDURES,
-          ...NEUROLOGY_PROCEDURES,
-          ...NEPHROLOGY_PROCEDURES,
-        ],
+      : fertilityCampus
+        ? [...INFERTILITY_IVF_PROCEDURES]
+        : [
+            ...radiationNames,
+            ...surgicalNamesForCampus(seed.slug),
+            ...MEDICAL_ONCOLOGY_PROCEDURES,
+            ...HEMATOLOGY_PROCEDURES,
+            ...PEDIATRIC_HEMATOLOGY_PROCEDURES,
+            ...CARDIAC_SURGERY_PROCEDURES,
+            ...PEDIATRIC_CARDIAC_SURGERY_PROCEDURES,
+            ...CARDIOLOGY_PROCEDURES,
+            ...BARIATRIC_PROCEDURES,
+            ...COSMETIC_PROCEDURES,
+            ...ENT_PROCEDURES,
+            ...GASTROENTEROLOGY_PROCEDURES,
+            ...SURGICAL_GASTROENTEROLOGY_PROCEDURES,
+            ...UROLOGY_PROCEDURES,
+            ...SPINE_SURGERY_PROCEDURES,
+            ...PULMONOLOGY_PROCEDURES,
+            ...PEDIATRIC_ORTHOPAEDIC_PROCEDURES,
+            ...ORTHOPEDICS_PROCEDURES,
+            ...OPHTHALMOLOGY_PROCEDURES,
+            ...GYNECOLOGY_PROCEDURES,
+            ...INFERTILITY_IVF_PROCEDURES,
+            ...DENTISTRY_PROCEDURES,
+            ...NEUROSURGERY_PROCEDURES,
+            ...NEUROLOGY_PROCEDURES,
+            ...NEPHROLOGY_PROCEDURES,
+          ],
   );
   const seen = new Set<string>();
   const unique = procedures.filter((p) => {
@@ -206,71 +223,91 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
     accreditation: seed.accreditation,
     focus: eyeCampus
       ? ophthalmology.name
-      : `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name} · ${cardiacSurgery.name} · ${pediatricCardiacSurgery.name} · ${cardiology.name} · ${bariatric.name} · ${cosmetic.name} · ${ent.name} · ${gastroenterology.name} · ${surgicalGastroenterology.name} · ${urology.name} · ${spineSurgery.name} · ${pulmonology.name} · ${pediatricOrthopaedic.name} · ${orthopedics.name} · ${ophthalmology.name} · ${gynecology.name} · ${dentistry.name} · ${neurosurgery.name} · ${neurology.name} · ${nephrology.name}`,
-    specialty: eyeCampus ? ophthalmology.name : radiation.name,
-    specialtySlug: eyeCampus ? ophthalmology.slug : radiation.slug,
+      : fertilityCampus
+        ? infertilityIvf.name
+        : `${radiation.name} · ${surgical.name} · ${medical.name} · ${hematology.name} · ${pediatricHematology.name} · ${cardiacSurgery.name} · ${pediatricCardiacSurgery.name} · ${cardiology.name} · ${bariatric.name} · ${cosmetic.name} · ${ent.name} · ${gastroenterology.name} · ${surgicalGastroenterology.name} · ${urology.name} · ${spineSurgery.name} · ${pulmonology.name} · ${pediatricOrthopaedic.name} · ${orthopedics.name} · ${ophthalmology.name} · ${gynecology.name} · ${infertilityIvf.name} · ${dentistry.name} · ${neurosurgery.name} · ${neurology.name} · ${nephrology.name}`,
+    specialty: eyeCampus
+      ? ophthalmology.name
+      : fertilityCampus
+        ? infertilityIvf.name
+        : radiation.name,
+    specialtySlug: eyeCampus
+      ? ophthalmology.slug
+      : fertilityCampus
+        ? infertilityIvf.slug
+        : radiation.slug,
     specialties: eyeCampus
       ? [ophthalmology.name]
-      : [
-          radiation.name,
-          surgical.name,
-          medical.name,
-          hematology.name,
-          pediatricHematology.name,
-          cardiacSurgery.name,
-          pediatricCardiacSurgery.name,
-          cardiology.name,
-          bariatric.name,
-          cosmetic.name,
-          ent.name,
-          gastroenterology.name,
-          surgicalGastroenterology.name,
-          urology.name,
-          spineSurgery.name,
-          pulmonology.name,
-          pediatricOrthopaedic.name,
-          orthopedics.name,
-          ophthalmology.name,
-          gynecology.name,
-          dentistry.name,
-          neurosurgery.name,
-          neurology.name,
-          nephrology.name,
-        ],
+      : fertilityCampus
+        ? [infertilityIvf.name]
+        : [
+            radiation.name,
+            surgical.name,
+            medical.name,
+            hematology.name,
+            pediatricHematology.name,
+            cardiacSurgery.name,
+            pediatricCardiacSurgery.name,
+            cardiology.name,
+            bariatric.name,
+            cosmetic.name,
+            ent.name,
+            gastroenterology.name,
+            surgicalGastroenterology.name,
+            urology.name,
+            spineSurgery.name,
+            pulmonology.name,
+            pediatricOrthopaedic.name,
+            orthopedics.name,
+            ophthalmology.name,
+            gynecology.name,
+            infertilityIvf.name,
+            dentistry.name,
+            neurosurgery.name,
+            neurology.name,
+            nephrology.name,
+          ],
     specialtySlugs: eyeCampus
       ? [ophthalmology.slug]
-      : [
-          radiation.slug,
-          surgical.slug,
-          medical.slug,
-          hematology.slug,
-          pediatricHematology.slug,
-          cardiacSurgery.slug,
-          pediatricCardiacSurgery.slug,
-          cardiology.slug,
-          bariatric.slug,
-          cosmetic.slug,
-          ent.slug,
-          gastroenterology.slug,
-          surgicalGastroenterology.slug,
-          urology.slug,
-          spineSurgery.slug,
-          pulmonology.slug,
-          pediatricOrthopaedic.slug,
-          orthopedics.slug,
-          ophthalmology.slug,
-          gynecology.slug,
-          dentistry.slug,
-          neurosurgery.slug,
-          neurology.slug,
-          nephrology.slug,
-        ],
+      : fertilityCampus
+        ? [infertilityIvf.slug]
+        : [
+            radiation.slug,
+            surgical.slug,
+            medical.slug,
+            hematology.slug,
+            pediatricHematology.slug,
+            cardiacSurgery.slug,
+            pediatricCardiacSurgery.slug,
+            cardiology.slug,
+            bariatric.slug,
+            cosmetic.slug,
+            ent.slug,
+            gastroenterology.slug,
+            surgicalGastroenterology.slug,
+            urology.slug,
+            spineSurgery.slug,
+            pulmonology.slug,
+            pediatricOrthopaedic.slug,
+            orthopedics.slug,
+            ophthalmology.slug,
+            gynecology.slug,
+            infertilityIvf.slug,
+            dentistry.slug,
+            neurosurgery.slug,
+            neurology.slug,
+            nephrology.slug,
+          ],
     procedures: unique.map((p) => p.name),
     procedureSlugs: unique.map((p) => p.slug),
     established: seed.established,
     beds: seed.beds,
     languages: languagesFor(city.name),
-    icu: eyeCampus ? "Ophthalmic theatre" : "Oncology ICU",
+    icu: eyeCampus
+      ? "Ophthalmic theatre"
+      : fertilityCampus
+        ? "Embryology laboratory"
+        : "Oncology ICU",
     bio: seed.bio,
     summary: seed.bio,
     image: "",

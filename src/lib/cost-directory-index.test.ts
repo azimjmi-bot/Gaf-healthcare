@@ -25,7 +25,7 @@ describe("cost directory index", () => {
   it("matches every specialty group and membership on the full catalog", () => {
     const full = listCostSpecialtyGroups({});
     const slim = listDirectoryCostGroups();
-    assert.equal(full.length, 23);
+    assert.equal(full.length, 25);
     assert.deepEqual(
       slim.map((group) => group.name),
       full.map((group) => group.name),
@@ -36,8 +36,8 @@ describe("cost directory index", () => {
     );
     const fullMemberships = full.reduce((sum, group) => sum + group.items.length, 0);
     const slimMemberships = slim.reduce((sum, group) => sum + group.items.length, 0);
-    assert.equal(fullMemberships, 415);
-    assert.equal(slimMemberships, 415);
+    assert.equal(fullMemberships, 456);
+    assert.equal(slimMemberships, 456);
     assert.equal(slim[0]?.name, "Radiation Oncology");
     assert.equal(slim[0]?.items.length, 15);
     assert.deepEqual(
@@ -60,9 +60,9 @@ describe("cost directory index", () => {
     }
   });
 
-  it("keeps all 380 full treatment records complete", () => {
-    assert.equal(catalogTreatments.length, 380);
-    assert.equal(directoryCostRows.length, 380);
+  it("keeps all 419 full treatment records complete", () => {
+    assert.equal(catalogTreatments.length, 419);
+    assert.equal(directoryCostRows.length, 419);
     let summaryChars = 0;
     let notesChars = 0;
     for (const row of catalogTreatments) {
@@ -75,8 +75,8 @@ describe("cost directory index", () => {
       summaryChars += row.summary.length;
       notesChars += row.notes.length;
     }
-    assert.equal(summaryChars, 60462);
-    assert.equal(notesChars, 59619);
+    assert.equal(summaryChars, 68284);
+    assert.equal(notesChars, 66030);
     const ebrt = catalogTreatments.find((row) => row.slug === "external-beam-radiotherapy-ebrt");
     assert.equal(
       ebrt?.summary,
@@ -100,7 +100,7 @@ describe("cost directory index", () => {
     });
     assert.equal(cms.treatmentsDeleted.length, 0);
     assert.equal(cms.treatmentsAdded.length, 0);
-    assert.equal(layered.length, 380);
+    assert.equal(layered.length, 419);
     for (const row of layered) {
       const base = directoryCostRows.find((candidate) => candidate.slug === row.slug);
       const patch = cms.treatmentOverrides[row.slug];

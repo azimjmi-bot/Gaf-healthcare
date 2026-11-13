@@ -13,10 +13,8 @@ import {
   specialtyPageMeetsQualityThreshold,
 } from "../lib/specialty-page";
 
-// Infertility & IVF remains taxonomy-only for now; Dentistry is wired for costs
-// and specialty hubs but has no ginger-catalog doctor seeds yet.
-const TAXONOMY_ONLY_SPECIALTY_SLUGS = new Set(["infertility-ivf"]);
-const SPECIALTIES_WITHOUT_DOCTOR_SEED = new Set(["infertility-ivf", "dentistry"]);
+const TAXONOMY_ONLY_SPECIALTY_SLUGS = new Set<string>();
+const SPECIALTIES_WITHOUT_DOCTOR_SEED = new Set<string>();
 
 test("discovers relationship-qualified specialty-country CMS candidates", () => {
   const candidates = listSpecialtyPageCandidates();
@@ -40,27 +38,35 @@ test("publishes every article-qualified country profile through one builder", ()
   );
   assert.equal(profiles.length, expectedProfiles.length);
   assert.ok(profiles.some((profile) => profile.specialtySlug === "dentistry"));
+  assert.ok(profiles.some((profile) => profile.specialtySlug === "infertility-ivf"));
   assert.equal(
     profiles.filter((profile) => profile.status === "published").length,
-    24,
+    25,
   );
   for (const profile of profiles) {
     const data = buildSpecialtyPageData(profile);
     assert.ok(data, profile.specialtySlug);
+    const doctorBacked = !SPECIALTIES_WITHOUT_DOCTOR_SEED.has(profile.specialtySlug);
     assert.equal(
       specialtyPageMeetsQualityThreshold(data),
-      profile.status === "published",
+      profile.status === "published" && doctorBacked,
       profile.specialtySlug,
     );
     assert.equal(
       data.pricingGroups.flatMap((group) => group.rows).length,
       data.procedures.length,
     );
-    assert.ok(data.pricingGroups.length > 0);
-    assert.equal(
-      data.longFormArticleCoverage >= 0.9,
-      profile.status === "published",
-    );
+    if (doctorBacked) {
+      assert.ok(data.pricingGroups.length > 0);
+      assert.equal(
+        data.longFormArticleCoverage >= 0.9,
+        profile.status === "published",
+      );
+    } else {
+      assert.equal(profile.status, "published", profile.specialtySlug);
+      assert.ok(profile.pricingGroups.length > 0, profile.specialtySlug);
+      assert.equal(data.doctors.length, 0, profile.specialtySlug);
+    }
   }
 });
 
@@ -162,6 +168,8 @@ test("published specialty index cards keep the displayed fields and counts", () 
       { key: "india/orthopedics", procedures: 22, hospitals: 31, doctors: 208, cities: 5, citySlugs: ["delhi-ncr", "mumbai", "bengaluru", "chennai", "hyderabad"] },
       { key: "india/ophthalmology", procedures: 25, hospitals: 28, doctors: 102, cities: 4, citySlugs: ["delhi-ncr", "mumbai", "bengaluru", "hyderabad"] },
       { key: "india/gynecology", procedures: 16, hospitals: 30, doctors: 187, cities: 4, citySlugs: ["delhi-ncr", "mumbai", "bengaluru", "hyderabad"] },
+      { key: "india/infertility-ivf", procedures: 25, hospitals: 15, doctors: 29, cities: 2, citySlugs: ["delhi-ncr", "hyderabad"] },
+      { key: "india/dentistry", procedures: 16, hospitals: 20, doctors: 66, cities: 4, citySlugs: ["delhi-ncr", "mumbai", "bengaluru", "chennai"] },
       { key: "india/neurosurgery", procedures: 25, hospitals: 29, doctors: 98, cities: 4, citySlugs: ["delhi-ncr", "mumbai", "chennai", "hyderabad"] },
       { key: "india/neurology", procedures: 19, hospitals: 32, doctors: 111, cities: 5, citySlugs: ["delhi-ncr", "mumbai", "bengaluru", "chennai", "hyderabad"] },
       { key: "india/nephrology", procedures: 18, hospitals: 30, doctors: 107, cities: 5, citySlugs: ["delhi-ncr", "mumbai", "bengaluru", "chennai", "hyderabad"] },
@@ -180,5 +188,5 @@ test("published specialty index cards keep the displayed fields and counts", () 
     );
     assert.ok(data.pricingGroups.flatMap((group) => group.rows).every((row) => row.cityRange === undefined));
   }
-  assert.equal(cards.length, 23);
+  assert.equal(cards.length, 25);
 });

@@ -8,6 +8,12 @@ import { ORTHOPEDICS_CLUSTER_BY_PROCEDURE, ORTHOPEDICS_COST, ORTHOPEDICS_SUMMARI
 import { OPHTHALMOLOGY_CLUSTER_BY_PROCEDURE, OPHTHALMOLOGY_COST, OPHTHALMOLOGY_SUMMARIES } from "@/lib/ophthalmology-costs";
 import { GYNECOLOGY_CLUSTER_BY_PROCEDURE, GYNECOLOGY_CONDITIONS, GYNECOLOGY_COST, GYNECOLOGY_SUMMARIES } from "@/lib/gynecology-costs";
 import { DENTISTRY_CLUSTER_BY_PROCEDURE, DENTISTRY_CONDITIONS, DENTISTRY_COST, DENTISTRY_SUMMARIES } from "@/lib/dentistry-costs";
+import {
+  INFERTILITY_IVF_CLUSTER_BY_PROCEDURE,
+  INFERTILITY_IVF_CONDITIONS,
+  INFERTILITY_IVF_COST,
+  INFERTILITY_IVF_SUMMARIES,
+} from "@/lib/infertility-ivf-costs";
 import { NEUROSURGERY_CLUSTER_BY_PROCEDURE, NEUROSURGERY_CONDITIONS, NEUROSURGERY_COST, NEUROSURGERY_SHARED, NEUROSURGERY_SUMMARIES } from "@/lib/neurosurgery-costs";
 import { NEUROLOGY_CLUSTER_BY_PROCEDURE, NEUROLOGY_CONDITIONS, NEUROLOGY_COST, NEUROLOGY_SHARED, NEUROLOGY_SUMMARIES } from "@/lib/neurology-costs";
 import { NEPHROLOGY_CLUSTER_BY_PROCEDURE, NEPHROLOGY_CONDITIONS, NEPHROLOGY_COST, NEPHROLOGY_SHARED, NEPHROLOGY_SUMMARIES } from "@/lib/nephrology-costs";
@@ -35,6 +41,7 @@ import {
   OPHTHALMOLOGY_PROCEDURES,
   GYNECOLOGY_PROCEDURES,
   DENTISTRY_PROCEDURES,
+  INFERTILITY_IVF_PROCEDURES,
   NEUROSURGERY_PROCEDURES,
   NEUROLOGY_PROCEDURES,
   NEPHROLOGY_PROCEDURES,
@@ -946,6 +953,50 @@ const dentistryTreatments: Treatment[] = DENTISTRY_PROCEDURES.map((name) => {
   };
 });
 
+const INFERTILITY_IVF_IMAGE =
+  "https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=1600&q=80";
+
+const INFERTILITY_IVF_INCLUDES = [
+  "Fertility specialist consultation and records review",
+  "Named fertility specialist on camera before travel",
+  "Monitoring scans and hormone tests as indicated",
+  "Laboratory, medications and cryostorage steps as quoted",
+  "Discharge summary to your home fertility or obstetric team",
+];
+
+const INFERTILITY_IVF_ONLY = INFERTILITY_IVF_PROCEDURES.filter((name) => {
+  const row = getProcedure(name);
+  return row?.specialtySlugs[0] === "infertility-ivf";
+});
+
+const infertilityIvfTreatments: Treatment[] = INFERTILITY_IVF_ONLY.map((name) => {
+  const cost = INFERTILITY_IVF_COST[name];
+  if (!cost) throw new Error(`Missing infertility/IVF cost for ${name}`);
+  const slug = toSlug(name);
+  const cluster = INFERTILITY_IVF_CLUSTER_BY_PROCEDURE[name] ?? "Infertility & IVF";
+  return {
+    slug,
+    name,
+    category: cluster,
+    specialtySlug: "infertility-ivf",
+    specialtySlugs: slugsForProcedureName(name),
+    procedureSlug: slug,
+    summary:
+      INFERTILITY_IVF_SUMMARIES[name] ??
+      `Infertility & IVF — ${name} at partner campuses with a named fertility specialist before you travel.`,
+    image: INFERTILITY_IVF_IMAGE,
+    usRange: cost.us,
+    partnerRange: cost.partner,
+    stay: cost.stay,
+    hospitalSlugs: hospitalSlugsForProcedure(name),
+    conditions: INFERTILITY_IVF_CONDITIONS,
+    procedures: [name],
+    includes: INFERTILITY_IVF_INCLUDES,
+    notes:
+      "Indicative planning ranges, not quotations. The named fertility specialist confirms protocol, laboratory scope and an itemized hospital or clinic price after records review.",
+  };
+});
+
 const NEUROSURGERY_IMAGE =
   "https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=1600&q=80";
 
@@ -1096,6 +1147,7 @@ export const catalogTreatments: Treatment[] = [
   ...orthopedicsTreatments,
   ...ophthalmologyTreatments,
   ...gynecologyTreatments,
+  ...infertilityIvfTreatments,
   ...dentistryTreatments,
   ...neurosurgeryTreatments,
   ...neurologyTreatments,

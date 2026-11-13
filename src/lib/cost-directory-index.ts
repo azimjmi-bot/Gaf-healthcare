@@ -18,6 +18,8 @@ import {
   GYNECOLOGY_COST,
   DENTISTRY_CLUSTER_BY_PROCEDURE,
   DENTISTRY_COST,
+  INFERTILITY_IVF_CLUSTER_BY_PROCEDURE,
+  INFERTILITY_IVF_COST,
   HEMATOLOGY_COST,
   MEDICAL_COST,
   NEPHROLOGY_CLUSTER_BY_PROCEDURE,
@@ -52,6 +54,7 @@ import {
   GASTROENTEROLOGY_PROCEDURES,
   GYNECOLOGY_PROCEDURES,
   DENTISTRY_PROCEDURES,
+  INFERTILITY_IVF_PROCEDURES,
   HEMATOLOGY_PROCEDURES,
   MEDICAL_ONCOLOGY_PROCEDURES,
   NEPHROLOGY_PROCEDURES,
@@ -228,6 +231,16 @@ export const directoryCostRows: DirectoryCostRow[] = [
     "dentistry",
     (name) => DENTISTRY_CLUSTER_BY_PROCEDURE[name] ?? "Dentistry",
     "dentistry",
+  ),
+  ...rowsFrom(
+    INFERTILITY_IVF_PROCEDURES.filter((name) => {
+      const row = getProcedure(name);
+      return row?.specialtySlugs[0] === "infertility-ivf";
+    }),
+    INFERTILITY_IVF_COST,
+    "infertility-ivf",
+    (name) => INFERTILITY_IVF_CLUSTER_BY_PROCEDURE[name] ?? "Infertility & IVF",
+    "infertility-ivf",
   ),
   ...rowsFrom(
     NEUROSURGERY_PROCEDURES.filter((name) => !neurosurgeryShared.has(name)),

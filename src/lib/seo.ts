@@ -79,6 +79,10 @@ export function doctorMetadata(d: Doctor, locale: AppLocale = "en"): Metadata {
       ? "neurologist"
       : d.specialtySlug === "neurosurgery"
       ? "neurosurgeon"
+      : d.specialtySlug === "dentistry"
+      ? "dentist"
+      : d.specialtySlug === "infertility-ivf"
+      ? "fertility specialist"
       : d.specialtySlug === "gynecology"
       ? "gynecologist"
       : d.specialtySlug === "ophthalmology"
@@ -185,7 +189,9 @@ export function hospitalMetadata(h: Hospital, locale: AppLocale = "en"): Metadat
   const title =
     h.specialtySlug === "ophthalmology" && h.specialtySlugs.length === 1
       ? `${h.name} — eye hospital in ${h.city}, India`
-      : `${h.name} — oncology, ENT and GI hospital in ${h.city}, India`;
+      : h.specialtySlug === "infertility-ivf" && h.specialtySlugs.length === 1
+        ? `${h.name} — fertility centre in ${h.city}, India`
+        : `${h.name} — oncology, ENT and GI hospital in ${h.city}, India`;
   const description = clip(
     `${h.name} in ${h.city}, India lists ${h.specialties.join(", ")}. ${h.accreditation}. ${displayBio(h.bio)}`,
   );

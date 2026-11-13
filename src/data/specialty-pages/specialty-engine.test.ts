@@ -10,6 +10,7 @@ import { entIndiaProfile } from "./ent";
 import { gastroenterologyIndiaProfile } from "./gastroenterology";
 import { dentistryIndiaProfile } from "./dentistry";
 import { gynecologyIndiaProfile } from "./gynecology";
+import { infertilityIvfIndiaProfile } from "./infertility-ivf";
 import { hematologyIndiaProfile } from "./hematology";
 import { medicalOncologyIndiaProfile } from "./medical-oncology";
 import { nephrologyIndiaProfile } from "./nephrology";
@@ -53,6 +54,7 @@ const factoryProfiles = [
   orthopedicsIndiaProfile,
   ophthalmologyIndiaProfile,
   gynecologyIndiaProfile,
+  infertilityIvfIndiaProfile,
   dentistryIndiaProfile,
   neurosurgeryIndiaProfile,
   neurologyIndiaProfile,
@@ -109,15 +111,12 @@ test("ships every catalog specialty through one complete page contract", () => {
         .map((treatment) => treatment.name),
     );
   }
-  // Infertility & IVF is present in SPECIALTIES for taxonomy/routing but does
-  // not yet ship an indiaSpecialtyProfile (taxonomy-only rollout).
   assert.deepEqual(
     profiles.map((profile) => profile.specialtySlug).sort(),
-    SPECIALTIES.filter((specialty) => specialty.slug !== "infertility-ivf")
-      .map((specialty) => specialty.slug)
-      .sort(),
+    SPECIALTIES.map((specialty) => specialty.slug).sort(),
   );
   assert.ok(profiles.some((profile) => profile.specialtySlug === "dentistry"));
+  assert.ok(profiles.some((profile) => profile.specialtySlug === "infertility-ivf"));
   for (const profile of profiles) {
     assert.equal(profile.countrySlug, "india");
   }
