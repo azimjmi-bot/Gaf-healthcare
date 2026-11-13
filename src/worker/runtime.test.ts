@@ -119,15 +119,21 @@ afterEach(() => setContentStorage(undefined));
 
 // --------------------------------------------------------------- policy
 
-test("public requests hydrate every edition but not the CMS-only group; CMS requests hydrate all", () => {
-  assert.deepEqual([...groupsForRequest("/")], ["en", "ar", "fr", "ru", "sw"]);
-  assert.deepEqual([...groupsForRequest("/ar/doctors/india")], ["en", "ar", "fr", "ru", "sw"]);
-  assert.deepEqual([...groupsForRequest("/sitemap-en.xml")], ["en", "ar", "fr", "ru", "sw"]);
-  assert.deepEqual([...groupsForRequest("/api/consult")], ["en", "ar", "fr", "ru", "sw"]);
+test("public requests hydrate only the editions the path can read; CMS requests hydrate all", () => {
+  assert.deepEqual([...groupsForRequest("/")], ["en"], "English home does not need target catalogs");
+  assert.deepEqual([...groupsForRequest("/consult")], ["en"]);
+  assert.deepEqual([...groupsForRequest("/specialties")], ["en"]);
+  assert.deepEqual([...groupsForRequest("/somalia/treatment-in-india")], ["en"]);
+  assert.deepEqual([...groupsForRequest("/doctors")], ["en", "ar"], "hreflang reads the live Arabic catalog");
+  assert.deepEqual([...groupsForRequest("/blogs/example")], ["en", "ar"]);
+  assert.deepEqual([...groupsForRequest("/ar")], ["en", "ar"]);
+  assert.deepEqual([...groupsForRequest("/ar/doctors/india")], ["en", "ar"]);
+  assert.deepEqual([...groupsForRequest("/sitemap-en.xml")], ["en"], "baked sitemaps do not need editions");
+  assert.deepEqual([...groupsForRequest("/api/consult")], ["en"]);
   assert.deepEqual([...groupsForRequest("/cms")], ["en", "ar", "fr", "ru", "sw", "cms"]);
   assert.deepEqual([...groupsForRequest("/cms/articles/1")], ["en", "ar", "fr", "ru", "sw", "cms"]);
   assert.deepEqual([...groupsForRequest("/api/cms/ai/generate")], ["en", "ar", "fr", "ru", "sw", "cms"]);
-  assert.deepEqual([...groupsForRequest("/cmsx")], ["en", "ar", "fr", "ru", "sw"], "prefix match is on path segments");
+  assert.deepEqual([...groupsForRequest("/cmsx")], ["en"], "prefix match is on path segments");
 });
 
 test("plain HTTP redirects to HTTPS on the same host and does not reach Next", async () => {
@@ -244,7 +250,10 @@ test("storage is installed before routing, is the storage the app sees, and load
   const storage = worker.storage();
   assert.ok(storage);
   assert.equal(contentStorage(), storage, "setContentStorage() ran before Next was called");
-  for (const group of ["en", "ar", "fr", "ru", "sw"] as const) assert.ok(storage.isHydrated(group), group);
+  for (const group of ["en", "ar"] as const) assert.ok(storage.isHydrated(group), group);
+  for (const group of ["fr", "ru", "sw"] as const) {
+    assert.equal(storage.isHydrated(group), false, `${group} stays cold until published`);
+  }
   assert.equal(storage.isHydrated("cms"), false, "the AI history is not loaded for public traffic");
   assert.equal(storage.read("public/ar-ro-directory.css"), STYLESHEET, "ar-ro-directory.css came from the ASSETS binding");
   assert.equal(storage.read(CATALOG_SEED_KEY), CATALOG, "the static catalog came from the ASSETS binding, not a bucket");
@@ -282,13 +291,24 @@ test("an unseeded or incomplete bucket is a 503 with Retry-After, and Next is ne
   const partialBucket = new FakeR2Bucket(partialObjects);
   partialBucket.seed(MANIFEST_KEY, JSON.stringify({ version: 1, generatedAt: "", keys: Object.keys(CONTENT) }));
   const partial = createWorker(next.handler, quiet);
-  const partialResponse = await partial.fetch(new Request("https://staging.example/"), makeEnv({ CONTENT: partialBucket }), ctx());
-  assert.equal(partialResponse.status, 503, "a manifest key missing from the bucket refuses the whole site");
-  assert.equal(next.seen.length, 0);
+  // English home only hydrates `en`, so a missing Arabic article must not take it down.
+  const homeResponse = await partial.fetch(new Request("https://staging.example/"), makeEnv({ CONTENT: partialBucket }), ctx());
+  assert.equal(homeResponse.status, 200, "English home does not depend on Arabic article objects");
+  const catalogResponse = await partial.fetch(
+    new Request("https://staging.example/blogs/x"),
+    makeEnv({ CONTENT: partialBucket }),
+    ctx(),
+  );
+  assert.equal(catalogResponse.status, 503, "a path that hydrates Arabic refuses when that edition is incomplete");
+  assert.equal(next.seen.length, 1, "only the home request reached Next");
 
   // Once the bucket is complete the same isolate recovers without a restart.
   partialBucket.seed("content/ar/articles/alpha.json", '{"slug":"alpha"}');
-  const recovered = await partial.fetch(new Request("https://staging.example/"), makeEnv({ CONTENT: partialBucket }), ctx());
+  const recovered = await partial.fetch(
+    new Request("https://staging.example/blogs/x"),
+    makeEnv({ CONTENT: partialBucket }),
+    ctx(),
+  );
   assert.equal(recovered.status, 200);
 });
 

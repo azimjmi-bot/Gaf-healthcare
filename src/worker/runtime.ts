@@ -23,14 +23,18 @@
  *    for a render slot checks the cache again before rendering.
  * 5. Serve `/_next/image` outside the document render slots, with its own
  *    small concurrency limit and a cache of successful image bytes.
- * 6. Hydrate every content group a document can read, answering 503 when
- *    that is not possible, then check whether another isolate has published
- *    newer content. Only then is the request handed to Next. A document that
- *    cannot obtain a render slot within the queue bound answers 503 instead
- *    of waiting with no bytes.
+ * 6. Hydrate the content groups this document can read (request locale plus
+ *    any published editions hreflang may query for the path), answering 503
+ *    when that is not possible, then check whether another isolate has
+ *    published newer content. Only then is the request handed to Next. A
+ *    document that cannot obtain a render slot within the queue bound answers
+ *    503 instead of waiting with no bytes.
  */
 import { COST_ARTICLES_KEY } from "@/data/cost-articles/asset";
 import { CATALOG_SEED_KEY } from "@/lib/catalog-seed";
+import { SOURCE_LOCALE, TARGET_LOCALES } from "@/lib/i18n/languages";
+import { localeIsPublished } from "@/lib/i18n/locale-gating";
+import { stripLocalePrefix } from "@/lib/i18n/path";
 import { SITEMAP_HEADERS } from "@/lib/i18n/sitemap-xml";
 import { setContentStorage, type ContentStorage } from "@/lib/storage";
 import {
@@ -118,10 +122,6 @@ export type FetchHandler<Env = WorkerEnv> = (
   env: Env,
   ctx: ExecutionContextLike,
 ) => Promise<Response>;
-
-/** The CMS-only groups: `ai-generations.json` is read by `/api/cms/ai/*` alone. */
-const CMS_ONLY_GROUPS: readonly EditionGroup[] = ["cms"];
-const PUBLIC_GROUPS: readonly EditionGroup[] = EDITION_GROUPS.filter((group) => !CMS_ONLY_GROUPS.includes(group));
 
 /**
  * Files the renderer reads at request time that ship with the deploy as
@@ -691,19 +691,58 @@ function createRenderGate(limit: number, timeoutMs: () => number, onPeak?: (peak
 }
 
 /**
+ * English path roots whose hreflang / publication checks read target-locale
+ * catalogs (doctors, hospitals, costs, blogs, treatments). Home, consult,
+ * specialties and country hubs do not — target home is always "published"
+ * for live locales without opening that edition's CMS.
+ */
+const CROSS_LOCALE_CATALOG_ROOTS = new Set([
+  "blogs",
+  "treatments",
+  "doctors",
+  "hospitals",
+  "costs",
+]);
+
+function isEditionGroup(value: string): value is EditionGroup {
+  return (EDITION_GROUPS as readonly string[]).includes(value);
+}
+
+/**
  * Groups to hydrate before `pathname` is routed.
  *
- * Every public page can read every published edition: the language switcher
- * and hreflang block ask whether the Arabic (or any future published locale)
- * equivalent exists, and Arabic pages overlay the English catalog. So public
- * traffic hydrates all editions; what it never loads is the CMS-only group.
- * The CMS itself can read anything, including the AI history.
+ * Hydrate only what this request can read:
+ * - English source content is always needed (target locales overlay it).
+ * - The request locale's edition, when it is not English.
+ * - Published target editions whose catalogs hreflang may query for this path.
+ * - Unpublished locales (fr/ru/sw today) stay cold until they go live.
+ * - CMS routes also load the CMS-only group.
+ *
+ * Eagerly hydrating every public edition on every miss forced ~100+ Arabic
+ * R2 object reads on cold isolates serving the English homepage.
  */
 export function groupsForRequest(pathname: string): readonly EditionGroup[] {
   if (pathname === "/cms" || pathname.startsWith("/cms/") || pathname.startsWith("/api/cms/")) {
     return EDITION_GROUPS;
   }
-  return PUBLIC_GROUPS;
+
+  const { locale, pathname: stripped } = stripLocalePrefix(pathname);
+  const groups: EditionGroup[] = ["en"];
+
+  if (locale !== SOURCE_LOCALE && isEditionGroup(locale)) {
+    groups.push(locale);
+  }
+
+  const head = stripped.split("/").filter(Boolean)[0];
+  if (CROSS_LOCALE_CATALOG_ROOTS.has(head ?? "")) {
+    for (const target of TARGET_LOCALES) {
+      if (localeIsPublished(target) && isEditionGroup(target) && !groups.includes(target)) {
+        groups.push(target);
+      }
+    }
+  }
+
+  return groups;
 }
 
 /** Deploy-time files the Worker reads itself (`ASSET_KEYS`) and must not serve. */
