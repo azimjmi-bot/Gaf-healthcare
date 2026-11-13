@@ -1,6 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { LOCALE_HEADER, PATH_HEADER, isTargetLocale } from "@/lib/i18n/languages";
-import { LEGACY_GONE_HTML, isLegacyGonePath } from "@/lib/legacy-urls";
+import { LEGACY_GONE_HTML, isLegacyGonePath, isLegacyWordpressQuery } from "@/lib/legacy-urls";
+
+const APEX_HOST = "gaf.healthcare";
+const WWW_HOST = `www.${APEX_HOST}`;
 
 const CMS_COOKIE = "gaf_cms";
 
@@ -96,11 +99,24 @@ function catalogCanonicalRedirect(request: NextRequest) {
   return NextResponse.redirect(url, 301);
 }
 
+function wwwToApexRedirect(request: NextRequest) {
+  const host = request.headers.get("host")?.split(":")[0]?.toLowerCase();
+  if (host !== WWW_HOST) return null;
+  const url = new URL(request.url);
+  url.hostname = APEX_HOST;
+  url.protocol = "https:";
+  return NextResponse.redirect(url, 301);
+}
+
 export async function proxy(request: NextRequest) {
+  const wwwRedirect = wwwToApexRedirect(request);
+  if (wwwRedirect) return wwwRedirect;
+
   const { pathname } = request.nextUrl;
   const parts = pathname.split("/").filter(Boolean);
   const head = parts[0];
 
+  if (isLegacyWordpressQuery(request.nextUrl.searchParams)) return legacyGone();
   if (isLegacyGonePath(pathname)) return legacyGone();
   const parenRedirect = catalogCanonicalRedirect(request);
   if (parenRedirect) return parenRedirect;

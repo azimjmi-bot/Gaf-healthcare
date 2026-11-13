@@ -533,8 +533,13 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
     }
   }
 
-  for (const post of publishedIndexablePosts(locale)) {
-    urls.push(sitemapEntry(`/blogs/${post.slug}`, locale, blogPostSitemapOpts(post)));
+  // English article URLs live only in sitemap-blogs.xml (see buildBlogSitemap).
+  // Arabic and other locale editions keep posts here because the index has no
+  // per-locale blog child sitemap for them.
+  if (locale !== "en") {
+    for (const post of publishedIndexablePosts(locale)) {
+      urls.push(sitemapEntry(`/blogs/${post.slug}`, locale, blogPostSitemapOpts(post)));
+    }
   }
 
   return dedupeSitemap(urls);

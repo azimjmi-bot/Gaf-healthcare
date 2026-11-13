@@ -60,7 +60,20 @@ export function isLegacyGonePath(pathname: string): boolean {
   if (/\.php$/i.test(pathname)) return true;
   // WordPress exposes an RSS feed under every post, page and archive.
   if (parts[parts.length - 1] === "feed") return true;
+  // Singular section leftovers with no 1:1 slug mapping (entity redirects cover
+  // `/doctor|:hospital|:blog/:slug` only).
+  if ((first === "doctor" || first === "hospital" || first === "blog") && parts.length > 2) {
+    return true;
+  }
   return GONE_FIRST_SEGMENTS.has(first);
+}
+
+/**
+ * WordPress content queries. Unknown IDs must not soft-404 as the homepage.
+ * Live routes use `page`, not `p` / `page_id`.
+ */
+export function isLegacyWordpressQuery(searchParams: URLSearchParams): boolean {
+  return searchParams.has("p") || searchParams.has("page_id");
 }
 
 export const LEGACY_GONE_HTML = [

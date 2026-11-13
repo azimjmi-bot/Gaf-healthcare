@@ -5,6 +5,10 @@
  * src/proxy.ts (see src/lib/legacy-urls.ts).
  *
  * Order matters: Next applies the first matching redirect.
+ *
+ * Singular /doctor|/hospital|/blog paths map entity→entity (same slug under the
+ * plural section). Unknown slugs 404 at the destination. Multi-segment leftovers
+ * under those prefixes are 410 in the proxy — never dump them on section hubs.
  */
 export const legacyRedirects = [
   // WordPress (core and Yoast) sitemap names still submitted or remembered by
@@ -16,15 +20,18 @@ export const legacyRedirects = [
     destination: "/sitemap.xml",
     permanent: true,
   },
-  // Old WordPress content sections
-  { source: "/doctor/dr-naresh-trehan", destination: "/doctors/dr-naresh-trehan", permanent: true },
-  { source: "/doctor/:path*", destination: "/doctors", permanent: true },
+  // Common hyphenated guess for the sitemap index (robots advertises underscore).
+  { source: "/sitemap-index.xml", destination: "/sitemap.xml", permanent: true },
+  // Old WordPress content sections — entity-level where the slug maps 1:1.
+  { source: "/doctor", destination: "/doctors", permanent: true },
+  { source: "/doctor/:slug", destination: "/doctors/:slug", permanent: true },
   { source: "/doctors2", destination: "/doctors", permanent: true },
-  { source: "/hospital/:path*", destination: "/hospitals", permanent: true },
+  { source: "/hospital", destination: "/hospitals", permanent: true },
+  { source: "/hospital/:slug", destination: "/hospitals/:slug", permanent: true },
   { source: "/hospital_country/india", destination: "/hospitals/India", permanent: true },
   { source: "/hospital_country/:path*", destination: "/hospitals", permanent: true },
   { source: "/specialities/:path+", destination: "/specialties", permanent: true },
   { source: "/treatments_detail", destination: "/treatments", permanent: true },
   { source: "/blog", destination: "/blogs", permanent: true },
-  { source: "/blog/:path*", destination: "/blogs", permanent: true },
+  { source: "/blog/:slug", destination: "/blogs/:slug", permanent: true },
 ];
