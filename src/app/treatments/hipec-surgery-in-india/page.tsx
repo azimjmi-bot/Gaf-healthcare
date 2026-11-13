@@ -22,6 +22,9 @@ const WHATSAPP_COORDINATOR = whatsappHref(
   "I would like to speak with GAF Healthcare about HIPEC surgery in India.",
 );
 
+// Public canonical for this slug. The curated CMS record
+// `hipec-surgery-in-india` in content/curated-treatments.json is retained for
+// catalog relationships; this route is the dedicated patient-facing page.
 const PAGE_URL = "/treatments/hipec-surgery-in-india";
 
 export const metadata: Metadata = {

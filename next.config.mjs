@@ -118,6 +118,16 @@ const nextConfig = {
         permanent: true,
       },
       {
+        source: "/blog/peritoneal-metastases-treatment",
+        destination: "/blogs/peritoneal-metastases-treatment",
+        permanent: true,
+      },
+      {
+        source: "/blog/peritoneal-carcinomatosis",
+        destination: "/blogs/peritoneal-carcinomatosis",
+        permanent: true,
+      },
+      {
         source: "/blog/breast-cancer-treatment-by-stage",
         destination: "/blogs/breast-cancer-treatment-by-stage",
         permanent: true,
