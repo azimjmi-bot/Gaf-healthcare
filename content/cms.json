@@ -3029,9 +3029,966 @@
       "name": "breast-cancer-follow-up-survivorship.webp",
       "alt": "Breast cancer survivor walking outdoors with soft circular icons suggesting exercise bone health and emotional wellbeing",
       "addedAt": "2026-11-13T09:57:29.762Z"
+    },
+    {
+      "id": "media_breast_cancer_in_men_overview_webp",
+      "url": "/uploads/articles/breast-cancer-in-men-overview.webp",
+      "name": "breast-cancer-in-men-overview.webp",
+      "alt": "Man discussing male breast cancer symptoms and treatment options with a clinician",
+      "addedAt": "2026-11-15T19:02:13.145Z"
+    },
+    {
+      "id": "media_breast_cancer_in_men_symptoms_webp",
+      "url": "/uploads/articles/breast-cancer-in-men-symptoms.webp",
+      "name": "breast-cancer-in-men-symptoms.webp",
+      "alt": "Abstract male chest illustration highlighting the nipple region where male breast cancer lumps commonly appear",
+      "addedAt": "2026-11-15T19:02:13.145Z"
+    },
+    {
+      "id": "media_breast_cancer_in_men_genetics_webp",
+      "url": "/uploads/articles/breast-cancer-in-men-genetics.webp",
+      "name": "breast-cancer-in-men-genetics.webp",
+      "alt": "Man in genetic counselling beside a DNA helix representing BRCA2 hereditary breast cancer risk",
+      "addedAt": "2026-11-15T19:02:13.145Z"
+    },
+    {
+      "id": "media_breast_cancer_in_men_treatment_webp",
+      "url": "/uploads/articles/breast-cancer-in-men-treatment.webp",
+      "name": "breast-cancer-in-men-treatment.webp",
+      "alt": "Man discussing male breast cancer surgery and hormone therapy options with an oncologist",
+      "addedAt": "2026-11-15T19:02:13.145Z"
     }
   ],
   "articles": [
+    {
+      "id": "art_breast_cancer_in_men_india",
+      "slug": "breast-cancer-in-men-india",
+      "title": "Breast Cancer in Men: Symptoms, Causes, BRCA2 Risk, Diagnosis and Treatment in India",
+      "excerpt": "Breast cancer is uncommon in men, but it can develop and should not be ignored. A painless lump near the nipple, nipple discharge, skin changes or an inverted nipple may require medical evaluation. This guide explains the symptoms, risk factors, BRCA2 genetic connection, diagnostic tests, treatment options and what men and their families should know about accessing breast cancer care in India.",
+      "date": "15 November 2026",
+      "publishedAt": "2026-11-15T19:00:00.000Z",
+      "updatedAt": "2026-11-15T19:02:13.145Z",
+      "author": "GAF Healthcare clinical desk",
+      "category": "Medical Oncology",
+      "tags": [
+        "breast cancer",
+        "male breast cancer",
+        "BRCA2",
+        "men",
+        "India"
+      ],
+      "image": "/uploads/articles/breast-cancer-in-men-overview.webp",
+      "imageAlt": "Man discussing male breast cancer symptoms and treatment options with a clinician",
+      "status": "published",
+      "featured": true,
+      "seoTitle": "Breast Cancer in Men: Symptoms, BRCA2 Risk, Diagnosis and Treatment in India",
+      "seoDescription": "Breast cancer can affect men too. Learn about warning signs, causes, BRCA1 and BRCA2 risk, diagnosis, biopsy, treatment options, survival and treatment costs in India.",
+      "canonical": "https://gaf.healthcare/blogs/breast-cancer-in-men-india",
+      "ogImage": "/uploads/articles/breast-cancer-in-men-overview.webp",
+      "allowIndex": true,
+      "keywords": [
+        "Breast cancer in men",
+        "Male breast cancer symptoms",
+        "Breast cancer in men treatment",
+        "Male breast cancer causes",
+        "BRCA2 mutation in men",
+        "Male breast cancer diagnosis",
+        "Breast cancer in men age",
+        "Male breast lump",
+        "Breast cancer surgery for men",
+        "Male breast cancer treatment cost in India",
+        "Gynecomastia vs breast cancer",
+        "Male breast cancer survival rate",
+        "Breast cancer genetic testing for men"
+      ],
+      "relatedLinks": [
+        {
+          "label": "Breast Cancer Treatment in India",
+          "href": "/treatments/breast-cancer-treatment-in-india"
+        },
+        {
+          "label": "Breast cancer surgery in India",
+          "href": "/blogs/breast-cancer-surgery-in-india"
+        },
+        {
+          "label": "Breast cancer symptoms",
+          "href": "/blogs/breast-cancer-symptoms"
+        },
+        {
+          "label": "Breast cancer diagnosis",
+          "href": "/blogs/breast-cancer-diagnosis"
+        },
+        {
+          "label": "Breast biopsy in India",
+          "href": "/blogs/breast-biopsy-breast-cancer-india"
+        },
+        {
+          "label": "Hormone therapy",
+          "href": "/blogs/hormone-therapy-for-breast-cancer-in-india"
+        },
+        {
+          "label": "Cost guide",
+          "href": "/blogs/breast-cancer-treatment-cost-in-india"
+        },
+        {
+          "label": "International patients",
+          "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        }
+      ],
+      "blocks": [
+        {
+          "id": "html_001",
+          "type": "html",
+          "html": "<aside class=\"article-quick-answer\"><p class=\"article-quick-answer__label\">Quick answer</p><div class=\"md-body\"><table><thead><tr><th>Question</th><th>Quick Answer</th></tr></thead><tbody><tr><td><strong>Can men get breast cancer?</strong></td><td>Yes — rare (&lt;1% of cases), but real and treatable</td></tr><tr><td><strong>Common first sign</strong></td><td>Painless lump near the nipple</td></tr><tr><td><strong>Key gene</strong></td><td>BRCA2 raises male breast cancer risk most clearly</td></tr><tr><td><strong>Gynecomastia vs cancer</strong></td><td>Different conditions — imaging/biopsy clarify suspicious lumps</td></tr><tr><td><strong>Usual surgery</strong></td><td>Mastectomy is common; breast conservation possible in selected men</td></tr><tr><td><strong>Hormone therapy</strong></td><td>Tamoxifen is often central for hormone receptor-positive disease</td></tr><tr><td><strong>Planning</strong></td><td><a href=\"/treatments/breast-cancer-treatment-in-india\">Treatment in India</a> · <a href=\"/blogs/breast-cancer-surgery-in-india\">surgery</a> · <a href=\"/blogs/breast-cancer-treatment-cost-in-india\">cost guide</a></td></tr></tbody></table></div><p class=\"article-quick-answer__body\"><strong>Breast cancer in men</strong> is uncommon, but a new nipple-area lump, discharge or skin change needs medical evaluation — not dismissal because the patient is male.</p></aside>"
+        },
+        {
+          "id": "p_002",
+          "type": "paragraph",
+          "text": "Breast cancer is uncommon in men, but it can develop and should not be ignored. A painless lump near the nipple, nipple discharge, skin changes or an inverted nipple may need medical evaluation. This guide covers symptoms, BRCA2 risk, diagnosis, treatment options and planning care in India. Related reading: [symptoms](/blogs/breast-cancer-symptoms), [diagnosis](/blogs/breast-cancer-diagnosis), [surgery](/blogs/breast-cancer-surgery-in-india) and [treatment in India](/treatments/breast-cancer-treatment-in-india)."
+        },
+        {
+          "id": "btn_003",
+          "type": "button",
+          "label": "Ask GAF about male breast cancer assessment",
+          "href": "/consult?treatment=Male%20Breast%20Cancer"
+        },
+        {
+          "id": "p_004",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 with symptoms, age and any family cancer history](https://wa.me/919044346292?text=Please%20advise%20on%20male%20breast%20cancer%20assessment%2C%20BRCA%20testing%20and%20treatment%20options%20in%20India.)"
+        },
+        {
+          "id": "img_005",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-in-men-overview.webp",
+          "alt": "Middle-aged man discussing male breast cancer symptoms with a clinician beside soft circular awareness concepts",
+          "caption": "Men can develop breast cancer — a new nipple-area lump deserves evaluation."
+        },
+        {
+          "id": "h_006",
+          "type": "heading",
+          "level": 2,
+          "text": "Can Men Get Breast Cancer?"
+        },
+        {
+          "id": "p_007",
+          "type": "paragraph",
+          "text": "Most people associate breast cancer with women. Men can develop it too. Men have a small amount of breast tissue beneath and around the nipples. Although this tissue does not develop like female breast tissue, it contains cells that can become cancerous."
+        },
+        {
+          "id": "p_008",
+          "type": "paragraph",
+          "text": "Male breast cancer is rare — fewer than 1% of all breast cancer cases — but delayed recognition is common because many men do not realise the disease can affect them."
+        },
+        {
+          "id": "ul_009",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "A painless lump near the nipple is a common warning sign.",
+            "Nipple discharge, inversion, dimpling, redness or an armpit lump may also appear.",
+            "Diagnosis is often later in life (commonly 60–70), though younger men can be affected.",
+            "Inherited changes, especially BRCA2, can raise risk."
+          ]
+        },
+        {
+          "id": "p_010",
+          "type": "paragraph",
+          "text": "Treatment options are established: surgery, chemotherapy, radiation, hormone therapy and targeted medicines depending on the case."
+        },
+        {
+          "id": "h_011",
+          "type": "heading",
+          "level": 2,
+          "text": "What Is Male Breast Cancer?"
+        },
+        {
+          "id": "p_012",
+          "type": "paragraph",
+          "text": "Male breast cancer develops in a man's breast tissue. The male breast still has milk ducts, fatty tissue, connective tissue and lymphatic structures. Cancer usually begins when cells in this tissue grow abnormally."
+        },
+        {
+          "id": "p_013",
+          "type": "paragraph",
+          "text": "Most male breast cancers start in the milk ducts — invasive ductal carcinoma is the most common type. Cancer may stay in ducts or invade surrounding tissue and later reach lymph nodes or distant organs."
+        },
+        {
+          "id": "h_014",
+          "type": "heading",
+          "level": 3,
+          "text": "Is breast cancer in men common?"
+        },
+        {
+          "id": "p_015",
+          "type": "paragraph",
+          "text": "No. The US National Cancer Institute reports that fewer than 1% of breast cancer cases occur in men. Average age at diagnosis is generally 60–70, though younger men can be affected. India-specific rates should be read from male-specific registry data, not overall breast cancer figures."
+        },
+        {
+          "id": "p_016",
+          "type": "paragraph",
+          "text": "Rarity does not make a suspicious lump less important. A new or persistent breast change should be assessed."
+        },
+        {
+          "id": "h_017",
+          "type": "heading",
+          "level": 2,
+          "text": "What Are the Symptoms of Breast Cancer in Men?"
+        },
+        {
+          "id": "img_018",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-in-men-symptoms.webp",
+          "alt": "Abstract male chest illustration highlighting the nipple region where male breast cancer lumps commonly appear",
+          "caption": "Suspicious changes often centre near the nipple."
+        },
+        {
+          "id": "p_019",
+          "type": "paragraph",
+          "text": "The most common symptom is a lump or thickening in or near the nipple. A suspicious lump may feel firm, relatively fixed and painless — but pain does not rule cancer in or out."
+        },
+        {
+          "id": "h_020",
+          "type": "heading",
+          "level": 3,
+          "text": "Common warning signs"
+        },
+        {
+          "id": "ul_021",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Lump near the nipple** — firm swelling beneath or close to the nipple; may be mistaken for minor swelling.",
+            "**Nipple changes** — new inward pulling, change in direction, thickening, crusting, scaling or persistent redness.",
+            "**Nipple discharge** — fluid from the nipple, especially if bloody or spontaneous.",
+            "**Skin changes** — dimpling, thickening, redness, scaling, ulceration or orange-peel appearance.",
+            "**Armpit swelling** — may reflect enlarged lymph nodes."
+          ]
+        },
+        {
+          "id": "html_022",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Symptom</th><th>What to look for</th></tr></thead><tbody><tr><td>Breast lump</td><td>Firm swelling near or beneath the nipple</td></tr><tr><td>Nipple inversion</td><td>Nipple newly pulled inward</td></tr><tr><td>Nipple discharge</td><td>Clear or blood-stained fluid</td></tr><tr><td>Skin dimpling</td><td>Indented or puckered skin</td></tr><tr><td>Redness or scaling</td><td>Persistent changes around the nipple</td></tr><tr><td>Armpit lump</td><td>Enlarged lymph node</td></tr><tr><td>Breast ulceration</td><td>A wound or breakdown of skin</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_023",
+          "type": "paragraph",
+          "text": "**Important:** These symptoms do not automatically mean cancer. Gynecomastia, cysts, infections and other benign problems can look similar. Medical assessment is needed. Compare with general [breast cancer symptoms](/blogs/breast-cancer-symptoms)."
+        },
+        {
+          "id": "btn_024",
+          "type": "button",
+          "label": "Request a male breast lump review",
+          "href": "/consult?treatment=Male%20Breast%20Cancer%20Diagnosis"
+        },
+        {
+          "id": "h_025",
+          "type": "heading",
+          "level": 2,
+          "text": "What Causes Breast Cancer in Men?"
+        },
+        {
+          "id": "p_026",
+          "type": "paragraph",
+          "text": "There is no single cause. Cancer develops when breast-tissue cells acquire changes that allow abnormal growth. Factors that can raise likelihood include:"
+        },
+        {
+          "id": "ul_027",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Increasing age** — more often diagnosed after 50, though age alone does not predict individual risk.",
+            "**Family history** — especially multiple relatives, young-onset disease, male breast cancer, ovarian/pancreatic patterns, or a known hereditary variant (both sides of the family matter).",
+            "**Inherited genes** — BRCA1/BRCA2 (BRCA2 especially), and sometimes PALB2, PTEN and others.",
+            "**High oestrogen exposure** — liver disease, some testicular conditions, Klinefelter syndrome, certain hormonal treatments.",
+            "**Previous chest radiation**.",
+            "**Obesity** — can influence hormone levels, particularly in older men.",
+            "**Chronic liver disease / cirrhosis** — may alter hormone metabolism."
+          ]
+        },
+        {
+          "id": "h_028",
+          "type": "heading",
+          "level": 2,
+          "text": "Gynecomastia vs Breast Cancer"
+        },
+        {
+          "id": "p_029",
+          "type": "paragraph",
+          "text": "Gynecomastia is non-cancerous enlargement of male breast glandular tissue. It can occur in adolescence, with ageing, hormonal change, medicines or medical conditions. Breast cancer is malignant cell growth."
+        },
+        {
+          "id": "html_030",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Feature</th><th>Gynecomastia</th><th>Male breast cancer</th></tr></thead><tbody><tr><td>Nature</td><td>Benign breast tissue enlargement</td><td>Malignant growth</td></tr><tr><td>Location</td><td>Often beneath the nipple</td><td>Often near or beneath the nipple</td></tr><tr><td>Feel</td><td>Usually rubbery or firm</td><td>May be hard and irregular</td></tr><tr><td>Pain</td><td>May be tender, especially early</td><td>Often painless, but pain can occur</td></tr><tr><td>Both breasts</td><td>Can affect one or both breasts</td><td>Often affects one breast</td></tr><tr><td>Nipple changes</td><td>Less typical</td><td>May include inversion or discharge</td></tr><tr><td>Skin changes</td><td>Usually absent</td><td>May include dimpling or ulceration</td></tr><tr><td>Diagnosis</td><td>Clinical examination and imaging when needed</td><td>Imaging and biopsy when suspicious</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_031",
+          "type": "paragraph",
+          "text": "These are general patterns, not diagnostic rules. Cancer can be tender; gynecomastia can be one-sided. Absence of pain does not establish cancer. Gynecomastia itself is not considered a direct cause of breast cancer, but related hormonal conditions may influence risk. Do not assume a new lump is \"just gynecomastia.\""
+        },
+        {
+          "id": "h_032",
+          "type": "heading",
+          "level": 2,
+          "text": "BRCA2 and Male Breast Cancer"
+        },
+        {
+          "id": "img_033",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-in-men-genetics.webp",
+          "alt": "Man in genetic counselling beside a DNA helix representing BRCA2 hereditary breast cancer risk",
+          "caption": "BRCA2 is particularly important in male breast cancer risk."
+        },
+        {
+          "id": "p_034",
+          "type": "paragraph",
+          "text": "BRCA1 and BRCA2 help repair damaged DNA. Inherited harmful variants raise risk of certain cancers. **BRCA2 is especially important in male breast cancer.**"
+        },
+        {
+          "id": "p_035",
+          "type": "paragraph",
+          "text": "NCI-cited estimates of cumulative male breast cancer risk by age 70 are approximately **1.2%** for BRCA1 pathogenic variants and **6.8%** for BRCA2 pathogenic variants — research-population estimates, not predictions for every carrier."
+        },
+        {
+          "id": "p_036",
+          "type": "paragraph",
+          "text": "Inherited BRCA2 variants can also increase risk of female breast, ovarian, prostate and pancreatic cancers. Genetic counselling helps explain personal risks, follow-up, testing of relatives and targeted familial-variant testing. A positive result does not make cancer inevitable."
+        },
+        {
+          "id": "btn_037",
+          "type": "button",
+          "label": "Ask about BRCA counselling coordination in India",
+          "href": "/consult?treatment=Breast%20Cancer%20Genetic%20Testing"
+        },
+        {
+          "id": "p_038",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 about genetic counselling and BRCA panel options](https://wa.me/919044346292?text=Please%20advise%20on%20BRCA1%20BRCA2%20genetic%20counselling%20for%20male%20breast%20cancer%20risk%20in%20India.)"
+        },
+        {
+          "id": "h_039",
+          "type": "heading",
+          "level": 2,
+          "text": "Who Is at Higher Risk?"
+        },
+        {
+          "id": "html_040",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Risk factor</th><th>Why it matters</th></tr></thead><tbody><tr><td>BRCA2 pathogenic variant</td><td>Increases male breast cancer risk</td></tr><tr><td>BRCA1 pathogenic variant</td><td>Also increases risk, though generally less than BRCA2</td></tr><tr><td>Strong family history</td><td>May indicate inherited susceptibility</td></tr><tr><td>Klinefelter syndrome</td><td>Associated with altered sex hormone levels</td></tr><tr><td>Cirrhosis</td><td>Can change hormone metabolism</td></tr><tr><td>Previous chest radiation</td><td>May increase later breast cancer risk</td></tr><tr><td>Testicular conditions</td><td>Some can affect hormone balance</td></tr><tr><td>Obesity</td><td>Can influence oestrogen levels</td></tr><tr><td>Increasing age</td><td>Risk rises with age</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_041",
+          "type": "paragraph",
+          "text": "Having risk factors does not mean cancer will develop. It does mean unusual breast changes deserve attention. Related context: [prevention and hereditary risk](/blogs/breast-cancer-prevention)."
+        },
+        {
+          "id": "h_042",
+          "type": "heading",
+          "level": 2,
+          "text": "Is There Screening for Men?"
+        },
+        {
+          "id": "p_043",
+          "type": "paragraph",
+          "text": "There is no routine population mammography programme for average-risk men. Screening mammograms are not generally recommended for men without symptoms."
+        },
+        {
+          "id": "p_044",
+          "type": "paragraph",
+          "text": "For men with a known pathogenic variant such as BRCA2, specialists may recommend clinical breast examinations, breast-change education, individualised surveillance, genetic counselling and assessment of other inherited cancer risks."
+        },
+        {
+          "id": "p_045",
+          "type": "paragraph",
+          "text": "Once a man notices a lump or nipple change, evaluation is **diagnostic**, not routine screening. Some high-risk men may be considered for mammography-based surveillance after specialist assessment — this is not a universal rule for every BRCA2 carrier."
+        },
+        {
+          "id": "h_046",
+          "type": "heading",
+          "level": 2,
+          "text": "How Is Breast Cancer Diagnosed in Men?"
+        },
+        {
+          "id": "ol_047",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "**History and examination** — timing of lump, growth, pain, discharge, skin changes, family history, prior chest radiation, medicines; examination of breast, nipple, chest wall and nodes.",
+            "**Imaging** — mammography and/or ultrasound. For many men ≥25 with an unexplained lump, diagnostic mammography is a common first imaging test; ultrasound often follows. In younger men, ultrasound is often first.",
+            "**Biopsy** — core needle biopsy when imaging is suspicious ([biopsy guide](/blogs/breast-biopsy-breast-cancer-india)).",
+            "**Pathology and biomarkers** — type, grade, ER, PR, HER2; male breast cancer is frequently hormone receptor-positive.",
+            "**Staging** — CT, PET-CT or bone scan when clinically indicated; not every patient needs every scan."
+          ]
+        },
+        {
+          "id": "p_048",
+          "type": "paragraph",
+          "text": "More on [diagnosis](/blogs/breast-cancer-diagnosis) and [biomarker testing](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2)."
+        },
+        {
+          "id": "h_049",
+          "type": "heading",
+          "level": 2,
+          "text": "Types of Male Breast Cancer"
+        },
+        {
+          "id": "ul_050",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Invasive ductal carcinoma** — most common; begins in ducts, often near the nipple.",
+            "**DCIS** — abnormal cells inside ducts without invasion; non-invasive.",
+            "**Invasive lobular carcinoma** — uncommon in men (few developed lobules).",
+            "**Paget disease of the nipple** — rare; scaling, redness, itching, crusting, discharge or nipple change that can mimic a skin condition."
+          ]
+        },
+        {
+          "id": "h_051",
+          "type": "heading",
+          "level": 2,
+          "text": "Stages of Male Breast Cancer"
+        },
+        {
+          "id": "p_052",
+          "type": "paragraph",
+          "text": "Male breast cancer uses the same general TNM staging approach as in women (tumour extent, nodes, distant spread)."
+        },
+        {
+          "id": "html_053",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Stage</th><th>General description</th></tr></thead><tbody><tr><td>Stage 0</td><td>Non-invasive disease such as DCIS</td></tr><tr><td>Stage I</td><td>Small invasive cancer with limited or no lymph node involvement</td></tr><tr><td>Stage II</td><td>Larger tumour and/or limited regional lymph node involvement</td></tr><tr><td>Stage III</td><td>More extensive local or regional disease</td></tr><tr><td>Stage IV</td><td>Cancer has spread to distant organs</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_054",
+          "type": "paragraph",
+          "text": "Exact stage depends on full clinical and pathological assessment. Biomarkers and grade also inform prognosis. Stage IV does not mean treatment is unavailable. See [stages](/blogs/breast-cancer-stages)."
+        },
+        {
+          "id": "h_055",
+          "type": "heading",
+          "level": 2,
+          "text": "Treatment Options for Breast Cancer in Men"
+        },
+        {
+          "id": "img_056",
+          "type": "image",
+          "src": "/uploads/articles/breast-cancer-in-men-treatment.webp",
+          "alt": "Man discussing male breast cancer surgery and hormone therapy options with an oncologist",
+          "caption": "Treatment follows breast cancer principles adapted to male anatomy and tumour biology."
+        },
+        {
+          "id": "p_057",
+          "type": "paragraph",
+          "text": "Treatment follows the same broad principles as in women, adapted to male anatomy and limited breast tissue. Options include surgery, chemotherapy, radiation, hormone therapy, HER2-targeted therapy and, in selected advanced settings, other targeted medicines or immunotherapy."
+        },
+        {
+          "id": "btn_058",
+          "type": "button",
+          "label": "Talk to GAF about male breast cancer treatment in India",
+          "href": "/consult?treatment=Male%20Breast%20Cancer%20Treatment"
+        },
+        {
+          "id": "h_059",
+          "type": "heading",
+          "level": 3,
+          "text": "Surgery"
+        },
+        {
+          "id": "p_060",
+          "type": "paragraph",
+          "text": "Surgery is often central for early-stage disease. Because men have less breast tissue, **mastectomy** is performed more often than breast conservation."
+        },
+        {
+          "id": "ul_061",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "**Mastectomy** — removes breast tissue containing the cancer; may include nipple/areola; nodes assessed separately.",
+            "**Breast-conserving surgery** — selected patients; radiation generally required afterwards.",
+            "**Sentinel lymph node biopsy** — assesses first draining nodes; can avoid more extensive surgery when appropriate.",
+            "**Axillary dissection** — selected cases with greater nodal involvement."
+          ]
+        },
+        {
+          "id": "p_062",
+          "type": "paragraph",
+          "text": "Details: [breast cancer surgery in India](/blogs/breast-cancer-surgery-in-india)."
+        },
+        {
+          "id": "h_063",
+          "type": "heading",
+          "level": 3,
+          "text": "Chemotherapy and radiation"
+        },
+        {
+          "id": "p_064",
+          "type": "paragraph",
+          "text": "Chemotherapy may be used before or after surgery, for locally advanced disease or metastatic disease, based on size, grade, nodes, receptors and other risk factors. See [chemotherapy](/blogs/breast-cancer-chemotherapy-in-india)."
+        },
+        {
+          "id": "p_065",
+          "type": "paragraph",
+          "text": "Radiation may follow breast-conserving surgery or, in selected cases, mastectomy; it can also relieve symptoms from metastatic disease. See [radiation therapy](/blogs/breast-cancer-radiation-therapy-in-india)."
+        },
+        {
+          "id": "h_066",
+          "type": "heading",
+          "level": 3,
+          "text": "Hormone therapy and tamoxifen"
+        },
+        {
+          "id": "p_067",
+          "type": "paragraph",
+          "text": "Most male breast cancers are hormone receptor-positive, so endocrine therapy is often important. **Tamoxifen** is commonly recommended for eligible men with hormone receptor-positive disease. An initial duration of about five years is generally recommended; some higher-risk men who tolerate therapy may be considered for longer."
+        },
+        {
+          "id": "p_068",
+          "type": "paragraph",
+          "text": "Possible side effects include hot flashes, reduced sexual interest, erectile difficulties, mood changes, fatigue and blood-clot risk. If tamoxifen cannot be used, an aromatase inhibitor **with** gonadal hormone suppression may be considered; an aromatase inhibitor alone is generally not recommended as a substitute in men."
+        },
+        {
+          "id": "p_069",
+          "type": "paragraph",
+          "text": "ASCO guidance advises against testosterone supplementation in men with breast cancer without specialist advice. See [hormone therapy](/blogs/hormone-therapy-for-breast-cancer-in-india)."
+        },
+        {
+          "id": "h_070",
+          "type": "heading",
+          "level": 3,
+          "text": "HER2-targeted and other systemic options"
+        },
+        {
+          "id": "p_071",
+          "type": "paragraph",
+          "text": "HER2-positive disease may be treated with trastuzumab, pertuzumab or other HER2-directed medicines as indicated. For advanced disease, selected patients may be considered for CDK4/6 inhibitors, PARP inhibitors (when BRCA-related criteria are met), PI3K/mTOR-directed options or immunotherapy — only when tumour biology and evidence support it."
+        },
+        {
+          "id": "h_072",
+          "type": "heading",
+          "level": 2,
+          "text": "If Male Breast Cancer Spreads"
+        },
+        {
+          "id": "p_073",
+          "type": "paragraph",
+          "text": "Metastatic (Stage IV) disease may involve bones, liver, lungs or brain. Symptoms depend on site:"
+        },
+        {
+          "id": "html_074",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Site</th><th>Possible symptoms</th></tr></thead><tbody><tr><td>Bones</td><td>Persistent pain or fractures</td></tr><tr><td>Liver</td><td>Abdominal discomfort, jaundice or swelling</td></tr><tr><td>Lungs</td><td>Breathlessness or persistent cough</td></tr><tr><td>Brain</td><td>Persistent headaches, weakness, seizures or neurological changes</td></tr></tbody></table></div>"
+        },
+        {
+          "id": "p_075",
+          "type": "paragraph",
+          "text": "Treatment aims to control growth, relieve symptoms and support quality of life using endocrine therapy, targeted medicines, chemotherapy, radiation and supportive care as appropriate."
+        },
+        {
+          "id": "h_076",
+          "type": "heading",
+          "level": 2,
+          "text": "Survival Statistics — Read Carefully"
+        },
+        {
+          "id": "html_077",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Extent of disease</th><th>Five-year relative survival in US data</th></tr></thead><tbody><tr><td>Localised</td><td>95%</td></tr><tr><td>Regional</td><td>84%</td></tr><tr><td>Distant/metastatic</td><td>20%</td></tr></tbody></table></div><p class=\"article-quick-answer__body\">These figures are US National Cancer Institute population statistics, not India-specific survival estimates and not an individual prognosis.</p>"
+        },
+        {
+          "id": "p_078",
+          "type": "paragraph",
+          "text": "Early evaluation of a suspicious lump matters more than memorising population averages."
+        },
+        {
+          "id": "h_079",
+          "type": "heading",
+          "level": 2,
+          "text": "Cost of Male Breast Cancer Treatment in India"
+        },
+        {
+          "id": "p_080",
+          "type": "paragraph",
+          "text": "Cost varies with stage, surgery type, medicines, hospital, city and duration. There is no single package price."
+        },
+        {
+          "id": "html_081",
+          "type": "html",
+          "html": "<div class=\"md-body\"><table><thead><tr><th>Named pathway</th><th>GAF planning range in India</th><th>How it relates to male breast cancer care</th></tr></thead><tbody><tr><td><a href=\"/costs/India/Surgical-Oncology/Mastectomy\">Mastectomy</a></td><td>$4,500–$10,000</td><td>Common surgical approach because men have less breast tissue</td></tr><tr><td><a href=\"/costs/India/Surgical-Oncology/Lumpectomy\">Lumpectomy</a></td><td>$3,000–$7,500</td><td>Breast-conserving surgery in selected men, usually with radiation</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Chemotherapy\">Chemotherapy</a></td><td>$1,500–$8,000+</td><td>When systemic cytotoxic therapy is indicated</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Hormone-Therapy\">Hormone therapy</a></td><td>$1,000–$4,500</td><td>Often tamoxifen for hormone receptor-positive disease</td></tr><tr><td><a href=\"/costs/India/Medical-Oncology/Precision-Oncology\">Precision oncology</a></td><td>$2,000–$7,000</td><td>Selected genetic / biomarker pathways including BRCA-related testing</td></tr></tbody></table></div><p class=\"article-quick-answer__body\">GAF figures are partner planning ranges for named pathways — not a fixed male breast cancer package. Ask for a written estimate after diagnosis review. See the broader <a href=\"/blogs/breast-cancer-treatment-cost-in-india\">breast cancer cost guide</a>.</p>"
+        },
+        {
+          "id": "p_082",
+          "type": "paragraph",
+          "text": "Ask for a written estimate separating diagnostics, surgery/stay, pathology, chemotherapy, radiation, targeted medicines, follow-up and possible extras. Early hormone receptor-positive disease and metastatic HER2-positive disease can differ dramatically in cost."
+        },
+        {
+          "id": "btn_083",
+          "type": "button",
+          "label": "Request a written male breast cancer estimate",
+          "href": "/consult?treatment=Male%20Breast%20Cancer%20Treatment%20Cost"
+        },
+        {
+          "id": "p_084",
+          "type": "paragraph",
+          "text": "[WhatsApp +91 90443 46292 for a case-specific estimate](https://wa.me/919044346292?text=Please%20share%20a%20case-specific%20estimate%20for%20male%20breast%20cancer%20diagnosis%20and%20treatment%20pathways%20in%20India.)"
+        },
+        {
+          "id": "h_085",
+          "type": "heading",
+          "level": 2,
+          "text": "Treatment in India for International Patients"
+        },
+        {
+          "id": "p_086",
+          "type": "paragraph",
+          "text": "India offers breast surgery, medical oncology, radiation oncology, imaging and pathology in major centres. Patients from East Africa, the Middle East and elsewhere may travel for confirmation, surgery, systemic therapy or a second opinion. Ideally arrange record review before travel."
+        },
+        {
+          "id": "ul_087",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "Clinical examination notes; mammography/ultrasound reports and imaging files.",
+            "Core biopsy report; slides/blocks if available; ER/PR/HER2 results.",
+            "Genetic reports if done; prior treatment records; medicine list; relevant history."
+          ]
+        },
+        {
+          "id": "ol_088",
+          "type": "list",
+          "style": "ol",
+          "items": [
+            "Consultation with breast/surgical oncology.",
+            "Review of symptoms, examination and family history.",
+            "Imaging and biopsy review; pathology confirmation.",
+            "Genetic counselling/testing when appropriate; staging if indicated.",
+            "Multidisciplinary plan; treatment; follow-up."
+          ]
+        },
+        {
+          "id": "p_089",
+          "type": "paragraph",
+          "text": "Specialists: [medical oncology](/doctors/India/Medical-Oncology), [surgical oncology](/doctors/India/Surgical-Oncology), [radiation oncology](/doctors/India/Radiation-Oncology), [Delhi NCR](/doctors/India/Delhi-NCR/Medical-Oncology), [Mumbai](/doctors/India/Mumbai/Medical-Oncology). International planning: [international patients](/blogs/breast-cancer-treatment-india-international-patients)."
+        },
+        {
+          "id": "p_090",
+          "type": "paragraph",
+          "text": "GAF Healthcare can help coordinate specialist consultations and treatment-related arrangements in India. Clinical decisions remain with the treating team."
+        },
+        {
+          "id": "btn_091",
+          "type": "button",
+          "label": "Coordinate male breast cancer care in India",
+          "href": "/consult?treatment=Male%20Breast%20Cancer%20International%20Patients"
+        },
+        {
+          "id": "h_092",
+          "type": "heading",
+          "level": 2,
+          "text": "Follow-Up After Treatment"
+        },
+        {
+          "id": "p_093",
+          "type": "paragraph",
+          "text": "Follow-up monitors recovery, recurrence risk and treatment side effects: clinical exams of the treated side and opposite breast, medicine review, imaging when indicated and investigation of new symptoms."
+        },
+        {
+          "id": "p_094",
+          "type": "paragraph",
+          "text": "ASCO recommends offering annual mammogram of the affected side after breast-conserving surgery when technically feasible, and considering annual mammogram of the opposite breast in men with a predisposing genetic mutation. Routine breast MRI is not generally recommended for all men after treatment."
+        },
+        {
+          "id": "p_095",
+          "type": "paragraph",
+          "text": "Report new lumps near the surgical area or opposite breast, armpit swelling, persistent bone pain, unexplained breathlessness, headaches or abdominal pain."
+        },
+        {
+          "id": "h_096",
+          "type": "heading",
+          "level": 2,
+          "text": "Emotional and Social Impact"
+        },
+        {
+          "id": "p_097",
+          "type": "paragraph",
+          "text": "Some men feel embarrassed discussing breast symptoms or delay care because they believe breast cancer is only a women's disease. Concerns may include body image after mastectomy, sexual health, fertility, hormone-therapy side effects, work and how to tell family. Support from family, clinicians and counselling can help. A diagnosis is a medical condition — not a reason for shame."
+        },
+        {
+          "id": "h_098",
+          "type": "heading",
+          "level": 2,
+          "text": "Frequently Asked Questions"
+        },
+        {
+          "id": "h_099",
+          "type": "heading",
+          "level": 3,
+          "text": "Can men really get breast cancer?"
+        },
+        {
+          "id": "p_100",
+          "type": "paragraph",
+          "text": "Yes. Men have breast tissue and can develop breast cancer, although it is uncommon. Fewer than 1% of breast cancer cases occur in men."
+        },
+        {
+          "id": "h_101",
+          "type": "heading",
+          "level": 3,
+          "text": "What is the first sign of breast cancer in men?"
+        },
+        {
+          "id": "p_102",
+          "type": "paragraph",
+          "text": "A painless lump or thickening near the nipple is one of the most common first signs. Nipple discharge, inversion and skin changes can also occur."
+        },
+        {
+          "id": "h_103",
+          "type": "heading",
+          "level": 3,
+          "text": "At what age does male breast cancer usually develop?"
+        },
+        {
+          "id": "p_104",
+          "type": "paragraph",
+          "text": "It is more commonly diagnosed in older men, often between 60 and 70 years. However, younger men can also develop it."
+        },
+        {
+          "id": "h_105",
+          "type": "heading",
+          "level": 3,
+          "text": "Is a male breast lump always cancer?"
+        },
+        {
+          "id": "p_106",
+          "type": "paragraph",
+          "text": "No. Gynecomastia and other benign conditions are much more common causes of male breast swelling. A new or persistent lump should still be examined."
+        },
+        {
+          "id": "h_107",
+          "type": "heading",
+          "level": 3,
+          "text": "Is gynecomastia a risk factor for male breast cancer?"
+        },
+        {
+          "id": "p_108",
+          "type": "paragraph",
+          "text": "Gynecomastia itself is not considered a direct cause of breast cancer. However, some conditions associated with hormonal changes may also influence cancer risk."
+        },
+        {
+          "id": "h_109",
+          "type": "heading",
+          "level": 3,
+          "text": "Which gene is most strongly associated with male breast cancer?"
+        },
+        {
+          "id": "p_110",
+          "type": "paragraph",
+          "text": "BRCA2 is particularly important. BRCA1 and other inherited cancer susceptibility genes can also increase risk."
+        },
+        {
+          "id": "h_111",
+          "type": "heading",
+          "level": 3,
+          "text": "Can a man inherit a BRCA2 mutation from his mother?"
+        },
+        {
+          "id": "p_112",
+          "type": "paragraph",
+          "text": "Yes. A man can inherit a BRCA2 variant from either parent. It can also be passed from a father to his children."
+        },
+        {
+          "id": "h_113",
+          "type": "heading",
+          "level": 3,
+          "text": "Is there a screening mammogram for men?"
+        },
+        {
+          "id": "p_114",
+          "type": "paragraph",
+          "text": "Routine screening mammography is not generally recommended for average-risk men. Men with symptoms need diagnostic evaluation, and selected high-risk men may need an individualised surveillance plan."
+        },
+        {
+          "id": "h_115",
+          "type": "heading",
+          "level": 3,
+          "text": "What tests diagnose male breast cancer?"
+        },
+        {
+          "id": "p_116",
+          "type": "paragraph",
+          "text": "Diagnosis may involve clinical examination, mammography, ultrasound and core needle biopsy. If cancer is confirmed, ER, PR and HER2 testing help guide treatment. See [diagnosis tests](/blogs/breast-cancer-diagnosis-tests-biopsy-er-pr-her2) and [biopsy](/blogs/breast-biopsy-breast-cancer-india)."
+        },
+        {
+          "id": "h_117",
+          "type": "heading",
+          "level": 3,
+          "text": "Is male breast cancer treatable?"
+        },
+        {
+          "id": "p_118",
+          "type": "paragraph",
+          "text": "Yes. Treatment may include surgery, radiation therapy, chemotherapy, hormone therapy and targeted medicines. The appropriate treatment depends on the cancer's stage and biological characteristics."
+        },
+        {
+          "id": "h_119",
+          "type": "heading",
+          "level": 3,
+          "text": "Is mastectomy always necessary in men?"
+        },
+        {
+          "id": "p_120",
+          "type": "paragraph",
+          "text": "No. Mastectomy is common because men have less breast tissue, but breast-conserving surgery may be possible in selected patients. See [surgery in India](/blogs/breast-cancer-surgery-in-india)."
+        },
+        {
+          "id": "h_121",
+          "type": "heading",
+          "level": 3,
+          "text": "Does male breast cancer respond to tamoxifen?"
+        },
+        {
+          "id": "p_122",
+          "type": "paragraph",
+          "text": "Many male breast cancers are hormone receptor-positive and may respond to tamoxifen. It is a standard endocrine treatment option for suitable men. See [hormone therapy](/blogs/hormone-therapy-for-breast-cancer-in-india)."
+        },
+        {
+          "id": "h_123",
+          "type": "heading",
+          "level": 3,
+          "text": "How long do men take tamoxifen after breast cancer surgery?"
+        },
+        {
+          "id": "p_124",
+          "type": "paragraph",
+          "text": "An initial five-year course is generally recommended for eligible men. Some patients at higher risk of recurrence may be considered for a longer duration."
+        },
+        {
+          "id": "h_125",
+          "type": "heading",
+          "level": 3,
+          "text": "Can men develop triple-negative breast cancer?"
+        },
+        {
+          "id": "p_126",
+          "type": "paragraph",
+          "text": "Yes, although it is uncommon. Male breast cancers are much more frequently hormone receptor-positive than triple-negative."
+        },
+        {
+          "id": "h_127",
+          "type": "heading",
+          "level": 3,
+          "text": "Can breast cancer in men spread to other organs?"
+        },
+        {
+          "id": "p_128",
+          "type": "paragraph",
+          "text": "Yes. Like breast cancer in women, it can spread to lymph nodes, bones, liver, lungs and other organs."
+        },
+        {
+          "id": "h_129",
+          "type": "heading",
+          "level": 3,
+          "text": "Is male breast cancer treatment available in India?"
+        },
+        {
+          "id": "p_130",
+          "type": "paragraph",
+          "text": "Yes. Diagnostic evaluation, surgery, chemotherapy, radiation therapy, hormone therapy and targeted treatment are available through specialist cancer services in India. Start with [breast cancer treatment in India](/treatments/breast-cancer-treatment-in-india)."
+        },
+        {
+          "id": "h_131",
+          "type": "heading",
+          "level": 3,
+          "text": "Should a man with a family history of breast cancer undergo genetic testing?"
+        },
+        {
+          "id": "p_132",
+          "type": "paragraph",
+          "text": "He may benefit from genetic counselling, particularly if there is a known BRCA variant or a strong family history of breast, ovarian, pancreatic or prostate cancer."
+        },
+        {
+          "id": "h_133",
+          "type": "heading",
+          "level": 3,
+          "text": "Can male breast cancer return after treatment?"
+        },
+        {
+          "id": "p_134",
+          "type": "paragraph",
+          "text": "Yes. Recurrence can occur locally, regionally or at distant sites. Regular follow-up and prompt evaluation of new symptoms are important."
+        },
+        {
+          "id": "h_135",
+          "type": "heading",
+          "level": 2,
+          "text": "Conclusion"
+        },
+        {
+          "id": "p_136",
+          "type": "paragraph",
+          "text": "Breast cancer in men is uncommon, but real. A new nipple-area lump, discharge, dimpling or persistent nipple change should never be dismissed because the patient is male. BRCA2 and other inherited changes can raise risk in some families."
+        },
+        {
+          "id": "p_137",
+          "type": "paragraph",
+          "text": "Diagnosis usually needs examination, imaging and biopsy. Treatment is planned by stage, pathology and biomarkers — often including surgery and, for hormone receptor-positive disease, tamoxifen."
+        },
+        {
+          "id": "p_138",
+          "type": "paragraph",
+          "text": "**The most important message: men should not ignore unusual breast changes or delay assessment because they think breast cancer only affects women.** Early evaluation allows timely treatment."
+        },
+        {
+          "id": "h_139",
+          "type": "heading",
+          "level": 2,
+          "text": "Medical Sources and References"
+        },
+        {
+          "id": "ul_140",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[NCI – Male Breast Cancer](https://www.cancer.gov/types/breast/male-breast-cancer)",
+            "[NCI – Male Breast Cancer Treatment (PDQ)](https://www.cancer.gov/types/breast/hp/male-breast-treatment-pdq)",
+            "[ASCO – Management of Male Breast Cancer Guideline](https://ascopubs.org/doi/full/10.1200/JCO.19.03120)",
+            "[ASCO – Male Breast Cancer Guideline Summary](https://ascopubs.org/doi/full/10.1200/JOP.19.00792)",
+            "[CDC – Breast Cancer in Men](https://www.cdc.gov/breast-cancer/about/men.html)",
+            "[NCI – BRCA Gene Changes](https://www.cancer.gov/about-cancer/causes-prevention/genetics/brca-fact-sheet)",
+            "[ACS – Breast Cancer in Men](https://www.cancer.org/cancer/types/breast-cancer-in-men.html)",
+            "[ACR Appropriateness Criteria – Symptomatic Male Breast](https://acsearch.acr.org/docs/3091547/Narrative/)",
+            "[NCI – Breast Cancer Treatment](https://www.cancer.gov/types/breast/treatment)",
+            "[NCI – Breast Cancer Stages](https://www.cancer.gov/types/breast/stages)"
+          ]
+        },
+        {
+          "id": "p_141",
+          "type": "paragraph",
+          "text": "*Medical disclaimer: This article is for general educational purposes. It does not replace clinical examination, imaging, pathology review or personalised advice from a qualified breast surgeon or oncologist. Treatment decisions should be made by the treating medical team.*"
+        },
+        {
+          "id": "h_142",
+          "type": "heading",
+          "level": 2,
+          "text": "Related Reading"
+        },
+        {
+          "id": "ul_143",
+          "type": "list",
+          "style": "ul",
+          "items": [
+            "[Breast Cancer Treatment in India](/treatments/breast-cancer-treatment-in-india)",
+            "[Breast cancer surgery in India](/blogs/breast-cancer-surgery-in-india)",
+            "[Breast cancer symptoms](/blogs/breast-cancer-symptoms)",
+            "[Breast cancer diagnosis](/blogs/breast-cancer-diagnosis)",
+            "[Breast biopsy in India](/blogs/breast-biopsy-breast-cancer-india)",
+            "[Hormone therapy for breast cancer](/blogs/hormone-therapy-for-breast-cancer-in-india)",
+            "[Breast cancer treatment cost in India](/blogs/breast-cancer-treatment-cost-in-india)",
+            "[International patients](/blogs/breast-cancer-treatment-india-international-patients)",
+            "[Breast cancer prevention / hereditary risk](/blogs/breast-cancer-prevention)"
+          ]
+        }
+      ]
+    },
     {
       "id": "art_breast_cancer_follow_up_after_treatment",
       "slug": "breast-cancer-follow-up-after-treatment",
@@ -6242,6 +7199,10 @@
         {
           "label": "International patients",
           "href": "/blogs/breast-cancer-treatment-india-international-patients"
+        },
+        {
+          "label": "Breast cancer in men",
+          "href": "/blogs/breast-cancer-in-men-india"
         }
       ],
       "blocks": [
@@ -7042,6 +8003,10 @@
         {
           "label": "Breast cancer prevention",
           "href": "/blogs/breast-cancer-prevention"
+        },
+        {
+          "label": "Breast cancer in men",
+          "href": "/blogs/breast-cancer-in-men-india"
         }
       ],
       "blocks": [
@@ -12500,6 +13465,10 @@
         {
           "label": "Breast cancer follow-up after treatment",
           "href": "/blogs/breast-cancer-follow-up-after-treatment"
+        },
+        {
+          "label": "Breast cancer in men",
+          "href": "/blogs/breast-cancer-in-men-india"
         }
       ],
       "blocks": [
@@ -13335,6 +14304,10 @@
         {
           "label": "Breast cancer chemotherapy in India",
           "href": "/blogs/breast-cancer-chemotherapy-in-india"
+        },
+        {
+          "label": "Breast cancer in men",
+          "href": "/blogs/breast-cancer-in-men-india"
         }
       ],
       "blocks": [
@@ -14240,6 +15213,10 @@
         {
           "label": "Breast cancer follow-up after treatment",
           "href": "/blogs/breast-cancer-follow-up-after-treatment"
+        },
+        {
+          "label": "Breast cancer in men",
+          "href": "/blogs/breast-cancer-in-men-india"
         }
       ],
       "blocks": [
@@ -16238,6 +17215,10 @@
         {
           "label": "Breast cancer prevention",
           "href": "/blogs/breast-cancer-prevention"
+        },
+        {
+          "label": "Breast cancer in men",
+          "href": "/blogs/breast-cancer-in-men-india"
         }
       ],
       "blocks": [
@@ -19136,6 +20117,10 @@
         {
           "label": "Breast cancer prevention",
           "href": "/blogs/breast-cancer-prevention"
+        },
+        {
+          "label": "Breast cancer in men",
+          "href": "/blogs/breast-cancer-in-men-india"
         }
       ],
       "blocks": [
@@ -103971,6 +104956,10 @@
         {
           "label": "Breast cancer follow-up after treatment",
           "href": "/blogs/breast-cancer-follow-up-after-treatment"
+        },
+        {
+          "label": "Breast cancer in men",
+          "href": "/blogs/breast-cancer-in-men-india"
         }
       ],
       "blocks": [
@@ -109544,6 +110533,10 @@
         {
           "label": "Breast cancer follow-up after treatment",
           "href": "/blogs/breast-cancer-follow-up-after-treatment"
+        },
+        {
+          "label": "Breast cancer in men",
+          "href": "/blogs/breast-cancer-in-men-india"
         }
       ],
       "blocks": [
@@ -110637,6 +111630,10 @@
         {
           "label": "Breast cancer recurrence",
           "href": "/blogs/breast-cancer-recurrence"
+        },
+        {
+          "label": "Breast cancer in men",
+          "href": "/blogs/breast-cancer-in-men-india"
         }
       ],
       "blocks": [
@@ -114255,6 +115252,10 @@
         {
           "label": "Breast cancer follow-up after treatment",
           "href": "/blogs/breast-cancer-follow-up-after-treatment"
+        },
+        {
+          "label": "Breast cancer in men",
+          "href": "/blogs/breast-cancer-in-men-india"
         }
       ],
       "blocks": [
