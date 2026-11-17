@@ -10,7 +10,7 @@ export const infertilityIvfIndiaProfile = indiaSpecialtyProfile({
     durationLabel: "Typical cycle or stay",
   },
   definition:
-    "Infertility & IVF care evaluates and treats difficulty conceiving through medical stimulation, intrauterine insemination, in vitro fertilisation, ICSI, gamete or embryo cryopreservation, genetic testing of embryos, and selected fertility-preserving surgeries. Selection depends on both partners' diagnoses, ovarian reserve, semen quality, uterine and tubal findings, prior treatment response, age, and applicable legal rules for donor gametes.",
+    "Infertility & IVF care evaluates and treats difficulty conceiving through medical stimulation, intrauterine insemination, in vitro fertilisation, ICSI, gamete or embryo cryopreservation, genetic testing of embryos, and selected fertility-preserving surgeries. Selection depends on both partners' diagnoses, ovarian reserve, semen quality, uterine and tubal findings, prior treatment response, age, and applicable legal rules for donor gametes. Use this specialty cost hub for planning ranges and inclusions; the curated treatment pathway for cycle decisions sits on IVF Treatment in India, and partner fertility campuses include Bloom IVF among the Infertility & IVF hospital listings.",
   selectionFocus: [
     "couple diagnosis, ovarian reserve and semen analysis",
     "uterine, tubal and hormonal evaluation",

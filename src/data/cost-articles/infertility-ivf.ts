@@ -533,7 +533,13 @@ const profiles: InfertilityProfile[] = [
       "Is freeze-all priced separately from a later FET?",
       "What happens financially if the cycle is cancelled before retrieval?",
     ],
-    related: ["ICSI Treatment", "Frozen Embryo Transfer (FET)", "Blastocyst Transfer"],
+    related: [
+      "ICSI Treatment",
+      "IUI Treatment",
+      "Frozen Embryo Transfer (FET)",
+      "PGT-A Testing",
+      "Blastocyst Transfer",
+    ],
     imageAlts: [
       "Medical illustration of IVF showing ovarian stimulation, egg retrieval, laboratory fertilisation and embryo transfer",
       "Clinical diagram of an IVF cycle timeline with monitoring, trigger, retrieval and transfer stages",
