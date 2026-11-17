@@ -94,10 +94,14 @@ test("Tanzania hub copy stays Tanzania-specific and medically responsible", () =
   assert.doesNotMatch(blob, /\b100%\s+success\b/i);
   assert.doesNotMatch(blob, /\bcheapest\b/i);
   assert.doesNotMatch(blob, /Best hospitals/i);
-  assert.doesNotMatch(blob, /\/treatments\/ivf/i);
+  assert.match(blob, /\/treatments\/ivf-treatment-in-india/);
   assert.doesNotMatch(blob, /\/(?:doctors|hospitals|costs)\/India\/Pune/i);
 
-  assert.ok(copy.treatments.categories.some((row) => row.title.startsWith("IVF") && !row.href));
+  assert.ok(
+    copy.treatments.categories.some(
+      (row) => row.title.startsWith("IVF") && row.href === "/treatments/ivf-treatment-in-india",
+    ),
+  );
   assert.ok(copy.cities.items.some((row) => row.name === "Pune" && row.catalog === false));
   assert.equal(TANZANIA_OFFICIAL_LINKS.eVisa, "https://indianvisaonline.gov.in/evisa/tvoa.html");
   assert.equal(TANZANIA_OFFICIAL_LINKS.hciMedicalVisa, "https://hcindiatz.gov.in/medical-visa.php");

@@ -13,7 +13,7 @@ import {
 
 export const ETHIOPIA_PAGE_PATH = "/ethiopia/treatment-in-india";
 export const ETHIOPIA_PAGE_LOCALES = ["en"] as const;
-export const ETHIOPIA_LAST_REVIEWED = "2026-10-03";
+export const ETHIOPIA_LAST_REVIEWED = "2026-11-17";
 
 export type EthiopiaPageCopy = typeof ethiopiaPageCopyEn;
 
@@ -41,6 +41,7 @@ export const ETHIOPIA_CURATED_TREATMENT_SLUGS = [
   "colon-cancer-treatment-in-india",
   "prostate-cancer-treatment-in-india",
   "pancreatic-cancer-treatment-in-india",
+  "hipec-surgery-in-india",
   "chemotherapy-in-india",
   "cabg-surgery-in-india",
   "heart-valve-replacement-in-india",
@@ -51,6 +52,7 @@ export const ETHIOPIA_CURATED_TREATMENT_SLUGS = [
   "acl-surgery-in-india",
   "whipple-surgery-in-india",
   "bone-marrow-transplant-in-india",
+  "ivf-treatment-in-india",
 ] as const;
 
 export const ETHIOPIA_CANCER_TREATMENT_SLUGS = TANZANIA_CANCER_TREATMENT_SLUGS;
@@ -275,10 +277,10 @@ export const ethiopiaPageCopyEn = {
       },
       {
         title: "IVF & Fertility",
-        body: "Ethiopian patients may travel to India for fertility evaluation and assisted reproductive treatment. GAF does not yet publish a dedicated IVF page. Eligibility, protocols and applicable Indian regulations should be confirmed with the treating fertility centre before travel.",
-        href: "",
-        hrefLabel: "",
-        specialty: "",
+        body: "Ethiopian patients may travel to India for fertility evaluation and assisted reproductive treatment. Start with the curated IVF treatment pathway, then confirm eligibility, laboratory protocols and applicable Indian regulations with the treating fertility centre before travel.",
+        href: "/treatments/ivf-treatment-in-india",
+        hrefLabel: "IVF treatment in India",
+        specialty: "Infertility & IVF",
       },
       {
         title: "Bariatric Surgery",
@@ -366,12 +368,12 @@ export const ethiopiaPageCopyEn = {
       {
         title: "Fertility",
         items: [
-          { label: "IVF", href: "" },
-          { label: "ICSI", href: "" },
-          { label: "IUI", href: "" },
-          { label: "Frozen Embryo Transfer", href: "" },
-          { label: "PGT", href: "" },
-          { label: "Male Infertility Treatment", href: "" },
+          { label: "IVF Treatment", href: "/treatments/ivf-treatment-in-india" },
+          { label: "IVF Cost Hub", href: "/costs/India/Infertility-IVF" },
+          { label: "ICSI", href: "/costs/India/Infertility-IVF/ICSI-Treatment" },
+          { label: "IUI", href: "/costs/India/Infertility-IVF/IUI-Treatment" },
+          { label: "Frozen Embryo Transfer", href: "/costs/India/Infertility-IVF/Frozen-Embryo-Transfer-FET" },
+          { label: "PGT-A", href: "/costs/India/Infertility-IVF/PGT-A-Testing" },
         ],
       },
     ],

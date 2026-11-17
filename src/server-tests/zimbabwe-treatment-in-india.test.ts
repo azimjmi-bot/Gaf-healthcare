@@ -125,11 +125,15 @@ test("Zimbabwe hub copy stays Zimbabwe-specific and medically responsible", () =
   assert.doesNotMatch(blob, /\bcheapest\b/i);
   assert.doesNotMatch(blob, /Best hospitals/i);
   assert.doesNotMatch(blob, /Best Cities/i);
-  assert.doesNotMatch(blob, /\/treatments\/ivf/i);
+  assert.match(blob, /\/treatments\/ivf-treatment-in-india/);
   assert.doesNotMatch(blob, /\/treatments\/(kaposi|liver-cancer|oesophageal|esophageal|lung-cancer|endometrial|thyroid-cancer)/i);
   assert.doesNotMatch(blob, /\/(?:doctors|hospitals|costs)\/India\/Pune/i);
 
-  assert.ok(copy.treatments.categories.some((row) => row.title.startsWith("IVF") && !row.href));
+  assert.ok(
+    copy.treatments.categories.some(
+      (row) => row.title.startsWith("IVF") && row.href === "/treatments/ivf-treatment-in-india",
+    ),
+  );
   assert.ok(copy.cities.items.some((row) => row.name === "Pune" && row.catalog === false));
   assert.equal(ZIMBABWE_OFFICIAL_LINKS.eVisa, "https://indianvisaonline.gov.in/evisa/tvoa.html");
   assert.equal(ZIMBABWE_OFFICIAL_LINKS.embassy, "https://indemb-harare.gov.in/");
