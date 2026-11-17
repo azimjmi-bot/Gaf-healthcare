@@ -8,7 +8,7 @@ import { costPath, doctorsPath, hospitalsPath, costsFilterPath } from "@/lib/cat
 
 export const TANZANIA_PAGE_PATH = "/tanzania/treatment-in-india";
 export const TANZANIA_PAGE_LOCALES = ["en"] as const;
-export const TANZANIA_LAST_REVIEWED = "2026-10-03";
+export const TANZANIA_LAST_REVIEWED = "2026-11-17";
 
 /** English is the source locale. Target-locale overlays can be added later without changing the route. */
 export type TanzaniaPageCopy = typeof tanzaniaPageCopyEn;
@@ -44,6 +44,7 @@ export const TANZANIA_CURATED_TREATMENT_SLUGS = [
   "colon-cancer-treatment-in-india",
   "prostate-cancer-treatment-in-india",
   "pancreatic-cancer-treatment-in-india",
+  "hipec-surgery-in-india",
   "chemotherapy-in-india",
   "cabg-surgery-in-india",
   "heart-valve-replacement-in-india",
@@ -52,6 +53,7 @@ export const TANZANIA_CURATED_TREATMENT_SLUGS = [
   "knee-replacement-surgery-in-india",
   "whipple-surgery-in-india",
   "bone-marrow-transplant-in-india",
+  "ivf-treatment-in-india",
 ] as const;
 
 export const TANZANIA_CANCER_TREATMENT_SLUGS = [
@@ -297,10 +299,10 @@ export const tanzaniaPageCopyEn = {
       },
       {
         title: "IVF & Fertility",
-        body: "India is a destination for fertility treatment, but GAF does not yet publish a dedicated IVF page. Eligibility and Indian fertility law should be confirmed with the clinic before travel.",
-        href: "",
-        hrefLabel: "",
-        specialty: "",
+        body: "Tanzanian couples may explore IVF and related fertility pathways in India after records review. Start with the curated IVF treatment pathway, then confirm eligibility, laboratory scope and applicable Indian fertility rules with the treating centre before travel.",
+        href: "/treatments/ivf-treatment-in-india",
+        hrefLabel: "IVF treatment in India",
+        specialty: "Infertility & IVF",
       },
       {
         title: "Bariatric Surgery",
@@ -344,6 +346,7 @@ export const tanzaniaPageCopyEn = {
       { label: "Colon Cancer", href: "/treatments/colon-cancer-treatment-in-india" },
       { label: "Prostate Cancer", href: "/treatments/prostate-cancer-treatment-in-india" },
       { label: "Pancreatic Cancer", href: "/treatments/pancreatic-cancer-treatment-in-india" },
+      { label: "HIPEC Surgery", href: "/treatments/hipec-surgery-in-india" },
       { label: "Ovarian Cancer", href: "/treatments/ovarian-cancer-treatment-in-india" },
       { label: "Cervical Cancer", href: "/treatments/cervical-cancer-treatment-in-india" },
     ],

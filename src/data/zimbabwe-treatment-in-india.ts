@@ -12,7 +12,7 @@ import {
 
 export const ZIMBABWE_PAGE_PATH = "/zimbabwe/treatment-in-india";
 export const ZIMBABWE_PAGE_LOCALES = ["en"] as const;
-export const ZIMBABWE_LAST_REVIEWED = "2026-10-03";
+export const ZIMBABWE_LAST_REVIEWED = "2026-11-17";
 
 export type ZimbabwePageCopy = typeof zimbabwePageCopyEn;
 
@@ -45,6 +45,7 @@ export const ZIMBABWE_CURATED_TREATMENT_SLUGS = [
   "cervical-cancer-treatment-in-india",
   "prostate-cancer-treatment-in-india",
   "colon-cancer-treatment-in-india",
+  "hipec-surgery-in-india",
   "chemotherapy-in-india",
   "cabg-surgery-in-india",
   "heart-valve-replacement-in-india",
@@ -55,6 +56,7 @@ export const ZIMBABWE_CURATED_TREATMENT_SLUGS = [
   "acl-surgery-in-india",
   "whipple-surgery-in-india",
   "bone-marrow-transplant-in-india",
+  "ivf-treatment-in-india",
 ] as const;
 
 export const ZIMBABWE_CANCER_TREATMENT_SLUGS = TANZANIA_CANCER_TREATMENT_SLUGS;
@@ -275,10 +277,10 @@ export const zimbabwePageCopyEn = {
       },
       {
         title: "IVF & Fertility",
-        body: "Zimbabwean couples may explore fertility treatment in India following appropriate medical evaluation. GAF does not yet publish a dedicated IVF page. Eligibility, protocols and applicable Indian regulations should be confirmed with the treating fertility centre before travel.",
-        href: "",
-        hrefLabel: "",
-        specialty: "",
+        body: "Zimbabwean couples may explore fertility treatment in India following appropriate medical evaluation. Start with the curated IVF treatment pathway, then confirm eligibility, protocols and applicable Indian regulations with the treating fertility centre before travel.",
+        href: "/treatments/ivf-treatment-in-india",
+        hrefLabel: "IVF treatment in India",
+        specialty: "Infertility & IVF",
       },
       {
         title: "Bariatric Surgery",
@@ -360,12 +362,12 @@ export const zimbabwePageCopyEn = {
       {
         title: "Fertility",
         items: [
-          { label: "IVF", href: "" },
-          { label: "ICSI", href: "" },
-          { label: "IUI", href: "" },
-          { label: "PGT-A", href: "" },
-          { label: "Frozen Embryo Transfer", href: "" },
-          { label: "Male Infertility", href: "" },
+          { label: "IVF Treatment", href: "/treatments/ivf-treatment-in-india" },
+          { label: "IVF Cost Hub", href: "/costs/India/Infertility-IVF" },
+          { label: "ICSI", href: "/costs/India/Infertility-IVF/ICSI-Treatment" },
+          { label: "IUI", href: "/costs/India/Infertility-IVF/IUI-Treatment" },
+          { label: "Frozen Embryo Transfer", href: "/costs/India/Infertility-IVF/Frozen-Embryo-Transfer-FET" },
+          { label: "PGT-A", href: "/costs/India/Infertility-IVF/PGT-A-Testing" },
         ],
       },
     ],
@@ -709,7 +711,7 @@ export const zimbabwePageCopyEn = {
     },
     {
       q: "Can Zimbabwean patients get IVF treatment in India?",
-      a: "Zimbabwean couples may explore IVF and other fertility treatments in India. Eligibility, treatment protocols and applicable legal requirements should be confirmed with the selected fertility centre before travel. GAF does not yet publish a dedicated IVF page.",
+      a: "Zimbabwean couples may explore IVF and other fertility treatments in India. See IVF Treatment in India for the patient pathway. Eligibility, treatment protocols and applicable legal requirements should be confirmed with the selected fertility centre before travel.",
     },
     {
       q: "Can I get a second medical opinion from India before travelling?",

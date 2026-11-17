@@ -12,7 +12,7 @@ import {
 
 export const NIGERIA_PAGE_PATH = "/nigeria/treatment-in-india";
 export const NIGERIA_PAGE_LOCALES = ["en"] as const;
-export const NIGERIA_LAST_REVIEWED = "2026-10-03";
+export const NIGERIA_LAST_REVIEWED = "2026-11-17";
 
 export type NigeriaPageCopy = typeof nigeriaPageCopyEn;
 
@@ -45,6 +45,7 @@ export const NIGERIA_CURATED_TREATMENT_SLUGS = [
   "prostate-cancer-treatment-in-india",
   "cervical-cancer-treatment-in-india",
   "colon-cancer-treatment-in-india",
+  "hipec-surgery-in-india",
   "chemotherapy-in-india",
   "cabg-surgery-in-india",
   "heart-valve-replacement-in-india",
@@ -55,6 +56,7 @@ export const NIGERIA_CURATED_TREATMENT_SLUGS = [
   "acl-surgery-in-india",
   "whipple-surgery-in-india",
   "bone-marrow-transplant-in-india",
+  "ivf-treatment-in-india",
 ] as const;
 
 export const NIGERIA_CANCER_TREATMENT_SLUGS = TANZANIA_CANCER_TREATMENT_SLUGS;
@@ -285,10 +287,10 @@ export const nigeriaPageCopyEn = {
       },
       {
         title: "IVF & Fertility",
-        body: "Nigerian couples may consider India for infertility evaluation and assisted reproductive treatment. GAF does not yet publish a dedicated IVF page. Eligibility, protocols and applicable Indian regulations should be confirmed with the treating fertility centre before travel.",
-        href: "",
-        hrefLabel: "",
-        specialty: "",
+        body: "Nigerian couples may consider India for infertility evaluation and assisted reproductive treatment. Start with the curated IVF treatment pathway, then confirm eligibility, protocols and applicable Indian regulations with the treating fertility centre before travel.",
+        href: "/treatments/ivf-treatment-in-india",
+        hrefLabel: "IVF treatment in India",
+        specialty: "Infertility & IVF",
       },
       {
         title: "Bariatric Surgery",
@@ -372,12 +374,12 @@ export const nigeriaPageCopyEn = {
       {
         title: "Fertility",
         items: [
-          { label: "IVF", href: "" },
-          { label: "ICSI", href: "" },
-          { label: "IUI", href: "" },
-          { label: "PGT-A", href: "" },
-          { label: "Frozen Embryo Transfer", href: "" },
-          { label: "Male Infertility", href: "" },
+          { label: "IVF Treatment", href: "/treatments/ivf-treatment-in-india" },
+          { label: "IVF Cost Hub", href: "/costs/India/Infertility-IVF" },
+          { label: "ICSI", href: "/costs/India/Infertility-IVF/ICSI-Treatment" },
+          { label: "IUI", href: "/costs/India/Infertility-IVF/IUI-Treatment" },
+          { label: "Frozen Embryo Transfer", href: "/costs/India/Infertility-IVF/Frozen-Embryo-Transfer-FET" },
+          { label: "PGT-A", href: "/costs/India/Infertility-IVF/PGT-A-Testing" },
         ],
       },
     ],
@@ -746,7 +748,7 @@ export const nigeriaPageCopyEn = {
     },
     {
       q: "Can Nigerian patients undergo IVF in India?",
-      a: "International patients may seek IVF and other fertility services in India, subject to the applicable medical, legal and clinic-specific requirements. GAF does not yet publish a dedicated IVF page.",
+      a: "International patients may seek IVF and other fertility services in India, subject to the applicable medical, legal and clinic-specific requirements. See IVF Treatment in India for the patient pathway, then confirm the named clinic plan before travel.",
     },
     {
       q: "Can children from Nigeria receive treatment in India?",
