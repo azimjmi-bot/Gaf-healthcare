@@ -3,7 +3,7 @@
 **Status:** Complete (local only — awaiting review before push/PR)  
 **Branch:** `cursor/phase4-internal-linking-6064`  
 **Base:** `release/stage4-rsc-prod`  
-**Commit SHA:** _(filled at commit)_  
+**Commit SHA:** `b3f6788918e686ef46a8f356a116060d7653953f`
 **GSC performance / enquiry impact:** UNAVAILABLE (not claimed)
 
 ## Scope
