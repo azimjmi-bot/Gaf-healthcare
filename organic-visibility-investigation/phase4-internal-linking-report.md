@@ -3,7 +3,8 @@
 **Status:** Complete (local only — awaiting review before push/PR)  
 **Branch:** `cursor/phase4-internal-linking-6064`  
 **Base:** `release/stage4-rsc-prod`  
-**Commit SHA:** `b3f6788918e686ef46a8f356a116060d7653953f`
+**Branch tip:** `58695f778707819b1ad4105c9f94ad3c41658ba9`  
+**Content commit:** `b3f6788918e686ef46a8f356a116060d7653953f` (surgical `cms.json` relatedLinks)
 **GSC performance / enquiry impact:** UNAVAILABLE (not claimed)
 
 ## Scope
