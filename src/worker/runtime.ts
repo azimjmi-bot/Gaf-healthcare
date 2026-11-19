@@ -48,6 +48,7 @@ import {
   type R2ObjectBodyLike,
   type R2ObjectLike,
 } from "@/lib/storage/r2";
+import { isCrossRequestPromiseError } from "@/worker/singleflight";
 
 export interface ExecutionContextLike {
   waitUntil(promise: Promise<unknown>): void;
@@ -979,14 +980,19 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
     const url = new URL(request.url);
     try {
       await Promise.all(groupsForRequest(url.pathname).map((group) => active.ensureHydrated(group)));
-    } catch (error) {
-      if (error instanceof StorageHydrationError) return hydrationUnavailable(error, log);
-      throw error;
-    }
-    try {
       await active.refreshIfStale();
     } catch (error) {
       if (error instanceof StorageHydrationError) return hydrationUnavailable(error, log);
+      // Defence in depth: a stranded cross-request Promise must not become CF 1101.
+      // Hydration single-flight already polls; if anything else still surfaces the
+      // workerd error, answer 503 instead of throwing out of the isolate.
+      if (isCrossRequestPromiseError(error)) {
+        log(`cross-request promise during hydrate: ${error instanceof Error ? error.message : String(error)}`);
+        return new Response("Service Temporarily Unavailable", {
+          status: 503,
+          headers: { "cache-control": "no-store", "content-type": "text/plain; charset=utf-8" },
+        });
+      }
       throw error;
     }
     return next(request, nextEnv, ctx);
@@ -1176,7 +1182,12 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
           if (hit) return withStagingRobots(hit, env);
         } catch (error) {
           if (error instanceof StorageHydrationError) return withStagingRobots(hydrationUnavailable(error, log), env);
-          throw error;
+          if (isCrossRequestPromiseError(error)) {
+            log(`cross-request promise during html cache read: ${error instanceof Error ? error.message : String(error)}`);
+            // Fall through to a fresh render rather than Error 1101.
+          } else {
+            throw error;
+          }
         }
       }
 

@@ -1,12 +1,19 @@
 /**
- * Prototype for sharing one in-flight render across duplicate requests.
+ * Share in-flight async work across concurrent Worker requests without
+ * awaiting another request's Promise.
  *
- * This module is not imported by the production Worker. The previous render
- * queue hung with 500s when one request awaited a promise that another
- * request resolved. Waiters here poll a shared slot with their own timer and
- * never await the leader's promise. A production wiring needs the workerd
- * probe in `singleflight.workerd.test.ts` to show every waiter still receives
- * a completed 200, including the cancellation case.
+ * On Cloudflare Workers (`handle_cross_request_promise_resolution`, default
+ * since compatibility_date 2024-10-14) a Promise may only settle in the
+ * request that created it. If request A starts a shared load and then ends
+ * (client disconnect / 1101), every later request that `await`s A's Promise
+ * throws:
+ *   "This promise was created by a request that has since ended..."
+ * and the isolate keeps serving Error 1101 until it is recycled.
+ *
+ * Waiters here poll a shared slot with their own timer and never await the
+ * leader's Promise. Used by R2 content hydration (`src/lib/storage/r2.ts`).
+ * The workerd probe in `singleflight.workerd.test.ts` documents the naive
+ * vs polling behaviour.
  */
 
 export class CrossRequestCancellation extends Error {
@@ -61,27 +68,57 @@ function handoff<T>(value: T): T {
   return value instanceof Response ? (value.clone() as T) : value;
 }
 
+/**
+ * True when workerd dropped a Promise because its creating request ended.
+ * Matching on the message is intentional: the runtime throws a plain Error.
+ */
+export function isCrossRequestPromiseError(error: unknown): boolean {
+  if (!(error instanceof Error)) return false;
+  return (
+    error.name === "CrossRequestCancellation" ||
+    error.message.includes("promise was created by a request that has since ended")
+  );
+}
+
+/**
+ * Single-flight `work` across concurrent callers without returning the
+ * leader's Promise to waiters. Waiters poll `slots` until the leader writes
+ * done/failed, or until `timeoutMs` — then they run `work` themselves.
+ */
+export async function shareInFlightWork<T>(
+  slots: Map<string, SharedSlot<T>>,
+  key: string,
+  work: () => Promise<T>,
+  options: { pollMs: number; timeoutMs: number; sleep?: (ms: number) => Promise<void> },
+): Promise<T> {
+  const existing = slots.get(key);
+  if (existing) {
+    const outcome = await waitForSharedResult(existing, options);
+    if (outcome.status === "done") return handoff(outcome.value);
+    if (outcome.status === "failed") throw outcome.error;
+    // Timed out while the leader is still pending — run our own work without
+    // stealing the shared slot (the leader may still complete for others).
+    if (slots.get(key) === existing && existing.current.state === "pending") {
+      return work();
+    }
+  }
+  const slot: SharedSlot<T> = { current: { state: "pending" } };
+  slots.set(key, slot);
+  try {
+    const value = await work();
+    slot.current = { state: "done", value };
+    return handoff(value);
+  } catch (error) {
+    slot.current = { state: "failed", error };
+    throw error;
+  } finally {
+    if (slots.get(key) === slot) slots.delete(key);
+  }
+}
+
 export function createPollingSingleflight<T>(options: { pollMs: number; timeoutMs: number }) {
   const inflight = new Map<string, SharedSlot<T>>();
   return async function share(key: string, render: () => Promise<T>): Promise<T> {
-    const existing = inflight.get(key);
-    if (existing) {
-      const outcome = await waitForSharedResult(existing, options);
-      if (outcome.status === "done") return handoff(outcome.value);
-      if (outcome.status === "failed") throw outcome.error;
-      return render();
-    }
-    const slot: SharedSlot<T> = { current: { state: "pending" } };
-    inflight.set(key, slot);
-    try {
-      const value = await render();
-      slot.current = { state: "done", value };
-      return handoff(value);
-    } catch (error) {
-      slot.current = { state: "failed", error };
-      throw error;
-    } finally {
-      inflight.delete(key);
-    }
+    return shareInFlightWork(inflight, key, render, options);
   };
 }

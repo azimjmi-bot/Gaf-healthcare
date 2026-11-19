@@ -4,6 +4,9 @@ import {
   CrossRequestCancellation,
   awaitForeignPromise,
   createPollingSingleflight,
+  isCrossRequestPromiseError,
+  shareInFlightWork,
+  type SharedSlot,
 } from "@/worker/singleflight";
 
 test("awaiting another request's promise is cancelled and does not return the 200", async () => {
@@ -74,4 +77,44 @@ test("a waiter that times out renders its own 200 instead of hanging", async () 
   assert.equal(waiter, "waiter-rendered");
   assert.equal(renders, 2);
   void leader;
+});
+
+test("isCrossRequestPromiseError matches workerd's stranded-promise message", () => {
+  assert.equal(
+    isCrossRequestPromiseError(
+      new Error(
+        "This promise was created by a request that has since ended, so it can never settle. With the handle_cross_request_promise_resolution compatibility flag, a promise can only settle in the request that created it, and settling it after that request ends is dropped.",
+      ),
+    ),
+    true,
+  );
+  assert.equal(isCrossRequestPromiseError(new CrossRequestCancellation()), true);
+  assert.equal(isCrossRequestPromiseError(new Error("bucket unreachable")), false);
+});
+
+test("shareInFlightWork waiters observe a completed slot without awaiting the leader Promise", async () => {
+  const slots = new Map<string, SharedSlot<string>>();
+  let runs = 0;
+  let release: () => void = () => {};
+  const hold = new Promise<void>((resolve) => {
+    release = resolve;
+  });
+  const work = async () => {
+    runs += 1;
+    await hold;
+    return "hydrated";
+  };
+  const leader = shareInFlightWork(slots, "en", work, { pollMs: 5, timeoutMs: 500 });
+  await new Promise<void>((resolve) => {
+    const check = () => {
+      if (runs === 1) resolve();
+      else setTimeout(check, 5);
+    };
+    check();
+  });
+  const waiter = shareInFlightWork(slots, "en", work, { pollMs: 5, timeoutMs: 500 });
+  release();
+  assert.equal(await leader, "hydrated");
+  assert.equal(await waiter, "hydrated");
+  assert.equal(runs, 1);
 });
