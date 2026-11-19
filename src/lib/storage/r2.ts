@@ -9,6 +9,11 @@ import {
   StorageVersionError,
   type ContentStorage,
 } from "@/lib/storage/types";
+import { shareInFlightWork, type SharedSlot } from "@/worker/singleflight";
+
+/** Polling join for shared R2 loads — never await another request's Promise. */
+const HYDRATE_JOIN = { pollMs: 5, timeoutMs: 30_000 } as const;
+const META_JOIN = { pollMs: 5, timeoutMs: 10_000 } as const;
 
 /*
  * Structural subset of the Workers R2 binding API that this backend uses.
@@ -239,12 +244,13 @@ export class R2ContentStorage implements ContentStorage {
   /** What the bucket is known to hold (etag used as the write precondition). */
   private readonly committed = new Map<string, Entry>();
   private readonly hydrated = new Set<EditionGroup>();
-  private readonly hydrating = new Map<EditionGroup, Promise<void>>();
+  /** In-flight hydrate slots keyed by edition — waiters poll; they never await the leader Promise. */
+  private readonly hydratingSlots = new Map<string, SharedSlot<void>>();
   private manifest: ContentManifest | null = null;
-  private manifestLoad: Promise<ContentManifest> | null = null;
+  private readonly manifestSlots = new Map<string, SharedSlot<ContentManifest>>();
   private assetsLoaded = false;
-  private assetsLoad: Promise<void> | null = null;
-  private versionBaseline: Promise<void> | null = null;
+  private readonly assetsSlots = new Map<string, SharedSlot<void>>();
+  private readonly versionBaselineSlots = new Map<string, SharedSlot<void>>();
 
   private pendingCounter = 0;
   private readonly queues = new Map<string, KeyQueue>();
@@ -256,7 +262,7 @@ export class R2ContentStorage implements ContentStorage {
   private versionDocument: VersionDocument = { groups: {}, updatedAt: "" };
   private versionBaselined = false;
   private lastVersionCheck = 0;
-  private versionCheck: Promise<void> | null = null;
+  private readonly versionCheckSlots = new Map<string, SharedSlot<void>>();
 
   constructor(options: R2ContentStorageOptions) {
     this.content = options.content;
@@ -345,7 +351,9 @@ export class R2ContentStorage implements ContentStorage {
    * Bring `group` into memory. Rejects with `StorageHydrationError` when the
    * bucket is unreachable, the manifest is missing, or any manifest key of
    * the group is absent: an empty or half-seeded bucket is an error, never an
-   * empty CMS. Concurrent callers share one load.
+   * empty CMS. Concurrent callers share one load via polling slots — they must
+   * not await another request's Promise (Cloudflare Error 1101 / cross-request
+   * promise settlement).
    */
   ensureHydrated(group: EditionGroup): Promise<void> {
     if (this.hydrated.has(group)) return Promise.resolve();
@@ -354,11 +362,7 @@ export class R2ContentStorage implements ContentStorage {
 
   /** Load `group` even if it is already held, replacing changed objects in place. */
   private rehydrate(group: EditionGroup): Promise<void> {
-    const running = this.hydrating.get(group);
-    if (running) return running;
-    const task = this.hydrate(group).finally(() => this.hydrating.delete(group));
-    this.hydrating.set(group, task);
-    return task;
+    return shareInFlightWork(this.hydratingSlots, group, () => this.hydrate(group), HYDRATE_JOIN);
   }
 
   /**
@@ -387,12 +391,8 @@ export class R2ContentStorage implements ContentStorage {
 
   refreshIfStale(): Promise<void> {
     if (this.hydrated.size === 0) return Promise.resolve();
-    if (this.versionCheck) return this.versionCheck;
     if (Date.now() - this.lastVersionCheck < this.versionCheckIntervalMs) return Promise.resolve();
-    this.versionCheck = this.checkVersion().finally(() => {
-      this.versionCheck = null;
-    });
-    return this.versionCheck;
+    return shareInFlightWork(this.versionCheckSlots, "version", () => this.checkVersion(), META_JOIN);
   }
 
   /** Keys currently held, for diagnostics and tests. */
@@ -628,12 +628,7 @@ export class R2ContentStorage implements ContentStorage {
   /** One manifest read per isolate, even when several groups hydrate at once. */
   private loadManifest(group: EditionGroup): Promise<ContentManifest> {
     if (this.manifest) return Promise.resolve(this.manifest);
-    if (!this.manifestLoad) {
-      this.manifestLoad = this.readManifest(group).finally(() => {
-        this.manifestLoad = null;
-      });
-    }
-    return this.manifestLoad;
+    return shareInFlightWork(this.manifestSlots, "manifest", () => this.readManifest(group), META_JOIN);
   }
 
   private async readManifest(group: EditionGroup): Promise<ContentManifest> {
@@ -655,12 +650,7 @@ export class R2ContentStorage implements ContentStorage {
   /** Record the version document once so the first check does not look like "everything changed". */
   private baselineVersion(): Promise<void> {
     if (this.versionBaselined) return Promise.resolve();
-    if (!this.versionBaseline) {
-      this.versionBaseline = this.readVersionBaseline().finally(() => {
-        this.versionBaseline = null;
-      });
-    }
-    return this.versionBaseline;
+    return shareInFlightWork(this.versionBaselineSlots, "baseline", () => this.readVersionBaseline(), META_JOIN);
   }
 
   private async readVersionBaseline() {
@@ -674,12 +664,7 @@ export class R2ContentStorage implements ContentStorage {
 
   private loadAssets(group: EditionGroup): Promise<void> {
     if (this.assetsLoaded || this.assetKeys.size === 0) return Promise.resolve();
-    if (!this.assetsLoad) {
-      this.assetsLoad = this.readAssets(group).finally(() => {
-        this.assetsLoad = null;
-      });
-    }
-    return this.assetsLoad;
+    return shareInFlightWork(this.assetsSlots, "assets", () => this.readAssets(group), META_JOIN);
   }
 
   private async readAssets(group: EditionGroup) {
