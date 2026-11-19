@@ -96,10 +96,13 @@ export async function shareInFlightWork<T>(
     const outcome = await waitForSharedResult(existing, options);
     if (outcome.status === "done") return handoff(outcome.value);
     if (outcome.status === "failed") throw outcome.error;
-    // Timed out while the leader is still pending — run our own work without
-    // stealing the shared slot (the leader may still complete for others).
+    // Timed out while still pending: the leader request likely ended without
+    // settling (workerd cross-request cancellation). Clear the stranded slot
+    // and take over so later waiters do not each pay another full timeout.
+    // A slow-but-alive leader may still finish in the background; hydrate is
+    // idempotent once `hydrated` is set.
     if (slots.get(key) === existing && existing.current.state === "pending") {
-      return work();
+      slots.delete(key);
     }
   }
   const slot: SharedSlot<T> = { current: { state: "pending" } };

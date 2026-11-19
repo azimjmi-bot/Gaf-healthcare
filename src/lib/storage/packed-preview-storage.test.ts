@@ -73,7 +73,11 @@ test("render limits and production hydration source stay unchanged", () => {
   const previewWorker = readFileSync(path.join(process.cwd(), "src/worker-preview.ts"), "utf8");
   assert.match(previewWorker, /sharedPackCache: true/);
   assert.doesNotMatch(previewWorker, /singleflight/);
-  assert.doesNotMatch(runtime, /sharedPackCache|gaf-preview-packs|packed-preview-cache|singleflight/);
+  // Production must use polling singleflight for R2 hydrate (CF Error 1101).
+  // Preview pack cache helpers must stay out of the production Worker.
+  assert.match(r2, /shareInFlightWork/);
+  assert.match(runtime, /isCrossRequestPromiseError/);
+  assert.doesNotMatch(runtime, /sharedPackCache|gaf-preview-packs|packed-preview-cache/);
   assert.doesNotMatch(worker, /sharedPackCache|gaf-preview-packs|packed-preview-cache|singleflight/);
 });
 

@@ -118,3 +118,71 @@ test("shareInFlightWork waiters observe a completed slot without awaiting the le
   assert.equal(await waiter, "hydrated");
   assert.equal(runs, 1);
 });
+
+test("shareInFlightWork recovers when the leader never settles (cancelled request)", async () => {
+  const slots = new Map<string, SharedSlot<string>>();
+  let runs = 0;
+  const hangingLeader = shareInFlightWork(
+    slots,
+    "ar",
+    async () => {
+      runs += 1;
+      await new Promise(() => {});
+      return "leader";
+    },
+    { pollMs: 5, timeoutMs: 40 },
+  );
+  await new Promise<void>((resolve) => {
+    const check = () => {
+      if (runs === 1) resolve();
+      else setTimeout(check, 5);
+    };
+    check();
+  });
+
+  const firstRecovery = await shareInFlightWork(
+    slots,
+    "ar",
+    async () => {
+      runs += 1;
+      return "recovered-1";
+    },
+    { pollMs: 5, timeoutMs: 40 },
+  );
+  assert.equal(firstRecovery, "recovered-1");
+
+  // Stranded slot must be cleared: a follow-up join must not wait another timeout.
+  const started = Date.now();
+  const second = await shareInFlightWork(
+    slots,
+    "ar",
+    async () => {
+      runs += 1;
+      return "recovered-2";
+    },
+    { pollMs: 5, timeoutMs: 500 },
+  );
+  assert.equal(second, "recovered-2");
+  assert.ok(Date.now() - started < 200, "follow-up must not re-wait on a stranded leader");
+  assert.ok(runs >= 3);
+  void hangingLeader;
+});
+
+test("shareInFlightWork surfaces leader failure to waiters without hanging", async () => {
+  const slots = new Map<string, SharedSlot<string>>();
+  let release: (error: Error) => void = () => {};
+  const hold = new Promise<string>((_resolve, reject) => {
+    release = reject;
+  });
+  const leader = shareInFlightWork(slots, "en", () => hold, { pollMs: 5, timeoutMs: 500 });
+  const waiter = shareInFlightWork(
+    slots,
+    "en",
+    async () => "should-not-run",
+    { pollMs: 5, timeoutMs: 500 },
+  );
+  await new Promise((resolve) => setTimeout(resolve, 15));
+  release(new Error("hydrate failed"));
+  await assert.rejects(leader, /hydrate failed/);
+  await assert.rejects(waiter, /hydrate failed/);
+});
