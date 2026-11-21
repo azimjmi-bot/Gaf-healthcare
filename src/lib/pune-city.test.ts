@@ -7,6 +7,7 @@ import {
   filterTreatments,
   indiaCitiesWithInventory,
 } from "@/lib/catalog";
+import { citiesForDestination } from "@/lib/catalog-options";
 import { taxonomyLabel } from "@/lib/i18n/taxonomy-labels";
 import { getCity, INDIA_CITIES } from "@/lib/taxonomy";
 
@@ -65,4 +66,17 @@ test("empty Pune hubs stay out of inventory-gated sitemap/facet lists", () => {
   ]);
   assert.ok(!indiaCitiesWithInventory("treatments").includes("Pune"));
   assert.ok(indiaCitiesWithInventory("treatments").includes("Mumbai"));
+});
+
+test("directory city filters keep Pune visible with a dynamic zero count", () => {
+  assert.deepEqual(citiesForDestination("India"), INDIA_CITIES);
+
+  for (const entity of ["doctors", "hospitals", "treatments"] as const) {
+    const stats = cityResultCounts(entity, { destination: "India" });
+    assert.equal(stats.counts.Pune, 0);
+    assert.deepEqual(Object.keys(stats.counts), INDIA_CITIES);
+    for (const city of ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"]) {
+      assert.ok((stats.counts[city] ?? 0) > 0, `${entity}:${city}`);
+    }
+  }
 });

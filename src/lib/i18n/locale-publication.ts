@@ -1,7 +1,7 @@
 import "server-only";
 import { listPublishedPosts } from "@/lib/blogs";
 import { filterDoctors, filterHospitals, filterTreatments } from "@/lib/catalog";
-import { parentCatalogQuery } from "@/lib/catalog-options";
+import { citiesForDestination, parentCatalogQuery, type CatalogQuery } from "@/lib/catalog-options";
 import {
   doctorsForHospitalLocale,
   doctorsForLocale,
@@ -45,9 +45,27 @@ function segmentsFor(path: string) {
   return stripLocalePrefix(path).pathname.split("/").filter(Boolean);
 }
 
-/** Thin or unapproved facets render, empty ones do not exist. */
-function facetState(matchCount: number, published: boolean): LocalePageState {
-  if (matchCount === 0) return "missing";
+/**
+ * Thin or unapproved facets render as noindex. Empty facets 404, except for
+ * supported destination-city filters: zero-inventory catalogue cities (e.g.
+ * Pune) must stay selectable in directory UI and render an empty state without
+ * becoming sitemap/facet/indexable landing pages.
+ */
+function facetState(
+  matchCount: number,
+  published: boolean,
+  query?: CatalogQuery,
+): LocalePageState {
+  if (matchCount === 0) {
+    if (
+      query?.city &&
+      query.destination &&
+      citiesForDestination(query.destination).includes(query.city)
+    ) {
+      return "noindex";
+    }
+    return "missing";
+  }
   return published ? "published" : "noindex";
 }
 
@@ -70,7 +88,7 @@ function targetLocaleState(locale: AppLocale, segments: string[]): LocalePageSta
       const matches = filterDoctors(query, rows).length;
       const parent = parentCatalogQuery(query);
       const parentMatches = parent ? filterDoctors(parent, rows).length : undefined;
-      return facetState(matches, facetIsPublished("doctorFacet", matches, parentMatches));
+      return facetState(matches, facetIsPublished("doctorFacet", matches, parentMatches), query);
     }
     // Membership in the published index, not a full-profile load. A sitemap
     // or hreflang check must not inflate every biography.
@@ -87,7 +105,7 @@ function targetLocaleState(locale: AppLocale, segments: string[]): LocalePageSta
       const matches = filterHospitals(query, rows).length;
       const parent = parentCatalogQuery(query);
       const parentMatches = parent ? filterHospitals(parent, rows).length : undefined;
-      return facetState(matches, facetIsPublished("hospitalFacet", matches, parentMatches));
+      return facetState(matches, facetIsPublished("hospitalFacet", matches, parentMatches), query);
     }
     const hospital = getHospitalForLocale(segments[1], locale);
     if (!hospital) return "missing";
@@ -120,6 +138,7 @@ function targetLocaleState(locale: AppLocale, segments: string[]): LocalePageSta
       matches,
       !hasUnreviewedCityPrice &&
         facetIsPublished("costFacet", matches, parentMatches),
+      query,
     );
   }
 
