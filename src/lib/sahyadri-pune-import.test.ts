@@ -3,8 +3,10 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import test from "node:test";
 import { catalogDoctors, doctorsForHospital } from "@/lib/doctors";
+import { featureBar, heroLede, infrastructure, whyChoose } from "@/lib/hospital-profile";
 import { catalogHospitals } from "@/lib/hospitals";
 import { listHospitalLandings } from "@/lib/pseo";
+import { hospitalJsonLd, hospitalMetadata } from "@/lib/seo";
 import { SPECIALTIES } from "@/lib/taxonomy";
 
 const ginger = JSON.parse(readFileSync(join(process.cwd(), "src/data/ginger-catalog.json"), "utf8")) as {
@@ -121,14 +123,44 @@ test("Sahyadri campuses do not inherit the full specialty/procedure catalogue", 
     assert.ok(row.specialties.length > 0);
     assert.ok(row.specialties.length < 25, `${row.slug} specialties ${row.specialties.length}`);
     assert.ok(row.procedures.length < 200, `${row.slug} procedures ${row.procedures.length}`);
-    assert.notEqual(row.specialty, "Radiation Oncology");
-    assert.ok(row.specialty.length > 0, "faculty-majority primary specialty assigned");
-    assert.notEqual(row.specialtySlug, "radiation-oncology");
-    // Primary specialty must be one of the faculty specialties.
-    assert.ok(row.specialties.includes(row.specialty));
+    // Faculty-majority is not published as an official primary/flagship specialty.
+    assert.equal(row.specialty, "");
+    assert.equal(row.specialtySlug, "");
+    assert.match(row.focus, /Affiliated faculty specialties/);
+    // No campus-specific ICU publication verified — leave unspecified.
+    assert.equal(row.icu, "");
   }
   const puneHospitalLandings = listHospitalLandings().filter((row) => row.citySlug === "pune");
   assert.ok(puneHospitalLandings.length < 400, `inflated facets: ${puneHospitalLandings.length}`);
+});
+
+test("Sahyadri public copy distinguishes faculty relationships from campus services", () => {
+  const row = catalogHospitals.find((h) => h.slug === "sahyadri-super-speciality-hospital-deccan-gymkhana");
+  assert.ok(row);
+  const meta = hospitalMetadata(row!);
+  assert.match(String(meta.title), /independent Sahyadri campus/i);
+  assert.doesNotMatch(String(meta.title), /oncology, ENT and GI hospital/i);
+  assert.match(String(meta.description), /Affiliated faculty specialties/i);
+  assert.doesNotMatch(String(meta.description), /lists Orthopedics, /);
+  const jsonLd = hospitalJsonLd(row!);
+  assert.match(String(jsonLd.description), /verified affiliated faculty/i);
+  const why = whyChoose(row!, 10);
+  assert.ok(why.some((card) => /Faculty-linked specialties/i.test(card.title)));
+  assert.ok(!why.some((card) => /ICU and theatres/i.test(card.title)));
+  assert.ok(featureBar(row!).every((item) => !/Advanced ICU/i.test(item.label)));
+  assert.ok(
+    infrastructure(row!).every(
+      (item) => !/Radiation bunker|Robotic theatre|Dialysis floor|Hybrid/i.test(item.title),
+    ),
+  );
+  assert.ok(infrastructure(row!).some((item) => /Critical care capacity/i.test(item.title)));
+  assert.match(heroLede(row!), /verified affiliated faculty/i);
+  for (const hospital of catalogHospitals.filter((h) => h.slug.startsWith(SAHYADRI))) {
+    const overlay = cms.hospitalOverrides[hospital.slug];
+    assert.ok(overlay);
+    assert.match(overlay.focus || "", /تخصصات الهيئة الطبية المنتسبة/);
+    assert.equal(overlay.icu || "", "");
+  }
 });
 
 test("multi-campus doctors have structured hospitalSlugs and reciprocal faculty lists", () => {
@@ -180,6 +212,10 @@ test("Arabic overlays stay aligned with remapped procedures and multi-campus aff
   for (const hospital of catalogHospitals.filter((row) => row.slug.startsWith(SAHYADRI))) {
     const overlay = cms.hospitalOverrides[hospital.slug];
     assert.ok(overlay?.focus);
-    assert.doesNotMatch(overlay.focus || "", /علاج الأورام بالإشعاع · جراحة الأورام · علاج الأورام الطبي · أمراض الدم · جراحة القلب/);
+    assert.match(overlay.focus || "", /تخصصات الهيئة الطبية المنتسبة/);
+    assert.doesNotMatch(
+      overlay.focus || "",
+      /علاج الأورام بالإشعاع · جراحة الأورام · علاج الأورام الطبي · أمراض الدم · جراحة القلب/,
+    );
   }
 });

@@ -152,7 +152,8 @@ function isFertilityCampus(slug: string) {
   );
 }
 
-function isSahyadriCampus(slug: string) {
+/** Independent Sahyadri Pune campuses — faculty-scoped specialties/procedures only. */
+export function isSahyadriCampus(slug: string) {
   return slug.startsWith("sahyadri-super-speciality-hospital-");
 }
 
@@ -178,13 +179,16 @@ function facultyDerivedSpecialties(faculty: CatalogSeed["doctors"]) {
       getSpecialty(b[0])?.slug || b[0],
     ))
     .map(([name]) => name);
-  const primary = names[0] ? getSpecialty(names[0]) : undefined;
+  // Faculty-majority is an internal ranking aid only — never published as an
+  // official Sahyadri "primary" / flagship specialty (none is campus-published).
   return {
     names,
     slugs: names.map((name) => getSpecialty(name)!.slug),
-    primaryName: primary?.name || "",
-    primarySlug: primary?.slug || "",
-    focus: names.length ? names.join(" · ") : "Campus faculty specialties pending verification",
+    primaryName: "",
+    primarySlug: "",
+    focus: names.length
+      ? `Affiliated faculty specialties: ${names.join(" · ")}`
+      : "Affiliated faculty specialties pending verification",
   };
 }
 
@@ -385,7 +389,9 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
       : fertilityCampus
         ? "Embryology laboratory"
         : sahyadriCampus
-          ? "Multispecialty ICU as published by the campus"
+          ? // No campus-specific ICU publication verified for Nagar Road, Hadapsar
+            // or Deccan Gymkhana; leave unspecified rather than inventing capacity.
+            ""
           : "Oncology ICU",
     bio: seed.bio,
     summary: seed.bio,

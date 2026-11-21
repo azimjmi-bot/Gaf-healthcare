@@ -11,7 +11,7 @@ const cmsPath = process.env.CATALOG_CMS_PATH ?? join(root, "content/ar/catalog-c
 const cms = JSON.parse(readFileSync(cmsPath, "utf8"));
 
 /** Faculty-derived focus is filled by remediation; keep a short campus-neutral placeholder here. */
-const FOCUS_PLACEHOLDER = "تخصصات معتمدة من أطباء الحرم الموثقين فقط";
+const FOCUS_PLACEHOLDER = "تخصصات الهيئة الطبية المنتسبة: قيد المزامنة من الأطباء الموثّقين";
 
 const HOOKS = {
   "sahyadri-super-speciality-hospital-nagar-road": {
@@ -44,7 +44,8 @@ for (const hospital of hospitals) {
     summary: `${name} في بونه. حرم ساهيادري مستقل ضمن شبكة مانيبال، مع أطباء مرتبطين وفق التخصصات الموجودة أصلًا في دليل GAF Healthcare.`,
     languages: "الإنجليزية، الهندية، الماراثية",
     focus: FOCUS_PLACEHOLDER,
-    icu: "عناية مركزة متعددة التخصصات وفق ما ينشره المستشفى للحرم",
+    // ICU left empty: no campus-specific Sahyadri ICU publication verified.
+    icu: "",
     imageAlt: `${name}، بونه، الهند — دليل مستشفيات GAF Healthcare`,
   };
 }

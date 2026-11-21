@@ -67,3 +67,11 @@
 - 9 doctors have no procedure tags because official profiles lack specific procedure evidence.
 - Primary specialty is faculty-majority, not a Sahyadri-published campus “flagship” specialty (none published per campus).
 - 12 doctors still carry placeholder experience text when Sahyadri experience was empty (pre-existing warning, unchanged).
+
+## Follow-up verification (three points)
+
+See `docs/sahyadri-pune-verification-points.md`.
+
+- Faculty vs services: public copy/SEO/JSON-LD label faculty-linked relationships; inventing campus service catalogues avoided.
+- Primary specialty: `specialty`/`specialtySlug` left empty (faculty-majority not published as official primary).
+- ICU: unsupported Multispecialty ICU claim removed; `icu=""` for all three campuses.
