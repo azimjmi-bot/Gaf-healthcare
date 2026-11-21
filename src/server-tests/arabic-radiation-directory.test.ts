@@ -499,3 +499,32 @@ test("counted doctor phrases stay grammatical", () => {
   assert.equal(countedNoun(5, "publishedDoctor"), "5 أطباء منشورين");
   assert.match(countedNoun(70, "publishedDoctor"), /^70 /);
 });
+
+test("Arabic India doctor directory keeps zero-inventory Pune in city chips and dropdown", () => {
+  const data = buildArabicDoctorDirectory({ destination: "India" });
+  assert.ok(data);
+  assert.deepEqual(
+    data.cityChips.map((chip) => chip.name),
+    INDIA_CITIES,
+  );
+  const puneChip = data.cityChips.find((chip) => chip.name === "Pune");
+  assert.ok(puneChip);
+  assert.equal(puneChip.label, "بونه");
+  assert.equal(puneChip.count, 0);
+
+  const punePage = buildArabicDoctorDirectory({ destination: "India", city: "Pune" });
+  assert.ok(punePage);
+  assert.equal(punePage.paging.total, 0);
+  assert.equal(punePage.meta.state, "noindex");
+  assert.match(punePage.emptyCopy, /./);
+
+  const indiaHtml = renderArabicDoctorDirectoryHtml({ destination: "India" });
+  assert.ok(indiaHtml);
+  assert.match(indiaHtml, /بونه \(0\)/);
+  assert.match(indiaHtml, /name="city"[\s\S]*?<option[^>]*value="Pune"/);
+
+  const puneHtml = renderArabicDoctorDirectoryHtml({ destination: "India", city: "Pune" });
+  assert.ok(puneHtml);
+  assert.match(puneHtml, /name="robots" content="noindex, follow"/);
+  assert.match(puneHtml, /بونه \(0\)/);
+});

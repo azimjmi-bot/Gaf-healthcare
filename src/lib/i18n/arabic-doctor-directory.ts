@@ -108,14 +108,15 @@ export function buildArabicDoctorDirectory(
 
   const countryQuery = { ...query, city: undefined };
   const countryRows = filterDoctors(countryQuery, rows);
-  const cityChips = citiesForDestination(query.destination)
-    .map((city) => ({
-      name: city,
-      label: taxonomyLabel(city, "ar"),
-      href: prettyCatalogPath("/doctors", { ...query, city }),
-      count: countryRows.filter((doctor) => doctor.city === city).length,
-    }))
-    .filter((chip) => chip.count > 0);
+  // Keep every supported destination city in the quick-filter rail, including
+  // zero-inventory cities (e.g. Pune). Sitemap / facet candidacy still use
+  // indiaCitiesWithInventory() so empty hubs stay non-indexable.
+  const cityChips = citiesForDestination(query.destination).map((city) => ({
+    name: city,
+    label: taxonomyLabel(city, "ar"),
+    href: prettyCatalogPath("/doctors", { ...query, city }),
+    count: countryRows.filter((doctor) => doctor.city === city).length,
+  }));
 
   return {
     query,
