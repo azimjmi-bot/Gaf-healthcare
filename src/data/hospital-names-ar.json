@@ -166,5 +166,17 @@
   "nova-ivf-fertility-center-gurugram": {
     "en": "Nova IVF Fertility Center Gurugram",
     "ar": "مركز نوفا لأطفال الأنابيب، غورغرام"
+  },
+  "sahyadri-super-speciality-hospital-nagar-road": {
+    "en": "Sahyadri Super Speciality Hospital, Nagar Road",
+    "ar": "مستشفى ساهيادري للتخصصات الفائقة، ناغار رود"
+  },
+  "sahyadri-super-speciality-hospital-hadapsar": {
+    "en": "Sahyadri Super Speciality Hospital, Hadapsar",
+    "ar": "مستشفى ساهيادري للتخصصات الفائقة، هادابسار"
+  },
+  "sahyadri-super-speciality-hospital-deccan-gymkhana": {
+    "en": "Sahyadri Super Speciality Hospital, Deccan Gymkhana",
+    "ar": "مستشفى ساهيادري للتخصصات الفائقة، ديكان جيمخانا"
   }
 }

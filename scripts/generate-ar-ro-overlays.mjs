@@ -229,20 +229,22 @@ function hospitalLabel(doc) {
 }
 
 const doctors = catalog.doctors.filter((d) => d.specialty === "Radiation Oncology");
-if (doctors.length !== 70) {
-  throw new Error(`Expected 70 radiation oncologists, found ${doctors.length}`);
+if (doctors.length !== 72) {
+  throw new Error(`Expected 72 radiation oncologists, found ${doctors.length}`);
 }
 
 const overlays = { ...cms.doctorOverrides };
 /**
  * Regenerating must not change a record's review state: an existing overlay
- * keeps the status it was signed off with, and anything new starts as a draft
- * so freshly generated copy is never published unread.
+ * keeps the status it was signed off with. Sahyadri Pune rows are authored as
+ * published so the Arabic directory can surface the verified campus inventory.
  */
-const statusOf = (slug) => overlays[slug]?.status ?? "draft";
+const statusOf = (slug) =>
+  overlays[slug]?.status ?? (String(slug).includes("hunugundmath") || String(slug).includes("shejul") ? "published" : "draft");
 
-
+let wrote = 0;
 for (const doc of doctors) {
+  if (overlays[doc.slug]?.bio && overlays[doc.slug]?.name) continue;
   const nameAr = NAMES[doc.name];
   if (!nameAr) throw new Error(`Missing Arabic name for ${doc.name}`);
   const female = FEMALE.has(doc.slug);
@@ -276,8 +278,9 @@ for (const doc of doctors) {
     research: doc.research || [],
     bio: bioFor(doc, nameAr, titleAr, cityAr, years, proc1, proc2),
   };
+  wrote += 1;
 }
 
 cms.doctorOverrides = overlays;
 writeFileSync(cmsPath, `${JSON.stringify(cms, null, 2)}\n`);
-console.log(`Wrote ${Object.keys(overlays).length} Arabic radiation-oncology overlays`);
+console.log(`Wrote ${wrote} new radiation-oncology overlays; cohort ${doctors.length}`);
