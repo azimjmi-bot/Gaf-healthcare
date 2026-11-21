@@ -46,6 +46,45 @@ function segmentsFor(path: string) {
 }
 
 /**
+ * True when a catalogue query names a supported destination city that currently
+ * has zero matching rows. Those URLs stay selectable in directory filters and
+ * render an empty state, but must not be indexable until genuine inventory
+ * exists — in every locale, including English.
+ */
+export function isEmptySupportedCityFacet(query: CatalogQuery | undefined, matchCount: number) {
+  if (matchCount > 0 || !query?.city || !query.destination) return false;
+  return citiesForDestination(query.destination).includes(query.city);
+}
+
+function catalogFacetMatchCount(
+  root: string,
+  query: CatalogQuery,
+  locale: AppLocale,
+): number | undefined {
+  if (root === "doctors") return filterDoctors(query, doctorsForLocale(locale)).length;
+  if (root === "hospitals") return filterHospitals(query, hospitalsForLocale(locale)).length;
+  if (root === "costs") return filterTreatments(query, treatmentsForLocale(locale)).length;
+  return undefined;
+}
+
+/**
+ * Empty supported-city catalogue facets for the source locale. Returns
+ * `noindex` when the facet is an empty supported city filter, otherwise
+ * `undefined` so the historical English "everything publishes" rule applies.
+ */
+function sourceLocaleEmptyCityFacetState(segments: string[]): LocalePageState | undefined {
+  const root = segments[0];
+  if (root !== "doctors" && root !== "hospitals" && root !== "costs") return undefined;
+  if (root === "doctors" && segments[1] === "compare") return undefined;
+  if (segments.length < 2) return undefined;
+  const query = parsePrettyCatalogSegments(segments.slice(1));
+  if (!query) return undefined;
+  const matches = catalogFacetMatchCount(root, query, SOURCE_LOCALE);
+  if (matches === undefined) return undefined;
+  return isEmptySupportedCityFacet(query, matches) ? "noindex" : undefined;
+}
+
+/**
  * Thin or unapproved facets render as noindex. Empty facets 404, except for
  * supported destination-city filters: zero-inventory catalogue cities (e.g.
  * Pune) must stay selectable in directory UI and render an empty state without
@@ -57,13 +96,7 @@ function facetState(
   query?: CatalogQuery,
 ): LocalePageState {
   if (matchCount === 0) {
-    if (
-      query?.city &&
-      query.destination &&
-      citiesForDestination(query.destination).includes(query.city)
-    ) {
-      return "noindex";
-    }
+    if (isEmptySupportedCityFacet(query, matchCount)) return "noindex";
     return "missing";
   }
   return published ? "published" : "noindex";
@@ -165,7 +198,14 @@ export function localePageState(locale: AppLocale, path: string): LocalePageStat
       : "missing";
   }
 
-  if (locale === SOURCE_LOCALE) return "published";
+  if (locale === SOURCE_LOCALE) {
+    // English historically publishes every renderable path. Empty supported
+    // city facets are the exception: keep them crawlable for filter UX, but
+    // noindex until inventory exists so chip links do not create thin indexed
+    // landing pages. Populated city facets (including a future populated
+    // Pune) continue to publish.
+    return sourceLocaleEmptyCityFacetState(segments) ?? "published";
+  }
 
   const state = targetLocaleState(locale, segments);
   // An unlive locale can still render what it has, but nothing it serves is
