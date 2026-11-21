@@ -1,0 +1,234 @@
+{
+  "source_pages": [
+    "https://sahyadrihospital.com/doctor/pune/",
+    "https://sahyadrihospital.com/contact-us/",
+    "https://sahyadrihospital.com/api/doctorsListfrontend?city=Pune",
+    "https://sahyadrihospital.com/api/get-area"
+  ],
+  "hospitals": [
+    {
+      "campus": "Nagar Road",
+      "slug": "sahyadri-super-speciality-hospital-nagar-road",
+      "name": "Sahyadri Super Speciality Hospital, Nagar Road",
+      "address": "Near Hermes Heritage, Nagar Rd, Shastrinagar, Yerawada, Pune - 411006",
+      "source_url": "https://sahyadrihospital.com/contact-us/",
+      "network": "Sahyadri Hospitals / Manipal Hospitals"
+    },
+    {
+      "campus": "Hadapsar",
+      "slug": "sahyadri-super-speciality-hospital-hadapsar",
+      "name": "Sahyadri Super Speciality Hospital, Hadapsar",
+      "address": "S. No. 163, Bhosale Garden Rd, Bhosale Nagar, Hadapsar, Pune - 411028",
+      "source_url": "https://sahyadrihospital.com/contact-us/",
+      "network": "Sahyadri Hospitals / Manipal Hospitals"
+    },
+    {
+      "campus": "Deccan Gymkhana",
+      "slug": "sahyadri-super-speciality-hospital-deccan-gymkhana",
+      "name": "Sahyadri Super Speciality Hospital, Deccan Gymkhana",
+      "address": "Plot No. 30-C, Erandvane, Karve Rd, Deccan Gymkhana, Pune - 411004",
+      "source_url": "https://sahyadrihospital.com/contact-us/",
+      "network": "Sahyadri Hospitals / Manipal Hospitals"
+    }
+  ],
+  "discovered": 191,
+  "eligible": 110,
+  "excluded": 81,
+  "eligible_by_specialty": {
+    "Orthopedics": 16,
+    "Surgical Gastroenterology": 7,
+    "Urology": 7,
+    "Surgical Oncology": 4,
+    "Cardiac Surgery": 4,
+    "ENT": 7,
+    "Ophthalmology": 8,
+    "Hematology": 3,
+    "Neurology": 13,
+    "Nephrology": 6,
+    "Pulmonology": 3,
+    "Cardiology": 7,
+    "Neurosurgery": 6,
+    "Gastroenterology": 7,
+    "Medical Oncology": 5,
+    "Spine Surgery": 2,
+    "Radiation Oncology": 2,
+    "Gynecology": 3
+  },
+  "excluded_reasons": {
+    "specialty_not_in_gaf_taxonomy": 73,
+    "empty_department": 8
+  },
+  "primary_campus_counts": {
+    "Deccan Gymkhana": 59,
+    "Nagar Road": 26,
+    "Hadapsar": 25
+  },
+  "slug_collisions_renamed": [
+    {
+      "name": "Dr. Tushar Patil",
+      "slug": "dr-tushar-patil",
+      "source_url": "https://sahyadrihospital.com/doctor/dr-tushar-patil/",
+      "sahyadri_department": "Medical Oncology",
+      "alt_department": "Medical oncologist",
+      "gaf_specialty": "Medical Oncology",
+      "campuses": "Deccan Gymkhana; Hadapsar; Nagar Road",
+      "primary_campus": "Deccan Gymkhana",
+      "eligible": "YES",
+      "reason": "",
+      "experience": "15",
+      "designation": "Lead Consultant and HOD, Medical Oncology",
+      "education": "MBBS, MD (Medicine), DM (Medical Oncology)",
+      "gaf_slug": "dr-tushar-patil-sahyadri-pune",
+      "hospital_slug": "sahyadri-super-speciality-hospital-deccan-gymkhana"
+    },
+    {
+      "name": "Dr. Harsha Jain",
+      "slug": "dr-harsha-jain",
+      "source_url": "https://sahyadrihospital.com/doctor/dr-harsha-jain/",
+      "sahyadri_department": "Pulmonology",
+      "alt_department": "",
+      "gaf_specialty": "Pulmonology",
+      "campuses": "Deccan Gymkhana",
+      "primary_campus": "Deccan Gymkhana",
+      "eligible": "YES",
+      "reason": "",
+      "experience": "15",
+      "designation": "Consultant",
+      "education": "MD (Pulmonary Medicine), DM (Pulmonary, Critical Care & Sleep Medicine)",
+      "gaf_slug": "dr-harsha-jain-sahyadri-pune",
+      "hospital_slug": "sahyadri-super-speciality-hospital-deccan-gymkhana"
+    }
+  ],
+  "gaf_hospitals": [
+    {
+      "slug": "sahyadri-super-speciality-hospital-nagar-road",
+      "name": "Sahyadri Super Speciality Hospital, Nagar Road",
+      "city": "Pune",
+      "profile_path": "/hospitals/sahyadri-super-speciality-hospital-nagar-road",
+      "accreditation": "NABH",
+      "address_in_summary": "Independent Sahyadri Super Speciality Hospital campus in Nagar Road, Pune. Address: Near Hermes Heritage, Nagar Rd, Shastrinagar, Yerawada, Pune - 411006. Network: Sahyadri Hospitals / Manipal Hospitals."
+    },
+    {
+      "slug": "sahyadri-super-speciality-hospital-hadapsar",
+      "name": "Sahyadri Super Speciality Hospital, Hadapsar",
+      "city": "Pune",
+      "profile_path": "/hospitals/sahyadri-super-speciality-hospital-hadapsar",
+      "accreditation": "NABH",
+      "address_in_summary": "Independent Sahyadri Super Speciality Hospital campus in Hadapsar, Pune. Address: S. No. 163, Bhosale Garden Rd, Bhosale Nagar, Hadapsar, Pune - 411028. Network: Sahyadri Hospitals / Manipal Hospitals."
+    },
+    {
+      "slug": "sahyadri-super-speciality-hospital-deccan-gymkhana",
+      "name": "Sahyadri Super Speciality Hospital, Deccan Gymkhana",
+      "city": "Pune",
+      "profile_path": "/hospitals/sahyadri-super-speciality-hospital-deccan-gymkhana",
+      "accreditation": "NABH",
+      "address_in_summary": "Independent Sahyadri Super Speciality Hospital campus in Deccan Gymkhana, Pune. Address: Plot No. 30-C, Erandvane, Karve Rd, Deccan Gymkhana, Pune - 411004. Network: Sahyadri Hospitals / Manipal Hospitals."
+    }
+  ],
+  "doctor_hospital_relationships": {
+    "sahyadri-super-speciality-hospital-deccan-gymkhana": 59,
+    "sahyadri-super-speciality-hospital-nagar-road": 26,
+    "sahyadri-super-speciality-hospital-hadapsar": 25
+  },
+  "doctor_specialty_relationships": {
+    "Orthopedics": 16,
+    "Surgical Gastroenterology": 7,
+    "Urology": 7,
+    "Surgical Oncology": 4,
+    "Cardiac Surgery": 4,
+    "ENT": 7,
+    "Ophthalmology": 8,
+    "Hematology": 3,
+    "Neurology": 13,
+    "Nephrology": 6,
+    "Pulmonology": 3,
+    "Cardiology": 7,
+    "Neurosurgery": 6,
+    "Gastroenterology": 7,
+    "Medical Oncology": 5,
+    "Spine Surgery": 2,
+    "Radiation Oncology": 2,
+    "Gynecology": 3
+  },
+  "duplicate_detection": {
+    "slug_collisions_renamed": [
+      {
+        "name": "Dr. Tushar Patil",
+        "slug": "dr-tushar-patil",
+        "source_url": "https://sahyadrihospital.com/doctor/dr-tushar-patil/",
+        "sahyadri_department": "Medical Oncology",
+        "alt_department": "Medical oncologist",
+        "gaf_specialty": "Medical Oncology",
+        "campuses": "Deccan Gymkhana; Hadapsar; Nagar Road",
+        "primary_campus": "Deccan Gymkhana",
+        "eligible": "YES",
+        "reason": "",
+        "experience": "15",
+        "designation": "Lead Consultant and HOD, Medical Oncology",
+        "education": "MBBS, MD (Medicine), DM (Medical Oncology)",
+        "gaf_slug": "dr-tushar-patil-sahyadri-pune",
+        "hospital_slug": "sahyadri-super-speciality-hospital-deccan-gymkhana"
+      },
+      {
+        "name": "Dr. Harsha Jain",
+        "slug": "dr-harsha-jain",
+        "source_url": "https://sahyadrihospital.com/doctor/dr-harsha-jain/",
+        "sahyadri_department": "Pulmonology",
+        "alt_department": "",
+        "gaf_specialty": "Pulmonology",
+        "campuses": "Deccan Gymkhana",
+        "primary_campus": "Deccan Gymkhana",
+        "eligible": "YES",
+        "reason": "",
+        "experience": "15",
+        "designation": "Consultant",
+        "education": "MD (Pulmonary Medicine), DM (Pulmonary, Critical Care & Sleep Medicine)",
+        "gaf_slug": "dr-harsha-jain-sahyadri-pune",
+        "hospital_slug": "sahyadri-super-speciality-hospital-deccan-gymkhana"
+      }
+    ],
+    "existing_sahyadri_hospitals_before_import": 0,
+    "existing_pune_doctors_before_import": 0,
+    "note": "Dr Tushar Patil and Dr Harsha Jain collided with unrelated Delhi NCR profiles; Sahyadri rows use -sahyadri-pune slug suffix where needed."
+  },
+  "procedure_mapping_policy": "Doctors receive specialty-default GAF procedure tags already present in taxonomy; mapDoctorProcedures refines at build time from designation/expertise text. No new procedure taxonomy entries were created.",
+  "arabic": {
+    "doctor_overlays": 110,
+    "hospital_overlays": 3,
+    "status": "published"
+  },
+  "pseo": "Existing country/city/specialty/procedure routes reused; Pune doctor and hospital facets now publish from genuine inventory. No thin combinatorial pages added beyond existing publication rules.",
+  "remediation": {
+    "status": "READY FOR FRESH REVIEW",
+    "blockers_addressed": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "summary": {
+      "eligible_doctors": 110,
+      "procedure_mapping": {
+        "verified": 101,
+        "partially_verified": 0,
+        "no_specific_procedure_evidence": 9,
+        "with_at_least_one_procedure": 101
+      },
+      "images": {
+        "verified_image": 106,
+        "approved_fallback_or_unavailable": 4
+      },
+      "multi_campus_doctors": 23,
+      "hospitals": 3
+    },
+    "audits": [
+      "docs/sahyadri-pune-doctor-procedure-audit.csv",
+      "docs/sahyadri-pune-hospital-campus-audit.csv",
+      "docs/sahyadri-pune-campus-evidence-matrix.json",
+      "docs/sahyadri-pune-multicampus-audit.csv",
+      "docs/sahyadri-pune-image-audit.csv",
+      "docs/sahyadri-pune-remediation-report.md"
+    ]
+  }
+}

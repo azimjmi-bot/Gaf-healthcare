@@ -11,7 +11,7 @@ import { catalogDoctors, type Doctor } from "../src/lib/doctors";
 import { HOSPITAL_NAMES_AR } from "../src/lib/i18n/hospital-names-ar";
 import { collapseRepeatedPlaces, withCampus } from "../src/lib/i18n/place-labels";
 import { TAXONOMY_AR } from "../src/lib/i18n/taxonomy-ar";
-import type { CatalogCms, DoctorPatch } from "../src/lib/cms/catalog-types";
+import { translationStatus, type CatalogCms, type DoctorPatch } from "../src/lib/cms/catalog-types";
 
 const root = join(import.meta.dirname, "..");
 const cmsPath = process.env.CATALOG_CMS_PATH ?? join(root, "content/ar/catalog-cms.json");
@@ -24,32 +24,32 @@ const SPECIALTIES = {
     patient: "المرضى الباحثين عن جراحة تجميلية ترميمية أو اختيارية",
   },
   ENT: {
-    count: 103,
+    count: 110,
     label: "أنف وأذن وحنجرة",
     patient: "مرضى الأنف والأذن والحنجرة",
   },
   Gastroenterology: {
-    count: 153,
+    count: 160,
     label: "أمراض الجهاز الهضمي",
     patient: "مرضى الجهاز الهضمي والكبد",
   },
   "Surgical Gastroenterology": {
-    count: 107,
+    count: 114,
     label: "جراحة الجهاز الهضمي",
     patient: "مرضى جراحة الجهاز الهضمي والكبد والبنكرياس",
   },
   Urology: {
-    count: 137,
+    count: 144,
     label: "المسالك البولية",
     patient: "مرضى المسالك البولية والكلى والجهاز التناسلي الذكري",
   },
   "Spine Surgery": {
-    count: 63,
+    count: 65,
     label: "جراحة العمود الفقري",
     patient: "مرضى العمود الفقري والنخاع الشوكي",
   },
   Pulmonology: {
-    count: 112,
+    count: 115,
     label: "أمراض الرئة",
     patient: "مرضى الرئة والجهاز التنفسي",
   },
@@ -59,27 +59,27 @@ const SPECIALTIES = {
     patient: "الأطفال المصابين بتشوهات أو إصابات عظمية وأسرهم",
   },
   Orthopedics: {
-    count: 208,
+    count: 224,
     label: "جراحة العظام",
     patient: "مرضى المفاصل والعظام والإصابات",
   },
   Ophthalmology: {
-    count: 102,
+    count: 110,
     label: "طب العيون",
     patient: "مرضى العيون والبصر",
   },
   Gynecology: {
-    count: 187,
+    count: 190,
     label: "أمراض النساء",
     patient: "النساء الباحثات عن رعاية نسائية وجراحية",
   },
   Neurology: {
-    count: 111,
+    count: 124,
     label: "طب الأعصاب",
     patient: "مرضى الجهاز العصبي والسكتة والصرع",
   },
   Nephrology: {
-    count: 107,
+    count: 113,
     label: "أمراض الكلى",
     patient: "مرضى الكلى والغسيل الكلوي والزراعة",
   },
@@ -93,11 +93,13 @@ const CITY_AR: Record<string, string> = {
   Bengaluru: "بنغالور",
   Chennai: "تشيناي",
   Hyderabad: "حيدر آباد",
+  Pune: "بونه",
 };
 
 const LANGUAGES_AR: Record<string, string> = {
   "Delhi NCR": "الإنجليزية، الهندية",
   Mumbai: "الإنجليزية، الهندية، الماراثية",
+  Pune: "الإنجليزية، الهندية، الماراثية",
   Bengaluru: "الإنجليزية، الكانادية، الهندية",
   Chennai: "الإنجليزية، التاميلية، الهندية",
   Hyderabad: "الإنجليزية، التيلوغو، الهندية",
@@ -351,7 +353,13 @@ for (const [specialty, config] of Object.entries(SPECIALTIES)) {
 }
 
 const overlays: Record<string, DoctorPatch> = { ...cms.doctorOverrides };
+let wrote = 0;
 for (const doctor of targetDoctors) {
+  const existing = overlays[doctor.slug];
+  // Preserve previously published overlays; only author missing Sahyadri (and any other) rows.
+  if (existing && translationStatus(existing) === "published" && existing.bio && existing.name) {
+    continue;
+  }
   const specialty = doctor.specialty as Specialty;
   const city = CITY_AR[doctor.city];
   const hospital = HOSPITAL_NAMES_AR[doctor.hospitalSlug];
@@ -389,10 +397,11 @@ for (const doctor of targetDoctors) {
       : [],
     bio: arabicBio(doctor, specialty, name, title, hospital, city, procedures),
   };
+  wrote += 1;
 }
 
 cms.doctorOverrides = overlays;
 writeFileSync(cmsPath, `${JSON.stringify(cms, null, 2)}\n`);
 console.log(
-  `Wrote ${targetDoctors.length} Arabic remaining-specialty overlays; total doctors ${Object.keys(overlays).length}`,
+  `Wrote ${wrote} new remaining-specialty overlays; cohort ${targetDoctors.length}; total doctors ${Object.keys(overlays).length}`,
 );

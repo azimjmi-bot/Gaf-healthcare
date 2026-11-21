@@ -1,0 +1,114 @@
+entity,name,slug,source_image,status,local_path
+doctor,Dr. Advait Kothurkar,dr-advait-kothurkar,uploads/doctors/1718789254951-Dr.-Advait-Kothurkar.jpg,verified_image,/doctors/sahyadri/dr-advait-kothurkar.jpg
+doctor,Dr. Hemant K Chaudhary,dr-hemant-k-chaudhary,uploads/doctors/1731993832469-Dr Hemant choudhary.jpg,verified_image,/doctors/sahyadri/dr-hemant-k-chaudhary.jpg
+doctor,Dr. Manoj Durairaj,dr-manoj-durairaj,uploads/doctors/1718357691312-Dr.-Manoj-Durairaj-Cardio-Thoracic-Surgeon-Heart-Transplant-Surgeon.jpg,verified_image,/doctors/sahyadri/dr-manoj-durairaj.jpg
+doctor,Dr. Nitin Pathak,dr-nitin-pathak,uploads/doctors/1718792788716-Dr.-Nitin-Pathak.jpg,verified_image,/doctors/sahyadri/dr-nitin-pathak.jpg
+doctor,Dr. Abhijeet Palshikar,dr-abhijeet-palshikar,uploads/doctors/1771418243526-Dr Palshikar.jpg,verified_image,/doctors/sahyadri/dr-abhijeet-palshikar.jpg
+doctor,Dr. Jagjeet Deshmukh,dr-jagjeet-deshmukh,uploads/doctors/1718789415151-Dr.-Jagjeet-Deshmukh-2.jpeg,verified_image,/doctors/sahyadri/dr-jagjeet-deshmukh.jpg
+doctor,Dr. Kedar Kulkarni,dr-kedar-kulkarni,uploads/doctors/1718780701257-Dr.-Kedar-Kulkarni.jpg,verified_image,/doctors/sahyadri/dr-kedar-kulkarni.jpg
+doctor,Dr. Manoj Bhise,dr-manoj-bhise,uploads/doctors/1718781575306-Dr.-Manoj-Bhise.jpg,verified_image,/doctors/sahyadri/dr-manoj-bhise.jpg
+doctor,Dr. Milind Gadkari,dr-milind-gadkari,uploads/doctors/1718780563493-Dr.-Milind-Gadkari.jpg,verified_image,/doctors/sahyadri/dr-milind-gadkari.jpg
+doctor,Dr. Priya Palimkar,dr-priya-palimkar,uploads/doctors/1759903129054-1750916684044-2BFBBDFC-4926-47DE-8691-D75081D67290_1_201_a_11zon (1).jpeg,verified_image,/doctors/sahyadri/dr-priya-palimkar.jpg
+doctor,Dr. Sunil Sathe,dr-sunil-sathe,uploads/doctors/1718781481951-Dr.-Sunil-Sathe.jpg,verified_image,/doctors/sahyadri/dr-sunil-sathe.jpg
+doctor,Dr. Jayjeet Lokhande,dr-jayjeet-lokhande,uploads/doctors/1730122191336-Dr Jayjeet Photo.jpg,verified_image,/doctors/sahyadri/dr-jayjeet-lokhande.jpg
+doctor,Dr. Parmanand Chawan,dr-parmanand-chawan,uploads/doctors/1776685103161-parmanand.png,verified_image,/doctors/sahyadri/dr-parmanand-chawan.png
+doctor,Dr. Pravin Bhosale,dr-pravin-bhosale,uploads/doctors/1718775821074-Dr.-Pravin-Bhosale.jpeg,verified_image,/doctors/sahyadri/dr-pravin-bhosale.jpg
+doctor,Dr. Rahul Magar,dr-rahul-magar,uploads/doctors/1718775604682-Dr.-Rahul-Magar.jpeg,verified_image,/doctors/sahyadri/dr-rahul-magar.jpg
+doctor,Dr. Robert Lobo,dr-robert-lobo,uploads/doctors/1718953853253-Dr.-Robert-Lobo.jfif_.jpg,verified_image,/doctors/sahyadri/dr-robert-lobo.jpg
+doctor,Dr. Sumit Bhatti,dr-sumit-bhatti,uploads/doctors/1718953924732-Dr.-Sumit-Bhatti.jfif_.jpg,verified_image,/doctors/sahyadri/dr-sumit-bhatti.jpg
+doctor,Dr. Swanand Gholap,dr-swanand-gholap,uploads/doctors/1718773465621-Dr.-Swanand-Gholap.jpeg,verified_image,/doctors/sahyadri/dr-swanand-gholap.jpg
+doctor,Dr. Kiran Shinde,dr-kiran-shinde,uploads/doctors/1718777117899-Dr.-Kiran-Shinde.jpeg,verified_image,/doctors/sahyadri/dr-kiran-shinde.jpg
+doctor,Dr. Ksheetij Kothari,dr-ksheetij-kothari,uploads/doctors/1739537187011-Kshitij Kothari - fin.webp,verified_image,/doctors/sahyadri/dr-ksheetij-kothari.webp
+doctor,Dr. Radhika Chavan,dr-radhika-chavan,uploads/doctors/1782816519720-radhika chanvan.jpg.png,verified_image,/doctors/sahyadri/dr-radhika-chavan.png
+doctor,Dr. Sheetal Mahajani,dr-sheetal-mahajani,uploads/doctors/1759904584383-1750917207153-9560B729-0983-4587-A8F7-52B5BAA16741_1_201_a_11zon (1).jpeg,verified_image,/doctors/sahyadri/dr-sheetal-mahajani.jpg
+doctor,Dr. Suhas Wagle,dr-suhas-wagle,uploads/doctors/1718776527975-Dr.-Suhas-Wagle.jpg,verified_image,/doctors/sahyadri/dr-suhas-wagle.jpg
+doctor,Dr. Vikram Uttam Patil,dr-vikram-uttam-patil,uploads/doctors/1727115427159-WhatsApp Image 2024-09-23 at 11.29.46 PM.jpeg,verified_image,/doctors/sahyadri/dr-vikram-uttam-patil.jpg
+doctor,Dr. Yash Surendrakumar Mankoskar,dr-yash-surendrakumar-mankoskar,,source_unavailable,
+doctor,Dr. Charuchandra Joshi,dr-charuchandra-joshi,uploads/doctors/1718798511826-dr-charuchandra-joshi.jpg,verified_image,/doctors/sahyadri/dr-charuchandra-joshi.jpg
+doctor,Dr. Charusheela Sabane,dr-charusheela-sabane,uploads/doctors/1718796575141-Dr.-Charusheela-Sabne.jpeg,verified_image,/doctors/sahyadri/dr-charusheela-sabane.jpg
+doctor,Dr. Gauri Barve,dr-gauri-barve,uploads/doctors/1718798422229-Dr.-Gauri-Barve.jpeg,verified_image,/doctors/sahyadri/dr-gauri-barve.jpg
+doctor,Dr. Chandrakant Lahane,dr-chandrakant-lahane,uploads/doctors/1766041078244-lahane.webp,verified_image,/doctors/sahyadri/dr-chandrakant-lahane.webp
+doctor,Dr. Kannan Subramanian,dr-kannan-subramanian,uploads/doctors/1718790785677-Dr.-Kannan-Sir-1.jpeg,verified_image,/doctors/sahyadri/dr-kannan-subramanian.jpg
+doctor,Dr. Shashikant Apte,dr-shashikant-apte,uploads/doctors/1777010194329-Dr Sashikant Apte-2.jpg,verified_image,/doctors/sahyadri/dr-shashikant-apte.jpg
+doctor,Dr. Amit Bhatt,dr-amit-bhatt,uploads/doctors/1776684808360-amitbhatt.jpg,source_unavailable,
+doctor,Dr. Asma Pathan,dr-asma-sadique-pathan,uploads/doctors/1786084631933-1786018220325-IMG_9846.JPG (1).webp,verified_image,/doctors/sahyadri/dr-asma-sadique-pathan.webp
+doctor,Dr. Rahul Pathade,dr-rahul-bhausaheb-pathade,uploads/doctors/1785415782243-Dr. rahul - Medical Oncology-cropped.webp,verified_image,/doctors/sahyadri/dr-rahul-bhausaheb-pathade.webp
+doctor,Dr. Tushar Patil,dr-tushar-patil-sahyadri-pune,uploads/doctors/1759905373053-1747907544113-Dr. Patil_11zon.jpg,verified_image,/doctors/sahyadri/dr-tushar-patil-sahyadri-pune.jpg
+doctor,Dr. sunil chillashetty,dr-sunil-chillashetty,uploads/doctors/1795173065873-Smiling Doctor in White Coat.webp,verified_image,/doctors/sahyadri/dr-sunil-chillashetty.webp
+doctor,Dr. Anil Godbole,dr-anil-godbole,uploads/doctors/1718799848701-Dr.-Anil-Godbole.jpg,verified_image,/doctors/sahyadri/dr-anil-godbole.jpg
+doctor,Dr. Atul D. Sajgure,dr-atul-d-sajgure,uploads/doctors/1718798824847-Dr-Atul-D-Sajgure-Sahyadri-Hospital.png,verified_image,/doctors/sahyadri/dr-atul-d-sajgure.png
+doctor,Dr. Bipin Vibhute,dr-bipin-vibhute,uploads/doctors/1794460155927-Dr. Bipin Vibhute.webp,verified_image,/doctors/sahyadri/dr-bipin-vibhute.webp
+doctor,Dr. Mahesh Rokade,dr-mahesh-rokade,uploads/doctors/1794890625684-Mahesh Rokde.webp,verified_image,/doctors/sahyadri/dr-mahesh-rokade.webp
+doctor,Dr. Manan Doshi,dr-manan-doshi,uploads/doctors/1718799335248-Dr-Manan-Doshi.jpeg,verified_image,/doctors/sahyadri/dr-manan-doshi.jpg
+doctor,Dr. Sachin Patil,dr-sachin-patil,uploads/doctors/1759904266018-1750916937373-8317108A-C7D9-4B34-839F-AEFAE8905D0A_1_201_a_11zon.jpeg,verified_image,/doctors/sahyadri/dr-sachin-patil.jpg
+doctor,Dr. Anup Bende,dr-anup-bende,uploads/doctors/1794890822139-Dr_Anup_Bende.webp,verified_image,/doctors/sahyadri/dr-anup-bende.webp
+doctor,Dr. Aradhana Chauhan,dr-aradhana-chauhan,uploads/doctors/1718691618941-Dr.-Aradhana-chouhan.jpeg,verified_image,/doctors/sahyadri/dr-aradhana-chauhan.jpg
+doctor,Dr. Deepa Divekar,dr-deepa-divekar,uploads/doctors/1718694456162-Dr.-Deepa-Divekar.jpeg,verified_image,/doctors/sahyadri/dr-deepa-divekar.jpg
+doctor,Dr. Hemant Sant,dr-hemant-sant,uploads/doctors/1718695476161-dr-hemant-sant.jpg,verified_image,/doctors/sahyadri/dr-hemant-sant.jpg
+doctor,Dr. Lomesh Bhirud,dr-lomesh-bhirud,uploads/doctors/1718715475198-Dr-Lomesh-Bhirud.jpeg,verified_image,/doctors/sahyadri/dr-lomesh-bhirud.jpg
+doctor,Dr. Mangesh Udar,dr-mangesh-udar,uploads/doctors/1718793030168-Dr.-Mangesh-Udar.jpeg,verified_image,/doctors/sahyadri/dr-mangesh-udar.jpg
+doctor,Dr. Manish Salunkhe,dr-manish-salunkhe,uploads/doctors/1781239551732-manish-salunkhe.webp,verified_image,/doctors/sahyadri/dr-manish-salunkhe.webp
+doctor,Dr. Nasli R Icchaporia,dr-nasli-r-icchaporia,uploads/doctors/1718690341634-Dr-Nasli-Ichaporia.jpeg,verified_image,/doctors/sahyadri/dr-nasli-r-icchaporia.jpg
+doctor,Dr. Pradeep Divate,dr-pradeep-divate,uploads/doctors/1718366980196-Dr.-Pradeep-Divate.jpeg.webp,verified_image,/doctors/sahyadri/dr-pradeep-divate.webp
+doctor,Dr. Sadique Pathan,dr-sadique-pathan,uploads/doctors/1759128345822-Dr.SadiquePathan.webp,verified_image,/doctors/sahyadri/dr-sadique-pathan.webp
+doctor,Dr. Sanjay Kisan Pawar,dr-sanjay-kisan-pawar,uploads/doctors/1718777805057-Dr-Sanjay-Kisan-Pawar.jpeg,verified_image,/doctors/sahyadri/dr-sanjay-kisan-pawar.jpg
+doctor,Dr. Suyog Doshi,dr-suyog-doshi,uploads/doctors/1718692681894-suyog-doshi.jpg,verified_image,/doctors/sahyadri/dr-suyog-doshi.jpg
+doctor,Dr. Vilas shingare,dr-vilas-shingare,uploads/doctors/1718691301534-Dr.-Vilas-Shingare.webp,verified_image,/doctors/sahyadri/dr-vilas-shingare.webp
+doctor,Dr. Jaydev Panchawagh,dr-jaydev-panchawagh,"uploads/doctors/1769069067532-Dr. Jaydev Panchawagh Best Brain, Spine, Pituitary Tumour Surgeon In Pune.jpg",verified_image,/doctors/sahyadri/dr-jaydev-panchawagh.jpg
+doctor,Dr. Muzammil Ambekar,dr-muzammil-ambekar,uploads/doctors/1789993697504-muzammil.jpeg,verified_image,/doctors/sahyadri/dr-muzammil-ambekar.jpg
+doctor,Dr. Ranjit Deshmukh,dr-ranjeet-deshmukh,uploads/doctors/1718690879537-Dr.-Ranjeet-Deshmukh.jpeg,verified_image,/doctors/sahyadri/dr-ranjeet-deshmukh.jpg
+doctor,Dr. Sachin Mahajan,dr-sachin-mahajan,uploads/doctors/1718370029325-Dr-Sachin-Mahajan.jpeg,verified_image,/doctors/sahyadri/dr-sachin-mahajan.jpg
+doctor,Dr. Siraj Basade,dr-siraj-basade,uploads/doctors/1718779534537-Dr.-Siraj-Basade.jpeg,verified_image,/doctors/sahyadri/dr-siraj-basade.jpg
+doctor,Dr. Vishal Rokade,dr-vishal-rokade,uploads/doctors/1782812795203-vishal-rokade.jpeg,verified_image,/doctors/sahyadri/dr-vishal-rokade.jpg
+doctor,Dr. Anagha Behere,dr-anagha-behere,uploads/doctors/1718878504069-Dr-Anagha-Behere.jpg,verified_image,/doctors/sahyadri/dr-anagha-behere.jpg
+doctor,Dr. Jignesh Taswala,dr-jignesh-taswala,,source_unavailable,
+doctor,Dr. Kalyani V.K.S.,dr-kalyani-vks,uploads/doctors/1718877903370-Dr.Kalyani-V-K-S.jpeg,verified_image,/doctors/sahyadri/dr-kalyani-vks.jpg
+doctor,Dr. Kuldeep Dole,dr-kuldeep-dole,uploads/doctors/1718876831104-Dr.-Kuldeep-Dole.jpg,verified_image,/doctors/sahyadri/dr-kuldeep-dole.jpg
+doctor,Dr. Nana Jare,dr-nana-jare,uploads/doctors/1718878077292-Dr-Nana-zare.jpeg,verified_image,/doctors/sahyadri/dr-nana-jare.jpg
+doctor,Dr. Pranav More,dr-pranav-more,,source_unavailable,
+doctor,Dr. Varsha Dharmadhikari,dr-varsha-dharmadhikari,uploads/doctors/1718877108678-Dr.-Varsha-Dharmadhikari.jfif_.jpg,verified_image,/doctors/sahyadri/dr-varsha-dharmadhikari.jpg
+doctor,Dr. Vishvesh Agarwal,dr-vishvesh-agarwal,uploads/doctors/1718878234066-Dr-Vishwesh-Agarwal.jpeg,verified_image,/doctors/sahyadri/dr-vishvesh-agarwal.jpg
+doctor,Dr. Abhay Kulkarni,dr-abhay-kulkarni,uploads/doctors/1766041327966-abhay.webp,verified_image,/doctors/sahyadri/dr-abhay-kulkarni.webp
+doctor,Dr. Abhijeet Wahegaonkar,dr-abhijeet-wahegaonkar,uploads/doctors/1718881974394-Dr.-Abhijeet-wahegaonokar.jpeg,verified_image,/doctors/sahyadri/dr-abhijeet-wahegaonkar.jpg
+doctor,Dr. Abhijit Agashe,dr-abhijit-agashe,uploads/doctors/1763985390194-Dr.Agashe.webp,verified_image,/doctors/sahyadri/dr-abhijit-agashe.webp
+doctor,Dr. Ambarish Mathesul,dr-ambarish-mathesul,uploads/doctors/1718777142303-Dr-Ambarish-Mathesul.jpeg,verified_image,/doctors/sahyadri/dr-ambarish-mathesul.jpg
+doctor,Dr. Amol Tapadia,dr-amol-tapadia,uploads/doctors/1718882279832-Dr.Amol-Tapadia.jpeg,verified_image,/doctors/sahyadri/dr-amol-tapadia.jpg
+doctor,Dr. Anup Bansode,dr-anup-bansode,uploads/doctors/1718881605930-Dr.-Anup-Bansode.jpeg,verified_image,/doctors/sahyadri/dr-anup-bansode.jpg
+doctor,Dr. Harshad Prabhakar Patankar,dr-harshad-prabhakar-patankar,uploads/doctors/1731331338268-Dr Harshad Patankar photo.jfif,verified_image,/doctors/sahyadri/dr-harshad-prabhakar-patankar.webp
+doctor,Dr. Nikhil Jadhav,dr-nikhil-jadhav,uploads/doctors/1718887733767-Dr-Nikhil-Jadhav.jpeg,verified_image,/doctors/sahyadri/dr-nikhil-jadhav.jpg
+doctor,Dr. Nikhil Likhate,dr-nikhil-likhate,uploads/doctors/1718948171384-Dr.-Nikhil-Likhate.jpeg,verified_image,/doctors/sahyadri/dr-nikhil-likhate.jpg
+doctor,Dr. Sachin Karkamkar,dr-sachin-karkamkar,uploads/doctors/1750915756374-5EBF4BB7-C934-4967-92B5-46C9DFA6FA21_1_201_a.jpeg,verified_image,/doctors/sahyadri/dr-sachin-karkamkar.jpg
+doctor,Dr. Sachin Tapasvi,dr-sachin-tapasvi,uploads/doctors/1718800245091-Dr.-Sachin-Tapasvi.jpeg,verified_image,/doctors/sahyadri/dr-sachin-tapasvi.jpg
+doctor,Dr. Sanjay Chavan,dr-sanjay-chauhan,uploads/doctors/1718776932986-Dr.-Sanjay-chauhan.jpeg,verified_image,/doctors/sahyadri/dr-sanjay-chauhan.jpg
+doctor,Dr. Suraj Bhujbal,dr-suraj-bhujbal,uploads/doctors/1718712957949-Dr-Suraj-Bhujbal.jpeg,verified_image,/doctors/sahyadri/dr-suraj-bhujbal.jpg
+doctor,Dr. Sushrut Badve,dr-sushrut-badve,uploads/doctors/1718888724054-Dr-Sushrut-Badve-Sahyadri-Hospital.png,verified_image,/doctors/sahyadri/dr-sushrut-badve.png
+doctor,Dr. Tushar Deore,dr-tushar-deore,uploads/doctors/1779169059934-Dr Deore_Website Image.webp,verified_image,/doctors/sahyadri/dr-tushar-deore.webp
+doctor,Dr. Vishal Murkute,dr-vishal-murkute,uploads/doctors/1718882543024-Dr.-Vishal-Murkute.jpeg,verified_image,/doctors/sahyadri/dr-vishal-murkute.jpg
+doctor,Dr. Harsha Jain,dr-harsha-jain-sahyadri-pune,uploads/doctors/1766041204606-harsha.webp,verified_image,/doctors/sahyadri/dr-harsha-jain-sahyadri-pune.webp
+doctor,Dr. Milind Kulkarni,dr-milind-kulkarni,uploads/doctors/1718868868864-Dr.-Milind-Kulkarni.jpeg,verified_image,/doctors/sahyadri/dr-milind-kulkarni.jpg
+doctor,Dr. Nana Kunjir,dr-nana-kunjir,uploads/doctors/1766039587793-nana.webp,verified_image,/doctors/sahyadri/dr-nana-kunjir.webp
+doctor,Dr. Jagadish Shejul,dr-jagadish-shejul,uploads/doctors/1776685299518-jagdish.jpg,verified_image,/doctors/sahyadri/dr-jagadish-shejul.jpg
+doctor,Dr. Sanjay Hunugundmath,dr-sanjay-hunugundmath,uploads/doctors/1718703853910-Dr.-Sanjay-Hanugundmath.jpeg,verified_image,/doctors/sahyadri/dr-sanjay-hunugundmath.jpg
+doctor,Dr. Hrushikesh Mehata,dr-hrushikesh-mehata,uploads/doctors/1785415911960-1781611476465-Dr. Hrushikesh-cropped.webp,verified_image,/doctors/sahyadri/dr-hrushikesh-mehata.webp
+doctor,Dr. Sachin Pathak,dr-sachin-pathak,uploads/doctors/1718715270865-Dr.-Sachin-Pathak.jpeg,verified_image,/doctors/sahyadri/dr-sachin-pathak.jpg
+doctor,Dr. Abhijit Balkrishna Jagdale,dr-abhijit-balkrishna-jagdale-,uploads/doctors/1770359049625-Dr. Abhijit.jpg,verified_image,/doctors/sahyadri/dr-abhijit-balkrishna-jagdale-.jpg
+doctor,Dr. Aniruddha Bhosale,dr-aniruddha-bhosale,uploads/doctors/1759900265594-1751027952999-Untitled design (2)-2-min.jpg,verified_image,/doctors/sahyadri/dr-aniruddha-bhosale.jpg
+doctor,Dr. Apurv Deshpande,dr-apurv-deshpande,uploads/doctors/1794460103770-Dr. Apurv Deshpande.webp,verified_image,/doctors/sahyadri/dr-apurv-deshpande.webp
+doctor,Dr. Dinesh Zirpe,dr-dinesh-zirpe,uploads/doctors/1759900342901-1750751095038-Dr Zirpe-min.jpg,verified_image,/doctors/sahyadri/dr-dinesh-zirpe.jpg
+doctor,Dr. Kiran Urabinahatti,dr-kiran-urabinahatti,uploads/doctors/1794460050273-Dr. Kiran Urabinahatti.webp,verified_image,/doctors/sahyadri/dr-kiran-urabinahatti.webp
+doctor,Dr. Manish Pathak,dr-manish-pathak,uploads/doctors/1794460133487-Dr. Manish Pathak.webp,verified_image,/doctors/sahyadri/dr-manish-pathak.webp
+doctor,Dr. Manoj Raut,dr-manoj-raut,uploads/doctors/1794460076706-Dr. Manoj Raut.webp,verified_image,/doctors/sahyadri/dr-manoj-raut.webp
+doctor,Dr. Bhushan S. Bhalgat,dr-bhushan-s-bhalgat,uploads/doctors/1718709646030-Dr-Bhushan-Bhalgat.jpeg,verified_image,/doctors/sahyadri/dr-bhushan-s-bhalgat.jpg
+doctor,Dr. Shailesh Naik,dr-shailesh-naik,uploads/doctors/1795175503471-DR Shailesh 1.webp,verified_image,/doctors/sahyadri/dr-shailesh-naik.webp
+doctor,Dr. Vini Talwar,dr-vini-talwar,uploads/doctors/1792584729985-Nitin.webp,verified_image,/doctors/sahyadri/dr-vini-talwar.webp
+doctor,Dr. Vinod Gore,dr-vinod-gore,uploads/doctors/1718697260845-Dr.-Vinod-Gore.jpeg,verified_image,/doctors/sahyadri/dr-vinod-gore.jpg
+doctor,Dr. Ashish Bhave,dr-ashish-bhave,uploads/doctors/1718797764529-Dr-Ashish-Bhave.jpeg,verified_image,/doctors/sahyadri/dr-ashish-bhave.jpg
+doctor,Dr. Kalpesh Saswade,dr-kalpesh-saswade,uploads/doctors/1795175491421-kalpesh new 1.webp,verified_image,/doctors/sahyadri/dr-kalpesh-saswade.webp
+doctor,Dr. Ketan Pai,dr-ketan-pai,uploads/doctors/1759129688191-Dr.KetanPai.webp,verified_image,/doctors/sahyadri/dr-ketan-pai.webp
+doctor,Dr. Parag Gulhane,dr-parag-gulhane,uploads/doctors/1718794675776-Dr.-Parag-Gulhane.jpeg,verified_image,/doctors/sahyadri/dr-parag-gulhane.jpg
+doctor,Dr. Rakshit Ahuja,dr-rakshit-ahuja,uploads/doctors/1795172179708-Rakhsit-Ahuja.webp,verified_image,/doctors/sahyadri/dr-rakshit-ahuja.webp
+doctor,Dr. Shrikant Mhaskar,dr-shrikant-mhaskar,uploads/doctors/1718797387962-Dr.-Shrikant-Mhaskar.jpg,verified_image,/doctors/sahyadri/dr-shrikant-mhaskar.jpg
+doctor,Dr. Yogesh Kaje,dr-yogesh-kaje,uploads/doctors/1718864814389-Dr.-Yogesh-Kaje.jpeg,verified_image,/doctors/sahyadri/dr-yogesh-kaje.jpg
+hospital,"Sahyadri Super Speciality Hospital, Nagar Road",sahyadri-super-speciality-hospital-nagar-road,,approved_fallback,
+hospital,"Sahyadri Super Speciality Hospital, Hadapsar",sahyadri-super-speciality-hospital-hadapsar,,approved_fallback,
+hospital,"Sahyadri Super Speciality Hospital, Deccan Gymkhana",sahyadri-super-speciality-hospital-deccan-gymkhana,,approved_fallback,

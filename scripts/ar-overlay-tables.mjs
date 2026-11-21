@@ -82,6 +82,8 @@ export const NAMES = {
   "Dr. Vineet Nakra": "د. فينيت ناكرا",
   "Dr. Vineeta Goel": "د. فينيتا غويل",
   "Dr. Y. Nalini": "د. ي. ناليني",
+  "Dr. Sanjay Hunugundmath": "د. سانجاي هونوغوندماث",
+  "Dr. Jagadish Shejul": "د. جاغاديش شيجول",
 };
 
 export const CITY_AR = {
@@ -90,6 +92,7 @@ export const CITY_AR = {
   Bengaluru: "بنغالور",
   Chennai: "تشيناي",
   Hyderabad: "حيدر آباد",
+  Pune: "بونه",
 };
 
 export const AIRPORT = {
@@ -106,6 +109,7 @@ export const LANG_CITY = {
   Chennai: "الإنجليزية، التاميلية، الهندية",
   Hyderabad: "الإنجليزية، التيلوغو، الهندية",
   "Delhi NCR": "الإنجليزية، الهندية",
+  Pune: "الإنجليزية، الهندية، الماراثية",
 };
 
 export const PHRASE = {

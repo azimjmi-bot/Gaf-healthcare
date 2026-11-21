@@ -26,9 +26,9 @@ const ginger = JSON.parse(readFileSync(join(process.cwd(), "src/data/ginger-cata
   doctors: { slug: string; specialty: string; bio: string; city?: string }[];
 };
 
-test("Arabic overlays cover all 70 radiation oncologists", () => {
+test("Arabic overlays cover all 72 radiation oncologists", () => {
   const ro = ginger.doctors.filter((d) => d.specialty === "Radiation Oncology");
-  assert.equal(ro.length, 70);
+  assert.equal(ro.length, 72);
   for (const doctor of ro) {
     const patch = cms.doctorOverrides[doctor.slug];
     assert.ok(patch, `missing overlay for ${doctor.slug}`);

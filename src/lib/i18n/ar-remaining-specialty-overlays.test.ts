@@ -12,18 +12,18 @@ import { doctorProfilePageJsonLd } from "@/lib/seo";
 
 const SPECIALTIES = {
   "Cosmetic Surgery": 74,
-  ENT: 103,
-  Gastroenterology: 153,
-  "Surgical Gastroenterology": 107,
-  Urology: 137,
-  "Spine Surgery": 63,
-  Pulmonology: 112,
+  ENT: 110,
+  Gastroenterology: 160,
+  "Surgical Gastroenterology": 114,
+  Urology: 144,
+  "Spine Surgery": 65,
+  Pulmonology: 115,
   "Pediatric Orthopaedic": 13,
-  Orthopedics: 208,
-  Ophthalmology: 102,
-  Gynecology: 187,
-  Neurology: 111,
-  Nephrology: 107,
+  Orthopedics: 224,
+  Ophthalmology: 110,
+  Gynecology: 190,
+  Neurology: 124,
+  Nephrology: 113,
 } as const;
 
 type Specialty = keyof typeof SPECIALTIES;
@@ -52,7 +52,7 @@ const source = catalogDoctors.filter((doctor) => specialtyNames.has(doctor.speci
 const localized = doctorsForLocale("ar").filter((doctor) => specialtyNames.has(doctor.specialty));
 
 test("Arabic overlays comprehensively cover the remaining requested doctor specialties", () => {
-  assert.equal(source.length, 1477);
+  assert.equal(source.length, 1556);
   assert.equal(localized.length, source.length);
 
   for (const [specialty, expected] of Object.entries(SPECIALTIES)) {

@@ -46,6 +46,14 @@ export async function DoctorProfile({ slug }: { slug: string }) {
   const t = await localizeMessages(locale);
   const hospitalRaw = getHospital(d.hospitalSlug);
   const hospital = hospitalRaw ? await localizeHospital(hospitalRaw, locale) : undefined;
+  const affiliatedHospitals = (
+    await Promise.all(
+      (d.hospitalSlugs?.length ? d.hospitalSlugs : [d.hospitalSlug]).map(async (slug) => {
+        const raw = getHospital(slug);
+        return raw ? localizeHospital(raw, locale) : undefined;
+      }),
+    )
+  ).filter((row): row is NonNullable<typeof row> => Boolean(row));
   const colleagues = doctorsForHospitalLocale(d.hospitalSlug, locale)
     .filter((x) => x.slug !== d.slug && x.specialtySlug === d.specialtySlug)
     .slice(0, 6);
@@ -80,25 +88,32 @@ export async function DoctorProfile({ slug }: { slug: string }) {
         <h3 className="text-sm tracking-[0.2em] text-gold uppercase">{t["profile.about"].replace("{name}", d.name)}</h3>
         <h2 className="mt-3 font-heading text-3xl">{t["profile.summary"]}</h2>
         <MarkdownBody source={publicMarkdown(d.bio)} className="md-body--profile mt-5" />
-        {hospital ? (
-          <div className="mt-10 rounded-2xl border border-border bg-card p-6">
-            <p className="text-xs tracking-[0.18em] uppercase text-gold">{t["profile.practisesAt"]}</p>
-            <Link href={`/hospitals/${hospital.slug}`} className="mt-2 inline-block font-heading text-3xl text-gold underline underline-offset-4">
-              {hospital.name}
-            </Link>
-            <p className="mt-1 text-sm text-muted-foreground">
-              {taxonomyLabel(hospital.city, locale)}, {taxonomyLabel(hospital.country, locale)}
-            </p>
-            <div className="mt-3">
-              <AccreditationSeals accreditation={hospital.accreditation} size="sm" />
-            </div>
-            <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{displayBio(hospital.bio)}</p>
-            <Link
-              href={`/hospitals/${hospital.slug}`}
-              className="mt-4 inline-block text-sm underline-offset-4 hover:underline"
-            >
-              {t["profile.hospitalFaculty"]}
-            </Link>
+        {affiliatedHospitals.length > 0 ? (
+          <div className="mt-10 space-y-6">
+            {affiliatedHospitals.map((campus) => (
+              <div key={campus.slug} className="rounded-2xl border border-border bg-card p-6">
+                <p className="text-xs tracking-[0.18em] uppercase text-gold">{t["profile.practisesAt"]}</p>
+                <Link
+                  href={`/hospitals/${campus.slug}`}
+                  className="mt-2 inline-block font-heading text-3xl text-gold underline underline-offset-4"
+                >
+                  {campus.name}
+                </Link>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {taxonomyLabel(campus.city, locale)}, {taxonomyLabel(campus.country, locale)}
+                </p>
+                <div className="mt-3">
+                  <AccreditationSeals accreditation={campus.accreditation} size="sm" />
+                </div>
+                <p className="mt-4 text-sm leading-relaxed text-muted-foreground">{displayBio(campus.bio)}</p>
+                <Link
+                  href={`/hospitals/${campus.slug}`}
+                  className="mt-4 inline-block text-sm underline-offset-4 hover:underline"
+                >
+                  {t["profile.hospitalFaculty"]}
+                </Link>
+              </div>
+            ))}
           </div>
         ) : null}
         <ProfileList title={t["profile.specializations"]} items={d.specializations} />

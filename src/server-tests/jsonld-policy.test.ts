@@ -195,10 +195,10 @@ test("no emitter references an unpublished localised URL", () => {
   }
 });
 
-// A hospital facet reproducing the whole country's campuses: it renders in
-// Arabic but the overlap gate keeps it unpublished, which is the state this
-// fallback exists for.
-const UNPUBLISHED_AR_FACET = "/hospitals/India/Radiation-Oncology";
+// A hospital facet that Arabic keeps unpublished (overlap / empty-inventory
+// gate). Country-level Radiation Oncology became publishable after Sahyadri
+// Pune faculty-linked RO affiliations, so the fixture uses a still-gated path.
+const UNPUBLISHED_AR_FACET = "/hospitals/India/Pune/Radiation-Oncology";
 
 test("crawlableUrl falls back to English for an unpublished Arabic page", () => {
   assert.equal(localePathIsPublished("ar", UNPUBLISHED_AR_FACET), false);

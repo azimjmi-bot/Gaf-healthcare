@@ -147,6 +147,7 @@ export async function POST(request: Request, ctx: { params: Promise<{ entity: st
         qualifications: body.qualifications || "",
         featured: false,
         hospitalSlug: hospital.slug,
+        hospitalSlugs: [hospital.slug],
         hospitalName: hospital.name,
         specialty: specialty.name,
         specialtySlug: specialty.slug,

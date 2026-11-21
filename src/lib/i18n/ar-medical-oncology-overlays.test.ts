@@ -41,8 +41,8 @@ const localized = doctorsForLocale("ar").filter((doctor) => doctor.specialty ===
 const nameMap = names as Record<string, string>;
 
 test("Arabic overlays cover every medical oncologist with substantive SEO and GEO copy", () => {
-  assert.equal(source.length, 86);
-  assert.equal(rawSource.length, 86);
+  assert.equal(source.length, 91);
+  assert.equal(rawSource.length, 91);
   assert.equal(Object.keys(nameMap).length, source.length);
   assert.equal(localized.length, source.length);
 

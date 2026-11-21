@@ -10,33 +10,33 @@ import { catalogDoctors, type Doctor } from "../src/lib/doctors";
 import { HOSPITAL_NAMES_AR } from "../src/lib/i18n/hospital-names-ar";
 import { collapseRepeatedPlaces, withCampus } from "../src/lib/i18n/place-labels";
 import { TAXONOMY_AR } from "../src/lib/i18n/taxonomy-ar";
-import type { CatalogCms, DoctorPatch } from "../src/lib/cms/catalog-types";
+import { translationStatus, type CatalogCms, type DoctorPatch } from "../src/lib/cms/catalog-types";
 
 const root = join(import.meta.dirname, "..");
 const cmsPath = process.env.CATALOG_CMS_PATH ?? join(root, "content/ar/catalog-cms.json");
 const cms = JSON.parse(readFileSync(cmsPath, "utf8")) as CatalogCms;
 
 const SPECIALTIES = {
-  Hematology: { count: 38, label: "أمراض الدم", patient: "مرضى اضطرابات الدم" },
+  Hematology: { count: 41, label: "أمراض الدم", patient: "مرضى اضطرابات الدم" },
   "Pediatric Hematology": {
     count: 21,
     label: "أمراض دم الأطفال",
     patient: "الأطفال المصابين باضطرابات الدم وأسرهم",
   },
-  "Cardiac Surgery": { count: 92, label: "جراحة القلب", patient: "مرضى جراحة القلب" },
+  "Cardiac Surgery": { count: 96, label: "جراحة القلب", patient: "مرضى جراحة القلب" },
   "Pediatric Cardiac Surgery": {
     count: 26,
     label: "جراحة قلب الأطفال",
     patient: "الأطفال المصابين بعيوب القلب الخلقية وأسرهم",
   },
-  Cardiology: { count: 237, label: "أمراض القلب", patient: "مرضى القلب والأوعية الدموية" },
+  Cardiology: { count: 244, label: "أمراض القلب", patient: "مرضى القلب والأوعية الدموية" },
   "Bariatric Surgery": {
     count: 30,
     label: "جراحة السمنة",
     patient: "المرضى الباحثين عن علاج السمنة والأمراض الأيضية",
   },
   Neurosurgery: {
-    count: 98,
+    count: 104,
     label: "جراحة المخ والأعصاب",
     patient: "مرضى الدماغ والأعصاب والعمود الفقري",
   },
@@ -50,6 +50,7 @@ const CITY_AR: Record<string, string> = {
   Bengaluru: "بنغالور",
   Chennai: "تشيناي",
   Hyderabad: "حيدر آباد",
+  Pune: "بونه",
 };
 
 const LANGUAGES_AR: Record<string, string> = {
@@ -58,6 +59,7 @@ const LANGUAGES_AR: Record<string, string> = {
   Bengaluru: "الإنجليزية، الكانادية، الهندية",
   Chennai: "الإنجليزية، التاميلية، الهندية",
   Hyderabad: "الإنجليزية، التيلوغو، الهندية",
+  Pune: "الإنجليزية، الهندية، الماراثية",
 };
 
 const KNOWN_NAMES: Record<string, string> = {
@@ -293,7 +295,12 @@ for (const [specialty, config] of Object.entries(SPECIALTIES)) {
 }
 
 const overlays: Record<string, DoctorPatch> = { ...cms.doctorOverrides };
+let wrote = 0;
 for (const doctor of targetDoctors) {
+  const existing = overlays[doctor.slug];
+  if (existing && translationStatus(existing) === "published" && existing.bio && existing.name) {
+    continue;
+  }
   const specialty = doctor.specialty as Specialty;
   const city = CITY_AR[doctor.city];
   const hospital = HOSPITAL_NAMES_AR[doctor.hospitalSlug];
@@ -331,10 +338,11 @@ for (const doctor of targetDoctors) {
       : [],
     bio: arabicBio(doctor, specialty, name, title, hospital, city, procedures),
   };
+  wrote += 1;
 }
 
 cms.doctorOverrides = overlays;
 writeFileSync(cmsPath, `${JSON.stringify(cms, null, 2)}\n`);
 console.log(
-  `Wrote ${targetDoctors.length} Arabic cardiac, hematology, bariatric, and neurosurgery overlays; total doctors ${Object.keys(overlays).length}`,
+  `Wrote ${wrote} new cardiac/hematology/neurosurgery overlays; cohort ${targetDoctors.length}; total doctors ${Object.keys(overlays).length}`,
 );

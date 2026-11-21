@@ -766,15 +766,15 @@ export function mapNephrologyProcedures(texts: string[], fallback = true) {
   return ["Hemodialysis", "Kidney Transplantation", "Percutaneous Renal Biopsy"];
 }
 
-export function mapDoctorProcedures(specialty: string, texts: string[]) {
-  if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts);
-  if (specialty === "Medical Oncology") return mapMedicalProcedures(texts);
-  if (specialty === "Hematology") return mapHematologyProcedures(texts);
-  if (specialty === "Pediatric Hematology") return mapPediatricHematologyProcedures(texts);
-  if (specialty === "Cardiac Surgery") return mapCardiacSurgeryProcedures(texts);
-  if (specialty === "Pediatric Cardiac Surgery") return mapPediatricCardiacSurgeryProcedures(texts);
-  if (specialty === "Cardiology") return mapCardiologyProcedures(texts);
-  if (specialty === "Bariatric Surgery") return mapBariatricProcedures(texts);
+export function mapDoctorProcedures(specialty: string, texts: string[], fallback = true) {
+  if (specialty === "Surgical Oncology") return mapSurgicalProcedures(texts, fallback);
+  if (specialty === "Medical Oncology") return mapMedicalProcedures(texts, fallback);
+  if (specialty === "Hematology") return mapHematologyProcedures(texts, fallback);
+  if (specialty === "Pediatric Hematology") return mapPediatricHematologyProcedures(texts, fallback);
+  if (specialty === "Cardiac Surgery") return mapCardiacSurgeryProcedures(texts, fallback);
+  if (specialty === "Pediatric Cardiac Surgery") return mapPediatricCardiacSurgeryProcedures(texts, fallback);
+  if (specialty === "Cardiology") return mapCardiologyProcedures(texts, fallback);
+  if (specialty === "Bariatric Surgery") return mapBariatricProcedures(texts, fallback);
   if (specialty === "Cosmetic Surgery") {
     // Cosmetic procedure cards must be evidence-linked. Do not assign the
     // generic fallback trio to a sparse profile with no procedure match.
@@ -787,10 +787,10 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
     }
     return found;
   }
-  if (specialty === "ENT") return mapEntProcedures(texts);
-  if (specialty === "Gastroenterology") return mapGastroenterologyProcedures(texts);
+  if (specialty === "ENT") return mapEntProcedures(texts, fallback);
+  if (specialty === "Gastroenterology") return mapGastroenterologyProcedures(texts, fallback);
   if (specialty === "Surgical Gastroenterology") {
-    const found = mapSurgicalGastroenterologyProcedures(texts);
+    const found = mapSurgicalGastroenterologyProcedures(texts, fallback);
     const blob = texts.join(" ");
     const extras: string[] = [];
     const colorectal =
@@ -810,17 +810,17 @@ export function mapDoctorProcedures(specialty: string, texts: string[]) {
     if (/hipec|cytoreduct|crs\s*\+/i.test(blob)) extras.push("Cytoreductive Surgery");
     return extras.length ? [...found, ...extras.filter((name) => !found.includes(name))] : found;
   }
-  if (specialty === "Urology") return mapUrologyProcedures(texts);
-  if (specialty === "Spine Surgery") return mapSpineSurgeryProcedures(texts);
-  if (specialty === "Pulmonology") return mapPulmonologyProcedures(texts);
-  if (specialty === "Pediatric Orthopaedic") return mapPediatricOrthopaedicProcedures(texts);
-  if (specialty === "Orthopedics") return mapOrthopedicsProcedures(texts);
-  if (specialty === "Ophthalmology") return mapOphthalmologyProcedures(texts);
-  if (specialty === "Gynecology") return mapGynecologyProcedures(texts);
+  if (specialty === "Urology") return mapUrologyProcedures(texts, fallback);
+  if (specialty === "Spine Surgery") return mapSpineSurgeryProcedures(texts, fallback);
+  if (specialty === "Pulmonology") return mapPulmonologyProcedures(texts, fallback);
+  if (specialty === "Pediatric Orthopaedic") return mapPediatricOrthopaedicProcedures(texts, fallback);
+  if (specialty === "Orthopedics") return mapOrthopedicsProcedures(texts, fallback);
+  if (specialty === "Ophthalmology") return mapOphthalmologyProcedures(texts, fallback);
+  if (specialty === "Gynecology") return mapGynecologyProcedures(texts, fallback);
   if (specialty === "Infertility & IVF") return mapInfertilityIvfProcedures(texts, false);
   if (specialty === "Dentistry") return mapDentistryProcedures(texts, false);
-  if (specialty === "Neurosurgery") return mapNeurosurgeryProcedures(texts);
-  if (specialty === "Neurology") return mapNeurologyProcedures(texts);
-  if (specialty === "Nephrology") return mapNephrologyProcedures(texts);
-  return mapCatalogProcedures(texts);
+  if (specialty === "Neurosurgery") return mapNeurosurgeryProcedures(texts, fallback);
+  if (specialty === "Neurology") return mapNeurologyProcedures(texts, fallback);
+  if (specialty === "Nephrology") return mapNephrologyProcedures(texts, fallback);
+  return mapCatalogProcedures(texts, fallback);
 }

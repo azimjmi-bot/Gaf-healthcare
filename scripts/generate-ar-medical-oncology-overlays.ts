@@ -13,7 +13,7 @@ import { catalogDoctors, type Doctor } from "../src/lib/doctors";
 import { HOSPITAL_NAMES_AR } from "../src/lib/i18n/hospital-names-ar";
 import { collapseRepeatedPlaces, withCampus } from "../src/lib/i18n/place-labels";
 import { TAXONOMY_AR } from "../src/lib/i18n/taxonomy-ar";
-import type { CatalogCms, DoctorPatch } from "../src/lib/cms/catalog-types";
+import { translationStatus, type CatalogCms, type DoctorPatch } from "../src/lib/cms/catalog-types";
 
 const root = join(import.meta.dirname, "..");
 const cmsPath = process.env.CATALOG_CMS_PATH ?? join(root, "content/ar/catalog-cms.json");
@@ -26,6 +26,7 @@ const CITY_AR: Record<string, string> = {
   Bengaluru: "بنغالور",
   Chennai: "تشيناي",
   Hyderabad: "حيدر آباد",
+  Pune: "بونه",
 };
 const LANGUAGES_AR: Record<string, string> = {
   "Delhi NCR": "الإنجليزية، الهندية",
@@ -33,6 +34,7 @@ const LANGUAGES_AR: Record<string, string> = {
   Bengaluru: "الإنجليزية، الكانادية، الهندية",
   Chennai: "الإنجليزية، التاميلية، الهندية",
   Hyderabad: "الإنجليزية، التيلوغو، الهندية",
+  Pune: "الإنجليزية، الهندية، الماراثية",
 };
 
 function hash(value: string) {
@@ -139,8 +141,8 @@ function arabicBio(
 }
 
 const medicalOncologists = catalogDoctors.filter((doctor) => doctor.specialty === "Medical Oncology");
-if (medicalOncologists.length !== 86) {
-  throw new Error(`Expected 86 medical oncologists, found ${medicalOncologists.length}`);
+if (medicalOncologists.length !== 91) {
+  throw new Error(`Expected 91 medical oncologists, found ${medicalOncologists.length}`);
 }
 if (Object.keys(NAME_AR).length !== medicalOncologists.length) {
   throw new Error(`Expected ${medicalOncologists.length} Arabic names, found ${Object.keys(NAME_AR).length}`);
@@ -152,7 +154,12 @@ for (const slug of Object.keys(NAME_AR)) {
 }
 
 const overlays: Record<string, DoctorPatch> = { ...cms.doctorOverrides };
+let wrote = 0;
 for (const doctor of medicalOncologists) {
+  const existing = overlays[doctor.slug];
+  if (existing && translationStatus(existing) === "published" && existing.bio && existing.name) {
+    continue;
+  }
   const name = NAME_AR[doctor.slug];
   const city = CITY_AR[doctor.city];
   const hospital = HOSPITAL_NAMES_AR[doctor.hospitalSlug];
@@ -186,10 +193,11 @@ for (const doctor of medicalOncologists) {
       : [],
     bio: arabicBio(doctor, name, title, hospital, city, procedures),
   };
+  wrote += 1;
 }
 
 cms.doctorOverrides = overlays;
 writeFileSync(cmsPath, `${JSON.stringify(cms, null, 2)}\n`);
 console.log(
-  `Wrote ${medicalOncologists.length} Arabic medical-oncology overlays; total doctors ${Object.keys(overlays).length}`,
+  `Wrote ${wrote} new medical-oncology overlays; cohort ${medicalOncologists.length}; total doctors ${Object.keys(overlays).length}`,
 );

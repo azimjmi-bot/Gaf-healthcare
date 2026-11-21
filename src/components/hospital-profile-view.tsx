@@ -154,6 +154,7 @@ export function HospitalProfileView({
   const intl = internationalServicesLocalized(locale);
   const faqs = hospitalFaqsLocalized(hospital, faculty, groups, locale);
   const eye = isEyeCampus(hospital);
+  const sahyadri = hospital.slug.startsWith("sahyadri-super-speciality-hospital-");
   const mapsHref = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(travel.mapsQuery)}`;
   const t = uiCatalogFor(locale);
   // Procedure editorial has no target-locale store yet, so the sub-page 404s
@@ -306,7 +307,13 @@ export function HospitalProfileView({
             <h2>{t["hp.about"]}</h2>
             <MarkdownBody source={publicMarkdown(hospital.bio)} className="hp-prose md-body--profile" />
             <Button asChild variant="outline" className="mt-6 rounded-full">
-              <a href="#procedures">{t["hp.seeProcedures"]}</a>
+              <a href="#procedures">
+                {sahyadri
+                  ? locale === "ar"
+                    ? "عرض إجراءات مرتبطة بالهيئة الطبية"
+                    : "See faculty-linked procedures"
+                  : t["hp.seeProcedures"]}
+              </a>
             </Button>
             <dl className="hp-statrow">
               {beds ? (
@@ -365,8 +372,24 @@ export function HospitalProfileView({
       <section id="specialties" className="hp-section hp-section--tint scroll-mt-28">
         <div className="hp-wrap">
           <p className="eyebrow">{t["hp.departments"]}</p>
-          <h2>{eye ? t["hp.eyeCare"] : t["hp.specialtiesOn"]}</h2>
-          <p className="hp-prose">{eye ? t["hp.eyeLede"] : t["hp.specLede"]}</p>
+          <h2>
+            {eye
+              ? t["hp.eyeCare"]
+              : sahyadri
+                ? locale === "ar"
+                  ? "تخصصات الهيئة الطبية المنتسبة"
+                  : "Affiliated faculty specialties"
+                : t["hp.specialtiesOn"]}
+          </h2>
+          <p className="hp-prose">
+            {eye
+              ? t["hp.eyeLede"]
+              : sahyadri
+                ? locale === "ar"
+                  ? "أقسام ممثَّلة بأطباء منتسبين موثّقين لهذا الحرم. ليست كتالوج خدمات مستقلًا تم تدقيقه للحرم."
+                  : "Departments represented by verified affiliated doctors for this campus. Not an independently audited campus service catalogue."
+                : t["hp.specLede"]}
+          </p>
           <ul className="hp-spec-row">
             {specialtyCards.map((g) => (
               <li key={g.slug} className="hp-spec-card">

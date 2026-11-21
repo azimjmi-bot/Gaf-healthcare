@@ -10,7 +10,6 @@ import {
 import { withLocaleMetadata } from "@/lib/i18n/metadata";
 import {
   isEmptySupportedCityFacet,
-  localePageIsRenderable,
   localePageState,
   localePathIsPublished,
   publishedLocalesForPath,
@@ -19,12 +18,11 @@ import { facetCandidatePaths, publishedFacetPaths } from "@/lib/i18n/facet-candi
 import { buildLocaleSitemap } from "@/lib/i18n/sitemap-entries";
 import { INDIA_CITIES } from "@/lib/taxonomy";
 
-const EMPTY_PUNE_PATHS = [
+const POPULATED_PUNE_PATHS = [
   "/doctors/India/Pune",
   "/hospitals/India/Pune",
   "/costs/India/Pune",
   "/doctors/India/Pune/Medical-Oncology",
-  "/hospitals/India/Pune/Medical-Oncology",
   "/costs/India/Pune/Medical-Oncology",
 ] as const;
 
@@ -40,7 +38,7 @@ const POPULATED_FIVE_CITY_PATHS = [
 
 test("empty supported-city gate is inventory-driven for Pune in both languages", () => {
   assert.equal(isEmptySupportedCityFacet({ destination: "India", city: "Pune" }, 0), true);
-  // Populated Pune (future genuine inventory) must not stay noindex.
+  // Populated Pune must not stay noindex.
   assert.equal(isEmptySupportedCityFacet({ destination: "India", city: "Pune" }, 1), false);
   assert.equal(isEmptySupportedCityFacet({ destination: "India", city: "Pune" }, 12), false);
   assert.equal(isEmptySupportedCityFacet({ destination: "India", city: "Mumbai" }, 0), true);
@@ -48,23 +46,13 @@ test("empty supported-city gate is inventory-driven for Pune in both languages",
   assert.equal(isEmptySupportedCityFacet({ destination: "India" }, 0), false);
 });
 
-test("empty English and Arabic Pune facets are noindex but still renderable", () => {
-  for (const path of EMPTY_PUNE_PATHS) {
-    assert.equal(localePageState("en", path), "noindex", `en ${path}`);
-    assert.equal(localePageState("ar", path), "noindex", `ar ${path}`);
-    assert.equal(localePageIsRenderable("en", path), true, `en renderable ${path}`);
-    assert.equal(localePageIsRenderable("ar", path), true, `ar renderable ${path}`);
-    assert.equal(localePathIsPublished("en", path), false, `en published ${path}`);
-    assert.equal(localePathIsPublished("ar", path), false, `ar published ${path}`);
-
-    const enMeta = withLocaleMetadata({ title: "t" }, path, "en", ["en", "ar"]);
-    assert.deepEqual(enMeta.robots, { index: false, follow: true });
-    assert.deepEqual(enMeta.alternates?.languages ?? {}, {});
-
-    const arMeta = withLocaleMetadata({ title: "t" }, path, "ar", ["en", "ar"]);
-    assert.deepEqual(arMeta.robots, { index: false, follow: true });
-    assert.deepEqual(arMeta.alternates?.languages ?? {}, {});
+test("populated Pune doctor, hospital and cost facets publish when inventory exists", () => {
+  for (const path of POPULATED_PUNE_PATHS) {
+    assert.equal(localePageState("en", path), "published", `en ${path}`);
+    assert.equal(localePathIsPublished("en", path), true, `en published ${path}`);
   }
+  // English hospital specialty pages publish from campus procedure coverage.
+  assert.equal(localePageState("en", "/hospitals/India/Pune/Medical-Oncology"), "published");
 });
 
 test("populated five-city English and Arabic facets stay published and indexable", () => {
@@ -84,43 +72,38 @@ test("populated five-city English and Arabic facets stay published and indexable
   assert.ok(mumbaiMeta.alternates?.languages?.ar);
 });
 
-test("empty Pune remains out of sitemap, facet candidates and hreflang sets", () => {
-  assert.ok(!indiaCitiesWithInventory("doctors").includes("Pune"));
-  assert.ok(!indiaCitiesWithInventory("hospitals").includes("Pune"));
-  assert.ok(!indiaCitiesWithInventory("treatments").includes("Pune"));
+test("populated Pune doctor and hospital facets enter inventory, candidates and sitemap", () => {
+  assert.ok(indiaCitiesWithInventory("doctors").includes("Pune"));
+  assert.ok(indiaCitiesWithInventory("hospitals").includes("Pune"));
+  assert.ok(indiaCitiesWithInventory("treatments").includes("Pune"));
 
-  const candidates = facetCandidatePaths().filter((path) => /\/Pune(?:\/|$)/i.test(path));
-  assert.deepEqual(candidates, []);
-  assert.deepEqual(
-    publishedFacetPaths("en").filter((path) => /\/Pune(?:\/|$)/i.test(path)),
-    [],
-  );
-  assert.deepEqual(
-    publishedFacetPaths("ar").filter((path) => /\/Pune(?:\/|$)/i.test(path)),
-    [],
-  );
+  const doctorCandidates = facetCandidatePaths().filter((path) => /\/doctors\/India\/Pune(?:\/|$)/i.test(path));
+  assert.ok(doctorCandidates.length > 0);
+  assert.ok(publishedFacetPaths("en").some((path) => /\/doctors\/India\/Pune(?:\/|$)/i.test(path)));
+  assert.ok(publishedFacetPaths("ar").some((path) => /\/doctors\/India\/Pune(?:\/|$)/i.test(path)));
 
   for (const locale of ["en", "ar"] as const) {
     const locs = buildLocaleSitemap(locale)
       .map((entry) => entry.url)
-      .filter((url) => /\/(?:doctors|hospitals|costs)\/(?:India|india)\/(?:Pune|pune)(?:\/|$)/i.test(url));
-    assert.deepEqual(locs, [], locale);
+      .filter((url) => /\/doctors\/(?:India|india)\/(?:Pune|pune)(?:\/|$)/i.test(url));
+    assert.ok(locs.length > 0, locale);
   }
 
-  assert.deepEqual(publishedLocalesForPath("/doctors/India/Pune"), []);
+  assert.ok(publishedLocalesForPath("/doctors/India/Pune").includes("en"));
+  assert.ok(publishedLocalesForPath("/doctors/India/Pune").includes("ar"));
   assert.ok(publishedLocalesForPath("/doctors/India/Mumbai").includes("en"));
   assert.ok(publishedLocalesForPath("/doctors/India/Mumbai").includes("ar"));
 });
 
-test("Pune inventory is still zero and five-city counts remain positive", () => {
+test("Sahyadri Pune inventory is positive across doctors and hospitals", () => {
   assert.deepEqual(INDIA_CITIES.slice(-1), ["Pune"]);
-  assert.equal(filterDoctors({ destination: "India", city: "Pune" }).length, 0);
-  assert.equal(filterHospitals({ destination: "India", city: "Pune" }).length, 0);
-  assert.equal(filterTreatments({ destination: "India", city: "Pune" }).length, 0);
+  assert.equal(filterDoctors({ destination: "India", city: "Pune" }).length, 110);
+  assert.equal(filterHospitals({ destination: "India", city: "Pune" }).length, 3);
+  assert.ok(filterTreatments({ destination: "India", city: "Pune" }).length > 0);
 
   const doctors = cityResultCounts("doctors", { destination: "India" });
-  for (const city of ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"]) {
+  for (const city of ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad", "Pune"]) {
     assert.ok((doctors.counts[city] ?? 0) > 0, city);
   }
-  assert.equal(doctors.counts.Pune, 0);
+  assert.equal(doctors.counts.Pune, 110);
 });

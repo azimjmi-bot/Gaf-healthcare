@@ -147,6 +147,7 @@ export function doctorMetadata(d: Doctor, locale: AppLocale = "en"): Metadata {
 }
 
 export function hospitalMetadata(h: Hospital, locale: AppLocale = "en"): Metadata {
+  const sahyadri = h.slug.startsWith("sahyadri-super-speciality-hospital-");
   if (locale === "ar") {
     const city = taxonomyLabel(h.city, "ar");
     const country = taxonomyLabel(h.country, "ar");
@@ -157,7 +158,9 @@ export function hospitalMetadata(h: Hospital, locale: AppLocale = "en"): Metadat
       ? `${h.name} — مستشفى عيون في ${city}، ${country}`
       : `${h.name} — مستشفى معتمد في ${city}، ${country}`;
     const description = clip(
-      `${h.name} في ${city}، ${country}. ${specs}. ${h.accreditation}. مصنّف على GAF Healthcare حسب البلد والمدينة والتخصص والإجراء. مراجعة السجلات ثم فيديو قبل السفر. ${displayBio(h.bio)}`,
+      sahyadri
+        ? `${h.name} في ${city}، ${country}. تخصصات الهيئة الطبية المنتسبة: ${specs}. ${h.accreditation}. العلاقات على GAF Healthcare مبنية من الأطباء الموثّقين لهذا الحرم وليست كتالوج خدمات مستقلًا. مراجعة السجلات ثم فيديو قبل السفر. ${displayBio(h.bio)}`
+        : `${h.name} في ${city}، ${country}. ${specs}. ${h.accreditation}. مصنّف على GAF Healthcare حسب البلد والمدينة والتخصص والإجراء. مراجعة السجلات ثم فيديو قبل السفر. ${displayBio(h.bio)}`,
     );
     const url = absoluteUrl(`/hospitals/${h.slug}`, "ar");
     return {
@@ -191,9 +194,13 @@ export function hospitalMetadata(h: Hospital, locale: AppLocale = "en"): Metadat
       ? `${h.name} — eye hospital in ${h.city}, India`
       : h.specialtySlug === "infertility-ivf" && h.specialtySlugs.length === 1
         ? `${h.name} — fertility centre in ${h.city}, India`
-        : `${h.name} — oncology, ENT and GI hospital in ${h.city}, India`;
+        : sahyadri
+          ? `${h.name} — independent Sahyadri campus in ${h.city}, India`
+          : `${h.name} — oncology, ENT and GI hospital in ${h.city}, India`;
   const description = clip(
-    `${h.name} in ${h.city}, India lists ${h.specialties.join(", ")}. ${h.accreditation}. ${displayBio(h.bio)}`,
+    sahyadri
+      ? `${h.name} in ${h.city}, India. Affiliated faculty specialties on GAF: ${h.specialties.join(", ")}. ${h.accreditation}. Relationships reflect verified campus faculty, not an independently audited campus service catalogue. ${displayBio(h.bio)}`
+      : `${h.name} in ${h.city}, India lists ${h.specialties.join(", ")}. ${h.accreditation}. ${displayBio(h.bio)}`,
   );
   const url = absoluteUrl(`/hospitals/${h.slug}`);
   return {
@@ -327,6 +334,15 @@ export function doctorProfilePageJsonLd(
 
 export function hospitalJsonLd(h: Hospital, locale: AppLocale = "en") {
   const path = `/hospitals/${h.slug}`;
+  const sahyadri = h.slug.startsWith("sahyadri-super-speciality-hospital-");
+  const description = sahyadri
+    ? clip(
+        locale === "ar"
+          ? `${h.name}: تخصصات وإجراءات الدليل مبنية من الهيئة الطبية المنتسبة الموثّقة لهذا الحرم في بونه، وليست كتالوج خدمات مستقلًا للحرم. ${displayBio(h.bio)}`
+          : `${h.name}: directory specialties and procedures are built from verified affiliated faculty for this Pune campus, not an independently audited campus service catalogue. ${displayBio(h.bio)}`,
+        240,
+      )
+    : clip(displayBio(h.bio), 240);
   return compact({
     "@context": "https://schema.org",
     "@type": "Hospital",
@@ -334,7 +350,9 @@ export function hospitalJsonLd(h: Hospital, locale: AppLocale = "en") {
     name: h.name,
     alternateName: hospitalAlternateName(h.slug, h.name),
     url: crawlableUrl(path, locale),
-    description: clip(displayBio(h.bio), 240),
+    description,
+    // For Sahyadri campuses these are faculty-represented specialties used for
+    // directory matching — not a claim of separately confirmed campus service lines.
     medicalSpecialty: h.specialties.map((name) => taxonomyLabel(name, locale)),
     address: {
       "@type": "PostalAddress",
