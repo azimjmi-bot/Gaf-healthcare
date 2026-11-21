@@ -30,4 +30,13 @@ export const legacyRedirects = [
   { source: "/specialities/:path+", destination: "/specialties", permanent: true },
   { source: "/treatments_detail", destination: "/treatments", permanent: true },
   { source: "/blog", destination: "/blogs", permanent: true },
+  // Approved Batch J/K equivalents (2026-11-21): orphan plural slugs → live catalogue profiles.
+  { source: "/doctors/dr-meet-kumar", destination: "/doctors/dr-meet-kumar-1", permanent: true },
+  { source: "/doctors/dr-mohd-qaleem", destination: "/doctors/dr-mohd-qaleem-1", permanent: true },
+  { source: "/doctors/dr-vineet-goel", destination: "/doctors/dr-vineet-goel-1", permanent: true },
+  {
+    source: "/hospitals/wockhardt-hospital-mumbai",
+    destination: "/hospitals/wockhardt-hospital",
+    permanent: true,
+  },
 ];

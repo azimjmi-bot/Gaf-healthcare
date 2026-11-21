@@ -72,8 +72,11 @@ test("live routes are not caught by legacy redirects", () => {
   for (const path of [
     "/doctors",
     "/doctors/dr-naresh-trehan",
+    "/doctors/dr-meet-kumar-1",
     "/doctors/India/Delhi-NCR",
     "/hospitals",
+    "/hospitals/wockhardt-hospital",
+    "/hospitals/tata-memorial-hospital-mumbai",
     "/hospitals/India/Chennai",
     "/specialties",
     "/treatments",
@@ -81,7 +84,27 @@ test("live routes are not caught by legacy redirects", () => {
     "/blogs",
     "/blogs/breast-cancer-treatment-by-stage",
     "/costs",
+    "/ireland",
   ]) {
     assert.equal(resolve(path), null, path);
   }
+});
+
+test("approved Batch J/K orphan profiles redirect to live catalogue equivalents", () => {
+  assert.deepEqual(resolve("/doctors/dr-meet-kumar"), {
+    destination: "/doctors/dr-meet-kumar-1",
+    permanent: true,
+  });
+  assert.deepEqual(resolve("/doctors/dr-mohd-qaleem"), {
+    destination: "/doctors/dr-mohd-qaleem-1",
+    permanent: true,
+  });
+  assert.deepEqual(resolve("/doctors/dr-vineet-goel"), {
+    destination: "/doctors/dr-vineet-goel-1",
+    permanent: true,
+  });
+  assert.deepEqual(resolve("/hospitals/wockhardt-hospital-mumbai"), {
+    destination: "/hospitals/wockhardt-hospital",
+    permanent: true,
+  });
 });

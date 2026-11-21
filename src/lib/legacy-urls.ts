@@ -52,12 +52,69 @@ const GONE_FIRST_SEGMENTS = new Set([
   "terms-and-conditions",
 ]);
 
+/**
+ * Approved Batch J/K retirements (2026-11-21): confirmed-obsolete plural
+ * doctor/hospital paths with no current catalogue equivalent. Tata Memorial
+ * and the four verified 301 sources are intentionally absent.
+ */
+const LEGACY_GONE_EXACT_PATHS = new Set([
+  "/doctors/dr-dhruv-zutshi",
+  "/doctors/dr-gazi-osman",
+  "/doctors/dr-imran-khan-fortis",
+  "/doctors/dr-khaled-omar",
+  "/doctors/dr-krishna-s-iyer",
+  "/doctors/dr-nandini-baruah",
+  "/doctors/dr-neel-shah",
+  "/doctors/dr-omar-maqbool",
+  "/doctors/dr-pawanindra-lal",
+  "/doctors/dr-prafulla-kumar-singh",
+  "/doctors/dr-prem-kumar-arora",
+  "/doctors/dr-rahul-jain-plastic-surgeon",
+  "/doctors/dr-rakesh-kumar-general-surgery",
+  "/doctors/dr-roopesh-khanna-j",
+  "/doctors/dr-sachin-mittal",
+  "/doctors/dr-shaik-javed-hussain",
+  "/doctors/dr-shiv-choudhary",
+  "/doctors/dr-sriharish-vankayalapati",
+  "/doctors/dr-subramanian-iyer",
+  "/doctors/dr-suman-lal",
+  "/doctors/dr-vikas-choudhary",
+  "/doctors/dr-yugal-kishore-mishra",
+  "/hospitals/apollo-hospitals-jubilee-hills-hyderabad",
+  "/hospitals/apollo-hospitals-new-delhi",
+  "/hospitals/best-hospitals-for-knee-replacement-in-india",
+  "/hospitals/best-hospitals-for-tavi-procedure-in-india-for-international-patients",
+  "/hospitals/burjeel-hospital-advanced-surgery-dubai",
+  "/hospitals/fortis-escorts-heart-institute-new-delhi",
+  "/hospitals/fortis-escorts-hospital-faridabad",
+  "/hospitals/fortis-memorial-research-institute-gurgaon",
+  "/hospitals/gleneagles-global-hospitals-mumbai",
+  "/hospitals/hcg-cancer-centre-bangalore",
+  "/hospitals/kings-college-hospital-dubai",
+  "/hospitals/kokilaben-dhirubhai-ambani-hospital-mumbai",
+  "/hospitals/manipal-hospitals-bengaluru",
+  "/hospitals/manipal-hospitals-dwarka-delhi",
+  "/hospitals/medanta-the-medicity",
+  "/hospitals/metro-hospital-heart-institute-noida-sector-12",
+  "/hospitals/shalby-hospital-jaipur",
+  "/hospitals/sims-hospital-vadapalani-chennai",
+]);
+
+function normalizeLegacyPathname(pathname: string): string {
+  if (pathname.length > 1 && pathname.endsWith("/")) return pathname.slice(0, -1);
+  return pathname || "/";
+}
+
 export function isLegacyGonePath(pathname: string): boolean {
-  const parts = pathname.split("/").filter(Boolean);
+  const normalized = normalizeLegacyPathname(pathname);
+  if (LEGACY_GONE_EXACT_PATHS.has(normalized) || LEGACY_GONE_EXACT_PATHS.has(normalized.toLowerCase())) {
+    return true;
+  }
+  const parts = normalized.split("/").filter(Boolean);
   const first = parts[0];
   if (!first) return false;
   if (first.startsWith("wp-")) return true;
-  if (/\.php$/i.test(pathname)) return true;
+  if (/\.php$/i.test(normalized)) return true;
   // WordPress exposes an RSS feed under every post, page and archive.
   if (parts[parts.length - 1] === "feed") return true;
   // Multi-segment singular leftovers. Single-segment entity slugs are resolved
