@@ -23,6 +23,7 @@ import {
 } from "@/lib/locale-catalog";
 import { publishedCuratedTreatments } from "@/lib/cms/curated-treatment-store";
 import { publishedFacetPaths } from "@/lib/i18n/facet-candidates";
+import { localePathIsPublished } from "@/lib/i18n/locale-publication";
 import {
   blogPostSitemapOpts,
   dedupeSitemap,
@@ -471,7 +472,11 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
   }
 
   if (locale === "en") {
+    // Legacy EN hospital-specialty emitter predates the Arabic publishedFacetPaths
+    // gate. Filter through localePathIsPublished so faculty-affiliated-only
+    // specialty/procedure landings (noindex) are not advertised in the sitemap.
     for (const path of hospitalSpecialtySitemapPaths(hospitals, doctors)) {
+      if (!localePathIsPublished(locale, path)) continue;
       const depth = path.split("/").filter(Boolean).length;
       urls.push(sitemapEntry(path, locale, { priority: depth === 3 ? 0.8 : 0.7 }));
     }

@@ -117,3 +117,18 @@ test("doctor facets still publish from Sahyadri expertise independently of hospi
   assert.equal(localePageState("ar", "/doctors/India/Pune/Medical-Oncology"), "published");
   assert.equal(localePageState("en", "/doctors/India/Mumbai"), "published");
 });
+
+test("English sitemap does not advertise faculty-only Pune hospital specialty landings", async () => {
+  const { buildLocaleSitemap } = await import("@/lib/i18n/sitemap-entries");
+  const urls = buildLocaleSitemap("en").map((entry) => entry.url);
+  assert.ok(urls.some((url) => /\/hospitals\/india\/pune$/i.test(url)), "Pune city hub stays listed");
+  assert.equal(
+    urls.filter((url) => /\/hospitals\/india\/pune\//i.test(url)).length,
+    0,
+    "no Pune hospital specialty/procedure URLs in EN sitemap",
+  );
+  assert.ok(
+    urls.some((url) => /\/doctors\/india\/pune\/medical-oncology/i.test(url)),
+    "doctor specialty facet remains listed",
+  );
+});
