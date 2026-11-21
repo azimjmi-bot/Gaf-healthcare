@@ -56,14 +56,18 @@ function everyArabicCandidate() {
  * open, and a page count that moves for any other reason still fails here.
  */
 const STAGE_FACETS: Record<PseoPageType, number> = {
-  doctorFacet: 1308,
-  hospitalFacet: 106,
-  costFacet: 575,
+  // +74 from Sahyadri / Pune doctor specialty+procedure facets (PR #37).
+  doctorFacet: 1382,
+  // +1 from the populated Pune hospital city hub (PR #37); faculty-only
+  // specialty/procedure landings stay noindex (PR #38).
+  hospitalFacet: 107,
+  // +22 from Pune cost city/specialty/procedure facets once inventory exists.
+  costFacet: 597,
   specialtyHub: 0,
 };
 
 /** Every facet URL that renders in Arabic, published or not. */
-const FACET_CANDIDATES = 5308;
+const FACET_CANDIDATES = 5631;
 
 function expectedPublishedFacets() {
   return (Object.keys(STAGE_FACETS) as PseoPageType[])
@@ -92,12 +96,11 @@ test("a published facet that duplicates its parent stays out of the sitemap", ()
   const listed = new Set(publishedFacetPaths("ar"));
 
   assert.equal(published.length, expectedPublishedFacets());
-  // One hundred fifteen doctor facets return exactly their parent's roster. All
-  // reviewed specialties now make most specialty and procedure facets narrow
-  // their parent naturally.
-  // published — they render, and they are reachable — but they name the parent
+  // One hundred twenty-two doctor facets return exactly their parent's roster.
+  // Reviewed specialties make most specialty and procedure facets narrow their
+  // parent naturally. They remain published and reachable, but name the parent
   // as canonical, so advertising them would contradict their own head.
-  assert.equal(listed.size, expectedPublishedFacets() - 115);
+  assert.equal(listed.size, expectedPublishedFacets() - 122);
   for (const path of published) {
     if (listed.has(path)) continue;
     assert.notEqual(
@@ -227,6 +230,26 @@ test("a facet with no matching Arabic profiles 404s rather than rendering empty"
   assert.equal(localePageState("ar", "/hospitals/India/Infertility-IVF"), "noindex");
 });
 
+test("Condition A: Infertility-IVF and Surgical Oncology near-duplicates stay noindex after Sahyadri", () => {
+  // Sahyadri campuses inflate the India hospital parent display pool but are
+  // faculty-affiliated only. Publication overlap must keep these near-duplicates
+  // noindex (PR #38), not tip them into the index.
+  const held = [
+    "/hospitals/India/Infertility-IVF",
+    "/hospitals/India/Surgical-Oncology/Colectomy",
+    "/hospitals/India/Surgical-Oncology/Oral-Cancer-Surgery",
+    "/hospitals/India/Surgical-Oncology/Rectal-Cancer-Surgery",
+    "/hospitals/India/Surgical-Oncology/Thyroidectomy-for-Thyroid-Cancer",
+  ] as const;
+  for (const path of held) {
+    assert.equal(localePageState("ar", path), "noindex", path);
+    assert.equal(localePathIsPublished("ar", path), false, path);
+  }
+  // Legitimate populated city hubs still publish.
+  assert.equal(localePageState("ar", "/hospitals/India/Pune"), "published");
+  assert.equal(localePageState("ar", "/hospitals/India/Mumbai"), "published");
+});
+
 test("the live Arabic overlays stay published", () => {
   const file = join(process.cwd(), "content/ar/catalog-cms.json");
   const cms = JSON.parse(readFileSync(file, "utf8")) as {
@@ -237,15 +260,16 @@ test("the live Arabic overlays stay published", () => {
   const doctorRows = Object.values(cms.doctorOverrides);
   const hospitalRows = Object.values(cms.hospitalOverrides);
   const treatmentRows = Object.values(cms.treatmentOverrides);
-  assert.equal(doctorRows.length, 2400);
-  assert.equal(hospitalRows.length, 42);
+  // +110 Sahyadri eligible doctors and +3 Sahyadri Pune campuses (PR #37).
+  assert.equal(doctorRows.length, 2510);
+  assert.equal(hospitalRows.length, 45);
   assert.equal(treatmentRows.length, 419);
   for (const patch of [...doctorRows, ...hospitalRows, ...treatmentRows]) {
     assert.equal(translationStatus(patch), "published");
   }
 
-  assert.equal(doctorsForLocale("ar").length, 2400);
-  assert.equal(hospitalsForLocale("ar").length, 42);
+  assert.equal(doctorsForLocale("ar").length, 2510);
+  assert.equal(hospitalsForLocale("ar").length, 45);
   assert.equal(treatmentsForLocale("ar").length, 419);
   assert.equal(localePathIsPublished("ar", "/doctors/dr-anil-kumar-anand"), true);
   assert.equal(localePathIsPublished("ar", "/doctors/dr-anil-k-d-cruz"), true);
