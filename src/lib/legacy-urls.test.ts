@@ -57,7 +57,15 @@ test("current site paths are never treated as gone", () => {
     "/doctors",
     "/doctors/India/Delhi-NCR/Radiation-Oncology",
     "/doctors/dr-naresh-trehan",
+    "/doctors/dr-meet-kumar-1",
+    "/doctors/dr-mohd-qaleem-1",
+    "/doctors/dr-vineet-goel-1",
     "/hospitals/India",
+    "/hospitals/wockhardt-hospital",
+    // Held out of Batch K 410 pending Links review.
+    "/hospitals/tata-memorial-hospital-mumbai",
+    "/ireland",
+    "/ireland/rhinoplasty-abroad",
     "/treatments/breast-cancer-treatment-in-india",
     "/specialties",
     "/costs/gamma-knife",
@@ -73,6 +81,28 @@ test("current site paths are never treated as gone", () => {
     "/sitemap-en.xml",
     "/robots.txt",
     "/_next/static/chunks/main.js",
+  ]) {
+    assert.equal(isLegacyGonePath(path), false, path);
+  }
+});
+
+test("approved Batch J/K obsolete plural profiles are gone", () => {
+  for (const path of [
+    "/doctors/dr-dhruv-zutshi",
+    "/doctors/dr-yugal-kishore-mishra",
+    "/hospitals/apollo-hospitals-new-delhi",
+    "/hospitals/best-hospitals-for-knee-replacement-in-india",
+    "/hospitals/sims-hospital-vadapalani-chennai",
+    "/doctors/dr-dhruv-zutshi/",
+  ]) {
+    assert.equal(isLegacyGonePath(path), true, path);
+  }
+  // Verified 301 sources must not 410 — next.config handles them.
+  for (const path of [
+    "/doctors/dr-meet-kumar",
+    "/doctors/dr-mohd-qaleem",
+    "/doctors/dr-vineet-goel",
+    "/hospitals/wockhardt-hospital-mumbai",
   ]) {
     assert.equal(isLegacyGonePath(path), false, path);
   }
