@@ -88,6 +88,28 @@ export function filterHospitals(q: CatalogQuery, rows: Hospital[] = hospitals): 
 }
 
 /**
+ * Hospital inventory for publication/indexation decisions.
+ *
+ * When `serviceLineScoped` is true (the facet — or its child — filters by
+ * specialty or procedure), only campuses with campus-verified service lines
+ * count. Faculty-affiliated specialty/procedure lists still power profile copy
+ * and directory display via `filterHospitals`, but they must not dilute parent
+ * overlap scores or invent indexable hospital specialty landings on their own.
+ *
+ * City/country hubs pass `serviceLineScoped: false` so every campus counts.
+ */
+export function hospitalsForServiceLinePublication(
+  q: CatalogQuery,
+  rows: Hospital[] = hospitals,
+  serviceLineScoped = Boolean(q.specialty || q.procedure),
+): Hospital[] {
+  const pool = serviceLineScoped
+    ? snapshot(rows).filter((h) => h.serviceLineEvidence !== "faculty-affiliated")
+    : rows;
+  return filterHospitals(q, pool);
+}
+
+/**
  * Restrict specialty hospitals to campuses that have at least one matching
  * doctor relationship. The legacy hospital capability arrays are broader than
  * the reviewed doctor-to-campus inventory and are not sufficient provenance

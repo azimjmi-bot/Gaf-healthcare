@@ -209,6 +209,7 @@ export async function POST(request: Request, ctx: { params: Promise<{ entity: st
         specialtySlugs: [specialty.slug],
         procedures: procs.map((p) => p.name),
         procedureSlugs: procs.map((p) => p.slug),
+        serviceLineEvidence: "campus-verified",
         established: body.established || "",
         beds: body.beds || "",
         languages: "English, Hindi",

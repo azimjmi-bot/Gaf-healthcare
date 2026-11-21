@@ -35,6 +35,17 @@ import {
   getSpecialty,
 } from "@/lib/taxonomy";
 
+/**
+ * Provenance for `specialties` / `procedures` used in hospital directory facets.
+ *
+ * - `campus-verified`: specialty/procedure lists come from campus-level catalogue
+ *   rules (eye/fertility campuses, or the legacy multi-specialty capability set).
+ * - `faculty-affiliated`: lists are derived only from named affiliated doctors.
+ *   Those relationships belong on doctor/faculty surfaces and must not alone
+ *   satisfy hospital specialty/procedure landing-page indexation.
+ */
+export type HospitalServiceLineEvidence = "campus-verified" | "faculty-affiliated";
+
 export type Hospital = {
   slug: string;
   name: string;
@@ -50,6 +61,11 @@ export type Hospital = {
   specialtySlugs: string[];
   procedures: string[];
   procedureSlugs: string[];
+  /**
+   * Whether specialty/procedure arrays are campus-verified service lines or
+   * faculty-derived directory relationships.
+   */
+  serviceLineEvidence: HospitalServiceLineEvidence;
   established: string;
   beds: string;
   languages: string;
@@ -59,6 +75,11 @@ export type Hospital = {
   image?: string;
   imageAlt?: string;
 };
+
+/** True when specialty/procedure facet membership may count toward indexation. */
+export function hospitalHasCampusVerifiedServiceLines(hospital: Hospital) {
+  return hospital.serviceLineEvidence !== "faculty-affiliated";
+}
 
 function languagesFor(city: string) {
   if (city === "Mumbai" || city === "Pune") return "English, Hindi, Marathi";
@@ -313,6 +334,9 @@ const buildHospital = (seed: HospitalSeed, catalog: CatalogSeed): Hospital => {
         : sahyadriCampus
           ? facultySpecialties!.primarySlug
           : radiation.slug,
+    // Sahyadri specialty/procedure arrays are faculty-derived only. Eye and
+    // fertility campuses, and the legacy multi-specialty set, remain campus-verified.
+    serviceLineEvidence: sahyadriCampus ? "faculty-affiliated" : "campus-verified",
     specialties: eyeCampus
       ? [ophthalmology.name]
       : fertilityCampus

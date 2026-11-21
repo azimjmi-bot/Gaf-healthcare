@@ -51,8 +51,10 @@ test("populated Pune doctor, hospital and cost facets publish when inventory exi
     assert.equal(localePageState("en", path), "published", `en ${path}`);
     assert.equal(localePathIsPublished("en", path), true, `en published ${path}`);
   }
-  // English hospital specialty pages publish from campus procedure coverage.
-  assert.equal(localePageState("en", "/hospitals/India/Pune/Medical-Oncology"), "published");
+  // Faculty-affiliated Sahyadri specialty lists must not alone index hospital
+  // specialty landings; doctor facets remain the authority for that inventory.
+  assert.equal(localePageState("en", "/hospitals/India/Pune/Medical-Oncology"), "noindex");
+  assert.equal(localePageState("en", "/doctors/India/Pune/Medical-Oncology"), "published");
 });
 
 test("populated five-city English and Arabic facets stay published and indexable", () => {
