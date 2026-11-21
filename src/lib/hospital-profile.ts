@@ -103,6 +103,14 @@ export function cityTravel(hospital: Hospital): CityTravel {
       mapsQuery,
     };
   }
+  if (hospital.citySlug === "pune") {
+    return {
+      airport: "Pune International Airport",
+      airportHint: "Most city campuses are typically 30–60 minutes from the airport in ordinary traffic.",
+      centreHint: "Koregaon Park, Kalyani Nagar and the city-centre hotels are the usual companion stays.",
+      mapsQuery,
+    };
+  }
   return {
     airport: "Indira Gandhi International Airport",
     airportHint: "Delhi NCR campuses run from 25 minutes to well over an hour, depending on the ring road.",

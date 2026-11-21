@@ -66,6 +66,7 @@ export const CITIES: CityTaxon[] = [
   { name: "Bengaluru", slug: "bengaluru", countrySlug: "india" },
   { name: "Chennai", slug: "chennai", countrySlug: "india" },
   { name: "Hyderabad", slug: "hyderabad", countrySlug: "india" },
+  { name: "Pune", slug: "pune", countrySlug: "india" },
   { name: "Seoul", slug: "seoul", countrySlug: "south-korea" },
   { name: "Istanbul", slug: "istanbul", countrySlug: "turkiye" },
   { name: "Bangkok", slug: "bangkok", countrySlug: "thailand" },

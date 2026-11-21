@@ -192,11 +192,11 @@ function englishIntro(kind: DirectoryKind, query: CatalogQuery) {
                                                   ? `${query.specialty} doctors in ${place}`
                                                   : "Oncologists, ENT surgeons, gastroenterologists, surgical gastroenterologists, urologists, spine surgeons, pulmonologists, paediatric orthopaedic surgeons, orthopaedic surgeons, ophthalmologists, gynecologists, neurosurgeons, neurologists and nephrologists in India";
     return {
-      eyebrow: "India · five cities · twenty-three specialties",
+      eyebrow: "India · six cities · twenty-three specialties",
       heading,
       lede: home
         ? "Explore specialists by medical specialty, procedure, hospital, and location, and find doctors who match your treatment needs."
-        : "Named specialists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each doctor appears once. Ten profiles per page — filter by city, specialty or procedure when you already know the list you need.",
+        : "Named specialists across Delhi NCR, Mumbai, Bengaluru, Chennai, Hyderabad and Pune. Each doctor appears once. Ten profiles per page — filter by city, specialty or procedure when you already know the list you need.",
     };
   }
 
@@ -215,7 +215,7 @@ function englishIntro(kind: DirectoryKind, query: CatalogQuery) {
       heading,
       lede: home
         ? "Explore hospitals by country, city, specialty, and treatment, and compare facilities to find options that match your medical needs."
-        : "JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house appears once. Ten campuses per page — specialties sit on the card.",
+        : "JCI and NABH campuses across Delhi NCR, Mumbai, Bengaluru, Chennai, Hyderabad and Pune. Each house appears once. Ten campuses per page — specialties sit on the card.",
     };
   }
 
@@ -231,7 +231,7 @@ function englishIntro(kind: DirectoryKind, query: CatalogQuery) {
     heading,
     lede: home
       ? "Explore indicative treatment costs by procedure, country, and location, and understand what may be included before choosing where to receive care."
-      : "US cash-pay beside partner ranges in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Filter by destination, city, specialty or procedure. Figures are planning ranges, not quotations.",
+      : "US cash-pay beside partner ranges across Delhi NCR, Mumbai, Bengaluru, Chennai, Hyderabad and Pune. Filter by destination, city, specialty or procedure. Figures are planning ranges, not quotations.",
   };
 }
 

@@ -16,6 +16,7 @@ export const TAXONOMY_AR: Record<string, string> = {
   Bengaluru: "بنغالور",
   Chennai: "تشيناي",
   Hyderabad: "حيدر آباد",
+  Pune: "بونه",
   Seoul: "سيول",
   Istanbul: "إسطنبول",
   Bangkok: "بانكوك",

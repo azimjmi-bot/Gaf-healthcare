@@ -11,6 +11,7 @@ import { doctors, hospitals, treatments } from "@/lib/data";
 import { SITE_URL } from "@/lib/seo-url";
 import type { AppLocale } from "@/lib/i18n/languages";
 import { LOCALES } from "@/lib/i18n/languages";
+import { indiaCitiesWithInventory } from "@/lib/catalog";
 import { CITIES, getCountry, INDIA_CITIES, SPECIALTIES } from "@/lib/taxonomy";
 import { costCountryRecords } from "@/lib/cost-geo";
 import { buildSpecialtyPageData, specialtyPageMeetsQualityThreshold } from "@/lib/specialty-page";
@@ -404,9 +405,13 @@ export function buildLocaleSitemap(locale: AppLocale): MetadataRoute.Sitemap {
   urls.push(sitemapEntry(doctorsPath({ destination: "India" }), locale, { priority: 0.7 }));
   urls.push(sitemapEntry(hospitalsPath({ destination: "India" }), locale, { priority: 0.7 }));
 
-  for (const city of INDIA_CITIES) {
+  for (const city of indiaCitiesWithInventory("doctors")) {
     urls.push(sitemapEntry(doctorsPath({ destination: "India", city }), locale, { priority: 0.6 }));
+  }
+  for (const city of indiaCitiesWithInventory("hospitals")) {
     urls.push(sitemapEntry(hospitalsPath({ destination: "India", city }), locale, { priority: 0.6 }));
+  }
+  for (const city of indiaCitiesWithInventory("treatments")) {
     urls.push(sitemapEntry(costsFilterPath({ destination: "India", city }), locale, { priority: 0.6 }));
   }
 

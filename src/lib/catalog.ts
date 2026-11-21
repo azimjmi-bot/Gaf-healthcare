@@ -56,6 +56,17 @@ export function cityResultCounts(entity: CatalogEntity, q: CatalogQuery) {
   return { total: rows.length, counts };
 }
 
+/**
+ * India city hubs that currently have catalogue inventory for the entity.
+ * Used by sitemap and facet candidates so empty cities (e.g. Pune before
+ * genuine records exist) are filterable in the UI but not advertised as
+ * indexable thin URLs.
+ */
+export function indiaCitiesWithInventory(entity: CatalogEntity): string[] {
+  const { counts } = cityResultCounts(entity, { destination: "India" });
+  return INDIA_CITIES.filter((city) => (counts[city] ?? 0) > 0);
+}
+
 function hospitalMatches(h: Hospital, q: CatalogQuery) {
   if (q.destination && h.country !== q.destination) return false;
   if (q.city && h.city !== q.city) return false;
