@@ -10,8 +10,8 @@ const HOSPITAL_NAMES = JSON.parse(readFileSync(join(root, "src/data/hospital-nam
 const cmsPath = process.env.CATALOG_CMS_PATH ?? join(root, "content/ar/catalog-cms.json");
 const cms = JSON.parse(readFileSync(cmsPath, "utf8"));
 
-const FOCUS_MULTI =
-  "علاج الأورام بالإشعاع · جراحة الأورام · علاج الأورام الطبي · أمراض الدم · جراحة القلب · أمراض القلب · أنف وأذن وحنجرة · أمراض الجهاز الهضمي · جراحة الجهاز الهضمي · المسالك البولية · جراحة العمود الفقري · أمراض الرئة · جراحة العظام · طب العيون · أمراض النساء · جراحة المخ والأعصاب · طب الأعصاب · أمراض الكلى";
+/** Faculty-derived focus is filled by remediation; keep a short campus-neutral placeholder here. */
+const FOCUS_PLACEHOLDER = "تخصصات معتمدة من أطباء الحرم الموثقين فقط";
 
 const HOOKS = {
   "sahyadri-super-speciality-hospital-nagar-road": {
@@ -43,7 +43,7 @@ for (const hospital of hospitals) {
     bio: `${name} حرم مستقل لساهيادري في بونه، ماهاراشترا، الهند. ${meta.hook} العنوان المنشور من ساهيادري هو ${meta.address}. يذكر الدليل أن ساهيادري جزء من شبكة مانيبال من دون دمج الحروم الثلاثة في ملف مستشفى واحد. يبني GAF Healthcare علاقات التخصص والأطباء من السجلات المؤكدة لهذا الحرم فقط، ولا يختلق سعة أسرّة أو اعتمادات غير موثقة.`,
     summary: `${name} في بونه. حرم ساهيادري مستقل ضمن شبكة مانيبال، مع أطباء مرتبطين وفق التخصصات الموجودة أصلًا في دليل GAF Healthcare.`,
     languages: "الإنجليزية، الهندية، الماراثية",
-    focus: FOCUS_MULTI,
+    focus: FOCUS_PLACEHOLDER,
     icu: "عناية مركزة متعددة التخصصات وفق ما ينشره المستشفى للحرم",
     imageAlt: `${name}، بونه، الهند — دليل مستشفيات GAF Healthcare`,
   };

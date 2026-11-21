@@ -30,18 +30,18 @@ test("Pune is the sixth India catalogue city with stable slug and Arabic label",
   assert.equal(taxonomyLabel("Pune", "en"), "Pune");
 });
 
-test("Pune filter counts are dynamic and currently zero without fabricated inventory", () => {
+test("Pune filter counts reflect Sahyadri inventory without fabricating empty hubs", () => {
   const doctors = cityResultCounts("doctors", { destination: "India" });
   const hospitals = cityResultCounts("hospitals", { destination: "India" });
   const treatments = cityResultCounts("treatments", { destination: "India" });
 
-  assert.equal(doctors.counts.Pune ?? 0, 0);
-  assert.equal(hospitals.counts.Pune ?? 0, 0);
-  assert.equal(treatments.counts.Pune ?? 0, 0);
+  assert.equal(doctors.counts.Pune, 110);
+  assert.equal(hospitals.counts.Pune, 3);
+  assert.ok((treatments.counts.Pune ?? 0) > 0);
 
-  assert.equal(filterDoctors({ destination: "India", city: "Pune" }).length, 0);
-  assert.equal(filterHospitals({ destination: "India", city: "Pune" }).length, 0);
-  assert.equal(filterTreatments({ destination: "India", city: "Pune" }).length, 0);
+  assert.equal(filterDoctors({ destination: "India", city: "Pune" }).length, 110);
+  assert.equal(filterHospitals({ destination: "India", city: "Pune" }).length, 3);
+  assert.ok(filterTreatments({ destination: "India", city: "Pune" }).length > 0);
 
   for (const city of ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"]) {
     assert.ok((hospitals.counts[city] ?? 0) > 0, city);
@@ -49,33 +49,21 @@ test("Pune filter counts are dynamic and currently zero without fabricated inven
   }
 });
 
-test("empty Pune hubs stay out of inventory-gated sitemap/facet lists", () => {
-  assert.deepEqual(indiaCitiesWithInventory("doctors"), [
-    "Delhi NCR",
-    "Mumbai",
-    "Bengaluru",
-    "Chennai",
-    "Hyderabad",
-  ]);
-  assert.deepEqual(indiaCitiesWithInventory("hospitals"), [
-    "Delhi NCR",
-    "Mumbai",
-    "Bengaluru",
-    "Chennai",
-    "Hyderabad",
-  ]);
-  assert.ok(!indiaCitiesWithInventory("treatments").includes("Pune"));
+test("populated Pune hubs enter inventory-gated sitemap/facet lists", () => {
+  assert.ok(indiaCitiesWithInventory("doctors").includes("Pune"));
+  assert.ok(indiaCitiesWithInventory("hospitals").includes("Pune"));
+  assert.ok(indiaCitiesWithInventory("treatments").includes("Pune"));
   assert.ok(indiaCitiesWithInventory("treatments").includes("Mumbai"));
 });
 
-test("directory city filters keep Pune visible with a dynamic zero count", () => {
+test("directory city filters keep Pune visible with a dynamic positive count", () => {
   assert.deepEqual(citiesForDestination("India"), INDIA_CITIES);
 
   for (const entity of ["doctors", "hospitals", "treatments"] as const) {
     const stats = cityResultCounts(entity, { destination: "India" });
-    assert.equal(stats.counts.Pune, 0);
+    assert.ok((stats.counts.Pune ?? 0) > 0, entity);
     assert.deepEqual(Object.keys(stats.counts), INDIA_CITIES);
-    for (const city of ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad"]) {
+    for (const city of ["Delhi NCR", "Mumbai", "Bengaluru", "Chennai", "Hyderabad", "Pune"]) {
       assert.ok((stats.counts[city] ?? 0) > 0, `${entity}:${city}`);
     }
   }

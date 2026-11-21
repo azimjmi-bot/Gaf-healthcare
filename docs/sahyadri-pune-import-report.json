@@ -197,5 +197,38 @@
     "hospital_overlays": 3,
     "status": "published"
   },
-  "pseo": "Existing country/city/specialty/procedure routes reused; Pune doctor and hospital facets now publish from genuine inventory. No thin combinatorial pages added beyond existing publication rules."
+  "pseo": "Existing country/city/specialty/procedure routes reused; Pune doctor and hospital facets now publish from genuine inventory. No thin combinatorial pages added beyond existing publication rules.",
+  "remediation": {
+    "status": "READY FOR FRESH REVIEW",
+    "blockers_addressed": [
+      "A",
+      "B",
+      "C",
+      "D",
+      "E"
+    ],
+    "summary": {
+      "eligible_doctors": 110,
+      "procedure_mapping": {
+        "verified": 101,
+        "partially_verified": 0,
+        "no_specific_procedure_evidence": 9,
+        "with_at_least_one_procedure": 101
+      },
+      "images": {
+        "verified_image": 106,
+        "approved_fallback_or_unavailable": 4
+      },
+      "multi_campus_doctors": 23,
+      "hospitals": 3
+    },
+    "audits": [
+      "docs/sahyadri-pune-doctor-procedure-audit.csv",
+      "docs/sahyadri-pune-hospital-campus-audit.csv",
+      "docs/sahyadri-pune-campus-evidence-matrix.json",
+      "docs/sahyadri-pune-multicampus-audit.csv",
+      "docs/sahyadri-pune-image-audit.csv",
+      "docs/sahyadri-pune-remediation-report.md"
+    ]
+  }
 }

@@ -525,7 +525,9 @@ export function getDoctorForLocale(slug: string, locale: AppLocale) {
 
 export function doctorsForHospitalLocale(hospitalSlug: string, locale: AppLocale) {
   if (locale === "en") return englishDoctorsForHospital(hospitalSlug);
-  return doctorsForLocale(locale).filter((row) => row.hospitalSlug === hospitalSlug);
+  return doctorsForLocale(locale).filter(
+    (row) => row.hospitalSlug === hospitalSlug || (row.hospitalSlugs?.includes(hospitalSlug) ?? false),
+  );
 }
 
 export function doctorsForTreatmentLocale(procedureSlug: string, locale: AppLocale) {

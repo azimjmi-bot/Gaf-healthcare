@@ -1,0 +1,15 @@
+{
+  "eligible_doctors": 110,
+  "procedure_mapping": {
+    "verified": 101,
+    "partially_verified": 0,
+    "no_specific_procedure_evidence": 9,
+    "with_at_least_one_procedure": 101
+  },
+  "images": {
+    "verified_image": 106,
+    "approved_fallback_or_unavailable": 4
+  },
+  "multi_campus_doctors": 23,
+  "hospitals": 3
+}

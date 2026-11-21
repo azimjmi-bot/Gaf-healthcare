@@ -101,30 +101,9 @@ EXCLUDE_HINTS = [
     "paediatric cardiology",
 ]
 
-PROCEDURE_HINTS = {
-    "Radiation Oncology": ["External Beam Radiotherapy (EBRT)", "Intensity-Modulated Radiotherapy (IMRT)", "Image-Guided Radiotherapy (IGRT)"],
-    "Surgical Oncology": ["Mastectomy", "Colectomy", "Neck Dissection"],
-    "Medical Oncology": ["Chemotherapy", "Targeted Therapy", "Immunotherapy"],
-    "Hematology": ["Bone Marrow Transplantation", "Stem Cell Transplantation", "Bone Marrow Biopsy"],
-    "Cardiac Surgery": ["CABG (Coronary Artery Bypass Grafting)", "Heart Valve Replacement", "Heart Valve Repair"],
-    "Cardiology": ["Coronary Angiography", "Coronary Angioplasty & Stenting", "Pacemaker Implantation"],
-    "ENT": ["FESS (Functional Endoscopic Sinus Surgery)", "Septoplasty", "Tonsillectomy"],
-    "Gastroenterology": ["Upper GI Endoscopy (Gastroscopy)", "Colonoscopy", "ERCP"],
-    "Surgical Gastroenterology": ["Liver Transplantation", "Liver Resection (Hepatectomy)", "Whipple Procedure"],
-    "Urology": ["PCNL (Percutaneous Nephrolithotomy)", "TURP (Transurethral Resection of the Prostate)", "Kidney Transplantation"],
-    "Spine Surgery": ["Spinal Fusion", "Microdiscectomy", "ACDF (Anterior Cervical Discectomy and Fusion)"],
-    "Pulmonology": ["Bronchoscopy", "EBUS (Endobronchial Ultrasound)", "Medical Thoracoscopy"],
-    "Orthopedics": ["Total Knee Replacement", "ACL Reconstruction (Anterior Cruciate Ligament)", "Fracture Fixation"],
-    "Ophthalmology": ["Cataract Surgery", "LASIK Eye Surgery", "Glaucoma Surgery"],
-    "Gynecology": ["Laparoscopic Hysterectomy", "Laparoscopic Myomectomy", "Endometriosis Surgery"],
-    "Neurosurgery": ["Brain Tumor Surgery", "Aneurysm Clipping", "Deep Brain Stimulation"],
-    "Neurology": ["EEG", "Electromyography (EMG)", "IV Thrombolysis"],
-    "Nephrology": ["Hemodialysis", "Kidney Transplantation", "Percutaneous Renal Biopsy"],
-    "Dentistry": ["Dental Implants", "Root Canal Treatment", "Tooth Extraction"],
-    "Infertility & IVF": ["IVF Treatment", "ICSI Treatment", "IUI Treatment"],
-    "Bariatric Surgery": ["Sleeve Gastrectomy", "Gastric Bypass (Roux-en-Y)", "Mini Gastric Bypass (OAGB/MGB)"],
-    "Pediatric Orthopaedic": ["Clubfoot Correction Surgery", "Pediatric Fracture Surgery", "Developmental Dysplasia of Hip Surgery"],
-}
+# Specialty-default procedure hints are intentionally unused. Procedure tags must
+# come from official doctor profile evidence via scripts/remediate-sahyadri-pr37-blockers.ts.
+PROCEDURE_HINTS: dict[str, list[str]] = {}
 
 TITLE_BY_SPECIALTY = {
     "Radiation Oncology": "Radiation Oncologist",
@@ -301,19 +280,9 @@ def designation_for(doc: dict, specialty: str) -> str:
 
 
 def procedures_for(specialty: str, doc: dict) -> list[str]:
-    base = list(PROCEDURE_HINTS.get(specialty, [specialty]))
-    plain = " ".join(
-        [
-            specialty,
-            doc.get("department") or "",
-            doc.get("alternativedepartment") or "",
-            designation_for(doc, specialty),
-            strip_html(doc.get("description") or "")[:1200],
-        ]
-    )
-    # Keep only the specialty defaults; mapDoctorProcedures will refine from text at build time.
-    # Still pass evidence-bearing strings so empty mappings are rare.
-    return base[:5]
+    # Leave empty at import; remediation maps procedures only from official profile evidence.
+    _ = (specialty, doc, PROCEDURE_HINTS)
+    return []
 
 
 def write_bio(doc: dict, specialty: str, hospital_name: str, campuses: list[str]) -> str:
@@ -330,23 +299,32 @@ def write_bio(doc: dict, specialty: str, hospital_name: str, campuses: list[str]
                 f" Published Sahyadri OPD listings also associate this clinician with "
                 f"{', '.join(HOSPITALS[c]['name'] for c in others)}."
             )
-    proc_phrase = ", ".join(procs[:3])
     plain = strip_html(doc.get("description") or "")
     interest = ""
     if plain:
         # One short factual clause from source without copying long biography blocks.
         snippet = plain[:180].rsplit(" ", 1)[0]
-        if len(snippet) > 40:
+        banned = re.search(
+            r"world-renowned|cutting-edge|guaranteed outcome|best doctor|top doctor|highly accomplished",
+            snippet,
+            re.I,
+        )
+        if len(snippet) > 40 and not banned:
             interest = f" Official hospital materials describe a practice spanning {snippet.lower()}."
             interest = interest.replace("..", ".")
             if len(interest) > 220:
                 interest = ""
+    proc_sentence = (
+        f" Procedure associations retained for directory matching are limited to evidence on the official profile: {', '.join(procs[:5])}."
+        if procs
+        else " No specific GAF procedure tags are claimed beyond the verified specialty association because the official profile does not establish individual procedure evidence."
+    )
     return (
         f"{name} is {title} at {hospital_name} in Pune, India. "
         f"The profile is filed under {specialty} in the GAF Healthcare directory for later country, city, specialty and procedure matching. "
         f"Published experience is recorded as {years.lower()}. "
-        f"Listed credentials include {quals}. "
-        f"Procedure tags used for directory matching include {proc_phrase} when the clinical indication is already supported by records — not as a brochure promise."
+        f"Listed credentials include {quals}."
+        f"{proc_sentence}"
         f"{campus_note}"
         f"{interest} "
         f"Sahyadri Hospitals operates as part of the Manipal Hospitals network; this page keeps the {hospital_name.split(',')[-1].strip()} campus as its own hospital entity. "
@@ -378,8 +356,10 @@ def hospital_seed(campus: str) -> dict:
         "beds": "",
         "accreditation": "NABH",
         "bio": hospital_bio(campus),
-        "specialty": "Radiation Oncology",
+        # Primary specialty is derived at build time from verified campus faculty.
+        "specialty": "",
         "image": "",
+        "imageAlt": "",
         "summary": (
             f"Independent Sahyadri Super Speciality Hospital campus in {campus}, Pune. "
             f"Address: {meta['address']}. Network: Sahyadri Hospitals / Manipal Hospitals."
@@ -406,6 +386,7 @@ def doctor_seed(doc: dict, specialty: str, slug: str) -> dict:
         "hospitalName": hospital["name"],
         "hospitalHref": f"/destinations/india/hospitals/sahyadri-hospitals/{hospital['slug']}/",
         "hospitalSlug": hospital["slug"],
+        "hospitalSlugs": [hospital["slug"], *[HOSPITALS[c]["slug"] for c in campuses if c != primary and c in HOSPITALS]],
         "hospitalCaption": "Sahyadri Hospitals",
         "city": "Pune",
         "cityCountry": "Pune, India",
@@ -417,6 +398,8 @@ def doctor_seed(doc: dict, specialty: str, slug: str) -> dict:
             *[HOSPITALS[c]["name"] for c in campuses if c != primary],
             "Sahyadri Hospitals (Manipal Hospitals network)",
         ],
+        "image": "",
+        "imageAlt": "",
         "awards": [],
         "research": [],
         "memberships": [],

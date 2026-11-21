@@ -1,0 +1,2407 @@
+{
+  "sahyadri-super-speciality-hospital-nagar-road": {
+    "specialties": [
+      {
+        "name": "Orthopedics",
+        "doctor_count": 8,
+        "source": "Verified faculty specialty on 8 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Neurology",
+        "doctor_count": 5,
+        "source": "Verified faculty specialty on 5 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Urology",
+        "doctor_count": 4,
+        "source": "Verified faculty specialty on 4 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "ENT",
+        "doctor_count": 4,
+        "source": "Verified faculty specialty on 4 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Ophthalmology",
+        "doctor_count": 4,
+        "source": "Verified faculty specialty on 4 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Surgical Gastroenterology",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Surgical Oncology",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Cardiac Surgery",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Hematology",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Nephrology",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Gastroenterology",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Medical Oncology",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Pulmonology",
+        "doctor_count": 1,
+        "source": "Verified faculty specialty on 1 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Cardiology",
+        "doctor_count": 1,
+        "source": "Verified faculty specialty on 1 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Neurosurgery",
+        "doctor_count": 1,
+        "source": "Verified faculty specialty on 1 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      }
+    ],
+    "procedures": [
+      {
+        "name": "Total Hip Replacement",
+        "doctors": [
+          "dr-abhijit-agashe",
+          "dr-harshad-prabhakar-patankar",
+          "dr-sachin-tapasvi",
+          "dr-suraj-bhujbal",
+          "dr-vishal-murkute"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijit-agashe, dr-harshad-prabhakar-patankar, dr-sachin-tapasvi, dr-suraj-bhujbal, dr-vishal-murkute"
+      },
+      {
+        "name": "Total Knee Replacement",
+        "doctors": [
+          "dr-abhijit-agashe",
+          "dr-harshad-prabhakar-patankar",
+          "dr-sachin-tapasvi",
+          "dr-suraj-bhujbal",
+          "dr-vishal-murkute"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijit-agashe, dr-harshad-prabhakar-patankar, dr-sachin-tapasvi, dr-suraj-bhujbal, dr-vishal-murkute"
+      },
+      {
+        "name": "ACL Reconstruction (Anterior Cruciate Ligament)",
+        "doctors": [
+          "dr-abhijit-agashe",
+          "dr-harshad-prabhakar-patankar",
+          "dr-nikhil-jadhav",
+          "dr-sachin-tapasvi",
+          "dr-suraj-bhujbal",
+          "dr-sushrut-badve",
+          "dr-vishal-murkute"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijit-agashe, dr-harshad-prabhakar-patankar, dr-nikhil-jadhav, dr-sachin-tapasvi, dr-suraj-bhujbal, dr-sushrut-badve, dr-vishal-murkute"
+      },
+      {
+        "name": "Arthroscopic Surgery",
+        "doctors": [
+          "dr-abhijit-agashe",
+          "dr-harshad-prabhakar-patankar",
+          "dr-nikhil-jadhav",
+          "dr-sachin-tapasvi",
+          "dr-suraj-bhujbal",
+          "dr-sushrut-badve",
+          "dr-vishal-murkute"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijit-agashe, dr-harshad-prabhakar-patankar, dr-nikhil-jadhav, dr-sachin-tapasvi, dr-suraj-bhujbal, dr-sushrut-badve, dr-vishal-murkute"
+      },
+      {
+        "name": "Ankle Replacement",
+        "doctors": [
+          "dr-abhijit-agashe"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijit-agashe"
+      },
+      {
+        "name": "Liver Transplantation",
+        "doctors": [
+          "dr-abhijit-balkrishna-jagdale-",
+          "dr-apurv-deshpande"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijit-balkrishna-jagdale-, dr-apurv-deshpande"
+      },
+      {
+        "name": "Living Donor Liver Transplantation",
+        "doctors": [
+          "dr-apurv-deshpande"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-apurv-deshpande"
+      },
+      {
+        "name": "Deceased Donor Liver Transplantation",
+        "doctors": [
+          "dr-apurv-deshpande"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-apurv-deshpande"
+      },
+      {
+        "name": "PCNL (Percutaneous Nephrolithotomy)",
+        "doctors": [
+          "dr-ashish-bhave",
+          "dr-kalpesh-saswade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-ashish-bhave, dr-kalpesh-saswade"
+      },
+      {
+        "name": "RIRS (Retrograde Intrarenal Surgery)",
+        "doctors": [
+          "dr-ashish-bhave",
+          "dr-kalpesh-saswade",
+          "dr-ketan-pai"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-ashish-bhave, dr-kalpesh-saswade, dr-ketan-pai"
+      },
+      {
+        "name": "Ureteroscopy",
+        "doctors": [
+          "dr-ashish-bhave",
+          "dr-kalpesh-saswade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-ashish-bhave, dr-kalpesh-saswade"
+      },
+      {
+        "name": "TURP (Transurethral Resection of the Prostate)",
+        "doctors": [
+          "dr-ashish-bhave",
+          "dr-ketan-pai"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-ashish-bhave, dr-ketan-pai"
+      },
+      {
+        "name": "Pancreatic Surgery",
+        "doctors": [
+          "dr-bhushan-s-bhalgat"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-bhushan-s-bhalgat"
+      },
+      {
+        "name": "Neck Dissection",
+        "doctors": [
+          "dr-bhushan-s-bhalgat",
+          "dr-shailesh-naik"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-bhushan-s-bhalgat, dr-shailesh-naik"
+      },
+      {
+        "name": "Minimally Invasive Cardiac Surgery",
+        "doctors": [
+          "dr-hemant-k-chaudhary",
+          "dr-manoj-durairaj"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-hemant-k-chaudhary, dr-manoj-durairaj"
+      },
+      {
+        "name": "Aortic Aneurysm Surgery",
+        "doctors": [
+          "dr-hemant-k-chaudhary"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-hemant-k-chaudhary"
+      },
+      {
+        "name": "FESS (Functional Endoscopic Sinus Surgery)",
+        "doctors": [
+          "dr-jayjeet-lokhande",
+          "dr-parmanand-chawan",
+          "dr-sumit-bhatti"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jayjeet-lokhande, dr-parmanand-chawan, dr-sumit-bhatti"
+      },
+      {
+        "name": "Mastoidectomy",
+        "doctors": [
+          "dr-jayjeet-lokhande"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jayjeet-lokhande"
+      },
+      {
+        "name": "Tympanoplasty",
+        "doctors": [
+          "dr-jayjeet-lokhande"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jayjeet-lokhande"
+      },
+      {
+        "name": "Septoplasty",
+        "doctors": [
+          "dr-jayjeet-lokhande"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jayjeet-lokhande"
+      },
+      {
+        "name": "Kidney Transplantation",
+        "doctors": [
+          "dr-kalpesh-saswade",
+          "dr-ketan-pai",
+          "dr-sachin-patil"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kalpesh-saswade, dr-ketan-pai, dr-sachin-patil"
+      },
+      {
+        "name": "Pyeloplasty",
+        "doctors": [
+          "dr-kalpesh-saswade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kalpesh-saswade"
+      },
+      {
+        "name": "Bone Marrow Transplantation",
+        "doctors": [
+          "dr-kannan-subramanian",
+          "dr-shashikant-apte"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kannan-subramanian, dr-shashikant-apte"
+      },
+      {
+        "name": "Stem Cell Transplantation",
+        "doctors": [
+          "dr-kannan-subramanian",
+          "dr-shashikant-apte"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kannan-subramanian, dr-shashikant-apte"
+      },
+      {
+        "name": "EEG",
+        "doctors": [
+          "dr-lomesh-bhirud",
+          "dr-sadique-pathan",
+          "dr-sanjay-kisan-pawar",
+          "dr-vilas-shingare"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-lomesh-bhirud, dr-sadique-pathan, dr-sanjay-kisan-pawar, dr-vilas-shingare"
+      },
+      {
+        "name": "Stroke Thrombectomy",
+        "doctors": [
+          "dr-lomesh-bhirud"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-lomesh-bhirud"
+      },
+      {
+        "name": "IV Thrombolysis",
+        "doctors": [
+          "dr-lomesh-bhirud",
+          "dr-nasli-r-icchaporia",
+          "dr-sadique-pathan",
+          "dr-sanjay-kisan-pawar",
+          "dr-vilas-shingare"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-lomesh-bhirud, dr-nasli-r-icchaporia, dr-sadique-pathan, dr-sanjay-kisan-pawar, dr-vilas-shingare"
+      },
+      {
+        "name": "Deep Brain Stimulation",
+        "doctors": [
+          "dr-lomesh-bhirud",
+          "dr-sadique-pathan",
+          "dr-sanjay-kisan-pawar",
+          "dr-vilas-shingare"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-lomesh-bhirud, dr-sadique-pathan, dr-sanjay-kisan-pawar, dr-vilas-shingare"
+      },
+      {
+        "name": "Migraine Nerve Block",
+        "doctors": [
+          "dr-lomesh-bhirud",
+          "dr-sadique-pathan",
+          "dr-sanjay-kisan-pawar",
+          "dr-vilas-shingare"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-lomesh-bhirud, dr-sadique-pathan, dr-sanjay-kisan-pawar, dr-vilas-shingare"
+      },
+      {
+        "name": "Hemodialysis",
+        "doctors": [
+          "dr-manan-doshi",
+          "dr-sachin-patil"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-manan-doshi, dr-sachin-patil"
+      },
+      {
+        "name": "Percutaneous Renal Biopsy",
+        "doctors": [
+          "dr-manan-doshi",
+          "dr-sachin-patil"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-manan-doshi, dr-sachin-patil"
+      },
+      {
+        "name": "Heart Transplant Surgery",
+        "doctors": [
+          "dr-manoj-durairaj"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-manoj-durairaj"
+      },
+      {
+        "name": "Congenital Heart Surgery",
+        "doctors": [
+          "dr-manoj-durairaj"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-manoj-durairaj"
+      },
+      {
+        "name": "CABG (Coronary Artery Bypass Grafting)",
+        "doctors": [
+          "dr-manoj-durairaj"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-manoj-durairaj"
+      },
+      {
+        "name": "Bronchoscopy",
+        "doctors": [
+          "dr-milind-kulkarni"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-milind-kulkarni"
+      },
+      {
+        "name": "Shoulder Replacement",
+        "doctors": [
+          "dr-nikhil-jadhav"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-nikhil-jadhav"
+      },
+      {
+        "name": "Meniscus Repair",
+        "doctors": [
+          "dr-nikhil-jadhav",
+          "dr-sachin-tapasvi",
+          "dr-suraj-bhujbal"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-nikhil-jadhav, dr-sachin-tapasvi, dr-suraj-bhujbal"
+      },
+      {
+        "name": "Rotator Cuff Repair",
+        "doctors": [
+          "dr-nikhil-jadhav"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-nikhil-jadhav"
+      },
+      {
+        "name": "Microlaryngeal Surgery",
+        "doctors": [
+          "dr-parmanand-chawan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-parmanand-chawan"
+      },
+      {
+        "name": "Adenoidectomy",
+        "doctors": [
+          "dr-parmanand-chawan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-parmanand-chawan"
+      },
+      {
+        "name": "Tonsillectomy",
+        "doctors": [
+          "dr-parmanand-chawan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-parmanand-chawan"
+      },
+      {
+        "name": "Rhinoplasty",
+        "doctors": [
+          "dr-parmanand-chawan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-parmanand-chawan"
+      },
+      {
+        "name": "Cataract Surgery",
+        "doctors": [
+          "dr-pranav-more",
+          "dr-varsha-dharmadhikari"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-pranav-more, dr-varsha-dharmadhikari"
+      },
+      {
+        "name": "Corneal Transplantation",
+        "doctors": [
+          "dr-pranav-more"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-pranav-more"
+      },
+      {
+        "name": "ICD Implantation (Implantable Cardioverter-Defibrillator)",
+        "doctors": [
+          "dr-priya-palimkar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-priya-palimkar"
+      },
+      {
+        "name": "CTO Angioplasty (Chronic Total Occlusion)",
+        "doctors": [
+          "dr-priya-palimkar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-priya-palimkar"
+      },
+      {
+        "name": "Balloon Mitral Valvotomy",
+        "doctors": [
+          "dr-priya-palimkar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-priya-palimkar"
+      },
+      {
+        "name": "ASD Device Closure",
+        "doctors": [
+          "dr-priya-palimkar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-priya-palimkar"
+      },
+      {
+        "name": "Carotid Artery Stenting",
+        "doctors": [
+          "dr-priya-palimkar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-priya-palimkar"
+      },
+      {
+        "name": "Peripheral Angioplasty",
+        "doctors": [
+          "dr-priya-palimkar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-priya-palimkar"
+      },
+      {
+        "name": "Pacemaker Implantation",
+        "doctors": [
+          "dr-priya-palimkar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-priya-palimkar"
+      },
+      {
+        "name": "Coronary Angiography",
+        "doctors": [
+          "dr-priya-palimkar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-priya-palimkar"
+      },
+      {
+        "name": "Coronary Angioplasty & Stenting",
+        "doctors": [
+          "dr-priya-palimkar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-priya-palimkar"
+      },
+      {
+        "name": "Vocal Cord Surgery",
+        "doctors": [
+          "dr-rahul-magar",
+          "dr-sumit-bhatti"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-rahul-magar, dr-sumit-bhatti"
+      },
+      {
+        "name": "Brain Tumor Surgery",
+        "doctors": [
+          "dr-sachin-mahajan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sachin-mahajan"
+      },
+      {
+        "name": "Skull Base Surgery",
+        "doctors": [
+          "dr-sachin-mahajan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sachin-mahajan"
+      },
+      {
+        "name": "Hydrocephalus Surgery",
+        "doctors": [
+          "dr-sachin-mahajan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sachin-mahajan"
+      },
+      {
+        "name": "Peritoneal Dialysis",
+        "doctors": [
+          "dr-sachin-patil"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sachin-patil"
+      },
+      {
+        "name": "Partial Knee Replacement",
+        "doctors": [
+          "dr-sachin-tapasvi"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sachin-tapasvi"
+      },
+      {
+        "name": "Nerve Conduction Study",
+        "doctors": [
+          "dr-sadique-pathan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sadique-pathan"
+      },
+      {
+        "name": "Evoked Potentials",
+        "doctors": [
+          "dr-sadique-pathan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sadique-pathan"
+      },
+      {
+        "name": "Lung Cancer Surgery",
+        "doctors": [
+          "dr-shailesh-naik"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-shailesh-naik"
+      },
+      {
+        "name": "Allogeneic Stem Cell Transplant",
+        "doctors": [
+          "dr-shashikant-apte"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-shashikant-apte"
+      },
+      {
+        "name": "VIU (Visual Internal Urethrotomy)",
+        "doctors": [
+          "dr-shrikant-mhaskar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-shrikant-mhaskar"
+      },
+      {
+        "name": "Cochlear Implantation",
+        "doctors": [
+          "dr-sumit-bhatti"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sumit-bhatti"
+      },
+      {
+        "name": "Sleep Apnea Surgery",
+        "doctors": [
+          "dr-sumit-bhatti"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sumit-bhatti"
+      },
+      {
+        "name": "Thyroid Surgery",
+        "doctors": [
+          "dr-sumit-bhatti"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sumit-bhatti"
+      },
+      {
+        "name": "Precision Oncology",
+        "doctors": [
+          "dr-sunil-chillashetty",
+          "dr-tushar-patil-sahyadri-pune"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sunil-chillashetty, dr-tushar-patil-sahyadri-pune"
+      },
+      {
+        "name": "ORIF (Open Reduction and Internal Fixation)",
+        "doctors": [
+          "dr-suraj-bhujbal"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-suraj-bhujbal"
+      },
+      {
+        "name": "Fracture Fixation",
+        "doctors": [
+          "dr-suraj-bhujbal"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-suraj-bhujbal"
+      },
+      {
+        "name": "Targeted Therapy",
+        "doctors": [
+          "dr-tushar-patil-sahyadri-pune"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-tushar-patil-sahyadri-pune"
+      },
+      {
+        "name": "Chemotherapy",
+        "doctors": [
+          "dr-tushar-patil-sahyadri-pune"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-tushar-patil-sahyadri-pune"
+      },
+      {
+        "name": "Glaucoma Surgery",
+        "doctors": [
+          "dr-varsha-dharmadhikari"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-varsha-dharmadhikari"
+      },
+      {
+        "name": "Dacryocystorhinostomy (DCR) / Tear Duct Surgery",
+        "doctors": [
+          "dr-varsha-dharmadhikari"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-varsha-dharmadhikari"
+      },
+      {
+        "name": "ERCP",
+        "doctors": [
+          "dr-vikram-uttam-patil"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vikram-uttam-patil"
+      },
+      {
+        "name": "Endoscopic Ultrasound (EUS)",
+        "doctors": [
+          "dr-vikram-uttam-patil"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vikram-uttam-patil"
+      },
+      {
+        "name": "Enteroscopy",
+        "doctors": [
+          "dr-vikram-uttam-patil"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vikram-uttam-patil"
+      },
+      {
+        "name": "Colonoscopy",
+        "doctors": [
+          "dr-vikram-uttam-patil"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vikram-uttam-patil"
+      },
+      {
+        "name": "Upper GI Endoscopy (Gastroscopy)",
+        "doctors": [
+          "dr-vikram-uttam-patil"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vikram-uttam-patil"
+      },
+      {
+        "name": "IVIG (Intravenous Immunoglobulin)",
+        "doctors": [
+          "dr-vilas-shingare"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vilas-shingare"
+      },
+      {
+        "name": "Retinal Detachment Surgery",
+        "doctors": [
+          "dr-vishvesh-agarwal"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vishvesh-agarwal"
+      },
+      {
+        "name": "Intravitreal Anti-VEGF Injection",
+        "doctors": [
+          "dr-vishvesh-agarwal"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vishvesh-agarwal"
+      }
+    ]
+  },
+  "sahyadri-super-speciality-hospital-hadapsar": {
+    "specialties": [
+      {
+        "name": "Nephrology",
+        "doctor_count": 3,
+        "source": "Verified faculty specialty on 3 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "ENT",
+        "doctor_count": 3,
+        "source": "Verified faculty specialty on 3 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Medical Oncology",
+        "doctor_count": 3,
+        "source": "Verified faculty specialty on 3 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Ophthalmology",
+        "doctor_count": 3,
+        "source": "Verified faculty specialty on 3 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Urology",
+        "doctor_count": 3,
+        "source": "Verified faculty specialty on 3 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Surgical Gastroenterology",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Neurology",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Orthopedics",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Gastroenterology",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Neurosurgery",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Surgical Oncology",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Hematology",
+        "doctor_count": 1,
+        "source": "Verified faculty specialty on 1 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Spine Surgery",
+        "doctor_count": 1,
+        "source": "Verified faculty specialty on 1 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Cardiology",
+        "doctor_count": 1,
+        "source": "Verified faculty specialty on 1 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Pulmonology",
+        "doctor_count": 1,
+        "source": "Verified faculty specialty on 1 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Radiation Oncology",
+        "doctor_count": 1,
+        "source": "Verified faculty specialty on 1 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      }
+    ],
+    "procedures": [
+      {
+        "name": "Liver Transplantation",
+        "doctors": [
+          "dr-abhijit-balkrishna-jagdale-",
+          "dr-apurv-deshpande"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijit-balkrishna-jagdale-, dr-apurv-deshpande"
+      },
+      {
+        "name": "Living Donor Liver Transplantation",
+        "doctors": [
+          "dr-apurv-deshpande"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-apurv-deshpande"
+      },
+      {
+        "name": "Deceased Donor Liver Transplantation",
+        "doctors": [
+          "dr-apurv-deshpande"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-apurv-deshpande"
+      },
+      {
+        "name": "Hemodialysis",
+        "doctors": [
+          "dr-manan-doshi",
+          "dr-sachin-patil",
+          "dr-mahesh-rokade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-manan-doshi, dr-sachin-patil, dr-mahesh-rokade"
+      },
+      {
+        "name": "Percutaneous Renal Biopsy",
+        "doctors": [
+          "dr-manan-doshi",
+          "dr-sachin-patil"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-manan-doshi, dr-sachin-patil"
+      },
+      {
+        "name": "Vocal Cord Surgery",
+        "doctors": [
+          "dr-rahul-magar",
+          "dr-pravin-bhosale",
+          "dr-robert-lobo"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-rahul-magar, dr-pravin-bhosale, dr-robert-lobo"
+      },
+      {
+        "name": "Kidney Transplantation",
+        "doctors": [
+          "dr-sachin-patil",
+          "dr-mahesh-rokade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sachin-patil, dr-mahesh-rokade"
+      },
+      {
+        "name": "Peritoneal Dialysis",
+        "doctors": [
+          "dr-sachin-patil",
+          "dr-mahesh-rokade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sachin-patil, dr-mahesh-rokade"
+      },
+      {
+        "name": "EEG",
+        "doctors": [
+          "dr-sadique-pathan",
+          "dr-anup-bende"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sadique-pathan, dr-anup-bende"
+      },
+      {
+        "name": "Nerve Conduction Study",
+        "doctors": [
+          "dr-sadique-pathan",
+          "dr-anup-bende"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sadique-pathan, dr-anup-bende"
+      },
+      {
+        "name": "Evoked Potentials",
+        "doctors": [
+          "dr-sadique-pathan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sadique-pathan"
+      },
+      {
+        "name": "IV Thrombolysis",
+        "doctors": [
+          "dr-sadique-pathan",
+          "dr-anup-bende"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sadique-pathan, dr-anup-bende"
+      },
+      {
+        "name": "Deep Brain Stimulation",
+        "doctors": [
+          "dr-sadique-pathan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sadique-pathan"
+      },
+      {
+        "name": "Migraine Nerve Block",
+        "doctors": [
+          "dr-sadique-pathan",
+          "dr-anup-bende"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sadique-pathan, dr-anup-bende"
+      },
+      {
+        "name": "Precision Oncology",
+        "doctors": [
+          "dr-tushar-patil-sahyadri-pune",
+          "dr-rahul-bhausaheb-pathade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-tushar-patil-sahyadri-pune, dr-rahul-bhausaheb-pathade"
+      },
+      {
+        "name": "Targeted Therapy",
+        "doctors": [
+          "dr-tushar-patil-sahyadri-pune",
+          "dr-asma-sadique-pathan",
+          "dr-rahul-bhausaheb-pathade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-tushar-patil-sahyadri-pune, dr-asma-sadique-pathan, dr-rahul-bhausaheb-pathade"
+      },
+      {
+        "name": "Chemotherapy",
+        "doctors": [
+          "dr-tushar-patil-sahyadri-pune",
+          "dr-asma-sadique-pathan",
+          "dr-rahul-bhausaheb-pathade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-tushar-patil-sahyadri-pune, dr-asma-sadique-pathan, dr-rahul-bhausaheb-pathade"
+      },
+      {
+        "name": "Retinal Detachment Surgery",
+        "doctors": [
+          "dr-vishvesh-agarwal"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vishvesh-agarwal"
+      },
+      {
+        "name": "Intravitreal Anti-VEGF Injection",
+        "doctors": [
+          "dr-vishvesh-agarwal"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vishvesh-agarwal"
+      },
+      {
+        "name": "Total Knee Replacement",
+        "doctors": [
+          "dr-amol-tapadia",
+          "dr-sachin-karkamkar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-amol-tapadia, dr-sachin-karkamkar"
+      },
+      {
+        "name": "Total Hip Replacement",
+        "doctors": [
+          "dr-amol-tapadia",
+          "dr-sachin-karkamkar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-amol-tapadia, dr-sachin-karkamkar"
+      },
+      {
+        "name": "ACL Reconstruction (Anterior Cruciate Ligament)",
+        "doctors": [
+          "dr-amol-tapadia",
+          "dr-sachin-karkamkar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-amol-tapadia, dr-sachin-karkamkar"
+      },
+      {
+        "name": "Arthroscopic Surgery",
+        "doctors": [
+          "dr-amol-tapadia",
+          "dr-sachin-karkamkar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-amol-tapadia, dr-sachin-karkamkar"
+      },
+      {
+        "name": "ORIF (Open Reduction and Internal Fixation)",
+        "doctors": [
+          "dr-amol-tapadia"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-amol-tapadia"
+      },
+      {
+        "name": "Fracture Fixation",
+        "doctors": [
+          "dr-amol-tapadia"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-amol-tapadia"
+      },
+      {
+        "name": "Electromyography (EMG)",
+        "doctors": [
+          "dr-anup-bende"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-anup-bende"
+      },
+      {
+        "name": "IVIG (Intravenous Immunoglobulin)",
+        "doctors": [
+          "dr-anup-bende"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-anup-bende"
+      },
+      {
+        "name": "Hormone Therapy",
+        "doctors": [
+          "dr-asma-sadique-pathan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-asma-sadique-pathan"
+      },
+      {
+        "name": "Immunotherapy",
+        "doctors": [
+          "dr-asma-sadique-pathan",
+          "dr-rahul-bhausaheb-pathade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-asma-sadique-pathan, dr-rahul-bhausaheb-pathade"
+      },
+      {
+        "name": "Autologous Stem Cell Transplant",
+        "doctors": [
+          "dr-chandrakant-lahane"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-chandrakant-lahane"
+      },
+      {
+        "name": "Allogeneic Stem Cell Transplant",
+        "doctors": [
+          "dr-chandrakant-lahane"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-chandrakant-lahane"
+      },
+      {
+        "name": "Bone Marrow Transplantation",
+        "doctors": [
+          "dr-chandrakant-lahane"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-chandrakant-lahane"
+      },
+      {
+        "name": "Stem Cell Transplantation",
+        "doctors": [
+          "dr-chandrakant-lahane"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-chandrakant-lahane"
+      },
+      {
+        "name": "TLIF (Transforaminal Lumbar Interbody Fusion)",
+        "doctors": [
+          "dr-hrushikesh-mehata"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-hrushikesh-mehata"
+      },
+      {
+        "name": "Microdiscectomy",
+        "doctors": [
+          "dr-hrushikesh-mehata"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-hrushikesh-mehata"
+      },
+      {
+        "name": "Discectomy",
+        "doctors": [
+          "dr-hrushikesh-mehata"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-hrushikesh-mehata"
+      },
+      {
+        "name": "Kyphoplasty",
+        "doctors": [
+          "dr-hrushikesh-mehata"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-hrushikesh-mehata"
+      },
+      {
+        "name": "Vertebroplasty",
+        "doctors": [
+          "dr-hrushikesh-mehata"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-hrushikesh-mehata"
+      },
+      {
+        "name": "Scoliosis Correction",
+        "doctors": [
+          "dr-hrushikesh-mehata"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-hrushikesh-mehata"
+      },
+      {
+        "name": "Spinal Deformity Correction",
+        "doctors": [
+          "dr-hrushikesh-mehata"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-hrushikesh-mehata"
+      },
+      {
+        "name": "Spinal Decompression",
+        "doctors": [
+          "dr-hrushikesh-mehata"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-hrushikesh-mehata"
+      },
+      {
+        "name": "CRT/CRT-D Implantation",
+        "doctors": [
+          "dr-jagjeet-deshmukh"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jagjeet-deshmukh"
+      },
+      {
+        "name": "CTO Angioplasty (Chronic Total Occlusion)",
+        "doctors": [
+          "dr-jagjeet-deshmukh"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jagjeet-deshmukh"
+      },
+      {
+        "name": "ASD Device Closure",
+        "doctors": [
+          "dr-jagjeet-deshmukh"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jagjeet-deshmukh"
+      },
+      {
+        "name": "Peripheral Angioplasty",
+        "doctors": [
+          "dr-jagjeet-deshmukh"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jagjeet-deshmukh"
+      },
+      {
+        "name": "Pacemaker Implantation",
+        "doctors": [
+          "dr-jagjeet-deshmukh"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jagjeet-deshmukh"
+      },
+      {
+        "name": "Coronary Angiography",
+        "doctors": [
+          "dr-jagjeet-deshmukh"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jagjeet-deshmukh"
+      },
+      {
+        "name": "Coronary Angioplasty & Stenting",
+        "doctors": [
+          "dr-jagjeet-deshmukh"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jagjeet-deshmukh"
+      },
+      {
+        "name": "ERCP",
+        "doctors": [
+          "dr-kiran-shinde",
+          "dr-ksheetij-kothari"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kiran-shinde, dr-ksheetij-kothari"
+      },
+      {
+        "name": "Endoscopic Ultrasound (EUS)",
+        "doctors": [
+          "dr-kiran-shinde",
+          "dr-ksheetij-kothari"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kiran-shinde, dr-ksheetij-kothari"
+      },
+      {
+        "name": "Capsule Endoscopy",
+        "doctors": [
+          "dr-kiran-shinde",
+          "dr-ksheetij-kothari"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kiran-shinde, dr-ksheetij-kothari"
+      },
+      {
+        "name": "Foreign Body Removal",
+        "doctors": [
+          "dr-kiran-shinde"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kiran-shinde"
+      },
+      {
+        "name": "Colonoscopy",
+        "doctors": [
+          "dr-kiran-shinde"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kiran-shinde"
+      },
+      {
+        "name": "Upper GI Endoscopy (Gastroscopy)",
+        "doctors": [
+          "dr-kiran-shinde"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kiran-shinde"
+      },
+      {
+        "name": "Endoscopic Hemostasis",
+        "doctors": [
+          "dr-ksheetij-kothari"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-ksheetij-kothari"
+      },
+      {
+        "name": "Kidney Transplant Evaluation and Follow-up",
+        "doctors": [
+          "dr-mahesh-rokade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-mahesh-rokade"
+      },
+      {
+        "name": "Dialysis Catheter Placement",
+        "doctors": [
+          "dr-mahesh-rokade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-mahesh-rokade"
+      },
+      {
+        "name": "Cataract Surgery",
+        "doctors": [
+          "dr-nana-jare"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-nana-jare"
+      },
+      {
+        "name": "Glaucoma Surgery",
+        "doctors": [
+          "dr-nana-jare"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-nana-jare"
+      },
+      {
+        "name": "Squint / Strabismus Surgery",
+        "doctors": [
+          "dr-nana-jare"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-nana-jare"
+      },
+      {
+        "name": "PCNL (Percutaneous Nephrolithotomy)",
+        "doctors": [
+          "dr-parag-gulhane"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-parag-gulhane"
+      },
+      {
+        "name": "RIRS (Retrograde Intrarenal Surgery)",
+        "doctors": [
+          "dr-parag-gulhane",
+          "dr-yogesh-kaje"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-parag-gulhane, dr-yogesh-kaje"
+      },
+      {
+        "name": "ESWL (Extracorporeal Shock Wave Lithotripsy)",
+        "doctors": [
+          "dr-parag-gulhane"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-parag-gulhane"
+      },
+      {
+        "name": "Ureteroscopy",
+        "doctors": [
+          "dr-parag-gulhane"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-parag-gulhane"
+      },
+      {
+        "name": "Varicocele Surgery",
+        "doctors": [
+          "dr-parag-gulhane"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-parag-gulhane"
+      },
+      {
+        "name": "Transoral Robotic Surgery (TORS)",
+        "doctors": [
+          "dr-pravin-bhosale",
+          "dr-robert-lobo"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-pravin-bhosale, dr-robert-lobo"
+      },
+      {
+        "name": "FESS (Functional Endoscopic Sinus Surgery)",
+        "doctors": [
+          "dr-pravin-bhosale"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-pravin-bhosale"
+      },
+      {
+        "name": "Skull Base Surgery",
+        "doctors": [
+          "dr-pravin-bhosale"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-pravin-bhosale"
+      },
+      {
+        "name": "Sleep Apnea Surgery",
+        "doctors": [
+          "dr-pravin-bhosale"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-pravin-bhosale"
+      },
+      {
+        "name": "Rhinoplasty",
+        "doctors": [
+          "dr-pravin-bhosale"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-pravin-bhosale"
+      },
+      {
+        "name": "Palliative Chemotherapy",
+        "doctors": [
+          "dr-rahul-bhausaheb-pathade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-rahul-bhausaheb-pathade"
+      },
+      {
+        "name": "Shoulder Replacement",
+        "doctors": [
+          "dr-sachin-karkamkar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sachin-karkamkar"
+      },
+      {
+        "name": "CyberKnife",
+        "doctors": [
+          "dr-sanjay-hunugundmath"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sanjay-hunugundmath"
+      },
+      {
+        "name": "Stereotactic Body Radiotherapy (SBRT)",
+        "doctors": [
+          "dr-sanjay-hunugundmath"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sanjay-hunugundmath"
+      },
+      {
+        "name": "Stereotactic Radiosurgery (SRS)",
+        "doctors": [
+          "dr-sanjay-hunugundmath"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sanjay-hunugundmath"
+      },
+      {
+        "name": "Image-Guided Radiotherapy (IGRT)",
+        "doctors": [
+          "dr-sanjay-hunugundmath"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sanjay-hunugundmath"
+      },
+      {
+        "name": "Spinal Tumor Surgery",
+        "doctors": [
+          "dr-siraj-basade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-siraj-basade"
+      },
+      {
+        "name": "Endoscopic Brain Surgery",
+        "doctors": [
+          "dr-siraj-basade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-siraj-basade"
+      },
+      {
+        "name": "Pancreatic Surgery",
+        "doctors": [
+          "dr-vini-talwar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vini-talwar"
+      },
+      {
+        "name": "PIPAC",
+        "doctors": [
+          "dr-vini-talwar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vini-talwar"
+      },
+      {
+        "name": "Cytoreductive Surgery with HIPEC",
+        "doctors": [
+          "dr-vini-talwar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vini-talwar"
+      },
+      {
+        "name": "Neck Dissection",
+        "doctors": [
+          "dr-vini-talwar",
+          "dr-vinod-gore"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vini-talwar, dr-vinod-gore"
+      },
+      {
+        "name": "Cytoreductive Surgery",
+        "doctors": [
+          "dr-vini-talwar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vini-talwar"
+      },
+      {
+        "name": "Oncoplastic Breast Surgery",
+        "doctors": [
+          "dr-vinod-gore"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vinod-gore"
+      },
+      {
+        "name": "Breast Reconstruction",
+        "doctors": [
+          "dr-vinod-gore"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vinod-gore"
+      },
+      {
+        "name": "Mastectomy",
+        "doctors": [
+          "dr-vinod-gore"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vinod-gore"
+      },
+      {
+        "name": "Lung Cancer Surgery",
+        "doctors": [
+          "dr-vinod-gore"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vinod-gore"
+      },
+      {
+        "name": "Brain Tumor Surgery",
+        "doctors": [
+          "dr-vishal-rokade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vishal-rokade"
+      },
+      {
+        "name": "HoLEP (Holmium Laser Enucleation)",
+        "doctors": [
+          "dr-yogesh-kaje"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-yogesh-kaje"
+      }
+    ]
+  },
+  "sahyadri-super-speciality-hospital-deccan-gymkhana": {
+    "specialties": [
+      {
+        "name": "Orthopedics",
+        "doctor_count": 10,
+        "source": "Verified faculty specialty on 10 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Neurology",
+        "doctor_count": 7,
+        "source": "Verified faculty specialty on 7 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Cardiology",
+        "doctor_count": 5,
+        "source": "Verified faculty specialty on 5 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Surgical Gastroenterology",
+        "doctor_count": 5,
+        "source": "Verified faculty specialty on 5 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Nephrology",
+        "doctor_count": 4,
+        "source": "Verified faculty specialty on 4 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Neurosurgery",
+        "doctor_count": 4,
+        "source": "Verified faculty specialty on 4 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Gastroenterology",
+        "doctor_count": 4,
+        "source": "Verified faculty specialty on 4 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Cardiac Surgery",
+        "doctor_count": 3,
+        "source": "Verified faculty specialty on 3 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Medical Oncology",
+        "doctor_count": 3,
+        "source": "Verified faculty specialty on 3 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Ophthalmology",
+        "doctor_count": 3,
+        "source": "Verified faculty specialty on 3 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Gynecology",
+        "doctor_count": 3,
+        "source": "Verified faculty specialty on 3 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Hematology",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Urology",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "ENT",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Radiation Oncology",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Surgical Oncology",
+        "doctor_count": 2,
+        "source": "Verified faculty specialty on 2 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Pulmonology",
+        "doctor_count": 1,
+        "source": "Verified faculty specialty on 1 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      },
+      {
+        "name": "Spine Surgery",
+        "doctor_count": 1,
+        "source": "Verified faculty specialty on 1 doctor profile(s) affiliated to this campus via Sahyadri OPD listings / eligibility campuses"
+      }
+    ],
+    "procedures": [
+      {
+        "name": "Total Hip Replacement",
+        "doctors": [
+          "dr-abhijit-agashe",
+          "dr-sachin-tapasvi",
+          "dr-sachin-karkamkar",
+          "dr-abhay-kulkarni",
+          "dr-nikhil-likhate",
+          "dr-sanjay-chauhan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijit-agashe, dr-sachin-tapasvi, dr-sachin-karkamkar, dr-abhay-kulkarni, dr-nikhil-likhate, dr-sanjay-chauhan"
+      },
+      {
+        "name": "Total Knee Replacement",
+        "doctors": [
+          "dr-abhijit-agashe",
+          "dr-sachin-tapasvi",
+          "dr-sachin-karkamkar",
+          "dr-abhay-kulkarni",
+          "dr-nikhil-likhate",
+          "dr-sanjay-chauhan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijit-agashe, dr-sachin-tapasvi, dr-sachin-karkamkar, dr-abhay-kulkarni, dr-nikhil-likhate, dr-sanjay-chauhan"
+      },
+      {
+        "name": "ACL Reconstruction (Anterior Cruciate Ligament)",
+        "doctors": [
+          "dr-abhijit-agashe",
+          "dr-sachin-tapasvi",
+          "dr-sushrut-badve",
+          "dr-sachin-karkamkar",
+          "dr-abhay-kulkarni",
+          "dr-nikhil-likhate"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijit-agashe, dr-sachin-tapasvi, dr-sushrut-badve, dr-sachin-karkamkar, dr-abhay-kulkarni, dr-nikhil-likhate"
+      },
+      {
+        "name": "Arthroscopic Surgery",
+        "doctors": [
+          "dr-abhijit-agashe",
+          "dr-sachin-tapasvi",
+          "dr-sushrut-badve",
+          "dr-sachin-karkamkar",
+          "dr-abhay-kulkarni",
+          "dr-abhijeet-wahegaonkar",
+          "dr-nikhil-likhate",
+          "dr-sanjay-chauhan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijit-agashe, dr-sachin-tapasvi, dr-sushrut-badve, dr-sachin-karkamkar, dr-abhay-kulkarni, dr-abhijeet-wahegaonkar, dr-nikhil-likhate, dr-sanjay-chauhan"
+      },
+      {
+        "name": "Ankle Replacement",
+        "doctors": [
+          "dr-abhijit-agashe"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijit-agashe"
+      },
+      {
+        "name": "Bone Marrow Transplantation",
+        "doctors": [
+          "dr-kannan-subramanian",
+          "dr-shashikant-apte"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kannan-subramanian, dr-shashikant-apte"
+      },
+      {
+        "name": "Stem Cell Transplantation",
+        "doctors": [
+          "dr-kannan-subramanian",
+          "dr-shashikant-apte"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kannan-subramanian, dr-shashikant-apte"
+      },
+      {
+        "name": "Kidney Transplantation",
+        "doctors": [
+          "dr-ketan-pai",
+          "dr-anil-godbole",
+          "dr-atul-d-sajgure",
+          "dr-bipin-vibhute"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-ketan-pai, dr-anil-godbole, dr-atul-d-sajgure, dr-bipin-vibhute"
+      },
+      {
+        "name": "RIRS (Retrograde Intrarenal Surgery)",
+        "doctors": [
+          "dr-ketan-pai"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-ketan-pai"
+      },
+      {
+        "name": "TURP (Transurethral Resection of the Prostate)",
+        "doctors": [
+          "dr-ketan-pai"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-ketan-pai"
+      },
+      {
+        "name": "Hemodialysis",
+        "doctors": [
+          "dr-manan-doshi",
+          "dr-anil-godbole",
+          "dr-atul-d-sajgure"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-manan-doshi, dr-anil-godbole, dr-atul-d-sajgure"
+      },
+      {
+        "name": "Percutaneous Renal Biopsy",
+        "doctors": [
+          "dr-manan-doshi",
+          "dr-anil-godbole",
+          "dr-atul-d-sajgure"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-manan-doshi, dr-anil-godbole, dr-atul-d-sajgure"
+      },
+      {
+        "name": "Heart Transplant Surgery",
+        "doctors": [
+          "dr-manoj-durairaj"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-manoj-durairaj"
+      },
+      {
+        "name": "Congenital Heart Surgery",
+        "doctors": [
+          "dr-manoj-durairaj"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-manoj-durairaj"
+      },
+      {
+        "name": "Minimally Invasive Cardiac Surgery",
+        "doctors": [
+          "dr-manoj-durairaj",
+          "dr-advait-kothurkar",
+          "dr-nitin-pathak"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-manoj-durairaj, dr-advait-kothurkar, dr-nitin-pathak"
+      },
+      {
+        "name": "CABG (Coronary Artery Bypass Grafting)",
+        "doctors": [
+          "dr-manoj-durairaj",
+          "dr-nitin-pathak"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-manoj-durairaj, dr-nitin-pathak"
+      },
+      {
+        "name": "Vocal Cord Surgery",
+        "doctors": [
+          "dr-rahul-magar",
+          "dr-swanand-gholap"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-rahul-magar, dr-swanand-gholap"
+      },
+      {
+        "name": "Brain Tumor Surgery",
+        "doctors": [
+          "dr-sachin-mahajan",
+          "dr-jaydev-panchawagh"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sachin-mahajan, dr-jaydev-panchawagh"
+      },
+      {
+        "name": "Skull Base Surgery",
+        "doctors": [
+          "dr-sachin-mahajan",
+          "dr-jaydev-panchawagh"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sachin-mahajan, dr-jaydev-panchawagh"
+      },
+      {
+        "name": "Hydrocephalus Surgery",
+        "doctors": [
+          "dr-sachin-mahajan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sachin-mahajan"
+      },
+      {
+        "name": "Partial Knee Replacement",
+        "doctors": [
+          "dr-sachin-tapasvi"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sachin-tapasvi"
+      },
+      {
+        "name": "Meniscus Repair",
+        "doctors": [
+          "dr-sachin-tapasvi",
+          "dr-nikhil-likhate"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sachin-tapasvi, dr-nikhil-likhate"
+      },
+      {
+        "name": "Allogeneic Stem Cell Transplant",
+        "doctors": [
+          "dr-shashikant-apte"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-shashikant-apte"
+      },
+      {
+        "name": "VIU (Visual Internal Urethrotomy)",
+        "doctors": [
+          "dr-shrikant-mhaskar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-shrikant-mhaskar"
+      },
+      {
+        "name": "Precision Oncology",
+        "doctors": [
+          "dr-tushar-patil-sahyadri-pune",
+          "dr-rahul-bhausaheb-pathade",
+          "dr-amit-bhatt"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-tushar-patil-sahyadri-pune, dr-rahul-bhausaheb-pathade, dr-amit-bhatt"
+      },
+      {
+        "name": "Targeted Therapy",
+        "doctors": [
+          "dr-tushar-patil-sahyadri-pune",
+          "dr-rahul-bhausaheb-pathade",
+          "dr-amit-bhatt"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-tushar-patil-sahyadri-pune, dr-rahul-bhausaheb-pathade, dr-amit-bhatt"
+      },
+      {
+        "name": "Chemotherapy",
+        "doctors": [
+          "dr-tushar-patil-sahyadri-pune",
+          "dr-rahul-bhausaheb-pathade",
+          "dr-amit-bhatt"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-tushar-patil-sahyadri-pune, dr-rahul-bhausaheb-pathade, dr-amit-bhatt"
+      },
+      {
+        "name": "Retinal Detachment Surgery",
+        "doctors": [
+          "dr-vishvesh-agarwal"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vishvesh-agarwal"
+      },
+      {
+        "name": "Intravitreal Anti-VEGF Injection",
+        "doctors": [
+          "dr-vishvesh-agarwal"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vishvesh-agarwal"
+      },
+      {
+        "name": "Palliative Chemotherapy",
+        "doctors": [
+          "dr-rahul-bhausaheb-pathade"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-rahul-bhausaheb-pathade"
+      },
+      {
+        "name": "Immunotherapy",
+        "doctors": [
+          "dr-rahul-bhausaheb-pathade",
+          "dr-amit-bhatt"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-rahul-bhausaheb-pathade, dr-amit-bhatt"
+      },
+      {
+        "name": "Shoulder Replacement",
+        "doctors": [
+          "dr-sachin-karkamkar",
+          "dr-nikhil-likhate"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sachin-karkamkar, dr-nikhil-likhate"
+      },
+      {
+        "name": "CyberKnife",
+        "doctors": [
+          "dr-sanjay-hunugundmath"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sanjay-hunugundmath"
+      },
+      {
+        "name": "Stereotactic Body Radiotherapy (SBRT)",
+        "doctors": [
+          "dr-sanjay-hunugundmath"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sanjay-hunugundmath"
+      },
+      {
+        "name": "Stereotactic Radiosurgery (SRS)",
+        "doctors": [
+          "dr-sanjay-hunugundmath",
+          "dr-jagadish-shejul"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sanjay-hunugundmath, dr-jagadish-shejul"
+      },
+      {
+        "name": "Image-Guided Radiotherapy (IGRT)",
+        "doctors": [
+          "dr-sanjay-hunugundmath",
+          "dr-jagadish-shejul"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-sanjay-hunugundmath, dr-jagadish-shejul"
+      },
+      {
+        "name": "Pancreatic Surgery",
+        "doctors": [
+          "dr-vini-talwar",
+          "dr-dinesh-zirpe"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vini-talwar, dr-dinesh-zirpe"
+      },
+      {
+        "name": "PIPAC",
+        "doctors": [
+          "dr-vini-talwar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vini-talwar"
+      },
+      {
+        "name": "Cytoreductive Surgery with HIPEC",
+        "doctors": [
+          "dr-vini-talwar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vini-talwar"
+      },
+      {
+        "name": "Neck Dissection",
+        "doctors": [
+          "dr-vini-talwar",
+          "dr-vinod-gore"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vini-talwar, dr-vinod-gore"
+      },
+      {
+        "name": "Cytoreductive Surgery",
+        "doctors": [
+          "dr-vini-talwar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vini-talwar"
+      },
+      {
+        "name": "Oncoplastic Breast Surgery",
+        "doctors": [
+          "dr-vinod-gore"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vinod-gore"
+      },
+      {
+        "name": "Breast Reconstruction",
+        "doctors": [
+          "dr-vinod-gore"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vinod-gore"
+      },
+      {
+        "name": "Mastectomy",
+        "doctors": [
+          "dr-vinod-gore"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vinod-gore"
+      },
+      {
+        "name": "Lung Cancer Surgery",
+        "doctors": [
+          "dr-vinod-gore"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-vinod-gore"
+      },
+      {
+        "name": "CTO Angioplasty (Chronic Total Occlusion)",
+        "doctors": [
+          "dr-abhijeet-palshikar",
+          "dr-kedar-kulkarni",
+          "dr-manoj-bhise",
+          "dr-milind-gadkari"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijeet-palshikar, dr-kedar-kulkarni, dr-manoj-bhise, dr-milind-gadkari"
+      },
+      {
+        "name": "ASD Device Closure",
+        "doctors": [
+          "dr-abhijeet-palshikar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijeet-palshikar"
+      },
+      {
+        "name": "Carotid Artery Stenting",
+        "doctors": [
+          "dr-abhijeet-palshikar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijeet-palshikar"
+      },
+      {
+        "name": "Peripheral Angioplasty",
+        "doctors": [
+          "dr-abhijeet-palshikar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijeet-palshikar"
+      },
+      {
+        "name": "Pacemaker Implantation",
+        "doctors": [
+          "dr-abhijeet-palshikar",
+          "dr-kedar-kulkarni",
+          "dr-manoj-bhise"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijeet-palshikar, dr-kedar-kulkarni, dr-manoj-bhise"
+      },
+      {
+        "name": "Coronary Angiography",
+        "doctors": [
+          "dr-abhijeet-palshikar",
+          "dr-kedar-kulkarni",
+          "dr-manoj-bhise",
+          "dr-sunil-sathe"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijeet-palshikar, dr-kedar-kulkarni, dr-manoj-bhise, dr-sunil-sathe"
+      },
+      {
+        "name": "Coronary Angioplasty & Stenting",
+        "doctors": [
+          "dr-abhijeet-palshikar",
+          "dr-kedar-kulkarni",
+          "dr-manoj-bhise",
+          "dr-milind-gadkari",
+          "dr-sunil-sathe"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-abhijeet-palshikar, dr-kedar-kulkarni, dr-manoj-bhise, dr-milind-gadkari, dr-sunil-sathe"
+      },
+      {
+        "name": "Aortic Aneurysm Surgery",
+        "doctors": [
+          "dr-advait-kothurkar",
+          "dr-nitin-pathak"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-advait-kothurkar, dr-nitin-pathak"
+      },
+      {
+        "name": "Intraperitoneal Chemotherapy",
+        "doctors": [
+          "dr-amit-bhatt"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-amit-bhatt"
+      },
+      {
+        "name": "Immune Checkpoint Inhibitor Therapy",
+        "doctors": [
+          "dr-amit-bhatt"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-amit-bhatt"
+      },
+      {
+        "name": "Cataract Surgery",
+        "doctors": [
+          "dr-anagha-behere",
+          "dr-kuldeep-dole"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-anagha-behere, dr-kuldeep-dole"
+      },
+      {
+        "name": "LASIK Eye Surgery",
+        "doctors": [
+          "dr-anagha-behere"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-anagha-behere"
+      },
+      {
+        "name": "Glaucoma Surgery",
+        "doctors": [
+          "dr-anagha-behere",
+          "dr-kuldeep-dole"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-anagha-behere, dr-kuldeep-dole"
+      },
+      {
+        "name": "Squint / Strabismus Surgery",
+        "doctors": [
+          "dr-anagha-behere"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-anagha-behere"
+      },
+      {
+        "name": "Kidney Transplant Evaluation and Follow-up",
+        "doctors": [
+          "dr-anil-godbole",
+          "dr-atul-d-sajgure"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-anil-godbole, dr-atul-d-sajgure"
+      },
+      {
+        "name": "Continuous Renal Replacement Therapy (CRRT)",
+        "doctors": [
+          "dr-anil-godbole",
+          "dr-atul-d-sajgure"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-anil-godbole, dr-atul-d-sajgure"
+      },
+      {
+        "name": "Peritoneal Dialysis",
+        "doctors": [
+          "dr-anil-godbole",
+          "dr-atul-d-sajgure"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-anil-godbole, dr-atul-d-sajgure"
+      },
+      {
+        "name": "Liver Transplantation",
+        "doctors": [
+          "dr-aniruddha-bhosale",
+          "dr-dinesh-zirpe",
+          "dr-kiran-urabinahatti",
+          "dr-manish-pathak",
+          "dr-manoj-raut"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-aniruddha-bhosale, dr-dinesh-zirpe, dr-kiran-urabinahatti, dr-manish-pathak, dr-manoj-raut"
+      },
+      {
+        "name": "Vagus Nerve Stimulation (VNS)",
+        "doctors": [
+          "dr-aradhana-chauhan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-aradhana-chauhan"
+      },
+      {
+        "name": "EEG",
+        "doctors": [
+          "dr-aradhana-chauhan",
+          "dr-deepa-divekar",
+          "dr-hemant-sant",
+          "dr-mangesh-udar",
+          "dr-manish-salunkhe",
+          "dr-pradeep-divate",
+          "dr-suyog-doshi"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-aradhana-chauhan, dr-deepa-divekar, dr-hemant-sant, dr-mangesh-udar, dr-manish-salunkhe, dr-pradeep-divate, dr-suyog-doshi"
+      },
+      {
+        "name": "Evoked Potentials",
+        "doctors": [
+          "dr-aradhana-chauhan",
+          "dr-pradeep-divate"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-aradhana-chauhan, dr-pradeep-divate"
+      },
+      {
+        "name": "IV Thrombolysis",
+        "doctors": [
+          "dr-aradhana-chauhan",
+          "dr-hemant-sant",
+          "dr-mangesh-udar",
+          "dr-manish-salunkhe",
+          "dr-pradeep-divate",
+          "dr-suyog-doshi"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-aradhana-chauhan, dr-hemant-sant, dr-mangesh-udar, dr-manish-salunkhe, dr-pradeep-divate, dr-suyog-doshi"
+      },
+      {
+        "name": "Deep Brain Stimulation",
+        "doctors": [
+          "dr-aradhana-chauhan",
+          "dr-mangesh-udar",
+          "dr-manish-salunkhe",
+          "dr-pradeep-divate"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-aradhana-chauhan, dr-mangesh-udar, dr-manish-salunkhe, dr-pradeep-divate"
+      },
+      {
+        "name": "Migraine Nerve Block",
+        "doctors": [
+          "dr-aradhana-chauhan",
+          "dr-hemant-sant",
+          "dr-mangesh-udar",
+          "dr-manish-salunkhe",
+          "dr-pradeep-divate",
+          "dr-suyog-doshi"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-aradhana-chauhan, dr-hemant-sant, dr-mangesh-udar, dr-manish-salunkhe, dr-pradeep-divate, dr-suyog-doshi"
+      },
+      {
+        "name": "Vaginal Hysterectomy",
+        "doctors": [
+          "dr-charuchandra-joshi"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-charuchandra-joshi"
+      },
+      {
+        "name": "Laparoscopic Hysterectomy",
+        "doctors": [
+          "dr-charuchandra-joshi",
+          "dr-charusheela-sabane"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-charuchandra-joshi, dr-charusheela-sabane"
+      },
+      {
+        "name": "Laparoscopic Myomectomy",
+        "doctors": [
+          "dr-charuchandra-joshi",
+          "dr-charusheela-sabane",
+          "dr-gauri-barve"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-charuchandra-joshi, dr-charusheela-sabane, dr-gauri-barve"
+      },
+      {
+        "name": "Endometriosis Surgery",
+        "doctors": [
+          "dr-charusheela-sabane"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-charusheela-sabane"
+      },
+      {
+        "name": "Ovarian Cyst Surgery",
+        "doctors": [
+          "dr-charusheela-sabane",
+          "dr-gauri-barve"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-charusheela-sabane, dr-gauri-barve"
+      },
+      {
+        "name": "Deceased Donor Liver Transplantation",
+        "doctors": [
+          "dr-dinesh-zirpe",
+          "dr-kiran-urabinahatti",
+          "dr-manish-pathak"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-dinesh-zirpe, dr-kiran-urabinahatti, dr-manish-pathak"
+      },
+      {
+        "name": "Liver Resection (Hepatectomy)",
+        "doctors": [
+          "dr-dinesh-zirpe",
+          "dr-kiran-urabinahatti"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-dinesh-zirpe, dr-kiran-urabinahatti"
+      },
+      {
+        "name": "EBUS (Endobronchial Ultrasound)",
+        "doctors": [
+          "dr-harsha-jain-sahyadri-pune"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-harsha-jain-sahyadri-pune"
+      },
+      {
+        "name": "Airway Stenting",
+        "doctors": [
+          "dr-harsha-jain-sahyadri-pune"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-harsha-jain-sahyadri-pune"
+      },
+      {
+        "name": "Medical Thoracoscopy",
+        "doctors": [
+          "dr-harsha-jain-sahyadri-pune"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-harsha-jain-sahyadri-pune"
+      },
+      {
+        "name": "Bronchoscopic Tumor Debulking",
+        "doctors": [
+          "dr-harsha-jain-sahyadri-pune"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-harsha-jain-sahyadri-pune"
+      },
+      {
+        "name": "Bronchoscopy",
+        "doctors": [
+          "dr-harsha-jain-sahyadri-pune"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-harsha-jain-sahyadri-pune"
+      },
+      {
+        "name": "TBNA (Transbronchial Needle Aspiration)",
+        "doctors": [
+          "dr-harsha-jain-sahyadri-pune"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-harsha-jain-sahyadri-pune"
+      },
+      {
+        "name": "Intensity-Modulated Radiotherapy (IMRT)",
+        "doctors": [
+          "dr-jagadish-shejul"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jagadish-shejul"
+      },
+      {
+        "name": "Pituitary Tumor Surgery",
+        "doctors": [
+          "dr-jaydev-panchawagh"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jaydev-panchawagh"
+      },
+      {
+        "name": "Endoscopic Brain Surgery",
+        "doctors": [
+          "dr-jaydev-panchawagh",
+          "dr-muzammil-ambekar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jaydev-panchawagh, dr-muzammil-ambekar"
+      },
+      {
+        "name": "Aneurysm Clipping",
+        "doctors": [
+          "dr-jaydev-panchawagh"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jaydev-panchawagh"
+      },
+      {
+        "name": "Epilepsy Surgery",
+        "doctors": [
+          "dr-jaydev-panchawagh"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-jaydev-panchawagh"
+      },
+      {
+        "name": "CRT/CRT-D Implantation",
+        "doctors": [
+          "dr-kedar-kulkarni"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kedar-kulkarni"
+      },
+      {
+        "name": "ICD Implantation (Implantable Cardioverter-Defibrillator)",
+        "doctors": [
+          "dr-kedar-kulkarni"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kedar-kulkarni"
+      },
+      {
+        "name": "Living Donor Liver Transplantation",
+        "doctors": [
+          "dr-kiran-urabinahatti",
+          "dr-manish-pathak"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kiran-urabinahatti, dr-manish-pathak"
+      },
+      {
+        "name": "Oculoplastic Surgery",
+        "doctors": [
+          "dr-kuldeep-dole"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-kuldeep-dole"
+      },
+      {
+        "name": "Revision Hip Replacement",
+        "doctors": [
+          "dr-nikhil-likhate"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-nikhil-likhate"
+      },
+      {
+        "name": "PCL Reconstruction (Posterior Cruciate Ligament)",
+        "doctors": [
+          "dr-nikhil-likhate"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-nikhil-likhate"
+      },
+      {
+        "name": "Non-Union Repair",
+        "doctors": [
+          "dr-nikhil-likhate"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-nikhil-likhate"
+      },
+      {
+        "name": "Nerve Conduction Study",
+        "doctors": [
+          "dr-pradeep-divate"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-pradeep-divate"
+      },
+      {
+        "name": "Electromyography (EMG)",
+        "doctors": [
+          "dr-pradeep-divate"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-pradeep-divate"
+      },
+      {
+        "name": "Botulinum Toxin Therapy",
+        "doctors": [
+          "dr-pradeep-divate"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-pradeep-divate"
+      },
+      {
+        "name": "IVIG (Intravenous Immunoglobulin)",
+        "doctors": [
+          "dr-pradeep-divate"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-pradeep-divate"
+      },
+      {
+        "name": "Peroral Endoscopic Myotomy (POEM)",
+        "doctors": [
+          "dr-radhika-chavan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-radhika-chavan"
+      },
+      {
+        "name": "Endoscopic Submucosal Dissection (ESD)",
+        "doctors": [
+          "dr-radhika-chavan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-radhika-chavan"
+      },
+      {
+        "name": "Endoscopic Mucosal Resection (EMR)",
+        "doctors": [
+          "dr-radhika-chavan"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-radhika-chavan"
+      },
+      {
+        "name": "ERCP",
+        "doctors": [
+          "dr-radhika-chavan",
+          "dr-suhas-wagle",
+          "dr-yash-surendrakumar-mankoskar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-radhika-chavan, dr-suhas-wagle, dr-yash-surendrakumar-mankoskar"
+      },
+      {
+        "name": "Endoscopic Ultrasound (EUS)",
+        "doctors": [
+          "dr-radhika-chavan",
+          "dr-suhas-wagle",
+          "dr-yash-surendrakumar-mankoskar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-radhika-chavan, dr-suhas-wagle, dr-yash-surendrakumar-mankoskar"
+      },
+      {
+        "name": "Colonoscopy",
+        "doctors": [
+          "dr-radhika-chavan",
+          "dr-suhas-wagle"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-radhika-chavan, dr-suhas-wagle"
+      },
+      {
+        "name": "Upper GI Endoscopy (Gastroscopy)",
+        "doctors": [
+          "dr-radhika-chavan",
+          "dr-suhas-wagle"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-radhika-chavan, dr-suhas-wagle"
+      },
+      {
+        "name": "Stereotactic Brain Surgery",
+        "doctors": [
+          "dr-ranjeet-deshmukh"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-ranjeet-deshmukh"
+      },
+      {
+        "name": "Transoral Robotic Surgery (TORS)",
+        "doctors": [
+          "dr-swanand-gholap"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-swanand-gholap"
+      },
+      {
+        "name": "Anorectal Manometry",
+        "doctors": [
+          "dr-yash-surendrakumar-mankoskar"
+        ],
+        "source": "Evidence-mapped from official Sahyadri doctor profile text for: dr-yash-surendrakumar-mankoskar"
+      }
+    ]
+  }
+}

@@ -11,6 +11,8 @@ export type Doctor = {
   qualifications: string;
   featured: boolean;
   hospitalSlug: string;
+  /** All verified campus affiliations; always includes `hospitalSlug`. */
+  hospitalSlugs: string[];
   hospitalName: string;
   specialty: string;
   specialtySlug: string;
@@ -36,6 +38,32 @@ export type Doctor = {
   image?: string;
   imageAlt?: string;
 };
+
+function isSahyadriCampusSlug(slug: string) {
+  return slug.startsWith("sahyadri-super-speciality-hospital-");
+}
+
+function hospitalSlugsFor(seed: DoctorSeed): string[] {
+  const raw = (seed as DoctorSeed & { hospitalSlugs?: string[] }).hospitalSlugs;
+  const listed = Array.isArray(raw)
+    ? raw.filter((slug): slug is string => typeof slug === "string" && slug.length > 0)
+    : [];
+  const slugs = listed.length > 0 ? listed : [seed.hospitalSlug];
+  if (!slugs.includes(seed.hospitalSlug)) slugs.unshift(seed.hospitalSlug);
+  return [...new Set(slugs)];
+}
+
+function seedImage(seed: DoctorSeed): { image: string; imageAlt: string } {
+  const image = typeof (seed as DoctorSeed & { image?: string }).image === "string"
+    ? ((seed as DoctorSeed & { image?: string }).image || "").trim()
+    : "";
+  const imageAlt = typeof (seed as DoctorSeed & { imageAlt?: string }).imageAlt === "string"
+    ? ((seed as DoctorSeed & { imageAlt?: string }).imageAlt || "").trim()
+    : image
+      ? `${seed.name}, ${seed.specialty}`
+      : "";
+  return { image, imageAlt };
+}
 
 function cleanTitle(raw: string, specialty: string) {
   let title = raw.trim();
@@ -122,18 +150,33 @@ const buildDoctor = (seed: DoctorSeed): Doctor => {
   const specialty =
     getSpecialty(seed.specialty) ?? radiationSpecialty;
 
-  const mapped = mapDoctorProcedures(specialty.name, [
-    ...seed.proceduresExpertise,
-    ...seed.specializations,
-    seed.designation,
-  ]);
-  const procedures = mapped.map((name) => {
-    const procedure = getProcedure(name);
-    if (!procedure) throw new Error(`Unmapped procedure ${name}`);
-    return procedure;
-  });
+  const sahyadri = isSahyadriCampusSlug(seed.hospitalSlug);
+  // Sahyadri Pune: proceduresExpertise is already evidence-gated to exact GAF procedure
+  // names (or empty). Do not invent specialty-default fallbacks.
+  const procedures: NonNullable<ReturnType<typeof getProcedure>>[] = (() => {
+    if (sahyadri) {
+      if (seed.proceduresExpertise.length === 0) return [];
+      return seed.proceduresExpertise.map((name: string) => {
+        const procedure = getProcedure(name);
+        if (!procedure) throw new Error(`Unmapped Sahyadri procedure ${name}`);
+        return procedure;
+      });
+    }
+    const mapped = mapDoctorProcedures(specialty.name, [
+      ...seed.proceduresExpertise,
+      ...seed.specializations,
+      seed.designation,
+    ]);
+    return mapped.map((name: string) => {
+      const procedure = getProcedure(name);
+      if (!procedure) throw new Error(`Unmapped procedure ${name}`);
+      return procedure;
+    });
+  })();
 
   const title = cleanTitle(seed.designation || specialty.name, specialty.name);
+  const hospitalSlugs = hospitalSlugsFor(seed);
+  const { image, imageAlt } = seedImage(seed);
 
   return {
     slug: seed.slug,
@@ -142,6 +185,7 @@ const buildDoctor = (seed: DoctorSeed): Doctor => {
     qualifications: seed.qualifications,
     featured: seed.featured,
     hospitalSlug: seed.hospitalSlug,
+    hospitalSlugs,
     hospitalName: hospital?.name || seed.hospitalCaption || seed.hospitalName,
     specialty: specialty.name,
     specialtySlug: specialty.slug,
@@ -164,8 +208,8 @@ const buildDoctor = (seed: DoctorSeed): Doctor => {
     years: seed.experience,
     experience: seed.experience,
     bio: seed.bio,
-    image: "",
-    imageAlt: "",
+    image,
+    imageAlt,
   };
 };
 
@@ -193,7 +237,9 @@ export function getDoctor(slug: string) {
 }
 
 export function doctorsForHospital(slug: string) {
-  return doctors.filter((d) => d.hospitalSlug === slug);
+  return doctors.filter(
+    (d) => d.hospitalSlug === slug || (d.hospitalSlugs?.includes(slug) ?? false),
+  );
 }
 
 export function doctorsForTreatment(slug: string) {
