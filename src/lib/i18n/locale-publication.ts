@@ -1,6 +1,6 @@
 import "server-only";
 import { listPublishedPosts } from "@/lib/blogs";
-import { filterDoctors, filterHospitals, filterTreatments } from "@/lib/catalog";
+import { filterDoctors, filterTreatments, hospitalsForServiceLinePublication } from "@/lib/catalog";
 import { citiesForDestination, parentCatalogQuery, type CatalogQuery } from "@/lib/catalog-options";
 import {
   doctorsForHospitalLocale,
@@ -62,9 +62,37 @@ function catalogFacetMatchCount(
   locale: AppLocale,
 ): number | undefined {
   if (root === "doctors") return filterDoctors(query, doctorsForLocale(locale)).length;
-  if (root === "hospitals") return filterHospitals(query, hospitalsForLocale(locale)).length;
+  if (root === "hospitals") {
+    return hospitalsForServiceLinePublication(
+      query,
+      hospitalsForLocale(locale),
+      Boolean(query.specialty || query.procedure),
+    ).length;
+  }
   if (root === "costs") return filterTreatments(query, treatmentsForLocale(locale)).length;
   return undefined;
+}
+
+/**
+ * English hospital specialty/procedure facets historically published whenever
+ * any campus matched. Faculty-affiliated specialty lists must not alone create
+ * indexable hospital landing pages — mirror the Arabic service-line gate for
+ * those queries while leaving city/country hubs on full inventory.
+ */
+function sourceLocaleHospitalServiceLineFacetState(
+  segments: string[],
+): LocalePageState | undefined {
+  if (segments[0] !== "hospitals" || segments.length < 2) return undefined;
+  const query = parsePrettyCatalogSegments(segments.slice(1));
+  if (!query || (!query.specialty && !query.procedure)) return undefined;
+  const matches = hospitalsForServiceLinePublication(
+    query,
+    hospitalsForLocale(SOURCE_LOCALE),
+    true,
+  ).length;
+  if (matches > 0) return undefined;
+  // Faculty-only specialty/procedure inventory stays crawlable but noindex.
+  return "noindex";
 }
 
 /**
@@ -135,9 +163,16 @@ function targetLocaleState(locale: AppLocale, segments: string[]): LocalePageSta
     if (segments.length === 1) return rows.length > 0 ? "published" : "missing";
     const query = parsePrettyCatalogSegments(segments.slice(1));
     if (query) {
-      const matches = filterHospitals(query, rows).length;
+      // Specialty/procedure indexation counts campus-verified service lines only.
+      // Faculty-affiliated Sahyadri lists still render on profiles and can appear
+      // in directory filters, but they must not dilute parent-overlap gates or
+      // invent indexable hospital specialty landings on their own.
+      const serviceLineScoped = Boolean(query.specialty || query.procedure);
+      const matches = hospitalsForServiceLinePublication(query, rows, serviceLineScoped).length;
       const parent = parentCatalogQuery(query);
-      const parentMatches = parent ? filterHospitals(parent, rows).length : undefined;
+      const parentMatches = parent
+        ? hospitalsForServiceLinePublication(parent, rows, serviceLineScoped).length
+        : undefined;
       return facetState(matches, facetIsPublished("hospitalFacet", matches, parentMatches), query);
     }
     const hospital = getHospitalForLocale(segments[1], locale);
@@ -203,8 +238,13 @@ export function localePageState(locale: AppLocale, path: string): LocalePageStat
     // city facets are the exception: keep them crawlable for filter UX, but
     // noindex until inventory exists so chip links do not create thin indexed
     // landing pages. Populated city facets (including a future populated
-    // Pune) continue to publish.
-    return sourceLocaleEmptyCityFacetState(segments) ?? "published";
+    // Pune) continue to publish. Hospital specialty/procedure facets with only
+    // faculty-affiliated evidence are held at noindex (see helper above).
+    return (
+      sourceLocaleEmptyCityFacetState(segments) ??
+      sourceLocaleHospitalServiceLineFacetState(segments) ??
+      "published"
+    );
   }
 
   const state = targetLocaleState(locale, segments);
