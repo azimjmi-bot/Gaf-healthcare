@@ -61,7 +61,7 @@ export type Hospital = {
 };
 
 function languagesFor(city: string) {
-  if (city === "Mumbai") return "English, Hindi, Marathi";
+  if (city === "Mumbai" || city === "Pune") return "English, Hindi, Marathi";
   if (city === "Bengaluru") return "English, Kannada, Hindi";
   if (city === "Chennai") return "English, Tamil, Hindi";
   if (city === "Hyderabad") return "English, Telugu, Hindi";

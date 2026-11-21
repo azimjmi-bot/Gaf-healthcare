@@ -32,12 +32,12 @@ export const UI_MESSAGE_FIELDS: Record<string, string> = {
   "dir.placeCity": "{city}, {country}",
   "dir.doctors.resultOne": "specialist",
   "dir.doctors.resultMany": "specialists",
-  "dir.doctors.eyebrow": "India · five cities · twenty-three specialties",
+  "dir.doctors.eyebrow": "India · six cities · twenty-three specialties",
   "dir.doctors.homeHeading": "Find the Right Doctor for Your Treatment",
   "dir.doctors.homeLede":
     "Explore specialists by medical specialty, procedure, hospital, and location, and find doctors who match your treatment needs.",
   "dir.doctors.filteredLede":
-    "Named specialists in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each doctor appears once. Ten profiles per page — filter by city, specialty or procedure when you already know the list you need.",
+    "Named specialists across Delhi NCR, Mumbai, Bengaluru, Chennai, Hyderabad and Pune. Each doctor appears once. Ten profiles per page — filter by city, specialty or procedure when you already know the list you need.",
   "dir.doctors.procedureHeading": "{procedure} specialists in {place}",
   "dir.doctors.specialtyHeading": "{role} in {place}",
   "dir.doctors.specialtyFallback": "{specialty} doctors",
@@ -59,7 +59,7 @@ export const UI_MESSAGE_FIELDS: Record<string, string> = {
   "dir.hospitals.homeLede":
     "Explore hospitals by country, city, specialty, and treatment, and compare facilities to find options that match your medical needs.",
   "dir.hospitals.filteredLede":
-    "JCI and NABH campuses in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Each house appears once. Ten campuses per page — specialties sit on the card.",
+    "JCI and NABH campuses across Delhi NCR, Mumbai, Bengaluru, Chennai, Hyderabad and Pune. Each house appears once. Ten campuses per page — specialties sit on the card.",
   "dir.hospitals.procedureHeading": "Hospitals for {procedure} in {place}",
   "dir.hospitals.specialtyHeading": "{specialty} hospitals in {place}",
   "dir.hospitals.cityHeading": "Hospitals in {place}",
@@ -76,7 +76,7 @@ export const UI_MESSAGE_FIELDS: Record<string, string> = {
   "dir.costs.homeLede":
     "Explore indicative treatment costs by procedure, country, and location, and understand what may be included before choosing where to receive care.",
   "dir.costs.filteredLede":
-    "US cash-pay beside partner ranges in Delhi NCR, Mumbai, Bengaluru, Chennai and Hyderabad. Filter by destination, city, specialty or procedure. Figures are planning ranges, not quotations.",
+    "US cash-pay beside partner ranges across Delhi NCR, Mumbai, Bengaluru, Chennai, Hyderabad and Pune. Filter by destination, city, specialty or procedure. Figures are planning ranges, not quotations.",
   "dir.costs.procedureHeading": "{procedure} cost in {place}",
   "dir.costs.specialtyHeading": "{specialty} cost in {place}",
   "dir.costs.indiaHeading": "Oncology, ENT and GI treatment cost in India",

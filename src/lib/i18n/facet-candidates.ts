@@ -1,6 +1,6 @@
 import "server-only";
 import { doctors, hospitals, treatments } from "@/lib/data";
-import { filterTreatments } from "@/lib/catalog";
+import { filterTreatments, indiaCitiesWithInventory } from "@/lib/catalog";
 import { catalogSpecialtyName, costsFilterPath, doctorsPath, hospitalsPath } from "@/lib/catalog-links";
 import { doctorSpecialtySitemapPaths } from "@/lib/doctor-discovery";
 import { hospitalSpecialtySitemapPaths } from "@/lib/radiation-hospital-page";
@@ -24,9 +24,13 @@ export function facetCandidatePaths(): string[] {
   paths.add(doctorsPath({ destination: "India" }));
   paths.add(hospitalsPath({ destination: "India" }));
   paths.add(costsFilterPath({ destination: "India" }));
-  for (const city of INDIA_CITIES) {
+  for (const city of indiaCitiesWithInventory("doctors")) {
     paths.add(doctorsPath({ destination: "India", city }));
+  }
+  for (const city of indiaCitiesWithInventory("hospitals")) {
     paths.add(hospitalsPath({ destination: "India", city }));
+  }
+  for (const city of indiaCitiesWithInventory("treatments")) {
     paths.add(costsFilterPath({ destination: "India", city }));
   }
   for (const specialty of SPECIALTIES) {
