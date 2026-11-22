@@ -82,5 +82,18 @@
       ]
     },
     "rule": "Assign procedures only when the individual official doctor profile explicitly supports them; no family-level specialty inference."
+  },
+  "mergedAt": "2026-11-22T06:40:49Z",
+  "mergeCommit": "f61d8cbc460795e7e4d749d95c3d2ef1fb20e3a1",
+  "approvedHead": "9f5264a21b1b2ac169a3c55c53f576ba22a4af05",
+  "chamaniaEvidenceLimitation": {
+    "doctorSlug": "dr-gaurav-chamania",
+    "retainedProcedures": [
+      "Head & Neck Cancer Surgery",
+      "Skull Base Surgery"
+    ],
+    "limitation": "The official Manipal Baner Field of Expertise HTML list for Dr. Gaurav Chamania is empty. Retained ENT procedures are supported only by explicit wording in the same doctor's official overview/profile narrative (head and neck cancer surgery / major head-neck cancer resections; skull base surgery / endoscopic skull base surgery). No additional ENT procedures were inferred from specialty membership or hospital capability.",
+    "auditCsvRows": "docs/manipal-baner-page3-doctor-procedure-audit.csv (dr-gaurav-chamania verified rows)",
+    "status": "accepted_limitation_recorded_post_merge"
   }
 }
