@@ -107,13 +107,26 @@ test("Manipal Baner doctor procedures are evidence-mapped rather than specialty 
   const rows = catalogDoctors.filter((row) => row.hospitalSlug === MANIPAL_BANER_SLUG);
   const audit = readFileSync(join(process.cwd(), "docs/manipal-baner-page3-doctor-procedure-audit.csv"), "utf8");
   assert.match(audit, /mapping_status/);
-  assert.match(audit, /no_specific_procedure_evidence|verified|partially_verified/);
+  assert.match(audit, /no_specific_procedure_evidence|verified|removed_insufficient_individual_evidence/);
   const empty = rows.filter((row) => row.procedures.length === 0);
   assert.ok(empty.some((row) => row.slug === "dr-chinmay-kumbhar"));
   const payagude = rows.find((row) => row.slug === "dr-aniket-payagude");
   assert.ok(payagude);
-  assert.ok(payagude!.procedures.includes("Colorectal Cancer Surgery"));
-  assert.ok(!payagude!.procedures.includes("Upper GI Endoscopy (Gastroscopy)"));
+  assert.deepEqual(payagude!.procedures.sort(), ["Bile Duct Cancer Surgery", "Colorectal Cancer Surgery"].sort());
+  assert.ok(!payagude!.procedures.includes("Whipple Procedure (Pancreaticoduodenectomy)"));
+  assert.ok(!payagude!.procedures.includes("Distal Pancreatectomy"));
+  assert.ok(!payagude!.procedures.includes("Liver Resection (Hepatectomy)"));
+  assert.ok(!payagude!.procedures.includes("Gallbladder Cancer Surgery"));
+  const borde = rows.find((row) => row.slug === "dr-borde-mandar-deepak");
+  assert.ok(borde);
+  assert.ok(!borde!.procedures.includes("Microdiscectomy"));
+  assert.ok(borde!.procedures.includes("Scoliosis Correction"));
+  const chamania = rows.find((row) => row.slug === "dr-gaurav-chamania");
+  assert.ok(chamania);
+  assert.deepEqual(
+    chamania!.procedures.sort(),
+    ["Head & Neck Cancer Surgery", "Skull Base Surgery"].sort(),
+  );
 });
 
 test("Manipal Baner public copy distinguishes faculty relationships from campus services", () => {

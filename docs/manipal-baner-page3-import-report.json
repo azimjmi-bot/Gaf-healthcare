@@ -35,7 +35,9 @@
   },
   "images": {
     "verifiedWebp": 6,
-    "avatarFallback": ["dr-borde-mandar-deepak"],
+    "avatarFallback": [
+      "dr-borde-mandar-deepak"
+    ],
     "hospitalImage": "avatar_fallback_empty"
   },
   "locales": {
@@ -49,5 +51,36 @@
     "puneHospitals": 4,
     "sahyadriDoctorsUnchanged": 110,
     "sahyadriHospitalsUnchanged": 3
+  },
+  "procedureEvidenceRemediation": {
+    "reviewedCommitBefore": "fb3ae94bed1493279a791e383348113c47ec471f",
+    "removed": {
+      "dr-aniket-payagude": [
+        "Whipple Procedure (Pancreaticoduodenectomy)",
+        "Distal Pancreatectomy",
+        "Gallbladder Cancer Surgery",
+        "Liver Resection (Hepatectomy)"
+      ],
+      "dr-borde-mandar-deepak": [
+        "Microdiscectomy"
+      ]
+    },
+    "retainedWithExplicitEvidence": {
+      "dr-aniket-payagude": [
+        "Colorectal Cancer Surgery",
+        "Bile Duct Cancer Surgery"
+      ],
+      "dr-borde-mandar-deepak": [
+        "Scoliosis Correction",
+        "Spinal Deformity Correction",
+        "Revision Spine Surgery",
+        "Spinal Tumor Surgery"
+      ],
+      "dr-gaurav-chamania": [
+        "Head & Neck Cancer Surgery",
+        "Skull Base Surgery"
+      ]
+    },
+    "rule": "Assign procedures only when the individual official doctor profile explicitly supports them; no family-level specialty inference."
   }
 }

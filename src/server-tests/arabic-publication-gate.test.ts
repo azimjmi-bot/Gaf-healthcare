@@ -57,8 +57,8 @@ function everyArabicCandidate() {
  */
 const STAGE_FACETS: Record<PseoPageType, number> = {
   // +74 from Sahyadri / Pune doctor specialty+procedure facets (PR #37).
-  // +7 from Manipal Baner page-3 eligible doctors (new Pune specialty/procedure facets).
-  doctorFacet: 1389,
+  // +6 from Manipal Baner page-3 eligible doctors after strict procedure-evidence trim.
+  doctorFacet: 1388,
   // +1 from the populated Pune hospital city hub (PR #37); faculty-only
   // specialty/procedure landings stay noindex (PR #38).
   hospitalFacet: 107,
@@ -68,7 +68,7 @@ const STAGE_FACETS: Record<PseoPageType, number> = {
 };
 
 /** Every facet URL that renders in Arabic, published or not. */
-const FACET_CANDIDATES = 5656;
+const FACET_CANDIDATES = 5651;
 
 function expectedPublishedFacets() {
   return (Object.keys(STAGE_FACETS) as PseoPageType[])
