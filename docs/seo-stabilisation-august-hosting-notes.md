@@ -30,6 +30,15 @@
 
 Original **Hostinger access logs, PHP error logs, and MySQL slow-query logs for 24–30 Aug 2026 are not available** in this repository or cloud agent environment. Without those (or hoster ticket IDs with timestamps), the failure mode stays **UNKNOWN** beyond “host had problems + pathological Googlebot latency + impression cliff.”
 
+## Evidence tiers (PR #45 reaffirmation)
+
+| Tier | Items |
+|---|---|
+| Confirmed | Dated impression cliff 28→29 Aug; elevated Googlebot latency 24–28 Aug; repo born 6 Sep; CF cutover 21 Oct |
+| Strongly supported | Pre-Next.js host/crawl health collapse as primary visibility trigger |
+| Unverified hypothesis | Exact Hostinger mode (CPU, PHP-FPM, MySQL, CDN, DNS) |
+| Ruled out as Aug cause | Cloudflare Workers; current Next.js application |
+
 ## Separation from migration losses
 
 | Window | Attribution |

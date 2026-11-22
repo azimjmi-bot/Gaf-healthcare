@@ -1,8 +1,11 @@
 # SEO Decline Stabilisation — Implementation Notes (Phase 6)
 
 **Branch:** `cursor/seo-pacemaker-nested-redirect-6064`  
+**Release candidate SHA:** see `docs/seo-stabilisation-production-readiness.md`  
 **Base:** `release/stage4-rsc-prod` @ `8eabd88` (production Worker `d54aff0e` / R2 stamp `8eabd88` at investigation time)  
-**Scope:** Verified low-risk fix only — nested pacemaker permanent redirect + audit docs + tests.
+**Scope:** Verified low-risk fix only — nested pacemaker permanent redirect + audit docs + tests.  
+**Audit verdict (PR #45 final review):** Approve for owner merge/deploy. No speculative redirects.  
+**Companions:** `seo-stabilisation-crawl-performance.md`, `seo-stabilisation-production-readiness.md`, monitoring plan.
 
 ## Production baseline (Phase 1, 2026-11-22)
 
