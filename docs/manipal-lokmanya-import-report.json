@@ -87,5 +87,12 @@
     "docs/manipal-lokmanya-image-audit.csv",
     "docs/manipal-lokmanya-multicampus-audit.csv",
     "docs/manipal-lokmanya-import-report.json"
-  ]
+  ],
+  "commitSha": "a3e96bcbec020d8a76452209ff9c27b0d7981bee",
+  "prUrl": "https://github.com/azimjmi-bot/Gaf-healthcare/pull/42",
+  "tests": {
+    "tsc": "pass",
+    "focusedImportPublicationOverlaySuite": "74/74 pass",
+    "productionBuild": "pass (next build --webpack)"
+  }
 }
