@@ -1,0 +1,13 @@
+check,observed,source,classification,notes
+sitemap-en loc count,8294,Live 2026-11-22,CONFIRMED,Up from 7945 on 2026-11-18/21 probes
+sitemap-ar loc count,4843,Live 2026-11-22,CONFIRMED,Up from 4495
+sitemap-blogs loc count,111,Live,CONFIRMED,
+sitemap-ru/fr/sw,0 locs,Live,CONFIRMED,Unpublished locales
+GSC indexed count current,DATA UNAVAILABLE,Coverage export missing,UNKNOWN,Nov 13 screenshot ~12.1k indexed historical only
+GSC not indexed current,DATA UNAVAILABLE,Coverage export missing,UNKNOWN,Nov 13 ~12.5k not indexed historical
+GSC Not-found historical export,~1000 URLs classified,gsc-404-analysis,CONFIRMED export on disk,Heavy doctor/nested/RU
+GSC Performance 28d top1000,4134 impr / 18 clicks,Pages-28d.csv,CONFIRMED,RU 792 impr (19%); deep inventory
+GSC Performance 24h,226 impr / 0 clicks,Pages-24h.csv,CONFIRMED,Still includes RU/legacy
+Published money templates SSR,200 + substantial HTML,Live Googlebot probes,CONFIRMED,Not empty shells
+Unpublished /ru deep,404 noindex,Live,CONFIRMED,Soft-404 residue
+Protected 40 exact 410,410,Live sample + PR34,CONFIRMED,Do not reopen without equity

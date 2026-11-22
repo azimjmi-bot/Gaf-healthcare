@@ -1,0 +1,8 @@
+metric,2026-11-18_or_21,2026-11-22_live,delta,interpretation
+sitemap-en locs,7945,8294,+349,Catalogue expansion (Manipal/Lokmanya etc.)
+sitemap-ar locs,4495,4843,+348,Matching AR overlay expansion
+sitemap-blogs,111,111,0,Stable
+sitemap-ru,0,0,0,Unpublished — correct
+Nested treatments in sitemap,0,0,0,Correct exclusion
+/resources/blog in sitemap,0,0,0,Correct exclusion
+Historical WP sitemaps,Should not be submitted,robots points to working index,—,README: remove old *-sitemap.xml in GSC

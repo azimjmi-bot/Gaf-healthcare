@@ -1,0 +1,18 @@
+date,event_type,event,commit_or_ref,evidence,relation_to_decline
+pre-2026-09,prior_stack,Prior WordPress / gafhealthcare.in lineage served public site,legacy-urls.ts; README,CONFIRMED prior stack existed; UNKNOWN exact Aug origin SKU,Precedes Next.js repo
+2026-08-24,crawl_health,GSC Crawl Stats: ~4687 Googlebot requests; ~4507ms avg response,user-supplied GSC (august investigation),STRONGLY INDICATED (GSC UI input; not re-exported CSV),Host stress before cliff
+2026-08-28,visibility_cliff,Impressions ~4997; Googlebot ~3135 req; ~6622ms avg latency,user-supplied GSC,STRONGLY INDICATED,Peak stress day
+2026-08-29,visibility_cliff,Impressions ~608 (~88% drop); crawl ~2281; latency ~3401ms; host-problem messaging,user-supplied GSC,STRONGLY INDICATED,PRIMARY dated decline onset
+2026-08-01..31,code_deploy,No commits in this repository for August 2026,git log empty,CONFIRMED,Rules out this codebase as Aug cause
+2026-09-06,repo_birth,Next.js GAF Healthcare repo initialized,b55112f,CONFIRMED,After Aug cliff
+2026-09-08+,hosting,Hostinger Node production path for Next app,README; Hostinger commits,CONFIRMED,Post-cliff stack
+2026-09-10..30,content_expansion,Locale routing AR/RU/FR/SW; Arabic pSEO; per-language sitemaps; blogs sitemap,multiple Sep commits,CONFIRMED,Possible post-cliff volatility
+2026-09-28,domain_sitemap,Keep sitemap locs on gaf.healthcare only,5979815,CONFIRMED,Domain consolidation
+2026-10-17,legacy_redirects,WordPress + gafhealthcare.in answered with 301s and cacheable 410s,91d4a24,CONFIRMED,Path-preserving .in→apex
+2026-10-17,hosting_cache,server.mjs Hostinger CDN HTML caching,d780838,CONFIRMED,Post-cliff
+2026-10-21,cloudflare_cutover,Cloudflare Workers migration published (no content changes),ea268f1,CONFIRMED,AFTER Aug cliff — not original cause
+2026-11-13,seo_cleanup,"PR #27: www→apex, WP ?p= 410, robots/sitemap hygiene, entity legacy",PR #27 / 5acbd34 era,CONFIRMED,Fixes chronic soft-404s; after cliff
+2026-11-19,runtime,PR #32 CF1101 cross-request hydrate fix,06e206f,CONFIRMED,Runtime stability
+2026-11-21,legacy_retirement,PR #34: 40 exact 410 + 4 permanent 308 legacy retirements,PR #34,CONFIRMED,Partial legacy cleanup
+2026-11-22,catalogue_expand,PR #42+#43 Manipal/Lokmanya + AR empty-procedure; deployed Worker d54aff0e stamp 8eabd88,8eabd88,CONFIRMED,Inventory expansion; after keyword snapshot
+2026-11-22,semrush_snapshot,SEMrush: 315 organic keywords; −69%; traffic est 1; AS 8; RD 513; BL 7.1K,owner screenshot,THIRD-PARTY; settings not verified vs ~1800 baseline,Current third-party view
