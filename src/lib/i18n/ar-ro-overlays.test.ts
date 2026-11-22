@@ -23,7 +23,13 @@ const cms = JSON.parse(readFileSync(join(process.cwd(), "content/ar/catalog-cms.
 };
 
 const ginger = JSON.parse(readFileSync(join(process.cwd(), "src/data/ginger-catalog.json"), "utf8")) as {
-  doctors: { slug: string; specialty: string; bio: string; city?: string }[];
+  doctors: {
+    slug: string;
+    specialty: string;
+    bio: string;
+    city?: string;
+    proceduresExpertise?: string[];
+  }[];
 };
 
 test("Arabic overlays cover all 72 radiation oncologists", () => {
@@ -37,7 +43,27 @@ test("Arabic overlays cover all 72 radiation oncologists", () => {
     assert.match(patch.experience, /سنة/);
     assert.match(patch.bio, /GAF Healthcare/);
     assert.match(patch.bio, /علاج الأورام بالإشعاع|إشعاع/);
-    assert.ok(patch.proceduresExpertise && patch.proceduresExpertise.length > 0);
+    const enProcedures = doctor.proceduresExpertise ?? [];
+    const arProcedures = patch.proceduresExpertise ?? [];
+    // Evidence-gated: empty EN procedures must stay empty in AR.
+    if (enProcedures.length === 0) {
+      assert.deepEqual(
+        arProcedures,
+        [],
+        `${doctor.slug} AR must stay empty when EN has no verified procedures`,
+      );
+    } else {
+      assert.ok(arProcedures.length > 0, `${doctor.slug} missing procedures`);
+      assert.ok(
+        arProcedures.length <= enProcedures.length,
+        `${doctor.slug} AR must not invent procedures beyond the EN source`,
+      );
+      assert.notDeepEqual(
+        arProcedures,
+        ["علاج الأورام بالإشعاع"],
+        `${doctor.slug} must not convert the specialty label into a procedure`,
+      );
+    }
   }
 });
 

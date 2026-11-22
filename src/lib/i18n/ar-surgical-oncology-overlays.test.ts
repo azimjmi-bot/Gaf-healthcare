@@ -66,8 +66,30 @@ test("Arabic overlays cover every surgical oncologist with substantive SEO and G
     );
     assert.match(patch.bio, /مراجعة|التقارير|الخزعة|التصوير/, `${doctor.slug} missing records-first context`);
     assert.match(patch.imageAlt, /دليل GAF Healthcare لجراحة الأورام في الهند/, doctor.slug);
-    assert.ok(patch.proceduresExpertise.length > 0, `${doctor.slug} missing procedures`);
-    assert.ok(patch.proceduresExpertise.every((value) => /[\u0600-\u06FF]/.test(value)), doctor.slug);
+    // Evidence-gated: empty EN proceduresExpertise must stay empty in AR — never
+    // invent the specialty label as a fake procedure merely to fill the array.
+    if (doctor.procedures.length === 0) {
+      assert.deepEqual(
+        patch.proceduresExpertise,
+        [],
+        `${doctor.slug} AR must stay empty when EN has no verified procedures`,
+      );
+    } else {
+      assert.ok(patch.proceduresExpertise.length > 0, `${doctor.slug} missing procedures`);
+      assert.ok(
+        patch.proceduresExpertise.length <= doctor.procedures.length,
+        `${doctor.slug} AR must not invent procedures beyond the EN source`,
+      );
+      assert.notDeepEqual(
+        patch.proceduresExpertise,
+        ["جراحة الأورام"],
+        `${doctor.slug} must not convert the specialty label into a procedure`,
+      );
+      assert.ok(
+        patch.proceduresExpertise.every((value) => /[\u0600-\u06FF]/.test(value)),
+        doctor.slug,
+      );
+    }
     assert.ok(patch.specializations.every((value) => /[\u0600-\u06FF]/.test(value)), doctor.slug);
     for (const value of [
       ...patch.education,
