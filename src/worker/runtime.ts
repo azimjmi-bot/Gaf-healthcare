@@ -1070,7 +1070,9 @@ export function createWorker(next: FetchHandler, options: WorkerRuntimeOptions =
         const negative = await cache.match(
           publicHtmlCacheRequest(normalized, generation, variant, { negative: true }),
         );
-        if (negative && negative.status === 404) {
+        // Defence in depth: only replay genuine HTML 404 entries.
+        const negativeType = (negative?.headers.get("content-type") ?? "").toLowerCase();
+        if (negative && negative.status === 404 && negativeType.includes("text/html")) {
           return presentCachedDocument(negative, cacheStatusHeader(variant));
         }
       }

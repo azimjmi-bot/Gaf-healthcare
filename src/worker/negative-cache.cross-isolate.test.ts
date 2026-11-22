@@ -205,5 +205,53 @@ test("cross-isolate: Arabic path is independent and also recovers after publish"
   assert.equal(after.headers.get("x-gaf-html-cache"), "miss");
 });
 
+test("cross-isolate: unpublish after live does not leave Isolate A serving stale 200", async () => {
+  const shared = new SharedCache();
+  const content = seededContent();
+  let live = false;
+  const handler = async () => {
+    if (!live) {
+      return new Response(pageDocument("cycle-missing"), {
+        status: 404,
+        headers: {
+          "content-type": "text/html; charset=utf-8",
+          "cache-control": "private, no-cache, no-store, max-age=0, must-revalidate",
+          "x-robots-tag": "noindex",
+        },
+      });
+    }
+    return new Response(pageDocument("cycle-live"), {
+      status: 200,
+      headers: {
+        "content-type": "text/html; charset=utf-8",
+        "cache-control": "public, s-maxage=300, stale-while-revalidate=86400",
+      },
+    });
+  };
+
+  const isolateA = createWorker(handler, { log: () => {}, versionCheckIntervalMs: 0, cache: () => shared });
+  const env = makeEnv(content);
+  const first = ctx();
+  assert.equal((await isolateA.fetch(new Request("https://staging.example/blogs/cycle"), env, first)).status, 404);
+  await first.settle();
+
+  setContentStorage(undefined);
+  const isolateB = createWorker(handler, { log: () => {}, versionCheckIntervalMs: 0, cache: () => shared });
+  await isolateB.fetch(new Request("https://staging.example/"), makeEnv(content), ctx());
+  live = true;
+  contentStorage().write("content/cms.json", JSON.stringify({ articles: [{ slug: "cycle" }] }));
+  await flushContentWrites();
+  await new Promise((r) => setImmediate(r));
+  assert.equal((await isolateA.fetch(new Request("https://staging.example/blogs/cycle"), env, ctx())).status, 200);
+
+  live = false;
+  contentStorage().write("content/cms.json", JSON.stringify({ articles: [] }));
+  await flushContentWrites();
+  await new Promise((r) => setImmediate(r));
+  const unpublished = await isolateA.fetch(new Request("https://staging.example/blogs/cycle"), env, ctx());
+  assert.equal(unpublished.status, 404);
+  assert.equal(unpublished.headers.get("x-gaf-html-cache"), "miss");
+});
+
 // Silence unused import lint for GROUP_LAYOUT in some bundlers.
 void GROUP_LAYOUT;
