@@ -182,5 +182,17 @@
   "manipal-hospitals-baner": {
     "en": "Manipal Hospitals, Baner",
     "ar": "مانيبال هوسبيتالز، بانر"
+  },
+  "lokmanya-hospital-sb-road": {
+    "en": "Lokmanya Hospital - S B Road, Pune",
+    "ar": "مستشفى لوكمانيا — إس بي رود، بونه"
+  },
+  "lokmanya-hospital-nigdi": {
+    "en": "Lokmanya Hospital - Nigdi, Pune",
+    "ar": "مستشفى لوكمانيا — نيغدي، بونه"
+  },
+  "lokmanya-hospital-chinchwad": {
+    "en": "Lokmanya Hospital - Chinchwad, Pune",
+    "ar": "مستشفى لوكمانيا — تشينشواد، بونه"
   }
 }

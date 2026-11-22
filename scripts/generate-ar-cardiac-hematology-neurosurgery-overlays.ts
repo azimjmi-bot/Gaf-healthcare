@@ -17,7 +17,7 @@ const cmsPath = process.env.CATALOG_CMS_PATH ?? join(root, "content/ar/catalog-c
 const cms = JSON.parse(readFileSync(cmsPath, "utf8")) as CatalogCms;
 
 const SPECIALTIES = {
-  Hematology: { count: 41, label: "أمراض الدم", patient: "مرضى اضطرابات الدم" },
+  Hematology: { count: 42, label: "أمراض الدم", patient: "مرضى اضطرابات الدم" },
   "Pediatric Hematology": {
     count: 21,
     label: "أمراض دم الأطفال",
@@ -29,14 +29,14 @@ const SPECIALTIES = {
     label: "جراحة قلب الأطفال",
     patient: "الأطفال المصابين بعيوب القلب الخلقية وأسرهم",
   },
-  Cardiology: { count: 244, label: "أمراض القلب", patient: "مرضى القلب والأوعية الدموية" },
+  Cardiology: { count: 253, label: "أمراض القلب", patient: "مرضى القلب والأوعية الدموية" },
   "Bariatric Surgery": {
     count: 30,
     label: "جراحة السمنة",
     patient: "المرضى الباحثين عن علاج السمنة والأمراض الأيضية",
   },
   Neurosurgery: {
-    count: 104,
+    count: 112,
     label: "جراحة المخ والأعصاب",
     patient: "مرضى الدماغ والأعصاب والعمود الفقري",
   },

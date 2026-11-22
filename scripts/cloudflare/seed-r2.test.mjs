@@ -72,13 +72,13 @@ test("classifyKeys reports missing keys and refuses unexpected ones", () => {
   assert.deepEqual(runtime.unexpected, ["uploads/extra.webp"]);
 });
 
-test("the working tree plans 143 content keys and 719 uploads, skipping the markdown source", () => {
+test("the working tree plans 143 content keys and 839 uploads, skipping the markdown source", () => {
   const { items, manifest, skipped } = plan();
   const content = items.filter((item) => item.bucket === "CONTENT");
   const uploads = items.filter((item) => item.bucket === "STATIC");
   assert.equal(manifest.keys.length, 143);
   assert.equal(content.length, 144);
-  assert.equal(uploads.length, 719);
+  assert.equal(uploads.length, 839);
   assert.deepEqual(skipped, ["content/treatments/breast-cancer-treatment-in-india.md"]);
   assert.equal(uploads.some((item) => item.key.endsWith(".gitkeep")), false);
   assert.equal(content.some((item) => item.key.includes("breast-cancer-treatment-in-india.md")), false);

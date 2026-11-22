@@ -10,6 +10,7 @@ import {
   internationalServices,
   isEyeCampus,
   isFacultyAffiliatedHospital,
+  isLokmanyaFacultyCampus,
   isManipalBanerFacultyCampus,
   isSahyadriFacultyCampus,
   peopleNoun,
@@ -103,6 +104,9 @@ export function heroLedeLocalized(hospital: Hospital, locale: AppLocale) {
   if (isManipalBanerFacultyCampus(hospital)) {
     return `${hospital.name} حرم مانيبال هوسبيتالز المستقل في بانر، ${city}، الهند${beds ? ` بسعة ${beds}` : ""}.${year} علاقات التخصص والإجراء في GAF تعكس الهيئة الطبية المنتسبة الموثّقة لهذا الحرم — وليست ادعاءً بأن كل بند قائمة خدمة مؤكدة بشكل مستقل للحرم.`;
   }
+  if (isLokmanyaFacultyCampus(hospital)) {
+    return `${hospital.name} حرم لوكمانيا المستقل في ${city}، الهند${beds ? ` بسعة ${beds}` : ""}.${year} علاقات التخصص والإجراء في GAF تعكس الهيئة الطبية المنتسبة الموثّقة لهذا الحرم — وليست ادعاءً بأن كل بند قائمة خدمة مؤكدة بشكل مستقل للحرم.`;
+  }
   return `${hospital.name} حرم متعدد التخصصات في ${city}، الهند${beds ? ` بسعة ${beds}` : ""}.${year} المنسّقون هنا يعرفون كيف يمسكون إقامة دولية — من مكالمة الفيديو الأولى حتى الأسبوع بعد العودة.`;
 }
 
@@ -117,6 +121,9 @@ function heroLedeForEn(hospital: Hospital) {
   }
   if (isManipalBanerFacultyCampus(hospital)) {
     return `${hospital.name} is an independent Manipal Hospitals campus in Baner, ${hospital.city}, India${beds ? ` with ${beds.toLowerCase()}` : ""}.${year} Specialty and procedure relationships on GAF reflect verified affiliated faculty for this campus — not a claim that every listed item is a separately confirmed campus service line.`;
+  }
+  if (isLokmanyaFacultyCampus(hospital)) {
+    return `${hospital.name} is an independent Lokmanya Hospitals campus in ${hospital.city}, India${beds ? ` with ${beds.toLowerCase()}` : ""}.${year} Specialty and procedure relationships on GAF reflect verified affiliated faculty for this campus — not a claim that every listed item is a separately confirmed campus service line.`;
   }
   return `${hospital.name} is a multi-speciality campus in ${hospital.city}, India${beds ? ` with ${beds.toLowerCase()}` : ""}.${year} Coordinators here already know how to hold an international stay — from the first video consult through the week after you fly home.`;
 }
@@ -278,6 +285,38 @@ export function infrastructureLocalized(hospital: Hospital, locale: AppLocale) {
       {
         title: "العنوان المنشور",
         body: "عنوان الحرم الرسمي المستخدم للمطابقة في الدليل: طريق بانر-مهالونجي الرئيسي، بانر، بونه 411045، ماهاراشترا.",
+      },
+      {
+        title: "تنسيق دولي",
+        body: "ينسّق GAF مراجعة السجلات واستشارة فيديو قبل أي عربون أو تذكرة.",
+      },
+    ];
+  }
+  if (isLokmanyaFacultyCampus(hospital)) {
+    const address =
+      hospital.slug === "lokmanya-hospital-sb-road"
+        ? "402/A طريق غوخالي ناغار، فيتال بابا تشوك، قرب طريق سيناباتي بابات، بونه 411016، ماهاراشترا"
+        : hospital.slug === "lokmanya-hospital-nigdi"
+          ? "القطاع 27، طريق تيلاك، القطاع 24، برادهيكاران، نيغدي، بونه 411044، ماهاراشترا"
+          : "314/B طريق تشينشواد غاون، أوديوغ ناغار، تشينشواد، بونه 411033، ماهاراشترا";
+    return [
+      {
+        title: "سجل حرم مستقل",
+        body: `يُدرج ${hospital.name} كحرم بونه مستقل، منفصل عن مواقع لوكمانيا الأخرى وعن حروم ساهيادري ومانيبال.`,
+      },
+      {
+        title: "الاعتماد في الملف",
+        body: hospital.accreditation
+          ? `${hospital.accreditation} وفق الإطار المنشور لهذا الحرم. لا تُختلق لوحات إضافية خارج ذلك.`
+          : "لم يُتحقق من لوحة اعتماد خاصة بالحرم في المصادر المراجعة؛ يُؤكد الاعتماد من السجلات قبل السفر ولا يُفترض.",
+      },
+      {
+        title: "أقسام مرتبطة بالهيئة الطبية",
+        body: "التخصصات والإجراءات المعروضة لهذا الحرم تأتي من ملفات أطباء منتسبين موثّقين — وليست جرد خدمات مستقلًا للحرم.",
+      },
+      {
+        title: "العنوان المنشور",
+        body: `عنوان الحرم الرسمي المستخدم للمطابقة في الدليل: ${address}.`,
       },
       {
         title: "تنسيق دولي",

@@ -131,9 +131,21 @@ export function isManipalBanerFacultyCampus(hospital: Hospital) {
   return hospital.slug === "manipal-hospitals-baner";
 }
 
-/** Faculty-scoped campuses (Sahyadri Pune + Manipal Baner) share publication/copy rules. */
+export function isLokmanyaFacultyCampus(hospital: Hospital) {
+  return (
+    hospital.slug === "lokmanya-hospital-sb-road" ||
+    hospital.slug === "lokmanya-hospital-nigdi" ||
+    hospital.slug === "lokmanya-hospital-chinchwad"
+  );
+}
+
+/** Faculty-scoped campuses (Sahyadri + Manipal Baner + Lokmanya Pune) share publication/copy rules. */
 export function isFacultyAffiliatedHospital(hospital: Hospital) {
-  return isSahyadriFacultyCampus(hospital) || isManipalBanerFacultyCampus(hospital);
+  return (
+    isSahyadriFacultyCampus(hospital) ||
+    isManipalBanerFacultyCampus(hospital) ||
+    isLokmanyaFacultyCampus(hospital)
+  );
 }
 
 export type AccreditationMark = {
@@ -205,6 +217,9 @@ export function heroLede(hospital: Hospital) {
   }
   if (isManipalBanerFacultyCampus(hospital)) {
     return `${hospital.name} is an independent Manipal Hospitals campus in Baner, ${hospital.city}, India${beds ? ` with ${beds.toLowerCase()}` : ""}.${year} Specialty and procedure relationships on GAF reflect verified affiliated faculty for this campus — not a claim that every listed item is a separately confirmed campus service line.`;
+  }
+  if (isLokmanyaFacultyCampus(hospital)) {
+    return `${hospital.name} is an independent Lokmanya Hospitals campus in ${hospital.city}, India${beds ? ` with ${beds.toLowerCase()}` : ""}.${year} Specialty and procedure relationships on GAF reflect verified affiliated faculty for this campus — not a claim that every listed item is a separately confirmed campus service line.`;
   }
   return `${hospital.name} is a multi-speciality campus in ${hospital.city}, India${beds ? ` with ${beds.toLowerCase()}` : ""}.${year} Coordinators here already know how to hold an international stay — from the first video consult through the week after you fly home.`;
 }
@@ -445,6 +460,38 @@ export function infrastructure(hospital: Hospital) {
       {
         title: "Published address",
         body: "Official campus address used for directory matching: Baner-Mhalunge Main Road, Baner, Pune - 411045, Maharashtra.",
+      },
+      {
+        title: "International coordination",
+        body: "GAF coordinates records review and a video consult before any deposit or ticket.",
+      },
+    ];
+  }
+  if (isLokmanyaFacultyCampus(hospital)) {
+    const address =
+      hospital.slug === "lokmanya-hospital-sb-road"
+        ? "402/A Gokhale Nagar Road, Vetal Baba Chowk, off Senapati Bapat Road, Pune, Maharashtra 411016"
+        : hospital.slug === "lokmanya-hospital-nigdi"
+          ? "Sector 27, Tilak Rd, Sector No. 24, Pradhikaran, Nigdi, Pune, Maharashtra 411044"
+          : "314/B, Chinchwad Gaon Rd, Udyog Nagar, Chinchwad, Pune, Maharashtra 411033";
+    return [
+      {
+        title: "Independent campus record",
+        body: `${hospital.name} is listed as its own Pune campus, separate from other Lokmanya Hospitals sites and from Sahyadri or Manipal campuses.`,
+      },
+      {
+        title: "Accreditation on file",
+        body: hospital.accreditation
+          ? `${hospital.accreditation} is recorded from published framing for this campus. Additional plaques beyond that are not invented here.`
+          : "No campus-specific accreditation plaque was verified in the sources reviewed; accreditation is confirmed from records before travel rather than assumed.",
+      },
+      {
+        title: "Faculty-linked departments",
+        body: "Specialties and procedures shown for this campus come from verified affiliated doctor profiles — not a separate campus service inventory.",
+      },
+      {
+        title: "Published address",
+        body: `Official campus address used for directory matching: ${address}.`,
       },
       {
         title: "International coordination",

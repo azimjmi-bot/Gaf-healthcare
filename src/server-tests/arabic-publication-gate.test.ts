@@ -58,17 +58,20 @@ function everyArabicCandidate() {
 const STAGE_FACETS: Record<PseoPageType, number> = {
   // +74 from Sahyadri / Pune doctor specialty+procedure facets (PR #37).
   // +6 from Manipal Baner page-3 eligible doctors after strict procedure-evidence trim.
-  doctorFacet: 1388,
+  // +31 from Manipal Baner full-directory + Lokmanya Pune doctor facets.
+  doctorFacet: 1419,
   // +1 from the populated Pune hospital city hub (PR #37); faculty-only
-  // specialty/procedure landings stay noindex (PR #38).
+  // specialty/procedure landings stay noindex (PR #38). Lokmanya campuses remain
+  // faculty-affiliated and do not add hospital specialty/procedure landings.
   hospitalFacet: 107,
   // +22 from Pune cost city/specialty/procedure facets once inventory exists.
-  costFacet: 597,
+  // +1 from additional Pune cost inventory after Manipal/Lokmanya expansion.
+  costFacet: 598,
   specialtyHub: 0,
 };
 
 /** Every facet URL that renders in Arabic, published or not. */
-const FACET_CANDIDATES = 5651;
+const FACET_CANDIDATES = 5761;
 
 function expectedPublishedFacets() {
   return (Object.keys(STAGE_FACETS) as PseoPageType[])
@@ -97,11 +100,11 @@ test("a published facet that duplicates its parent stays out of the sitemap", ()
   const listed = new Set(publishedFacetPaths("ar"));
 
   assert.equal(published.length, expectedPublishedFacets());
-  // One hundred twenty-one doctor facets return exactly their parent's roster.
+  // One hundred eighteen doctor facets return exactly their parent's roster.
   // Reviewed specialties make most specialty and procedure facets narrow their
   // parent naturally. They remain published and reachable, but name the parent
   // as canonical, so advertising them would contradict their own head.
-  assert.equal(listed.size, expectedPublishedFacets() - 121);
+  assert.equal(listed.size, expectedPublishedFacets() - 118);
   for (const path of published) {
     if (listed.has(path)) continue;
     assert.notEqual(
@@ -262,15 +265,16 @@ test("the live Arabic overlays stay published", () => {
   const hospitalRows = Object.values(cms.hospitalOverrides);
   const treatmentRows = Object.values(cms.treatmentOverrides);
   // +110 Sahyadri eligible doctors and +3 Sahyadri Pune campuses (PR #37).
-  assert.equal(doctorRows.length, 2517);
-  assert.equal(hospitalRows.length, 46);
+  // +49 Manipal Baner + +36 Lokmanya Pune doctor records; +3 Lokmanya campuses.
+  assert.equal(doctorRows.length, 2602);
+  assert.equal(hospitalRows.length, 49);
   assert.equal(treatmentRows.length, 419);
   for (const patch of [...doctorRows, ...hospitalRows, ...treatmentRows]) {
     assert.equal(translationStatus(patch), "published");
   }
 
-  assert.equal(doctorsForLocale("ar").length, 2517);
-  assert.equal(hospitalsForLocale("ar").length, 46);
+  assert.equal(doctorsForLocale("ar").length, 2602);
+  assert.equal(hospitalsForLocale("ar").length, 49);
   assert.equal(treatmentsForLocale("ar").length, 419);
   assert.equal(localePathIsPublished("ar", "/doctors/dr-anil-kumar-anand"), true);
   assert.equal(localePathIsPublished("ar", "/doctors/dr-anil-k-d-cruz"), true);

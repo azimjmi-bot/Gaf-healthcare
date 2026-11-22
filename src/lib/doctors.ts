@@ -43,8 +43,20 @@ function isSahyadriCampusSlug(slug: string) {
   return slug.startsWith("sahyadri-super-speciality-hospital-");
 }
 
+function isLokmanyaCampusSlug(slug: string) {
+  return (
+    slug === "lokmanya-hospital-sb-road" ||
+    slug === "lokmanya-hospital-nigdi" ||
+    slug === "lokmanya-hospital-chinchwad"
+  );
+}
+
 function isEvidenceGatedHospitalSlug(slug: string) {
-  return isSahyadriCampusSlug(slug) || slug === "manipal-hospitals-baner";
+  return (
+    isSahyadriCampusSlug(slug) ||
+    slug === "manipal-hospitals-baner" ||
+    isLokmanyaCampusSlug(slug)
+  );
 }
 
 function hospitalSlugsFor(seed: DoctorSeed): string[] {

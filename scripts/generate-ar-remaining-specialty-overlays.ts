@@ -19,37 +19,37 @@ const cms = JSON.parse(readFileSync(cmsPath, "utf8")) as CatalogCms;
 
 const SPECIALTIES = {
   "Cosmetic Surgery": {
-    count: 74,
+    count: 77,
     label: "الجراحة التجميلية",
     patient: "المرضى الباحثين عن جراحة تجميلية ترميمية أو اختيارية",
   },
   ENT: {
-    count: 110,
+    count: 113,
     label: "أنف وأذن وحنجرة",
     patient: "مرضى الأنف والأذن والحنجرة",
   },
   Gastroenterology: {
-    count: 160,
+    count: 163,
     label: "أمراض الجهاز الهضمي",
     patient: "مرضى الجهاز الهضمي والكبد",
   },
   "Surgical Gastroenterology": {
-    count: 114,
+    count: 116,
     label: "جراحة الجهاز الهضمي",
     patient: "مرضى جراحة الجهاز الهضمي والكبد والبنكرياس",
   },
   Urology: {
-    count: 144,
+    count: 147,
     label: "المسالك البولية",
     patient: "مرضى المسالك البولية والكلى والجهاز التناسلي الذكري",
   },
   "Spine Surgery": {
-    count: 65,
+    count: 70,
     label: "جراحة العمود الفقري",
     patient: "مرضى العمود الفقري والنخاع الشوكي",
   },
   Pulmonology: {
-    count: 115,
+    count: 117,
     label: "أمراض الرئة",
     patient: "مرضى الرئة والجهاز التنفسي",
   },
@@ -59,27 +59,27 @@ const SPECIALTIES = {
     patient: "الأطفال المصابين بتشوهات أو إصابات عظمية وأسرهم",
   },
   Orthopedics: {
-    count: 224,
+    count: 240,
     label: "جراحة العظام",
     patient: "مرضى المفاصل والعظام والإصابات",
   },
   Ophthalmology: {
-    count: 110,
+    count: 112,
     label: "طب العيون",
     patient: "مرضى العيون والبصر",
   },
   Gynecology: {
-    count: 190,
+    count: 198,
     label: "أمراض النساء",
     patient: "النساء الباحثات عن رعاية نسائية وجراحية",
   },
   Neurology: {
-    count: 124,
+    count: 129,
     label: "طب الأعصاب",
     patient: "مرضى الجهاز العصبي والسكتة والصرع",
   },
   Nephrology: {
-    count: 113,
+    count: 117,
     label: "أمراض الكلى",
     patient: "مرضى الكلى والغسيل الكلوي والزراعة",
   },
