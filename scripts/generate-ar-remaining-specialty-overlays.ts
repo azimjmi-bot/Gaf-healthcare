@@ -273,13 +273,13 @@ function arabicQualifications(value: string, specialty: Specialty) {
   return [...new Set(qualifications)].join("، ") || `تدريب تخصصي في ${SPECIALTIES[specialty].label}`;
 }
 
-function translatedProcedures(doctor: Doctor, specialty: Specialty) {
-  const procedures = doctor.procedures.map((procedure) => {
+function translatedProcedures(doctor: Doctor, _specialty: Specialty) {
+  // Evidence-gated: never invent a specialty label as a procedure when EN is empty.
+  return doctor.procedures.map((procedure) => {
     const translated = TAXONOMY_AR[procedure];
     if (!translated) throw new Error(`Missing Arabic procedure label: ${procedure}`);
     return translated;
   });
-  return procedures.length ? procedures : [SPECIALTIES[specialty].label];
 }
 
 function recordsContext(specialty: Specialty) {
