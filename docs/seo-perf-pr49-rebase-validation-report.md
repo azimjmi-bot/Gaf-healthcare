@@ -3,7 +3,7 @@
 **PR:** https://github.com/azimjmi-bot/Gaf-healthcare/pull/49  
 **Branch:** `cursor/seo-perf-ar-publication-index-6064`  
 **Rebased onto:** `353d637` (Merge PR #51 — negative cache)  
-**Rebased tip (this report):** see git SHA at commit time below  
+**Rebased tip (this report):** `aeda37c35c39b74573b8191be9976a274d522bd7`  
 **Production baseline (unchanged; no deploy):** release `353d637`, Worker `930f4242-c0a4-4e38-b5f0-3b39c95b5d2c`, R2 stamp `353d637`, apex `GAF_NEGATIVE_CACHE` OFF, canary `5444d386-3cdf-4f8f-85a7-5278325496de`
 
 **Authorisation:** No merge, deploy, production R2 write, DNS, Cloudflare config, or apex flag change.
@@ -12,9 +12,9 @@
 
 ## 1. Rebased PR SHA
 
-Recorded at commit: see latest commit on `cursor/seo-perf-ar-publication-index-6064` after this report lands.
-
-Parent: `353d63732a271578d979f5e466476ec02951940f`
+- Tip: `aeda37c35c39b74573b8191be9976a274d522bd7`
+- Feature commit: `11ae27090a2e8cdb2e5d295f2959021e5629cafa`
+- Parent: `353d63732a271578d979f5e466476ec02951940f`
 
 ---
 
