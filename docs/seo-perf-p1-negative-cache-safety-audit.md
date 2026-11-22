@@ -2,7 +2,10 @@
 
 **PR:** https://github.com/azimjmi-bot/Gaf-healthcare/pull/51  
 **Branch:** `cursor/seo-perf-p1-negative-cache-6064`  
-**Audited SHA:** `930dba05887a3bb32c22b98798a83feb03904087`  
+**Audited tip SHA:** `9fe6ab06b2e316c4954e4f8d62c0e86c26836f0a`  
+**Hardening commit:** `930dba05887a3bb32c22b98798a83feb03904087`  
+**Initial feature commit:** `3ea878c616407434ff0410abe7e441fe274d154a`  
+
 
 
 **Auditor role:** Independent Cloudflare Workers + technical SEO review  
