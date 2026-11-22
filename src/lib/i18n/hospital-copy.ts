@@ -9,6 +9,8 @@ import {
   infrastructure,
   internationalServices,
   isEyeCampus,
+  isFacultyAffiliatedHospital,
+  isManipalBanerFacultyCampus,
   isSahyadriFacultyCampus,
   peopleNoun,
   pullQuote,
@@ -98,6 +100,9 @@ export function heroLedeLocalized(hospital: Hospital, locale: AppLocale) {
   if (isSahyadriFacultyCampus(hospital)) {
     return `${hospital.name} حرم ساهيادري مستقل في ${city}، الهند${beds ? ` بسعة ${beds}` : ""}.${year} علاقات التخصص والإجراء في GAF تعكس الهيئة الطبية المنتسبة الموثّقة لهذا الحرم — وليست ادعاءً بأن كل بند قائمة خدمة مؤكدة بشكل مستقل للحرم.`;
   }
+  if (isManipalBanerFacultyCampus(hospital)) {
+    return `${hospital.name} حرم مانيبال هوسبيتالز المستقل في بانر، ${city}، الهند${beds ? ` بسعة ${beds}` : ""}.${year} علاقات التخصص والإجراء في GAF تعكس الهيئة الطبية المنتسبة الموثّقة لهذا الحرم — وليست ادعاءً بأن كل بند قائمة خدمة مؤكدة بشكل مستقل للحرم.`;
+  }
   return `${hospital.name} حرم متعدد التخصصات في ${city}، الهند${beds ? ` بسعة ${beds}` : ""}.${year} المنسّقون هنا يعرفون كيف يمسكون إقامة دولية — من مكالمة الفيديو الأولى حتى الأسبوع بعد العودة.`;
 }
 
@@ -109,6 +114,9 @@ function heroLedeForEn(hospital: Hospital) {
   }
   if (isSahyadriFacultyCampus(hospital)) {
     return `${hospital.name} is an independent Sahyadri campus in ${hospital.city}, India${beds ? ` with ${beds.toLowerCase()}` : ""}.${year} Specialty and procedure relationships on GAF reflect verified affiliated faculty for this campus — not a claim that every listed item is a separately confirmed campus service line.`;
+  }
+  if (isManipalBanerFacultyCampus(hospital)) {
+    return `${hospital.name} is an independent Manipal Hospitals campus in Baner, ${hospital.city}, India${beds ? ` with ${beds.toLowerCase()}` : ""}.${year} Specialty and procedure relationships on GAF reflect verified affiliated faculty for this campus — not a claim that every listed item is a separately confirmed campus service line.`;
   }
   return `${hospital.name} is a multi-speciality campus in ${hospital.city}, India${beds ? ` with ${beds.toLowerCase()}` : ""}.${year} Coordinators here already know how to hold an international stay — from the first video consult through the week after you fly home.`;
 }
@@ -126,7 +134,7 @@ export function pullQuoteLocalized(hospital: Hospital, locale: AppLocale) {
 export function whyChooseLocalized(hospital: Hospital, facultyCount: number, locale: AppLocale) {
   if (locale !== "ar") return whyChoose(hospital, facultyCount);
   const eye = isEyeCampus(hospital);
-  const sahyadri = isSahyadriFacultyCampus(hospital);
+  const facultyCampus = isFacultyAffiliatedHospital(hospital);
   const city = taxonomyLabel(hospital.city, "ar");
   return [
     {
@@ -139,7 +147,7 @@ export function whyChooseLocalized(hospital: Hospital, facultyCount: number, loc
       title: "اعتماد يمكن التحقق منه",
       body: `${hospital.accreditation} على الملف. لا نخترع لوحة لتزيين ممر.`,
     },
-    sahyadri
+    facultyCampus
       ? {
           title: "تخصصات مرتبطة بالهيئة الطبية",
           body: "التخصصات والإجراءات في هذه الصفحة تعكس أطباء منتسبين موثّقين لهذا الحرم — وليست كتالوج خدمات مستقلًا تم تدقيقه للحرم.",
@@ -169,7 +177,7 @@ export function featureBarLocalized(hospital: Hospital, locale: AppLocale) {
   if (locale !== "ar") return featureBar(hospital);
   const eye = isEyeCampus(hospital);
   const city = taxonomyLabel(hospital.city, "ar");
-  if (isSahyadriFacultyCampus(hospital)) {
+  if (isFacultyAffiliatedHospital(hospital)) {
     return [
       { label: "هيئة طبية مسمّاة في الملف" },
       { label: "حرم بونه مستقل" },
@@ -246,6 +254,30 @@ export function infrastructureLocalized(hospital: Hospital, locale: AppLocale) {
       {
         title: "سعة العناية الحرجة",
         body: "لم يُتحقق من نشر خاص بالحرم عن وحدة عناية مركزة لهذا الموقع في المصادر المراجعة؛ تُؤكد السعة من السجلات قبل السفر ولا تُفترض من وصف متعدد التخصصات.",
+      },
+      {
+        title: "تنسيق دولي",
+        body: "ينسّق GAF مراجعة السجلات واستشارة فيديو قبل أي عربون أو تذكرة.",
+      },
+    ];
+  }
+  if (isManipalBanerFacultyCampus(hospital)) {
+    return [
+      {
+        title: "سجل حرم مستقل",
+        body: "يُدرج مانيبال هوسبيتالز بانر كحرم بونه مستقل، منفصل عن حروم ساهيادري وعن مواقع مانيبال الأخرى.",
+      },
+      {
+        title: "الاعتماد في الملف",
+        body: `${hospital.accreditation} وفق الإطار المنشور لمانيبال هوسبيتالز لهذا الحرم. لا تُختلق لوحات إضافية خارج ذلك.`,
+      },
+      {
+        title: "أقسام مرتبطة بالهيئة الطبية",
+        body: "التخصصات والإجراءات المعروضة لهذا الحرم تأتي من ملفات أطباء منتسبين موثّقين — وليست جرد خدمات مستقلًا للحرم.",
+      },
+      {
+        title: "العنوان المنشور",
+        body: "عنوان الحرم الرسمي المستخدم للمطابقة في الدليل: طريق بانر-مهالونجي الرئيسي، بانر، بونه 411045، ماهاراشترا.",
       },
       {
         title: "تنسيق دولي",
@@ -339,11 +371,11 @@ export function hospitalFaqsLocalized(
   if (locale !== "ar") return hospitalFaqs(hospital, faculty, groups);
   const listed = groups.filter((g) => g.doctors.length > 0).map((g) => taxonomyLabel(g.name, "ar"));
   const names = faculty.filter((d) => d.featured).slice(0, 3).map((d) => d.name);
-  const sahyadri = isSahyadriFacultyCampus(hospital);
+  const facultyCampus = isFacultyAffiliatedHospital(hospital);
   const specLine =
     listed.length === 0
       ? "ما زال مطابقة الاستشاريين المسمّين لهذا الحرم جارية. سيقول المنسّق ذلك بوضوح."
-      : sahyadri
+      : facultyCampus
         ? listed.length <= 4
           ? `تخصصات الهيئة الطبية المنتسبة الموثّقة تشمل حاليًا ${joinAr(listed)}. هذه علاقات دليل من أطباء مسمّين وليست تدقيق خدمات مستقلًا للحرم.`
           : `تخصصات الهيئة الطبية المنتسبة الموثّقة تشمل حاليًا ${joinAr(listed.slice(0, 4))} و${String(listed.length - 4)} أقسامًا أخرى. هذه علاقات دليل من أطباء مسمّين وليست تدقيق خدمات مستقلًا للحرم.`
@@ -365,7 +397,7 @@ export function hospitalFaqsLocalized(
         : "أرقام الأسرّة على ملف المستشفى؛ يؤكد المنسّق الجناح عندما يصبح الموعد حقيقيًا.",
     },
     {
-      q: sahyadri ? "أي التخصصات لديها أطباء منتسبون مسمّون هنا؟" : "أي التخصصات لديها أطباء مسمّون هنا؟",
+      q: facultyCampus ? "أي التخصصات لديها أطباء منتسبون مسمّون هنا؟" : "أي التخصصات لديها أطباء مسمّون هنا؟",
       a: specLine,
     },
     {

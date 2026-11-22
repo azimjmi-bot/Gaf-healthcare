@@ -43,6 +43,10 @@ function isSahyadriCampusSlug(slug: string) {
   return slug.startsWith("sahyadri-super-speciality-hospital-");
 }
 
+function isEvidenceGatedHospitalSlug(slug: string) {
+  return isSahyadriCampusSlug(slug) || slug === "manipal-hospitals-baner";
+}
+
 function hospitalSlugsFor(seed: DoctorSeed): string[] {
   const raw = (seed as DoctorSeed & { hospitalSlugs?: string[] }).hospitalSlugs;
   const listed = Array.isArray(raw)
@@ -150,15 +154,15 @@ const buildDoctor = (seed: DoctorSeed): Doctor => {
   const specialty =
     getSpecialty(seed.specialty) ?? radiationSpecialty;
 
-  const sahyadri = isSahyadriCampusSlug(seed.hospitalSlug);
-  // Sahyadri Pune: proceduresExpertise is already evidence-gated to exact GAF procedure
-  // names (or empty). Do not invent specialty-default fallbacks.
+  const evidenceGated = isEvidenceGatedHospitalSlug(seed.hospitalSlug);
+  // Sahyadri / Manipal Baner: proceduresExpertise is already evidence-gated to exact GAF
+  // procedure names (or empty). Do not invent specialty-default fallbacks.
   const procedures: NonNullable<ReturnType<typeof getProcedure>>[] = (() => {
-    if (sahyadri) {
+    if (evidenceGated) {
       if (seed.proceduresExpertise.length === 0) return [];
       return seed.proceduresExpertise.map((name: string) => {
         const procedure = getProcedure(name);
-        if (!procedure) throw new Error(`Unmapped Sahyadri procedure ${name}`);
+        if (!procedure) throw new Error(`Unmapped faculty-campus procedure ${name}`);
         return procedure;
       });
     }

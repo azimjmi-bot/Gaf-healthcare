@@ -103173,6 +103173,286 @@
       ],
       "image": "",
       "imageAlt": ""
+    },
+    {
+      "slug": "dr-aniket-payagude",
+      "name": "Dr. Aniket Payagude",
+      "featured": false,
+      "specialty": "Surgical Gastroenterology",
+      "experience": "14+ years Experience",
+      "qualifications": "MBBS, MS, M.Ch Surgical Gastroenterology, FMAS",
+      "designation": "Consultant - Surgical Gastroenterology",
+      "hospitalName": "Manipal Hospitals, Baner",
+      "hospitalHref": "/destinations/india/hospitals/manipal-hospitals/manipal-hospitals-baner/",
+      "hospitalSlug": "manipal-hospitals-baner",
+      "hospitalCaption": "Manipal Hospitals",
+      "city": "Pune",
+      "cityCountry": "Pune, India",
+      "specializations": [
+        "Surgical Gastroenterology",
+        "Hepatopancreatobiliary Surgery"
+      ],
+      "proceduresExpertise": [
+        "Colorectal Cancer Surgery",
+        "Bile Duct Cancer Surgery"
+      ],
+      "education": [
+        "MBBS, MS, M.Ch Surgical Gastroenterology, FMAS"
+      ],
+      "affiliations": [
+        "Manipal Hospitals, Baner",
+        "Manipal Hospitals"
+      ],
+      "awards": [],
+      "research": [],
+      "memberships": [],
+      "bio": "Dr. Aniket Payagude is a surgical gastroenterologist at Manipal Hospitals, Baner in Pune, India. The GAF Healthcare directory files this profile under Surgical Gastroenterology for country, city, hospital and procedure matching. Published experience on the official Manipal Hospitals Baner profile is recorded as over 14 years since MBBS completion in 2011. Listed credentials include MBBS, MS, M.Ch in Surgical Gastroenterology and FMAS. Areas of expertise published on the official profile include gastrointestinal laparoscopic and minimal-access surgery, gastrointestinal and hepatopancreatobiliary cancer surgery, colorectal surgery, pancreatic surgery, and gallbladder, bile duct and liver disorders. Procedure associations retained for directory matching are limited to procedures explicitly supported on the official Manipal Hospitals Baner profile and mapped to existing GAF Surgical Gastroenterology taxonomy: Colorectal Cancer Surgery and Bile Duct Cancer Surgery. Broader HPB and pancreatic cancer surgery language was not mapped to specific named procedures such as Whipple Procedure or Distal Pancreatectomy without an explicit procedure name on the profile. Manipal Hospitals, Baner is kept as an independent hospital entity, separate from Sahyadri Hospitals campuses. International patients should treat this page as a directory record for comparing specialty, campus and published credentials before a records-based opinion.",
+      "hospitalSlugs": [
+        "manipal-hospitals-baner"
+      ],
+      "image": "/doctors/manipal-baner/dr-aniket-payagude.webp",
+      "imageAlt": "Dr. Aniket Payagude, Surgical Gastroenterology at Manipal Hospitals, Baner, Pune"
+    },
+    {
+      "slug": "dr-balaji-nalwad",
+      "name": "Dr. Balaji Nalwad",
+      "featured": false,
+      "specialty": "Gynecology",
+      "experience": "21+ years Experience",
+      "qualifications": "MBBS, DNB (OBGY), FCPS, DGO, FICMCH, Fellowship in Minimal Access Surgery, Advanced Endoscopy Training",
+      "designation": "Consultant - Gynecology",
+      "hospitalName": "Manipal Hospitals, Baner",
+      "hospitalHref": "/destinations/india/hospitals/manipal-hospitals/manipal-hospitals-baner/",
+      "hospitalSlug": "manipal-hospitals-baner",
+      "hospitalCaption": "Manipal Hospitals",
+      "city": "Pune",
+      "cityCountry": "Pune, India",
+      "specializations": [
+        "Gynecology",
+        "Minimal Access Gynaecologic Surgery"
+      ],
+      "proceduresExpertise": [
+        "Robotic Hysterectomy",
+        "Laparoscopic Hysterectomy",
+        "Laparoscopic Myomectomy",
+        "Robotic Myomectomy",
+        "Endometriosis Surgery"
+      ],
+      "education": [
+        "MBBS, DNB (OBGY), FCPS, DGO, FICMCH, Fellowship in Minimal Access Surgery, Advanced Endoscopy Training"
+      ],
+      "affiliations": [
+        "Manipal Hospitals, Baner",
+        "Manipal Hospitals"
+      ],
+      "awards": [],
+      "research": [],
+      "memberships": [],
+      "bio": "Dr. Balaji Nalwad practises gynecology at Manipal Hospitals, Baner in Pune, India. The profile is filed under Gynecology in the GAF Healthcare directory. Published experience on the official Manipal Hospitals Baner profile is recorded as 21 years. Listed credentials include MBBS, DNB (OBGY), FCPS, DGO, FICMCH, a fellowship in minimal access surgery and advanced endoscopy training. Official field-of-expertise entries include robotic gynaecologic surgery, advanced laparoscopy, endometriosis management, fibroid myomectomy, and laparoscopic and hysteroscopic surgery. Procedure associations retained for directory matching are limited to existing GAF Gynecology taxonomy names supported by that evidence: Robotic Hysterectomy, Laparoscopic Hysterectomy, Laparoscopic Myomectomy, Robotic Myomectomy and Endometriosis Surgery. This record is affiliated only with the independent Manipal Hospitals Baner campus on GAF. International patients should treat this page as a directory record for comparing specialty, campus and published credentials before a records-based opinion.",
+      "hospitalSlugs": [
+        "manipal-hospitals-baner"
+      ],
+      "image": "/doctors/manipal-baner/dr-balaji-nalwad.webp",
+      "imageAlt": "Dr. Balaji Nalwad, Gynecology at Manipal Hospitals, Baner, Pune"
+    },
+    {
+      "slug": "dr-bhavana-mangal",
+      "name": "Dr. Bhavana Mangal",
+      "featured": false,
+      "specialty": "Gynecology",
+      "experience": "25+ years Experience",
+      "qualifications": "MBBS, MD, DNB, CCT, FRCOG",
+      "designation": "Consultant - Obstetrics and Gynecology",
+      "hospitalName": "Manipal Hospitals, Baner",
+      "hospitalHref": "/destinations/india/hospitals/manipal-hospitals/manipal-hospitals-baner/",
+      "hospitalSlug": "manipal-hospitals-baner",
+      "hospitalCaption": "Manipal Hospitals",
+      "city": "Pune",
+      "cityCountry": "Pune, India",
+      "specializations": [
+        "Gynecology",
+        "Obstetrics and Gynecology"
+      ],
+      "proceduresExpertise": [
+        "Laparoscopic Hysterectomy",
+        "Abdominal Hysterectomy",
+        "Vaginal Hysterectomy",
+        "Ovarian Cyst Surgery",
+        "Salpingo-Oophorectomy",
+        "Pelvic Floor Repair",
+        "Gynecologic Cancer Surgery",
+        "Laparoscopic Myomectomy"
+      ],
+      "education": [
+        "MBBS, MD, DNB, CCT, FRCOG"
+      ],
+      "affiliations": [
+        "Manipal Hospitals, Baner",
+        "Manipal Hospitals"
+      ],
+      "awards": [],
+      "research": [],
+      "memberships": [],
+      "bio": "Dr. Bhavana Mangal is an obstetrician and gynaecologist at Manipal Hospitals, Baner in Pune, India. The GAF Healthcare directory files this profile under Gynecology. Published experience on the official profile is recorded as over 25 years of clinical work in women’s healthcare, including training and practice in the United Kingdom. Listed credentials include MBBS, MD, DNB, CCT and FRCOG. Official expertise covers laparoscopic procedures such as cystectomy, BSO, LAVH and TLH; open surgery including TAH with BSO and myomectomy; vaginal hysterectomy and pelvic floor repairs; outpatient hysteroscopy; and gynaecologic cancer diagnosis and management. Procedure associations retained for directory matching are limited to existing GAF Gynecology taxonomy names supported by that evidence: Laparoscopic Hysterectomy, Abdominal Hysterectomy, Vaginal Hysterectomy, Ovarian Cyst Surgery, Salpingo-Oophorectomy, Pelvic Floor Repair, Gynecologic Cancer Surgery and Laparoscopic Myomectomy. Manipal Hospitals, Baner remains an independent campus record. International patients should treat this page as a directory record for comparing specialty, campus and published credentials before a records-based opinion.",
+      "hospitalSlugs": [
+        "manipal-hospitals-baner"
+      ],
+      "image": "/doctors/manipal-baner/dr-bhavana-mangal.webp",
+      "imageAlt": "Dr. Bhavana Mangal, Gynecology at Manipal Hospitals, Baner, Pune"
+    },
+    {
+      "slug": "dr-borde-mandar-deepak",
+      "name": "Dr. Borde Mandar Deepak",
+      "featured": false,
+      "specialty": "Spine Surgery",
+      "experience": "10+ years Experience",
+      "qualifications": "MBBS, MS (Orthopaedics)",
+      "designation": "Consultant - Orthopedic Spine Surgery",
+      "hospitalName": "Manipal Hospitals, Baner",
+      "hospitalHref": "/destinations/india/hospitals/manipal-hospitals/manipal-hospitals-baner/",
+      "hospitalSlug": "manipal-hospitals-baner",
+      "hospitalCaption": "Manipal Hospitals",
+      "city": "Pune",
+      "cityCountry": "Pune, India",
+      "specializations": [
+        "Spine Surgery",
+        "Orthopedics"
+      ],
+      "proceduresExpertise": [
+        "Scoliosis Correction",
+        "Spinal Deformity Correction",
+        "Revision Spine Surgery",
+        "Spinal Tumor Surgery"
+      ],
+      "education": [
+        "MBBS, MS (Orthopaedics)"
+      ],
+      "affiliations": [
+        "Manipal Hospitals, Baner",
+        "Manipal Hospitals"
+      ],
+      "awards": [],
+      "research": [],
+      "memberships": [],
+      "bio": "Dr. Borde Mandar Deepak is a consultant orthopedic spine surgeon at Manipal Hospitals, Baner in Pune, India. Although the Manipal directory card lists Orthopaedics, the official profile centres on spine surgery, including Spine Foundation fellowship training, so GAF files the primary specialty as Spine Surgery with Orthopedics retained as a secondary specialization. Published experience is recorded as over 10 years. Listed credentials include MBBS and MS in Orthopaedics. Official expertise covers complex spinal deformity including scoliosis and kyphosis, minimally invasive microscopic and endoscopic spine procedures, navigation-based complex spinal surgery, revision instrumentation and spinal tumour surgery. Procedure associations retained for directory matching are limited to procedures explicitly supported on the official Manipal Hospitals Baner profile and mapped to existing GAF Spine Surgery taxonomy: Scoliosis Correction, Spinal Deformity Correction, Revision Spine Surgery and Spinal Tumor Surgery. Minimally invasive microscopic and endoscopic spine language was not mapped to Microdiscectomy without an explicit microdiscectomy statement on the profile. The official directory photograph for this clinician is a generic placeholder, so GAF leaves the image empty and uses the shared avatar fallback. International patients should treat this page as a directory record for comparing specialty, campus and published credentials before a records-based opinion.",
+      "hospitalSlugs": [
+        "manipal-hospitals-baner"
+      ],
+      "image": "",
+      "imageAlt": ""
+    },
+    {
+      "slug": "dr-chinmay-kumbhar",
+      "name": "Dr. Chinmay Kumbhar",
+      "featured": false,
+      "specialty": "Neurology",
+      "experience": "11+ years Experience",
+      "qualifications": "MBBS, MD, DrNB (Neurology)",
+      "designation": "Consultant - Neurology",
+      "hospitalName": "Manipal Hospitals, Baner",
+      "hospitalHref": "/destinations/india/hospitals/manipal-hospitals/manipal-hospitals-baner/",
+      "hospitalSlug": "manipal-hospitals-baner",
+      "hospitalCaption": "Manipal Hospitals",
+      "city": "Pune",
+      "cityCountry": "Pune, India",
+      "specializations": [
+        "Neurology"
+      ],
+      "proceduresExpertise": [],
+      "education": [
+        "MBBS, MD, DrNB (Neurology)"
+      ],
+      "affiliations": [
+        "Manipal Hospitals, Baner",
+        "Manipal Hospitals"
+      ],
+      "awards": [],
+      "research": [],
+      "memberships": [],
+      "bio": "Dr. Chinmay Kumbhar is a consultant neurologist at Manipal Hospitals, Baner in Pune, India. The profile is filed under Neurology in the GAF Healthcare directory. The official Manipal Hospitals Baner profile records over 11 years in medicine with more than seven years dedicated to neurology practice, with training that includes MBBS from Seth GS Medical College and KEM Hospital, Mumbai, MD in Paediatrics and DrNB in Neurology. Official field-of-expertise entries include headache, neuro-otology and vertigo, epilepsy, peripheral neuropathy and paediatric neurology. Those entries name clinical domains rather than discrete items in the GAF Neurology procedure taxonomy, so this directory record intentionally lists no mapped procedures. Affiliations are limited to the independent Manipal Hospitals Baner campus. International patients should treat this page as a directory record for comparing specialty, campus and published credentials before a records-based opinion.",
+      "hospitalSlugs": [
+        "manipal-hospitals-baner"
+      ],
+      "image": "/doctors/manipal-baner/dr-chinmay-kumbhar.webp",
+      "imageAlt": "Dr. Chinmay Kumbhar, Neurology at Manipal Hospitals, Baner, Pune"
+    },
+    {
+      "slug": "dr-gaurav-chamania",
+      "name": "Dr. Gaurav Chamania",
+      "featured": false,
+      "specialty": "ENT",
+      "experience": "11+ years Experience",
+      "qualifications": "MBBS, MS (ENT)",
+      "designation": "Consultant - ENT, Head-Neck and Skull Base Surgery",
+      "hospitalName": "Manipal Hospitals, Baner",
+      "hospitalHref": "/destinations/india/hospitals/manipal-hospitals/manipal-hospitals-baner/",
+      "hospitalSlug": "manipal-hospitals-baner",
+      "hospitalCaption": "Manipal Hospitals",
+      "city": "Pune",
+      "cityCountry": "Pune, India",
+      "specializations": [
+        "ENT",
+        "Head and Neck Surgery"
+      ],
+      "proceduresExpertise": [
+        "Head & Neck Cancer Surgery",
+        "Skull Base Surgery"
+      ],
+      "education": [
+        "MBBS, MS (ENT)"
+      ],
+      "affiliations": [
+        "Manipal Hospitals, Baner",
+        "Manipal Hospitals"
+      ],
+      "awards": [],
+      "research": [],
+      "memberships": [],
+      "bio": "Dr. Gaurav Chamania is a consultant ENT, head-neck and skull base surgeon at Manipal Hospitals, Baner in Pune, India. The GAF Healthcare directory files this profile under ENT. Published experience on the official profile is recorded as over 11 years. Listed credentials include MBBS and MS in ENT. The official overview emphasises advanced ENT care with a focus on head and neck oncology, skull base surgery and microvascular reconstruction. Although the Field of Expertise list on the source HTML was empty, the official overview on the same doctor profile explicitly states head and neck cancer surgery, major head-neck cancer resections, skull base surgery and endoscopic skull base surgery. Procedure associations retained for directory matching are therefore limited to those explicitly named items mapped to existing GAF ENT taxonomy: Head & Neck Cancer Surgery and Skull Base Surgery. No additional ENT procedures were inferred from specialty membership alone. This record is affiliated with the independent Manipal Hospitals Baner campus only. International patients should treat this page as a directory record for comparing specialty, campus and published credentials before a records-based opinion.",
+      "hospitalSlugs": [
+        "manipal-hospitals-baner"
+      ],
+      "image": "/doctors/manipal-baner/dr-gaurav-chamania.webp",
+      "imageAlt": "Dr. Gaurav Chamania, ENT at Manipal Hospitals, Baner, Pune"
+    },
+    {
+      "slug": "dr-girija-ghate",
+      "name": "Dr. Girija Ghate",
+      "featured": false,
+      "specialty": "ENT",
+      "experience": "20+ years Experience",
+      "qualifications": "MBBS, DORL, MS, DNB",
+      "designation": "Consultant - ENT and Head-Neck Surgery",
+      "hospitalName": "Manipal Hospitals, Baner",
+      "hospitalHref": "/destinations/india/hospitals/manipal-hospitals/manipal-hospitals-baner/",
+      "hospitalSlug": "manipal-hospitals-baner",
+      "hospitalCaption": "Manipal Hospitals",
+      "city": "Pune",
+      "cityCountry": "Pune, India",
+      "specializations": [
+        "ENT",
+        "Head and Neck Surgery"
+      ],
+      "proceduresExpertise": [
+        "Head & Neck Cancer Surgery",
+        "Thyroid Surgery"
+      ],
+      "education": [
+        "MBBS, DORL, MS, DNB"
+      ],
+      "affiliations": [
+        "Manipal Hospitals, Baner",
+        "Manipal Hospitals"
+      ],
+      "awards": [],
+      "research": [],
+      "memberships": [],
+      "bio": "Dr. Girija Ghate is a consultant ENT and head-neck surgeon at Manipal Hospitals, Baner in Pune, India. The profile is filed under ENT in the GAF Healthcare directory. The official Manipal Hospitals Baner profile describes over two decades of clinical experience. Listed credentials include MBBS, Diploma in Otorhinolaryngology (DORL), MS in ENT and Head-Neck Surgery, and DNB in ENT, with further training in head and neck oncosurgery noted on the profile. Official expertise covers otorhinolaryngology and head and neck surgery including thyroid, parotid salivary glands, neck, oral and head-neck malignancies. Procedure associations retained for directory matching are limited to existing GAF ENT taxonomy names supported by that evidence: Head & Neck Cancer Surgery and Thyroid Surgery. Affiliations are limited to the independent Manipal Hospitals Baner campus. International patients should treat this page as a directory record for comparing specialty, campus and published credentials before a records-based opinion.",
+      "hospitalSlugs": [
+        "manipal-hospitals-baner"
+      ],
+      "image": "/doctors/manipal-baner/dr-girija-ghate.webp",
+      "imageAlt": "Dr. Girija Ghate, ENT at Manipal Hospitals, Baner, Pune"
     }
   ],
   "hospitals": [
@@ -103762,6 +104042,20 @@
       "specialty": "",
       "image": "",
       "summary": "Independent Sahyadri Super Speciality Hospital campus in Deccan Gymkhana, Pune. Address: Plot No. 30-C, Erandvane, Karve Rd, Deccan Gymkhana, Pune - 411004. Network: Sahyadri Hospitals / Manipal Hospitals.",
+      "imageAlt": ""
+    },
+    {
+      "slug": "manipal-hospitals-baner",
+      "href": "/destinations/india/hospitals/manipal-hospitals/manipal-hospitals-baner/",
+      "name": "Manipal Hospitals, Baner",
+      "city": "Pune",
+      "established": "",
+      "beds": "",
+      "accreditation": "NABH",
+      "bio": "Manipal Hospitals, Baner is an independent Manipal Hospitals campus in Baner, Pune, Maharashtra, India, and is listed separately from Sahyadri Hospitals campuses and from other Manipal Hospitals sites in the GAF Healthcare catalogue. The campus address published by Manipal Hospitals is Baner-Mhalunge Main Road, Baner, Pune - 411045, Maharashtra. Published enquiry telephone for the campus includes 020 6813 8888. Faculty, specialty and procedure relationships on GAF are built only from verified doctor records linked to this Baner campus. Accreditation is recorded from Manipal Hospitals network framing; bed counts, ICU capacity and campus service lines beyond faculty evidence are not invented on this page.",
+      "specialty": "",
+      "image": "",
+      "summary": "Independent Manipal Hospitals campus in Baner, Pune. Address: Baner-Mhalunge Main Road, Baner, Pune - 411045. Faculty relationships are derived from verified affiliated doctors only.",
       "imageAlt": ""
     }
   ],
