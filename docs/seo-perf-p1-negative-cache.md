@@ -28,8 +28,11 @@ Genuine HTML 404 responses never entered the Worker HTML Cache API (`allowsPubli
 | `Authorization` or `gaf_cms` cookie | Not stored (`authenticated`) |
 | `Set-Cookie` on response | Not stored |
 | Non-HTML body | Not stored |
-| `private` / `no-store` / `no-cache` Cache-Control | Not stored |
 | RSC / prefetch variants | Negative path is HTML-only |
+
+Note: Next App Router 404 HTML uses `Cache-Control: private, no-store` (with
+`CDN-Cache-Control: public`). Negative caching **accepts** that pattern when the
+flag is on; auth/cookie/`Set-Cookie` gates remain the access-control backstop.
 
 ## Env knobs (Worker)
 

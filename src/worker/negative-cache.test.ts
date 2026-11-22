@@ -51,18 +51,15 @@ test("decideNegativeCache rejects redirects, auth, rate-limits, 5xx, and non-HTM
   assert.equal(decideNegativeCache({ ...base, cmsCookie: true }).reason, "authenticated");
   assert.equal(decideNegativeCache({ ...base, hasSetCookie: true }).reason, "set-cookie");
   assert.equal(decideNegativeCache({ ...base, contentType: "application/json" }).reason, "non-html");
-  assert.equal(decideNegativeCache({ ...base, cacheControl: "private, max-age=60" }).reason, "cache-control");
-  assert.equal(decideNegativeCache({ ...base, cacheControl: "no-store" }).reason, "cache-control");
-  assert.equal(decideNegativeCache({ ...base, cacheControl: "no-cache" }).reason, "cache-control");
   assert.equal(decideNegativeCache({ ...base, enabled: false }).reason, "disabled");
 });
 
-test("decideNegativeCache accepts genuine HTML 404 with short TTL", () => {
+test("decideNegativeCache accepts genuine HTML 404 with short TTL including Next no-store", () => {
   const decision = decideNegativeCache({
     enabled: true,
     status: 404,
     contentType: "text/html; charset=utf-8",
-    cacheControl: null,
+    cacheControl: "private, no-cache, no-store, max-age=0, must-revalidate",
     hasSetCookie: false,
     authorization: false,
     cmsCookie: false,

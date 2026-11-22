@@ -1819,6 +1819,9 @@ test("replacing an upload purges the cached file and its optimized derivatives",
 
 // -------------------------------------------------------- negative HTML cache (P1)
 
+/** Mirrors production App Router 404 Cache-Control (private no-store). */
+const NEXT_404_CACHE_CONTROL = "private, no-cache, no-store, max-age=0, must-revalidate";
+
 function htmlNotFound(label = "missing") {
   const seen: string[] = [];
   const handler = async (request: Request) => {
@@ -1827,7 +1830,8 @@ function htmlNotFound(label = "missing") {
       status: 404,
       headers: {
         "content-type": "text/html; charset=utf-8",
-        "cache-control": "public, s-maxage=60",
+        "cache-control": NEXT_404_CACHE_CONTROL,
+        "cdn-cache-control": "public, s-maxage=300, stale-while-revalidate=86400",
       },
     });
   };
@@ -1943,7 +1947,7 @@ test("publishing content invalidates a negative cache entry so a newly published
       if (!published) {
         return new Response(pageDocument("missing"), {
           status: 404,
-          headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, s-maxage=60" },
+          headers: { "content-type": "text/html; charset=utf-8", "cache-control": NEXT_404_CACHE_CONTROL },
         });
       }
       return new Response(pageDocument("live"), {
@@ -2068,7 +2072,7 @@ test("cached 404 responses preserve status, robots header, and body SEO markers"
         status: 404,
         headers: {
           "content-type": "text/html; charset=utf-8",
-          "cache-control": "public, s-maxage=60",
+          "cache-control": NEXT_404_CACHE_CONTROL,
           "x-robots-tag": "noindex",
         },
       }),
@@ -2084,7 +2088,7 @@ test("cached 404 responses preserve status, robots header, and body SEO markers"
   assert.equal(hit.status, 404);
   assert.equal(hit.headers.get("x-gaf-html-cache"), "hit");
   assert.equal(hit.headers.get("x-robots-tag"), "noindex");
-  assert.equal(hit.headers.get("cache-control"), "public, s-maxage=60");
+  assert.equal(hit.headers.get("cache-control"), NEXT_404_CACHE_CONTROL);
   const html = await hit.text();
   assert.match(html, /rel="canonical"/);
   assert.match(html, /noindex/);
@@ -2100,7 +2104,7 @@ test("concurrent first 404 misses converge on one .404 entry without inconsisten
       await new Promise((resolve) => setTimeout(resolve, 15));
       return new Response(pageDocument("race"), {
         status: 404,
-        headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, s-maxage=60" },
+        headers: { "content-type": "text/html; charset=utf-8", "cache-control": NEXT_404_CACHE_CONTROL },
       });
     },
     { ...quiet, cache: () => cache },
@@ -2179,7 +2183,7 @@ test("lab microbench: negative HIT avoids re-render versus disabled miss path", 
         await new Promise((resolve) => setTimeout(resolve, hydrateDelayMs));
         return new Response(pageDocument("bench"), {
           status: 404,
-          headers: { "content-type": "text/html; charset=utf-8", "cache-control": "public, s-maxage=60" },
+          headers: { "content-type": "text/html; charset=utf-8", "cache-control": NEXT_404_CACHE_CONTROL },
         });
       },
       { ...quiet, cache: () => cache },
